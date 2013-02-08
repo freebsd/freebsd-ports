@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-pss
-# Date created:		October 28 2011
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pss
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -3,7 +3,7 @@
 
 PORTNAME=	carve
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A fast, robust constructive solid geometry library
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GUI
 

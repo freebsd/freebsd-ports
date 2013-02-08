@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-MIME-Tools
-# Date created:				April 27th 1998
-# Whom:	      				Eivind Eklund <eivind@FreeBSD.org>
-#
+# Created by: Eivind Eklund <eivind@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MIME-Tools
-PORTVERSION=	5.503
+PORTVERSION=	5.504
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN

@@ -1,0 +1,5 @@
+KRDC is a client application that allows you to view or even control
+the desktop session on another machine that is running a compatible
+server. VNC and RDP is supported.
+
+WWW: http://kde.org/applications/internet/krdc/

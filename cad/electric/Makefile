@@ -55,8 +55,7 @@ post-patch:
 		${WRKSRC}/src/include/config.h
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib|${DATADIR}/lib|; \
 		s|/usr/share/electric/doc|${DOCSDIR}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g; \
-		s|@PTHREAD_LIBS@|${PTHREAD_LIBS:S/"//g}|' \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${LOCALBASE}/|' ${WRKSRC}/configure
 .for FEATURE in ${FEATURES}

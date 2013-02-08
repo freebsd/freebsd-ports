@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-MIDI
-# Date created:				February 07 2007
-# Whom:	      				Alexandr Kovalenko <never@nevermind.kiev.ua>
-#
+# Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	MIDI
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

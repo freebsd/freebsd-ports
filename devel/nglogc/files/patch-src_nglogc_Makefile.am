@@ -1,0 +1,10 @@
+--- src/nglogc/Makefile.am.orig	2013-01-30 10:33:19.426104658 +0400
++++ src/nglogc/Makefile.am	2013-01-30 10:33:43.512184313 +0400
+@@ -51,6 +51,7 @@
+ 	nflf_logtrace.h \
+ 	nflf_logarray.h \
+ 	nflf_logerror.h \
++	ringbuffer.h \
+ 	types.h \
+ 	log_priv.h
+ 

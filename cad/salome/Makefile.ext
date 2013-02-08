@@ -178,7 +178,7 @@ AUTOTOOLS_ENV+= 	QTDIR=${LOCALBASE}
 
 #Dependency from qscintilla2
 .if ${SAL_MODULE} == "yacs"
-LIB_DEPEDNS+=		qscintilla2.5:${PORTSDIR}/devel/qscintilla2
+LIB_DEPEDNS+=		qscintilla2:${PORTSDIR}/devel/qscintilla2
 CONFIGURE_ARGS+=	--with-qsci4-libraries=${QT_LIBDIR} --with-qsci4-includes=${QT_INCDIR}
 .endif
 

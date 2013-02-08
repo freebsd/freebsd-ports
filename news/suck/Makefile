@@ -1,9 +1,5 @@
-# New ports collection makefile for:	suck
-# Date created:		30 Mar 1996
-# Whom:			graphite@taurus.bekkoame.or.jp
-#
+# Created by: graphite@taurus.bekkoame.or.jp
 # $FreeBSD$
-#
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2

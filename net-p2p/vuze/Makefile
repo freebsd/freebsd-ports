@@ -3,6 +3,7 @@
 
 PORTNAME=	vuze
 PORTVERSION=	4.8.1.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
@@ -43,10 +44,10 @@ SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
 DESKTOP_ENTRIES=	"Vuze" \
-			"A full feature BitTorrent client" \
-			"${PORTNAME}.png" \
+			"BitTorrent client" \
 			"${PORTNAME}" \
-			"Application;Network;P2P;" \
+			"${PORTNAME}" \
+			"Network;P2P;Java;" \
 			true
 
 .include <bsd.port.options.mk>

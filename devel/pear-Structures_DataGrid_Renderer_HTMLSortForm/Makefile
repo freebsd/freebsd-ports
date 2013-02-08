@@ -9,7 +9,7 @@ PORTNAME=	Structures_DataGrid_Renderer_HTMLSortForm
 PORTVERSION=	0.1.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTMLSortForm Renderer for pear-Structures_DataGrid
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -1,8 +1,8 @@
-# Created by: antoine@FreeBSD.org
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	liblnk
-PORTVERSION=	20121205
+PORTVERSION=	20130117
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
@@ -27,9 +27,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		lnkinfo.1
 MAN3=		liblnk.3
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	AUTHORS ChangeLog
+PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
@@ -37,6 +38,11 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}/* \
+		${WRKSRC}/examples/${PORTNAME:S,lib,py,}/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

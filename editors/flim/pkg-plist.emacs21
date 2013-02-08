@@ -84,4 +84,4 @@ info/mime-en.info
 info/mime-ja.info
 @exec install-info %D/info/mime-ja.info %D/info/dir
 share/flim/%%FLIM_COOKIE%%
-@unexec /bin/rmdir %D/share/flim || true
+@dirrmtry share/flim

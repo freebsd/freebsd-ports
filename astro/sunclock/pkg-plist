@@ -1,9 +1,9 @@
 bin/emx
 bin/sunclock
 %%DATADIR%%/Sunclockrc
-%%DATADIR%%/earthmaps/vmf/countries.vmf
-%%DATADIR%%/earthmaps/vmf/landwater.vmf
-%%DATADIR%%/earthmaps/vmf/timezones.vmf
+%%DATADIR%%/earthmaps/vmf/countries.vmf.gz
+%%DATADIR%%/earthmaps/vmf/landwater.vmf.gz
+%%DATADIR%%/earthmaps/vmf/timezones.vmf.gz
 %%DATADIR%%/editkit/MANUAL.emacs
 %%DATADIR%%/editkit/README
 %%DATADIR%%/editkit/emxrc
@@ -15,9 +15,9 @@ bin/sunclock
 %%DATADIR%%/i18n/Sunclock.nl
 %%DATADIR%%/i18n/Sunclock.no
 %%DATADIR%%/i18n/Sunclock.pl
-%%DATADIR%%/i18n/Sunclock.se
-@dirrmtry %%DATADIR%%/i18n
-@dirrmtry %%DATADIR%%/editkit
-@dirrmtry %%DATADIR%%/earthmaps/vmf
-@dirrmtry %%DATADIR%%/earthmaps
-@dirrmtry %%DATADIR%%
+%%DATADIR%%/i18n/Sunclock.sv
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/editkit
+@dirrm %%DATADIR%%/earthmaps/vmf
+@dirrm %%DATADIR%%/earthmaps
+@dirrm %%DATADIR%%

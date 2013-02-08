@@ -1,0 +1,9 @@
+Plack::Middleware::MemoryUsage is middleware for measuring process
+memory.
+
+Enabling Plack::Middleware::MemoryUsage causes huge performance
+penalty.  So I HIGHLY RECOMMEND to enable this middleware only on
+development env or not processing every request on production using
+Plack::Middleware::Conditional.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-MemoryUsage/

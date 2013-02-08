@@ -1,0 +1,31 @@
+===============================================================================
+
+Xye has been installed.
+
+Xye can use Kye and Sokoban levels.
+
+In addition, you can search for additional extra Levels here:
+
+    http://xye.sourceforge.net/levels.php
+
+    http://xyegame.blogspot.com/
+
+and other Sites and put it in:
+
+    ~/.xye/levels
+
+
+You could manually change Permissions these Levels with:
+
+    /bin/chmod 444 ~/.xye/levels
+
+
+In addition, you can use skins
+
+    http://xyegame.blogspot.com/search/label/skins
+
+and other Sites and put it in:
+
+    ~/.xye/res
+
+===============================================================================

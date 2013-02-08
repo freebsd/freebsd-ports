@@ -11,12 +11,13 @@ COMMENT=	Localized interface for libreoffice
 
 NO_BUILD=	yes
 
-LO_LANG_ALL=	af ar as ast be bg bn bo br brx bs ca_XV ca cs cy da de dgo \
-		dz el en_GB en_ZA eo es et eu fa fi fr ga gd gl gu he hi hr \
-		hu id is it ja ka kk km kn ko kok ks ku lb lo lt lv mai mk \
-		ml mn mni mr my nb ne nl nn nr nso oc om or pa_IN pl pt_BR \
-		pt ro ru rw sa_IN sat sd sh si sk sl sq sr ss st sv sw_TZ \
-		ta te tg th tn tr ts tt ug uk uz ve vi xh zh_CN zh_TW zu
+LO_LANG_ALL=	af am ar as ast be bg bn bn_IN bo br brx bs ca_XV ca cs cy \
+		da de dgo dz el en_GB en_ZA eo es et eu fa fi fr ga gd gl \
+		gu he hi hr hu id is it ja ka kk km kn ko kok ks ku lb lo \
+		lt lv mai mk ml mn mni mr my nb ne nl nn nr nso oc om or \
+		pa_IN pl pt_BR pt ro ru rw sa_IN sat sd sh si sk sl sq sr \
+		ss st sv sw_TZ ta te tg th tn tr ts tt ug uk uz ve vi xh \
+		zh_CN zh_TW zu
 
 ar_PORT=	arabic/${PORTNAME}
 de_PORT=	german/${PORTNAME}

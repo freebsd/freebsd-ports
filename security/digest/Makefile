@@ -1,10 +1,5 @@
-# New ports collection makefile for:	digest
-# Date created:				2001-03-09
-# Whom:					trevor
-#
-# $NetBSD: Makefile,v 1.37 2003/07/17 22:52:13 grant Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME?=	digest
 PORTVERSION?=	20050323

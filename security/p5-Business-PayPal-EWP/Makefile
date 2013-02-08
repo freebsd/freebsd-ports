@@ -1,13 +1,8 @@
-# New ports collection makefile for:   p5-Business-PayPal-EWP
-# Date created:                        Thu 12 May 2005
-# Whom:                                Alfred Perlstein
-#
-#
+# Created by: Alfred Perlstein
 # $FreeBSD$
-#
 
 PORTNAME=	Business-PayPal-EWP
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

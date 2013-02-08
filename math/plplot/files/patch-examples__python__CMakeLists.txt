@@ -1,0 +1,11 @@
+--- examples/python/CMakeLists.txt.orig
++++ examples/python/CMakeLists.txt
+@@ -241,7 +241,7 @@
+     @ONLY
+     )
+ 
+-  set(python_location1 ${PYTHON_INSTDIR})
++  set(python_location1)
+   set(python_location2)
+   set(python_location3)
+   set(python_location4)

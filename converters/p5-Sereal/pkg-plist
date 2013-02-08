@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/.packlist
+%%SITE_PERL%%/Sereal.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal

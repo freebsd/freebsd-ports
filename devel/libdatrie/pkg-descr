@@ -1,0 +1,10 @@
+This is an implementation of double-array structure for representing trie,
+as proposed by Junichi Aoe.
+
+Trie is a kind of digital search tree, an efficient indexing method with
+O(1) time complexity for searching.  Comparably as efficient as hashing,
+trie also provides flexibility on incremental matching and key spelling
+manipulation.  This makes it ideal for lexical analyzers, as well as
+spelling dictionaries.
+
+WWW: http://linux.thai.net/projects/datrie/

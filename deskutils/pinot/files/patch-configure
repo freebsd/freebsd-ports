@@ -5,7 +5,7 @@
  fi
  
 -   TEXTCAT_LIBS="-lexttextcat"
-+   TEXTCAT_LIBS="-lexttextcat-1.0"
++   TEXTCAT_LIBS="-lexttextcat-2.0"
  fi
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable the libarchive filter" >&5

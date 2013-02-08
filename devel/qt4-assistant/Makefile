@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	assistant
 DISTVERSION=	${QT4_VERSION}
@@ -14,8 +9,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui network sql xml doc help webkit
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
+		corelib gui help network sql webkit xml \
+		doc_run sql-sqlite3_run
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
@@ -29,7 +25,7 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 
 DESKTOP_ENTRIES="Qt Assistant" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/assistant-qt4.png" \
-		"${PREFIX}/bin/assistant-qt4" "" false
+		"${PREFIX}/bin/assistant-qt4" "Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/opengl src/openvg \

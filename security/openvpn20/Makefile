@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn
 PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -11,6 +11,9 @@ MASTER_SITES=	http://openvpn.net/release/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
+
+DEPRECATED=		Please migrate to a newer OpenVPN version
+EXPIRATION_DATE=	2013-07-11
 
 LATEST_LINK=	openvpn20
 CONFLICTS_INSTALL=	openvpn-2.[!0]* openvpn-beta-[0-9]* openvpn-devel-[0-9]*

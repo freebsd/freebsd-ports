@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kate
-# Date created:				Tue  9 Aug 2011, 00:58:45
-# Whom:					fluffy@
-#
+# Created by: fluffy@
 # $FreeBSD$
-#
 
 PORTNAME=	kate
 PORTVERSION=	${KDE4_VERSION}

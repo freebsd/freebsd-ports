@@ -108,10 +108,10 @@ DEFAULT_MYSQL_VER?=	55
 MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
-MYSQL53_LIBVER=		16
+MYSQL53m_LIBVER=	16
 MYSQL55_LIBVER=		18
-MYSQL55p_LIBVER=	18
 MYSQL55m_LIBVER=	18
+MYSQL55p_LIBVER=	18
 MYSQL56p_LIBVER=	18
 
 # Setting/finding MySQL version we want.
@@ -150,15 +150,15 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 .endif
 
-.if (${MYSQL_VER} == "53")
+.if (${MYSQL_VER} == "53m")
 _MYSQL_CLIENT=	databases/mariadb-client
 _MYSQL_SERVER=	databases/mariadb-server
-.elif (${MYSQL_VER} == "55p")
-_MYSQL_CLIENT=	databases/percona55-client
-_MYSQL_SERVER=	databases/percona55-server
 .elif (${MYSQL_VER} == "55m")
 _MYSQL_CLIENT=	databases/mariadb55-client
 _MYSQL_SERVER=	databases/mariadb55-server
+.elif (${MYSQL_VER} == "55p")
+_MYSQL_CLIENT=	databases/percona55-client
+_MYSQL_SERVER=	databases/percona55-server
 .elif (${MYSQL_VER} == "56p")
 _MYSQL_CLIENT=	databases/percona56-client
 _MYSQL_SERVER=	databases/percona56-server
@@ -317,7 +317,8 @@ _DB_43P=	43 ${_DB_44P}
 _DB_44P=	44 ${_DB_46P}
 _DB_46P=	46 ${_DB_47P}
 _DB_47P=	47 ${_DB_48P}
-_DB_48P=	48
+_DB_48P=	48 ${_DB_5P}
+_DB_5P=		5
 
 # Override the global WITH_BDB_VER with the
 # port specific <UNIQUENAME>_WITH_BDB_VER

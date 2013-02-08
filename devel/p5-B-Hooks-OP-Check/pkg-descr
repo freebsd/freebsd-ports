@@ -1,4 +1,4 @@
-This module provides a c api for XS modules to hook into the callbacks
-of PL_check.
+This module provides a c api for XS modules to hook into the callbacks of
+PL_check.
 
 WWW: http://search.cpan.org/dist/B-Hooks-OP-Check/

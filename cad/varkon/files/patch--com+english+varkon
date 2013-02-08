@@ -1,5 +1,5 @@
---- ../com/english/varkon.orig	2008-03-07 18:27:29.000000000 -0500
-+++ ../com/english/varkon	2008-04-23 13:59:24.000000000 -0500
+--- com/english/varkon.orig	2008-03-07 18:27:29.000000000 -0500
++++ com/english/varkon	2008-04-23 13:59:24.000000000 -0500
 @@ -16,10 +16,10 @@
  
  # Root directory for VARKON installation.

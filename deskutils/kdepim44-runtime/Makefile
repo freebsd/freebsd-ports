@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdepimp4
-# Date created:				2008-31-05
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	kdepim-runtime

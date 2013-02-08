@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	qtconfig
 DISTVERSION=	${QT4_VERSION}
@@ -13,10 +9,13 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical configuration utility
 
-OPTIONS=	PHONON "Add support for Phonon (implies GStreamer)" on
+OPTIONS_DEFINE=	PHONON
+OPTIONS_DEFAULT=PHONON
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui sql xml
+PHONON_DESC=	Multimedia via Phonon (implies GStreamer)
+
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
+		dbus gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -26,6 +25,10 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
+
+DESKTOP_ENTRIES="Qt Configuration" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/qtconfig-qt4.png" \
+		"${PREFIX}/bin/qtconfig-qt4" "Settings;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \
@@ -41,11 +44,11 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PHONON)
+.if ${PORT_OPTIONS:MPHONON}
 USE_QT4+=	phonon phonon-gst
 USE_GSTREAMER=	yes
 .else
-CONFIGURE_ARGS+=	-no-phonon -no-gstreamer
+CONFIGURE_ARGS+=-no-phonon -no-gstreamer
 .endif
 
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
@@ -62,5 +65,9 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+
+post-install:
+	${INSTALL_DATA} ${BUILD_WRKSRC}/images/appicon.png \
+		${PREFIX}/share/pixmaps/qtconfig-qt4.png
 
 .include <bsd.port.mk>

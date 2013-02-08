@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ftnchek
-# Date created:		4 May 1998
-# Whom:			kargl@apl.washington.edu
-#
+# Created by: kargl@apl.washington.edu
 # $FreeBSD$
 
 PORTNAME=	ftnchek
@@ -22,6 +19,7 @@ MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-MAKE_ARGS=	OPT="${CFLAGS}" CC="${CC}"
+CONFIGURE_ENV=	ac_cv_path_CC="${CC}" ac_cv_path_EMACS="${TRUE}"
+MAKE_ARGS=	OPT="${CFLAGS}"
 
 .include <bsd.port.mk>

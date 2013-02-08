@@ -26,8 +26,8 @@ USE_GMAKE=	yes
 USE_TK_RUN=	83
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-pthread -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
 PORTDOCS= pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
 	examples tutorial gcode.png gcode_control_img.png		\

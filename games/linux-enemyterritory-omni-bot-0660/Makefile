@@ -1,4 +1,4 @@
-# Created by:	alepulver
+# Created by: alepulver
 # $FreeBSD$
 
 PORTNAME=	omni-bot
@@ -26,6 +26,8 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
+.include <bsd.port.options.mk>
+
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
@@ -43,7 +45,7 @@ do-install:
 	cd ${WRKSRC}/omni-bot && ${CP} -R et global_scripts ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .   for f in *.txt omni-bot/*.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

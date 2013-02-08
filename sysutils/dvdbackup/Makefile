@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dvdbackup
-# Date created:		2004-09-24
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdbackup
 PORTVERSION=	0.4.2
@@ -28,7 +24,11 @@ PORTDOCS=	NEWS README
 
 DEFAULT_DVD_DEVICE?=	/dev/cd0
 
-.if !defined(WITHOUT_NLS)
+OPTIONS_DEFINE=	DOCS NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -43,7 +43,7 @@ post-patch:
 		${WRKSRC}/README ${WRKSRC}/man/dvdbackup.1
 
 pre-configure:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: |' \
 		${WRKSRC}/Makefile.in
 .endif

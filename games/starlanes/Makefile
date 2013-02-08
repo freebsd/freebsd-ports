@@ -1,24 +1,28 @@
-# New ports collection makefile for:	starlanes
-# Date created:				7 May 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	starlanes
 PORTVERSION=	1.2.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/strategy
+MASTER_SITES=	SUNSITE/games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The classic space-age stock trading game
+COMMENT=	Classic space-age stock trading game
 
-ALL_TARGET=	# empty
 MAN6=		starlanes.6
 PLIST_FILES=	bin/starlanes
 
-post-extract:
-	@${RM} ${WRKSRC}/starlanes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's| restrict| m_restrict| ; \
+		 s|(restrict|(m_restrict|' ${WRKSRC}/starlanes.c
+
+do-build:
+	(cd ${WRKSRC} \
+		&& ${CC} ${CFLAGS} -o starlanes starlanes.c -lcurses)
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} starlanes ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} starlanes.6 ${MAN6PREFIX}/man/man6)
 
 .include <bsd.port.mk>

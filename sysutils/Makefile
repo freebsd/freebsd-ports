@@ -90,6 +90,7 @@
     SUBDIR += bulk_extractor
     SUBDIR += burn
     SUBDIR += busybox
+    SUBDIR += busybox-unstable
     SUBDIR += byobu
     SUBDIR += ccd2iso
     SUBDIR += cciss_vol_status
@@ -176,7 +177,6 @@
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
-    SUBDIR += diskprep
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
@@ -296,6 +296,7 @@
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-wdfs
     SUBDIR += fusefs-wikipediafs
+    SUBDIR += fusefs-zip
     SUBDIR += fvcool
     SUBDIR += gaffitter
     SUBDIR += gai-leds
@@ -400,6 +401,7 @@
     SUBDIR += isomd5sum
     SUBDIR += ispman
     SUBDIR += istatd
+    SUBDIR += jail2
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer
@@ -418,6 +420,7 @@
     SUBDIR += k3b
     SUBDIR += k3b-kde4
     SUBDIR += k8temp
+    SUBDIR += kcm-polkit-kde
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdeadmin4
@@ -556,6 +559,7 @@
     SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
     SUBDIR += ncdu
+    SUBDIR += nepomuk-core
     SUBDIR += netident
     SUBDIR += news
     SUBDIR += nitrogen
@@ -640,6 +644,7 @@
     SUBDIR += p5-ZConf-Cron
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
+    SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += pam_mount
     SUBDIR += parallel
@@ -698,6 +703,7 @@
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prips
+    SUBDIR += procenv
     SUBDIR += procmap
     SUBDIR += progsreiserfs
     SUBDIR += psgconf
@@ -725,6 +731,9 @@
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
     SUBDIR += py-ranger
+    SUBDIR += py-salt
+    SUBDIR += py-salt-api
+    SUBDIR += py-salt-cloud
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
@@ -826,8 +835,6 @@
     SUBDIR += runwhen
     SUBDIR += safe-rm
     SUBDIR += safecat
-    SUBDIR += salt
-    SUBDIR += salt-cloud
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sarah

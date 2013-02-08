@@ -1,7 +1,7 @@
 include/atomic_ops.h
+include/atomic_ops/ao_version.h
 include/atomic_ops/generalize-small.h
 include/atomic_ops/generalize.h
-include/atomic_ops/sysdeps/README
 include/atomic_ops/sysdeps/acquire_release_volatile.h
 include/atomic_ops/sysdeps/aligned_atomic_load_store.h
 include/atomic_ops/sysdeps/all_acquire_release_volatile.h
@@ -17,6 +17,7 @@ include/atomic_ops/sysdeps/gcc/alpha.h
 include/atomic_ops/sysdeps/gcc/arm.h
 include/atomic_ops/sysdeps/gcc/avr32.h
 include/atomic_ops/sysdeps/gcc/cris.h
+include/atomic_ops/sysdeps/gcc/hexagon.h
 include/atomic_ops/sysdeps/gcc/hppa.h
 include/atomic_ops/sysdeps/gcc/ia64.h
 include/atomic_ops/sysdeps/gcc/m68k.h
@@ -54,14 +55,16 @@ include/atomic_ops/sysdeps/test_and_set_t_is_char.h
 include/atomic_ops_malloc.h
 include/atomic_ops_stack.h
 lib/libatomic_ops.a
+lib/libatomic_ops.la
 lib/libatomic_ops_gpl.a
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/LICENSING.txt
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/README_malloc.txt
-%%DOCSDIR%%/README_stack.txt
-%%DOCSDIR%%/README_win32.txt
-@dirrm %%DOCSDIR%%
+lib/libatomic_ops_gpl.la
+libdata/pkgconfig/atomic_ops.pc
+%%PORTDOCS%%%%DOCSDIR%%/LICENSING.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_malloc.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_stack.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_win32.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/atomic_ops/sysdeps/sunc
 @dirrm include/atomic_ops/sysdeps/msftc
 @dirrm include/atomic_ops/sysdeps/icc

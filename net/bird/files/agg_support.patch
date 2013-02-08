@@ -1,29 +1,29 @@
-From 79ef76d5538871a08ecec829f2332bd0e4399cbd Mon Sep 17 00:00:00 2001
+From 0043ed1694c537617f7125813e984d12d4372035 Mon Sep 17 00:00:00 2001
 From: Alexander V. Chernikov <melifaro@ipfw.ru>
-Date: Wed, 15 Aug 2012 08:32:08 +0000
-Subject: [PATCH 1/1] Implement general aggregation protocol,v6
+Date: Wed, 9 Jan 2013 04:08:31 +0000
+Subject: [PATCH 1/1] Implement general aggregation protocol, v7
 
 ---
  configure.in          |    4 +-
- doc/bird.conf.example |    9 +
- doc/bird.sgml         |   56 +++
+ doc/bird.conf.example |   10 +
+ doc/bird.sgml         |   62 +++
  filter/config.Y       |    2 +-
  filter/filter.h       |    7 +-
- filter/trie.c         |  111 +++++-
+ filter/trie.c         |  115 +++++-
  nest/proto-hooks.c    |   11 +
  nest/proto.c          |    3 +
  nest/protocol.h       |   10 +-
  nest/rt-table.c       |   19 +-
  proto/agg/Doc         |    1 +
  proto/agg/Makefile    |    6 +
- proto/agg/agg.c       |  847 +++++++++++++++++++++++++++++++++++++++
+ proto/agg/agg.c       |  869 ++++++++++++++++++++++++++++++++++++++++
  proto/agg/agg.h       |  123 ++++++
- proto/agg/config.Y    |  117 ++++++
+ proto/agg/config.Y    |  123 ++++++
  proto/bgp/attrs.c     | 1057 +++++++++++++++++++++++++++++++++++++++++++++++++
  proto/bgp/bgp.c       |    8 +-
  proto/bgp/bgp.h       |    5 +
  sysdep/autoconf.h.in  |    1 +
- 19 files changed, 2373 insertions(+), 24 deletions(-)
+ 19 files changed, 2412 insertions(+), 24 deletions(-)
  create mode 100644 proto/agg/Doc
  create mode 100644 proto/agg/Makefile
  create mode 100644 proto/agg/agg.c
@@ -49,30 +49,31 @@ index dd57ab5..ca9d72d 100644
  
  if test "$given_suffix" = yes ; then
 diff --git a/doc/bird.conf.example b/doc/bird.conf.example
-index 5e07ab5..2cab8be 100644
+index 5e07ab5..b48faad 100644
 --- doc/bird.conf.example
 +++ doc/bird.conf.example
-@@ -163,6 +163,15 @@ protocol static {
+@@ -163,6 +163,16 @@ protocol static {
  #	};
  #}
  		
-+#protocol agg {
++#protocol aggregator {
 +#	bgp id 198.51.100.1 as 65000 {
 +#		aggregate address 198.51.100.64/26;
 +#		aggregate address 198.51.100.0/26 save attributes; # Aggregate AS_PATH
 +#		aggregate address 198.51.100.128/16 mandatory list {
 +#			198.51.100.12/32;
-+#		}; # Announce summary IFF all prefixes from mandatory list exists
++#		}; # Announce summary if all prefixes from mandatory list exists
++#		#  and there are at least one more-specific route
 +#	}
 +#}
  
  #protocol bgp {
  #	disabled;
 diff --git a/doc/bird.sgml b/doc/bird.sgml
-index 087a4eb..4be00c8 100644
+index 087a4eb..a235359 100644
 --- doc/bird.sgml
 +++ doc/bird.sgml
-@@ -1115,6 +1115,62 @@ undefined value is regarded as empty clist for most purposes.
+@@ -1115,6 +1115,68 @@ undefined value is regarded as empty clist for most purposes.
  
  <chapt>Protocols
  
@@ -81,10 +82,12 @@ index 087a4eb..4be00c8 100644
 +<p>Aggregator protocol is not a real routing protocol. It generates summary routes of
 +given protocol type. Currently the only supported protocol is BGP.
 +
-+<sect1>Configuration
++<p>Protocol aggregates any matching more-specific route regardless of type. The only exception
++is that unreachable routes are not accounted as valid routes. You may want to use protocol
++export filter to specify route types explicitly.
 +
-+<p>Main part of configuration contains one or more definitions of
-+BGP ID and AS to generate summarized routes.
++<p>Note also protocol refeed is called automatically after reconfiguration if new summary route
++or new mandatory route appears.
 +
 +<p> Nested aggregation routes are supported with the following limitations:
 +Routes are always aggregated into longest-match summary route only. Summary routes
@@ -92,6 +95,10 @@ index 087a4eb..4be00c8 100644
 +complex nested aggregation scenario you have to use several aggregation protocol instances
 +to achieve this.
 +
++<sect1>Configuration
++
++<p>Main part of configuration contains one or more definitions of
++BGP ID and AS to generate summarized routes.
 +
 +<code>
 +protocol aggregator &lt;name&gt; {
@@ -117,8 +124,8 @@ index 087a4eb..4be00c8 100644
 +	<cf/save attributes/ to save maximum information from every route.
 +	Turning this flag on makes BGP aggregate AS-PATH per RFC 4271.
 +	Another option that can be used is <cf/mandatory list { }/
-+	Prefix is announced IFF all of the mandatory prefixes currently exists
-+	in route table.
++	Prefix is announced if all of the mandatory prefixes currently exists
++	in route table AND at least one more-specific route exists.
 +</descrip>
 +
 +<p>Example configuration looks like this:
@@ -177,7 +184,7 @@ index 2386fc9..f2a5d06 100644
  };
  
 diff --git a/filter/trie.c b/filter/trie.c
-index 581332c..17ac896 100644
+index 581332c..eba239b 100644
 --- filter/trie.c
 +++ filter/trie.c
 @@ -75,23 +75,24 @@
@@ -261,7 +268,7 @@ index 581332c..17ac896 100644
  }
  
  /**
-@@ -234,6 +241,90 @@ trie_match_prefix(struct f_trie *t, ip_addr px, int plen)
+@@ -234,6 +241,94 @@ trie_match_prefix(struct f_trie *t, ip_addr px, int plen)
    return 0;
  }
  
@@ -283,6 +290,10 @@ index 581332c..17ac896 100644
 +  ip_addr paddr = ipa_and(px, pmask);
 +  ip_addr cmask;
 +  struct f_trie_node *n = &t->root, *parent = NULL;
++
++  /* Return root node for 0/0 or :: */
++  if ((plen == 0) && (t->zero))
++	  return n;
 +
 +  /* Skip root node since it is cath-all node */
 +  n = n->c[(ipa_getbit(paddr, 0)) ? 1 : 0];
@@ -518,10 +529,10 @@ index 0000000..3039207
 +
 diff --git a/proto/agg/agg.c b/proto/agg/agg.c
 new file mode 100644
-index 0000000..8b6fc2e
+index 0000000..f44271e
 --- /dev/null
 +++ proto/agg/agg.c
-@@ -0,0 +1,847 @@
+@@ -0,0 +1,869 @@
 +/*
 + *	BIRD -- Generic route aggregation
 + *
@@ -559,6 +570,7 @@ index 0000000..8b6fc2e
 +static void agg_mark_sumroute(struct f_trie_node *n, void *data UNUSED);
 +static void agg_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, rta *old, rta *new);
 +static void agg_announce_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
++static void agg_withdraw_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
 +
 +static int
 +agg_import_control(struct proto *P, rte **ee, ea_list **ea UNUSED, struct linpool *p UNUSED)
@@ -598,11 +610,11 @@ index 0000000..8b6fc2e
 +/*
 + * Delete route if it is not used in any role
 + */
-+static void
++static int
 +agg_try_gc_route(struct agg_proto *p, struct agg_route *ar)
 +{
 +  if (AGG_IS_USED(ar))
-+    return;
++    return 0;
 +
 +  if (ar->attrs)
 +    {
@@ -613,16 +625,24 @@ index 0000000..8b6fc2e
 +  //ADBG("GC route %I/%d", ar->fn.prefix, ar->fn.pxlen);
 +
 +  fib_delete(&p->route_fib, ar);
++
++  return 1;
 +}
 +
++/*
++ * Link membership structure to summary and mandatory route
++ */
 +static void
 +agg_link_mroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
 +{
 +  struct agg_membership *ms;
-+  
++
 +  ms = mb_alloc(p->p.pool, sizeof(struct agg_membership));
 +  ms->ar = ar;
 +  ms->asr = asr;
++
++ /* Indicate that this route is used as mandatory */
++  AGG_SET_MANDATORY(ar);
 +
 +  ADBG("Linking mandatory route %I/%d to summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
 +
@@ -632,8 +652,10 @@ index 0000000..8b6fc2e
 +
 +/*
 + * Unlink membership structure from summary route. Mandatory route is checked for validness after that.
++ *
++ * Returns 1 if ar is deleted, 0 otherwise
 + */
-+static void
++static int
 +agg_unlink_mroute(struct agg_proto *p, struct agg_membership *ms)
 +{
 +  struct agg_route *ar = ms->ar;
@@ -646,14 +668,17 @@ index 0000000..8b6fc2e
 +
 +  /* Check if we need to free route iself */
 +  if (!EMPTY_LIST(ar->membership_list))
-+    return;
++    return 0;
 +
 +  /* No membership structures. Unset mandatory role and check if route can be deleted */
 +  AGG_UNSET_MANDATORY(ar);
 +
-+  agg_try_gc_route(p, ar);
++  return agg_try_gc_route(p, ar);
 +}
 +
++/*
++ * Link more specific route to summary
++ */
 +static void
 +agg_link_childroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
 +{
@@ -662,15 +687,36 @@ index 0000000..8b6fc2e
 +}
 +
 +/*
-+ * Remove child role from route
++ * Unlink more specific route from summary
 + */
 +static void
++agg_unlink_childroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
++{
++  /* Delete item from summary route child list */
++  rem_node(&ar->n_sumroute);
++
++  /* Update or withdraw summary route */
++  if (agg_can_announce(asr))
++    {
++      if (!EMPTY_LIST(asr->routes))
++	agg_update_sumroute(p, asr, ar, ar->attrs, NULL);
++      else
++	agg_withdraw_sumroute(p, asr);
++    }
++}
++
++/*
++ * Remove child role from route
++ *
++ * Returns 1 if ar is deleted, 0 otherwise
++ */
++static int
 +agg_remove_childrole(struct agg_proto *p, struct agg_route *ar)
 +{
 +  ar->asr = NULL;
 +  AGG_UNSET_CHILD(ar);
 +
-+  agg_try_gc_route(p, ar);
++  return agg_try_gc_route(p, ar);
 +}
 +
 +/*
@@ -725,6 +771,9 @@ index 0000000..8b6fc2e
 +  p->need_refeed = 1;
 +}
 +
++/*
++ * Announce summary route via protocol-specific function
++ */
 +static void
 +agg_announce_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
 +{
@@ -738,6 +787,9 @@ index 0000000..8b6fc2e
 +  asr->proto->create_sumroute(p, asr);
 +}
 +
++/*
++ * Withdraw summary route from fib
++ */
 +static void
 +agg_withdraw_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
 +{
@@ -756,6 +808,9 @@ index 0000000..8b6fc2e
 +    }
 +}
 +
++/*
++ * Update summary route in fib via protocol-specific function
++ */
 +static void
 +agg_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, rta *old, rta *new)
 +{
@@ -948,7 +1003,7 @@ index 0000000..8b6fc2e
 +	{
 +	  ar = fib_get(&p->route_fib, &cr->px.addr, cr->px.len);
 +	  /*
-+	   * FIXME: Use some direcct method (like applying protocol 
++	   * FIXME: Use some direct method (like applying protocol
 +	   * filter and import control to the best route)
 +	   */
 +	  p->need_refeed = 1;
@@ -960,9 +1015,6 @@ index 0000000..8b6fc2e
 +	  asr->mandatory_current++;
 +	  ADBG("Mandatory route %I/%d [re]marked as used", ar->fn.prefix, ar->fn.pxlen);
 +	}
-+
-+      /* Indicate that this route is used as mandatory */
-+      AGG_SET_MANDATORY(ar);
 +
 +      /*
 +       * Check if we have summary membership with current (old) asr (e.g.
@@ -1047,31 +1099,15 @@ index 0000000..8b6fc2e
 +}
 +
 +static void
-+agg_unlink_childroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
-+{
-+  /* Delete item from summary route child list */
-+  rem_node(&ar->n_sumroute);
-+
-+  /* Update or withdraw summary route */
-+  if (agg_can_announce(asr))
-+    {
-+      if (!EMPTY_LIST(asr->routes))
-+	agg_update_sumroute(p, asr, ar, ar->attrs, NULL);
-+      else
-+	agg_withdraw_sumroute(p, asr);
-+    }
-+}
-+
-+
-+static void
 +agg_rt_notify(struct proto *P, rtable *src_table, net *n, rte *new, rte *old, ea_list *attrs)
 +{
 +  struct agg_proto *p = (struct agg_proto *) P;
 +  struct agg_sumroute *asr;
-+  struct agg_route *ar = NULL, *ar_child = NULL;
++  struct agg_route *ar = NULL;
 +  struct agg_membership *ms;
 +  node *nn, *nn_next;
 +  rta *old_rta = NULL, *new_rta;
++  int ar_flag = 0;
 +
 +  /* Ignore unreachable routes */
 +  if ((new) && (new->attrs->dest == RTD_UNREACHABLE))
@@ -1103,12 +1139,12 @@ index 0000000..8b6fc2e
 +      
 +	ADBG("Found matched summary route %I/%d", asr->tn.addr, asr->tn.plen);
 +      
-+	/* Summary route found. Let's find/create route node */
-+	ar = fib_get(&p->route_fib, &n->n.prefix, n->n.pxlen);
-+      
 +	/* (new route, route update) */
 +	if (new)
 +	  {
++	    /* Summary route found. Let's find/create route node */
++	    ar = fib_get(&p->route_fib, &n->n.prefix, n->n.pxlen);
++
 +	    old_rta = ar->attrs;
 +	    /*
 +	     * We want to get stable attribute copy.
@@ -1142,11 +1178,9 @@ index 0000000..8b6fc2e
 +	      }
 +
 +	    /*
-+	     * We can't mark ar as installed since this can interfere with mandatory routes
-+	     * checking later. We save ar into new pointer and set installed flag in the end
-+	     * instead.
++	     * We can't mark ar as installed immediately since this can interfere
++	     * with mandatory routes checking later.
 +	     */
-+	    ar_child = ar;
 +      
 +	    /* Add link to summary route if route is new */
 +	    if (!AGG_IS_CHILD(ar))
@@ -1155,22 +1189,22 @@ index 0000000..8b6fc2e
 +		agg_link_childroute(p, asr, ar);
 +	      }
 +	    else if (ar->asr != asr)
-+	    {
-+	      /*
-+	       * Route is a child of different summary route.
-+	       * Let's make withdraw for the old summary
-+	       * and send route update to the new one
-+	       */
-+	      ADBG("Moving route %I/%d from %I/%d to %I/%d", n->n.prefix, n->n.pxlen,
-+		ar->asr->tn.addr, ar->asr->tn.plen, asr->tn.addr, asr->tn.plen);
-+	      agg_unlink_childroute(p, ar->asr, ar);
-+	      agg_link_childroute(p, asr, ar);
++	      {
++		/*
++		 * Route is a child of different summary route.
++		 * Let's make withdraw for the old summary
++		 * and send route update to the new one
++		 */
++		ADBG("Moving route %I/%d from %I/%d to %I/%d", n->n.prefix, n->n.pxlen,
++		  ar->asr->tn.addr, ar->asr->tn.plen, asr->tn.addr, asr->tn.plen);
++		agg_unlink_childroute(p, ar->asr, ar);
++		agg_link_childroute(p, asr, ar);
 +
-+	      /* From current asr point of view, this is new route */
-+	      if (old_rta)
-+		rta_free(old_rta);
-+	      old_rta = NULL;
-+	    }
++		/* From current asr point of view, this is new route */
++		if (old_rta)
++		  rta_free(old_rta);
++		old_rta = NULL;
++	      }
 +      
 +	    /* Call route update */
 +	    if (agg_can_announce(asr))
@@ -1179,56 +1213,59 @@ index 0000000..8b6fc2e
 +	    /* Free old attributes */
 +	    if (old_rta)
 +	      rta_free(old_rta);
-+	  }
++	  } /* if (new) */
 +	else
 +	  {
-+	    /* Route withdrawal.
-+	     * Note that we route we find can be
-+	     * 1) mandatory only
-+	     * 2) newly-created route (by fib_get)
-+	     */
-+	    if (AGG_IS_CHILD(ar))
++	    /* Route withdrawal. */
++	    ar = fib_find(&p->route_fib, &n->n.prefix, n->n.pxlen);
++
++	    if (ar && (AGG_IS_CHILD(ar)))
 +	      {
 +		/* We have to provide saved ar to agg_update_sumroute() */
 +		
 +		/* Unlink item from summary route */
 +		agg_unlink_childroute(p, asr, ar);
 +		/* Remove child role */
-+		agg_remove_childrole(p, ar);
-+	      }
-+	    else
-+	      {
-+		/* Check if this is false positive from fib_get() */
-+		agg_try_gc_route(p, ar);
++		if (agg_remove_childrole(p, ar))
++		  {
++		    /* Route is deleted, zero ar pointer */
++		    ar = NULL;
++		  }
 +	      }
 +	  }
 +    }
 +
-+  /* Check if network is from our mandatory list */
++  /* Check if prefix exists in our mandatory list */
 +  if (!ar)
 +    ar = fib_find(&p->route_fib, &n->n.prefix, n->n.pxlen);
-+  if (!ar || !AGG_IS_MANDATORY(ar))
++
++  /*
++   * We have to mark/unmark route as installed,
++   * Remember if installed flag is changed.
++   */
++  if (ar)
 +    {
-+      if (ar_child)
-+	AGG_SET_INSTALLED(ar_child);
-+      return;
++      if (new && !AGG_IS_INSTALLED(ar))
++	{
++	  AGG_SET_INSTALLED(ar);
++	  ar_flag = 1;
++	}
++      else if (!new && AGG_IS_INSTALLED(ar))
++	{
++	  AGG_UNSET_INSTALLED(ar);
++	  ar_flag = 1;
++	}
 +    }
++
++  /*
++   * prefix does not exist, or is not mandatory,
++   * or is already announced (flag is not changed).
++   * Nothing to do.
++   */
++  if (!ar || !AGG_IS_MANDATORY(ar) || !ar_flag)
++    return;
 +
 +  ADBG("Mandatory route %I/%d found, checking", n->n.prefix, n->n.pxlen);
-+  /* Check if installed flag is changed */
-+  if ((new && AGG_IS_INSTALLED(ar)) || (!new && !AGG_IS_INSTALLED(ar)))
-+    {
-+      if (ar_child)
-+	AGG_SET_INSTALLED(ar_child);
-+      return;
-+    }
-+
-+  /* Flag is changed, let's check summary routes */
-+
-+  if (new)
-+    AGG_SET_INSTALLED(ar);
-+  else
-+    AGG_UNSET_INSTALLED(ar);
 +
 +  WALK_LIST_DELSAFE(nn, nn_next, ar->membership_list)
 +    {
@@ -1250,10 +1287,6 @@ index 0000000..8b6fc2e
 +	  asr->mandatory_current--;
 +	}
 +    }
-+
-+  /* Mark route as installed if needed */
-+  if (ar_child)
-+    AGG_SET_INSTALLED(ar_child);
 +}
 +
 +
@@ -1500,10 +1533,10 @@ index 0000000..97e8426
 +#endif
 diff --git a/proto/agg/config.Y b/proto/agg/config.Y
 new file mode 100644
-index 0000000..8a02083
+index 0000000..ec44f98
 --- /dev/null
 +++ proto/agg/config.Y
-@@ -0,0 +1,117 @@
+@@ -0,0 +1,123 @@
 +/*
 + *	BIRD -- Generic route aggregation
 + *
@@ -1567,7 +1600,13 @@ index 0000000..8a02083
 +    if (current_rproto == NULL)
 +      cf_error("Unknown base protocol for prefix %I/%d", $3.addr, $3.len);
 +
-+    asr = (struct agg_sumroute *)trie_add_prefix(AGG_CFG->summary_trie, $3.addr, $3.len, $3.len + 1, MAX_PREFIX_LENGTH);
++    int plen = $3.len;
++    /*
++     * Set minimum matched  prefix length to zero for 0/0 and ::
++     * to ensure root node is dispatched by walk_trie()
++     */
++    asr = (struct agg_sumroute *)trie_add_prefix(AGG_CFG->summary_trie,
++	$3.addr, plen, plen ? plen + 1 : 0, MAX_PREFIX_LENGTH);
 +    if (asr->flags & AGG_FLAG_PREPARED)
 +      cf_error("Prefix %I/%d already exists", $3.addr, $3.len);
 +
@@ -2754,19 +2793,3 @@ index ac6f7a8..4d4dba5 100644
 -- 
 1.7.3.2
 
---- configure.orig	2012-08-07 13:28:04.000000000 +0400
-+++ configure	2012-08-15 15:54:05.000000000 +0400
-@@ -2355,11 +2355,11 @@
- if test "$enable_ipv6" = yes ; then
- 	ip=ipv6
- 	SUFFIX=6
--	all_protocols=bgp,ospf,pipe,radv,rip,static
-+	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
- else
- 	ip=ipv4
- 	SUFFIX=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,agg
- fi
- 
- if test "$given_suffix" = yes ; then

@@ -63,7 +63,6 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 pre-build:
 	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
-	s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
 	s,%%SUPERLU%%,${SUPERLU},g ; \
 	s,%%FORTRANLIBS%%,${FORTRANLIBS},g ; \
 	s,%%GCCLIBDIR%%,${GCCLIBDIR},g ; \

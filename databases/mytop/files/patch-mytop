@@ -118,7 +118,7 @@ $FreeBSD$
            if ($t_delta);
 -        print "\n\n";
 +        print "\n";
-+
+ 
 +        my @master_status = Hashes("show master status");
 +        if (@master_status)
 +        {
@@ -130,7 +130,7 @@ $FreeBSD$
 +				$lines_left--;
 +			}
 +		}
- 
++
 +        my @slave_status = Hashes("show slave status");
 +        if (@slave_status)
 +        {
@@ -156,30 +156,46 @@ $FreeBSD$
          $lines_left--;
      }
  
-@@ -905,19 +952,19 @@
+@@ -904,32 +951,22 @@
+     ## Threads
      ##
  
-     #my $sz = $width - 52;
+-    #my $sz = $width - 52;
 -    my @sz   = (8, 9, 15, 10, 9, 6);
-+    my @sz   = (9, 9, 15, 10, 9, 6);
-     my $used = scalar(@sz) + Sum(@sz);
-     my $free = $width - $used;
- 
-     print BOLD();
- 
+-    my $used = scalar(@sz) + Sum(@sz);
+-    my $free = $width - $used;
+-
+-    print BOLD();
+-
 -    printf "%8s %9s %15s %10s %9s %6s %-${free}s\n",
-+    printf "%9s %9s %15s %10s %9s %6s %-${free}s\n",
-         'Id','User','Host/IP','DB','Time', 'Cmd', 'Query or State';
- 
-     print RESET();
- 
-     ##      Id User Host DB
+-        'Id','User','Host/IP','DB','Time', 'Cmd', 'Query or State';
+-
+-    print RESET();
+-
+-    ##      Id User Host DB
 -    printf "%8s %9s %15s %10s %9s %6s %-${free}s\n",
-+    printf "%9s %9s %15s %10s %9s %6s %-${free}s\n",
-         '--','----','-------','--','----', '---', '----------';
- 
+-        '--','----','-------','--','----', '---', '----------';
+-
      $lines_left -= 2;
-@@ -952,8 +999,11 @@
+ 
+     my $proc_cmd = "show full processlist";
+ 
+     my @data = Hashes($proc_cmd);
+ 
++    my $max_id = 0;
++
+     foreach my $thread (@data)
+     {
+         last if not $lines_left;
+ 
++        if ($max_id < $thread->{Id}) {
++            $max_id = $thread->{Id};
++        }
++
+         ## Drop Domain Name, unless it looks like an IP address.  If
+         ## it's an IP, we'll strip the port number because it's rarely
+         ## interesting.
+@@ -952,8 +989,11 @@
          {
              $thread->{Host} =~ s/:\d+$//;
              my $host = gethostbyaddr(inet_aton($thread->{Host}), AF_INET);
@@ -193,16 +209,40 @@ $FreeBSD$
          }
  
          ## Fix possible undefs
-@@ -1044,7 +1094,7 @@
+@@ -990,6 +1030,23 @@
+ 
+     }
+ 
++    #my $sz = $width - 52;
++    my $max_id_size = length $max_id;
++    my @sz   = ($max_id_size, 9, 15, 10, 9, 6);
++    my $used = scalar(@sz) + Sum(@sz);
++    my $free = $width - $used;
++
++    print BOLD();
++
++    printf "%${max_id_size}s %9s %15s %10s %9s %6s %-${free}s\n",
++        'Id','User','Host/IP','DB','Time', 'Cmd', 'Query or State';
++
++    print RESET();
++
++    ##      Id User Host DB
++    printf "%${max_id_size}s %9s %15s %10s %9s %6s %-${free}s\n",
++        '--','----','-------','--','----', '---', '----------';
++
+     ## Sort by idle time (closest thing to CPU usage I can think of).
+ 
+     my @sorted;
+@@ -1044,7 +1101,7 @@
              print GREEN()  if $thread->{Command} eq 'Connect';
          }
  
 -        printf "%8d %9.9s %15.15s %10.10s %9d %6.6s %-${free}.${free}s\n",
-+        printf "%9d %9.9s %15.15s %10.10s %9d %6.6s %-${free}.${free}s\n",
++        printf "%${max_id_size}d %9.9s %15.15s %10.10s %9d %6.6s %-${free}.${free}s\n",
              $thread->{Id}, $thread->{User}, $thread->{Host}, $thread->{db},
              $thread->{Time}, $thread->{Command}, $smInfo;
  
-@@ -1099,8 +1149,8 @@
+@@ -1099,8 +1156,8 @@
      my @data = Hashes("SHOW INNODB STATUS");
  
      open P, "|$config{pager}" or die "$!";

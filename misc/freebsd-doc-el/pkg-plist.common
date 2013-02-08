@@ -19,16 +19,13 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion

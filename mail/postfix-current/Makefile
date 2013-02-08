@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.10-20121031
-PORTREVISION=	2
+DISTVERSION=	2.10-20130113
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -218,6 +217,9 @@ POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 .if defined(WITH_LDAP_SASL)
+.if !defined(WITH_SASL2)
+BROKEN=			Compile with Cyrus SASL to use LDAP_SASL
+.endif
 POSTFIX_CCARGS+=	-DUSE_LDAP_SASL
 .endif
 .endif

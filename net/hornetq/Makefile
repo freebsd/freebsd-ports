@@ -2,26 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	hornetq
-PORTVERSION=	2.2.14
-PORTREVISION=	1
+DISTVERSION=	2.2.24.GA
+PORTREVISION=	0
 CATEGORIES=	net java
-MASTER_SITES=	http://downloads.jboss.org/hornetq/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.Final
+#MASTER_SITES=	http://downloads.jboss.org/hornetq/
+#DISTNAME=	${PORTNAME}-${PORTVERSION}.Final
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Multi-protocol asynchronous messaging system
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${MAVEN3}:${PORTSDIR}/devel/maven3 \
+		ant:${PORTSDIR}/devel/apache-ant
+
 PORTDOCS=	quickstart-guide api rest-api user-manual \
 		rest-interface-manual README.html
 
 USE_RC_SUBR=	hornetq
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	hornetq
+GH_TAGNAME=	HornetQ_2_2_24_EAP_GA
+GH_COMMIT=	4ed82d3
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
-
-NO_BUILD=	yes
+MAVEN3=		${LOCALBASE}/share/java/maven3/bin/mvn
 CONFIG_DIRS=	clustered non-clustered
 CONFIG_FILES=	hornetq-beans.xml hornetq-users.xml hornetq-configuration.xml \
 		jndi.properties hornetq-jms.xml logging.properties
@@ -31,7 +39,14 @@ LIBTOOLFILES=	native-src/aclocal.m4
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal/
 AUTOMAKE_ARGS=	--add-missing -c
 
-post-extract:
+do-build:
+		cd ${WRKSRC} && ./build.sh bin-distro
+		${MV} ${WRKSRC}//build/hornetq-${DISTVERSION}.tar.gz ${WRKDIR}
+		${RM} -r ${WRKSRC}
+		cd ${WRKDIR} && tar xzvf hornetq-${DISTVERSION}.tar.gz && \
+		${MV} hornetq-${DISTVERSION} ${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+
+post-build:
 	    ${RM} -r ${WRKSRC}/tools ${WRKSRC}/native-src ${WRKSRC}/config/jboss-as*
 	    ${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/*.so ${WRKSRC}/bin/build.sh
 	    ${MV} ${WRKSRC}/schemas ${WRKSRC}/config

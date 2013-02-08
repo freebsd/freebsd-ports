@@ -1,25 +1,22 @@
-Citrix(R) Presentation Server(TM) runs on Microsoft(R) Windows
-Server(TM) and UNIX(R) operating systems, and extends the base
-Windows Terminal Services platform by enhancing the end-user
-experience as well as increasing manageability, compatibility,
-security and scalability to address business-critical environments.
-Presentation Server expands the range of supported applications to
-include legacy software and Web-based, UNIX and Java solutions. It
-also enables any device or operating system including Macintosh and
-Linux to access virtualized applications. Other important capabilities
-are powerful management and configuration tools and faster, more
-flexible printing.
+Citrix(R) Presentation Server(TM) runs on Microsoft(R) Windows Server(TM) and
+UNIX(R) operating systems, and extends the base Windows Terminal Services
+platform by enhancing the end-user experience as well as increasing
+manageability, compatibility, security and scalability to address
+business-critical environments.
 
-You will need to create the directory ${LINUXBASE}/dev or risk
-crashing your system.
+This port includes the Citrix(R) Receiver(TM) software which allows connecting
+to Citrix(R) Presentation Server(TM).
 
-If your Citrix server does not have one of the supplied root-certificates,
-you can copy the certificate to /usr/ports/distfiles and add the
-following line to your /etc/make.conf:
+You will need to create the directory ${LINUXBASE}/dev or risk crashing your
+system.
+
+If your Citrix server does not have one of the supplied root-certificates, you
+can copy the certificate to /usr/ports/distfiles and add the following line to
+your /etc/make.conf:
 
 	ICA_CERTS=mycert.crt
 
-It will then automatically be installed and removed with the normal
-FreeBSD package tools.
+It will then automatically be installed and removed with the normal FreeBSD
+package tools.
 
-WWW: http://www.citrix.com/English/ps2/products/product.asp?contentID=186
+WWW: http://www.citrix.com/products/receiver/overview.html

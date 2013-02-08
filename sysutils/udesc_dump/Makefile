@@ -1,9 +1,5 @@
-# New ports collection makefile for:	udesc_dump
-# Date created:				2002/12/14
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	udesc_dump
 PORTVERSION=	1.3.9
@@ -12,6 +8,9 @@ MASTER_SITES=	http://home.jp.freebsd.org/~gehenna/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows USB descriptors
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 MAN8=		udesc_dump.8
 MANCOMPRESSED=	yes

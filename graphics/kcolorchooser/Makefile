@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kcolorchooser
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kcolorchooser
 PORTVERSION=	${KDE4_VERSION}

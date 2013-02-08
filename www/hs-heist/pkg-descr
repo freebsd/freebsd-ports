@@ -1,3 +1,15 @@
-An xhtml templating system.
+Heist is a powerful template system that supports both HTML5 and XML.
+Some of Heist's features are:
+
+ * Designer-friendly HTML5 (or XML) syntax
+ * Templates can be reloaded to make changes visible without recompiling
+   your Haskell code
+ * Enforces near-perfect separation of business logic
+   and view
+ * Powerful abstraction primitives allowing you to eliminate repetition
+ * Easy creation of domain-specific markup languages
+ * Built-in support for including JSON and Markdown content in templates
+ * Simple mechanism for designer-specified template caching
+ * Optional merging of multiple <head> tags defined anywhere in the document
 
 WWW: http://snapframework.com/

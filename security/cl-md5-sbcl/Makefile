@@ -1,9 +1,8 @@
-# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	md5
 PORTVERSION=	1.8.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

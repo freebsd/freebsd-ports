@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elmo
-# Date created:				2003-09-27
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	elmo
 PORTVERSION=	1.3.2

@@ -18,12 +18,12 @@ COMMENT=	Squid 2.x Accounting Management System
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 USE_RC_SUBR=	sams
 
 OPTIONS_DEFINE=	APACHE NTLM GD
-OPTIONS_DEFAULT=GD 
+OPTIONS_DEFAULT=GD
 
 INSTALLGD_DESC=	Graphic reports
 

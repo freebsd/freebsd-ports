@@ -57,7 +57,8 @@ RELEASE_DIR             = %%PREFIX%%
 
 ##  Where is the local condor directory for each host?  
 ##  This is where the local config file(s), logs and
-##  spool/execute directories are located
+##  spool/execute directories are located.  Should be a large
+##  partition if jobs may produce a lot of output.
 LOCAL_DIR               = $(TILDE)
 
 ##  Where is the machine-specific local config file for each host?
@@ -84,7 +85,7 @@ CONDOR_ADMIN            = root@localhost
 
 ##  Full path to a mail delivery program that understands that "-s"
 ##  means you want to specify a subject:
-MAIL                    = /bin/mail
+MAIL                    = /usr/bin/mail
 
 ##--------------------------------------------------------------------
 ##  Network domain parameters:
@@ -177,6 +178,7 @@ FLOCK_COLLECTOR_HOSTS = $(FLOCK_TO)
 ##  machine(s) where whoever is the condor administrator(s) works
 ##  (assuming you trust all the users who log into that/those
 ##  machine(s), since this is machine-wide access you're granting).
+
 ALLOW_ADMINISTRATOR = $(CONDOR_HOST)
 
 ##  If there are no machines that should have administrative access 

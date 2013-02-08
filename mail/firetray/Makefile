@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firetray
-# Date created:		2010-08-27
-# Whom:			Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	firetray
 DISTVERSION=	0.2.8
@@ -17,6 +13,8 @@ COMMENT=	System tray add-on for firefox, thunderbird, seamonkey, etc
 
 PATCH_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not build
 
 USE_ZIP=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -234,7 +235,7 @@ CONFIGURE_ARGS+=	--without-xml2
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls

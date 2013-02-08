@@ -1,13 +1,9 @@
-# New ports collection makefile for:   mumble
-# Date created:        1 February 2009
-# Whom:                marius nuennerich
-#
+# Created by: marius nuennerich
 # $FreeBSD$
-#
 
 PORTNAME=	mumble
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 

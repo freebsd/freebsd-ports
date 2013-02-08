@@ -13,6 +13,12 @@ share/icons/kover_front_title_only.png
 share/icons/kover_one_page.png
 share/icons/locolor/16x16/apps/kover.png
 share/icons/locolor/32x32/apps/kover.png
+share/locale/de/LC_MESSAGES/kover.mo
+share/locale/es/LC_MESSAGES/kover.mo
+share/locale/fr/LC_MESSAGES/kover.mo
+share/locale/it/LC_MESSAGES/kover.mo
+share/locale/nb/LC_MESSAGES/kover.mo
+share/locale/pl/LC_MESSAGES/kover.mo
 share/mime/packages/kover.xml
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
@@ -20,3 +26,5 @@ share/mime/packages/kover.xml
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
 @dirrm share/apps/kover
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

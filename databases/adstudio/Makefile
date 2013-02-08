@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adstudio
-# Date created:				9 February 2005
-# Whom:					Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	adstudio
 PORTVERSION=	10.0.11
@@ -23,6 +19,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		incomplete plist
 
 USE_JAVA=	yes

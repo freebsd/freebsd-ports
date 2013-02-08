@@ -1,146 +1,395 @@
 include/CLucene.h
-include/CLucene/CLBackwards.h
 include/CLucene/CLConfig.h
 include/CLucene/LuceneThreads.h
+include/CLucene/SharedHeader.h
 include/CLucene/StdHeader.h
 include/CLucene/analysis/AnalysisHeader.h
 include/CLucene/analysis/Analyzers.h
+include/CLucene/analysis/CachingTokenFilter.h
+include/CLucene/analysis/LanguageBasedAnalyzer.h
+include/CLucene/analysis/PorterStemmer.h
+include/CLucene/analysis/cjk/CJKAnalyzer.h
+include/CLucene/analysis/de/GermanAnalyzer.h
+include/CLucene/analysis/de/GermanStemFilter.h
+include/CLucene/analysis/de/GermanStemmer.h
 include/CLucene/analysis/standard/StandardAnalyzer.h
 include/CLucene/analysis/standard/StandardFilter.h
 include/CLucene/analysis/standard/StandardTokenizer.h
 include/CLucene/analysis/standard/StandardTokenizerConstants.h
-include/CLucene/config/CompilerBcb.h
-include/CLucene/config/CompilerGcc.h
-include/CLucene/config/CompilerMsvc.h
-include/CLucene/config/PlatformMac.h
-include/CLucene/config/PlatformUnix.h
-include/CLucene/config/PlatformWin32.h
-include/CLucene/config/compiler.h
-include/CLucene/config/define_std.h
-include/CLucene/config/gunichartables.h
-include/CLucene/config/repl_tchar.h
-include/CLucene/config/repl_wchar.h
-include/CLucene/config/threadCSection.h
-include/CLucene/config/threadPthread.h
-include/CLucene/debug/condition.h
+include/CLucene/clucene-config.h
 include/CLucene/debug/error.h
 include/CLucene/debug/lucenebase.h
 include/CLucene/debug/mem.h
 include/CLucene/document/DateField.h
+include/CLucene/document/DateTools.h
 include/CLucene/document/Document.h
 include/CLucene/document/Field.h
-include/CLucene/index/CompoundFile.h
-include/CLucene/index/DocumentWriter.h
-include/CLucene/index/FieldInfo.h
-include/CLucene/index/FieldInfos.h
-include/CLucene/index/FieldsReader.h
-include/CLucene/index/FieldsWriter.h
+include/CLucene/document/FieldSelector.h
+include/CLucene/document/NumberTools.h
+include/CLucene/ext/boost/assert.hpp
+include/CLucene/ext/boost/checked_delete.hpp
+include/CLucene/ext/boost/config.hpp
+include/CLucene/ext/boost/config/abi/borland_prefix.hpp
+include/CLucene/ext/boost/config/abi/borland_suffix.hpp
+include/CLucene/ext/boost/config/abi/msvc_prefix.hpp
+include/CLucene/ext/boost/config/abi/msvc_suffix.hpp
+include/CLucene/ext/boost/config/abi_prefix.hpp
+include/CLucene/ext/boost/config/abi_suffix.hpp
+include/CLucene/ext/boost/config/auto_link.hpp
+include/CLucene/ext/boost/config/compiler/borland.hpp
+include/CLucene/ext/boost/config/compiler/codegear.hpp
+include/CLucene/ext/boost/config/compiler/comeau.hpp
+include/CLucene/ext/boost/config/compiler/common_edg.hpp
+include/CLucene/ext/boost/config/compiler/compaq_cxx.hpp
+include/CLucene/ext/boost/config/compiler/digitalmars.hpp
+include/CLucene/ext/boost/config/compiler/gcc.hpp
+include/CLucene/ext/boost/config/compiler/gcc_xml.hpp
+include/CLucene/ext/boost/config/compiler/greenhills.hpp
+include/CLucene/ext/boost/config/compiler/hp_acc.hpp
+include/CLucene/ext/boost/config/compiler/intel.hpp
+include/CLucene/ext/boost/config/compiler/kai.hpp
+include/CLucene/ext/boost/config/compiler/metrowerks.hpp
+include/CLucene/ext/boost/config/compiler/mpw.hpp
+include/CLucene/ext/boost/config/compiler/pgi.hpp
+include/CLucene/ext/boost/config/compiler/sgi_mipspro.hpp
+include/CLucene/ext/boost/config/compiler/sunpro_cc.hpp
+include/CLucene/ext/boost/config/compiler/vacpp.hpp
+include/CLucene/ext/boost/config/compiler/visualc.hpp
+include/CLucene/ext/boost/config/no_tr1/cmath.hpp
+include/CLucene/ext/boost/config/no_tr1/complex.hpp
+include/CLucene/ext/boost/config/no_tr1/functional.hpp
+include/CLucene/ext/boost/config/no_tr1/memory.hpp
+include/CLucene/ext/boost/config/no_tr1/utility.hpp
+include/CLucene/ext/boost/config/platform/aix.hpp
+include/CLucene/ext/boost/config/platform/amigaos.hpp
+include/CLucene/ext/boost/config/platform/beos.hpp
+include/CLucene/ext/boost/config/platform/bsd.hpp
+include/CLucene/ext/boost/config/platform/cygwin.hpp
+include/CLucene/ext/boost/config/platform/hpux.hpp
+include/CLucene/ext/boost/config/platform/irix.hpp
+include/CLucene/ext/boost/config/platform/linux.hpp
+include/CLucene/ext/boost/config/platform/macos.hpp
+include/CLucene/ext/boost/config/platform/qnxnto.hpp
+include/CLucene/ext/boost/config/platform/solaris.hpp
+include/CLucene/ext/boost/config/platform/vxworks.hpp
+include/CLucene/ext/boost/config/platform/win32.hpp
+include/CLucene/ext/boost/config/posix_features.hpp
+include/CLucene/ext/boost/config/requires_threads.hpp
+include/CLucene/ext/boost/config/select_compiler_config.hpp
+include/CLucene/ext/boost/config/select_platform_config.hpp
+include/CLucene/ext/boost/config/select_stdlib_config.hpp
+include/CLucene/ext/boost/config/stdlib/dinkumware.hpp
+include/CLucene/ext/boost/config/stdlib/libcomo.hpp
+include/CLucene/ext/boost/config/stdlib/libstdcpp3.hpp
+include/CLucene/ext/boost/config/stdlib/modena.hpp
+include/CLucene/ext/boost/config/stdlib/msl.hpp
+include/CLucene/ext/boost/config/stdlib/roguewave.hpp
+include/CLucene/ext/boost/config/stdlib/sgi.hpp
+include/CLucene/ext/boost/config/stdlib/stlport.hpp
+include/CLucene/ext/boost/config/stdlib/vacpp.hpp
+include/CLucene/ext/boost/config/suffix.hpp
+include/CLucene/ext/boost/config/user.hpp
+include/CLucene/ext/boost/config/warning_disable.hpp
+include/CLucene/ext/boost/current_function.hpp
+include/CLucene/ext/boost/detail/algorithm.hpp
+include/CLucene/ext/boost/detail/allocator_utilities.hpp
+include/CLucene/ext/boost/detail/atomic_count.hpp
+include/CLucene/ext/boost/detail/binary_search.hpp
+include/CLucene/ext/boost/detail/call_traits.hpp
+include/CLucene/ext/boost/detail/catch_exceptions.hpp
+include/CLucene/ext/boost/detail/compressed_pair.hpp
+include/CLucene/ext/boost/detail/container_fwd.hpp
+include/CLucene/ext/boost/detail/dynamic_bitset.hpp
+include/CLucene/ext/boost/detail/endian.hpp
+include/CLucene/ext/boost/detail/has_default_constructor.hpp
+include/CLucene/ext/boost/detail/identifier.hpp
+include/CLucene/ext/boost/detail/indirect_traits.hpp
+include/CLucene/ext/boost/detail/interlocked.hpp
+include/CLucene/ext/boost/detail/is_function_ref_tester.hpp
+include/CLucene/ext/boost/detail/is_incrementable.hpp
+include/CLucene/ext/boost/detail/is_xxx.hpp
+include/CLucene/ext/boost/detail/iterator.hpp
+include/CLucene/ext/boost/detail/lcast_precision.hpp
+include/CLucene/ext/boost/detail/lightweight_mutex.hpp
+include/CLucene/ext/boost/detail/lightweight_test.hpp
+include/CLucene/ext/boost/detail/lightweight_thread.hpp
+include/CLucene/ext/boost/detail/limits.hpp
+include/CLucene/ext/boost/detail/named_template_params.hpp
+include/CLucene/ext/boost/detail/no_exceptions_support.hpp
+include/CLucene/ext/boost/detail/none_t.hpp
+include/CLucene/ext/boost/detail/numeric_traits.hpp
+include/CLucene/ext/boost/detail/ob_call_traits.hpp
+include/CLucene/ext/boost/detail/ob_compressed_pair.hpp
+include/CLucene/ext/boost/detail/quick_allocator.hpp
+include/CLucene/ext/boost/detail/reference_content.hpp
+include/CLucene/ext/boost/detail/scoped_enum_emulation.hpp
+include/CLucene/ext/boost/detail/select_type.hpp
+include/CLucene/ext/boost/detail/sp_typeinfo.hpp
+include/CLucene/ext/boost/detail/templated_streams.hpp
+include/CLucene/ext/boost/detail/utf8_codecvt_facet.hpp
+include/CLucene/ext/boost/detail/workaround.hpp
+include/CLucene/ext/boost/exception/all.hpp
+include/CLucene/ext/boost/exception/current_exception_cast.hpp
+include/CLucene/ext/boost/exception/detail/attribute_noreturn.hpp
+include/CLucene/ext/boost/exception/detail/error_info_impl.hpp
+include/CLucene/ext/boost/exception/detail/exception_ptr.hpp
+include/CLucene/ext/boost/exception/detail/is_output_streamable.hpp
+include/CLucene/ext/boost/exception/detail/object_hex_dump.hpp
+include/CLucene/ext/boost/exception/detail/type_info.hpp
+include/CLucene/ext/boost/exception/diagnostic_information.hpp
+include/CLucene/ext/boost/exception/enable_current_exception.hpp
+include/CLucene/ext/boost/exception/enable_error_info.hpp
+include/CLucene/ext/boost/exception/errinfo_api_function.hpp
+include/CLucene/ext/boost/exception/errinfo_at_line.hpp
+include/CLucene/ext/boost/exception/errinfo_errno.hpp
+include/CLucene/ext/boost/exception/errinfo_file_handle.hpp
+include/CLucene/ext/boost/exception/errinfo_file_name.hpp
+include/CLucene/ext/boost/exception/errinfo_file_open_mode.hpp
+include/CLucene/ext/boost/exception/errinfo_nested_exception.hpp
+include/CLucene/ext/boost/exception/errinfo_type_info_name.hpp
+include/CLucene/ext/boost/exception/error_info.hpp
+include/CLucene/ext/boost/exception/exception.hpp
+include/CLucene/ext/boost/exception/get_error_info.hpp
+include/CLucene/ext/boost/exception/info.hpp
+include/CLucene/ext/boost/exception/info_tuple.hpp
+include/CLucene/ext/boost/exception/to_string.hpp
+include/CLucene/ext/boost/exception/to_string_stub.hpp
+include/CLucene/ext/boost/memory_order.hpp
+include/CLucene/ext/boost/shared_ptr.hpp
+include/CLucene/ext/boost/smart_ptr/bad_weak_ptr.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_gcc.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_gcc_x86.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_pthreads.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_solaris.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_sync.hpp
+include/CLucene/ext/boost/smart_ptr/detail/atomic_count_win32.hpp
+include/CLucene/ext/boost/smart_ptr/detail/lightweight_mutex.hpp
+include/CLucene/ext/boost/smart_ptr/detail/lwm_nop.hpp
+include/CLucene/ext/boost/smart_ptr/detail/lwm_pthreads.hpp
+include/CLucene/ext/boost/smart_ptr/detail/lwm_win32_cs.hpp
+include/CLucene/ext/boost/smart_ptr/detail/operator_bool.hpp
+include/CLucene/ext/boost/smart_ptr/detail/quick_allocator.hpp
+include/CLucene/ext/boost/smart_ptr/detail/shared_array_nmt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/shared_count.hpp
+include/CLucene/ext/boost/smart_ptr/detail/shared_ptr_nmt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_convertible.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_acc_ia64.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_cw_ppc.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_cw_x86.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_gcc_ia64.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_gcc_mips.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_gcc_ppc.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_gcc_sparc.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_nt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_pt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_solaris.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_spin.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_sync.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_base_w32.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_counted_impl.hpp
+include/CLucene/ext/boost/smart_ptr/detail/sp_has_sync.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_gcc_arm.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_nt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_pool.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_pt.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_sync.hpp
+include/CLucene/ext/boost/smart_ptr/detail/spinlock_w32.hpp
+include/CLucene/ext/boost/smart_ptr/detail/yield_k.hpp
+include/CLucene/ext/boost/smart_ptr/enable_shared_from_this.hpp
+include/CLucene/ext/boost/smart_ptr/enable_shared_from_this2.hpp
+include/CLucene/ext/boost/smart_ptr/intrusive_ptr.hpp
+include/CLucene/ext/boost/smart_ptr/make_shared.hpp
+include/CLucene/ext/boost/smart_ptr/scoped_array.hpp
+include/CLucene/ext/boost/smart_ptr/scoped_ptr.hpp
+include/CLucene/ext/boost/smart_ptr/shared_array.hpp
+include/CLucene/ext/boost/smart_ptr/shared_ptr.hpp
+include/CLucene/ext/boost/smart_ptr/weak_ptr.hpp
+include/CLucene/ext/boost/throw_exception.hpp
+include/CLucene/ext/boost/version.hpp
+include/CLucene/highlighter/Encoder.h
+include/CLucene/highlighter/Formatter.h
+include/CLucene/highlighter/Fragmenter.h
+include/CLucene/highlighter/HighlightScorer.h
+include/CLucene/highlighter/Highlighter.h
+include/CLucene/highlighter/QueryScorer.h
+include/CLucene/highlighter/QueryTermExtractor.h
+include/CLucene/highlighter/Scorer.h
+include/CLucene/highlighter/SimpleFragmenter.h
+include/CLucene/highlighter/SimpleHTMLEncoder.h
+include/CLucene/highlighter/SimpleHTMLFormatter.h
+include/CLucene/highlighter/TextFragment.h
+include/CLucene/highlighter/TokenGroup.h
+include/CLucene/highlighter/TokenSources.h
+include/CLucene/highlighter/WeightedTerm.h
+include/CLucene/index/DirectoryIndexReader.h
+include/CLucene/index/IndexDeletionPolicy.h
 include/CLucene/index/IndexModifier.h
 include/CLucene/index/IndexReader.h
 include/CLucene/index/IndexWriter.h
+include/CLucene/index/MergePolicy.h
+include/CLucene/index/MergeScheduler.h
 include/CLucene/index/MultiReader.h
-include/CLucene/index/SegmentHeader.h
-include/CLucene/index/SegmentInfos.h
-include/CLucene/index/SegmentMergeInfo.h
-include/CLucene/index/SegmentMergeQueue.h
-include/CLucene/index/SegmentMerger.h
-include/CLucene/index/SegmentTermEnum.h
+include/CLucene/index/MultipleTermPositions.h
+include/CLucene/index/Payload.h
 include/CLucene/index/Term.h
-include/CLucene/index/TermInfo.h
-include/CLucene/index/TermInfosReader.h
-include/CLucene/index/TermInfosWriter.h
 include/CLucene/index/TermVector.h
 include/CLucene/index/Terms.h
-include/CLucene/queryParser/Lexer.h
 include/CLucene/queryParser/MultiFieldQueryParser.h
 include/CLucene/queryParser/QueryParser.h
-include/CLucene/queryParser/QueryParserBase.h
+include/CLucene/queryParser/QueryParserConstants.h
+include/CLucene/queryParser/QueryParserTokenManager.h
 include/CLucene/queryParser/QueryToken.h
-include/CLucene/queryParser/TokenList.h
+include/CLucene/queryParser/legacy/MultiFieldQueryParser.h
+include/CLucene/queryParser/legacy/QueryParser.h
+include/CLucene/queryParser/legacy/QueryToken.h
 include/CLucene/search/BooleanClause.h
 include/CLucene/search/BooleanQuery.h
-include/CLucene/search/BooleanScorer.h
+include/CLucene/search/CachingSpanFilter.h
 include/CLucene/search/CachingWrapperFilter.h
 include/CLucene/search/ChainedFilter.h
 include/CLucene/search/Compare.h
-include/CLucene/search/ConjunctionScorer.h
+include/CLucene/search/ConstantScoreQuery.h
 include/CLucene/search/DateFilter.h
-include/CLucene/search/ExactPhraseScorer.h
 include/CLucene/search/Explanation.h
 include/CLucene/search/FieldCache.h
-include/CLucene/search/FieldCacheImpl.h
 include/CLucene/search/FieldDoc.h
-include/CLucene/search/FieldDocSortedHitQueue.h
 include/CLucene/search/FieldSortedHitQueue.h
 include/CLucene/search/Filter.h
+include/CLucene/search/FilterResultCache.h
 include/CLucene/search/FilteredTermEnum.h
 include/CLucene/search/FuzzyQuery.h
-include/CLucene/search/HitQueue.h
+include/CLucene/search/Hits.h
 include/CLucene/search/IndexSearcher.h
+include/CLucene/search/MatchAllDocsQuery.h
+include/CLucene/search/MultiPhraseQuery.h
 include/CLucene/search/MultiSearcher.h
 include/CLucene/search/MultiTermQuery.h
-include/CLucene/search/PhrasePositions.h
 include/CLucene/search/PhraseQuery.h
-include/CLucene/search/PhraseQueue.h
-include/CLucene/search/PhraseScorer.h
 include/CLucene/search/PrefixQuery.h
+include/CLucene/search/Query.h
 include/CLucene/search/QueryFilter.h
 include/CLucene/search/RangeFilter.h
 include/CLucene/search/RangeQuery.h
 include/CLucene/search/Scorer.h
+include/CLucene/search/ScorerDocQueue.h
 include/CLucene/search/SearchHeader.h
+include/CLucene/search/Searchable.h
 include/CLucene/search/Similarity.h
-include/CLucene/search/SloppyPhraseScorer.h
 include/CLucene/search/Sort.h
+include/CLucene/search/SpanFilter.h
+include/CLucene/search/SpanFilterResult.h
+include/CLucene/search/SpanQueryFilter.h
 include/CLucene/search/TermQuery.h
-include/CLucene/search/TermScorer.h
 include/CLucene/search/WildcardQuery.h
 include/CLucene/search/WildcardTermEnum.h
+include/CLucene/search/spans/SpanFirstQuery.h
+include/CLucene/search/spans/SpanNearQuery.h
+include/CLucene/search/spans/SpanNotQuery.h
+include/CLucene/search/spans/SpanOrQuery.h
+include/CLucene/search/spans/SpanQuery.h
+include/CLucene/search/spans/SpanScorer.h
+include/CLucene/search/spans/SpanTermQuery.h
+include/CLucene/search/spans/SpanWeight.h
+include/CLucene/search/spans/Spans.h
+include/CLucene/snowball/SnowballAnalyzer.h
+include/CLucene/snowball/SnowballFilter.h
+include/CLucene/snowball/include/libstemmer.h
+include/CLucene/snowball/libstemmer.h
+include/CLucene/snowball/libstemmer/modules.h
+include/CLucene/snowball/runtime/api.h
+include/CLucene/snowball/runtime/header.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_danish.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_dutch.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_english.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_finnish.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_french.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_german.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_italian.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_norwegian.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_porter.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_portuguese.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_spanish.h
+include/CLucene/snowball/src_c/stem_ISO_8859_1_swedish.h
+include/CLucene/snowball/src_c/stem_KOI8_R_russian.h
+include/CLucene/snowball/src_c/stem_UTF_8_danish.h
+include/CLucene/snowball/src_c/stem_UTF_8_dutch.h
+include/CLucene/snowball/src_c/stem_UTF_8_english.h
+include/CLucene/snowball/src_c/stem_UTF_8_finnish.h
+include/CLucene/snowball/src_c/stem_UTF_8_french.h
+include/CLucene/snowball/src_c/stem_UTF_8_german.h
+include/CLucene/snowball/src_c/stem_UTF_8_italian.h
+include/CLucene/snowball/src_c/stem_UTF_8_norwegian.h
+include/CLucene/snowball/src_c/stem_UTF_8_porter.h
+include/CLucene/snowball/src_c/stem_UTF_8_portuguese.h
+include/CLucene/snowball/src_c/stem_UTF_8_russian.h
+include/CLucene/snowball/src_c/stem_UTF_8_spanish.h
+include/CLucene/snowball/src_c/stem_UTF_8_swedish.h
 include/CLucene/store/Directory.h
 include/CLucene/store/FSDirectory.h
 include/CLucene/store/IndexInput.h
 include/CLucene/store/IndexOutput.h
-include/CLucene/store/InputStream.h
 include/CLucene/store/Lock.h
-include/CLucene/store/OutputStream.h
+include/CLucene/store/LockFactory.h
 include/CLucene/store/RAMDirectory.h
-include/CLucene/store/TransactionalRAMDirectory.h
-include/CLucene/util/Arrays.h
+include/CLucene/util/Array.h
 include/CLucene/util/BitSet.h
+include/CLucene/util/CLStreams.h
 include/CLucene/util/Equators.h
-include/CLucene/util/FastCharStream.h
-include/CLucene/util/MD5Digester.h
-include/CLucene/util/Misc.h
 include/CLucene/util/PriorityQueue.h
 include/CLucene/util/Reader.h
-include/CLucene/util/StringBuffer.h
-include/CLucene/util/StringIntern.h
-include/CLucene/util/ThreadLocal.h
 include/CLucene/util/VoidList.h
 include/CLucene/util/VoidMap.h
-include/CLucene/util/bufferedstream.h
-include/CLucene/util/dirent.h
-include/CLucene/util/fileinputstream.h
-include/CLucene/util/googlesparsemap.h
-include/CLucene/util/inputstreambuffer.h
-include/CLucene/util/jstreamsconfig.h
-include/CLucene/util/streambase.h
-include/CLucene/util/stringreader.h
-include/CLucene/util/subinputstream.h
-lib/CLucene/clucene-config.h
-lib/libclucene.a
-lib/libclucene.la
-lib/libclucene.so
-lib/libclucene.so.0
-@dirrmtry lib/CLucene
-@dirrmtry include/CLucene/util
-@dirrmtry include/CLucene/store
-@dirrmtry include/CLucene/search
-@dirrmtry include/CLucene/queryParser
-@dirrmtry include/CLucene/index
-@dirrmtry include/CLucene/document
-@dirrmtry include/CLucene/debug
-@dirrmtry include/CLucene/config
-@dirrmtry include/CLucene/analysis/standard
-@dirrmtry include/CLucene/analysis
-@dirrmtry include/CLucene
+include/CLucene/util/arrayinputstream.h
+include/CLucene/util/byteinputstream.h
+include/CLucene/util/gzipcompressstream.h
+include/CLucene/util/gzipinputstream.h
+include/CLucene/util/streamarray.h
+lib/CLucene/CLuceneConfig.cmake
+lib/libclucene-contribs-lib.so
+lib/libclucene-contribs-lib.so.1
+lib/libclucene-contribs-lib.so.2.3.3.4
+lib/libclucene-core.so
+lib/libclucene-core.so.1
+lib/libclucene-core.so.2.3.3.4
+lib/libclucene-shared.so
+lib/libclucene-shared.so.1
+lib/libclucene-shared.so.2.3.3.4
+libdata/pkgconfig/libclucene-core.pc
+@dirrm lib/CLucene
+@dirrm include/CLucene/util
+@dirrm include/CLucene/store
+@dirrm include/CLucene/snowball/src_c
+@dirrm include/CLucene/snowball/runtime
+@dirrm include/CLucene/snowball/libstemmer
+@dirrm include/CLucene/snowball/include
+@dirrm include/CLucene/snowball
+@dirrm include/CLucene/search/spans
+@dirrm include/CLucene/search
+@dirrm include/CLucene/queryParser/legacy
+@dirrm include/CLucene/queryParser
+@dirrm include/CLucene/index
+@dirrm include/CLucene/highlighter
+@dirrm include/CLucene/ext/boost/smart_ptr/detail
+@dirrm include/CLucene/ext/boost/smart_ptr
+@dirrm include/CLucene/ext/boost/exception/detail
+@dirrm include/CLucene/ext/boost/exception
+@dirrm include/CLucene/ext/boost/detail
+@dirrm include/CLucene/ext/boost/config/stdlib
+@dirrm include/CLucene/ext/boost/config/platform
+@dirrm include/CLucene/ext/boost/config/no_tr1
+@dirrm include/CLucene/ext/boost/config/compiler
+@dirrm include/CLucene/ext/boost/config/abi
+@dirrm include/CLucene/ext/boost/config
+@dirrm include/CLucene/ext/boost
+@dirrm include/CLucene/ext
+@dirrm include/CLucene/document
+@dirrm include/CLucene/debug
+@dirrm include/CLucene/analysis/standard
+@dirrm include/CLucene/analysis/de
+@dirrm include/CLucene/analysis/cjk
+@dirrm include/CLucene/analysis
+@dirrm include/CLucene

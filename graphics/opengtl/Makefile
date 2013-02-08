@@ -12,7 +12,7 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.1.so:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.1.so:${PORTSDIR}/devel/llvm31
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES?=	www ruby
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
-		http://www.tdiary.org/download/
+MASTER_SITES=	http://www.tdiary.org/download/ \
+		SF/${PORTNAME}/${PORTNAME}/
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
@@ -28,8 +28,7 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/migrate.rb \
 			misc/plugin/amazon/amazonimg.rb \
 			misc/plugin/squeeze.rb \
-			misc/plugin/xmlrpc/xmlrpc.rb \
-			misc/standalone_cgi/bin/server
+			misc/plugin/xmlrpc/xmlrpc.rb
 
 HTML=	HOWTO-authenticate-in-rack.html HOWTO-make-io.html \
 	HOWTO-make-plugin.html HOWTO-make-theme.html \
@@ -61,23 +60,12 @@ TDIARY_LANG=	en
 
 REINPLACE_ARGS=	-i ''
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NORA
+OPTIONS_DEFAULT=	NORA
 
-.if ${RUBY_VER} == 1.9
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.9.1 or later
-.endif
-.endif
+NORA_DESC=	Use Nora
 
-.if ${RUBY_VER} == 1.8
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.8.5 or later
-.endif
-RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
-.if !defined(WITHOUT_TDIARY_NORA)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
-.endif
-.endif
+.include <bsd.port.options.mk>
 
 pre-patch:
 	@${RM} ${WRKSRC}/.gitignore
@@ -88,16 +76,18 @@ pre-patch:
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
-	@${RM} -r ${WRKSRC}/.bundle
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.37
+	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.38
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
+
+post-patch:
+	@${RUBY} -i -pe "sub %r|((\s*)require 'json')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/tdiary.rb
 
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
@@ -115,7 +105,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 	@${ECHO_CMD} bin/${TDIARY_SCRIPT} >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -124,5 +114,23 @@ post-install:
 x-generate-plist:
 	${FIND} ${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
 	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.9.1 or later
+.endif
+.endif
+
+.if ${RUBY_VER} == 1.8
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.8.5 or later
+.endif
+RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
+.if ${PORT_OPTIONS:MNORA}
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
+.endif
+.endif
 
 .include <bsd.port.post.mk>

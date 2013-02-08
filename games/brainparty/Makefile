@@ -1,9 +1,5 @@
-# New ports collection makefile for:	brainparty
-# Date created:		04 Apr 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	brainparty
 PORTVERSION=	0.5
@@ -25,6 +21,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	CREDITS README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|Content/|${DATADIR}/|' ${WRKSRC}/*.cpp
 
@@ -32,8 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Content/* ${DATADIR}/
-.if !defined(NOPORTDOCS)
-post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

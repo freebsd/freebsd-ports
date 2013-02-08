@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sentinel
-# Date created:		14 May 2002
-# Whom:			Peter Hollaubek <fifteen@inext.hu>
-#
+# Created by: Peter Hollaubek <fifteen@inext.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	sentinel
 PORTVERSION=	1.7b
@@ -14,7 +10,7 @@ MASTER_SITES=	SF/smfilter/${PORTNAME}/Sentinel%20${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sendmail milter API implementation
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

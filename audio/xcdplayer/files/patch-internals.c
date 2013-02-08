@@ -26,6 +26,24 @@
  
  int
  cdrom_get_curtime() {
+@@ -46,7 +50,7 @@
+ 
+ 	if (cdrom_open() == -1) {
+ 		debug_printf(1, "cdrom_get_curtime: error from cdrom_open\n");
+-		return;
++		return 0;
+ 	}
+ 
+ 	switch (cdrom_status()) {
+@@ -54,7 +58,7 @@
+ 	case CDROM_PLAYING:
+ 	    if (cdrom_get_curmsf(&curmsf) == -1) {
+ 		debug_printf(1, "get_curtime: error reading location\n");
+-		return;
++		return 0;
+ 	    }
+ 
+ 	    if (((curtrack = cdrom_get_curtrack()) == -1) ||
 @@ -76,6 +80,7 @@
  	}
  }

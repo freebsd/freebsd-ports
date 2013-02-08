@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: mediatomb
-# REQUIRE: DEAMON
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 
 # Define these mediatomb_* variables in one of these files:

@@ -65,10 +65,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.2/changesets
-PATCHFILES=	squid-3.2-11740.patch \
-		squid-3.2-11741.patch \
-		squid-3.2-11742.patch \
-		squid-3.2-11743.patch
+PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -78,7 +75,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid32
 
-SQUID_STABLE_VER=	5
+SQUID_STABLE_VER=	7
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -241,6 +238,10 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 1000024
+USE_GCC=any
+.endif
+
 # Authentication methods and modules:
 
 basic_auth=	DB MSNT MSNT-multi-domain NCSA PAM POP3 RADIUS \
@@ -337,8 +338,7 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
 # e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-pthread
 .else
 CONFIGURE_ARGS+=	--without-pthreads
 .endif

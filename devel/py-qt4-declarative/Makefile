@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-qt4-declarative
-# Date created:				2010-11-05
-# Whom:					Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	declarative
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
@@ -24,35 +19,38 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	declarative qmake_build moc_build
 
-OPTIONS=	API	"Install QtDeclarative API for QScintilla2" on
+OPTIONS_DEFINE=	API
+OPTIONS_DEFAULT=API
+API_DESC=	Install QtDeclarative API for QScintilla2
 
-PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
+PATCHDIR=	${.CURDIR}/../py-qt4-core/files
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
-CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-p ${PREFIX}/${QT_PLUGINDIR_REL} \
 		-q ${QMAKE} \
 		--confirm-license \
 		--sipdir ${SIPDIR} \
-		--enable QtDeclarative
+		--enable QtDeclarative \
+		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-.if defined(WITH_DEBUG)
-ARGS+=		--debug --trace
-.endif
-
-.include "../py-sip/files/bsd.pyqt.mk"
+.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_API)
+.if empty(PORT_OPTIONS:MAPI)
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS+=	qscintilla2:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
+.endif
+
+.if defined(WITH_DEBUG)
+ARGS+=		--debug --trace
 .endif
 
 do-configure:
@@ -60,10 +58,10 @@ do-configure:
 		${PYTHON_CMD} configure.py ${ARGS}
 
 post-configure:
-	${REINPLACE_CMD} -e 's|mkspecs/freebsd-g++|share/qt4/mkspecs/freebsd-g++|'\
-		-e 's|CC = cc|CC = ${CC}|'\
-		-e 's|CXX = c++|CXX = ${CXX}|'\
-		-e 's|LINK = c++|LINK = ${CXX}|'\
-		${WRKSRC}/QtDeclarative/Makefile
+	${REINPLACE_CMD} -e 's|^CC.*|CC = ${CC}|' \
+		-e 's|^CXX.*|CXX = ${CXX}|' \
+		-e 's|^LINK.*|LINK = ${CXX}|' \
+		-e 's|^CFLAGS|CXXFLAGS|' \
+		${WRKSRC}/qpy/QtDeclarative/Makefile
 
 .include <bsd.port.mk>

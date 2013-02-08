@@ -263,6 +263,7 @@ share/doc/HTML/en/konqueror/filemanager.docbook
 share/doc/HTML/en/konqueror/folders.png
 share/doc/HTML/en/konqueror/format-font-size-less.png
 share/doc/HTML/en/konqueror/format-font-size-more.png
+share/doc/HTML/en/konqueror/grouping-view.png
 share/doc/HTML/en/konqueror/index.cache.bz2
 share/doc/HTML/en/konqueror/index.docbook
 share/doc/HTML/en/konqueror/introduction.docbook
@@ -388,7 +389,7 @@ share/kde4/servicetypes/uasprovider.desktop
 @dirrmtry share/apps/kwebkitpart/kpartplugins
 @dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/konqueror/profiles
-@dirrm share/apps/konqueror/pics
+@dirrmtry share/apps/konqueror/pics
 @dirrm share/apps/konqueror/opensearch
 @dirrm share/apps/konqueror/kpartplugins
 @dirrm share/apps/konqueror/icons/oxygen/scalable/actions

@@ -1,4 +1,6 @@
-============================================================
-You'll have to install databases/virtuoso to use soprano's 
-virtuoso backend.
-============================================================
+======================================================================
+
+You'll have to install databases/virtuoso to use Soprano's Virtuoso
+backend.
+
+======================================================================

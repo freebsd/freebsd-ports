@@ -1,4 +1,4 @@
-# Created by: Trevor Johnson
+# Created by: trevor
 # $FreeBSD$
 
 PORTNAME=	autozen

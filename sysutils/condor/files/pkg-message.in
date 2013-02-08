@@ -1,7 +1,14 @@
 
 Sample condor_config and condor_config.local files are available in
-%%ETCDIR%%.  Copy them to %%PREFIX%%/etc and edit to taste
+%%ETCDIR%%.  Copy them to %%PREFIX%%/etc and edit condor_config.local to taste
 to get started.
+
+Settings in condor_config.local override the defaults in condor_config.
+Use condor_config as a reference, and make all changes to condor_config.local.
+
+Unless this is the central manager host, you will need to at least change
+CONDOR_HOST.  Also ensure that DAEMON_LIST and ALLOW_* are appropriate for
+this host.
 
 To start the condor daemons, add 'condor_enable="YES"' to
 

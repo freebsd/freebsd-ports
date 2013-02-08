@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxygen
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-gtk2/${PORTVERSION}/src/
@@ -13,12 +13,13 @@ DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Oxygen-Gtk engine and theme
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 pkgconfig
+USE_GNOME=	gtk20
 USE_CMAKE=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

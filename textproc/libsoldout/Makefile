@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsoldout
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
@@ -29,6 +29,7 @@ BROKEN=		does not compile on 6.X
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoldout.so.1 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/mkd2html ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2latex ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mkd2man ${PREFIX}/bin
 	cd ${PREFIX}/lib && ${LN} -s libsoldout.so.1 libsoldout.so
 	${MKDIR} ${PREFIX}/include/soldout

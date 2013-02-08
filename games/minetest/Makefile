@@ -1,15 +1,9 @@
-# New ports collection makefile for:	minetest
-# Date created:		19 Jun 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	minetest
-DISTVERSION=	0.4.dev-20120122-1
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An Infiniminer/Minecraft inspired game
@@ -17,39 +11,42 @@ COMMENT=	An Infiniminer/Minecraft inspired game
 LIB_DEPENDS=	Irrlicht.1:${PORTSDIR}/x11-toolkits/irrlicht \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
-USE_CMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+LICENSE=	LGPL21
 
-WRKSRC=		${WRKDIR}/celeron55-minetest-cb05a28
+USE_GITHUB=	yes
+GH_ACCOUNT=	celeron55
+GH_TAGNAME=	0.4.4
+GH_COMMIT=	ab06fca
+
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
+		-DCUSTOM_EXAMPLE_CONF_DIR="${EXAMPLESDIR}"
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS=	CLIENT "Build client" on \
-		SERVER "Build server" on \
-		OPTIMIZED_CFLAGS "Enabled additional optimizations" on
+MAN6=		minetest.6 minetestserver.6
+
+OPTIONS_DEFINE=	CLIENT SERVER SOUND NLS DOCS EXAMPLES
+OPTIONS_DEFAULT=CLIENT SERVER SOUND NLS DOCS EXAMPLES
+CLIENT_DESC=	Build client
+SERVER_DESC=	Build server
+SOUND_DESC=	Enable sound
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CMAKE_ARGS+=	-DENABLE_GETTEXT:BOOL=NO
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
+CMAKE_ARGS+=	-DENABLE_GETTEXT:BOOL=YES
 USE_GETTEXT=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_GETTEXT:BOOL=NO
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITH_DEBUG)
-CFLAGS+=	-DNDEBUG
-CXXFLAGS+=	-DNDEBUG
-. if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -funroll-loops
-CXXFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -funroll-loops
-. endif
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		gl
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
@@ -60,7 +57,7 @@ CMAKE_ARGS+=	-DBUILD_CLIENT=0
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 CMAKE_ARGS+=	-DBUILD_SERVER=1
 PLIST_SUB+=	SERVER=""
 .else
@@ -68,23 +65,25 @@ CMAKE_ARGS+=	-DBUILD_SERVER=0
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MSOUND}
+USE_OPENAL=	yes
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.else
+CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		${WRKSRC}/src/porting.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/FindIrrlicht.cmake
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/src/CMakeLists.txt
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/changelog.txt ${DOCSDIR}/
+#	@${REINPLACE_CMD} -e 's|share/man|man|; /EXAMPLE_CONF_DIR/ s|..DOCDIR.|"${EXAMPLESDIR}"|' \
+#		${WRKSRC}/CMakeLists.txt
+.if ! ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e '/install.*DESTINATION.*DOCDIR/I d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/minetest.conf.example ${EXAMPLESDIR}/
+.if ! ${PORT_OPTIONS:MEXAMPLES}
+	@${REINPLACE_CMD} -e '/install.*DESTINATION.*EXAMPLE_CONF_DIR/I d' ${WRKSRC}/CMakeLists.txt
 .endif
 
 .include <bsd.port.mk>

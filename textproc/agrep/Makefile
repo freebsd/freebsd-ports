@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  agrep
-# Date created:			  Fri May 23, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	agrep
 PORTVERSION=	2.04

@@ -38,122 +38,81 @@ bin/ktuberling
 bin/kubrick
 bin/lskat
 bin/palapeli
-include/KDE/KCardDialog
-include/KDE/KChat
-include/KDE/KChatBase
-include/KDE/KChatDialog
 include/KDE/KExtHighscore
-include/KDE/KGame/KGame
-include/KDE/KGame/KGameChat
-include/KDE/KGame/KGameConnectDialog
-include/KDE/KGame/KGameDebugDialog
-include/KDE/KGame/KGameDialog
-include/KDE/KGame/KGameDialogConfig
-include/KDE/KGame/KGameError
-include/KDE/KGame/KGameErrorDialog
-include/KDE/KGame/KGameIO
-include/KDE/KGame/KGameMessage
-include/KDE/KGame/KGameNetwork
-include/KDE/KGame/KGameProcess
-include/KDE/KGame/KGameProperty
-include/KDE/KGame/KGamePropertyArray
-include/KDE/KGame/KGamePropertyHandler
-include/KDE/KGame/KGameSequence
-include/KDE/KGame/KGameVersion
-include/KDE/KGame/KMessageClient
-include/KDE/KGame/KMessageIO
-include/KDE/KGame/KMessageServer
-include/KDE/KGame/KPlayer
-include/KDE/KGameCanvas
 include/KDE/KGameClock
-include/KDE/KGameDifficulty
-include/KDE/KGameLCD
-include/KDE/KGameMisc
 include/KDE/KGamePopupItem
-include/KDE/KGameProgress
 include/KDE/KGameRenderedItem
 include/KDE/KGameRenderedObjectItem
 include/KDE/KGameRenderer
 include/KDE/KGameRendererClient
-include/KDE/KGameSvgDigits
-include/KDE/KGameSvgDocument
-include/KDE/KGameTheme
-include/KDE/KGameThemeSelector
-include/KDE/KGrid2D
 include/KDE/KHighscore
 include/KDE/KScoreDialog
 include/KDE/KStandardGameAction
+include/KDE/KgAudioScene
+include/KDE/KgDifficulty
+include/KDE/KgSound
+include/KDE/KgTheme
+include/KDE/KgThemeProvider
+include/KDE/KgThemeSelector
 include/Pala/Slicer
 include/Pala/SlicerJob
 include/Pala/SlicerMode
 include/Pala/SlicerProperty
 include/Pala/SlicerPropertySet
-include/cardcache.h
-include/carddeckinfo.h
-include/digits/kgamesvgdigits.h
 include/highscore/kexthighscore.h
 include/highscore/kexthighscore_item.h
 include/highscore/khighscore.h
 include/highscore/kscoredialog.h
-include/kcarddialog.h
-include/kchat.h
-include/kchatbase.h
-include/kchatbaseitemdelegate.h
-include/kchatbasemodel.h
-include/kchatdialog.h
-include/kgame/kgame.h
-include/kgame/kgamechat.h
-include/kgame/kgameconnectdialog.h
-include/kgame/kgamedebugdialog.h
-include/kgame/kgamedialog.h
-include/kgame/kgamedialogconfig.h
-include/kgame/kgameerror.h
-include/kgame/kgameerrordialog.h
-include/kgame/kgameio.h
-include/kgame/kgamemessage.h
-include/kgame/kgamenetwork.h
-include/kgame/kgameprocess.h
-include/kgame/kgameproperty.h
-include/kgame/kgamepropertyarray.h
-include/kgame/kgamepropertyhandler.h
-include/kgame/kgamesequence.h
-include/kgame/kgameversion.h
-include/kgame/kmessageclient.h
-include/kgame/kmessageio.h
-include/kgame/kmessageserver.h
-include/kgame/kplayer.h
-include/kgamecanvas.h
 include/kgameclock.h
-include/kgamedifficulty.h
-include/kgamelcd.h
-include/kgamemisc.h
 include/kgamepopupitem.h
-include/kgameprogress.h
 include/kgamerendereditem.h
 include/kgamerenderedobjectitem.h
 include/kgamerenderer.h
 include/kgamerendererclient.h
-include/kgamesvgdocument.h
-include/kgametheme.h
-include/kgamethemeselector.h
-include/kggzgames/kggzgames_export.h
-include/kggzgames/kggzrankingsdialog.h
-include/kggzgames/kggzseatsdialog.h
-include/kggzmod/event.h
-include/kggzmod/kggzmod_export.h
-include/kggzmod/module.h
-include/kggzmod/player.h
-include/kggzmod/request.h
-include/kggzmod/statistics.h
-include/kggznet/kggznet_export.h
-include/kggznet/kggzpacket.h
-include/kggznet/kggzraw.h
-include/kgrid2d.h
+include/kgaudioscene.h
+include/kgdifficulty.h
+include/kgsound.h
+include/kgtheme.h
+include/kgthemeprovider.h
+include/kgthemeselector.h
 include/kmahjonggbackground.h
 include/kmahjonggconfigdialog.h
 include/kmahjonggtileset.h
 include/kstandardgameaction.h
+include/libkdegames_capabilities.h
 include/libkdegames_export.h
+include/libkdegamesprivate/kchat.h
+include/libkdegamesprivate/kchatbase.h
+include/libkdegamesprivate/kchatbaseitemdelegate.h
+include/libkdegamesprivate/kchatbasemodel.h
+include/libkdegamesprivate/kchatdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgameconnectdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedebugdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedialogconfig.h
+include/libkdegamesprivate/kgame/dialogs/kgameerrordialog.h
+include/libkdegamesprivate/kgame/kgame.h
+include/libkdegamesprivate/kgame/kgamechat.h
+include/libkdegamesprivate/kgame/kgameerror.h
+include/libkdegamesprivate/kgame/kgameio.h
+include/libkdegamesprivate/kgame/kgamemessage.h
+include/libkdegamesprivate/kgame/kgamenetwork.h
+include/libkdegamesprivate/kgame/kgameprocess.h
+include/libkdegamesprivate/kgame/kgameproperty.h
+include/libkdegamesprivate/kgame/kgamepropertyarray.h
+include/libkdegamesprivate/kgame/kgamepropertyhandler.h
+include/libkdegamesprivate/kgame/kgamesequence.h
+include/libkdegamesprivate/kgame/kgameversion.h
+include/libkdegamesprivate/kgame/kmessageclient.h
+include/libkdegamesprivate/kgame/kmessageio.h
+include/libkdegamesprivate/kgame/kmessageserver.h
+include/libkdegamesprivate/kgame/kplayer.h
+include/libkdegamesprivate/kgamecanvas.h
+include/libkdegamesprivate/kgamedifficulty.h
+include/libkdegamesprivate/kgamesvgdocument.h
+include/libkdegamesprivate/kgametheme.h
+include/libkdegamesprivate/kgamethemeselector.h
+include/libkdegamesprivate/libkdegamesprivate_export.h
 include/libkmahjongg_export.h
 include/libpala/libpalamacros.h
 include/libpala/slicer.h
@@ -161,6 +120,10 @@ include/libpala/slicerjob.h
 include/libpala/slicermode.h
 include/libpala/slicerproperty.h
 include/libpala/slicerpropertyset.h
+lib/cmake/KDEGames/KDEGamesConfig.cmake
+lib/cmake/KDEGames/KDEGamesConfigVersion.cmake
+lib/cmake/KDEGames/KDEGamesLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KDEGames/KDEGamesLibraryDepends.cmake
 lib/kde4/palapeli_goldbergslicer.so
 lib/kde4/palapeli_jigsawslicer.so
 lib/kde4/palapeli_rectslicer.so
@@ -170,17 +133,11 @@ lib/libiris_ksirk.so.2
 lib/libiris_ksirk.so.2.0.0
 lib/libkcardgame.so
 lib/libkdegames.so
-lib/libkdegames.so.5
-lib/libkdegames.so.5.1.0
-lib/libkggzgames.so
-lib/libkggzgames.so.5
-lib/libkggzgames.so.5.0.1
-lib/libkggzmod.so
-lib/libkggzmod.so.5
-lib/libkggzmod.so.5.0.1
-lib/libkggznet.so
-lib/libkggznet.so.5
-lib/libkggznet.so.5.0.1
+lib/libkdegames.so.6
+lib/libkdegames.so.6.0.0
+lib/libkdegamesprivate.so
+lib/libkdegamesprivate.so.1
+lib/libkdegamesprivate.so.1.0.0
 lib/libkmahjongglib.so
 lib/libkmahjongglib.so.5
 lib/libkmahjongglib.so.5.0.1
@@ -249,60 +206,6 @@ share/apps/bovo/themes/scribble/theme.svg
 share/apps/bovo/themes/scribble/themerc
 share/apps/bovo/themes/spacy/theme.svg
 share/apps/bovo/themes/spacy/themerc
-share/apps/carddecks/decks/deck1.desktop
-share/apps/carddecks/decks/deck1.png
-share/apps/carddecks/decks/deck1.svgz
-share/apps/carddecks/decks/deck10.desktop
-share/apps/carddecks/decks/deck10.png
-share/apps/carddecks/decks/deck10.svgz
-share/apps/carddecks/decks/deck11.desktop
-share/apps/carddecks/decks/deck11.png
-share/apps/carddecks/decks/deck11.svgz
-share/apps/carddecks/decks/deck12.desktop
-share/apps/carddecks/decks/deck12.png
-share/apps/carddecks/decks/deck12.svgz
-share/apps/carddecks/decks/deck13.desktop
-share/apps/carddecks/decks/deck13.png
-share/apps/carddecks/decks/deck13.svgz
-share/apps/carddecks/decks/deck14.desktop
-share/apps/carddecks/decks/deck14.png
-share/apps/carddecks/decks/deck14.svgz
-share/apps/carddecks/decks/deck15.desktop
-share/apps/carddecks/decks/deck15.png
-share/apps/carddecks/decks/deck15.svgz
-share/apps/carddecks/decks/deck16.desktop
-share/apps/carddecks/decks/deck16.png
-share/apps/carddecks/decks/deck16.svgz
-share/apps/carddecks/decks/deck17.desktop
-share/apps/carddecks/decks/deck17.png
-share/apps/carddecks/decks/deck17.svgz
-share/apps/carddecks/decks/deck18.desktop
-share/apps/carddecks/decks/deck18.png
-share/apps/carddecks/decks/deck18.svgz
-share/apps/carddecks/decks/deck2.desktop
-share/apps/carddecks/decks/deck2.png
-share/apps/carddecks/decks/deck2.svgz
-share/apps/carddecks/decks/deck3.desktop
-share/apps/carddecks/decks/deck3.png
-share/apps/carddecks/decks/deck3.svgz
-share/apps/carddecks/decks/deck4.desktop
-share/apps/carddecks/decks/deck4.png
-share/apps/carddecks/decks/deck4.svgz
-share/apps/carddecks/decks/deck5.desktop
-share/apps/carddecks/decks/deck5.png
-share/apps/carddecks/decks/deck5.svgz
-share/apps/carddecks/decks/deck6.desktop
-share/apps/carddecks/decks/deck6.png
-share/apps/carddecks/decks/deck6.svgz
-share/apps/carddecks/decks/deck7.desktop
-share/apps/carddecks/decks/deck7.png
-share/apps/carddecks/decks/deck7.svgz
-share/apps/carddecks/decks/deck8.desktop
-share/apps/carddecks/decks/deck8.png
-share/apps/carddecks/decks/deck8.svgz
-share/apps/carddecks/decks/deck9.desktop
-share/apps/carddecks/decks/deck9.png
-share/apps/carddecks/decks/deck9.svgz
 share/apps/carddecks/svg-ancient-egyptians/11.png
 share/apps/carddecks/svg-ancient-egyptians/Ancient_Egyptians.svgz
 share/apps/carddecks/svg-ancient-egyptians/index.desktop
@@ -358,8 +261,6 @@ share/apps/carddecks/svg-xskat-german/11.png
 share/apps/carddecks/svg-xskat-german/COPYRIGHT
 share/apps/carddecks/svg-xskat-german/german.svgz
 share/apps/carddecks/svg-xskat-german/index.desktop
-share/apps/cmake/modules/FindLibKDEGames.cmake
-share/apps/cmake/modules/GGZ.cmake
 share/apps/granatier/arenas/clanbomber_Arena.desktop
 share/apps/granatier/arenas/clanbomber_Arena.xml
 share/apps/granatier/arenas/clanbomber_Big_Block.desktop
@@ -439,19 +340,14 @@ share/apps/granatier/arenas/threeofthree.xml
 share/apps/granatier/granatierui.rc
 share/apps/granatier/players/player1.desktop
 share/apps/granatier/players/player1.svgz
-share/apps/granatier/players/player1_preview.svgz
 share/apps/granatier/players/player2.desktop
 share/apps/granatier/players/player2.svgz
-share/apps/granatier/players/player2_preview.svgz
 share/apps/granatier/players/player3.desktop
 share/apps/granatier/players/player3.svgz
-share/apps/granatier/players/player3_preview.svgz
 share/apps/granatier/players/player4.desktop
 share/apps/granatier/players/player4.svgz
-share/apps/granatier/players/player4_preview.svgz
 share/apps/granatier/players/player5.desktop
 share/apps/granatier/players/player5.svgz
-share/apps/granatier/players/player5_preview.svgz
 share/apps/granatier/sounds/break.wav
 share/apps/granatier/sounds/clear.wav
 share/apps/granatier/sounds/corpse_explode.wav
@@ -492,7 +388,6 @@ share/apps/kapman/themes/retro.svgz
 share/apps/kapman/themes/retro_preview.png
 share/apps/katomic/katomicui.rc
 share/apps/katomic/levels/default_levels.dat
-share/apps/katomic/pics/default_theme.desktop
 share/apps/katomic/pics/default_theme.svgz
 share/apps/kbattleship/kbattleshipui.rc
 share/apps/kbattleship/pictures/default_theme.svgz
@@ -555,9 +450,9 @@ share/apps/kbreakout/themes/web20.svgz
 share/apps/kbreakout/themes/web20_preview.png
 share/apps/kconf_update/katomic-levelset-upd.pl
 share/apps/kconf_update/katomic-levelset.upd
+share/apps/kconf_update/kgthemeprovider-migration.upd
 share/apps/kconf_update/klickety-2.0-inherit-ksame-highscore.pl
 share/apps/kconf_update/klickety.upd
-share/apps/kdegames/pics/star.png
 share/apps/kdiamond/kdiamond.kcfg
 share/apps/kdiamond/kdiamond.notifyrc
 share/apps/kdiamond/kdiamondui.rc
@@ -586,6 +481,7 @@ share/apps/kgoldrunner/kgoldrunnerui.rc
 share/apps/kgoldrunner/system/game_CM.txt
 share/apps/kgoldrunner/system/game_GMEP.txt
 share/apps/kgoldrunner/system/game_GMGR.txt
+share/apps/kgoldrunner/system/game_GRII.txt
 share/apps/kgoldrunner/system/game_MAZ.txt
 share/apps/kgoldrunner/system/game_cnt.txt
 share/apps/kgoldrunner/system/game_ende.txt
@@ -601,6 +497,8 @@ share/apps/kgoldrunner/system/hi_kgr.dat
 share/apps/kgoldrunner/system/hi_plws.dat
 share/apps/kgoldrunner/system/hi_plwv.dat
 share/apps/kgoldrunner/system/hi_wad.dat
+share/apps/kgoldrunner/system/rec_GMGR.txt
+share/apps/kgoldrunner/system/rec_GRII.txt
 share/apps/kgoldrunner/system/rec_demo.txt
 share/apps/kgoldrunner/themes/README
 share/apps/kgoldrunner/themes/accessible/black-on-white-actors.svg
@@ -609,16 +507,16 @@ share/apps/kgoldrunner/themes/black-on-white.desktop
 share/apps/kgoldrunner/themes/default.desktop
 share/apps/kgoldrunner/themes/default/actors.svg
 share/apps/kgoldrunner/themes/default/climb.wav
-share/apps/kgoldrunner/themes/default/completed.wav
-share/apps/kgoldrunner/themes/default/death.wav
-share/apps/kgoldrunner/themes/default/dig.wav
-share/apps/kgoldrunner/themes/default/falling.wav
-share/apps/kgoldrunner/themes/default/gameover.wav
-share/apps/kgoldrunner/themes/default/gold.wav
-share/apps/kgoldrunner/themes/default/ladder.wav
+share/apps/kgoldrunner/themes/default/completed.ogg
+share/apps/kgoldrunner/themes/default/death.ogg
+share/apps/kgoldrunner/themes/default/dig.ogg
+share/apps/kgoldrunner/themes/default/falling.ogg
+share/apps/kgoldrunner/themes/default/gameover.ogg
+share/apps/kgoldrunner/themes/default/gold.ogg
+share/apps/kgoldrunner/themes/default/ladder.ogg
 share/apps/kgoldrunner/themes/default/set.svg
 share/apps/kgoldrunner/themes/default/step.wav
-share/apps/kgoldrunner/themes/default/victory.wav
+share/apps/kgoldrunner/themes/default/victory.ogg
 share/apps/kgoldrunner/themes/egypt.desktop
 share/apps/kgoldrunner/themes/egypt/actors.svgz
 share/apps/kgoldrunner/themes/egypt/egypt_kgr.svgz
@@ -910,7 +808,6 @@ share/apps/kolf/courses/ReallyEasy
 share/apps/kolf/courses/USApro
 share/apps/kolf/intro
 share/apps/kolf/kolfui.rc
-share/apps/kolf/pics/default_theme.desktop
 share/apps/kolf/pics/default_theme.svgz
 share/apps/kolf/sounds/blackhole.wav
 share/apps/kolf/sounds/blackholeeject.wav
@@ -923,7 +820,6 @@ share/apps/kolf/sounds/wall.wav
 share/apps/kolf/tutorial.kolf
 share/apps/kolf/tutorial.kolfgame
 share/apps/kollision/kollisionui.rc
-share/apps/kollision/pictures/theme.desktop
 share/apps/kollision/pictures/theme.svgz
 share/apps/kollision/sounds/ball_leaving.ogg
 share/apps/kollision/sounds/hit_wall.ogg
@@ -961,7 +857,6 @@ share/apps/kpat/themes/oldertheme.png
 share/apps/kpat/themes/oldertheme.svgz
 share/apps/kreversi/kreversi.notifyrc
 share/apps/kreversi/kreversiui.rc
-share/apps/kreversi/pics/default_theme.desktop
 share/apps/kreversi/pics/default_theme.svgz
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-won.wav
@@ -1008,15 +903,15 @@ share/apps/ksirk/skins/skinsdir
 share/apps/ksirkskineditor/cross.png
 share/apps/ksirkskineditor/ksirkskineditorui.rc
 share/apps/ksirkskineditor/target.png
-share/apps/kspaceduel/icons/oxygen/16x16/actions/spnewgame.png
-share/apps/kspaceduel/icons/oxygen/16x16/actions/spnewround.png
-share/apps/kspaceduel/icons/oxygen/16x16/actions/sppausegame.png
-share/apps/kspaceduel/icons/oxygen/22x22/actions/spnewgame.png
-share/apps/kspaceduel/icons/oxygen/22x22/actions/spnewround.png
-share/apps/kspaceduel/icons/oxygen/22x22/actions/sppausegame.png
-share/apps/kspaceduel/icons/oxygen/32x32/actions/spnewgame.png
-share/apps/kspaceduel/icons/oxygen/32x32/actions/spnewround.png
-share/apps/kspaceduel/icons/oxygen/32x32/actions/sppausegame.png
+share/apps/kspaceduel/icons/hicolor/16x16/actions/spnewgame.png
+share/apps/kspaceduel/icons/hicolor/16x16/actions/spnewround.png
+share/apps/kspaceduel/icons/hicolor/16x16/actions/sppausegame.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewgame.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewround.png
+share/apps/kspaceduel/icons/hicolor/22x22/actions/sppausegame.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewgame.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewround.png
+share/apps/kspaceduel/icons/hicolor/32x32/actions/sppausegame.png
 share/apps/kspaceduel/kspaceduelui.rc
 share/apps/kspaceduel/sprites/backgr.png
 share/apps/kspaceduel/sprites/default_theme.svgz
@@ -1034,86 +929,106 @@ share/apps/kspaceduel/sprites/playerinfo/win.png
 share/apps/ksquares/ksquaresui.rc
 share/apps/ksudoku/4x4.desktop
 share/apps/ksudoku/4x4.xml
+share/apps/ksudoku/6x6.desktop
+share/apps/ksudoku/6x6.xml
+share/apps/ksudoku/Aztec.desktop
+share/apps/ksudoku/Aztec.xml
+share/apps/ksudoku/DoubleRoxdoku.desktop
+share/apps/ksudoku/DoubleRoxdoku.xml
 share/apps/ksudoku/Jigsaw.desktop
 share/apps/ksudoku/Jigsaw.xml
+share/apps/ksudoku/Nonomino.desktop
+share/apps/ksudoku/Nonomino.xml
+share/apps/ksudoku/Pentomino.desktop
+share/apps/ksudoku/Pentomino.xml
+share/apps/ksudoku/RoxdokuTwin.desktop
+share/apps/ksudoku/RoxdokuTwin.xml
 share/apps/ksudoku/Samurai.desktop
 share/apps/ksudoku/Samurai.xml
+share/apps/ksudoku/SamuraiRoxdoku.desktop
+share/apps/ksudoku/SamuraiRoxdoku.xml
+share/apps/ksudoku/Sohei.desktop
+share/apps/ksudoku/Sohei.xml
+share/apps/ksudoku/Tetromino.desktop
+share/apps/ksudoku/Tetromino.xml
 share/apps/ksudoku/TinySamurai.desktop
 share/apps/ksudoku/TinySamurai.xml
+share/apps/ksudoku/Windmill.desktop
+share/apps/ksudoku/Windmill.xml
 share/apps/ksudoku/XSudoku.desktop
 share/apps/ksudoku/XSudoku.xml
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/128x128/actions/ksudoku.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/16x16/actions/ksudoku.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/22x22/actions/ksudoku.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/32x32/actions/ksudoku.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/48x48/actions/ksudoku.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-jigsaw.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-ksudoku_16x16.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-ksudoku_25x25.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-ksudoku_4x4.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-ksudoku_9x9.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-roxdoku_3x3x3.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-roxdoku_4x4x4.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-roxdoku_5x5x5.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-samurai.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-tiny_samurai.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku-xsudoku.png
-share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/128x128/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/16x16/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/22x22/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/32x32/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/48x48/actions/ksudoku.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-jigsaw.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-ksudoku_16x16.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-ksudoku_25x25.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-ksudoku_4x4.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-ksudoku_9x9.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-roxdoku_3x3x3.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-roxdoku_4x4x4.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-roxdoku_5x5x5.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-samurai.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-tiny_samurai.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku-xsudoku.png
+share/apps/ksudoku/icons/hicolor/64x64/actions/ksudoku.png
 share/apps/ksudoku/ksudokuui.rc
 share/apps/ksudoku/themes/abstraction.desktop
 share/apps/ksudoku/themes/abstraction.svg
@@ -1345,6 +1260,7 @@ share/doc/HTML/en/granatier/bonus_speed.png
 share/doc/HTML/en/granatier/bonus_throw.png
 share/doc/HTML/en/granatier/common
 share/doc/HTML/en/granatier/config_arena.png
+share/doc/HTML/en/granatier/config_arena_random_mode.png
 share/doc/HTML/en/granatier/config_general.png
 share/doc/HTML/en/granatier/config_player.png
 share/doc/HTML/en/granatier/config_theme.png
@@ -1883,8 +1799,6 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
 @dirrm share/doc/HTML/en/palapeli
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kubrick
@@ -1937,31 +1851,31 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/ktron/themes
 @dirrm share/apps/ktron
 @dirrm share/apps/ksudoku/themes
-@dirrm share/apps/ksudoku/icons/oxygen/64x64/actions
-@dirrm share/apps/ksudoku/icons/oxygen/64x64
-@dirrm share/apps/ksudoku/icons/oxygen/48x48/actions
-@dirrm share/apps/ksudoku/icons/oxygen/48x48
-@dirrm share/apps/ksudoku/icons/oxygen/32x32/actions
-@dirrm share/apps/ksudoku/icons/oxygen/32x32
-@dirrm share/apps/ksudoku/icons/oxygen/22x22/actions
-@dirrm share/apps/ksudoku/icons/oxygen/22x22
-@dirrm share/apps/ksudoku/icons/oxygen/16x16/actions
-@dirrm share/apps/ksudoku/icons/oxygen/16x16
-@dirrm share/apps/ksudoku/icons/oxygen/128x128/actions
-@dirrm share/apps/ksudoku/icons/oxygen/128x128
-@dirrm share/apps/ksudoku/icons/oxygen
+@dirrm share/apps/ksudoku/icons/hicolor/64x64/actions
+@dirrm share/apps/ksudoku/icons/hicolor/64x64
+@dirrm share/apps/ksudoku/icons/hicolor/48x48/actions
+@dirrm share/apps/ksudoku/icons/hicolor/48x48
+@dirrm share/apps/ksudoku/icons/hicolor/32x32/actions
+@dirrm share/apps/ksudoku/icons/hicolor/32x32
+@dirrm share/apps/ksudoku/icons/hicolor/22x22/actions
+@dirrm share/apps/ksudoku/icons/hicolor/22x22
+@dirrm share/apps/ksudoku/icons/hicolor/16x16/actions
+@dirrm share/apps/ksudoku/icons/hicolor/16x16
+@dirrm share/apps/ksudoku/icons/hicolor/128x128/actions
+@dirrm share/apps/ksudoku/icons/hicolor/128x128
+@dirrm share/apps/ksudoku/icons/hicolor
 @dirrm share/apps/ksudoku/icons
 @dirrm share/apps/ksudoku
 @dirrm share/apps/ksquares
 @dirrm share/apps/kspaceduel/sprites/playerinfo
 @dirrm share/apps/kspaceduel/sprites
-@dirrm share/apps/kspaceduel/icons/oxygen/32x32/actions
-@dirrm share/apps/kspaceduel/icons/oxygen/32x32
-@dirrm share/apps/kspaceduel/icons/oxygen/22x22/actions
-@dirrm share/apps/kspaceduel/icons/oxygen/22x22
-@dirrm share/apps/kspaceduel/icons/oxygen/16x16/actions
-@dirrm share/apps/kspaceduel/icons/oxygen/16x16
-@dirrm share/apps/kspaceduel/icons/oxygen
+@dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
+@dirrm share/apps/kspaceduel/icons/hicolor/32x32
+@dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
+@dirrm share/apps/kspaceduel/icons/hicolor/22x22
+@dirrm share/apps/kspaceduel/icons/hicolor/16x16/actions
+@dirrm share/apps/kspaceduel/icons/hicolor/16x16
+@dirrm share/apps/kspaceduel/icons/hicolor
 @dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
 @dirrm share/apps/ksirkskineditor
@@ -2024,8 +1938,6 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/kfourinline
 @dirrm share/apps/kdiamond/themes
 @dirrm share/apps/kdiamond
-@dirrm share/apps/kdegames/pics
-@dirrm share/apps/kdegames
 @dirrm share/apps/kbreakout/themes
 @dirrm share/apps/kbreakout/levelsets
 @dirrm share/apps/kbreakout
@@ -2078,14 +1990,13 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/bomber/themes
 @dirrm share/apps/bomber
 @dirrm lib/libpala
+@dirrm lib/cmake/KDEGames
+@dirrmtry lib/cmake
 @dirrm include/libpala
-@dirrm include/kggznet
-@dirrm include/kggzmod
-@dirrm include/kggzgames
-@dirrm include/kgame
+@dirrm include/libkdegamesprivate/kgame/dialogs
+@dirrm include/libkdegamesprivate/kgame
+@dirrm include/libkdegamesprivate
 @dirrm include/highscore
-@dirrm include/digits
 @dirrm include/Pala
-@dirrm include/KDE/KGame
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

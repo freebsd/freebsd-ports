@@ -414,7 +414,11 @@ lib/calibre/calibre/ebooks/pdf/outline_writer.py
 lib/calibre/calibre/ebooks/pdf/pageoptions.py
 lib/calibre/calibre/ebooks/pdf/pdftohtml.py
 lib/calibre/calibre/ebooks/pdf/reflow.py
+lib/calibre/calibre/ebooks/pdf/render/__init__.py
+lib/calibre/calibre/ebooks/pdf/render/common.py
 lib/calibre/calibre/ebooks/pdf/render/engine.py
+lib/calibre/calibre/ebooks/pdf/render/fonts.py
+lib/calibre/calibre/ebooks/pdf/render/serialize.py
 lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
@@ -1002,6 +1006,7 @@ lib/calibre/calibre/utils/fonts/sfnt/head.py
 lib/calibre/calibre/utils/fonts/sfnt/kern.py
 lib/calibre/calibre/utils/fonts/sfnt/loca.py
 lib/calibre/calibre/utils/fonts/sfnt/maxp.py
+lib/calibre/calibre/utils/fonts/sfnt/metrics.py
 lib/calibre/calibre/utils/fonts/sfnt/subset.py
 lib/calibre/calibre/utils/fonts/utils.py
 lib/calibre/calibre/utils/fonts/win_fonts.py

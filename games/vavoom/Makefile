@@ -3,7 +3,7 @@
 
 PORTNAME=	vavoom
 PORTVERSION=	1.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -36,7 +36,7 @@ CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
 .if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
 CMAKE_ARGS+=	-DWITH_ALLEGRO=Y
 .else
 CMAKE_ARGS+=	-DWITH_ALLEGRO=N

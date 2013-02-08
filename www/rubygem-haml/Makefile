@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogo@cs.uni-sb.de
+MAINTAINER=	gogolok+freebsd@gmail.com
 COMMENT=	Markup language to describe XHTML
 
 USE_RUBY=	yes

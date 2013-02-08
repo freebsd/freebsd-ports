@@ -1,9 +1,5 @@
-# ports collection makefile for:	AliceSoft System 3.5 on X
-# Date created:		24 Oct 1998
-# Whom:			Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
@@ -13,6 +9,8 @@ MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
+
+BROKEN=	Does not build
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jpeg.11:${PORTSDIR}/graphics/jpeg

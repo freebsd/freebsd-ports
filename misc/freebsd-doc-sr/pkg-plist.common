@@ -1,7 +1,1 @@
 @comment $FreeBSD$
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
-%%DOCSDIR%%/%%DOCLANG_PREFIX%%
-@dirrm %%DOCSDIR%%/%%DOCLANG%%
-@dirrmtry %%DOCSDIR%%

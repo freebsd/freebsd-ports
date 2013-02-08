@@ -1,37 +1,36 @@
-# New ports collection makefile for:	kdevelop
-# Date created:		Sun Aug 23 17:14:39 UTC 2009
-# Whom:			Golyashov Sergei <svvord@mail.ru>
-#
+# Created by: Golyashov Sergei <svvord@mail.ru>
 # $FreeBSD$
 
 PORTNAME=	kdevelop
 DISTVERSION=	${KDEVELOP_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Opensource IDE based on KDevPlatform, KDE, and Qt libraries
+COMMENT=	Plugin extensible IDE for KDE
 
-LIB_DEPENDS+=	kdevplatforminterfaces.5:${PORTSDIR}/devel/kdevplatform
-
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_GMAKE=	yes
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
-USE_QT4=	qmake_build moc_build uic_build rcc_build
-MAKE_JOBS_SAFE=	yes
-
-OPTIONS=	OKTETA	"Install Okteta plugin" on \
-		PHP	"Install PHP support" on
+LIB_DEPENDS=	kdevplatforminterfaces:${PORTSDIR}/devel/kdevplatform
+RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 LATEST_LINK=	${PORTNAME}-kde4
 
+USE_KDE4=	kdehier kdelibs kdeprefix sharedmime workspace automoc4
+USE_QT4=	qmake_build moc_build uic_build rcc_build
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=	OKTETA PHP NLS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+OKTETA_DESC=	Hex editing support via Okteta
+
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_OKTETA)
+.if ${PORT_OPTIONS:MOKTETA}
 LIB_DEPENDS+=	okteta1core:${PORTSDIR}/devel/kdesdk4
 PLIST_SUB+=	OKTETA=""
 .else
@@ -39,8 +38,23 @@ CMAKE_ARGS+=	WITH_LibOkteta:BOOL=FALSE
 PLIST_SUB+=	OKTETA="@comment "
 .endif
 
-.ifndef(WITHOUT_PHP)
-RUN_DEPENDS+=	${PREFIX}/lib/kde4/kdevphplanguagesupport.so:${PORTSDIR}/devel/kdevelop-php
+.if ${PORT_OPTIONS:MPHP}
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kdevphplanguagesupport.so:${PORTSDIR}/devel/kdevelop-php
 .endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
+		${PATCH_WRKSRC}/app/CMakeLists.txt
+
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>

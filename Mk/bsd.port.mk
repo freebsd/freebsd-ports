@@ -1048,23 +1048,31 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #					  variable permits, write it yourself and install it
 #					  in ${DESKTOPDIR}.
 #				  Notes:
-#					* Comment and Icon may be empty strings (""). Categories
-#					  may be an empty string in some cases (see below). The
-#					  other fields are mandatory.
+#					* Comment, Icon and StartupNotify may be empty
+#					  strings (""). Categories may be an empty string in some
+#					  cases (see below). The other fields are mandatory.
+#					* If Comment is an empty string, port ${COMMENT} will be
+#					  used.
+#					* If set, Icon must be either absolute path (usually
+#					  ${PREFIX}/share/pixmaps/${PORTNAME}.png) or icon name
+#					  without extension if installed icons follow Icon Theme
+#					  Specification.
 #					* If Categories is an empty string, bsd.port.mk will try
 #					  to deduce a default value using the CATEGORIES variable.
 #					  If the deduction fails, you will have to set Categories
 #					  manually. You should check the generated value using
 #					  "make desktop-categories", and override it if necessary.
 #					* Exec will also be used to name the .desktop file.
+#					* StartupNotify may be true, false or empty (see Desktop
+#					  Entry Specification for details).
 #					* The files will be automatically added to ${PLIST}.
 #				  Example:
 #					"X Window Information" \
 #					"Get information about X windows" \
-#					"wininfo.png" \
-#					"wininfo" \
-#					"Application;System;" \
-#					true
+#					"${PREFIX}/share/pixmaps/wininfo.png" \
+#					"${PREFIX}/bin/wininfo" \
+#					"System;" \
+#					""
 #				  See http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
 #				  for an explanation of the fields. If you need to create more
 #				  than one file, just chain them into a single variable.
@@ -6401,84 +6409,102 @@ desktop-categories:
 	for native_category in ${CATEGORIES}; do \
 		c=""; \
 		case $$native_category in \
-			accessibility)	c="Accessibility Utility"		;; \
-			archivers)		c="Archiving"					;; \
-			astro)			c="Astronomy Science Education"	;; \
-			audio)			c="Audio AudioVideo"			;; \
+			accessibility)	c="Utility Accessibility"		;; \
+			archivers)		c="Utility Archiving"			;; \
+			astro)			c="Education Science Astronomy"	;; \
+			audio)			c="AudioVideo Audio"			;; \
 			benchmarks)		c="System"						;; \
-			biology)		c="Biology Science Education"	;; \
-			cad)			c="Engineering"					;; \
-			databases)		c="Database"					;; \
+			biology)		c="Education Science Biology"	;; \
+			cad)			c="Graphics Engineering"		;; \
+			comms)			c="Utility"						;; \
+			converters)		c="Utility"						;; \
+			databases)		c="Office Database"				;; \
 			deskutils)		c="Utility"						;; \
 			devel)			c="Development"					;; \
 			dns)			c="Network"						;; \
 			elisp)			c="Development"					;; \
-			emulators)		c="Emulator"					;; \
-			finance)		c="Finance Office"				;; \
-			ftp)			c="FileTransfer Network"		;; \
+			editors)		c="Utility"						;; \
+			emulators)		c="System Emulator"				;; \
+			finance)		c="Office Finance"				;; \
+			ftp)			c="Network FileTransfer"		;; \
 			games)			c="Game"						;; \
+			geography)		c="Education Science Geography"	;; \
 			gnome)			c="GNOME GTK"					;; \
 			graphics)		c="Graphics"					;; \
 			hamradio)		c="HamRadio"					;; \
 			haskell)		c="Development"					;; \
-			ipv6)			c="Network"						;; \
-			irc)			c="IRCClient Network"			;; \
-			java)			c="Java Development"			;; \
-			kde)			c="KDE QT"						;; \
+			irc)			c="Network IRCClient"			;; \
+			java)			c="Development Java"			;; \
+			kde)			c="KDE Qt"						;; \
 			lang)			c="Development"					;; \
 			lisp)			c="Development"					;; \
-			mail)			c="Email Office Network"		;; \
+			mail)			c="Office Email"				;; \
+			math)			c="Education Science Math"		;; \
 			mbone)			c="Network AudioVideo"			;; \
 			multimedia)		c="AudioVideo"					;; \
 			net)			c="Network"						;; \
-			net-im)			c="InstantMessaging Network"	;; \
+			net-im)			c="Network InstantMessaging"	;; \
 			net-mgmt)		c="Network"						;; \
-			net-p2p)		c="P2P Network"					;; \
-			news)			c="News"						;; \
-			pear)			c="WebDevelopment Development"	;; \
+			net-p2p)		c="Network P2P"					;; \
+			news)			c="Network News"				;; \
+			palm)			c="Office PDA"					;; \
+			parallel)		c="ParallelComputing"			;; \
+			pear)			c="Development WebDevelopment"	;; \
 			perl5)			c="Development"					;; \
 			python)			c="Development"					;; \
 			ruby)			c="Development"					;; \
 			rubygems)		c="Development"					;; \
 			scheme)			c="Development"					;; \
 			science)		c="Science Education"			;; \
-			security)		c="Security System"				;; \
-			shells)			c="Shell"						;; \
-			sysutils)		c="System Utility"				;; \
+			security)		c="System Security"				;; \
+			shells)			c="System Shell"				;; \
+			sysutils)		c="System"						;; \
 			tcl*|tk*)		c="Development"					;; \
+			textproc)		c="Utility TextTools"			;; \
 			www)			c="Network"						;; \
-			x11-clocks)		c="Clock Utility"				;; \
-			x11-fm)			c="FileManager"					;; \
-			xfce)			c="GTK"							;; \
-			zope)			c="WebDevelopment Development"	;; \
+			x11-clocks)		c="Utility Clock"				;; \
+			x11-fm)			c="System FileManager"			;; \
+			xfce)			c="GTK XFCE"					;; \
+			zope)			c="Development WebDevelopment"	;; \
 		esac; \
 		if [ -n "$$c" ]; then \
 			categories="$$categories $$c"; \
 		fi; \
 	done; \
 	if [ -n "$$categories" ]; then \
-		for c in Application $$categories; do ${ECHO_MSG} "$$c"; done \
+		for c in $$categories; do ${ECHO_MSG} "$$c"; done \
 			| ${SORT} -u | ${TR} '\n' ';'; \
 		${ECHO_MSG}; \
 	fi
 
-VALID_DESKTOP_CATEGORIES+= Application Core Development Building Debugger IDE \
-	GUIDesigner Profiling RevisionControl Translation Office Calendar \
-	ContactManagement Database Dictionary Chart Email Finance FlowChart PDA \
-	ProjectManagement Presentation Spreadsheet WordProcessor Graphics \
-	2DGraphics VectorGraphics RasterGraphics 3DGraphics Scanning OCR \
-	Photography Viewer Settings DesktopSettings HardwareSettings \
-	PackageManager Network Dialup InstantMessaging IRCClient FileTransfer \
-	HamRadio News P2P RemoteAccess Telephony WebBrowser WebDevelopment \
-	AudioVideo Audio Midi Mixer Sequencer Tuner Video TV AudioVideoEditing \
-	Player Recorder DiscBurning Game ActionGame AdventureGame ArcadeGame \
-	BoardGame BlocksGame CardGame KidsGame LogicGame RolePlaying Simulation \
-	SportsGame StrategyGame Education Art Construction Music Languages \
-	Science Astronomy Biology Chemistry Geology Math MedicalSoftware Physics \
-	Teaching Amusement Applet Archiving Electronics Emulator Engineering \
-	FileManager Shell Screensaver TerminalEmulator TrayIcon System Filesystem \
-	Monitor Security Utility Accessibility Calculator Clock TextEditor KDE \
-	GNOME GTK Qt Motif Java ConsoleOnly AdvancedSettings
+# http://standards.freedesktop.org/menu-spec/menu-spec-latest.html
+DESKTOP_CATEGORIES_MAIN=	AudioVideo Audio Video Development Education \
+	Game Graphics Network Office Science Settings System Utility
+DESKTOP_CATEGORIES_ADDITIONAL=	Building Debugger IDE GUIDesigner Profiling \
+	RevisionControl Translation Calendar ContactManagement Database \
+	Dictionary Chart Email Finance FlowChart PDA ProjectManagement \
+	Presentation Spreadsheet WordProcessor 2DGraphics VectorGraphics \
+	RasterGraphics 3DGraphics Scanning OCR Photography Publishing Viewer \
+	TextTools DesktopSettings HardwareSettings Printing PackageManager \
+	Dialup InstantMessaging Chat IRCClient Feed FileTransfer HamRadio News \
+	P2P RemoteAccess Telephony TelephonyTools VideoConference WebBrowser \
+	WebDevelopment Midi Mixer Sequencer Tuner TV AudioVideoEditing Player \
+	Recorder DiscBurning ActionGame AdventureGame ArcadeGame BoardGame \
+	BlocksGame CardGame KidsGame LogicGame RolePlaying Shooter Simulation \
+	SportsGame StrategyGame Art Construction Music Languages \
+	ArtificialIntelligence Astronomy Biology Chemistry ComputerScience \
+	DataVisualization Economy Electricity Geography Geology Geoscience \
+	History Humanities ImageProcessing Literature Maps Math \
+	NumericalAnalysis MedicalSoftware Physics Robotics Spirituality Sports \
+	ParallelComputing Amusement Archiving Compression Electronics Emulator \
+	Engineering FileTools FileManager TerminalEmulator Filesystem Monitor \
+	Security Accessibility Calculator Clock TextEditor Documentation Adult \
+	Core KDE GNOME XFCE GTK Qt Motif Java ConsoleOnly
+DESKTOP_CATEGORIES_RESERVED=	Screensaver TrayIcon Applet Shell
+
+VALID_DESKTOP_CATEGORIES+=	${DESKTOP_CATEGORIES_MAIN} \
+	${DESKTOP_CATEGORIES_ADDITIONAL} \
+	${DESKTOP_CATEGORIES_RESERVED}
 
 check-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
@@ -6499,6 +6525,11 @@ check-desktop-entries:
 			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 1 (Name) is empty"; \
 			exit 1; \
 		fi; \
+		if ${ECHO_CMD} "$$3" | ${GREP} -iq '.\(png\|svg\|xpm\)$$'; then \
+			if ! ${ECHO_CMD} "$$3" | ${GREP} -iq '^/'; then \
+				${ECHO_MSG} "${PKGNAME}: Makefile warning: in desktop entry $$entry: field 3 (Icon) should be either absolute path or icon name without extension if installed icons follow Icon Theme Specification"; \
+			fi; \
+		fi; \
 		if [ -z "$$4" ]; then \
 			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 4 (Exec) is empty"; \
 			exit 1; \
@@ -6506,10 +6537,12 @@ check-desktop-entries:
 		if [ -n "$$5" ]; then \
 			for c in `${ECHO_CMD} "$$5" | ${TR} ';' ' '`; do \
 				if ! ${ECHO_CMD} ${VALID_DESKTOP_CATEGORIES} | ${GREP} -wq $$c; then \
-					${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: category $$c is not a valid desktop category"; \
-					exit 1; \
+					${ECHO_CMD} "${PKGNAME}: Makefile warning: in desktop entry $$entry: category $$c is not a valid desktop category"; \
 				fi; \
 			done; \
+			if ! ${ECHO_CMD} "$$5" | ${GREP} -q "`${ECHO_CMD} ${DESKTOP_CATEGORIES_MAIN} | ${SED} -E 's,[[:blank:]]+,\\\|,g'`"; then \
+				${ECHO_CMD} "${PKGNAME}: Makefile warning: in desktop entry $$entry: field 5 (Categories) must contain at least one main desktop category (make -VDESKTOP_CATEGORIES_MAIN)"; \
+			fi; \
 			if ! ${ECHO_CMD} "$$5" | ${GREP} -q ';$$'; then \
 				${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) does not end with a semicolon"; \
 				exit 1; \
@@ -6520,12 +6553,8 @@ check-desktop-entries:
 				exit 1; \
 			fi; \
 		fi; \
-		if [ -z "$$6" ]; then \
-			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is empty"; \
-			exit 1; \
-		fi; \
-		if [ "x$$6" != "xtrue" ] && [ "x$$6" != "xfalse" ]; then \
-			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is not \"true\" or \"false\""; \
+		if [ "x$$6" != "xtrue" ] && [ "x$$6" != "xfalse" ] && [ "x$$6" != "x" ]; then \
+			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is not \"true\", \"false\" or \"\"(empty)"; \
 			exit 1; \
 		fi; \
 		shift 6; \
@@ -6545,7 +6574,7 @@ install-desktop-entries:
 		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
 	fi; \
 	while [ $$# -gt 6 ]; do \
-		filename="`${ECHO_CMD} "$$4" | ${TR} -cd [:alnum:]`.desktop"; \
+		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
 		pathname="${DESKTOPDIR}/$$filename"; \
 		categories="$$5"; \
 		if [ -z "$$categories" ]; then \
@@ -6554,18 +6583,22 @@ install-desktop-entries:
 		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
 		${ECHO_CMD} "Type=Application" >> $$pathname; \
-		${ECHO_CMD} "Version=0.9.4" >> $$pathname; \
-		${ECHO_CMD} "Encoding=UTF-8" >> $$pathname; \
+		${ECHO_CMD} "Version=1.0" >> $$pathname; \
 		${ECHO_CMD} "Name=$$1" >> $$pathname; \
-		if [ -n "$$2" ]; then \
-			${ECHO_CMD} "Comment=$$2" >> $$pathname; \
+		comment="$$2"; \
+		if [ -z "$$2" ]; then \
+			comment="`cd ${.CURDIR} && ${MAKE} -VCOMMENT`"; \
 		fi; \
+		${ECHO_CMD} "GenericName=$$comment" >> $$pathname; \
+		${ECHO_CMD} "Comment=$$comment" >> $$pathname; \
 		if [ -n "$$3" ]; then \
 			${ECHO_CMD} "Icon=$$3" >> $$pathname; \
 		fi; \
 		${ECHO_CMD} "Exec=$$4" >> $$pathname; \
 		${ECHO_CMD} "Categories=$$categories" >> $$pathname; \
-		${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
+		if [ -n "$$6" ]; then \
+			${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
+		fi; \
 		shift 6; \
 	done; \
 	${ECHO_CMD} "@unexec rmdir ${DESKTOPDIR} 2>/dev/null || true" >> ${TMPPLIST}; \

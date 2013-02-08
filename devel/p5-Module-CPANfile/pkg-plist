@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Module/CPANfile.pm
+%%SITE_PERL%%/cpanfile-faq.pod
+%%SITE_PERL%%/cpanfile.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CPANfile/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CPANfile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module

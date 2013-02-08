@@ -1,22 +1,21 @@
-# New ports collection makefile for:    xchomp
-# Date created:         4 Jan 1995
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	xchomp
 PORTVERSION=	pl1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	XCONTRIB/../R5contrib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pac-man-like game under X11
 
-PLIST_FILES=	bin/xchomp
 WRKSRC=		${WRKDIR}/xchomp
-USE_IMAKE=	yes
+
 USE_XORG=	x11 xext
+USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/xchomp
 
 .include <bsd.port.mk>

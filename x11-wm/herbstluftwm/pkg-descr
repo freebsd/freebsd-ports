@@ -1,0 +1,17 @@
+herbstluftwm is a manual tiling window manager for X11 using Xlib and Glib.
+Its main features can be described with:
+
+  - The layout is based on splitting frames into subframes which can be
+    split again or can be filled with windows (similar to i3 or musca)
+
+  - Tags (or workspaces, or virtual desktops) can be added/removed at
+    runtime.  Each tag contains an own layout
+
+  - Exactly one tag is viewed on each monitor.  The tags are monitor
+    independent (similar to xmonad)
+
+  - It is configured at runtime via IPC calls from herbstclient.  So the
+    configuration file is just a script which is run on startup.  (Similar
+    to wmii or musca)
+
+WWW: http://wwwcip.cs.fau.de/~re06huxa/herbstluftwm/

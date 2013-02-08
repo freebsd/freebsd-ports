@@ -3,6 +3,7 @@
 
 PORTNAME=	cbviewer
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CBViewer%200.8/ \
 		SF/nemysisfreebsdp/:icons
@@ -36,8 +37,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="CBViewer" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;Graphics;Viewer;" true
+DESKTOP_ENTRIES="CBViewer" "Comic book viewer" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Graphics;Viewer;Java;" true
 
 .include <bsd.port.options.mk>
 

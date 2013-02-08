@@ -3,12 +3,13 @@
 
 PORTNAME=	MogileFS-Server
 PORTVERSION=	2.66
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
 BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \

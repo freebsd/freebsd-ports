@@ -5,8 +5,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets/layers.png
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets/sain.png

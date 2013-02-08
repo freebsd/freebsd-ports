@@ -7,6 +7,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://excamera.com/files/ \
 		CHEESESHOP
@@ -16,7 +17,7 @@ DISTNAME=	OpenEXR-${PORTVERSION}
 MAINTAINER=	jamesb-bsd@excamera.com
 COMMENT=	Python module for ILM's OpenEXR image format and library
 
-LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 
 post-extract:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py

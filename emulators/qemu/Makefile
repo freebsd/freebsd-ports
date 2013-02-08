@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
 CONFIGURE_ARGS+=	--disable-bsd-user
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba35
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
 .endif
 
 .if ${PORT_OPTIONS:MKQEMU}

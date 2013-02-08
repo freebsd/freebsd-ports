@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	girara
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	http://pwmt.org/projects/girara/download/
 
@@ -12,9 +12,10 @@ COMMENT=	GTK2 Interface Library for Zathura PDF Viewer
 USE_GNOME=	glib20 gtk20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-FETCH_ARGS=	-Fpr
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -26,7 +27,7 @@ LIBDIR=		${PREFIX}/lib
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g'\
 		${WRKSRC}/Makefile
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/-C po/d'\
 		${WRKSRC}/Makefile
 .endif

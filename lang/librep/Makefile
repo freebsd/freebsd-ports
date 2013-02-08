@@ -16,7 +16,7 @@ COMMENT=	An Emacs Lisp like runtime library
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
-		ffi.5:${PORTSDIR}/devel/libffi \
+		ffi:${PORTSDIR}/devel/libffi \
     		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 

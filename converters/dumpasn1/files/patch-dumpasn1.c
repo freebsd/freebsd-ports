@@ -1,6 +1,6 @@
---- dumpasn1.c.orig	2010-09-30 11:17:16.000000000 +0200
-+++ dumpasn1.c	2010-09-30 11:18:35.000000000 +0200
-@@ -309,11 +309,13 @@
+--- dumpasn1.c.orig	2013-01-16 09:27:37.000000000 +0100
++++ dumpasn1.c	2013-01-16 09:27:37.000000000 +0100
+@@ -355,11 +355,13 @@ static OIDINFO *oidList = NULL;
     beginning with a '$' uses the appropriate environment variable.  In
     addition under Unix we also walk down $PATH looking for it */
  

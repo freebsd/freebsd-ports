@@ -1,9 +1,5 @@
-# New ports collection makefile for:	knews
-# Date created:         Sun Apr 14 09:23:59 MET DST 1996
-# Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	knews
 PORTVERSION=	1.0b.1
@@ -15,7 +11,7 @@ MASTER_SITE_SUBDIR=dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A threaded nntp newsreader for X
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		compface:${PORTSDIR}/mail/faces
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter

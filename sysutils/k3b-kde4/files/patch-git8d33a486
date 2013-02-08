@@ -1,0 +1,20 @@
+commit 8d33a486082cd9eaa857d6042b1b8870e4bf532b
+Author: Rex Dieter <rdieter@fedoraproject.org>
+Date:   Sat Feb 11 08:34:04 2012 -0600
+
+    fix for newer (kde-4.7+) FindFFMPEG.cmake
+    which sets ${FFMPEG_INCLUDE_DIRS} instead of ${FFMPEG_INCLUDE_DIR}
+
+diff --git a/plugins/decoder/ffmpeg/CMakeLists.txt b/plugins/decoder/ffmpeg/CMakeLists.txt
+index d7e25eb..d420a3c 100644
+--- ./plugins/decoder/ffmpeg/CMakeLists.txt
++++ ./plugins/decoder/ffmpeg/CMakeLists.txt
+@@ -9,7 +9,7 @@ if(FFMPEG_INCLUDE_DIR_OLD_STYLE)
+ else(FFMPEG_INCLUDE_DIR_OLD_STYLE)
+     message(STATUS "found new ffmpegcodecpath")
+     add_definitions(-DNEWFFMPEGAVCODECPATH)
+-    include_directories (${FFMPEG_INCLUDE_DIR})
++    include_directories (${FFMPEG_INCLUDE_DIR} ${FFMPEG_INCLUDE_DIRS})
+ endif(FFMPEG_INCLUDE_DIR_OLD_STYLE)
+ 
+ set(k3bffmpegdecoder_PART_SRCS k3bffmpegdecoder.cpp k3bffmpegwrapper.cpp )

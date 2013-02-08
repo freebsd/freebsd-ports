@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	zmq
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.2
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	zeromq-${DISTVERSION}-beta
+DISTNAME=	zeromq-${DISTVERSION}
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Open source message queue optimised for performance
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-beta//}
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
@@ -61,4 +60,10 @@ MAN3=	\
 regression-test:
 	cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(CC) && ${CC:T:M*clang*} == "clang" || ${OSVERSION} >= 1000024
+CONFIGURE_ENV+=	CXXFLAGS=-Wno-mismatched-tags
+.endif
+
+.include <bsd.port.post.mk>

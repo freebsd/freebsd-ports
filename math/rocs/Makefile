@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	rocs
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rocs
 PORTVERSION=	${KDE4_VERSION}
@@ -13,9 +8,9 @@ MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Graph theory IDE for KDE 4
+COMMENT=	Graph teory IDE for KDE 4
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS=	kdeedu-4.[0-6].*
 

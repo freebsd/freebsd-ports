@@ -1,12 +1,9 @@
-# New ports collection makefile for:	scribe
-# Date created:         2010-07-15
-# Whom:                 Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	scribe
 DISTVERSION=	2.2.2012.01.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}

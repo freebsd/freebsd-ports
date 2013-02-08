@@ -1,13 +1,9 @@
-# New ports collection makefile for:	fusefs-encfs
-# Date created:		2007-01-05
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	encfs
 PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
@@ -17,7 +13,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog.5:${PORTSDIR}/devel/rlog \
-		boost_serialization.4:${PORTSDIR}/devel/boost-libs
+		boost_serialization:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 

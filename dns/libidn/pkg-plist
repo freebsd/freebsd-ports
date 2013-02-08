@@ -19,6 +19,7 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/eo/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/id/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libidn.mo
@@ -34,5 +35,3 @@ share/emacs/site-lisp/punycode.el
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/libidn-components.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw

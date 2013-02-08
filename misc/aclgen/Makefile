@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aclgen
-# Date created:				17 September 1999
-# Whom:					igor@zynaps.ru
-#
+# Created by: igor@zynaps.ru
 # $FreeBSD$
-#
 
 PORTNAME=	aclgen
 PORTVERSION=	2.02
@@ -14,12 +10,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimize Cisco routers IP access lists
 
-NO_WRKSUBDIR=	YES
+NO_WRKSUBDIR=	yes
+
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ARGS=	PROG=aclgen
 
 MAN1=		aclgen.1
 PLIST_FILES=	bin/aclgen
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|<malloc.h>|<unistd.h>| ; \
+		 s|^void main|int main|' ${WRKSRC}/aclgen.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aclgen ${PREFIX}/bin

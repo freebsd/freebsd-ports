@@ -7,6 +7,7 @@
 
 PORTNAME=	rubyripper
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	audio sysutils ruby
 MASTER_SITES=	GOOGLE_CODE
 
@@ -31,7 +32,7 @@ USE_RUBY=	yes
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="Rubyripper" "Secure Audio Disc Ripper" \
-		"${PORTNAME}.png" "rrip_gtk2" "Audio;AudioVideo;" false
+		"${PORTNAME}" "rrip_gtk2" "Audio;AudioVideo;" false
 
 post-patch:
 # fix an apparent typo

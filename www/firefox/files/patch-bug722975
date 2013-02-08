@@ -7,13 +7,13 @@ Bug 722975 - --enable-system-cairo build is broken after Bug 715658 fixed
 diff --git a/gfx/thebes/gfxPlatform.cpp b/gfx/thebes/gfxPlatform.cpp
 --- gfx/thebes/gfxPlatform.cpp
 +++ gfx/thebes/gfxPlatform.cpp
-@@ -484,21 +484,19 @@ gfxPlatform::CreateDrawTargetForSurface(
+@@ -502,21 +502,19 @@ struct SourceSurfaceUserData
+   BackendType mBackendType;
+ };
  
- cairo_user_data_key_t kSourceSurface;
- 
- void SourceBufferDestroy(void *srcBuffer)
+ void SourceBufferDestroy(void *srcSurfUD)
  {
-   static_cast<SourceSurface*>(srcBuffer)->Release();
+   delete static_cast<SourceSurfaceUserData*>(srcSurfUD);
  }
  
 -void SourceSnapshotDetached(cairo_surface_t *nullSurf)
@@ -31,7 +31,7 @@ diff --git a/gfx/thebes/gfxPlatform.cpp b/gfx/thebes/gfxPlatform.cpp
  {
    void *userData = aSurface->GetData(&kSourceSurface);
  
-@@ -588,24 +586,19 @@ gfxPlatform::GetSourceSurfaceForSurface(
+@@ -621,24 +619,19 @@ gfxPlatform::GetSourceSurfaceForSurface(
        }
  
        srcBuffer = Factory::CreateWrappingDataSourceSurface(imgSurface->Data(),
@@ -53,9 +53,9 @@ diff --git a/gfx/thebes/gfxPlatform.cpp b/gfx/thebes/gfxPlatform.cpp
 +                                SourceSnapshotDetached, imgSurface.get());
    }
  
-   srcBuffer->AddRef();
-   aSurface->SetData(&kSourceSurface, srcBuffer, SourceBufferDestroy);
+   SourceSurfaceUserData *srcSurfUD = new SourceSurfaceUserData;
+   srcSurfUD->mBackendType = aTarget->GetType();
+   srcSurfUD->mSrcSurface = srcBuffer;
+   aSurface->SetData(&kSourceSurface, srcSurfUD, SourceBufferDestroy);
  
    return srcBuffer;
- }
- 

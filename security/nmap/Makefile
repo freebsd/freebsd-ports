@@ -3,6 +3,7 @@
 
 PORTNAME=	nmap
 DISTVERSION=	6.25
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -57,7 +58,7 @@ PLIST_SUB+=		WITHSSL="@comment "
 #  be defined as param -DWITHOUT_INET6 during build time
 #  since the port system has no access to src.conf
 .if defined(WITHOUT_INET6)
-LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS+=		pcap:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
 .endif
 

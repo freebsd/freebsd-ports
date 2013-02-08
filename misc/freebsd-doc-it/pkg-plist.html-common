@@ -1,9 +1,7 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig1.png

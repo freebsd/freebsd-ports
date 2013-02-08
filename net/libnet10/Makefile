@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libnet
-# Date created:			Sun Feb 3, 1999
-# Whom:				shipley@dis.org
-#
+# Created by: shipley@dis.org
 # $FreeBSD$
-#
 
 PORTNAME=	libnet
 PORTVERSION=	1.0.2a

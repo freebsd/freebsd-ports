@@ -3,9 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel2.png
@@ -14,7 +12,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png

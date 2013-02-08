@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	py-roxlib
-# Date created:				Jan 12 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	roxlib
 PORTVERSION=	2.0.6

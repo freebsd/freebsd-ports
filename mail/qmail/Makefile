@@ -11,7 +11,7 @@ DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	bdrewery@FreeBSD.org
-COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
+COMMENT?=	Secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail
 
@@ -334,6 +334,12 @@ CONFIGURESCRIPTS=	config config-fast
 
 WANT_QMAIL=	yes
 
+.include <bsd.port.options.mk>
+
+.if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MTLS}
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} != ${LOCALBASE}
@@ -358,11 +364,6 @@ CFLAGS+=	-DDEBUG
 .endif
 
 .if defined(SLAVE_LDAP)
-
-. if ${PORT_OPTIONS:MTLS}
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-. endif
 
 . for param in ${LDAP_PARAMS}
 .  if ${PORT_OPTIONS:M${param}}
@@ -702,6 +703,7 @@ post-patch:
 . endif
 . if ${PORT_OPTIONS:MSMTPEXTFORK}
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-smtpextfork-qmail-smtpd.c
 .  if ${PORT_OPTIONS:MXF_QUITASAP}
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c

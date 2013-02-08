@@ -7,7 +7,7 @@
 
 PORTNAME=	kudu
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Kudu" \
 		"Edit 3D models" \
 		"${DATADIR}/images/logo.png" \
 		"kudu" \
-		"Application;Graphics;" \
+		"Graphics;3DGraphics;GTK;" \
 		true
 
 post-patch:

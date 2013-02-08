@@ -1271,6 +1271,7 @@
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldbool.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldchar.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldcurrency.php
+%%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldcurrency_id.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFielddate.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFielddatepicker.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFielddatetime.php
@@ -6962,6 +6963,7 @@
 %%WWWDIR%%/themes/default/images/Feeds.gif
 %%WWWDIR%%/themes/default/images/FieldLabels.gif
 %%WWWDIR%%/themes/default/images/Holidays.gif
+%%WWWDIR%%/themes/default/images/IBMSmartCloud_image_inline.png
 %%WWWDIR%%/themes/default/images/Import.gif
 %%WWWDIR%%/themes/default/images/ImportCustomFields.gif
 %%WWWDIR%%/themes/default/images/InboundEmail.gif

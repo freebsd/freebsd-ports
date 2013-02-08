@@ -60,8 +60,8 @@ index ccf2846..79112a8 100644
  include $(topsrcdir)/config/rules.mk
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 7f9046e..6499758 100644
---- toolkit/library/libxul-config.mk
-+++ toolkit/library/libxul-config.mk
+--- toolkit/library/Makefile.in
++++ toolkit/library/Makefile.in
 @@ -333,6 +333,11 @@ COMPONENT_LIBS += gkdebug
  endif
  endif

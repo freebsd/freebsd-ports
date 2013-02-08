@@ -1,13 +1,8 @@
-# ports collection makefile for:	ebook2cw
-# Date created:		17 July 2008
-# Whom:			db
-#
 # $FreeBSD$
 #
 
 PORTNAME=	ebook2cw
-PORTVERSION=	0.8.1
-PORTREVISION?=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		${MASTER_SITE_LOCAL}
@@ -23,6 +18,8 @@ MAN1=		ebook2cw.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'g \
+	     ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'g \
 	     ${WRKSRC}/Makefile
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${PREFIX}/bin/ebook2cw

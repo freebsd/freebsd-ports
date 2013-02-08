@@ -1,17 +1,13 @@
-# New ports collection makefile for:	POE-Component-IKC
-# Date created:		7 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IKC
-PORTVERSION=	0.2302
+PORTVERSION=	0.2303
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	POE Inter-Kernel Communication
 
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \

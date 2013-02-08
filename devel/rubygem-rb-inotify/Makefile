@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-rb-inotify
-# Date created:		2011-10-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rb-inotify
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

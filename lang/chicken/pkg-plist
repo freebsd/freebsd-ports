@@ -68,6 +68,7 @@ lib/libchicken.so.6
 %%PORTDOCS%%%%DOCSDIR%%/manual/Supported language.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/The R5RS standard.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/The User's Manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Types.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit data-structures.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit eval.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit expand.html

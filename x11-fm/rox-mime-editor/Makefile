@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-mime-editor
-# Date created:				Mar 24 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-mime-editor
 PORTVERSION=	0.6

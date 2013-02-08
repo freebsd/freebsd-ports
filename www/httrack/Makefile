@@ -34,7 +34,7 @@ MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/html/server/div/WebHTTrack.desktop \

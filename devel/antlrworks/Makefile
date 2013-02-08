@@ -3,6 +3,7 @@
 
 PORTNAME=	antlrworks
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
@@ -18,9 +19,9 @@ JAVA_VERSION=	1.6+
 
 DESKTOP_ENTRIES="ANTLRWorks" \
 	"ANTLR GUI Development Environment" \
-	"antlrworks.png" \
+	"${PREFIX}/share/pixmaps/antlrworks.png" \
 	"antlrworks" \
-	"Application;Development;" \
+	"Development;Java;" \
 	true
 
 PLIST_FILES=	bin/antlrworks \

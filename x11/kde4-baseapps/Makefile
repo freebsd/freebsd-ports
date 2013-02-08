@@ -1,10 +1,4 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	kdebase3.1
-# Date created:				29 November 2002
-# Whom:					kde@freebsd.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kde-baseapps
 PORTVERSION=	${KDE4_VERSION}
@@ -36,16 +30,19 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
 MAN1=		kbookmarkmerger.1 \
 		kfind.1
 
-OPTIONS=	KONSOLE "Install Konsole terminal emulator" on \
-		KWRITE "Install KWrite text editor" on
+OPTIONS_DEFINE=	KONSOLE KWRITE
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+KONSOLE_DESC=	Install Konsole terminal emulator
+KWRITE_DESC=	Install KWrite text editor
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_KONSOLE)
+.if ${PORT_OPTIONS:MKONSOLE}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
 .endif
 
-.ifndef(WITHOUT_KWRITE)
+.if ${PORT_OPTIONS:MKWRITE}
 USE_KDE4+=	kate_run
 .endif
 

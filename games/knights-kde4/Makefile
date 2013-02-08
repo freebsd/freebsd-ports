@@ -1,9 +1,5 @@
-# New ports collection makefile for:	knight
-# Date created:		24 Jun 2002
-# Whom:			Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-#
+# Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	knights
 PORTVERSION=	2.3.1
@@ -12,10 +8,12 @@ CATEGORIES=	games kde
 MASTER_SITES=	http://dl.dropbox.com/u/2888238/Knights/
 
 MAINTAINER=	syncer@gmail.com
-COMMENT=	A KDE4 chess interface
+COMMENT=	KDE4 chess interface
 
-LIB_DEPENDS=	kdegames.5:${PORTSDIR}/games/kdegames4
+LIB_DEPENDS=	kdegames:${PORTSDIR}/games/kdegames4
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
+
+BROKEN=		does not build with kdegames4>=4.9.0
 
 LATEST_LINK=	${PORTNAME}-kde4
 USE_BZIP2=	yes

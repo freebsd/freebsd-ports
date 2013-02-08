@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fspd
-# Date created:				2001-04-10
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.26

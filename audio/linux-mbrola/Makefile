@@ -1,9 +1,5 @@
-# New ports collection makefile for:		linux-mbrola
-# Date created:					2003-10-05
-# Whom:						trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	mbrola
 PORTVERSION=	3.0.1

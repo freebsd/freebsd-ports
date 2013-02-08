@@ -1,13 +1,7 @@
-# New ports collection makefile for:	gwenview
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gwenview
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src

@@ -4,6 +4,7 @@
 
 PORTNAME=	tuxfighter
 PORTVERSION=	54
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/pygamebook/TuxFighter/TuxFighter${PORTVERSION}_source/ \
 		SF/nemysisfreebsdp/:icons

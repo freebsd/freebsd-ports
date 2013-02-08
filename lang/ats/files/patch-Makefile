@@ -1,5 +1,5 @@
---- Makefile.orig	2012-09-04 11:37:57.000000000 +0800
-+++ Makefile	2012-09-06 19:21:24.886921581 +0800
+--- Makefile.orig	2013-01-24 10:49:41.547037509 +0800
++++ Makefile	2013-01-24 10:55:14.781718163 +0800
 @@ -59,12 +59,6 @@
  	autoheader $<
  	touch $@
@@ -40,27 +40,19 @@
  
  ######
  
-@@ -151,12 +147,11 @@
-   libfiles_mt \
-   bin/atspack \
-   bin/atslex \
--  libatsdoca \
--  bin/atsdoc \
-   ccomp/runtime/GCATS/gc.o \
+@@ -155,8 +151,7 @@
    ccomp/runtime/GCATS/gc_mt.o \
    atsopt1_gc \
+   bin/atslex \
+-  bin/atsdoc \
 -  contrib
-+  libatsdoca \
 +  bin/atsdoc
  	@echo "ATS/Anairiats has been built up successfully!"
  	@echo "The value of ATSHOME for this build is \"$(ATSHOME)\"."
  	@echo "The value of ATSHOMERELOC for this build is \"$(ATSHOMERELOC)\"."
-@@ -215,25 +210,25 @@
+@@ -217,23 +212,23 @@
  
- ATSLIB=$(ATSHOMEQ)/bin/atslib
- 
--.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
-+.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $< ; sed -i '' -e '/linordset_randbst/d' $@
+ .libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
  libfiles: .libfiles_local
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_lex

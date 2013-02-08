@@ -31,6 +31,7 @@ post-deinstall() {
 	${RMDIR} ${SAMBA_RUNDIR} 2>/dev/null || true
 	${RMDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true
 	${RMDIR} ${SAMBA_PRIVATEDIR} 2>/dev/null || true
+	${ECHO_CMD}
 	${ECHO_CMD} "WARNING: If you will *NOT* use this package anymore, please remove the"
 	${ECHO_CMD} "  following directories manually:"
 	${ECHO_CMD} "  ${SAMBA_PRIVATEDIR}"

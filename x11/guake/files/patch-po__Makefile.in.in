@@ -1,0 +1,12 @@
+--- ./po/Makefile.in.in.orig	2013-01-18 22:40:08.000000000 +0100
++++ ./po/Makefile.in.in	2013-01-18 22:40:34.000000000 +0100
+@@ -34,7 +34,8 @@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+ DATADIRNAME = @DATADIRNAME@
+-itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++#itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++itlocaledir = @localedir@
+ subdir = po
+ install_sh = @install_sh@
+ # Automake >= 1.8 provides @mkdir_p@.

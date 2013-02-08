@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rej
-# Date created:				16 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	rej
 PORTVERSION=	0.16
@@ -19,7 +15,9 @@ NO_BUILD=	yes
 PORTDOCS=	CHANGELOG README vimrc
 PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for f in ${PORTNAME} qp mp
@@ -35,7 +33,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -45,4 +43,4 @@ do-install:
 run-test: patch
 	@cd ${WRKSRC}; ${SH} runtests.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

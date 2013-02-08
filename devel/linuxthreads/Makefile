@@ -1,9 +1,5 @@
-# New ports collection makefile for: linuxthreads
-# Date created:		14 Jan 1999
-# Whom:			Richard Seaman, Jr. <dick@tar.com>
-#
+# Created by: Richard Seaman, Jr. <dick@tar.com>
 # $FreeBSD$
-#
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
@@ -17,6 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
 USE_LDCONFIG=	yes
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 .if defined(LINUXTHREADS_WRAP_API)
 USE_PERL5_BUILD=true

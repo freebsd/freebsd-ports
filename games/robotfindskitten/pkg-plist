@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/robotfindskitten
+%%DATADIR%%/vanilla.nki
+@dirrmtry %%DATADIR%%

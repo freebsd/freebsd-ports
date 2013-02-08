@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fnccheck
-# Date created:        22 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fnccheck
 PORTVERSION=	3.2.0
@@ -12,12 +8,10 @@ MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FunctionCheck-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A profiling library/utilities for C/C++ programs
+COMMENT=	Profiling library/utilities for C/C++ programs
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-
-BROKEN=		does not link
 
 USE_BINUTILS=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
@@ -33,6 +27,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 STRIP=		# none
 
 INFO=		libfc
+
+.include <bsd.port.options.mk>
+
+# should be same as binutils
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+LDFLAGS+=	-lintl
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \

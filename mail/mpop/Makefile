@@ -7,6 +7,7 @@
 
 PORTNAME=	mpop
 PORTVERSION=	1.0.27
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -31,7 +32,7 @@ INFO=	mpop
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 .else
 USE_OPENSSL=		yes

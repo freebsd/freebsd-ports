@@ -3,7 +3,7 @@
 
 PORTNAME=	teamspeak_client
 PORTVERSION=	2.0.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/:main \
 		http://www.gsoft.com.au/~doconnor/:misc
@@ -67,10 +67,4 @@ do-install:
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

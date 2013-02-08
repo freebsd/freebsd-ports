@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lha
-# Date created:         26 Dec 1994
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	lha
 PORTVERSION=	1.14i

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-AMQP
-# Date created:		2011-10-29
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-AMQP
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

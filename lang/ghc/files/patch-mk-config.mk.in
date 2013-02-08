@@ -1,0 +1,15 @@
+--- ./mk/config.mk.in.orig	2012-06-06 19:10:25.000000000 +0200
++++ ./mk/config.mk.in		2013-01-30 16:24:53.000000000 +0100
+@@ -363,6 +363,12 @@
+ PapiLibDir=
+ PapiIncludeDir=
+ 
++# Configuration for libffi
++UseSystemLibFFI=@UseSystemLibFFI@
++# Flags to go into package.conf for rts
++FFILibDir=@FFILibDir@
++FFIIncludeDir=@FFIIncludeDir@
++
+ ################################################################################
+ #
+ #		Paths (see paths.mk)

@@ -7,7 +7,7 @@ In order for Skype to work OK, you need your kernel and modules to be:
 The port tries to check for this, but there is a smaller or bigger interval for
 which this can't be done automatically. So in case of any trouble please make
 sure you run kernel/modules built from sources after above dates.
-Tests were only done on HEAD and 8-STALBE with linux-fc10, and I don't think it
+Tests were only done on HEAD and 8-STABLE with linux-fc10, and I don't think it
 can work with fc4.
 
 

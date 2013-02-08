@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTP/LWP/UserAgent/.packlist
+%%SITE_PERL%%/AnyEvent/HTTP/LWP/UserAgent.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/HTTP/LWP
+@dirrmtry %%SITE_PERL%%/AnyEvent/HTTP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTP/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTP/LWP

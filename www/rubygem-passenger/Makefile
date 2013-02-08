@@ -75,9 +75,6 @@ pre-patch:
 
 post-install:
 	@${REINPLACE_CMD} \
-		's!-lpthread!${PTHREAD_LIBS}!g' \
-		${PREFIX}/${GEM_LIB_DIR}/ext/nginx/config
-	@${REINPLACE_CMD} \
 		's!-Wall!!g; \
 		s!gcc!${CC}!g; \
 		s!g++!${CXX}!g; \
@@ -90,9 +87,6 @@ post-install:
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
 .endif
-	@${REINPLACE_CMD} \
-		's!-lpthread!${PTHREAD_LIBS}!g' \
-		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/compiler.rb
 	@${REINPLACE_CMD} \
 		's!#{LIBEV_LIBS}!-L${LOCALBASE}/lib -lev!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb

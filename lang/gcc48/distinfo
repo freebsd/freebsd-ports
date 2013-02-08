@@ -1,4 +1,2 @@
-SHA256 (gcc-4.8-20121216.tar.bz2) = f813e9aa9da33dca76c4bef52fe4cdc5edccffeed2ffaceaaa7efb1938afb22c
-SIZE (gcc-4.8-20121216.tar.bz2) = 81933875
-SHA256 (ecj-4.5.jar) = 98fd128f1d374d9e42fd9d4836bdd249c6d511ebc6c0df17fbc1b9df96c3d781
-SIZE (ecj-4.5.jar) = 1470676
+SHA256 (gcc-4.8-20130113.tar.bz2) = c0435b2813f29be158becff35a7cdf0202f21e25a504dd76f7c001ff2fec9556
+SIZE (gcc-4.8-20130113.tar.bz2) = 82087685

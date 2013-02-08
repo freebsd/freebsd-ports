@@ -1,16 +1,12 @@
-# New ports collection makefile for:	drupal6-webform
-# Date created:				2 June 2009
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webform
 DISTVERSION=	6.x-3.17
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to allow easy creation of forms
 
 USE_DRUPAL=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:		lep
-# Date created:				15 May 2004
-# Whom:					Dmitri Nikulin <setagllib@optusnet.com.au>
-#
+# Created by: Dmitri Nikulin <setagllib@optusnet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	lep
 PORTVERSION=	0.41
@@ -11,8 +7,11 @@ CATEGORIES=	security
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	setagllib@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lesser Encryption Project
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

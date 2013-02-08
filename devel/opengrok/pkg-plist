@@ -1,4 +1,4 @@
-@unexec if cmp -s %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%%; then rm -f %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
+@unexec if cmp -s %D/%%T%%/webapps/opengrok/WEB-INF/web.xml %D/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
 bin/opengrok
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLE.txt
@@ -19,7 +19,7 @@ bin/opengrok
 %%T%%/webapps/opengrok/WEB-INF/lib/opengrok.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/swing-layout-0.9.jar
 %%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%%
-@exec if [ ! -f %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml ]; then cp %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%% %D%/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
+@exec if [ ! -f %D/%%T%%/webapps/opengrok/WEB-INF/web.xml ]; then cp %D/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%% %D/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
 %%T%%/webapps/opengrok/default/img/Logo.png
 %%T%%/webapps/opengrok/default/img/bg.png
 %%T%%/webapps/opengrok/default/img/button1.png

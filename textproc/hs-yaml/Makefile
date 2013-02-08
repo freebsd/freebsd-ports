@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	yaml
-PORTVERSION=	0.8.1.1
+PORTVERSION=	0.8.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Low-level binding to the libyaml C library
+COMMENT=	Support for parsing and rendering YAML documents
 
 LICENSE=	BSD
 

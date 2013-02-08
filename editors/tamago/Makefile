@@ -1,13 +1,9 @@
-# New ports collection makefile for:	tamago
-# Date created:		6 March 2000
-# Whom:			tetsushi NAKAI <nakai@tsl.pe.u-tokyo.ac.jp>
-#
+# Created by: tetsushi NAKAI <nakai@tsl.pe.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -21,6 +17,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	The Multilingual Input Method - Egg V4
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -56,7 +54,7 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper ${PREFIX}/bin/egg-helper
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

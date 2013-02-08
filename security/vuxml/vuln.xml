@@ -51,6 +51,563 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="00b0d8cd-7097-11e2-98d9-003067c2616f">
+  <topic>OpenSSL -- TLS 1.1, 1.2 denial of service</topic>
+    <affects>
+      <package>
+        <name>openssl</name>
+        <range><lt>1.0.1_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>OpenSSL security team reports:</p>
+        <blockquote cite="http://www.openssl.org/news/secadv_20130205.txt">
+          <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1
+            and TLS 1.2 on AES-NI supporting platforms can be exploited in a
+	    DoS attack.</p>
+          <p>A flaw in the OpenSSL handling of OCSP response verification can
+            be exploited in a denial of service attack.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2686</cvename>
+      <cvename>CVE-2013-0166</cvename>
+      <cvename>CVE-2013-0169</cvename>
+      <url>http://www.openssl.org/news/secadv_20120510.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-02-05</discovery>
+      <entry>2013-02-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8c773d7f-6cbb-11e2-b242-c8600054b392">
+    <topic>mysql/mariadb/percona server -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><lt>5.1.67</lt></range>
+	<range><ge>5.5</ge><lt>5.5.29</lt></range>
+      </package>
+      <package>
+      <name>mariadb-server</name>
+      <range><ge>5.3</ge><lt>5.3.12</lt></range>
+      <range><ge>5.5</ge><lt>5.5.29</lt></range>
+      </package>
+      <package>
+      <name>percona-server</name>
+      <range><ge>5.5</ge><lt>5.5.29.29.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ORACLE reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2013-1515902.html">
+	  <p>Multiple SQL injection vulnerabilities in the replication code</p>
+	  <p>Stack-based buffer overflow</p>
+	  <p>Heap-based buffer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4414</cvename>
+      <cvename>CVE-2012-5611</cvename>
+      <cvename>CVE-2012-5612</cvename>
+      <cvename>CVE-2012-5615</cvename>
+      <cvename>CVE-2012-5627</cvename>
+      <url>https://mariadb.atlassian.net/browse/MDEV-4029</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
+      <url>http://www.mysqlperformanceblog.com/2013/01/23/announcing-percona-server-5-5-29-29-4/</url>
+    </references>
+    <dates>
+      <discovery>2012-12-01</discovery>
+      <entry>2013-02-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea0f45e2-6c4b-11e2-98d9-003067c2616f">
+    <topic>opera -- execution of arbitrary code</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <name>opera-devel</name>
+        <name>linux-opera</name>
+        <name>linux-opera-devel</name>
+        <range><lt>12.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Opera reports:</p>
+        <blockquote cite="http://www.opera.com/support/kb/view/1042/">
+          <p>Particular DOM event manipulations can cause Opera to crash. In
+            some cases, this crash might occur in a way that allows execution
+            of arbitrary code. To inject code, additional techniques would
+            have to be employed.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/1042/</url>
+      <url>http://www.opera.com/support/kb/view/1043/</url>
+    </references>
+    <dates>
+      <discovery>2013-01-30</discovery>
+      <entry>2013-02-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2ea6ce3d-6afd-11e2-9d4e-bcaec524bf84">
+    <topic>upnp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>upnp</name>
+	<range><lt>1.6.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Project changelog reports:</p>
+	<blockquote cite="http://pupnp.sourceforge.net/ChangeLog">
+	  <p>This patch addresses three possible buffer overflows in
+	    function unique_service_name().The three issues have the
+	    folowing CVE numbers:</p>
+	  <ul>  
+	     <li>CVE-2012-5958 Issue #2: Stack buffer overflow of Tempbuf</li>
+	     <li>CVE-2012-5959 Issue #4: Stack buffer overflow of Event-&gt;UDN</li>
+	     <li>CVE-2012-5960 Issue #8: Stack buffer overflow of Event-&gt;UDN</li>
+	  </ul>  			
+	  <p>Notice that the following issues have already been dealt by
+	    previous work:</p>
+	  <ul>  					
+	     <li>CVE-2012-5961 Issue #1: Stack buffer overflow of Evt-&gt;UDN</li>
+	     <li>CVE-2012-5962 Issue #3: Stack buffer overflow of Evt-&gt;DeviceType</li>
+	     <li>CVE-2012-5963 Issue #5: Stack buffer overflow of Event-&gt;UDN</li>
+	     <li>CVE-2012-5964 Issue #6: Stack buffer overflow of Event-&gt;DeviceType</li>
+	     <li>CVE-2012-5965 Issue #7: Stack buffer overflow of Event-&gt;DeviceType</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5958</cvename>
+      <cvename>CVE-2012-5959</cvename>
+      <cvename>CVE-2012-5960</cvename>
+      <cvename>CVE-2012-5961</cvename>
+      <cvename>CVE-2012-5962</cvename>
+      <cvename>CVE-2012-5963</cvename>
+      <cvename>CVE-2012-5964</cvename>
+      <cvename>CVE-2012-5965</cvename>
+    </references>
+    <dates>
+      <discovery>2012-11-21</discovery>
+      <entry>2013-01-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="559e00b7-6a4d-11e2-b6b0-10bf48230856">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.5.1,1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wordpress reports:</p>
+	<blockquote cite="http://wordpress.org/news/2013/01/wordpress-3-5-1/">
+	  <p>WordPress 3.5.1 also addresses the following security issues:</p>
+	  <ul>
+	    <li>A server-side request forgery vulnerability and remote port
+	      scanning using pingbacks. This vulnerability, which could
+	      potentially be used to expose information and compromise a
+	      site, affects all previous WordPress versions. This was fixed
+	      by the WordPress security team. We'd like to thank security
+	      researchers <a href="http://codeseekah.com/">Gennady
+	      Kovshenin</a> and <a href="http://www.ethicalhack3r.co.uk/">Ryan
+	      Dewhurst</a> for reviewing our work.</li>
+	    <li>Two instances of cross-site scripting via shortcodes and post
+	      content. These issues were discovered by Jon Cave of the WordPress
+	      security team.</li>
+	    <li>A cross-site scripting vulnerability in the external library
+	      Plupload. Thanks to the Moxiecode team for working with us on
+	      this, and for releasing Plupload 1.5.5 to address this issue.</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0235</cvename>
+      <cvename>CVE-2013-0236</cvename>
+      <cvename>CVE-2013-0237</cvename>
+    </references>
+    <dates>
+      <discovery>2013-01-24</discovery>
+      <entry>2013-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3886cafe-668c-11e2-94b8-1c4bd681f0cf">
+    <topic>django-cms -- XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>py-django-cms</name>
+	<range><lt>2.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cross-site scripting (XSS) vulnerability</p>
+	<blockquote cite="https://www.django-cms.org/en/blog/2012/12/04/2-3-5-security-release/">
+	  <p>Jonas Obrist reports: The security issue allows users with limited
+	    admin access to elevate their privileges through XSS injection
+	    using the page_attribute template tag. Only users with admin access
+	    and the permission to edit at least one django CMS page object
+	    could exploit this vulnerability. Websites that do not use the
+	    page_attribute template tag are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.django-cms.org/en/blog/2012/12/04/2-3-5-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2012-12-04</discovery>
+      <entry>2013-01-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8d03202c-6559-11e2-a389-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>24.0.1312.56</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[151008] High CVE-2013-0839: Use-after-free in canvas font
+	    handling. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[170532] Medium CVE-2013-0840: Missing URL validation when opening
+	    new windows.</p>
+	  <p>[169770] High CVE-2013-0841: Unchecked array index in content
+	    blocking. Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[166867] Medium CVE-2013-0842: Problems with NULL characters
+	    embedded in paths. Credit to Google Chrome Security Team (Jüri
+	    Aedla).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0839</cvename>
+      <cvename>CVE-2013-0840</cvename>
+      <cvename>CVE-2013-0841</cvename>
+      <cvename>CVE-2013-0842</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-01-22</discovery>
+      <entry>2013-01-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1827f213-633e-11e2-8d93-c8600054b392">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>drupal6</name>
+        <range><lt>6.28</lt></range>
+      </package>
+      <package>
+        <name>drupal7</name>
+        <range><lt>7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Drupal Security Team reports:</p>
+        <blockquote cite="https://drupal.org/SA-CORE-2013-001">
+          <p>Cross-site scripting (Various core and contributed modules)</p>
+          <p>Access bypass (Book module printer friendly version)</p>
+          <p>Access bypass (Image module)</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+        <url>https://drupal.org/SA-CORE-2013-001</url>
+    </references>
+    <dates>
+      <discovery>2013-01-16</discovery>
+      <entry>2013-01-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1b9b199f-5efd-11e2-a1ee-c48508086173">
+    <topic>ettercap -- buffer overflow in target list parsing</topic>
+    <affects>
+      <package>
+        <name>ettercap</name>
+        <range><lt>0.7.4.1</lt></range>
+        <range><ge>0.7.5</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Host target list parsing routine in ettercap
+          0.7.4-series prior to 0.7.4.1 and 0.7.5-series
+          is prone to the stack-based buffer overflow that
+          may lead to the code execution with the privileges
+          of the ettercap process.</p>
+        <p>In order to trigger this vulnerability, user or service
+          that use ettercap should be tricked to pass the crafted list
+          of targets via the "-j" option.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0722</cvename>
+      <url>http://www.exploit-db.com/exploits/23945/</url>
+      <url>https://secunia.com/advisories/51731/</url>
+    </references>
+    <dates>
+      <discovery>2013-01-07</discovery>
+      <entry>2013-01-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d5e0317e-5e45-11e2-a113-c48508086173">
+    <topic>java 7.x -- security manager bypass</topic>
+    <affects>
+      <package>
+        <name>openjdk7</name>
+        <range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>linux-sun-jdk</name>
+        <range><ge>7.0</ge><lt>7.11</lt></range>
+      </package>
+      <package>
+        <name>linux-sun-jre</name>
+        <range><ge>7.0</ge><lt>7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>US CERT reports:</p>
+        <blockquote cite="http://www.kb.cert.org/vuls/id/625617">
+          <p>Java 7 Update 10 and earlier versions of Java 7 contain a
+            vulnerability that can allow a remote, unauthenticated
+            attacker to execute arbitrary code on a vulnerable
+            system.</p>
+          <p>The Java JRE plug-in provides its own Security Manager.
+            Typically, a web applet runs with a security manager
+            provided by the browser or Java Web Start plugin. Oracle's
+            document states, "If there is a security manager already
+            installed, this method first calls the security manager's
+            checkPermission method with a
+            RuntimePermission("setSecurityManager") permission to ensure
+            it's safe to replace the existing security manager.  This may
+            result in throwing a SecurityException".</p>
+          <p>By leveraging the vulnerability in the Java Management
+            Extensions (JMX) MBean components, unprivileged Java code
+            can access restricted classes.  By using that vulnerability
+            in conjunction with a second vulnerability involving the
+            Reflection API and the invokeWithArguments method of the
+            MethodHandle class, an untrusted Java applet can escalate
+            its privileges by calling the the setSecurityManager()
+            function to allow full privileges, without requiring code
+            signing.  Oracle Java 7 update 10 and earlier Java 7 versions
+            are affected. The invokeWithArguments method was introduced
+            with Java 7, so therefore Java 6 is not affected.</p>
+          <p>This vulnerability is being attacked in the wild, and is
+            reported to be incorporated into exploit kits. Exploit code
+            for this vulnerability is also publicly available.</p>
+        </blockquote>
+        <p>Esteban Guillardoy from Immunity Inc. additionally clarifies
+          on the recursive reflection exploitation technique:</p>
+        <blockquote cite="https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf">
+          <p>The real issue is in the native
+            sun.reflect.Reflection.getCallerClass method.</p>
+          <p>We can see the following information in the Reflection
+            source code:</p>
+          <p>Returns the class of the method realFramesToSkip frames
+            up the stack (zero-based), ignoring frames associated with
+            java.lang.reflect.Method.invoke() and its
+            implementation.</p>
+          <p>So what is happening here is that they forgot to skip the
+          frames related to the new Reflection API and only the old
+          reflection API is taken into account.</p>
+        </blockquote>
+        <p>This exploit does not only affect Java applets, but every
+          piece of software that relies on the Java Security Manager for
+          sandboxing executable code is affected: malicious code can
+          totally disable Security Manager.</p>
+        <p>For users who are running native Web browsers with enabled
+          Java plugin, the workaround is to remove the java/icedtea-web
+          port and restart all browser instances.</p>
+        <p>For users who are running Linux Web browser flavors, the
+          workaround is either to disable the Java plugin in browser
+          or to upgrade linux-sun-* packages to the non-vulnerable
+          version.</p>
+        <p>It is not recommended to run untrusted applets using
+          appletviewer, since this may lead to the execution of the
+          malicious code on vulnerable versions on JDK/JRE.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0433</cvename>
+      <certvu>625617</certvu>
+      <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2013-0422-1896849.html</url>
+      <url>https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf</url>
+    </references>
+    <dates>
+      <discovery>2013-01-10</discovery>
+      <entry>2013-01-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="97c22a94-5b8b-11e2-b131-000c299b62e1">
+    <topic>nagios -- buffer overflow in history.cgi</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>3.4.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>full disclosure reports:</p>
+	<blockquote cite="http://archives.neohapsis.com/archives/fulldisclosure/2012-12/0108.html">
+	  <p>history.cgi is vulnerable to a buffer overflow due to the use of
+	     sprintf with user supplied data that has not been restricted in size.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-6096</cvename>
+      <url>http://archives.neohapsis.com/archives/fulldisclosure/2012-12/0108.html</url>
+      <url>http://nagios.svn.sourceforge.net/viewvc/nagios?view=revision&amp;revision=2547</url>
+    </references>
+    <dates>
+      <discovery>2012-12-21</discovery>
+      <entry>2013-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="46bd747b-5b84-11e2-b06d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>24.0.1312.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[162494] High CVE-2012-5145: Use-after-free in SVG layout. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[165622] High CVE-2012-5146: Same origin policy bypass with
+	    malformed URL. Credit to Erling A Ellingsen and Subodh Iyengar,
+	    both of Facebook.</p>
+	  <p>[165864] High CVE-2012-5147: Use-after-free in DOM handling.
+	    Credit to José A. Vázquez.</p>
+	  <p>[167122] Medium CVE-2012-5148: Missing filename sanitization in
+	    hyphenation support. Credit to Google Chrome Security Team (Justin
+	    Schuh).</p>
+	  <p>[166795] High CVE-2012-5149: Integer overflow in audio IPC
+	    handling. Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[165601] High CVE-2012-5150: Use-after-free when seeking video.
+	    Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[165538] High CVE-2012-5151: Integer overflow in PDF JavaScript.
+	    Credit to Mateusz Jurczyk, with contribution from Gynvael Coldwind,
+	    both of Google Security Team.</p>
+	  <p>[165430] Medium CVE-2012-5152: Out-of-bounds read when seeking
+	    video. Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[164565] High CVE-2012-5153: Out-of-bounds stack access in v8.
+	    Credit to Andreas Rossberg of the Chromium development
+	    community.</p>
+	  <p>[Mac only] [163208] Medium CVE-2012-5155: Missing Mac sandbox for
+	    worker processes. Credit to Google Chrome Security Team (Julien
+	    Tinnes).</p>
+	  <p>[162778] High CVE-2012-5156: Use-after-free in PDF fields. Credit
+	    to Mateusz Jurczyk, with contribution from Gynvael Coldwind, both
+	    of Google Security Team.</p>
+	  <p>[162776] [162156] Medium CVE-2012-5157: Out-of-bounds reads in PDF
+	    image handling. Credit to Mateusz Jurczyk, with contribution from
+	    Gynvael Coldwind, both of Google Security Team.</p>
+	  <p>[162153] High CVE-2013-0828: Bad cast in PDF root handling. Credit
+	    to Mateusz Jurczyk, with contribution from Gynvael Coldwind, both
+	    of Google Security Team.</p>
+	  <p>[162114] High CVE-2013-0829: Corruption of database metadata
+	    leading to incorrect file access. Credit to Google Chrome Security
+	    Team (Jüri Aedla).</p>
+	  <p>[161836] Low CVE-2013-0831: Possible path traversal from extension
+	    process. Credit to Google Chrome Security Team (Tom Sepez).</p>
+	  <p>[160380] Medium CVE-2013-0832: Use-after-free with printing.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[154485] Medium CVE-2013-0833: Out-of-bounds read with printing.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[154283] Medium CVE-2013-0834: Out-of-bounds read with glyph
+	    handling. Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[152921] Low CVE-2013-0835: Browser crash with geolocation. Credit
+	    to Arthur Gerkis.</p>
+	  <p>[150545] High CVE-2013-0836: Crash in v8 garbage collection.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[145363] Medium CVE-2013-0837: Crash in extension tab handling.
+	    Credit to Tom Nielsen.</p>
+	  <p>[Linux only] [143859] Low CVE-2013-0838: Tighten permissions on
+	    shared memory segments. Credit to Google Chrome Security Team
+	    (Chris Palmer).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5145</cvename>
+      <cvename>CVE-2012-5146</cvename>
+      <cvename>CVE-2012-5147</cvename>
+      <cvename>CVE-2012-5148</cvename>
+      <cvename>CVE-2012-5149</cvename>
+      <cvename>CVE-2012-5150</cvename>
+      <cvename>CVE-2012-5151</cvename>
+      <cvename>CVE-2012-5152</cvename>
+      <cvename>CVE-2012-5153</cvename>
+      <cvename>CVE-2012-5155</cvename>
+      <cvename>CVE-2012-5156</cvename>
+      <cvename>CVE-2012-5157</cvename>
+      <cvename>CVE-2013-0828</cvename>
+      <cvename>CVE-2013-0829</cvename>
+      <cvename>CVE-2013-0831</cvename>
+      <cvename>CVE-2013-0832</cvename>
+      <cvename>CVE-2013-0833</cvename>
+      <cvename>CVE-2013-0834</cvename>
+      <cvename>CVE-2013-0835</cvename>
+      <cvename>CVE-2013-0836</cvename>
+      <cvename>CVE-2013-0837</cvename>
+      <cvename>CVE-2013-0838</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-01-10</discovery>
+      <entry>2013-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4ed6632-5aa9-11e2-8fcb-c8600054b392">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -670,9 +1227,9 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
         <name>squid</name>
-        <range><lt>3.1.22</lt></range>
-        <range><ge>3.2</ge><lt>3.2.4</lt></range>
-        <range><ge>3.3</ge><lt>3.3.0.2</lt></range>
+        <range><lt>3.1.23</lt></range>
+        <range><ge>3.2</ge><lt>3.2.6</lt></range>
+        <range><ge>3.3</ge><lt>3.3.0.3</lt></range>
       </package>
     </affects>
     <description>
@@ -692,11 +1249,13 @@ executed in your Internet Explorer while displaying the email.</p>
     </description>
     <references>
       <cvename>CVE-2012-5643</cvename>
+      <cvename>CVE-2013-0189</cvename>
       <url>http://www.squid-cache.org/Advisories/SQUID-2012_1.txt</url>
     </references>
     <dates>
       <discovery>2012-12-17</discovery>
       <entry>2012-12-28</entry>
+      <modified>2013-01-11</modified>
     </dates>
   </vuln>
 
@@ -5480,6 +6039,8 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>php5</name>
 	<range><gt>5.4</gt><lt>5.4.5</lt></range>
+	<range><ge>5.3</ge><lt>5.3.15</lt></range>
+	<range><ge>5.2</ge><lt>5.2.17_10</lt></range>
       </package>
       <package>
 	<name>php53</name>
@@ -5506,7 +6067,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-07-19</discovery>
       <entry>2012-07-23</entry>
-      <modified>2012-09-19</modified>
+      <modified>2013-01-15</modified>
     </dates>
   </vuln>
 

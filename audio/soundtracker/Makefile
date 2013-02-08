@@ -3,7 +3,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}

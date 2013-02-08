@@ -1,13 +1,8 @@
-# New ports collection makefile for:	awstats
-# Date created:			May 13, 2002
-# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
-#
+# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	awstats
-PORTVERSION=	7.0
-PORTREVISION=	2
+PORTVERSION=	7.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -15,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
-RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
+
+RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -37,11 +32,11 @@ USE_DOS2UNIX=	tools/*.pl \
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	IPV6 "Enable IPV6 for use with IPv6 Plugin" Off
+OPTIONS_DEFINE=	IPV6
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP
 RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
@@ -107,14 +102,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/os/* ${PREFIX}/www/awstats/icons/os
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/other/* ${PREFIX}/www/awstats/icons/other
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/js/* ${PREFIX}/www/awstats/js
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
 .endif
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "* Use ${PREFIX}/www/awstats/tools/awstats_configure.pl to setup your hosts."
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 .endif
 	@${ECHO_CMD} ""

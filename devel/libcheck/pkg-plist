@@ -1,3 +1,4 @@
+bin/checkmk
 include/check.h
 lib/libcheck.a
 lib/libcheck.la

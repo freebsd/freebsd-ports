@@ -3,7 +3,7 @@
 
 PORTNAME=	openfire
 PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -34,6 +34,11 @@ VARLOG=		/var/log/openfire
 VARDB=		/var/db/openfire
 USERS=		openfire
 GROUPS=		${USERS}
+
+post-patch:
+	(cd ${WRKSRC} && ${MV} \
+	    ./src/plugins/jingleNodes/src/i18n/jingleNodes_i18n.properties \
+	    ./src/plugins/jingleNodes/src/i18n/jinglenodes_i18n.properties)
 
 do-install:
 

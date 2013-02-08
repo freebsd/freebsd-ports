@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Server
-PORTVERSION=	2.006
-PORTREVISION=	1
+PORTVERSION=	2.007
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,9 +41,6 @@ MAN3=		Net::Server.3 \
 		Net::Server::Single.3
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	${RM} ${WRKSRC}/lib/Net/Server.pm.orig
 
 .if ${PORT_OPTIONS:MIPV6}
 BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6

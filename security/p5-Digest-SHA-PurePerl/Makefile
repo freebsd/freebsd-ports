@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-SHA-PurePerl
-PORTVERSION=	5.71
+PORTVERSION=	5.81
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ MAN3=		Digest::SHA::PurePerl.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500803
-RUN_DEPENDS+=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest
+RUN_DEPENDS+=	${SITE_PERL}/Digest/base.pm:${PORTSDIR}/security/p5-Digest
 .endif
 
 .if ${PERL_LEVEL} >= 501000

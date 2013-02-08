@@ -6,6 +6,8 @@ bin/scheme
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/all.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/anfile.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/anfile.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/butils.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/butils.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/conpkg.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/conpkg.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/cref-unx.pkd
@@ -207,6 +209,18 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xcom.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xform.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xmodef.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xterm.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/cdecls.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/cdecls.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ctypes.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ctypes.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ffi-os2.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ffi-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ffi-w32.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/generator.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/generator.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/make.scm
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/syntax.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/syntax.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-browser.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-browser.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-core.bci
@@ -233,10 +247,16 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-response.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-syntax.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-syntax.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/load.scm
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prbfish.so
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
+%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prbfish.so
+%%GDBM%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prgdbm.so
+%%MCRYPT%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmcrypt.so
+%%MHASH%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmhash.so
+%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
 %%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
+%%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/mit-scheme.h
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/optiondb.scm
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/advice.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/apply.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/apropos.bci
@@ -262,6 +282,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/dbgcmd.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/dbgutl.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/debug.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/defstr.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/division.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/dosdir.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/dosprm.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/dosproc.bci
@@ -272,8 +293,11 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/emacs.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/equals.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/error.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/events.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/ffi.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/file-attributes.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/fileio.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/fixart.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/floenv.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/format.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/format.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/framex.bci
@@ -305,8 +329,10 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/httpio.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/infstr.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/infutl.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/input.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/integer-bits.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/intrpt.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/io.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/keyword.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/krypt.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/krypt.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/kryptdum.bci
@@ -376,11 +402,13 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/sdata.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/sfile.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/socket.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/srfi-1.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/stack-sample.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/starbase.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/stream.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/string.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/stringio.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/structure-parser.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/swank.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/symbol.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/syncproc.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/syncproc.com
@@ -428,6 +456,8 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/x11graph.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/xeval.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/ystep.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/ystep.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/analyze.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/analyze.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/butils.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/butils.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/cgen.bci
@@ -438,14 +468,10 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/copy.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/copy.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/emodel.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/emodel.com
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/free.bci
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/free.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/gconst.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/gconst.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/gimprt.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/gimprt.com
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/lsets.bci
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/lsets.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/make.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/make.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/object.bci
@@ -459,8 +485,6 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/reduct.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/sf-unx.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/subst.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/subst.com
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/table.bci
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/table.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/tables.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/tables.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/toplev.bci
@@ -535,6 +559,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-unx.pkd
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%

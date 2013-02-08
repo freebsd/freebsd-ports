@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	2.4.3
-CATEGORIES?=	editors kde
+CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Czech messages and documentation for Calligra

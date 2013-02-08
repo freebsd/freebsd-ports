@@ -1,20 +1,16 @@
-# New ports collection makefile for:	rubygem-em-websocket
-# Date created:		2011-10-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	em-websocket
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EventMachine based WebSocket server
 
-RUN_DEPENDS=	rubygem-addressable>=2.1.1:${PORTSDIR}/www/rubygem-addressable \
-		rubygem-eventmachine>=0.12.9:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-eventmachine>=0.12.9:${PORTSDIR}/devel/rubygem-eventmachine \
+		rubygem-http_parser.rb>=0.5.3:${PORTSDIR}/net/rubygem-http_parser.rb
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

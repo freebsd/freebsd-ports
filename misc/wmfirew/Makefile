@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmfirew
-# Date created:				16 May 2002
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmfirew
 PORTVERSION=	0.20
@@ -19,7 +15,11 @@ WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XORG=	xpm
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+	    's|^void main|int main|' ${WRKSRC}/wmfirew.c
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 
 .include <bsd.port.mk>

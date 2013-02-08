@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lv
-# Date created:         Fri Nov  6 09:06:33 PST 1998
-# Whom:                 sumikawa@FreeBSD.org
-#
+# Created by: sumikawa@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	lv
 PORTVERSION=	4.51
@@ -15,13 +11,21 @@ DISTNAME=	lv451
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Powerful Multilingual File Viewer
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../GPL.txt
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 
 MAN1=		lv.1
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKDIR}/${DISTNAME}; \
 	${INSTALL_DATA} *.html hello.sample* ${DOCSDIR})

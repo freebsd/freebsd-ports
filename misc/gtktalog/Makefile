@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtktalog
-# Date created:				20 Mar 2002
-# Whom:					Juan Salaverria <rael@vectorstar.net>
-#
+# Created by: Juan Salaverria <rael@vectorstar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtktalog
 PORTVERSION=	1.0.4
@@ -18,6 +14,8 @@ COMMENT=	A tool to make disk catalogs
 BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not build
 
 USE_BZIP2=	yes

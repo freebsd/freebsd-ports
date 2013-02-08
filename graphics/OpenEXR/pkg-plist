@@ -5,10 +5,6 @@ bin/exrmakepreview
 bin/exrmaketiled
 bin/exrmultiview
 bin/exrstdattr
-lib/libIlmImf.a
-lib/libIlmImf.la
-lib/libIlmImf.so
-lib/libIlmImf.so.6
 include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
@@ -69,26 +65,36 @@ include/OpenEXR/ImfVersion.h
 include/OpenEXR/ImfWav.h
 include/OpenEXR/ImfXdr.h
 include/OpenEXR/OpenEXRConfig.h
+lib/libIlmImf.a
+lib/libIlmImf.la
+lib/libIlmImf.so
+lib/libIlmImf.so.7
 libdata/pkgconfig/OpenEXR.pc
 share/aclocal/openexr.m4
-%%DOCSDIR%%/MultiViewOpenEXR.pdf
-%%DOCSDIR%%/OpenEXRFileLayout.pdf
-%%DOCSDIR%%/ReadingAndWritingImageFiles.pdf
-%%DOCSDIR%%/TechnicalIntroduction.pdf
-%%EXAMPLESDIR%%/drawImage.cpp
-%%EXAMPLESDIR%%/drawImage.h
-%%EXAMPLESDIR%%/generalInterfaceExamples.cpp
-%%EXAMPLESDIR%%/generalInterfaceExamples.h
-%%EXAMPLESDIR%%/generalInterfaceTiledExamples.cpp
-%%EXAMPLESDIR%%/generalInterfaceTiledExamples.h
-%%EXAMPLESDIR%%/lowLevelIoExamples.cpp
-%%EXAMPLESDIR%%/lowLevelIoExamples.h
-%%EXAMPLESDIR%%/main.cpp
-%%EXAMPLESDIR%%/previewImageExamples.cpp
-%%EXAMPLESDIR%%/previewImageExamples.h
-%%EXAMPLESDIR%%/rgbaInterfaceExamples.cpp
-%%EXAMPLESDIR%%/rgbaInterfaceExamples.h
-%%EXAMPLESDIR%%/rgbaInterfaceTiledExamples.cpp
-%%EXAMPLESDIR%%/rgbaInterfaceTiledExamples.h
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/MultiViewOpenEXR.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/OpenEXRFileLayout.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ReadingAndWritingImageFiles.pdf
+%%PORTDOCS%%%%DOCSDIR%%/TechnicalIntroduction.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawImage.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawImage.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalInterfaceExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalInterfaceExamples.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalInterfaceTiledExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalInterfaceTiledExamples.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lowLevelIoExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lowLevelIoExamples.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/previewImageExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/previewImageExamples.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgbaInterfaceExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgbaInterfaceExamples.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgbaInterfaceTiledExamples.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgbaInterfaceTiledExamples.h
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.7.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/OpenEXR

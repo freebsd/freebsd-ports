@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	di
-PORTVERSION=	4.33
+PORTVERSION=	4.34
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/
 

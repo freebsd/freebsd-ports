@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Bridge/TT2Like/.packlist
+%%SITE_PERL%%/Text/Xslate/Bridge/TT2Like.pm
+%%SITE_PERL%%/Text/Xslate/Bridge/TT2Like.pod
+@dirrmtry %%SITE_PERL%%/Text/Xslate/Bridge
+@dirrmtry %%SITE_PERL%%/Text/Xslate
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Bridge/TT2Like
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Bridge

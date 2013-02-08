@@ -1,6 +1,15 @@
---- tools/rleaddcom.c.orig	Thu Nov 29 16:12:38 2007
-+++ tools/rleaddcom.c	Thu Nov 29 16:25:14 2007
-@@ -60,7 +60,7 @@
+--- tools/rleaddcom.c.orig	1992-04-30 23:11:00.000000000 +0900
++++ tools/rleaddcom.c	2012-10-16 01:10:13.000000000 +0900
+@@ -26,6 +26,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
++#include <unistd.h>
+ #include "rle.h"
+ #include <sys/types.h>
+ #include <sys/param.h>			/* for MAXPATHLEN */
+@@ -60,7 +62,7 @@
   * Algorithm:
   *	[None]
   */
@@ -9,7 +18,7 @@
  main( argc, argv )
  int argc;
  char **argv;
-@@ -118,7 +118,7 @@
+@@ -118,7 +120,7 @@
  	}
  	else
  	    strcpy( buf, temp );

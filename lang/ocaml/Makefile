@@ -84,16 +84,13 @@ CONFIGURE_ARGS+=-no-tk
 .else
 USE_TK=		84+
 INVALID_TK_VER =	86
-.if defined(WITH_THREADS)
-USE_TK_THREADS =	yes
-.endif
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 PLIST_SUB+=	TK=""
 CONFLICTS+=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
 CONFIGURE_ARGS+=	-tkdefs \
 			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} ${THR_CPP}" \
-			-tklibs "-L${LOCALBASE}/lib -ltk${TK_VER:S|.||}${_TCL_THREADS_SUFFIX} \
-			-ltcl${TCL_VER:S|.||}${_TCL_THREADS_SUFFIX} ${THR_LD}"
+			-tklibs "-L${LOCALBASE}/lib -ltk${TK_VER:S|.||} \
+			-ltcl${TCL_VER:S|.||} ${THR_LD}"
 .endif
 
 .if ${ARCH} == sparc64

@@ -1,0 +1,91 @@
+commit a564d64
+Author: Ehsan Akhgari <ehsan@mozilla.com>
+Date:   Thu Oct 11 13:42:12 2012 -0400
+
+    Bug 800401 - Make sure that the WebRTC build system does not impose the -Werror flag on all Linux/Mac builds; r=jesup
+    
+    In the future, we need to hook these up to the FAIL_ON_WARNINGS machinery.
+---
+ media/mtransport/third_party/nICEr/nicer.gyp       | 2 --
+ media/mtransport/third_party/nrappkit/nrappkit.gyp | 2 --
+ media/webrtc/signaling/signaling.gyp               | 6 ------
+ 3 files changed, 10 deletions(-)
+
+diff --git media/mtransport/third_party/nICEr/nicer.gyp media/mtransport/third_party/nICEr/nicer.gyp
+index 26ec0c5..0e1f8b4 100644
+--- mozilla/media/mtransport/third_party/nICEr/nicer.gyp
++++ mozilla/media/mtransport/third_party/nICEr/nicer.gyp
+@@ -132,7 +132,6 @@
+               ## Mac
+               [ 'OS == "mac"', {
+                 'cflags_mozilla': [
+-                    '-Werror',
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+@@ -183,7 +182,6 @@
+               ## Linux
+               [ 'OS == "linux"', {
+                 'cflags': [
+-                    '-Werror',
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+diff --git media/mtransport/third_party/nrappkit/nrappkit.gyp media/mtransport/third_party/nrappkit/nrappkit.gyp
+index f9a5c19..3cc8e1c 100644
+--- mozilla/media/mtransport/third_party/nrappkit/nrappkit.gyp
++++ mozilla/media/mtransport/third_party/nrappkit/nrappkit.gyp
+@@ -150,7 +150,6 @@
+               ## Mac
+               [ 'OS == "mac"', {
+                 'cflags_mozilla': [
+-                    '-Werror',
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+@@ -200,7 +199,6 @@
+               ## Linux
+               [ 'OS == "linux"', {
+                 'cflags': [
+-                    '-Werror',
+                     '-Wall',
+                     '-Wno-parentheses',
+                     '-Wno-strict-prototypes',
+diff --git media/webrtc/signaling/signaling.gyp media/webrtc/signaling/signaling.gyp
+index 1ec0ee2..175996f 100644
+--- mozilla/media/webrtc/signaling/signaling.gyp
++++ mozilla/media/webrtc/signaling/signaling.gyp
+@@ -184,7 +184,6 @@
+           ],
+           
+           'cflags_mozilla': [
+-            '-Werror',
+           ],
+         }],
+         ['OS=="win"', {
+@@ -212,8 +211,6 @@
+           ],
+           
+           'cflags_mozilla': [
+-            '-Werror',
+-            '-Wno-error=conversion'
+           ],
+         }],
+       ],
+@@ -633,7 +630,6 @@
+           ],
+ 
+           'cflags_mozilla': [
+-            '-Werror',
+           ],
+         }],
+         ['OS=="win"', {
+@@ -752,8 +748,6 @@
+           ],
+           
+           'cflags_mozilla': [
+-            '-Werror',
+-            '-Wno-error=conversion'
+           ],
+         }],
+       ],

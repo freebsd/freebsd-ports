@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.10
-PORTREVISION=	4
+PORTVERSION=	0.11
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad
+COMMENT=	Third-party extensions for xmonad
 
 LICENSE=	BSD
 
-USE_CABAL=	mtl random utf8-string X11>=1.5.0.0 xmonad>=0.10
+USE_CABAL=	mtl random utf8-string X11>=1.6 xmonad>=0.11
 USE_XORG=	x11
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
@@ -19,13 +18,15 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 OPTIONS_DEFINE=		XFT
 OPTIONS_DEFAULT=	XFT
 
-XFT_DESC=		Enable Xft support for fonts
+XFT_DESC=		Use Xft to render text
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=	--flags="use_xft"
 USE_CABAL+=		X11-xft>=0.2
+.else
+CONFIGURE_ARGS+=	--flags="-use_xft"
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

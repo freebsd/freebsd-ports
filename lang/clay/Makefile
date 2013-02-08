@@ -16,7 +16,7 @@ COMMENT=	A language designed for generic programming
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
 
 OPTIONS_DEFINE=		BINDGEN
 BINDGEN_DESC=		Build with binding generator
@@ -44,8 +44,8 @@ CMAKE_ARGS+=	-DBUILD_BINDGEN=false
 .endif
 
 .if ${OSVERSION} < 900044 || ${PORT_OPTIONS:MBINDGEN}
-BUILD_DEPENDS+=	clang>=3.1:${PORTSDIR}/lang/clang
-RUN_DEPENDS+=	clang>=3.1:${PORTSDIR}/lang/clang
+BUILD_DEPENDS+=	clang31>=3.1:${PORTSDIR}/lang/clang31
+RUN_DEPENDS+=	clang31>=3.1:${PORTSDIR}/lang/clang31
 .endif
 
 .if defined(NOPORTDOCS)

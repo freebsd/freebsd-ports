@@ -1,4 +1,3 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/article.txt

@@ -29,14 +29,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	lib/va/i965_drv_video.so \
 		lib/va/i965_drv_video.la
 
-.if !defined(WITH_NEW_XORG) || !defined(WITH_KMS)
-IGNORE=		requires libdrm >= 2.4.23 and intel KMS to be enabled
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NEW_XORG)
+pre-configure:
+.if !exists(${LOCALBASE}/lib/libkms.so)
+	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the WITH_KMS option."
+	@${FALSE}
+.endif
 .endif
 
-post-patch:     .SILENT
+post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
 		${WRKSRC}/src/Makefile.am
 	${REINPLACE_CMD} -e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
 		${WRKSRC}/configure.ac
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

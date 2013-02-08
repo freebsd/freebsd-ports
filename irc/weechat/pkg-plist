@@ -45,8 +45,8 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.fr.html
-%%DOCUMENTATION%%share/doc/weechat/weechat_tester.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.ja.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_tester.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.en.html

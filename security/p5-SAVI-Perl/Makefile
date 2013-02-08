@@ -1,18 +1,15 @@
-# New ports collection makefile for:	p5-SAVI-Perl
-# Date created:				April 8th 2004
-# Whom:	      				Gary Hayers <Gary@Hayers.net>
-#
+# Created by: Gary Hayers <Gary@Hayers.net>
 # $FreeBSD$
 
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
 PORTREVISION=	5
 CATEGORIES=	security perl5
-MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
+MASTER_SITES=	http://www.csupomona.edu/~henson/archive/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	Gary@Hayers.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Perl5 module interface to Sophos AntiVirus
 
 MAN3=		SAVI.3

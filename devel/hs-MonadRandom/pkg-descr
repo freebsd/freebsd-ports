@@ -1,0 +1,3 @@
+Support for computations which consume random values.
+
+WWW: http://hackage.haskell.org/package/MonadRandom

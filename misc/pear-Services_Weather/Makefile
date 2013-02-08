@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.6
+PORTEPOCH=	1
 CATEGORIES=	misc www pear geography
 
 MAINTAINER=	miwi@FreeBSD.org

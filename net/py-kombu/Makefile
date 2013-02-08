@@ -1,12 +1,8 @@
-# New ports collection makefile for:	kombu
-# Date created:				18 March 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kombu
-PORTVERSION=	2.2.1
+PORTVERSION=	2.5.4
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +12,46 @@ COMMENT=	An AMQP messaging framework for Python
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqplib>=1.0:${PORTSDIR}/net/py-amqplib \
-		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.1:${PORTSDIR}/devel/py-anyjson
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=1.0.6:${PORTSDIR}/net/py-amqp \
+		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.3:${PORTSDIR}/devel/py-anyjson
+
+OPTIONS_DEFINE=	BEANSTALK BOTO MONGODB REDIS SQLALCHEMY ZMQ
+
+BEANSTALK_DESC=	Include beanstalkd transport support
+BOTO_DESC=	Include AWS transport support
+MONGODB_DESC=	Include MongoDB transport support
+REDIS_DESC=	Include Redis transport support
+SQLALCHEMY_DESC=	Include SQLAlchemy transport support
+ZMQ_DESC=	Include ZMQ transport support
+
+# Ports infrastructure bug
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBEANSTALK}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:${PORTSDIR}/net/py-beanstalkc
+.endif
+
+.if ${PORT_OPTIONS:MBOTO}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}boto=>2.6.0:${PORTSDIR}/devel/py-boto
+.endif
+
+.if ${PORT_OPTIONS:MMONGODB}
+RUN_DEPENDS+=	pymongo>0:${PORTSDIR}/databases/pymongo
+.endif
+
+.if ${PORT_OPTIONS:MREDIS}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}redis>0:${PORTSDIR}/databases/py-redis
+.endif
+
+.if ${PORT_OPTIONS:MSQLALCHEMY}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy
+.endif
+
+.if ${PORT_OPTIONS:MZMQ}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq=>2.2.0:${PORTSDIR}/devel/py-pyzmq
+.endif
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install

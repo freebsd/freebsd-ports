@@ -1,13 +1,9 @@
-# New ports collection makefile for:	madedit
-# Date created:				2007-08-08
-# Whom:					Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	madedit
 PORTVERSION=	0.2.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/MadEdit/MadEdit-${PORTVERSION}
 

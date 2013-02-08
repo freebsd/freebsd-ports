@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sapphire-themes
-# Date created:		2000-09-04
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	sapphire-themes
 PORTVERSION=	1.1
@@ -14,6 +10,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for sapphire
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 BROKEN=		depends on conflicting packages (xli and xloadimage both installs bin/xsetbg)
 

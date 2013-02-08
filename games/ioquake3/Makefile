@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
@@ -108,12 +108,12 @@ RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:${PORTSDIR}/games/${PORTNAME}-server
 . if !defined(WITHOUT_CLIENT)
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER}" "${COMMENT}"  \
 		"${Q3ICON}" \
-		"${Q3CLIENT}${BINSUFFIX}" "Application;Game;" false
+		"${Q3CLIENT}${BINSUFFIX}" "Game;" false
 . endif
 . if defined(WITH_SMP)
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER} SMP" "${COMMENT}" \
 		"${Q3ICON}" \
-		"${Q3CLIENT}-smp${BINSUFFIX}" "Application;Game;" false
+		"${Q3CLIENT}-smp${BINSUFFIX}" "Game;" false
 . endif
 .endif
 

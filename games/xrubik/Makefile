@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xrubik
-# Date created:		20 October 1996
-# Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xrubik
 PORTVERSION=	5.5.2

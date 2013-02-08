@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    vnterm
-# Date created:         Sat July 20, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	vnterm
 PORTVERSION=	3.4	#11.6.6[.0]
@@ -15,6 +10,9 @@ DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	An xterm that speaks Vietnamese
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm

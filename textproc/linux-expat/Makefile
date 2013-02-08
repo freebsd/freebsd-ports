@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-expat
-# Date created:				2003-07-05
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	expat
 PORTVERSION=	1.95.8

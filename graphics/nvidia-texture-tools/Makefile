@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-texture-tools
 DISTVERSION=	2.0.8-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	Texture Tools with support for DirectX 10 texture formats
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+		IlmImf:${PORTSDIR}/graphics/OpenEXR
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE

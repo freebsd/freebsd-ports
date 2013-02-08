@@ -1,13 +1,9 @@
-# New ports collection makefile for:	vdr-plugin-upnp
-# Date created:		Tue Nov 16 18:34:10 CET 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-upnp
 PORTVERSION=	0.0.2a2
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/177/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a/-alpha/}${DISTVERSIONSUFFIX}

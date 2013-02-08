@@ -1,139 +1,183 @@
 %%CLIENT%%bin/minetest
 %%SERVER%%bin/minetestserver
+share/applications/minetest.desktop
+share/icons/hicolor/scalable/apps/minetest-icon.svg
 %%CLIENT%%%%NLS%%share/locale/da/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/de/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/fr/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/it/LC_MESSAGES/minetest.mo
-%%CLIENT%%%%DATADIR%%/builtin.lua
-%%CLIENT%%%%DATADIR%%/clienttextures/fontlucida.png
-%%CLIENT%%%%DATADIR%%/clienttextures/menubg.png
-%%CLIENT%%%%DATADIR%%/clienttextures/menulogo.png
-%%CLIENT%%%%DATADIR%%/clienttextures/unknown_block.png
-%%CLIENT%%%%DATADIR%%/clienttextures/unknown_item.png
-%%CLIENT%%%%DATADIR%%/clienttextures/unknown_object.png
-%%CLIENT%%%%DATADIR%%/mods/bucket/depends.txt
-%%CLIENT%%%%DATADIR%%/mods/bucket/init.lua
-%%CLIENT%%%%DATADIR%%/mods/bucket/textures/bucket.png
-%%CLIENT%%%%DATADIR%%/mods/bucket/textures/bucket_lava.png
-%%CLIENT%%%%DATADIR%%/mods/bucket/textures/bucket_water.png
-%%CLIENT%%%%DATADIR%%/mods/default/init.lua
-%%CLIENT%%%%DATADIR%%/mods/default/textures/crack.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_apple.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_book.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_bookshelf.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_brick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_cactus_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_cactus_top.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_chest_front.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_chest_lock.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_chest_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_chest_top.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_clay.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_clay_brick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_clay_lump.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_cloud.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_coal_lump.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_cobble.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_dirt.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_fence.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_furnace_front.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_furnace_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_glass.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_grass.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_grass_footsteps.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_grass_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_gravel.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_iron_lump.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_junglegrass.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_jungletree.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_jungletree_top.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_ladder.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_lava.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_leaves.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_mese.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_mineral_coal.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_mineral_iron.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_mossycobble.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_nc_back.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_nc_front.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_nc_rb.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_nc_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_paper.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_papyrus.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_rail.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_rail_crossing.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_rail_curved.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_rail_t_junction.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sand.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sandstone.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sapling.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_scorched_stuff.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sign.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sign_back.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_sign_wall.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_steel_block.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_steel_ingot.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_stick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_stone.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tnt_bottom.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tnt_side.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tnt_top.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_mesepick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_steelaxe.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_steelpick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_steelshovel.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_steelsword.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_stoneaxe.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_stonepick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_stoneshovel.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_stonesword.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_woodaxe.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_woodpick.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_woodshovel.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tool_woodsword.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_torch.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_torch_on_ceiling.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_torch_on_floor.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tree.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_tree_top.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_water.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/default_wood.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/heart.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/player.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/player_back.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox1.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox1_dawn.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox1_night.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox2.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox2_dawn.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox2_night.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox3.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox3_dawn.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/skybox3_night.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/treeprop.png
-%%CLIENT%%%%DATADIR%%/mods/default/textures/wieldhand.png
-%%CLIENT%%%%DATADIR%%/mods/experimental/depends.txt
-%%CLIENT%%%%DATADIR%%/mods/experimental/init.lua
-%%CLIENT%%%%DATADIR%%/mods/give_initial_stuff/depends.txt
-%%CLIENT%%%%DATADIR%%/mods/give_initial_stuff/init.lua
-%%CLIENT%%%%DATADIR%%/mods/legacy/depends.txt
-%%CLIENT%%%%DATADIR%%/mods/legacy/init.lua
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/apple_iron.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/cooked_rat.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/dungeon_master.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/fireball.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/firefly.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/oerkki1.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/oerkki1_damaged.png
-%%CLIENT%%%%DATADIR%%/mods/legacy/textures/rat.png
-%%CLIENT%%@dirrm %%DATADIR%%/mods/legacy/textures
-%%CLIENT%%@dirrm %%DATADIR%%/mods/legacy
-%%CLIENT%%@dirrm %%DATADIR%%/mods/give_initial_stuff
-%%CLIENT%%@dirrm %%DATADIR%%/mods/experimental
-%%CLIENT%%@dirrm %%DATADIR%%/mods/default/textures
-%%CLIENT%%@dirrm %%DATADIR%%/mods/default
-%%CLIENT%%@dirrm %%DATADIR%%/mods/bucket/textures
-%%CLIENT%%@dirrm %%DATADIR%%/mods/bucket
-%%CLIENT%%@dirrm %%DATADIR%%/mods
-%%CLIENT%%@dirrm %%DATADIR%%/clienttextures
-%%CLIENT%%@dirrm %%DATADIR%%
+%%DATADIR%%/builtin/auth.lua
+%%DATADIR%%/builtin/builtin.lua
+%%DATADIR%%/builtin/chatcommands.lua
+%%DATADIR%%/builtin/deprecated.lua
+%%DATADIR%%/builtin/detached_inventory.lua
+%%DATADIR%%/builtin/falling.lua
+%%DATADIR%%/builtin/item.lua
+%%DATADIR%%/builtin/item_entity.lua
+%%DATADIR%%/builtin/misc.lua
+%%DATADIR%%/builtin/misc_helpers.lua
+%%DATADIR%%/builtin/misc_register.lua
+%%DATADIR%%/builtin/privileges.lua
+%%DATADIR%%/builtin/serialize.lua
+%%DATADIR%%/builtin/static_spawn.lua
+%%DATADIR%%/client/shaders/test_shader_1/base.txt
+%%DATADIR%%/client/shaders/test_shader_1/opengl_fragment.glsl
+%%DATADIR%%/client/shaders/test_shader_1/opengl_vertex.glsl
+%%DATADIR%%/client/shaders/test_shader_2/base.txt
+%%DATADIR%%/client/shaders/test_shader_2/opengl_fragment.glsl
+%%DATADIR%%/client/shaders/test_shader_2/opengl_vertex.glsl
+%%DATADIR%%/games/minimal/game.conf
+%%DATADIR%%/games/minimal/mods/bucket/depends.txt
+%%DATADIR%%/games/minimal/mods/bucket/init.lua
+%%DATADIR%%/games/minimal/mods/bucket/textures/bucket.png
+%%DATADIR%%/games/minimal/mods/bucket/textures/bucket_lava.png
+%%DATADIR%%/games/minimal/mods/bucket/textures/bucket_water.png
+%%DATADIR%%/games/minimal/mods/default/init.lua
+%%DATADIR%%/games/minimal/mods/default/mapgen.lua
+%%DATADIR%%/games/minimal/mods/default/sounds/default_grass_footstep.1.ogg
+%%DATADIR%%/games/minimal/mods/default/textures/crack_anylength.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_apple.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_book.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_bookshelf.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_brick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_cactus_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_cactus_top.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_chest_front.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_chest_lock.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_chest_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_chest_top.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_clay.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_clay_brick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_clay_lump.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_cloud.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_coal_lump.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_cobble.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_dirt.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_fence.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_furnace_fire_bg.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_furnace_fire_fg.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_furnace_front.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_furnace_front_active.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_furnace_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_glass.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_grass.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_grass_footsteps.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_grass_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_gravel.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_iron_lump.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_junglegrass.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_jungletree.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_jungletree_top.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_ladder.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_lava.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_lava_flowing_animated.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_lava_source_animated.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_leaves.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_mese.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_mineral_coal.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_mineral_iron.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_mossycobble.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_nc_back.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_nc_front.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_nc_rb.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_nc_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_paper.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_papyrus.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_rail.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_rail_crossing.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_rail_curved.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_rail_t_junction.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_sand.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_sandstone.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_sapling.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_scorched_stuff.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_sign_wall.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_steel_block.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_steel_ingot.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_stick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_stone.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tnt_bottom.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tnt_side.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tnt_top.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_mesepick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_steelaxe.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_steelpick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_steelshovel.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_steelsword.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_stoneaxe.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_stonepick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_stoneshovel.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_stonesword.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_woodaxe.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_woodpick.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_woodshovel.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tool_woodsword.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_torch.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_torch_on_ceiling.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_torch_on_floor.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tree.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_tree_top.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_water.png
+%%DATADIR%%/games/minimal/mods/default/textures/default_wood.png
+%%DATADIR%%/games/minimal/mods/default/textures/heart.png
+%%DATADIR%%/games/minimal/mods/default/textures/player.png
+%%DATADIR%%/games/minimal/mods/default/textures/player_back.png
+%%DATADIR%%/games/minimal/mods/default/textures/treeprop.png
+%%DATADIR%%/games/minimal/mods/default/textures/wieldhand.png
+%%DATADIR%%/games/minimal/mods/experimental/depends.txt
+%%DATADIR%%/games/minimal/mods/experimental/init.lua
+%%DATADIR%%/games/minimal/mods/experimental/textures/experimental_dummyball.png
+%%DATADIR%%/games/minimal/mods/experimental/textures/experimental_tester_tool_1.png
+%%DATADIR%%/games/minimal/mods/give_initial_stuff/depends.txt
+%%DATADIR%%/games/minimal/mods/give_initial_stuff/init.lua
+%%DATADIR%%/games/minimal/mods/legacy/depends.txt
+%%DATADIR%%/games/minimal/mods/legacy/init.lua
+%%DATADIR%%/games/minimal/mods/legacy/textures/apple_iron.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/cooked_rat.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/dungeon_master.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/fireball.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/firefly.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/oerkki1.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/oerkki1_damaged.png
+%%DATADIR%%/games/minimal/mods/legacy/textures/rat.png
+%%DATADIR%%/games/minimal/mods/stairs/depends.txt
+%%DATADIR%%/games/minimal/mods/stairs/init.lua
+%%DATADIR%%/games/minimal/mods/test/init.lua
+%%CLIENT%%%%DATADIR%%/textures/base/pack/fontdejavusansmono.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/fontlucida.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/menubg.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/menulogo.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/smoke_puff.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/sunrisebg.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/unknown_block.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/unknown_item.png
+%%CLIENT%%%%DATADIR%%/textures/base/pack/unknown_object.png
+%%CLIENT%%@dirrm %%DATADIR%%/textures/base/pack
+%%CLIENT%%@dirrm %%DATADIR%%/textures/base
+%%CLIENT%%@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/games/minimal/mods/test
+@dirrm %%DATADIR%%/games/minimal/mods/stairs
+@dirrm %%DATADIR%%/games/minimal/mods/legacy/textures
+@dirrm %%DATADIR%%/games/minimal/mods/legacy
+@dirrm %%DATADIR%%/games/minimal/mods/give_initial_stuff
+@dirrm %%DATADIR%%/games/minimal/mods/experimental/textures
+@dirrm %%DATADIR%%/games/minimal/mods/experimental
+@dirrm %%DATADIR%%/games/minimal/mods/default/textures
+@dirrm %%DATADIR%%/games/minimal/mods/default/sounds
+@dirrm %%DATADIR%%/games/minimal/mods/default
+@dirrm %%DATADIR%%/games/minimal/mods/bucket/textures
+@dirrm %%DATADIR%%/games/minimal/mods/bucket
+@dirrm %%DATADIR%%/games/minimal/mods
+@dirrm %%DATADIR%%/games/minimal
+@dirrm %%DATADIR%%/games
+@dirrm %%DATADIR%%/client/shaders/test_shader_2
+@dirrm %%DATADIR%%/client/shaders/test_shader_1
+@dirrm %%DATADIR%%/client/shaders
+@dirrm %%DATADIR%%/client
+@dirrm %%DATADIR%%/builtin
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications

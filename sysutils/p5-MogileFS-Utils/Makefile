@@ -1,18 +1,14 @@
-# New ports collection makefile for:	p5-MogileFS-Utils
-# Date created:		2007-04-22
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS tools
 
 BUILD_DEPENDS=	p5-MogileFS-Client>=1.16:${PORTSDIR}/sysutils/p5-MogileFS-Client \

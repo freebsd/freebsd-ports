@@ -1,15 +1,10 @@
-# New ports collection makefile for:	Wanderlust
-# Date created:		26 Sep 2009
-# Whom: 		MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
-PORTREVISION=	4
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
+MASTER_SITES=	http://www.jpl.org/ftp/pub/github-snapshots/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nobutaka
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -23,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_EMACS=	yes
 
-SNAPDATE=	20120102
-SNAPTIME=	0309
+SNAPDATE=	20120923
+SNAPTIME=	0900
 
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
@@ -62,7 +57,7 @@ WL_ICONDIR=	${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
 STARTUPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/wanderlust
-DOCS=		README NEWS doc/wl.texi
+DOCS=		README.md NEWS doc/wl.texi
 DOCS_JA=	README.ja NEWS.ja doc/wl-ja.texi
 EXAMPLESLANG=	en ja
 EXAMPLES=	dot.addresses dot.folders dot.wl

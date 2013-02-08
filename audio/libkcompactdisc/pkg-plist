@@ -1,0 +1,10 @@
+include/libkcompactdisc/kcompactdisc.h
+lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
+lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
+lib/cmake/libkcompactdisc/LibkcompactdiscTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/libkcompactdisc.so
+lib/libkcompactdisc.so.5
+lib/libkcompactdisc.so.5.0.1
+@dirrm lib/cmake/libkcompactdisc
+@dirrmtry lib/cmake
+@dirrm include/libkcompactdisc

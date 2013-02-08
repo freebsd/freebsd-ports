@@ -1,8 +1,0 @@
-VFlib is a Japanese vector font library which supports TrueType, Zeit,
-JG, BDF fonts.
-
-Sazanami TrueType font is used by default for mincho(min) and gothic(goth).
-You can use your own font by modifying ${PREFIX}/etc/vflib/vfontcap file.
-For details, see ${PREFIX}/doc/vflib/man.ps (in Japanese).
-
-WWW: http://www-masu.ist.osaka-u.ac.jp/~kakugawa/VFlib/

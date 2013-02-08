@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-edit
-# Date created:				Jan 13 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-edit
 PORTVERSION=	2.2

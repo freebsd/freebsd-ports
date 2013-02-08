@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	blaze-markup
-PORTVERSION=	0.5.1.2
+PORTVERSION=	0.5.1.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A blazingly fast markup combinator library for Haskell
+COMMENT=	Blazingly fast markup combinator library
 
 LICENSE=	BSD
 

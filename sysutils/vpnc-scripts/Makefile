@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpnc-scripts
-PORTVERSION=	20121109
+PORTVERSION=	20130129
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/

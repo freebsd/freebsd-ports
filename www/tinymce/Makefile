@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinymce
-# Date created:				26 Mar 2007
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tinymce
 PORTVERSION=	2.1.3
@@ -12,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/TinyMCE/${PORTVERSION}
 DISTNAME=	tinymce_2_1_3
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

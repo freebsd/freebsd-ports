@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-File-Fetch
-# Date created:				31 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Fetch
-PORTVERSION=	0.36
+PORTVERSION=	0.38
 CATEGORIES=	ftp www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

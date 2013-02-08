@@ -1,10 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/kernel.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rcconf.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rules.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x66.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x94.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-contributors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-enabling.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-finalprep.html
@@ -12,17 +6,16 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-ipfirewall.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x103.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x195.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x104.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x196.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x307.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x453.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x510.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x54.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x55.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x575.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x656.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x723.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/x735.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
@@ -149,6 +142,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html

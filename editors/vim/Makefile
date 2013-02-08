@@ -38,10 +38,11 @@ SLAVEDIRS=	editors/vim-lite
 .include <bsd.port.options.mk>
 .endif
 
+CONFLICTS=	vim6* vim*-gnome libsysinfo
 .if defined(LITE)
-CONFLICTS=	vim6* vim* vim*-gnome
+CONFLICTS+=	vim*
 .else
-CONFLICTS=	vim6* vim*-lite vim*-gnome
+CONFLICTS+=	vim*-lite
 .endif
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes

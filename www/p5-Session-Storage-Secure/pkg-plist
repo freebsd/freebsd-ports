@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Session/Storage/Secure/.packlist
+%%SITE_PERL%%/Session/Storage/Secure.pm
+@dirrmtry %%SITE_PERL%%/Session/Storage
+@dirrmtry %%SITE_PERL%%/Session
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Session/Storage/Secure
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Session/Storage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Session

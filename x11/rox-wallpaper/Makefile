@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-wallpaper
-# Date created:				Jan 13 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-wallpaper
 PORTVERSION=	2.3

@@ -1,0 +1,47 @@
+--- util/Makefile.in.orig
++++ util/Makefile.in
+@@ -91,8 +91,7 @@
+ wmagnify_SOURCES = wmagnify.c
+ wmagnify_OBJECTS = wmagnify.$(OBJEXT)
+ wmagnify_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/WINGs/libWUtil.la \
+-	$(top_builddir)/wrlib/libwraster.la
++	$(top_builddir)/WINGs/libWUtil.la
+ am_wmgenmenu_OBJECTS = wmgenmenu.$(OBJEXT)
+ wmgenmenu_OBJECTS = $(am_wmgenmenu_OBJECTS)
+ wmgenmenu_DEPENDENCIES = $(top_builddir)/WINGs/libWUtil.la
+@@ -104,8 +103,7 @@
+ wmsetbg_SOURCES = wmsetbg.c
+ wmsetbg_OBJECTS = wmsetbg.$(OBJEXT)
+ wmsetbg_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/WINGs/libWUtil.la \
+-	$(top_builddir)/wrlib/libwraster.la
++	$(top_builddir)/WINGs/libWUtil.la
+ wxcopy_SOURCES = wxcopy.c
+ wxcopy_OBJECTS = wxcopy.$(OBJEXT)
+ wxcopy_DEPENDENCIES =
+@@ -369,7 +367,7 @@
+ bin_SCRIPTS = wmaker.inst wm-oldmenu2new wkdemenu.pl
+ EXTRA_DIST = wmaker.inst.in bughint wm-oldmenu2new directjpeg.c wkdemenu.pl
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\" \
+-	 $(DFLAGS) -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib \
++	 $(DFLAGS) -I$(top_srcdir)/WINGs \
+ 	@HEADER_SEARCH_PATH@ \
+ 	-DETCDIR=\"sysconfdir\" -DDATADIR=\"pkgdatadir\"
+ 
+@@ -392,13 +390,13 @@
+ wmagnify_LDADD = \
+ 	$(top_builddir)/WINGs/libWINGs.la \
+ 	$(top_builddir)/WINGs/libWUtil.la \
+-	$(top_builddir)/wrlib/libwraster.la \
++	-lwraster \
+ 	@XLFLAGS@ @XLIBS@ @INTLIBS@
+ 
+ wmsetbg_LDADD = \
+ 	$(top_builddir)/WINGs/libWINGs.la \
+ 	$(top_builddir)/WINGs/libWUtil.la \
+-	$(top_builddir)/wrlib/libwraster.la \
++	-lwraster \
+ 	@XLFLAGS@ @LIBXINERAMA@ @XLIBS@ @INTLIBS@
+ 
+ wmgenmenu_LDADD = \

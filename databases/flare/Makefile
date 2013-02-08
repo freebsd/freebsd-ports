@@ -1,13 +1,9 @@
-# New ports collection makefile for:	flare
-# Date created:				2010-05-29
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flare
 PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
 EXTRACT_SUFX=	.tgz
@@ -15,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flare - distributed and persistent key-value storage
 
-LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs \
-		tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs \
+		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

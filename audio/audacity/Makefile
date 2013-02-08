@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
 
 MAINTAINER=	xxjack12xx@gmail.com
-COMMENT=	Audacity is a GUI editor for digital audio waveforms
+COMMENT=	GUI editor for digital audio waveforms
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
-
-CONFLICTS=	audacity-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
@@ -24,7 +21,7 @@ USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes
 WX_COMPS=	wx
@@ -32,17 +29,18 @@ INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
+PORTDOCS=	README.txt
 
 OPTIONS_DEFINE=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST PORTMIXER \
-		SAMPLERATE SBSMS SOUNDTOUCH TAGLIB TWOLAME VAMP VORBIS
-OPTIONS_DEFAULT=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST \
-			PORTMIXER SAMPLERATE SBSMS SOUNDTOUCH TAGLIB \
+		SAMPLERATE SBSMS SSE TAGLIB TWOLAME VAMP VORBIS
+OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST \
+			PORTMIXER SAMPLERATE SBSMS SSE TAGLIB \
 			TWOLAME VAMP VORBIS
 
 NYQUIST_DESC=	Nyquist plug-in support
 PORTMIXER_DESC=	Compile with PortMixer support
-SBSMS_DESC=	Support libsbsms for pitch and tempo changing
-SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
+SBSMS_DESC=	Use libsbsms for pitch and tempo changing
+SSE=		Enable SSE optimizations
 TAGLIB_DESC=	Use TagLib for metadata support
 TWOLAME_DESC=	Use libtwolame for MP2 export support
 VAMP_DESC=	Vamp plug-in support
@@ -63,10 +61,6 @@ CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include
 CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
-
-.if ${PORT_OPTIONS:MDOCS}
-MAKE_ENV=	DOC=yes
-.endif
 
 CONFIGURE_ARGS+=	--with-lib-preference="local system"
 CONFIGURE_ARGS+=	--with-portaudio
@@ -139,11 +133,8 @@ CONFIGURE_ARGS+=	--with-sbsms
 CONFIGURE_ARGS+=	--without-sbsms
 .endif
 
-.if ${PORT_OPTIONS:MSOUNDTOUCH}
-LIB_DEPENDS+=		SoundTouch:${PORTSDIR}/audio/soundtouch
-CONFIGURE_ARGS+=	--with-soundtouch
-.else
-CONFIGURE_ARGS+=	--without-soundtouch
+.if ${PORT_OPTIONS:MSSE}
+CONFIGURE_ARGS+=	--with-sse
 .endif
 
 .if ${PORT_OPTIONS:MTWOLAME}
@@ -187,5 +178,11 @@ post-patch:
 .endif
 
 	@${REINPLACE_CMD} -e 's|inline void|static inline void|' ${WRKSRC}/lib-src/libnyquist/nyquist/ffts/src/fftlib.c
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

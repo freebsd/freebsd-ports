@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -18,7 +17,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=	clang-devel-[23]*
+CONFLICTS=	clang-devel-[23]* clang31-*
 
 CLANG_NAME=	clang-${PORTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
@@ -93,6 +92,8 @@ post-extract:
 	    ${MV} ${CLANG_NAME} clang
 
 post-patch:
+	${REINPLACE_CMD} -e 's|${PORTVERSION}svn|${PORTVERSION}|g' \
+	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
@@ -113,10 +114,8 @@ pre-build:
 	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
-.if empty(PORT_OPTIONS:MDOCS)
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
-.endif
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
@@ -133,12 +132,8 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
-.if empty(PORT_OPTIONS:MDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
-.else
-	@${RMDIR} ${DOCSDIR}/html/img
-.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}

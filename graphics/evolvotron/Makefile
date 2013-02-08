@@ -1,19 +1,16 @@
-# New ports collection makefile for:	evolvotron
-# Date created:				16 Mar 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	evolvotron
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

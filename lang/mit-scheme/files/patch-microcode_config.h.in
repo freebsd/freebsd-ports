@@ -1,0 +1,47 @@
+
+$FreeBSD$
+
+--- microcode/config.h.in.orig
++++ microcode/config.h.in
+@@ -86,7 +86,7 @@
+ #undef HAVE_FDATASYNC
+ 
+ /* Define to 1 if you have the `feclearexcept' function. */
+-#undef HAVE_FECLEAREXCEPT
++#define HAVE_FECLEAREXCEPT 1
+ 
+ /* Define to 1 if you have the `fedisableexcept' function. */
+ #undef HAVE_FEDISABLEEXCEPT
+@@ -101,10 +101,10 @@
+ #undef HAVE_FEGETEXCEPT
+ 
+ /* Define to 1 if you have the `fegetexceptflag' function. */
+-#undef HAVE_FEGETEXCEPTFLAG
++#define HAVE_FEGETEXCEPTFLAG 1
+ 
+ /* Define to 1 if you have the `fegetround' function. */
+-#undef HAVE_FEGETROUND
++#define HAVE_FEGETROUND 1
+ 
+ /* Define to 1 if you have the `feholdexcept' function. */
+ #undef HAVE_FEHOLDEXCEPT
+@@ -119,16 +119,16 @@
+ #undef HAVE_FERAISEEXCEPT
+ 
+ /* Define to 1 if you have the `fesetenv' function. */
+-#undef HAVE_FESETENV
++#define HAVE_FESETENV 1
+ 
+ /* Define to 1 if you have the `fesetexceptflag' function. */
+ #undef HAVE_FESETEXCEPTFLAG
+ 
+ /* Define to 1 if you have the `fesetround' function. */
+-#undef HAVE_FESETROUND
++#define HAVE_FESETROUND 1
+ 
+ /* Define to 1 if you have the `fetestexcept' function. */
+-#undef HAVE_FETESTEXCEPT
++#define HAVE_FETESTEXCEPT 1
+ 
+ /* Define to 1 if you have the `feupdateenv' function. */
+ #undef HAVE_FEUPDATEENV

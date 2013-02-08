@@ -1,15 +1,12 @@
-# New ports collection makefile for:   keyboardcast
-# Date created:        12 jaan 2010
-# Whom:                eimar.koort
-#
+# Created by: eimar.koort
 # $FreeBSD$
-#
 
 PORTNAME=	keyboardcast
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://desrt.mcmaster.ca/code/keyboardcast/
+MASTER_SITES=	GOOGLE_CODE \
+		http://desrt.mcmaster.ca/code/keyboardcast/
 
 MAINTAINER=	eimar.koort@gmail.com
 COMMENT=	Broadcast keystrokes to multiple X windows for Gnome2

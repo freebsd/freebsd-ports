@@ -1,0 +1,148 @@
+Submitted upstream as:
+
+https://sourceforge.net/tracker/?func=detail&aid=3603360&group_id=224597&atid=1062254
+
+--- unix/mmap.c	2008-04-21 08:47:04.000000000 -0400
++++ unix/mmap.c	2013-02-04 18:18:52.000000000 -0500
+@@ -37,23 +37,16 @@
+  */
+ 
+-static int MmapCmd(ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]);
++Tcl_PackageInitProc Mmap_Init;
+ 
+-void NewChannelName(char *name, CONST char* prefix);
++static Tcl_ObjCmdProc MmapCmd;
+ 
+-static int Input(ClientData instanceData, char *buf, int bufSize, int *errorCodePtr);
++static void NewChannelName(char *name, const char* prefix);
+ 
+-static int Output(ClientData instanceData, const char *buf, int bufSize, int *errorCodePtr);
+-
+-static int Seek(ClientData instanceData, long offset, int seekMode, int *errorCodePtr);
+-
+-static int Close(ClientData instanceData, Tcl_Interp *interp);
+-
+-static void Watch(ClientData instanceData, int mask);
+-
+-//static int BlockMode(ClientData instanceData, int mode);
+-
+-static int GetHandle(ClientData instanceData, int direction, ClientData *handlePtr);
+-
+-//static void catch_signal(int sig_num);
++static Tcl_DriverInputProc Input;
++static Tcl_DriverOutputProc Output;
++static Tcl_DriverSeekProc Seek;
++static Tcl_DriverCloseProc Close;
++static Tcl_DriverWatchProc Watch;
++static Tcl_DriverGetHandleProc GetHandle;
+ 
+ /*
+@@ -62,19 +55,12 @@
+ 
+ static Tcl_ChannelType channelType = {
+-        "mmap", /* Channel type name */
+-        TCL_CHANNEL_VERSION_2,
+-        (Tcl_DriverCloseProc *) Close,
+-        (Tcl_DriverInputProc *) Input,
+-        (Tcl_DriverOutputProc *) Output,
+-        (Tcl_DriverSeekProc *) Seek,
+-        (Tcl_DriverSetOptionProc *) NULL, /* no channel type specific options */
+-        (Tcl_DriverGetOptionProc *) NULL, /* no channel type specific options */
+-        (Tcl_DriverWatchProc *) Watch,
+-        (Tcl_DriverGetHandleProc *) GetHandle, 
+-        (Tcl_DriverClose2Proc *) NULL, /* no support for closing the read and write sides independently */
+-        (Tcl_DriverBlockModeProc *) NULL, /* mmap channels are always in non-blocking mode */
+-        //(Tcl_DriverBlockModeProc *) BlockMode,
+-        (Tcl_DriverFlushProc *) NULL, /* currently reserved for future use. It should be set to NULL */
+-        (Tcl_DriverHandlerProc *) NULL  /* this is not a stacked channel driver */
++	.typeName = "mmap", /* Channel type name */
++	.version = TCL_CHANNEL_VERSION_2,
++	.closeProc = Close,
++	.inputProc = Input,
++	.outputProc =  Output,
++	.seekProc = Seek,
++	.watchProc = Watch,
++	.getHandleProc = GetHandle
+ }; 
+ 
+@@ -129,9 +115,9 @@
+     }
+ 
+-    if (bufSize > data->length - data->seek) {
++    if (bufSize > (int)(data->length - data->seek)) {
+         bufSize = data->length - data->seek;
+     }
+ 
+-    memcpy((char *)buf, (char *) (data->addr + data->seek), (size_t) bufSize);
++    memcpy(buf, data->addr + data->seek, (size_t)bufSize);
+     data->seek += bufSize;
+ 
+@@ -144,10 +130,10 @@
+     int ret;
+ 
+-    if (bufSize > data->length - data->seek) {
++    if (bufSize > (int)(data->length - data->seek)) {
+         bufSize = data->length - data->seek;
+-        memcpy((char *) (data->addr + data->seek), (char *) buf, (size_t) bufSize);
++        memcpy(data->addr + data->seek, buf, (size_t)bufSize);
+         data->seek = 0;
+     } else {
+-        memcpy((char *) (data->addr + data->seek), (char *) buf, (size_t) bufSize);
++        memcpy(data->addr + data->seek, buf, (size_t)bufSize);
+         data->seek += bufSize;
+     }
+@@ -163,4 +149,5 @@
+ static int Seek(ClientData instanceData, long offset, int seekMode, int *errorCodePtr) {
+     ChannelInstance* data;
++    off_t seek;
+     data = (ChannelInstance*) instanceData;
+ 
+@@ -178,21 +165,20 @@
+     switch (seekMode) {
+     case SEEK_SET:
+-        data->seek = offset;
++        seek = offset;
+         break;
+ 
+     case SEEK_CUR:
+-        data->seek += offset;
++        seek += offset;
+         break;
+ 
+     case SEEK_END:
+-        data->seek = data->length + offset;
++        seek = data->length + offset;
+         break;
+     }
+ 
+     /* We check if seek is within range, and fix */
+-    if (data->seek < 0) data->seek = 0;
+-    if (data->seek > data->length) data->seek = data->length;
+-    
+-    return data->seek;
++    if (seek < 0) seek = 0;
++    if (seek > (off_t)data->length) seek = data->length;
++    return data->seek = seek;
+ }
+ 
+@@ -255,5 +241,5 @@
+  */
+ static int MmapCmd(ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]) {
+-    static char* cmds[] = { "-shared", "-length", "-offset", NULL };
++    static const char* cmds[] = { "-shared", "-length", "-offset", NULL };
+     int index;
+     int ret;
+@@ -329,5 +315,5 @@
+     ClientData cd;
+     ret = Tcl_GetChannelHandle(chan, mode, (ClientData *) &cd);
+-    fd = (int) cd; // This should be ok because the pointer size in bytes is at least as may bytes as 'int'
++    fd = (intptr_t) cd; // This should be ok because the pointer size in bytes is at least as may bytes as 'int'
+     if (ret != TCL_OK) {
+         Tcl_SetResult(interp, "Could not get file handle", TCL_STATIC);
+@@ -384,5 +370,5 @@
+ }
+ 
+-void NewChannelName(char *name, CONST char* prefix) {
++void NewChannelName(char *name, const char* prefix) {
+     TCL_DECLARE_MUTEX (mmapCounterMutex)
+         static unsigned long mmapCounter = 0;

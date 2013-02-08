@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lesstif
-# Date created:		December 10, 1996
-# Whom:			1wardd@airmail.net
-#
+# Created by: 1wardd@airmail.net
 # $FreeBSD$
-#
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
@@ -15,8 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	API compatible clone of the Motif toolkit
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2
 
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes

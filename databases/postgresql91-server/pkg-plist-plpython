@@ -6,9 +6,9 @@ lib/postgresql/plpython%%PYTHON_MAJOR_VER%%.so
 %%DATADIR%%/extension/plpython2u.control
 %%DATADIR%%/extension/plpython2u--1.0.sql
 %%DATADIR%%/extension/plpython2u--unpackaged--1.0.sql
-%%DATADIR%%/extension/plpython3u.control
-%%DATADIR%%/extension/plpython3u--1.0.sql
-%%DATADIR%%/extension/plpython3u--unpackaged--1.0.sql
+%%PYTHON3%%%%DATADIR%%/extension/plpython3u.control
+%%PYTHON3%%%%DATADIR%%/extension/plpython3u--1.0.sql
+%%PYTHON3%%%%DATADIR%%/extension/plpython3u--unpackaged--1.0.sql
 @dirrmtry %%DATADIR%%/extension
 @dirrmtry lib/postgresql
 @dirrmtry %%DOCSDIR%%

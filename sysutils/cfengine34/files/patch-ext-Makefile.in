@@ -1,52 +1,10 @@
---- ext/Makefile.in.orig	2012-11-26 03:13:28.000000000 -0800
-+++ ext/Makefile.in	2012-11-27 15:46:24.000000000 -0800
-@@ -52,7 +52,7 @@
+--- ext/Makefile.in.orig	2013-01-11 04:54:49.000000000 -0800
++++ ext/Makefile.in	2013-01-30 10:54:51.204746233 -0800
+@@ -35,7 +35,6 @@
  build_triplet = @build@
  host_triplet = @host@
  target_triplet = @target@
 -sbin_PROGRAMS = rpmvercmp$(EXEEXT)
-+sbin_PROGRAMS = 
  subdir = ext
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -72,8 +72,8 @@
- CONFIG_CLEAN_VPATH_FILES =
- am__installdirs = "$(DESTDIR)$(sbindir)"
- PROGRAMS = $(sbin_PROGRAMS)
--rpmvercmp_SOURCES = rpmvercmp.c
--rpmvercmp_OBJECTS = rpmvercmp.$(OBJEXT)
-+rpmvercmp_SOURCES = 
-+rpmvercmp_OBJECTS = 
- rpmvercmp_DEPENDENCIES = ../pub/libcfpub.la
- AM_V_lt = $(am__v_lt_@AM_V@)
- am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -104,8 +104,8 @@
- AM_V_GEN = $(am__v_GEN_@AM_V@)
- am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
- am__v_GEN_0 = @echo "  GEN   " $@;
--SOURCES = rpmvercmp.c
--DIST_SOURCES = rpmvercmp.c
-+SOURCES = 
-+DIST_SOURCES = 
- am__can_run_installinfo = \
-   case $$AM_UPDATE_INFO_DIR in \
-     n|no|NO) false;; \
-@@ -382,9 +382,6 @@
- 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
- 	echo " rm -f" $$list; \
- 	rm -f $$list
--rpmvercmp$(EXEEXT): $(rpmvercmp_OBJECTS) $(rpmvercmp_DEPENDENCIES) $(EXTRA_rpmvercmp_DEPENDENCIES) 
--	@rm -f rpmvercmp$(EXEEXT)
--	$(AM_V_CCLD)$(LINK) $(rpmvercmp_OBJECTS) $(rpmvercmp_LDADD) $(LIBS)
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
-@@ -392,8 +389,6 @@
- distclean-compile:
- 	-rm -f *.tab.c
- 
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rpmvercmp.Po@am__quote@
--
- .c.o:
- @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
- @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po

@@ -3,7 +3,7 @@
 
 PORTNAME=	peekabot
 PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x
 
@@ -13,7 +13,7 @@ COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 LICENSE=	BSL GPLv3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 

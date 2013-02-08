@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	irc
-PORTVERSION=	5.0.1
+PORTVERSION=	8.0
 CATEGORIES=	irc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	william88@gmail.com
 COMMENT=	IRC protocol client library for Python
+
+LICENSE=	MIT
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
@@ -32,6 +34,7 @@ post-install:
 
 .if ${PYTHON_REL} < 270
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib>0:${PORTSDIR}/devel/py-importlib
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
 .endif
 
 .include <bsd.port.post.mk>

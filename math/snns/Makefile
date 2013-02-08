@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snns
-# Date created:		2 Febuary 1997
-# Whom:			reg@shale.csir.co.za
-#
+# Created by: reg@shale.csir.co.za
 # $FreeBSD$
-#
 
 PORTNAME=	snns
 PORTVERSION=	4.3
@@ -21,6 +17,9 @@ USE_XORG=	x11 xext xt
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/snns --enable-global \
 		--build=${CONFIGURE_TARGET}
+MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.options.mk>
 
 post-extract:
 .for file in config.guess config.sub
@@ -48,7 +47,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Readme.license ${PREFIX}/lib/snns
 	${INSTALL_DATA} ${WRKSRC}/default.cfg ${PREFIX}/lib/snns
 	${INSTALL_DATA} ${WRKSRC}/help.hdoc ${PREFIX}/lib/snns
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif

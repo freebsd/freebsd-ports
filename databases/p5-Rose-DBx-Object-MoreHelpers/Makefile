@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Rose-DBx-Object-MoreHelpers
-# Date created:	   			23 Oct 2008
-# Whom:		   			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Rose-DBx-Object-MoreHelpers
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.09
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Rose/KARMAN

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pad
-# Date created:				8 July 2000
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	pad
 PORTVERSION=	1.0.4

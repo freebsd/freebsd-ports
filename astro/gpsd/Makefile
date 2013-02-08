@@ -273,9 +273,6 @@ PLIST_SUB+=	CURSES=""
 SCONS_ARGS+=	profiling=yes
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Qgpsmm.pc.in
-
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
 # with these files when module is imported from root user

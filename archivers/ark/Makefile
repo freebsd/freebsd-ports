@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdeutils
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ark
@@ -26,17 +23,19 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ark.1
 
-OPTIONS=	7ZIP "Support for 7-Zip archives in Ark" off \
-		RAR "Support for RAR archives in Ark" off \
-		ZIP "Support for ZIP archives in Ark" off
+OPTIONS_DEFINE=	7ZIP RAR ZIP
+
+7ZIP_DESC=	Support for 7-Zip archives
+RAR_DESC=	Support for RAR archives
+ZIP_DESC=	Support for ZIP archives
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_7ZIP)
+.if ${PORT_OPTIONS:M7ZIP}
 RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
 .endif
 
-.ifdef(WITH_ZIP)
+.if ${PORT_OPTIONS:MZIP}
 RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 .endif
@@ -47,7 +46,7 @@ RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
 LIB_DEPENDS+=	archive.12:${PORTSDIR}/archivers/libarchive
 .endif
 
-.ifdef(WITH_RAR)
+.if ${PORT_OPTIONS:MRAR}
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .if ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
 INSTALL_RAR=	YES

@@ -10,14 +10,17 @@
 %%SITE_PERL%%/Net/CLI/Interact/Role/FindMatch.pm
 %%SITE_PERL%%/Net/CLI/Interact/Role/Iterator.pm
 %%SITE_PERL%%/Net/CLI/Interact/Role/Prompt.pm
-%%SITE_PERL%%/Net/CLI/Interact/Transport.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Base.pm
-%%SITE_PERL%%/Net/CLI/Interact/Transport/Base/Unix.pm
-%%SITE_PERL%%/Net/CLI/Interact/Transport/Base/Win32.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Loopback.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Win32.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Unix.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Role/ConnectCore.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/SSH.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Serial.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Telnet.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Wrapper/Base.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Wrapper/IPC_Run.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Wrapper/Net_Telnet.pm
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/catos/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/extremexos/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/foundry/pb
@@ -29,6 +32,7 @@
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/fwsm/fwsm3/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pixos7/pb
+%%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/bash/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/sdf/pb
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CLI/Interact/.packlist
@@ -37,6 +41,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/sdf
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh
+@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/bash
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pixos7
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/fwsm/fwsm3
@@ -51,8 +56,9 @@
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/catos
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook
+@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Wrapper
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Role
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Base
+@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/Role
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/Manual

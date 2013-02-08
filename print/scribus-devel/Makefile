@@ -1,13 +1,9 @@
-# Ports collection makefile for:	scribus
-# Date created:		2012-05-20
-# Whom:			lbartoletti <coer@tuxfamily.org>
-#
+# Created by: lbartoletti <coer@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}
@@ -32,6 +28,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		incorrect plist
 
 USE_SVN=	yes

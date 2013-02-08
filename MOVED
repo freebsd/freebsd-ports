@@ -3632,7 +3632,6 @@ deskutils/preferences.app|deskutils/preferences|2012-08-07|Project renamed
 www/trac-ctxtnavadd||2012-08-09|Functionality of this plugin merged into Trac itself - see trac.web.chrome.add_ctxtnav function
 net-p2p/qbittorrent-29|net-p2p/qbittorrent|2012-08-11|Moved to match port name
 net-p2p/qbittorrent-29-nox11|net-p2p/qbittorrent-nox11|2012-08-11|Moved to match port name
-sysutils/cfengine|sysutils/cfengine22|2012-08-14|Standardize port naming
 sysutils/cfengine-legacy|sysutils/cfengine32|2012-08-14|Standardize port naming
 sysutils/cfengine3|sysutils/cfengine33|2012-08-14|Standardize port naming
 lang/erlang-lite|lang/erlang|2012-08-15|Redundant port removed
@@ -3932,7 +3931,6 @@ www/p5-Sledge-Template-Expr||2012-11-28|Removed depends on mod_perl 1 which is g
 mail/vchkuser|mail/qmail-spamcontrol|2012-11-28|Has expired: mail/qmail-spamcontrol replaces this port
 chinese/pyDict||2012-11-28|Removed: Depends on the expired gtkglarea through py-gtk
 x11-toolkits/py-gtk||2012-11-28|Has expired: Depends on the expired gtkglarea
-databases/postgresql-libpqxx||2012-11-28|Has expired: No more public distfiles
 devel/portlet-api||2012-11-28|Has expired: No more public distfiles
 net/amqp08||2012-11-29|Has expired: No more public distfiles
 games/kmquake2||2012-11-29|Has expired: No more public distfiles
@@ -3954,26 +3952,14 @@ java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since octob
 science/py-openbabel||2012-12-11|Merged to science/openbabel
 deskutils/horde-hermes|deskutils/horde3-hermes|2012-12-12|Rename of old horde apps
 deskutils/horde-klutz|deskutils/horde3-klutz|2012-12-12|Rename of old horde apps
-deskutils/horde-kronolith|deskutils/horde3-kronolith|2012-12-12|Rename of old horde apps
-deskutils/horde-mnemo|deskutils/horde3-mnemo|2012-12-12|Rename of old horde apps
-deskutils/horde-nag|deskutils/horde3-nag|2012-12-12|Rename of old horde apps
 devel/horde-chora|devel/horde3-chora|2012-12-12|Rename of old horde apps
-devel/horde-whups|devel/horde3-whups|2012-12-12|Rename of old horde apps
-ftp/horde-gollem|ftp/horde3-gollem|2012-12-12|Rename of old horde apps
 mail/horde-dimp|mail/horde3-dimp|2012-12-12|Rename of old horde apps
 mail/horde-forwards|mail/horde3-forwards|2012-12-12|Rename of old horde apps
-mail/horde-imp|mail/horde3-imp|2012-12-12|Rename of old horde apps
-mail/horde-ingo|mail/horde3-ingo|2012-12-12|Rename of old horde apps
 mail/horde-mimp|mail/horde3-mimp|2012-12-12|Rename of old horde apps
-mail/horde-turba|mail/horde3-turba|2012-12-12|Rename of old horde apps
 mail/horde-vacation|mail/horde3-vacation|2012-12-12|Rename of old horde apps
 net-mgmt/horde-nic|net-mgmt/horde3-nic|2012-12-12|Rename of old horde apps
 security/horde-jeta|security/horde3-jeta|2012-12-12|Rename of old horde apps
-www/horde-ansel|www/horde3-ansel|2012-12-12|Rename of old horde apps
-www/horde-base|www/horde3-base|2012-12-12|Rename of old horde apps
 www/horde-meta|www/horde3-meta|2012-12-12|Rename of old horde apps
-www/horde-passwd|www/horde3-passwd|2012-12-12|Rename of old horde apps
-www/horde-wicked|www/horde3-wicked|2012-12-12|Rename of old horde apps
 x11-toolkits/fltk-threads|x11-toolkits/fltk|2012-12-12|Threads are on by default
 x11-fonts/gentium|x11-fonts/gentium-plus|2012-12-15|Track upstream name changes
 devel/pear-Horde_DataTree||2012-12-16|Obsolete in horde5
@@ -3997,7 +3983,7 @@ mail/horde4-webmail|mail/horde-webmail|2012-12-18|Move horde4-* apps to horde-*
 textproc/hs-xml2html||2012-12-20|Removed: this package is obsolete
 sysutils/makefs||2012-12-21|Has expired: Part of base in an earlier version for every supported FreeBSD version
 textproc/docproj-jadetex|textproc/docproj|2013-01-03|Moved: Replace by textproc/docproj
-ports-mgmt/portmanager||2013-01-06|Has expired: Does not support modern ports features such as MOVED, is lacking upstream and active contributions, and does not support pkgng.  Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng.
+ports-mgmt/portmanager||2013-01-06|Has expired: Does not support modern ports features such as MOVED, is lacking upstream and active contributions, and does not support pkgng.  Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng
 net-im/openfetion||2013-01-06|Has expired: Abandoned upstream
 textproc/libpathan||2013-01-06|Has expired: Does not build and upstream has discontinued the project and advises that it has been replaced by textproc/xqilla
 java/sun-wtk||2013-01-06|Has expired: no more public distfiles, merged with Java ME SDK 3.0 upstream
@@ -4010,3 +3996,66 @@ x11-themes/kde-icons-realistic||2013-01-06|Has expired: BROKEN for more than 6 m
 x11/Terminal|x11/xfce4-terminal|2013-01-06|Project was renamed
 textproc/p5-ack|textproc/ack|2013-01-06|Not just a perl module
 sysutils/syslog-ng-rc|sysutils/syslog-ng-devel|2013-01-08|No longer used by our upline, use syslog-ng-devel instead
+www/openbravoerp||2013-01-12|Has expired: incompatible with ant for building
+devel/lbpp||2013-01-13|Has expired: Dead upstream since 2001
+devel/titano||2013-01-13|Has expired: Dead upstream since 2001
+games/py-anki|games/anki|2013-01-16|Project was merged
+mail/claws-mail-synce||2013-01-16|Has expired: No longer supported by Claws Mail team
+databases/postgresql-plpython|databases/postgresql90-plpython|2013-01-20|This port was splitted out to several versioned ports
+net-mgmt/nfdump-devel||2013-01-22|Has expired: use nfdump instead
+devel/p4v||2013-01-22|No longer publishes FreeBSD version
+multimedia/libdvdplay||2013-01-27|Has expired: No more public_distfiles
+www/p5-Bundle-Sledge||2013-01-27|Removed
+devel/p5-Class-Fields||2013-01-27|Has expired: considered obsolete by upstream
+databases/ruby-kyotocabinet||2013-01-27|Has expired: BROKEN for more than 6 month
+x11-themes/kde-icons-amaranth-althaea||2013-01-27|Has expired: BROKEN for more than 6 month
+net/bpfstat||2013-01-27|Has expired: Merge in netstat on all supported version of FreeBSD
+x11-toolkits/fltk11||2013-01-27|Has expired: new code should use /x11-toolkits/fltk
+sysutils/salt|sysutils/py-salt|2013-01-27|Rename to consistency with other Python ports
+sysutils/salt-cloud|sysutils/py-salt-cloud|2013-01-27|Rename to consistency with other Python ports
+deskutils/py-dosage|deskutils/dosage|2013-01-28|Rename - it's a standalone application
+textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
+textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
+lang/erlang14||2013-01-30|Not needed; no issues came up with R15
+www/tomcat55||2013-01-31|Has expired: EOL and unsupported upstream
+net/samba-pdbsql||2013-01-31|Depends from the obsoleted net/samba34
+net/samba35||2013-01-31|Obsoleted by net/samba36
+devel/llvm29|devel/llvm|2013-02-01|Obsolete and unmaintained
+lang/llvm-gcc4|lang/dragonegg46|2013-02-01|Obsolete and unmaintained
+net-mgmt/nagiosgrapher||2013-02-02|Has expired: Deprecated upstream. Please use net-mgmt/pnp instead
+x11-fm/x-files||2013-02-02|Has expired: Project has been abandoned
+devel/kdebindings4-perl-perlkde|devel/p5-perlkde|2013-02-03|Renamed
+devel/kdebindings4-perl-perlqt|devel/p5-perlqt|2013-02-03|Renamed
+devel/kdebindings4-python-krosspython|devel/py-krosspython|2013-02-03|Renamed
+devel/kdebindings4-python-pykde4|devel/py-pykde4|2013-02-03|Renamed
+devel/kdebindings4-python-pykdeuic4|devel/py-pykdeuic4|2013-02-03|Renamed
+devel/kdebindings4-ruby-korundum|devel/ruby-korundum|2013-02-03|Renamed
+devel/kdebindings4-ruby-krossruby|devel/ruby-krossruby|2013-02-03|Renamed
+devel/kdebindings4-ruby-qtruby|devel/ruby-qtruby|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokegen|devel/smokegen|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokekde|devel/smokekde|2013-02-03|Renamed
+devel/kdebindings4-smoke-smokeqt|devel/smokeqt|2013-02-03|Renamed
+net/freeradius||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
+net/freeradius-mysql||2013-02-04|Has expired: no longer supported.  Please use net/freeradius2 instead
+multimedia/despotify||2013-02-04|Has expired: API no longer supported
+irc/zircon||2013-02-04|Has expired: Project has been abandoned
+math/lensnns||2013-02-04|Has expired: Project has been abandoned
+lang/perl5.8||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
+lang/perl5.10||2013-02-04|Has expired: no longer under development, use lang/perl5.16 or lang/perl5.14
+net-mgmt/argus||2013-02-05|Has expired: Using of this branch of argus is discouraged. Please migrate to net-mgmt/argus3
+net-mgmt/argus-clients||2013-02-05|Has expired: Using of this branch of argus-clients is discouraged. Please migrate to net-mgmt/argus3-clients
+net/libcmis03|net/libcmis|2013-02-05|libcmis has been updated to 0.3
+x11-toolkits/fltk2||2013-02-05|Has expired: No more public distfiles for version 2
+devel/kBuild-devel||2013-02-05|Not required anymore; use devel/kBuild instead
+games/freebsd-carddeck-kde4||2013-02-05|Has expired: deck file format is obsolete
+japanese/vflib||2013-02-06|Has expired: No more public distfiles
+graphics/py-visual||2013-02-06|Has expired: Depends on the expired x11-toolkits/gtkglarea
+math/gnuplot+||2013-02-06|Upstream says: This package is obsolete. The author does not recommend to use it
+science/vis5d+||2013-02-06|No new release since 2001, depends on expired x11-toolkits/gtkglarea
+lang/tcl-modules||2013-02-06|Modules are now part of the base Tcl distributions
+lang/tcl84-thread||2013-02-06|Threads are now enabled by default
+lang/tcl85-thread||2013-02-06|Threads are now enabled by default
+lang/tcl86-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk84-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk85-thread||2013-02-06|Threads are now enabled by default
+x11-toolkits/tk86-thread||2013-02-06|Threads are now enabled by default

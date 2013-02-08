@@ -2,6 +2,7 @@
 
 PORTNAME=	burplex
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.burplex.com/ \
 		http://www.da3m0n8t3r.com/

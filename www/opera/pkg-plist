@@ -28,6 +28,7 @@ share/icons/hicolor/48x48/mimetypes/opera-extension.png
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
 share/mime/application/x-opera-extension.xml
 share/mime/packages/opera-extension.xml
+%%DATADIR%%/cert.pem
 %%DATADIR%%/defaults/bookmarks.adr
 %%DATADIR%%/defaults/dictionaries.xml
 %%DATADIR%%/defaults/feedreaders.ini
@@ -213,6 +214,8 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/in/bookmarks.adr
 %%DATADIR%%/region/in/search.ini
 %%DATADIR%%/region/in/standard_speeddial.ini
+%%DATADIR%%/region/ke/bookmarks.adr
+%%DATADIR%%/region/ke/standard_speeddial.ini
 %%DATADIR%%/region/latin_america/bookmarks.adr
 %%DATADIR%%/region/latin_america/search.ini
 %%DATADIR%%/region/latin_america/standard_speeddial.ini
@@ -356,6 +359,7 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/region/mx
 @dirrm %%DATADIR%%/region/middle_east
 @dirrm %%DATADIR%%/region/latin_america
+@dirrm %%DATADIR%%/region/ke
 @dirrm %%DATADIR%%/region/in
 @dirrm %%DATADIR%%/region/id
 @dirrm %%DATADIR%%/region/hk

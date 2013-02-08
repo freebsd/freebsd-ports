@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdesdk
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdesdk
@@ -15,7 +12,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
 		qca.2:${PORTSDIR}/devel/qca
 BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
@@ -62,12 +59,15 @@ MAN1=	adddebug.1 \
 	xml2pot.1 \
 	zonetab2pot.py.1
 
-OPTIONS=	ANTLR "Support for po2xml and swappo tools" off \
-		KATE "Install Kate advanced text editor" on
+OPTIONS_DEFINE=	ANTLR KATE
+OPTIONS_DEFAULT=	KATE
+
+ANTLR_DESC=	Support for po2xml and swappo tools
+KATE_DESC=	Install Kate advanced text editor
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_ANTLR)
+.if ${PORT_OPTIONS:MANTLR}
 BUILD_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
 RUN_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
 PLIST_SUB+=	ANTLR=""
@@ -76,7 +76,7 @@ CMAKE_ARGS+=	-DWITH_Antlr2:BOOL=off
 PLIST_SUB+=	ANTLR="@comment "
 .endif
 
-.ifndef(WITHOUT_KATE)
+.if ${PORT_OPTIONS:MKATE}
 USE_KDE4+=	kate_run
 .endif
 

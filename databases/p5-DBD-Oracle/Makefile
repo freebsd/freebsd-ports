@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBD::Oracle
-# Date created:		28 May 2002
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-Oracle
 PORTVERSION=	1.19
@@ -21,6 +17,8 @@ OCI8_DESC=	Use OCI8
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		Does not build
 
 PERL_CONFIGURE=	yes

@@ -2,6 +2,7 @@
 
 PORTNAME=	speakinghangman
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.athenasoft.net/hangman/ \
 		http://www.athenasoft.net/assets/images/hangman/:icons
@@ -28,9 +29,9 @@ SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Speaking Hangman" \
 		"Educational game to practice and expand English and Spanish" \
-		"${PORTNAME}.png" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" \
-		"Game;LogicGame;" \
+		"Game;Education;Languages;" \
 		false
 
 do-install:

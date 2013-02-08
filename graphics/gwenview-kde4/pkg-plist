@@ -6,11 +6,8 @@ lib/libgwenviewlib.so.5
 lib/libgwenviewlib.so.5.0.1
 share/applications/kde4/gwenview.desktop
 share/apps/gvpart/gvpart.rc
+share/apps/gwenview/color-schemes/fullscreen.colors
 share/apps/gwenview/cursors/zoom.png
-share/apps/gwenview/fullscreenthemes/blackglass/checked.png
-share/apps/gwenview/fullscreenthemes/blackglass/scroll-left.png
-share/apps/gwenview/fullscreenthemes/blackglass/scroll-right.png
-share/apps/gwenview/fullscreenthemes/blackglass/style.css
 share/apps/gwenview/gwenviewui.rc
 share/apps/solid/actions/gwenview_importer.desktop
 share/apps/solid/actions/gwenview_importer_camera.desktop
@@ -38,8 +35,7 @@ share/icons/hicolor/scalable/apps/gwenview.svgz
 share/kde4/services/ServiceMenus/slideshow.desktop
 share/kde4/services/gvpart.desktop
 @dirrm share/doc/HTML/en/gwenview
-@dirrm share/apps/gwenview/fullscreenthemes/blackglass
-@dirrm share/apps/gwenview/fullscreenthemes
 @dirrm share/apps/gwenview/cursors
+@dirrm share/apps/gwenview/color-schemes
 @dirrm share/apps/gwenview
 @dirrm share/apps/gvpart

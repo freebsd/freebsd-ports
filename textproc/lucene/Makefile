@@ -13,6 +13,8 @@ COMMENT=	A full-text search engine for Java
 
 LICENSE=	AL2
 
+CONFLICTS=	lucene4-[0-9].*
+
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.6+

@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cryptohash
-PORTVERSION=	0.7.9
+PORTVERSION=	0.8.3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A collection of crypto hashes, fast, pure, and practical
+COMMENT=	Collection of crypto hashes, fast, pure, and practical
 
 LICENSE=	BSD
 

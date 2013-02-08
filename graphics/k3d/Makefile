@@ -1,13 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	k3d
-# Date created:			Jun 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	k3d
 PORTVERSION=	0.8.0.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	source-
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/K-3D%20Source/K-3D%20${PORTVERSION}

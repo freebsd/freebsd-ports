@@ -3,12 +3,13 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	A cross-platform music player based on Amarok 1.4
+COMMENT=	Cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3
 
@@ -17,7 +18,8 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		notify:${PORTSDIR}/devel/libnotify \
 		protobuf-lite:${PORTSDIR}/devel/protobuf \
 		xine:${PORTSDIR}/multimedia/libxine \
-		qjson:${PORTSDIR}/devel/qjson
+		qjson:${PORTSDIR}/devel/qjson \
+		fftw3:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
@@ -26,7 +28,7 @@ USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_GL=		glew
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
-		linguist_build network sql opengl qtestlib corelib
+		linguist_build network sql opengl qtestlib corelib webkit
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup vorbis
@@ -51,7 +53,7 @@ SPOTIFY_DESC=		Spotify support: core code
 VISUALISATION_DESC=	Visualisations from projectM
 WIIMOTEDEV_DESC=	Wiimote support
 
-OPTIONS_DEFAULTS=	AUDIOCD DBUS DEVICEKIT GIO GOOGLE_DRIVE LASTFM MTP SPOTIFY \
+OPTIONS_DEFAULT=	AUDIOCD DBUS DEVICEKIT GIO GOOGLE_DRIVE LASTFM MTP SPOTIFY \
 			VISUALISATION WIIMOTEDEV
 
 .include <bsd.port.options.mk>

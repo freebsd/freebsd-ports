@@ -1,4 +1,4 @@
-lib/libchipmunk.so.6.1.2
+lib/libchipmunk.so.6.1.3
 lib/libchipmunk.so
 lib/libchipmunk.a
 include/chipmunk/cpBody.h

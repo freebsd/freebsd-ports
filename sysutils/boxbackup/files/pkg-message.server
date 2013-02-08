@@ -1,4 +1,0 @@
-
-To run bbstored at startup, add bbstored_enable="YES" to /etc/rc.conf
-Please see http://www.boxbackup.org/server.html for server configuration
-options

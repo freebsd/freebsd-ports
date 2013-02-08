@@ -31,6 +31,7 @@
     SUBDIR += cint
     SUBDIR += clang
     SUBDIR += clang-devel
+    SUBDIR += clang31
     SUBDIR += clay
     SUBDIR += clisp
     SUBDIR += clojure
@@ -39,6 +40,7 @@
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
+    SUBDIR += copper
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cython
@@ -48,6 +50,7 @@
     SUBDIR += dmd
     SUBDIR += dmd2
     SUBDIR += dragonegg-devel46
+    SUBDIR += dragonegg46
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elisp-manual
@@ -56,7 +59,6 @@
     SUBDIR += embryo
     SUBDIR += eperl
     SUBDIR += erlang
-    SUBDIR += erlang14
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += expect-devel
@@ -83,6 +85,7 @@
     SUBDIR += gawk
     SUBDIR += gcc
     SUBDIR += gcc-aux
+    SUBDIR += gcc-ecj45
     SUBDIR += gcc34
     SUBDIR += gcc42
     SUBDIR += gcc44
@@ -146,7 +149,6 @@
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
-    SUBDIR += llvm-gcc4
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
@@ -233,11 +235,9 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += pecl-perl
-    SUBDIR += perl5.10
     SUBDIR += perl5.12
     SUBDIR += perl5.14
     SUBDIR += perl5.16
-    SUBDIR += perl5.8
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += phantomjs
@@ -341,15 +341,11 @@
     SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
-    SUBDIR += tcl-modules
     SUBDIR += tcl-wrapper
     SUBDIR += tcl83
     SUBDIR += tcl84
-    SUBDIR += tcl84-thread
     SUBDIR += tcl85
-    SUBDIR += tcl85-thread
     SUBDIR += tcl86
-    SUBDIR += tcl86-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tinypy

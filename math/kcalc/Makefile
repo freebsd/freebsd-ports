@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdeutils
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kcalc

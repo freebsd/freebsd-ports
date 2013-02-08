@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

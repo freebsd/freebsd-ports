@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecm
-# Date created:				9 Aug 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	ecm
 PORTVERSION=	1.0
@@ -23,12 +19,16 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 .for f in ${PORTNAME} un${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

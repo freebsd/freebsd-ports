@@ -1,3 +1,4 @@
+bin/akonadi_skroogeakonadi_resource
 bin/skrooge
 bin/skroogeconvert
 lib/kde4/plasma_applet_tipsoftheday.so
@@ -10,7 +11,7 @@ lib/kde4/plasma_skroogoid_scheduledoperation.so
 lib/kde4/plasma_skroogoid_unit.so
 lib/kde4/plasma_widget_incomeexpenditure.so
 lib/kde4/plasma_widget_simulation.so
-lib/kde4/plugins/grantlee/0.2/grantlee_skgfilters.so
+lib/kde4/plugins/grantlee/0.3/grantlee_skgfilters.so
 lib/kde4/skg_advice.so
 lib/kde4/skg_bookmark.so
 lib/kde4/skg_dashboard.so
@@ -62,6 +63,7 @@ lib/libskgbasemodeler.so
 lib/libskgbasemodeler.so.1
 lib/libskgbasemodeler.so.%%VERSION%%
 share/applications/kde4/skrooge.desktop
+share/akonadi/agents/skroogeakonadiresource.desktop
 share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui/main.qml
 share/apps/plasma/plasmoids/adviceapplet-qml/metadata.desktop
 share/apps/skg/skgmainpanel.rc
@@ -77,14 +79,22 @@ share/apps/skg_print/skg_print.rc
 share/apps/skg_properties/skg_properties.rc
 share/apps/skg_selectall/skg_selectall.rc
 share/apps/skg_undoredo/skg_undoredo.rc
+share/apps/skrooge/html/dark.txt
 share/apps/skrooge/html/default.txt
 share/apps/skrooge/html/default/account_table.html
 share/apps/skrooge/html/default/advices_table.html
+share/apps/skrooge/html/default/bank_table.html
+share/apps/skrooge/html/default/bank_table_light.html
 share/apps/skrooge/html/default/budget_table.html
 share/apps/skrooge/html/default/categories_month_table.html
 share/apps/skrooge/html/default/categories_previous_month_table.html
+share/apps/skrooge/html/default/categories_variations.html
+share/apps/skrooge/html/default/highlighted_operations.html
 share/apps/skrooge/html/default/income_vs_expenditure_table.html
+share/apps/skrooge/html/default/portfolio.html
+share/apps/skrooge/html/default/scheduled_operations.html
 share/apps/skrooge/html/default/unit_table.html
+share/apps/skrooge/html/detailed.txt
 share/apps/skrooge/html/main.txt
 share/apps/skrooge/images/logo/absa_bank__632005.png
 share/apps/skrooge/images/logo/aib.png
@@ -619,7 +629,9 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml
 @dirrmtry share/apps/plasma/plasmoids
-@dirrmtry lib/kde4/plugins/grantlee/0.2
+@dirrmtry share/akonadi/agents
+@dirrmtry share/akonadi
+@dirrmtry lib/kde4/plugins/grantlee/0.3
 @dirrmtry lib/kde4/plugins/grantlee
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

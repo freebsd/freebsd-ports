@@ -5,7 +5,7 @@
  #include "tevent_util.h"
  
 -#define TEVENT_NUM_SIGNALS 64
-+#define TEVENT_NUM_SIGNALS SIGRTMAX
++#define TEVENT_NUM_SIGNALS (SIGRTMAX+1)
  
  /* maximum number of SA_SIGINFO signals to hold in the queue.
    NB. This *MUST* be a power of 2, in order for the ring buffer

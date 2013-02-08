@@ -1,9 +1,5 @@
-# ports collection makefile for:	estic
-# Date created:				21 Sep 1996
-# Whom:					Julian Stacey <jhs@freebsd.org>
-#
+# Created by: Julian Stacey <jhs@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=		estic
 PORTVERSION=		1.61

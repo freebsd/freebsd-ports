@@ -17,6 +17,7 @@ load_rc_config mogilefsd
 
 required_files=%%PREFIX%%/etc/mogtracker.conf
 
+command="%%PREFIX%%/bin/${name}"
 command_args="--config=%%PREFIX%%/etc/mogtracker.conf"
 
 run_rc_command "$1"

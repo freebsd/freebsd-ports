@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +28,7 @@ MAN3=		Bundle::Image::Info::Everything.3 \
 		Image::Info::PPM.3 \
 		Image::Info::SVG.3 \
 		Image::Info::TIFF.3 \
+		Image::Info::WBMP.3 \
 		Image::Info::XBM.3 \
 		Image::Info::XPM.3
 

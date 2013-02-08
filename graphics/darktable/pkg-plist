@@ -102,7 +102,6 @@ lib/darktable/plugins/imageio/format/libppm.so
 lib/darktable/plugins/imageio/format/libtiff.so
 lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
-lib/darktable/plugins/imageio/storage/libfacebook.so
 lib/darktable/plugins/imageio/storage/libgallery.so
 lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpicasa.so
@@ -176,8 +175,6 @@ lib/darktable/plugins/lighttable/libimage.so
 lib/darktable/plugins/lighttable/libimport.so
 lib/darktable/plugins/lighttable/libkeywords.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
-lib/darktable/plugins/lighttable/liblocation.so
-lib/darktable/plugins/lighttable/libmap_settings.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
@@ -195,7 +192,6 @@ lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
-lib/darktable/views/libmap.so
 share/applications/darktable.desktop
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png

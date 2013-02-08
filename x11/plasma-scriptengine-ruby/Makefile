@@ -1,9 +1,4 @@
-# New ports collection makefile for:	plasma-scriptengine-ruby
-# Date created:		2010-03-30
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plasma-scriptengine-ruby
 PORTVERSION=	${KDE4_VERSION}

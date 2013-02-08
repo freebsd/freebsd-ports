@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	jetty
-DISTVERSION=	6.1.26
+PORTVERSION=	8.1.8
 CATEGORIES=	www java
-MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE}
+MASTER_SITE_SUBDIR=jetty/stable-8/dist
+DISTNAME=	jetty-distribution-8.1.8.v20121106
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
 
 USE_RC_SUBR=	${PORTNAME}
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_PYTHON=	1.6+
+USE_PYTHON=	2.4+
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	heybuddy
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/ \
 		http://freebsd.grindcore.ch/distfiles/

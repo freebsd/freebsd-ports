@@ -56,7 +56,6 @@
 %%WWWDIR%%/admin/controller/module/special.php
 %%WWWDIR%%/admin/controller/module/store.php
 %%WWWDIR%%/admin/controller/module/welcome.php
-%%WWWDIR%%/admin/controller/payment/alertpay.php
 %%WWWDIR%%/admin/controller/payment/authorizenet_aim.php
 %%WWWDIR%%/admin/controller/payment/authorizenet_sim.php_
 %%WWWDIR%%/admin/controller/payment/bank_transfer.php
@@ -71,6 +70,7 @@
 %%WWWDIR%%/admin/controller/payment/nochex.php
 %%WWWDIR%%/admin/controller/payment/paymate.php
 %%WWWDIR%%/admin/controller/payment/paypoint.php
+%%WWWDIR%%/admin/controller/payment/payza.php
 %%WWWDIR%%/admin/controller/payment/perpetual_payments.php
 %%WWWDIR%%/admin/controller/payment/pp_express.php_
 %%WWWDIR%%/admin/controller/payment/pp_pro.php
@@ -84,6 +84,7 @@
 %%WWWDIR%%/admin/controller/payment/worldpay.php
 %%WWWDIR%%/admin/controller/report/affiliate_commission.php
 %%WWWDIR%%/admin/controller/report/customer_credit.php
+%%WWWDIR%%/admin/controller/report/customer_online.php
 %%WWWDIR%%/admin/controller/report/customer_order.php
 %%WWWDIR%%/admin/controller/report/customer_reward.php
 %%WWWDIR%%/admin/controller/report/product_purchased.php
@@ -105,7 +106,9 @@
 %%WWWDIR%%/admin/controller/sale/voucher_theme.php
 %%WWWDIR%%/admin/controller/setting/setting.php
 %%WWWDIR%%/admin/controller/setting/store.php
+%%WWWDIR%%/admin/controller/shipping/auspost.php
 %%WWWDIR%%/admin/controller/shipping/citylink.php
+%%WWWDIR%%/admin/controller/shipping/fedex.php
 %%WWWDIR%%/admin/controller/shipping/flat.php
 %%WWWDIR%%/admin/controller/shipping/free.php
 %%WWWDIR%%/admin/controller/shipping/item.php
@@ -193,7 +196,6 @@
 %%WWWDIR%%/admin/language/english/module/special.php
 %%WWWDIR%%/admin/language/english/module/store.php
 %%WWWDIR%%/admin/language/english/module/welcome.php
-%%WWWDIR%%/admin/language/english/payment/alertpay.php
 %%WWWDIR%%/admin/language/english/payment/authorizenet_aim.php
 %%WWWDIR%%/admin/language/english/payment/authorizenet_sim.php
 %%WWWDIR%%/admin/language/english/payment/bank_transfer.php
@@ -208,12 +210,13 @@
 %%WWWDIR%%/admin/language/english/payment/nochex.php
 %%WWWDIR%%/admin/language/english/payment/paymate.php
 %%WWWDIR%%/admin/language/english/payment/paypoint.php
+%%WWWDIR%%/admin/language/english/payment/payza.php
 %%WWWDIR%%/admin/language/english/payment/perpetual_payments.php
 %%WWWDIR%%/admin/language/english/payment/pp_express.php
 %%WWWDIR%%/admin/language/english/payment/pp_pro.php
 %%WWWDIR%%/admin/language/english/payment/pp_pro_uk.php
-%%WWWDIR%%/admin/language/english/payment/pp_standard.php
 %%WWWDIR%%/admin/language/english/payment/psigate.php
+%%WWWDIR%%/admin/language/english/payment/pp_standard.php
 %%WWWDIR%%/admin/language/english/payment/sagepay.php
 %%WWWDIR%%/admin/language/english/payment/sagepay_direct.php
 %%WWWDIR%%/admin/language/english/payment/sagepay_us.php
@@ -222,6 +225,7 @@
 %%WWWDIR%%/admin/language/english/payment/worldpay.php
 %%WWWDIR%%/admin/language/english/report/affiliate_commission.php
 %%WWWDIR%%/admin/language/english/report/customer_credit.php
+%%WWWDIR%%/admin/language/english/report/customer_online.php
 %%WWWDIR%%/admin/language/english/report/customer_order.php
 %%WWWDIR%%/admin/language/english/report/customer_reward.php
 %%WWWDIR%%/admin/language/english/report/product_purchased.php
@@ -243,7 +247,9 @@
 %%WWWDIR%%/admin/language/english/sale/voucher_theme.php
 %%WWWDIR%%/admin/language/english/setting/setting.php
 %%WWWDIR%%/admin/language/english/setting/store.php
+%%WWWDIR%%/admin/language/english/shipping/auspost.php
 %%WWWDIR%%/admin/language/english/shipping/citylink.php
+%%WWWDIR%%/admin/language/english/shipping/fedex.php
 %%WWWDIR%%/admin/language/english/shipping/flat.php
 %%WWWDIR%%/admin/language/english/shipping/free.php
 %%WWWDIR%%/admin/language/english/shipping/item.php
@@ -296,6 +302,7 @@
 %%WWWDIR%%/admin/model/report/affiliate.php
 %%WWWDIR%%/admin/model/report/coupon.php
 %%WWWDIR%%/admin/model/report/customer.php
+%%WWWDIR%%/admin/model/report/online.php
 %%WWWDIR%%/admin/model/report/product.php
 %%WWWDIR%%/admin/model/report/return.php
 %%WWWDIR%%/admin/model/report/sale.php
@@ -585,9 +592,9 @@
 %%WWWDIR%%/admin/view/image/header.png
 %%WWWDIR%%/admin/view/image/home.png
 %%WWWDIR%%/admin/view/image/image.png
+%%WWWDIR%%/admin/view/image/layout.png
 %%WWWDIR%%/admin/view/image/information.png
 %%WWWDIR%%/admin/view/image/language.png
-%%WWWDIR%%/admin/view/image/layout.png
 %%WWWDIR%%/admin/view/image/length.png
 %%WWWDIR%%/admin/view/image/loading.gif
 %%WWWDIR%%/admin/view/image/lock-open.png
@@ -627,10 +634,8 @@
 %%WWWDIR%%/admin/view/image/user.png
 %%WWWDIR%%/admin/view/image/warning.png
 %%WWWDIR%%/admin/view/javascript/ckeditor/.htaccess
-%%WWWDIR%%/admin/view/javascript/ckeditor/CHANGES.html
-%%WWWDIR%%/admin/view/javascript/ckeditor/INSTALL.html
-%%WWWDIR%%/admin/view/javascript/ckeditor/LICENSE.html
 %%WWWDIR%%/admin/view/javascript/ckeditor/adapters/jquery.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/CHANGES.html
 %%WWWDIR%%/admin/view/javascript/ckeditor/ckeditor.asp
 %%WWWDIR%%/admin/view/javascript/ckeditor/ckeditor.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/ckeditor.pack
@@ -643,8 +648,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/config.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/contents.css
 %%WWWDIR%%/admin/view/javascript/ckeditor/images/spacer.gif
-%%WWWDIR%%/admin/view/javascript/ckeditor/lang/_languages.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/lang/_translationstatus.txt
+%%WWWDIR%%/admin/view/javascript/ckeditor/INSTALL.html
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/af.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/ar.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/bg.js
@@ -706,8 +710,10 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/vi.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/zh-cn.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/lang/zh.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/lang/_languages.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/lang/_translationstatus.txt
+%%WWWDIR%%/admin/view/javascript/ckeditor/LICENSE.html
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/cs.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/cy.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/da.js
@@ -729,6 +735,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/ug.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/vi.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/zh-cn.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about/dialogs/about.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about/dialogs/logo_ckeditor.png
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/adobeair/plugin.js
@@ -737,7 +744,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/bbcode/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/clipboard/dialogs/paste.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/colordialog/dialogs/colordialog.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/bg.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/cs.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/cy.js
@@ -763,6 +769,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/uk.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/vi.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/zh-cn.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/dialog/dialogDefinition.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/div/dialogs/div.js
@@ -792,7 +799,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastefromword/filter/default.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastetext/dialogs/pastetext.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/dialogs/placeholder.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/bg.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/cs.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/cy.js
@@ -817,6 +823,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/uk.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/vi.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/zh-cn.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/placeholder.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/scayt/dialogs/options.js
@@ -832,6 +839,10 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks/images/block_h6.png
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks/images/block_p.png
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/wsc.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/dialogs/smiley.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images/angel_smile.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images/angry_smile.gif
@@ -855,7 +866,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images/wink_smile.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/dialogs/specialchar.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/cs.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/cy.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/de.js
@@ -873,6 +883,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/tr.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/ug.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/zh-cn.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/styles/styles/default.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/stylesheetparser/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/table/dialogs/table.js
@@ -884,7 +895,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates/images/template2.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates/images/template3.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/dialogs/uicolor.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/bg.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/cs.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/cy.js
@@ -910,6 +920,7 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/uk.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/vi.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/zh-cn.js
+%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang/_translationstatus.txt
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/uicolor.gif
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/assets/hue_bg.png
@@ -918,10 +929,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/assets/picker_thumb.png
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/assets/yui.css
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/yui.js
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/ciframe.html
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/wsc.css
-%%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs/wsc.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/xml/plugin.js
 %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama/dialog.css
 %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama/editor.css
@@ -967,12 +974,6 @@
 %%WWWDIR%%/admin/view/javascript/ckeditor/themes/default/theme.js
 %%WWWDIR%%/admin/view/javascript/jquery/ajaxupload.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/API.txt
-%%WWWDIR%%/admin/view/javascript/jquery/flot/FAQ.txt
-%%WWWDIR%%/admin/view/javascript/jquery/flot/LICENSE.txt
-%%WWWDIR%%/admin/view/javascript/jquery/flot/Makefile
-%%WWWDIR%%/admin/view/javascript/jquery/flot/NEWS.txt
-%%WWWDIR%%/admin/view/javascript/jquery/flot/PLUGINS.txt
-%%WWWDIR%%/admin/view/javascript/jquery/flot/README.txt
 %%WWWDIR%%/admin/view/javascript/jquery/flot/examples/ajax.html
 %%WWWDIR%%/admin/view/javascript/jquery/flot/examples/annotating.html
 %%WWWDIR%%/admin/view/javascript/jquery/flot/examples/arrow-down.gif
@@ -1013,6 +1014,7 @@
 %%WWWDIR%%/admin/view/javascript/jquery/flot/examples/zooming.html
 %%WWWDIR%%/admin/view/javascript/jquery/flot/excanvas.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/excanvas.min.js
+%%WWWDIR%%/admin/view/javascript/jquery/flot/FAQ.txt
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.colorhelpers.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.colorhelpers.min.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.crosshair.js
@@ -1024,6 +1026,7 @@
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.min.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.navigate.js
+%%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.navigate.min.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.pie.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.pie.min.js
@@ -1037,10 +1040,13 @@
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.symbol.min.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.threshold.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.flot.threshold.min.js
-%%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.js
 %%WWWDIR%%/admin/view/javascript/jquery/flot/jquery.min.js
+%%WWWDIR%%/admin/view/javascript/jquery/flot/LICENSE.txt
+%%WWWDIR%%/admin/view/javascript/jquery/flot/Makefile
+%%WWWDIR%%/admin/view/javascript/jquery/flot/NEWS.txt
+%%WWWDIR%%/admin/view/javascript/jquery/flot/PLUGINS.txt
+%%WWWDIR%%/admin/view/javascript/jquery/flot/README.txt
 %%WWWDIR%%/admin/view/javascript/jquery/jquery-1.7.1.min.js
-%%WWWDIR%%/admin/view/javascript/jquery/jstree/README.txt
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/changelog.txt
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo/async_html.html
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo/async_html_data.txt
@@ -1106,7 +1112,6 @@
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/lib/jquery.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/lib/jquery.metadata.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/lib/sarissa.js
-%%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/_jquery.tree.rtl.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.checkbox.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.contextmenu.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.cookie.js
@@ -1115,6 +1120,8 @@
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.themeroller.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.xml_flat.js
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/jquery.tree.xml_nested.js
+%%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins/_jquery.tree.rtl.js
+%%WWWDIR%%/admin/view/javascript/jquery/jstree/README.txt
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/apple/bg.jpg
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/apple/dot_for_ie.gif
 %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/apple/icons.png
@@ -1163,7 +1170,6 @@
 %%WWWDIR%%/admin/view/javascript/jquery/ui/external/jquery.metadata.js
 %%WWWDIR%%/admin/view/javascript/jquery/ui/external/qunit.css
 %%WWWDIR%%/admin/view/javascript/jquery/ui/external/qunit.js
-%%WWWDIR%%/admin/view/javascript/jquery/ui/i18n/jquery-ui-i18n.js
 %%WWWDIR%%/admin/view/javascript/jquery/ui/i18n/jquery.ui.datepicker-af.js
 %%WWWDIR%%/admin/view/javascript/jquery/ui/i18n/jquery.ui.datepicker-ar-DZ.js
 %%WWWDIR%%/admin/view/javascript/jquery/ui/i18n/jquery.ui.datepicker-ar.js
@@ -1399,7 +1405,6 @@
 %%WWWDIR%%/admin/view/template/module/special.tpl
 %%WWWDIR%%/admin/view/template/module/store.tpl
 %%WWWDIR%%/admin/view/template/module/welcome.tpl
-%%WWWDIR%%/admin/view/template/payment/alertpay.tpl
 %%WWWDIR%%/admin/view/template/payment/authorizenet_aim.tpl
 %%WWWDIR%%/admin/view/template/payment/authorizenet_sim.tpl
 %%WWWDIR%%/admin/view/template/payment/bank_transfer.tpl
@@ -1414,12 +1419,13 @@
 %%WWWDIR%%/admin/view/template/payment/nochex.tpl
 %%WWWDIR%%/admin/view/template/payment/paymate.tpl
 %%WWWDIR%%/admin/view/template/payment/paypoint.tpl
+%%WWWDIR%%/admin/view/template/payment/payza.tpl
 %%WWWDIR%%/admin/view/template/payment/perpetual_payments.tpl
 %%WWWDIR%%/admin/view/template/payment/pp_express.tpl
 %%WWWDIR%%/admin/view/template/payment/pp_pro.tpl
 %%WWWDIR%%/admin/view/template/payment/pp_pro_uk.tpl
-%%WWWDIR%%/admin/view/template/payment/pp_standard.tpl
 %%WWWDIR%%/admin/view/template/payment/sagepay.tpl
+%%WWWDIR%%/admin/view/template/payment/pp_standard.tpl
 %%WWWDIR%%/admin/view/template/payment/sagepay_direct.tpl
 %%WWWDIR%%/admin/view/template/payment/sagepay_us.tpl
 %%WWWDIR%%/admin/view/template/payment/twocheckout.tpl
@@ -1427,6 +1433,7 @@
 %%WWWDIR%%/admin/view/template/payment/worldpay.tpl
 %%WWWDIR%%/admin/view/template/report/affiliate_commission.tpl
 %%WWWDIR%%/admin/view/template/report/customer_credit.tpl
+%%WWWDIR%%/admin/view/template/report/customer_online.tpl
 %%WWWDIR%%/admin/view/template/report/customer_order.tpl
 %%WWWDIR%%/admin/view/template/report/customer_reward.tpl
 %%WWWDIR%%/admin/view/template/report/product_purchased.tpl
@@ -1468,7 +1475,9 @@
 %%WWWDIR%%/admin/view/template/setting/setting.tpl
 %%WWWDIR%%/admin/view/template/setting/store_form.tpl
 %%WWWDIR%%/admin/view/template/setting/store_list.tpl
+%%WWWDIR%%/admin/view/template/shipping/auspost.tpl
 %%WWWDIR%%/admin/view/template/shipping/citylink.tpl
+%%WWWDIR%%/admin/view/template/shipping/fedex.tpl
 %%WWWDIR%%/admin/view/template/shipping/flat.tpl
 %%WWWDIR%%/admin/view/template/shipping/free.tpl
 %%WWWDIR%%/admin/view/template/shipping/item.tpl
@@ -1568,7 +1577,6 @@
 %%WWWDIR%%/catalog/controller/module/special.php
 %%WWWDIR%%/catalog/controller/module/store.php
 %%WWWDIR%%/catalog/controller/module/welcome.php
-%%WWWDIR%%/catalog/controller/payment/alertpay.php
 %%WWWDIR%%/catalog/controller/payment/authorizenet_aim.php
 %%WWWDIR%%/catalog/controller/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/controller/payment/bank_transfer.php
@@ -1583,12 +1591,13 @@
 %%WWWDIR%%/catalog/controller/payment/nochex.php
 %%WWWDIR%%/catalog/controller/payment/paymate.php
 %%WWWDIR%%/catalog/controller/payment/paypoint.php
+%%WWWDIR%%/catalog/controller/payment/payza.php
 %%WWWDIR%%/catalog/controller/payment/perpetual_payments.php
 %%WWWDIR%%/catalog/controller/payment/pp_express.php
 %%WWWDIR%%/catalog/controller/payment/pp_pro.php
 %%WWWDIR%%/catalog/controller/payment/pp_pro_uk.php
-%%WWWDIR%%/catalog/controller/payment/pp_standard.php
 %%WWWDIR%%/catalog/controller/payment/sagepay.php
+%%WWWDIR%%/catalog/controller/payment/pp_standard.php
 %%WWWDIR%%/catalog/controller/payment/sagepay_direct.php
 %%WWWDIR%%/catalog/controller/payment/sagepay_us.php
 %%WWWDIR%%/catalog/controller/payment/twocheckout.php
@@ -1659,7 +1668,6 @@
 %%WWWDIR%%/catalog/language/english/module/special.php
 %%WWWDIR%%/catalog/language/english/module/store.php
 %%WWWDIR%%/catalog/language/english/module/welcome.php
-%%WWWDIR%%/catalog/language/english/payment/alertpay.php
 %%WWWDIR%%/catalog/language/english/payment/authorizenet_aim.php
 %%WWWDIR%%/catalog/language/english/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/language/english/payment/bank_transfer.php
@@ -1674,12 +1682,13 @@
 %%WWWDIR%%/catalog/language/english/payment/nochex.php
 %%WWWDIR%%/catalog/language/english/payment/paymate.php
 %%WWWDIR%%/catalog/language/english/payment/paypoint.php
+%%WWWDIR%%/catalog/language/english/payment/payza.php
 %%WWWDIR%%/catalog/language/english/payment/perpetual_payments.php
 %%WWWDIR%%/catalog/language/english/payment/pp_express.php
 %%WWWDIR%%/catalog/language/english/payment/pp_pro.php
 %%WWWDIR%%/catalog/language/english/payment/pp_pro_uk.php
-%%WWWDIR%%/catalog/language/english/payment/pp_standard.php
 %%WWWDIR%%/catalog/language/english/payment/sagepay.php
+%%WWWDIR%%/catalog/language/english/payment/pp_standard.php
 %%WWWDIR%%/catalog/language/english/payment/sagepay_direct.php
 %%WWWDIR%%/catalog/language/english/payment/sagepay_us.php
 %%WWWDIR%%/catalog/language/english/payment/twocheckout.php
@@ -1691,7 +1700,9 @@
 %%WWWDIR%%/catalog/language/english/product/product.php
 %%WWWDIR%%/catalog/language/english/product/search.php
 %%WWWDIR%%/catalog/language/english/product/special.php
+%%WWWDIR%%/catalog/language/english/shipping/auspost.php
 %%WWWDIR%%/catalog/language/english/shipping/citylink.php
+%%WWWDIR%%/catalog/language/english/shipping/fedex.php
 %%WWWDIR%%/catalog/language/english/shipping/flat.php
 %%WWWDIR%%/catalog/language/english/shipping/free.php
 %%WWWDIR%%/catalog/language/english/shipping/item.php
@@ -1737,7 +1748,6 @@
 %%WWWDIR%%/catalog/model/localisation/language.php
 %%WWWDIR%%/catalog/model/localisation/return_reason.php
 %%WWWDIR%%/catalog/model/localisation/zone.php
-%%WWWDIR%%/catalog/model/payment/alertpay.php
 %%WWWDIR%%/catalog/model/payment/authorizenet_aim.php
 %%WWWDIR%%/catalog/model/payment/authorizenet_sim.php
 %%WWWDIR%%/catalog/model/payment/bank_transfer.php
@@ -1752,12 +1762,13 @@
 %%WWWDIR%%/catalog/model/payment/nochex.php
 %%WWWDIR%%/catalog/model/payment/paymate.php
 %%WWWDIR%%/catalog/model/payment/paypoint.php
+%%WWWDIR%%/catalog/model/payment/payza.php
 %%WWWDIR%%/catalog/model/payment/perpetual_payments.php
 %%WWWDIR%%/catalog/model/payment/pp_express.php
 %%WWWDIR%%/catalog/model/payment/pp_pro.php
 %%WWWDIR%%/catalog/model/payment/pp_pro_uk.php
-%%WWWDIR%%/catalog/model/payment/pp_standard.php
 %%WWWDIR%%/catalog/model/payment/sagepay.php
+%%WWWDIR%%/catalog/model/payment/pp_standard.php
 %%WWWDIR%%/catalog/model/payment/sagepay_direct.php
 %%WWWDIR%%/catalog/model/payment/sagepay_us.php
 %%WWWDIR%%/catalog/model/payment/twocheckout.php
@@ -1766,7 +1777,9 @@
 %%WWWDIR%%/catalog/model/setting/extension.php
 %%WWWDIR%%/catalog/model/setting/setting.php
 %%WWWDIR%%/catalog/model/setting/store.php
+%%WWWDIR%%/catalog/model/shipping/auspost.php
 %%WWWDIR%%/catalog/model/shipping/citylink.php
+%%WWWDIR%%/catalog/model/shipping/fedex.php
 %%WWWDIR%%/catalog/model/shipping/flat.php
 %%WWWDIR%%/catalog/model/shipping/free.php
 %%WWWDIR%%/catalog/model/shipping/item.php
@@ -1777,6 +1790,7 @@
 %%WWWDIR%%/catalog/model/shipping/usps.php
 %%WWWDIR%%/catalog/model/shipping/weight.php
 %%WWWDIR%%/catalog/model/tool/image.php
+%%WWWDIR%%/catalog/model/tool/online.php
 %%WWWDIR%%/catalog/model/total/coupon.php
 %%WWWDIR%%/catalog/model/total/credit.php
 %%WWWDIR%%/catalog/model/total/handling.php
@@ -1788,8 +1802,8 @@
 %%WWWDIR%%/catalog/model/total/tax.php
 %%WWWDIR%%/catalog/model/total/total.php
 %%WWWDIR%%/catalog/model/total/voucher.php
-%%WWWDIR%%/catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js
 %%WWWDIR%%/catalog/view/javascript/common.js
+%%WWWDIR%%/catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js
 %%WWWDIR%%/catalog/view/javascript/jquery/ajaxupload.js
 %%WWWDIR%%/catalog/view/javascript/jquery/colorbox/colorbox.css
 %%WWWDIR%%/catalog/view/javascript/jquery/colorbox/images/border.png
@@ -1801,7 +1815,6 @@
 %%WWWDIR%%/catalog/view/javascript/jquery/jquery-1.7.1.min.js
 %%WWWDIR%%/catalog/view/javascript/jquery/jquery.cycle.js
 %%WWWDIR%%/catalog/view/javascript/jquery/jquery.jcarousel.min.js
-%%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/README
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images/arrows.png
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images/background.png
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images/bullets.png
@@ -1809,6 +1822,7 @@
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images/slider.png
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.js
 %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js
+%%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/README
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/changelog.txt
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css/superfish-navbar.css
 %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css/superfish-vertical.css
@@ -1978,8 +1992,8 @@
 %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery.ui.slider.css
 %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery.ui.tabs.css
 %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery.ui.theme.css
-%%WWWDIR%%/catalog/view/javascript/unitpngfix/README-unitpngfix.txt
 %%WWWDIR%%/catalog/view/javascript/unitpngfix/clear.gif
+%%WWWDIR%%/catalog/view/javascript/unitpngfix/README-unitpngfix.txt
 %%WWWDIR%%/catalog/view/javascript/unitpngfix/unitpngfix.js
 %%WWWDIR%%/catalog/view/theme/default/image/add.png
 %%WWWDIR%%/catalog/view/theme/default/image/arrow-down.png
@@ -2090,7 +2104,6 @@
 %%WWWDIR%%/catalog/view/theme/default/template/module/special.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/module/store.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/module/welcome.tpl
-%%WWWDIR%%/catalog/view/theme/default/template/payment/alertpay.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet_aim.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet_sim.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/authorizenet_sim_callback.tpl
@@ -2108,6 +2121,7 @@
 %%WWWDIR%%/catalog/view/theme/default/template/payment/paypoint.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/paypoint_failure.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/paypoint_success.tpl
+%%WWWDIR%%/catalog/view/theme/default/template/payment/payza.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/perpetual_payments.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/pp_express.tpl
 %%WWWDIR%%/catalog/view/theme/default/template/payment/pp_pro.tpl
@@ -2131,93 +2145,98 @@
 %%WWWDIR%%/catalog/view/theme/default/template/product/special.tpl
 %%WWWDIR%%/config.php
 %%WWWDIR%%/download/index.html
-%%WWWDIR%%/image/data/apple_cinema_30.jpg
-%%WWWDIR%%/image/data/apple_logo.jpg
-%%WWWDIR%%/image/data/canon_eos_5d_1.jpg
-%%WWWDIR%%/image/data/canon_eos_5d_2.jpg
-%%WWWDIR%%/image/data/canon_eos_5d_3.jpg
-%%WWWDIR%%/image/data/canon_logo.jpg
+%%WWWDIR%%/image/cache/.gitignore
+%%WWWDIR%%/image/cache/data/.gitignore
+%%WWWDIR%%/image/cache/index.html
 %%WWWDIR%%/image/data/cart.png
-%%WWWDIR%%/image/data/compaq_presario.jpg
-%%WWWDIR%%/image/data/gift-voucher-birthday.jpg
-%%WWWDIR%%/image/data/hp_1.jpg
-%%WWWDIR%%/image/data/hp_2.jpg
-%%WWWDIR%%/image/data/hp_3.jpg
-%%WWWDIR%%/image/data/hp_banner.jpg
-%%WWWDIR%%/image/data/hp_logo.jpg
-%%WWWDIR%%/image/data/htc_logo.jpg
-%%WWWDIR%%/image/data/htc_touch_hd_1.jpg
-%%WWWDIR%%/image/data/htc_touch_hd_2.jpg
-%%WWWDIR%%/image/data/htc_touch_hd_3.jpg
-%%WWWDIR%%/image/data/imac_1.jpg
-%%WWWDIR%%/image/data/imac_2.jpg
-%%WWWDIR%%/image/data/imac_3.jpg
+%%WWWDIR%%/image/data/demo/apple_cinema_30.jpg
+%%WWWDIR%%/image/data/demo/apple_logo.jpg
+%%WWWDIR%%/image/data/demo/canon_eos_5d_1.jpg
+%%WWWDIR%%/image/data/demo/canon_eos_5d_2.jpg
+%%WWWDIR%%/image/data/demo/canon_eos_5d_3.jpg
+%%WWWDIR%%/image/data/demo/canon_logo.jpg
+%%WWWDIR%%/image/data/demo/cart.png
+%%WWWDIR%%/image/data/demo/compaq_presario.jpg
+%%WWWDIR%%/image/data/demo/gift-voucher-birthday.jpg
+%%WWWDIR%%/image/data/demo/hp_1.jpg
+%%WWWDIR%%/image/data/demo/hp_2.jpg
+%%WWWDIR%%/image/data/demo/hp_3.jpg
+%%WWWDIR%%/image/data/demo/hp_banner.jpg
+%%WWWDIR%%/image/data/demo/hp_logo.jpg
+%%WWWDIR%%/image/data/demo/htc_logo.jpg
+%%WWWDIR%%/image/data/demo/htc_touch_hd_1.jpg
+%%WWWDIR%%/image/data/demo/htc_touch_hd_2.jpg
+%%WWWDIR%%/image/data/demo/htc_touch_hd_3.jpg
+%%WWWDIR%%/image/data/demo/imac_1.jpg
+%%WWWDIR%%/image/data/demo/imac_2.jpg
+%%WWWDIR%%/image/data/demo/imac_3.jpg
+%%WWWDIR%%/image/data/demo/index.html
+%%WWWDIR%%/image/data/demo/iphone_1.jpg
+%%WWWDIR%%/image/data/demo/iphone_2.jpg
+%%WWWDIR%%/image/data/demo/iphone_3.jpg
+%%WWWDIR%%/image/data/demo/iphone_4.jpg
+%%WWWDIR%%/image/data/demo/iphone_5.jpg
+%%WWWDIR%%/image/data/demo/iphone_6.jpg
+%%WWWDIR%%/image/data/demo/ipod_classic_1.jpg
+%%WWWDIR%%/image/data/demo/ipod_classic_2.jpg
+%%WWWDIR%%/image/data/demo/ipod_classic_3.jpg
+%%WWWDIR%%/image/data/demo/ipod_classic_4.jpg
+%%WWWDIR%%/image/data/demo/ipod_nano_1.jpg
+%%WWWDIR%%/image/data/demo/ipod_nano_2.jpg
+%%WWWDIR%%/image/data/demo/ipod_nano_3.jpg
+%%WWWDIR%%/image/data/demo/ipod_nano_4.jpg
+%%WWWDIR%%/image/data/demo/ipod_nano_5.jpg
+%%WWWDIR%%/image/data/demo/ipod_shuffle_1.jpg
+%%WWWDIR%%/image/data/demo/ipod_shuffle_2.jpg
+%%WWWDIR%%/image/data/demo/ipod_shuffle_3.jpg
+%%WWWDIR%%/image/data/demo/ipod_shuffle_4.jpg
+%%WWWDIR%%/image/data/demo/ipod_shuffle_5.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_1.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_2.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_3.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_4.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_5.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_6.jpg
+%%WWWDIR%%/image/data/demo/ipod_touch_7.jpg
+%%WWWDIR%%/image/data/demo/macbook_1.jpg
+%%WWWDIR%%/image/data/demo/macbook_2.jpg
+%%WWWDIR%%/image/data/demo/macbook_3.jpg
+%%WWWDIR%%/image/data/demo/macbook_4.jpg
+%%WWWDIR%%/image/data/demo/macbook_5.jpg
+%%WWWDIR%%/image/data/demo/macbook_air_1.jpg
+%%WWWDIR%%/image/data/demo/macbook_air_2.jpg
+%%WWWDIR%%/image/data/demo/macbook_air_3.jpg
+%%WWWDIR%%/image/data/demo/macbook_air_4.jpg
+%%WWWDIR%%/image/data/demo/macbook_pro_1.jpg
+%%WWWDIR%%/image/data/demo/macbook_pro_2.jpg
+%%WWWDIR%%/image/data/demo/macbook_pro_3.jpg
+%%WWWDIR%%/image/data/demo/macbook_pro_4.jpg
+%%WWWDIR%%/image/data/demo/nikon_d300_1.jpg
+%%WWWDIR%%/image/data/demo/nikon_d300_2.jpg
+%%WWWDIR%%/image/data/demo/nikon_d300_3.jpg
+%%WWWDIR%%/image/data/demo/nikon_d300_4.jpg
+%%WWWDIR%%/image/data/demo/nikon_d300_5.jpg
+%%WWWDIR%%/image/data/demo/palm_logo.jpg
+%%WWWDIR%%/image/data/demo/palm_treo_pro_1.jpg
+%%WWWDIR%%/image/data/demo/palm_treo_pro_2.jpg
+%%WWWDIR%%/image/data/demo/palm_treo_pro_3.jpg
+%%WWWDIR%%/image/data/demo/samsung_banner.jpg
+%%WWWDIR%%/image/data/demo/samsung_syncmaster_941bw.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_1.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_2.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_3.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_4.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_5.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_6.jpg
+%%WWWDIR%%/image/data/demo/samsung_tab_7.jpg
+%%WWWDIR%%/image/data/demo/sony_logo.jpg
+%%WWWDIR%%/image/data/demo/sony_vaio_1.jpg
+%%WWWDIR%%/image/data/demo/sony_vaio_2.jpg
+%%WWWDIR%%/image/data/demo/sony_vaio_3.jpg
+%%WWWDIR%%/image/data/demo/sony_vaio_4.jpg
+%%WWWDIR%%/image/data/demo/sony_vaio_5.jpg
 %%WWWDIR%%/image/data/index.html
-%%WWWDIR%%/image/data/iphone_1.jpg
-%%WWWDIR%%/image/data/iphone_2.jpg
-%%WWWDIR%%/image/data/iphone_3.jpg
-%%WWWDIR%%/image/data/iphone_4.jpg
-%%WWWDIR%%/image/data/iphone_5.jpg
-%%WWWDIR%%/image/data/iphone_6.jpg
-%%WWWDIR%%/image/data/ipod_classic_1.jpg
-%%WWWDIR%%/image/data/ipod_classic_2.jpg
-%%WWWDIR%%/image/data/ipod_classic_3.jpg
-%%WWWDIR%%/image/data/ipod_classic_4.jpg
-%%WWWDIR%%/image/data/ipod_nano_1.jpg
-%%WWWDIR%%/image/data/ipod_nano_2.jpg
-%%WWWDIR%%/image/data/ipod_nano_3.jpg
-%%WWWDIR%%/image/data/ipod_nano_4.jpg
-%%WWWDIR%%/image/data/ipod_nano_5.jpg
-%%WWWDIR%%/image/data/ipod_shuffle_1.jpg
-%%WWWDIR%%/image/data/ipod_shuffle_2.jpg
-%%WWWDIR%%/image/data/ipod_shuffle_3.jpg
-%%WWWDIR%%/image/data/ipod_shuffle_4.jpg
-%%WWWDIR%%/image/data/ipod_shuffle_5.jpg
-%%WWWDIR%%/image/data/ipod_touch_1.jpg
-%%WWWDIR%%/image/data/ipod_touch_2.jpg
-%%WWWDIR%%/image/data/ipod_touch_3.jpg
-%%WWWDIR%%/image/data/ipod_touch_4.jpg
-%%WWWDIR%%/image/data/ipod_touch_5.jpg
-%%WWWDIR%%/image/data/ipod_touch_6.jpg
-%%WWWDIR%%/image/data/ipod_touch_7.jpg
 %%WWWDIR%%/image/data/logo.png
-%%WWWDIR%%/image/data/macbook_1.jpg
-%%WWWDIR%%/image/data/macbook_2.jpg
-%%WWWDIR%%/image/data/macbook_3.jpg
-%%WWWDIR%%/image/data/macbook_4.jpg
-%%WWWDIR%%/image/data/macbook_5.jpg
-%%WWWDIR%%/image/data/macbook_air_1.jpg
-%%WWWDIR%%/image/data/macbook_air_2.jpg
-%%WWWDIR%%/image/data/macbook_air_3.jpg
-%%WWWDIR%%/image/data/macbook_air_4.jpg
-%%WWWDIR%%/image/data/macbook_pro_1.jpg
-%%WWWDIR%%/image/data/macbook_pro_2.jpg
-%%WWWDIR%%/image/data/macbook_pro_3.jpg
-%%WWWDIR%%/image/data/macbook_pro_4.jpg
-%%WWWDIR%%/image/data/nikon_d300_1.jpg
-%%WWWDIR%%/image/data/nikon_d300_2.jpg
-%%WWWDIR%%/image/data/nikon_d300_3.jpg
-%%WWWDIR%%/image/data/nikon_d300_4.jpg
-%%WWWDIR%%/image/data/nikon_d300_5.jpg
-%%WWWDIR%%/image/data/palm_logo.jpg
-%%WWWDIR%%/image/data/palm_treo_pro_1.jpg
-%%WWWDIR%%/image/data/palm_treo_pro_2.jpg
-%%WWWDIR%%/image/data/palm_treo_pro_3.jpg
-%%WWWDIR%%/image/data/samsung_banner.jpg
-%%WWWDIR%%/image/data/samsung_syncmaster_941bw.jpg
-%%WWWDIR%%/image/data/samsung_tab_1.jpg
-%%WWWDIR%%/image/data/samsung_tab_2.jpg
-%%WWWDIR%%/image/data/samsung_tab_3.jpg
-%%WWWDIR%%/image/data/samsung_tab_4.jpg
-%%WWWDIR%%/image/data/samsung_tab_5.jpg
-%%WWWDIR%%/image/data/samsung_tab_6.jpg
-%%WWWDIR%%/image/data/samsung_tab_7.jpg
-%%WWWDIR%%/image/data/sony_logo.jpg
-%%WWWDIR%%/image/data/sony_vaio_1.jpg
-%%WWWDIR%%/image/data/sony_vaio_2.jpg
-%%WWWDIR%%/image/data/sony_vaio_3.jpg
-%%WWWDIR%%/image/data/sony_vaio_4.jpg
-%%WWWDIR%%/image/data/sony_vaio_5.jpg
 %%WWWDIR%%/image/flags/ad.png
 %%WWWDIR%%/image/flags/ae.png
 %%WWWDIR%%/image/flags/af.png
@@ -2498,6 +2517,7 @@
 %%WWWDIR%%/install/view/template/upgrade.tpl
 %%WWWDIR%%/php.ini
 %%WWWDIR%%/system/cache/index.html
+%%WWWDIR%%/system/config/index.html
 %%WWWDIR%%/system/database/mmsql.php
 %%WWWDIR%%/system/database/mysql.php
 %%WWWDIR%%/system/database/odbc.php
@@ -2538,292 +2558,294 @@
 %%WWWDIR%%/system/library/weight.php
 %%WWWDIR%%/system/logs/index.html
 %%WWWDIR%%/system/startup.php
-@dirrm %%WWWDIR%%/admin/controller/catalog
-@dirrm %%WWWDIR%%/admin/controller/common
-@dirrm %%WWWDIR%%/admin/controller/design
-@dirrm %%WWWDIR%%/admin/controller/error
-@dirrm %%WWWDIR%%/admin/controller/extension
-@dirrm %%WWWDIR%%/admin/controller/feed
-@dirrm %%WWWDIR%%/admin/controller/localisation
-@dirrm %%WWWDIR%%/admin/controller/module
-@dirrm %%WWWDIR%%/admin/controller/payment
-@dirrm %%WWWDIR%%/admin/controller/report
-@dirrm %%WWWDIR%%/admin/controller/sale
-@dirrm %%WWWDIR%%/admin/controller/setting
-@dirrm %%WWWDIR%%/admin/controller/shipping
-@dirrm %%WWWDIR%%/admin/controller/tool
-@dirrm %%WWWDIR%%/admin/controller/total
-@dirrm %%WWWDIR%%/admin/controller/user
-@dirrm %%WWWDIR%%/admin/controller
-@dirrm %%WWWDIR%%/admin/language/english/catalog
-@dirrm %%WWWDIR%%/admin/language/english/common
-@dirrm %%WWWDIR%%/admin/language/english/design
-@dirrm %%WWWDIR%%/admin/language/english/error
-@dirrm %%WWWDIR%%/admin/language/english/extension
-@dirrm %%WWWDIR%%/admin/language/english/feed
-@dirrm %%WWWDIR%%/admin/language/english/localisation
-@dirrm %%WWWDIR%%/admin/language/english/mail
-@dirrm %%WWWDIR%%/admin/language/english/module
-@dirrm %%WWWDIR%%/admin/language/english/payment
-@dirrm %%WWWDIR%%/admin/language/english/report
-@dirrm %%WWWDIR%%/admin/language/english/sale
-@dirrm %%WWWDIR%%/admin/language/english/setting
-@dirrm %%WWWDIR%%/admin/language/english/shipping
-@dirrm %%WWWDIR%%/admin/language/english/tool
-@dirrm %%WWWDIR%%/admin/language/english/total
-@dirrm %%WWWDIR%%/admin/language/english/user
-@dirrm %%WWWDIR%%/admin/language/english
-@dirrm %%WWWDIR%%/admin/language
-@dirrm %%WWWDIR%%/admin/model/catalog
-@dirrm %%WWWDIR%%/admin/model/design
-@dirrm %%WWWDIR%%/admin/model/localisation
-@dirrm %%WWWDIR%%/admin/model/report
-@dirrm %%WWWDIR%%/admin/model/sale
-@dirrm %%WWWDIR%%/admin/model/setting
-@dirrm %%WWWDIR%%/admin/model/tool
-@dirrm %%WWWDIR%%/admin/model/user
-@dirrm %%WWWDIR%%/admin/model
-@dirrm %%WWWDIR%%/admin/view/image/filemanager
-@dirrm %%WWWDIR%%/admin/view/image/flags
-@dirrm %%WWWDIR%%/admin/view/image/payment
-@dirrm %%WWWDIR%%/admin/view/image
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/adapters
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/adobeair
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/ajax
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/autogrow
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/bbcode
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/clipboard/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/clipboard
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/colordialog/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/colordialog
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/dialog
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/div/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/div
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/docprops/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/docprops
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/find/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/find
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframedialog
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/image/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/image
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/liststyle/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/liststyle
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pagebreak/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pagebreak
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastefromword/filter
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastefromword
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastetext/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastetext
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/scayt/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/scayt
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/styles/styles
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/styles
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/stylesheetparser
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/table/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/table
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tableresize
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tabletools/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tabletools
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/assets
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/xml
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/office2003/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/office2003
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/v2/images
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/v2
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/themes/default
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/themes
-@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/flot/examples
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/flot
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo/syntax
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/lib
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/apple
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/checkbox
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/classic
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/default
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/image
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/themeroller
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/menu/images
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/menu
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/css
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/images
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/js
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/external
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/i18n
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/minified
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/base/images
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/base
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/ui-lightness/images
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/ui-lightness
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui
-@dirrm %%WWWDIR%%/admin/view/javascript/jquery
-@dirrm %%WWWDIR%%/admin/view/javascript
-@dirrm %%WWWDIR%%/admin/view/stylesheet
-@dirrm %%WWWDIR%%/admin/view/template/catalog
-@dirrm %%WWWDIR%%/admin/view/template/common
-@dirrm %%WWWDIR%%/admin/view/template/design
-@dirrm %%WWWDIR%%/admin/view/template/error
-@dirrm %%WWWDIR%%/admin/view/template/extension
-@dirrm %%WWWDIR%%/admin/view/template/feed
-@dirrm %%WWWDIR%%/admin/view/template/localisation
-@dirrm %%WWWDIR%%/admin/view/template/mail
-@dirrm %%WWWDIR%%/admin/view/template/module
-@dirrm %%WWWDIR%%/admin/view/template/payment
-@dirrm %%WWWDIR%%/admin/view/template/report
-@dirrm %%WWWDIR%%/admin/view/template/sale
-@dirrm %%WWWDIR%%/admin/view/template/setting
-@dirrm %%WWWDIR%%/admin/view/template/shipping
-@dirrm %%WWWDIR%%/admin/view/template/tool
-@dirrm %%WWWDIR%%/admin/view/template/total
-@dirrm %%WWWDIR%%/admin/view/template/user
-@dirrm %%WWWDIR%%/admin/view/template
-@dirrm %%WWWDIR%%/admin/view
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%/catalog/controller/account
-@dirrm %%WWWDIR%%/catalog/controller/affiliate
-@dirrm %%WWWDIR%%/catalog/controller/checkout
-@dirrm %%WWWDIR%%/catalog/controller/common
-@dirrm %%WWWDIR%%/catalog/controller/error
-@dirrm %%WWWDIR%%/catalog/controller/feed
-@dirrm %%WWWDIR%%/catalog/controller/information
-@dirrm %%WWWDIR%%/catalog/controller/module
-@dirrm %%WWWDIR%%/catalog/controller/payment
-@dirrm %%WWWDIR%%/catalog/controller/product
-@dirrm %%WWWDIR%%/catalog/controller
-@dirrm %%WWWDIR%%/catalog/language/english/account
-@dirrm %%WWWDIR%%/catalog/language/english/affiliate
-@dirrm %%WWWDIR%%/catalog/language/english/checkout
-@dirrm %%WWWDIR%%/catalog/language/english/common
-@dirrm %%WWWDIR%%/catalog/language/english/error
-@dirrm %%WWWDIR%%/catalog/language/english/information
-@dirrm %%WWWDIR%%/catalog/language/english/mail
-@dirrm %%WWWDIR%%/catalog/language/english/module
-@dirrm %%WWWDIR%%/catalog/language/english/payment
-@dirrm %%WWWDIR%%/catalog/language/english/product
-@dirrm %%WWWDIR%%/catalog/language/english/shipping
-@dirrm %%WWWDIR%%/catalog/language/english/total
-@dirrm %%WWWDIR%%/catalog/language/english
-@dirrm %%WWWDIR%%/catalog/language
-@dirrm %%WWWDIR%%/catalog/model/account
-@dirrm %%WWWDIR%%/catalog/model/affiliate
-@dirrm %%WWWDIR%%/catalog/model/catalog
-@dirrm %%WWWDIR%%/catalog/model/checkout
-@dirrm %%WWWDIR%%/catalog/model/design
-@dirrm %%WWWDIR%%/catalog/model/localisation
-@dirrm %%WWWDIR%%/catalog/model/payment
-@dirrm %%WWWDIR%%/catalog/model/setting
-@dirrm %%WWWDIR%%/catalog/model/shipping
-@dirrm %%WWWDIR%%/catalog/model/tool
-@dirrm %%WWWDIR%%/catalog/model/total
-@dirrm %%WWWDIR%%/catalog/model
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/colorbox/images
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/colorbox
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/images
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/js
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/external
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/i18n
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/minified
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/base/images
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/base
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness/images
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui
-@dirrm %%WWWDIR%%/catalog/view/javascript/jquery
-@dirrm %%WWWDIR%%/catalog/view/javascript/unitpngfix
-@dirrm %%WWWDIR%%/catalog/view/javascript
-@dirrm %%WWWDIR%%/catalog/view/theme/default/image
-@dirrm %%WWWDIR%%/catalog/view/theme/default/stylesheet
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/account
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/affiliate
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/checkout
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/common
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/error
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/information
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/mail
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/module
-@dirrm %%WWWDIR%%/catalog/view/theme/default/template/payment
+@dirrm %%WWWDIR%%/system/logs
+@dirrm %%WWWDIR%%/system/library
+@dirrm %%WWWDIR%%/system/helper
+@dirrm %%WWWDIR%%/system/engine
+@dirrm %%WWWDIR%%/system/database
+@dirrm %%WWWDIR%%/system/config
+@dirrm %%WWWDIR%%/system/cache
+@dirrm %%WWWDIR%%/system
+@dirrm %%WWWDIR%%/install/view/template
+@dirrm %%WWWDIR%%/install/view/stylesheet
+@dirrm %%WWWDIR%%/install/view/image
+@dirrm %%WWWDIR%%/install/view
+@dirrm %%WWWDIR%%/install/model
+@dirrm %%WWWDIR%%/install/controller
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/image/templates
+@dirrm %%WWWDIR%%/image/flags
+@dirrm %%WWWDIR%%/image/data/demo
+@dirrm %%WWWDIR%%/image/data
+@dirrm %%WWWDIR%%/image/cache/data
+@dirrm %%WWWDIR%%/image/cache
+@dirrm %%WWWDIR%%/image
+@dirrm %%WWWDIR%%/download
 @dirrm %%WWWDIR%%/catalog/view/theme/default/template/product
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/payment
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/module
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/mail
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/information
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/error
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/common
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/checkout
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/affiliate
+@dirrm %%WWWDIR%%/catalog/view/theme/default/template/account
 @dirrm %%WWWDIR%%/catalog/view/theme/default/template
+@dirrm %%WWWDIR%%/catalog/view/theme/default/stylesheet
+@dirrm %%WWWDIR%%/catalog/view/theme/default/image
 @dirrm %%WWWDIR%%/catalog/view/theme/default
 @dirrm %%WWWDIR%%/catalog/view/theme
+@dirrm %%WWWDIR%%/catalog/view/javascript/unitpngfix
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness/images
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/ui-lightness
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/base/images
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes/base
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/themes
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/minified
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/i18n
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui/external
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/ui
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/js
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/images
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish/css
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/superfish
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider/images
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/nivo-slider
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/colorbox/images
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery/colorbox
+@dirrm %%WWWDIR%%/catalog/view/javascript/jquery
+@dirrm %%WWWDIR%%/catalog/view/javascript
 @dirrm %%WWWDIR%%/catalog/view
+@dirrm %%WWWDIR%%/catalog/model/total
+@dirrm %%WWWDIR%%/catalog/model/tool
+@dirrm %%WWWDIR%%/catalog/model/shipping
+@dirrm %%WWWDIR%%/catalog/model/setting
+@dirrm %%WWWDIR%%/catalog/model/payment
+@dirrm %%WWWDIR%%/catalog/model/localisation
+@dirrm %%WWWDIR%%/catalog/model/design
+@dirrm %%WWWDIR%%/catalog/model/checkout
+@dirrm %%WWWDIR%%/catalog/model/catalog
+@dirrm %%WWWDIR%%/catalog/model/affiliate
+@dirrm %%WWWDIR%%/catalog/model/account
+@dirrm %%WWWDIR%%/catalog/model
+@dirrm %%WWWDIR%%/catalog/language/english/total
+@dirrm %%WWWDIR%%/catalog/language/english/shipping
+@dirrm %%WWWDIR%%/catalog/language/english/product
+@dirrm %%WWWDIR%%/catalog/language/english/payment
+@dirrm %%WWWDIR%%/catalog/language/english/module
+@dirrm %%WWWDIR%%/catalog/language/english/mail
+@dirrm %%WWWDIR%%/catalog/language/english/information
+@dirrm %%WWWDIR%%/catalog/language/english/error
+@dirrm %%WWWDIR%%/catalog/language/english/common
+@dirrm %%WWWDIR%%/catalog/language/english/checkout
+@dirrm %%WWWDIR%%/catalog/language/english/affiliate
+@dirrm %%WWWDIR%%/catalog/language/english/account
+@dirrm %%WWWDIR%%/catalog/language/english
+@dirrm %%WWWDIR%%/catalog/language
+@dirrm %%WWWDIR%%/catalog/controller/product
+@dirrm %%WWWDIR%%/catalog/controller/payment
+@dirrm %%WWWDIR%%/catalog/controller/module
+@dirrm %%WWWDIR%%/catalog/controller/information
+@dirrm %%WWWDIR%%/catalog/controller/feed
+@dirrm %%WWWDIR%%/catalog/controller/error
+@dirrm %%WWWDIR%%/catalog/controller/common
+@dirrm %%WWWDIR%%/catalog/controller/checkout
+@dirrm %%WWWDIR%%/catalog/controller/affiliate
+@dirrm %%WWWDIR%%/catalog/controller/account
+@dirrm %%WWWDIR%%/catalog/controller
 @dirrm %%WWWDIR%%/catalog
-@dirrm %%WWWDIR%%/download
-@dirrm %%WWWDIR%%/image/cache
-@dirrm %%WWWDIR%%/image/data
-@dirrm %%WWWDIR%%/image/flags
-@dirrm %%WWWDIR%%/image/templates
-@dirrm %%WWWDIR%%/image
-@dirrm %%WWWDIR%%/install/controller
-@dirrm %%WWWDIR%%/install/model
-@dirrm %%WWWDIR%%/install/view/image
-@dirrm %%WWWDIR%%/install/view/stylesheet
-@dirrm %%WWWDIR%%/install/view/template
-@dirrm %%WWWDIR%%/install/view
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/system/cache
-@dirrm %%WWWDIR%%/system/config
-@dirrm %%WWWDIR%%/system/database
-@dirrm %%WWWDIR%%/system/engine
-@dirrm %%WWWDIR%%/system/helper
-@dirrm %%WWWDIR%%/system/library
-@dirrm %%WWWDIR%%/system/logs
-@dirrm %%WWWDIR%%/system
+@dirrm %%WWWDIR%%/admin/view/template/user
+@dirrm %%WWWDIR%%/admin/view/template/total
+@dirrm %%WWWDIR%%/admin/view/template/tool
+@dirrm %%WWWDIR%%/admin/view/template/shipping
+@dirrm %%WWWDIR%%/admin/view/template/setting
+@dirrm %%WWWDIR%%/admin/view/template/sale
+@dirrm %%WWWDIR%%/admin/view/template/report
+@dirrm %%WWWDIR%%/admin/view/template/payment
+@dirrm %%WWWDIR%%/admin/view/template/module
+@dirrm %%WWWDIR%%/admin/view/template/mail
+@dirrm %%WWWDIR%%/admin/view/template/localisation
+@dirrm %%WWWDIR%%/admin/view/template/feed
+@dirrm %%WWWDIR%%/admin/view/template/extension
+@dirrm %%WWWDIR%%/admin/view/template/error
+@dirrm %%WWWDIR%%/admin/view/template/design
+@dirrm %%WWWDIR%%/admin/view/template/common
+@dirrm %%WWWDIR%%/admin/view/template/catalog
+@dirrm %%WWWDIR%%/admin/view/template
+@dirrm %%WWWDIR%%/admin/view/stylesheet
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/ui-lightness/images
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/ui-lightness
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/base/images
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes/base
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/themes
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/minified
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/i18n
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui/external
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/ui
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/js
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/images
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish/css
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/superfish
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/menu/images
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/menu
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/themeroller
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/image
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/default
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/classic
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/checkbox
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes/apple
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/themes
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/plugins
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/lib
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo/syntax
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree/demo
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/jstree
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/flot/examples
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery/flot
+@dirrm %%WWWDIR%%/admin/view/javascript/jquery
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/themes/default
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/themes
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/v2/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/v2
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/office2003/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/office2003
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins/kama
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/skins
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/xml
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/wsc
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/uicolor
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/templates
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/templates
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tabletools
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/tableresize
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/table/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/table
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/stylesheetparser
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/styles/styles
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/styles
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/specialchar
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/smiley
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/showblocks
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/scayt
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/placeholder
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastetext
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pastefromword
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/pagebreak
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/liststyle
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/link
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/image/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/image
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframedialog
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/iframe
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/forms
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/flash
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/find/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/find
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/docprops
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/div/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/div
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/dialog
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/devtools
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/colordialog
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/clipboard
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/bbcode
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/autogrow
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/ajax
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/adobeair
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/about
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins/a11yhelp
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/plugins
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/lang
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/images
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor/adapters
+@dirrm %%WWWDIR%%/admin/view/javascript/ckeditor
+@dirrm %%WWWDIR%%/admin/view/javascript
+@dirrm %%WWWDIR%%/admin/view/image/payment
+@dirrm %%WWWDIR%%/admin/view/image/flags
+@dirrm %%WWWDIR%%/admin/view/image/filemanager
+@dirrm %%WWWDIR%%/admin/view/image
+@dirrm %%WWWDIR%%/admin/view
+@dirrm %%WWWDIR%%/admin/model/user
+@dirrm %%WWWDIR%%/admin/model/tool
+@dirrm %%WWWDIR%%/admin/model/setting
+@dirrm %%WWWDIR%%/admin/model/sale
+@dirrm %%WWWDIR%%/admin/model/report
+@dirrm %%WWWDIR%%/admin/model/localisation
+@dirrm %%WWWDIR%%/admin/model/design
+@dirrm %%WWWDIR%%/admin/model/catalog
+@dirrm %%WWWDIR%%/admin/model
+@dirrm %%WWWDIR%%/admin/language/english/user
+@dirrm %%WWWDIR%%/admin/language/english/total
+@dirrm %%WWWDIR%%/admin/language/english/tool
+@dirrm %%WWWDIR%%/admin/language/english/shipping
+@dirrm %%WWWDIR%%/admin/language/english/setting
+@dirrm %%WWWDIR%%/admin/language/english/sale
+@dirrm %%WWWDIR%%/admin/language/english/report
+@dirrm %%WWWDIR%%/admin/language/english/payment
+@dirrm %%WWWDIR%%/admin/language/english/module
+@dirrm %%WWWDIR%%/admin/language/english/mail
+@dirrm %%WWWDIR%%/admin/language/english/localisation
+@dirrm %%WWWDIR%%/admin/language/english/feed
+@dirrm %%WWWDIR%%/admin/language/english/extension
+@dirrm %%WWWDIR%%/admin/language/english/error
+@dirrm %%WWWDIR%%/admin/language/english/design
+@dirrm %%WWWDIR%%/admin/language/english/common
+@dirrm %%WWWDIR%%/admin/language/english/catalog
+@dirrm %%WWWDIR%%/admin/language/english
+@dirrm %%WWWDIR%%/admin/language
+@dirrm %%WWWDIR%%/admin/controller/user
+@dirrm %%WWWDIR%%/admin/controller/total
+@dirrm %%WWWDIR%%/admin/controller/tool
+@dirrm %%WWWDIR%%/admin/controller/shipping
+@dirrm %%WWWDIR%%/admin/controller/setting
+@dirrm %%WWWDIR%%/admin/controller/sale
+@dirrm %%WWWDIR%%/admin/controller/report
+@dirrm %%WWWDIR%%/admin/controller/payment
+@dirrm %%WWWDIR%%/admin/controller/module
+@dirrm %%WWWDIR%%/admin/controller/localisation
+@dirrm %%WWWDIR%%/admin/controller/feed
+@dirrm %%WWWDIR%%/admin/controller/extension
+@dirrm %%WWWDIR%%/admin/controller/error
+@dirrm %%WWWDIR%%/admin/controller/design
+@dirrm %%WWWDIR%%/admin/controller/common
+@dirrm %%WWWDIR%%/admin/controller/catalog
+@dirrm %%WWWDIR%%/admin/controller
+@dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%

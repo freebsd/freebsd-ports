@@ -1,13 +1,8 @@
-# New ports collection makefile for:	bibletime-devel
-# Date created:		2008-08-12
-# Whom:			Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bibletime
 PORTVERSION=	2.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -19,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene
+LIB_DEPENDS=	clucene-core:${PORTSDIR}/textproc/clucene
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

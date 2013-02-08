@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdsar
-# Date created:				12 June 2001
-# Whom:	      				Yen-Ming Lee <leeym@leeym.com>
-#
+# Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdsar
 PORTVERSION=	1.10
@@ -11,8 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.googlebit.com/bsdsar/
 
-MAINTAINER=	eric@trinitel.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Activity Reporter for FreeBSD
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 NO_BUILD=	yes
 

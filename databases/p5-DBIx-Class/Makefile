@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08204
+PORTVERSION=	0.08205
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,22 +34,17 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10007:${PORTSDIR}/devel/p5-Class-Acc
 		p5-strictures>=1.003001:${PORTSDIR}/devel/p5-strictures
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-DeepAbstractSearch \
-		p5-Class-Trigger>=0.12:${PORTSDIR}/devel/p5-Class-Trigger \
-		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
 		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
 		p5-DateTime>=0.55:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		p5-DateTime-Format-Pg>=0:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
 		p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
-		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Math-Base36>=0.07:${PORTSDIR}/math/p5-Math-Base36 \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-JSON>=0:${PORTSDIR}/devel/p5-MooseX-Types-JSON \
 		p5-MooseX-Types-Path-Class>=0.04:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
-		p5-Package-Stash>=0.28:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
@@ -97,6 +92,7 @@ MAN3=		DBIx::Class.3 \
 		DBIx::Class::Manual::Intro.3 \
 		DBIx::Class::Manual::Joining.3 \
 		DBIx::Class::Manual::Reading.3 \
+		DBIx::Class::Manual::ResultClass.3 \
 		DBIx::Class::Manual::Troubleshooting.3 \
 		DBIx::Class::Optional::Dependencies.3 \
 		DBIx::Class::Ordered.3 \

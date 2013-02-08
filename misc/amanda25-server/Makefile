@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 USE_LDCONFIG=	yes
 WANT_PERL=	yes
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 OPTIONS=	GNUTAR "use GNU tar" on \
 		SSH "enable ssh-auth" off
@@ -143,7 +143,7 @@ PLIST_SUB+=	PLOT='@comment '
 .if defined (WITH_SAMBA)
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
-CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
+CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 
 .if defined (WITH_MTX)

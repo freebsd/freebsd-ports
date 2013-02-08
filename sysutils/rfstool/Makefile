@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rfstool
-# Date created:				2005-03-02
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	rfstool
 PORTVERSION=	0.14

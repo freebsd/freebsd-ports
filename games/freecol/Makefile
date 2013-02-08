@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	freecol
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -27,6 +28,8 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" "false"
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${MV} ${WRKDIR}/freecol ${WRKSRC}
 
@@ -37,7 +40,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/freecol.xpm ${DATADIR}/
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR}/)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${DATADIR}/)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FreeCol.pdf ${DOCSDIR}/
 .endif

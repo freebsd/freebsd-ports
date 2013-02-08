@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	typetools
-# Date created:			Dec 5, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	typetools
 PORTVERSION=	2.92
@@ -13,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for manipulating fonts
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base

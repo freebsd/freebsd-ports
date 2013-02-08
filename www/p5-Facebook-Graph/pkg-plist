@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Facebook/Graph/AccessToken.pm
 %%SITE_PERL%%/Facebook/Graph/AccessToken/Response.pm
 %%SITE_PERL%%/Facebook/Graph/Authorize.pm
+%%SITE_PERL%%/Facebook/Graph/BatchRequests.pm
 %%SITE_PERL%%/Facebook/Graph/Cookbook.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe1.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe2.pod
@@ -21,6 +22,7 @@
 %%SITE_PERL%%/Facebook/Graph/Publish/RSVPDeclined.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/RSVPMaybe.pm
 %%SITE_PERL%%/Facebook/Graph/Query.pm
+%%SITE_PERL%%/Facebook/Graph/Request.pm
 %%SITE_PERL%%/Facebook/Graph/Response.pm
 %%SITE_PERL%%/Facebook/Graph/Role/Uri.pm
 %%SITE_PERL%%/Facebook/Graph/Session.pm

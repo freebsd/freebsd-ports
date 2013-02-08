@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	dns net pear
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Resolver library used to communicate with a DNS server
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -40,6 +40,7 @@ FILES=		DNS2.php \
 		DNS2/RR/SIG.php DNS2/RR/SOA.php DNS2/RR/SPF.php \
 		DNS2/RR/SRV.php DNS2/RR/SSHFP.php \
 		DNS2/RR/TA.php DNS2/RR/TALINK.php DNS2/RR/TKEY.php \
+		DNS2/RR/TLSA.php \
 		DNS2/RR/TSIG.php DNS2/RR/TXT.php \
 		DNS2/RR/URI.php DNS2/RR/WKS.php \
 		DNS2/RR/X25.php \

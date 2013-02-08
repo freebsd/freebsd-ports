@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	assistant
 PORTVERSION=	4.6.3

@@ -3,15 +3,15 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	23.0.1271.97
+DISTVERSION=	24.0.1312.57
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
-		http://files.etoilebsd.net/goodking/ \
-		http://distfiles.cybertron.gr/
+		http://files.etoilebsd.net/goodking/
 
 MAINTAINER=	chromium@FreeBSD.org
-COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
+COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 
 LICENSE=	BSD LGPL21 MPL
 LICENSE_COMB=	multi
@@ -34,6 +34,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		cups:${PORTSDIR}/print/cups-client \
 		event-1:${PORTSDIR}/devel/libevent \
+		vpx:${PORTSDIR}/multimedia/libvpx \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
@@ -50,8 +51,8 @@ USE_GNOME=	glib20 gtk20 dconf libxslt
 USE_PKGCONFIG=	build
 MAN1=		chrome.1
 
-DESKTOP_ENTRIES="Chromium" "${COMMENT}" "${DATADIR}/product_logo_48.png" \
-		"chrome" "Application;Network;WebBrowser;" true
+DESKTOP_ENTRIES="Chromium" "Web browser" "${DATADIR}/product_logo_48.png" \
+		"chrome %U" "Network;WebBrowser;GTK;" true
 
 ALL_TARGET=	chrome
 
@@ -62,6 +63,7 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_ffmpeg=0 \
 		use_system_libusb=1 \
 		use_system_libevent=1 \
+		use_system_libvpx=1 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
@@ -70,6 +72,7 @@ GYP_DEFINES+=	use_cups=1 \
 		enable_webrtc=0 \
 		enable_openmax=1 \
 		enable_one_click_signin=1 \
+		no_gc_sections=1 \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER}
@@ -140,7 +143,6 @@ BUILDTYPE=	Release
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
-CONFIGURE_ENV+=	LD=${CC}
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
@@ -187,5 +189,11 @@ do-install:
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
+
+post-install:
+	@${ECHO_MSG} "========================================================" 
+	@${ECHO_MSG} "For best performance please enable shared memory support" 
+	@${ECHO_MSG} "in chromium by setting kern.ipc.shm_allow_removed=1"
+	@${ECHO_MSG} "========================================================" 
 
 .include <bsd.port.post.mk>

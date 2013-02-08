@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cipher-aes
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

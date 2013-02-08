@@ -1,41 +1,35 @@
-# New ports collection makefile for: ii
-# Date created: 	July 13, 2008
-# Whom:				Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ii
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
-		http://laffaye.free.fr/distfiles/
+		LOCAL/sbz
 
-MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A minimalist FIFO and filesystem-based IRC client
+MAINTAINER=	sbz@FreeBSD.org
+COMMENT=	Minimalist FIFO and filesystem-based IRC client
 
 LICENSE=	MIT
 
-MAN1=		ii.1
-PLIST_FILES=	bin/ii
-PORTDOCS=	CHANGES README FAQ
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CHANGES FAQ README
 PORTEXAMPLES=	query.sh
 MAKE_ARGS=	-E CC
 
+.include <bsd.port.options.mk>
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ii ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/ii.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${ECHO_MSG} "installing additional examples to ${EXAMPLESDIR}"
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/query.sh ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

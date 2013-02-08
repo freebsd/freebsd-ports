@@ -1502,6 +1502,8 @@
 %%WWWDIR%%/dojo/cldr/nls/ar/number.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/buddhist.js
 %%WWWDIR%%/dojo/cldr/nls/buddhist.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/ca/buddhist.js
+%%WWWDIR%%/dojo/cldr/nls/ca/buddhist.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ca/currency.js
 %%WWWDIR%%/dojo/cldr/nls/ca/currency.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ca/gregorian.js
@@ -1562,6 +1564,8 @@
 %%WWWDIR%%/dojo/cldr/nls/en-ca/gregorian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/buddhist.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/buddhist.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-gb/currency.js
+%%WWWDIR%%/dojo/cldr/nls/en-gb/currency.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/gregorian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/islamic.js
@@ -2216,8 +2220,6 @@
 %%WWWDIR%%/dojox/app/widgets/Container.js.uncompressed.js
 %%WWWDIR%%/dojox/app/widgets/_ScrollableMixin.js
 %%WWWDIR%%/dojox/app/widgets/_ScrollableMixin.js.uncompressed.js
-%%WWWDIR%%/dojox/app/widgets/scrollable.js
-%%WWWDIR%%/dojox/app/widgets/scrollable.js.uncompressed.js
 %%WWWDIR%%/dojox/atom/README
 %%WWWDIR%%/dojox/atom/io/Connection.js
 %%WWWDIR%%/dojox/atom/io/Connection.js.uncompressed.js
@@ -2617,6 +2619,8 @@
 %%WWWDIR%%/dojox/calendar/nls/fi/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/fr/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/fr/buttons.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/nls/he/buttons.js
+%%WWWDIR%%/dojox/calendar/nls/he/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/hu/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/hu/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/it/buttons.js
@@ -8592,6 +8596,7 @@
 @dirrm %%WWWDIR%%/dojox/calendar/nls/ja
 @dirrm %%WWWDIR%%/dojox/calendar/nls/it
 @dirrm %%WWWDIR%%/dojox/calendar/nls/hu
+@dirrm %%WWWDIR%%/dojox/calendar/nls/he
 @dirrm %%WWWDIR%%/dojox/calendar/nls/fr
 @dirrm %%WWWDIR%%/dojox/calendar/nls/fi
 @dirrm %%WWWDIR%%/dojox/calendar/nls/es

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-qt4-designerplugin
-# Date created:				2007-02-20
-# Whom:					Danny Pansters <danny@ricin.com>
-#
+# Created by: Danny Pansters <danny@ricin.com>
 # $FreeBSD$
 
 PORTNAME=	designerplugin
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -27,30 +23,24 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	gui xml designer moc_build qmake_build
 
-PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
-OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
-CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
+PATCHDIR=	${.CURDIR}/../py-qt4-core/files
 ARGS=		-b ${PREFIX}/bin \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-p ${PREFIX}/${QT_PLUGINDIR_REL} \
 		-q ${QMAKE} \
 		--confirm-license \
-		--enable QtDesigner
+		--enable QtDesigner \
+		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
+.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug --trace
 .endif
 
-.include "../py-sip/files/bsd.pyqt.mk"
-
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
 		${PYTHON_CMD} configure.py ${ARGS}
-
-post-configure:
-	${REINPLACE_CMD} -e 's|CC .*|CC = ${CC}|'\
-		-e 's|CXX .*|CXX = ${CXX}|'\
-		-e 's|LINK .*|LINK = ${CXX}|'\
-		${WRKSRC}/designer/Makefile
 
 .include <bsd.port.mk>

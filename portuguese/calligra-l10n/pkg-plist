@@ -28,9 +28,6 @@ share/doc/HTML/pt/stage/menus.docbook
 share/doc/HTML/pt/stage/options.docbook
 share/doc/HTML/pt/stage/screen.docbook
 share/doc/HTML/pt/stage/tutorial.docbook
-share/doc/HTML/pt/thesaurus/common
-share/doc/HTML/pt/thesaurus/index.cache.bz2
-share/doc/HTML/pt/thesaurus/index.docbook
 share/locale/pt/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/pt/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/pt/LC_MESSAGES/CalendarTool.mo
@@ -86,7 +83,6 @@ share/locale/pt/LC_MESSAGES/stage.mo
 share/locale/pt/LC_MESSAGES/tablessolver.mo
 share/locale/pt/LC_MESSAGES/thesaurus_tool.mo
 share/locale/pt/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/pt/thesaurus
 @dirrm share/doc/HTML/pt/stage
 @dirrm share/doc/HTML/pt/sheets
 @dirrm share/doc/HTML/pt/kexi

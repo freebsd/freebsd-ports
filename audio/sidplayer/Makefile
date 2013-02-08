@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sidplayer
-# Date created:		27 May 2005
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
@@ -24,13 +20,17 @@ MAKE_JOBS_SAFE=	yes
 
 SDLINCLUDEDIR=	SDL
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/SDL_endian\.h|${SDLINCLUDEDIR}/SDL_endian\.h|' \
 		${WRKSRC}/src/main_sdl.cpp
 
 do-install:
 	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/PSID\ Demo/* ${DOCSDIR}/
 .endif
@@ -38,7 +38,7 @@ do-install:
 post-install:
 	@${ECHO_MSG} "=============================================================="
 	@${ECHO_MSG} "A huge SID tune archive can be found at http://hvsc.c64.org/"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "You can find a few examples in ${DOCSDIR}"
 .endif
 	@${ECHO_MSG} "=============================================================="

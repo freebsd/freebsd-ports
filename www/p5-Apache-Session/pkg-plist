@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Apache/Session/Lock/Semaphore.pm
 %%SITE_PERL%%/Apache/Session/Lock/Sybase.pm
 %%SITE_PERL%%/Apache/Session/MySQL.pm
+%%SITE_PERL%%/Apache/Session/MySQL/NoLock.pm
 %%SITE_PERL%%/Apache/Session/Oracle.pm
 %%SITE_PERL%%/Apache/Session/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Serialize/Base64.pm
@@ -27,9 +28,10 @@
 %%SITE_PERL%%/Apache/Session/Store/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Store/Sybase.pm
 %%SITE_PERL%%/Apache/Session/Sybase.pm
-@dirrm %%SITE_PERL%%/Apache/Session/Store
-@dirrm %%SITE_PERL%%/Apache/Session/Serialize
-@dirrm %%SITE_PERL%%/Apache/Session/Lock
-@dirrm %%SITE_PERL%%/Apache/Session/Generate
-@dirrm %%SITE_PERL%%/Apache/Session
+@dirrmtry %%SITE_PERL%%/Apache/Session/Store
+@dirrmtry %%SITE_PERL%%/Apache/Session/Serialize
+@dirrmtry %%SITE_PERL%%/Apache/Session/MySQL
+@dirrmtry %%SITE_PERL%%/Apache/Session/Lock
+@dirrmtry %%SITE_PERL%%/Apache/Session/Generate
+@dirrmtry %%SITE_PERL%%/Apache/Session
 @dirrmtry %%SITE_PERL%%/Apache

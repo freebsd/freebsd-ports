@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diffstat
-# Date created:		Oct 23, 1999
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	diffstat
 PORTVERSION=	1.55

@@ -7,6 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2010.1.0
+PORTREVISION=	1
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/publico/programas/IRPF/2010/PGDIrpf2010/Java/zip/
 PKGNAMEPREFIX?=	pt_BR-

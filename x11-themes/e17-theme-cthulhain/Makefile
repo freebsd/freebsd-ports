@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.edj
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Cthulhain theme for use with e17 window manager
 
+DEPRECATED=     Dead upstream since 2008
+EXPIRATION_DATE=2013-02-28
+
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 NO_BUILD=	yes

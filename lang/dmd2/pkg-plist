@@ -66,11 +66,19 @@ include/d/druntime/import/core/sync/exception.di
 include/d/druntime/import/core/sync/semaphore.di
 include/d/druntime/import/core/sync/condition.di
 include/d/druntime/import/core/thread.di
+include/d/druntime/import/core/sys/freebsd/dlfcn.d
+include/d/druntime/import/core/sys/freebsd/execinfo.d
 include/d/druntime/import/core/sys/freebsd/sys/event.d
+include/d/druntime/import/core/sys/linux/epoll.d
+include/d/druntime/import/core/sys/linux/execinfo.d
+include/d/druntime/import/core/sys/linux/sys/signalfd.d
+include/d/druntime/import/core/sys/linux/sys/xattr.d
+include/d/druntime/import/core/sys/osx/execinfo.d
 include/d/druntime/import/core/sys/osx/mach/kern_return.d
 include/d/druntime/import/core/sys/osx/mach/port.d
 include/d/druntime/import/core/sys/osx/mach/semaphore.d
 include/d/druntime/import/core/sys/osx/mach/thread_act.d
+include/d/druntime/import/core/sys/osx/pthread.d
 include/d/druntime/import/core/sys/posix/arpa/inet.d
 include/d/druntime/import/core/sys/posix/config.d
 include/d/druntime/import/core/sys/posix/dirent.d
@@ -90,11 +98,13 @@ include/d/druntime/import/core/sys/posix/setjmp.d
 include/d/druntime/import/core/sys/posix/signal.d
 include/d/druntime/import/core/sys/posix/stdio.d
 include/d/druntime/import/core/sys/posix/stdlib.d
+include/d/druntime/import/core/sys/posix/sys/ioctl.d
 include/d/druntime/import/core/sys/posix/sys/ipc.d
 include/d/druntime/import/core/sys/posix/sys/mman.d
 include/d/druntime/import/core/sys/posix/sys/select.d
 include/d/druntime/import/core/sys/posix/sys/shm.d
 include/d/druntime/import/core/sys/posix/sys/socket.d
+include/d/druntime/import/core/sys/posix/sys/statvfs.d
 include/d/druntime/import/core/sys/posix/sys/stat.d
 include/d/druntime/import/core/sys/posix/sys/time.d
 include/d/druntime/import/core/sys/posix/sys/types.d
@@ -114,6 +124,7 @@ include/d/druntime/import/core/sys/windows/threadaux.d
 include/d/druntime/import/core/sys/windows/windows.d
 include/d/druntime/import/core/time.d
 include/d/druntime/import/core/vararg.d
+include/d/druntime/import/etc/linux/memoryerror.d
 include/d/druntime/import/object.di
 include/d/phobos2/crc32.d
 include/d/phobos2/etc/c/zlib.d
@@ -157,12 +168,18 @@ include/d/phobos2/std/csv.d
 include/d/phobos2/std/ctype.d
 include/d/phobos2/std/datetime.d
 include/d/phobos2/std/demangle.d
+include/d/phobos2/std/digest/crc.d
+include/d/phobos2/std/digest/digest.d
+include/d/phobos2/std/digest/md.d
+include/d/phobos2/std/digest/ripemd.d
+include/d/phobos2/std/digest/sha.d
 include/d/phobos2/std/encoding.d
 include/d/phobos2/std/exception.d
 include/d/phobos2/std/file.d
 include/d/phobos2/std/format.d
 include/d/phobos2/std/functional.d
 include/d/phobos2/std/getopt.d
+include/d/phobos2/std/internal/digest/sha_SSSE3.d
 include/d/phobos2/std/internal/math/biguintcore.d
 include/d/phobos2/std/internal/math/biguintnoasm.d
 include/d/phobos2/std/internal/math/biguintx86.d
@@ -224,7 +241,9 @@ include/d/phobos2/unittest.d
 @dirrm include/d/phobos2/std/net
 @dirrm include/d/phobos2/std/internal/windows
 @dirrm include/d/phobos2/std/internal/math
+@dirrm include/d/phobos2/std/internal/digest
 @dirrm include/d/phobos2/std/internal
+@dirrm include/d/phobos2/std/digest
 @dirrm include/d/phobos2/std/c/windows
 @dirrm include/d/phobos2/std/c/osx
 @dirrm include/d/phobos2/std/c/linux
@@ -234,6 +253,8 @@ include/d/phobos2/unittest.d
 @dirrm include/d/phobos2/etc/c
 @dirrm include/d/phobos2/etc
 @dirrm include/d/phobos2
+@dirrm include/d/druntime/import/etc/linux
+@dirrm include/d/druntime/import/etc
 @dirrm include/d/druntime/import/core/sys/windows
 @dirrm include/d/druntime/import/core/sys/posix/sys
 @dirrm include/d/druntime/import/core/sys/posix/netinet
@@ -242,6 +263,8 @@ include/d/phobos2/unittest.d
 @dirrm include/d/druntime/import/core/sys/posix
 @dirrm include/d/druntime/import/core/sys/osx/mach
 @dirrm include/d/druntime/import/core/sys/osx
+@dirrm include/d/druntime/import/core/sys/linux/sys
+@dirrm include/d/druntime/import/core/sys/linux
 @dirrm include/d/druntime/import/core/sys/freebsd/sys
 @dirrm include/d/druntime/import/core/sys/freebsd
 @dirrm include/d/druntime/import/core/sys

@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130207:
+AUTHOR: gahr@FreeBSD.org
+
+  * Use of PTHREAD_CFLAGS and PTHREAD_LIBS is unsupported. The former
+    expands to the empty string, while the second is simply -pthread.
+    Please use -pthread directly in your LDFLAGS, if needed.
+
 20121214:
 AUTHOR: flo@FreeBSD.org
 

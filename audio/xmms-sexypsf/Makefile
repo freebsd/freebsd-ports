@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-sexypsf
-# Date created:				10 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-sexypsf
 PORTVERSION=	0.4.8
@@ -34,6 +30,10 @@ SOURCES=	PsxBios PsxCounters PsxDma Spu PsxHw PsxMem Misc \
 
 PLIST_FILES=	lib/xmms/Input/libsexypsf.so
 
+OPTIONS_DEFINE=DOCS
+
+.include <bsd.port.options.mk>
+
 do-build:
 .for f in ${SOURCES}
 	${CC} ${CFLAGS} ${DEFINES} `gtk-config --cflags` -c -o ${WRKSRC}/${f}.o ${WRKSRC}/${f}.c
@@ -44,7 +44,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libsexypsf.so ${PREFIX}/lib/xmms/Input/libsexypsf.so
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/Docs/${f} ${DOCSDIR}

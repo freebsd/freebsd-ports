@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	High performance media player supporting many formats
 
@@ -93,6 +93,11 @@ CONFIGURE_ARGS+=	--disable-directfb \
 			--disable-mencoder \
 			--disable-mpg123 \
 			--disable-musepack
+
+# Fix a problem with unknown assembly opcodes in embedded ffmpeg
+.if ${ARCH} == "ppc"
+CONFIGURE_ARGS+=        --disable-asm
+.endif
 
 .include "${.CURDIR}/Makefile.options"
 

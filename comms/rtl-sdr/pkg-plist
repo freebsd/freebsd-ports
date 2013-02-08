@@ -3,6 +3,7 @@ bin/rtl_tcp
 bin/rtl_test
 bin/rtl_fm
 bin/rtl_eeprom
+bin/rtl_adsb
 include/rtl-sdr.h
 include/rtl-sdr_export.h
 lib/librtlsdr.la
@@ -120,5 +121,7 @@ lib/librtlsdr.so
 %%PORTDOCS%%%%DOCSDIR%%/html/struct__R828__I2C__TYPE.js
 %%PORTDOCS%%%%DOCSDIR%%/html/structrtlsdr__config.js
 %%PORTDOCS%%%%DOCSDIR%%/html/struct__SysFreq__Info__Type.js
+%%PORTDOCS%%%%DOCSDIR%%/html/structdongle__info__t.html
+%%PORTDOCS%%%%DOCSDIR%%/html/structdongle__info__t.js
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -2,8 +2,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/euro/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/article.txt
@@ -14,9 +12,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt

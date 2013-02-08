@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	multimarkdown
-PORTVERSION=	3.6
+PORTVERSION=	3.7.1
+DISTNAME=	peg-${PORTNAME}-${PORTVERSION}
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/${GH_DEVELOPER}/${GH_PORTNAME}/tarball/${DISTVERSION}/
-DISTNAME=	${GH_DEVELOPER}-${GH_PORTNAME}-${DISTVERSION}-0-g${GH_VERSION}
+MASTER_SITES=	http://github.com/fletcher/peg-${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Extended Markdown processor with more features, written in C
@@ -18,23 +18,18 @@ CONFLICTS_INSTALL=	mtools-*
 
 LICENSE=	MIT
 
-# Github makes this very confusing
-GH_PORTNAME=	peg-${PORTNAME}
-GH_DEVELOPER=	fletcher	#GH trees live under a username
-GH_VERSION=		23fba45421 	#GH appends a commit hash to the filename
-GH_SRCDIR=		e1d494e		#GH appends something else (??) to the extracted pathname
-WRKSRC=			${WRKDIR}/${GH_DEVELOPER}-${GH_PORTNAME}-${GH_SRCDIR}
-FETCH_ARGS=		-prR		#GH issues HTTP/302 errors for source tarballs
+FETCH_ARGS=	-Fpr
 
 USE_GMAKE=	yes
 ALL_TARGET=	ALL
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/multimarkdown bin/mmd bin/mmd2all bin/mmd2odf bin/mmd2opml bin/mmd2pdf bin/mmd2tex
-PORTDOCS=		LICENSE README.markdown
+PORTDOCS=	LICENSE README.markdown
 
 post-patch:
-	@${REINPLACE_CMD} -E "s/-arch (ppc|i386)//" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E "/CFLAGS/s/-arch [[:alnum:]]+//; /CFLAGS/s/\?=/\+=/" \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL} -m 755 ${WRKSRC}/multimarkdown ${PREFIX}/bin

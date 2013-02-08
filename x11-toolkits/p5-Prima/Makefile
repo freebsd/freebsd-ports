@@ -1,12 +1,8 @@
-# New ports collection makefile for: Prima
-# Date created:        25 Sept 2001
-# Whom:                dmitry@karasik.eu.org
-#
+# Created by: dmitry@karasik.eu.org
 # $FreeBSD$
-#
 
 PORTNAME=	Prima
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

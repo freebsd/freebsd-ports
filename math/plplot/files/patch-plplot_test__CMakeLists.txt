@@ -1,0 +1,15 @@
+--- plplot_test/CMakeLists.txt.orig
++++ plplot_test/CMakeLists.txt
+@@ -387,12 +387,6 @@
+       )
+   endif(PLD_pdfqt)
+ 
+-  if(PLD_pdf)
+-    add_test(examples_pdf
+-      ${SH_EXECUTABLE} -c "${TEST_ENVIRONMENT} ${TEST_SCRIPT} --front-end=c --device=pdf"
+-      )
+-  endif(PLD_pdf)
+-
+   if(CMP_EXECUTABLE OR DIFF_EXECUTABLE AND TAIL_EXECUTABLE)
+     configure_file(
+       test_diff.sh.in

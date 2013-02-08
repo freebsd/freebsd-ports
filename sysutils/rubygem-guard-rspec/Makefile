@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard-rspec
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

@@ -2,8 +2,6 @@ bin/cdr2raw
 bin/cdr2xhtml
 bin/cmx2raw
 bin/cmx2xhtml
-include/libcdr-0.0
-include/libcdr-0.0/libcdr
 include/libcdr-0.0/libcdr/CDRDocument.h
 include/libcdr-0.0/libcdr/CDRStringVector.h
 include/libcdr-0.0/libcdr/CMXDocument.h
@@ -13,3 +11,5 @@ lib/libcdr-0.0.la
 lib/libcdr-0.0.so
 lib/libcdr-0.0.so.0
 libdata/pkgconfig/libcdr-0.0.pc
+@dirrm include/libcdr-0.0/libcdr
+@dirrm include/libcdr-0.0

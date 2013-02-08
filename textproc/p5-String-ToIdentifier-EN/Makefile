@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-ToIdentifier-EN
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Convert Strings to English Program Identifiers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Lingua-EN-Inflect-Phrase>=0.14:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
+BUILD_DEPENDS=	p5-Lingua-EN-Inflect-Phrase>=0.16:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
 		p5-Text-Unidecode>=0.04:${PORTSDIR}/converters/p5-Text-Unidecode \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 MAN3=		String::ToIdentifier::EN.3 \
 		String::ToIdentifier::EN::Unicode.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

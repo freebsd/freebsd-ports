@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Semantic/.packlist
+%%SITE_PERL%%/Template/Semantic.pm
+%%SITE_PERL%%/Template/Semantic/Cookbook.pod
+%%SITE_PERL%%/Template/Semantic/Document.pm
+%%SITE_PERL%%/Template/Semantic/Filter.pm
+@dirrm %%SITE_PERL%%/Template/Semantic
+@dirrmtry %%SITE_PERL%%/Template
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Semantic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template

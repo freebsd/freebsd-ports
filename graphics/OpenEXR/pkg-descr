@@ -1,18 +1,24 @@
-Industrial Light & Magic(ILM), a division of Lucas Digital
-Ltd. LLC, implemented its own extended dynamic range file
-format in Summer 2000.  The existing 8-bit file format used
-at the time could not accurately reproduce images with
-extreme contrast between the darkest and brightest regions,
-or images with very subtle color gradations.
+OpenEXR is a high dynamic-range (HDR) image file format developed by
+Industrial Light & Magic for use in computer imaging applications.
 
-ILM's extended dynamic range file format has been employed
-successfully in the movies Harry Potter, Men in Black II,
-and Signs. Several shows currently in production at ILM are
-using the new format.
+OpenEXR is used by ILM on all motion pictures currently in production.
+The first movies to employ OpenEXR were Harry Potter and the Sorcerers Stone,
+Men in Black II, Gangs of New York, and Signs. Since then, OpenEXR has become
+ILM's main image file format.
 
-Realizing that various other parties are interested in an
-extended dynamic range file format, ILM decided to polish
-its new file format a bit, and to publish it.  OpenEXR is
-the result.
+OpenEXR's features include:
+* Higher dynamic range and color precision than existing 8- and 10-bit
+  image file formats.
+* Support for 16-bit floating-point, 32-bit floating-point, and 32-bit
+  integer pixels. The 16-bit floating-point format, called "half", is compatible
+  with the half data type in NVIDIA's Cg graphics language and is supported
+  natively on their new GeForce FX and Quadro FX 3D graphics solutions.
+* Multiple lossless image compression algorithms. Some of the included codecs
+  can achieve 2:1 lossless compression ratios on images with film grain.
+* Extensibility. New compression codecs and image types can easily be added
+  by extending the C++ classes included in the OpenEXR software distribution.
+  New image attributes (strings, vectors, integers, etc.) can be added to
+  OpenEXR image headers without affecting backward compatibility with existing
+  OpenEXR applications.
 
 WWW: http://www.openexr.org/

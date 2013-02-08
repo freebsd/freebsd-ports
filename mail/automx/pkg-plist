@@ -1,0 +1,9 @@
+bin/automx-test
+@unexec cmp -s %D/etc/automx.conf %D/etc/automx.conf.sample && rm -f %D/etc/automx.conf || true
+etc/automx.conf.sample
+@exec [ -f %B/automx.conf ] || cp -p %D/%F %B/automx.conf
+%%PYTHON_SITELIBDIR%%/automx/__init__.py
+%%PYTHON_SITELIBDIR%%/automx/config.py
+%%PYTHON_SITELIBDIR%%/automx/ordereddict.py
+%%PYTHON_SITELIBDIR%%/automx/view.py
+@dirrm %%PYTHON_SITELIBDIR%%/automx

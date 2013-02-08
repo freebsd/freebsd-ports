@@ -1,13 +1,9 @@
-# New ports collection makefile for:	LuxRender
-# Date created:				16 March 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luxrender
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/lux/archive/ \
 		http://freebsd.nsu.ru/distfiles/luxrender/
@@ -15,16 +11,16 @@ DISTNAME=	${HG_NODEID}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A physically based and unbiased rendering system
+COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
 BROKEN=		does not build with boost-1.48.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 
 HG_NODEID=	9206b3ba7011
 
@@ -35,8 +31,9 @@ CMAKE_VERBOSE=	yes
 WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="LuxRender" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
-		"Application;Graphics;3DGraphics;" ${FALSE}
+DESKTOP_ENTRIES="LuxRender" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/luxrender.svg" "${PORTNAME}" \
+		"Graphics;3DGraphics;" false
 
 OPTIONS=	QT4	"Build Qt4 GUI executable"		on \
 		WX	"Build wxWidgets GUI executable"	off

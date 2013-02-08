@@ -1,0 +1,25 @@
+commit 79cd49cac3a6b7031556aae53ce3ecff8c360cb9
+Author: Pino Toscano <pino@kde.org>
+Date:   Sun Jul 8 22:20:15 2012 +0200
+
+    fix sox detection with sox >= 14.4.0
+    
+    sox 1.14.0 changed the string that is printed out on --version, breaking the simply string matching done;
+    add a new case to cover also this new version
+    
+    BUG: 301544
+
+diff --git a/plugins/encoder/sox/k3bsoxencoder.cpp b/plugins/encoder/sox/k3bsoxencoder.cpp
+index 3559d5d..af5b013 100644
+--- ./plugins/encoder/sox/k3bsoxencoder.cpp
++++ ./plugins/encoder/sox/k3bsoxencoder.cpp
+@@ -69,6 +69,9 @@ public:
+             if ( pos >= 0 ) {
+                 pos += 17;
+             }
++            else if ( ( pos = out.indexOf( "sox:      SoX v" ) ) >= 0 ) {
++                pos += 15;
++            }
+             else if ( ( pos = out.indexOf( "sox: SoX v" ) ) >= 0 ) {
+                 pos += 10;
+             }

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	databases/p5-Rose-DB
-# Date created:				09 June 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.769
+PORTVERSION=	0.770
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN

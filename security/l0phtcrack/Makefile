@@ -1,9 +1,5 @@
-# New ports collection makefile for:	l0phtcrack
-# Date created:				2000-10-31
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	l0phtcrack
 PORTVERSION=	1.5

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	xboing
-# Date created:		31 January 1995
-# Whom:			janek
-#
+# Created by: janek
 # $FreeBSD$
 
 PORTNAME=	xboing

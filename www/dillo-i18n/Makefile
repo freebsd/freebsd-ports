@@ -1,7 +1,4 @@
-# New ports collection makefile for:	dillo-i18n
-# Date created:			2005-12-11
-# Whom:               		Thomas-Martin Seck <tmseck@netcologne.de>
-#
+# Created by: Thomas-Martin Seck <tmseck@netcologne.de>
 # $FreeBSD$
 #
 # Tunables:
@@ -9,8 +6,6 @@
 # WITH_DILLO_META-REFRESH:	make Dillo accept the meta-refresh tag
 # WITHOUT_DILLO_TABS:		disable support for tabbed browsing
 # WITHOUT_DILLO_ANTIALIAS:	disable support for antialiased display
-# WITH_DILLO_DLGUI:		enable experimental FLTK2 based gui for file
-# 				downloads
 # WITHOUT_DILLO_IPV6:		disable IPv6 support
 #
 
@@ -79,22 +74,13 @@ CONFIGURE_ARGS+=	--enable-anti-alias
 CONFIGURE_ARGS+=	--disable-anti-alias
 .endif
 
-.if defined(WITH_DILLO_DLGUI)
-CONFIGURE_ARGS+=	--enable-dlgui
-BUILD_DEPENDS+=	fltk>=2.0.r4825:${PORTSDIR}/x11-toolkits/fltk2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
 CONFIGURE_ARGS+=	--disable-dlgui
-.endif
 
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|dillorc|dillorc.sample|g' ${WRKSRC}/Makefile.in
 	@${CP} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
 
@@ -118,11 +104,6 @@ pre-configure:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITHOUT_DILLO_ANTIALIAS=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to disable support for antialiased fonts."
-.endif
-.if !defined(WITH_DILLO_DLGUI)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
-	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
 .endif
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
 	@${ECHO_CMD} ""

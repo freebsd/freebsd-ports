@@ -1,0 +1,11 @@
+--- ./mifluz/Makefile.in.orig	2013-01-16 13:43:17.443734240 +0800
++++ ./mifluz/Makefile.in	2013-01-16 13:47:04.575242382 +0800
+@@ -361,7 +361,7 @@
+ 	WordType.cc
+ 
+ libmifluz_la_LDFLAGS = -version-info $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
+-libmifluz_la_LIBADD = ../db/libdb.la ../clib/libclib.la
++libmifluz_la_LIBADD = ../db/libdb.la ../clib/libclib.la $(LIBICONV)
+ include_HEADERS = \
+ 	mifluz.h
+ 

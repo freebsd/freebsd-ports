@@ -3,7 +3,7 @@
 
 PORTNAME=	rssowl
 PORTVERSION=	1.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20classic%20%28dont%20use%29/${PORTVERSION}
 DISTNAME=	rssowl_${PORTVERSION:S|.|_|g}_src
@@ -35,10 +35,10 @@ PLIST_FILES=	bin/rssowl %%DATADIR%%/rssowl.jar share/pixmaps/rssowl.png
 PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="RSSOwl" \
-		"Read newsfeeds" \
-		"rssowl.png" \
+		"Newsfeeds reader" \
+		"${PREFIX}/share/pixmaps/rssowl.png" \
 		"rssowl" \
-		"Application;Network;News;" \
+		"Network;News;Java;" \
 		true
 
 post-patch:

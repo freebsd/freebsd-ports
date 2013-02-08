@@ -1,0 +1,27 @@
+--- ./configure.orig	2013-01-12 11:14:34.000000000 +0000
++++ ./configure	2013-01-12 18:25:40.000000000 +0000
+@@ -915,9 +915,10 @@
+ enable_gtk_doc
+ enable_gtk_doc_html
+ enable_gtk_doc_pdf
+-enable_pixbuf_thumbnailer
++enable_cover_thumbnailer
+ enable_font_thumbnailer
+ enable_jpeg_thumbnailer
++enable_pixbuf_thumbnailer
+ enable_ffmpeg_thumbnailer
+ enable_gstreamer_thumbnailer
+ enable_odf_thumbnailer
+@@ -15618,9 +15619,9 @@
+ fi
+ 
+ 
+-# Check whether --enable-pixbuf-thumbnailer was given.
+-if test "${enable_pixbuf_thumbnailer+set}" = set; then :
+-  enableval=$enable_pixbuf_thumbnailer; ac_tumbler_cover_thumbnailer=$enableval
++# Check whether --enable-cover-thumbnailer was given.
++if test "${enable_cover_thumbnailer+set}" = set; then :
++  enableval=$enable_cover_thumbnailer; ac_tumbler_cover_thumbnailer=$enableval
+ else
+   ac_tumbler_cover_thumbnailer=yes
+ fi

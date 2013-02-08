@@ -1,13 +1,9 @@
-# New ports collection makefile for:	glob2
-# Date created:		Wed 21 apr 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		glob2
 PORTVERSION=		0.9.4.4
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +14,7 @@ COMMENT=		Globulation 2 - a free and innovative strategy game
 LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis		\
 			speex.1:${PORTSDIR}/audio/speex			\
 			fribidi.3:${PORTSDIR}/converters/fribidi	\
-			boost_thread.4:${PORTSDIR}/devel/boost-libs	\
+			boost_thread:${PORTSDIR}/devel/boost-libs	\
 			freetype.9:${PORTSDIR}/print/freetype2
 # Should work with portaudio v19_20071207
 # Can be built with portaudio2 but does not run cleanly

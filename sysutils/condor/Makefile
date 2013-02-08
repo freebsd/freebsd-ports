@@ -1,13 +1,8 @@
-# New ports collection makefile for:	condor
-# Date created:			01 May 2007
-# Whom:				Andy Pavlo
-#
+# Created by: Andy Pavlo
 # $FreeBSD$
-#
 
 PORTNAME=	condor
-PORTVERSION=	7.6.6
-PORTREVISION=	1
+PORTVERSION=	7.8.7
 CATEGORIES=	sysutils net
 MASTER_SITES=	# empty
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -33,7 +28,7 @@ LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
 
-SUB_FILES=	pkg-install condor_config condor_config.local pkg-message
+SUB_FILES=	condor_config condor_config.local pkg-message
 
 USERS=		condor
 GROUPS=		${USERS}
@@ -58,16 +53,16 @@ MAN1=	\
 	condor_config_bind.1 \
 	condor_config_val.1 \
 	condor_configure.1 \
-	condor_convert_history.1 \
+	condor_continue.1 \
 	condor_dagman.1 \
 	condor_fetchlog.1 \
 	condor_findhost.1 \
+	condor_gather_info.1 \
 	condor_glidein.1 \
 	condor_history.1 \
 	condor_hold.1 \
 	condor_load_history.1 \
 	condor_master.1 \
-	condor_master_off.1 \
 	condor_off.1 \
 	condor_on.1 \
 	condor_power.1 \
@@ -77,13 +72,13 @@ MAN1=	\
 	condor_q.1 \
 	condor_qedit.1 \
 	condor_reconfig.1 \
-	condor_reconfig_schedd.1 \
 	condor_release.1 \
 	condor_reschedule.1 \
 	condor_restart.1 \
 	condor_rm.1 \
 	condor_router_history.1 \
 	condor_router_q.1 \
+	condor_router_rm.1 \
 	condor_run.1 \
 	condor_set_shutdown.1 \
 	condor_ssh_to_job.1 \
@@ -92,6 +87,7 @@ MAN1=	\
 	condor_store_cred.1 \
 	condor_submit.1 \
 	condor_submit_dag.1 \
+	condor_suspend.1 \
 	condor_transfer_data.1 \
 	condor_updates_stats.1 \
 	condor_userlog.1 \

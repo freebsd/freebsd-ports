@@ -1,0 +1,22 @@
+include/kolabxml/global_definitions.h
+include/kolabxml/incidence_p.h
+include/kolabxml/kolabconfiguration.h
+include/kolabxml/kolabcontact.h
+include/kolabxml/kolabcontainers.h
+include/kolabxml/kolabevent.h
+include/kolabxml/kolabevent_p.h
+include/kolabxml/kolabformat.h
+include/kolabxml/kolabfreebusy.h
+include/kolabxml/kolabjournal.h
+include/kolabxml/kolabnote.h
+include/kolabxml/kolabtodo.h
+lib/cmake/Libkolabxml/LibkolabxmlConfig.cmake
+lib/cmake/Libkolabxml/LibkolabxmlConfigVersion.cmake
+lib/cmake/Libkolabxml/LibkolabxmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Libkolabxml/LibkolabxmlTargets.cmake
+lib/libkolabxml.so
+lib/libkolabxml.so.0
+lib/libkolabxml.so.0.8.1
+@dirrm lib/cmake/Libkolabxml
+@dirrmtry lib/cmake
+@dirrm include/kolabxml

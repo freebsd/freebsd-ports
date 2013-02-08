@@ -1,21 +1,17 @@
-# New ports collection makefile for:	licq-osd
-# Date created:				2003-07-15
-# Whom:					nm@web.am
-#
+# Created by: nm@web.am
 # $FreeBSD$
-#
-#
 
 PORTNAME=	osd
-PORTVERSION=	${OSD_LICQ_VER}
+PORTVERSION=	1.7.1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
-LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	xosd:${PORTSDIR}/misc/xosd \
+		boost_regex:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-gui
 # run dependency may be too strict, delete it if you use another
 # plugin (gtk+) and wish run osd with it. i've not tested with

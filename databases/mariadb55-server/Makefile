@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.28a
+PORTVERSION=	5.5.29
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \

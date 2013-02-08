@@ -1,4 +1,5 @@
 bin/denemo
+bin/denemo_file_update.sh
 %%ETCDIR%%/denemo.conf
 share/applications/denemo.desktop
 %%DATADIR%%/actions/AllCommands.commands
@@ -66,6 +67,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/RepeatOpen.png
 %%DATADIR%%/actions/bitmaps/RepeatStart.png
 %%DATADIR%%/actions/bitmaps/SecondTimeBar.png
+%%DATADIR%%/actions/bitmaps/Speaker_Icon.svg
+%%DATADIR%%/actions/bitmaps/Speaker_Icon_Mute.svg
 %%DATADIR%%/actions/bitmaps/StartBeam.png
 %%DATADIR%%/actions/bitmaps/StartDownStems.png
 %%DATADIR%%/actions/bitmaps/StartTupletNumbering.png
@@ -460,6 +463,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/pedal.d.svg
 %%DATADIR%%/actions/bitmaps/pedal.e.svg
 %%DATADIR%%/actions/bitmaps/period.svg
+%%DATADIR%%/actions/bitmaps/piano_brace.svg
 %%DATADIR%%/actions/bitmaps/plus.svg
 %%DATADIR%%/actions/bitmaps/pppp.png
 %%DATADIR%%/actions/bitmaps/ppppp.png
@@ -607,12 +611,601 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/z.svg
 %%DATADIR%%/actions/bitmaps/zero.svg
 %%DATADIR%%/actions/block.l
-%%DATADIR%%/actions/denemo.scm
+%%DATADIR%%/actions/commandscripts/Ab-Major.scm
+%%DATADIR%%/actions/commandscripts/Ab-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/AccentSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/AccompanistsScore.scm
+%%DATADIR%%/actions/commandscripts/AddDotSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/AddDuplicateMeasure.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownAugmented4.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownDiminished5.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMajor2.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMajor3.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMajor6.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMajor7.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMinor2.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMinor3.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMinor6.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownMinor7.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownPerfect1.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownPerfect4.scm
+%%DATADIR%%/actions/commandscripts/AddHighestDownPerfect5.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpAugmented4.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpDiminished5.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMajor2.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMajor3.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMajor6.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMajor7.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMinor2.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMinor3.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMinor6.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpMinor7.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpPerfect1.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpPerfect4.scm
+%%DATADIR%%/actions/commandscripts/AddLowestUpPerfect5.scm
+%%DATADIR%%/actions/commandscripts/Allegro.scm
+%%DATADIR%%/actions/commandscripts/AllegroAssai.scm
+%%DATADIR%%/actions/commandscripts/AllowLineBreak.scm
+%%DATADIR%%/actions/commandscripts/Ambitus.scm
+%%DATADIR%%/actions/commandscripts/Anacrusis.scm
+%%DATADIR%%/actions/commandscripts/Andante.scm
+%%DATADIR%%/actions/commandscripts/AngryDelete.scm
+%%DATADIR%%/actions/commandscripts/ApplyToSelection.scm
+%%DATADIR%%/actions/commandscripts/ArbitraryTextAbove.scm
+%%DATADIR%%/actions/commandscripts/ArpeggioSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/AudioPlay.scm
+%%DATADIR%%/actions/commandscripts/Augment.scm
+%%DATADIR%%/actions/commandscripts/AutoAccidentals.scm
+%%DATADIR%%/actions/commandscripts/BarNumbers.scm
+%%DATADIR%%/actions/commandscripts/BassClefNoteNameSpeedTest.scm
+%%DATADIR%%/actions/commandscripts/BassDrum.scm
+%%DATADIR%%/actions/commandscripts/Bb-Major.scm
+%%DATADIR%%/actions/commandscripts/Bb-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/Beam1234.scm
+%%DATADIR%%/actions/commandscripts/BeamingOff.scm
+%%DATADIR%%/actions/commandscripts/BeamingOn.scm
+%%DATADIR%%/actions/commandscripts/BeatChange.scm
+%%DATADIR%%/actions/commandscripts/BeginPhrasingSlur.scm
+%%DATADIR%%/actions/commandscripts/BookArranger.scm
+%%DATADIR%%/actions/commandscripts/BookComposer.scm
+%%DATADIR%%/actions/commandscripts/BookCopyright.scm
+%%DATADIR%%/actions/commandscripts/BookDate.scm
+%%DATADIR%%/actions/commandscripts/BookInstrumentation.scm
+%%DATADIR%%/actions/commandscripts/BookPoet.scm
+%%DATADIR%%/actions/commandscripts/BookTitle.scm
+%%DATADIR%%/actions/commandscripts/BookmarkNamed.scm
+%%DATADIR%%/actions/commandscripts/BookmarkNonPrinting.scm
+%%DATADIR%%/actions/commandscripts/BreathMark.scm
+%%DATADIR%%/actions/commandscripts/Breve.scm
+%%DATADIR%%/actions/commandscripts/C-Major.scm
+%%DATADIR%%/actions/commandscripts/C-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/CadenzaOn.scm
+%%DATADIR%%/actions/commandscripts/CaptureMeasures.scm
+%%DATADIR%%/actions/commandscripts/CaptureMeasuresForStaff.scm
+%%DATADIR%%/actions/commandscripts/CautionaryAccidental.scm
+%%DATADIR%%/actions/commandscripts/ChangeBalance.scm
+%%DATADIR%%/actions/commandscripts/ChangeBreve.scm
+%%DATADIR%%/actions/commandscripts/ChangeChannel.scm
+%%DATADIR%%/actions/commandscripts/ChangeEnharmonicDown.scm
+%%DATADIR%%/actions/commandscripts/ChangeEnharmonicUp.scm
+%%DATADIR%%/actions/commandscripts/ChangeExpression.scm
+%%DATADIR%%/actions/commandscripts/ChangeGeneric.scm
+%%DATADIR%%/actions/commandscripts/ChangeHold2Pedal.scm
+%%DATADIR%%/actions/commandscripts/ChangeHoldPedal.scm
+%%DATADIR%%/actions/commandscripts/ChangeLegatoPedal.scm
+%%DATADIR%%/actions/commandscripts/ChangeLonga.scm
+%%DATADIR%%/actions/commandscripts/ChangeModwheel.scm
+%%DATADIR%%/actions/commandscripts/ChangePan.scm
+%%DATADIR%%/actions/commandscripts/ChangePortamento.scm
+%%DATADIR%%/actions/commandscripts/ChangePrintDuration0.scm
+%%DATADIR%%/actions/commandscripts/ChangePrintDuration1.scm
+%%DATADIR%%/actions/commandscripts/ChangePrintDuration2.scm
+%%DATADIR%%/actions/commandscripts/ChangePrintDurationBreve.scm
+%%DATADIR%%/actions/commandscripts/ChangePrintDurationLonga.scm
+%%DATADIR%%/actions/commandscripts/ChangeProgram.scm
+%%DATADIR%%/actions/commandscripts/ChangeSoftPedal.scm
+%%DATADIR%%/actions/commandscripts/ChangeStaff.scm
+%%DATADIR%%/actions/commandscripts/ChangeSustenutoPedal.scm
+%%DATADIR%%/actions/commandscripts/ChangeVolume.scm
+%%DATADIR%%/actions/commandscripts/ChannelChange.scm
+%%DATADIR%%/actions/commandscripts/Chapter.scm
+%%DATADIR%%/actions/commandscripts/CheckForIncompleteMeasures.scm
+%%DATADIR%%/actions/commandscripts/CheckPitches.scm
+%%DATADIR%%/actions/commandscripts/CheckScore.scm
+%%DATADIR%%/actions/commandscripts/CheckTiesInStaff.scm
+%%DATADIR%%/actions/commandscripts/CheckTupletsInMeasure.scm
+%%DATADIR%%/actions/commandscripts/ChoirStaffEnd.scm
+%%DATADIR%%/actions/commandscripts/ChoirStaffStart.scm
+%%DATADIR%%/actions/commandscripts/ChooseBarline.scm
+%%DATADIR%%/actions/commandscripts/ChooseTimeSignature.scm
+%%DATADIR%%/actions/commandscripts/ChordComment.scm
+%%DATADIR%%/actions/commandscripts/ChordsForBar.scm
+%%DATADIR%%/actions/commandscripts/ChordsOverBass.scm
+%%DATADIR%%/actions/commandscripts/ClarinetInA.scm
+%%DATADIR%%/actions/commandscripts/ClarinetInBb.scm
+%%DATADIR%%/actions/commandscripts/ClearStaffProlog.scm
+%%DATADIR%%/actions/commandscripts/ClefChooser.scm
+%%DATADIR%%/actions/commandscripts/CloseLilyBlock.scm
+%%DATADIR%%/actions/commandscripts/CloseReopenRepeat.scm
+%%DATADIR%%/actions/commandscripts/CloseRepeat.scm
+%%DATADIR%%/actions/commandscripts/CloseSourceAudioFile.scm
+%%DATADIR%%/actions/commandscripts/CloseTransposingInstrument.scm
+%%DATADIR%%/actions/commandscripts/ClosingBarline.scm
+%%DATADIR%%/actions/commandscripts/Conductor.scm
+%%DATADIR%%/actions/commandscripts/Congruentia.scm
+%%DATADIR%%/actions/commandscripts/ConvertDrum2GmSingleSelection.scm
+%%DATADIR%%/actions/commandscripts/ConvertMidiForBass.scm
+%%DATADIR%%/actions/commandscripts/CountSteps.scm
+%%DATADIR%%/actions/commandscripts/CreateCuesForStaff.scm
+%%DATADIR%%/actions/commandscripts/CreateIntro.scm
+%%DATADIR%%/actions/commandscripts/CreateOssiaStaff.scm
+%%DATADIR%%/actions/commandscripts/CreateParts.scm
+%%DATADIR%%/actions/commandscripts/CreatePartsFromTop.scm
+%%DATADIR%%/actions/commandscripts/CriticalComment.scm
+%%DATADIR%%/actions/commandscripts/CriticalCommentary.scm
+%%DATADIR%%/actions/commandscripts/CriticalCommentaryIntro.scm
+%%DATADIR%%/actions/commandscripts/CursorToHighestNote.scm
+%%DATADIR%%/actions/commandscripts/CursorToLowestNote.scm
+%%DATADIR%%/actions/commandscripts/D.C.AlFine.scm
+%%DATADIR%%/actions/commandscripts/Db-Major.scm
+%%DATADIR%%/actions/commandscripts/Db-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/DeactivateTimeSignatureStencil.scm
+%%DATADIR%%/actions/commandscripts/DeleteBeamingDirective.scm
+%%DATADIR%%/actions/commandscripts/DeleteCapturedMeasure.scm
+%%DATADIR%%/actions/commandscripts/DeleteCapturedMeasureForStaff.scm
+%%DATADIR%%/actions/commandscripts/DeleteDynamic.scm
+%%DATADIR%%/actions/commandscripts/DeleteLilyPondOnChord.scm
+%%DATADIR%%/actions/commandscripts/DeleteLilyPondOnNote.scm
+%%DATADIR%%/actions/commandscripts/DeleteSelectionLeaveEmpty.scm
+%%DATADIR%%/actions/commandscripts/DeleteStaffGroupings.scm
+%%DATADIR%%/actions/commandscripts/DenemoBar.scm
+%%DATADIR%%/actions/commandscripts/DenemoLink.scm
+%%DATADIR%%/actions/commandscripts/DenemoPlayCursorToEnd.scm
+%%DATADIR%%/actions/commandscripts/DesignateVoice.scm
+%%DATADIR%%/actions/commandscripts/DiatonicInterval.scm
+%%DATADIR%%/actions/commandscripts/Diminish.scm
+%%DATADIR%%/actions/commandscripts/DiminishedOrAugmented.scm
+%%DATADIR%%/actions/commandscripts/DiminishedOrMinor.scm
+%%DATADIR%%/actions/commandscripts/DisplaceRestHorizontally.scm
+%%DATADIR%%/actions/commandscripts/DotDoubleDotNoDot.scm
+%%DATADIR%%/actions/commandscripts/DoubleBarline.scm
+%%DATADIR%%/actions/commandscripts/DownbowSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/DrumGM2Custom.scm
+%%DATADIR%%/actions/commandscripts/DuplicateChord.scm
+%%DATADIR%%/actions/commandscripts/DynamicsDialog.scm
+%%DATADIR%%/actions/commandscripts/Eb-Major.scm
+%%DATADIR%%/actions/commandscripts/Eb-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/EditProlog.scm
+%%DATADIR%%/actions/commandscripts/EndBeam.scm
+%%DATADIR%%/actions/commandscripts/EndPhrasingSlur.scm
+%%DATADIR%%/actions/commandscripts/EndSecondTimeBar.scm
+%%DATADIR%%/actions/commandscripts/EndVolta.scm
+%%DATADIR%%/actions/commandscripts/EnterRest.scm
+%%DATADIR%%/actions/commandscripts/EvenOutStaffLengths.scm
+%%DATADIR%%/actions/commandscripts/ExtendSlur.scm
+%%DATADIR%%/actions/commandscripts/F-Major.scm
+%%DATADIR%%/actions/commandscripts/F-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/F-sharp-Major.scm
+%%DATADIR%%/actions/commandscripts/F-sharp-Pentascale.scm
+%%DATADIR%%/actions/commandscripts/FermataSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/FiguredBassExercises.scm
+%%DATADIR%%/actions/commandscripts/FiguredBassFilterOn.scm
+%%DATADIR%%/actions/commandscripts/FindEditPoint.scm
+%%DATADIR%%/actions/commandscripts/FindNextLowerNote.scm
+%%DATADIR%%/actions/commandscripts/FindNote.scm
+%%DATADIR%%/actions/commandscripts/Finger0.scm
+%%DATADIR%%/actions/commandscripts/Finger1.scm
+%%DATADIR%%/actions/commandscripts/Finger2.scm
+%%DATADIR%%/actions/commandscripts/Finger3.scm
+%%DATADIR%%/actions/commandscripts/Finger4.scm
+%%DATADIR%%/actions/commandscripts/Finger5.scm
+%%DATADIR%%/actions/commandscripts/FingeringsDoublestroke.scm
+%%DATADIR%%/actions/commandscripts/FinishCadenza.scm
+%%DATADIR%%/actions/commandscripts/FirstTimeBar.scm
+%%DATADIR%%/actions/commandscripts/FixSlursInStaff.scm
+%%DATADIR%%/actions/commandscripts/FlageoletSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/FlattenKeysig.scm
+%%DATADIR%%/actions/commandscripts/FootPedalConductor.scm
+%%DATADIR%%/actions/commandscripts/ForAllLayouts.scm
+%%DATADIR%%/actions/commandscripts/ForceBarline.scm
+%%DATADIR%%/actions/commandscripts/Forte.scm
+%%DATADIR%%/actions/commandscripts/Fortissimo.scm
+%%DATADIR%%/actions/commandscripts/FreeFermata.scm
+%%DATADIR%%/actions/commandscripts/Glissando.scm
+%%DATADIR%%/actions/commandscripts/GoToEmptyMeasure.scm
+%%DATADIR%%/actions/commandscripts/GoToMeasureEnd.scm
+%%DATADIR%%/actions/commandscripts/GraceAfter.scm
+%%DATADIR%%/actions/commandscripts/GraceNoteSwitcher.scm
+%%DATADIR%%/actions/commandscripts/GrandStaffEnd.scm
+%%DATADIR%%/actions/commandscripts/GrandStaffStart.scm
+%%DATADIR%%/actions/commandscripts/GroupStaffEnd.scm
+%%DATADIR%%/actions/commandscripts/GroupStaffStart.scm
+%%DATADIR%%/actions/commandscripts/HalfBarline.scm
+%%DATADIR%%/actions/commandscripts/HalfDiminished7OrDiminshed7.scm
+%%DATADIR%%/actions/commandscripts/HarmonicSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/HelpForReturnKey.scm
+%%DATADIR%%/actions/commandscripts/HiHat.scm
+%%DATADIR%%/actions/commandscripts/HiHatFoot.scm
+%%DATADIR%%/actions/commandscripts/HiTom.scm
+%%DATADIR%%/actions/commandscripts/Hide.scm
+%%DATADIR%%/actions/commandscripts/HideBarlines.scm
+%%DATADIR%%/actions/commandscripts/HideClef.scm
+%%DATADIR%%/actions/commandscripts/HideEmptyStaffs.scm
+%%DATADIR%%/actions/commandscripts/HideKeysig.scm
+%%DATADIR%%/actions/commandscripts/HideLilyPond.scm
+%%DATADIR%%/actions/commandscripts/HideMovement.scm
+%%DATADIR%%/actions/commandscripts/HideNotes.scm
+%%DATADIR%%/actions/commandscripts/HideOssia.scm
+%%DATADIR%%/actions/commandscripts/HideTimesig.scm
+%%DATADIR%%/actions/commandscripts/IRC.scm
+%%DATADIR%%/actions/commandscripts/Import-Lilypond.scm
+%%DATADIR%%/actions/commandscripts/Import-Midi.scm
+%%DATADIR%%/actions/commandscripts/Import-MusicXml.scm
+%%DATADIR%%/actions/commandscripts/IncipitFromSelection.scm
+%%DATADIR%%/actions/commandscripts/Indent.scm
+%%DATADIR%%/actions/commandscripts/InitialVoice.scm
+%%DATADIR%%/actions/commandscripts/InitialVoiceAuto.scm
+%%DATADIR%%/actions/commandscripts/InitialVoiceFour.scm
+%%DATADIR%%/actions/commandscripts/InitialVoiceOne.scm
+%%DATADIR%%/actions/commandscripts/InitialVoiceThree.scm
+%%DATADIR%%/actions/commandscripts/InitialVoiceTwo.scm
+%%DATADIR%%/actions/commandscripts/InsertBreve.scm
+%%DATADIR%%/actions/commandscripts/InsertBreveRest.scm
+%%DATADIR%%/actions/commandscripts/InsertCaptureMeasure.scm
+%%DATADIR%%/actions/commandscripts/InsertCaptureMeasureForStaff.scm
+%%DATADIR%%/actions/commandscripts/InsertLonga.scm
+%%DATADIR%%/actions/commandscripts/InsertLongaRest.scm
+%%DATADIR%%/actions/commandscripts/InsertOneNote.scm
+%%DATADIR%%/actions/commandscripts/InsertStandaloneDirective.scm
+%%DATADIR%%/actions/commandscripts/InsertTiedNoteDuration.scm
+%%DATADIR%%/actions/commandscripts/InsertTwoGraceNotesBeamed.scm
+%%DATADIR%%/actions/commandscripts/InsertWholeMeasureRest.scm
+%%DATADIR%%/actions/commandscripts/InstrumentName.scm
+%%DATADIR%%/actions/commandscripts/IntelligentDelete.scm
+%%DATADIR%%/actions/commandscripts/JoinChords.scm
+%%DATADIR%%/actions/commandscripts/JoinChordsToMergedChord.scm
+%%DATADIR%%/actions/commandscripts/JumpDownOctave.scm
+%%DATADIR%%/actions/commandscripts/JumpLeft.scm
+%%DATADIR%%/actions/commandscripts/JumpRight.scm
+%%DATADIR%%/actions/commandscripts/JumpUpOctave.scm
+%%DATADIR%%/actions/commandscripts/LHFinger.scm
+%%DATADIR%%/actions/commandscripts/Largo.scm
+%%DATADIR%%/actions/commandscripts/LheelSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/LilyPondInclude.scm
+%%DATADIR%%/actions/commandscripts/LimitInterSystemSpace.scm
+%%DATADIR%%/actions/commandscripts/LineBreak.scm
+%%DATADIR%%/actions/commandscripts/LineNumber.scm
+%%DATADIR%%/actions/commandscripts/LineOrSpace.scm
+%%DATADIR%%/actions/commandscripts/LoadDefaultComposerNumberkeys.scm
+%%DATADIR%%/actions/commandscripts/LoadSelectDurationComposerNumberkeys.scm
+%%DATADIR%%/actions/commandscripts/Longa.scm
+%%DATADIR%%/actions/commandscripts/LtoeSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/Major7Minor7OrDominant7.scm
+%%DATADIR%%/actions/commandscripts/MajorMinorAugmentedOrDiminished.scm
+%%DATADIR%%/actions/commandscripts/MajorOrAugmented.scm
+%%DATADIR%%/actions/commandscripts/MajorOrMinor.scm
+%%DATADIR%%/actions/commandscripts/MakeGrace.scm
+%%DATADIR%%/actions/commandscripts/MarcatoSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/MergeRests.scm
+%%DATADIR%%/actions/commandscripts/MergeWithNextMeasure.scm
+%%DATADIR%%/actions/commandscripts/MetronomeMarking.scm
+%%DATADIR%%/actions/commandscripts/MezzoForte.scm
+%%DATADIR%%/actions/commandscripts/MezzoPiano.scm
+%%DATADIR%%/actions/commandscripts/MidiAdvanceOnEdit.scm
+%%DATADIR%%/actions/commandscripts/MidiFilterOff.scm
+%%DATADIR%%/actions/commandscripts/MidiTempo.scm
+%%DATADIR%%/actions/commandscripts/MouseDefault.scm
+%%DATADIR%%/actions/commandscripts/MouseInsertion.scm
+%%DATADIR%%/actions/commandscripts/MoveNoteToCursor.scm
+%%DATADIR%%/actions/commandscripts/MoveRest.scm
+%%DATADIR%%/actions/commandscripts/MoveToMovementBeginning.scm
+%%DATADIR%%/actions/commandscripts/MoveToMovementEnd.scm
+%%DATADIR%%/actions/commandscripts/MoveToPreviousEmptyMeasure.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsBaroque.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsCross.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsDefault.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsDelete.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsDiamond.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsHarmonic-black.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsHarmonic-mixed.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsHarmonic.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsMensural.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsNeomensural.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsPetrucci.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsSlash.scm
+%%DATADIR%%/actions/commandscripts/MovementNoteheadsXcircle.scm
+%%DATADIR%%/actions/commandscripts/MovementPageBreak.scm
+%%DATADIR%%/actions/commandscripts/MovementPiece.scm
+%%DATADIR%%/actions/commandscripts/MovementSubtitle.scm
+%%DATADIR%%/actions/commandscripts/MovementTitle.scm
+%%DATADIR%%/actions/commandscripts/MultiMeasureRests.scm
+%%DATADIR%%/actions/commandscripts/MvntComment.scm
+%%DATADIR%%/actions/commandscripts/NeoMensuralNotehead.scm
+%%DATADIR%%/actions/commandscripts/NewStaffAfter.scm
+%%DATADIR%%/actions/commandscripts/NewStaffBefore.scm
+%%DATADIR%%/actions/commandscripts/NewVoice.scm
+%%DATADIR%%/actions/commandscripts/NextBookmark.scm
+%%DATADIR%%/actions/commandscripts/NextHigher.scm
+%%DATADIR%%/actions/commandscripts/NoBarline.scm
+%%DATADIR%%/actions/commandscripts/NoBeam.scm
+%%DATADIR%%/actions/commandscripts/NoOp.scm
+%%DATADIR%%/actions/commandscripts/NoTupletNumbers.scm
+%%DATADIR%%/actions/commandscripts/NonPrintingStaff.scm
+%%DATADIR%%/actions/commandscripts/NormalBeamEndings.scm
+%%DATADIR%%/actions/commandscripts/NormalSizeNotehead.scm
+%%DATADIR%%/actions/commandscripts/NotForLayout.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertNoteFromPool.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertPoolShuffled.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertReversedStringAsBinaryRhythm.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertReversedStringAsReversedBinaryRhythm.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertStringAsBinaryRhythm.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-InsertStringAsReversedBinaryRhythm.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-MirrorSelectedObjects.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-RandomWithinClefRangeChromatic.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-RandomWithinClefRangeDiatonic.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-ReverseSelectedObjects.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-ShuffleSelectedObjects.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-SortSelectionAscending.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-SortSelectionDescending.scm
+%%DATADIR%%/actions/commandscripts/NotationMagick-TwelveToneRow.scm
+%%DATADIR%%/actions/commandscripts/NoteColumnShift.scm
+%%DATADIR%%/actions/commandscripts/NoteNameSpeedTest.scm
+%%DATADIR%%/actions/commandscripts/NoteNamesDefault.scm
+%%DATADIR%%/actions/commandscripts/NoteNamesMove.scm
+%%DATADIR%%/actions/commandscripts/OnlyForLayout.scm
+%%DATADIR%%/actions/commandscripts/OpEight.scm
+%%DATADIR%%/actions/commandscripts/OpFive.scm
+%%DATADIR%%/actions/commandscripts/OpFour.scm
+%%DATADIR%%/actions/commandscripts/OpNine.scm
+%%DATADIR%%/actions/commandscripts/OpOne.scm
+%%DATADIR%%/actions/commandscripts/OpSeven.scm
+%%DATADIR%%/actions/commandscripts/OpSix.scm
+%%DATADIR%%/actions/commandscripts/OpThree.scm
+%%DATADIR%%/actions/commandscripts/OpTwo.scm
+%%DATADIR%%/actions/commandscripts/OpZero.scm
+%%DATADIR%%/actions/commandscripts/OpenAudio.scm
+%%DATADIR%%/actions/commandscripts/OpenFirstTimeBar.scm
+%%DATADIR%%/actions/commandscripts/OpenMyDefaultTemplate.scm
+%%DATADIR%%/actions/commandscripts/OpenOctaveDown.scm
+%%DATADIR%%/actions/commandscripts/OpenOctaveUp.scm
+%%DATADIR%%/actions/commandscripts/OpenRepeat.scm
+%%DATADIR%%/actions/commandscripts/OpenSecondTimeBar.scm
+%%DATADIR%%/actions/commandscripts/OpenSourceDialog.scm
+%%DATADIR%%/actions/commandscripts/Ottava.scm
+%%DATADIR%%/actions/commandscripts/PageBreak.scm
+%%DATADIR%%/actions/commandscripts/PaperSize.scm
+%%DATADIR%%/actions/commandscripts/ParenthesizeChord.scm
+%%DATADIR%%/actions/commandscripts/ParenthesizeNote.scm
+%%DATADIR%%/actions/commandscripts/PasteReplaceSelection.scm
+%%DATADIR%%/actions/commandscripts/PianoStaffEnd.scm
+%%DATADIR%%/actions/commandscripts/PianoStaffStart.scm
+%%DATADIR%%/actions/commandscripts/Piece.scm
+%%DATADIR%%/actions/commandscripts/PitchShift.scm
+%%DATADIR%%/actions/commandscripts/PlaceFiguredBassBelow.scm
+%%DATADIR%%/actions/commandscripts/PointAndClick.scm
+%%DATADIR%%/actions/commandscripts/PortatoSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/Presto.scm
+%%DATADIR%%/actions/commandscripts/PrevBookmark.scm
+%%DATADIR%%/actions/commandscripts/Preview4Bars.scm
+%%DATADIR%%/actions/commandscripts/PrintAccompanistsScore.scm
+%%DATADIR%%/actions/commandscripts/PrintBassPartWithoutFigures.scm
+%%DATADIR%%/actions/commandscripts/PrintPartWithTitlePage.scm
+%%DATADIR%%/actions/commandscripts/PrintThreeReduced.scm
+%%DATADIR%%/actions/commandscripts/PrintTwoReduced.scm
+%%DATADIR%%/actions/commandscripts/PrintWithAmbitus.scm
+%%DATADIR%%/actions/commandscripts/ReBar.scm
+%%DATADIR%%/actions/commandscripts/ReadingNoteNames.scm
+%%DATADIR%%/actions/commandscripts/ReadingNoteNamesSolfege.scm
+%%DATADIR%%/actions/commandscripts/RecordAndConvert.scm
+%%DATADIR%%/actions/commandscripts/RecreateTimebase.scm
+%%DATADIR%%/actions/commandscripts/ReduceSlur.scm
+%%DATADIR%%/actions/commandscripts/ReduceSystemSpacing.scm
+%%DATADIR%%/actions/commandscripts/RefreshDynamicDirectives.scm
+%%DATADIR%%/actions/commandscripts/RehearsalMark.scm
+%%DATADIR%%/actions/commandscripts/ReloadDrumHash.scm
+%%DATADIR%%/actions/commandscripts/ReminderAccidental.scm
+%%DATADIR%%/actions/commandscripts/RemoveDotSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/RepeatEnd.scm
+%%DATADIR%%/actions/commandscripts/RepeatEndStart.scm
+%%DATADIR%%/actions/commandscripts/RepeatStart.scm
+%%DATADIR%%/actions/commandscripts/ReplaceChord.scm
+%%DATADIR%%/actions/commandscripts/RheelSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/Ride.scm
+%%DATADIR%%/actions/commandscripts/RideBell.scm
+%%DATADIR%%/actions/commandscripts/RtoeSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/ScoreArranger.scm
+%%DATADIR%%/actions/commandscripts/ScoreBlockProlog.scm
+%%DATADIR%%/actions/commandscripts/ScoreBreakbefore.scm
+%%DATADIR%%/actions/commandscripts/ScoreComment.scm
+%%DATADIR%%/actions/commandscripts/ScoreComposer.scm
+%%DATADIR%%/actions/commandscripts/ScoreCopyright.scm
+%%DATADIR%%/actions/commandscripts/ScoreDedication.scm
+%%DATADIR%%/actions/commandscripts/ScoreIndent.scm
+%%DATADIR%%/actions/commandscripts/ScoreInstrument.scm
+%%DATADIR%%/actions/commandscripts/ScoreMeter.scm
+%%DATADIR%%/actions/commandscripts/ScoreOpus.scm
+%%DATADIR%%/actions/commandscripts/ScorePiece.scm
+%%DATADIR%%/actions/commandscripts/ScorePoet.scm
+%%DATADIR%%/actions/commandscripts/ScoreProlog.scm
+%%DATADIR%%/actions/commandscripts/ScoreSubsubtitle.scm
+%%DATADIR%%/actions/commandscripts/ScoreSubtitle.scm
+%%DATADIR%%/actions/commandscripts/ScoreTagline.scm
+%%DATADIR%%/actions/commandscripts/ScoreTitle.scm
+%%DATADIR%%/actions/commandscripts/SearchBookmark.scm
+%%DATADIR%%/actions/commandscripts/SecondTimeBar.scm
+%%DATADIR%%/actions/commandscripts/Section.scm
+%%DATADIR%%/actions/commandscripts/SelectAllStaffs.scm
+%%DATADIR%%/actions/commandscripts/SelectColumn.scm
+%%DATADIR%%/actions/commandscripts/SelectLeft.scm
+%%DATADIR%%/actions/commandscripts/SelectMeasure.scm
+%%DATADIR%%/actions/commandscripts/SelectRight.scm
+%%DATADIR%%/actions/commandscripts/SelectStaff.scm
+%%DATADIR%%/actions/commandscripts/SelectionToEmptyMeasure.scm
+%%DATADIR%%/actions/commandscripts/SetBarNumber.scm
+%%DATADIR%%/actions/commandscripts/SetBreve.scm
+%%DATADIR%%/actions/commandscripts/SetCurrentStaffAsVoice.scm
+%%DATADIR%%/actions/commandscripts/SetCurrentVoiceAsStaff.scm
+%%DATADIR%%/actions/commandscripts/SetDisplayClef.scm
+%%DATADIR%%/actions/commandscripts/SetFontSize.scm
+%%DATADIR%%/actions/commandscripts/SetInitialVolumeToZero.scm
+%%DATADIR%%/actions/commandscripts/SetLonga.scm
+%%DATADIR%%/actions/commandscripts/SetMovementTempo.scm
+%%DATADIR%%/actions/commandscripts/SetNewbieStatus.scm
+%%DATADIR%%/actions/commandscripts/SetThumbnail.scm
+%%DATADIR%%/actions/commandscripts/SetTuningAllStaffs.scm
+%%DATADIR%%/actions/commandscripts/SetTuningStaff.scm
+%%DATADIR%%/actions/commandscripts/SharpenKeysig.scm
+%%DATADIR%%/actions/commandscripts/ShiftDown.scm
+%%DATADIR%%/actions/commandscripts/ShiftNext.scm
+%%DATADIR%%/actions/commandscripts/ShiftOff.scm
+%%DATADIR%%/actions/commandscripts/ShiftOn.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealDialogDown.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealDialogUp.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealHalfDown.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealHalfUp.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealOctaveDown.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealOctaveUp.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealWholeDown.scm
+%%DATADIR%%/actions/commandscripts/ShiftRealWholeUp.scm
+%%DATADIR%%/actions/commandscripts/ShiftUp.scm
+%%DATADIR%%/actions/commandscripts/ShortInstrumentName.scm
+%%DATADIR%%/actions/commandscripts/ShortMeasure.scm
+%%DATADIR%%/actions/commandscripts/ShowLastChange.scm
+%%DATADIR%%/actions/commandscripts/ShowOssia.scm
+%%DATADIR%%/actions/commandscripts/SignumcongruentiaeSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/SimplifyTies.scm
+%%DATADIR%%/actions/commandscripts/SingleDigitTimeSig.scm
+%%DATADIR%%/actions/commandscripts/Slur0.scm
+%%DATADIR%%/actions/commandscripts/Slur1.scm
+%%DATADIR%%/actions/commandscripts/Slur2.scm
+%%DATADIR%%/actions/commandscripts/Slur3.scm
+%%DATADIR%%/actions/commandscripts/Slur4.scm
+%%DATADIR%%/actions/commandscripts/Slur5.scm
+%%DATADIR%%/actions/commandscripts/Slur6.scm
+%%DATADIR%%/actions/commandscripts/Slur7.scm
+%%DATADIR%%/actions/commandscripts/SlurBreve.scm
+%%DATADIR%%/actions/commandscripts/SlurDown.scm
+%%DATADIR%%/actions/commandscripts/SlurLonga.scm
+%%DATADIR%%/actions/commandscripts/SlurNeutral.scm
+%%DATADIR%%/actions/commandscripts/SlurThree.scm
+%%DATADIR%%/actions/commandscripts/SlurTwo.scm
+%%DATADIR%%/actions/commandscripts/SlurUp.scm
+%%DATADIR%%/actions/commandscripts/SmallFontEnd.scm
+%%DATADIR%%/actions/commandscripts/SmallFontStart.scm
+%%DATADIR%%/actions/commandscripts/SmallNotehead.scm
+%%DATADIR%%/actions/commandscripts/SmallerStaff.scm
+%%DATADIR%%/actions/commandscripts/SpaceNumber.scm
+%%DATADIR%%/actions/commandscripts/SplitChord.scm
+%%DATADIR%%/actions/commandscripts/SplitMeasure.scm
+%%DATADIR%%/actions/commandscripts/StaccatissimoSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/StaccatoSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/StaffComment.scm
+%%DATADIR%%/actions/commandscripts/StaffMultiMeasureRests.scm
+%%DATADIR%%/actions/commandscripts/StaffOctaveUp.scm
+%%DATADIR%%/actions/commandscripts/StaffSize.scm
+%%DATADIR%%/actions/commandscripts/StagedDelete.scm
+%%DATADIR%%/actions/commandscripts/StartBeam.scm
+%%DATADIR%%/actions/commandscripts/StartDownStems.scm
+%%DATADIR%%/actions/commandscripts/StartEmacs2KeyShortcut.scm
+%%DATADIR%%/actions/commandscripts/StartEqualTemperament.scm
+%%DATADIR%%/actions/commandscripts/StartQCMeanTone.scm
+%%DATADIR%%/actions/commandscripts/StartStaff.scm
+%%DATADIR%%/actions/commandscripts/StartTuplet.scm
+%%DATADIR%%/actions/commandscripts/StartUpStems.scm
+%%DATADIR%%/actions/commandscripts/StepSkipOrSame.scm
+%%DATADIR%%/actions/commandscripts/StopStaff.scm
+%%DATADIR%%/actions/commandscripts/StoppedSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/StringNum.scm
+%%DATADIR%%/actions/commandscripts/SuggestFlat.scm
+%%DATADIR%%/actions/commandscripts/SuggestNatural.scm
+%%DATADIR%%/actions/commandscripts/SuggestSharp.scm
+%%DATADIR%%/actions/commandscripts/SwitchMensuralBarlines.scm
+%%DATADIR%%/actions/commandscripts/SynchronizeAudio.scm
+%%DATADIR%%/actions/commandscripts/TabStaff.scm
+%%DATADIR%%/actions/commandscripts/TaglineLink.scm
+%%DATADIR%%/actions/commandscripts/Tempo.scm
+%%DATADIR%%/actions/commandscripts/TenutoSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/TextAbove.scm
+%%DATADIR%%/actions/commandscripts/ThumbSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/TimbalesStyle.scm
+%%DATADIR%%/actions/commandscripts/TinyNotehead.scm
+%%DATADIR%%/actions/commandscripts/TinyStaff.scm
+%%DATADIR%%/actions/commandscripts/TinyStaffAllMovements.scm
+%%DATADIR%%/actions/commandscripts/TitledPiece.scm
+%%DATADIR%%/actions/commandscripts/TocTitle.scm
+%%DATADIR%%/actions/commandscripts/ToggleAccent.scm
+%%DATADIR%%/actions/commandscripts/ToggleArpeggio.scm
+%%DATADIR%%/actions/commandscripts/ToggleBeginPhrasingSlur.scm
+%%DATADIR%%/actions/commandscripts/ToggleCheckChords.scm
+%%DATADIR%%/actions/commandscripts/ToggleCoda.scm
+%%DATADIR%%/actions/commandscripts/ToggleConduct.scm
+%%DATADIR%%/actions/commandscripts/ToggleCursorHighlight.scm
+%%DATADIR%%/actions/commandscripts/ToggleDownBow.scm
+%%DATADIR%%/actions/commandscripts/ToggleEndPhrasingSlur.scm
+%%DATADIR%%/actions/commandscripts/ToggleFermata.scm
+%%DATADIR%%/actions/commandscripts/ToggleFlageolet.scm
+%%DATADIR%%/actions/commandscripts/ToggleHarmonic.scm
+%%DATADIR%%/actions/commandscripts/ToggleImmediatePlayback.scm
+%%DATADIR%%/actions/commandscripts/ToggleLheel.scm
+%%DATADIR%%/actions/commandscripts/ToggleLongFermata.scm
+%%DATADIR%%/actions/commandscripts/ToggleLtoe.scm
+%%DATADIR%%/actions/commandscripts/ToggleMarcato.scm
+%%DATADIR%%/actions/commandscripts/ToggleMordent.scm
+%%DATADIR%%/actions/commandscripts/TogglePlayAlongPlayback.scm
+%%DATADIR%%/actions/commandscripts/TogglePortato.scm
+%%DATADIR%%/actions/commandscripts/TogglePrall.scm
+%%DATADIR%%/actions/commandscripts/TogglePrallPrall.scm
+%%DATADIR%%/actions/commandscripts/ToggleReverseTurn.scm
+%%DATADIR%%/actions/commandscripts/ToggleRheel.scm
+%%DATADIR%%/actions/commandscripts/ToggleRtoe.scm
+%%DATADIR%%/actions/commandscripts/ToggleSegno.scm
+%%DATADIR%%/actions/commandscripts/ToggleShortFermata.scm
+%%DATADIR%%/actions/commandscripts/ToggleSignumcongruentiae.scm
+%%DATADIR%%/actions/commandscripts/ToggleStaccatissimo.scm
+%%DATADIR%%/actions/commandscripts/ToggleStaccato.scm
+%%DATADIR%%/actions/commandscripts/ToggleStopped.scm
+%%DATADIR%%/actions/commandscripts/ToggleTenuto.scm
+%%DATADIR%%/actions/commandscripts/ToggleThumb.scm
+%%DATADIR%%/actions/commandscripts/ToggleTrill.scm
+%%DATADIR%%/actions/commandscripts/ToggleTripleting.scm
+%%DATADIR%%/actions/commandscripts/ToggleTupletBrackets.scm
+%%DATADIR%%/actions/commandscripts/ToggleTupletNumbering.scm
+%%DATADIR%%/actions/commandscripts/ToggleUpBow.scm
+%%DATADIR%%/actions/commandscripts/ToggleUpPrall.scm
+%%DATADIR%%/actions/commandscripts/ToggleVeryLongFermata.scm
+%%DATADIR%%/actions/commandscripts/TransposeOctaveUp.scm
+%%DATADIR%%/actions/commandscripts/TransposeScorePrint.scm
+%%DATADIR%%/actions/commandscripts/TransposeStaffOutput.scm
+%%DATADIR%%/actions/commandscripts/TransposeStaffPrint.scm
+%%DATADIR%%/actions/commandscripts/Tremolo.scm
+%%DATADIR%%/actions/commandscripts/Trill+Above.scm
+%%DATADIR%%/actions/commandscripts/Trill+Below.scm
+%%DATADIR%%/actions/commandscripts/Tutorial.scm
+%%DATADIR%%/actions/commandscripts/TypesettingOff.scm
+%%DATADIR%%/actions/commandscripts/TypesettingOn.scm
+%%DATADIR%%/actions/commandscripts/UnGraceAfter.scm
+%%DATADIR%%/actions/commandscripts/UnHideNotes.scm
+%%DATADIR%%/actions/commandscripts/UpBowSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/UpDownOrSame.scm
+%%DATADIR%%/actions/commandscripts/Upbeat.scm
+%%DATADIR%%/actions/commandscripts/VoicePreset1.scm
+%%DATADIR%%/actions/commandscripts/VoicePreset2.scm
+%%DATADIR%%/actions/commandscripts/VoicePreset3.scm
+%%DATADIR%%/actions/commandscripts/VoicePreset4.scm
+%%DATADIR%%/actions/commandscripts/VoicePresetAutomatic.scm
+%%DATADIR%%/actions/commandscripts/VoiceSetting.scm
+%%DATADIR%%/actions/commandscripts/VoicesDoublestroke.scm
+%%DATADIR%%/actions/commandscripts/WholeMeasureRest.scm
+%%DATADIR%%/actions/commandscripts/ZoomDialog.scm
+%%DATADIR%%/actions/commandscripts/ZoomIn.scm
+%%DATADIR%%/actions/commandscripts/ZoomOut.scm
+%%DATADIR%%/actions/commandscripts/ZoomReset.scm
 %%DATADIR%%/actions/denemo-modules/abstractionmovement.scm
 %%DATADIR%%/actions/denemo-modules/ans.scm
 %%DATADIR%%/actions/denemo-modules/commandlist.scm
 %%DATADIR%%/actions/denemo-modules/deprecated.scm
 %%DATADIR%%/actions/denemo-modules/directives.scm
+%%DATADIR%%/actions/denemo-modules/fonts.scm
 %%DATADIR%%/actions/denemo-modules/helpsystem.scm
 %%DATADIR%%/actions/denemo-modules/moveandsearch.scm
 %%DATADIR%%/actions/denemo-modules/notationmagick.scm
@@ -620,6 +1213,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/denemo-modules/scheme.scm
 %%DATADIR%%/actions/denemo-modules/selection.scm
 %%DATADIR%%/actions/denemo-modules/types.scm
+%%DATADIR%%/actions/denemo.scm
 %%DATADIR%%/actions/editscripts/D.C.AlFine.scm
 %%DATADIR%%/actions/editscripts/LHFinger.scm
 %%DATADIR%%/actions/editscripts/Mute.scm
@@ -629,6 +1223,9 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/incl.l
 %%DATADIR%%/actions/init.denemo
 %%DATADIR%%/actions/lalr.scm
+%%DATADIR%%/actions/lilypond/accordion-shifts.ily
+%%DATADIR%%/actions/lilypond/book-titling.ily
+%%DATADIR%%/actions/lilypond/simplified-book-titling.ily
 %%DATADIR%%/actions/lyimport-lexer.scm
 %%DATADIR%%/actions/lyimport-parser.scm
 %%DATADIR%%/actions/lyimport-todenemo.scm
@@ -667,10 +1264,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/Db-Pentascale
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/Eb-Major
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/Eb-Pentascale
-%%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F#-Major
-%%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F#-Pentascale
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F-Major
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F-Pentascale
+%%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F-sharp-Major
+%%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/F-sharp-Pentascale
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/init.scm
 %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/CheckPitches
 %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/Conductor
@@ -690,20 +1287,34 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-Lilypond
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-Midi
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-MusicXml
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/OpenMenu/OpenAudio
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/OpenMenu/OpenMyDefaultTemplate
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/OpenMenu/OpenSourceDialog
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/Preview4Bars
-%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintBassPartWithoutFigures
-%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintWithAmbitus
 %%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintAccompanistsScore
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintAllLayouts
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintBassPartWithoutFigures
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintPartWithTitlePage
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintThreeReduced
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintTwoReduced
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintWithAmbitus
+%%DATADIR%%/actions/menus/MainMenu/HelpMenu/HelpForReturnKey
 %%DATADIR%%/actions/menus/MainMenu/HelpMenu/IRC
+%%DATADIR%%/actions/menus/MainMenu/HelpMenu/SetNewbieStatus
 %%DATADIR%%/actions/menus/MainMenu/HelpMenu/Tutorial
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/Keyboard/NoteNamesDefault
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/Keyboard/NoteNamesMove
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/AngryDelete
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/CheckPitches
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/ChordsForBar
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/ChordsOverBass
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/FiguredBassFilterOn
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/FootPedalConductor
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/MidiAdvanceOnEdit
 %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/MidiFilterOff
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/ToggleCheckChords
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/Mouse/MouseDefault
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/Mouse/MouseInsertion
 %%DATADIR%%/actions/menus/MainMenu/MoreMenu/LoadDefaultComposerNumberkeys
 %%DATADIR%%/actions/menus/MainMenu/MoreMenu/LoadSelectDurationComposerNumberkeys
 %%DATADIR%%/actions/menus/MainMenu/MoreMenu/NoOp
@@ -733,6 +1344,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/MoveToMovementEnd
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/ToggleCursorHighlight
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/init.scm
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/DenemoLink
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/CheckForIncompleteMeasures
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/FindEditPoint
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/FindNextLowerNote
@@ -741,6 +1353,9 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/GoToMeasureEnd
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/MoveToPreviousEmptyMeasure
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/NextHigher
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/Audio/AudioPlay
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/Audio/CloseSourceAudioFile
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/Audio/SynchronizeAudio
 %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/ConvertMidiForBass
 %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/DenemoPlayCursorToEnd
 %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/PitchShift
@@ -788,24 +1403,17 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Directives/DeleteLilyPondOnChord
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/HideLilyPond
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ParenthesizeChord
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/BeginPhrasingSlur
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/EndPhrasingSlur
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ExtendSlur
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ReduceSlur
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurDown
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurNeutral
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurThree
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurTwo
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurUp
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ToggleBeginPhrasingSlur
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ToggleEndPhrasingSlur
 %%DATADIR%%/actions/menus/ObjectMenu/ClefMenu/ClefChooser
+%%DATADIR%%/actions/menus/ObjectMenu/ClefMenu/HideClef
+%%DATADIR%%/actions/menus/ObjectMenu/ClefMenu/SetDisplayClef
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/AllowLineBreak
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/AutoAccidentals
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ChooseBarline
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ClosingBarline
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/DoubleBarline
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ForceBarline
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/HalfBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/NoBarline
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/RepeatEnd
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/RepeatEndStart
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/RepeatStart
@@ -814,6 +1422,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/BeatChange
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/BreathMark
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/CadenzaOn
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Conditional-Directives/ForAllLayouts
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Conditional-Directives/NotForLayout
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Conditional-Directives/OnlyForLayout
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/CriticalComment
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/DynamicsDialog
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/EndVolta
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/FinishCadenza
@@ -853,6 +1465,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions/OpenOctaveUp
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/RehearsalMark
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/SetBarNumber
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/ShiftNext
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/SmallFontEnd
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/SmallFontStart
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff/HideNotes
@@ -864,8 +1477,17 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Tuning/SetTuningStaff
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/TypesettingOff
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/TypesettingOn
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicePreset1
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicePreset2
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicePreset3
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicePreset4
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicePresetAutomatic
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoiceSetting
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices/VoicesDoublestroke
+%%DATADIR%%/actions/menus/ObjectMenu/Key/FlattenKeysig
+%%DATADIR%%/actions/menus/ObjectMenu/Key/HideKeysig
+%%DATADIR%%/actions/menus/ObjectMenu/Key/SharpenKeysig
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/AddDuplicateMeasure
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Anacrusis
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/CheckTupletsInMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/MergeWithNextMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/CloseReopenRepeat
@@ -882,6 +1504,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/CaptureScore/InsertCaptureMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/CreateIntro
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/EvenOutStaffLengths
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/HideBarlines
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/HideMovement
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/MovementPageBreak
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/MvntComment
@@ -902,9 +1525,14 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/ReBar
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/SetMovementTempo
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/SwitchMensuralBarlines
-%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementPiece
-%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementSubtitle
-%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementTitle
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles/Chapter
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles/Piece
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles/Section
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles/TitledPiece
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Simple Titles/MovementPiece
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Simple Titles/MovementSubtitle
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Simple Titles/MovementTitle
 %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertReversedStringAsBinaryRhythm
 %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertReversedStringAsReversedBinaryRhythm
 %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertStringAsBinaryRhythm
@@ -923,26 +1551,43 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/Beam1234
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/DeleteBeamingDirective
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/EndBeam
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/NoBeam
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/StartBeam
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration/ChangeBreve
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration/ChangeLonga
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration/DotDoubleDotNoDot
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChordComment
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Diminish
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives/DeleteLilyPondOnNote
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/DuplicateChord
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Breve
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Longa
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur0
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur1
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur2
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur3
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur4
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur5
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur6
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/Slur7
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/SlurBreve
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/SlurLonga
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs/init.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/AddDotSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/CautionaryAccidental
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicUp
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/CautionaryAccidental
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/MoveNoteToCursor
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ReminderAccidental
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/RemoveDotSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/SuggestFlat
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/SuggestNatural
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/SuggestSharp
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/FingeringsDoublestroke
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/GraceAfter
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/GraceNoteSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/InsertTwoGraceNotesBeamed
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/MakeGrace
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/UnGraceAfter
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration/InsertBreve
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration/InsertLonga
@@ -950,13 +1595,57 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/JoinChords
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/JoinChordsToMergedChord
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/AccentSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ArpeggioSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/DownbowSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/FermataSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/FlageoletSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/HarmonicSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/LheelSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/LtoeSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/MarcatoSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/PortatoSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/RheelSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/RtoeSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/SignumcongruentiaeSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/StaccatissimoSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/StaccatoSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/StoppedSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/TenutoSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ThumbSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleAccent
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleArpeggio
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleDownBow
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleFermata
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleFlageolet
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleHarmonic
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleLheel
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleLongFermata
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleLtoe
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleMarcato
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/TogglePortato
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleRheel
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleRtoe
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleShortFermata
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleSignumcongruentiae
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleStaccatissimo
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleStaccato
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleStopped
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleTenuto
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleThumb
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleUpBow
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ToggleVeryLongFermata
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/UpBowSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/FiguredBass/PlaceFiguredBassBelow
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleCoda
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleMordent
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/TogglePrall
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/TogglePrallPrall
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleReverseTurn
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleSegno
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleTrill
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleUpPrall
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Trill+Above
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Trill+Below
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Upprall
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger0
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger1
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger2
@@ -984,6 +1673,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Andante
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Largo
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Presto
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl/NeoMensuralNotehead
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/NormalSizeNotehead
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/SmallNotehead
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/TinyNotehead
@@ -996,6 +1686,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion/Ride
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion/RideBell
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion/TimbalesStyle
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ReplaceChord
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/DisplaceRestHorizontally
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/EnterRest
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/InsertBreveRest
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/InsertLongaRest
@@ -1020,9 +1712,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/DesignateVoice
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartDownStems
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartUpStems
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StaffChange/ChangeStaffBack
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StaffChange/ChangeStaffDown
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StaffChange/ChangeStaffUp
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealDialogDown
@@ -1047,31 +1736,47 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/DeactivateTimeSignatureStencil
 %%DATADIR%%/actions/menus/ObjectMenu/Score/DenemoBar
 %%DATADIR%%/actions/menus/ObjectMenu/Score/EditProlog
+%%DATADIR%%/actions/menus/ObjectMenu/Score/LilyPondInclude
 %%DATADIR%%/actions/menus/ObjectMenu/Score/NormalBeamEndings
+%%DATADIR%%/actions/menus/ObjectMenu/Score/PointAndClick
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/HideEmptyStaffs
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/LimitInterSystemSpace
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/PaperSize
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/ScoreIndent
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/LimitInterSystemSpace
 %%DATADIR%%/actions/menus/ObjectMenu/Score/ReduceSystemSpacing
-%%DATADIR%%/actions/menus/ObjectMenu/Score/ScoreComment
+%%DATADIR%%/actions/menus/ObjectMenu/Score/RefreshDynamicDirectives
 %%DATADIR%%/actions/menus/ObjectMenu/Score/ScoreBlockProlog
+%%DATADIR%%/actions/menus/ObjectMenu/Score/ScoreComment
+%%DATADIR%%/actions/menus/ObjectMenu/Score/ScoreProlog
 %%DATADIR%%/actions/menus/ObjectMenu/Score/SetFontSize
 %%DATADIR%%/actions/menus/ObjectMenu/Score/SetThumbnail
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreArranger
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreBreakbefore
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreComposer
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreCopyright
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreDedication
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreInstrument
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreMeter
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreOpus
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScorePiece
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScorePoet
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreSubsubtitle
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreSubtitle
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreTagline
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreTitle
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/TitlePage
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookArranger
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookComposer
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookCopyright
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookDate
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookInstrumentation
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookPoet
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/BookTitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/Epilog/CriticalCommentary
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/Epilog/CriticalCommentaryIntro
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/IncipitFromSelection
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/TocTitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/ScoreTagline
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreArranger
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreBreakbefore
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreComposer
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreCopyright
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreDedication
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreInstrument
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreMeter
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreOpus
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScorePiece
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScorePoet
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreSubsubtitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreSubtitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreTitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/TaglineLink
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeOctaveUp
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeScorePrint
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ambitus
@@ -1080,8 +1785,11 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore/InsertCaptureMeasureForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ChangeStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CheckTiesInStaff
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InstrumentName
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CreateCuesForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/FixSlursInStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/NewStaffAfter
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/NewStaffBefore
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InstrumentName
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/NonPrintingStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Numbering/BarNumbers
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/CreateOssiaStaff
@@ -1093,7 +1801,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ShortInstrumentName
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/SimplifyTies
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/SmallerStaff
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffAlias
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffComment
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/ChoirStaffEnd
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/ChoirStaffStart
@@ -1104,20 +1811,31 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GroupStaffStart
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffEnd
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffStart
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffMultiMeasureRests
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffOctaveUp
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffSize
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TabStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TinyStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TinyStaffAllMovements
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TransposeStaffPrint
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/CreateParts
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/CreatePartsFromTop
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoice
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceAuto
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceFour
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceOne
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceThree
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceTwo
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeRests
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset1
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset2
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset3
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset4
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePresetAutomatic
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicesDoublestroke
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/NewVoice
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/NoteColumnShift
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/SetCurrentStaffAsVoice
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/SetCurrentVoiceAsStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/ShiftOff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/ShiftOn
 %%DATADIR%%/actions/menus/ObjectMenu/TimeSig/ChooseTimeSignature
+%%DATADIR%%/actions/menus/ObjectMenu/TimeSig/HideTimesig
+%%DATADIR%%/actions/menus/ObjectMenu/TimeSig/SingleDigitTimeSig
 %%DATADIR%%/actions/multilex.scm
 %%DATADIR%%/actions/musicgames/ReadingNoteNames.denemo
 %%DATADIR%%/actions/mxml2ly2denemo/import_nwctext.scm
@@ -1270,14 +1988,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/soundfonts/A320U-license.txt
 %%DATADIR%%/soundfonts/A320U.sf2
 %%DATADIR%%/templates/Accordion/accordion.denemo
-%%DATADIR%%/templates/band/Makefile
-%%DATADIR%%/templates/band/Makefile.in
-%%DATADIR%%/templates/chamber/Makefile
-%%DATADIR%%/templates/chamber/Makefile.in
-%%DATADIR%%/templates/choral/Makefile
-%%DATADIR%%/templates/choral/Makefile.in
-%%DATADIR%%/templates/jazz/Makefile
-%%DATADIR%%/templates/jazz/Makefile.in
 %%DATADIR%%/templates/Early Music/BreveLonga.denemo
 %%DATADIR%%/templates/Makefile
 %%DATADIR%%/templates/Makefile.am
@@ -1290,15 +2000,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/templates/choral/TTBB.denemo
 %%DATADIR%%/templates/drummap.denemo
 %%DATADIR%%/templates/jazz/JazzCombo.denemo
-share/pixmaps/denemo.png
-%%NLS%%share/locale/cs/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/de/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/es/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/it/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
@@ -1455,8 +2156,23 @@ share/pixmaps/denemo.png
 share/fonts/truetype/denemo/Denemo.ttf
 share/fonts/truetype/denemo/emmentaler.ttf
 share/fonts/truetype/denemo/feta.ttf
+share/locale/cs/LC_MESSAGES/denemo.mo
+share/locale/de/LC_MESSAGES/denemo.mo
+share/locale/en_GB/LC_MESSAGES/denemo.mo
+share/locale/es/LC_MESSAGES/denemo.mo
+share/locale/fr/LC_MESSAGES/denemo.mo
+share/locale/it/LC_MESSAGES/denemo.mo
+share/locale/ja/LC_MESSAGES/denemo.mo
+share/locale/pl/LC_MESSAGES/denemo.mo
+share/locale/sv/LC_MESSAGES/denemo.mo
+share/pixmaps/denemo.png
+@dirrm share/fonts/truetype/denemo
+@dirrmtry share/fonts/truetype
+@dirrmtry share/fonts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/templates/jazz
 @dirrm %%DATADIR%%/templates/choral
 @dirrm %%DATADIR%%/templates/chamber
@@ -1469,27 +2185,31 @@ share/fonts/truetype/denemo/feta.ttf
 @dirrm %%DATADIR%%/actions/mxml2ly2denemo
 @dirrm %%DATADIR%%/actions/musicgames
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/TimeSig
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Playback
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Numbering
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/Epilog
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StaffChange
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/SelectDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks
@@ -1503,6 +2223,7 @@ share/fonts/truetype/denemo/feta.ttf
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Slurs
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration
@@ -1511,24 +2232,26 @@ share/fonts/truetype/denemo/feta.ttf
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/SingleRandomNote
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Simple Titles
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles/Book Titles
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Print Layout
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/CaptureScore
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Key
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Voices
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Tuning
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/Temperament
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Conditional-Directives
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ClefMenu
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs
-@dirrmtry %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks
-@dirrmtry %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Directives
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop
@@ -1537,13 +2260,16 @@ share/fonts/truetype/denemo/feta.ttf
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom
 @dirrm %%DATADIR%%/actions/menus/MainMenu/ViewMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/Audio
 @dirrm %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/MoreMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu/Mouse
 @dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI
+@dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu/Keyboard
 @dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/HelpMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu
@@ -1561,13 +2287,12 @@ share/fonts/truetype/denemo/feta.ttf
 @dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu
 @dirrm %%DATADIR%%/actions/menus
+@dirrm %%DATADIR%%/actions/lilypond
 @dirrm %%DATADIR%%/actions/editscripts
 @dirrm %%DATADIR%%/actions/denemo-modules
+@dirrm %%DATADIR%%/actions/commandscripts
 @dirrm %%DATADIR%%/actions/bitmaps
 @dirrm %%DATADIR%%/actions
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm share/fonts/truetype/denemo
-@dirrm share/fonts/truetype
-@dirrm share/fonts
-@dirrm etc/denemo
+@dirrm %%ETC

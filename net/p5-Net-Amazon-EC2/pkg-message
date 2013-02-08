@@ -8,7 +8,7 @@ Compute Cloud:
 
 3) Create AMIs and use them as needed.
 
-   DISCLAIMER: No one but you is responsible for paying Amazon to use
-               the EC2 service. EC2 does not have a free sandbox area,
-               so be aware how much money you are spending to use the
-               service.
+   DISCLAIMER: You are responsible for paying Amazon to use the EC2
+               service, unless you are signed up for the AWS Free Usage
+               Tier. More information about the Free Usage Tier may be
+               found at: http://aws.amazon.com/free/

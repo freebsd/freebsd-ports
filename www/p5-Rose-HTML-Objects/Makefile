@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Rose-HTML-Objects
-# Date created:	   			17 Nov, 2010
-# Whom:		   			Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Rose-HTML-Objects
-PORTVERSION=	0.616
+PORTVERSION=	0.617
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +25,6 @@ BUILD_DEPENDS=	p5-Clone-PP>=0:${PORTSDIR}/devel/p5-Clone-PP \
 		p5-Rose-URI>=0.021:${PORTSDIR}/net/p5-Rose-URI \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PORTSCOUT=	skipv:0.6061
@@ -89,4 +84,11 @@ MAN3=		Rose::HTML::Anchor.3 \
 		Rose::HTML::Text.3 \
 		Rose::HTML::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base
+RUN_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base
+.endif
+
+.include <bsd.port.post.mk>

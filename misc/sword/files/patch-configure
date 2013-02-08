@@ -1,0 +1,31 @@
+--- configure.orig	2010-10-22 17:14:28.000000000 -0400
++++ configure	2013-01-10 19:07:36.000000000 -0500
+@@ -16347,25 +16347,13 @@
+ for flag in $with_clucene; do
+ 	if test -z "$clucene_set_failed"; then
+ 		if test -e "$flag/include/CLucene.h"; then
+-# 64-bit checks first
+-			if test -e "$flag/lib64/libclucene.la" || test -e "$flag/lib64/libclucene.so"; then
++			if test -e "$flag/lib/libclucene-core.la" || test -e "$flag/lib/libclucene-core.so"; then
+ 				clucene_set_failed=$flag
+-				CLUCENE_LIBS="-L$flag/lib64 -lclucene"
++				CLUCENE_LIBS="-L$flag/lib -lclucene-core"
+ 				if test -e "$flag/include/CLucene/clucene-config.h"; then
+ 					CLUCENE_CXXFLAGS="-I$flag/include"
+ 				else
+-					CLUCENE_CXXFLAGS="-I$flag/include -I$flag/lib64"
+-				fi
+-			else
+-# 32-bit checks
+-				if test -e "$flag/lib/libclucene.la" || test -e "$flag/lib/libclucene.so"; then
+-					clucene_set_failed=$flag
+-					CLUCENE_LIBS="-L$flag/lib -lclucene"
+-					if test -e "$flag/include/CLucene/clucene-config.h"; then
+-						CLUCENE_CXXFLAGS="-I$flag/include"
+-					else
+-						CLUCENE_CXXFLAGS="-I$flag/include -I$flag/lib"
+-					fi
++					CLUCENE_CXXFLAGS="-I$flag/include -I$flag/lib"
+ 				fi
+ 			fi
+ 		fi

@@ -120,7 +120,6 @@ share/locale/fa/LC_MESSAGES/kcmstyle.mo
 share/locale/fa/LC_MESSAGES/kcmusb.mo
 share/locale/fa/LC_MESSAGES/kcmview1394.mo
 share/locale/fa/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/fa/LC_MESSAGES/kcmxinerama.mo
 share/locale/fa/LC_MESSAGES/kcron.mo
 share/locale/fa/LC_MESSAGES/kde-menu.mo
 share/locale/fa/LC_MESSAGES/kdebugdialog.mo
@@ -138,22 +137,14 @@ share/locale/fa/LC_MESSAGES/kdmgreet.mo
 share/locale/fa/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/fa/LC_MESSAGES/keditbookmarks.mo
 share/locale/fa/LC_MESSAGES/kfile.mo
-share/locale/fa/LC_MESSAGES/kfile_avi.mo
 share/locale/fa/LC_MESSAGES/kfile_dds.mo
 share/locale/fa/LC_MESSAGES/kfile_drgeo.mo
 share/locale/fa/LC_MESSAGES/kfile_exr.mo
-share/locale/fa/LC_MESSAGES/kfile_flac.mo
 share/locale/fa/LC_MESSAGES/kfile_kig.mo
-share/locale/fa/LC_MESSAGES/kfile_mp3.mo
-share/locale/fa/LC_MESSAGES/kfile_mpc.mo
-share/locale/fa/LC_MESSAGES/kfile_ogg.mo
 share/locale/fa/LC_MESSAGES/kfile_pnm.mo
 share/locale/fa/LC_MESSAGES/kfile_rgb.mo
 share/locale/fa/LC_MESSAGES/kfile_rpm.mo
-share/locale/fa/LC_MESSAGES/kfile_sid.mo
-share/locale/fa/LC_MESSAGES/kfile_theora.mo
 share/locale/fa/LC_MESSAGES/kfile_tiff.mo
-share/locale/fa/LC_MESSAGES/kfile_wav.mo
 share/locale/fa/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/fa/LC_MESSAGES/kfilereplace.mo
 share/locale/fa/LC_MESSAGES/kfileshare.mo
@@ -323,6 +314,7 @@ share/locale/fa/LC_MESSAGES/libkpgp.mo
 share/locale/fa/LC_MESSAGES/libkscreensaver.mo
 share/locale/fa/LC_MESSAGES/libksieve.mo
 share/locale/fa/LC_MESSAGES/libkworkspace.mo
+share/locale/fa/LC_MESSAGES/libmailimporter.mo
 share/locale/fa/LC_MESSAGES/libmessagelist.mo
 share/locale/fa/LC_MESSAGES/libmessageviewer.mo
 share/locale/fa/LC_MESSAGES/libphonon.mo
@@ -375,7 +367,6 @@ share/locale/fa/LC_MESSAGES/solid-hardware.mo
 share/locale/fa/LC_MESSAGES/solid-network.mo
 share/locale/fa/LC_MESSAGES/solidcontrol.mo
 share/locale/fa/LC_MESSAGES/soliduiserver.mo
-share/locale/fa/LC_MESSAGES/spy.mo
 share/locale/fa/LC_MESSAGES/strigila_diff.mo
 share/locale/fa/LC_MESSAGES/superkaramba.mo
 share/locale/fa/LC_MESSAGES/sweeper.mo

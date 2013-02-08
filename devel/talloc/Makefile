@@ -1,18 +1,11 @@
-# New ports collection makefile for:	talloc
-# Date created:				1 May 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=		talloc
-PORTVERSION=		2.0.7
+PORTVERSION=		2.0.8
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
-			ftp://ca.samba.org/pub/%SUBDIR%/ \
-			ftp://de.samba.org/pub/%SUBDIR%/
+MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		timur@FreeBSD.org
@@ -28,7 +21,7 @@ HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
-USE_GNOME=		pkgconfig
+USE_PKGCONFIG=		build
 
 MAKE_JOBS_SAFE=		yes
 
@@ -100,7 +93,7 @@ pre-build:
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
+			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
 				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
 					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
@@ -109,6 +102,6 @@ do-build:
 			fi)
 
 do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>

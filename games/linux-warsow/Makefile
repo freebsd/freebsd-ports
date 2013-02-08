@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -43,7 +43,7 @@ DESKTOP_ENTRIES="Warsow" \
 		"Shoot cartoon enemies" \
 		"" \
 		"warsow" \
-		"Application;Game;" \
+		"Game;" \
 		false
 
 OPTIONS=	CLIENT	"Install client"	on \

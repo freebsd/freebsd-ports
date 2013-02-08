@@ -4,8 +4,7 @@
 #
 
 # PROVIDE:	vboxnet
-# REQUIRE:	FILESYSTEMS
-# BEFORE:	netif
+# REQUIRE:	FILESYSTEMS NETWORKING ldconfig
 # KEYWORD:	nojail
 
 #

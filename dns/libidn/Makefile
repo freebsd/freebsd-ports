@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libidn
-# Date created:        	19.06.2003
-# Whom:               	Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libidn
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}

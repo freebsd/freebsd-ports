@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smbnetfs
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.3a
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SMBNetFS-${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -11,8 +10,11 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount smb shares (Fuse filesystem)
 
-LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+OPTIONS_DEFINE=	GNOME_KEYRING
+OPTIONS_DEFAULT=GNOME_KEYRING
+GNOME_KEYRING_DESC=	Build with gnome-keyring support
+
+LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 
 DOCSDIR+=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
@@ -23,6 +25,18 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNOME_KEYRING}
+CONFIGURE_ARGS+=--with-gnome-keyring=yes
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+.else
+CONFIGURE_ARGS+=--with-gnome-keyring=no
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|а|a|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

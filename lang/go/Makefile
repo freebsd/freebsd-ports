@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		bison:${PORTSDIR}/devel/bison
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 SUB_LIST+=	GOOBJ=${GOOBJ} \
 		ARCH=${GOARCH}

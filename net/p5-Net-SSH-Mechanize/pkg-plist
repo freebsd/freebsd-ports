@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/SSH/Mechanize.pm
+%%SITE_PERL%%/Net/SSH/Mechanize/ConnectParams.pm
+%%SITE_PERL%%/Net/SSH/Mechanize/Multi.pm
+%%SITE_PERL%%/Net/SSH/Mechanize/Session.pm
+@dirrm %%SITE_PERL%%/Net/SSH/Mechanize
+@dirrmtry %%SITE_PERL%%/Net/SSH
+@dirrmtry %%SITE_PERL%%/Net

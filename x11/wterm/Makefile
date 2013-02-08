@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wterm
-# Date created:		25 February 1999
-# Whom:		 	Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wterm
 PORTVERSION=	6.2.9
@@ -13,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 

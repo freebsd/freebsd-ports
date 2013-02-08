@@ -1,0 +1,7 @@
+A Sinatra plugin to provide convenience whilst performing asynchronous
+responses inside of the Sinatra framework running under async webservers. To
+properly utilise this package, some knowledge of EventMachine and/or
+asynchronous patterns is recommended. Currently, supporting servers include
+Thin, Rainbows, Zbatery.
+
+WWW: http://github.com/raggi/async_sinatra

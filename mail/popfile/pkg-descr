@@ -1,14 +1,14 @@
-POPFile is an automatic mail classification tool. Once properly set up and
-trained, it will scan all email as it arrives and classify it based on your
-training. You can give it a simple job, like separating out junk e-mail, or
-a complicated one -- like filing mail into a dozen folders. Think of it as a
-personal assistant for your inbox. 
+POPFile is an automatic mail classification tool. Once properly set up
+and trained, it will scan all email as it arrives and classify it based
+on your training. You can give it a simple job, like separating out junk
+e-mail, or a complicated one -- like filing mail into a dozen folders.
+Think of it as a personal assistant for your inbox.
 
 Since v0.21.0, POPFile supports multiple user with a single instance.
-Using ${LOCALDIR}/sbin/popfile.sh, you can start your own POPFile easily;
-it uses ${HOME}/.popfile as a working directory.
+Using ${LOCALDIR}/sbin/popfile.sh, you can start your own POPFile
+easily; it uses ${HOME}/.popfile as a working directory.
 
-Note for old POPFile users: copy messages/ and corpus/ directory to
-your ${HOME}/.popfile directory (if not, create it), then start popfile.sh.
+Note for old POPFile users: copy messages/ and corpus/ directory to your
+${HOME}/.popfile directory (if not, create it), then start popfile.sh.
 
-WWW: http://popfile.sourceforge.net/
+WWW: http://getpopfile.org/

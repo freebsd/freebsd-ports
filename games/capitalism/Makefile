@@ -3,7 +3,7 @@
 
 PORTNAME=	capitalism
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-ecke.de/Capitalism/packages/0.5/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

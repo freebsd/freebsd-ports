@@ -7,7 +7,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.26.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 

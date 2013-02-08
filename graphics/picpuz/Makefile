@@ -7,7 +7,7 @@
 
 PORTNAME=	picpuz
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics games
 MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/
 
@@ -22,9 +22,9 @@ ALL_TARGET=	#
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 DESKTOP_ENTRIES="Picpuz" \
 		"Jigsaw Puzzle" \
-		"picpuz.png" \
+		"${PREFIX}/share/pixmaps/picpuz.png" \
 		"picpuz" \
-		"Application;Game;" \
+		"Graphics;Game;GTK;" \
 		true
 
 .include <bsd.port.mk>

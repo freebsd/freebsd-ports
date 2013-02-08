@@ -119,6 +119,7 @@ share/locale/ar/LC_MESSAGES/kcal_akonadi.mo
 share/locale/ar/LC_MESSAGES/kcalc.mo
 share/locale/ar/LC_MESSAGES/kcertpart.mo
 share/locale/ar/LC_MESSAGES/kcharselect.mo
+share/locale/ar/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ar/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ar/LC_MESSAGES/kcm_attica.mo
 share/locale/ar/LC_MESSAGES/kcm_autostart.mo
@@ -188,7 +189,6 @@ share/locale/ar/LC_MESSAGES/kcmstyle.mo
 share/locale/ar/LC_MESSAGES/kcmusb.mo
 share/locale/ar/LC_MESSAGES/kcmview1394.mo
 share/locale/ar/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/ar/LC_MESSAGES/kcmxinerama.mo
 share/locale/ar/LC_MESSAGES/kcolorchooser.mo
 share/locale/ar/LC_MESSAGES/kcron.mo
 share/locale/ar/LC_MESSAGES/kde-menu.mo
@@ -208,23 +208,15 @@ share/locale/ar/LC_MESSAGES/kdmgreet.mo
 share/locale/ar/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo
 share/locale/ar/LC_MESSAGES/kfile.mo
-share/locale/ar/LC_MESSAGES/kfile_avi.mo
 share/locale/ar/LC_MESSAGES/kfile_dds.mo
 share/locale/ar/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ar/LC_MESSAGES/kfile_exr.mo
-share/locale/ar/LC_MESSAGES/kfile_flac.mo
 share/locale/ar/LC_MESSAGES/kfile_kig.mo
-share/locale/ar/LC_MESSAGES/kfile_mp3.mo
-share/locale/ar/LC_MESSAGES/kfile_mpc.mo
-share/locale/ar/LC_MESSAGES/kfile_ogg.mo
 share/locale/ar/LC_MESSAGES/kfile_pnm.mo
 share/locale/ar/LC_MESSAGES/kfile_raw.mo
 share/locale/ar/LC_MESSAGES/kfile_rgb.mo
 share/locale/ar/LC_MESSAGES/kfile_rpm.mo
-share/locale/ar/LC_MESSAGES/kfile_sid.mo
-share/locale/ar/LC_MESSAGES/kfile_theora.mo
 share/locale/ar/LC_MESSAGES/kfile_tiff.mo
-share/locale/ar/LC_MESSAGES/kfile_wav.mo
 share/locale/ar/LC_MESSAGES/kfile_xps.mo
 share/locale/ar/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ar/LC_MESSAGES/kfilereplace.mo
@@ -275,6 +267,7 @@ share/locale/ar/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ar/LC_MESSAGES/kio_nfs.mo
 share/locale/ar/LC_MESSAGES/kio_nntp.mo
 share/locale/ar/LC_MESSAGES/kio_pop3.mo
+share/locale/ar/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/ar/LC_MESSAGES/kio_remote.mo
 share/locale/ar/LC_MESSAGES/kio_sftp.mo
 share/locale/ar/LC_MESSAGES/kio_sieve.mo
@@ -423,6 +416,7 @@ share/locale/ar/LC_MESSAGES/libktnef.mo
 share/locale/ar/LC_MESSAGES/libkunitconversion.mo
 share/locale/ar/LC_MESSAGES/libkworkspace.mo
 share/locale/ar/LC_MESSAGES/libkxmlrpcclient.mo
+share/locale/ar/LC_MESSAGES/libmailimporter.mo
 share/locale/ar/LC_MESSAGES/libmailtransport.mo
 share/locale/ar/LC_MESSAGES/libmessagelist.mo
 share/locale/ar/LC_MESSAGES/libmessageviewer.mo
@@ -513,6 +507,7 @@ share/locale/ar/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_opendesktop.mo
+share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -526,7 +521,6 @@ share/locale/ar/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_searchbox.mo
-share/locale/ar/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -557,6 +551,8 @@ share/locale/ar/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ar/LC_MESSAGES/plasma_package_org.kde.desktop.activitymanager.mo
+share/locale/ar/LC_MESSAGES/plasma_package_org.kde.desktop.widgetexplorer.mo
 share/locale/ar/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -613,7 +609,6 @@ share/locale/ar/LC_MESSAGES/solid-network.mo
 share/locale/ar/LC_MESSAGES/solid_qt.mo
 share/locale/ar/LC_MESSAGES/solidcontrol.mo
 share/locale/ar/LC_MESSAGES/soliduiserver.mo
-share/locale/ar/LC_MESSAGES/spy.mo
 share/locale/ar/LC_MESSAGES/strigila_diff.mo
 share/locale/ar/LC_MESSAGES/superkaramba.mo
 share/locale/ar/LC_MESSAGES/svgpart.mo

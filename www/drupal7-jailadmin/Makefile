@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	jailadmin
-DISTVERSION=	7.x-0.4.1
+DISTVERSION=	7.x-0.5.1
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.freebsd.org/pub/FreeBSD/distfiles/drupal/
+MASTER_SITES=	http://0xfeedface.org/~shawn/projects/jailadmin/ \
+    		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com
 COMMENT=	Drupal 7 module for administering FreeBSD vnet jails

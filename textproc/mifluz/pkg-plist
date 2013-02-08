@@ -96,4 +96,5 @@ lib/libmifluz.so
 lib/libmifluz.so.0
 @dirrm include/mifluz
 @exec mkdir -p %D/var/cache/mifluz
-@dirrmtry var/cache/mifluz
+@dirrm var/cache/mifluz
+@dirrm var/cache

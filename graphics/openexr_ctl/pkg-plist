@@ -1,15 +1,16 @@
 bin/exr_ctl_exr
 bin/exrdpx
-lib/libIlmImfCtl.a
-lib/libIlmImfCtl.la
-lib/libIlmImfCtl.so
-lib/libIlmImfCtl.so.2
+include/OpenEXR/ImfCtlApplyTransforms.h
 lib/CTL/change_saturation.ctl
 lib/CTL/transform_DPX_EXR.ctl
 lib/CTL/transform_EXR_DPX.ctl
 lib/CTL/transform_RRT.ctl
 lib/CTL/transform_display_video.ctl
 lib/CTL/utilities.ctl
+lib/libIlmImfCtl.a
+lib/libIlmImfCtl.la
+lib/libIlmImfCtl.so
+lib/libIlmImfCtl.so.2
 libdata/pkgconfig/OpenEXR_CTL.pc
-include/OpenEXR/ImfCtlApplyTransforms.h
 @dirrm lib/CTL
+@dirrmtry include/OpenEXR

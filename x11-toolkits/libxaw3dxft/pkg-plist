@@ -1,7 +1,7 @@
 lib/libXaw3dxft.a
 lib/libXaw3dxft.la
 lib/libXaw3dxft.so
-lib/libXaw3dxft.so.7
+lib/libXaw3dxft.so.8
 include/X11/Xaw3dxft/AllWidgets.h
 include/X11/Xaw3dxft/AsciiSink.h
 include/X11/Xaw3dxft/AsciiSinkP.h
@@ -28,6 +28,10 @@ include/X11/Xaw3dxft/List.h
 include/X11/Xaw3dxft/ListP.h
 include/X11/Xaw3dxft/MenuButton.h
 include/X11/Xaw3dxft/MenuButtoP.h
+include/X11/Xaw3dxft/MultiSrc.h
+include/X11/Xaw3dxft/MultiSrcP.h
+include/X11/Xaw3dxft/MultiSink.h
+include/X11/Xaw3dxft/MultiSinkP.h
 include/X11/Xaw3dxft/Paned.h
 include/X11/Xaw3dxft/PanedP.h
 include/X11/Xaw3dxft/Panner.h
@@ -70,11 +74,9 @@ include/X11/Xaw3dxft/TreeP.h
 include/X11/Xaw3dxft/Viewport.h
 include/X11/Xaw3dxft/ViewportP.h
 include/X11/Xaw3dxft/XawInit.h
-include/X11/Xaw3dxft/XawAlloc.h
-include/X11/Xaw3dxft/Template.c
-include/X11/Xaw3dxft/Template.h
-include/X11/Xaw3dxft/TemplateP.h
+include/X11/Xaw3dxft/VendorEP.h
 include/X11/Xaw3dxft/Xaw3dP.h
 include/X11/Xaw3dxft/Xaw3dXft.h
-libdata/pkgconfig/libxaw3dxft.pc
+include/X11/Xaw3dxft/XawImP.h
+libdata/pkgconfig/xaw3dxft.pc
 @dirrm include/X11/Xaw3dxft

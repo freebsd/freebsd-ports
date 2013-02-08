@@ -2,21 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	yafc
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	GHC
+MASTER_SITES=	http://www.yafc-ftp.com/upload/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another ftp client. Similar to ftp(1)
 
 LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	NLS SSH EXAMPLES
-OPTIONS_DEFAULT=NLS SSH
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	sebastinas
-WRKSRC=		${WRKDIR}/${DISTNAME}
+OPTIONS_DEFINE=	BASH EXAMPLES NLS SSH
+OPTIONS_DEFAULT=BASH NLS SSH
 
 USE_XZ=		yes
 USE_OPENSSL=	yes
@@ -33,9 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		yafc.1
 INFO=		yafc
 PORTEXAMPLES=	inputrc yafcrc
-PLIST_FILES=	bin/yafc \
-		etc/bash_completion.d/yafc
-PLIST_DIRSTRY=	etc/bash_completion.d
+PLIST_FILES=	bin/yafc
 
 .include <bsd.port.options.mk>
 
@@ -59,6 +53,14 @@ CONFIGURE_ARGS+=	--without-readline
 LIB_DEPENDS+=	ssh:${PORTSDIR}/security/libssh
 .else
 CONFIGURE_ARGS+=	--without-ssh
+.endif
+
+.if ${PORT_OPTIONS:MBASH}
+CONFIGURE_ARGS+=	--with-bash-completion=yes
+PLIST_FILES+=		etc/bash_completion.d/yafc
+PLIST_DIRSTRY=		etc/bash_completion.d
+.else
+CONFIGURE_ARGS+=	--with-bash-completion=no
 .endif
 
 post-install:

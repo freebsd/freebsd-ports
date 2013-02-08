@@ -1,5 +1,5 @@
---- Makefile.am.orig	2011-03-03 08:44:59.000000000 -0500
-+++ Makefile.am	2011-12-28 14:25:08.000000000 -0500
+--- Makefile.am.orig	2012-08-02 04:39:52.000000000 -0300
++++ Makefile.am	2013-01-08 10:43:54.000000000 -0200
 @@ -61,8 +61,6 @@
  
  ETTER_PASSIVE_FILE = etter.finger.os
@@ -9,11 +9,11 @@
  
  NTOPDATA = ntop-cert.pem \
             $(ETTER_PASSIVE) \
-@@ -303,15 +301,14 @@
+@@ -308,16 +306,13 @@
  	  echo "  WARNING: This install created a directory for the ntop"; \
  	  echo "           files and databases:"; \
  	  echo ""; \
--	  echo "             $(DESTDIR)/$(datadir)/ntop"; \
+-	  echo "             $(DESTDIR)$(datadir)/ntop"; \
 +	  echo "             $(CFG_DBFILE_DIR)"; \
  	  echo ""; \
  	  echo "           This directory MUST be owned by the user"; \
@@ -21,21 +21,21 @@
  	  echo ""; \
  	  echo "           The command you must issue is something like:"; \
  	  echo ""; \
--	  echo "           chown -R ntop.ntop $(DESTDIR)/$(datadir)/ntop"; \
--	  echo "     or    chown -R ntop:users $(DESTDIR)/$(datadir)/ntop"; \
-+	  echo "           chown -R nobody:nobody $(CFG_DBFILE_DIR)"; \
- 	  echo ""; \
+-	  echo "           chown -R ntop.ntop $(DESTDIR)$(datadir)/ntop"; \
+-	  echo "     or    chown -R ntop:users $(DESTDIR)$(datadir)/ntop"; \
+-	  echo ""; \
  	  echo "           man chown to check the syntax for YOUR system"; \
  	  echo ""; \
-@@ -329,7 +326,6 @@
+ 	  echo "************************************************************"; \
+@@ -334,7 +329,6 @@
  	chcon -t textrel_shlib_t $(DESTDIR)$(libdir)/*ntop*.so
  
- install-data-local: ntop.txt ntop.html faq.html dnetter
+ install-data-local: ntop.txt ntop.html faq.html
 -	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;
- 	@if ! test -d $(DESTDIR)/$(datadir)/ntop; then \
- 	  $(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop; \
- 	  touch $(DESTDIR)/$(datadir)/ntop/warnuser; \
-@@ -365,21 +361,6 @@
+ 	@if ! test -d $(DESTDIR)$(datadir)/ntop; then \
+ 	  $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/ntop; \
+ 	  touch $(DESTDIR)$(datadir)/ntop/warnuser; \
+@@ -370,21 +364,6 @@
  	@echo ""
  	@echo ""
  	@echo -n "Preparing "
@@ -57,10 +57,11 @@
  	@echo -n "New file lines are:  "
  	@gunzip -c oui.txt.gz | wc -l
  	@echo ""
-@@ -398,34 +379,6 @@
+@@ -402,35 +381,6 @@
+ 	@echo ""
  	@echo "Preparing "
  	@echo ""
- 
+-
 -	@if test -f $(ETTER_PASSIVE).old; then \
 -	  echo "...Deleting prior file, $(ETTER_PASSIVE).old..."; \
 -	  rm -rf $(ETTER_PASSIVE).old; \

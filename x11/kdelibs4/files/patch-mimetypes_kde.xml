@@ -1,5 +1,5 @@
---- ./mimetypes/kde.xml.orig	2012-01-11 01:17:51.000000000 +1100
-+++ ./mimetypes/kde.xml	2012-05-14 20:50:05.000000000 +1100
+--- ./mimetypes/kde.xml.orig	2012-09-27 17:09:06.000000000 -0700
++++ ./mimetypes/kde.xml	2012-10-26 14:22:51.802005859 -0700
 @@ -13,11 +13,6 @@
    the mime type there.
  -->
@@ -27,7 +27,7 @@
    <mime-type type="application/x-plasma">
      <sub-class-of type="application/zip"/>
      <comment>plasmoid</comment>
-@@ -152,9 +139,6 @@
+@@ -148,9 +135,6 @@
      <glob pattern="*.pnx"/>
      <glob pattern="*.rdc"/>
    </mime-type>
@@ -37,7 +37,7 @@
    <mime-type type="text/x-hex">
      <sub-class-of type="text/plain"/>
      <comment>Intel® hexadecimal object file</comment>
-@@ -355,28 +339,10 @@
+@@ -351,27 +335,6 @@
      <glob pattern="*.wmp"/>
    </mime-type>
  
@@ -45,10 +45,6 @@
 -    <comment>shortcut to Kexi project on database server</comment>
 -    <glob pattern="*.kexis"/>
 -  </mime-type>
-   <mime-type type="application/x-kexiproject-sqlite"> <!-- FIXED 0.70 -->
-     <comment>Kexi database file-based project</comment>
-     <glob pattern="*.kexi"/>
-   </mime-type>
 -  <mime-type type="application/x-kexiproject-sqlite2"> <!-- FIXED 0.70 -->
 -    <sub-class-of type="application/x-sqlite2"/>
 -    <comment>Kexi database file-based project</comment>
@@ -58,15 +54,18 @@
 -    <sub-class-of type="application/x-sqlite3"/>
 -    <comment>Kexi database file-based project</comment>
 -    <glob pattern="*.kexi"/>
+-    <alias type="application/x-kexiproject-sqlite"/>
+-    <alias type="application/x-vnd.kde.kexi"/>
 -  </mime-type>
 -  <mime-type type="application/x-kexi-connectiondata"> <!-- FIXED 0.70 -->
 -    <comment>data for database server connection</comment>
 -    <glob pattern="*.kexic"/>
 -  </mime-type>
- 
+-
    <!-- http://www4.wiwiss.fu-berlin.de/bizer/TriG/ -->
    <!-- Used in Nepomuk to encode almost all ontologies -->
-@@ -398,25 +364,4 @@
+   <mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-trig"> <!-- fdo #18089 -->
+@@ -392,25 +355,4 @@
      </magic>
      <glob pattern="*.pic"/>
    </mime-type>

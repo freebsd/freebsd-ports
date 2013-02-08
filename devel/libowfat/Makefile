@@ -48,6 +48,10 @@ post-extract:
 	@${MV} ${WRKSRC}/*/${i:S/libowfat_//} ${WRKSRC}/man/${i}
 .endfor
 
+post-patch:
+# Clang cries when void functions return a value
+	${REINPLACE_CMD} -e '56s|return ||' ${WRKSRC}/CAS.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

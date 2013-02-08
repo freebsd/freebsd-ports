@@ -1,11 +1,9 @@
-# Ports collection makefile for:	rubygem-rails
-# Date created:				27 May 2005
-# Whom:					Jonathan Weiss (<jw@innerewut.de>)
-#
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
 
 PORTNAME=	rails
 PORTVERSION=	3.2.11
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -19,10 +17,10 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
 		rubygem-rake>=10.0.3:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-sass-rails>=3.2.5:${PORTSDIR}/textproc/rubygem-sass-rails \
+		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-coffee-rails>=3.2.2:${PORTSDIR}/devel/rubygem-coffee-rails \
-		rubygem-jquery-rails>=2.1.4:${PORTSDIR}/www/rubygem-jquery-rails \
-		rubygem-sqlite3>=1.3.6:${PORTSDIR}/databases/rubygem-sqlite3 \
+		rubygem-jquery-rails>=2.2.0:${PORTSDIR}/www/rubygem-jquery-rails \
+		rubygem-sqlite3>=1.3.7:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-uglifier>=1.3.0:${PORTSDIR}/www/rubygem-uglifier \
 		rubygem-bundler>=1.1.5:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-treetop>=1.4.12:${PORTSDIR}/devel/rubygem-treetop \
@@ -30,7 +28,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-tzinfo>=0.3.35:${PORTSDIR}/devel/rubygem-tzinfo \
 		rubygem-builder>=3.0.4:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-i18n>=0.6.1:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-rack>=1.4.3:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack>=1.4.4:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		node:${PORTSDIR}/www/node
 
@@ -44,33 +42,33 @@ USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
-OPTIONS= \
-	FCGI 			"FastCGI backend" 			Off \
-	MONGREL			"Mongrel backend"			Off \
-	MONGRELCLUSTER		"Mongrel Cluster backend"		Off \
-	PASSENGER		"Passenger backend"			Off \
-	MEMCACHE_CLIENT		"MemCache-Client support" 		Off
+OPTIONS_DEFINE=FCGI MONGREL MONGRELCLUSTER PASSENGER MEMCACHE_CLIENT
+FCGI_DESC=	FastCGI backend
+MONGREL_DESC=	Mongrel backend
+MONGRELCLUSTER_DESC=	Mongrel Cluster backend
+PASSENGER_DESC=	Passenger backend
+MEMCACHE_CLIENT_DESC=	MemCache-Client support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FCGI)
+.if ${PORT_OPTIONS:MFCGI}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 .endif
 
-.if defined(WITH_MEMCACHE_CLIENT)
+.if ${PORT_OPTIONS:MMEMCACHE_CLIENT}
 RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 .endif
 
-.if defined(WITH_MONGREL)
+.if ${PORT_OPTIONS:MMONGREL}
 RUN_DEPENDS+=	rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel
 .endif
 
-.if defined(WITH_MONGRELCLUSTER)
+.if ${PORT_OPTIONS:MMONGRELCLUSTER}
 RUN_DEPENDS+=	rubygem-mongrel_cluster>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_cluster
 .endif
 
-.if defined(WITH_PASSENGER)
+.if ${PORT_OPTIONS:MPASSENGER}
 RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 .endif
 

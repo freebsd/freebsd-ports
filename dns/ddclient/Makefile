@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon.krenz@ghostbsd.org
 COMMENT=	Update dynamic DNS entries
 
 LICENSE=	GPLv2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spring
-# Date created:		10 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	spring
 PORTVERSION=	0.82.7.1
@@ -14,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A project aiming to create a new and versatile RTS Engine
+
+BROKEN=		Does not build with recent boost
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \

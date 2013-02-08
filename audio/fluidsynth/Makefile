@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
-LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL20
 
 OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
 OPTIONS_DEFAULT=	JACK
@@ -22,28 +21,29 @@ USE_CMAKE=	yes
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PA_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PA_LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		fluidsynth.1
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .else
 CMAKE_ARGS+=	-Denable-jack:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .else
 CMAKE_ARGS+=	-Denable-alsa:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 .else
 CMAKE_ARGS+=	-Denable-dbus:BOOL=FALSE
 .endif
@@ -64,16 +64,18 @@ CMAKE_ARGS+=	-Denable-lash:BOOL=FALSE
 BUILD_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 CMAKE_ARGS+=	-Denable-portaudio:BOOL=TRUE
+PA_CFLAGS=	-I${LOCALBASE}/include/portaudio2
+PA_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-Denable-pulseaudio:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .else
 CMAKE_ARGS+=	-Denable-libsndfile:BOOL=FALSE
 .endif

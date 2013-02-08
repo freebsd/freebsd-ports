@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20121226
+PORTVERSION=	20130120
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,9 +27,9 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.0-rc1
-#GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
-GITREV=	01a1316
+GITDESC=	v0.4.0-9-g2dea08a
+GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
+#GITREV=	01a1316
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
@@ -75,7 +76,7 @@ PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.6-
 CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
 		-DBSD_PYTHON_VER=${PYTHON_VERSION}
 PLIST_SUB+=	PYTHON=""
@@ -95,6 +96,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
@@ -131,6 +133,7 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
@@ -175,7 +178,7 @@ pre-configure:
 	@${ECHO_MSG} "==> You have selected the ncurses 256 color option. Please ensure that"
 	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."
 	@${ECHO_MSG} "==>"
-	@${ECHO_MSG} "==> Ctrl-C now if you'd like to reconfigure."
+	@${ECHO_MSG} "==> Press Ctrl-C now if you want to re-configure."
 	@${ECHO_MSG} ""
 	@sleep 5
 .endif

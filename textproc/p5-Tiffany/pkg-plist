@@ -1,0 +1,18 @@
+%%SITE_PERL%%/Tiffany.pm
+%%SITE_PERL%%/Tiffany/HTML/Template.pm
+%%SITE_PERL%%/Tiffany/HTML/Template/Pro.pm
+%%SITE_PERL%%/Tiffany/TT.pm
+%%SITE_PERL%%/Tiffany/Template/Declare.pm
+%%SITE_PERL%%/Tiffany/Template/Semantic.pm
+%%SITE_PERL%%/Tiffany/Text/ClearSilver.pm
+%%SITE_PERL%%/Tiffany/Text/MicroMason.pm
+%%SITE_PERL%%/Tiffany/Text/MicroTemplate/Extended.pm
+%%SITE_PERL%%/Tiffany/Text/MicroTemplate/File.pm
+%%SITE_PERL%%/Tiffany/Text/Xslate.pm
+%%SITE_PERL%%/Tiffany/Util.pm
+@dirrmtry %%SITE_PERL%%/Tiffany/Text/MicroTemplate
+@dirrmtry %%SITE_PERL%%/Tiffany/Text
+@dirrmtry %%SITE_PERL%%/Tiffany/Template
+@dirrmtry %%SITE_PERL%%/Tiffany/HTML/Template
+@dirrmtry %%SITE_PERL%%/Tiffany/HTML
+@dirrmtry %%SITE_PERL%%/Tiffany

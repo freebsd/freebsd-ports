@@ -1,12 +1,9 @@
-# New ports collection makefile for:   mono
-# Date created:        22 July 2002
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mono
-PORTVERSION=	2.11.4
+PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -20,7 +17,7 @@ USE_BZIP2=	yes
 USE_BISON=	build
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
@@ -40,7 +37,7 @@ MONO_SHARED_DIR=${WRKDIR}
 MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		LC_ALL=C
 
-ONLY_FOR_ARCHS=	i386 amd64 ppc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 MAN1=		al.1 cccheck.1 ccrewrite.1 cert2spc.1 certmgr.1 chktrust.1 \
 		cilc.1 crlupdate.1 csharp.1 disco.1 dtd2xsd.1 gacutil.1 \

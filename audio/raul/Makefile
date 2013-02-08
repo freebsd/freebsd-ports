@@ -1,12 +1,9 @@
-# New ports collection makefile for:	raul
-# Date created:		2008-07-22
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	raul
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -16,7 +13,7 @@ COMMENT=	C++ utility library primarily aimed at audio/musical applications
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20

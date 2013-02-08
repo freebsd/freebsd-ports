@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdepimp4
-# Date created:				2008-31-05
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	kdepim
@@ -18,7 +15,7 @@ COMMENT=	Libraries for KDE-PIM applications
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qca.2:${PORTSDIR}/devel/qca
+		qca:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdepim44-runtime
 
 LATEST_LINK=	${PORTNAME}44

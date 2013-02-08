@@ -72,6 +72,7 @@ share/py-sip/QtGui/qgraphicsview.sip
 share/py-sip/QtGui/qgraphicswidget.sip
 share/py-sip/QtGui/qgridlayout.sip
 share/py-sip/QtGui/qgroupbox.sip
+share/py-sip/QtGui/qguiapplication.sip
 share/py-sip/QtGui/qheaderview.sip
 share/py-sip/QtGui/qicon.sip
 share/py-sip/QtGui/qiconengine.sip
@@ -106,6 +107,7 @@ share/py-sip/QtGui/qmessagebox.sip
 share/py-sip/QtGui/qmime.sip
 share/py-sip/QtGui/qmouseeventtransition.sip
 share/py-sip/QtGui/qmovie.sip
+share/py-sip/QtGui/qpagedpaintdevice.sip
 share/py-sip/QtGui/qpagesetupdialog.sip
 share/py-sip/QtGui/qpaintdevice.sip
 share/py-sip/QtGui/qpaintengine.sip
@@ -135,6 +137,7 @@ share/py-sip/QtGui/qrawfont.sip
 share/py-sip/QtGui/qregion.sip
 share/py-sip/QtGui/qrgb.sip
 share/py-sip/QtGui/qrubberband.sip
+share/py-sip/QtGui/qscreen.sip
 share/py-sip/QtGui/qscrollarea.sip
 share/py-sip/QtGui/qscrollbar.sip
 share/py-sip/QtGui/qsessionmanager.sip
@@ -180,6 +183,7 @@ share/py-sip/QtGui/qtoolbar.sip
 share/py-sip/QtGui/qtoolbox.sip
 share/py-sip/QtGui/qtoolbutton.sip
 share/py-sip/QtGui/qtooltip.sip
+share/py-sip/QtGui/qtouchdevice.sip
 share/py-sip/QtGui/qtransform.sip
 share/py-sip/QtGui/qtreeview.sip
 share/py-sip/QtGui/qtreewidget.sip

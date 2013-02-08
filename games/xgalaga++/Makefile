@@ -2,6 +2,7 @@
 
 PORTNAME=	xgalaga++
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
 		SF/nemysisfreebsdp/:icons

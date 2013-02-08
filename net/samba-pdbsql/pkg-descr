@@ -1,7 +1,0 @@
-This port adds to Samba3 ability to use multiple 'passdb backends' at
-the same time. Also it comes with sample MySQL and PostgreSQL backends,
-which allow to store passwords in the corresponding databases.
-
-This features were removed from upstream Samba3 in version 3.0.22.
-
-WWW: http://pdbsql.sourceforge.net/

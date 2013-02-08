@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkcrack
-# Date created:				27 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	pkcrack
 PORTVERSION=	1.2.2
@@ -21,6 +17,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	bin/pkextract bin/pkfindkey bin/pkmakekey bin/pkcrack bin/zipdecrypt
 PORTDOCS=	README pkzip.ps.gz
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 .for f in pkcrack zipdecrypt
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/pk${f}
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} ${DOCSDIR}

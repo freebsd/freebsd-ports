@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Custom Memory Allocator Interface
 
 LICENSE=	MIT

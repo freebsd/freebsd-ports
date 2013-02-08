@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	acroreadwrapper
-PORTVERSION=	0.0.20110920
+PORTVERSION=	0.0.20130208
 CATEGORIES=	print
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
-DISTNAME=	linux_adobe_kmod-${PORTVERSION:S,0.0.,,}
+DISTNAME=	linux_adobe_kmod-${PORTVERSION:E}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Wrapper script for Adobe Reader
+COMMENT=	Wrapper for Adobe Reader
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	${LOCALBASE}/lib/linux-libgtkembedmoz/libgtkembedmoz.so:${PORTSDIR}/www/linux-libgtkembedmoz
 

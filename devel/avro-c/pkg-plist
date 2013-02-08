@@ -1,0 +1,25 @@
+bin/avroappend
+bin/avrocat
+bin/avromod
+bin/avropipe
+include/avro.h
+include/avro/allocation.h
+include/avro/basics.h
+include/avro/consumer.h
+include/avro/data.h
+include/avro/errors.h
+include/avro/generic.h
+include/avro/io.h
+include/avro/legacy.h
+include/avro/msinttypes.h
+include/avro/msstdint.h
+include/avro/platform.h
+include/avro/refcount.h
+include/avro/resolver.h
+include/avro/schema.h
+include/avro/value.h
+lib/libavro.a
+lib/libavro.so
+lib/libavro.so.0
+libdata/pkgconfig/avro-c.pc
+@dirrm include/avro

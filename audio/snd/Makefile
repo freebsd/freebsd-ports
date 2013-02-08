@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--without-ladspa
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
 .endif
-.if ${PORT_OPTIONS:MMOTIG}
+.if ${PORT_OPTIONS:MMOTIF}
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
 .endif

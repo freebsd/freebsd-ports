@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ccl
-# Date created:		2010-01-03
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ccl
 PORTVERSION=	1.8

@@ -7,7 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-${PORTVERSION}
@@ -103,7 +103,7 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--enable-gnutls
 EXTRAS:=${EXTRAS},m_ssl_gnutls.cpp

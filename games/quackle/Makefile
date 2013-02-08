@@ -7,7 +7,7 @@
 
 PORTNAME=	quackle
 PORTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
 MASTER_SITES=	http://people.csail.mit.edu/jasonkb/quackle/downloads/%SUBDIR%/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-clamav
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--disable-gnutls
 .else
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .endif
 
 post-patch:

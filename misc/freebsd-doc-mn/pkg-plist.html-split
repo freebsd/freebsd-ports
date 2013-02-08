@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
@@ -154,6 +153,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
@@ -188,7 +188,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-afs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
@@ -230,6 +229,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pkgng-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-finding-applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-nextsteps.html
@@ -270,6 +270,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn-mirrors.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/swap-encrypting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
@@ -291,6 +293,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kaccessible
-# Date created:		2012-02-23
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kaccessible
 PORTVERSION=	${KDE4_VERSION}

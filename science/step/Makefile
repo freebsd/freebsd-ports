@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	step
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	step
 PORTVERSION=	${KDE4_VERSION}
@@ -29,9 +24,6 @@ USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
 pre-configure:
-	# Fix GSL_INCLUDE_DIR.
-	${REINPLACE_CMD} -e 's|gsl_|gsl/gsl_|g' \
-		${WRKSRC}/cmake/modules/FindGSL.cmake
 	# Avoid building translations, should the user pass
 	# CURRENT_LANG to CMake.
 	${REINPLACE_CMD} -e '/set(STEP_BUILD_TRANSLATIONS 1)/ d' \

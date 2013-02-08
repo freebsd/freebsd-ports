@@ -1,13 +1,9 @@
-# New ports collection makefile for:	openlierox
-# Date created:		12 Oct 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openlierox
 DISTVERSION=	0.59_beta9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/OpenLieroX%20${DISTVERSION:C/_/%20/}
 DISTNAME=	OpenLieroX_${DISTVERSION}.src
@@ -16,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extremely addictive realtime worms shoot-em-up
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		boost_signals.4:${PORTSDIR}/devel/boost-libs \
+		boost_signals:${PORTSDIR}/devel/boost-libs \
 		curl.6:${PORTSDIR}/ftp/curl \
    		alut.1:${PORTSDIR}/audio/freealut
 
@@ -28,6 +24,7 @@ USE_OPENAL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsspam
-# Date created:				16 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsspam
 PORTVERSION=	0.2.12
@@ -20,6 +16,10 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for f in collect_diffs.rb cvsspam.rb record_lastdir.rb
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cvsspam.conf ${PREFIX}/etc/cvsspam.conf
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

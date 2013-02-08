@@ -20,6 +20,7 @@ USE_PHP=	zlib session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
+USE_CSTD=	gnu89
 
 .include <bsd.port.options.mk>
 

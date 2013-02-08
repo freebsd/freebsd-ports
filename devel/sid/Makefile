@@ -1,17 +1,16 @@
-# New ports collection makefile for:	sid
-# Date created:				29 May 2007
-# Whom:					The Akuma Project
-#
+# Created by: The Akuma Project
 # $FreeBSD$
-#
 
 PORTNAME=	sid
 PORTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.akumaproject.org/download/
 
-MAINTAINER=	ports@akumaproject.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A LL(1) parser generator
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 CONFLICTS=	TenDRA-4.2*
 

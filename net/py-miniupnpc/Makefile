@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-miniupnpc
-# Date created:				9 Aug 2009
-# Whom:					Anonymous
-#
 # $FreeBSD$
-#
 
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

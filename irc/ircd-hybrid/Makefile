@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ircd-hybrid
-# Date Created:				2001-10-07
-# Whom:					David Taylor <davidt@yadt.co.uk>
-#
+# Created by: David Taylor <davidt@yadt.co.uk>
 # $FreeBSD$
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	7.2.1
+PORTVERSION=	8.0.4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,9 +12,9 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	A fast irc daemon with a number of new features
 
 MAN8=		ircd.8
+INSTALL_IGNORES=	ircu-* ircd-rat* charby*
 
 USE_GMAKE=	yes
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
 USERS=		ircd
@@ -32,12 +29,9 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 #
 # PREFIX		- Where to install ircd-hybrid. Default is /usr/local
 # WITH_OPENSSL	- Enable openssl. Allows use of CHALLENGE and encrypted links.
-# WITHOUT_SHARED_MODULES - Disable shared modules. More secure but reduces flexability.
 # WITHOUT_ASSERT	- Disable parts of the debugging code.
-# WITH_SMALL_NET	- Tunes the memory allocation for small networks.
 # WITH_HALFOPS		- Enable halfops on the server.
 # NICKLEN		- Nick length. Default is 9. Must be consistant across the network.
-# MAXCLIENTS		- Set this to the maximum number of clients supported by this server. Default is 200
 
 .if defined(PREFIX)
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
@@ -52,35 +46,18 @@ CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=	--enable-halfops
 .endif
 
-.if defined(WITHOUT_SHARED_MODULES)
-CONFIGURE_ARGS+=	--disable-shared-modules
-PLIST_SUB+=		SHAREDMODULES="@comment "
-.else
-PLIST_SUB+=		SHAREDMODULES=""
-.endif
-
 .if defined(WITHOUT_ASSERT)
 CONFIGURE_ARGS+=	--disable-assert
-.endif
-
-.if defined(WITH_SMALL_NET)
-CONFIGURE_ARGS+=	--enable-small-net
 .endif
 
 .if defined(NICKLEN)
 CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
-.if defined(MAXCLIENTS)
-CONFIGURE_ARGS+=	--with-maxclients=${MAXCLIENTS}
-.endif
-
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
-	--moduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules \
-	--automoduledir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/modules/autoload \
-	--uhelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/users \
-	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
-	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \
+CONFIGURE_ARGS+=	\
+	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
+	--prefix=${LOCAL} \
+	--datarootdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 pre-su-install:
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
@@ -89,10 +66,9 @@ pre-su-install:
 post-install:
 	${MKDIR} /var/run/ircd
 	${CHOWN} ircd:ircd /var/run/ircd
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.conf.quick ${PREFIX}/etc/ircd-hybrid
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.efnet.conf ${PREFIX}/etc/ircd-hybrid
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/simple.conf ${PREFIX}/etc/ircd-hybrid
-	@${CHOWN} ircd:ircd /var/log/ircd
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/example.quick.conf ${PREFIX}/etc/ircd-hybrid
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/ircd-hybrid
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/ircd-hybrid
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cscope
-PORTVERSION=	15.8
+PORTVERSION=	15.8a
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,7 +12,6 @@ COMMENT=	An interactive C program browser
 OPTIONS_DEFINE=	XCSCOPE
 XCSCOPE_DESC=	Install (X)Emacs package
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp

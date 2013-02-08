@@ -6,7 +6,7 @@
        find_library(_QGPGME_EXTRA_LIBRARY gpgme++-pthread
 -                   HINTS ${GPGME_LIBRARY_DIR})
 +                   HINTS ${GPGME_LIBRARY_DIR} %%KDE4_PREFIX%%/lib)
-    endif ( WIN32 )
+    endif()
  
     find_library(QGPGME_LIBRARY qgpgme
 -                HINTS ${GPGME_LIBRARY_DIR})

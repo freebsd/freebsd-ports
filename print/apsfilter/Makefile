@@ -20,7 +20,7 @@ USE_SUBMAKE=	yes
 
 SUB_FILES+=	pkg-message
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 # special arrangement for package building, build stuff without X11
 # to make memory footprint of apsfilter package smaller

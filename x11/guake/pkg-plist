@@ -1,0 +1,64 @@
+@comment $FreeBSD$
+bin/guake
+bin/guake-prefs
+%%NLS%%share/locale/de/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/el/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/es/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/it/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/no/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/guake.mo
+%%PYTHON_SITELIBDIR%%/guake/__init__.py
+%%PYTHON_SITELIBDIR%%/guake/__init__.pyc
+%%PYTHON_SITELIBDIR%%/guake/__init__.pyo
+%%PYTHON_SITELIBDIR%%/guake/common.py
+%%PYTHON_SITELIBDIR%%/guake/common.pyc
+%%PYTHON_SITELIBDIR%%/guake/common.pyo
+%%PYTHON_SITELIBDIR%%/guake/dbusiface.py
+%%PYTHON_SITELIBDIR%%/guake/dbusiface.pyc
+%%PYTHON_SITELIBDIR%%/guake/dbusiface.pyo
+%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.a
+%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.la
+%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.so
+%%PYTHON_SITELIBDIR%%/guake/globals.py
+%%PYTHON_SITELIBDIR%%/guake/globals.pyc
+%%PYTHON_SITELIBDIR%%/guake/globals.pyo
+%%PYTHON_SITELIBDIR%%/guake/prefs.py
+%%PYTHON_SITELIBDIR%%/guake/prefs.pyc
+%%PYTHON_SITELIBDIR%%/guake/prefs.pyo
+%%PYTHON_SITELIBDIR%%/guake/simplegladeapp.py
+%%PYTHON_SITELIBDIR%%/guake/simplegladeapp.pyc
+%%PYTHON_SITELIBDIR%%/guake/simplegladeapp.pyo
+%%DESKTOPDIR%%/guake-prefs.desktop
+%%DESKTOPDIR%%/guake.desktop
+share/dbus-1/services/org.guake.Guake.service
+%%DATADIR%%/about.glade
+%%DATADIR%%/guake.glade
+%%DATADIR%%/prefs.glade
+share/icons/hicolor/16x16/apps/guake-prefs.png
+share/icons/hicolor/16x16/apps/guake.png
+share/icons/hicolor/22x22/apps/guake-prefs.png
+share/icons/hicolor/22x22/apps/guake.png
+share/icons/hicolor/24x24/apps/guake-prefs.png
+share/icons/hicolor/24x24/apps/guake.png
+share/icons/hicolor/256x256/apps/guake-prefs.png
+share/icons/hicolor/256x256/apps/guake.png
+share/icons/hicolor/32x32/apps/guake-prefs.png
+share/icons/hicolor/32x32/apps/guake.png
+share/icons/hicolor/48x48/apps/guake-prefs.png
+share/icons/hicolor/48x48/apps/guake.png
+share/pixmaps/guake/add_tab.png
+share/pixmaps/guake/guake-notification.png
+share/pixmaps/guake/guake-tray.png
+share/pixmaps/guake/guake.png
+@dirrm share/pixmaps/guake
+@dirrm %%PYTHON_SITELIBDIR%%/guake
+@dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true

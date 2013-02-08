@@ -1,0 +1,4 @@
+Module::CPANfile is a tool to handle L<cpanfile> format to load
+application specific dependencies, not just for CPAN distributions.
+
+WWW: http://search.cpan.org/dist/Module-CPANfile/

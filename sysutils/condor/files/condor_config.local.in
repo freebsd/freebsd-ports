@@ -1,27 +1,39 @@
+############################################################################
+##  condor_config.local
+##  Settings here override the defaults in condor_config.
+##  Make changes/additions here and leave condor_config unchanged so
+##  that defaults are documented.
+############################################################################
+
+############################################################################
 ##  What machine is your central manager?
+##  Use $(FULL_HOSTNAME) if this is the central manager, or the central
+##  manager's hostname otherwise.
 
-CONDOR_HOST = $(FULL_HOSTNAME)
+##  CONDOR_HOST = $(FULL_HOSTNAME)
 
+############################################################################
 ## Pool's short description
 
-COLLECTOR_NAME = Personal Condor at $(FULL_HOSTNAME)
+##  COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 
+############################################################################
 ##  When is this machine willing to start a job? 
 
 START = TRUE
 
-
+############################################################################
 ##  When to suspend a job?
 
 SUSPEND = FALSE
 
-
+############################################################################
 ##  When to nicely stop a job?
 ##  (as opposed to killing it instantaneously)
 
 PREEMPT = FALSE
 
-
+############################################################################
 ##  When to instantaneously kill a preempting job
 ##  (e.g. if a job is in the pre-empting stage for too long)
 
@@ -30,13 +42,42 @@ KILL = FALSE
 ###########################################################################
 # DAEMON LIST:
 #
-# All hosts:		MASTER
-# Central manager:	COLLECTOR, NEGOTIATOR
-# Submit hosts:		SCHEDD
-# Execute hosts:	STARTD
+# All hosts:            MASTER
+# Central manager:      COLLECTOR, NEGOTIATOR
+# Submit hosts:         SCHEDD
+# Execute hosts:        STARTD
 
 ##  This macro determines what daemons the condor_master will start and 
 ##  keep its watchful eyes on.
 ##  The list is a comma or space separated list of subsystem names
 
-DAEMON_LIST = COLLECTOR, MASTER, NEGOTIATOR, SCHEDD, STARTD
+##  Central manager
+##  DAEMON_LIST = MASTER, COLLECTOR, NEGOTIATOR, SCHEDD
+
+##  Submit/execute host
+DAEMON_LIST = MASTER, SCHEDD, STARTD
+
+##  Execute-only host
+##  DAEMON_LIST = MASTER, STARTD
+
+###########################################################################
+##  Permissions for this host
+##
+##  *.your.domain, x.y.z.*, hostname, $(MACRO)
+##
+##  ALLOW_ADMINISTRATOR is required by condor_off
+##  If central manager is not this host, this entry allows both the central
+##  manager and this host to manage the pool.
+
+ALLOW_ADMINISTRATOR = $(CONDOR_HOST), $(FULL_HOSTNAME)
+
+##
+##  Enables condor_status, condor_q, ...
+
+ALLOW_READ = $(CONDOR_HOST), $(FULL_HOSTNAME)
+
+##
+##  Enables scheduling jobs here
+
+ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
+

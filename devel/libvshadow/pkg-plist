@@ -11,5 +11,8 @@ lib/libvshadow.a
 lib/libvshadow.la
 lib/libvshadow.so
 lib/libvshadow.so.1
+%%PYTHON_SITELIBDIR%%/pyvshadow.a
+%%PYTHON_SITELIBDIR%%/pyvshadow.la
+%%PYTHON_SITELIBDIR%%/pyvshadow.so
 libdata/pkgconfig/libvshadow.pc
 @dirrm include/libvshadow

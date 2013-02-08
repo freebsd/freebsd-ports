@@ -1,0 +1,9 @@
+Because Perl methods are just regular subroutines, it's difficult to
+tell what's a method and what's just an imported function. As a result,
+imported functions can be called as methods on your objects. This pragma
+will delete imported functions from your class's symbol table, thereby
+ensuring that your interface is as you specified it. However, code
+inside your module will still be able to use the imported functions
+without any problems.
+
+WWW: http://search.cpan.org/dist/namespace-sweep/

@@ -1,0 +1,10 @@
+IO::Prompt::Tiny is an extremely simple prompting module, based on the extremely
+simple prompt offered by ExtUtils::MakeMaker.In many cases, that's all you need
+and this module gives it to you without all the overhead of ExtUtils::MakeMaker
+just to prompt for input.
+
+It doesn't do any validation, coloring, menus, timeouts, or any of the wild,
+crazy, cool stuff that other prompting modules do. It just prompts with a
+default. That's it!
+
+WWW: http://search.cpan.org/dist/IO-Prompt-Tiny/

@@ -1,14 +1,10 @@
-# New ports collection makefile for:   devil
-# Date created:        8 August 2004
-# Whom:                Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
 DISTNAME=	DevIL-${PORTVERSION}
@@ -16,16 +12,19 @@ DISTNAME=	DevIL-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A full featured cross-platform image library
 
-OPTIONS=	JPEG	"Enable JPEG support"		on \
-		JASPER	"Enable JPEG2000 support"	on \
-		LCMS	"Enable LCMS support"		on \
-		MNG	"Enable MNG support"		on \
-		PNG	"Enable PNG support"		on \
-		TIFF	"Enable TIFF support"		on \
-		X11	"Enable X11 support"		on \
-		SDL	"Enable SDL support"		off \
-		NVTT	"Enable NVidia texture tools support" off \
-		SIMD	"Enable SIMD autodetection (AltiVec, SSE3,...)" off
+OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF X11 SDL NVTT SIMD DOCS
+OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF X11 DOCS
+
+JPEG_DESC=	Enable JPEG support
+JASPER_DESC=	Enable JPEG2000 support
+LCMS_DESC=	Enable LCMS support
+MNG_DESC=	Enable MNG support
+PNG_DESC=	Enable PNG support
+TIFF_DESC=	Enable TIFF support
+X11_DESC=	Enable X11 support
+SDL_DESC=	Enable SDL support
+NVTT_DESC=	Enable NVidia texture tools support
+SIMD_DESC=	Enable SIMD autodetection (AltiVec, SSE3,...)
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -42,73 +41,73 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_JPEG)
-CONFIGURE_ARGS+=--disable-jpeg
-.else
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
+.else
+CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
-.if defined(WITHOUT_JASPER)
-CONFIGURE_ARGS+=--disable-jp2
-.else
+.if ${PORT_OPTIONS:MJASPER}
 LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
 CONFIGURE_ARGS+=--enable-jp2
+.else
+CONFIGURE_ARGS+=--disable-jp2
 .endif
 
-.if defined(WITHOUT_LCMS)
-CONFIGURE_ARGS+=--disable-lcms
-.else
+.if ${PORT_OPTIONS:MLCMS}
 LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
 CONFIGURE_ARGS+=--enable-lcms
+.else
+CONFIGURE_ARGS+=--disable-lcms
 .endif
 
-.if defined(WITHOUT_MNG)
-CONFIGURE_ARGS+=--disable-mng
-.else
+.if ${PORT_OPTIONS:MMNG}
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
 CONFIGURE_ARGS+=--enable-mng
+.else
+CONFIGURE_ARGS+=--disable-mng
 .endif
 
-.if defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+.else
 CONFIGURE_ENV+=	libpng_app=no
 CONFIGURE_ARGS+=--disable-png
-.else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
-.if defined(WITHOUT_TIFF)
-CONFIGURE_ARGS+=--disable-tiff
-.else
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=--enable-tiff
+.else
+CONFIGURE_ARGS+=--disable-tiff
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-opengl --disable-x11 --disable-xpm --disable-shm
-PLIST_SUB+=	X11="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_GL=		glut
 CONFIGURE_ARGS+=--enable-ILUT
 PLIST_SUB+=	X11=""
+.else
+CONFIGURE_ARGS+=--disable-opengl --disable-x11 --disable-xpm --disable-shm
+PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
-.if defined(WITH_NVTT)
+.if ${PORT_OPTIONS:MNVTT}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 RUN_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 .else
 CONFIGURE_ARGS+=--without-nvtt
 .endif
 
-.if !defined(WITH_SIMD)
+.if ! ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 .endif
 
@@ -120,11 +119,12 @@ post-patch:
 		${WRKSRC}/src-ILU/ilur/ilur.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+	@${RMDIR} ${DATADIR}/examples
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

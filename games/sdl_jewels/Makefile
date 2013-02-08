@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl_jewels
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/gljewel/downloads/ \
 		http://www.linuxmotors.com/gljewel/:icons

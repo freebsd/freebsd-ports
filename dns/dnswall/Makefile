@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnswall
-# Date created:				28 Jan 2008
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dnswall
 PORTVERSION=	0.1.4
@@ -28,11 +24,15 @@ PLIST_FILES=	bin/dnswall
 
 AUTOTOOLSFILES=	aclocal.m4
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|%%AUTOMAKE_APIVER%%|g' \
 			  -e 's|2.61|%%AUTOCONF_VERSION%%|g' \
 			  ${WRKSRC}/aclocal.m4
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/d' ${WRKSRC}/Makefile.am
 .endif
 

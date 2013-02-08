@@ -1,0 +1,38 @@
+bin/krdc
+bin/krdc_rfb_approver
+include/krdc/hostpreferences.h
+include/krdc/remoteview.h
+include/krdc/remoteviewfactory.h
+lib/kde4/kcm_krdc_rdpplugin.so
+lib/kde4/kcm_krdc_vncplugin.so
+lib/kde4/krdc_rdpplugin.so
+lib/kde4/krdc_testplugin.so
+lib/kde4/krdc_vncplugin.so
+lib/libkrdccore.so
+lib/libkrdccore.so.5
+lib/libkrdccore.so.5.0.1
+share/applications/kde4/krdc.desktop
+share/apps/krdc/krdcui.rc
+share/apps/krdc/pics/pointcursor.png
+share/apps/krdc/pics/pointcursormask.png
+share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
+share/config.kcfg/krdc.kcfg
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
+share/kde4/services/ServiceMenus/smb2rdc.desktop
+share/kde4/services/krdc_rdp.desktop
+share/kde4/services/krdc_rdp_config.desktop
+share/kde4/services/krdc_test.desktop
+share/kde4/services/krdc_vnc.desktop
+share/kde4/services/krdc_vnc_config.desktop
+share/kde4/services/rdp.protocol
+share/kde4/services/vnc.protocol
+share/kde4/servicetypes/krdc_plugin.desktop
+share/telepathy/clients/krdc_rfb_approver.client
+share/telepathy/clients/krdc_rfb_handler.client
+@dirrmtry share/telepathy/clients
+@dirrmtry share/telepathy
+@dirrm share/apps/krdc_rfb_approver
+@dirrm share/apps/krdc/pics
+@dirrm share/apps/krdc
+@dirrm include/krdc

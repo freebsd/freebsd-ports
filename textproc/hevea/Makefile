@@ -1,12 +1,8 @@
-# New ports collection makefile for:	hevea
-# Date created:		November 28 1999
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	hevea
-PORTVERSION=	2.00
+PORTVERSION=	2.02
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
@@ -23,6 +19,8 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/Makefile
@@ -30,7 +28,7 @@ pre-configure:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/hevea
 	@${STRIP_CMD} ${PREFIX}/bin/hacha
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.pdf ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.ps.gz ${PREFIX}/share/doc/hevea

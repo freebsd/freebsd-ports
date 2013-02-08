@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-DISTVERSION=	4.2.2
+DISTVERSION=	4.2.3
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -31,6 +31,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${DISTVERSION}.jar \
@@ -48,7 +50,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/fluent-hc-${DISTVERSION}.jar \
 		${JAVAJARDIR}/fluent-hc.jar
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
@@ -56,7 +58,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} -n ">> Installing examples..."
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${FIND} . \

@@ -2,20 +2,17 @@ diff --git mozilla/configure.in mozilla/configure.in
 index 5980b76..11f5f77 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5600,13 +5600,25 @@ dnl ========================================================
- dnl = Check alsa availability on Linux if using sydneyaudio
- dnl ========================================================
+@@ -5618,11 +5618,25 @@ dnl ========================================================
  
+ dnl If using sydneyaudio with Linux, ensure that the alsa library is available
+ if test -n "$MOZ_SYDNEYAUDIO" -a "$OS_TARGET" = "Linux"; then
++    MOZ_ALSA=1
++fi
++
 +MOZ_ARG_ENABLE_BOOL(alsa,
 +[  --enable-alsa          Enable Alsa support (default on Linux)],
 +MOZ_ALSA=1,
-+MOZ_ALSA= MOZ_ALSA_FORCE=$enableval)
-+
- dnl If using sydneyaudio with Linux, ensure that the alsa library is available
--if test -n "$MOZ_SYDNEYAUDIO" -a "$OS_TARGET" = "Linux"; then
-+if test -n "$MOZ_SYDNEYAUDIO" -a "$OS_TARGET" = "Linux" -a "$MOZ_ALSA_FORCE" != "no"; then
-+    MOZ_ALSA=1
-+fi
++MOZ_ALSA=)
 +
 +if test -n "$MOZ_ALSA"; then
 +    AC_DEFINE(MOZ_CUBEB)
@@ -25,10 +22,21 @@ index 5980b76..11f5f77 100644
  fi
  
 +AC_SUBST(MOZ_ALSA)
++AC_SUBST(MOZ_ALSA_CFLAGS)
++AC_SUBST(MOZ_ALSA_LIBS)
 +
  dnl ========================================================
  dnl = Enable PulseAudio
  dnl ========================================================
+@@ -8633,8 +8647,6 @@ AC_SUBST(MOZ_VP8_ERROR_CONCEALMENT)
+ AC_SUBST(MOZ_VP8_ENCODER)
+ AC_SUBST(MOZ_VP8)
+ AC_SUBST(MOZ_OGG)
+-AC_SUBST(MOZ_ALSA_LIBS)
+-AC_SUBST(MOZ_ALSA_CFLAGS)
+ AC_SUBST(VPX_AS)
+ AC_SUBST(VPX_ASFLAGS)
+ AC_SUBST(VPX_DASH_C_FLAG)
 diff --git mozilla/media/libcubeb/src/Makefile.in mozilla/media/libcubeb/src/Makefile.in
 index 5ab4dd8..c8df26f 100644
 --- mozilla/media/libcubeb/src/Makefile.in

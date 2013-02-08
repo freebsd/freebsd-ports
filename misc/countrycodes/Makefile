@@ -1,9 +1,5 @@
-# New ports collection makefile for:	countrycodes
-# Date created:				6 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	countrycodes
 PORTVERSION=	1.0.5
@@ -27,8 +23,12 @@ MAN1=		iso3166.1
 
 MAKE_ARGS=	prefix="${PREFIX}" CC="${CC}" CCOPTS="${CFLAGS}" WARNINGS=""
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}
 .endif

@@ -46,6 +46,7 @@ libdata/pkgconfig/ecore.pc
 %%NLS%%share/locale/nl/LC_MESSAGES/ecore.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/ecore.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ecore.mo
 @dirrmtry include/ecore-1
 %%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cs
@@ -63,4 +64,6 @@ libdata/pkgconfig/ecore.pc
 %%NLS%%@dirrmtry share/locale/pt
 %%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

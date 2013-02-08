@@ -1,13 +1,8 @@
-# New ports collection makefile for:	graphics/p5-GraphViz
-# Date created:				09 October 2001
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	GraphViz
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +17,6 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		dot:${PORTSDIR}/graphics/graphviz
-
-TEST_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

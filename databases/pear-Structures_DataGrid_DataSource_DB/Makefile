@@ -1,15 +1,11 @@
-# Ports collection makefile for:	pear-Structures_DataGrid_DataSource_DB
-# Date created:				26 Jun 2008
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Structures_DataGrid_DataSource_DB
 PORTVERSION=	0.1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DB datasource driver for pear-Structures_DataGrid
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

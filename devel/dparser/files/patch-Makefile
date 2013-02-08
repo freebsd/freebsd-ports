@@ -1,7 +1,7 @@
---- Makefile.orig	2010-12-23 19:00:21.000000000 +0000
-+++ Makefile	2010-12-23 19:01:59.000000000 +0000
+--- Makefile.orig	2013-01-23 03:56:43.000000000 +0100
++++ Makefile	2013-01-23 17:40:57.000000000 +0100
 @@ -11,7 +11,7 @@
- MINOR=26
+ MINOR=29
  RELEASE=$(MAJOR).$(MINOR)
  
 -CC = gcc
@@ -18,32 +18,31 @@
    CFLAGS += -fPIC
  endif
  
-@@ -64,14 +64,7 @@
+@@ -64,10 +64,10 @@
  CFLAGS += -DUSE_FREELISTS
  endif
  
--D_BUILD_VERSION = $(shell svnversion .)
--ifeq ($(D_BUILD_VERSION),exported)
--  D_BUILD_VERSION = $(shell git show-ref 2> /dev/null | head -1 | cut -d ' ' -f 1)
--  ifeq ($(D_BUILD_VERSION),)
--    D_BUILD_VERSION = $(shell cat D_BUILD_VERSION)
--  endif
+-D_BUILD_VERSION = $(shell git show-ref 2> /dev/null | head -1 | cut -d ' ' -f 1)
+-ifeq ($(D_BUILD_VERSION),)
+-  D_BUILD_VERSION = $(shell cat D_BUILD_VERSION)
 -endif
--CFLAGS += -DD_MAJOR_VERSION=$(MAJOR) -DD_MINOR_VERSION=$(MINOR) -DD_BUILD_VERSION=\"$(D_BUILD_VERSION)\"
-+CFLAGS += -DD_MAJOR_VERSION=$(MAJOR) -DD_MINOR_VERSION=$(MINOR) -DD_BUILD_VERSION=\"\"
++#D_BUILD_VERSION = $(shell git show-ref 2> /dev/null | head -1 | cut -d ' ' -f 1)
++#ifeq ($(D_BUILD_VERSION),)
++  D_BUILD_VERSION = $(shell cat BUILD_VERSION)
++#endif
+ CFLAGS += -DD_MAJOR_VERSION=$(MAJOR) -DD_MINOR_VERSION=$(MINOR) -DD_BUILD_VERSION=\"$(D_BUILD_VERSION)\"
  
  CFLAGS += -Wall
- # debug flags
-@@ -99,7 +92,7 @@
+@@ -96,7 +96,7 @@
  PYTHON_FILES = d/python/Makefile d/python/*.py d/python/*.c d/python/*.h d/python/*.i d/python/README d/python/*.html d/python/contrib/d* d/python/tests/*.py
  VERILOG_FILES = d/verilog/Makefile d/verilog/verilog.g d/verilog/README d/verilog/ambig.c \
  d/verilog/main.c d/verilog/vparse.c d/verilog/vparse.h d/verilog/verilog_tests
 -TAR_FILES = $(AUX_FILES) $(TEST_FILES) $(PYTHON_FILES) $(VERILOG_FILES) d/BUILD_VERSION \
-+TAR_FILES = $(AUX_FILES) $(TEST_FILES) $(PYTHON_FILES) $(VERILOG_FILES)  \
++TAR_FILES = $(AUX_FILES) $(TEST_FILES) $(PYTHON_FILES) $(VERILOG_FILES) \
  d/grammar.g d/sample.g d/my.g 
  
  LIB_SRCS = arg.c parse.c scan.c symtab.c util.c read_binary.c dparse_tree.c
-@@ -146,7 +139,7 @@
+@@ -143,7 +143,7 @@
  
  ALL_SRCS = $(MAKE_PARSER_SRCS) $(BASE_SAMPLE_PARSER_SRCS) $(LIB_SRCS) $(MK_LIB_SRCS)
  
@@ -52,13 +51,3 @@
  
  version:
  	echo $(OS_TYPE) $(OS_VERSION)
-@@ -205,9 +198,6 @@
- 	nroff -man make_dparser.1 | sed -e 's/.//g' > make_dparser.cat
- 
- build_version:
--	rm -f BUILD_VERSION.tmp
--	echo $(D_BUILD_VERSION) > BUILD_VERSION.tmp
--	mv BUILD_VERSION.tmp BUILD_VERSION
- 
- tar:
- 	(cd ..;tar czf d-$(RELEASE)-src.tar.gz d/*.c d/*.h $(TAR_FILES)) 

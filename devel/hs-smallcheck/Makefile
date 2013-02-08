@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smallcheck
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

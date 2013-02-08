@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.64
+PORTVERSION=	1.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl5 module to check currently running OS
+
+LICENSE=	ART10 GPLv2
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
 		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
-RUN_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
-		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -79,11 +81,4 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::CheckOS.3 \
 		Devel::CheckOS::Families.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} == 501000
-BUILD_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

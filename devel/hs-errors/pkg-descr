@@ -1,0 +1,5 @@
+The one-stop shop for all your error-handling needs! Just import
+"Control.Error". This library encourages an error-handling style that directly
+uses the type system, rather than out-of-band exceptions.
+
+WWW: http://hackage.haskell.org/package/errors

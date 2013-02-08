@@ -7,6 +7,10 @@ share/qt4/mkspecs/aix-xlc-64/qmake.conf
 share/qt4/mkspecs/aix-xlc-64/qplatformdefs.h
 share/qt4/mkspecs/aix-xlc/qmake.conf
 share/qt4/mkspecs/aix-xlc/qplatformdefs.h
+share/qt4/mkspecs/blackberry-armv7le-qcc/qmake.conf
+share/qt4/mkspecs/blackberry-armv7le-qcc/qplatformdefs.h
+share/qt4/mkspecs/blackberry-x86-qcc/qmake.conf
+share/qt4/mkspecs/blackberry-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/common/aix/qplatformdefs.h
 share/qt4/mkspecs/common/armcc.conf
 share/qt4/mkspecs/common/c89/qplatformdefs.h
@@ -15,11 +19,22 @@ share/qt4/mkspecs/common/g++-base.conf
 share/qt4/mkspecs/common/g++-macx.conf
 share/qt4/mkspecs/common/g++-unix.conf
 share/qt4/mkspecs/common/g++.conf
+share/qt4/mkspecs/common/gcc-base-ios.conf
 share/qt4/mkspecs/common/gcc-base-macx.conf
 share/qt4/mkspecs/common/gcc-base-unix.conf
 share/qt4/mkspecs/common/gcc-base.conf
 share/qt4/mkspecs/common/ghs-base-integrity.conf
 share/qt4/mkspecs/common/integrity/qplatformdefs.h
+share/qt4/mkspecs/common/ios.conf
+share/qt4/mkspecs/common/ios/GLES/gl.h
+share/qt4/mkspecs/common/ios/GLES2/gl2.h
+share/qt4/mkspecs/common/ios/arch.conf
+share/qt4/mkspecs/common/ios/clang.conf
+share/qt4/mkspecs/common/ios/g++.conf
+share/qt4/mkspecs/common/ios/llvm.conf
+share/qt4/mkspecs/common/ios/qmake.conf
+share/qt4/mkspecs/common/ios/qplatformdefs.h
+share/qt4/mkspecs/common/ios/versions.conf
 share/qt4/mkspecs/common/linux.conf
 share/qt4/mkspecs/common/llvm.conf
 share/qt4/mkspecs/common/mac.conf
@@ -76,6 +91,7 @@ share/qt4/mkspecs/features/declarative_debug.prf
 share/qt4/mkspecs/features/default_post.prf
 share/qt4/mkspecs/features/default_pre.prf
 share/qt4/mkspecs/features/designer.prf
+share/qt4/mkspecs/features/device_config.prf
 share/qt4/mkspecs/features/dll.prf
 share/qt4/mkspecs/features/egl.prf
 share/qt4/mkspecs/features/enable_backup.prf
@@ -287,16 +303,10 @@ share/qt4/mkspecs/netbsd-g++/qmake.conf
 share/qt4/mkspecs/netbsd-g++/qplatformdefs.h
 share/qt4/mkspecs/openbsd-g++/qmake.conf
 share/qt4/mkspecs/openbsd-g++/qplatformdefs.h
-share/qt4/mkspecs/qpa/common/g++-base-macx-iphone.conf
-share/qt4/mkspecs/qpa/common/g++-base-macx-iphonedevice.conf
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv6/qmake.conf
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv6/qplatformdefs.h
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv7-nothumb/qmake.conf
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv7-nothumb/qplatformdefs.h
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++/qmake.conf
-share/qt4/mkspecs/qpa/macx-iphonedevice-g++/qplatformdefs.h
-share/qt4/mkspecs/qpa/macx-iphonesimulator-g++/qmake.conf
-share/qt4/mkspecs/qpa/macx-iphonesimulator-g++/qplatformdefs.h
+share/qt4/mkspecs/qnx-armv7le-qcc/qmake.conf
+share/qt4/mkspecs/qnx-armv7le-qcc/qplatformdefs.h
+share/qt4/mkspecs/qnx-x86-qcc/qmake.conf
+share/qt4/mkspecs/qnx-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/qws/freebsd-generic-g++/qmake.conf
 share/qt4/mkspecs/qws/freebsd-generic-g++/qplatformdefs.h
 share/qt4/mkspecs/qws/integrity-arm-cxarm/qmake.conf
@@ -401,10 +411,6 @@ share/qt4/mkspecs/unixware-cc/qmake.conf
 share/qt4/mkspecs/unixware-cc/qplatformdefs.h
 share/qt4/mkspecs/unixware-g++/qmake.conf
 share/qt4/mkspecs/unixware-g++/qplatformdefs.h
-share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc/qmake.conf
-share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc/qplatformdefs.h
-share/qt4/mkspecs/unsupported/blackberry-x86-qcc/qmake.conf
-share/qt4/mkspecs/unsupported/blackberry-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/linux-armcc/qmake.conf
 share/qt4/mkspecs/unsupported/linux-armcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/linux-clang/qmake.conf
@@ -417,12 +423,32 @@ share/qt4/mkspecs/unsupported/macx-clang/Info.plist.app
 share/qt4/mkspecs/unsupported/macx-clang/Info.plist.lib
 share/qt4/mkspecs/unsupported/macx-clang/qmake.conf
 share/qt4/mkspecs/unsupported/macx-clang/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-clang-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-clang-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-clang/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-clang/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-g++-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-g++-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-g++/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-g++/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-llvm-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-llvm-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iosdevice-llvm/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iosdevice-llvm/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-clang-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-clang-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-clang/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-clang/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-g++-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-g++-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-g++/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-g++/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-llvm-legacy/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-llvm-legacy/qplatformdefs.h
+share/qt4/mkspecs/unsupported/macx-iossimulator-llvm/qmake.conf
+share/qt4/mkspecs/unsupported/macx-iossimulator-llvm/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qnx-X11-g++/qmake.conf
 share/qt4/mkspecs/unsupported/qnx-X11-g++/qplatformdefs.h
-share/qt4/mkspecs/unsupported/qnx-armv7le-qcc/qmake.conf
-share/qt4/mkspecs/unsupported/qnx-armv7le-qcc/qplatformdefs.h
-share/qt4/mkspecs/unsupported/qnx-x86-qcc/qmake.conf
-share/qt4/mkspecs/unsupported/qnx-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qws/integrity-x86-cx86/qmake.conf
 share/qt4/mkspecs/unsupported/qws/integrity-x86-cx86/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qws/linux-x86-openkode-g++/qmake.conf
@@ -457,6 +483,8 @@ share/qt4/mkspecs/win32-msvc2008/qmake.conf
 share/qt4/mkspecs/win32-msvc2008/qplatformdefs.h
 share/qt4/mkspecs/win32-msvc2010/qmake.conf
 share/qt4/mkspecs/win32-msvc2010/qplatformdefs.h
+share/qt4/mkspecs/win32-msvc2012/qmake.conf
+share/qt4/mkspecs/win32-msvc2012/qplatformdefs.h
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/default_post.prf
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/qmake.conf
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/qplatformdefs.h
@@ -547,6 +575,7 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/wince50standard-mipsii-msvc2005
 @dirrm share/qt4/mkspecs/wince50standard-armv4i-msvc2008
 @dirrm share/qt4/mkspecs/wince50standard-armv4i-msvc2005
+@dirrm share/qt4/mkspecs/win32-msvc2012
 @dirrm share/qt4/mkspecs/win32-msvc2010
 @dirrm share/qt4/mkspecs/win32-msvc2008
 @dirrm share/qt4/mkspecs/win32-msvc2005
@@ -565,16 +594,24 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/unsupported/qws/linux-x86-openkode-g++
 @dirrm share/qt4/mkspecs/unsupported/qws/integrity-x86-cx86
 @dirrm share/qt4/mkspecs/unsupported/qws
-@dirrm share/qt4/mkspecs/unsupported/qnx-x86-qcc
-@dirrm share/qt4/mkspecs/unsupported/qnx-armv7le-qcc
 @dirrm share/qt4/mkspecs/unsupported/qnx-X11-g++
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-llvm-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-llvm
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-g++-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-g++
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-clang-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iossimulator-clang
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-llvm-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-llvm
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-g++-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-g++
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-clang-legacy
+@dirrm share/qt4/mkspecs/unsupported/macx-iosdevice-clang
 @dirrm share/qt4/mkspecs/unsupported/macx-clang
 @dirrm share/qt4/mkspecs/unsupported/linux-scratchbox2-g++
 @dirrm share/qt4/mkspecs/unsupported/linux-host-g++
 @dirrm share/qt4/mkspecs/unsupported/linux-clang
 @dirrm share/qt4/mkspecs/unsupported/linux-armcc
-@dirrm share/qt4/mkspecs/unsupported/blackberry-x86-qcc
-@dirrm share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc
 @dirrm share/qt4/mkspecs/unsupported
 @dirrm share/qt4/mkspecs/unixware-g++
 @dirrm share/qt4/mkspecs/unixware-cc
@@ -629,12 +666,8 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/qws/integrity-arm-cxarm
 @dirrm share/qt4/mkspecs/qws/freebsd-generic-g++
 @dirrm share/qt4/mkspecs/qws
-@dirrm share/qt4/mkspecs/qpa/macx-iphonesimulator-g++
-@dirrm share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv7-nothumb
-@dirrm share/qt4/mkspecs/qpa/macx-iphonedevice-g++-armv6
-@dirrm share/qt4/mkspecs/qpa/macx-iphonedevice-g++
-@dirrm share/qt4/mkspecs/qpa/common
-@dirrm share/qt4/mkspecs/qpa
+@dirrm share/qt4/mkspecs/qnx-x86-qcc
+@dirrm share/qt4/mkspecs/qnx-armv7le-qcc
 @dirrm share/qt4/mkspecs/openbsd-g++
 @dirrm share/qt4/mkspecs/netbsd-g++
 @dirrmtry share/qt4/mkspecs/modules
@@ -696,10 +729,15 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/common/qnx
 @dirrm share/qt4/mkspecs/common/posix
 @dirrm share/qt4/mkspecs/common/mac
+@dirrm share/qt4/mkspecs/common/ios/GLES2
+@dirrm share/qt4/mkspecs/common/ios/GLES
+@dirrm share/qt4/mkspecs/common/ios
 @dirrm share/qt4/mkspecs/common/integrity
 @dirrm share/qt4/mkspecs/common/c89
 @dirrm share/qt4/mkspecs/common/aix
 @dirrm share/qt4/mkspecs/common
+@dirrm share/qt4/mkspecs/blackberry-x86-qcc
+@dirrm share/qt4/mkspecs/blackberry-armv7le-qcc
 @dirrm share/qt4/mkspecs/aix-xlc-64
 @dirrm share/qt4/mkspecs/aix-xlc
 @dirrm share/qt4/mkspecs/aix-g++-64

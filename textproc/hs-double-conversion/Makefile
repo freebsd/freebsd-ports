@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	double-conversion
-PORTVERSION=	0.2.0.5
+PORTVERSION=	0.2.0.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Fast conversion between double-precision floating point and text
+COMMENT=	Fast conversion between double-precision floating-point and text
 
 LICENSE=	BSD
 

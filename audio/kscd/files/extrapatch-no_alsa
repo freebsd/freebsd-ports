@@ -1,0 +1,13 @@
+--- CMakeLists.txt~	2012-06-29 17:23:16.000000000 -0300
++++ CMakeLists.txt	2012-06-29 17:24:13.000000000 -0300
+@@ -8,8 +8,8 @@
+ include(MacroLibrary)
+ include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
+ 
+-find_package(Alsa)
+-alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
++find_file(CONFIG_ALSA_H_CMAKE config-alsa.h.cmake ${CMAKE_MODULE_PATH})
++configure_file(${CONFIG_ALSA_H_CMAKE} ${CMAKE_BINARY_DIR}/config-alsa.h)
+ 
+ 
+ # If these two fail, behavior falls back to pre-git-migration

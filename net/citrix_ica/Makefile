@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	10.6
-PORTREVISION=	1
+PORTVERSION=	12.1
 CATEGORIES=	net comms linux
-MASTER_SITES=
-DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
+DISTNAME=	linuxx86_12.1.0.203066
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_LINUX_APPS=	openmotif
+USE_LINUX_APPS=	openmotif alsalib
 RESTRICTED=	License prohibits redistribution
-IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 CDIR=		${PREFIX}/ICAClient
-BINDIR=		${PREFIX}/bin
 CERTDIR=	${CDIR}/keystore/cacerts
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
@@ -40,25 +36,12 @@ SUB_LIST=	CDIR=${CDIR}
 
 .include <bsd.port.pre.mk>
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.'
+.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/receivers-by-platform/receiver-for-linux-121.html to accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	@${ECHO} ""
-	@${ECHO} "You have to fetch the file manually from"
-	@${ECHO} ""
-	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=3323&pID=186"
-	@${ECHO} ""
-	@${ECHO} "Once en.linuxx86.tar.gz has been downloaded move it to"
-	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
-	@${ECHO} ""
-	@${FALSE}
-.endif
-
-.if defined(ICA_CERTS)
 pre-fetch:
+.if defined(ICA_CERTS)
 .for f in ${ICA_CERTS}
 	@echo "Checking ${f}"
 .if !exists(${DISTDIR}/${f})
@@ -69,6 +52,7 @@ pre-fetch:
 .endif
 
 do-install:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
 	@if (test -d "${CDIR}") ; \
 	then \
 		${ECHO} "-----------------------------------------------------------" ; \

@@ -52,7 +52,7 @@ PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
 		stuff/poutput-dga.c stuff/poutput-keyboard.c \
 		stuff/poutput-vcsa.c stuff/poutput-x11.c
 
-OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL
+OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL DOCS
 
 ADPLUG_DESC=	adplug support
 MIDI_DESC=	timidity support
@@ -109,7 +109,7 @@ PLIST_SUB+=		FLAC="@comment "
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ENV+=	DOCS="\#"
 .endif
 

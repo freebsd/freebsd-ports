@@ -1,23 +1,45 @@
---- cmake/FindPython.cmake.orig	2012-09-18 20:21:00.000000000 +0100
-+++ cmake/FindPython.cmake	2012-09-19 17:28:30.968900751 +0100
-@@ -34,8 +34,7 @@
+--- cmake/FindPython.cmake.orig	2013-01-11 00:10:37.730703018 +0000
++++ cmake/FindPython.cmake	2013-01-11 00:21:33.725664455 +0000
+@@ -33,17 +33,9 @@
+    SET(PYTHON_FIND_QUIETLY TRUE)
  ENDIF(PYTHON_FOUND)
  
- FIND_PROGRAM(PYTHON_EXECUTABLE
--  NAMES python2.7 python2.6 python2.5 python
--  PATHS /usr/bin /usr/local/bin /usr/pkg/bin
+-IF(ENABLE_PYTHON3)
+-  FIND_PROGRAM(PYTHON_EXECUTABLE
+-    NAMES python3.4 python3.3 python3.2 python3.1 python3.0 python3 python2.7 python2.6 python2.5 python
+-    PATHS /usr/bin /usr/local/bin /usr/pkg/bin
+-    )
+-ELSE(ENABLE_PYTHON3)
+-  FIND_PROGRAM(PYTHON_EXECUTABLE
+-    NAMES python2.7 python2.6 python2.5 python
+-    PATHS /usr/bin /usr/local/bin /usr/pkg/bin
+-    )
+-ENDIF(ENABLE_PYTHON3)
++FIND_PROGRAM(PYTHON_EXECUTABLE
 +  NAMES ${BSD_PYTHON_CMD}
-   )
++  )
  
  IF(PYTHON_EXECUTABLE)
-@@ -60,24 +59,12 @@
+   EXECUTE_PROCESS(
+@@ -65,32 +57,13 @@
+     NAMES Python.h
+     PATHS ${PYTHON_INC_DIR}
      )
- 
-   FIND_LIBRARY(PYTHON_LIBRARY
--    NAMES python2.7 python2.6 python2.5 python
+-  IF(ENABLE_PYTHON3)
+-    FIND_LIBRARY(PYTHON_LIBRARY
+-      NAMES python3.4 python3.3 python3.2 python3.1 python3.0 python3 python2.7 python2.6 python2.5 python
+-      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
+-      )
+-  ELSE(ENABLE_PYTHON3)
+-    FIND_LIBRARY(PYTHON_LIBRARY
+-      NAMES python2.7 python2.6 python2.5 python
+-      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
+-      )
+-  ENDIF(ENABLE_PYTHON3)
++
++  FIND_LIBRARY(PYTHON_LIBRARY
 +    NAMES ${BSD_PYTHON_VER}
-     PATHS ${PYTHON_POSSIBLE_LIB_PATH}
-     )
++    )
  
    IF(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
 -    EXECUTE_PROCESS(

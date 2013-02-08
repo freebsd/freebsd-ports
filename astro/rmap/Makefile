@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rmap
-# Date created:				29 Mar 2000
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	rmap
 PORTVERSION=	1.2

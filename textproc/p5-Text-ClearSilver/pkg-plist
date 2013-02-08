@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/ClearSilver.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/ClearSilver.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver/Compat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver/FunctionSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver/FunctionSet/html.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver/FunctionSet/string.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver/FunctionSet
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/ClearSilver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

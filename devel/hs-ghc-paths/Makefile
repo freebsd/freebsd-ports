@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ghc-paths
-PORTVERSION=	0.1.0.8
-PORTREVISION=	5
+PORTVERSION=	0.1.0.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Utility looking for GHC installation directories
+COMMENT=	Knowledge of GHC's installation directories
 
 LICENSE=	BSD
 

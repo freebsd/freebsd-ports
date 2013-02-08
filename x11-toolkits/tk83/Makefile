@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2013-04-04
+
 USE_TCL=	83
 USE_TCL_BUILD=	83
 

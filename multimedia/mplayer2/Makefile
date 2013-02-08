@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--cc=${CC} \
 MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
 		CONFDIR=${PREFIX}/etc/mplayer
 
-MPLAYER2_SNAPSHOT_DATE=	2012-11-03
+MPLAYER2_SNAPSHOT_DATE=	2013-01-26
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 MAKE_JOBS_SAFE=	yes
@@ -83,10 +83,6 @@ CONFLICTS=	mplayer-1.*
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${OSVERSION} < 802502
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
 .endif
 
 .if ${OSVERSION} < 803000
@@ -216,10 +212,10 @@ CONFIGURE_ARGS+=	--disable-real
 .if ${PORT_OPTIONS:MV4L}
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=		v4l2:${PORTSDIR}/multimedia/libv4l
-CONFIGURE_ARGS+=	--enable-tv-v4l1 --enable-tv-v4l2
-EXTRA_LIBS+=		-lv4l1 -lv4l2
+CONFIGURE_ARGS+=	--enable-tv-v4l2
+EXTRA_LIBS+=		-lv4l2
 .else
-CONFIGURE_ARGS+=	--disable-tv-v4l1 --disable-tv-v4l2
+CONFIGURE_ARGS+=	--disable-tv-v4l2
 .endif
 
 .if defined(EXTRA_LIBS)

@@ -1,17 +1,15 @@
 bin/gtk-gnutella
 share/applications/gtk-gnutella.desktop
+%%DATADIR%%/%%ARCH%%-freebsd/gtk-gnutella.nm
 %%DATADIR%%/bogons.txt
-%%DATADIR%%/favicon.png
-%%DATADIR%%/geo-ip.txt
-%%DATADIR%%/hostiles.txt
-%%DATADIR%%/robots.txt
-%%DATADIR%%/spam.txt
-%%DATADIR%%/spam_sha1.txt
-%%DATADIR%%/en/FAQ
 %%DATADIR%%/el/FAQ
+%%DATADIR%%/en/FAQ
+%%DATADIR%%/favicon.png
+%%DATADIR%%/fr/FAQ
+%%DATADIR%%/geo-ip.txt
+%%DATADIR%%/geo-ipv6.txt
+%%DATADIR%%/hostiles.txt
 %%DATADIR%%/ja/FAQ
-%%I386%%%%DATADIR%%/i386-freebsd/gtk-gnutella.nm
-%%AMD64%%%%DATADIR%%/amd64-freebsd/gtk-gnutella.nm
 %%DATADIR%%/pixmaps/arrow_down.xpm
 %%DATADIR%%/pixmaps/arrow_up.xpm
 %%DATADIR%%/pixmaps/booklib.xpm
@@ -39,9 +37,11 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/magnet.16x16.png
 %%DATADIR%%/pixmaps/magnet.32x32.png
 %%DATADIR%%/pixmaps/magnet.64x64.png
+%%DATADIR%%/pixmaps/natpmp.xpm
 %%DATADIR%%/pixmaps/no_firewall.xpm
 %%DATADIR%%/pixmaps/offline.xpm
 %%DATADIR%%/pixmaps/online.xpm
+%%DATADIR%%/pixmaps/pause.xpm
 %%DATADIR%%/pixmaps/save.xpm
 %%DATADIR%%/pixmaps/smallserver.xpm
 %%DATADIR%%/pixmaps/star-black.xpm
@@ -59,14 +59,30 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/upnp-unusable.xpm
 %%DATADIR%%/pixmaps/upnp.xpm
 %%DATADIR%%/pixmaps/warning.xpm
+%%DATADIR%%/robots.txt
+%%DATADIR%%/spam.txt
+%%DATADIR%%/spam_sha1.txt
+%%DATADIR%%/tr/FAQ
+%%NLS%%share/locale/de/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/el/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gtk-gnutella.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
-@dirrmtry bin
-@dirrmtry share/applications
-%%I386%%@dirrm %%DATADIR%%/i386-freebsd
-%%AMD64%%@dirrm %%DATADIR%%/amd64-freebsd
+@dirrm %%DATADIR%%/tr
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/el
-@dirrm %%DATADIR%%/en
 @dirrm %%DATADIR%%/ja
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%/en
+@dirrm %%DATADIR%%/el
+@dirrm %%DATADIR%%/%%ARCH%%-freebsd
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

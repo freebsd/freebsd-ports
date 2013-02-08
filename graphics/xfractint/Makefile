@@ -7,6 +7,7 @@
 
 PORTNAME=	xfractint
 PORTVERSION=	20.04p12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fractint.org/ftp/current/linux/	\
 		http://twegner.dyndns.org/fractint/ftp/current/linux/

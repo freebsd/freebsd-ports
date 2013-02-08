@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libnaji
-# Date created:				18 May 2005
-# Whom:					NECDET COKYAZICI <cokyazici@yahoo.co.uk>
-#
+# Created by: NECDET COKYAZICI <cokyazici@yahoo.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	libnaji
 PORTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/najitool/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A library that generates, converts, and filters files
 
 DISTVERSIONSUFFIX=	.src

@@ -1,0 +1,13 @@
+--- sesman/Makefile.am.orig	2009-05-18 23:23:48.000000000 -0500
++++ sesman/Makefile.am	2010-10-02 16:07:53.000000000 -0500
+@@ -55,4 +55,4 @@
+ sesmansysconf_DATA = \
+-  sesman.ini \
+-  startwm.sh
++  sesman.ini.sample \
++  startwm.sh.sample
+ 
+@@ -66,2 +66,2 @@
+ install-data-hook:
+-	chmod 755 $(DESTDIR)$(sysconfdir)/xrdp/startwm.sh
++	chmod 755 $(DESTDIR)$(sysconfdir)/xrdp/startwm.sh.sample

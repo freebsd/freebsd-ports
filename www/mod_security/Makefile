@@ -80,7 +80,7 @@ post-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc" ${DOCSDIR}/)
 .endif
 .if defined(WITH_MLOGC)
-	${INSTALL_PROGRAM} ${WRKSRC}/mlogc-src/mlogc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mlogc/mlogc ${PREFIX}/bin/
 .endif
 
 .include <bsd.port.post.mk>

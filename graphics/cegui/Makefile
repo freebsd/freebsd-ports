@@ -1,13 +1,9 @@
-# New ports collection makefile for:	cegui
-# Date created:				03 Oct 2005
-# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cegui
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.7.9
+#PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/${PORTVERSION}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -18,8 +14,8 @@ COMMENT=	A library providing windowing and widgets for graphics APIs
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
 CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
@@ -40,7 +36,9 @@ USE_PYTHON=	2.6+
 USE_GNOME=	gnomehack
 PLIST_SUB+=	WITH_OGRE=""
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README COPYING
 .endif
 
@@ -56,7 +54,7 @@ post-patch:
 		${WRKSRC}/cegui/include/ScriptingModules/LuaScriptModule/support/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}

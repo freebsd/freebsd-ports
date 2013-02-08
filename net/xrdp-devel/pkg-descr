@@ -1,0 +1,13 @@
+Based on the work of rdesktop, xrdp uses the remote desktop protocol to
+present a GUI to the user.
+
+The goal of this project is to provide a fully functional Linux terminal
+server, capable of accepting connections from rdesktop and Microsoft's own
+terminal server / remote desktop clients.
+
+Unlike Windows NT/2000/2003 server, xrdp will not display a Windows desktop
+but an X window desktop to the user.
+
+Xrdp uses Xvnc or X11rdp to manage the X session.
+
+WWW: http://www.xrdp.org/

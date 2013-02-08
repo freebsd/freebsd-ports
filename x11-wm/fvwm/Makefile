@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fvwm
-# Date created:		12 May 1995
-# Whom:			me
-#
+# Created by: me
 # $FreeBSD$
-#
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r

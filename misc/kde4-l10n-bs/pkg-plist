@@ -209,7 +209,6 @@ share/locale/bs/LC_MESSAGES/kcmstyle.mo
 share/locale/bs/LC_MESSAGES/kcmusb.mo
 share/locale/bs/LC_MESSAGES/kcmview1394.mo
 share/locale/bs/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/bs/LC_MESSAGES/kcmxinerama.mo
 share/locale/bs/LC_MESSAGES/kcolorchooser.mo
 share/locale/bs/LC_MESSAGES/kcron.mo
 share/locale/bs/LC_MESSAGES/kde-menu.mo
@@ -232,24 +231,16 @@ share/locale/bs/LC_MESSAGES/kdmgreet.mo
 share/locale/bs/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/bs/LC_MESSAGES/keditbookmarks.mo
 share/locale/bs/LC_MESSAGES/kfile.mo
-share/locale/bs/LC_MESSAGES/kfile_avi.mo
 share/locale/bs/LC_MESSAGES/kfile_dds.mo
 share/locale/bs/LC_MESSAGES/kfile_drgeo.mo
 share/locale/bs/LC_MESSAGES/kfile_exr.mo
-share/locale/bs/LC_MESSAGES/kfile_flac.mo
 share/locale/bs/LC_MESSAGES/kfile_kig.mo
 share/locale/bs/LC_MESSAGES/kfile_mail.mo
-share/locale/bs/LC_MESSAGES/kfile_mp3.mo
-share/locale/bs/LC_MESSAGES/kfile_mpc.mo
-share/locale/bs/LC_MESSAGES/kfile_ogg.mo
 share/locale/bs/LC_MESSAGES/kfile_pnm.mo
 share/locale/bs/LC_MESSAGES/kfile_raw.mo
 share/locale/bs/LC_MESSAGES/kfile_rgb.mo
 share/locale/bs/LC_MESSAGES/kfile_rpm.mo
-share/locale/bs/LC_MESSAGES/kfile_sid.mo
-share/locale/bs/LC_MESSAGES/kfile_theora.mo
 share/locale/bs/LC_MESSAGES/kfile_tiff.mo
-share/locale/bs/LC_MESSAGES/kfile_wav.mo
 share/locale/bs/LC_MESSAGES/kfile_xps.mo
 share/locale/bs/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/bs/LC_MESSAGES/kfilereplace.mo
@@ -478,6 +469,7 @@ share/locale/bs/LC_MESSAGES/libkworkspace.mo
 share/locale/bs/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/bs/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/bs/LC_MESSAGES/libmailcommon.mo
+share/locale/bs/LC_MESSAGES/libmailimporter.mo
 share/locale/bs/LC_MESSAGES/libmailtransport.mo
 share/locale/bs/LC_MESSAGES/libmessagecomposer.mo
 share/locale/bs/LC_MESSAGES/libmessagecore.mo
@@ -595,6 +587,7 @@ share/locale/bs/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
+share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -610,7 +603,6 @@ share/locale/bs/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_searchbox.mo
-share/locale/bs/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -708,7 +700,6 @@ share/locale/bs/LC_MESSAGES/solid-network.mo
 share/locale/bs/LC_MESSAGES/solid_qt.mo
 share/locale/bs/LC_MESSAGES/solidcontrol.mo
 share/locale/bs/LC_MESSAGES/soliduiserver.mo
-share/locale/bs/LC_MESSAGES/spy.mo
 share/locale/bs/LC_MESSAGES/step.mo
 share/locale/bs/LC_MESSAGES/step_qt.mo
 share/locale/bs/LC_MESSAGES/strigila_diff.mo

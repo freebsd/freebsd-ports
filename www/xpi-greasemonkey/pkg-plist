@@ -28,7 +28,6 @@
 %%XPI_XPIDIR%%/content/third-party/mpl-utils.js
 %%XPI_XPIDIR%%/content/third-party/toolbar-mac.png
 %%XPI_XPIDIR%%/content/xmlhttprequester.js
-%%XPI_XPIDIR%%/defaults/preferences
 %%XPI_XPIDIR%%/defaults/preferences/greasemonkey.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/locale/ar/gm-addons.dtd
@@ -37,18 +36,12 @@
 %%XPI_XPIDIR%%/locale/ar/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/ar/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/ar/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/ca-AD/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/ca-AD/gm-addons.properties
-%%XPI_XPIDIR%%/locale/ca-AD/gm-browser.properties
-%%XPI_XPIDIR%%/locale/ca-AD/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/cs-CZ/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/cs-CZ/gm-addons.properties
-%%XPI_XPIDIR%%/locale/cs-CZ/gm-browser.properties
-%%XPI_XPIDIR%%/locale/cs-CZ/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/cs-CZ/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/cs-CZ/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ca/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/ca/gm-addons.properties
+%%XPI_XPIDIR%%/locale/ca/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ca/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/ca/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ca/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/cs/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/cs/gm-addons.properties
 %%XPI_XPIDIR%%/locale/cs/gm-browser.properties
@@ -103,24 +96,18 @@
 %%XPI_XPIDIR%%/locale/es-MX/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/es-MX/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/es-MX/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/es/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/es/gm-addons.properties
-%%XPI_XPIDIR%%/locale/es/gm-browser.properties
-%%XPI_XPIDIR%%/locale/es/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/es/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/es/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/et-EE/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/et-EE/gm-addons.properties
-%%XPI_XPIDIR%%/locale/et-EE/gm-browser.properties
-%%XPI_XPIDIR%%/locale/et-EE/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/et-EE/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/et-EE/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/fa-IR/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/fa-IR/gm-addons.properties
-%%XPI_XPIDIR%%/locale/fa-IR/gm-browser.properties
-%%XPI_XPIDIR%%/locale/fa-IR/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/fa-IR/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/fa-IR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/et/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/et/gm-addons.properties
+%%XPI_XPIDIR%%/locale/et/gm-browser.properties
+%%XPI_XPIDIR%%/locale/et/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/et/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/et/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/fa/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/fa/gm-addons.properties
+%%XPI_XPIDIR%%/locale/fa/gm-browser.properties
+%%XPI_XPIDIR%%/locale/fa/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/fa/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/fa/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/fi/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/fi/gm-addons.properties
 %%XPI_XPIDIR%%/locale/fi/gm-browser.properties
@@ -133,18 +120,18 @@
 %%XPI_XPIDIR%%/locale/fr/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/fr/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/fr/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/gl-ES/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/gl-ES/gm-addons.properties
-%%XPI_XPIDIR%%/locale/gl-ES/gm-browser.properties
-%%XPI_XPIDIR%%/locale/gl-ES/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/he-IL/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/he-IL/gm-addons.properties
-%%XPI_XPIDIR%%/locale/he-IL/gm-browser.properties
-%%XPI_XPIDIR%%/locale/he-IL/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/he-IL/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/he-IL/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/gl/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/gl/gm-addons.properties
+%%XPI_XPIDIR%%/locale/gl/gm-browser.properties
+%%XPI_XPIDIR%%/locale/gl/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/gl/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/gl/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/he/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/he/gm-addons.properties
+%%XPI_XPIDIR%%/locale/he/gm-browser.properties
+%%XPI_XPIDIR%%/locale/he/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/he/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/he/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/hu/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/hu/gm-addons.properties
 %%XPI_XPIDIR%%/locale/hu/gm-browser.properties
@@ -157,18 +144,18 @@
 %%XPI_XPIDIR%%/locale/it/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/it/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/it/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/ja-JP/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/gm-addons.properties
-%%XPI_XPIDIR%%/locale/ja-JP/gm-browser.properties
-%%XPI_XPIDIR%%/locale/ja-JP/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/ko-KR/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/ko-KR/gm-addons.properties
-%%XPI_XPIDIR%%/locale/ko-KR/gm-browser.properties
-%%XPI_XPIDIR%%/locale/ko-KR/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/ko-KR/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/ko-KR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ja/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/ja/gm-addons.properties
+%%XPI_XPIDIR%%/locale/ja/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ja/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/ja/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ja/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ko/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/ko/gm-addons.properties
+%%XPI_XPIDIR%%/locale/ko/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ko/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/ko/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ko/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/lt/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/lt/gm-addons.properties
 %%XPI_XPIDIR%%/locale/lt/gm-browser.properties
@@ -205,18 +192,18 @@
 %%XPI_XPIDIR%%/locale/ru/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/ru/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/ru/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/si-LK/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/si-LK/gm-addons.properties
-%%XPI_XPIDIR%%/locale/si-LK/gm-browser.properties
-%%XPI_XPIDIR%%/locale/si-LK/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/si-LK/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/si-LK/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/sk-SK/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/sk-SK/gm-addons.properties
-%%XPI_XPIDIR%%/locale/sk-SK/gm-browser.properties
-%%XPI_XPIDIR%%/locale/sk-SK/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/sk-SK/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/sk-SK/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/si/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/si/gm-addons.properties
+%%XPI_XPIDIR%%/locale/si/gm-browser.properties
+%%XPI_XPIDIR%%/locale/si/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/si/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/si/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/sk/gm-addons.dtd
+%%XPI_XPIDIR%%/locale/sk/gm-addons.properties
+%%XPI_XPIDIR%%/locale/sk/gm-browser.properties
+%%XPI_XPIDIR%%/locale/sk/gm-cludes.dtd
+%%XPI_XPIDIR%%/locale/sk/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/sk/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/sr/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/sr/gm-addons.properties
 %%XPI_XPIDIR%%/locale/sr/gm-browser.properties
@@ -235,12 +222,6 @@
 %%XPI_XPIDIR%%/locale/tr/gm-cludes.dtd
 %%XPI_XPIDIR%%/locale/tr/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/tr/greasemonkey.properties
-%%XPI_XPIDIR%%/locale/uk-UA/gm-addons.dtd
-%%XPI_XPIDIR%%/locale/uk-UA/gm-addons.properties
-%%XPI_XPIDIR%%/locale/uk-UA/gm-browser.properties
-%%XPI_XPIDIR%%/locale/uk-UA/gm-cludes.dtd
-%%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.dtd
-%%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/uk/gm-addons.dtd
 %%XPI_XPIDIR%%/locale/uk/gm-addons.properties
 %%XPI_XPIDIR%%/locale/uk/gm-browser.properties
@@ -270,10 +251,10 @@
 %%XPI_XPIDIR%%/modules/scriptIcon.js
 %%XPI_XPIDIR%%/modules/scriptRequire.js
 %%XPI_XPIDIR%%/modules/scriptResource.js
+%%XPI_XPIDIR%%/modules/stats.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
 %%XPI_XPIDIR%%/modules/third-party/getChromeWinForContentWin.js
-%%XPI_XPIDIR%%/modules/util.js
 %%XPI_XPIDIR%%/modules/util/alert.js
 %%XPI_XPIDIR%%/modules/util/anonWrap.js
 %%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
@@ -309,6 +290,7 @@
 %%XPI_XPIDIR%%/modules/util/windowIdForEvent.js
 %%XPI_XPIDIR%%/modules/util/windowIsClosed.js
 %%XPI_XPIDIR%%/modules/util/writeToFile.js
+%%XPI_XPIDIR%%/modules/util.js
 %%XPI_XPIDIR%%/skin/addons4.css
 %%XPI_XPIDIR%%/skin/bindings.css
 %%XPI_XPIDIR%%/skin/browser.css
@@ -319,48 +301,44 @@
 %%XPI_XPIDIR%%/skin/options.css
 %%XPI_XPIDIR%%/skin/scriptprefs.css
 %%XPI_XPIDIR%%/skin/userscript.png
-@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/content/third-party
 @dirrm %%XPI_XPIDIR%%/content
-@dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
 @dirrm %%XPI_XPIDIR%%/locale/ar
-@dirrm %%XPI_XPIDIR%%/locale/ca-AD
+@dirrm %%XPI_XPIDIR%%/locale/ca
 @dirrm %%XPI_XPIDIR%%/locale/cs
-@dirrm %%XPI_XPIDIR%%/locale/cs-CZ
 @dirrm %%XPI_XPIDIR%%/locale/da
 @dirrm %%XPI_XPIDIR%%/locale/de
 @dirrm %%XPI_XPIDIR%%/locale/el
 @dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale/es
 @dirrm %%XPI_XPIDIR%%/locale/es-AR
 @dirrm %%XPI_XPIDIR%%/locale/es-CL
 @dirrm %%XPI_XPIDIR%%/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/locale/es-MX
-@dirrm %%XPI_XPIDIR%%/locale/et-EE
-@dirrm %%XPI_XPIDIR%%/locale/fa-IR
+@dirrm %%XPI_XPIDIR%%/locale/et
+@dirrm %%XPI_XPIDIR%%/locale/fa
 @dirrm %%XPI_XPIDIR%%/locale/fi
 @dirrm %%XPI_XPIDIR%%/locale/fr
-@dirrm %%XPI_XPIDIR%%/locale/gl-ES
-@dirrm %%XPI_XPIDIR%%/locale/he-IL
+@dirrm %%XPI_XPIDIR%%/locale/gl
+@dirrm %%XPI_XPIDIR%%/locale/he
 @dirrm %%XPI_XPIDIR%%/locale/hu
 @dirrm %%XPI_XPIDIR%%/locale/it
-@dirrm %%XPI_XPIDIR%%/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/locale/ja
+@dirrm %%XPI_XPIDIR%%/locale/ko
 @dirrm %%XPI_XPIDIR%%/locale/lt
 @dirrm %%XPI_XPIDIR%%/locale/nl
 @dirrm %%XPI_XPIDIR%%/locale/pl
 @dirrm %%XPI_XPIDIR%%/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/locale/ro
 @dirrm %%XPI_XPIDIR%%/locale/ru
-@dirrm %%XPI_XPIDIR%%/locale/si-LK
-@dirrm %%XPI_XPIDIR%%/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/locale/si
+@dirrm %%XPI_XPIDIR%%/locale/sk
 @dirrm %%XPI_XPIDIR%%/locale/sr
 @dirrm %%XPI_XPIDIR%%/locale/sv-SE
 @dirrm %%XPI_XPIDIR%%/locale/tr
 @dirrm %%XPI_XPIDIR%%/locale/uk
-@dirrm %%XPI_XPIDIR%%/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/locale

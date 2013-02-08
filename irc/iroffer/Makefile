@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iroffer
-# Date created:				November 22, 2000
-# Whom:	      				Donald Burr <dburr@FreeBSD.ORG>
-#
+# Created by: Donald Burr <dburr@FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	iroffer
 PORTVERSION=	1.4.3

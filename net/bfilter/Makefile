@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bfilter
-# Date created:				10.05.2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bfilter
 PORTVERSION=	1.1.4
@@ -17,6 +13,8 @@ COMMENT=	Smart filtering HTTP proxy
 LIB_DEPENDS=	ACE.6:${PORTSDIR}/devel/ace \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes

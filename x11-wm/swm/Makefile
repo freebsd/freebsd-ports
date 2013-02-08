@@ -1,9 +1,5 @@
-# New ports collection makefile for:	swm
-# Date created:				2000-12-16
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	swm
 PORTVERSION=	1.3.4c

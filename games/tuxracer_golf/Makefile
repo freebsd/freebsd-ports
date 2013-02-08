@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxracer_golf
-# Date created:				17 May 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxracer_golf
 PORTVERSION=	1.00
@@ -15,6 +11,8 @@ MASTER_SITE_SUBDIR=	adamw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A golf course theme for Tux Racer
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		overwrite a file owned by tuxracer: share/tuxracer/courses/common/buttprint.rgb
 
 RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer

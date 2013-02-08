@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-qt4-qscintilla2
-# Date created:				2007-02-20
-# Whom:					Danny Pansters <danny@ricin.com>
-#
+# Created by: Danny Pansters <danny@ricin.com>
 # $FreeBSD$
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -16,7 +12,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module
 
-LIB_DEPENDS=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui
@@ -27,7 +23,9 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	gui
 
-OPTIONS=	API	"Install binding API for QScintilla2" on
+OPTIONS_DEFINE=	API
+OPTIONS_DEFAULT=API
+API_DESC=	Install binding API for QScintilla2
 
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
@@ -36,16 +34,10 @@ ARGS=		-p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 
-.if defined(WITH_DEBUG)
-ARGS+=		-u -r
-.endif
-
-.include "../py-sip/files/bsd.pyqt.mk"
+.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-PYVER=		${PYTHON_VER}
-
-.if defined(WITHOUT_API)
+.if empty(PORT_OPTIONS:MAPI)
 ARGS+=		-a /dev/null
 PLIST_SUB+=	API="@comment "
 .else
@@ -53,15 +45,12 @@ ARGS+=		-a ${QSCIDIR}
 PLIST_SUB+=	API=""
 .endif
 
+.if defined(WITH_DEBUG)
+ARGS+=		-u -r
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
 		${PYTHON_CMD} configure.py ${ARGS}
-
-post-configure:
-		${REINPLACE_CMD} \
-			-e 's|CC = cc|CC = ${CC}|'\
-			-e 's|CXX = c++|CXX = ${CXX}|'\
-			-e 's|LINK = c++|LINK = ${CXX}|'\
-			${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

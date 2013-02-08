@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnome-icons-gion
-# Date created:		2008-09-29
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gion
 PORTVERSION=	0.1.2

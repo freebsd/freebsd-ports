@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-vpopmail
-# Date created:				12 January 2003.
-# Whom:	      				James Raftery <james@now.ie>
-#
+# Created by: James Raftery <james@now.ie>
 # $FreeBSD$
-#
 
 PORTNAME=	vpopmail
 PORTVERSION=	0.08
@@ -15,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	james@now.ie
 COMMENT=	Perl module to provide access to vpopmail API
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 VPOPMAIL_PORT?=	mail/vpopmail
 
 BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/${VPOPMAIL_PORT}

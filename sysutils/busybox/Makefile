@@ -1,18 +1,17 @@
-# New ports collection makefile for:	busybox
-# Date created:         Aug.18, 2008
-# Whom:                 luigi@FreeBSD.org
-#
+# Created by: luigi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	busybox
 PORTVERSION=	1.20.2
+PORTREVISION=	1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
-#PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
-#PATCH_DIST_STRIP=	-p1
-#PATCHFILES=	\
+PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=	busybox-1.20.2-kernel_ver.patch \
+		busybox-1.20.2-ntpd.patch \
+		busybox-1.20.2-sys-resource.patch
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
@@ -21,17 +20,23 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+CONFLICTS_INSTALL=	busybox-unstable-*
+
+PORTSCOUT=	limitw:1,EVEN
+
 MAKE_JOBS_SAFE=	yes
-MAKE_ARGS+=	SKIP_STRIP=y
+MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 # avoid clang, breaks in findutils/find.c l. 752+,
 # uses a GCC extension/invalid C code:
-USE_GCC=	4.2+
+USE_GCC?=	4.2+
 
 PLIST_FILES=	bin/busybox
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 USE_PERL5_BUILD=	yes
 PORTDOCS=		*
 .endif
@@ -50,7 +55,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 	${RM} -f ${DOCSDIR}/.gitignore
 .endif

@@ -1,20 +1,17 @@
-# New ports collection makefile for:	gnaural
-# Date created:		25 Jan 2012
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnaural
 PORTVERSION=	1.0.20110606
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Gnaural/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Binaural beat generator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
 		sndfile:${PORTSDIR}/audio/libsndfile

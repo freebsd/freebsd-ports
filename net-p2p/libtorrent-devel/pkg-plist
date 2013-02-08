@@ -53,6 +53,7 @@ include/torrent/utils/extents.h
 include/torrent/utils/log.h
 include/torrent/utils/log_buffer.h
 include/torrent/utils/log_files.h
+include/torrent/utils/net.h
 include/torrent/utils/option_strings.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
@@ -61,7 +62,7 @@ include/torrent/utils/thread_base.h
 lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
-lib/libtorrent.so.14
+lib/libtorrent.so.17
 libdata/pkgconfig/libtorrent.pc
 @dirrmtry include/torrent/utils
 @dirrmtry include/torrent/peer

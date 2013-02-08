@@ -8,6 +8,11 @@
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Dict.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/File.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Filter.pm
+%%SITE_PERL%%/PDF/API2/Basic/PDF/Filter/ASCII85Decode.pm
+%%SITE_PERL%%/PDF/API2/Basic/PDF/Filter/ASCIIHexDecode.pm
+%%SITE_PERL%%/PDF/API2/Basic/PDF/Filter/FlateDecode.pm
+%%SITE_PERL%%/PDF/API2/Basic/PDF/Filter/LZWDecode.pm
+%%SITE_PERL%%/PDF/API2/Basic/PDF/Filter/RunLengthDecode.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Literal.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Name.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Null.pm
@@ -108,6 +113,7 @@
 %%SITE_PERL%%/PDF/API2/UniWrap.pm
 %%SITE_PERL%%/PDF/API2/Util.pm
 %%SITE_PERL%%/PDF/API2/Win32.pm
+@dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF/Filter
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic
 @dirrm %%SITE_PERL%%/PDF/API2/Content

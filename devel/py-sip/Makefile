@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-sip
-# Date created:		Tue Oct  8 09:51:22 SAST 2002
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
 
 PORTNAME=	sip
@@ -19,28 +16,23 @@ USE_PYTHON=	2.5+
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
-ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
-		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
+ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
+		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR} \
+		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		INCDIR="${LOCALBASE}/include" LIBDIR="${LOCALBASE}/lib"
+
+PORTDOCS=	*
+
+.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
 .endif
 
-PORTDOCS=	*
-
-.include "files/bsd.pyqt.mk"
-
 do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}
-
-post-configure:
-.for item in sipgen siplib
-	${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC}|'\
-		-e 's|CXX = g++|CXX = ${CXX}|'\
-		-e 's|LINK = g++|LINK = ${CXX}|'\
-		${WRKSRC}/${item}/Makefile
-.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,26 +1,6 @@
---- ./source3/configure.in.orig	2012-10-29 09:05:46.000000000 +0000
-+++ ./source3/configure.in	2012-11-01 13:16:20.589876378 +0000
-@@ -759,7 +759,6 @@
- if test x"$ac_cv_header_md5_h" = x"yes"; then
- 	AC_DEFINE(HAVE_MD5_H, 1,
- 		[Whether md5.h is available.])
--	AC_CHECK_LIB(md5, MD5Update, [samba_cv_md5lib=md5])
- fi
- 
- if test x"$ac_cv_header_md5_h" = x"yes" -a \
-@@ -769,6 +768,11 @@
- 
- if test x"$ac_cv_header_md5_h" = x"yes" -a \
-         x"$samba_cv_md5lib" = x"none" ; then
-+	AC_CHECK_LIB(md5, MD5Update, [samba_cv_md5lib=md5])
-+fi
-+
-+if test x"$ac_cv_header_md5_h" = x"yes" -a \
-+        x"$samba_cv_md5lib" = x"none" ; then
- 	AC_CHECK_LIB(c, MD5Update, [samba_cv_md5lib=""])
- fi
- 
-@@ -868,9 +872,13 @@
+--- ./source3/configure.in.orig	2013-01-18 10:41:08.000000000 +0000
++++ ./source3/configure.in	2013-01-30 01:24:19.349878982 +0000
+@@ -864,9 +864,13 @@
  	AC_PATH_PROG(CUPS_CONFIG, cups-config)
  
          if test "x$CUPS_CONFIG" != x; then
@@ -35,7 +15,7 @@
  		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
  
  		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
-@@ -879,7 +887,7 @@
+@@ -875,7 +879,7 @@
  			# underlinked. With cups-config --libs we pull in unwanted and unneeded
  			# dendencies including thread libraries - use cups-config only if really
  			# required. 
@@ -44,7 +24,7 @@
  				[PRINT_LIBS="$ac_save_PRINT_LIBS -lcups"],
  				[AC_MSG_WARN([your cups library doesn't link with -lcups alone, it might be underlinked.]) ;
  				 PRINT_LIBS="$ac_save_PRINT_LIBS `$CUPS_CONFIG --libs`"])
-@@ -889,10 +897,10 @@
+@@ -885,10 +889,10 @@
  			AC_CHECK_LIB_EXT(cups, PRINT_LIBS, httpConnectEncrypt)
  		else
  			AC_MSG_WARN([cups-config around but cups-devel not installed])
@@ -57,7 +37,7 @@
  
  	elif test x"$enable_cups" = x"yes"; then
  		AC_MSG_ERROR(Cups support required but cups-config not located.  Make sure cups-devel related files are installed.)
-@@ -1849,7 +1857,7 @@
+@@ -1845,7 +1849,7 @@
  fi
  
  if test x"$BLDSHARED" = x"true" ; then
@@ -66,7 +46,7 @@
  fi
  
  AC_MSG_RESULT($BLDSHARED)
-@@ -1980,9 +1988,6 @@
+@@ -1976,9 +1980,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -76,7 +56,7 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -4639,15 +4644,51 @@
+@@ -4656,15 +4657,51 @@
  		x"$ac_cv_header_pam_pam_modules_h" = x"no" ; then
  		if test x"${try_pam}" = x"yes";then
  			AC_MSG_ERROR([--with-pam=yes but pam_modules.h not found])
@@ -132,7 +112,7 @@
  
  		if test x"$create_pam_modules" = x"yes"; then
  			AC_DEFINE(WITH_PAM_MODULES,1,[Whether to include PAM MODULES support])
-@@ -4657,7 +4698,7 @@
+@@ -4674,7 +4711,7 @@
  			AC_CHECK_HEADERS(pam/pam_ext.h pam/_pam_macros.h)
  			AC_CHECK_FUNC_EXT(pam_vsyslog,$PAM_LIBS)
  		else
@@ -141,28 +121,16 @@
  		fi
  	fi
  	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5859,9 +5900,17 @@
- [AC_MSG_RESULT(no)])
+@@ -5877,7 +5914,7 @@
  
  			AC_MSG_CHECKING(for aio_suspend)
--			AC_LINK_IFELSE([#include <aio.h>
--int main() { struct aiocb a; return aio_suspend(&a, 1, NULL); }],
--[AC_DEFINE(HAVE_AIO_SUSPEND, 1, [Have aio_suspend]) AC_MSG_RESULT(yes)],
-+			AC_LINK_IFELSE([
-+				#include <aio.h>
-+				#if STDC_HEADERS
-+				#include <stdlib.h>
-+				#include <stddef.h>
-+				#endif
-+				int main() {
-+					struct aiocb *a[1];
-+					return aio_suspend((const struct aiocb**)&a, 1, NULL);
-+				}
-+			], [AC_DEFINE(HAVE_AIO_SUSPEND, 1, [Have aio_suspend]) AC_MSG_RESULT(yes)],
+ 			AC_LINK_IFELSE([#include <aio.h>
+-int main() { struct aiocb a; struct timespec t; return aio_suspend(&a, 1, &t); }],
++int main() { struct aiocb *a[[1]]; struct timespec t; return aio_suspend((const struct aiocb**)&a, 1, &t); }],
+ [AC_DEFINE(HAVE_AIO_SUSPEND, 1, [Have aio_suspend]) AC_MSG_RESULT(yes)],
  [AC_MSG_RESULT(no)])
  		fi
- 
-@@ -6319,12 +6368,13 @@
+@@ -6336,12 +6373,13 @@
  		NSSSONAMEVERSIONSUFFIX=".2"
  		WINBIND_NSS_EXTRA_OBJS="../nsswitch/winbind_nss_linux.o"
  		;;
@@ -177,7 +145,7 @@
  		WINBIND_NSS="../nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="../nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -6471,10 +6521,14 @@
+@@ -6488,10 +6526,14 @@
          AC_MSG_RESULT(no$winbind_no_reason)
  fi
  
@@ -192,7 +160,7 @@
  AC_SUBST(NSSSONAMEVERSIONSUFFIX)
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
-@@ -6793,13 +6847,21 @@
+@@ -6810,13 +6852,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -215,7 +183,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -7099,6 +7161,16 @@
+@@ -7116,6 +7166,16 @@
  	LIBS="$LIBS -ldmalloc"
  fi
  
@@ -232,7 +200,7 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
-@@ -7147,6 +7219,7 @@
+@@ -7164,6 +7224,7 @@
  AC_SUBST(SMBD_LIBS)
  
  CFLAGS="${CFLAGS} \$(FLAGS)"

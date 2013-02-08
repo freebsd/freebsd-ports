@@ -7,7 +7,7 @@
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
 
@@ -67,9 +67,9 @@ USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
 DESKTOP_ENTRIES="Links" \
 		"Lynx-like hacked WWW browser" \
-		"links" \
+		"${PREFIX}/share/pixmaps/links.xpm" \
 		"links -g" \
-		"Application;Network;WebBrowser;" \
+		"Network;WebBrowser;" \
 		false
 PLIST_FILES+=	share/pixmaps/links.xpm
 .else

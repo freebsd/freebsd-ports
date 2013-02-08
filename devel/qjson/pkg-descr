@@ -2,8 +2,8 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange
 format. It can represent integers, real numbers, strings, an ordered
 sequence of values, and a collection of name/value pairs.
 
-QJson is a Qt-based library that maps JSON data to QVariant objects.
-JSON arrays will be mapped to QVariantList instances, while JSON's
-objects will be mapped to QVariantMap.
+QJson is a Qt-based library that maps JSON data to QVariant objects
+and vice versa. JSON arrays will be mapped to QVariantList instances,
+while JSON objects will be mapped to QVariantMap.
 
 WWW: http://qjson.sourceforge.net

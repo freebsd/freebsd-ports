@@ -1,9 +1,5 @@
-# New ports collection makefile for:	watchfolder
-# Date created:				21 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	watchfolder
 PORTVERSION=	0.3.3
@@ -21,6 +17,10 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
 USE_RC_SUBR=	watchd
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc $$(OPT)|${CC} ${CFLAGS}|' \
 		${WRKSRC}/Makefile
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/watchd.conf ${PREFIX}/etc/watchd.conf.sample
 	[ -f ${PREFIX}/etc/watchd.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/watchd.conf ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/watchfolder.pdf ${DOCSDIR}
 .endif

@@ -1,8 +1,0 @@
-FLTK is a cross-plattform C++ graphical user interface toolkit for X, OpenGL
-and Microsoft Windows systems.
-
-It is provided under the terms of the GNU Library Public License, Version 2.
-
-This port supplies a snapshot of the current 2.0 development version.
-
-WWW:	http://www.fltk.org/

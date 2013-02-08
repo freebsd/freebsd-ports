@@ -3,4 +3,4 @@ standard Haskell type classes as QuickCheck properties. Also some
 morphism properties. It also provides arbitrary instances and
 generator combinators for common data types.
 
-WWW: http://haskell.org/haskellwiki/checkers
+WWW: http://hackage.haskell.org/package/checkers

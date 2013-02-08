@@ -2,13 +2,4 @@ bin/xhippo
 @unexec if cmp -s %D/etc/xhippo.config %D/etc/xhippo.config.default; then rm -f %D/etc/xhippo.config; fi
 etc/xhippo.config.default
 @exec test -f %B/xhippo.config || cp %B/%f %B/xhippo.config
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/gnu-xhippo.html
-%%PORTDOCS%%%%DOCSDIR%%/screenshot.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/xhippo.html.gz
-%%PORTDOCS%%%%DOCSDIR%%/xhippo.info.gz
-%%PORTDOCS%%%%DOCSDIR%%/xhippo.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/xhippo.sgml
-%%PORTDOCS%%%%DOCSDIR%%/xhippo.txt.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/locale/de/LC_MESSAGES/xhippo.mo

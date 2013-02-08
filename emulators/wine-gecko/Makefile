@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wine_gecko
-# Date created:				2011-04-30
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wine-gecko
 DISTVERSION=	1.4
@@ -13,7 +9,7 @@ DISTNAME=	wine_gecko-${DISTVERSION}-x86
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Gecko Layout Engine for Wine (HTML support)
 
 LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3

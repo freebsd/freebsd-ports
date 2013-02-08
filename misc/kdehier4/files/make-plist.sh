@@ -16,6 +16,7 @@ echo "%%MTREE%%@cwd %%LOCALBASE%%
 %%MTREE%%@cwd %%KDE4_PREFIX%%" >> ../pkg-plist
 
 echo "%%MTREE%%etc/pam.d
+%%MTREE%%etc/polkit-1
 %%MTREE%%etc/rc.d
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%

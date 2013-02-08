@@ -65,6 +65,15 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3.py
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3agg.py
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3agg.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3agg.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3cairo.py
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3cairo.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtk3cairo.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkagg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkagg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkagg.pyo
@@ -80,6 +89,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pdf.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pdf.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pdf.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pgf.py
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pgf.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_pgf.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_ps.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_ps.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_ps.pyo
@@ -335,6 +347,7 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/home.ppm
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/home.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/home.xpm
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/matplotlib.gif
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/matplotlib.png
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/matplotlib.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/move.png
@@ -369,12 +382,32 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/zoom_to_rect.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images/zoom_to_rect.xpm
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/lineprops.glade
-%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/matplotlib.conf
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/matplotlibrc
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/AAPL.dat.gz
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/INTC.dat.gz
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/Minduka_Present_Blue_Pack.png
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/README.txt
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/aapl.csv
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/aapl.npy.gz
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/axes_grid/bivariate_normal.npy
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/ct.raw.gz
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/data_x_x2_x3.csv
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/demodata.csv
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/eeg.dat
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/embedding_in_wx3.xrc
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/goog.npy
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/lena.jpg
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/lena.png
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/logo2.png
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/membrane.dat
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/msft.csv
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/s1045.ima.gz
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl.py
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/nxutils.so
+%%PYTHON_SITELIBDIR%%/matplotlib/nxutils.py
+%%PYTHON_SITELIBDIR%%/matplotlib/nxutils.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/nxutils.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.py
 %%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.pyo
@@ -399,9 +432,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/pylab.py
 %%PYTHON_SITELIBDIR%%/matplotlib/pylab.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/pylab.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing.py
-%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py2.py
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py2.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py2.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py3.py
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py3.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/pyparsing_py3.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/pyplot.py
 %%PYTHON_SITELIBDIR%%/matplotlib/pyplot.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/pyplot.pyo
@@ -423,6 +459,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_console_highlighting.py
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_console_highlighting.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_console_highlighting.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_directive.py
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_directive.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/ipython_directive.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.py
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext/mathmpl.pyo
@@ -435,6 +474,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/spines.py
 %%PYTHON_SITELIBDIR%%/matplotlib/spines.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/spines.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/stackplot.py
+%%PYTHON_SITELIBDIR%%/matplotlib/stackplot.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/stackplot.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/streamplot.py
+%%PYTHON_SITELIBDIR%%/matplotlib/streamplot.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/streamplot.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/table.py
 %%PYTHON_SITELIBDIR%%/matplotlib/table.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/table.pyo
@@ -447,6 +492,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/decorators.py
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/decorators.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/decorators.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/image_util.py
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/image_util.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/image_util.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/jpl_units/Duration.py
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/jpl_units/Duration.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/jpl_units/Duration.pyo
@@ -474,6 +522,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/noseclasses.py
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/noseclasses.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/testing/noseclasses.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/util.py
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/util.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/testing/util.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/__init__.pyo
@@ -493,27 +544,51 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/pngsuite/basn4a16.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/pngsuite/basn6a08.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/pngsuite/basn6a16.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_test_image.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_test_image.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_arrow_patches/fancyarrow_test_image.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/arc_ellipse.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/arc_ellipse.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/arc_ellipse.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/autoscale_tiny_range.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/autoscale_tiny_range.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/autoscale_tiny_range.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axhspan_epoch.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axhspan_epoch.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axhspan_epoch.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axvspan_epoch.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axvspan_epoch.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/axvspan_epoch.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/boxplot.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/boxplot.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/boxplot.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/canonical.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/canonical.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/canonical.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/const_xy.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/const_xy.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/const_xy.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_colorbar.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_colorbar.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_colorbar.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_hatching.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_hatching.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/contour_hatching.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_basic.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_basic.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_basic.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_mixed.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_mixed.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/errorbar_mixed.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_between_interpolate.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_between_interpolate.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_between_interpolate.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_units.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_units.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/fill_units.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_large_small.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_large_small.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_large_small.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_ticker_001.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_ticker_001.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/formatter_ticker_001.svg
@@ -532,15 +607,33 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d_transpose.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d_transpose.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist2d_transpose.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked_weights.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked_weights.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_stacked_weights.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow_clip.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow_clip.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow_clip.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/log_scales.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/log_scales.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/log_scales.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/marker_edges.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/marker_edges.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/marker_edges.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/markevery.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/markevery.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/markevery.svg
@@ -583,6 +676,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/polycollection_joinstyle.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/polycollection_joinstyle.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/polycollection_joinstyle.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/scatter.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/scatter.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/scatter.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/shaped_data.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/shaped_data.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/shaped_data.svg
@@ -592,16 +688,31 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/single_point.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/single_point.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/single_point.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/stackplot_test_image.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/stackplot_test_image.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/stackplot_test_image.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog2.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog2.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/symlog2.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/transparent_markers.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/transparent_markers.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/transparent_markers.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/twin_axis_locaters_formatters.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/twin_axis_locaters_formatters.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/twin_axis_locaters_formatters.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/units_strings.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/units_strings.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/units_strings.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pdf/pdf_use14corefonts.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pgf/pgf_pdflatex.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pgf/pgf_rcupdate1.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pgf/pgf_rcupdate2.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pgf/pgf_xelatex.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_colorbar/colorbar_extensions_proportional.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_colorbar/colorbar_extensions_uniform.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_dates/DateFormatter_fractionalSeconds.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_dates/DateFormatter_fractionalSeconds.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_dates/DateFormatter_fractionalSeconds.svg
@@ -694,17 +805,29 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/image_interps.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/image_interps.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/image_interps.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/image_shift.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/image_shift.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/imshow.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/imshow.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/imshow.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/interp_nearest_vs_none.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/interp_nearest_vs_none.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/no_interpolation_origin.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/no_interpolation_origin.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/no_interpolation_origin.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image/uint16.tif
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/fancy.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/fancy.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/fancy.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto1.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto1.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto1.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto2.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto2.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_auto2.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_various_labels.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_various_labels.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend/legend_various_labels.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathfont_cm_00.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathfont_cm_01.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathfont_cm_02.png
@@ -1083,6 +1206,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_65.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_65.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_65.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_66.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_66.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_66.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_67.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_67.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_cm_67.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_00.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_00.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_00.svg
@@ -1281,6 +1410,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_65.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_65.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_65.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_66.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_66.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_66.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_67.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_67.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stix_67.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_00.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_00.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_00.svg
@@ -1479,7 +1614,18 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_65.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_65.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_65.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_66.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_66.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_66.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_67.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_67.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext/mathtext_stixsans_67.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_pickle/multi_pickle.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_png/pngsuite.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_png/uint16.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_scale/log_scales.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_scale/log_scales.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_scale/log_scales.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipper_edge.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipper_edge.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipper_edge.svg
@@ -1510,6 +1656,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_subplots/subplots_offset_text.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_subplots/subplots_offset_text.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_subplots/subplots_offset_text.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/antialiased.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/font_styles.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/font_styles.png
@@ -1517,6 +1666,7 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/multiline.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/multiline.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/multiline.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/text_contains.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout1.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout1.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout1.svg
@@ -1535,17 +1685,32 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_transforms/pre_transform_data.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_transforms/pre_transform_data.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_transforms/pre_transform_data.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_triangulation/tripcolor1.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_triangulation/tripcolor1.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_triangulation/tripcolor1.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_ttconv/truetype-conversion.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/mpltest.ttf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_arrow_patches.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_arrow_patches.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_arrow_patches.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_artist.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_artist.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_artist.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_axes.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_axes.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_axes.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pdf.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pdf.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pdf.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pgf.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pgf.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_pgf.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_svg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_svg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_backend_svg.pyo
@@ -1555,6 +1720,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_cbook.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_cbook.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_cbook.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colorbar.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colorbar.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colorbar.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colors.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colors.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_colors.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_dates.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_dates.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_dates.pyo
@@ -1579,18 +1750,37 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_mlab.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_mlab.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_mlab.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_patches.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_patches.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_patches.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_pickle.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_pickle.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_pickle.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_png.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_png.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_png.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_rcparams.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_rcparams.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_rcparams.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_rcparams.rc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_scale.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_scale.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_scale.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_simplification.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_simplification.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_simplification.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_spines.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_spines.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_spines.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_subplots.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_subplots.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_subplots.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_text.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_text.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_text.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ticker.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ticker.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ticker.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_tightlayout.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_tightlayout.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_tightlayout.pyo
@@ -1787,10 +1977,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animate_decay.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/basic_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/basic_example_writer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/double_pendulum_animated.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/histogram.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/moviewriter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/old_animation/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/old_animation/animate_decay_tk_blit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/old_animation/animation_blit_fltk.py
@@ -1834,7 +2026,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/demo_affine_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/donut_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/engineering_formatter.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/fahrenheit_celcius_scales.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/fahrenheit_celsius_scales.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_family_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_file.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/hinton_demo.py
@@ -1869,6 +2061,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_colorbar_with_inset_locator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_curvelinear_grid.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_curvelinear_grid2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_edge_colorbar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_floating_axes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_floating_axis.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes_grid/demo_parasite_axes2.py
@@ -1898,6 +2091,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pong_gtk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pong_qt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/resample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/test_mouseclicks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/timers.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/viewlims.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/zoom_window.py
@@ -1913,7 +2107,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_groupby_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_join_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/sample_data_demo.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/sample_data_test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/svg_filter_line.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/svg_filter_pie.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/tight_bbox_test.py
@@ -1939,6 +2132,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/surface3d_demo3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/surface3d_radial_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/text3d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/trisurf3d_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/wire3d_animation_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplot3d/wire3d_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/README
@@ -1953,6 +2147,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/anscombe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arctest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arrow_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arrow_simple_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/aspect_loglog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_props.py
@@ -1982,6 +2177,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contour_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contour_label_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contourf_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contourf_hatching.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contourf_log.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/coords_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/coords_report.py
@@ -2014,6 +2210,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/equal_aspect_ratio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/errorbar_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/errorbar_limits.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/errorbar_subsample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancyarrow_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancybox_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancybox_demo2.py
@@ -2042,9 +2239,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hatch_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hexbin_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hexbin_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hist2d_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hist2d_log_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hist_colormapped.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/histogram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/histogram_demo_extended.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/histogram_percent_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hline_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hyperlinks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_clip_path.py
@@ -2103,6 +2303,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_log.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_small.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pie_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pie_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/plotfile_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/polar_bar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/polar_demo.py
@@ -2136,10 +2337,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/specgram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/spine_placement_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/spy_demos.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stackplot_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stem_plot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/step_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stix_fonts_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stock_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/streamplot_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/streamplot_with_mask.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/subplot_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/subplot_toolbar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/subplots_adjust.py
@@ -2185,9 +2389,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_gtk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_gtk2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_gtk3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_gtk3_panzoom.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_qt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_qt4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_qt4_wtoolbar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_tk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_tk2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/embedding_in_wx4.py
@@ -2206,11 +2413,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/rec_edit_gtk_custom.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/rec_edit_gtk_simple.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/svg_histogram.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/svg_tooltip.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_interfaces/wxcursor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/buttons.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/check_buttons.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/cursor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/lasso_selector_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/menu.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/multicursor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/radio_buttons.py
@@ -2237,19 +2446,27 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tri
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_ttconv
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_triangulation
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_transforms
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_subplots
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_scale
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_png
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_pickle
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_mathtext
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_legend
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_image
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_figure
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_delaunay
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_dates
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_colorbar
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pgf
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_backend_pdf
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_arrow_patches
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/pngsuite
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/dviread
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images
@@ -2258,6 +2475,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/testing
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/sphinxext
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/projections
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data/axes_grid
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/sample_data
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/ttf
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/pdfcorefonts

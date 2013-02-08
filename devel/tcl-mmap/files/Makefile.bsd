@@ -1,0 +1,36 @@
+LIBNAME=	mmap${PORTVERSION}
+SHLIB_NAME=	lib${LIBNAME}.so
+
+.PATH:	${.CURDIR}/unix ${.CURDIR}/doc
+
+SRCS=	mmap.c
+MAN=	tcl-mmap.n
+
+TCL_VER?=	8.3
+LOCALBASE?=	/usr/local
+
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
+
+LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
+
+all: pkgIndex.tcl test
+
+pkgIndex.tcl:
+	echo 'package ifneeded mmap ${PORTVERSION} \
+		[list load [file join $$dir $(SHLIB_NAME)]]' > pkgIndex.tcl
+
+DIR	= lib/tcl${TCL_VER}/mmap
+LIBDIR	= ${PREFIX}/${DIR}
+MANDIR	= ${PREFIX}/man/man
+WARNS	= 3
+
+${LIBDIR}:
+	${MKDIR} ${LIBDIR}
+
+beforeinstall: ${LIBDIR} pkgIndex.tcl
+	${INSTALL_DATA} pkgIndex.tcl ${LIBDIR}/
+
+.include <bsd.lib.mk>
+
+test:	${SHLIB_NAME} pkgIndex.tcl
+	cd tests && ${TCLSH} ${FILESDIR}/alltests.tcl

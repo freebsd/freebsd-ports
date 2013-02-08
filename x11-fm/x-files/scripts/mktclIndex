@@ -1,3 +1,0 @@
-#!tclsh8.3
-pkg_mkIndex $argv be.tcl bgexec.tcl ee.tcl fae.tcl ftpl.tcl re.tcl vfs.tcl xf_sel.tcl
-exit

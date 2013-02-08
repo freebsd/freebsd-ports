@@ -21,7 +21,6 @@
 %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Attribute.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy.pm
-%%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version.pm
@@ -42,8 +41,6 @@
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Typo
-@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta

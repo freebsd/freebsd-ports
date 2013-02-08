@@ -7,6 +7,7 @@
 
 PORTNAME=	meandmyshadow
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -26,7 +27,7 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="Me and My Shadow" \
 		"Puzzle/platform game" \
-		"meandmyshadow.png" \
+		"${PREFIX}/share/pixmaps/meandmyshadow.png" \
 		"meandmyshadow" \
 		"Game;LogicGame;" \
 		false

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.2.r1
-PORTREVISION?=	0
+PORTVERSION=	3.2.r4
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://powerdnssec.org/downloads/
@@ -14,8 +14,7 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_serialization.[4-9]:${PORTSDIR}/devel/boost-libs
-#		botan.0:${PORTSDIR}/security/botan
+LIB_DEPENDS=	boost_serialization:${PORTSDIR}/devel/boost-libs
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -160,7 +159,7 @@ PLIST_SUB+=		WITHOPENDBX="@comment "
 
 .if ${PORT_OPTIONS:MDNSSEC}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-CONFIGURE_FLAGS+=	--enable-cryptopp
+CONFIGURE_ARGS+=	--enable-cryptopp
 .endif
 
 post-patch:

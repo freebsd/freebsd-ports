@@ -1,9 +1,8 @@
-# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	babel
 PORTVERSION=	2010.01.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	converters lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

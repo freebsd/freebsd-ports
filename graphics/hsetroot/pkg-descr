@@ -1,8 +1,8 @@
 hsetroot is a tool which allows you to compose wallpapers ("root pixmaps")
-for X.  It has a lot of options like rendering gradients, solids, images but
-it also allows you to perform manipulations on those things, or chain them
-together.  You could use one standard background image for instance, and
-using tint to make it fit your current theme.  And yes, of course it is
+for X11.  It has a lot of options like rendering gradients, solids, images
+but it also allows you to perform manipulations on those things, or chain
+them together.  You could use one standard background image for instance,
+and using tint to make it fit your current theme.  And yes, of course it is
 compatible with semi-translucent applications like aterm and xchat.
 
 At this time, hsetroot can render: gradients (multi-color with variable

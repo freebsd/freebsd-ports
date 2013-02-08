@@ -14,6 +14,7 @@
 %%PORTNAME%%/bin/ossec-execd
 %%PORTNAME%%/bin/ossec-logcollector
 %%PORTNAME%%/bin/ossec-syscheckd
+%%PORTNAME%%/bin/util.sh
 %%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
@@ -26,7 +27,7 @@
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
 %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/internal_options.conf
-%%PORTNAME%%/logs/ossec.log
+@unexec if test ! -s %D/%%PORTNAME%%/logs/ossec.log; then rm -f %D/%%PORTNAME%%/logs/ossec.log; fi
 %%PORTNAME%%/agentless/main.exp
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/ssh_asa-fwsmconfig_diff

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	magicpoint
-# Date created:		24 December 1997
-# Whom:			itojun@itojun.org
-#
+# Created by: itojun@itojun.org
 # $FreeBSD$
-#
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
@@ -65,7 +61,7 @@ CONFIGURE_ARGS+=	--disable-xft2
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--enable-gif
 CFLAGS+=	-I${LOCALBASE}/include
 .else

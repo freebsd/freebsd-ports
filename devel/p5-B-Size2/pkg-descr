@@ -1,0 +1,3 @@
+Measure size of Perl OPs and SVs.  B::Size2 is a fork of B::Size 0.09.
+
+WWW: http://search.cpan.org/dist/B-Size2/

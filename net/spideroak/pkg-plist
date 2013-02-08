@@ -1,0 +1,1977 @@
+@comment $FreeBSD$
+bin/spideroak
+bin/SpiderOak
+etc/dbus-1/system.d/SpiderOak.dbus.conf
+etc/xdg/menus/applications-merged/SpiderOak.menu
+%%DESKTOPDIR%%/SpiderOak.desktop
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/__init__.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/dispatcher.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/error.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/plugin.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/robustapply.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/saferef.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/sender.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/signal.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/__init__.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/conftest.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/fixture.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/test_dispatcher.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/test_plugin.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/test_robustapply.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/test/test_saferef.pyc
+%%DATADIR%%/Louie-1.1-py2.7.egg/louie/version.pyc
+%%DATADIR%%/OpenSSL.SSL.so
+%%DATADIR%%/OpenSSL.crypto.so
+%%DATADIR%%/OpenSSL.rand.so
+%%DATADIR%%/PIL._imaging.so
+%%DATADIR%%/PyQt4.Qt.so
+%%DATADIR%%/PyQt4.QtCore.so
+%%DATADIR%%/PyQt4.QtGui.so
+%%DATADIR%%/PyQt4.QtNetwork.so
+%%DATADIR%%/SpiderOak
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/spideroak_version_matcher.pyc
+%%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/spideroak_version_matcher.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/app.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/internet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/reactors.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/strports.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/test/test_internet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/avatar.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/checkers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/agent.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/connect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/default.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/direct.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/knownhosts.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client/options.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/colors.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/helper.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/insults.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/text.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults/window.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/interfaces.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ls.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/manhole_ssh.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/manhole_tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/mixin.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/openssh_compat/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/openssh_compat/factory.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/openssh_compat/primes.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/recvline.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts/cftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts/ckeygen.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts/conch.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts/tkconch.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/agent.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/channel.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/common.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/connection.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/factory.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/filetransfer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/forwarding.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/keys.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/session.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/sexpy.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/transport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh/userauth.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/stdio.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/keydata.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_agent.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_cftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_channel.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_checkers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_ckeygen.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_conch.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_connection.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_default.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_filetransfer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_helper.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_insults.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_keys.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_knownhosts.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_mixin.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_openssh_compat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_recvline.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_session.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_ssh.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_text.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_transport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_userauth.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test/test_window.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ttymodes.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ui/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ui/ansi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ui/tkvt100.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/copyright.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/_digest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/checkers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/credentials.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/pamauth.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/portal.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred/strcred.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/adbapi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/reflector.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/row.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/sqlreflector.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise/util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_baseprocess.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_dumbwin32proc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_pollingfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_posixserialport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_posixstdio.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_sigchld.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_sigchld.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_sigchld.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_signals.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_sslverify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_threadedselect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_win32serialport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/_win32stdio.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/abstract.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/address.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/base.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/cfreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/default.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/defer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/endpoints.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/epollreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/fdesc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/glib2reactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/gtk2reactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/gtkreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/inotify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/interfaces.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/abstract.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/build.bat
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/const.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/interfaces.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/acceptex.pxi
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/connectex.pxi
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/iocpsupport.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/iocpsupport.pyx
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/winsock_pointers.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/winsock_pointers.h
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/wsarecv.pxi
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport/wsasend.pxi
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/notes.txt
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/reactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/setup.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/tcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/udp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/kqreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/main.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/pollreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/posixbase.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/process.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/protocol.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/pyuisupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/qtreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/reactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/selectreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/serialport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/ssl.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/stdio.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/task.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/tcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fake_CAs/not-a-certificate
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fake_CAs/thing1.pem
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fake_CAs/thing2-duplicate.pem
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fake_CAs/thing2.pem
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fakeendpoint.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/inlinecb_tests.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/process_helper.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/reactormixins.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_address.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_base.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_baseprocess.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_core.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_endpoints.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_fdset.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_gtkreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_inlinecb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_inotify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_iocp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_main.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_pollingfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_posixbase.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_posixprocess.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_process.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_protocol.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_qtreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_sigchld.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_tcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_threads.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_time.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_tls.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_udp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/test_win32events.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/threads.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/tksupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/udp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/utils.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/win32eventreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/wxreactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/wxsupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/default.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/docbook.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/htmlbook.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/indexer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/latex.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/lint.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/lmath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/man2lore.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/numberer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/process.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/scripts/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/scripts/lore.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/slides.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/template.mgp
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_index_file_out.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_index_file_out_multiple.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_index_file_unnumbered_out.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_index_test.xhtml
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_index_test2.xhtml
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_numbering_test_out.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/lore_numbering_test_out2.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/simple.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/simple3.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/simple4.html
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/template.tpl
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_docbook.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_latex.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_lint.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_lmath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_lore.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_man2lore.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test/test_slides.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/texi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/tree.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/xhtml-lat1.ent
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/xhtml-special.ent
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/xhtml-symbol.ent
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/xhtml1-strict.dtd
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/xhtml1-transitional.dtd
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/alias.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/bounce.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/imap4.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/mail.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/maildir.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/pb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/pop3.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/pop3client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/protocols.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/relay.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/relaymanager.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/scripts/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/scripts/mailmail.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/smtp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/pop3testserver.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/rfc822.message
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_bounce.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_imap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_mail.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_mailmail.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_options.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_pop3.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_pop3client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test/test_smtp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/_inspectro.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/explorer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/gladereactor.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/gladereactor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/inspectro.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/logview.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/gtk2manhole.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/gtk2manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/test/test_gtk2manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/authority.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/cache.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/common.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/dns.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/hosts.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/resolve.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/root.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/secondary.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/server.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/srvconnect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_cache.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_common.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_dns.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_names.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_rootresolve.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test/test_srvconnect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/database.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/news.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/nntp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/test/test_database.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/test/test_news.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/test/test_nntp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/ethernet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/ip.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/raw.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/rawudp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/test/test_ethernet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/test/test_ip.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/test/test_rawudp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/tuntap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/aot.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/crefutil.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/dirdbm.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/journal/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/journal/base.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/journal/picklelog.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/journal/rowjournal.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/sob.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/styles.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugin.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/cred_anonymous.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/cred_file.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/cred_memory.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/cred_unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_conch.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_ftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_inet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_lore.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_mail.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_names.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_news.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_portforward.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_qtstub.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_reactors.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_runner.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_socks.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_trial.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_web.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins/twisted_words.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/_c_urlarg.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/_c_urlarg.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/_c_urlarg.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/amp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/basic.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/dict.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/finger.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/ftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/gps/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/gps/nmea.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/gps/rockwell.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/htb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/ident.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/loopback.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/memcache.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/mice/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/mice/mouseman.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/pcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/policies.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/portforward.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/postfix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/shoutcast.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/sip.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/socks.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/stateful.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/test/test_tls.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/tls.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/wire.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_epoll.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_epoll.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_epoll.pyx
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_epoll.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_initgroups.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_initgroups.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_initgroups.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_inotify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_release.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/_twisted_zsh_stub
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/compat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/components.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/context.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/deprecate.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/dispatch.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/dist.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/dxprofile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/failure.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/fakepwd.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/filepath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/finalize.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/formmethod.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/hashlib.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/hook.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/htmlizer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/lockfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/log.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/logfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/modules.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/monkey.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/otp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/procutils.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/randbytes.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/rebuild.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/reflect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/release.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/roots.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/runtime.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/shortcut.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/syslog.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/deprecatedattributes.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_components.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_deprecate.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_dist.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_fakepwd.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_hashlib.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_htmlizer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_inotify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_release.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_runtime.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_syslog.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_versions.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_win32.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test/test_zipstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/text.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/threadable.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/threadpool.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/urlpath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/usage.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/versions.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/win32.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zippath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zipstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_cftp
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_ckeygen
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_conch
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_lore
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_manhole
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_mktap
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_pyhtmlizer
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_tap2deb
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_tap2rpm
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_tapconvert
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_tkconch
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_tkmktap
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_trial
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_twistd
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh/_websetroot
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zshcomp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/inetd.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/inetdconf.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/inetdtap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/portmap.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/portmap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/portmap.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/procmon.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/procmontap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/procutils.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/test/test_procmon.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/test/test_procmontap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/_twistd_unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/_twistw.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/htmlizer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/mktap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/tap2deb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/tap2rpm.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/tapconvert.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/test/test_mktap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/test/test_tap2rpm.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/tkunzip.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/trial.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/twistd.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/banana.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/flavors.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/interfaces.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/jelly.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/pb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/publish.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/refpath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui/gtk2util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui/login2.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui/tktree.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui/tkutil.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/ftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/portforward.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/socks.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap/telnet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/crash_test_dummy.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/generator_failure_tests.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/iosim.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/mock_win32process.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/myrebuilder1.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/myrebuilder2.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/plugin_basic.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/plugin_extra1.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/plugin_extra2.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_cmdline.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_echoer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_fds.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_linger.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_reader.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_signal.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_stdinreader.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_tester.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_tty.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/process_twisted.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/proto_helpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/raiser.c
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/raiser.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/raiser.pyx
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/raiser.so
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/reflect_helper_IE.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/reflect_helper_VE.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/reflect_helper_ZDE.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/server.pem
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/ssl_helpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_consumer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_halfclose.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_hostpeer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_lastwrite.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_loseconn.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_producer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_write.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/stdio_test_writeseq.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_abstract.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_adbapi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_amp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_application.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_banana.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_compat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_context.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_cooperator.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_defer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_defgen.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_dict.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_digestauth.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_dirdbm.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_doc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_enterprise.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_epoll.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_explorer.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_extensions.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_factories.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_failure.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_fdesc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_finger.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_formmethod.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_ftp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_hook.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_htb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_ident.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_import.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_internet.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_iutils.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_jelly.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_journal.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_lockfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_log.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_logfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_loopback.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_manhole.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_memcache.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_modules.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_monkey.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_newcred.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_nmea.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_paths.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_pb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_pbfailure.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_pcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_persisted.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_plugin.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_policies.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_postfix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_process.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_protocols.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_randbytes.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_rebuild.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_reflect.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_reflector.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_roots.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_shortcut.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_sip.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_sob.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_socks.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_ssl.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_sslverify.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_stateful.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_stdio.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_strcred.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_strerror.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_stringtransport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_strports.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_task.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_tcp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_tcp_internals.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_text.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_threadable.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_threadpool.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_threads.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_timehelpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_tpfile.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_twistd.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_udp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_unix.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_usage.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/test_zshcomp.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/testutils.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test/time_helpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/topfiles/CREDITS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/topfiles/ChangeLog.Old
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/itrial.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/reporter.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/runner.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/detests.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/erroneous.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/mockcustomsuite.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/mockcustomsuite2.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/mockcustomsuite3.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/mockdoctest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/moduleself.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/moduletest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/notpython
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/novars.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/packages.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/sample.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/scripttest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/suppression.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_assertions.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_deferred.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_doctest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_keyboard.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_loader.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_log.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_output.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_plugins.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_pyunitcompat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_reporter.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_runner.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_script.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_test_visitor.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_testcase.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_tests.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/test_warning.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test/weird.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/unittest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_auth/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_auth/basic.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_auth/digest.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_auth/wrapper.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_newclient.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/demo.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/distrib.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/domhelpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/google.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/guard.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/html.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/http.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/http_headers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/iweb.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/microdom.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/proxy.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/resource.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/rewrite.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/script.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/server.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/soap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/static.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/sux.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/_util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_cgi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_distrib.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_domhelpers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_http.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_http_headers.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_httpauth.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_newclient.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_proxy.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_resource.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_script.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_soap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_static.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_vhost.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_web.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_webclient.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_wsgi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_xml.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test/test_xmlrpc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/twcgi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/util.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/vhost.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/wsgi.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/xmlrpc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/_version.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/ewords.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/baseaccount.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/basechat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/basesupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/instancemessenger.glade
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/interfaces.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/ircsupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/locals.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/pbsupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im/tocsupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/iwords.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/irc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/client.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/component.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/error.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/ijabber.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/jid.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/jstrports.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/sasl.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/sasl_mechanisms.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/xmlstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber/xmpp_stringprep.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/msn.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/oscar.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/toc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_basechat.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_basesupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_domish.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_irc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_irc_service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_ircsupport.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabberclient.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabbercomponent.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabbererror.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabberjid.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabbersasl.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabbersaslmechanisms.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabberxmlstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_jabberxmppstringprep.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_msn.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_oscar.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_service.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_tap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_toc.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_xishutil.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_xmlstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_xmpproutertap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test/test_xpath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/toctap.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/topfiles/NEWS
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/topfiles/README
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/__init__.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/domish.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/utility.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xmlstream.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xpath.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xpathparser.g
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xpathparser.pyc
+%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xmpproutertap.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/cfgparser.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/cmdline.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/component.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/mapping.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/mapping.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests/test_mapping.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/abstract.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/base-logger.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/component.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/datatypes.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/eventlog.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/factory.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/handlers.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/handlers.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/logger.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/logger.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/loghandler.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests/test_logger.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/datatypes.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/info.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/loader.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/matcher.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schema.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schemaless.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schemaless.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/substitution.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/foosample.zip
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-datatype1.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-datatype2.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-keytype1.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-keytype2.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/include.conf
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/inner.conf
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/library.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/logger.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/outer.conf
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simple.conf
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simple.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simplesections.conf
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simplesections.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/README.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/component.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/extras/extras.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/component.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/extra.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/support.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cfgimports.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cmdline.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_config.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cookbook.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_datatypes.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_loader.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_readme.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_schema.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_schemaless.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_subst.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/README.txt
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/__init__.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/component.xml
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/datatypes.pyc
+%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/url.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeItemsTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeModuleTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BucketTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Development.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IFBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IIBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Interfaces.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LFBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LLBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Length.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/MergeTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OIBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OLBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/SetOpTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/SetTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/TreeSetTemplate.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/check.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/floatvaluemacros.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/fsBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/intkeymacros.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/intvaluemacros.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/objectkeymacros.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/objectvaluemacros.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/py24compat.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/sorters.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTrees.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTreesUnicode.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testConflict.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testLength.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testSetOps.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_btreesubclass.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_check.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_compare.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_fsBTree.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/ClientStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/Exceptions.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/ServerStub.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/StorageServer.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/TransactionBuffer.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/auth_digest.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/base.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/hmac.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/cache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/component.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/hash.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/interfaces.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/monitor.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/protocol.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/runzeo.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/schema.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/README.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/cache_simul.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/cache_stats.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/parsezeolog.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/tests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/timeout.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeopack.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeopack.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoqueue.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoreplay.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoserverlog.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoup.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/Cache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/CommitLockTests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/ConnectionTests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/InvalidationTests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/IterationTests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/TestThread.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/ThreadTests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/auth_plaintext.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/client-config.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/drop_cache_rather_than_verify.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/forker.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/invalidation-age.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/protocols.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/registerDB.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/servertesting.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/speed.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/stress.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testAuth.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testConnection.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testConversionSupport.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testMonitor.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testTransactionBuffer.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEO.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEO2.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEOOptions.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/test_cache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zdoptions.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeo-fan-out.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeo_blob_cache.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeoserver.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/util.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/version.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeoctl.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeoctl.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeopasswd.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/_hmac.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/client.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/connection.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/error.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/log.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/marshal.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/server.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/smac.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/trigger.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ActivityMonitor.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/BaseStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ConflictResolution.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ConflictResolution.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/Connection.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DB.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DemoStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DemoStorage.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ExportImport.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/FileStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/format.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fsdump.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fsoids.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fspack.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/interfaces.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/iterator.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/tests.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/zconfig.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/MappingStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/POSException.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/UndoLogCompatible.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/blob.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/broken.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/collaborations.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/component.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/config.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/config.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/conversionhack.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/cross-database-references.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fsIndex.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fsrecover.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fstools.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/historical_connections.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/interfaces.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/loglevels.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/persistentclass.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/persistentclass.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/README.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/analyze.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/checkbtrees.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsoids.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsrefs.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsstats.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fstail.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fstest.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests/test-checker.fs
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests/testfstest.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/migrate.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/migrateblobs.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/netspace.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/referrers.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/repozo.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/space.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/fstail.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/referrers.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_doc.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_fstest.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_repozo.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/zodbload.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/serialize.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/storage.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/subtransactions.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/BasicStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/ConflictResolution.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/Corruption.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/HistoryStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/IExternalGC.test
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/IteratorStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MTStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MVCCMappingStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MinPO.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/PackableStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/PersistentStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/ReadOnlyStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/RecoveryStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/RevisionStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/StorageTestBase.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/Synchronization.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/TransactionalUndoStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_basic.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_connection.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_consume.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_importexport.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_layout.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_packing.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_tempdir.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_transaction.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blobstorage_packing.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/component.xml
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/dangle.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/dbopen.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/hexstorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/loggingsupport.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/multidb.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/sampledm.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/speed.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/synchronizers.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testActivityMonitor.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testBroken.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testCache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConfig.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnection.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnectionSavepoint.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnectionSavepoint.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testDB.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testDemoStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testFileStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testMVCCMappingStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testMappingStorage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testPersistentList.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testPersistentMapping.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testRecover.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testSerialize.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testTimeStamp.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testUtils.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testZODB.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_cache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_datamanageradapter.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_doctest_files.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_fsdump.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_storage.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testblob.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testconflictresolution.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testcrossdatabasereferences.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testfsIndex.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testfsoids.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testhistoricalconnections.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testmvcc.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testpersistentclass.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/util.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/warnhook.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/transact.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/utils.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/utils.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/README.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.so
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/dict.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/interfaces.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/list.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/mapping.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/py24compat.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/ring.c
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/ring.h
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/__init__.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/persistent.txt
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/testPersistent.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_PickleCache.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_list.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_mapping.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_overriding_attrs.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_persistent.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_pickle.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_wref.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/utils.pyc
+%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/wref.pyc
+%%DATADIR%%/_bisect.so
+%%DATADIR%%/_codecs_cn.so
+%%DATADIR%%/_codecs_hk.so
+%%DATADIR%%/_codecs_iso2022.so
+%%DATADIR%%/_codecs_jp.so
+%%DATADIR%%/_codecs_kr.so
+%%DATADIR%%/_codecs_tw.so
+%%DATADIR%%/_collections.so
+%%DATADIR%%/_ctypes.so
+%%DATADIR%%/_functools.so
+%%DATADIR%%/_hashlib.so
+%%DATADIR%%/_heapq.so
+%%DATADIR%%/_hotshot.so
+%%DATADIR%%/_io.so
+%%DATADIR%%/_json.so
+%%DATADIR%%/_locale.so
+%%DATADIR%%/_lsprof.so
+%%DATADIR%%/_multibytecodec.so
+%%DATADIR%%/_random.so
+%%DATADIR%%/_socket.so
+%%DATADIR%%/_sqlite3.so
+%%DATADIR%%/_ssl.so
+%%DATADIR%%/_struct.so
+%%DATADIR%%/array.so
+%%DATADIR%%/binascii.so
+%%ONLYI386%%%%DATADIR%%/bz2.so
+%%DATADIR%%/cPickle.so
+%%DATADIR%%/cStringIO.so
+%%DATADIR%%/datetime.so
+%%ONLYI386%%%%DATADIR%%/dl.so
+%%DATADIR%%/fcntl.so
+%%DATADIR%%/grp.so
+%%DATADIR%%/inotify_dir_watcher
+%%DATADIR%%/itertools.so
+%%DATADIR%%/libQtCore.so.4
+%%DATADIR%%/libQtGui.so.4
+%%DATADIR%%/libQtNetwork.so.4
+%%ONLYI386%%%%DATADIR%%/libbz2.so.1
+%%DATADIR%%/libcrypto.so.6
+%%DATADIR%%/libcurl.so.4
+%%DATADIR%%/libexpat.so.0
+%%DATADIR%%/libgcc_s.so.1
+%%ONLYI386%%%%DATADIR%%/libgmp.so.3
+%%DATADIR%%/libgssapi_krb5.so.2
+%%ONLYI386%%%%DATADIR%%/libidn.so.11
+%%DATADIR%%/libpng12.so.0
+%%DATADIR%%/library.zip
+%%DATADIR%%/libsepol.so.1
+%%DATADIR%%/libsqlite3.so.0
+%%DATADIR%%/libssh2.so.1
+%%DATADIR%%/libssl.so.6
+%%DATADIR%%/libstdc++.so.6
+%%DATADIR%%/libz.so.1
+%%DATADIR%%/math.so
+%%DATADIR%%/mmap.so
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/nose-1.1.1-py2.7.egg/man/man1/nosetests.1
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/__init__.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/case.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/commands.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/config.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/core.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/exc.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext/__init__.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext/dtcompat.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/failure.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/importer.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/inspector.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/loader.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/__init__.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/allmodules.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/attrib.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/base.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/builtin.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/capture.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/collect.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/cover.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/debug.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/deprecated.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/doctests.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/errorclass.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/failuredetail.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/isolate.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/logcapture.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/manager.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/multiprocess.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/plugintest.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/prof.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/skip.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/testid.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/xunit.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/proxy.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/pyversion.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/result.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/selector.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx/__init__.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx/pluginopts.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/suite.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/tools.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/twistedtools.pyc
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/usage.txt
+%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/util.pyc
+%%DATADIR%%/operator.so
+%%DATADIR%%/parser.so
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/__init__.pyc
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.pyc
+%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.so
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/zip-safe
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/decoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/encoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/eoo.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/decoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/encoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/decoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/encoder.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/error.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/__init__.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/base.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/char.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/constraint.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/error.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/namedtype.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/namedval.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/tag.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/tagmap.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/univ.pyc
+%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/useful.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/AES.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/AES.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/ARC2.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/ARC2.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/ARC4.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/ARC4.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/Blowfish.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/Blowfish.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/CAST.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/CAST.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/DES.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/DES.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/DES3.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/DES3.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/XOR.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/XOR.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/HMAC.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/MD2.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/MD2.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/MD4.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/MD4.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/MD5.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/RIPEMD.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/RIPEMD160.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/RIPEMD160.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/SHA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/SHA256.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/SHA256.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Protocol/AllOrNothing.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Protocol/Chaffing.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Protocol/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/DSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/ElGamal.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/RSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/_DSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/_RSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/__init__.pyc
+%%ONLYI386%%%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/_fastmath.pyc
+%%ONLYI386%%%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/_fastmath.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/_slowmath.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/pubkey.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey/qNEW.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/Fortuna/FortunaAccumulator.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/Fortuna/FortunaGenerator.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/Fortuna/SHAd256.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/Fortuna/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG/fallback.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG/nt.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG/posix.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG/rng_base.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/_UserFriendlyRNG.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/random.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/common.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_AES.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_ARC2.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_ARC4.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_Blowfish.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_CAST.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_DES.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_DES3.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher/test_XOR.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/common.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_HMAC.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_MD2.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_MD4.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_MD5.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_RIPEMD.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_SHA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash/test_SHA256.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Protocol/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Protocol/test_chaffing.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Protocol/test_rfc1751.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/PublicKey/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/PublicKey/test_DSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/PublicKey/test_RSA.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/PublicKey/test_importKey.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/Fortuna/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/Fortuna/test_FortunaAccumulator.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/Fortuna/test_FortunaGenerator.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/Fortuna/test_SHAd256.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/test_fallback.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/test_generic.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/test_nt.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/test_posix.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG/test_winrandom.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/test_random.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/test_rpoolcompat.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util/test_Counter.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util/test_asn1.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util/test_number.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util/test_winrandom.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/st_common.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/Counter.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/RFC1751.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/_counter.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/_counter.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/_number_new.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/asn1.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/number.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/python_compat.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/randpool.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/strxor.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/strxor.so
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util/winrandom.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/__init__.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/pct_warnings.pyc
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
+%%DATADIR%%/pycurl.so
+%%DATADIR%%/pyexpat.so
+%%DATADIR%%/resource.so
+%%DATADIR%%/select.so
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO/zip-safe
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/easy_install.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/pkg_resources.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/__init__.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/archive_util.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/cli.exe
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/__init__.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/alias.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/bdist_egg.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/bdist_rpm.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/bdist_wininst.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/build_ext.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/build_py.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/develop.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/easy_install.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/egg_info.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/install.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/install_egg_info.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/install_lib.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/install_scripts.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/register.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/rotate.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/saveopts.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/sdist.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/setopt.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/test.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command/upload.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/depends.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/dist.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/extension.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/gui.exe
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/package_index.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/sandbox.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/__init__.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/doctest.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/test_packageindex.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/test_resources.pyc
+%%DATADIR%%/setuptools-0.6c11-py2.7.egg/site.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/__init__.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.so
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/decoder.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/encoder.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/ordered_dict.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/scanner.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/__init__.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_check_circular.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decimal.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decode.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_default.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_dump.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_basestring_ascii.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_for_html.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_errors.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_fail.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_float.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_indent.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass1.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass2.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass3.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_recursion.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_scanstring.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_separators.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_speedups.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_unicode.pyc
+%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tool.pyc
+%%DATADIR%%/sip.so
+%%DATADIR%%/strop.so
+%%DATADIR%%/termios.so
+%%DATADIR%%/time.so
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/__init__.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/_manager.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/_transaction.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/interfaces.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/__init__.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/convenience.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/doom.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/sampledm.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/savepoint.txt
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/savepointsample.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_SampleDataManager.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_SampleResourceManager.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_register_compat.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_savepoint.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_transaction.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_weakset.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/warnhook.pyc
+%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/weakset.pyc
+%%DATADIR%%/unicodedata.so
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/namespace_packages.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/__init__.pyc
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/CHANGES.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/README.txt
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/__init__.pyc
+%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/tests.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/README.txt
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/__init__.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/component.xml
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/sample.conf
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/schema.xml
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/__init__.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/nokill.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/parent.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/tests.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/testzdoptions.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/testzdrun.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdctl.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdoptions.pyc
+%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdrun.pyc
+%%DATADIR%%/zlib.so
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/namespace_packages.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/__init__.pyc
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/README.txt
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/__init__.pyc
+%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/tests.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/namespace_packages.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/__init__.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/README.ru.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/README.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/__init__.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_flatten.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.c
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.so
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.ru.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/advice.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/__init__.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/idatetime.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/interfaces.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/mapping.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/sequence.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/__init__.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/basemapping.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_idatetime.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_import_interfaces.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/declarations.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/document.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/exceptions.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/human.ru.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/human.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/index.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/interface.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/interfaces.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/ro.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/__init__.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/dummy.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/foodforthought.txt
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/ifoo.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m1.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m2.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/odd.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_adapter.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_advice.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_declarations.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_document.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_element.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_interface.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_odd_declarations.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_sorting.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_verify.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/unitfixtures.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.pyc
+%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.txt
+share/pixmaps/SpiderOak.png
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event
+@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope
+@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg
+@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests
+@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon
+@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg
+@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile
+@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc
+@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg
+@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests
+@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction
+@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg
+@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests
+@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson
+@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests
+@dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command
+@dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools
+@dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Util
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Util
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/OSRNG
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random/Fortuna
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Random
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/PublicKey
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Protocol
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Hash
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest/Cipher
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/SelfTest
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/OSRNG
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random/Fortuna
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Random
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/PublicKey
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Protocol
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Hash
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto
+@dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg
+@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt
+@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/man/man1
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/man
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees
+@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/extras
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/scripts
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols/jabber
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/protocols
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/im
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web/_auth
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/web
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/trial
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/tap
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread/ui
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/spread
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/scripts
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/runner
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/zsh
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/python
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/mice
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols/gps
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/protocols
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/plugins
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted/journal
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/persisted
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/pair
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/news
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/names
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole/ui
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/manhole
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail/scripts
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/mail
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore/scripts
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/lore
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test/fake_CAs
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor/iocpsupport
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet/iocpreactor
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/internet
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/enterprise
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/cred
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ui
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/topfiles
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/ssh
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/scripts
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/openssh_compat
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/insults
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch/client
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/conch
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application/test
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/application
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/scripts
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/Louie-1.1-py2.7.egg/louie/test
+@dirrm %%DATADIR%%/Louie-1.1-py2.7.egg/louie
+@dirrm %%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/Louie-1.1-py2.7.egg
+@dirrm %%DATADIR%%
+@dirrmtry etc/dbus-1/system.d
+@dirrmtry etc/dbus-1
+@dirrmtry etc/xdg/menus/applications-merged
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true

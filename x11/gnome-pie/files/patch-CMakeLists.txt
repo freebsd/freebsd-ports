@@ -1,0 +1,30 @@
+--- ./CMakeLists.txt.orig	2013-01-23 23:33:16.000000000 +0100
++++ ./CMakeLists.txt	2013-01-24 21:41:21.000000000 +0100
+@@ -32,13 +32,11 @@
+     pkg_check_modules(INDICATOR3 appindicator3-0.1)
+     pkg_check_modules(UNIQUE REQUIRED unique-3.0)
+     pkg_check_modules(WNCK REQUIRED libwnck-3.0)
+-    pkg_check_modules(BAMF REQUIRED libbamf3)
+ else (${GTK3_FOUND})
+     pkg_check_modules(GTK2 REQUIRED gtk+-2.0)
+     pkg_check_modules(INDICATOR appindicator-0.1)
+     pkg_check_modules(UNIQUE REQUIRED unique-1.0)
+     pkg_check_modules(WNCK REQUIRED libwnck-1.0)
+-    pkg_check_modules(BAMF REQUIRED libbamf)
+ endif (${GTK3_FOUND})
+ 
+ pkg_check_modules(GIO REQUIRED gio-unix-2.0)
+@@ -180,13 +178,11 @@
+ if (${GTK3_FOUND})
+     LIST(APPEND VALA_PKGS gtk+-3.0)
+     LIST(APPEND VALA_PKGS gdk-x11-3.0)
+-    LIST(APPEND VALA_PKGS libbamf3)
+     LIST(APPEND VALA_PKGS libwnck-3.0)
+     LIST(APPEND VALA_PKGS unique-3.0)
+ else (${GTK3_FOUND})
+     LIST(APPEND VALA_PKGS gtk+-2.0)
+     LIST(APPEND VALA_PKGS gdk-x11-2.0)
+-    LIST(APPEND VALA_PKGS bamf)
+     LIST(APPEND VALA_PKGS libwnck-1.0)
+     LIST(APPEND VALA_PKGS unique-1.0)
+ endif (${GTK3_FOUND})

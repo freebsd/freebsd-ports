@@ -1,7 +1,8 @@
+bin/nas
 %%SITE_PERL%%/Net/Appliance/Session.pm
-%%SITE_PERL%%/Net/Appliance/Session/APIv2.pm
 %%SITE_PERL%%/Net/Appliance/Session/Async.pm
 %%SITE_PERL%%/Net/Appliance/Session/Engine.pm
+%%SITE_PERL%%/Net/Appliance/Session/Scripting.pm
 %%SITE_PERL%%/Net/Appliance/Session/Transport.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Appliance/Session/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Appliance/Session

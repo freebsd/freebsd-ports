@@ -1,3 +1,4 @@
+%%XPI_XPIDIR%%/agpl-3.0.txt
 %%XPI_XPIDIR%%/chrome/content/common.js
 %%XPI_XPIDIR%%/chrome/content/config/config.js
 %%XPI_XPIDIR%%/chrome/content/config/config.xul
@@ -72,7 +73,6 @@
 %%XPI_XPIDIR%%/chrome/skin/unplug-16.png
 %%XPI_XPIDIR%%/chrome/skin/unplug-24.png
 %%XPI_XPIDIR%%/chrome/skin/unplug-32.png
-%%XPI_XPIDIR%%/agpl-3.0.txt
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/unplug2.js
 %%XPI_XPIDIR%%/install.rdf

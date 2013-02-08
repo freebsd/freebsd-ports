@@ -1,0 +1,27 @@
+--- mfbt/SHA1.h~
++++ mfbt/SHA1.h
+@@ -27,6 +27,11 @@
+ #include "mozilla/StandardInteger.h"
+ #include "mozilla/Types.h"
+ 
++#if !defined(__clang__) && defined(__GNUC__) && __GNUC_MINOR__ <= 3
++/* c++/36107: mark SHA1Sum constructor as weak manually */
++__asm__(".weak _ZN7mozilla7SHA1SumC1Ev");
++#endif
++
+ namespace mozilla {
+ class SHA1Sum {
+   union {
+@@ -39,7 +43,12 @@ class SHA1Sum {
+ 
+ public:
+   static const unsigned int HashSize = 20;
++#if !defined(__clang__) && defined(__GNUC__) && __GNUC_MINOR__ <= 3
++  /* c++/36107: gcc42 fails to remove *INTERNAL* from produced asm */
++  MOZ_IMPORT_API() SHA1Sum();
++#else
+   MFBT_API() SHA1Sum();
++#endif
+   MFBT_API(void) update(const void* dataIn, uint32_t len);
+   MFBT_API(void) finish(uint8_t hashout[20]);
+ };

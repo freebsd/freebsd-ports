@@ -1,0 +1,8 @@
+--- ./resources/gnome-pie.desktop.orig	2013-01-23 23:33:16.000000000 +0100
++++ ./resources/gnome-pie.desktop	2013-01-24 21:41:21.000000000 +0100
+@@ -4,4 +4,4 @@
+ Comment=Cakes don't lie.
+ Exec=gnome-pie
+ Icon=gnome-pie
+-Categories=GNOME;Utility;
++Categories=GTK;GNOME;Utility;

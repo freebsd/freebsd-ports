@@ -7,7 +7,7 @@
 
 PORTNAME=	exrtools
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		CRITICAL
@@ -24,6 +24,8 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+
+USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

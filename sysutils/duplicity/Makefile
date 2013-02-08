@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.20
+PORTVERSION=	0.6.21
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 

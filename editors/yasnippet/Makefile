@@ -1,9 +1,4 @@
-# New ports collection makefile for:   yasnippet
-# Date created:		30 Jun 2010
-# Whom:			olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yasnippet
 PORTVERSION=	0.6.1c

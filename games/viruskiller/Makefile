@@ -5,14 +5,11 @@ PORTNAME=	viruskiller
 PORTVERSION=	1.03
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download/viruskiller/
+MASTER_SITES=	FRUGALWARE/games-extra/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade game that relies on quick reflexes
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
 
 LICENSE=	GPLv2
 

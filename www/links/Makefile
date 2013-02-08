@@ -7,6 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf
@@ -84,9 +85,9 @@ USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
 DESKTOP_ENTRIES="links" \
 		"Lynx-like text WWW browser" \
-		"links" \
+		"${PREFIX}/share/pixmaps/links.xpm" \
 		"links -g" \
-		"Application;Network;WebBrowser;" \
+		"Network;WebBrowser;" \
 		false
 PLIST_FILES+=	share/pixmaps/links.xpm
 .else

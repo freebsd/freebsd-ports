@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- microcode/configure.orig
++++ microcode/configure
+@@ -5214,7 +5214,7 @@
+     vax)
+ 	mit_scheme_native_code=vax
+ 	;;
+-    x86_64)
++    x86_64|amd64)
+ 	mit_scheme_native_code=x86-64
+ 	;;
+     *)

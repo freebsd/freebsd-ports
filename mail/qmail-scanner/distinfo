@@ -1,2 +1,4 @@
 SHA256 (qmail-scanner-2.10.tgz) = b6c430c81efd41bd28e56fb60e6e1ecbd98e44346c2faad69ff164960f042247
 SIZE (qmail-scanner-2.10.tgz) = 244402
+SHA256 (patch-configure-qms) = d2aa7cc5d665f988f07ca0e66900ccf55dbeeb5ad75f9be02ba022fae07d0e3c
+SIZE (patch-configure-qms) = 536757

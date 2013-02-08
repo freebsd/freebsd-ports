@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.14.1
+PORTVERSION=	2.15
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -18,7 +18,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-USE_SEAMONKEY=	14
+USE_SEAMONKEY=	15
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes

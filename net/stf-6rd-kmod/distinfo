@@ -4,3 +4,5 @@ SHA256 (freebsd-stf-8.2-0.232314.tar.gz) = 9090dc3094ac4bc5f6d8476809e07f6298abc
 SIZE (freebsd-stf-8.2-0.232314.tar.gz) = 485749
 SHA256 (freebsd-stf-8.3-0.232314.tar.gz) = c87f674d1847834285a4cb7728c75c9000e1330b0734c2fcf5fe80db88ada000
 SIZE (freebsd-stf-8.3-0.232314.tar.gz) = 498829
+SHA256 (freebsd-stf-9.1-0.232314.tar.gz) = 3855fb1aff3fa1799121d76511ca662deca4903ba3c0caf50079b5da8e322bdb
+SIZE (freebsd-stf-9.1-0.232314.tar.gz) = 505298

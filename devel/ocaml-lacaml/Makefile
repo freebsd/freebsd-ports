@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lacaml
-PORTVERSION=	7.0.3
+PORTVERSION=	7.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/lacaml/downloads/
 PKGNAMEPREFIX=	ocaml-

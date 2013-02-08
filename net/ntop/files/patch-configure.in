@@ -1,26 +1,42 @@
---- ./configure.in.orig	2011-02-02 10:41:10.000000000 +0100
-+++ ./configure.in	2011-02-02 10:49:06.000000000 +0100
-@@ -582,8 +582,8 @@
- else
- if test ".${PCAP_ROOT}" != .; then
-   if test -d $PCAP_ROOT &&
--     test -r $PCAP_ROOT/libpcap.a &&
--     test -r $PCAP_ROOT/pcap.h; then
-+     test -r $PCAP_ROOT/lib/libpcap.a &&
-+     test -r $PCAP_ROOT/include/pcap.h; then
+--- configure.in.orig	2012-08-13 04:35:26.000000000 -0300
++++ configure.in	2013-01-09 13:11:12.000000000 -0200
+@@ -472,7 +472,7 @@
+ dnl> Add /usr/local/ /opt/local
+ CFLAGS="${CFLAGS} -I/usr/local/include -I/opt/local/include"
+ CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/opt/local/include"
+-LDFLAGS="${LDFLAGS} -L/usr/local/lib -L/opt/local/lib"
++LDFLAGS="${LDFLAGS}-L/usr/local/lib -L/opt/local/lib"
+ 
+ PWD=`pwd`
+ 
+@@ -560,7 +560,7 @@
+    test -d ${TMP_ROOT} &&
+    test -r ${TMP_ROOT}/libpcap.a; then
+        PCAP_ROOT=${TMP_ROOT}
+-       CORELIBS="${CORELIBS} -L${TMP_ROOT} -L${HOME}/PF_RING/userland/lib -lpfring -lpcap "
++       CORELIBS="${CORELIBS}-L${TMP_ROOT}-L${HOME}/PF_RING/userland/lib -lpfring -lpcap "
+        INCS="${INCS} -I ${PCAP_ROOT}"
+        AC_MSG_RESULT([found in $PCAP_ROOT])
+ elif test ".${PCAP_ROOT}" != .; then
+@@ -568,7 +568,7 @@
+      test -r $PCAP_ROOT/lib/libpcap.a &&
+      test -r $PCAP_ROOT/include/pcap.h; then
         PCAP_ROOT=`cd ${PCAP_ROOT} && pwd`
-        CORELIBS="${CORELIBS} -L$PCAP_ROOT -lpcap"
-        INCS="${INCS} -I$PCAP_ROOT"
-@@ -1480,7 +1480,7 @@
- 
-     dnl remove unecessary path
-     dnl line below workaround for OSX 10.6 (Snow Leopard)/10.7 (Lion)
--    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386// | sed -e "s/-arch ppc// | sed -e "s/-arch x86_64//"`
-+    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386//" | sed -e "s/-arch ppc//" | sed -e "s/-arch x86_64//"`
-     INCS="${INCS} ${PYTHON_INCS}"
- 
- OLD_CFLAGS=$CFLAGS
-@@ -1815,8 +1815,6 @@
+-       CORELIBS="${CORELIBS} -L ${PCAP_ROOT}/lib -lpcap"
++       CORELIBS="${CORELIBS}-L${PCAP_ROOT}/lib -lpcap"
+        INCS="${INCS} -I ${PCAP_ROOT}/include"
+        AC_MSG_RESULT([found in $PCAP_ROOT])
+   else
+@@ -584,7 +584,7 @@
+      test -r /usr/local/lib/libpcap.a &&
+      test -r /usr/local/include/pcap.h; then
+        PCAP_ROOT="/usr/local"
+-       CORELIBS="${CORELIBS} -L$PCAP_ROOT/lib -lpcap"
++       CORELIBS="${CORELIBS}-L$PCAP_ROOT/lib -lpcap"
+        INCS="${INCS} -I$PCAP_ROOT/include"
+        AC_MSG_RESULT([found in $PCAP_ROOT])
+ dnl>
+@@ -1744,8 +1744,6 @@
  else
     if test -f "3rd_party/GeoLiteCity.dat.gz"; then
       cp 3rd_party/GeoLiteCity.dat.gz .
@@ -29,7 +45,7 @@
     fi
  
     gunzip GeoLiteCity.dat.gz
-@@ -1829,8 +1827,6 @@
+@@ -1758,8 +1756,6 @@
  else
     if test -f "3rd_party/GeoIPASNum.dat.gz"; then
       cp 3rd_party/GeoIPASNum.dat.gz .

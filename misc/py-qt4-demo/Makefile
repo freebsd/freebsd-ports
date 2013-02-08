@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-qt4-demo
-# Date created:				2007-02-20
-# Whom:					Danny Pansters <danny@ricin.com>
-#
+# Created by: Danny Pansters <danny@ricin.com>
 # $FreeBSD$
 
 PORTNAME=	demo
@@ -18,15 +15,17 @@ COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 USE_PYTHON=	yes
 
-OPTIONS=	PYQT4	"Install any missing PyQt4 components" off
+OPTIONS_DEFINE=	PYQT4
+PYQT4_DESC=	Install any missing PyQt4 components
 
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
+PORTEXAMPLES=	*
 
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
+.include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PYQT4)
+.if ${PORT_OPTIONS:MPYQT4}
 RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PKGNAMEPREFIX}network>=${PYQT4_VERSION}:${PORTSDIR}/net/py-qt4-network \
@@ -41,6 +40,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-co
 		${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
 		${PKGNAMEPREFIX}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
 		${PKGNAMEPREFIX}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \
+		${PKGNAMEPREFIX}dbussupport>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbussupport \
 		${PKGNAMEPREFIX}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
 		${PKGNAMEPREFIX}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
 		${PKGNAMEPREFIX}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
@@ -54,7 +54,6 @@ do-build:
 
 do-install:
 	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
-	${RM} -f ${WRKSRC}/examples/activeqt/webbrowser/webbrowser.py.orig
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 

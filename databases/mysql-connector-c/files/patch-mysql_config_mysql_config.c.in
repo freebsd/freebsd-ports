@@ -1,0 +1,13 @@
+--- mysql_config/mysql_config.c.in.orig	2013-02-01 17:35:59.000000000 +0100
++++ mysql_config/mysql_config.c.in	2013-02-01 17:36:22.000000000 +0100
+@@ -18,8 +18,8 @@
+ #include <my_getopt.h>
+ #include <stdio.h>
+ 
+-#define INCLUDE "-I@CMAKE_INSTALL_PREFIX@/include"
+-#define LIBS    "-L@CMAKE_INSTALL_PREFIX@/lib -lmysql" \
++#define INCLUDE "-I@CMAKE_INSTALL_PREFIX@/include/mysql-connector-c"
++#define LIBS    "-L@CMAKE_INSTALL_PREFIX@/lib/mysql-connector-c -lmysql" \
+                 "@extra_dynamic_LDFLAGS@"
+ #define CFLAGS  INCLUDE
+ #define VERSION "@CONNECTOR_C_VERSION@"

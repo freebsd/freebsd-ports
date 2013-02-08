@@ -82,9 +82,9 @@
 +	make tochnog \
 +	"SYS_FILE=sysposix" \
 +	"OBJ=o" \
-+	"COMPILER_FLAGS= -c ${CFLAGS} %%PTHREAD_CFLAGS%% -D_REENTRANT $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} -D_REENTRANT $(ALL_INCLUDE)" \
 +	"LINK_FLAGS_BEFORE=" \
-+	"LINK_FLAGS_AFTER=  $(ALL_LIB) %%PTHREAD_LIBS%% -lm -o tochnog"
++	"LINK_FLAGS_AFTER=  $(ALL_LIB) -pthread -lm -o tochnog"
  
  # multi processor linux; gnu gcc compiler
  linux: 

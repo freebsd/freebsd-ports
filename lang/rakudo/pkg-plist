@@ -1,5 +1,6 @@
 bin/nqp
 bin/ops2c
+bin/p6doc
 bin/panda
 bin/parrot
 bin/parrot-nqp
@@ -646,7 +647,6 @@ lib/parrot/%%PARROT_VERSION%%/library/OpenGL/Math.pir
 lib/parrot/%%PARROT_VERSION%%/library/P6Regex.pbc
 lib/parrot/%%PARROT_VERSION%%/library/P6object.pbc
 lib/parrot/%%PARROT_VERSION%%/library/P6object.pir
-lib/parrot/%%PARROT_VERSION%%/library/PASTRegex.pbc
 lib/parrot/%%PARROT_VERSION%%/library/PCT.pbc
 lib/parrot/%%PARROT_VERSION%%/library/PCT/Grammar.pbc
 lib/parrot/%%PARROT_VERSION%%/library/PCT/HLLCompiler.pbc
@@ -932,6 +932,8 @@ share/doc/rakudo/announce/2012.07
 share/doc/rakudo/announce/2012.08
 share/doc/rakudo/announce/2012.09
 share/doc/rakudo/announce/2012.09.1
+share/doc/rakudo/announce/2012.10
+share/doc/rakudo/announce/2012.11
 src/parrot/%%PARROT_VERSION%%/pmc/addrregistry.dump
 src/parrot/%%PARROT_VERSION%%/pmc/alarm.dump
 src/parrot/%%PARROT_VERSION%%/pmc/arrayiterator.dump

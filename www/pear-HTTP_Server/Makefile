@@ -1,24 +1,18 @@
-# Ports collection makefile for:  pear-HTTP_Server
-# Date created:			  24 Octobre 2004
-# Whom:				  Gerrit Beine (<tux@pinguru.net>)
-#
+# Created by: Gerrit Beine (<tux@pinguru.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP_Server
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	HTTP server class
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \
 		${PEARDIR}/Net/Server.php:${PORTSDIR}/net/pear-Net_Server
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CATEGORY=	HTTP
-FILES=		Server.php Server/Request.php
-EXAMPLES=	HTTP_Server_File.php www/index.html
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"

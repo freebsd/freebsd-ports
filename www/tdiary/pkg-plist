@@ -21,6 +21,8 @@
 %%WWWDIR%%/misc/filter/plugin/antispamservice.rb
 %%WWWDIR%%/misc/filter/plugin/en/antispamservice.rb
 %%WWWDIR%%/misc/filter/plugin/ja/antispamservice.rb
+%%WWWDIR%%/misc/gemfiles/ruby18.gemfile
+%%WWWDIR%%/misc/gemfiles/ruby18.gemfile.lock
 %%WWWDIR%%/misc/lib/README
 %%WWWDIR%%/misc/lib/compatible.rb
 %%WWWDIR%%/misc/lib/fcgi_patch.rb
@@ -33,6 +35,7 @@
 %%WWWDIR%%/misc/paas/heroku/tdiary.conf
 %%WWWDIR%%/misc/paas/sqale/Gemfile
 %%WWWDIR%%/misc/paas/sqale/Gemfile.lock
+%%WWWDIR%%/misc/paas/sqale/Procfile
 %%WWWDIR%%/misc/paas/sqale/dot.env
 %%WWWDIR%%/misc/paas/sqale/tdiary.conf
 %%WWWDIR%%/misc/plugin/ChangeLog.DO_NOT_UPDATE
@@ -82,7 +85,6 @@
 %%WWWDIR%%/misc/plugin/en/recent_comment.rb
 %%WWWDIR%%/misc/plugin/en/recent_comment3.rb
 %%WWWDIR%%/misc/plugin/en/recent_rss.rb
-%%WWWDIR%%/misc/plugin/en/recent_trackback3.rb
 %%WWWDIR%%/misc/plugin/en/referer_scheme.rb
 %%WWWDIR%%/misc/plugin/en/search_control.rb
 %%WWWDIR%%/misc/plugin/en/search_form.rb
@@ -114,7 +116,6 @@
 %%WWWDIR%%/misc/plugin/ja/recent_comment.rb
 %%WWWDIR%%/misc/plugin/ja/recent_comment3.rb
 %%WWWDIR%%/misc/plugin/ja/recent_rss.rb
-%%WWWDIR%%/misc/plugin/ja/recent_trackback3.rb
 %%WWWDIR%%/misc/plugin/ja/referer_scheme.rb
 %%WWWDIR%%/misc/plugin/ja/search_control.rb
 %%WWWDIR%%/misc/plugin/ja/search_form.rb
@@ -158,8 +159,6 @@
 %%WWWDIR%%/misc/plugin/xmlrpc.rb
 %%WWWDIR%%/misc/plugin/xmlrpc/README
 %%WWWDIR%%/misc/plugin/xmlrpc/xmlrpc.rb
-%%WWWDIR%%/misc/standalone_cgi/bin/server
-%%WWWDIR%%/misc/standalone_cgi/lib/server.rb
 %%WWWDIR%%/misc/style/emptdiary/README.rd
 %%WWWDIR%%/misc/style/emptdiary/README.rd.en
 %%WWWDIR%%/misc/style/emptdiary/emptdiary_style.rb
@@ -206,7 +205,6 @@
 %%WWWDIR%%/skel/i.latest.rhtml
 %%WWWDIR%%/skel/i.month.rhtml
 %%WWWDIR%%/skel/i.search.rhtml
-%%WWWDIR%%/skel/i.show.rhtml
 %%WWWDIR%%/skel/i.update.rhtml
 %%WWWDIR%%/skel/i.update.rhtml.en
 %%WWWDIR%%/skel/latest.rhtml
@@ -218,7 +216,6 @@
 %%WWWDIR%%/skel/preview.rhtml.en
 %%WWWDIR%%/skel/referer.rhtml
 %%WWWDIR%%/skel/search.rhtml
-%%WWWDIR%%/skel/show.rhtml
 %%WWWDIR%%/skel/tdiary.rconf
 %%WWWDIR%%/skel/update.rhtml
 %%WWWDIR%%/skel/update.rhtml.en
@@ -226,7 +223,10 @@
 %%WWWDIR%%/tdiary.conf.sample
 %%WWWDIR%%/tdiary.conf.sample-en
 %%WWWDIR%%/tdiary.rb
+%%WWWDIR%%/tdiary/admin.rb
 %%WWWDIR%%/tdiary/application.rb
+%%WWWDIR%%/tdiary/author_only_base.rb
+%%WWWDIR%%/tdiary/base.rb
 %%WWWDIR%%/tdiary/comment.rb
 %%WWWDIR%%/tdiary/comment_manager.rb
 %%WWWDIR%%/tdiary/compatible.rb
@@ -257,6 +257,8 @@
 %%WWWDIR%%/tdiary/referer_manager.rb
 %%WWWDIR%%/tdiary/request.rb
 %%WWWDIR%%/tdiary/response.rb
+%%WWWDIR%%/tdiary/server.rb
+%%WWWDIR%%/tdiary/style.rb
 %%WWWDIR%%/tdiary/style/tdiary_style.rb
 %%WWWDIR%%/tdiary/style/wiki_style.rb
 %%WWWDIR%%/tdiary/tasks/assets.rake
@@ -266,8 +268,11 @@
 %%WWWDIR%%/tdiary/tasks/heroku.rake
 %%WWWDIR%%/tdiary/tasks/jasmine.rake
 %%WWWDIR%%/tdiary/tasks/rdoc.rake
+%%WWWDIR%%/tdiary/tasks/release.rake
 %%WWWDIR%%/tdiary/tasks/rspec.rake
+%%WWWDIR%%/tdiary/tasks/server.rake
 %%WWWDIR%%/tdiary/tasks/test.rake
+%%WWWDIR%%/tdiary/view.rb
 %%WWWDIR%%/theme/3minutes/3minutes.css
 %%WWWDIR%%/theme/3minutes/README
 %%WWWDIR%%/theme/3minutes/h3.png
@@ -1882,130 +1887,134 @@
 %%WWWDIR%%/vendor/imagesize-0.1.1/lib
 %%WWWDIR%%/vendor/jasmine-jquery-1.4.2/jasmine-jquery.js
 %%WWWDIR%%/vendor/jquery-1.8/jquery.js
-%%WWWDIR%%/vendor/json_pure-1.7.4/.gitignore
-%%WWWDIR%%/vendor/json_pure-1.7.4/.travis.yml
-%%WWWDIR%%/vendor/json_pure-1.7.4/CHANGES
-%%WWWDIR%%/vendor/json_pure-1.7.4/COPYING
-%%WWWDIR%%/vendor/json_pure-1.7.4/COPYING-json-jruby
-%%WWWDIR%%/vendor/json_pure-1.7.4/GPL
-%%WWWDIR%%/vendor/json_pure-1.7.4/Gemfile
-%%WWWDIR%%/vendor/json_pure-1.7.4/README-json-jruby.markdown
-%%WWWDIR%%/vendor/json_pure-1.7.4/README.rdoc
-%%WWWDIR%%/vendor/json_pure-1.7.4/Rakefile
-%%WWWDIR%%/vendor/json_pure-1.7.4/TODO
-%%WWWDIR%%/vendor/json_pure-1.7.4/VERSION
-%%WWWDIR%%/vendor/json_pure-1.7.4/diagrams/.keep
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/fbuffer/fbuffer.h
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/generator/depend
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/generator/extconf.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/generator/generator.c
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/generator/generator.h
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser/depend
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser/extconf.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser/parser.c
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser/parser.h
-%%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser/parser.rl
-%%WWWDIR%%/vendor/json_pure-1.7.4/install.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/ByteListTranscoder.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/Generator.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/GeneratorMethods.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/GeneratorService.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/GeneratorState.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/OptionsReader.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/Parser.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/Parser.rl
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/ParserService.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/RuntimeInfo.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/StringDecoder.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/StringEncoder.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext/Utils.java
-%%WWWDIR%%/vendor/json_pure-1.7.4/json-java.gemspec
-%%WWWDIR%%/vendor/json_pure-1.7.4/json.gemspec
-%%WWWDIR%%/vendor/json_pure-1.7.4/json_pure.gemspec
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/bigdecimal.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/complex.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/core.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/date.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/date_time.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/exception.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/ostruct.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/range.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/rational.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/regexp.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/struct.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/symbol.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add/time.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/common.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/ext.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/ext/.keep
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/generic_object.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/pure.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/pure/generator.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/pure/parser.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/version.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail1.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail10.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail11.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail12.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail13.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail14.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail18.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail19.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail2.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail20.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail21.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail22.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail23.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail24.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail25.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail27.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail28.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail3.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail4.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail5.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail6.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail7.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail8.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/fail9.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass1.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass15.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass16.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass17.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass2.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass26.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures/pass3.json
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/setup_variant.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_addition.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_encoding.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_fixtures.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_generate.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_generic_object.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_string_matching.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tests/test_json_unicode.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tools/fuzz.rb
-%%WWWDIR%%/vendor/json_pure-1.7.4/tools/server.rb
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/tools
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/tests/fixtures
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/tests
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/pure
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/ext
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/lib/json/add
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/lib/json
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/lib
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json/ext
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/java/src/json
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/java/src
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/java
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/parser
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/generator
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext/fbuffer
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext/json/ext
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext/json
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/ext
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4/diagrams
-@dirrm %%WWWDIR%%/vendor/json_pure-1.7.4
+%%WWWDIR%%/vendor/json_pure-1.7.6/.gitignore
+%%WWWDIR%%/vendor/json_pure-1.7.6/.travis.yml
+%%WWWDIR%%/vendor/json_pure-1.7.6/CHANGES
+%%WWWDIR%%/vendor/json_pure-1.7.6/COPYING
+%%WWWDIR%%/vendor/json_pure-1.7.6/COPYING-json-jruby
+%%WWWDIR%%/vendor/json_pure-1.7.6/GPL
+%%WWWDIR%%/vendor/json_pure-1.7.6/Gemfile
+%%WWWDIR%%/vendor/json_pure-1.7.6/README-json-jruby.markdown
+%%WWWDIR%%/vendor/json_pure-1.7.6/README.rdoc
+%%WWWDIR%%/vendor/json_pure-1.7.6/Rakefile
+%%WWWDIR%%/vendor/json_pure-1.7.6/TODO
+%%WWWDIR%%/vendor/json_pure-1.7.6/VERSION
+%%WWWDIR%%/vendor/json_pure-1.7.6/data/example.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/data/index.html
+%%WWWDIR%%/vendor/json_pure-1.7.6/data/prototype.js
+%%WWWDIR%%/vendor/json_pure-1.7.6/diagrams/.keep
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/fbuffer/fbuffer.h
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/generator/depend
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/generator/extconf.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/generator/generator.c
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/generator/generator.h
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser/depend
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser/extconf.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser/parser.c
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser/parser.h
+%%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser/parser.rl
+%%WWWDIR%%/vendor/json_pure-1.7.6/install.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/ByteListTranscoder.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/Generator.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/GeneratorMethods.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/GeneratorService.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/GeneratorState.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/OptionsReader.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/Parser.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/Parser.rl
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/ParserService.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/RuntimeInfo.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/StringDecoder.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/StringEncoder.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext/Utils.java
+%%WWWDIR%%/vendor/json_pure-1.7.6/json-java.gemspec
+%%WWWDIR%%/vendor/json_pure-1.7.6/json.gemspec
+%%WWWDIR%%/vendor/json_pure-1.7.6/json_pure.gemspec
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/bigdecimal.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/complex.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/core.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/date.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/date_time.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/exception.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/ostruct.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/range.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/rational.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/regexp.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/struct.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/symbol.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add/time.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/common.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/ext.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/ext/.keep
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/generic_object.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/pure.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/pure/generator.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/pure/parser.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/version.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail1.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail10.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail11.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail12.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail13.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail14.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail18.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail19.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail2.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail20.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail21.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail22.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail23.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail24.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail25.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail27.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail28.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail3.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail4.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail5.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail6.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail7.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail8.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/fail9.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass1.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass15.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass16.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass17.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass2.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass26.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures/pass3.json
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/setup_variant.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_addition.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_encoding.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_fixtures.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_generate.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_generic_object.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_string_matching.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tests/test_json_unicode.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tools/fuzz.rb
+%%WWWDIR%%/vendor/json_pure-1.7.6/tools/server.rb
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/tools
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/tests/fixtures
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/tests
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/pure
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/lib/json/add
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/lib/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/lib
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/java/src/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/java/src
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/java
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/parser
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/generator
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext/fbuffer
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/diagrams
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6/data
+@dirrm %%WWWDIR%%/vendor/json_pure-1.7.6
 @dirrm %%WWWDIR%%/vendor/jquery-1.8
 @dirrm %%WWWDIR%%/vendor/jasmine-jquery-1.4.2
 @dirrm %%WWWDIR%%/vendor/imagesize-0.1.1
@@ -2378,9 +2387,6 @@
 @dirrm %%WWWDIR%%/misc/style/etdiary
 @dirrm %%WWWDIR%%/misc/style/emptdiary
 @dirrm %%WWWDIR%%/misc/style
-@dirrm %%WWWDIR%%/misc/standalone_cgi/lib
-@dirrm %%WWWDIR%%/misc/standalone_cgi/bin
-@dirrm %%WWWDIR%%/misc/standalone_cgi
 @dirrm %%WWWDIR%%/misc/plugin/xmlrpc
 @dirrm %%WWWDIR%%/misc/plugin/ja
 @dirrm %%WWWDIR%%/misc/plugin/en
@@ -2391,6 +2397,7 @@
 @dirrm %%WWWDIR%%/misc/paas/cloudfoundry
 @dirrm %%WWWDIR%%/misc/paas
 @dirrm %%WWWDIR%%/misc/lib
+@dirrm %%WWWDIR%%/misc/gemfiles
 @dirrm %%WWWDIR%%/misc/filter/plugin/ja
 @dirrm %%WWWDIR%%/misc/filter/plugin/en
 @dirrm %%WWWDIR%%/misc/filter/plugin

@@ -28,8 +28,6 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--enable-oops-user=${USERS} \
 		--enable-large-files \
 		--with-regexp=system
-CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 

@@ -4,11 +4,14 @@ include/qjson/qjson_export.h
 include/qjson/qobjecthelper.h
 include/qjson/serializer.h
 include/qjson/serializerrunnable.h
+lib/cmake/qjson/QJSONConfig.cmake
+lib/cmake/qjson/QJSONConfigVersion.cmake
+lib/cmake/qjson/QJSONTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/qjson/QJSONTargets.cmake
 lib/libqjson.so
 lib/libqjson.so.0
-lib/libqjson.so.0.7.1
+lib/libqjson.so.0.8.1
 libdata/pkgconfig/QJson.pc
-share/cmake/Modules/FindQJSON.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
+@dirrm lib/cmake/qjson
+@dirrmtry lib/cmake
 @dirrm include/qjson

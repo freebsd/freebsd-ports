@@ -1,0 +1,26 @@
+commit 93d56d2
+Author: Makoto Kato <m_kato@ga2.so-net.ne.jp>
+Date:   Mon Dec 3 17:01:16 2012 +0900
+
+    Bug 817481 - Build failure on WebRTC unit test with --with-system-libvpx. r=jesup
+---
+ media/webrtc/signaling/test/Makefile.in | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+index 81a38ff..e10e869 100644
+--- mozilla/media/webrtc/signaling/test/Makefile.in
++++ mozilla/media/webrtc/signaling/test/Makefile.in
+@@ -34,6 +34,12 @@ LIBS += \
+ endif
+ endif
+ 
++ifdef MOZ_NATIVE_LIBVPX
++LIBS += \
++  $(MOZ_LIBVPX_LIBS) \
++  $(NULL)
++endif
++
+ ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
+ LIBS += \
+   $(XLIBS) \

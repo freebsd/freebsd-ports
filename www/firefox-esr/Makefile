@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.11
+DISTVERSION=	17.0.2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -12,16 +12,18 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9.2:${PORTSDIR}/devel/nspr \
 		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.13:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
 USE_AUTOTOOLS=	autoconf213:env
+USE_PYTHON_BUILD=-2.7
 LATEST_LINK=	firefox-esr
 USE_GECKO=	gecko
-CONFLICTS=	firefox-1[1-9].*
+CONFLICTS=	firefox-2[0-9].* firefox-1[1-689].* firefox-10.*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
@@ -43,13 +45,16 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	PGO
+OPTIONS_DEFINE=	GSTREAMER PGO
 OPTIONS_DEFAULT=GIO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
+
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-esr10
+WRKSRC:=	${WRKDIR}/mozilla-esr17
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
@@ -64,7 +69,6 @@ CFLAGS+=	-mminimal-toc
 
 .if ${PORT_OPTIONS:MPGO}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-USE_PYTHON_BUILD=	-2.7
 USE_DISPLAY=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 
@@ -74,10 +78,6 @@ MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
 MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
 		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
-.endif
-
-.if !empty(CXX:M*clang++*) || (${CXX:Mc++} && ${OSVERSION} > 1000023)
-CXXFLAGS+=	-Wno-return-type-c-linkage
 .endif
 
 pre-extract:

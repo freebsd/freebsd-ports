@@ -1,0 +1,45 @@
+bin/amon2-setup.pl
+%%SITE_PERL%%/Amon2.pm
+%%SITE_PERL%%/Amon2/Config/Simple.pm
+%%SITE_PERL%%/Amon2/Declare.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/CSRFDefender.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/FillInFormLite.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/HTTPSession.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/JSON.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/NoCache.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/PlackSession.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/Streaming.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/WebSocket.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/Blueprint.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/Bootstrap.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/ES5Shim.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/MicroLocationJS.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/MicroTemplateJS.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/SprintfJS.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/StrftimeJS.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/jQuery.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor/Basic.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor/Large.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor/Minimum.pm
+%%SITE_PERL%%/Amon2/Setup/VC/Git.pm
+%%SITE_PERL%%/Amon2/Trigger.pm
+%%SITE_PERL%%/Amon2/Util.pm
+%%SITE_PERL%%/Amon2/Web.pm
+%%SITE_PERL%%/Amon2/Web/Dispatcher/Lite.pm
+%%SITE_PERL%%/Amon2/Web/Dispatcher/RouterSimple.pm
+%%SITE_PERL%%/Amon2/Web/Request.pm
+%%SITE_PERL%%/Amon2/Web/Response.pm
+%%SITE_PERL%%/Amon2/Web/Response/Callback.pm
+%%SITE_PERL%%/Amon2/Web/WebSocket.pm
+@dirrm %%SITE_PERL%%/Amon2/Web/Response
+@dirrm %%SITE_PERL%%/Amon2/Web/Dispatcher
+@dirrm %%SITE_PERL%%/Amon2/Web
+@dirrm %%SITE_PERL%%/Amon2/Setup/VC
+@dirrm %%SITE_PERL%%/Amon2/Setup/Flavor
+@dirrm %%SITE_PERL%%/Amon2/Setup/Asset
+@dirrm %%SITE_PERL%%/Amon2/Setup
+@dirrm %%SITE_PERL%%/Amon2/Plugin/Web
+@dirrm %%SITE_PERL%%/Amon2/Plugin
+@dirrm %%SITE_PERL%%/Amon2/Config
+@dirrm %%SITE_PERL%%/Amon2

@@ -1,0 +1,22 @@
+include/audiocdencoder.h
+lib/kde4/kcm_audiocd.so
+lib/kde4/kio_audiocd.so
+lib/kde4/libaudiocd_encoder_flac.so
+lib/kde4/libaudiocd_encoder_lame.so
+lib/kde4/libaudiocd_encoder_vorbis.so
+lib/kde4/libaudiocd_encoder_wav.so
+lib/libaudiocdplugins.so
+lib/libaudiocdplugins.so.5
+lib/libaudiocdplugins.so.5.0.1
+share/apps/kconf_update/audiocd.upd
+share/apps/kconf_update/upgrade-metadata.sh
+share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
+share/apps/solid/actions/solid_audiocd.desktop
+share/config.kcfg/audiocd_lame_encoder.kcfg
+share/config.kcfg/audiocd_vorbis_encoder.kcfg
+share/doc/HTML/en/kioslave/audiocd/common
+share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/en/kioslave/audiocd/index.docbook
+share/kde4/services/audiocd.desktop
+share/kde4/services/audiocd.protocol
+@dirrm share/doc/HTML/en/kioslave/audiocd

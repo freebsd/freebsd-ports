@@ -7,7 +7,7 @@
 +  // load system hunspell dictionaries
 +  nsIFile* hunDir;
 +  NS_NewNativeLocalFile(NS_LITERAL_CSTRING("%%LOCALBASE%%/share/hunspell"),
-+			true, (nsILocalFile**)&hunDir);
++			true, &hunDir);
 +  LoadDictionariesFromDir(hunDir);
 +
    // find dictionaries from extensions requiring restart

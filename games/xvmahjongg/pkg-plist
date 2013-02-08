@@ -1,5 +1,0 @@
-bin/xvmahjongg
-%%PORTDOCS%%share/doc/xvmahjongg/Notes
-%%PORTDOCS%%share/doc/xvmahjongg/README
-%%PORTDOCS%%share/doc/xvmahjongg/README.too
-%%PORTDOCS%%@dirrm share/doc/xvmahjongg

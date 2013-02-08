@@ -1,28 +1,25 @@
-# New ports collection makefile for:	clucene
-# Date created:		2006-08-09
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clucene
-PORTVERSION=	0.9.21
+PORTVERSION=	2.3.3.4
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-core-stable/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-core-unstable/2.3
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	CLucene is a C++ port of Lucene
 
-GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+LICENSE=	AL2 LGPL21
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+
+USE_CMAKE=	yes
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 
-.include <bsd.port.pre.mk>
+CMAKE_ARGS=	-DBUILD_CONTRIBS_LIB=ON
+CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
 
-.if defined(WITH_ASCII_SUPPORT)
-CONFIGURE_ARGS+=	--enable-ascii
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

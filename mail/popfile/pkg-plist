@@ -56,7 +56,6 @@ sbin/popfile.sh
 %%DATADIR%%/languages/Svenska.msg
 %%DATADIR%%/languages/Turkce.msg
 %%DATADIR%%/languages/Ukrainian.msg
-%%DATADIR%%/license
 %%DATADIR%%/otto.gif
 %%DATADIR%%/otto.png
 %%DATADIR%%/pipe.pl
@@ -143,19 +142,6 @@ sbin/popfile.sh
 %%DATADIR%%/skins/osx/style.css
 %%DATADIR%%/skins/outlook/style.css
 %%DATADIR%%/skins/simplyblue/style.css
-%%DATADIR%%/skins/sleet-rtl/bottom.gif
-%%DATADIR%%/skins/sleet-rtl/bottomLeft.gif
-%%DATADIR%%/skins/sleet-rtl/bottomRight.gif
-%%DATADIR%%/skins/sleet-rtl/button.gif
-%%DATADIR%%/skins/sleet-rtl/button2.gif
-%%DATADIR%%/skins/sleet-rtl/left.gif
-%%DATADIR%%/skins/sleet-rtl/menu.gif
-%%DATADIR%%/skins/sleet-rtl/menuButton.gif
-%%DATADIR%%/skins/sleet-rtl/right.gif
-%%DATADIR%%/skins/sleet-rtl/style.css
-%%DATADIR%%/skins/sleet-rtl/top.gif
-%%DATADIR%%/skins/sleet-rtl/topLeft.gif
-%%DATADIR%%/skins/sleet-rtl/topRight.gif
 %%DATADIR%%/skins/sleet/bottom.gif
 %%DATADIR%%/skins/sleet/bottomLeft.gif
 %%DATADIR%%/skins/sleet/bottomRight.gif
@@ -169,6 +155,19 @@ sbin/popfile.sh
 %%DATADIR%%/skins/sleet/top.gif
 %%DATADIR%%/skins/sleet/topLeft.gif
 %%DATADIR%%/skins/sleet/topRight.gif
+%%DATADIR%%/skins/sleet-rtl/bottom.gif
+%%DATADIR%%/skins/sleet-rtl/bottomLeft.gif
+%%DATADIR%%/skins/sleet-rtl/bottomRight.gif
+%%DATADIR%%/skins/sleet-rtl/button.gif
+%%DATADIR%%/skins/sleet-rtl/button2.gif
+%%DATADIR%%/skins/sleet-rtl/left.gif
+%%DATADIR%%/skins/sleet-rtl/menu.gif
+%%DATADIR%%/skins/sleet-rtl/menuButton.gif
+%%DATADIR%%/skins/sleet-rtl/right.gif
+%%DATADIR%%/skins/sleet-rtl/style.css
+%%DATADIR%%/skins/sleet-rtl/top.gif
+%%DATADIR%%/skins/sleet-rtl/topLeft.gif
+%%DATADIR%%/skins/sleet-rtl/topRight.gif
 %%DATADIR%%/skins/smalldefault/style.css
 %%DATADIR%%/skins/smallgrey/style.css
 %%DATADIR%%/skins/strawberryrose/style.css
@@ -176,8 +175,8 @@ sbin/popfile.sh
 %%DATADIR%%/skins/white/style.css
 %%DATADIR%%/skins/windows/style.css
 %%DATADIR%%/stopwords
-%%DATADIR%%/v%%PORTVERSION%%.change
-%%DATADIR%%/v%%PORTVERSION%%.change.nihongo
+%%DATADIR%%/v%%VERSION%%.change
+%%DATADIR%%/v%%VERSION%%.change.nihongo
 @dirrm %%DATADIR%%/skins/windows
 @dirrm %%DATADIR%%/skins/white
 @dirrm %%DATADIR%%/skins/tinygrey

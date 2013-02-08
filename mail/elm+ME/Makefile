@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elm ME+ (unofficial Elm)
-# Date created:		26 June 1995
-# Whom:			ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	elm+ME
 PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
@@ -78,7 +74,7 @@ TLS_DESC=	Enable POP STLS and IMAP STARTTLS support
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	125
+ELM_REVISION=	126
 ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
@@ -118,7 +114,6 @@ SHLIB_DIR=	${PREFIX}/lib
 CONFIG_PATH=	${WRKDIR}/config.sh
 MIME_TYPES=	elm.mimetypes
 MIME_CSETS=	elm.mimecharsets
-TERM_INFO=	elm.terminalinfo
 ELM_RC=		elm.rc
 LOCAL_CONF_FILES=	${MIME_TYPES} ${MIME_CSETS} ${TERM_INFO} ${ELM_RC}
 DOC_FILES=	MIME.txt README.ME+
@@ -219,7 +214,7 @@ install-nls-files:
 	@cd ${WRKSRC}/nls; ${MAKE} install
 
 install-doc-files:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

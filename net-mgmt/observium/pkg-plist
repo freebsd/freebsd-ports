@@ -1,3 +1,4 @@
+%%JAIL%%bin/fping-perl
 %%WWWDIR%%/addhost.php
 %%WWWDIR%%/adduser.php
 %%WWWDIR%%/alerts.php

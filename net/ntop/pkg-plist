@@ -6,10 +6,6 @@ etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
 etc/ntop/specialMAC.txt.gz
-lib/libcpacketPlugin-%%PORTVERSION%%.so
-lib/libcpacketPlugin.so
-lib/libicmpPlugin-%%PORTVERSION%%.so
-lib/libicmpPlugin.so
 lib/libnetflowPlugin-%%PORTVERSION%%.so
 lib/libnetflowPlugin.so
 lib/libntop-%%PORTVERSION%%.so
@@ -24,42 +20,11 @@ lib/librrdPlugin-%%PORTVERSION%%.so
 lib/librrdPlugin.so
 lib/libsflowPlugin-%%PORTVERSION%%.so
 lib/libsflowPlugin.so
-lib/ntop/plugins/cpacketPlugin.so
-lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/netflowPlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
+%%DATADIR%%/html/Google_Maps_Marker.png
 %%DATADIR%%/html/JSCookMenu.js
-%%DATADIR%%/html/MochiKit/Async.js
-%%DATADIR%%/html/MochiKit/Base.js
-%%DATADIR%%/html/MochiKit/Color.js
-%%DATADIR%%/html/MochiKit/DOM.js
-%%DATADIR%%/html/MochiKit/DateTime.js
-%%DATADIR%%/html/MochiKit/DragAndDrop.js
-%%DATADIR%%/html/MochiKit/Format.js
-%%DATADIR%%/html/MochiKit/Iter.js
-%%DATADIR%%/html/MochiKit/Logging.js
-%%DATADIR%%/html/MochiKit/LoggingPane.js
-%%DATADIR%%/html/MochiKit/MochiKit.js
-%%DATADIR%%/html/MochiKit/MockDOM.js
-%%DATADIR%%/html/MochiKit/Position.js
-%%DATADIR%%/html/MochiKit/Selector.js
-%%DATADIR%%/html/MochiKit/Signal.js
-%%DATADIR%%/html/MochiKit/Sortable.js
-%%DATADIR%%/html/MochiKit/Style.js
-%%DATADIR%%/html/MochiKit/Test.js
-%%DATADIR%%/html/MochiKit/Visual.js
-%%DATADIR%%/html/MochiKit/__package__.js
-%%DATADIR%%/html/PlotKit/Base.js
-%%DATADIR%%/html/PlotKit/Canvas.js
-%%DATADIR%%/html/PlotKit/EasyPlot.js
-%%DATADIR%%/html/PlotKit/Layout.js
-%%DATADIR%%/html/PlotKit/PlotKit.js
-%%DATADIR%%/html/PlotKit/PlotKit_Packed.js
-%%DATADIR%%/html/PlotKit/SVG.js
-%%DATADIR%%/html/PlotKit/SweetCanvas.js
-%%DATADIR%%/html/PlotKit/SweetSVG.js
-%%DATADIR%%/html/PlotKit/excanvas.js
 %%DATADIR%%/html/Risk_high.gif
 %%DATADIR%%/html/Risk_low.gif
 %%DATADIR%%/html/Risk_medium.gif
@@ -90,6 +55,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/clock.gif
 %%DATADIR%%/html/collapsed.gif
 %%DATADIR%%/html/corner.gif
+%%DATADIR%%/html/d3.js
 %%DATADIR%%/html/deleteURL.gif
 %%DATADIR%%/html/deleteUser.gif
 %%DATADIR%%/html/disk.gif
@@ -133,13 +99,79 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/img_inquisitor/ul_corner_tr.gif
 %%DATADIR%%/html/info.gif
 %%DATADIR%%/html/initiator.gif
+%%DATADIR%%/html/jqplot/excanvas.js
+%%DATADIR%%/html/jqplot/excanvas.min.js
+%%DATADIR%%/html/jqplot/jquery.jqplot.css
+%%DATADIR%%/html/jqplot/jquery.jqplot.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.BezierCurveRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.BezierCurveRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.barRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.barRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.blockRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.blockRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.bubbleRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.bubbleRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasAxisLabelRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasAxisTickRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasOverlay.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasOverlay.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasTextRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.canvasTextRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.categoryAxisRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.categoryAxisRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.ciParser.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.ciParser.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.cursor.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.cursor.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.dateAxisRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.dateAxisRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.donutRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.donutRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.dragable.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.dragable.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.enhancedLegendRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.enhancedLegendRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.funnelRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.funnelRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.highlighter.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.highlighter.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.json2.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.json2.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.logAxisRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.logAxisRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.mekkoAxisRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.mekkoAxisRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.mekkoRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.mekkoRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.meterGaugeRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.meterGaugeRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.ohlcRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.ohlcRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pieRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pieRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pointLabels.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pointLabels.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidAxisRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidAxisRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidGridRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidGridRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidRenderer.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.pyramidRenderer.min.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.trendline.js
+%%DATADIR%%/html/jqplot/plugins/jqplot.trendline.min.js
+%%DATADIR%%/html/jquery-1.7.2.min.js
+%%DATADIR%%/html/jquery-ui-1.8.16.custom.css
+%%DATADIR%%/html/jquery-ui-1.8.16.custom.min.js
 %%DATADIR%%/html/jscalendar/calendar-load.js
 %%DATADIR%%/html/jscalendar/calendar-setup.js
 %%DATADIR%%/html/jscalendar/calendar.js
 %%DATADIR%%/html/jscalendar/lang/calendar-en.js
 %%DATADIR%%/html/json2.js
-%%DATADIR%%/html/linkedin.gif
 %%DATADIR%%/html/line-bottom.png
+%%DATADIR%%/html/linkedin.gif
+%%DATADIR%%/html/loading.gif
 %%DATADIR%%/html/lock.png
 %%DATADIR%%/html/mail.gif
 %%DATADIR%%/html/major.gif
@@ -163,8 +195,12 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/reflection.js
 %%DATADIR%%/html/router.gif
 %%DATADIR%%/html/rrdAlarmConfig.js
+%%DATADIR%%/html/sankey.css
+%%DATADIR%%/html/sankey.js
+%%DATADIR%%/html/sankey.min.html
 %%DATADIR%%/html/seagate.gif
 %%DATADIR%%/html/skype.gif
+%%DATADIR%%/html/skype.png
 %%DATADIR%%/html/sorterScript.js
 %%DATADIR%%/html/sorterStyle.css
 %%DATADIR%%/html/spacer.gif
@@ -400,12 +436,10 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/statsicons/os/hp.gif
 %%DATADIR%%/html/statsicons/os/irix.gif
 %%DATADIR%%/html/statsicons/os/linux.gif
-%%DATADIR%%/html/statsicons/os/mac.gif
 %%DATADIR%%/html/statsicons/os/novell.gif
 %%DATADIR%%/html/statsicons/os/os2.gif
 %%DATADIR%%/html/statsicons/os/sun.gif
 %%DATADIR%%/html/statsicons/os/windows.gif
-%%DATADIR%%/html/skype.png
 %%DATADIR%%/html/style.css
 %%DATADIR%%/html/switch.gif
 %%DATADIR%%/html/theme.css
@@ -429,9 +463,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/python/docs/src/host.py
 %%DATADIR%%/python/docs/src/interface.py
 %%DATADIR%%/python/docs/src/ntop.py
-%%DATADIR%%/python/fastbit.py
 %%DATADIR%%/python/hello_world.py
-%%DATADIR%%/python/ipPortQuery.py
 %%DATADIR%%/python/json/info.py
 %%DATADIR%%/python/json/interfaces.py
 %%DATADIR%%/python/json/iphone/clientcheck.py
@@ -447,6 +479,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/python/rrdalarm/scripts/savelog.py
 %%DATADIR%%/python/rrdalarm/scripts/sendmail.py
 %%DATADIR%%/python/rrdalarm/start.py
+%%DATADIR%%/python/sankey.py
 %%DATADIR%%/python/templates/GeoPacketVisualizer.tmpl
 %%DATADIR%%/python/templates/fastbit.tmpl
 %%DATADIR%%/python/templates/ipPortQuery.tmpl
@@ -454,28 +487,28 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/python/templates/rrdAlarmConfigurator.tmpl
 %%DATADIR%%/python/templates/rrdAlarmConfiguratorHelp.tmpl
 %%DATADIR%%/python/templates/rrdAlarmStart.tmpl
-@dirrm %%DATADIR%%/html/MochiKit
-@dirrm %%DATADIR%%/html/PlotKit
-@dirrm %%DATADIR%%/html/img_inquisitor
-@dirrm %%DATADIR%%/html/jscalendar/lang
-@dirrm %%DATADIR%%/html/jscalendar
-@dirrm %%DATADIR%%/html/statsicons/flags
-@dirrm %%DATADIR%%/html/statsicons/os
-@dirrm %%DATADIR%%/html/statsicons
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/python/docs/src
-@dirrm %%DATADIR%%/python/docs
-@dirrm %%DATADIR%%/python/json/iphone
-@dirrm %%DATADIR%%/python/json
-@dirrm %%DATADIR%%/python/rrdalarm/scripts
-@dirrm %%DATADIR%%/python/rrdalarm
-@dirrm %%DATADIR%%/python/templates
-@dirrm %%DATADIR%%/python
-@dirrm %%DATADIR%%
-@dirrm etc/ntop
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
-@exec mkdir -p %%DBDIR%%/ntop
+@dirrm etc/ntop
+@dirrm %%DATADIR%%/python/templates
+@dirrm %%DATADIR%%/python/rrdalarm/scripts
+@dirrm %%DATADIR%%/python/rrdalarm
+@dirrm %%DATADIR%%/python/json/iphone
+@dirrm %%DATADIR%%/python/json
+@dirrm %%DATADIR%%/python/docs/src
+@dirrm %%DATADIR%%/python/docs
+@dirrm %%DATADIR%%/python
+@dirrm %%DATADIR%%/html/statsicons/os
+@dirrm %%DATADIR%%/html/statsicons/flags
+@dirrm %%DATADIR%%/html/statsicons
+@dirrm %%DATADIR%%/html/jscalendar/lang
+@dirrm %%DATADIR%%/html/jscalendar
+@dirrm %%DATADIR%%/html/jqplot/plugins
+@dirrm %%DATADIR%%/html/jqplot
+@dirrm %%DATADIR%%/html/img_inquisitor
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%
 @exec chown -R nobody:nobody %%DBDIR%%/ntop
-@unexec rmdir %%DBDIR%%/ntop 2>/dev/null || true
+@exec mkdir -p %%DBDIR%%/ntop
 @unexec rmdir %%DBDIR%% 2>/dev/null || true
+@unexec rmdir %%DBDIR%%/ntop 2>/dev/null || true

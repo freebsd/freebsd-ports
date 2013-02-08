@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xanim
-# Date created:         Sat Nov 5 11:43:03 PST 1994
-# Whom:                 piero
-#
+# Created by: piero
 # $FreeBSD$
-#
 
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
@@ -21,6 +17,8 @@ COMMENT=	Play most popular animation formats and show pictures
 
 NO_CDROM=	redistributed without fee
 
+# clang's cpp destroys whitespace, particularly hard tabs in makefiles,
+# which is fatal for imake.
 USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	xext xt sm ice xext x11

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acidwarp
-# Date created:				2000-10-22
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	acidwarp
 PORTVERSION=	1.0

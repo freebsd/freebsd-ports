@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/adopt-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html
@@ -7,16 +6,16 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/maintain-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/mortal-coil.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/resources.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/what-contribute.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/what-a-real-unix.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/why-is-bsd-not-better-known.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
@@ -24,13 +23,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-problems.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-when.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-writing.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/ro-fs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/strategies.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x94.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/LEGALNOTICE.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x96.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
@@ -177,6 +176,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
@@ -211,10 +211,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-afs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mount-unmount.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/multimedia.html

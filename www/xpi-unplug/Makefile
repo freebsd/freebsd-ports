@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xpi-unplug
-# Date created:			2006/05/06
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	unplug
-DISTVERSION=	2.050
+DISTVERSION=	2.054
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 

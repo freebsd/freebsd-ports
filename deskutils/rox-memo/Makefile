@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-memo
-# Date created:				Jan 12 2003
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-memo
 PORTVERSION=	2.1

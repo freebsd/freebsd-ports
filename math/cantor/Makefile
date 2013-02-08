@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	cantor
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cantor
 PORTVERSION=	${KDE4_VERSION}
@@ -28,21 +23,22 @@ USE_QT4=	qtestlib_build xmlpatterns \
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MAXIMA "Maxima backend" off \
-		OCTAVE "Octave backend" off \
-		R "R backend" off
+OPTIONS_DEFINE=	MAXIMA OCTAVE R
+MAXIMA_DESC=	Maxima backend
+OCTAVE_DESC=	Octave backend
+R_DESC=		R backend
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_MAXIMA)
+.if ${PORT_OPTIONS:MMAXIMA}
 RUN_DEPENDS+=	maxima:${PORTSDIR}/math/maxima
 .endif
 
-.ifdef(WITH_OCTAVE)
+.if ${PORT_OPTIONS:MOCTAVE}
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 .endif
 
-.ifdef(WITH_R)
+.if ${PORT_OPTIONS:MR}
 BUILD_DEPENDS+=	R:${PORTSDIR}/math/R
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
 # Required to set CFLAGS for -lgfortran.

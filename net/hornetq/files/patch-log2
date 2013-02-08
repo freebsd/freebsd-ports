@@ -1,5 +1,5 @@
---- config/stand-alone/non-clustered/logging.properties.sample.orig	2012-04-13 18:43:44.000000000 +0200
-+++ config/stand-alone/non-clustered/logging.properties.sample	2012-05-16 09:28:24.333462186 +0200
+--- src/config/stand-alone/non-clustered/logging.properties.orig	2012-04-13 18:43:44.000000000 +0200
++++ src/config/stand-alone/non-clustered/logging.properties	2012-05-16 09:28:24.333462186 +0200
 @@ -15,11 +15,11 @@
  # Note that these classes must be on the system classpath.
  # By default we only configure a ConsoleHandler, which will only

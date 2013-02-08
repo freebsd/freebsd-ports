@@ -98,7 +98,6 @@
     SUBDIR += icons-tango
     SUBDIR += icons-tango-extras
     SUBDIR += irssi-themes
-    SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-black-and-white
     SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-crystal-project
@@ -131,6 +130,7 @@
     SUBDIR += kde-windeco-knifty
     SUBDIR += kde-windeco-neos
     SUBDIR += kde-windeco-smoothblend
+    SUBDIR += kde4-base-artwork
     SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
     SUBDIR += kde4-style-nitrogen

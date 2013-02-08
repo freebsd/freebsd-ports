@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Geo-WebService-Elevation-USGS
-# Date created:				15 Jan, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-WebService-Elevation-USGS
-PORTVERSION=	0.010
+PORTVERSION=	0.011
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT

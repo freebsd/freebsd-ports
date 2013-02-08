@@ -1,12 +1,9 @@
-# New ports collection makefile for:	opengrok
-# Date created:		10/13/2009
-# Whom:			stas
-#
+# Create by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	opengrok
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
 
@@ -26,12 +23,12 @@ NO_BUILD=	yes
 SUB_FILES=	opengrok
 SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/,}" \
 		JARFILE="${JARFILE}"
-PLIST_SUB=	T=${WEBAPP_DIRS:S|^${LOCALBASE}/||} \
+PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 		CONF_EXT=${CONF_EXT}
 CONF_EXT=	sample
 
 OPTIONS_SINGLE=	AS
-OPTIONS_SINGLE_AS=	TOMCAT5 TOMCAT6 RESIN3
+OPTIONS_SINGLE_AS=	TOMCAT7 TOMCAT6 RESIN3
 OPTIONS_DEFAULT=	TOMCAT6
 
 .include <bsd.port.pre.mk>
@@ -45,23 +42,25 @@ LIBFILES=	ant.jar \
 		lucene-spellchecker-3.0.2.jar \
 		swing-layout-0.9.jar
 
-.if ${PORT_OPTIONS:MTOMCAT6}
-WEBAPP_DIRS=	apache-tomcat-6.0
-BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+.if ${PORT_OPTIONS:MTOMCAT7}
+WEBAPP_HOME?=	${LOCALBASE}/apache-tomcat-7.0
+BUILD_DEPENDS+=	${WEBAPP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${WEBAPP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 .endif
 
-.if ${PORT_OPTIONS:MTOMCAT5}
-WEBAPP_DIRS=	tomcat5.5
-BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+.if ${PORT_OPTIONS:MTOMCAT6}
+WEBAPP_HOME?=	${LOCALBASE}/apache-tomcat-6.0
+BUILD_DEPENDS+=	${WEBAPP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${WEBAPP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MRESIN3}
-WEBAPP_DIRS=	resin3
-BUILD_DEPENDS+=	${LOCALBASE}/resin3/lib/resin.jar:${PORTSDIR}/www/resin3
-RUN_DEPENDS+=	${LOCALBASE}/resin3/lib/resin.jar:${PORTSDIR}/www/resin3
+WEBAPP_HOME?=	${LOCALBASE}/resin3
+BUILD_DEPENDS+=	${WEBAPP_HOME}/lib/resin.jar:${PORTSDIR}/www/resin3
+RUN_DEPENDS+=	${WEBAPP_HOME}/lib/resin.jar:${PORTSDIR}/www/resin3
 .endif
+
+WEBAPPS_DIR=	${WEBAPP_HOME:S|^${LOCALBASE}/||}/webapps
 
 pre-everything::
 .if ${PREFIX}!=${LOCALBASE}
@@ -75,17 +74,17 @@ post-extract:
 	@${TAR} xf ${WRKSRC}/lib/source.war -C ${WRKSRC}/lib/${PORTNAME}
 
 do-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}
 	@${MV} ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT}
-	@cd ${WRKSRC}/lib/${PORTNAME} && ${COPYTREE_SHARE} \* ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}
+	@cd ${WRKSRC}/lib/${PORTNAME} && ${COPYTREE_SHARE} \* ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}
 
-	@if [ ! -e "${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}/WEB-INF/web.xml" ]; then \
-			${ECHO_MSG} "	Installing local configuration file: ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}/WEB-INF/web.xml"; \
-			${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT} ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}/WEB-INF/web.xml; \
+	@if [ ! -e "${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF/web.xml" ]; then \
+			${ECHO_MSG} "	Installing local configuration file: ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF/web.xml"; \
+			${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT} ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF/web.xml; \
 		else \
-			${ECHO_MSG} "	Preserving local configuration file: ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}/WEB-INF/web.xml"; \
+			${ECHO_MSG} "	Preserving local configuration file: ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF/web.xml"; \
 	fi;
-	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT} ${PREFIX}/${WEBAPP_DIRS}/webapps/${PORTNAME}/WEB-INF
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT} ${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF
 
 	${MKDIR} ${DATADIR}/lib
 	${INSTALL_DATA} ${LIBFILES:S,^,${WRKSRC}/lib/lib/,} ${DATADIR}/lib/

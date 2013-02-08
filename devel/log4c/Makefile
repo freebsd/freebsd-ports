@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Logging for C Library
 
 LICENSE=	LGPL21

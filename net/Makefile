@@ -60,7 +60,6 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += bounce
-    SUBDIR += bpfstat
     SUBDIR += bsdproxy
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
@@ -146,9 +145,7 @@
     SUBDIR += freedbd
     SUBDIR += freenet6
     SUBDIR += freenx
-    SUBDIR += freeradius
     SUBDIR += freeradius-client
-    SUBDIR += freeradius-mysql
     SUBDIR += freeradius2
     SUBDIR += freerdp
     SUBDIR += freeswitch
@@ -289,7 +286,9 @@
     SUBDIR += knemo-kde4
     SUBDIR += kojoney
     SUBDIR += kphone
+    SUBDIR += krdc
     SUBDIR += krdesktop
+    SUBDIR += krfb
     SUBDIR += kwooty
     SUBDIR += l2tpd
     SUBDIR += l4ip
@@ -309,7 +308,6 @@
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcmis
-    SUBDIR += libcmis03
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb
@@ -366,6 +364,7 @@
     SUBDIR += lla
     SUBDIR += ltm
     SUBDIR += lua50-luasocket
+    SUBDIR += lualdap
     SUBDIR += luasocket
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
@@ -482,6 +481,7 @@
     SUBDIR += openntpd
     SUBDIR += opennx
     SUBDIR += openospfd
+    SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
@@ -593,6 +593,7 @@
     SUBDIR += p5-Net-GrowlClient
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-HTTP
+    SUBDIR += p5-Net-HTTPS-Any
     SUBDIR += p5-Net-HTTPS-NB
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
@@ -631,6 +632,7 @@
     SUBDIR += p5-Net-OpenID-Consumer
     SUBDIR += p5-Net-OpenSSH
     SUBDIR += p5-Net-OpenSSH-Parallel
+    SUBDIR += p5-Net-OpenStack-Attack
     SUBDIR += p5-Net-Packet
     SUBDIR += p5-Net-Packet-Target
     SUBDIR += p5-Net-ParseWhois
@@ -659,10 +661,12 @@
     SUBDIR += p5-Net-SIP
     SUBDIR += p5-Net-SMPP
     SUBDIR += p5-Net-SMS-Clickatell
+    SUBDIR += p5-Net-SMS-Mollie
     SUBDIR += p5-Net-SMS-PChome
     SUBDIR += p5-Net-SNPP
     SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-SSH-Expect
+    SUBDIR += p5-Net-SSH-Mechanize
     SUBDIR += p5-Net-SSH-Perl
     SUBDIR += p5-Net-SSH2
     SUBDIR += p5-Net-STOMP-Client
@@ -1039,10 +1043,8 @@
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
-    SUBDIR += samba-pdbsql
     SUBDIR += samba-smbclient
     SUBDIR += samba34
-    SUBDIR += samba35
     SUBDIR += samba36
     SUBDIR += samba4-devel
     SUBDIR += samba4wins
@@ -1095,6 +1097,7 @@
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += sofia-sip
+    SUBDIR += spideroak
     SUBDIR += splatd
     SUBDIR += spnetkit
     SUBDIR += spoofer
@@ -1174,6 +1177,7 @@
     SUBDIR += tucan
     SUBDIR += twinkle
     SUBDIR += twitux
+    SUBDIR += u6rd
     SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += udpxy
@@ -1249,6 +1253,7 @@
     SUBDIR += xpvm
     SUBDIR += xrdesktop
     SUBDIR += xrdp
+    SUBDIR += xrdp-devel
     SUBDIR += yaph
     SUBDIR += yate
     SUBDIR += yaz

@@ -3,6 +3,7 @@
 
 PORTNAME=	seaview
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://pbil.univ-lyon1.fr/software/seaview_data/archive/

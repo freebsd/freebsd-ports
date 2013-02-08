@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--without-libjpeg \
 			--without-libidn
 
-LDFLAGS+=		-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
+LDFLAGS+=		-L${LOCALBASE}/lib -lintl -pthread
 CFLAGS+=		-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	ASPELL GPG GSM GTK2 PERL PYTHON SQLITE UNICODE XOSD

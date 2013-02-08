@@ -1,13 +1,9 @@
-# New ports collection makefile for:	pdfedit
-# Date created:				2007-12-20
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	pdfedit
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free editor for manipulating PDF documents (QT3 GUI and CLI)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 DEPRECATED=	Depends on QT3; unmaintained

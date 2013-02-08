@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	GUI front end for the efax fax program
+COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2
 
@@ -41,8 +41,8 @@ CONFLICTS=	efax-[0-9]*
 
 MAN1=		efax.1 efix.1 efax-gtk.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lintl
 
 CONFIGURE_ARGS+=--with-gtk-version=gtk2
 

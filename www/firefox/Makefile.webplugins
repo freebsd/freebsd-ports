@@ -1,13 +1,5 @@
-# -*- mode: makefile-bsdmake; tab-width: 4; -*-
-# ex:ts=4
-#
-# New ports collection makefile for:	npapi infrastructure
-# Date created:		27 June 2006
-# Whom:				Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-stable/www/firefox/Makefile.webplugins,v 1.14 2008/11/12 17:55:09 mezz Exp $
-#
 
 # MAINTAINER=	gecko@FreeBSD.org
 #

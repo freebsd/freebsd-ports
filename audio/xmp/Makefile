@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --disable-arts \
 
 MAN1=		xmp.1
 
-OPTIONS_DEFINE=	ALSA BMP ESOUND NAS PULSEAUDIO UNZIP XMMS
+OPTIONS_DEFINE=	ALSA BMP ESOUND NAS PULSEAUDIO UNZIP XMMS DOCS
 
 BMP_DESC=	Beep media player plugin
 XMMS_DESC=	XMMS plugin
@@ -34,9 +34,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
@@ -112,7 +110,7 @@ post-install:	.SILENT
 			${ETCDIR}/modules.conf; \
 	fi
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${ECHO_MSG} Installing documentation in ${DOCSDIR}
 	( cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* \
 		${DOCSDIR} '! ( -name Makefile -or -name xmp.1 \

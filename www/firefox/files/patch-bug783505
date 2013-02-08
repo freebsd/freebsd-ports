@@ -1,0 +1,52 @@
+commit b5f97ee
+Author: Rafael Ávila de Espíndola <respindola@mozilla.com>
+Date:   Mon Aug 20 10:28:08 2012 -0400
+
+    Bug 783505 - OS X gcc builds failing. r=jorendorff.
+    This patch adds a workaround for
+    http://gcc.gnu.org/bugzilla/show_bug.cgi?id=39608
+---
+ js/src/jstypedarray.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git js/src/jstypedarray.cpp js/src/jstypedarray.cpp
+index 1eaeea0..1957086 100644
+--- js/src/jstypedarray.cpp
++++ js/src/jstypedarray.cpp
+@@ -1423,8 +1423,14 @@ class TypedArrayTemplate
+     Getter(JSContext *cx, unsigned argc, Value *vp)
+     {
+         CallArgs args = CallArgsFromVp(argc, vp);
++        // FIXME: Hack to keep us building with gcc 4.2. Remove this once we
++        // drop support for gcc 4.2. See bug 783505 for the details.
++#if !defined(__clang__) && defined(__GNUC__) && __GNUC_MINOR__ <= 2
++        return CallNonGenericMethod(cx, IsThisClass, GetterImpl<ValueGetter>, args);
++#else
+         return CallNonGenericMethod<ThisTypeArray::IsThisClass,
+                                     ThisTypeArray::GetterImpl<ValueGetter> >(cx, args);
++#endif
+     }
+ 
+     // Define an accessor for a read-only property that invokes a native getter
+--- build/autoconf/gcc-pr39608.m4~
++++ build/autoconf/gcc-pr39608.m4
+@@ -31,7 +31,6 @@ AC_LANG_RESTORE
+ 
+ AC_MSG_RESULT($ac_have_gcc_pr39608)
+ if test "$ac_have_gcc_pr39608" = "yes"; then
+-   echo This compiler would fail to build firefox, plase upgrade.
+-   exit 1
++   echo This compiler may fail to build firefox, plase upgrade.
+ fi
+ ])
+--- js/src/build/autoconf/gcc-pr39608.m4~
++++ js/src/build/autoconf/gcc-pr39608.m4
+@@ -31,7 +31,6 @@ AC_LANG_RESTORE
+ 
+ AC_MSG_RESULT($ac_have_gcc_pr39608)
+ if test "$ac_have_gcc_pr39608" = "yes"; then
+-   echo This compiler would fail to build firefox, plase upgrade.
+-   exit 1
++   echo This compiler may fail to build firefox, plase upgrade.
+ fi
+ ])

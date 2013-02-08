@@ -2,7 +2,7 @@
 
 PORTNAME=	beediff
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.beesoft.pl/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src

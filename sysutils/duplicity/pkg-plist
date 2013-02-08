@@ -67,6 +67,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/cached_ops.py
+%%PYTHON_SITELIBDIR%%/duplicity/cached_ops.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/cached_ops.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/collections.py
 %%PYTHON_SITELIBDIR%%/duplicity/collections.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/collections.pyo

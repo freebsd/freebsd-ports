@@ -3,7 +3,7 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	3.3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://www.jb-line.de/rnd/ \
@@ -32,7 +32,7 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USE_ICONV=	yes
 USE_SDL=	image mixer net sdl

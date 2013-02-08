@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.29
+PORTVERSION=	5.5.30
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -60,7 +60,7 @@ WANT_MYSQL_VER=	55
 
 LATEST_LINK=	mysql55-server
 
-CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[0-46-9].*
+CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[0-46-9].* mariadb-server-5.* percona-server-5.*
 
 USE_RC_SUBR=	mysql-server
 

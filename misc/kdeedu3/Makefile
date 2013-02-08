@@ -1,13 +1,9 @@
-# New ports collection makefile for:	kdeedu3
-# Date created:				2 November 2001
-# Whom:					will@cvs.kde.org
-#
+# Created by: will@cvs.kde.org
 # $FreeBSD$
-#
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src

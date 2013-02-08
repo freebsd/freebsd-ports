@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	pixeltool
 DISTVERSION=	${QT4_VERSION}
@@ -25,6 +20,11 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
+
+# qtlogo.png is installed by qt4-gui
+DESKTOP_ENTRIES="Qt PixelTool" "${COMMENT}" \
+		"${LOCALBASE}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/bin/pixeltool" "Graphics;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \

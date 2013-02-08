@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Scalar-Does
-PORTVERSION=	0.010
+PORTVERSION=	0.012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,17 +22,9 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-# It requires UNIVERSAL::DOES on Perl 5.8
 PERL_CONFIGURE=	yes
 
 MAN3=		Scalar::Does.3 \
 		Scalar::Does::MooseTypes.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

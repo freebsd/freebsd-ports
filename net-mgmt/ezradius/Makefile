@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ezradius
-# Date created:		2008-05-29
-# Whom:			Lucio Costa <lucio@zetasolucoes.com.br>
-#
+# Created by: Lucio Costa <lucio@zetasolucoes.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	ezradius
 PORTVERSION=	0.2.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.1stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable${EXTRACT_SUFFIX}
@@ -14,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}stable${EXTRACT_SUFFIX}
 MAINTAINER=	lucio@zetasolucoes.com.br
 COMMENT=	EzRADIUS is FreeRADIUS and Chillispot web-based management software
 
-RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius-mysql
+RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-intl
 NO_BUILD=	yes

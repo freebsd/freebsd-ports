@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kdeutils4-printer-applet
-# Date created:		2009-05-04
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	printer-applet
 PORTVERSION=	${KDE4_VERSION}

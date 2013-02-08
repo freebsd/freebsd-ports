@@ -1,0 +1,8 @@
+LuaLDAP is a simple interface from Lua to an LDAP client.
+In fact it is a bind to OpenLDAP or to ADSI. It enables a Lua program to:
+
+- connect to an LDAP server;
+- execute any operation (search, add, compare, delete, modify and rename);
+- retrieve entries and references of the search result.
+
+WWW: http://www.keplerproject.org/lualdap/

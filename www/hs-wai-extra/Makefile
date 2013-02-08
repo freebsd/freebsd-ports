@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wai-extra
-PORTVERSION=	1.3.0.4
+PORTVERSION=	1.3.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

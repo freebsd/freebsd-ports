@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Fixme.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixme/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixme
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test

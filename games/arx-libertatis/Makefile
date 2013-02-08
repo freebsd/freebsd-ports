@@ -1,12 +1,9 @@
-# New ports collection makefile for:	arx-libertatis
-# Date created:		24 Apr 2012
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	arx-libertatis
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/arx/ArxLibertatis/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,10 +13,10 @@ COMMENT=	Cross-platform port of Arx Fatalis
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		GLEW.1:${PORTSDIR}/graphics/glew \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		boost_program_options.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
+		GLEW:${PORTSDIR}/graphics/glew \
+		freetype:${PORTSDIR}/print/freetype2 \
+		boost_program_options:${PORTSDIR}/devel/boost-libs
 
 USE_XZ=		yes
 USE_OPENAL=	yes

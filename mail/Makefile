@@ -24,6 +24,7 @@
     SUBDIR += asmail
     SUBDIR += assp
     SUBDIR += atmail
+    SUBDIR += automx
     SUBDIR += autorespond
     SUBDIR += autosig
     SUBDIR += avenger
@@ -64,7 +65,6 @@
     SUBDIR += claws-mail-python
     SUBDIR += claws-mail-rssyl
     SUBDIR += claws-mail-spamreport
-    SUBDIR += claws-mail-synce
     SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar
     SUBDIR += clawsker

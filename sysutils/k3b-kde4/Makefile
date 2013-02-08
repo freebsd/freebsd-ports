@@ -1,22 +1,17 @@
-# New ports collection makefile for:    k3b
-# Date created:                         2003/02/13
-# Whom:                                 Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A CD/DVD recording GUI for KDE4
+COMMENT=	KDE CD/DVD writing suite
 
 LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		kcddb:${PORTSDIR}/multimedia/kdemultimedia4
+		samplerate:${PORTSDIR}/audio/libsamplerate
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -24,50 +19,56 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb
 USE_CDRTOOLS=	yes
 USE_QT4=	gui dbus network phonon qt3support sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	CDRDAO "Burning: Use cdrdao" ON \
-		DVDPLUSRW "Burning: DVD+RW Tools (DVD+/-R(W))" ON \
-		EMOVIX "Burning: eMovix (bootable video CDs)" OFF \
-		VCDIMAGER "Burning: VCDImager (video CDs)" OFF \
-		FFMPEG "Decoder: various (multimedia/ffmpeg)" ON \
-		FLAC "Decoder: flac (audio/flac)" ON \
-		MAD "Decoder: mp3 (audio/libmad)" ON \
-		MUSEPACK "Decoder: musepack (audio/musepack)" ON \
-		SNDFILE "Decoder: various (audio/libsndfile)" ON \
-		VORBIS_DEC "Decoder: ogg/vorbis" ON \
-		LAME "Encoder: mp3 (audio/lame)" OFF \
-		SOX "Encoder: various (audio/sox)" OFF \
-		VORBIS_ENC "Encoder: ogg/vorbis" ON \
-		LIBDVDREAD "Misc: libdvdread (video dvd ripping)" ON \
-		NORMALIZE "Misc: Normalize (adjust audio to a std. level)" OFF \
-		TAGLIB "Misc: taglib (reading/writing audio metadata)" ON \
-		TRANSCODE "Misc: Transcode (for DVD ripping)" OFF
+OPTIONS_DEFINE=	CDRDAO DVDPLUSRW EMOVIX VCDIMAGER FFMPEG FLAC MAD \
+		MUSEPACK SNDFILE VORBIS_DEC LAME SOX VORBIS_ENC \
+		LIBDVDREAD NORMALIZE TAGLIB TRANSCODE
+OPTIONS_DEFAULT=CDRDAO DVDPLUSRW FFMPEG FLAC MAD MUSEPACK SNDFILE \
+		VORBIS_DEC VORBIS_ENC LIBDVDREAD TAGLIB
+NO_OPTIONS_SORT=yes
+CDRDAO_DESC=	Burning: cdrdao
+DVDPLUSRW_DESC=	Burning: DVD+RW Tools (DVD+/-R(W))
+EMOVIX_DESC=	Burning: eMovix (bootable video CDs)
+VCDIMAGER_DESC=	Burning: VCDImager (video CDs)
+FFMPEG_DESC=	Decoder: various (multimedia/ffmpeg)
+FLAC_DESC=	Decoder: FLAC (audio/flac)
+MAD_DESC=	Decoder: MP3 (audio/libmad)
+MUSEPACK_DESC=	Decoder: Musepack (audio/musepack)
+SNDFILE_DESC=	Decoder: various (audio/libsndfile)
+VORBIS_DEC_DESC=Decoder: Ogg Vorbis
+LAME_DESC=	Encoder: MP3 (audio/lame)
+SOX_DESC=	Encoder: various (audio/sox)
+VORBIS_ENC_DESC=Encoder: Ogg Vorbis
+LIBDVDREAD_DESC=Misc: libdvdread (video DVD ripping)
+NORMALIZE_DESC=	Misc: normalize (adjust audio to a std. level)
+TAGLIB_DESC=	Misc: TagLib (reading/writing audio metadata)
+TRANSCODE_DESC=	Misc: Transcode (DVD ripping)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CDRDAO)
+.if ${PORT_OPTIONS:MCDRDAO}
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 .endif
 
-.if defined(WITH_DVDPLUSRW)
+.if ${PORT_OPTIONS:MDVDPLUSRW}
 RUN_DEPENDS+=	dvd+rw-format:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 
-.if defined(WITH_EMOVIX)
+.if ${PORT_OPTIONS:MEMOVIX}
 RUN_DEPENDS+=	mkmovixiso:${PORTSDIR}/multimedia/emovix
 .endif
 
-.if defined(WITH_VCDIMAGER)
+.if ${PORT_OPTIONS:MVCDIMAGER}
 RUN_DEPENDS+=	vcdxrip:${PORTSDIR}/multimedia/vcdimager
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
@@ -75,7 +76,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_FFMPEG_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
@@ -83,7 +84,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_FLAC_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if defined(WITH_MAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
 PLIST_SUB+=	MAD=""
 .else
@@ -91,7 +92,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_MAD_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 PLIST_SUB+=	MUSEPACK=""
@@ -100,7 +101,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_MUSE_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 PLIST_SUB+=	SNDFILE=""
 .else
@@ -108,7 +109,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_SNDFILE_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	SNDFILE="@comment "
 .endif
 
-.if defined(WITH_VORBIS_DEC)
+.if ${PORT_OPTIONS:MVORBIS_DEC}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 PLIST_SUB+=	VORBIS_DEC=""
 .else
@@ -116,7 +117,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_OGGVORBIS_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	VORBIS_DEC="@comment "
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
 PLIST_SUB+=	LAME=""
 .else
@@ -124,7 +125,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_LAME_ENCODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	LAME="@comment "
 .endif
 
-.if defined(WITH_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 PLIST_SUB+=	SOX=""
 .else
@@ -132,7 +133,7 @@ CMAKE_ARGS+=	-DK3B_BUILD_SOX_ENCODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	SOX="@comment "
 .endif
 
-.if defined(WITH_VORBIS_ENC)
+.if ${PORT_OPTIONS:MVORBIS_ENC}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 PLIST_SUB+=	VORBIS_ENC=""
 .else
@@ -140,19 +141,19 @@ CMAKE_ARGS+=	-DK3B_BUILD_OGGVORBIS_ENCODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	VORBIS_ENC="@comment "
 .endif
 
-.if defined(WITH_LIBDVDREAD)
-LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+.if ${PORT_OPTIONS:MLIBDVDREAD}
+LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
 PLIST_SUB+=	LIBDVDREAD=""
 .else
 CMAKE_ARGS+=	-DK3B_ENABLE_DVD_RIPPING:BOOL=OFF
 PLIST_SUB+=	LIBDVDREAD="@comment "
 .endif
 
-.if defined(WITH_NORMALIZE)
+.if ${PORT_OPTIONS:MNORMALIZE}
 RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
 .endif
 
-.if defined(WITH_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 PLIST_SUB+=	TAGLIB=""
 .else
@@ -160,7 +161,7 @@ CMAKE_ARGS+=	-DK3B_ENABLE_TAGLIB:BOOL=OFF
 PLIST_SUB+=	TAGLIB="@comment "
 .endif
 
-.if defined(WITH_TRANSCODE)
+.if ${PORT_OPTIONS:MTRANSCODE}
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 

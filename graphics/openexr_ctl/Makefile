@@ -6,27 +6,39 @@
 #
 
 PORTNAME=	openexr_ctl
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	openexr
+MASTER_SITES=	SF/ampasctl/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Simplified OpenEXR interface to CTL
 
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		IlmCtl.2:${PORTSDIR}/graphics/ampasCTL
+LICENSE=	BSD
 
-USE_GNOME=	pkgconfig
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		IlmCtl:${PORTSDIR}/graphics/ampasCTL
+
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
+
+PORTDOCS=	AUTHORS ChangeLog README
+
+.include <bsd.port.options.mk>
 
 test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .if defined(PACKAGE_BUILDING)
 pre-install:	test
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

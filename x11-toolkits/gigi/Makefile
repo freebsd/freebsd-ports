@@ -1,12 +1,9 @@
-# New ports collection makefile for:	gigi
-# Date created:				2007-04-29
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	gigi
 PORTVERSION=	0.8.0.1074
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -16,7 +13,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL Graphic User Interface Library
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
+		boost_python:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GCC=	4.4+

@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hs-bibutils
-PORTVERSION=	4.15
+PORTVERSION=	4.16
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell bindings to bibutils, the bibliography conversion utilities
+COMMENT=	Bindings to bibutils, the bibliography conversion utilities
 
 LICENSE=	GPLv2
 

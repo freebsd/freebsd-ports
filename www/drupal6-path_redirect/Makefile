@@ -1,15 +1,11 @@
-# New ports collection makefile for:	drupal6-path_redirect
-# Date created:				February 24, 2010
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	path_redirect
 DISTVERSION=	6.x-1.0-beta6
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to allow redirects
 
 USE_DRUPAL=	yes

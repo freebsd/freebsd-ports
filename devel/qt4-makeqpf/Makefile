@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	makeqpf
 DISTVERSION=	${QT4_VERSION}
@@ -51,7 +46,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch__tools__makeqpf__qpf2.cpp
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+BROKEN=		does not compile on sparc64
 .endif
 
 pre-configure:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	obconf
-# Date created:				2002-10-13
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	obconf
 PORTVERSION=	2.0.3

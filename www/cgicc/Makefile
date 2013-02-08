@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2.9
-PORTREVISION=	2
+PORTVERSION=	3.2.10
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -22,6 +21,8 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
+CXXFLAGS+=	-Wno-unknown-pragmas
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
@@ -42,5 +43,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
+	${RM} -f ${PREFIX}/lib/libcgicc.la
 
 .include <bsd.port.mk>

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.9.4
-PORTREVISION=	2
+PORTVERSION=	2.9.5
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -21,7 +20,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.9.1
+VDAVERSION=	2.9.5
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-8].* postfix-base-2.[0-8].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
@@ -220,6 +219,9 @@ POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 .if defined(WITH_LDAP_SASL)
+.if !defined(WITH_SASL2)
+BROKEN=			Compile with Cyrus SASL to use LDAP_SASL
+.endif
 POSTFIX_CCARGS+=	-DUSE_LDAP_SASL
 .endif
 .endif

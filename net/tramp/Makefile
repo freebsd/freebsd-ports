@@ -1,13 +1,8 @@
-# New ports collection makefile for:	tramp (for emacs21)
-# Date Created:		12 Dec 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tramp
-PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTVERSION=	2.2.6
 CATEGORIES=	net elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-js
-# Date created:				5 Feb 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linux-js
 PORTVERSION=	2.2
@@ -14,6 +10,8 @@ MASTER_SITE_SUBDIR=	jylefort
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux joystick interface ported to FreeBSD
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 PROGRAMS=	jscal jstest
 
 MAN1=		${PROGRAMS:S|$|.1|}

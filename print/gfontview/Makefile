@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gfontview
-# Date created:			Jul 9, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gfontview
 PORTVERSION=	0.5.0
@@ -14,6 +9,9 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An outline font viewer
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		gif.5:${PORTSDIR}/graphics/giflib

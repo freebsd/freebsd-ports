@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	cwp
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.12
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	98925-cwp-${PORTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Weather plasma applet for KDE4
 
 LICENSE=	GPLv3

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	soundtouch
-DISTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 

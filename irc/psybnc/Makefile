@@ -1,9 +1,5 @@
-# New ports collection makefile for:	psybnc
-# Date created:		24 November 2002
-# Whom:			Mina Naguib <webmaster@topfx.com>
-#
+# Created by: Mina Naguib <webmaster@topfx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	psybnc
 DISTVERSION=	2.3.2-9
@@ -15,29 +11,49 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful IRC bouncer
 
 WRKSRC=		${WRKDIR}/psybnc
-PSYBASE=	${PREFIX}/psybnc
+PSYBASE?=	${PREFIX}/psybnc
 MAKE_ARGS=	PSYBASE=${PSYBASE}
-IS_INTERACTIVE=	yes
+SUB_FILES=	pkg-message
+SUB_LIST=	PSYBASE=${PSYBASE}
+PLIST_SUB=	PSYBASE=${PSYBASE:S,^${PREFIX}/,,}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	MENUCONFIG
+MENUCONFIG_DESC=Configure using menu
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMENUCONFIG}
+IS_INTERACTIVE=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
 
 do-configure:
+.if ${PORT_OPTIONS:MMENUCONFIG}
 	@cd ${WRKSRC} && make menuconfig
+.else
+# Fool makefile.out into believing certs are unnecessary
+	@${TOUCH} ${WRKSRC}/key/psybnc.cert.pem
+.endif
 
 do-install:
 	@${INSTALL} -d ${PSYBASE}/lang/ ${PSYBASE}/key/ ${PSYBASE}/help/
 	@${INSTALL_DATA} ${WRKSRC}/lang/INFO ${PSYBASE}/lang/
 	@${INSTALL_DATA} ${WRKSRC}/lang/*.lng ${PSYBASE}/lang/
-	@if [ -f ${WRKSRC}/key/psybnc.cert.pem ]; then ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${PSYBASE}/key/; fi
-	@if [ -f ${WRKSRC}/key/psybnc.key.pem ]; then ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${PSYBASE}/key/; fi
-	@if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then ${INSTALL_DATA} ${WRKSRC}/key/psybnc.req.pem ${PSYBASE}/key/; fi
+	@${INSTALL_DATA} ${WRKSRC}/src/ssl.cnf ${PSYBASE}/key/
 	@${INSTALL_DATA} ${WRKSRC}/help/*.TXT ${PSYBASE}/help/
 	@${INSTALL_DATA} ${WRKSRC}/help/*.DEU ${PSYBASE}/help/
 	@${INSTALL_DATA} ${WRKSRC}/help/*.ITA ${PSYBASE}/help/
 	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${PREFIX}/etc/psybnc.conf.sample
 
-.include <bsd.port.post.mk>
+post-install:
+	@if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${PSYBASE}/key/; \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${PSYBASE}/key/; \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.req.pem ${PSYBASE}/key/; \
+	fi
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

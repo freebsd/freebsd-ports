@@ -23,7 +23,7 @@ USE_OPENSSL=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5

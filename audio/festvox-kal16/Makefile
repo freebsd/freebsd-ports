@@ -1,11 +1,5 @@
-# New ports collection makefile for:	festvox-kal16
-# Date created:        			2000-06-16
-# Whom:					Trevor Johnson
-# based on the NetBSD port
-#
-# $NetBSD: Makefile,v 1.8 2000/02/15 09:26:15 agc Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	festvox-kal16
 PORTVERSION=	1.4.0

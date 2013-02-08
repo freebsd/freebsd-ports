@@ -1,7 +1,6 @@
-       Bricons program allows the user to quickly start up appli-
-       cations by selecting the appropriate button from the  dis-
-       play  and pressing the left mouse button.  A maximum of up
-       to sixteen main menu buttons can be displayed.  Each  main
-       menu button can launch an application or pop-up a sub menu
-       containing more buttons. The buttons can be represented as
-       a bitmap, text or a colour icon (i.e Pixmap).
+Bricons program allows the user to quickly start up applications by
+selecting the appropriate button from the display and pressing the left
+mouse button. A maximum of up to sixteen main menu buttons can be
+displayed. Each main menu button can launch an application or pop-up a
+sub menu containing more buttons. The buttons can be represented as a
+bitmap, text or a colour icon (i.e Pixmap).

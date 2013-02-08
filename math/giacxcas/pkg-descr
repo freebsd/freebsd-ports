@@ -1,13 +1,13 @@
-General purpose Computer algebra system by Bernard Parisse released
-under GPLv3. The french documentation by Renee De Graeve is for non
-commercial use only.
-it consists of:
+General purpose computer algebra system by Bernard Parisse released under
+GPLv3.  French documentation by Renee De Graeve is for non-commercial use
+only.  The package consists of:
+
  - a C++ library (libgiac).  It is build on C and C++ libraries:
    PARI, NTL (arithmetic), CoCoA (Groebner basis), GSL (numerics),
    GMP (big integers), MPFR (bigfloats) and provides algorithms for
    basic polynomial operations (product, GCD) and symbolic
    computations (simplifications, limits/series, symbolic
-   integration, sommation, ...). The library can be configured to
+   integration, summation, ...). The library can be configured to
    accept Maple or TI syntax to ease the transition for users of
    these systems.
  - a command line interpreter (icas or giac). It can be called from texmacs.
@@ -18,7 +18,7 @@ it consists of:
 
 Bernard Parisse is the main author of the CAS of HP40G and HP49G calculators.
 
-This port is statically linked against snapshots of FLTK-1.3.x 
+This port is statically linked against snapshots of FLTK-1.3.x
 (http://www.fltk.org) and of CoCoALib (http://cocoa.dima.unige.it/cocoalib)
 
-WWW:	http://www-fourier.ujf-grenoble.fr/~parisse/giac.html
+WWW: http://www-fourier.ujf-grenoble.fr/~parisse/giac.html

@@ -11,15 +11,6 @@
  #MAC_OS_X:=1
  #SOLARIS:=1
  #WIN32:=1
-@@ -118,7 +118,7 @@
- ifdef SEARCH_DAEMON
- 
- ifdef FREE_BSD
--PTHREAD_LINK:=	-pthread
-+PTHREAD_LINK:=	${PTHREAD_LIBS}
- else
- PTHREAD_LINK:=	-lpthread
- endif
 @@ -159,7 +159,7 @@
  #		The command to remove files recursively and ignore errors;
  #		usually "rm -fr" for Unix or "erase" for Windows.

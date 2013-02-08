@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -3608,7 +3608,7 @@
+     vax)
+ 	mit_scheme_native_code=vax
+ 	;;
+-    x86_64)
++    x86_64|amd64)
+ 	mit_scheme_native_code=x86-64
+ 	;;
+     *)
+@@ -6160,7 +6160,7 @@
+     vax)
+ 	mit_scheme_native_code=vax
+ 	;;
+-    x86_64)
++    x86_64|amd64)
+ 	mit_scheme_native_code=x86-64
+ 	;;
+     *)

@@ -7,7 +7,7 @@
 
 PORTNAME=	qct
 PORTVERSION=	1.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel python
 MASTER_SITES=	http://qct.sourceforge.net/ \
 		ftp://ftp.ipt.ru/pub/download/${PORTNAME}/

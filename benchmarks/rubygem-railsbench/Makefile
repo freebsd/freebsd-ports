@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-railsbench
-# Date created:				02 April 2007
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	railsbench
@@ -19,13 +16,14 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/railsbench
 
-OPTIONS=	GRUFF	"Plotting of perf data support using gruff"	off
+OPTIONS_DEFINE=	GRUFF
+GRUFF_DESC=	Plotting of perf data support using gruff
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GRUFF)
+.if ${PORT_OPTIONS:MGRUFF}
 RUN_DEPENDS+=	rubygem-gruff>=0.2.8:${PORTSDIR}/graphics/rubygem-gruff
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

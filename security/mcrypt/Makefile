@@ -1,11 +1,5 @@
-# New ports collection makefile for:	mcrypt
-# Date created:        			2000-12-31
-# Whom:					trevor
-# based on the OpenBSD port
-#
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8

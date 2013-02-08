@@ -1,0 +1,120 @@
+bin/cleanupdelta
+bin/makepkg
+bin/pacman
+bin/pacman-db-upgrade
+bin/pacman-key
+bin/pacman-optimize
+bin/pacsort
+bin/pactree
+bin/pkgdelta
+bin/rankmirrors
+bin/repo-add
+bin/repo-elephant
+bin/repo-remove
+bin/testdb
+bin/testpkg
+bin/vercmp
+@unexec if cmp -s %D/etc/makepkg.conf.dist %D/etc/makepkg.conf; then rm -f %D/etc/makepkg.conf; fi
+etc/makepkg.conf.dist
+@exec if [ ! -f %B/makepkg.conf ]; then cp -p %D/%F %B/makepkg.conf; fi
+@unexec if cmp -s %D/etc/pacman.conf.dist %D/etc/pacman.conf; then rm -f %D/etc/pacman.conf; fi
+etc/pacman.conf.dist
+@exec if [ ! -f %B/pacman.conf ]; then cp -p %D/%F %B/pacman.conf; fi
+include/alpm.h
+include/alpm_list.h
+lib/libalpm.a
+lib/libalpm.la
+lib/libalpm.so
+lib/libalpm.so.7
+%%NLS%%share/locale/ca/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/da/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/el/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pacman.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/libalpm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pacman-scripts.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pacman.mo
+%%NLS%%@dirrm share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrm share/locale/sr@latin
+%%NLS%%@dirrm share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrm share/locale/kk
+%%DATADIR%%/ChangeLog.proto
+%%DATADIR%%/PKGBUILD-split.proto
+%%DATADIR%%/PKGBUILD.proto
+%%DATADIR%%/proto.install
+@dirrm %%DATADIR%%
+@exec mkdir -p %%PACMAN_ROOT%%
+@unexec rmdir %%PACMAN_ROOT%% 2>/dev/null || true

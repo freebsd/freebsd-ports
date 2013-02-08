@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-MirrorProjectRandomImageWidget
-# Date created: 		     August 03, 2004
-# Whom: Aaron Straup Cope 	     ascope@cpan.org
-#
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mp-random
 PORTVERSION=	1.0
@@ -13,8 +9,11 @@ MASTER_SITES=	http://mirrorproject.com/widget/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MirrorProjectRandomImageWidget-src-${PORTVERSION}
 
-MAINTAINER=	randomimage-widget@mirrorproject.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display random Mirror Project images on your desktop
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 USE_PYTHON=	yes
 USE_WX=		2.4

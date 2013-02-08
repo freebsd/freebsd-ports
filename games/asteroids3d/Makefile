@@ -3,7 +3,7 @@
 
 PORTNAME=	asteroids3d
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/a3d/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/:icons
@@ -40,7 +40,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDATA=	*
 PORTDOCS=	README.html
 
-DESKTOP_ENTRIES="Asteroids3D" "${COMMENT}" "${PORTNAME}_48.png" \
+DESKTOP_ENTRIES="Asteroids3D" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}_48.png" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
 pre-configure:

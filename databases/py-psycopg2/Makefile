@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-psycopg2
-# Date created:		1 August 2006
-# Whom:			Martin Wilke 	<miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke 	<miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-4/ \
 		CHEESESHOP

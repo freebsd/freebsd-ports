@@ -1,11 +1,8 @@
-# New ports collection makefile for:	prestashop
-# Date created:				Nov 23, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	prestashop
-PORTVERSION=	1.4.9.0
+PORTVERSION=	1.5.3.1
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

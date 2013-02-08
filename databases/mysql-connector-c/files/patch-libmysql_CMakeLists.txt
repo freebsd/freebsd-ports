@@ -1,0 +1,15 @@
+--- libmysql/CMakeLists.txt.orig	2013-02-01 17:34:32.000000000 +0100
++++ libmysql/CMakeLists.txt	2013-02-01 17:34:57.000000000 +0100
+@@ -146,9 +146,9 @@
+           ARCHIVE DESTINATION "lib")
+ ELSE(WIN32)
+   INSTALL(TARGETS libmysql mysqlclient
+-          LIBRARY DESTINATION "lib"
+-          ARCHIVE DESTINATION "lib")
++          LIBRARY DESTINATION "lib/mysql-connector-c/"
++          ARCHIVE DESTINATION "lib/mysql-connector-c/")
+   INSTALL(FILES ${CMAKE_SOURCE_DIR}/libmysql/libmysqlclient${CMAKE_SHARED_LIBRARY_SUFFIX}
+                 ${CMAKE_SOURCE_DIR}/libmysql/libmysqlclient_r${CMAKE_SHARED_LIBRARY_SUFFIX}
+-          DESTINATION "lib")
++          DESTINATION "lib/mysql-connector-c/")
+ ENDIF(WIN32)

@@ -1,0 +1,10 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -282,7 +282,6 @@
+ 	geticonset.1x \
+ 	getstyle.1x \
+ 	get-wings-flags.1 \
+-	get-wraster-flags.1 \
+ 	get-wutil-flags.1 \
+ 	seticons.1x \
+ 	setstyle.1x \

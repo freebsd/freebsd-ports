@@ -1,6 +1,6 @@
---- ./dbaccess/source/core/api/RowSet.cxx.orig	2012-07-03 07:01:28.000000000 -0400
-+++ ./dbaccess/source/core/api/RowSet.cxx	2012-07-18 14:57:33.000000000 -0400
-@@ -180,45 +180,45 @@
+--- ./dbaccess/source/core/api/RowSet.cxx.orig	2012-07-27 08:37:04.000000000 -0400
++++ ./dbaccess/source/core/api/RowSet.cxx	2012-07-31 19:44:15.000000000 -0400
+@@ -178,45 +178,45 @@
      m_aPrematureParamValues.get().resize( 0 );
  
      // sdb.RowSet Properties
@@ -32,7 +32,7 @@
 +    registerProperty(PROPERTY_SINGLESELECTQUERYCOMPOSER,PROPERTY_ID_SINGLESELECTQUERYCOMPOSER,  nRT,                    &m_xComposer,   ::getCppuType(static_cast< Reference< XSingleSelectQueryComposer >* >(0)));
  
      // sdbcx.ResultSet Properties
-     registerProperty(PROPERTY_ISBOOKMARKABLE,       PROPERTY_ID_ISBOOKMARKABLE,         nRT,                            &m_bIsBookmarable,      ::getBooleanCppuType());
+     registerProperty(PROPERTY_ISBOOKMARKABLE,       PROPERTY_ID_ISBOOKMARKABLE,         nRT,                            &m_bIsBookmarkable,      ::getBooleanCppuType());
      registerProperty(PROPERTY_CANUPDATEINSERTEDROWS,PROPERTY_ID_CANUPDATEINSERTEDROWS,  nRT,                            &m_bCanUpdateInsertedRows,      ::getBooleanCppuType());
      // sdbc.ResultSet Properties
 -    registerProperty(PROPERTY_RESULTSETCONCURRENCY, PROPERTY_ID_RESULTSETCONCURRENCY,   PropertyAttribute::TRANSIENT,   &m_nResultSetConcurrency,::getCppuType(reinterpret_cast< sal_Int32*>(NULL)));
@@ -73,7 +73,7 @@
  
      // ???
      registerProperty(PROPERTY_CHANGE_NOTIFICATION_ENABLED, PROPERTY_ID_PROPCHANGE_NOTIFY, PropertyAttribute::BOUND,     &m_bPropChangeNotifyEnabled, ::getBooleanCppuType());
-@@ -2808,11 +2808,11 @@
+@@ -2806,11 +2806,11 @@
      sal_Int32 nRT   = PropertyAttribute::READONLY   | PropertyAttribute::TRANSIENT;
  
      // sdb.RowSet Properties
@@ -87,6 +87,6 @@
 +    registerProperty(PROPERTY_RESULTSETTYPE,        PROPERTY_ID_RESULTSETTYPE,          PropertyAttribute::READONLY,    &m_nResultSetType,      ::getCppuType(static_cast< sal_Int32*>(0)));
 +    registerProperty(PROPERTY_FETCHDIRECTION,       PROPERTY_ID_FETCHDIRECTION,         PropertyAttribute::TRANSIENT,   &m_nFetchDirection,     ::getCppuType(static_cast< sal_Int32*>(0)));
 +    registerProperty(PROPERTY_FETCHSIZE,            PROPERTY_ID_FETCHSIZE,              PropertyAttribute::TRANSIENT,   &m_nFetchSize,          ::getCppuType(static_cast< sal_Int32*>(0)));
-     registerProperty(PROPERTY_ISBOOKMARKABLE,       PROPERTY_ID_ISBOOKMARKABLE,         nRT,                            &m_bIsBookmarable,      ::getBooleanCppuType());
+     registerProperty(PROPERTY_ISBOOKMARKABLE,       PROPERTY_ID_ISBOOKMARKABLE,         nRT,                            &m_bIsBookmarkable,      ::getBooleanCppuType());
  }
  

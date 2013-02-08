@@ -1,6 +1,3 @@
-share/doc/HTML/gl/thesaurus/common
-share/doc/HTML/gl/thesaurus/index.cache.bz2
-share/doc/HTML/gl/thesaurus/index.docbook
 share/locale/gl/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/gl/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/gl/LC_MESSAGES/CalendarTool.mo
@@ -56,4 +53,3 @@ share/locale/gl/LC_MESSAGES/stage.mo
 share/locale/gl/LC_MESSAGES/tablessolver.mo
 share/locale/gl/LC_MESSAGES/thesaurus_tool.mo
 share/locale/gl/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/gl/thesaurus

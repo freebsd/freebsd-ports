@@ -2,6 +2,7 @@
 
 PORTNAME=	spass
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cloud.github.com/downloads/guyru/spass/
 DISTFILES=	${DISTNAME}.tar.bz2

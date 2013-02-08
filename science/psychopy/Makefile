@@ -1,13 +1,8 @@
-# Ports collection makefile for:	psychopy
-# Date created:			27 Feb, 2009
-# Whom:				wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	psychopy
-PORTVERSION=	1.65.00
-PORTREVISION=	1
+PORTVERSION=	1.75.01
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	PsychoPy-${PORTVERSION}

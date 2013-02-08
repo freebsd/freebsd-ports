@@ -1,0 +1,42 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MicroMason/.packlist
+%%SITE_PERL%%/Text/MicroMason.pm
+%%SITE_PERL%%/Text/MicroMason/AllowGlobals.pm
+%%SITE_PERL%%/Text/MicroMason/ApacheHandler.pm
+%%SITE_PERL%%/Text/MicroMason/Base.pm
+%%SITE_PERL%%/Text/MicroMason/Cache/File.pm
+%%SITE_PERL%%/Text/MicroMason/Cache/Null.pm
+%%SITE_PERL%%/Text/MicroMason/Cache/Simple.pm
+%%SITE_PERL%%/Text/MicroMason/CatchErrors.pm
+%%SITE_PERL%%/Text/MicroMason/CompileCache.pm
+%%SITE_PERL%%/Text/MicroMason/Debug.pm
+%%SITE_PERL%%/Text/MicroMason/Docs/Changes.pod
+%%SITE_PERL%%/Text/MicroMason/Docs/ReadMe.pod
+%%SITE_PERL%%/Text/MicroMason/Docs/Related.pod
+%%SITE_PERL%%/Text/MicroMason/Docs/ToDo.pod
+%%SITE_PERL%%/Text/MicroMason/DoubleQuote.pm
+%%SITE_PERL%%/Text/MicroMason/Embperl.pm
+%%SITE_PERL%%/Text/MicroMason/ExecuteCache.pm
+%%SITE_PERL%%/Text/MicroMason/Filters.pm
+%%SITE_PERL%%/Text/MicroMason/Functions.pm
+%%SITE_PERL%%/Text/MicroMason/HTMLMason.pm
+%%SITE_PERL%%/Text/MicroMason/HTMLTemplate.pm
+%%SITE_PERL%%/Text/MicroMason/HasParams.pm
+%%SITE_PERL%%/Text/MicroMason/LineNumbers.pm
+%%SITE_PERL%%/Text/MicroMason/PLP.pm
+%%SITE_PERL%%/Text/MicroMason/ParseInfo.pm
+%%SITE_PERL%%/Text/MicroMason/PassVariables.pm
+%%SITE_PERL%%/Text/MicroMason/PostProcess.pm
+%%SITE_PERL%%/Text/MicroMason/QuickTemplate.pm
+%%SITE_PERL%%/Text/MicroMason/Safe.pm
+%%SITE_PERL%%/Text/MicroMason/ServerPages.pm
+%%SITE_PERL%%/Text/MicroMason/Sprintf.pm
+%%SITE_PERL%%/Text/MicroMason/StoreOne.pm
+%%SITE_PERL%%/Text/MicroMason/TemplateDir.pm
+%%SITE_PERL%%/Text/MicroMason/TemplatePath.pm
+%%SITE_PERL%%/Text/MicroMason/TextTemplate.pm
+@dirrm %%SITE_PERL%%/Text/MicroMason/Docs
+@dirrm %%SITE_PERL%%/Text/MicroMason/Cache
+@dirrm %%SITE_PERL%%/Text/MicroMason
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MicroMason
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

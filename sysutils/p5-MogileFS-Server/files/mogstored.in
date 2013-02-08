@@ -17,6 +17,7 @@ load_rc_config mogstored
 
 required_files=%%PREFIX%%/etc/mogstored.conf
 
+command="%%PREFIX%%/bin/${name}"
 command_args="--config=%%PREFIX%%/etc/mogstored.conf -d"
 
 run_rc_command "$1"

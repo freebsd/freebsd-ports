@@ -1,9 +1,19 @@
-This program is a clock that shows which portion of the Earth's surface is
-illuminated by the sun.  It is designed to be usually iconic, but can be
-opened for a larger display with the time updated every second and both the
-local time zone and UTC displayed.  The Suntools version had a menu that
-allowed you to speed up time, show different dates, etc., but I have
-never implemented any of that in the X version; there is some support
-for it in the code, however.
+Sunclock is an X11 application that displays a map of the Earth and
+shows the illuminated portion of the globe. In addition to providing
+local time for the default timezone, it also displays GMT time,
+legal and solar time of major cities, their latitude and longitude,
+the mutual distances of arbitrary locations on Earth, the position
+at zenith of Sun and Moon. Sunclock can display meridians, parallels,
+tropics and arctic circles. It has builtin functions that accelerate
+the speed of time and show the evolution of seasons. Sunclock can
+be internationalized for various western languages. It is possible
+to customize the app-default file and enter additional city entries.
 
-WWW: http://frmas.free.fr/li_1.htm
+Sunclock can commute between two states, the "clock window" and the
+"map window". The clock window displays a small map of the Earth
+and therefore occupies little space on the screen, while the "map
+window" displays a large map and offers more advanced functions.
+The Sunclock package includes a resizable and zoomable vector map.
+External Earth maps can also be loaded.
+
+WWW: http://www.arvernes.com/wiki/index.php/Sunclock

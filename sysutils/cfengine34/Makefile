@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-pcre=${LOCALBASE} \
 		--enable-fhs
 
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
 		QDBM	"Enable QDBM support"				off \

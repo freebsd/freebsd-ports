@@ -1,0 +1,5 @@
+posix_ipc is a Python module (written in C) that permits creation and
+manipulation of POSIX inter-process semaphores, shared memory and message queues
+on platforms supporting the POSIX Realtime Extensions a.k.a. POSIX 1003.1b-1993.
+
+WWW: http://semanchuk.com/philip/posix_ipc/

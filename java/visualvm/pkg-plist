@@ -1,0 +1,334 @@
+bin/visualvm
+share/visualvm/visualvm/core/locale/core_visualvm.jar
+share/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-jmx.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-charts.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
+share/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+share/visualvm/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
+share/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-attach.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-heapdump.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-coredump.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-jvm.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-profiling.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-sa.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-core.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-profiler.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-host.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-modules-appui.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-host-views.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-host-remote.jar
+share/visualvm/visualvm/modules/com-sun-tools-visualvm-jvmstat.jar
+share/visualvm/visualvm/config/Modules/org-netbeans-core-execution.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-tools.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-core-kit.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application.xml
+share/visualvm/visualvm/config/Modules/org-jdesktop-layout.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-core.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-core-netigso.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiler.xml
+share/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiling.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvmstat.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-uisupport.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-core-io-ui.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-remote.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvm.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-core-output2.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-api-visual.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-netbinox.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-libs-osgi.xml_hidden
+share/visualvm/visualvm/config/Modules/org-openide-compat.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-core-osgi.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-modules-appui.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-libs-jsr223.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jmx.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-views.xml
+share/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-api-caching.xml
+share/visualvm/visualvm/config/Modules/org-openide-execution.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-print.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-favorites.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sampler.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application-views.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-attach.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-charts.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-libs-felix.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-coredump.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sa.xml
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-options-keymap.xml_hidden
+share/visualvm/visualvm/config/Modules/org-netbeans-modules-spi-actions.xml_hidden
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-heapdump.xml
+share/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-threaddump.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-tools.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-core.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiler.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiling.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvmstat.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-uisupport.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host-remote.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvm.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-appui.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jmx.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host-views.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-api-caching.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sampler.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-attach.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-charts.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-coredump.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sa.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-startup.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-heapdump.xml
+share/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-threaddump.xml
+share/visualvm/visualvm/.lastModified
+share/visualvm/profiler/lib/jfluid-server.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-heapwalker.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-utilities.jar
+share/visualvm/profiler/modules/org-netbeans-lib-profiler.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-oql.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-api.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-snaptracer.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-attach.jar
+share/visualvm/profiler/modules/org-netbeans-lib-profiler-ui.jar
+share/visualvm/profiler/modules/org-netbeans-lib-profiler-common.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-selector-api.jar
+share/visualvm/profiler/modules/org-netbeans-modules-profiler-selector-ui.jar
+share/visualvm/profiler/modules/org-netbeans-lib-profiler-charts.jar
+share/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-ui.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-selector-api.xml
+share/visualvm/profiler/config/Modules/org-netbeans-lib-profiler.xml
+share/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-common.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-heapwalker.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-api.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-selector-ui.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-oql.xml
+share/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-charts.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-snaptracer.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-utilities.xml
+share/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-attach.xml
+share/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-ui.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-selector-api.xml
+share/visualvm/profiler/update_tracking/org-netbeans-lib-profiler.xml
+share/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-common.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-heapwalker.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-api.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-selector-ui.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-oql.xml
+share/visualvm/profiler/update_tracking/org-netbeans-lib-profiler-charts.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-snaptracer.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-utilities.xml
+share/visualvm/profiler/update_tracking/org-netbeans-modules-profiler-attach.xml
+share/visualvm/profiler/VERSION.txt
+share/visualvm/platform/docs/testng-6.5.1-javadoc.zip
+share/visualvm/platform/lib/boot.jar
+share/visualvm/platform/lib/nbexec
+share/visualvm/platform/lib/org-openide-util.jar
+share/visualvm/platform/lib/org-openide-util-lookup.jar
+share/visualvm/platform/lib/org-openide-modules.jar
+share/visualvm/platform/core/org-openide-filesystems.jar
+share/visualvm/platform/core/core.jar
+share/visualvm/platform/modules/org-netbeans-modules-autoupdate-services.jar
+share/visualvm/platform/modules/org-netbeans-api-annotations-common.jar
+share/visualvm/platform/modules/ext/testng-6.5.1-dist.jar
+share/visualvm/platform/modules/ext/jna-3.4.0.jar
+share/visualvm/platform/modules/ext/platform-3.4.0.jar
+share/visualvm/platform/modules/ext/jhall-2.0_05.jar
+share/visualvm/platform/modules/ext/nsProxyAutoConfig.js
+share/visualvm/platform/modules/ext/updater.jar
+share/visualvm/platform/modules/org-openide-dialogs.jar
+share/visualvm/platform/modules/lib/amd64/linux/libjnidispatch-340.so
+share/visualvm/platform/modules/lib/i386/linux/libjnidispatch-340.so
+share/visualvm/platform/modules/lib/libjnidispatch-340.jnilib
+share/visualvm/platform/modules/org-netbeans-modules-keyring-impl.jar
+share/visualvm/platform/modules/org-netbeans-modules-keyring.jar
+share/visualvm/platform/modules/org-netbeans-spi-quicksearch.jar
+share/visualvm/platform/modules/org-netbeans-modules-editor-mimelookup.jar
+share/visualvm/platform/modules/org-netbeans-core-multiview.jar
+share/visualvm/platform/modules/org-netbeans-swing-plaf.jar
+share/visualvm/platform/modules/org-netbeans-modules-progress-ui.jar
+share/visualvm/platform/modules/org-netbeans-modules-queries.jar
+share/visualvm/platform/modules/org-netbeans-swing-outline.jar
+share/visualvm/platform/modules/org-netbeans-modules-autoupdate-ui.jar
+share/visualvm/platform/modules/org-netbeans-modules-masterfs-macosx.jar
+share/visualvm/platform/modules/org-netbeans-libs-jna.jar
+share/visualvm/platform/modules/org-netbeans-modules-masterfs.jar
+share/visualvm/platform/modules/org-openide-nodes.jar
+share/visualvm/platform/modules/org-netbeans-core-windows.jar
+share/visualvm/platform/modules/org-netbeans-modules-editor-mimelookup-impl.jar
+share/visualvm/platform/modules/org-netbeans-api-search.jar
+share/visualvm/platform/modules/org-netbeans-modules-javahelp.jar
+share/visualvm/platform/modules/org-netbeans-core-nativeaccess.jar
+share/visualvm/platform/modules/org-openide-awt.jar
+share/visualvm/platform/modules/org-netbeans-api-progress.jar
+share/visualvm/platform/modules/org-netbeans-modules-masterfs-windows.jar
+share/visualvm/platform/modules/org-netbeans-modules-options-api.jar
+share/visualvm/platform/modules/org-netbeans-modules-masterfs-solaris.jar
+share/visualvm/platform/modules/org-openide-explorer.jar
+share/visualvm/platform/modules/org-netbeans-swing-tabcontrol.jar
+share/visualvm/platform/modules/org-netbeans-modules-applemenu.jar
+share/visualvm/platform/modules/org-netbeans-modules-settings.jar
+share/visualvm/platform/modules/org-netbeans-modules-sampler.jar
+share/visualvm/platform/modules/org-netbeans-libs-testng.jar
+share/visualvm/platform/modules/org-netbeans-modules-sendopts.jar
+share/visualvm/platform/modules/org-openide-actions.jar
+share/visualvm/platform/modules/org-openide-windows.jar
+share/visualvm/platform/modules/org-netbeans-core-ui.jar
+share/visualvm/platform/modules/org-netbeans-modules-masterfs-linux.jar
+share/visualvm/platform/modules/org-openide-text.jar
+share/visualvm/platform/modules/org-openide-loaders.jar
+share/visualvm/platform/modules/org-netbeans-core.jar
+share/visualvm/platform/modules/org-openide-io.jar
+share/visualvm/platform/config/Modules/org-netbeans-modules-masterfs-linux.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-progress-ui.xml
+share/visualvm/platform/config/Modules/org-netbeans-api-progress.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-masterfs.xml
+share/visualvm/platform/config/Modules/org-netbeans-spi-quicksearch.xml
+share/visualvm/platform/config/Modules/org-openide-windows.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-editor-mimelookup.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-editor-mimelookup-impl.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-queries.xml
+share/visualvm/platform/config/Modules/org-openide-explorer.xml
+share/visualvm/platform/config/Modules/org-netbeans-swing-outline.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-applemenu.xml
+share/visualvm/platform/config/Modules/org-openide-dialogs.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-settings.xml
+share/visualvm/platform/config/Modules/org-openide-nodes.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-autoupdate-services.xml
+share/visualvm/platform/config/Modules/org-netbeans-swing-tabcontrol.xml
+share/visualvm/platform/config/Modules/org-netbeans-core.xml
+share/visualvm/platform/config/Modules/org-openide-actions.xml
+share/visualvm/platform/config/Modules/org-netbeans-libs-jna.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-masterfs-windows.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-masterfs-solaris.xml
+share/visualvm/platform/config/Modules/org-netbeans-api-search.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-sampler.xml
+share/visualvm/platform/config/Modules/org-netbeans-libs-testng.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-keyring.xml
+share/visualvm/platform/config/Modules/org-openide-io.xml
+share/visualvm/platform/config/Modules/org-openide-awt.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-options-api.xml
+share/visualvm/platform/config/Modules/org-netbeans-core-multiview.xml
+share/visualvm/platform/config/Modules/org-netbeans-core-ui.xml
+share/visualvm/platform/config/Modules/org-netbeans-swing-plaf.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-autoupdate-ui.xml
+share/visualvm/platform/config/Modules/org-netbeans-core-windows.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-javahelp.xml
+share/visualvm/platform/config/Modules/org-openide-loaders.xml
+share/visualvm/platform/config/Modules/org-netbeans-api-annotations-common.xml
+share/visualvm/platform/config/Modules/org-openide-text.xml
+share/visualvm/platform/config/Modules/org-netbeans-core-nativeaccess.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-keyring-impl.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-masterfs-macosx.xml
+share/visualvm/platform/config/Modules/org-netbeans-modules-sendopts.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-netbeans-modules-queries.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-explorer.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-modules.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-nodes.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-util.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-netbeans-core.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-netbeans-modules-options-api.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-loaders.xml
+share/visualvm/platform/config/ModuleAutoDeps/org-openide-text.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-masterfs-linux.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-progress-ui.xml
+share/visualvm/platform/update_tracking/org-netbeans-core-startup.xml
+share/visualvm/platform/update_tracking/org-netbeans-api-progress.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-masterfs.xml
+share/visualvm/platform/update_tracking/org-netbeans-spi-quicksearch.xml
+share/visualvm/platform/update_tracking/org-openide-windows.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-editor-mimelookup.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-editor-mimelookup-impl.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-queries.xml
+share/visualvm/platform/update_tracking/org-openide-explorer.xml
+share/visualvm/platform/update_tracking/org-netbeans-swing-outline.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-applemenu.xml
+share/visualvm/platform/update_tracking/org-openide-modules.xml
+share/visualvm/platform/update_tracking/org-openide-dialogs.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-settings.xml
+share/visualvm/platform/update_tracking/org-openide-nodes.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-autoupdate-services.xml
+share/visualvm/platform/update_tracking/org-netbeans-swing-tabcontrol.xml
+share/visualvm/platform/update_tracking/org-openide-util.xml
+share/visualvm/platform/update_tracking/org-netbeans-core.xml
+share/visualvm/platform/update_tracking/org-openide-actions.xml
+share/visualvm/platform/update_tracking/org-netbeans-libs-jna.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-masterfs-windows.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-masterfs-solaris.xml
+share/visualvm/platform/update_tracking/org-netbeans-api-search.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-sampler.xml
+share/visualvm/platform/update_tracking/org-netbeans-libs-testng.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-keyring.xml
+share/visualvm/platform/update_tracking/org-openide-io.xml
+share/visualvm/platform/update_tracking/org-openide-awt.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-options-api.xml
+share/visualvm/platform/update_tracking/org-netbeans-core-multiview.xml
+share/visualvm/platform/update_tracking/org-netbeans-core-ui.xml
+share/visualvm/platform/update_tracking/org-netbeans-swing-plaf.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-autoupdate-ui.xml
+share/visualvm/platform/update_tracking/org-netbeans-core-windows.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-javahelp.xml
+share/visualvm/platform/update_tracking/org-openide-loaders.xml
+share/visualvm/platform/update_tracking/org-netbeans-api-annotations-common.xml
+share/visualvm/platform/update_tracking/org-openide-text.xml
+share/visualvm/platform/update_tracking/org-netbeans-core-nativeaccess.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-keyring-impl.xml
+share/visualvm/platform/update_tracking/org-openide-filesystems.xml
+share/visualvm/platform/update_tracking/org-openide-util-lookup.xml
+share/visualvm/platform/update_tracking/org-netbeans-bootstrap.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-masterfs-macosx.xml
+share/visualvm/platform/update_tracking/org-netbeans-modules-sendopts.xml
+share/visualvm/platform/VERSION.txt
+@unexec if cmp -s %D/etc/visualvm.conf %D/etc/visualvm.conf-dist; then rm -f %D/etc/visualvm.conf; fi
+etc/visualvm.conf-dist
+@exec [ ! -f %B/visualvm.conf ] && cp %B/visualvm.conf-dist %B/visualvm.conf
+@unexec if cmp -s %D/etc/visualvm.clusters %D/etc/visualvm.clusters-dist; then rm -f %D/etc/visualvm.clusters; fi
+etc/visualvm.clusters-dist
+@exec [ ! -f %B/visualvm.clusters ] && cp %B/visualvm.clusters-dist %B/visualvm.clusters
+@unexec if cmp -s %D/etc/visualvm.icns %D/etc/visualvm.icns-dist; then rm -f %D/etc/visualvm.icns; fi
+etc/visualvm.icns-dist
+@exec [ ! -f %B/visualvm.icns ] && cp %B/visualvm.icns-dist %B/visualvm.icns
+@dirrm share/visualvm/platform/config/ModuleAutoDeps
+@dirrm share/visualvm/platform/config/Modules
+@dirrm share/visualvm/platform/config
+@dirrm share/visualvm/platform/core
+@dirrm share/visualvm/platform/docs
+@dirrm share/visualvm/platform/lib
+@dirrm share/visualvm/platform/modules/ext
+@dirrm share/visualvm/platform/modules/lib
+@dirrm share/visualvm/platform/modules/lib/amd64/linux
+@dirrm share/visualvm/platform/modules/lib/amd64
+@dirrm share/visualvm/platform/modules/lib/i386/linux
+@dirrm share/visualvm/platform/modules/lib/i386
+@dirrm share/visualvm/platform/modules/lib/x86
+@dirrm share/visualvm/platform/modules
+@dirrm share/visualvm/platform/update_tracking
+@dirrm share/visualvm/platform
+@dirrm share/visualvm/profiler/config/Modules
+@dirrm share/visualvm/profiler/config
+@dirrm share/visualvm/profiler/lib
+@dirrm share/visualvm/profiler/modules
+@dirrm share/visualvm/profiler/update_tracking
+@dirrm share/visualvm/profiler
+@dirrm share/visualvm/visualvm/config/Modules
+@dirrm share/visualvm/visualvm/config
+@dirrm share/visualvm/visualvm/core/locale
+@dirrm share/visualvm/visualvm/core
+@dirrm share/visualvm/visualvm/modules/locale
+@dirrm share/visualvm/visualvm/modules
+@dirrm share/visualvm/visualvm/update_tracking
+@dirrm share/visualvm/visualvm
+@dirrm share/visualvm

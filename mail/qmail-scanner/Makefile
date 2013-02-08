@@ -1,12 +1,9 @@
-# New ports collection makefile for:   qmail-scanner
-# Date created:	       2003-08-24
-# Whom:                moeti
-#
+# Created by: moeti <freebsd@simplerezo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -56,11 +53,15 @@ CONTRIB=	mrtg-qmail-scanner.cfg check_AV_daemons logrotate.qmail-scanner \
 		test-sophie.pl test-trophie.pl test_installation.sh test_password.zip \
 		qmail-scanner-queue.c
 
-OPTIONS=	TNEF "Mark Simpson's Patch (Recommended)" on \
-		FIX_MIME "Fix broken MIME messages" off \
-		REDUNDANT "Scan attachments and body mails" on \
-		NORMALIZE "Decode encoded headers per MIME Base64" off \
-		CWRAPPER "use C wrapper (no suid perl script needed)" on
+OPTIONS_DEFINE=	TNEF FIX_MIME REDUNDANT NORMALIZE CWRAPPER STPATCH
+OPTIONS_DEFAULT=TNEF REDUNDANT CWRAPPER STPATCH
+
+TNEF_DESC=	Mark Simpson\'s Patch (Recommended)
+FIX_MIME_DESC=	Fix broken MIME messages
+REDUNDANT_DESC=	Scan attachments and body mails
+NORMALIZE_DESC=	Decode encoded headers per MIME Base64
+CWRAPPER_DESC=	C wrapper (no suid perl script needed)
+STPATCH_DESC=	st patch from toribio.apollinare.org
 
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	QS_USER=${QS_USER} \
@@ -70,24 +71,24 @@ SUB_LIST+=	QS_USER=${QS_USER} \
 .include <bsd.port.pre.mk>
 
 # Options
-.if defined(WITH_TNEF)
+.if ${PORT_OPTIONS:MTNEF}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
-.if !defined(WITH_FIX_MIME)
+.if ! ${PORT_OPTIONS:MFIX_MIME}
 CONFIGURE_ARGS+=	--fix-mime no
 .endif
 
-.if !defined(WITH_REDUNDANT)
+.if ! ${PORT_OPTIONS:MREDUNDANT}
 CONFIGURE_ARGS+=	--redundant no
 .endif
 
-.if !defined(WITH_NORMALIZE)
+.if ! ${PORT_OPTIONS:MNORMALIZE}
 CONFIGURE_ARGS+=	--normalize no
 .endif
 
-.if defined(WITH_CWRAPPER)
+.if ${PORT_OPTIONS:MCWRAPPER}
 SUB_LIST+=	CWRAPPER=yes
 SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue
 CWRAPPER_FLG=	yes
@@ -98,6 +99,13 @@ SUB_LIST+=	CWRAPPER=no
 SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue.pl
 CWRAPPER_FLG=	no
 PLIST_SUB+=	CWRAPPER="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSTPATCH} || make (makesum)
+PATCH_SITES=	http://freebsdrocks.net/files9/
+PATCHFILES=	patch-configure-qms
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
 .endif
 
 .if defined(QS_USER)

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	libksane
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	libksane

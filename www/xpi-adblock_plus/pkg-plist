@@ -514,11 +514,11 @@
 %%XPI_XPIDIR%%/lib/appSupport.js
 %%XPI_XPIDIR%%/lib/contentPolicy.js
 %%XPI_XPIDIR%%/lib/elemHide.js
+%%XPI_XPIDIR%%/lib/elemHideHitRegistration.js
 %%XPI_XPIDIR%%/lib/filterClasses.js
 %%XPI_XPIDIR%%/lib/filterListener.js
 %%XPI_XPIDIR%%/lib/filterNotifier.js
 %%XPI_XPIDIR%%/lib/filterStorage.js
-%%XPI_XPIDIR%%/lib/elemHideHitRegistration.js
 %%XPI_XPIDIR%%/lib/hooks.js
 %%XPI_XPIDIR%%/lib/io.js
 %%XPI_XPIDIR%%/lib/keySelector.js

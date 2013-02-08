@@ -30,7 +30,6 @@ RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 USE_GMAKE=	yes
 
 USE_TCL=	84+
-USE_TCL_THREADS=	yes
 
 .include <bsd.port.pre.mk>
 

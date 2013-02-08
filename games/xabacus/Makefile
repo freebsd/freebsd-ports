@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xabacus
-PORTVERSION=	7.7.0
+PORTVERSION=	7.7.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/

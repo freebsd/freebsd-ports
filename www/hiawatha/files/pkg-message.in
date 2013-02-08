@@ -7,9 +7,6 @@ Edit the configuration files in %%ETCDIR%% to suit your needs.
 Add hiawatha_enable="YES" to rc.conf and start Hiawatha by running:
 %%PREFIX%%/etc/rc.d/hiawatha start
 
-To use php-fcgi, add php_fcgi_enable="YES" to rc.conf and start it by running:
-%%PREFIX%%/etc/rc.d/php-fcgi start
-
 If you configured Hiawatha with Monitor, download and install the respective
 files needed to monitor your webserver:
 http://www.hiawatha-webserver.org/monitor

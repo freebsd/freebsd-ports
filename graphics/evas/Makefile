@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evas
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	# none

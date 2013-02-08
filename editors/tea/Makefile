@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-DISTVERSION=	33.4.0
+DISTVERSION=	33.5.0
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
-		http://semiletov.ho.ua/${PORTNAME}-releases/
+MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
 MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	Simple and powerful Qt4-based text editor

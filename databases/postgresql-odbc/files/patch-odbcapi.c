@@ -1,10 +1,10 @@
 --- odbcapi.c.orig	2009-01-26 23:29:21.000000000 +0600
 +++ odbcapi.c	2009-01-26 23:30:15.000000000 +0600
-@@ -1111,11 +1111,7 @@
+@@ -1121,11 +1121,7 @@
  				 HSTMT hstmt,
  				 SQLUSMALLINT fFetchType,
  				 SQLLEN irow,
--#ifdef WITH_UNIXODBC
+-#if defined(WITH_UNIXODBC) && (SIZEOF_VOID_P < 8) 
 -				 SQLROWSETSIZE *pcrow,
 -#else
  				 SQLULEN *pcrow,
@@ -12,7 +12,7 @@
  				 SQLUSMALLINT *rgfRowStatus)
  {
  	RETCODE	ret;
-@@ -1125,17 +1121,7 @@
+@@ -1135,17 +1131,7 @@
  	ENTER_STMT_CS(stmt);
  	SC_clear_error(stmt);
  	StartRollbackState(stmt);

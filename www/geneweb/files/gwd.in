@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# PROVIDE: gwd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+gwd_enable=${gwd_enable-"NO"}
+gwd_flags=${gwd_flags-"-hd /home/geneweb/gw"}
+gwd_pidfile=${gwd_pidfile-"/home/geneweb/gwd.pid"}
+gwd_chdir=${gwd_chdir-"/home/geneweb/bases"}
+gwd_command=${gwd_command-"/usr/local/bin/gwd"}
+
+gwd_user=${gwd_user-"geneweb"}
+
+. /etc/rc.subr
+
+name="gwd"
+rcvar=`set_rcvar`
+command="${gwd_command}"
+pidfile="${gwd_pidfile}"
+
+load_rc_config $name
+
+start_cmd="echo \"Starting ${name}.\";cd ${gwd_chdir};su -m ${gwd_user} -c \"exec /usr/sbin/daemon -f -p ${pidfile} ${command} ${gwd_flags} ${command_args}\""
+#start_cmd="echo \"Starting ${name}.\"; /usr/bin/nice -5 ${command} ${gwd_flags} ${command_args}"
+
+run_rc_command "$1"
+

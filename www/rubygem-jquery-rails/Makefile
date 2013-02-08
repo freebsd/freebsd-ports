@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-rails
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

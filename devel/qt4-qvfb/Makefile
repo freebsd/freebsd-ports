@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt40
-# Date created:				Wed Jun 29 11:49:42 CEST 2005
-# Whom:					lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	qvfb
 DISTVERSION=	${QT4_VERSION}
@@ -26,6 +21,10 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
+
+DESKTOP_ENTRIES="Qt Virtual Framebuffer" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/qvfb-qt4.png" \
+		"${PREFIX}/bin/qvfb-qt4" "Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \
@@ -55,5 +54,9 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+
+post-install:
+	${INSTALL_DATA} ${BUILD_WRKSRC}/images/logo.png \
+		${PREFIX}/share/pixmaps/qvfb-qt4.png
 
 .include <bsd.port.mk>

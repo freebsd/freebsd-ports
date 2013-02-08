@@ -22,9 +22,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DBLATEX FOP PASSIVETEX
-DBLATEX_DESCR=		Add dependency on Dblatex
-FOP_DESCR=		Add dependency on FOP (needs Java)
-PASSIVETEX_DESCR=	Add dependency on PassiveTeX
+DBLATEX_DESC=		Add dependency on Dblatex
+FOP_DESC=		Add dependency on FOP (needs Java)
+PASSIVETEX_DESC=	Add dependency on PassiveTeX
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

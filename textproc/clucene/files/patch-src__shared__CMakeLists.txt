@@ -1,0 +1,11 @@
+--- src/shared/CMakeLists.txt.orig	2011-03-16 20:21:07.000000000 -0400
++++ src/shared/CMakeLists.txt	2012-08-07 13:31:00.000000000 -0400
+@@ -62,7 +62,7 @@
+                         stdint.h unistd.h io.h direct.h sys/dir.h sys/ndir.h dirent.h wctype.h fcntl.h
+                         stat.h sys/stat.h stdexcept errno.h fcntl.h windef.h windows.h wchar.h 
+                         hash_map hash_set ext/hash_map ext/hash_map tr1/unordered_set tr1/unordered_map
+-                        sys/timeb.h tchar.h strings.h stdexcept sys/mman.h winerror.h )
++                        tchar.h strings.h stdexcept sys/mman.h winerror.h )
+ 
+ 
+ ########################################################################

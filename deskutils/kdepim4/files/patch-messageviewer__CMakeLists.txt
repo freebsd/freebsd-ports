@@ -1,5 +1,5 @@
---- ./messageviewer/CMakeLists.txt.orig	2012-08-25 03:19:01.387668126 +0200
-+++ ./messageviewer/CMakeLists.txt	2012-08-25 03:19:18.597652001 +0200
+--- ./messageviewer/CMakeLists.txt.orig	2012-08-25 03:26:14.357593951 +0200
++++ ./messageviewer/CMakeLists.txt	2012-08-25 03:26:19.147594463 +0200
 @@ -17,7 +17,6 @@
  
  configure_file(messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)

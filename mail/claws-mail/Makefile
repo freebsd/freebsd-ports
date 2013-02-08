@@ -3,6 +3,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.9.0
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -47,12 +48,11 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		claws-mail.1
 
-CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --disable-dbus
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 
 OPTIONS_DEFINE=	BOGOFILTER COMPFACE DEBUG DILLO ENCHANT GPGME IPV6 JPILOT LDAP \
 		MANUAL SPAMASSASSIN STARTUP THEMES
@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
+CONFIGURE_ARGS+=	--enable-maintainer-mode
 .endif
 
 .if ${PORT_OPTIONS:MDILLO}

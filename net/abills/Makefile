@@ -13,7 +13,7 @@ COMMENT=	Billing system for dialup, VPN, and VoIP management
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
+RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2 \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-Digest-MD4>=0:${PORTSDIR}/security/p5-Digest-MD4 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \

@@ -1,37 +1,43 @@
-# Created by: Matthias Andree <matthias.andree@gmx.de>
+# Created by: Matthias Andree <mandree@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	2.2.2
+DISTVERSION=	2.3.0
+PORTREVISION=	3
 CATEGORIES=	security net
-# MASTER_SITES points to hosts in distinct data centers,
-# so just one MASTER_SITES entry should be OK.
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/ \
-		${MASTER_SITE_LOCAL:S,$,mandree/,}
+		http://build.openvpn.net/downloads/releases/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	openvpn-devel-[0-9]* openvpn-2.0* openvpn-beta-[0-9]*
+CONFLICTS_INSTALL=	openvpn-2.[!3].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_XZ=		yes
-CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include
+# let OpenVPN's configure script pick up the requisite libraries:
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	PW_SAVE PKCS11
+# PolarSSL is not provided; OpenVPN does not currently compile with PolarSSL 1.2.0+
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA
+OPTIONS_DEFAULT=	EASYRSA
 PW_SAVE_DESC=	Interactive passwords may be read from a file
 PKCS11_DESC=	Use security/pkcs11-helper
+EASYRSA_DESC=	Install security/easy-rsa RSA helper package
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install
-.else
-INSTALL_TARGET=	install-exec install-man
+# use a "stage directory" to install - much easier to sort data/share
+# stuff into docs, examples, ...
+_stagedir=	${WRKDIR}/instage
+INSTALL_TARGET=	install DESTDIR=${_stagedir}
+
+.if ${PORT_OPTIONS:MEASYRSA}
+RUN_DEPENDS+=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 .endif
 
 INSTALL_TARGET+=	mandir=${MANPREFIX}/man
@@ -41,7 +47,6 @@ USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
 SUB_FILES=	pkg-message
-SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -51,11 +56,8 @@ CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 
 LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 
-.if ${PORT_OPTIONS:MPW_SAVE}
-CONFIGURE_ARGS+=	--enable-password-save
-.else
-CONFIGURE_ARGS+=	--disable-password-save
-.endif
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MPKCS11}
 LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
@@ -63,13 +65,11 @@ LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC}/easy-rsa/?.0 -type f \
-	    -exec ${REINPLACE_CMD} -e 's;#!/bin/bash;#!/bin/sh;' \
-				   -e 's,source ./vars,. ./vars,' \{\} +
-	@${FIND} ${WRKSRC}/plugin -name Makefile \
-	    -exec ${REINPLACE_CMD} -e 's;gcc;${CC};g' '{}' +
-	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*.bak \) -delete
+.if ${PORT_OPTIONS:MPW_SAVE}
+CONFIGURE_ARGS+=	--enable-password-save
+.else
+CONFIGURE_ARGS+=	--disable-password-save
+.endif
 
 pre-configure:
 .ifdef (LOG_OPENVPN)
@@ -79,13 +79,11 @@ pre-configure:
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
-	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
+	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
 	@${ECHO} ""
 .endif
 
 post-build:
-	cd ${WRKSRC}/plugin/down-root && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
-	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
 	@${ECHO} ; ${ECHO} "### Note that you can skip these lengthy selftests with WITHOUT_CHECK=yes ###" ; ${ECHO}
@@ -93,27 +91,22 @@ post-build:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib/
+	${MKDIR} ${PREFIX}/lib/openvpn/plugins/ ${PREFIX}/sbin \
+		 ${PREFIX}/include ${PREFIX}/man
+	${INSTALL_PROGRAM} ${_stagedir}${PREFIX}/sbin/openvpn ${PREFIX}/sbin
+	${INSTALL_DATA} ${_stagedir}${PREFIX}/lib/openvpn/plugins/* ${PREFIX}/lib/openvpn/plugins/
+	${INSTALL_DATA} ${_stagedir}${PREFIX}/include/* ${PREFIX}/include/
+	${INSTALL_MAN} ${_stagedir}${PREFIX}/man/man8/* ${MAN8PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
-	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
-.for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL \
-	PORTS README
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
+	-${RMDIR} ${_stagedir}${DOCSDIR}/sample
+	(cd ${_stagedir}${DOCSDIR} && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+.for i in AUTHORS ChangeLog PORTS
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
-.for dir in easy-rsa easy-rsa/1.0 easy-rsa/2.0 sample-config-files
-	${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
-.endfor
-.for dir in sample-scripts
-	${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_SCRIPT} \{\} ${DOCSDIR}/${dir} \;
-.endfor
-.else
-	-@${RMDIR} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+	${CHMOD} ${BINMODE} ${EXAMPLESDIR}/sample-scripts/*
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,0 +1,7 @@
+This module fills in HTML forms with Perl data, which re-implements
+HTML::FillInForm using regexp-based parser, not using HTML::Parser.
+
+The difference in the parsers makes HTML::FillInForm::Lite about 2
+times faster than HTML::FillInForm.
+
+WWW: http://search.cpan.org/dist/HTML-FillInForm-Lite/

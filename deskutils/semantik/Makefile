@@ -1,15 +1,9 @@
-# New ports collection makefile for:	semantik
-# Date created:				2009-08-11
-# Whom:					Nick Hibma <nick@anywi.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	semantik
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.3
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
-		http://freehackers.org/~tnagy/
+MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE mind mapping tool
@@ -20,10 +14,12 @@ USE_KDE4=	kdehier kdelibs kdeprefix
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON=	2.5+
-USE_QT4=	corelib gui linguist svg webkit xml \
+USE_QT4=	corelib gui linguist_build svg webkit xml \
 		moc_build qmake_build uic_build
 USE_BZIP2=	yes
-CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH" WAF_HOME="${WRKSRC}"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
+		PATH="${KDE4_PREFIX}/bin:$$PATH" \
+		WAF_HOME="${WRKSRC}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_SAFE=	yes
@@ -38,23 +34,25 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e 's/kde-config/kde4-config/g' \
-		-e '/conf.env.CXXFLAGS =/ s|= '"'"'[^'"'"']*|= '"'"'${CXXFLAGS}|' \
+post-patch:
+	@${REINPLACE_CMD} -e 's/kde-config/kde4-config/g' \
 		${WRKSRC}/wscript
-.if empty(PORT_OPTIONS:MNLS)
-	${REINPLACE_CMD} -e '/langs/ d' \
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e '/langs/ d' \
 		${WRKSRC}/wscript
 .endif
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure --prefix=${PREFIX}
+	@cd ${WRKSRC}; \
+		${SETENV} ${CONFIGURE_ENV} ./waf configure --prefix=${PREFIX}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build ${_MAKE_JOBS}
+	@cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ./waf build ${_MAKE_JOBS}
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install
+	@cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ./waf install
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

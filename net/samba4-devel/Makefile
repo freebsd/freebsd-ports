@@ -1,9 +1,9 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME?=		${SAMBA_PORTNAME}
-PORTVERSION?=		${SAMBA_VERSION}
-PORTREVISION?=		4
+PORTNAME?=		${SAMBA4_PORTNAME}
+PORTVERSION?=		${SAMBA4_VERSION}
+PORTREVISION?=		5
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/samba4
@@ -15,10 +15,10 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 
 CONFLICTS?=		ldb-1.*
 
-SAMBA_PORTNAME=		samba4
-SAMBA_VERSION=		4.0.0.a11
-SAMBA_DISTNAME=		${SAMBA_PORTNAME:S|4$||}-${SAMBA_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
-OPTIONSFILE=		${PORT_DBDIR}/${SAMBA_PORTNAME}/options
+SAMBA4_PORTNAME=	samba4
+SAMBA4_VERSION=		4.0.0.a11
+SAMBA_DISTNAME=		${SAMBA4_PORTNAME:S|4$||}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
+OPTIONSFILE=		${PORT_DBDIR}/${SAMBA4_PORTNAME}/options
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -28,7 +28,7 @@ IPATHS=			-I${WRKDIR}/${DISTNAME}/lib/replace -I${WRKDIR}/${DISTNAME}/source4
 AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
-.if !defined(SAMBA_SUBPORT)
+.if !defined(SAMBA4_SUBPORT)
 USE_PERL5=		yes
 USE_PYTHON=		yes
 USE_GMAKE=		yes
@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
@@ -186,7 +186,7 @@ SUB_FILES=		pkg-message
 
 post-install:
 			@${CAT} ${PKGMESSAGE}
-# !SAMBA_SUBPORT
+# !SAMBA4_SUBPORT
 .endif
 
 .include <bsd.port.mk>

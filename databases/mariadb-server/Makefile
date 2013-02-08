@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTVERSION=	5.3.11
-PORTREVISION?=	0
+PORTVERSION=	5.3.12
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -22,13 +21,13 @@ LICENSE=	GPLv2
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS?=	mysql-server-[0-9]*
+CONFLICTS?=	mysql-server-[0-9]* percona-server-[0-9]* mariadb-server-5.[0-24-9].* mariadb-server-[0-46-9].*
 
 GNU_CONFIGURE=	yes
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	53
+WANT_MYSQL_VER=	53m
 .endif
 
 .if !defined(MARIADB_SCRIPTS_SLAVE)
@@ -42,7 +41,7 @@ GROUPS=		mysql
 
 OPTIONS_DEFINE+=	STATIC SSL OPENSSL
 OPTIONS_DEFAULT+=	SSL
-STATIC_DESC=	Build statically linked executables (not on 9.x)
+STATIC_DESC=	Statically link executables (not on 9.x)
 SSL_DESC=	Activate SSL support
 OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 

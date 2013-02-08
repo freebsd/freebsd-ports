@@ -3,7 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -31,6 +31,8 @@ LICENSE_DISTFILES_UNICODE= EastAsianWidth.txt \
 	8859-6.TXT 8859-7.TXT 8859-8.TXT 8859-9.TXT 8859-10.TXT \
 	8859-11.TXT 8859-13.TXT 8859-14.TXT 8859-15.TXT 8859-16.TXT
 LICENSE_DISTFILES_ZEND200=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+
+BROKEN=		Does not build with recent boost
 
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		boost_thread:${PORTSDIR}/devel/boost-libs \

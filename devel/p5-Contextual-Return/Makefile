@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Contextual-Return
-# Date created:		2006-08-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 #
 
 PORTNAME=	Contextual-Return
-PORTVERSION=	0.004.002
+PORTVERSION=	0.004.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DCONWAY

@@ -11,9 +11,9 @@ MASTER_SITE_SUBDIR=	../old-gnu/dgs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A display ghostscript system
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff:${PORTSDIR}/graphics/tiff
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_XORG=	xt sm ice xext x11

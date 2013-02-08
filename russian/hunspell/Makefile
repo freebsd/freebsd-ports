@@ -1,15 +1,11 @@
-# New ports collection makefile for:	hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
-PORTVERSION=	20111003
+PORTVERSION=	20120501
 CATEGORIES=	russian textproc
-MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
-DISTNAME=	ru_RU_UTF8-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	ru_RU_UTF-8_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsflite
-# Date created:				3 June 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	bsflite
 DISTVERSION=	0.85
@@ -19,6 +15,10 @@ PLIST_FILES=	bin/bsflite %%EXAMPLESDIR%%/config-example
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	COPYING ChangeLog README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' \
 		${WRKSRC}/${MAKEFILE} \
@@ -29,7 +29,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config-example ${EXAMPLESDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

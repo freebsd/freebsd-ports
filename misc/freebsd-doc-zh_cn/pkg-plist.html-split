@@ -1,12 +1,11 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/first-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/freebsdspecific.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/commands.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/firewall.html
@@ -16,11 +15,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/shells.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/software.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/startup.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/updates.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-args.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-confdummy.html
@@ -30,13 +29,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-furthur.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-hookup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-task.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/installation.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/intro.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/preparation.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/zfs.html
-%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-bios.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-boot0.html
@@ -110,6 +109,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/sysinit-operation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/sysinit-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/sysinit.html
+%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/usb-dev.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/usb-devprobe.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/usb-hc.html
@@ -121,7 +121,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm-pagetables.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm-tuning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
@@ -159,6 +158,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-netinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-post.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/carp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
@@ -226,6 +234,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
@@ -264,6 +273,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
@@ -323,6 +333,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-plip.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-pxe-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
@@ -398,6 +409,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
@@ -420,7 +432,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
@@ -499,6 +510,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-porttools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/users-and-groups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
@@ -521,4 +533,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5621.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5617.html

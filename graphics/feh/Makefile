@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}

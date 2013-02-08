@@ -1,9 +1,5 @@
-# New ports collection makefile for:    evangeline
-# Date created:                         1 Mar 2005
-# Whom:         			"Edini" <ports@edini.net>
-#
+# Created by: Edini <ports@edini.net>
 # $FreeBSD$
-#
 
 PORTNAME=	evangeline
 PORTVERSION=	1.1.4
@@ -14,13 +10,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-b1.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Bot based on Eggdrop
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_TCL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
+
+PLIST_FILES=	bin/evangeline
 
 OPTIONS_DEFINE=	IPV6 CRYPT
 OPTIONS_DEFAULT=	CRYPT
@@ -40,6 +36,25 @@ CONFIGURE_ARGS+=	--enable-crypt
 CONFIGURE_ARGS+=	--disable-crypt
 .endif
 
-PLIST_FILES=	bin/evangeline
+pre-everything::
+	@${ECHO_MSG} 'To redefine the "admin" user name, set ADMIN_NAME'
+	@${ECHO_MSG} 'To redefine the "Permanent owner" name, set OWNER_NAME'
+
+post-patch:
+	@${REINPLACE_CMD} 's,^read usersq,usersq=n,' ${WRKDIR}/evangeline/configure
+
+# Turns out that putting ADMIN_NAME more than 9 chars creates an overflow...
+# Fix that here while replacing the name.
+post-configure:
+.if !empty(ADMIN_NAME)
+	@${REINPLACE_CMD} \
+	    's,^char admin[^ ]* = [^;]*,const char* admin = "${ADMIN_NAME}",' \
+	    ${WRKDIR}/evangeline/src/main.c
+.endif
+.if !empty(OWNER_NAME)
+	@${REINPLACE_CMD} \
+	    's,^char owner[^ ]* = [^;]*,const char* owner = "${OWNER_NAME}",' \
+	    ${WRKDIR}/evangeline/src/main.c
+.endif
 
 .include <bsd.port.mk>

@@ -69,7 +69,6 @@
     SUBDIR += cl-ppcre-sbcl
     SUBDIR += clit
     SUBDIR += clucene
-    SUBDIR += clucene-contrib
     SUBDIR += coccigrep
     SUBDIR += coco
     SUBDIR += code2html
@@ -336,6 +335,7 @@
     SUBDIR += jing
     SUBDIR += jq
     SUBDIR += jrefentry
+    SUBDIR += jshon
     SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += kmfl-european-latin
@@ -366,6 +366,7 @@
     SUBDIR += libexttextcat
     SUBDIR += libguess
     SUBDIR += libkmfl
+    SUBDIR += libkolabxml
     SUBDIR += liblinebreak
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
@@ -420,6 +421,7 @@
     SUBDIR += ltxml
     SUBDIR += luaexpat
     SUBDIR += lucene
+    SUBDIR += lucene4
     SUBDIR += lv-aspell
     SUBDIR += m17n-contrib
     SUBDIR += m17n-im-config
@@ -574,6 +576,7 @@
     SUBDIR += p5-Lingua-EN-NameParse
     SUBDIR += p5-Lingua-EN-NamedEntity
     SUBDIR += p5-Lingua-EN-Nickname
+    SUBDIR += p5-Lingua-EN-Number-IsOrdinal
     SUBDIR += p5-Lingua-EN-Numbers
     SUBDIR += p5-Lingua-EN-Numbers-Easy
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
@@ -751,6 +754,7 @@
     SUBDIR += p5-Template-Plugin-HTML-SuperForm
     SUBDIR += p5-Template-Plugin-Lingua-EN-Inflect
     SUBDIR += p5-Template-Plugin-XML-Escape
+    SUBDIR += p5-Template-Semantic
     SUBDIR += p5-Template-Tiny
     SUBDIR += p5-Term-QRCode
     SUBDIR += p5-Test-Perl-Critic
@@ -772,6 +776,7 @@
     SUBDIR += p5-Text-Capitalize
     SUBDIR += p5-Text-CharWidth
     SUBDIR += p5-Text-Chomp
+    SUBDIR += p5-Text-ClearSilver
     SUBDIR += p5-Text-Context
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-DHCPLeases
@@ -805,6 +810,7 @@
     SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Greeking
+    SUBDIR += p5-Text-Haml
     SUBDIR += p5-Text-Hatena
     SUBDIR += p5-Text-Highlight
     SUBDIR += p5-Text-HikiDoc
@@ -813,7 +819,9 @@
     SUBDIR += p5-Text-Markdown
     SUBDIR += p5-Text-Match-FastAlternatives
     SUBDIR += p5-Text-Metaphone
+    SUBDIR += p5-Text-MicroMason
     SUBDIR += p5-Text-MicroTemplate
+    SUBDIR += p5-Text-MicroTemplate-Extended
     SUBDIR += p5-Text-MultiMarkdown
     SUBDIR += p5-Text-NSP
     SUBDIR += p5-Text-NeatTemplate
@@ -825,6 +833,7 @@
     SUBDIR += p5-Text-ParagraphDiff
     SUBDIR += p5-Text-ParseWords
     SUBDIR += p5-Text-Patch
+    SUBDIR += p5-Text-Pipe
     SUBDIR += p5-Text-Prefix-XS
     SUBDIR += p5-Text-QRCode
     SUBDIR += p5-Text-Query
@@ -860,7 +869,9 @@
     SUBDIR += p5-Text-WordDiff
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Text-Xslate
+    SUBDIR += p5-Text-Xslate-Bridge-TT2Like
     SUBDIR += p5-Text-vCard
+    SUBDIR += p5-Tiffany
     SUBDIR += p5-Time-Human
     SUBDIR += p5-Tk-Pod
     SUBDIR += p5-Tk-XMLViewer
@@ -1414,6 +1425,7 @@
     SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
+    SUBDIR += topic
     SUBDIR += tr-aspell
     SUBDIR += tralics
     SUBDIR += trang

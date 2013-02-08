@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Amon2/Plugin/Web/MobileAgent.pm
+%%SITE_PERL%%/Amon2/Plugin/Web/MobileCharset.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor/MobileJP.pm

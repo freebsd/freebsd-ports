@@ -3,6 +3,7 @@
 
 PORTNAME=	fet
 PORTVERSION=	5.18.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -29,7 +30,7 @@ DESKTOP_ENTRIES="FET" \
 		"Free timetable software" \
 		"" \
 		"fet" \
-		"Application;Education;Qt;" \
+		"Education;Qt;" \
 		true
 
 .include <bsd.port.options.mk>

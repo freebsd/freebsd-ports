@@ -1,13 +1,9 @@
-# New ports collection makefile for:	asc
-# Date created:				16 February 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asc
 PORTVERSION=	2.5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-hq/ASC%20Source/${PORTVERSION:R} \
 		http://www.asc-hq.org/music/
@@ -22,10 +18,10 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libloki.so:${PORTSDIR}/devel/loki
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+		boost_regex:${PORTSDIR}/devel/boost-libs \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	MUSIC XVID

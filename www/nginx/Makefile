@@ -565,8 +565,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DR
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module-config
 .endif
 
+.if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
+NGINX_DEVEL_KIT_VERSION=	0.2.18
+GIT_DEVEL_KIT_VERSION=	0-g48bc5dd
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
+DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
+.endif
+
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ENCRYPTSESSION_VERSION=	0.02
 GIT_ENCRYPTSESSION_VERSION=	0-gc752861
 FETCH_ARGS=	-pRr
@@ -601,7 +609,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_LUA_VERSION=	0.6.10
 GIT_LUA_VERSION=	0-g73d8dd2
 FETCH_ARGS=	-pRr
@@ -685,8 +692,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.8.4
-GIT_RTMP_VERSION=	0-g2aeefa3
+NGINX_RTMP_VERSION=	0.8.7
+GIT_RTMP_VERSION=	0-g544c73b
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
@@ -694,7 +701,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_SET_MISC_VERSION=	0.22rc8
 GIT_SET_MISC_VERSION=	0-g658c235
 FETCH_ARGS=	-pRr
@@ -809,17 +815,7 @@ NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
-.if defined(USE_NGINX_DEVEL_KIT)
-NGINX_DEVEL_KIT_VERSION=	0.2.17
-GIT_DEVEL_KIT_VERSION=	0-gbc97eea
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
-DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
-.endif
-
 .if ${PORT_OPTIONS:MARRAYVAR}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ARRAYVAR_VERSION=	0.03rc1
 GIT_ARRAYVAR_VERSION=	0-gfed751a
 FETCH_ARGS=	-pRr
@@ -829,7 +825,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRA
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_FORMINPUT_VERSION=	0.07rc5
 GIT_FORMINPUT_VERSION=	0-gd41681d
 FETCH_ARGS=	-pRr
@@ -840,7 +835,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMI
 
 .if ${PORT_OPTIONS:MICONV}
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ICONV_VERSION=	0.10rc7
 GIT_ICONV_VERSION=	0-gabdac17
 FETCH_ARGS=	-pRr
@@ -904,8 +898,6 @@ post-patch:
 		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
-	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx/config
 	@${REINPLACE_CMD} 's!-Wall!!g; \
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
@@ -916,8 +908,6 @@ post-patch:
 		s!-lev!!; \
 		s!-Iext/libev!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
-	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \

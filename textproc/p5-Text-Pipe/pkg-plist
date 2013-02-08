@@ -1,0 +1,40 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Pipe/.packlist
+%%SITE_PERL%%/Text/Pipe.pm
+%%SITE_PERL%%/Text/Pipe/Append.pm
+%%SITE_PERL%%/Text/Pipe/Base.pm
+%%SITE_PERL%%/Text/Pipe/Chomp.pm
+%%SITE_PERL%%/Text/Pipe/Chop.pm
+%%SITE_PERL%%/Text/Pipe/Code.pm
+%%SITE_PERL%%/Text/Pipe/List/First.pm
+%%SITE_PERL%%/Text/Pipe/List/Grep.pm
+%%SITE_PERL%%/Text/Pipe/List/Map.pm
+%%SITE_PERL%%/Text/Pipe/List/Max.pm
+%%SITE_PERL%%/Text/Pipe/List/MaxStr.pm
+%%SITE_PERL%%/Text/Pipe/List/Min.pm
+%%SITE_PERL%%/Text/Pipe/List/MinStr.pm
+%%SITE_PERL%%/Text/Pipe/List/Pop.pm
+%%SITE_PERL%%/Text/Pipe/List/Reduce.pm
+%%SITE_PERL%%/Text/Pipe/List/Shift.pm
+%%SITE_PERL%%/Text/Pipe/List/Shuffle.pm
+%%SITE_PERL%%/Text/Pipe/List/Size.pm
+%%SITE_PERL%%/Text/Pipe/List/Sort.pm
+%%SITE_PERL%%/Text/Pipe/List/Sum.pm
+%%SITE_PERL%%/Text/Pipe/Lowercase.pm
+%%SITE_PERL%%/Text/Pipe/LowercaseFirst.pm
+%%SITE_PERL%%/Text/Pipe/Multiplex.pm
+%%SITE_PERL%%/Text/Pipe/Prepend.pm
+%%SITE_PERL%%/Text/Pipe/Print.pm
+%%SITE_PERL%%/Text/Pipe/Repeat.pm
+%%SITE_PERL%%/Text/Pipe/Reverse.pm
+%%SITE_PERL%%/Text/Pipe/Say.pm
+%%SITE_PERL%%/Text/Pipe/Split.pm
+%%SITE_PERL%%/Text/Pipe/Stackable.pm
+%%SITE_PERL%%/Text/Pipe/Tester.pm
+%%SITE_PERL%%/Text/Pipe/Trim.pm
+%%SITE_PERL%%/Text/Pipe/Uppercase.pm
+%%SITE_PERL%%/Text/Pipe/UppercaseFirst.pm
+@dirrm %%SITE_PERL%%/Text/Pipe/List
+@dirrm %%SITE_PERL%%/Text/Pipe
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Pipe
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

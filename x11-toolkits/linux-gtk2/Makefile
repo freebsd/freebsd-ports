@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-gtk2
-# Date created:				2003-11-19
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	gtk2
 PORTVERSION=	2.6.10

@@ -96,6 +96,7 @@ share/locale/wa/LC_MESSAGES/fsview.mo
 share/locale/wa/LC_MESSAGES/gwenview.mo
 share/locale/wa/LC_MESSAGES/htmlsearch.mo
 share/locale/wa/LC_MESSAGES/imagerename_plugin.mo
+share/locale/wa/LC_MESSAGES/imgalleryplugin.mo
 share/locale/wa/LC_MESSAGES/joystick.mo
 share/locale/wa/LC_MESSAGES/kaccess.mo
 share/locale/wa/LC_MESSAGES/kactivitymanagerd.mo
@@ -171,7 +172,6 @@ share/locale/wa/LC_MESSAGES/kcmstyle.mo
 share/locale/wa/LC_MESSAGES/kcmusb.mo
 share/locale/wa/LC_MESSAGES/kcmview1394.mo
 share/locale/wa/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/wa/LC_MESSAGES/kcmxinerama.mo
 share/locale/wa/LC_MESSAGES/kcolorchooser.mo
 share/locale/wa/LC_MESSAGES/kcron.mo
 share/locale/wa/LC_MESSAGES/kde-menu.mo
@@ -188,18 +188,10 @@ share/locale/wa/LC_MESSAGES/kdmgreet.mo
 share/locale/wa/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/wa/LC_MESSAGES/keditbookmarks.mo
 share/locale/wa/LC_MESSAGES/kfile.mo
-share/locale/wa/LC_MESSAGES/kfile_avi.mo
-share/locale/wa/LC_MESSAGES/kfile_flac.mo
-share/locale/wa/LC_MESSAGES/kfile_mp3.mo
-share/locale/wa/LC_MESSAGES/kfile_mpc.mo
-share/locale/wa/LC_MESSAGES/kfile_ogg.mo
 share/locale/wa/LC_MESSAGES/kfile_pnm.mo
 share/locale/wa/LC_MESSAGES/kfile_raw.mo
 share/locale/wa/LC_MESSAGES/kfile_rgb.mo
 share/locale/wa/LC_MESSAGES/kfile_rpm.mo
-share/locale/wa/LC_MESSAGES/kfile_sid.mo
-share/locale/wa/LC_MESSAGES/kfile_theora.mo
-share/locale/wa/LC_MESSAGES/kfile_wav.mo
 share/locale/wa/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/wa/LC_MESSAGES/kfindpart.mo
 share/locale/wa/LC_MESSAGES/kfloppy.mo

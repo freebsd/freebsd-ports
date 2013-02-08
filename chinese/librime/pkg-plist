@@ -3,7 +3,7 @@ bin/rime_dict_manager
 include/rime_api.h
 lib/librime.so
 lib/librime.so.0
-lib/librime.so.0.9.4
+lib/librime.so.%%VER%%
 libdata/pkgconfig/rime.pc
 share/cmake/rime/RimeConfig.cmake
 share/rime/data/cangjie5.prism.bin

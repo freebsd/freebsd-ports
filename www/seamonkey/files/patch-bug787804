@@ -1,0 +1,3557 @@
+commit 74997f1
+Author: Jan Varga <jan.varga@gmail.com>
+Date:   Mon Dec 17 20:25:10 2012 +0100
+
+    Bug 787804 - Rewrite quota handling (eliminate test_quota.c). r=bent,asuth,vladan
+---
+ db/sqlite3/README.MOZILLA                          |    4 +-
+ db/sqlite3/src/sqlite.def                          |    1 +
+ db/sqlite3/src/test_quota.c                        | 2001 --------------------
+ db/sqlite3/src/test_quota.h                        |  274 ---
+ dom/Makefile.in                                    |    1 +
+ dom/dom-config.mk                                  |    1 +
+ dom/file/FileStreamWrappers.cpp                    |   11 -
+ dom/file/LockedFile.cpp                            |    8 +-
+ dom/file/nsIFileStorage.h                          |   40 +-
+ dom/indexedDB/FileManager.cpp                      |   33 +-
+ dom/indexedDB/FileManager.h                        |   20 +-
+ dom/indexedDB/FileStream.cpp                       |  321 ----
+ dom/indexedDB/FileStream.h                         |  140 --
+ dom/indexedDB/IDBDatabase.cpp                      |    6 +
+ dom/indexedDB/IDBFactory.cpp                       |   28 +-
+ dom/indexedDB/IDBFactory.h                         |    8 +-
+ dom/indexedDB/IDBFileHandle.cpp                    |   25 +-
+ dom/indexedDB/IDBObjectStore.cpp                   |   10 +-
+ dom/indexedDB/IDBTransaction.cpp                   |    3 +-
+ dom/indexedDB/IndexedDatabaseInlines.h             |   13 +
+ dom/indexedDB/IndexedDatabaseManager.cpp           |  162 +-
+ dom/indexedDB/IndexedDatabaseManager.h             |   11 +-
+ dom/indexedDB/Makefile.in                          |    2 -
+ dom/indexedDB/OpenDatabaseHelper.cpp               |  104 +-
+ dom/indexedDB/OpenDatabaseHelper.h                 |   12 +-
+ dom/indexedDB/nsIStandardFileStream.idl            |   60 -
+ dom/indexedDB/test/Makefile.in                     |    2 +
+ dom/indexedDB/test/file.js                         |   21 +-
+ dom/indexedDB/test/test_file_quota.html            |   14 +-
+ dom/indexedDB/test/test_filehandle_quota.html      |    5 +-
+ dom/quota/FileStreams.cpp                          |  123 ++
+ dom/quota/FileStreams.h                            |  115 ++
+ dom/quota/Makefile.in                              |   33 +
+ dom/quota/QuotaCommon.h                            |   23 +
+ dom/quota/QuotaManager.cpp                         |  294 +++
+ dom/quota/QuotaManager.h                           |  147 ++
+ layout/build/Makefile.in                           |    1 +
+ netwerk/base/src/Makefile.in                       |    1 +
+ netwerk/base/src/nsFileStreams.cpp                 |  103 +-
+ netwerk/base/src/nsFileStreams.h                   |   12 +-
+ storage/public/Makefile.in                         |    1 -
+ storage/public/mozIStorageService.idl              |   13 +-
+ .../public/mozIStorageServiceQuotaManagement.idl   |   99 -
+ storage/public/storage.h                           |    1 -
+ storage/src/TelemetryVFS.cpp                       |   35 +-
+ storage/src/mozStorageConnection.cpp               |   85 +-
+ storage/src/mozStorageConnection.h                 |   27 +-
+ storage/src/mozStorageService.cpp                  |  168 +-
+ storage/src/mozStorageService.h                    |    3 -
+ toolkit/toolkit-makefiles.sh                       |    1 +
+ 50 files changed, 1239 insertions(+), 3387 deletions(-)
+
+diff --git dom/Makefile.in dom/Makefile.in
+index 672e065..47cd253 100644
+--- mozilla/dom/Makefile.in
++++ mozilla/dom/Makefile.in
+@@ -58,6 +58,7 @@ PARALLEL_DIRS += \
+   media \
+   messages \
+   power \
++  quota \
+   settings \
+   sms \
+   mms \
+diff --git dom/dom-config.mk dom/dom-config.mk
+index d0f46cc..1cf57ed 100644
+--- mozilla/dom/dom-config.mk
++++ mozilla/dom/dom-config.mk
+@@ -8,6 +8,7 @@ DOM_SRCDIRS = \
+   dom/encoding \
+   dom/file \
+   dom/power \
++  dom/quota \
+   dom/media \
+   dom/network/src \
+   dom/settings \
+diff --git dom/file/FileStreamWrappers.cpp dom/file/FileStreamWrappers.cpp
+index 2283266..c4cf102 100644
+--- mozilla/dom/file/FileStreamWrappers.cpp
++++ mozilla/dom/file/FileStreamWrappers.cpp
+@@ -8,7 +8,6 @@
+ 
+ #include "nsIFileStorage.h"
+ #include "nsISeekableStream.h"
+-#include "nsIStandardFileStream.h"
+ #include "mozilla/Attributes.h"
+ 
+ #include "FileHelper.h"
+@@ -246,16 +245,6 @@ FileOutputStreamWrapper::Close()
+   nsresult rv = NS_OK;
+ 
+   if (!mFirstTime) {
+-    // We must flush buffers of the stream on the same thread on which we wrote
+-    // some data.
+-    nsCOMPtr<nsIStandardFileStream> sstream = do_QueryInterface(mFileStream);
+-    if (sstream) {
+-      rv = sstream->FlushBuffers();
+-      if (NS_FAILED(rv)) {
+-        NS_WARNING("Failed to flush buffers of the stream!");
+-      }
+-    }
+-
+     NS_ASSERTION(PR_GetCurrentThread() == mWriteThread,
+                  "Unsetting thread locals on wrong thread!");
+     mFileHelper->mFileStorage->UnsetThreadLocals();
+diff --git dom/file/LockedFile.cpp dom/file/LockedFile.cpp
+index 0fca730..926df91 100644
+--- mozilla/dom/file/LockedFile.cpp
++++ mozilla/dom/file/LockedFile.cpp
+@@ -953,10 +953,10 @@ FinishHelper::Run()
+   }
+ 
+   for (uint32_t index = 0; index < mParallelStreams.Length(); index++) {
+-    nsCOMPtr<nsIOutputStream> ostream =
++    nsCOMPtr<nsIInputStream> stream =
+       do_QueryInterface(mParallelStreams[index]);
+ 
+-    if (NS_FAILED(ostream->Close())) {
++    if (NS_FAILED(stream->Close())) {
+       NS_WARNING("Failed to close stream!");
+     }
+ 
+@@ -964,9 +964,9 @@ FinishHelper::Run()
+   }
+ 
+   if (mStream) {
+-    nsCOMPtr<nsIOutputStream> ostream = do_QueryInterface(mStream);
++    nsCOMPtr<nsIInputStream> stream = do_QueryInterface(mStream);
+ 
+-    if (NS_FAILED(ostream->Close())) {
++    if (NS_FAILED(stream->Close())) {
+       NS_WARNING("Failed to close stream!");
+     }
+ 
+diff --git dom/file/nsIFileStorage.h dom/file/nsIFileStorage.h
+index 92bb608..e985f0a 100644
+--- mozilla/dom/file/nsIFileStorage.h
++++ mozilla/dom/file/nsIFileStorage.h
+@@ -10,14 +10,17 @@
+ #include "nsISupports.h"
+ 
+ #define NS_FILESTORAGE_IID \
+-  {0xbba9c2ff, 0x85c9, 0x47c1, \
+-  { 0xaf, 0xce, 0x0a, 0x7e, 0x6f, 0x21, 0x50, 0x95 } }
++  {0xa0801944, 0x2f1c, 0x4203, \
++  { 0x9c, 0xaa, 0xaa, 0x47, 0xe0, 0x0c, 0x67, 0x92 } }
+ 
+ class nsIFileStorage : public nsISupports
+ {
+ public:
+   NS_DECLARE_STATIC_IID_ACCESSOR(NS_FILESTORAGE_IID)
+ 
++  virtual const nsACString&
++  StorageOrigin() = 0;
++
+   virtual nsISupports*
+   StorageId() = 0;
+ 
+@@ -36,20 +39,23 @@ public:
+ 
+ NS_DEFINE_STATIC_IID_ACCESSOR(nsIFileStorage, NS_FILESTORAGE_IID)
+ 
+-#define NS_DECL_NSIFILESTORAGE \
+-  virtual nsISupports*         \
+-  StorageId();                 \
+-                               \
+-  virtual bool                 \
+-  IsStorageInvalidated();      \
+-                               \
+-  virtual bool                 \
+-  IsStorageShuttingDown();     \
+-                               \
+-  virtual void                 \
+-  SetThreadLocals();           \
+-                               \
+-  virtual void                 \
+-  UnsetThreadLocals();
++#define NS_DECL_NSIFILESTORAGE                                                 \
++  virtual const nsACString&                                                    \
++  StorageOrigin() MOZ_OVERRIDE;                                                \
++                                                                               \
++  virtual nsISupports*                                                         \
++  StorageId() MOZ_OVERRIDE;                                                    \
++                                                                               \
++  virtual bool                                                                 \
++  IsStorageInvalidated() MOZ_OVERRIDE;                                         \
++                                                                               \
++  virtual bool                                                                 \
++  IsStorageShuttingDown() MOZ_OVERRIDE;                                        \
++                                                                               \
++  virtual void                                                                 \
++  SetThreadLocals() MOZ_OVERRIDE;                                              \
++                                                                               \
++  virtual void                                                                 \
++  UnsetThreadLocals() MOZ_OVERRIDE;
+ 
+ #endif // nsIFileStorage_h__
+diff --git dom/indexedDB/FileManager.cpp dom/indexedDB/FileManager.cpp
+index 9db56e8..4ed6e9e 100644
+--- mozilla/dom/indexedDB/FileManager.cpp
++++ mozilla/dom/indexedDB/FileManager.cpp
+@@ -7,8 +7,8 @@
+ #include "FileManager.h"
+ 
+ #include "mozIStorageConnection.h"
+-#include "mozIStorageServiceQuotaManagement.h"
+ #include "mozIStorageStatement.h"
++#include "nsIInputStream.h"
+ #include "nsISimpleEnumerator.h"
+ 
+ #include "mozStorageCID.h"
+@@ -18,6 +18,8 @@
+ #include "IndexedDatabaseManager.h"
+ #include "OpenDatabaseHelper.h"
+ 
++#include "IndexedDatabaseInlines.h"
++
+ #define JOURNAL_DIRECTORY_NAME "journals"
+ 
+ USING_INDEXEDDB_NAMESPACE
+@@ -262,13 +264,11 @@ FileManager::GetFileForId(nsIFile* aDirectory, int64_t aId)
+ 
+ // static
+ nsresult
+-FileManager::InitDirectory(mozIStorageServiceQuotaManagement* aService,
+-                           nsIFile* aDirectory,
++FileManager::InitDirectory(nsIFile* aDirectory,
+                            nsIFile* aDatabaseFile,
+-                           FactoryPrivilege aPrivilege)
++                           const nsACString& aOrigin)
+ {
+   NS_ASSERTION(!NS_IsMainThread(), "Wrong thread!");
+-  NS_ASSERTION(aService, "Null service!");
+   NS_ASSERTION(aDirectory, "Null directory!");
+   NS_ASSERTION(aDatabaseFile, "Null database file!");
+ 
+@@ -310,8 +310,8 @@ FileManager::InitDirectory(mozIStorageServiceQuotaManagement* aService,
+ 
+     if (hasElements) {
+       nsCOMPtr<mozIStorageConnection> connection;
+-      rv = OpenDatabaseHelper::CreateDatabaseConnection(
+-        NullString(), aDatabaseFile, aDirectory, getter_AddRefs(connection));
++      rv = OpenDatabaseHelper::CreateDatabaseConnection(aDatabaseFile,
++        aDirectory, NullString(), aOrigin, getter_AddRefs(connection));
+       NS_ENSURE_SUCCESS(rv, rv);
+ 
+       mozStorageTransaction transaction(connection, false);
+@@ -377,12 +377,17 @@ FileManager::InitDirectory(mozIStorageServiceQuotaManagement* aService,
+     }
+   }
+ 
+-  if (aPrivilege == Chrome) {
+-    return NS_OK;
+-  }
++  return NS_OK;
++}
++
++// static
++nsresult
++FileManager::GetUsage(nsIFile* aDirectory, uint64_t* aUsage)
++{
++  uint64_t usage = 0;
+ 
+   nsCOMPtr<nsISimpleEnumerator> entries;
+-  rv = aDirectory->GetDirectoryEntries(getter_AddRefs(entries));
++  nsresult rv = aDirectory->GetDirectoryEntries(getter_AddRefs(entries));
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   bool hasMore;
+@@ -402,9 +407,13 @@ FileManager::InitDirectory(mozIStorageServiceQuotaManagement* aService,
+       continue;
+     }
+ 
+-    rv = aService->UpdateQuotaInformationForFile(file);
++    int64_t fileSize;
++    rv = file->GetFileSize(&fileSize);
+     NS_ENSURE_SUCCESS(rv, rv);
++
++    IncrementUsage(&usage, uint64_t(fileSize));
+   }
+ 
++  *aUsage = usage;
+   return NS_OK;
+ }
+diff --git dom/indexedDB/FileManager.h dom/indexedDB/FileManager.h
+index 2c72d0a..370d4a8 100644
+--- mozilla/dom/indexedDB/FileManager.h
++++ mozilla/dom/indexedDB/FileManager.h
+@@ -24,10 +24,10 @@ class FileManager
+   friend class FileInfo;
+ 
+ public:
+-  FileManager(const nsACString& aOrigin,
++  FileManager(const nsACString& aOrigin, FactoryPrivilege aPrivilege,
+               const nsAString& aDatabaseName)
+-  : mOrigin(aOrigin), mDatabaseName(aDatabaseName), mLastFileId(0),
+-    mInvalidated(false)
++  : mOrigin(aOrigin), mPrivilege(aPrivilege), mDatabaseName(aDatabaseName),
++    mLastFileId(0), mInvalidated(false)
+   { }
+ 
+   ~FileManager()
+@@ -40,6 +40,11 @@ public:
+     return mOrigin;
+   }
+ 
++  const FactoryPrivilege& Privilege() const
++  {
++    return mPrivilege;
++  }
++
+   const nsAString& DatabaseName() const
+   {
+     return mDatabaseName;
+@@ -68,12 +73,15 @@ public:
+   static already_AddRefed<nsIFile> GetFileForId(nsIFile* aDirectory,
+                                                 int64_t aId);
+ 
+-  static nsresult InitDirectory(mozIStorageServiceQuotaManagement* aService,
+-                                nsIFile* aDirectory, nsIFile* aDatabaseFile,
+-                                FactoryPrivilege aPrivilege);
++  static nsresult InitDirectory(nsIFile* aDirectory,
++                                nsIFile* aDatabaseFile,
++                                const nsACString& aOrigin);
++
++  static nsresult GetUsage(nsIFile* aDirectory, uint64_t* aUsage);
+ 
+ private:
+   nsCString mOrigin;
++  FactoryPrivilege mPrivilege;
+   nsString mDatabaseName;
+ 
+   nsString mDirectoryPath;
+diff --git dom/indexedDB/FileStream.cpp dom/indexedDB/FileStream.cpp
+deleted file mode 100644
+index dddf5d5..0000000
+--- mozilla/dom/indexedDB/FileStream.cpp
++++ /dev/null
+@@ -1,321 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+-/* vim: set ts=2 et sw=2 tw=80: */
+-/* This Source Code Form is subject to the terms of the Mozilla Public
+- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+-
+-#include "FileStream.h"
+-
+-#include "nsIFile.h"
+-
+-#include "nsThreadUtils.h"
+-#include "test_quota.h"
+-
+-USING_INDEXEDDB_NAMESPACE
+-
+-NS_IMPL_THREADSAFE_ADDREF(FileStream)
+-NS_IMPL_THREADSAFE_RELEASE(FileStream)
+-
+-NS_INTERFACE_MAP_BEGIN(FileStream)
+-  NS_INTERFACE_MAP_ENTRY_AMBIGUOUS(nsISupports, nsIStandardFileStream)
+-  NS_INTERFACE_MAP_ENTRY(nsISeekableStream)
+-  NS_INTERFACE_MAP_ENTRY(nsIInputStream)
+-  NS_INTERFACE_MAP_ENTRY(nsIOutputStream)
+-  NS_INTERFACE_MAP_ENTRY(nsIStandardFileStream)
+-  NS_INTERFACE_MAP_ENTRY(nsIFileMetadata)
+-NS_INTERFACE_MAP_END
+-
+-NS_IMETHODIMP
+-FileStream::Seek(int32_t aWhence, int64_t aOffset)
+-{
+-  // TODO: Add support for 64 bit file sizes, bug 752431
+-  NS_ENSURE_TRUE(aOffset <= INT32_MAX, NS_ERROR_INVALID_ARG);
+-
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  int whence;
+-  switch (aWhence) {
+-    case nsISeekableStream::NS_SEEK_SET:
+-      whence = SEEK_SET;
+-      break;
+-    case nsISeekableStream::NS_SEEK_CUR:
+-      whence = SEEK_CUR;
+-      break;
+-    case nsISeekableStream::NS_SEEK_END:
+-      whence = SEEK_END;
+-      break;
+-    default:
+-      return NS_ERROR_INVALID_ARG;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  int rc = sqlite3_quota_fseek(mQuotaFile, aOffset, whence);
+-  NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Tell(int64_t* aResult)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  long rc = sqlite3_quota_ftell(mQuotaFile);
+-  NS_ENSURE_TRUE(rc >= 0, NS_BASE_STREAM_OSERROR);
+-
+-  *aResult = rc;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::SetEOF()
+-{
+-  int64_t pos;
+-  nsresult rv = Tell(&pos);
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  int rc = sqlite3_quota_ftruncate(mQuotaFile, pos);
+-  NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-
+-  return NS_OK;
+-}
+-
+-
+-NS_IMETHODIMP
+-FileStream::Close()
+-{
+-  CleanUpOpen();
+-
+-  if (mQuotaFile) {
+-    NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-    int rc = sqlite3_quota_fclose(mQuotaFile);
+-    mQuotaFile = nullptr;
+-
+-    NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-  }
+-
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Available(uint64_t* aResult)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  long rc = sqlite3_quota_file_available(mQuotaFile);
+-  NS_ENSURE_TRUE(rc >= 0, NS_BASE_STREAM_OSERROR);
+-
+-  *aResult = rc;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Read(char* aBuf, uint32_t aCount, uint32_t* aResult)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  size_t bytesRead = sqlite3_quota_fread(aBuf, 1, aCount, mQuotaFile);
+-  if (bytesRead < aCount && sqlite3_quota_ferror(mQuotaFile)) {
+-    return NS_BASE_STREAM_OSERROR;
+-  }
+-
+-  *aResult = bytesRead;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::ReadSegments(nsWriteSegmentFun aWriter, void* aClosure,
+-                         uint32_t aCount, uint32_t* aResult)
+-{
+-  NS_NOTREACHED("Don't call me!");
+-  return NS_ERROR_NOT_IMPLEMENTED;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::IsNonBlocking(bool *aNonBlocking)
+-{
+-  *aNonBlocking = false;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Write(const char* aBuf, uint32_t aCount, uint32_t *aResult)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  size_t bytesWritten = sqlite3_quota_fwrite(aBuf, 1, aCount, mQuotaFile);
+-  if (bytesWritten < aCount) {
+-    return NS_BASE_STREAM_OSERROR;
+-  }
+-
+-  *aResult = bytesWritten;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Flush()
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  int rc = sqlite3_quota_fflush(mQuotaFile, 1);
+-  NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::WriteFrom(nsIInputStream *inStr, uint32_t count, uint32_t *_retval)
+-{
+-  return NS_ERROR_NOT_IMPLEMENTED;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::WriteSegments(nsReadSegmentFun reader, void * closure, uint32_t count, uint32_t *_retval)
+-{
+-  NS_NOTREACHED("Don't call me!");
+-  return NS_ERROR_NOT_IMPLEMENTED;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::Init(nsIFile* aFile, const nsAString& aMode, int32_t aFlags)
+-{
+-  NS_ASSERTION(!mQuotaFile && !mDeferredOpen, "Already initialized!");
+-
+-  nsresult rv = aFile->GetPath(mFilePath);
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  mMode = aMode;
+-  mFlags = aFlags;
+- 
+-  if (mFlags & nsIStandardFileStream::FLAGS_DEFER_OPEN) {
+-    mDeferredOpen = true;
+-    return NS_OK;
+-  }
+-
+-  return DoOpen();
+-}
+-
+-NS_IMETHODIMP
+-FileStream::GetSize(int64_t* _retval)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  // TODO: Use sqlite3_quota_file_size() here, bug 760783
+-  int64_t rc = sqlite3_quota_file_truesize(mQuotaFile);
+-
+-  NS_ASSERTION(rc >= 0, "The file is not under quota management!");
+-
+-  *_retval = rc;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::GetLastModified(int64_t* _retval)
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  time_t mtime;
+-  int rc = sqlite3_quota_file_mtime(mQuotaFile, &mtime);
+-  NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-
+-  *_retval = mtime * PR_MSEC_PER_SEC;
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-FileStream::FlushBuffers()
+-{
+-  nsresult rv = DoPendingOpen();
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  if (!mQuotaFile) {
+-    return NS_BASE_STREAM_CLOSED;
+-  }
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  int rc = sqlite3_quota_fflush(mQuotaFile, 0);
+-  NS_ENSURE_TRUE(rc == 0, NS_BASE_STREAM_OSERROR);
+-
+-  return NS_OK;
+-}
+-
+-nsresult
+-FileStream::DoOpen()
+-{
+-  NS_ASSERTION(!mFilePath.IsEmpty(), "Must have a file path");
+-
+-  NS_ASSERTION(!NS_IsMainThread(), "Performing sync IO on the main thread!");
+-
+-  quota_FILE* quotaFile =
+-    sqlite3_quota_fopen(NS_ConvertUTF16toUTF8(mFilePath).get(),
+-                        NS_ConvertUTF16toUTF8(mMode).get());
+-
+-  CleanUpOpen();
+-
+-  if (!quotaFile) {
+-    return NS_BASE_STREAM_OSERROR;
+-  }
+-
+-  mQuotaFile = quotaFile;
+-
+-  return NS_OK;
+-}
+diff --git dom/indexedDB/FileStream.h dom/indexedDB/FileStream.h
+deleted file mode 100644
+index 09648b1..0000000
+--- mozilla/dom/indexedDB/FileStream.h
++++ /dev/null
+@@ -1,140 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+-/* vim: set ts=2 et sw=2 tw=80: */
+-/* This Source Code Form is subject to the terms of the Mozilla Public
+- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+-
+-#ifndef mozilla_dom_indexeddb_filestream_h__
+-#define mozilla_dom_indexeddb_filestream_h__
+-
+-#include "IndexedDatabase.h"
+-
+-#include "nsIFileStreams.h"
+-#include "nsIInputStream.h"
+-#include "nsIOutputStream.h"
+-#include "nsISeekableStream.h"
+-#include "nsIStandardFileStream.h"
+-
+-class nsIFile;
+-struct quota_FILE;
+-
+-BEGIN_INDEXEDDB_NAMESPACE
+-
+-class FileStream : public nsISeekableStream,
+-                   public nsIInputStream,
+-                   public nsIOutputStream,
+-                   public nsIStandardFileStream,
+-                   public nsIFileMetadata
+-{
+-public:
+-  FileStream()
+-  : mFlags(0),
+-    mDeferredOpen(false),
+-    mQuotaFile(nullptr)
+-  { }
+-
+-  virtual ~FileStream()
+-  {
+-    Close();
+-  }
+-
+-  NS_DECL_ISUPPORTS
+-  NS_DECL_NSISEEKABLESTREAM
+-  NS_DECL_NSISTANDARDFILESTREAM
+-  NS_DECL_NSIFILEMETADATA
+-
+-  // nsIInputStream
+-  NS_IMETHOD
+-  Close();
+-
+-  NS_IMETHOD
+-  Available(uint64_t* _retval);
+-
+-  NS_IMETHOD
+-  Read(char* aBuf, uint32_t aCount, uint32_t* _retval);
+-
+-  NS_IMETHOD
+-  ReadSegments(nsWriteSegmentFun aWriter, void* aClosure, uint32_t aCount,
+-               uint32_t* _retval);
+-
+-  NS_IMETHOD
+-  IsNonBlocking(bool* _retval);
+-
+-  // nsIOutputStream
+-
+-  // Close() already declared
+-
+-  NS_IMETHOD
+-  Flush();
+-
+-  NS_IMETHOD
+-  Write(const char* aBuf, uint32_t aCount, uint32_t* _retval);
+-
+-  NS_IMETHOD
+-  WriteFrom(nsIInputStream* aFromStream, uint32_t aCount, uint32_t* _retval);
+-
+-  NS_IMETHOD
+-  WriteSegments(nsReadSegmentFun aReader, void* aClosure, uint32_t aCount,
+-                uint32_t* _retval);
+-
+-  // IsNonBlocking() already declared
+-
+-protected:
+-  /**
+-   * Cleans up data prepared in Init.
+-   */
+-  void
+-  CleanUpOpen()
+-  {
+-    mFilePath.Truncate();
+-    mDeferredOpen = false;
+-  }
+-
+-  /**
+-   * Open the file. This is called either from Init
+-   * or from DoPendingOpen (if FLAGS_DEFER_OPEN is used when initializing this
+-   * stream). The default behavior of DoOpen is to open the file and save the
+-   * file descriptor.
+-   */
+-  virtual nsresult
+-  DoOpen();
+-
+-  /**
+-   * If there is a pending open, do it now. It's important for this to be
+-   * inlined since we do it in almost every stream API call.
+-   */
+-  nsresult
+-  DoPendingOpen()
+-  {
+-    if (!mDeferredOpen) {
+-      return NS_OK;
+-    }
+-
+-    return DoOpen();
+-  }
+-
+-  /**
+-   * Data we need to do an open.
+-   */
+-  nsString mFilePath;
+-  nsString mMode;
+-
+-  /**
+-   * Flags describing our behavior.  See the IDL file for possible values.
+-   */
+-  int32_t mFlags;
+-
+-  /**
+-   * Whether we have a pending open (see FLAGS_DEFER_OPEN in the IDL file).
+-   */
+-  bool mDeferredOpen;
+-
+-  /**
+-   * File descriptor for opened file.
+-   */
+-  quota_FILE* mQuotaFile;
+-};
+-
+-END_INDEXEDDB_NAMESPACE
+-
+-#endif // mozilla_dom_indexeddb_filestream_h__
+diff --git dom/indexedDB/IDBDatabase.cpp dom/indexedDB/IDBDatabase.cpp
+index 63500b0..8842daf 100644
+--- mozilla/dom/indexedDB/IDBDatabase.cpp
++++ mozilla/dom/indexedDB/IDBDatabase.cpp
+@@ -779,6 +779,12 @@ IDBDatabase::Close()
+   return NS_OK;
+ }
+ 
++const nsACString&
++IDBDatabase::StorageOrigin()
++{
++  return Origin();
++}
++
+ nsISupports*
+ IDBDatabase::StorageId()
+ {
+diff --git dom/indexedDB/IDBFactory.cpp dom/indexedDB/IDBFactory.cpp
+index 1007df1..c1f573e 100644
+--- mozilla/dom/indexedDB/IDBFactory.cpp
++++ mozilla/dom/indexedDB/IDBFactory.cpp
+@@ -253,8 +253,26 @@ IDBFactory::Create(ContentParent* aContentParent,
+ }
+ 
+ // static
++already_AddRefed<nsIFileURL>
++IDBFactory::GetDatabaseFileURL(nsIFile* aDatabaseFile, const nsACString& aOrigin)
++{
++  nsCOMPtr<nsIURI> uri;
++  nsresult rv = NS_NewFileURI(getter_AddRefs(uri), aDatabaseFile);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  nsCOMPtr<nsIFileURL> fileUrl = do_QueryInterface(uri);
++  NS_ASSERTION(fileUrl, "This should always succeed!");
++
++  rv = fileUrl->SetQuery(NS_LITERAL_CSTRING("origin=") + aOrigin);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  return fileUrl.forget();
++}
++
++// static
+ already_AddRefed<mozIStorageConnection>
+-IDBFactory::GetConnection(const nsAString& aDatabaseFilePath)
++IDBFactory::GetConnection(const nsAString& aDatabaseFilePath,
++                          const nsACString& aOrigin)
+ {
+   NS_ASSERTION(IndexedDatabaseManager::IsMainProcess(), "Wrong process!");
+   NS_ASSERTION(StringEndsWith(aDatabaseFilePath, NS_LITERAL_STRING(".sqlite")),
+@@ -271,13 +289,15 @@ IDBFactory::GetConnection(const nsAString& aDatabaseFilePath)
+   NS_ENSURE_SUCCESS(rv, nullptr);
+   NS_ENSURE_TRUE(exists, nullptr);
+ 
+-  nsCOMPtr<mozIStorageServiceQuotaManagement> ss =
++  nsCOMPtr<nsIFileURL> dbFileUrl = GetDatabaseFileURL(dbFile, aOrigin);
++  NS_ENSURE_TRUE(dbFileUrl, nullptr);
++
++  nsCOMPtr<mozIStorageService> ss =
+     do_GetService(MOZ_STORAGE_SERVICE_CONTRACTID);
+   NS_ENSURE_TRUE(ss, nullptr);
+ 
+   nsCOMPtr<mozIStorageConnection> connection;
+-  rv = ss->OpenDatabaseWithVFS(dbFile, NS_LITERAL_CSTRING("quota"),
+-                               getter_AddRefs(connection));
++  rv = ss->OpenDatabaseWithFileURL(dbFileUrl, getter_AddRefs(connection));
+   NS_ENSURE_SUCCESS(rv, nullptr);
+ 
+   // Turn on foreign key constraints and recursive triggers.
+diff --git dom/indexedDB/IDBFactory.h dom/indexedDB/IDBFactory.h
+index d5461f7..49dad42 100644
+--- mozilla/dom/indexedDB/IDBFactory.h
++++ mozilla/dom/indexedDB/IDBFactory.h
+@@ -15,6 +15,8 @@
+ #include "nsCycleCollectionParticipant.h"
+ 
+ class nsIAtom;
++class nsIFile;
++class nsIFileURL;
+ class nsPIDOMWindow;
+ 
+ namespace mozilla {
+@@ -75,8 +77,12 @@ public:
+   static nsresult Create(ContentParent* aContentParent,
+                          IDBFactory** aFactory);
+ 
++  static already_AddRefed<nsIFileURL>
++  GetDatabaseFileURL(nsIFile* aDatabaseFile, const nsACString& aOrigin);
++
+   static already_AddRefed<mozIStorageConnection>
+-  GetConnection(const nsAString& aDatabaseFilePath);
++  GetConnection(const nsAString& aDatabaseFilePath,
++                const nsACString& aOrigin);
+ 
+   static nsresult
+   LoadDatabaseInformation(mozIStorageConnection* aConnection,
+diff --git dom/indexedDB/IDBFileHandle.cpp dom/indexedDB/IDBFileHandle.cpp
+index e0340ff..f71fd56 100644
+--- mozilla/dom/indexedDB/IDBFileHandle.cpp
++++ mozilla/dom/indexedDB/IDBFileHandle.cpp
+@@ -6,15 +6,14 @@
+ 
+ #include "IDBFileHandle.h"
+ 
+-#include "nsIStandardFileStream.h"
+-
+ #include "mozilla/dom/file/File.h"
++#include "mozilla/dom/quota/FileStreams.h"
+ #include "nsDOMClassInfoID.h"
+ 
+-#include "FileStream.h"
+ #include "IDBDatabase.h"
+ 
+ USING_INDEXEDDB_NAMESPACE
++USING_QUOTA_NAMESPACE
+ 
+ namespace {
+ 
+@@ -68,22 +67,22 @@ IDBFileHandle::Create(IDBDatabase* aDatabase,
+ already_AddRefed<nsISupports>
+ IDBFileHandle::CreateStream(nsIFile* aFile, bool aReadOnly)
+ {
+-  nsRefPtr<FileStream> stream = new FileStream();
++  const nsACString& origin = mFileStorage->StorageOrigin();
++
++  nsCOMPtr<nsISupports> result;
+ 
+-  nsString streamMode;
+   if (aReadOnly) {
+-    streamMode.AssignLiteral("rb");
++    nsRefPtr<FileInputStream> stream = FileInputStream::Create(
++      origin, aFile, -1, -1, nsIFileInputStream::DEFER_OPEN);
++    result = NS_ISUPPORTS_CAST(nsIFileInputStream*, stream);
+   }
+   else {
+-    streamMode.AssignLiteral("r+b");
++    nsRefPtr<FileStream> stream = FileStream::Create(
++      origin, aFile, -1, -1, nsIFileStream::DEFER_OPEN);
++    result = NS_ISUPPORTS_CAST(nsIFileStream*, stream);
+   }
++  NS_ENSURE_TRUE(result, nullptr);
+ 
+-  nsresult rv = stream->Init(aFile, streamMode,
+-                             nsIStandardFileStream::FLAGS_DEFER_OPEN);
+-  NS_ENSURE_SUCCESS(rv, nullptr);
+-
+-  nsCOMPtr<nsISupports> result =
+-    NS_ISUPPORTS_CAST(nsIStandardFileStream*, stream);
+   return result.forget();
+ }
+ 
+diff --git dom/indexedDB/IDBObjectStore.cpp dom/indexedDB/IDBObjectStore.cpp
+index 746d473..1f16d26 100644
+--- mozilla/dom/indexedDB/IDBObjectStore.cpp
++++ mozilla/dom/indexedDB/IDBObjectStore.cpp
+@@ -17,6 +17,7 @@
+ #include "mozilla/dom/ContentParent.h"
+ #include "mozilla/dom/StructuredCloneTags.h"
+ #include "mozilla/dom/ipc/Blob.h"
++#include "mozilla/dom/quota/FileStreams.h"
+ #include "mozilla/storage.h"
+ #include "nsContentUtils.h"
+ #include "nsDOMClassInfo.h"
+@@ -27,10 +28,8 @@
+ #include "nsServiceManagerUtils.h"
+ #include "nsThreadUtils.h"
+ #include "snappy/snappy.h"
+-#include "test_quota.h"
+ 
+ #include "AsyncConnectionHelper.h"
+-#include "FileStream.h"
+ #include "IDBCursor.h"
+ #include "IDBEvents.h"
+ #include "IDBFileHandle.h"
+@@ -51,6 +50,7 @@
+ USING_INDEXEDDB_NAMESPACE
+ using namespace mozilla::dom;
+ using namespace mozilla::dom::indexedDB::ipc;
++using mozilla::dom::quota::FileOutputStream;
+ 
+ namespace {
+ 
+@@ -2734,9 +2734,9 @@ AddHelper::DoDatabaseWork(mozIStorageConnection* aConnection)
+         nativeFile = fileManager->GetFileForId(directory, id);
+         NS_ENSURE_TRUE(nativeFile, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-        nsRefPtr<FileStream> outputStream = new FileStream();
+-        rv = outputStream->Init(nativeFile, NS_LITERAL_STRING("wb"), 0);
+-        NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
++        nsRefPtr<FileOutputStream> outputStream = FileOutputStream::Create(
++          mObjectStore->Transaction()->Database()->Origin(), nativeFile);
++        NS_ENSURE_TRUE(outputStream, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+         rv = CopyData(inputStream, outputStream);
+         NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+diff --git dom/indexedDB/IDBTransaction.cpp dom/indexedDB/IDBTransaction.cpp
+index fcef7cc..a5345e2 100644
+--- mozilla/dom/indexedDB/IDBTransaction.cpp
++++ mozilla/dom/indexedDB/IDBTransaction.cpp
+@@ -352,7 +352,8 @@ IDBTransaction::GetOrCreateConnection(mozIStorageConnection** aResult)
+ 
+   if (!mConnection) {
+     nsCOMPtr<mozIStorageConnection> connection =
+-      IDBFactory::GetConnection(mDatabase->FilePath());
++      IDBFactory::GetConnection(mDatabase->FilePath(),
++                                mDatabase->Origin());
+     NS_ENSURE_TRUE(connection, NS_ERROR_FAILURE);
+ 
+     nsresult rv;
+diff --git dom/indexedDB/IndexedDatabaseInlines.h dom/indexedDB/IndexedDatabaseInlines.h
+index 62e65d6..f27d60c 100644
+--- mozilla/dom/indexedDB/IndexedDatabaseInlines.h
++++ mozilla/dom/indexedDB/IndexedDatabaseInlines.h
+@@ -79,4 +79,17 @@ AppendConditionClause(const nsACString& aColumnName,
+   aResult += NS_LITERAL_CSTRING(" :") + aArgName;
+ }
+ 
++inline void
++IncrementUsage(uint64_t* aUsage, uint64_t aDelta)
++{
++  // Watch for overflow!
++  if ((UINT64_MAX - *aUsage) < aDelta) {
++    NS_WARNING("Usage exceeds the maximum!");
++    *aUsage = UINT64_MAX;
++  }
++  else {
++    *aUsage += aDelta;
++  }
++}
++
+ END_INDEXEDDB_NAMESPACE
+diff --git dom/indexedDB/IndexedDatabaseManager.cpp dom/indexedDB/IndexedDatabaseManager.cpp
+index e4ad647..88f09da 100644
+--- mozilla/dom/indexedDB/IndexedDatabaseManager.cpp
++++ mozilla/dom/indexedDB/IndexedDatabaseManager.cpp
+@@ -22,6 +22,7 @@
+ #include "nsITimer.h"
+ 
+ #include "mozilla/dom/file/FileService.h"
++#include "mozilla/dom/quota/QuotaManager.h"
+ #include "mozilla/dom/TabContext.h"
+ #include "mozilla/LazyIdleThread.h"
+ #include "mozilla/Preferences.h"
+@@ -36,7 +37,6 @@
+ #include "nsThreadUtils.h"
+ #include "nsXPCOM.h"
+ #include "nsXPCOMPrivate.h"
+-#include "test_quota.h"
+ #include "xpcpublic.h"
+ 
+ #include "AsyncConnectionHelper.h"
+@@ -48,6 +48,8 @@
+ #include "OpenDatabaseHelper.h"
+ #include "TransactionThreadPool.h"
+ 
++#include "IndexedDatabaseInlines.h"
++
+ // The amount of time, in milliseconds, that our IO thread will stay alive
+ // after the last event it processes.
+ #define DEFAULT_THREAD_TIMEOUT_MS 30000
+@@ -70,6 +72,7 @@ using namespace mozilla::services;
+ using namespace mozilla::dom;
+ using mozilla::Preferences;
+ using mozilla::dom::file::FileService;
++using mozilla::dom::quota::QuotaManager;
+ 
+ static NS_DEFINE_CID(kDOMSOF_CID, NS_DOM_SCRIPT_OBJECT_FACTORY_CID);
+ 
+@@ -103,29 +106,6 @@ GetDatabaseBaseFilename(const nsAString& aFilename,
+   return true;
+ }
+ 
+-class QuotaCallback MOZ_FINAL : public mozIStorageQuotaCallback
+-{
+-public:
+-  NS_DECL_ISUPPORTS
+-
+-  NS_IMETHOD
+-  QuotaExceeded(const nsACString& aFilename,
+-                int64_t aCurrentSizeLimit,
+-                int64_t aCurrentTotalSize,
+-                nsISupports* aUserData,
+-                int64_t* _retval)
+-  {
+-    if (IndexedDatabaseManager::QuotaIsLifted()) {
+-      *_retval = 0;
+-      return NS_OK;
+-    }
+-
+-    return NS_ERROR_FAILURE;
+-  }
+-};
+-
+-NS_IMPL_THREADSAFE_ISUPPORTS1(QuotaCallback, mozIStorageQuotaCallback)
+-
+ // Adds all databases in the hash to the given array.
+ template <class T>
+ PLDHashOperator
+@@ -440,8 +420,8 @@ IndexedDatabaseManager::GetOrCreate()
+                            NS_LITERAL_CSTRING("IndexedDB I/O"),
+                            LazyIdleThread::ManualShutdown);
+ 
+-      // We need one quota callback object to hand to SQLite.
+-      instance->mQuotaCallbackSingleton = new QuotaCallback();
++      // Make sure that the quota manager is up.
++      NS_ENSURE_TRUE(QuotaManager::GetOrCreate(), nullptr);
+ 
+       // Make a timer here to avoid potential failures later. We don't actually
+       // initialize the timer until shutdown.
+@@ -996,37 +976,15 @@ IndexedDatabaseManager::EnsureOriginIsInitialized(const nsACString& aOrigin,
+     return NS_OK;
+   }
+ 
+-  // First figure out the filename pattern we'll use.
+-  nsCOMPtr<nsIFile> patternFile;
+-  rv = directory->Clone(getter_AddRefs(patternFile));
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  rv = patternFile->Append(NS_LITERAL_STRING("*"));
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  nsString pattern;
+-  rv = patternFile->GetPath(pattern);
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  // Now tell SQLite to start tracking this pattern for content.
+-  nsCOMPtr<mozIStorageServiceQuotaManagement> ss =
+-    do_GetService(MOZ_STORAGE_SERVICE_CONTRACTID);
+-  NS_ENSURE_TRUE(ss, NS_ERROR_FAILURE);
+-
+-  if (aPrivilege != Chrome) {
+-    rv = ss->SetQuotaForFilenamePattern(NS_ConvertUTF16toUTF8(pattern),
+-                                        GetIndexedDBQuotaMB() * 1024 * 1024,
+-                                        mQuotaCallbackSingleton, nullptr);
+-    NS_ENSURE_SUCCESS(rv, rv);
+-  }
+-
+   // We need to see if there are any files in the directory already. If they
+   // are database files then we need to cleanup stored files (if it's needed)
+-  // and also tell SQLite about all of them.
++  // and also initialize the quota.
+ 
+   nsAutoTArray<nsString, 20> subdirsToProcess;
+   nsAutoTArray<nsCOMPtr<nsIFile> , 20> unknownFiles;
+ 
++  uint64_t usage = 0;
++
+   nsTHashtable<nsStringHashKey> validSubdirs;
+   validSubdirs.Init(20);
+ 
+@@ -1068,20 +1026,28 @@ IndexedDatabaseManager::EnsureOriginIsInitialized(const nsACString& aOrigin,
+       continue;
+     }
+ 
+-    nsCOMPtr<nsIFile> fileManagerDirectory;
+-    rv = directory->Clone(getter_AddRefs(fileManagerDirectory));
++    nsCOMPtr<nsIFile> fmDirectory;
++    rv = directory->Clone(getter_AddRefs(fmDirectory));
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    rv = fileManagerDirectory->Append(dbBaseFilename);
++    rv = fmDirectory->Append(dbBaseFilename);
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    rv = FileManager::InitDirectory(ss, fileManagerDirectory, file,
+-                                    aPrivilege);
++    rv = FileManager::InitDirectory(fmDirectory, file, aOrigin);
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     if (aPrivilege != Chrome) {
+-      rv = ss->UpdateQuotaInformationForFile(file);
++      uint64_t fileUsage;
++      rv = FileManager::GetUsage(fmDirectory, &fileUsage);
+       NS_ENSURE_SUCCESS(rv, rv);
++
++      IncrementUsage(&usage, fileUsage);
++
++      int64_t fileSize;
++      rv = file->GetFileSize(&fileSize);
++      NS_ENSURE_SUCCESS(rv, rv);
++
++      IncrementUsage(&usage, uint64_t(fileSize));
+     }
+ 
+     validSubdirs.PutEntry(dbBaseFilename);
+@@ -1117,12 +1083,39 @@ IndexedDatabaseManager::EnsureOriginIsInitialized(const nsACString& aOrigin,
+     }
+   }
+ 
++  if (aPrivilege != Chrome) {
++    QuotaManager* quotaManager = QuotaManager::Get();
++    NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++    quotaManager->InitQuotaForOrigin(aOrigin, GetIndexedDBQuotaMB(), usage);
++  }
++
+   mInitializedOrigins.AppendElement(aOrigin);
+ 
+   NS_ADDREF(*aDirectory = directory);
+   return NS_OK;
+ }
+ 
++void
++IndexedDatabaseManager::UninitializeOriginsByPattern(
++                                                    const nsACString& aPattern)
++{
++#ifdef DEBUG
++  {
++    bool correctThread;
++    NS_ASSERTION(NS_SUCCEEDED(mIOThread->IsOnCurrentThread(&correctThread)) &&
++                 correctThread,
++                 "Running on the wrong thread!");
++  }
++#endif
++
++  for (int32_t i = mInitializedOrigins.Length() - 1; i >= 0; i--) {
++    if (PatternMatchesOrigin(aPattern, mInitializedOrigins[i])) {
++      mInitializedOrigins.RemoveElementAt(i);
++    }
++  }
++}
++
+ bool
+ IndexedDatabaseManager::QuotaIsLiftedInternal()
+ {
+@@ -1250,16 +1243,14 @@ IndexedDatabaseManager::GetFileManager(const nsACString& aOrigin,
+ }
+ 
+ void
+-IndexedDatabaseManager::AddFileManager(const nsACString& aOrigin,
+-                                       const nsAString& aDatabaseName,
+-                                       FileManager* aFileManager)
++IndexedDatabaseManager::AddFileManager(FileManager* aFileManager)
+ {
+   NS_ASSERTION(aFileManager, "Null file manager!");
+ 
+   nsTArray<nsRefPtr<FileManager> >* array;
+-  if (!mFileManagers.Get(aOrigin, &array)) {
++  if (!mFileManagers.Get(aFileManager->Origin(), &array)) {
+     array = new nsTArray<nsRefPtr<FileManager> >();
+-    mFileManagers.Put(aOrigin, array);
++    mFileManagers.Put(aFileManager->Origin(), array);
+   }
+ 
+   array->AppendElement(aFileManager);
+@@ -1783,6 +1774,13 @@ OriginClearRunnable::DeleteFiles(IndexedDatabaseManager* aManager)
+       // correctly...
+       NS_ERROR("Failed to remove directory!");
+     }
++
++    QuotaManager* quotaManager = QuotaManager::Get();
++    NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++    quotaManager->RemoveQuotaForPattern(mOriginOrPattern);
++
++    aManager->UninitializeOriginsByPattern(mOriginOrPattern);
+   }
+ }
+ 
+@@ -1880,19 +1878,6 @@ IndexedDatabaseManager::AsyncUsageRunnable::Cancel()
+   }
+ }
+ 
+-inline void
+-IncrementUsage(uint64_t* aUsage, uint64_t aDelta)
+-{
+-  // Watch for overflow!
+-  if ((INT64_MAX - *aUsage) <= aDelta) {
+-    NS_WARNING("Database sizes exceed max we can report!");
+-    *aUsage = INT64_MAX;
+-  }
+-  else {
+-    *aUsage += aDelta;
+-  }
+-}
+-
+ nsresult
+ IndexedDatabaseManager::AsyncUsageRunnable::TakeShortcut()
+ {
+@@ -2295,25 +2280,22 @@ IndexedDatabaseManager::AsyncDeleteFileRunnable::Run()
+   nsCOMPtr<nsIFile> file = mFileManager->GetFileForId(directory, mFileId);
+   NS_ENSURE_TRUE(file, NS_ERROR_FAILURE);
+ 
+-  nsString filePath;
+-  nsresult rv = file->GetPath(filePath);
+-  NS_ENSURE_SUCCESS(rv, rv);
++  nsresult rv;
++  int64_t fileSize;
+ 
+-  int rc = sqlite3_quota_remove(NS_ConvertUTF16toUTF8(filePath).get());
+-  if (rc != SQLITE_OK) {
+-    NS_WARNING("Failed to delete stored file!");
+-    return NS_ERROR_FAILURE;
++  if (mFileManager->Privilege() != Chrome) {
++    rv = file->GetFileSize(&fileSize);
++    NS_ENSURE_SUCCESS(rv, NS_ERROR_FAILURE);
+   }
+ 
+-  // sqlite3_quota_remove won't actually remove anything if we're not tracking
+-  // the quota here. Manually remove the file if it exists.
+-  bool exists;
+-  rv = file->Exists(&exists);
+-  NS_ENSURE_SUCCESS(rv, rv);
++  rv = file->Remove(false);
++  NS_ENSURE_SUCCESS(rv, NS_ERROR_FAILURE);
+ 
+-  if (exists) {
+-    rv = file->Remove(false);
+-    NS_ENSURE_SUCCESS(rv, rv);
++  if (mFileManager->Privilege() != Chrome) {
++    QuotaManager* quotaManager = QuotaManager::Get();
++    NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++    quotaManager->DecreaseUsageForOrigin(mFileManager->Origin(), fileSize);
+   }
+ 
+   directory = mFileManager->GetJournalDirectory();
+diff --git dom/indexedDB/IndexedDatabaseManager.h dom/indexedDB/IndexedDatabaseManager.h
+index f9fbbf2..1ea5425 100644
+--- mozilla/dom/indexedDB/IndexedDatabaseManager.h
++++ mozilla/dom/indexedDB/IndexedDatabaseManager.h
+@@ -23,7 +23,6 @@
+ 
+ #define INDEXEDDB_MANAGER_CONTRACTID "@mozilla.org/dom/indexeddb/manager;1"
+ 
+-class mozIStorageQuotaCallback;
+ class nsIAtom;
+ class nsIFile;
+ class nsITimer;
+@@ -134,6 +133,8 @@ public:
+                                      FactoryPrivilege aPrivilege,
+                                      nsIFile** aDirectory);
+ 
++  void UninitializeOriginsByPattern(const nsACString& aPattern);
++
+   // Determine if the quota is lifted for the Window the current thread is
+   // using.
+   static inline bool
+@@ -172,9 +173,7 @@ public:
+                  const nsAString& aDatabaseName);
+ 
+   void
+-  AddFileManager(const nsACString& aOrigin,
+-                 const nsAString& aDatabaseName,
+-                 FileManager* aFileManager);
++  AddFileManager(FileManager* aFileManager);
+ 
+   void InvalidateFileManagersForPattern(const nsACString& aPattern);
+ 
+@@ -502,10 +501,6 @@ private:
+   // A timer that gets activated at shutdown to ensure we close all databases.
+   nsCOMPtr<nsITimer> mShutdownTimer;
+ 
+-  // A single threadsafe instance of our quota callback. Created on the main
+-  // thread during GetOrCreate().
+-  nsCOMPtr<mozIStorageQuotaCallback> mQuotaCallbackSingleton;
+-
+   // A list of all successfully initialized origins. This list isn't protected
+   // by any mutex but it is only ever touched on the IO thread.
+   nsTArray<nsCString> mInitializedOrigins;
+diff --git dom/indexedDB/Makefile.in dom/indexedDB/Makefile.in
+index fef0858..09d4853 100644
+--- mozilla/dom/indexedDB/Makefile.in
++++ mozilla/dom/indexedDB/Makefile.in
+@@ -25,7 +25,6 @@ CPPSRCS = \
+   DatabaseInfo.cpp \
+   FileInfo.cpp \
+   FileManager.cpp \
+-  FileStream.cpp \
+   IDBCursor.cpp \
+   IDBDatabase.cpp \
+   IDBEvents.cpp \
+@@ -93,7 +92,6 @@ XPIDLSRCS = \
+   nsIIDBVersionChangeEvent.idl \
+   nsIIDBOpenDBRequest.idl \
+   nsIIndexedDatabaseManager.idl \
+-  nsIStandardFileStream.idl \
+   $(NULL)
+ 
+ DIRS += ipc
+diff --git dom/indexedDB/OpenDatabaseHelper.cpp dom/indexedDB/OpenDatabaseHelper.cpp
+index e71cad4..4cd7f61 100644
+--- mozilla/dom/indexedDB/OpenDatabaseHelper.cpp
++++ mozilla/dom/indexedDB/OpenDatabaseHelper.cpp
+@@ -8,11 +8,12 @@
+ 
+ #include "nsIFile.h"
+ 
++#include "mozilla/dom/quota/QuotaManager.h"
+ #include "mozilla/storage.h"
+ #include "nsEscape.h"
++#include "nsNetUtil.h"
+ #include "nsThreadUtils.h"
+ #include "snappy/snappy.h"
+-#include "test_quota.h"
+ 
+ #include "nsIBFCacheEntry.h"
+ #include "IDBEvents.h"
+@@ -21,6 +22,7 @@
+ 
+ using namespace mozilla;
+ USING_INDEXEDDB_NAMESPACE
++USING_QUOTA_NAMESPACE
+ 
+ namespace {
+ 
+@@ -1632,15 +1634,15 @@ OpenDatabaseHelper::DoDatabaseWork()
+   rv = dbFile->GetPath(mDatabaseFilePath);
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-  nsCOMPtr<nsIFile> fileManagerDirectory;
+-  rv = dbDirectory->Clone(getter_AddRefs(fileManagerDirectory));
++  nsCOMPtr<nsIFile> fmDirectory;
++  rv = dbDirectory->Clone(getter_AddRefs(fmDirectory));
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-  rv = fileManagerDirectory->Append(filename);
++  rv = fmDirectory->Append(filename);
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+   nsCOMPtr<mozIStorageConnection> connection;
+-  rv = CreateDatabaseConnection(mName, dbFile, fileManagerDirectory,
++  rv = CreateDatabaseConnection(dbFile, fmDirectory, mName, mASCIIOrigin,
+                                 getter_AddRefs(connection));
+   if (NS_FAILED(rv) &&
+       NS_ERROR_GET_MODULE(rv) != NS_ERROR_MODULE_DOM_INDEXEDDB) {
+@@ -1691,12 +1693,12 @@ OpenDatabaseHelper::DoDatabaseWork()
+ 
+   nsRefPtr<FileManager> fileManager = mgr->GetFileManager(mASCIIOrigin, mName);
+   if (!fileManager) {
+-    fileManager = new FileManager(mASCIIOrigin, mName);
++    fileManager = new FileManager(mASCIIOrigin, mPrivilege, mName);
+ 
+-    rv = fileManager->Init(fileManagerDirectory, connection);
++    rv = fileManager->Init(fmDirectory, connection);
+     NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-    mgr->AddFileManager(mASCIIOrigin, mName, fileManager);
++    mgr->AddFileManager(fileManager);
+   }
+ 
+   mFileManager = fileManager.forget();
+@@ -1707,23 +1709,26 @@ OpenDatabaseHelper::DoDatabaseWork()
+ // static
+ nsresult
+ OpenDatabaseHelper::CreateDatabaseConnection(
+-                                        const nsAString& aName,
+                                         nsIFile* aDBFile,
+-                                        nsIFile* aFileManagerDirectory,
++                                        nsIFile* aFMDirectory,
++                                        const nsAString& aName,
++                                        const nsACString& aOrigin,
+                                         mozIStorageConnection** aConnection)
+ {
+   NS_ASSERTION(IndexedDatabaseManager::IsMainProcess(), "Wrong process!");
+   NS_ASSERTION(!NS_IsMainThread(), "Wrong thread!");
+ 
+-  NS_NAMED_LITERAL_CSTRING(quotaVFSName, "quota");
++  nsCOMPtr<nsIFileURL> dbFileUrl =
++    IDBFactory::GetDatabaseFileURL(aDBFile, aOrigin);
++  NS_ENSURE_TRUE(dbFileUrl, NS_ERROR_FAILURE);
+ 
+-  nsCOMPtr<mozIStorageServiceQuotaManagement> ss =
++  nsCOMPtr<mozIStorageService> ss =
+     do_GetService(MOZ_STORAGE_SERVICE_CONTRACTID);
+   NS_ENSURE_TRUE(ss, NS_ERROR_FAILURE);
+ 
+   nsCOMPtr<mozIStorageConnection> connection;
+-  nsresult rv = ss->OpenDatabaseWithVFS(aDBFile, quotaVFSName,
+-                                        getter_AddRefs(connection));
++  nsresult rv =
++    ss->OpenDatabaseWithFileURL(dbFileUrl, getter_AddRefs(connection));
+   if (rv == NS_ERROR_FILE_CORRUPTED) {
+     // If we're just opening the database during origin initialization, then
+     // we don't want to erase any files. The failure here will fail origin
+@@ -1737,21 +1742,20 @@ OpenDatabaseHelper::CreateDatabaseConnection(
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     bool exists;
+-    rv = aFileManagerDirectory->Exists(&exists);
++    rv = aFMDirectory->Exists(&exists);
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     if (exists) {
+       bool isDirectory;
+-      rv = aFileManagerDirectory->IsDirectory(&isDirectory);
++      rv = aFMDirectory->IsDirectory(&isDirectory);
+       NS_ENSURE_SUCCESS(rv, rv);
+       NS_ENSURE_TRUE(isDirectory, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-      rv = aFileManagerDirectory->Remove(true);
++      rv = aFMDirectory->Remove(true);
+       NS_ENSURE_SUCCESS(rv, rv);
+     }
+ 
+-    rv = ss->OpenDatabaseWithVFS(aDBFile, quotaVFSName,
+-                                 getter_AddRefs(connection));
++    rv = ss->OpenDatabaseWithFileURL(dbFileUrl, getter_AddRefs(connection));
+   }
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+@@ -2347,6 +2351,8 @@ DeleteDatabaseHelper::DoDatabaseWork(mozIStorageConnection* aConnection)
+ {
+   NS_ASSERTION(!aConnection, "How did we get a connection here?");
+ 
++  const FactoryPrivilege& privilege = mOpenHelper->Privilege();
++
+   IndexedDatabaseManager* mgr = IndexedDatabaseManager::Get();
+   NS_ASSERTION(mgr, "This should never fail!");
+ 
+@@ -2372,59 +2378,57 @@ DeleteDatabaseHelper::DoDatabaseWork(mozIStorageConnection* aConnection)
+   rv = dbFile->Exists(&exists);
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-  int rc;
+-
+   if (exists) {
+-    nsString dbFilePath;
+-    rv = dbFile->GetPath(dbFilePath);
+-    NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
++    int64_t fileSize;
+ 
+-    rc = sqlite3_quota_remove(NS_ConvertUTF16toUTF8(dbFilePath).get());
+-    if (rc != SQLITE_OK) {
+-      NS_WARNING("Failed to delete db file!");
+-      return NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR;
++    if (privilege != Chrome) {
++      rv = dbFile->GetFileSize(&fileSize);
++      NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+     }
+ 
+-    // sqlite3_quota_remove won't actually remove anything if we're not tracking
+-    // the quota here. Manually remove the file if it exists.
+-    rv = dbFile->Exists(&exists);
++    rv = dbFile->Remove(false);
+     NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-    if (exists) {
+-      rv = dbFile->Remove(false);
+-      NS_ENSURE_SUCCESS(rv, rv);
++    if (privilege != Chrome) {
++      QuotaManager* quotaManager = QuotaManager::Get();
++      NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++      quotaManager->DecreaseUsageForOrigin(mASCIIOrigin, fileSize);
+     }
+   }
+ 
+-  nsCOMPtr<nsIFile> fileManagerDirectory;
+-  rv = directory->Clone(getter_AddRefs(fileManagerDirectory));
+-  NS_ENSURE_SUCCESS(rv, rv);
++  nsCOMPtr<nsIFile> fmDirectory;
++  rv = directory->Clone(getter_AddRefs(fmDirectory));
++  NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-  rv = fileManagerDirectory->Append(filename);
++  rv = fmDirectory->Append(filename);
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-  rv = fileManagerDirectory->Exists(&exists);
++  rv = fmDirectory->Exists(&exists);
+   NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+   if (exists) {
+     bool isDirectory;
+-    rv = fileManagerDirectory->IsDirectory(&isDirectory);
++    rv = fmDirectory->IsDirectory(&isDirectory);
+     NS_ENSURE_SUCCESS(rv, rv);
+     NS_ENSURE_TRUE(isDirectory, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+ 
+-    nsString fileManagerDirectoryPath;
+-    rv = fileManagerDirectory->GetPath(fileManagerDirectoryPath);
+-    NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
++    uint64_t usage = 0;
+ 
+-    rc = sqlite3_quota_remove(
+-      NS_ConvertUTF16toUTF8(fileManagerDirectoryPath).get());
+-    if (rc != SQLITE_OK) {
+-      NS_WARNING("Failed to delete file directory!");
+-      return NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR;
++    if (privilege != Chrome) {
++      rv = FileManager::GetUsage(fmDirectory, &usage);
++      NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
+     }
+ 
+-    rv = fileManagerDirectory->Remove(true);
+-    NS_ENSURE_SUCCESS(rv, rv);
++    rv = fmDirectory->Remove(true);
++    NS_ENSURE_SUCCESS(rv, NS_ERROR_DOM_INDEXEDDB_UNKNOWN_ERR);
++
++    if (privilege != Chrome) {
++      QuotaManager* quotaManager = QuotaManager::Get();
++      NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++      quotaManager->DecreaseUsageForOrigin(mASCIIOrigin, usage);
++    }
+   }
+ 
+   return NS_OK;
+diff --git dom/indexedDB/OpenDatabaseHelper.h dom/indexedDB/OpenDatabaseHelper.h
+index 587301b..5a3d987 100644
+--- mozilla/dom/indexedDB/OpenDatabaseHelper.h
++++ mozilla/dom/indexedDB/OpenDatabaseHelper.h
+@@ -77,10 +77,16 @@ public:
+     return mDatabase;
+   }
+ 
++  const FactoryPrivilege& Privilege() const
++  {
++    return mPrivilege;
++  }
++
+   static
+-  nsresult CreateDatabaseConnection(const nsAString& aName,
+-                                    nsIFile* aDBFile,
+-                                    nsIFile* aFileManagerDirectory,
++  nsresult CreateDatabaseConnection(nsIFile* aDBFile,
++                                    nsIFile* aFMDirectory,
++                                    const nsAString& aName,
++                                    const nsACString& aOrigin,
+                                     mozIStorageConnection** aConnection);
+ 
+ protected:
+diff --git dom/indexedDB/nsIStandardFileStream.idl dom/indexedDB/nsIStandardFileStream.idl
+deleted file mode 100644
+index 265c3ed..0000000
+--- mozilla/dom/indexedDB/nsIStandardFileStream.idl
++++ /dev/null
+@@ -1,60 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+-/* vim: set ts=2 et sw=2 tw=80: */
+-/* This Source Code Form is subject to the terms of the Mozilla Public
+- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+-
+-#include "nsISupports.idl"
+-
+-interface nsIFile;
+-
+-/**
+- * A stream that allows you to read from a file or stream to a file
+- * using standard file APIs.
+- */
+-[scriptable, uuid(ebbbb779-92a3-4b2a-b7cf-6efbe904c453)]
+-interface nsIStandardFileStream : nsISupports
+-{
+-  /**
+-   * If this is set, the file will be opened (i.e., a call to
+-   * fopen done) only when we do an actual operation on the stream,
+-   * or more specifically, when one of the following is called:
+-   *   - Seek
+-   *   - Tell
+-   *   - SetEOF
+-   *   - Available
+-   *   - Read
+-   *   - Write
+-   *   - Flush
+-   *   - GetSize
+-   *   - GetLastModified
+-   *   - Sync
+-   *
+-   * FLAGS_DEFER_OPEN is useful if we use the stream on a background
+-   * thread, so that the opening and possible |stat|ing of the file
+-   * happens there as well.
+-   *
+-   * @note Using this flag results in the file not being opened
+-   *       during the call to Init.  This means that any errors that might
+-   *       happen when this flag is not set would happen during the
+-   *       first read.  Also, the file is not locked when Init is called,
+-   *       so it might be deleted before we try to read from it.
+-   */
+-  const long FLAGS_DEFER_OPEN = 1 << 0;
+-
+-  /**
+-   * @param file          file to read from or stream to
+-   * @param mode          file open mode (see fopen documentation)
+-   * @param flags         flags specifying various behaviors of the class
+-   *        (see enumerations in the class)
+-   */
+-  void init(in nsIFile file,
+-            in AString mode,
+-            in long flags);
+-
+-  /**
+-   * Flush all written content held in memory buffers out to disk.
+-   * This is the equivalent of fflush()
+-   */
+-  void flushBuffers();
+-};
+diff --git dom/indexedDB/test/Makefile.in dom/indexedDB/test/Makefile.in
+index 9c79b14..4c9a201 100644
+--- mozilla/dom/indexedDB/test/Makefile.in
++++ mozilla/dom/indexedDB/test/Makefile.in
+@@ -54,11 +54,13 @@ MOCHITEST_FILES = \
+   test_file_os_delete.html \
+   test_file_put_get_object.html \
+   test_file_put_get_values.html \
++  test_file_quota.html \
+   test_file_replace.html \
+   test_file_resurrection_delete.html \
+   test_file_resurrection_transaction_abort.html \
+   test_file_sharing.html \
+   test_file_transaction_abort.html \
++  test_filehandle_quota.html \
+   test_filehandle_serialization.html \
+   test_filehandle_store_snapshot.html \
+   test_getAll.html \
+diff --git dom/indexedDB/test/file.js dom/indexedDB/test/file.js
+index 07bd10a..3c6194a 100644
+--- mozilla/dom/indexedDB/test/file.js
++++ mozilla/dom/indexedDB/test/file.js
+@@ -3,6 +3,8 @@
+  * http://creativecommons.org/publicdomain/zero/1.0/
+  */
+ 
++const DEFAULT_QUOTA = 50 * 1024 * 1024;
++
+ var bufferCache = [];
+ var utils = SpecialPowers.getDOMWindowUtils(window);
+ 
+@@ -184,25 +186,6 @@ function getUsage(usageHandler)
+   idbManager.getUsageForURI(uri, callback);
+ }
+ 
+-function getUsageSync()
+-{
+-  let usage;
+-
+-  getUsage(function(aUsage, aFileUsage) {
+-    usage = aUsage;
+-  });
+-
+-  let comp = SpecialPowers.wrap(Components);
+-  let thread = comp.classes["@mozilla.org/thread-manager;1"]
+-                   .getService(comp.interfaces.nsIThreadManager)
+-                   .currentThread;
+-  while (!usage) {
+-    thread.processNextEvent(true);
+-  }
+-
+-  return usage;
+-}
+-
+ function scheduleGC()
+ {
+   SpecialPowers.exactGC(window, continueToNextStep);
+diff --git dom/indexedDB/test/test_file_quota.html dom/indexedDB/test/test_file_quota.html
+index b07880d..9fbc0c0 100644
+--- mozilla/dom/indexedDB/test/test_file_quota.html
++++ mozilla/dom/indexedDB/test/test_file_quota.html
+@@ -13,14 +13,12 @@
+   function testSteps()
+   {
+     const READ_WRITE = IDBTransaction.READ_WRITE;
+-    const DEFAULT_QUOTA_MB = 50;
+ 
+     const name = window.location.pathname;
+ 
+     const objectStoreName = "Blobs";
+ 
+-    const testData = { key: 0, value: {} };
+-    const fileData = { key: 1, file: null };
++    const fileData = { key: 1, file: getNullFile("random.bin", DEFAULT_QUOTA) };
+ 
+     let request = indexedDB.open(name, 1);
+     request.onerror = errorHandler;
+@@ -32,21 +30,17 @@
+ 
+     let db = event.target.result;
+ 
+-    let objectStore = db.createObjectStore(objectStoreName, { });
+-    objectStore.add(testData.value, testData.key);
+-
+-    let size = (DEFAULT_QUOTA_MB + 1) * 1024 * 1024 - getUsageSync();
+-    fileData.file = getNullFile("random.bin", size);
++    db.createObjectStore(objectStoreName, { });
+ 
+     event = yield;
+ 
+     is(event.type, "success", "Got correct event type");
+ 
+     trans = db.transaction([objectStoreName], READ_WRITE);
+-    objectStore = trans.objectStore(objectStoreName);
++    let objectStore = trans.objectStore(objectStoreName);
+ 
+     request = objectStore.add(fileData.file, fileData.key);
+-    request.addEventListener("error", new ExpectError("UnknownError"));
++    request.addEventListener("error", new ExpectError("UnknownError", true));
+     request.onsuccess = unexpectedSuccessHandler;
+     event = yield;
+ 
+diff --git dom/indexedDB/test/test_filehandle_quota.html dom/indexedDB/test/test_filehandle_quota.html
+index addaf01..0506279 100644
+--- mozilla/dom/indexedDB/test/test_filehandle_quota.html
++++ mozilla/dom/indexedDB/test/test_filehandle_quota.html
+@@ -13,7 +13,6 @@
+   function testSteps()
+   {
+     const READ_WRITE = IDBTransaction.READ_WRITE;
+-    const DEFAULT_QUOTA_MB = 50;
+ 
+     const name = window.location.pathname;
+ 
+@@ -39,10 +38,10 @@
+ 
+     let lockedFile = fileHandle.open("readwrite");
+ 
+-    let blob = getNullBlob((50 + 1) * 1024 * 1024 - getUsageSync());
++    let blob = getNullBlob(DEFAULT_QUOTA);
+ 
+     request = lockedFile.write(blob);
+-    request.addEventListener("error", new ExpectError("UnknownError"));
++    request.addEventListener("error", new ExpectError("UnknownError", true));
+     request.onsuccess = unexpectedSuccessHandler;
+     event = yield;
+ 
+diff --git dom/quota/FileStreams.cpp dom/quota/FileStreams.cpp
+new file mode 100644
+index 0000000..9de244f
+--- /dev/null
++++ mozilla/dom/quota/FileStreams.cpp
+@@ -0,0 +1,123 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#include "FileStreams.h"
++
++USING_QUOTA_NAMESPACE
++
++template <class FileStreamBase>
++NS_IMETHODIMP
++FileQuotaStream<FileStreamBase>::SetEOF()
++{
++  nsresult rv = FileStreamBase::SetEOF();
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  if (mQuotaObject) {
++    int64_t offset;
++    nsresult rv = FileStreamBase::Tell(&offset);
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    mQuotaObject->UpdateSize(offset);
++  }
++
++  return NS_OK;
++}
++
++template <class FileStreamBase>
++NS_IMETHODIMP
++FileQuotaStream<FileStreamBase>::Close()
++{
++  nsresult rv = FileStreamBase::Close();
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  mQuotaObject = nullptr;
++
++  return NS_OK;
++}
++
++template <class FileStreamBase>
++nsresult
++FileQuotaStream<FileStreamBase>::DoOpen()
++{
++  QuotaManager* quotaManager = QuotaManager::Get();
++  NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++  NS_ASSERTION(!mQuotaObject, "Creating quota object more than once?");
++  mQuotaObject = quotaManager->GetQuotaObject(mOrigin,
++    FileStreamBase::mOpenParams.localFile);
++
++  nsresult rv = FileStreamBase::DoOpen();
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  if (mQuotaObject && (FileStreamBase::mOpenParams.ioFlags & PR_TRUNCATE)) {
++    mQuotaObject->UpdateSize(0);
++  }
++
++  return NS_OK;
++}
++
++template <class FileStreamBase>
++NS_IMETHODIMP
++FileQuotaStreamWithWrite<FileStreamBase>::Write(const char* aBuf,
++                                                uint32_t aCount,
++                                                uint32_t* _retval)
++{
++  nsresult rv;
++
++  if (FileQuotaStreamWithWrite::mQuotaObject) {
++    int64_t offset;
++    rv = FileStreamBase::Tell(&offset);
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    if (!FileQuotaStreamWithWrite::
++         mQuotaObject->MaybeAllocateMoreSpace(offset, aCount)) {
++      return NS_ERROR_FAILURE;
++    }
++  }
++
++  rv = FileStreamBase::Write(aBuf, aCount, _retval);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  return NS_OK;
++}
++
++NS_IMPL_ISUPPORTS_INHERITED0(FileInputStream, nsFileInputStream)
++
++already_AddRefed<FileInputStream>
++FileInputStream::Create(const nsACString& aOrigin, nsIFile* aFile,
++                        int32_t aIOFlags, int32_t aPerm,
++                        int32_t aBehaviorFlags)
++{
++  nsRefPtr<FileInputStream> stream = new FileInputStream(aOrigin);
++  nsresult rv = stream->Init(aFile, aIOFlags, aPerm, aBehaviorFlags);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++  return stream.forget();
++}
++
++NS_IMPL_ISUPPORTS_INHERITED0(FileOutputStream, nsFileOutputStream)
++
++already_AddRefed<FileOutputStream>
++FileOutputStream::Create(const nsACString& aOrigin, nsIFile* aFile,
++                         int32_t aIOFlags, int32_t aPerm,
++                         int32_t aBehaviorFlags)
++{
++  nsRefPtr<FileOutputStream> stream = new FileOutputStream(aOrigin);
++  nsresult rv = stream->Init(aFile, aIOFlags, aPerm, aBehaviorFlags);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++  return stream.forget();
++}
++
++NS_IMPL_ISUPPORTS_INHERITED0(FileStream, nsFileStream)
++
++already_AddRefed<FileStream>
++FileStream::Create(const nsACString& aOrigin, nsIFile* aFile, int32_t aIOFlags,
++                   int32_t aPerm, int32_t aBehaviorFlags)
++{
++  nsRefPtr<FileStream> stream = new FileStream(aOrigin);
++  nsresult rv = stream->Init(aFile, aIOFlags, aPerm, aBehaviorFlags);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++  return stream.forget();
++}
+diff --git dom/quota/FileStreams.h dom/quota/FileStreams.h
+new file mode 100644
+index 0000000..77bfad4
+--- /dev/null
++++ mozilla/dom/quota/FileStreams.h
+@@ -0,0 +1,115 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#ifndef mozilla_dom_quota_filestreams_h__
++#define mozilla_dom_quota_filestreams_h__
++
++#include "QuotaCommon.h"
++
++#include "nsFileStreams.h"
++
++#include "QuotaManager.h"
++
++BEGIN_QUOTA_NAMESPACE
++
++template <class FileStreamBase>
++class FileQuotaStream : public FileStreamBase
++{
++public:
++  // nsFileStreamBase override
++  NS_IMETHOD
++  SetEOF() MOZ_OVERRIDE;
++
++  NS_IMETHOD
++  Close() MOZ_OVERRIDE;
++
++protected:
++  FileQuotaStream(const nsACString& aOrigin)
++  : mOrigin(aOrigin)
++  { }
++
++  // nsFileStreamBase override
++  virtual nsresult
++  DoOpen() MOZ_OVERRIDE;
++
++  nsCString mOrigin;
++  nsRefPtr<QuotaObject> mQuotaObject;
++};
++
++template <class FileStreamBase>
++class FileQuotaStreamWithWrite : public FileQuotaStream<FileStreamBase>
++{
++public:
++  // nsFileStreamBase override
++  NS_IMETHOD
++  Write(const char* aBuf, uint32_t aCount, uint32_t* _retval) MOZ_OVERRIDE;
++
++protected:
++  FileQuotaStreamWithWrite(const nsACString& aOrigin)
++  : FileQuotaStream<FileStreamBase>(aOrigin)
++  { }
++};
++
++class FileInputStream : public FileQuotaStream<nsFileInputStream>
++{
++public:
++  NS_DECL_ISUPPORTS_INHERITED
++
++  static already_AddRefed<FileInputStream>
++  Create(const nsACString& aOrigin, nsIFile* aFile, int32_t aIOFlags = -1,
++         int32_t aPerm = -1, int32_t aBehaviorFlags = 0);
++
++private:
++  FileInputStream(const nsACString& aOrigin)
++  : FileQuotaStream<nsFileInputStream>(aOrigin)
++  { }
++
++  virtual ~FileInputStream() {
++    Close();
++  }
++};
++
++class FileOutputStream : public FileQuotaStreamWithWrite<nsFileOutputStream>
++{
++public:
++  NS_DECL_ISUPPORTS_INHERITED
++
++  static already_AddRefed<FileOutputStream>
++  Create(const nsACString& aOrigin, nsIFile* aFile, int32_t aIOFlags = -1,
++         int32_t aPerm = -1, int32_t aBehaviorFlags = 0);
++
++private:
++  FileOutputStream(const nsACString& aOrigin)
++  : FileQuotaStreamWithWrite<nsFileOutputStream>(aOrigin)
++  { }
++
++  virtual ~FileOutputStream() {
++    Close();
++  }
++};
++
++class FileStream : public FileQuotaStreamWithWrite<nsFileStream>
++{
++public:
++  NS_DECL_ISUPPORTS_INHERITED
++
++  static already_AddRefed<FileStream>
++  Create(const nsACString& aOrigin, nsIFile* aFile, int32_t aIOFlags = -1,
++         int32_t aPerm = -1, int32_t aBehaviorFlags = 0);
++
++private:
++  FileStream(const nsACString& aOrigin)
++  : FileQuotaStreamWithWrite<nsFileStream>(aOrigin)
++  { }
++
++  virtual ~FileStream() {
++    Close();
++  }
++};
++
++END_QUOTA_NAMESPACE
++
++#endif /* mozilla_dom_quota_filestreams_h__ */
+diff --git dom/quota/Makefile.in dom/quota/Makefile.in
+new file mode 100644
+index 0000000..49be551
+--- /dev/null
++++ mozilla/dom/quota/Makefile.in
+@@ -0,0 +1,33 @@
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this file,
++# You can obtain one at http://mozilla.org/MPL/2.0/.
++
++DEPTH            = ../..
++topsrcdir        = @top_srcdir@
++srcdir           = @srcdir@
++VPATH            = @srcdir@
++
++include $(DEPTH)/config/autoconf.mk
++
++MODULE           = dom
++LIBRARY_NAME     = domquota_s
++XPIDL_MODULE     = dom_quota
++LIBXUL_LIBRARY   = 1
++FORCE_STATIC_LIB = 1
++
++include $(topsrcdir)/dom/dom-config.mk
++
++EXPORTS_NAMESPACES = mozilla/dom/quota
++
++CPPSRCS = \
++  FileStreams.cpp \
++  QuotaManager.cpp \
++  $(NULL)
++
++EXPORTS_mozilla/dom/quota = \
++  FileStreams.h \
++  QuotaCommon.h \
++  QuotaManager.h \
++  $(NULL)
++
++include $(topsrcdir)/config/rules.mk
+diff --git dom/quota/QuotaCommon.h dom/quota/QuotaCommon.h
+new file mode 100644
+index 0000000..a415d17
+--- /dev/null
++++ mozilla/dom/quota/QuotaCommon.h
+@@ -0,0 +1,23 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
++ * You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#ifndef mozilla_dom_quota_quotacommon_h__
++#define mozilla_dom_quota_quotacommon_h__
++
++#include "nsAutoPtr.h"
++#include "nsCOMPtr.h"
++#include "nsDebug.h"
++#include "nsStringGlue.h"
++#include "nsTArray.h"
++
++#define BEGIN_QUOTA_NAMESPACE \
++  namespace mozilla { namespace dom { namespace quota {
++#define END_QUOTA_NAMESPACE \
++  } /* namespace quota */ } /* namespace dom */ } /* namespace mozilla */
++#define USING_QUOTA_NAMESPACE \
++  using namespace mozilla::dom::quota;
++
++#endif // mozilla_dom_quota_quotacommon_h__
+diff --git dom/quota/QuotaManager.cpp dom/quota/QuotaManager.cpp
+new file mode 100644
+index 0000000..b251606
+--- /dev/null
++++ mozilla/dom/quota/QuotaManager.cpp
+@@ -0,0 +1,294 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
++ * You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#include "QuotaManager.h"
++
++#include "nsIFile.h"
++
++#include "mozilla/ClearOnShutdown.h"
++#include "nsComponentManagerUtils.h"
++
++#include "mozilla/dom/indexedDB/IndexedDatabaseManager.h"
++
++USING_QUOTA_NAMESPACE
++
++namespace {
++
++nsAutoPtr<QuotaManager> gInstance;
++
++PLDHashOperator
++RemoveQuotaForPatternCallback(const nsACString& aKey,
++                              nsRefPtr<OriginInfo>& aValue,
++                              void* aUserArg)
++{
++  NS_ASSERTION(!aKey.IsEmpty(), "Empty key!");
++  NS_ASSERTION(aValue, "Null pointer!");
++  NS_ASSERTION(aUserArg, "Null pointer!");
++
++  const nsACString* pattern =
++    static_cast<const nsACString*>(aUserArg);
++
++  if (StringBeginsWith(aKey, *pattern)) {
++    return PL_DHASH_REMOVE;
++  }
++
++  return PL_DHASH_NEXT;
++}
++
++} // anonymous namespace
++
++void
++QuotaObject::AddRef()
++{
++  QuotaManager* quotaManager = QuotaManager::Get();
++  if (!quotaManager) {
++    NS_ERROR("Null quota manager, this shouldn't happen, possible leak!");
++
++    NS_AtomicIncrementRefcnt(mRefCnt);
++
++    return;
++  }
++
++  MutexAutoLock lock(quotaManager->mQuotaMutex);
++
++  ++mRefCnt;
++}
++
++void
++QuotaObject::Release()
++{
++  QuotaManager* quotaManager = QuotaManager::Get();
++  if (!quotaManager) {
++    NS_ERROR("Null quota manager, this shouldn't happen, possible leak!");
++
++    nsrefcnt count = NS_AtomicDecrementRefcnt(mRefCnt);
++    if (count == 0) {
++      mRefCnt = 1;
++      delete this;
++    }
++
++    return;
++  }
++
++  {
++    MutexAutoLock lock(quotaManager->mQuotaMutex);
++
++    --mRefCnt;
++
++    if (mRefCnt > 0) {
++      return;
++    }
++
++    if (mOriginInfo) {
++      mOriginInfo->mQuotaObjects.Remove(mPath);
++    }
++  }
++
++  delete this;
++}
++
++void
++QuotaObject::UpdateSize(int64_t aSize)
++{
++  QuotaManager* quotaManager = QuotaManager::Get();
++  NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++  MutexAutoLock lock(quotaManager->mQuotaMutex);
++
++  if (mOriginInfo) {
++    mOriginInfo->mUsage -= mSize;
++    mSize = aSize;
++    mOriginInfo->mUsage += mSize;
++  }
++}
++
++bool
++QuotaObject::MaybeAllocateMoreSpace(int64_t aOffset, int32_t aCount)
++{
++  int64_t end = aOffset + aCount;
++
++  QuotaManager* quotaManager = QuotaManager::Get();
++  NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++  MutexAutoLock lock(quotaManager->mQuotaMutex);
++
++  if (mSize >= end || !mOriginInfo) {
++    return true;
++  }
++
++  int64_t newUsage = mOriginInfo->mUsage - mSize + end;
++  if (newUsage > mOriginInfo->mLimit) {
++    if (!indexedDB::IndexedDatabaseManager::QuotaIsLifted()) {
++      return false;
++    }
++
++    nsCString origin = mOriginInfo->mOrigin;
++
++    mOriginInfo->LockedClearOriginInfos();
++    NS_ASSERTION(!mOriginInfo,
++                 "Should have cleared in LockedClearOriginInfos!");
++
++    quotaManager->mOriginInfos.Remove(origin);
++
++    mSize = end;
++
++    return true;
++  }
++
++  mOriginInfo->mUsage = newUsage;
++  mSize = end;
++
++  return true;
++}
++
++#ifdef DEBUG
++void
++OriginInfo::LockedClearOriginInfos()
++{
++  QuotaManager* quotaManager = QuotaManager::Get();
++  NS_ASSERTION(quotaManager, "Shouldn't be null!");
++
++  quotaManager->mQuotaMutex.AssertCurrentThreadOwns();
++
++  mQuotaObjects.EnumerateRead(ClearOriginInfoCallback, nullptr);
++}
++#endif
++
++// static
++PLDHashOperator
++OriginInfo::ClearOriginInfoCallback(const nsAString& aKey,
++                                    QuotaObject* aValue,
++                                    void* aUserArg)
++{
++  NS_ASSERTION(!aKey.IsEmpty(), "Empty key!");
++  NS_ASSERTION(aValue, "Null pointer!");
++
++  aValue->mOriginInfo = nullptr;
++
++  return PL_DHASH_NEXT;
++}
++
++// static
++QuotaManager*
++QuotaManager::GetOrCreate()
++{
++  if (!gInstance) {
++    NS_ASSERTION(NS_IsMainThread(), "Wrong thread!");
++
++    gInstance = new QuotaManager();
++
++    ClearOnShutdown(&gInstance);
++  }
++
++  return gInstance;
++}
++
++// static
++QuotaManager*
++QuotaManager::Get()
++{
++  // Does not return an owning reference.
++  return gInstance;
++}
++
++void
++QuotaManager::InitQuotaForOrigin(const nsACString& aOrigin,
++                                 int64_t aLimit,
++                                 int64_t aUsage)
++{
++  OriginInfo* info = new OriginInfo(aOrigin, aLimit * 1024 * 1024, aUsage);
++
++  MutexAutoLock lock(mQuotaMutex);
++
++  NS_ASSERTION(!mOriginInfos.GetWeak(aOrigin), "Replacing an existing entry!");
++  mOriginInfos.Put(aOrigin, info);
++}
++
++void
++QuotaManager::DecreaseUsageForOrigin(const nsACString& aOrigin,
++                                     int64_t aSize)
++{
++  MutexAutoLock lock(mQuotaMutex);
++
++  nsRefPtr<OriginInfo> originInfo;
++  mOriginInfos.Get(aOrigin, getter_AddRefs(originInfo));
++
++  if (originInfo) {
++    originInfo->mUsage -= aSize;
++  }
++}
++
++void
++QuotaManager::RemoveQuotaForPattern(const nsACString& aPattern)
++{
++  NS_ASSERTION(!aPattern.IsEmpty(), "Empty pattern!");
++
++  MutexAutoLock lock(mQuotaMutex);
++
++  mOriginInfos.Enumerate(RemoveQuotaForPatternCallback,
++                         const_cast<nsACString*>(&aPattern));
++}
++
++already_AddRefed<QuotaObject>
++QuotaManager::GetQuotaObject(const nsACString& aOrigin,
++                             nsIFile* aFile)
++{
++  NS_ASSERTION(!NS_IsMainThread(), "Wrong thread!");
++
++  nsString path;
++  nsresult rv = aFile->GetPath(path);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  int64_t fileSize;
++
++  bool exists;
++  rv = aFile->Exists(&exists);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  if (exists) {
++    rv = aFile->GetFileSize(&fileSize);
++    NS_ENSURE_SUCCESS(rv, nullptr);
++  }
++  else {
++    fileSize = 0;
++  }
++
++  QuotaObject* info = nullptr;
++  {
++    MutexAutoLock lock(mQuotaMutex);
++
++    nsRefPtr<OriginInfo> originInfo;
++    mOriginInfos.Get(aOrigin, getter_AddRefs(originInfo));
++
++    if (!originInfo) {
++      return nullptr;
++    }
++
++    originInfo->mQuotaObjects.Get(path, &info);
++
++    if (!info) {
++      info = new QuotaObject(originInfo, path, fileSize);
++      originInfo->mQuotaObjects.Put(path, info);
++    }
++  }
++
++  nsRefPtr<QuotaObject> result = info;
++  return result.forget();
++}
++
++already_AddRefed<QuotaObject>
++QuotaManager::GetQuotaObject(const nsACString& aOrigin,
++                             const nsAString& aPath)
++{
++  nsresult rv;
++  nsCOMPtr<nsIFile> file = do_CreateInstance(NS_LOCAL_FILE_CONTRACTID, &rv);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  rv = file->InitWithPath(aPath);
++  NS_ENSURE_SUCCESS(rv, nullptr);
++
++  return GetQuotaObject(aOrigin, file);
++}
+diff --git dom/quota/QuotaManager.h dom/quota/QuotaManager.h
+new file mode 100644
+index 0000000..e19acdd
+--- /dev/null
++++ mozilla/dom/quota/QuotaManager.h
+@@ -0,0 +1,147 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
++ * You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#ifndef mozilla_dom_quota_quotamanager_h__
++#define mozilla_dom_quota_quotamanager_h__
++
++#include "QuotaCommon.h"
++
++#include "mozilla/Mutex.h"
++#include "nsDataHashtable.h"
++#include "nsRefPtrHashtable.h"
++#include "nsThreadUtils.h"
++
++BEGIN_QUOTA_NAMESPACE
++
++class OriginInfo;
++class QuotaManager;
++
++class QuotaObject
++{
++  friend class OriginInfo;
++  friend class QuotaManager;
++
++public:
++  void
++  AddRef();
++
++  void
++  Release();
++
++  void
++  UpdateSize(int64_t aSize);
++
++  bool
++  MaybeAllocateMoreSpace(int64_t aOffset, int32_t aCount);
++
++private:
++  QuotaObject(OriginInfo* aOriginInfo, const nsAString& aPath, int64_t aSize)
++  : mOriginInfo(aOriginInfo), mPath(aPath), mSize(aSize)
++  { }
++
++  virtual ~QuotaObject()
++  { }
++
++  nsAutoRefCnt mRefCnt;
++
++  OriginInfo* mOriginInfo;
++  nsString mPath;
++  int64_t mSize;
++};
++
++class OriginInfo
++{
++  friend class QuotaManager;
++  friend class QuotaObject;
++
++public:
++  OriginInfo(const nsACString& aOrigin, int64_t aLimit, int64_t aUsage)
++  : mOrigin(aOrigin), mLimit(aLimit), mUsage(aUsage)
++  {
++    mQuotaObjects.Init();
++  }
++
++  NS_INLINE_DECL_THREADSAFE_REFCOUNTING(OriginInfo)
++
++private:
++  void
++#ifdef DEBUG
++  LockedClearOriginInfos();
++#else
++  LockedClearOriginInfos()
++  {
++    mQuotaObjects.EnumerateRead(ClearOriginInfoCallback, nullptr);
++  }
++#endif
++
++  static PLDHashOperator
++  ClearOriginInfoCallback(const nsAString& aKey,
++                          QuotaObject* aValue, void* aUserArg);
++
++  nsDataHashtable<nsStringHashKey, QuotaObject*> mQuotaObjects;
++
++  nsCString mOrigin;
++  int64_t mLimit;
++  int64_t mUsage;
++};
++
++class QuotaManager
++{
++  friend class nsAutoPtr<QuotaManager>;
++  friend class OriginInfo;
++  friend class QuotaObject;
++
++public:
++  // Returns a non-owning reference.
++  static QuotaManager*
++  GetOrCreate();
++
++  // Returns a non-owning reference.
++  static QuotaManager*
++  Get();
++
++  void
++  InitQuotaForOrigin(const nsACString& aOrigin,
++                     int64_t aLimit,
++                     int64_t aUsage);
++
++  void
++  DecreaseUsageForOrigin(const nsACString& aOrigin,
++                         int64_t aSize);
++
++  void
++  RemoveQuotaForPattern(const nsACString& aPattern);
++
++  already_AddRefed<QuotaObject>
++  GetQuotaObject(const nsACString& aOrigin,
++                 nsIFile* aFile);
++
++  already_AddRefed<QuotaObject>
++  GetQuotaObject(const nsACString& aOrigin,
++                 const nsAString& aPath);
++
++private:
++  QuotaManager()
++  : mQuotaMutex("QuotaManager.mQuotaMutex")
++  {
++    NS_ASSERTION(NS_IsMainThread(), "Wrong thread!");
++
++    mOriginInfos.Init();
++  }
++
++  virtual ~QuotaManager()
++  {
++    NS_ASSERTION(NS_IsMainThread(), "Wrong thread!");
++  }
++
++  mozilla::Mutex mQuotaMutex;
++
++  nsRefPtrHashtable<nsCStringHashKey, OriginInfo> mOriginInfos;
++};
++
++END_QUOTA_NAMESPACE
++
++#endif /* mozilla_dom_quota_quotamanager_h__ */
+diff --git layout/build/Makefile.in layout/build/Makefile.in
+index e6b32da..496b55f 100644
+--- mozilla/layout/build/Makefile.in
++++ mozilla/layout/build/Makefile.in
+@@ -69,6 +69,7 @@ SHARED_LIBRARY_LIBS = \
+ 	$(DEPTH)/dom/encoding/$(LIB_PREFIX)domencoding_s.$(LIB_SUFFIX) \
+ 	$(DEPTH)/dom/file/$(LIB_PREFIX)domfile_s.$(LIB_SUFFIX) \
+ 	$(DEPTH)/dom/power/$(LIB_PREFIX)dom_power_s.$(LIB_SUFFIX) \
++	$(DEPTH)/dom/quota/$(LIB_PREFIX)domquota_s.$(LIB_SUFFIX) \
+ 	$(DEPTH)/dom/settings/$(LIB_PREFIX)jsdomsettings_s.$(LIB_SUFFIX) \
+ 	$(DEPTH)/dom/permission/$(LIB_PREFIX)jsdompermissionsettings_s.$(LIB_SUFFIX) \
+ 	$(DEPTH)/dom/network/src/$(LIB_PREFIX)dom_network_s.$(LIB_SUFFIX) \
+diff --git netwerk/base/src/Makefile.in netwerk/base/src/Makefile.in
+index 0c0d60e..e8cef48 100644
+--- mozilla/netwerk/base/src/Makefile.in
++++ mozilla/netwerk/base/src/Makefile.in
+@@ -19,6 +19,7 @@ LIBXUL_LIBRARY  = 1
+ EXPORTS = \
+ 		nsMIMEInputStream.h \
+ 		nsURLHelper.h \
++		nsFileStreams.h \
+ 		$(NULL)
+ 
+ EXPORTS_NAMESPACES = mozilla/net
+diff --git netwerk/base/src/nsFileStreams.cpp netwerk/base/src/nsFileStreams.cpp
+index 2420ffc..ecc26aa 100644
+--- mozilla/netwerk/base/src/nsFileStreams.cpp
++++ mozilla/netwerk/base/src/nsFileStreams.cpp
+@@ -51,7 +51,9 @@ nsFileStreamBase::~nsFileStreamBase()
+     Close();
+ }
+ 
+-NS_IMPL_THREADSAFE_ISUPPORTS1(nsFileStreamBase, nsISeekableStream)
++NS_IMPL_THREADSAFE_ISUPPORTS2(nsFileStreamBase,
++                              nsISeekableStream,
++                              nsIFileMetadata)
+ 
+ NS_IMETHODIMP
+ nsFileStreamBase::Seek(int32_t whence, int64_t offset)
+@@ -124,6 +126,52 @@ nsFileStreamBase::SetEOF()
+     return NS_OK;
+ }
+ 
++NS_IMETHODIMP
++nsFileStreamBase::GetSize(int64_t* _retval)
++{
++    nsresult rv = DoPendingOpen();
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    if (!mFD) {
++        return NS_BASE_STREAM_CLOSED;
++    }
++
++    PRFileInfo64 info;
++    if (PR_GetOpenFileInfo64(mFD, &info) == PR_FAILURE) {
++        return NS_BASE_STREAM_OSERROR;
++    }
++
++    *_retval = int64_t(info.size);
++
++    return NS_OK;
++}
++
++NS_IMETHODIMP
++nsFileStreamBase::GetLastModified(int64_t* _retval)
++{
++    nsresult rv = DoPendingOpen();
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    if (!mFD) {
++        return NS_BASE_STREAM_CLOSED;
++    }
++
++    PRFileInfo64 info;
++    if (PR_GetOpenFileInfo64(mFD, &info) == PR_FAILURE) {
++        return NS_BASE_STREAM_OSERROR;
++    }
++
++    int64_t modTime = int64_t(info.modifyTime);
++    if (modTime == 0) {
++        *_retval = 0;
++    }
++    else {
++        *_retval = modTime / int64_t(PR_USEC_PER_MSEC);
++    }
++
++    return NS_OK;
++}
++
+ nsresult
+ nsFileStreamBase::Close()
+ {
+@@ -934,13 +982,12 @@ nsSafeFileOutputStream::Write(const char *buf, uint32_t count, uint32_t *result)
+ ////////////////////////////////////////////////////////////////////////////////
+ // nsFileStream
+ 
+-NS_IMPL_ISUPPORTS_INHERITED4(nsFileStream, 
++NS_IMPL_ISUPPORTS_INHERITED3(nsFileStream,
+                              nsFileStreamBase,
+                              nsIInputStream,
+                              nsIOutputStream,
+-                             nsIFileStream,
+-                             nsIFileMetadata)
+- 
++                             nsIFileStream)
++
+ NS_IMETHODIMP
+ nsFileStream::Init(nsIFile* file, int32_t ioFlags, int32_t perm,
+                    int32_t behaviorFlags)
+@@ -959,50 +1006,4 @@ nsFileStream::Init(nsIFile* file, int32_t ioFlags, int32_t perm,
+                      mBehaviorFlags & nsIFileStream::DEFER_OPEN);
+ }
+ 
+-NS_IMETHODIMP
+-nsFileStream::GetSize(int64_t* _retval)
+-{
+-    nsresult rv = DoPendingOpen();
+-    NS_ENSURE_SUCCESS(rv, rv);
+-
+-    if (!mFD) {
+-        return NS_BASE_STREAM_CLOSED;
+-    }
+-
+-    PRFileInfo64 info;
+-    if (PR_GetOpenFileInfo64(mFD, &info) == PR_FAILURE) {
+-        return NS_BASE_STREAM_OSERROR;
+-    }
+-
+-    *_retval = int64_t(info.size);
+-
+-    return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-nsFileStream::GetLastModified(int64_t* _retval)
+-{
+-    nsresult rv = DoPendingOpen();
+-    NS_ENSURE_SUCCESS(rv, rv);
+-
+-    if (!mFD) {
+-        return NS_BASE_STREAM_CLOSED;
+-    }
+-
+-    PRFileInfo64 info;
+-    if (PR_GetOpenFileInfo64(mFD, &info) == PR_FAILURE) {
+-        return NS_BASE_STREAM_OSERROR;
+-    }
+-
+-    int64_t modTime = int64_t(info.modifyTime);
+-    if (modTime == 0) {
+-        *_retval = 0;
+-    }
+-    else {
+-        *_retval = modTime / int64_t(PR_USEC_PER_MSEC);
+-    }
+-
+-    return NS_OK;
+-}
+-
+ ////////////////////////////////////////////////////////////////////////////////
+diff --git netwerk/base/src/nsFileStreams.h netwerk/base/src/nsFileStreams.h
+index 13e5b45..1aa6a82 100644
+--- mozilla/netwerk/base/src/nsFileStreams.h
++++ mozilla/netwerk/base/src/nsFileStreams.h
+@@ -24,11 +24,13 @@
+ 
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-class nsFileStreamBase : public nsISeekableStream
++class nsFileStreamBase : public nsISeekableStream,
++                         public nsIFileMetadata
+ {
+ public:
+     NS_DECL_ISUPPORTS
+     NS_DECL_NSISEEKABLESTREAM
++    NS_DECL_NSIFILEMETADATA
+ 
+     nsFileStreamBase();
+     virtual ~nsFileStreamBase();
+@@ -124,8 +126,8 @@ public:
+     NS_IMETHOD IsNonBlocking(bool* _retval)
+     {
+         return nsFileStreamBase::IsNonBlocking(_retval);
+-    } 
+-    
++    }
++
+     // Overrided from nsFileStreamBase
+     NS_IMETHOD Seek(int32_t aWhence, int64_t aOffset);
+ 
+@@ -260,13 +262,11 @@ protected:
+ class nsFileStream : public nsFileStreamBase,
+                      public nsIInputStream,
+                      public nsIOutputStream,
+-                     public nsIFileStream,
+-                     public nsIFileMetadata
++                     public nsIFileStream
+ {
+ public:
+     NS_DECL_ISUPPORTS_INHERITED
+     NS_DECL_NSIFILESTREAM
+-    NS_DECL_NSIFILEMETADATA
+     NS_FORWARD_NSIINPUTSTREAM(nsFileStreamBase::)
+ 
+     // Can't use NS_FORWARD_NSIOUTPUTSTREAM due to overlapping methods
+diff --git storage/public/Makefile.in storage/public/Makefile.in
+index c485d4e..c05e6f3 100644
+--- mozilla/storage/public/Makefile.in
++++ mozilla/storage/public/Makefile.in
+@@ -36,7 +36,6 @@ XPIDLSRCS = \
+   mozIStorageCompletionCallback.idl \
+   mozIStorageBaseStatement.idl \
+   mozIStorageAsyncStatement.idl \
+-  mozIStorageServiceQuotaManagement.idl \
+   mozIStorageVacuumParticipant.idl \
+ 	$(NULL)
+ # SEE ABOVE NOTE!
+diff --git storage/public/mozIStorageService.idl storage/public/mozIStorageService.idl
+index 3087a11..483649b 100644
+--- mozilla/storage/public/mozIStorageService.idl
++++ mozilla/storage/public/mozIStorageService.idl
+@@ -7,6 +7,7 @@
+ 
+ interface mozIStorageConnection;
+ interface nsIFile;
++interface nsIFileURL;
+ 
+ /**
+  * The mozIStorageService interface is intended to be implemented by
+@@ -15,7 +16,7 @@ interface nsIFile;
+  *
+  * This is the only way to open a database connection.
+  */
+-[scriptable, uuid(fe8e95cb-b377-4c8d-bccb-d9198c67542b)]
++[scriptable, uuid(12bfad34-cca3-40fb-8736-d8bf9db61a27)]
+ interface mozIStorageService : nsISupports {
+   /**
+    * Get a connection to a named special database storage.
+@@ -106,6 +107,16 @@ interface mozIStorageService : nsISupports {
+    */
+   mozIStorageConnection openUnsharedDatabase(in nsIFile aDatabaseFile);
+ 
++  /**
++   * See openDatabase(). Exactly the same only initialized with a file URL.
++   * Custom parameters can be passed to SQLite and VFS implementations through
++   * the query part of the URL.
++   *
++   * @param aURL
++   *        A nsIFileURL that represents the database that is to be opened.
++   */
++  mozIStorageConnection openDatabaseWithFileURL(in nsIFileURL aFileURL);
++
+   /*
+    * Utilities
+    */
+diff --git storage/public/mozIStorageServiceQuotaManagement.idl storage/public/mozIStorageServiceQuotaManagement.idl
+deleted file mode 100644
+index ee5086b..0000000
+--- mozilla/storage/public/mozIStorageServiceQuotaManagement.idl
++++ /dev/null
+@@ -1,99 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+-/* vim: set ts=2 et sw=2 tw=80: */
+-/* This Source Code Form is subject to the terms of the Mozilla Public
+- * License, v. 2.0. If a copy of the MPL was not distributed with this
+- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+-
+-#include "nsISupports.idl"
+-
+-interface mozIStorageConnection;
+-interface nsIFile;
+-
+-[scriptable, function, uuid(ae94f0a5-ebdf-48f4-9959-085e13235d8d)]
+-interface mozIStorageQuotaCallback : nsISupports
+-{
+-  /**
+-   * Called when the file size quota for a group of databases is exceeded.
+-   *
+-   * @param aFilename
+-   *        The filename of the database that has exceeded the quota.
+-   *
+-   * @param aCurrentSizeLimit
+-   *        The current size (in bytes) of the quota.
+-   *
+-   * @param aCurrentTotalSize
+-   *        The current size of all databases in the quota group.
+-   *
+-   * @param aUserData
+-   *        Any additional data that was provided to the
+-   *        setQuotaForFilenamePattern function.
+-   *
+-   * @returns A new quota size. A new quota of 0 will disable the quota callback
+-   *          and any quota value less than aCurrentTotalSize will cause the
+-   *          database operation to fail with NS_ERROR_FILE_NO_DEVICE_SPACE.
+-   */
+-  long long quotaExceeded(in ACString aFilename,
+-                          in long long aCurrentSizeLimit,
+-                          in long long aCurrentTotalSize,
+-                          in nsISupports aUserData);
+-};
+-
+-/**
+- * This is a temporary interface that should eventually merge with
+- * mozIStorageService.
+- */
+-[scriptable, uuid(4d81faf5-fe01-428b-99b8-c94cba12fd72)]
+-interface mozIStorageServiceQuotaManagement : nsISupports
+-{
+-  /**
+-   * See mozIStorageService.openDatabase. Exactly the same only with a custom
+-   * SQLite VFS.
+-   */
+-  mozIStorageConnection openDatabaseWithVFS(in nsIFile aDatabaseFile,
+-                                            in ACString aVFSName);
+-
+-  /**
+-   * Set a file size quota for a group of databases matching the given filename
+-   * pattern, optionally specifying a callback when the quota is exceeded.
+-   *
+-   * @param aPattern
+-   *        A pattern to match filenames for inclusion in the quota system. May
+-   *        contain the following special characters:
+-   *          '*'    Matches any sequence of zero or more characters.
+-   *          '?'    Matches exactly one character.
+-   *          [...]  Matches one character from the enclosed list of characters.
+-   *          [^...] Matches one character not in the enclosed list.
+-   *
+-   * @param aSizeLimit
+-   *        The size limit (in bytes) for the quota group.
+-   *
+-   * @param aCallback
+-   *        A callback that will be used when the quota is exceeded.
+-   *
+-   * @param aUserData
+-   *        Additional information to be passed to the callback.
+-   */
+-  void setQuotaForFilenamePattern(in ACString aPattern,
+-                                  in long long aSizeLimit,
+-                                  in mozIStorageQuotaCallback aCallback,
+-                                  in nsISupports aUserData);
+-
+-  /**
+-   * Adds, removes, or updates the file size information maintained by the quota
+-   * system for files not opened through openDatabaseWithVFS().
+-   *
+-   * Use this function when you want files to be included in quota calculations
+-   * that are either a) not SQLite databases, or b) SQLite databases that have
+-   * not been opened.
+-   *
+-   * This function will have no effect on files that do not match an existing
+-   * quota pattern (set previously by setQuotaForFilenamePattern()).
+-   * 
+-   * @param aFile
+-   *        The file for which quota information should be updated. If the file
+-   *        exists then its size information will be added or refreshed. If the
+-   *        file does not exist then the file will be removed from tracking
+-   *        under the quota system.
+-   */
+-  void updateQuotaInformationForFile(in nsIFile aFile);
+-};
+diff --git storage/public/storage.h storage/public/storage.h
+index 8e571e2..08f39f3 100644
+--- mozilla/storage/public/storage.h
++++ mozilla/storage/public/storage.h
+@@ -24,7 +24,6 @@
+ #include "mozIStorageStatementCallback.h"
+ #include "mozIStorageBindingParamsArray.h"
+ #include "mozIStorageBindingParams.h"
+-#include "mozIStorageServiceQuotaManagement.h"
+ #include "mozIStorageVacuumParticipant.h"
+ #include "mozIStorageCompletionCallback.h"
+ #include "mozIStorageAsyncStatement.h"
+diff --git storage/src/TelemetryVFS.cpp storage/src/TelemetryVFS.cpp
+index 60de5c4..e4fce09 100644
+--- mozilla/storage/src/TelemetryVFS.cpp
++++ mozilla/storage/src/TelemetryVFS.cpp
+@@ -10,6 +10,7 @@
+ #include "sqlite3.h"
+ #include "nsThreadUtils.h"
+ #include "mozilla/Util.h"
++#include "mozilla/dom/quota/QuotaManager.h"
+ 
+ /**
+  * This preference is a workaround to allow users/sysadmins to identify
+@@ -24,6 +25,7 @@
+ namespace {
+ 
+ using namespace mozilla;
++using namespace mozilla::dom::quota;
+ 
+ struct Histograms {
+   const char *name;
+@@ -82,9 +84,17 @@ private:
+ };
+ 
+ struct telemetry_file {
+-  sqlite3_file base;        // Base class.  Must be first
+-  Histograms *histograms;   // histograms pertaining to this file
+-  sqlite3_file pReal[1];    // This contains the vfs that actually does work
++  // Base class.  Must be first
++  sqlite3_file base;
++
++  // histograms pertaining to this file
++  Histograms *histograms;
++
++  // quota object for this file
++  nsRefPtr<QuotaObject> quotaObject;
++
++  // This contains the vfs that actually does work
++  sqlite3_file pReal[1];
+ };
+ 
+ /*
+@@ -99,6 +109,7 @@ xClose(sqlite3_file *pFile)
+   if( rc==SQLITE_OK ){
+     delete p->base.pMethods;
+     p->base.pMethods = NULL;
++    p->quotaObject = nullptr;
+   }
+   return rc;
+ }
+@@ -126,6 +137,9 @@ int
+ xWrite(sqlite3_file *pFile, const void *zBuf, int iAmt, sqlite_int64 iOfst)
+ {
+   telemetry_file *p = (telemetry_file *)pFile;
++  if (p->quotaObject && !p->quotaObject->MaybeAllocateMoreSpace(iOfst, iAmt)) {
++    return SQLITE_FULL;
++  }
+   IOThreadAutoTimer ioTimer(p->histograms->writeMS);
+   int rc;
+   rc = p->pReal->pMethods->xWrite(p->pReal, zBuf, iAmt, iOfst);
+@@ -144,6 +158,9 @@ xTruncate(sqlite3_file *pFile, sqlite_int64 size)
+   int rc;
+   Telemetry::AutoTimer<Telemetry::MOZ_SQLITE_TRUNCATE_MS> timer;
+   rc = p->pReal->pMethods->xTruncate(p->pReal, size);
++  if (rc == SQLITE_OK && p->quotaObject) {
++    p->quotaObject->UpdateSize(size);
++  }
+   return rc;
+ }
+ 
+@@ -300,6 +317,18 @@ xOpen(sqlite3_vfs* vfs, const char *zName, sqlite3_file* pFile,
+       break;
+   }
+   p->histograms = h;
++
++  const char* origin;
++  if ((flags & SQLITE_OPEN_URI) &&
++      (origin = sqlite3_uri_parameter(zName, "origin"))) {
++    QuotaManager* quotaManager = QuotaManager::Get();
++    MOZ_ASSERT(quotaManager);
++
++    p->quotaObject = quotaManager->GetQuotaObject(nsDependentCString(origin),
++                                                  NS_ConvertUTF8toUTF16(zName));
++
++  }
++
+   rc = orig_vfs->xOpen(orig_vfs, zName, p->pReal, flags, pOutFlags);
+   if( rc != SQLITE_OK )
+     return rc;
+diff --git storage/src/mozStorageConnection.cpp storage/src/mozStorageConnection.cpp
+index 3afd3e1b..430824a 100644
+--- mozilla/storage/src/mozStorageConnection.cpp
++++ mozilla/storage/src/mozStorageConnection.cpp
+@@ -12,6 +12,7 @@
+ #include "nsIMemoryReporter.h"
+ #include "nsThreadUtils.h"
+ #include "nsIFile.h"
++#include "nsIFileURL.h"
+ #include "mozilla/Telemetry.h"
+ #include "mozilla/Mutex.h"
+ #include "mozilla/CondVar.h"
+@@ -471,34 +472,83 @@ Connection::getAsyncExecutionTarget()
+ }
+ 
+ nsresult
+-Connection::initialize(nsIFile *aDatabaseFile,
+-                       const char* aVFSName)
++Connection::initialize()
+ {
+   NS_ASSERTION (!mDBConn, "Initialize called on already opened database!");
+   SAMPLE_LABEL("storage", "Connection::initialize");
+ 
+-  int srv;
+-  nsresult rv;
++  // in memory database requested, sqlite uses a magic file name
++  int srv = ::sqlite3_open_v2(":memory:", &mDBConn, mFlags, NULL);
++  if (srv != SQLITE_OK) {
++    mDBConn = nullptr;
++    return convertResultCode(srv);
++  }
++
++  return initializeInternal(nullptr);
++}
++
++nsresult
++Connection::initialize(nsIFile *aDatabaseFile)
++{
++  NS_ASSERTION (aDatabaseFile, "Passed null file!");
++  NS_ASSERTION (!mDBConn, "Initialize called on already opened database!");
++  SAMPLE_LABEL("storage", "Connection::initialize");
+ 
+   mDatabaseFile = aDatabaseFile;
+ 
+-  if (aDatabaseFile) {
+-    nsAutoString path;
+-    rv = aDatabaseFile->GetPath(path);
+-    NS_ENSURE_SUCCESS(rv, rv);
++  nsAutoString path;
++  nsresult rv = aDatabaseFile->GetPath(path);
++  NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    srv = ::sqlite3_open_v2(NS_ConvertUTF16toUTF8(path).get(), &mDBConn, mFlags,
+-                            aVFSName);
+-  }
+-  else {
+-    // in memory database requested, sqlite uses a magic file name
+-    srv = ::sqlite3_open_v2(":memory:", &mDBConn, mFlags, aVFSName);
++  int srv = ::sqlite3_open_v2(NS_ConvertUTF16toUTF8(path).get(), &mDBConn,
++                              mFlags, NULL);
++  if (srv != SQLITE_OK) {
++    mDBConn = nullptr;
++    return convertResultCode(srv);
+   }
++
++  rv = initializeInternal(aDatabaseFile);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  mDatabaseFile = aDatabaseFile;
++
++  return NS_OK;
++}
++
++nsresult
++Connection::initialize(nsIFileURL *aFileURL)
++{
++  NS_ASSERTION (aFileURL, "Passed null file URL!");
++  NS_ASSERTION (!mDBConn, "Initialize called on already opened database!");
++  SAMPLE_LABEL("storage", "Connection::initialize");
++
++  nsCOMPtr<nsIFile> databaseFile;
++  nsresult rv = aFileURL->GetFile(getter_AddRefs(databaseFile));
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  nsAutoCString spec;
++  rv = aFileURL->GetSpec(spec);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  int srv = ::sqlite3_open_v2(spec.get(), &mDBConn, mFlags, NULL);
+   if (srv != SQLITE_OK) {
+     mDBConn = nullptr;
+     return convertResultCode(srv);
+   }
+ 
++  rv = initializeInternal(databaseFile);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  mFileURL = aFileURL;
++  mDatabaseFile = databaseFile;
++
++  return NS_OK;
++}
++
++
++nsresult
++Connection::initializeInternal(nsIFile* aDatabaseFile)
++{
+   // Properly wrap the database handle's mutex.
+   sharedDBMutex.initWithMutex(sqlite3_db_mutex(mDBConn));
+ 
+@@ -522,14 +572,14 @@ Connection::initialize(nsIFile *aDatabaseFile,
+   nsAutoCString pageSizeQuery(MOZ_STORAGE_UNIQUIFY_QUERY_STR
+                               "PRAGMA page_size = ");
+   pageSizeQuery.AppendInt(pageSize);
+-  rv = ExecuteSimpleSQL(pageSizeQuery);
++  nsresult rv = ExecuteSimpleSQL(pageSizeQuery);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   // Get the current page_size, since it may differ from the specified value.
+   sqlite3_stmt *stmt;
+   NS_NAMED_LITERAL_CSTRING(pragma_page_size,
+                            MOZ_STORAGE_UNIQUIFY_QUERY_STR "PRAGMA page_size");
+-  srv = prepareStatement(pragma_page_size, &stmt);
++  int srv = prepareStatement(pragma_page_size, &stmt);
+   if (srv == SQLITE_OK) {
+     if (SQLITE_ROW == stepStatement(stmt)) {
+       pageSize = ::sqlite3_column_int64(stmt, 0);
+@@ -962,7 +1012,8 @@ Connection::Clone(bool aReadOnly,
+   nsRefPtr<Connection> clone = new Connection(mStorageService, flags);
+   NS_ENSURE_TRUE(clone, NS_ERROR_OUT_OF_MEMORY);
+ 
+-  nsresult rv = clone->initialize(mDatabaseFile);
++  nsresult rv = mFileURL ? clone->initialize(mFileURL)
++                         : clone->initialize(mDatabaseFile);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   // Copy over pragmas from the original connection.
+diff --git storage/src/mozStorageConnection.h storage/src/mozStorageConnection.h
+index b71f5db..97f5cf8 100644
+--- mozilla/storage/src/mozStorageConnection.h
++++ mozilla/storage/src/mozStorageConnection.h
+@@ -25,6 +25,7 @@
+ 
+ struct PRLock;
+ class nsIFile;
++class nsIFileURL;
+ class nsIEventTarget;
+ class nsIThread;
+ 
+@@ -63,18 +64,27 @@ public:
+   Connection(Service *aService, int aFlags);
+ 
+   /**
++   * Creates the connection to an in-memory database.
++   */
++  nsresult initialize();
++
++  /**
+    * Creates the connection to the database.
+    *
+    * @param aDatabaseFile
+    *        The nsIFile of the location of the database to open, or create if it
+-   *        does not exist.  Passing in nullptr here creates an in-memory
+-   *        database.
+-   * @param aVFSName
+-   *        The VFS that SQLite will use when opening this database. NULL means
+-   *        "default".
++   *        does not exist.
+    */
+-  nsresult initialize(nsIFile *aDatabaseFile,
+-                      const char* aVFSName = NULL);
++  nsresult initialize(nsIFile *aDatabaseFile);
++
++  /**
++   * Creates the connection to the database.
++   *
++   * @param aFileURL
++   *        The nsIFileURL of the location of the database to open, or create if it
++   *        does not exist.
++   */
++  nsresult initialize(nsIFileURL *aFileURL);
+ 
+   // fetch the native handle
+   sqlite3 *GetNativeConnection() { return mDBConn; }
+@@ -155,6 +165,8 @@ public:
+ private:
+   ~Connection();
+ 
++  nsresult initializeInternal(nsIFile *aDatabaseFile);
++
+   /**
+    * Sets the database into a closed state so no further actions can be
+    * performed.
+@@ -206,6 +218,7 @@ private:
+   int progressHandler();
+ 
+   sqlite3 *mDBConn;
++  nsCOMPtr<nsIFileURL> mFileURL;
+   nsCOMPtr<nsIFile> mDatabaseFile;
+ 
+   /**
+diff --git storage/src/mozStorageService.cpp storage/src/mozStorageService.cpp
+index 00661d6..862a7da 100644
+--- mozilla/storage/src/mozStorageService.cpp
++++ mozilla/storage/src/mozStorageService.cpp
+@@ -24,8 +24,6 @@
+ #include "mozilla/Preferences.h"
+ 
+ #include "sqlite3.h"
+-#include "test_quota.h"
+-#include "test_quota.c"
+ 
+ #ifdef SQLITE_OS_WIN
+ // "windows.h" was included and it can #define lots of things we care about...
+@@ -35,61 +33,6 @@
+ #include "nsIPromptService.h"
+ #include "nsIMemoryReporter.h"
+ 
+-namespace {
+-
+-class QuotaCallbackData
+-{
+-public:
+-  QuotaCallbackData(mozIStorageQuotaCallback *aCallback,
+-                    nsISupports *aUserData)
+-  : callback(aCallback), userData(aUserData)
+-  {
+-    MOZ_COUNT_CTOR(QuotaCallbackData);
+-  }
+-
+-  ~QuotaCallbackData()
+-  {
+-    MOZ_COUNT_DTOR(QuotaCallbackData);
+-  }
+-
+-  static void Callback(const char *zFilename,
+-                       sqlite3_int64 *piLimit,
+-                       sqlite3_int64 iSize,
+-                       void *pArg)
+-  {
+-    NS_ASSERTION(zFilename && strlen(zFilename), "Null or empty filename!");
+-    NS_ASSERTION(piLimit, "Null pointer!");
+-
+-    QuotaCallbackData *data = static_cast<QuotaCallbackData*>(pArg);
+-    if (!data) {
+-      // No callback specified, return immediately.
+-      return;
+-    }
+-
+-    NS_ASSERTION(data->callback, "Should never have a null callback!");
+-
+-    nsDependentCString filename(zFilename);
+-
+-    int64_t newLimit;
+-    if (NS_SUCCEEDED(data->callback->QuotaExceeded(filename, *piLimit,
+-                                                   iSize, data->userData,
+-                                                   &newLimit))) {
+-      *piLimit = newLimit;
+-    }
+-  }
+-
+-  static void Destroy(void *aUserData)
+-  {
+-    delete static_cast<QuotaCallbackData*>(aUserData);
+-  }
+-
+-private:
+-  nsCOMPtr<mozIStorageQuotaCallback> callback;
+-  nsCOMPtr<nsISupports> userData;
+-};
+-
+-} // anonymous namespace
+-
+ ////////////////////////////////////////////////////////////////////////////////
+ //// Defines
+ 
+@@ -345,11 +288,10 @@ private:
+ ////////////////////////////////////////////////////////////////////////////////
+ //// Service
+ 
+-NS_IMPL_THREADSAFE_ISUPPORTS3(
++NS_IMPL_THREADSAFE_ISUPPORTS2(
+   Service,
+   mozIStorageService,
+-  nsIObserver,
+-  mozIStorageServiceQuotaManagement
++  nsIObserver
+ )
+ 
+ Service *Service::gService = nullptr;
+@@ -438,10 +380,6 @@ Service::~Service()
+ 
+   // Shutdown the sqlite3 API.  Warn if shutdown did not turn out okay, but
+   // there is nothing actionable we can do in that case.
+-  rc = ::sqlite3_quota_shutdown();
+-  if (rc != SQLITE_OK)
+-    NS_WARNING("sqlite3 did not shutdown cleanly.");
+-
+   rc = ::sqlite3_shutdown();
+   if (rc != SQLITE_OK)
+     NS_WARNING("sqlite3 did not shutdown cleanly.");
+@@ -636,9 +574,6 @@ Service::initialize()
+   } else {
+     NS_WARNING("Failed to register telemetry VFS");
+   }
+-  rc = ::sqlite3_quota_initialize("telemetry-vfs", 0);
+-  if (rc != SQLITE_OK)
+-    return convertResultCode(rc);
+ 
+   // Set the default value for the toolkit.storage.synchronous pref.  It will be
+   // updated with the user preference on the main thread.
+@@ -739,28 +674,24 @@ Service::OpenSpecialDatabase(const char *aStorageKey,
+     // connection to use a memory DB.
+   }
+   else if (::strcmp(aStorageKey, "profile") == 0) {
+-
+     rv = NS_GetSpecialDirectory(NS_APP_STORAGE_50_FILE,
+                                 getter_AddRefs(storageFile));
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    nsString filename;
+-    storageFile->GetPath(filename);
+-    nsCString filename8 = NS_ConvertUTF16toUTF8(filename.get());
+     // fall through to DB initialization
+   }
+   else {
+     return NS_ERROR_INVALID_ARG;
+   }
+ 
+-  Connection *msc = new Connection(this, SQLITE_OPEN_READWRITE);
+-  NS_ENSURE_TRUE(msc, NS_ERROR_OUT_OF_MEMORY);
++  nsRefPtr<Connection> msc = new Connection(this, SQLITE_OPEN_READWRITE);
+ 
+-  rv = msc->initialize(storageFile);
++  rv = storageFile ? msc->initialize(storageFile) : msc->initialize();
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  NS_ADDREF(*_connection = msc);
++  msc.forget(_connection);
+   return NS_OK;
++
+ }
+ 
+ NS_IMETHODIMP
+@@ -774,12 +705,11 @@ Service::OpenDatabase(nsIFile *aDatabaseFile,
+   int flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_SHAREDCACHE |
+               SQLITE_OPEN_CREATE;
+   nsRefPtr<Connection> msc = new Connection(this, flags);
+-  NS_ENSURE_TRUE(msc, NS_ERROR_OUT_OF_MEMORY);
+ 
+   nsresult rv = msc->initialize(aDatabaseFile);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  NS_ADDREF(*_connection = msc);
++  msc.forget(_connection);
+   return NS_OK;
+ }
+ 
+@@ -794,12 +724,30 @@ Service::OpenUnsharedDatabase(nsIFile *aDatabaseFile,
+   int flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_PRIVATECACHE |
+               SQLITE_OPEN_CREATE;
+   nsRefPtr<Connection> msc = new Connection(this, flags);
+-  NS_ENSURE_TRUE(msc, NS_ERROR_OUT_OF_MEMORY);
+ 
+   nsresult rv = msc->initialize(aDatabaseFile);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  NS_ADDREF(*_connection = msc);
++  msc.forget(_connection);
++  return NS_OK;
++}
++
++NS_IMETHODIMP
++Service::OpenDatabaseWithFileURL(nsIFileURL *aFileURL,
++                                 mozIStorageConnection **_connection)
++{
++  NS_ENSURE_ARG(aFileURL);
++
++  // Always ensure that SQLITE_OPEN_CREATE is passed in for compatibility
++  // reasons.
++  int flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_SHAREDCACHE |
++              SQLITE_OPEN_CREATE | SQLITE_OPEN_URI;
++  nsRefPtr<Connection> msc = new Connection(this, flags);
++
++  nsresult rv = msc->initialize(aFileURL);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  msc.forget(_connection);
+   return NS_OK;
+ }
+ 
+@@ -885,67 +833,5 @@ Service::Observe(nsISupports *, const char *aTopic, const PRUnichar *)
+   return NS_OK;
+ }
+ 
+-////////////////////////////////////////////////////////////////////////////////
+-//// mozIStorageServiceQuotaManagement
+-
+-NS_IMETHODIMP
+-Service::OpenDatabaseWithVFS(nsIFile *aDatabaseFile,
+-                             const nsACString &aVFSName,
+-                             mozIStorageConnection **_connection)
+-{
+-  NS_ENSURE_ARG(aDatabaseFile);
+-
+-  // Always ensure that SQLITE_OPEN_CREATE is passed in for compatibility
+-  // reasons.
+-  int flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_SHAREDCACHE |
+-              SQLITE_OPEN_CREATE;
+-  nsRefPtr<Connection> msc = new Connection(this, flags);
+-  NS_ENSURE_TRUE(msc, NS_ERROR_OUT_OF_MEMORY);
+-
+-  nsresult rv = msc->initialize(aDatabaseFile,
+-                                PromiseFlatCString(aVFSName).get());
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  NS_ADDREF(*_connection = msc);
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-Service::SetQuotaForFilenamePattern(const nsACString &aPattern,
+-                                    int64_t aSizeLimit,
+-                                    mozIStorageQuotaCallback *aCallback,
+-                                    nsISupports *aUserData)
+-{
+-  NS_ENSURE_FALSE(aPattern.IsEmpty(), NS_ERROR_INVALID_ARG);
+-
+-  nsAutoPtr<QuotaCallbackData> data;
+-  if (aSizeLimit && aCallback) {
+-    data = new QuotaCallbackData(aCallback, aUserData);
+-  }
+-
+-  int rc = ::sqlite3_quota_set(PromiseFlatCString(aPattern).get(),
+-                               aSizeLimit, QuotaCallbackData::Callback,
+-                               data, QuotaCallbackData::Destroy);
+-  NS_ENSURE_TRUE(rc == SQLITE_OK, convertResultCode(rc));
+-
+-  data.forget();
+-  return NS_OK;
+-}
+-
+-NS_IMETHODIMP
+-Service::UpdateQuotaInformationForFile(nsIFile *aFile)
+-{
+-  NS_ENSURE_ARG_POINTER(aFile);
+-
+-  nsString path;
+-  nsresult rv = aFile->GetPath(path);
+-  NS_ENSURE_SUCCESS(rv, rv);
+-
+-  int rc = ::sqlite3_quota_file(NS_ConvertUTF16toUTF8(path).get());
+-  NS_ENSURE_TRUE(rc == SQLITE_OK, convertResultCode(rc));
+-
+-  return NS_OK;
+-}
+-
+ } // namespace storage
+ } // namespace mozilla
+diff --git storage/src/mozStorageService.h storage/src/mozStorageService.h
+index 21c1ff8..3f5a546 100644
+--- mozilla/storage/src/mozStorageService.h
++++ mozilla/storage/src/mozStorageService.h
+@@ -15,7 +15,6 @@
+ #include "mozilla/Mutex.h"
+ 
+ #include "mozIStorageService.h"
+-#include "mozIStorageServiceQuotaManagement.h"
+ 
+ class nsIMemoryReporter;
+ class nsIMemoryMultiReporter;
+@@ -28,7 +27,6 @@ namespace storage {
+ class Connection;
+ class Service : public mozIStorageService
+               , public nsIObserver
+-              , public mozIStorageServiceQuotaManagement
+ {
+ public:
+   /**
+@@ -58,7 +56,6 @@ public:
+   NS_DECL_ISUPPORTS
+   NS_DECL_MOZISTORAGESERVICE
+   NS_DECL_NSIOBSERVER
+-  NS_DECL_MOZISTORAGESERVICEQUOTAMANAGEMENT
+ 
+   /**
+    * Obtains an already AddRefed pointer to XPConnect.  This is used by
+diff --git toolkit/toolkit-makefiles.sh toolkit/toolkit-makefiles.sh
+index 6a7d714..8f1bbe0 100644
+--- mozilla/toolkit/toolkit-makefiles.sh
++++ mozilla/toolkit/toolkit-makefiles.sh
+@@ -68,6 +68,7 @@ MAKEFILES_dom="
+   dom/plugins/base/Makefile
+   dom/plugins/ipc/Makefile
+   dom/power/Makefile
++  dom/quota/Makefile
+   dom/settings/Makefile
+   dom/sms/Makefile
+   dom/sms/interfaces/Makefile

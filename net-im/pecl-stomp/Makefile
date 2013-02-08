@@ -1,12 +1,8 @@
-# Ports collection makefile for:  pecl-stomp
-# Date created:			  1st Dec, 2009
-# Whom:				  wen@FreeBSD.org
-#
+# Created by: wen@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	stomp
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	net-im pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,7 +14,5 @@ COMMENT=	PECL extension of stomp client
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

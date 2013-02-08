@@ -1,13 +1,9 @@
-# New ports collection makefile for:	mediatomb
-# Date created:			29 March 2007
-# Whom:					Leonhard Wimmer <leo@mediatomb.cc>
-#
+# Created by: Leonhard Wimmer <leo@mediatomb.cc>
 # $FreeBSD$
-#
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.12.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 

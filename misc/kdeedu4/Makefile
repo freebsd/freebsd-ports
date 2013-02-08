@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	kdeedu
-# Date created:				2008-01-31
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdeedu
@@ -18,106 +15,116 @@ LATEST_LINK=	${PORTNAME}4
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
 
-OPTIONS=	BLINKEN "Memory enhancement game" on \
-		CANTOR "Frontend to mathematical software" on \
-		KALGEBRA "Graph calculator" on \
-		KALZIUM "Periodic table of elements (requires GCC 4.5+)" off \
-		KANAGRAM "Letter order game" on \
-		KBRUCH "Application to exercise fractions" on \
-		KGEOGRAPHY "Geography trainer" on \
-		KHANGMAN "Hangman game" on \
-		KIG "Interactive geometry application" on \
-		KITEN "Japanese reference/study tool" on \
-		KLETTRES "Alphabet learning tool" on \
-		KMPLOT "Mathematical function plotter" on \
-		KSTARS "Desktop planetarium" on \
-		KTOUCH "Touch typing tutor" on \
-		KTURTLE "Educational programming environment" on \
-		KWORDQUIZ "Flash card trainer" on \
-		MARBLE "Virtual globe and world atlas" on \
-		PARLEY "Vocabulary trainer" on \
-		ROCS "Graph teory IDE" on \
-		STEP "Interactive physics simulator" on
+OPTIONS_DEFINE=	BLINKEN CANTOR KALGEBRA KALZIUM KANAGRAM KBRUCH KGEOGRAPHY \
+		KHANGMAN KIG KITEN KLETTRES KMPLOT KSTARS KTOUCH KTURTLE \
+		KWORDQUIZ MARBLE PAIRS PARLEY ROCS STEP
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NKALZIUM}
+
+BLINKEN_DESC=		Memory enhancement game
+CANTOR_DESC=		Frontend to mathematical software
+KALGEBRA_DESC=		Graph calculator
+KALZIUM_DESC=		Periodic table of elements (requires GCC 4.5+)
+KANAGRAM_DESC=		Letter order game
+KBRUCH_DESC=		Application to exercise fractions
+KGEOGRAPHY_DESC=	Geography trainer
+KHANGMAN_DESC=		Hangman game
+KIG_DESC=		Interactive geometry application
+KITEN_DESC=		Japanese reference/study tool
+KLETTRES_DESC=		Alphabet learning tool
+KMPLOT_DESC=		Mathematical function plotter
+KSTARS_DESC=		Desktop planetarium
+KTOUCH_DESC=		Touch typing tutor
+KTURTLE_DESC=		Educational programming environment
+KWORDQUIZ_DESC=		Flash card trainer
+MARBLE_DESC=		Virtual globe and world atlas
+PAIRS_DESC=		Memory and pairs game
+PARLEY_DESC=		Vocabulary trainer
+ROCS_DESC=		Graph teory IDE
+STEP_DESC=		Interactive physics simulator
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_BLINKEN)
+.if ${PORT_OPTIONS:MBLINKEN}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/blinken:${PORTSDIR}/games/blinken
 .endif
 
-.ifndef(WITHOUT_CANTOR)
+.if ${PORT_OPTIONS:MCANTOR}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/cantor:${PORTSDIR}/math/cantor
 .endif
 
-.ifndef(WITHOUT_KALGEBRA)
+.if ${PORT_OPTIONS:MKALGEBRA}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kalgebra:${PORTSDIR}/math/kalgebra
 .endif
 
-.ifndef(WITHOUT_KALZIUM)
+.if ${PORT_OPTIONS:MKALZIUM}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kalzium:${PORTSDIR}/science/kalzium
 .endif
 
-.ifndef(WITHOUT_KANAGRAM)
+.if ${PORT_OPTIONS:MKANAGRAM}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kanagram:${PORTSDIR}/games/kanagram
 .endif
 
-.ifndef(WITHOUT_KBRUCH)
+.if ${PORT_OPTIONS:MKBRUCH}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kbruch:${PORTSDIR}/math/kbruch
 .endif
 
-.ifndef(WITHOUT_KGEOGRAPHY)
+.if ${PORT_OPTIONS:MKGEOGRAPHY}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kgeography:${PORTSDIR}/misc/kgeography
 .endif
 
-.ifndef(WITHOUT_KHANGMAN)
+.if ${PORT_OPTIONS:MKHANGMAN}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/khangman:${PORTSDIR}/games/khangman
 .endif
 
-.ifndef(WITHOUT_KIG)
+.if ${PORT_OPTIONS:MKIG}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kig:${PORTSDIR}/math/kig
 .endif
 
-.ifndef(WITHOUT_KITEN)
+.if ${PORT_OPTIONS:MKITEN}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kiten:${PORTSDIR}/japanese/kiten
 .endif
 
-.ifndef(WITHOUT_KLETTRES)
+.if ${PORT_OPTIONS:MKLETTRES}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/klettres:${PORTSDIR}/misc/klettres
 .endif
 
-.ifndef(WITHOUT_KMPLOT)
+.if ${PORT_OPTIONS:MKMPLOT}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmplot:${PORTSDIR}/math/kmplot
 .endif
 
-.ifndef(WITHOUT_KSTARS)
+.if ${PORT_OPTIONS:MKSTARS}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kstars:${PORTSDIR}/astro/kstars
 .endif
 
-.ifndef(WITHOUT_KTOUCH)
+.if ${PORT_OPTIONS:MKTOUCH}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktouch:${PORTSDIR}/misc/ktouch
 .endif
 
-.ifndef(WITHOUT_KTURTLE)
+.if ${PORT_OPTIONS:MKTURTLE}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kturtle:${PORTSDIR}/lang/kturtle
 .endif
 
-.ifndef(WITHOUT_KWORDQUIZ)
+.if ${PORT_OPTIONS:MKWORDQUIZ}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwordquiz:${PORTSDIR}/misc/kwordquiz
 .endif
 
-.ifndef(WITHOUT_MARBLE)
+.if ${PORT_OPTIONS:MMARBLE}
 USE_KDE4+=	marble_run
 .endif
 
-.ifndef(WITHOUT_PARLEY)
+.if ${PORT_OPTIONS:MPAIRS}
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/pairs:${PORTSDIR}/games/pairs
+.endif
+
+.if ${PORT_OPTIONS:MPARLEY}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/parley:${PORTSDIR}/misc/parley
 .endif
 
-.ifndef(WITHOUT_ROCS)
+.if ${PORT_OPTIONS:MROCS}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/rocs:${PORTSDIR}/math/rocs
 .endif
 
-.ifndef(WITHOUT_STEP)
+.if ${PORT_OPTIONS:MSTEP}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/step:${PORTSDIR}/science/step
 .endif
 

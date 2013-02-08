@@ -1,0 +1,46 @@
+bin/alurecdplay
+bin/alureplay
+bin/alurestream
+include/AL/alure.h
+lib/libalure-static.a
+lib/libalure.so
+lib/libalure.so.1
+lib/libalure.so.1.2.0
+libdata/pkgconfig/alure-static.pc
+libdata/pkgconfig/alure.pc
+%%PORTDOCS%%%%DOCSDIR%%/html/files/alure-cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/files/buffer-cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/files/istream-cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/files/stream-cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/files/streamplay-cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index/Functions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index/General.html
+%%PORTDOCS%%%%DOCSDIR%%/html/javascript/main.js
+%%PORTDOCS%%%%DOCSDIR%%/html/javascript/searchdata.js
+%%PORTDOCS%%%%DOCSDIR%%/html/search/FunctionsA.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search/GeneralA.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search/GeneralF.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search/GeneralM.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search/GeneralS.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search/NoResults.html
+%%PORTDOCS%%%%DOCSDIR%%/html/styles/1.css
+%%PORTDOCS%%%%DOCSDIR%%/html/styles/2.css
+%%PORTDOCS%%%%DOCSDIR%%/html/styles/main.css
+%%PORTDOCS%%%%DOCSDIR%%/naturaldocs/CustomStyle.css
+%%PORTDOCS%%%%DOCSDIR%%/naturaldocs/Languages.txt
+%%PORTDOCS%%%%DOCSDIR%%/naturaldocs/Menu.txt
+%%PORTDOCS%%%%DOCSDIR%%/naturaldocs/Topics.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alurecdplay.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alureplay.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alurestream.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/naturaldocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/styles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/search
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/javascript
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/index
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/AL

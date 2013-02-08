@@ -1,24 +1,22 @@
-# New ports collection makefile for:	giacxcas
-# Date created:		2010-08-26
-# Whom:			Frederic Han <han@math.jussieu.fr>
-#
+# Created by: Frederic Han <han@math.jussieu.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	giacxcas
-PORTVERSION=	0.9.8
+PORTVERSION=	1.0.0
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 		http://people.math.jussieu.fr/~han/xcas/sources/
-DISTFILES=	fltkdev.tgz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
+DISTFILES=	fltk-giac.tar.gz CoCoALib-0.9950.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	han@math.jussieu.fr
 COMMENT=	Computer algebra system by Bernard Parisse
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		pari:${PORTSDIR}/math/pari \
@@ -26,7 +24,7 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		gsl:${PORTSDIR}/math/gsl \
 		lapack:${PORTSDIR}/math/lapack
 
-NO_CDROM=	The french documentation is for non commercial only use
+NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -36,20 +34,25 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/giac
+PORTDOCS=	*
+DATADIR=	${PREFIX}/share/giac
+PORTDATA=	*
+
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${FLTKDEV-GIAC}/lib -L${COCOALIB-GIAC}/lib -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/giac-${PORTVERSION}
-FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.x-r6916
-COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9937
+FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.0
+COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9950
 
 INFO=		giac_es giac_us
 
 post-patch:
-	${REINPLACE_CMD} -e 's|make |${GMAKE} |g' `${GREP} -Rl 'make ' ${COCOALIB-GIAC}`;
-	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' `${GREP} -Rl '/bin/bash' ${COCOALIB-GIAC}`;
-	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
+	@${GREP} -Rl --null /bin/bash ${COCOALIB-GIAC} | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|'
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/xcas.applications ${WRKSRC}/xcas.desktop
 
 pre-configure:

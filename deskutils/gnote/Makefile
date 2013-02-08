@@ -3,7 +3,7 @@
 
 PORTNAME=	gnote
 PORTVERSION=	0.7.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+		boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_GMAKE=	yes

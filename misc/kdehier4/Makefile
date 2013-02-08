@@ -1,12 +1,7 @@
-# New ports collection makefile for:	kdehier4
-# Date created:		2008-07-03
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -47,15 +42,16 @@ do-install:
 	${MKDIR} ${LOCALBASE}/etc/dbus-1
 	${INSTALL_DATA} ${WRKDIR}/session-kde4.conf ${LOCALBASE}/etc/dbus-1
 	${INSTALL_DATA} ${WRKDIR}/system-kde4.conf ${LOCALBASE}/etc/dbus-1
-	${LN} -sf ${LOCALBASE}/etc/pam.d ${KDE4_PREFIX}/etc/
-	${LN} -sf ${LOCALBASE}/etc/rc.d ${KDE4_PREFIX}/etc/
+. for dir in pam.d polkit-1 rc.d
+	${LN} -sf ${LOCALBASE}/etc/${dir} ${KDE4_PREFIX}/etc/
+. endfor
 	${LN} -sf ${LOCALBASE}/${LDCONFIG_DIR} ${KDE4_PREFIX}/libdata/
 	${ECHO_CMD} ${KDE4_PREFIX}/lib > ${LOCALBASE}/${LDCONFIG_DIR}/kdehier4
 	${LN} -sf ${LOCALBASE}/${LDCONFIG32_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/libdata/pkgconfig ${KDE4_PREFIX}/libdata/
-.for dir in services system-services
+. for dir in services system-services
 	${LN} -sf ${LOCALBASE}/share/dbus-1/${dir} ${KDE4_PREFIX}/share/dbus-1/
-.endfor
+. endfor
 	${LN} -sf ${LOCALBASE}/share/polkit-1/actions ${KDE4_PREFIX}/share/polkit-1/
 .endif
 

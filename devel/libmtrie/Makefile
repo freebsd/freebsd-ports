@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmtrie
-# Date created:				07 May 2003
-# Whom:					alfred@freebsd.org
-#
+# Created by: alfred@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	libmtrie
 PORTVERSION=	1.0.3
@@ -12,7 +8,7 @@ MASTER_SITES=	http://people.freebsd.org/~alfred/sources/$(PORTNAME)/
 DISTNAME=	$(PORTNAME)-${PORTVERSION}
 USE_BZIP2=	yes
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Library to build an IP-netmask based mtrie
 
 USE_LDCONFIG= yes

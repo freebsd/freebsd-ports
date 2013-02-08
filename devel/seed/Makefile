@@ -20,7 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject JavaScriptCore bridge
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-js-common.pc:${PORTSDIR}/devel/gnome-js-common
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi \
 		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		girepository-1.0.1:${PORTSDIR}/devel/gobject-introspection \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \

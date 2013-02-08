@@ -2,7 +2,7 @@
 
 PORTNAME=	3dpong
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/3dpong/src/ \
 		ftp://ftp.billsgames.com/unix/x/3dpong/src/ \

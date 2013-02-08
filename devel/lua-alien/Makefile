@@ -18,7 +18,7 @@ COMMENT=	Lua -> C FFI
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 
 USE_LUA=	5.1
 

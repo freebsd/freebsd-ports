@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 multimedia framework
 
+DEPRECATED=	Outdated, use multimedia/phonon
+EXPIRATION_DATE=	2013-02-28
+
 CONFLICTS=	phonon-4.*
 
 USE_QT4=	qmake_build moc_build corelib dbus gui xml

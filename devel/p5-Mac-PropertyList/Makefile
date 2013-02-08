@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mac-PropertyList
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Mac::PropertyList.3 \
-	Mac::PropertyList::ReadBinary.3
+	Mac::PropertyList::ReadBinary.3 \
+	Mac::PropertyList::WriteBinary.3
 
 .include <bsd.port.mk>

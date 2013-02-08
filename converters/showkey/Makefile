@@ -1,9 +1,5 @@
-# New ports collection makefile for:	showkey
-# Date created:				2003-10-24
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	showkey
 PORTVERSION=	1.5

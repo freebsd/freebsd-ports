@@ -1,0 +1,37 @@
+include/libkgapi/accessmanager.h
+include/libkgapi/account.h
+include/libkgapi/auth.h
+include/libkgapi/common.h
+include/libkgapi/fetchlistjob.h
+include/libkgapi/libkgapi_export.h
+include/libkgapi/object.h
+include/libkgapi/objects/accountinfo.h
+include/libkgapi/objects/calendar.h
+include/libkgapi/objects/contact.h
+include/libkgapi/objects/contactsgroup.h
+include/libkgapi/objects/event.h
+include/libkgapi/objects/task.h
+include/libkgapi/objects/tasklist.h
+include/libkgapi/reply.h
+include/libkgapi/request.h
+include/libkgapi/service.h
+include/libkgapi/services/accountinfo.h
+include/libkgapi/services/calendar.h
+include/libkgapi/services/contacts.h
+include/libkgapi/services/tasks.h
+include/libkgapi/ui/accountscombo.h
+include/libkgapi/ui/authwidget.h
+lib/cmake/LibKGAPI/LibKGAPIConfig.cmake
+lib/cmake/LibKGAPI/LibKGAPIConfigVersion.cmake
+lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix.cmake
+lib/libkgapi.so
+lib/libkgapi.so.0
+lib/libkgapi.so.0.4.4
+libdata/pkgconfig/libkgapi.pc
+@dirrm lib/cmake/LibKGAPI
+@dirrmtry lib/cmake
+@dirrm include/libkgapi/ui
+@dirrm include/libkgapi/services
+@dirrm include/libkgapi/objects
+@dirrm include/libkgapi

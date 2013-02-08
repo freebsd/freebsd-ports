@@ -1,0 +1,20 @@
+--- doc/docbook/src/tcl.xml.orig
++++ doc/docbook/src/tcl.xml
+@@ -576,7 +576,7 @@
+ 	if (pm->fdata[i] > max)
+ 	max = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", max );
++	sprintf( Tcl_GetStringResult(interp), "%f", max );
+ 	return TCL_OK;
+ 	}
+ 
+@@ -589,7 +589,7 @@
+ 	if (pm->fdata[i] &lt; min)
+ 	min = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", min );
++	sprintf( Tcl_GetStringResult(interp), "%f", min );
+ 	return TCL_OK;
+ 	}
+       </programlisting>

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gprename
-# Date created:				2004-03-15
-# Whom:					trevor
-#
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	gprename
 PORTVERSION=	2.7

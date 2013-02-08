@@ -1,9 +1,5 @@
-# Ports collection makefile for:	socat
-# Date created:				May 14, 2002
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	socat
 PORTVERSION=	1.7.2.1
@@ -32,21 +28,23 @@ PORTDOCS=	EXAMPLES README SECURITY FAQ
 CFLAGS+=	-Wno-unused-comparison
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 .for f in filan procan socat
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${FILESDIR}/socat_wrapper ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
 BROKEN=		Does not configure on arm
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

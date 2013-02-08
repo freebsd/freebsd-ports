@@ -1,10 +1,11 @@
 bin/classad_functional_tester
 bin/classad_version
-bin/condor
 bin/condor_check_userlogs
 bin/condor_cod
 bin/condor_config_val
+bin/condor_continue
 bin/condor_dagman
+bin/condor_drain
 bin/condor_findhost
 bin/condor_gather_info
 bin/condor_history
@@ -25,6 +26,8 @@ bin/condor_stats
 bin/condor_status
 bin/condor_submit
 bin/condor_submit_dag
+bin/condor_suspend
+bin/condor_test_match
 bin/condor_transfer_data
 bin/condor_userlog
 bin/condor_userlog_job_counter
@@ -40,8 +43,10 @@ bin/condor_wait
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
 %%ETCDIR%%/examples/condor.init
+%%ETCDIR%%/examples/condor.plist
 %%ETCDIR%%/examples/condor.sysconfig
 %%ETCDIR%%/examples/condor_config.generic
+%%ETCDIR%%/examples/condor_config.generic.redhat
 %%ETCDIR%%/examples/condor_config.local.central.manager
 %%ETCDIR%%/examples/condor_config.local.ckpt.server
 %%ETCDIR%%/examples/condor_config.local.dedicated.resource
@@ -90,16 +95,11 @@ include/classad/xmlSource.h
 include/compat_classad.h
 include/compat_classad_list.h
 include/compat_classad_util.h
-include/condor_ast.h
-include/condor_astbase.h
-include/condor_attrlist.h
 include/condor_classad.h
 include/condor_constants.h
 include/condor_event.h
-include/condor_exprtype.h
 include/condor_header_features.h
 include/condor_holdcodes.h
-include/condor_parser.h
 include/file_lock.h
 include/iso_dates.h
 include/read_user_log.h
@@ -111,25 +111,22 @@ lib/Chirp.jar
 lib/Condor.pm
 lib/CondorJavaInfo.class
 lib/CondorJavaWrapper.class
-lib/Execute.pm
-lib/FileLock.pm
+lib/CondorPersonal.pm
+lib/CondorTest.pm
+lib/CondorUtils.pm
 lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
 lib/scimark2lib.jar
-libexec/bgp_available_partitions
-libexec/bgp_back_partition
-libexec/bgp_boot_partition
-libexec/bgp_destroy_partition
-libexec/bgp_generate_partition
-libexec/bgp_query_work_loads
-libexec/bgp_shutdown_partition
+libexec/accountant_log_fixer
 libexec/condor_chirp
+libexec/condor_defrag
 libexec/condor_job_router
 libexec/condor_kflops
 libexec/condor_limits_wrapper.sh
 libexec/condor_mips
+libexec/condor_power_state
 libexec/condor_rooster
 libexec/condor_schedd.init
 libexec/condor_shared_port
@@ -139,20 +136,12 @@ libexec/condor_ssh_to_job_sshd_setup
 libexec/condor_transferer
 libexec/curl_plugin
 libexec/data_plugin
-libexec/gridftp_wrapper.sh
 libexec/libvirt_simple_script.awk
-libexec/power_state
 libexec/sshd.sh
-sbin/cleanup_release
-sbin/condor
 sbin/condor_advertise
 sbin/condor_c-gahp
 sbin/condor_c-gahp_worker_thread
-sbin/condor_cleanup_local
-sbin/condor_cold_start
-sbin/condor_cold_stop
 sbin/condor_collector
-sbin/condor_config_bind
 sbin/condor_configure
 sbin/condor_credd
 sbin/condor_fetchlog
@@ -160,19 +149,13 @@ sbin/condor_gridmanager
 sbin/condor_had
 sbin/condor_init
 sbin/condor_install
-sbin/condor_install_local
-sbin/condor_lease_manager
-sbin/condor_local_start
-sbin/condor_local_stop
 sbin/condor_master
-sbin/condor_master_off
 sbin/condor_negotiator
 sbin/condor_off
 sbin/condor_on
 sbin/condor_preen
 sbin/condor_procd
 sbin/condor_reconfig
-sbin/condor_reconfig_schedd
 sbin/condor_replication
 sbin/condor_restart
 sbin/condor_root_switchboard
@@ -180,28 +163,25 @@ sbin/condor_schedd
 sbin/condor_set_shutdown
 sbin/condor_shadow
 sbin/condor_startd
-sbin/condor_startd_factory
 sbin/condor_starter
 sbin/condor_store_cred
 sbin/condor_transferd
 sbin/condor_updates_stats
 sbin/condor_vm-gahp
-sbin/filelock_midwife
-sbin/filelock_undertaker
-sbin/install_release
-sbin/uniq_pid_command
-sbin/uniq_pid_midwife
-sbin/uniq_pid_undertaker
+sbin/remote_gahp
 src/chirp/chirp_client.c
 src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
-src/startd_factory/BlueGeneP/htc_list_partitions.cpp
-src/startd_factory/BlueGeneP/htc_tool.cpp
-@dirrmtry src/startd_factory/BlueGeneP
-@dirrmtry src/startd_factory
 @dirrmtry src/chirp
 @dirrmtry src
 @dirrm include/classad
 @dirrm %%ETCDIR%%/sysconfig
 @dirrm %%ETCDIR%%/examples
 @dirrm %%ETCDIR%%
+@cwd /
+@dirrmtry home/condor/config
+@dirrmtry home/condor/execute
+@dirrmtry home/condor/log
+@dirrmtry home/condor/spool
+@dirrmtry home/condor
+@dirrmtry home

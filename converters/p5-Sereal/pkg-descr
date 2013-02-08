@@ -1,0 +1,7 @@
+Sereal is an efficient, compact-output, binary and feature-rich
+serialization protocol.  The Perl encoder is implemented as the
+Sereal::Encoder module, the Perl decoder correspondingly as
+Sereal::Decoder.  They are distributed separately to allow for safe
+upgrading without downtime.
+
+WWW: http://search.cpan.org/dist/Sereal/

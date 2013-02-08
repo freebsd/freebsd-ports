@@ -23,7 +23,7 @@ CONFLICTS=	amule-[0-9]*
 
 USE_BZIP2=	yes
 USE_BISON=	build
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
@@ -62,7 +62,6 @@ PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt INSTALL README TODO \
 		amulesig.txt license.txt
 
 FLEX?=		${LOCALBASE}/bin/flex
-PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
 .include <bsd.port.options.mk>
 

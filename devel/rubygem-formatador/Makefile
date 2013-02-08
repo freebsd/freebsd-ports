@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-formatador
-# Date created:		2012-08-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	formatador
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

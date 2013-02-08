@@ -2,6 +2,7 @@
 
 PORTNAME=	monadcryptorandom
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

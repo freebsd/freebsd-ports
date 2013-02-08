@@ -10,3 +10,25 @@
    if $i -c $tmp_file.C 2>/dev/null; then
      CXX="$i";
      break;
+@@ -205,12 +205,19 @@
+ #include <new>
+ #include <vector>
+ using namespace std;
+-void func() { map<string, string> x; }
++int main(void) {
++  map<string, string> x;
++  return 0;
++}
+ EOF
+-if $CXX -c $tmp_file.C 2>/dev/null; then
++if $CXX $tmp_file.C 2>/dev/null; then
+   LIBSTDCXX_INCLUDES="";
+   LIBSTDCXX_LIBS="";
+   $echo 'works; no need to make "./libstd"';
++elif $CXX $tmp_file.C -lstdc++ 2>/dev/null; then
++  LIBSTDCXX_INCLUDES="";
++  LIBSTDCXX_LIBS="-lstdc++";
++  $echo 'works with libstdc++; no need to make "./libstd"';
+ else
+   LIBSTDCXX_INCLUDES='-Ilibstd/include';
+   LIBSTDCXX_LIBS='libstd/libstd.a';

@@ -1,12 +1,9 @@
-# New ports collection makefile for: fife
-# Date created:      19 May 2012
-# Whom:              GreenDog <fiziologus@gmail.com>
-#
+# Created by: GreenDog <fiziologus@gmail.com>
 # $FreeBSD$
 
 PORTNAME=		fife
 PORTVERSION=		0.3.3r3
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:source \
 			http://sourceforge.net/projects/${PORTNAME}/files/active/demos/:demo
@@ -23,7 +20,7 @@ BUILD_DEPENDS=		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 LIB_DEPENDS=		vorbisfile.6:${PORTSDIR}/audio/libvorbis \
 			guichan.2:${PORTSDIR}/devel/guichan \
-			boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+			boost_filesystem:${PORTSDIR}/devel/boost-libs \
 			png15:${PORTSDIR}/graphics/png
 
 USE_SDL=		sdl ttf image

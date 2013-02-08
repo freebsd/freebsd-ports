@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/gd
-# Date created:		27 Sep 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gd
 PORTVERSION=	0.8.0
@@ -18,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -33,7 +29,7 @@ INSTALL_TARGET=	site-install
 
 CONFIGURE_ARGS+=	--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
 .include <bsd.port.pre.mk>
 

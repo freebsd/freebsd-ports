@@ -3,7 +3,7 @@
 
 PORTNAME=	qdevelop
 PORTVERSION=	0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	http://biord-software.org/downloads/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

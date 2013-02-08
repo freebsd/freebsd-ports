@@ -1,0 +1,6 @@
+Hierarchy-wide accumulation of list and hash results.
+
+This is a mixin class.  By inheriting from it you get two methods that
+are able to accumulate hierarchy-wide list and hash results.
+
+WWW: http://search.cpan.org/dist/Data-Inherited/

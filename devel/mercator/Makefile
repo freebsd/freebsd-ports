@@ -1,21 +1,18 @@
-# New ports collection makefile for:   mercator
-# Date created:        4 February 2005
-# Whom:                Janni
-#
+# Created by: Janni
 # $FreeBSD$
-#
 
 PORTNAME=	mercator
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/Mercator%20%28terrain%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A procedural terrain library
 
-LIB_DEPENDS=	wfmath-0.3.5:${PORTSDIR}/math/wfmath
+LIB_DEPENDS=	wfmath-1.0.1:${PORTSDIR}/math/wfmath
 
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

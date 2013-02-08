@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	3.2.r${SVN_REV}
-PORTREVISION=	2
+PORTVERSION=	3.3.r${SVN_REV}
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -19,7 +18,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=	clang-[23]*
+CONFLICTS=	clang-[23]* clang31-*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
@@ -109,9 +108,9 @@ do-fetch:
 	svn export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKDIR}/${CLANG_NAME}
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
-.if ${USER} == brooks
+.if ${USER} == brooks || ${USER} == bed22
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    freefall.freebsd.org:public_distfiles/
+	    brooks@freefall.freebsd.org:public_distfiles/
 .endif
 .endif
 
@@ -134,7 +133,8 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 pre-build:
-	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	${LN} -sf ${LOCALBASE}/include/llvm/IR/Intrinsics.gen \
+	    ${WRKSRC}/include/llvm/IR/
 	${MKDIR} ${WRKSRC}/${RELTYPE}/lib
 	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
@@ -172,6 +172,7 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
+			bin/c-index-test \
 			bin/clang \
 			bin/clang++ \
 			bin/clang-check \

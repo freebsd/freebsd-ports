@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-bus.png

@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-PDF-API2
-# Date created:			Feb 2, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	PDF-API2
-PORTVERSION=	2.019
+PORTVERSION=	2.020
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SSIMMS
@@ -27,6 +22,7 @@ MAN3=	PDF::API2.3 \
 	PDF::API2::Basic::PDF::Dict.3 \
 	PDF::API2::Basic::PDF::File.3 \
 	PDF::API2::Basic::PDF::Filter.3 \
+	PDF::API2::Basic::PDF::Filter::RunLengthDecode.3 \
 	PDF::API2::Basic::PDF::Name.3 \
 	PDF::API2::Basic::PDF::Null.3 \
 	PDF::API2::Basic::PDF::Number.3 \

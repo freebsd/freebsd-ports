@@ -1,19 +1,17 @@
-# New ports collection makefile for:	semi-current for emacs
-# Date created:		9 May 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
 PORTREVISION=	14
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
+MASTER_SITES=	http://git.chise.org/elisp/dist/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs
+
+LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
@@ -42,7 +40,11 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 		LISPDIR="${SEMI_LISPDIR}" \
 		VERSION_SPECIFIC_LISPDIR="${SEMI_VERSION_SPECIFIC_LISPDIR}"
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
+
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(EMACS_PORT_NAME)
 .if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
@@ -74,35 +76,35 @@ MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
 pre-build:
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} pkg-el-copy
+	@${MAKE} -C ${.CURDIR} pkg-el-copy
 .endif
 
 post-build:
 .if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
-	@${MAKE} info-build-by-emacs
+	@${MAKE} -C ${.CURDIR} info-build-by-emacs
 .else
-	@${MAKE} info-build
+	@${MAKE} -C ${.CURDIR} info-build
 .endif
 
 pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
-	@${MAKE} mkdir-site-packages
+	@${MAKE} -C ${.CURDIR} mkdir-site-packages
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} pkg-el-install
+	@${MAKE} -C ${.CURDIR} pkg-el-install
 .endif
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/semi
 	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
-	@${MAKE} info-package-install
-	@${MAKE} manifest-install
+	@${MAKE} -C ${.CURDIR} info-package-install
+	@${MAKE} -C ${.CURDIR} manifest-install
 .else
-	@${MAKE} info-install
+	@${MAKE} -C ${.CURDIR} info-install
 .endif
-.if !defined(NOPORTDOCS)
-	@${MAKE} doc-install
+.if ${PORT_OPTIONS:MDOCS}
+	@${MAKE} -C ${.CURDIR} doc-install
 .endif
 
 ###############################################################################

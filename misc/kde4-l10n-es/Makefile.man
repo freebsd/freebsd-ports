@@ -16,7 +16,6 @@ MAN1+=	extractrc.1
 MAN1+=	fixincludes.1
 MAN1+=	kabcclient.1
 MAN1+=	kalzium.1
-MAN1+=	kate.1
 MAN1+=	kbookmarkmerger.1
 MAN1+=	kbruch.1
 MAN1+=	kconfig_compiler.1

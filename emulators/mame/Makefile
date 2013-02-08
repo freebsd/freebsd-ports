@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mame
-PORTVERSION=	0.147${PATCHSUFFIX}
+PORTVERSION=	0.148${PATCHSUFFIX}
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}.mirror/${PORTNAME:U}%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The popular MAME (Multi Arcade Machine Emulator)
+COMMENT=	Multi Arcade Machine Emulator
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -32,6 +32,7 @@ USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
 USE_GMAKE=	yes
+USE_PYTHON=	yes
 MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${PORTNAME}"

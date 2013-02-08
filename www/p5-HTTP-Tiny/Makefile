@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.024
+PORTVERSION=	0.025
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -30,11 +30,4 @@ RUN_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
-RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

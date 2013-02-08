@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Data-Rx
-# Date created:		2010-11-18
-# Whom:			Kurt Lidl <kurt.lidl@cello.com>
-#
+# Created by: Kurt Lidl <kurt.lidl@cello.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Rx
-PORTVERSION=	0.100110
+PORTVERSION=	0.200002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +19,8 @@ TEST_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 PERL_CONFIGURE=	yes
 
 MAN3=		Data::Rx.3 \
+		Data::Rx::CommonType.3 \
+		Data::Rx::CommonType::EasyNew.3 \
 		Data::Rx::CoreType.3 \
 		Data::Rx::CoreType::all.3 \
 		Data::Rx::CoreType::any.3 \
@@ -38,6 +36,8 @@ MAN3=		Data::Rx.3 \
 		Data::Rx::CoreType::rec.3 \
 		Data::Rx::CoreType::seq.3 \
 		Data::Rx::CoreType::str.3 \
+		Data::Rx::Failure.3 \
+		Data::Rx::FailureSet.3 \
 		Data::Rx::TypeBundle.3 \
 		Data::Rx::TypeBundle::Core.3 \
 		Data::Rx::Util.3

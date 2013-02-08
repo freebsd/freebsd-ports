@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

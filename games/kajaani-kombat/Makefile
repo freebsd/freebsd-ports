@@ -3,7 +3,7 @@
 
 PORTNAME=	kajaani-kombat
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://kombat.kajaani.net/dl/
 

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DBIx-Class-InflateColumn-IP
-# Date created:		23 Oct 2008
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-InflateColumn-IP
-PORTVERSION=	0.02002
+PORTVERSION=	0.02003
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

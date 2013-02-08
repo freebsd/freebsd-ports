@@ -1,7 +1,6 @@
---- Makefile.in.orig	Fri Jun  7 11:23:57 2002
-+++ Makefile.in	Fri Jun  7 11:24:43 2002
-@@ -469,7 +469,7 @@
- 	mkdir -p ${DESTDIR}${localstatedir}/cache/mifluz
+--- ./Makefile.in.orig	2013-01-16 13:41:40.786389684 +0800
++++ ./Makefile.in	2013-01-16 13:51:11.373721235 +0800
+@@ -957,6 +957,6 @@
  	@if [ ! -d ${DESTDIR}${sysconfdir} ] ; then mkdir -p ${DESTDIR}${sysconfdir} ; fi
  	@if [ ! -f ${DESTDIR}${sysconfdir}/mifluz.conf ] ; \
 -	then a="cp ${srcdir}/mifluz.conf ${DESTDIR}${sysconfdir}/mifluz.conf" ; echo $$a ; $$a ; \

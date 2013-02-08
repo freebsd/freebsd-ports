@@ -20,11 +20,13 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Media.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Mini.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/NewClass.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Overload/Driver.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Overload/Handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/Carp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/SplashFast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/TextValidator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/PerlTest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Print.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/RadioBox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/RichText.pm
@@ -34,6 +36,10 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Timer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Wx_Exp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/XRC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Enum.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Overload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Virtual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_OS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_wx_config.pm
@@ -82,6 +88,8 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI/MDI.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media/Media.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media/Media.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PerlTest/PerlTest.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PerlTest/PerlTest.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText/RichText.bs
@@ -99,6 +107,7 @@ bin/wxperl_overload
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PerlTest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html

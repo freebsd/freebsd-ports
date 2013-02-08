@@ -5,25 +5,26 @@ PORTNAME=	vcg
 PORTVERSION=	1.30
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
+MASTER_SITES=	http://download.polytechnic.edu.na/pub2/openpkg1/sources/DST/vcg/ \
+		http://ftp.gwdg.de/linux/openpkg/openpkg-ftp/sources/DST/vcg/ \
+		http://ftp.sjtu.edu.cn/sites/ftp.openpkg.org/sources/DST/vcg/ \
+		ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTNAME=	${PORTNAME}.20050204
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Visualization Tool for compiler graphs
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
+LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
-USE_GCC=	any
-USE_XORG=	x11 xext
-MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
+USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
+MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
@@ -36,6 +37,11 @@ pre-patch:
 	        -e "s:%%INSTALL_PROGRAM%%:${INSTALL_PROGRAM}:g" \
 	        -e "s:%%INSTALL_MAN%%:${INSTALL_MAN}:g" \
 		< ${FILESDIR}/${file} > ${WRKSRC}/preconf/X11ccFreeBSD/${file}
+.endfor
+
+post-patch:
+.for i in animation1.c animation2.c animation3.c vcgcount.c
+	@${REINPLACE_CMD} -e '/ main/s|^void|int|' ${WRKSRC}/demo/${i}
 .endfor
 
 .include <bsd.port.mk>

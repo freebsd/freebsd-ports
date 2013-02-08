@@ -1,0 +1,13 @@
+***************************************************************
+
+If you do not use GNOME as window manager, and do not see any
+icon in Gnome-Pie preferences, then run the following command:
+
+  (cd %%PORTSDIR%%/x11/gnome-pie && make gnome-pie-user)
+
+and add this line to your ~/.xinitrc
+
+  %%LOCALBASE%%/libexec/gnome-settings-daemon&
+  (sleep 2 && gnome-pie)&
+
+***************************************************************

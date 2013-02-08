@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fldiff
-# Date created:				13 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	fldiff
 PORTVERSION=	1.1
@@ -18,7 +14,7 @@ COMMENT=	A graphical diff program using FLTK
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -27,6 +23,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		fldiff.1
 PORTDOCS=	index.html fldiff.jpg
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@OPTIM@||' ${WRKSRC}/Makefile.in
@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${PREFIX}/share/applications
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif

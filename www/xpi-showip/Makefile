@@ -1,9 +1,9 @@
-# Created by:	Barbara Guida <bar@FreeBSD.org>
+# Created by: Barbara Guida <bar@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	showip
-PORTVERSION=	1.8.1
-DISTVERSIONSUFFIX=	-tb+sm+fx
+PORTVERSION=	1.9
+DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
 MAINTAINER=	bar@FreeBSD.org

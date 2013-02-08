@@ -1,0 +1,96 @@
+From d3685de9011e0484a0e6f11266ae0f0378aad5e6 Mon Sep 17 00:00:00 2001
+From: Brad Smith <brad@comstyle.com>
+Date: Mon, 14 Jan 2013 14:44:59 +0100
+Subject: [PATCH] Fix building with Clang/LLVM
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf8
+Content-Transfer-Encoding: 8bit
+
+The following diff provides some fixes for VLC to allow building
+with LLVM.
+
+Signed-off-by: Rafael Carre <funman@videolan.org>
+---
+ include/vlc_common.h                     |    4 ++--
+ include/vlc_cpu.h                        |    4 ++--
+ modules/video_filter/deinterlace/yadif.h |    6 +++---
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git include/vlc_common.h include/vlc_common.h
+index 015a4ba..8e87a96 100644
+--- include/vlc_common.h
++++ include/vlc_common.h
+@@ -661,7 +661,7 @@ static inline uint16_t bswap16 (uint16_t x)
+ VLC_USED
+ static inline uint32_t bswap32 (uint32_t x)
+ {
+-#if VLC_GCC_VERSION(4,3)
++#if VLC_GCC_VERSION(4,3) || defined(__clang__)
+     return __builtin_bswap32 (x);
+ #else
+     return ((x & 0x000000FF) << 24)
+@@ -675,7 +675,7 @@ static inline uint32_t bswap32 (uint32_t x)
+ VLC_USED
+ static inline uint64_t bswap64 (uint64_t x)
+ {
+-#if VLC_GCC_VERSION(4,3)
++#if VLC_GCC_VERSION(4,3) || defined(__clang__)
+     return __builtin_bswap64 (x);
+ #elif !defined (__cplusplus)
+     return ((x & 0x00000000000000FF) << 56)
+diff --git include/vlc_cpu.h include/vlc_cpu.h
+index 36f8da5..6c82004 100644
+--- include/vlc_cpu.h
++++ include/vlc_cpu.h
+@@ -40,7 +40,7 @@
+ 
+ # if defined (__MMX__)
+ #  define VLC_MMX
+-# elif VLC_GCC_VERSION(4, 4)
++# elif VLC_GCC_VERSION(4, 4) || defined(__clang__)
+ #  define VLC_MMX __attribute__ ((__target__ ("mmx")))
+ # else
+ #  define VLC_MMX VLC_MMX_is_not_implemented_on_this_compiler
+@@ -48,7 +48,7 @@
+ 
+ # if defined (__SSE__)
+ #  define VLC_SSE
+-# elif VLC_GCC_VERSION(4, 4)
++# elif VLC_GCC_VERSION(4, 4) || defined(__clang__)
+ #  define VLC_SSE __attribute__ ((__target__ ("sse")))
+ # else
+ #  define VLC_SSE VLC_SSE_is_not_implemented_on_this_compiler
+diff --git modules/video_filter/deinterlace/yadif.h modules/video_filter/deinterlace/yadif.h
+index a2fccac..233504e 100644
+--- modules/video_filter/deinterlace/yadif.h
++++ modules/video_filter/deinterlace/yadif.h
+@@ -39,7 +39,7 @@ DECLARE_ASM_CONST(16, const xmm_reg, pw_1) = {0x0001000100010001ULL, 0x000100010
+ 
+ 
+ #ifdef CAN_COMPILE_SSSE3
+-#if defined(__SSE__) || VLC_GCC_VERSION(4, 4)
++#if defined(__SSE__) || VLC_GCC_VERSION(4, 4) || defined(__clang__)
+ // ================ SSSE3 =================
+ #define HAVE_YADIF_SSSE3
+ #define COMPILE_TEMPLATE_SSE 1
+@@ -55,7 +55,7 @@ DECLARE_ASM_CONST(16, const xmm_reg, pw_1) = {0x0001000100010001ULL, 0x000100010
+ #endif
+ 
+ #ifdef CAN_COMPILE_SSE2
+-#if defined(__SSE__) || VLC_GCC_VERSION(4, 4)
++#if defined(__SSE__) || VLC_GCC_VERSION(4, 4) || defined(__clang__)
+ // ================= SSE2 =================
+ #define HAVE_YADIF_SSE2
+ #define COMPILE_TEMPLATE_SSE 1
+@@ -69,7 +69,7 @@ DECLARE_ASM_CONST(16, const xmm_reg, pw_1) = {0x0001000100010001ULL, 0x000100010
+ #endif
+ 
+ #ifdef CAN_COMPILE_MMX
+-#if defined(__MMX__) || VLC_GCC_VERSION(4, 4)
++#if defined(__MMX__) || VLC_GCC_VERSION(4, 4) || defined(__clang__)
+ // ================ MMX =================
+ #define HAVE_YADIF_MMX
+ #define VLC_TARGET VLC_MMX
+-- 
+1.7.10.4
+

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ktts
-# Date created:		2010-03-27
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jovie
 PORTVERSION=	${KDE4_VERSION}

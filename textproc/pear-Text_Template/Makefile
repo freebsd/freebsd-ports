@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Text_Template
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	textproc www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple template engine
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

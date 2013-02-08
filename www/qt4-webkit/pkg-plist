@@ -64,7 +64,7 @@ lib/qt4/libQtWebKit.prl
 lib/qt4/libQtWebKit.so
 lib/qt4/libQtWebKit.so.4
 lib/qt4/libQtWebKit.so.4.9
-lib/qt4/libQtWebKit.so.4.9.2
+lib/qt4/libQtWebKit.so.4.9.3
 libdata/pkgconfig/QtWebKit.pc
 share/qt4/mkspecs/modules/qt_webkit_version.pri
 @dirrmtry share/qt4/mkspecs/modules

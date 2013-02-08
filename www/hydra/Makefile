@@ -8,7 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	0.1.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		ftp://ftp.hellug.gr/pub/software/hydra/
@@ -16,7 +16,7 @@ MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_RC_SUBR=	hydra
 
@@ -33,7 +33,6 @@ PLIST_SUB=	LOGDIR=${LOGDIR}
 SUB_LIST=	LOGDIR=${LOGDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 .for f in src/defines.h examples/hydra.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
 	                  -e "s,%%LOGDIR%%,${LOGDIR},g" \

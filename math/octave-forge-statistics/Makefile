@@ -1,13 +1,8 @@
-# New ports collection makefile for:	octave-forge-statistics
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-statistics
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

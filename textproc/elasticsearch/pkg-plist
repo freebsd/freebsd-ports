@@ -13,6 +13,7 @@ etc/elasticsearch/logging.yml.sample
 bin/elasticsearch-plugin
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
 lib/elasticsearch/jna-3.3.0.jar
+lib/elasticsearch/jts-1.12.jar
 lib/elasticsearch/log4j-1.2.17.jar
 lib/elasticsearch/lucene-analyzers-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-core-%%LUCENEVER%%.jar
@@ -20,6 +21,7 @@ lib/elasticsearch/lucene-highlighter-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-memory-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-queries-%%LUCENEVER%%.jar
 lib/elasticsearch/snappy-java-1.0.4.1.jar
+lib/elasticsearch/spatial4j-0.3.jar
 lib/elasticsearch/sigar/sigar-1.6.4.jar
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt

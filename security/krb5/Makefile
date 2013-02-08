@@ -1,21 +1,20 @@
-# Ports collection Makefile for:	MIT Kerberos V
-# Date created:				6/5/1998
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		krb5
-PORTVERSION=		1.10.3
-PORTREVISION=		1
+PORTVERSION=		1.11
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
+PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
+PATCH_DIST_STRIP=	-p2
+
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
+
+LICENSE=		MIT
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
@@ -26,19 +25,18 @@ KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_CSTD=		gnu89
+USE_CSTD=		gnu99
 USE_AUTOTOOLS=		libtool
 USE_GETTEXT=		yes
-CONFIGURE_ARGS?=	--enable-shared
+CONFIGURE_ARGS?=	--enable-shared --without-system-verto
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
-PATCH_DIST_STRIP=	-p2
 
-LICENSE=		MIT
-
-OPTIONS=		KRB5_DOC "Build and install krb5 documentation" on \
-			WANT_HTML "Want HTML documentation too" on \
-			DNS_FOR_REALM "enable DNS lookups of Kerberos realm names" off
+OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM
+OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
+KRB5_PDF_DESC=		Install krb5 PDF documentation
+KRB5_HTML_DESC=		Install krb5 HTML documentation
+DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
@@ -47,40 +45,24 @@ LDFLAGS+=		-rpath=${KRB5_HOME}/lib
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DNS_FOR_REALM)
-CONFIGURE_ARGS+=	--enable-dns-for-realm
-.endif
-
 USE_OPENSSL=		yes
 
-.if defined(WITH_KRB5_DOC)
-BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
-			dvips:${PORTSDIR}/print/dvipsk-tetex
-INFO=			krb5-admin krb5-install krb5-user
+.include <bsd.port.pre.mk>
 
-# pointyhat kludge - tetex drags in port-OpenSSL on 7.X, but only as a build
-# dependency. Yet this triggers autodetection code in bsd.openssl.mk and
-# OpenSSL dependency is registered with the resulting package, creating a
-# discord between INDEX and actual package. Work around by explicitly recording
-# the dependency in a way that INDEX build will see.
-.if ${OSVERSION} < 800000
-WITH_OPENSSL_PORT=	yes
-.endif
-
+.if ${PORT_OPTIONS:MDNS_FOR_REALM}
+CONFIGURE_ARGS+=	--enable-dns-for-realm
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
-MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 krb5-config.1 \
+MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 \
 			kpasswd.1 klist.1 kinit.1 kdestroy.1 kswitch.1 ksu.1 \
 			ktutil.1 \
-			sclient.1 kerberos.1 kvno.1 compile_et.1
-MAN5=			kdc.conf.5 krb5.conf.5 .k5identity.5 .k5login.5 \
-			k5identity.5 k5login.5
-MAN8=			krb5kdc.8 kadmin.local.8 kdb5_util.8 kadmind.8 \
-			kprop.8 kpropd.8 kproplog.8 sserver.8
+			sclient.1 kvno.1 compile_et.1
+MAN5=			kadm5.acl.5 kdc.conf.5 krb5.conf.5 .k5identity.5 \
+			.k5login.5 k5identity.5 k5login.5
+MAN8=			krb5kdc.8 kadmin.local.8 kdb5_ldap_util.8 kdb5_util.8 \
+			kadmind.8 kprop.8 kpropd.8 kproplog.8 sserver.8
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
@@ -88,11 +70,8 @@ CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc
-HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
-			kpasswd.html krb5-admin.html \
-			krb5-install.html krb5-user.html ksu.html \
-			rcp.html rlogin.html rsh.html telnet.html
+HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
+PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
 
 CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}"
 
@@ -106,33 +85,42 @@ post-extract:
 	fi
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena/bin/perl,#!${PERL5},' \
-		${WRKSRC}/../doc/man2html
-
-post-build:
-.if defined(WITH_KRB5_DOC)
-	@cd ${WRKSRC}/../doc && \
-	${MAKE} all
-.endif
-
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/krb5
 # html documentation
-.if defined(WITH_KRB5_DOC) && defined(WITH_WANT_HTML)
-	for html in ${HTML_DOC_DIR}/*.html; do \
-		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5; \
-		${ECHO_CMD} share/doc/krb5/`${BASENAME} $${html}` >> ${TMPPLIST}; \
+.if ${PORT_OPTIONS:MKRB5_PDF}
+	pdf_files=`${FIND} ${PDF_DOC_DIR} ! -type d`
+	pdf_dirs=`${FIND} ${PDF_DOC_DIR} -type d`
+	for i in $${pdf_dirs}; do \
+		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
+	done; \
+	for i in $${pdf_files}; do \
+		${INSTALL_MAN} $${pdf} ${PREFIX}/share/doc/krb5/$${i}; \
+		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done
 .endif
-	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
-# handle info files
-.if defined(WITH_KRB5_DOC)
-.for info in ${INFO}
-	${INSTALL_MAN} ${WRKSRC}/../doc/${info}.info ${PREFIX}/info/${info}.info
-.endfor
+.if ${PORT_OPTIONS:MKRB5_HTML}
+	html_files=`${FIND} ${HTML_DOC_DIR} ! -type d | ${GREP} -v /_sources`
+	html_dirs=`${FIND} ${HTML_DOC_DIR} -type d | ${GREP} -v /_sources`
+	for i in $${html_dirs}; do \
+		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
+	done; \
+	for i in $${html_files}; do \
+		${INSTALL_MAN} $${i} ${PREFIX}/share/doc/krb5/$${i}; \
+		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
+	done
 .endif
-
+.if ${PORT_OPTIONS:MKRB5_PDF}
+	for i in $${pdf_dirs}; do \
+		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+	done | ${TAIL} -r >> ${TMPPLIST}
+.endif
+.if ${PORT_OPTIONS:MKRB5_HTML}
+	for i in $${html_dirs}; do \
+		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+	done | ${TAIL} -r >> ${TMPPLIST}
+.endif
+	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${CHMOD} 444 ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"

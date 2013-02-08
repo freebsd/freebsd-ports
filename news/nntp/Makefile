@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nntp
-# Date created:		29 September 1994
-# Whom:			adam
-#
+# Created by: adam
 # $FreeBSD$
-#
 
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2

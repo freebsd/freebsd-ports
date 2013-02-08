@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:		qt-sqlite-plugin
-# Date created:                         	27 February 2004
-# Whom:                                        	Michael Nottebrock <lofi@freebsd.org>
-#
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4-${DB}-plugin
 DISTVERSION=	${QT4_VERSION}

@@ -1,5 +1,5 @@
---- Makefile.in.orig	2012-11-28 16:54:06.000000000 +0100
-+++ Makefile.in	2012-11-28 16:54:06.000000000 +0100
+--- Makefile.in.orig	2012-11-09 16:15:03.000000000 +0100
++++ Makefile.in	2013-01-28 09:24:31.000000000 +0100
 @@ -64,6 +64,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -19,7 +19,7 @@
  # The directory containing the platform specific Tcl sources and headers
  # appropriate for this version of Tk:
 -TCL_PLATFORM_DIR	= @TCL_SRC_DIR@/unix
-+TCL_PLATFORM_DIR	= %%LOCALBASE%%/inclue/tcl@TCL_VERSION@/unix
++TCL_PLATFORM_DIR	= %%LOCALBASE%%/include/tcl@TCL_VERSION@/unix
  
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
@@ -104,24 +104,7 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -812,22 +826,19 @@
- 		fi; \
- 	    done;
- 	@echo "Installing and cross-linking top-level (.1) docs to $(MAN1_INSTALL_DIR)/";
--	@for i in $(TOP_DIR)/doc/*.1; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
--	done
- 	@echo "Installing and cross-linking C API (.3) docs to $(MAN3_INSTALL_DIR)/";
- 	@for i in $(TOP_DIR)/doc/*.3; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
-+	    $(BSD_INSTALL_MAN) $$i "$(MAN3_INSTALL_DIR)"; \
- 	done
- 	@echo "Installing and cross-linking command (.n) docs to $(MANN_INSTALL_DIR)/";
- 	@for i in $(TOP_DIR)/doc/*.n; do \
--	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
-+	    $(BSD_INSTALL_MAN) $$i "$(MANN_INSTALL_DIR)"; \
- 	done
- 
+@@ -827,7 +841,7 @@
  install-headers:
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
@@ -130,7 +113,7 @@
  	    do \
  	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -836,9 +847,12 @@
+@@ -836,9 +851,12 @@
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";

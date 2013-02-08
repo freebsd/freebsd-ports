@@ -3,6 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ DISTNAME=	python-gnutls-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python wrapper for the GNUTLS library
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

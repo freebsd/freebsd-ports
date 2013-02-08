@@ -3,6 +3,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/ \
 		http://denkrobat.de/minecraft/ \
@@ -46,9 +47,9 @@ CONFIG_FILES=	banned-ips.txt \
 .if ${PORT_OPTIONS:MX11}
 DESKTOP_ENTRIES="Minecraft-Server" \
 		"Block building game (server)" \
+		"${PREFIX}/share/pixmaps/minecraft-server.png" \
 		"${PORTNAME}" \
-		"${PORTNAME}" \
-		"Application;Game;" \
+		"Game;Java;" \
 		false
 .endif
 

@@ -1,13 +1,9 @@
-# New ports collection makefile for: multimedia/bombono
-# Date created:		07 Sep 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	bombono
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/1.2
 DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
@@ -16,7 +12,6 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	DVD authoring program
 
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
-		boost-libs>=1.48.0:${PORTSDIR}/devel/boost-libs \
 		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \

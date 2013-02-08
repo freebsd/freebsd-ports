@@ -1,14 +1,10 @@
-# New ports collection makefile for:    AbiWord2
-# Date created:         22 February 2003
-# Whom:                 Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/editors/abiword/Makefile,v 1.13 2009/11/10 13:56:18 kwm Exp $
-#
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -58,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-debug --enable-symbols
 
 .if defined(WITH_BOOST)
 CONFIGURE_ARGS+=	--with-boost
-LIB_DEPENDS+=		boost_system.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		boost_system:${PORTSDIR}/devel/boost-libs
 .else
 CONFIGURE_ARGS+=	--without-boost
 .endif

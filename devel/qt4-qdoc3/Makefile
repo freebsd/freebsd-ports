@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qdoc3
-# Date created:		2009-08-20
-# Whom:			Maxim Ignatenko <gelraen.ua@gmail.com>
-#
+# Created by: Maxim Ignatenko <gelraen.ua@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qdoc3
 DISTVERSION=	${QT4_VERSION}

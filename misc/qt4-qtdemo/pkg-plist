@@ -1878,6 +1878,9 @@ share/examples/qt4/examples/declarative/ui-components/slideswitch/slideswitch.pr
 share/examples/qt4/examples/declarative/ui-components/slideswitch/slideswitch.qmlproject
 share/examples/qt4/examples/declarative/ui-components/slideswitch/slideswitch.svg
 share/examples/qt4/examples/declarative/ui-components/spinner/main.cpp
+share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/Spinner.qml
+share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/spinner-bg.png
+share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/spinner-select.png
 share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner/main.qml
 share/examples/qt4/examples/declarative/ui-components/spinner/spinner
 %%DEBUG%%share/examples/qt4/examples/declarative/ui-components/spinner/spinner.debug
@@ -2731,6 +2734,17 @@ share/examples/qt4/examples/mainwindows/application/images/save.png
 share/examples/qt4/examples/mainwindows/application/main.cpp
 share/examples/qt4/examples/mainwindows/application/mainwindow.cpp
 share/examples/qt4/examples/mainwindows/application/mainwindow.h
+share/examples/qt4/examples/mainwindows/dockwidgets/dockwidgets
+%%DEBUG%%share/examples/qt4/examples/mainwindows/dockwidgets/dockwidgets.debug
+share/examples/qt4/examples/mainwindows/dockwidgets/dockwidgets.pro
+share/examples/qt4/examples/mainwindows/dockwidgets/dockwidgets.qrc
+share/examples/qt4/examples/mainwindows/dockwidgets/images/new.png
+share/examples/qt4/examples/mainwindows/dockwidgets/images/print.png
+share/examples/qt4/examples/mainwindows/dockwidgets/images/save.png
+share/examples/qt4/examples/mainwindows/dockwidgets/images/undo.png
+share/examples/qt4/examples/mainwindows/dockwidgets/main.cpp
+share/examples/qt4/examples/mainwindows/dockwidgets/mainwindow.cpp
+share/examples/qt4/examples/mainwindows/dockwidgets/mainwindow.h
 share/examples/qt4/examples/mainwindows/mainwindows.pro
 share/examples/qt4/examples/mainwindows/mdi/images/copy.png
 share/examples/qt4/examples/mainwindows/mdi/images/cut.png
@@ -4477,6 +4491,8 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/mainwindows/menus
 @dirrm share/examples/qt4/examples/mainwindows/mdi/images
 @dirrm share/examples/qt4/examples/mainwindows/mdi
+@dirrm share/examples/qt4/examples/mainwindows/dockwidgets/images
+@dirrm share/examples/qt4/examples/mainwindows/dockwidgets
 @dirrm share/examples/qt4/examples/mainwindows/application/images
 @dirrm share/examples/qt4/examples/mainwindows/application
 @dirrm share/examples/qt4/examples/mainwindows
@@ -4594,6 +4610,7 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/declarative/ui-components/tabwidget/qml/tabwidget
 @dirrm share/examples/qt4/examples/declarative/ui-components/tabwidget/qml
 @dirrm share/examples/qt4/examples/declarative/ui-components/tabwidget
+@dirrm share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner/content
 @dirrm share/examples/qt4/examples/declarative/ui-components/spinner/qml/spinner
 @dirrm share/examples/qt4/examples/declarative/ui-components/spinner/qml
 @dirrm share/examples/qt4/examples/declarative/ui-components/spinner

@@ -1,18 +1,13 @@
-# Ports collection Makefile for:	nss_ldapd
-# Date created:				23/7/2009
-# Whom:					melifaro@ipfw.ru
-#
+# Created by: melifaro@ipfw.ru
 # $FreeBSD$
-#
-# vim: ft=pmake tw=78 fo=cq
-#
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.8.10
+PORTVERSION=		0.8.12
+PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/
 
-MAINTAINER?=		rflynn@acsalaska.net
+MAINTAINER?=		ports@FreeBSD.org
 COMMENT?=		Advanced fork of nss_ldap
 
 LICENSE=		LGPL21 LGPL3
@@ -33,13 +28,20 @@ NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
 .if defined(SLAVE_PORT)
-OPTIONS=		PAM		"Build pam_ldap" on \
-			NSS		"Build nss support" on
-WITH_SASL=yes
+OPTIONS_DEFINE=	SASL
+OPTIONS_MULTI=	MG1
+OPTIONS_MULTI_MG1=	PAM NSS
+PAM_DESC=	Build pam_ldap
+NSS_DESC=	Build nss support
+SASL_DESC=	Build sasl support
+OPTIONS_DEFAULT=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-[0-9]*
 .else
-OPTIONS=		NSS		"Build nss support" on \
-			PAM		"Build pam_ldap" on
+OPTIONS_MULTI=	MG1
+OPTIONS_MULTI_MG1=	PAM NSS
+PAM_DESC=	Build pam_ldap
+NSS_DESC=	Build nss support
+OPTIONS_DEFAULT=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
 .endif
 
@@ -61,14 +63,14 @@ CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
 PLIST_SUB+=		CONFIG="${CONFIG_FILE}"
 SUB_LIST+=		CONFIG_FILE="${PREFIX}/etc/${CONFIG_FILE}"
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--enable-sasl
 .else
 CONFIGURE_ARGS+=	--disable-sasl
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--enable-pam \
 			--with-pam-seclib-dir=${PREFIX}/lib \
 			--with-pam-ldap-soname=pam_ldap.so.${PAM_LDAP_SHMAJOR}
@@ -80,15 +82,15 @@ CONFIGURE_ARGS+=	--disable-pam
 PLIST_SUB+=		PAM="@comment "
 .endif
 
-.if defined(WITHOUT_NSS)
-CONFIGURE_ARGS+=	--disable-nss
-PLIST_SUB+=		NSS="@comment "
-SUB_LIST+=		NSS_MESSAGE=""
-.else
+.if ${PORT_OPTIONS:MNSS}
 CONFIGURE_ARGS+=	--enable-nss
 CONFLICTS+=		nss_ldap-1.*
 PLIST_SUB+=		NSS=""
 SUB_LIST+=		NSS_MESSAGE="WARNING: Be sure to set uid and gid configuration parameters to make nslcd run under unprivileged user."
+.else
+CONFIGURE_ARGS+=	--disable-nss
+PLIST_SUB+=		NSS="@comment "
+SUB_LIST+=		NSS_MESSAGE=""
 .endif
 
 # Won't hook this in to OPTIONS until PADL ports are at least DEPRECATED.
@@ -104,11 +106,6 @@ MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
 .endif
 
-.if defined(WITHOUT_NSS) && defined(WITHOUT_PAM)
-BROKEN=	Software is useless if both NSS and PAM are disabled.\
-	Rerun 'make config' or 'portmaster --force-config'.
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
 
@@ -122,10 +119,10 @@ show-pkgmessage::
 # file if it does not exist yet.
 post-install: show-pkgmessage
 	@${INSTALL_DATA} ${WRKSRC}/nslcd.conf ${PREFIX}/etc/nslcd.conf.sample
-.if !defined(WITHOUT_NSS)
+.if ${PORT_OPTIONS:MNSS}
 	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${PREFIX}/lib/nss_ldap.so
 .endif
-.if !defined(WITHOUT_PAM)
+.if ${PORT_OPTIONS:MPAM}
 	@${LN} -fs pam_ldap.so.${PAM_LDAP_SHMAJOR} ${PREFIX}/lib/pam_ldap.so
 .endif
 

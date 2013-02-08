@@ -93,15 +93,10 @@ pre-everything::
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
-	s+%%PTHREAD_CFLAGS%%+-DUSE_MT ${PTHREAD_CFLAGS}+g; \
-	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
 	s+%%LAPACK_LIBS%%+${LAPACK_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g; \
-	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' \
-		${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
 	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
 		${WRKSRC}/libSNL/src/makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \

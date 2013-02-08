@@ -1,0 +1,56 @@
+Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
+called `xsd'.
+--- xsd/documentation/xsd.xhtml~	2012-08-10 14:31:35.000000000 -0300
++++ xsd/documentation/xsd.xhtml		2012-08-10 14:32:33.000000000 -0300
+@@ -50,19 +50,19 @@
+ 
+   <h1>NAME</h1>
+ 
+-  <p>xsd - W3C XML Schema to C++ Compiler</p>
++  <p>xsdcxx - W3C XML Schema to C++ Compiler</p>
+ 
+   <h1>SYNOPSIS</h1>
+ 
+   <dl id="synopsis">
+-    <dt><code><b>xsd</b> <i>command</i> [<i>options</i>] <i>file</i> [<i>file</i> ...]</code></dt>
+-    <dt><code><b>xsd help</b> [<i>command</i>]</code></dt>
+-    <dt><code><b>xsd version</b></code></dt>
++    <dt><code><b>xsdcxx</b> <i>command</i> [<i>options</i>] <i>file</i> [<i>file</i> ...]</code></dt>
++    <dt><code><b>xsdcxx help</b> [<i>command</i>]</code></dt>
++    <dt><code><b>xsdcxx version</b></code></dt>
+   </dl>
+ 
+   <h1>DESCRIPTION</h1>
+ 
+-  <p><code><b>xsd</b></code> generates vocabulary-specific, statically-typed
++  <p><code><b>xsdcxx</b></code> generates vocabulary-specific, statically-typed
+   C++ mapping from W3C XML Schema definitions. Particular mapping to
+   produce is selected by a <code><i>command</i></code>. Each mapping has
+   a number of mapping-specific <code><i>options</i></code> that should
+@@ -104,7 +104,7 @@
+ 
+     <dt><code><b>help</b></code></dt>
+     <dd>Print usage information and exit. Use
+-      <p><code><b>xsd help</b> <i>command</i></code></p>
++      <p><code><b>xsdcxx help</b> <i>command</i></code></p>
+       for command-specific help.
+     </dd>
+ 
+@@ -174,7 +174,7 @@
+ 
+       <p>For example, if you have file <code><b>hello.xsd</b></code>
+         with namespace <code><b>http://example.com/hello</b></code> and you run
+-        <code><b>xsd</b></code> on this file, then the string in question
++        <code><b>xsdcxx</b></code> on this file, then the string in question
+         will be:</p>
+ 
+       <p><code><b>hello.xsd. http://example.com/hello</b></code></p>
+@@ -1575,7 +1575,7 @@
+   <h1>DIAGNOSTICS</h1>
+ 
+   <p>If the input file is not a valid W3C XML Schema definition,
+-    <code><b>xsd</b></code> will issue diagnostic messages to STDERR
++    <code><b>xsdcxx</b></code> will issue diagnostic messages to STDERR
+     and exit with non-zero exit code.</p>
+ 
+   <h1>BUGS</h1>

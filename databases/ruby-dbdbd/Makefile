@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	David Black's DataBase Definer
 
+DEPRECATED=	Dead project, apparently unused
+EXPIRATION_DATE=2013-03-01
+
 RESTRICTED=	License only allows unchanged distributions
 
 USE_RUBY=	yes

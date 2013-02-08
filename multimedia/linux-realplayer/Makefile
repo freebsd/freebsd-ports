@@ -1,9 +1,5 @@
-# New ports collection makefile for:   linux-realplayer
-# Date created:        31 January 1999
-# Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
-#
+# Created by: Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 # $FreeBSD$
-#
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.9.809-20070726
@@ -21,6 +17,8 @@ COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer

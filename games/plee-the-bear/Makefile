@@ -1,13 +1,9 @@
-# New ports collection makefile for:	plee-the-bear
-# Date created:		28 Mar 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	plee-the-bear
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Plee%20the%20Bear/${PORTVERSION:R}
 

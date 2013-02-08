@@ -2,19 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	BNFC
-PORTVERSION=	2.4.2.1
-PORTREVISION=	1
+PORTVERSION=	2.6.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Labelled BNF converter
+COMMENT=	Compiler front-end generator
 
 LICENSE=	GPLv2
-FILE_LICENSE=	COPYING
 
 USE_CABAL=	mtl
 
-STANDALONE=	yes
 EXECUTABLE=	bnfc
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

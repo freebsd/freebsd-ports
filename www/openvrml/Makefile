@@ -1,13 +1,9 @@
-# New ports collection makefile for:	OpenVRML
-# Date created:				8 Jan 2001
-# Whom:					Marc van Woerkom <3d@freebsd.org>
-#
+# Created by: Marc van Woerkom <3d@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -32,11 +28,10 @@ GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--enable-gecko-rpath \
 		--disable-mozilla-plugin
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LIBS="-lm" BOOST_LIB_SUFFIX=""
+CONFIGURE_ENV=	LIBS="-lm" BOOST_LIB_SUFFIX=""
 CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L} \
 		-I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client -pthread
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GECKO=	libxul19
@@ -56,8 +51,8 @@ PORTDOCS=	*
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
-LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 pre-everything::
 	@${ECHO_MSG}

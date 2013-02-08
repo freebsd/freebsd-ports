@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnome-icons-dropline-nou
-# Date created:		2008-09-29
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dropline-nou
 PORTVERSION=	090208

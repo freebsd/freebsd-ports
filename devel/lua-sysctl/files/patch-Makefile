@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-01-25 08:34:02.000000000 -0200
++++ Makefile	2013-01-25 08:34:23.000000000 -0200
+@@ -2,7 +2,7 @@
+ SODIR  = sysctl
+ SOLIB  = ${SODIR}/core.so
+ 
+-LDFLAGS += -shared -soname ${SONAME}
++LDFLAGS += -shared -Wl,-soname,${SONAME}
+ CFLAGS  += -Wall -Wextra -fPIC `pkg-config --cflags lua-5.1`
+ 
+ all: ${SOLIB}

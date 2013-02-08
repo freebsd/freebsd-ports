@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SVGAlib
-# Date created:				24 August 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by:				Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	svgalib
 PORTVERSION=	1.4.3
@@ -11,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	A low level console graphics library
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -43,9 +39,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '30d' ${WRKSRC}/src/vgabg.h
 	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
 		${WRKSRC}/src/apm.c
-# Allow to build on !i386
-	${REINPLACE_CMD} -e '29,36s,def __alpha__, defined(NO_ASSEMBLY),' \
-		${WRKSRC}/src/vgapix.c ${WRKSRC}/gl/driver.c
 # 024_vesa_not_print_crap.patch from Debian
 	${REINPLACE_CMD} -e '/^printf/d' ${WRKSRC}/src/vesa.c
 # Clean up after typo fixes in manpages

@@ -1,19 +1,17 @@
-# New ports collection makefile for:	apel for emacs
-# Date created:		23 September 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
 PORTREVISION=	8
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/
+MASTER_SITES=	http://git.chise.org/elisp/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs
+
+LICENSE=	GPLv2
 
 # distfile version
 APEL_VER=	10.8
@@ -33,6 +31,10 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 		LISPDIR="${APEL_LISPDIR}" \
 		VERSION_SPECIFIC_LISPDIR="${APEL_VERSION_SPECIFIC_LISPDIR}"
 
+OPTIONS_DEFINE=	DOCS
+OPTINOS_DEFAULT=	DOCS
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_VER:C/\..*//} >= 23
@@ -42,7 +44,7 @@ PLIST_SUB+=	EMACS23="@comment " NOEMACS23=""
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog README.* ; do \

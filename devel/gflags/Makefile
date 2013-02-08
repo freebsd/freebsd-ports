@@ -1,32 +1,35 @@
-# New ports collection makefile for:	gflags
-# Date created:				19 December 2006
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gflags
-PORTVERSION=	1.7
+PORTVERSION=	2.0
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Commandline flags module for C++
 
-PROJECTHOST=	google-gflags
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
+LICENSE=	BSD
+
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
 		designstyle.css gflags.html
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	${REINPLACE_CMD} -e 's|\(pkgconfigdir = \).*|\1$$\(DESTDIR\)$$\(prefix\)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|^docdir.*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '/^install/s/ install-dist_docDATA//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|^\(docdir = \).*|\1${DOCSDIR}|' \
+		-e 's|^\(pkgconfigdir = \).*|\1$$(DESTDIR)$$(prefix)/libdata/pkgconfig|' \
+			${WRKSRC}/Makefile.in
+.if empty(PORT_OPTIONS:MDOCS)
+	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>

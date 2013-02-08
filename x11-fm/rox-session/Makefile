@@ -1,7 +1,3 @@
-# New ports collection makefile for:	rox-session
-# Date created:        11 March 2001
-# Whom:                Jimmy Olgeni <olgeni@uli.it>
-#
 # $FreeBSD$
 
 PORTNAME=	rox-session

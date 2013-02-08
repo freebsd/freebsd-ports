@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTVERSION=	1.3.12
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -74,7 +73,6 @@ OPTIONS_DEFINE=	\
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
-	CHUNKIN \
 	DRIZZLE \
 	ENCRYPTSESSION \
 	FORMINPUT \
@@ -162,7 +160,6 @@ HTTP_UPSTREAM_HASH_DESC=	3rd party upstream hash module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
-CHUNKIN_DESC=			3rd party chunkin module
 DRIZZLE_DESC=			3rd party drizzlie module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
@@ -493,6 +490,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
+IGNORE=	incompatible with nginx_upload_module-2.2.0
 NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
@@ -544,15 +542,6 @@ DISTFILES+=	mod_zip-${NGINX_ZIP_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
-.if ${PORT_OPTIONS:MCHUNKIN}
-NGINX_CHUNKIN_VERSION=	0.22rc1
-GIT_CHUNKIN_VERSION=	0-gb0a3ee3
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_VERSION}/:chunkin
-DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_VERSION}-${GIT_CHUNKIN_VERSION}.tar.gz:chunkin
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_VERSION:S/^0-g//}
-.endif
-
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
 NGINX_DRIZZLE_VERSION=	0.1.4
@@ -564,8 +553,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DR
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module-config
 .endif
 
+.if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
+NGINX_DEVEL_KIT_VERSION=	0.2.18
+GIT_DEVEL_KIT_VERSION=	0-g48bc5dd
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
+DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
+.endif
+
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ENCRYPTSESSION_VERSION=	0.02
 GIT_ENCRYPTSESSION_VERSION=	0-gc752861
 FETCH_ARGS=	-pRr
@@ -600,7 +597,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_LUA_VERSION=	0.6.10
 GIT_LUA_VERSION=	0-g73d8dd2
 FETCH_ARGS=	-pRr
@@ -684,8 +680,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.8.4
-GIT_RTMP_VERSION=	0-g2aeefa3
+NGINX_RTMP_VERSION=	0.8.7
+GIT_RTMP_VERSION=	0-g544c73b
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
@@ -693,7 +689,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_SET_MISC_VERSION=	0.22rc8
 GIT_SET_MISC_VERSION=	0-g658c235
 FETCH_ARGS=	-pRr
@@ -736,6 +731,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
+IGNORE=	incompatible with syslog_support patch
 NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
 CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
@@ -778,9 +774,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .if ${PORT_OPTIONS:MSPDY}
 USE_OPENSSL_PORT=	yes
 USE_HTTP_SSL=	yes
-NGINX_SPDY_VERSION=	53
+NGINX_SPDY_VERSION=	61
 PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
-PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}.txt:spdy
+PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}_${PORTVERSION}.txt:spdy
+PATCH_DIST_STRIP=	-p1
+CONFIGURE_ARGS+=--with-http_spdy_module
 .endif
 
 .if ${PORT_OPTIONS:MWWW}
@@ -816,17 +814,7 @@ NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
-.if defined(USE_NGINX_DEVEL_KIT)
-NGINX_DEVEL_KIT_VERSION=	0.2.17
-GIT_DEVEL_KIT_VERSION=	0-gbc97eea
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
-DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
-.endif
-
 .if ${PORT_OPTIONS:MARRAYVAR}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ARRAYVAR_VERSION=	0.03rc1
 GIT_ARRAYVAR_VERSION=	0-gfed751a
 FETCH_ARGS=	-pRr
@@ -836,7 +824,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRA
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_FORMINPUT_VERSION=	0.07rc5
 GIT_FORMINPUT_VERSION=	0-gd41681d
 FETCH_ARGS=	-pRr
@@ -847,7 +834,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMI
 
 .if ${PORT_OPTIONS:MICONV}
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
-USE_NGINX_DEVEL_KIT=	yes
 NGINX_ICONV_VERSION=	0.10rc7
 GIT_ICONV_VERSION=	0-gabdac17
 FETCH_ARGS=	-pRr
@@ -911,8 +897,6 @@ post-patch:
 		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
-	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx/config
 	@${REINPLACE_CMD} 's!-Wall!!g; \
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
@@ -923,8 +907,6 @@ post-patch:
 		s!-lev!!; \
 		s!-Iext/libev!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
-	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \
@@ -935,6 +917,16 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
+.endif
+.if ${PORT_OPTIONS:MSPDY}
+.if ${PORT_OPTIONS:MDRIZZLE}
+	@${REINPLACE_CMD} '584d' \
+		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+.endif
+.if ${PORT_OPTIONS:MLUA}
+	@${REINPLACE_CMD} '437d' \
+		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
+.endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \

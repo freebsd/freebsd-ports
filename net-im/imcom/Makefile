@@ -1,7 +1,4 @@
-# New ports collection makefile for:	imcom
-# Date created:				Jun 09 2002
-# Whom:					Martijn Lina
-#
+# Created by: Martijn Lina
 # $FreeBSD$
 
 PORTNAME=	imcom
@@ -12,6 +9,9 @@ MASTER_SITES=	http://nafai.dyndns.org/files/
 
 MAINTAINER=	martijn@pacno.net
 COMMENT=	IMCom is a command-line Jabber client written in Python
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes

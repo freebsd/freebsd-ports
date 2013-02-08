@@ -1,4 +1,5 @@
 %%DATADIR%%/LICENSE.txt
+%%DATADIR%%/README.markdown
 %%DATADIR%%/dalmp.php
 %%DATADIR%%/classes/DALMP.php
 %%DATADIR%%/classes/DALMP/Cache.php
@@ -6,14 +7,19 @@
 %%DATADIR%%/classes/DALMP/Logger.php
 %%DATADIR%%/classes/DALMP/Sessions.php
 %%DATADIR%%/examples/2databases.php
+%%DATADIR%%/examples/README.markdown
 %%DATADIR%%/examples/REF.php
 %%DATADIR%%/examples/cache-group.php
 %%DATADIR%%/examples/cache.php
+%%DATADIR%%/examples/cache_dir.php
+%%DATADIR%%/examples/cache_memcache.php
+%%DATADIR%%/examples/cache_redis.php
 %%DATADIR%%/examples/csv.php
 %%DATADIR%%/examples/curl.php
 %%DATADIR%%/examples/preparedStatements.php
 %%DATADIR%%/examples/query_Execute.php
 %%DATADIR%%/examples/queue.php
+%%DATADIR%%/examples/sessions-redis.php
 %%DATADIR%%/examples/sessions.php
 %%DATADIR%%/examples/sqlite-encryption.php
 %%DATADIR%%/examples/sqliteSessions.php

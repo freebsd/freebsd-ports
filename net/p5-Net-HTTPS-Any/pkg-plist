@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/HTTPS/Any.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTPS/Any/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTPS/Any
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTPS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/HTTPS
+@dirrmtry %%SITE_PERL%%/Net

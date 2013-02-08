@@ -16,8 +16,6 @@
     SUBDIR += fl_editor
     SUBDIR += flowcanvas
     SUBDIR += fltk
-    SUBDIR += fltk11
-    SUBDIR += fltk2
     SUBDIR += flvw
     SUBDIR += fox14
     SUBDIR += fox16
@@ -255,11 +253,8 @@
     SUBDIR += tk-wrapper
     SUBDIR += tk83
     SUBDIR += tk84
-    SUBDIR += tk84-thread
     SUBDIR += tk85
-    SUBDIR += tk85-thread
     SUBDIR += tk86
-    SUBDIR += tk86-thread
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tktable

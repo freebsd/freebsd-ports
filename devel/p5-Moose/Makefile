@@ -54,8 +54,6 @@ CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
 
-CONFLICTS=	p5-Class-MOP-[0-9]*
-
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
 	Class::MOP::Class.3 \

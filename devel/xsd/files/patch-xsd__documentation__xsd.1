@@ -1,0 +1,74 @@
+Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
+called `xsd'.
+--- xsd/documentation/xsd.1~	2012-08-10 14:28:12.000000000 -0300
++++ xsd/documentation/xsd.1	2012-08-10 14:30:50.000000000 -0300
+@@ -1,16 +1,16 @@
+ .\" Process this file with
+-.\" groff -man -Tascii xsd.1
++.\" groff -man -Tascii xsdcxx.1
+ .\"
+ .TH XSD 1 "April 2010" "XSD 3.3.0"
+ .SH NAME
+-xsd \- W3C XML Schema to C++ Compiler
++xsdcxx \- W3C XML Schema to C++ Compiler
+ .\"
+ .\"
+ .\"
+ .\"--------------------------------------------------------------------
+ .SH SYNOPSIS
+ .\"--------------------------------------------------------------------
+-.B xsd
++.B xsdcxx
+ .I command
+ .B [
+ .I options
+@@ -20,19 +20,19 @@
+ .I file
+ .B ...]
+ .in
+-.B xsd help
++.B xsdcxx help
+ .B [
+ .I command
+ .B ]
+ .in
+-.B xsd version
++.B xsdcxx version
+ .\"
+ .\"
+ .\"
+ .\"--------------------------------------------------------------------
+ .SH DESCRIPTION
+ .\"--------------------------------------------------------------------
+-.B xsd
++.B xsdcxx
+ generates vocabulary-specific, statically-typed C++ mapping from W3C XML
+ Schema definitions. Particular mapping to produce is selected by a
+ .IR command .
+@@ -96,7 +96,7 @@
+ .PP
+ .RS
+ .RS 3
+-.B xsd help
++.B xsdcxx help
+ .I command
+ .RE
+ .PP
+@@ -203,7 +203,7 @@
+ with namespace
+ .B http://example.com/hello
+ and you run
+-.B xsd
++.B xsdcxx
+ on this file, then the string in question will be:
+ 
+ .B hello.xsd. http://example.com/hello
+@@ -1877,7 +1877,7 @@
+ .\"
+ .SH DIAGNOSTICS
+ If the input file is not a valid W3C XML Schema definition,
+-.B xsd
++.B xsdcxx
+ will issue diagnostic messages to
+ .B STDERR
+ and exit with non-zero exit code.

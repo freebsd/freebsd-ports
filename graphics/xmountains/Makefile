@@ -4,14 +4,15 @@
 PORTNAME=	xmountains
 PORTVERSION=	2.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://www2.epcc.ed.ac.uk/~spb/xmountains/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	ftp://ftp.uwsg.indiana.edu/linux/debian/pool/main/x/xmountains/ \
+		ftp://ftp.fi.netbsd.org/.m/mirrors1/archive.ubuntu.com/pool/universe/x/xmountains/ \
+		ftp://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
+		ftp://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/ \
+		ftp://ftp.debian.com/debian/pool/main/x/xmountains/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	X11 based fractal landscape generator
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2012-11-26
 
 NO_WRKSUBDIR=	yes
 
@@ -20,12 +21,13 @@ USE_XORG=	xbitmaps x11
 MAN6=		${PORTNAME}.6
 PLIST_FILES=	bin/${PORTNAME}
 
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
 post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.6
 
 do-build:
-	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include *.c \
-		-o ${PORTNAME} -L${LOCALBASE}/lib -lX11 -lm
+	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} *.c -lX11 -lm -o ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

@@ -152,8 +152,7 @@ if __name__ == '__main__':
     ARGS += [
         "-Djetty.home=%%APP_HOME%%",
         "-jar",
-        "%%APP_HOME%%/start.jar",
-        "%%PREFIX%%/etc/%%APP_NAME%%.xml"
+        "%%APP_HOME%%/start.jar"
         ]
 
     os.environ['PATH'] = "%%LOCALBASE%%/bin:/usr/bin:/bin"

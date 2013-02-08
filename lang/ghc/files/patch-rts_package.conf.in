@@ -1,23 +1,20 @@
-
-$FreeBSD$
-
---- rts/package.conf.in.orig
-+++ rts/package.conf.in
-@@ -31,9 +31,6 @@
- #ifdef HAVE_LIBM
-                 		"m"		/* for ldexp() */
- #endif
--#ifdef HAVE_LIBRT
--			      , "rt"
--#endif
+--- ./rts/package.conf.in.orig		2012-06-06 19:10:25.000000000 +0200
++++ ./rts/package.conf.in		2013-01-30 19:04:28.000000000 +0100
+@@ -33,6 +33,9 @@
  #ifdef HAVE_LIBDL
  			      , "dl"
  #endif
-@@ -141,6 +138,7 @@
- 	 , "-u", "base_GHCziConc_runSparks_closure"
- 	 , "-u", "base_GHCziConc_runHandlers_closure"
++#ifdef HAVE_LIBFFI
++                              , "ffi"
++#endif
+ #ifdef mingw32_HOST_OS
+ 			      ,"wsock32"	/* for the linker */
  #endif
-+	 , "-L%%LOCALBASE%%/lib"
+@@ -138,6 +141,7 @@
+ 	 , "-u", "base_GHCziConcziSync_runSparks_closure"
+ 	 , "-u", "base_GHCziConcziSignal_runHandlers_closure"
+ #endif
++        , "-L%%LOCALBASE%%/lib"
  
  /*  Pick up static libraries in preference over dynamic if in earlier search
   *  path.  This is important to use the static gmp in preference on Mac OS.

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Inherited/.packlist
+%%SITE_PERL%%/Data/Inherited.pm
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Inherited
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

@@ -3,6 +3,8 @@
 %%XPI_XPIDIR%%/chrome/content/about.xul
 %%XPI_XPIDIR%%/chrome/content/addeditproxy.js
 %%XPI_XPIDIR%%/chrome/content/addeditproxy.xul
+%%XPI_XPIDIR%%/chrome/content/advancedSettings.js
+%%XPI_XPIDIR%%/chrome/content/advancedSettings.xul
 %%XPI_XPIDIR%%/chrome/content/bindings.xml
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.js
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.xul
@@ -26,6 +28,7 @@
 %%XPI_XPIDIR%%/chrome/content/images/16x16.gif
 %%XPI_XPIDIR%%/chrome/content/images/arrow_refresh.png
 %%XPI_XPIDIR%%/chrome/content/images/cbox-check.gif
+%%XPI_XPIDIR%%/chrome/content/images/computer_link.png
 %%XPI_XPIDIR%%/chrome/content/images/delete-disabled.png
 %%XPI_XPIDIR%%/chrome/content/images/delete.png
 %%XPI_XPIDIR%%/chrome/content/images/dialog-information.png
@@ -78,14 +81,17 @@
 %%XPI_XPIDIR%%/chrome/content/overlay.js
 %%XPI_XPIDIR%%/chrome/content/pattern.js
 %%XPI_XPIDIR%%/chrome/content/pattern.xul
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/addeditsubscription.js
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/addeditsubscription.xul
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/patternsView.xul
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/laststatus.js
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/laststatus.xul
-%%XPI_XPIDIR%%/chrome/content/pattern-subscriptions/patternsView.js
 %%XPI_XPIDIR%%/chrome/content/selection.js
 %%XPI_XPIDIR%%/chrome/content/strings.xml
+%%XPI_XPIDIR%%/chrome/content/subscriptions/proxiesView.xul
+%%XPI_XPIDIR%%/chrome/content/subscriptions/addEditProxySubscription.xul
+%%XPI_XPIDIR%%/chrome/content/subscriptions/lastStatus.js
+%%XPI_XPIDIR%%/chrome/content/subscriptions/addEditPatternSubscription.xul
+%%XPI_XPIDIR%%/chrome/content/subscriptions/lastStatus.xul
+%%XPI_XPIDIR%%/chrome/content/subscriptions/patternsView.js
+%%XPI_XPIDIR%%/chrome/content/subscriptions/proxiesView.js
+%%XPI_XPIDIR%%/chrome/content/subscriptions/addEditSubscription.js
+%%XPI_XPIDIR%%/chrome/content/subscriptions/patternsView.xul
 %%XPI_XPIDIR%%/chrome/content/superadd.js
 %%XPI_XPIDIR%%/chrome/content/superadd.xul
 %%XPI_XPIDIR%%/chrome/content/tbirdOverlay.xul
@@ -134,10 +140,14 @@
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/fi-FI/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/fi-FI/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/fi-FI/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/fi-FI/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/fr/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/foxyproxy.properties
@@ -239,6 +249,7 @@
 %%XPI_XPIDIR%%/components/foxyproxy.js
 %%XPI_XPIDIR%%/components/foxyproxyprotocolhandler.js
 %%XPI_XPIDIR%%/components/match.js
+%%XPI_XPIDIR%%/components/protocolProxyServiceWrapper.js
 %%XPI_XPIDIR%%/components/proxy.js
 %%XPI_XPIDIR%%/components/relativeprotocolhandler.js
 %%XPI_XPIDIR%%/defaults/preferences/prefs.js
@@ -247,12 +258,11 @@
 %%XPI_XPIDIR%%/modules/defaultprefs.jsm
 %%XPI_XPIDIR%%/modules/superadd.js
 %%XPI_XPIDIR%%/modules/autoproxy.jsm
-%%XPI_XPIDIR%%/modules/patternSubscriptions.jsm
+%%XPI_XPIDIR%%/modules/subscriptions.jsm
 %%XPI_XPIDIR%%/modules/utils.jsm
 @dirrm %%XPI_XPIDIR%%/modules
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
@@ -270,13 +280,14 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/lv-LV
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hr-HR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/gl-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fi-FI
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fa-IR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-AR
@@ -290,7 +301,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/icons/default
 @dirrm %%XPI_XPIDIR%%/chrome/icons
 @dirrm %%XPI_XPIDIR%%/chrome/content/images
-@dirrm %%XPI_XPIDIR%%/chrome/content/pattern-subscriptions
+@dirrm %%XPI_XPIDIR%%/chrome/content/subscriptions
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/components/api

@@ -10,8 +10,6 @@
     SUBDIR += airport
     SUBDIR += angst
     SUBDIR += ap-utils
-    SUBDIR += argus
-    SUBDIR += argus-clients
     SUBDIR += argus-monitor
     SUBDIR += argus3
     SUBDIR += argus3-clients
@@ -140,7 +138,6 @@
     SUBDIR += nagios-spamd-plugin
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
-    SUBDIR += nagiosgrapher
     SUBDIR += nagiosql
     SUBDIR += nagiostat
     SUBDIR += nagircbot
@@ -177,7 +174,6 @@
     SUBDIR += netwox
     SUBDIR += netxms
     SUBDIR += nfdump
-    SUBDIR += nfdump-devel
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
@@ -187,6 +183,8 @@
     SUBDIR += nrpep
     SUBDIR += nsca
     SUBDIR += nsca-client
+    SUBDIR += nsca27
+    SUBDIR += nsca27-client
     SUBDIR += nstreams
     SUBDIR += observium
     SUBDIR += ocsinventory-agent

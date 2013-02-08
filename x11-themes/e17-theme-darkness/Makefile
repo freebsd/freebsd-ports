@@ -13,6 +13,9 @@ EXTRACT_SUFX=	.edj
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Darkness theme for use with e17 window manager
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=2013-02-28
+
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 NO_BUILD=	yes

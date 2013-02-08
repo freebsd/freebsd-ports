@@ -106,7 +106,7 @@ WANT_MYSQL_VER=	50
 
 LATEST_LINK=	mysql50-server
 
-CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[1-9].*
+CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[1-9].* mariadb-server-5.* percona-server-5.*
 
 USE_RC_SUBR=	mysql-server
 

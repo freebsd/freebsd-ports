@@ -1,24 +1,5 @@
-bin/cvs
-bin/cvsbug
 bin/cvstree
 bin/gcvs
-bin/rcs2log
-lib/cvs/contrib/README
-lib/cvs/contrib/clmerge
-lib/cvs/contrib/cln_hist
-lib/cvs/contrib/commit_prep
-lib/cvs/contrib/cvs2vendor
-lib/cvs/contrib/cvs_acls
-lib/cvs/contrib/cvscheck
-lib/cvs/contrib/cvscheck.man
-lib/cvs/contrib/intro.doc
-lib/cvs/contrib/log
-lib/cvs/contrib/log_accum
-lib/cvs/contrib/mfpipe
-lib/cvs/contrib/rcs-to-cvs
-lib/cvs/contrib/rcs2log
-lib/cvs/contrib/rcslock
-lib/cvs/contrib/sccs2rcs
 %%DATADIR%%/ChangeRoot.tcl
 %%DATADIR%%/ChangeRootTK.tcl
 %%DATADIR%%/Cleanup.tcl
@@ -88,5 +69,3 @@ lib/cvs/contrib/sccs2rcs
 %%DATADIR%%/startup.tcl
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrm lib/cvs/contrib
-@dirrm lib/cvs

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  Splitvt
-# Date created:			  Fri Oct 4, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	splitvt
 PORTVERSION=	1.6.6
@@ -14,6 +9,9 @@ MASTER_SITES=	http://slouken.libsdl.org/projects/splitvt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run two shells in a split window/terminal
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=

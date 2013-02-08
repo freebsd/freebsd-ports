@@ -1,4 +1,3 @@
-bin/cttex
 include/thai/thailib.h
 include/thai/thbrk.h
 include/thai/thcell.h
@@ -19,6 +18,8 @@ include/thai/wtt.h
 lib/libthai.a
 lib/libthai.la
 lib/libthai.so
-lib/libthai.so.0
+lib/libthai.so.2
 libdata/pkgconfig/libthai.pc
+share/libthai/thbrk.tri
+@dirrm share/libthai
 @dirrm include/thai

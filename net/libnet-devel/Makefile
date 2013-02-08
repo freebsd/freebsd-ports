@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libnet-devel
-# Date created:			Jan 7, 2003
-# Whom:				smace@freebsd.org
-#
+# Created by: smace@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.6

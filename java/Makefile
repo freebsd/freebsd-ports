@@ -143,6 +143,7 @@
     SUBDIR += subversion-java
     SUBDIR += trove4j
     SUBDIR += veditor
+    SUBDIR += visualvm
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>

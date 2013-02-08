@@ -1,17 +1,16 @@
-# New ports collection makefile for:	sarah
-# Date created:		10 Jan 2000
-# Whom:			Matthew Pounsett <mattp@conundrum.com>
-#
+# Created by: Matthew Pounsett <mattp@conundrum.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sarah
 PORTVERSION=	0.9.1b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 
-MAINTAINER=	mattp@conundrum.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syslog automated Rotation and Archive Handler
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 USE_PERL5=	yes
 NO_BUILD=	yes

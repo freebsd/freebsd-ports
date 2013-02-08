@@ -1,0 +1,13 @@
+--- doc/xconq.texi.orig
++++ doc/xconq.texi
+@@ -5,6 +5,10 @@
+ @clear DOUBLEDENSITY
+ 
+ @settitle Xconq
++@dircategory Games
++@direntry
++* Xconq: (xconq).		X-based configurable strategy game.
++@end direntry
+ @setchapternewpage odd
+ 
+ @ifinfo

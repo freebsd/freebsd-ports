@@ -1,13 +1,9 @@
-# New ports collection makefile for:	galaxyhack
-# Date created:				10 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	galaxyhack
 PORTVERSION=	1.74
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
@@ -24,8 +20,6 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
-CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=2
 
 OPTIONS_DEFINE=	FLEETS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS

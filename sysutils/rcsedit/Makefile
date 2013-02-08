@@ -1,9 +1,5 @@
-# Ports collection makefile for:  rcsedit
-# Date created:  22 June 2006
-# Whom:		Antonio Querubin <tony@lava.net>
-#
+# Created by: Antonio Querubin <tony@lava.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rcsedit
 PORTVERSION=	1.3.2
@@ -12,8 +8,11 @@ MASTER_SITES=	http://malasada.lava.net/rcsedit/ \
 		http://lava.net/files/rcsedit/ \
 		http://ipv6.lava.net/rcsedit/
 
-MAINTAINER=	rcsedit@lava.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple wrapper for RCS written in Perl
+
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2013-02-27
 
 PLIST_FILES=	bin/rcsedit
 

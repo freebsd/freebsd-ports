@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libelf
-# Date created:		18 Apr 2001
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libelf
 PORTVERSION=	0.8.13
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
 OPTIONS_DEFINE=	EXTENDED NLS SANITY

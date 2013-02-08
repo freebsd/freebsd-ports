@@ -1,9 +1,5 @@
-# New ports collection makefile for:		mbrolavox
-# Date created:					2003-10-05
-# Whom:						trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zeroer
-# Date created:				2 Jan 2006
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zeroer
 PORTVERSION=	0.1
@@ -25,6 +21,10 @@ PORTDOCS=	README
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpopt
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${PORTNAME}
@@ -33,7 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

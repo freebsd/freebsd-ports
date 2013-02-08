@@ -1,30 +1,33 @@
-# New ports collection makefile for:	xataxx
-# Date created:				4 July 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xataxx
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strategy game of position and movement for X Window System
 
-USE_IMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
 USE_XORG=	x11 xext
+USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
 MAN6=		xataxx.6
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xataxx
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xataxx
-	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/xataxx
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in README TODO
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 .endif
 
 .include <bsd.port.mk>

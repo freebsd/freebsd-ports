@@ -41,7 +41,6 @@ CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
 USE_TK=		84+
 INVALID_TK_VER =	86
 .if defined(WITH_THREADS)
-USE_TK_THREADS =	yes
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD =	${PTHREAD_LIBS}
 .endif
@@ -58,8 +57,8 @@ post-patch:
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
 		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
-		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_VER:S/.//}${_TCL_THREADS_SUFFIX}\
-		-ltcl${TCL_VER:S/.//}${_TCL_THREADS_SUFFIX} ${THR_LD}," \
+		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_VER:S/.//}\
+		-ltcl${TCL_VER:S/.//} ${THR_LD}," \
 		${WRKSRC}/Makefile.config
 
 	@${REINPLACE_CMD} \

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Apache-Session
-# Date created:				March 13, 2000
-# Whom:					Frank Mayhar <frank@exit.com>
-#
+# Created by: Frank Mayhar <frank@exit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.89
+PORTVERSION=	1.90
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +12,11 @@ COMMENT=	A persistence framework for session data
 
 MAKE_JOBS_SAFE=	yes
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-Deep>=0.082:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS+=	p5-Test-Deep>=0.082:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Database>=0:${PORTSDIR}/databases/p5-Test-Database
 
 PERL_MODBUILD=  yes
 
@@ -37,6 +34,7 @@ MAN3=		Apache::Session.3 \
 		Apache::Session::Lock::Semaphore.3 \
 		Apache::Session::Lock::Sybase.3 \
 		Apache::Session::MySQL.3 \
+		Apache::Session::MySQL::NoLock.3 \
 		Apache::Session::Oracle.3 \
 		Apache::Session::Postgres.3 \
 		Apache::Session::Serialize::Base64.3 \

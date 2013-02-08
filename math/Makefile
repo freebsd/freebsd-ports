@@ -143,7 +143,6 @@
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
-    SUBDIR += gnuplot+
     SUBDIR += goblin
     SUBDIR += gotoblas
     SUBDIR += grace
@@ -159,16 +158,20 @@
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
     SUBDIR += hs-comonad-transformers
+    SUBDIR += hs-comonads-fd
     SUBDIR += hs-contravariant
     SUBDIR += hs-data-lens
     SUBDIR += hs-data-lens-template
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
+    SUBDIR += hs-groupoids
     SUBDIR += hs-ieee754
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
+    SUBDIR += hs-nats
     SUBDIR += hs-pointed
     SUBDIR += hs-probability
+    SUBDIR += hs-semigroupoid-extras
     SUBDIR += hs-semigroupoids
     SUBDIR += hs-semigroups
     SUBDIR += hs-statistics
@@ -209,7 +212,6 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += ldouble
-    SUBDIR += lensnns
     SUBDIR += levmar
     SUBDIR += libR
     SUBDIR += libRmath
@@ -280,6 +282,7 @@
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
     SUBDIR += octave-forge-data-smoothing
+    SUBDIR += octave-forge-database
     SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-econometrics

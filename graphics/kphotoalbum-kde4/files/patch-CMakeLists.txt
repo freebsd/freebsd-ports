@@ -1,8 +1,0 @@
---- ./CMakeLists.txt.orig	2010-02-12 00:53:08.000000000 +0300
-+++ ./CMakeLists.txt	2010-08-21 11:54:14.712632655 +0400
-@@ -339,5 +339,3 @@
- find_package(Msgfmt REQUIRED)
- find_package(Gettext REQUIRED)
- add_subdirectory( po )
--add_subdirectory( doc-translations )
--add_subdirectory( doc )

@@ -182,16 +182,16 @@ lib/libsword-%%PORTVERSION%%.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_Any_Latex.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_Any_Latin1.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_BETA_Greek.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_BGreek_Greek.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_CCAT_Hebrew.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_CCAT_Syriac.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_Latin_Coptic.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_Latin_Gothic.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_Latin_Ugaritic.res
-%%ICU%%lib/sword/%%PORTVERSION%%_icu_50.1/translit_swordindex.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_Any_Latex.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_Any_Latin1.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_BETA_Greek.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_BGreek_Greek.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_CCAT_Hebrew.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_CCAT_Syriac.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_Latin_Coptic.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_Latin_Gothic.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_Latin_Ugaritic.res
+%%ICU%%lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%/translit_swordindex.res
 libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/locales.conf
 %%DATADIR%%/locales.d/abbr.conf
@@ -279,6 +279,6 @@ libdata/pkgconfig/sword.pc
 @dirrm %%DATADIR%%/mods.d
 @dirrm %%DATADIR%%/locales.d
 @dirrm %%DATADIR%%
-%%ICU%%@dirrm lib/sword/%%PORTVERSION%%_icu_50.1
+%%ICU%%@dirrm lib/sword/%%PORTVERSION%%_icu_%%ICUVER%%
 @dirrm lib/sword
 @dirrm include/sword

@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.8p2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -25,6 +25,7 @@ CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 USE_PERL5_BUILD=	yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		ac_cv_func_strnvis=no
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 			--without-zlib-version-check --with-ssl-engine
 PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \

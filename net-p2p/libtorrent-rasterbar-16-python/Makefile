@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+PORTREVISION=	2
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python bindings for libtorrent-rasterbar-16
@@ -7,13 +9,12 @@ CATEGORIES=	net-p2p python
 
 USE_PYTHON=	yes
 
-LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
-		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
+LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs \
+		torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
-
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	python_libtorrent
 

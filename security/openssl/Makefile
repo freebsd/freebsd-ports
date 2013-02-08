@@ -1,14 +1,10 @@
-# New ports collection makefile for:	OpenSSL
-# Date created:		Sun Jan  3 19:36:27 CET 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
-DISTVERSIONSUFFIX=	c
-PORTREVISION=	4
+DISTVERSIONSUFFIX=	d
+PORTREVISION=	6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -27,6 +23,15 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB SCTP MD2 RC5 RFC3779 GMP
 OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM ZLIB SCTP MD2
+.for a in amd64 ia64
+OPTIONS_DEFINE_${a}=	EC
+OPTIONS_DEFAULT_${a}=	EC
+.endfor
+TARGET_ARCH?=	${MACHINE_ARCH}
+.if ${TARGET_ARCH} == "mips64el"
+OPTIONS_DEFINE_mips=	EC
+OPTIONS_DEFAULT_mips=	EC
+.endif
 NO_OPTIONS_SORT=yes
 I386_DESC?=	Optimize for i386 (instead of i486+)
 SSE2_DESC?=	runtime SSE2 detection
@@ -39,6 +44,7 @@ MD2_DESC?=	MD2 hash (obsolete)
 RC5_DESC?=	RC5 chipher (patented)
 RFC3779_DESC?=	RFC3779 support
 GMP_DESC?=	gmp support (LGPLv3)
+EC_DESC?=	Optimize NIST elliptic curves
 
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -47,6 +53,7 @@ NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 USE_PERL5_BUILD=	yes
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
+SUB_FILES=		pkg-message
 OPENSSLDIR=		${PREFIX}/openssl
 MANPREFIX=		${PREFIX}
 
@@ -87,7 +94,7 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	EVP_PKEY_derive.3 EVP_PKEY_encrypt.3 EVP_PKEY_get_default_digest.3 \
 	EVP_PKEY_keygen.3 EVP_PKEY_new.3 EVP_PKEY_print_private.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_sign.3 EVP_PKEY_verify.3 \
-	EVP_PKEY_verifyrecover.3 EVP_SealInit.3 EVP_SignInit.3 \
+	EVP_PKEY_verify_recover.3 EVP_SealInit.3 EVP_SignInit.3 \
 	EVP_VerifyInit.3 OBJ_nid2obj.3 OPENSSL_Applink.3 \
 	OPENSSL_VERSION_NUMBER.3 OPENSSL_config.3 OPENSSL_ia32cap.3 \
 	OPENSSL_load_builtin_modules.3 OpenSSL_add_all_algorithms.3 \
@@ -508,6 +515,7 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 	EVP_PKEY_new.3 EVP_PKEY_free.3 \
 	EVP_PKEY_print_private.3 EVP_PKEY_print_params.3 \
 	EVP_PKEY_print_private.3 EVP_PKEY_print_public.3 \
+	EVP_PKEY_verify_recover.3 EVP_PKEY_verify_recover_init.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_DH.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_DSA.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_assign_EC_KEY.3 \
@@ -1114,9 +1122,9 @@ PLIST_SUB+=	WITH_RC5="@comment "
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
 PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-		0003-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
-		0004-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-		0005-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+		0002-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
+		0003-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		0004-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
@@ -1130,6 +1138,12 @@ EXTRACONFIGURE+=	no-gmp
 EXTRACONFIGURE+=	enable-rfc3779
 .else
 EXTRACONFIGURE+=	no-rfc3779
+.endif
+
+.if ${PORT_OPTIONS:MEC}
+EXTRACONFIGURE+=	enable-ec_nistp_64_gcc_128
+.else
+EXTRACONFIGURE+=	no-ec_nistp_64_gcc_128
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
@@ -1177,7 +1191,7 @@ post-install:
 	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
 .endif

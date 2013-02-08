@@ -1,6 +1,14 @@
---- lib/scanargs.c.orig	Thu Feb 27 16:18:15 1992
-+++ lib/scanargs.c	Thu Nov 29 23:22:40 2007
-@@ -128,10 +128,10 @@
+--- lib/scanargs.c.orig	1992-02-28 06:18:15.000000000 +0900
++++ lib/scanargs.c	2012-10-15 22:09:52.000000000 +0900
+@@ -42,6 +42,7 @@
+ 
+ #include "rle_config.h"
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ #ifndef USE_STDARG
+ #include <varargs.h>
+@@ -128,10 +129,10 @@
  va_list argl;
  {
  
@@ -13,7 +21,7 @@
      int	    optarg = 0;			/* where optional args start */
      int	    nopt = 0;
      char    tmpflg,			/* temp flag */
-@@ -408,7 +408,8 @@
+@@ -408,7 +409,8 @@
  				 * Copy the string so we remain nondestructive
  				 */
  				s = NEW( char, strlen(argp)+1 );

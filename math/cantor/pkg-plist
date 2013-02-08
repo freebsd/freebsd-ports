@@ -65,6 +65,7 @@ share/apps/cantor/octavebackend/cantor_eigenvectors.m
 share/apps/cantor/octavebackend/cantor_plot2d.m
 share/apps/cantor/octavebackend/cantor_plot3d.m
 share/apps/cantor/octavebackend/cantor_print.m
+share/apps/cantor/sagebackend/keywords.xml
 share/apps/cantor/scilabbackend/keywords.xml
 share/apps/cantor/xslt/latex.xsl
 share/config.kcfg/cantor.kcfg
@@ -124,6 +125,7 @@ share/kde4/servicetypes/cantor_panelplugin.desktop
 @dirrm share/doc/HTML/en/cantor
 @dirrm share/apps/cantor/xslt
 @dirrm share/apps/cantor/scilabbackend
+@dirrm share/apps/cantor/sagebackend
 @dirrm share/apps/cantor/octavebackend
 @dirrm share/apps/cantor/maximabackend
 @dirrm share/apps/cantor

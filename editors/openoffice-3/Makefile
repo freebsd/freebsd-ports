@@ -120,17 +120,6 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		CoinMP.7:${PORTSDIR}/math/coinmp \
 		serf-1.0:${PORTSDIR}/www/serf
 
-.if exists(${LOCALBASE}/include/libexttextcat/textcat.h)
-.if exists(${LOCALBASE}/include/textcat.h)
-LIB_DEPENDS+=	exttextcat-1.0.0:${PORTSDIR}/textproc/libexttextcat
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libexttextcat-lingucomponent
-.else
-IGNORE= textproc/libexttextcat needs COMPAT_TEXTCAT enabled
-.endif
-.else
-LIB_DEPENDS+=	textcat.0:${PORTSDIR}/textproc/libtextcat
-.endif
-
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
 		gpatch:${PORTSDIR}/devel/patch \

@@ -1,15 +1,14 @@
---- Makefile.in	2008-06-25 09:55:22.000000000 -0300
-+++ Makefile.in.new	2008-06-25 09:58:26.000000000 -0300
-@@ -31,11 +31,12 @@
+--- ./Makefile.in.orig	2013-01-18 19:50:47.000000000 +0400
++++ ./Makefile.in	2013-01-27 22:38:11.000000000 +0400
+@@ -31,11 +31,6 @@
+ 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -m 755 audacity $(DESTDIR)$(BINDIR)/$(AUDACITY_NAME)
  
- 	# install docs
-+ifeq ($(DOC),yes)
- 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)
- 	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/README.txt
- 	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/LICENSE.txt
+-	# install docs
+-	$(INSTALL) -d $(DESTDIR)$(DOCDIR)/
+-	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DOCDIR)/README.txt
+-	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DOCDIR)/LICENSE.txt
 -
-+endif
  	# install manpage
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1
  	-test -f help/audacity.1.gz && \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-queueing
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,6 +14,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+
 do-build:
 	${DO_NADA}
 

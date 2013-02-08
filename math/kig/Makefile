@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	kig
-# Date created:				6 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kig
 PORTVERSION=	${KDE4_VERSION}
@@ -25,11 +20,13 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kig.1
 
-OPTIONS=	PYTHON "Support for Python scripting (requires Boost)" on
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=	PYTHON
+PYTHON_DESC=	Support for Python scripting (requires Boost)
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
 .endif
 

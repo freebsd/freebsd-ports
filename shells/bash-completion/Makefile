@@ -12,7 +12,11 @@ MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
+.if defined(WITH_BASH_DEVEL)
+RUN_DEPENDS=bash:${PORTSDIR}/shells/bash-devel
+.else
 RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
+.endif
 
 CONFLICTS=	bash-completion-classic-[0-9]*
 
@@ -24,6 +28,8 @@ USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
@@ -42,7 +48,7 @@ post-patch:
 		${WRKSRC}/completions/*
 
 post-install:
-.if !defined(WITHOUT_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .	for i in README doc/bash_completion.txt doc/bashrc doc/inputrc
 		${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}

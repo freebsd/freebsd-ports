@@ -1,0 +1,7 @@
+Guake is a dropdown terminal made for the GNOME desktop environment,
+but you can run it with TWM too ;-), if you install ports/x11/trayer
+or a similar program.
+Its style of window is based on fps games, and one of its purposes
+is to be easy to reach.
+
+WWW: http://guake.org

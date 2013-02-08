@@ -1,9 +1,5 @@
-# New ports collection makefile for:   psvn
-# Date created:                18 May 2004
-# Whom:                        Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psvn
 PORTVERSION=	20120326.212349
@@ -14,8 +10,10 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	psvn.el
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Subversion interface for Emacs
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 

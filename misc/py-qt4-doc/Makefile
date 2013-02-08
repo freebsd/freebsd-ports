@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-qt4-doc
-# Date created:				2007-02-20
-# Whom:					Danny Pansters <danny@ricin.com>
-#
+# Created by: Danny Pansters <danny@ricin.com>
 # $FreeBSD$
 
 PORTNAME=	doc
@@ -20,6 +17,7 @@ NO_BUILD=	yes
 USE_PYTHON=	2.5+
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
+PORTDOCS=	*
 
 do-install:
 	cd ${WRKSRC} &&\
@@ -31,5 +29,5 @@ do-install:
 			${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}
 
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
+.include "../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

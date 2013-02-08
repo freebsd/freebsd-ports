@@ -1,18 +1,11 @@
-# New ports collection makefile for:	tevent
-# Date created:				1 May 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.15
+PORTVERSION=		0.9.17
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
-			ftp://ca.samba.org/pub/%SUBDIR%/ \
-			ftp://de.samba.org/pub/%SUBDIR%/
+MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		timur@FreeBSD.org
@@ -28,7 +21,7 @@ HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
-USE_GNOME=		pkgconfig
+USE_PKGCONFIG=		build
 
 MAKE_JOBS_SAFE=		yes
 
@@ -52,7 +45,9 @@ MAKE_ENV+=		NOCOLOR=yes
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
-LIB_DEPENDS+=		talloc.2:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
+RUN_DEPENDS:=		${BUILD_DEPENDS}
+
 CONFIGURE_ARGS+=	--bundled-libraries=!talloc
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)

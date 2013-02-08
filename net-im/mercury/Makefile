@@ -3,6 +3,7 @@
 
 PORTNAME=	mercury
 DISTVERSION=	2.0${RCVER:U}
+PORTREVISION=	1
 PORTEPOCH=	8
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
@@ -41,7 +42,7 @@ DIR2PRUNE=	resources/AppData/Games		\
 DESKTOP_ENTRIES="Mercury Messenger" "${COMMENT}"	\
 		"${INSTDIR}/resources/online.png"	\
 		"${SUB_FILES}"				\
-		"Application;InstantMessaging;Java;Network;" true
+		"InstantMessaging;Java;Network;" true
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar

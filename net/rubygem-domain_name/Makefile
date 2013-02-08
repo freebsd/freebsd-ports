@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	domain_name
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

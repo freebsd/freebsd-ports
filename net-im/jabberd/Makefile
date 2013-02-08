@@ -2,23 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-PORTVERSION=	2.2.16
-PORTREVISION=	4
+PORTVERSION=	2.2.17
 CATEGORIES=	net-im
-MASTER_SITES=	http://cloud.github.com/downloads/Jabberd2/jabberd2/
-DIST_SUBDIR=	jabber
+MASTER_SITES=	http://cloud.github.com/downloads/jabberd2/jabberd2/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		idn.17:${PORTSDIR}/dns/libidn \
-		udns.0:${PORTSDIR}/dns/udns
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE FAM PIPE ANON FS DEBUG REQUIRES \
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		idn:${PORTSDIR}/dns/libidn \
+		udns:${PORTSDIR}/dns/udns
+
+OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
 		CYRUS DOCS
 OPTIONS_DEFAULT=	MYSQL DEBUG
 PIPE_DESC=	Enable pipe (auth/reg)
@@ -27,6 +25,7 @@ FS_DESC=	Filesystem storage (only for testing)
 REQUIRES_DESC=	Add backend requires to startup script
 CYRUS_DESC=	Use Cyrus SASL backend (not supported)
 
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
@@ -86,7 +85,7 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 
 .if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=--enable-sqlite
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 CFLAGS+=	${PTHREAD_CFLAGS}
 PLIST_SUB+=	SUB_SQLITE=""
 .else
@@ -169,7 +168,7 @@ CONFIGURE_ARGS+=	--with-sasl=cyrus
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--with-sasl=gsasl
-LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
 .endif
 
 MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8

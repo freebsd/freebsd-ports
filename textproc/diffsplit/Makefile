@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diffsplit
-# Date created:				2002-10-10
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	diffsplit
 PORTVERSION=	1.0

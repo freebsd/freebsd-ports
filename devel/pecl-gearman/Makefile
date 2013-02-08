@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-gearman
-# Date created:		2009-07-02
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gearman
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

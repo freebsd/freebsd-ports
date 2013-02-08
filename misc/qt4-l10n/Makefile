@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qt4-l10n
-# Date created:		2008-12-13
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	l10n
 DISTVERSION=	${QT4_VERSION}

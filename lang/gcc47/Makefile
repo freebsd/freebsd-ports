@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.7.3.20121208
+PORTVERSION=	4.7.3.20130119
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -98,13 +98,12 @@ INFO+=		gcc${SUFFIX}/libquadmath	\
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
-ECJ_JAR=	ecj-4.5.jar
-MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
-MASTER_SITE_SUBDIR+=	java/:ecj
-DISTFILES+=	${ECJ_JAR}:ecj
-EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
+BUILD_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45 \
+		zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
+CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
 LANGUAGES:=	${LANGUAGES},java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
@@ -134,10 +133,6 @@ MAN3=		ffi${SUFFIX}.3 \
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
-
-# Prep the source tree for the GCJ build.
-post-patch::
-	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "

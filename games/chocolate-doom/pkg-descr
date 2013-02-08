@@ -1,0 +1,8 @@
+Chocolate Doom is a port of ID Software's Doom, Doom II, and Final Doom to
+modern operating systems that aims to be as compatible with the original DOS
+executable as possible. This includes emulating all the different versions,
+playing demos perfectly accurately, playing "vanilla-only" PWADS, and netcode
+that works on newer operating systems while still behaving the same as
+"vanilla" Doom.
+
+WWW: http://chocolate-doom.org

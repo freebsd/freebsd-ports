@@ -1,31 +1,26 @@
-# New ports collection makefile for:	syslinux
-# Date created:		Nov.15, 2008
-# Whom:			luigi@FreeBSD.org
-#
-# Maintainers:		Luigi Rizzo <luigi@FreeBSD.org>
+# Created by: luigi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	syslinux
-PORTVERSION=	4.05
+PORTVERSION=	5.00
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/utils/boot/syslinux
+MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Syslinux for FreeBSD
+COMMENT=	Boot loader for the Linux operating system
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_XZ=		yes
+USE_PERL5_BUILD=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		syslinux.1
-
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -41,11 +36,15 @@ pre-patch:
 	${FIND} . -type f -exec ${GREP} -le 'elf_i386' \{\} \; | 	\
 		${XARGS} ${REINPLACE_CMD} -e 's/elf_i386/elf_i386_fbsd/g;' )
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^UMAKEDEPS|#UMAKEDEPS|' ${WRKSRC}/mk/syslinux.mk
+
 build_pkg-plist:
-	@( ${ECHO} "bin/syslinux"	;		\
+	@( ${ECHO_CMD} "bin/syslinux"	;		\
 	  cd ${WRKSRC}; for i in ${_A} ; do	\
-		${ECHO} share/syslinux/`basename $$i` ; done ; \
-	  ${ECHO} "@dirrm share/syslinux" )
+		${ECHO_CMD} share/syslinux/`basename $$i` ; done ; \
+	  ${ECHO_CMD} "@dirrm share/syslinux" )
 
 do-install:
 	${MKDIR} ${DATADIR}

@@ -66,6 +66,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/AuditsPanel.js
 %%DATADIR%%/resources/inspector/breadcrumbList.css
+%%DATADIR%%/resources/inspector/canvasProfiler.css
 %%DATADIR%%/resources/inspector/cmdevtools.css
 %%DATADIR%%/resources/inspector/codemirror.css
 %%DATADIR%%/resources/inspector/CodeMirrorTextEditor.js
@@ -247,7 +248,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector/textPrompt.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
 %%DATADIR%%/resources/inspector/TimelinePanel.js
-%%DATADIR%%/resources/inspector/webGLProfiler.css
 %%DATADIR%%/xdg-settings
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/resources/inspector/Images

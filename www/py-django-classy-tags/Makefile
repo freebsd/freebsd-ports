@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-classy-tags
-# Date created:				15 Feb 2011
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-classy-tags
-PORTVERSION=	0.3.4.1
+PORTVERSION=	0.4
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/d/${PORTNAME}

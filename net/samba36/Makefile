@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.9
+PORTVERSION=		3.6.12
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -65,8 +65,8 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--datadir="${DATADIR}" \
 			--with-swatdir="${SAMBA_SWATDIR}" \
 			--libdir="${SAMBA_LIBDIR}" \
-			--with-modulesdir="${SAMBA_MODULEDIR}" \
 			--with-pammodulesdir="${SAMBA_LIBDIR}" \
+			--with-modulesdir="${SAMBA_MODULEDIR}" \
 			--localstatedir="${VARDIR}" \
 			--with-piddir="${SAMBA_RUNDIR}" \
 			--with-ncalrpcdir="${SAMBA_RUNDIR}/ncalrpc" \
@@ -116,7 +116,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
 		AVAHI		"With Bonjour service discovery support" off \
-		PTHREADPOOL	"With pthread pool" off \
+		PTHREADPOOL	"With pthread pool" on \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
 		IPV6		"With IPv6 support" on \
@@ -184,10 +184,10 @@ SUB_LIST+=		CUPS="@comment "
 CPPFLAGS+=		-g
 LDFLAGS+=		-g
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
-CONFIGURE_ARGS+=	--enable-debug \
-			--enable-socket-wrapper --enable-nss-wrapper \
-			--enable-developer --enable-krb5developer \
-			--enable-dmalloc --with-profiling-data
+CONFIGURE_ARGS+=	--enable-debug
+#			--enable-socket-wrapper --enable-nss-wrapper \
+#			--enable-developer --enable-krb5developer \
+#			--enable-dmalloc --with-profiling-data
 
 CONFIGURE_ARGS+=	--with-smbtorture4-path=${WRKDIR}/${DISTNAME}/source4/torture
 .else

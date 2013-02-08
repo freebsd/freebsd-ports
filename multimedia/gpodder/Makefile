@@ -3,6 +3,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -16,7 +17,8 @@ BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:${PORTSDIR}/devel/py-mygpoclient \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}eyed3>=0:${PORTSDIR}/audio/py-eyed3
 
 OPTIONS_DEFINE=	GTK2 NOTIFY MUTAGEN OGG2MP3
 OPTIONS_DEFAULT=GTK2

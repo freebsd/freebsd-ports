@@ -750,6 +750,7 @@ lib/wine/api-ms-win-downlevel-shlwapi-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-shlwapi-l2-1-0.dll.so
 lib/wine/api-ms-win-downlevel-user32-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-version-l1-1-0.dll.so
+lib/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib/wine/apphelp.dll.so
 lib/wine/appwiz.cpl.so
 lib/wine/aspnet_regiis.exe.so
@@ -780,6 +781,7 @@ lib/wine/comm.drv16.so
 lib/wine/commdlg.dll16.so
 lib/wine/compobj.dll16.so
 lib/wine/compstui.dll.so
+lib/wine/conhost.exe.so
 lib/wine/control.exe.so
 lib/wine/credui.dll.so
 lib/wine/crtdll.dll.so
@@ -899,12 +901,13 @@ lib/wine/fakedlls/api-ms-win-core-winrt-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-normaliz-l1-1-0.dll
-lib/wine/fakedlls/api-ms-win-downlevel-ole32-l1-1-0.dll        
+lib/wine/fakedlls/api-ms-win-downlevel-ole32-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-shell32-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-shlwapi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-shlwapi-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-user32-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-version-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib/wine/fakedlls/apphelp.dll
 lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/aspnet_regiis.exe
@@ -935,6 +938,7 @@ lib/wine/fakedlls/comm.drv16
 lib/wine/fakedlls/commdlg.dll16
 lib/wine/fakedlls/compobj.dll16
 lib/wine/fakedlls/compstui.dll
+lib/wine/fakedlls/conhost.exe
 lib/wine/fakedlls/control.exe
 lib/wine/fakedlls/credui.dll
 lib/wine/fakedlls/crtdll.dll
@@ -1177,6 +1181,7 @@ lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
 lib/wine/fakedlls/netsh.exe
+lib/wine/fakedlls/netstat.exe
 lib/wine/fakedlls/newdev.dll
 lib/wine/fakedlls/ngen.exe
 lib/wine/fakedlls/normaliz.dll
@@ -1457,6 +1462,7 @@ lib/wine/libadvapi32.def
 lib/wine/libadvpack.def
 lib/wine/libatl.def
 lib/wine/libatl100.def
+lib/wine/libatl80.def
 lib/wine/libavicap32.def
 lib/wine/libavifil32.def
 lib/wine/libavrt.def
@@ -1702,6 +1708,7 @@ lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
 lib/wine/netsh.exe.so
+lib/wine/netstat.exe.so
 lib/wine/newdev.dll.so
 lib/wine/ngen.exe.so
 lib/wine/normaliz.dll.so

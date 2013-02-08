@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Email-Address
-# Date created:				2004-08-29
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	Email-Address
-PORTVERSION=	1.89.5
+PORTVERSION=	1.89.7
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS

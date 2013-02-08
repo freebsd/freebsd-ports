@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -51,7 +52,7 @@ DESKTOP_ENTRIES="ScummVM" \
 		"ScummVM - Run classic adventure games" \
 		"${DATADIR}/scummvm.svg" \
 		"scummvm" \
-		"Application;Game;" \
+		"Game;AdventureGame;" \
 		false
 
 PLIST_FILES=	bin/scummvm \

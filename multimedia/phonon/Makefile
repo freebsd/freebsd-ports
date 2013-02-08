@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	phonon
-# Date created:				2008-01-30
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	phonon
@@ -15,7 +12,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multimedia framework
 
-LIB_DEPENDS=	qzeitgeist.1:${PORTSDIR}/sysutils/qzeitgeist
+LIB_DEPENDS=	qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist
 
 CONFLICTS=	qt4-phonon-4*
 
@@ -27,29 +24,17 @@ USE_QT4=	dbus gui \
 USE_XZ=		yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:BOOL=TRUE \
-		-DPHONON_NO_PLATFORMPLUGIN:BOOL=TRUE
+		-DPHONON_NO_PLATFORMPLUGIN:BOOL=TRUE \
+		-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	PULSEAUDIO	"Support playback via PulseAudio" off
-#		DESIGNER	"Install Qt Designer plugin" off \
+OPTIONS_DEFINE=	PULSEAUDIO
 
 .include <bsd.port.options.mk>
 
-# qt4-designer depends on phonon. Disable this option to avoid a
-# circular dependency.
-.undef WITH_DESIGNER
-.ifdef(WITH_DESIGNER)
-USE_QT4+=	designer
-CMAKE_ARGS+=	-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=ON
-PLIST_SUB+=	DESIGNER=""
-.else
-CMAKE_ARGS+=	-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF
-PLIST_SUB+=	DESIGNER="@comment "
-.endif
-
-.ifdef(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 USE_GNOME+=	glib20
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 .else

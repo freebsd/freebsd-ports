@@ -1,4 +1,10 @@
 bin/kanagram
+include/kanagram/kanagram_engine_export.h
+include/kanagram/kanagramgame.h
+include/kanagram/kanagramsettings.h
+lib/libkanagramengine.so
+lib/libkanagramengine.so.5
+lib/libkanagramengine.so.5.0.1
 share/applications/kde4/kanagram.desktop
 share/apps/kanagram/images/kanagram.svg
 share/apps/kanagram/sounds/chalk.ogg
@@ -21,12 +27,16 @@ share/doc/HTML/en/kanagram/vocab-editor.png
 share/doc/HTML/en/kanagram/vocab-settings.png
 share/icons/hicolor/128x128/apps/kanagram.png
 share/icons/hicolor/16x16/apps/kanagram.png
-share/icons/hicolor/22x22/apps/kanagram.png
+share/icons/hicolor/24x24/apps/kanagram.png
 share/icons/hicolor/32x32/apps/kanagram.png
 share/icons/hicolor/48x48/apps/kanagram.png
 share/icons/hicolor/64x64/apps/kanagram.png
+share/icons/hicolor/80x80/apps/kanagram-harmattan.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
+@dirrmtry share/icons/hicolor/80x80/apps
+@dirrmtry share/icons/hicolor/80x80
 @dirrm share/doc/HTML/en/kanagram
 @dirrm share/apps/kanagram/sounds
 @dirrm share/apps/kanagram/images
 @dirrm share/apps/kanagram
+@dirrm include/kanagram

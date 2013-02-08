@@ -1,6 +1,15 @@
---- tools/into.c.orig	Thu Apr 30 09:10:15 1992
-+++ tools/into.c	Thu Nov 29 16:17:55 2007
-@@ -41,9 +41,12 @@
+--- tools/into.c.orig	1992-04-30 23:10:15.000000000 +0900
++++ tools/into.c	2012-10-16 01:10:25.000000000 +0900
+@@ -27,6 +27,8 @@
+ 
+ #include "rle_config.h"
+ #include <stdio.h>
++#include <string.h>
++#include <unistd.h>
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <sys/param.h>			/* for MAXPATHLEN */
+@@ -41,9 +43,12 @@
  short forceflg;				/* overwrite an unwritable file? */
  
  extern int errno;
@@ -14,7 +23,7 @@
  main(argc, argv)
  int argc;
  char **argv;
-@@ -82,7 +85,7 @@
+@@ -82,7 +87,7 @@
      }
      else
  	strcpy( buf, temp );

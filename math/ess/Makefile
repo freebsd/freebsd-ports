@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	12.09-1
-PORTREVISION=	1
+DISTVERSION=	12.09-2
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
@@ -24,7 +23,7 @@ USE_GMAKE=	yes
 INFO=	ess
 .endif
 
-post-patch:
+post-patch: .SILENT
 	${REINPLACE_CMD} -e "\|^PREFIX=|d" -e "\|^INSTALL=|d" \
 		-e "\|^EMACS=|s|=.*|=${EMACS_NAME}|" \
 		-e "\|^ETCDIR=|s|=.*|=${PREFIX}/${EMACS_LIBDIR}/etc/ess|" \
@@ -41,16 +40,16 @@ post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} info)
+		${MAKE_ARGS} info)
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} install-info)
+		${MAKE_ARGS} install-info)
 .endif
-	@${ECHO_MSG} ""
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

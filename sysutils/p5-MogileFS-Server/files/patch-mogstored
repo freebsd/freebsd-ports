@@ -1,0 +1,20 @@
+--- mogstored.ORIG	2012-09-16 12:38:08.000000000 +0300
++++ mogstored	2012-09-16 18:48:02.000000000 +0300
+@@ -99,8 +99,6 @@ my $httpsrv       = $httpsrv_class->new(
+                                         maxconns => $max_conns,
+                                         bin      => $serverbin,
+                                         );
+-$httpsrv->start;
+-
+ if ($opt_daemonize) {
+     $httpsrv->pre_daemonize;
+     Perlbal::daemonize();
+@@ -108,6 +106,8 @@ if ($opt_daemonize) {
+     print "Running.\n";
+ }
+ 
++$httpsrv->start;
++
+ $httpsrv->post_daemonize;
+ 
+ # kill our children processes on exit:

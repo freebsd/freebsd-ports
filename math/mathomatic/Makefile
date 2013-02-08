@@ -24,6 +24,10 @@ MAN1=		mathomatic.1
 
 MAKE_ARGS=	READLINE=1
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
@@ -34,7 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for d in m4 tests
 	${MKDIR} ${DOCSDIR}/${d}
 	${INSTALL_DATA} ${WRKSRC}/${d}/* ${DOCSDIR}/${d}

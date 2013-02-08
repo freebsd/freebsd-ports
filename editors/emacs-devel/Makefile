@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \

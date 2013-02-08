@@ -1,0 +1,9 @@
+--- cgicc/Cgicc.cpp	2013-01-12 06:48:13.000000000 -0500
++++ cgicc/Cgicc.cpp	2013-01-14 12:33:56.000000000 -0500
+@@ -388,5 +388,5 @@
+       
+       // Find the '&' or ';' separating subsequent name/value pairs
+-      pos = data.find_first_of(';&', oldPos);
++      pos = data.find_first_of(";&", oldPos);
+       
+       // Even if an '&' wasn't found the rest of the string is a value

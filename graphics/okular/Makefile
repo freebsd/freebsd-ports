@@ -1,9 +1,4 @@
-# New ports collection makefile for:	okular
-# Date created:				1 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
@@ -33,11 +28,12 @@ USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	DVI "Support DVI files (requires teTeX)" off
+OPTIONS_DEFINE=	DVI
+DVI_DESC=	Support DVI files (requires teTeX)
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_DVI)
+.if ${PORT_OPTIONS:MDVI}
 RUN_DEPENDS+=	kpsewhich:${PORTSDIR}/print/teTeX-base
 .endif
 

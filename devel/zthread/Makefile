@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ZThread
-# Date created:				23 May 2001
-# Whom:					pvh@egenetics.com
-#
+# Created by: pvh@egenetics.com
 # $FreeBSD$
-#
 
 PORTNAME=	zthread
 PORTVERSION=	2.3.2
@@ -23,6 +19,8 @@ MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 MAKE_ENV+=	SED=sed # req'd for LIBTOOL?!
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 post-extract:
@@ -31,8 +29,10 @@ post-extract:
 post-patch:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -or -name '*.swp' \) -delete
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

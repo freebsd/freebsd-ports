@@ -2,42 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	super_methane_brothers
-PORTVERSION=	1.4.8
-PORTREVISION=	5
+PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A port of the Amiga platform game of the same name
+COMMENT=	Port of the Amiga platform game of the same name
 
-LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1 \
-		mikmod:${PORTSDIR}/audio/libmikmod
+LICENSE=	GPLv2
 
+LIB_DEPENDS=	clan23Core:${PORTSDIR}/devel/clanlib \
+		execinfo:${PORTSDIR}/devel/libexecinfo
+
+USE_GCC=	4.6+
+USE_GL=		glu
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
-MAKEFILE=	makefile
-BUILD_WRKSRC=	${WRKSRC}/source/linux
+MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LDFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+
+PORTDOCS=	*
+PLIST_FILES=	bin/methane
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|g++|${CXX}|; s|gcc|${CXX}|; \
-		 s|^\(METHANE_FLAGS =\)|\1 ${CPPFLAGS}|; \
-		 s|^\(METHANE_LIBS =\)|\1 ${LDFLAGS}|; \
-		 s|0.8|1.0|g' \
-		${BUILD_WRKSRC}/makefile
+		's|-2.2|-2.3|g ; \
+		 s|FLAGS =|FLAGS +=| ; \
+		 s|LIBS =|LIBS +=| ; \
+		 s|g++|$${CXX}| ; \
+		 s|gcc|$${CXX}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/methane ${PREFIX}/bin
+	(cd ${WRKDIR}/${DISTNAME} && ${INSTALL_PROGRAM} methane ${PREFIX}/bin)
 	${CHGRP} games ${PREFIX}/bin/methane
 	${CHMOD} g+s ${PREFIX}/bin/methane
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html
-	cd ${WRKSRC} && ${INSTALL_DATA} authors history readme todo ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${INSTALL_DATA} *.gif *.html ${DOCSDIR}/html
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKDIR}/${DISTNAME}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGREQ} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -1,8 +1,0 @@
-bin/dungeon
-%%DATADIR%%/dtextc.dat
-%%PORTDOCS%%%%DOCSDIR%%/dungn32b.zip
-%%PORTDOCS%%%%DOCSDIR%%/history
-%%PORTDOCS%%%%DOCSDIR%%/manifest
-%%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/dungeon

@@ -2,4 +2,4 @@ Term::Sk is a class to implement a progress indicator ("Sk" is a short form
 for "Show Key"). This is used to provide immediate feedback for long running
 processes.
 
-WWW: http://search.cpan.org/dist/Term-Sk/
+WWW: https://metacpan.org/module/Term::Sk

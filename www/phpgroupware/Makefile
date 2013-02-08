@@ -1,7 +1,3 @@
-# New ports collection makefile for:	phpgroupware
-# Date created:        27 March 2001
-# Whom:                Jimmy Olgeni <olgeni@uli.it>
-#
 # $FreeBSD$
 
 PORTNAME=	phpgroupware

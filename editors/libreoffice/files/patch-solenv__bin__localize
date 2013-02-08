@@ -1,8 +1,0 @@
---- ./solenv/bin/localize.orig	2012-03-27 18:22:01.000000000 +0200
-+++ ./solenv/bin/localize	2012-04-16 14:24:48.000000000 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- if [ x${SOLARENV}x = xx ]; then
-     echo No environment found, please use 'setsolar'
- exit 1

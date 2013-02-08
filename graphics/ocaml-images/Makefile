@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ocaml-images
-# Date created:			Feb 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	images
 PORTVERSION=	3.0.2
@@ -22,6 +17,8 @@ COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:${PORTSDIR}/lang/ocaml-autoconf
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-03-05
 BROKEN=		does not compile
 
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf

@@ -8,7 +8,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Packet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Parameters.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Question.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/A.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/AAAA.pm
@@ -24,9 +23,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/IPSECKEY.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/ISDN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/KX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/LOC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/L32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/L64.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/LOC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/LP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/MB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/MG.pm
@@ -48,26 +47,27 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/SPF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/SRV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/SSHFP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TLSA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TKEY.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TLSA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TSIG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TXT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/X25.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Base.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/cygwin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/MSWin32.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/os2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Recurse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/UNIX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/cygwin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/os2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Update.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ZoneFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	textproc/p5-Unicode-LineBreak
-# Date created:				05 February 2011
-# Whom:					Olivier Girard <Olivier.Girard@univ-angers.fr>
-#
+# Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-LineBreak
-PORTVERSION=	1.008.2
-PORTREVISION=	1
+PORTVERSION=	2012.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 # blanket update approval granted.
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Unicode-LineBreak package
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-MIME-Charset>=0:${PORTSDIR}/mail/p5-MIME-Charset
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -2640,7 +2640,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableleft.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableright.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableup.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/typo3.pageModule.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/locallang_csh_webinfo.xlf
@@ -3113,7 +3112,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ExtensionMangementUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/File/ExtendedFileUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/MathUtilityTestClassWithStringRepresentationFixture.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/RootlineUtilityTestAccessibleFixture.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/clear.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/clear.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/ext_emconf.php
@@ -3185,16 +3183,16 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Classes/QueryCache.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Classes/RecordList/DatabaseRecordList.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Migrations/Code/ClassAliasMap.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/DatabaseGeneralTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/DatabaseMssqlTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/DatabaseOracleTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/DatabasePostgresqlTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/FakeDatabaseConnection.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Functional/ClassImplementationRegistrationTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/SqlParserGeneralTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/fixtures/mssql.config.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/fixtures/oci8.config.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/fixtures/postgresql.config.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionMssqlTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionOracleTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionPostgresqlTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/FakeDatabaseConnection.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/mssql.config.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/oci8.config.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/postgresql.config.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/SqlParserTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/class.tx_dbal_autoloader.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/class.tx_dbal_em.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/class.tx_dbal_installtool.php
@@ -3386,6 +3384,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/InvalidPropertyTypeException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/InvalidRelationConfigurationException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/MissingBackendException.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/MissingColumnMapException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/NotImplementedException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/RepositoryException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Generic/Exception/TooDirtyException.php
@@ -3620,6 +3619,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/Fixtures/NamespaceTestclasses.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/Fixtures/NamespacedClass.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/Fixtures/Testclasses.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/Generic/BackendTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/Generic/Mapper/DataMapFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/Generic/Mapper/DataMapperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/Generic/PersistenceManagerTest.php
@@ -3655,6 +3655,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Service/TypoScriptServiceTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/SignalSlot/DispatcherTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Utility/ArrayUtilityTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Utility/DebuggerUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Utility/ExtensionUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Utility/LocalizationUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Validation/Validator/AbstractValidatorTestcase.php
@@ -4731,6 +4732,16 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Right.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/AlphabeticFilterTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/AlphanumericFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/CurrencyFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/DigitFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/IntegerFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/LowerCaseFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/RegExpFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/RemoveXssFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/StripNewLinesFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/TitleCaseFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/TrimFilterTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter/UpperCaseFilterTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/PostProcess/PostProcessorTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation/AlphabeticValidatorTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation/AlphanumericValidatorTest.php
@@ -4753,6 +4764,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation/RegExpValidatorTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation/RequiredValidatorTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation/UriValidatorTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/View/Mail/Html/Element/AbstractElementViewTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_icon.gif
@@ -4805,7 +4817,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/RestoreRegisterContentObject.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/ScalableVectorGraphicsContentObject.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/SearchResultContentObject.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/ShockwaveFlashContentObject.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/ShockwaveFlashObjectContentObject.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/TableRenderer.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/TemplateContentObject.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/TextContentObject.php
@@ -5673,6 +5685,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Private/Templates/Report/Index.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Public/moduleicon.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Public/styles.css
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Tests/Unit/Report/Status/Typo3StatusTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/ext_icon.gif
@@ -7848,6 +7861,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/button.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/docheader-pagetree-button-hover.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/docheader-pagetree-button.png
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/gray-gradient.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/layout-not-assigned.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/login-box.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/backgrounds/module-menu-right-top.png
@@ -8670,7 +8684,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/icons/status/version-no-version.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/icons/status/warning-in-use.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/icons/status/warning-lock.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/login/background.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/login/login-submit-background.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/login/typo3logo-white-greyback.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/t3skin/images/login/typo3logo-white.png
@@ -9748,6 +9761,10 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/reports/status
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/reports
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/interfaces
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Tests/Unit/Report/Status
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Tests/Unit/Report
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Tests/Unit
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Public
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Private/Templates/Report
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/reports/Resources/Private/Templates
@@ -10000,6 +10017,10 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/Authentication
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/View/Mail/Html/Element
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/View/Mail/Html
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/View/Mail
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/View
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Validation
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/PostProcess
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/Filter
@@ -10337,7 +10358,9 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/mod1
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/lib
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/doc
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/fixtures
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Functional
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Migrations/Code

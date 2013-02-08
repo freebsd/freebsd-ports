@@ -1,9 +1,8 @@
-# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trivial-gray-streams
 PORTVERSION=	2008.11.02
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

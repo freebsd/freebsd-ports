@@ -11,6 +11,7 @@ MAN1+=	cvslastlog.1
 MAN1+=	cvsrevertlast.1
 MAN1+=	cxxmetric.1
 MAN1+=	demangle.1
+MAN1+=	dragon.1
 MAN1+=	extend_dmalloc.1
 MAN1+=	extractrc.1
 MAN1+=	fixincludes.1

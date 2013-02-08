@@ -8,6 +8,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	7.2.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/

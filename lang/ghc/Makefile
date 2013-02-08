@@ -3,6 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.4.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -10,7 +11,7 @@ MASTER_SITE_SUBDIR=	pgj/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Compiler for the functional language Haskell
+COMMENT=	Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -26,15 +27,18 @@ CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
+USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_BINUTILS=		yes
-USE_GCC=		4.6
+USE_GCC=		4.6+
+USE_NCURSES=		yes
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 # The configure process accepts,filters and canonicalises
@@ -64,6 +68,10 @@ OPTIONS_DEFINE+=	BOOTH
 .endif
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDYNAMIC}
+LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
+.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 
@@ -107,10 +115,17 @@ HACKAGE_SITE?=		http://hackage.haskell.org/
 HACKAGE_ARCH?=		packages/archive/
 
 CONFIGURE_ARGS=		--with-gcc=${CC} \
+			--with-ld=${LD} \
 			--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+
+.if ${PORT_OPTIONS:MDYNAMIC}
+CONFIGURE_ARGS+=	--with-system-libffi \
+			--with-ffi-includes=${LOCALBASE}/include \
+			--with-ffi-libraries=${LOCALBASE}/lib
+.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 
@@ -121,7 +136,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} CC=${CC}
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
 
 .else # MBOOT
@@ -201,13 +216,13 @@ post-extract:
 .else
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "BSD_PATH_TO_HSC2HS = ${BOOT_HSC2HS}"
 .endif
-	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_HC_OPTS += -I/usr/include -L/usr/lib -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_HC_OPTS += -I${NCURSESINC} -L${NCURSESLIB} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_CC_OPTS += ${CFLAGS}"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_HSC2HS_OPTS += -I${LOCALBASE}/include --lflag=-L${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_LD_OPTS += -L${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_CABAL_CONFIGURE_FLAGS += --extra-include-dirs=${LOCALBASE}/include"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_CABAL_CONFIGURE_FLAGS += --extra-lib-dirs=${LOCALBASE}/lib"
-	@${ECHO} >> ${WRKSRC}/mk/build.mk "libraries/terminfo_CONFIGURE_OPTS += --configure-option=--with-curses-includes=/usr/include --configure-option=--with-curses-libraries=/usr/lib"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "libraries/terminfo_CONFIGURE_OPTS += --configure-option=--with-curses-includes=${NCURSESINC} --configure-option=--with-curses-libraries=${NCURSESLIB}"
 #	@${ECHO} >> ${WRKSRC}/mk/build.mk "BIN_DIST_NAME = ghc-\$$(ProjectVersion)-boot"
 #	@${ECHO} >> ${WRKSRC}/mk/build.mk "BIN_DIST_TAR  = ghc-\$$(ProjectVersion)-amd64-ash0-freebsd8-boot.tar"
 

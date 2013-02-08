@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fpart
-# Date created:		24 Nov 2011
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fpart
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/

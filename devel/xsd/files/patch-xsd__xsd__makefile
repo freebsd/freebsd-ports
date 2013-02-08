@@ -1,0 +1,32 @@
+Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
+called `xsd'.
+--- xsd/xsd/makefile~	2012-08-10 14:22:45.000000000 -0300
++++ xsd/xsd/makefile	2012-08-10 14:23:27.000000000 -0300
+@@ -117,15 +117,15 @@
+ # Install
+ #
+ $(install): $(xsd)
+-	$(call install-exec,$<,$(install_bin_dir)/xsd)
++	$(call install-exec,$<,$(install_bin_dir)/xsdcxx)
+ 
+ # Dist.
+ #
+ $(dist): $(xsd)
+-	$(call install-exec,$<,$(dist_prefix)/bin/xsd)
++	$(call install-exec,$<,$(dist_prefix)/bin/xsdcxx)
+ 
+ $(dist-win): $(xsd)
+-	$(call install-exec,$<,$(dist_prefix)/bin/xsd.exe)
++	$(call install-exec,$<,$(dist_prefix)/bin/xsdcxx.exe)
+ 
+ # Clean.
+ #
+@@ -139,7 +139,7 @@
+ ifeq ($(out_base),$(src_base))
+ $(xsd): | $(out_base)/.gitignore
+ 
+-$(out_base)/.gitignore: files := xsd
++$(out_base)/.gitignore: files := xsdcxx
+ $(clean): $(out_base)/.gitignore.clean
+ 
+ $(call include,$(bld_root)/git/gitignore.make)

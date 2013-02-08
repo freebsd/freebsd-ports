@@ -1,0 +1,6 @@
+%%FONTDIR%%/ConsolaMono.ttf
+%%FONTDIR%%/ConsolaMono-Bold.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTDIR%%

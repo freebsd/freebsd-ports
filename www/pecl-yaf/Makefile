@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

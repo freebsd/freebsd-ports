@@ -1,13 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:   freecell-solver
-# Date created:                Fab 9, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freecell-solver
-PORTVERSION=	3.12.0
+PORTVERSION=	3.16.0
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 

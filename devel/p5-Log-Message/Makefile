@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Log-Message
-# Date created:				31 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: aaron@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Message
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS

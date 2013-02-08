@@ -3,7 +3,7 @@
 
 PORTNAME=	idoc
 PORTVERSION=	0.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-
@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 FILE_LICENSE=	COPYING
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp \
+		ffi.6:${PORTSDIR}/devel/libffi
 
 PLIST_FILES=	bin/idoc
 USE_GMAKE=	yes

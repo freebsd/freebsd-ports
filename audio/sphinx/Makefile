@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sphinx
-# Date created:				30 Mar 2000
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	sphinx
 PORTVERSION=	2.0.4

@@ -7,7 +7,7 @@
 
 PORTNAME=	eboard
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/eboard-extras/pack%201%20patchlevel%202/:p1 \
@@ -44,9 +44,9 @@ JOYSTICK_DESC=	Enable joystick support
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
-		"eboard.xpm" \
+		"${PREFIX}/share/pixmaps/eboard.xpm" \
 		"eboard" \
-		"Application;Game;" \
+		"Game;BoardGame;GTK;" \
 		true
 
 .include <bsd.port.options.mk>

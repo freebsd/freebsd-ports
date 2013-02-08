@@ -1,0 +1,5 @@
+This is a Log::Dispatch glue for Amon2.  This module still maintained,
+but I don't use this module on production environment today.  I'm a
+user of Log::Minimal.
+
+WWW: http://search.cpan.org/dist/Amon2-Plugin-LogDispatch/

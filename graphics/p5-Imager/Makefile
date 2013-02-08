@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Imager
-# Date created:			Jul 24, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Imager
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,7 +41,6 @@ MAN3=		Imager.3 \
 		Imager::Expr.3 \
 		Imager::Expr::Assem.3 \
 		Imager::ExtUtils.3 \
-		Imager::File::GIF.3 \
 		Imager::File::ICO.3 \
 		Imager::File::JPEG.3 \
 		Imager::File::PNG.3 \
@@ -61,6 +56,7 @@ MAN3=		Imager.3 \
 		Imager::Font::FT2.3 \
 		Imager::Font::FreeType2.3 \
 		Imager::Font::T1.3 \
+		Imager::Font::Test.3 \
 		Imager::Font::Truetype.3 \
 		Imager::Font::Type1.3 \
 		Imager::Font::Wrap.3 \
@@ -76,6 +72,7 @@ MAN3=		Imager.3 \
 		Imager::Regops.3 \
 		Imager::Security.3 \
 		Imager::Test.3 \
+		Imager::Threads.3 \
 		Imager::Transform.3 \
 		Imager::Transformations.3 \
 		Imager::Tutorial.3 \

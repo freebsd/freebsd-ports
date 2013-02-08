@@ -1,13 +1,8 @@
-# New ports collection makefile for:	www/p5-MojoMojo
-# Date created:				29 Mar 2009
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MojoMojo
-PORTVERSION=	1.05
-PORTREVISION=	2
+PORTVERSION=	1.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MRAMBERG

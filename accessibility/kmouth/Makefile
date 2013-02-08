@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kmouth
-# Date created:		2012-02-23
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kmouth
 PORTVERSION=	${KDE4_VERSION}

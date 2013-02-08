@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -27,14 +27,12 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
-.endif
 
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
-OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED
+OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED DOCS
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
 FLAGS_DESC=	File system flags support patch, adds --fileflags
@@ -85,6 +83,8 @@ CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .if ${PORT_OPTIONS:MFLAGS}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
+# https://bugzilla.samba.org/show_bug.cgi?id=8941
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-syscall.c
 .endif
 
 .if ${PORT_OPTIONS:MRENAMED}
@@ -130,7 +130,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/rsyncd.conf ] || \
 		${CP} ${PREFIX}/etc/rsyncd.conf.sample \
 		${PREFIX}/etc/rsyncd.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif

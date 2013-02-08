@@ -1,0 +1,64 @@
+diff --git a/m4/m4_ax_boost_filesystem.m4 b/m4/ax_boost_filesystem.m4
+index 18df8f4..aebcbf7 100644
+--- m4/m4_ax_boost_filesystem.m4
++++ m4/m4_ax_boost_filesystem.m4
+@@ -31,7 +31,7 @@
+ #   and this notice are preserved. This file is offered as-is, without any
+ #   warranty.
+ 
+-#serial 22
++#serial 24
+ 
+ AC_DEFUN([AX_BOOST_FILESYSTEM],
+ [
+@@ -81,14 +81,14 @@ AC_DEFUN([AX_BOOST_FILESYSTEM],
+ 			AC_DEFINE(HAVE_BOOST_FILESYSTEM,,[define if the Boost::Filesystem library is available])
+             BOOSTLIBDIR=`echo $BOOST_LDFLAGS | sed -e 's/@<:@^\/@:>@*//'`
+             if test "x$ax_boost_user_filesystem_lib" = "x"; then
+-                for libextension in `ls $BOOSTLIBDIR/libboost_filesystem*.so* $BOOSTLIBDIR/libboost_filesystem*.dylib* $BOOSTLIBDIR/libboost_filesystem*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^lib\(boost_filesystem.*\)\.so.*$;\1;' -e 's;^lib\(boost_filesystem.*\)\.a*$;\1;' -e 's;^lib\(boost_filesystem.*\)\.dylib$;\1;'` ; do
++                for libextension in `ls $BOOSTLIBDIR/libboost_filesystem*.so* $BOOSTLIBDIR/libboost_filesystem*.dylib* $BOOSTLIBDIR/libboost_filesystem*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^lib\(boost_filesystem.*\)\.\(dylib\|a\|so\).*$;\1;' | tac` ; do
+                      ax_lib=${libextension}
+ 				    AC_CHECK_LIB($ax_lib, exit,
+                                  [BOOST_FILESYSTEM_LIB="-l$ax_lib"; AC_SUBST(BOOST_FILESYSTEM_LIB) link_filesystem="yes"; break],
+                                  [link_filesystem="no"])
+ 				done
+                 if test "x$link_filesystem" != "xyes"; then
+-                for libextension in `ls $BOOSTLIBDIR/boost_filesystem*.{dll,a}* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^\(boost_filesystem.*\)\.dll.*$;\1;' -e 's;^\(boost_filesystem.*\)\.a*$;\1;'` ; do
++                for libextension in `ls $BOOSTLIBDIR/boost_filesystem*.dll* $BOOSTLIBDIR/boost_filesystem*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^\(boost_filesystem.*\)\.\(dll\|a\).*$;\1;' | tac` ; do
+                      ax_lib=${libextension}
+ 				    AC_CHECK_LIB($ax_lib, exit,
+                                  [BOOST_FILESYSTEM_LIB="-l$ax_lib"; AC_SUBST(BOOST_FILESYSTEM_LIB) link_filesystem="yes"; break],
+diff --git a/m4/m4_ax_boost_system.m4 b/m4/ax_boost_system.m4
+index 7fbf6d3..bf82391 100644
+--- m4/m4_ax_boost_system.m4
++++ m4/m4_ax_boost_system.m4
+@@ -83,14 +83,14 @@ AC_DEFUN([AX_BOOST_SYSTEM],
+ 
+ 			LDFLAGS_SAVE=$LDFLAGS
+             if test "x$ax_boost_user_system_lib" = "x"; then
+-                for libextension in `ls $BOOSTLIBDIR/libboost_system*.so* $BOOSTLIBDIR/libboost_system*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^lib\(boost_system.*\)\.so.*$;\1;' -e 's;^lib\(boost_system.*\)\.a*$;\1;'` ; do
++                for libextension in `ls $BOOSTLIBDIR/libboost_system*.a* $BOOSTLIBDIR/libboost_system*.so* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^lib\(boost_system.*\)\.\(so\|a\).*$;\1;' | tac` ; do
+                      ax_lib=${libextension}
+ 				    AC_CHECK_LIB($ax_lib, exit,
+                                  [BOOST_SYSTEM_LIB="-l$ax_lib"; AC_SUBST(BOOST_SYSTEM_LIB) link_system="yes"; break],
+                                  [link_system="no"])
+ 				done
+                 if test "x$link_system" != "xyes"; then
+-                for libextension in `ls $BOOSTLIBDIR/boost_system*.{dll,a}* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^\(boost_system.*\)\.dll.*$;\1;' -e 's;^\(boost_system.*\)\.a*$;\1;'` ; do
++                for libextension in `ls $BOOSTLIBDIR/boost_system*.{dll,a}* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^\(boost_system.*\)\.\(dll\|a\).*$;\1;' | tac` ; do
+                      ax_lib=${libextension}
+ 				    AC_CHECK_LIB($ax_lib, exit,
+                                  [BOOST_SYSTEM_LIB="-l$ax_lib"; AC_SUBST(BOOST_SYSTEM_LIB) link_system="yes"; break],
+diff --git a/src/logmill.cpp b/src/logmill.cpp
+index 8fc6153..2a9afd9 100644
+--- src/logmill.cpp
++++ src/logmill.cpp
+@@ -176,7 +176,7 @@ RCommitLog* RLogMill::fetchLog(std::string& log_format) {
+                     logfile = repo_path.string();
+                 }
+             }
+-        } catch(boost::filesystem3::filesystem_error& error) {
++        } catch(boost::filesystem::filesystem_error& error) {
+         }
+     }
+ 

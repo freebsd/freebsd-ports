@@ -7,7 +7,7 @@
 
 PORTNAME=	teeworlds
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.teeworlds.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/ \

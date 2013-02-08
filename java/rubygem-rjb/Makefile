@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	rjb
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.5
 CATEGORIES=	java ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=rjb
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	Build system for Java-based applications
+COMMENT=	Call Java Code from Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

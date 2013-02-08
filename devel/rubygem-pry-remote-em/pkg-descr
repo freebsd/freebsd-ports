@@ -1,0 +1,11 @@
+PryRemoteEm enables you to start instances of Pry in a running EventMachine
+program and connect to those Pry instances over a network or the Internet.
+Once connected you can interact with the internal state of the program.
+
+It's based off of Mon-Ouie's pry-remote for DRb.
+
+It adds user authentication and SSL support along with tab-completion and
+paging. It's compatble with MRI 1.9, or any other VM with support for Fibers
+and EventMachine.
+
+WWW: http://github.com/simulacre/pry-remote-em

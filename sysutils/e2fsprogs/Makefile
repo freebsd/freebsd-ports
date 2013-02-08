@@ -1,12 +1,8 @@
-# New ports collection makefile for:	e2fsprogs
-# Date created:				3 July 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.6
+PORTVERSION=	1.42.7
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}

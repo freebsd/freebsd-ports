@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Amon2/Lite.pm
+%%SITE_PERL%%/Amon2/Setup/Flavor/Lite.pm
+@dirrmtry %%SITE_PERL%%/Amon2/Setup/Flavor

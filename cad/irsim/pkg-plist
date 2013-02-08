@@ -30,13 +30,13 @@ lib/irsim/prm/tsmc35p.20.n98tp.3.3.prm
 %%TCL%%lib/irsim/tcl/bitmaps/right.xbm
 %%TCL%%lib/irsim/tcl/bitmaps/rright.xbm
 %%TCL%%lib/irsim/tcl/console.tcl
-%%TCL%%lib/irsim/tcl/cver.tcl
 %%TCL%%lib/irsim/tcl/diglib.so
 %%TCL%%lib/irsim/tcl/irsim.tcl
 %%TCL%%lib/irsim/tcl/irsimexec
 %%TCL%%lib/irsim/tcl/random.so
 %%TCL%%lib/irsim/tcl/tclirsim.so
 %%TCL%%lib/irsim/tcl/tkcon.tcl
+%%TCL%%lib/irsim/tcl/vcd.tcl
 %%TCL%%@dirrm lib/irsim/tcl/bitmaps
 %%TCL%%@dirrm lib/irsim/tcl
 @dirrm lib/irsim/prm

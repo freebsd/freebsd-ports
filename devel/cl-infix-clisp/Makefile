@@ -1,7 +1,3 @@
-# New ports collection Makefile for:	cl-infix-clisp
-# Date created:				20 Jan 2010
-# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	infix

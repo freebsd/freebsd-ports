@@ -14,7 +14,7 @@ COMMENT=	NTLM authentication module for the Apache2 webserver
 
 BUILD_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 MAKE_JOBS_SAFE=	yes
 

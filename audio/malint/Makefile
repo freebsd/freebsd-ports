@@ -1,9 +1,5 @@
-# New ports collection makefile for:	malint
-# Date created:				20 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	malint
 DISTVERSION=	0.2
@@ -23,7 +19,11 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/malint
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

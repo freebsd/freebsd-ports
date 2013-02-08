@@ -1,7 +1,6 @@
 bin/ssi-cgi
 sbin/cgi-wrapper
 sbin/hiawatha
-sbin/php-fcgi
 sbin/wigwam
 @unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf.sample %D/etc/hiawatha/cgi-wrapper.conf ; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
 %%ETCDIR%%/cgi-wrapper.conf.sample
@@ -15,9 +14,6 @@ sbin/wigwam
 @unexec if cmp -s %D/etc/hiawatha/mimetype.conf.sample %D/etc/hiawatha/mimetype.conf ; then rm -f %D/etc/hiawatha/mimetype.conf; fi
 %%ETCDIR%%/mimetype.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/mimetype.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/mimetype.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf.sample %D/etc/hiawatha/php-fcgi.conf ; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
-%%ETCDIR%%/php-fcgi.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/php-fcgi.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/php-fcgi.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/toolkit.conf.sample %D/etc/hiawatha/toolkit.conf ; then rm -f %D/etc/hiawatha/toolkit.conf; fi
 %%ETCDIR%%/toolkit.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/toolkit.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/toolkit.conf; fi
@@ -29,5 +25,5 @@ sbin/wigwam
 @unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    WWW directory is empty, removing it."; rmdir %D/www/hiawatha; fi;
 lib/hiawatha/libpolarssl.so
 lib/hiawatha/libpolarssl.so.2
-lib/hiawatha/libpolarssl.so.1.2.0
+lib/hiawatha/libpolarssl.so.1.2.3
 @dirrm lib/hiawatha

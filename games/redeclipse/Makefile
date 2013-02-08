@@ -7,12 +7,13 @@
 
 PORTNAME=	redeclipse
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION:C/^([0-9]+\.[0-9]+)\..*/\1/}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_nix_bsd
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A single-player and multi-player first-person ego-shooter
+COMMENT=	Single-player and multi-player first-person ego-shooter
 
 LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
@@ -58,8 +59,8 @@ DESKTOP_ENTRIES="Red Eclipse" \
 		"${COMMENT}" \
 		"${PREFIX}/share/pixmaps/redeclipse.ico" \
 		"reclient" \
-		"Application;Game;" \
-		${FALSE}
+		"Game;" \
+		false
 .endif
 
 .if !defined(WITHOUT_DEDICATED)

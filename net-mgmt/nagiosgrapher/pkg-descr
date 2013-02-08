@@ -1,6 +1,0 @@
-NagiosGrapher is a full-featured RRD based charting software especially
-for Nagios. You can extract perfdata and pluginoutput with preg to define
-datasources and display it with all RRD options. NG is Template based to
-graph thousands of similar charts with one configuration.
-
-WWW: https://www.nagiosforge.org/gf/project/nagiosgrapher/

@@ -1,11 +1,9 @@
-# New ports collection makefile for: ros
-# Date created:	2010-08-01
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros
 PORTVERSION=	1.4.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros

@@ -1,6 +1,3 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 # $FreeBSD$
 #
 # Variables:
@@ -8,8 +5,6 @@
 # QT_DIST		- Package being built is part of the Qt distribution.
 #
 # Global switches (add this to /etc/make.conf):
-# WITH_QT_PHONON	- If set, Qt phonon will be used instead of standalone.
-#				Qt phonon doesn't work with KDE 4.4.
 # QT4_OPTIONS		- A list of options, can be CUPS, NAS and/or QGTKSTYLE.
 #				If set, Qt will be built with support for:
 #				- Common UNIX Printing System (CUPS);
@@ -65,10 +60,11 @@ CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 PLIST_SUB+=	SHLIB_VER=${QT4_VERSION:C/-.*//} \
 		SHLIB_SHVER=${QT4_VERSION:R}
 
-.if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2 -no-sse3 \
-		-no-ssse3 -no-sse4.1 -no-sse4.2
-.endif #defined(PACKAGE_BUILDING)
+# SIMD support is detected on runtime, no need to disable on build.
+#.if defined(PACKAGE_BUILDING)
+#CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2 -no-sse3 \
+#		-no-ssse3 -no-sse4.1 -no-sse4.2
+#.endif #defined(PACKAGE_BUILDING)
 
 # .if defined(PORTNAME) && ${PORTNAME} != "xmlpatterns"
 # CONFIGURE_ARGS+=-no-exceptions
@@ -110,34 +106,6 @@ QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
 		QMAKE_CFLAGS_THREAD="${PTHREAD_CFLAGS}" \
 		QMAKE_LFLAGS_THREAD="${PTHREAD_LIBS}"
 
-#
-# Translate `c++` to its real name and select the appropriate mkspec.
-#
-QMAKE_BASE_COMPILER!=	cc --version 2> /dev/null | ${AWK} 'NR == 1 { gsub(/[()]/, "", $$2); print $$2 }'
-.if ${QMAKE_BASE_COMPILER:L} == "gcc"
-QMAKE_BASE_COMPILER=	g++
-.endif
-.if ${CXX} == "c++"
-# Why CXX instead of CXX:T? Because if you're setting the full path of
-# `c++` you probably want to define QMAKESPEC by hand too.
-QMAKE_COMPILER=	${QMAKE_BASE_COMPILER}
-.elif ${CXX:T} == "clang++"
-QMAKE_COMPILER=	clang
-.elif ${CXX:C/c\+\+/g++/:T} == "llvm-g++"
-QMAKE_COMPILER=	llvm
-.elif ${CXX:T} == "icpc"
-QMAKE_COMPILER=	icc
-.else
-# Handle all the other cases (mainly g++*).
-QMAKE_COMPILER=	${CXX:C/c\+\+/g++/:T}
-.endif
-.if exists(${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER})
-QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
-.else
-# If something went wrong, default to the base configuration.
-QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
-.endif
-
 QTCPPFLAGS?=
 QTCGFLIBS?=
 
@@ -146,7 +114,7 @@ QTCGFLIBS?=
 #
 # QT4 version
 #
-QT4_VERSION?=		4.8.2
+QT4_VERSION?=		4.8.4
 
 _USE_QT4_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
@@ -270,7 +238,7 @@ porting_DEPENDS=	${QT_PREFIX}/bin/qt3to4
 qdbusviewer_PORT=	devel/qt4-qdbusviewer
 qdbusviewer_DEPENDS=	${QT_PREFIX}/bin/qdbusviewer
 
-qmlviewer_PORT=	devel/qt4-qmlviewer
+qmlviewer_PORT=		devel/qt4-qmlviewer
 qmlviewer_DEPENDS=	${QT_PREFIX}/bin/qmlviewer
 
 qdoc3_PORT=	devel/qt4-qdoc3
@@ -345,6 +313,34 @@ xmlpatterns-tool_DEPENDS=	${QT_PREFIX}/bin/xmlpatterns
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 Qt_Post_Include= bsd.qt.mk
 
+#
+# Translate `c++` to its real name and select the appropriate mkspec.
+#
+QMAKE_BASE_COMPILER!=	cc --version 2> /dev/null | ${AWK} 'NR == 1 { gsub(/[()]/, "", $$2); print $$2 }'
+.if ${QMAKE_BASE_COMPILER:L} == "gcc"
+QMAKE_BASE_COMPILER=	g++
+.endif
+.if ${CXX} == "c++"
+# Why CXX instead of CXX:T? Because if you're setting the full path of
+# `c++` you probably want to define QMAKESPEC by hand too.
+QMAKE_COMPILER=	${QMAKE_BASE_COMPILER}
+.elif ${CXX:T} == "clang++"
+QMAKE_COMPILER=	clang
+.elif ${CXX:C/c\+\+/g++/:T} == "llvm-g++"
+QMAKE_COMPILER=	llvm
+.elif ${CXX:T} == "icpc"
+QMAKE_COMPILER=	icc
+.else
+# Handle all the other cases (mainly g++*).
+QMAKE_COMPILER=	${CXX:C/c\+\+/g++/:T}
+.endif
+.if exists(${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER})
+QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
+.else
+# If something went wrong, default to the base configuration.
+QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
+.endif
+
 .for component in ${_USE_QT4_ALL}
 ${component}_BUILD_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
 ${component}_RUN_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
@@ -355,9 +351,6 @@ ${component}_run_RUN_DEPENDS?=		${${component}_RUN_DEPENDS}
 _USE_QT4_ALL_SUFFIXED+=	${component} ${component}_build ${component}_run
 .endfor
 
-.if defined(QT_COMPONENTS)
-USE_QT4=  ${QT_COMPONENTS}
-.endif
 .if defined(USE_QT4)
 . for component in ${USE_QT4:O:u}
 .  if ${_USE_QT4_ALL_SUFFIXED:M${component}}!= ""

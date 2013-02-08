@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	-011
@@ -24,6 +24,9 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		texi2html:${PORTSDIR}/textproc/texi2html
 
 LATEST_LINK=	ffmpeg${PKGNAMESUFFIX}
+
+DEPRECATED=		Superseded by multimedia/ffmpeg1
+EXPIRATION_DATE=	2013-02-15
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ChipmunkPhysics
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://chipmunk-physics.net/release/Chipmunk-6.x/ \
 		http://files.libsiege.org/chipmunk/
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DBUILD_DEMOS=OFF
+MAKE_JOBS_SAFE=	yes
 
 USE_LDCONFIG=	yes
 

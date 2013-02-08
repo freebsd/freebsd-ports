@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Chronological and Calendar Objects
 
 LICENSE=	GPLv2 GPLv3

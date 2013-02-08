@@ -1,13 +1,9 @@
-# New ports collection makefile for:	kardsgt
-# Date created:		8 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kardsgt
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -28,8 +24,7 @@ post-patch:
 		${WRKSRC}/src/kardsgtinterface.cpp
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${QMAKESPEC} kardsgt.pro
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/kardsgt ${PREFIX}/bin

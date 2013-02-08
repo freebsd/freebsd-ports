@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clementine
-# Date created:				2002-03-13
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	clementine
 PORTVERSION=	0.0.7

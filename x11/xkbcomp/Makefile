@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xkbcomp
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xkbcomp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,10 +9,13 @@ COMMENT=	Compile XKB keyboard description
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 XORG_CAT=	app
 USE_XORG=	x11 xkbfile
+USE_GNOME=	gnomehack
 
-PLIST_FILES=	bin/xkbcomp
+PLIST_FILES=	bin/xkbcomp \
+		libdata/pkgconfig/xkbcomp.pc
 
 MAN1=		xkbcomp.1
 

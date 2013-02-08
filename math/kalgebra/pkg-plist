@@ -1,25 +1,6 @@
 bin/kalgebra
-bin/kalgebramobile
 lib/kde4/plasma_applet_kalgebra.so
 share/applications/kde4/kalgebra.desktop
-share/applications/kde4/kalgebramobile.desktop
-share/apps/kalgebra/plugins/Console.qml
-share/apps/kalgebra/plugins/Graph2D.qml
-share/apps/kalgebra/plugins/Plot2D.qml
-share/apps/kalgebra/plugins/Tables.qml
-share/apps/kalgebra/plugins/kalgebraconsole.desktop
-share/apps/kalgebra/plugins/kalgebraplot2d.desktop
-share/apps/kalgebra/plugins/kalgebratables.desktop
-share/apps/kalgebra/plugins/widgets/Button.qml
-share/apps/kalgebra/plugins/widgets/CalcButton.qml
-share/apps/kalgebra/plugins/widgets/ExpressionInput.qml
-share/apps/kalgebra/plugins/widgets/KAlgebraMobile.qml
-share/apps/kalgebra/plugins/widgets/KAlgebraPage.qml
-share/apps/kalgebra/plugins/widgets/Keyboard.qml
-share/apps/kalgebra/plugins/widgets/Label.qml
-share/apps/kalgebra/plugins/widgets/RealInput.qml
-share/apps/kalgebra/plugins/widgets/SimpleListView.qml
-share/apps/kalgebra/plugins/widgets/ToolTip.qml
 share/apps/katepart/syntax/kalgebra.xml
 share/doc/HTML/en/kalgebra/commands.docbook
 share/doc/HTML/en/kalgebra/common
@@ -37,8 +18,4 @@ share/icons/hicolor/48x48/apps/kalgebra.png
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
 share/kde4/services/kalgebraplasmoid.desktop
-share/kde4/servicetypes/kalgebrascript.desktop
 @dirrm share/doc/HTML/en/kalgebra
-@dirrm share/apps/kalgebra/plugins/widgets
-@dirrm share/apps/kalgebra/plugins
-@dirrm share/apps/kalgebra

@@ -1,9 +1,5 @@
-# ports collection makefile for:	hylafax
-# Date created:		16 May 1995
-# Whom:			Julian Stacey <jhs@freebsd.org>
-#
+# Created by: Julian Stacey <jhs@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
@@ -16,7 +12,7 @@ COMMENT=	Fax software
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		jbig.1:${PORTSDIR}/graphics/jbigkit
+		jbig:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
 

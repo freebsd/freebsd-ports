@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	RipMIME
-# Date created:				16th March 2001
-# Whom: 				Justin Stanford <jus@security.za.net>
-#
+# Created by: Justin Stanford <jus@security.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ripmime
 PORTVERSION=	1.4.0.10

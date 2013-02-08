@@ -1,38 +1,36 @@
-# Ports collection makefile for:	drupal7-wysiwyg
-# Date created:				2 June 2009
-# Whom:					Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wysiwyg
 DISTVERSION=	7.x-2.0
 CATEGORIES=	www
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 #LICENSE from bsd.drupal.mk
 
 USE_DRUPAL=	yes
 
-OPTIONS=	TINYMCE3	"Install TinyMCE3 Editor" off \
-		CKEDITOR	"Install CKEditor" off \
-		YUI		"Install Yahoo UI Editor" off
+OPTIONS_DEFINE=	TINYMCE3 CKEDITOR YUI
+
+TINYMCE3_DESC=	Install TinyMCE3 Editor
+CKEDITOR_DESC=	Install CKEditor
+YUI_DESC=	Install Yahoo UI Editor
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TINYMCE3)
+.if ${PORT_OPTIONS:MTINYMCE3}
 RUN_DEPENDS+=	${LOCALBASE}/www/tinymce:${PORTSDIR}/www/tinymce3
 PLIST_FILES+=	${DRUPAL_MODLIB}/tinymce
 .endif
 
-.if defined(WITH_CKEDITOR)
+.if ${PORT_OPTIONS:MCKEDITOR}
 RUN_DEPENDS+=	${LOCALBASE}/www/ckeditor:${PORTSDIR}/www/ckeditor
 PLIST_FILES+=	${DRUPAL_MODLIB}/ckeditor
 .endif
 
-.if defined(WITH_YUI)
+.if ${PORT_OPTIONS:MYUI}
 RUN_DEPENDS+=	${LOCALBASE}/www/yui:${PORTSDIR}/www/yahoo-ui
 PLIST_FILES+=	${DRUPAL_MODLIB}/yui
 .endif
@@ -103,13 +101,13 @@ MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
 post-install:
-.if defined(WITH_TINYMCE3)
+.if ${PORT_OPTIONS:MTINYMCE3}
 	${LN} -fs ${PREFIX}/www/tinymce ${PREFIX}/${DRUPAL_MODLIB}
 .endif
-.if defined(WITH_CKEDITOR)
+.if ${PORT_OPTIONS:MCKEDITOR}
 	${LN} -fs ${PREFIX}/www/CKEditor ${PREFIX}/${DRUPAL_MODLIB}/ckeditor
 .endif
-.if defined(WITH_YUI)
+.if ${PORT_OPTIONS:MYUI}
 	${LN} -fs ${PREFIX}/www/yahoo ${PREFIX}/${DRUPAL_MODLIB}/yui
 .endif
 

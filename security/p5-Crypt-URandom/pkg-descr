@@ -1,0 +1,5 @@
+This Module is intended to provide an interface to the strongest
+available source of non-blocking randomness on the current
+platform.
+
+WWW: http://search.cpan.org/dist/Crypt-URandom/

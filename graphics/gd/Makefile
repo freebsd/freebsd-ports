@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gd
-# Date created:				27 Mar 1998
-# Whom:					jeff@cetlink.net
-#
+# Created by: jeff@cetlink.net
 # $FreeBSD$
-#
 
 PORTNAME=	gd
 PORTVERSION=	2.0.35
@@ -18,9 +14,9 @@ PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*
 
@@ -43,7 +39,7 @@ NO_OPTIONS_SORT=yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
 LDFLAGS2+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib

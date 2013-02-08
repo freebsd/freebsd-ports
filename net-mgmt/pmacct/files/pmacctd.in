@@ -15,9 +15,9 @@
 # You can define flags for pmacctd running. See pmacctd(8) for details.
 #
 # Example:
-# pmacctd_flags="-Df %%PREFIX%%/etc/pmacctd.conf -i em0"
+# pmacctd_flags="-f %%PREFIX%%/etc/pmacctd.conf -i em0"
 #
-# Default flags: -Df %%PREFIX%%/etc/pmacctd.conf
+# Default flags: -f %%PREFIX%%/etc/pmacctd.conf
 #
 
 . /etc/rc.subr
@@ -26,11 +26,12 @@ name=pmacctd
 rcvar=pmacctd_enable
 
 command=%%PREFIX%%/sbin/$name
+command_args="-D"
 
 # set defaults
 
 pmacctd_enable=${pmacctd_enable:-"NO"}
-pmacctd_flags=${pmacctd_flags:-"-Df %%PREFIX%%/etc/pmacctd.conf"}
+pmacctd_flags=${pmacctd_flags:-"-f %%PREFIX%%/etc/pmacctd.conf"}
 
 load_rc_config $name
 run_rc_command "$1"

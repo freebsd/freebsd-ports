@@ -1,4 +1,4 @@
 A command line interface (interactive shell) to work
-with KeePassX and KeePass 1.x database files.
+with KeePassX and KeePass (kdb, kdbx) database files.
 
 WWW: http://kpcli.sourceforge.net/

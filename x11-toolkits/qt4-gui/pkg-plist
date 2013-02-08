@@ -1153,6 +1153,7 @@ lib/qt4/libQtGui.so.%%SHLIB_SHVER%%
 lib/qt4/libQtGui.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtGui.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtGui.pc
+share/pixmaps/qtlogo.png
 @dirrmtry lib/qt4
 @dirrm include/qt4/QtGui
 @dirrmtry include/qt4/Qt

@@ -122,7 +122,6 @@ share/locale/tg/LC_MESSAGES/kcmstyle.mo
 share/locale/tg/LC_MESSAGES/kcmusb.mo
 share/locale/tg/LC_MESSAGES/kcmview1394.mo
 share/locale/tg/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/tg/LC_MESSAGES/kcmxinerama.mo
 share/locale/tg/LC_MESSAGES/kcron.mo
 share/locale/tg/LC_MESSAGES/kde-menu.mo
 share/locale/tg/LC_MESSAGES/kdebugdialog.mo
@@ -140,19 +139,13 @@ share/locale/tg/LC_MESSAGES/kdmgreet.mo
 share/locale/tg/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/tg/LC_MESSAGES/keditbookmarks.mo
 share/locale/tg/LC_MESSAGES/kfile.mo
-share/locale/tg/LC_MESSAGES/kfile_avi.mo
 share/locale/tg/LC_MESSAGES/kfile_drgeo.mo
 share/locale/tg/LC_MESSAGES/kfile_exr.mo
-share/locale/tg/LC_MESSAGES/kfile_flac.mo
 share/locale/tg/LC_MESSAGES/kfile_kig.mo
-share/locale/tg/LC_MESSAGES/kfile_mp3.mo
-share/locale/tg/LC_MESSAGES/kfile_ogg.mo
 share/locale/tg/LC_MESSAGES/kfile_pnm.mo
 share/locale/tg/LC_MESSAGES/kfile_rgb.mo
 share/locale/tg/LC_MESSAGES/kfile_rpm.mo
-share/locale/tg/LC_MESSAGES/kfile_sid.mo
 share/locale/tg/LC_MESSAGES/kfile_tiff.mo
-share/locale/tg/LC_MESSAGES/kfile_wav.mo
 share/locale/tg/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/tg/LC_MESSAGES/kfilereplace.mo
 share/locale/tg/LC_MESSAGES/kfileshare.mo
@@ -312,6 +305,7 @@ share/locale/tg/LC_MESSAGES/libkonq.mo
 share/locale/tg/LC_MESSAGES/libkscreensaver.mo
 share/locale/tg/LC_MESSAGES/libksieve.mo
 share/locale/tg/LC_MESSAGES/libkworkspace.mo
+share/locale/tg/LC_MESSAGES/libmailimporter.mo
 share/locale/tg/LC_MESSAGES/libmessagelist.mo
 share/locale/tg/LC_MESSAGES/libmessageviewer.mo
 share/locale/tg/LC_MESSAGES/libplasma.mo
@@ -377,7 +371,6 @@ share/locale/tg/LC_MESSAGES/solid-hardware.mo
 share/locale/tg/LC_MESSAGES/solid-network.mo
 share/locale/tg/LC_MESSAGES/solidcontrol.mo
 share/locale/tg/LC_MESSAGES/soliduiserver.mo
-share/locale/tg/LC_MESSAGES/spy.mo
 share/locale/tg/LC_MESSAGES/strigila_diff.mo
 share/locale/tg/LC_MESSAGES/sweeper.mo
 share/locale/tg/LC_MESSAGES/systemsettings.mo

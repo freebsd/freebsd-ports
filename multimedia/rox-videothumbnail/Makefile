@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	rox-videothumbnail
-# Date created:				Jan 8 2006
-# Whom:					olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rox-videothumbnail
 PORTVERSION=	0.1.14

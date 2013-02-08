@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	libedit
-# Date created:		9 February 2002
-# Whom:			jasone
-#
+# Created by: jasone
 # $FreeBSD$
-#
 
 PORTNAME=	libedit
 PORTVERSION=	2.6.10
@@ -12,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 		http://www.canonware.com/download/libedit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Command line editing library
 
 GNU_CONFIGURE=	yes

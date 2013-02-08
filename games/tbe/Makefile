@@ -7,7 +7,7 @@
 
 PORTNAME=	tbe
 PORTVERSION=	8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Milestone%20${PORTVERSION}
 DISTNAME=	TheButterflyEffect-m${PORTVERSION}.src
@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/TheButterflyEffect-m${PORTVERSION}
 
 DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${DATADIR}/images/tbe-icon.png" \
-		"${PREFIX}/bin/tbe" "Application;LogicGame;Game;" false
+		"${PREFIX}/bin/tbe" "LogicGame;Game;" false
 
 post-patch:
 		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \

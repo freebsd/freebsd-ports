@@ -2,36 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	t_coffee
-PORTVERSION=	5.68
+PORTVERSION=	9.03
+DISTVERSIONSUFFIX=	.r1318
 CATEGORIES=	biology
-MASTER_SITES=	http://www.tcoffee.org/Packages/
-DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
+MASTER_SITES=	http://www.tcoffee.org/Packages/Stable/%SUBDIR%/
+MASTER_SITE_SUBDIR=	Version_${PORTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiple DNA or protein sequence alignment package
 
-BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw
+
+OPTIONS_DEFINE=	EXAMPLES
 
 BUILD_WRKSRC=	${WRKSRC}/t_coffee_source
-MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
-		CLUSTALW_4_TCOFFEE=${LOCALBASE}/bin/clustalw
 
+USE_FORTRAN=	yes
+MAKE_ENV=	FCC="${FC} ${FFLAGS}"
 MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
+
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/TMalign bin/t_coffee
+
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/t_coffee ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}/html
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@ ${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	(cd ${BUILD_WRKSRC} \
+		&& ${INSTALL_PROGRAM} TMalign t_coffee ${PREFIX}/bin)
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

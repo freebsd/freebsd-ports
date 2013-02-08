@@ -41,9 +41,11 @@ RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
-OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
-		RDOC "Build and install Rdoc indexes" on \
-		DEBUG "Compile-in debug info" off
+OPTIONS_DEFINE=	ONIGURUMA RDOC DEBUG
+ONIGURUMA_DESC=	Build with oniguruma regular expressions lib
+RDOC_DESC=	Build and install Rdoc indexes
+DEBUG_DESC=	Compile-in debug info
+OPTIONS_DEFAULT=	RDOC
 
 .include <bsd.port.pre.mk>
 
@@ -74,7 +76,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-pthread
 .endif
 
-.if defined(WITH_ONIGURUMA)
+.if ${PORT_OPTIONS:MONIGURUMA}
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+oniguruma
 BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
 ONIGURUMA_PORTDIR=${PORTSDIR}/devel/oniguruma
@@ -87,7 +89,7 @@ PLIST_SUB+=	ONIGURUMA="@comment "
 #
 # Disable doc generation if requested or docs disabled at all
 #
-.if !defined(WITHOUT_RDOC) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MRDOC} && ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-install-doc
 .else
 CONFIGURE_ARGS+=	--disable-install-doc
@@ -144,7 +146,7 @@ post-patch:
 .endfor
 
 pre-configure:
-.if defined(WITH_ONIGURUMA)
+.if ${PORT_OPTIONS:MONIGURUMA}
 	cd ${ONIGURUMA_WRKSRC}; ./configure; \
 		${MAKE} -f Makefile ${RUBY_RELVERSION:S/.//g} \
 		RUBYDIR="${WRKSRC}"
@@ -152,7 +154,7 @@ pre-configure:
 	${TOUCH} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-.if defined(WITH_ONIGURUMA)
+.if ${PORT_OPTIONS:MONIGURUMA}
 	cd ${WRKSRC}/ && ${PATCH} -p0 < ${PATCHDIR}/extrapatch-oniguruma-reggnu.c
 .endif
 
@@ -202,7 +204,7 @@ post-install:
 . endfor
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
 	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${RUBY_EXAMPLESDIR}/,}
 	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${RUBY_DOCDIR}/,}

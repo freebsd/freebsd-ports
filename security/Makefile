@@ -118,6 +118,7 @@
     SUBDIR += dropbear
     SUBDIR += dsniff
     SUBDIR += duo
+    SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += engine_pkcs11
     SUBDIR += expiretable
@@ -191,11 +192,15 @@
     SUBDIR += hs-SHA
     SUBDIR += hs-certificate
     SUBDIR += hs-cipher-aes
+    SUBDIR += hs-cipher-rc4
     SUBDIR += hs-clientsession
     SUBDIR += hs-cprng-aes
     SUBDIR += hs-crypto-api
     SUBDIR += hs-crypto-conduit
+    SUBDIR += hs-crypto-numbers
+    SUBDIR += hs-crypto-pubkey
     SUBDIR += hs-crypto-pubkey-types
+    SUBDIR += hs-crypto-random-api
     SUBDIR += hs-cryptocipher
     SUBDIR += hs-cryptohash
     SUBDIR += hs-digest
@@ -279,6 +284,7 @@
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
+    SUBDIR += libyubikey
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-gnutls
     SUBDIR += linux-f10-libgcrypt
@@ -363,6 +369,7 @@
     SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += openvpn20
+    SUBDIR += openvpn22
     SUBDIR += ophcrack
     SUBDIR += opieprint
     SUBDIR += osiris
@@ -494,6 +501,7 @@
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-Twofish2
     SUBDIR += p5-Crypt-Twofish_PP
+    SUBDIR += p5-Crypt-URandom
     SUBDIR += p5-Crypt-UnixCrypt
     SUBDIR += p5-Crypt-UnixCrypt_XS
     SUBDIR += p5-Crypt-X509
@@ -615,6 +623,7 @@
     SUBDIR += pam_search_list
     SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
+    SUBDIR += pam_yubico
     SUBDIR += pamtester
     SUBDIR += paperkey
     SUBDIR += parano
@@ -814,6 +823,7 @@
     SUBDIR += regripper
     SUBDIR += regripperplugins
     SUBDIR += retranslator
+    SUBDIR += revealrk
     SUBDIR += revelation
     SUBDIR += rifiuti2
     SUBDIR += rkhunter
@@ -982,6 +992,8 @@
     SUBDIR += yara
     SUBDIR += yassl
     SUBDIR += yersinia
+    SUBDIR += ykclient
+    SUBDIR += ykpers
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zombiezapper

@@ -1,0 +1,5 @@
+This package provides an implementation of the ideas presented in the
+paper "Functional Pearl: Implicit Configurations" by Oleg Kiselyov and
+Chung-chieh Shan.
+
+WWW: http://github.com/ekmett/reflection

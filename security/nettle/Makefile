@@ -1,13 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:	nettle
-# Date created:			Dec 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	nettle
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
@@ -38,6 +33,12 @@ EXAMPLES=	examples/*.c examples/*.h
 
 INFO=		nettle
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+CONFIGURE_ENV+=	CCPIC=-fPIC
+.endif
+
 .include <bsd.port.options.mk>
 
 post-install:
@@ -50,4 +51,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -45,7 +45,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
     		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include/openEXR

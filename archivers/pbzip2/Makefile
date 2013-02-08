@@ -28,8 +28,7 @@ PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's,-pthread -lpthread,${PTHREAD_LIBS},g; \
-		s,-O2,${CXXFLAGS},; \
+		-e 's,-O2,${CXXFLAGS},; \
 		s,^CC,#CC,; \
 		s,CC,CXX,' ${WRKSRC}/Makefile
 

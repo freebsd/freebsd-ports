@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biniax2
-# Date created:		16 Apr 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	biniax2
 PORTVERSION=	1.30

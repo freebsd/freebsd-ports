@@ -1,6 +1,6 @@
 bin/deepfind
 bin/deepgrep
-bin/luceneindexer
+bin/lucene2indexer
 bin/rdfindexer
 bin/strigiclient
 bin/strigicmd
@@ -95,7 +95,7 @@ lib/strigi/strigiea_digest.so
 lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiea_riff.so
-lib/strigi/strigiindex_clucene.so
+lib/strigi/strigiindex_cluceneng.so
 lib/strigi/strigila_cpp.so
 lib/strigi/strigila_deb.so
 lib/strigi/strigila_namespaceharvester.so

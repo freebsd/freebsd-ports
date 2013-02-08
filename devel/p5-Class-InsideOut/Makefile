@@ -1,18 +1,17 @@
-# New ports collection makefile for:	p5-Class-InsideOut
-# Date created:		2006-07-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-InsideOut
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A safe, simple inside-out object construction kit
+
+BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.0301
 

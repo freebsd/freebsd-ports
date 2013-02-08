@@ -38,7 +38,7 @@ load_rc_config $name
 transmission_group=${transmission_group:-$transmission_user}
 
 command=%%PREFIX%%/bin/transmission-daemon
-pidfile=/var/run/transmission/damon.pid
+pidfile=/var/run/transmission/daemon.pid
 start_precmd=transmission_prestart
 
 transmission_flags=" \
@@ -55,11 +55,19 @@ transmission_prestart()
 	chown $transmission_user:$transmission_group $transmission_download_dir
 	chown -R $transmission_user:$transmission_group $transmission_conf_dir/*
 	chgrp $transmission_group $transmission_conf_dir
-	chmod 1770 $transmission_conf_dir
+	chmod 750 $transmission_conf_dir
 	if [ -n "$transmission_web_home" ]; then
 		TRANSMISSION_WEB_HOME=$transmission_web_home
 		export TRANSMISSION_WEB_HOME
 	fi
 }
+
+# Unfortunately there was a typo in a previous version, which may have
+# left some people with /var/run/transmission/damon.pid .  Deal with
+# this for a few months at least, until everyone will have restarted
+# transmission
+if [ ! -f $pidfile -a -f /var/run/transmission/damon.pid ]; then
+	pidfile=/var/run/transmission/damon.pid
+fi
 
 run_rc_command $1

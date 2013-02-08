@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foxyproxy
-PORTVERSION=	3.6.2
+PORTVERSION=	4.1.1
 DISTVERSIONSUFFIX=	-sm+tb+fx
 CATEGORIES=	www
 
@@ -24,8 +24,8 @@ xpi-post-extract:
 	@${FIND} ${WRKSRC} -type f -name '*.js' |${XARGS} ${SED} -i '' -e 's/[[:space:]]*$$//g'
 
 pre-install:
-	@${FIND} ${WRKSRC} -type f -name '*.orig' |${XARGS} ${RM} -f
-	@${FIND} ${WRKSRC} -type f -name '*.bak' |${XARGS} ${RM} -f
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -type f -name '*.bak' -delete
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

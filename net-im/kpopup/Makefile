@@ -19,7 +19,7 @@ COMMENT=	KDE program for sending and receiving MS Windows WinPopup messages
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
-SAMBA_PORT?=	net/samba34
+SAMBA_PORT?=	net/samba36
 
 SUB_FILES=	pkg-message
 

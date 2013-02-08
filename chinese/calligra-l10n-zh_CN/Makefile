@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
-CATEGORIES?=	chinese editors kde
+CATEGORIES=	chinese editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simplified Chinese messages and documentation for Calligra

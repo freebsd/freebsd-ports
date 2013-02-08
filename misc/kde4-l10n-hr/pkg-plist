@@ -142,7 +142,6 @@ share/locale/hr/LC_MESSAGES/kcmstyle.mo
 share/locale/hr/LC_MESSAGES/kcmusb.mo
 share/locale/hr/LC_MESSAGES/kcmview1394.mo
 share/locale/hr/LC_MESSAGES/kcmworkspaceoptions.mo
-share/locale/hr/LC_MESSAGES/kcmxinerama.mo
 share/locale/hr/LC_MESSAGES/kcolorchooser.mo
 share/locale/hr/LC_MESSAGES/kcron.mo
 share/locale/hr/LC_MESSAGES/kde-menu.mo
@@ -163,23 +162,15 @@ share/locale/hr/LC_MESSAGES/kdmgreet.mo
 share/locale/hr/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/hr/LC_MESSAGES/keditbookmarks.mo
 share/locale/hr/LC_MESSAGES/kfile.mo
-share/locale/hr/LC_MESSAGES/kfile_avi.mo
 share/locale/hr/LC_MESSAGES/kfile_dds.mo
 share/locale/hr/LC_MESSAGES/kfile_drgeo.mo
 share/locale/hr/LC_MESSAGES/kfile_exr.mo
-share/locale/hr/LC_MESSAGES/kfile_flac.mo
 share/locale/hr/LC_MESSAGES/kfile_kig.mo
-share/locale/hr/LC_MESSAGES/kfile_mp3.mo
-share/locale/hr/LC_MESSAGES/kfile_mpc.mo
-share/locale/hr/LC_MESSAGES/kfile_ogg.mo
 share/locale/hr/LC_MESSAGES/kfile_pnm.mo
 share/locale/hr/LC_MESSAGES/kfile_raw.mo
 share/locale/hr/LC_MESSAGES/kfile_rgb.mo
 share/locale/hr/LC_MESSAGES/kfile_rpm.mo
-share/locale/hr/LC_MESSAGES/kfile_sid.mo
-share/locale/hr/LC_MESSAGES/kfile_theora.mo
 share/locale/hr/LC_MESSAGES/kfile_tiff.mo
-share/locale/hr/LC_MESSAGES/kfile_wav.mo
 share/locale/hr/LC_MESSAGES/kfile_xps.mo
 share/locale/hr/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/hr/LC_MESSAGES/kfilereplace.mo
@@ -365,6 +356,7 @@ share/locale/hr/LC_MESSAGES/libkunitconversion.mo
 share/locale/hr/LC_MESSAGES/libkworkspace.mo
 share/locale/hr/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/hr/LC_MESSAGES/libmailcommon.mo
+share/locale/hr/LC_MESSAGES/libmailimporter.mo
 share/locale/hr/LC_MESSAGES/libmessagelist.mo
 share/locale/hr/LC_MESSAGES/libmessageviewer.mo
 share/locale/hr/LC_MESSAGES/liboktetacore.mo
@@ -571,7 +563,6 @@ share/locale/hr/LC_MESSAGES/solid-network.mo
 share/locale/hr/LC_MESSAGES/solid_qt.mo
 share/locale/hr/LC_MESSAGES/solidcontrol.mo
 share/locale/hr/LC_MESSAGES/soliduiserver.mo
-share/locale/hr/LC_MESSAGES/spy.mo
 share/locale/hr/LC_MESSAGES/step.mo
 share/locale/hr/LC_MESSAGES/step_qt.mo
 share/locale/hr/LC_MESSAGES/strigila_diff.mo

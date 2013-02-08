@@ -1,0 +1,28 @@
+--- bin/visualvm.orig	2013-01-25 03:07:46.000000000 +0000
++++ bin/visualvm	2013-01-25 21:16:29.679381279 +0000
+@@ -66,6 +66,7 @@
+     cd "$old"
+     . "$progdir"/../lib/visualvm/etc/visualvm.conf
+ elif [ -f "$progdir"/../etc/visualvm.conf ] ; then
++    visualvm_jdkhome="%%JAVA_HOME%%"
+     . "$progdir"/../etc/visualvm.conf
+ fi
+ 
+@@ -110,7 +111,7 @@
+         if expr "$X" : "/.*" >/dev/null; then
+             echo "$X"
+         else
+-            echo "$basedir/$X"
++            echo "$basedir/share/visualvm/$X"
+         fi
+     done
+ }
+@@ -184,7 +185,7 @@
+         fi
+     done | head -n 1`
+     if [ \! -n "$nbexec" ] ; then
+-      nbexec="$basedir"/platform/lib/nbexec
++      nbexec="$basedir"/share/visualvm/platform/lib/nbexec
+     fi
+     sh=sh
+     # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ksaneplugin
-# Date created:				5 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ksaneplugin
 PORTVERSION=	${KDE4_VERSION}

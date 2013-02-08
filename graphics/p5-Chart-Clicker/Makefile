@@ -1,12 +1,8 @@
-# Ports collection makefile for:	Chart-Clicker
-# Date created:			2006/08/15
-# Whom:	      			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.83
+PORTVERSION=	2.84
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GPHAT
@@ -38,6 +34,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Axis.3 \
 		Chart::Clicker::Axis::DateTime.3 \
+		Chart::Clicker::Axis::DivisionType.3 \
+		Chart::Clicker::Axis::DivisionType::Exact.3 \
+		Chart::Clicker::Axis::DivisionType::LinearExpandGraph.3 \
+		Chart::Clicker::Axis::DivisionType::LinearRounded.3 \
 		Chart::Clicker::Component.3 \
 		Chart::Clicker::Container.3 \
 		Chart::Clicker::Context.3 \

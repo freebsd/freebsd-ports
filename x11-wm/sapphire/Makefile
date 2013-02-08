@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sapphire
-# Date created:		26 Jan 2000
-# Whom:			Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	sapphire
 PORTVERSION=	0.15.8

@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -3995,10 +3995,6 @@
+ 		libgc_threads=pthreads
+ 		# This doesn't seem to work as of 7.0 on amd64
+ 		with_sigaltstack=no
+-# TLS is only partially implemented on -CURRENT (compiler support
+-# but NOT library support)
+-#
+-		with_tls=pthread
+ 		use_sigposix=yes
+ 		;;
+ 	*-*-*openbsd*)

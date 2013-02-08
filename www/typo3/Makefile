@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
-COMMENT=	The typo3 content management system
+COMMENT=	Open Source content management system
 
 LICENSE=	GPLv2
 
@@ -63,7 +63,7 @@ USE_PHP+=	mbstring
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USE_MYSQL=	server
 IGNORE_WITH_MYSQL=	41 50
 .endif
 

@@ -126,6 +126,7 @@
     SUBDIR += cgoban
     SUBDIR += chanta
     SUBDIR += chapping
+    SUBDIR += chocolate-doom
     SUBDIR += cheech
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
@@ -221,6 +222,7 @@
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += enygma
+    SUBDIR += epiar
     SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += evilfinder
@@ -257,7 +259,6 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
-    SUBDIR += freebsd-carddeck-kde4
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
@@ -342,6 +343,7 @@
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
     SUBDIR += golddig
+    SUBDIR += golly
     SUBDIR += gomoku
     SUBDIR += gondola
     SUBDIR += goonies
@@ -555,6 +557,7 @@
     SUBDIR += minecraft-client
     SUBDIR += minecraft-server
     SUBDIR += minetest
+    SUBDIR += minetest_game
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += mkgichessclub
@@ -666,6 +669,7 @@
     SUBDIR += pachi
     SUBDIR += pacmanarena
     SUBDIR += paintown
+    SUBDIR += pairs
     SUBDIR += palomino
     SUBDIR += passage
     SUBDIR += patapizza-tetris
@@ -709,7 +713,6 @@
     SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
-    SUBDIR += py-anki
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
@@ -955,6 +958,7 @@
     SUBDIR += uqm
     SUBDIR += urbanterror-data
     SUBDIR += utserver
+    SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vavoom-extras

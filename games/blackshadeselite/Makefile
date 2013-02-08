@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blackshadeselite
-# Date created:		27 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	blackshadeselite
 PORTVERSION=	0.0.1
@@ -29,6 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	Readme Readme.elite
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${FIND} ${WRKSRC}/Data -name '._*' -delete
 
@@ -39,15 +37,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/blackshades ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} Data ${DATADIR}/
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>

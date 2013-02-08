@@ -113,6 +113,10 @@ CONFIGURE_ARGS+=--enable-install-setuid=yes
 CONFIGURE_ARGS+=--enable-install-setuid=no
 .endif
 
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	${FILESDIR}/extra-arch-i386
+.endif
+
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-ia64

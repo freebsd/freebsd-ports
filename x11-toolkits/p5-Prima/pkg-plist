@@ -9,7 +9,6 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Application.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Buttons.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/apricot.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/gbm.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic/AbstractMenu.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic/AccelTable.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic/Application.h

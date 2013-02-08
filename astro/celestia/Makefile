@@ -1,9 +1,9 @@
-# Created by: Trevor Johnson <trevor@FreeBSD.org>
+# Created by: trevor
 # $FreeBSD$
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -24,8 +24,8 @@ USE_LUA=	5.0+	# should be optional, but the build fails without it
 WANT_GNOME=	yes
 
 CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 UI_LIST=	glut gtk gnome kde
 CELESTIA_UI?=	glut
@@ -82,8 +82,9 @@ PLIST_SUB+=	KDE="@comment "
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Celestia" "Explore space" "celestia.png" "celestia" \
-		"Application;Astronomy;Education;Science;" ${STARTUP_NOTIFY}
+DESKTOP_ENTRIES="Celestia" "Explore space" \
+		"${PREFIX}/share/pixmaps/celestia.png" "celestia" \
+		"Astronomy;Education;Science;" ${STARTUP_NOTIFY}
 
 post-patch:
 # Fix Lua discovery pkg-config(1) calls

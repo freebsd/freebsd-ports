@@ -152,7 +152,6 @@ share/audacious/ui/playlist.ui
 %%MMSPLUGIN%%lib/audacious/Transport/mms.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
 lib/audacious/Transport/unix-io.so
-%%SMBPLUGIN%%lib/audacious/Transport/smb.so
 %%GIOPLUGIN%%lib/audacious/Transport/gio.so
 %%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
 %%AMIDIAPLUGIN%%lib/audacious/Input/amidi-plug/ap-alsa.so
@@ -176,6 +175,7 @@ lib/audacious/Input/psf2.so
 lib/audacious/Effect/stereo.so
 lib/audacious/Effect/crystalizer.so
 %%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
+%%RESAMPLEPLUGIN%%lib/audacious/Effect/speed-pitch.so
 lib/audacious/Effect/crossfade.so
 lib/audacious/Effect/compressor.so
 lib/audacious/Effect/ladspa.so

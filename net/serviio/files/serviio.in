@@ -26,4 +26,14 @@ command_args="$serviio_args &"
 
 stop_cmd="$command -stop"
 
+status_cmd=${name}_status
+serviio_status() {
+	serviio_pid=$(ps -aU ${serviio_user} | awk '/java/ {print $1}')
+	if [ -n "${serviio_pid}" ]; then
+		echo "${name} is running as pid ${serviio_pid}"
+	else
+		echo "${name} is not running"
+	fi
+}
+
 run_rc_command $1

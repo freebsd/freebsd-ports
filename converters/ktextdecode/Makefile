@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-O2||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

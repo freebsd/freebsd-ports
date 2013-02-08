@@ -1,11 +1,8 @@
-# Ports collection makefile for:	gem-nanoc
-# Date created:				26 Apr 2012
-# Whom:					Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nanoc
-PORTVERSION=	3.4.3
+PORTVERSION=	3.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

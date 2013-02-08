@@ -1,7 +1,3 @@
-# New ports collection Makefile for:	kajongg
-# Date created:				3 September 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	kajongg

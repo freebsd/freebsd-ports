@@ -1,9 +1,5 @@
-# New ports collection makefile for:	festalon
-# Date created:				13 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
@@ -18,7 +14,7 @@ COMMENT?=	A command line player for .nsf and .hes audio files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -30,7 +26,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${PKGNAMEPREFIX} == ""
 
@@ -42,7 +40,7 @@ PORTDOCS=	README
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
@@ -52,4 +50,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

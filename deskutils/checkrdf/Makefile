@@ -1,13 +1,9 @@
-# New ports collection makefile for:   checkrdf
-# Date created:        17 december 2002
-# Whom:                Oliver Braun <obraun@FreeBSD.org>
-#
+# Created by: Oliver Braun <obraun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	checkrdf
 PORTVERSION=	39.4444
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 

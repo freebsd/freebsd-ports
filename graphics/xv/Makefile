@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xv
-# Date created:		30 October 1994
-# Whom:			smace
-#
+# Created by: smace
 # $FreeBSD$
-#
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
@@ -22,12 +18,11 @@ PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	An X11 program that displays images of various formats
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
-		jasper.4:${PORTSDIR}/graphics/jasper
+		jasper:${PORTSDIR}/graphics/jasper
 
-USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	xext x11 xt
 .if !defined(NOMAN)

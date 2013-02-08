@@ -13,7 +13,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 REINPLACE_ARGS=	-i ""
-MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+MAKE_ENV=	FLAGS="${CFLAGS}"
 CONFIGURE_ENV=	LANG=
 
 USE_BZIP2=	yes
@@ -32,8 +32,7 @@ post-patch:
 		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g'
 	@${FIND} ${WRKSRC} -name '*Makefile*' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make|\$$\{MAKE\}|g ; \
-		 s|^FLAGS =|#FLAGS =|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g'
+		 s|^FLAGS =|#FLAGS =|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${PREFIX}/sbin

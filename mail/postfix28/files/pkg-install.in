@@ -56,7 +56,6 @@ yesno() {
       done
 }
 
-
 if [ "$2" = "POST-INSTALL" ]; then
 	SAMPLES="main.cf master.cf" 
 	for file in $SAMPLES
@@ -66,13 +65,16 @@ if [ "$2" = "POST-INSTALL" ]; then
 		fi
 	done
 
-      /bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
-	daemon_directory=${DAEMONDIR} \
-	html_directory=${READMEDIR} \
-	readme_directory=${READMEDIR} \
-	upgrade-package
-fi
+        cmp ${DAEMONDIR}/main.cf ${ETCDIR}/main.cf >/dev/null 2>&1 \
+	 && POSTARG="set-permissions" \
+	 || POSTARG="upgrade-package"
 
+	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
+	 daemon_directory=${DAEMONDIR} \
+	 html_directory=${READMEDIR} \
+	 readme_directory=${READMEDIR} \
+	 ${POSTARG}
+fi
 
 if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" -a -f "${MC}" ]; then
 	egrep -q "^sendmail.*${PREFIX}/sbin/sendmail"    ${MC} && \

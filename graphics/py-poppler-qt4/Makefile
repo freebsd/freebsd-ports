@@ -2,6 +2,7 @@
 
 PORTNAME=	poppler-qt4
 PORTVERSION=	0.16.3
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	python-poppler-qt4

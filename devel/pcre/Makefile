@@ -1,14 +1,11 @@
-# New ports collection makefile for:	pcre
-# Date created:				08 July 1998
-# Whom:					dom
-#
+# Created by: dom
 # $FreeBSD$
-#
 
 PORTNAME=	pcre
 PORTVERSION=	8.32
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
 		ftp://ftp.tin.org/pub/libs/%SUBDIR%/
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -158,7 +155,7 @@ MLINKS+=	pcre_assign_jit_stack.3 pcre16_assign_jit_stack.3 \
 		pcre_version.3 pcre16_version.3 \
 		pcre_version.3 pcre32_version.3
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
 		${WRKSRC}/Makefile.in
 .endif

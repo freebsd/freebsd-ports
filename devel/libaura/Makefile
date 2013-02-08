@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libaura
-# Date created:        18 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	libaura
 PORTVERSION=	3.1.20051222
@@ -11,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	philip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Library of Assorted Useful Reusable Abstractions
 
 USE_BZIP2=	yes

@@ -83,6 +83,7 @@
     SUBDIR += gnome-menus
     SUBDIR += gnome-panel
     SUBDIR += gnome-panel-reference
+    SUBDIR += gnome-pie
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-session
     SUBDIR += gnome-shell
@@ -103,6 +104,7 @@
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
+    SUBDIR += guake
     SUBDIR += hotwire-shell
     SUBDIR += hs-X11
     SUBDIR += hs-X11-xft

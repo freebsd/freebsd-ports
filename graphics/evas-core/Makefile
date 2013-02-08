@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	core
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
+MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	evas-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}

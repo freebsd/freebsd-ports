@@ -1,5 +1,5 @@
---- setup.py.orgi	2011-11-24 22:05:06.191148712 +0000
-+++ setup.py	2011-11-24 22:05:37.913149693 +0000
+--- setup.py.orgi	2013-01-12 11:23:31.000000000 +0100
++++ setup.py	2013-01-12 11:24:12.000000000 +0100
 @@ -4,10 +4,10 @@
  import glob
  
@@ -12,4 +12,4 @@
 +idnkit_library_dir = '%%LOCALBASE%%/lib'
  
  setup(name='idnkit-python',
-       version='2.1',
+       version='2.2',

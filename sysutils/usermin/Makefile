@@ -1,12 +1,7 @@
-# New ports collection makefile for:	usermin
-# Date created:		10 Nov 2002
-# Whom:			olgeni@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	usermin
-PORTVERSION=	1.530
+PORTVERSION=	1.540
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \

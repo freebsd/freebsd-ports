@@ -4,5 +4,5 @@
  		This modification make regex_cs-lwp9k be able to compile.
  */
  
--char version[] = "382+iso262";
-+char version[] = "382+iso262+regex_cs-lwp9k";
+-char version[] = "382+iso262+ext3";
++char version[] = "382+iso262+ext3+regex_cs-lwp9k";

@@ -19,7 +19,7 @@ MAKE_JOBS_SAFE=	yes
 NO_OPTIONS_SORT=yes
 OPTIONS_GROUP=		APR APU
 OPTIONS_GROUP_APR=	THREADS IPV6 DEVRANDOM
-OPTIONS_GROUP_APU=	BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE
+OPTIONS_GROUP_APU=	BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE FREETDS
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL
 OPTIONS_DEFAULT=	THREADS IPV6 DEVRANDOM BDB GDBM SSL
@@ -115,6 +115,16 @@ PLIST_SUB+=	LDAP="@comment "
 APU_CONF_ARGS+=	--without-ldap
 .endif
 
+.if ${PORT_OPTIONS:MFREETDS}
+APU_EXTRAS=	yes
+PLIST_SUB+=	FREETDS=""
+APU_CONF_ARGS+=	--with-freetds=${LOCALBASE}
+LIB_DEPENDS=	sybdb:${PORTSDIR}/databases/freetds
+.else
+PLIST_SUB+=	FREETDS="@comment "
+APU_CONF_ARGS+=	--without-freetds
+.endif
+
 .if ${PORT_OPTIONS:MMYSQL}
 APU_EXTRAS=	yes
 PLIST_SUB+=	MYSQL=""
@@ -185,7 +195,7 @@ PLIST_SUB+=	APU_EXTRAS=""
 PLIST_SUB+=	APU_EXTRAS="@comment "
 .endif
 
-post-patch:
+post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' \
 		${APR_WRKDIR}/build/apr_hints.m4
 	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -196,9 +206,6 @@ post-patch:
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
 		${APR_WRKDIR}/build/gen-build.py
 	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
-
-# http://svn.apache.org/viewvc?view=revision&revision=1362895
-	${REINPLACE_CMD} -e 's|sql = apr_palloc|sql = apr_pcalloc|' ${APU_WRKDIR}/dbd/apr_dbd_freetds.c
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \

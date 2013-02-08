@@ -1,18 +1,15 @@
-# New ports collection makefile for:	wine-gecko-devel
-# Date created:				2012-05-27
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	wine-gecko
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	emulators
 MASTER_SITES=	SF/wine/Wine%20Gecko/${DISTVERSION}
 DISTNAME=	wine_gecko-${DISTVERSION}-x86
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Gecko Layout Engine for Wine development branch (HTML support)
 
 LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3

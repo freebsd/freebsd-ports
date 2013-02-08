@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xneko
-# Date created:		22 December 1995
-# Whom:			markm
-#
+# Created by: markm
 # $FreeBSD$
-#
 
 PORTNAME=	xneko
 PORTVERSION=	1.0

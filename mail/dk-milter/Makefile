@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dk-milter
-# Date created:				22 May 2005
-# Whom:					ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2

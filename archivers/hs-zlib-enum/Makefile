@@ -2,6 +2,7 @@
 
 PORTNAME=	zlib-enum
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

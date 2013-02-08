@@ -1,40 +1,48 @@
-# New ports collection makefile for:	libmicro
-# Date created:		2005-08-06
-# Whom:			Vsevolod Stakhov <vsevolod@FreeBSD.org>
-#
+# Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmicro
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+libmicro/Source+Archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities to benchmark productivity of system calls
 
-USE_GMAKE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+LICENSE=	CDDL
 
 WRKSRC=		${WRKDIR}/libMicro-${PORTVERSION}
-PLIST_SUB=	ARCH=${ARCH}
-# Do not strip binaries
-STRIP=
+
+USE_GMAKE=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+
+STRIP=		 # Do not strip binaries
+
+PLIST_SUB=	ARCH="${ARCH}"
+
+PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
+
+post-build:
+	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
+	@${ECHO_CMD} '(cd ${PKGLIBDIR} && ./bench $$1)' >> ${WRKDIR}/libmicro-bench.sh
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/bin
-	${MKDIR} ${DATADIR}/bin-${ARCH}
-	( cd ${WRKSRC}/bin ; for i in * ; do \
-	${INSTALL_PROGRAM} ${WRKSRC}/bin-${ARCH}/$$i ${DATADIR}/bin-${ARCH} ; done )
-	${INSTALL_PROGRAM} ${WRKSRC}/bin-${ARCH}/exec_bin ${DATADIR}/bin-${ARCH}
-	@for i in ${DATADIR}/bin-${ARCH}/* ; do \
-	${LN} -s $$i ${DATADIR}/bin ; done
-	${INSTALL_SCRIPT} ${WRKSRC}/bench ${DATADIR}
-	@${ECHO} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
-	@${ECHO} '(cd ${DATADIR} && ./bench $$1)' >> ${WRKDIR}/libmicro-bench
-	${INSTALL_SCRIPT} ${WRKDIR}/libmicro-bench ${PREFIX}/bin/libmicro-bench
-	${INSTALL_SCRIPT} ${WRKSRC}/multiview ${PREFIX}/bin/multiview
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} libmicro-bench.sh \
+		${PREFIX}/bin/libmicro-bench)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} multiview.sh \
+		${PREFIX}/bin/multiview)
+	@${MKDIR} ${PKGLIBDIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} bench.sh \
+		${PKGLIBDIR}/bench)
+	@${MKDIR} ${PKGLIBDIR}/bin-${ARCH}
+	(cd ${WRKSRC}/bin-${ARCH} \
+		&& ${INSTALL_PROGRAM} exec_bin ${PKGLIBDIR}/bin-${ARCH})
+	(cd ${WRKSRC}/bin ; for i in * ; do ${INSTALL_PROGRAM} \
+		${WRKSRC}/bin-${ARCH}/$$i ${PKGLIBDIR}/bin-${ARCH} ; done)
+	@${MKDIR} ${PKGLIBDIR}/bin
+	(cd ${PKGLIBDIR}/bin-${ARCH} ; for i in * ; do ${LN} -s \
+		../bin-${ARCH}/$$i ../bin ; done)
 
 .include <bsd.port.mk>

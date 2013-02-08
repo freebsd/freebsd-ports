@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/URandom/.packlist
+%%SITE_PERL%%/Crypt/URandom.pm
+@dirrmtry %%SITE_PERL%%/Crypt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/URandom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt

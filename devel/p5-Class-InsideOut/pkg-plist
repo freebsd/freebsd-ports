@@ -1,9 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut/.packlist
 %%SITE_PERL%%/Class/InsideOut.pm
-%%SITE_PERL%%/Class/InsideOut.pod
-%%SITE_PERL%%/Class/InsideOut/Manual/About.pm
 %%SITE_PERL%%/Class/InsideOut/Manual/About.pod
-%%SITE_PERL%%/Class/InsideOut/Manual/Advanced.pm
 %%SITE_PERL%%/Class/InsideOut/Manual/Advanced.pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

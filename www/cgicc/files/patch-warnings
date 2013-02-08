@@ -1,0 +1,21 @@
+--- demo/cardgame.cpp	2013-01-12 06:48:14.000000000 -0500
++++ demo/cardgame.cpp	2013-01-14 12:48:50.000000000 -0500
+@@ -350,5 +350,5 @@
+ 		string actualCard;
+ 		bool isPlaying=false;
+-		int points;
++		int points = -1;
+ 		
+ 		int vNBCardsQueue1=0;
+@@ -1483,8 +1483,8 @@
+       Cgicc cgi;
+       
+-       // Get the name and value of the cookie to set
+-       const_form_iterator name = cgi.getElement("name");
++       // Get the name and value of the cookie to set XXX unused
++       // const_form_iterator name = cgi.getElement("name"); 
+        
+-       const_form_iterator value = cgi.getElement("value");
++       // const_form_iterator value = cgi.getElement("value");
+        
+        const_form_iterator actionIn = cgi.getElement("actionner");

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwave
-# Date created:				11 June 2000
-# Whom:					Trevor Johnson
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	xwave
 PORTVERSION=	2.2

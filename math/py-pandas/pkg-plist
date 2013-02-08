@@ -139,11 +139,17 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/sql.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/sql.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/sql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/wb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/wb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/wb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/legacy.h5
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/legacy_0.10.h5
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/legacy_table.h5
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/pytables_native.h5
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/pytables_native2.h5
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/rossi_small.csv
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/salary.table
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test.xls
@@ -174,6 +180,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_sql.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_sql.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_utf16.csv
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_wb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_wb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_wb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_yahoo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_yahoo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pandas/io/tests/test_yahoo.pyo

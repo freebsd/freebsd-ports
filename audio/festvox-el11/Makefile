@@ -1,11 +1,5 @@
-# New ports collection makefile for:	festvox-el11
-# Date created:        			2000-06-20
-# Whom:					Trevor Johnson
-# based on the NetBSD port
-#
-# $NetBSD: Makefile,v 1.7 1999/12/28 04:19:59 wiz Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	festvox-el11
 PORTVERSION=	1.4.0

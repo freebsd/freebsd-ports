@@ -1,5 +1,14 @@
---- cnv/rletops.c.orig	Thu Mar 10 20:09:59 2005
-+++ cnv/rletops.c	Thu Mar 10 20:13:29 2005
+--- cnv/rletops.c.orig	1992-01-21 03:04:10.000000000 +0900
++++ cnv/rletops.c	2012-10-15 22:45:15.000000000 +0900
+@@ -58,7 +58,7 @@
+ 
+ static int gencps = 0;		/* generate color PostScript? */
+ 
+-void
++int
+ main( argc, argv )
+ int argc;
+ char **argv;
 @@ -74,7 +74,7 @@
      float 	heightinch = 3.0, 
      		center = 3.25, 

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	x11-toolkits enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
+MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -12,11 +12,10 @@ COMMENT=	Simple widget toolkit using EFL
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	lua-5:${PORTSDIR}/lang/lua
-
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_LUA=	5.1+
 USE_EFL=	ecore eio edbus efreet embryo edje emotion ethumb \
 		libtool_hack librt_hack modarch_hack
 USE_GNOME=	gnomehack pkgconfig

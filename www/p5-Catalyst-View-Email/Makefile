@@ -1,13 +1,8 @@
-# New ports collection makefile for:   p5-Catalyst-View-Email
-# Date created:          2007-06-04
-# Whom:                     Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-Email
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

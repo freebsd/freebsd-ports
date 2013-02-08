@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-CPS
-# Date created:				2011-02-05
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPS
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -18,6 +14,8 @@ COMMENT=	Manage flow of control in Continuation-Passing Style
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Future>0:${PORTSDIR}/devel/p5-Future
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Identity>0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount \

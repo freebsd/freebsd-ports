@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mess
-PORTVERSION=	0.147${PATCHSUFFIX}
+PORTVERSION=	0.148${PATCHSUFFIX}
 CATEGORIES=	emulators
 MASTER_SITES=	SF/mame.mirror/MAME%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	mame
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The popular MESS (Multiple Emulator Super System)
+COMMENT=	Multiple Emulator Super System
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -32,6 +32,7 @@ USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
 USE_GMAKE=	yes
+USE_PYTHON=	yes
 MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${PORTNAME}"

@@ -53,15 +53,6 @@
  endif
  
  LDLIBS=-lowfat
-@@ -70,7 +64,7 @@
- CC:=$(DIET) $(CC)
- 
- pthreadbench: pthreadbench.o
--	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) -lpthread
-+	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) $(PTHREAD_LIBS)
- 
- forksbench: forkbench.o
- 	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
 @@ -136,11 +130,13 @@
  	rm -f trysocket
  

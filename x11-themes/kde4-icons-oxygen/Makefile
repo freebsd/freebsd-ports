@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kde4-icons-oxygen
-# Date created:		2009-03-30
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	oxygen
 PORTVERSION=	${KDE4_VERSION}

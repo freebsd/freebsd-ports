@@ -1,25 +1,21 @@
-# New ports collection makefile for:	soundkonverter
-# Date created:				2011/01/01
-# Whom:					David Naylor <naylor.b.david@gmail.com>
-#
+# Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
 DISTVERSION=	0.9.94rc2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio kde
 MASTER_SITES=	https://api.opensuse.org/public/source/home:HessiJames/soundkonverter/
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
-		kcddb:${PORTSDIR}/multimedia/kdemultimedia4
+		cdda_paranoia:${PORTSDIR}/audio/cdparanoia
 
 USE_CMAKE=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkcddb
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_SAFE=	yes

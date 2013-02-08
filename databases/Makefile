@@ -259,6 +259,7 @@
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
     SUBDIR += p5-Amazon-SimpleDB
+    SUBDIR += p5-Amon2-DBI
     SUBDIR += p5-AnyEvent-BDB
     SUBDIR += p5-AnyEvent-CouchDB
     SUBDIR += p5-AnyEvent-DBD-Pg
@@ -355,6 +356,7 @@
     SUBDIR += p5-DBIx-Class-EncodedColumn
     SUBDIR += p5-DBIx-Class-Fixtures
     SUBDIR += p5-DBIx-Class-FrozenColumns
+    SUBDIR += p5-DBIx-Class-InflateColumn-Authen-Passphrase
     SUBDIR += p5-DBIx-Class-InflateColumn-FS
     SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
@@ -630,11 +632,11 @@
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpq++
+    SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-libpqxx3
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
-    SUBDIR += postgresql-plpython
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
@@ -642,12 +644,14 @@
     SUBDIR += postgresql83-contrib
     SUBDIR += postgresql83-docs
     SUBDIR += postgresql83-plperl
+    SUBDIR += postgresql83-plpython
     SUBDIR += postgresql83-pltcl
     SUBDIR += postgresql83-server
     SUBDIR += postgresql84-client
     SUBDIR += postgresql84-contrib
     SUBDIR += postgresql84-docs
     SUBDIR += postgresql84-plperl
+    SUBDIR += postgresql84-plpython
     SUBDIR += postgresql84-pltcl
     SUBDIR += postgresql84-server
     SUBDIR += postgresql90-client
@@ -655,6 +659,7 @@
     SUBDIR += postgresql90-docs
     SUBDIR += postgresql90-pgtcl
     SUBDIR += postgresql90-plperl
+    SUBDIR += postgresql90-plpython
     SUBDIR += postgresql90-pltcl
     SUBDIR += postgresql90-server
     SUBDIR += postgresql91-client
@@ -662,6 +667,7 @@
     SUBDIR += postgresql91-docs
     SUBDIR += postgresql91-pgtcl
     SUBDIR += postgresql91-plperl
+    SUBDIR += postgresql91-plpython
     SUBDIR += postgresql91-pltcl
     SUBDIR += postgresql91-server
     SUBDIR += postgresql92-client
@@ -669,6 +675,7 @@
     SUBDIR += postgresql92-docs
     SUBDIR += postgresql92-pgtcl
     SUBDIR += postgresql92-plperl
+    SUBDIR += postgresql92-plpython
     SUBDIR += postgresql92-pltcl
     SUBDIR += postgresql92-server
     SUBDIR += postgresql_autodoc
@@ -717,6 +724,7 @@
     SUBDIR += py-oops
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
+    SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-postgresql
     SUBDIR += py-psycopg
@@ -783,7 +791,6 @@
     SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-interbase
-    SUBDIR += ruby-kyotocabinet
     SUBDIR += ruby-memcache
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
@@ -831,6 +838,7 @@
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
+    SUBDIR += rubygem-mysql2
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis

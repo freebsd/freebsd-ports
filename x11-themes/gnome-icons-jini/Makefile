@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gnome-icons-jini
-# Date created:		2008-09-29
-# Whom:			Jimmy Olgeni <olgeni@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	jini
 PORTVERSION=	0.8

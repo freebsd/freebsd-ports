@@ -77,6 +77,10 @@ include/apr-1/apu_want.h
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.a
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.la
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.so
+%%FREETDS%%lib/apr-util-1/apr_dbd_freetds-1.so
+%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.a
+%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.la
+%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.a
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.la

@@ -5,6 +5,7 @@ libexec/nullmailer/mailq
 @exec chown %%NULLMAIL_USER%% %D/libexec/nullmailer/mailq
 libexec/nullmailer/sendmail
 bin/nullmailer-inject
+bin/nullmailer-smtpd
 sbin/nullmailer-queue
 @exec chmod u+s %D/sbin/nullmailer-queue
 @exec chown %%NULLMAIL_USER%% %D/sbin/nullmailer-queue

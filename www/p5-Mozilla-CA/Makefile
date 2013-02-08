@@ -1,13 +1,7 @@
-# New ports collection makefile for:	Mozilla::CA
-# Date created:		19 May 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Mozilla-CA
-PORTVERSION=	20120823
-PORTREVISION=	1
+PORTVERSION=	20130114
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

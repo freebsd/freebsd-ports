@@ -1,4 +1,6 @@
 %%SITE_PERL%%/Data/Rx.pm
+%%SITE_PERL%%/Data/Rx/CommonType.pm
+%%SITE_PERL%%/Data/Rx/CommonType/EasyNew.pm
 %%SITE_PERL%%/Data/Rx/CoreType.pm
 %%SITE_PERL%%/Data/Rx/CoreType/all.pm
 %%SITE_PERL%%/Data/Rx/CoreType/any.pm
@@ -14,6 +16,8 @@
 %%SITE_PERL%%/Data/Rx/CoreType/rec.pm
 %%SITE_PERL%%/Data/Rx/CoreType/seq.pm
 %%SITE_PERL%%/Data/Rx/CoreType/str.pm
+%%SITE_PERL%%/Data/Rx/Failure.pm
+%%SITE_PERL%%/Data/Rx/FailureSet.pm
 %%SITE_PERL%%/Data/Rx/TypeBundle.pm
 %%SITE_PERL%%/Data/Rx/TypeBundle/Core.pm
 %%SITE_PERL%%/Data/Rx/Util.pm
@@ -21,6 +25,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Rx/TypeBundle
+@dirrm %%SITE_PERL%%/Data/Rx/CommonType
 @dirrm %%SITE_PERL%%/Data/Rx/CoreType
 @dirrm %%SITE_PERL%%/Data/Rx
 @dirrmtry %%SITE_PERL%%/Data

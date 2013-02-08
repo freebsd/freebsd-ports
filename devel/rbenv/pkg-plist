@@ -1,6 +1,7 @@
 bin/rbenv
 bin/ruby-local-exec
 libexec/rbenv
+libexec/rbenv---version
 libexec/rbenv-commands
 libexec/rbenv-completions
 libexec/rbenv-exec
@@ -12,6 +13,7 @@ libexec/rbenv-local
 libexec/rbenv-prefix
 libexec/rbenv-rehash
 libexec/rbenv-root
+libexec/rbenv-sh-rehash
 libexec/rbenv-sh-shell
 libexec/rbenv-shims
 libexec/rbenv-version
@@ -23,3 +25,7 @@ libexec/rbenv-version-origin
 libexec/rbenv-versions
 libexec/rbenv-whence
 libexec/rbenv-which
+%%DATADIR%%/completions/rbenv.bash
+%%DATADIR%%/completions/rbenv.zsh
+@dirrm %%DATADIR%%/completions
+@dirrm %%DATADIR%%

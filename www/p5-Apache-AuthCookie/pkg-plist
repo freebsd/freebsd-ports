@@ -1,10 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
 %%SITE_PERL%%/Apache/AuthCookie.pm
+%%SITE_PERL%%/Apache/AuthCookie/Autobox.pm
 %%SITE_PERL%%/Apache/AuthCookie/FAQ.pod
+%%SITE_PERL%%/Apache/AuthCookie/Params.pm
+%%SITE_PERL%%/Apache/AuthCookie/Params/Base.pm
 %%SITE_PERL%%/Apache/AuthCookie/Util.pm
 %%SITE_PERL%%/Apache2/AuthCookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/AuthCookie
-@dirrmtry %%SITE_PERL%%/Apache
+%%SITE_PERL%%/Apache2/AuthCookie/Params.pm
+@dirrmtry %%SITE_PERL%%/Apache2/AuthCookie
 @dirrmtry %%SITE_PERL%%/Apache2
+@dirrmtry %%SITE_PERL%%/Apache/AuthCookie/Params
+@dirrmtry %%SITE_PERL%%/Apache/AuthCookie
+@dirrmtry %%SITE_PERL%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

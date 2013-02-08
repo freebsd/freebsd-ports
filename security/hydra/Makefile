@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hydra
-PORTVERSION=	7.4.1
+PORTVERSION=	7.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/ \
 		PACKETSTORM/groups/thc/

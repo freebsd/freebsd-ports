@@ -20,8 +20,8 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop

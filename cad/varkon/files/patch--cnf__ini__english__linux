@@ -1,0 +1,11 @@
+--- cnf/ini/english/linux.orig	2012-11-17 20:42:44.000000000 +0900
++++ cnf/ini/english/linux	2012-11-24 02:20:24.000000000 +0900
+@@ -42,6 +42,8 @@
+ !***Varkon will display the file $VARKON_DOC/no_html_viewer.txt
+ !***in a list window.
+ !*
++varkon.html_viewer:             xdg-open
++!
+ !***Suse Linux with KDE can use Konqueror
+ !varkon.html_viewer:             konqueror
+ !

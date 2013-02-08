@@ -3,6 +3,7 @@
 
 PORTNAME=	opencl
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.khronos.org/registry/cl/api/${PORTVERSION}/
 DISTFILES=	opencl.h cl_platform.h cl.h cl_ext.h cl_dx9_media_sharing.h \

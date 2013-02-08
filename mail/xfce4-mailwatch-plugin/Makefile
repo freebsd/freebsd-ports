@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.1.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	mail xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A mailwatch plugin for Xfce
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes

@@ -1,11 +1,5 @@
-# New ports collection makefile for:	festlex-oald
-# Date created:        			2000-06-12
-# Whom:					Trevor Johnson
-# based on the NetBSD port
-#
-# $NetBSD: Makefile,v 1.7 1999/12/28 04:19:58 wiz Exp $
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	festlex-oald
 PORTVERSION=	1.4.1

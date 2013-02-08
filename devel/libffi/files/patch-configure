@@ -1,21 +1,11 @@
---- configure.orig	2010-11-22 12:53:14.000000000 +0100
-+++ configure	2010-11-22 12:53:26.000000000 +0100
-@@ -12231,6 +12231,9 @@
-   powerpc-*-freebsd*)
- 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
- 	;;
-+  powerpc64-*-freebsd*)
-+        TARGET=POWERPC; TARGETDIR=powerpc
-+        ;;
-   powerpc*-*-rtems*)
- 	TARGET=POWERPC; TARGETDIR=powerpc
- 	;;
-@@ -14484,7 +14487,7 @@
+--- configure.orig	2013-01-11 13:46:23.000000000 -0500
++++ configure	2013-01-11 13:46:50.000000000 -0500
+@@ -14254,7 +14254,7 @@
  
  	libffi_cv_as_x86_pcrel=yes
  	echo '.text; foo: nop; .data; .long foo-.; .text' > conftest.s
--	if $CC $CFLAGS -c conftest.s 2>&1 | grep -i warning > /dev/null; then
-+	if $CC -c conftest.s 2>&1 | grep -i warning > /dev/null; then
+-	if $CC $CFLAGS -c conftest.s 2>&1 | $EGREP -i 'illegal|warning' > /dev/null; then
++	if $CC -c conftest.s 2>&1 | $EGREP -i 'illegal|warning' > /dev/null; then
  	    libffi_cv_as_x86_pcrel=no
  	fi
  

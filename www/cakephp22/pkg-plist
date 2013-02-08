@@ -406,6 +406,7 @@
 %%WWWDIR%%/lib/Cake/Test/Case/Network/CakeSocketTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Network/Email/CakeEmailTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Network/Email/DebugTransportTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Email/MailTransportTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Network/Email/SmtpTransportTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Network/Http/BasicAuthenticationTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Network/Http/DigestAuthenticationTest.php
@@ -832,6 +833,7 @@
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_loop_inner.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_missing_element.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_self.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_with_element.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/helper_overwrite.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/index.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/multiple_nocache.ctp

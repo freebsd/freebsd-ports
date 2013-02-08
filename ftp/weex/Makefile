@@ -1,9 +1,5 @@
-# New ports collection makefile for:	weex
-# Date created:				8 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	weex
 PORTVERSION=	2.6.1.5
@@ -21,6 +17,10 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	ChangeLog README
 MAN1=		weex.1
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS.*\)debian|\1|' \
 		${WRKSRC}/Makefile.in
@@ -29,7 +29,7 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.weexrc ${EXAMPLESDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}

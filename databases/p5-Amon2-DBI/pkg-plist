@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/DBI/.packlist
+%%SITE_PERL%%/Amon2/DBI.pm
+%%SITE_PERL%%/Amon2/Plugin/DBI.pm
+@dirrmtry %%SITE_PERL%%/Amon2/Plugin
+@dirrmtry %%SITE_PERL%%/Amon2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2

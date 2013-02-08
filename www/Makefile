@@ -591,7 +591,6 @@
     SUBDIR += oops
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
-    SUBDIR += openbravoerp
     SUBDIR += opencart
     SUBDIR += openvrml
     SUBDIR += openx
@@ -604,8 +603,13 @@
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
+    SUBDIR += p5-Amon2
+    SUBDIR += p5-Amon2-Lite
+    SUBDIR += p5-Amon2-Plugin-LogDispatch
+    SUBDIR += p5-Amon2-Plugin-Web-MobileAgent
     SUBDIR += p5-Any-Template
     SUBDIR += p5-AnyEvent-HTTP
+    SUBDIR += p5-AnyEvent-HTTP-LWP-UserAgent
     SUBDIR += p5-AnyEvent-HTTPD
     SUBDIR += p5-AnyEvent-Mojo
     SUBDIR += p5-AnyEvent-ReverseHTTP
@@ -640,7 +644,6 @@
     SUBDIR += p5-Ark
     SUBDIR += p5-Bigtop
     SUBDIR += p5-Blog-Spam
-    SUBDIR += p5-Bundle-Sledge
     SUBDIR += p5-Business-PayPal
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
@@ -894,6 +897,7 @@
     SUBDIR += p5-HTML-Field
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FillInForm-ForceUTF8
+    SUBDIR += p5-HTML-FillInForm-Lite
     SUBDIR += p5-HTML-Form
     SUBDIR += p5-HTML-FormFu
     SUBDIR += p5-HTML-FormFu-Imager
@@ -954,6 +958,7 @@
     SUBDIR += p5-HTML-Template-HashWrapper
     SUBDIR += p5-HTML-Template-JIT
     SUBDIR += p5-HTML-Template-Pluggable
+    SUBDIR += p5-HTML-Template-Pro
     SUBDIR += p5-HTML-Toc
     SUBDIR += p5-HTML-TokeParser-Simple
     SUBDIR += p5-HTML-Tree
@@ -1037,6 +1042,7 @@
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
+    SUBDIR += p5-LWP-Protocol-PSGI
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-UserAgent-Determined
@@ -1118,6 +1124,7 @@
     SUBDIR += p5-Plack-Middleware-Header
     SUBDIR += p5-Plack-Middleware-IEnosniff
     SUBDIR += p5-Plack-Middleware-JSConcat
+    SUBDIR += p5-Plack-Middleware-MemoryUsage
     SUBDIR += p5-Plack-Middleware-Precompressed
     SUBDIR += p5-Plack-Middleware-Reproxy
     SUBDIR += p5-Plack-Middleware-ReverseProxy
@@ -1148,11 +1155,14 @@
     SUBDIR += p5-Reddit
     SUBDIR += p5-Rose-HTML-Objects
     SUBDIR += p5-Router-Simple
+    SUBDIR += p5-Router-Simple-Sinatraish
     SUBDIR += p5-SCGI
+    SUBDIR += p5-SOAP-Transport-HTTP-Plack
     SUBDIR += p5-SRU
     SUBDIR += p5-STF-Dispatcher-PSGI
     SUBDIR += p5-SWF-Chart
     SUBDIR += p5-Scrappy
+    SUBDIR += p5-Session-Storage-Secure
     SUBDIR += p5-Squatting
     SUBDIR += p5-Squatting-On-PSGI
     SUBDIR += p5-Starlet
@@ -1375,6 +1385,7 @@
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
+    SUBDIR += pecl-solr
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-yaf
@@ -1685,6 +1696,7 @@
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
+    SUBDIR += rubygem-async_sinatra
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chef-server-api
@@ -1697,6 +1709,7 @@
     SUBDIR += rubygem-em-websocket
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
+    SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-feed-normalizer
@@ -1844,7 +1857,6 @@
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-native
-    SUBDIR += tomcat55
     SUBDIR += tomcat6
     SUBDIR += tomcat7
     SUBDIR += trac

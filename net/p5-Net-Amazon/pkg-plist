@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
 %%SITE_PERL%%/Net/Amazon.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/Review.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/ReviewSet.pm
@@ -159,6 +158,19 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Video.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/VideoGames.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Watches.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Books.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/DVD.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/EAN.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Electronics.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/ForeignBooks.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/KindleStore.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Kitchen.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Music.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Software.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Toys.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/VideoGames.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es/Watches.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/AudienceRating.pm
@@ -212,6 +224,22 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Video.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/VideoGames.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Watches.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Baby.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Books.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/DVD.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/EAN.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Electronics.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/ForeignBooks.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/KindleStore.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Kitchen.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Lighting.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Music.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Shoes.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Software.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Toys.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/VideoGames.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it/Watches.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Apparel.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Artist.pm
@@ -347,6 +375,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Count.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/DVD.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Electronics.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Format.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/GourmetFood.pm
@@ -423,13 +452,16 @@
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehiclePartLookup.pm
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehiclePartSearch.pm
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehicleSearch.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/Type
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca
 @dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch

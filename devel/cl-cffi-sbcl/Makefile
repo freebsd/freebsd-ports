@@ -1,9 +1,8 @@
-# Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cffi
 PORTVERSION=	0.10.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

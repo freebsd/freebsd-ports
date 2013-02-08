@@ -9,9 +9,6 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-HSPREFIX=	hs-
-PKGNAMEPREFIX?=	${HSPREFIX}
-
 .if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 .else
@@ -81,11 +78,7 @@ BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
 USE_BINUTILS=	yes
-USE_GCC=	4.6
-
-.if ${PORT_OPTIONS:MDYNAMIC}
-LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
-.endif
+USE_GCC=	4.6+
 
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
 			--with-ranlib=${RANLIB}

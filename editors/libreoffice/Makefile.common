@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.5.7
+PORTVERSION=	3.6.5
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -45,10 +45,10 @@ RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
 
 .if defined(PRERELEASE)
 MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86/
-LO_I18N_FILE=		LibO_${PORTVERSION}rc${RCVER}_Linux_x86
+LO_I18N_FILE=	LibO_${LOVERSION}_Linux_x86
 .else
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
-LO_I18N_FILE=		LibO_${PORTVERSION}_Linux_x86
+LO_I18N_FILE=	LibO_${PORTVERSION}_Linux_x86
 .endif
 
 DIST_SUBDIR?=	libreoffice/i18n
@@ -61,26 +61,23 @@ DISTFILES+=	${LO_I18N_FILE}_helppack-deb_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
 .endif
 COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
 
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --strip-components 1
+
 post-extract:
 	@${MKDIR} ${WRKSRC}; \
-	for deb in ${WRKDIR}/LibO_${PORTVERSION}rc${RCVER}_Linux_x86_langpack-deb_${LO_I18N:S/_/-/}/DEBS/*.deb ; do \
+	for deb in ${WRKDIR}/DEBS/*.deb ; do \
 		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
 	done ; \
-	if [ -n ${LO_HAS_HELPPACK} ]; then \
-		for deb in ${WRKDIR}/LibO_${PORTVERSION}rc${RCVER}_Linux_x86_helppack-deb_${LO_I18N:S/_/-/}/DEBS/*.deb ; do \
-			${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
-		done ; \
-	fi
 
 do-install:
 	@rm -f ${PLISTD} ${PLISTF}
-	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${FIND} * -type d -exec ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/{} || ${TRUE}" \; >> ${PLISTD}
-	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
+	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * -type d -exec ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/{} || ${TRUE}" \; >> ${PLISTD}
+	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
 
 	${SORT} ${PLISTF} >> ${TMPPLIST}
 	${SORT} -r ${PLISTD} >> ${TMPPLIST}
 
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${PAX} -rw . ${PREFIX}/lib/${PORTNAME}
+	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${PAX} -rw . ${PREFIX}/lib/${PORTNAME}
 
 .endif

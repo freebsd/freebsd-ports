@@ -104,6 +104,10 @@
     SUBDIR += avr-libc
     SUBDIR += avra
     SUBDIR += avrdude
+    SUBDIR += avro
+    SUBDIR += avro-c
+    SUBDIR += avro-cpp
+    SUBDIR += awscli
     SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
@@ -645,6 +649,7 @@
     SUBDIR += hs-MissingH
     SUBDIR += hs-MonadCatchIO-mtl
     SUBDIR += hs-MonadCatchIO-transformers
+    SUBDIR += hs-MonadRandom
     SUBDIR += hs-ObjectName
     SUBDIR += hs-PSQueue
     SUBDIR += hs-QuickCheck
@@ -667,7 +672,9 @@
     SUBDIR += hs-base-unicode-symbols
     SUBDIR += hs-base16-bytestring
     SUBDIR += hs-base64-bytestring
+    SUBDIR += hs-base64-conduit
     SUBDIR += hs-basic-prelude
+    SUBDIR += hs-bifunctors
     SUBDIR += hs-bits-atomic
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-conduit
@@ -697,7 +704,9 @@
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-edit-distance
+    SUBDIR += hs-either
     SUBDIR += hs-enumerator
+    SUBDIR += hs-errors
     SUBDIR += hs-failure
     SUBDIR += hs-fast-logger
     SUBDIR += hs-fgl
@@ -706,6 +715,7 @@
     SUBDIR += hs-filestore
     SUBDIR += hs-filesystem-conduit
     SUBDIR += hs-fsnotify
+    SUBDIR += hs-generic-deriving
     SUBDIR += hs-gconf
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghc-mtl
@@ -741,6 +751,7 @@
     SUBDIR += hs-language-javascript
     SUBDIR += hs-largeword
     SUBDIR += hs-lazysmallcheck
+    SUBDIR += hs-lens
     SUBDIR += hs-lifted-base
     SUBDIR += hs-logict
     SUBDIR += hs-mmap
@@ -756,11 +767,14 @@
     SUBDIR += hs-pcre-light
     SUBDIR += hs-pool-conduit
     SUBDIR += hs-primitive
+    SUBDIR += hs-profunctor-extras
+    SUBDIR += hs-profunctors
     SUBDIR += hs-project-template
     SUBDIR += hs-random
     SUBDIR += hs-ranges
     SUBDIR += hs-reactive
     SUBDIR += hs-readline
+    SUBDIR += hs-reflection
     SUBDIR += hs-resource-pool
     SUBDIR += hs-resourcet
     SUBDIR += hs-safe
@@ -788,6 +802,8 @@
     SUBDIR += hs-threads
     SUBDIR += hs-threadscope
     SUBDIR += hs-time-compat
+    SUBDIR += hs-timezone-olson
+    SUBDIR += hs-timezone-series
     SUBDIR += hs-transformers
     SUBDIR += hs-transformers-base
     SUBDIR += hs-unamb
@@ -861,26 +877,15 @@
     SUBDIR += jzmq
     SUBDIR += k8048
     SUBDIR += kBuild
-    SUBDIR += kBuild-devel
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdebindings4
-    SUBDIR += kdebindings4-perl-perlkde
-    SUBDIR += kdebindings4-perl-perlqt
-    SUBDIR += kdebindings4-python-krosspython
-    SUBDIR += kdebindings4-python-pykde4
-    SUBDIR += kdebindings4-python-pykdeuic4
-    SUBDIR += kdebindings4-ruby-korundum
-    SUBDIR += kdebindings4-ruby-krossruby
-    SUBDIR += kdebindings4-ruby-qtruby
-    SUBDIR += kdebindings4-smoke-smokegen
-    SUBDIR += kdebindings4-smoke-smokekde
-    SUBDIR += kdebindings4-smoke-smokeqt
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop
+    SUBDIR += kdevelop-custom-buildsystem
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt
     SUBDIR += kdevelop-php
@@ -893,7 +898,6 @@
     SUBDIR += kscope
     SUBDIR += kyra
     SUBDIR += lasi
-    SUBDIR += lbpp
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += lemon
@@ -935,6 +939,7 @@
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdasm
+    SUBDIR += libdatrie
     SUBDIR += libdbusmenu-qt
     SUBDIR += libdfui
     SUBDIR += libdict
@@ -957,6 +962,7 @@
     SUBDIR += libevent
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
+    SUBDIR += libevt
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
@@ -999,11 +1005,14 @@
     SUBDIR += libixp
     SUBDIR += libjson++
     SUBDIR += libk8055
+    SUBDIR += libkgapi
+    SUBDIR += libkolab
     SUBDIR += liblas
     SUBDIR += liblcfg
     SUBDIR += libleaftag
     SUBDIR += liblnk
     SUBDIR += liblogging
+    SUBDIR += liblognorm
     SUBDIR += liblouis
     SUBDIR += liblouisxml
     SUBDIR += libltdl
@@ -1121,7 +1130,7 @@
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
-    SUBDIR += llvm29
+    SUBDIR += llvm31
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += lockfree-malloc
@@ -1241,11 +1250,13 @@
     SUBDIR += ncurses-devel
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
+    SUBDIR += ndesk-options
     SUBDIR += nemiver
     SUBDIR += netbsd-pkgsrc-mk-files
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
+    SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
@@ -1310,6 +1321,7 @@
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += orc
+    SUBDIR += osc
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
@@ -1327,7 +1339,6 @@
     SUBDIR += p4ftpd
     SUBDIR += p4genpatch
     SUBDIR += p4p
-    SUBDIR += p4v
     SUBDIR += p4web
     SUBDIR += p5-AI-Pathfinding-AStar
     SUBDIR += p5-AI-Prolog
@@ -1419,6 +1430,7 @@
     SUBDIR += p5-B-Hooks-Parser
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-OPCheck
+    SUBDIR += p5-B-Size2
     SUBDIR += p5-B-Utils
     SUBDIR += p5-BFD
     SUBDIR += p5-BS-Event
@@ -1483,6 +1495,7 @@
     SUBDIR += p5-Class-Accessor-Chained
     SUBDIR += p5-Class-Accessor-Children
     SUBDIR += p5-Class-Accessor-Complex
+    SUBDIR += p5-Class-Accessor-Constructor
     SUBDIR += p5-Class-Accessor-Fast-Contained
     SUBDIR += p5-Class-Accessor-Fast-XS
     SUBDIR += p5-Class-Accessor-Grouped
@@ -1517,7 +1530,6 @@
     SUBDIR += p5-Class-Factory
     SUBDIR += p5-Class-Factory-Util
     SUBDIR += p5-Class-Field
-    SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Forward
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-Gomor
@@ -1649,6 +1661,7 @@
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hexify
     SUBDIR += p5-Data-Hierarchy
+    SUBDIR += p5-Data-Inherited
     SUBDIR += p5-Data-Inspect
     SUBDIR += p5-Data-Integer
     SUBDIR += p5-Data-JavaScript-Anon
@@ -1992,6 +2005,7 @@
     SUBDIR += p5-Form-Sensible
     SUBDIR += p5-FreeBSD-i386-Ptrace
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Future
     SUBDIR += p5-Gearman
     SUBDIR += p5-Gearman-Client-Async
     SUBDIR += p5-Gearman-Server
@@ -2065,6 +2079,7 @@
     SUBDIR += p5-IO-Null
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Prompt
+    SUBDIR += p5-IO-Prompt-Tiny
     SUBDIR += p5-IO-Pty-Easy
     SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Stty
@@ -2189,6 +2204,7 @@
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Mac-PropertyList
     SUBDIR += p5-Make
+    SUBDIR += p5-Media-Type-Simple
     SUBDIR += p5-Memoize
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Meta-Builder
@@ -2204,6 +2220,7 @@
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
     SUBDIR += p5-Module-CPANTS-Analyse
+    SUBDIR += p5-Module-CPANfile
     SUBDIR += p5-Module-CheckDeps
     SUBDIR += p5-Module-Collect
     SUBDIR += p5-Module-Compile
@@ -2444,6 +2461,7 @@
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
     SUBDIR += p5-Path-Resource
+    SUBDIR += p5-Path-Tiny
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
@@ -2696,6 +2714,7 @@
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
     SUBDIR += p5-Test-File-ShareDir
+    SUBDIR += p5-Test-Fixme
     SUBDIR += p5-Test-Fixture-DBIC-Schema
     SUBDIR += p5-Test-Group
     SUBDIR += p5-Test-HTML-Tidy
@@ -2740,6 +2759,7 @@
     SUBDIR += p5-Test-POE-Client-TCP
     SUBDIR += p5-Test-POE-Server-TCP
     SUBDIR += p5-Test-Parser
+    SUBDIR += p5-Test-PerlTidy
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-Pod-Coverage-Permissive
@@ -2924,9 +2944,12 @@
     SUBDIR += p5-mocked
     SUBDIR += p5-namespace-autoclean
     SUBDIR += p5-namespace-clean
+    SUBDIR += p5-namespace-sweep
     SUBDIR += p5-orz
     SUBDIR += p5-parent
     SUBDIR += p5-perlbrew
+    SUBDIR += p5-perlkde
+    SUBDIR += p5-perlqt
     SUBDIR += p5-pip
     SUBDIR += p5-prefork
     SUBDIR += p5-reaper
@@ -2937,6 +2960,7 @@
     SUBDIR += p5-strictures
     SUBDIR += p5-subatom
     SUBDIR += p5-subversion
+    SUBDIR += p5-syntax
     SUBDIR += p5-threads
     SUBDIR += p5-threads-shared
     SUBDIR += p5-true
@@ -3128,6 +3152,7 @@
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-dio
+    SUBDIR += pecl-ev
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef
@@ -3350,11 +3375,13 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astng
     SUBDIR += py-async
+    SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-boto
+    SUBDIR += py-botocore
     SUBDIR += py-cclib
     SUBDIR += py-celementtree
     SUBDIR += py-celery
@@ -3463,6 +3490,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-krosspython
     SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
@@ -3512,6 +3540,7 @@
     SUBDIR += py-ply
     SUBDIR += py-pmock
     SUBDIR += py-polib
+    SUBDIR += py-posix_ipc
     SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-prettytable
@@ -3530,6 +3559,8 @@
     SUBDIR += py-pyev
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pykde4
+    SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
@@ -3547,6 +3578,7 @@
     SUBDIR += py-qt4-assistant
     SUBDIR += py-qt4-core
     SUBDIR += py-qt4-dbus
+    SUBDIR += py-qt4-dbussupport
     SUBDIR += py-qt4-declarative
     SUBDIR += py-qt4-designer
     SUBDIR += py-qt4-designerplugin
@@ -3829,6 +3861,7 @@
     SUBDIR += ruby-aspectr
     SUBDIR += ruby-avl
     SUBDIR += ruby-bsearch
+    SUBDIR += ruby-build
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
@@ -3847,6 +3880,8 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
+    SUBDIR += ruby-korundum
+    SUBDIR += ruby-krossruby
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
@@ -3855,6 +3890,7 @@
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
+    SUBDIR += ruby-qtruby
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbison
@@ -4011,6 +4047,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
+    SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-railsless-deploy
@@ -4147,6 +4184,9 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += sml_tk
+    SUBDIR += smokegen
+    SUBDIR += smokekde
+    SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sourcenav
@@ -4174,6 +4214,7 @@
     SUBDIR += subcommander
     SUBDIR += subcommander2
     SUBDIR += subversion
+    SUBDIR += subversion-static
     SUBDIR += subversion16
     SUBDIR += subversive
     SUBDIR += sunterlib
@@ -4196,6 +4237,7 @@
     SUBDIR += talloc
     SUBDIR += tbb
     SUBDIR += tcl-memchan
+    SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
     SUBDIR += tclcheck
@@ -4218,7 +4260,6 @@
     SUBDIR += tijmp
     SUBDIR += tinylaf
     SUBDIR += tinyq
-    SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkinspect
@@ -4276,6 +4317,7 @@
     SUBDIR += xmltooling
     SUBDIR += xorg-macros
     SUBDIR += xparam
+    SUBDIR += xsd
     SUBDIR += xtl
     SUBDIR += xtla
     SUBDIR += xwpe

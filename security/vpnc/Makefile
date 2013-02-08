@@ -26,7 +26,7 @@ MAN8=		vpnc.8
 
 MAKE_ENV+=	BINS="${EXTRABUILDS}"
 
-OPTIONS_DEFINE=	DECRYPT SSL CISCOVERSION
+OPTIONS_DEFINE=	DECRYPT SSL CISCOVERSION DOCS
 
 DECRYPT_DESC=		cisco-decypt password decrypt utility
 CISCOVERSION_DESC=	Mask linux presentation string
@@ -72,7 +72,7 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

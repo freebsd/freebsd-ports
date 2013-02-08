@@ -3,7 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=openchange/openchange/openchange-${PORTVERSION}%20${CODENAME}/
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--disable-swig-perl
 CONFIGURE_ARGS+=	--disable-pymapi
 
 .if ${PORT_OPTIONS:MBOOST} || exists(${LOCALBASE}/lib/libboost_thread.so)
-LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
 PLIST_SUB+=	BOOST=""
 .else
 PLIST_SUB+=	BOOST="@comment "

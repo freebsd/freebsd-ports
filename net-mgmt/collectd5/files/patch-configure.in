@@ -64,6 +64,17 @@
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
+--- configure.in.orig	2013-01-03 17:07:22.000000000 +0000
++++ configure.in	2013-01-03 17:07:58.000000000 +0000
+@@ -4057,7 +4057,7 @@
+ 	then
+ 		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
+ 		with_libvarnish_cflags="-I$withval/include"
+-		with_libvarnish_libs="-L$withval/lib -lvarnish -lvarnishcompat -lvarnishapi"
++		with_libvarnish_libs="-L$withval/lib/varnish -lvarnish -lvarnishcompat -lvarnishapi"
+ 		with_libvarnish="yes"
+ 	fi; fi; fi
+ ],
 @@ -4580,6 +4583,12 @@
  	plugin_zfs_arc="yes"
  fi

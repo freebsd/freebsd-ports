@@ -1,6 +1,14 @@
---- tools/rleinterp.c.orig	Thu Mar 10 21:14:52 2005
-+++ tools/rleinterp.c	Thu Mar 10 21:15:40 2005
-@@ -48,8 +48,8 @@
+--- tools/rleinterp.c.orig	1992-04-30 23:12:20.000000000 +0900
++++ tools/rleinterp.c	2012-10-15 22:56:39.000000000 +0900
+@@ -38,6 +38,7 @@
+ extern char *optarg;
+ extern int optind;
+ 
++int
+ main( argc, argv )
+ int argc;
+ char **argv;
+@@ -48,8 +49,8 @@
  		nom_sortie[BUFSIZ],
      		extension[80] ,
      	       *basenom, *rep ;

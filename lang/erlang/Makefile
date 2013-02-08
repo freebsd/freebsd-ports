@@ -1,13 +1,9 @@
-# New ports collection makefile for:	erlang
-# Date created:		11 Dec 1998
-# Whom:			ruslan@shevchenko.kiev.ua
-#
+# Created by: ruslan@shevchenko.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -28,8 +24,6 @@ PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
-
-CONFLICTS=	erlang-14*
 
 DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		bjarnelic.pdf:publications		\
@@ -201,9 +195,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${PREFIX}/lib/erlang/lib/dialyzer-*/doc/
 
-	@${MKDIR} ${PREFIX}/share/doc/erlang
+	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${PREFIX}/share/doc/erlang
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
 .endfor
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang

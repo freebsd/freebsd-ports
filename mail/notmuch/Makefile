@@ -2,16 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.14
+PORTVERSION=	0.15.1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
 MAINTAINER=	ross@rosstimson.com
 COMMENT=	Thread-based email index, search, and tagging application
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
 		xapian:${PORTSDIR}/databases/xapian-core \
 		talloc:${PORTSDIR}/devel/talloc
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		notmuch.1 notmuch-config.1 \
 		notmuch-count.1 notmuch-dump.1 \
@@ -22,9 +29,5 @@ MAN1=		notmuch.1 notmuch-config.1 \
 MAN5=		notmuch-hooks.5
 MAN7=		notmuch-search-terms.7
 MANCOMPRESSED=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

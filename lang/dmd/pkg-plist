@@ -54,9 +54,6 @@ include/d/phobos/std/c/math.d
 include/d/phobos/std/c/openbsd/openbsd.d
 include/d/phobos/std/c/openbsd/pthread.d
 include/d/phobos/std/c/openbsd/socket.d
-include/d/phobos/std/c/osx/dyld.d
-include/d/phobos/std/c/osx/getsect.d
-include/d/phobos/std/c/osx/loader.d
 include/d/phobos/std/c/osx/mach/dyld.d
 include/d/phobos/std/c/osx/mach/getsect.d
 include/d/phobos/std/c/osx/mach/loader.d

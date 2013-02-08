@@ -6385,6 +6385,7 @@ share/color/icc/pigment/fogra27l.icm
 share/config.kcfg/plansettings.kcfg
 share/config.kcfg/planworksettings.kcfg
 share/config.kcfg/sheets.kcfg
+share/config/braindumprc
 share/config/flow_stencils.knsrc
 share/config/flowrc
 share/config/karbonrc

@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig gnomehack ltverhack
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	SIMD "Use cpu-specific optimizations if available" off
 

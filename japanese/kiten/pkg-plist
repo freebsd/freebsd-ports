@@ -18,6 +18,8 @@ lib/libkiten.so
 lib/libkiten.so.5
 lib/libkiten.so.5.0.1
 share/applications/kde4/kiten.desktop
+share/applications/kde4/kitenkanjibrowser.desktop
+share/applications/kde4/kitenradselect.desktop
 share/apps/kiten/edict
 share/apps/kiten/kanjidic
 share/apps/kiten/kitenui.rc
