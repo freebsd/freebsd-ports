@@ -3601,6 +3601,7 @@
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-resourcepackage
     SUBDIR += py-rlcompleter2
+    SUBDIR += py-robotframework
     SUBDIR += py-rope
     SUBDIR += py-roxlib
     SUBDIR += py-rtree
