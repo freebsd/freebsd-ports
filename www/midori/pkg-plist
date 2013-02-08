@@ -4,6 +4,7 @@ etc/xdg/midori/search
 include/midori-%%VERSION%%/extensions/delayed-load.h
 include/midori-%%VERSION%%/extensions/external-download-manager.h
 include/midori-%%VERSION%%/extensions/history-list.h
+include/midori-%%VERSION%%/extensions/nsplugin-manager.h
 lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
@@ -15,6 +16,7 @@ lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
+lib/midori/libnsplugin-manager.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
@@ -66,10 +68,14 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-app.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-bookmarks.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-frontend.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-history.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-locationaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panel.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-platform.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-privatedata.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-searchaction.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-session.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-stock.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-view.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-websettings.html
@@ -104,6 +110,7 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/be/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/da/LC_MESSAGES/midori.mo
@@ -156,6 +163,8 @@ share/vala/vapi/external-download-manager.deps
 share/vala/vapi/external-download-manager.vapi
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
+share/vala/vapi/nsplugin-manager.deps
+share/vala/vapi/nsplugin-manager.vapi
 @dirrmtry share/vala/vapi
 @dirrmtry share/vala
 @dirrm %%DATADIR%%/res
