@@ -1,6 +1,7 @@
 bin/ora_explain
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Oracle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Oracle/GetInfo.pm
+%%MKTA%%%%SITE_PERL%%/%%PERL_ARCH%%/DBD/mkta.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Oraperl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/Oracle.bs
@@ -10,18 +11,18 @@ bin/ora_explain
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/mk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/ocitrace.h
 %%SITE_PERL%%/%%PERL_ARCH%%/oraperl.ph
-%%PORTDOCS%%%%EXAMPLESDIR%%/Readme
-%%PORTDOCS%%%%EXAMPLESDIR%%/bind.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/commit.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/curref.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/japh
-%%PORTDOCS%%%%EXAMPLESDIR%%/mktable.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/oradump.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/proc.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sql
-%%PORTDOCS%%%%EXAMPLESDIR%%/tabinfo.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/commit.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curref.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/japh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mktable.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oradump.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proc.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabinfo.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Oracle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
