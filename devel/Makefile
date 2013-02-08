@@ -229,6 +229,7 @@
     SUBDIR += clanlib
     SUBDIR += clanlib1
     SUBDIR += clanlib22
+    SUBDIR += cld
     SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clint
