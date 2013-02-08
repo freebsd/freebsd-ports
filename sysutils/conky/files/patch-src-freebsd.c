@@ -1,5 +1,5 @@
---- src/freebsd.c.orig	2010-10-06 00:29:36.000000000 +0300
-+++ src/freebsd.c	2012-03-05 01:02:25.000000000 +0200
+--- src/freebsd.c.orig	2012-05-04 00:08:27.000000000 +0300
++++ src/freebsd.c	2012-12-04 11:09:20.000000000 +0200
 @@ -38,6 +38,11 @@
  #include <sys/types.h>
  #include <sys/user.h>
@@ -12,21 +12,8 @@
  #include <net/if.h>
  #include <net/if_mib.h>
  #include <net/if_media.h>
-@@ -266,7 +271,9 @@
- {
- 	int n_processes;
- 
-+	pthread_mutex_lock(&kvm_proc_mutex);
- 	kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
-+	pthread_mutex_unlock(&kvm_proc_mutex);
- 
- 	info.procs = n_processes;
- 	return 0;
-@@ -278,9 +285,10 @@
- 	int n_processes;
- 	int i, cnt = 0;
- 
-+	pthread_mutex_lock(&kvm_proc_mutex);
+@@ -283,7 +288,7 @@
+ 	pthread_mutex_lock(&kvm_proc_mutex);
  	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
  	for (i = 0; i < n_processes; i++) {
 -#if (__FreeBSD__ < 5) && (__FreeBSD_kernel__ < 5)
@@ -34,35 +21,35 @@
  		if (p[i].kp_proc.p_stat == SRUN) {
  #else
  		if (p[i].ki_stat == SRUN) {
-@@ -288,6 +296,7 @@
- 			cnt++;
- 		}
- 	}
-+	pthread_mutex_unlock(&kvm_proc_mutex);
- 
- 	info.run_procs = cnt;
- 	return 0;
-@@ -296,7 +305,6 @@
+@@ -300,7 +305,9 @@
  void get_cpu_count(void)
  {
  	int cpu_count = 0;
 -	size_t cpu_count_len = sizeof(cpu_count);
++	/* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
++	if ((cpu_setup == 1) && (info.cpu_usage))
++		return;
  
  	if (GETSYSCTL("hw.ncpu", cpu_count) == 0) {
  		info.cpu_count = cpu_count;
-@@ -748,6 +756,7 @@
- 		CRIT_ERR(NULL, NULL, "Cannot read sysctl \"vm.stats.vm.v_page_count\"");
+@@ -313,6 +320,7 @@
+ 	if (info.cpu_usage == NULL) {
+ 		CRIT_ERR(NULL, NULL, "malloc");
  	}
++	cpu_setup = 1;
+ }
  
-+	pthread_mutex_lock(&kvm_proc_mutex);
- 	p = kvm_getprocs(kd, KERN_PROC_PROC, 0, &n_processes);
- 	processes = malloc(n_processes * sizeof(struct process));
+ struct cpu_info {
+@@ -330,11 +338,7 @@
+ 	unsigned int malloc_cpu_size = 0;
+ 	extern void* global_cpu;
  
-@@ -764,6 +769,7 @@
- 			j++;
- 		}
- 	}
-+	pthread_mutex_unlock(&kvm_proc_mutex);
+-	/* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
+-	if ((cpu_setup == 0) || (!info.cpu_usage)) {
+-		get_cpu_count();
+-		cpu_setup = 1;
+-	}
++	get_cpu_count();
  
- 	qsort(processes, j - 1, sizeof(struct process), comparemem);
- 	for (i = 0; i < 10 && i < n_processes; i++) {
+ 	if (!global_cpu) {
+ 		malloc_cpu_size = (info.cpu_count + 1) * sizeof(struct cpu_info);

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	conky
-# Date created:				2005-08-27
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	conky
-PORTVERSION=	1.8.1
-PORTREVISION=	5
+PORTVERSION=	1.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
