@@ -3602,6 +3602,7 @@
     SUBDIR += py-resourcepackage
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-selenium2library
     SUBDIR += py-rope
     SUBDIR += py-roxlib
     SUBDIR += py-rtree
