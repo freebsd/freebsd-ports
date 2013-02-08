@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="414e6a41-7204-11e2-8599-001060e06fd4">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.262</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb13-04.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0633</cvename>
+      <cvename>CVE-2013-0634</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb13-04.html</url>
+    </references>
+    <dates>
+      <discovery>2013-02-07</discovery>
+      <entry>2013-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00b0d8cd-7097-11e2-98d9-003067c2616f">
   <topic>OpenSSL -- TLS 1.1, 1.2 denial of service</topic>
     <affects>
