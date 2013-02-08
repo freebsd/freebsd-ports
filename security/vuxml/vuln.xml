@@ -175,14 +175,14 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>This patch addresses three possible buffer overflows in
 	    function unique_service_name().The three issues have the
 	    folowing CVE numbers:</p>
-	  <ul>  
+	  <ul>
 	     <li>CVE-2012-5958 Issue #2: Stack buffer overflow of Tempbuf</li>
 	     <li>CVE-2012-5959 Issue #4: Stack buffer overflow of Event-&gt;UDN</li>
 	     <li>CVE-2012-5960 Issue #8: Stack buffer overflow of Event-&gt;UDN</li>
-	  </ul>  			
+	  </ul>
 	  <p>Notice that the following issues have already been dealt by
 	    previous work:</p>
-	  <ul>  					
+	  <ul>
 	     <li>CVE-2012-5961 Issue #1: Stack buffer overflow of Evt-&gt;UDN</li>
 	     <li>CVE-2012-5962 Issue #3: Stack buffer overflow of Evt-&gt;DeviceType</li>
 	     <li>CVE-2012-5963 Issue #5: Stack buffer overflow of Event-&gt;UDN</li>
@@ -1780,11 +1780,11 @@ executed in your Internet Explorer while displaying the email.</p>
 	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2012_01.txt">
 	  <p>Certain Connection header values will trigger an endless loop, for example:
 	    "Connection: TE,,Keep-Alive"</p>
-	  <p>On receiving such value, lighttpd will enter an endless loop, 
-	    detecting an empty token but not incrementing the current string 
+	  <p>On receiving such value, lighttpd will enter an endless loop,
+	    detecting an empty token but not incrementing the current string
 	    position, and keep reading the ',' again and again.</p>
-	  <p>This bug was introduced in 1.4.31, when we fixed an "invalid read" 
-	    bug (it would try to read the byte before the string if it started 
+	  <p>This bug was introduced in 1.4.31, when we fixed an "invalid read"
+	    bug (it would try to read the byte before the string if it started
 	    with ',', although the value wasn't actually used).</p>
 	</blockquote>
       </body>
@@ -1933,7 +1933,7 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Sebastien Helleu reports:</p>
 	<blockquote cite="http://weechat.org/security/">
-	  <p>Untrusted command for function hook_process could lead to 
+	  <p>Untrusted command for function hook_process could lead to
 	  execution of commands, because of shell expansions.</p>
 	  <p>Workaround with a non-patched version: remove/unload all scripts
 	  calling function hook_process (for maximum safety).</p>
@@ -2092,9 +2092,9 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Sebastien Helleu reports:</p>
 	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
-	  <p>A buffer overflow is causing a crash or freeze of WeeChat when 
+	  <p>A buffer overflow is causing a crash or freeze of WeeChat when
 	  decoding IRC colors in strings.</p>
-	  <p>Workaround for a non-patched version: 
+	  <p>Workaround for a non-patched version:
 	  /set irc.network.colors_receive off</p>
 	</blockquote>
       </body>
@@ -2654,13 +2654,13 @@ executed in your Internet Explorer while displaying the email.</p>
           <p>Arbitrary PHP code execution</p>
           <p>A bug in the installer code was identified that allows an attacker
              to re-install Drupal using an external database server under certain
-             transient conditions. This could allow the attacker to execute 
+             transient conditions. This could allow the attacker to execute
              arbitrary PHP code on the original server.</p>
           </li>
           <li>
           <p>Information disclosure - OpenID module</p>
           <p>For sites using the core OpenID module, an information disclosure
-             vulnerability was identified that allows an attacker to read files 
+             vulnerability was identified that allows an attacker to read files
              on the local filesystem by attempting to log in to the site using a
              malicious OpenID server.</p>
           </li>
@@ -2792,20 +2792,20 @@ executed in your Internet Explorer while displaying the email.</p>
           <p>Host header poisoning</p>
           <p>Some parts of Django -- independent of end-user-written applications
              -- make use of full URLs, including domain name, which are generated
-             from the HTTP Host header. Some attacks against this are beyond Django's 
-             ability to control, and require the web server to be properly configured; 
+             from the HTTP Host header. Some attacks against this are beyond Django's
+             ability to control, and require the web server to be properly configured;
              Django's documentation has for some time contained notes advising users
              on such configuration.</p>
           <p>Django's own built-in parsing of the Host header is, however, still
              vulnerable, as was reported to us recently. The Host header parsing
-             in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host() 
-             -- was incorrectly handling username/password information in the header. 
+             in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host()
+             -- was incorrectly handling username/password information in the header.
              Thus, for example, the following Host header would be accepted by Django when
              running on "validsite.com":</p>
           <p>Host: validsite.com:random@evilsite.com</p>
           <p>Using this, an attacker can cause parts of Django -- particularly the
              password-reset mechanism -- to generate and display arbitrary URLs to users.</p>
-          <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host 
+          <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host
              headers which contain potentially dangerous content (such as username/password
              pairs) now raise the exception django.core.exceptions.SuspiciousOperation.</p>
           </li>
@@ -3312,14 +3312,14 @@ executed in your Internet Explorer while displaying the email.</p>
         <p>Secunia reports:</p>
         <blockquote cite="http://secunia.com/advisories/50598/">
           <p>A vulnerability has been discovered in OpenX, which can be
-             exploited by malicious people to conduct SQL injection 
+             exploited by malicious people to conduct SQL injection
              attacks.</p>
-          <p>Input passed via the "xajaxargs" parameter to 
-             www/admin/updates-history.php (when "xajax" is set to 
-             "expandOSURow") is not properly sanitised in e.g. the 
-             "queryAuditBackupTablesByUpgradeId()" function 
+          <p>Input passed via the "xajaxargs" parameter to
+             www/admin/updates-history.php (when "xajax" is set to
+             "expandOSURow") is not properly sanitised in e.g. the
+             "queryAuditBackupTablesByUpgradeId()" function
              (lib/OA/Upgrade/DB_UpgradeAuditor.php) before being used in SQL
-             queries. This can be exploited to manipulate SQL queries by 
+             queries. This can be exploited to manipulate SQL queries by
              injecting arbitrary SQL code.</p>
           <p>The vulnerability is confirmed in version 2.8.9. Prior versions
              may also be affected.</p>
@@ -3486,7 +3486,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>Kurt Seifried reports:</p>
 	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=844105">
 	  <p>There is an issue in ImageMagick that is also present in
-	    GraphicsMagick. CVE-2011-3026 deals with libpng memory 
+	    GraphicsMagick. CVE-2011-3026 deals with libpng memory
 	    allocation, and limitations have been added so that a bad PNG
 	    can't cause the system to allocate a lot of memory and a
 	    denial of service. However on further investigation of
@@ -4148,7 +4148,7 @@ executed in your Internet Explorer while displaying the email.</p>
         <p>Mediawiki reports:</p>
         <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2012-August/000119.html">
           <p>(Bug 39700) Wikipedia administrator Writ Keeper discovered
-            a stored XSS (HTML injection) vulnerability. This was 
+            a stored XSS (HTML injection) vulnerability. This was
             possible due to the handling of link text on File: links for
             nonexistent files. MediaWiki 1.16 and later is affected.</p>
           <p>(Bug 39180) User Fomafix reported several DOM-based XSS
@@ -4174,7 +4174,7 @@ executed in your Internet Explorer while displaying the email.</p>
             that did not exist in the external system, indefinitely.</p>
           <p>(Bug 39823) During internal review, it was discovered that metadata
             about blocks, hidden by a user with suppression rights, was visible
-            to administrators.</p> 
+            to administrators.</p>
         </blockquote>
       </body>
     </description>
@@ -4461,12 +4461,12 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Coppermine Team reports:</p>
 	<blockquote cite="http://forum.coppermine-gallery.net/index.php/topic,74682.0.html">
-	  <p>The release covers several path disclosure vulnerabilities. If 
-	    unpatched, it's possible to generate an error that will reveal the 
-	    full path of the script. A remote user can determine the full path 
-	    to the web root directory and other potentially sensitive 
-	    information. Furthermore, the release covers a recently discovered 
-	    XSS vulnerability that allows (if unpatched) a malevolent visitor to 
+	  <p>The release covers several path disclosure vulnerabilities. If
+	    unpatched, it's possible to generate an error that will reveal the
+	    full path of the script. A remote user can determine the full path
+	    to the web root directory and other potentially sensitive
+	    information. Furthermore, the release covers a recently discovered
+	    XSS vulnerability that allows (if unpatched) a malevolent visitor to
 	    include own script routines under certain conditions.</p>
 	</blockquote>
       </body>
@@ -5218,7 +5218,6 @@ executed in your Internet Explorer while displaying the email.</p>
 	  <p>When establishing a secure (SSL / TLS) connection to a target server an invalid regular
 	    expression has been used for performing the hostname verification. Subset instead of the
 	    full target server hostname has been marked an an acceptable match for the given hostname.
-	  
 	    For example, certificate with a hostname field of "aexample.com" was considered a valid
 	    certificate for domain "example.com".</p>
 	</blockquote>
