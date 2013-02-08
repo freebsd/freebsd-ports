@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.13.9
+PORTVERSION=	2.14.8
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.twizzler.org/
 
