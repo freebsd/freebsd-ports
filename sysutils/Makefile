@@ -119,6 +119,7 @@
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
+    SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
