@@ -1,9 +1,5 @@
-# New ports collection makefile for:   neos
-# Date created:                        14th March, 2005
-# Whom:                                decept
-#
+# Created by: decept
 # $FreeBSD$
-#
 
 PORTNAME=	neos
 PORTVERSION=	0.2b
@@ -13,7 +9,7 @@ MASTER_SITES=	http://perso.orange.fr/chamayou/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	kwin-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE window decoration
 
 USE_BZIP2=	yes

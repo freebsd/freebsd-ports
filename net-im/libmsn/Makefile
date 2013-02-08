@@ -1,17 +1,12 @@
-# ex:ts=8
-# Ports collection makefile for:	libmsn
-# Date created:			Feb 6, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libmsn
 DISTVERSION=	4.2.1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for connecting to MSN Messenger service
 
 LICENSE=	GPLv2

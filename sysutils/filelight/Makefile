@@ -1,9 +1,5 @@
-# New ports collection makefile for:	filelight
-# Date created:		Fri Aug 29 21:16:39 CEST 2003
-# Whom:			Markus Brueffer <brueffer@phoenix-systems.de>
-#
+# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
 # $FreeBSD$
-#
 
 PORTNAME=	filelight
 PORTVERSION=	1.0
@@ -11,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Represent a file system as a set of concentric segmented-rings
 
 USE_KDELIBS_VER=3

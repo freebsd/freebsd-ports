@@ -1,9 +1,5 @@
-# New ports collection makefile for:   smoothblend
-# Date created:                        18th March, 2005
-# Whom:                                decept
-#
+# Created by: decept
 # $FreeBSD$
-#
 
 PORTNAME=	smoothblend
 PORTVERSION=	1.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.p0z3r.org/downloads/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	smooth-blend-${PORTVERSION}
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window decoration for KDE
 
 CONFLICTS=	kdeartwork-3.5.[0-9]*

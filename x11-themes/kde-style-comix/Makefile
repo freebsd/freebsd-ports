@@ -1,9 +1,5 @@
-# New ports collection makefile for:   comix
-# Date created:                        13th March, 2005
-# Whom:                                decept
-#
+# Created by: decept
 # $FreeBSD$
-#
 
 PORTNAME=	comix
 PORTVERSION=	1.3.8
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	16028-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat KDE style and window decoration
 
 USE_BZIP2=	yes

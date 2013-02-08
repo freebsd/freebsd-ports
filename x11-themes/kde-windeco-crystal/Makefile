@@ -1,9 +1,5 @@
-# New ports collection makefile for:   crystal
-# Date created:                        15th March, 2005
-# Whom:                                decept
-#
+# Created by: decept
 # $FreeBSD$
-#
 
 PORTNAME=	crystal
 PORTVERSION=	1.0.7
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	13969-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent KDE window decoration
 
 USE_BZIP2=	yes
