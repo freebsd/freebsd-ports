@@ -34,6 +34,8 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/jpegexiforient.c ${WRKSRC}/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/exifautotran.txt ${WRKSRC}/exifautotran
@@ -47,7 +49,7 @@ test: build
 regression-test:	test
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/jpeg
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg/
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/doc/jpeg/
