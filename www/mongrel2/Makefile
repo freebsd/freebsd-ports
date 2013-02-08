@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mongrel2
-# Date created:		2011-09-28
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mongrel2
 PORTVERSION=	1.7.5
@@ -30,11 +26,11 @@ EXAMPLES_LIST=	bbs \
 		tornado \
 		zcov
 
-OPTIONS=	EXAMPLES "Install examplse" on
+OPTIONS_DEFINE=		EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -51,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
