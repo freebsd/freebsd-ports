@@ -1,5 +1,5 @@
---- ./configure.in.orig	2013-02-01 13:13:08.000000000 -0500
-+++ ./configure.in	2013-02-01 13:39:44.000000000 -0500
+--- ./configure.in.orig	2013-02-06 19:18:52.000000000 -0500
++++ ./configure.in	2013-02-06 19:22:43.000000000 -0500
 @@ -2115,7 +2115,7 @@
  AC_SUBST(GNUTAR)
  
@@ -14,11 +14,36 @@
          OUTPATH=unxfbsdi
          ;;
 -    x86_64)
-+    amd64)
++    amd64|x86_64)
          CPU=X
          CPUNAME=X86_64
          RTL_ARCH=X86_64
-@@ -6719,51 +6719,11 @@
+@@ -5561,21 +5561,13 @@
+             JAVA_ARCH="i386"
+             JAVA_TOOLKIT="client"
+             ;;
+-        x86_64)
+-            if test "`echo $JAVA_HOME | sed -e 's,.*/,,'`" = "linux"; then
+-                JAVA_ARCH="i386"
+-                JAVA_TOOLKIT="client"
+-            else
+-                JAVA_ARCH="amd64"
+-                JAVA_TOOLKIT="server"
+-            fi
++        amd64|x86_64)
++            JAVA_ARCH="amd64"
++            JAVA_TOOLKIT="server"
+             ;;
+         esac
+         SOLARINC="$SOLARINC -I$JAVA_HOME/include"
+         SOLARINC="$SOLARINC -I$JAVA_HOME/include/freebsd"
+-        SOLARINC="$SOLARINC -I$JAVA_HOME/include/bsd"
+-        SOLARINC="$SOLARINC -I$JAVA_HOME/include/linux"
+-        SOLARINC="$SOLARINC -I$JAVA_HOME/include/native_threads/include"
+         ;;
+ 
+     k*bsd*-gnu*)
+@@ -6719,51 +6711,11 @@
  dnl ===================================================================
  AC_MSG_CHECKING([which db to use])
  if test "$with_system_db" = "yes"; then
@@ -74,7 +99,7 @@
      SCPDEFS="$SCPDEFS -DSYSTEM_DB"
      libo_MINGW_CHECK_DLL([DB], [libdb])
  elif test $_os != iOS -a $_os != Android; then
-@@ -7347,9 +7307,13 @@
+@@ -7347,9 +7299,13 @@
      AC_MSG_CHECKING([which hash container mdds shall use])
      if test "x$HAVE_CXX0X" = "xTRUE"; then
          MDDS_CPPFLAGS="-std=gnu++0x"
@@ -89,7 +114,7 @@
          AC_MSG_RESULT([boost::unordered_map])
      fi
  
-@@ -7911,12 +7875,12 @@
+@@ -7911,12 +7867,12 @@
          if test -z "$SYSTEM_GENCMN"; then
              AC_MSG_ERROR([\'gencmn\' not found in \$PATH, install the icu development tool \'gencmn\'])
          fi
@@ -104,7 +129,7 @@
              ICU_RECLASSIFIED_PREPEND_SET_EMPTY="YES"
          else
              ICU_RECLASSIFIED_PREPEND_SET_EMPTY="NO"
-@@ -7956,7 +7920,7 @@
+@@ -7956,7 +7912,7 @@
  dnl ===================================================================
  
  AC_MSG_CHECKING([whether to enable graphite support])
@@ -113,7 +138,7 @@
      AC_MSG_RESULT([yes])
      ENABLE_GRAPHITE="TRUE"
      AC_MSG_CHECKING([which graphite to use])
-@@ -8186,8 +8150,8 @@
+@@ -8186,8 +8142,8 @@
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -124,7 +149,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -9842,10 +9806,10 @@
+@@ -9842,10 +9798,10 @@
  
      dnl Check for Meta Object Compiler
  
