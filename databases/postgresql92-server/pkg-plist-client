@@ -630,7 +630,9 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/psql-9.2.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/ecpg-9.2.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/ecpglib6-9.2.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/libpq5-9.2.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_config-9.2.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_dump-9.2.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pgscripts-9.2.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/psql-9.2.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/ecpg-9.2.mo

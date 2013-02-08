@@ -9,7 +9,6 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-client
-PORTREVISION=	0
 
 COMMENT=	PostgreSQL database (client)
 
