@@ -480,12 +480,11 @@ MASTER_SITE_GCC+= \
 MASTER_SITE_GENTOO+= \
 	http://gentoo.mirrors.pair.com/%SUBDIR%/ \
 	http://mirrors.tds.net/pub/gentoo/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/%SUBDIR%/ \
+	ftp://ftp.mirrorservice.org/sites/www.ibiblio.org/gentoo/%SUBDIR%/ \
 	http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	http://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	http://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
 	http://sunsite.cnlab-switch.ch/ftp/mirror/gentoo/%SUBDIR%/ \
-	http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
 	http://darkstar.ist.utl.pt/gentoo/%SUBDIR%/ \
 	http://gentoo.inode.at/%SUBDIR%/ \
@@ -497,7 +496,7 @@ MASTER_SITE_GENTOO+= \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
 	ftp://gentoo.mirrors.pair.com/%SUBDIR%/ \
-	ftp://mirrors.tds.net/gentoo/%SUBDIR%/ \
+	ftp://mirrors.tds.net/pub/gentoo/%SUBDIR% \
 	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	ftp://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
@@ -510,8 +509,7 @@ MASTER_SITE_GENTOO+= \
 	ftp://darkstar.ist.utl.pt/pub/gentoo/%SUBDIR%/ \
 	ftp://gentoo.inode.at/source/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
-	ftp://files.gentoo.gr/%SUBDIR%/ \
-	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
+	ftp://files.gentoo.gr/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GITHUB)
