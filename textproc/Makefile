@@ -364,6 +364,7 @@
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
+    SUBDIR += libflate
     SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
