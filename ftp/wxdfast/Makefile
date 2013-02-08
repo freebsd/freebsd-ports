@@ -1,38 +1,39 @@
-# New ports collection makefile for:	wxdfast
-# Date created:				2006-11-07
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	wxdfast
 PORTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/dfast/wxDownload%20Fast/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A great multithreaded and multi-platform download manager
+COMMENT=	Multithread and multi-platform download manager
 
-USE_GETTEXT=	yes
-USE_WX=		2.6
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_WX=		2.6+
 WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GETTEXT=	yes
+USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/locale
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
+LIBTOOLIZE_ARGS=--copy --force
+CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		wxdfast.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wxrc|${WXRC_CMD:T}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|pt_BR||' ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|pt_BR||' ${WRKSRC}/man/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS |AM_CFLAGS | ; \
+		 s|^CXXFLAGS |AM_CXXFLAGS | ; \
+		 s|-O2 ||' ${WRKSRC}/src/Makefile.am
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000 && ${ARCH} == i386
-BROKEN=	Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
