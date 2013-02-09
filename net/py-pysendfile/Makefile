@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pysendfile
-# Date created:		2012-06-15
-# Whom:			koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pysendfile
 PORTVERSION=	2.0.0
@@ -11,7 +7,7 @@ CATEGORIES=	net python devel
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	A Python interface to sendfile(2)
 
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*

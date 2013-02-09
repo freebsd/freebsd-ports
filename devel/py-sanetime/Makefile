@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-sanetime
-# Date created:		2012-06-03
-# Whom:			koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sanetime
 PORTVERSION=	4.1.9
@@ -11,7 +7,7 @@ CATEGORIES=	devel python astro
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	A sane date/time Python interface, with Django support
 
 LICENSE=	MIT

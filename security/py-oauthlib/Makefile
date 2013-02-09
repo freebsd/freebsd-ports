@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-oauthlib
-# Date created:				2012-05-23
-# Whom:					koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oauthlib
 PORTVERSION=	0.3.0
@@ -11,7 +7,7 @@ CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	An RFC-compliant Python implementation of OAuth
 
 LICENSE=	BSD
