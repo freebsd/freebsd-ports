@@ -341,7 +341,7 @@
 -          echo "*** exact error that occured. This usually means GLIB was incorrectly installed"
 -          echo "*** or that you have moved GLIB since it was installed. In the latter case, you"
 -          echo "*** may want to edit the glib-config script: $GLIB_CONFIG"
-+          echo "*** exact error that occured. This usually means GLIB is incorrectly installed."
++          echo "*** exact error that occurred. This usually means GLIB is incorrectly installed."
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext

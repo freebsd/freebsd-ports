@@ -28,7 +28,7 @@ ZIP_DESC=		Install PHP zip extension
 USE_PGSQL=	yes
 USE_PHP=	pgsql
 .else
-# server is not neccesery on this host.
+# server is not necessary on this host.
 #USE_MYSQL=	server
 USE_MYSQL=	client
 USE_PHP=	mysql

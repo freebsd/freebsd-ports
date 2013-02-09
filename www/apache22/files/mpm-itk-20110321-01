@@ -748,7 +748,7 @@ unchanged:
 +        SAFE_ACCEPT(accept_mutex_off());      /* unlock after "accept" */
 +
 +        if (status == APR_EGENERAL) {
-+            /* resource shortage or should-not-occur occured */
++            /* resource shortage or should-not-occur occurred */
 +            clean_child_exit(1);
 +        }
 +        else if (status != APR_SUCCESS) {
