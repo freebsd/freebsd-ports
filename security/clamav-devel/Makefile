@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	20130125
+PORTVERSION=	20130209
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -20,7 +20,7 @@ ARC_DESC=	Enable arch archives support
 ARJ_DESC=	Enable arj archives support
 LHA_DESC=	Enable lha archives support
 UNZOO_DESC=	Enable zoo archives support
-UNRAR_DESC=	Enable rar archives support
+UNRAR_DESC=	Enable rar archives support (req. for unit tests)
 LLVM_DESC=	Enable JIT Bytecode compiler (bundled LLVM)
 TESTS_DESC=	Run compile-time tests (req. python)
 MILTER_DESC=	Compile the milter interface
@@ -214,7 +214,7 @@ pre-configure:
 	fi
 .endif
 
-.if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
+.if ${PORT_OPTIONS:MTESTS} && ${PORT_OPTIONS:MUNRAR} && ${OSVERSION} >= 700000
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
 		${GMAKE} -C ${WRKSRC} check; \
