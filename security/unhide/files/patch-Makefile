@@ -1,6 +1,6 @@
---- /dev/null	2009-02-26 16:27:00.000000000 +0200
-+++ Makefile	2009-02-26 16:26:45.000000000 +0200
-@@ -0,0 +1,19 @@
+--- /dev/null	2013-01-06 20:26:43.000000000 +0200
++++ Makefile	2013-01-06 20:26:46.000000000 +0200
+@@ -0,0 +1,23 @@
 +DESTDIR		:= ${PREFIX}
 +MANDIR		:= ${DESTDIR}/man
 +INSTALL_PROGRAM	:= /usr/bin/install -s -m 0700
@@ -8,9 +8,13 @@
 +GZIP_CMD	:= /usr/bin/gzip -9
 +MKDIR_CMD	:= /bin/mkdir -p
 +
-+all:
-+	gcc unhide.c -o unhide
-+	gcc unhide-tcp.c -o unhide-tcp
++all: unhide unhide-tcp
++
++unhide: unhide-posix.c
++	gcc -Wall -O2 --static unhide-posix.c -o unhide
++
++unhide-tcp: unhide-tcp.c unhide-tcp-fast.c unhide-output.c
++	gcc -Wall -O2 --static unhide-tcp.c unhide-tcp-fast.c unhide-output.c -o unhide-tcp
 +
 +install: all
 +	${MKDIR_CMD} ${DESTDIR}/sbin ${MANDIR}/man8
