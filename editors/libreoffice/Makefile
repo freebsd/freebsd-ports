@@ -481,7 +481,8 @@ post-install:
 	@${SORT} -u ${PLISTF} >> ${TMPPLIST}
 	@${GREP} '^@exec ' ${PLISTD} | ${SORT} -u >> ${TMPPLIST}
 	@${GREP} '^@dirrm ' ${PLISTD} | ${SORT} -ru >> ${TMPPLIST}
-	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru >> ${TMPPLIST}
+	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru | \
+	    ${SED} -e '${PLIST_REINPLACE_DIRRMTRY}' >> ${TMPPLIST}
 
 	@cd ${LODESTDIR}/${PREFIX} ; ${PAX} -rw . ${PREFIX}
 	@${MKDIR} ${PREFIX}/etc/bash_completion.d
