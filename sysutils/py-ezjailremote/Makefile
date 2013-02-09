@@ -1,3 +1,4 @@
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ezjailremote
@@ -6,7 +7,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Remote control and convenience wrapper for ezjail
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fabric>0:${PORTSDIR}/devel/py-fabric

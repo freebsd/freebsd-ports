@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spambayes
-# Date created:				Sat Feb 1 17:23:02 UTC 2003
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spambayes
 PORTVERSION=	1.1b1
@@ -11,7 +7,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
 
 LICENSE=	PSFL

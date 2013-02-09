@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-bleach
-# Date created:		2012-05-28
-# Whom:			koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bleach
 PORTVERSION=	1.1.5
@@ -11,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	An easy whitelist-based HTML-sanitizing tool for Python
 
 LICENSE=	BSD
