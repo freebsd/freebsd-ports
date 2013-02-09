@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clone
-PORTVERSION=	r18
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,9 +13,5 @@ LICENSE=	BSD
 PLIST_FILES=	bin/clone
 
 MAN1=	clone.1
-
-post-patch-script:
-	@${REINPLACE_CMD} 's|^CC      = gcc|CC      ?= gcc|' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
