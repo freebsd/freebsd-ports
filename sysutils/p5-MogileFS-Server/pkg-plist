@@ -51,6 +51,7 @@ bin/mogstored
 %%SITE_PERL%%/Mogstored/HTTPServer.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Apache.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Lighttpd.pm
+%%SITE_PERL%%/Mogstored/HTTPServer/Nginx.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/None.pm
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
