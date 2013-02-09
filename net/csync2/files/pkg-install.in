@@ -21,7 +21,7 @@ create_cert() {
 	rm -f /tmp/csync2_ssl_cert.csr
 
 	if [ ${code} -ne 0 ]; then
-		echo "csync2: OpenSSL error occured:"
+		echo "csync2: OpenSSL error occurred:"
 		echo
 		cat ${_errlog}
 		echo

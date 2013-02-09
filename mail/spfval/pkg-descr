@@ -4,4 +4,4 @@ SPF records. Simply pass the validator a string and it will see if it validates
 as an SPFv1 or SPF-Classic record.
 
 If an error is found, it tries its best to report the error in question and the
-specific location in the record where the error occured.
+specific location in the record where the error occurred.

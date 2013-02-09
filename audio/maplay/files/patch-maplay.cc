@@ -172,7 +172,7 @@
      if (range_violations)
      {
 -      cerr << range_violations << " range violations have occured!\n";
-+      std::cerr << range_violations << " range violations have occured!\n";
++      std::cerr << range_violations << " range violations have occurred!\n";
        if (stdout_mode)
 -	cerr << "If you notice these violations,\n";
 +	std::cerr << "If you notice these violations,\n";

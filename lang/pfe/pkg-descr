@@ -1,4 +1,4 @@
-This package contains all neccessary ANSI-C source files to build a
+This package contains all necessary ANSI-C source files to build a
 running Forth-environment on most UNIX machines, on DOS and on OS/2.
 
 The Forth-system is closely modeled along the new American National

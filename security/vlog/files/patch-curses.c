@@ -34,7 +34,7 @@
 + arrows   move the window one line       0   scroll window to leftmost\n\
 + h,j,k,l  in either direction.         \n\
 + H,J,K,L  Caps move faster.             /,?  search a regexp forward/backward\n\
-+ b,space  back, forward 1 page          n,N  goto next/previous occurence\n\
++ b,space  back, forward 1 page          n,N  goto next/previous occurrence\n\
 +PgUp/Down these work on XFree only      >,<  goto next/previous day boundary\n\
 +                                        ],[  goto next/previous marked line\n\
 +--------- MISC KEYS ----------------     \n\

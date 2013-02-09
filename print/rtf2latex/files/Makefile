@@ -18,7 +18,7 @@ PREFIX?=/usr/local
 # want to specify this for ULTRIX - ULTRIX has both, strchr and index but
 # lacks prototypes for the latter.
 # 
-# uncomment this line and delete unneccesary flags if needed.
+# uncomment this line and delete unnecessary flags if needed.
 #XCFLAGS=-DNO_MALLOC_H -DSTDARG -DVARARGS -DSYSV
 #XCFLAGS = -DSYSV
 
