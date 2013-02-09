@@ -282,6 +282,7 @@
     SUBDIR += kiax
     SUBDIR += kio-upnp-ms
     SUBDIR += kissd
+    SUBDIR += knc
     SUBDIR += knemo
     SUBDIR += knemo-kde4
     SUBDIR += kojoney
