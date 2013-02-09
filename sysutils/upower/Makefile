@@ -1,13 +1,10 @@
-# New ports collection makefile for:   DeviceKit-power
-# Date Created:			30 December 2009
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/sysutils/upower/Makefile,v 1.19 2010/10/05 08:30:15 kwm Exp $
-#
 
 PORTNAME=	upower
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 
