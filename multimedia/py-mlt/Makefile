@@ -5,6 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for the MLT multimedia framework
 
 LICENSE=	GPLv2
@@ -16,24 +17,22 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 USE_PYTHON=	yes
 MASTERDIR=	${.CURDIR:H:H}/multimedia/mlt
 
-PORTEXAMPLES=	python
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/python
+PORTEXAMPLES=	*
 
-PLIST=		# empty
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_mlt.so \
-		%%PYTHON_SITELIBDIR%%/mlt.py \
-		%%PYTHON_SITELIBDIR%%/mlt.pyc \
-		%%PYTHON_SITELIBDIR%%/mlt.pyo
+PLIST=		${.CURDIR}/pkg-plist
 
 BUILD_WRKSRC=	${WRKSRC}/src/swig/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.options.mk>
 
-do-build:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-L../../mlt++|-L${LOCALBASE}/lib|' \
 		-e 's|g++|${CXX} ${CXXFLAGS}|' \
-		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		${BUILD_WRKSRC}/build
+
+do-build:
 	@cd ${BUILD_WRKSRC} && ${SH} build
 
 do-install:
@@ -44,9 +43,9 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/python
+	${MKDIR} ${EXAMPLESDIR}
 . for f in codecs getimage play waveforms
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f}.py ${EXAMPLESDIR}/python
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f}.py ${EXAMPLESDIR}
 . endfor
 .endif
 
