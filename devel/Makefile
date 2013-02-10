@@ -1053,6 +1053,7 @@
     SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libplist
+    SUBDIR += libpo6
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
     SUBDIR += librcd
