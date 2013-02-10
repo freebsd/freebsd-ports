@@ -137,6 +137,7 @@
     SUBDIR += dokuwiki
     SUBDIR += dotclear
     SUBDIR += dotproject
+    SUBDIR += download-gemist
     SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
