@@ -17,6 +17,7 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		Desktop:${PORTSDIR}/x11/deforaos-libdesktop \
 		poppler-glib:${PORTSDIR}/graphics/poppler-glib
 
+MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 PLIST_FILES=	bin/pdfviewer \
