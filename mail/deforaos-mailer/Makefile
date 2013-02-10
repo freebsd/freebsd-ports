@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mailer
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
+
 CATEGORIES=	mail
-MASTER_SITES=	http://www.defora.org/os/download/download/3704/
+MASTER_SITES=	http://www.defora.org/os/download/download/4029/
 DISTNAME=	Mailer-${PORTVERSION}
 PKGNAMEPREFIX=	deforaos-
 
@@ -24,6 +25,7 @@ USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
