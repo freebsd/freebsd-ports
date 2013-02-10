@@ -46,6 +46,7 @@
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
+    SUBDIR += asteroid
     SUBDIR += asteroids3d
     SUBDIR += atanks
     SUBDIR += atitd
