@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xshttpd
-# Date created:				29 June 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b25
-PORTREVISION=	1
+DISTVERSION=	3.7b26
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
