@@ -5,8 +5,8 @@ PORTNAME=	locker
 PORTVERSION=	0.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/3703/
-DISTNAME=	Locker-${PORTVERSION}
 PKGNAMEPREFIX=	deforaos-
+DISTNAME=	Locker-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	DeforaOS desktop screensaver
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:${PORTSDIR}/x11/deforaos-
 USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
-
+MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
 MAN1=		locker.1 lockerctl.1
