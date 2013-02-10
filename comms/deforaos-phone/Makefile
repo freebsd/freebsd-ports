@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	phone
-PORTVERSION=	0.3.10
+PORTVERSION=	0.3.11
 CATEGORIES=	comms
-MASTER_SITES=	http://www.defora.org/os/download/download/3707/
-DISTNAME=	Phone-${PORTVERSION}
+MASTER_SITES=	http://www.defora.org/os/download/download/3721/
 PKGNAMEPREFIX=	deforaos-
+DISTNAME=	Phone-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	DeforaOS telephony application
@@ -25,5 +25,6 @@ USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
