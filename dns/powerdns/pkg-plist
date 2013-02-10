@@ -1,6 +1,7 @@
 bin/dnsreplay
 bin/pdns_control
 bin/pdnssec
+bin/zone2json
 bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
