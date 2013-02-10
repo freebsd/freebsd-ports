@@ -232,7 +232,11 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.8
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-4.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING.mysql
+%%PORTDOCS%%%%DOCSDIR%%/backups.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/approvals.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/articles_introduction.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/lifecycles.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/styling_rt.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/templates.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/timezones_in_charts.pod
 %%PORTDOCS%%%%DOCSDIR%%/extending/clickable_links.pod
@@ -241,6 +245,12 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/full_text_indexing.pod
 %%PORTDOCS%%%%DOCSDIR%%/glossary.pod
 %%PORTDOCS%%%%DOCSDIR%%/hacking.pod
+%%PORTDOCS%%%%DOCSDIR%%/images/action-decline.png
+%%PORTDOCS%%%%DOCSDIR%%/images/global-lifecycle-group-rights.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-choices.png
+%%PORTDOCS%%%%DOCSDIR%%/images/order-history-example.png
+%%PORTDOCS%%%%DOCSDIR%%/images/theme_editor_defaults.png
+%%PORTDOCS%%%%DOCSDIR%%/initialdata.pod
 %%PORTDOCS%%%%DOCSDIR%%/network-diagram.svg
 %%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
@@ -333,6 +343,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.4/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.9/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1264,6 +1275,7 @@ share/rt40/po/pt_PT.po
 share/rt40/po/rt.pot
 share/rt40/po/ru.po
 share/rt40/po/sl.po
+share/rt40/po/sk.po
 share/rt40/po/sv.po
 share/rt40/po/tr.po
 share/rt40/po/zh_CN.po
@@ -1459,6 +1471,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrmtry share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.9
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.6
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.3
@@ -1498,6 +1511,7 @@ share/rt40/po/zh_TW.po
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.1.15
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.1.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extending
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/customizing
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
