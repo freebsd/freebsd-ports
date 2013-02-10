@@ -372,6 +372,7 @@
     SUBDIR += gweled
     SUBDIR += hangman
     SUBDIR += hedgewars
+    SUBDIR += help_hannahs_horse
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
