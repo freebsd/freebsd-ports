@@ -1,9 +1,5 @@
-# New ports collection Makefile for: povchem
-# Date created:         Mar 14 1998
-# Whom:                 frankch@waru.life.nthu.edu.tw
-#
+# Created by: frankch@waru.life.nthu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	povchem
 PORTVERSION=	1.0
@@ -13,6 +9,8 @@ MASTER_SITES=	http://www.chemicalgraphics.com/paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \
 		povchem.cfg \
 		periodic.tab
+DIST_SUBDIR=	povchem
+EXTRACT_ONLY=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple yet powerful tool to generate POV from a PDB file
@@ -20,31 +18,30 @@ COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 NO_WRKSUBDIR=	yes
-DIST_SUBDIR=	povchem
 
-DEFS=		-DDATADIR=\"${PREFIX}/share/povchem\" \
+USE_DOS2UNIX=	povchem.c
+
+CPPFLAGS+=	-DDATADIR=\"${DATADIR}\" \
 		-DSYSCONFDIR=\"${PREFIX}/etc\"
-PATCH_ARGS=	-l -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-.for file in ${DISTFILES}
-	@${CP} ${_DISTDIR}/${file} ${WRKSRC}
-.endfor
+PLIST_FILES=	bin/povchem etc/povchem.cfg %%DATADIR%%/periodic.tab
+PLIST_DIRS=	%%DATADIR%%
+
+post-extract:
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} -cf - ${DISTFILES}) | \
+		(cd ${WRKSRC} && ${TAR} -xf -)
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-	${WRKSRC}/povchem.cfg
-	${MV} ${WRKSRC}/povchem.c ${WRKSRC}/povchem.c.patched
-	strings -1 ${WRKSRC}/povchem.c.patched > ${WRKSRC}/povchem.c
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/povchem.cfg
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} -o povchem povchem.c -lm
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o povchem povchem.c -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/povchem ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/povchem.cfg ${PREFIX}/etc
-	@${MKDIR} ${PREFIX}/share/povchem
-	${INSTALL_DATA} ${WRKSRC}/periodic.tab ${PREFIX}/share/povchem
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/periodic.tab ${DATADIR}
 
 .include <bsd.port.mk>

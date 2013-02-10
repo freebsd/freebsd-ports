@@ -1,4 +1,0 @@
-bin/povchem
-etc/povchem.cfg
-share/povchem/periodic.tab
-@dirrm share/povchem
