@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-04-03 19:20:45.000000000 +0800
++++ Makefile.in	2010-06-08 13:08:12.000000000 +0800
+@@ -268,7 +268,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = src po 
+-gvolwheeldocdir = ${prefix}/doc/gvolwheel
++gvolwheeldocdir = ${prefix}/share/doc/gvolwheel
+ gvolwheeldoc_DATA = \
+ 	README\
+ 	COPYING\
