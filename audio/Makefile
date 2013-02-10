@@ -290,6 +290,7 @@
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += guspat
+    SUBDIR += gvolwheel
     SUBDIR += gxmms2
     SUBDIR += harp
     SUBDIR += hawkvoice
