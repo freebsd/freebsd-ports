@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcwm
-PORTVERSION=	20111124
-PORTREVISION=	2
+PORTVERSION=	20130209
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://hack.org/mc/hacks/mcwm/
 
@@ -22,8 +21,8 @@ MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xrandr
 USE_BZIP2=	yes
 
-MAN1=		mcwm.1
-PLIST_FILES=	bin/mcwm
+MAN1=		mcwm.1 hidden.1
+PLIST_FILES=	bin/mcwm bin/hidden
 PORTDOCS=	README NEWS
 
 pre-everything::
@@ -35,8 +34,6 @@ post-extract:
 	@${ECHO_MSG} "creating config.h from ${MCWM_CONF}"
 	@${CP} ${MCWM_CONF} ${WRKSRC}/config.h
 .endif
-
-post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 	    ${WRKSRC}/Makefile
 
@@ -44,6 +41,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
 		${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/hidden ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/hidden.man \
+		${MAN1PREFIX}/man/man1/hidden.1
 
 .include <bsd.port.options.mk>
 
