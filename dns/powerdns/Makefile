@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.1
-PORTREVISION?=	2
+PORTVERSION=	3.2
+PORTREVISION?=	0
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://downloads.powerdns.com/releases/ \
-		http://mirrors.evolva.ro/powerdns.com/releases/
+MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
@@ -13,9 +12,7 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam
 LIB_DEPENDS=	boost_serialization:${PORTSDIR}/devel/boost-libs
-#		botan.0:${PORTSDIR}/security/botan
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -24,6 +21,7 @@ CONFLICTS=	powerdns-devel-[2-3].[0-9]*
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -32,7 +30,6 @@ CONFIGURE_ARGS=	--with-modules="" \
 		--with-dynmodules="pipe ${CONFIGURE_MODULES}" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
-#		--enable-botan1.8
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \
 		MKDIR="${MKDIR}" \
@@ -43,6 +40,8 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 OPENDBX OPENLDAP OPENLDAP_LOCAL GEO DNSSEC
+OPTIONS_SINGLE=DNSSEC
+OPTIONS_SINGLE_DNSSEC=	BOTAN CRYPTOPP
 
 PGSQL_DESC=		PostgreSQL backend
 PGSQL_LOCAL_DESC=	RUN_DEPEND on PostgreSQL server
@@ -55,8 +54,10 @@ OPENLDAP_DESC=		OpenLDAP backend
 OPENLDAP_LOCAL_DESC=	RUN_DEPEND on OpenLDAP server
 GEO_DESC=		Geo backend
 DNSSEC_DESC=		Enable extra DNSSEC algorithms (13 & 14)
+BOTAN_DESC=		Use Botan
+CRYPTOPP_DESC=		Use Crypto++
 
-OPTIONS_DEFAULT=	PGSQL
+OPTIONS_DEFAULT=	PGSQL CRYPTOPP
 
 .include <bsd.port.options.mk>
 
@@ -157,7 +158,12 @@ CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDNSSEC}
+.if ${PORT_OPTIONS:MBOTAN}
+LIB_DEPENDS+=		botan.0:${PORTSDIR}/security/botan
+CONFIGURE_ARGS+=	--enable-botan1.8
+.endif
+
+.if ${PORT_OPTIONS:MCRYPTOPP}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 CONFIGURE_ARGS+=	--enable-cryptopp
 .endif
