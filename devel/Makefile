@@ -201,6 +201,7 @@
     SUBDIR += checkheaders
     SUBDIR += chrpath
     SUBDIR += cil
+    SUBDIR += cityhash
     SUBDIR += cl-alexandria
     SUBDIR += cl-alexandria-clisp
     SUBDIR += cl-alexandria-sbcl
