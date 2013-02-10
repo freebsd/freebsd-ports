@@ -1,43 +1,74 @@
-# New ports collection makefile for:	Revelation
-# Date created:				2004-08-10
-# Whom:					ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	revelation
-PORTVERSION=	0.4.11
-PORTREVISION=	11
+PORTVERSION=	0.4.14
 CATEGORIES=	security gnome
-MASTER_SITES=	ftp://oss.codepoet.no/revelation/
+MASTER_SITES=	http://cdn.bitbucket.org/erikg/revelation/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for the GNOME 2 desktop
 
+LICENSE=	GPLv2
+
+FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/security/cracklib:patch
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS:=	${BULID_DEPENDS}
+
+OPTIONS_DEFINE=	APPLET
+APPLET_DESC=	Build with applet
+
+USE_BZIP2=	yes
+USE_GNOME=	desktopfileutils gnomehack gnomeprefix pygnome2
+USE_PYTHON=	yes
+USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
+
+GCONF_SCHEMAS=	revelation.schemas
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils \
-		pygnomedesktop
-USE_PYTHON=	yes
-GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
-INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
-USE_DISPLAY=	yes
+DICTPATH=	${LOCALBASE}/libdata/cracklib/pw_dict
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPPLET}
+USE_GNOME+=	pygnomedesktop pygnomeextras
+CONFIGURE_ARGS+=	--with-applet
+GCONF_SCHEMAS+=	revelation-applet.schemas
+PLIST_SUB+=	APPLET=""
+.else
+PLIST_SUB+=	APPLET="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+CRACK_WRKSRC=	$$(cd ${PORTSDIR}/security/cracklib && ${MAKE} -V WRKSRC)	
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(rvl_py_version=\)".*$$|\1""|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\(-Wl\)|$$(LDFLAGS) \1|' \
-		${WRKSRC}/src/wrap/crack/Makefile.in
-	@${REINPLACE_CMD} -e 's|#include <crack.h>||' \
-		${WRKSRC}/src/wrap/crack/crack.c.in
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${SETENV} python|' ${WRKSRC}/src/revelation.py
+	@${REINPLACE_CMD} -e \
+		'/FascistCheck/s|(password)|(password, "${DICTPATH}")|' \
+		${WRKSRC}/src/lib/util.py
 
-.include <bsd.port.mk>
+post-build:
+	@(cd ${CRACK_WRKSRC}/python && ${CC} -shared -fPIC \
+		-I${PYTHON_INCLUDEDIR} -I${LOCALBASE}/include ${CFLAGS} \
+		-o _cracklib.so _cracklib.c -L${LOCALBASE}/lib -lcrack -lz)
+	@${PYTHON_CMD} -m compileall ${CRACK_WRKSRC}/python
+	@${PYTHON_CMD} -O -m compileall ${CRACK_WRKSRC}/python
+
+post-install:
+	(cd ${CRACK_WRKSRC}/python && ${INSTALL_DATA} \
+		_cracklib.so cracklib.py* \
+		${PYTHONPREFIX_SITELIBDIR}/revelation)
+
+.include <bsd.port.post.mk>
