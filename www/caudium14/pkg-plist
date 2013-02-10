@@ -4,6 +4,8 @@ bin/ultrasum
 bin/htpasswd
 caudium/readme/BUGS
 caudium/readme/CHANGES
+caudium/readme/CHANGES-1.0.gz
+caudium/readme/CHANGES-1.2.gz
 caudium/readme/CONTRIBUTORS
 caudium/readme/GPL-2
 caudium/readme/INSTALLING
@@ -21,6 +23,7 @@ caudium/readme/README.ssl3
 caudium/readme/TODO
 caudium/readme/WARNING.pike
 caudium/server/.cvsignore
+caudium/server/base_server/c.patch
 caudium/server/base_server/cachelib.pike
 caudium/server/base_server/caudium.pike
 caudium/server/base_server/caudiumlib.pike
@@ -230,7 +233,6 @@ caudium/server/config_actions/requeststatus.pike
 caudium/server/config_actions/resolv.pike
 caudium/server/config_actions/servertemplates.pike
 caudium/server/config_actions/shutdown.pike
-caudium/server/configvar
 caudium/server/demo_certificate.pem
 caudium/server/etc/.autodoc
 caudium/server/etc/.cvsignore
