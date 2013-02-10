@@ -14,7 +14,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		expat:${PORTSDIR}/textproc/expat2 \
-		gd:${PORTSDIR}/graphics/gd
+		gd:${PORTSDIR}/${GD_PORT}
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -94,6 +94,9 @@ USE_QT4=		qmake_build moc_build rcc_build uic_build linguist_build corelib gui
 .endif
 
 .include <bsd.port.pre.mk>
+
+# allow the use localized gd ports in Makefile.local or slave ports.
+GD_PORT?=	graphics/gd
 
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
