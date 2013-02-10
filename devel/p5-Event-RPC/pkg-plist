@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Event/RPC/LogConnection.pm
 %%SITE_PERL%%/Event/RPC/Logger.pm
 %%SITE_PERL%%/Event/RPC/Loop.pm
+%%SITE_PERL%%/Event/RPC/Loop/AnyEvent.pm
 %%SITE_PERL%%/Event/RPC/Loop/Event.pm
 %%SITE_PERL%%/Event/RPC/Loop/Glib.pm
 %%SITE_PERL%%/Event/RPC/Message.pm
