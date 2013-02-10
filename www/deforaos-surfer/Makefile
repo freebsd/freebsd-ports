@@ -21,6 +21,7 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+MAKE_ARGS=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20 desktopfileutils
 USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
