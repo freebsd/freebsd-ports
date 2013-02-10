@@ -7,6 +7,7 @@
 
 PORTNAME=	lame
 PORTVERSION=	3.99.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.99
 
@@ -17,6 +18,7 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 
