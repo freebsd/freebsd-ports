@@ -18127,6 +18127,42 @@
          int ttl = 1;
          setsockopt(fd, IPPROTO_IPV6, IPV6_MULTICAST_HOPS, (char *)&ttl,
                     sizeof(ttl));
+@@ -1317,7 +1338,7 @@
+         /*
+          * value is an InetAddress.
+          */
+-#ifdef __solaris__
++#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
+         if (ipv6_available()) {
+             mcast_set_if_by_addr_v6(env, this, fd, value);
+         } else {
+@@ -1336,7 +1357,7 @@
+         /*
+          * value is a NetworkInterface.
+          */
+-#ifdef __solaris__
++#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
+         if (ipv6_available()) {
+             mcast_set_if_by_if_v6(env, this, fd, value);
+         } else {
+@@ -1413,7 +1434,7 @@
+  */
+ static void setMulticastLoopbackMode(JNIEnv *env, jobject this, int fd,
+                                   jint opt, jobject value) {
+-#ifdef __solaris__
++#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
+     if (ipv6_available()) {
+         mcast_set_loop_v6(env, this, fd, value);
+     } else {
+@@ -1981,7 +2002,7 @@
+         fd = (*env)->GetIntField(env, fdObj, IO_fd_fdID);
+     }
+     /* setsockopt to be correct ttl */
+-#ifdef __solaris__
++#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
+     if (ipv6_available()) {
+         setHopLimit(env, fd, ttl);
+     } else {
 @@ -2374,18 +2395,30 @@
              mname6.ipv6mr_interface = idx;
          }
