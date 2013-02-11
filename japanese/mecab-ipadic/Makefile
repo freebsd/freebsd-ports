@@ -1,12 +1,11 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
 
-PORTNAME=	mecab
+PORTNAME=	mecab-ipadic
 DISTVERSION=	2.7.0-20070801
 CATEGORIES=	japanese textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ipadic/2.7.0-20070801
-PKGNAMESUFFIX=	-ipadic
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	mecab
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Japanese Morphological Dictionary for MeCab
@@ -22,16 +21,16 @@ LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	ja-mecab>=0.94:${PORTSDIR}/japanese/mecab
 
+USE_PERL5_BUILD=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-dicdir=${PREFIX}/lib/mecab/dic/ipadic
+
 OPTIONS_RADIO=	CHARSET
 OPTIONS_RADIO_CHARSET=	EUCJP SHIFTJIS UTF8
 
 EUCJP_DESC=	Use EUC-JP as dictionary charset.
 SHIFTJIS_DESC=	Use SHIFT-JIS as dictionary charset.
 UTF8_DESC=	Use UTF-8 as dictionary charset.
-
-USE_PERL5_BUILD=	yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--with-dicdir=${PREFIX}/lib/mecab/dic/ipadic
 
 .include <bsd.port.options.mk>
 
