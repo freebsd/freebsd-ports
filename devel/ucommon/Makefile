@@ -23,7 +23,7 @@ MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 pdetach.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 10000
+.if ${OSVERSION} < 1000000
 post-patch:
 	${REINPLACE_CMD} -e '/HAVE_OPENSSL_FIPS_H/s/define/undef/' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
