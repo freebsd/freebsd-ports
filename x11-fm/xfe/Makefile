@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfe
-PORTVERSION=	1.33
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -17,8 +16,8 @@ USE_GNOME=	gnomehack intltool
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN1=		xfe.1 xfi.1 xfp.1 xfv.1 xfw.1
 
@@ -27,7 +26,5 @@ post-patch:
 		${WRKSRC}/src/XFileExplorer.cpp \
 		${WRKSRC}/src/help.h \
 		${WRKSRC}/src/xfedefs.h
-	@${REINPLACE_CMD} 's/unsigned FXchar/FXuchar/' \
-		${WRKSRC}/src/xfeutils.cpp
 
 .include <bsd.port.mk>
