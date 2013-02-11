@@ -1,0 +1,29 @@
+--- configure.orig	2007-05-24 15:25:29.000000000 +0200
++++ configure	2013-02-11 09:41:56.000000000 +0100
+@@ -2514,7 +2514,7 @@
+ 
+ cflags='-O2 -g -Wall'
+ default_includes=' -I. -I$(srcdir) -I$(top_builddir)'
+-includes='-I- -I$(top_builddir)'
++includes='-I$(top_builddir)'
+ 
+ case "$host" in
+     *-*-aix*)
+@@ -2661,7 +2661,7 @@
+         arch=powerpc
+         ;;
+ 
+-    i*86-* | x86-* | x86_64-*)
++    i*86-* | x86-* | x86_64-* | amd64-*)
+         arch=x86
+         ;;
+ 
+@@ -22321,7 +22321,7 @@
+  ac_cv_header_stdint_x="no-file"
+  ac_cv_header_stdint_o="no-file"
+  ac_cv_header_stdint_u="no-file"
+- for i in stdint.h $inttype_headers ; do
++ for i in inttypes.h stdint.h $inttype_headers ; do
+    unset ac_cv_type_uintptr_t
+    unset ac_cv_type_uint64_t
+    { echo "$as_me:$LINENO: checking for uintptr_t" >&5

@@ -1,27 +1,25 @@
-# ex:ts=8
-# Ports collection makefile for:	libpeak
-# Date created:			Mar 18, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libpeak
 PORTVERSION=	0.1.2
-PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	SF/peak/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Parallel Events and Asynchronous tasKing Library
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	CFLAGS="${CFLAGS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+
+regression-test: build
+	( \
+	    cd ${WRKSRC}/tests; \
+	    alltests=`ls *.c | sed -e 's|\.c||g'`; \
+	    ${MAKE} $$alltests && ./test-suite.pl $$alltests \
+	)
 
 .include <bsd.port.mk>
