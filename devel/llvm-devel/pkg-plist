@@ -86,6 +86,7 @@ include/llvm/ADT/SmallSet.h
 include/llvm/ADT/SmallString.h
 include/llvm/ADT/SmallVector.h
 include/llvm/ADT/SparseBitVector.h
+include/llvm/ADT/SparseMultiSet.h
 include/llvm/ADT/SparseSet.h
 include/llvm/ADT/Statistic.h
 include/llvm/ADT/StringExtras.h
@@ -110,6 +111,7 @@ include/llvm/Analysis/BranchProbabilityInfo.h
 include/llvm/Analysis/CFGPrinter.h
 include/llvm/Analysis/CallGraph.h
 include/llvm/Analysis/CallGraphSCCPass.h
+include/llvm/Analysis/CallPrinter.h
 include/llvm/Analysis/CaptureTracking.h
 include/llvm/Analysis/CodeMetrics.h
 include/llvm/Analysis/ConstantFolding.h
@@ -166,7 +168,6 @@ include/llvm/Assembly/AssemblyAnnotationWriter.h
 include/llvm/Assembly/Parser.h
 include/llvm/Assembly/PrintModulePass.h
 include/llvm/Assembly/Writer.h
-include/llvm/Attributes.h
 include/llvm/AutoUpgrade.h
 include/llvm/Bitcode/Archive.h
 include/llvm/Bitcode/BitCodes.h
@@ -229,6 +230,7 @@ include/llvm/CodeGen/MachineRegisterInfo.h
 include/llvm/CodeGen/MachineRelocation.h
 include/llvm/CodeGen/MachineSSAUpdater.h
 include/llvm/CodeGen/MachineScheduler.h
+include/llvm/CodeGen/MachineTraceMetrics.h
 include/llvm/CodeGen/PBQP/Graph.h
 include/llvm/CodeGen/PBQP/HeuristicBase.h
 include/llvm/CodeGen/PBQP/HeuristicSolver.h
@@ -327,8 +329,8 @@ include/llvm/IR/Value.h
 include/llvm/IR/ValueSymbolTable.h
 include/llvm/InitializePasses.h
 include/llvm/InstVisitor.h
+include/llvm/LinkAllIR.h
 include/llvm/LinkAllPasses.h
-include/llvm/LinkAllVMCore.h
 include/llvm/Linker.h
 include/llvm/MC/MCAsmBackend.h
 include/llvm/MC/MCAsmInfo.h
@@ -426,6 +428,7 @@ include/llvm/Support/CommandLine.h
 include/llvm/Support/Compiler.h
 include/llvm/Support/ConstantFolder.h
 include/llvm/Support/ConstantRange.h
+include/llvm/Support/ConvertUTF.h
 include/llvm/Support/CrashRecoveryContext.h
 include/llvm/Support/DOTGraphTraits.h
 include/llvm/Support/DataExtractor.h
@@ -441,6 +444,7 @@ include/llvm/Support/ELF.h
 include/llvm/Support/Endian.h
 include/llvm/Support/Errno.h
 include/llvm/Support/ErrorHandling.h
+include/llvm/Support/ErrorOr.h
 include/llvm/Support/FEnv.h
 include/llvm/Support/FileOutputBuffer.h
 include/llvm/Support/FileSystem.h
@@ -520,6 +524,7 @@ include/llvm/TableGen/Main.h
 include/llvm/TableGen/Record.h
 include/llvm/TableGen/StringMatcher.h
 include/llvm/TableGen/TableGenBackend.h
+include/llvm/Target/CostTable.h
 include/llvm/Target/Mangler.h
 include/llvm/Target/Target.td
 include/llvm/Target/TargetCallingConv.h
@@ -544,8 +549,10 @@ include/llvm/Transforms/IPO.h
 include/llvm/Transforms/IPO/InlinerPass.h
 include/llvm/Transforms/IPO/PassManagerBuilder.h
 include/llvm/Transforms/Instrumentation.h
+include/llvm/Transforms/ObjCARC.h
 include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
+include/llvm/Transforms/Utils/BlackList.h
 include/llvm/Transforms/Utils/BuildLibCalls.h
 include/llvm/Transforms/Utils/BypassSlowDivision.h
 include/llvm/Transforms/Utils/Cloning.h
@@ -567,6 +574,13 @@ lib/BugpointPasses.so
 lib/LLVMHello.so
 lib/libLLVM-%%LLVM_RELEASE%%svn.so
 lib/libLLVM-%%LLVM_RELEASE%%svn.so.0
+lib/libLLVMAArch64AsmParser.a
+lib/libLLVMAArch64AsmPrinter.a
+lib/libLLVMAArch64CodeGen.a
+lib/libLLVMAArch64Desc.a
+lib/libLLVMAArch64Disassembler.a
+lib/libLLVMAArch64Info.a
+lib/libLLVMAArch64Utils.a
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
@@ -618,6 +632,7 @@ lib/libLLVMNVPTXAsmPrinter.a
 lib/libLLVMNVPTXCodeGen.a
 lib/libLLVMNVPTXDesc.a
 lib/libLLVMNVPTXInfo.a
+lib/libLLVMObjCARCOpts.a
 lib/libLLVMObject.a
 lib/libLLVMOption.a
 lib/libLLVMPowerPCAsmPrinter.a
@@ -653,6 +668,19 @@ lib/libLTO.a
 lib/libLTO.so
 lib/libprofile_rt.a
 lib/libprofile_rt.so
+share/llvm/cmake/AddLLVM.cmake
+share/llvm/cmake/AddLLVMDefinitions.cmake
+share/llvm/cmake/CheckAtomic.cmake
+share/llvm/cmake/ChooseMSVCCRT.cmake
+share/llvm/cmake/GetHostTriple.cmake
+share/llvm/cmake/HandleLLVMOptions.cmake
+share/llvm/cmake/LLVM-Config.cmake
+share/llvm/cmake/LLVMConfig.cmake
+share/llvm/cmake/LLVMConfigVersion.cmake
+share/llvm/cmake/LLVMParseArguments.cmake
+share/llvm/cmake/LLVMProcessSources.cmake
+share/llvm/cmake/TableGen.cmake
+share/llvm/cmake/VersionFromVCS.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
@@ -797,10 +825,6 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/comment-close.png
 %%PORTDOCS%%%%DOCSDIR%%/html/comment.png
 %%PORTDOCS%%%%DOCSDIR%%/html/contents.png
-%%PORTDOCS%%%%DOCSDIR%%/html/design_and_overview.html
-%%PORTDOCS%%%%DOCSDIR%%/html/design_and_overview.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/development_process.html
-%%PORTDOCS%%%%DOCSDIR%%/html/development_process.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/down.png
@@ -850,32 +874,26 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-theme.css
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm.css
 %%PORTDOCS%%%%DOCSDIR%%/html/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/html/mailing_lists.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mailing_lists.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/navigation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/html/opt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/opt.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/html/programming.html
-%%PORTDOCS%%%%DOCSDIR%%/html/programming.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/html/subsystems.html
-%%PORTDOCS%%%%DOCSDIR%%/html/subsystems.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/tblgen.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tblgen.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/html/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/up.png
-%%PORTDOCS%%%%DOCSDIR%%/html/userguides.html
-%%PORTDOCS%%%%DOCSDIR%%/html/userguides.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
+@dirrm share/llvm/cmake
+@dirrm share/llvm
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
 @dirrm include/llvm/Transforms

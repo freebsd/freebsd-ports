@@ -36,8 +36,10 @@ include/clang/AST/CharUnits.h
 include/clang/AST/Comment.h
 include/clang/AST/CommentBriefParser.h
 include/clang/AST/CommentCommandInfo.inc
+include/clang/AST/CommentCommandList.inc
 include/clang/AST/CommentCommandTraits.h
 include/clang/AST/CommentDiagnostic.h
+include/clang/AST/CommentHTMLNamedCharacterReferences.inc
 include/clang/AST/CommentHTMLTags.inc
 include/clang/AST/CommentHTMLTagsProperties.inc
 include/clang/AST/CommentLexer.h
@@ -138,7 +140,7 @@ include/clang/Basic/BuiltinsMips.def
 include/clang/Basic/BuiltinsNVPTX.def
 include/clang/Basic/BuiltinsPPC.def
 include/clang/Basic/BuiltinsX86.def
-include/clang/Basic/ConvertUTF.h
+include/clang/Basic/CharInfo.h
 include/clang/Basic/Diagnostic.h
 include/clang/Basic/DiagnosticASTKinds.inc
 include/clang/Basic/DiagnosticAnalysisKinds.inc
@@ -184,6 +186,7 @@ include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
 include/clang/Basic/Specifiers.h
 include/clang/Basic/TargetBuiltins.h
+include/clang/Basic/TargetCXXABI.h
 include/clang/Basic/TargetInfo.h
 include/clang/Basic/TargetOptions.h
 include/clang/Basic/TemplateKinds.h
@@ -300,6 +303,7 @@ include/clang/Rewrite/Frontend/Rewriters.h
 include/clang/Sema/AnalysisBasedWarnings.h
 include/clang/Sema/AttrParsedAttrKinds.inc
 include/clang/Sema/AttrParsedAttrList.inc
+include/clang/Sema/AttrSpellingListIndex.inc
 include/clang/Sema/AttrTemplateInstantiate.inc
 include/clang/Sema/AttributeList.h
 include/clang/Sema/CXXFieldCollector.h
@@ -337,6 +341,7 @@ include/clang/Serialization/ASTWriter.h
 include/clang/Serialization/AttrPCHRead.inc
 include/clang/Serialization/AttrPCHWrite.inc
 include/clang/Serialization/ContinuousRangeMap.h
+include/clang/Serialization/GlobalModuleIndex.h
 include/clang/Serialization/Module.h
 include/clang/Serialization/ModuleManager.h
 include/clang/Serialization/SerializationDiagnostic.h
