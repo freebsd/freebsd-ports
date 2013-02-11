@@ -339,8 +339,8 @@ CONFIGURE_ARGS+=	--disable-mergelibs
 
 .if ${PORT_OPTIONS:MSDK}
 DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
-
-CONFIGURE_ARGS+=	--enable-odk
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+CONFIGURE_ARGS+=	--enable-odk --with-doxygen=${LOCALBASE}/bin/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-odk
 .endif
