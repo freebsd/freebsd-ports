@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -64,6 +64,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Time.3 \
 		Devel::Cover::Truth_Table.3 \
 		Devel::Cover::Tutorial.3 \
+		Devel::Cover::Util.3 \
 		Devel::Cover::Web.3
 PORTDOCS=	README
 
