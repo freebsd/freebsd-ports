@@ -1,17 +1,13 @@
-# ports collection makefile for:	p5-Mail-DKIM
-# Date created:				16 July 2006
-# Whom:					Yoshisato YANAGISAWA
-#
+# Created by: Yoshisato YANAGISAWA
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to process and/or create DKIM email
 
 RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
@@ -28,6 +24,7 @@ MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::AuthorDomainPolicy.3 \
 		Mail::DKIM::Canonicalization::Base.3 \
 		Mail::DKIM::Canonicalization::DkimCommon.3 \
+		Mail::DKIM::DNS.3 \
 		Mail::DKIM::DkimPolicy.3 \
 		Mail::DKIM::DkPolicy.3 \
     		Mail::DKIM::DkSignature.3 \
