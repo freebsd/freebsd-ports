@@ -48,12 +48,12 @@ IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMO}
-#DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
-DEMO_UPDATE_VERSION=	10
-#DEMO_DISTNAME=	${DISTNAME}-demos
-DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
-#DEMO_WRKSRC=	${WRKSRC}
-DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
+DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
+#DEMO_UPDATE_VERSION=	10
+DEMO_DISTNAME=	${DISTNAME}-demos
+#DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
+DEMO_WRKSRC=	${WRKSRC}
+#DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
 .if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
