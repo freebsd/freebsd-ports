@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Tiny
-PORTVERSION=	0.004
+PORTVERSION=	0.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -14,7 +14,8 @@ COMMENT=	File path utility
 BUILD_DEPENDS=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Devel-Hide>=0:${PORTSDIR}/devel/p5-Devel-Hide
 
 PERL_CONFIGURE=	yes
 
