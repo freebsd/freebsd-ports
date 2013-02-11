@@ -48,6 +48,9 @@ bin/actdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst/nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag_sphinxhelper.pyo
