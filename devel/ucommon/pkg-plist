@@ -37,6 +37,7 @@ include/ucommon/counter.h
 include/ucommon/cpr.h
 include/ucommon/datetime.h
 include/ucommon/export.h
+include/ucommon/file.h
 include/ucommon/fsys.h
 include/ucommon/generics.h
 include/ucommon/keydata.h
@@ -63,15 +64,15 @@ include/ucommon/xml.h
 lib/libcommoncpp.a
 lib/libcommoncpp.la
 lib/libcommoncpp.so
-lib/libcommoncpp.so.5
+lib/libcommoncpp.so.6
 lib/libucommon.a
 lib/libucommon.la
 lib/libucommon.so
-lib/libucommon.so.5
+lib/libucommon.so.6
 lib/libusecure.a
 lib/libusecure.la
 lib/libusecure.so
-lib/libusecure.so.5
+lib/libusecure.so.6
 libdata/pkgconfig/commoncpp.pc
 libdata/pkgconfig/ucommon.pc
 @dirrm include/ucommon
