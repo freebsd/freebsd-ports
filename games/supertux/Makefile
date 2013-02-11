@@ -1,16 +1,11 @@
-# New ports collection makefile for:	supertux
-# Date created:		2004-04-17
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	supertux
 PORTVERSION=	0.1.3
 PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Super Tux is a side-scroller similar to Super Mario Brothers
