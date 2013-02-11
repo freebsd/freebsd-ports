@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-HTML-Tree
-# Date created:			3 January 2000
-# Whom:				Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Tree
-PORTVERSION=	4.2
+PORTVERSION=	5.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>=3.02:${PORTSDIR}/www/p5-HTML-Tagset
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_MODBUILD=	yes
 
