@@ -4247,6 +4247,7 @@
     SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
+    SUBDIR += tclap
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
