@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.3.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
-BUILD_DEPENDS+=	cmake:${PORSTDIR}/devel/cmake
+BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
@@ -182,7 +183,8 @@ build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
-	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' | \
+	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
+	    -e 's|${DATADIR_REL}|%%DATADIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
