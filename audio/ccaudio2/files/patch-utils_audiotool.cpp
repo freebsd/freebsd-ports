@@ -1,5 +1,5 @@
---- utils/audiotool.cpp.orig	2011-02-21 11:30:44.000000000 +0000
-+++ utils/audiotool.cpp	2011-02-21 11:30:58.000000000 +0000
+--- utils/audiotool.cpp.orig	2011-03-21 08:16:40.000000000 +0100
++++ utils/audiotool.cpp	2013-02-11 15:13:11.000000000 +0100
 @@ -20,6 +20,13 @@
  #include <config.h>
  #ifdef  HAVE_ENDIAN_H
@@ -13,4 +13,64 @@
 +#endif
  #endif
  
- #if defined(_MSWINDOWS_) && !defined(__BIG_ENDIAN)
+ #if !defined(__BIG_ENDIAN)
+@@ -401,12 +408,12 @@
+         framing = 20;
+ 
+     while(*argv) {
+-        if(!fsys::isfile(*argv)) {
++        if(!fsys::is_file(*argv)) {
+             printf("%s: %s\n",
+                 fname(*(argv++)), _TEXT("invalid"));
+             continue;
+         }
+-        if(fsys::access(*argv, R_OK)) {
++        if(!fsys::is_readable(*argv)) {
+             printf("%s: %s\n",
+                 fname(*(argv++)), _TEXT("inaccessable"));
+             continue;
+@@ -530,12 +537,12 @@
+     }
+ 
+     while(*argv) {
+-        if(!fsys::isfile(*argv)) {
++        if(!fsys::is_file(*argv)) {
+             printf("audiotool: %s: %s\n",
+                 fname(*(argv++)), _TEXT("invalid"));
+             continue;
+         }
+-        if(fsys::access(*argv, R_OK)) {
++        if(!fsys::is_readable(*argv)) {
+             printf("audiotool: %s: %s\n",
+                 fname(*(argv++)), _TEXT("inaccessable"));
+             continue;
+@@ -682,12 +689,12 @@
+         framing = 20;
+ 
+     while(*argv) {
+-        if(!fsys::isfile(*argv)) {
++        if(!fsys::is_file(*argv)) {
+             printf("%s: %s\n",
+                 *(argv++), _TEXT("invalid"));
+             continue;
+         }
+-        if(fsys::access(*argv, R_OK)) {
++        if(!fsys::is_readable(*argv)) {
+             printf("%s: %s\n",
+                 *(argv++), _TEXT("inaccessable"));
+             continue;
+@@ -881,12 +888,12 @@
+         framing = 20;
+ 
+     while(*argv) {
+-        if(!fsys::isfile(*argv)) {
++        if(!fsys::is_file(*argv)) {
+             printf("%s: %s\n",
+                 *(argv++), _TEXT("invalid"));
+             continue;
+         }
+-        if(fsys::access(*argv, R_OK)) {
++        if(!fsys::is_readable(*argv)) {
+             printf("%s: %s\n",
+                 *(argv++), _TEXT("inaccessable"));
+             continue;
