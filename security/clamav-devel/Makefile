@@ -32,6 +32,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+USE_GCC=	any
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CLAM_CONF_FILES=	clamd freshclam
 
