@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
