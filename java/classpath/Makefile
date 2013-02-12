@@ -51,29 +51,24 @@ INFO=		cp-hacking cp-tools cp-vmintegration
 
 CONFLICTS=	sablevm-classpath-1.13 sablevm-classpath-1.13_[1-9]
 
-OPTIONS_DEFINE=	CAIRO ECJ GCONF GJDOC GMP GTK2 JDK QT4
-OPTIONS_DEFAULT=GMP GJDOC GTK2 JDK
+OPTIONS_DEFINE=	CAIRO ECJ GCONF GJDOC GMP GTK2 QT4
+OPTIONS_DEFAULT=GMP GJDOC GTK2
 CAIRO_DESC=	Use Gtk+ Cairo based Graphics2D
 ECJ_DESC=	Embed ECJ as com.sun.tools.javac
 GJDOC_DESC=	Build javadoc replacement
 GMP_DESC=	Enable native java.math.BigInteger
 GTK2_DESC=	Enable Gtk+ AWT peer
-JDK_DESC=	Build with native JDK
 QT4_DESC=	Enable Qt AWT peer
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MECJ} || \
-    (!defined(WITH_GCJ) && empty(PORT_OPTIONS:MJDK))
+.if ${PORT_OPTIONS:MECJ}
 MASTER_SITES+=		${MASTER_SITE_ECLIPSE:S|$|:ecj|}
 MASTER_SITE_SUBDIR+=	R-${ECJ_VERSION}-${ECJ_DROPDATE}/:ecj
 DISTFILES+=		${ECJ_JAR}:ecj
 ECJ_VERSION=		3.8.1
 ECJ_DROPDATE=		201209141540
 ECJ_JAR=		ecj-${ECJ_VERSION}.jar
-.endif
-
-.if ${PORT_OPTIONS:MECJ}
 CONFIGURE_ARGS+=	--with-ecj-jar=${DISTDIR}/${ECJ_JAR}
 .endif
 
@@ -128,26 +123,6 @@ IGNORE=you need to enable the Gtk+ AWT peer in order to use Cairo based Graphics
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MJDK}
-USE_JAVA=		yes
-JAVA_BUILD=		jdk
-JAVA_VERSION=		1.6+
-.else
-.if defined(WITH_GCC)
-GCC_SUFX=		${WITH_GCC:S/.//}
-.endif
-GCC_SUFX?=		46
-BUILD_DEPENDS+=		gcj${GCC_SUFX}:${PORTSDIR}/lang/gcc${GCC_SUFX}
-JAR=			${LOCALBASE}/bin/gjar${GCC_SUFX}
-JAVA=			${LOCALBASE}/bin/gij${GCC_SUFX}
-.if defined(WITH_GCJ)
-JAVAC=			${LOCALBASE}/bin/gcj${GCC_SUFX}
-JAVACFLAGS?=		-C
-.else
-JAVAC=			${WRKDIR}/ecj.sh
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MQT4}
 CONFIGURE_ARGS+=	--enable-qt-peer
 .if empty(PORT_OPTIONS:MGTK2)
@@ -160,20 +135,23 @@ PLIST_SUB+=		QT4=""
 PLIST_SUB+=		QT4="@comment "
 .endif
 
+.if !defined(WITH_GCJ) && (${ARCH} == "amd64" || ${ARCH} == "i386")
+BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+JAR?=			${LOCALBASE}/bootstrap-openjdk/bin/jar
+JAVA?=			${LOCALBASE}/bootstrap-openjdk/bin/java
+JAVAC?=			${LOCALBASE}/bootstrap-openjdk/bin/javac
+.else
+USE_BINUTILS=		yes
+USE_GCC=		4.6+
+GCC_SUFX=		${_USE_GCC:S/.//}
+JAR?=			${LOCALBASE}/bin/gjar${GCC_SUFX}
+JAVA?=			${LOCALBASE}/bin/gij${GCC_SUFX}
+JAVAC?=			${LOCALBASE}/bin/gcj${GCC_SUFX}
+JAVACFLAGS?=		-C
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i.bak -e 's|@JAVA@|$${JAVACMD:-java}|g' \
 	    ${WRKSRC}/tools/g*.in
-
-.if !defined(WITH_GCJ) && empty(PORT_OPTIONS:MJDK)
-pre-configure:
-	@if [ ! -x ${JAVAC} ]; then \
-		${PRINTF} "%s\n%s\n%s\n%s\n" \
-		    '#!/bin/sh' \
-		    '"${JAVA}" -Xmx768M -classpath "${DISTDIR}/${ECJ_JAR}" \' \
-		    '    org.eclipse.jdt.internal.compiler.batch.Main \' \
-		    '    "$${@:--help}"' > ${JAVAC}; \
-		${CHMOD} 755 ${JAVAC}; \
-	fi
-.endif
 
 .include <bsd.port.mk>
