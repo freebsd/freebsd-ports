@@ -220,7 +220,8 @@ USE_PGSQL=	yes
 WANT_PGSQL_VER=	90+
 CONFIGURE_ARGS+=	--enable-postgresql-sdbc --with-system-postgresql
 .else
-CONFIGURE_ARGS+=	--disable-postgresql-sdbc
+CONFIGURE_ARGS+=	--disable-postgresql-sdbc \
+			--without-gssapi --without-krb5
 .endif
 
 .if ${PORT_OPTIONS:MSYSTRAY}
