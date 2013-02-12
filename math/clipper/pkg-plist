@@ -1,0 +1,5 @@
+include/polyclipping/clipper.hpp
+lib/libpolyclipping.so.5.0.0
+lib/libpolyclipping.so.5
+lib/libpolyclipping.so
+@dirrmtry include/polyclipping

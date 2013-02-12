@@ -73,6 +73,7 @@
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += clarence
+    SUBDIR += clipper
     SUBDIR += cln
     SUBDIR += clp
     SUBDIR += coinmp
