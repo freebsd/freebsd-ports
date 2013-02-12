@@ -200,6 +200,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/bookmarks.py
 %%PYTHON_SITELIBDIR%%/mercurial/bookmarks.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/branchmap.py
+%%PYTHON_SITELIBDIR%%/mercurial/branchmap.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/branchmap.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.pyo
@@ -438,6 +441,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/repair.py
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/repoview.py
+%%PYTHON_SITELIBDIR%%/mercurial/repoview.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/repoview.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.py
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyo
@@ -491,6 +497,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/templates/atom/bookmarkentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/atom/bookmarks.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/branchentry.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/branches.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/atom/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/atom/changelogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/atom/error.tmpl
@@ -591,6 +599,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/notfound.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/bookmarkentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/bookmarks.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/rss/branchentry.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/rss/branches.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/changelogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/error.tmpl
@@ -625,6 +635,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/coal-file.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/coal-folder.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/excanvas.js
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/feed-icon-14x14.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/hgicon.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/hglogo.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/mercurial.js
