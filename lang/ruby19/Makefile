@@ -42,7 +42,6 @@ _RUBY_EXTDIR=		${PREFIX}/lib/ruby19
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_LATEST_LINK=	yes
 
 OPTIONS_DEFINE=	RDOC DEBUG
 RDOC_DESC=	Build and install Rdoc indexes
