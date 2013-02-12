@@ -214,6 +214,7 @@
     SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pdf-renderer
+    SUBDIR += pdf4tcl
     SUBDIR += pdfbox
     SUBDIR += pdfcolorsplit
     SUBDIR += pdfcube
