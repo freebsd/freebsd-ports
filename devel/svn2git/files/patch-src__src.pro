@@ -14,7 +14,7 @@ index da6d40d..5749202 100644
  exists(local-config.pri):include(local-config.pri)
  
 -VERSION = $$system(git --no-pager show --pretty=oneline --no-notes | head -1 | cut -b-40)
-+VERSION = 1.0.3
++VERSION = 1.0.8
      !isEmpty(VERSION){
        VERSION = $${VERSION}
      }
