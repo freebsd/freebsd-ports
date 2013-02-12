@@ -77,5 +77,4 @@ bin/ttree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Template/Namespace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Template/Library
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Template
