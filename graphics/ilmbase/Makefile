@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ilmbase
-# Date created:				2007-10-07
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ilmbase
 PORTVERSION=	1.0.3
