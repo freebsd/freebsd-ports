@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sanetime
-PORTVERSION=	4.1.9
+PORTVERSION=	4.2.3
 CATEGORIES=	devel python astro
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,22 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2010:${PORTSDIR}/devel/py-pytz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2:${PORTSDIR}/devel/py-unittest2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	Include tools for unit tests
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS:=	${TEST_DEPENDS}
+.endif
+
+USE_PYTHON=		-2.7
+USE_PYDISTUTILS=	easy_install
+
+regression-test: build
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
