@@ -1,8 +1,8 @@
-# Created by:				Cheng-Lung Sung <clsung@FreeBSD.org>
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tweepy
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
