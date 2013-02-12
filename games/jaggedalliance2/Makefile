@@ -1,9 +1,5 @@
-# New ports collection makefile for: Jagged Alliance 2
-# Date created:         16 Nov 2006
-# Whom:                 Christoph Mallon <christoph.mallon@gmx.de>
-#
+# # Created by: Christoph Mallon <christoph.mallon@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ja2
 PORTVERSION=	0.12.1
@@ -30,36 +26,25 @@ NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 
-OPTIONS=	DUTCH	"Compile for Dutch version (choose ONE)"	Off \
-		ENGLISH	"Compile for English version (choose ONE)"	Off \
-		FRENCH	"Compile for French version (choose ONE)"	Off \
-		GERMAN	"Compile for German version (choose ONE)"	Off \
-		ITALIAN	"Compile for Italian version (choose ONE)"	Off \
-		POLISH	"Compile for Polish version (choose ONE)"	Off \
-		RUSSIAN	"Compile for Russian version (choose ONE)"	Off \
-		RUSSIAN_GOLD "Compile for Russian Gold version (choose ONE)"	Off
+OPTIONS_SINGLE=	LANGUAGE
+OPTIONS_SINGLE_LANGUAGE=	DUTCH ENGLISH FRENCH GERMAN ITALIAN POLISH RUSSIAN RUSSIAN_GOLD
 
-.include <bsd.port.pre.mk>
+DUTCH_DESC=		Compile for Dutch version
+ENGLISH_DESC=		Compile for English version
+FRENCH_DESC=		Compile for French version
+GERMAN_DESC=		Compile for German version
+ITALIAN_DESC=		Compile for Italian version
+POLISH_DESC=		Compile for Polish version
+RUSSIAN_DESC=		Compile for Russian version
+RUSSIAN_GOLD_DESC=	Compile for Russian Gold version
 
-.ifdef WITH_ENGLISH
-MAKE_ARGS+=	LNG=ENGLISH
-.elifdef WITH_DUTCH
-MAKE_ARGS+=	LNG=DUTCH
-.elifdef WITH_FRENCH
-MAKE_ARGS+=	LNG=FRENCH
-.elifdef WITH_GERMAN
-MAKE_ARGS+=	LNG=GERMAN
-.elifdef WITH_ITALIAN
-MAKE_ARGS+=	LNG=ITALIAN
-.elifdef WITH_POLISH
-MAKE_ARGS+=	LNG=POLISH
-.elifdef WITH_RUSSIAN
-MAKE_ARGS+=	LNG=RUSSIAN
-.elifdef WITH_RUSSIAN_GOLD
-MAKE_ARGS+=	LNG=RUSSIAN_GOLD
-.else
-IGNORE=	no language has been chosen. Please choose the appropriate language for your game CD
-.endif
+.include <bsd.port.options.mk>
+
+.for i in ${OPTIONS_SINGLE_LANGUAGE}
+.  if ${PORT_OPTIONS:M${i}}
+MAKE_ARGS+=	LNG=${i}
+.  endif
+.endfor
 
 MAKE_ARGS+=	NO_DEPS=yes # For a single full build dependency calculation is unnecessary
 
@@ -82,4 +67,4 @@ lowercase:
 		${MV} -n $$i `${DIRNAME} $$i`/`${BASENAME} $$i | ${TR} '[A-Z]' '[a-z]'`; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
