@@ -289,6 +289,7 @@
     SUBDIR += gtick
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
+    SUBDIR += gtmixer
     SUBDIR += guspat
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
