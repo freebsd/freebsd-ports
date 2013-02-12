@@ -79,7 +79,6 @@
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Arabic/stopwords.txt
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Arabic/topic.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Arabic/userlist.php
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/.DS_Store
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/chatbox.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/common.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/delete.php
@@ -113,7 +112,6 @@
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/stopwords.txt
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/topic.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bangla/userlist.php
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/Belarusian/.DS_Store
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Belarusian/common.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Belarusian/delete.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Belarusian/forum.php
@@ -168,7 +166,6 @@
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bosnian/stopwords.txt
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bosnian/topic.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Bosnian/userlist.php
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/Brazilian_Portuguese/.DS_Store
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Brazilian_Portuguese/common.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Brazilian_Portuguese/delete.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Brazilian_Portuguese/forum.php
@@ -1138,9 +1135,6 @@
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Vietnamese/search.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Vietnamese/topic.php
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/Vietnamese/userlist.php
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/__MACOSX/Bangla/._.DS_Store
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/__MACOSX/Belarusian/._.DS_Store
-%%LANGUAGE_PACK%%%%WWWDIR%%/lang/__MACOSX/Brazilian_Portuguese/._.DS_Store
 %%LANGUAGE_PACK%%%%WWWDIR%%/lang/index.html
 %%WWWDIR%%/login.php
 %%WWWDIR%%/misc.php
