@@ -21,6 +21,7 @@ lib/gtags/user-custom.la
 lib/gtags/user-custom.so
 share/gtags/BOKIN_MODEL
 share/gtags/BOKIN_MODEL_FAQ
+share/gtags/BUILD_TOOLS
 share/gtags/DONORS
 share/gtags/bless.sh.tmpl
 share/gtags/completion.cgi.tmpl
@@ -29,11 +30,12 @@ share/gtags/elvis.rc
 share/gtags/ghtml.cgi.tmpl
 share/gtags/global.cgi.tmpl
 share/gtags/globash.rc
+share/gtags/gtags-cscope.vim
 share/gtags/gtags.conf
 share/gtags/gtags.el
 share/gtags/gtags.pl
 share/gtags/gtags.vim
-share/gtags/gtags-cscope.vim
+share/gtags/head.in
 share/gtags/icons/back.png
 share/gtags/icons/bottom.png
 share/gtags/icons/c.png
@@ -75,6 +77,7 @@ share/gtags/jquery/jquery.treeview.css
 share/gtags/jquery/jquery.treeview.js
 share/gtags/jscode_suggest.tmpl
 share/gtags/jscode_treeview.tmpl
+share/gtags/mainpage.dox
 share/gtags/script/README
 share/gtags/script/elvis-global
 share/gtags/script/global-client
@@ -82,10 +85,13 @@ share/gtags/script/gtags-client
 share/gtags/script/htags-client
 share/gtags/script/less-global
 share/gtags/style.css.tmpl
-@dirrm lib/gtags
+@dirrmtry var/gtags/sitekeys
+@dirrmtry var/gtags
+@dirrmtry var
 @dirrm share/gtags/script
 @dirrm share/gtags/jquery/images
 @dirrm share/gtags/jquery
 @dirrm share/gtags/icons
 @dirrm share/gtags
+@dirrm lib/gtags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
