@@ -1,9 +1,5 @@
-# New ports collection makefile for:	djgame2
-# Date created:		4 May 2007
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	djgame2
 PORTVERSION=	3.2.0

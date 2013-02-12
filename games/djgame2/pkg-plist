@@ -417,7 +417,6 @@ share/applications/djgame2.desktop
 @dirrm %%DATADIR%%/wav/LandBattle
 @dirrm %%DATADIR%%/wav/Interlink
 @dirrm %%DATADIR%%/wav
-@dirrm %%DATADIR%%/update
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/images/member
 @dirrm %%DATADIR%%/images/avatars
