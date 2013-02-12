@@ -13,9 +13,9 @@ include/libcmis-0.3/libcmis/session.hxx
 include/libcmis-0.3/libcmis/xml-utils.hxx
 include/libcmis-0.3/libcmis/xmlserializable.hxx
 include/libcmis-c-0.3/libcmis-c/allowable-actions.h
-include/libcmis-c-0.3/libcmis-c/document.h  
+include/libcmis-c-0.3/libcmis-c/document.h
 include/libcmis-c-0.3/libcmis-c/error.h
-include/libcmis-c-0.3/libcmis-c/folder.h   
+include/libcmis-c-0.3/libcmis-c/folder.h
 include/libcmis-c-0.3/libcmis-c/object-type.h
 include/libcmis-c-0.3/libcmis-c/object.h
 include/libcmis-c-0.3/libcmis-c/property-type.h
