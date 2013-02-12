@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffstat
-PORTVERSION=	1.55
+PORTVERSION=	1.56
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
