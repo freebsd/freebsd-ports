@@ -3,14 +3,14 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_REV}
 
 MAINTAINER=	coder@tuxfamily.org
-COMMENT=	A comprehensive desktop publishing program
+COMMENT=	Comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
@@ -23,32 +23,31 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		aspell:${PORTSDIR}/textproc/aspell \
 		cairo:${PORTSDIR}/graphics/cairo \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		poppler:${PORTSDIR}/graphics/poppler \
+		osg:${PORTSDIR}/graphics/osg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-03-05
-BROKEN=		incorrect plist
+CONFLICTS=	scribus-1.[0-4]*
 
-USE_SVN=	yes
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
+USE_PKGCONFIG=	yes
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
-USE_GNOME=	desktopfileutils libartlgpl2 libxml2 pkgconfig
+USE_GNOME=	desktopfileutils libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 MAN1=		scribus.1
 MANLANG=	"" de pl
 MANCOMPRESSED=	no
 
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-SVN_REV=	17518		# svn tip at epoch 2009120801
+SVN_REV=	17820		# svn tip at epoch 2009120801
 SVNROOT_URI=	svn://scribus.net/trunk/Scribus
 
 .include <bsd.port.pre.mk>
