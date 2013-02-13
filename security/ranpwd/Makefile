@@ -18,6 +18,8 @@ COMMENT=	A tool to generate random passwords
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+BROKEN=		checksum mismatch
+
 PLIST_FILES=	bin/ranpwd
 
 MAN1=		ranpwd.1
