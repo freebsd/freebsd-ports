@@ -19,6 +19,8 @@ MAN1=		windowlab.1x
 USE_XORG=	x11 xext
 USE_GMAKE=	yes
 
+BROKEN=		distfile mismatch
+
 MAKE_ARGS=	MENURC=${PREFIX}/etc/windowlab/menurc CC="${CC}"
 
 PLIST_FILES=	bin/windowlab etc/windowlab/menurc
