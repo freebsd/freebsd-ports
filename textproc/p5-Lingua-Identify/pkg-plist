@@ -10,6 +10,7 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/FI.pm
 %%SITE_PERL%%/Lingua/Identify/FR.pm
 %%SITE_PERL%%/Lingua/Identify/HR.pm
+%%SITE_PERL%%/Lingua/Identify/HI.pm
 %%SITE_PERL%%/Lingua/Identify/HU.pm
 %%SITE_PERL%%/Lingua/Identify/ID.pm
 %%SITE_PERL%%/Lingua/Identify/IT.pm
