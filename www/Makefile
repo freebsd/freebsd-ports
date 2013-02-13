@@ -254,6 +254,7 @@
     SUBDIR += googlebook_dl
     SUBDIR += goose
     SUBDIR += grails
+    SUBDIR += graphite-web
     SUBDIR += gregarius
     SUBDIR += groupoffice
     SUBDIR += grr
