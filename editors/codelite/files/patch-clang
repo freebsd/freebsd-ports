@@ -1,0 +1,33 @@
+--- LiteEditor/clang_driver.cpp.orig	2013-02-01 17:27:10.000000000 +0100
++++ LiteEditor/clang_driver.cpp	2013-02-01 17:28:50.000000000 +0100
+@@ -533,6 +533,7 @@
+         tag->SetSignature (entrySignature);
+ 
+         // Add support for clang comment parsing
++#ifndef __FreeBSD__
+         CXString BriefComment = clang_getCompletionBriefComment(str);
+         const char* comment = clang_getCString(BriefComment);
+         if( comment && comment[0] != '\0' ) {
+@@ -540,6 +541,7 @@
+         }
+ 
+         clang_disposeString(BriefComment);
++#endif
+ 
+         switch(kind) {
+         case CXCursor_EnumConstantDecl:
+--- LiteEditor/clang_pch_maker_thread.cpp.orig	2013-02-01 17:29:21.000000000 +0100
++++ LiteEditor/clang_pch_maker_thread.cpp	2013-02-01 17:32:18.000000000 +0100
+@@ -130,7 +130,11 @@
+                                               task->GetColumn(),
+                                               usf.GetUnsavedFiles(),
+                                               usf.GetCount(),
+-                                              clang_defaultCodeCompleteOptions() | CXCodeComplete_IncludeBriefComments);
++                                              clang_defaultCodeCompleteOptions()
++#ifndef __FreeBSD__
++                                              | CXCodeComplete_IncludeBriefComments
++#endif
++                                              );
+ 
+         cacheEntry.lastReparse = time(NULL);
+ 
