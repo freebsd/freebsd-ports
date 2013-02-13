@@ -1,12 +1,7 @@
-# New ports collection makefile for:	viewres
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	viewres
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +9,8 @@ COMMENT=	Graphical class browser for Xt
 
 XORG_CAT=	app
 USE_XORG=	xt xaw
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 
 MAN1=		viewres.1
 
