@@ -29,7 +29,6 @@ bin/snmpvacm
 bin/snmpwalk
 %%WITH_TKMIB%%bin/tkmib
 bin/traptoemail
-@exec mkdir %D/etc/snmp 2>/dev/null || true
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h
@@ -482,5 +481,4 @@ sbin/snmptrapd
 @dirrm include/net-snmp/library
 @dirrm include/net-snmp/agent
 @dirrm include/net-snmp
-@dirrmtry etc/snmp
 @unexec rmdir /var/agentx 2>/dev/null || true
