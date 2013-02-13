@@ -7,7 +7,7 @@ MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION:R}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Djblets-${PORTVERSION}
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Collection of useful classes and functions for Django
 
 LICENSE=	MIT

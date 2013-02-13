@@ -1,9 +1,5 @@
-# ports collection makefile for:	pm-lib
-# Date created:				14 November 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pm-lib
 PORTVERSION=	20091202
@@ -13,7 +9,7 @@ MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	procmail-lib
 DISTNAME=	procmail-lib-2009.1202
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	A collection of procmail plug-in modules
 
 LICENSE=	GPLv2

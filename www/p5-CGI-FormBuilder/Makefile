@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,00$,,}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	FormBuilder for CGI
 
 LICENSE=	ART10 GPLv1

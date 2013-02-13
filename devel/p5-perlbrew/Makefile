@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:GUGOD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Perl Environment manager
 
 BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=0:${PORTSDIR}/devel/p5-CPAN-Perl-Releases \

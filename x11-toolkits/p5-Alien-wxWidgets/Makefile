@@ -7,7 +7,7 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
 
 OPTIONS_DEFINE=	UNICODE
