@@ -18,8 +18,8 @@
  
  ifeq ($(shell uname), FreeBSD)
 -CPPFLAGS += -L/usr/local/lib
-+CPPFLAGS += -I%%LOCALBASE%%/include %%PTHREAD_LIBS%%
-+LDFLAGS  += -L%%LOCALBASE%%/lib %%PTHREAD_LIBS%%
++CPPFLAGS += -I%%LOCALBASE%%/include
++LDFLAGS  += -L%%LOCALBASE%%/lib
  endif
  
  ### Default directory
