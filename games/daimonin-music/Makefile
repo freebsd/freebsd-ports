@@ -15,6 +15,8 @@ NO_CHECKSUM=	true
 NO_BUILD=	true
 USE_ZIP=	true
 
+BROKEN=		Does not install
+
 MYDATADIR=	${DATADIR:S/-music//}
 
 EXTRACT_BEFORE_ARGS=	-aqo
