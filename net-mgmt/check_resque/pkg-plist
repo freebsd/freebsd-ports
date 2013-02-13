@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+libexec/nagios/check_resque
+libexec/nagios/check_resque_failed
+@dirrmtry libexec/nagios
