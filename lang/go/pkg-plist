@@ -561,7 +561,7 @@ go/src/cmd/6l/6.out.h
 go/src/cmd/6l/Makefile
 go/src/cmd/6l/asm.c
 go/src/cmd/6l/doc.go
-go/src/cmd/6l/enam.c
+%%ENAM%%go/src/cmd/6l/enam.c
 go/src/cmd/6l/l.h
 go/src/cmd/6l/list.c
 go/src/cmd/6l/mkenam
