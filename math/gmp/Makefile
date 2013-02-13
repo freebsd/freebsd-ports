@@ -41,6 +41,11 @@ CONFIGURE_ENV+=	ABI="64"
 CONFIGURE_ENV+=	ABI="32"
 .endif
 
+# temporary build hack for ARM
+.if ${ARCH} == "arm"
+CONFIGURE_ARGS+=--enable-assembly=no
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
 
