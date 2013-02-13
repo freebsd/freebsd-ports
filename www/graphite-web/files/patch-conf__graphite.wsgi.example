@@ -1,0 +1,9 @@
+--- ./conf/graphite.wsgi.example.orig	2012-07-24 02:37:36.000000000 +0000
++++ ./conf/graphite.wsgi.example	2012-07-24 02:39:35.000000000 +0000
+@@ -1,5 +1,5 @@
+ import os, sys
+-sys.path.append('/opt/graphite/webapp')
++sys.path.append('%%WWWDIR%%')
+ os.environ['DJANGO_SETTINGS_MODULE'] = 'graphite.settings'
+ 
+ import django.core.handlers.wsgi
