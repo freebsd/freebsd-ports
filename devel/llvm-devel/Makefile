@@ -130,7 +130,7 @@ post-patch:
 
 pre-configure:
 	${MKDIR} ${WRKDIR}/cmake
-	cd ${WRKDIR}/cmake && cmake -G Ninja ${WRKSRC}
+	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
 
 post-build:
 	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
