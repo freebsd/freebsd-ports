@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	jzlib
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Reimplementation of zlib in pure Java
 
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
@@ -19,6 +20,8 @@ DOC_FILES=	\
 		LICENSE.txt \
 		README
 PORTDOCS=	${DOC_FILES}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 EXAMPLE_FILES=	\
 		README \
@@ -32,14 +35,15 @@ EXAMPLE_FILES=	\
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-.for file in ${EXAMPLE_FILES}
-PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
-.endfor
-
-PLIST_DIRS+=	\
-		%%EXAMPLESDIR%%
-
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+. for file in ${EXAMPLE_FILES}
+PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
+. endfor
+PLIST_DIRS+=	%%EXAMPLESDIR%%
+.endif
+
 do-build:
 	@cd ${WRKSRC}/src/main/java && ${FIND} com -name "*.java" | \
 		${XARGS} -n 10 -x \
@@ -57,8 +61,10 @@ do-install:
 . endfor
 .endif
 # examples
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
+.endif
 # jar
 	${INSTALL_DATA} ${JAR_FILE} ${JAVAJARDIR}/${PORTNAME}.jar
 
