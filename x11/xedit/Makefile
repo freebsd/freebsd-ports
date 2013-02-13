@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xedit
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xedit
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +9,8 @@ COMMENT=	Simple text editor for X
 
 XORG_CAT=	app
 USE_XORG=	xt xaw7
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 
 MAN1=		xedit.1
 
