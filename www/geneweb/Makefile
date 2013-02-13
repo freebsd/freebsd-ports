@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	geneweb
-PORTVERSION=	6.05
+PORTVERSION=	6.06
 CATEGORIES=	www
-MASTER_SITES=	http://opensource.geneanet.org/attachments/download/190/
+MASTER_SITES=	http://opensource.geneanet.org/attachments/download/211/
 DISTNAME=	gw-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -17,6 +17,18 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
 HAS_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	GTK2
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
+BUILD_DEPENDS+=	ocaml-lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+MAKE_ENV+=	ENABLE_GUI=yes
+PLIST_SUB+=	GUI=""
+.else
+PLIST_SUB+=	GUI="@comment "
+.endif
 
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
 
