@@ -1,9 +1,5 @@
-# New ports collection makefile for: Linux-PAM offline documentation
-# Date created:		19 Jun 2003
-# Whom:			Hideyuki KURASHINA <rushani@FreeBSD.org>
-#
+# Created by: Hideyuki KURASHINA <rushani@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linux-pam-docs
 PORTVERSION=	1.1.4
@@ -14,6 +10,8 @@ DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-PAM offline documentation
+
+BROKEN=		distfile mismatch
 
 WRKSRC=		${WRKDIR}/Linux-PAM-${PORTVERSION}
 NO_BUILD=	yes
