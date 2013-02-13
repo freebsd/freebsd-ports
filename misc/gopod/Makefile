@@ -5,13 +5,16 @@ PORTNAME=	gopod
 PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	http://gopod.free-go.net/gopod/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 PKGNAMEPREFIX?=
 DISTNAME=	goPod-${PORTVERSION}_linux_bsd
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Utility to cap/uncap an iPod
+
+# don't forget to remove misc/gtk-gopod
+DEPRECATED=	does not work with modern iPods anymore
+EXPIRATION_DATE=2013-03-13
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
