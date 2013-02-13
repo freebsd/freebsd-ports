@@ -33,48 +33,48 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/cairo/__init__.py:${PORTSDIR}/graph
 		${PYTHON_PKGNAMEPREFIX}django-tagging>=0:${PORTSDIR}/www/py-django-tagging \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz
 
-OPTIONS=	APACHE "Use apache as webserver" on \
-		CARBON "Build carbon backend " on \
-		MODPYTHON3 "Enable mod_python3 support" off \
-		MODWSGI3 "Enable mod_wsgi3 support" on \
-		SQLITE3 "Enable sqlite3 support" on \
-		MYSQL "Enable MySQL support" off
+OPTIONS_DEFINE=	APACHE CARBON MODPYTHON3 MODWSGI3 SQLITE3 MYSQL
+OPTIONS_DEFAULT=	APACHE CARBON MODWSGI3 SQLITE3
+APACHE_DESC=	Use apache as webserver
+CARBON_DESC=	Build and install carbon backend
+MODPYTHON3_DESC=	Enable mod_python3 support
+MODWSGI3_DESC=	Enable mod_wsgi3 support
+SQLITE3_DESC=	Enable sqlite3 support
+MYSQL_DESC=	Enable MySQL support
 
 GRAPHITE_ROOT?=		${WWWDIR}
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CARBON)
+.if ${PORT_OPTIONS:MCARBON}
 RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/carbon/__init__.py:${PORTSDIR}/databases/py-carbon
 .endif
 
-.if !defined(WITHOUT_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	20+
 .endif
 
-.if !defined(WITHOUT_MODPYTHON3)
+.if ${PORT_OPTIONS:MMODPYTHON3}
+.if empty(PORT_OPTIONS:MAPACHE)
+IGNORE=	MODPYTHON3 needs Apache, please select Apache
+.endif
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_python3
 .endif
 
-.if !defined(WITHOUT_MODWSGI3)
+.if ${PORT_OPTIONS:MMODWSGI3}
+.if empty(PORT_OPTIONS:MAPACHE)
+IGNORE=	MODWSGI3 needs Apache, please select Apache
+.endif
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi3
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if !defined(WITHOUT_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
-.endif
-
-.if !defined(WITHOUT_MODPYTHON3) && defined(WITHOUT_APACHE)
-IGNORE=	mod_python3 needs Apache, please select Apache
-.endif
-
-.if !defined(WITHOUT_MODWSGI3) && defined(WITHOUT_APACHE)
-IGNORE=	mod_wsgi3 needs Apache, please select Apache
 .endif
 
 .include <bsd.port.pre.mk>
