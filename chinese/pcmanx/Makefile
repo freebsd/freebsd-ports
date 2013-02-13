@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pcmanx
-# Date created:                2005/07/16
-# Whom:                        chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pcmanx
 PORTVERSION=	1.1
@@ -12,7 +8,7 @@ CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	BBS client using GTK+ 2.x
 
 LICENSE=	GPLv2

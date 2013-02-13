@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Client for the standard Perl debugger
 
 RUN_DEPENDS=	p5-File-HomeDir>=0.98:${PORTSDIR}/devel/p5-File-HomeDir \
