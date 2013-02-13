@@ -1,15 +1,10 @@
-# ex:ts=8
-# New ports collection makefile for:	log4cpp
-# Date created:			May 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	log4cpp
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28current%29/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28new%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
@@ -21,6 +16,7 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 #.include "Makefile.man"
 .include <bsd.port.pre.mk>
