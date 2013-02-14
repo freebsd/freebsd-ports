@@ -1,0 +1,8 @@
+bin/newrelic-daemon
+etc/newrelic/newrelic.cfg.sample
+etc/php/newrelic.ini.sample
+etc/rc.d/newrelic-daemon
+lib/php/%%PHP_EXT_DIR%%/newrelic.so
+@dirrm etc/newrelic
+@dirrmtry etc/php
+@dirrmtry lib/php/%%PHP_EXT_DIR%%

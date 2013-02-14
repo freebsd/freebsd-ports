@@ -1,0 +1,137 @@
+--- ./newrelic-install.orig	2012-01-17 01:13:49.000000000 +0900
++++ ./newrelic-install	2012-08-09 13:58:59.000000000 +0900
+@@ -792,26 +792,26 @@
+ fi
+ fi
+ if [ -z "${istat}" ]; then
+-if [ -n "${pi_inidir_cli}" -a ! -f "${pi_inidir_cli}/newrelic.ini" ]; then
+-if logcmd cp -f "${ilibdir}/scripts/newrelic.ini.template" "${pi_inidir_cli}/newrelic.ini"; then
+-logcmd chmod 644 "${pi_inidir_cli}/newrelic.ini"
++if [ -n "${pi_inidir_cli}" -a ! -f "${pi_inidir_cli}/newrelic.ini.sample" ]; then
++if logcmd cp -f "${ilibdir}/scripts/newrelic.ini.template" "${pi_inidir_cli}/newrelic.ini.sample"; then
++logcmd chmod 644 "${pi_inidir_cli}/newrelic.ini.sample"
+ if [ -z "${NR_INSTALL_SILENT}" ]; then
+-echo "      Install Status : ${pi_inidir_cli}/newrelic.ini created"
++echo "      Install Status : ${pi_inidir_cli}/newrelic.ini.sample created"
+ fi
+ else
+ istat="failed"
+-log "${pdir}: copy ini template to ${pi_inidir_cli}/newrelic.ini failed"
++log "${pdir}: copy ini template to ${pi_inidir_cli}/newrelic.ini.sample failed"
+ fi
+ fi
+-if [ -z "${istat}" -a -n "${pi_inidir_dso}" -a ! -f "${pi_inidir_dso}/newrelic.ini" ]; then
+-if logcmd cp -f "${ilibdir}/scripts/newrelic.ini.template" "${pi_inidir_dso}/newrelic.ini"; then
+-logcmd chmod 644 "${pi_inidir_dso}/newrelic.ini"
++if [ -z "${istat}" -a -n "${pi_inidir_dso}" -a ! -f "${pi_inidir_dso}/newrelic.ini.sample" ]; then
++if logcmd cp -f "${ilibdir}/scripts/newrelic.ini.template" "${pi_inidir_dso}/newrelic.ini.sample"; then
++logcmd chmod 644 "${pi_inidir_dso}/newrelic.ini.sample"
+ if [ -z "${NR_INSTALL_SILENT}" ]; then
+-echo "      Install Status : ${pi_inidir_dso}/newrelic.ini created"
++echo "      Install Status : ${pi_inidir_dso}/newrelic.ini.sample created"
+ fi
+ else
+ istat="failed"
+-log "${pdir}: copy ini template to ${pi_inidir_dso}/newrelic.ini failed"
++log "${pdir}: copy ini template to ${pi_inidir_dso}/newrelic.ini.sample failed"
+ fi
+ fi
+ fi
+@@ -948,15 +948,15 @@
+ fi
+ fi
+ fi
+-if [ ! -d /etc/newrelic ]; then
+-if logcmd mkdir /etc/newrelic; then
+-logcmd chown root /etc/newrelic
+-logcmd chmod 700 /etc/newrelic
++if [ ! -d %%PREFIX%%/etc/newrelic ]; then
++if logcmd mkdir %%PREFIX%%/etc/newrelic; then
++logcmd chown root %%PREFIX%%/etc/newrelic
++logcmd chmod 700 %%PREFIX%%/etc/newrelic
+ else
+-fatal "failed to create directory /etc/newrelic"
++fatal "failed to create directory %%PREFIX%%/etc/newrelic"
+ fi
+ fi
+-if [ ! -f /etc/newrelic/newrelic.cfg ]; then
++if [ ! -f %%PREFIX%%/etc/newrelic/newrelic.cfg.sample ]; then
+ nrkey="${NR_INSTALL_KEY}"
+ if [ -z "${NR_INSTALL_SILENT}" -a -z "${NR_INSTALL_KEY}" ]; then
+ cat <<EOF
+@@ -966,7 +966,7 @@
+ license key. This will be installed, along with default configuration options,
+ into the file:
+  
+-    /etc/newrelic/newrelic.cfg
++    %%PREFIX%%/etc/newrelic/newrelic.cfg
+  
+ If you do not have your license key handy you can edit this file later. Until
+ such time as the key has been correctly installed in this file you will not be
+@@ -977,19 +977,19 @@
+ read nrkey
+ fi
+ if [ -n "${nrkey}" ]; then
+-if sed -e "s/REPLACE_WITH_REAL_KEY/${nrkey}/" "${ilibdir}/scripts/newrelic.cfg.template" > /etc/newrelic/newrelic.cfg; then
+-logcmd chown root /etc/newrelic/newrelic.cfg
+-logcmd chmod 600 /etc/newrelic/newrelic.cfg
+-log "installed edited newrelic.cfg"
++if sed -e "s/REPLACE_WITH_REAL_KEY/${nrkey}/" "${ilibdir}/scripts/newrelic.cfg.template" > %%PREFIX%%/etc/newrelic/newrelic.cfg.sample; then
++logcmd chown root %%PREFIX%%/etc/newrelic/newrelic.cfg.sample
++logcmd chmod 600 %%PREFIX%%/etc/newrelic/newrelic.cfg.sample
++log "installed edited newrelic.cfg.sample"
+ else
+ fatal "failed to install template daemon configuration file"
+ fi
+ else
+ if [ -z "${NR_INSTALL_SILENT}" ]; then
+-if logcmd cp -f "${ilibdir}/scripts/newrelic.cfg.template" /etc/newrelic/newrelic.cfg; then
+-logcmd chown root /etc/newrelic/newrelic.cfg
+-logcmd chmod 600 /etc/newrelic/newrelic.cfg
+-log "installed newrelic.cfg template"
++if logcmd cp -f "${ilibdir}/scripts/newrelic.cfg.template" %%PREFIX%%/etc/newrelic/newrelic.cfg.sample; then
++logcmd chown root %%PREFIX%%/etc/newrelic/newrelic.cfg.sample
++logcmd chmod 600 %%PREFIX%%/etc/newrelic/newrelic.cfg.sample
++log "installed newrelic.cfg.sample template"
+ else
+ fatal "failed to copy template daemon configuration file"
+ fi
+@@ -997,14 +997,14 @@
+ fi
+ fi
+ badlicense=0
+-if [ -f /etc/newrelic/newrelic.cfg ]; then
+-if grep 'REPLACE_WITH_REAL_KEY' /etc/newrelic/newrelic.cfg > /dev/null 2>&1; then
++if [ -f %%PREFIX%%/etc/newrelic/newrelic.cfg.sample ]; then
++if grep 'REPLACE_WITH_REAL_KEY' %%PREFIX%%/etc/newrelic/newrelic.cfg.sample > /dev/null 2>&1; then
+ badlicense=1
+-log "/etc/newrelic/newrelic.cfg does not contain a valid license"
++log "%%PREFIX%%/etc/newrelic/newrelic.cfg.sample does not contain a valid license"
+ if [ -z "${NR_INSTALL_SILENT}" ]; then
+ cat <<EOF
+  
+-Please be sure to edit /etc/newrelic/newrelic.cfg and add your license key
++Please be sure to edit %%PREFIX%%/etc/newrelic/newrelic.cfg.sample and add your license key
+ before you attempt to start the New Relic proxy daemon.
+  
+ EOF
+@@ -1161,7 +1161,7 @@
+ if [ -z "${ispkg}" ]; then
+ remove_if_unchanged "${osdifile}" "${ilibdir}/scripts/init.${ostype}"
+ fi
+-remove_if_unchanged /etc/newrelic/newrelic.cfg "${ilibdir}/scripts/newrelic.cfg.template"
++remove_if_unchanged %%PREFIX%%/etc/newrelic/newrelic.cfg.sample "${ilibdir}/scripts/newrelic.cfg.template"
+ if [ -z "${ispkg}" ]; then
+ set_daemon_location
+ logcmd rm -f "${daemonloc}"
+@@ -1183,8 +1183,8 @@
+ do_purge() {
+ purge=1
+ do_uninstall
+-if [ -d /etc/newrelic ]; then
+-logcmd rmdir /etc/newrelic
++if [ -d %%PREFIX%%/etc/newrelic ]; then
++logcmd rmdir %%PREFIX%%/etc/newrelic
+ fi
+ if [ -d /var/log/newrelic ]; then
+ logcmd rm -fr /var/log/newrelic
