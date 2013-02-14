@@ -6,7 +6,7 @@ PORTVERSION=	1.0.8a
 CATEGORIES=	audio
 MASTER_SITES=	http://www.smbolton.com/linux/
 
-MAINTAINER=	freebsd-ports@coreland.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alsa compatibility library to build DSSI
 
 FETCH_ARGS?=	-Fpr
