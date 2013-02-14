@@ -28,6 +28,7 @@
     SUBDIR += cassandra
     SUBDIR += cdb
     SUBDIR += cego
+    SUBDIR += check_postgres
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
