@@ -1,9 +1,5 @@
-# New ports collection makefile for:	VMware tools for FreeBSD
-# Date created:		10 Aug 2000
-# Whom:			matusita@jp.FreeBSD.org
-#
+# Created by: matusita@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vmware
 PORTREVISION?=	3
@@ -11,6 +7,9 @@ MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-tools
 
 COMMENT=VMware Tools for guest OS (VMware Workstation 5.x, FreeBSD version)
+
+DEPRECATED=	No more supported upstream
+EXPIRATION_DATE=	2013-03-14
 
 MASTERDIR=	${.CURDIR}/../vmware-guestd5
 DESCR=		${PKGDIR}/pkg-descr.tools

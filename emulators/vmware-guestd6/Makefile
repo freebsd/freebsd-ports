@@ -1,9 +1,5 @@
-# New ports collection makefile for:	VMware tools for FreeBSD
-# Date created:		10 Aug 2000
-# Whom:			matusita@jp.FreeBSD.org
-#
+# Created by: matusita@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
@@ -15,6 +11,9 @@ DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=VMware guest OS supporting daemon (VMware Workstation 6.x, FreeBSD version)
+
+DEPRECATED=	No more supported upstream
+EXPIRATION_DATE=	2013-03-14
 
 .if defined(VMWARE_X_PORTS)
 RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd6
