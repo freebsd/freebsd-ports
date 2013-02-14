@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newrelic-php5
-PORTVERSION=	2.6.5.57
+PORTVERSION=	3.2.5.143
 DISTVERSIONSUFFIX=	-freebsd
 PORTREVISION=	3
 CATEGORIES=	www
@@ -35,7 +35,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${MKDIR} ${PREFIX}/etc/php
-	@cd ${WRKSRC} ; ${SETENV} "NR_INSTALL_SILENT=y" "NR_INSTALL_KEY=Put_your_license_key_here" "NR_INSTALL_INITFILE=${PREFIX}/etc/rc.d/newrelic-daemon" "NR_INSTALL_DAEMONPATH=${PREFIX}/bin/newrelic-daemon" "NR_INSTALL_USE_CP_NOT_LN=y" ./newrelic-install install
+	@cd ${WRKSRC} ; ${SETENV} "NR_INSTALL_SILENT=y" "NR_INSTALL_KEY=_Put_your_license_key_here______________" "NR_INSTALL_INITFILE=${PREFIX}/etc/rc.d/newrelic-daemon" "NR_INSTALL_DAEMONPATH=${PREFIX}/bin/newrelic-daemon" "NR_INSTALL_USE_CP_NOT_LN=y" ./newrelic-install install
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

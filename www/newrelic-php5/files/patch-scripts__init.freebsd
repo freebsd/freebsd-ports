@@ -1,36 +1,39 @@
---- ./scripts/init.freebsd.orig	2012-01-17 01:13:46.000000000 +0900
-+++ ./scripts/init.freebsd	2012-11-02 11:32:53.000000000 +0900
-@@ -5,6 +5,9 @@
- 
- # Start / stop the New Relic Proxy Daemon
- 
-+# XXX when rc.subr sources the script, ${name} must be defined
-+name="newrelic-daemon"
-+
- LANG=
- 
- id=`id -u 2> /dev/null`
-@@ -20,7 +23,7 @@
+--- ./scripts/init.freebsd.orig	2013-02-13 02:53:23.000000000 +0900
++++ ./scripts/init.freebsd	2013-02-14 15:03:41.000000000 +0900
+@@ -21,7 +21,7 @@
  
  #
  # Over-ride cfgfile with your own location if it is not in
--# /etc/newrelic/newrelic.cfg or
-+# %%PREFIX%%/etc/newrelic/newrelic.cfg or
- # /etc/newrelic.cfg or
- # /usr/local/etc/newrelic.cfg
+-# /etc/newrelic/newrelic.cfg or /usr/local/etc/newrelic/newrelic.cfg
++# %%PREFIX%%/etc/newrelic/newrelic.cfg or /usr/local%%PREFIX%%/etc/newrelic/newrelic.cfg
  #
-@@ -55,8 +58,8 @@
+ cfgfile=
+ 
+@@ -40,10 +40,10 @@
  fi
  
  if [ -z "${cfgfile}" ]; then
 -  if [ -f /etc/newrelic/newrelic.cfg ]; then
 -    cfgfile=/etc/newrelic/newrelic.cfg
+-  elif [ -f /usr/local/etc/newrelic/newrelic.cfg ]; then
+-    cfgfile=/usr/local/etc/newrelic/newrelic.cfg
 +  if [ -f %%PREFIX%%/etc/newrelic/newrelic.cfg ]; then
 +    cfgfile=%%PREFIX%%/etc/newrelic/newrelic.cfg
-   elif [ -f /etc/newrelic.cfg ]; then
-     cfgfile=/etc/newrelic.cfg
-   elif [ -f /usr/local/etc/newrelic.cfg ]; then
-@@ -273,18 +276,21 @@
++  elif [ -f /usr/local%%PREFIX%%/etc/newrelic/newrelic.cfg ]; then
++    cfgfile=/usr/local%%PREFIX%%/etc/newrelic/newrelic.cfg
+   fi
+ 
+   if [ -z "${cfgfile}" ]; then
+@@ -119,7 +119,7 @@
+       cat <<EOF
+ INFO: newrelic.cfg not found - daemon must be launched by the agent.
+       If you want to start the daemon via this script then please copy the
+-      file scripts/newrelic.cfg.template to /etc/newrelic/newrelic.cfg,
++      file scripts/newrelic.cfg.template to %%PREFIX%%/etc/newrelic/newrelic.cfg,
+       edit it to taste, and then re-run this script. For more information
+       please refer to https://newrelic.com/docs/php/new-relic-for-php.
+ EOF
+@@ -238,16 +238,16 @@
  }
  
  case "$1" in
@@ -46,12 +49,8 @@
 +  restart|fastrestart)
      restart || exit 1
      ;;
-   status)
+-  status)
++  status|onestatus)
      status
      ;;
-+  onestatus)
-+    status
-+    ;;
    *)
-     if [ -z "${NR_SILENT}" -a -z "${SILENT}" ]; then
-       echo "Usage: $0 {start|stop|status|restart}"

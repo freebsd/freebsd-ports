@@ -1,5 +1,5 @@
 bin/newrelic-daemon
-etc/newrelic/newrelic.cfg.sample
+etc/newrelic/newrelic.cfg.template
 etc/php/newrelic.ini.sample
 etc/rc.d/newrelic-daemon
 lib/php/%%PHP_EXT_DIR%%/newrelic.so
