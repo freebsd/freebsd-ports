@@ -64,6 +64,9 @@ int main(int argc, char ** argv)
   u_int32_t        keylen;
   char            *val;
   int              rv;
+  struct timeval   tv;
+  long             microsec;
+  double           elapsed_time;
 
   setlocale (LC_ALL, "");
   bindtextdomain (PACKAGE, LOCALEDIR);
@@ -78,16 +81,17 @@ int main(int argc, char ** argv)
   TRACE("%s",">>main");
 
   // initialize
+  gettimeofday(&tv, NULL);
   mc = mc_new();
   if (mc == NULL) {
-    puts("failed to mc_new");
+    printf("MEMCACHED %s: failed to mc_new\n", _("CRITICAL"));
     exit(EXIT_CRITICAL);
   }
   TRACE("[server]%s:%s", mc_host, mc_port);
   rv = mc_server_add(mc, mc_host, mc_port);
   TRACE("[mc_server_add rv]%d", rv);
   if (rv != 0) {
-    printf("failed to server_add (%d)\n", rv);
+    printf("MEMCACHED %s: failed to server_add (%d)\n", _("CRITICAL"), rv);
     exit(EXIT_CRITICAL);
   }
 
@@ -105,7 +109,7 @@ int main(int argc, char ** argv)
   rv = mc_set(mc, key, keylen, val, strlen(val), mc_expire, 0);
   TRACE("[set rv]%d", rv);
   if (rv != 0) {
-    printf("failed to set (%d)\n", rv);
+    printf("MEMCACHED %s: failed to set (%d)\n", _("CRITICAL"), rv);
     exit(EXIT_CRITICAL);
   }
   free(val);
@@ -114,7 +118,7 @@ int main(int argc, char ** argv)
   val = (char *)mc_aget(mc, key, keylen);
   TRACE("[val]%s", val);
   if (val == NULL) {
-    printf("failed to get after set\n");
+    printf("MEMCACHED %s: failed to get after set\n", _("CRITICAL"));
     exit(EXIT_CRITICAL);
   }
   free(val);
@@ -123,7 +127,7 @@ int main(int argc, char ** argv)
   rv = mc_delete(mc, key, keylen, 0);
   TRACE("[delete rv]%d", rv);
   if (rv != 0) {
-    printf("failed to delete (%d)\n", rv);
+    printf("MEMCACHED %s: failed to delete (%d)\n", _("CRITICAL"), rv);
     exit(EXIT_CRITICAL);
   }
 
@@ -131,12 +135,16 @@ int main(int argc, char ** argv)
   val = (char *)mc_aget(mc, key, keylen);
   TRACE("[val]%s", val);
   if (val != NULL) {
-    printf("failed to get after delete\n");
+    printf("MEMCACHED %s: failed to get after delete\n", _("CRITICAL"));
     exit(EXIT_CRITICAL);
   }
   free(val);
 
   mc_free(mc);
+
+  microsec = deltime(tv);
+  elapsed_time = (double)microsec / 1.0e6;
+  printf("MEMCACHED %s: %.3f seconds\n", _("OK"), elapsed_time);
 
   return 0;
 }
