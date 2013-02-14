@@ -270,7 +270,6 @@
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocamlgsl
     SUBDIR += octave
-    SUBDIR += octave-devel
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
     SUBDIR += octave-forge-ad

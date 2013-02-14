@@ -4061,3 +4061,6 @@ x11-toolkits/tk85-thread||2013-02-06|Threads are now enabled by default
 x11-toolkits/tk86-thread||2013-02-06|Threads are now enabled by default
 x11-fm/fsv||2013-02-14|Depends on expired x11-toolkits/gtkglarea
 x11-toolkits/gtkglarea||2013-02-14|Has expired: No more public distfiles
+graphics/solang||2013-02-14|Has expired: BROKEN for more than 6 month
+math/octave-devel||2013-02-14|Has expired: BROKEN for more than 6 month
+net/spnetkit||2013-02-14|Has expired: BROKEN for more than 6 month
