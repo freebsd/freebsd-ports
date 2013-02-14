@@ -1,9 +1,5 @@
-# New ports collection makefile for:	VMware toolbox for Linux
-# Date created:		10 Aug 2000
-# Whom:			matusita@jp.FreeBSD.org
-#
+# Created by: matusita@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vmware-toolbox
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
@@ -14,6 +10,9 @@ DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (VMware Workstation 6.x, Linux version)
+
+DEPRECATED=	No more supported upstream
+EXPIRATION_DATE=	2013-03-14
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
