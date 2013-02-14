@@ -13,6 +13,7 @@ CATEGORIES=	www
 # XXX when the version is the latest one, /php_agent/release/${PKGNAME}
 # MASTER_SITES=	http://download.newrelic.com/php_agent/release/
 # but when it's not, /php_agent/archive/${PORTVERSION}/${PKGNAME}
+# TODO test with libz.so.6 and update files/pkg-message.in
 MASTER_SITES=	http://download.newrelic.com/php_agent/archive/${PORTVERSION}/
 
 MAINTAINER=	mitsuruy@reallyenglish.com
