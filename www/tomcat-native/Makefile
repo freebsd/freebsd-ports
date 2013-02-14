@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.24
+PORTVERSION=	1.1.27
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
