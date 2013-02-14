@@ -1,7 +1,15 @@
---- qnapi.pro.orig	2008-05-20 18:50:01.000000000 +0200
-+++ qnapi.pro	2010-11-27 13:38:04.000000000 +0100
-@@ -77,7 +77,7 @@
- #QMAKE_BUNDLE_DATA += 7ZIP_BINARY
+--- qnapi.pro.orig	2009-02-28 21:13:01.000000000 +0100
++++ qnapi.pro	2013-02-14 20:22:45.000000000 +0100
+@@ -91,6 +91,7 @@
+ RCC_DIR = tmp
+ OBJECTS_DIR = tmp
+ INCLUDEPATH = src
++QMAKE_CXXFLAGS_RELEASE =
+ macx {
+  QMAKE_MAC_SDK =  /Developer/SDKs/MacOSX10.4u.sdk
+  CONFIG +=  x86  ppc
+@@ -102,7 +103,7 @@
+  QMAKE_BUNDLE_DATA +=  7ZIP_BINARY
  }
  unix {
 - INSTALL_PREFIX =  /usr
@@ -9,7 +17,7 @@
   target.path =  $${INSTALL_PREFIX}/bin
   doc.path =  $${INSTALL_PREFIX}/share/doc/$${TARGET}
   doc.files =  doc/ChangeLog \
-@@ -89,27 +89,24 @@
+@@ -114,27 +115,24 @@
    doc/COPYRIGHT \
    doc/qnapi-download.desktop \
    doc/qnapi-download.schemas
