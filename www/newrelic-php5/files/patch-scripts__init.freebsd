@@ -1,0 +1,57 @@
+--- ./scripts/init.freebsd.orig	2012-01-17 01:13:46.000000000 +0900
++++ ./scripts/init.freebsd	2012-11-02 11:32:53.000000000 +0900
+@@ -5,6 +5,9 @@
+ 
+ # Start / stop the New Relic Proxy Daemon
+ 
++# XXX when rc.subr sources the script, ${name} must be defined
++name="newrelic-daemon"
++
+ LANG=
+ 
+ id=`id -u 2> /dev/null`
+@@ -20,7 +23,7 @@
+ 
+ #
+ # Over-ride cfgfile with your own location if it is not in
+-# /etc/newrelic/newrelic.cfg or
++# %%PREFIX%%/etc/newrelic/newrelic.cfg or
+ # /etc/newrelic.cfg or
+ # /usr/local/etc/newrelic.cfg
+ #
+@@ -55,8 +58,8 @@
+ fi
+ 
+ if [ -z "${cfgfile}" ]; then
+-  if [ -f /etc/newrelic/newrelic.cfg ]; then
+-    cfgfile=/etc/newrelic/newrelic.cfg
++  if [ -f %%PREFIX%%/etc/newrelic/newrelic.cfg ]; then
++    cfgfile=%%PREFIX%%/etc/newrelic/newrelic.cfg
+   elif [ -f /etc/newrelic.cfg ]; then
+     cfgfile=/etc/newrelic.cfg
+   elif [ -f /usr/local/etc/newrelic.cfg ]; then
+@@ -273,18 +276,21 @@
+ }
+ 
+ case "$1" in
+-  start)
++  start|faststart)
+     start || exit 1
+     ;;
+-  stop)
++  stop|faststop)
+     stop || exit 1
+     ;;
+-  restart)
++  restart|fastrestart)
+     restart || exit 1
+     ;;
+   status)
+     status
+     ;;
++  onestatus)
++    status
++    ;;
+   *)
+     if [ -z "${NR_SILENT}" -a -z "${SILENT}" ]; then
+       echo "Usage: $0 {start|stop|status|restart}"

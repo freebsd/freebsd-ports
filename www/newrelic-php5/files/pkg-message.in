@@ -1,0 +1,6 @@
+In order to use the newrelic daemon,
+describe as follows to your /etc/libmap.conf.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[%%PREFIX%%/bin/newrelic-daemon]
+libz.so.4	libz.so.5
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
