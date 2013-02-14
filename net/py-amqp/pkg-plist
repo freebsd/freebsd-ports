@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/five.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/five.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/five.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/method_framing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/method_framing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/amqp/method_framing.pyo
