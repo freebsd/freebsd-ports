@@ -7,7 +7,7 @@
 #
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing
-# them to CVS yourself.
+# them yourself.
 
 bsd_zenoss_mk_MAINTAINER=	zenoss@experts-exchange.com
 
