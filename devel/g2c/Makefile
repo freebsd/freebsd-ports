@@ -20,7 +20,6 @@ USE_GNOME=	gtk12 gnomehack libxml orbit
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-O0 -g
 
 .include <bsd.port.pre.mk>
 
