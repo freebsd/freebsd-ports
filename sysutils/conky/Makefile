@@ -3,10 +3,11 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	An advanced, highly configurable system monitor for X
 
 CONFLICTS?=	conky-awesome-[0-9]*
@@ -15,14 +16,14 @@ SLAVEDIRS=	sysutils/conky-awesome
 USE_ICONV=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_XORG?=	x11 xext xdamage
-USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
 			--disable-alsa \
-			--disable-bmpx
+			--disable-bmpx \
+			--disable-iostats
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -32,130 +33,156 @@ PORTEXAMPLES=	conkyrc.sample
 PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
 
-OPTIONS+=	APCUPSD "Enable APCUPSD support" Off \
-		AUDACIOUS "Enable Audacious support" Off \
-		INOTIFY "Enable inotify support" Off \
-		MPD "Enable MPD support" Off \
-		NCURSES "Enable ncurses support" Off \
-		RSS "Enable RSS support" Off \
-		METAR "Enable METAR Weather support" Off \
-		XOAP "Enable XOAP Weather support" Off \
-		XMMS2 "Enable XMMS2 support" Off
+OPTIONS_DEFINE=	APCUPSD AUDACIOUS INOTIFY LUA METAR MOC MPD NCURSES RSS \
+		X11 XMMS2 XOAP
 
-.if !empty(USE_XORG)
-OPTIONS+=	DOUBLE_BUFFER "Enable double buffering" On \
-		IMLIB2 "Enable Imlib2 support" Off \
-		LUA "Enable Lua support" Off \
-		LUA_CAIRO "Enable Lua-Cairo binding (impl. Lua)" Off \
-		LUA_IMLIB2 "Enable Lua-Imlib2 binding (impl. Lua/Imlib2)" Off \
-		XFT "Enable Xft support" Off
+OPTIONS_GROUP?=	X11
+OPTIONS_GROUP_X11=	ARGB DOUBLE_BUFFER IMLIB2 XFT LUA_CAIRO LUA_IMLIB2
+OPTIONS_DEFAULT?=	X11 ARGB DOUBLE_BUFFER
+
+ARGB_DESC=		Use an ARGB visual to draw on X11
+APCUPSD_DESC=		Monitor APCUPSD
+AUDACIOUS_DESC=		Control Audacious sound player
+DOUBLE_BUFFER_DESC=	Enable X11 double buffering
+INOTIFY_DESC=		Monitor file changes via Inotify
+LUA_CAIRO_DESC=		Lua-Cairo binding
+LUA_IMLIB2_DESC=	Lua-Imlib2 binding
+METAR_DESC=		Display METAR weather reports
+MOC_DESC=		Control MOC (Music On Console)
+MPD_DESC=		Control MPD (Music Player Daemon)
+NCURSES_DESC=		Use ncurses to draw on terminals
+RSS_DESC=		Display RSS feeds
+XMMS2_DESC=		Control XMMS2 media player
+XOAP_DESC=		Display XOAP weather reports
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MARGB} || ${PORT_OPTIONS:MDOUBLE_BUFFER} || ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2} || ${PORT_OPTIONS:MXFT} || ${PORT_OPTIONS:MX11}
+USE_XORG=	x11 xext xdamage
+CONFIGURE_ARGS+=	--enable-x11 --enable-own-window
+EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky.conf
 .else
-OPTIONS+=	LUA "Enable Lua support" Off
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if empty(USE_XORG)
-WITHOUT_DOUBLE_BUFFER=	On
 CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
-.undef WITH_IMLIB2
-.undef WITH_LUA_CAIRO
-.undef WITH_LUA_IMLIB2
-.undef WITH_XFT
+EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky_no_x11.conf
 .endif
 
-.if defined(WITH_APCUPSD)
-RUN_DEPENDS+=		${LOCALBASE}/sbin/apcupsd:${PORTSDIR}/sysutils/apcupsd
+.if ${PORT_OPTIONS:MAPCUPSD}
 CONFIGURE_ARGS+=	--enable-apcupsd
 .else
 CONFIGURE_ARGS+=	--disable-apcupsd
 .endif
 
-.if defined(WITH_AUDACIOUS)
-LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
+.if ${PORT_OPTIONS:MARGB}
+CONFIGURE_ARGS+=	--enable-argb
+.else
+CONFIGURE_ARGS+=	--disable-argb
+.endif
+
+.if ${PORT_OPTIONS:MAUDACIOUS}
+LIB_DEPENDS+=		audclient:${PORTSDIR}/multimedia/audacious
 CONFIGURE_ARGS+=	--enable-audacious
 .else
 CONFIGURE_ARGS+=	--disable-audacious
 .endif
 
-.if defined(WITH_INOTIFY)
-LIB_DEPENDS+=		inotify.0:${PORTSDIR}/devel/libinotify
+.if ${PORT_OPTIONS:MDOUBLE_BUFFER}
+CONFIGURE_ARGS+=	--enable-double-buffer
+.else
+CONFIGURE_ARGS+=	--disable-double-buffer
+.endif
+
+.if ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_IMLIB2}
+LIB_DEPENDS+=		Imlib2:${PORTSDIR}/graphics/imlib2
+CONFIGURE_ARGS+=	--enable-imlib2
+.else
+CONFIGURE_ARGS+=	--disable-imlib2
+.endif
+
+.if ${PORT_OPTIONS:MINOTIFY}
+LIB_DEPENDS+=		inotify:${PORTSDIR}/devel/libinotify
 CONFIGURE_ARGS+=	--enable-inotify
 .else
 CONFIGURE_ARGS+=	--disable-inotify
 .endif
 
-.if defined(WITH_LUA) || defined(WITH_LUA_CAIRO) || defined(WITH_LUA_IMLIB2)
+.if ${PORT_OPTIONS:MLUA_CAIRO}
+LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+CONFIGURE_ARGS+=	--enable-lua-cairo
+.else
+CONFIGURE_ARGS+=	--disable-lua-cairo
+.endif
+
+.if ${PORT_OPTIONS:MLUA_IMLIB2}
+BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+CONFIGURE_ARGS+=	--enable-lua-imlib2
+.else
+CONFIGURE_ARGS+=	--disable-lua-imlib2
+.endif
+
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
 USE_LUA=		5.1+
 CONFIGURE_ARGS+=	--enable-lua
 .else
 CONFIGURE_ARGS+=	--disable-lua
 .endif
 
-.if defined(WITH_LUA_CAIRO)
-LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-CONFIGURE_ARGS+=	--enable-lua-cairo
-.endif
-
-.if defined(WITH_IMLIB2) || defined(WITH_LUA_IMLIB2)
-LIB_DEPENDS+=		Imlib2.5:${PORTSDIR}/graphics/imlib2
-CONFIGURE_ARGS+=	--enable-imlib2
+.if ${PORT_OPTIONS:MMETAR}
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--enable-weather-metar
 .else
-CONFIGURE_ARGS+=	--disable-imlib2
+CONFIGURE_ARGS+=	--disable-weather-metar
 .endif
 
-.if defined(WITH_LUA_IMLIB2)
-BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-CONFIGURE_ARGS+=	--enable-lua-imlib2
+.if ${PORT_OPTIONS:MMOC}
+CONFIGURE_ARGS+=	--enable-moc
+.else
+CONFIGURE_ARGS+=	--disable-moc
 .endif
 
-.if defined(WITH_NCURSES)
+.if ${PORT_OPTIONS:MMPD}
+CONFIGURE_ARGS+=	--enable-mpd
+.else
+CONFIGURE_ARGS+=	--disable-mpd
+.endif
+
+.if ${PORT_OPTIONS:MNCURSES}
 CONFIGURE_ARGS+=	--enable-ncurses
 .else
 CONFIGURE_ARGS+=	--disable-ncurses
 .endif
 
-.if defined(WITH_XFT)
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+.if ${PORT_OPTIONS:MRSS}
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
+			xml2:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=	--enable-rss
+USE_GNOME+=		glib20
+.else
+CONFIGURE_ARGS+=	--disable-rss
+.endif
+
+.if ${PORT_OPTIONS:MXFT}
+LIB_DEPENDS+=		Xft:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if defined(WITHOUT_MPD)
-CONFIGURE_ARGS+=	--disable-mpd
-.endif
-
-.if defined(WITH_RSS)
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl \
-			xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--enable-rss
-USE_GNOME+=		glib20
-.endif
-
-.if defined(WITH_METAR)
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-weather-metar
-.endif
-
-.if defined(WITH_XOAP)
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl \
-			xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--enable-weather-xoap
-.endif
-
-.if defined(WITH_XMMS2)
-LIB_DEPENDS+=		xmmsclient.6:${PORTSDIR}/audio/xmms2
+.if ${PORT_OPTIONS:MXMMS2}
+LIB_DEPENDS+=		xmmsclient:${PORTSDIR}/audio/xmms2
 CONFIGURE_ARGS+=	--enable-xmms2
 .else
 CONFIGURE_ARGS+=	--disable-xmms2
 .endif
 
-.if defined(WITHOUT_DOUBLE_BUFFER)
-CONFIGURE_ARGS+=	--disable-double-buffer
+.if ${PORT_OPTIONS:MXOAP}
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
+			xml2:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=	--enable-weather-xoap
+.else
+CONFIGURE_ARGS+=	--disable-weather-xoap
 .endif
 
 post-patch:
@@ -169,16 +196,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${PREFIX}/man/man1
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-.	if !empty(USE_XORG)
-	@${INSTALL_DATA} ${WRKSRC}/data/conky.conf ${EXAMPLESDIR}/conkyrc.sample
-.	else
-	@${INSTALL_DATA} ${WRKSRC}/data/conky_no_x11.conf ${EXAMPLESDIR}/conkyrc.sample
-.	endif
+	@${INSTALL_DATA} ${EXAMPLE_CONF_FILE} ${EXAMPLESDIR}/conkyrc.sample
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in README AUTHORS ChangeLog TODO NEWS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -188,4 +211,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
