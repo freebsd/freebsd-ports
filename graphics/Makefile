@@ -952,7 +952,6 @@
     SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += sodipodi
-    SUBDIR += solang
     SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += squish

@@ -1100,7 +1100,6 @@
     SUBDIR += sofia-sip
     SUBDIR += spideroak
     SUBDIR += splatd
-    SUBDIR += spnetkit
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
