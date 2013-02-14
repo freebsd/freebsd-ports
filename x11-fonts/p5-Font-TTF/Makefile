@@ -1,19 +1,18 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Font-TTF
-# Date created:			Apr 28, 2002
-# Whom:				ijliao
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Font-TTF
-PORTVERSION=	0.48
+PORTVERSION=	1.02
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for TrueType font hacking
+
+LICENSE=	ART20
+
+BUILD_DEPENDS=	p5-IO-String>0:${PORTSDIR}/devel/p5-IO-String
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -32,12 +31,16 @@ MAN3=	\
 	Font::TTF::EBLC.3 \
 	Font::TTF::Fdsc.3 \
 	Font::TTF::Feat.3 \
+	Font::TTF::Features::Cvar.3 \
+	Font::TTF::Features::Size.3 \
+	Font::TTF::Features::Sset.3 \
 	Font::TTF::Fmtx.3 \
 	Font::TTF::Font.3 \
 	Font::TTF::Fpgm.3 \
 	Font::TTF::GDEF.3 \
 	Font::TTF::GPOS.3 \
 	Font::TTF::GSUB.3 \
+	Font::TTF::Gloc.3 \
 	Font::TTF::Glyf.3 \
 	Font::TTF::Glyph.3 \
 	Font::TTF::GrFeat.3 \
@@ -74,6 +77,7 @@ MAN3=	\
 	Font::TTF::Prep.3 \
 	Font::TTF::Prop.3 \
 	Font::TTF::Segarr.3 \
+	Font::TTF::Silf.3 \
 	Font::TTF::Sill.3 \
 	Font::TTF::Table.3 \
 	Font::TTF::Ttc.3 \
@@ -81,9 +85,9 @@ MAN3=	\
 	Font::TTF::Utils.3 \
 	Font::TTF::Vhea.3 \
 	Font::TTF::Vmtx.3 \
+	Font::TTF::Woff.3 \
+	Font::TTF::Woff::MetaData.3 \
+	Font::TTF::Woff::PrivateData.3 \
 	Font::TTF::XMLparse.3
-
-post-extract:
-	@${FIND} ${WRKSRC} -name '*.swp' -delete
 
 .include <bsd.port.mk>
