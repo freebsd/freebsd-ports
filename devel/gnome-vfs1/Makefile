@@ -24,9 +24,8 @@ USE_GNOME=	gnomehack gnomeprefix glib12 libxml gtk12 orbit gconf \
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 LATEST_LINK=	gnome-vfs1
 

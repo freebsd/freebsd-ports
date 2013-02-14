@@ -5,6 +5,7 @@
  Description: Linux SDK for UPnP Devices
  Version: @VERSION@
 -Libs: @PTHREAD_CFLAGS@ @PTHREAD_LIBS@ -L${libdir} -lupnp -lthreadutil -lixml 
-+Libs: @PTHREAD_CFLAGS@ @PTHREAD_LIBS@ -L${libdir} -lupnp -lthreadutil -lixml @LIBS@
- Cflags: @PTHREAD_CFLAGS@ -I${includedir}/upnp
++Libs: -pthread -L${libdir} -lupnp -lthreadutil -lixml @LIBS@
+-Cflags: @PTHREAD_CFLAGS@ -I${includedir}/upnp
++Cflags: -I${includedir}/upnp
  

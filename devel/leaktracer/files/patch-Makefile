@@ -14,8 +14,8 @@
  # Common flags
 -C_FLAGS = -g -pipe -Wall -W $(THREAD)
 -O_FLAGS = $(C_FLAGS)
-+C_FLAGS = $(CFLAGS) -Wall -W $(THREAD) $(PTHREAD_CFLAGS)
-+O_FLAGS = $(C_FLAGS) $(PTHREAD_LIBS)
++C_FLAGS = $(CFLAGS) -Wall -W $(THREAD)
++O_FLAGS = $(C_FLAGS) -pthread
  
  # Object files
  OBJ_DIR = .

@@ -39,8 +39,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/git/Makefile
-	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' \
-		-e 's,/usr,${PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' \
 		-e 's,-Igit,-I.,g' ${WRKSRC}/Makefile
 
 post-install:

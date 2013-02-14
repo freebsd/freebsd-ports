@@ -20,6 +20,7 @@ USE_GNOME=	gtk12 gnomehack libxml orbit
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CFLAGS+=	-O0 -g
 
 .include <bsd.port.pre.mk>
 
@@ -29,9 +30,5 @@ PKGNAMESUFFIX+=	-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -5,7 +5,7 @@
  @OS_WIN32_FALSE@PLATFROM_SPECIFIC_LTLIBS = libdns-sd.la libnetwork.la libnntp.la libsftp.la $(HTTP_LTLIBS) libftp.la
  @OS_WIN32_TRUE@PLATFROM_SPECIFIC_LTLIBS = 
 -module_flags = -export_dynamic -avoid-version -module -no-undefined
-+module_flags = -export_dynamic -avoid-version -module -no-undefined $(PTHREAD_LIB)
++module_flags = -export_dynamic -avoid-version -module -no-undefined
  modulesdir = $(libdir)/gnome-vfs-2.0/modules
  modules_LTLIBRARIES = \
  	$(CDDA_LTLIBS)				\

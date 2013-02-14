@@ -73,7 +73,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CXXFLAGS=/s/-ansi//' \
 		${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MTHREADS}
-	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
+	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=,g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
 

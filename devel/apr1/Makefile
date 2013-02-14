@@ -200,9 +200,6 @@ post-patch: .SILENT
 		${APR_WRKDIR}/build/apr_hints.m4
 	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
-		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
-		${APU_WRKDIR}/build/apu-conf.m4
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
 		${APR_WRKDIR}/build/gen-build.py
 	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4

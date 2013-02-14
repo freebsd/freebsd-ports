@@ -18,6 +18,6 @@ USE_GNOME=	gnomevfs2 libbonobo
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib #-pthread
 
 .include <bsd.port.mk>

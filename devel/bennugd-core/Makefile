@@ -34,7 +34,7 @@ post-extract:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|-lpthread|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/configure
 
 post-install:

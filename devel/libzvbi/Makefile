@@ -29,7 +29,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L/usr/lib"
 CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#cpu (\([^)]*\))|defined(__\1__)|g' \
 		${WRKSRC}/src/misc.h \
 		${WRKSRC}/src/exp-gfx.c

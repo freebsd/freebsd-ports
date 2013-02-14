@@ -43,7 +43,7 @@ pre-configure:
 	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#;s/-O2/${CFLAGS}/' \
+	@${REINPLACE_CMD} -Ee 's/-O2/${CFLAGS}/' \
 		${WRKSRC}/mk/beforeauto.mk.in
 
 post-install:

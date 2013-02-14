@@ -24,7 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IO::AIO.3
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthreads*|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.mk>

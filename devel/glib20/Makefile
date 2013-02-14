@@ -47,8 +47,6 @@ CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
 		--disable-dtrace \
 		--with-pcre=system \
 		--disable-fam
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 

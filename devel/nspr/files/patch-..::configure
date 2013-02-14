@@ -9,16 +9,3 @@
      else
          DLL_SUFFIX=so.1.0
      fi
-@@ -6271,11 +6271,6 @@
- #define _THREAD_SAFE 1
- EOF
- 
--	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
--	        _PTHREAD_LDFLAGS="-pthread"
--	    else
--	        _PTHREAD_LDFLAGS="-lc_r"
--	    fi
- 	    ;;
-     *-netbsd*)
- 	    if test "$ac_cv_have_dash_pthread" = "yes"; then
-

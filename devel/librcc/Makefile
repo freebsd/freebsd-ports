@@ -33,8 +33,7 @@ USE_AUTOTOOLS=	autoheader
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=	LIBS="${LIBS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="${LIBS}"
 
 OPTIONS=	BDB "Translation database support" off \
 		TRANSLATE "Online translation support" off \

@@ -47,8 +47,6 @@ post-patch:
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's|release|release thread|' \
-		-e 's|-pthread -D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
-		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 

@@ -20,8 +20,7 @@ USE_GMAKE=	yes
 
 NOMAN=
 PLIST_FILES=	sbin/ifdtest
-CFLAGS+=	${PTHREAD_CFLAGS}
-MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite ${PTHREAD_LIBS}"
+MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g; \

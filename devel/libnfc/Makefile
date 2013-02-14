@@ -81,8 +81,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/lib
 .if ${PORT_OPTIONS:MPN531USB} || ${PORT_OPTIONS:MPN533USB}
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 .endif
 

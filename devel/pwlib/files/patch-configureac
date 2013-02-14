@@ -101,31 +101,6 @@
    
    AC_TRY_COMPILE([#include <semaphore.h>],
                   [sem_t *s = sem_open("test", O_CREAT)],
-@@ -770,18 +772,18 @@
- dnl MSWIN_DISPLAY semaphore,Semaphore Support
- dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
- 
--dnl Linux, Mac OS X use libpthread and -lpthread
--dnl FreeBSD uses the -pthread compiler option and uses libc_r
-+dnl FreeBSD>=5.x, Linux, Mac OS X use libpthread and -lpthread
-+dnl FreeBSD <5.x uses the -pthread compiler option and uses libc_r
- 
- AC_CHECK_LIB(pthread, pthread_create, HAS_PTHREADS=yes, HAS_PTHREADS=no)
- if test ${HAS_PTHREADS} = yes ; then
--  ENDLDLIBS="$ENDLDLIBS -lpthread"
--  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT"
-+  ENDLDLIBS="$ENDLDLIBS ${PTHREAD_LIBS}"
-+  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT ${PTHREAD_LIBS}"
- else
-   if test ${OSTYPE} = FreeBSD ; then
-     HAS_PTHREADS=yes
--    ENDLDLIBS="$ENDLDLIBS -pthread"
--    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT -pthread"
-+    ENDLDLIBS="$ENDLDLIBS ${PTHREAD_LIBS}"
-+    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT ${PTHREAD_LIBS}"
-   elif test ${OSTYPE} = FreeBSD ; then
-     HAS_PTHREADS=yes
-     ENDLDLIBS="$ENDLDLIBS -pthread"
 @@ -928,7 +930,7 @@
  AC_SUBST(HAS_PLUGINS)
  

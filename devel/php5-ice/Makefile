@@ -29,7 +29,7 @@ INSTALL_WRKSRC=	${WRKSRC}/php
 LIB_VRS=	${PORTVERSION:S|.||g:C|2$||}
 PHP_MODNAME?=	IcePHP
 
-CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
+CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT
 .if defined(DEBUG)
 CFLAGS+=	-g
 .else
@@ -50,7 +50,6 @@ MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/php/config/Make.rules.php
 	${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \

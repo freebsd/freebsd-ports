@@ -49,7 +49,6 @@ post-install:
 	@${ECHO_CMD} >> ${PKGMESSAGE}
 	@${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}

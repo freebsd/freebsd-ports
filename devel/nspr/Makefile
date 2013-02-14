@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--srcdir=${WRKSRC:H} \
 		--with-pthreads
-CONFIGURE_ENV=	BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAKE_ENV=	DIST=${WRKSRC}/dist
 
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
@@ -64,7 +63,7 @@ do-install:
 .endfor
 
 prtests:
-	${SETENV} PTHREAD_LIBS="${PTHREAD_LIBS}" ${GMAKE} -C ${WRKSRC}/pr/tests
+	${GMAKE} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 

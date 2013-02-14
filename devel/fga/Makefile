@@ -17,8 +17,6 @@ COMMENT=	Fast Genetic Algorithm library
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 
 EXAMPLES=	graph_gen maxbit tsp tsp_bf
 

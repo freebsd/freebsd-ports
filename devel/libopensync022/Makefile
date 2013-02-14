@@ -19,7 +19,6 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 USE_BZIP2=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -37,12 +36,10 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} \
+	    -e 's|-Werror||g'
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/opensync/Makefile.in \
-		${WRKSRC}/osengine/Makefile.in \
-		${WRKSRC}/formats/vformats-xml/Makefile.in \
-		${WRKSRC}/tools/Makefile.in
 	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

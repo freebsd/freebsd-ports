@@ -32,7 +32,7 @@ MAKE_ENV=	LDLIBS="${LDLIBS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;\
-	s|ar qc|$${CC} $${CFLAGS} ${PTHREAD_LIBS} $${LDLIBS} -shared -fPIC -o|;\
+	s|ar qc|$${CC} $${CFLAGS} $${LDLIBS} -pthread -shared -fPIC -o|;\
 	s|sed -r|sed -E|;s|-Os||;/gcc/d;/-MM/s|-I.|$${CFLAGS}|'\
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|alloca.h|stdlib.h|' ${WRKSRC}/widgets/*.c

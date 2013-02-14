@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 INFO=		clint
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-pedantic||g ; \
 		 s|-ldl||g'

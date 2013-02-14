@@ -24,9 +24,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
 MAN3=		gicActionLazyAction.3 \
 		gicActionWrite.3 \
 		gicContextAllocate.3 \

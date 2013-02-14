@@ -24,10 +24,7 @@ PORTDOCS=	xxl.html xxl.pdf
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-	PTHREAD_LIBS="${PTHREAD_LIBS}"
-.else
+.if !${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--without-threads
 .endif
 
