@@ -997,7 +997,7 @@ MASTER_SITE_PGSQL+= \
 
 .if !defined(IGNORE_MASTER_SITE_PHP)
 MASTER_SITE_PHP+= \
-	http://dk.php.net/%SUBDIR%/ \
+	http://dk1.php.net/%SUBDIR%/ \
 	http://de.php.net/%SUBDIR%/ \
 	http://es.php.net/%SUBDIR%/ \
 	http://fr.php.net/%SUBDIR%/ \
