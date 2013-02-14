@@ -1,0 +1,4 @@
+check_postgres is a script for monitoring various attributes of your database.
+It is designed to work with Nagios, MRTG, or in standalone scripts. 
+
+WWW:	http://bucardo.org/wiki/Check_postgres
