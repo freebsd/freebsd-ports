@@ -1,15 +1,10 @@
-# New ports collection makefile for:	p5-Net-SAML
-# Date created:		2007-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SAML
-PORTVERSION=	1.05
+PORTVERSION=	1.11
 CATEGORIES=	security perl5
-MASTER_SITES=	CPAN \
-		http://zxid.org/
+MASTER_SITES=	http://zxid.org/ \
+		CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	zxid-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
