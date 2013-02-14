@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gmp
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
-DISTFILES=	${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
@@ -39,11 +38,6 @@ CONFIGURE_ARGS+=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	ABI="64"
 .else
 CONFIGURE_ENV+=	ABI="32"
-.endif
-
-# temporary build hack for ARM
-.if ${ARCH} == "arm"
-CONFIGURE_ARGS+=--enable-assembly=no
 .endif
 
 post-extract:
