@@ -15,14 +15,14 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v2-${PORTVERSION}
 GH_COMMIT=	4dfdc80
 
-OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL-SSL ODBC PRELUDE PGSQL
+OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL
 NO_OPTIONS_SORT=yes
 
 64BIT_DESC=	Enable 64bit compilation (experimental)
 ARUBA_DESC=	Enable aruba support
 BRO_DESC=	Enable bro support (libbroccoli)
 GRE_DESC=	Enable gre support
-MYSQL-SSL_DESC=	Enable mysql ssl support (experimental)
+MYSQL_SSL_DESC=	Enable mysql ssl support (experimental)
 PRELUDE_DESC=	Enable prelude support
 
 .if defined(SLAVE)
@@ -96,8 +96,8 @@ CONFIGURE_ARGS+=	--with-mysql \
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL-SSL}
-OPTIONS_DEFAULT+=	MYSQL
+.if ${PORT_OPTIONS:MMYSQL_SSL}
+USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-mysql-ssl-support
 .else
 CONFIGURE_ARGS+=	--disable-mysql-ssl-support
@@ -119,6 +119,7 @@ CONFIGURE_ARGS+=	--disable-prelude
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
+WANT_PGSQL_VER=		92+
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
 .else
 CONFIGURE_ARGS+=	--without-postgresql
@@ -136,7 +137,7 @@ post-patch:
 		${WRKSRC}/etc/barnyard2.conf
 
 post-install:
-	@cp ${WRKSRC}/etc/barnyard2.conf ${PREFIX}/etc/barnyard2.conf.sample
+	@${CP} ${WRKSRC}/etc/barnyard2.conf ${PREFIX}/etc/barnyard2.conf.sample
 	if [ ! -f ${PREFIX}/etc/barnyard2.conf ]; then \
 		${CP} -p ${PREFIX}/etc/barnyard2.conf.sample ${PREFIX}/etc/barnyard2.conf; \
 	fi
