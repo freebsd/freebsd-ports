@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
 			--libdir=${LOCALBASE}/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -39,7 +39,6 @@ BROKEN=		Does not install on arm: mtree
 .endif
 
 CFLAGS=		-O1
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	STDCCFLAGS+="-I${LOCALBASE}"
 CPPFLAGS+=	-O1 -I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -146,12 +145,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l
 .else
 CONFIGURE_ARGS+=--disable-v4l
 PLIST_SUB+=	V4L="@comment "
-.endif
-
-post-patch:
-.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
-	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' \
-		${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
 .endif
 
 .include <bsd.port.post.mk>

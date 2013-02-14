@@ -25,7 +25,7 @@ CXXFLAGS+=	-fno-rtti
 LDFLAGS+=	-lclangFrontendTool -lclangFrontend -lclangDriver -lclangSerialization \
 		-lclangCodeGen -lclangParse -lclangSema -lclangStaticAnalyzerCheckers \
 		-lclangStaticAnalyzerCore -lclangAnalysis -lclang -lclangAST -lclangLex \
-		-lclangBasic -ledit -lm ${PTHREAD_LIBS}
+		-lclangBasic -ledit -lm
 
 PLIST_FILES=	bin/ccons
 

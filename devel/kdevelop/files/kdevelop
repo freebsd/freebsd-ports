@@ -2,6 +2,6 @@
 
 export PATH=%%LOCALBASE%%/gnu-autotools/bin:${PATH}
 export ACLOCAL_FLAGS="-I %%LOCALBASE%%/share/aclocal ${ACLOCAL_FLAGS}"
-export PTHREAD_LIBS=%%PTHREAD_LIBS%%
+export PTHREAD_LIBS="-pthread"
 
 exec "%%PREFIX%%/bin/kdevelop-bin" "$@"

@@ -36,8 +36,6 @@ PLIST_SUB+=		OPENSSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB+=		THREADS=""
 .else
 CONFIGURE_ARGS+=	--disable-thread-support

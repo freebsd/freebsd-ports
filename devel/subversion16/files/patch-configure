@@ -42,15 +42,3 @@
                    ac_ext=cpp
  ac_cpp='$CXXCPP $CPPFLAGS'
  ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -23801,7 +23801,10 @@
- 
- 
- if test "$RUBY" != "none"; then
--  if "$RUBY" -r mkmf -e 'exit(have_func("rb_hash_foreach") ? 0 : 1)'; then
-+  if [ -z "$PTHREAD_LIBS" ]; then
-+    PTHREAD_LIBS=-pthread
-+  fi
-+  if "$RUBY" -r mkmf -e 'with_ldflags("'"$PTHREAD_LIBS"'") { exit(have_func("rb_hash_foreach") ? 0 : 1) }'; then
-     # Extract the first word of "rdoc", so it can be a program name with args.
- set dummy rdoc; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5

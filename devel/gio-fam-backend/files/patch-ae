@@ -19,12 +19,3 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -25631,6 +25634,8 @@ fi
-          ;;
-     esac
-   fi
-+  G_THREAD_CFLAGS="${PTHREAD_CFLAGS}"
-+  G_THREAD_LIBS="${PTHREAD_LIBS}"
- 
-   if test x"$G_THREAD_CFLAGS" = x; then
- 

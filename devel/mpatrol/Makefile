@@ -22,8 +22,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LDCONFIG=	yes
 
 USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		hexwords.1 mleak.1 mpatrol.1 mprof.1 \
 		mpsym.1 mptrace.1 mpedit.1

@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	SDL	"Enable SDL support" On \
 		ALLEGRO	"Enable Allegro support" Off \

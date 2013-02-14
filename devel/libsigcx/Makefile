@@ -22,8 +22,6 @@ USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

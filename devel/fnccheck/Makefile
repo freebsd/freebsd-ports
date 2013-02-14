@@ -21,8 +21,8 @@ AUTOMAKE_ARGS=	--force-missing --add-missing --foreign
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 STRIP=		# none
 

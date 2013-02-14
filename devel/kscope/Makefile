@@ -26,8 +26,6 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
-LDFLAGS+=	${PTHREAD_LIBS}
-CXXFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=--with-extra-includes=${LOCALBASE}/include \
 		--with-extra-libs=${LOCALBASE}/lib
 

@@ -20,9 +20,6 @@ LICENSE_COMB=	dual
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_search_pthread_create=""
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

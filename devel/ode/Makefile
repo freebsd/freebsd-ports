@@ -65,7 +65,7 @@ post-patch:
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
 		-e 's|CPPFLAGS+=" |CPPFLAGS="$$CPPFLAGS |' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \

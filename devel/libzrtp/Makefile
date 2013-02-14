@@ -51,7 +51,6 @@ post-patch:
 	@cd ${PATCH_WRKSRC}/src && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \; && \
 			${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<stdint.h>|<inttypes.h>|g" "{}" \;
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 test:
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/projects/gnu && make check

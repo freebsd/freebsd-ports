@@ -34,8 +34,8 @@ CONFIGURE_ARGS=	--enable-openssl \
 		--disable-howl \
 		--with-hal-mount=/sbin/mount \
 		--with-hal-umount=/sbin/umount
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DPTHREAD_LIB="${PTHREAD_LIBS}"
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -80,8 +80,6 @@ CONFIGURE_ARGS+=--disable-avahi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@PTHREAD_LIB@|${PTHREAD_LIBS}|' \
-		${WRKSRC}/gnome-vfs-2.0.pc.in ${WRKSRC}/gnome-vfs-module-2.0.pc.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \

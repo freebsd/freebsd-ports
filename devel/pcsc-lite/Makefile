@@ -25,8 +25,6 @@ USE_GNOME=	gnomehack pkgconfig
 USE_RC_SUBR=	pcscd
 
 USE_LDCONFIG=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

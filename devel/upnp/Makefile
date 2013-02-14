@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV+=	PTHREAD_LIBS="-pthread"
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

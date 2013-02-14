@@ -32,7 +32,7 @@ MAKE_JOBS_SAFE=	yes
 CONFLICTS=	json-c-[0-9]*
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,boost_thread,boost_thread ${PTHREAD_LIBS},g" \
+	@${REINPLACE_CMD} -e "s,boost_thread,boost_thread,g" \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

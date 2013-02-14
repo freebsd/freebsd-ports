@@ -23,7 +23,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 MAKE_JOBS_SAFE=	yes
 
@@ -33,7 +33,7 @@ post-extract:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|-lpthread|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
