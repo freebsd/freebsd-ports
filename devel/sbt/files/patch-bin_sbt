@@ -1,11 +1,6 @@
---- bin/sbt.orig	2012-09-18 09:35:52.000000000 +0200
-+++ bin/sbt	2012-09-18 09:37:14.000000000 +0200
-@@ -1,11 +1,11 @@
- #!/usr/bin/env bash
- 
--. $(dirname $0)/sbt-launch-lib.bash
-+. %%PREFIX%%/share/sbt/sbt-launch-lib.bash
- 
+--- bin/sbt.orig	2013-01-18 19:54:47.000000000 +0100
++++ bin/sbt	2013-02-14 21:48:47.000000000 +0100
+@@ -25,7 +25,7 @@ realpath () {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
@@ -14,7 +9,7 @@
  
  usage() {
   cat <<EOM
-@@ -39,7 +39,7 @@
+@@ -59,7 +59,7 @@ Usage: $script_name [options]
    SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
    .sbtopts           if this file exists in the current directory, it is
                       prepended to the runner args
