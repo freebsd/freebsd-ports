@@ -237,6 +237,8 @@
     SUBDIR += mysql51-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-server
+    SUBDIR += mysql56-client
+    SUBDIR += mysql56-server
     SUBDIR += mysqlard
     SUBDIR += mysqlbackup
     SUBDIR += mysqlcppapi
