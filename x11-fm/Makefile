@@ -12,7 +12,6 @@
     SUBDIR += emelfm2
     SUBDIR += ezfm
     SUBDIR += filerunner
-    SUBDIR += fsv
     SUBDIR += gentoo
     SUBDIR += gnome-commander2
     SUBDIR += gprename
