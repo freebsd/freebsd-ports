@@ -3,17 +3,17 @@
 
 PORTNAME=	robotframework
 PORTVERSION=	2.7.5
+PORTREVISION=	1
 CATEGORIES=	devel www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.ru
-COMMENT=	Robot Framework is a generic test automation framework
+MAINTAINER=	Vladimir.Chukharev@gmail.com
+COMMENT=	Generic test automation framework
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6c11:${PORTSDIR}/devel/py-setuptools
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 .include <bsd.port.mk>
