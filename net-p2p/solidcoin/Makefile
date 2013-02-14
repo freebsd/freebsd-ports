@@ -9,7 +9,7 @@ MASTER_SITES=	http://solidcoin.info/downloads/ \
 		http://dl.dropbox.com/u/47582909/
 DISTNAME=	${PORTNAME}-source-2041
 
-MAINTAINER=	earl1k@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
 
 BROKEN=		Does not build
