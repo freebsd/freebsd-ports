@@ -1349,7 +1349,6 @@ www/glpi/lib/ezpdf/class.pdf.php
 www/glpi/lib/ezpdf/fonts/Helvetica.afm
 www/glpi/lib/ezpdf/fonts/php_Helvetica.afm
 www/glpi/lib/htmlawed/htmLawed.php
-www/glpi/lib/icalcreator/iCalUtilityFunctions.class.php
 www/glpi/lib/icalcreator/iCalcreator.class.php
 www/glpi/lib/icalcreator/lgpl.txt
 www/glpi/lib/index.php
