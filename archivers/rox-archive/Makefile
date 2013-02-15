@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-archive
-PORTVERSION=	2.2
-PORTREVISION=	3
+PORTVERSION=	2.3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/rox/Archive/${PORTVERSION}
 DISTNAME=	archive-${PORTVERSION}
@@ -16,9 +15,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
-
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
@@ -26,7 +22,7 @@ do-build:
 pre-install:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 				${WRKSRC}/Archive/findrox.py
-	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name *.bak -delete
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps
