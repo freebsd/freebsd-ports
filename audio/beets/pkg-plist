@@ -1,0 +1,62 @@
+bin/beet
+%%PYTHON_SITELIBDIR%%/beetsplug/zero.py
+%%PYTHON_SITELIBDIR%%/beetsplug/web/templates/index.html
+%%PYTHON_SITELIBDIR%%/beetsplug/web/static/underscore.js
+%%PYTHON_SITELIBDIR%%/beetsplug/web/static/jquery.js
+%%PYTHON_SITELIBDIR%%/beetsplug/web/static/beets.js
+%%PYTHON_SITELIBDIR%%/beetsplug/web/static/beets.css
+%%PYTHON_SITELIBDIR%%/beetsplug/web/static/backbone.js
+%%PYTHON_SITELIBDIR%%/beetsplug/web/__init__.py
+%%PYTHON_SITELIBDIR%%/beetsplug/the.py
+%%PYTHON_SITELIBDIR%%/beetsplug/scrub.py
+%%PYTHON_SITELIBDIR%%/beetsplug/rewrite.py
+%%PYTHON_SITELIBDIR%%/beetsplug/replaygain.py
+%%PYTHON_SITELIBDIR%%/beetsplug/rdm.py
+%%PYTHON_SITELIBDIR%%/beetsplug/mpdupdate.py
+%%PYTHON_SITELIBDIR%%/beetsplug/mbcollection.py
+%%PYTHON_SITELIBDIR%%/beetsplug/lyrics.py
+%%PYTHON_SITELIBDIR%%/beetsplug/lastgenre/genres.txt
+%%PYTHON_SITELIBDIR%%/beetsplug/lastgenre/genres-tree.yaml
+%%PYTHON_SITELIBDIR%%/beetsplug/lastgenre/__init__.py
+%%PYTHON_SITELIBDIR%%/beetsplug/inline.py
+%%PYTHON_SITELIBDIR%%/beetsplug/info.py
+%%PYTHON_SITELIBDIR%%/beetsplug/importfeeds.py
+%%PYTHON_SITELIBDIR%%/beetsplug/ihate.py
+%%PYTHON_SITELIBDIR%%/beetsplug/fuzzy_search.py
+%%PYTHON_SITELIBDIR%%/beetsplug/fetchart.py
+%%PYTHON_SITELIBDIR%%/beetsplug/embedart.py
+%%PYTHON_SITELIBDIR%%/beetsplug/echonest_tempo.py
+%%PYTHON_SITELIBDIR%%/beetsplug/convert.py
+%%PYTHON_SITELIBDIR%%/beetsplug/chroma.py
+%%PYTHON_SITELIBDIR%%/beetsplug/bpd/gstplayer.py
+%%PYTHON_SITELIBDIR%%/beetsplug/bpd/__init__.py
+%%PYTHON_SITELIBDIR%%/beetsplug/bench.py
+%%PYTHON_SITELIBDIR%%/beetsplug/__init__.py
+%%PYTHON_SITELIBDIR%%/beets/vfs.py
+%%PYTHON_SITELIBDIR%%/beets/util/pipeline.py
+%%PYTHON_SITELIBDIR%%/beets/util/functemplate.py
+%%PYTHON_SITELIBDIR%%/beets/util/enumeration.py
+%%PYTHON_SITELIBDIR%%/beets/util/bluelet.py
+%%PYTHON_SITELIBDIR%%/beets/util/artresizer.py
+%%PYTHON_SITELIBDIR%%/beets/util/__init__.py
+%%PYTHON_SITELIBDIR%%/beets/ui/commands.py
+%%PYTHON_SITELIBDIR%%/beets/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/beets/plugins.py
+%%PYTHON_SITELIBDIR%%/beets/mediafile.py
+%%PYTHON_SITELIBDIR%%/beets/library.py
+%%PYTHON_SITELIBDIR%%/beets/importer.py
+%%PYTHON_SITELIBDIR%%/beets/autotag/mb.py
+%%PYTHON_SITELIBDIR%%/beets/autotag/match.py
+%%PYTHON_SITELIBDIR%%/beets/autotag/hooks.py
+%%PYTHON_SITELIBDIR%%/beets/autotag/__init__.py
+%%PYTHON_SITELIBDIR%%/beets/__init__.py
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug/web/templates
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug/web/static
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug/web
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug/lastgenre
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug/bpd
+@dirrmtry %%PYTHON_SITELIBDIR%%/beetsplug
+@dirrmtry %%PYTHON_SITELIBDIR%%/beets/util
+@dirrmtry %%PYTHON_SITELIBDIR%%/beets/ui
+@dirrmtry %%PYTHON_SITELIBDIR%%/beets/autotag
+@dirrmtry %%PYTHON_SITELIBDIR%%/beets
