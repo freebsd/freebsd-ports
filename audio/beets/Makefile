@@ -8,13 +8,13 @@ CATEGORIES=	audio python
 MAINTAINER=	feld@feld.me
 COMMENT=	A media library management system for obsessive-compulsive music geeks
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:${PORTSDIR}/converters/py-unidecode \
 		${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0:${PORTSDIR}/audio/py-musicbrainzngs \
 		${PYTHON_PKGNAMEPREFIX}munkres>=0:${PORTSDIR}/math/py-munkres
 
 USE_PYTHON=	2.7+
+USE_PYDISTUTILS=	easy_install
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sampsyo
