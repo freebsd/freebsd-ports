@@ -105,6 +105,12 @@ JAVA_DESC=	Add java support (XML Filters, macros)
 
 ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
 
+.if defined(DISABLE_MAKE_JOBS)
+MAKE_JOBS_NUMBER=	1
+.else
+MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
+.endif
+
 CONFIGURE_ENV=		BDB_INCLUDE_DIR=${BDB_INCLUDE_DIR} \
 			BDB_LIB_DIR=${BDB_LIB_DIR} \
 			BDB_LIB_NAME=${BDB_LIB_NAME} \
@@ -121,6 +127,7 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--exec-prefix=${PREFIX} \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
+			--with-num-cpus=${MAKE_JOBS_NUMBER} \
 			--with-solver-and-workdir-root=${TMPDIR}/lobuild \
 			--with-system-boost \
 			--with-system-clucene \
