@@ -13,6 +13,9 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	no longer supported by upstream
+EXPIRATION_DATE=	2013-03-15
+
 CONFLICTS=	${PKGBASE}-1.[0-6]*
 
 .if ${PKGNAMESUFFIX} != "-agent"
