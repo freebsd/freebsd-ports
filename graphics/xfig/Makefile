@@ -28,6 +28,7 @@ USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 MAN1=		xfig.1
 MANCOMPRESSED=	yes
+USE_GCC=	any
 
 MAKE_ENV+=	DOCSDIR=${DOCSDIR} CHMOD=${CHMOD} TAR=${TAR}
 MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
