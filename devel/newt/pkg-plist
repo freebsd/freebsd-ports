@@ -1,167 +1,117 @@
-%%PORTEXAMPLES%%%%PYTHONOPT%%%%EXAMPLESDIR%%/peanuts.py
-%%PORTEXAMPLES%%%%PYTHONOPT%%%%EXAMPLESDIR%%/popcorn.py
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snack.so
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snackmodule.so
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/newt-%%VERSION%%-py%%PYNUM%%.egg-info
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.py
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.pyc
-%%TCLOPT%%lib/tcl%%TCL_VER%%/whip/pkgIndex.tcl
-%%TCLOPT%%lib/tcl%%TCL_VER%%/whip/whiptcl.so
 bin/whiptail
 include/newt.h
 lib/libnewt.a
 lib/libnewt.so
 lib/libnewt.so.%%SOVERSION%%
 lib/libnewt.so.%%VERSION%%
+%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snack.so
+%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snackmodule.so
+%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.py
+%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.pyc
+%%TCLOPT%%%%TCL_LIBDIR%%/whip/pkgIndex.tcl
+%%TCLOPT%%%%TCL_LIBDIR%%/whip/whiptcl.so
 libdata/pkgconfig/libnewt.pc
-share/locale/ar/LC_MESSAGES/newt.mo
-share/locale/as/LC_MESSAGES/newt.mo
-share/locale/ast/LC_MESSAGES/newt.mo
-share/locale/bal/LC_MESSAGES/newt.mo
-share/locale/bg/LC_MESSAGES/newt.mo
-share/locale/bn/LC_MESSAGES/newt.mo
-share/locale/bn_IN/LC_MESSAGES/newt.mo
-share/locale/bs/LC_MESSAGES/newt.mo
-share/locale/ca/LC_MESSAGES/newt.mo
-share/locale/cs/LC_MESSAGES/newt.mo
-share/locale/cy/LC_MESSAGES/newt.mo
-share/locale/da/LC_MESSAGES/newt.mo
-share/locale/de/LC_MESSAGES/newt.mo
-share/locale/dz/LC_MESSAGES/newt.mo
-share/locale/el/LC_MESSAGES/newt.mo
-share/locale/eo/LC_MESSAGES/newt.mo
-share/locale/es/LC_MESSAGES/newt.mo
-share/locale/et/LC_MESSAGES/newt.mo
-share/locale/eu/LC_MESSAGES/newt.mo
-share/locale/fi/LC_MESSAGES/newt.mo
-share/locale/fr/LC_MESSAGES/newt.mo
-share/locale/ga/LC_MESSAGES/newt.mo
-share/locale/gl/LC_MESSAGES/newt.mo
-share/locale/gu/LC_MESSAGES/newt.mo
-share/locale/he/LC_MESSAGES/newt.mo
-share/locale/hi/LC_MESSAGES/newt.mo
-share/locale/hr/LC_MESSAGES/newt.mo
-share/locale/hu/LC_MESSAGES/newt.mo
-share/locale/id/LC_MESSAGES/newt.mo
-share/locale/it/LC_MESSAGES/newt.mo
-share/locale/ja/LC_MESSAGES/newt.mo
-share/locale/km/LC_MESSAGES/newt.mo
-share/locale/kn/LC_MESSAGES/newt.mo
-share/locale/ko/LC_MESSAGES/newt.mo
-share/locale/ku/LC_MESSAGES/newt.mo
-share/locale/lt/LC_MESSAGES/newt.mo
-share/locale/mg/LC_MESSAGES/newt.mo
-share/locale/mk/LC_MESSAGES/newt.mo
-share/locale/ml/LC_MESSAGES/newt.mo
-share/locale/mr/LC_MESSAGES/newt.mo
-share/locale/ms/LC_MESSAGES/newt.mo
-share/locale/nb/LC_MESSAGES/newt.mo
-share/locale/ne/LC_MESSAGES/newt.mo
-share/locale/nl/LC_MESSAGES/newt.mo
-share/locale/nn/LC_MESSAGES/newt.mo
-share/locale/pa/LC_MESSAGES/newt.mo
-share/locale/pl/LC_MESSAGES/newt.mo
-share/locale/pt/LC_MESSAGES/newt.mo
-share/locale/pt_BR/LC_MESSAGES/newt.mo
-share/locale/ro/LC_MESSAGES/newt.mo
-share/locale/ru/LC_MESSAGES/newt.mo
-share/locale/sk/LC_MESSAGES/newt.mo
-share/locale/sl/LC_MESSAGES/newt.mo
-share/locale/sq/LC_MESSAGES/newt.mo
-share/locale/sr/LC_MESSAGES/newt.mo
-share/locale/sr@latin/LC_MESSAGES/newt.mo
-share/locale/sv/LC_MESSAGES/newt.mo
-share/locale/ta/LC_MESSAGES/newt.mo
-share/locale/te/LC_MESSAGES/newt.mo
-share/locale/th/LC_MESSAGES/newt.mo
-share/locale/tl/LC_MESSAGES/newt.mo
-share/locale/tr/LC_MESSAGES/newt.mo
-share/locale/uk/LC_MESSAGES/newt.mo
-share/locale/vi/LC_MESSAGES/newt.mo
-share/locale/wo/LC_MESSAGES/newt.mo
-share/locale/xh/LC_MESSAGES/newt.mo
-share/locale/zh_CN/LC_MESSAGES/newt.mo
-share/locale/zh_TW/LC_MESSAGES/newt.mo
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/wo/LC_MESSAGES
-@dirrmtry share/locale/wo
-@dirrmtry share/locale/vi
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/tl/LC_MESSAGES
-@dirrmtry share/locale/tl
-@dirrmtry share/locale/th
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/ta
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sq
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/pa
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/nb
-@dirrmtry share/locale/ms
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ml
-@dirrmtry share/locale/mk
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/lt
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/kn
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/it
-@dirrmtry share/locale/id
-@dirrmtry share/locale/hu
-@dirrmtry share/locale/hr
-@dirrmtry share/locale/hi
-@dirrmtry share/locale/he
-@dirrmtry share/locale/gu
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/ga
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/eu
-@dirrmtry share/locale/et
-@dirrmtry share/locale/es
-@dirrmtry share/locale/eo
-@dirrmtry share/locale/el
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/de
-@dirrmtry share/locale/da
-@dirrmtry share/locale/cy
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/bs
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/bn
-@dirrmtry share/locale/bg
-@dirrmtry share/locale/bal/LC_MESSAGES
-@dirrmtry share/locale/bal
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/ar
-%%PORTEXAMPLES%%%%PYTHONOPT%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/peanuts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/popcorn.py
+%%NLS%%share/locale/ar/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/as/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/bal/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/da/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/de/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/el/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/es/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/et/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/he/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/id/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/it/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/km/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/mg/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/te/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/th/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/wo/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/xh/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/newt.mo
+%%NLS%%@dirrmtry share/locale/xh/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/xh
+%%NLS%%@dirrmtry share/locale/wo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/wo
+%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nds
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/mg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mg
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/bal/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bal
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/as
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%TCLOPT%%@dirrm %%TCL_LIBDIR%%/whip
