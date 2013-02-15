@@ -1,0 +1,38 @@
+include/bsm/audit.h
+include/bsm/audit_domain.h
+include/bsm/audit_errno.h
+include/bsm/audit_fcntl.h
+include/bsm/audit_filter.h
+include/bsm/audit_internal.h
+include/bsm/audit_kevents.h
+include/bsm/audit_record.h
+include/bsm/audit_socket_type.h
+include/bsm/audit_uevents.h
+include/bsm/auditd_lib.h
+include/bsm/libbsm.h
+lib/auditfilter_noop.a
+lib/auditfilter_noop.la
+lib/auditfilter_noop.so
+lib/auditfilter_noop.so.0
+lib/libauditd.a
+lib/libauditd.la
+lib/libauditd.so
+lib/libauditd.so.0
+lib/libbsm.a
+lib/libbsm.la
+lib/libbsm.so
+lib/libbsm.so.0
+sbin/audit
+sbin/auditd
+sbin/auditdistd
+sbin/auditfilterd
+sbin/auditreduce
+sbin/praudit
+@dirrm include/bsm
+@cwd /
+@exec mkdir -m 0770 var/audit/dist
+@exec mkdir -m 0700 var/audit/remote
+@exec chown %%USERS%%:%%GROUPS var/audit/dist
+@exec chown %%USERS%%:wheel var/audit/remote
+@unexec rmdir var/audit/dist 2>/dev/null || true
+@unexec rmdir var/audit/remote 2>/dev/null || true

@@ -344,6 +344,7 @@
     SUBDIR += oinkmaster
     SUBDIR += op
     SUBDIR += openbsm
+    SUBDIR += openbsm-devel
     SUBDIR += opencdk
     SUBDIR += openconnect
     SUBDIR += opencryptoki
