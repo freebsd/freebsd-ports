@@ -8,4 +8,4 @@ modes: hex (binary) and ASCII (text).
 Heme uses standard curses library for screen and input handling, and offers
 colors support (they can be set in the configuration file).
 
-WWW: http://sourceforge.net/projects/heme/
+WWW: http://heme.sourceforge.net/
