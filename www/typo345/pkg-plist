@@ -1701,7 +1701,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/insert4.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/insert5.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/installbackground.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/installlogo.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/legend.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/lightning.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/lightning_green.png
@@ -2270,7 +2269,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableleft.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableright.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableup.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/typo3.pageModule.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/locallang_csh_webinfo.xml
@@ -3990,6 +3988,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/HMAC.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/Interface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/KVForm.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MDB2Store.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MemcachedStore.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/Message.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MySQLStore.php
