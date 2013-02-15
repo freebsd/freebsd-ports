@@ -32,7 +32,9 @@ OPTIONS_DEFINE=	DOXYGEN
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 CONFIGURE_ARGS+=--enable-doc
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+USE_GNOME+=	libxslt
 PORTDOCS=	*
 .else
 CONFIGURE_ARGS+=--disable-doc
