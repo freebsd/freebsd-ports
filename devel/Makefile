@@ -3387,6 +3387,7 @@
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
+    SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-cclib
