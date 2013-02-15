@@ -832,6 +832,7 @@
 %%WWWDIR%%/include/Smarty/plugins/modifier.escape.php
 %%WWWDIR%%/include/Smarty/plugins/modifier.in_array.php
 %%WWWDIR%%/include/Smarty/plugins/modifier.indent.php
+%%WWWDIR%%/include/Smarty/plugins/modifier.json.php
 %%WWWDIR%%/include/Smarty/plugins/modifier.lookup.php
 %%WWWDIR%%/include/Smarty/plugins/modifier.lower.php
 %%WWWDIR%%/include/Smarty/plugins/modifier.multienum_to_ac.php
@@ -1189,6 +1190,12 @@
 %%WWWDIR%%/include/SugarTheme/cssmin.php
 %%WWWDIR%%/include/SugarTheme/getImage.php
 %%WWWDIR%%/include/SugarTinyMCE.php
+%%WWWDIR%%/include/SugarXHprof/SugarXHprof.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/display/xhprof.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/display/typeahead_common.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/xhprof_lib.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/callgraph_utils.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/xhprof_runs.php
 %%WWWDIR%%/include/Sugar_Smarty.php
 %%WWWDIR%%/include/Sugarpdf/FontManager.php
 %%WWWDIR%%/include/Sugarpdf/Sugarpdf.php
@@ -7734,6 +7741,10 @@
 @dirrm %%WWWDIR%%/include/SugarObjects
 @dirrm %%WWWDIR%%/include/SugarQueue
 @dirrm %%WWWDIR%%/include/SugarTheme
+@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib/display
+@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils
+@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib
+@dirrm %%WWWDIR%%/include/SugarXHprof
 @dirrm %%WWWDIR%%/include/Sugarpdf/sugarpdf
 @dirrm %%WWWDIR%%/include/Sugarpdf
 @dirrm %%WWWDIR%%/include/TemplateHandler
