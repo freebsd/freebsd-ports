@@ -2,26 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	subliminal
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	william88@gmail.com
-COMMENT=	Subliminal is a python library to search and download subtitles
+COMMENT=	Python library to search and download subtitles
 
 LICENSE=	LGPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}enzyme>0:${PORTSDIR}/multimedia/py-enzyme \
 		${PYTHON_PKGNAMEPREFIX}guessit>0:${PORTSDIR}/multimedia/py-guessit \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}requests<1:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%% bin/subliminal
+PLIST_FILES=	bin/subliminal \
+		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.pre.mk>
 
