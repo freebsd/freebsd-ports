@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-frontend
 
 MASTERDIR=	${.CURDIR}/../zabbix2-server
@@ -12,7 +12,7 @@ PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
-		xmlreader xmlwriter simplexml
+		xmlreader xmlwriter simplexml gettext
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 
