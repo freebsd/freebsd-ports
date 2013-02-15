@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
@@ -73,7 +73,8 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:src
+DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:src \
+		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src
 
 USE_AUTOTOOLS=	autoconf aclocal
 USE_BDB=	yes
@@ -174,7 +175,6 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-nsplugin \
 			--disable-linkoo \
 			--disable-online-update \
-			--disable-xmlsec \
 			--with-system-gettext \
 			--with-system-libpng \
 			--disable-gnome-vfs \
