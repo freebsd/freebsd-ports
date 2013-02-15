@@ -31,7 +31,9 @@ USE_LDCONFIG=	yes
 
 MAN1=		netpbm.1
 
-.if defined(WITH_X11)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 MAKE_ENV+=	WITH_X11="${WITH_X11}"
 PLIST_SUB+=	X11=''
@@ -67,8 +69,8 @@ post-install:
 	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
 		${WRKSRC}/doc/netpbm.1
 	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}/
 .endif
 
