@@ -18,7 +18,7 @@ rcvar=ptpd2_enable
 
 command="%%PREFIX%%/sbin/${name}"
 
-ptpd_enable=${ptpd2_enable:-"NO"}
+ptpd2_enable=${ptpd2_enable:-"NO"}
 
 load_rc_config $name
 run_rc_command "$1"
