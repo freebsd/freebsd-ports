@@ -143,6 +143,7 @@
     SUBDIR += libXScrnSaver
     SUBDIR += libXTrap
     SUBDIR += libXau
+    SUBDIR += libXcm
     SUBDIR += libXcomposite
     SUBDIR += libXcursor
     SUBDIR += libXdamage
