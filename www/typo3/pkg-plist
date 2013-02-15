@@ -2549,7 +2549,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Display/PagesViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Display/SysFileMountsViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Display/SysLanguageViewHelper.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Form/SelectDefaultValueViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/IssueCommandViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/SectionViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/SpriteIconForRecordViewHelper.php
@@ -3103,7 +3102,9 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/ProcessedFileRepositoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Repository/AbstractRepositoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/ResourceStorageTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Service/FrontendContentAdapterServiceTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Service/IndexerServiceTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/StorageRepositoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Utility/FileExtensionFilterTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Tree/TableConfiguration/TreeDataProviderFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/TypoScript/TemplateServiceTest.php
@@ -3701,6 +3702,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Controller/DownloadController.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Controller/ListController.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Controller/UpdateFromTerController.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Controller/UpdateScriptController.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Controller/UploadExtensionFileController.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Domain/Model/ConfigurationCategory.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Domain/Model/ConfigurationItem.php
@@ -3740,6 +3742,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Utility/Parser/MirrorXmlPushParser.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Utility/Parser/XmlParserFactory.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Utility/Repository/Helper.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/Utility/UpdateScriptUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/Be/ContainerViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/ConfigureExtensionViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/DownloadExtensionDataViewHelper.php
@@ -3753,6 +3756,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/ShowExtensionVersionsViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/ToggleExtensionInstallationStateViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/UpdateFromTerViewHelper.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Classes/ViewHelpers/UpdateScriptViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Configuration/TCA/Extension.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Configuration/TCA/Repository.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Migrations/Code/ClassAliasMap.php
@@ -3783,6 +3787,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/List/Ter.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/List/Ter.json
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UpdateFromTer/UpdateExtensionListFromTer.json
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UpdateScript/Show.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UploadExtensionFile/Extract.json
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UploadExtensionFile/Form.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Contrib/Farbtastic/LICENSE.txt
@@ -3793,6 +3798,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Contrib/LoadMask/jquery.loadmask.min.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Css/README.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Css/main.css
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images/Icons/ExtensionUpdateScript.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images/ui-bg_flat_75_ffffff_40x100.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -4770,7 +4776,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_icon.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_localconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/ext_tables.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/Authentication/FrontendUserAuthtenication.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/Authentication/FrontendUserAuthentication.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/AbstractContentObject.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/frontend/Classes/ContentObject/CaseContentObject.php
@@ -5240,7 +5246,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Classes/View/Language/CheckTranslationJson.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Classes/View/Language/UpdateTranslationJson.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Classes/ViewHelpers/Be/ContainerViewHelper.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Classes/ViewHelpers/Be/FormEngineBasedCheckboxGroupViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Classes/ViewHelpers/Be/SpriteIconViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Migrations/Code/ClassAliasMap.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/Resources/Private/.htaccess
@@ -10208,6 +10213,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/JavaScript
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images/Icons
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Images
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Css
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Contrib/LoadMask
@@ -10215,6 +10221,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/Contrib
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UploadExtensionFile
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UpdateScript
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/UpdateFromTer
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/List
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Private/Templates/Download
@@ -10550,7 +10557,6 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Resources
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Configuration/TypoScript
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Configuration
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Form
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers/Display
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/ViewHelpers
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/beuser/Classes/Service
