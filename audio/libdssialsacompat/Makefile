@@ -4,7 +4,7 @@
 PORTNAME=	libdssialsacompat
 PORTVERSION=	1.0.8a
 CATEGORIES=	audio
-MASTER_SITES=	http://www.smbolton.com/linux/
+MASTER_SITES=	http://smbolton.com/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alsa compatibility library to build DSSI
