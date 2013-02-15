@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	security
 
 MAINTAINER=	pauls@utdallas.edu
@@ -11,9 +11,8 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firnsy
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v2-${PORTVERSION}
-GH_COMMIT=	4dfdc80
+GH_COMMIT=	3c1f553
 
 OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL
 NO_OPTIONS_SORT=yes
@@ -62,7 +61,7 @@ CONFIGURE_ARGS+=	--disable-aruba
 .endif
 
 .if ${PORT_OPTIONS:MBRO}
-BROKEN=			Will not compile until bro update is committed - deselect this option
+BROKEN=			Bro port is in transition right now, so this is not supported at this time
 BUILD_DEPENDS+=		bro:${PORTSDIR}/security/bro-barnyard2
 CONFIGURE_ARGS+=	--enable-bro --with-broccoli=${LOCALBASE}/lib
 .else
