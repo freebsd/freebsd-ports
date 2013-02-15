@@ -12,10 +12,10 @@ COMMENT=	Bindings for Chromaprint acoustic fingerprinting and the Acoustid API
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools
 LIB_DEPENDS=	chromaprint:${PORTSDIR}/audio/chromaprint
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/acoustid.py \
 		%%PYTHON_SITELIBDIR%%/chromaprint.py
 
