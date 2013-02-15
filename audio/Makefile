@@ -406,6 +406,7 @@
     SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
+    SUBDIR += libxmp
     SUBDIR += lingot
     SUBDIR += linnya
     SUBDIR += linux-alsa-lib
