@@ -610,6 +610,7 @@
     SUBDIR += pure-audio
     SUBDIR += py-ao
     SUBDIR += py-apetag
+    SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
