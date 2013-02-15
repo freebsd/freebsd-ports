@@ -1,12 +1,8 @@
-# New ports collection makefile for:	slony1
-# Date created:		20 Jun 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.1/source/
 DISTNAME=	slony1-${PORTVERSION}
@@ -36,9 +32,7 @@ CONFLICTS?=	slony1-1*
 
 .include <bsd.port.pre.mk>
 
-IGNORE_WITH_PGSQL=	82
-
-CONFIGURE_ENV=	FLEX=${LOCALBASE}/bin/flex
+CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 
 .if ${PORT_OPTIONS:MPERLTOOLS}
 USE_PERL5=	yes
@@ -80,12 +74,17 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 PORTDOCS=	*
 .endif
 
+DOCS=		COPYRIGHT HISTORY-1.1 INSTALL README README.Unicode RELEASE \
+		RELEASE-2.0 SAMPLE TODO UPGRADING
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/adminguide
 	@${MKDIR} ${DOCSDIR}/howto
-	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
+.for FILE in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	@${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
 .endif
