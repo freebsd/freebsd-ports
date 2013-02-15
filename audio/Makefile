@@ -65,6 +65,7 @@
     SUBDIR += beast
     SUBDIR += bebocd
     SUBDIR += beep
+    SUBDIR += beets
     SUBDIR += blop
     SUBDIR += bmp-crossfade
     SUBDIR += bmp-faad
