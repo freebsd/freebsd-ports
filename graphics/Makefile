@@ -356,6 +356,7 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
+    SUBDIR += icc-profiles-openicc
     SUBDIR += icoconvert
     SUBDIR += icon-slicer
     SUBDIR += icontact
