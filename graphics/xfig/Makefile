@@ -9,7 +9,7 @@ PORTNAME=	xfig
 PORTVERSION=	3.2.5b
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/mcj/mcj_dist_src/3.0/
+MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	mjl@luckie.org.nz
