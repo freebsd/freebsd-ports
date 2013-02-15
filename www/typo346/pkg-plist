@@ -1747,7 +1747,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/insert4.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/insert5.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/installbackground.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/installlogo.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/legend.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/lightning.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/gfx/lightning_green.png
@@ -2321,7 +2320,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableleft.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableright.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/t3grid-tableup.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/res/typo3.pageModule.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/layout/wizard_backend_layout.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/locallang_csh_webinfo.xlf
@@ -3280,6 +3278,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/MVC/Web/Routing/UriBuilderTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/ClassInfoFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/ContainerTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/Fixtures/NamespaceTestclasses.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Object/Container/Fixtures/Testclasses.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/Mapper/DataMapFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Unit/Persistence/ObjectStorageTest.php
@@ -3523,6 +3522,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Classes/ViewHelpers/Widget/PaginateViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Classes/ViewHelpers/Widget/UriViewHelper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Configuration/TypoScript/setup.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Language/locallang.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Templates/ViewHelpers/Widget/Autocomplete/Index.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Templates/ViewHelpers/Widget/Paginate/Index.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/Core/Fixtures/TestViewHelper.php
@@ -4571,6 +4571,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/HMAC.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/Interface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/KVForm.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MDB2Store.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MemcachedStore.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/Message.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/openid/lib/php-openid/Auth/OpenID/MySQLStore.php
@@ -8589,6 +8590,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Templates/ViewHelpers/Widget
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Templates/ViewHelpers
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Templates
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private/Language
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources/Private
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Resources
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Configuration/TypoScript
