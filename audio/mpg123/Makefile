@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpg123
-# Date created:			25 June 1997
-# Whom:				Carey Jones <mcj@acquiesce.org>
-#
+# Created by: Carey Jones <mcj@acquiesce.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpg123
 PORTVERSION=	1.14.4
@@ -12,14 +8,15 @@ MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	Command-line player for mpeg layer 1, 2, and 3 audio
+COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
-USE_GNOME=	gnomehack ltverhack
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool libltdl
+USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
+USE_GCC=	any		# dumps core on amd64 if built with clang
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimization=0 \
@@ -29,7 +26,7 @@ CONFIGURE_ENV=	CONFIG_SHELL=${SH}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		mpg123.1
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +45,7 @@ WITH_CPU=	x86-64
 .endif
 
 .if defined(WITH_CPU)
-CONFIGURE_ARGS+=--with-cpu=${WITH_CPU}
+CONFIGURE_ARGS+=	--with-cpu=${WITH_CPU}
 .endif
 
 .include <bsd.port.post.mk>
