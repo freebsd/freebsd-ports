@@ -1,18 +1,16 @@
-# New ports collection makefile for:	rsplib
-# Date created:		2010-08-08
-# Whom:			Thomas Dreibholz <dreibh@iem.uni-due.de>
-#
+# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rsplib
-PORTVERSION=	2.7.13
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/ReliableServer/Downloads/
+MASTER_SITES=	http://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/ReliableServer/Downloads/ \
+		http://www.exp-math.uni-essen.de/~dreibh/rserpool/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	RSerPool Framework and Example Applications
+
+LICENSE=	GPLv3
 
 USE_QT4=	gui xml moc_build
 USE_GMAKE=	yes
@@ -22,27 +20,21 @@ CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--with-qt-include=${QT_INCDIR}
 USE_LDCONFIG=	yes
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-MAN8=		calcappclient.8 \
-		cspmonitor.8 \
-		fractalpooluser.8 \
-		hsdump.8 \
-		pingpongclient.8 \
-		registrar.8 \
-		scriptingclient.8 \
-		scriptingcontrol.8 \
-		scriptingserviceexample.8 \
-		server.8 \
-		terminal.8
+MAN1=		calcappclient.1 \
+		cspmonitor.1 \
+		fractalpooluser.1 \
+		hsdump.1 \
+		pingpongclient.1 \
+		registrar.1 \
+		rspregistrar.1 \
+		rspserver.1 \
+		rspterminal.1 \
+		scriptingclient.1 \
+		scriptingcontrol.1 \
+		scriptingserviceexample.1 \
+		server.1 \
+		terminal.1
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700028
-IGNORE=		requires sctp(4) support
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
