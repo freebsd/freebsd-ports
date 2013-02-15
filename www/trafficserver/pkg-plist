@@ -22,7 +22,6 @@
 @unexec if cmp %D/%%ETCDIR%%/storage.config %D/%%ETCDIR%%/storage.config.default; then rm %D/%%ETCDIR%%/storage.config; fi
 @unexec if cmp %D/%%ETCDIR%%/update.config %D/%%ETCDIR%%/update.config.default; then rm %D/%%ETCDIR%%/update.config; fi
 @unexec if cmp %D/%%ETCDIR%%/vaddrs.config %D/%%ETCDIR%%/vaddrs.config.default; then rm %D/%%ETCDIR%%/vaddrs.config; fi
-bin/trafficserver
 bin/traffic_cop
 bin/traffic_line
 bin/traffic_logcat
@@ -31,17 +30,29 @@ bin/traffic_manager
 bin/traffic_sac
 bin/traffic_server
 bin/traffic_shell
+bin/trafficserver
 bin/tsxs
-lib/libtsmgmt.so
-lib/libtsutil.a
-lib/libtsutil.so.3
-lib/libtsmgmt.la
-lib/libtsutil.so
-lib/libtsutil.la
+include/ts/experimental.h
+include/ts/mgmtapi.h
+include/ts/remap.h
+include/ts/ts.h
 lib/libtsmgmt.a
-lib/libtsmgmt.so.3
+lib/libtsmgmt.la
+lib/libtsmgmt.so
+lib/libtsmgmt.so.5
+lib/libtsutil.a
+lib/libtsutil.la
+lib/libtsutil.so
+lib/libtsutil.so.5
 libexec/trafficserver/conf_remap.la
 libexec/trafficserver/conf_remap.so
+libexec/trafficserver/header_filter.la
+libexec/trafficserver/header_filter.so
+libexec/trafficserver/regex_remap.la
+libexec/trafficserver/regex_remap.so
+libexec/trafficserver/stats_over_http.la
+libexec/trafficserver/stats_over_http.so
+%%ETCDIR%%/ae_ua.config.default
 %%ETCDIR%%/body_factory/default/.body_factory_info
 %%ETCDIR%%/body_factory/default/README
 %%ETCDIR%%/body_factory/default/access#denied
@@ -68,7 +79,6 @@ libexec/trafficserver/conf_remap.so
 %%ETCDIR%%/body_factory/default/timeout#inactivity
 %%ETCDIR%%/body_factory/default/transcoding#unsupported
 %%ETCDIR%%/body_factory/default/urlrouting#no_mapping
-%%ETCDIR%%/ae_ua.config.default
 %%ETCDIR%%/cache.config.default
 %%ETCDIR%%/cluster.config.default
 %%ETCDIR%%/congestion.config.default
@@ -92,11 +102,67 @@ libexec/trafficserver/conf_remap.so
 %%ETCDIR%%/update.config.default
 %%ETCDIR%%/vaddrs.config.default
 %%ETCDIR%%/volume.config.default
-include/ts/experimental.h
-include/ts/mgmtapi.h
-include/ts/remap.h
-include/ts/ts.h
-@dirrm %%DATADIR%%
+share/doc/trafficserver/trafficshell/config_alarms.1
+share/doc/trafficserver/trafficshell/config_cache.1
+share/doc/trafficserver/trafficshell/config_clock.1
+share/doc/trafficserver/trafficshell/config_dns.1
+share/doc/trafficserver/trafficshell/config_get.1
+share/doc/trafficserver/trafficshell/config_hard-restart.1
+share/doc/trafficserver/trafficshell/config_hostdb.1
+share/doc/trafficserver/trafficshell/config_http.1
+share/doc/trafficserver/trafficshell/config_icp.1
+share/doc/trafficserver/trafficshell/config_logging.1
+share/doc/trafficserver/trafficshell/config_name.1
+share/doc/trafficserver/trafficshell/config_network.1
+share/doc/trafficserver/trafficshell/config_parent.1
+share/doc/trafficserver/trafficshell/config_port-tunnels.1
+share/doc/trafficserver/trafficshell/config_remap.1
+share/doc/trafficserver/trafficshell/config_reset-stats.1
+share/doc/trafficserver/trafficshell/config_restart.1
+share/doc/trafficserver/trafficshell/config_root.1
+share/doc/trafficserver/trafficshell/config_scheduled-update.1
+share/doc/trafficserver/trafficshell/config_security.1
+share/doc/trafficserver/trafficshell/config_set.1
+share/doc/trafficserver/trafficshell/config_socks.1
+share/doc/trafficserver/trafficshell/config_ssl.1
+share/doc/trafficserver/trafficshell/config_start.1
+share/doc/trafficserver/trafficshell/config_stop.1
+share/doc/trafficserver/trafficshell/config_upgrade.1
+share/doc/trafficserver/trafficshell/config_virtual-ip.1
+share/doc/trafficserver/trafficshell/disable.1
+share/doc/trafficserver/trafficshell/enable.1
+share/doc/trafficserver/trafficshell/exit.1
+share/doc/trafficserver/trafficshell/show_alarms.1
+share/doc/trafficserver/trafficshell/show_cache-stats.1
+share/doc/trafficserver/trafficshell/show_cache.1
+share/doc/trafficserver/trafficshell/show_cluster.1
+share/doc/trafficserver/trafficshell/show_dns-resolver.1
+share/doc/trafficserver/trafficshell/show_dns-stats.1
+share/doc/trafficserver/trafficshell/show_hostdb-stats.1
+share/doc/trafficserver/trafficshell/show_hostdb.1
+share/doc/trafficserver/trafficshell/show_http-stats.1
+share/doc/trafficserver/trafficshell/show_http-trans-stats.1
+share/doc/trafficserver/trafficshell/show_http.1
+share/doc/trafficserver/trafficshell/show_icp-stats.1
+share/doc/trafficserver/trafficshell/show_icp.1
+share/doc/trafficserver/trafficshell/show_logging-stats.1
+share/doc/trafficserver/trafficshell/show_logging.1
+share/doc/trafficserver/trafficshell/show_network.1
+share/doc/trafficserver/trafficshell/show_parent.1
+share/doc/trafficserver/trafficshell/show_port-tunnels.1
+share/doc/trafficserver/trafficshell/show_proxy-stats.1
+share/doc/trafficserver/trafficshell/show_proxy.1
+share/doc/trafficserver/trafficshell/show_remap.1
+share/doc/trafficserver/trafficshell/show_scheduled-update.1
+share/doc/trafficserver/trafficshell/show_security.1
+share/doc/trafficserver/trafficshell/show_socks.1
+share/doc/trafficserver/trafficshell/show_ssl.1
+share/doc/trafficserver/trafficshell/show_status.1
+share/doc/trafficserver/trafficshell/show_version.1
+share/doc/trafficserver/trafficshell/show_virtual-ip.1
+@dirrm share/trafficserver
+@dirrm share/doc/trafficserver/trafficshell
+@dirrm share/doc/trafficserver
 @dirrm libexec/trafficserver
 @dirrm include/ts
 @dirrm %%ETCDIR%%/internal
