@@ -1,12 +1,8 @@
-# New ports collection makefile for:	odfpy
-# Date created:		27 June 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	odfpy
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://opendocumentfellowship.com/files/
