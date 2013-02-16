@@ -2720,6 +2720,7 @@
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
     SUBDIR += p5-Test-File-ShareDir
+    SUBDIR += p5-Test-Filename
     SUBDIR += p5-Test-Fixme
     SUBDIR += p5-Test-Fixture-DBIC-Schema
     SUBDIR += p5-Test-Group
