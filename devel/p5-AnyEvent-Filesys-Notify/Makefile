@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent-Filesys-Notify
-PORTVERSION=	0.19
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ COMMENT=	Perl extension for AnyEvent compat to monitor file/dir changes
 
 RUN_DEPENDS=	\
 	p5-AnyEvent>0:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
+	p5-Path-Iterator-Rule>0:${PORTSDIR}/devel/p5-Path-Iterator-Rule \
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean \
