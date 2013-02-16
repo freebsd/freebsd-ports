@@ -224,8 +224,6 @@ sbin/munin-sched
 %%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/zimbra_
-@dirrmtry %%DBDIR%%/plugin-state
-@dirrmtry %%DBDIR%%
 @dirrm %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
 @dirrm %%SITE_PERL%%/Munin/Plugin
@@ -237,3 +235,5 @@ sbin/munin-sched
 @exec mkdir -p %D/%%ETCDIR%%/plugin-conf.d
 @dirrmtry %%ETCDIR%%/plugin-conf.d
 @dirrmtry %%ETCDIR%%
+@cwd /var
+@dirrmtry munin/plugin-state

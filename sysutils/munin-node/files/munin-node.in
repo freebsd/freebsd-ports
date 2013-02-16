@@ -1,10 +1,11 @@
 #!/bin/sh
 #
-
+# $FreeBSD$
+#
 # PROVIDE: munin-node
 # REQUIRE: DAEMON
 # BEFORE:  cron
-
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable munin-node:
 # munin_node_enable (bool):      Set to "NO" by default.
@@ -17,12 +18,25 @@
 name="munin_node"
 rcvar=munin_node_enable
 
-[ -z "$munin_node_enable" ] && munin_node_enable="NO"
-[ -z "$munin_node_config" ] && munin_node_config="%%PREFIX%%/etc/munin/munin-node.conf"
+load_rc_config $name
+
+: ${munin_node_enable:=NO}
+: ${munin_node_config="%%PREFIX%%/etc/munin/munin-node.conf"}
 
 command="%%PREFIX%%/sbin/munin-node"
-command_interpreter="%%PERL%%"
-pidfile=`awk '$1 == "pid_file" { print $2 }' $munin_node_config`
+command_interpreter="/usr/bin/perl"
+start_precmd=find_pidfile
+status_precmd=find_pidfile
+stop_precmd=find_pidfile
 
-load_rc_config $name
+find_pidfile()
+{
+	if type get_pidfile_from_conf >/dev/null 2>&1 &&
+		get_pidfile_from_conf pid_file $munin_node_config; then
+	    pidfile="$_pidfile_from_conf"
+	else
+	    pidfile=`awk '$1 == "pid_file" { print $2 }' $munin_node_config`
+	fi
+}
+
 run_rc_command "$1"

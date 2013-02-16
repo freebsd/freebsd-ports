@@ -30,8 +30,8 @@ yesno() {
 }
 
 init_plugins() {
-    if [ -f ${PKG_PREFIX}/etc/munin/VERSION.node ]; then
-	prevver=$(cat ${PKG_PREFIX}/etc/munin/VERSION.node)
+    if [ -f /tmp/.munin-node.version ]; then
+	prevver=$(cat /tmp/.munin-node.version)
     fi
 
     if [ -n "$prevver" ]; then
@@ -72,9 +72,6 @@ newsyslog() {
 	    cat >> /etc/newsyslog.conf <<EOT
 /var/log/munin/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid
 EOT
-	fi
-	if [ -f ${PKG_PREFIX}/bin/munin-node-revive ]; then
-	    create_crontab_entries '4	*	*	*	*' ${PKG_PREFIX}/bin/munin-node-revive
 	fi
     else
 	echo "/var/log/munin-node.log will grow without bounds."
