@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201302141353
+PORTVERSION=	201302152354
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
