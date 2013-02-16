@@ -11,3 +11,6 @@ bin/rd6
 bin/rs6
 bin/scan6
 bin/tcp6
+etc/ipv6toolkit.conf
+%%DATADIR%%/oui.txt
+@dirrm %%DATADIR%%
