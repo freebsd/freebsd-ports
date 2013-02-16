@@ -1,18 +1,14 @@
-# New ports collection makefile for:	bmake
-# Date created:				13 September 2009
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bmake
-PORTVERSION=	20121111
+PORTVERSION=	20130123
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
 		ftp://ftp.uk.netbsd.org/pub/NetBSD/misc/sjg/ \
 		ftp://ftp.de.netbsd.org/pub/NetBSD/misc/sjg/
-DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20121106.tar.gz
+DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20130123.tar.gz
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
