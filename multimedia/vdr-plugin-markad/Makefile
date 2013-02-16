@@ -1,15 +1,10 @@
-# New ports collection makefile for:	vdr-plugin-markad
-# Date created:		Wed Mar 30 22:35:19 CEST 2011
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-markad
-PORTVERSION=	0.1.2
-PORTREVISION=	14
+PORTVERSION=	0.1.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/578/
+MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1041/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.tgz
 
@@ -29,6 +24,8 @@ VDR_PLUGIN_MAKEFILES=	${WRKSRC}/command/Makefile ${WRKSRC}/plugin/Makefile
 DEFINES+=	-DDATADIR=\\\"${DATADIR}\\\" -DPREFIX=\\\"${PREFIX}\\\"
 MAKE_ARGS+=	DATADIR=${DATADIR} FREEBSD=1
 MAKE_ENV+=	DEFINES="${DEFINES}"
+MANCOMPRESSED=	yes
+MAN1=		markad.1
 
 RESTRICTED=	installs station logos
 

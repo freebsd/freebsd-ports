@@ -14,7 +14,7 @@
  #include <utime.h>
  #include <math.h>
  #include <limits.h>
-@@ -1389,6 +1395,7 @@ bool cMarkAdStandalone::SaveInfo()
+@@ -1428,6 +1434,7 @@ bool cMarkAdStandalone::SaveInfo()
  time_t cMarkAdStandalone::GetBroadcastStart(time_t start, int fd)
  {
      // get broadcast start from atime of directory (if the volume is mounted with noatime)
@@ -22,7 +22,7 @@
      struct mntent *ent;
      struct stat statbuf;
      FILE *mounts=setmntent(_PATH_MOUNTED,"r");
-@@ -1415,6 +1422,14 @@ time_t cMarkAdStandalone::GetBroadcastSt
+@@ -1454,6 +1461,14 @@ time_t cMarkAdStandalone::GetBroadcastSt
          }
      }
      endmntent(mounts);
@@ -37,9 +37,26 @@
  
      if ((useatime) && (stat(directory,&statbuf)!=-1))
      {
-@@ -1900,10 +1915,14 @@ bool cMarkAdStandalone::CreatePidfile()
+@@ -1554,6 +1569,16 @@ bool cMarkAdStandalone::LoadInfo()
+                 if (lf) *lf=0;
+                 char *cr=strchr(macontext.Info.ChannelName,13);
+                 if (cr) *cr=0;
++#if 1
++                int len = strlen(macontext.Info.ChannelName);
++                if (len > 5 &&
++	            (!strcmp(macontext.Info.ChannelName + len - 4, " (A)") ||
++	             !strcmp(macontext.Info.ChannelName + len - 4, " (C)") ||
++	             !strcmp(macontext.Info.ChannelName + len - 4, " (S)") ||
++	             !strcmp(macontext.Info.ChannelName + len - 4, " (T)") ||
++	             !strcmp(macontext.Info.ChannelName + len - 4, " (I)")))
++	            macontext.Info.ChannelName[len - 4] = '\0';
++#endif
+                 for (int i=0; i<(int) strlen(macontext.Info.ChannelName); i++)
+                 {
+                     if (macontext.Info.ChannelName[i]==' ') macontext.Info.ChannelName[i]='_';
+@@ -1961,10 +1986,14 @@ bool cMarkAdStandalone::CreatePidfile()
          int pid;
-         if (fscanf(oldpid,"%i\n",&pid)==1)
+         if (fscanf(oldpid,"%10i\n",&pid)==1)
          {
 +#ifndef __FreeBSD__
              char procname[256]="";
@@ -51,8 +68,24 @@
 +#endif
              {
                  // found another, running markad
-                 isyslog("another instance is running on this recording");
-@@ -2212,7 +2231,7 @@ cMarkAdStandalone::~cMarkAdStandalone()
+                 fprintf(stderr,"another instance is running on %s",directory);
+@@ -2081,6 +2110,7 @@ cMarkAdStandalone::cMarkAdStandalone(con
+         }
+     }
+ 
++#ifndef __FreeBSD__
+     long lb;
+     errno=0;
+     lb=sysconf(_SC_LONG_BIT);
+@@ -2089,6 +2119,7 @@ cMarkAdStandalone::cMarkAdStandalone(con
+         isyslog("starting v%s (%libit)",VERSION,lb);
+     }
+     else
++#endif
+     {
+         isyslog("starting v%s",VERSION);
+     }
+@@ -2319,7 +2350,7 @@ cMarkAdStandalone::~cMarkAdStandalone()
      RemovePidfile();
  }
  
@@ -61,7 +94,7 @@
  {
      while (*s)
      {
-@@ -2238,7 +2257,11 @@ int usage(int svdrpport)
+@@ -2345,7 +2376,11 @@ int usage(int svdrpport)
             "                  ignores hints from info(.vdr) file\n"
             "                  <info> 4 = ignore timer info\n"
             "-l              --logocachedir\n"
@@ -73,7 +106,7 @@
             "-p              --priority=<priority>\n"
             "                  software priority of markad when running in background\n"
             "                  <priority> from -20...19, default 19\n"
-@@ -2382,7 +2405,11 @@ int main(int argc, char *argv[])
+@@ -2489,7 +2524,11 @@ int main(int argc, char *argv[])
      config.logoHeight=-1;
      config.threads=-1;
      strcpy(config.svdrphost,"127.0.0.1");
@@ -85,7 +118,7 @@
  
      struct servent *serv=getservbyname("svdrp","tcp");
      if (serv)
-@@ -2513,7 +2540,7 @@ int main(int argc, char *argv[])
+@@ -2620,7 +2659,7 @@ int main(int argc, char *argv[])
  
          case 'p':
              // --priority
@@ -94,7 +127,7 @@
                  niceLevel = atoi(optarg);
              else
              {
-@@ -2699,7 +2726,7 @@ int main(int argc, char *argv[])
+@@ -2806,7 +2845,7 @@ int main(int argc, char *argv[])
              break;
  
          case 9: // --svdrpport
