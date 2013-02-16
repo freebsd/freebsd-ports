@@ -8,7 +8,7 @@
 # slave ports.
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	304.64
+DISTVERSION?=	310.32
 # Always try to set PORTREVISION as can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 kld
@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 # NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
 # passed to compiler and broken build on HEAD since r221320 when option
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
-# fixed upstream across all versions (including legacy ones), use this
+# fixed upstream (across all versions, including legacy ones), use this
 # hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
 # since it is going away from `Mk/bsd.port.mk' as deprecated.
 MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
@@ -88,6 +88,9 @@ PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
+. if ${OSVERSION} > 1000026
+EXTRA_PATCHES+=	${FILESDIR}/r246085-patch-src-nvidia_linux.c
+. endif
 .else
 PLIST_SUB+=	LINUX="@comment "
 # Propagate WITHOUT_LINUX variable down to inner Makefiles
@@ -190,8 +193,11 @@ post-install: .SILENT
 	${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
 		/usr.*(glcore|tls).*so\.1$$/d' ${TMPPLIST}
 .endif
-# Some applications need this symlink (see PR ports/72877)
+.if ${NVVERSION} >= 3101900
+	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
+.else	# some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+.endif
 .if ${NVVERSION} >= 1952200
 . if ${OSVERSION} > 800090
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
