@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-jquery-rails
-# Date created:				13 January 2011
-# Whom:					Jason Helfman <jhelfman@experts-exchange.com>
-#
+# Created by: Jason Helfman <jhelfman@experts-exchange.com>
 # $FreeBSD$
 
 PORTNAME=	jquery-rails
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

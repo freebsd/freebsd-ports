@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-rack-ssl
-# Date created:		2011-09-10
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rack-ssl
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
