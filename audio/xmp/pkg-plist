@@ -1,10 +1,8 @@
+@unexec if cmp -s %D/etc/xmp/xmp.conf %D/etc/xmp/xmp.conf.sample; then rm -f %D/etc/xmp/xmp.conf; fi
+etc/xmp/xmp.conf.sample
+@exec [ -f %B/xmp.conf ] || cp %B/%f %B/xmp.conf
 bin/xmp
-@unexec if cmp -s %D/%%ETCDIR%%/xmp.conf.sample %D/%%ETCDIR%%/xmp.conf; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
-%%ETCDIR%%/xmp.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/xmp.conf ]; then cp -p %D/%F %B/xmp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
-%%ETCDIR%%/modules.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
-%%BMP%%lib/bmp/Input/xmp-bmp.so
-%%XMMS%%lib/xmms/Input/xmp-xmms.so
-@dirrmtry %%ETCDIR%%
+@unexec if cmp -s %D/etc/xmp/modules.conf %D/etc/xmp/modules.conf.sample; then rm -f %D/etc/xmp/modules.conf; fi
+etc/xmp/modules.conf.sample
+@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
+@dirrmtry etc/xmp
