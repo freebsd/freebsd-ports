@@ -356,7 +356,7 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos-3.3.3.so
+lib/libgeos-3.3.7.so
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
@@ -365,7 +365,7 @@ lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
 lib/libgeos_c.so.8
-@dirrm lib/geos
+@dirrmtry lib/geos
 @dirrm include/geos/util
 @dirrm include/geos/simplify
 @dirrm include/geos/precision
@@ -410,10 +410,10 @@ lib/libgeos_c.so.8
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
 %%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%
+%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.la
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
-%%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/
-%%WITH_PHP%%lib/php/20090626/geos.so
-%%WITH_PHP%%@dirrmtry lib/php/20090626
+%%WITH_RUBY%%@dirrmtry %%RUBY_SITEARCHLIBDIR%%/
+%%WITH_PHP%%lib/php/20100525/geos.so
+%%WITH_PHP%%@dirrmtry lib/php/20100525
