@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7809d9e-6af0-11e2-8e32-080027d768d3">
+    <topic>poweradmin -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>poweradmin</name>
+       <range><lt>2.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Multiple cross-site scripting (XSS) vulnerabilities</p>
+        <blockquote cite="https://www.poweradmin.org/trac/ticket/468">
+          <p>Multiple scripts are vulnerable to XSS attacks.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>55619</bid>
+      <url>http://packetstormsecurity.com/files/116698/Poweradmin-Cross-Site-Scripting.html</url>
+    </references>
+    <dates>
+      <discovery>2012-01-12</discovery>
+      <entry>2013-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c79eb109-a754-45d7-b552-a42099eb2265">
     <topic>Ruby -- Denial of Service and Unsafe Object Creation Vulnerability in JSON</topic>
     <affects>
