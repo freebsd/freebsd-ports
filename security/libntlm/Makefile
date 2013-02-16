@@ -1,22 +1,30 @@
-# ex:ts=8
-# Ports collection makefile for:	libntlm
-# Date created:			Oct 19, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libntlm
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
-MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
+MASTER_SITES=	http://www.nongnu.org/libntlm/releases/
 
 MAINTAINER=	jochen@daten-chaos.de
-COMMENT=	A library that implement Microsoft's NTLM authentication
+COMMENT=	Library that implement Microsoft's NTLM authentication
 
-USE_GNOME=	gnomehack pkgconfig
+LICENSE=	LGPL21
+
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
+
+.include <bsd.port.options.mk>
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
