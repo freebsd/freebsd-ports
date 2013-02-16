@@ -1,18 +1,14 @@
-# New ports collection makefile for:	Bio-Phylo
-# Date created:				12 Mar 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.50
+PORTVERSION=	0.52
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Phylogenetic analysis using perl
+COMMENT=	Phylogenetic analysis using Perl
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -40,11 +36,14 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Forest::DrawNode.3 \
 		Bio::Phylo::Forest::DrawTree.3 \
 		Bio::Phylo::Forest::Node.3 \
+		Bio::Phylo::Forest::NodeRole.3 \
 		Bio::Phylo::Forest::Tree.3 \
+		Bio::Phylo::Forest::TreeRole.3 \
 		Bio::Phylo::Generator.3 \
 		Bio::Phylo::IO.3 \
 		Bio::Phylo::Identifiable.3 \
 		Bio::Phylo::Listable.3 \
+		Bio::Phylo::ListableRole.3 \
 		Bio::Phylo::Manual.3 \
 		Bio::Phylo::Matrices.3 \
 		Bio::Phylo::Matrices::Character.3 \
@@ -59,7 +58,9 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Matrices::Datatype::Rna.3 \
 		Bio::Phylo::Matrices::Datatype::Standard.3 \
 		Bio::Phylo::Matrices::Datum.3 \
+		Bio::Phylo::Matrices::DatumRole.3 \
 		Bio::Phylo::Matrices::Matrix.3 \
+		Bio::Phylo::Matrices::MatrixRole.3 \
 		Bio::Phylo::Matrices::TypeSafeData.3 \
 		Bio::Phylo::Mediators::TaxaMediator.3 \
 		Bio::Phylo::NeXML::DOM.3 \
@@ -76,6 +77,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Parsers::Abstract.3 \
 		Bio::Phylo::Parsers::Adjacency.3 \
 		Bio::Phylo::Parsers::Fasta.3 \
+		Bio::Phylo::Parsers::Figtree.3 \
 		Bio::Phylo::Parsers::Json.3 \
 		Bio::Phylo::Parsers::Newick.3 \
 		Bio::Phylo::Parsers::Nexml.3 \
@@ -136,7 +138,8 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Util::IDPool.3 \
 		Bio::Phylo::Util::Logger.3 \
 		Bio::Phylo::Util::OptionalInterface.3 \
-		Bio::Phylo::Util::StackTrace.3
+		Bio::Phylo::Util::StackTrace.3 \
+		Bio::PhyloRole.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|Bio-Phylo|Bio::Phylo|' ${WRKSRC}/Makefile.PL
