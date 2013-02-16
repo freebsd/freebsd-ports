@@ -48,6 +48,17 @@ bin/cda
 %%PYTHON_SITELIBDIR%%/cclib/data/ADF/basicADF2007.01/metadata.txt
 %%PYTHON_SITELIBDIR%%/cclib/data/ADF/basicADF2007.01/mo_sp.adfin
 %%PYTHON_SITELIBDIR%%/cclib/data/ADF/basicADF2007.01/mo_sp.adfout
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_sp.log
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_gopt.log
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_gopt.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/vi.log
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_sp.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_td.log
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_ir.log
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_ir.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_sp_un.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_td.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010/dvb_sp_un.log
 %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS-US/C_bigbasis.inp
 %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS-US/C_bigbasis.out
 %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS-US/MoOCl4-sp.inp
@@ -255,6 +266,30 @@ bin/cda
 %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.6/dvb_un_sp.out
 %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.6/water_mp2.inp
 %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.6/water_mp2.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_gopt.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_sp.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_gopt.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_sp.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_raman.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_sp_un.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_td.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_ir.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_ir.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_sp_un.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_td.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9/dvb_raman.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_gopt.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_sp.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_gopt.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_sp.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_raman.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_sp_un.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_td.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_ir.out
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_ir.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_sp_un.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_td.inp
+%%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8/dvb_raman.inp
 %%PYTHON_SITELIBDIR%%/cclib/data/regressionfiles.txt
 %%PYTHON_SITELIBDIR%%/cclib/data/wget.sh
 %%PYTHON_SITELIBDIR%%/cclib/method/__init__.py
@@ -341,12 +376,18 @@ bin/cda
 %%PYTHON_SITELIBDIR%%/cclib/progress/textprogress.py
 %%PYTHON_SITELIBDIR%%/cclib/progress/textprogress.pyc
 %%PYTHON_SITELIBDIR%%/cclib/progress/textprogress.pyo
+%%PYTHON_SITELIBDIR%%/cclib/test/__init__.py
+%%PYTHON_SITELIBDIR%%/cclib/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cclib/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/cclib/test/bettertest.py
 %%PYTHON_SITELIBDIR%%/cclib/test/bettertest.pyc
 %%PYTHON_SITELIBDIR%%/cclib/test/bettertest.pyo
 %%PYTHON_SITELIBDIR%%/cclib/test/methods.py
 %%PYTHON_SITELIBDIR%%/cclib/test/methods.pyc
 %%PYTHON_SITELIBDIR%%/cclib/test/methods.pyo
+%%PYTHON_SITELIBDIR%%/cclib/test/regression.py
+%%PYTHON_SITELIBDIR%%/cclib/test/regression.pyc
+%%PYTHON_SITELIBDIR%%/cclib/test/regression.pyo
 %%PYTHON_SITELIBDIR%%/cclib/test/testBasis.py
 %%PYTHON_SITELIBDIR%%/cclib/test/testBasis.pyc
 %%PYTHON_SITELIBDIR%%/cclib/test/testBasis.pyo
@@ -393,6 +434,7 @@ bin/cda
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/bridge
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ADF/basicADF2007.01
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ADF
+@dirrm %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS2010
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicGAMESS-US
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS/basicPCGAMESS
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/GAMESS
@@ -406,6 +448,8 @@ bin/cda
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/Molpro/basicMolpro2006
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/Molpro
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.6
+@dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.8
+@dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ORCA/basicORCA2.9
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data/ORCA
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/data
 @dirrm %%PYTHON_SITELIBDIR%%/cclib/method
