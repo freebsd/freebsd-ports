@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Exporter::Declare
-# Date created:		23 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Exporter-Declare
-PORTVERSION=	0.105
+PORTVERSION=	0.106
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
