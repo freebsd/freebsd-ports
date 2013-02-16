@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Test-Pod
-# Date created:	   2 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Pod
-PORTVERSION=	1.45
+PORTVERSION=	1.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DWHEELER
