@@ -1,28 +1,15 @@
---- sc2/build/unix/config_proginfo_host.orig	Tue Dec 26 21:07:45 2006
-+++ sc2/build/unix/config_proginfo_host	Tue Dec 26 21:09:26 2006
-@@ -55,9 +55,9 @@
- LIB_SDL_NAME="Simple DirectMedia Layer"
- case "$HOST_SYSTEM" in
- 	FreeBSD)
--		LIB_SDL_CFLAGS='$(sdl11-config --cflags)'
--		LIB_SDL_LDFLAGS='$(sdl11-config --libs)'
--		LIB_SDL_VERSION='$(sdl11-config --version)'
-+		LIB_SDL_CFLAGS='$(sdl-config --cflags)'
-+		LIB_SDL_LDFLAGS='$(sdl-config --libs)'
-+		LIB_SDL_VERSION='$(sdl-config --version)'
- 		;;
- 	Darwin)
- 		LIB_SDL_CFLAGS=''
-@@ -102,7 +102,7 @@
+--- build/unix/config_proginfo_host.orig	2011-05-20 23:25:22.000000000 +0400
++++ build/unix/config_proginfo_host	2013-01-08 19:49:40.000000000 +0400
+@@ -115,7 +115,7 @@
  LIB_openal_CFLAGS=""
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
 -		LIB_openal_LDFLAGS="-L/usr/local/lib -pthread -lopenal"
 +		LIB_openal_LDFLAGS="-L${LOCALBASE}/lib -pthread -lopenal"
  		;;
- 	MINGW32*|CYGWIN*)
+ 	MINGW32*|CYGWIN*|cegcc)
  		LIB_openal_LDFLAGS="-lopenal32"
-@@ -124,8 +124,8 @@
+@@ -144,8 +144,8 @@
  LIB_opengl_NAME="OpenGL"
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
@@ -31,9 +18,9 @@
 +		LIB_opengl_CFLAGS="-I${LOCALBASE}/include -D_THREAD_SAFE"
 +		LIB_opengl_LDFLAGS="-L${LOCALBASE}/lib -lX11 -lXext -pthread -lGL"
  		;;
- 	MINGW32*|CYGWIN*)
+ 	MINGW32*|CYGWIN*|cegcc)
  		LIB_opengl_CFLAGS=""
-@@ -154,8 +154,8 @@
+@@ -182,8 +182,8 @@
  LIB_vorbisfile_NAME="vorbisfile"
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
@@ -42,9 +29,9 @@
 +		LIB_vorbisfile_CFLAGS="-I${LOCALBASE}/include"
 +		LIB_vorbisfile_LDFLAGS="-L${LOCALBASE}/lib -lvorbisfile -lvorbis"
  		;;
- 	MINGW32*|CYGWIN*)
+ 	MINGW32*|CYGWIN*|cegcc)
  		LIB_vorbisfile_CFLAGS=""
-@@ -183,8 +183,8 @@
+@@ -221,8 +221,8 @@
  LIB_tremor_NAME="tremor"
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
