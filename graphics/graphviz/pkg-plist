@@ -7,7 +7,7 @@ bin/diffimg
 bin/dijkstra
 bin/dot
 bin/dot2gxl
-bin/dotty
+%%WITH_XPM%%bin/dotty
 bin/dot_builtins
 bin/fdp
 bin/gc
@@ -25,7 +25,7 @@ bin/gvpr
 bin/gxl2gv
 bin/gxl2dot
 %%WITH_XPM%%bin/lefty
-bin/lneato
+%%WITH_XPM%%bin/lneato
 bin/mm2gv
 bin/neato
 bin/nop
@@ -502,11 +502,11 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/lefty/slides.lefty
 %%DATADIR%%/lefty/tree.lefty
 %%DATADIR%%/lefty/lefty.psp
-%%DATADIR%%/lefty/dotty.lefty
-%%DATADIR%%/lefty/dotty_draw.lefty
-%%DATADIR%%/lefty/dotty_edit.lefty
-%%DATADIR%%/lefty/dotty_layout.lefty
-%%DATADIR%%/lefty/dotty_ui.lefty
+%%WITH_XPM%%%%DATADIR%%/lefty/dotty.lefty
+%%WITH_XPM%%%%DATADIR%%/lefty/dotty_draw.lefty
+%%WITH_XPM%%%%DATADIR%%/lefty/dotty_edit.lefty
+%%WITH_XPM%%%%DATADIR%%/lefty/dotty_layout.lefty
+%%WITH_XPM%%%%DATADIR%%/lefty/dotty_ui.lefty
 %%DATADIR%%/graphs/directed/KW91.gv
 %%DATADIR%%/graphs/directed/Latin1.gv
 %%DATADIR%%/graphs/directed/NaN.gv
