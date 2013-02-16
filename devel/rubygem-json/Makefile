@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Ruby replacement for json
-# Date created:		Jul 9, 2007
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	json
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
