@@ -50,11 +50,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\ install-conf||' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/xmp
+	${MKDIR} ${ETCDIR}
 .for f in ${CONFIG_FILES}
-.if !exists(${ETCDIR}/${f})
-	${INSTALL_DATA} ${WRKSRC}/src/${f} ${ETCDIR}/${f}
-.endif
+	@test -f ${ETCDIR}/${f} || ${INSTALL_DATA} ${WRKSRC}/src/${f} ${ETCDIR}/${f}
 	${INSTALL_DATA} ${WRKSRC}/src/${f} ${ETCDIR}/${f}.sample
 .endfor
 
