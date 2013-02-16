@@ -1,17 +1,21 @@
 --- a/plugin/Makefile
 +++ b/plugin/Makefile
-@@ -100,10 +100,15 @@ i18n: $(I18Nmsgs) $(I18Npot)
+@@ -99,11 +99,19 @@ i18n: $(I18Nmsgs) $(I18Npot)
  ### Targets:
  
- install:
+ install: all 
++ifdef FREEBSD
 +	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++else
+ 	cp --remove-destination libvdr-$(PLUGIN).so $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION)
++endif
  
  libvdr-$(PLUGIN).so: $(OBJS)
  	$(CXX) $(CXXFLAGS) -shared $(OBJS) $(LIBS) -o $@
 +ifdef FREEBSD
-+	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++	cp -f libvdr-$(PLUGIN).so $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION)
 +else
- 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
+ 	cp --remove-destination libvdr-$(PLUGIN).so $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION)
 +endif
  
  clean:

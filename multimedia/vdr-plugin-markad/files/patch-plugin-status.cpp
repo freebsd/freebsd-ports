@@ -13,7 +13,37 @@
  
  #include "status.h"
  
-@@ -223,6 +229,7 @@ bool cStatusMarkAd::getStatus(int Positi
+@@ -135,7 +141,12 @@ bool cStatusMarkAd::LogoExists(const cha
+     cTimer *timer=NULL;
+     for (cTimer *Timer = Timers.First(); Timer; Timer=Timers.Next(Timer))
+     {
++#if 1
++        if (Timer->Recording() &&
++	    (!strcmp(Timer->ToDescr(),Name) || !strcmp(Timer->File(),Name)))
++#else
+         if (Timer->Recording() && (!strcmp(Timer->ToDescr(),Name)))
++#endif
+         {
+             timer=Timer;
+             break;
+@@ -150,6 +161,16 @@ bool cStatusMarkAd::LogoExists(const cha
+     if (!chan) return false;
+     char *cname=strdup(chan->Name());
+     if (!cname) return false;
++#if 1
++    int len = strlen(cname);
++    if (len > 5 &&
++        (!strcmp(cname + len - 4, " (A)") ||
++         !strcmp(cname + len - 4, " (C)") ||
++         !strcmp(cname + len - 4, " (S)") ||
++         !strcmp(cname + len - 4, " (T)") ||
++         !strcmp(cname + len - 4, " (I)")))
++        cname[len - 4] = '\0';
++#endif
+     for (int i=0; i<(int) strlen(cname); i++)
+     {
+         if (cname[i]==' ') cname[i]='_';
+@@ -233,6 +254,7 @@ bool cStatusMarkAd::getStatus(int Positi
      if (Position<0) return false;
      if (!recs[Position].Pid) return false;
      int ret=0;
@@ -21,7 +51,7 @@
      char procname[256]="";
      snprintf(procname,sizeof(procname),"/proc/%i/stat",recs[Position].Pid);
      FILE *fstat=fopen(procname,"r");
-@@ -242,6 +249,59 @@ bool cStatusMarkAd::getStatus(int Positi
+@@ -252,6 +274,59 @@ bool cStatusMarkAd::getStatus(int Positi
          }
      }
      return (ret==1);
