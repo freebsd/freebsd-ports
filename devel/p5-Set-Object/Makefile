@@ -1,18 +1,16 @@
-# New ports collection makefile for:	devel/p5-Set-Object
-# Date created:				02 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Set-Object
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage sets of objects
+
+LICENSE=	ART10
 
 PERL_CONFIGURE=	yes
 
