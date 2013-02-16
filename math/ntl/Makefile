@@ -1,17 +1,12 @@
-# New ports collection makefile for:	ntl
-# Date created:				18 June 2000
-# Whom:					bauerm
-#
+# Created by: bauerm
 # $FreeBSD$
-#
 
 PORTNAME=	ntl
-PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTVERSION=	6.0.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Victor Shoup's Number Theory Library
 
 # ntl is faster with libgmp4, but you can disable it
