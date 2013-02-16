@@ -5,7 +5,7 @@ PORTNAME=	3dm
 PORTVERSION=	2.11.00.019
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://shibboleet.com/3dm2/ \
+MASTER_SITES=	http://a.aranea.brtsvcs.net/3dm2/ \
 		http://b.aranea.brtsvcs.net/3dm2/
 DISTFILES=	tdmCliBSD_${PORTVERSION}.tar.gz
 DIST_SUBDIR=	3dm2
