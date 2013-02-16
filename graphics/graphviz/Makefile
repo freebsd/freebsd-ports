@@ -3,6 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.30.1
+PORTREVERSION=	100
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -300,10 +301,10 @@ PLIST_SUB+=		WITH_DEVIL="@comment "
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
     ${PORT_OPTIONS:MRUBY} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MTCL} || \
     ${PORT_OPTIONS:MGUILE}
-BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
-RUN_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
+RUN_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
 CONFIGURE_ARGS+=	--enable-swig
-CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig1.3"
+CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig2.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
@@ -327,9 +328,6 @@ USE_PHP_BUILD=	yes
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
 MAN3+=			gv.3php
-.if ${PHP_VER} == 5
-BROKEN=			swig is to old to build for php 5.4
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-php
 PLIST_SUB+=		WITH_PHP="@comment "
