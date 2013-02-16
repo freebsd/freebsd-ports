@@ -18,10 +18,12 @@ include/linnya/cox/reg.h
 include/linnya/cox/reg.obj.h
 include/linnya/linnya.h
 include/linnya/uix/cfg.h
+include/linnya/uix/cfg.obj.h
 include/linnya/uix/dbg.h
 include/linnya/uix/glb.h
 include/linnya/uix/key.h
 include/linnya/uix/pli.h
+include/linnya/uix/pli.obj.h
 include/linnya/uix/sss.h
 include/linnya/uix/thm.h
 include/linnya/uix/uix.h
@@ -81,9 +83,7 @@ share/icons/hicolor/scalable/apps/linnya.svg
 %%DATADIR%%/uix/icon/plugin.png
 %%DATADIR%%/uix/icon/theme.png
 %%DATADIR%%/uix/theme/default/announcement
-%%DATADIR%%/uix/theme/default/image/bar_seek_background.png
-%%DATADIR%%/uix/theme/default/image/bar_seek_button_hover.png
-%%DATADIR%%/uix/theme/default/image/bar_seek_fill.png
+%%DATADIR%%/uix/theme/default/image/bar_seek_button_normal.png
 %%DATADIR%%/uix/theme/default/image/btn_adds_active.png
 %%DATADIR%%/uix/theme/default/image/btn_adds_hover.png
 %%DATADIR%%/uix/theme/default/image/btn_adds_normal.png
