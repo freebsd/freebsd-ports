@@ -57,6 +57,7 @@ MAN3=		Munin::Master::Config.3 \
 		Munin::Master::GroupRepository.3 \
 		Munin::Master::HTMLOld.3 \
 		Munin::Master::Host.3 \
+		Munin::Master::LimitsOld.3 \
 		Munin::Master::Logger.3 \
 		Munin::Master::Node.3 \
 		Munin::Master::ProcessManager.3 \

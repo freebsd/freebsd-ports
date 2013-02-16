@@ -64,8 +64,6 @@ www/cgi-bin/munin-cgi-html
 @dirrmtry www/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%DATADIR%%
-@dirrmtry %%DBDIR%%/cgi-tmp
-@dirrmtry %%DBDIR%%
 @dirrm %%SITE_PERL%%/Munin/Master
 @dirrmtry %%SITE_PERL%%/Munin
 @dirrmtry %%ETCDIR%%/static
@@ -74,3 +72,5 @@ www/cgi-bin/munin-cgi-html
 @exec mkdir -p %D/%%ETCDIR%%/munin-conf.d
 @dirrmtry %%ETCDIR%%/munin-conf.d
 @dirrmtry %%ETCDIR%%
+@cwd /var
+@dirrm munin/cgi-tmp

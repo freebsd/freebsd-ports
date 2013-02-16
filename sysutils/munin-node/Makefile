@@ -63,7 +63,7 @@ MAN3=		${MAN3_NODE} ${MAN3_PLUGIN}
 MAN5=		munin-node.conf.5
 MAN8=		munin.8
 
-SUB_FILES=	pkg-message munin-node-revive.sh
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	munin-node munin-sched
 
 post-patch:
@@ -109,7 +109,7 @@ post-install:
 	done)
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO} ${PORTVERSION} > ${PREFIX}/etc/munin/VERSION.node
+	@${ECHO} ${PORTVERSION} > /tmp/.munin-node.version
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
