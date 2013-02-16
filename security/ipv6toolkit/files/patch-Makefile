@@ -1,11 +1,47 @@
---- /dev/null	2012-07-17 03:01:43.000000000 +0900
-+++ Makefile	2012-07-17 03:02:23.000000000 +0900
-@@ -0,0 +1,8 @@
+--- Makefile.orig	2013-02-16 18:15:13.000000000 +0900
++++ Makefile	2013-02-17 07:19:34.000000000 +0900
+@@ -1,12 +1,14 @@
 +# $FreeBSD$
 +
-+SUBDIR=	tools
-+.if defined(WITH_DOCS)
-+SUBDIR+=	manuals
-+.endif
-+
-+.include <bsd.subdir.mk>
+ #
+ # SI6 Networks' IPv6 toolkit Makefile
+ #
+-CC= gcc
+-CFLAGS= -Wall
++CC?= gcc
++CFLAGS+= -Wall -DIPV6TOOLKITCONF=\"${PREFIX}/etc/ipv6toolkit.conf\"
+ LDFLAGS+= -lpcap -lm
+-MANPATH= /usr/share/man
+-DATAPATH= /usr/share
+-BINPATH= /usr/bin
++MANPATH= ${MANPREFIX}/man
++DATAPATH= ${DATADIR}
++BINPATH= ${PREFIX}/bin
+ SRCPATH= tools
+ TOOLS= flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
+ 
+@@ -54,18 +56,18 @@
+ install: all
+ 	# Install the binaries
+ 	install -m0755 -d $(BINPATH)
+-	install -m0755 $(TOOLS) $(BINPATH)
++	${BSD_INSTALL_PROGRAM} $(TOOLS) $(BINPATH)
+ 
+ 	# Install the configuration file
+-	install -m0644 data/ipv6toolkit.conf /etc	
++	${BSD_INSTALL_DATA} data/ipv6toolkit.conf ${PREFIX}/etc	
+ 
+ 	# Install the IEEE OUI database
+-	install -m0755 -d $(DATAPATH)/ipv6toolkit
+-	install -m0644 data/oui.txt $(DATAPATH)/ipv6toolkit
++	install -m0755 -d $(DATAPATH)
++	${BSD_INSTALL_DATA} -m0644 data/oui.txt $(DATAPATH)
+ 
+ 	# Install the manual pages
+ 	install -m0755 -d $(MANPATH)/man1
+-	install -m0644 manuals/*.1 $(MANPATH)/man1
++	${BSD_INSTALL_MAN} manuals/*.1 $(MANPATH)/man1
+ 	install -m0755 -d $(MANPATH)/man5
+-	install -m0644 manuals/*.5 $(MANPATH)/man1
++	${BSD_INSTALL_MAN} -m0644 manuals/*.5 $(MANPATH)/man5
+ 
