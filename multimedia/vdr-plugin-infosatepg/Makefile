@@ -1,13 +1,9 @@
-# New ports collection makefile for:	vdr-plugin-infosatepg
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-infosatepg
 PORTVERSION=	0.0.11
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/342/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
