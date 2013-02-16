@@ -30,20 +30,27 @@ DOCS=		README doc/CHANGELOG doc/CONTRIB doc/COPYING \
 
 EXAMPLES=	sample/*.c
 
-OPTIONS=	NONE "link layer none" off \
-		SNOOP "link layer (snoop.h)" off \
-		PF "link layer pf" off \
-		BPF "link layer bpf" on
+OPTIONS_DEFINE=	EXAMPLES DOCS
+OPTIONS_RADIO=	LINK
+OPTIONS_RADIO_LINK=	SNOOP PF BPF
+OPTIONS_DEFAULT=	BPF
+SNOOP_DESC=	link layer (snoop.h)
+PF_DESC=	link layer pf
+BPF_DESC=	link layer bpf
 
-.if defined(WITH_NONE)
+.include <bsd.port.options.mk>
+
 LIBNET_LINK=	none
-.elif defined(WITH_SNOOP)
+
+.if ${PORT_OPTIONS:MSNOOP}
 LIBNET_LINK=	snoop
-.elif defined(WITH_PF)
+.endif
+
+.if ${PORT_OPTIONS:MPF}
 LIBNET_LINK=	pf
-.elif defined(WITHOUT_BPF)
-LIBNET_LINK=	none
-.else
+.endif
+
+.if ${PORT_OPTIONS:MBPF}
 LIBNET_LINK=	bpf
 .endif
 
@@ -64,11 +71,11 @@ post-install:
 	@cd ${PREFIX}/lib && \
 		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.8 && \
 		${LN} -sf libnet-${PORTVERSION}.so.8 libnet-${PORTVERSION}.so
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
