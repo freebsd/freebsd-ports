@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	3.2.11
+PORTVERSION=	3.2.12
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -23,6 +23,8 @@ MYSQL_DESC=	Use native MySQL bindings
 PGSQL_DESC=	Use native PostgreSQL bindings
 SQLITE3_DESC=	Use native SQLite3 bindings
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
+
+GEM_ENV+=	LANG=en_US.UTF-8
 
 .include <bsd.port.options.mk>
 
