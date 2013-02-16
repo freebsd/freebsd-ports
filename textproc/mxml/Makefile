@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mxml
-# Date created:		2007-10-12
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mxml
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	mxml/${PORTVERSION}
@@ -14,12 +10,18 @@ MASTER_SITE_SUBDIR=	mxml/${PORTVERSION}
 MAINTAINER=	hsmtkk@gmail.com
 COMMENT=	Small XML parsing library
 
+LICENSE=	MXML
+LICENSE_NAME=	Mini-XML License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-docdir=no
 MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	mxmldoc.1
 MAN3=	mxml.3
@@ -28,12 +30,15 @@ PORTDOCS=	*
 
 PLIST_FILES=	bin/mxmldoc include/mxml.h \
 		lib/libmxml.a \
+		lib/libmxml.so lib/libmxml.so.1 lib/libmxml.so.1.5 \
 		libdata/pkgconfig/mxml.pc
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${PORTDOCS:S,^,${WRKSRC}/doc,} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
