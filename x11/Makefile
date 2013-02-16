@@ -333,6 +333,7 @@
     SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
+    SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmiscproto
     SUBDIR += xcmsdb
