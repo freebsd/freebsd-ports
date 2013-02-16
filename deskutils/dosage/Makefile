@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dosage
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	deskutils python
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
 USE_GITHUB=	yes
 GH_ACCOUNT=	wummel
 GH_TAGNAME=	upstream/${PORTVERSION}
-GH_COMMIT=	5148087
+GH_COMMIT=	3cb8a96
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
