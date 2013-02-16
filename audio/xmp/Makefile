@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmp
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--disable-pulseaudio
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(pulseaudio\.o\)|sound_\1|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\ install-conf||' ${WRKSRC}/Makefile.in
 
 post-install:
