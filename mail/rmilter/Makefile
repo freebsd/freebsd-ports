@@ -2,6 +2,7 @@
 
 PORTNAME=		rmilter
 PORTVERSION=		1.5.39
+PORTREVISION=	1
 CATEGORIES=		mail
 MASTER_SITES=		http://cdn.bitbucket.org/vstakhov/rmilter/downloads/
 
@@ -30,7 +31,7 @@ CONFIGURE_ARGS+=	--enable-sendmail
 
 LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre \
 			spf2.3:${PORTSDIR}/mail/libspf2 \
-			opendkim.6:${PORTSDIR}/mail/opendkim
+			opendkim:${PORTSDIR}/mail/opendkim
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
