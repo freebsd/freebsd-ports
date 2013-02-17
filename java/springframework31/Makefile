@@ -12,6 +12,8 @@ COMMENT=	The Spring Framework for Java
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 
+CONFLICTS=	springframework-3.2.*
+
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
