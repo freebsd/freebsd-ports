@@ -1,23 +1,20 @@
-# New ports collection makefile for:	rmilter
-# Date created:				2007-11-02
-# Whom:					vsevolod
-#
 # $FreeBSD$
-#
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.37
-PORTREVISION=		1
+PORTVERSION=		1.5.39
 CATEGORIES=		mail
-MASTER_SITES=		http://highsecure.ru/
+MASTER_SITES=		http://cdn.bitbucket.org/vstakhov/rmilter/downloads/
 
 MAINTAINER=		vsevolod@FreeBSD.org
 COMMENT=		Milter that performs spamd, clamav, and spf checks
 
+LICENSE=	BSD
+
 PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+				--enable-dkim
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -32,7 +29,8 @@ CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
 LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre \
-			spf2.3:${PORTSDIR}/mail/libspf2
+			spf2.3:${PORTSDIR}/mail/libspf2 \
+			opendkim.6:${PORTSDIR}/mail/opendkim
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
