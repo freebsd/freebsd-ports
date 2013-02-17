@@ -430,7 +430,8 @@ post-patch:
 		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|vendorarch|installsitearch|g" \
-		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
+		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
+		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
