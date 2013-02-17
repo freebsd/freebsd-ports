@@ -98,6 +98,7 @@
     SUBDIR += icons-tango
     SUBDIR += icons-tango-extras
     SUBDIR += irssi-themes
+    SUBDIR += kde-gtk-config
     SUBDIR += kde-icons-black-and-white
     SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-crystal-project
