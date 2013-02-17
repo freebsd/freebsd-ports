@@ -1,0 +1,14 @@
+%%ZMQ%%include/zmq.h
+%%ZMQ%%include/zmq_utils.h
+%%ZMQ%%lib/libzmq.a
+%%ZMQ%%lib/libzmq.la
+%%ZMQ%%lib/libzmq.so
+%%ZMQ%%lib/libzmq.so.1
+%%ZMQ%%libdata/pkgconfig/libzmq.pc
+include/xs/xs.h
+lib/libxs.a
+lib/libxs.la
+lib/libxs.so
+lib/libxs.so.2
+libdata/pkgconfig/libxs.pc
+@dirrm include/xs
