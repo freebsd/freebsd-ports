@@ -12,6 +12,8 @@ share/universalindentgui/indenters/example.pl
 share/universalindentgui/indenters/example.py
 share/universalindentgui/indenters/example.rb
 share/universalindentgui/indenters/example.sh
+share/universalindentgui/indenters/example.sql
+share/universalindentgui/indenters/example.vb
 share/universalindentgui/indenters/example.xml
 share/universalindentgui/indenters/phpStylist.php
 share/universalindentgui/indenters/phpStylist.txt
@@ -36,15 +38,17 @@ share/universalindentgui/indenters/uigui_phpCB.ini
 share/universalindentgui/indenters/uigui_phpStylist.ini
 share/universalindentgui/indenters/uigui_php_Beautifier.ini
 share/universalindentgui/indenters/uigui_pindent.ini
+share/universalindentgui/indenters/uigui_psti.ini
 share/universalindentgui/indenters/uigui_rbeautify.ini
 share/universalindentgui/indenters/uigui_rubyformatter.ini
 share/universalindentgui/indenters/uigui_shellindent.ini
 share/universalindentgui/indenters/uigui_tidy.ini
 share/universalindentgui/indenters/uigui_uncrustify.ini
+share/universalindentgui/indenters/uigui_vbsbeaut.ini
 share/universalindentgui/indenters/uigui_xmlindent.ini
 share/universalindentgui/translations/universalindent_de.qm
 share/universalindentgui/translations/universalindent_fr.qm
-share/universalindentgui/translations/universalindent_ja_jp.qm
+share/universalindentgui/translations/universalindent_ja.qm
 share/universalindentgui/translations/universalindent_ru.qm
 share/universalindentgui/translations/universalindent_uk.qm
 share/universalindentgui/translations/universalindent_zh_TW.qm
