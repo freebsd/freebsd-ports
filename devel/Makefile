@@ -1110,6 +1110,7 @@
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
+    SUBDIR += libxs
     SUBDIR += libytnef
     SUBDIR += libzrtp
     SUBDIR += libzrtpcpp
