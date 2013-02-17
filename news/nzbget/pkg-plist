@@ -1,0 +1,39 @@
+bin/nzbget
+bin/nzbget-postprocess.sh
+sbin/nzbgetd
+%%DATADIR%%/nzbget.conf
+%%DATADIR%%/nzbget-postprocess.conf
+%%DATADIR%%/webui/config.js
+%%DATADIR%%/webui/downloads.js
+%%DATADIR%%/webui/edit.js
+%%DATADIR%%/webui/fasttable.js
+%%DATADIR%%/webui/history.js
+%%DATADIR%%/webui/img/download-anim-green-2x.png
+%%DATADIR%%/webui/img/download-anim-orange-2x.png
+%%DATADIR%%/webui/img/favicon.ico
+%%DATADIR%%/webui/img/icons-2x.png
+%%DATADIR%%/webui/img/icons.png
+%%DATADIR%%/webui/img/transmit-file.gif
+%%DATADIR%%/webui/img/transmit-reload-2x.gif
+%%DATADIR%%/webui/img/transmit.gif
+%%DATADIR%%/webui/index.html
+%%DATADIR%%/webui/index.js
+%%DATADIR%%/webui/lib/bootstrap.css
+%%DATADIR%%/webui/lib/bootstrap.js
+%%DATADIR%%/webui/lib/bootstrap.min.js
+%%DATADIR%%/webui/lib/jquery.js
+%%DATADIR%%/webui/lib/jquery.min.js
+%%DATADIR%%/webui/messages.js
+%%DATADIR%%/webui/nzbget-postprocess.conf
+%%DATADIR%%/webui/nzbget.conf
+%%DATADIR%%/webui/status.js
+%%DATADIR%%/webui/style.css
+%%DATADIR%%/webui/upload.js
+%%DATADIR%%/webui/util.js
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/webui
+@dirrm %%DATADIR%%/webui/img
+@dirrm %%DATADIR%%/webui/lib
