@@ -15,15 +15,8 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/${DISTNAME}/doc/LICENSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
-		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput \
-		${LOCALBASE}/include/X11/extensions/xf86vmode.h:${PORTSDIR}/x11/libXxf86vm \
-		${LOCALBASE}/include/X11/extensions/Xrandr.h:${PORTSDIR}/x11/libXrandr \
-		${LOCALBASE}/include/X11/Xcursor/Xcursor.h:${PORTSDIR}/x11/libXcursor
-RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
-		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput \
-		${LOCALBASE}/include/X11/extensions/xf86vmode.h:${PORTSDIR}/x11/libXxf86vm \
-		${LOCALBASE}/include/X11/extensions/Xrandr.h:${PORTSDIR}/x11/libXrandr \
-		${LOCALBASE}/include/X11/Xcursor/Xcursor.h:${PORTSDIR}/x11/libXcursor
+		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
@@ -38,6 +31,7 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
+USE_XORG=	xcursor xrandr xxf86vm
 MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jutils/jutils.jar:${JAVALIBDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
 ALL_TARGET=	jars compile_native
 
@@ -59,7 +53,9 @@ PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' ${WRKSRC}/platform_build/linux_ant/build.xml
+	@${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' \
+		-e '/executable/s/gcc/${CC}/g' \
+		${WRKSRC}/platform_build/linux_ant/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
