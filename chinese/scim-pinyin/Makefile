@@ -1,20 +1,15 @@
-# New ports collection makefile for:    zh-scim-chinese
-# Date created:		20 May 2004
-# Whom:			Jie Gao	<gaoj@cpsc.ucalgary.ca>
-#
+# Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-pinyin
-PORTVERSION=	0.5.91
-PORTREVISION=	9
+PORTVERSION=	0.5.92
 CATEGORIES=	chinese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	SCIM Chinese Smart Pinyin input method
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	gnomehack lthack
@@ -22,39 +17,24 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--disable-skim-support
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	NLS
 
-PLIST_SUB=	SKIM="@comment "
+.include <bsd.port.options.mk>
 
-pre-fetch:
-.if exists(${LOCALBASE}/bin/skim)
-	@${ECHO_MSG} "===>  Skim is detected, support enabled."
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-	@${ECHO_MSG} "Define WITH_SKIM to enable skim support."
-.endif
-
-.if exists(${LOCALBASE}/bin/skim)
-WITH_SKIM=	yes
-.endif
-
-.if !defined(WITH_SKIM)
-CONFIGURE_ARGS+=--disable-skim-support
-.else
-BUILD_DEPENDS+=	skim:${PORTSDIR}/textproc/skim
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-PLIST_SUB=	SKIM="" PREFIX="${PREFIX}"
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
-	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
