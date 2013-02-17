@@ -20,6 +20,7 @@ bin/gitolite
 %%SITE_PERL%%/Gitolite/Triggers/Shell.pm
 %%SITE_PERL%%/Gitolite/Triggers/Writable.pm
 %%SITE_PERL%%/Gitolite/Triggers/RefexExpr.pm
+%%SITE_PERL%%/Gitolite/Triggers/AutoCreate.pm
 libexec/gitolite/VERSION
 libexec/gitolite/VREF/COUNT
 libexec/gitolite/VREF/EMAIL-CHECK
@@ -33,6 +34,7 @@ libexec/gitolite/VREF/refex-expr
 libexec/gitolite/check-g2-compat
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
+libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
 libexec/gitolite/commands/desc
 libexec/gitolite/commands/fork
@@ -59,6 +61,7 @@ libexec/gitolite/gitolite
 libexec/gitolite/gitolite-shell
 libexec/gitolite/syntactic-sugar/continuation-lines
 libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
+libexec/gitolite/syntactic-sugar/macros
 libexec/gitolite/triggers/bg
 libexec/gitolite/triggers/partial-copy
 libexec/gitolite/triggers/post-compile/ssh-authkeys
@@ -68,6 +71,7 @@ libexec/gitolite/triggers/post-compile/update-description-file
 libexec/gitolite/triggers/post-compile/update-git-configs
 libexec/gitolite/triggers/post-compile/update-git-daemon-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-access-list
+libexec/gitolite/triggers/post-compile/update-gitweb-daemon-from-options
 libexec/gitolite/triggers/renice
 libexec/gitolite/triggers/upstream
 @dirrm %%SITE_PERL%%/Gitolite/Conf
