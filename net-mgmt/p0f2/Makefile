@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p0f2
-# Date created:				2012-07-30
-# Whom:					Denis Pokataev <catone@cpan.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	p0f2
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
 		http://farrokhi.net/distfiles/
@@ -18,11 +14,14 @@ COMMENT=	Passive OS fingerprinting tool
 
 CONFLICTS=	p0f-3.*
 
+USE_RC_SUBR=	p0f2
 USE_GMAKE=	yes
 ALL_TARGET=	all p0fq tools
 PORTDOCS=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
 MAN1=		p0f.1
 WRKSRC=		${WRKDIR}/p0f
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for f in config.h doc/README
@@ -40,7 +39,7 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for ii in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
