@@ -1,13 +1,9 @@
-# New ports collection makefile for:	kon2 with 16dot font
-# Date created:         11 Apr 1997
-# Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
-#
+# Created by: Makoto Matsushita <matusita@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kon2
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 # '+=' is for slave ports
 CATEGORIES+=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
@@ -43,7 +39,7 @@ KON14FONT=Startup
 	@${FALSE}
 .endif
 
-post-extract:
+post-patch:
 	cd ${WRKSRC} && \
 		${INSTALL_MAN} doc/kon.1 src/kon.1.in && \
 		${INSTALL_DATA} kon.cfg.FreeBSD kon.cfg.FreeBSD.in
@@ -68,7 +64,7 @@ post-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${MANPREFIX}/man/ja/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
