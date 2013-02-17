@@ -12,6 +12,8 @@ COMMENT=	The Spring Framework for Java
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 
+LATEST_LINK=	springframework31
+
 CONFLICTS=	springframework-3.2.*
 
 NO_BUILD=	yes
