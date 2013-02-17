@@ -191,8 +191,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ruby</name>
-	<range><gt>1.9</gt></range>
-	<range><lt>1.9.3.385,1</lt></range>
+	<range><gt>1.9</gt><lt>1.9.3.385,1</lt></range>
       </package>
       <package>
 	<name>rubygem18-json</name>
@@ -240,8 +239,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ruby</name>
-	<range><gt>1.9</gt></range>
-	<range><lt>1.9.3.385,1</lt></range>
+	<range><gt>1.9</gt><lt>1.9.3.385,1</lt></range>
       </package>
       <package>
 	<name>rubygem18-rdoc</name>
