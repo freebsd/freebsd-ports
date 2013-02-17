@@ -1,13 +1,8 @@
-# New ports collection makefile for:	coq
-# Date created:		2004-10-11
-# Whom:			Rene Ladan <r.c.ladan@student.tue.nl>
-#
+# Created by: Rene Ladan <r.c.ladan@student.tue.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	coq
-PORTVERSION=	8.3.3
-PORTREVISION=	1
+PORTVERSION=	8.4.1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
@@ -17,7 +12,8 @@ DISTNAME=	${PORTNAME}-${COQVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
-BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5
+BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5 \
+		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
 COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USE_OCAML=	yes
@@ -26,6 +22,7 @@ ALL_TARGET=	world
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
+CONFIGURE_ARGS+=--mandir ${PREFIX}/man
 CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=--opt
 
