@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fcfdabb7-f14d-4e61-a7d5-cfefb4b99b15">
+    <topic>Ruby Rack Gem -- Multiple Issues</topic>
+    <affects>
+      <package>
+	<name>rubygem18-rack</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-rack</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rack developers report:</p>
+	<blockquote cite="http://www.ruby-forum.com/topic/4410659">
+	  <p>Today we are proud to announce the release of Rack 1.4.5.</p>
+	  <p>Fix CVE-2013-0263, timing attack against Rack::Session::Cookie</p>
+          <p>Fix CVE-2013-0262, symlink path traversal in Rack::File</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0262</cvename>
+      <cvename>CVE-2013-0263</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-08</discovery>
+      <entry>2013-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="beab40bf-c1ca-4d2b-ad46-2f14bac8a968">
     <topic>Ruby Activemodel Gem -- Circumvention of attr_protected</topic>
     <affects>
