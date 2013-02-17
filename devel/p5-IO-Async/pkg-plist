@@ -5,6 +5,7 @@
 %%SITE_PERL%%/IO/Async/File.pm
 %%SITE_PERL%%/IO/Async/FileStream.pm
 %%SITE_PERL%%/IO/Async/Function.pm
+%%SITE_PERL%%/IO/Async/Future.pm
 %%SITE_PERL%%/IO/Async/Handle.pm
 %%SITE_PERL%%/IO/Async/Internals/TimeQueue.pm
 %%SITE_PERL%%/IO/Async/Listener.pm
