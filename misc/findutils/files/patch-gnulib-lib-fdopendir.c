@@ -1,5 +1,5 @@
---- gnulib/lib/fdopendir.c.orig	2011-04-02 15:37:38.000000000 +0000
-+++ gnulib/lib/fdopendir.c	2011-05-30 21:05:02.000000000 +0000
+--- gl/lib/fdopendir.c.orig	2012-12-15 14:42:45.000000000 +0100
++++ gl/lib/fdopendir.c	2013-02-02 17:11:52.000000000 +0100
 @@ -182,9 +182,11 @@
  
  # include <errno.h>
@@ -12,4 +12,3 @@
  /* Like fdopendir, but work around GNU/Hurd bug by validating FD.  */
  
  DIR *
-
