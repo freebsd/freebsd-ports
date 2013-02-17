@@ -51,6 +51,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7fe5b84a-78eb-11e2-8441-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.501</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-02-16">
+	  <p>This advisory announces multiple security vulnerabilities that
+	    were found in Jenkins core.</p>
+	  <ol>
+	    <li>One of the vulnerabilities allows cross-site request
+	      forgery (CSRF) attacks on Jenkins master, which causes an user
+	      to make unwanted actions on Jenkins. Another vulnerability
+	      enables cross-site scripting (XSS) attacks, which has the similar
+	      consequence. Another vulnerability allowed an attacker to bypass
+	      the CSRF protection mechanism in place, thereby mounting more CSRF
+	      attackes. These attacks allow an attacker without direct access to
+	      Jenkins to mount an attack.</li>
+	    <li>In the fourth vulnerability, a malicious user of Jenkins can trick
+	      Jenkins into building jobs that he does not have direct access to.</li>
+	    <li>And lastly, a vulnerability allows a malicious user of Jenkins to
+	      mount a denial of service attack by feeding a carefully crafted
+	      payload to Jenkins.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-02-16</url>
+    </references>
+    <dates>
+      <discovery>2013-02-16</discovery>
+      <entry>2013-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7809d9e-6af0-11e2-8e32-080027d768d3">
     <topic>poweradmin -- multiple XSS vulnerabilities</topic>
     <affects>
