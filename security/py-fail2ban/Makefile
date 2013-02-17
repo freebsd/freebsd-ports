@@ -3,7 +3,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.8.7.1
-PORTREVISION=   1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +39,8 @@ FILES=	${WRKSRC}/fail2ban-regex \
 
 post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
+	@${REINPLACE_CMD} -e 's,/bin/grep,grep,g' \
+		${WRKSRC}/config/action.d/sendmail-whois-lines.conf
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
