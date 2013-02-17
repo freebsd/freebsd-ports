@@ -1,25 +1,18 @@
-# ex:ts=8
-# Ports collection makefile for:	wotsap
-# Date created:			Jan 6, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wotsap
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	misc
-MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Web of trust statistics and pathfinder
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=	yes
+USE_PYTHON_RUN=	-2.7
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pks2wot bin/wotsap
