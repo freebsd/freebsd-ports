@@ -1,13 +1,8 @@
-# New ports collection makefile for:    opennx
-# Date created:                         Fri 29 Jul 2011
-# Whom:                                 Timothy Beyer <beyert@cs.ucr.edu>
-#
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	opennx
-PORTVERSION=	0.16.0.709
-PORTREVISION=	1
+PORTVERSION=	0.16.0.725
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CI-source
 
@@ -18,7 +13,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		cups:${PORTSDIR}/print/cups-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.16
@@ -38,9 +34,11 @@ INSTALLS_ICONS=	yes
 
 NO_PACKAGE=	must generate a fresh private key at install time
 
-SSH_KEYGEN?=	/usr/bin/ssh-keygen
+SSH_KEYGEN?=	ssh-keygen
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls --localedir=/dev/null
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -52,6 +50,11 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${RM} ${WRKSRC}/share/keys/server.id_dsa.key
 	@${SSH_KEYGEN} -N '' -b 2048 -q -f ${WRKSRC}/share/keys/server.id_dsa.key
+	@${REINPLACE_CMD} 's|/usr/NX/bin/||' \
+		${WRKSRC}/extres/xdg/innovidata-opennx.desktop \
+		${WRKSRC}/extres/xdg/innovidata-opennx-admin.desktop \
+		${WRKSRC}/extres/xdg/innovidata-opennx-wizard.desktop
+	@${RM} ${WRKSRC}/extres/xdg/*.bak
 
 post-install:
 	@${CHMOD} 440 ${PREFIX}/share/keys/server.id_dsa.key
