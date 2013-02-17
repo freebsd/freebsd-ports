@@ -35,7 +35,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of security/libtasn1 and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  libtasn1 has been updated to 2.14 and all shared libraries' versions have
+  libtasn1 has been updated to 2.14 and all shared libraries versions have
   been bumped. So you need to rebuild all applications that depend on
   libtasn1.
 
@@ -111,7 +111,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  gnutls has been updated to 2.12.23 and all shared libraries' versions have
+  gnutls has been updated to 2.12.23 and all shared libraries versions have
   been bumped. So you need to rebuild all applications that depend on
   gnutls.
 
@@ -2795,7 +2795,7 @@ or
   AFFECTS: users of security/libgcrypt and any port that depends on it
   AUTHOR: swills@FreeBSD.org
 
-  The libgcrypt port has been updated to 1.5.0 and all shared libraries'
+  The libgcrypt port has been updated to 1.5.0 and all shared libraries
   versions have been bumped. So you need to rebuild all applications that
   depend on libgcrypt. Do something like:
 
@@ -3021,7 +3021,7 @@ or
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  gnutls has been updated to 2.12.6.1 and all shared libraries' versions have
+  gnutls has been updated to 2.12.6.1 and all shared libraries versions have
   been bumped. So you need to rebuild all applications that depend on
   gnutls. Do something like:
 
@@ -5346,7 +5346,7 @@ or
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  GnuTLS has been updated to 2.8.3 and all shared libraries' versions have
+  GnuTLS has been updated to 2.8.3 and all shared libraries versions have
   been bumped.  So you need to rebuild all applications that depend on
   gnutls.  Do something like:
 
@@ -7126,7 +7126,7 @@ or
   AUTHOR: Clement Laforet <clement@FreeBSD.org>
 
   apr and apr-util bundled with apache 2.2.9 have been upgraded to 1.3.x, so
-  shared libraries' versions have been bumped. If you are using subversion
+  shared libraries versions have been bumped. If you are using subversion
   with apache22 apr, you must rebuild subversion after the update.
 
 20080617:
@@ -7597,7 +7597,7 @@ or
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  gnutls has been updated to 2.2.2 and all shared libraries' versions have
+  gnutls has been updated to 2.2.2 and all shared libraries versions have
   been bumped.  So you need to rebuild all applications that depend on
   gnutls. Do something like:
 
