@@ -55,6 +55,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/evolve.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/evolve.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/evolve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/list-evolutions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/list-evolutions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/list-evolutions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/wipe-evolution.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/wipe-evolution.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/management/commands/wipe-evolution.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/models.pyo
