@@ -60,7 +60,7 @@ OPTIONS_DEFINE=	CANNA DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SY
 OPTIONS_SINGLE=	X11TOOLKIT
 
 CANNA_DESC=		Canna support
-GSETTINGS_DESC=		GSettings support
+GSETTINGS_DESC=		GSettings support (requires DBUS)
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOUND_DESC=		Sound support
 SOURCES_DESC=		Install sources
@@ -89,7 +89,7 @@ PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=		canna:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .if defined(WITHOUT_X11)
@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=	--with-x-toolkit=gtk
 USE_GNOME+=	gtk30
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 .elif ${PORT_OPTIONS:MXAW3D}
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 .elif ${PORT_OPTIONS:MXAW}
 USE_XORG=	xaw
@@ -130,19 +130,19 @@ CONFIGURE_ARGS+=	--without-sync-input
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=   gif:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
@@ -161,17 +161,17 @@ CONFIGURE_ARGS+=	--without-xpm
 
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-xft
 .if ${PORT_OPTIONS:MM17N}
 CONFIGURE_ARGS+=	--with-m17n-flt
-LIB_DEPENDS+=	m17n.4:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS+=	m17n:${PORTSDIR}/devel/m17n-lib
 .else
 CONFIGURE_ARGS+=	--without-m17n-flt
 .endif
 .if ${PORT_OPTIONS:MOTF}
 CONFIGURE_ARGS+=	--with-otf
-LIB_DEPENDS+=	otf.0:${PORTSDIR}/print/libotf
+LIB_DEPENDS+=	otf:${PORTSDIR}/print/libotf
 .else
 CONFIGURE_ARGS+=	--without-libotf
 .endif
@@ -221,10 +221,13 @@ CONFIGURE_ARGS+=	--without-sound
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus
+.if ${PORT_OPTIONS:MGSETTINGS}
+IGNORE=	GSettings support requires DBUS. Please run 'make config'
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MXML}
@@ -235,7 +238,7 @@ CONFIGURE_ARGS+=	--without-xml2
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
