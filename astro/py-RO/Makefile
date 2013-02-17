@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-RO
-# Date created:				Dec 26, 2010
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	RO
-PORTVERSION=	2.9.3
+PORTVERSION=	3.2.0
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,24 +13,27 @@ COMMENT=	Package of Python astronomical utilities
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	MATPLOTLIB "Add support for Matplotlib" Off \
-		PYFITS     "Add Support for PyFITS" On \
-		PYGAME     "Add Support for PyGame" Off
+OPTIONS_DEFINE=		MATPLOTLIB PYFITS PYGAME
+OPTIONS_DEFAULT=	PYFITS
+
+MATPLOTLIB_DESC=	Add support for Matplotlib
+PYFITS_DESC=		Add Support for PyFITS
+PYGAME_DESC=		Add Support for PyGame
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MATPLOTLIB)
+.if ${PORT_OPTIONS:MMATPLOTLIB}
 RUN_DEPENDS+=	${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
 .endif
 
-.if !defined(WITHOUT_PYFITS)
+.if ${PORT_OPTIONS:MPYFITS}
 RUN_DEPENDS+=	${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits
 .endif
 
-.if defined(WITH_PYGAME)
+.if ${PORT_OPTIONS:MPYGAME}
 RUN_DEPENDS+=	${PKGNAMEPREFIX}game>=1.8.1:${PORTSDIR}/devel/py-game
 .endif
 
