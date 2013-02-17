@@ -37,3 +37,6 @@ sbin/nzbgetd
 @dirrm %%DATADIR%%/webui
 @dirrm %%DATADIR%%/webui/img
 @dirrm %%DATADIR%%/webui/lib
+etc/nzbget.conf.sample
+@unexec if cmp -s %D/etc/nzbget.conf %D/etc/nzbget.conf.sample; then rm -f %D/etc/nzbget.conf; fi
+@exec [ -f %D/etc/nzbget.conf ] || cp %D/etc/nzbget.conf.sample %D/etc/nzbget.conf

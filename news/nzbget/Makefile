@@ -1,20 +1,20 @@
+# Created by: Lewis Thompson <purple@lewiz.net>
 # $FreeBSD$
 
 PORTNAME=	nzbget
 PORTVERSION=	9.1
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	toxic@doobie.com
-COMMENT=	A binary newsreader supporting NZB files
+COMMENT=	Binary newsreader supporting NZB files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		sigc-2:${PORTSDIR}/devel/libsigc++20
 
-USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_JOBS_UNSAFE=yes
@@ -23,35 +23,41 @@ LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GMAKE=	yes
 
-OPTIONS_DEFINE=	PARCHECK GNUTLS OPENSSL
-OPTIONS_DEFAULT=	PARCHECK GNUTLS
-PARCHECK_DESC=	Enable autopar/parcheck
+PAR_DESC=	Support verifying/repairing with par2 files
+OPTIONS_DEFINE=	PAR
+OPTIONS_SINGLE=	TLSLIB
+OPTIONS_SINGLE_TLSLIB=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	PAR GNUTLS
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPARCHECK}
-CONFIGURE_ARGS+=	--enable-parcheck
-LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
+.if ${PORT_OPTIONS:MPAR}
+ CONFIGURE_ARGS+= --enable-parcheck --disable-libpar2-bugfixes-check
+ LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
 .else
-CONFIGURE_ARGS+=	--without-parcheck
+ CONFIGURE_ARGS+= --disable-parcheck
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=	--with-tlslib=OpenSSL
+ CONFIGURE_ARGS+= --with-tlslib=OpenSSL
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--with-tlslib=GnuTLS
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+ CONFIGURE_ARGS+=	--with-tlslib=GnuTLS
+ LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+ LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/nzbget.conf ${PREFIX}/etc/nzbget.conf.sample
+	@[ -f ${PREFIX}/etc/nzbget.conf ] || ${CP} ${PREFIX}/etc/nzbget.conf.sample \
+	${PREFIX}/etc/nzbget.conf
+
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
