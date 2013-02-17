@@ -139,6 +139,7 @@
     SUBDIR += sablevm-classpath
     SUBDIR += servingxml
     SUBDIR += springframework
+    SUBDIR += springframework31
     SUBDIR += sqlitejdbc
     SUBDIR += subversion-java
     SUBDIR += trove4j
