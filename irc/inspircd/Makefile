@@ -1,16 +1,10 @@
-# New ports collection makefile for:   inspircd
-# Date created:        25 August 2006
-# Whom:                brain
-#
 # $FreeBSD$
-#
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTVERSION=	2.0.10
 CATEGORIES=	irc
-MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
-DISTNAME=	InspIRCd-${PORTVERSION}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
+DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A modular C++ IRC daemon
@@ -20,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 CONFLICTS=	inspircd-1.*
 
-USE_BZIP2=	yes
+FETCH_ARGS?=	-pRr
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
 
@@ -60,7 +54,7 @@ POSIX_DESC=	Build m_regex_posix module
 .include <bsd.port.options.mk>
 
 post-extract:
-	@(cd ${WRKDIR} && ${MV} ${PORTNAME} ${DISTNAME})
+	@(cd ${WRKDIR} && ${MV} inspircd-${PORTVERSION} ${DISTNAME})
 
 .if ${PORT_OPTIONS:MLDAPAUTH}
 USE_OPENLDAP=	yes
@@ -103,8 +97,8 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--enable-gnutls
 EXTRAS:=${EXTRAS},m_ssl_gnutls.cpp
 PLIST_SUB+=	GNUTLS=""
