@@ -16,6 +16,7 @@ USE_PYTHON_RUN=	-2.7
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pks2wot bin/wotsap
+PORTSCOUT=	ignore:1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pks2wot ${PREFIX}/bin
