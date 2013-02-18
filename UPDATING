@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130218:
+  AFFECTS: users of net/samba4-devel
+  AUTHOR: timur@FreeBSD.org
+
+  The port was renamed into net/samba4 and is going to replace older
+  development version of Samba4. You can upgrade it with:
+
+  # portmaster -o net/samba4 net/samba4-devel
+
+  In case you want to upgrade from net/samba36 make sure, that you've
+  made backup of /usr/local/etc/smb.conf and the content of /var/db/samba/
+  directory.
+
+  There is no direct upgrade path from Samba3 to Samba4, but you can
+  always try:
+
+  # portmaster -o net/samba4 net/samba36
+
+  Make sure you've read instructions from the supplied README.FreeBSD
+  file and read all the relevant pages on http://wiki.samba.org/
+
+  We still miss necessary support for Samba4 from base ntpd and bind9,
+  port versions are also are not ready yet, but been worked on.
+
+  Please note, that Samba4 is still in it's early days, so there are
+  bugs both from my side and it's own, so be careful with placing it
+  into production.
+
 20130206:
   AFFECTS: users of sysutils/boxbackup
   AUTHOR: bdrewery@FreeBSD.org
