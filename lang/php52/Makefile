@@ -18,7 +18,7 @@ COMMENT=	PHP Scripting Language
 
 DEPRECATED=		PHP 5.2 series is strongly discouraged for new \
 			installations, migrate now
-EXPIRATION_DATE=	2013-03-01
+EXPIRATION_DATE=	2013-09-01
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
