@@ -84,6 +84,7 @@
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += explosions
+    SUBDIR += fbless
     SUBDIR += felis
     SUBDIR += fep
     SUBDIR += figlet
