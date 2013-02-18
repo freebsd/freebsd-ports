@@ -1504,6 +1504,7 @@
     SUBDIR += xmldiff
     SUBDIR += xmlenc
     SUBDIR += xmlformat
+    SUBDIR += xmlgen
     SUBDIR += xmlindent
     SUBDIR += xmlppm
     SUBDIR += xmlprpr
