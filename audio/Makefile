@@ -396,6 +396,7 @@
     SUBDIR += liboggz
     SUBDIR += libopenspc
     SUBDIR += libsamplerate
+    SUBDIR += libshairport
     SUBDIR += libshout
     SUBDIR += libshout2
     SUBDIR += libsidplay
