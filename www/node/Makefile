@@ -1,12 +1,8 @@
-# New ports collection makefile for:		node
-# Date created:					2010-04-12
-# Whom:						Jin-Sih Lin <linpct@gmail.com>
-#
+# Created by: Jin-Sih Lin <linpct@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	node
-PORTVERSION=	0.8.18
+PORTVERSION=	0.8.20
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
