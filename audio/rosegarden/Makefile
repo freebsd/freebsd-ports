@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	12.12.25
+PORTVERSION=	13.02
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
