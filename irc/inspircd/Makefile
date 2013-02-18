@@ -1,4 +1,4 @@
-# Created by: brain
+# Created by: Craig Edwards <brain@mail1.chatspike.net>
 # $FreeBSD$
 
 PORTNAME=	inspircd
