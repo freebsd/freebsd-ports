@@ -44,6 +44,10 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+.if !defined(WITH_NTP_SIGND)
+CONFIGURE_ARGS+=	--enable-ntp-signd
+.endif
+
 .if defined(WITH_NTPSNMPD)
 PLIST_FILES+=		sbin/ntpsnmpd
 BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
