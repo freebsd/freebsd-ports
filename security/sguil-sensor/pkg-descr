@@ -4,7 +4,7 @@ The actual interface and GUI server are written in tcl/tk
 (www.tcl.tk). Sguil also relies on other open source software
 in order to function properly.
 
-The sensor list includes security/barnyard, security/snort, 
+The sensor list includes security/barnyard2-sguil, security/snort, 
 security/sancp, net-mgmt/pads, tcpdump (a part of the OS) 
 and devel/tcltls as well as lang/tcl84 and lang/tclX.  Care 
 has been taken to ensure that everything you need to build 
@@ -15,4 +15,3 @@ Sguil currently functions as an analysis interface and has
 rule management capabilities.
 
 WWW: http://sguil.sourceforge.net/index.php
-pauls@utdallas.edu

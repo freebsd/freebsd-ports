@@ -16,19 +16,17 @@
 
 . /etc/rc.subr
 
+name="pcap_agent"
+rcvar=pcap_agent_enable
 load_rc_config pcap_agent
 
 #set defaults
-pcap_agent_enable=${pcap_agent_enable:-"NO"}
-pcap_agent_conf=${pcap_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf"}
-pcap_agent_flags=${pcap_agent_flags:-"-D"}
+: ${pcap_agent_enable:="NO"}
+: ${pcap_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf"}
+: ${pcap_agent_flags:="-D -c ${pcap_agent_conf}"}
 
-name="pcap_agent"
-rcvar=pcap_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/pcap_agent.tcl"
-command_args="-c ${pcap_agent_conf} ${pcap_agent_flags}"
-procname="%%PREFIX%%/bin/tclsh8.4"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
 pidfile="/var/run/${name}.pid"
-check_pidfile="${pidfile} ${procname} /bin/sh"
 
 run_rc_command "$1"
