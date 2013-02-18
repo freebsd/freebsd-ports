@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		sigc-2:${PORTSDIR}/devel/libsigc++20
 
+USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_JOBS_UNSAFE=yes
