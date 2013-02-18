@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: samba4
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv ntpd
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 #
@@ -14,26 +14,28 @@
 #samba4_enable="YES"
 #
 # Configuration file can be set with:
-#samba4_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+#samba4_config="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 #
 
 . /etc/rc.subr
 
 name="samba4"
-rcvar=samba4_enable
+rcvar=$(set_rcvar)
 
 load_rc_config "${name}"
 
 # Defaults
 samba4_enable=${samba4_enable:=NO}
 samba4_flags=${samba4_flags=--daemon}
-samba4_config_default="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+samba4_config_default="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 samba4_config=${samba4_config=${samba4_config_default}}
 samba4_configfile_arg=${samba4_config:+--configfile="${samba4_config}"}			#"
 testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba4_configfile_arg}"
 # Fetch parameters from configuration file
 samba4_lockdir=$(${testparm_command} --parameter-name='lock directory' 2>/dev/null)
+
 # Runtime options
+start_precmd="samba4_prestart"
 restart_precmd="samba4_checkconfig"
 command="%%PREFIX%%/sbin/${name}"
 command_args=${samba4_configfile_arg}
@@ -48,6 +50,17 @@ samba4_checkconfig() {
     else
 	echo "FAILED"
 	return 1
+    fi
+}
+
+samba4_prestart() {
+    # Make sure we have our RUNDIR, even if it's on a tmpfs
+    if [ ! -d "%%SAMBA4_RUNDIR%%" -a ! -e "%%SAMBA4_RUNDIR%%" ]; then
+	install -m 0755 -d "%%SAMBA4_RUNDIR%%"
+    fi
+    # Remove smbd.pid before starting up samba(needed for s3fs)
+    if [ -e "%%SAMBA4_RUNDIR%%/smbd.pid" ] ; then
+	rm -f "%%SAMBA4_RUNDIR%%/smbd.pid"
     fi
 }
 
