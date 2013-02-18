@@ -2,7 +2,7 @@
  
  --- appUtil/utilPrinter.c	Sun Aug 17 19:14:01 2003
  +++ appUtil/utilPrinter.c	Sun Aug 17 19:15:54 2003
- @@ -281,14 +281,14 @@
+ @@ -331,14 +331,14 @@
       /*  1  */
       if  ( count == 0 )
   	{

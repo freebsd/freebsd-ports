@@ -1,29 +1,26 @@
-# Ports collection makefile for:  ted
-# Date created:			  23 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ted
-PORTVERSION=	2.22
-PORTREVISION=	2
+PORTVERSION=	2.23
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
+		http://fossies.org/linux/misc/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	X11 based RTF editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		paper.2:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+		tiff:${PORTSDIR}/graphics/tiff \
+		paper:${PORTSDIR}/print/libpaper
+RUN_DEPENDS=	gsfonts>0:${PORTSDIR}/print/gsfonts
 
 OPTIONS_DEFINE=	GTK2 DOCS
+GTK2_DESC=	Use GTK2 instead of MOTIF
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
@@ -58,7 +55,7 @@ CONFIGURE_ARGS+=--with-MOTIF
 .endif
 
 post-extract:
-	@cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
+	@cd ${WRKSRC}/tedPackage && ${TAR} xf TedDatadir.tar
 	@${INSTALL_SCRIPT} ${FILESDIR}/configure ${WRKSRC}
 
 post-patch:
@@ -72,18 +69,18 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Ted/Ted ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/Ted/rtf2*.sh ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/tedPackage/Ted/Ted.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/tedPackage/Ted/rtf2*.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/examples/rtf2*.sh ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/tedPackage/doc/Ted.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tedPackage/doc/rtf2*.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/*.ps ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/ps/*.ps ${DATADIR}
 	@${MKDIR} ${AFMDIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/afm/*.afm ${AFMDIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/*.afm ${AFMDIR}
 	@${MKDIR} ${INDDIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/dfa/*.dfa ${INDDIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/dfa/*.dfa ${INDDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/TedDocument-en_US.rtf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/TedDocument-en_US.rtf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
