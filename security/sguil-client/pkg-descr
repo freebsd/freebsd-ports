@@ -5,7 +5,7 @@ The actual interface and GUI server are written in tcl/tk
 in order to function properly.
 
 The client requires tls, gpg, iwidgets and other tcl packages and may
-also use wireshark and festival depending on your selection
+also use wireshark, sancp and festival depending on your selection
 of options.  Run "make config" in the port to see what options
 are available.
 

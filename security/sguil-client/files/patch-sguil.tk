@@ -1,6 +1,6 @@
---- client/sguil.tk.orig	2008-04-10 20:14:26.000000000 -0500
-+++ client/sguil.tk	2008-04-10 20:42:55.000000000 -0500
-@@ -77,7 +77,7 @@
+--- client/sguil.tk.orig	2012-11-15 22:24:35.000000000 +0000
++++ client/sguil.tk	2012-11-15 22:26:33.000000000 +0000
+@@ -88,7 +88,7 @@
  
  # Load iwidgets and namespaces
  if [catch {package require Iwidgets} iwidgetsVersion] {
@@ -9,7 +9,7 @@
      puts "The iwidgets package is part of the incr tcl extension and is"
      puts "available as a port/package most systems."
      puts "See http://www.tcltk.com/iwidgets/ for more info."
-@@ -2017,11 +2017,11 @@
+@@ -2053,11 +2053,11 @@
      set CONF_FILE $env(HOME)/sguil.conf
    } elseif { [file exists ./sguil.conf] } {
      set CONF_FILE ./sguil.conf
@@ -18,11 +18,11 @@
 -             [file exists /etc/sguil/sguil.conf] &&\
 -             [file readable /etc/sguil/sguil.conf] } {
 -    set CONF_FILE /etc/sguil/sguil.conf
-+  } elseif { [file exists /usr/local/etc/sguil-client] &&\
-+             [file isdirectory /usr/local/etc/sguil-client] &&\
-+             [file exists /usr/local/etc/sguil-client/sguil.conf] &&\
-+             [file readable /usr/local/etc/sguil-client/sguil.conf] } {
-+    set CONF_FILE /usr/local/etc/sguil-client/sguil.conf
++  } elseif { [file exists /usr/local/etc/sguil] &&\
++             [file isdirectory /usr/local/etc/sguil] &&\
++             [file exists /usr/local/etc/sguil/sguil.conf] &&\
++             [file readable /usr/local/etc/sguil/sguil.conf] } {
++    set CONF_FILE /usr/local/etc/sguil/sguil.conf
    } else {
      puts "Couldn't determine where the sguil config file is"
      puts "Looked for $env(HOME)/sguil.conf and ./sguil.conf."
