@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webmin
-# Date created:		Do  19 Nov 1998 21:13:55 CET
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webmin
 PORTVERSION=	1.620

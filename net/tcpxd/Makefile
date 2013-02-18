@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpxd
-# Date created:		2006-10-29
-# Whom:			Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpxd
 PORTVERSION=	1.4

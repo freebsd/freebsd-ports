@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pkg_trackinst
-# Date created:		3 May 2005
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pkg_trackinst

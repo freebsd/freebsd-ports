@@ -1,9 +1,5 @@
-# New ports collection Makefile for:    DrScheme
-# Date created:         21 Jun 2001
-# Whom:                 Joseph Koshy <jkoshy@FreeBSD.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	racket
 PORTVERSION=	5.3.1
