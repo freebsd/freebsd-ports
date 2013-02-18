@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php52
-# Date created:				17 Apr 2010
-# Whom:					Alex Keda <admin@lissyara.su>
-#
+# Created by: Alex Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	php52
 PORTVERSION=	5.2.17
