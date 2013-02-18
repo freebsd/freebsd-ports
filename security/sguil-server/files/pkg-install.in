@@ -396,6 +396,8 @@ esac
 		chown ${sguil_user}:${sguil_group} %%PREFIX%%/bin/${files}
 	fi
 	done
+	chown -R ${sguil_user}:${sguil_group} %%PREFIX%%/etc/%%SGUILDIR%%
+	chown -R ${sguil_user}:${sguil_group} %%PREFIX%%/lib/%%SGUILDIR%%
 	if [ ! -f %%PREFIX%%/bin/sguild ]; then
 		echo "Sguild is missing!  Please correct the problem before continuing!"
 		exit 1

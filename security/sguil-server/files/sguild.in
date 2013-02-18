@@ -9,43 +9,27 @@
 # Add the following lines to /etc/rc.conf to enable sguild:
 # sguild_enable (bool):		Set to YES to enable sguild
 # 				Default: NO
-# The following commandline arguments are available for sguild
-# "  -c <filename>: PATH to the sguild config (sguild.conf) file."
-# "  -a <filename>: PATH to the autocat config (autocat.conf) file."
-# "  -g <filename>: PATH to the sguild global queries (sguild.queries) file."
-# "  -u <filename>: PATH to the sguild users (sguild.users) file."
-# "  -P <filename>: Name of file to write the PID to."
-# "                 Default is /var/run/%%SGUILDIR%%/sguild.pid"
-# "  -l <filepath>: PATH to sguild libraries."
-# "  -O <filename>: Define PATH to tls (tcl openssl) lib (libtls1.x.so)"
-# "  -C <directory>: Directory that contains sguild.pem and sguild.key"
-# "  -D Runs sguild in daemon mode."
-# "  -A <filename>: PATH to sguild.access file."
-# "  -d <0|1|2>: Set DEBUG level"
 # sguild_flags (str):		Extra flags passed to sguild
 #				Default: -D -P ${pid}
 # sguild_conf (str):		Sguild configuration file
 #				Default: %%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf
-# sguild_user (str):		Default: sguild
+# sguild_user (str):		Default: sguil
 # Note: this value MUST be set in /etc/rc.conf if you do not accept the default
 # user created by the pkg-install script
 
 . /etc/rc.subr
 
-load_rc_config sguild
-# set some defaults
-sguild_enable=${sguild_enable:-"NO"}
-sguild_conf=${sguild_conf:-"/%%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf"}
-pid=${pid:-"/var/run/%%SGUILDIR%%/sguild.pid"}
-sguild_flags=${sguild_flags:-"-D -P ${pid}"}
-sguild_user=${sguild_user:-"sguil"}
-
 name="sguild"
 rcvar=sguild_enable
+load_rc_config sguild
+# set some defaults
+: ${sguild_enable:="NO"}
+: ${sguild_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf"}
+: ${pid:="/var/run/%%SGUILDIR%%/sguild.pid"}
+: ${sguild_flags:="-D -P ${pid}"}
+: ${sguild_user:="sguil"}
+
 command="%%PREFIX%%/bin/${name}"
-command_args="-c ${sguild_conf} ${sguild_flags}"
-procname="%%TCLSH%%"
-check_process="${procname}"
-sguild_user="sguil"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
 
 run_rc_command "$1"
