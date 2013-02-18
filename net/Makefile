@@ -14,6 +14,7 @@
     SUBDIR += abills
     SUBDIR += activemq
     SUBDIR += acx100
+    SUBDIR += afpfs-ng
     SUBDIR += aget
     SUBDIR += aoe
     SUBDIR += apinger

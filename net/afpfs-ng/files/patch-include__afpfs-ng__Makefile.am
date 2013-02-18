@@ -1,0 +1,10 @@
+--- include/afpfs-ng/Makefile.am.orig	1970-01-01 00:00:00.000000000 +0000
++++ include/afpfs-ng/Makefile.am	2012-10-14 13:11:34.000000000 +0000
+@@ -0,0 +1,6 @@
++## Process this file with automake to produce Makefile.in
++
++afpfsincludedir = $(includedir)/afpfs-ng
++
++afpfsinclude_HEADERS = afp.h afp_protocol.h libafpclient.h
++nodist_afpfsinclude_HEADERS =  codepage.h dsi.h  map_def.h midlevel.h uams_def.h utils.h
+diff -Naur afpfs-ng-0.8.1.orig/include/afpfs-ng/afp.h afpfs-ng-0.8.1/include/afpfs-ng/afp.h

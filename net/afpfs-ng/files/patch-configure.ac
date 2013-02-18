@@ -1,0 +1,42 @@
+--- configure.ac.orig	2008-03-08 16:23:12.000000000 +0000
++++ configure.ac	2012-10-14 13:11:39.000000000 +0000
+@@ -11,6 +11,7 @@
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ AC_PROG_LIBTOOL
++AM_PROG_CC_C_O
+ 
+ # Checks for libraries.
+ # FIXME: Replace `main' with a function in `-lncurses':
+@@ -50,21 +51,6 @@
+ 	case $host in
+ 		*-*-darwin*) 
+ 		AC_MSG_CHECKING([for correct gcrypt version])
+-		AC_RUN_IFELSE(
+-			[AC_LANG_PROGRAM([
+-				#include <gcrypt.h>
+-				#include <stdio.h>],[
+-				char*p= GCRYPT_VERSION;
+-				unsigned int vers;
+-				vers=atoi(p)*10000;
+-				p=strchr(p,'.')+1;
+-				vers+=atoi(p)*100;
+-				p=strchr(p,'.')+1;
+-				vers+=atoi(p);
+-				if (vers<10400) return 1;
+-			])],
+-			[AC_MSG_RESULT([yes])],
+-			[AC_MSG_ERROR([version is < 1.4.0])])
+ 		AM_CONDITIONAL(HAVE_LIBGCRYPT, true)
+ 		AC_DEFINE([HAVE_LIBGCRYPT], [1] )
+ 		;;
+@@ -105,7 +91,7 @@
+ 
+ 
+ 
+-AC_CONFIG_FILES([lib/Makefile fuse/Makefile cmdline/Makefile Makefile docs/Makefile])
++AC_CONFIG_FILES([lib/Makefile fuse/Makefile cmdline/Makefile Makefile include/Makefile include/afpfs-ng/Makefile docs/Makefile])
+ 
+ AC_OUTPUT
+ 
+diff -Naur afpfs-ng-0.8.1.orig/fuse/client.c afpfs-ng-0.8.1/fuse/client.c
