@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL JDBC
-# Date created:		January 14, 2002
-# Whom:			Palle Girgensohn <girgen@partitur.se>
-#
+# Created by: Palle Girgensohn <girgen@partitur.se>
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PORTVERSION=	9.1.902
