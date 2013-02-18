@@ -6,13 +6,13 @@ PORTNAME=	syslog-ng
 PORTVERSION=	2.0.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	ivan.lago@ifom.eu
 COMMENT=	A powerful syslogd replacement
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet \
+		evtlog.0:${PORTSDIR}/sysutils/eventlog
 
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
