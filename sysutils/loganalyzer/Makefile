@@ -7,6 +7,7 @@
 
 PORTNAME=	loganalyzer
 PORTVERSION=	3.4.5
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 
@@ -30,7 +31,7 @@ OPTIONS=	PHP_MYSQL "MySQL database support (PHP extension)" Off \
 		PDO_SQLITE "SQLite PDO driver" Off
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	session pdo gd xml
+USE_PHP=	session pdo gd xml zlib
 WANT_PHP_WEB=	YES
 IGNORE_WITH_PHP=4
 DEFAULT_PHP_VER=5
