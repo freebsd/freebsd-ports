@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-HTTP
-# Date created:			  13 December 2003
-# Whom:				  Alex Miller (<asm@asm.kiev.ua>)
-#
+# Created by: Alex Miller (<asm@asm.kiev.ua>)
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP
 PORTVERSION=	1.4.1
