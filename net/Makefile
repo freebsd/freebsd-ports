@@ -322,7 +322,6 @@
     SUBDIR += libmxp
     SUBDIR += libnatpmp
     SUBDIR += libnet
-    SUBDIR += libnet-devel
     SUBDIR += libnet10
     SUBDIR += libnetdude
     SUBDIR += libnids
