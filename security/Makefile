@@ -677,6 +677,7 @@
     SUBDIR += pgpin
     SUBDIR += php-Auth_OpenID
     SUBDIR += php-Auth_OpenID2
+    SUBDIR += php-openid-ldap
     SUBDIR += php-suhosin
     SUBDIR += php5-filter
     SUBDIR += php5-hash
