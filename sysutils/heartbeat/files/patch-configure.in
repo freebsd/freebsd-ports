@@ -36,35 +36,10 @@
  AC_SUBST(MAILCMD)
  AC_DEFINE_UNQUOTED(IFCONFIG, "$IFCONFIG", path to the ifconfig command)
 -AC_PATH_PROGS(LIBNETCONFIG, libnet-config)
-+AC_PATH_PROGS(LIBNETCONFIG, libnet116-config)
++AC_PATH_PROGS(LIBNETCONFIG, libnet11-config)
  AC_PATH_PROGS(GETENT, getent)
  AC_PATH_PROGS(IP2UTIL, ip, /sbin/ip)
  AC_PATH_PROGS(XML2CONFIG, xml2-config)
-@@ -725,13 +733,13 @@
-       AC_MSG_RESULT(using old version of API)
-       dnl The old version of the API REQUIRES $LIBNETCONFIG
-       dnl so we can only deal with new API unless we have it.
--      AC_CHECK_LIB(net, libnet_get_hwaddr, [],
-+      AC_CHECK_LIB(net-1, libnet_get_hwaddr, [],
-       [FatalMissingThing "libnet" "You need libnet to continue."			\
- 		"You can get libnet from http://www.packetfactory.net/libnet"		\
- 		"Note that some RPMs split libnet up into libnet and libnet-devel."	\
- 		"In this case you have to install libnet-devel"])
-       LIBNETDEFINES=""
--      LIBNETLIBS=" -lnet"
-+      LIBNETLIBS=" -lnet-1"
-       if test "$ac_cv_lib_nsl_t_open" = yes; then
-          LIBNETLIBS="-lnsl $LIBNETLIBS"
-       fi
-@@ -739,7 +747,7 @@
-          LIBNETLIBS="-lsocket $LIBNETLIBS"
-       fi
- 
--      libnet=net
-+      libnet=net-1
- else
-       LIBNETDEFINES="`$LIBNETCONFIG --defines` `$LIBNETCONFIG --cflags`";
-       LIBNETLIBS="`$LIBNETCONFIG --libs`";
 @@ -1718,6 +1726,7 @@
  AC_CHECK_SIZEOF(int)
  AC_CHECK_SIZEOF(long)
