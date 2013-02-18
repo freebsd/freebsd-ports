@@ -1516,6 +1516,7 @@
     SUBDIR += py-flup
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
+    SUBDIR += py-frozen-flask
     SUBDIR += py-funkload
     SUBDIR += py-google-api-python-client
     SUBDIR += py-graphite-web

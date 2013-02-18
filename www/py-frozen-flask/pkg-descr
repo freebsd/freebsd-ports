@@ -1,0 +1,7 @@
+Frozen-Flask freezes a Flask application into a set of static files.
+The result can be hosted without any server-side software other than
+a traditional web server.
+
+This project used to be called Flask-Static.
+
+WWW:    http://pythonhosted.org/Frozen-Flask/
