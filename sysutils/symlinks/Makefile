@@ -1,9 +1,5 @@
-# New ports collection makefile for:	symlinks
-# Date created:		Sa  27 Mai 2000 00:21:44 CEST
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=		symlinks
 PORTVERSION=		1.4

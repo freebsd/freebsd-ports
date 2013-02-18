@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	cl-meta-clisp
-# Date created:				20. March 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	meta

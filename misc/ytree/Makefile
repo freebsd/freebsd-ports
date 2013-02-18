@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ytree
-# Date created:				5 Jan 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	ytree
 PORTVERSION=	1.97

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	IPython
-# Date created:				Nov, 13	2003
-# Whom:					Dryice Liu
-#
+# Created by: Dryice Liu
 # $FreeBSD$
-#
 
 PORTNAME=	ipython
 PORTVERSION=	0.13.1

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	uffi
-# Date created:				19 August 2004
-# Whom:					Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-#
+# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 # $FreeBSD$
 
 PORTNAME=	uffi

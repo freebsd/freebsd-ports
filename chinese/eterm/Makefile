@@ -1,6 +1,4 @@
-# New ports collection makefile for:	eterm
-# Date created:        24th December 2000
-# Whom:                Michael C. Wu
+# Created by: Michael C. Wu
 # $FreeBSD$
 
 CATEGORIES=	chinese

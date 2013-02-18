@@ -1,7 +1,4 @@
-# ports collection makefile for:	fec
-# Date created:		7 July 2006
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
 
 PORTNAME=	libfec

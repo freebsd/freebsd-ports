@@ -1,9 +1,5 @@
-# New ports collection makefile for:    freefonts
-# Date created:         Thu Aug  1 21:32:14 CDT 1996
-# Whom:                 erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10

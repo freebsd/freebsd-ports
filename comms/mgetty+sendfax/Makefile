@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mgetty+sendfax
-# Date created:				20 April 1998
-# Whom:					rkw
-#
+# Created by: rkw
 # $FreeBSD$
-#
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35

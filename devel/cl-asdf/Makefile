@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	cl-asdf
-# Date created:				10 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 # The source tarball was obtained from the project's GIT repository:

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	infix
-# Date created:				19 August 2006
-# Whom:					Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni
 # $FreeBSD$
 
 PORTNAME=	infix
