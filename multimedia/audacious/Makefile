@@ -1,12 +1,8 @@
-# New ports collection makefile for:	audacious
-# Date created:			2006-01-01
-# Whom:				Zastupov Stepan [RedChrom] <redchrom@mail.ru>
-#
+# Created by: Zastupov Stepan [RedChrom] <redchrom@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	audacious
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
