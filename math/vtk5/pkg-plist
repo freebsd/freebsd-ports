@@ -962,7 +962,7 @@ include/vtk-%%VER2%%/vtkExodusIIReaderParser.h
 include/vtk-%%VER2%%/vtkExodusIIReaderVariableCheck.h
 include/vtk-%%VER2%%/vtkExodusIIWriter.h
 include/vtk-%%VER2%%/vtkExodusModel.h
-include/vtk-%%VER2%%/vtkExodusReader.h
+%%LEGACY%%include/vtk-%%VER2%%/vtkExodusReader.h
 include/vtk-%%VER2%%/vtkExpandSelectedGraph.h
 include/vtk-%%VER2%%/vtkExplicitCell.h
 include/vtk-%%VER2%%/vtkExporter.h
@@ -1204,7 +1204,7 @@ include/vtk-%%VER2%%/vtkIdFilter.h
 include/vtk-%%VER2%%/vtkIdList.h
 include/vtk-%%VER2%%/vtkIdListCollection.h
 include/vtk-%%VER2%%/vtkIdTypeArray.h
-include/vtk-%%VER2%%/vtkIdentColoredPainter.h
+%%LEGACY%%include/vtk-%%VER2%%/vtkIdentColoredPainter.h
 include/vtk-%%VER2%%/vtkIdentityTransform.h
 include/vtk-%%VER2%%/vtkImageAccumulate.h
 include/vtk-%%VER2%%/vtkImageActor.h
@@ -1322,7 +1322,7 @@ include/vtk-%%VER2%%/vtkImageSobel2D.h
 include/vtk-%%VER2%%/vtkImageSobel3D.h
 include/vtk-%%VER2%%/vtkImageSource.h
 include/vtk-%%VER2%%/vtkImageSpatialAlgorithm.h
-include/vtk-%%VER2%%/vtkImageSpatialFilter.h
+%%LEGACY%%include/vtk-%%VER2%%/vtkImageSpatialFilter.h
 include/vtk-%%VER2%%/vtkImageStencil.h
 include/vtk-%%VER2%%/vtkImageStencilAlgorithm.h
 include/vtk-%%VER2%%/vtkImageStencilData.h
@@ -1637,7 +1637,7 @@ include/vtk-%%VER2%%/vtkPDataSetReader.h
 include/vtk-%%VER2%%/vtkPDataSetWriter.h
 include/vtk-%%VER2%%/vtkPDescriptiveStatistics.h
 include/vtk-%%VER2%%/vtkPExodusIIReader.h
-include/vtk-%%VER2%%/vtkPExodusReader.h
+%%LEGACY%%include/vtk-%%VER2%%/vtkPExodusReader.h
 include/vtk-%%VER2%%/vtkPExtractArraysOverTime.h
 include/vtk-%%VER2%%/vtkPExtractHistogram2D.h
 include/vtk-%%VER2%%/vtkPHardwareSelector.h
@@ -2286,7 +2286,7 @@ include/vtk-%%VER2%%/vtkViewUpdater.h
 include/vtk-%%VER2%%/vtkViewport.h
 include/vtk-%%VER2%%/vtkViewsInstantiator.h
 include/vtk-%%VER2%%/vtkVisibilitySort.h
-include/vtk-%%VER2%%/vtkVisibleCellSelector.h
+%%LEGACY%%include/vtk-%%VER2%%/vtkVisibleCellSelector.h
 include/vtk-%%VER2%%/vtkVoidArray.h
 include/vtk-%%VER2%%/vtkVolume.h
 include/vtk-%%VER2%%/vtkVolume16Reader.h
@@ -2845,24 +2845,24 @@ include/vtk-%%VER2%%/vtknetcdf/include/netcdfcpp.h
 include/vtk-%%VER2%%/vtknetcdf/include/vtk_netcdf_config.h
 include/vtk-%%VER2%%/vtknetcdf/include/vtk_netcdf_mangle.h
 include/vtk-%%VER2%%/vtksqlite/vtk_sqlite3.h
-include/vtk-%%VER2%%/vtkstd/algorithm
-include/vtk-%%VER2%%/vtkstd/deque
-include/vtk-%%VER2%%/vtkstd/exception
-include/vtk-%%VER2%%/vtkstd/functional
-include/vtk-%%VER2%%/vtkstd/iterator
-include/vtk-%%VER2%%/vtkstd/limits
-include/vtk-%%VER2%%/vtkstd/list
-include/vtk-%%VER2%%/vtkstd/map
-include/vtk-%%VER2%%/vtkstd/memory
-include/vtk-%%VER2%%/vtkstd/new
-include/vtk-%%VER2%%/vtkstd/numeric
-include/vtk-%%VER2%%/vtkstd/queue
-include/vtk-%%VER2%%/vtkstd/set
-include/vtk-%%VER2%%/vtkstd/stack
-include/vtk-%%VER2%%/vtkstd/stdexcept
-include/vtk-%%VER2%%/vtkstd/string
-include/vtk-%%VER2%%/vtkstd/utility
-include/vtk-%%VER2%%/vtkstd/vector
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/algorithm
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/deque
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/exception
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/functional
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/iterator
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/limits
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/list
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/map
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/memory
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/new
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/numeric
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/queue
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/set
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/stack
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/stdexcept
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/string
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/utility
+%%LEGACY%%include/vtk-%%VER2%%/vtkstd/vector
 include/vtk-%%VER2%%/vtksys/Base64.h
 include/vtk-%%VER2%%/vtksys/CommandLineArguments.hxx
 include/vtk-%%VER2%%/vtksys/Configure.h
@@ -3172,7 +3172,7 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/vtksys/stl
 @dirrm include/vtk-%%VER2%%/vtksys/ios
 @dirrm include/vtk-%%VER2%%/vtksys
-@dirrm include/vtk-%%VER2%%/vtkstd
+%%LEGACY%%@dirrm include/vtk-%%VER2%%/vtkstd
 @dirrm include/vtk-%%VER2%%/vtksqlite
 @dirrm include/vtk-%%VER2%%/vtknetcdf/include
 @dirrm include/vtk-%%VER2%%/vtknetcdf

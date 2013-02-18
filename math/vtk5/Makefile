@@ -1,4 +1,4 @@
-# Created by: Mykola Khotyaintsev <ko@irfu.se>, 
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
 
 PORTNAME=	vtk
@@ -29,13 +29,16 @@ USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
 CXXFLAGS+=	-DUSE_INTERP_ERRORLINE
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	SHARED VTKMPEG2 GL2PS OSMESA QT4 JAVA PYTHON TCLTK
-OPTIONS_DEFAULT=SHARED GL2PS QT4 PYTHON TCLTK
+OPTIONS_DEFINE=	SHARED VTKMPEG2 GL2PS OSMESA QT4 JAVA PYTHON TCLTK \
+		DBGLEAKS LEGACY
+OPTIONS_DEFAULT=SHARED GL2PS QT4 PYTHON TCLTK LEGACY
 
 SHARED_DESC=	Build shared libraries
 VTKMPEG2_DESC=	Patented MPEG2 encoder module
 GL2PS_DESC=	OpenGL to PostScript conversion module
 OSMESA_DESC=	Use Mesa for off-screen rendering
+DBGLEAKS_DESC=	Build leak checking support
+LEGACY_DESC=	Include legacy code
 
 PLIST_SUB+=	VER1="${PORTVERSION}" \
 		VER2="${PORTVERSION:R}" \
@@ -172,6 +175,7 @@ IGNORE=		java wrapping requires shared libraries.\
 .if ${ARCH} == "amd64"
 CXXFLAGS+=	-fPIC
 .endif
+CATEGORIES+=	java
 USE_JAVA=	yes
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
@@ -191,6 +195,20 @@ PLIST_SUB+=	JAVA="@comment "
 PLIST_SUB+=	WRAPPING=""
 .else
 PLIST_SUB+=	WRAPPING="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDBGLEAKS}
+CMAKE_ARGS+=	-DVTK_DEBUG_LEAKS:BOOL=ON
+.else
+CMAKE_ARGS+=	-DVTK_DEBUG_LEAKS:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MLEGACY}
+CMAKE_ARGS+=	-DVTK_LEGACY_REMOVE:BOOL=OFF
+PLIST_SUB+=	LEGACY=""
+.else
+CMAKE_ARGS+=	-DVTK_LEGACY_REMOVE:BOOL=ON
+PLIST_SUB+=	LEGACY="@comment "
 .endif
 
 post-patch:
