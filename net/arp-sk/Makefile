@@ -8,7 +8,7 @@
 
 PORTNAME=	arp-sk
 PORTVERSION=	0.0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://sid.rstack.org/arp-sk/files/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool designed to manipulate ARP tables of all kinds of equipment
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	`${LIBNET_CONFIG} --cflags`

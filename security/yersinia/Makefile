@@ -7,13 +7,14 @@
 
 PORTNAME=	yersinia
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 .if !defined(WITHOUT_GTK)
 .if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)

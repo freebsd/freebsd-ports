@@ -7,6 +7,7 @@
 
 PORTNAME=	pynids
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://jon.oberheide.org/pynids/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	corsmith@gmail.com
 COMMENT=	Python interface to libnids
 
 PATCH_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 USE_GNOME=	pkgconfig glib20
 USE_PYTHON=	yes

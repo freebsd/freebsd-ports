@@ -1,13 +1,17 @@
-bin/libnet11-config
-include/libnet11/libnet.h
-include/libnet11/libnet/libnet-asn1.h
-include/libnet11/libnet/libnet-functions.h
-include/libnet11/libnet/libnet-headers.h
-include/libnet11/libnet/libnet-macros.h
-include/libnet11/libnet/libnet-structures.h
-include/libnet11/libnet/libnet-types.h
-lib/libnet11/libnet.a
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
+bin/%%SNAME%%-config
+include/%%SNAME%%/libnet.h
+include/%%SNAME%%/libnet/libnet-asn1.h
+include/%%SNAME%%/libnet/libnet-functions.h
+include/%%SNAME%%/libnet/libnet-headers.h
+include/%%SNAME%%/libnet/libnet-macros.h
+include/%%SNAME%%/libnet/libnet-structures.h
+include/%%SNAME%%/libnet/libnet-types.h
+lib/%%SNAME%%/libnet.a
+lib/%%SNAME%%/libnet.la
+lib/%%SNAME%%/libnet.so
+lib/%%SNAME%%/libnet.so.8
+lib/libnet-%%VERSION%%.so
+lib/libnet-%%VERSION%%.so.8
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -18,39 +22,6 @@ lib/libnet11/libnet.a
 %%PORTDOCS%%%%DOCSDIR%%/RAWSOCKET_NON_SEQUITUR
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/acconfig_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/bpf_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/config_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
-%%PORTDOCS%%%%DOCSDIR%%/files.html
-%%PORTDOCS%%%%DOCSDIR%%/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/getopt_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/globals.html
-%%PORTDOCS%%%%DOCSDIR%%/globals_defs.html
-%%PORTDOCS%%%%DOCSDIR%%/globals_func.html
-%%PORTDOCS%%%%DOCSDIR%%/gnuc_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/graph_legend.dot
-%%PORTDOCS%%%%DOCSDIR%%/graph_legend.html
-%%PORTDOCS%%%%DOCSDIR%%/ifaddrlist_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/in__systm_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-asn1_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-functions_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-functions_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-headers_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-headers_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-macros_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-macros_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-structures_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet-types_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet_8h-source.html
-%%PORTDOCS%%%%DOCSDIR%%/libnet_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/structlibnet__802__1q__hdr.html
-%%PORTDOCS%%%%DOCSDIR%%/structlibnet__802__1x__hdr.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arp-new.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgp4_hdr.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgp4_notification.c
@@ -64,7 +35,9 @@ lib/libnet11/libnet.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fddi_tcp2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_addr.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gre.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hsrp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp6_echoreq.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp6_unreach.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp_echo_cq.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp_redirect.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp_timeexceed.c
@@ -89,6 +62,9 @@ lib/libnet11/libnet.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synflood6_frag.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_ipv4.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_ipv4_options.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_ipv6_icmpv4.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tftp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tring_tcp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tring_tcp2.c
@@ -96,6 +72,6 @@ lib/libnet11/libnet.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp2.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/libnet11
-@dirrm include/libnet11/libnet
-@dirrm include/libnet11
+@dirrm lib/%%SNAME%%
+@dirrm include/%%SNAME%%/libnet
+@dirrm include/%%SNAME%%

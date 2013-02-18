@@ -3,7 +3,7 @@
 
 PORTNAME=	ettercap
 PORTVERSION=	0.7.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}-Lazarus \
@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}-Lazarus \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 # GTK -> GTK2, ICONV -> UTF8
 OPTIONS_DEFINE=	DOCS GTK2 PCRE PLUGINS SSL UTF8
@@ -43,7 +43,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-PKGNAMESUFFIX+=	-gtk2
+PKGNAMESUFFIX?=	-gtk2
 CONFIGURE_ARGS+=--enable-gtk
 USE_GNOME=	atk glib20 gtk20 pango
 .else
