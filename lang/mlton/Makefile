@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mlton
-# Date created:                1 Oct 2002
-# Whom:                        Stephen Weeks <sweeks@sweeks.com>
-#
+# Created by: Stephen Weeks <sweeks@sweeks.com>
 # $FreeBSD$
-#
 
 # Because MLton is written in SML, it needs an SML compiler to build.
 # It is easiest to use another (earlier) binary version of MLton as
@@ -22,7 +18,7 @@ EXTRACT_ONLY=	${SRC_DIST}
 
 # Other maintainer is Geoffrey Mainland (mainland@apeiron.net)
 MAINTAINER=	jesper.louis.andersen@gmail.com
-COMMENT=	An optimizing Standard ML compiler
+COMMENT=	Optimizing Standard ML compiler
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
