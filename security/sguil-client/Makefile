@@ -1,13 +1,8 @@
-# New ports collection makefile for:	sguil-client
-# Date created:				2 Nov 2006
-# Whom:					Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	sguil-client
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	security
 MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 
@@ -16,58 +11,50 @@ COMMENT=	Sguil is a network security monitoring program
 
 LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
-		gpg2:${PORTSDIR}/security/gnupg \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX \
-		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
+		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets \
+		gpg2:${PORTSDIR}/security/gnupg
 
-OPTIONS=	WIRESHARK "Install wireshark" off \
-		AUDIO "Install Festival Speech Synthesis" off
+LICENSE_NAME=	QPLv1.0 COPYRIGHT
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.QPL
+LICENSE_PERMS=	auto-accept
+LICENSE_FILE=	${WRKSRC}/client/lib/tablelist4.1/COPYRIGHT.txt
+LICENSE_PERMS=	auto-accept
 
-NO_BUILD=	YES
-WISH_CMD?=	wish8.4
+OPTIONS_DEFINE=	AUDIO SANCP WIRESHARK
+AUDIO_DESC=	Install Festival Speech Synthesis
+SANCP_DESC=	Use sancp
+WIRESHARK_DESC=	Install wireshark
+
+NO_BUILD=	yes
+USE_TK_WRAPPER=	yes
+USE_TCL=	yes
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
 SUB_FILES=	pkg-message
-PLIST_SUB=	SGUILDIR=${SGUILDIR} LIBDIR=${LIBDIR} IMAGEDIR=${IMAGEDIR} SCRIPTDIR=${SCRIPTDIR}
+PLIST_SUB=	SGUILDIR=${SGUILDIR}
 SGUILDIR?=	sguil-client
-LIBDIR?=	${SGUILDIR}/lib
-IMAGEDIR?=	${LIBDIR}/tablelist4.1/images
-SCRIPTDIR?=	${LIBDIR}/tablelist4.1/scripts
 
-PORTDOCS=	CHANGES FAQ INSTALL INSTALL.openbsd LICENSE.QPL \
-		OPENSSL.README TODO UPGRADE USAGE sguildb.dia
+PORTDOCS1=	README
+PORTDOCS2=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README TODO UPGRADE USAGE sguildb.dia
 
-LIBFILES=	SguilUtil.tcl dkffont.tcl email17.tcl extdata.tcl guilib.tcl nessusheader.html \
-		qrybuild.tcl qrylib.tcl report.tcl sancp.tcl sellib.tcl sound.tcl stdquery.tcl \
-		whois.tcl
+LIBFILES=	SguilUtil.tcl dkffont.tcl email17.tcl extdata.tcl sellib.tcl sancp.tcl \
+		 sound.tcl guilib.tcl qrybuild.tcl qrylib.tcl report.tcl stdquery.tcl whois.tcl
 
-IMAGES=		DarkLineDown10x9.xbm DarkLineDown12x11.xbm DarkLineDown8x7.xbm DarkLineUp10x9.xbm \
-		DarkLineUp12x11.xbm DarkLineUp8x7.xbm LightLineDown10x9.xbm LightLineDown12x11.xbm \
-		LightLineDown8x7.xbm LightLineUp10x9.xbm LightLineUp12x11.xbm LightLineUp8x7.xbm \
-		TriangleDown10x9.xbm TriangleDown12x11.xbm TriangleDown7x4.xbm TriangleDown7x7.xbm \
-		TriangleDown8x5.xbm TriangleDown8x7.xbm TriangleDown9x5.xbm TriangleUp10x9.xbm \
-		TriangleUp12x11.xbm TriangleUp7x4.xbm TriangleUp7x7.xbm TriangleUp8x5.xbm \
-		TriangleUp8x7.xbm TriangleUp9x5.xbm checked.xbm unchecked.xbm
+.include <bsd.port.options.mk>
 
-SCRIPTS=	mwutil.tcl repair.tcl tablelistBind.tcl tablelistConfig.tcl tablelistEdit.tcl \
-		tablelistMove.tcl tablelistSort.tcl tablelistThemes.tcl tablelistUtil.tcl \
-		tablelistWidget.tcl tclIndex
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_WIRESHARK)
-RUN_DEPENDS+=	wireshark:${PORTSDIR}/net/wireshark
-.endif
-
-.if defined(WITH_AUDIO)
+.if $(PORT_OPTIONS:MAUDIO)
 RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival
 .endif
 
-post-patch:
-.for f in sguil.tk
-	@${REINPLACE_CMD} -e 's:exec wish:exec ${PREFIX}/bin/${WISH_CMD}:g' \
-		${WRKSRC}/client/${f}
-.endfor
+.if ${PORT_OPTIONS:MSANCP}
+RUN_DEPENDS+=	sancp:${PORTSDIR}/security/sancp
+.endif
+
+.if $(PORT_OPTIONS:MWIRESHARK)
+RUN_DEPENDS+=	wireshark:${PORTSDIR}/net/wireshark
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}
@@ -78,30 +65,23 @@ do-install:
 		${PREFIX}/etc/${f}-sample
 .endfor
 .for f in ${LIBFILES}
-	@${MKDIR} ${PREFIX}/bin/${LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/client/lib/${f} ${PREFIX}/bin/${LIBDIR}/${f}
+	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/client/lib/${f} ${PREFIX}/bin/${SGUILDIR}/lib/${f}
 .endfor
-.for f in tablelist.tcl tablelistPublic.tcl COPYRIGHT.txt
-	@${MKDIR} ${PREFIX}/bin/${LIBDIR}/tablelist4.1
-	${INSTALL_DATA} ${WRKSRC}/client/lib/tablelist4.1/${f} \
-		${PREFIX}/bin/${LIBDIR}/tablelist4.1/${f}
-.endfor
-.for f in ${IMAGES}
-	@${MKDIR} ${PREFIX}/bin/${IMAGEDIR}
-	${INSTALL_DATA} ${WRKSRC}/client/lib/tablelist4.1/images/${f} \
-		${PREFIX}/bin/${IMAGEDIR}/${f}
-.endfor
-.for f in ${SCRIPTS}
-	@${MKDIR} ${PREFIX}/bin/${SCRIPTDIR}
-	${INSTALL_DATA} ${WRKSRC}/client/lib/tablelist4.1/scripts/${f} \
-		${PREFIX}/bin/${SCRIPTDIR}/${f}
+.for f in sguil_logo_h.gif
+	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/client/lib/images/${f} \
+		${PREFIX}/bin/${SGUILDIR}/images/${f}
 .endfor
 
-.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/client/lib/tablelist4.1 && ${COPYTREE_SHARE} \* \
+		${PREFIX}/bin/${SGUILDIR}/lib/tablelist4.1/)
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} \
-		${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS1} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS2} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
