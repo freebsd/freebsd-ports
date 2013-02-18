@@ -74,8 +74,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if defined(WITH_SPOOF)
-BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet116-config
+LIB_DEPENDS+=		net:${PORTSDIR}/net/libnet
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
 CFLAGS+=		-g `${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS+=		-g `${LIBNET_CONFIG} --libs`
@@ -130,7 +130,7 @@ PLIST_FILES+=		sbin/syslog2ng
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 

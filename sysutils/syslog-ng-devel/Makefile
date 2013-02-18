@@ -81,8 +81,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if defined(WITH_SPOOF)
-BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet116-config
+BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
 CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS+=		`${LIBNET_CONFIG} --libs`
@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 
 post-install:
