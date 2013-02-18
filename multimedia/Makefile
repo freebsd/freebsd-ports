@@ -307,6 +307,7 @@
     SUBDIR += smile
     SUBDIR += smpeg
     SUBDIR += smplayer
+    SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
