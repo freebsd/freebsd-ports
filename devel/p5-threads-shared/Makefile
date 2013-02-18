@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	threads-shared
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Perl extension for sharing data structures between threads
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
