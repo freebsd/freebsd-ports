@@ -49,7 +49,7 @@ MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MAPACHE} || ${PORT_OPTIONS:MHIAWATHA} || ${PORT_OPTIONS:MLIGHTTPD} || ${PORT_OPTIONS:NGINX}
+.if ${PORT_OPTIONS:MAPACHE} || ${PORT_OPTIONS:MHIAWATHA} || ${PORT_OPTIONS:MLIGHTTPD} || ${PORT_OPTIONS:MNGINX}
 WEBUI=		yes
 .endif
 
@@ -90,7 +90,7 @@ USE_APACHE_RUN=	22+
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .elif ${PORT_OPTIONS:MHIAWATHA}
 RUN_DEPENDS+=	hiawatha:${PORTSDIR}/www/hiawatha
-.elif ${PORT_OPTIONS:NGINX}
+.elif ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .endif
 
