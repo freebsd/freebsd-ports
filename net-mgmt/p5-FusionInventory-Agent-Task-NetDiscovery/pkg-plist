@@ -1,0 +1,25 @@
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Dico.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Alcatel.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Axis.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Ddwrt.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Dell.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Epson.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/HewlettPackard.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Kyocera.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Ricoh.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Samsung.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Wyse.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer/Zebranet.pm
+%%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task/NetDiscovery/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task/NetDiscovery
+@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task
+@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory/Agent
+@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/mach
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery/Manufacturer
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/NetDiscovery
+@dirrmtry %%SITE_PERL%%/FusionInventory/Agent/Task
+@dirrmtry %%SITE_PERL%%/FusionInventory/Agent
+@dirrmtry %%SITE_PERL%%/FusionInventory

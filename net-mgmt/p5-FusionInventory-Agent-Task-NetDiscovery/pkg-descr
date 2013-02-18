@@ -1,0 +1,13 @@
+This module scans your networks to get informations from devices with SNMP
+protocol:
+ - networking devices discovery within an IP range
+ - network switch, printer and router analyse
+ - relation between computer / printer / switch port
+ - identify unknown MAC addresses
+ - report printer cartridge and ounter status
+ - support management of SNMP versions v1, v2, v3
+
+The plugin depends on FusionInventory for GLPI. OCS Inventory can't use this
+plugin.
+
+WWW: http://search.cpan.org/dist/FusionInventory-Agent-Task-NetDiscovery/
