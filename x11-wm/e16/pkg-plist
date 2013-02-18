@@ -381,6 +381,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/csb/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/da/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/de/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/e16.mo
@@ -471,10 +472,12 @@ share/xsessions/e16-gnome3-session.desktop
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/xsessions
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
+%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/csb
+%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fo
 @dirrmtry share/applications
 @dirrmtry share/gnome-session/sessions
 @dirrmtry share/gnome-session
