@@ -1,0 +1,16 @@
+lib/libafpclient.la
+lib/libafpclient.so
+lib/libafpclient.so.0
+lib/libafpclient.a
+bin/afpcmd
+bin/afpgetstatus
+include/afpfs-ng/dsi.h
+include/afpfs-ng/afp_protocol.h
+include/afpfs-ng/map_def.h
+include/afpfs-ng/codepage.h
+include/afpfs-ng/midlevel.h
+include/afpfs-ng/libafpclient.h
+include/afpfs-ng/uams_def.h
+include/afpfs-ng/afp.h
+include/afpfs-ng/utils.h
+@dirrm include/afpfs-ng
