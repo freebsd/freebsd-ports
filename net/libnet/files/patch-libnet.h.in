@@ -1,0 +1,12 @@
+--- include/libnet.h.in.orig	2012-03-06 01:45:46.000000000 +0100
++++ include/libnet.h.in	2012-04-18 20:37:06.000000000 +0200
+@@ -81,6 +81,9 @@
+ #if !defined(__WIN32__)
+ # include <sys/socket.h>
+ # include <net/if.h>
++# if (__FreeBSD__)
++#  include <netinet/in.h>
++# endif
+ #else /* __WIN32__ */
+ # if (__CYGWIN__)
+ #  include <sys/socket.h>

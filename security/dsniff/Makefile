@@ -12,6 +12,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
 LICENSE=	BSD
+BROKEN=		tries to link with both libnet1.0 and libnet1.1 
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids

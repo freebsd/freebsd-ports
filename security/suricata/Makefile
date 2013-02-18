@@ -3,7 +3,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
 		htp:${PORTSDIR}/devel/libhtp
 
-BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=	net:${PORTSDIR}/net/libnet
 
 USE_AUTOTOOLS=	automake autoconf libtool
 USE_PKGCONFIG=	yes

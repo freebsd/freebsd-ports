@@ -7,16 +7,16 @@
 
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/dist/fiked/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fake IKE PSK+XAUTH daemon based on VPNC
 
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 .if !defined(WITHOUT_LIBNET)
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=	net:${PORTSDIR}/net/libnet
 .endif
 
 USE_BZIP2=	yes
