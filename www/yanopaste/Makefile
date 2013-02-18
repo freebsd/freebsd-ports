@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yanopaste
-# Date created:		2008-09-15
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yanopaste
 PORTVERSION=	1.3.0
