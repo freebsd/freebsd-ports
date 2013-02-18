@@ -1,0 +1,25 @@
+--- Makefile.orig	2013-02-18 10:27:09.000000000 +0100
++++ Makefile	2013-02-18 10:28:21.000000000 +0100
+@@ -19,11 +19,11 @@
+ CXXFLAGS+= -Wall -g -DWITH_QT -I$(X11BASE)/include
+ .endif
+ 
+-LDFLAGS= -ldialog -lncurses
++LDFLAGS=
+ 
+ .if defined(WITH_GTK)
+ GTK_LDFLAGS!=pkg-config gtk+-2.0 --libs
+-LDFLAGS+= $(GTK_LDFLAGS) -ldialog -lncurses
++LDFLAGS+= $(GTK_LDFLAGS)
+ .endif
+ 
+ .if defined(WITH_QT)
+@@ -37,7 +37,7 @@
+ PARSER_OBJ=	lex.yy.o parser.o
+ CFLAGS+= -DYY_NO_UNPUT
+ 
+-OBJECTS= $(PARSER_OBJ) main.o file.o ncurses_ui.o
++OBJECTS= $(PARSER_OBJ) main.o file.o
+ 
+ .if defined(WITH_GTK)
+ OBJECTS+= gtk_ui.o
