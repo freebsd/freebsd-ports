@@ -1,10 +1,9 @@
+# Created by: brain
 # $FreeBSD$
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.10
 CATEGORIES=	irc
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A modular C++ IRC daemon
@@ -14,7 +13,12 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 CONFLICTS=	inspircd-1.*
 
-FETCH_ARGS?=	-pRr
+USE_GITHUB=	yes
+GH_ACCOUNT=	inspircd
+GH_PROJECT=	${GH_ACCOUNT}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	d1cc59f
+
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
 
@@ -52,9 +56,6 @@ PCRE_DESC=	Build m_regex_pcre module
 POSIX_DESC=	Build m_regex_posix module
 
 .include <bsd.port.options.mk>
-
-post-extract:
-	@(cd ${WRKDIR} && ${MV} inspircd-${PORTVERSION} ${DISTNAME})
 
 .if ${PORT_OPTIONS:MLDAPAUTH}
 USE_OPENLDAP=	yes
