@@ -162,6 +162,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/partialcommit.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/partialcommit.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/partialcommit.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pathedit.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pathedit.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pathedit.pyo
