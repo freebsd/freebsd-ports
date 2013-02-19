@@ -32,7 +32,6 @@
     SUBDIR += tdfsb
     SUBDIR += thunar
     SUBDIR += thunar-vfs
-    SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += ultracopier
     SUBDIR += worker
