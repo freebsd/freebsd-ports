@@ -2,7 +2,6 @@
 %%WWWDIR%%/bin/check_bgppeer.pl
 %%WWWDIR%%/bin/check_ifstatus.pl
 %%WWWDIR%%/bin/check_link_state.pl
-%%WWWDIR%%/bin/defragdb
 %%WWWDIR%%/bin/device_checks.pl
 %%WWWDIR%%/bin/dump-db.pl
 %%WWWDIR%%/bin/ether_ip_port.pl

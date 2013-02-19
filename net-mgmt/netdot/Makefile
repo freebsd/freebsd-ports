@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netdot
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netdot.uoregon.edu/pub/dists/
 
@@ -80,7 +80,7 @@ post-install:
 .for f in export/bind export/dhcpd export/ethers export/rancid export/smokeping export/sysmon htdocs/img/graphs lib/Netdot/Manual tmp/sessions/locks htdocs/masondata/cache
 		@${TOUCH} ${WWWDIR}/${f}/.keep-me
 .endfor
-.for f in initdb defragdb
+.for f in initdb
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${WWWDIR}/bin/${f}
 .endfor
 	${MKDIR} ${WWWDIR}/upgrade
