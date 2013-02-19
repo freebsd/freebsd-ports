@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6toolkit
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 DISTNAME=	ipv6-toolkit-v${PORTVERSION}

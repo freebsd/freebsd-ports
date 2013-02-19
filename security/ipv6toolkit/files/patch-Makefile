@@ -1,5 +1,5 @@
 --- Makefile.orig	2013-02-16 18:15:13.000000000 +0900
-+++ Makefile	2013-02-17 07:19:34.000000000 +0900
++++ Makefile	2013-02-18 01:36:14.000000000 +0900
 @@ -1,12 +1,14 @@
 +# $FreeBSD$
 +
@@ -20,8 +20,12 @@
  SRCPATH= tools
  TOOLS= flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
  
-@@ -54,18 +56,18 @@
- install: all
+@@ -51,21 +53,21 @@
+ clean: 
+ 	-rm -f $(TOOLS)
+ 
+-install: all
++install:
  	# Install the binaries
  	install -m0755 -d $(BINPATH)
 -	install -m0755 $(TOOLS) $(BINPATH)
