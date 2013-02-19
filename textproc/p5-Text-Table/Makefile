@@ -1,12 +1,8 @@
-# New ports collection makefile for:	textproc/p5-Text-Table
-# Date created:				May  2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Table
-PORTVERSION=	1.124
+PORTVERSION=	1.126
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
