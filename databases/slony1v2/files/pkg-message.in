@@ -1,7 +1,9 @@
 *******************************************************************************
 
-Please read the docs on configuring and running slony-1.  Unless you specified
-NOPORTDOCS, they are in the %%LOCALBASE%%/share/doc/slony1v2 directory.
+Please read the docs on configuring and running slony-1.
+
+Unless you did not specify the DOCS options, they are in the
+%%LOCALBASE%%/share/doc/slony1v2 directory.
 
 If you are upgrading from a prior version of slony, please read the UPGRADING
 file in the above docs directory.
@@ -16,7 +18,7 @@ set slon_enable="YES" in /etc/rc.conf to enable the slon.sh script.
 To use either of the above startup configurations, you will need to set up a
 %%LOCALBASE%%/etc/slon.conf file to tell slon what to replicate.  This file
 is documented in %%LOCALBASE%%/share/doc/slony1/adminguide/runtime-config.html
-
+%%PERLTOOLS%%
 %%PERLTOOLS%%To use the perl slony configuration and monitoring tools, you must
 %%PERLTOOLS%%create %%LOCALBASE%%/etc/slon_tools.conf based on the sample file.
 
