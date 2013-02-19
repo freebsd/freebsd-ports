@@ -1,5 +1,6 @@
 %%WWWDIR%%/CHANGELOG
 %%WWWDIR%%/README
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/config.inc.php.dist
 %%WWWDIR%%/importFilters/avelsieve.php
 %%WWWDIR%%/importFilters/ingo.php
