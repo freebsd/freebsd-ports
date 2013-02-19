@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2013.01.28
+PORTVERSION=	2013.02.02
 CATEGORIES=	www
 MASTER_SITES=	http://youtube-dl.org/downloads/${PORTVERSION}/ \
 		http://ftp.de.netbsd.org/pub/unix/Linux/MIRROR.gentoo/distfiles/
@@ -49,6 +49,10 @@ RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg-devel
 RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg
 . endif
 .endif
+
+post-extract:
+	@# remove tarball provided version, build our own
+	@${RM} -f ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
