@@ -1,18 +1,11 @@
---- ./export/OpenColorIO/OpenColorABI.h.in.orig	2012-04-18 09:38:16.000000000 +0930
-+++ ./export/OpenColorIO/OpenColorABI.h.in	2012-10-08 00:20:27.665351115 +1030
-@@ -82,8 +82,13 @@
-     #endif
-     #define OCIOHIDDEN
- #else // Others platforms not supported atm
--    #define OCIOEXPORT
--    #define OCIOHIDDEN
-+    #if __GNUC__ >= 4
-+        #define OCIOEXPORT __attribute__ ((visibility("default")))
-+        #define OCIOHIDDEN __attribute__ ((visibility("hidden")))
-+    #else
-+        #define OCIOEXPORT
-+        #define OCIOHIDDEN
-+    #endif
- #endif
+--- export/OpenColorIO/OpenColorABI.h.in.orig	2012-12-12 09:51:23.000000000 +1030
++++ export/OpenColorIO/OpenColorABI.h.in	2013-01-29 21:13:34.104857600 +1030
+@@ -65,7 +65,7 @@
  
- #endif // INCLUDED_OCIO_OPENCOLORABI_H
+ // If supported, define OCIOEXPORT, OCIOHIDDEN
+ // (used to choose which symbols to export from OpenColorIO)
+-#if defined __linux__ || __APPLE__
++#if defined __linux__ || __APPLE__ || __FreeBSD__
+     #if __GNUC__ >= 4
+         #define OCIOEXPORT __attribute__ ((visibility("default")))
+         #define OCIOHIDDEN __attribute__ ((visibility("hidden")))
