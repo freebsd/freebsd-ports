@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -28,7 +27,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.3.50
-EMACS_REV=	111312
+EMACS_REV=	111818
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
@@ -49,19 +48,20 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER}
 
 MAKE_ENV=	LC_ALL=C
 
-INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
+INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs-gnutls emacs epa \
-		erc ert eshell eudc flymake forms gnus idlwave info \
+		erc ert eshell eudc flymake forms gnus htmlfontify idlwave info \
 		mairix-el message mh-e newsticker nxml-mode \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
-		smtpmail speedbar tramp url vip viper widget woman
+		smtpmail speedbar srecode tramp url vip viper widget wisent woman
 
 LATEST_LINK=	emacs-devel
-OPTIONS_DEFINE=	DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT SCROLLBARS XFT \
-		XIM XML XPM MAGICK GNUTLS GSETTINGS LTO
+OPTIONS_DEFINE=	ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT SCROLLBARS \
+		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO
 
 OPTIONS_SINGLE=	X11TOOLKIT
 
+ACL_DESC=		ACL support
 GSETTINGS_DESC=		GSettings support
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOUND_DESC=		Sound support
@@ -76,7 +76,7 @@ LTO_DESC=		Enable link-time optimization (requires GCC 4.6+)
 
 OPTIONS_SINGLE_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D MOTIF
 
-OPTIONS_DEFAULT=DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
+OPTIONS_DEFAULT=ACL DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
 		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS
 
 .include <bsd.port.options.mk>
@@ -216,6 +216,9 @@ LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus
+.if ${PORT_OPTIONS:MGSETTINGS}
+IGNORE=	GSettings support requires DBUS. Please run 'make config'
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MXML}
@@ -235,6 +238,12 @@ CONFIGURE_ARGS+=	--without-gnutls
 .if ${PORT_OPTIONS:MLTO}
 USE_GCC=	4.6+
 CONFIGURE_ARGS+=	--enable-link-time-optimization
+.endif
+
+.if ${PORT_OPTIONS:MACL}
+CONFIGURE_ARGS+=	--with-acl
+.else
+CONFIGURE_ARGS+=	--without-acl
 .endif
 
 .include <bsd.port.pre.mk>
