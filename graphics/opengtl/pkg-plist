@@ -5,6 +5,7 @@ bin/gtlconvert
 bin/imagecompare
 bin/shiva
 bin/shivac
+bin/shivacheck
 bin/shivainfo
 bin/shivanimator
 bin/shivatester

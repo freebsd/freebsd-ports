@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.18
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.1.so:${PORTSDIR}/devel/llvm31
+BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.2.so:${PORTSDIR}/devel/llvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
