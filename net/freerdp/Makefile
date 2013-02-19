@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net comms ipv6
 MASTER_SITES=	SF/${PORTNAME}/0.8
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A free remote desktop protocol client
 
 OPTIONS=	CUPS		"Enable printer support via CUPS"		on \

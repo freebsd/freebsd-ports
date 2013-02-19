@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/0.9
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	The GTK+ Remote Desktop Client
 
 OPTIONS=	SSH	"Build with SSH tunneling support"	on \
