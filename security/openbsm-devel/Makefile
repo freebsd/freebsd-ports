@@ -3,6 +3,7 @@
 
 PORTNAME=	openbsm
 DISTVERSION=	1.2-alpha3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/ \
     		http://mirrors.rit.edu/zi/
