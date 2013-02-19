@@ -709,6 +709,9 @@
 %%WWWDIR%%/install/resources/upgrade20.php
 %%WWWDIR%%/install/resources/upgrade21.php
 %%WWWDIR%%/install/resources/upgrade22.php
+%%WWWDIR%%/install/resources/upgrade23.php
+%%WWWDIR%%/install/resources/upgrade24.php
+%%WWWDIR%%/install/resources/upgrade25.php
 %%WWWDIR%%/install/resources/upgrade3.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
