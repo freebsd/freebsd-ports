@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+libexec/nagios/check_ciss_status
+libexec/nagios/check_if_carp
+libexec/nagios/check_if_lagg
+libexec/nagios/check_varnishd
+libexec/nagios/check_zfs_capacity
+libexec/nagios/check_zfs_status
+libexec/nagios/check_raid_amrstat
+libexec/nagios/check_mpt
+@dirrmtry libexec/nagios
