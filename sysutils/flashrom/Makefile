@@ -26,8 +26,8 @@ FTDI_DESC=	Enable external FT2232SPI flasher support
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CPPFLAGS+=      -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=       -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc
+CPPFLAGS+=      -I${LOCALBASE}/include
+LDFLAGS+=       -L${LOCALBASE}/lib -lc
 
 ONLY_FOR_ARCHS=	amd64 i386
 
