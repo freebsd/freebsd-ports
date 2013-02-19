@@ -1286,6 +1286,7 @@
     SUBDIR += ocaml-cfg
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-cppo
+    SUBDIR += ocaml-deriving-ocsigen
     SUBDIR += ocaml-equeue
     SUBDIR += ocaml-event
     SUBDIR += ocaml-extlib
