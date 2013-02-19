@@ -1,0 +1,39 @@
+--- Makefile.orig	2012-09-03 16:58:02.000000000 +0200
++++ Makefile	2013-02-19 18:03:41.000000000 +0100
+@@ -1,5 +1,5 @@
+ MAIN_CFLAGS :=  -g -Os -Wall $(shell pkg-config fuse --cflags)
+-MAIN_CPPFLAGS := -Wall -Wno-unused-function -Wconversion -Wtype-limits -DUSE_AUTH -D_XOPEN_SOURCE=700 -D_ISOC99_SOURCE
++MAIN_CPPFLAGS := -Wall -Wno-unused-function -Wconversion -DUSE_AUTH -D_XOPEN_SOURCE=700 -D_ISOC99_SOURCE
+ THR_CPPFLAGS := -DUSE_THREAD
+ THR_LDFLAGS := -lpthread
+ MAIN_LDFLAGS := $(shell pkg-config fuse --libs | sed -e s/-lrt// -e s/-ldl// -e s/-pthread// -e "s/  / /g")
+@@ -45,7 +45,7 @@
+ 	$(MAKE) $* $(addprefix $*,$(variants))
+ 
+ %.1: %.1.txt
+-	a2x -f manpage $<
++	a2x -L -f manpage $<
+ 
+ %-ssl: $*
+ 	$(MAKE) CPPFLAGS='$(CPPFLAGS) $(SSL_CPPFLAGS)' LDFLAGS='$(LDFLAGS) $(SSL_LDFLAGS)' binsuffix=-ssl$(binsuffix) $*
+@@ -61,20 +61,6 @@
+ 
+ # Rules to automatically make a Debian package
+ 
+-package = $(shell dpkg-parsechangelog | grep ^Source: | sed -e s,'^Source: ',,)
+-version = $(shell dpkg-parsechangelog | grep ^Version: | sed -e s,'^Version: ',, -e 's,-.*,,')
+-revision = $(shell dpkg-parsechangelog | grep ^Version: | sed -e -e 's,.*-,,')
+-architecture = $(shell dpkg --print-architecture)
+-tar_dir = $(package)-$(version)
+-tar_gz   = $(tar_dir).tar.gz
+-pkg_deb_dir = pkgdeb
+-unpack_dir  = $(pkg_deb_dir)/$(tar_dir)
+-orig_tar_gz = $(pkg_deb_dir)/$(package)_$(version).orig.tar.gz
+-pkg_deb_src = $(pkg_deb_dir)/$(package)_$(version)-$(revision)_source.changes
+-pkg_deb_bin = $(pkg_deb_dir)/$(package)_$(version)-$(revision)_$(architecture).changes
+-
+-deb_pkg_key = CB8C5858
+-
+ debclean:
+ 	rm -rf $(pkg_deb_dir)
+ 
