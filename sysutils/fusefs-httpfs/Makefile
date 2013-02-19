@@ -1,32 +1,27 @@
-# New ports collection makefile for:	fusefs-httpfs
-# Date created:		2006-07-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httpfs
-PORTVERSION=	2.06.08.26
+PORTVERSION=	2.${VERSION}
 CATEGORIES=	sysutils www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_with_static_binaries_${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}_with_static_binaries_${PORTVERSION}
+DISTNAME=	${PORTNAME}2-${VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuse-based http filesystem
 
-USE_FUSE=	yes
-PLIST_FILES=	bin/httpfs
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}2-${VERSION}
 
-do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include/fuse \
-	 -DUSE_AUTH -D_FILE_OFFSET_BITS=64 -D_REENTRANT \
-	 -DFUSE_USE_VERSION=25 -D_POSIX_C_SOURCE=200112L -D_POSIX_SOURCE \
-	 -D_SVID_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=500 \
-	 -o httpfs httpfs.c -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
+VERSION=	0.1.5
+USE_FUSE=	yes
+USE_PKGCONFIG=	yes
+USE_GMAKE=	yes
+CFLAGS+=	-D__BSD_VISIBLE
+ALL_TARGET=	httpfs2
+PLIST_FILES=	bin/httpfs2
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/httpfs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/httpfs2 ${PREFIX}/bin
 
 .include <bsd.port.mk>
