@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	2.7.8
-PORTREVISION=	1
+PORTVERSION=	2.8.0
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -26,9 +26,8 @@ USE_GMAKE=	YES
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS_DEFINE=	ANTHY CHEWING QT_IM_MODULE
+OPTIONS_DEFINE=	ANTHY QT_IM_MODULE
 ANTHY_DESC=	Japanese anthy IM module
-CHEWING_DESC=	Chewing IM module
 QT_IM_MODULE_DESC=	QT IM module
 
 MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
@@ -60,15 +59,6 @@ PLIST_SUB+=	ANTHY_MODULE=""
 .else
 CONFIGURE_ARGS+=	--use_anthy=N
 PLIST_SUB+=	ANTHY_MODULE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCHEWING}
-BUILD_DEPENDS+=	${LOCALBASE}/include/chewing/chewing.h:${PORTSDIR}/chinese/libchewing
-LIB_DEPENDS+=	chewing:${PORTSDIR}/chinese/libchewing
-PLIST_SUB+=	CHEWING_MODULE=""
-.else
-CONFIGURE_ARGS+=	--use_chewing=N
-PLIST_SUB+=	CHEWING_MODULE="@comment "
 .endif
 
 post-patch:

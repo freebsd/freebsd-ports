@@ -21,7 +21,6 @@ bin/txt2gtab-phrase
 lib/gtk-2.0/immodules/im-gcin.so
 %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 %%ANTHY_MODULE%%lib/gcin/anthy-module.so
-%%CHEWING_MODULE%%lib/gcin/chewing-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
 lib/gcin/intcode-module.so
@@ -48,6 +47,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/dvorak.kbm
 %%DATADIR%%/table/et.kbm
 %%DATADIR%%/table/et26.kbm
+%%DATADIR%%/table/german.gtab
 %%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
 %%DATADIR%%/table/hangul.gtab
@@ -79,6 +79,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/tsin-1.src
 %%DATADIR%%/table/tsin32
 %%DATADIR%%/table/tsin32.idx
+%%DATADIR%%/table/vims.gtab
 %%DATADIR%%/table/vocabulary.gtab
 %%DATADIR%%/table/zo.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
@@ -109,6 +110,7 @@ share/icons/gcin/full-trad.png
 share/icons/gcin/gcb.png
 share/icons/gcin/gcin-tray.png
 share/icons/gcin/gdayi3.png
+share/icons/gcin/german.png
 share/icons/gcin/greek.png
 share/icons/gcin/hakka.png
 share/icons/gcin/half-simp.png
@@ -137,6 +139,7 @@ share/icons/gcin/taiwan.png
 share/icons/gcin/telecode.png
 share/icons/gcin/tsin.png
 share/icons/gcin/tsou-gcin.png
+share/icons/gcin/vietnam.png
 share/icons/gcin/vocabulary.png
 share/icons/gcin/wm2.png
 share/icons/gcin/wubi.png
