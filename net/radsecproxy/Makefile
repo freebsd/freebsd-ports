@@ -1,7 +1,4 @@
-# New ports collection makefile for: radsecproxy
-# Date created: 2011-10-25
-# Whom: Honza Betik
-#
+# Created by: Honza Betik
 # $FreeBSD$
 
 PORTNAME=	radsecproxy
@@ -20,6 +17,8 @@ MAN5=		radsecproxy.conf.5
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
+USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/radsecproxy ${PREFIX}/bin/catgconf
