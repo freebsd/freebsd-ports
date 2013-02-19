@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME?=	openimageio
-PORTVERSION=	1.1.2
-PORTREVISION?=	2
+PORTVERSION=	1.1.6
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
-MASTER_SITES=	https://github.com/OpenImageIO/oiio/tarball/
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	OpenImageIO graphics library
@@ -14,7 +13,7 @@ LICENSE?=	BSD
 
 LIB_DEPENDS?=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		hdf5:${PORTSDIR}/science/hdf5 \
+		hdf5:${PORTSDIR}/science/hdf5-18 \
 		opencv_legacy:${PORTSDIR}/graphics/opencv \
 		openjpeg:${PORTSDIR}/graphics/openjpeg \
 		webp:${PORTSDIR}/graphics/webp
@@ -23,7 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 GH_TAGNAME=	Release-${PORTVERSION}
-GH_COMMIT=	db9df57
+GH_COMMIT=	5fcd523
+WRKSRC=		${WRKDIR}/OpenImageIO-oiio-${GH_COMMIT}/src
 
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
@@ -37,7 +37,6 @@ CMAKE_ARGS?=	-DBUILDSTATIC:BOOL=OFF \
 		-DUSE_TBB:BOOL=OFF
 
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/OpenImageIO-oiio-${GH_COMMIT}/src
 MAKE_JOBS_SAFE=	yes
 
 .if defined(OIIO_PYBIND)
@@ -84,11 +83,6 @@ CMAKE_ARGS+=	-DUSE_OCIO:BOOL=OFF
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-# for gcc atomics we need to have an arch > i486
-CFLAGS+=	-march=i586
-.endif
 
 .if ${OSVERSION} < 800000
 IGNORE=	requires FreeBSD 8.0 or higher
