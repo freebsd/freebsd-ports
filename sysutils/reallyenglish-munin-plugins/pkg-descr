@@ -1,0 +1,17 @@
+3rd-party munin plugins for reallyenglish
+
+munin plugins has no standard regarding license. most of plugins doesn't even
+mention license.  as such, the only way to create local plugins port is making
+it closed, or non-distributable, port.
+
+all, including one with valid license, 3rd-party plugins should be kept here
+due to posiible license issues.
+
+included plugins:
+
+http://www.unbound.net/documentation/howto_statistics.html
+http://exchange.munin-monitoring.org/plugins/zfs-filesystem-graph/details
+http://anders.fupp.net/plugins/munin/open_sockets
+http://trull.org/~alex/src/FreeBSD/muninplugins
+
+WWW:	http://localhost/

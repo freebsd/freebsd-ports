@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%DATADIR%%/plugins/iostat-operations
+%%DATADIR%%/plugins/iostat-throughput
+%%DATADIR%%/plugins/iostat-wait
+%%DATADIR%%/plugins/kmemsum
+%%DATADIR%%/plugins/open_sockets
+%%DATADIR%%/plugins/redis
+%%DATADIR%%/plugins/unbound_munin_
+%%DATADIR%%/plugins/zfs-demand
+%%DATADIR%%/plugins/zfs-general
+%%DATADIR%%/plugins/zfs-hash
+%%DATADIR%%/plugins/zfs-l2
+%%DATADIR%%/plugins/zfs-mru-mfu
+%%DATADIR%%/plugins/zfs-prefetch
+%%DATADIR%%/plugins/zfs_fs_
+%%DATADIR%%/plugins/zfsarc-l1
+%%DATADIR%%/plugins/zfsarc-l2
+%%DATADIR%%/plugins/zpool_capacity
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
