@@ -756,6 +756,8 @@
     SUBDIR += rdiff-backup10
     SUBDIR += rdup
     SUBDIR += readlink
+    SUBDIR += reallyenglish-munin-plugins
+    SUBDIR += reallyenglish-rems-tools
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej

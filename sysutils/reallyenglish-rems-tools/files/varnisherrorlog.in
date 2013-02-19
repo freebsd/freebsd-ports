@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# PROVIDE: varnisherrorlog
+# REQUIRE: SERVERS cleanvar
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="varnisherrorlog"
+rcvar=`set_rcvar`
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon -c -f -p ${pidfile} %%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+run_rc_command "$1"

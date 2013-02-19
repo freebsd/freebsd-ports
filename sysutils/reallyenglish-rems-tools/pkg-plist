@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+sbin/ezjail_available_ip
+sbin/htawk
+sbin/htgrep
+sbin/rems_generic_critical
+sbin/rems_generic_ok
+sbin/rems_generic_unknown
+sbin/rems_generic_warning
+sbin/rems_nsca
+sbin/rems_restore
+sbin/varnishbackendlog
+sbin/varnisherrorlog
