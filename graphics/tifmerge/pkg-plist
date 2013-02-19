@@ -1,4 +1,0 @@
-include/tifmerge.h
-lib/libtifmerge.a
-lib/libtifmerge.so
-lib/libtifmerge.so.1
