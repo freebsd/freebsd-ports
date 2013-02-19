@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostGIS
-# Date created:		June 09, 2004
-# Whom:			Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
-#
+# Created by: Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
 # $FreeBSD$
-#
 
 PORTNAME=	postgis
 PORTVERSION=	1.5.3
@@ -15,30 +11,33 @@ MASTER_SITES=	http://postgis.refractions.net/download/ \
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
-LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
-		geos.0:${PORTSDIR}/graphics/geos
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
+		geos:${PORTSDIR}/graphics/geos
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
+CONFLICTS=	postgis-2.*
+
 USE_BISON=	build
+USE_GNOME=	libxml2
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 
-OPTIONS=	LOADERGUI "Enable shp2pgsql-gui" Off
+OPTIONS_DEFINE=	LOADERGUI
+LOADERGUI_DESC=	Enable shp2pgsql-gui
 
 .include <bsd.port.options.mk>
 
 INSTALL_TARGET=	install
 
-GNU_CONFIGURE=	yes
-.if defined(WITH_LOADERGUI)
-USE_GNOME=	libxml2 gtk20
+.if ${PORT_OPTIONS:MLOADERGUI}
+USE_GNOME+=	gtk20
 CONFIGURE_ARGS=	--with-projdir=${LOCALBASE} --with-gui
 PLIST_SUB+=	LOADERGUI=""
 .else
-USE_GNOME=	libxml2
 CONFIGURE_ARGS=	--with-projdir=${LOCALBASE}
 PLIST_SUB+=	LOADERGUI="@comment "
 .endif
@@ -50,7 +49,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 CONFIGURE_ARGS+=	--with-xsldir=${LOCALBASE}/share/xsl/docbook
