@@ -1,5 +1,5 @@
---- gfx/qcms/qcmstypes.h
-+++ gfx/qcms/qcmstypes.h
+--- mozilla/gfx/qcms/qcmstypes.h
++++ mozilla/gfx/qcms/qcmstypes.h
 @@ -7,30 +7,12 @@
  #include "mozilla/StandardInteger.h"
  

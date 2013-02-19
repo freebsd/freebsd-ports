@@ -1,6 +1,14 @@
 --- toolkit/xre/nsAppRunner.cpp~
 +++ toolkit/xre/nsAppRunner.cpp
-@@ -3046,7 +3046,7 @@ XRE_main(int argc, char* argv[], const n
+@@ -640,6 +640,7 @@ class nsXULAppInfo : public nsIXULAppInf
+ 
+ {
+ public:
++  nsXULAppInfo() {}
+   NS_DECL_ISUPPORTS_INHERITED
+   NS_DECL_NSIXULAPPINFO
+   NS_DECL_NSIXULRUNTIME
+@@ -3046,7 +3047,7 @@ XRE_main(int argc, char* argv[], const n
      QApplication app(gArgc, gArgv);
  #endif
  #if defined(MOZ_WIDGET_GTK2)

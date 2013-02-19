@@ -6,7 +6,7 @@
 #    $MCom: ports-experimental/devel/nspr/Makefile,v 1.6 2008/03/12 13:06:56 ahze Exp $
 
 PORTNAME=	nspr
-DISTVERSION=	4.9.4
+DISTVERSION=	4.9.5
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--srcdir=${WRKSRC:H} \
 		--with-pthreads
+CONFIGURE_ENV=	BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAKE_ENV=	DIST=${WRKSRC}/dist
 
@@ -39,7 +40,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
@@ -63,7 +64,7 @@ do-install:
 .endfor
 
 prtests:
-	${GMAKE} -C ${WRKSRC}/pr/tests
+	${SETENV} PTHREAD_LIBS="${PTHREAD_LIBS}" ${GMAKE} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 

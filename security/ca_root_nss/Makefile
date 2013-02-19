@@ -5,7 +5,7 @@ PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
+MASTER_SITE_SUBDIR=	security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -25,11 +25,12 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.14.1
-CKBI_VER=	1.93
-NSS_SUFFIX=	.with.ckbi.${CKBI_VER}
+VERSION_NSS=	3.14.3
+#NSS_SUFFIX=	.with.ckbi.1.93
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
+SUB_FILES=	MAca-bundle.pl
+SUB_LIST=	VERSION_NSS=${VERSION_NSS}
 
 .include <bsd.port.options.mk>
 
@@ -45,14 +46,9 @@ do-extract:
 	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/nss-${VERSION_NSS}${NSS_SUFFIX}${EXTRACT_SUFX} \
 	    ${CERTDATA_TXT_PATH}
 	@${CP} ${WRKDIR}/${CERTDATA_TXT_PATH} ${WRKDIR}
-	@${CP} ${FILESDIR}/${BUNDLE_PROCESSOR} ${WRKDIR}
 	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
 
-post-patch:
-	@${PERL} -pi -e 's,%%VERSION_NSS%%,${VERSION_NSS}${NSS_SUFFIX},g;' \
-	    ${WRKDIR}/${BUNDLE_PROCESSOR}
-
-do-build:
+do-build:	apply-slist
 	@${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
 	    < ${WRKDIR}/certdata.txt > \
 	    ${WRKDIR}/ca-root-nss.crt

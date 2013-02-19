@@ -27,7 +27,7 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -65,20 +80,18 @@
+@@ -65,20 +80,20 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
@@ -38,7 +38,9 @@
  ARCH			= freebsd
  
 -MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++ifndef MOZILLA_CLIENT
 +DLL_SUFFIX		= so.1
++endif
  
 -ifeq ($(MOZ_OBJFORMAT),elf)
 -DLL_SUFFIX		= so
