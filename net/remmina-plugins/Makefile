@@ -12,7 +12,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	# Empty
 DISTFILES?=	# Empty
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
 .if defined(PKGNAMESUFFIX)
