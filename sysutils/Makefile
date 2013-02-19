@@ -823,6 +823,7 @@
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
     SUBDIR += rubygem-log4r
+    SUBDIR += rubygem-munin-ruby
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-admin
