@@ -19,13 +19,11 @@ OPTIONS_DEFINE=	DEBUG DOCS IOPERM
 IOPERM_DESC=	Use i386_set_ioperm (i386/amd64 only)
 
 CONFIGURE_ARGS=	--disable-init-scripts \
-		--disable-logdir \
-		--disable-logrotate-config \
 		--localstatedir=/var \
 		--sysconfdir=${CONF_DIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	PTHREAD_LIBS=-pthread ac_cv_path_CPP=${CPP}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
