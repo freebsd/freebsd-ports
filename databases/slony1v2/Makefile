@@ -25,7 +25,7 @@ USE_RC_SUBR=	slon
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
 
-OPTIONS_DEFINE=	PERLTOOLS
+OPTIONS_DEFINE=	DOCS PERLTOOLS
 PERLTOOLS_DESC=	Install perl configuration tools
 
 CONFLICTS?=	slony1-1*
@@ -70,7 +70,7 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -78,7 +78,7 @@ DOCS=		COPYRIGHT HISTORY-1.1 INSTALL README README.Unicode RELEASE \
 		RELEASE-2.0 SAMPLE TODO UPGRADING
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/adminguide
 	@${MKDIR} ${DOCSDIR}/howto
