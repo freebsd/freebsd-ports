@@ -1,12 +1,9 @@
-# New ports collection makefile for:	archivemail
-# Date created:		2002/04/02
-# Whom:			Alan Eldridge <alane@FreeBSD.org>
-#
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	archivemail
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -16,16 +13,20 @@ COMMENT=	Archive or delete mail older than N days
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
 
+MAN1=		archivemail.1
 DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/archivemail ${PREFIX}/bin/archivemail
-.if !defined(NOPORTEXAMPLES)
+	${INSTALL_MAN} ${WRKSRC}/archivemail.1 ${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
