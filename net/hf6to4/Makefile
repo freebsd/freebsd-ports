@@ -19,6 +19,8 @@ COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
 NO_BUILD=	yes
 
+BROKEN=		does not fetch.
+
 MAN8=		hf6to4.8
 
 do-extract:
