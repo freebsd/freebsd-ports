@@ -203,6 +203,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
 		${APR_WRKDIR}/build/gen-build.py
 	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
+# Fix pthread: Please do not remove, else apr-1-config returns wrong values
+	${REINPLACE_CMD} -e 's/-lpthread/-pthread/g' \
+		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
+		${APU_WRKDIR}/build/apu-conf.m4
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
