@@ -45,51 +45,324 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-weather-plugin.mo
 share/xfce4/panel/plugins/weather.desktop
-share/xfce4/weather/icons/liquid/CLOUD.png
-share/xfce4/weather/icons/liquid/FOG.png
-share/xfce4/weather/icons/liquid/LIGHTCLOUD-night.png
-share/xfce4/weather/icons/liquid/LIGHTCLOUD.png
-share/xfce4/weather/icons/liquid/LIGHTRAIN.png
-share/xfce4/weather/icons/liquid/LIGHTRAINSUN-night.png
-share/xfce4/weather/icons/liquid/LIGHTRAINSUN.png
-share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDER.png
-share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDERSUN-night.png
-share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDERSUN.png
-share/xfce4/weather/icons/liquid/NODATA.png
-share/xfce4/weather/icons/liquid/PARTLYCLOUD-night.png
-share/xfce4/weather/icons/liquid/PARTLYCLOUD.png
-share/xfce4/weather/icons/liquid/RAIN.png
-share/xfce4/weather/icons/liquid/RAINTHUNDER.png
-share/xfce4/weather/icons/liquid/SLEET.png
-share/xfce4/weather/icons/liquid/SLEETSUN-night.png
-share/xfce4/weather/icons/liquid/SLEETSUN.png
-share/xfce4/weather/icons/liquid/SLEETSUNTHUNDER-night.png
-share/xfce4/weather/icons/liquid/SLEETSUNTHUNDER.png
-share/xfce4/weather/icons/liquid/SLEETTHUNDER.png
-share/xfce4/weather/icons/liquid/SNOW.png
-share/xfce4/weather/icons/liquid/SNOWSUN-night.png
-share/xfce4/weather/icons/liquid/SNOWSUN.png
-share/xfce4/weather/icons/liquid/SNOWSUNTHUNDER-night.png
-share/xfce4/weather/icons/liquid/SNOWSUNTHUNDER.png
-share/xfce4/weather/icons/liquid/SNOWTHUNDER.png
-share/xfce4/weather/icons/liquid/SUN-night.png
-share/xfce4/weather/icons/liquid/SUN.png
+share/xfce4/weather/icons/liquid-dark/128/cloud.png
+share/xfce4/weather/icons/liquid-dark/128/fog.png
+share/xfce4/weather/icons/liquid-dark/128/lightcloud-night.png
+share/xfce4/weather/icons/liquid-dark/128/lightcloud.png
+share/xfce4/weather/icons/liquid-dark/128/lightrain.png
+share/xfce4/weather/icons/liquid-dark/128/lightrainsun-night.png
+share/xfce4/weather/icons/liquid-dark/128/lightrainsun.png
+share/xfce4/weather/icons/liquid-dark/128/lightrainthunder.png
+share/xfce4/weather/icons/liquid-dark/128/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid-dark/128/lightrainthundersun.png
+share/xfce4/weather/icons/liquid-dark/128/nodata.png
+share/xfce4/weather/icons/liquid-dark/128/partlycloud-night.png
+share/xfce4/weather/icons/liquid-dark/128/partlycloud.png
+share/xfce4/weather/icons/liquid-dark/128/rain.png
+share/xfce4/weather/icons/liquid-dark/128/rainthunder.png
+share/xfce4/weather/icons/liquid-dark/128/sleet.png
+share/xfce4/weather/icons/liquid-dark/128/sleetsun-night.png
+share/xfce4/weather/icons/liquid-dark/128/sleetsun.png
+share/xfce4/weather/icons/liquid-dark/128/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/128/sleetsunthunder.png
+share/xfce4/weather/icons/liquid-dark/128/sleetthunder.png
+share/xfce4/weather/icons/liquid-dark/128/snow.png
+share/xfce4/weather/icons/liquid-dark/128/snowsun-night.png
+share/xfce4/weather/icons/liquid-dark/128/snowsun.png
+share/xfce4/weather/icons/liquid-dark/128/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/128/snowsunthunder.png
+share/xfce4/weather/icons/liquid-dark/128/snowthunder.png
+share/xfce4/weather/icons/liquid-dark/128/sun-night.png
+share/xfce4/weather/icons/liquid-dark/128/sun.png
+share/xfce4/weather/icons/liquid-dark/22/cloud.png
+share/xfce4/weather/icons/liquid-dark/22/fog.png
+share/xfce4/weather/icons/liquid-dark/22/lightcloud-night.png
+share/xfce4/weather/icons/liquid-dark/22/lightcloud.png
+share/xfce4/weather/icons/liquid-dark/22/lightrain.png
+share/xfce4/weather/icons/liquid-dark/22/lightrainsun-night.png
+share/xfce4/weather/icons/liquid-dark/22/lightrainsun.png
+share/xfce4/weather/icons/liquid-dark/22/lightrainthunder.png
+share/xfce4/weather/icons/liquid-dark/22/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid-dark/22/lightrainthundersun.png
+share/xfce4/weather/icons/liquid-dark/22/nodata.png
+share/xfce4/weather/icons/liquid-dark/22/partlycloud-night.png
+share/xfce4/weather/icons/liquid-dark/22/partlycloud.png
+share/xfce4/weather/icons/liquid-dark/22/rain.png
+share/xfce4/weather/icons/liquid-dark/22/rainthunder.png
+share/xfce4/weather/icons/liquid-dark/22/sleet.png
+share/xfce4/weather/icons/liquid-dark/22/sleetsun-night.png
+share/xfce4/weather/icons/liquid-dark/22/sleetsun.png
+share/xfce4/weather/icons/liquid-dark/22/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/22/sleetsunthunder.png
+share/xfce4/weather/icons/liquid-dark/22/sleetthunder.png
+share/xfce4/weather/icons/liquid-dark/22/snow.png
+share/xfce4/weather/icons/liquid-dark/22/snowsun-night.png
+share/xfce4/weather/icons/liquid-dark/22/snowsun.png
+share/xfce4/weather/icons/liquid-dark/22/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/22/snowsunthunder.png
+share/xfce4/weather/icons/liquid-dark/22/snowthunder.png
+share/xfce4/weather/icons/liquid-dark/22/sun-night.png
+share/xfce4/weather/icons/liquid-dark/22/sun.png
+share/xfce4/weather/icons/liquid-dark/48/cloud.png
+share/xfce4/weather/icons/liquid-dark/48/fog.png
+share/xfce4/weather/icons/liquid-dark/48/lightcloud-night.png
+share/xfce4/weather/icons/liquid-dark/48/lightcloud.png
+share/xfce4/weather/icons/liquid-dark/48/lightrain.png
+share/xfce4/weather/icons/liquid-dark/48/lightrainsun-night.png
+share/xfce4/weather/icons/liquid-dark/48/lightrainsun.png
+share/xfce4/weather/icons/liquid-dark/48/lightrainthunder.png
+share/xfce4/weather/icons/liquid-dark/48/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid-dark/48/lightrainthundersun.png
+share/xfce4/weather/icons/liquid-dark/48/nodata.png
+share/xfce4/weather/icons/liquid-dark/48/partlycloud-night.png
+share/xfce4/weather/icons/liquid-dark/48/partlycloud.png
+share/xfce4/weather/icons/liquid-dark/48/rain.png
+share/xfce4/weather/icons/liquid-dark/48/rainthunder.png
+share/xfce4/weather/icons/liquid-dark/48/sleet.png
+share/xfce4/weather/icons/liquid-dark/48/sleetsun-night.png
+share/xfce4/weather/icons/liquid-dark/48/sleetsun.png
+share/xfce4/weather/icons/liquid-dark/48/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/48/sleetsunthunder.png
+share/xfce4/weather/icons/liquid-dark/48/sleetthunder.png
+share/xfce4/weather/icons/liquid-dark/48/snow.png
+share/xfce4/weather/icons/liquid-dark/48/snowsun-night.png
+share/xfce4/weather/icons/liquid-dark/48/snowsun.png
+share/xfce4/weather/icons/liquid-dark/48/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid-dark/48/snowsunthunder.png
+share/xfce4/weather/icons/liquid-dark/48/snowthunder.png
+share/xfce4/weather/icons/liquid-dark/48/sun-night.png
+share/xfce4/weather/icons/liquid-dark/48/sun.png
+share/xfce4/weather/icons/liquid-dark/theme.info
+share/xfce4/weather/icons/liquid/128/cloud.png
+share/xfce4/weather/icons/liquid/128/fog.png
+share/xfce4/weather/icons/liquid/128/lightcloud-night.png
+share/xfce4/weather/icons/liquid/128/lightcloud.png
+share/xfce4/weather/icons/liquid/128/lightrain.png
+share/xfce4/weather/icons/liquid/128/lightrainsun-night.png
+share/xfce4/weather/icons/liquid/128/lightrainsun.png
+share/xfce4/weather/icons/liquid/128/lightrainthunder.png
+share/xfce4/weather/icons/liquid/128/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid/128/lightrainthundersun.png
+share/xfce4/weather/icons/liquid/128/nodata.png
+share/xfce4/weather/icons/liquid/128/partlycloud-night.png
+share/xfce4/weather/icons/liquid/128/partlycloud.png
+share/xfce4/weather/icons/liquid/128/rain.png
+share/xfce4/weather/icons/liquid/128/rainthunder.png
+share/xfce4/weather/icons/liquid/128/sleet.png
+share/xfce4/weather/icons/liquid/128/sleetsun-night.png
+share/xfce4/weather/icons/liquid/128/sleetsun.png
+share/xfce4/weather/icons/liquid/128/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid/128/sleetsunthunder.png
+share/xfce4/weather/icons/liquid/128/sleetthunder.png
+share/xfce4/weather/icons/liquid/128/snow.png
+share/xfce4/weather/icons/liquid/128/snowsun-night.png
+share/xfce4/weather/icons/liquid/128/snowsun.png
+share/xfce4/weather/icons/liquid/128/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid/128/snowsunthunder.png
+share/xfce4/weather/icons/liquid/128/snowthunder.png
+share/xfce4/weather/icons/liquid/128/sun-night.png
+share/xfce4/weather/icons/liquid/128/sun.png
+share/xfce4/weather/icons/liquid/22/cloud.png
+share/xfce4/weather/icons/liquid/22/fog.png
+share/xfce4/weather/icons/liquid/22/lightcloud-night.png
+share/xfce4/weather/icons/liquid/22/lightcloud.png
+share/xfce4/weather/icons/liquid/22/lightrain.png
+share/xfce4/weather/icons/liquid/22/lightrainsun-night.png
+share/xfce4/weather/icons/liquid/22/lightrainsun.png
+share/xfce4/weather/icons/liquid/22/lightrainthunder.png
+share/xfce4/weather/icons/liquid/22/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid/22/lightrainthundersun.png
+share/xfce4/weather/icons/liquid/22/nodata.png
+share/xfce4/weather/icons/liquid/22/partlycloud-night.png
+share/xfce4/weather/icons/liquid/22/partlycloud.png
+share/xfce4/weather/icons/liquid/22/rain.png
+share/xfce4/weather/icons/liquid/22/rainthunder.png
+share/xfce4/weather/icons/liquid/22/sleet.png
+share/xfce4/weather/icons/liquid/22/sleetsun-night.png
+share/xfce4/weather/icons/liquid/22/sleetsun.png
+share/xfce4/weather/icons/liquid/22/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid/22/sleetsunthunder.png
+share/xfce4/weather/icons/liquid/22/sleetthunder.png
+share/xfce4/weather/icons/liquid/22/snow.png
+share/xfce4/weather/icons/liquid/22/snowsun-night.png
+share/xfce4/weather/icons/liquid/22/snowsun.png
+share/xfce4/weather/icons/liquid/22/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid/22/snowsunthunder.png
+share/xfce4/weather/icons/liquid/22/snowthunder.png
+share/xfce4/weather/icons/liquid/22/sun-night.png
+share/xfce4/weather/icons/liquid/22/sun.png
+share/xfce4/weather/icons/liquid/48/cloud.png
+share/xfce4/weather/icons/liquid/48/fog.png
+share/xfce4/weather/icons/liquid/48/lightcloud-night.png
+share/xfce4/weather/icons/liquid/48/lightcloud.png
+share/xfce4/weather/icons/liquid/48/lightrain.png
+share/xfce4/weather/icons/liquid/48/lightrainsun-night.png
+share/xfce4/weather/icons/liquid/48/lightrainsun.png
+share/xfce4/weather/icons/liquid/48/lightrainthunder.png
+share/xfce4/weather/icons/liquid/48/lightrainthundersun-night.png
+share/xfce4/weather/icons/liquid/48/lightrainthundersun.png
+share/xfce4/weather/icons/liquid/48/nodata.png
+share/xfce4/weather/icons/liquid/48/partlycloud-night.png
+share/xfce4/weather/icons/liquid/48/partlycloud.png
+share/xfce4/weather/icons/liquid/48/rain.png
+share/xfce4/weather/icons/liquid/48/rainthunder.png
+share/xfce4/weather/icons/liquid/48/sleet.png
+share/xfce4/weather/icons/liquid/48/sleetsun-night.png
+share/xfce4/weather/icons/liquid/48/sleetsun.png
+share/xfce4/weather/icons/liquid/48/sleetsunthunder-night.png
+share/xfce4/weather/icons/liquid/48/sleetsunthunder.png
+share/xfce4/weather/icons/liquid/48/sleetthunder.png
+share/xfce4/weather/icons/liquid/48/snow.png
+share/xfce4/weather/icons/liquid/48/snowsun-night.png
+share/xfce4/weather/icons/liquid/48/snowsun.png
+share/xfce4/weather/icons/liquid/48/snowsunthunder-night.png
+share/xfce4/weather/icons/liquid/48/snowsunthunder.png
+share/xfce4/weather/icons/liquid/48/snowthunder.png
+share/xfce4/weather/icons/liquid/48/sun-night.png
+share/xfce4/weather/icons/liquid/48/sun.png
+share/xfce4/weather/icons/liquid/theme.info
+share/xfce4/weather/icons/simplistic/128/cloud.png
+share/xfce4/weather/icons/simplistic/128/fog-night.png
+share/xfce4/weather/icons/simplistic/128/fog.png
+share/xfce4/weather/icons/simplistic/128/lightcloud-night.png
+share/xfce4/weather/icons/simplistic/128/lightcloud.png
+share/xfce4/weather/icons/simplistic/128/lightrain-night.png
+share/xfce4/weather/icons/simplistic/128/lightrain.png
+share/xfce4/weather/icons/simplistic/128/lightrainsun-night.png
+share/xfce4/weather/icons/simplistic/128/lightrainsun.png
+share/xfce4/weather/icons/simplistic/128/lightrainthunder-night.png
+share/xfce4/weather/icons/simplistic/128/lightrainthunder.png
+share/xfce4/weather/icons/simplistic/128/lightrainthundersun-night.png
+share/xfce4/weather/icons/simplistic/128/lightrainthundersun.png
+share/xfce4/weather/icons/simplistic/128/nodata.png
+share/xfce4/weather/icons/simplistic/128/partlycloud-night.png
+share/xfce4/weather/icons/simplistic/128/partlycloud.png
+share/xfce4/weather/icons/simplistic/128/rain-night.png
+share/xfce4/weather/icons/simplistic/128/rain.png
+share/xfce4/weather/icons/simplistic/128/rainthunder-night.png
+share/xfce4/weather/icons/simplistic/128/rainthunder.png
+share/xfce4/weather/icons/simplistic/128/sleet-night.png
+share/xfce4/weather/icons/simplistic/128/sleet.png
+share/xfce4/weather/icons/simplistic/128/sleetsun-night.png
+share/xfce4/weather/icons/simplistic/128/sleetsun.png
+share/xfce4/weather/icons/simplistic/128/sleetsunthunder-night.png
+share/xfce4/weather/icons/simplistic/128/sleetsunthunder.png
+share/xfce4/weather/icons/simplistic/128/sleetthunder-night.png
+share/xfce4/weather/icons/simplistic/128/sleetthunder.png
+share/xfce4/weather/icons/simplistic/128/snow-night.png
+share/xfce4/weather/icons/simplistic/128/snow.png
+share/xfce4/weather/icons/simplistic/128/snowsun-night.png
+share/xfce4/weather/icons/simplistic/128/snowsun.png
+share/xfce4/weather/icons/simplistic/128/snowsunthunder-night.png
+share/xfce4/weather/icons/simplistic/128/snowsunthunder.png
+share/xfce4/weather/icons/simplistic/128/snowthunder-night.png
+share/xfce4/weather/icons/simplistic/128/snowthunder.png
+share/xfce4/weather/icons/simplistic/128/sun-night.png
+share/xfce4/weather/icons/simplistic/128/sun.png
+share/xfce4/weather/icons/simplistic/22/cloud.png
+share/xfce4/weather/icons/simplistic/22/fog-night.png
+share/xfce4/weather/icons/simplistic/22/fog.png
+share/xfce4/weather/icons/simplistic/22/lightcloud-night.png
+share/xfce4/weather/icons/simplistic/22/lightcloud.png
+share/xfce4/weather/icons/simplistic/22/lightrain-night.png
+share/xfce4/weather/icons/simplistic/22/lightrain.png
+share/xfce4/weather/icons/simplistic/22/lightrainsun-night.png
+share/xfce4/weather/icons/simplistic/22/lightrainsun.png
+share/xfce4/weather/icons/simplistic/22/lightrainthunder-night.png
+share/xfce4/weather/icons/simplistic/22/lightrainthunder.png
+share/xfce4/weather/icons/simplistic/22/lightrainthundersun-night.png
+share/xfce4/weather/icons/simplistic/22/lightrainthundersun.png
+share/xfce4/weather/icons/simplistic/22/nodata.png
+share/xfce4/weather/icons/simplistic/22/partlycloud-night.png
+share/xfce4/weather/icons/simplistic/22/partlycloud.png
+share/xfce4/weather/icons/simplistic/22/rain-night.png
+share/xfce4/weather/icons/simplistic/22/rain.png
+share/xfce4/weather/icons/simplistic/22/rainthunder-night.png
+share/xfce4/weather/icons/simplistic/22/rainthunder.png
+share/xfce4/weather/icons/simplistic/22/sleet-night.png
+share/xfce4/weather/icons/simplistic/22/sleet.png
+share/xfce4/weather/icons/simplistic/22/sleetsun-night.png
+share/xfce4/weather/icons/simplistic/22/sleetsun.png
+share/xfce4/weather/icons/simplistic/22/sleetsunthunder-night.png
+share/xfce4/weather/icons/simplistic/22/sleetsunthunder.png
+share/xfce4/weather/icons/simplistic/22/sleetthunder-night.png
+share/xfce4/weather/icons/simplistic/22/sleetthunder.png
+share/xfce4/weather/icons/simplistic/22/snow-night.png
+share/xfce4/weather/icons/simplistic/22/snow.png
+share/xfce4/weather/icons/simplistic/22/snowsun-night.png
+share/xfce4/weather/icons/simplistic/22/snowsun.png
+share/xfce4/weather/icons/simplistic/22/snowsunthunder-night.png
+share/xfce4/weather/icons/simplistic/22/snowsunthunder.png
+share/xfce4/weather/icons/simplistic/22/snowthunder-night.png
+share/xfce4/weather/icons/simplistic/22/snowthunder.png
+share/xfce4/weather/icons/simplistic/22/sun-night.png
+share/xfce4/weather/icons/simplistic/22/sun.png
+share/xfce4/weather/icons/simplistic/48/cloud.png
+share/xfce4/weather/icons/simplistic/48/fog-night.png
+share/xfce4/weather/icons/simplistic/48/fog.png
+share/xfce4/weather/icons/simplistic/48/lightcloud-night.png
+share/xfce4/weather/icons/simplistic/48/lightcloud.png
+share/xfce4/weather/icons/simplistic/48/lightrain-night.png
+share/xfce4/weather/icons/simplistic/48/lightrain.png
+share/xfce4/weather/icons/simplistic/48/lightrainsun-night.png
+share/xfce4/weather/icons/simplistic/48/lightrainsun.png
+share/xfce4/weather/icons/simplistic/48/lightrainthunder-night.png
+share/xfce4/weather/icons/simplistic/48/lightrainthunder.png
+share/xfce4/weather/icons/simplistic/48/lightrainthundersun-night.png
+share/xfce4/weather/icons/simplistic/48/lightrainthundersun.png
+share/xfce4/weather/icons/simplistic/48/nodata.png
+share/xfce4/weather/icons/simplistic/48/partlycloud-night.png
+share/xfce4/weather/icons/simplistic/48/partlycloud.png
+share/xfce4/weather/icons/simplistic/48/rain-night.png
+share/xfce4/weather/icons/simplistic/48/rain.png
+share/xfce4/weather/icons/simplistic/48/rainthunder-night.png
+share/xfce4/weather/icons/simplistic/48/rainthunder.png
+share/xfce4/weather/icons/simplistic/48/sleet-night.png
+share/xfce4/weather/icons/simplistic/48/sleet.png
+share/xfce4/weather/icons/simplistic/48/sleetsun-night.png
+share/xfce4/weather/icons/simplistic/48/sleetsun.png
+share/xfce4/weather/icons/simplistic/48/sleetsunthunder-night.png
+share/xfce4/weather/icons/simplistic/48/sleetsunthunder.png
+share/xfce4/weather/icons/simplistic/48/sleetthunder-night.png
+share/xfce4/weather/icons/simplistic/48/sleetthunder.png
+share/xfce4/weather/icons/simplistic/48/snow-night.png
+share/xfce4/weather/icons/simplistic/48/snow.png
+share/xfce4/weather/icons/simplistic/48/snowsun-night.png
+share/xfce4/weather/icons/simplistic/48/snowsun.png
+share/xfce4/weather/icons/simplistic/48/snowsunthunder-night.png
+share/xfce4/weather/icons/simplistic/48/snowsunthunder.png
+share/xfce4/weather/icons/simplistic/48/snowthunder-night.png
+share/xfce4/weather/icons/simplistic/48/snowthunder.png
+share/xfce4/weather/icons/simplistic/48/sun-night.png
+share/xfce4/weather/icons/simplistic/48/sun.png
+share/xfce4/weather/icons/simplistic/theme.info
+@dirrm share/xfce4/weather/icons/simplistic/48
+@dirrm share/xfce4/weather/icons/simplistic/22
+@dirrm share/xfce4/weather/icons/simplistic/128
+@dirrm share/xfce4/weather/icons/simplistic
+@dirrm share/xfce4/weather/icons/liquid/48
+@dirrm share/xfce4/weather/icons/liquid/22
+@dirrm share/xfce4/weather/icons/liquid/128
+@dirrm share/xfce4/weather/icons/liquid-dark/48
+@dirrm share/xfce4/weather/icons/liquid-dark/22
+@dirrm share/xfce4/weather/icons/liquid-dark/128
+@dirrm share/xfce4/weather/icons/liquid-dark
 @dirrm share/xfce4/weather/icons/liquid
 @dirrm share/xfce4/weather/icons
 @dirrm share/xfce4/weather
 @dirrmtry share/xfce4/panel/plugins
 @dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
