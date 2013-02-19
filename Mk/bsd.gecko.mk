@@ -55,12 +55,12 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  user.
 #
 # USE_GECKO= libxul19<->libxul
-#  This will sed -e 's/libxul/libxul19/' on Makefile.in's and configure 
+#  This will sed -e 's/libxul/libxul19/' on Makefile.in's and configure
 #  if ${GECKO}=="libxul19"
 #
 #  Example:
 #  USE_GECKO= libxul libxul19
-# 
+#
 #  post-patch:
 #	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
 #		${MOZSRC}/configure
@@ -70,7 +70,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #
 #  Example:
 #  USE_GECKO= libxul libxul19
-#  
+#
 #  post-patch:
 #  .if ${GECKO}=="libxul19"
 #	@${REINPLACE_CMD} -e 's|mozilla-|libxul-|' \
@@ -179,7 +179,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 18+ 17 18+
+#                         Available values: yes 17+ 19+ 17 19+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -187,7 +187,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         Available values: see USE_FIREFOX
 #
 # USE_SEAMONKEY           Add runtime dependency on SeaMonkey. If no
-#                         version is given by the maintainer via the port 
+#                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
 #                         Available values: yes 15+ 15
@@ -197,9 +197,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
 #
-# USE_THUNDERBIRD         Add runtime dependency on Thunderbird. If no 
-#                         version is given by the maintainer via the port 
-#                         or by the user via defined variable try to find 
+# USE_THUNDERBIRD         Add runtime dependency on Thunderbird. If no
+#                         version is given by the maintainer via the port
+#                         or by the user via defined variable try to find
 #                         the highest stable installed version.
 #                         Available values: yes 10+ 17+ 10 17
 #                         NOTE:
@@ -221,11 +221,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 18
-_FIREFOX_RANGE_VERSIONS=	17+ 18+
+_FIREFOX_VERSIONS=			17 19
+_FIREFOX_RANGE_VERSIONS=	17+ 19+
 
 # For specifying [17, ..]+
-_FIREFOX_18P=	18 ${_FIREFOX_17P}
+_FIREFOX_19P=	19 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-18_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+19_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -551,6 +551,29 @@ LDFLAGS+=		-Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
 LDFLAGS+=		-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 .endif
 
+.if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*}
+# prefer clang
+. if ${CC} == "cc" && (exists(/usr/bin/clang) || \
+  exists(${LOCALBASE}/bin/clang))
+CC=				clang
+. endif
+. if ${CXX} == "c++" && (exists(/usr/bin/clang++) || \
+  exists(${LOCALBASE}/bin/clang++))
+CXX=			clang++
+. endif
+. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) || \
+  exists(${LOCALBASE}/bin/clang-cpp))
+CPP=			clang-cpp
+. endif
+. if ${CC} != "cc" && ${CPP} == "cpp"
+CPP=			${CC} -E
+. endif
+# fallback to gcc otherwise
+. if ${CC} == "cc" || ${CXX} == "c++"
+USE_GCC?=		yes
+. endif
+.endif
+
 .if ${MOZILLA_VER:R:R} >= 16 || exists(${.CURDIR}/files/patch-bug788955)
 .if ${OSVERSION} > 1000011
 # use jemalloc 3.0.0 API in libc
@@ -649,7 +672,7 @@ MOZ_OPTIONS+=	--enable-necko-protocols=default
 .else
 MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
 .endif
-# others 
+# others
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2		\
 		--disable-debug-symbols		\
@@ -707,7 +730,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${PORT_OPTIONS:MGIO} && ! ${PORT_OPTIONS:MQT4}
+.if ${PORT_OPTIONS:MGIO} && ! ${MOZ_TOOLKIT:Mcairo-qt}
 MOZ_OPTIONS+=	--enable-gio
 .else
 MOZ_OPTIONS+=	--disable-gio
@@ -851,18 +874,12 @@ gecko-post-patch:
 	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub/build < $$i; \
 	done
-	@${REINPLACE_CMD} -e '/DLL_SUFFIX/s/so\.1$$/so/' \
-		${MOZSRC}/nsprpub/configure
 .endif
 .if ${USE_MOZILLA:M-nss}
 	@${ECHO_MSG} "===>  Applying NSS patches"
 	@for i in ${.CURDIR}/../../security/nss/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/security/nss < $$i; \
 	done
-	@${REINPLACE_CMD} -e '/DLL_SUFFIX/d' \
-		${MOZSRC}/security/coreconf/FreeBSD.mk
-	@${REINPLACE_CMD} -e '/\.so/d' \
-		${MOZSRC}/security/coreconf/rules.mk
 .endif
 .for subdir in "" nsprpub js/src
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
@@ -916,8 +933,10 @@ gecko-post-patch:
 		-e 's|mozilla/plugins|browser_plugins|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
-	@${GREP} -lr 'PR_LoadLibrary.*\.so\.[0-9]' ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -Ee '/PR_LoadLibrary/s/(\.so)\.[0-9]+/\1/'
+.if ${CXX} == "clang++" && ${OSVERSION} < 900506
+	@${GREP} -Flr -- '-mss' ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -e 's/-mss/-mmmx &/'
+.endif
 .if ${MOZILLA} != "kompozer"
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${MOZSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp

@@ -1,0 +1,11 @@
+--- ../../nsprpub/pr/tests/Makefile.in.orig	Mon Apr 26 00:01:02 2004
++++ ../../nsprpub/pr/tests/Makefile.in	Tue Nov 28 11:08:14 2006
+@@ -418,7 +418,7 @@
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+ ifeq ($(USE_PTHREADS),1)
+-LDOPTS += -pthread
++LDOPTS += ${PTHREAD_LIBS}
+ endif
+ LDOPTS += -Xlinker -R $(ABSOLUTE_LIB_DIR)
+ endif

@@ -51,6 +51,82 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3f0374a-7ad6-11e2-84cd-d43d7e0c7c02">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>19.0,1</lt></range>
+	<range><lt>17.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>17.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.16</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>17.0.3</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.16</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0.3</lt></range>
+	<range><lt>10.0.12</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2013-21 Miscellaneous memory safety hazards (rv:19.0 /
+	    rv:17.0.3)</p>
+	  <p>MFSA 2013-22 Out-of-bounds read in image rendering</p>
+	  <p>MFSA 2013-23 Wrapped WebIDL objects can be wrapped again</p>
+	  <p>MFSA 2013-24 Web content bypass of COW and SOW security wrappers</p>
+	  <p>MFSA 2013-25 Privacy leak in JavaScript Workers</p>
+	  <p>MFSA 2013-26 Use-after-free in nsImageLoadingContent</p>
+	  <p>MFSA 2013-27 Phishing on HTTPS connection through malicious proxy</p>
+	  <p>MFSA 2013-28 Use-after-free, out of bounds read, and buffer
+	    overflow issues found using Address Sanitizer</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-0765</cvename>
+	<cvename>CVE-2013-0772</cvename>
+	<cvename>CVE-2013-0773</cvename>
+	<cvename>CVE-2013-0774</cvename>
+	<cvename>CVE-2013-0775</cvename>
+	<cvename>CVE-2013-0776</cvename>
+	<cvename>CVE-2013-0783</cvename>
+	<cvename>CVE-2013-0784</cvename>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-20.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-21.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-22.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-23.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-24.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-25.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-26.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-27.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fcfdabb7-f14d-4e61-a7d5-cfefb4b99b15">
     <topic>Ruby Rack Gem -- Multiple Issues</topic>
     <affects>

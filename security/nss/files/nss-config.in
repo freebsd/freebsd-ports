@@ -1,10 +1,6 @@
 #!/bin/sh
 
-prefix=@prefix@
-
-major_version=@MAJOR@
-minor_version=@MINOR@
-patch_version=@PATCH@
+prefix=%%PREFIX%%
 
 usage()
 {
@@ -68,7 +64,7 @@ while test $# -gt 0; do
       echo_libdir=yes
       ;;
     --version)
-      echo ${major_version}.${minor_version}.${patch_version}
+      echo %%PORTVERSION%%
       ;;
     --cflags)
       echo_cflags=yes
@@ -97,13 +93,13 @@ done
 
 # Set variables that may be dependent upon other variables
 if test -z "$exec_prefix"; then
-    exec_prefix=@exec_prefix@
+    exec_prefix=$prefix
 fi
 if test -z "$includedir"; then
-    includedir=@includedir@
+    includedir=$prefix/include/nss
 fi
 if test -z "$libdir"; then
-    libdir=@libdir@
+    libdir=$prefix/lib/nss
 fi
 
 if test "$echo_prefix" = "yes"; then
@@ -129,16 +125,16 @@ fi
 if test "$echo_libs" = "yes"; then
       libdirs="-L$libdir"
       if test -n "$lib_ssl"; then
-	libdirs="$libdirs -lssl${major_version}"
+	libdirs="$libdirs -lssl%%MAJOR_VERSION%%"
       fi
       if test -n "$lib_smime"; then
-	libdirs="$libdirs -lsmime${major_version}"
+	libdirs="$libdirs -lsmime%%MAJOR_VERSION%%"
       fi
       if test -n "$lib_nss"; then
-	libdirs="$libdirs -lnss${major_version}"
+	libdirs="$libdirs -lnss%%MAJOR_VERSION%%"
       fi
       if test -n "$lib_nssutil"; then
-	libdirs="$libdirs -lnssutil${major_version}"
+	libdirs="$libdirs -lnssutil%%MAJOR_VERSION%%"
       fi
       echo $libdirs
 fi      

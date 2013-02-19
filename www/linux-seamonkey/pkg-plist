@@ -142,11 +142,13 @@ lib/%%APP_NAME%%/updater.ini
 @dirrm lib/%%APP_NAME%%/modules/services-common
 @dirrm lib/%%APP_NAME%%/modules/services-crypto
 @dirrm lib/%%APP_NAME%%/modules/services-notifications
+@dirrm lib/%%APP_NAME%%/modules/services-sync/stages
 @dirrm lib/%%APP_NAME%%/modules/services-sync/engines
 @dirrm lib/%%APP_NAME%%/modules/services-sync
 @dirrm lib/%%APP_NAME%%/modules/identity
 @dirrm lib/%%APP_NAME%%/modules/commonjs/promise
 @dirrm lib/%%APP_NAME%%/modules/commonjs
+@dirrm lib/%%APP_NAME%%/modules/accessibility
 @dirrm lib/%%APP_NAME%%/modules
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/searchplugins

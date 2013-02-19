@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
+PORTVERSION=	3.14.3
+#DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
-DISTNAME=	nss-${PORTVERSION}.with.ckbi.${CKBI_VER}
+MASTER_SITE_SUBDIR=	security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
@@ -16,11 +16,6 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-_MAJOR=	3
-_MINOR=	14
-_PATCH=	1
-
-CKBI_VER=	1.93
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/mozilla/security/nss
 
 MAKE_JOBS_UNSAFE=	yes
@@ -28,9 +23,14 @@ USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+		SQLITE_INCLUDE_DIR="${LOCALBASE}/include" \
 		NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
 ALL_TARGET=	nss_build_all
 CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
+
+SUB_FILES=	nss-config nss.pc
+SUB_LIST=	MAJOR_VERSION=${PORTVERSION:R:R} \
+		PORTVERSION=${PORTVERSION}
 
 DIST=		${WRKSRC:H:H}/dist
 
@@ -50,6 +50,16 @@ BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+USE_BINUTILS=	# intel-gcm.s
+CFLAGS+=	-B${LOCALBASE}/${CONFIGURE_TARGET:S/amd64/x86_64/}/bin
+.if defined(WITH_CLANG_IS_CC) || ${CC:Mcc} && ${OSVERSION} > 1000023
+EXTRA_PATCHES+=	${FILESDIR}/extra-bug835050
+.endif
+.endif
+
 check regression-test test:
 	cd ${WRKSRC}/tests;	\
 		${SETENV} PATH="${BINS}/bin:${PATH}" \
@@ -67,23 +77,11 @@ check regression-test test:
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
-	@${SED} -e 's|@exec_prefix@|${PREFIX}|; \
-		s|@includedir@|${PREFIX}/include/nss|; \
-		s|@libdir@|${PREFIX}/lib/nss|; \
-		s|@prefix@|${PREFIX}|' \
-		${FILESDIR}/nss-config.in >${WRKDIR}/nss-config
-	@${SED} -e 's|@PREFIX@|${PREFIX}|; s|@PORTVERSION@|${PORTVERSION}|' \
-		${FILESDIR}/nss.pc.in >${WRKDIR}/nss.pc
-.for i in MAJOR MINOR PATCH
-	@${SED} -i.${i} -e 's|@${i}@|${_${i}}|' ${WRKDIR}/nss-config
-.endfor
 	@${REINPLACE_CMD} '/NSS_DEFAULT_SYSTEM/s,/etc,${PREFIX}&,' \
 		${WRKSRC}/lib/sysinit/nsssysinit.c
 	@cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/lib/softoken/manifest.mn
 	${FIND} ${WRKSRC}/tests -name '*.sh' | ${XARGS} ${GREP} -l -F '/bin/bash' | \
 		${XARGS} ${REINPLACE_CMD} -e 's|#! */bin/bash|#!${SH}|'
 
@@ -104,4 +102,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

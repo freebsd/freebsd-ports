@@ -81,11 +81,11 @@ index c167461..8346c11 100644
  if test -n "$MOZ_WEBRTC"; then
     AC_MSG_RESULT("generating WebRTC Makefiles...")
  
+ dnl Any --include files must also appear in -D FORCED_INCLUDE_FILE= entries
+ dnl so that regeneration via dependencies works correctly
     WEBRTC_CONFIG="-D build_with_mozilla=1 --include ${srcdir}/media/webrtc/webrtc_config.gypi -D FORCED_INCLUDE_FILE=${srcdir}/media/webrtc/webrtc_config.gypi"
  
     GYP_WEBRTC_OPTIONS="--format=mozmake ${WEBRTC_CONFIG} ${EXTRA_GYP_DEFINES} --depth=${srcdir}/media/webrtc/trunk --toplevel-dir=${srcdir} -G OBJDIR=${_objdir}"
- 
-    $PYTHON ${srcdir}/media/webrtc/trunk/build/gyp_chromium \
 diff --git js/src/config/system-headers js/src/config/system-headers
 index 9bd1efa..1095a01 100644
 --- js/src/config/system-headers
@@ -289,7 +289,7 @@ index cc260b7..66af2d7 100644
 +
 +#ifdef __FreeBSD__
 +#include <osreldate.h>
-+# if __FreeBSD_version > 900044
++# if __FreeBSD_version > 900505
 +#  define HAVE_XLOCALE
 +# endif
 +#endif
@@ -446,7 +446,13 @@ diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/qu
 index bcb1ec0..bb73591 100644
 --- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 +++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
-@@ -33,5 +33,5 @@
+@@ -28,17 +28,17 @@
+  *
+  *	@(#)queue.h	8.5 (Berkeley) 8/20/94
+  * $FreeBSD$
+  */
+ 
+ #ifndef _SYS_QUEUE_H_
  #define	_SYS_QUEUE_H_
  
 -#ifndef DARWIN
@@ -455,6 +461,10 @@ index bcb1ec0..bb73591 100644
  #define __offsetof offsetof
  #endif
  
+ #define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
+          for ((var) = STAILQ_FIRST((head));                              \
+              (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
+              (var) = (tvar))
 diff --git media/mtransport/third_party/nrappkit/src/util/util.c media/mtransport/third_party/nrappkit/src/util/util.c
 index 3aced8b..be020bb 100644
 --- media/mtransport/third_party/nrappkit/src/util/util.c
@@ -581,10 +591,10 @@ diff --git media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c media/we
 index a7c47e1..4f191de 100644
 --- media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
 +++ media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
-@@ -352,21 +352,25 @@ cprGetMessage (cprMsgQueue_t msgQueue, b
+@@ -317,21 +317,25 @@ cprGetMessage (cprMsgQueue_t msgQueue, boolean waitForever, void **ppUserData)
  {
      static const char fname[] = "cprGetMessage";
- 	
+ 
      void *buffer = 0;
      cpr_msg_queue_t *msgq;
      cpr_msgq_node_t *node;
@@ -599,12 +609,12 @@ index a7c47e1..4f191de 100644
  		int     tz_dsttime;     /* type of dst correction to apply */
  	} tz;
 +#endif
- 	
+ 
      /* Initialize ppUserData */
      if (ppUserData) {
          *ppUserData = NULL;
      }
- 	
+ 
      msgq = (cpr_msg_queue_t *) msgQueue;
      if (msgq == NULL) {
 diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
@@ -1268,7 +1278,6 @@ index 12df1b3..424ea0a 100644
 +#include <linux/videodev2.h>
 +#endif
 +
- #include <iostream>
  #include <new>
  
  #include "ref_count.h"
@@ -1276,6 +1285,7 @@ index 12df1b3..424ea0a 100644
  #include "thread_wrapper.h"
  #include "critical_section_wrapper.h"
  #include "video_capture_linux.h"
+ 
 diff --git media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc
 index e3f7bb5..882cede 100644
 --- media/webrtc/trunk/src/modules/video_capture/main/source/device_info_impl.cc
