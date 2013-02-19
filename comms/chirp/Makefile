@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	chirp
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://chirp.danplanet.com/download/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
