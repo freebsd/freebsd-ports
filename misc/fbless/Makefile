@@ -3,6 +3,7 @@
 
 PORTNAME=	fbless
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	misc textproc python
 
 MAINTAINER=	alexander.4mail@gmail.com
