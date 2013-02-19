@@ -1,7 +1,8 @@
 Viking is a free/open source program to manage GPS data.
 
-You can import, plot and create tracks and waypoints, show OSM, Terraserver
-and other maps, see real-time GPS position, get geocaches, control items, etc.
-It is written in C & the GTK+2 toolkit.
+You can import and plot tracks, routes and waypoints, show OpenStreetMap,
+Terraserver, Bing Aerial and other maps in it, download geocaches for
+an area on the map, make new tracks and waypoints, geotag images,
+see real-time GPS position, etc.
 
 WWW: http://sourceforge.net/apps/mediawiki/viking/index.php
