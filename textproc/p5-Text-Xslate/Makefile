@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Xslate
-PORTVERSION=	1.6002
+PORTVERSION=	2.0000
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent \
 		p5-Mouse>=0.61:${PORTSDIR}/devel/p5-Mouse \
-		p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Data-MessagePack>=0.38:${PORTSDIR}/devel/p5-Data-MessagePack \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
