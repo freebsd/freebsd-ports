@@ -373,6 +373,7 @@
     SUBDIR += liblrdf
     SUBDIR += libmrss
     SUBDIR += libmrss-php
+    SUBDIR += libmspub
     SUBDIR += libnxml
     SUBDIR += libparsifal
     SUBDIR += libroxml
