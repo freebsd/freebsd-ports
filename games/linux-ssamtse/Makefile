@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssamtse
-# Date created:				25 November 2003
-# Whom:					Sergey Akifyev
-#
+# Created by: Sergey Akifyev
 # $FreeBSD$
-#
 
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
@@ -15,7 +11,8 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serious Sam: The Second Encounter for Linux
 
-OPTIONS=	VORBIS	"Ogg playing support"	on
+OPTIONS_DEFINE=	VORBIS DOCS
+OPTIONS_DEFAULT=	VORBIS
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
@@ -25,9 +22,9 @@ RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 USE_LINUX_APPS+=libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
@@ -90,7 +87,7 @@ do-install:
 	${BRANDELF} -t Linux ${DATADIR}/Bin/ssam_*
 	${INSTALL_DATA} ${WRKSRC}/ModExt.txt ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 	${LN} -fs ${LINUXBASE}/usr/lib/libvorbisfile.so.3 ${DATADIR}/Bin/libvorbisfile.so
 .endif
 	@${FIND} -E ${DATADIR} -type f \
@@ -102,7 +99,7 @@ do-install:
 .if !exists(${PREFIX}/etc/${PORTNAME}.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} -p ${WRKSRC}/README.liflg ${DOCSDIR}
 .for i in ${PORTDOCS:NREADME.liflg}
@@ -113,4 +110,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
