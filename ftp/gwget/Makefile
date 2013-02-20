@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gwget
-# Date created:				1 November 2004
-# Whom:					Radek Kozlowski <radek@raadradd.com>
-#
+# Created by: Radek Kozlowski <radek@raadradd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gwget
 PORTVERSION=	1.0.4
@@ -18,8 +14,9 @@ COMMENT=	GNOME wget front-end
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-OPTIONS=	LIBNOTIFY	"Enable libnotify support"	on \
-		EPIPHANY	"Enable Epiphany extension"	on
+OPTIONS_DEFINE=	NOTIFY EPIPHANY
+OPTIONS_DEFAULT=	NOTIFY EPIPHANY
+EPIPHANY_DESC=	Epiphany extension
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -33,16 +30,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LIBNOTIFY)
+.if ${PORT_OPTIONS:MNOFITY}
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
-.if defined(WITH_EPIPHANY)
+.if ${PORT_OPTIONS:MEPIPHANY}
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 CONFIGURE_ARGS+=	--enable-epiphany-extension
@@ -55,4 +52,4 @@ PLIST_SUB+=	EPIPHANY="@comment "
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
