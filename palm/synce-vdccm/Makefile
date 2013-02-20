@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-dccm
-# Date created:                14 June 2003
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	vdccm
@@ -15,7 +12,9 @@ COMMENT=	Listener daemon for connections from WinCE devices
 
 LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
-OPTIONS=	DESKTOP	"Enable desktop integration"	on
+OPTIONS_DEFINE=	DESKTOP
+OPTIONS_DEFAULT=	DESKTOP
+DESKTOP_DESC=	Desktop integration
 
 MAKE_JOBS_SAFE=	yes
 
@@ -34,7 +33,7 @@ PLIST_FILES=	bin/triggerconnection bin/${PORTNAME}
 BROKEN=		Does not compile on powerpc
 .endif
 
-.if defined(WITH_DESKTOP)
+.if ${PORT_OPTIONS:MDESKTOP}
 CONFIGURE_ARGS+=	--enable-desktop-integration=yes
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		hal.1:${PORTSDIR}/sysutils/hal
