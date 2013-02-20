@@ -13,7 +13,7 @@ COMMENT=	Multimedia browser plugin for Gecko based browsers
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
-OPTIONS_DEFINE=	GCONF NOCACHE
+OPTIONS_DEFINE=	GCONF NOCACHE DOCS
 NOCACHE_DESC=	Disable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
