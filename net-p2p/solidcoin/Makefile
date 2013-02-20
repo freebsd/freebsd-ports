@@ -17,7 +17,8 @@ BROKEN=		Does not build
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	GUI "Build with wxWidgets GUI" on
+OPTIONS_DEFINE=	WXGTK X11
+OPTIONS_DEFAULT=	WXGTK X11
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
@@ -34,7 +35,7 @@ WRKSRC=		${WRKDIR}/src
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI) && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MWXGTK} && ${PORT_OPTIONS:MX11}
 USE_WX=		2.9
 DESKTOP_ENTRIES="Solidcoin" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
