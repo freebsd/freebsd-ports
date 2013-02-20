@@ -1,12 +1,7 @@
-# Ports collection makefile for: cuse4bsd-kmod
-# Date created: 21 March 2010
-# Whom:         
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.26
+PORTVERSION=	0.1.27
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
