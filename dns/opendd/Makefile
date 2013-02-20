@@ -1,7 +1,4 @@
-# New ports collection makefile for:	opendd
-# Date created:				11 November 2006
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	opendd
@@ -14,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small DynDNS client
 
-OPTIONS_DEFINE=	OPENSSL RCNG
+OPTIONS_DEFINE=	OPENSSL RCNG DOCS
 OPTIONS_DEFAULT=	OPENSSL RCNG
 RCNG_DESC=	Install RC_NG script
 
@@ -27,7 +24,7 @@ PLIST_FILES=	sbin/${PORTNAME} \
 		"%%ETCDIR%%/${PORTNAME}.pem" \
 		"@dirrmtry %%ETCDIR%%"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRCNG}
 USE_RC_SUBR=	${PORTNAME}
@@ -70,11 +67,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}
 .endif
 	@${CHMOD} 600 ${ETCDIR}/*.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} -p ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
