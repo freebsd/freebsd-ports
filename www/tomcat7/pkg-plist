@@ -115,6 +115,7 @@
 %%T%%/webapps/docs/changelog.html
 %%T%%/webapps/docs/class-loader-howto.html
 %%T%%/webapps/docs/cluster-howto.html
+%%T%%/webapps/docs/comments.html
 %%T%%/webapps/docs/config/ajp.html
 %%T%%/webapps/docs/config/cluster-channel.html
 %%T%%/webapps/docs/config/cluster-deployer.html
