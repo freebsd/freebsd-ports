@@ -1,0 +1,10 @@
+
+To use ansible, you need at least a host database.
+You can find a sample host database file in
+
+  %%EXAMPLESDIR%%/ansible.cfg
+
+You can also find a sample configuration file in
+
+  %%EXAMPLESDIR%%/hosts
+

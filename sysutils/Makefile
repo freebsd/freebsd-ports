@@ -25,6 +25,7 @@
     SUBDIR += amrstat
     SUBDIR += anacron
     SUBDIR += and
+    SUBDIR += ansible
     SUBDIR += anteater
     SUBDIR += apachetop
     SUBDIR += apcpwr

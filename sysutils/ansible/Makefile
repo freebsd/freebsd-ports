@@ -1,0 +1,76 @@
+# $FreeBSD$
+
+PORTNAME=	ansible
+PORTVERSION=	0.9
+CATEGORIES=	sysutils python
+MASTER_SITES=	GH
+
+MAINTAINER=	lifanov@mail.lifanov.com
+COMMENT=	Simple ssh-based configuration management and orchestration system
+
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_PYTHON=	2.6-2.7
+USE_PYDISTUTILS=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ansible
+GH_TAGNAME=	v${DISTVERSION}
+GH_COMMIT=	0115d4b
+
+SUB_FILES=	pkg-message
+PORTEXAMPLES=	*
+MAN1=	ansible-doc.1 ansible-playbook.1 ansible-pull.1 ansible.1
+
+post-patch-script:
+	@${REINPLACE_CMD} -e "s|/etc/ansible|${ETCDIR}|" \
+		${WRKSRC}/CHANGELOG.md \
+		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
+		${WRKSRC}/docs/man/man1/ansible.1 \
+		${WRKSRC}/examples/ansible.cfg \
+		${WRKSRC}/examples/hosts \
+		${WRKSRC}/examples/playbooks/ansible_pull.yml \
+		${WRKSRC}/lib/ansible/constants.py \
+		${WRKSRC}/lib/ansible/playbook/__init__.py \
+		${WRKSRC}/lib/ansible/runner/__init__.py \
+		${WRKSRC}/plugins/README.md \
+		${WRKSRC}/plugins/inventory/cobbler.py \
+		${WRKSRC}/plugins/inventory/nova.py
+	@${REINPLACE_CMD} -e "s|/usr/share/ansible|${DATADIR}|" \
+		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
+		${WRKSRC}/docs/man/man1/ansible.1 \
+		${WRKSRC}/examples/ansible.cfg \
+		${WRKSRC}/lib/ansible/constants.py \
+		${WRKSRC}/lib/ansible/playbook/__init__.py \
+		${WRKSRC}/lib/ansible/runner/__init__.py
+	@${REINPLACE_CMD} -e "s|/usr/bin/python|/usr/bin/env python|" \
+		${WRKSRC}/examples/scripts/* \
+		${WRKSRC}/plugins/inventory/* \
+		${WRKSRC}/library/*
+
+pre-install-script:
+	@(cd ${WRKSRC} && ${FIND} . -type f -name '*.bak' -exec ${RM} {} +)
+
+.include <bsd.port.options.mk>
+
+post-install:
+	@${MKDIR} ${MAN1PREFIX}/man/man1
+.for man in ansible-doc ansible-playbook ansible-pull ansible
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/${man}.1 \
+		${MAN1PREFIX}/man/man1
+.endfor
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && \
+		${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.mk>
