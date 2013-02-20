@@ -1,7 +1,4 @@
-# New ports collection makefile for:	dwdiff
-# Date created:		30 September 2006
-# Whom:			Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	dwdiff
@@ -16,7 +13,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A delimited word diff program
 
-OPTIONS=	UNICODE	"Build with Unicode support"	on
+OPTIONS_DEFINE=	UNICODE NLS DOCS
+OPTIONS_DEFAULT=	UNICODE
+UNICODE_DESC=	Unicode support
 
 MAKE_JOBS_SAFE=	yes
 
@@ -33,7 +32,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 MANLANG=	"" nl nl.UTF-8
@@ -42,14 +41,14 @@ CONFIGURE_ARGS+=	--without-gettext
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
 .else
 CONFIGURE_ARGS+=	--without-unicode
 .endif
 
 post-patch:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|share/doc/${PORTNAME}-${PORTVERSION}|${DOCSDIR_REL}|' \
 		${WRKSRC}/Makefile.in
 .else
