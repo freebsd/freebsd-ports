@@ -294,7 +294,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_A
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
-GIT_HTTP_AUTH_LDAP_VERSION=	c2c3d5ea4919
+# WWW: https://github.com/kvspb/nginx-auth-ldap
+GIT_HTTP_AUTH_LDAP_VERSION=  c4dc7c9153
 MASTER_SITES+=	LOCAL/rm:http_auth_ldap
 DISTFILES+=	http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}.tar.gz:http_auth_ldap
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}
