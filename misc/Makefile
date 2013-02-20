@@ -472,6 +472,7 @@
     SUBDIR += pypanda
     SUBDIR += qbrew
     SUBDIR += qlas
+    SUBDIR += qmetro
     SUBDIR += qt4-doc
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
@@ -491,6 +492,7 @@
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-ohcount
+    SUBDIR += saaghar
     SUBDIR += salias
     SUBDIR += seq2
     SUBDIR += shared-mime-info
