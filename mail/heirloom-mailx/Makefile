@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nail
-# Date created:				20 October 2000
-# Whom:					Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mailx
 PORTVERSION=	12.4
@@ -15,7 +11,7 @@ PKGNAMEPREFIX=	heirloom-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
-OPTIONS=	IPV6	"Enable IPv6 Support"	On
+OPTIONS_DEFINE=	IPV6 DOCS
 
 CONFLICTS=	mailx-[0-9]*
 
@@ -40,9 +36,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	IPv6="-DHAVE_IPv6_FUNCS"
 .endif
 
@@ -53,11 +49,11 @@ do-install:
 .if !exists(${PREFIX}/etc/nail.rc)
 	${INSTALL_DATA} ${WRKSRC}/nail.rc ${PREFIX}/etc
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
