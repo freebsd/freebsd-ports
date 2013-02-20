@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web interface for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote

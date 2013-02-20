@@ -13,7 +13,7 @@ MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		LOCAL/avl
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A delimited word diff program
 
 OPTIONS=	UNICODE	"Build with Unicode support"	on

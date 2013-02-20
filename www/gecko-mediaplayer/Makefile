@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail deskutils
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
 
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \

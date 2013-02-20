@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Dynamite/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 MAKE_JOBS_SAFE=	yes

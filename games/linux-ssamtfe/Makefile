@@ -12,7 +12,7 @@ MASTER_SITES=	http://liflg.0wnitsch.de/files/final/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serious Sam: The First Encounter
 
 OPTIONS=	VORBIS	"Ogg playing support"	on

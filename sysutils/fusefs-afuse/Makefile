@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automounting file system implemented in user-space using FUSE
 
 MAKE_JOBS_SAFE=	yes

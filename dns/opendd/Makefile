@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small DynDNS client
 
 OPTIONS_DEFINE=	OPENSSL RCNG

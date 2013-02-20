@@ -9,7 +9,7 @@ PORTVERSION=	0.97
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.corpit.ru/home/mjt/mdpop3d/
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and small POP3 daemon implementation with Maildir support
 
 PLIST_FILES=	libexec/mdpop3d

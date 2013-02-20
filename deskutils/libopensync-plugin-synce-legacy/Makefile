@@ -12,7 +12,7 @@ MASTER_SITES=	SF/synce/SynCE/0.14
 PKGNAMESUFFIX=	-legacy
 DISTNAME=	${PORTNAME}-rra-${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE legacy plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \

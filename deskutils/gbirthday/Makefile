@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A birthday reminder for Evolution and some others
 
 OPTIONS=	EVO	"Enable Evolution support"	on \
