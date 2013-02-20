@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c8a039b-7b23-11e2-b17b-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>3.6.0</ge><lt>3.6.13</lt></range>
+	<range><ge>4.0.0</ge><lt>4.0.10</lt></range>
+	<range><ge>4.2.0</ge><lt>4.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/3.6.12/">
+	  <h1>Cross-Site Scripting</h1>
+	  <p>When viewing a single bug report, which is the default,
+	    the bug ID is validated and rejected if it is invalid.
+	    But when viewing several bug reports at once, which is
+	    specified by the format=multiple parameter, invalid bug
+	    IDs can go through and are sanitized in the HTML page
+	    itself. But when an invalid page format is passed to the
+	    CGI script, the wrong HTML page is called and data are not
+	    correctly sanitized, which can lead to XSS.</p>
+	  <h1>Information Leak</h1>
+	  <p>When running a query in debug mode, the generated SQL
+	    query used to collect the data is displayed. The way this
+	    SQL query is built permits the user to determine if some
+	    confidential field value (such as a product name) exists.
+	    This problem only affects Bugzilla 4.0.9 and older. Newer
+	  releases are not affected by this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0785</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=842038</url>
+      <cvename>CVE-2013-0786</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=824399</url>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3f0374a-7ad6-11e2-84cd-d43d7e0c7c02">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
