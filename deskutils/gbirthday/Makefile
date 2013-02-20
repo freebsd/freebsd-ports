@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gbirthday
-# Date created:				01 January 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gbirthday
 PORTVERSION=	0.6.5
@@ -11,8 +7,8 @@ PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A birthday reminder for Evolution and some others
+MAINTAINER=	rm@FreeBSD.org
+COMMENT=	Birthday reminder for Evolution and some others
 
 OPTIONS=	EVO	"Enable Evolution support"	on \
 		THUNDER	"Enable Thunderbird/Sunbird support"	off \
