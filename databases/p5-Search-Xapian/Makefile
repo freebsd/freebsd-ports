@@ -1,12 +1,8 @@
-# New ports collection makefile for:	databases/p5-Search-Xapian
-# Date created:				Feb 22 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.12.0
+PORTVERSION=	1.2.13.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
