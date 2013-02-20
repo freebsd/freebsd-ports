@@ -1011,6 +1011,7 @@
     SUBDIR += libk8055
     SUBDIR += libkgapi
     SUBDIR += libkolab
+    SUBDIR += liblangtag
     SUBDIR += liblas
     SUBDIR += liblcfg
     SUBDIR += libleaftag
