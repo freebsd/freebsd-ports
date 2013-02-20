@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for editing command lines as they are typed
 
 LICENSE=	GPLv3
