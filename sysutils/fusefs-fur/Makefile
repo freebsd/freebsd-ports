@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-fur
-# Date created:				10 March 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fur
 PORTVERSION=	0.4.6
@@ -15,9 +11,11 @@ DISTNAME=	FUR-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for Windows CE based devices
 
-LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
+LIB_DEPENDS=	rapi:${PORTSDIR}/palm/synce-librapi2
 
-OPTIONS=	VCHMOD	"Enable a fake hook for chmod that just returns 0"	on
+OPTIONS_DEFINE=	VCHMOD
+OPTIONS_DEFAULT=	VCHMOD
+VCHMOD_DESC=	Fake hook for chmod that just returns 0
 
 MAKE_JOBS_SAFE=	yes
 
@@ -25,19 +23,19 @@ GNU_CONFIGURE=	yes
 USE_FUSE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DFUSE_USE_VERSION=26
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VCHMOD)
+.if ${PORT_OPTIONS:MVCHMOD}
 CONFIGURE_ARGS+=	--enable-void-chmod
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Fur ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
