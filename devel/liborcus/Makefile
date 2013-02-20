@@ -24,7 +24,7 @@ USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost-system=boost_system
-CONFIGURE_ENV=	ZLIB_CFLAGS="-D_FILE_OFFSET_BITS=64" ZLIB_LIBS="-lz"
+CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
