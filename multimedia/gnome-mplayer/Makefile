@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-mplayer
-# Date created:				21 February 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.0
@@ -17,13 +13,12 @@ COMMENT=	GNOME frontend for MPlayer
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-OPTIONS=	GIO	"Use GIO for file I/O"			off \
-		GCONF	"Use Gconf to store preferences"	off \
-		NOTIFY	"Send notifications of new media"	off \
-		GPOD	"Add support for libgpod"		off \
-		BRAINZ3	"Add support for libmusicbrainz3"	off \
-		NAUPLUG	"Enable Nautilus plugin"		off \
-		PANSCAN	"Enable panscan functionality"		off
+OPTIONS_DEFINE=	GIO GCONF NOTIFY GPOD BRAINZ3 NAUPLUG PANSCAN DOCS
+GIO_DESC=	Use GIO for file I/O
+GPOD_DESC=	Add support for libgpod
+BRAINZ3_DESC=	Add support for libmusicbrainz
+NAUPLUG_DESC=	Enable Nautilus plugin
+PANSCAN_DESC=	Enable panscan functionality
 
 MAKE_JOBS_SAFE=	yes
 
@@ -39,15 +34,15 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		dbus.txt keyboard_shortcuts.txt plugin-interaction.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GIO)
+.if ${PORT_OPTIONS:MGIO}
 CONFIGURE_ARGS+=	--with-gio
 .else
 CONFIGURE_ARGS+=	--without-gio
 .endif
 
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=	--with-gconf
 GCONF_SCHEMAS=	${PORTNAME}.schemas
@@ -55,7 +50,7 @@ GCONF_SCHEMAS=	${PORTNAME}.schemas
 CONFIGURE_ARGS+=	--without-gconf --disable-schemas-install
 .endif
 
-.if defined(WITH_NOTIFY)
+.if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 CONFIGURE_ARGS+=	--with-libnotify
@@ -63,14 +58,14 @@ CONFIGURE_ARGS+=	--with-libnotify
 CONFIGURE_ARGS+=	--without-libnotify
 .endif
 
-.if defined(WITH_GPOD)
+.if ${PORT_OPTIONS:MGPOD}
 LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=	--with-libgpod
 .else
 CONFIGURE_ARGS+=	--without-libgpod
 .endif
 
-.if defined(WITH_BRAINZ3)
+.if ${PORT_OPTIONS:MBRAINZ3}
 LIB_DEPENDS+=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libmusicbrainz3
@@ -78,7 +73,7 @@ CONFIGURE_ARGS+=	--with-libmusicbrainz3
 CONFIGURE_ARGS+=	--without-libmusicbrainz3
 .endif
 
-.if defined(WITH_NAUPLUG)
+.if ${PORT_OPTIONS:MNAUPLUG}
 USE_GNOME+=	nautilus2
 PLIST_SUB+=	PLUGIN=""
 CONFIGURE_ARGS+=	--enable-nautilus
@@ -87,17 +82,17 @@ PLIST_SUB+=	PLUGIN="@comment "
 CONFIGURE_ARGS+=	--enable-nautilus=no
 .endif
 
-.if defined(WITH_PANSCAN)
+.if ${PORT_OPTIONS:MPANSCAN}
 CONFIGURE_ARGS+=	--enable-panscan
 .else
 CONFIGURE_ARGS+=	--enable-panscan=no
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e \
 		's/install-desktopDATA install-gnome_mplayerdocDATA/install-desktopDATA/' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
