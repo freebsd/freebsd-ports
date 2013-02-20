@@ -1044,6 +1044,7 @@
     SUBDIR += libopensync
     SUBDIR += libopensync022
     SUBDIR += libopkele
+    SUBDIR += liborcus
     SUBDIR += libowfat
     SUBDIR += libpafe
     SUBDIR += libpafe-ruby
