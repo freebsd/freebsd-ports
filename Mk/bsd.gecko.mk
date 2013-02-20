@@ -190,9 +190,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 15+ 15
+#                         Available values: yes 16+ 16
 #                         NOTE:
-#                         default value 15 is used in case of USE_SEAMONKEY=yes
+#                         default value 16 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -294,12 +294,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	15
-_SEAMONKEY_VERSIONS=		15
-_SEAMONKEY_RANGE_VERSIONS=	15+
+_SEAMONKEY_DEFAULT_VERSION=	16
+_SEAMONKEY_VERSIONS=		16
+_SEAMONKEY_RANGE_VERSIONS=	16+
 
-# For specifying [15, ..]+
-_SEAMONKEY_15P=	15
+# For specifying [16, ..]+
+_SEAMONKEY_16P=	16
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -341,7 +341,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-15_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+16_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)

@@ -1,5 +1,5 @@
---- mozilla/content/media/nsAudioStream.cpp~
-+++ mozilla/content/media/nsAudioStream.cpp
+--- mozilla/content/media/AudioStream.cpp~
++++ mozilla/content/media/AudioStream.cpp
 @@ -298,7 +298,7 @@ static int PrefChanged(const char* aPref, void* aClosure)
        gVolumeScale = NS_MAX<double>(0, PR_strtod(utf8.get(), nullptr));
      }
