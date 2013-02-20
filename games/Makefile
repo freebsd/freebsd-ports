@@ -303,6 +303,7 @@
     SUBDIR += ggz-kde-client
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
+    SUBDIR += gigalomania
     SUBDIR += gillo
     SUBDIR += gish-demo
     SUBDIR += gl-117
