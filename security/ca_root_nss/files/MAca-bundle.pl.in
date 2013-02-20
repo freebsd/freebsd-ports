@@ -4,7 +4,7 @@
 ##  Rewritten in September 2011 by Matthias Andree to heed untrust
 ##
 
-##  Copyright (c) 2011, Matthias Andree
+##  Copyright (c) 2011, 2013 Matthias Andree <mandree@FreeBSD.org>
 ##  All rights reserved.
 ##
 ##  Redistribution and use in source and binary forms, with or without
@@ -49,7 +49,10 @@ print <<EOH;
 ##  with $VERSION
 ##
 EOH
-my $debug = 1;
+my $debug = 0;
+$debug++
+    if defined $ENV{'WITH_DEBUG'}
+	and $ENV{'WITH_DEBUG'} !~ m/(?i)^(no|0|false|)$/;
 
 my %certs;
 my %trusts;
@@ -146,19 +149,25 @@ sub grabtrust() {
 while (<>) {
     if (/^CKA_CLASS .* CKO_CERTIFICATE/) {
 	my ($serial, $label, $certdata) = grabcert();
-	if (defined $certs{$serial.$label}) {
+	if (defined $certs{$label."\0".$serial}) {
 	    warn "Certificate $label duplicated!\n";
 	}
-	$certs{$serial.$label} = $certdata;
+	$certs{$label."\0".$serial} = $certdata;
     } elsif (/^CKA_CLASS .* CKO_(NSS|NETSCAPE)_TRUST/) {
 	my ($serial, $label, $trust) = grabtrust();
-	if (defined $trusts{$serial.$label}) {
+	if (defined $trusts{$label."\0".$serial}) {
 	    warn "Trust for $label duplicated!\n";
 	}
-	$trusts{$serial.$label} = $trust;
+	$trusts{$label."\0".$serial} = $trust;
     } elsif (/^CVS_ID.*Revision: ([^ ]*).*/) {
         print "##  Source: \"certdata.txt\" CVS revision $1\n##\n\n";
     }
+}
+
+sub printlabel(@) {
+    my @res = @_;
+    map { s/\0.*//; s/[^[:print:]]/_/g; $_ = "\"$_\""; } @res;
+    return wantarray ? @res : $res[0];
 }
 
 # weed out untrusted certificates
@@ -166,9 +175,10 @@ my $untrusted = 0;
 foreach my $it (keys %trusts) {
     if (!$trusts{$it}) {
 	if (!exists($certs{$it})) {
-	    warn "Found trust for nonexistent certificate\n";
+	    warn "Found trust for nonexistent certificate ".printlabel($it)."\n" if $debug;
 	} else {
 	    delete $certs{$it};
+	    warn "Skipping untrusted ".printlabel($it)."\n" if $debug;
 	    $untrusted++;
 	}
     }
@@ -177,13 +187,14 @@ foreach my $it (keys %trusts) {
 print "##  Untrusted certificates omitted from this bundle: $untrusted\n\n";
 
 my $certcount = 0;
-foreach my $it (keys %certs) {
+foreach my $it (sort {uc($a) cmp uc($b)} keys %certs) {
     if (!exists($trusts{$it})) {
 	die "Found certificate without trust block,\naborting";
     }
     printcert("", $certs{$it});
     print "\n\n\n";
     $certcount++;
+    print STDERR "Trusting $certcount: ".printlabel($it)."\n" if $debug;
 }
 
 print "##  Number of certificates: $certcount\n";
