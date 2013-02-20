@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mdpop3d
-# Date created:		2 July 2006
-# Whom:			Alexander Logvinov <info@logvinov.com>
-#
+# Created by: Alexander Logvinov <info@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	mdpop3d
@@ -16,15 +13,15 @@ PLIST_FILES=	libexec/mdpop3d
 MAN8=		mdpop3d.8
 MANCOMPRESSED=	no
 
-OPTIONS=	PAM	"Build with PAM support"	off \
-		APOP	"Build with APOP command support (requires PAM)"	off
+OPTIONS_DEFINE=	PAM APOP
+APOP_DESC=	Build with APOP command support (requires PAM)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS = -lpam -ldl|LIBS = -lpam|;/^CC[[:blank:]]*=/d' \
 		${WRKSRC}/Makefile
-.if defined(WITHOUT_PAM)
+.if ! ${PORT_OPTIONS:MPAM}
 	@${REINPLACE_CMD} -e 's|LIBS = -lpam|LIBS = -lcrypt|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|DEFS = -DUSE_PAM|#DEFS = -DUSE_PAM|' \
@@ -32,7 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|OPTS = -DUSE_APOP|#OPTS = -DUSE_APOP|' \
 		${WRKSRC}/Makefile
 .endif
-.if defined(WITHOUT_APOP)
+.if ! ${PORT_OPTIONS:MAPOP}
 	@${REINPLACE_CMD} -e 's|OPTS = -DUSE_APOP|#OPTS = -DUSE_APOP|' \
 		${WRKSRC}/Makefile
 .endif
@@ -41,4 +38,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/mdpop3d.8 ${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
