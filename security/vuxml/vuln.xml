@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58c15292-7b61-11e2-95da-001e8c1a8a0e">
+    <topic>nss-pam-ldapd -- file descriptor buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nss-pam-ldapd</name>
+	<range><lt>0.8.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Garth Mollett reports:</p>
+	<blockquote cite="http://arthurdejong.org/nss-pam-ldapd/CVE-2013-0288">
+	  <p>A file descriptor overflow issue in the use of FD_SET()
+	    in nss-pam-ldapd can lead to a stack-based buffer overflow.
+	    An attacker could, under some circumstances, use this flaw
+	    to cause a process that has the NSS or PAM module loaded to
+	    crash or potentially execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0288</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-18</discovery>
+      <entry>2013-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c8a039b-7b23-11e2-b17b-20cf30e32f6d">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
