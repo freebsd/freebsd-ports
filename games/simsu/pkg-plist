@@ -10,5 +10,41 @@ share/icons/hicolor/48x48/apps/simsu.png
 share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
 share/pixmaps/simsu.png
-share/pixmaps/simsu_32.xpm
+share/pixmaps/simsu.xpm
+%%DATADIR%%/translations/simsu_ca.qm
+%%DATADIR%%/translations/simsu_cs.qm
+%%DATADIR%%/translations/simsu_el.qm
+%%DATADIR%%/translations/simsu_en.qm
+%%DATADIR%%/translations/simsu_es.qm
+%%DATADIR%%/translations/simsu_es_CL.qm
+%%DATADIR%%/translations/simsu_fr.qm
+%%DATADIR%%/translations/simsu_he.qm
+%%DATADIR%%/translations/simsu_hu.qm
+%%DATADIR%%/translations/simsu_ro.qm
+%%DATADIR%%/translations/simsu_ru.qm
+%%DATADIR%%/translations/simsu_uk.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
