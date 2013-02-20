@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for collecting and analyzing calls from different PBX models
 
 OPTIONS=	LIBWRAP		"Enable TCP wrapper support"			on \

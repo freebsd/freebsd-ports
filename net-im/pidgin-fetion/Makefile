@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
 
 LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple

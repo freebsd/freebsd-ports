@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 PKGNAMEPREFIX=	synce-
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Listener daemon for connections from WinCE devices
 
 LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce

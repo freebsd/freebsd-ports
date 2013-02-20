@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunbird plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \

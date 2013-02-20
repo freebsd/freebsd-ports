@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE-GNOME/0.14
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GVFS module for access Windows Mobile devices
 
 EXTRACT_DEPENDS=${NONEXISTENT}:${GVFS_PORTDIR}:patch

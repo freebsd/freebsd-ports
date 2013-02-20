@@ -12,7 +12,7 @@ MASTER_SITES=	SF/synce/FUR/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	FUR-${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for Windows CE based devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2

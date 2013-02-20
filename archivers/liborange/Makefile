@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \

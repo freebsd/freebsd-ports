@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	-radrails
 DISTNAME=	org.radrails.rails_feature-${PORTVERSION}-278787EUNvWohWG-fz0019H9P9Y9
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IDE for Ruby and the Ruby on Rails framework (Eclipse plugin)
 
 RUN_DEPENDS=	${LOCALBASE}/lib/eclipse/features/com.aptana.ide.feature_1.2.7.024747.jar:${PORTSDIR}/java/eclipse-aptana

@@ -9,7 +9,7 @@ PORTVERSION=	0.11
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices
 
 RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-vdccm

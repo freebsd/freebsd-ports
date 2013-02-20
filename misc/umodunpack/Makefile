@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.pl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack umod files for Unreal and/or Unreal Tournament
 
 USE_PERL5_RUN=	yes

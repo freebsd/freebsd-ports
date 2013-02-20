@@ -8,7 +8,7 @@
 CATEGORIES=	archivers python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the LZRTF compression library
 
 LIB_DEPENDS=	rtfcomp.0:${PORTSDIR}/archivers/librtfcomp
