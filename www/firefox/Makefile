@@ -37,6 +37,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
+USE_DOS2UNIX=	media/webrtc/trunk/src/system_wrappers/source/spreadsortlib/spreadsort.hpp
 NO_MOZPKGINSTALL=yes
 
 FIREFOX_ICON=		${MOZILLA}.png

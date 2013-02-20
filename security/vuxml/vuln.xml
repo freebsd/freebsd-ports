@@ -101,7 +101,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><gt>11.0,1</gt><lt>19.0,1</lt></range>
+	<range><gt>18.0,1</gt><lt>19.0,1</lt></range>
 	<range><lt>17.0.3,1</lt></range>
       </package>
       <package>
@@ -169,6 +169,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-02-19</discovery>
       <entry>2013-02-19</entry>
+      <modified>2013-02-20</modified>
     </dates>
   </vuln>
 
