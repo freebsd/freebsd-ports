@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Unreal Tournament Dedicated Server
-# Date created:				Thu Oct 4 23:38:00 CEST 2001
-# Whom:			Martin Matuska <martin@tradex.sk> et al
-#
+# Created by: Martin Matuska <martin@tradex.sk> et al
 # $FreeBSD$
-#
 
 PORTNAME=	utserver
 PORTVERSION=	451
@@ -20,7 +16,9 @@ EXTRACT_ONLY=	${MAINFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
-OPTIONS=	BONUSPACKS	"install the official bonus packs collection" on
+OPTIONS_DEFINE=	BONUSPACKS
+OPTIONS_DEFAULT=	BONUSPACKS
+BONUSPACKS_DESC=	install the official bonus packs collection
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
@@ -37,9 +35,9 @@ MAINFILE=	ut-server-436.tar.gz
 PATCH451FILE=	UTPGPatch451.tar.bz2
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_BONUSPACKS)
+.if ${PORT_OPTIONS:MBONUSPACKS}
 MASTER_SITES+=	http://liflg.holarse.net/files/final/:pbonus
 BONUSFILE=	unreal.tournament.official.bonus.pack.collection.run
 DISTFILES+=	${BONUSFILE}:pbonus
@@ -63,7 +61,7 @@ pre-patch:
 		-e "s!%%UTDIR%%!${PREFIX}/${UTDIR}!" \
 		${FILESDIR}/template-patch-ngstatsut > \
 		${WRKDIR}/patch-ngstatsut
-.if !defined(WITHOUT_BONUSPACKS)
+.if ${PORT_OPTIONS:MBONUSPACKS}
 	@${SED} -e '1,/exit \$$res/d' ${_DISTDIR}/${BONUSFILE} | \
 		${GUNZIP_CMD} -q | ${TAR} xf - -C ${WRKDIR} -X ${FILESDIR}/excludefiles
 .for file in bp1.tar.bz2 bp2.tar.bz2 bp3.tar.bz2 bp4.tar.bz2
@@ -89,4 +87,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
