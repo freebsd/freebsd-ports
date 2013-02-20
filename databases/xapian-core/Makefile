@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xapian-core
-# Date created:				5 November 2005
-# Whom:					J.F. Dockes
-#
+# Created by: J.F. Dockes
 # $FreeBSD$
-#
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.13
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \

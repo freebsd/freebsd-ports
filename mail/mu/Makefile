@@ -7,6 +7,7 @@
 
 PORTNAME=	mu
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://mu0.googlecode.com/files/
 

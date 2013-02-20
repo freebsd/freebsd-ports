@@ -1,10 +1,9 @@
-Xapian is an Open Source Probabilistic Information Retrieval library,
-released under the GPL. It's written in C++, with bindings to allow use
-from other languages.
+Xapian is an Open Source Probabilistic Information Retrieval library, released
+under the GPL. It's written in C++, with bindings to allow use from other
+languages.
 
 Xapian is designed to be a highly adaptable toolkit to allow developers to
-easily add advanced indexing and search facilities to their own
-applications.
+easily add advanced indexing and search facilities to their own applications.
 
 Xapian features include:
  - Ranked probabilistic search - word importance weighting
