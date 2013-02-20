@@ -31,18 +31,6 @@
  CFLAGS += -fPIC
  endif
  endif
-@@ -62,7 +62,11 @@ libs: source
- 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)
- 
- source: $(source)
-+ifneq (,$(filter 4.2.%, $(CC_VERSION)))
-+	$(CC) $(CFLAGS) -c -o $(objfiles) $^
-+else
- 	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
-+endif
- 
- 
- clean:
 --- mailnews/extensions/enigmail/ipc/src/Makefile.in~
 +++ mailnews/extensions/enigmail/ipc/src/Makefile.in
 @@ -19,26 +19,26 @@ endif
@@ -76,15 +64,3 @@
  CFLAGS += -fPIC
  endif
  endif
-@@ -62,7 +62,11 @@ libs: source
- 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)
- 
- source: $(source)
-+ifneq (,$(filter 4.2.%, $(CC_VERSION)))
-+	$(CC) $(CFLAGS) -c -o $(objfiles) $^
-+else
- 	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
-+endif
- 
- 
- clean:

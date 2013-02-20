@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.15
+DISTVERSION=	2.16
 CATEGORIES?=	www ipv6
-MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
-MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
-DISTFILES=	seamonkey-${DISTVERSION}.source${EXTRACT_SUFX}
-EXTRACT_ONLY=	seamonkey-${DISTVERSION}.source${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.9.3:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9.4:${PORTSDIR}/devel/nspr \
 		nss>=3.14.1:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.5.0
+EM_VERSION=	1.5.1
+L_VERSION=	2.1b1
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
@@ -33,6 +34,7 @@ WANT_PERL=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 USE_GL=		gl
+USE_DOS2UNIX=	mozilla/media/webrtc/trunk/src/system_wrappers/source/spreadsortlib/spreadsort.hpp
 MAKE_JOBS_SAFE=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
@@ -116,7 +118,7 @@ MOZ_OPTIONS+=	--disable-composer
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning.xpi
+XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.freebsd${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@seamonkey.mozilla.org
 .else
