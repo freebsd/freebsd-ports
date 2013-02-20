@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages
 
 USE_RUBY=	yes
