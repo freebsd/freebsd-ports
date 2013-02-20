@@ -1,0 +1,134 @@
+--- Makefile.orig	2009-09-22 14:45:57.000000000 -0500
++++ Makefile	2012-03-31 21:58:24.000000000 -0500
+@@ -17,7 +17,7 @@
+ #                           UNCOMMENT TO SELECT DOUBLE PRECISION
+ #--------------------------------------------------------------------------
+ 
+-#            FLAG_1 =  -DDOUBLE_PRECISION 
++             FLAG_1 =  -DDOUBLE_PRECISION 
+ 
+ #--------------------------------------------------------------------------
+ #        SPHERICAL          SELECT SPHERICAL COORDINATES FOR INTEGRATION
+@@ -35,7 +35,7 @@
+ #                           UNCOMMENT TO INCLUDE FLOODYING/DRYING
+ #--------------------------------------------------------------------------
+ 
+-#             FLAG_3 = -DWET_DRY
++             FLAG_3 = -DWET_DRY
+ 
+ #--------------------------------------------------------------------------
+ #        MULTI_PROCESSOR    INCLUDES PARALLELIZATION WITH MPI
+@@ -45,13 +45,14 @@
+ #                           UNCOMMENT TO INCLUDE MPI PARALLEL CAPABILITY
+ #--------------------------------------------------------------------------
+ 
+-              FLAG_4 = -DMULTIPROCESSOR
++#              FLAG_4 = -DMULTIPROCESSOR
+ 
+ # For em64t computers at SMAST (guppy)
+ #              PARLIB = -L/hosts/salmon01/data00/medm/em64t/lib64 -lmetis 
+ 
+ # For i386 computers at SMAST (salmon and minke)
+ #              PARLIB = -L/hosts/salmon01/data00/medm/lib -lmetis 
++#              PARLIB = -L${LOCALBASE}/lib -lmetis 
+               PARLIB = -L../METIS_source -lmetis 
+ 
+ # For Typhoeus and Hydra
+@@ -67,7 +68,7 @@
+ #                           UNCOMMENT TO INCLUDE WATER QUALITY MODEL
+ #--------------------------------------------------------------------------
+ 
+-#             FLAG_5 = -DWATER_QUALITY
++             FLAG_5 = -DWATER_QUALITY
+ 
+ #--------------------------------------------------------------------------
+ #        NETCDF OUTPUT      DUMP OUTPUT INTO NETCDF FILES (yes/no)
+@@ -79,8 +80,10 @@
+ #                           UNCOMMENT TO INCLUDE NETCDF OUTPUT CAPABILITY
+ #--------------------------------------------------------------------------
+            FLAG_6       =  -DNETCDF_IO
+-             IOLIBS       =  -L/hosts/mao/usr/medm/install/netcdf/3.6.3/em64t/lib  -lnetcdf
+-             IOINCS       =  -I/hosts/mao/usr/medm/install/netcdf/3.6.3/em64t/include
++# FreeBSD ports netcdf fortran support is separate from the standard
++# netcdf library. Must have both -lnetcdff and -lnetcdf
++             IOLIBS       =  -L${LOCALBASE}/lib -lnetcdff -lnetcdf
++             IOINCS       =  -I${LOCALBASE}/include
+ 
+ # For em64t computers at SMAST (guppy)
+ #             IOLIBS       =  -L/hosts/salmon01/data00/medm/em64t/lib64  -lnetcdf
+@@ -107,7 +110,7 @@
+ #                           UNCOMMENT TO INCLUDE DATA ASSIMILATION 
+ #--------------------------------------------------------------------------
+ 
+-#             FLAG_7 = -DNG_OI_ASSIM
++             FLAG_7 = -DNG_OI_ASSIM
+ 
+ # For Build on em64t computer (Guppy) 
+ #             OILIB  = -L/usr/X11R6/lib64 -L/usr/local/lib64 -lmkl_lapack -lmkl_em64t -lguide -lpthread
+@@ -381,15 +384,15 @@
+ #--------------------------------------------------------------------------
+ #  Intel/MPI Compiler Definitions (SMAST)      
+ #--------------------------------------------------------------------------
+-          CPP      = /usr/bin/cpp
+-          CPPFLAGS = $(DEF_FLAGS) -DINTEL   
+-          FC       = mpif90 
+-         DEBFLGS  = #-check all
++#          CPP      = /usr/bin/cpp
++#          CPPFLAGS = $(DEF_FLAGS) -DINTEL   
++#          FC       = mpif90 
++#         DEBFLGS  = #-check all
+ # Use 'OPT = -O0 -g'  for fast compile to test the make 
+ # Use 'OPT = -xP'      for fast run on em64t (Hydra, Typhoeus and Guppy)
+ # Use 'OPT = -xN'      for fast run on em64t (Salmon and Minke)
+ #         OPT      = -O0 -g 
+-          OPT      = -xP
++#          OPT      = -xP
+ #          OPT      = -xN
+ 
+ # Do not set static for use with visit!
+@@ -398,12 +401,11 @@
+ #--------------------------------------------------------------------------
+ #  gfortran defs 
+ #--------------------------------------------------------------------------
+-#         CPP      = /usr/bin/cpp 
+-#         CPPFLAGS = $(DEF_FLAGS)  -DGFORTRAN
+-#         FC       = gfortran  -O3 
+-#         DEBFLGS  = 
+-#         OPT      = 
+-#         CLIB     = 
++         CPP      = cpp 
++         CPPFLAGS = $(DEF_FLAGS)  -DGFORTRAN
++         DEBFLGS  = -g
++         OPT      = -O
++         CLIB     = 
+ #--------------------------------------------------------------------------
+ #  absoft / mac os x defs
+ #--------------------------------------------------------------------------
+@@ -448,7 +450,8 @@
+ #--------------------------------------------------------------------------
+ #  CAT Preprocessing Flags
+ #--------------------------------------------------------------------------
+-           CPPARGS =  $(CPPFLAGS) $(DEF_FLAGS) $(FLAG_1) $(FLAG_2) \
++           CPPARGS =  $(CPPFLAGS) $(DEF_FLAGS) $(PORT_CPP_FLAGS) \
++   $(FLAG_1) $(FLAG_2) \
+    $(FLAG_3) $(FLAG_4) $(FLAG_5) $(FLAG_6)  \
+    $(FLAG_7) $(FLAG_8) $(FLAG_9) $(FLAG_10) \
+    $(FLAG_11) $(FLAG_12) $(FLAG_13) $(FLAG_14) \
+@@ -463,7 +466,7 @@
+ 
+             LIBS  =	$(PV3LIB) $(CLIB)  $(PARLIB) $(IOLIBS)	\
+ 			$(MPILIB) $(GOTMLIB) $(KFLIB) $(BIOLIB)	\
+-			$(OILIB) $(VISITLIB) $(PETSC_LIB)
++			$(OILIB) $(VISITLIB) $(PETSC_LIB) -llapack -lblas
+ 
+             INCS  = 	$(IOINCS) $(GOTMINCS) $(BIOINCS) $(VISITINC) $(PETSC_FC_INCLUDES)
+ 
+@@ -539,6 +542,8 @@
+ #  Linking Directives
+ #--------------------------------------------------------------------------
+ 
++all:		$(EXEC)
++
+ $(EXEC):	$(OBJS)
+ 		$(FC) $(FFLAGS) $(VISOPT) $(LDFLAGS) $(OBJS) $(LIBS) -o $(EXEC)
+ 

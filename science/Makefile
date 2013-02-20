@@ -51,6 +51,8 @@
     SUBDIR += fasthenry
     SUBDIR += felt
     SUBDIR += flounder
+    SUBDIR += fvcom
+    SUBDIR += fvcom-mpi
     SUBDIR += fvm
     SUBDIR += g3data
     SUBDIR += gamess

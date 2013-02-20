@@ -1,0 +1,11 @@
+--- ../METIS_source/makefile.orig	2012-03-31 22:00:57.000000000 -0500
++++ ../METIS_source/makefile	2012-03-31 22:01:01.000000000 -0500
+@@ -2,7 +2,7 @@
+ AR = ar rv
+ RANLIB = ranlib
+ # add path to c compiler 
+-CC = icc 
++CC = gcc 
+ # add c compiler optimization flags
+ OPTFLAGS = -O2
+ CFLAGS = $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
