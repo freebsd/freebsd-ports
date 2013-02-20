@@ -54,7 +54,7 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 
 .if ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
-CFLAGS+=	-B${LOCALBASE}/${CONFIGURE_TARGET:S/amd64/x86_64/}/bin
+CFLAGS+=	-B${LOCALBASE}/bin
 .if defined(WITH_CLANG_IS_CC) || ${CC:Mcc} && ${OSVERSION} > 1000023
 EXTRA_PATCHES+=	${FILESDIR}/extra-bug835050
 .endif
