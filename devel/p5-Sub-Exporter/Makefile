@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Sub-Exporter
-# Date created:				30 Apr 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sub-Exporter
-PORTVERSION=	0.984
+PORTVERSION=	0.985
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
