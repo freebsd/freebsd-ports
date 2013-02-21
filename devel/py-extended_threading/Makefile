@@ -19,6 +19,8 @@ COMMENT=	A library to extend pythons threading library
 
 USE_PYTHON=	yes
 
+BROKEN=	checksum mismatch
+
 USE_BZIP2=	YES
 
 do-build:
