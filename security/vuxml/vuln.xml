@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4d71e4c-7bf4-11e2-84cd-d43d7e0c7c02">
+    <topic>drupal7 -- Denial of service</topic>
+    <affects>
+      <package>
+        <name>drupal7</name>
+        <range><lt>7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-002">
+	  <p>Drupal core's Image module allows for the on-demand generation
+	    of image derivatives. This capability can be abused by requesting
+	    a large number of new derivatives which can fill up the server disk
+	    space, and which can cause a very high CPU load. Either of these
+	    effects may lead to the site becoming unavailable or unresponsive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0316</cvename>
+      <url>https://drupal.org/SA-CORE-2013-002</url>
+    </references>
+    <dates>
+      <discovery>2013-02-20</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58c15292-7b61-11e2-95da-001e8c1a8a0e">
     <topic>nss-pam-ldapd -- file descriptor buffer overflow</topic>
     <affects>
