@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	hardy.schumacher@gmx.de
 COMMENT=	ZiLOG Z80 CPU emulator library
 
+BROKEN=		checksum mismatch
+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
