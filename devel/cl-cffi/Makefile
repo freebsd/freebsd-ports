@@ -31,6 +31,8 @@ ${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/
 
 NO_BUILD=	yes
 
+BROKEN=		checksum mismatch
+
 USE_ASDF=	yes
 
 do-install:
