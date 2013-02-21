@@ -14,7 +14,9 @@ COMMENT=	The Apache Solr PHP extension
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
     		xml2:${PORTSDIR}/textproc/libxml2
 
-USE_PHP=	yes
+USE_PHP=	json
 USE_PHPEXT=	yes
+USE_PHPIZE=	yes
+USE_PHP_BUILD=	yes
 
 .include <bsd.port.mk>
