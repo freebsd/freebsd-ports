@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
