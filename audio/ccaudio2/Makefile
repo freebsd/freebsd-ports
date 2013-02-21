@@ -17,6 +17,7 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
 
 CONFLICTS=	ccaudio-[0-9]*
 
+USE_PKGCONFIG=	build
 USE_GNOME=	gnomehack
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
