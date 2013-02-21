@@ -16,6 +16,8 @@ COMMENT=	Python extension module to capture packets on the network
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+BROKEN=		checksum mismatch
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
