@@ -18,6 +18,8 @@ GH_ACCOUNT=	zloidemon
 GH_COMMIT=	9c2c347
 GH_TAGNAME=	master
 
+BROKEN=		checksum mismatch
+
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
