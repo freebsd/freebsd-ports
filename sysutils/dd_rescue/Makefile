@@ -16,6 +16,8 @@ COMMENT=	A dd tool suitable for rescuing data from a medium with errors
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		checksum mismatch
+
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
