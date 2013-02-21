@@ -1,19 +1,16 @@
-# New ports collection makefile for:	luabind
-# Date created:		06 Jun 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	luabind
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua
 
-LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 USE_LUA=	5.1+
 USE_LDCONFIG=	yes
