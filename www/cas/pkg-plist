@@ -63,7 +63,6 @@
 %%CAS_LIBRARY%%lib/libcas.so.3
 %%CAS_LIBRARY%%lib/libcas.so
 %%CAS_LIBRARY%%lib/libcas-st.a
-%%APACHE13_MODULE%%libexec/apache/mod_cas.so
 %%APACHE2X_MODULE%%libexec/apache22/mod_cas2.so
 %%CAS_MODULES%%libexec/cas/mod_ctpp_view.so
 %%CAS_MODULES%%libexec/cas/mod_json_view.so
