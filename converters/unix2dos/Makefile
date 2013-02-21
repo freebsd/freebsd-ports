@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unix2dos
-# Date created:		1 February 1999
-# Whom:			obonilla@fisicc-ufm.edu
-#
+# Created by: Oscar Bonilla <obonilla@fisicc-ufm.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	unix2dos
 PORTVERSION=	1.3
@@ -11,7 +7,7 @@ CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.guug.org/pub/
 
 MAINTAINER=	obonilla@galileo.edu
-COMMENT=	Translate ASCII files from DOS (cr/lf) to UNIX (lf)
+COMMENT=	Convert ASCII newlines between CR/LF and LF
 
 MAN1=		unix2dos.1 dos2unix.1
 NO_WRKSUBDIR=	yes
