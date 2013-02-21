@@ -16,6 +16,8 @@ COMMENT=	A daemon to connect to the Soulseek network
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
+BROKEN=		checksum mismatch
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
