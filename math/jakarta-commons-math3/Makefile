@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-math3
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-math3,math,}
@@ -37,16 +37,17 @@ COMMONS_DISCOVERY_API=	${LOCALBASE}/share/doc/commons-discovery/api
 MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_DISCOVERY_API}
 .endif
 
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-OTHERDOCS=	LICENSE.txt NOTICE.txt
-PORTDOCS=	apidocs ${OTHERDOCS}
-.endif
 JARFILE=	${PORTNAME:S,3,,}-${PORTVERSION}-SNAPSHOT.jar
 DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+OTHERDOCS=	LICENSE.txt NOTICE.txt
+PORTDOCS=	apidocs ${OTHERDOCS}
+.endif
 
 JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
 .if ${JDK_API} != ""
@@ -65,7 +66,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/target \
@@ -75,4 +76,4 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
