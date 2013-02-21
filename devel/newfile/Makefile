@@ -14,15 +14,15 @@ USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		newfile.1
-DOCS=		doc/newfile.html
+PORTDOCS=	newfile.html
 
 .include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${MAN1PREFIX}/man/man1
-.if defined (${PORT_OPTIONS:MDOCS})
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

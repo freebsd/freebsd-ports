@@ -1,7 +1,5 @@
 @comment $FreeBSD$
 bin/newfile
-%%PORTDOCS%%%%DOCSDIR%%/newfile.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/fileproc.rb
 %%DATADIR%%/licenses/Artistic@Artistic
 %%DATADIR%%/licenses/Artistic@README
