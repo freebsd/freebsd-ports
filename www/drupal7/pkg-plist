@@ -1158,13 +1158,6 @@
 @dirrm %%DRUPAL_BASE%%/profiles/testing
 @dirrm %%DRUPAL_BASE%%/profiles
 @dirrm %%DRUPAL_BASE%%/scripts
-@dirrm %%DRUPAL_BASE%%/sites/all/libraries
-@dirrm %%DRUPAL_BASE%%/sites/all/modules
-@dirrm %%DRUPAL_BASE%%/sites/all/themes
-@dirrm %%DRUPAL_BASE%%/sites/all
-@dirrm %%DRUPAL_BASE%%/sites/default/files
-@dirrm %%DRUPAL_BASE%%/sites/default
-@dirrm %%DRUPAL_BASE%%/sites
 @dirrm %%DRUPAL_BASE%%/themes/bartik/color
 @dirrm %%DRUPAL_BASE%%/themes/bartik/css
 @dirrm %%DRUPAL_BASE%%/themes/bartik/images
@@ -1179,10 +1172,10 @@
 @dirrm %%DRUPAL_BASE%%/themes/seven
 @dirrm %%DRUPAL_BASE%%/themes/stark
 @dirrm %%DRUPAL_BASE%%/themes
+@dirrmtry %%DRUPAL_BASE%%/sites/all/libraries
 @dirrmtry %%DRUPAL_BASE%%/sites/all/modules
 @dirrmtry %%DRUPAL_BASE%%/sites/all/themes
 @dirrmtry %%DRUPAL_BASE%%/sites/all
-@dirrmtry %%DRUPAL_BASE%%/sites/default/files/styles
 @dirrmtry %%DRUPAL_BASE%%/sites/default/files
 @dirrmtry %%DRUPAL_BASE%%/sites/default
 @dirrmtry %%DRUPAL_BASE%%/sites
