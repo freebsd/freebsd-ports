@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	percona-monitoring-plugins
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.percona.com/downloads/percona-monitoring-plugins/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -24,15 +24,14 @@ USE_PHP=	yes
 WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
+PORTDOCS=	Changelog
 
 CACTIDIR?=	share/cacti
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Changelog
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/${doc}
