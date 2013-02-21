@@ -8,6 +8,7 @@ MASTER_SITES=	http://files.kaworu.ch/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A small sysctl(3) interface for lua
 
+USE_PKGCONFIG=	build
 USE_LUA=	yes
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/sysctl.lua \
 		%%LUA_MODLIBDIR%%/sysctl/core.so
