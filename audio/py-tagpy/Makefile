@@ -1,13 +1,9 @@
-# New ports collection makefile for:	py-tagpy
-# Date created:		2007-01-22
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tagpy
 PORTVERSION=	0.94.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -16,8 +12,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for Scott Wheeler's TagLib
 
-LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		tag.1:${PORTSDIR}/audio/taglib
+
+BROKEN=		does not build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
