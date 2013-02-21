@@ -1,0 +1,3 @@
+App::cpanoutdated detects outdated CPAN modules in your environment.
+
+WWW: http://search.cpan.org/dist/App-cpanoutdated/
