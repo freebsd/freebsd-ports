@@ -21,6 +21,8 @@ COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
+BROKEN=		checksum mismatch
+
 NO_CDROM=	"Don't sell distfile"
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	pq
