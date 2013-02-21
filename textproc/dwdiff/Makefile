@@ -13,9 +13,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A delimited word diff program
 
+LICENSE=	GPLv3
+
 OPTIONS_DEFINE=	UNICODE NLS DOCS
-OPTIONS_DEFAULT=	UNICODE
-UNICODE_DESC=	Unicode support
+OPTIONS_DEFAULT=UNICODE
 
 MAKE_JOBS_SAFE=	yes
 
@@ -26,9 +27,6 @@ CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		${PORTNAME}.1 dwfilter.1
 PORTDOCS=	COPYING Changelog README
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
