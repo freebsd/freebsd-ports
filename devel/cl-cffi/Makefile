@@ -2,7 +2,7 @@
 
 PORTNAME=	cffi
 PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://common-lisp.net/project/cffi/manual/:manual \
@@ -30,8 +30,6 @@ ${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/
 		${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel
 
 NO_BUILD=	yes
-
-BROKEN=		checksum mismatch
 
 USE_ASDF=	yes
 
