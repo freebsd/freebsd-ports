@@ -706,6 +706,7 @@
     SUBDIR += powerman
     SUBDIR += pp
     SUBDIR += pprotectd
+    SUBDIR += prelink
     SUBDIR += prips
     SUBDIR += procenv
     SUBDIR += procmap
