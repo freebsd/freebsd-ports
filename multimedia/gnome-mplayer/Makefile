@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--enable-panscan=no
 .endif
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
 		's/install-desktopDATA install-gnome_mplayerdocDATA/install-desktopDATA/' \
 		${WRKSRC}/Makefile.in
