@@ -51,6 +51,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c90e093-7c6e-11e2-809b-6c626d99876c">
+    <topic>FreeBSD -- glob(3) related resource exhaustion</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>7.4</gt><lt>7.4_12</lt></range>
+	<range><gt>8.3</gt><lt>8.3_6</lt></range>
+	<range><gt>9.0</gt><lt>9.0_6</lt></range>
+	<range><gt>9.1</gt><lt>9.1_!</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-13:02.libc.asc">
+	  <p>GLOB_LIMIT is supposed to limit the number of paths to prevent against
+	    memory or CPU attacks.  The implementation however is insufficient.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-13:02.libc</freebsdsa>
+      <cvename>CVE-2010-2632</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4671cdc9-7c6d-11e2-809b-6c626d99876c">
+    <topic>FreeBSD -- BIND remote DoS with deliberately crafted DNS64 query</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>9.0</ge><lt>9.0_6</lt></range>
+	<range><ge>9.1</ge><lt>9.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-13:01.bind.asc">
+	  <p>Due to a software defect a crafted query can cause named(8) to crash
+	    with an assertion failure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-13:01.bind</freebsdsa>
+      <cvename>CVE-2012-5688</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4d71e4c-7bf4-11e2-84cd-d43d7e0c7c02">
     <topic>drupal7 -- Denial of service</topic>
     <affects>
