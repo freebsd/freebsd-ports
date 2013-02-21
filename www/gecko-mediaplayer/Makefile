@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
 OPTIONS_DEFINE=	GCONF NOCACHE DOCS
@@ -48,7 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
 		's|install-gecko_mediaplayerdocDATA install-schemaDATA|install-schemaDATA|' \
 		${WRKSRC}/Makefile.in
