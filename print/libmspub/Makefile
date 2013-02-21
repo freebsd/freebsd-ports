@@ -1,26 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	libmspub
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.5
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Library providing ability to interpret and import Microsoft Publisher content
+COMMENT=	Library and tools for parsing Microsoft Publisher file format
 
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2:${PORTSDIR}/graphics/libwpg
+LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
+		wpg-0.2:${PORTSDIR}/graphics/libwpg \
+		wpd-0.9:${PORTSDIR}/textproc/libwpd
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-werror
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
+USE_XZ=		yes
+
+CONFIGURE_ARGS=	--disable-werror --without-docs
+CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
