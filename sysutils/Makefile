@@ -243,7 +243,6 @@
     SUBDIR += fileschanged
     SUBDIR += filetype
     SUBDIR += finfo
-    SUBDIR += fio
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup

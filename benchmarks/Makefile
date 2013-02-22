@@ -14,6 +14,7 @@
     SUBDIR += expedite
     SUBDIR += fhourstones
     SUBDIR += filebench
+    SUBDIR += fio
     SUBDIR += flops
     SUBDIR += forkbomb
     SUBDIR += geekbench
