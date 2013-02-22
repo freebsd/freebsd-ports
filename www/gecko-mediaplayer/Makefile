@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		nspr4:${PORTSDIR}/devel/nspr \
 		curl:${PORTSDIR}/ftp/curl \

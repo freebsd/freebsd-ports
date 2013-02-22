@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for MPlayer
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gmtk:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
