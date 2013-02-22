@@ -750,6 +750,7 @@
     SUBDIR += qnetwalk
     SUBDIR += qonk
     SUBDIR += qstat
+    SUBDIR += qtads
     SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra
