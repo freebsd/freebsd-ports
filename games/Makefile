@@ -279,6 +279,7 @@
     SUBDIR += fretsonfire
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
+    SUBDIR += frobtads
     SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozenbubble
