@@ -1,5 +1,5 @@
---- src/Canvas/ShivaVG/src/shDefs.h.orig	2012-08-28 17:51:24.000000000 +0200
-+++ src/Canvas/ShivaVG/src/shDefs.h	2012-08-28 17:52:06.000000000 +0200
+--- simgear/canvas/ShivaVG/src/shDefs.h.orig	2013-02-20 17:17:38.000000000 +0100
++++ simgear/canvas/ShivaVG/src/shDefs.h	2013-02-20 17:18:16.000000000 +0100
 @@ -34,7 +34,7 @@
  #include <math.h>
  #include <float.h>

@@ -1,9 +1,7 @@
---- CMakeModules/SimGearComponent.cmake.orig	2012-02-17 23:38:44.620896000 +0100
-+++ CMakeModules/SimGearComponent.cmake	2012-05-15 07:45:27.783988374 +0200
-@@ -1,4 +1,6 @@
- 
+--- CMakeModules/SimGearComponent.cmake.orig	2013-02-21 05:58:12.000000000 +0100
++++ CMakeModules/SimGearComponent.cmake	2013-02-21 05:58:58.000000000 +0100
+@@ -1,3 +1,4 @@
 +include_directories(BEFORE ${PROJECT_SOURCE_DIR})
-+
- macro(simgear_component_common name includePath sourcesList sources headers)
-     if (SIMGEAR_SHARED)
  
+ macro(simgear_component_common name includePath sourcesList sources headers)
+     set(fc${sourcesList} ${name})
