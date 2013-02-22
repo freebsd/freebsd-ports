@@ -80,6 +80,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
     SUBDIR += gopchop
