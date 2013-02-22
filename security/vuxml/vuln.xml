@@ -59,7 +59,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>7.4</gt><lt>7.4_12</lt></range>
 	<range><gt>8.3</gt><lt>8.3_6</lt></range>
 	<range><gt>9.0</gt><lt>9.0_6</lt></range>
-	<range><gt>9.1</gt><lt>9.1_!</lt></range>
+	<range><gt>9.1</gt><lt>9.1_1</lt></range>
       </package>
     </affects>
     <description>
