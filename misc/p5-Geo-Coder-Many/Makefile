@@ -1,15 +1,12 @@
-# New ports collection makefile for:	p5-Geo-Coder-Many
-# Date created:		2011-10-13
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Coder-Many
-PORTVERSION=	0.29
+PORTVERSION=	0.40
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module to tie together multiple Geo::Coder::* modules
@@ -28,7 +25,8 @@ BUILD_DEPENDS=	p5-Geo-Coder-Bing>=0.10:${PORTSDIR}/misc/p5-Geo-Coder-Bing \
 		p5-Geo-Distance-XS>=0.08:${PORTSDIR}/math/p5-Geo-Distance-XS \
 		p5-HTTP-Message>=5.827:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-List-Util-WeightedRoundRobin>=0.4:${PORTSDIR}/misc/p5-List-Util-WeightedRoundRobin
+		p5-List-Util-WeightedRoundRobin>=0.4:${PORTSDIR}/misc/p5-List-Util-WeightedRoundRobin \
+		p5-Sort-Versions>=1.5:${PORTSDIR}/devel/p5-Sort-Versions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
