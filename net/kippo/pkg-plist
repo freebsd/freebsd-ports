@@ -1,0 +1,55 @@
+%%DATADIR%%/fs.pickle
+%%DATADIR%%/kippo.cfg
+%%DATADIR%%/kippo.tac
+%%DATADIR%%/doc/COPYRIGHT
+%%DATADIR%%/doc/README
+%%DATADIR%%/doc/sql/mysql.sql
+%%DATADIR%%/honeyfs/etc/passwd
+%%DATADIR%%/honeyfs/etc/issue
+%%DATADIR%%/honeyfs/proc/cpuinfo
+%%DATADIR%%/kippo/__init__.py
+%%DATADIR%%/kippo/commands/fs.py
+%%DATADIR%%/kippo/commands/base.py
+%%DATADIR%%/kippo/commands/ssh.py
+%%DATADIR%%/kippo/commands/ping.py
+%%DATADIR%%/kippo/commands/ls.py
+%%DATADIR%%/kippo/commands/__init__.py
+%%DATADIR%%/kippo/commands/last.py
+%%DATADIR%%/kippo/commands/apt.py
+%%DATADIR%%/kippo/commands/dice.py
+%%DATADIR%%/kippo/commands/tar.py
+%%DATADIR%%/kippo/commands/wget.py
+%%DATADIR%%/kippo/commands/adduser.py
+%%DATADIR%%/kippo/core/fs.py
+%%DATADIR%%/kippo/core/__init__.py
+%%DATADIR%%/kippo/core/utils.py
+%%DATADIR%%/kippo/core/ttylog.py
+%%DATADIR%%/kippo/core/honeypot.py
+%%DATADIR%%/kippo/core/config.py
+%%DATADIR%%/kippo/core/dblog.py
+%%DATADIR%%/kippo/dblog/__init__.py
+%%DATADIR%%/kippo/dblog/mysql.py
+%%DATADIR%%/txtcmds/bin/dmesg
+%%DATADIR%%/txtcmds/bin/mount
+%%DATADIR%%/txtcmds/sbin/ifconfig
+%%DATADIR%%/txtcmds/usr/bin/vi
+%%DATADIR%%/utils/convert32.py
+%%DATADIR%%/utils/createfs.py
+%%DATADIR%%/utils/passdb.py
+%%DATADIR%%/utils/playlog.py
+@dirrm %%DATADIR%%/doc/sql
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/honeyfs/etc
+@dirrm %%DATADIR%%/honeyfs/proc
+@dirrm %%DATADIR%%/honeyfs
+@dirrm %%DATADIR%%/kippo/commands
+@dirrm %%DATADIR%%/kippo/core
+@dirrm %%DATADIR%%/kippo/dblog
+@dirrm %%DATADIR%%/kippo
+@dirrm %%DATADIR%%/txtcmds/bin
+@dirrm %%DATADIR%%/txtcmds/sbin
+@dirrm %%DATADIR%%/txtcmds/usr/bin
+@dirrm %%DATADIR%%/txtcmds/usr
+@dirrm %%DATADIR%%/txtcmds
+@dirrm %%DATADIR%%/utils
+@dirrm %%DATADIR%%
