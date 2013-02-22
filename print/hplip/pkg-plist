@@ -1,12 +1,12 @@
 bin/hp-align
 bin/hp-check
-bin/hp-check-plugin
 bin/hp-clean
 bin/hp-colorcal
 bin/hp-config_usb_printer
 bin/hp-devicesettings
 bin/hp-diagnose_plugin
 bin/hp-diagnose_queues
+bin/hp-doctor
 bin/hp-fab
 bin/hp-faxsetup
 bin/hp-firmware
@@ -122,11 +122,15 @@ libexec/cups/filter/pstotiff
 %%DATADIR%%/base/mfpdtf.py
 %%DATADIR%%/base/models.py
 %%DATADIR%%/base/module.py
+%%DATADIR%%/base/os_utils.py
+%%DATADIR%%/base/password.py
 %%DATADIR%%/base/pexpect.py
 %%DATADIR%%/base/pkit.py
 %%DATADIR%%/base/pml.py
 %%DATADIR%%/base/queues.py
+%%DATADIR%%/base/services.py
 %%DATADIR%%/base/slp.py
+%%DATADIR%%/base/smart_install.py
 %%DATADIR%%/base/status.py
 %%DATADIR%%/base/strings.py
 %%DATADIR%%/base/tui.py
@@ -496,6 +500,7 @@ libexec/cups/filter/pstotiff
 %%DATADIR%%/devicesettings.py
 %%DATADIR%%/diagnose_plugin.py
 %%DATADIR%%/diagnose_queues.py
+%%DATADIR%%/doctor.py
 %%DATADIR%%/fab.py
 %%FAX%%%%DATADIR%%/fax/__init__.py
 %%FAX%%%%DATADIR%%/fax/coverpages.py
@@ -518,6 +523,7 @@ libexec/cups/filter/pstotiff
 %%DATADIR%%/installer/core_install.py
 %%DATADIR%%/installer/dcheck.py
 %%DATADIR%%/installer/distros.dat
+%%DATADIR%%/installer/pluginhandler.py
 %%DATADIR%%/levels.py
 %%DATADIR%%/linefeedcal.py
 %%DATADIR%%/logcapture.py
@@ -792,7 +798,6 @@ share/ppd/HP/hp-designjet_t770_postscript-ps.ppd.gz
 share/ppd/HP/hp-designjet_t770ps_24in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t790ps_24in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t790ps_44in-ps.ppd.gz
-share/ppd/HP/hp-designjet_t800_t2000_premium-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
@@ -1066,7 +1071,7 @@ share/ppd/HP/hp-laserjet_4-ps.ppd.gz
 share/ppd/HP/hp-laserjet_4000_series-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_4000_series-ps.ppd.gz
 share/ppd/HP/hp-laserjet_400_m401-ps.ppd.gz
-share/ppd/HP/hp-laserjet_400_m401d-ps.ppd.gz
+share/ppd/HP/hp-laserjet_400_m401dne-ps.ppd.gz
 share/ppd/HP/hp-laserjet_400_mfp_m425-ps.ppd.gz
 share/ppd/HP/hp-laserjet_4050_series-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_4050_series-ps.ppd.gz
@@ -1105,7 +1110,6 @@ share/ppd/HP/hp-laserjet_5000_series-ps.ppd.gz
 share/ppd/HP/hp-laserjet_500_color_m551-ps.ppd.gz
 share/ppd/HP/hp-laserjet_500_color_mfp_m570-ps.ppd.gz
 share/ppd/HP/hp-laserjet_500_color_mfp_m575-ps.ppd.gz
-share/ppd/HP/hp-laserjet_500_mfp_m521-ps.ppd.gz
 share/ppd/HP/hp-laserjet_500_mfp_m525-ps.ppd.gz
 share/ppd/HP/hp-laserjet_5100_series-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_5100_series-ps.ppd.gz
@@ -1209,8 +1213,6 @@ share/ppd/HP/hp-laserjet_m9050_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m9050_mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_m9059_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m9059_mfp-ps.ppd.gz
-share/ppd/HP/hp-laserjet_mfp_m521-ps.ppd.gz
-share/ppd/HP/hp-laserjet_mfp_m725-ps.ppd.gz
 share/ppd/HP/hp-laserjet_p1005-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p1006-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p1007-hpijs.ppd.gz
@@ -1337,6 +1339,7 @@ share/ppd/HP/hp-officejet_6700-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7000_e809a-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7000_e809a_series-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7100_series-hpijs.ppd.gz
+share/ppd/HP/hp-officejet_7110_series-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7200_series-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7300_series-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_7400_series-hpijs.ppd.gz
@@ -1365,8 +1368,6 @@ share/ppd/HP/hp-officejet_k80xi-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_lx-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_pro_1150c-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_pro_1170c_series-hpijs.ppd.gz
-share/ppd/HP/hp-officejet_pro_251dw_printer-ps.ppd.gz
-share/ppd/HP/hp-officejet_pro_276dw_mfp-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_451_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_476_576_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_551_series-ps.ppd.gz
