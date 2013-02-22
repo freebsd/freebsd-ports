@@ -3,44 +3,42 @@
 
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://www.linux-games.com/nuclearchess/
+MASTER_SITES=	http://www.linux-games.com/nuclearchess/ \
+		SF/nemysisfreebsdp/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Chess variant designed to be short and fun for all players
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pamscale:${PORTSDIR}/graphics/netpbm
-
 USE_SDL=	sdl image
+USE_GNOME=	desktopfileutils
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog
 
-DESKTOP_ENTRIES="NuclearChess" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+DESKTOP_ENTRIES="NuclearChess" "${COMMENT}"  \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Game;BoardGame;" false
 
 .include <bsd.port.options.mk>
 
-post-build:
-	@(cd ${WRKSRC}/gfx && \
-		${LOCALBASE}/bin/pngtopnm atom.png | \
-		${LOCALBASE}/bin/pamscale .22 | ${LOCALBASE}/bin/pnmtopng > nuclearchess.png)
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gfx/nuclearchess.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+	@-update-desktop-database
 
 .include <bsd.port.mk>
