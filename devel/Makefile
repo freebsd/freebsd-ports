@@ -930,6 +930,7 @@
     SUBDIR += libburn
     SUBDIR += libccid
     SUBDIR += libcfg
+    SUBDIR += libcfu
     SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libcidr
