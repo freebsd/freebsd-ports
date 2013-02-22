@@ -1,13 +1,8 @@
-# New Ports collection makefile for:	connectagram
-# Date created:		23 April 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	connectagram
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -22,7 +17,7 @@ USE_QT4=	moc_build qmake_build rcc_build gui network
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	ChangeLog
+PORTDOCS=	CREDITS ChangeLog
 
 .include <bsd.port.options.mk>
 
@@ -31,10 +26,11 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
-# Pixmaps
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
+	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} patterns ${DATADIR})
+	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/icons/)
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
