@@ -196,6 +196,7 @@ bin/whichwayisup
 %%DATADIR%%/sounds/kling.ogg
 %%DATADIR%%/sounds/nextlevel.ogg
 %%DATADIR%%/sounds/woosh.ogg
+share/pixmaps/whichwayisup.png
 @dirrm %%PYTHON_SITELIBDIR%%/whichwayisup
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/misc
@@ -203,3 +204,5 @@ bin/whichwayisup
 @dirrm %%DATADIR%%/pictures
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
