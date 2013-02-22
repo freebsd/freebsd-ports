@@ -4,6 +4,48 @@ include/simgear/constants.h
 include/simgear/sg_inlines.h
 include/simgear/version.h
 include/simgear/bucket/newbucket.hxx
+include/simgear/bvh/BVHPageNode.hxx
+include/simgear/bvh/BVHNearestPointVisitor.hxx
+include/simgear/bvh/BVHStaticGeometryBuilder.hxx
+include/simgear/bvh/BVHStaticLeaf.hxx
+include/simgear/bvh/BVHStaticData.hxx
+include/simgear/bvh/BVHPager.hxx
+include/simgear/bvh/BVHVisitor.hxx
+include/simgear/bvh/BVHBoundingBoxVisitor.hxx
+include/simgear/bvh/BVHTransform.hxx
+include/simgear/bvh/BVHStaticTriangle.hxx
+include/simgear/bvh/BVHStaticNode.hxx
+include/simgear/bvh/BVHNode.hxx
+include/simgear/bvh/BVHMaterial.hxx
+include/simgear/bvh/BVHLineSegmentVisitor.hxx
+include/simgear/bvh/BVHSubTreeCollector.hxx
+include/simgear/bvh/BVHPageRequest.hxx
+include/simgear/bvh/BVHStaticGeometry.hxx
+include/simgear/bvh/BVHGroup.hxx
+include/simgear/bvh/BVHMotionTransform.hxx
+include/simgear/bvh/BVHStaticBinary.hxx
+include/simgear/bvh/BVHLineGeometry.hxx
+include/simgear/canvas/CanvasMgr.hxx
+include/simgear/canvas/Canvas.hxx
+include/simgear/canvas/canvas_fwd.hxx
+include/simgear/canvas/ShivaVG/vgu.h
+include/simgear/canvas/ShivaVG/openvg.h
+include/simgear/canvas/elements/CanvasGroup.hxx
+include/simgear/canvas/elements/CanvasText.hxx
+include/simgear/canvas/elements/CanvasMap.hxx
+include/simgear/canvas/elements/CanvasImage.hxx
+include/simgear/canvas/elements/CanvasPath.hxx
+include/simgear/canvas/elements/CanvasElement.hxx
+include/simgear/canvas/CanvasPlacement.hxx
+include/simgear/canvas/ODGauge.hxx
+include/simgear/canvas/CanvasSystemAdapter.hxx
+include/simgear/canvas/MouseEvent.hxx
+include/simgear/canvas/CanvasEventListener.hxx
+include/simgear/canvas/CanvasEventVisitor.hxx
+include/simgear/canvas/CanvasEventManager.hxx
+include/simgear/canvas/VGInitOperation.hxx
+include/simgear/canvas/CanvasEventTypes.hxx
+include/simgear/canvas/CanvasEvent.hxx
 include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
 include/simgear/ephemeris/celestialBody.hxx
@@ -62,6 +104,8 @@ include/simgear/math/leastsqs.hxx
 include/simgear/math/sg_geodesy.hxx
 include/simgear/math/sg_types.hxx
 include/simgear/math/sg_random.h
+include/simgear/math/SGRect.hxx
+include/simgear/math/SGLocation.hxx
 include/simgear/misc/ResourceManager.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/sg_dir.hxx
@@ -73,8 +117,15 @@ include/simgear/misc/strutils.hxx
 include/simgear/misc/tabbed_values.hxx
 include/simgear/misc/texcoord.hxx
 include/simgear/misc/zfstream.hxx
+include/simgear/misc/gzcontainerfile.hxx
 include/simgear/nasal/naref.h
 include/simgear/nasal/nasal.h
+include/simgear/nasal/cppbind/Ghost.hxx
+include/simgear/nasal/cppbind/NasalHash.hxx
+include/simgear/nasal/cppbind/to_nasal.hxx
+include/simgear/nasal/cppbind/from_nasal_detail.hxx
+include/simgear/nasal/cppbind/from_nasal.hxx
+include/simgear/nasal/cppbind/nasal_traits.hxx
 include/simgear/props/AtomicChangeListener.hxx
 include/simgear/props/ExtendedPropertyAdapter.hxx
 include/simgear/props/condition.hxx
@@ -84,6 +135,8 @@ include/simgear/props/props_io.hxx
 include/simgear/props/propsfwd.hxx
 include/simgear/props/tiedpropertylist.hxx
 include/simgear/props/vectorPropTemplates.hxx
+include/simgear/props/PropertyBasedMgr.hxx
+include/simgear/props/PropertyBasedElement.hxx
 include/simgear/serial/serial.hxx
 include/simgear/structure/OSGUtils.hxx
 include/simgear/structure/OSGVersion.hxx
@@ -121,24 +174,6 @@ include/simgear/screen/extensions.hxx
 include/simgear/screen/screen-dump.hxx
 include/simgear/screen/tr.h
 include/simgear/screen/jpgfactory.hxx
-include/simgear/scene/bvh/BVHBoundingBoxVisitor.hxx
-include/simgear/scene/bvh/BVHDebugCollectVisitor.hxx
-include/simgear/scene/bvh/BVHGroup.hxx
-include/simgear/scene/bvh/BVHLineGeometry.hxx
-include/simgear/scene/bvh/BVHLineSegmentVisitor.hxx
-include/simgear/scene/bvh/BVHMotionTransform.hxx
-include/simgear/scene/bvh/BVHNearestPointVisitor.hxx
-include/simgear/scene/bvh/BVHNode.hxx
-include/simgear/scene/bvh/BVHStaticBinary.hxx
-include/simgear/scene/bvh/BVHStaticData.hxx
-include/simgear/scene/bvh/BVHStaticGeometry.hxx
-include/simgear/scene/bvh/BVHStaticGeometryBuilder.hxx
-include/simgear/scene/bvh/BVHStaticLeaf.hxx
-include/simgear/scene/bvh/BVHStaticNode.hxx
-include/simgear/scene/bvh/BVHStaticTriangle.hxx
-include/simgear/scene/bvh/BVHVisitor.hxx
-include/simgear/scene/bvh/BVHSubTreeCollector.hxx
-include/simgear/scene/bvh/BVHTransform.hxx
 include/simgear/scene/material/Effect.hxx
 include/simgear/scene/material/EffectBuilder.hxx
 include/simgear/scene/material/EffectCullVisitor.hxx
@@ -170,6 +205,9 @@ include/simgear/scene/model/modellib.hxx
 include/simgear/scene/model/particles.hxx
 include/simgear/scene/model/persparam.hxx
 include/simgear/scene/model/placement.hxx
+include/simgear/scene/model/BVHDebugCollectVisitor.hxx
+include/simgear/scene/model/BVHPageNodeOSG.hxx
+include/simgear/scene/model/PrimitiveCollector.hxx
 include/simgear/scene/sky/CloudShaderGeometry.hxx
 include/simgear/scene/sky/cloud.hxx
 include/simgear/scene/sky/cloudfield.hxx
@@ -222,12 +260,16 @@ include/simgear/scene/util/StateAttributeFactory.hxx
 include/simgear/scene/util/UpdateOnceCallback.hxx
 include/simgear/scene/util/VectorArrayAdapter.hxx
 include/simgear/scene/util/project.hxx
+include/simgear/scene/util/DeletionManager.hxx
+include/simgear/scene/util/parse_color.hxx
+include/simgear/scene/util/OptionsReadFileCallback.hxx
 include/simgear/scene/tsync/terrasync.hxx
 include/simgear/sound/sample_group.hxx
 include/simgear/sound/sample_openal.hxx
 include/simgear/sound/sample_queue.hxx
 include/simgear/sound/soundmgr_openal.hxx
 include/simgear/sound/xmlsound.hxx
+include/simgear/sound/readwav.hxx
 @dirrm include/simgear/xml
 @dirrm include/simgear/timing
 @dirrm include/simgear/threads
@@ -241,9 +283,9 @@ include/simgear/sound/xmlsound.hxx
 @dirrm include/simgear/scene/sky
 @dirrm include/simgear/scene/model
 @dirrm include/simgear/scene/material
-@dirrm include/simgear/scene/bvh
 @dirrm include/simgear/scene
 @dirrm include/simgear/props
+@dirrm include/simgear/nasal/cppbind
 @dirrm include/simgear/nasal
 @dirrm include/simgear/misc
 @dirrm include/simgear/math
@@ -252,29 +294,11 @@ include/simgear/sound/xmlsound.hxx
 @dirrm include/simgear/ephemeris
 @dirrm include/simgear/environment
 @dirrm include/simgear/debug
+@dirrm include/simgear/canvas/elements
+@dirrm include/simgear/canvas/ShivaVG
+@dirrm include/simgear/canvas
+@dirrm include/simgear/bvh
 @dirrm include/simgear/bucket
 @dirrm include/simgear
-lib/libsgmisc.a
-lib/libsgscreen.a
-lib/libsgprops.a
-lib/libsgmodel.a
-lib/libsgmath.a
-lib/libsgmaterial.a
-lib/libsgtgdb.a
-lib/libsgtsync.a
-lib/libsgmagvar.a
-lib/libsgstructure.a
-lib/libsgdebug.a
-lib/libsgnasal.a
-lib/libsgsky.a
-lib/libsgserial.a
-lib/libsgutil.a
-lib/libsgtiming.a
-lib/libsgxml.a
-lib/libsgbvh.a
-lib/libsgsound.a
-lib/libsgio.a
-lib/libsgenvironment.a
-lib/libsgbucket.a
-lib/libsgephem.a
-lib/libsgthreads.a
+lib/libSimGearCore.a
+lib/libSimGearScene.a

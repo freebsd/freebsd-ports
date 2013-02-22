@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
