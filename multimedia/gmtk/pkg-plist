@@ -64,4 +64,6 @@ libdata/pkgconfig/gmtk.pc
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gmtk.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gmtk.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gmtk.mo
+%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fy
 @dirrm include/gmtk
