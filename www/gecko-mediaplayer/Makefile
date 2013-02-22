@@ -40,18 +40,18 @@ PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MCACHE}
+CONFIGURE_ARGS+=	--enable-caching
+.else
+CONFIGURE_ARGS+=	--disable-caching
+.endif
+
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
 .else
 USE_GETTEXT=	build
 PLIST_SUB=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNOCACHE}
-CONFIGURE_ARGS+=	--disable-caching
-.else
-CONFIGURE_ARGS+=	--enable-caching
 .endif
 
 post-patch:
