@@ -275,7 +275,7 @@
 %%QT%%include/vtk-%%VER2%%/vtkQtTreeView.h
 %%QT%%include/vtk-%%VER2%%/vtkQtView.h
 %%QT%%lib/vtk-%%VER2%%/VTKConfigQt.cmake
-%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
+%%SHARED%%%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
 %%STATIC%%%%QT%%lib/vtk-%%VER2%%/libQVTK.a
 %%SHARED%%%%QT%%lib/vtk-%%VER2%%/libQVTK.so.%%VER1%%
 %%SHARED%%%%QT%%lib/vtk-%%VER2%%/libQVTK.so.%%VER2%%
