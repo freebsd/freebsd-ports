@@ -2,33 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-mplayer
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.0.7
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for MPlayer
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		gmtk:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-OPTIONS_DEFINE=	GIO GCONF NOTIFY GPOD BRAINZ3 NAUPLUG PANSCAN DOCS
+OPTIONS_DEFINE=	ALSA BRAINZ3 DOCS GIO GPOD GTK3 NAUPLUG NLS NOTIFY PULSEAUDIO
+BRAINZ3_DESC=	Add support for libmusicbrainz
 GIO_DESC=	Use GIO for file I/O
 GPOD_DESC=	Add support for libgpod
-BRAINZ3_DESC=	Add support for libmusicbrainz
 NAUPLUG_DESC=	Enable Nautilus plugin
-PANSCAN_DESC=	Enable panscan functionality
 
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	glib20 gtk20
+USE_GNOME=	glib20
+USE_XORG=	x11 xscrnsaver
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--without-alsa
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
@@ -36,41 +34,41 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+CONFIGURE_ARGS+=	--with-alsa
+.else
+CONFIGURE_ARGS+=	--without-alsa
+.endif
+
+.if ${PORT_OPTIONS:MBRAINZ3}
+LIB_DEPENDS+=	musicbrainz3:${PORTSDIR}/audio/libmusicbrainz3 \
+		curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-libmusicbrainz3
+.else
+CONFIGURE_ARGS+=	--without-libmusicbrainz3
+.endif
+
 .if ${PORT_OPTIONS:MGIO}
 CONFIGURE_ARGS+=	--with-gio
 .else
 CONFIGURE_ARGS+=	--without-gio
 .endif
 
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=	--with-gconf
-GCONF_SCHEMAS=	${PORTNAME}.schemas
-.else
-CONFIGURE_ARGS+=	--without-gconf --disable-schemas-install
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
-CONFIGURE_ARGS+=	--with-libnotify
-.else
-CONFIGURE_ARGS+=	--without-libnotify
-.endif
-
 .if ${PORT_OPTIONS:MGPOD}
-LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=	--with-libgpod
 .else
 CONFIGURE_ARGS+=	--without-libgpod
 .endif
 
-.if ${PORT_OPTIONS:MBRAINZ3}
-LIB_DEPENDS+=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
-		curl.6:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-libmusicbrainz3
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--enable-gtk3
 .else
-CONFIGURE_ARGS+=	--without-libmusicbrainz3
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--disable-gtk3
 .endif
 
 .if ${PORT_OPTIONS:MNAUPLUG}
@@ -82,10 +80,28 @@ PLIST_SUB+=	PLUGIN="@comment "
 CONFIGURE_ARGS+=	--enable-nautilus=no
 .endif
 
-.if ${PORT_OPTIONS:MPANSCAN}
-CONFIGURE_ARGS+=	--enable-panscan
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--enable-panscan=no
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
+CONFIGURE_ARGS+=	--with-libnotify
+.else
+CONFIGURE_ARGS+=	--without-libnotify
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--with-pulseaudio
+.else
+CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 post-patch:

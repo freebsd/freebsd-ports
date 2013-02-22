@@ -2,25 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		nspr4:${PORTSDIR}/devel/nspr \
+		curl:${PORTSDIR}/ftp/curl \
+		gmlib:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
-OPTIONS_DEFINE=	GCONF NOCACHE DOCS
+OPTIONS_DEFINE=	NOCACHE DOCS
 NOCACHE_DESC=	Disable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
 USE_GNOME=	glib20
-USE_GECKO=	libxul19
+USE_GECKO=	libxul libxul19
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
 				${PORTNAME}-wmp.so ${PORTNAME}.so
@@ -31,14 +33,6 @@ CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGINS_DIR}"
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=	--with-gconf
-GCONF_SCHEMAS=	${PORTNAME}.schemas
-.else
-CONFIGURE_ARGS+=	--without-gconf --disable-schemas-install
-.endif
 
 .if ${PORT_OPTIONS:MNOCACHE}
 CONFIGURE_ARGS+=	--disable-caching
