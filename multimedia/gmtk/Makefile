@@ -1,0 +1,72 @@
+# $FreeBSD$
+
+PORTNAME=	gmtk
+PORTVERSION=	1.0.7
+CATEGORIES=	multimedia gnome devel
+MASTER_SITES=	GOOGLE_CODE
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for gnome-mplayer and gecko-mediaplayer
+
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack
+USE_PERL5_BUILD=	yes
+USE_PKGCONFIG=	build
+USE_XORG=	x11
+
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
+
+OPTIONS_DEFINE=	ALSA DOCS GCONF GIO GTK3 NLS PULSEAUDIO
+GIO_DESC=	Use GIO for file I/O
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=	--with-alsa
+.else
+CONFIGURE_ARGS+=	--without-alsa
+.endif
+
+.if ${PORT_OPTIONS:MGCONF}
+USE_GNOME+=	gconf2
+CONFIGURE_ARGS+=	--enable-gconf --enable-gsettings
+.else
+CONFIGURE_ARGS+=	--disable-gconf --enable-keystore
+.endif
+
+.if ${PORT_OPTIONS:MGIO}
+CONFIGURE_ARGS+=	--with-gio
+.else
+CONFIGURE_ARGS+=	--without-gio
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--enable-gtk3
+.else
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--disable-gtk3
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+CONFIGURE_ARGS+=	--with-pulseaudio
+.else
+CONFIGURE_ARGS+=	--without-pulseaudio
+.endif
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+
+.include <bsd.port.mk>
