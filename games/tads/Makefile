@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tds
-# Date created:		17 Jan 2003
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	tads
 PORTVERSION=	2.5.9
@@ -15,6 +11,8 @@ DISTNAME=	tads23-unix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
+
+CONFLICTS=	frobtads-1.*
 
 WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
 
