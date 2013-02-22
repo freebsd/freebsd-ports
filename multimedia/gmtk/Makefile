@@ -8,11 +8,14 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for gnome-mplayer and gecko-mediaplayer
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
+USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 USE_PKGCONFIG=	build
 USE_XORG=	x11
@@ -68,5 +71,12 @@ CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+
+.if empty(PORT_OPTIONS:MDOCS)
+post-patch:
+	@${REINPLACE_CMD} \
+	    -e 's/install-data-am: install-gmtkdocDATA/install-data-am:/' \
+	    ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
