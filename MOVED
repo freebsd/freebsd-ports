@@ -4068,3 +4068,4 @@ net/samba4-devel|net/samba4|2013-02-18|Renamed to reflect maturity of upstream v
 net/libnet-devel|net/libnet|2013-02-18|Renamed to stable branch
 x11-fm/tkdesk||2013-02-19|Obsolete and unmaintained, doesn't run
 emulators/bsnes|emulators/higan|2013-02-22|Renamed upstream
+sysutils/fio|benchmarks/fio|2013-02-22|Moved to benchmarks category
