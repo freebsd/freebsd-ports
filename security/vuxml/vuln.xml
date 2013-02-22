@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f54584bc-7d2b-11e2-9bd1-206a8a720317">
+    <topic>krb5 -- null pointer dereference in the KDC PKINIT code [CVE-2013-1415]</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><le>1.11</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>No advisory has been released yet.</p>
+	<blockquote cite="http://web.mit.edu/kerberos/www/krb5-1.11/">
+	  <p>Fix a null pointer dereference in the KDC PKINIT code [CVE-2013-1415].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1415</cvename>
+      <url>http://web.mit.edu/kerberos/www/krb5-1.11/</url>
+    </references>
+    <dates>
+      <discovery>2013-02-21</discovery>
+      <entry>2013-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3c90e093-7c6e-11e2-809b-6c626d99876c">
     <topic>FreeBSD -- glob(3) related resource exhaustion</topic>
     <affects>
