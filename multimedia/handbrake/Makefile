@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HandBrake
-# Date created:				19 November 2004
-# Whom:					Andrew Thompson <andy@fud.org.nz>
-#
+# Created by: Andrew Thompson <andy@fud.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	handbrake
 PORTVERSION=	0.9.8
@@ -71,7 +67,7 @@ OPTIONS_DEFAULT=	X11
 # to support --exclude-libs option for ld(1) when building GUI program
 .if ${PORT_OPTIONS:MX11} || ${OSVERSION} < 802509 || \
 	${OSVERSION} >= 900000 && ${OSVERSION} < 900033
-BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
