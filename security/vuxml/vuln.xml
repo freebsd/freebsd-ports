@@ -51,6 +51,100 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfd92cb2-7d48-11e2-ad48-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>25.0.1364.97</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[172243] High CVE-2013-0879: Memory corruption with web audio
+	    node. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[171951] High CVE-2013-0880: Use-after-free in database handling.
+	    Credit to Chamal de Silva.</p>
+	  <p>[167069] Medium CVE-2013-0881: Bad read in Matroska handling.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[165432] High CVE-2013-0882: Bad memory access with excessive SVG
+	    parameters. Credit to Renata Hodovan.</p>
+	  <p>[142169] Medium CVE-2013-0883: Bad read in Skia. Credit to Atte
+	    Kettunen of OUSPG.</p>
+	  <p>[172984] Low CVE-2013-0884: Inappropriate load of NaCl. Credit to
+	    Google Chrome Security Team (Chris Evans).</p>
+	  <p>[172369] Medium CVE-2013-0885: Too many API permissions granted to
+	    web store.</p>
+	  <p>[171065] [170836] Low CVE-2013-0887: Developer tools process has
+	    too many permissions and places too much trust in the connected
+	    server.</p>
+	  <p>[170666] Medium CVE-2013-0888: Out-of-bounds read in Skia. Credit
+	    to Google Chrome Security Team (Inferno).</p>
+	  <p>[170569] Low CVE-2013-0889: Tighten user gesture check for
+	    dangerous file downloads.</p>
+	  <p>[169973] [169966] High CVE-2013-0890: Memory safety issues across
+	    the IPC layer. Credit to Google Chrome Security Team (Chris
+	    Evans).</p>
+	  <p>[169685] High CVE-2013-0891: Integer overflow in blob handling.
+	    Credit to Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[169295] [168710] [166493] [165836] [165747] [164958] [164946]
+	    Medium CVE-2013-0892: Lower severity issues across the IPC layer.
+	    Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[168570] Medium CVE-2013-0893: Race condition in media handling.
+	    Credit to Andrew Scherkus of the Chromium development community.</p>
+	  <p>[168473] High CVE-2013-0894: Buffer overflow in vorbis decoding.
+	    Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[Linux / Mac] [167840] High CVE-2013-0895: Incorrect path handling
+	    in file copying. Credit to Google Chrome Security Team (Jüri
+	    Aedla).</p>
+	  <p>[166708] High CVE-2013-0896: Memory management issues in plug-in
+	    message handling. Credit to Google Chrome Security Team (Cris
+	    Neckar).</p>
+	  <p>[165537] Low CVE-2013-0897: Off-by-one read in PDF. Credit to
+	    Mateusz Jurczyk, with contributions by Gynvael Coldwind, both from
+	    Google Security Team.</p>
+	  <p>[164643] High CVE-2013-0898: Use-after-free in URL handling.
+	    Credit to Alexander Potapenko of the Chromium development
+	    community.</p>
+	  <p>[160480] Low CVE-2013-0899: Integer overflow in Opus handling.
+	    Credit to Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[152442] Medium CVE-2013-0900: Race condition in ICU. Credit to
+	    Google Chrome Security Team (Inferno).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-0879</cvename>	
+	<cvename>CVE-2013-0880</cvename>	
+	<cvename>CVE-2013-0881</cvename>	
+	<cvename>CVE-2013-0882</cvename>	
+	<cvename>CVE-2013-0883</cvename>	
+	<cvename>CVE-2013-0884</cvename>	
+	<cvename>CVE-2013-0885</cvename>	
+	<cvename>CVE-2013-0887</cvename>	
+	<cvename>CVE-2013-0888</cvename>	
+	<cvename>CVE-2013-0889</cvename>	
+	<cvename>CVE-2013-0890</cvename>	
+	<cvename>CVE-2013-0891</cvename>	
+	<cvename>CVE-2013-0892</cvename>	
+	<cvename>CVE-2013-0893</cvename>	
+	<cvename>CVE-2013-0894</cvename>	
+	<cvename>CVE-2013-0895</cvename>	
+	<cvename>CVE-2013-0896</cvename>	
+	<cvename>CVE-2013-0897</cvename>	
+	<cvename>CVE-2013-0898</cvename>	
+	<cvename>CVE-2013-0899</cvename>	
+	<cvename>CVE-2013-0900</cvename>	
+	<url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-02-21</discovery>
+      <entry>2013-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f54584bc-7d2b-11e2-9bd1-206a8a720317">
     <topic>krb5 -- null pointer dereference in the KDC PKINIT code [CVE-2013-1415]</topic>
     <affects>
