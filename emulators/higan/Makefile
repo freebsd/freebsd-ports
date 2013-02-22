@@ -1,36 +1,37 @@
 # Created by: elbarto
 # $FreeBSD$
 
-PORTNAME=	bsnes
-PORTVERSION=	0.91
+PORTNAME=	higan
+PORTVERSION=	0.92
 CATEGORIES=	emulators
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}-source
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	Super Nintendo/Super Famicom emulator
+COMMENT=	Nintendo multi-system emulator
 
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GCC=	4.6+
 USE_PKGCONFIG=	build
+USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_ENV+=	c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x"
 
 OPTIONS_SINGLE=		PROFILE GUI
-OPTIONS_SINGLE_PROFILE=	ACCURACY COMPATIBILITY PERFORMANCE
+OPTIONS_SINGLE_PROFILE=	ACCURACY BALANCED PERFORMANCE
 OPTIONS_SINGLE_GUI=	GTK2 QT4
 OPTIONS_MULTI=		VIDEO SOUND INPUT
 OPTIONS_MULTI_VIDEO=	GLX SDL XV
 OPTIONS_MULTI_SOUND=	AO OPENAL OSS PULSEAUDIO
 OPTIONS_MULTI_INPUT=	INPUT_SDL INPUT_X
-OPTIONS_DEFAULT=	COMPATIBILITY GTK2 GLX XV SDL \
+OPTIONS_DEFAULT=	BALANCED GTK2 GLX XV SDL \
 			OSS INPUT_SDL INPUT_X
 
-ACCURACY_DESC=		Favor accuracy over compatibility
-COMPATIBILITY_DESC=	Favor compatibility over accuracy
-PERFORMANCE_DESC=	Favor performance over accuracy
+ACCURACY_DESC=		Use accuracy profile
+BALACNED_DESC=		Use balanced profile
+PERFORMANCE_DESC=	Use performance profile
 GTK2_DESC=		Build with GTK+2 GUI
 QT4_DESC=		Build with QT4 GUI
 GLX_DESC=		Build GLX video driver
@@ -47,8 +48,8 @@ INPUT_X_DESC=		Build X input driver
 
 .if ${PORT_OPTIONS:MACCURACY}
 MAKE_ENV+=	profile="accuracy"
-.elif ${PORT_OPTIONS:MCOMPATIBILITY}
-MAKE_ENV+=	profile="compatibility"
+.elif ${PORT_OPTIONS:MBALANCED}
+MAKE_ENV+=	profile="balanced"
 .else
 MAKE_ENV+=	profile="performance"
 .endif
@@ -112,10 +113,10 @@ post-patch:
 		-e 's|%%VIDEO%%|${VIDEO_DRIVER}|' \
 		-e 's|%%AUDIO%%|${AUDIO_DRIVER}|' \
 		-e 's|%%INPUT%%|${INPUT_DRIVER}|' \
-		${WRKSRC}/bsnes/target-ethos/Makefile
+		${WRKSRC}/higan/target-ethos/Makefile
 
 do-build:
-.for d in bsnes purify
+.for d in higan ananke
 .if ${PORT_OPTIONS:MQT4}
 	cd ${WRKSRC}/${d}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp
 .endif
@@ -123,10 +124,11 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsnes/out/bsnes ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/purify/purify ${PREFIX}/bin/snespurify
-	${INSTALL_DATA} ${WRKSRC}/bsnes/data/bsnes.png ${PREFIX}/share/pixmaps/
+	${INSTALL_LIB} ${WRKSRC}/ananke/libananke.so ${PREFIX}/lib/libananke.so.1
+	${LN} -sf ${PREFIX}/lib/libananke.so.1 ${PREFIX}/lib/libananke.so
+	${INSTALL_PROGRAM} ${WRKSRC}/higan/out/higan ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/bsnes/data/bsnes.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

@@ -4067,3 +4067,4 @@ net/spnetkit||2013-02-14|Has expired: BROKEN for more than 6 month
 net/samba4-devel|net/samba4|2013-02-18|Renamed to reflect maturity of upstream version
 net/libnet-devel|net/libnet|2013-02-18|Renamed to stable branch
 x11-fm/tkdesk||2013-02-19|Obsolete and unmaintained, doesn't run
+emulators/bsnes|emulators/higan|2013-02-22|Renamed upstream
