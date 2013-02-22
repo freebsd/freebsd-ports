@@ -34,5 +34,5 @@ sbin/praudit
 @exec mkdir -m 0700 var/audit/remote
 @exec chown %%USERS%%:%%GROUPS var/audit/dist
 @exec chown %%USERS%%:wheel var/audit/remote
-@unexec rmdir var/audit/dist 2>/dev/null || true
-@unexec rmdir var/audit/remote 2>/dev/null || true
+@dirrmtry var/audit/dist
+@dirrmtry var/audit/remote
