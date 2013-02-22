@@ -282,6 +282,7 @@
     SUBDIR += kdenetwork4
     SUBDIR += kiax
     SUBDIR += kio-upnp-ms
+    SUBDIR += kippo
     SUBDIR += kissd
     SUBDIR += knc
     SUBDIR += knemo

@@ -248,5 +248,6 @@ fluentd:*:963:
 git_daemon:*:964:
 elasticsearch:*:965:
 ossec:*:966:
+kippo:*:969:
 nogroup:*:65533:
 nobody:*:65534:
