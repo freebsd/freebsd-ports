@@ -1,5 +1,5 @@
---- sage-5.0.beta13/sage/misc/getusage.py-orig	2012-04-11 00:14:47.000000000 +0000
-+++ sage-5.6/sage/misc/getusage.py	2012-04-11 00:47:03.000000000 +0000
+--- sage-5.7.beta4/sage/misc/getusage.py-old	2013-02-09 23:05:24.000000000 +0000
++++ sage-5.7/sage/misc/getusage.py	2013-02-09 23:09:50.000000000 +0000
 @@ -20,6 +20,8 @@
      """
      Return the 'top' or 'prstat' line that contains this running Sage
@@ -9,16 +9,16 @@
  
      OUTPUT:
  
-@@ -53,6 +55,8 @@
-         cmd = 'top -l 1 |grep "^ *%s "' % pid
-     elif U == 'sunos':
+@@ -55,6 +57,8 @@
          cmd = '/usr/bin/prstat -n 100000 1 1  | grep "^ *%s "' % pid
+     elif U[:6] == 'cygwin':
+         cmd = 'top -b -n 1 -p %s' % pid
 +    elif U == 'freebsd':
 +        cmd = 'ps -axwww -o pid,user,vsz,rss,state,pri,nice,time,cpu,comm | grep "^ *%s "' % pid
      else:
          raise NotImplementedError("top not implemented on platform %s" % U)
      
-@@ -83,6 +87,9 @@
+@@ -85,6 +89,9 @@
        usage, ``prstat`` will output the data in KB, MB or GB. In each
        case, the value returned by this function will always be in MB.
  
@@ -28,7 +28,7 @@
      - ``other`` - not implemented for any other operating systems
  
      EXAMPLES::
-@@ -129,6 +136,9 @@
+@@ -131,6 +138,9 @@
              m = float(memory_in_KB_MB_or_GB.strip("M"))
          elif memory_in_KB_MB_or_GB.endswith("G"):
              m = float(memory_in_KB_MB_or_GB.strip("G")) * 1024

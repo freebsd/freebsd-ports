@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \

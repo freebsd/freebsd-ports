@@ -1,8 +1,0 @@
---- fflas_ffpack-1.6.0/src/fflas-ffpack-config.in-orig	2012-09-14 02:43:35.000000000 +0000
-+++ fflas_ffpack-1.6.0//src/fflas-ffpack-config.in	2012-09-14 02:43:58.000000000 +0000
-@@ -1,4 +1,4 @@
--#! /bin/bash
-+#!/usr/bin/env bash
- # Coypright (c) 2011 FFLAS-FFPACK
- # written by BB <bboyer@imag.fr>
- # adapted from LinBox configuration
