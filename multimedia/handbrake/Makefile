@@ -54,6 +54,7 @@ CONFIGURE_TARGET=	build
 BUILD_WRKSRC=	${WRKSRC}/build
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	#
+MAKE_JOBS_UNSAFE=	yes
 
 NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 
