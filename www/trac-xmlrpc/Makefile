@@ -13,6 +13,8 @@ COMMENT=	Provides an XML-RPC interface to Trac
 
 LICENSE=	BSD
 
+BROKEN=		checksum mismatch
+
 SVN_REV=	12168
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
