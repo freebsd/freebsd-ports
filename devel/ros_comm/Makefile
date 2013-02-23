@@ -15,6 +15,8 @@ COMMENT=	Robot Operating System - communication-related utilities
 
 #LICENSE=       BSD LGPL #which?
 
+BROKEN=		does not build
+
 STACKNAME=	${PORTNAME:S/ros-//}
 
 CFLAGS+=	-I${LOCALBASE}/include
