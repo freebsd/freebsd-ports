@@ -29,6 +29,8 @@ USE_DOS2UNIX=	EMULib/NetUnix.c EMULib/Rules.Unix
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}
 
+BROKEN=		does not build
+
 OPTIONS=	BPP8 "With BPP8" Off \
 		BPP16 "With BPP16" Off \
 		BPP24 "With BPP24" Off \
