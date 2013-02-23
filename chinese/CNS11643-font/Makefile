@@ -26,6 +26,8 @@ DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+BROKEN=		checksum mismatch
+
 TTF=		TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 
 do-install:
