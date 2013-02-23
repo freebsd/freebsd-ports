@@ -23,6 +23,7 @@ LIB_DEPENDS=	radius:${PORTSDIR}/graphics/radius-engine \
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl sound
 USE_GL=		glu
