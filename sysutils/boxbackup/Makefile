@@ -26,27 +26,29 @@ MAKE_JOBS_UNSAFE=yes
 
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
-OPTIONS=	CLIENT "Install the bbackupd client" On \
-		SERVER "Install the bbstored server" On \
-		GNUREADLINE "Enable the use of GNU readline" Off
+OPTIONS_DEFINE=	READLINE
 
-.include <bsd.port.pre.mk>
+OPTIONS_MULTI=	FLAVOUR
+OPTIONS_MULTI_FLAVOUR=	CLIENT SERVER
 
-.if defined(WITH_GNUREADLINE)
+CLIENT_DESC=	Install the bbackupd client
+SERVER_DESC=	Install the bbstored server
+
+OPTIONS_DEFAULT=CLIENT SERVER
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MREADLINE}
 CONFIGURE_ARGS+=--enable-gnu-readline
 .endif
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
-IGNORE=		requires at least CLIENT or SERVER to be defined.\
-		Please 'make config' again
-.endif
-
 MANCOMPRESSED=	yes
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_RC_SUBR+=	bbackupd
 PLIST_SUB+=	CLIENT=""
+SUB_LIST+=	CLIENT=""
 ALL_TARGET+=	build-backup-client
 INSTALL_TARGET+=install-backup-client
 MAN5+=		bbackupd.conf.5
@@ -54,26 +56,29 @@ MAN8+=		bbackupd.8 bbackupctl.8 bbackupd-config.8 bbackupquery.8
 SUB_FILES+=	999.boxbackup
 .else
 PLIST_SUB+=	CLIENT="@comment "
+SUB_LIST+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 USE_RC_SUBR+=	bbstored
 USERS+=		_bbstored
 GROUPS+=	_bbstored
 PLIST_SUB+=	SERVER=""
+SUB_LIST+=	SERVER=""
 ALL_TARGET+=	build-backup-server
 INSTALL_TARGET+=install-backup-server
 MAN5+=		bbstored.conf.5 raidfile.conf.5
 MAN8+=		bbstored.8 bbstoreaccounts.8 bbstored-certs.8 bbstored-config.8 raidfile-config.8
 .else
 PLIST_SUB+=	SERVER="@comment "
+SUB_LIST+=	SERVER="@comment "
 .endif
 
-.if defined(WITHOUT_CLIENT)
+.if ! ${PORT_OPTIONS:MCLIENT}
 # if this is a server-only install, CONFLICT with an install of the CLIENT or both
 CONFLICTS=	boxbackup-client-[0-9]* boxbackup-[0-9]*
 CLIENT_OR_SERVER=-server
-.elif defined(WITHOUT_SERVER)
+.elif ! ${PORT_OPTIONS:MSERVER}
 # if this is a client-only install, CONFLICT with an install of the SERVER or both
 CONFLICTS=	boxbackup-server-[0-9]* boxbackup-[0-9]*
 CLIENT_OR_SERVER=-client
@@ -85,24 +90,18 @@ CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/html/d' ${WRKSRC}/parcels.txt
-.if !defined(WITHOUT_CLIENT)
-	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
-.endif
-.if !defined(WITHOUT_SERVER)
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-	  ${FILESDIR}/pkg-message.server.in >> ${PKGMESSAGE}
-.endif
 
 post-configure:
-	@${REINPLACE_CMD} -e '/share.doc.boxbackup/d' ${WRKSRC}/parcels/scripts/install-backup-*
+	@${REINPLACE_CMD} -e '/share.doc.boxbackup/d' \
+		${WRKSRC}/parcels/scripts/install-backup-*
 
 post-install:
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	@${MKDIR} -m 0700 ${PREFIX}/etc/boxbackup/bbackupd
 	@${MKDIR} ${PREFIX}/etc/periodic/monthly
 	${INSTALL_SCRIPT} ${WRKDIR}/999.boxbackup ${PREFIX}/etc/periodic/monthly
 .endif
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${MKDIR} -m 0700 ${PREFIX}/etc/boxbackup/bbstored
 .endif
 	@${CAT} ${PKGMESSAGE}
@@ -111,4 +110,4 @@ test:
 	 @${ECHO_CMD} "===> Running tests"
 	 @${MAKE} -C ${WRKSRC} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
