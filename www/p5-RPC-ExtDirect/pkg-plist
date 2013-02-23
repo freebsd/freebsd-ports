@@ -1,0 +1,23 @@
+%%SITE_PERL%%/RPC/ExtDirect.pm
+%%SITE_PERL%%/RPC/ExtDirect/Deserialize.pm
+%%SITE_PERL%%/RPC/ExtDirect/Request.pm
+%%SITE_PERL%%/RPC/ExtDirect/NoEvents.pm
+%%SITE_PERL%%/RPC/ExtDirect/EventProvider.pm
+%%SITE_PERL%%/RPC/ExtDirect/Config.pm
+%%SITE_PERL%%/RPC/ExtDirect/API.pm
+%%SITE_PERL%%/RPC/ExtDirect/Exception.pm
+%%SITE_PERL%%/RPC/ExtDirect/Event.pm
+%%SITE_PERL%%/RPC/ExtDirect/Hook.pm
+%%SITE_PERL%%/RPC/ExtDirect/Router.pm
+%%SITE_PERL%%/RPC/ExtDirect/Serialize.pm
+%%SITE_PERL%%/RPC/ExtDirect/BEGIN.pm
+%%SITE_PERL%%/RPC/ExtDirect/CHECK.pm
+%%SITE_PERL%%/RPC/ExtDirect/Demo/TestAction.pm
+%%SITE_PERL%%/RPC/ExtDirect/Demo/PollProvider.pm
+%%SITE_PERL%%/RPC/ExtDirect/Demo/Profile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/ExtDirect/.packlist
+@dirrm %%SITE_PERL%%/RPC/ExtDirect/Demo
+@dirrm %%SITE_PERL%%/RPC/ExtDirect
+@dirrmtry %%SITE_PERL%%/RPC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/ExtDirect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
