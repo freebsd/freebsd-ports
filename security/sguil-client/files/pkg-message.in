@@ -3,7 +3,7 @@ on how to use the sguil client to connect to and maintain
 the sguil network monitoring system.
 
 NOTE: This port installs a sguil.conf-sample file in
-%%PREFIX%%/etc/.  If you are installing this on a
+%%PREFIX%%/bin/%%SGUILDIR%%/.  If you are installing this on a
 multi-user system, each user might want to have a
 sguil.conf file in their home directory.  Sguil.tk sources
 the home directory first for the sguil.conf file.

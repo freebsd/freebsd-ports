@@ -539,3 +539,4 @@ dmd-*			lang/dmd		No redistribution of non
 madfufw-*		audio/madfufw		No redistribution of firmware files
 raknet-*		devel/raknet		Original license is Indy license, special
 						authorization granted to provide RakNet under GPL v3
+fvcom/sourcecode1.tar.gz	science/fvcom*	Requires (free) registration

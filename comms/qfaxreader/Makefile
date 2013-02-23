@@ -38,8 +38,7 @@ EXPIRATION_DATE=	2013-06-30
 
 .include <bsd.port.pre.mk>
 
-#.if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
-.if ${PORT_OPTIONS:MGDBM) || exists(${LOCALBASE}/include/gdbm.h)
+.if ${PORT_OPTIONS:MGDBM} || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 

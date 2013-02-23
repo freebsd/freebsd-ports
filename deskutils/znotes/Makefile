@@ -1,9 +1,5 @@
-# New ports collection makefile for:	znotes
-# Date created:		2009-11-12
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	znotes
 PORTVERSION=	0.4.5
@@ -23,7 +19,7 @@ DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
 		"Utility;TextEditor;Qt;" ${FALSE}
 
-OPTIONS=	NLS		"Build with NLS support" on
+OPTIONS_DEFINE=		NLS
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
@@ -34,7 +30,7 @@ post-patch:
 	    @${REINPLACE_CMD} -i -e 's,QCoreApplication::applicationDirPath()+"/translations","${DATADIR}/translations",g' \
 		${WRKSRC}/settings.cpp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
@@ -43,7 +39,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-.if defined(WITH_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
 PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_cs.qm \
@@ -59,4 +55,4 @@ PLIST_DIRS+=	%%DATADIR%%/translations \
 .else
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

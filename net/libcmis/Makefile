@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcmis
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -21,28 +21,10 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CXXFLAGS+=	-std=c++98
-CONFIGURE_ARGS+=	--without-man \
-			--with-boost=${LOCALBASE} \
-			--disable-werror
-
-.include <bsd.port.pre.mk>
-
-.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
-CC=	/usr/bin/clang
-CPP=	/usr/bin/clang-cpp
-CXX=	/usr/bin/clang++
-CONFIGURE_ENV+=	CXXCPP="${CPP}"
-.else
-BUILD_DEPENDS+=	clang-devel>=3.2.r159895:${PORTSDIR}/lang/clang-devel
-USE_BINUTILS=	yes
-CC=	${LOCALBASE}/bin/clang
-CPP=	${CC} -E
-CXX=	${LOCALBASE}/bin/clang++
-CONFIGURE_ENV+=        CXXCPP="${CXX} -E"
-.endif
+CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|@WITH_LIBCMIS_MAN_FALSE@|#|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|@WITH_LIBCMIS_MAN_FALSE@|#|g" \
+	    ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

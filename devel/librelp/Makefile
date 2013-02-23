@@ -23,7 +23,5 @@ PORT_VERBS=	relp
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS/s| -g||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^PTHREADS/s|= .*|= ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

@@ -24,8 +24,7 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
 CONFIGURE_ENV=	LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
 		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_SUB=	VER=${PORTVERSION}
 

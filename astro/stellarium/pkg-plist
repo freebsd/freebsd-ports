@@ -2,9 +2,9 @@ bin/stellarium
 %%DATADIR%%/data/DejaVuSans.ttf
 %%DATADIR%%/data/DejaVuSansMono.ttf
 %%DATADIR%%/data/base_locations.bin.gz
-%%DATADIR%%/data/constellations_boundaries.dat
 %%DATADIR%%/data/countryCodes.dat
 %%DATADIR%%/data/default_config.ini
+%%DATADIR%%/data/default_shortcuts.json
 %%DATADIR%%/data/iso3166-1-alpha-2.utf8
 %%DATADIR%%/data/iso639-1.utf8
 %%DATADIR%%/data/ssystem.ini
@@ -110,6 +110,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/trees/landscape.ini
 %%DATADIR%%/landscapes/trees/trees_512.png
 %%DATADIR%%/nebulae/default/ic434bousquet.png
+%%DATADIR%%/nebulae/default/ic4592kepler.png
 %%DATADIR%%/nebulae/default/m10.png
 %%DATADIR%%/nebulae/default/m100.png
 %%DATADIR%%/nebulae/default/m101.png
@@ -212,11 +213,27 @@ bin/stellarium
 %%DATADIR%%/nebulae/default/m97dumont.png
 %%DATADIR%%/nebulae/default/m98.png
 %%DATADIR%%/nebulae/default/m99.png
+%%DATADIR%%/nebulae/default/n104kepler.png
+%%DATADIR%%/nebulae/default/n1333oleg.png
 %%DATADIR%%/nebulae/default/n1499bousquet.png
 %%DATADIR%%/nebulae/default/n2244bousquet.png
 %%DATADIR%%/nebulae/default/n253bousquet.png
+%%DATADIR%%/nebulae/default/n281kepler.png
+%%DATADIR%%/nebulae/default/n2903oleg.png
+%%DATADIR%%/nebulae/default/n3190oleg.png
+%%DATADIR%%/nebulae/default/n3718oleg.png
+%%DATADIR%%/nebulae/default/n4490oleg.png
+%%DATADIR%%/nebulae/default/n5139kepler.png
+%%DATADIR%%/nebulae/default/n5982oleg.png
+%%DATADIR%%/nebulae/default/n6543kepler.png
 %%DATADIR%%/nebulae/default/n6946dumont.png
+%%DATADIR%%/nebulae/default/n6960kepler.png
+%%DATADIR%%/nebulae/default/n7023kepler.png
+%%DATADIR%%/nebulae/default/n7129oleg.png
+%%DATADIR%%/nebulae/default/n7318kepler.png
+%%DATADIR%%/nebulae/default/n7331kepler.png
 %%DATADIR%%/nebulae/default/n869-884spano.png
+%%DATADIR%%/nebulae/default/n891oleg.png
 %%DATADIR%%/nebulae/default/nebula_textures.fab
 %%DATADIR%%/nebulae/default/ngc2000.dat
 %%DATADIR%%/nebulae/default/ngc2000names.dat
@@ -293,6 +310,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/arabic/al_sufi_altre_006_copia.png
 %%DATADIR%%/skycultures/arabic/constellation_names.eng.fab
 %%DATADIR%%/skycultures/arabic/constellation_names.exp.fab
+%%DATADIR%%/skycultures/arabic/constellations_boundaries.dat
 %%DATADIR%%/skycultures/arabic/constellationsart.fab
 %%DATADIR%%/skycultures/arabic/constellationship.fab
 %%DATADIR%%/skycultures/arabic/description.ar.utf8
@@ -313,6 +331,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/aztec/colotlixayac_t.png
 %%DATADIR%%/skycultures/aztec/constellation_names.eng.fab
 %%DATADIR%%/skycultures/aztec/constellation_names.esp.fab
+%%DATADIR%%/skycultures/aztec/constellations_boundaries.dat
 %%DATADIR%%/skycultures/aztec/constellationsart.fab
 %%DATADIR%%/skycultures/aztec/constellationship.fab
 %%DATADIR%%/skycultures/aztec/description.ar.utf8
@@ -335,6 +354,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/aztec/xonecuilli_Glifo.png
 %%DATADIR%%/skycultures/aztec/xonecuilli_t.png
 %%DATADIR%%/skycultures/chinese/constellation_names.eng.fab
+%%DATADIR%%/skycultures/chinese/constellations_boundaries.dat
 %%DATADIR%%/skycultures/chinese/constellationship.fab
 %%DATADIR%%/skycultures/chinese/description.ar.utf8
 %%DATADIR%%/skycultures/chinese/description.be.utf8
@@ -346,6 +366,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/chinese/info.ini
 %%DATADIR%%/skycultures/chinese/star_names.fab
 %%DATADIR%%/skycultures/egyptian/constellation_names.eng.fab
+%%DATADIR%%/skycultures/egyptian/constellations_boundaries.dat
 %%DATADIR%%/skycultures/egyptian/constellationship.fab
 %%DATADIR%%/skycultures/egyptian/description.ar.utf8
 %%DATADIR%%/skycultures/egyptian/description.be.utf8
@@ -362,6 +383,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/inuit/caribou.png
 %%DATADIR%%/skycultures/inuit/collarbones.png
 %%DATADIR%%/skycultures/inuit/constellation_names.eng.fab
+%%DATADIR%%/skycultures/inuit/constellations_boundaries.dat
 %%DATADIR%%/skycultures/inuit/constellationsart.fab
 %%DATADIR%%/skycultures/inuit/constellationship.fab
 %%DATADIR%%/skycultures/inuit/description.ar.utf8
@@ -382,6 +404,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/inuit/two-sunbeams.png
 %%DATADIR%%/skycultures/korean/constellation_names.eng.fab
 %%DATADIR%%/skycultures/korean/constellation_names.exp.fab
+%%DATADIR%%/skycultures/korean/constellations_boundaries.dat
 %%DATADIR%%/skycultures/korean/constellationsart.fab
 %%DATADIR%%/skycultures/korean/constellationship.fab
 %%DATADIR%%/skycultures/korean/description.ar.utf8
@@ -395,6 +418,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/korean/on_korea_constellations.txt
 %%DATADIR%%/skycultures/korean/star_names.fab
 %%DATADIR%%/skycultures/lakota/constellation_names.eng.fab
+%%DATADIR%%/skycultures/lakota/constellations_boundaries.dat
 %%DATADIR%%/skycultures/lakota/constellationship.fab
 %%DATADIR%%/skycultures/lakota/description.ar.utf8
 %%DATADIR%%/skycultures/lakota/description.be.utf8
@@ -406,6 +430,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/lakota/info.ini
 %%DATADIR%%/skycultures/lakota/star_names.fab
 %%DATADIR%%/skycultures/maori/constellation_names.eng.fab
+%%DATADIR%%/skycultures/maori/constellations_boundaries.dat
 %%DATADIR%%/skycultures/maori/constellationship.fab
 %%DATADIR%%/skycultures/maori/description.ar.utf8
 %%DATADIR%%/skycultures/maori/description.be.utf8
@@ -418,6 +443,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/maori/references.txt
 %%DATADIR%%/skycultures/maori/star_names.fab
 %%DATADIR%%/skycultures/navajo/constellation_names.eng.fab
+%%DATADIR%%/skycultures/navajo/constellations_boundaries.dat
 %%DATADIR%%/skycultures/navajo/constellationship.fab
 %%DATADIR%%/skycultures/navajo/description.ar.utf8
 %%DATADIR%%/skycultures/navajo/description.be.utf8
@@ -429,6 +455,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/navajo/info.ini
 %%DATADIR%%/skycultures/navajo/star_names.fab
 %%DATADIR%%/skycultures/norse/constellation_names.eng.fab
+%%DATADIR%%/skycultures/norse/constellations_boundaries.dat
 %%DATADIR%%/skycultures/norse/constellationship.fab
 %%DATADIR%%/skycultures/norse/description.ar.utf8
 %%DATADIR%%/skycultures/norse/description.be.utf8
@@ -441,6 +468,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/norse/info.ini
 %%DATADIR%%/skycultures/norse/star_names.fab
 %%DATADIR%%/skycultures/polynesian/constellation_names.eng.fab
+%%DATADIR%%/skycultures/polynesian/constellations_boundaries.dat
 %%DATADIR%%/skycultures/polynesian/constellationsart.fab
 %%DATADIR%%/skycultures/polynesian/constellationship.fab
 %%DATADIR%%/skycultures/polynesian/description.ar.utf8
@@ -453,6 +481,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/polynesian/info.ini
 %%DATADIR%%/skycultures/polynesian/star_names.fab
 %%DATADIR%%/skycultures/sami/constellation_names.eng.fab
+%%DATADIR%%/skycultures/sami/constellations_boundaries.dat
 %%DATADIR%%/skycultures/sami/constellationship.fab
 %%DATADIR%%/skycultures/sami/description.ar.utf8
 %%DATADIR%%/skycultures/sami/description.be.utf8
@@ -464,6 +493,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/sami/info.ini
 %%DATADIR%%/skycultures/sami/star_names.fab
 %%DATADIR%%/skycultures/tupi/constellation_names.eng.fab
+%%DATADIR%%/skycultures/tupi/constellations_boundaries.dat
 %%DATADIR%%/skycultures/tupi/constellationship.fab
 %%DATADIR%%/skycultures/tupi/description.ar.utf8
 %%DATADIR%%/skycultures/tupi/description.be.utf8
@@ -500,6 +530,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/western/columba.png
 %%DATADIR%%/skycultures/western/coma-berenices.png
 %%DATADIR%%/skycultures/western/constellation_names.eng.fab
+%%DATADIR%%/skycultures/western/constellations_boundaries.dat
 %%DATADIR%%/skycultures/western/constellationsart.fab
 %%DATADIR%%/skycultures/western/constellationship.fab
 %%DATADIR%%/skycultures/western/corona-australis.png
@@ -588,6 +619,8 @@ bin/stellarium
 %%DATADIR%%/textures/amalthea.png
 %%DATADIR%%/textures/ariel.png
 %%DATADIR%%/textures/callisto.png
+%%DATADIR%%/textures/charon.png
+%%DATADIR%%/textures/corona.png
 %%DATADIR%%/textures/deimos.png
 %%DATADIR%%/textures/dione.png
 %%DATADIR%%/textures/earth-clouds.png
@@ -674,6 +707,13 @@ bin/stellarium
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 share/applications/stellarium.desktop
+share/icons/hicolor/16x16/apps/stellarium.png
+share/icons/hicolor/32x32/apps/stellarium.png
+share/icons/hicolor/48x48/apps/stellarium.png
+share/icons/hicolor/64x64/apps/stellarium.png
+share/icons/hicolor/128x128/apps/stellarium.png
+share/icons/hicolor/256x256/apps/stellarium.png
+share/icons/hicolor/512x512/apps/stellarium.png
 share/locale/aa/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/aa/LC_MESSAGES/stellarium.mo
 share/locale/ab/LC_MESSAGES/stellarium-skycultures.mo
@@ -710,6 +750,7 @@ share/locale/bi/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bi/LC_MESSAGES/stellarium.mo
 share/locale/bn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bn/LC_MESSAGES/stellarium.mo
+share/locale/bo/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bo/LC_MESSAGES/stellarium.mo
 share/locale/br/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/br/LC_MESSAGES/stellarium.mo
@@ -719,6 +760,8 @@ share/locale/ca/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ca/LC_MESSAGES/stellarium.mo
 share/locale/ce/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ce/LC_MESSAGES/stellarium.mo
+share/locale/ckb/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ckb/LC_MESSAGES/stellarium.mo
 share/locale/cs/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/cs/LC_MESSAGES/stellarium.mo
 share/locale/cv/LC_MESSAGES/stellarium-skycultures.mo
@@ -845,6 +888,7 @@ share/locale/nl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nl/LC_MESSAGES/stellarium.mo
 share/locale/nn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nn/LC_MESSAGES/stellarium.mo
+share/locale/oc/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/oc/LC_MESSAGES/stellarium.mo
 share/locale/os/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/os/LC_MESSAGES/stellarium.mo
@@ -984,6 +1028,8 @@ share/pixmaps/stellarium.xpm
 @dirrmtry share/locale/dv
 @dirrmtry share/locale/cv/LC_MESSAGES
 @dirrmtry share/locale/cv
+@dirrmtry share/locale/ckb/LC_MESSAGES
+@dirrmtry share/locale/ckb
 @dirrmtry share/locale/ce/LC_MESSAGES
 @dirrmtry share/locale/ce
 @dirrmtry share/locale/bo/LC_MESSAGES
@@ -1006,4 +1052,6 @@ share/pixmaps/stellarium.xpm
 @dirrmtry share/locale/ab
 @dirrmtry share/locale/aa/LC_MESSAGES
 @dirrmtry share/locale/aa
+@dirrmtry share/icons/hicolor/512x512/apps
+@dirrmtry share/icons/hicolor/512x512
 @dirrmtry share/applications

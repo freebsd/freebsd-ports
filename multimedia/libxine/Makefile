@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -13,6 +13,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		a52:${PORTSDIR}/audio/liba52 \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		speex:${PORTSDIR}/audio/speex \
 		mng:${PORTSDIR}/graphics/libmng \
@@ -42,7 +43,7 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
-USE_XORG=	x11 xv xinerama
+USE_XORG=	sm x11 xv xinerama
 USE_GL=		gl glu
 USE_PERL5_BUILD=yes
 USE_SDL=	sdl

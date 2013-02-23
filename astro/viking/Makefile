@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	viking
-PORTVERSION=	1.3.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -28,7 +27,8 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
-USE_GNOME=	gnomedocutils gtk20
+USE_GNOME=	desktopfileutils gnomedocutils gtk20
+USE_PKGCONFIG=	build
 USE_PERL5_RUN=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
@@ -70,11 +70,15 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+# Port not install in figures jpg and png, this is cleaner as patch
+	@${RM} -f ${PREFIX}/share/gnome/help/viking/C/figures/*
+	@(cd ${WRKSRC}/help/C/figures && ${COPYTREE_SHARE} "*.jpg *.png" ${PREFIX}/share/gnome/help/viking/C/figures/)
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+	@-update-desktop-database -q
 
 .include <bsd.port.mk>

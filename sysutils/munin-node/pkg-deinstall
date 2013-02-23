@@ -37,18 +37,6 @@ stop_process() {
     fi
 }
 
-delete_crontab_entries() {
-    local prog
-    prog=$1
-
-    if grep -q "^[^#]*$prog" /etc/crontab; then
-	TMPFILE=`mktemp -t munin` || exit 1
-	grep -v $prog /etc/crontab > $TMPFILE
-	cat $TMPFILE > /etc/crontab
-	rm $/etc/crontab
-    fi
-}
-
 delnewsyslog() {
     tmp="/etc/#munin-node$$"
     sed -e '/^\/var\/log\/munin\/munin-node.log[ 	]/d' /etc/newsyslog.conf >${tmp}
@@ -74,7 +62,6 @@ Do you want me to delete it?" y; then
 case $2 in
     DEINSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]; then
-		delete_crontab_entries ${PKG_PREFIX}/bin/munin-node-revive
 		stop_process
 		newsyslog
 	fi

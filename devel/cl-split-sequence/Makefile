@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	cl-split-sequence
-# Date created:				10 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	split-sequence

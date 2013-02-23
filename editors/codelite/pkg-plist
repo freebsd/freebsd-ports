@@ -7,10 +7,99 @@ bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
 bin/codelite_xterm
+lib/codelite/CallGraph.so
+lib/codelite/CodeFormatter.so
+lib/codelite/ContinuousBuild.so
+lib/codelite/Copyright.so
+lib/codelite/CppCheck.so
+lib/codelite/DatabaseExplorer.so
+lib/codelite/ExternalTools.so
+lib/codelite/Gizmos.so
+lib/codelite/Outline.so
+lib/codelite/QmakePlugin.so
+lib/codelite/SnipWiz.so
+lib/codelite/Subversion2.so
+lib/codelite/UnitTestCPP.so
+lib/codelite/ZoomNavigator.so
+lib/codelite/abbreviation.so
+lib/codelite/cscope.so
+lib/codelite/debuggers/Debugger.so
+lib/codelite/git.so
+lib/codelite/libcodeliteud.so
+lib/codelite/libdblayersqliteud.so
+lib/codelite/libpluginud.so
+lib/codelite/libwx_baseu-2.9.so
+lib/codelite/libwx_baseu-2.9.so.4
+lib/codelite/libwx_baseu-2.9.so.4.0.0
+lib/codelite/libwx_baseu_net-2.9.so
+lib/codelite/libwx_baseu_net-2.9.so.4
+lib/codelite/libwx_baseu_net-2.9.so.4.0.0
+lib/codelite/libwx_baseu_xml-2.9.so
+lib/codelite/libwx_baseu_xml-2.9.so.4
+lib/codelite/libwx_baseu_xml-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_adv-2.9.so
+lib/codelite/libwx_gtk2u_adv-2.9.so.4
+lib/codelite/libwx_gtk2u_adv-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_aui-2.9.so
+lib/codelite/libwx_gtk2u_aui-2.9.so.4
+lib/codelite/libwx_gtk2u_aui-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_core-2.9.so
+lib/codelite/libwx_gtk2u_core-2.9.so.4
+lib/codelite/libwx_gtk2u_core-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_gl-2.9.so
+lib/codelite/libwx_gtk2u_gl-2.9.so.4
+lib/codelite/libwx_gtk2u_gl-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_html-2.9.so
+lib/codelite/libwx_gtk2u_html-2.9.so.4
+lib/codelite/libwx_gtk2u_html-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_media-2.9.so
+lib/codelite/libwx_gtk2u_media-2.9.so.4
+lib/codelite/libwx_gtk2u_media-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_propgrid-2.9.so
+lib/codelite/libwx_gtk2u_propgrid-2.9.so.4
+lib/codelite/libwx_gtk2u_propgrid-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_qa-2.9.so
+lib/codelite/libwx_gtk2u_qa-2.9.so.4
+lib/codelite/libwx_gtk2u_qa-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_ribbon-2.9.so
+lib/codelite/libwx_gtk2u_ribbon-2.9.so.4
+lib/codelite/libwx_gtk2u_ribbon-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_richtext-2.9.so
+lib/codelite/libwx_gtk2u_richtext-2.9.so.4
+lib/codelite/libwx_gtk2u_richtext-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_stc-2.9.so
+lib/codelite/libwx_gtk2u_stc-2.9.so.4
+lib/codelite/libwx_gtk2u_stc-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_webview-2.9.so
+lib/codelite/libwx_gtk2u_webview-2.9.so.4
+lib/codelite/libwx_gtk2u_webview-2.9.so.4.0.0
+lib/codelite/libwx_gtk2u_xrc-2.9.so
+lib/codelite/libwx_gtk2u_xrc-2.9.so.4
+lib/codelite/libwx_gtk2u_xrc-2.9.so.4.0.0
+lib/codelite/libwxshapeframeworkud.so
+lib/codelite/libwxsqlite3ud.so
+lib/codelite/resources/abbrev.png
+lib/codelite/resources/abbreviation.accelerators
+lib/codelite/resources/compfile.png
+lib/codelite/resources/connect_no.png
+lib/codelite/resources/cppcheck.png
+lib/codelite/resources/cscope.accelerators
+lib/codelite/resources/external_tools.accelerators
+lib/codelite/resources/qt16_new.png
+lib/codelite/resources/qt16_preferences.png
+lib/codelite/resources/qt24_new.png
+lib/codelite/resources/qt24_preferences.png
+lib/codelite/resources/svn_diff.png
+lib/codelite/resources/svn_settings.png
+lib/codelite/resources/svn_ssh.png
+lib/codelite/resources/wxfb_conflict.png
+lib/codelite/resources/wxfb_modified.png
+lib/codelite/resources/wxfb_ok.png
+lib/codelite/wxformbuilder.so
 %%DATADIR%%/LICENSE
 %%DATADIR%%/astyle.sample
-%%DATADIR%%/codelite-icons.zip
 %%DATADIR%%/codelite-icons-fresh-farm.zip
+%%DATADIR%%/codelite-icons.zip
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
 %%DATADIR%%/config/codelite.xml.default
@@ -27,47 +116,6 @@ bin/codelite_xterm
 %%DATADIR%%/index.html
 %%DATADIR%%/lexers/lexers_black.xml
 %%DATADIR%%/lexers/lexers_default.xml
-%%DATADIR%%/plugins/CallGraph.so
-%%DATADIR%%/plugins/CodeFormatter.so
-%%DATADIR%%/plugins/ContinuousBuild.so
-%%DATADIR%%/plugins/Copyright.so
-%%DATADIR%%/plugins/CppCheck.so
-%%DATADIR%%/plugins/DatabaseExplorer.so
-%%DATADIR%%/plugins/ExternalTools.so
-%%DATADIR%%/plugins/Gizmos.so
-%%DATADIR%%/plugins/Outline.so
-%%DATADIR%%/plugins/QmakePlugin.so
-%%DATADIR%%/plugins/SnipWiz.so
-%%DATADIR%%/plugins/Subversion2.so
-%%DATADIR%%/plugins/UnitTestCPP.so
-%%DATADIR%%/plugins/abbreviation.so
-%%DATADIR%%/plugins/cscope.so
-%%DATADIR%%/plugins/debuggers/Debugger.so
-%%DATADIR%%/plugins/git.so
-%%DATADIR%%/plugins/libcodeliteud.so
-%%DATADIR%%/plugins/libdblayersqliteud.so
-%%DATADIR%%/plugins/libpluginud.so
-%%DATADIR%%/plugins/libwxscintillaud.so
-%%DATADIR%%/plugins/libwxshapeframeworkud.so
-%%DATADIR%%/plugins/libwxsqlite3ud.so
-%%DATADIR%%/plugins/resources/abbrev.png
-%%DATADIR%%/plugins/resources/abbreviation.accelerators
-%%DATADIR%%/plugins/resources/compfile.png
-%%DATADIR%%/plugins/resources/connect_no.png
-%%DATADIR%%/plugins/resources/cppcheck.png
-%%DATADIR%%/plugins/resources/cscope.accelerators
-%%DATADIR%%/plugins/resources/external_tools.accelerators
-%%DATADIR%%/plugins/resources/qt16_new.png
-%%DATADIR%%/plugins/resources/qt16_preferences.png
-%%DATADIR%%/plugins/resources/qt24_new.png
-%%DATADIR%%/plugins/resources/qt24_preferences.png
-%%DATADIR%%/plugins/resources/svn_diff.png
-%%DATADIR%%/plugins/resources/svn_settings.png
-%%DATADIR%%/plugins/resources/svn_ssh.png
-%%DATADIR%%/plugins/resources/wxfb_conflict.png
-%%DATADIR%%/plugins/resources/wxfb_modified.png
-%%DATADIR%%/plugins/resources/wxfb_ok.png
-%%DATADIR%%/plugins/wxformbuilder.so
 %%DATADIR%%/rc/menu.xrc
 %%DATADIR%%/src/unittest++1.3.tar.gz
 %%DATADIR%%/svnreport.html
@@ -78,8 +126,20 @@ bin/codelite_xterm
 %%DATADIR%%/templates/codedesigner/SCHTemplateWithMain.cdp
 %%DATADIR%%/templates/databaselayer/dataClass.ctmp
 %%DATADIR%%/templates/databaselayer/dataClass.htmp
+%%DATADIR%%/templates/databaselayer/dataClass_dba.ctmp
+%%DATADIR%%/templates/databaselayer/dataClass_dba.htmp
+%%DATADIR%%/templates/databaselayer/dataClass_dbl.ctmp
+%%DATADIR%%/templates/databaselayer/dataClass_dbl.htmp
+%%DATADIR%%/templates/databaselayer/dataClass_wxdba.ctmp
+%%DATADIR%%/templates/databaselayer/dataClass_wxdba.htmp
 %%DATADIR%%/templates/databaselayer/viewClass.ctmp
 %%DATADIR%%/templates/databaselayer/viewClass.htmp
+%%DATADIR%%/templates/databaselayer/viewClass_dba.ctmp
+%%DATADIR%%/templates/databaselayer/viewClass_dba.htmp
+%%DATADIR%%/templates/databaselayer/viewClass_dbl.ctmp
+%%DATADIR%%/templates/databaselayer/viewClass_dbl.htmp
+%%DATADIR%%/templates/databaselayer/viewClass_wxdba.ctmp
+%%DATADIR%%/templates/databaselayer/viewClass_wxdba.htmp
 %%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
 %%DATADIR%%/templates/formbuilder/DialogTemplateWithButtons.fbp
 %%DATADIR%%/templates/formbuilder/FrameTemplate.fbp
@@ -110,12 +170,28 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
 %%DATADIR%%/templates/projects/UnitTest++/icon.png
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
+%%DATADIR%%/templates/projects/c_gtk24_template/c_gtk24_template.project
+%%DATADIR%%/templates/projects/c_gtk24_template/icon.png
+%%DATADIR%%/templates/projects/c_gtk24_template/main.c
+%%DATADIR%%/templates/projects/c_gtk3_template/c_gtk3_template.project
+%%DATADIR%%/templates/projects/c_gtk3_template/icon.png
+%%DATADIR%%/templates/projects/c_gtk3_template/main.c
 %%DATADIR%%/templates/projects/cobra-executableU/build-file
 %%DATADIR%%/templates/projects/cobra-executableU/cobra-executableU.project
 %%DATADIR%%/templates/projects/cobra-libraryU/cobra-library.project
 %%DATADIR%%/templates/projects/cobra-libraryU/lib-build-files
 %%DATADIR%%/templates/projects/cobra-staticU/build-file
 %%DATADIR%%/templates/projects/cobra-staticU/cobra-staticU.project
+%%DATADIR%%/templates/projects/cpp_gtkmm24_template/cpp_gtkmm24_template.project
+%%DATADIR%%/templates/projects/cpp_gtkmm24_template/icon.png
+%%DATADIR%%/templates/projects/cpp_gtkmm24_template/main.cpp
+%%DATADIR%%/templates/projects/cpp_gtkmm24_template/mainwindow.cpp
+%%DATADIR%%/templates/projects/cpp_gtkmm24_template/mainwindow.h
+%%DATADIR%%/templates/projects/cpp_gtkmm3_template/cpp_gtkmm3_template.project
+%%DATADIR%%/templates/projects/cpp_gtkmm3_template/icon.png
+%%DATADIR%%/templates/projects/cpp_gtkmm3_template/main.cpp
+%%DATADIR%%/templates/projects/cpp_gtkmm3_template/mainwindow.cpp
+%%DATADIR%%/templates/projects/cpp_gtkmm3_template/mainwindow.h
 %%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
 %%DATADIR%%/templates/projects/custom-makefile/icon.png
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
@@ -190,12 +266,16 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/vc-static-lib/icon.png
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
 %%DATADIR%%/templates/qmake/qmake.project
-%%CLANG%%%%DATADIR%%/plugins/libclang.so
-%%MYSQL%%%%DATADIR%%/plugins/libdblayermysqlud.so
-%%POSTGRES%%%%DATADIR%%/plugins/libdblayerpostgresud.so
+%%CLANG%%lib/codelite/libclang.so
+%%MYSQL%%lib/codelite/libdblayermysqlud.so
+%%POSTGRES%%lib/codelite/libdblayerpostgresud.so
 share/applications/codelite.desktop
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/templates/qmake
+@dirrm %%DATADIR%%/templates/projects/cpp_gtkmm3_template
+@dirrm %%DATADIR%%/templates/projects/cpp_gtkmm24_template
+@dirrm %%DATADIR%%/templates/projects/c_gtk3_template
+@dirrm %%DATADIR%%/templates/projects/c_gtk24_template
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
 @dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
@@ -233,9 +313,9 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/rc
-@dirrm %%DATADIR%%/plugins/resources
-@dirrm %%DATADIR%%/plugins/debuggers
-@dirrm %%DATADIR%%/plugins
+@dirrm lib/codelite/resources
+@dirrm lib/codelite/debuggers
+@dirrm lib/codelite
 @dirrm %%DATADIR%%/lexers
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/config

@@ -1,5 +1,5 @@
---- Makefile.orig	2012-06-04 02:56:55.000000000 -0500
-+++ Makefile	2012-12-01 00:19:22.000000000 -0600
+--- Makefile.orig	2012-12-02 15:04:17.000000000 -0600
++++ Makefile	2013-02-03 09:45:27.000000000 -0600
 @@ -1,6 +1,5 @@
  # $Id: Makefile,v 5.7 2009-03-11 10:53:30 ddr Exp $
  
@@ -7,3 +7,80 @@
  LANGDIR=$(PREFIX)/share/geneweb
  MANDIR=$(PREFIX)/man/man1
  DESTDIR=distribution
+@@ -18,7 +17,9 @@
+ 	cd gwb2ged; $(MAKE) all
+ 	cd setup; $(MAKE) all
+ 	cd gwtp; $(MAKE) all
++.if defined(ENABLE_GUI)
+ 	cd gui; $(MAKE) all
++.endif
+ 
+ opt::
+ 	cd wserver; $(MAKE) opt
+@@ -28,7 +29,9 @@
+ 	cd gwb2ged; $(MAKE) opt
+ 	cd setup; $(MAKE) opt
+ 	cd gwtp; $(MAKE) opt
++.if defined(ENABLE_GUI)
+ 	cd gui; $(MAKE) opt
++.endif
+ 
+ install:
+ 	mkdir -p $(PREFIX)/bin
+@@ -65,7 +68,12 @@
+ 	rm -rf $(PREFIX)/share/geneweb
+ 	cd $(MANDIR); rm -f $(MANPAGES)
+ 
++
++.if defined(ENABLE_GUI)
++distrib: new_distrib wrappers wrappers_gui
++.else
+ distrib: new_distrib wrappers
++.endif
+ 
+ wrappers:
+ 	if test "$(CAMLP5F)" = "-DWIN95"; then \
+@@ -79,7 +87,6 @@
+ 	  echo -ne 'endlocal\r\n' >> $(DESTDIR)/gwsetup.bat; \
+ 	  echo -ne 'cd bases\r\n' >> $(DESTDIR)/gwsetup.bat; \
+ 	  echo -ne 'start /MIN ..\\gw\\gwsetup -lang fr -gd ..\\gw\r\n' >> $(DESTDIR)/gwsetup.bat; \
+-	  echo -ne 'start ..\\gw\\gui' > $(DESTDIR)/geneweb_gui.bat; \
+ 	else \
+ 	  (echo '#!/bin/sh'; \
+ 	   echo 'mkdir -p bases'; \
+@@ -89,9 +96,16 @@
+ 	   echo 'mkdir -p bases'; \
+ 	   echo 'cd bases'; \
+ 	   echo 'exec ../gw/gwsetup -gd ../gw "$$@"') > $(DESTDIR)/gwsetup; \
++	  chmod +x $(DESTDIR)/gwd $(DESTDIR)/gwsetup; \
++	fi
++
++wrappers_gui:
++	if test "$(CAMLP5F)" = "-DWIN95"; then \
++	  echo -ne 'start ..\\gw\\gui' > $(DESTDIR)/geneweb_gui.bat; \
++	else \
+ 	  (echo '#!/bin/sh'; \
+ 	   echo 'exec ../gw/gui') > $(DESTDIR)/geneweb_gui; \
+-	  chmod +x $(DESTDIR)/gwd $(DESTDIR)/gwsetup $(DESTDIR)/geneweb_gui; \
++	  chmod +x $(DESTDIR)/geneweb_gui; \
+ 	fi
+ 
+ new_distrib: classical_distrib
+@@ -110,8 +124,10 @@
+ 	cp setup/lang/*.htm $(DESTDIR)/gw/setup/lang/.
+ 	cp setup/lang/lexicon.txt $(DESTDIR)/gw/setup/lang/.
+ 	cp setup/gwsetup $(DESTDIR)/gw/gwsetup$(EXE)
++.if defined(ENABLE_GUI)
+ 	cp gui/gw/gui_lex.txt $(DESTDIR)/gw/.
+ 	cp gui/gui $(DESTDIR)/gw/gui$(EXE)
++.endif
+ 	cp LICENSE $(DESTDIR)/LICENSE.txt
+ 	cp etc/START.htm $(DESTDIR)/.
+ 	cp CHANGES $(DESTDIR)/CHANGES.txt
+@@ -180,4 +196,6 @@
+ 	cd gwb2ged; $(MAKE) depend
+ 	cd setup; $(MAKE) depend
+ 	cd gwtp; $(MAKE) depend
++.if defined(ENABLE_GUI)
+ 	cd gui; $(MAKE) depend
++.endif

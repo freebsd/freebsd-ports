@@ -12,6 +12,8 @@ DISTNAME=	Exquisite
 
 COMMENT=	KDE Exquisite iconset
 
+BROKEN=	checksum mismatch
+
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|[a-z]+.list)"

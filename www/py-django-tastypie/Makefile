@@ -1,13 +1,8 @@
-# New ports collection makefile for:	django-tastypie
-# Date created:			May 8, 2012
-# Whom:				William Grzybowski
-#
+# Created by: William Grzybowski <william88@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	django-tastypie
-PORTVERSION=	0.9.11
-PORTREVISION=	1
+PORTVERSION=	0.9.12
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,10 +13,7 @@ COMMENT=	Create REST API for Django apps
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0:${PORTSDIR}/devel/py-mimeparse \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_NOEGGINFO=	yes
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>

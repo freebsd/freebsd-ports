@@ -3,6 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -12,7 +13,7 @@ COMMENT=	High performance key/value storage server
 
 LICENSE=	BSD
 
-TR_REV=		20-gdfe40fc
+TR_REV=		31-g9ca7fda
 USE_CMAKE=	yes
 USE_GCC=	4.6+
 USE_GETTEXT=	build

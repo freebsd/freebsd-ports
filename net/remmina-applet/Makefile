@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/0.8
 PKGNAMESUFFIX=	-applet
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A GNOME Desktop applet for Remmina
 
 RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina

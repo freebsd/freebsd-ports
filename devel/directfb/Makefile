@@ -27,8 +27,7 @@ OPTIONS=	FREETYPE2	"Enable Freetype support" on \
 		UNIQUE		"Enable Unique (WM Module)" off \
 		TESTS		"Install test apps" off
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -128,7 +127,7 @@ PLIST_SUB+=	ARCH_POWERPC="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lc_r|${PTHREAD_LIBS}|g ; s|%%LTMAIN%%|${LTMAIN}|g ; \
+		's|-lc_r|-pthread|g ; s|%%LTMAIN%%|${LTMAIN}|g ; \
 		s|/usr/local|${LOCALBASE}|g ; s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${GREP} -lr alloca\.h ${WRKSRC} | ${XARGS} \

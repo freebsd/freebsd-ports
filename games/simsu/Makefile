@@ -1,8 +1,8 @@
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	simsu
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -14,10 +14,10 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
+USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	*
 PORTDOCS=	CREDITS ChangeLog
 
 .include <bsd.port.options.mk>
@@ -27,15 +27,13 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/hicolor/48x48/apps/simsu.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+
+	@-update-desktop-database
 
 .include <bsd.port.mk>

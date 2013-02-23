@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	opencolorio
-PORTVERSION=	1.0.7
-PORTREVISION?=	1
+PORTVERSION=	1.0.8
+PORTREVISION?=	0
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenColorIO
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	b3cb224
+GH_COMMIT=	8883824
 
 .if !defined(OCIO_TOOLS)
 USE_PYTHON=	2.6+
@@ -56,9 +56,9 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${CC:T} == "clang" && ${ARCH} == "i386"
+.if ${CC:T} == "clang" && ${ARCH} == "i386" && ${OSVERSION} < 901000
 # workaround for pr/165968
-# may need to test osversion after fix is applied
+# was fixed in 9-STABLE before 9.1-RELEASE but not passed into 9-RELEASE
 CFLAGS+=	-march=pentium2
 .endif
 

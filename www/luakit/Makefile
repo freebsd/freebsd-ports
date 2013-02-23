@@ -1,38 +1,38 @@
-# New ports collection makefile for:	luakit
-# Date created:		2012-03-23
-# Whom:			gugabsd <gugabsd@mundounix.com.br>
-#
+# Created by: gugabsd <gugabsd@mundounix.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	luakit
-PORTVERSION=	2011.07.22
-PORTREVISION=	1
+PORTVERSION=	2012.09.13r1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/mason-larobina/${PORTNAME}/tarball/${PORTVERSION}-r1/
 
 MAINTAINER=	gugabsd@mundounix.com.br
 COMMENT=	Fast, small, webkit based browser framework extensible by Lua
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man
-LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
-RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		webkitgtk-1:${PORTSDIR}/www/webkit-gtk2 \
+		unique-1:${PORTSDIR}/x11-toolkits/unique
+RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:${PORTSDIR}/devel/luafilesystem
 
-GITVERSION=	b1fb7fa
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/mason-larobina-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	mason-larobina
+GH_PROGECT=	${PORTNAME}
+GH_TAGNAME=	${PORTVERSION:C/r/-r/}
+GH_COMMIT=	0d5f4ab
 
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 pkgconfig
-USE_LUA=	5.1+
+USE_PKGCONFIG=	build
+USE_GNOME=	glib20 gtk20
+USE_LUA=	5.1
+MAKE_ARGS+=	USE_UNIQUE=1 NO_JAVASCRIPTCORE=1
 
 MAN1=		luakit.1
 
-OPTIONS=	LUAJIT "Use the Just-In-Time compiler for lua" off
+OPTIONS_DEFINE=	LUAJIT
+LUAJIT_DESC=	Use the Just-In-Time compiler for lua
 
 .include <bsd.port.options.mk>
 
@@ -40,11 +40,11 @@ OPTIONS=	LUAJIT "Use the Just-In-Time compiler for lua" off
 BROKEN=		Does not install on sparc64
 .endif
 
-.if defined(WITH_LUAJIT)
+.if ${PORT_OPTIONS:MLUAJIT}
 LIB_DEPENDS+=	luajit:${PORTSDIR}/lang/luajit
-CONFIGURE_ARGS+=USE_LUAJIT=1
+MAKE_ARGS+=	USE_LUAJIT=1
 .else
-CONFIGURE_ARGS+=USE_LUAJIT=0
+MAKE_ARGS+=	USE_LUAJIT=0
 .endif
 
 post-patch:
@@ -52,5 +52,11 @@ post-patch:
 		-e 's|(DESTDIR)|(INSTALLDIR)|' ${WRKSRC}/Makefile
 	@${SED} -I "" 's|/etc/xdg/luakit|${LOCALBASE}&|' \
 		${WRKSRC}/lib/lousy/util.lua
+	@${REINPLACE_CMD} -e \
+		's|share/man|man| ; s|luakit/docs|doc/luakit| ; \
+		/MANPREFIX */s|?=|=|' \
+		${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e 's|bin/env lua|&-${LUA_VER}|' \
+		${WRKSRC}/build-utils/gentokens.lua
 
 .include <bsd.port.mk>

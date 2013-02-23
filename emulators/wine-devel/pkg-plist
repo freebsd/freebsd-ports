@@ -1343,6 +1343,7 @@ lib/wine/fakedlls/win87em.dll16
 lib/wine/fakedlls/winaspi.dll16
 lib/wine/fakedlls/windebug.dll16
 lib/wine/fakedlls/windowscodecs.dll
+lib/wine/fakedlls/windowscodecsext.dll
 lib/wine/fakedlls/wineboot.exe
 lib/wine/fakedlls/winebrowser.exe
 lib/wine/fakedlls/winecfg.exe
@@ -1603,6 +1604,7 @@ lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libwer.def
 lib/wine/libwindowscodecs.def
+lib/wine/libwindowscodecsext.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
 lib/wine/libwinhttp.def
@@ -1870,6 +1872,7 @@ lib/wine/win87em.dll16.so
 lib/wine/winaspi.dll16.so
 lib/wine/windebug.dll16.so
 lib/wine/windowscodecs.dll.so
+lib/wine/windowscodecsext.dll.so
 lib/wine/wineboot.exe.so
 lib/wine/winebrowser.exe.so
 lib/wine/winecfg.exe.so

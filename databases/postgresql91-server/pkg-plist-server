@@ -79,9 +79,12 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/postgres-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/initdb-9.1.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_basebackup-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata-9.1.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/plpgsql-9.1.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/postgres-9.1.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_basebackup-9.1.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_controldata-9.1.mo
@@ -129,6 +132,7 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-9.1.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres-9.1.mo

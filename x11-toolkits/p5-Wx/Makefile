@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Perl5 interface to the wxWidgets cross-platform GUI toolkit
 
 LICENSE=	ART10 GPLv1

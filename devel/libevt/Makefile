@@ -1,8 +1,8 @@
-# Created by: antoine@FreeBSD.org
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20130111
+DISTVERSION=	alpha-20130209
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -39,7 +39,8 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}/* \
+		${WRKSRC}/examples/${PORTNAME:S,lib,py,}/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

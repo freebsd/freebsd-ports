@@ -1,0 +1,10 @@
+--- lib/freebl/Makefile~
++++ lib/freebl/Makefile
+@@ -659,7 +659,5 @@ $(OBJDIR)/$(PROG_PREFIX)intel-gcm-wrap$(
+ # symbolic names to registers, for example,
+ #     .set  Htbl, %rdi
+ # So we can't use Clang's integrated assembler with intel-gcm.s.
+-ifneq (,$(findstring clang,$(AS)))
+ $(OBJDIR)/$(PROG_PREFIX)intel-gcm$(OBJ_SUFFIX): ASFLAGS += -no-integrated-as
+ endif
+-endif

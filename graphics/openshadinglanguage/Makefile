@@ -3,7 +3,7 @@
 
 PORTNAME=	openshadinglanguage
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -19,12 +19,12 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 RUN_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	sambler
+GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
-GH_TAGNAME=	osl-20130106
-GH_COMMIT=	3c69652
+GH_TAGNAME=	Release-${PORTVERSION}
+GH_COMMIT=	d722707
 
-WRKSRC+=	${WRKDIR}/sambler-OpenShadingLanguage-${GH_COMMIT}/src
+WRKSRC=		${WRKDIR}/imageworks-OpenShadingLanguage-${GH_COMMIT}/src
 
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes

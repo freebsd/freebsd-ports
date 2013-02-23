@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://arthurdejong.org/svn2cl/ \
 		LOCAL/avl
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion ChangeLog generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \

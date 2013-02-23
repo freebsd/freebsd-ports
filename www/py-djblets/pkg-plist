@@ -265,7 +265,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-1.8.2.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-ui-1.8.24.custom.min.f6148fb67d77.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-ui-1.8.24.custom.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery.gravy.4fdf67ffee95.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery.gravy.01d571f1f7f8.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery.gravy.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.pyc

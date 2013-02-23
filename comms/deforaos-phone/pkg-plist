@@ -16,6 +16,7 @@ lib/Phone/plugins/gprs.so
 lib/Phone/plugins/gps.so
 lib/Phone/plugins/locker.so
 lib/Phone/plugins/n900.so
+lib/Phone/plugins/notify.so
 lib/Phone/plugins/openmoko.so
 lib/Phone/plugins/oss.so
 lib/Phone/plugins/panel.so

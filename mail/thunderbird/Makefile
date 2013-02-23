@@ -2,29 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	17.0.2
+DISTVERSION=	17.0.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
+DISTFILES=	${PORTNAME}-${DISTVERSION}esr.source${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}esr.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9.2:${PORTSDIR}/devel/nspr \
 		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.13:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-EM_VERSION=	1.4.6
+EM_VERSION=	1.5.1
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
 USE_GECKO=	gecko
-CONFLICTS=	thunderbird-10.*
+CONFLICTS=	thunderbird-2[0-9].* thunderbird-1[1-689].* thunderbird-10.*
 USE_MOZILLA=	# empty
 
 MAKE_JOBS_SAFE=	yes
@@ -57,7 +57,7 @@ OPTIONS_DEFAULT=ENIGMAIL LIGHTNING
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-release
+WRKSRC=		${WRKDIR}/comm-esr17
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
@@ -85,6 +85,7 @@ EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTNING}

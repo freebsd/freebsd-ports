@@ -22,6 +22,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

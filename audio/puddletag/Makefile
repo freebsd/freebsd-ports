@@ -12,13 +12,13 @@ COMMENT=	Audio tag editor
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/fpcalc:${PORTSDIR}/audio/chromaprint \
-		${LOCALBASE}/bin/mb-submit-disc:${PORTSDIR}/audio/py-musicbrainz2 \
-		${LOCALBASE}/bin/moggsplit:${PORTSDIR}/audio/py-mutagen \
-		${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
-		${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS=	chromaprint>=0.4:${PORTSDIR}/audio/chromaprint \
+		${PYTHON_PKGNAMEPREFIX}musicbrainz2>=0:${PORTSDIR}/audio/py-musicbrainz2 \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=1.14:${PORTSDIR}/audio/py-mutagen \
+		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.0:${PORTSDIR}/devel/py-configobj \
+		${PYTHON_PKGNAMEPREFIX}parsing>=1.5.1:${PORTSDIR}/devel/py-parsing \
+		${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.5.0:${PORTSDIR}/graphics/py-qt4-svg \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=yes

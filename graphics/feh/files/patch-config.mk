@@ -1,5 +1,5 @@
---- config.mk.orig	2012-04-19 19:06:22.083888852 +0600
-+++ config.mk	2012-04-19 19:06:44.350893457 +0600
+--- config.mk.orig	2013-02-14 00:04:00.993386340 +0100
++++ config.mk	2013-02-14 00:04:51.942387392 +0100
 @@ -6,12 +6,12 @@
  
  # Directories for manuals, executables, docs, data, etc.
@@ -12,6 +12,6 @@
  font_dir = ${main_dir}/share/feh/fonts
 -example_dir = ${main_dir}/share/doc/feh/examples
 +example_dir = ${main_dir}/share/examples/feh
+ desktop_dir = ${main_dir}/share/applications
  
  # default CFLAGS
- CFLAGS ?= -g -O2

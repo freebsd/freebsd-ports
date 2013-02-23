@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-manuel
-# Date created:				Nov 10, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	manuel
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

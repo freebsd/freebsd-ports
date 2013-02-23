@@ -95,7 +95,7 @@ MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#" ${WRKSRC}/configure.in
 
 post-configure:
 	@${FIND} ${WRKSRC}/demo -name Makefile | ${XARGS} \

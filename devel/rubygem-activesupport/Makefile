@@ -1,11 +1,8 @@
-# Ports collection makefile for:	gem-activesupport
-# Date created:				27 May 2005
-# Whom:					Jonathan Weiss (<jw@innerewut.de>)
-#
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	3.2.11
+PORTVERSION=	3.2.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

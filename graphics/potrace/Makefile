@@ -1,12 +1,8 @@
-# Ports collection makefile for:	potrace
-# Date created:				24 September 2003
-# Whom:					Piotr Smyrak <smyru@heron.pl>
-#
+# Created by: Piotr Smyrak <smyru@heron.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	potrace
-PORTVERSION=	1.9
+PORTVERSION=	1.11
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -20,16 +16,19 @@ MAN1=		potrace.1 mkbitmap.1
 .endif
 PLIST_FILES=	bin/potrace bin/mkbitmap
 
-OPTIONS=	METRIC	"Enable use of metric units (centimeters) as default" on \
-		A4	"Enable use of A4 as the default papersize"           on
+OPTIONS_DEFINE=	METRIC A4
+OPTIONS_DEFAULT=METRIC A4
 
-.include <bsd.port.pre.mk>
+METRIC_DESC=	Use metric units (cm) as default
+A4_DESC=	Use A4 as the default papersize
 
-.if defined(WITH_A4)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MA4}
 CONFIGURE_ARGS+=	--enable-a4
 .endif
 
-.if defined(WITH_METRIC)
+.if ${PORT_OPTIONS:MMETRIC}
 CONFIGURE_ARGS+=	--enable-metric
 .endif
 
@@ -41,4 +40,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/mkbitmap.1 ${MAN1PREFIX}/man/man1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

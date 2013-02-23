@@ -1,0 +1,11 @@
+bin/gtmixer
+%%DATADIR%%/icons/tray/1.png
+%%DATADIR%%/icons/tray/2.png
+%%DATADIR%%/icons/tray/273.png
+%%DATADIR%%/icons/tray/275.png
+%%DATADIR%%/icons/tray/3.png
+%%DATADIR%%/icons/tray/430.png
+%%DATADIR%%/icons/tray/431.png
+@dirrmtry %%DATADIR%%/icons/tray
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%

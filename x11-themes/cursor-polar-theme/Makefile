@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cursor-polar-theme
-# Date created:				1st September, 2005
-# Whom:					decept
-#
+# Created by: Shawn Bell <decept@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	polar-theme
 PORTVERSION=	1.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	cursor-
 DISTNAME=	27913-PolarCursorThemes
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polar is a smooth and simple cursor set
 
 NO_BUILD=	yes

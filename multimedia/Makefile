@@ -80,6 +80,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
     SUBDIR += gopchop
@@ -307,6 +308,7 @@
     SUBDIR += smile
     SUBDIR += smpeg
     SUBDIR += smplayer
+    SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube

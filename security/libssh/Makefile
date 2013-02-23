@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/0.5/ \
 		LOCAL/avl
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library implementing the SSH1 and SSH2 protocol
 
 OPTIONS=	GCRYPT	"Build with libgcrypt"		off \

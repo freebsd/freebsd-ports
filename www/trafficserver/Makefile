@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trafficserver
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.2.4
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -16,9 +15,11 @@ COMMENT=	A fast, scalable and extensible HTTP proxy server
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		expat:${PORTSDIR}/textproc/expat2 \
+		pcre:${PORTSDIR}/devel/pcre
+
+MAN1=		traffic_shell.1
 
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_BZIP2=	yes

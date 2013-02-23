@@ -3,6 +3,7 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt4-
 
@@ -45,14 +46,12 @@ EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 OPTIONS_DEFINE=	GSTREAMER
 OPTIONS_DEFAULT=	GSTREAMER
 
-GSTREAMER_DESC=	HTML5 audio and video support
+GSTREAMER_DESC=	HTML5 audio and video via GStreamer
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
-.else
-CONFIGURE_ARGS+=	-no-gstreamer
 .endif
 
 .include <bsd.port.pre.mk>
@@ -68,6 +67,13 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${REINPLACE_CMD} -e 's|linux-\*|unix|g' \
+		${BUILD_WRKSRC}/WebCore/features.pri \
+		${BUILD_WRKSRC}/JavaScriptCore/wtf/wtf.pri
+.if ! ${PORT_OPTIONS:MGSTREAMER}
+	${REINPLACE_CMD} -e 's|.*exists.*gstreamer.*|false {|' \
+		${BUILD_WRKSRC}/WebCore/features.pri
+.endif
 # Avoid building and installing several tests. Should this be made an option?
 	${REINPLACE_CMD} -e '/WebKit\/qt\/tests/ d' \
 		${BUILD_WRKSRC}/WebKit.pro

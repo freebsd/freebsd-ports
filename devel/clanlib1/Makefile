@@ -31,8 +31,8 @@ USE_GL=		yes
 USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanDisplay \

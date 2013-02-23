@@ -7,7 +7,7 @@
 
 PORTNAME=	packit
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network auditing tool
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`

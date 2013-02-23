@@ -65,6 +65,7 @@
     SUBDIR += beast
     SUBDIR += bebocd
     SUBDIR += beep
+    SUBDIR += beets
     SUBDIR += blop
     SUBDIR += bmp-crossfade
     SUBDIR += bmp-faad
@@ -289,7 +290,9 @@
     SUBDIR += gtick
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
+    SUBDIR += gtmixer
     SUBDIR += guspat
+    SUBDIR += gvolwheel
     SUBDIR += gxmms2
     SUBDIR += harp
     SUBDIR += hawkvoice
@@ -393,6 +396,7 @@
     SUBDIR += liboggz
     SUBDIR += libopenspc
     SUBDIR += libsamplerate
+    SUBDIR += libshairport
     SUBDIR += libshout
     SUBDIR += libshout2
     SUBDIR += libsidplay
@@ -403,6 +407,7 @@
     SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
+    SUBDIR += libxmp
     SUBDIR += lingot
     SUBDIR += linnya
     SUBDIR += linux-alsa-lib
@@ -608,6 +613,7 @@
     SUBDIR += pure-audio
     SUBDIR += py-ao
     SUBDIR += py-apetag
+    SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
@@ -618,6 +624,7 @@
     SUBDIR += py-mpd
     SUBDIR += py-mpd2
     SUBDIR += py-musicbrainz2
+    SUBDIR += py-musicbrainzngs
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal

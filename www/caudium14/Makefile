@@ -1,23 +1,17 @@
-# New ports collection makefile for:	pike
-# Date created:		15 May 2004
-# Whom:			kiwi@oav.net
-#
+# Created by: kiwi@oav.net
 # $FreeBSD$
-#
 
 PORTNAME=	caudium14
-PORTVERSION=	1.4.14
-PORTREVISION=	2
+PORTVERSION=	1.4.18
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.caudium.net/caudium/source/ \
-		ftp://ftp.oav.net/caudium/source/
-DISTNAME=	caudium-${PORTVERSION}
+MASTER_SITES=	http://caudium.googlecode.com/files/
+DISTNAME=	Caudium-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A free webserver based on the Roxen Challenger 1.3 code base
 
 BUILD_DEPENDS=	pike76:${PORTSDIR}/lang/pike76
-LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
+LIB_DEPENDS=	sablot:${PORTSDIR}/textproc/sablotron
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USE_BZIP2=	yes
@@ -44,6 +38,7 @@ post-patch:
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/caudium ${PREFIX}/etc/rc.d/
+	@${RM} ${PREFIX}/caudium/server/base_server/caudium.pike.rej
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/caudium
 	@${CAT} ${PKGMESSAGE}
 

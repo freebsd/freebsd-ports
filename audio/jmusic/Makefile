@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	jmusic
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/jMusic_Stable/${PORTVERSION} \
-		SF/${PORTNAME}/jMusic_Instruments/${PORTVERSION:S/.3//}/:instruments \
+		SF/${PORTNAME}/jMusic_Instruments/${PORTVERSION:S/.4//}/:instruments \
 		SF/${PORTNAME}/jMusic_Docs/${PORTVERSION}/:docs
 DISTFILES=	jMusic${PORTVERSION}.jar \
 		jMusic_1.6_inst.zip:instruments \
-		jMusic_doc_1.6.3.zip:docs
+		jMusic_doc_${PORTVERSION}.zip:docs
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	jMusic_1.6_inst.zip \
-		jMusic_doc_1.6.3.zip
+		jMusic_doc_${PORTVERSION}.zip
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition in Java
 
 USE_JAVA=	yes

@@ -1,13 +1,7 @@
-# New ports collection makefile for:	rspamd
-# Date created:		2010-09-27
-# Whom:			Vsevolod Stakhov <vsevolod@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rspamd
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	mail
 MASTER_SITES=	http://cdn.bitbucket.org/vstakhov/rspamd/downloads/
 

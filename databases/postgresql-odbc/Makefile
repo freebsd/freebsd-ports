@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-odbc
 DISTNAME=	psqlodbc-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
 
 LICENSE=	LGPL20

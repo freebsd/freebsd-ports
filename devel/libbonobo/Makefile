@@ -32,7 +32,7 @@ USE_GNOME=	gnomehack intlhack libxml2 orbit2 referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale
 
 MAN1=		bonobo-activation-server.1

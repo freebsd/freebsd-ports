@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/OpenVSP/OpenVSP/archive/
 
@@ -37,6 +37,8 @@ PLIST_FILES=	bin/vsp
 
 CFLAGS+=	-I${LOCALBASE}/include/openNURBS
 
+.include <bsd.port.options.mk>
+
 do-fetch:
 	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
@@ -45,7 +47,7 @@ do-fetch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vsp/vsp ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_PORTEXAMPLES}
 .endif

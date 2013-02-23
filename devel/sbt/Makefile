@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -37,7 +37,7 @@ SUB_FILES=	sbt.sh
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/bin/sbt ${WRKSRC}/bin/sbt-launch-lib.bash
+		${WRKSRC}/bin/sbt
 
 do-install:
 	${MKDIR} ${DATADIR}

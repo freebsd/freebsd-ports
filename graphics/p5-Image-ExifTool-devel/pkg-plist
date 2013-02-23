@@ -91,6 +91,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Lang/en_ca.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/en_gb.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/es.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/fi.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/fr.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/it.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/ja.pm
@@ -124,6 +125,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/OOXML.pm
 %%SITE_PERL%%/Image/ExifTool/Ogg.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
+%%SITE_PERL%%/Image/ExifTool/OpenEXR.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
@@ -133,15 +135,18 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Panasonic.pm
 %%SITE_PERL%%/Image/ExifTool/PanasonicRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Pentax.pm
+%%SITE_PERL%%/Image/ExifTool/PhotoCD.pm
 %%SITE_PERL%%/Image/ExifTool/PhotoMechanic.pm
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
+%%SITE_PERL%%/Image/ExifTool/Qualcomm.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
 %%SITE_PERL%%/Image/ExifTool/RSRC.pm
 %%SITE_PERL%%/Image/ExifTool/RTF.pm
+%%SITE_PERL%%/Image/ExifTool/Radiance.pm
 %%SITE_PERL%%/Image/ExifTool/Rawzor.pm
 %%SITE_PERL%%/Image/ExifTool/Real.pm
 %%SITE_PERL%%/Image/ExifTool/Reconyx.pm
@@ -178,6 +183,7 @@ bin/exiftool
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/ExifTool.html
 %%PORTDOCS%%%%DOCSDIR%%/MIE1.1-20070121.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Shift.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APE.html
@@ -242,6 +248,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/OOXML.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ogg.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/OpenEXR.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PDF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PGF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PICT.html
@@ -250,14 +257,17 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Panasonic.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PanasonicRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Pentax.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/PhotoCD.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PhotoMechanic.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Photoshop.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PostScript.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Qualcomm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RSRC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RTF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Radiance.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Rawzor.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Real.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Reconyx.html
@@ -302,6 +312,7 @@ bin/exiftool
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%SITE_PERL%%/Image/ExifTool/Lang
 @dirrm %%SITE_PERL%%/Image/ExifTool/Charset
 @dirrm %%SITE_PERL%%/Image/ExifTool

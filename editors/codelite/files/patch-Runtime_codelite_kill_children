@@ -1,10 +1,17 @@
---- Runtime/codelite_kill_children.orig	2009-05-23 13:23:08.000000000 +0200
-+++ Runtime/codelite_kill_children	2009-05-23 13:41:35.000000000 +0200
-@@ -1,6 +1,6 @@
- #!/bin/sh
+--- Runtime/codelite_kill_children.orig	2013-02-01 14:56:41.000000000 +0100
++++ Runtime/codelite_kill_children	2013-02-01 15:04:59.000000000 +0100
+@@ -4,8 +4,13 @@
+ ## for "hard kills"
+ 
+ sig_options=$2
++osname=$(uname -o)
  
 -procs=`ps --ppid $1 | grep -v PID | awk '{print $1;}'`
-+procs=`ps -A -o ppid,pid | grep -v PPID | awk '{print $1" "$2}' | grep "^$1 " | awk '{print $2}' | xargs`
++if [ "$osname" = "FreeBSD" ]; then
++    procs=`ps -A -o ppid,pid | sed -e '1d' | awk '{print $1" "$2}' | grep "^$1 " | awk '{print $2}' | xargs`
++else
++    procs=`ps --ppid $1 | grep -v PID | awk '{print $1;}'`
++fi
  for p in $procs
  do
- 	kill -9 $p
+ 	kill $sig_options $p 2> /dev/null

@@ -37,8 +37,7 @@ MAN1=		catior.1 convertior.1 genior.1 nameclt.1 omniidl.1
 MAN8=		omniMapper.8 omniNames.8
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
-		-e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
+	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
 
 post-install:
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${PYTHON_SITELIBDIR}/omniidl')"

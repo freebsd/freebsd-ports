@@ -16,19 +16,17 @@
 
 . /etc/rc.subr
 
+name="snort_agent"
+rcvar=snort_agent_enable
 load_rc_config snort_agent
 
 #set defaults
-snort_agent_enable=${snort_agent_enable:-"NO"}
-snort_agent_conf=${snort_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/snort_agent.conf"}
-snort_agent_flags=${snort_agent_flags:-"-D"}
+: ${snort_agent_enable:="NO"}
+: ${snort_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/snort_agent.conf"}
+: ${snort_agent_flags:="-D -c ${snort_agent_conf}"}
 
-name="snort_agent"
-rcvar=snort_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/snort_agent.tcl"
-command_args="-c ${snort_agent_conf} ${snort_agent_flags}"
-procname="%%PREFIX%%/bin/tclsh8.4"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
 pidfile="/var/run/${name}.pid"
-check_pidfile="${pidfile} ${procname} /bin/sh"
 
 run_rc_command "$1"

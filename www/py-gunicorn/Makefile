@@ -6,7 +6,7 @@ PORTVERSION=	0.16.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python WSGI server for unix
 
 LICENSE=	MIT

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	geos
-# Date created:		19 December 2003
-# Whom:		 	Leonardo Martins <lmartins@nepe.eee.ufg.br>
-#
+# Created by: Leonardo Martins <lmartins@nepe.eee.ufg.br>
 # $FreeBSD$
-#
 
 PORTNAME=	geos
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.7
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
@@ -21,17 +17,15 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	PYTHON "Enable python bindings" off \
-		PHP    "Enable php bindings" off \
-		RUBY   "Enable ruby bindings" off
+OPTIONS_DEFINE=	PHP PYTHON RUBY
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PHP) || defined(WITH_PYTHON) || defined(WITH_RUBY)
+.if ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MRUBY}
 BUILD_DEPENDS+=	swig1.3:${PORTSDIR}/devel/swig13
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=		yes
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=		WITH_PYTHON=""
@@ -39,7 +33,7 @@ PLIST_SUB+=		WITH_PYTHON=""
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
 CONFIGURE_ARGS+=	--enable-php
 PLIST_SUB+=		WITH_PHP=""
@@ -47,7 +41,7 @@ PLIST_SUB+=		WITH_PHP=""
 PLIST_SUB+=		WITH_PHP="@comment "
 .endif
 
-.if defined(WITH_RUBY)
+.if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=		yes
 CONFIGURE_ARGS+=	--enable-ruby
 CONFIGURE_ENV+=		RUBY="${RUBY}"
@@ -57,6 +51,6 @@ PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
 
 post-install:
-		@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${PREFIX}/lib/libgeos.so.0
+	@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${PREFIX}/lib/libgeos.so.0
 
 .include <bsd.port.mk>

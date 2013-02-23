@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coderay
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

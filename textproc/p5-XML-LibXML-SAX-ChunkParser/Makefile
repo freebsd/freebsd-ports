@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Parse XML chunks via LibXML SAX
 
 LICENSE=	ART10 GPLv1

@@ -23,6 +23,12 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 BROKEN=		unfetchable
 
+FORBIDDEN=	CVE-2010-1297
+# http://www.adobe.com/support/security/advisories/apsa10-01.html
+
+DEPRECATED=	Vulnerable, BROKEN for more than six months
+EXPIRATION_DATE=	2013-04-01
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	openssl gtk2
@@ -37,7 +43,8 @@ LATEST_LINK=	flash9
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
 
-CONFLICTS=	linux-flashplugin-7* linux-f8-flashplugin-10* linux-f10-flashplugin-10*
+CONFLICTS=	linux-flashplugin-7* linux-f8-flashplugin-10* \
+		linux-f10-flashplugin-10* linux-f10-flashplugin-11*
 
 post-install:
 	@${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/libflashsupport.so ${LINUXBASE}/usr/lib

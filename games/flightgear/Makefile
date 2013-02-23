@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -22,9 +21,9 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		fltk:${PORTSDIR}/x11-toolkits/fltk \
 		osg:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
+		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
+		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
 
 USE_BZIP2=	yes

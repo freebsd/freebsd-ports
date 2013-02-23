@@ -45,8 +45,6 @@ PLIST_SUB+=	PORTDOCS="@comment "
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
-.else
-CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 .endif
 
 pre-everything::

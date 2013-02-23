@@ -16,19 +16,17 @@
 
 . /etc/rc.subr
 
+name="sancp_agent"
+rcvar=sancp_agent_enable
 load_rc_config sancp_agent
 
 #set defaults
-sancp_agent_enable=${sancp_agent_enable:-"NO"}
-sancp_agent_conf=${sancp_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/sancp_agent.conf"}
-sancp_agent_flags=${sancp_agent_flags:-"-D"}
+: ${sancp_agent_enable:="NO"}
+: ${sancp_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/sancp_agent.conf"}
+: ${sancp_agent_flags:="-D -c ${sancp_agent_conf}"}
 
-name="sancp_agent"
-rcvar=sancp_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/sancp_agent.tcl"
-command_args="-c ${sancp_agent_conf} ${sancp_agent_flags}"
-procname="%%PREFIX%%/bin/tclsh8.4"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
 pidfile="/var/run/${name}.pid"
-check_pidfile="${pidfile} ${procname} /bin/sh"
 
 run_rc_command "$1"

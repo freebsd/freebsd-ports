@@ -1,13 +1,11 @@
 # Created by: Janky Jay <ek@purplehat.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	frontaccounting
-DISTVERSION=	2.3.13
+DISTVERSION=	2.3.14
 CATEGORIES=	finance www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	frontaccounting/FrontAccounting-2.3/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
 MAINTAINER=	ek@purplehat.org
 COMMENT=	Simple, powerful system for the entire ERP chain
@@ -21,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
-PORTDOCS=	*
 
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}
@@ -46,7 +43,7 @@ RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql55-server
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCSARGS=
 .else
-PORTDOCSARGS=	'-not -path "./docs*"'
+PORTDOCSARGS=	'-not -path "./doc*"'
 .endif
 
 do-install:

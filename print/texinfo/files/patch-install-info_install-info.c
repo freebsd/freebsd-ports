@@ -1,6 +1,6 @@
---- install-info/install-info.c.orig	2011-02-03 21:48:38.000000000 +0000
-+++ install-info/install-info.c	2011-02-03 21:56:15.000000000 +0000
-@@ -25,6 +25,7 @@
+--- install-info/install-info.c.orig	2013-01-07 00:18:56.000000000 +0100
++++ install-info/install-info.c	2013-02-19 09:15:24.000000000 +0100
+@@ -26,6 +26,7 @@
  #define TAB_WIDTH 8
  
  static char *progname = "install-info";
@@ -8,7 +8,7 @@
  
  struct spec_entry;
  struct spec_section;
-@@ -145,6 +146,8 @@
+@@ -146,6 +147,8 @@ struct option longopts[] =
    { "calign",    required_argument, NULL, 'C'},
    { "debug",     no_argument, NULL, 'g' },
    { "delete",    no_argument, NULL, 'r' },
@@ -17,7 +17,7 @@
    { "dir-file",  required_argument, NULL, 'd' },
    { "entry",     required_argument, NULL, 'e' },
    { "name",      required_argument, NULL, 't' },
-@@ -515,6 +518,10 @@
+@@ -543,6 +546,10 @@ Options:\n\
   --debug             report what is being done.\n\
   --delete            delete existing entries for INFO-FILE from DIR-FILE;\n\
                        don't insert any new entries.\n\
@@ -28,7 +28,7 @@
   --description=TEXT  the description of the entry is TEXT; used with\n\
                        the --name option to become synonymous with the\n\
                        --entry option.\n\
-@@ -1814,6 +1821,8 @@
+@@ -1857,6 +1864,8 @@ main (int argc, char *argv[])
    struct spec_entry *entries_to_add = NULL;
    struct spec_entry *entries_to_add_from_file = NULL;
    int n_entries_to_add = 0;
@@ -37,7 +37,7 @@
  
    /* Record the old text of the dir file, as plain characters,
       as lines, and as nodes.  */
-@@ -1998,6 +2007,7 @@
+@@ -2041,6 +2050,7 @@ main (int argc, char *argv[])
            }
            break;
  
@@ -45,7 +45,7 @@
          case 'e':
            {
              struct spec_entry *next
-@@ -2012,12 +2022,18 @@
+@@ -2055,12 +2065,18 @@ main (int argc, char *argv[])
              next->text_len = olen;
              next->entry_sections = NULL;
              next->entry_sections_tail = NULL;
@@ -67,7 +67,7 @@
            }
            break;
  
-@@ -2084,6 +2100,10 @@
+@@ -2127,6 +2143,10 @@ main (int argc, char *argv[])
            }
            break;
  
@@ -78,7 +78,7 @@
          case 's':
            {
              struct spec_section *next
-@@ -2273,7 +2293,7 @@
+@@ -2315,7 +2335,7 @@ There is NO WARRANTY, to the extent perm
          {
            input_sections = (struct spec_section *)
              xmalloc (sizeof (struct spec_section));

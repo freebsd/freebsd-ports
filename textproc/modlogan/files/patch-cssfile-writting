@@ -47,7 +47,7 @@ diff -u -u -r1.100 generate.c
 +
 +	ret = unlink(filename);
 +	if(ret == 0 || (ret == -1 && errno == ENOENT)) {
-+		/* If no error occured or the file didn't existed: link it. */
++		/* If no error occurred or the file didn't existed: link it. */
 +
 +		ret = symlink(conf->cssfile, filename);
 +		if (ret != 0) {

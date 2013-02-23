@@ -1,9 +1,5 @@
-# New ports collection makefile for:   knifty
-# Date created:                        22nd February, 2005
-# Whom:                                decept
-#
+# Created by: decept
 # $FreeBSD$
-#
 
 PORTNAME=	knifty
 PORTVERSION=	0.4.2
@@ -13,12 +9,11 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	8841-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight KDE window decoration
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-LDFLAGS+=	${PTHREAD_LIBS}
 USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

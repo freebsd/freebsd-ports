@@ -17,7 +17,4 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

@@ -65,6 +65,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-show-mode.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-show-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.elc

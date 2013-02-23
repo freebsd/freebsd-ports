@@ -1,4 +1,4 @@
-# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pygithub
@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGithub-${PORTVERSION}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Use the full Github API v3 with Python
 
 LICENSE=	LGPL3

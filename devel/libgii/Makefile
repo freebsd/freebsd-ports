@@ -208,9 +208,6 @@ PLIST_SUB+=	VGL="@comment "
 PLIST_SUB+=	VGL=""
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/configure
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist
 	${INSTALL_DATA} ${WRKSRC}/filter/mouse/mouse ${PREFIX}/etc/ggi/filter/mouse.dist

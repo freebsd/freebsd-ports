@@ -1,11 +1,8 @@
-# New ports collection makefile for:	urweb
-# Date created:		4 Apr 2012
-# Whom:			Timothy Beyer <beyert@cs.ucr.edu>
-#
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
 
 PORTNAME=	urweb
-PORTVERSION=	20120807
+PORTVERSION=	20120925
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 EXTRACT_SUFX=	.tgz

@@ -1,5 +1,5 @@
---- makefile.orig	Fri Aug  6 15:11:40 1999
-+++ makefile	Fri Aug  6 15:17:05 1999
+--- makefile.orig	2013-02-19 10:47:01.000000000 +0100
++++ makefile	2013-02-19 10:47:23.000000000 +0100
 @@ -18,6 +18,34 @@
  		show.o \
  		token.o
@@ -35,7 +35,7 @@
  EXAMPLES = \
  	acc.jps		\
  	acc.eps		\
-@@ -58,14 +86,20 @@
+@@ -58,15 +86,21 @@
  .tex.dvi:
  	latex $*.tex
  .c.o: 
@@ -49,12 +49,13 @@
  
  sin:	sin.o
  	cc -o sin sin.o -lm
-+
+ 
 +install: jgraph
 +	install -c -m 555 -o bin -g bin jgraph ${PREFIX}/bin
 +	install -c -m 444 -o bin -g bin jgraph.1 ${PREFIX}/man/man1
-+	-mkdir -p -m 755 ${PREFIX}/share/jgraph
-+	install -c -m 444 -o bin -g bin $(EXAMPLE_SRC) ${PREFIX}/share/jgraph
- 
++	-mkdir -p -m 755 ${DATADIR}
++	install -c -m 444 -o bin -g bin $(EXAMPLE_SRC) ${DATADIR}
++
  ad.jps: cube.eps disk.eps
  bailey.jps: bailey.pts
+ ex2.jps: data.txt

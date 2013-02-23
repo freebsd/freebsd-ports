@@ -73,6 +73,7 @@
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += clarence
+    SUBDIR += clipper
     SUBDIR += cln
     SUBDIR += clp
     SUBDIR += coinmp
@@ -269,7 +270,6 @@
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocamlgsl
     SUBDIR += octave
-    SUBDIR += octave-devel
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
     SUBDIR += octave-forge-ad
@@ -548,6 +548,7 @@
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
     SUBDIR += py-mpmath
+    SUBDIR += py-munkres
     SUBDIR += py-networkx
     SUBDIR += py-numarray
     SUBDIR += py-numeric

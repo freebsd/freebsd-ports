@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hevea
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
@@ -21,8 +21,8 @@ PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+post-patch:
+	@${REINPLACE_CMD} -e '/^PREFIX=/s|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/Makefile
 
 post-install:

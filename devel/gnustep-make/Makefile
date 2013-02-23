@@ -20,9 +20,8 @@ USE_GNUSTEP=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
-CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
-CONFIGURE_ARGS+=	--with-thread-lib="${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--with-thread-lib=-pthread
 CONFIGURE_ARGS+=	--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf
 CONFIGURE_ARGS+=	--with-layout=gnustep
 .if defined(GNUSTEP_WITH_LIBOBJC2) || defined(GNUSTEP_WITH_CLANG)

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Ruby rdoc
-# Date created:		June 23, 2011
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rdoc
-PORTVERSION=	3.12
+PORTVERSION=	3.12.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,4 +1,4 @@
-Fpart is a tool that helps you sort files and divide them into bags
+Fpart is a tool that helps you sort files and pack them into bags
 ("partitions"). It is developped in C and available under the BSD license.
 
 It splits a list of directories and files into a certain number of partitions,

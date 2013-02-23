@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
@@ -73,7 +73,8 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:src
+DISTFILES+=	0d2dcdfbf28d6208751b33057f5361f0-libcmis-0.2.3.tar.gz:src \
+		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src
 
 USE_AUTOTOOLS=	autoconf aclocal
 USE_BDB=	yes
@@ -104,6 +105,12 @@ JAVA_DESC=	Add java support (XML Filters, macros)
 
 ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
 
+.if defined(DISABLE_MAKE_JOBS)
+MAKE_JOBS_NUMBER=	1
+.else
+MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
+.endif
+
 CONFIGURE_ENV=		BDB_INCLUDE_DIR=${BDB_INCLUDE_DIR} \
 			BDB_LIB_DIR=${BDB_LIB_DIR} \
 			BDB_LIB_NAME=${BDB_LIB_NAME} \
@@ -120,6 +127,7 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--exec-prefix=${PREFIX} \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
+			--with-num-cpus=${MAKE_JOBS_NUMBER} \
 			--with-solver-and-workdir-root=${TMPDIR}/lobuild \
 			--with-system-boost \
 			--with-system-clucene \
@@ -174,7 +182,6 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-nsplugin \
 			--disable-linkoo \
 			--disable-online-update \
-			--disable-xmlsec \
 			--with-system-gettext \
 			--with-system-libpng \
 			--disable-gnome-vfs \
@@ -220,7 +227,8 @@ USE_PGSQL=	yes
 WANT_PGSQL_VER=	90+
 CONFIGURE_ARGS+=	--enable-postgresql-sdbc --with-system-postgresql
 .else
-CONFIGURE_ARGS+=	--disable-postgresql-sdbc
+CONFIGURE_ARGS+=	--disable-postgresql-sdbc \
+			--without-gssapi --without-krb5
 .endif
 
 .if ${PORT_OPTIONS:MSYSTRAY}
@@ -339,8 +347,8 @@ CONFIGURE_ARGS+=	--disable-mergelibs
 
 .if ${PORT_OPTIONS:MSDK}
 DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
-
-CONFIGURE_ARGS+=	--enable-odk
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+CONFIGURE_ARGS+=	--enable-odk --with-doxygen=${LOCALBASE}/bin/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-odk
 .endif
@@ -357,12 +365,6 @@ CONFIGURE_ARGS+=	--enable-release-build
 
 .include <bsd.port.pre.mk>
 
-# if compiled with clang on 8.x libreoffice exits with the following error:
-# terminate called after throwing an instance of 'com::sun::star::ucb::InteractiveAugmentedIOException'
-.if ${OSVERSION} < 900000
-WITH_GCC=	yes
-.endif
-
 .if defined(WITH_GCC)
 USE_GCC=	4.6+
 DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
@@ -375,8 +377,7 @@ CXX=		/usr/bin/clang++
 CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-BUILD_DEPENDS+=	clang-devel>=3.2.r159895:${PORTSDIR}/lang/clang-devel
-USE_BINUTILS=	yes
+BUILD_DEPENDS+=	clang>=3.2:${PORTSDIR}/lang/clang
 CC=		${LOCALBASE}/bin/clang
 CPP=		${CC} -E
 CXX=		${LOCALBASE}/bin/clang++
@@ -395,6 +396,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LANG=C LC_ALL=C
 MAKE_ENV+=	USE_GMAKE=1
 
 TMPDIR?=	/tmp
@@ -407,16 +409,8 @@ post-extract:
 .endfor
 	@${TOUCH} ${WRKSRC}/clone/repos_changed
 
-post-patch:
-	@${FIND} ${WRKSRC} -type f -print0 | \
-	    ${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's#-Wl,-rpath,#-Wl,-z,origin,-rpath,#g'
-.if ${CC} == /usr/bin/clang && ${OSVERSION} < 900506
-#Visibility is broken with clang
-	@${REINPLACE_CMD} -e "s|HAVE_GCC_VISIBILITY_FEATURE=TRUE|HAVE_GCC_VISIBILITY_FEATURE=|g" \
-		${WRKSRC}/configure.in
-.endif
-
 .if ${PORT_OPTIONS:MJAVA}
+post-patch:
 	@${REINPLACE_CMD} -e 's/^ANT_OPT/#ANT_OPT/g' \
 		${WRKSRC}/apache-commons/java/codec/makefile.mk \
 		${WRKSRC}/apache-commons/java/httpclient/makefile.mk \
@@ -481,7 +475,8 @@ post-install:
 	@${SORT} -u ${PLISTF} >> ${TMPPLIST}
 	@${GREP} '^@exec ' ${PLISTD} | ${SORT} -u >> ${TMPPLIST}
 	@${GREP} '^@dirrm ' ${PLISTD} | ${SORT} -ru >> ${TMPPLIST}
-	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru >> ${TMPPLIST}
+	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru | \
+	    ${SED} -e '${PLIST_REINPLACE_DIRRMTRY}' >> ${TMPPLIST}
 
 	@cd ${LODESTDIR}/${PREFIX} ; ${PAX} -rw . ${PREFIX}
 	@${MKDIR} ${PREFIX}/etc/bash_completion.d

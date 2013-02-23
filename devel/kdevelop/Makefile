@@ -85,8 +85,7 @@ post-patch:
 
 post-configure:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' < ${FILESDIR}/kdevelop \
+		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/kdevelop \
 		> ${WRKDIR}/kdevelop
 	${REINPLACE_CMD} -e 's|<gdbpath>.*</gdbpath>|<gdbpath></gdbpath>|g' \
 		-e 's|<dbgshell>.*</dbgshell>|<dbgshell></dbgshell>|g' \

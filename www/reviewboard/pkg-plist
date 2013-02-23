@@ -373,6 +373,9 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/versionone.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/versionone.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/versionone.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/errordocs/500.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/ext/.gitignore
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/admin/css/base.b11ab56ec487.css
@@ -542,6 +545,10 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/flot/jquery.flot.selection.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/flot/jquery.flot.selection.min.9ae26fd8e59e.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/flot/jquery.flot.selection.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jasmine-1.3.1.38622df07f04.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jasmine-1.3.1.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jasmine-html-1.3.1.49f0dfd1034e.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jasmine-html-1.3.1.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jquery-1.8.2.min.cfa9051cc0b0.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jquery-1.8.2.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/lib/js/jquery-ui-1.8.24.custom.min.f6148fb67d77.js
@@ -594,11 +601,17 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/ie_hacks.e31a795a9b81.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/iphone.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/iphone.e915fbaf08c1.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.0ed929cb73b4.less
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.70d6ede4e69e.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.9844a908a7ed.less
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.less
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.min.70d6ede4e69e.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/js-tests.min.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.222d0930c962.less
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.6b97b76026b7.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.e5445e6e28ea.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.less
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.min.b7cdf44c7ca2.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.min.af2c67b6345a.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/reviews.min.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/search.0553e42c0d00.less
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/css/search.47a5f4d644fe.css
@@ -834,18 +847,22 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/admin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/admin.min.819f1a6808eb.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/admin.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/base.min.86708c2a630f.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/base.min.655a933ac4b2.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/base.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/common.8e0724c671d7.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/common.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/datastore.3503632bd192.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/datastore.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/diffviewer.6a0cd64f6f93.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/diffviewer.db91004febf0.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/diffviewer.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/js-tests.min.d89fcaa8637c.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/js-tests.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/abstractCommentBlockModel.f063bef843da.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/abstractCommentBlockModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/abstractReviewableModel.b4426a987dd9.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/abstractReviewableModel.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/commentIssueManagerModel.c0846e3cbf3a.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/commentIssueManagerModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/fileAttachmentCommentBlockModel.408cf12a2e4d.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/fileAttachmentCommentBlockModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models/fileAttachmentReviewableModel.cb339cf83e67.js
@@ -862,12 +879,18 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/repositoryform.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/repositoryform.min.c681878b4a67.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/repositoryform.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.ca1b4aa0a794.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.0cf196aea3da.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.min.09aa8a0c0147.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.min.8dcc237657b9.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/reviews.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/backboneUtils.360f2cd8dc6c.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/backboneUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/consoleUtils.b0b00f94c9bf.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/consoleUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/propertyUtils.78d2f5acfe92.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/propertyUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/tests/propertyUtilsTests.1ef44b466752.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/tests/propertyUtilsTests.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/abstractCommentBlockView.a4ba48d885ad.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/abstractCommentBlockView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/abstractReviewableView.375550119af5.js
@@ -876,6 +899,8 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/fileAttachmentReviewableView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/imageReviewableView.a362f3aee643.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/imageReviewableView.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/issueSummaryTableView.20bea4c9e776.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/issueSummaryTableView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/regionCommentBlockView.03adabd3348e.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views/regionCommentBlockView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/manage.py
@@ -1242,7 +1267,6 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.py.orig
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/signals.py
@@ -1311,6 +1335,8 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/flot/jquery.flot.pie.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/flot/jquery.flot.selection.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/flot/jquery.flot.selection.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/jasmine-1.3.1.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/jasmine-html-1.3.1.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/jquery-1.8.2.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/jquery-ui-1.8.24.custom.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/lib/js/jquery.form.js
@@ -1335,6 +1361,8 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/docs.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/ie_hacks.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/iphone.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/js-tests.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/js-tests.less
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/reviews.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/reviews.less
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/css/search.css
@@ -1458,6 +1486,7 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/diffviewer.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/abstractCommentBlockModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/abstractReviewableModel.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/commentIssueManagerModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/fileAttachmentCommentBlockModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/fileAttachmentReviewableModel.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models/imageReviewableModel.js
@@ -1467,10 +1496,14 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/repositoryform.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/reviews.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils/backboneUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils/consoleUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils/propertyUtils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils/tests/propertyUtilsTests.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/abstractCommentBlockView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/abstractReviewableView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/fileAttachmentReviewableView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/imageReviewableView.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/issueSummaryTableView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views/regionCommentBlockView.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/403.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/404.html
@@ -1536,6 +1569,7 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/jquery-ui.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/jquery.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/pipeline.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/tests.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/email_base.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/email_diff_comment_fragment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/new_user_email.html
@@ -1628,6 +1662,7 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/accounts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/views
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js/models
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/static/rb/js
@@ -1713,6 +1748,7 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/reviews
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/notifications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/views
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js/models
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/static/rb/js

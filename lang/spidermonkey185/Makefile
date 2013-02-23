@@ -1,4 +1,4 @@
-# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=		spidermonkey185
@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	js
 DISTNAME=		js185-1.0.0
 
-MAINTAINER=		koobs.freebsd@gmail.com
+MAINTAINER=		koobs@FreeBSD.org
 COMMENT=		Standalone JavaScript (1.8.5) interpreter from Mozilla
 
 BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip

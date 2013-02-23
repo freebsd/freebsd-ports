@@ -10,7 +10,7 @@ CATEGORIES?=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 DISTNAME=	synce-sync-engine-${PORTVERSION}
 
-MAINTAINER?=	avl@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Synchronization Engine for Windows Mobile devices
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	punbb
-# Date created:		2006-08-05
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.23
 CATEGORIES=	www
 MASTER_SITES=	http://punbb.informer.com/download/ \
 		http://punbb.informer.com/download/plugins/:plugins \
@@ -20,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A fast and lightweight PHP-powered discussion board
 
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 PORTEXAMPLES=	12_to_1222_update.php example_config.php \
 		turn_off_maintenance_mode.php
@@ -115,7 +111,7 @@ do-install:
 	@cd ${WRKSRC}/upload && ${COPYTREE_SHARE} . ${WWWDIR}
 
 .for i in ${LANGFILES}
-	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${WWWDIR}/lang
+	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${WWWDIR}/lang -x '*/.DS_Store' -x '*/._.DS_Store'
 .endfor
 
 .for i in ${PLUGINS}

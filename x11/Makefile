@@ -143,6 +143,7 @@
     SUBDIR += libXScrnSaver
     SUBDIR += libXTrap
     SUBDIR += libXau
+    SUBDIR += libXcm
     SUBDIR += libXcomposite
     SUBDIR += libXcursor
     SUBDIR += libXdamage
@@ -210,6 +211,7 @@
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
     SUBDIR += nvidia-driver-173
+    SUBDIR += nvidia-driver-304
     SUBDIR += nvidia-driver-71
     SUBDIR += nvidia-driver-96
     SUBDIR += nvidia-settings
@@ -332,6 +334,7 @@
     SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
+    SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmiscproto
     SUBDIR += xcmsdb

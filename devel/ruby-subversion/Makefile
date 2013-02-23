@@ -17,8 +17,6 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
-CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
-
 USE_RUBY=		yes
 
 SVN_BUILD_BINDINGS=yes

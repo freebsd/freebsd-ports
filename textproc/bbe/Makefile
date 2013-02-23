@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}-/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sed-like editor for binary files
 
 MAKE_JOBS_SAFE=	yes

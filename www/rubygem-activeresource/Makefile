@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-activeresource
-# Date created:				30 Jan 2009
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	activeresource
-PORTVERSION=	3.2.11
+PORTVERSION=	3.2.12
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

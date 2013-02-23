@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Catalyst-Controller-HTML-FormFu
-# Date created:		2007-12-24
-# Whom:			Andrej Zverev <andrey.zverev@electro-com.ru>
-#
+# Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Controller-HTML-FormFu
-PORTVERSION=	0.09003
-PORTREVISION=	1
+PORTVERSION=	0.09004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +22,7 @@ BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:${PORTSDIR}/www/p5-Catalyst-Acti
 		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-HTML-FormFu>=0.09:${PORTSDIR}/www/p5-HTML-FormFu \
-		p5-MooseX-ChainedAccessors>=0.02:${PORTSDIR}/devel/p5-MooseX-ChainedAccessors \
+		p5-MooseX-Attribute-Chained>=0:${PORTSDIR}/devel/p5-MooseX-Attribute-Chained \
 		p5-Regexp-Assemble>=0:${PORTSDIR}/devel/p5-Regexp-Assemble \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS=	p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
@@ -35,7 +30,7 @@ RUN_DEPENDS=	p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Cata
 		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-HTML-FormFu>=0.09:${PORTSDIR}/www/p5-HTML-FormFu \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-ChainedAccessors>=0.02:${PORTSDIR}/devel/p5-MooseX-ChainedAccessors \
+		p5-MooseX-Attribute-Chained>=0:${PORTSDIR}/devel/p5-MooseX-Attribute-Chained \
 		p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools \
 		p5-Regexp-Assemble>=0:${PORTSDIR}/devel/p5-Regexp-Assemble \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \

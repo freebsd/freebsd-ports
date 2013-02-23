@@ -1,9 +1,5 @@
-# New ports collection makefile for:	treeline
-# Date created:		Wed Jul  7 20:50:24 CEST 2004
-# Whom:			Tobias Roth <ports@fsck.ch>
-#
+# Created by: Tobias Roth <ports@fsck.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	treeline
 PORTVERSION=	1.4.1
@@ -17,12 +13,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	TreeLine is a structured information storage program
+COMMENT=	Structured information storage program
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:${PORTSDIR}/net/py-qt4-network
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT4=	# empty
@@ -55,7 +51,7 @@ BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 .if !${PORT_OPTIONS:MPYXML}
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 .endif
 
 .if ${PORT_OPTIONS:MHTTPLOAD}

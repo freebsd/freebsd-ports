@@ -1,6 +1,7 @@
 bin/feh
 bin/feh-cam
 bin/gen-cam-menu
+share/applications/feh.desktop
 %%EXAMPLESDIR%%/buttons
 %%EXAMPLESDIR%%/keys
 %%EXAMPLESDIR%%/themes
@@ -14,6 +15,7 @@ bin/gen-cam-menu
 %%DATADIR%%/images/menubg_brushed.png
 %%DATADIR%%/images/menubg_default.png
 %%DATADIR%%/images/menubg_sky.png
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%

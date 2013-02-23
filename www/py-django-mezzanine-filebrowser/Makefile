@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-mezzanine-filebrowser
-# Date created:		2012-05-28
-# Whom:			koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-mezzanine-filebrowser
 PORTVERSION=	0.2.6
@@ -13,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	filebrowser_safe-${PORTVERSION}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of django-filebrowser for Mezzanine CMS
 
 USE_PYTHON=	yes

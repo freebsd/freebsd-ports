@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-NNTPClient
-# Date created:				1st June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	NNTPClient
 PORTVERSION=	0.37
@@ -12,11 +8,11 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gary@hayers.org
 COMMENT=	Client interface to NNTP (RFC977)
 
 PERL_CONFIGURE=	yes
 
-MAN3=		News::NNTPClient.3
+MAN3=	News::NNTPClient.3
 
 .include <bsd.port.mk>

@@ -400,4 +400,5 @@ share/X11/xkb/types/pc
 @dirrm share/X11/xkb/compat
 @dirrm share/X11/xkb
 @dirrmtry share/X11
+@cwd /
 @dirrmtry var/lib/xkb

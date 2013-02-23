@@ -1,9 +1,5 @@
-# New ports collection makefile for: ecl
-# Date created:		  29 Januar 2004
-# Whom:			Julian Stecklina
-#
+# Created by: Julian Stecklina
 # $FreeBSD$
-#
 
 PORTNAME=	ecl
 PORTVERSION=	12.7.1

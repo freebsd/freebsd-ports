@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
@@ -26,7 +26,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
-ISE_PKGCONFIG=	build
+USE_PKGCONFIG=	build
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -37,7 +37,7 @@ KQUEUE_DESC=	Use kqueue(2) support
 CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
 .endif
 
-CONFIGURE_ARGS+=	--disable-debug --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--disable-debug
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure

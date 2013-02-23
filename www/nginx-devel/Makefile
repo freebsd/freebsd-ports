@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -63,6 +63,7 @@ OPTIONS_DEFINE=	\
 	HTTP_MOGILEFS \
 	HTTP_NOTICE \
 	HTTP_PUSH \
+	HTTP_PUSH_STREAM \
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
@@ -150,6 +151,7 @@ HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
 HTTP_PUSH_DESC=			3rd party push module
+HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
@@ -292,7 +294,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_A
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
-GIT_HTTP_AUTH_LDAP_VERSION=	c2c3d5ea4919
+# WWW: https://github.com/kvspb/nginx-auth-ldap
+GIT_HTTP_AUTH_LDAP_VERSION=  c4dc7c9153
 MASTER_SITES+=	LOCAL/rm:http_auth_ldap
 DISTFILES+=	http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}.tar.gz:http_auth_ldap
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}
@@ -445,6 +448,15 @@ DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_VERSION}.tar.gz:push
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_VERSION}
 .endif
 
+.if ${PORT_OPTIONS:MHTTP_PUSH_STREAM}
+NGINX_PUSH_STREAM_VERSION=	0.3.4
+GIT_PUSH_STREAM_VERSION=	0-g28d9df7
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/wandenberg/nginx-push-stream-module/tarball/${NGINX_PUSH_STREAM_VERSION}/:pushstream
+DISTFILES+=	wandenberg-nginx-push-stream-module-${NGINX_PUSH_STREAM_VERSION}-${GIT_PUSH_STREAM_VERSION}.tar.gz:pushstream
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/wandenberg-nginx-push-stream-module-${GIT_PUSH_STREAM_VERSION:S/^0-g//}
+.endif
+
 .if ${PORT_OPTIONS:MHTTP_RANDOM_INDEX}
 CONFIGURE_ARGS+=--with-http_random_index_module
 .endif
@@ -490,11 +502,11 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
-IGNORE=	incompatible with nginx_upload_module-2.2.0
 NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
@@ -774,7 +786,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .if ${PORT_OPTIONS:MSPDY}
 USE_OPENSSL_PORT=	yes
 USE_HTTP_SSL=	yes
-NGINX_SPDY_VERSION=	61
+NGINX_SPDY_VERSION=	65
 PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
 PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}_${PORTVERSION}.txt:spdy
 PATCH_DIST_STRIP=	-p1

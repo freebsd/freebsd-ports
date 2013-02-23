@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	3.4.${SVNREVISION}
+PORTVERSION=	4.0.${SVNREVISION}
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -24,10 +24,9 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-#USE_GCC=	4.6+
+#WITH_GCC=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-#PYTHON_VERSION= 3.2
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
@@ -68,8 +67,8 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
-OOODIR=			apache_openoffice3
-SVNREVISION=		1437264
+OOODIR=			apache_openoffice4
+SVNREVISION=		1444279
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -270,10 +269,10 @@ do-install:
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
-	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice3/program/bootstraprc
-	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/3/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice3/program/bootstraprc
+	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice4/program/bootstraprc
+	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/4/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice4/program/bootstraprc
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/4?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${FIND} ${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;

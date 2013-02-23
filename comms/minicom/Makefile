@@ -3,6 +3,7 @@
 
 PORTNAME=	minicom
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3869/
 
@@ -60,7 +61,7 @@ post-install:
 	${CHMOD} 4511 ${PREFIX}/bin/minicom
 	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/etc/minicom
 	${CHOWN} uucp ${PREFIX}/etc/minicom
-.if !${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/

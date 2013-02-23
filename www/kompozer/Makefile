@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Complete Web Authoring Suite
 
+DEPRECATED=	Dead upstream
+EXPIRATION_DATE=	2013-03-20
+
 BUILD_DEPENDS=	nss>=3.13.6_1:${PORTSDIR}/security/nss
 
 WANT_GNOME=	yes

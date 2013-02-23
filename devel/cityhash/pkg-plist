@@ -1,0 +1,9 @@
+include/city.h
+lib/libcityhash.a
+lib/libcityhash.la
+lib/libcityhash.so
+lib/libcityhash.so.0
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%

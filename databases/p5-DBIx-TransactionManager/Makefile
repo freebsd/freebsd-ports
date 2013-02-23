@@ -1,12 +1,7 @@
-# New ports collection makefile for:	DBIx::TransactionManager
-# Date created:		25 Dec 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-TransactionManager
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEKOKAK
@@ -22,6 +17,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	DBIx::TransactionManager.3
+MAN3=	DBIx::TransactionManager.3 \
+	DBIx::TransactionManager::Developers.3
 
 .include <bsd.port.mk>

@@ -242,6 +242,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
 %%DATADIR%%/resources/inspector/scriptsPanel.css
 %%DATADIR%%/resources/inspector/ScriptsPanel.js
+%%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/splitView.css
 %%DATADIR%%/resources/inspector/tabbedPane.css
 %%DATADIR%%/resources/inspector/textEditor.css

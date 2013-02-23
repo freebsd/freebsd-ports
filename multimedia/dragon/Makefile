@@ -13,6 +13,8 @@ COMMENT=		A KDE multimedia player with a focus on simplicity instead of features
 
 LICENSE=		GPLv2
 
+# Avoid clash with devel/dragon
+LATEST_LINK=		kdemultimedia-dragon
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 MAKE_JOBS_SAFE=		yes

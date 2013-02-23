@@ -179,6 +179,7 @@
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
+    SUBDIR += liquibase
     SUBDIR += lsdb
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
@@ -211,6 +212,7 @@
     SUBDIR += mysac
     SUBDIR += mysql++1
     SUBDIR += mysql++3
+    SUBDIR += mysql-connector-c
     SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-odbc
@@ -236,6 +238,8 @@
     SUBDIR += mysql51-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-server
+    SUBDIR += mysql56-client
+    SUBDIR += mysql56-server
     SUBDIR += mysqlard
     SUBDIR += mysqlbackup
     SUBDIR += mysqlcppapi
@@ -629,6 +633,7 @@
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
+    SUBDIR += postgis20
     SUBDIR += postgis-jdbc
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy

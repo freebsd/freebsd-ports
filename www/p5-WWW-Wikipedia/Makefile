@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-WWW-Wikipedia
-# Date created:				Aug 5 2004
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Wikipedia
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BRICAS

@@ -2,45 +2,61 @@ bin/info
 bin/infokey
 bin/install-info
 bin/makeinfo
+bin/pdftexi2dvi
+bin/pod2texi
+bin/texi2any
 bin/texi2dvi
 bin/texi2pdf
 bin/texindex
-bin/pdftexi2dvi
 %%NLS%%share/locale/cs/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/de_AT/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/es.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/es/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/fr.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/he/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/id/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/it/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/it/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/no.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/texinfo.mo
-%%DATADIR%%/htmlxref.cnf
-%%DATADIR%%/texinfo.cat
-%%DATADIR%%/texinfo.dtd
-%%DATADIR%%/texinfo.xsl
 %%TEXMF%%/tex/texinfo/texinfo.tex
 %%TEXMF%%/tex/texinfo/txi-cs.tex
 %%TEXMF%%/tex/texinfo/txi-de.tex
 %%TEXMF%%/tex/texinfo/txi-en.tex
 %%TEXMF%%/tex/texinfo/txi-es.tex
 %%TEXMF%%/tex/texinfo/txi-fr.tex
+%%TEXMF%%/tex/texinfo/txi-hu.tex
+%%TEXMF%%/tex/texinfo/txi-is.tex
 %%TEXMF%%/tex/texinfo/txi-it.tex
 %%TEXMF%%/tex/texinfo/txi-nb.tex
 %%TEXMF%%/tex/texinfo/txi-nl.tex
+%%TEXMF%%/tex/texinfo/txi-nn.tex
 %%TEXMF%%/tex/texinfo/txi-pl.tex
 %%TEXMF%%/tex/texinfo/txi-pt.tex
 %%TEXMF%%/tex/texinfo/txi-ru.tex
@@ -50,9 +66,20 @@ bin/pdftexi2dvi
 %%TEXMF%%/tex/generic/epsf/epsf.tex
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/de.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de.us-ascii
+%%NLS%%@dirrmtry share/locale/es.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es.us-ascii
+%%NLS%%@dirrmtry share/locale/fr.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr.us-ascii
+%%NLS%%@dirrmtry share/locale/no.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no.us-ascii
+%%NLS%%@dirrmtry share/locale/pt.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt.us-ascii
+%%NLS%%@dirrmtry share/locale/pt_BR.us-ascii/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR.us-ascii
 @dirrmtry %%TEXMF%%/tex/generic/epsf
 @dirrmtry %%TEXMF%%/tex/generic
 @dirrm %%TEXMF%%/tex/texinfo
 @dirrmtry %%TEXMF%%/tex
 @dirrmtry %%TEXMF%%
-@dirrm %%DATADIR%%

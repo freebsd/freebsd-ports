@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.3.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,6 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
+BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
@@ -63,16 +65,16 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs
-.else
-CONFIGURE_ARGS+=	--disable-docs
-.endif
-
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
 .else
 CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .if ${PORT_OPTIONS:MLTOPLUGIN}
@@ -126,6 +128,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
+pre-configure:
+	${MKDIR} ${WRKDIR}/cmake
+	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
+
 post-build:
 	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
 .if ${PORT_OPTIONS:MDOCS}
@@ -135,6 +141,10 @@ post-build:
 post-install:
 	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
 	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+	${MKDIR} ${DATADIR}/cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
+	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
+	    ${DATADIR}/cmake/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/html
 	find ${WRKSRC}/docs/_build/html -type f | \
@@ -167,12 +177,14 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libprofile_rt.a \
 			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
-			include/llvm
+			include/llvm \
+			${DATADIR_REL}
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
-	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' | \
+	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
+	    -e 's|${DATADIR_REL}|%%DATADIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \

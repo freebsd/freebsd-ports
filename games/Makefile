@@ -46,6 +46,7 @@
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
+    SUBDIR += asteroid
     SUBDIR += asteroids3d
     SUBDIR += atanks
     SUBDIR += atitd
@@ -278,6 +279,7 @@
     SUBDIR += fretsonfire
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
+    SUBDIR += frobtads
     SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozenbubble
@@ -302,6 +304,7 @@
     SUBDIR += ggz-kde-client
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
+    SUBDIR += gigalomania
     SUBDIR += gillo
     SUBDIR += gish-demo
     SUBDIR += gl-117
@@ -372,6 +375,7 @@
     SUBDIR += gweled
     SUBDIR += hangman
     SUBDIR += hedgewars
+    SUBDIR += help_hannahs_horse
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
@@ -746,6 +750,7 @@
     SUBDIR += qnetwalk
     SUBDIR += qonk
     SUBDIR += qstat
+    SUBDIR += qtads
     SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra

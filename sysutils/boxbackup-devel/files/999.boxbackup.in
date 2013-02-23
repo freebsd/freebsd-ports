@@ -49,7 +49,7 @@ case "$monthly_boxbackup_compare_enable" in
 		# Return codes:
 		#  1    Comparison was exact
 		#  2    Differences were found
-		#  3    An error occured
+		#  3    An error occurred
 		if [ $? -eq 2 ]; then
 			echo
 			echo "Differences were found. Please check the output."

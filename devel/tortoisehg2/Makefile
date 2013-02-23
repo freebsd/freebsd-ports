@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 

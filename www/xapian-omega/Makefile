@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xapian-omega
-# Date created:		05 Jul 2008
-# Whom:			Henrik Brix Andersen <brix@FreeBSD.org>
-#
+# Created by: Henrik Brix Andersen <brix@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.13
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \

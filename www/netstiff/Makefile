@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://pkqs.net/~sbeyer/tools/netstiff/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful web page update checker
 
 NO_BUILD=	yes

@@ -1,4 +1,4 @@
-This module is an attempt to solve most common problems occured in
+This module is an attempt to solve most common problems occurred in
 Traditional vs. Simplified Chinese conversion, in an efficient,
 flexible way, without resorting to external tools or modules.
 

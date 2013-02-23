@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.45
-PORTREVISION=	1
+PORTVERSION=	3.7.48
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 		http://fossies.org/unix/misc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 drawing program [especially for circuit schematics]
+MAINTAINER=	danilogondolfo@gmail.com
+COMMENT=	X11 circuit schematics drawing program
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_XORG=	xpm xt
+USE_XORG=	xpm xscrnsaver xt
 USE_TCL=	85
 USE_TCL_BUILD=	85
 USE_TK=		85

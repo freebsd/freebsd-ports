@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 # may or may not solve the alpha compilation issue....
 CONFIGURE_ARGS=	--with-pic
 
-# necesary to access the second master site by getting rid of the default switch -A
+# necessary to access the second master site by getting rid of the default switch -A
 FETCH_CMD ?=/usr/bin/fetch -Rr
 
 post-patch:

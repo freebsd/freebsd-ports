@@ -1,12 +1,9 @@
-# New ports collection makefile for:	fontforge
-# Date created:		25 March 2001
-# Whom:			KANOU Hiroki <kanou@khdd.net>
-#
+# Created by: KANOU Hiroki <kanou@khdd.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fontforge
 DISTVERSION=	20120731-b
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
 DISTFILES=	${EXTRACT_ONLY}
@@ -38,7 +35,7 @@ DISTFILES+=	${DOCFILES:C/$/:docs/}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XORG=	x11 xi ice xkbfile
+USE_XORG=	x11 xi ice xkbui
 USE_GMAKE=	yes
 USE_ICONV=	yes
 PATCH_STRIP=	-l

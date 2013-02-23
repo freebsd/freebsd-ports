@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qiviewer
-# Date created:		2011-04-02
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qiviewer
 PORTVERSION=	0.5.0
@@ -32,12 +28,16 @@ PLIST_DIRS=	share/qiviewer/locale \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-OPTIONS=	WEBP "Support for WebP image format (experimental)" off
+OPTIONS_DEFINE=	WEBP
+WEBP_DESC=	Support for WebP image format (experimental)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_WEBP)
+.if ${PORT_OPTIONS:MWEBP}
 QMAKEFLAGS+=	CONFIG+=enable-webp
+PLIST_SUB+=	WEBP=""
+.else
+PLIST_SUB+=	WEBP="@comment "
 .endif
 
 do-configure:
@@ -47,4 +47,4 @@ post-configure:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -84,6 +84,8 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/charset.conf
 %%EXAMPLESDIR%%/crawlers_detection.conf
 %%EXAMPLESDIR%%/create_list.conf
+%%EXAMPLESDIR%%/create_list_templates/confidential/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/confidential/config.tt2
 %%EXAMPLESDIR%%/create_list_templates/discussion_list/comment.tt2
 %%EXAMPLESDIR%%/create_list_templates/discussion_list/config.tt2
 %%EXAMPLESDIR%%/create_list_templates/hotline/comment.tt2
@@ -219,6 +221,7 @@ libexec/sympa/wwsympa.fcgi
 %%EXAMPLESDIR%%/scenari/review.private
 %%EXAMPLESDIR%%/scenari/review.public
 %%EXAMPLESDIR%%/scenari/send.closed
+%%EXAMPLESDIR%%/scenari/send.confidential
 %%EXAMPLESDIR%%/scenari/send.default
 %%EXAMPLESDIR%%/scenari/send.editorkey
 %%EXAMPLESDIR%%/scenari/send.editorkeyonly
@@ -574,6 +577,7 @@ libexec/sympa/wwsympa.fcgi
 @dirrm %%EXAMPLESDIR%%/create_list_templates/html-news-letter
 @dirrm %%EXAMPLESDIR%%/create_list_templates/hotline
 @dirrm %%EXAMPLESDIR%%/create_list_templates/discussion_list
+@dirrm %%EXAMPLESDIR%%/create_list_templates/confidential
 @dirrm %%EXAMPLESDIR%%/create_list_templates
 @dirrm %%EXAMPLESDIR%%
 @dirrm libexec/sympa/Sympa/Template

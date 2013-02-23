@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.12.11
-PORTREVISION=	2
+PORTVERSION=	3.13.2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -172,6 +171,7 @@ post-patch:
 		${REINPLACE_CMD} -e "s,^#!/usr/bin/python,#!/usr/bin/env python," \
 			base/magic.py \
 			config_usb_printer.py \
+			doctor.py \
 			logcapture.py \
 			makeuri.py \
 			setup.py \

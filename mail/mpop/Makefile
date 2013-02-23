@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mpop
-# Date created:         2009-10-24
-# Whom:                 Sylvio Cesar <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpop
 PORTVERSION=	1.0.27
@@ -16,11 +12,9 @@ COMMENT=	MPOP is a small and fast POP3 client
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 
-OPTIONS_DEFINE=	GNUTLS GSASL
+OPTIONS_DEFINE=	GNUTLS GSASL NLS
 GNUTLS_DESC=	GNUTLS Enable gnuTLS support
 GSASL_DESC=	GSASL GNU SASL authentication support
-
-OPTIONS_DEFINE=	NLS
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Thread
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Suspend and resume operations for threads
 
 PERL_CONFIGURE=	yes

@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
 MEMDEBUG_DESC=	Enable memory debugger statistic
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" aq_distrib_name="FreeBSD"
+CONFIGURE_ENV+=	aq_distrib_name="FreeBSD"
 CONFIGURE_ARGS+=--enable-release="yes" \
 		--with-pcsc-includes=${LOCALBASE}/include \
 		--with-pcsc-libs=${LOCALBASE}/lib

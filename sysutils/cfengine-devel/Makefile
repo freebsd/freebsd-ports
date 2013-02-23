@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.0b2
-PORTREVISION=	2
+PORTVERSION=	3.5.0a1
+PORTREVISION=
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -15,8 +15,6 @@ COMMENT=	A systems administration tool for networks
 
 LATEST_LINK=	cfengine-devel
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
-IGNORE=		Development version not branched from cfengine34
 
 CONFLICTS=	cfengine-[23]*
 

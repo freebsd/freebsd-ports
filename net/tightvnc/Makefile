@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	tightvnc
-# Date created:			Nov 24, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
@@ -27,6 +22,7 @@ CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 
+USE_GCC=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_IMAKE=	yes

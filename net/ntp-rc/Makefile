@@ -57,6 +57,10 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=        --enable-ipv6
 .endif
 
+.if !defined(WITH_NTP_SIGND)
+CONFIGURE_ARGS+=        --enable-ntp-signd
+.endif
+
 .for D in ${NTP_DRIVERS}
 .if defined(WITH_${D})
 CONFIGURE_ARGS+=	--enable-${D}

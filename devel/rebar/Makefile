@@ -1,6 +1,4 @@
-# New ports collection makefile for:	rebar
-# Date created:		2012-06-09
-# Whom:			koobs <koobs.freebsd@gmail.com>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://github.com/basho/${PORTNAME}/tarball/${GITVERSION}/
 DISTNAME=	basho-${PORTNAME}-${GITVERSION}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	A build-tool for Erlang that follows OTP principles
 
 LICENSE=	AL2

@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gprof --disable-Werror
 WANT_GNOME=	yes
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 DISTCCD_PIDFILE=/var/run/distccd.pid

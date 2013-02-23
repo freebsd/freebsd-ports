@@ -14,6 +14,8 @@ COMMENT=	A set of small angular fonts
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+BROKEN=		checksum mismatch
+
 FONTS=	moosefont terminalpants
 FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir

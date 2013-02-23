@@ -12,7 +12,6 @@
     SUBDIR += atari800
     SUBDIR += bfe
     SUBDIR += bochs
-    SUBDIR += bsnes
     SUBDIR += bsvc
     SUBDIR += catapult
     SUBDIR += cinc
@@ -57,6 +56,7 @@
     SUBDIR += hercules
     SUBDIR += hfs
     SUBDIR += hfsutils
+    SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += ia64sim
     SUBDIR += ines

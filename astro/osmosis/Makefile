@@ -1,12 +1,8 @@
-# New ports collection makefile for:	osmosis
-# Date created:		2009/09/21
-# Whom:			Gleb Smirnoff <glebius@FreeBSD.org>
-#
+# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	osmosis
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	astro java
 MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,6 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

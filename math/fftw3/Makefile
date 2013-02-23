@@ -1,13 +1,10 @@
-# New ports collection makefile for: fftw
-# Date created:		Dec 28 1998
-# Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
-#
+# Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 # $FreeBSD$
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
 PORTVERSION=	3.3.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -22,9 +19,10 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS =	--enable-shared --enable-threads --disable-fortran
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -50,12 +48,9 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
-.if !empty(CC:T:M*clang*)
-IGNORE =	: clang does not support OpenMP. Disable the OPENMP option or\
-use another compiler
-.endif
 CONFIGURE_ARGS+=	--enable-openmp
 PLIST_SUB+=	OPENMP=""
+USE_GCC=	any
 .else
 CONFIGURE_ARGS+=	--disable-openmp
 PLIST_SUB+=	OPENMP="@comment "

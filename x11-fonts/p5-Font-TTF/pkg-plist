@@ -8,19 +8,24 @@
 %%SITE_PERL%%/Font/TTF/Cmap.pm
 %%SITE_PERL%%/Font/TTF/Coverage.pm
 %%SITE_PERL%%/Font/TTF/Cvt_.pm
-%%SITE_PERL%%/Font/TTF/Delta.pm
 %%SITE_PERL%%/Font/TTF/DSIG.pm
+%%SITE_PERL%%/Font/TTF/Delta.pm
 %%SITE_PERL%%/Font/TTF/Dumper.pm
 %%SITE_PERL%%/Font/TTF/EBDT.pm
 %%SITE_PERL%%/Font/TTF/EBLC.pm
 %%SITE_PERL%%/Font/TTF/Fdsc.pm
 %%SITE_PERL%%/Font/TTF/Feat.pm
+%%SITE_PERL%%/Font/TTF/Features/Cvar.pm
+%%SITE_PERL%%/Font/TTF/Features/Size.pm
+%%SITE_PERL%%/Font/TTF/Features/Sset.pm
 %%SITE_PERL%%/Font/TTF/Fmtx.pm
 %%SITE_PERL%%/Font/TTF/Font.pm
 %%SITE_PERL%%/Font/TTF/Fpgm.pm
 %%SITE_PERL%%/Font/TTF/GDEF.pm
 %%SITE_PERL%%/Font/TTF/GPOS.pm
 %%SITE_PERL%%/Font/TTF/GSUB.pm
+%%SITE_PERL%%/Font/TTF/Glat.pm
+%%SITE_PERL%%/Font/TTF/Gloc.pm
 %%SITE_PERL%%/Font/TTF/Glyf.pm
 %%SITE_PERL%%/Font/TTF/Glyph.pm
 %%SITE_PERL%%/Font/TTF/GrFeat.pm
@@ -57,6 +62,7 @@
 %%SITE_PERL%%/Font/TTF/Prep.pm
 %%SITE_PERL%%/Font/TTF/Prop.pm
 %%SITE_PERL%%/Font/TTF/Segarr.pm
+%%SITE_PERL%%/Font/TTF/Silf.pm
 %%SITE_PERL%%/Font/TTF/Sill.pm
 %%SITE_PERL%%/Font/TTF/Table.pm
 %%SITE_PERL%%/Font/TTF/Ttc.pm
@@ -66,11 +72,16 @@
 %%SITE_PERL%%/Font/TTF/Vhea.pm
 %%SITE_PERL%%/Font/TTF/Vmtx.pm
 %%SITE_PERL%%/Font/TTF/Win32.pm
+%%SITE_PERL%%/Font/TTF/Woff.pm
+%%SITE_PERL%%/Font/TTF/Woff/MetaData.pm
+%%SITE_PERL%%/Font/TTF/Woff/PrivateData.pm
 %%SITE_PERL%%/Font/TTF/XMLparse.pm
 %%SITE_PERL%%/ttfmod.pl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
-@dirrm %%SITE_PERL%%/Font/TTF/Mort
-@dirrm %%SITE_PERL%%/Font/TTF/Kern
+@dirrmtry %%SITE_PERL%%/Font/TTF/Woff
+@dirrmtry %%SITE_PERL%%/Font/TTF/Mort
+@dirrmtry %%SITE_PERL%%/Font/TTF/Kern
+@dirrmtry %%SITE_PERL%%/Font/TTF/Features
 @dirrmtry %%SITE_PERL%%/Font/TTF
 @dirrmtry %%SITE_PERL%%/Font
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font

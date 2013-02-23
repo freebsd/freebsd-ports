@@ -18,7 +18,7 @@ rcvar=bbstored_enable
 load_rc_config $name
 
 : ${bbstored_enable:="NO"}
-: ${bbstored_flags:="%%PREFIX%%/etc/box/bbstored.conf"}
+: ${bbstored_flags:="%%PREFIX%%/etc/boxbackup/bbstored.conf"}
 
 pidfile=${bbstored_pidfile:-"/var/run/bbstored.pid"}
 

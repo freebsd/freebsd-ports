@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blt
-# Date created:		22 September 1998
-# Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
-#
+# Created by: Kenjiro Cho <kjc@csl.sony.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	blt
 PORTVERSION=	2.4z
@@ -35,6 +31,7 @@ CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 MAKE_JOBS_SAFE=	yes
 
 USE_TK=		83+
+INVALID_TK_VER=	86
 USE_XORG=	x11
 
 post-install:

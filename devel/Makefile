@@ -108,6 +108,7 @@
     SUBDIR += avro-c
     SUBDIR += avro-cpp
     SUBDIR += awscli
+    SUBDIR += bam
     SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
@@ -201,6 +202,7 @@
     SUBDIR += checkheaders
     SUBDIR += chrpath
     SUBDIR += cil
+    SUBDIR += cityhash
     SUBDIR += cl-alexandria
     SUBDIR += cl-alexandria-clisp
     SUBDIR += cl-alexandria-sbcl
@@ -229,6 +231,7 @@
     SUBDIR += clanlib
     SUBDIR += clanlib1
     SUBDIR += clanlib22
+    SUBDIR += cld
     SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clint
@@ -927,6 +930,7 @@
     SUBDIR += libburn
     SUBDIR += libccid
     SUBDIR += libcfg
+    SUBDIR += libcfu
     SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libcidr
@@ -963,6 +967,7 @@
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
     SUBDIR += libevt
+    SUBDIR += libevtx
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
@@ -1007,6 +1012,7 @@
     SUBDIR += libk8055
     SUBDIR += libkgapi
     SUBDIR += libkolab
+    SUBDIR += liblangtag
     SUBDIR += liblas
     SUBDIR += liblcfg
     SUBDIR += libleaftag
@@ -1039,6 +1045,7 @@
     SUBDIR += libopensync
     SUBDIR += libopensync022
     SUBDIR += libopkele
+    SUBDIR += liborcus
     SUBDIR += libowfat
     SUBDIR += libpafe
     SUBDIR += libpafe-ruby
@@ -1051,6 +1058,7 @@
     SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libplist
+    SUBDIR += libpo6
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
     SUBDIR += librcd
@@ -1105,6 +1113,7 @@
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
+    SUBDIR += libxs
     SUBDIR += libytnef
     SUBDIR += libzrtp
     SUBDIR += libzrtpcpp
@@ -1280,6 +1289,7 @@
     SUBDIR += ocaml-cfg
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-cppo
+    SUBDIR += ocaml-deriving-ocsigen
     SUBDIR += ocaml-equeue
     SUBDIR += ocaml-event
     SUBDIR += ocaml-extlib
@@ -1404,6 +1414,7 @@
     SUBDIR += p5-App-SVN-Bisect
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
+    SUBDIR += p5-App-cpanoutdated
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-Array-Group
@@ -1822,6 +1833,7 @@
     SUBDIR += p5-Devel-Events-Objects
     SUBDIR += p5-Devel-Gladiator
     SUBDIR += p5-Devel-GlobalDestruction
+    SUBDIR += p5-Devel-Hide
     SUBDIR += p5-Devel-KYTProf
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Object
@@ -2460,6 +2472,7 @@
     SUBDIR += p5-Path-Class-File-Lockable
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
+    SUBDIR += p5-Path-Iterator-Rule
     SUBDIR += p5-Path-Resource
     SUBDIR += p5-Path-Tiny
     SUBDIR += p5-PathTools
@@ -2714,6 +2727,7 @@
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
     SUBDIR += p5-Test-File-ShareDir
+    SUBDIR += p5-Test-Filename
     SUBDIR += p5-Test-Fixme
     SUBDIR += p5-Test-Fixture-DBIC-Schema
     SUBDIR += p5-Test-Group
@@ -3097,6 +3111,7 @@
     SUBDIR += pear-PHP_Timer
     SUBDIR += pear-PHP_TokenStream
     SUBDIR += pear-PHP_UML
+    SUBDIR += pear-PPW
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Pirum
@@ -3178,6 +3193,7 @@
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
+    SUBDIR += pecl-zookeeper
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
@@ -3380,6 +3396,7 @@
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
+    SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-cclib
@@ -3390,6 +3407,7 @@
     SUBDIR += py-ciphon
     SUBDIR += py-circuits
     SUBDIR += py-cjson
+    SUBDIR += py-cld
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
     SUBDIR += py-cog
@@ -3600,6 +3618,8 @@
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-resourcepackage
     SUBDIR += py-rlcompleter2
+    SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-selenium2library
     SUBDIR += py-rope
     SUBDIR += py-roxlib
     SUBDIR += py-rtree
@@ -4240,6 +4260,7 @@
     SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
+    SUBDIR += tclap
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts

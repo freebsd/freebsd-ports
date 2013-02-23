@@ -1,0 +1,6 @@
+bin/higan
+lib/libananke.so.1
+lib/libananke.so
+share/applications/higan.desktop
+share/pixmaps/higan.png
+@dirrmtry share/applications

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.30.0
+PORTVERSION=	2.30.1
+PORTREVERSION=	100
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -14,7 +15,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		expat:${PORTSDIR}/textproc/expat2 \
-		gd:${PORTSDIR}/graphics/gd
+		gd:${PORTSDIR}/${GD_PORT}
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -28,10 +29,10 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 cluster.1 diffimg.1 dijkstra.1 \
-		dot.1 dotty.1 gc.1 graphml2gv.1 gml2gv.1 gv2gxl.1 gvmap.1 \
-		gvmap.sh.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 lneato.1 \
-		nop.1 osage.1 patchwork.1 prune.1 sccmap.1 smyrna.1 tred.1 \
-		unflatten.1 vimdot.1
+		dot.1 gc.1 graphml2gv.1 gml2gv.1 gv2gxl.1 gvmap.1 gvmap.sh.1 \
+		gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 nop.1 osage.1 \
+		patchwork.1 prune.1 sccmap.1 smyrna.1 tred.1 unflatten.1 \
+		vimdot.1
 MAN3=		cdt.3 expr.3 cgraph.3 graph.3 gvc.3 pack.3 pathplan.3 xdot.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
@@ -63,7 +64,7 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK
+OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK NVTHREADS
 OPTIONS_DEFAULT?=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
 NO_OPTIONS_SORT=yes
 DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
@@ -85,6 +86,7 @@ LUA_DESC=	Lua bindings (swig)
 TCL_DESC=	TCL bindings (swig)
 GUILE_DESC=	Guile bindings (swig)
 TK_DESC=	TK toolkit support
+NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
 .include <bsd.port.options.mk>
 
@@ -93,6 +95,9 @@ USE_QT4=		qmake_build moc_build rcc_build uic_build linguist_build corelib gui
 .endif
 
 .include <bsd.port.pre.mk>
+
+# allow the use localized gd ports in Makefile.local or slave ports.
+GD_PORT?=	graphics/gd
 
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
@@ -136,7 +141,7 @@ CONFIGURE_ARGS+=	--without-libiconv-prefix
 
 .if ${PORT_OPTIONS:MXPM} || exists(${LOCALBASE}/lib/libXpm.so)
 USE_XORG+=		xaw xpm xmu xt sm ice xext x11 xau xdmcp xp
-MAN1+=			lefty.1
+MAN1+=			dotty.1 lefty.1 lneato.1
 PLIST_SUB+=		WITH_XPM=""
 .else
 PLIST_SUB+=		WITH_XPM="@comment "
@@ -296,10 +301,10 @@ PLIST_SUB+=		WITH_DEVIL="@comment "
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
     ${PORT_OPTIONS:MRUBY} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MTCL} || \
     ${PORT_OPTIONS:MGUILE}
-BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
-RUN_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
+RUN_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
 CONFIGURE_ARGS+=	--enable-swig
-CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig1.3"
+CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig2.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
@@ -323,9 +328,6 @@ USE_PHP_BUILD=	yes
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
 MAN3+=			gv.3php
-.if ${PHP_VER} == 5
-BROKEN=			swig is to old to build for php 5.4
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-php
 PLIST_SUB+=		WITH_PHP="@comment "
@@ -398,6 +400,11 @@ CONFIGURE_ARGS+=	--with-ghostscript=no
 PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNVTHREADS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
@@ -423,11 +430,12 @@ post-patch:
 		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|vendorarch|installsitearch|g" \
-		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
+		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
+		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
 .endif
@@ -437,7 +445,7 @@ post-install: install-ldconfig-file
 		${MAKE} ${INSTALL_TARGET}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
@@ -446,7 +454,7 @@ post-install: install-ldconfig-file
 		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} "Installing demo data..."
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} \

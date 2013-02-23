@@ -356,6 +356,8 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
+    SUBDIR += icc-profiles-basiccolor
+    SUBDIR += icc-profiles-openicc
     SUBDIR += icoconvert
     SUBDIR += icon-slicer
     SUBDIR += icontact
@@ -952,7 +954,6 @@
     SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += sodipodi
-    SUBDIR += solang
     SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += squish

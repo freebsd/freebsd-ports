@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE-GNOME/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME system tray app for monitoring connected WinCE based devices
 
 LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	basket
-# Date created:			Mon Sep  8 19:32:42 CEST 2003
-# Whom:				Markus Brueffer <brueffer@phoenix-systems.de>
-#
+# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
 # $FreeBSD$
 
 PORTNAME=	basket
@@ -10,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
-MAINTAINER=	shanjobe@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop organization tool
 
 USE_KDELIBS_VER=3
@@ -18,12 +15,14 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-OPTIONS=	KONTACT	"Kontact plugin" on \
-		GPGME "GPG support (experimental)" off
+OPTIONS_DEFINE=	KONTACT GPGME
+OPTIONS_DEFAULT=	KONTACT GPGME
+KONTACT_DESC=	Kontact plugin
+GPGME_DESC=	GPG support (experimental)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KONTACT)
+.if ${PORT_OPTIONS:MKONTACT}
 LIB_DEPENDS+=	kontact.1:${PORTSDIR}/deskutils/kdepim3
 PLIST_SUB=	KONTACT=""
 .else
@@ -31,7 +30,7 @@ PLIST_SUB=	KONTACT="@comment "
 CONFIGURE_ENV+=	DO_NOT_COMPILE="kontact_plugin"
 .endif
 
-.if defined(WITH_GPGME)
+.if ${PORT_OPTIONS:MGPGME}
 RUN_DEPENDS+=	pinentry-qt:${PORTSDIR}/security/pinentry-qt
 LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
@@ -42,4 +41,4 @@ CONFIGURE_ARGS+=	--with-encryption=no
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

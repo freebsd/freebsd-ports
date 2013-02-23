@@ -4,6 +4,8 @@
 PORTNAME=	boost-jam
 COMMENT=	Build tool from the boost.org
 
+PORTREVISION=	1
+
 PLIST_FILES=	bin/bjam
 
 .include "${.CURDIR}/../boost-all/common.mk"

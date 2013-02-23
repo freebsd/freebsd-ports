@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Async-FastCGI
-# Date created:		2012-03-31
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Async-FastCGI
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,10 +18,14 @@ BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Net-FastCGI>=0:${PORTSDIR}/www/p5-Net-FastCGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString \
-		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount
+		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount \
+		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Net::Async::FastCGI.3 Net::Async::FastCGI::Request.3
+MAN3=	Net::Async::FastCGI.3 \
+	Net::Async::FastCGI::PSGI.3 \
+	Net::Async::FastCGI::Request.3 \
+	Plack::Handler::Net::Async::FastCGI.3
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Net/Riak/MapReduce.pm
 %%SITE_PERL%%/Net/Riak/MapReducePhase.pm
 %%SITE_PERL%%/Net/Riak/Object.pm
+%%SITE_PERL%%/Net/Riak/Search.pm
 %%SITE_PERL%%/Net/Riak/Types.pm
 %%SITE_PERL%%/Net/Riak/Role/Base.pm
 %%SITE_PERL%%/Net/Riak/Role/Hosts.pm
@@ -24,6 +25,7 @@
 %%SITE_PERL%%/Net/Riak/Role/REST/MapReduce.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/Bucket.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/Object.pm
+%%SITE_PERL%%/Net/Riak/Role/REST/Search.pm
 %%SITE_PERL%%/Net/Riak/Transport/PBC.pm
 %%SITE_PERL%%/Net/Riak/Transport/REST.pm
 %%SITE_PERL%%/Net/Riak/Transport/PBC/Transport.pm

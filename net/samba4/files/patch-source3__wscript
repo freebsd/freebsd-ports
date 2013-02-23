@@ -1,0 +1,68 @@
+--- ./source3/wscript.orig	2013-02-05 12:25:26.000000000 +0000
++++ ./source3/wscript	2013-02-15 17:54:40.099886239 +0000
+@@ -475,7 +475,7 @@
+             conf.CHECK_CODE('struct aiocb a; return aio_return(&a);', 'HAVE_AIO_RETURN', msg='Checking for aio_return', headers='aio.h', lib='aio rt')
+             conf.CHECK_CODE('struct aiocb a; return aio_error(&a);', 'HAVE_AIO_ERROR', msg='Checking for aio_error', headers='aio.h', lib='aio rt')
+             conf.CHECK_CODE('struct aiocb a; return aio_cancel(1, &a);', 'HAVE_AIO_CANCEL', msg='Checking for aio_cancel', headers='aio.h', lib='aio rt')
+-            conf.CHECK_CODE('struct aiocb a; struct timespec t; return aio_suspend(&a, 1, &t);', 'HAVE_AIO_SUSPEND', msg='Checking for aio_suspend', headers='aio.h', lib='aio rt')
++            conf.CHECK_CODE('const struct aiocb * const a[1]; struct timespec t; return aio_suspend(a, 1, &t);', 'HAVE_AIO_SUSPEND', msg='Checking for aio_suspend', headers='aio.h', lib='aio rt')
+         if not conf.CONFIG_SET('HAVE_AIO'):
+             conf.DEFINE('HAVE_NO_AIO', '1')
+     else:
+@@ -1644,26 +1644,8 @@
+ 
+     if PTHREAD_LDFLAGS == 'error':
+         if conf.CHECK_FUNCS_IN('pthread_attr_init', 'pthread'):
+-            PTHREAD_CFLAGS='-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS'
+-            PTHREAD_LDFLAGS='-lpthread'
+-    if PTHREAD_LDFLAGS == 'error':
+-        if conf.CHECK_FUNCS_IN('pthread_attr_init', 'pthreads'):
+-            PTHREAD_CFLAGS='-D_THREAD_SAFE'
+-            PTHREAD_LDFLAGS='-lpthreads'
+-    if PTHREAD_LDFLAGS == 'error':
+-        if conf.CHECK_FUNCS_IN('pthread_attr_init', 'c_r'):
+-            PTHREAD_CFLAGS='-D_THREAD_SAFE -pthread'
++            PTHREAD_CFLAGS='-pthread'
+             PTHREAD_LDFLAGS='-pthread'
+-    if PTHREAD_LDFLAGS == 'error':
+-        if conf.CHECK_FUNCS('pthread_attr_init'):
+-            PTHREAD_CFLAGS='-D_REENTRANT'
+-            PTHREAD_LDFLAGS='-lpthread'
+-    # especially for HP-UX, where the CHECK_FUNC macro fails to test for
+-    # pthread_attr_init. On pthread_mutex_lock it works there...
+-    if PTHREAD_LDFLAGS == 'error':
+-        if conf.CHECK_FUNCS_IN('pthread_mutex_lock', 'pthread'):
+-            PTHREAD_CFLAGS='-D_REENTRANT'
+-            PTHREAD_LDFLAGS='-lpthread'
+ 
+     if PTHREAD_CFLAGS != 'error' and PTHREAD_LDFLAGS != 'error':
+         conf.ADD_CFLAGS(PTHREAD_CFLAGS)
+@@ -1693,8 +1675,8 @@
+                                       auth_script vfs_readahead vfs_xattr_tdb vfs_posix_eadb
+                                       vfs_streams_xattr vfs_streams_depot vfs_acl_xattr vfs_acl_tdb
+                                       vfs_smb_traffic_analyzer vfs_preopen vfs_catia vfs_scannedonly
+-				      vfs_media_harmony
+-				      vfs_commit
++                                      vfs_media_harmony
++                                      vfs_commit
+                                       vfs_crossrename vfs_linux_xfs_sgid
+                                       vfs_time_audit idmap_autorid idmap_tdb2
+                                       idmap_rid idmap_hash'''))
+@@ -1707,7 +1689,7 @@
+ 
+     if Options.options.enable_selftest or Options.options.developer:
+         default_shared_modules.extend(TO_LIST('vfs_fake_acls'))
+-        
++
+ 
+     if conf.CONFIG_SET('AD_DC_BUILD_IS_ENABLED'):
+         default_static_modules.extend(TO_LIST('pdb_samba_dsdb auth_samba4 vfs_dfs_samba4'))
+@@ -1740,7 +1722,7 @@
+         default_static_modules.extend(TO_LIST('charset_macosxfs'))
+ 
+     if conf.CONFIG_SET('HAVE_GPFS'):
+-	default_shared_modules.extend(TO_LIST('vfs_gpfs'))
++        default_shared_modules.extend(TO_LIST('vfs_gpfs'))
+ 
+     explicit_shared_modules = TO_LIST(Options.options.shared_modules, delimiter=',')
+     explicit_static_modules = TO_LIST(Options.options.static_modules, delimiter=',')

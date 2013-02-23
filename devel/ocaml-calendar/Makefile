@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	2.03.2
 CATEGORIES=	devel
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/427/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/915/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	jaapb@kerguelen.org

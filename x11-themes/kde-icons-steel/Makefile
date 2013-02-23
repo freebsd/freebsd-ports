@@ -13,6 +13,8 @@ DISTNAME=	steelicons-default-${PORTVERSION}
 
 COMMENT=	KDE iconset comprised of Steel/Silver icons with shadows
 
+BROKEN=	does not fetch
+
 WRKSRC=		"${WRKDIR}/Steel"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

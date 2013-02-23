@@ -65,5 +65,4 @@ lib/libImath.la
 lib/libImath.so
 lib/libImath.so.7
 libdata/pkgconfig/IlmBase.pc
-@dirrmtry share/applications
 @dirrmtry include/OpenEXR

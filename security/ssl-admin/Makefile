@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/ \
-				ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
+		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	OpenSSL certificate manager with OpenVPN support
@@ -18,6 +18,9 @@ USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
 MAN5=		ssl-admin.conf.5
 SUB_FILES=	pkg-message
+MANCOMPRESSED=	no
+MAKE_ENV=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/bin \
+		MANDIR=${MANPREFIX}/man
 
 post-install:
 	${CAT} ${PKGMESSAGE}

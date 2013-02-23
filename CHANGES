@@ -21,7 +21,7 @@ AUTHOR: gahr@FreeBSD.org
 AUTHOR: flo@FreeBSD.org
 
   * Add a USE_FUSE macro to handle fuse dependencies. It makes
-    sure sysutils/fusefs-libs gets installed and depending on 
+    sure sysutils/fusefs-libs gets installed and depending on
     fuse being in base or not it installs sysutils/fusefs-kmod.
 
 20121210:

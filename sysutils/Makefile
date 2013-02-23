@@ -25,6 +25,7 @@
     SUBDIR += amrstat
     SUBDIR += anacron
     SUBDIR += and
+    SUBDIR += ansible
     SUBDIR += anteater
     SUBDIR += apachetop
     SUBDIR += apcpwr
@@ -119,6 +120,7 @@
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
+    SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
@@ -162,6 +164,7 @@
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
     SUBDIR += ddrescue
+    SUBDIR += debhelper
     SUBDIR += debootstrap
     SUBDIR += decomment
     SUBDIR += deltup
@@ -240,7 +243,6 @@
     SUBDIR += fileschanged
     SUBDIR += filetype
     SUBDIR += finfo
-    SUBDIR += fio
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
@@ -611,6 +613,7 @@
     SUBDIR += p5-Plugtools-Plugins-HomeOU
     SUBDIR += p5-Probe-Perl
     SUBDIR += p5-Proc-PidUtil
+    SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
     SUBDIR += p5-Samba-SIDhelper
     SUBDIR += p5-Schedule-At
@@ -702,6 +705,7 @@
     SUBDIR += powerman
     SUBDIR += pp
     SUBDIR += pprotectd
+    SUBDIR += prelink
     SUBDIR += prips
     SUBDIR += procenv
     SUBDIR += procmap
@@ -1073,6 +1077,7 @@
     SUBDIR += zfstools
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
+    SUBDIR += zogftw
     SUBDIR += zxfer
 
 .include <bsd.port.subdir.mk>

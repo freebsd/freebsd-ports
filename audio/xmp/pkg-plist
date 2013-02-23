@@ -1,10 +1,8 @@
-bin/xmp
-@unexec if cmp -s %D/%%ETCDIR%%/xmp.conf.sample %D/%%ETCDIR%%/xmp.conf; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/xmp.conf %D/%%ETCDIR%%/xmp.conf.sample; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
 %%ETCDIR%%/xmp.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/xmp.conf ]; then cp -p %D/%F %B/xmp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
+@exec [ -f %B/xmp.conf ] || cp %B/%f %B/xmp.conf
+bin/xmp
+@unexec if cmp -s %D/%%ETCDIR%%/modules.conf %D/%%ETCDIR%%/modules.conf.sample; then rm -f %D/%%ETCDIR%%/modules.conf; fi
 %%ETCDIR%%/modules.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
-%%BMP%%lib/bmp/Input/xmp-bmp.so
-%%XMMS%%lib/xmms/Input/xmp-xmms.so
+@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
 @dirrmtry %%ETCDIR%%

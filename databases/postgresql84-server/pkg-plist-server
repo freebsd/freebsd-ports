@@ -69,6 +69,7 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_ctl-8.4.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog-8.4.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/plpgsql-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/postgres-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/initdb-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_controldata-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_ctl-8.4.mo

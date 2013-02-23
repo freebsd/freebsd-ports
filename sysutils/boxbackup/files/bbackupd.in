@@ -18,7 +18,7 @@ rcvar=bbackupd_enable
 load_rc_config $name
 
 : ${bbackupd_enable:="NO"}
-: ${bbackupd_flags:="%%PREFIX%%/etc/box/bbackupd.conf"}
+: ${bbackupd_flags:="%%PREFIX%%/etc/boxbackup/bbackupd.conf"}
 
 pidfile=${bbackupd_pidfile:-"/var/run/bbackupd.pid"}
 

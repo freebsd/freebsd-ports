@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack intlhack ltverhack
 
 .include <bsd.port.mk>

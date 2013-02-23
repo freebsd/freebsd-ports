@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	cl-meta
-# Date created:				16 May 2003
-# Whom:					Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
 PORTNAME=	meta

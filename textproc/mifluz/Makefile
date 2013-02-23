@@ -6,7 +6,7 @@ PORTVERSION=	0.25.0
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	C++ library to build and query a full text inverted index
 
 LICENSE=	GPLv3

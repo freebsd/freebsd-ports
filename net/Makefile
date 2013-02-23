@@ -14,6 +14,7 @@
     SUBDIR += abills
     SUBDIR += activemq
     SUBDIR += acx100
+    SUBDIR += afpfs-ng
     SUBDIR += aget
     SUBDIR += aoe
     SUBDIR += apinger
@@ -281,7 +282,9 @@
     SUBDIR += kdenetwork4
     SUBDIR += kiax
     SUBDIR += kio-upnp-ms
+    SUBDIR += kippo
     SUBDIR += kissd
+    SUBDIR += knc
     SUBDIR += knemo
     SUBDIR += knemo-kde4
     SUBDIR += kojoney
@@ -320,7 +323,6 @@
     SUBDIR += libmxp
     SUBDIR += libnatpmp
     SUBDIR += libnet
-    SUBDIR += libnet-devel
     SUBDIR += libnet10
     SUBDIR += libnetdude
     SUBDIR += libnids
@@ -1046,6 +1048,7 @@
     SUBDIR += samba-smbclient
     SUBDIR += samba34
     SUBDIR += samba36
+    SUBDIR += samba4
     SUBDIR += samba4-devel
     SUBDIR += samba4wins
     SUBDIR += samplicator
@@ -1099,7 +1102,6 @@
     SUBDIR += sofia-sip
     SUBDIR += spideroak
     SUBDIR += splatd
-    SUBDIR += spnetkit
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j

@@ -1,6 +1,6 @@
---- configure.orig	2010-09-09 12:18:43.000000000 +0200
-+++ configure	2010-09-09 12:20:56.000000000 +0200
-@@ -575,6 +575,9 @@
+--- configure.orig	2011-06-06 01:24:53.000000000 +0200
++++ configure	2012-12-12 11:23:28.000000000 +0100
+@@ -583,6 +583,9 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
  #endif
@@ -10,7 +10,7 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
-@@ -5187,7 +5190,7 @@
+@@ -5194,7 +5197,7 @@
  fi
  
  GLIB_RUNTIME_LIBDIR="$with_runtime_libdir"
@@ -19,7 +19,7 @@
  
  
   if test "x$with_runtime_libdir" != "x"; then
-@@ -22212,7 +22215,7 @@
+@@ -23077,7 +23080,7 @@
  fi
  done
  
@@ -28,16 +28,7 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -24815,6 +24818,8 @@
-          ;;
-     esac
-   fi
-+  G_THREAD_CFLAGS="${PTHREAD_CFLAGS}"
-+  G_THREAD_LIBS="${PTHREAD_LIBS}"
- 
-   if test x"$G_THREAD_CFLAGS" = x; then
- 
-@@ -27415,7 +27420,7 @@
+@@ -28271,7 +28274,7 @@
  fi
  
  

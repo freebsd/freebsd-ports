@@ -214,6 +214,7 @@
     SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pdf-renderer
+    SUBDIR += pdf4tcl
     SUBDIR += pdfbox
     SUBDIR += pdfcolorsplit
     SUBDIR += pdfcube
@@ -259,6 +260,7 @@
     SUBDIR += py-reportlab2
     SUBDIR += py-rtf
     SUBDIR += py-trml2pdf
+    SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += rlpr
     SUBDIR += rprint

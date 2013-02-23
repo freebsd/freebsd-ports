@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.12
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -25,8 +25,9 @@ MAN1=		README.1 adduser.1 bin.1 bugs.1 build.1 bundle.1 cache.1 \
 		install.1 json.1 link.1 ls.1 npm.1 outdated.1 owner.1 pack.1 \
 		prefix.1 prune.1 publish.1 rebuild.1 registry.1 removing-npm.1 \
 		restart.1 rm.1 root.1 run-script.1 scripts.1 search.1 semver.1 \
-		shrinkwrap.1 star.1 start.1 stop.1 submodule.1 tag.1 test.1 \
-		uninstall.1 unpublish.1 update.1 version.1 view.1 whoami.1
+		shrinkwrap.1 star.1 stars.1 start.1 stop.1 submodule.1 tag.1 \
+		test.1 uninstall.1 unpublish.1 update.1 version.1 view.1 \
+		whoami.1
 MAN3=		bin.3 bugs.3 commands.3 config.3 deprecate.3 docs.3 edit.3 \
 		explore.3 help-search.3 init.3 install.3 link.3 load.3 ls.3 \
 		npm.3 outdated.3 owner.3 pack.3 prefix.3 prune.3 publish.3 \

@@ -1,0 +1,11 @@
+lib/libcfu.a
+bin/libcfu-config
+include/cfulist.h
+include/cfuhash.h
+include/cfutime.h
+include/cfuconf.h
+include/cfuthread_queue.h
+include/cfuopt.h
+include/cfustring.h
+include/cfutypes.h
+include/cfu.h

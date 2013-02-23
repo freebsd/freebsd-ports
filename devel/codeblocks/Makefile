@@ -1,35 +1,40 @@
 # Created by: Matthias Sund <m.sund@arcor.de>
 # $FreeBSD$
 
-PORTNAME=		codeblocks
-PORTVERSION=		10.05
-PORTREVISION=	1
-CATEGORIES=		devel
-MASTER_SITES=		SF/codeblocks.berlios
-DISTNAME=		${PORTNAME}-${PORTVERSION}-1debian-src
+PORTNAME=	codeblocks
+PORTVERSION=	12.11
+CATEGORIES=	devel
+MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-
-LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
+		hunspell:${PORTSDIR}/textproc/hunspell \
+		rsync:${PORTSDIR}/net/librsync
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+
 USE_WX=		2.8
 WANT_UNICODE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnomehack desktopfileutils
+USE_PKGCONFIGE=	build
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}release8629
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all
-MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1 codesnippets.1
 
-post-extract:
-	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} src/${PORTNAME}_${PORTVERSION}-1.tar.gz ${EXTRACT_AFTER_ARGS})
+MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1 codesnippets.1
 
 .include <bsd.port.mk>

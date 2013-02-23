@@ -1,0 +1,26 @@
+--- Makefile.orig	2012-08-26 22:22:58.000000000 +0800
++++ Makefile	2012-08-26 22:23:51.000000000 +0800
+@@ -78,15 +78,14 @@
+ 	done;
+ 
+ install:
+-	install -d $(DESTDIR)/usr/bin \
+-		$(DESTDIR)/usr/share/debhelper/autoscripts \
+-		$(DESTDIR)$(PERLLIBDIR)/Sequence \
+-		$(DESTDIR)$(PERLLIBDIR)/Buildsystem
+-	install dh $(COMMANDS) $(DESTDIR)/usr/bin
+-	install -m 0644 autoscripts/* $(DESTDIR)/usr/share/debhelper/autoscripts
+-	install -m 0644 Debian/Debhelper/*.pm $(DESTDIR)$(PERLLIBDIR)
+-	install -m 0644 Debian/Debhelper/Sequence/*.pm $(DESTDIR)$(PERLLIBDIR)/Sequence
+-	install -m 0644 Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)$(PERLLIBDIR)/Buildsystem
++	install -d \
++		$(PREFIX)/${SITE_PERL_REL}/Debian/Debhelper/Sequence \
++		$(PREFIX)/${SITE_PERL_REL}/Debian/Debhelper/Buildsystem
++	install dh $(COMMANDS) $(PREFIX)/bin
++	install -m 0644 autoscripts/* $(PREFIX)/bin
++	install -m 0644 Debian/Debhelper/*.pm $(PREFIX)/$(SITE_PERL_REL)/Debian/Debhelper
++	install -m 0644 Debian/Debhelper/Sequence/*.pm $(PREFIX)/$(SITE_PERL_REL)/Debian/Debhelper/Sequence
++	install -m 0644 Debian/Debhelper/Buildsystem/*.pm $(PREFIX)/$(SITE_PERL_REL)/Debian/Debhelper/Buildsystem
+ 
+ test: version
+ 	./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x } @ARGV' t/* t/buildsystems/*

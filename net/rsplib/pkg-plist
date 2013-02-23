@@ -4,6 +4,9 @@ bin/fractalpooluser
 bin/hsdump
 bin/pingpongclient
 bin/registrar
+bin/rspregistrar
+bin/rspserver
+bin/rspterminal
 bin/scriptingclient
 bin/scriptingcontrol
 bin/scriptingserviceexample
@@ -334,6 +337,7 @@ share/fgpconfig/input-248.fsf
 share/fgpconfig/input-249.fsf
 share/fgpconfig/input-250.fsf
 share/fractalpooluser/fractalpooluser_de_DE.qm
+share/fractalpooluser/fractalpooluser_nb_NO.qm
 @dirrm share/fractalpooluser
 @dirrm share/fgpconfig
 @dirrm include/rserpool

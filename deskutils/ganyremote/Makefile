@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote

@@ -1,0 +1,15 @@
+--- higan/target-ethos/Makefile.orig	2013-01-12 16:59:47.000000000 -0500
++++ higan/target-ethos/Makefile	2013-02-21 14:00:38.000000000 -0500
+@@ -16,9 +16,9 @@
+ 
+ # platform
+ ifeq ($(platform),x)
+-  ruby := video.glx video.xv video.sdl
+-  ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
+-  ruby += input.sdl input.x
++  ruby := %%VIDEO%%
++  ruby += %%AUDIO%%
++  ruby += %%INPUT%%
+ else ifeq ($(platform),osx)
+   ruby :=
+   ruby += audio.openal

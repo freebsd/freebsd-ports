@@ -21,6 +21,7 @@ ircservices:*:73:73::0:0:IRC services:/nonexistent:/nonexistent
 simscan:*:74:74::0:0:Simscan User:/nonexistent:/usr/sbin/nologin
 ifmail:*:75:66::0:0:Ifmail user:/nonexistent:/nonexistent
 hybserv:*:76:76::0:0:HybServ Daemon:/nonexistent:/usr/sbin/nologin
+auditdistd:*:78:77::0:0:Auditdistd unprivileged user:/var/empty:/usr/sbin/nologin
 virtuoso:*:79:79::0:0:Virtuoso Universal Server:/usr/local/virtuoso:/bin/sh
 www:*:80:80::0:0:World Wide Web Owner:/nonexistent:/usr/sbin/nologin
 alias:*:81:81::0:0:QMail user:/var/qmail/alias:/nonexistent
@@ -253,4 +254,5 @@ elasticsearch:*:965:965::0:0:elasticsearch user:/nonexistent:/usr/sbin/nologin
 ossec:*:966:966::0:0:OSSEC user:/usr/local/ossec-hids:/usr/sbin/nologin
 ossecm:*:967:966::0:0:OSSEC mail user:/usr/local/ossec-hids:/usr/sbin/nologin
 ossecr:*:968:966::0:0:OSSEC rem user:/usr/local/ossec-hids:/usr/sbin/nologin
+kippo:*:969:969::0:0:kippo user:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

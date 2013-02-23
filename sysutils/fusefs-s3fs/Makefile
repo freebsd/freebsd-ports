@@ -1,15 +1,9 @@
-# New ports collection makefile for:	fusefs-s3fs
-# Date created:		2009-04-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	s3fs
-DISTVERSION=	1.19
-PORTREVISION=	1
+PORTVERSION=	1.61
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	gslin@gslin.org
@@ -19,8 +13,13 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
 PLIST_FILES=	bin/s3fs
+USE_FUSE=	yes
+
+MAN1=		s3fs.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's/libcrypto >= 0.9//g' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

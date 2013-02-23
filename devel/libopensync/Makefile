@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PIM data synchronization framework
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

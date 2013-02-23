@@ -1,4 +1,4 @@
-# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	umemcache
@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Memcache client written in highly optimized C++ with Python bindings
 
 LICENSE=	BSD

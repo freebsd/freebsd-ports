@@ -28,9 +28,8 @@ CONFIGURE_ARGS=--localstatedir=/var \
 		--with-session-socket-dir=/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	dbus
 USE_GNOME_SUBR=	yes

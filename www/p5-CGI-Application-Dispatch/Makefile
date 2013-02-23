@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN/CGI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Dispatch requests to CGI::Application based objects
 
 LICENSE=	ART10 GPLv1

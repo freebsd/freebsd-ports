@@ -32,6 +32,17 @@ load_rc_config $name
 : ${mongod_dbpath="/var/db/mongodb"}
 : ${mongod_user="mongodb"}
 
+# Note: if you use a config file for mongodb, 
+# the parameters passed on cl override the config file
+# ie, dbpath, logappend, logpath etc in the command_args below.
+# This means that your config file will be ignored unless
+# you comment out remove the cl parameters.
+#
+# Using config file: uncomment the following line AND comment out
+# the next line.
+
+# command_args="-f $mongod_config"
+
 command_args="-f $mongod_config --dbpath $mongod_dbpath --logappend --logpath $mongod_dbpath/mongod.log --fork"
 
 required_dirs=${mongod_dbpath}

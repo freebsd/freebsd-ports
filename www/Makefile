@@ -137,6 +137,7 @@
     SUBDIR += dokuwiki
     SUBDIR += dotclear
     SUBDIR += dotproject
+    SUBDIR += download-gemist
     SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
@@ -1500,6 +1501,7 @@
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django13
     SUBDIR += py-django_compressor
+    SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
     SUBDIR += py-dojango
     SUBDIR += py-dotcloud.cli
@@ -1510,11 +1512,13 @@
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
     SUBDIR += py-flask-cache
+    SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-uploads
     SUBDIR += py-flexget
     SUBDIR += py-flup
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
+    SUBDIR += py-frozen-flask
     SUBDIR += py-funkload
     SUBDIR += py-google-api-python-client
     SUBDIR += py-graphite-web

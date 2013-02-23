@@ -24,11 +24,8 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lcurses ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

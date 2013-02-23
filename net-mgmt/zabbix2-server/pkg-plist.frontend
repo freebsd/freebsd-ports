@@ -35,6 +35,7 @@
 %%WWWDIR%%/adm.workingtime.php
 %%WWWDIR%%/include/profiles.inc.php
 %%WWWDIR%%/include/locales.inc.php
+%%WWWDIR%%/include/translateDefines.inc.php
 %%WWWDIR%%/include/views/administration.general.image.edit.php
 %%WWWDIR%%/include/views/administration.general.regularexpressions.list.php
 %%WWWDIR%%/include/views/monitoring.discovery.php
@@ -640,6 +641,10 @@
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/conf/zabbix.conf.php.example
 %%WWWDIR%%/conf/maintenance.inc.php
@@ -849,6 +854,10 @@
 @dirrm %%WWWDIR%%/locale/sk
 @dirrm %%WWWDIR%%/locale/en_US/LC_MESSAGES/
 @dirrm %%WWWDIR%%/locale/en_US/
+@dirrm %%WWWDIR%%/locale/bg/LC_MESSAGES/
+@dirrm %%WWWDIR%%/locale/bg/
+@dirrm %%WWWDIR%%/locale/lt/LC_MESSAGES/
+@dirrm %%WWWDIR%%/locale/lt/
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/js/jquery

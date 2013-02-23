@@ -18,8 +18,6 @@ COMMENT=	Trace and analyze memory leaks in C++ programs
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_FILES=	bin/LeakCheck bin/leak-analyze lib/LeakTracer.so
 PORTDOCS=	README README.html
 

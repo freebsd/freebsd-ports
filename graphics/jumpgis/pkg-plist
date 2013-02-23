@@ -13,4 +13,4 @@ jumpgis/lib/xml-apis.jar
 @dirrm jumpgis/lib/ext
 @dirrm jumpgis/lib
 @dirrm jumpgis
-@dirrmtry share/applications
+%%GNOMELINKS%%@dirrmtry share/applications

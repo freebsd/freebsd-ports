@@ -1,12 +1,8 @@
-# Ports collection Makefile for:	sympa
-# Date created:				29 November 2003
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.16
+PORTVERSION=	6.1.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -79,40 +75,41 @@ MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 CONFLICTS=	sympa-5*
 
-DB_TYPE:=	${DB_TYPE:L}
+OPTIONS_DEFINE=	FASTCGI APACHE
+OPTIONS_DEFAULT=APACHE
+OPTIONS_RADIO=	DATABASE
+OPTIONS_RADIO_DATABASE=	ORACLE PGSQL SYBASE MYSQL
 
-.if ${DB_TYPE:Mmysql}
-USE_MYSQL=	yes
+SYBASE_DESC=	Sybase database
+
+.ifdef DB_TYPE
+DB_TYPE:=	${DB_TYPE:U}
+.  for option in ${OPTIONS_RADIO_DATABASE}
+.    if ${DB_TYPE} == ${option:S,PGSQL,PG,}
+OPTIONS_SET+=	${option}
+.    endif
+.  endfor
 .endif
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 RUN_DEPENDS+=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
-. if !defined(WITHOUT_APACHE)
+. if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
-RUN_DEPENDS+=   ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 . endif
 .endif
 
-.if ${DB_TYPE:Moracle}
+.if ${PORT_OPTIONS:MORACLE}
 RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
-.elif ${DB_TYPE:Mpg}
+.elif ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-.elif ${DB_TYPE:Msybase}
+.elif ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
-.elif ${DB_TYPE:Mmysql}
+.elif ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
-
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	DB_TYPE=type	Optional: mysql, Oracle, Pg or Sybase"
-	@${ECHO_MSG} "	WITH_FASTCGI	Use FastCGI instead of plain CGI"
-	@${ECHO_MSG} "	WITHOUT_APACHE	Use FastCGI without apache (spawn-fcgi or ?)"
-	@${ECHO_MSG} ""
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

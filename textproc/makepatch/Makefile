@@ -1,12 +1,7 @@
-# New ports collection makefile for:	makepatch
-# Date created:				22 October 2001
-# Whom:					John Merryweather Cooper
-#
 # $FreeBSD$
-#
 
 PORTNAME=	makepatch
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JV

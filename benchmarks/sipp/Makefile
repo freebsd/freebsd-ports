@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	3.1.20090729
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
-DISTNAME=	${PORTNAME}.2009-07-29
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	sipp/sipp/${PORTVERSION}
+DISTNAME=	${PORTNAME}-3.3beta2
 
 MAINTAINER=	tut@nhamon.com.ua
-COMMENT=	SIP testing tool
+COMMENT=	SIP benchmarking and testing tool
 
 LICENSE=	GPLv2
 
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 CPP=		${CXX}
 MAKE_ENV+=	CCLINK="${CXX}"
 CPPFLAGS+=	${CXXFLAGS}
-WRKSRC=		${WRKDIR}/sipp.svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
 		GSL		"GSL support (for statistical distributed pauses)" off \
@@ -41,10 +41,11 @@ MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
 .endif #defined(WITH_GSL)
 
 .if defined(WITH_PCAPPLAY)
-PCAP_FILES=	dtmf_2833_1.pcap dtmf_2833_2.pcap dtmf_2833_3.pcap \
-		dtmf_2833_4.pcap dtmf_2833_5.pcap dtmf_2833_6.pcap \
-		dtmf_2833_7.pcap dtmf_2833_8.pcap dtmf_2833_9.pcap \
-		dtmf_2833_pound.pcap dtmf_2833_star.pcap g711a.pcap
+PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
+		dtmf_2833_3.pcap dtmf_2833_4.pcap dtmf_2833_5.pcap \
+		dtmf_2833_6.pcap dtmf_2833_7.pcap dtmf_2833_8.pcap \
+		dtmf_2833_9.pcap dtmf_2833_pound.pcap dtmf_2833_star.pcap \
+		g711a.pcap
 
 PLIST_DIRS=	%%DATADIR%%/pcap \
 		%%DATADIR%%

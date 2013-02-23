@@ -1259,7 +1259,7 @@ $FreeBSD$
 +		/*
 +		 * Having such data, but not at line beginning.
 +		 * Skip them and reiterate. ser_memmem() will find next
-+		 * occurence.
++		 * occurrence.
 +		 */
 +		if (plimit - cp1 < 2)
 +			return NULL;

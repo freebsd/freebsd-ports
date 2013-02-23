@@ -12,7 +12,6 @@
     SUBDIR += emelfm2
     SUBDIR += ezfm
     SUBDIR += filerunner
-    SUBDIR += fsv
     SUBDIR += gentoo
     SUBDIR += gnome-commander2
     SUBDIR += gprename
@@ -33,7 +32,6 @@
     SUBDIR += tdfsb
     SUBDIR += thunar
     SUBDIR += thunar-vfs
-    SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += ultracopier
     SUBDIR += worker

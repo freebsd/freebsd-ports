@@ -191,10 +191,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' ${WRKSRC}/build/apr_hints.m4
 	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
-		${WRKSRC}/build/apr_threads.m4 \
-		${WRKSRC}/build/apr_hints.m4 \
-		${WRKSRC}/build/apu-conf.m4
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' ${WRKSRC}/build/gen-build.py
 
 run-autotools:

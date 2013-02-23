@@ -1,61 +1,72 @@
-# New ports collection makefile for:	gecko-mediaplayer
-# Date created:				14 March 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		nspr4:${PORTSDIR}/devel/nspr \
+		curl:${PORTSDIR}/ftp/curl \
+		gmlib:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
-OPTIONS=	GCONF	"Use Gconf to store preferences"	off \
-		NOCACHE	"Disable caching of remote media to local storage"	off
+OPTIONS_DEFINE=	CACHE DOCS NLS
+OPTIONS_DEFAULT=CACHE
+CACHE_DESC=	Enable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	glib20 pkgconfig
-USE_GECKO=	libxul19
+USE_PKGCONFIG=	build
+USE_GNOME=	glib20
+USE_GECKO=	libxul libxul19
 USE_WEBPLUGINS=	native
-WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
-				${PORTNAME}-wmp.so ${PORTNAME}.so
+
+WEBPLUGINS_FILES=	${PORTNAME}.so
+.for p in dvx rm qt wmp
+WEBPLUGINS_FILES+=	${PORTNAME}-${p}.so
+.endfor
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGINS_DIR}"
 
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GCONF)
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=	--with-gconf
-GCONF_SCHEMAS=	${PORTNAME}.schemas
+.if ${PORT_OPTIONS:MCACHE}
+CONFIGURE_ARGS+=	--enable-caching
 .else
-CONFIGURE_ARGS+=	--without-gconf --disable-schemas-install
+CONFIGURE_ARGS+=	--disable-caching
 .endif
 
-.if defined(WITH_NOCACHE)
-CONFIGURE_ARGS+=	--disable-caching
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB=	NLS=""
+.else
+USE_GETTEXT=	build
+PLIST_SUB=	NLS="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
 		's|install-gecko_mediaplayerdocDATA install-schemaDATA|install-schemaDATA|' \
-		${WRKSRC}/Makefile.in
+	    ${WRKSRC}/Makefile.in
+.endif
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's/^ALL_LINGUAS=".*"/ALL_LINGUAS=""/' \
+	    ${WRKSRC}/configure
 .endif
 
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

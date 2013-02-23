@@ -1,13 +1,9 @@
-# New ports collection makefile for:	flightgear-mb339-pan
-# Date created:				11 Dec 2005
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flightgear-mb339-pan
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	mb339pan_${PORTVERSION}

@@ -12,3 +12,4 @@ bin/MIDGsmooth
 bin/UGsmooth
 bin/fgadmin
 bin/fgpanel
+bin/fgelev

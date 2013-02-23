@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=--with-boost=${LOCALBASE} --with-neon=${LOCALBASE} \
 		--with-subversion=${LOCALBASE}
 CONFIGURE_ENV=	QTDIR=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 NO_LATEST_LINK=	yes
 

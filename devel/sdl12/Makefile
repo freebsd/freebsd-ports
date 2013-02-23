@@ -25,11 +25,9 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
-		ac_cv_header_libusbhid_h=no
+CONFIGURE_ENV=	ac_cv_header_libusbhid_h=no
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest

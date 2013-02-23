@@ -1,4 +1,4 @@
-# Created by: Kubilay Kocak <koobs.freebsd@gmail.com>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	posix_ipc
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/posix_ipc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	POSIX IPC primitives for Python
 
 LICENSE=	BSD

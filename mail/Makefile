@@ -600,6 +600,7 @@
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
+    SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-sieverules
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-umich

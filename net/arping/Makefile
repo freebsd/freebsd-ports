@@ -7,14 +7,14 @@
 
 PORTNAME=	arping
 PORTVERSION=	2.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`${LIBNET_CONFIG} --libs` -lpcap"

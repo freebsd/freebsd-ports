@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hsqldb
-PORTVERSION=	1.8.1.3
+PORTVERSION=	2.2.9
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_1_8_1
-DISTNAME=	hsqldb_${PORTVERSION:S/./_/g}
-#EXTRACT_SUFX=	.zip
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_2
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable SQL database written in Java
 
 LICENSE=	BSD
@@ -17,9 +15,14 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build
 ALL_TARGET=	hsqldb hsqljdbc
+
+.include <bsd.port.options.mk>
+
+pre-build:
+	${MKDIR} ${WRKSRC}/doc-src
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files to ${JAVAJARDIR}..."
@@ -27,9 +30,11 @@ do-install:
 		${JAVAJARDIR}/hsqldb.jar
 	@${INSTALL_DATA} ${WRKSRC}/lib/hsqljdbc.jar \
 		${JAVAJARDIR}/hsqljdbc.jar
+	@${INSTALL_DATA} ${WRKSRC}/lib/sqltool.jar \
+		${JAVAJARDIR}/sqltool.jar
 	@${ECHO_MSG} " [DONE]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing DOC files to ${DOCSDIR}..."
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}

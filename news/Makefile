@@ -43,6 +43,7 @@
     SUBDIR += leafnode
     SUBDIR += lottanzb
     SUBDIR += lusernet
+    SUBDIR += mail2nntp
     SUBDIR += mmail
     SUBDIR += multisuck
     SUBDIR += newscache

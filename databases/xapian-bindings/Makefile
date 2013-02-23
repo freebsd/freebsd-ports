@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xapian-bindings
-# Date created:		2007-05-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.13
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -83,7 +79,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA install-dist_exampledataDATA ||' ${WRKSRC}/lua/Makefile.in ${WRKSRC}/php/Makefile.in ${WRKSRC}/python/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 760 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 799 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
 .endif
 
 .include <bsd.port.mk>

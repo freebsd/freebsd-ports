@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ucd-snmp
-# Date created:				26 June 1996
-# Whom:					gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -327,7 +323,7 @@ install-config-files:
 	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf ${DATADIR}/snmpd.conf.example
 
 install-doc-files:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for filename in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}

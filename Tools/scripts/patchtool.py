@@ -171,7 +171,7 @@ def getrelpath(path, wrksrc):
 
 
 #
-# Generare a diff between saved and current versions of the file pointed by the
+# Generate a diff between saved and current versions of the file pointed by the
 # wrksrc+path. Apply heuristics to locate saved version of the file in question
 # and if it fails assume that file is new, so /dev/null is to be used as
 # original file. Optionally save generated patch into `outfile' instead of
@@ -204,7 +204,7 @@ def gendiff(path, wrksrc, outfile = ''):
 	exitval = pipe.wait()
 	if exitval == 0:    # No differences were found
 		retval = False
-		retmsg = 'no differencies found between original and current ' \
+		retmsg = 'no differences found between original and current ' \
 			  'version of "%s"' % fullpath
 	elif exitval == 1:  # Some differences  were  found
 		if (outfile != ''):
@@ -218,7 +218,7 @@ def gendiff(path, wrksrc, outfile = ''):
 			sys.stdout.writelines(outbuf)
 		retval = True
 		retmsg = ''
-	else:               # Error occured
+	else:               # Error occurred
 		raise ECmdError('"%s"' % cmdline, \
 		  'external command returned non-zero error code')
 		# Not reached #
@@ -229,7 +229,7 @@ def gendiff(path, wrksrc, outfile = ''):
 
 #
 # Automatically generate a name for a patch based on its path relative to
-# wrksrc. Use simple scheme to ensute 1-to-1 mapping between path and
+# wrksrc. Use simple scheme to ensure 1-to-1 mapping between path and
 # patchname - replace all '_' with '__' and all '/' with '_'.
 #
 def makepatchname(path, patchdir = ''):
@@ -615,7 +615,7 @@ def generate(args, automatic, force, ignoremtime):
 # is encountered, all patches that belong to the port are updated. If no
 # arguments are supplied - current directory is assumed.
 #
-# The procedure homours last modification times of the patchfile, file from
+# The procedure honours last modification times of the patchfile, file from
 # which diff to be generated and `EXTRACT_COOKIE' file (usually
 # ${WRKDIR}/.extract_cookie) to update only those patches that are really need
 # to be updated.

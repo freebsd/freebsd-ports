@@ -1,0 +1,4 @@
+The libXcm library is colour management helper for Xorg. It contains
+a reference implementation of the X Color Management specification.
+It allows to attach colour regions to X windows to communicate with
+colour servers.

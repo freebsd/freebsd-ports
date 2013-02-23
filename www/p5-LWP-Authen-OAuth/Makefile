@@ -1,12 +1,7 @@
-# New ports collection makefile for:	LWP::Authen::OAuth
-# Date created:		18 May 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	LWP-Authen-OAuth
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

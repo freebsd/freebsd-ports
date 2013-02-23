@@ -6,7 +6,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	linpc@cs.nctu.edu.tw
+MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	File and block device wiping utility
 
 LICENSE=	GPLv2

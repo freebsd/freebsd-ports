@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20130104
-PORTREVISION=	1
+PORTVERSION=	20130129
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
@@ -30,8 +29,7 @@ RUN_DEPENDS+=	rbenv:${PORTSDIR}/devel/rbenv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	9ef0e06
+GH_COMMIT=	d9bbeb3
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
@@ -41,9 +39,6 @@ PLIST_FILES=	bin/ruby-build \
 		libexec/rbenv-uninstall
 PORTDATA=	*
 
-post-patch-script:
-	@${REINPLACE_CMD} -e 's|make |gmake |' \
-		${WRKSRC}/bin/ruby-build
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-build ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/rbenv-install ${PREFIX}/libexec

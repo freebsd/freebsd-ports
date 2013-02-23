@@ -344,6 +344,7 @@
     SUBDIR += oinkmaster
     SUBDIR += op
     SUBDIR += openbsm
+    SUBDIR += openbsm-devel
     SUBDIR += opencdk
     SUBDIR += openconnect
     SUBDIR += opencryptoki
@@ -676,6 +677,7 @@
     SUBDIR += pgpin
     SUBDIR += php-Auth_OpenID
     SUBDIR += php-Auth_OpenID2
+    SUBDIR += php-openid-ldap
     SUBDIR += php-suhosin
     SUBDIR += php5-filter
     SUBDIR += php5-hash
@@ -776,6 +778,7 @@
     SUBDIR += py-volatility
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
+    SUBDIR += py-yara-editor
     SUBDIR += py-zope.app.authentication
     SUBDIR += py-zope.app.localpermission
     SUBDIR += py-zope.app.principalannotation

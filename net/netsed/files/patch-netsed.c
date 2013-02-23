@@ -20,7 +20,7 @@
 +  ERR("be passed using HTTP-alike hex escape sequences (eg. CRLF -> %%0a%%0d).\n");
 +  ERR("Single '%%' can be reached by using '%%%%'. Examples:\n\n");
 +  ERR("  's/andrew/mike/1'   - replace 'andrew' with 'mike' (once)\n");
-+  ERR("  's/andrew/mike'     - replace all occurences of 'andrew' with 'mike'\n");
++  ERR("  's/andrew/mike'     - replace all occurrences of 'andrew' with 'mike'\n");
 +  ERR("  's/andrew/mike%%00'  - replace 'andrew' with 'mike\\x00' (to keep orig. size)\n");
    ERR("  's/%%%%/%%2f/20'      - replace '%%' with '/' in first 20 packets\n\n");
    ERR("Rules are not working on cross-packet boundaries and are evaluated from\n");

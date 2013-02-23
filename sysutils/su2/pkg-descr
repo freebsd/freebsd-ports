@@ -1,7 +1,7 @@
 From the README:
 
    su2 is a great program for anyone that has anything to do with
-system adiministration.  su2 gives you the ability to masquerade with
+system administration.  su2 gives you the ability to masquerade with
 the UID of other users.  You use own password to switch.  Probably the
 biggest benefit of su2 is that you retain your own customized shell
 environment.
@@ -12,7 +12,7 @@ than this.  Regular users can put a .su2rc file in their home
 directory to enable other users to become them.  While this may sound
 odd, it is sometimes useful to allow a number of users to masquerade
 around with the uid of restricted accounts.  One such example of this
-is a 'www' account which is a common occurance with the proliferation
+is a 'www' account which is a common occurrence with the proliferation
 of the web.  While the www user's password may be starred out to
 disable direct logins, root could put a set of usernames into
 ~www/.su2rc to enable these users to 'become' www and do Web

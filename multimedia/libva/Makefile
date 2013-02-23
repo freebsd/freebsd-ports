@@ -2,7 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
 USE_BZIP2=	yes
-USE_XORG=	pciaccess xext xfixes
+USE_XORG=	glproto pciaccess xext xfixes 
 USE_GL=		gl
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.

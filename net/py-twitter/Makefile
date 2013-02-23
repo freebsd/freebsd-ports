@@ -1,25 +1,22 @@
-# ex:ts=8
-# Ports collection makefile for:	py-twitter
-# Date created:			Apr 13, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	twitter
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 CATEGORIES=	net python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A python wrapper around the Twitter API
+COMMENT=	Python wrapper around the Twitter API
+
+LICENSE=	AL2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2
+		${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2 \
+		${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PROJECTHOST=	python-twitter
 USE_PYTHON=	yes

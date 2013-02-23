@@ -1,16 +1,10 @@
-# Ports collection makefile for: komclean
-# Date created:		23 March 2010
-# Whom: 		smyru@heron.pl
-#
+# Created by: smyru@heron.pl
 # $FreeBSD$
-#
 
 PORTNAME=	komclean
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME:S/kom/KOM/}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/kom/KOM/}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	smyru@heron.pl

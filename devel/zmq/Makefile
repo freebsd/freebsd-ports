@@ -52,6 +52,6 @@ MAN7=		zmq.7 \
 		zmq_tcp.7
 
 post-patch:
-	${REINPLACE_CMD} -e '9s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/src/libzmq.pc.in
+	${REINPLACE_CMD} -e '9s|$$| -pthread|' ${WRKSRC}/src/libzmq.pc.in
 
 .include <bsd.port.mk>

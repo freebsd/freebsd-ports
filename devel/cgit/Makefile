@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.9.0.3
+PORTVERSION=	0.9.1
 CATEGORIES=	devel www
-MASTER_SITES=	http://hjemli.net/git/cgit/snapshot/:cgit \
-		${MASTER_SITE_KERNEL_ORG:S/$/:git/g}
-MASTER_SITE_SUBDIR=	software/scm/git/:git
+MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
+		http://mirror.linux.org.au/software/scm/git/:git
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}.tar.bz2:git
 
@@ -39,8 +38,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/git/Makefile
-	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' \
-		-e 's,/usr,${PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' \
 		-e 's,-Igit,-I.,g' ${WRKSRC}/Makefile
 
 post-install:

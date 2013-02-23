@@ -23,7 +23,7 @@ CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no
 
 INFO=		commoncpp2
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

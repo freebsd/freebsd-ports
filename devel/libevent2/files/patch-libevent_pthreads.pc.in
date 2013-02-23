@@ -1,12 +1,13 @@
---- libevent_pthreads.pc.in.orig	2010-08-16 18:56:09.000000000 +0200
-+++ libevent_pthreads.pc.in	2011-03-06 21:15:25.621208481 +0100
+--- libevent_pthreads.pc.in.orig	2013-02-14 10:10:38.000000000 +0100
++++ libevent_pthreads.pc.in	2013-02-14 10:11:05.000000000 +0100
 @@ -10,7 +10,7 @@
  Version: @VERSION@
  Requires: libevent
  Conflicts:
 -Libs: -L${libdir} -levent_pthreads
-+Libs: -L${libdir} -levent_pthreads-2.0
- Libs.private: @LIBS@ @PTHREAD_LIBS@
+-Libs.private: @LIBS@ @PTHREAD_LIBS@
 -Cflags: -I${includedir} @PTHREAD_CFLAGS@
-+Cflags: -I${includedir}/event2/compat -I${includedir} @PTHREAD_CFLAGS@
++Libs: -L${libdir} -levent_pthreads-2.0
++Libs.private: @LIBS@ -pthread
++Cflags: -I${includedir}
  

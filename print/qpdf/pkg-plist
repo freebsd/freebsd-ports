@@ -1,0 +1,37 @@
+bin/fix-qdf
+bin/qpdf
+bin/zlib-flate
+include/qpdf/Buffer.hh
+include/qpdf/BufferInputSource.hh
+include/qpdf/Constants.h
+include/qpdf/DLL.h
+include/qpdf/FileInputSource.hh
+include/qpdf/InputSource.hh
+include/qpdf/Pipeline.hh
+include/qpdf/Pl_Buffer.hh
+include/qpdf/Pl_Concatenate.hh
+include/qpdf/Pl_Count.hh
+include/qpdf/Pl_Discard.hh
+include/qpdf/Pl_Flate.hh
+include/qpdf/Pl_StdioFile.hh
+include/qpdf/PointerHolder.hh
+include/qpdf/QPDF.hh
+include/qpdf/QPDFExc.hh
+include/qpdf/QPDFObject.hh
+include/qpdf/QPDFObjectHandle.hh
+include/qpdf/QPDFTokenizer.hh
+include/qpdf/QPDFWriter.hh
+include/qpdf/QPDFXRefEntry.hh
+include/qpdf/QTC.hh
+include/qpdf/QUtil.hh
+include/qpdf/Types.h
+include/qpdf/qpdf-c.h
+lib/libqpdf.a
+lib/libqpdf.so
+lib/libqpdf.so.10
+libdata/pkgconfig/libqpdf.pc
+share/doc/qpdf/qpdf-manual.html
+share/doc/qpdf/qpdf-manual.pdf
+share/doc/qpdf/stylesheet.css
+@dirrm share/doc/qpdf
+@dirrm include/qpdf

@@ -23,10 +23,6 @@ ALL_TARGET=	posix
 INCDIR=	include/${PORTNAME}
 PLIST_SUB=	INCDIR=${INCDIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's+-pthread+${PTHREAD_LIBS}+g ;'   \
-		${WRKSRC}/Makefile
-
 do-install:	all
 	${MKDIR} ${PREFIX}/${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/malloc.h ${PREFIX}/${INCDIR}/

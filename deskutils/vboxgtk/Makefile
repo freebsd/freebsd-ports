@@ -6,7 +6,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	deskutils emulators gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox-ose

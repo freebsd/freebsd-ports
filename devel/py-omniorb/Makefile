@@ -46,10 +46,6 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
-post-patch:
-	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
-		${WRKSRC}/mk/beforeauto.mk.in
-
 pre-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html

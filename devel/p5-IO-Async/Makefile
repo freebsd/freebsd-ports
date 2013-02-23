@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-IO-Async
-# Date created:		2007-06-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -18,9 +14,8 @@ COMMENT=	Perl modules that implement asynchronous filehandle IO
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Async-MergePoint>=0.03:${PORTSDIR}/devel/p5-Async-MergePoint \
-		p5-CPS>=0.15:${PORTSDIR}/devel/p5-CPS \
-		p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
+BUILD_DEPENDS=	p5-CPS>0:${PORTSDIR}/devel/p5-CPS \
+		p5-Future>=0.05:${PORTSDIR}/devel/p5-Future
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
@@ -36,6 +31,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::File.3 \
 		IO::Async::FileStream.3 \
 		IO::Async::Function.3 \
+		IO::Async::Future.3 \
 		IO::Async::Handle.3 \
 		IO::Async::Listener.3 \
 		IO::Async::Loop.3 \
@@ -63,4 +59,11 @@ MAN3=		IO::Async.3 \
 		IO::Async::Timer::Countdown.3 \
 		IO::Async::Timer::Periodic.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
+RUN_DEPENDS+=	p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
+.endif
+
+.include <bsd.port.post.mk>

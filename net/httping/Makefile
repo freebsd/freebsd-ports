@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httping
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL

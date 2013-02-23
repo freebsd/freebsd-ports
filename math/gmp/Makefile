@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gmp
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
-DISTFILES=	${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic

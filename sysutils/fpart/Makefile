@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	fpart
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Sort files and divide them into partitions
+COMMENT=	Sort and pack files into partitions
 
 LICENSE=	BSD
 

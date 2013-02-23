@@ -1,4 +1,4 @@
-# $FreeBSD$
+@comment $FreeBSD$
 bin/setuid
 bin/super
 %%PORTEXAMPLES%%@unexec if cmp -s %D/etc/super.tab %D/%%EXAMPLESDIR%%/barebones.tab; then rm -f %D/etc/super.tab; fi

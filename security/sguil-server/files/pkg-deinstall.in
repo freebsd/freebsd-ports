@@ -8,8 +8,8 @@ USER="sguil"
 # Make sure we're in the right stage of the process
 if [ "$2" = "DEINSTALL" ]; then
 	echo "Stopping sguild......"
-	%%PREFIX%%/etc/rc.d/sguild stop
-	%%PREFIX%%/etc/rc.d/sguild poll
+	%%PREFIX%%/etc/rc.d/sguild onestop
+	%%PREFIX%%/etc/rc.d/sguild onepoll
 	if [ ! ${BATCH} ]; then
 	  echo "Would you like to remove the sguild certs?" ; read ans
 	  case "$ans" in

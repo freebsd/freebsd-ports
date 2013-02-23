@@ -1,9 +1,5 @@
-# New ports collection makefile for:	heme
-# Date created:				29 May 2012
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	heme
 PORTVERSION=	0.4.2
@@ -22,8 +18,12 @@ PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif

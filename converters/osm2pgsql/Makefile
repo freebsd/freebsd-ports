@@ -1,12 +1,8 @@
-# New ports collection makefile for:	osm2pgsql
-# Date created:		29 Jun 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	osm2pgsql
-PORTVERSION=	r28721
+PORTVERSION=	r29250
 CATEGORIES=	converters geography
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -32,13 +28,15 @@ PORTDOCS=	ChangeLog README AUTHORS TODO
 
 MAN1=		osm2pgsql.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/m4/*.m4
 
 run-autotools:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

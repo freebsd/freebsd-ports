@@ -34,7 +34,7 @@ TESTS_DESC=	Run tests
 
 .include <bsd.port.options.mk>
 
-CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
+CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT
 .if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
@@ -52,8 +52,7 @@ MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
-	@${SED} 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
-		s|%%PREFIX%%|${PREFIX}|g; \
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g; \
 		s|%%DATADIR%%|${DATADIR}|g; \
 		s|%%DOCSDIR%%|${DOCSDIR}|g; \
 		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \

@@ -22,8 +22,7 @@ CONFIGURE_ENV+=	CPPCFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|\(DATADIRNAME=\)lib|\1share|g ; \
+	@${REINPLACE_CMD} -e 's|\(DATADIRNAME=\)lib|\1share|g ; \
 		s|USE_INCLUDED_LIBINTL=yes|#&|g ; \
 		s|\$$(top_builddir)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 

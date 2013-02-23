@@ -1,12 +1,7 @@
-# New ports collection makefile for:	qtcurve-qt4
-# Date created:		2010-05-25
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qtcurve
-PORTVERSION=	1.8.13
+PORTVERSION=	1.8.14
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	qt4-style-
@@ -14,6 +9,8 @@ DISTNAME=	QtCurve-KDE4-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve Qt4 widget style
+
+CONFLICTS_BUILD=	qt-3.* qt-copy-3.*
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+

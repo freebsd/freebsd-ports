@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	codelite
-# Date created:				7 May 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	codelite
-DISTVERSION=	4.1.${SVN_REVISION}
+DISTVERSION=	5.0.${SVN_REVISION}
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
@@ -24,15 +20,19 @@ OPTIONS_DEFINE=	CSCOPE CLANG MYSQL PGSQL
 CSCOPE_DESC=	CScope integration
 CLANG_DESC=	Clang code-completion
 
-USE_WX=		2.8
+USE_WX=		2.9
 WX_UNICODE=	yes
+USE_DOS2UNIX=	*.cpp
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-debug
+CPPFLAGS+=	-g -O0
+CONFIGURE_ARGS+=--enable-debug \
+		--prefix=${PREFIX}
+CONFIGURE_ENV+=	WXCONFIG=${WX_CONFIG}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-SVN_REVISION=	5770
+SVN_REVISION=	6213
 
 .include <bsd.port.options.mk>
 
@@ -41,10 +41,13 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
+.if ${OSVERSION} < 1000026
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang
 RUN_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang
+.endif
 PLIST_SUB+=	CLANG=""
 .else
+CONFIGURE_ARGS+=--without-clang
 ENABLE_CLANG=	\#
 PLIST_SUB+=	CLANG="@comment "
 .endif
@@ -66,12 +69,9 @@ PLIST_SUB+=	POSTGRES="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g; s|%%ENABLE_CLANG%%|${ENABLE_CLANG}|g; \
-	   s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
-#	Configure script does not respect --prefix
-	${REINPLACE_CMD} -e '/^prefix/s|/usr|${PREFIX}|; \
-	    /^plugins_dir/s|/usr/lib/codelite|${DATADIR}/plugins|' \
-	    ${WRKSRC}/configure
+#	Use the correct wx-config
+	${REINPLACE_CMD} -e 's|%%ENABLE_CLANG%%|${ENABLE_CLANG}|g; \
+	   s|%%LOCALBASE%%|${LOCALBASE}|g; s|666|644|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
 	    ${WRKSRC}/le_makerevision.sh
 # 	CTags already installed

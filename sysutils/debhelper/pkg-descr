@@ -1,0 +1,7 @@
+A collection of programs that can be used in a debian/rules file to automate
+common tasks related to building debian packages. Programs are included to
+install various files into your package, compress files, fix file permissions,
+integrate your package with the debian menu system, debconf, doc-base, etc.
+Most debian packages use debhelper as part of their build process.
+
+WWW:	http://joeyh.name/code/debhelper/

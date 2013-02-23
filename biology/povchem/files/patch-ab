@@ -177,3 +177,12 @@ $FreeBSD$
                eye.x,eye.y,eye.z);
  
    fputs(      "camera{\n",pov);
+@@ -2317,7 +2317,7 @@
+ 
+ /*-------------------- the main program body --------------------------*/
+ 
+-void main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+   char *pdbName, *configName=NULL;
+   char *tgaName=NULL, *leftTga=NULL, *rightTga=NULL;

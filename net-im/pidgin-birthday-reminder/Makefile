@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://launchpadlibrarian.net/56075754/
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The birthday reminder for Pidgin
 
 LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple

@@ -11,6 +11,9 @@
 #				Set it to "YES" to enable nginx
 # nginx_profiles (str):		Set to "" by default.
 #				Define your profiles here.
+# nginx_pid_prefix (str):	Set to "" by default.
+#				When using profiles manually assign value to "nginx_"
+#				for prevent collision with other PIDs names.
 # nginxlimits_enable (bool):	Set to "NO" by default.
 #				Set it to yes to run `limits $limits_args`
 #				just before nginx starts.
@@ -47,7 +50,7 @@ load_rc_config $name
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${nginx_profiles}" != "x" ]; then
-		pidfile="${_pidprefix}/${profile}.pid"
+		pidfile="${_pidprefix}/${nginx_pid_prefix}${profile}.pid"
 		eval nginx_configfile="\${nginx_${profile}_configfile:-}"
 		if [ "x${nginx_configfile}" = "x" ]; then
 			echo "You must define a configuration file (nginx_${profile}_configfile)"

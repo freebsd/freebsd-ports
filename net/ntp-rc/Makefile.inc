@@ -3,6 +3,7 @@
 OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
 		SSL		"Enable SSL" ON \
 		IPV6		"Enable IPv6" OFF \
+  		NTP_SIGND	"Enable signed NTP" OFF \
   		BANCOMM		"Enable Datum/Bancomm bc635/VME interface" OFF \
   		GPSVME		"Enable TrueTime GPS receiver/VME interface" OFF \
   		ACTS		"Enable ACTS modem service" OFF \

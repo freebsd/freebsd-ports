@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pillow
-# Date created:		2012-05-28
-# Whom:			koobs <koobs.freebsd@gmail.com>
-#
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pillow
 PORTVERSION=	1.7.7
@@ -12,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \

@@ -30,9 +30,15 @@ ALL_TARGET=	vtund
 DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
 		README.Shaper TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${CC} == "clang" || ${CXX} == "clang++" || ${OSVERSION} >= 1000026
+EXTRA_PATCHES+= ${FILESDIR}/extra-cfg_file.y
+.endif
+
 .if defined(VTUN_EXTENDED_MODE)
 # Obtained from http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
-EXTRA_PATCHES=	${FILESDIR}/extra-tun_dev.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-tun_dev.c
 .endif
 
 post-install:
@@ -45,4 +51,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -51,6 +51,615 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfd92cb2-7d48-11e2-ad48-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>25.0.1364.97</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[172243] High CVE-2013-0879: Memory corruption with web audio
+	    node. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[171951] High CVE-2013-0880: Use-after-free in database handling.
+	    Credit to Chamal de Silva.</p>
+	  <p>[167069] Medium CVE-2013-0881: Bad read in Matroska handling.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[165432] High CVE-2013-0882: Bad memory access with excessive SVG
+	    parameters. Credit to Renata Hodovan.</p>
+	  <p>[142169] Medium CVE-2013-0883: Bad read in Skia. Credit to Atte
+	    Kettunen of OUSPG.</p>
+	  <p>[172984] Low CVE-2013-0884: Inappropriate load of NaCl. Credit to
+	    Google Chrome Security Team (Chris Evans).</p>
+	  <p>[172369] Medium CVE-2013-0885: Too many API permissions granted to
+	    web store.</p>
+	  <p>[171065] [170836] Low CVE-2013-0887: Developer tools process has
+	    too many permissions and places too much trust in the connected
+	    server.</p>
+	  <p>[170666] Medium CVE-2013-0888: Out-of-bounds read in Skia. Credit
+	    to Google Chrome Security Team (Inferno).</p>
+	  <p>[170569] Low CVE-2013-0889: Tighten user gesture check for
+	    dangerous file downloads.</p>
+	  <p>[169973] [169966] High CVE-2013-0890: Memory safety issues across
+	    the IPC layer. Credit to Google Chrome Security Team (Chris
+	    Evans).</p>
+	  <p>[169685] High CVE-2013-0891: Integer overflow in blob handling.
+	    Credit to Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[169295] [168710] [166493] [165836] [165747] [164958] [164946]
+	    Medium CVE-2013-0892: Lower severity issues across the IPC layer.
+	    Credit to Google Chrome Security Team (Chris Evans).</p>
+	  <p>[168570] Medium CVE-2013-0893: Race condition in media handling.
+	    Credit to Andrew Scherkus of the Chromium development community.</p>
+	  <p>[168473] High CVE-2013-0894: Buffer overflow in vorbis decoding.
+	    Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[Linux / Mac] [167840] High CVE-2013-0895: Incorrect path handling
+	    in file copying. Credit to Google Chrome Security Team (Jüri
+	    Aedla).</p>
+	  <p>[166708] High CVE-2013-0896: Memory management issues in plug-in
+	    message handling. Credit to Google Chrome Security Team (Cris
+	    Neckar).</p>
+	  <p>[165537] Low CVE-2013-0897: Off-by-one read in PDF. Credit to
+	    Mateusz Jurczyk, with contributions by Gynvael Coldwind, both from
+	    Google Security Team.</p>
+	  <p>[164643] High CVE-2013-0898: Use-after-free in URL handling.
+	    Credit to Alexander Potapenko of the Chromium development
+	    community.</p>
+	  <p>[160480] Low CVE-2013-0899: Integer overflow in Opus handling.
+	    Credit to Google Chrome Security Team (Jüri Aedla).</p>
+	  <p>[152442] Medium CVE-2013-0900: Race condition in ICU. Credit to
+	    Google Chrome Security Team (Inferno).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-0879</cvename>	
+	<cvename>CVE-2013-0880</cvename>	
+	<cvename>CVE-2013-0881</cvename>	
+	<cvename>CVE-2013-0882</cvename>	
+	<cvename>CVE-2013-0883</cvename>	
+	<cvename>CVE-2013-0884</cvename>	
+	<cvename>CVE-2013-0885</cvename>	
+	<cvename>CVE-2013-0887</cvename>	
+	<cvename>CVE-2013-0888</cvename>	
+	<cvename>CVE-2013-0889</cvename>	
+	<cvename>CVE-2013-0890</cvename>	
+	<cvename>CVE-2013-0891</cvename>	
+	<cvename>CVE-2013-0892</cvename>	
+	<cvename>CVE-2013-0893</cvename>	
+	<cvename>CVE-2013-0894</cvename>	
+	<cvename>CVE-2013-0895</cvename>	
+	<cvename>CVE-2013-0896</cvename>	
+	<cvename>CVE-2013-0897</cvename>	
+	<cvename>CVE-2013-0898</cvename>	
+	<cvename>CVE-2013-0899</cvename>	
+	<cvename>CVE-2013-0900</cvename>	
+	<url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2013-02-21</discovery>
+      <entry>2013-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f54584bc-7d2b-11e2-9bd1-206a8a720317">
+    <topic>krb5 -- null pointer dereference in the KDC PKINIT code [CVE-2013-1415]</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><le>1.11</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>No advisory has been released yet.</p>
+	<blockquote cite="http://web.mit.edu/kerberos/www/krb5-1.11/">
+	  <p>Fix a null pointer dereference in the KDC PKINIT code [CVE-2013-1415].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1415</cvename>
+      <url>http://web.mit.edu/kerberos/www/krb5-1.11/</url>
+    </references>
+    <dates>
+      <discovery>2013-02-21</discovery>
+      <entry>2013-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c90e093-7c6e-11e2-809b-6c626d99876c">
+    <topic>FreeBSD -- glob(3) related resource exhaustion</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>7.4</gt><lt>7.4_12</lt></range>
+	<range><gt>8.3</gt><lt>8.3_6</lt></range>
+	<range><gt>9.0</gt><lt>9.0_6</lt></range>
+	<range><gt>9.1</gt><lt>9.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-13:02.libc.asc">
+	  <p>GLOB_LIMIT is supposed to limit the number of paths to prevent against
+	    memory or CPU attacks.  The implementation however is insufficient.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-13:02.libc</freebsdsa>
+      <cvename>CVE-2010-2632</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4671cdc9-7c6d-11e2-809b-6c626d99876c">
+    <topic>FreeBSD -- BIND remote DoS with deliberately crafted DNS64 query</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>9.0</ge><lt>9.0_6</lt></range>
+	<range><ge>9.1</ge><lt>9.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-13:01.bind.asc">
+	  <p>Due to a software defect a crafted query can cause named(8) to crash
+	    with an assertion failure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-13:01.bind</freebsdsa>
+      <cvename>CVE-2012-5688</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4d71e4c-7bf4-11e2-84cd-d43d7e0c7c02">
+    <topic>drupal7 -- Denial of service</topic>
+    <affects>
+      <package>
+        <name>drupal7</name>
+        <range><lt>7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-002">
+	  <p>Drupal core's Image module allows for the on-demand generation
+	    of image derivatives. This capability can be abused by requesting
+	    a large number of new derivatives which can fill up the server disk
+	    space, and which can cause a very high CPU load. Either of these
+	    effects may lead to the site becoming unavailable or unresponsive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0316</cvename>
+      <url>https://drupal.org/SA-CORE-2013-002</url>
+    </references>
+    <dates>
+      <discovery>2013-02-20</discovery>
+      <entry>2013-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="58c15292-7b61-11e2-95da-001e8c1a8a0e">
+    <topic>nss-pam-ldapd -- file descriptor buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nss-pam-ldapd</name>
+	<range><lt>0.8.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Garth Mollett reports:</p>
+	<blockquote cite="http://arthurdejong.org/nss-pam-ldapd/CVE-2013-0288">
+	  <p>A file descriptor overflow issue in the use of FD_SET()
+	    in nss-pam-ldapd can lead to a stack-based buffer overflow.
+	    An attacker could, under some circumstances, use this flaw
+	    to cause a process that has the NSS or PAM module loaded to
+	    crash or potentially execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0288</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-18</discovery>
+      <entry>2013-02-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1c8a039b-7b23-11e2-b17b-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>3.6.0</ge><lt>3.6.13</lt></range>
+	<range><ge>4.0.0</ge><lt>4.0.10</lt></range>
+	<range><ge>4.2.0</ge><lt>4.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/3.6.12/">
+	  <h1>Cross-Site Scripting</h1>
+	  <p>When viewing a single bug report, which is the default,
+	    the bug ID is validated and rejected if it is invalid.
+	    But when viewing several bug reports at once, which is
+	    specified by the format=multiple parameter, invalid bug
+	    IDs can go through and are sanitized in the HTML page
+	    itself. But when an invalid page format is passed to the
+	    CGI script, the wrong HTML page is called and data are not
+	    correctly sanitized, which can lead to XSS.</p>
+	  <h1>Information Leak</h1>
+	  <p>When running a query in debug mode, the generated SQL
+	    query used to collect the data is displayed. The way this
+	    SQL query is built permits the user to determine if some
+	    confidential field value (such as a product name) exists.
+	    This problem only affects Bugzilla 4.0.9 and older. Newer
+	  releases are not affected by this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0785</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=842038</url>
+      <cvename>CVE-2013-0786</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=824399</url>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e3f0374a-7ad6-11e2-84cd-d43d7e0c7c02">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>18.0,1</gt><lt>19.0,1</lt></range>
+	<range><lt>17.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>17.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.16</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>17.0.3</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.16</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0.3</lt></range>
+	<range><lt>10.0.12</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2013-21 Miscellaneous memory safety hazards (rv:19.0 /
+	    rv:17.0.3)</p>
+	  <p>MFSA 2013-22 Out-of-bounds read in image rendering</p>
+	  <p>MFSA 2013-23 Wrapped WebIDL objects can be wrapped again</p>
+	  <p>MFSA 2013-24 Web content bypass of COW and SOW security wrappers</p>
+	  <p>MFSA 2013-25 Privacy leak in JavaScript Workers</p>
+	  <p>MFSA 2013-26 Use-after-free in nsImageLoadingContent</p>
+	  <p>MFSA 2013-27 Phishing on HTTPS connection through malicious proxy</p>
+	  <p>MFSA 2013-28 Use-after-free, out of bounds read, and buffer
+	    overflow issues found using Address Sanitizer</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-0765</cvename>
+	<cvename>CVE-2013-0772</cvename>
+	<cvename>CVE-2013-0773</cvename>
+	<cvename>CVE-2013-0774</cvename>
+	<cvename>CVE-2013-0775</cvename>
+	<cvename>CVE-2013-0776</cvename>
+	<cvename>CVE-2013-0783</cvename>
+	<cvename>CVE-2013-0784</cvename>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-20.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-21.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-22.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-23.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-24.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-25.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-26.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-27.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-19</entry>
+      <modified>2013-02-20</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="fcfdabb7-f14d-4e61-a7d5-cfefb4b99b15">
+    <topic>Ruby Rack Gem -- Multiple Issues</topic>
+    <affects>
+      <package>
+	<name>rubygem18-rack</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-rack</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rack developers report:</p>
+	<blockquote cite="http://www.ruby-forum.com/topic/4410659">
+	  <p>Today we are proud to announce the release of Rack 1.4.5.</p>
+	  <p>Fix CVE-2013-0263, timing attack against Rack::Session::Cookie</p>
+          <p>Fix CVE-2013-0262, symlink path traversal in Rack::File</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0262</cvename>
+      <cvename>CVE-2013-0263</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-08</discovery>
+      <entry>2013-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="beab40bf-c1ca-4d2b-ad46-2f14bac8a968">
+    <topic>Ruby Activemodel Gem -- Circumvention of attr_protected</topic>
+    <affects>
+      <package>
+	<name>rubygem18-activemodel</name>
+	<range><lt>3.2.12</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-activemodel</name>
+	<range><lt>3.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aaron Patterson reports:</p>
+	<blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8">
+	  <p>The attr_protected method allows developers to specify a blacklist
+	     of model attributes which users should not be allowed to assign to.
+	     By using a specially crafted request, attackers could circumvent
+             this protection and alter values that were meant to be protected.</p>
+	  <p>All users running an affected release should either upgrade or use
+	     one of the work arounds immediately. Users should also consider
+	     switching from attr_protected to the whitelist method
+             attr_accessible which is not vulnerable to this attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0276</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-11</discovery>
+      <entry>2013-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7fe5b84a-78eb-11e2-8441-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.501</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-02-16">
+	  <p>This advisory announces multiple security vulnerabilities that
+	    were found in Jenkins core.</p>
+	  <ol>
+	    <li>One of the vulnerabilities allows cross-site request
+	      forgery (CSRF) attacks on Jenkins master, which causes an user
+	      to make unwanted actions on Jenkins. Another vulnerability
+	      enables cross-site scripting (XSS) attacks, which has the similar
+	      consequence. Another vulnerability allowed an attacker to bypass
+	      the CSRF protection mechanism in place, thereby mounting more CSRF
+	      attackes. These attacks allow an attacker without direct access to
+	      Jenkins to mount an attack.</li>
+	    <li>In the fourth vulnerability, a malicious user of Jenkins can trick
+	      Jenkins into building jobs that he does not have direct access to.</li>
+	    <li>And lastly, a vulnerability allows a malicious user of Jenkins to
+	      mount a denial of service attack by feeding a carefully crafted
+	      payload to Jenkins.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-02-16</url>
+    </references>
+    <dates>
+      <discovery>2013-02-16</discovery>
+      <entry>2013-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f7809d9e-6af0-11e2-8e32-080027d768d3">
+    <topic>poweradmin -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>poweradmin</name>
+       <range><lt>2.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Multiple cross-site scripting (XSS) vulnerabilities</p>
+        <blockquote cite="https://www.poweradmin.org/trac/ticket/468">
+          <p>Multiple scripts are vulnerable to XSS attacks.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>55619</bid>
+      <url>http://packetstormsecurity.com/files/116698/Poweradmin-Cross-Site-Scripting.html</url>
+    </references>
+    <dates>
+      <discovery>2012-01-12</discovery>
+      <entry>2013-02-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c79eb109-a754-45d7-b552-a42099eb2265">
+    <topic>Ruby -- Denial of Service and Unsafe Object Creation Vulnerability in JSON</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>1.9,1</ge><lt>1.9.3.385,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem18-json</name>
+	<range><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-json</name>
+	<range><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>rubygem18-json_pure</name>
+	<range><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-json_pure</name>
+	<range><lt>1.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aaron Patterson reports:</p>
+	<blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/4_YvCpLzL58">
+	  <p>When parsing certain JSON documents, the JSON gem can be coerced in
+	     to creating Ruby symbols in a target system. Since Ruby symbols
+	     are not garbage collected, this can result in a denial of service
+             attack.</p>
+	  <p>The same technique can be used to create objects in a target system
+	     that act like internal objects. These "act alike" objects can be
+	     used to bypass certain security mechanisms and can be used as a
+	     spring board for SQL injection attacks in Ruby on Rails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0269</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-11</discovery>
+      <entry>2013-02-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d3e96508-056b-4259-88ad-50dc8d1978a6">
+    <topic>Ruby -- XSS exploit of RDoc documentation generated by rdoc</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>1.9,1</ge><lt>1.9.3.385,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem18-rdoc</name>
+	<range><lt>3.12.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem19-rdoc</name>
+	<range><lt>3.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby developers report:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2013/02/06/rdoc-xss-cve-2013-0256/">
+	  <p>RDoc documentation generated by rdoc bundled with ruby are
+	    vulnerable to an XSS exploit. All ruby users are recommended to
+	    update ruby to newer version which includes security-fixed RDoc. If
+	    you are publishing RDoc documentation generated by rdoc, you are
+	    recommended to apply a patch for the documentaion or re-generate it
+	    with security-fixed RDoc.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0256</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-06</discovery>
+      <entry>2013-02-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="414e6a41-7204-11e2-8599-001060e06fd4">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.262</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb13-04.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0633</cvename>
+      <cvename>CVE-2013-0634</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb13-04.html</url>
+    </references>
+    <dates>
+      <discovery>2013-02-07</discovery>
+      <entry>2013-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00b0d8cd-7097-11e2-98d9-003067c2616f">
   <topic>OpenSSL -- TLS 1.1, 1.2 denial of service</topic>
     <affects>
@@ -175,14 +784,14 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>This patch addresses three possible buffer overflows in
 	    function unique_service_name().The three issues have the
 	    folowing CVE numbers:</p>
-	  <ul>  
+	  <ul>
 	     <li>CVE-2012-5958 Issue #2: Stack buffer overflow of Tempbuf</li>
 	     <li>CVE-2012-5959 Issue #4: Stack buffer overflow of Event-&gt;UDN</li>
 	     <li>CVE-2012-5960 Issue #8: Stack buffer overflow of Event-&gt;UDN</li>
-	  </ul>  			
+	  </ul>
 	  <p>Notice that the following issues have already been dealt by
 	    previous work:</p>
-	  <ul>  					
+	  <ul>
 	     <li>CVE-2012-5961 Issue #1: Stack buffer overflow of Evt-&gt;UDN</li>
 	     <li>CVE-2012-5962 Issue #3: Stack buffer overflow of Evt-&gt;DeviceType</li>
 	     <li>CVE-2012-5963 Issue #5: Stack buffer overflow of Event-&gt;UDN</li>
@@ -1780,11 +2389,11 @@ executed in your Internet Explorer while displaying the email.</p>
 	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2012_01.txt">
 	  <p>Certain Connection header values will trigger an endless loop, for example:
 	    "Connection: TE,,Keep-Alive"</p>
-	  <p>On receiving such value, lighttpd will enter an endless loop, 
-	    detecting an empty token but not incrementing the current string 
+	  <p>On receiving such value, lighttpd will enter an endless loop,
+	    detecting an empty token but not incrementing the current string
 	    position, and keep reading the ',' again and again.</p>
-	  <p>This bug was introduced in 1.4.31, when we fixed an "invalid read" 
-	    bug (it would try to read the byte before the string if it started 
+	  <p>This bug was introduced in 1.4.31, when we fixed an "invalid read"
+	    bug (it would try to read the byte before the string if it started
 	    with ',', although the value wasn't actually used).</p>
 	</blockquote>
       </body>
@@ -1933,7 +2542,7 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Sebastien Helleu reports:</p>
 	<blockquote cite="http://weechat.org/security/">
-	  <p>Untrusted command for function hook_process could lead to 
+	  <p>Untrusted command for function hook_process could lead to
 	  execution of commands, because of shell expansions.</p>
 	  <p>Workaround with a non-patched version: remove/unload all scripts
 	  calling function hook_process (for maximum safety).</p>
@@ -2092,9 +2701,9 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Sebastien Helleu reports:</p>
 	<blockquote cite="https://savannah.nongnu.org/bugs/?37704">
-	  <p>A buffer overflow is causing a crash or freeze of WeeChat when 
+	  <p>A buffer overflow is causing a crash or freeze of WeeChat when
 	  decoding IRC colors in strings.</p>
-	  <p>Workaround for a non-patched version: 
+	  <p>Workaround for a non-patched version:
 	  /set irc.network.colors_receive off</p>
 	</blockquote>
       </body>
@@ -2654,13 +3263,13 @@ executed in your Internet Explorer while displaying the email.</p>
           <p>Arbitrary PHP code execution</p>
           <p>A bug in the installer code was identified that allows an attacker
              to re-install Drupal using an external database server under certain
-             transient conditions. This could allow the attacker to execute 
+             transient conditions. This could allow the attacker to execute
              arbitrary PHP code on the original server.</p>
           </li>
           <li>
           <p>Information disclosure - OpenID module</p>
           <p>For sites using the core OpenID module, an information disclosure
-             vulnerability was identified that allows an attacker to read files 
+             vulnerability was identified that allows an attacker to read files
              on the local filesystem by attempting to log in to the site using a
              malicious OpenID server.</p>
           </li>
@@ -2792,20 +3401,20 @@ executed in your Internet Explorer while displaying the email.</p>
           <p>Host header poisoning</p>
           <p>Some parts of Django -- independent of end-user-written applications
              -- make use of full URLs, including domain name, which are generated
-             from the HTTP Host header. Some attacks against this are beyond Django's 
-             ability to control, and require the web server to be properly configured; 
+             from the HTTP Host header. Some attacks against this are beyond Django's
+             ability to control, and require the web server to be properly configured;
              Django's documentation has for some time contained notes advising users
              on such configuration.</p>
           <p>Django's own built-in parsing of the Host header is, however, still
              vulnerable, as was reported to us recently. The Host header parsing
-             in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host() 
-             -- was incorrectly handling username/password information in the header. 
+             in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host()
+             -- was incorrectly handling username/password information in the header.
              Thus, for example, the following Host header would be accepted by Django when
              running on "validsite.com":</p>
           <p>Host: validsite.com:random@evilsite.com</p>
           <p>Using this, an attacker can cause parts of Django -- particularly the
              password-reset mechanism -- to generate and display arbitrary URLs to users.</p>
-          <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host 
+          <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host
              headers which contain potentially dangerous content (such as username/password
              pairs) now raise the exception django.core.exceptions.SuspiciousOperation.</p>
           </li>
@@ -3312,14 +3921,14 @@ executed in your Internet Explorer while displaying the email.</p>
         <p>Secunia reports:</p>
         <blockquote cite="http://secunia.com/advisories/50598/">
           <p>A vulnerability has been discovered in OpenX, which can be
-             exploited by malicious people to conduct SQL injection 
+             exploited by malicious people to conduct SQL injection
              attacks.</p>
-          <p>Input passed via the "xajaxargs" parameter to 
-             www/admin/updates-history.php (when "xajax" is set to 
-             "expandOSURow") is not properly sanitised in e.g. the 
-             "queryAuditBackupTablesByUpgradeId()" function 
+          <p>Input passed via the "xajaxargs" parameter to
+             www/admin/updates-history.php (when "xajax" is set to
+             "expandOSURow") is not properly sanitised in e.g. the
+             "queryAuditBackupTablesByUpgradeId()" function
              (lib/OA/Upgrade/DB_UpgradeAuditor.php) before being used in SQL
-             queries. This can be exploited to manipulate SQL queries by 
+             queries. This can be exploited to manipulate SQL queries by
              injecting arbitrary SQL code.</p>
           <p>The vulnerability is confirmed in version 2.8.9. Prior versions
              may also be affected.</p>
@@ -3486,7 +4095,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>Kurt Seifried reports:</p>
 	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=844105">
 	  <p>There is an issue in ImageMagick that is also present in
-	    GraphicsMagick. CVE-2011-3026 deals with libpng memory 
+	    GraphicsMagick. CVE-2011-3026 deals with libpng memory
 	    allocation, and limitations have been added so that a bad PNG
 	    can't cause the system to allocate a lot of memory and a
 	    denial of service. However on further investigation of
@@ -4148,7 +4757,7 @@ executed in your Internet Explorer while displaying the email.</p>
         <p>Mediawiki reports:</p>
         <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2012-August/000119.html">
           <p>(Bug 39700) Wikipedia administrator Writ Keeper discovered
-            a stored XSS (HTML injection) vulnerability. This was 
+            a stored XSS (HTML injection) vulnerability. This was
             possible due to the handling of link text on File: links for
             nonexistent files. MediaWiki 1.16 and later is affected.</p>
           <p>(Bug 39180) User Fomafix reported several DOM-based XSS
@@ -4174,7 +4783,7 @@ executed in your Internet Explorer while displaying the email.</p>
             that did not exist in the external system, indefinitely.</p>
           <p>(Bug 39823) During internal review, it was discovered that metadata
             about blocks, hidden by a user with suppression rights, was visible
-            to administrators.</p> 
+            to administrators.</p>
         </blockquote>
       </body>
     </description>
@@ -4461,12 +5070,12 @@ executed in your Internet Explorer while displaying the email.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Coppermine Team reports:</p>
 	<blockquote cite="http://forum.coppermine-gallery.net/index.php/topic,74682.0.html">
-	  <p>The release covers several path disclosure vulnerabilities. If 
-	    unpatched, it's possible to generate an error that will reveal the 
-	    full path of the script. A remote user can determine the full path 
-	    to the web root directory and other potentially sensitive 
-	    information. Furthermore, the release covers a recently discovered 
-	    XSS vulnerability that allows (if unpatched) a malevolent visitor to 
+	  <p>The release covers several path disclosure vulnerabilities. If
+	    unpatched, it's possible to generate an error that will reveal the
+	    full path of the script. A remote user can determine the full path
+	    to the web root directory and other potentially sensitive
+	    information. Furthermore, the release covers a recently discovered
+	    XSS vulnerability that allows (if unpatched) a malevolent visitor to
 	    include own script routines under certain conditions.</p>
 	</blockquote>
       </body>
@@ -5218,7 +5827,6 @@ executed in your Internet Explorer while displaying the email.</p>
 	  <p>When establishing a secure (SSL / TLS) connection to a target server an invalid regular
 	    expression has been used for performing the hostname verification. Subset instead of the
 	    full target server hostname has been marked an an acceptable match for the given hostname.
-	  
 	    For example, certificate with a hostname field of "aexample.com" was considered a valid
 	    certificate for domain "example.com".</p>
 	</blockquote>

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	enblend
-PORTVERSION=	4.0
-PORTREVISION=	2
+PORTVERSION=	4.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION}
+# Care: the directory is the minor release number
+MASTER_SITE_SUBDIR=	enblend/enblend-enfuse/enblend-enfuse-4.1
 DISTNAME=	enblend-enfuse-${PORTVERSION}
 
 MAINTAINER=	grog@FreeBSD.org
@@ -18,11 +18,13 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
 		xmi:${PORTSDIR}/graphics/plotutils \
 		tiff:${PORTSDIR}/graphics/tiff \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs
+		boost_filesystem:${PORTSDIR}/devel/boost-libs \
+		vigraimpex:${PORTSDIR}/graphics/vigra \
+		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
-WRKSRC=		${WRKDIR}/enblend-enfuse-4.0-753b534c819d
-
+INFO=		enfuse enblend
+MAKE_JOBS_SAFE= yes
 USE_AUTOTOOLS=	automake:env autoconf:env
 USE_GMAKE=	yes
 # We need a newer version of makinfo for this.
@@ -43,8 +45,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		enblend.1 enfuse.1
 PLIST_FILES=	bin/enblend bin/enfuse
 
-# run autotools
-#pre-configure:
-#	cd ${WRKSRC} && ${MAKE} -f Makefile.cvs
+post-install:
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>

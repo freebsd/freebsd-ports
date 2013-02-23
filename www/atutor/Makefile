@@ -10,6 +10,8 @@ DISTNAME=	ATutor-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
 
+BROKEN=		checksum mismatch
+
 USE_PHP=	session mbstring zlib mysql
 WRKSRC=		${WRKDIR}/ATutor
 

@@ -6,7 +6,7 @@ PORTVERSION=	2.7.2
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs.freebsd@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
 
 LICENSE=	MIT

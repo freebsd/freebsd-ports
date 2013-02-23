@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -8276,177 +8276,13 @@
+@@ -8283,159 +8283,6 @@
    LIBSOUND=
  fi
  
@@ -160,20 +160,10 @@ $FreeBSD$
 -
 -  fi
 -
--        if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
--     case "$opsys" in
--              gnu-linux|freebsd|netbsd)
--
--$as_echo "#define HAVE_SOUND 1" >>confdefs.h
--
--         ;;
--     esac
--  fi
--
--
- fi
- 
- for ac_header in sys/select.h sys/time.h unistd.h utime.h \
+         if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
+      case "$opsys" in
+               gnu-linux|freebsd|netbsd)
+@@ -8453,7 +8300,7 @@
    linux/version.h sys/systeminfo.h \
    stdio_ext.h fcntl.h coff.h pty.h sys/mman.h \
    sys/vlimit.h sys/resource.h locale.h sys/_mbstate_t.h \

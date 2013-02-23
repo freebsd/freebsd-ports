@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	massxpert
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
@@ -19,6 +19,8 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 
 LICENSE=	GPLv3
 
+USE_GCC=	any
+USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

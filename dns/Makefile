@@ -148,6 +148,7 @@
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix_service
+    SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns
     SUBDIR += skadns

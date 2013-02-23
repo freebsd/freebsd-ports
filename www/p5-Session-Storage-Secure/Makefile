@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Session-Storage-Secure
-PORTVERSION=	0.005
+PORTVERSION=	0.006
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -16,7 +16,7 @@ RUN_DEPENDS=	\
 	p5-Crypt-URandom>0:${PORTSDIR}/security/p5-Crypt-URandom \
 	p5-Math-Random-ISAAC-XS>0:${PORTSDIR}/math/p5-Math-Random-ISAAC-XS \
 	p5-Moo>0:${PORTSDIR}/devel/p5-Moo \
-	p5-MooX-Types-MooseLike>0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
+	p5-MooX-Types-MooseLike>=0.16:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
 	p5-Sereal-Decoder>0:${PORTSDIR}/converters/p5-Sereal-Decoder \
 	p5-Sereal-Encoder>0:${PORTSDIR}/converters/p5-Sereal-Encoder \
 	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean

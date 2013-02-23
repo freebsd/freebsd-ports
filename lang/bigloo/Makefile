@@ -1,19 +1,14 @@
-# New ports collection makefile for:    bigloo
-# Date created:         15 Jul 2002
-# Whom:                 Stanislav Grozev <tacho@daemonz.org>
-#
+# Created by: Stanislav Grozev <tacho@daemonz.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bigloo
-PORTVERSION=	3.8c
-PORTREVISION=	3
+PORTVERSION=	4.0a
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/indes/fp/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Scheme interpreter and native code compiler
+COMMENT=	Scheme interpreter and native code compiler
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
@@ -23,13 +18,17 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 
 OPTIONS_DEFINE=	AVAHI ALSA FLAC GSTREAMER MPG123 SQLITE OPENSSL DOCS
 OPTIONS_DEFAULT=OPENSSL
-MPG123_DESC=	Enable MPG123 support
 
 USE_GCC=	4.6+
 USE_EMACS=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	pcrelib="-L${LOCALBASE}/lib -lpcre" \
+		gmplib="-L${LOCALBASE}/lib -lgmp"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--cflags="${CPPFLAGS}" \
+		--coflags="${CFLAGS}" \
+		--ldflags="${LDFLAGS}" \
 		--docdir=${WRKDIR}/fakeroot \
 		--lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/bigloo \
 		--emacs=${EMACS_NAME} \
@@ -39,6 +38,9 @@ INSTALL_TARGET=	install-progs install-bee
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/bigloo/${PORTVERSION}
 PLIST_SUB=	BIGLOO_VERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=yes
+
+CPPFLAGS+=	-idirafter ${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		bigloo.1
 INFO=		bigloo
@@ -62,9 +64,6 @@ PLIST_SUB+=	ALSA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-.if empty(PORT_OPTIONS:MALSA)
-IGNORE=		FLAC support requires ALSA
-.endif
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
@@ -81,9 +80,6 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMPG123}
-.if empty(PORT_OPTIONS:MALSA)
-IGNORE=		MPG123 support requires ALSA
-.endif
 LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
@@ -113,28 +109,15 @@ PLIST_SUB+=	OPENSSL="@comment "
 BROKEN=		Does not compile on sparc64
 .endif
 
-# SRFI-27 requires a 32bits platform
-.if ${ARCH} == "i386"
-PLIST_SUB+=	SRFI27=""
-.else
-CONFIGURE_ARGS+=--disable-srfi27
-PLIST_SUB+=	SRFI27="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|^coflags=|#coflags=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"-lthr"|"${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/autoconf/pthread
-	@${REINPLACE_CMD} -e '/LDFLAGS=/s|export|true|g' \
-		${WRKSRC}/gc/configure-gc-7.3alpha1-20120316
 .for i in autoconf/mixer api/multimedia/src/Unix/bglmixer.c
 	@${REINPLACE_CMD} -e 's|machine/soundcard|sys/soundcard|g' \
 		${WRKSRC}/${i}
 .endfor
-
-post-configure:
-	@${FIND} ${WRKSRC} -name "bigloo_config.h" | ${XARGS} \
-		${REINPLACE_CMD} -e 's/BGL_HAVE_SENDFILE 1/BGL_HAVE_SENDFILE 0/'
+	@${FIND} ${WRKSRC}/gc -maxdepth 1 -type f | ${XARGS} \
+		${REINPLACE_CMD} -e '/LDFLAGS=/s|export|true|g'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/manuals/bigloo.man ${MANPREFIX}/man/man1/${MAN1}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	8.65
+PORTVERSION=	9.15
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ MAN3=		File::RandomAccess.3 Image::ExifTool.3 \
 		${MANTAGS:S/^/Image::ExifTool::/:S/$/.3/} \
 		${LANGTAGS:S/^/Image::ExifTool::Lang::/:S/$/.3/}
 
-LANGTAGS=	cs de en_ca en_gb es fr it ja ko nl pl ru sv tr zh_cn zh_tw
+LANGTAGS=	cs de en_ca en_gb es fi fr it ja ko nl pl ru sv tr zh_cn zh_tw
 MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
 		Canon CanonCustom CanonRaw CanonVRD CaptureOne Casio Charset \
 		DICOM DNG DV DjVu EXE Exif FLAC Fixup Flash FlashPix Font \
@@ -36,9 +36,9 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
 		JPEGDigest JVC Jpeg2000 Kodak KyoceraRaw LNK Leaf M2TS MIE \
 		MIEUnits MIFF MNG MPC MPEG MPF MWG MXF MakerNotes Matroska \
 		Microsoft Minolta MinoltaRaw Nikon NikonCapture NikonCustom \
-		OOXML Ogg Olympus PDF PGF PICT PNG PPM PSP Panasonic \
-		PanasonicRaw Pentax PhotoMechanic Photoshop PostScript PrintIM \
-		QuickTime RIFF RSRC RTF Rawzor Real Reconyx Ricoh Samsung \
+		OOXML Ogg Olympus OpenEXR PDF PGF PICT PNG PPM PSP Panasonic \
+		PanasonicRaw Pentax PhotoCD PhotoMechanic Photoshop PostScript PrintIM \
+		Qualcomm QuickTime RIFF RSRC RTF Radiance Rawzor Real Reconyx Ricoh Samsung \
 		Sanyo Shift Shortcuts Sigma SigmaRaw Sony SonyIDC Stim \
 		TagInfoXML TagLookup TagNames Theora Unknown Vorbis \
 		WriteCanonRaw WriteExif WriteIPTC WritePDF WritePNG \

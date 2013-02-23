@@ -19,7 +19,7 @@ COMMENT=	The build utility of the Qt project
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+MAKE_JOBS_SAFE=	yes
 PLIST_SUB+=	_PREFIX="${PREFIX}"
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
 
@@ -47,8 +47,6 @@ post-patch:
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's|release|release thread|' \
-		-e 's|-pthread -D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
-		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 

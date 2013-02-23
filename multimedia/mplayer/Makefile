@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mplayer
-# Date created:		10 August 2001
-# Whom:			Thomas E. Zander
-#			with lots of help from Vladimir Kushnir
+# Created by: Thomas E. Zander with help from Vladimir Kushnir
 # $FreeBSD$
-#
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
@@ -96,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-directfb \
 
 # Fix a problem with unknown assembly opcodes in embedded ffmpeg
 .if ${ARCH} == "ppc"
-CONFIGURE_ARGS+=        --disable-asm
+CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 .include "${.CURDIR}/Makefile.options"

@@ -1,0 +1,27 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/42/not_a_page.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/bar.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/lorem/ipsum.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/hello.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/not_a_page.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages_shift_jis/hello.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/tests.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages_shift_jis
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/lorem
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/42
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

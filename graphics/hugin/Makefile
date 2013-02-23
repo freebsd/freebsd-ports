@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	hugin
-PORTVERSION=	2011.4.0
-PORTREVISION=	5
+PORTVERSION=	2012.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		pano13:${PORTSDIR}/graphics/libpano13 \
+		Imath:${PORTSDIR}/graphics/ilmbase \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		Imath:${PORTSDIR}/graphics/ilmbase
-# gmake is really needed at _runtime_, do not remove it from below
+		exiv2.12:${PORTSDIR}/graphics/exiv2 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lensfun:${PORTSDIR}/graphics/lensfun \
+		pano13:${PORTSDIR}/graphics/libpano13 \
+		png15:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
+		tclap>=1.2.1:${PORTSDIR}/devel/tclap
+# gmake is really needed at _runtime_.   Do not remove it from this list.
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
@@ -71,15 +73,6 @@ MAN1=		\
 		vig_optimize.1
 
 #DOCSDIR=	${PREFIX}/share/hugin/xrc/data
-
-# Extract the tclap library in a place where hugin's CMake scripts will find
-# it. This library is entirely composed of .h files and does not need
-# to be compiled or configured. This dependency would best be done if tclap
-# is added as a separate port, but it does not seem eligible for that, so
-# currently we store the library in ${PATCHDIR} and extract it before running
-# CMake.
-pre-configure:
-	cd ${WRKSRC}/src/foreign && ${SH} ${PATCHDIR}/tclap-1.2.1-headers.shar
 
 # workaround a bug in cmake (?). Without this we get an error like:
 # cd /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx && /usr/bin/c++   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -D_THREAD_SAFE -O2 -fno-strict-aliasing -pipe -pthread;-D_THREAD_SAFE -O3 -DNDEBUG -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin_base -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign/vigra -I/usr/local/include -I/usr/local/include/OpenEXR -isystem /usr/local/lib/wx/include/gtk2-ansi-release-2.8 -isystem /usr/local/include/wx-2.8 -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1 -o CMakeFiles/huginbasewx.dir/ImageCache.o -c /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx/ImageCache.cpp

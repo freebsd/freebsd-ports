@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xditview
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xditview
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,6 +11,8 @@ LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xt xaw
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 
 MAN1=		xditview.1
 

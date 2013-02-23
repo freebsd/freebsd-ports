@@ -19,8 +19,8 @@ USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-DHAVE_LINUX -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-DHAVE_LINUX -I${LOCALBASE}/include
 
 CONFLICTS=	fam-[0-9]*
 
