@@ -4069,3 +4069,6 @@ net/libnet-devel|net/libnet|2013-02-18|Renamed to stable branch
 x11-fm/tkdesk||2013-02-19|Obsolete and unmaintained, doesn't run
 emulators/bsnes|emulators/higan|2013-02-22|Renamed upstream
 sysutils/fio|benchmarks/fio|2013-02-22|Moved to benchmarks category
+japanese/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
+french/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
+german/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
