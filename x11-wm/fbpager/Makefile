@@ -17,6 +17,8 @@ COMMENT=	Desktop pager for the Fluxbox window manager
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+BROKEN=		checksum mismatch
+
 PLIST_FILES=	bin/fbpager
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
