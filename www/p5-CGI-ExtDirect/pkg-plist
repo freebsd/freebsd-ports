@@ -1,0 +1,5 @@
+%%SITE_PERL%%/CGI/ExtDirect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/ExtDirect/.packlist
+@dirrmtry %%SITE_PERL%%/CGI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/ExtDirect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
