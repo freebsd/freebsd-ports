@@ -17,6 +17,8 @@ LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		failes to patch
+
 GNU_CONFIGURE=	yes
 USE_QT4=	moc_build qmake_build
 USE_FORTRAN=	yes
