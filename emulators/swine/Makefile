@@ -1,11 +1,10 @@
-# Created by:   nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	swine
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators deskutils python
-MASTER_SITES=	GH
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Qt4 graphical Wine frontend
@@ -40,8 +39,10 @@ RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
+	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|${PREFIX}/share/pixmaps/swine.png|' \
+	${WRKSRC}/resources/swine.desktop
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
 	${MKDIR} ${DATADIRLIB}
