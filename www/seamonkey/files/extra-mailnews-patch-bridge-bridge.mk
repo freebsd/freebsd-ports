@@ -6,8 +6,6 @@
  
 +ifdef disabled
  APP_LIBXUL_DIRS += \
-   $(DEPTH)$(SUBDIR)/mailnews/base \
-   $(DEPTH)$(SUBDIR)/mailnews/mime/public \
    $(DEPTH)$(SUBDIR)/mailnews \
    $(NULL)
 +endif
