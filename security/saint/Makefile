@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SAINT
-# Date created:		27 Jan 2000
-# Whom:			Carl Johan Madestrand <calle.madestrand@norrgarden.se>
-#
+# Created by: Carl Johan Madestrand <calle.madestrand@norrgarden.se>
 # $FreeBSD$
-#
 
 PORTNAME=	saint
 PORTVERSION=	3.5.8
@@ -30,10 +26,6 @@ INSTALL_TARGET=	all
 MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		leaves files after deinstallation
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/saint
