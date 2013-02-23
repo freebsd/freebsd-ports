@@ -17,10 +17,12 @@ USE_QT4=	gui moc_build network qmake_build rcc_build uic_build
 USE_SDL=	sdl mixer sound
 MAKE_JOBS_SAFE=	yes
 
+QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
+
 PLIST_FILES=	bin/qtads
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
