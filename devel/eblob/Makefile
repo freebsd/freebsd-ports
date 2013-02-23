@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eblob
-PORTVERSION=	0.17.5
-PORTREVISION=	1
+PORTVERSION=	0.18.2
 CATEGORIES=	devel
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -15,10 +14,8 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
-GH_COMMIT=	9c2c347
+GH_COMMIT=	0a75b89
 GH_TAGNAME=	master
-
-BROKEN=		checksum mismatch
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
