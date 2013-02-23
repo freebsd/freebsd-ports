@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	regina
-PORTVERSION=	3.5
+PORTVERSION=	3.7
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-rexx/${PORTNAME}-rexx/${PORTVERSION}
 PKGNAMEPREFIX=	rexx-
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	rxstack
 
-MAN1=	regina.1
+MAN1=	regina.1 regina-config.1 rxqueue.1 rxstack.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
