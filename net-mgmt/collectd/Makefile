@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -128,7 +128,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-vmem \
 		--disable-vserver \
 		--disable-wireless \
-		--disable-zfs_arc \
 		--without-perl-bindings \
 		--without-librabbitmq \
 		--disable-varnish \
