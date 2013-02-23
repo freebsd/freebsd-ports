@@ -18,6 +18,8 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=yes
 
+BROKEN=		does not build
+
 USE_ZIP=	yes
 USE_XORG=	xpm
 USE_DOS2UNIX=	*.cpp *.h config.mk makefile
