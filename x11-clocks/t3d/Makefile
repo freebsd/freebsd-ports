@@ -20,6 +20,8 @@ EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}
 
+BROKEN=		checksum mismatch
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
