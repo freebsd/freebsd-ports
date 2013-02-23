@@ -25,6 +25,8 @@ USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_JOBS_SAFE=	yes
 
+BROKEN=	checksum mismatch
+
 PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 		%%DATADIR%%/gpxe.usb \
