@@ -69,7 +69,7 @@ CFLAGS+=	-mminimal-toc
 .endif
 
 .if ${PORT_OPTIONS:MPGO}
-USE_GCC?=	any
+USE_GCC?=	yes
 USE_DISPLAY=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 
