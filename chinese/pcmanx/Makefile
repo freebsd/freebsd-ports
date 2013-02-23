@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanx
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
@@ -18,7 +17,6 @@ USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS DEBUG DOCKLET NOTIFIER LIBNOTIFY NANCY MOUSE EXTERNAL IPLOOKUP PROXY
 OPTIONS_DEFAULT=	DOCKLET NOTIFIER NANCY MOUSE EXTERNAL
@@ -60,7 +58,7 @@ CONFIGURE_ARGS+=--disable-notifier
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}
 CONFIGURE_ARGS+=--enable-libnotify
-BUILD_DEPENDS=	libnotify>0:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
 .if empty(PORT_OPTIONS:MNANCY)
@@ -82,5 +80,9 @@ CONFIGURE_ARGS+=--enable-iplookup
 .if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=--enable-proxy
 .endif
+
+post-install:
+	@# create directory for user friendly
+	${MKDIR} ${DATADIR}/script/
 
 .include <bsd.port.mk>

@@ -11,10 +11,7 @@ share/pixmaps/pcmanx.svg
 %%DATADIR%%/nancy_bot/example_msg.data
 %%DATADIR%%/nancy_bot/example_usages.data
 %%DATADIR%%/sitelist
-@dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%/nancy_bot
+@dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry %%JAVAJARDIR%%
-@exec mkdir -p %D/%%DATADIR%%/script
-@exec mkdir -p %D/%%JAVAJARDIR%%
