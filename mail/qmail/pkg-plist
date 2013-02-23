@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmail.sh
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsmtpd
 %%LDAP%%bin/auth_imap
 %%LDAP%%bin/auth_pop
 %%LDAP%%bin/auth_smtp
@@ -78,7 +78,7 @@ bin/tcp-env
 %%NOT_LDAP%%boot/maildir
 %%NOT_LDAP%%boot/proc
 %%NOT_LDAP%%boot/proc+df
-%%NOT_LDAP%%boot/qmail-smtpd.rcNG
+%%NOT_LDAP%%boot/qmailsmtpd
 %%LDAP%%boot/qmail/log/run
 %%LDAP%%boot/qmail/run
 %%LDAP%%boot/qmail-smtpd/log/run
