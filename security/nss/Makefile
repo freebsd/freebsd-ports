@@ -57,10 +57,10 @@ USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
 .if defined(WITH_CLANG_IS_CC) || ${CC:Mcc} && ${OSVERSION} > 1000023
 EXTRA_PATCHES+=	${FILESDIR}/extra-bug835050
+.endif
 .if ${CC:Mcc} && (${OSVERSION} >= 800000 && ${OSVERSION} < 802503 \
 	|| ${OSVERSION} < 704101)
 USE_GCC?=	yes # -mssse3
-.endif
 .endif
 .endif
 
