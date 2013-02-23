@@ -1,6 +1,6 @@
---- third_party/libusb/libusb.gyp.orig	2012-08-27 06:35:03.000000000 +0300
-+++ third_party/libusb/libusb.gyp	2012-08-28 06:46:24.000000000 +0300
-@@ -10,23 +10,33 @@
+--- third_party/libusb/libusb.gyp.orig
++++ third_party/libusb/libusb.gyp
+@@ -10,23 +10,36 @@
      {
        'target_name': 'libusb',
        'conditions': [
@@ -29,6 +29,9 @@
 +                    '-lusb',
 +                  ],
 +                },
++                'defines': [
++                  'LIBUSB_CALL=',
++                ],
 +              }, {
 +                'cflags': [
 +                  '<!@(pkg-config --cflags libusb-1.0)',

@@ -1,19 +1,20 @@
---- chrome/chrome_browser.gypi.orig	2012-11-27 10:02:39.000000000 +0200
-+++ chrome/chrome_browser.gypi	2012-11-29 22:30:15.798669580 +0200
-@@ -2633,6 +2633,18 @@
+--- chrome/chrome_browser.gypi.orig	2013-02-05 10:03:06.000000000 +0200
++++ chrome/chrome_browser.gypi	2013-02-13 22:38:19.000000000 +0200
+@@ -2781,6 +2781,19 @@
              ['exclude', '^browser/usb/'],
            ],
          }],
 +        ['os_bsd==1', {
-+          'sources!': [
-+            'browser/chrome_browser_main_linux.cc',
-+            'browser/chrome_browser_main_linux.h',
-+            'browser/media_gallery/mtp_device_delegate_impl_linux.cc',
-+            'browser/media_gallery/mtp_device_delegate_impl_linux.h',
-+            'browser/system_monitor/media_transfer_protocol_device_observer_linux.cc',
-+            'browser/system_monitor/media_transfer_protocol_device_observer_linux.h',
-+            'browser/system_monitor/removable_device_notifications_linux.cc',
-+            'browser/system_monitor/removable_device_notifications_linux.h',
++          'sources/': [
++            ['exclude', '^browser/chrome_browser_main_linux.cc'],
++            ['exclude', '^browser/chrome_browser_main_linux.h'],
++            ['exclude', '^browser/media_gallery/linux/'],
++            ['exclude', '^browser/system_monitor/media_transfer_protocol_device_observer_linux.cc'],
++            ['exclude', '^browser/system_monitor/media_transfer_protocol_device_observer_linux.h'],
++            ['exclude', '^browser/system_monitor/removable_device_notifications_linux.cc'],
++            ['exclude', '^browser/system_monitor/removable_device_notifications_linux.h'],
++            ['exclude', '^browser/system_monitor/udev_util_linux.cc'],
++            ['exclude', '^browser/system_monitor/udev_util_linux.h'],
 +          ],
 +        }],
          ['OS=="mac"', {
