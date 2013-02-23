@@ -21,6 +21,8 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
+BROKEN=		does not build
+
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/snes.s9xskin \
