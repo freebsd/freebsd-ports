@@ -3,6 +3,7 @@
 
 PORTNAME=	sbt
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
