@@ -1147,6 +1147,7 @@
     SUBDIR += p5-Protocol-XMLRPC
     SUBDIR += p5-REST-Client
     SUBDIR += p5-REST-Google-Apps-Provisioning
+    SUBDIR += p5-RPC-ExtDirect
     SUBDIR += p5-RT-Authen-ExternalAuth
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RT-Extension-LDAPImport
