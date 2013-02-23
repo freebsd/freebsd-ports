@@ -1,93 +1,134 @@
-# New ports collection makefile for:	MT
-# Date created:			Fri Jun 13 16:39:20 CST 2003
-# Whom:				Foxfair Hu <foxfair@FreeBSD.org>
-#
+# Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MT
-PORTVERSION=	5.14
-PORTREVISION=	1
+PORTVERSION=	5.2.3
+PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
-DISTNAME?=	MTOS-${PORTVERSION}-en
+DISTNAME?=	MTOS-${PORTVERSION}
 
 MAINTAINER?=	takefu@airport.fm
-COMMENT?=	A web-based personal publishing system for weblogs
+COMMENT?=	Web-based personal publishing system for weblogs
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
-RUN_DEPENDS+=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
+RUN_DEPENDS+=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 
-OPTIONS=	APACHE			"USE_APACHE"		off \
-		MYSQL			"USE_MYSQL"		off \
-		OPTIONAL_MODULES	"OPTIONAL_MODULES"	on
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=		APACHE MYSQL SSL TLS\
+			OPTIONAL_MODULES ADDITIONAL_MODULES\
+			PGSQL ORACLE ODBC SQLITE2 PSGI
+OPTIONS_DEFAULT=	MYSQL OPTIONAL_MODULES
+OPTIONAL_MODULES_DESC=	Optional Perl Modules
+ADDITIONAL_MODULES_DESC=Additional Perl modules
+SQLITE2_DESC=		SQLite 2 database
+PSGI_DESC=		Perl Web Server Gateway Interface
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPTIONAL_MODULES)
-RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
-		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-.endif
-
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
+PLIST_SUB+=	DATADIR=${DATADIR}\
+		CGIDIR=${CGIDIR}\
+		DB_DIR=${DB_DIR}
+SUB_FILES+=	pkg-install
+SUB_LIST+=	DATADIR=${DATADIR}\
+		CGIDIR=${CGIDIR}\
+		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}\
+		DB_DIR=${DB_DIR}\
+		WWWOWN=${WWWOWN}\
+		WWWGRP=${WWWGRP}
 
-.if defined(WITH_MYSQL)
-DB_DIR?=	${BASEDIR}/var/db/mysql/blog
-RUN_DEPENDS+=	p5-DBD-mysql>=1:${PORTSDIR}/databases/p5-DBD-mysql
-USE_MYSQL=	yes
+USE_PERL5_RUN=	5.8.1+
+NO_BUILD=	yes
+MT_DOCS_URL?=	http://www.movabletype.org/documentation/
+MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
+
+MT_LANG?=	EN
+.if ${MT_LANG} == RU
+PLIST_SUB+=	LANG_RU=""
 .else
-DB_DIR?=	${PREFIX}/${CGIDIR}/db
-RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-WITH_DEFAULTDB=	yes
+PLIST_SUB+=	LANG_RU="@comment "
 .endif
 
-PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
-
-USE_PERL5_RUN=	yes
-NO_BUILD=	yes
-
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MOPTIONAL_MODULES}
+RUN_DEPENDS+=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser\
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww\
+		p5-SOAP-Lite>=0.5:${PORTSDIR}/net/p5-SOAP-Lite\
+		convert:${PORTSDIR}/graphics/ImageMagick\
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
+		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA\
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64\
+		p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom\
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip\
+		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced\
+		p5-XML-LibXML>=1.7:${PORTSDIR}/textproc/p5-XML-LibXML
+.endif
+.if ${PORT_OPTIONS:MADDITIONAL_MODULES}
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5\
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1\
+		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run\
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail\
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap\
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser\
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX\
+		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached\
+		p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
+.endif
+.if ${PORT_OPTIONS:MSSL} || ${PORT_OPTIONS:MTLS}
+RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL
+. if ${PORT_OPTIONS:MSSL}
+RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay\
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL\
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+. endif
+. if ${PORT_OPTIONS:MTLS}
+RUN_DEPENDS+=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS
+. endif
+.endif
+.if ${PORT_OPTIONS:MMYSQL} && empty(PORT_OPTIONS:MPGSQL)
+USE_MYSQL=	server
+DB_DIR?=	${BASEDIR}/var/db/mysql/WEBLOG_DATABASEDIR
+RUN_DEPENDS+=	p5-DBD-mysql>=2.9005:${PORTSDIR}/databases/p5-DBD-mysql
+.endif
+.if ${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+USE_PGSQL=	server
+RUN_DEPENDS+=	p5-DBD-Pg>=1.32:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
+.if empty${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+DB_DIR?=	${PREFIX}/${CGIDIR}/db
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite\
+		sqlite3>=3:${PORTSDIR}/databases/sqlite3
+WITH_DEFAULTDB=	yes
+.endif
+.if ${PORT_OPTIONS:MORACLE}
+RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+.endif
+.if ${PORT_OPTIONS:MODBC}
+RUN_DEPENDS+=	p5-DBD-ODBC>=1.13:${PORTSDIR}/databases/p5-DBD-ODBC
+.endif
+.if ${PORT_OPTIONS:MSQLITE2}
+RUN_DEPENDS+=	p5-DBD-SQLite2>=0:${PORTSDIR}/databases/p5-DBD-SQLite2
+.endif
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 SUB_FILES+=	MT.conf
-SUB_LIST+=	DATADIR=${PREFIX}/${DATADIR} CGIDIR=${PREFIX}/${CGIDIR} \
-		APACHEETCDIR=${PREFIX}/${APACHEETCDIR} \
-		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}
+SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
 .endif
-
-MT_LANGUAGES=	en ja ru
-MT_LANG?=	en
-
-.for _L in ${MT_LANGUAGES}
-.if ${MT_LANG} == ${_L}
-PLIST_SUB+=	LANG_${_L:U}=""
-.else
-PLIST_SUB+=	LANG_${_L:U}="@comment "
+.if ${PORT_OPTIONS:MPSGI}
+RUN_DEPENDS+=	p5-CGI-PSGI>0:${PORTSDIR}/www/p5-CGI-PSGI\
+		p5-CGI-Emulate-PSGI>=0.06:${PORTSDIR}/www/p5-CGI-Emulate-PSGI\
+		p5-Plack>=0:${PORTSDIR}/www/p5-Plack\
+		p5-SOAP-Transport-HTTP-Plack>=0:${PORTSDIR}/www/p5-SOAP-Transport-HTTP-Plack
 .endif
-.endfor
-
-MT_DOCS_URL?=	http://www.movabletype.org/documentation/
-MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_OPTIONAL_MODULES)
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
-.endif
-.endif
 
 pre-everything::
 	@${ECHO_CMD} "ATTENTION:"
@@ -97,16 +138,13 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Available switches:"
 	@${ECHO_CMD} "-------------------"
+.if !${PORT_OPTIONS:MPGSQL}
 	@${ECHO_CMD} "DB_DIR"
 	@${ECHO_CMD} "		- Override the default database directory"
 	@${ECHO_CMD} "		  (${DB_DIR})"
-.if !defined(WITHOUT_OPTIONAL_MODULES)
-	@${ECHO_CMD} "WITHOUT_OPTIONAL_MODULES"
-	@${ECHO_CMD} "		- Don't install optional perl modules, needed for"
-	@${ECHO_CMD} "		  Trackbacks, XML-RPC and thumbnails"
 .endif
-.if !defined(WITH_MYSQL)
-	@${ECHO_CMD} "WITH_MYSQL"
+.if ${PORT_OPTIONS:MMYSQL}
+	@${ECHO_CMD} "OPTIONS_FILE_SET=MYSQL"
 	@${ECHO_CMD} "		- Use MySQL as database backend"
 .endif
 
@@ -114,21 +152,26 @@ do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
-	@cd ${WRKSRC} && ${CP} -R *.cgi mt-config.cgi-original \
+	@cd ${WRKSRC} && ${CP} -R *.cgi mt.psgi mt-config.cgi-original \
 	  alt-tmpl default_templates extlib import lib php plugins \
-	  search_templates themes tmpl tools ${PREFIX}/${CGIDIR}
+	  search_templates themes tmpl tools COPYING index.html readme.html \
+	  ${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R mt-static ${PREFIX}/${DATADIR}
-.if defined(WITH_DEFAULTDB)
-	@${MKDIR} -m 755 ${DB_DIR}
-	@${CHOWN} -R www:www ${DB_DIR}
-.endif
-	@${CHOWN} -R www:www ${PREFIX}/${CGIDIR} ${PREFIX}/${DATADIR}
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${WITH_DEFAULTDB}
 	@${ECHO_MSG} "*****************************************************************"
-.if defined(WITH_APACHE)
+	@${ECHO_CMD} ""
+	@${ECHO_MSG} "You have just installed the movabletype."
+	@${ECHO_CMD} ""
+.if ${PORT_OPTIONS:MAPACHE}
+	@${ECHO_MSG} "Note that you should restart your Apache web server to ensure that"
+	@${ECHO_MSG} "the "${PKGNAMEPREFIX}"MT configuration file is loaded."
+	@${ECHO_CMD} ""
+	@${ECHO_MSG} "Then browse to http://localhost/MTcgi/mt.cgi"
+	@${ECHO_CMD} ""
 	@${ECHO_MSG} "Please add the following to your apache config, and restart."
 	@${ECHO_CMD} ""
 	@${CAT} ${WRKDIR}/MT.conf
@@ -140,5 +183,6 @@ post-install:
 	@${ECHO_CMD} ""
 .endif
 	@${ECHO_MSG} "Please read the documentation: ${MT_DOCS_URL}"
+	@${ECHO_CMD} ""
 
 .include <bsd.port.post.mk>
