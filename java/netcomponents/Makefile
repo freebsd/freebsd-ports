@@ -9,7 +9,7 @@ PORTNAME=	netcomponents
 PORTVERSION=	1.3.8
 PORTREVISION=	2
 CATEGORIES=	java net
-MASTER_SITES=	http://www.savarese.org/oro/
+MASTER_SITES=	http://www.savarese.org/oro/downloads/
 DISTNAME=	NetComponents-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
