@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.yuanjue.net/download/
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	A Gmail Notifier for KDE
 
+BROKEN=		checksum mismatch
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
