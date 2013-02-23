@@ -19,6 +19,8 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}
 
 USE_DOS2UNIX=	*.cpp *.h
