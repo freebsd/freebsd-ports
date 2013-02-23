@@ -1,6 +1,6 @@
---- configure.orig	2012-09-28 03:37:35.000000000 +0200
-+++ configure	2012-10-12 21:36:17.611237650 +0200
-@@ -2029,7 +2029,7 @@
+--- configure.orig	2013-02-07 01:29:22.000000000 +0100
++++ configure	2013-02-23 22:38:06.946960545 +0100
+@@ -2030,7 +2030,7 @@
  nogas=":"
  
  # machine
@@ -9,22 +9,22 @@
  cpu="generic"
  
  # OS
-@@ -3728,10 +3728,10 @@
+@@ -3729,10 +3729,10 @@
  perl --version > /dev/null 2>&1 && enable perl || disable perl
  pod2man --help > /dev/null 2>&1 && enable pod2man || disable pod2man
  
 -check_header linux/fb.h
 -check_header linux/videodev.h
 -check_header linux/videodev2.h
--check_struct linux/videodev2.h "struct v4l2_frmivalenum" discrete
+-check_code cc linux/videodev2.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
 +#check_header linux/fb.h
 +#check_header linux/videodev.h
 +#check_header linux/videodev2.h
-+#check_struct linux/videodev2.h "struct v4l2_frmivalenum" discrete
++#check_code cc linux/videodev2.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
  
  check_header sys/videoio.h
  
-@@ -4121,7 +4121,7 @@
+@@ -4122,7 +4122,7 @@
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
  CC_IDENT=$cc_ident
@@ -33,7 +33,7 @@
  CC=$cc
  CXX=$cxx
  AS=$as
-@@ -4324,13 +4324,13 @@
+@@ -4325,13 +4325,13 @@
      requires=$5
      enabled ${name#lib} || return 0
      mkdir -p $name
@@ -49,7 +49,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -4344,10 +4344,10 @@
+@@ -4345,10 +4345,10 @@
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
@@ -62,7 +62,7 @@
  includedir=${includedir}
  
  Name: $name
-@@ -4361,25 +4361,25 @@
+@@ -4362,25 +4362,25 @@
  }
  
  libavfilter_pc_deps=""
