@@ -1,17 +1,12 @@
-# New ports collection makefile for:   usbhotkey
-# Date created:        16 July 2007
-# Whom:                ntarmos@ceid.upatras.gr
-#
+# Created by: ntarmos@ceid.upatras.gr
 # $FreeBSD$
-#
 
 PORTNAME=		usbhotkey
-PORTVERSION=		0.3.1
-PORTREVISION=	6
+PORTVERSION=		0.4
 CATEGORIES=		sysutils
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/
 
-MAINTAINER=		ntarmos@cs.uoi.gr
+MAINTAINER=		ntarmos@ceid.upatras.gr
 COMMENT=		A utility to remap USB keyboards under X11
 
 LIB_DEPENDS=		hid.0:${PORTSDIR}/devel/libhid \
