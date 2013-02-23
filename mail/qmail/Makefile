@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -60,7 +60,7 @@ QMAILQUEUE_PATCH_DESC=		Run a QMAILQUEUE program
 QMQP_COMPRESS_DESC=		QMQP on the fly compression
 QMTPC_PATCH_DESC=		Send email using qmtp protocol
 QUOTATRASH_DESC=		Include the Trash in the quota
-RCDLINK_DESC=			Create rc.d/qmail.sh symlink
+RCDLINK_DESC=			Create rc.d/qmail symlink
 SENDERCHECK4_DESC=		LOOSE checks exclusively for RELAY clients
 SMTPAUTHUSER_DESC=		Create env SMTPAUTHUSER containing authuser
 SMTPEXECCHECK_DESC=		Smtp DOS/Windows executable detection
@@ -287,6 +287,10 @@ SUB_FILES+=	pkg-message-${PKGMESSAGE_SUFFIX}
 PKGMESSAGE?=	${WRKDIR}/pkg-message-${PKGMESSAGE_SUFFIX}
 .else
 SUB_FILES+=	pkg-message
+.endif
+
+.if !defined(SLAVE_LDAP)
+SUB_FILES+=	qmailsmtpd
 .endif
 
 WRKDIR_doc=	${WRKDIR}/doc
@@ -813,7 +817,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
 .endfor
 .if !defined(SLAVE_LDAP)
-	${INSTALL_SCRIPT} ${FILESDIR}/qmail-smtpd.rcNG ${PREFIX}/boot
+	${INSTALL_SCRIPT} ${WRKDIR}/qmailsmtpd ${PREFIX}/boot
 .endif
 .for i in 1 5 7 8
 	@${MKDIR} ${PREFIX}/man/man$i
