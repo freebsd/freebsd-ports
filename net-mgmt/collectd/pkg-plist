@@ -107,6 +107,8 @@ lib/collectd/uuid.la
 %%WRITE_HTTP%%lib/collectd/write_http.so
 %%XMMS%%lib/collectd/xmms.la
 %%XMMS%%lib/collectd/xmms.so
+lib/collectd/zfs_arc.la
+lib/collectd/zfs_arc.so
 include/collectd/client.h
 include/collectd/lcc_features.h
 libdata/pkgconfig/libcollectdclient.pc
