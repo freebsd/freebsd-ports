@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.12
+PORTVERSION=	3.6.13
 CATEGORIES=	russian
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-${PORTVERSION:R}-ru/${PORTVERSION}
-DISTNAME=	bugzilla-${PORTVERSION}-ru-20121115
+DISTNAME=	bugzilla-${PORTVERSION}-ru-20130222
 
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
