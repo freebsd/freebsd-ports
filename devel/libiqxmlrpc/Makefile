@@ -15,6 +15,8 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	BSD
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 USE_CMAKE=	yes
