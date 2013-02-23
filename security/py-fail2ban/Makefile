@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.7.1
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +13,9 @@ COMMENT=	Scans log files and bans IP that makes too many password failures
 
 LICENSE=	GPLv2
 
-GITVERSION=	0-g0b5c66f
+GITVERSION=	0-g51a3be2
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-e59babb
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-ff91bd4
 
 MAKE_JOBS_SAFE=	yes
 
@@ -28,7 +27,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
 				--install-data=${ETCDIR}
-PYDISTUTILS_PKGVERSION=	0.8.7
+PYDISTUTILS_PKGVERSION=	0.8.8
 
 FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/man/fail2ban-client.1 \
