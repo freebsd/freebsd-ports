@@ -39,26 +39,28 @@ PLIST_FILES=	%%JAVAJARDIR%%/${OUTPUT_JAR} \
 
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	CAIRO "Cairo Support" on \
-		GNOMEVFS "Gnome VFS Support" on \
-		MOZILLA "Gecko Browser Support" off
+OPTIONS_DEFINE=	CAIRO GNOMEVFS MOZILLA
+GNOMEVFS_DESC=	Gnome VFS support
+MOZILLA_DESC=	Gecko browser support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=CAIRO GNOMEVFS
 
-.if defined(WITH_CAIRO)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCAIRO}
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 PLIST_FILES+=	lib/libswt-cairo-gtk-%%BUILD%%.so
 MAKE_CAIRO=	make_cairo
 .endif
 
-.if defined(WITH_GNOMEVFS)
+.if ${PORT_OPTIONS:MGNOMEVFS}
 USE_GNOME+=	gnomevfs2 libgnome libgnomeui
 PLIST_FILES+=	lib/libswt-gnome-gtk-%%BUILD%%.so
 MAKE_GNOME=	make_gnome
 .endif
 
-.if defined(WITH_MOZILLA)
-USE_MOZILLA=	libxul
+.if ${PORT_OPTIONS:MMOZILLA}
+USE_GECKO=	libxul19
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
 .endif
@@ -75,6 +77,8 @@ DIST_EXT=	gtk-linux-ppc64
 .else
 DIST_EXT=	gtk-linux-x86
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 .if ${OSVERSION} > 900044
