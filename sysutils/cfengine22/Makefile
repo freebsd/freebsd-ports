@@ -8,12 +8,14 @@
 PORTNAME=	cfengine
 PORTVERSION=	2.2.10
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cfengine.org/tarballs/
+MASTER_SITES=	http://cfengine.com/source-code/download?file=
 PKGNAMESUFFIX=	22
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
+
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-3* cfengine-devel-*
 
