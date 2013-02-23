@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	1
@@ -38,7 +37,7 @@ USE_PKGCONFIG=	build
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS GSM LAME \
 		LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG OPENSSL \
-		OPTIMIZED_CFLAGS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
+		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
 		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
 		X11GRAB X264 XVID
 
@@ -52,6 +51,7 @@ FFSERVER_DESC=	Build and install ffserver
 LIBV4L_DESC=	Video for Linux support
 MODPLUG_DESC=	Mod support via libmodplug
 OPENAL_DESC=	OpenAL 1.1 capture support
+OPUS_DESC=	Opus decoding with libopus
 X11GRAB_DESC=	Enable x11 grabbing
 
 FFPROGS=	ffmpeg ffprobe
@@ -327,6 +327,14 @@ LIB_DEPENDS+=	openjpeg:${PORTSDIR}/graphics/openjpeg
 CONFIGURE_ARGS+=	--enable-libopenjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libopenjpeg
+.endif
+
+# opus
+.if ${PORT_OPTIONS:MOPUS}
+LIB_DEPENDS+=	opus:${PORTSDIR}/audio/opus
+CONFIGURE_ARGS+=	--enable-libopus
+.else
+CONFIGURE_ARGS+=	--disable-libopus
 .endif
 
 # pulseaudio
