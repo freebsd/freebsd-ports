@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtk-engines2
-# Date Created:				21 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-themes/gtk-engines2/Makefile,v 1.82 2010/04/19 10:51:27 kwm Exp $
-#
 
 PORTNAME=	gtk-engines2
 PORTVERSION=	2.20.2
@@ -29,15 +25,20 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ANIMATION "Enable experimental animated progressbars" off
+OPTIONS_DEFINE=	ANIMATION
+ANIMATION_DESC=	Experimental animated progressbars
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ANIMATION)
+.if ${PORT_OPTIONS:MANIMATION}
 CONFIGURE_ARGS+=	--enable-animation
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib.*\.h>|glib.h>|g' \
+		${WRKSRC}/engines/clearlooks/src/animation.c
 
 post-install:
 	@(cd ${WRKSRC}/po && ${GMAKE} install)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
