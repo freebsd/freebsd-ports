@@ -689,6 +689,7 @@
     SUBDIR += p5-CGI-EncryptForm
     SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-Expand
+    SUBDIR += p5-CGI-ExtDirect
     SUBDIR += p5-CGI-FCKeditor
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-FormBuilder
