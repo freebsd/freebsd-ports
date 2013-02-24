@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="844cf3f5-9259-4b3e-ac9e-13ca17333ed7">
+    <topic>ruby -- DoS vulnerability in REXML</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>1.9,1</ge><lt>1.9.3.392,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby developers report:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2013/02/22/rexml-dos-2013-02-22/">
+	  <p>Unrestricted entity expansion can lead to a DoS vulnerability in
+	     REXML. (The CVE identifier will be assigned later.) We strongly
+             recommend to upgrade ruby.
+          </p>
+	  <p>When reading text nodes from an XML document, the REXML parser can
+	     be coerced in to allocating extremely large string objects which
+	     can consume all of the memory on a machine, causing a denial of
+             service.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ruby-lang.org/en/news/2013/02/22/rexml-dos-2013-02-22/</url>
+    </references>
+    <dates>
+      <discovery>2013-02-22</discovery>
+      <entry>2013-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e1aa3bdd-839a-4a77-8617-cca439a8f9fc">
     <topic>rubygem-ruby_parser -- insecure tmp file usage</topic>
     <affects>
