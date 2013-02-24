@@ -203,6 +203,8 @@ RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
 
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
+GEM_ENV?=		LC_CTYPE=UTF-8
+
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
 			--docdir="${RUBY_DOCDIR}" \
@@ -387,8 +389,7 @@ EXTRACT_SUFX=	.gem
 EXTRACT_ONLY=
 DIST_SUBDIR=	rubygem
 
-NO_BUILD=	yes
-
+EXTRACT_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems
 DOC_DIR=	${GEMS_BASE_DIR}/doc
@@ -428,10 +429,21 @@ RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gem
 RUBYGEM_ARGS+=	--no-rdoc
 .endif
 
+do-extract:
+	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES}
+	@${TAR} -xOzf ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} metadata.gz | ${GZCAT} > ${BUILD_WRKSRC}/${GEMFILES}spec
+
+do-build:
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${GEMFILES}spec ; then \
+		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			fi; \
+		${FALSE}; \
+		fi)
+
 do-install:
-.for _D in ${GEMFILES}
-	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
-.endfor
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
 
 . if defined(RUBYGEM_AUTOPLIST)
 .  if !target(post-install-script)
