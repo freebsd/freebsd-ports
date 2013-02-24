@@ -790,12 +790,11 @@ MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 
 .if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug
-WITH_LOGGING=	yes
 .else
 MOZ_OPTIONS+=	--disable-debug
 .endif
 
-.if ${PORT_OPTIONS:MLOGGING}
+.if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-logging
 .else
 MOZ_OPTIONS+=	--disable-logging
