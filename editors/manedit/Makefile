@@ -1,17 +1,12 @@
-# New ports collection makefile for:	manedit
-# Date created:				9 February 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	manedit
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	editors
-MASTER_SITES=	http://distro.ibiblio.org/pub/linux/distributions/amigolinux/download/Applications/Editors/manedit-0.8.1/
+MASTER_SITES=	http://wolfsinger.com/~wolfpack/packages/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A UNIX manual page editor and viewer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
@@ -27,8 +22,9 @@ pre-configure:
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,(viewerfio.c),\1 mntent_compat.c,; \
-			      s,(viewerfio.h),\1 mntent.h,' \
+	@${REINPLACE_CMD} -e '/-o $$(BIN)/s/(CC)/(CXX)/' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/^MAN/s/.bz2//' ${WRKSRC}/Makefile.install.FreeBSD
+	@${REINPLACE_CMD} -e '/^SRC_C =/s//& mntent_compat.c/' \
 		${WRKSRC}/Makefile.srclist
 
 .include <bsd.port.mk>

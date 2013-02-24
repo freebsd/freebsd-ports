@@ -1,8 +1,10 @@
 bin/manedit
 bin/manview
 bin/manwrap
-%%DATADIR%%/help/manpage_writing_procedures
-%%DATADIR%%/help/manpage_xml_reference
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/manedit_heading.gif
+%%DATADIR%%/help/tutorial.html
+%%DATADIR%%/help/xml_reference.html
 %%DATADIR%%/icons/manedit.xpm
 %%DATADIR%%/icons/manview.xpm
 %%DATADIR%%/templates/api.mpt
