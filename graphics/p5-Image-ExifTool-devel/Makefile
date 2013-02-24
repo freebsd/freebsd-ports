@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Image-ExifTool
-# Date Created:				15 Sep 2004
-# Whom:					Tod McQuillin <devin@spamcop.net>
-#
+# Created by: Tod McQuillin <devin@spamcop.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	9.15
+PORTVERSION=	9.19
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -30,14 +26,14 @@ MAN3=		File::RandomAccess.3 Image::ExifTool.3 \
 LANGTAGS=	cs de en_ca en_gb es fi fr it ja ko nl pl ru sv tr zh_cn zh_tw
 MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
 		Canon CanonCustom CanonRaw CanonVRD CaptureOne Casio Charset \
-		DICOM DNG DV DjVu EXE Exif FLAC Fixup Flash FlashPix Font \
+		DICOM DNG DV DarwinCore DjVu EXE Exif FLAC Fixup Flash FlashPix Font \
 		FotoStation FujiFilm GE GIF GIMP GPS GeoTiff Geotag H264 HP \
 		HTML HtmlDump ICC_Profile ID3 IPTC ITC Import InDesign JPEG \
 		JPEGDigest JVC Jpeg2000 Kodak KyoceraRaw LNK Leaf M2TS MIE \
 		MIEUnits MIFF MNG MPC MPEG MPF MWG MXF MakerNotes Matroska \
 		Microsoft Minolta MinoltaRaw Nikon NikonCapture NikonCustom \
-		OOXML Ogg Olympus OpenEXR PDF PGF PICT PNG PPM PSP Panasonic \
-		PanasonicRaw Pentax PhotoCD PhotoMechanic Photoshop PostScript PrintIM \
+		OOXML Ogg Olympus OpenEXR PDF PGF PICT PLIST PNG PPM PSP Panasonic \
+		PanasonicRaw Pentax PhaseOne PhotoCD PhotoMechanic Photoshop PostScript PrintIM \
 		Qualcomm QuickTime RIFF RSRC RTF Radiance Rawzor Real Reconyx Ricoh Samsung \
 		Sanyo Shift Shortcuts Sigma SigmaRaw Sony SonyIDC Stim \
 		TagInfoXML TagLookup TagNames Theora Unknown Vorbis \
