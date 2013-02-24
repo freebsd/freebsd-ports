@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2012-12-03 15:03:21.000000000 +0400
++++ CMakeLists.txt	2012-12-03 15:05:49.000000000 +0400
+@@ -43,7 +43,9 @@
+ add_subdirectory(client)
+ add_subdirectory(server)
+ add_subdirectory(master)
+-add_subdirectory(odalaunch)
++if(ODALAUNCH_TARGET)
++  add_subdirectory(odalaunch)
++endif()
+ 
+ # Disable the ag-odalaunch target completely: -DNO_AG-ODALAUNCH_TARGET
+ # This is only really useful when setting up a universal build.
