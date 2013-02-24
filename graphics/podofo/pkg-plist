@@ -52,7 +52,6 @@ include/podofo/base/PdfRect.h
 include/podofo/base/PdfRefCountedBuffer.h
 include/podofo/base/PdfRefCountedInputDevice.h
 include/podofo/base/PdfReference.h
-include/podofo/base/PdfRijndael.h
 include/podofo/base/PdfStream.h
 include/podofo/base/PdfString.h
 include/podofo/base/PdfTokenizer.h
@@ -73,6 +72,7 @@ include/podofo/base/util/PdfMutexWrapper.h
 include/podofo/doc/PdfAcroForm.h
 include/podofo/doc/PdfAction.h
 include/podofo/doc/PdfAnnotation.h
+include/podofo/doc/PdfCMapEncoding.h
 include/podofo/doc/PdfContents.h
 include/podofo/doc/PdfDestination.h
 include/podofo/doc/PdfDifferenceEncoding.h
@@ -85,6 +85,7 @@ include/podofo/doc/PdfFileSpec.h
 include/podofo/doc/PdfFont.h
 include/podofo/doc/PdfFontCID.h
 include/podofo/doc/PdfFontCache.h
+include/podofo/doc/PdfFontConfigWrapper.h
 include/podofo/doc/PdfFontFactory.h
 include/podofo/doc/PdfFontFactoryBase14Data.h
 include/podofo/doc/PdfFontMetrics.h
