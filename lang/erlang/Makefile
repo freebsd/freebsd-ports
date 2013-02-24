@@ -123,7 +123,6 @@ USE_CSTD=	gnu89
 USE_PERL5=	yes
 USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386 amd64 sparc64 powerpc
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--with-odbc
