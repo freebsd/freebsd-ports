@@ -1,12 +1,8 @@
-# Ports collection makefile for:  bison
-# Date created:			  27 Mar 1999
-# Whom:				  Jerry Hicks
-#
+# Created by: Jerry Hicks
 # $FreeBSD$
-#
 
 PORTNAME=	bison
-PORTVERSION=	2.5.1
+PORTVERSION=	2.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -19,6 +15,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_XZ=		yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -45,7 +42,7 @@ PLIST_SUB+=	NLS="@comment "
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
-.if empty(${PORT_OPTIONS:MNLS})
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
 .endif
 

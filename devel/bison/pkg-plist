@@ -4,6 +4,7 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/bison.m4
 %%DATADIR%%/c++-skel.m4
 %%DATADIR%%/c++.m4
+%%DATADIR%%/c-like.m4
 %%DATADIR%%/c-skel.m4
 %%DATADIR%%/c.m4
 %%DATADIR%%/glr.c
@@ -71,6 +72,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/th/LC_MESSAGES/bison-runtime.mo
