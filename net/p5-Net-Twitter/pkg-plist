@@ -1,13 +1,15 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter/.packlist
 %%SITE_PERL%%/Net/Identica.pm
 %%SITE_PERL%%/Net/Twitter.pm
-%%SITE_PERL%%/Net/Twitter/Search.pm
+%%SITE_PERL%%/Net/Twitter.pod
 %%SITE_PERL%%/Net/Twitter/API.pm
 %%SITE_PERL%%/Net/Twitter/Core.pm
 %%SITE_PERL%%/Net/Twitter/Error.pm
+%%SITE_PERL%%/Net/Twitter/Manual/MigratingToV1_1.pod
 %%SITE_PERL%%/Net/Twitter/OAuth.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Lists.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/REST.pm
+%%SITE_PERL%%/Net/Twitter/Role/API/RESTv1_1.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Search.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Search/Trends.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/TwitterVision.pm
@@ -20,11 +22,12 @@
 %%SITE_PERL%%/Net/Twitter/Role/RetryOnError.pm
 %%SITE_PERL%%/Net/Twitter/Role/SimulateCursors.pm
 %%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
-%%SITE_PERL%%/Net/Twitter.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/Twitter/Role/API/Search
-@dirrm %%SITE_PERL%%/Net/Twitter/Role/API
-@dirrm %%SITE_PERL%%/Net/Twitter/Role
+%%SITE_PERL%%/Net/Twitter/Search.pm
+@dirrmtry %%SITE_PERL%%/Net/Twitter/Role/API/Search
+@dirrmtry %%SITE_PERL%%/Net/Twitter/Role/API
+@dirrmtry %%SITE_PERL%%/Net/Twitter/Role
+@dirrmtry %%SITE_PERL%%/Net/Twitter/Manual
 @dirrmtry %%SITE_PERL%%/Net/Twitter
 @dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
