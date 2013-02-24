@@ -24,9 +24,7 @@ COMMENT=	Practical Extraction and Report Language
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
-		perl-5.10.* perl-threaded-5.10.* \
-		perl-5.14.* perl-threaded-5.14.* \
+CONFLICTS=	perl-5.14.* perl-threaded-5.14.* \
 		perl-5.16.* perl-threaded-5.16.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
