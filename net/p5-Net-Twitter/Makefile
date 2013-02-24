@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.18004
+PORTVERSION=	4.00002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,10 +29,12 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.50:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Try-Tiny>=0.03:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-URI>=1.40:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=2.032:${PORTSDIR}/www/p5-libwww \
-		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
@@ -41,9 +43,11 @@ MAN3=		Net::Identica.3 \
 		Net::Twitter::API.3 \
 		Net::Twitter::Core.3 \
 		Net::Twitter::Error.3 \
+		Net::Twitter::Manual::MigratingToV1_1.3 \
 		Net::Twitter::OAuth.3 \
 		Net::Twitter::Role::API::Lists.3 \
 		Net::Twitter::Role::API::REST.3 \
+		Net::Twitter::Role::API::RESTv1_1.3 \
 		Net::Twitter::Role::API::Search.3 \
 		Net::Twitter::Role::API::Search::Trends.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
