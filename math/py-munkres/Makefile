@@ -1,21 +1,17 @@
-# Created by:	Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@feld.me>
 # $FreeBSD$
 
 PORTNAME=	munkres
 PORTVERSION=	1.0.5.4
+PORTREVISION=	1
 CATEGORIES=	math python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A Python implementation of the munkres algorithm
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	bmc
-GH_TAGNAME=	release-${PORTVERSION}
-GH_COMMIT=	fbd9fd9
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
