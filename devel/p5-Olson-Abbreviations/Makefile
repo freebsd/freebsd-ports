@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Olson-Abbreviations
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ECARROLL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Globally unique timezones abbreviation handling
 
 RUN_DEPENDS=	p5-Moose>=0.41:${PORTSDIR}/devel/p5-Moose \
