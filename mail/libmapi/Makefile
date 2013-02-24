@@ -12,13 +12,13 @@ DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
-BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel \
+BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4 \
 		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
 LIB_DEPENDS=	ical:${PORTSDIR}/devel/libical \
 		tdb:${PORTSDIR}/databases/tdb \
 		tevent:${PORTSDIR}/devel/tevent \
 		talloc:${PORTSDIR}/devel/talloc
-RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel
+RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4
 
 HOSTCONFIG=	${LOCALBASE}/libdata/pkgconfig/samba-hostconfig.pc
 
