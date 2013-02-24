@@ -1094,8 +1094,8 @@ MASTER_SITE_RINGSERVER+= \
 
 .if !defined(IGNORE_MASTER_SITE_RUBY)
 MASTER_SITE_RUBY+= \
-	ftp://ftp.SpringDaemons.com/pub/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
+	ftp://ftp.SpringDaemons.com/pub/ruby/ruby/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
 	ftp://xyz.lcs.mit.edu/pub/ruby/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/ruby/&,} \
@@ -1421,17 +1421,27 @@ MASTER_SITE_XFCE+= \
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
 MASTER_SITE_XORG+= \
-	ftp://ftp.cs.cuhk.edu.hk/pub/X11/%SUBDIR%/ \
-	ftp://ftp.unicamp.br/pub/X11/releases/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/X11/X.org/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/&/,} \
-	ftp://ftp.task.gda.pl/mirror/ftp.x.org/pub/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/ftp.x.org/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
-	ftp://sunsite.uio.no/pub/X11/%SUBDIR%/ \
-	http://xorg.freedesktop.org/%SUBDIR%/ \
 	http://xorg.freedesktop.org/releases/%SUBDIR%/ \
-	ftp://ftp.x.org/pub/%SUBDIR%/
+	http://xorg.mirrors.pair.com/%SUBDIR%/ \
+	http://mirror.us.leaseweb.net/xorg/%SUBDIR%/ \
+	http://mirror.csclub.uwaterloo.ca/x.org/%SUBDIR%/ \
+	http://artfiles.org/x.org/pub/%SUBDIR%/ \
+	http://ftp.gwdg.de/pub/x11/x.org/pub/%SUBDIR%/ \
+	http://gd.tuwien.ac.at/X11/%SUBDIR%/ \
+	http://mi.mirror.garr.it/mirrors/x.org/%SUBDIR%/ \
+	http://mirror.switch.ch/ftp/mirror/X11/pub/%SUBDIR%/ \
+	http://mirrors.ircam.fr/pub/x.org/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
+	http://www.portal-to-web.de/pub/mirrors/x.org/%SUBDIR%/ \
+	http://x.cybermirror.org/%SUBDIR%/ \
+	http://x.europnews.de/pub/%SUBDIR%/ \
+	http://xorg.mirror.solnet.ch/pub/%SUBDIR%/ \
+	http://mirror.nl.leaseweb.net/xorg/%SUBDIR%/ \
+	http://mirror.de.leaseweb.net/xorg/%SUBDIR%/ \
+	http://mirrors.go-part.com/xorg/%SUBDIR%/ \
+	http://ftp.yz.yamagata-u.ac.jp/pub/X11/x.org/%SUBDIR%/ \
+	http://ftp.kaist.ac.kr/x.org/%SUBDIR%/ \
+	http://x.cs.pu.edu.tw/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_KERNEL_ORG)
