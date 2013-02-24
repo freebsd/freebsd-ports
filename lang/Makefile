@@ -297,6 +297,7 @@
     SUBDIR += ruby-usersguide
     SUBDIR += ruby18
     SUBDIR += ruby19
+    SUBDIR += ruby20
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += s9fes

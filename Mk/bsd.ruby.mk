@@ -188,6 +188,7 @@ RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 #
 RUBY18=			""
 RUBY19=			"@comment "
+RUBY20=			"@comment "
 
 . elif ${RUBY_VER} == 1.9
 #
@@ -215,12 +216,40 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/" \
 #
 RUBY18=			"@comment "
 RUBY19=			""
+RUBY20=			"@comment "
+
+. elif ${RUBY_VER} == 2.0
+#
+# Ruby 2.0
+#
+RUBY_RELVERSION=	2.0.0
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY_PATCHLEVEL=	0
+
+RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
+RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
+
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
+
+RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-2.0/" \
+			--with-rubylibprefix="${PREFIX}/lib/ruby" \
+			--docdir="${RUBY_DOCDIR}" \
+			--with-soname=ruby20
+
+#
+# PLIST_SUB helpers
+#
+RUBY18=			"@comment "
+RUBY19=			"@comment "
+RUBY20=			""
+
 
 . else
 #
 # Other versions
 #
-IGNORE=	Only ruby 1.8 and 1.9 are supported
+IGNORE=	Only ruby 1.8, 1.9 and 2.0 are supported
 . endif
 .endif # defined(RUBY_VER)
 
@@ -318,7 +347,8 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY18=${RUBY18} \
-			RUBY19=${RUBY19}
+			RUBY19=${RUBY19} \
+			RUBY20=${RUBY20} \
 
 .if defined(USE_RUBY_RDOC)
 MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}
@@ -546,8 +576,10 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 
 _use=	${USE_RUBY_FEATURES:Miconv}
 .if !empty(_use)
+.if (${RUBY_VER} == 1.8) || (${RUBY_VER} == 1.9)
 BUILD_DEPENDS+=		${DEPEND_RUBY_ICONV}
 RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
+.endif
 .endif
 
 .undef _use
