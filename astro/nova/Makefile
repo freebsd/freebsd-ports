@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	nova
-# Date created:			Apr 16, 2004
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nova
 PORTVERSION=	0.4
@@ -13,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Integrated Observational Environment for amateur astronomers
+COMMENT=	Integrated observational environment for amateur astronomers
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	planets
-# Date created:			Mar 15, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	planets
 PORTVERSION=	0.1.13
@@ -14,7 +9,7 @@ MASTER_SITES=	GENTOO/distfiles \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An orbital simulator
+COMMENT=	Orbital simulator
 
 LICENSE=	GPLv2
 
