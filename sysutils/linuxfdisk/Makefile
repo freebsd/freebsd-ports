@@ -1,16 +1,12 @@
-# New ports collection makefile for:	linuxfdisk
-# Date created:		Mon Jun 16 14:52:38 UTC 2003
-# Whom:			netch@netch.kiev.ua
-#
+# Created by: netch@netch.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	linuxfdisk
 PORTVERSION=	2.11z
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG} \
+MASTER_SITES=	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/util-linux/v2.11/ \
+		http://ftp.be.debian.org/pub/linux/utils/util-linux/v2.11/ \
 		ftp://segfault.kiev.ua/pub/
-MASTER_SITE_SUBDIR=	linux/utils/util-linux/old
 DISTNAME=	util-linux-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
