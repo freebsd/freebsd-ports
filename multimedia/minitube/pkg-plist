@@ -12,6 +12,7 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/ar.qm
 %%NLS%%%%DATADIR%%/locale/ca.qm
 %%NLS%%%%DATADIR%%/locale/ca_ES.qm
+%%NLS%%%%DATADIR%%/locale/cs_CZ.qm
 %%NLS%%%%DATADIR%%/locale/da.qm
 %%NLS%%%%DATADIR%%/locale/de_DE.qm
 %%NLS%%%%DATADIR%%/locale/el.qm
@@ -22,31 +23,23 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/fi.qm
 %%NLS%%%%DATADIR%%/locale/fi_FI.qm
 %%NLS%%%%DATADIR%%/locale/fr.qm
-%%NLS%%%%DATADIR%%/locale/gl.qm
 %%NLS%%%%DATADIR%%/locale/he_IL.qm
 %%NLS%%%%DATADIR%%/locale/hr.qm
 %%NLS%%%%DATADIR%%/locale/hu.qm
 %%NLS%%%%DATADIR%%/locale/ia.qm
-%%NLS%%%%DATADIR%%/locale/id.qm
 %%NLS%%%%DATADIR%%/locale/it.qm
+%%NLS%%%%DATADIR%%/locale/ja_JP.qm
 %%NLS%%%%DATADIR%%/locale/jv.qm
-%%NLS%%%%DATADIR%%/locale/ka_GE.qm
-%%NLS%%%%DATADIR%%/locale/nb.qm
+%%NLS%%%%DATADIR%%/locale/ky.qm
 %%NLS%%%%DATADIR%%/locale/nl.qm
-%%NLS%%%%DATADIR%%/locale/nn.qm
 %%NLS%%%%DATADIR%%/locale/pl.qm
 %%NLS%%%%DATADIR%%/locale/pl_PL.qm
-%%NLS%%%%DATADIR%%/locale/pt.qm
 %%NLS%%%%DATADIR%%/locale/pt_BR.qm
 %%NLS%%%%DATADIR%%/locale/ro.qm
 %%NLS%%%%DATADIR%%/locale/ru.qm
 %%NLS%%%%DATADIR%%/locale/sk.qm
 %%NLS%%%%DATADIR%%/locale/sl.qm
-%%NLS%%%%DATADIR%%/locale/sq.qm
-%%NLS%%%%DATADIR%%/locale/sr.qm
-%%NLS%%%%DATADIR%%/locale/sv_SE.qm
 %%NLS%%%%DATADIR%%/locale/tr.qm
-%%NLS%%%%DATADIR%%/locale/uk_UA.qm
 %%NLS%%%%DATADIR%%/locale/zh_CN.qm
 %%NLS%%@dirrm %%DATADIR%%/locale
 %%NLS%%@dirrm %%DATADIR%%
