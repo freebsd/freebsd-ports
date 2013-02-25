@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio accessibility
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech synthesizer
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
