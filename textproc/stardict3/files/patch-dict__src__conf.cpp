@@ -1,6 +1,13 @@
---- ./dict/src/conf.cpp.orig	2011-07-03 06:58:40.000000000 +0000
-+++ ./dict/src/conf.cpp	2011-10-20 21:40:21.491156419 +0000
-@@ -181,7 +181,7 @@
+--- ./dict/src/conf.cpp.orig	2012-12-10 14:44:32.000000000 +0000
++++ ./dict/src/conf.cpp	2013-02-24 14:11:08.724362041 +0000
+@@ -184,13 +184,13 @@
+ 	add_entry("/apps/stardict/preferences/dictionary/sound_play_command", std::string("play")); // absolute command
+ 	add_entry("/apps/stardict/preferences/dictionary/always_use_sound_play_command", false);
+ #else
+-	add_entry("/apps/stardict/preferences/dictionary/sound_play_command", std::string("aplay")); // absolute command
++	add_entry("/apps/stardict/preferences/dictionary/sound_play_command", std::string("play")); // absolute command
+ #endif
+ 	add_entry("/apps/stardict/preferences/dictionary/video_play_command", std::string("play")); // absolute command
  #if defined(CONFIG_GPE)
  	add_entry("/apps/stardict/preferences/dictionary/url_open_command", std::string("gpe-mini-browser"));
  #else

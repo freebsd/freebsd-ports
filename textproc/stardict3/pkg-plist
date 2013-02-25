@@ -180,9 +180,7 @@ share/stardict/pixmaps/splash.png
 share/stardict/pixmaps/video.png
 share/stardict/sounds/buttonactive.wav
 share/stardict/sounds/menushow.wav
-@dirrmtry share/stardict/treedict
 @dirrm share/stardict/sounds
-@dirrm share/stardict/skins
 @dirrm share/stardict/pixmaps
 @dirrm share/stardict/dic/stardict-dict/res
 @dirrm share/stardict/dic/stardict-dict
@@ -216,5 +214,3 @@ share/stardict/sounds/menushow.wav
 @dirrmtry share/applications
 @dirrm lib/stardict/plugins
 @dirrm lib/stardict
-@exec mkdir -p %D/share/stardict/skins
-@exec mkdir -p %D/share/stardict/treedict
