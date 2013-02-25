@@ -1,4 +1,4 @@
---- ./src/corelibs/U2Private/src/CrashHandler.cpp.old	2012-10-30 15:36:22.000000000 +0100
+--- ./src/corelibs/U2Private/src/CrashHandler.cpp.orig	2012-10-30 15:36:22.000000000 +0100
 +++ ./src/corelibs/U2Private/src/CrashHandler.cpp	2012-10-30 15:47:47.000000000 +0100
 @@ -253,7 +253,7 @@
      }

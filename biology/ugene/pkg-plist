@@ -88,6 +88,7 @@ lib/ugene/plugins/librepeat_finder.so
 lib/ugene/plugins/libsitecon.so
 lib/ugene/plugins/libsmith_waterman.so
 lib/ugene/plugins/libtest_runner.so
+%%NOX64%%lib/ugene/plugins/libumuscle.so
 lib/ugene/plugins/libweight_matrix.so
 lib/ugene/plugins/libworkflow_designer.so
 lib/ugene/plugins/opencl_support.license
@@ -118,6 +119,8 @@ lib/ugene/plugins/smith_waterman.license
 lib/ugene/plugins/smith_waterman.plugin
 lib/ugene/plugins/test_runner.license
 lib/ugene/plugins/test_runner.plugin
+%%NOX64%%lib/ugene/plugins/umuscle.license
+%%NOX64%%lib/ugene/plugins/umuscle.plugin
 lib/ugene/plugins/weight_matrix.license
 lib/ugene/plugins/weight_matrix.plugin
 lib/ugene/plugins/workflow_designer.license
