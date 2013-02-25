@@ -1387,10 +1387,10 @@
     SUBDIR += stardict-OxfordCollocation
     SUBDIR += stardict-longman
     SUBDIR += stardict-oald
+    SUBDIR += stardict-rptts
     SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
-    SUBDIR += stardict2-rptts
     SUBDIR += stardict3
     SUBDIR += supercat
     SUBDIR += sv-aspell
