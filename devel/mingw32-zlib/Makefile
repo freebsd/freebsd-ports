@@ -7,6 +7,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	devel archivers
 MASTER_SITES=	http://zlib.net/ \
 		${MASTER_SITE_SOURCEFORGE}
