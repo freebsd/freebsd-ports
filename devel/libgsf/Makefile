@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgsf
-# Date created:				11 September 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/libgsf/Makefile,v 1.35 2010/04/10 08:51:15 kwm Exp $
-#
 
 PORTNAME=	libgsf
 PORTVERSION=	1.14.21
@@ -14,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	An extensible i/o abstraction for dealing with structured file formats
+COMMENT?=	Extensible I/O abstraction for dealing with structured file formats
 
 .if !exists(/usr/lib/libbz2.so)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
@@ -35,14 +31,19 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1
 .endif
 
-.if !defined(WITHOUT_GCONF) || exists(${LOCALBASE}/bin/gconftool-2)
+OPTIONS_DEFINE=	GCONF
+OPTIONS_DEFAULT=	GCONF
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
-PLIST_SUB+=	THUMB=""
+PLIST_FILES+=	bin/gsf-office-thumbnailer
 . if !defined(GSF_SLAVE)
 GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
 . endif
 .else
-PLIST_SUB+=	THUMB="@comment "
+CONFIGURE_ARGS+=	--without-gconf
 .endif
 
 .include <bsd.port.mk>
