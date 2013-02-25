@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.0e
-PORTREVISION=	1
+PORTVERSION=	1.0.0k
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -15,11 +14,6 @@ MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	source
 PKGNAMEPREFIX=	mingw32-
 DIST_SUBDIR=	${DISTNAME}2
-
-PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
-PATCHFILES=	dtls-manual-mtu-bug-1.0.0.patch \
-		dtls-ecc-key-bug-1.0.0.patch \
-		dtls-fragment-assert-bug-1.0.0.patch
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
