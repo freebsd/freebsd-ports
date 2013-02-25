@@ -232,6 +232,8 @@ RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
 
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
+GEM_ENV?=		LC_CTYPE=UTF-8
+
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-2.0/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
 			--docdir="${RUBY_DOCDIR}" \
