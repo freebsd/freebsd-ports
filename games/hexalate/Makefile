@@ -1,13 +1,8 @@
-# New ports collection makefile for:	hexalate
-# Date created:		09 Apr 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hexalate
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
