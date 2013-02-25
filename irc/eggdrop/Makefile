@@ -1,12 +1,9 @@
-# New ports collection makefile for:	eggdrop
-# Date created:				18.01.2003
-# Whom:						Ulrich Spoerlein <q@uni.de>
-#
+# Created by: Ulrich Spoerlein <q@uni.de>
 # $FreeBSD$
-#
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.21
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME}${PORTVERSION}
