@@ -65,18 +65,12 @@ include/ruby-2.0/ruby.h
 %%PORTDOCS%%%%RUBY_DOCDIR%%/images/boottime-classes.png
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/re.rdoc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ripper/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/History.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/LICENSE.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/security.rdoc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/standard_library.rdoc
@@ -96,7 +90,6 @@ include/ruby-2.0/ruby.h
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syntax
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/stringio
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rubygems
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ripper
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
