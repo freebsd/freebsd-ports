@@ -184,6 +184,7 @@
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
+    SUBDIR += flake
     SUBDIR += flite
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
