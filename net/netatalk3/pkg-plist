@@ -10,8 +10,10 @@ bin/netatalk-config
 bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
-@exec [ ! -f %B/afp.conf ] && cp %B/%f %B/afp.conf
+@exec [ -f %B/afp.conf ] || cp %B/%f %B/afp.conf
+@unexec if cmp -s %D/etc/extmap.conf %D/etc/extmap.conf.dist; then rm -f %D/etc/extmap.conf; fi
 etc/extmap.conf.dist
+@exec [ -f %B/extmap.conf ] || cp %B/%f %B/extmap.conf
 libexec/netatalk-uams/uams_clrtxt.so
 libexec/netatalk-uams/uams_dhx.so
 libexec/netatalk-uams/uams_dhx2.so
