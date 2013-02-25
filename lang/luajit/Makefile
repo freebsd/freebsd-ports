@@ -1,12 +1,8 @@
-# New ports collection makefile for:	luajit
-# Date created:		08 Jan 2012
-# Whom:			osa
-#
+# Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luajit
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -17,6 +13,8 @@ COMMENT=	A Just-In-Time Compiler for Lua
 WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+PLIST_SUB+=	VERSION=${DISTVERSION}
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		luajit.1
