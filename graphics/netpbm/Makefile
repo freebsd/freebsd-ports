@@ -3,6 +3,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.88
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -43,8 +44,9 @@ PLIST_SUB+=	X11='@comment '
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		 ${WRKSRC}/pm_config.in.h
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/pm_config.in.h
+	@${REINPLACE_CMD} -e 's|^SCRIPTS =.*|SCRIPTS =|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
 	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
 		${WRKSRC}/converter/other/Makefile

@@ -31,7 +31,6 @@ bin/jpegtopnm
 bin/leaftoppm
 bin/lispmtopgm
 bin/macptopbm
-bin/manweb
 bin/mdatopbm
 bin/mgrtopbm
 bin/mrftopbm
