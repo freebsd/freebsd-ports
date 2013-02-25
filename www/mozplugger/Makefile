@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozplugger
-PORTVERSION=	1.14.6
+PORTVERSION=	2.1.3
 CATEGORIES=	www
 MASTER_SITES=	http://mozplugger.mozdev.org/files/
 
@@ -11,6 +11,7 @@ COMMENT=	Framework for loading web content in external viewers
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
+USE_GMAKE=	yes
 MAN7=		mozplugger.7
 SUB_FILES=	pkg-message
 
