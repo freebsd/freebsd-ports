@@ -31,6 +31,9 @@ MANCOMPRESSED=	yes
 .if ${ARCH} == "amd64"
 # need to manually tell the build we are on x64
 CARCH=		CONFIG+=x64
+PLIST_SUB=	NOX64="@comment "
+.else
+PLIST_SUB=	NOX64=""
 .endif
 
 # yes, bash is required, stuff will not execute with sh
