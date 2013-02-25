@@ -125,6 +125,7 @@
     SUBDIR += mutter
     SUBDIR += nickleby
     SUBDIR += obconf
+    SUBDIR += obkey
     SUBDIR += obmenu
     SUBDIR += obpager
     SUBDIR += olvwm
