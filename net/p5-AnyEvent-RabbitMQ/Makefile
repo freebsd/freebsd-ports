@@ -1,14 +1,11 @@
-# New ports collection makefile for:	AnyEvent::RabbitMQ
-# Date created:				29 Oct 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-RabbitMQ
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	net devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

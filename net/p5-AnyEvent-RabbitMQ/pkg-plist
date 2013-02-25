@@ -2,6 +2,8 @@
 %%SITE_PERL%%/AnyEvent/RabbitMQ/Channel.pm
 %%SITE_PERL%%/AnyEvent/RabbitMQ/LocalQueue.pm
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-8.xml
+%%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-9-1.xml
+%%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/README
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RabbitMQ/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RabbitMQ
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
