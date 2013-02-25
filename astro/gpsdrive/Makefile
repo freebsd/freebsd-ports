@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpsdrive
-# Date Created:				16 April 2002
-# Whom:					Marco Molteni <molter@gufi.org>
-#
+# Created by: Marco Molteni <molter@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
@@ -13,38 +9,46 @@ MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 		LOCAL/beech
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GPS navigation system
+COMMENT=	GPS navigation system
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LICENSE=	GPLv2
 
-USE_PERL5=	yes
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
-MAKE_JOBS_UNSAFE=	yes
+USE_PERL5=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-garmin
-USE_LDCONFIG=	yes
-
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		gpsdrive.1
 MANLANG=	"" de es
 
+OPTIONS_DEFINE=	NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|SUBDIRS = src po man|SUBDIRS = src man|' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
