@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -122,6 +123,8 @@ post-install:
 		${PREFIX}/bin/macusers
 	[ -f ${PREFIX}/etc/afp.conf ] || \
 		${INSTALL_DATA} -c ${PREFIX}/etc/afp.conf.dist ${PREFIX}/etc/afp.conf
+	[ -f ${PREFIX}/etc/extmap.conf ] || \
+		${INSTALL_DATA} -c ${PREFIX}/etc/extmap.conf.dist ${PREFIX}/etc/extmap.conf
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
