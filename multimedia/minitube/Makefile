@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
