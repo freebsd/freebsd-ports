@@ -1,6 +1,7 @@
 bin/mozplugger-controller
 bin/mozplugger-helper
 bin/mozplugger-linker
+bin/mozplugger-update
 etc/mozpluggerrc
 %%WEBPLUGINS_DIR%%/mozplugger.so
 @dirrmtry %%WEBPLUGINS_DIR%%
