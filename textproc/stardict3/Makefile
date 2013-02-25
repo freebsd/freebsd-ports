@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stardict
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A cross-platform and international dictionary written in Gtk2
+COMMENT=	Dictionary lookup program written in Gtk2
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		enchant.1:${PORTSDIR}/textproc/enchant
@@ -25,6 +24,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/dict
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
@@ -48,7 +48,7 @@ USE_AUTOTOOLS=	autoconf
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
 PLIST_SUB=	GNOME="@comment "
-MAKE_ARGS+=     AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
+MAKE_ARGS+=	AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
 .endif
 
 MAN1=		stardict.1
