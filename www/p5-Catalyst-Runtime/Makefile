@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90018
+PORTVERSION=	5.90020
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -62,6 +62,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Action.3 \
 	Catalyst::ActionChain.3 \
 	Catalyst::ActionContainer.3 \
+	Catalyst::ActionRole::HTTPMethods.3 \
 	Catalyst::Base.3 \
 	Catalyst::ClassData.3 \
 	Catalyst::Component.3 \

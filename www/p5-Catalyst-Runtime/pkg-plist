@@ -3,6 +3,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Action.pm
 %%SITE_PERL%%/Catalyst/ActionChain.pm
 %%SITE_PERL%%/Catalyst/ActionContainer.pm
+%%SITE_PERL%%/Catalyst/ActionRole/HTTPMethods.pm
 %%SITE_PERL%%/Catalyst/Base.pm
 %%SITE_PERL%%/Catalyst/ClassData.pm
 %%SITE_PERL%%/Catalyst/Component.pm
@@ -53,4 +54,5 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
 @dirrmtry %%SITE_PERL%%/Catalyst/Component
+@dirrmtry %%SITE_PERL%%/Catalyst/ActionRole
 @dirrmtry %%SITE_PERL%%/Catalyst
