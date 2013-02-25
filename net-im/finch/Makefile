@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	finch
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Finch multi-protocol messaging client (Console UI)
