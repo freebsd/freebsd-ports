@@ -3,11 +3,12 @@
 
 PORTNAME=	dailystrips
 PORTVERSION=	1.0.28
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Utility to download or view your favorite online comic strips daily
 
 LICENSE=	GPLv2
@@ -44,7 +45,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in README README.DEFS README.LOCAL README.dailystrips-clean \
-    README.dailystrips-update
+	README.dailystrips-update
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
