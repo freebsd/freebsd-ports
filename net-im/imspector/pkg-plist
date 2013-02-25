@@ -27,5 +27,6 @@ lib/libimspector.so
 sbin/imspector
 @dirrmtry %%ETCDIR%%
 @dirrm lib/imspector
-@unexec rmdir /var/lib/imspector 2>/dev/null || true
-@unexec rmdir /var/log/imspector 2>/dev/null || true
+@cwd /var
+@dirrmtry %D/lib/imspector
+@dirrmtry %D/log/imspector
