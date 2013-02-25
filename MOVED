@@ -4072,3 +4072,4 @@ sysutils/fio|benchmarks/fio|2013-02-22|Moved to benchmarks category
 japanese/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
 french/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
 german/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
+dns/p5-Net-DNS-ZoneFile||2013-02-25|Now bundled with dns/p5-Net-DNS
