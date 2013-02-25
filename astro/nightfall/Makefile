@@ -1,9 +1,5 @@
-# New ports collection makefile for:      nightfall
-# Date created:         21 February 2002
-# Whom:                 Christian Brueffer <chris@unixpages.org>
-#
+# Created by: Christian Brueffer <chris@unixpages.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nightfall
 PORTVERSION=	1.70
@@ -12,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interactive binary star application
+COMMENT=	Interactive binary star application
 
 OPTIONS_DEFINE=	GNOME PGPLOT OPENGL
 OPTIONS_DEFAULT=	PGPLOT OPENGL

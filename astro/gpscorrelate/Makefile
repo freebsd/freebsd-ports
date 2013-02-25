@@ -7,7 +7,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	http://freefoote.dview.net/linux/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A gps file gpx correlate exif tag in photos
+COMMENT=	Correlate digital camera photos with GPS data in GPX format
 
 LICENSE=	GPLv2
 
@@ -44,7 +44,6 @@ post-patch:
 	s|g++ $$(OFLAGS)|$$(CXX) $$(OFLAGS)| ; \
 	s|g++ $$(CFLAGS)|$$(CXX) $$(CXXFLAGS) $$(IFLAGS)| ; \
 	s|gcc $$(CFLAGS)|$$(CC) $$(CFLAGS) $$(IFLAGS)|' ${WRKSRC}/Makefile
-
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate ${PREFIX}/bin

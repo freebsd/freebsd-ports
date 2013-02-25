@@ -1,7 +1,4 @@
-# New ports collection makefile for:	wmSun
-# Date created:		16 April 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wmsun
@@ -12,7 +9,7 @@ MASTER_SITES=	http://dockapps.windowmaker.org/download.php/id/23/
 DISTNAME=	wmSun-1.03
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp that displays the rise and set time of the sun
+COMMENT=	Dockapp that displays the rise and set times of the Sun
 
 FETCH_ARGS=	-Fpr
 
