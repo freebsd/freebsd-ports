@@ -1,0 +1,18 @@
+--- clio-0.3.0.gemspec.orig	2013-02-26 02:53:17.000000000 +0000
++++ clio-0.3.0.gemspec	2013-02-26 02:53:49.000000000 +0000
+@@ -27,7 +27,6 @@
+ - VERSION
+ - COPYING
+ files: 
+-- bin
+ - lib
+ - meta
+ - spec
+@@ -76,7 +75,6 @@
+ - spec/usage
+ - spec/commandline
+ - spec/string
+-- spec/commandable
+ - spec/usage/define.rd
+ - spec/usage/parse.rd
+ - spec/commandline/bracket.rd
