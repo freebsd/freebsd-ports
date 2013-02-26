@@ -1,30 +1,34 @@
-# New ports collection makefile for:    juke
-# Date created:         2 May 1999
-# Whom:                 oyvindmo@initio.no
-#
+# Created by: Oyvind Moll <oyvindmo@initio.no>
 # $FreeBSD$
-#
 
-PORTNAME=		juke
-PORTVERSION=		0.7
-CATEGORIES=		audio
-MASTER_SITES=		http://www.moll.no/oyvind/distfiles/\
-			http://www.orakel.ntnu.no/~oyvindmo/distfiles/
+PORTNAME=	juke
+PORTVERSION=	0.7
+CATEGORIES=	audio
+MASTER_SITES=	http://www.moll.no/oyvind/distfiles/ \
+		http://www.orakel.ntnu.no/~oyvindmo/distfiles/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=	A simple curses/ncurses based juke box program
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple (n)curses based juke box program
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAN1=			juke.1
-SUB_FILES=		pkg-message
+MAN1=		juke.1
+PLIST_FILES=	bin/juke etc/juke.conf.sample
+SUB_FILES=	pkg-message
 
-.if defined(WITH_VI_BINDINGS)
+OPTIONS_DEFINE=	VI_BINDINGS
+VI_BINDINGS_DESC=	Use vi-like key bindings
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MVI_BINDINGS}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-vi
 .endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/juke.conf ${PREFIX}/etc/juke.conf.sample
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
