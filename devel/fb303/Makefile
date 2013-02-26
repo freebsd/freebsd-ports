@@ -1,7 +1,4 @@
-# New ports collection makefile for:	fb303
-# Date created:		2009-08-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 #
 
@@ -31,6 +28,8 @@ USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
