@@ -29,7 +29,4 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/$${i} ${PREFIX}/etc/rc.d/$${i}; \
 	done
 
-describe:
-	false
-
 .include <bsd.port.mk>
