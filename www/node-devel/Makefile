@@ -27,6 +27,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/deps/v8/build/common.gypi \
+		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
+
 post-install:
 	${MKDIR} ${PREFIX}/lib/node_modules/
 	${TOUCH} ${PREFIX}/lib/node_modules/.keepme
