@@ -1,7 +1,4 @@
-# New ports collection makefile for:	php5-thrift
-# Date created:	   Sat May  8 12:33:05 MSD 2010
-# Whom:		   Ilya Bakulin <webmaster@kibab.com>
-#
+# Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
 #
 
