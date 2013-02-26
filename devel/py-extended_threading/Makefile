@@ -1,9 +1,5 @@
-# New ports collection makefile for:   py-extended_threading
-# Date created:        14 Jan 2008
-# Whom:                James Stapleton <fbsdporter@var-dev.net>
-#
+# Created by: James Stapleton <fbsdporter@var-dev.net>
 # $FreeBSD$
-#
 
 PORTNAME=	extended_threading
 PORTVERSION=	0.2
@@ -14,12 +10,14 @@ MASTER_SITES+=	http://www.var-dev.net/programming/python/extended_threading/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	extended_threading-0_2
 
-MAINTAINER=	fbsdporter@var-dev.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to extend pythons threading library
 
 USE_PYTHON=	yes
 
-BROKEN=	checksum mismatch
+BROKEN=		checksum mismatch
+DEPRECATED=	checksum mismatch; domain disappeared
+EXPIRATION_DATE=	2013-04-26
 
 USE_BZIP2=	YES
 
