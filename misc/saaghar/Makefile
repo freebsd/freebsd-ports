@@ -2,6 +2,7 @@
 
 PORTNAME=	saaghar
 PORTVERSION=	1.0.94
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/saaghar/Source%20Code/:saaghar \
 		SF/ganjoor/s3db:ganjoor
@@ -33,8 +34,9 @@ post-extract:
 		${DISTDIR}/${DIST_SUBDIR}/ganjoor-s3db-910612.zip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/saaghar/|${PREFIX}/share/saaghar|g' \
-		${WRKSRC}/mainwindow.cpp
+	@${REINPLACE_CMD} -e 's|/usr/share/saaghar|${PREFIX}/share/saaghar|g' \
+		${WRKSRC}/mainwindow.cpp \
+		${WRKSRC}/main.cpp
 	@${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
 		${WRKSRC}/QGanjoorDbBrowser.cpp \
 		${WRKSRC}/QGanjoorDbStuff.h \
