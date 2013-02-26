@@ -1,0 +1,194 @@
+diff -r 85982e3e9c39 coregrind/m_replacemalloc/vg_replace_malloc.c
+--- coregrind/m_replacemalloc/vg_replace_malloc.c	Mon Oct 29 10:59:10 2012 -0700
++++ coregrind/m_replacemalloc/vg_replace_malloc.c	Thu Jan 31 22:53:54 2013 +0200
+@@ -294,12 +294,14 @@
+  // operator new(unsigned int), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znwj,          __builtin_new);
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znwj,          __builtin_new);
+   ALLOC_or_BOMB(VG_Z_LIBC_SONAME,      _Znwj,          __builtin_new);
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znwj,          __builtin_new);
+  #endif
+  // operator new(unsigned long), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znwm,          __builtin_new);
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znwm,          __builtin_new);
+   ALLOC_or_BOMB(VG_Z_LIBC_SONAME,      _Znwm,          __builtin_new);
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znwm,          __builtin_new);
+  #endif
+@@ -308,11 +310,13 @@
+  // operator new(unsigned int), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znwj,          __builtin_new);
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znwj,          __builtin_new);
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znwm,          __builtin_new);
+  #endif
+  // operator new(unsigned long), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znwm,          __builtin_new);
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znwm,          __builtin_new);
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znwm,          __builtin_new);
+  #endif
+ 
+@@ -337,12 +341,14 @@
+  // operator new(unsigned, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnwjRKSt9nothrow_t,  __builtin_new);
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnwjRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(VG_Z_LIBC_SONAME,      _ZnwjRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnwjRKSt9nothrow_t,  __builtin_new);
+  #endif
+  // operator new(unsigned long, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnwmRKSt9nothrow_t,  __builtin_new);
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnwmRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(VG_Z_LIBC_SONAME,      _ZnwmRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnwmRKSt9nothrow_t,  __builtin_new);
+  #endif
+@@ -351,11 +357,13 @@
+  // operator new(unsigned, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnwjRKSt9nothrow_t,  __builtin_new);
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnwjRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnwjRKSt9nothrow_t,  __builtin_new);
+  #endif
+  // operator new(unsigned long, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnwmRKSt9nothrow_t,  __builtin_new);
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnwmRKSt9nothrow_t,  __builtin_new);
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnwjRKSt9nothrow_t,  __builtin_new);
+  #endif
+ 
+@@ -383,12 +391,14 @@
+  // operator new[](unsigned int), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znaj,             __builtin_vec_new );
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znaj,             __builtin_vec_new );
+   ALLOC_or_BOMB(VG_Z_LIBC_SONAME,      _Znaj,             __builtin_vec_new );
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znaj,             __builtin_vec_new );
+  #endif
+  // operator new[](unsigned long), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znam,             __builtin_vec_new );
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znam,             __builtin_vec_new );
+   ALLOC_or_BOMB(VG_Z_LIBC_SONAME,      _Znam,             __builtin_vec_new );
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znam,             __builtin_vec_new );
+  #endif
+@@ -397,11 +407,13 @@
+  // operator new[](unsigned int), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znaj,             __builtin_vec_new );
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znaj,             __builtin_vec_new );
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znaj,             __builtin_vec_new );
+  #endif
+  // operator new[](unsigned long), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_BOMB(VG_Z_LIBSTDCXX_SONAME, _Znam,             __builtin_vec_new );
++  ALLOC_or_BOMB(VG_Z_LIBSUPCXX_SONAME, _Znam,             __builtin_vec_new );
+   ALLOC_or_BOMB(SO_SYN_MALLOC,         _Znaj,             __builtin_vec_new );
+  #endif
+ 
+@@ -426,12 +438,14 @@
+  // operator new[](unsigned, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnajRKSt9nothrow_t, __builtin_vec_new );
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnajRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(VG_Z_LIBC_SONAME,      _ZnajRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnajRKSt9nothrow_t, __builtin_vec_new );
+  #endif
+  // operator new[](unsigned long, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnamRKSt9nothrow_t, __builtin_vec_new );
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnamRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(VG_Z_LIBC_SONAME,      _ZnamRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnamRKSt9nothrow_t, __builtin_vec_new );
+  #endif
+@@ -440,11 +454,13 @@
+  // operator new[](unsigned, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 4
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnajRKSt9nothrow_t, __builtin_vec_new );
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnajRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnajRKSt9nothrow_t, __builtin_vec_new );
+  #endif
+  // operator new[](unsigned long, std::nothrow_t const&), GNU mangling
+  #if VG_WORDSIZE == 8
+   ALLOC_or_NULL(VG_Z_LIBSTDCXX_SONAME, _ZnamRKSt9nothrow_t, __builtin_vec_new );
++  ALLOC_or_NULL(VG_Z_LIBSUPCXX_SONAME, _ZnamRKSt9nothrow_t, __builtin_vec_new );
+   ALLOC_or_NULL(SO_SYN_MALLOC,         _ZnajRKSt9nothrow_t, __builtin_vec_new );
+  #endif
+ 
+@@ -534,11 +550,13 @@
+  FREE(VG_Z_LIBC_SONAME,        __builtin_delete,     __builtin_delete );
+  // operator delete(void*), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdlPv,               __builtin_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdlPv,               __builtin_delete );
+  FREE(VG_Z_LIBC_SONAME,       _ZdlPv,               __builtin_delete );
+  FREE(SO_SYN_MALLOC,          _ZdlPv,               __builtin_delete );
+ 
+ #elif defined(VGO_freebsd)
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdlPv,               __builtin_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdlPv,               __builtin_delete );
+  FREE(SO_SYN_MALLOC,          _ZdlPv,               __builtin_delete );
+ 
+ #elif defined(VGO_darwin)
+@@ -554,12 +572,14 @@
+ #if defined(VGO_linux)
+  // operator delete(void*, std::nothrow_t const&), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME, _ZdlPvRKSt9nothrow_t,  __builtin_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME, _ZdlPvRKSt9nothrow_t,  __builtin_delete );
+  FREE(VG_Z_LIBC_SONAME,      _ZdlPvRKSt9nothrow_t,  __builtin_delete );
+  FREE(SO_SYN_MALLOC,         _ZdlPvRKSt9nothrow_t,  __builtin_delete );
+ 
+ #elif defined(VGO_freebsd)
+  // operator delete(void*, std::nothrow_t const&), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME, _ZdlPvRKSt9nothrow_t,  __builtin_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME, _ZdlPvRKSt9nothrow_t,  __builtin_delete );
+  FREE(SO_SYN_MALLOC,         _ZdlPvRKSt9nothrow_t,  __builtin_delete );
+ 
+ #elif defined(VGO_darwin)
+@@ -578,12 +598,14 @@
+  FREE(VG_Z_LIBC_SONAME,        __builtin_vec_delete, __builtin_vec_delete );
+  // operator delete[](void*), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdaPv,               __builtin_vec_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdaPv,               __builtin_vec_delete );
+  FREE(VG_Z_LIBC_SONAME,       _ZdaPv,               __builtin_vec_delete );
+  FREE(SO_SYN_MALLOC,          _ZdaPv,               __builtin_vec_delete );
+ 
+ #elif defined(VGO_freebsd)
+  // operator delete[](void*), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdaPv,               __builtin_vec_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdaPv,               __builtin_vec_delete );
+  FREE(SO_SYN_MALLOC,          _ZdaPv,               __builtin_vec_delete );
+ 
+ #elif defined(VGO_darwin)
+@@ -602,12 +624,14 @@
+ #if defined(VGO_linux)
+  // operator delete[](void*, std::nothrow_t const&), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
+  FREE(VG_Z_LIBC_SONAME,       _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
+  FREE(SO_SYN_MALLOC,          _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
+ 
+ #elif defined(VGO_freebsd)
+  // operator delete[](void*, std::nothrow_t const&), GNU mangling
+  FREE(VG_Z_LIBSTDCXX_SONAME,  _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
++ FREE(VG_Z_LIBSUPCXX_SONAME,  _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
+  FREE(SO_SYN_MALLOC,          _ZdaPvRKSt9nothrow_t, __builtin_vec_delete );
+ 
+ #elif defined(VGO_darwin)
+diff -r 85982e3e9c39 include/pub_tool_redir.h
+--- include/pub_tool_redir.h	Mon Oct 29 10:59:10 2012 -0700
++++ include/pub_tool_redir.h	Thu Jan 31 22:53:54 2013 +0200
+@@ -254,10 +254,11 @@
+ 
+ #endif
+ 
+-/* --- Soname of the GNU C++ library. --- */
++/* --- Sonames of the GNU C++ library. --- */
+ 
+ // Valid on all platforms(?)
+ #define  VG_Z_LIBSTDCXX_SONAME  libstdcZpZpZa           // libstdc++*
++#define  VG_Z_LIBSUPCXX_SONAME  libsupcZpZpZa           // libsupc++*
+ 
+ /* --- Soname of the pthreads library. --- */
+ 
