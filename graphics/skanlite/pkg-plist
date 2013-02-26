@@ -22,6 +22,7 @@ share/doc/HTML/en/skanlite/no-scanner-found.png
 share/doc/HTML/en/skanlite/other-options.png
 share/doc/HTML/en/skanlite/preview-button.png
 share/doc/HTML/en/skanlite/preview.png
+share/doc/HTML/en/skanlite/save-location.png
 share/doc/HTML/en/skanlite/scanning.png
 share/doc/HTML/en/skanlite/settings.png
 share/doc/HTML/en/skanlite/zoom-in.png
@@ -62,9 +63,11 @@ share/doc/HTML/uk/skanlite/no-scanner-found.png
 share/doc/HTML/uk/skanlite/other-options.png
 share/doc/HTML/uk/skanlite/preview-button.png
 share/doc/HTML/uk/skanlite/preview.png
+share/doc/HTML/uk/skanlite/save-location.png
 share/doc/HTML/uk/skanlite/scanning.png
 share/doc/HTML/uk/skanlite/settings.png
 share/doc/HTML/uk/skanlite/zoom-in.png
+share/doc/HTML/uk/skanlite/zoom-to-fit.png
 share/locale/be/LC_MESSAGES/skanlite.mo
 share/locale/bs/LC_MESSAGES/skanlite.mo
 share/locale/ca/LC_MESSAGES/skanlite.mo
@@ -84,6 +87,7 @@ share/locale/ga/LC_MESSAGES/skanlite.mo
 share/locale/gl/LC_MESSAGES/skanlite.mo
 share/locale/hr/LC_MESSAGES/skanlite.mo
 share/locale/hu/LC_MESSAGES/skanlite.mo
+share/locale/ia/LC_MESSAGES/skanlite.mo
 share/locale/is/LC_MESSAGES/skanlite.mo
 share/locale/it/LC_MESSAGES/skanlite.mo
 share/locale/ja/LC_MESSAGES/skanlite.mo
@@ -92,6 +96,7 @@ share/locale/ko/LC_MESSAGES/skanlite.mo
 share/locale/lt/LC_MESSAGES/skanlite.mo
 share/locale/lv/LC_MESSAGES/skanlite.mo
 share/locale/mai/LC_MESSAGES/skanlite.mo
+share/locale/mr/LC_MESSAGES/skanlite.mo
 share/locale/nb/LC_MESSAGES/skanlite.mo
 share/locale/nds/LC_MESSAGES/skanlite.mo
 share/locale/nl/LC_MESSAGES/skanlite.mo
@@ -112,6 +117,8 @@ share/locale/uk/LC_MESSAGES/skanlite.mo
 share/locale/wa/LC_MESSAGES/skanlite.mo
 share/locale/zh_CN/LC_MESSAGES/skanlite.mo
 share/locale/zh_TW/LC_MESSAGES/skanlite.mo
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrm share/doc/HTML/uk/skanlite
 @dirrm share/doc/HTML/sv/skanlite
 @dirrm share/doc/HTML/pt_BR/skanlite
