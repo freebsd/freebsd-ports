@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Module-ExtractUse
-# Date created:		13 February 2007
-# Whom:	      		Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-ExtractUse
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +17,7 @@ BUILD_DEPENDS=	p5-Pod-Strip>=0:${PORTSDIR}/textproc/p5-Pod-Strip \
 		p5-Parse-RecDescent>=1.967:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_MODBUILD=	yes
 
