@@ -1,0 +1,14 @@
+--- rapt-0.2.2.gemspec.orig	2013-02-26 02:37:18.000000000 +0000
++++ rapt-0.2.2.gemspec	2013-02-26 02:38:04.000000000 +0000
+@@ -56,11 +56,9 @@
+ - test/sandbox/rails_app
+ - test/sandbox/rails_app/config
+ - test/sandbox/rails_app/script
+-- test/sandbox/rails_app/vendor
+ - test/sandbox/rails_app/config/boot.rb
+ - test/sandbox/rails_app/config/environment.rb
+ - test/sandbox/rails_app/script/plugin
+-- test/sandbox/rails_app/vendor/plugins
+ test_files: []
+ 
+ rdoc_options: []
