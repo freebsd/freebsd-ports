@@ -9,7 +9,7 @@ MASTER_SITES=	http://moo.glines.org/mixxx/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DJ mixing application
+COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
 
@@ -23,8 +23,6 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 
 OPTIONS_DEFINE=	LAME SHOUTCAST FAAD WAVPACK DOCS
-SHOUTCAST_DESC=	Shoutcast Broadcasting
-WAVPACK_DESC=	WavPack audio support plugin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -44,15 +42,15 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
 .if ${PORT_OPTIONS:MSHOUTCAST}
-LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	shout:${PORTSDIR}/audio/libshout2
 SCONS_ARGS+=	shoutcast=1
 .else
 SCONS_ARGS+=	shoutcast=0
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad \
-		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
+		mp4v2:${PORTSDIR}/multimedia/mp4v2
 SCONS_ARGS+=	faad=1
 PLIST_SUB+=	FAAD=""
 .else
@@ -61,7 +59,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 SCONS_ARGS+=	wv=1
 PLIST_SUB+=	WAVPACK=""
 .else
@@ -70,23 +68,21 @@ PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
 post-patch:
-.for FILE in build/depends.py src/soundsourceproxy.cpp src/recording/encodermp3.cpp
-	@${REINPLACE_CMD} -e \
-		"s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${FILE}
+.for f in build/depends.py src/soundsourceproxy.cpp src/recording/encodermp3.cpp
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e \
-		"/_get_bzr_/s|^|#| ; \
-		 /('install', docs)/d" ${WRKSRC}/src/SConscript
-	@${REINPLACE_CMD} -e \
-		"s|^Exec=.*|Exec=mixxx|" ${WRKSRC}/src/mixxx.desktop
+	@${REINPLACE_CMD} -e "/_get_bzr_/s|^|#| ; /('install', docs)/d" \
+		${WRKSRC}/src/SConscript
+	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx|" \
+		${WRKSRC}/src/mixxx.desktop
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/mixxx
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for FILE in Mixxx-Manual.pdf README
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for f in Mixxx-Manual.pdf README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
