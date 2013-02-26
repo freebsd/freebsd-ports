@@ -1,12 +1,8 @@
-# New ports collection makefile for:	otrs
-# Date created:	   5 July 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	otrs
-PORTVERSION=	3.1.6
+PORTVERSION=	3.1.13
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -15,6 +11,8 @@ MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
@@ -38,17 +36,16 @@ BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	MYSQL "MySQL database support" on \
-		PGSQL "PostgreSQL database support" off \
-		REPORTS_MODULES "Reports support" on \
-		SMTP "Send email via SMTP" on \
-		POP3 "Fetch email via POP3" on \
-		IMAP "Fetch email via IMAP" on \
-		LDAP "Enable LDAP support" off \
-		PDF "Enable PDF output" on \
-		ISPELL "Enable ispell checking" off \
-		ASPELL "Enable aspell checking" on \
-		GNUPG "Use GnuPG" off
+OPTIONS_DEFINE=		MYSQL PGSQL REPORTS_MODULES SMTP POP3 IMAP LDAP PDF \
+			GNUPG DOCS
+OPTIONS_DEFAULT=	MYSQL REPORTS_MODULES SMTP POP3 IMAP PDF ASPELL
+OPTIONS_RADIO=		SPELL
+OPTIONS_RADIO_SPELL=	ASPELL ISPELL
+
+IMAP_DESC=		Fetch email via IMAP
+POP3_DESC=		Fetch email via POP3
+SMTP_DESC=		Send email via SMTP
+REPORTS_MODULES_DESC=	Reports support
 
 USE_BZIP2=	yes
 
@@ -77,72 +74,64 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 USE_APACHE_RUN=	22+
 USE_PERL5=	yes
 
-PLIST_SUB+=	VER_CKEDITOR="3.6.3"
+PLIST_SUB+=	VER_CKEDITOR="3.6.6"
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .endif
 
-.ifdef WITH_PGSQL
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 USE_PGSQL=	yes
 .endif
 
-.if ${APACHE_VERSION} == 13
-BUILD_DEPENDS+=	p5-Apache-Reload>=0:${PORTSDIR}/www/p5-Apache-Reload
-.else
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2
-.endif
 
-.ifdef WITH_REPORTS_MODULES
+.if ${PORT_OPTIONS:MREPORTS_MODULES}
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
 		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 .endif
 
-.ifdef WITH_SMTP
+.if ${PORT_OPTIONS:MSMTP}
 RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
 		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
-.ifdef WITH_POP3
+.if ${PORT_OPTIONS:MPOP3}
 RUN_DEPENDS+=	p5-Mail-POP3Client>=0:${PORTSDIR}/mail/p5-Mail-POP3Client \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.ifdef WITH_IMAP
+.if ${PORT_OPTIONS:MIMAP}
 RUN_DEPENDS+=	p5-Net-IMAP-Simple-SSL>=0:${PORTSDIR}/mail/p5-Net-IMAP-Simple-SSL
 .endif
 
-.ifdef WITH_LDAP
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-.ifdef WITH_PDF
+.if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2
 . if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 . endif
 .endif
 
-.ifdef WITH_ISPELL
+.if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-.ifdef WITH_ASPELL
+.if ${PORT_OPTIONS:MASPELL}
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .endif
 
-.ifdef WITH_GNUPG
+.if ${PORT_OPTIONS:MGNUPG}
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
-.endif
-
-.ifdef WITH_ISPELL && WITH_ASPELL
-IGNORE=	you only need 1 spell checker
 .endif
 
 post-patch:
@@ -158,15 +147,15 @@ do-build:
 	@${FIND} ${WRKSRC}/Kernel -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/opt/=${PREFIX}/=g;s=wwwrun=${WWWOWN}=g;"
-.ifdef WITH_ISPELL
+.if ${PORT_OPTIONS:MISPELL}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/usr/bin/ispell=${PREFIX}/bin/ispell=g"
 .endif
-.ifdef WITH_ASPELL
+.if ${PORT_OPTIONS:MASPELL}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/usr/bin/ispell=${PREFIX}/bin/aspell=g"
 .endif
-.ifdef WITH_GNUPG
+.if ${PORT_OPTIONS:MGNUPG}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/usr/bin/gpg=${PREFIX}/bin/gpg=g"
 .endif
@@ -194,7 +183,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${OTRSDIR}/scripts/test/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${OTRSDIR}/scripts/tools/
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCS_DIRS_LIST:S!^!${DOCSDIR}/!}
 	@${INSTALL_DATA} ${DOCS_FILES_LIST:S!^!${WRKSRC}/!} ${DOCSDIR}/
