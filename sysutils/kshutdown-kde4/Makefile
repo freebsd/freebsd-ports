@@ -1,14 +1,9 @@
-# New ports collection makefile for:	kshutdown
-# Date created:				Mon Jan  9 18:06:42 CET 2006
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	kshutdown
-DISTVERSION=	3.0beta4
-PORTREVISION=	1
+DISTVERSION=	3.0beta6
 CATEGORIES=	sysutils kde
-MASTER_SITES=	SF/${PORTNAME}/KShutdown/3.0%20Beta%204/
+MASTER_SITES=	SF/${PORTNAME}/KShutdown/3.0%20Beta%206/
 DISTNAME=	${PORTNAME}-source-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
