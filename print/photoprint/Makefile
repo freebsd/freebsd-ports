@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Utility to print multiple images per sheet
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client \
 		expat:${PORTSDIR}/textproc/expat2 \
