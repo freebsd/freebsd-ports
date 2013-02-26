@@ -22,6 +22,7 @@
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += apache-solr
+    SUBDIR += apache-solr3
     SUBDIR += apertium
     SUBDIR += archmage
     SUBDIR += artha
