@@ -325,6 +325,7 @@
     SUBDIR += libnet
     SUBDIR += libnet10
     SUBDIR += libnetdude
+    SUBDIR += libnfs
     SUBDIR += libnids
     SUBDIR += libnss-mysql
     SUBDIR += liboauth
