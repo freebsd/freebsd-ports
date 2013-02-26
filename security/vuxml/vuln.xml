@@ -51,6 +51,108 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84065569-7fb4-11e2-9c5a-000d601460a4">
+    <topic>otrs -- XSS vulnerability could lead to remote code execution</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><ge>3.1.*</ge><lt>3.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-03">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+	  system. This is a variance of the XSS vulnerability, where an attacker
+	  could send a specially prepared HTML email to OTRS which would cause
+	  JavaScript code to be executed in your browser while displaying the
+	  email. In this case this is achieved by using javascript source
+	  attributes with whitespaces.</p>
+	  <p>Affected by this vulnerability are all releases of OTRS 2.4.x up to
+	  and including 2.4.14, 3.0.x up to and including 3.0.16 and 3.1.x up to
+	  and including 3.1.10.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4751</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-03</url>
+    </references>
+    <dates>
+      <discovery>2012-10-16</discovery>
+      <entry>2013-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d60199df-7fb3-11e2-9c5a-000d601460a4">
+    <topic>otrs -- XSS vulnerability in Firefox and Opera could lead to remote code execution</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><ge>3.1.*</ge><lt>3.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-02/">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+	  system. This is a variance of the XSS vulnerability, where an attacker
+	  could send a specially prepared HTML email to OTRS which would cause
+	  JavaScript code to be executed in your browser while displaying the
+	  email in Firefox and Opera. In this case this is achieved with an
+	  invalid HTML structure with nested tags.</p>
+	  <p>Affected by this
+	  vulnerability are all releases of OTRS 2.4.x up to and including
+	  2.4.13, 3.0.x up to and including 3.0.15 and 3.1.x up to and including
+	  3.1.9 in combination with Firefox and Opera.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4600</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-02</url>
+    </references>
+    <dates>
+      <discovery>2012-08-30</discovery>
+      <entry>2013-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b50cbbc0-7fb2-11e2-9c5a-000d601460a4">
+    <topic>otrs -- XSS vulnerability in Internet Explorer could lead to remote code execution</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><ge>3.1.*</ge><lt>3.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-01">
+	  <p>This advisory covers vulnerabilities discovered in the OTRS core
+	  system. Due to the XSS vulnerability in Internet Explorer an attacker
+	  could send a specially prepared HTML email to OTRS which would cause
+	  JavaScript code to be executed in your Internet Explorer while
+	  displaying the email.</p>
+	  <p>Affected by this vulnerability are all releases of OTRS 2.4.x up to
+	  and including 2.4.12, 3.0.x up to and including 3.0.14 and 3.1.x up to
+	  and including 3.1.8 in combination with Internet Explorer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2582</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-01</url>
+    </references>
+    <dates>
+      <discovery>2012-08-22</discovery>
+      <entry>2013-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="844cf3f5-9259-4b3e-ac9e-13ca17333ed7">
     <topic>ruby -- DoS vulnerability in REXML</topic>
     <affects>
