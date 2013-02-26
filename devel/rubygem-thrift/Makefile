@@ -1,7 +1,4 @@
-# New ports collection makefile for:	thrift
-# Date created:	   27 September 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
 #
 
