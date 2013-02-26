@@ -1,3 +1,4 @@
+lib/node/thrift
 lib/node_modules/thrift/README.md
 lib/node_modules/thrift/examples/Makefile
 lib/node_modules/thrift/examples/README.md
@@ -14,8 +15,9 @@ lib/node_modules/thrift/lib/thrift/server.js
 lib/node_modules/thrift/lib/thrift/thrift.js
 lib/node_modules/thrift/lib/thrift/transport.js
 lib/node_modules/thrift/package.json
-lib/node/thrift
 @dirrm lib/node_modules/thrift/lib/thrift
 @dirrm lib/node_modules/thrift/lib
 @dirrm lib/node_modules/thrift/examples
 @dirrm lib/node_modules/thrift
+@dirrm lib/node_modules
+@dirrm lib/node
