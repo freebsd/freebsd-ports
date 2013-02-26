@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loganalyzer
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 
