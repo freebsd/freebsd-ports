@@ -1,0 +1,4 @@
+RMagick is an interface between the Ruby programming language and the
+ImageMagick and GraphicsMagick image processing libraries.
+
+WWW:	http://rmagick.rubyforge.org/

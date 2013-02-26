@@ -804,7 +804,6 @@ lang/gcc42-withgcjawt|lang/gcc42|2009-08-19|Not needed any longer, still an opti
 math/octave-forge-windows||2009-08-23|Abandoned upstream
 math/freefem++||2009-08-23|Has expired: unmaintained and consistently unportable
 math/it++||2009-08-23|Has expired: unmaintained and consistently unportable
-graphics/rubygem-rmagick||2009-08-27|Duplicate of graphics/ruby-rmagick
 databases/firebird-client||2009-09-03|Removed: no longer under development
 databases/firebird-server||2009-09-03|Removed: no longer under development
 audio/slimserver|audio/squeezecenter|2009-09-04|SlimServer has been superseded by SqueezeCenter
