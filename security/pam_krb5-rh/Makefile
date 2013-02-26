@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.4
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
