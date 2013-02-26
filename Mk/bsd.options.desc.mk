@@ -143,6 +143,7 @@ INI_DESC?=		INI file/format/parser
 IODBC_DESC?=		ODBC backend via iODBC
 IPV4_DESC?=		IPv4 protocol
 IPV6_DESC?=		IPv6 protocol
+ISPELL_DESC?=		Spell checking via Ispell
 JABBER_DESC?=		Jabber support
 JACK_DESC?=		JACK audio server
 JASPER_DESC?=		JPEG 2000 via JasPer
