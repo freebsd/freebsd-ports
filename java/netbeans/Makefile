@@ -1,18 +1,12 @@
-# ex:ts=8
-# New ports collection makefile for:	netbeans
-# Date Created:				2 Jun 2003
-# Whom:				 	olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	netbeans
-PORTVERSION=	7.2.1
-PORTREVISION=	1
+PORTVERSION=	7.3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201210100934-ml
+DISTNAME=	netbeans-${PORTVERSION}-201302132200
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -35,10 +29,10 @@ DESKTOP_ENTRIES="NetBeans" \
 		${FALSE}
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
+	@${REINPLACE_CMD} -i "" -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
 	@${REINPLACE_CMD} -i "" -e 's|%%GCONFTOOL2%%|${LOCALBASE}/bin/gconftool-2|g; \
-	    s|%%GREP%%|${GREP}|g;s|%%SED%%|${SED}|g;s|%%FGREP%%|`which fgrep`|g;s|%%AWK%%|${AWK}|g' \
+	    s|%%GREP%%|${GREP}|g;s|%%SED%%|${SED}|g;s|%%AWK%%|${AWK}|g' \
 	    ${WRKSRC}/platform/lib/nbexec
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
