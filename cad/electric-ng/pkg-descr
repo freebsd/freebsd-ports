@@ -4,28 +4,7 @@ many forms of circuit design, including:
  - Schematic drawing 
  - Hardware description language specifications 
 
-Electric has these CAD operations:  
- - Design rule checking
- - Electrical rule checking
- - Simulation and simulation interface (many options)
- - Generation (ROMs, PLAs, Pad Frames, etc.)
- - Compaction
- - Routing 
- - VHDL compilation
- - Silicon compilation
- - Network consistency checking (LVS)
- - Logical Effort analysis
- - Project Management
-       
-Electric can display these types of design:
- - MOS (many CMOS and nMOS variations)
- - Bipolar and BiCMOS
- - Schematics and printed circuits
- - Digital filters, Temporal logic
- - Artwork
-
 For real functionality, one should consider installing
 support simulation software such as cad/spice.
 
-Author:	Static Free Software & Sun Microsystems, Inc.
 WWW:	http://www.staticfreesoft.com/
