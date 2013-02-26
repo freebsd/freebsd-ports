@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hotot
-PORTVERSION=	0.9.8.10
-PORTREVISION=	1
+PORTVERSION=	0.9.8.11
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -12,10 +11,10 @@ COMMENT=	Lightweight, flexible microblogging client
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	shellex
+GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 GH_TAGNAME=	master
-GH_COMMIT=	1110bed
+GH_COMMIT=	6f87ed7
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
@@ -68,7 +67,7 @@ post-patch:
 # Sanitize font selection list
 	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/" \
 		${WRKSRC}/data/js/conf.js
-# Remove stale backup files (or they would pollute pkg-plist)
+# Remove stale backup files (prevent pkg-plist pollution)
 	@${FIND} ${WRKSRC} -type f -name '*.bak' -delete
 
 .include <bsd.port.mk>
