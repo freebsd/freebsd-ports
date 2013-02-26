@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Mail-SpamAssassin
-# Date created:				Nov 26 2001
-# Whom:					Anthony Kim
-#
+# Created by: Anthony Kim
 # $FreeBSD$
 #
 
@@ -29,8 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]* p5-Mail-SpamAssassin-Alt-[0-9]*
 
-PERL_CONFIGURE=	yes
-USE_PERL5=	5.12+
+PERL_CONFIGURE=	5.12+
 USE_LDCONFIG=	yes
 DBDIR?=		/var/db
 ETCDIR?=	${PREFIX}/etc/mail/spamassassin
