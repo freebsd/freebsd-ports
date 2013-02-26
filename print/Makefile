@@ -229,6 +229,7 @@
     SUBDIR += pecl-pdflib
     SUBDIR += pecl-ps
     SUBDIR += pfbtopfa
+    SUBDIR += photoprint
     SUBDIR += phppdflib
     SUBDIR += pic2fig
     SUBDIR += pkfonts118
