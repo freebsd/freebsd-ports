@@ -1204,7 +1204,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>ettercap</name>
         <range><lt>0.7.4.1</lt></range>
-        <range><ge>0.7.5</ge></range>
+        <range><ge>0.7.5</ge><lt>0.7.5.2</lt></range>
       </package>
     </affects>
     <description>
