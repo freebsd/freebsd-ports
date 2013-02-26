@@ -2,59 +2,74 @@
 # $FreeBSD$
 
 PORTNAME=	gtksql
-PORTVERSION=	0.3
-PORTREVISION=	6
+PORTVERSION=	0.4.5
 CATEGORIES=	databases
-MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Graphical query tool for PostgreSQL and/or MySQL
+COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
-.if defined(PACKAGE_BUILDING) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
-BROKEN=		Needs modification to work with newer MySQL
-EXPIRATION_DATE=	2011-11-30
-WITH_MYSQL=	yes
-.endif
+LICENSE=	GPLv2
 
-USE_GNOME=	gtk12
+LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
 
-.include <bsd.port.pre.mk>
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal libtool
+ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
+USE_PKGCONFIG=	build
+USE_GMAKE=	yes
+USE_GNOME=	gtk20
 
-.if defined(WITH_MYSQL) || (exists(${LOCALBASE}/lib/mysql/libmysqlclient.a) \
-	&& !defined(WITHOUT_MYSQL))
+MAN1=		${PORTNAME}.1
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE3
+OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
+.else
+CONFIGURE_ARGS+=--without-mysql
 .endif
-.if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
-	&& !defined(WITHOUT_PGSQL))
-HAVE_PGSQL=	yes
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
+.else
+CONFIGURE_ARGS+=--without-postgresql
 .endif
 
-pre-patch:
-.if !defined(USE_MYSQL) && !defined(HAVE_PGSQL)
-	@${ECHO} "You must specify which database to use, possible are:"
-	@${ECHO}
-	@${ECHO} "make WITH_MYSQL=yes (for MySQL support)"
-	@${ECHO} "make WITH_PGSQL=yes (for PostgreSQL support)"
-	@${ECHO} "make WITH_MYSQL=yes WITH_PGSQL=yes (for both MySQL and PostgreSQL support)"
-	@${FALSE}
+.if ${PORT_OPTIONS:MSQLITE3}
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+.else
+CONFIGURE_ARGS+=--without-sqlite
 .endif
 
-do-configure:
-.if defined(USE_MYSQL)
-	@${REINPLACE_CMD} -e "s/^#MYSQL/MYSQL/g" ${WRKSRC}/Makefile
-.endif
-.if defined(HAVE_PGSQL)
-	@${REINPLACE_CMD} -e "s/^#PGSQL/PGSQL/g" ${WRKSRC}/Makefile
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/include/mysql|${LOCALBASE}/include/mysql|g' \
+	-e 's|/usr/include/postgresql|${LOCALBASE}/include/postgresql/server|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|make|$$(MAKE)|' \
+		${WRKSRC}/scintilla/Makefile.in
+	@${REINPLACE_CMD} 's|-Os|${CFLAGS}|g' \
+		${WRKSRC}/scintilla/gtk/makefile
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtksql ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gtksql
-.for file in Changelog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gtksql
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,4 +1,36 @@
 bin/gtksql
-%%PORTDOCS%%share/doc/gtksql/Changelog
-%%PORTDOCS%%share/doc/gtksql/README
-%%PORTDOCS%%@dirrm share/doc/gtksql
+share/applications/gtksql.desktop
+%%NLS%%share/locale/de_DE/LC_MESSAGES/gtksql.mo
+share/pixmaps/connect-grey.xpm
+share/pixmaps/connect.png
+share/pixmaps/connect.xpm
+share/pixmaps/delete-grey.xpm
+share/pixmaps/delete.xpm
+share/pixmaps/disconnect-grey.xpm
+share/pixmaps/disconnect.png
+share/pixmaps/disconnect.xpm
+share/pixmaps/export-grey.xpm
+share/pixmaps/export.xpm
+share/pixmaps/gtksql.png
+share/pixmaps/gtksql.xpm
+share/pixmaps/gtksql_db.png
+share/pixmaps/gtksql_field.png
+share/pixmaps/gtksql_gnome_icon.png
+share/pixmaps/gtksql_table.png
+share/pixmaps/new-grey.xpm
+share/pixmaps/new.xpm
+share/pixmaps/open-grey.xpm
+share/pixmaps/open.xpm
+share/pixmaps/question.xpm
+share/pixmaps/refresh-grey.xpm
+share/pixmaps/refresh.xpm
+share/pixmaps/rename-grey.xpm
+share/pixmaps/rename.xpm
+share/pixmaps/save-grey.xpm
+share/pixmaps/save.xpm
+share/pixmaps/send-grey.xpm
+share/pixmaps/send.xpm
+share/pixmaps/warning.xpm
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+@dirrmtry share/applications

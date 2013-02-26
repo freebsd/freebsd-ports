@@ -1,5 +1,5 @@
-GtkSQL is a graphical query tool for PostgreSQL/MySQL.  You can work on
-multiple queries simultaneously:
+GtkSQL is a graphical query tool for PostgreSQL/MySQL/SQLite. You can
+work on multiple queries simultaneously:
 
  * send the current query to the database
  * add a new query
@@ -11,4 +11,4 @@ multiple queries simultaneously:
  * SQL keyword, table name and field name autocompletion
  * rescan the table database.
 
-WWW: http://membres.lycos.fr/bbrox/GtkSQL/
+WWW: http://sourceforge.net/projects/gtksql/
