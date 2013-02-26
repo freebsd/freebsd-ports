@@ -17,7 +17,7 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/id.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/mp.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/ms.py
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negociated.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negotiated.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/refresh.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/addpath.pyc
@@ -25,7 +25,7 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/id.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/mp.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/ms.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negociated.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negotiated.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/refresh.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/holdtime.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/routerid.py
@@ -227,6 +227,7 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/compatibility
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/rib
