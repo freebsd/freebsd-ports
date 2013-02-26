@@ -7,7 +7,6 @@ lib/libfb303.a
 %%SITE_PERL%%/Facebook/FB303/Constants.pm
 %%SITE_PERL%%/Facebook/FB303/FacebookService.pm
 %%SITE_PERL%%/Facebook/FB303/Types.pm
-%%PYTHON_SITELIBDIR%%/fb303-1.0-py2.7.egg-info
 %%PYTHON_SITELIBDIR%%/fb303/FacebookBase.py
 %%PYTHON_SITELIBDIR%%/fb303/FacebookBase.pyc
 %%PYTHON_SITELIBDIR%%/fb303/FacebookService.py
@@ -22,6 +21,7 @@ lib/libfb303.a
 %%PYTHON_SITELIBDIR%%/fb303_scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fb303_scripts/fb303_simple_mgmt.py
 %%PYTHON_SITELIBDIR%%/fb303_scripts/fb303_simple_mgmt.pyc
+%%PYTHON_SITELIBDIR%%/thrift-%%PORTVERSION%%-py2.7.egg-info
 %%DATADIR%%/if/fb303.thrift
 @dirrm %%DATADIR%%/if
 @dirrm %%DATADIR%%
