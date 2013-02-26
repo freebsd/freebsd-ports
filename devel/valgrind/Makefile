@@ -4,6 +4,7 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.8.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/:dist \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist \
@@ -49,15 +50,13 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsupc++
+
 post-install:
 	(cd ${WRKDIR}/valgrind-manpages/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700104
-IGNORE=	your FreeBSD version is not supported
-.endif
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64="" ARCH=amd64
