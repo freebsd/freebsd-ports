@@ -104,6 +104,7 @@
 %%ANALYZERDIR%%/classes/logstreamconfig.class.php
 %%ANALYZERDIR%%/classes/logstreamconfigdb.class.php
 %%ANALYZERDIR%%/classes/logstreamconfigdisk.class.php
+%%ANALYZERDIR%%/classes/logstreamconfigmongodb.class.php
 %%ANALYZERDIR%%/classes/logstreamconfigpdo.class.php
 %%ANALYZERDIR%%/classes/logstreamdb.class.php
 %%ANALYZERDIR%%/classes/logstreamdisk.class.php
@@ -112,6 +113,7 @@
 %%ANALYZERDIR%%/classes/logstreamlineparsersyslog.class.php
 %%ANALYZERDIR%%/classes/logstreamlineparsersyslog23.class.php
 %%ANALYZERDIR%%/classes/logstreamlineparserwinsyslog.class.php
+%%ANALYZERDIR%%/classes/logstreammongodb.class.php
 %%ANALYZERDIR%%/classes/logstreampdo.class.php
 %%ANALYZERDIR%%/classes/msgparser.class.php
 %%ANALYZERDIR%%/classes/msgparsers/msgparser.apache2.class.php
@@ -119,6 +121,11 @@
 %%ANALYZERDIR%%/classes/msgparsers/msgparser.eventlog.class.php
 %%ANALYZERDIR%%/classes/msgparsers/msgparser.iis.class.php
 %%ANALYZERDIR%%/classes/reports/report.class.php
+%%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary.class.php
+%%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary/report.eventlog.auditsummary.css
+%%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary/report.eventlog.auditsummary.lang.en.php
+%%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary/report.eventlog.auditsummary.template.html
+%%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary/report.eventlog.auditsummary.template.pdf
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary.class.php
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary/report.eventlog.eventsummary.css
 %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary/report.eventlog.eventsummary.lang.en.php
@@ -242,6 +249,7 @@
 %%ANALYZERDIR%%/images/icons/media_rewind.png
 %%ANALYZERDIR%%/images/icons/media_step_back.png
 %%ANALYZERDIR%%/images/icons/media_step_forward.png
+%%ANALYZERDIR%%/images/icons/mongodb.png
 %%ANALYZERDIR%%/images/icons/nav_down_blue.png
 %%ANALYZERDIR%%/images/icons/nav_up_blue.png
 %%ANALYZERDIR%%/images/icons/navigate_check.png
@@ -393,6 +401,7 @@
 @dirrm %%ANALYZERDIR%%/classes/reports/report.syslog.syslogsummary
 @dirrm %%ANALYZERDIR%%/classes/reports/report.eventlog.logonlogoff
 @dirrm %%ANALYZERDIR%%/classes/reports/report.eventlog.eventsummary
+@dirrm %%ANALYZERDIR%%/classes/reports/report.eventlog.auditsummary
 @dirrm %%ANALYZERDIR%%/classes/reports
 @dirrm %%ANALYZERDIR%%/classes/msgparsers
 @dirrm %%ANALYZERDIR%%/classes/jpgraph/lang
