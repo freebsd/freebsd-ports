@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spiralsynthmodular
-# Date created:				2003 Jan 30
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
@@ -13,12 +9,12 @@ MASTER_SITES=	SF/spiralmodular/spiralmodular/${PORTVERSION}%20%28Latest%20Versio
 DISTNAME=	spiralmodular-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An object orientated modular softsynth / sequencer / sampler
+COMMENT=	Object-oriented modular softsynth/sequencer/sampler
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		jackd:${PORTSDIR}/audio/jack
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
+		sndfile:${PORTSDIR}/audio/libsndfile
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -27,22 +23,18 @@ CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math
-.endif
-
 WRKSRC=	${WRKDIR}/spiralmodular-0.2.2
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CFLAGS+=	-O3 -ffast-math
 .endif
 
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 post-patch:
