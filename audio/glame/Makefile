@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glame
-# Date created:				26 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
@@ -12,21 +8,20 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
+COMMENT=	Powerful, fast, stable, and easily extensible sound editor for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
+		mad:${PORTSDIR}/audio/libmad \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		guile:${PORTSDIR}/lang/guile
 
-USE_XORG=	xbitmaps x11
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
-USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_XORG=	xbitmaps x11
 
 INFO=		glame glame-dev
 
@@ -37,9 +32,7 @@ post-extract:
 	@cd ${WRKSRC}/doc && ${RM} -f *.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| libltdl||g ; \
-		 s|,$$LIBLTDL,|,,|g ; \
-		 s|,$$LTDLINCL,|,,|g ; \
-		 s|,$$LTLIBOBJS,|,,|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| libltdl|| ; s|,$$LIBLTDL,|,,| ; \
+		s|,$$LTDLINCL,|,,| ; s|,$$LTLIBOBJS,|,,|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
