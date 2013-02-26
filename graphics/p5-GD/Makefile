@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-GD
-# Date created:				March 11, 2003
-# Whom:					Philip M. Gollucci <pgollucci@FreeBSD.org>
-#
+# Created by: Philip M. Gollucci <pgollucci@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GD
-PORTVERSION=	2.46
-PORTREVISION=	1
+PORTVERSION=	2.49
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
