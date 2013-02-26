@@ -1,11 +1,13 @@
 bin/thrift
 include/thrift/TApplicationException.h
+include/thrift/TDispatchProcessor.h
 include/thrift/TLogging.h
 include/thrift/TProcessor.h
 include/thrift/TReflectionLocal.h
 include/thrift/Thrift.h
 include/thrift/async/TAsyncBufferProcessor.h
 include/thrift/async/TAsyncChannel.h
+include/thrift/async/TAsyncDispatchProcessor.h
 include/thrift/async/TAsyncProcessor.h
 include/thrift/async/TAsyncProtocolProcessor.h
 include/thrift/async/TEvhttpClientChannel.h
@@ -41,6 +43,8 @@ include/thrift/protocol/TVirtualProtocol.h
 %%GLIB%%include/thrift/protocol/thrift_binary_protocol_factory.h
 %%GLIB%%include/thrift/protocol/thrift_protocol.h
 %%GLIB%%include/thrift/protocol/thrift_protocol_factory.h
+include/thrift/qt/TQIODeviceTransport.h
+include/thrift/qt/TQTcpServer.h
 include/thrift/server/TNonblockingServer.h
 include/thrift/server/TServer.h
 include/thrift/server/TSimpleServer.h
@@ -57,6 +61,8 @@ include/thrift/transport/TFileTransport.h
 include/thrift/transport/THttpClient.h
 include/thrift/transport/THttpServer.h
 include/thrift/transport/THttpTransport.h
+include/thrift/transport/TPipe.h
+include/thrift/transport/TPipeServer.h
 include/thrift/transport/TSSLServerSocket.h
 include/thrift/transport/TSSLSocket.h
 include/thrift/transport/TServerSocket.h
@@ -92,17 +98,24 @@ lib/libthriftnb.la
 lib/libthriftnb.so
 lib/libthriftnb.so.0
 lib/libthriftnb-%%PORTVERSION%%.so
+%%QT%%lib/libthriftqt-%%PORTVERSION%%.so
+%%QT%%lib/libthriftqt.a
+%%QT%%lib/libthriftqt.la
+%%QT%%lib/libthriftqt.so
+lib/libthriftz-%%PORTVERSION%%.so
 lib/libthriftz.a
 lib/libthriftz.la
 lib/libthriftz.so
 lib/libthriftz.so.0
-lib/libthriftz-%%PORTVERSION%%.so
+%%QT%%libdata/ldconfig/qt4-network
 libdata/pkgconfig/thrift-nb.pc
+%%QT%%libdata/pkgconfig/thrift-qt.pc
 libdata/pkgconfig/thrift-z.pc
 libdata/pkgconfig/thrift.pc
 %%GLIB%%libdata/pkgconfig/thrift_c_glib.pc
 @dirrm include/thrift/transport
 @dirrm include/thrift/server
+@dirrm include/thrift/qt
 @dirrm include/thrift/protocol
 @dirrm include/thrift/processor
 @dirrm include/thrift/concurrency

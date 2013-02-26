@@ -1,9 +1,5 @@
-# New ports collection makefile for:	thrift
-# Date created:	   27 September 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}	# get these from bsd.thrift.mk. any upgrade needs to check ALL dependencies
@@ -35,8 +31,8 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-libevent=${LOCALBASE} \
 		--enable-shared --enable-static --with-zlib
 CONFIGURE_ENV+=	${MAKE_ENV}
 
-OPTIONS=	GLIB "Building C (GLib) Library" off
-
+OPTIONS=	GLIB "Building C (GLib) Library" off \
+		QT "Building Qt Library" off
 # For Perl support, use devel/p5-Thrift.
 # For Python support, use devel/py-thrift.
 # For Ruby support, use devel/rubygem-thrift.
@@ -66,6 +62,16 @@ CONFIGURE_ARGS+=	\
 .else
     CONFIGURE_ARGS+=	--without-c_glib
     PLIST_SUB+=		GLIB="@comment "
+.endif
+
+.if !defined(WITHOUT_QT)
+    CONFIGURE_ARGS+=	--with-qt4
+    USE_QT4=		network moc_build qmake_build rcc_build uic_build
+    PLIST_SUB+=		QT=""
+    WITH_QT=		true
+.else
+    CONFIGURE_ARGS+=	--without-qt4
+    PLIST_SUB+=		QT="@comment "
 .endif
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
