@@ -44,6 +44,7 @@
     SUBDIR += libalkimia
     SUBDIR += libofx
     SUBDIR += libstocks
+    SUBDIR += moneymanagerex
     SUBDIR += mybudget
     SUBDIR += myphpmoney
     SUBDIR += openerp-server
