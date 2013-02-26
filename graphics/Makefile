@@ -917,6 +917,7 @@
     SUBDIR += rubygem-pdfkit
     SUBDIR += rubygem-png
     SUBDIR += rubygem-railroad
+    SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
