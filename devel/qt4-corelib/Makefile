@@ -3,6 +3,7 @@
 
 PORTNAME=	corelib
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -44,6 +45,18 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
+
+.if empty(QT4_OPTIONS:MCUPS)
+CONFIGURE_ARGS+=	-no-cups
+.endif
+
+.if empty(QT4_OPTIONS:MNAS)
+CONFIGURE_ARGS+=	-no-nas-sound
+.endif
+
+.if empty(QT4_OPTIONS:MQGTKSTYLE)
+CONFIGURE_ARGS+=	-no-gtkstyle
+.endif
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}

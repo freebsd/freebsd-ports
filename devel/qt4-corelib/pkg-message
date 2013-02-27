@@ -1,7 +1,7 @@
 ======================================================================
 
 Qt 4 can be built with optional support for:
- - Common UNIX Printing System (CUPS)
+ - Common UNIX Printing System (CUPS) (enabled by default)
  - Network Audio System (NAS)
  - Qt style that renders using GTK (QGTKSTYLE)
 
