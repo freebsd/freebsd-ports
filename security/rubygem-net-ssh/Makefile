@@ -4,7 +4,7 @@
 # Remeber to check sysutils/rubygem-chef
 
 PORTNAME=	net-ssh
-PORTVERSION=	2.2.2
+PORTVERSION=	2.6.5
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
