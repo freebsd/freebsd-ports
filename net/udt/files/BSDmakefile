@@ -6,23 +6,15 @@ LIBDIR=	${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 INCS=	udt.h
 
-LDADD=	-lcrypto -lpthread
+LDADD=	-lmd -lpthread
 
 SRCS=	common.cpp window.cpp list.cpp buffer.cpp packet.cpp channel.cpp \
 	queue.cpp ccc.cpp cache.cpp core.cpp epoll.cpp api.cpp
-WARNS=	4
 
 CXXFLAGS+=	-D${MACHINE_ARCH:U:S/I386/IA32/:S/SPARC64/SPARC/} -DBSD
-#CXXFLAGS+=	 -Wsystem-headers -Werror -Wall -Wno-format-y2k -W	\
-#	-Wno-unused-parameter -Wpointer-arith -Wreturn-type	\
-#	-Wcast-qual -Wwrite-strings -Wswitch -Wcast-align	\
-#	-Wunused-parameter
-
-.if defined(OPENSSLLIB) && ${OPENSSLLIB} != "/usr/lib"
-LDADD=	-L${OPENSSLLIB}
-.endif
-.if defined(OPENSSLINC) && ${OPENSSLINC} != "/usr/include"
-CXXFLAGS+=	-I${OPENSSLINC}
-.endif
+CXXFLAGS+=	-Wsystem-headers -Werror -Wall -W	\
+	-Wpointer-arith -Wreturn-type	\
+	-Wwrite-strings -Wswitch -Wcast-align	\
+	-Wunused-parameter
 
 .include <bsd.lib.mk>
