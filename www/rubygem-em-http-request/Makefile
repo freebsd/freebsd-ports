@@ -1,21 +1,19 @@
-# Ports collection makefile for:	rubygem-em-http-request
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	em-http-request
-PORTVERSION=	0.2.15
+PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	EventMachine based, async HTTP Request client
 
-RUN_DEPENDS=	rubygem-addressable>=2.0.0:${PORTSDIR}/www/rubygem-addressable \
-		rubygem-escape_utils>=0:${PORTSDIR}/textproc/rubygem-escape_utils \
-		rubygem-eventmachine>=0.12.9:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-addressable>=2.2.3:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-cookiejar>=0:${PORTSDIR}/www/rubygem-cookiejar \
+		rubygem-em-socksify>=0:${PORTSDIR}/www/rubygem-em-socksify \
+		rubygem-eventmachine>=1.0.0:${PORTSDIR}/devel/rubygem-eventmachine \
+		rubygem-http_parser.rb>=0.5.3:${PORTSDIR}/net/rubygem-http_parser.rb
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
