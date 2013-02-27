@@ -111,7 +111,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
 .if ${PORT_OPTIONS:MLAUDIO}
-RUN_DEPENDS+=	laudio:${PORTSDIR}/audio/laudio
+RUN_DEPENDS+=	laudio:${PORTSDIR}/audio/linux-laudio
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
