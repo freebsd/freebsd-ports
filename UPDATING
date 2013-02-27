@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130226:
+  AFFECTS: users of textproc/apache-solr
+  AUTHOR: vanilla@FreeBSD.org
+
+  textproc/apache-solr has beed repocopied to textproc/apache-solr3.
+  If you need to continue with the old stable version please run
+
+  # portmaster -o textproc/apache-solr3 textproc/apache-solr
+    or
+  # portupgrade -fo textproc/apache-solr3 textproc/apache-solr
+    or
+  # pkg set -o textproc/apache-solr:textproc/apache-solr3
+
 20130218:
   AFFECTS: users of net/samba4-devel
   AUTHOR: timur@FreeBSD.org
