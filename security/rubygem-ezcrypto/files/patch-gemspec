@@ -1,0 +1,18 @@
+--- ezcrypto-0.7.2.gemspec.orig	2013-02-27 02:35:45.000000000 +0000
++++ ezcrypto-0.7.2.gemspec	2013-02-27 02:36:42.000000000 +0000
+@@ -51,7 +51,6 @@
+ - test/protectedsigner.pem
+ - test/sf-class2-root.crt
+ - test/sf_intermediate.crt
+-- test/store
+ - test/test_helper.rb
+ - test/testchild.pem
+ - test/testchild.req
+@@ -101,7 +100,6 @@
+ - test/protectedsigner.pem
+ - test/sf-class2-root.crt
+ - test/sf_intermediate.crt
+-- test/store
+ - test/test_helper.rb
+ - test/testchild.pem
+ - test/testchild.req
