@@ -1,11 +1,8 @@
-# New ports collection makefile for:	udt
-# Date created:				24 January 2012
-# Whom:					Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
 
 PORTNAME=	udt
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	net
 MASTER_SITES=	SF
 DISTNAME=	udt.sdk.${PORTVERSION}
@@ -16,7 +13,6 @@ COMMENT=	C++ library containing the UDT API implementation
 PATCH_WRKSRC=	${WRKDIR}/udt${PORTVERSION:R}
 WRKSRC=	${PATCH_WRKSRC}/src
 MAKEFILE=	${FILESDIR}/BSDmakefile
-USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 EXTRACT_AFTER_ARGS=	|${TAR} -xpf - --exclude '*md5*'	\
 		--exclude udt${PORTVERSION:R}/win
