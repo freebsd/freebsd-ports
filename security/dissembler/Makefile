@@ -1,9 +1,5 @@
-# Ports collection makefile for:  dissembler
-# Date created:			  13 Mar 2005
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dissembler
 PORTVERSION=	0.9
@@ -18,6 +14,8 @@ COMMENT=	A tool that polymorphs bytecode to a printable ASCII string
 WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_FILES=bin/${PORTNAME}
 PORTDOCS=	${PORTNAME}.txt
+
+BROKEN=	checksum mismatch
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
