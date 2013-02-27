@@ -11,7 +11,7 @@ FFR_DESC=		Use features marked as For-Future-Releases
 OPTIONS_GROUP+=		FFR
 OPTIONS_GROUP_FFR=	ADSP_LISTS ALLSYMBOLS ATPS CODECOVERAGE \
 			DB_HANDLE_POOLS DEFAULT_SENDER DIFFHEADERS \
-			DKIM_REPUTATION ERLANG IDENTITY_HEADER \
+			DKIM_REPUTATION ERLANG IDENTITY_HEADER LCOV \
 			LDAP_CACHING POSTGRES_RECONNECT_HACK \
 			RATE_LIMIT RBL REDIRECT REPLACE_RULES REPRRD \
 			REPUTATION RESIGN SENDER_MACRO SOCKETDB \
@@ -27,6 +27,7 @@ DIFFHEADERS_DESC=		Compare signed and verified headers (experimental)
 DKIM_REPUTATION_DESC=		DKIM reputation check (experimental)
 ERLANG_DESC=			Support for Erlang datasets
 IDENTITY_HEADER_DESC=		Special header to set identity
+LCOV_DESC=			Profiling with LCOV
 LDAP_CACHING_DESC=		LDAP query piggybacking and caching
 POSTGRES_RECONNECT_HACK_DESC=	PostgreSQL connection error detection bug hack
 RATE_LIMIT_DESC=		DKIM based rate limiting support
