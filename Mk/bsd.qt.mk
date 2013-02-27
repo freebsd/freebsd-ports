@@ -218,18 +218,10 @@ opengl_DEPENDS=	${QT_LIBDIR}/libQtOpenGL.so
 pixeltool_PORT=		graphics/qt4-pixeltool
 pixeltool_DEPENDS=	${QT_PREFIX}/bin/pixeltool
 
-.if !defined(WITH_QT_PHONON)
 phonon_PORT=	multimedia/phonon
-.else
-phonon_PORT=	multimedia/qt4-phonon
-.endif
 phonon_DEPENDS=	${QT_LIBDIR}/libphonon.so
 
-.if !defined(WITH_QT_PHONON)
 phonon-gst_PORT=	multimedia/phonon-gstreamer
-.else
-phonon-gst_PORT=	multimedia/qt4-phonon-gst
-.endif
 phonon-gst_DEPENDS=	${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
 
 porting_PORT=		devel/qt4-porting

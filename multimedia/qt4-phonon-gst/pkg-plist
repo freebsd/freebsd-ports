@@ -1,4 +1,0 @@
-%%QT_PLUGINDIR_REL%%/phonon_backend/libphonon_gstreamer.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/phonon_backend/libphonon_gstreamer.so.debug
-@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend
-@dirrmtry %%QT_PLUGINDIR_REL%%
