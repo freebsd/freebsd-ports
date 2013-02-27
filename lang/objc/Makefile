@@ -1,9 +1,5 @@
-# New ports collection makefile for:    objc compiler
-# Date created:         16 May 1998
-# Whom:                 chuckr@freebsd.org
-#
+# Created by: chuckr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	objc
 PORTVERSION=	3.2.11
@@ -15,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
 BOOTVERSION=	3.2.11
+
+BROKEN=		fails to build
 
 ALL_TARGET=	default
 MAKE_ENV=	PATH=${WRKDIR}/bin:${PATH}
