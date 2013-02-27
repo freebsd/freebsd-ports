@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-FCGI-Spawn
-# Date created:		2007-12-28
-# Whom:			Peter <peter@vereshagin.org>
-#
+# Created by: Peter <peter@vereshagin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI-Spawn
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.7
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +10,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	FastCGI server for CGI-like applications multiprocessing
 
-RUN_DEPENDS=	p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
+BUILD_DEPENDS=	p5-Const-Fast>0:${PORTSDIR}/devel/p5-Const-Fast \
+		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI \
+		p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Most>0:${PORTSDIR}/devel/p5-Test-Most \
+		p5-Test-Strict>0:${PORTSDIR}/devel/p5-Test-Strict
 
 PERL_CONFIGURE=	yes
 
-USE_RC_SUBR+= fcgi_spawn
+USE_RC_SUBR+=	fcgi_spawn
 
-MAN3=		FCGI::Spawn.3
+MAN3=		FCGI::Spawn.3 FCGI::Spawn::BinUtils.3
 MAN1=		fcgi_spawn.1
 
-OPTIONS=  MYSQL   "MySQL dependency to run on RC start"         off \
-    PGSQL   "PgSQL dependency to run on RC start"         off
+OPTIONS=	MYSQL   "MySQL dependency to run on RC start"         off \
+		PGSQL   "PgSQL dependency to run on RC start"         off
 
 .include <bsd.port.pre.mk>
 
@@ -47,8 +48,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/fcgi_spawn
 	@${INSTALL_DATA} ${WRKSRC}/fcgi_spawn.conf.sample ${PREFIX}/etc/fcgi_spawn
 	@${MKDIR} ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/Bugzilla.CGI.pm.fcgi.spawn.patch ${WRKSRC}/CGI.pm.fcgi.spawn.patch \
-		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
