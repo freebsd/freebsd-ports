@@ -1713,6 +1713,7 @@
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-em-http-request
     SUBDIR += rubygem-em-socksify
+    SUBDIR += rubygem-em-twitter
     SUBDIR += rubygem-em-websocket
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
