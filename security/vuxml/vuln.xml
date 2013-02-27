@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dbdac023-80e1-11e2-9a29-001060e06fd4">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.273</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb13-08.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0504</cvename>
+      <cvename>CVE-2013-0643</cvename>
+      <cvename>CVE-2013-0648</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-26</discovery>
+      <entry>2013-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84065569-7fb4-11e2-9c5a-000d601460a4">
     <topic>otrs -- XSS vulnerability could lead to remote code execution</topic>
     <affects>
