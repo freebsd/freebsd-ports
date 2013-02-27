@@ -5,6 +5,7 @@ PORTNAME=	laudio
 PORTVERSION=	0.4
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.lossless-audio.com/ CENKES
+PKGNAMEPREFIX=	linux-
 DISTNAME=	la04
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,6 +21,8 @@ PLIST_FILES=	bin/laudio
 PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/la ${PREFIX}/bin/laudio
