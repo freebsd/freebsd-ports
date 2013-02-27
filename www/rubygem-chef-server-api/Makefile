@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-chef-server-api
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chef-server-api
-PORTVERSION=	0.10.8
+PORTVERSION=	10.24.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Server API
 
 RUN_DEPENDS=	rubygem-dep_selector>=0.0.3:${PORTSDIR}/devel/rubygem-dep_selector \
-		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json146 \
+		rubygem-extlib>=0.9.16:${PORTSDIR}/devel/rubygem-extlib \
 		rubygem-merb-assets>=1.1.0:${PORTSDIR}/www/rubygem-merb-assets \
 		rubygem-merb-core>=1.1.0:${PORTSDIR}/www/rubygem-merb-core \
 		rubygem-merb-helpers>=1.1.0:${PORTSDIR}/www/rubygem-merb-helpers \

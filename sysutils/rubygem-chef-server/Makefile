@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-chef-server
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chef-server
-PORTVERSION=	0.10.8
+PORTVERSION=	10.24.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
