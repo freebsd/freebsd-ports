@@ -1,14 +1,5 @@
-splay
------
-
-Splay program uses the MPEG/Wave Sound library to play sound files in
-several formats, notably the MPEG audio and Wave format. This early version
-has only limited functionally and a simplistic user interface.
-
-This program have NO WARRANTY.
-You can use this program under GPL.
-You can use these libraries under Library GPL.
-
-* This version of splay was not compiled with pthread library.
+Splay program uses the MPEG/wave sound library to play sound files in
+several formats, notably the MPEG audio and Wave format.  This early
+version has only limited functionally and a simplistic user interface.
 
 WWW: http://splay.sourceforge.net/
