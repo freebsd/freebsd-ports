@@ -1,9 +1,5 @@
-# New ports collection makefile for:	edict
-# Date created:		18 August 1997
-# Whom:			Jonathan Hanna
-#
+# Created by: Jonathan Hanna
 # $FreeBSD$
-#
 
 PORTNAME=	edict-utf-8
 PORTVERSION=	20100420
@@ -14,7 +10,7 @@ DISTFILES=	${DICTFILES}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USE_ICONV=	yes
 ICONV?=		iconv
