@@ -4074,3 +4074,5 @@ german/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
 dns/p5-Net-DNS-ZoneFile||2013-02-25|Now bundled with dns/p5-Net-DNS
 textproc/stardict2-rptts|textproc/stardict-rptts|2013-02-25|Renamed
 audio/laudio|audio/linux-laudio|2013-02-27|Renamed (Linux binary port)
+multimedia/qt4-phonon||2013-02-27|Has expired: Qt4 uses multimedia/phonon
+multimedia/qt4-phonon-gst||2013-02-27|Has expired: Qt4 uses multimedia/phonon-gstreamer

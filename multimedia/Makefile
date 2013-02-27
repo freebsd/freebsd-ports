@@ -291,8 +291,6 @@
     SUBDIR += qmmp-plugin-pack
     SUBDIR += qt-faststart
     SUBDIR += qt4-multimedia
-    SUBDIR += qt4-phonon
-    SUBDIR += qt4-phonon-gst
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
