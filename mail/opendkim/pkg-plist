@@ -18,7 +18,7 @@ include/opendkim/dkim.h
 lib/libopendkim.a
 lib/libopendkim.la
 lib/libopendkim.so
-lib/libopendkim.so.8
+lib/libopendkim.so.9
 %%RBL%%lib/librbl.a
 %%RBL%%lib/librbl.la
 %%RBL%%lib/librbl.so

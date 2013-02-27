@@ -60,6 +60,15 @@ CONFIGURE_ARGS+=	--without-erlang
 CONFIGURE_ARGS+=	--enable-identity_header
 .endif
 
+.if ${PORT_OPTIONS:MLCOV}
+BROKEN=			Does not install
+BUILD_DEPENDS+=		lcov:${PORTSDIR}/devel/lcov \
+			${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+CONFIGURE_ARGS+=	--with-lcov
+.else
+CONFIGURE_ARGS+=	--without-lcov
+.endif
+
 .if ${PORT_OPTIONS:MLDAP_CACHING}
 WITH_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap_caching
@@ -94,7 +103,7 @@ CONFIGURE_ARGS+=	--enable-replace_rules
 CONFIGURE_ARGS+=	--enable-reprrd
 MAN8+=			opendkim-reprrdimport.8
 PLIST_SUB+=		REPRRD=""
-BUILD_DEPENDS=		rrdtool>=0:${PORTSDIR}/databases/rrdtool
+BUILD_DEPENDS+=		rrdtool>=0:${PORTSDIR}/databases/rrdtool
 .else
 CONFIGURE_ARGS+=	--disable-reprrd
 PLIST_SUB+=		REPRRD="@comment "
