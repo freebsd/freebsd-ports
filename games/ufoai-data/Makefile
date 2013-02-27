@@ -1,4 +1,4 @@
-# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	data
@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	UFO alien invasion data files
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS= ${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 NO_PACKAGE=	Package will be 900MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
