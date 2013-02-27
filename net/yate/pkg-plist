@@ -3,6 +3,9 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/accfile.conf.sample %D/%%ETCDIR%%/accfile.conf; then rm -f %D/%%ETCDIR%%/accfile.conf; fi
 %%ETCDIR%%/accfile.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/accfile.conf ] ; then cp -p %D/%F %B/accfile.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/amrnbcodec.conf.sample %D/%%ETCDIR%%/amrnbcodec.conf; then rm -f %D/%%ETCDIR%%/amrnbcodec.conf; fi
+%%ETCDIR%%/amrnbcodec.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/amrnbcodec.conf ] ; then cp -p %D/%F %B/amrnbcodec.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/analog.conf.sample %D/%%ETCDIR%%/analog.conf; then rm -f %D/%%ETCDIR%%/analog.conf; fi
 %%ETCDIR%%/analog.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/analog.conf ] ; then cp -p %D/%F %B/analog.conf; fi
@@ -45,12 +48,18 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/enumroute.conf.sample %D/%%ETCDIR%%/enumroute.conf; then rm -f %D/%%ETCDIR%%/enumroute.conf; fi
 %%ETCDIR%%/enumroute.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/enumroute.conf ] ; then cp -p %D/%F %B/enumroute.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/eventlogs.conf.sample %D/%%ETCDIR%%/eventlogs.conf; then rm -f %D/%%ETCDIR%%/eventlogs.conf; fi
+%%ETCDIR%%/eventlogs.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/eventlogs.conf ] ; then cp -p %D/%F %B/eventlogs.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/extmodule.conf.sample %D/%%ETCDIR%%/extmodule.conf; then rm -f %D/%%ETCDIR%%/extmodule.conf; fi
 %%ETCDIR%%/extmodule.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/extmodule.conf ] ; then cp -p %D/%F %B/extmodule.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/filetransfer.conf.sample %D/%%ETCDIR%%/filetransfer.conf; then rm -f %D/%%ETCDIR%%/filetransfer.conf; fi
 %%ETCDIR%%/filetransfer.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/filetransfer.conf ] ; then cp -p %D/%F %B/filetransfer.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/gvoice.conf.sample %D/%%ETCDIR%%/gvoice.conf; then rm -f %D/%%ETCDIR%%/gvoice.conf; fi
+%%ETCDIR%%/gvoice.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/gvoice.conf ] ; then cp -p %D/%F %B/gvoice.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/h323chan.conf.sample %D/%%ETCDIR%%/h323chan.conf; then rm -f %D/%%ETCDIR%%/h323chan.conf; fi
 %%ETCDIR%%/h323chan.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/h323chan.conf ] ; then cp -p %D/%F %B/h323chan.conf; fi
@@ -75,6 +84,9 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/lateroute.conf.sample %D/%%ETCDIR%%/lateroute.conf; then rm -f %D/%%ETCDIR%%/lateroute.conf; fi
 %%ETCDIR%%/lateroute.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/lateroute.conf ] ; then cp -p %D/%F %B/lateroute.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/lksctp.conf.sample %D/%%ETCDIR%%/lksctp.conf; then rm -f %D/%%ETCDIR%%/lksctp.conf; fi
+%%ETCDIR%%/lksctp.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lksctp.conf ] ; then cp -p %D/%F %B/lksctp.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/mgcpca.conf.sample %D/%%ETCDIR%%/mgcpca.conf; then rm -f %D/%%ETCDIR%%/mgcpca.conf; fi
 %%ETCDIR%%/mgcpca.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/mgcpca.conf ] ; then cp -p %D/%F %B/mgcpca.conf; fi
@@ -200,15 +212,15 @@ include/yate/yatephone.h
 include/yate/yateversn.h
 lib/libyate.so
 lib/libyate.so.4
-lib/libyate.so.4.0.0
+lib/libyate.so.4.3.0
 lib/libyatejabber.so
-lib/libyatejabber.so.4.0.0
+lib/libyatejabber.so.4.3.0
 lib/libyatemgcp.so
-lib/libyatemgcp.so.4.0.0
+lib/libyatemgcp.so.4.3.0
 lib/libyatescript.so
-lib/libyatescript.so.4.0.0
+lib/libyatescript.so.4.3.0
 lib/libyatesig.so
-lib/libyatesig.so.4.0.0
+lib/libyatesig.so.4.3.0
 lib/yate/analyzer.yate
 lib/yate/callfork.yate
 lib/yate/callgen.yate
@@ -224,8 +236,11 @@ lib/yate/extmodule.yate
 %%WITH_SPANDSP%%lib/yate/faxchan.yate
 lib/yate/filetransfer.yate
 lib/yate/gsmcodec.yate
+lib/yate/gvoice.yate
 %%WITH_H323%%lib/yate/h323chan.yate
 %%WITH_ILBC%%lib/yate/ilbccodec.yate
+lib/yate/ilbcwebrtc.yate
+lib/yate/isaccodec.yate
 lib/yate/jabber/jabberserver.yate
 lib/yate/jabber/jbfeatures.yate
 lib/yate/javascript.yate
@@ -247,6 +262,7 @@ lib/yate/server/clustering.yate
 lib/yate/server/cpuload.yate
 lib/yate/server/dbpbx.yate
 lib/yate/server/dbwave.yate
+lib/yate/server/eventlogs.yate
 lib/yate/server/heartbeat.yate
 lib/yate/server/lateroute.yate
 %%WITH_SCTP%%lib/yate/server/lksctp.yate
@@ -290,6 +306,222 @@ libdata/pkgconfig/yate.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Array.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Base64.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__CallEndpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__CapturedEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Channel.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Cipher.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Client.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientAccount.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientAccountList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientChannel.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientContact.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientLogic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientResource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ClientSound.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Compressor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataBlock.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataConsumer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataEndpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataNode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DataTranslator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DebugEnabler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DefaultLogic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DnsRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Driver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__DurationUpdate.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Engine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__EngineCheck.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__File.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__FormatInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__FormatRepository.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__GenObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__GenPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__HashList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ImageInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ListIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Lock.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Lock2.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Lockable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MD5.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MemoryStream.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Message.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessageDispatcher.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessageHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessageNotifier.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessagePostHook.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessageReceiver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MessageRelay.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeAuthLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeBinaryBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeHeaderLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeLinesBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeMultipartBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeSdpBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MimeStringBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MucRoom.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MucRoomMember.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Mutex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__MutexPool.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__NamedIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__NamedList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__NamedPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__NamedString.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__NaptrRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ObjList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ObjVector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Random.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__RefObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__RefPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__RefPointerBase.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Regexp.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Resolver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Router.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Runnable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SHA1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SctpSocket.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Semaphore.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SharedVars.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Socket.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SocketAddr.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SocketFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SrvRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Stream.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__String.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__SysUsage.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Thread.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__ThreadedSource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Time.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__TokenDict.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__TranslatorCaps.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__TranslatorFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__UIFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__UIWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__URI.html
+%%PORTDOCS%%%%DOCSDIR%%/api/TelEngine__Window.html
+%%PORTDOCS%%%%DOCSDIR%%/api/all-globals.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Array.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Base64.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__CallEndpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__CapturedEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Channel.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Cipher.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Client.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientAccount.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientAccountList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientChannel.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientContact.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientLogic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientResource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ClientSound.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Compressor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataBlock.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataConsumer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataEndpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataNode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DataTranslator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DebugEnabler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DefaultLogic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DnsRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Driver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__DurationUpdate.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Engine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__EngineCheck.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__File.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__FormatInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__FormatRepository.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__GenObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__GenPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__HashList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ImageInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ListIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Lock.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Lock2.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Lockable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MD5.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MemoryStream.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Message.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessageDispatcher.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessageHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessageNotifier.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessagePostHook.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessageReceiver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MessageRelay.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeAuthLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeBinaryBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeHeaderLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeLinesBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeMultipartBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeSdpBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MimeStringBody.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MucRoom.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MucRoomMember.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Mutex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__MutexPool.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__NamedIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__NamedList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__NamedPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__NamedString.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__NaptrRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ObjList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ObjVector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Random.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__RefObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__RefPointer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__RefPointerBase.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Regexp.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Resolver.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Router.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Runnable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SHA1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SctpSocket.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Semaphore.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SharedVars.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Socket.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SocketAddr.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SocketFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SrvRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Stream.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__String.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__SysUsage.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Thread.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__ThreadedSource.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Time.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__TokenDict.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__TranslatorCaps.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__TranslatorFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__UIFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__UIWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__URI.html
+%%PORTDOCS%%%%DOCSDIR%%/api/full-list-TelEngine__Window.html
+%%PORTDOCS%%%%DOCSDIR%%/api/header-list.html
+%%PORTDOCS%%%%DOCSDIR%%/api/hier.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index-long.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yatecbase_h.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yateclass_h.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yatemime_h.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yatengine_h.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yatephone_h.html
 %%PORTDOCS%%%%DOCSDIR%%/dataflow.html
 %%PORTDOCS%%%%DOCSDIR%%/extmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -304,6 +536,7 @@ libdata/pkgconfig/yate.pc
 %%DATADIR%%/help/4.yhlp
 %%DATADIR%%/help/99.yhlp
 %%DATADIR%%/scripts/Yate.pm
+%%DATADIR%%/scripts/banbrutes.php
 %%DATADIR%%/scripts/leavemail.php
 %%DATADIR%%/scripts/libvoicemail.php
 %%DATADIR%%/scripts/libyate.php
@@ -636,6 +869,5 @@ libdata/pkgconfig/yate.pc
 @dirrm lib/pkgconfig
 @dirrm include/yate
 @dirrm %%ETCDIR%%
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/api
 @exec mkdir -p %D/lib/yate/qt4
 @exec mkdir -p %D/lib/pkgconfig
