@@ -349,7 +349,6 @@
     SUBDIR += lash
     SUBDIR += last-cmus
     SUBDIR += last.fm
-    SUBDIR += laudio
     SUBDIR += liba52
     SUBDIR += libaacplus
     SUBDIR += libadplug
@@ -431,6 +430,7 @@
     SUBDIR += linux-fmodapi
     SUBDIR += linux-freealut
     SUBDIR += linux-genpuid
+    SUBDIR += linux-laudio
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-libmad
     SUBDIR += linux-libogg
