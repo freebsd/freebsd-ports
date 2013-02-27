@@ -1,14 +1,11 @@
-# New ports collection makefile for:	yate
-# Date created:				2011-04-05
-# Whom:					Valery Komarov <komarov@valerka.net>
-#
+# Created by: Valery Komarov <komarov@valerka.net>
 # $FreeBSD$
 
 PORTNAME=	yate
-PORTVERSION=	4.0.0.p1
+PORTVERSION=	4.3.0.p1
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate4/
-DISTNAME=	yate-4.0.0-1
+DISTNAME=	yate-4.3.0-1
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Yet Another Telephony Engine
@@ -40,16 +37,30 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 MAN8=		yate-config.8 yate.8
 
-OPTIONS=	MYSQL "MySQL Database support" off \
-		PGSQL "PostgreSQL Database support" off \
-		SCTP "Stream Control Transmission Protocol" on \
-		AMR_NB "AMR Narrow Band encoder (opencore)" off \
-		ILBC "Enable iLBC codec" off \
-		SPANDSP "Enable Spandsp faxing support" off \
-		DAHDI "Dahdi driver" off \
-		H323 "H323 software channel/protocol support" off \
-		SSL "Enable SSL support" off \
-		ALSA "Enable ALSA channel support" off
+OPTIONS_DEFINE=	\
+	MYSQL \
+	PGSQL \
+	SCTP \
+	AMR_NB \
+	ILBC \
+	SPANDSP \
+	DAHDI \
+	H323 \
+	SSL \
+	ALSA
+
+MYSQL_DESC=	MySQL Database support
+PGSQL_DESC=	PostgreSQL Database support
+SCTP_DESC=	Stream Control Transmission Protocol
+AMR_NB_DESC=	AMR Narrow Band encoder (opencore)
+ILBC_DESC=	Enable iLBC codec
+SPANDSP_DESC=	Enable Spandsp faxing support
+DAHDI_DESC=	Dahdi driver
+H323_DESC=	H323 software channel/protocol support
+SSL_DESC=	Enable SSL support
+ALSA_DESC=	Enable ALSA channel support
+
+OPTIONS_DEFAULT=	SCTP
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	yate
@@ -59,7 +70,7 @@ GROUPS=	yate
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-mysql
 MAKE_ENV+=	WITH_MYSQL=1
 PLIST_SUB+=	WITH_MYSQL=""
@@ -69,7 +80,7 @@ CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=	WITH_MYSQL="@comment "
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-libpq=${LOCALBASE}
 MAKE_ENV+=	WITH_PGSQL=1
 PLIST_SUB+=	WITH_PGSQL=""
@@ -79,7 +90,7 @@ CONFIGURE_ARGS+=	--without-libpq
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
-.if !defined(WITHOUT_SCTP)
+.if ${PORT_OPTIONS:MSCTP}
 CONFIGURE_ARGS+=	--enable-sctp
 MAKE_ENV+=	WITH_SCTP=1
 PLIST_SUB+=	WITH_SCTP=""
@@ -87,7 +98,7 @@ PLIST_SUB+=	WITH_SCTP=""
 PLIST_SUB+=	WITH_SCTP="@comment "
 .endif
 
-.if !defined(WITHOUT_AMR_NB)
+.if ${PORT_OPTIONS:MAMR_NB}
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--with-amrnb=${LOCALBASE}
 PLIST_SUB+=	WITH_AMR_NB=""
@@ -96,7 +107,7 @@ CONFIGURE_ARGS+=	--without-amrnb
 PLIST_SUB+=	WITH_AMR_NB="@comment "
 .endif
 
-.if !defined(WITHOUT_ILBC)
+.if ${PORT_OPTIONS:MILBC}
 LIB_DEPENDS+=	ilbc.0:${PORTSDIR}/net/ilbc
 CONFIGURE_ARGS+=	--enable-ilbc
 PLIST_SUB+=	WITH_ILBC=""
@@ -105,7 +116,7 @@ CONFIGURE_ARGS+=	--disable-ilbc
 PLIST_SUB+=	WITH_ILBC="@comment "
 .endif
 
-.if !defined(WITHOUT_SPANDSP)
+.if ${PORT_OPTIONS:MSPANDSP}
 CONFIGURE_ARGS+=	--with-spandsp=${LOCALBASE}/include
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 MAKE_ENV+=	WITH_SPANDSP=1
@@ -115,7 +126,7 @@ CONFIGURE_ARGS+=	--without-spandsp
 PLIST_SUB+=	WITH_SPANDSP="@comment "
 .endif
 
-.if !defined(WITHOUT_DAHDI)
+.if ${PORT_OPTIONS:MDAHDI}
 CONFIGURE_ARGS+=	--enable-dahdi --enable-wpcard --enable-tdmcard
 BUILD_DEPENDS+=	${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 MAKE_ENV+=	WITH_DAHDI=1
@@ -125,7 +136,7 @@ CONFIGURE_ARGS+=	--disable-dahdi
 PLIST_SUB+=	WITH_DAHDI="@comment "
 .endif
 
-.if !defined(WITHOUT_H323)
+.if ${PORT_OPTIONS:MH323}
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE} \
 			--with-openh323=${LOCALBASE}
 LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
@@ -137,7 +148,7 @@ CONFIGURE_ARGS+=	--without-openh323
 PLIST_SUB+=	WITH_H323="@comment "
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 MAKE_ENV+=	WITH_SSL=1
@@ -147,7 +158,7 @@ CONFIGURE_ARGS+=	--without-openssl
 PLIST_SUB+=	WITH_SSL="@comment "
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 MAKE_ENV+=	WITH_ALSA=1
 PLIST_SUB+=	WITH_ALSA=""
@@ -156,7 +167,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noalsa
 PLIST_SUB+=	WITH_ALSA="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs
 .endif
 

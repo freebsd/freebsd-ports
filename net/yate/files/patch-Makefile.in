@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2012-02-10 19:22:46.000000000 +0400
-+++ ./Makefile.in	2012-02-29 19:31:18.000000000 +0400
+--- ./Makefile.in.orig	2012-05-09 16:33:15.000000000 +0400
++++ ./Makefile.in	2013-02-14 19:58:02.000000000 +0400
 @@ -20,7 +20,7 @@
  MKDEPS := ./config.status
  PROGS:= yate
@@ -18,7 +18,7 @@
  vardir = @localstatedir@/lib/yate
  moddir = @libdir@/yate
  shrdir = $(datadir)/yate
-@@ -222,7 +222,7 @@
+@@ -217,7 +217,7 @@
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
  	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
@@ -27,7 +27,7 @@
  	@mkdir -p "$(DESTDIR)$(incdir)/" && \
  	for i in $(INCS) ; do \
  	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
-@@ -250,7 +250,7 @@
+@@ -245,7 +245,7 @@
  	@-for i in $(PROGS) yate-config ; do \
  	    rm "$(DESTDIR)$(bindir)/$$i" ; \
  	done
@@ -36,7 +36,7 @@
  	    rmdir $(DESTDIR)$(libdir)/pkgconfig
  	@-for i in $(INCS) $(GENS) ; do \
  	    rm "$(DESTDIR)$(incdir)/$$i" ; \
-@@ -325,6 +325,7 @@
+@@ -320,6 +320,7 @@
  
  libyate.so: $(YLIB)
  	ln -sf $^ $@
