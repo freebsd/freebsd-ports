@@ -92,7 +92,6 @@
     SUBDIR += dynare
     SUBDIR += e
     SUBDIR += edenmath
-    SUBDIR += eigen
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
