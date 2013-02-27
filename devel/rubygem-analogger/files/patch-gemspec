@@ -1,0 +1,18 @@
+--- analogger-0.5.0.gemspec.orig	2013-02-26 02:45:44.000000000 +0000
++++ analogger-0.5.0.gemspec	2013-02-26 02:45:54.000000000 +0000
+@@ -33,7 +33,6 @@
+ - external
+ - src
+ - test
+-- doc
+ - setup.rb
+ - INSTALL
+ - README
+@@ -45,7 +44,6 @@
+ - src/swiftcore/Analogger
+ - src/swiftcore/Analogger.rb
+ - src/swiftcore/Analogger/Client.rb
+-- test/log
+ - test/TC_Analogger.rb
+ - test/tc_template.rb
+ - test/analogger.cnf
