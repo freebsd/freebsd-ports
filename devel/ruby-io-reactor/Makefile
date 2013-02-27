@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/io-reactor
-# Date created:		26 December 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	io-reactor
 PORTVERSION=	1.0.4
@@ -23,6 +19,8 @@ NO_BUILD=	yes
 
 DOCS=		ChangeLog README
 EXAMPLES=	examples/*
+
+BUILD_DEPENDS=	rubygem-rdoc>=0:${PORTSDIR}/devel/rubygem-rdoc
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RAKE_BIN} install
