@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.5.0a1
-PORTREVISION=	2
+PORTVERSION=	3.5.0a2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -78,7 +77,7 @@ LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
-	cf-report.8	cf-serverd.8	cf-execd.8	\
+	cf-serverd.8	cf-execd.8	\
 	cf-promises.8	cf-runagent.8
 
 post-patch:
