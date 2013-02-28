@@ -399,6 +399,7 @@
 @dirrm %%DATADIR%%/plugins/admin/webapp/WEB-INF
 @dirrm %%DATADIR%%/plugins/admin/webapp
 @dirrm %%DATADIR%%/plugins/admin
+@dirrm %%DATADIR%%/lib
 @dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/%%DATADIR%%/plugins 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%%/plugins must be removed manually"
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null
