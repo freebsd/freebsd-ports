@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trac plugin providing a downloads section
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
@@ -9,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme that emulates the look of python.org
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \

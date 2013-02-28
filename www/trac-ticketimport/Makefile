@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
@@ -9,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Import or update tickets from a CSV file or Excel file
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
