@@ -1,9 +1,5 @@
-# New ports collection makefile for:	legesmotus
-# Date created:		16 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	legesmotus
 PORTVERSION=	0.4.0
@@ -24,10 +20,13 @@ MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
-OPTIONS=	CLIENT "Build client" on \
-		SERVER "Build server" on \
-		METASERVER "Build metaserver" off \
-		SERVERSCANNER "Build server scanner" off
+OPTIONS_MULTI=	COMPONENTS
+OPTIONS_MULTI_COMPONENTS=CLIENT SERVER METASERVER SERVERSCANNER
+OPTIONS_DEFAULT=CLIENT SERVER
+CLIENT_DESC=	Build client
+SERVER_DESC=	Build server
+METASERVER_DESC=Build metaserver
+SERVERSCANNER_DESC=Build server scanner
 
 DESKTOP_ENTRIES="Leges Motus" \
 		"A team-based, networked, 2D shooter set in zero-gravity" \
@@ -38,47 +37,43 @@ DESKTOP_ENTRIES="Leges Motus" \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT)
-PLIST_SUB+=	CLIENT="@comment "
-CONFIGURE_ARGS+=--disable-client
-.else
+.if ${PORT_OPTIONS:MCLIENT}
 PLIST_SUB+=	CLIENT=""
 USE_SDL=	sdl image ttf mixer
 USE_GL=		gl
 MAN6+=		legesmotus.6
+.else
+PLIST_SUB+=	CLIENT="@comment "
+CONFIGURE_ARGS+=--disable-client
 .endif
 
-.if defined(WITHOUT_SERVER)
-PLIST_SUB+=	SERVER="@comment "
-CONFIGURE_ARGS+=--disable-server
-.else
+.if ${PORT_OPTIONS:MSERVER}
 PLIST_SUB+=	SERVER=""
 MAN6+=		lmserver.6
-.endif
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER) && defined(WITHOUT_METASERVER)
-PLIST_SUB+=	DATA="@comment "
 .else
-PLIST_SUB+=	DATA=""
+PLIST_SUB+=	SERVER="@comment "
+CONFIGURE_ARGS+=--disable-server
 .endif
 
-.if defined(WITH_METASERVER)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSERVER} || ${PORT_OPTIONS:MMETASERVER}
+PLIST_SUB+=	DATA=""
+.else
+PLIST_SUB+=	DATA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMETASERVER}
 PLIST_SUB+=	METASERVER=""
 CONFIGURE_ARGS+=--enable-metaserver
 .else
 PLIST_SUB+=	METASERVER="@comment "
 .endif
 
-.if defined(WITH_SERVERSCANNER)
+.if ${PORT_OPTIONS:MSERVERSCANNER}
 PLIST_SUB+=	SERVERSCANNER=""
 CONFIGURE_ARGS+=--enable-serverscanner
 MAN6+=		lmscan.6
 .else
 PLIST_SUB+=	SERVERSCANNER="@comment "
-.endif
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER) && defined(WITHOUT_METASERVER) && defined(WITHOUT_SERVERSCANNER)
-IGNORE=		cannot be built with all components disabled. Please rerun 'make config' and enable at least one option
 .endif
 
 .include <bsd.port.mk>
