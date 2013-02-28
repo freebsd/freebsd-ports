@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	1.6.6
+PORTVERSION=	1.7.1
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -62,9 +62,6 @@ do-install:
 	@cd ${WRKSRC}/lib \
 	  && ${FIND} . -type d -exec ${MKDIR} ${JRUBY_HOME}/lib/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${JRUBY_HOME}/lib/{} \;
-	@cd ${WRKSRC}/share \
-	  && ${FIND} . -type d -exec ${MKDIR} ${JRUBY_HOME}/share/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${JRUBY_HOME}/share/{} \;
 
 	@${ECHO_MSG} " [ DONE ]"
 
