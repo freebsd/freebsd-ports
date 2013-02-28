@@ -50,6 +50,8 @@ post-install:
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc: fails in assembler
+.else
+BROKEN=		does not build
 .endif
 
 .include <bsd.port.mk>
