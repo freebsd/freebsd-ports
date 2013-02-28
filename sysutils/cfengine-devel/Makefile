@@ -37,46 +37,42 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 
-OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
-		QDBM	"Enable QDBM support"				off \
-		PGSQL	"Enable PostgreSQL connector"			off \
-		MYSQL	"Enable MySQL connector"			off \
-		LIBVIRT	"Enable libvirt compatibility"			off
+OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	TOKYOCABINET QDBM
+TOKYOCABINET_DESC=	Enable TokyoCabinet database backend
+QDBM_DESC=	Enable QDBM database backend
+PGSQL_DESC=	Enable PostgreSQL integration
+MYSQL_DESC=	Enable MySQL integration
+LIBVIRT_DESC=	Enable libvirt integration
+OPTIONS_DEFAULT=TOKYOCABINET
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TOKYOCABINET) && defined(WITH_QDBM)
-BROKEN=		TOKYOCABINET and QDBM are mutuallly exclusive
-.endif
-
-.if !defined(WITH_TOKYOCABINET) && !defined(WITH_QDBM)
-BROKEN=		TOKYOCABINET or QDBM must be defined
-.endif
-
-.if defined(WITH_TOKYOCABINET)
+.if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
 LIB_DEPENDS+=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 .endif
 
-.if defined(WITH_QDBM)
+.if ${PORT_OPTIONS:MQDBM}
 CONFIGURE_ARGS+=	--with-qdbm=${LOCALBASE}
 LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/${_MYSQL_CLIENT}
 LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
-.if defined(WITH_LIBVIRT)
+.if ${PORT_OPTIONS:MLIBVIRT}
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
