@@ -10,6 +10,7 @@ sbin/cf-promises
 sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
+share/cfengine/CoreBase/cf-sketch-runfile.cf
 share/cfengine/CoreBase/def.cf
 share/cfengine/CoreBase/promises.cf
 share/cfengine/CoreBase/controls/cf_execd.cf
@@ -18,9 +19,9 @@ share/cfengine/CoreBase/controls/cf_agent.cf
 share/cfengine/CoreBase/controls/cf_runagent.cf
 share/cfengine/CoreBase/controls/cf_monitord.cf
 share/cfengine/CoreBase/controls/cf_serverd.cf
-share/cfengine/CoreBase/failsafe/failsafe.cf
 share/cfengine/CoreBase/libraries/cfengine_stdlib.cf
 share/cfengine/CoreBase/services/init_msg.cf
+share/cfengine/CoreBase/update.cf
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/examples/active_directory.cf
@@ -188,6 +189,7 @@ share/cfengine/CoreBase/services/init_msg.cf
 %%DOCSDIR%%/examples/unit_occurrences.cf
 %%DOCSDIR%%/examples/unit_orchestrate_chain1.cf
 %%DOCSDIR%%/examples/unit_orchestrate_chain2.cf
+%%DOCSDIR%%/examples/unit_orchestrate_delay_trigger.cf
 %%DOCSDIR%%/examples/unit_orchestrate_dominoes1.cf
 %%DOCSDIR%%/examples/unit_orchestrate_dominoes2.cf
 %%DOCSDIR%%/examples/unit_orchestrate_dragon.cf
@@ -291,7 +293,6 @@ share/cfengine/CoreBase/services/init_msg.cf
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm share/cfengine/CoreBase/controls
-@dirrm share/cfengine/CoreBase/failsafe
 @dirrm share/cfengine/CoreBase/libraries
 @dirrm share/cfengine/CoreBase/services
 @dirrm share/cfengine/CoreBase
