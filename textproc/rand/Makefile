@@ -4,7 +4,8 @@
 PORTNAME=	rand
 PORTVERSION=	1.9
 CATEGORIES=	textproc
-MASTER_SITES=	http://bzflag.bz/~erik/files/
+MASTER_SITES=	http://bzflag.bz/~erik/files/ \
+		http://elfga.com/~erik/files/
 
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Utility to display files or streams in random order
