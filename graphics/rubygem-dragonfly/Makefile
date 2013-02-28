@@ -1,18 +1,17 @@
-# Ports collection makefile for:	rubygem-dragonfly
-# Date created:				13 January 2011
-# Whom:					Jason Helfman <jhelfman@experts-exchange.com>
-#
+# Created by: Jason Helfman <jhelfman@experts-exchange.com>
 # $FreeBSD$
 
 PORTNAME=	dragonfly
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.14
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	On-the-fly Rack-based image handling framework
 
-RUN_DEPENDS+=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS+=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
+
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
