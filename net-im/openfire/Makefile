@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	3.7.1
-PORTREVISION=	2
+PORTVERSION=	3.8.0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -11,6 +10,8 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
+
+LICENSE=	AL2
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper \
    		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j
@@ -30,10 +31,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_src
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/target/openfire
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+PORTDOCS=	*
 VARLOG=		/var/log/openfire
 VARDB=		/var/db/openfire
 USERS=		openfire
 GROUPS=		${USERS}
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	(cd ${WRKSRC} && ${MV} \
@@ -41,13 +45,12 @@ post-patch:
 	    ./src/plugins/jingleNodes/src/i18n/jinglenodes_i18n.properties)
 
 do-install:
-
-	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar  ${JAVAJARDIR})
-	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 log4j.xml  ${JAVAJARDIR})
-
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/lib
 	${MKDIR} ${VARLOG}
 	${MKDIR} ${VARDB}
+
+	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar ${DATADIR}/lib)
+	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 log4j.xml ${DATADIR}/lib)
 
 	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \! -path ./security\* \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/resources)
@@ -55,7 +58,7 @@ do-install:
 	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} \
 	LICENSE.html README.html changelog.html ${DOCSDIR})
@@ -65,7 +68,6 @@ do-install:
 .endif
 
 post-install:
-
 	${LN} -sf ${VARLOG} ${DATADIR}/logs
 	${LN} -sf ${VARDB}  ${DATADIR}/embedded-db
 	${LN} -sf ${ETCDIR} ${DATADIR}/conf
@@ -94,8 +96,8 @@ post-install:
 	fi
 
 	${CHOWN} -Rh ${USERS}:${GROUPS} ${ETCDIR}
-	${CHOWN} -Rh ${USERS}:${GROUPS} ${VARDB}
 	${CHOWN} -Rh ${USERS}:${GROUPS} ${VARLOG}
+	${CHOWN} -Rh ${USERS}:${GROUPS} ${VARDB}
 	${CHOWN} -Rh ${USERS}:${GROUPS} ${DATADIR}
 
 	@${CAT} ${PKGMESSAGE}

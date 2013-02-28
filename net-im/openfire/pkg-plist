@@ -4,59 +4,22 @@
 %%EXAMPLESDIR%%/openfire.xml
 %%EXAMPLESDIR%%/keystore
 %%EXAMPLESDIR%%/truststore
-@exec if ! /usr/sbin/pw group show openfire > /dev/null; then /usr/sbin/pw groupadd openfire -g 342 && echo "Added group openfire."; fi
-@exec if ! /usr/sbin/pw user show openfire > /dev/null; then /usr/sbin/pw useradd openfire -u 342 -g 342 -h - -d /nonexistent -s /sbin/nologin -c "Openfire Daemon" && echo "Added user openfire."; fi
-@exec [ -d /var/log/openfire ] || mkdir -p  /var/log/openfire && chown openfire:openfire /var/log/openfire
-@exec [ -d /var/db/openfire ] || mkdir -p  /var/db/openfire && chown openfire:openfire /var/db/openfire
-@exec [ -d %D/%%ETCDIR%% ] || mkdir -p %D/%%ETCDIR%% && chown openfire:openfire %D/%%ETCDIR%%
-@exec [ -f %D/%%ETCDIR%%/openfire.xml ] || install -m 644 -o openfire -g openfire %D/%%EXAMPLESDIR%%/openfire.xml %D/%%ETCDIR%%/openfire.xml
-@exec [ -f %D/%%ETCDIR%%/keystore ] || install -m 600 -o openfire -g openfire  %D/%%EXAMPLESDIR%%/keystore %D/%%ETCDIR%%/keystore
-@exec [ -f %D/%%ETCDIR%%/truststore ] || install -m 600 -o openfire -g openfire %D/%%EXAMPLESDIR%%/truststore %D/%%ETCDIR%%/truststore
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/database-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/database.html
-%%PORTDOCS%%%%DOCSDIR%%/db-integration-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/images/active_directory.png
-%%PORTDOCS%%%%DOCSDIR%%/images/header_logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/launcher.png
-%%PORTDOCS%%%%DOCSDIR%%/images/setup_ldap.png
-%%PORTDOCS%%%%DOCSDIR%%/images/sitemesh.png
-%%PORTDOCS%%%%DOCSDIR%%/images/windows_service.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/ldap-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-commons-logging.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-dom4j.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-jaxen.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-xpp3.txt
-%%PORTDOCS%%%%DOCSDIR%%/overlay.html
-%%PORTDOCS%%%%DOCSDIR%%/plugin-dev-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/protocol-support.html
-%%PORTDOCS%%%%DOCSDIR%%/source-build.html
-%%PORTDOCS%%%%DOCSDIR%%/ssl-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/translator-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrade-guide.html
-%%PORTDOCS%%%%DOCSDIR%%/wildfire-ent-3_2_0-upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/wildfire-openfire-upgrade.html
-%%JAVAJARDIR%%/activation.jar
-%%JAVAJARDIR%%/bouncycastle.jar
-%%JAVAJARDIR%%/commons-el.jar
-%%JAVAJARDIR%%/hsqldb.jar
-%%JAVAJARDIR%%/jasper-compiler.jar
-%%JAVAJARDIR%%/jasper-runtime.jar
-%%JAVAJARDIR%%/jdic.jar
-%%JAVAJARDIR%%/jtds.jar
-%%JAVAJARDIR%%/mail.jar
-%%JAVAJARDIR%%/mysql.jar
-%%JAVAJARDIR%%/openfire.jar
-%%JAVAJARDIR%%/postgres.jar
-%%JAVAJARDIR%%/servlet.jar
-%%JAVAJARDIR%%/startup.jar
-%%JAVAJARDIR%%/slf4j-log4j12.jar
-%%JAVAJARDIR%%/log4j.xml
+%%DATADIR%%/lib/activation.jar
+%%DATADIR%%/lib/bouncycastle.jar
+%%DATADIR%%/lib/commons-el.jar
+%%DATADIR%%/lib/hsqldb.jar
+%%DATADIR%%/lib/jasper-compiler.jar
+%%DATADIR%%/lib/jasper-runtime.jar
+%%DATADIR%%/lib/jdic.jar
+%%DATADIR%%/lib/jtds.jar
+%%DATADIR%%/lib/mail.jar
+%%DATADIR%%/lib/mysql.jar
+%%DATADIR%%/lib/openfire.jar
+%%DATADIR%%/lib/postgres.jar
+%%DATADIR%%/lib/servlet.jar
+%%DATADIR%%/lib/startup.jar
+%%DATADIR%%/lib/slf4j-log4j12.jar
+%%DATADIR%%/lib/log4j.xml
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
 %%DATADIR%%/logs
@@ -225,8 +188,10 @@
 %%DATADIR%%/plugins/contentFilter.jar
 %%DATADIR%%/plugins/dbaccess.jar
 %%DATADIR%%/plugins/emailListener.jar
-%%DATADIR%%/plugins/fastpath.jar
+%%DATADIR%%/plugins/gojara.jar
+%%DATADIR%%/plugins/hazelcast.jar
 %%DATADIR%%/plugins/jingleNodes.jar
+%%DATADIR%%/plugins/justmarried.jar
 %%DATADIR%%/plugins/kraken.jar
 %%DATADIR%%/plugins/loadStats.jar
 %%DATADIR%%/plugins/monitoring.jar
@@ -236,6 +201,7 @@
 %%DATADIR%%/plugins/registration.jar
 %%DATADIR%%/plugins/search.jar
 %%DATADIR%%/plugins/sip.jar
+%%DATADIR%%/plugins/stunserver.jar
 %%DATADIR%%/plugins/subscription.jar
 %%DATADIR%%/plugins/userCreation.jar
 %%DATADIR%%/plugins/userImportExport.jar
@@ -434,9 +400,6 @@
 @dirrm %%DATADIR%%/plugins/admin/webapp
 @dirrm %%DATADIR%%/plugins/admin
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/%%DATADIR%%/plugins 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%%/plugins must be removed manually"
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null
 @unexec rmdir %D/%%ETCDIR%% 2> /dev/null || echo "If permanently deleting this package, %D/%%ETCDIR%% must be removed manually"
