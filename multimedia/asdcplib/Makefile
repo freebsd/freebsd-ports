@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asdcplib
-PORTVERSION=	1.9.45
+PORTVERSION=	1.10.48
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.cinecert.com/asdcplib/
 
