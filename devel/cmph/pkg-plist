@@ -1,4 +1,5 @@
 bin/cmph
+include/chd_ph.h
 include/cmph.h
 include/cmph_time.h
 include/cmph_types.h
