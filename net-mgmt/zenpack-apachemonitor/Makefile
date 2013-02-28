@@ -1,9 +1,5 @@
-# New ports collection makefile for: ApacheMonitor
-# Date created:    12 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ApacheMonitor
 PORTVERSION=	2.1.2
@@ -16,6 +12,8 @@ COMMENT=	Provides performance monitoring of the Apache HTTP Server
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+
+BROKEN=	fails to fetch
 
 USE_ZIP=	yes
 ZPACKGROUP=	core
