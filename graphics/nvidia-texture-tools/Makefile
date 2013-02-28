@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nvidia-texture-tools
-# Date created:		06 Mar 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nvidia-texture-tools
 DISTVERSION=	2.0.8-1
@@ -31,11 +27,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 
-OPTIONS=	COMPRESSUI "Build compressor UI (requires Qt4)" off
+OPTIONS_DEFINE=	COMPRESSUI DOCS
+COMPRESSUI_DESC=Build compressor UI (requires Qt4)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_COMPRESSUI)
+.if ${PORT_OPTIONS:MCOMPRESSUI}
 # *_build stuff is not really needed, but cmake's Qt finder won't work otherwise
 USE_QT4=	qmake_build moc_build uic_build rcc_build corelib gui opengl
 PLIST_SUB+=	COMPRESSUI=""
@@ -52,7 +49,7 @@ BROKEN=		does not build
 post-patch:
 	@${REINPLACE_CMD} -e '/OPENEXR_LIBRARIES/ s|)$$| $${CMAKE_THREAD_LIBS_INIT}&|' \
 		${WRKSRC}/src/nvimage/CMakeLists.txt
-.if defined(WITH_COMPRESSUI)
+.if ${PORT_OPTIONS:MCOMPRESSUI}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/src/CMakeLists.txt
 .else
@@ -60,7 +57,7 @@ post-patch:
 		${WRKSRC}/src/CMakeLists.txt
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
