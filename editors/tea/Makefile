@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-DISTVERSION=	33.5.0
+DISTVERSION=	34.0.1
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
@@ -13,13 +13,14 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build gui xml
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	ASPELL
 OPTIONS_DEFAULT=	ASPELL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
@@ -37,4 +38,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
