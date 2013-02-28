@@ -28,7 +28,7 @@ GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl \
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 USE_GMAKE=	yes
-USE_GNOME?=	pkgconfig
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
