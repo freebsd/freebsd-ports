@@ -1,13 +1,8 @@
-# New ports collection makefile for:   smtp-gated
-# Date created:        1 January 2006
-# Whom:                msciciel
-#
+# Created by: msciciel
 # $FreeBSD$
-#
 
 PORTNAME=	smtp-gated
-PORTVERSION=	1.4.18.8
-PORTREVISION=	1
+PORTVERSION=	1.4.20.0
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 
@@ -49,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-silent-econnreset
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
