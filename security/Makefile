@@ -279,6 +279,7 @@
     SUBDIR += libpreludedb
     SUBDIR += libpwstor
     SUBDIR += libsectok
+    SUBDIR += libsodium
     SUBDIR += libssh
     SUBDIR += libssh2
     SUBDIR += libtasn1
