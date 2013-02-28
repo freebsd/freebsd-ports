@@ -2,20 +2,19 @@
 
 PORTNAME=	cffi
 PORTVERSION=	0.10.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
-		http://common-lisp.net/project/cffi/manual/:manual \
-		http://common-lisp.net/project/cffi/spec/:spec
+		http://olgeni.olgeni.com/~olgeni/cffi/${PORTVERSION}/:doc
 PKGNAMEPREFIX=	cl-
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		cffi-manual.html:manual \
-		cffi-manual.txt:manual \
-		cffi-manual.pdf:manual \
-		cffi-sys-spec.html:spec \
-		cffi-sys-spec.txt:spec \
-		cffi-sys-spec.pdf:spec
+		cffi-manual.html:doc \
+		cffi-manual.txt:doc \
+		cffi-manual.pdf:doc \
+		cffi-sys-spec.html:doc \
+		cffi-sys-spec.txt:doc \
+		cffi-sys-spec.pdf:doc
 DIST_SUBDIR=	cffi/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -33,6 +32,8 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
 	@${MKDIR} ${ASDF_PATHNAME}/src
@@ -46,7 +47,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/cffi-uffi-compat.asd ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/cffi-grovel.asd ${ASDF_PATHNAME}
 	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .for FILE in shareable-vectors.txt allegro-internals.txt mem-vector.txt
@@ -59,7 +60,7 @@ do-install:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.pdf ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/tests
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
