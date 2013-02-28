@@ -1,9 +1,4 @@
-# New ports collection makefile for:	check_postgres_replication
-# Date created:		2011-06-10
-# Whom:			Brooks Davis <brooks@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_postgres_replication
 PORTVERSION=	2010.12.16
