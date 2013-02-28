@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/vnc-reflector/vnc-reflector/${PORTVERSION}
 DISTNAME=	vnc_reflector-${PORTVERSION}
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	paul@it.ca
 COMMENT=	Multi-client VNC proxy server
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
