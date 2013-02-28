@@ -18,7 +18,7 @@ LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
 
 USE_PKGCONFIG=	build
 USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
-		dbus xml
+		dbus xml scripttools designer_build
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
 		DATA_DIR=${DATADIR} \
 		DOCS_DIR=${DOCSDIR} \
@@ -36,8 +36,8 @@ DESKTOP_ENTRIES="TexWorks" \
 		"Lowering the entry barrier to the TeX world" \
 		"TeXworks" \
 		"${PORTNAME}" \
-		"Utility;" \
-		false
+		"Utility;Qt;" \
+		true
 
 MAN1=		texworks.1
 PLIST_FILES=	bin/texworks \
@@ -59,6 +59,6 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKE_ARGS} TeXworks.pro
+		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} TeXworks.pro
 
 .include <bsd.port.mk>
