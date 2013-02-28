@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/geeqie
-# Date created:				17 May 2008
-# Whom:					Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
-#
+# Created by: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	geeqie
 PORTVERSION=	1.1
@@ -32,28 +28,30 @@ PORTDOCS=	*
 MAN1=		geeqie.1
 USE_GETTEXT=	yes
 
-OPTIONS=	EXIV2 "Metadata editing" on \
-		LCMS "Color adjusting" on \
-		LIRC "Remote control" off \
-		GPS "GPS map support (libchamplain) EXPERIMENTAL" off
+OPTIONS_DEFINE=	EXIV2 LCMS LIRC GPS DOCS
+OPTIONS_DEFAULT=EXIV2 LCMS
+EXIV2_DESC=	Metadata editing
+LCMS_DESC=	Color adjusting
+LIRC_DESC=	Remote control
+GPS_DESC=	GPS map support (libchamplain) EXPERIMENTAL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXIV2)
+.if ${PORT_OPTIONS:MEXIV2}
 LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 .else
 CONFIGURE_ARGS+=--disable-exiv2
 .endif
 
-.if defined(WITH_LCMS)
+.if ${PORT_OPTIONS:MLCMS}
 LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
 CONFIGURE_ARGS+=--enable-lcms
 .else
 CONFIGURE_ARGS+=--disable-lcms
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 .else
@@ -61,7 +59,7 @@ CONFIGURE_ARGS+=--disable-lirc
 .endif
 
 # Support for libchamplain is marked as experimental!
-.if defined(WITH_GPS)
+.if ${PORT_OPTIONS:MGPS}
 LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-gps
 .else
@@ -74,11 +72,11 @@ post-patch:
 # I cannot get gnome-doc-tool working properly: Outputs gibberish
 	@${REINPLACE_CMD} -Ee '/^(SUBDIRS|DIST_SUBDIRS)/ s|doc||' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-helpDATA||' \
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/^install-data-am:/,/^[a-z]/ s|install-readmeDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
