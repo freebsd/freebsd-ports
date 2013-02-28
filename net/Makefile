@@ -1123,6 +1123,7 @@
     SUBDIR += subnetcalc
     SUBDIR += suckblow
     SUBDIR += sup
+    SUBDIR += svnup
     SUBDIR += tableutil
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
