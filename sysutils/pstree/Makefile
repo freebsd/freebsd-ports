@@ -1,15 +1,12 @@
-# Ports collection makefile for:  pstree
-# Date created:			  22 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pstree
-PORTVERSION=	2.33
+PORTVERSION=	2.35
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
+MASTER_SITES=	http://www.thp.uni-due.de/pstree/ \
 		LOCAL/avl
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List processes as a tree
