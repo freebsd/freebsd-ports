@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aa7764af-0b5e-4ddc-bc65-38ad697a484f">
+    <topic>rubygem-dragonfly -- arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>rubygem18-dragonfly</name>
+	<name>rubygem19-dragonfly</name>
+	<name>rubygem20-dragonfly</name>
+	<range><lt>0.9.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Evans reports:</p>
+	<blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/dragonfly-users/3c3WIU3VQTo">
+	  <p>Unfortunately there is a security vulnerability in Dragonfly when
+	     used with Rails which would potentially allow an attacker to run
+	     arbitrary code on a host machine using carefully crafted
+             requests.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1756</cvename>
+    </references>
+    <dates>
+      <discovery>2013-02-19</discovery>
+      <entry>2013-02-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dbdac023-80e1-11e2-9a29-001060e06fd4">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
