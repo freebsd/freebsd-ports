@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sauerbraten
-# Date created:		2006-02-01
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	redeclipse
 PORTVERSION=	1.3.1
@@ -35,9 +31,12 @@ SUB_FILES=	reclient reserver
 
 PORTDATA=	*
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		OPTIMIZED_CFLAGS "Enabled additional optimizations" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	COMPONENTS
+OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
+OPTIONS_DEFAULT=CLIENT DEDICATED OPTIMIZED_CFLAGS
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
 
 .include <bsd.port.options.mk>
 
@@ -45,11 +44,7 @@ OPTIONS=	CLIENT "Build client" on \
 BROKEN=		does not build on sparc64
 .endif
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT or DEDICATED)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 PLIST_FILES+=	bin/reclient libexec/reclient share/pixmaps/redeclipse.ico
@@ -63,12 +58,12 @@ DESKTOP_ENTRIES="Red Eclipse" \
 		false
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 PLIST_FILES+=	bin/reserver libexec/reserver
 BINARIES+=	server
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer
 CXXFLAGS+=	-O3 -fomit-frame-pointer
 .endif
@@ -82,7 +77,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "." ${DATADIR}/
 .endif
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_DATA} ${WRKSRC}/src/redeclipse.ico ${PREFIX}/share/pixmaps/
 .endif
 
