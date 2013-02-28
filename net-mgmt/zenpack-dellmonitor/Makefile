@@ -1,9 +1,5 @@
-# New ports collection makefile for: DellMonitor
-# Date created:    05 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DellMonitor
 PORTVERSION=	2.1.0
@@ -16,6 +12,8 @@ COMMENT=	Provides Zenoss monitoring options for Dell machines
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+
+BROKEN=		fails to fetch
 
 USE_ZIP=	yes
 ZPACKGROUP=	core
