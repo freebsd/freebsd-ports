@@ -58,7 +58,7 @@ PLIST_SUB=		MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPICEFLY_SKIN}
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 DISTFILES+=		index-1.1.zip:spicefly
 .endif
 
