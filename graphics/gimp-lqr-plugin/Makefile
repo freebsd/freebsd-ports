@@ -1,13 +1,9 @@
-# New ports collection makefile for:	gimp-lqr
-# Date created:		27 Sep 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-lqr-plugin
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page-sources/ \
 		http://mirror.amdmi3.ru/distfiles/
