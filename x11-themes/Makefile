@@ -135,6 +135,7 @@
     SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
     SUBDIR += kde4-style-nitrogen
+    SUBDIR += kde4-style-oxygen-transparent
     SUBDIR += kde4-style-polyester
     SUBDIR += kde4-style-skulpture
     SUBDIR += kde4-wallpapers
