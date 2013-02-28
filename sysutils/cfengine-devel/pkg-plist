@@ -7,7 +7,6 @@ sbin/cf-execd
 sbin/cf-key
 sbin/cf-monitord
 sbin/cf-promises
-sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
 sbin/rpmvercmp
@@ -15,7 +14,6 @@ share/cfengine/CoreBase/cf-sketch-runfile.cf
 share/cfengine/CoreBase/def.cf
 share/cfengine/CoreBase/promises.cf
 share/cfengine/CoreBase/controls/cf_execd.cf
-share/cfengine/CoreBase/controls/cf_report.cf
 share/cfengine/CoreBase/controls/cf_agent.cf
 share/cfengine/CoreBase/controls/cf_runagent.cf
 share/cfengine/CoreBase/controls/cf_monitord.cf
