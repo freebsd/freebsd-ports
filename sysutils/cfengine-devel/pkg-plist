@@ -10,6 +10,7 @@ sbin/cf-promises
 sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
+sbin/rpmvercmp
 share/cfengine/CoreBase/cf-sketch-runfile.cf
 share/cfengine/CoreBase/def.cf
 share/cfengine/CoreBase/promises.cf
