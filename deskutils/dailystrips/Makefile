@@ -26,7 +26,7 @@ PLIST_FILES=	bin/dailystrips \
 		share/dailystrips/strips.def
 PLIST_DIRS=	share/dailystrips
 
-PORTSCOUT=	limit:1.0.*$$
+PORTSCOUT=	limit:^1\.0\.
 
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
