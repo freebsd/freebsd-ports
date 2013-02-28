@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezquake
-# Date created:				29 Aug 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
@@ -20,7 +16,7 @@ DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.3:${PORTSDIR}/devel/pcre \
