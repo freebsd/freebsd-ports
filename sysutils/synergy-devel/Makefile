@@ -18,8 +18,7 @@ COMMENT=	Mouse and keyboard sharing utility
 CONFLICTS=	synergy-[0-9]*
 USE_CMAKE=	yes
 USE_XORG=	ice xtst x11 sm
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+USE_DOS2UNIX=	yes
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 

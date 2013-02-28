@@ -18,8 +18,8 @@ COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt
 USE_AUTOTOOLS=	libtool
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--program-prefix=''
@@ -30,8 +30,6 @@ MAN1=		lineakd.1
 #MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread||' \
-		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure

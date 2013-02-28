@@ -20,10 +20,10 @@ USE_GMAKE=	yes
 
 MAKE_ENV=	DESKTOPPATH=${DESKTOPDIR}
 MAKE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-CFLAGS+=	-std=c99 ${PTHREAD_CFLAGS} ${PTHREAD_LIBS:S/"//g} \
+CFLAGS+=	-std=c99 \
 		`pkg-config --cflags gtk+-2.0` \
 		-DICONPATH=\\\"${DATADIR}/icons\\\"
-LDFLAGS+=	${PTHREAD_LIBS} -lcompat
+LDFLAGS+=	-lcompat
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -35,6 +35,10 @@ PLIST_SUB+=	NLS="@comment "
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 
 MAN1=	isomaster.1
+
+post-patch:
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+	    ${REINPLACE_CMD}  -e 's|CC *=|CC ?=|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/isomaster ${PREFIX}/bin

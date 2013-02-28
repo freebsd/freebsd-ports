@@ -48,8 +48,6 @@ pre-configure:
 	${RM} -f ${WRKSRC}/configure
 
 post-configure:
-	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
 	${FIND} ${WRKSRC}/include -name "builddefs" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LIBRT =|LIBRT = -lrt|g'
 

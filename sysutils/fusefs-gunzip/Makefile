@@ -24,7 +24,7 @@ do-build:
 	(cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/fuse \
 	-D_FILE_OFFSET_BITS=64 \
-	-o fuse.gunzip fuse.gunzip.c -L${LOCALBASE}/lib ${PTHREAD_LIBS} \
+	-o fuse.gunzip fuse.gunzip.c -L${LOCALBASE}/lib \
 	-lulockmgr -lz -lfuse -liconv -lm)
 
 do-install:

@@ -29,9 +29,9 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|==|=|g' ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
+	    ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|==|=|g' ${WRKSRC}/po/Makefile.in.in
 
 post-configure:
 	cd ${WRKSRC}/po && ${MAKE} update-po

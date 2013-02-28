@@ -46,7 +46,6 @@ NULLDOCS=		COPYING
 MAN1=			xvidcap.1
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|pkgdataDATA install-xvidcapdocDATA|pkgdataDATA|'	\
 		${WRKSRC}/Makefile.in

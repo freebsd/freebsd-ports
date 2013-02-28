@@ -27,7 +27,4 @@ WANT_GNOME=	yes
 INFO=		xorrecord xorriso xorrisofs
 MAN1=		xorrecord.1 xorriso.1 xorrisofs.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

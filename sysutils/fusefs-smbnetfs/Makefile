@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_FUSE=	yes
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 SUB_FILES=	pkg-message
 

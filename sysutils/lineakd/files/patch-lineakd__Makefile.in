@@ -1,11 +1,11 @@
---- lineakd/Makefile.in.orig	Wed May 24 17:26:52 2006
-+++ lineakd/Makefile.in	Mon Jun  5 17:07:33 2006
+--- lineakd/Makefile.in.orig	2006-05-24 17:26:52.000000000 +0200
++++ lineakd/Makefile.in	2013-02-18 16:29:24.000000000 +0100
 @@ -239,9 +239,9 @@
  unsermake_enable_pch_FALSE = @unsermake_enable_pch_FALSE@
  unsermake_enable_pch_TRUE = @unsermake_enable_pch_TRUE@
  lineakd_SOURCES = lineakd_core_functions.cpp cmdprefs.cpp main.cpp 
 -lineakd_LDADD = -lpthread -llineak -lXext -lX11 -ldl
-+lineakd_LDADD =  -llineak -lXext -lX11 
++lineakd_LDADD = -lpthread -llineak -lXext -lX11 
  lineakd_LDFLAGS = -rdynamic -L../lineak $(all_libraries) @X_LIBS@ @X_PRE_LIBS@
 -EXTRA_DIST = main.cpp eakprocs.h cmdprefs.cpp cmdprefs.h lineakkb.def lineakd.1.bz2 OLDCODE lineakd_core_functions.h lineakd_core_functions.cpp 
 +EXTRA_DIST = main.cpp eakprocs.h cmdprefs.cpp cmdprefs.h lineakkb.def lineakd.1.gz OLDCODE lineakd_core_functions.h lineakd_core_functions.cpp 

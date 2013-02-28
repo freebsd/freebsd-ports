@@ -28,8 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docs \
 		--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html
-CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
-		BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
+CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
 .if !defined(NOPORTDOCS)
@@ -42,10 +41,6 @@ MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
 		cfrun.8 cfservd.8 cfshow.8
 
 post-patch:
-		@${REINPLACE_CMD} -e s,-pthread,${PTHREAD_CFLAGS},g \
-				  -e s,-lpthread,${PTHREAD_LIBS},g \
-				  -e s,lpthread,${PTHREAD_LIBS},g \
-				  ${WRKSRC}/configure
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
 				  ${WRKSRC}/doc/Makefile.in \
 				  ${WRKSRC}/Makefile.in

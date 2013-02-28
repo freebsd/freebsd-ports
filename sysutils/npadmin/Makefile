@@ -19,9 +19,6 @@ PLIST_FILES=	bin/npadmin
 
 GNU_CONFIGURE=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-
 pre-configure:
 	${RM} ${WRKSRC}/getopt.h ${WRKSRC}/getopt1.c
 

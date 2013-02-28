@@ -24,8 +24,8 @@
 -  CFLAGS='-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads' ;
 +  CFLAGS_sav=$CFLAGS ;
 +  LDFLAGS_sav=$LDFLAGS ;
-+  LDFLAGS="$LDFLAGS_sav %PTHREAD_LIBS%" ;
-+  CFLAGS="$CFLAGS_sav %PTHREAD_CFLAGS%" ;
++  LDFLAGS="$LDFLAGS_sav %THREAD_LIBS%" ;
++  CFLAGS="$CFLAGS_sav %THREAD_CFLAGS%" ;
    on_unix='yes' ;
    on_windows='no' ;;
  *cygwin*)

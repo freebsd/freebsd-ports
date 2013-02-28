@@ -21,8 +21,6 @@ COMMENT=	Tools for UDF filesystem
 WRKSRC=		${WRKDIR}/UDFclient.${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	with_pthread_cflags="${PTHREAD_CFLAGS}" \
-		with_thread_libs="${PTHREAD_LIBS}"
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
 OPTIONS=	FUSE	"udfclientfs via FUSE"	off \

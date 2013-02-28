@@ -29,12 +29,7 @@ PLIST_FILES=	${BIN_FILES:S|^|bin/|}
 PORTDOCS=	index.html
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's/-D_THREAS_SAFE/-D_THREAD_SAFE/' \
-		-e 's/-D_THREAD_SAFE/-D_THREAD_SAFE ${PTHREAD_CFLAGS}/' \
-		-e 's/-pthread/${PTHREAD_LIBS}/' \
-		-e 's/-O2//' \
-		${WRKSRC}/Makefile.m4
+	@${REINPLACE_CMD} -e 's/-O2//' ${WRKSRC}/Makefile.m4
 
 do-install:
 .for i in ${BIN_FILES}
