@@ -1,7 +1,12 @@
-After restarting the Gimp you should find the following items in
-the pop-up image menu:
+After restarting the Gimp you should find the following new items
+in the menu:
 
+ * Edit/Fill with pattern seamless
+ * Filters/Enhance/Enlarge & sharpen
+ * Filters/Enhance/Heal selection
+ * Filters/Enhance/Heal transparency
+ * Filters/Enhance/Sharpen by synthesis
+ * Filters/Enhance/Uncrop
  * Filters/Map/Resynthesize
- * Filters/Enhance/Smart enlarge
- * Filters/Enhance/Smart sharpen
- * Filters/Enhance/Smart remove selection
+ * Filters/Map/Style
+ * Filters/Render/Texture

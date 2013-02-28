@@ -1,42 +1,42 @@
-# New ports collection makefile for:	resynthesizer
-# Date created:		05 May 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	resynthesizer
-PORTVERSION=	0.16
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.logarithmic.net/pfh-files/resynthesizer/ \
-		http://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	gimp-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gimp plug-in for texture synthesis
 
+RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
+BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
-GIMPTOOL?=	gimptool-2.0
-PLUGINS_DIR?=	libexec/gimp/2.2/plug-ins
-SCRIPTS_DIR?=	share/gimp/scripts
+USE_GITHUB=	yes
+GH_ACCOUNT=	bootchk
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	28cade5
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
-PLIST_FILES=	${PLUGINS_DIR}/resynth \
-		${SCRIPTS_DIR}/smart-enlarge.scm \
-		${SCRIPTS_DIR}/smart-remove.scm
+USE_AUTOTOOLS=	aclocal automake
+USE_GMAKE=	yes
 
-do-build:
-	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} \
-		`${GIMPTOOL} --cflags --libs` -o resynth resynth.cc
+OPTIONS_DEFINE=	THREADS
+THREADS_DESC=	Threading support (produces nondeterministic results)
 
-do-install:
-	${MKDIR} ${PREFIX}/${PLUGINS_DIR} ${PREFIX}/${SCRIPTS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/resynth ${PREFIX}/${PLUGINS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/smart-enlarge.scm \
-		${WRKSRC}/smart-remove.scm ${PREFIX}/${SCRIPTS_DIR}
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^\(gimpplugindir=\).*|\1"$$GIMP_LIBDIR"|' \
+		${WRKSRC}/configure
+.if ! ${PORT_OPTIONS:MTHREADS}
+	@${REINPLACE_CMD} -e '/^#define SYNTH_THREADED/ d' \
+		${WRKSRC}/src/buildSwitches.h
+.endif
 
 post-install:
 	@${ECHO_CMD}
