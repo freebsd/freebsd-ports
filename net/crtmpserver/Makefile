@@ -17,6 +17,8 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 WRKSRC=	${WRKDIR}/crtmpserver-545
 
+BROKEN=		fails to build
+
 USE_CMAKE=	yes
 CMAKE_ENV=	"COMPILE_STATIC=1"
 CMAKE_OUTSOURCE=	yes
