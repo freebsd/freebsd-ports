@@ -1,9 +1,5 @@
-# New ports collection makefile for: NtpMonitor
-# Date created:    13 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	NtpMonitor
 PORTVERSION=	2.0.3
@@ -16,6 +12,8 @@ COMMENT=	Monitors the offset between system time and a target NTP servers time
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+
+BROKEN=		fails to fetch
 
 USE_ZIP=	yes
 ZPACKGROUP=	core
