@@ -41,6 +41,7 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/htmldata/__init__.pyo
 %%PYTHON_SITELIBDIR%%/robot/htmldata/common/doc_formatting.css
 %%PYTHON_SITELIBDIR%%/robot/htmldata/common/js_disabled.css
+%%PYTHON_SITELIBDIR%%/robot/htmldata/common/storage.js
 %%PYTHON_SITELIBDIR%%/robot/htmldata/htmlfilewriter.py
 %%PYTHON_SITELIBDIR%%/robot/htmldata/htmlfilewriter.pyc
 %%PYTHON_SITELIBDIR%%/robot/htmldata/htmlfilewriter.pyo
@@ -75,6 +76,7 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/htmldata/template.py
 %%PYTHON_SITELIBDIR%%/robot/htmldata/template.pyc
 %%PYTHON_SITELIBDIR%%/robot/htmldata/template.pyo
+%%PYTHON_SITELIBDIR%%/robot/htmldata/testdoc/testdoc.css
 %%PYTHON_SITELIBDIR%%/robot/htmldata/testdoc/testdoc.html
 %%PYTHON_SITELIBDIR%%/robot/jarrunner.py
 %%PYTHON_SITELIBDIR%%/robot/jarrunner.pyc
