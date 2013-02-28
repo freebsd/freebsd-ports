@@ -20,8 +20,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 
 .include <bsd.port.mk>

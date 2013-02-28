@@ -24,8 +24,8 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=		-fPIC
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		lineak_xosdplugin.1
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \

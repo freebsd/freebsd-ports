@@ -27,11 +27,6 @@ CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
-		${WRKSRC}/lib/Makefile.in \
-		${WRKSRC}/example/Makefile.in
-
 do-build:
 	cd ${WRKSRC}/lib \
 	&& ${MAKE}

@@ -20,17 +20,10 @@ HAS_CONFIGURE=		yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PTHREADS)
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-.else
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 
 .if !defined(WITHOUT_GUI)
 LIB_DEPENDS+=		Imlib.5:${PORTSDIR}/graphics/imlib

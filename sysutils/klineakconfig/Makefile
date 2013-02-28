@@ -27,7 +27,7 @@ USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.h.in
-	@${REINPLACE_CMD} -e 's|-ldl||;s|-O2||g;s|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-ldl||;s|-O2||g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

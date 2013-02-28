@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Union filesystem for the FUSE driver
 
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_FUSE=	yes
 

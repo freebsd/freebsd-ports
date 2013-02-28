@@ -48,7 +48,6 @@ PLIST_SUB+=	PL_DEVD="@comment "
 post-patch:	.SILENT
 	${FIND} ${WRKSRC}/uhidd -type f -not -name Makefile \
 		-exec ${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' {} +
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/uhidd/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uhidd/uhidd ${PREFIX}/sbin/uhidd

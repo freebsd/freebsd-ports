@@ -23,8 +23,7 @@ INSTALLS_ICONS=	yes
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-O2,,g ; \
-		s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's,-O2,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 .if defined(NOPORTDOCS)

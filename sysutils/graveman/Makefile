@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
 USE_PKGCONFIG=	build
 USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		graveman.1
 

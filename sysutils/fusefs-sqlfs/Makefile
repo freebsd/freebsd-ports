@@ -33,8 +33,8 @@ do-build:
 	(cd ${WRKSRC} && ${CC} -DFUSE -DFUSE_USE_VERSION=25		\
 		-D_FILE_OFFSET_BITS=64 -D_REENTRANT ${CFLAGS}		\
 		-I${LOCALBASE}/include -I. -L${LOCALBASE}/lib		\
-		-lfuse -lsqlite${SQLITE_VER} ${PTHREAD_CFLAGS}		\
-		${PTHREAD_LIBS} sqlfs.c fuse_main.c -o sqlfs)
+		-lfuse -lsqlite${SQLITE_VER} sqlfs.c fuse_main.c 	\
+		-o sqlfs)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${PREFIX}/bin/

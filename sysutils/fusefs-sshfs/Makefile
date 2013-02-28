@@ -17,7 +17,6 @@ COMMENT=	Mount remote directories over ssh
 KMODDIR?=	${LOCALBASE}/modules
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
 USE_FUSE=	yes
 USE_GNOME=	glib20
 

@@ -25,17 +25,19 @@ PORTDOCS=	CALIBRATION
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LINUXTHREADS)
-PTHREAD_LIBS=	-L${LOCALBASE}/lib -llthread -llgcc_r
-PTHREAD_CFLAGS=	-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+THREAD_LIBS=	-L${LOCALBASE}/lib -llthread -llgcc_r
+THREAD_CFLAGS=	-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
+.else
+THREAD_LIBS=	-pthread
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALBASE%,${LOCALBASE},g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,%PTHREAD_LIBS%,${PTHREAD_LIBS},g' \
+	@${REINPLACE_CMD} -e 's,%THREAD_LIBS%,${THREAD_LIBS},g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,%PTHREAD_CFLAGS%,${PTHREAD_CFLAGS},g' \
+	@${REINPLACE_CMD} -e 's,%THREAD_CFLAGS%,${THREAD_CFLAGS},g' \
 		${WRKSRC}/configure
 
 post-install:

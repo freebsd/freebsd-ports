@@ -23,8 +23,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|/usr/local|${PREFIX}|; \
+	@${PERL} -pi -e 's|/usr/local|${PREFIX}|; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in
 
