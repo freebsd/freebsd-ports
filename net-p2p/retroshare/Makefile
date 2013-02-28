@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	retroshare
-PORTVERSION=	0.5.4b
-PORTREVISION=	2
+PORTVERSION=	0.5.4d
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/${BINARY}/${PORTVERSION}
@@ -45,17 +44,26 @@ MAKE_JOBS_UNSAFE=yes
 DESKTOP_ENTRIES="${BINARY}" "${COMMENT}" "" "${BINARY}" \
 		"Network;FileTransfer;" true
 
-OPTIONS_DEFINE=	NOGUI
-NOGUI_DESC=		"Install retroshare-nogui binary"
+OPTIONS_DEFINE=	NOGUI PLUGINS
+OPTIONS_DEFAULT=	PLUGINS
+NOGUI_DESC=		Install retroshare-nogui (CLI binary)
+PLUGINS_DESC=	Install plugins (LinksCloud, VoIP)
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPLUGINS}
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
+USE_QT4+=	multimedia
+USE_LDCONFIG=	yes
+.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} PREFIX=${PREFIX} ${BINARY}.pro
 
 USE_DOS2UNIX=	retroshare-gui/src/retroshare-gui.pro \
-	retroshare-nogui/src/retroshare-nogui.pro
+		retroshare-nogui/src/retroshare-nogui.pro \
+		retroshare-gui/src/gui/common/GroupTreeWidget.cpp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -69,19 +77,33 @@ post-patch:
 .if empty(PORT_OPTIONS:MNOGUI)
 	@${REINPLACE_CMD} -e 's|retroshare-nogui|#retroshare-nogui|' \
 		${WRKSRC}/${BINARY}.pro
+.if empty(PORT_OPTIONS:MPLUGINS)
 	@${REINPLACE_CMD} -e 's|retroshare-gui.pro \\|retroshare-gui.pro|' \
 		${WRKSRC}/${BINARY}.pro
+.endif
 .else
+.if empty(PORT_OPTIONS:MPLUGINS)
 	@${REINPLACE_CMD} -e 's|retroshare-nogui.pro \\|retroshare-nogui.pro|' \
 		${WRKSRC}/${BINARY}.pro
 .endif
+.endif
+.if empty(PORT_OPTIONS:MPLUGINS)
 	@${REINPLACE_CMD} -e 's|plugins|#plugins|' ${WRKSRC}/${BINARY}.pro
+.else
+	@${REINPLACE_CMD} -e 's|/usr/lib|${LOCALBASE}/lib|' \
+		${WRKSRC}/libretroshare/src/rsserver/rsinit.cc
+.endif
 
 pre-install:
 .if empty(PORT_OPTIONS:MNOGUI)
 PLIST_SUB+=	NOGUI="@comment "
 .else
 PLIST_SUB+=	NOGUI=""
+.endif
+.if empty(PORT_OPTIONS:MPLUGINS)
+PLIST_SUB+=	PLUGINS="@comment "
+.else
+PLIST_SUB+=	PLUGINS=""
 .endif
 
 post-install:
@@ -91,5 +113,16 @@ post-install:
 .endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/libbitdht/src/example/bdboot.txt ${DATADIR}
+.if ${PORT_OPTIONS:MPLUGINS}
+	${MKDIR} ${PREFIX}/lib/retroshare
+	${MKDIR} ${PREFIX}/lib/retroshare/extensions
+	${INSTALL_LIB} ${WRKSRC}/plugins/LinksCloud/libLinksCloud.so.1.0.0 \
+		${PREFIX}/lib/retroshare/extensions/libLinksCloud.so.1
+	${INSTALL_LIB} ${WRKSRC}/plugins/VOIP/libVOIP.so.1.0.0 \
+		${PREFIX}/lib/retroshare/extensions/libVOIP.so.1
+	@cd ${PREFIX}/lib/retroshare/extensions && \
+		${LN} -s libLinksCloud.so.1 libLinksCloud.so && \
+		${LN} -s libVOIP.so.1 libVOIP.so
+.endif
 
 .include <bsd.port.mk>
