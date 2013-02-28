@@ -3,6 +3,7 @@
 
 PORTNAME=	openfire
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -16,6 +17,10 @@ LICENSE=	AL2
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper \
    		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j
 
+OPTIONS_DEFINE=	PLUGINS
+OPTIONS_DEFAULT=PLUGINS
+PLUGINS_DESC=	Install bundled plugins
+
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_ANT=	yes
@@ -24,7 +29,7 @@ JAVA_VERSION=	1.6+
 
 CONFLICTS=	wildfire-[0-9]*
 
-ALL_TARGET=	openfire plugins
+ALL_TARGET=	openfire
 USE_RC_SUBR=	openfire
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src
@@ -38,6 +43,13 @@ USERS=		openfire
 GROUPS=		${USERS}
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPLUGINS}
+ALL_TARGET+=	plugins
+PLIST_SUB+=	PLUGINS=""
+.else
+PLIST_SUB+=	PLUGINS="@comment "
+.endif
 
 post-patch:
 	(cd ${WRKSRC} && ${MV} \
@@ -55,8 +67,10 @@ do-install:
 	(cd ${INSTALL_WRKSRC}/resources && ${FIND} . \! -path ./security\* \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/resources)
 
+.if ${PORT_OPTIONS:MPLUGINS}
 	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
