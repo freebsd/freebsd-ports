@@ -1,13 +1,9 @@
-# New ports collection makefile for:	liblqr-1
-# Date created:		30 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	liblqr-1
 DISTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +14,7 @@ COMMENT=	An easy to use C/C++ seam carving library
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	_glib20 pkgconfig
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
@@ -26,23 +22,25 @@ USE_LDCONFIG=	yes
 # Use GNU89 inline semantics
 USE_CSTD=	gnu89
 
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES HTMLDOCS
+HTMLDOCS_DESC=	Build and install HTML documentation
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 .endif
 
-OPTIONS=	HTMLDOCS	"Build and install HTML documentation"	off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_HTMLDOCS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MHTMLDOCS}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
-
-PORTDOCS=	*
+PLIST_SUB=	HTMLDOCS=""
+.else
+PLIST_SUB=	HTMLDOCS="@comment "
 .endif
 
 post-patch:
@@ -53,17 +51,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr.*docbookx.dtd|${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd|' \
 		${WRKSRC}/docs/liblqr_manual.docbook
 
+.if ${PORT_OPTIONS:MHTMLDOCS}
 post-build:
-.if defined(WITH_HTMLDOCS) && !defined(NOPORTDOCS)
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE} html
 .endif
 
 post-install:
-.if defined(WITH_HTMLDOCS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MHTMLDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
@@ -72,4 +70,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
