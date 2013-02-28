@@ -1,9 +1,4 @@
-# Ports collection makefile for:	vncreflector
-# Date created:				Wed, Jan 19 2005
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vncreflector
 PORTVERSION=	1.2.4
