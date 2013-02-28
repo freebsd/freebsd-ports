@@ -539,6 +539,7 @@ MASTER_SITES+=	GH GHC
 .endif
 GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
+FETCH_ARGS=	-Fpr
 .endif
 .endif
 #
