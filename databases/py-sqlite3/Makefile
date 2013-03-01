@@ -1,13 +1,9 @@
-# New ports collection makefile for:    py-sqlite3
-# Date created:         23 June 2006
-# Whom:                 Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -17,17 +13,20 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Standard Python binding to the SQLite3 library
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_sqlite3.so
-DIST_SUBDIR=	python
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XZ=		yes
-WRKSRC=		${PYTHON_WRKSRC}/Modules
-DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 
+DIST_SUBDIR=	python
+DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
+WRKSRC=		${PYTHON_WRKSRC}/Modules
+
+PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 PYDISTUTILS_NOEGGINFO=	yes
+
+PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/_sqlite3.so
 
 .include <bsd.port.pre.mk>
 

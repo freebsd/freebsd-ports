@@ -15,6 +15,8 @@ try:
 except:
     raise SystemExit("Distutils problem")
 
+install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
+
 tkversion = "%%TK_VER%%"
 prefix = sysconfig.PREFIX
 # Python 1.5 doesn't have os.getenv()?
@@ -31,7 +33,7 @@ libs = ["tcl" + tkversion.replace(".", ""),
 
 setup(name = "Tkinter",
       description = "Tk Extension to Python",
-      
+
       ext_modules = [Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
                                define_macros=[('WITH_APPINIT', 1)],
                                include_dirs = inc_dirs,

@@ -1,32 +1,32 @@
-# New ports collection makefile for:    py-Tkinter
-# Date created:         12 Jan 1999
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkinter
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER?=	python@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the Tk widget set
 
-DIST_SUBDIR=	python
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_tkinter.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_TK=		yes
 USE_XZ=		yes
-PYDISTUTILS_PKGNAME=	Tkinter
-PYDISTUTILS_PKGVERSION=	0.0.0
-USE_TK=	83+
-WRKSRC=		${PYTHON_WRKSRC}/Modules
+
+DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
+WRKSRC=		${PYTHON_WRKSRC}/Modules
+
+PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
+PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_PKGNAME=	Tkinter
+
+PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/_tkinter.so
 
 .include <bsd.port.pre.mk>
 
