@@ -42,13 +42,15 @@ share/icons/hicolor/48x48/apps/soundkonverter-replaygain.png
 share/icons/hicolor/48x48/apps/soundkonverter.png
 share/icons/hicolor/64x64/apps/soundkonverter-replaygain.png
 share/icons/hicolor/64x64/apps/soundkonverter.png
-share/locale/es/LC_MESSAGES/soundkonverter.mo
-share/locale/et/LC_MESSAGES/soundkonverter.mo
-share/locale/fr/LC_MESSAGES/soundkonverter.mo
-share/locale/hu/LC_MESSAGES/soundkonverter.mo
-share/locale/pt/LC_MESSAGES/soundkonverter.mo
-share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
-share/locale/ru/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/de/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/es/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/et/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/soundkonverter.mo
 %%AFTEN%%share/kde4/services/soundkonverter_codec_aften.desktop
 %%FAAC%%share/kde4/services/soundkonverter_codec_faac.desktop
 %%FFMPEG%%share/kde4/services/soundkonverter_codec_ffmpeg.desktop
@@ -81,7 +83,5 @@ share/kde4/servicetypes/soundkonverter_codecplugin.desktop
 share/kde4/servicetypes/soundkonverter_filterplugin.desktop
 share/kde4/servicetypes/soundkonverter_replaygainplugin.desktop
 share/kde4/servicetypes/soundkonverter_ripperplugin.desktop
-share/locale/cs/LC_MESSAGES/soundkonverter.mo
-share/locale/de/LC_MESSAGES/soundkonverter.mo
 @dirrm share/apps/soundkonverter/images
 @dirrm share/apps/soundkonverter
