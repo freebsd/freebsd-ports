@@ -830,6 +830,7 @@
     SUBDIR += p5-Catalyst-View-TT-ControllerLocal
     SUBDIR += p5-Catalyst-View-Template-Declare
     SUBDIR += p5-Catalyst-View-Templated
+    SUBDIR += p5-Catalyst-View-XML-Feed
     SUBDIR += p5-Catalyst-View-XML-Simple
     SUBDIR += p5-Catalyst-View-XSLT
     SUBDIR += p5-CatalystX-Component-Traits
