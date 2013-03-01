@@ -51,6 +51,67 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="764344fb-8214-11e2-9273-902b343deec9">
+    <topic>sudo -- Authentication bypass when clock is reset</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.8.6.p7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/epoch_ticket.html">
+	  <p>The flaw may allow someone with physical access to a machine that
+	    is not password-protected to run sudo commands without knowing the
+	    logged in user's password. On systems where sudo is the principal
+	    way of running commands as root, such as on Ubuntu and Mac OS X,
+	    there is a greater chance that the logged in user has run sudo
+	    before and thus that an attack would succeed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1775</cvename>
+      <url>http://www.sudo.ws/sudo/alerts/epoch_ticket.html</url>
+    </references>
+    <dates>
+      <discovery>2013-02-27</discovery>
+      <entry>2013-03-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="82cfd919-8213-11e2-9273-902b343deec9">
+    <topic>sudo -- Potential bypass of tty_tickets constraints</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.8.6.p7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/tty_tickets.html">
+	  <p>A (potentially malicious) program run by a user with sudo access
+	    may be able to bypass the "tty_ticket" constraints. In order for
+	    this to succeed there must exist on the machine a terminal device
+	    that the user has previously authenticated themselves on via sudo
+	    within the last time stamp timeout (5 minutes by default).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1776</cvename>
+      <url>http://www.sudo.ws/sudo/alerts/tty_tickets.html</url>
+    </references>
+    <dates>
+      <discovery>2013-02-27</discovery>
+      <entry>2013-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa7764af-0b5e-4ddc-bc65-38ad697a484f">
     <topic>rubygem-dragonfly -- arbitrary code execution</topic>
     <affects>
