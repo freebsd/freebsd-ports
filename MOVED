@@ -4077,3 +4077,4 @@ audio/laudio|audio/linux-laudio|2013-02-27|Renamed (Linux binary port)
 multimedia/qt4-phonon||2013-02-27|Has expired: Qt4 uses multimedia/phonon
 multimedia/qt4-phonon-gst||2013-02-27|Has expired: Qt4 uses multimedia/phonon-gstreamer
 math/eigen||2013-02-27|Has expired: development for 1.x series has ceased, use math/eigen3 instead
+multimedia/ffmpeg-011||2013-03-01|Has expired: replaced with 1.0.x, use multimedia/ffmpeg1 instead
