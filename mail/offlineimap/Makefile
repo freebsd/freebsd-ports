@@ -7,9 +7,11 @@
 
 PORTNAME=	offlineimap
 DISTVERSION=	6.5.4
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://cloud.github.com/downloads/spaetz/offlineimap/ \
 		http://dist.codelabs.ru/fbsd/offlineimap/
+PATCH_SITES=	http://codelabs.ru/patches/offlineimap/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	rea@FreeBSD.org
@@ -25,6 +27,8 @@ OPTIONS=	HTMLDOCS "Generate HTML documentation" Off
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_HASH}
 SUB_FILES=	pkg-message
 PATCH_STRIP=	-p1
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=	2012-properly-detect-readonly-folders.diff
 
 GITHUB_USER=	spaetz
 GITHUB_HASH=	c9e9690
