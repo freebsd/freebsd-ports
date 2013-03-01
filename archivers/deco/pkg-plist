@@ -15,6 +15,11 @@ bin/deco
 %%DATADIR%%/cbr
 %%DATADIR%%/cbz
 %%DATADIR%%/cpio/extract
+%%DATADIR%%/cpio\.bz2/extract
+%%DATADIR%%/cpio\.gz/extract
+%%DATADIR%%/cpio\.lz/extract
+%%DATADIR%%/cpio\.lzo/extract
+%%DATADIR%%/cpio\.xz/extract
 %%DATADIR%%/deb/extract
 %%DATADIR%%/deb/subdirectory
 %%DATADIR%%/ear
@@ -22,6 +27,7 @@ bin/deco
 %%DATADIR%%/gem/extract
 %%DATADIR%%/gem/subdirectory
 %%DATADIR%%/gz/extract
+%%DATADIR%%/ipsw
 %%DATADIR%%/jar
 %%DATADIR%%/lha/extract
 %%DATADIR%%/lrz/extract
@@ -108,6 +114,11 @@ bin/deco
 @dirrm %%DATADIR%%/gem
 @dirrm %%DATADIR%%/flac
 @dirrm %%DATADIR%%/deb
+@dirrm %%DATADIR%%/cpio\.xz
+@dirrm %%DATADIR%%/cpio\.lzo
+@dirrm %%DATADIR%%/cpio\.lz
+@dirrm %%DATADIR%%/cpio\.gz
+@dirrm %%DATADIR%%/cpio\.bz2
 @dirrm %%DATADIR%%/cpio
 @dirrm %%DATADIR%%/cab
 @dirrm %%DATADIR%%/bz2

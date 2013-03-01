@@ -1,17 +1,17 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	deco
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/:site1 \
 		http://hartlich.com/deco/archive/download/:site2
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:site1 \
-		${PORTNAME}-archive-1.5.1.tar.gz:site2
+		${PORTNAME}-archive-1.6.tar.gz:site2
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Program to extract various archive file formats
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		arj:${PORTSDIR}/archivers/arj \
@@ -31,21 +31,21 @@ NO_LATEST_LINK=	yes
 CONFLICTS=	deco-[0-9]*
 
 post-patch:
-	@${CP} ${FILESDIR}/extract ${WRKDIR}/${PORTNAME}-archive-1.5.1/"tar\.xz"
+	@${CP} ${FILESDIR}/extract ${WRKDIR}/${PORTNAME}-archive-1.6/x/"tar\.xz"
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-	cd ${WRKDIR}/${PORTNAME}-archive-1.5.1 && ${SETENV} ${MAKE_ENV} \
+	cd ${WRKDIR}/${PORTNAME}-archive-1.6 && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/deco ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 .for i in CREDITS LICENSE Makefile NEWS README config.mk
-	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.5.1/${i}
+	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.6/${i}
 .endfor
-	@cd ${WRKDIR}/${PORTNAME}-archive-1.5.1/ && ${CP} -pPR * ${DATADIR}
+	@cd ${WRKDIR}/${PORTNAME}-archive-1.6/x/ && ${CP} -PR * ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
