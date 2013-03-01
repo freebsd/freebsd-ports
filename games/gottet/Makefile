@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gottet
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -18,7 +17,7 @@ USE_QT4=	moc_build qmake_build rcc_build iconengines imageformats
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	ChangeLog
+PORTDOCS=	CREDITS ChangeLog
 
 .include <bsd.port.options.mk>
 
@@ -26,14 +25,16 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
-post-install:
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+post-configure:
+	@${REINPLACE_CMD} 's|-O2 -Wall|-Wall|g' \
+		${WRKSRC}/Makefile
 
-# Documentation
+post-install:
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
