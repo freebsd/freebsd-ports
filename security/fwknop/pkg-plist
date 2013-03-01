@@ -5,6 +5,6 @@ include/fko.h
 lib/libfko.a
 lib/libfko.la
 lib/libfko.so
-lib/libfko.so.0
+lib/libfko.so.1
 sbin/fwknopd
 @dirrm %%ETCDIR%%
