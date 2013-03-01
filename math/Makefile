@@ -646,6 +646,7 @@
     SUBDIR += vtk-python
     SUBDIR += vtk-tcl
     SUBDIR += vtk5
+    SUBDIR += vtk5-data
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += wingz
