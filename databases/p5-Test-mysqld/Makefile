@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Test::mysqld
-# Date created:		31 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-mysqld
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
