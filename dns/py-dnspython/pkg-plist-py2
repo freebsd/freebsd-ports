@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/dnspython-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dns/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dns/__init__.pyo
