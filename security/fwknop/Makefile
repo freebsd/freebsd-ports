@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fwknop
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -22,7 +22,9 @@ USE_LDCONFIG=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPGME}
-BUILD_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+.else
+CONFIGURE_ARGS+=--without-gpgme
 .endif
 
 .include <bsd.port.mk>
