@@ -1,13 +1,9 @@
-# New ports collection makefile for: 	tine20
-# Date created:				15 June 2012
-# Whom:					Mark Felder <feld@feld.me>
-#
+# Created by: Mark Felder <feld@feld.me>
 # $FreeBSD$
-#
 
 PORTNAME=	tine20
-PORTVERSION=	0.0.2012.03.03
-DISTVERSIONSUFFIX=	2012-03-3
+PORTVERSION=	0.0.2012.10.04
+DISTVERSIONSUFFIX=	2012.10.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
 DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}

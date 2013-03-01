@@ -1,4 +1,5 @@
 @unexec if cmp -s %%WWWDIR%%/config.inc.php.dist %%WWWDIR%%/config.inc.php; then rm -f %%WWWDIR%%/config.inc.php; fi
+%%WWWDIR%%/worker.php
 %%WWWDIR%%/tine20.php
 %%WWWDIR%%/styles/tine20.css
 %%WWWDIR%%/styles/layout.css
@@ -2634,275 +2635,373 @@
 %%WWWDIR%%/library/Zend/Acl/Exception.php
 %%WWWDIR%%/library/Zend/Acl/Assert/Interface.php
 %%WWWDIR%%/library/Zend/Acl.php
-%%WWWDIR%%/library/Syncope/tests/phpunit.xml
-%%WWWDIR%%/library/Syncope/tests/bootstrap.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/ServerTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Data/ContactsTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Data/AllTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/SyncTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/SettingsTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/SearchTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/ProvisionTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/PingTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/MoveItemsTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/ItemOperationsTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/GetItemEstimateTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/FolderSyncTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/FolderDeleteTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/FolderCreateTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/AllTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Command/ATestCase.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Backend/SyncStateTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Backend/FolderTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Backend/DeviceTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Backend/ContentTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/Backend/AllTests.php
-%%WWWDIR%%/library/Syncope/tests/Syncope/AllTests.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/StringLength.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Sitemap/Priority.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Sitemap/Loc.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Sitemap/Lastmod.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Sitemap/Changefreq.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Regex.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/NotEmpty.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/LessThan.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Ip.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Int.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/InArray.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Identical.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Iban.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname/Jp.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname/Com.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname/Cn.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname/Biz.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hex.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/GreaterThan.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Float.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/WordCount.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Upload.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Size.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Sha1.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/NotExists.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/MimeType.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Md5.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/IsImage.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/IsCompressed.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/ImageSize.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Hash.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/FilesSize.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Extension.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Exists.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/ExcludeMimeType.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/ExcludeExtension.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Crc32.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/File/Count.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/EmailAddress.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Digits.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Db/RecordExists.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Db/NoRecordExists.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Db/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Date.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Ccnum.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Between.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Barcode/UpcA.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Barcode/Ean13.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Barcode.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Alpha.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Alnum.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Validate.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Uri/Http.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Uri/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Uri.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Registry.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Syslog.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Stream.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Null.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Mock.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Mail.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Firebug.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Db.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Formatter/Xml.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Formatter/Simple.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Formatter/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Formatter/Firebug.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Filter/Suppress.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Filter/Priority.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Filter/Message.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Filter/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Log.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/PluginLoader/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/PluginLoader/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/PluginLoader.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/Autoloader/Resource.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/Autoloader/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader/Autoloader.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Loader.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json/Server.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json/Expr.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json/Encoder.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json/Decoder.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Json.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Select/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Select.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Rowset/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Rowset/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Rowset.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Row/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Row/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Row.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Definition.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Table.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Sqlsrv/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Sqlsrv.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Pdo/Oci.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Pdo/Ibm.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Pdo.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Oracle/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Oracle.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Mysqli/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Mysqli.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Db2/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Db2.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Select/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Select.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Profiler/Query.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Profiler/Firebug.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Profiler/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Profiler.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Expr.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Sqlsrv/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Sqlsrv.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Sqlite.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Pgsql.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Oci.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Mysql.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Mssql.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Ibm/Ids.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Ibm/Db2.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Ibm.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Oracle/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Oracle.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Mysqli/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Mysqli.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Db2/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Db2.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Db.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Controller/Request/Http.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Controller/Request/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Controller/Request/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Controller/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Xml.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Writer/Xml.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Writer/Ini.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Writer/Array.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Writer.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Ini.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config/Exception.php
-%%WWWDIR%%/library/Syncope/lib/Zend/Config.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Exception/UnexpectedEndOfFile.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Encoder.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml/Syncml12.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml/Syncml11.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml/DevInfo12.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml/DevInfo11.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Factory.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Exception/CodePageNotFound.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage9.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage8.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage7.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage6.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage5.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage4.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage3.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage20.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage2.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage19.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage18.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage17.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage16.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage15.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage14.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage13.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage12.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage11.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage10.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage1.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/CodePage0.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Decoder.php
-%%WWWDIR%%/library/Syncope/lib/Wbxml/Abstract.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/TransactionManagerInterface.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/TransactionManager.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Server.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Registry.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/SyncState.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/ISyncState.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/IFolder.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/IDevice.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/IContent.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/Folder.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/Device.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Model/Content.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Exception/UnexpectedValue.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Exception/NotFound.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/Tasks.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/IData.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/Factory.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/Email.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/Contacts.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/Calendar.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Data/AData.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Wbxml.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Sync.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/SmartReply.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/SmartForward.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Settings.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/SendMail.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Search.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Provision.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Ping.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Options.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/MoveItems.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/ItemOperations.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/Interface.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/GetItemEstimate.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/GetAttachment.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/FolderUpdate.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/FolderSync.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/FolderDelete.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Command/FolderCreate.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/SyncState.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/ISyncState.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/IFolder.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/IDevice.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/IContent.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/Folder.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/Device.php
-%%WWWDIR%%/library/Syncope/lib/Syncope/Backend/Content.php
-%%WWWDIR%%/library/Syncope/docs/syncope.sql
-%%WWWDIR%%/library/Syncope/LICENSE
+%%WWWDIR%%/library/TimeZoneConvert/tests/phpunit.xml
+%%WWWDIR%%/library/TimeZoneConvert/tests/bootstrap.php
+%%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert/VTimeZoneTests.php
+%%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert/TransitionTests.php
+%%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert/TransitionRuleTests.php
+%%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert/TimeZoneConvertTests.php
+%%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert/AllTests.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/VTimeZone/Rrule.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/VTimeZone/ChamberOfHorrors.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/VTimeZone.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/TransitionRule.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/Transition.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/Set.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/Model.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/KnownNamesMap.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/Exception.php
+%%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert.php
+%%WWWDIR%%/library/TimeZoneConvert/README.md
+%%WWWDIR%%/library/Syncroton/tests/phpunit.xml
+%%WWWDIR%%/library/Syncroton/tests/files/test_image.jpeg
+%%WWWDIR%%/library/Syncroton/tests/bootstrap.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml/files/simple.wbxml
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml/EncoderTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml/DecoderTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml/AllTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/ServerTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/TaskTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/SyncCollectionTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/PolicyTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/FileReferenceTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/EventTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/EmailTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/ContactTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/AllTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Model/ATestCase.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Data/ContactsTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Data/AllTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/SyncTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/SmartForwardTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/SettingsTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/SendMailTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/SearchTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/ProvisionTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/PingTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/MoveItemsTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/MeetingResponseTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/ItemOperationsTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/GetItemEstimateTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/GetAttachmentTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/FolderUpdateTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/FolderSyncTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/FolderDeleteTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/FolderCreateTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/AllTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Command/ATestCase.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/SyncStateTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/PolicyTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/FolderTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/DeviceTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/ContentTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend/AllTests.php
+%%WWWDIR%%/library/Syncroton/tests/Syncroton/AllTests.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/StringLength.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Sitemap/Priority.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Sitemap/Loc.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Sitemap/Lastmod.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Sitemap/Changefreq.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Regex.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/NotEmpty.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/LessThan.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Ip.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Int.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/InArray.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Identical.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Iban.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname/Jp.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname/Com.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname/Cn.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname/Biz.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hex.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/GreaterThan.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Float.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/WordCount.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Upload.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Size.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Sha1.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/NotExists.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/MimeType.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Md5.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/IsImage.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/IsCompressed.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/ImageSize.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Hash.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/FilesSize.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Extension.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Exists.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/ExcludeMimeType.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/ExcludeExtension.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Crc32.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File/Count.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/EmailAddress.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Digits.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Db/RecordExists.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Db/NoRecordExists.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Db/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Date.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Ccnum.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Between.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Barcode/UpcA.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Barcode/Ean13.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Barcode.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Alpha.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Alnum.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Validate.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Uri/Http.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Uri/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Uri.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Registry.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Syslog.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Stream.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Null.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Mock.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Mail.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Firebug.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Db.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Formatter/Xml.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Formatter/Simple.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Formatter/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Formatter/Firebug.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Filter/Suppress.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Filter/Priority.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Filter/Message.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Filter/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Log.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/PluginLoader/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/PluginLoader/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/PluginLoader.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/Autoloader/Resource.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/Autoloader/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader/Autoloader.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Loader.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json/Server.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json/Expr.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json/Encoder.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json/Decoder.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Json.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Select/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Select.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Rowset/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Rowset/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Rowset.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Row/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Row/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Row.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Definition.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Sqlsrv/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Sqlsrv.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Pdo/Oci.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Pdo/Ibm.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Pdo.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Oracle/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Oracle.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Mysqli/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Mysqli.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Interface.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Db2/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Db2.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Select/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Select.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Profiler/Query.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Profiler/Firebug.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Profiler/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Profiler.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Expr.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Sqlsrv/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Sqlsrv.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Sqlite.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Pgsql.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Oci.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Mysql.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Mssql.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Ibm/Ids.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Ibm/Db2.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Ibm.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Oracle/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Oracle.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Mysqli/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Mysqli.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Db2/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Db2.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Db.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Controller/Request/Http.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Controller/Request/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Controller/Request/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Controller/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Xml.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Writer/Xml.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Writer/Ini.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Writer/Array.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Writer.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Ini.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Zend/Config.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Exception/UnexpectedEndOfFile.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Encoder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml/Syncml12.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml/Syncml11.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml/DevInfo12.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml/DevInfo11.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Factory.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Exception/CodePageNotFound.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage9.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage8.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage7.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage6.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage5.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage4.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage3.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage24.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage23.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage22.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage21.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage20.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage2.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage19.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage18.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage17.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage16.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage15.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage14.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage13.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage12.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage11.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage10.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage1.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/CodePage0.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Decoder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Abstract.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/TransactionManagerInterface.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/TransactionManager.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Server.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Registry.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/TaskRecurrence.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Task.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/SyncState.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/SyncCollection.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/StoreResponseResult.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/StoreResponse.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/StoreRequest.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/SmartReply.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/SmartForward.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/SendMail.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Policy.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/MeetingResponse.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IXMLEntry.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/ISyncState.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IPolicy.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IFolder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IEntry.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IDevice.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/IContent.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/GALPicture.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/GAL.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Folder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/FileReference.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EventRecurrence.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EventException.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EventAttendee.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Event.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EmailFlag.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EmailBody.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/EmailAttachment.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Email.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/DeviceInformation.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Device.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Content.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/Contact.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/AXMLEntry.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Model/AEntry.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/UnexpectedValue.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/Sync.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/MoveItems.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/MeetingResponse.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/ItemOperations.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/GetItemEstimate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/FolderUpdate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/FolderSync.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/FolderDelete.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/FolderCreate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status/Autodiscover.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/ProvisioningNeeded.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/PolicyKeyMissing.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/NotFound.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/AccessDenied.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/Tasks.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/IDataSearch.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/IDataEmail.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/IDataCalendar.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/IData.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/Factory.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/Email.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/Contacts.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/Calendar.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Data/AData.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Wbxml.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Sync.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/SmartReply.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/SmartForward.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Settings.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/SendMail.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Search.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Provision.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Ping.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/Options.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/MoveItems.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/MeetingResponse.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/ItemOperations.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/ICommand.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/GetItemEstimate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/GetAttachment.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/FolderUpdate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/FolderSync.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/FolderDelete.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Command/FolderCreate.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/SyncState.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/Policy.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/ISyncState.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/IFolder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/IDevice.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/IContent.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/IBackend.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/Folder.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/Device.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/Content.php
+%%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend/ABackend.php
+%%WWWDIR%%/library/Syncroton/index.php
+%%WWWDIR%%/library/Syncroton/docs/syncroton.sql
+%%WWWDIR%%/library/Syncroton/docs/htaccess
+%%WWWDIR%%/library/Syncroton/LICENSE
+%%WWWDIR%%/library/Syncroton/.gitignore
 %%WWWDIR%%/library/StreamFilter/StringReplace.php
+%%WWWDIR%%/library/StreamFilter/ConvertMbstring.php
 %%WWWDIR%%/library/Sabre/VObject/includes.php
 %%WWWDIR%%/library/Sabre/VObject/Version.php
 %%WWWDIR%%/library/Sabre/VObject/Reader.php
@@ -3067,6 +3166,8 @@
 %%WWWDIR%%/library/Sabre/CalDAV/Calendar.php
 %%WWWDIR%%/library/Sabre/CalDAV/Backend/PDO.php
 %%WWWDIR%%/library/Sabre/CalDAV/Backend/Abstract.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/locale/tr/functions
+%%WWWDIR%%/library/PHPExcel/PHPExcel/locale/tr/config
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/sv/functions
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/sv/config
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/ru/functions
@@ -3098,7 +3199,10 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/da/config
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/cs/functions
 %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/cs/config
-%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Serialized.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF/tcPDF.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF/mPDF.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF/DomPDF.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF/Core.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/IWriter.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/HTML.php
@@ -3121,6 +3225,7 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007/DocProps.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007/ContentTypes.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007/Comments.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007/Chart.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/CSV.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/WorksheetIterator.php
@@ -3139,6 +3244,9 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/ColumnDimension.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/CellIterator.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/BaseDrawing.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/AutoFilter.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Style/Protection.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Style/NumberFormat.php
@@ -3158,9 +3266,13 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/trend/exponentialBestFitClass.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/trend/bestFitClass.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/ZipStreamWrapper.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/ZipArchive.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/XMLWriter.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/String.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/PasswordHasher.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/PCLZip/readme.txt
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/PCLZip/pclzip.lib.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/OLERead.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/OLE/PPS/Root.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/OLE/PPS/File.php
@@ -3170,6 +3282,15 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/utils/Maths.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/utils/Error.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/tests/TestMatrix.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/tile.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/polyfit.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/benchmark.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/Stats.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/MagicSquareExample.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/LevenbergMarquardt.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/LagrangeInterpolation2.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/LagrangeInterpolation.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples/LMQuadTest.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/QRDecomposition.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/Matrix.php
@@ -3197,14 +3318,16 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/RichText/ITextElement.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/RichText.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/ReferenceHelper.php
-%%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Serialized.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/SYLK.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/OOCalc.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/IReader.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/IReadFilter.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/HTML.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Gnumeric.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel5/Escher.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel5.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel2007/Theme.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel2007/Chart.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel2007.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel2003XML.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/DefaultReadFilter.php
@@ -3213,9 +3336,20 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/IOFactory.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/IComparable.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/HashTable.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Exception.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/DocumentSecurity.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/DocumentProperties.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Comment.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Title.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Renderer/jpgraph.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/PlotArea.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Legend.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Layout.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Exception.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/DataSeriesValues.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/DataSeries.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Chart.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell/IValueBinder.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell/Hyperlink.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell/DefaultValueBinder.php
@@ -3224,6 +3358,7 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell/AdvancedValueBinder.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/functionlist.txt
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Token/Stack.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/TextData.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Statistical.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/MathTrig.php
@@ -3238,14 +3373,18 @@
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Exception.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Engineering.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/DateTime.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Database.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorageFactory.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/Wincache.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/SQLite3.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/SQLite.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/PHPTemp.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/MemorySerialized.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/MemoryGZip.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/Memory.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/Memcache.php
+%%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/Igbinary.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/ICache.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/DiscISAM.php
 %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage/CacheBase.php
@@ -3343,6 +3482,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIScheme/data.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIScheme.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIParser.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIFilter/SafeIframe.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIFilter/Munge.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIFilter/MakeAbsolute.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/URIFilter/HostBlacklist.php
@@ -3382,7 +3522,6 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Printer.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/PercentEncoder.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Lexer/PH5P.php
-%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Lexer/PEARSax3.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Lexer/DirectLex.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Lexer/DOMLex.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Lexer.php
@@ -3412,6 +3551,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Tidy/Name.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Tidy.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Text.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/TargetBlank.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Target.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Tables.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/StyleAttribute.php
@@ -3428,6 +3568,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/List.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Legacy.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Image.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Iframe.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Hypertext.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Forms.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/HTMLModule/Edit.php
@@ -3462,6 +3603,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/Context.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ContentSets.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/info.ini
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
@@ -3490,8 +3632,10 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
@@ -3509,6 +3653,8 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
@@ -3529,6 +3675,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
@@ -3587,6 +3734,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/StrictBlockquote.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/Required.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/Optional.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/List.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/Empty.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/Custom.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/ChildDef/Chameleon.php
@@ -3596,6 +3744,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrValidator.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTypes.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTransform/Textarea.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTransform/TargetBlank.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTransform/ScriptRequired.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTransform/SafeParam.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrTransform/SafeObject.php
@@ -3636,6 +3785,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/HTML/Class.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/HTML/Bool.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/Enum.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/Clone.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/URI.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/TextDecoration.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/Percentage.php
@@ -3644,6 +3794,7 @@
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/ListStyle.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/Length.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
+%%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/Ident.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/FontFamily.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/Font.php
 %%WWWDIR%%/library/HTMLPurifier/HTMLPurifier/AttrDef/CSS/Filter.php
@@ -4336,11 +4487,40 @@
 %%WWWDIR%%/library/ExtJS/ext-all-debug.js
 %%WWWDIR%%/library/ExtJS/adapter/ext/ext-base.js
 %%WWWDIR%%/library/ExtJS/adapter/ext/ext-base-debug.js
+%%WWWDIR%%/library/CryptoJS/x64-core.js
+%%WWWDIR%%/library/CryptoJS/tripledes.js
+%%WWWDIR%%/library/CryptoJS/sha512.js
+%%WWWDIR%%/library/CryptoJS/sha384.js
+%%WWWDIR%%/library/CryptoJS/sha256.js
+%%WWWDIR%%/library/CryptoJS/sha224.js
+%%WWWDIR%%/library/CryptoJS/sha1.js
+%%WWWDIR%%/library/CryptoJS/rc4.js
+%%WWWDIR%%/library/CryptoJS/rabbit.js
+%%WWWDIR%%/library/CryptoJS/pbkdf2.js
+%%WWWDIR%%/library/CryptoJS/pad-zeropadding.js
+%%WWWDIR%%/library/CryptoJS/pad-nopadding.js
+%%WWWDIR%%/library/CryptoJS/pad-iso97971.js
+%%WWWDIR%%/library/CryptoJS/pad-iso10126.js
+%%WWWDIR%%/library/CryptoJS/pad-ansix923.js
+%%WWWDIR%%/library/CryptoJS/mode-ofb.js
+%%WWWDIR%%/library/CryptoJS/mode-ecb.js
+%%WWWDIR%%/library/CryptoJS/mode-ctr.js
+%%WWWDIR%%/library/CryptoJS/mode-cfb.js
+%%WWWDIR%%/library/CryptoJS/md5.js
+%%WWWDIR%%/library/CryptoJS/hmac.js
+%%WWWDIR%%/library/CryptoJS/evpkdf.js
+%%WWWDIR%%/library/CryptoJS/enc-utf16.js
+%%WWWDIR%%/library/CryptoJS/enc-base64.js
+%%WWWDIR%%/library/CryptoJS/core.js
+%%WWWDIR%%/library/CryptoJS/cipher-core.js
+%%WWWDIR%%/library/CryptoJS/aes.js
+%%WWWDIR%%/library/Console/Daemon.php
 %%WWWDIR%%/library/Ajam/Exception.php
 %%WWWDIR%%/library/Ajam/Connection.php
 %%WWWDIR%%/langHelper.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/images/x-gray.png
+%%WWWDIR%%/images/wizzard_triggerfield.gif
 %%WWWDIR%%/images/white-gradiend.png
 %%WWWDIR%%/images/warning.gif
 %%WWWDIR%%/images/wait.gif
@@ -7739,8 +7919,12 @@
 %%WWWDIR%%/images/account-trigger.psd
 %%WWWDIR%%/images/account-trigger.gif
 %%WWWDIR%%/images/GridViewMenu.png
+%%WWWDIR%%/docs/htaccess
 %%WWWDIR%%/config.inc.php.dist
+%%WWWDIR%%/bootstrap.php
 %%WWWDIR%%/Zend/Validate/NotEmpty.php
+%%WWWDIR%%/Zend/Translate/Adapter/GettextPo.php
+%%WWWDIR%%/Zend/Translate/Adapter.php
 %%WWWDIR%%/Zend/Session/Validator/IpAddress.php
 %%WWWDIR%%/Zend/Service/Tine20.php
 %%WWWDIR%%/Zend/Service/Nominatim/ResultSet.php
@@ -7755,6 +7939,7 @@
 %%WWWDIR%%/Zend/Scheduler/Backend/Abstract.php
 %%WWWDIR%%/Zend/Scheduler.php
 %%WWWDIR%%/Zend/Queue/Adapter/Db.php
+%%WWWDIR%%/Zend/Pdf/FileParserDataSource.php
 %%WWWDIR%%/Zend/OpenId/Provider.php
 %%WWWDIR%%/Zend/Mime/Part.php
 %%WWWDIR%%/Zend/Mail/Transport/Array.php
@@ -7774,6 +7959,7 @@
 %%WWWDIR%%/Zend/Http/Cookie.php
 %%WWWDIR%%/Zend/Filter/Input.php
 %%WWWDIR%%/Zend/Filter/Empty.php
+%%WWWDIR%%/Zend/Db/Table/Abstract.php
 %%WWWDIR%%/Zend/Db/Adapter/Oracle.php
 %%WWWDIR%%/Zend/Cache/Backend/Redis.php
 %%WWWDIR%%/Zend/Cache/Backend/Memcached.php
@@ -7799,23 +7985,43 @@
 %%WWWDIR%%/Tinebase/translations/zh_TW.mo
 %%WWWDIR%%/Tinebase/translations/zh_CN.po
 %%WWWDIR%%/Tinebase/translations/zh_CN.mo
+%%WWWDIR%%/Tinebase/translations/vi.po
+%%WWWDIR%%/Tinebase/translations/vi.mo
+%%WWWDIR%%/Tinebase/translations/tr_TR.po
+%%WWWDIR%%/Tinebase/translations/tr_TR.mo
 %%WWWDIR%%/Tinebase/translations/template.pot
 %%WWWDIR%%/Tinebase/translations/sv_SE.po
 %%WWWDIR%%/Tinebase/translations/sv_SE.mo
+%%WWWDIR%%/Tinebase/translations/sk.po
+%%WWWDIR%%/Tinebase/translations/sk.mo
 %%WWWDIR%%/Tinebase/translations/ru.po
 %%WWWDIR%%/Tinebase/translations/ru.mo
+%%WWWDIR%%/Tinebase/translations/pt_BR.po
+%%WWWDIR%%/Tinebase/translations/pt_BR.mo
 %%WWWDIR%%/Tinebase/translations/pl.po
 %%WWWDIR%%/Tinebase/translations/pl.mo
+%%WWWDIR%%/Tinebase/translations/nl_NL.po
+%%WWWDIR%%/Tinebase/translations/nl_NL.mo
 %%WWWDIR%%/Tinebase/translations/nb.po
 %%WWWDIR%%/Tinebase/translations/nb.mo
+%%WWWDIR%%/Tinebase/translations/lt.po
+%%WWWDIR%%/Tinebase/translations/lt.mo
 %%WWWDIR%%/Tinebase/translations/ja.po
 %%WWWDIR%%/Tinebase/translations/ja.mo
 %%WWWDIR%%/Tinebase/translations/it.po
 %%WWWDIR%%/Tinebase/translations/it.mo
 %%WWWDIR%%/Tinebase/translations/hu.po
 %%WWWDIR%%/Tinebase/translations/hu.mo
+%%WWWDIR%%/Tinebase/translations/hr_HR.po
+%%WWWDIR%%/Tinebase/translations/hr_HR.mo
 %%WWWDIR%%/Tinebase/translations/fr.po
 %%WWWDIR%%/Tinebase/translations/fr.mo
+%%WWWDIR%%/Tinebase/translations/fi.po
+%%WWWDIR%%/Tinebase/translations/fi.mo
+%%WWWDIR%%/Tinebase/translations/fa_IR.po
+%%WWWDIR%%/Tinebase/translations/fa_IR.mo
+%%WWWDIR%%/Tinebase/translations/et.po
+%%WWWDIR%%/Tinebase/translations/et.mo
 %%WWWDIR%%/Tinebase/translations/es_MX.po
 %%WWWDIR%%/Tinebase/translations/es_MX.mo
 %%WWWDIR%%/Tinebase/translations/es.po
@@ -7824,6 +8030,8 @@
 %%WWWDIR%%/Tinebase/translations/en.mo
 %%WWWDIR%%/Tinebase/translations/de.po
 %%WWWDIR%%/Tinebase/translations/de.mo
+%%WWWDIR%%/Tinebase/translations/da.po
+%%WWWDIR%%/Tinebase/translations/da.mo
 %%WWWDIR%%/Tinebase/translations/cs.po
 %%WWWDIR%%/Tinebase/translations/cs.mo
 %%WWWDIR%%/Tinebase/translations/ca.po
@@ -7835,22 +8043,42 @@
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-zh_TW-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-zh_CN.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-zh_CN-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-vi.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-vi-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-tr_TR.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-tr_TR-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-sv_SE.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-sv_SE-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-sk.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-sk-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-ru.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-ru-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-pt_BR.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-pt_BR-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-pl.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-pl-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-nl_NL.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-nl_NL-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-nb.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-nb-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-lt.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-lt-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-ja.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-ja-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-it.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-it-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-hu.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-hu-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-hr_HR.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-hr_HR-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-fr.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-fr-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-fi.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-fi-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-fa_IR.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-fa_IR-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-et.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-et-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-es_MX.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-es_MX-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-es.js
@@ -7859,6 +8087,8 @@
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-en-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-de.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-de-debug.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-da.js
+%%WWWDIR%%/Tinebase/js/Tinebase-lang-da-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-cs.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-cs-debug.js
 %%WWWDIR%%/Tinebase/js/Tinebase-lang-ca.js
@@ -8293,6 +8523,7 @@
 %%WWWDIR%%/Tinebase/State.php
 %%WWWDIR%%/Tinebase/Smtp.php
 %%WWWDIR%%/Tinebase/Setup/setup.xml
+%%WWWDIR%%/Tinebase/Setup/Update/Release6.php
 %%WWWDIR%%/Tinebase/Setup/Update/Release5.php
 %%WWWDIR%%/Tinebase/Setup/Update/Release4.php
 %%WWWDIR%%/Tinebase/Setup/Update/Release3.php
@@ -8300,8 +8531,10 @@
 %%WWWDIR%%/Tinebase/Setup/Update/Release1.php
 %%WWWDIR%%/Tinebase/Setup/Update/Release0.php
 %%WWWDIR%%/Tinebase/Setup/Initialize.php
+%%WWWDIR%%/Tinebase/Setup/Import/Egw14/config.ini
 %%WWWDIR%%/Tinebase/Setup/Import/Egw14/Abstract.php
 %%WWWDIR%%/Tinebase/Setup/Import/Egw14.php
+%%WWWDIR%%/Tinebase/Setup/DemoData/Abstract.php
 %%WWWDIR%%/Tinebase/Server/WebDAV.php
 %%WWWDIR%%/Tinebase/Server/Json.php
 %%WWWDIR%%/Tinebase/Server/Interface.php
@@ -8311,6 +8544,7 @@
 %%WWWDIR%%/Tinebase/SambaSAM.php
 %%WWWDIR%%/Tinebase/Relations.php
 %%WWWDIR%%/Tinebase/Relation/Backend/Sql.php
+%%WWWDIR%%/Tinebase/Redis/Queue.php
 %%WWWDIR%%/Tinebase/Record/RecordSet.php
 %%WWWDIR%%/Tinebase/Record/PersistentObserver.php
 %%WWWDIR%%/Tinebase/Record/Iterator.php
@@ -8372,6 +8606,7 @@
 %%WWWDIR%%/Tinebase/Model/Note.php
 %%WWWDIR%%/Tinebase/Model/ModificationLogFilter.php
 %%WWWDIR%%/Tinebase/Model/ModificationLog.php
+%%WWWDIR%%/Tinebase/Model/InputFilter/CrlfConvert.php
 %%WWWDIR%%/Tinebase/Model/ImportExportDefinitionFilter.php
 %%WWWDIR%%/Tinebase/Model/ImportExportDefinition.php
 %%WWWDIR%%/Tinebase/Model/ImportException.php
@@ -8391,6 +8626,7 @@
 %%WWWDIR%%/Tinebase/Model/Filter/ForeignRecord.php
 %%WWWDIR%%/Tinebase/Model/Filter/ForeignId.php
 %%WWWDIR%%/Tinebase/Model/Filter/FilterGroup.php
+%%WWWDIR%%/Tinebase/Model/Filter/ExplicitRelatedRecord.php
 %%WWWDIR%%/Tinebase/Model/Filter/DateTime.php
 %%WWWDIR%%/Tinebase/Model/Filter/Date.php
 %%WWWDIR%%/Tinebase/Model/Filter/CustomField.php
@@ -8442,6 +8678,11 @@
 %%WWWDIR%%/Tinebase/Group/ActiveDirectory.php
 %%WWWDIR%%/Tinebase/Group/Abstract.php
 %%WWWDIR%%/Tinebase/Group.php
+%%WWWDIR%%/Tinebase/Frontend/WebDAV/Node.php
+%%WWWDIR%%/Tinebase/Frontend/WebDAV/File.php
+%%WWWDIR%%/Tinebase/Frontend/WebDAV/Directory.php
+%%WWWDIR%%/Tinebase/Frontend/WebDAV/Container.php
+%%WWWDIR%%/Tinebase/Frontend/WebDAV/Abstract.php
 %%WWWDIR%%/Tinebase/Frontend/Json/UserRegistration.php
 %%WWWDIR%%/Tinebase/Frontend/Json/PersistentFilter.php
 %%WWWDIR%%/Tinebase/Frontend/Json/Interface.php
@@ -8464,11 +8705,13 @@
 %%WWWDIR%%/Tinebase/Export/Abstract.php
 %%WWWDIR%%/Tinebase/Export.php
 %%WWWDIR%%/Tinebase/Exception/UnexpectedValue.php
+%%WWWDIR%%/Tinebase/Exception/SystemGeneric.php
 %%WWWDIR%%/Tinebase/Exception/Record/Validation.php
 %%WWWDIR%%/Tinebase/Exception/Record/SystemContainer.php
 %%WWWDIR%%/Tinebase/Exception/Record/NotDefined.php
 %%WWWDIR%%/Tinebase/Exception/Record/NotAllowed.php
 %%WWWDIR%%/Tinebase/Exception/Record/DefinitionFailure.php
+%%WWWDIR%%/Tinebase/Exception/PasswordPolicyViolation.php
 %%WWWDIR%%/Tinebase/Exception/NotImplemented.php
 %%WWWDIR%%/Tinebase/Exception/NotFound.php
 %%WWWDIR%%/Tinebase/Exception/InvalidArgument.php
@@ -8487,6 +8730,7 @@
 %%WWWDIR%%/Tinebase/Event/Async/Minutely.php
 %%WWWDIR%%/Tinebase/Event/Abstract.php
 %%WWWDIR%%/Tinebase/Event.php
+%%WWWDIR%%/Tinebase/EmailUser/Sql.php
 %%WWWDIR%%/Tinebase/EmailUser/Smtp/Postfix.php
 %%WWWDIR%%/Tinebase/EmailUser/Smtp/LdapQmailSchema.php
 %%WWWDIR%%/Tinebase/EmailUser/Smtp/LdapMailSchema.php
@@ -8550,6 +8794,10 @@
 %%WWWDIR%%/Tinebase/AsyncJob.php
 %%WWWDIR%%/Tinebase/Application.php
 %%WWWDIR%%/Tinebase/Alarm.php
+%%WWWDIR%%/Tinebase/ActionQueue/Worker.php
+%%WWWDIR%%/Tinebase/ActionQueue/Backend/Redis.php
+%%WWWDIR%%/Tinebase/ActionQueue/Backend/Interface.php
+%%WWWDIR%%/Tinebase/ActionQueue/Backend/Direct.php
 %%WWWDIR%%/Tinebase/ActionQueue.php
 %%WWWDIR%%/Tinebase/Acl/Roles.php
 %%WWWDIR%%/Tinebase/Acl/Rights/Interface.php
@@ -8560,23 +8808,43 @@
 %%WWWDIR%%/Timetracker/translations/zh_TW.mo
 %%WWWDIR%%/Timetracker/translations/zh_CN.po
 %%WWWDIR%%/Timetracker/translations/zh_CN.mo
+%%WWWDIR%%/Timetracker/translations/vi.po
+%%WWWDIR%%/Timetracker/translations/vi.mo
+%%WWWDIR%%/Timetracker/translations/tr_TR.po
+%%WWWDIR%%/Timetracker/translations/tr_TR.mo
 %%WWWDIR%%/Timetracker/translations/template.pot
 %%WWWDIR%%/Timetracker/translations/sv_SE.po
 %%WWWDIR%%/Timetracker/translations/sv_SE.mo
+%%WWWDIR%%/Timetracker/translations/sk.po
+%%WWWDIR%%/Timetracker/translations/sk.mo
 %%WWWDIR%%/Timetracker/translations/ru.po
 %%WWWDIR%%/Timetracker/translations/ru.mo
+%%WWWDIR%%/Timetracker/translations/pt_BR.po
+%%WWWDIR%%/Timetracker/translations/pt_BR.mo
 %%WWWDIR%%/Timetracker/translations/pl.po
 %%WWWDIR%%/Timetracker/translations/pl.mo
+%%WWWDIR%%/Timetracker/translations/nl_NL.po
+%%WWWDIR%%/Timetracker/translations/nl_NL.mo
 %%WWWDIR%%/Timetracker/translations/nb.po
 %%WWWDIR%%/Timetracker/translations/nb.mo
+%%WWWDIR%%/Timetracker/translations/lt.po
+%%WWWDIR%%/Timetracker/translations/lt.mo
 %%WWWDIR%%/Timetracker/translations/ja.po
 %%WWWDIR%%/Timetracker/translations/ja.mo
 %%WWWDIR%%/Timetracker/translations/it.po
 %%WWWDIR%%/Timetracker/translations/it.mo
 %%WWWDIR%%/Timetracker/translations/hu.po
 %%WWWDIR%%/Timetracker/translations/hu.mo
+%%WWWDIR%%/Timetracker/translations/hr_HR.po
+%%WWWDIR%%/Timetracker/translations/hr_HR.mo
 %%WWWDIR%%/Timetracker/translations/fr.po
 %%WWWDIR%%/Timetracker/translations/fr.mo
+%%WWWDIR%%/Timetracker/translations/fi.po
+%%WWWDIR%%/Timetracker/translations/fi.mo
+%%WWWDIR%%/Timetracker/translations/fa_IR.po
+%%WWWDIR%%/Timetracker/translations/fa_IR.mo
+%%WWWDIR%%/Timetracker/translations/et.po
+%%WWWDIR%%/Timetracker/translations/et.mo
 %%WWWDIR%%/Timetracker/translations/es_MX.po
 %%WWWDIR%%/Timetracker/translations/es_MX.mo
 %%WWWDIR%%/Timetracker/translations/es.po
@@ -8585,6 +8853,8 @@
 %%WWWDIR%%/Timetracker/translations/en.mo
 %%WWWDIR%%/Timetracker/translations/de.po
 %%WWWDIR%%/Timetracker/translations/de.mo
+%%WWWDIR%%/Timetracker/translations/da.po
+%%WWWDIR%%/Timetracker/translations/da.mo
 %%WWWDIR%%/Timetracker/translations/cs.po
 %%WWWDIR%%/Timetracker/translations/cs.mo
 %%WWWDIR%%/Timetracker/translations/ca.po
@@ -8595,22 +8865,42 @@
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-zh_TW-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-zh_CN.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-zh_CN-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-vi.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-vi-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-tr_TR.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-tr_TR-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-sv_SE.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-sv_SE-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-sk.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-sk-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-ru.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-ru-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-pt_BR.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-pt_BR-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-pl.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-pl-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-nl_NL.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-nl_NL-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-nb.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-nb-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-lt.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-lt-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-ja.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-ja-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-it.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-it-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-hu.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-hu-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-hr_HR.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-hr_HR-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-fr.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-fr-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-fi.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-fi-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-fa_IR.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-fa_IR-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-et.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-et-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-es_MX.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-es_MX-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-es.js
@@ -8619,6 +8909,8 @@
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-en-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-de.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-de-debug.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-da.js
+%%WWWDIR%%/Timetracker/js/Timetracker-lang-da-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-cs.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-cs-debug.js
 %%WWWDIR%%/Timetracker/js/Timetracker-lang-ca.js
@@ -8646,7 +8938,6 @@
 %%WWWDIR%%/Timetracker/Model/TimeaccountIdFilter.php
 %%WWWDIR%%/Timetracker/Model/TimeaccountGrants.php
 %%WWWDIR%%/Timetracker/Model/TimeaccountFilter.php
-%%WWWDIR%%/Timetracker/Model/TimeaccountClosedFilter.php
 %%WWWDIR%%/Timetracker/Model/Timeaccount.php
 %%WWWDIR%%/Timetracker/Frontend/Json.php
 %%WWWDIR%%/Timetracker/Frontend/Http.php
@@ -8671,23 +8962,43 @@
 %%WWWDIR%%/Tasks/translations/zh_TW.mo
 %%WWWDIR%%/Tasks/translations/zh_CN.po
 %%WWWDIR%%/Tasks/translations/zh_CN.mo
+%%WWWDIR%%/Tasks/translations/vi.po
+%%WWWDIR%%/Tasks/translations/vi.mo
+%%WWWDIR%%/Tasks/translations/tr_TR.po
+%%WWWDIR%%/Tasks/translations/tr_TR.mo
 %%WWWDIR%%/Tasks/translations/template.pot
 %%WWWDIR%%/Tasks/translations/sv_SE.po
 %%WWWDIR%%/Tasks/translations/sv_SE.mo
+%%WWWDIR%%/Tasks/translations/sk.po
+%%WWWDIR%%/Tasks/translations/sk.mo
 %%WWWDIR%%/Tasks/translations/ru.po
 %%WWWDIR%%/Tasks/translations/ru.mo
+%%WWWDIR%%/Tasks/translations/pt_BR.po
+%%WWWDIR%%/Tasks/translations/pt_BR.mo
 %%WWWDIR%%/Tasks/translations/pl.po
 %%WWWDIR%%/Tasks/translations/pl.mo
+%%WWWDIR%%/Tasks/translations/nl_NL.po
+%%WWWDIR%%/Tasks/translations/nl_NL.mo
 %%WWWDIR%%/Tasks/translations/nb.po
 %%WWWDIR%%/Tasks/translations/nb.mo
+%%WWWDIR%%/Tasks/translations/lt.po
+%%WWWDIR%%/Tasks/translations/lt.mo
 %%WWWDIR%%/Tasks/translations/ja.po
 %%WWWDIR%%/Tasks/translations/ja.mo
 %%WWWDIR%%/Tasks/translations/it.po
 %%WWWDIR%%/Tasks/translations/it.mo
 %%WWWDIR%%/Tasks/translations/hu.po
 %%WWWDIR%%/Tasks/translations/hu.mo
+%%WWWDIR%%/Tasks/translations/hr_HR.po
+%%WWWDIR%%/Tasks/translations/hr_HR.mo
 %%WWWDIR%%/Tasks/translations/fr.po
 %%WWWDIR%%/Tasks/translations/fr.mo
+%%WWWDIR%%/Tasks/translations/fi.po
+%%WWWDIR%%/Tasks/translations/fi.mo
+%%WWWDIR%%/Tasks/translations/fa_IR.po
+%%WWWDIR%%/Tasks/translations/fa_IR.mo
+%%WWWDIR%%/Tasks/translations/et.po
+%%WWWDIR%%/Tasks/translations/et.mo
 %%WWWDIR%%/Tasks/translations/es_MX.po
 %%WWWDIR%%/Tasks/translations/es_MX.mo
 %%WWWDIR%%/Tasks/translations/es.po
@@ -8696,6 +9007,8 @@
 %%WWWDIR%%/Tasks/translations/en.mo
 %%WWWDIR%%/Tasks/translations/de.po
 %%WWWDIR%%/Tasks/translations/de.mo
+%%WWWDIR%%/Tasks/translations/da.po
+%%WWWDIR%%/Tasks/translations/da.mo
 %%WWWDIR%%/Tasks/translations/cs.po
 %%WWWDIR%%/Tasks/translations/cs.mo
 %%WWWDIR%%/Tasks/translations/ca.po
@@ -8706,22 +9019,42 @@
 %%WWWDIR%%/Tasks/js/Tasks-lang-zh_TW-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-zh_CN.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-zh_CN-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-vi.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-vi-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-tr_TR.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-tr_TR-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-sv_SE.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-sv_SE-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-sk.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-sk-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-ru.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-ru-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-pt_BR.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-pt_BR-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-pl.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-pl-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-nl_NL.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-nl_NL-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-nb.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-nb-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-lt.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-lt-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-ja.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-ja-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-it.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-it-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-hu.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-hu-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-hr_HR.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-hr_HR-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-fr.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-fr-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-fi.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-fi-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-fa_IR.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-fa_IR-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-et.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-et-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-es_MX.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-es_MX-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-es.js
@@ -8730,6 +9063,8 @@
 %%WWWDIR%%/Tasks/js/Tasks-lang-en-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-de.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-de-debug.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-da.js
+%%WWWDIR%%/Tasks/js/Tasks-lang-da-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-cs.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-cs-debug.js
 %%WWWDIR%%/Tasks/js/Tasks-lang-ca.js
@@ -8775,23 +9110,43 @@
 %%WWWDIR%%/Setup/translations/zh_TW.mo
 %%WWWDIR%%/Setup/translations/zh_CN.po
 %%WWWDIR%%/Setup/translations/zh_CN.mo
+%%WWWDIR%%/Setup/translations/vi.po
+%%WWWDIR%%/Setup/translations/vi.mo
+%%WWWDIR%%/Setup/translations/tr_TR.po
+%%WWWDIR%%/Setup/translations/tr_TR.mo
 %%WWWDIR%%/Setup/translations/template.pot
 %%WWWDIR%%/Setup/translations/sv_SE.po
 %%WWWDIR%%/Setup/translations/sv_SE.mo
+%%WWWDIR%%/Setup/translations/sk.po
+%%WWWDIR%%/Setup/translations/sk.mo
 %%WWWDIR%%/Setup/translations/ru.po
 %%WWWDIR%%/Setup/translations/ru.mo
+%%WWWDIR%%/Setup/translations/pt_BR.po
+%%WWWDIR%%/Setup/translations/pt_BR.mo
 %%WWWDIR%%/Setup/translations/pl.po
 %%WWWDIR%%/Setup/translations/pl.mo
+%%WWWDIR%%/Setup/translations/nl_NL.po
+%%WWWDIR%%/Setup/translations/nl_NL.mo
 %%WWWDIR%%/Setup/translations/nb.po
 %%WWWDIR%%/Setup/translations/nb.mo
+%%WWWDIR%%/Setup/translations/lt.po
+%%WWWDIR%%/Setup/translations/lt.mo
 %%WWWDIR%%/Setup/translations/ja.po
 %%WWWDIR%%/Setup/translations/ja.mo
 %%WWWDIR%%/Setup/translations/it.po
 %%WWWDIR%%/Setup/translations/it.mo
 %%WWWDIR%%/Setup/translations/hu.po
 %%WWWDIR%%/Setup/translations/hu.mo
+%%WWWDIR%%/Setup/translations/hr_HR.po
+%%WWWDIR%%/Setup/translations/hr_HR.mo
 %%WWWDIR%%/Setup/translations/fr.po
 %%WWWDIR%%/Setup/translations/fr.mo
+%%WWWDIR%%/Setup/translations/fi.po
+%%WWWDIR%%/Setup/translations/fi.mo
+%%WWWDIR%%/Setup/translations/fa_IR.po
+%%WWWDIR%%/Setup/translations/fa_IR.mo
+%%WWWDIR%%/Setup/translations/et.po
+%%WWWDIR%%/Setup/translations/et.mo
 %%WWWDIR%%/Setup/translations/es_MX.po
 %%WWWDIR%%/Setup/translations/es_MX.mo
 %%WWWDIR%%/Setup/translations/es.po
@@ -8800,6 +9155,8 @@
 %%WWWDIR%%/Setup/translations/en.mo
 %%WWWDIR%%/Setup/translations/de.po
 %%WWWDIR%%/Setup/translations/de.mo
+%%WWWDIR%%/Setup/translations/da.po
+%%WWWDIR%%/Setup/translations/da.mo
 %%WWWDIR%%/Setup/translations/cs.po
 %%WWWDIR%%/Setup/translations/cs.mo
 %%WWWDIR%%/Setup/translations/ca.po
@@ -8810,22 +9167,42 @@
 %%WWWDIR%%/Setup/js/Setup-lang-zh_TW-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-zh_CN.js
 %%WWWDIR%%/Setup/js/Setup-lang-zh_CN-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-vi.js
+%%WWWDIR%%/Setup/js/Setup-lang-vi-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-tr_TR.js
+%%WWWDIR%%/Setup/js/Setup-lang-tr_TR-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-sv_SE.js
 %%WWWDIR%%/Setup/js/Setup-lang-sv_SE-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-sk.js
+%%WWWDIR%%/Setup/js/Setup-lang-sk-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-ru.js
 %%WWWDIR%%/Setup/js/Setup-lang-ru-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-pt_BR.js
+%%WWWDIR%%/Setup/js/Setup-lang-pt_BR-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-pl.js
 %%WWWDIR%%/Setup/js/Setup-lang-pl-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-nl_NL.js
+%%WWWDIR%%/Setup/js/Setup-lang-nl_NL-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-nb.js
 %%WWWDIR%%/Setup/js/Setup-lang-nb-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-lt.js
+%%WWWDIR%%/Setup/js/Setup-lang-lt-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-ja.js
 %%WWWDIR%%/Setup/js/Setup-lang-ja-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-it.js
 %%WWWDIR%%/Setup/js/Setup-lang-it-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-hu.js
 %%WWWDIR%%/Setup/js/Setup-lang-hu-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-hr_HR.js
+%%WWWDIR%%/Setup/js/Setup-lang-hr_HR-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-fr.js
 %%WWWDIR%%/Setup/js/Setup-lang-fr-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-fi.js
+%%WWWDIR%%/Setup/js/Setup-lang-fi-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-fa_IR.js
+%%WWWDIR%%/Setup/js/Setup-lang-fa_IR-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-et.js
+%%WWWDIR%%/Setup/js/Setup-lang-et-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-es_MX.js
 %%WWWDIR%%/Setup/js/Setup-lang-es_MX-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-es.js
@@ -8834,6 +9211,8 @@
 %%WWWDIR%%/Setup/js/Setup-lang-en-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-de.js
 %%WWWDIR%%/Setup/js/Setup-lang-de-debug.js
+%%WWWDIR%%/Setup/js/Setup-lang-da.js
+%%WWWDIR%%/Setup/js/Setup-lang-da-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-cs.js
 %%WWWDIR%%/Setup/js/Setup-lang-cs-debug.js
 %%WWWDIR%%/Setup/js/Setup-lang-ca.js
@@ -8896,23 +9275,43 @@
 %%WWWDIR%%/Sales/translations/zh_TW.mo
 %%WWWDIR%%/Sales/translations/zh_CN.po
 %%WWWDIR%%/Sales/translations/zh_CN.mo
+%%WWWDIR%%/Sales/translations/vi.po
+%%WWWDIR%%/Sales/translations/vi.mo
+%%WWWDIR%%/Sales/translations/tr_TR.po
+%%WWWDIR%%/Sales/translations/tr_TR.mo
 %%WWWDIR%%/Sales/translations/template.pot
 %%WWWDIR%%/Sales/translations/sv_SE.po
 %%WWWDIR%%/Sales/translations/sv_SE.mo
+%%WWWDIR%%/Sales/translations/sk.po
+%%WWWDIR%%/Sales/translations/sk.mo
 %%WWWDIR%%/Sales/translations/ru.po
 %%WWWDIR%%/Sales/translations/ru.mo
+%%WWWDIR%%/Sales/translations/pt_BR.po
+%%WWWDIR%%/Sales/translations/pt_BR.mo
 %%WWWDIR%%/Sales/translations/pl.po
 %%WWWDIR%%/Sales/translations/pl.mo
+%%WWWDIR%%/Sales/translations/nl_NL.po
+%%WWWDIR%%/Sales/translations/nl_NL.mo
 %%WWWDIR%%/Sales/translations/nb.po
 %%WWWDIR%%/Sales/translations/nb.mo
+%%WWWDIR%%/Sales/translations/lt.po
+%%WWWDIR%%/Sales/translations/lt.mo
 %%WWWDIR%%/Sales/translations/ja.po
 %%WWWDIR%%/Sales/translations/ja.mo
 %%WWWDIR%%/Sales/translations/it.po
 %%WWWDIR%%/Sales/translations/it.mo
 %%WWWDIR%%/Sales/translations/hu.po
 %%WWWDIR%%/Sales/translations/hu.mo
+%%WWWDIR%%/Sales/translations/hr_HR.po
+%%WWWDIR%%/Sales/translations/hr_HR.mo
 %%WWWDIR%%/Sales/translations/fr.po
 %%WWWDIR%%/Sales/translations/fr.mo
+%%WWWDIR%%/Sales/translations/fi.po
+%%WWWDIR%%/Sales/translations/fi.mo
+%%WWWDIR%%/Sales/translations/fa_IR.po
+%%WWWDIR%%/Sales/translations/fa_IR.mo
+%%WWWDIR%%/Sales/translations/et.po
+%%WWWDIR%%/Sales/translations/et.mo
 %%WWWDIR%%/Sales/translations/es_MX.po
 %%WWWDIR%%/Sales/translations/es_MX.mo
 %%WWWDIR%%/Sales/translations/es.po
@@ -8921,6 +9320,8 @@
 %%WWWDIR%%/Sales/translations/en.mo
 %%WWWDIR%%/Sales/translations/de.po
 %%WWWDIR%%/Sales/translations/de.mo
+%%WWWDIR%%/Sales/translations/da.po
+%%WWWDIR%%/Sales/translations/da.mo
 %%WWWDIR%%/Sales/translations/cs.po
 %%WWWDIR%%/Sales/translations/cs.mo
 %%WWWDIR%%/Sales/translations/ca.po
@@ -8931,22 +9332,42 @@
 %%WWWDIR%%/Sales/js/Sales-lang-zh_TW-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-zh_CN.js
 %%WWWDIR%%/Sales/js/Sales-lang-zh_CN-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-vi.js
+%%WWWDIR%%/Sales/js/Sales-lang-vi-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-tr_TR.js
+%%WWWDIR%%/Sales/js/Sales-lang-tr_TR-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-sv_SE.js
 %%WWWDIR%%/Sales/js/Sales-lang-sv_SE-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-sk.js
+%%WWWDIR%%/Sales/js/Sales-lang-sk-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-ru.js
 %%WWWDIR%%/Sales/js/Sales-lang-ru-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-pt_BR.js
+%%WWWDIR%%/Sales/js/Sales-lang-pt_BR-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-pl.js
 %%WWWDIR%%/Sales/js/Sales-lang-pl-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-nl_NL.js
+%%WWWDIR%%/Sales/js/Sales-lang-nl_NL-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-nb.js
 %%WWWDIR%%/Sales/js/Sales-lang-nb-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-lt.js
+%%WWWDIR%%/Sales/js/Sales-lang-lt-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-ja.js
 %%WWWDIR%%/Sales/js/Sales-lang-ja-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-it.js
 %%WWWDIR%%/Sales/js/Sales-lang-it-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-hu.js
 %%WWWDIR%%/Sales/js/Sales-lang-hu-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-hr_HR.js
+%%WWWDIR%%/Sales/js/Sales-lang-hr_HR-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-fr.js
 %%WWWDIR%%/Sales/js/Sales-lang-fr-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-fi.js
+%%WWWDIR%%/Sales/js/Sales-lang-fi-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-fa_IR.js
+%%WWWDIR%%/Sales/js/Sales-lang-fa_IR-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-et.js
+%%WWWDIR%%/Sales/js/Sales-lang-et-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-es_MX.js
 %%WWWDIR%%/Sales/js/Sales-lang-es_MX-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-es.js
@@ -8955,6 +9376,8 @@
 %%WWWDIR%%/Sales/js/Sales-lang-en-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-de.js
 %%WWWDIR%%/Sales/js/Sales-lang-de-debug.js
+%%WWWDIR%%/Sales/js/Sales-lang-da.js
+%%WWWDIR%%/Sales/js/Sales-lang-da-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-cs.js
 %%WWWDIR%%/Sales/js/Sales-lang-cs-debug.js
 %%WWWDIR%%/Sales/js/Sales-lang-ca.js
@@ -8965,9 +9388,13 @@
 %%WWWDIR%%/Sales/js/Sales-FAT.js
 %%WWWDIR%%/Sales/js/Sales-FAT-debug.js.inc
 %%WWWDIR%%/Sales/js/Sales-FAT-debug.js
+%%WWWDIR%%/Sales/images/32x32/costcenter.png
+%%WWWDIR%%/Sales/images/22x22/costcenter.png
+%%WWWDIR%%/Sales/images/16x16/costcenter.png
 %%WWWDIR%%/Sales/css/Sales-FAT.css.inc
 %%WWWDIR%%/Sales/css/Sales-FAT.css
 %%WWWDIR%%/Sales/Setup/setup.xml
+%%WWWDIR%%/Sales/Setup/Update/Release6.php
 %%WWWDIR%%/Sales/Setup/Update/Release5.php
 %%WWWDIR%%/Sales/Setup/Update/Release4.php
 %%WWWDIR%%/Sales/Setup/Update/Release3.php
@@ -8975,19 +9402,31 @@
 %%WWWDIR%%/Sales/Setup/Update/Release0.php
 %%WWWDIR%%/Sales/Setup/Initialize.php
 %%WWWDIR%%/Sales/Sales.jsb2
+%%WWWDIR%%/Sales/Model/Status.php
 %%WWWDIR%%/Sales/Model/ProductFilter.php
 %%WWWDIR%%/Sales/Model/Product.php
 %%WWWDIR%%/Sales/Model/Number.php
+%%WWWDIR%%/Sales/Model/DivisionFilter.php
+%%WWWDIR%%/Sales/Model/Division.php
+%%WWWDIR%%/Sales/Model/CostCenterFilter.php
+%%WWWDIR%%/Sales/Model/CostCenter.php
 %%WWWDIR%%/Sales/Model/ContractFilter.php
 %%WWWDIR%%/Sales/Model/Contract.php
 %%WWWDIR%%/Sales/Model/Config.php
+%%WWWDIR%%/Sales/Model/Cleared.php
 %%WWWDIR%%/Sales/Frontend/Json.php
 %%WWWDIR%%/Sales/Frontend/Http.php
 %%WWWDIR%%/Sales/Exception/UnexpectedValue.php
 %%WWWDIR%%/Sales/Exception.php
 %%WWWDIR%%/Sales/Controller/Product.php
+%%WWWDIR%%/Sales/Controller/Division.php
+%%WWWDIR%%/Sales/Controller/CostCenter.php
 %%WWWDIR%%/Sales/Controller/Contract.php
+%%WWWDIR%%/Sales/Controller.php
+%%WWWDIR%%/Sales/Config.php
 %%WWWDIR%%/Sales/Backend/Number.php
+%%WWWDIR%%/Sales/Backend/Division.php
+%%WWWDIR%%/Sales/Backend/CostCenter.php
 %%WWWDIR%%/Sales/Backend/Contract.php
 %%WWWDIR%%/Sales/Acl/Rights.php
 %%WWWDIR%%/RELEASENOTES
@@ -8996,23 +9435,43 @@
 %%WWWDIR%%/Projects/translations/zh_TW.mo
 %%WWWDIR%%/Projects/translations/zh_CN.po
 %%WWWDIR%%/Projects/translations/zh_CN.mo
+%%WWWDIR%%/Projects/translations/vi.po
+%%WWWDIR%%/Projects/translations/vi.mo
+%%WWWDIR%%/Projects/translations/tr_TR.po
+%%WWWDIR%%/Projects/translations/tr_TR.mo
 %%WWWDIR%%/Projects/translations/template.pot
 %%WWWDIR%%/Projects/translations/sv_SE.po
 %%WWWDIR%%/Projects/translations/sv_SE.mo
+%%WWWDIR%%/Projects/translations/sk.po
+%%WWWDIR%%/Projects/translations/sk.mo
 %%WWWDIR%%/Projects/translations/ru.po
 %%WWWDIR%%/Projects/translations/ru.mo
+%%WWWDIR%%/Projects/translations/pt_BR.po
+%%WWWDIR%%/Projects/translations/pt_BR.mo
 %%WWWDIR%%/Projects/translations/pl.po
 %%WWWDIR%%/Projects/translations/pl.mo
+%%WWWDIR%%/Projects/translations/nl_NL.po
+%%WWWDIR%%/Projects/translations/nl_NL.mo
 %%WWWDIR%%/Projects/translations/nb.po
 %%WWWDIR%%/Projects/translations/nb.mo
+%%WWWDIR%%/Projects/translations/lt.po
+%%WWWDIR%%/Projects/translations/lt.mo
 %%WWWDIR%%/Projects/translations/ja.po
 %%WWWDIR%%/Projects/translations/ja.mo
 %%WWWDIR%%/Projects/translations/it.po
 %%WWWDIR%%/Projects/translations/it.mo
 %%WWWDIR%%/Projects/translations/hu.po
 %%WWWDIR%%/Projects/translations/hu.mo
+%%WWWDIR%%/Projects/translations/hr_HR.po
+%%WWWDIR%%/Projects/translations/hr_HR.mo
 %%WWWDIR%%/Projects/translations/fr.po
 %%WWWDIR%%/Projects/translations/fr.mo
+%%WWWDIR%%/Projects/translations/fi.po
+%%WWWDIR%%/Projects/translations/fi.mo
+%%WWWDIR%%/Projects/translations/fa_IR.po
+%%WWWDIR%%/Projects/translations/fa_IR.mo
+%%WWWDIR%%/Projects/translations/et.po
+%%WWWDIR%%/Projects/translations/et.mo
 %%WWWDIR%%/Projects/translations/es_MX.po
 %%WWWDIR%%/Projects/translations/es_MX.mo
 %%WWWDIR%%/Projects/translations/es.po
@@ -9021,6 +9480,8 @@
 %%WWWDIR%%/Projects/translations/en.mo
 %%WWWDIR%%/Projects/translations/de.po
 %%WWWDIR%%/Projects/translations/de.mo
+%%WWWDIR%%/Projects/translations/da.po
+%%WWWDIR%%/Projects/translations/da.mo
 %%WWWDIR%%/Projects/translations/cs.po
 %%WWWDIR%%/Projects/translations/cs.mo
 %%WWWDIR%%/Projects/translations/ca.po
@@ -9035,22 +9496,42 @@
 %%WWWDIR%%/Projects/js/Projects-lang-zh_TW-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-zh_CN.js
 %%WWWDIR%%/Projects/js/Projects-lang-zh_CN-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-vi.js
+%%WWWDIR%%/Projects/js/Projects-lang-vi-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-tr_TR.js
+%%WWWDIR%%/Projects/js/Projects-lang-tr_TR-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-sv_SE.js
 %%WWWDIR%%/Projects/js/Projects-lang-sv_SE-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-sk.js
+%%WWWDIR%%/Projects/js/Projects-lang-sk-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-ru.js
 %%WWWDIR%%/Projects/js/Projects-lang-ru-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-pt_BR.js
+%%WWWDIR%%/Projects/js/Projects-lang-pt_BR-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-pl.js
 %%WWWDIR%%/Projects/js/Projects-lang-pl-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-nl_NL.js
+%%WWWDIR%%/Projects/js/Projects-lang-nl_NL-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-nb.js
 %%WWWDIR%%/Projects/js/Projects-lang-nb-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-lt.js
+%%WWWDIR%%/Projects/js/Projects-lang-lt-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-ja.js
 %%WWWDIR%%/Projects/js/Projects-lang-ja-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-it.js
 %%WWWDIR%%/Projects/js/Projects-lang-it-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-hu.js
 %%WWWDIR%%/Projects/js/Projects-lang-hu-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-hr_HR.js
+%%WWWDIR%%/Projects/js/Projects-lang-hr_HR-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-fr.js
 %%WWWDIR%%/Projects/js/Projects-lang-fr-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-fi.js
+%%WWWDIR%%/Projects/js/Projects-lang-fi-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-fa_IR.js
+%%WWWDIR%%/Projects/js/Projects-lang-fa_IR-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-et.js
+%%WWWDIR%%/Projects/js/Projects-lang-et-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-es_MX.js
 %%WWWDIR%%/Projects/js/Projects-lang-es_MX-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-es.js
@@ -9059,6 +9540,8 @@
 %%WWWDIR%%/Projects/js/Projects-lang-en-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-de.js
 %%WWWDIR%%/Projects/js/Projects-lang-de-debug.js
+%%WWWDIR%%/Projects/js/Projects-lang-da.js
+%%WWWDIR%%/Projects/js/Projects-lang-da-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-cs.js
 %%WWWDIR%%/Projects/js/Projects-lang-cs-debug.js
 %%WWWDIR%%/Projects/js/Projects-lang-ca.js
@@ -9072,6 +9555,8 @@
 %%WWWDIR%%/Projects/css/Projects-FAT.css.inc
 %%WWWDIR%%/Projects/css/Projects-FAT.css
 %%WWWDIR%%/Projects/Setup/setup.xml
+%%WWWDIR%%/Projects/Setup/Update/Release6.php
+%%WWWDIR%%/Projects/Setup/Update/Release5.php
 %%WWWDIR%%/Projects/Setup/Update/Release1.php
 %%WWWDIR%%/Projects/Setup/Initialize.php
 %%WWWDIR%%/Projects/Projects.jsb2
@@ -9094,23 +9579,43 @@
 %%WWWDIR%%/Filemanager/translations/zh_TW.mo
 %%WWWDIR%%/Filemanager/translations/zh_CN.po
 %%WWWDIR%%/Filemanager/translations/zh_CN.mo
+%%WWWDIR%%/Filemanager/translations/vi.po
+%%WWWDIR%%/Filemanager/translations/vi.mo
+%%WWWDIR%%/Filemanager/translations/tr_TR.po
+%%WWWDIR%%/Filemanager/translations/tr_TR.mo
 %%WWWDIR%%/Filemanager/translations/template.pot
 %%WWWDIR%%/Filemanager/translations/sv_SE.po
 %%WWWDIR%%/Filemanager/translations/sv_SE.mo
+%%WWWDIR%%/Filemanager/translations/sk.po
+%%WWWDIR%%/Filemanager/translations/sk.mo
 %%WWWDIR%%/Filemanager/translations/ru.po
 %%WWWDIR%%/Filemanager/translations/ru.mo
+%%WWWDIR%%/Filemanager/translations/pt_BR.po
+%%WWWDIR%%/Filemanager/translations/pt_BR.mo
 %%WWWDIR%%/Filemanager/translations/pl.po
 %%WWWDIR%%/Filemanager/translations/pl.mo
+%%WWWDIR%%/Filemanager/translations/nl_NL.po
+%%WWWDIR%%/Filemanager/translations/nl_NL.mo
 %%WWWDIR%%/Filemanager/translations/nb.po
 %%WWWDIR%%/Filemanager/translations/nb.mo
+%%WWWDIR%%/Filemanager/translations/lt.po
+%%WWWDIR%%/Filemanager/translations/lt.mo
 %%WWWDIR%%/Filemanager/translations/ja.po
 %%WWWDIR%%/Filemanager/translations/ja.mo
 %%WWWDIR%%/Filemanager/translations/it.po
 %%WWWDIR%%/Filemanager/translations/it.mo
 %%WWWDIR%%/Filemanager/translations/hu.po
 %%WWWDIR%%/Filemanager/translations/hu.mo
+%%WWWDIR%%/Filemanager/translations/hr_HR.po
+%%WWWDIR%%/Filemanager/translations/hr_HR.mo
 %%WWWDIR%%/Filemanager/translations/fr.po
 %%WWWDIR%%/Filemanager/translations/fr.mo
+%%WWWDIR%%/Filemanager/translations/fi.po
+%%WWWDIR%%/Filemanager/translations/fi.mo
+%%WWWDIR%%/Filemanager/translations/fa_IR.po
+%%WWWDIR%%/Filemanager/translations/fa_IR.mo
+%%WWWDIR%%/Filemanager/translations/et.po
+%%WWWDIR%%/Filemanager/translations/et.mo
 %%WWWDIR%%/Filemanager/translations/es_MX.po
 %%WWWDIR%%/Filemanager/translations/es_MX.mo
 %%WWWDIR%%/Filemanager/translations/es.po
@@ -9119,6 +9624,8 @@
 %%WWWDIR%%/Filemanager/translations/en.mo
 %%WWWDIR%%/Filemanager/translations/de.po
 %%WWWDIR%%/Filemanager/translations/de.mo
+%%WWWDIR%%/Filemanager/translations/da.po
+%%WWWDIR%%/Filemanager/translations/da.mo
 %%WWWDIR%%/Filemanager/translations/cs.po
 %%WWWDIR%%/Filemanager/translations/cs.mo
 %%WWWDIR%%/Filemanager/translations/ca.po
@@ -9129,22 +9636,42 @@
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-zh_TW-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-zh_CN.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-zh_CN-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-vi.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-vi-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-tr_TR.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-tr_TR-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-sv_SE.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-sv_SE-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-sk.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-sk-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-ru.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-ru-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-pt_BR.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-pt_BR-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-pl.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-pl-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-nl_NL.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-nl_NL-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-nb.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-nb-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-lt.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-lt-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-ja.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-ja-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-it.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-it-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-hu.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-hu-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-hr_HR.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-hr_HR-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-fr.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-fr-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-fi.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-fi-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-fa_IR.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-fa_IR-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-et.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-et-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-es_MX.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-es_MX-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-es.js
@@ -9153,6 +9680,8 @@
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-en-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-de.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-de-debug.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-da.js
+%%WWWDIR%%/Filemanager/js/Filemanager-lang-da-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-cs.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-cs-debug.js
 %%WWWDIR%%/Filemanager/js/Filemanager-lang-ca.js
@@ -9166,10 +9695,12 @@
 %%WWWDIR%%/Filemanager/css/Filemanager-FAT.css.inc
 %%WWWDIR%%/Filemanager/css/Filemanager-FAT.css
 %%WWWDIR%%/Filemanager/Setup/setup.xml
+%%WWWDIR%%/Filemanager/Setup/Update/Release6.php
+%%WWWDIR%%/Filemanager/Setup/Update/Release5.php
 %%WWWDIR%%/Filemanager/Setup/Update/Release4.php
 %%WWWDIR%%/Filemanager/Setup/Update/Release3.php
 %%WWWDIR%%/Filemanager/Setup/Initialize.php
-%%WWWDIR%%/Filemanager/Frontend/WebDAV/Node.php
+%%WWWDIR%%/Filemanager/Model/Node.php
 %%WWWDIR%%/Filemanager/Frontend/WebDAV/File.php
 %%WWWDIR%%/Filemanager/Frontend/WebDAV/Directory.php
 %%WWWDIR%%/Filemanager/Frontend/WebDAV/Container.php
@@ -9187,23 +9718,43 @@
 %%WWWDIR%%/Felamimail/translations/zh_TW.mo
 %%WWWDIR%%/Felamimail/translations/zh_CN.po
 %%WWWDIR%%/Felamimail/translations/zh_CN.mo
+%%WWWDIR%%/Felamimail/translations/vi.po
+%%WWWDIR%%/Felamimail/translations/vi.mo
+%%WWWDIR%%/Felamimail/translations/tr_TR.po
+%%WWWDIR%%/Felamimail/translations/tr_TR.mo
 %%WWWDIR%%/Felamimail/translations/template.pot
 %%WWWDIR%%/Felamimail/translations/sv_SE.po
 %%WWWDIR%%/Felamimail/translations/sv_SE.mo
+%%WWWDIR%%/Felamimail/translations/sk.po
+%%WWWDIR%%/Felamimail/translations/sk.mo
 %%WWWDIR%%/Felamimail/translations/ru.po
 %%WWWDIR%%/Felamimail/translations/ru.mo
+%%WWWDIR%%/Felamimail/translations/pt_BR.po
+%%WWWDIR%%/Felamimail/translations/pt_BR.mo
 %%WWWDIR%%/Felamimail/translations/pl.po
 %%WWWDIR%%/Felamimail/translations/pl.mo
+%%WWWDIR%%/Felamimail/translations/nl_NL.po
+%%WWWDIR%%/Felamimail/translations/nl_NL.mo
 %%WWWDIR%%/Felamimail/translations/nb.po
 %%WWWDIR%%/Felamimail/translations/nb.mo
+%%WWWDIR%%/Felamimail/translations/lt.po
+%%WWWDIR%%/Felamimail/translations/lt.mo
 %%WWWDIR%%/Felamimail/translations/ja.po
 %%WWWDIR%%/Felamimail/translations/ja.mo
 %%WWWDIR%%/Felamimail/translations/it.po
 %%WWWDIR%%/Felamimail/translations/it.mo
 %%WWWDIR%%/Felamimail/translations/hu.po
 %%WWWDIR%%/Felamimail/translations/hu.mo
+%%WWWDIR%%/Felamimail/translations/hr_HR.po
+%%WWWDIR%%/Felamimail/translations/hr_HR.mo
 %%WWWDIR%%/Felamimail/translations/fr.po
 %%WWWDIR%%/Felamimail/translations/fr.mo
+%%WWWDIR%%/Felamimail/translations/fi.po
+%%WWWDIR%%/Felamimail/translations/fi.mo
+%%WWWDIR%%/Felamimail/translations/fa_IR.po
+%%WWWDIR%%/Felamimail/translations/fa_IR.mo
+%%WWWDIR%%/Felamimail/translations/et.po
+%%WWWDIR%%/Felamimail/translations/et.mo
 %%WWWDIR%%/Felamimail/translations/es_MX.po
 %%WWWDIR%%/Felamimail/translations/es_MX.mo
 %%WWWDIR%%/Felamimail/translations/es.po
@@ -9212,6 +9763,8 @@
 %%WWWDIR%%/Felamimail/translations/en.mo
 %%WWWDIR%%/Felamimail/translations/de.po
 %%WWWDIR%%/Felamimail/translations/de.mo
+%%WWWDIR%%/Felamimail/translations/da.po
+%%WWWDIR%%/Felamimail/translations/da.mo
 %%WWWDIR%%/Felamimail/translations/cs.po
 %%WWWDIR%%/Felamimail/translations/cs.mo
 %%WWWDIR%%/Felamimail/translations/ca.po
@@ -9222,22 +9775,42 @@
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-zh_TW-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-zh_CN.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-zh_CN-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-vi.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-vi-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-tr_TR.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-tr_TR-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-sv_SE.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-sv_SE-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-sk.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-sk-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-ru.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-ru-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-pt_BR.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-pt_BR-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-pl.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-pl-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-nl_NL.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-nl_NL-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-nb.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-nb-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-lt.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-lt-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-ja.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-ja-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-it.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-it-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-hu.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-hu-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-hr_HR.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-hr_HR-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-fr.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-fr-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-fi.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-fi-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-fa_IR.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-fa_IR-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-et.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-et-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-es_MX.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-es_MX-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-es.js
@@ -9246,6 +9819,8 @@
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-en-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-de.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-de-debug.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-da.js
+%%WWWDIR%%/Felamimail/js/Felamimail-lang-da-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-cs.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-cs-debug.js
 %%WWWDIR%%/Felamimail/js/Felamimail-lang-ca.js
@@ -9267,6 +9842,7 @@
 %%WWWDIR%%/Felamimail/Sieve/Backend/Script.php
 %%WWWDIR%%/Felamimail/Sieve/Backend/Abstract.php
 %%WWWDIR%%/Felamimail/Setup/setup.xml
+%%WWWDIR%%/Felamimail/Setup/Update/Release6.php
 %%WWWDIR%%/Felamimail/Setup/Update/Release5.php
 %%WWWDIR%%/Felamimail/Setup/Update/Release4.php
 %%WWWDIR%%/Felamimail/Setup/Update/Release3.php
@@ -9286,6 +9862,10 @@
 %%WWWDIR%%/Felamimail/Model/Account.php
 %%WWWDIR%%/Felamimail/Message.php
 %%WWWDIR%%/Felamimail/HTMLPurifier/AttrTransform/AValidator.php
+%%WWWDIR%%/Felamimail/Frontend/WebDAV/File.php
+%%WWWDIR%%/Felamimail/Frontend/WebDAV/Directory.php
+%%WWWDIR%%/Felamimail/Frontend/WebDAV/Container.php
+%%WWWDIR%%/Felamimail/Frontend/WebDAV.php
 %%WWWDIR%%/Felamimail/Frontend/Json.php
 %%WWWDIR%%/Felamimail/Frontend/Http.php
 %%WWWDIR%%/Felamimail/Felamimail.jsb2
@@ -9308,6 +9888,7 @@
 %%WWWDIR%%/Felamimail/Controller/Cache/Folder.php
 %%WWWDIR%%/Felamimail/Controller/Account.php
 %%WWWDIR%%/Felamimail/Controller.php
+%%WWWDIR%%/Felamimail/Config.php
 %%WWWDIR%%/Felamimail/Backend/SieveFactory.php
 %%WWWDIR%%/Felamimail/Backend/Sieve.php
 %%WWWDIR%%/Felamimail/Backend/ImapProxy.php
@@ -9323,23 +9904,43 @@
 %%WWWDIR%%/Crm/translations/zh_TW.mo
 %%WWWDIR%%/Crm/translations/zh_CN.po
 %%WWWDIR%%/Crm/translations/zh_CN.mo
+%%WWWDIR%%/Crm/translations/vi.po
+%%WWWDIR%%/Crm/translations/vi.mo
+%%WWWDIR%%/Crm/translations/tr_TR.po
+%%WWWDIR%%/Crm/translations/tr_TR.mo
 %%WWWDIR%%/Crm/translations/template.pot
 %%WWWDIR%%/Crm/translations/sv_SE.po
 %%WWWDIR%%/Crm/translations/sv_SE.mo
+%%WWWDIR%%/Crm/translations/sk.po
+%%WWWDIR%%/Crm/translations/sk.mo
 %%WWWDIR%%/Crm/translations/ru.po
 %%WWWDIR%%/Crm/translations/ru.mo
+%%WWWDIR%%/Crm/translations/pt_BR.po
+%%WWWDIR%%/Crm/translations/pt_BR.mo
 %%WWWDIR%%/Crm/translations/pl.po
 %%WWWDIR%%/Crm/translations/pl.mo
+%%WWWDIR%%/Crm/translations/nl_NL.po
+%%WWWDIR%%/Crm/translations/nl_NL.mo
 %%WWWDIR%%/Crm/translations/nb.po
 %%WWWDIR%%/Crm/translations/nb.mo
+%%WWWDIR%%/Crm/translations/lt.po
+%%WWWDIR%%/Crm/translations/lt.mo
 %%WWWDIR%%/Crm/translations/ja.po
 %%WWWDIR%%/Crm/translations/ja.mo
 %%WWWDIR%%/Crm/translations/it.po
 %%WWWDIR%%/Crm/translations/it.mo
 %%WWWDIR%%/Crm/translations/hu.po
 %%WWWDIR%%/Crm/translations/hu.mo
+%%WWWDIR%%/Crm/translations/hr_HR.po
+%%WWWDIR%%/Crm/translations/hr_HR.mo
 %%WWWDIR%%/Crm/translations/fr.po
 %%WWWDIR%%/Crm/translations/fr.mo
+%%WWWDIR%%/Crm/translations/fi.po
+%%WWWDIR%%/Crm/translations/fi.mo
+%%WWWDIR%%/Crm/translations/fa_IR.po
+%%WWWDIR%%/Crm/translations/fa_IR.mo
+%%WWWDIR%%/Crm/translations/et.po
+%%WWWDIR%%/Crm/translations/et.mo
 %%WWWDIR%%/Crm/translations/es_MX.po
 %%WWWDIR%%/Crm/translations/es_MX.mo
 %%WWWDIR%%/Crm/translations/es.po
@@ -9348,6 +9949,8 @@
 %%WWWDIR%%/Crm/translations/en.mo
 %%WWWDIR%%/Crm/translations/de.po
 %%WWWDIR%%/Crm/translations/de.mo
+%%WWWDIR%%/Crm/translations/da.po
+%%WWWDIR%%/Crm/translations/da.mo
 %%WWWDIR%%/Crm/translations/cs.po
 %%WWWDIR%%/Crm/translations/cs.mo
 %%WWWDIR%%/Crm/translations/ca.po
@@ -9358,22 +9961,42 @@
 %%WWWDIR%%/Crm/js/Crm-lang-zh_TW-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-zh_CN.js
 %%WWWDIR%%/Crm/js/Crm-lang-zh_CN-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-vi.js
+%%WWWDIR%%/Crm/js/Crm-lang-vi-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-tr_TR.js
+%%WWWDIR%%/Crm/js/Crm-lang-tr_TR-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-sv_SE.js
 %%WWWDIR%%/Crm/js/Crm-lang-sv_SE-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-sk.js
+%%WWWDIR%%/Crm/js/Crm-lang-sk-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-ru.js
 %%WWWDIR%%/Crm/js/Crm-lang-ru-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-pt_BR.js
+%%WWWDIR%%/Crm/js/Crm-lang-pt_BR-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-pl.js
 %%WWWDIR%%/Crm/js/Crm-lang-pl-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-nl_NL.js
+%%WWWDIR%%/Crm/js/Crm-lang-nl_NL-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-nb.js
 %%WWWDIR%%/Crm/js/Crm-lang-nb-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-lt.js
+%%WWWDIR%%/Crm/js/Crm-lang-lt-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-ja.js
 %%WWWDIR%%/Crm/js/Crm-lang-ja-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-it.js
 %%WWWDIR%%/Crm/js/Crm-lang-it-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-hu.js
 %%WWWDIR%%/Crm/js/Crm-lang-hu-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-hr_HR.js
+%%WWWDIR%%/Crm/js/Crm-lang-hr_HR-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-fr.js
 %%WWWDIR%%/Crm/js/Crm-lang-fr-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-fi.js
+%%WWWDIR%%/Crm/js/Crm-lang-fi-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-fa_IR.js
+%%WWWDIR%%/Crm/js/Crm-lang-fa_IR-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-et.js
+%%WWWDIR%%/Crm/js/Crm-lang-et-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-es_MX.js
 %%WWWDIR%%/Crm/js/Crm-lang-es_MX-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-es.js
@@ -9382,6 +10005,8 @@
 %%WWWDIR%%/Crm/js/Crm-lang-en-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-de.js
 %%WWWDIR%%/Crm/js/Crm-lang-de-debug.js
+%%WWWDIR%%/Crm/js/Crm-lang-da.js
+%%WWWDIR%%/Crm/js/Crm-lang-da-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-cs.js
 %%WWWDIR%%/Crm/js/Crm-lang-cs-debug.js
 %%WWWDIR%%/Crm/js/Crm-lang-ca.js
@@ -9395,6 +10020,7 @@
 %%WWWDIR%%/Crm/css/Crm-FAT.css.inc
 %%WWWDIR%%/Crm/css/Crm-FAT.css
 %%WWWDIR%%/Crm/Setup/setup.xml
+%%WWWDIR%%/Crm/Setup/Update/Release6.php
 %%WWWDIR%%/Crm/Setup/Update/Release5.php
 %%WWWDIR%%/Crm/Setup/Update/Release4.php
 %%WWWDIR%%/Crm/Setup/Update/Release3.php
@@ -9434,23 +10060,43 @@
 %%WWWDIR%%/Calendar/translations/zh_TW.mo
 %%WWWDIR%%/Calendar/translations/zh_CN.po
 %%WWWDIR%%/Calendar/translations/zh_CN.mo
+%%WWWDIR%%/Calendar/translations/vi.po
+%%WWWDIR%%/Calendar/translations/vi.mo
+%%WWWDIR%%/Calendar/translations/tr_TR.po
+%%WWWDIR%%/Calendar/translations/tr_TR.mo
 %%WWWDIR%%/Calendar/translations/template.pot
 %%WWWDIR%%/Calendar/translations/sv_SE.po
 %%WWWDIR%%/Calendar/translations/sv_SE.mo
+%%WWWDIR%%/Calendar/translations/sk.po
+%%WWWDIR%%/Calendar/translations/sk.mo
 %%WWWDIR%%/Calendar/translations/ru.po
 %%WWWDIR%%/Calendar/translations/ru.mo
+%%WWWDIR%%/Calendar/translations/pt_BR.po
+%%WWWDIR%%/Calendar/translations/pt_BR.mo
 %%WWWDIR%%/Calendar/translations/pl.po
 %%WWWDIR%%/Calendar/translations/pl.mo
+%%WWWDIR%%/Calendar/translations/nl_NL.po
+%%WWWDIR%%/Calendar/translations/nl_NL.mo
 %%WWWDIR%%/Calendar/translations/nb.po
 %%WWWDIR%%/Calendar/translations/nb.mo
+%%WWWDIR%%/Calendar/translations/lt.po
+%%WWWDIR%%/Calendar/translations/lt.mo
 %%WWWDIR%%/Calendar/translations/ja.po
 %%WWWDIR%%/Calendar/translations/ja.mo
 %%WWWDIR%%/Calendar/translations/it.po
 %%WWWDIR%%/Calendar/translations/it.mo
 %%WWWDIR%%/Calendar/translations/hu.po
 %%WWWDIR%%/Calendar/translations/hu.mo
+%%WWWDIR%%/Calendar/translations/hr_HR.po
+%%WWWDIR%%/Calendar/translations/hr_HR.mo
 %%WWWDIR%%/Calendar/translations/fr.po
 %%WWWDIR%%/Calendar/translations/fr.mo
+%%WWWDIR%%/Calendar/translations/fi.po
+%%WWWDIR%%/Calendar/translations/fi.mo
+%%WWWDIR%%/Calendar/translations/fa_IR.po
+%%WWWDIR%%/Calendar/translations/fa_IR.mo
+%%WWWDIR%%/Calendar/translations/et.po
+%%WWWDIR%%/Calendar/translations/et.mo
 %%WWWDIR%%/Calendar/translations/es_MX.po
 %%WWWDIR%%/Calendar/translations/es_MX.mo
 %%WWWDIR%%/Calendar/translations/es.po
@@ -9459,6 +10105,8 @@
 %%WWWDIR%%/Calendar/translations/en.mo
 %%WWWDIR%%/Calendar/translations/de.po
 %%WWWDIR%%/Calendar/translations/de.mo
+%%WWWDIR%%/Calendar/translations/da.po
+%%WWWDIR%%/Calendar/translations/da.mo
 %%WWWDIR%%/Calendar/translations/cs.po
 %%WWWDIR%%/Calendar/translations/cs.mo
 %%WWWDIR%%/Calendar/translations/ca.po
@@ -9469,22 +10117,42 @@
 %%WWWDIR%%/Calendar/js/Calendar-lang-zh_TW-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-zh_CN.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-zh_CN-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-vi.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-vi-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-tr_TR.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-tr_TR-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-sv_SE.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-sv_SE-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-sk.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-sk-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-ru.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-ru-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-pt_BR.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-pt_BR-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-pl.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-pl-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-nl_NL.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-nl_NL-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-nb.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-nb-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-lt.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-lt-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-ja.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-ja-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-it.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-it-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-hu.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-hu-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-hr_HR.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-hr_HR-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-fr.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-fr-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-fi.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-fi-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-fa_IR.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-fa_IR-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-et.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-et-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-es_MX.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-es_MX-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-es.js
@@ -9493,6 +10161,8 @@
 %%WWWDIR%%/Calendar/js/Calendar-lang-en-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-de.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-de-debug.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-da.js
+%%WWWDIR%%/Calendar/js/Calendar-lang-da-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-cs.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-cs-debug.js
 %%WWWDIR%%/Calendar/js/Calendar-lang-ca.js
@@ -9507,6 +10177,7 @@
 %%WWWDIR%%/Calendar/css/Calendar-FAT.css.inc
 %%WWWDIR%%/Calendar/css/Calendar-FAT.css
 %%WWWDIR%%/Calendar/Setup/setup.xml
+%%WWWDIR%%/Calendar/Setup/Update/Release6.php
 %%WWWDIR%%/Calendar/Setup/Update/Release5.php
 %%WWWDIR%%/Calendar/Setup/Update/Release4.php
 %%WWWDIR%%/Calendar/Setup/Update/Release3.php
@@ -9514,6 +10185,7 @@
 %%WWWDIR%%/Calendar/Setup/Update/Release0.php
 %%WWWDIR%%/Calendar/Setup/Initialize.php
 %%WWWDIR%%/Calendar/Setup/Import/Egw14.php
+%%WWWDIR%%/Calendar/Setup/DemoData.php
 %%WWWDIR%%/Calendar/Preference.php
 %%WWWDIR%%/Calendar/Model/iMIP.php
 %%WWWDIR%%/Calendar/Model/Rrule.php
@@ -9562,6 +10234,7 @@
 %%WWWDIR%%/Calendar/Controller/MSEventFacade.php
 %%WWWDIR%%/Calendar/Controller/EventNotifications.php
 %%WWWDIR%%/Calendar/Controller/Event.php
+%%WWWDIR%%/Calendar/Controller/Alarm.php
 %%WWWDIR%%/Calendar/Controller.php
 %%WWWDIR%%/Calendar/Config.php
 %%WWWDIR%%/Calendar/Calendar.jsb2
@@ -9569,27 +10242,48 @@
 %%WWWDIR%%/Calendar/Backend/Sql/Attendee.php
 %%WWWDIR%%/Calendar/Backend/Sql.php
 %%WWWDIR%%/Calendar/Acl/Rights.php
+%%WWWDIR%%/CREDITS
 %%WWWDIR%%/Admin/translations/zh_TW.po
 %%WWWDIR%%/Admin/translations/zh_TW.mo
 %%WWWDIR%%/Admin/translations/zh_CN.po
 %%WWWDIR%%/Admin/translations/zh_CN.mo
+%%WWWDIR%%/Admin/translations/vi.po
+%%WWWDIR%%/Admin/translations/vi.mo
+%%WWWDIR%%/Admin/translations/tr_TR.po
+%%WWWDIR%%/Admin/translations/tr_TR.mo
 %%WWWDIR%%/Admin/translations/template.pot
 %%WWWDIR%%/Admin/translations/sv_SE.po
 %%WWWDIR%%/Admin/translations/sv_SE.mo
+%%WWWDIR%%/Admin/translations/sk.po
+%%WWWDIR%%/Admin/translations/sk.mo
 %%WWWDIR%%/Admin/translations/ru.po
 %%WWWDIR%%/Admin/translations/ru.mo
+%%WWWDIR%%/Admin/translations/pt_BR.po
+%%WWWDIR%%/Admin/translations/pt_BR.mo
 %%WWWDIR%%/Admin/translations/pl.po
 %%WWWDIR%%/Admin/translations/pl.mo
+%%WWWDIR%%/Admin/translations/nl_NL.po
+%%WWWDIR%%/Admin/translations/nl_NL.mo
 %%WWWDIR%%/Admin/translations/nb.po
 %%WWWDIR%%/Admin/translations/nb.mo
+%%WWWDIR%%/Admin/translations/lt.po
+%%WWWDIR%%/Admin/translations/lt.mo
 %%WWWDIR%%/Admin/translations/ja.po
 %%WWWDIR%%/Admin/translations/ja.mo
 %%WWWDIR%%/Admin/translations/it.po
 %%WWWDIR%%/Admin/translations/it.mo
 %%WWWDIR%%/Admin/translations/hu.po
 %%WWWDIR%%/Admin/translations/hu.mo
+%%WWWDIR%%/Admin/translations/hr_HR.po
+%%WWWDIR%%/Admin/translations/hr_HR.mo
 %%WWWDIR%%/Admin/translations/fr.po
 %%WWWDIR%%/Admin/translations/fr.mo
+%%WWWDIR%%/Admin/translations/fi.po
+%%WWWDIR%%/Admin/translations/fi.mo
+%%WWWDIR%%/Admin/translations/fa_IR.po
+%%WWWDIR%%/Admin/translations/fa_IR.mo
+%%WWWDIR%%/Admin/translations/et.po
+%%WWWDIR%%/Admin/translations/et.mo
 %%WWWDIR%%/Admin/translations/es_MX.po
 %%WWWDIR%%/Admin/translations/es_MX.mo
 %%WWWDIR%%/Admin/translations/es.po
@@ -9598,6 +10292,8 @@
 %%WWWDIR%%/Admin/translations/en.mo
 %%WWWDIR%%/Admin/translations/de.po
 %%WWWDIR%%/Admin/translations/de.mo
+%%WWWDIR%%/Admin/translations/da.po
+%%WWWDIR%%/Admin/translations/da.mo
 %%WWWDIR%%/Admin/translations/cs.po
 %%WWWDIR%%/Admin/translations/cs.mo
 %%WWWDIR%%/Admin/translations/ca.po
@@ -9608,22 +10304,42 @@
 %%WWWDIR%%/Admin/js/Admin-lang-zh_TW-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-zh_CN.js
 %%WWWDIR%%/Admin/js/Admin-lang-zh_CN-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-vi.js
+%%WWWDIR%%/Admin/js/Admin-lang-vi-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-tr_TR.js
+%%WWWDIR%%/Admin/js/Admin-lang-tr_TR-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-sv_SE.js
 %%WWWDIR%%/Admin/js/Admin-lang-sv_SE-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-sk.js
+%%WWWDIR%%/Admin/js/Admin-lang-sk-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-ru.js
 %%WWWDIR%%/Admin/js/Admin-lang-ru-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-pt_BR.js
+%%WWWDIR%%/Admin/js/Admin-lang-pt_BR-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-pl.js
 %%WWWDIR%%/Admin/js/Admin-lang-pl-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-nl_NL.js
+%%WWWDIR%%/Admin/js/Admin-lang-nl_NL-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-nb.js
 %%WWWDIR%%/Admin/js/Admin-lang-nb-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-lt.js
+%%WWWDIR%%/Admin/js/Admin-lang-lt-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-ja.js
 %%WWWDIR%%/Admin/js/Admin-lang-ja-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-it.js
 %%WWWDIR%%/Admin/js/Admin-lang-it-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-hu.js
 %%WWWDIR%%/Admin/js/Admin-lang-hu-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-hr_HR.js
+%%WWWDIR%%/Admin/js/Admin-lang-hr_HR-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-fr.js
 %%WWWDIR%%/Admin/js/Admin-lang-fr-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-fi.js
+%%WWWDIR%%/Admin/js/Admin-lang-fi-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-fa_IR.js
+%%WWWDIR%%/Admin/js/Admin-lang-fa_IR-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-et.js
+%%WWWDIR%%/Admin/js/Admin-lang-et-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-es_MX.js
 %%WWWDIR%%/Admin/js/Admin-lang-es_MX-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-es.js
@@ -9632,6 +10348,8 @@
 %%WWWDIR%%/Admin/js/Admin-lang-en-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-de.js
 %%WWWDIR%%/Admin/js/Admin-lang-de-debug.js
+%%WWWDIR%%/Admin/js/Admin-lang-da.js
+%%WWWDIR%%/Admin/js/Admin-lang-da-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-cs.js
 %%WWWDIR%%/Admin/js/Admin-lang-cs-debug.js
 %%WWWDIR%%/Admin/js/Admin-lang-ca.js
@@ -9645,11 +10363,13 @@
 %%WWWDIR%%/Admin/css/Admin-FAT.css.inc
 %%WWWDIR%%/Admin/css/Admin-FAT.css
 %%WWWDIR%%/Admin/Setup/setup.xml
+%%WWWDIR%%/Admin/Setup/Update/Release5.php
 %%WWWDIR%%/Admin/Setup/Update/Release4.php
 %%WWWDIR%%/Admin/Setup/Update/Release3.php
 %%WWWDIR%%/Admin/Setup/Update/Release2.php
 %%WWWDIR%%/Admin/Setup/Update/Release0.php
 %%WWWDIR%%/Admin/Setup/Initialize.php
+%%WWWDIR%%/Admin/Setup/DemoData.php
 %%WWWDIR%%/Admin/Model/SambaMachineFilter.php
 %%WWWDIR%%/Admin/Model/SambaMachine.php
 %%WWWDIR%%/Admin/Model/Config.php
@@ -9686,23 +10406,43 @@
 %%WWWDIR%%/Addressbook/translations/zh_TW.mo
 %%WWWDIR%%/Addressbook/translations/zh_CN.po
 %%WWWDIR%%/Addressbook/translations/zh_CN.mo
+%%WWWDIR%%/Addressbook/translations/vi.po
+%%WWWDIR%%/Addressbook/translations/vi.mo
+%%WWWDIR%%/Addressbook/translations/tr_TR.po
+%%WWWDIR%%/Addressbook/translations/tr_TR.mo
 %%WWWDIR%%/Addressbook/translations/template.pot
 %%WWWDIR%%/Addressbook/translations/sv_SE.po
 %%WWWDIR%%/Addressbook/translations/sv_SE.mo
+%%WWWDIR%%/Addressbook/translations/sk.po
+%%WWWDIR%%/Addressbook/translations/sk.mo
 %%WWWDIR%%/Addressbook/translations/ru.po
 %%WWWDIR%%/Addressbook/translations/ru.mo
+%%WWWDIR%%/Addressbook/translations/pt_BR.po
+%%WWWDIR%%/Addressbook/translations/pt_BR.mo
 %%WWWDIR%%/Addressbook/translations/pl.po
 %%WWWDIR%%/Addressbook/translations/pl.mo
+%%WWWDIR%%/Addressbook/translations/nl_NL.po
+%%WWWDIR%%/Addressbook/translations/nl_NL.mo
 %%WWWDIR%%/Addressbook/translations/nb.po
 %%WWWDIR%%/Addressbook/translations/nb.mo
+%%WWWDIR%%/Addressbook/translations/lt.po
+%%WWWDIR%%/Addressbook/translations/lt.mo
 %%WWWDIR%%/Addressbook/translations/ja.po
 %%WWWDIR%%/Addressbook/translations/ja.mo
 %%WWWDIR%%/Addressbook/translations/it.po
 %%WWWDIR%%/Addressbook/translations/it.mo
 %%WWWDIR%%/Addressbook/translations/hu.po
 %%WWWDIR%%/Addressbook/translations/hu.mo
+%%WWWDIR%%/Addressbook/translations/hr_HR.po
+%%WWWDIR%%/Addressbook/translations/hr_HR.mo
 %%WWWDIR%%/Addressbook/translations/fr.po
 %%WWWDIR%%/Addressbook/translations/fr.mo
+%%WWWDIR%%/Addressbook/translations/fi.po
+%%WWWDIR%%/Addressbook/translations/fi.mo
+%%WWWDIR%%/Addressbook/translations/fa_IR.po
+%%WWWDIR%%/Addressbook/translations/fa_IR.mo
+%%WWWDIR%%/Addressbook/translations/et.po
+%%WWWDIR%%/Addressbook/translations/et.mo
 %%WWWDIR%%/Addressbook/translations/es_MX.po
 %%WWWDIR%%/Addressbook/translations/es_MX.mo
 %%WWWDIR%%/Addressbook/translations/es.po
@@ -9711,6 +10451,8 @@
 %%WWWDIR%%/Addressbook/translations/en.mo
 %%WWWDIR%%/Addressbook/translations/de.po
 %%WWWDIR%%/Addressbook/translations/de.mo
+%%WWWDIR%%/Addressbook/translations/da.po
+%%WWWDIR%%/Addressbook/translations/da.mo
 %%WWWDIR%%/Addressbook/translations/cs.po
 %%WWWDIR%%/Addressbook/translations/cs.mo
 %%WWWDIR%%/Addressbook/translations/ca.po
@@ -9721,22 +10463,42 @@
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-zh_TW-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-zh_CN.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-zh_CN-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-vi.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-vi-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-tr_TR.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-tr_TR-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-sv_SE.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-sv_SE-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-sk.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-sk-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-ru.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-ru-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-pt_BR.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-pt_BR-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-pl.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-pl-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-nl_NL.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-nl_NL-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-nb.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-nb-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-lt.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-lt-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-ja.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-ja-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-it.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-it-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-hu.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-hu-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-hr_HR.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-hr_HR-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-fr.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-fr-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-fi.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-fi-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-fa_IR.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-fa_IR-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-et.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-et-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-es_MX.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-es_MX-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-es.js
@@ -9745,6 +10507,8 @@
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-en-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-de.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-de-debug.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-da.js
+%%WWWDIR%%/Addressbook/js/Addressbook-lang-da-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-cs.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-cs-debug.js
 %%WWWDIR%%/Addressbook/js/Addressbook-lang-ca.js
@@ -9758,6 +10522,7 @@
 %%WWWDIR%%/Addressbook/css/Addressbook-FAT.css.inc
 %%WWWDIR%%/Addressbook/css/Addressbook-FAT.css
 %%WWWDIR%%/Addressbook/Setup/setup.xml
+%%WWWDIR%%/Addressbook/Setup/Update/Release6.php
 %%WWWDIR%%/Addressbook/Setup/Update/Release5.php
 %%WWWDIR%%/Addressbook/Setup/Update/Release4.php
 %%WWWDIR%%/Addressbook/Setup/Update/Release3.php
@@ -9768,6 +10533,7 @@
 %%WWWDIR%%/Addressbook/Preference.php
 %%WWWDIR%%/Addressbook/Model/Salutation.php
 %%WWWDIR%%/Addressbook/Model/ListMemberFilter.php
+%%WWWDIR%%/Addressbook/Model/ListHiddenFilter.php
 %%WWWDIR%%/Addressbook/Model/ListFilter.php
 %%WWWDIR%%/Addressbook/Model/List.php
 %%WWWDIR%%/Addressbook/Model/ContactIdFilter.php
@@ -9794,7 +10560,6 @@
 %%WWWDIR%%/Addressbook/Frontend/Http.php
 %%WWWDIR%%/Addressbook/Frontend/Cli.php
 %%WWWDIR%%/Addressbook/Frontend/CardDAV.php
-%%WWWDIR%%/Addressbook/Export/definitions/adb_fritzbox.xml
 %%WWWDIR%%/Addressbook/Export/definitions/adb_default_xls.xml
 %%WWWDIR%%/Addressbook/Export/definitions/adb_default_ods.xml
 %%WWWDIR%%/Addressbook/Export/Xls.php
@@ -9833,27 +10598,45 @@
 %%WWWDIR%%/ActiveSync/translations/zh_TW.mo
 %%WWWDIR%%/ActiveSync/translations/zh_CN.po
 %%WWWDIR%%/ActiveSync/translations/zh_CN.mo
+%%WWWDIR%%/ActiveSync/translations/vi.po
+%%WWWDIR%%/ActiveSync/translations/vi.mo
+%%WWWDIR%%/ActiveSync/translations/tr_TR.po
+%%WWWDIR%%/ActiveSync/translations/tr_TR.mo
 %%WWWDIR%%/ActiveSync/translations/tr.po
 %%WWWDIR%%/ActiveSync/translations/tr.mo
 %%WWWDIR%%/ActiveSync/translations/template.pot
 %%WWWDIR%%/ActiveSync/translations/sv_SE.po
 %%WWWDIR%%/ActiveSync/translations/sv_SE.mo
+%%WWWDIR%%/ActiveSync/translations/sk.po
+%%WWWDIR%%/ActiveSync/translations/sk.mo
 %%WWWDIR%%/ActiveSync/translations/ru.po
 %%WWWDIR%%/ActiveSync/translations/ru.mo
+%%WWWDIR%%/ActiveSync/translations/pt_BR.po
+%%WWWDIR%%/ActiveSync/translations/pt_BR.mo
 %%WWWDIR%%/ActiveSync/translations/pl.po
 %%WWWDIR%%/ActiveSync/translations/pl.mo
+%%WWWDIR%%/ActiveSync/translations/nl_NL.po
+%%WWWDIR%%/ActiveSync/translations/nl_NL.mo
 %%WWWDIR%%/ActiveSync/translations/nb.po
 %%WWWDIR%%/ActiveSync/translations/nb.mo
+%%WWWDIR%%/ActiveSync/translations/lt.po
+%%WWWDIR%%/ActiveSync/translations/lt.mo
 %%WWWDIR%%/ActiveSync/translations/ja.po
 %%WWWDIR%%/ActiveSync/translations/ja.mo
 %%WWWDIR%%/ActiveSync/translations/it.po
 %%WWWDIR%%/ActiveSync/translations/it.mo
 %%WWWDIR%%/ActiveSync/translations/hu.po
 %%WWWDIR%%/ActiveSync/translations/hu.mo
+%%WWWDIR%%/ActiveSync/translations/hr_HR.po
+%%WWWDIR%%/ActiveSync/translations/hr_HR.mo
 %%WWWDIR%%/ActiveSync/translations/fr.po
 %%WWWDIR%%/ActiveSync/translations/fr.mo
 %%WWWDIR%%/ActiveSync/translations/fi.po
 %%WWWDIR%%/ActiveSync/translations/fi.mo
+%%WWWDIR%%/ActiveSync/translations/fa_IR.po
+%%WWWDIR%%/ActiveSync/translations/fa_IR.mo
+%%WWWDIR%%/ActiveSync/translations/et.po
+%%WWWDIR%%/ActiveSync/translations/et.mo
 %%WWWDIR%%/ActiveSync/translations/es_MX.po
 %%WWWDIR%%/ActiveSync/translations/es_MX.mo
 %%WWWDIR%%/ActiveSync/translations/es.po
@@ -9862,6 +10645,8 @@
 %%WWWDIR%%/ActiveSync/translations/en.mo
 %%WWWDIR%%/ActiveSync/translations/de.po
 %%WWWDIR%%/ActiveSync/translations/de.mo
+%%WWWDIR%%/ActiveSync/translations/da.po
+%%WWWDIR%%/ActiveSync/translations/da.mo
 %%WWWDIR%%/ActiveSync/translations/cs.po
 %%WWWDIR%%/ActiveSync/translations/cs.mo
 %%WWWDIR%%/ActiveSync/translations/ca.po
@@ -9872,22 +10657,42 @@
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-zh_TW-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-zh_CN.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-zh_CN-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-vi.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-vi-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-tr_TR.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-tr_TR-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-sv_SE.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-sv_SE-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-sk.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-sk-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-ru.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-ru-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-pt_BR.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-pt_BR-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-pl.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-pl-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-nl_NL.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-nl_NL-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-nb.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-nb-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-lt.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-lt-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-ja.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-ja-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-it.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-it-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-hu.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-hu-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-hr_HR.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-hr_HR-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fr.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fr-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fi.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fi-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fa_IR.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-fa_IR-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-et.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-et-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-es_MX.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-es_MX-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-es.js
@@ -9896,6 +10701,8 @@
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-en-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-de.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-de-debug.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-da.js
+%%WWWDIR%%/ActiveSync/js/ActiveSync-lang-da-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-cs.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-cs-debug.js
 %%WWWDIR%%/ActiveSync/js/ActiveSync-lang-ca.js
@@ -9911,6 +10718,7 @@
 %%WWWDIR%%/ActiveSync/TimezoneNotFoundException.php
 %%WWWDIR%%/ActiveSync/TimezoneConverter.php
 %%WWWDIR%%/ActiveSync/Setup/setup.xml
+%%WWWDIR%%/ActiveSync/Setup/Update/Release6.php
 %%WWWDIR%%/ActiveSync/Setup/Update/Release5.php
 %%WWWDIR%%/ActiveSync/Setup/Update/Release4.php
 %%WWWDIR%%/ActiveSync/Setup/Update/Release3.php
@@ -9919,28 +10727,20 @@
 %%WWWDIR%%/ActiveSync/Setup/Initialize.php
 %%WWWDIR%%/ActiveSync/Server/Http.php
 %%WWWDIR%%/ActiveSync/Preference.php
-%%WWWDIR%%/ActiveSync/Model/SyncState.php
-%%WWWDIR%%/ActiveSync/Model/FolderFilter.php
-%%WWWDIR%%/ActiveSync/Model/Folder.php
+%%WWWDIR%%/ActiveSync/Model/Policy.php
 %%WWWDIR%%/ActiveSync/Model/DeviceFilter.php
 %%WWWDIR%%/ActiveSync/Model/Device.php
-%%WWWDIR%%/ActiveSync/Model/ContentStateFilter.php
-%%WWWDIR%%/ActiveSync/Model/ContentState.php
-%%WWWDIR%%/ActiveSync/LICENSE
 %%WWWDIR%%/ActiveSync/Frontend/Json.php
-%%WWWDIR%%/ActiveSync/Exception/SyncStateNotFound.php
-%%WWWDIR%%/ActiveSync/Exception/ProvisioningNeeded.php
-%%WWWDIR%%/ActiveSync/Exception/PolicyKeyMissing.php
-%%WWWDIR%%/ActiveSync/Exception/FolderNotFound.php
 %%WWWDIR%%/ActiveSync/Exception.php
 %%WWWDIR%%/ActiveSync/Controller/Tasks.php
-%%WWWDIR%%/ActiveSync/Controller/Interface.php
 %%WWWDIR%%/ActiveSync/Controller/Email.php
 %%WWWDIR%%/ActiveSync/Controller/Device.php
 %%WWWDIR%%/ActiveSync/Controller/Contacts.php
 %%WWWDIR%%/ActiveSync/Controller/Calendar.php
 %%WWWDIR%%/ActiveSync/Controller/Abstract.php
 %%WWWDIR%%/ActiveSync/Controller.php
+%%WWWDIR%%/ActiveSync/Config.php
+%%WWWDIR%%/ActiveSync/Backend/Policy.php
 %%WWWDIR%%/ActiveSync/Backend/Device.php
 %%WWWDIR%%/ActiveSync/ActiveSync.jsb2
 @dirrm %%WWWDIR%%/styles/images/tine20/window
@@ -10384,66 +11184,77 @@
 @dirrm %%WWWDIR%%/library/Zend/Acl/Assert
 @dirrm %%WWWDIR%%/library/Zend/Acl
 @dirrm %%WWWDIR%%/library/Zend
-@dirrm %%WWWDIR%%/library/Syncope/tests/Syncope/Data
-@dirrm %%WWWDIR%%/library/Syncope/tests/Syncope/Command
-@dirrm %%WWWDIR%%/library/Syncope/tests/Syncope/Backend
-@dirrm %%WWWDIR%%/library/Syncope/tests/Syncope
-@dirrm %%WWWDIR%%/library/Syncope/tests
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate/Sitemap
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate/Hostname
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate/File
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate/Db
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate/Barcode
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Validate
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Uri
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Log/Writer
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Log/Formatter
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Log/Filter
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Log
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Loader/PluginLoader
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Loader/Autoloader
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Loader
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Json
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Select
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Rowset
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Table/Row
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Table
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Sqlsrv
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Pdo
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Oracle
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Mysqli
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement/Db2
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Statement
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Select
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Profiler
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Sqlsrv
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo/Ibm
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Pdo
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Oracle
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Mysqli
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter/Db2
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db/Adapter
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Db
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Controller/Request
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Controller
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Config/Writer
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend/Config
-@dirrm %%WWWDIR%%/library/Syncope/lib/Zend
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml/Exception
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Syncml
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/Exception
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd/ActiveSync
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml/Dtd
-@dirrm %%WWWDIR%%/library/Syncope/lib/Wbxml
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope/Model
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope/Exception
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope/Data
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope/Command
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope/Backend
-@dirrm %%WWWDIR%%/library/Syncope/lib/Syncope
-@dirrm %%WWWDIR%%/library/Syncope/lib
-@dirrm %%WWWDIR%%/library/Syncope/docs
-@dirrm %%WWWDIR%%/library/Syncope
+@dirrm %%WWWDIR%%/library/TimeZoneConvert/tests/TimeZoneConvert
+@dirrm %%WWWDIR%%/library/TimeZoneConvert/tests
+@dirrm %%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert/VTimeZone
+@dirrm %%WWWDIR%%/library/TimeZoneConvert/lib/TimeZoneConvert
+@dirrm %%WWWDIR%%/library/TimeZoneConvert/lib
+@dirrm %%WWWDIR%%/library/TimeZoneConvert
+@dirrm %%WWWDIR%%/library/Syncroton/tests/files
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml/files
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Wbxml
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Model
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Data
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Command
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton/Backend
+@dirrm %%WWWDIR%%/library/Syncroton/tests/Syncroton
+@dirrm %%WWWDIR%%/library/Syncroton/tests
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Sitemap
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Hostname
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate/File
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Db
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate/Barcode
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Validate
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Uri
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Log/Writer
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Log/Formatter
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Log/Filter
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Log
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Loader/PluginLoader
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Loader/Autoloader
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Loader
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Json
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Select
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Rowset
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table/Row
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Table
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Sqlsrv
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Pdo
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Oracle
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Mysqli
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement/Db2
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Statement
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Select
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Profiler
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Sqlsrv
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo/Ibm
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Pdo
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Oracle
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Mysqli
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter/Db2
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db/Adapter
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Db
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Controller/Request
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Controller
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Config/Writer
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend/Config
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Zend
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Exception
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Syncml
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/Exception
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd/ActiveSync
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml/Dtd
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Wbxml
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Model
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception/Status
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Exception
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Data
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Command
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton/Backend
+@dirrm %%WWWDIR%%/library/Syncroton/lib/Syncroton
+@dirrm %%WWWDIR%%/library/Syncroton/lib
+@dirrm %%WWWDIR%%/library/Syncroton/docs
+@dirrm %%WWWDIR%%/library/Syncroton
 @dirrm %%WWWDIR%%/library/StreamFilter
 @dirrm %%WWWDIR%%/library/Sabre/VObject/Property
 @dirrm %%WWWDIR%%/library/Sabre/VObject/Element
@@ -10476,6 +11287,7 @@
 @dirrm %%WWWDIR%%/library/Sabre/CalDAV/Backend
 @dirrm %%WWWDIR%%/library/Sabre/CalDAV
 @dirrm %%WWWDIR%%/library/Sabre
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/tr
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/sv
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/ru
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/pt/br
@@ -10494,17 +11306,22 @@
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/da
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale/cs
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/locale
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/PDF
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel5
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer/Excel2007
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Writer
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/Drawing
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet/AutoFilter
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Worksheet
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Style
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/trend
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/PCLZip
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/OLE/PPS
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/OLE
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/utils
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/tests
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA/examples
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/JAMA
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer
@@ -10515,8 +11332,12 @@
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Shared
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/RichText
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel5
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader/Excel2007
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Reader
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Chart/Renderer
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Chart
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Cell
+@dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation/Token
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/Calculation
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel/CachedObjectStorage
 @dirrm %%WWWDIR%%/library/PHPExcel/PHPExcel
@@ -10641,6 +11462,8 @@
 @dirrm %%WWWDIR%%/library/ExtJS/adapter/ext
 @dirrm %%WWWDIR%%/library/ExtJS/adapter
 @dirrm %%WWWDIR%%/library/ExtJS
+@dirrm %%WWWDIR%%/library/CryptoJS
+@dirrm %%WWWDIR%%/library/Console
 @dirrm %%WWWDIR%%/library/Ajam
 @dirrm %%WWWDIR%%/library
 @dirrm %%WWWDIR%%/images/scalable
@@ -10676,7 +11499,10 @@
 @dirrm %%WWWDIR%%/images/oxygen/16x16
 @dirrm %%WWWDIR%%/images/oxygen
 @dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/Zend/Validate
+@dirrm %%WWWDIR%%/Zend/Translate/Adapter
+@dirrm %%WWWDIR%%/Zend/Translate
 @dirrm %%WWWDIR%%/Zend/Session/Validator
 @dirrm %%WWWDIR%%/Zend/Session
 @dirrm %%WWWDIR%%/Zend/Service/Nominatim
@@ -10686,6 +11512,7 @@
 @dirrm %%WWWDIR%%/Zend/Scheduler
 @dirrm %%WWWDIR%%/Zend/Queue/Adapter
 @dirrm %%WWWDIR%%/Zend/Queue
+@dirrm %%WWWDIR%%/Zend/Pdf
 @dirrm %%WWWDIR%%/Zend/OpenId
 @dirrm %%WWWDIR%%/Zend/Mime
 @dirrm %%WWWDIR%%/Zend/Mail/Transport
@@ -10695,6 +11522,7 @@
 @dirrm %%WWWDIR%%/Zend/Json
 @dirrm %%WWWDIR%%/Zend/Http
 @dirrm %%WWWDIR%%/Zend/Filter
+@dirrm %%WWWDIR%%/Zend/Db/Table
 @dirrm %%WWWDIR%%/Zend/Db/Adapter
 @dirrm %%WWWDIR%%/Zend/Db
 @dirrm %%WWWDIR%%/Zend/Cache/Backend
@@ -10728,11 +11556,13 @@
 @dirrm %%WWWDIR%%/Tinebase/Setup/Update
 @dirrm %%WWWDIR%%/Tinebase/Setup/Import/Egw14
 @dirrm %%WWWDIR%%/Tinebase/Setup/Import
+@dirrm %%WWWDIR%%/Tinebase/Setup/DemoData
 @dirrm %%WWWDIR%%/Tinebase/Setup
 @dirrm %%WWWDIR%%/Tinebase/Server
 @dirrm %%WWWDIR%%/Tinebase/Scheduler
 @dirrm %%WWWDIR%%/Tinebase/Relation/Backend
 @dirrm %%WWWDIR%%/Tinebase/Relation
+@dirrm %%WWWDIR%%/Tinebase/Redis
 @dirrm %%WWWDIR%%/Tinebase/Record/Event
 @dirrm %%WWWDIR%%/Tinebase/Record
 @dirrm %%WWWDIR%%/Tinebase/Preference
@@ -10747,6 +11577,7 @@
 @dirrm %%WWWDIR%%/Tinebase/Model/Tree/Node
 @dirrm %%WWWDIR%%/Tinebase/Model/Tree
 @dirrm %%WWWDIR%%/Tinebase/Model/OpenId
+@dirrm %%WWWDIR%%/Tinebase/Model/InputFilter
 @dirrm %%WWWDIR%%/Tinebase/Model/Filter
 @dirrm %%WWWDIR%%/Tinebase/Model/CustomField
 @dirrm %%WWWDIR%%/Tinebase/Model
@@ -10759,6 +11590,7 @@
 @dirrm %%WWWDIR%%/Tinebase/Group/Interface
 @dirrm %%WWWDIR%%/Tinebase/Group/Event
 @dirrm %%WWWDIR%%/Tinebase/Group
+@dirrm %%WWWDIR%%/Tinebase/Frontend/WebDAV
 @dirrm %%WWWDIR%%/Tinebase/Frontend/Json
 @dirrm %%WWWDIR%%/Tinebase/Frontend/Http
 @dirrm %%WWWDIR%%/Tinebase/Frontend/Cli
@@ -10796,6 +11628,8 @@
 @dirrm %%WWWDIR%%/Tinebase/Auth/CredentialCache/Adapter
 @dirrm %%WWWDIR%%/Tinebase/Auth/CredentialCache
 @dirrm %%WWWDIR%%/Tinebase/Auth
+@dirrm %%WWWDIR%%/Tinebase/ActionQueue/Backend
+@dirrm %%WWWDIR%%/Tinebase/ActionQueue
 @dirrm %%WWWDIR%%/Tinebase/Acl/Rights
 @dirrm %%WWWDIR%%/Tinebase/Acl
 @dirrm %%WWWDIR%%/Tinebase
@@ -10845,6 +11679,10 @@
 @dirrm %%WWWDIR%%/Setup
 @dirrm %%WWWDIR%%/Sales/translations
 @dirrm %%WWWDIR%%/Sales/js
+@dirrm %%WWWDIR%%/Sales/images/32x32
+@dirrm %%WWWDIR%%/Sales/images/22x22
+@dirrm %%WWWDIR%%/Sales/images/16x16
+@dirrm %%WWWDIR%%/Sales/images
 @dirrm %%WWWDIR%%/Sales/css
 @dirrm %%WWWDIR%%/Sales/Setup/Update
 @dirrm %%WWWDIR%%/Sales/Setup
@@ -10871,6 +11709,7 @@
 @dirrm %%WWWDIR%%/Filemanager/css
 @dirrm %%WWWDIR%%/Filemanager/Setup/Update
 @dirrm %%WWWDIR%%/Filemanager/Setup
+@dirrm %%WWWDIR%%/Filemanager/Model
 @dirrm %%WWWDIR%%/Filemanager/Frontend/WebDAV
 @dirrm %%WWWDIR%%/Filemanager/Frontend
 @dirrm %%WWWDIR%%/Filemanager/Exception
@@ -10890,6 +11729,7 @@
 @dirrm %%WWWDIR%%/Felamimail/Model
 @dirrm %%WWWDIR%%/Felamimail/HTMLPurifier/AttrTransform
 @dirrm %%WWWDIR%%/Felamimail/HTMLPurifier
+@dirrm %%WWWDIR%%/Felamimail/Frontend/WebDAV
 @dirrm %%WWWDIR%%/Felamimail/Frontend
 @dirrm %%WWWDIR%%/Felamimail/Exception
 @dirrm %%WWWDIR%%/Felamimail/Controller/Message
@@ -10983,7 +11823,6 @@
 @dirrm %%WWWDIR%%/ActiveSync/Server
 @dirrm %%WWWDIR%%/ActiveSync/Model
 @dirrm %%WWWDIR%%/ActiveSync/Frontend
-@dirrm %%WWWDIR%%/ActiveSync/Exception
 @dirrm %%WWWDIR%%/ActiveSync/Controller
 @dirrm %%WWWDIR%%/ActiveSync/Backend
 @dirrm %%WWWDIR%%/ActiveSync
