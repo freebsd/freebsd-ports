@@ -20,6 +20,9 @@ lib/meld/meld/filediff.pyo
 lib/meld/meld/filemerge.py
 lib/meld/meld/filemerge.pyc
 lib/meld/meld/filemerge.pyo
+lib/meld/meld/filters.py
+lib/meld/meld/filters.pyc
+lib/meld/meld/filters.pyo
 lib/meld/meld/linkmap.py
 lib/meld/meld/linkmap.pyc
 lib/meld/meld/linkmap.pyo
@@ -44,6 +47,9 @@ lib/meld/meld/merge.pyo
 lib/meld/meld/misc.py
 lib/meld/meld/misc.pyc
 lib/meld/meld/misc.pyo
+lib/meld/meld/newdifftab.py
+lib/meld/meld/newdifftab.pyc
+lib/meld/meld/newdifftab.pyo
 lib/meld/meld/patchdialog.py
 lib/meld/meld/patchdialog.pyc
 lib/meld/meld/patchdialog.pyo
@@ -53,6 +59,9 @@ lib/meld/meld/paths.pyo
 lib/meld/meld/preferences.py
 lib/meld/meld/preferences.pyc
 lib/meld/meld/preferences.pyo
+lib/meld/meld/recent.py
+lib/meld/meld/recent.pyc
+lib/meld/meld/recent.pyo
 lib/meld/meld/task.py
 lib/meld/meld/task.pyc
 lib/meld/meld/task.pyo
@@ -98,6 +107,9 @@ lib/meld/meld/undo.pyo
 lib/meld/meld/util/__init__.py
 lib/meld/meld/util/__init__.pyc
 lib/meld/meld/util/__init__.pyo
+lib/meld/meld/util/compat.py
+lib/meld/meld/util/compat.pyc
+lib/meld/meld/util/compat.pyo
 lib/meld/meld/util/prefs.py
 lib/meld/meld/util/prefs.pyc
 lib/meld/meld/util/prefs.pyo
@@ -143,12 +155,12 @@ lib/meld/meld/vc/rcs.pyo
 lib/meld/meld/vc/svk.py
 lib/meld/meld/vc/svk.pyc
 lib/meld/meld/vc/svk.pyo
-lib/meld/meld/vc/svn_17.py
-lib/meld/meld/vc/svn_17.pyc
-lib/meld/meld/vc/svn_17.pyo
 lib/meld/meld/vc/svn.py
 lib/meld/meld/vc/svn.pyc
 lib/meld/meld/vc/svn.pyo
+lib/meld/meld/vc/svn_17.py
+lib/meld/meld/vc/svn_17.pyc
+lib/meld/meld/vc/svn_17.pyo
 lib/meld/meld/vc/tla.py
 lib/meld/meld/vc/tla.pyc
 lib/meld/meld/vc/tla.pyo
@@ -159,6 +171,7 @@ share/applications/meld.desktop
 share/gnome/help/meld/C/meld.xml
 share/gnome/help/meld/es/meld.xml
 share/gnome/help/meld/fr/meld.xml
+share/icons/HighContrast/scalable/apps/meld.svg
 share/icons/hicolor/16x16/apps/meld.png
 share/icons/hicolor/22x22/apps/meld.png
 share/icons/hicolor/32x32/apps/meld.png
@@ -233,24 +246,33 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%DATADIR%%/ui/meldapp.ui
 %%DATADIR%%/ui/patch-dialog.ui
 %%DATADIR%%/ui/preferences.ui
+%%DATADIR%%/ui/tab-placeholder.ui
 %%DATADIR%%/ui/vcview-ui.xml
 %%DATADIR%%/ui/vcview.ui
+share/mime/packages/meld.xml
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
 share/omf/meld/meld-fr.omf
 @dirrm share/omf/meld
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/icons/HighContrast/scalable/apps
+@dirrmtry share/icons/HighContrast/scalable
+@dirrmtry share/icons/HighContrast
 @dirrm share/gnome/help/meld/fr
 @dirrm share/gnome/help/meld/es
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
+@dirrmtry share/applications
 @dirrm lib/meld/meld/vc
 @dirrm lib/meld/meld/util
 @dirrm lib/meld/meld/ui
 @dirrm lib/meld/meld
 @dirrm lib/meld
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
