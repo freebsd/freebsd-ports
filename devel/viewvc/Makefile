@@ -1,8 +1,8 @@
-# Created By: will
+# Created by: will
 # $FreeBSD$
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.18
 #PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
