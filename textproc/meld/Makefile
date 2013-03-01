@@ -32,9 +32,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} '/docdir_/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/docdir_/d' ${WRKSRC}/Makefile
 .if !${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} '/po install/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/po install/d' ${WRKSRC}/Makefile
 .endif
 
 .for file in help/C/Makefile help/es/Makefile help/fr/Makefile
