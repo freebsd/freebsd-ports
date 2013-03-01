@@ -62,6 +62,7 @@
     SUBDIR += siege
     SUBDIR += sipp
     SUBDIR += slowloris
+    SUBDIR += spp
     SUBDIR += stream
     SUBDIR += super-smack
     SUBDIR += sysbench
