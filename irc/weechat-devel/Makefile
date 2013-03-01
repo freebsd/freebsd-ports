@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20130120
-PORTREVISION=	1
+PORTVERSION=	20130301
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -21,13 +20,14 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
 USE_CMAKE=	yes
+CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.0-9-g2dea08a
+GITDESC=	v0.4.0-85-g11396b3
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
 #GITREV=	01a1316
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
@@ -36,13 +36,12 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 # bsd.cmake.mk to set the cmake build type to Debug instead of
 # Release.
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION COLOR256
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION COLOR256
 OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG
 
 BACKTRACE_DESC=	Provide crash backtraces
 CHARSET_DESC=	Charset conversion support
 DOCUMENTATION_DESC=	Build and install documentation
-GUILE_DESC=	Guile scripting support
 LUA_DESC=	Lua scripting support
 PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
@@ -130,15 +129,6 @@ PLIST_SUB+=	LUA=""
 .else
 CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGUILE}
-USE_PKGCONFIG=	yes
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
-PLIST_SUB+=	GUILE=""
-.else
-CMAKE_ARGS+=	-DENABLE_GUILE=no
-PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCUMENTATION}
