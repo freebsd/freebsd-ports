@@ -11,7 +11,6 @@ lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%ASPELL%%lib/weechat/plugins/aspell.so
 %%CHARSET%%lib/weechat/plugins/charset.so
-%%GUILE%%lib/weechat/plugins/guile.so
 %%LUA%%lib/weechat/plugins/lua.so
 %%PERL%%lib/weechat/plugins/perl.so
 %%PYTHON%%lib/weechat/plugins/python.so
