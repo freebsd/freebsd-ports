@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	getlive
-DISTVERSION=	0_59
+DISTVERSION=	2_7
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/GetLive/${PORTVERSION}%20%28Beta%29
+MASTER_SITES=	http://tardisi.com/distfiles/ \
+		http://lawrencechen.net/distfiles/
 DISTNAME=	GetLive_${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
