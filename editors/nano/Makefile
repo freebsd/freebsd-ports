@@ -11,13 +11,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv3
 
 .include <bsd.port.options.mk>
 
@@ -39,6 +39,8 @@ MAKE_ARGS+=	install_htmlmanDATA=""
 INFO=		nano
 MAN1=		nano.1 rnano.1
 MAN5=		nanorc.5
+
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
