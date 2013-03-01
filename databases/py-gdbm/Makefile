@@ -1,13 +1,9 @@
-# New ports collection makefile for:    py-gdbm
-# Date created:         03 October 2000
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdbm
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -17,16 +13,20 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the GNU dbm library
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/gdbm.so
-DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XZ=		yes
-PYDISTUTILS_PKGVERSION=	0.0.0
-WRKSRC=		${PYTHON_WRKSRC}/Modules
+
+DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
+WRKSRC=		${PYTHON_WRKSRC}/Modules
+
+PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
+PYDISTUTILS_NOEGGINFO=	yes
+
+PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/gdbm.so
 
 .include <bsd.port.pre.mk>
 

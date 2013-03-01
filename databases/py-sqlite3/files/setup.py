@@ -40,7 +40,7 @@ except AttributeError:
 
 setup(name = "_sqlite3",
       description = "SQLite 3 extension to Python",
-      
+
       ext_modules = [Extension('_sqlite3', sqlite_srcs,
                                include_dirs = inc_dirs,
                                libraries = libs,
