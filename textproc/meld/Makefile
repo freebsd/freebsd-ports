@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -12,8 +12,8 @@ COMMENT=	GNOME 2 visual diff and merge tool
 LICENSE=	GPLv2
 
 USE_XZ=		yes
-USE_GNOME=	pygnome2
-USE_PYTHON=	yes
+USE_GNOME=	desktopfileutils pygnome2
+USE_PYTHON=	-2.7
 USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
@@ -28,17 +28,15 @@ PYGNOMEDESKTOP_DESC=	Code syntax hilighting (many dependencies)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-.for file in Makefile
-	@${REINPLACE_CMD} -e '/docdir_/d' ${WRKSRC}/${file}
-.endfor
-.for file in help/Makefile
-	@${REINPLACE_CMD} -e '/^LANGUAGES/s|de||g' ${WRKSRC}/${file}
-.endfor
+	${REINPLACE_CMD} '/docdir_/d' ${WRKSRC}/Makefile
+.if !${PORT_OPTIONS:MNLS}
+	${REINPLACE_CMD} '/po install/d' ${WRKSRC}/Makefile
+.endif
+
 .for file in help/C/Makefile help/es/Makefile help/fr/Makefile
 	@${REINPLACE_CMD} -e \
 		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
