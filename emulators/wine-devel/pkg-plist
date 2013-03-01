@@ -259,6 +259,8 @@ include/wine/windows/dvdmedia.h
 include/wine/windows/dwmapi.h
 include/wine/windows/dwrite.h
 include/wine/windows/dwrite.idl
+include/wine/windows/dwrite_1.h
+include/wine/windows/dwrite_1.idl
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -1335,6 +1337,7 @@ lib/wine/fakedlls/vwin32.vxd
 lib/wine/fakedlls/w32skrnl.dll
 lib/wine/fakedlls/w32sys.dll16
 lib/wine/fakedlls/wbemprox.dll
+lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
 lib/wine/fakedlls/wiaservc.dll
@@ -1602,6 +1605,7 @@ lib/wine/libuuid.a
 lib/wine/libuxtheme.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
+lib/wine/libwebservices.def
 lib/wine/libwer.def
 lib/wine/libwindowscodecs.def
 lib/wine/libwindowscodecsext.def
@@ -1864,6 +1868,7 @@ lib/wine/vwin32.vxd.so
 lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll16.so
 lib/wine/wbemprox.dll.so
+lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
 lib/wine/wiaservc.dll.so
