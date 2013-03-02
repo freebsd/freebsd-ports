@@ -104,11 +104,13 @@
 %%DATADIR%%/demos/rio_de_hola/maps/shrine.xml
 %%DATADIR%%/demos/rio_de_hola/maps/tourist_beach.xml
 %%DATADIR%%/demos/rio_de_hola/maps/tourist_beach_test.xml
+%%DATADIR%%/demos/rio_de_hola/misc/black_cell.png
 %%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/LICENSE
 %%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/non-animated_object_rendersetup.blend
 %%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/rendering_setup.blend
 %%DATADIR%%/demos/rio_de_hola/misc/diamond_160x96_template_v01.blend
 %%DATADIR%%/demos/rio_de_hola/misc/infotext.txt
+%%DATADIR%%/demos/rio_de_hola/misc/mask_cell.png
 %%DATADIR%%/demos/rio_de_hola/misc/mask_diamond_126_96.png
 %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/045r.png
 %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/135r.png
@@ -376,6 +378,7 @@
 %%DATADIR%%/tools/atlas/stable.h
 %%DATADIR%%/tools/editor/fonts/FreeSans.ttf
 %%DATADIR%%/tools/editor/gui/cameradialog.xml
+%%DATADIR%%/tools/editor/gui/cellview.xml
 %%DATADIR%%/tools/editor/gui/eleveditor.xml
 %%DATADIR%%/tools/editor/gui/error.xml
 %%DATADIR%%/tools/editor/gui/filebrowser.xml
@@ -421,10 +424,12 @@
 %%DATADIR%%/tools/editor/gui/selection.xml
 %%DATADIR%%/tools/editor/gui/statuspanel.xml
 %%DATADIR%%/tools/editor/gui/tools.xml
+%%DATADIR%%/tools/editor/lang/help_cellview.txt
 %%DATADIR%%/tools/editor/lang/help_object_edit.txt
 %%DATADIR%%/tools/editor/lang/infotext.txt
 %%DATADIR%%/tools/editor/LICENSE
 %%DATADIR%%/tools/editor/plugins/CameraEdit.py
+%%DATADIR%%/tools/editor/plugins/CellView.py
 %%DATADIR%%/tools/editor/plugins/HistoryManager.py
 %%DATADIR%%/tools/editor/plugins/InstanceHighlighter.py
 %%DATADIR%%/tools/editor/plugins/LayerTool.py
