@@ -2,65 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	gbirthday
-PORTVERSION=	0.6.5
-PORTREVISION=	3
+PORTVERSION=	0.6.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Birthday reminder for Evolution and some others
 
-OPTIONS=	EVO	"Enable Evolution support"	on \
-		THUNDER	"Enable Thunderbird/Sunbird support"	off \
-		MYSQL	"Enable MySQL database support"	off \
-		NOTIFY	"Enable libnotify support"	off
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	EVO THUNDER MYSQL NOTIFY
+OPTIONS_DEFAULT=EVO
+EVO_DESC=	Evolution support
+THUNDER_DESC=	Thunderbird/Sunbird support
 
 USE_XZ=		yes
-NO_WRKSUBDIR=	yes
-USE_PYTHON_RUN=	yes
+USE_PYTHON_RUN=	-2.7
 USE_GNOME=	pygtk2 desktopfileutils
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 USE_GNOME+=	intltool
 LANGUAGES=	de en es fr gl it pl pt ru sk
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_EVO)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+.if ${PORT_OPTIONS:MEVO}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 USE_GNOME+=	evolutiondataserver
 .endif
 
-.if defined(WITH_THUNDER)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+.if ${PORT_OPTIONS:MTHUNDER}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if defined(WITH_NOTIFY)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
+.if ${PORT_OPTIONS:MNOTIFY}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|.mozilla.thunderbird|.thunderbird|g' \
-		${WRKSRC}/src/${PORTNAME}/databases.py
+	@${REINPLACE_CMD} -e 's|.mozilla-thunderbird|.thunderbird|g' \
+		${WRKSRC}/src/${PORTNAME}/databases/lightning.py
 	@${REINPLACE_CMD} -e 's|@VER@|${PORTVERSION}|g' \
 		${WRKSRC}/src/${PORTNAME}/__init__.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/src/gb
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|_Comment|Comment|' ${WRKSRC}/${PORTNAME}.desktop.in
 .endif
 
 do-build:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@-intltool-merge -d ${WRKSRC}/po ${WRKSRC}/${PORTNAME}.desktop.in \
 		${WRKSRC}/${PORTNAME}.desktop
 	@(for lang in ${LANGUAGES} ; do \
@@ -72,11 +72,13 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pics/${PORTNAME}.png ${PREFIX}/share/pixmaps
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
 	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/databases/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/pics/*.png ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
 	@${MKDIR} ${PREFIX}/share/applications
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@(for lang in ${LANGUAGES} ; do \
 		${MKDIR} ${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
 		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
@@ -91,4 +93,4 @@ do-install:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
