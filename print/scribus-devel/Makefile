@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}
@@ -26,7 +26,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		poppler:${PORTSDIR}/graphics/poppler \
 		osg:${PORTSDIR}/graphics/osg
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 

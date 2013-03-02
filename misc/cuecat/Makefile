@@ -1,13 +1,9 @@
-# New ports collection makefile for:	cuecat
-# Date created:				18 October 2000
-# Whom:					mwm@mired.org
-#
+# Created by: mwm@mired.org
 # $FreeBSD$
-#
 
 PORTNAME=	cuecat
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 
@@ -15,7 +11,7 @@ MAINTAINER=	mwm@mired.org
 COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 .endif
 

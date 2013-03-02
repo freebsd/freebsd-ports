@@ -1,20 +1,16 @@
-# New ports collection makefile for:    ptkei
-# Date created:                         26 October 1999
-# Whom:                                 Daniel O'Connor <darius@dons.net.au>
-#
+# Created by: Daniel O'Connor <darius@dons.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	ptkei
 PORTVERSION=	1.18.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python/Tk graphical client for Wolfpack Empire servers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 
 USE_PYTHON=	yes

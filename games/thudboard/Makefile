@@ -1,19 +1,16 @@
-# New ports collection makefile for:    ThudBoard
-# Date created:         		04 Januar 2004
-# Whom:                 		Jan Stocker <Jan.Stocker@t-online.de>
-#
+# Created by: Jan Stocker <Jan.Stocker@t-online.de>
 # $FreeBSD$
-#
 
 PORTNAME=	thudboard
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes

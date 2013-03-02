@@ -1,13 +1,9 @@
-# New ports collection makefile for:    PySol
-# Date created:         11 September 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pysol
 PORTVERSION=	4.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.pysol.org/download/pysol/:source \
 		${MASTER_SITE_LOCAL:S/$/:support/}
@@ -19,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire game, written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysolsoundserver.so:${PORTSDIR}/audio/pysol-sound-server \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

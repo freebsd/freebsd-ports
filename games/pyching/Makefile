@@ -1,19 +1,16 @@
-# New ports collection makefile for:	pyching
-# Date created:			5 July 2001
-# Whom:				Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	pyching
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/pyChing/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consult a I Ching, an ancient Chinese book of wisdom
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

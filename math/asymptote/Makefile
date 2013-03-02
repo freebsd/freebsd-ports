@@ -1,13 +1,9 @@
-# New ports collection makefile for:	asymptote
-# Date created:		2005-07-22
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	asymptote
 PORTVERSION=	2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -22,7 +18,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX-base \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
 ONLY_FOR_ARCHS=	i386 amd64

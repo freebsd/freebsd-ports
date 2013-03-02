@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	mayavi
-# Date created:			Mar 9, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mayavi
 PORTVERSION=	1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science python
 MASTER_SITES=	SF
 DISTNAME=	MayaVi-${PORTVERSION}
@@ -16,9 +11,9 @@ DISTNAME=	MayaVi-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data visualizer
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/vtk.pth:${PORTSDIR}/math/vtk-python \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
