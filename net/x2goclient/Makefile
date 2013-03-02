@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.0.1
+PORTVERSION=	4.0.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -27,8 +27,6 @@ INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		x2goclient.1
-
-PORTSCOUT=	limit:\^3\.0
 
 .include <bsd.port.options.mk>
 
