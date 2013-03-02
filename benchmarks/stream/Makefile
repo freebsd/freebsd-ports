@@ -1,11 +1,8 @@
-# New ports collection makefile for:   stream
-# Date created:        10 May 2001
-# Whom:        Scott Flatman <sf@dsinw.com>
-#
+# Created by: Scott Flatman <sf@dsinw.com>
 # $FreeBSD$
 
 PORTNAME=	stream
-PORTVERSION=	5.9
+PORTVERSION=	5.10
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.cs.virginia.edu/stream/FTP/Code/
 DISTFILES=	stream.c
@@ -14,21 +11,27 @@ DIST_SUBDIR=	${PORTNAME}-1.0/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
-PLIST_FILES=	bin/stream_bench
-PORTDOCS=	stream.c
+OPTIONS_DEFINE=	DOCS
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${_DISTDIR}/stream.c ${WRKSRC}
+NO_WRKSUBDIR=	yes
+
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	#
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+
+PORTDOCS=	stream.c
+PLIST_FILES=	bin/stream_bench
+
+.include <bsd.port.options.mk>
 
 do-build:
-	(cd ${WRKSRC} ; ${CC} ${CFLAGS} -o stream_bench stream.c -lm)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o stream_bench stream.c -lm)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stream_bench ${PREFIX}/bin
-.	if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.	endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} stream_bench ${PREFIX}/bin)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
