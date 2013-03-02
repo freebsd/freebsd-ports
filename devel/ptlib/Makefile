@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.4
 DISTNAME=	ptlib-${PORTVERSION}
 
-MAINTAINER=	eric@camachat.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
