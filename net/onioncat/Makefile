@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	onioncat
-PORTVERSION=	0.2.2.r553
+PORTVERSION=	0.2.2.r554
 CATEGORIES=	net security
-MASTER_SITES=	http://www.cypherpunk.at/ocat/download/Source/stable/
+MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP-transparent Tor Hidden Service connector
@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
 MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
