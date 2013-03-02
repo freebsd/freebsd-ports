@@ -1870,6 +1870,7 @@
     SUBDIR += tomcat7
     SUBDIR += trac
     SUBDIR += trac-OhlohWidgetsMacro
+    SUBDIR += trac-TracDuplicates
     SUBDIR += trac-TracGoogleAnalytics
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
