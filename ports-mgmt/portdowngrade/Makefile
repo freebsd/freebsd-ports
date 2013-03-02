@@ -1,9 +1,5 @@
-# New ports collection makefile for:    portdowngrade
-# Date created:                         2003/02/13
-# Whom:                                 Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	portdowngrade
 PORTVERSION=	0.6
@@ -21,6 +17,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 .if defined(DEFAULT_CVS_SERVER)
 CONFIGURE_ARGS+=	--enable-default-server=${DEFAULT_CVS_SERVER}
 .endif
+
+DEPRECATED=	depends on ports being hosted in CVS
+EXPIRATION_DATE=	2013-06-01
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
