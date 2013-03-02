@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smake
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	INS_BASE=${PREFIX} DEFMANBASE=.
+
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		smake.1
 MAN5=		makefiles.5 makerules.5
