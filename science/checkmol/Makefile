@@ -2,27 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	checkmol
-PORTVERSION=	0.4a
-PORTREVISION=	4
+PORTVERSION=	0.4d
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze molecules for the presence of functional groups
 
+LICENSE=	GPLv2 # (or later)
+
+NO_WRKSUBDIR=	yes
+
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	#
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+
 USE_FPC=	yes
+
 PLIST_FILES=	bin/checkmol bin/matchmol
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/
 do-build:
-	cd ${WRKDIR}; ${LOCALBASE}/bin/fpc ${DISTFILES} -S2 -O3 -Op3
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-	${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/matchmol
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${PREFIX}/bin && ${LN} ${PORTNAME} matchmol)
 
 .include <bsd.port.mk>
