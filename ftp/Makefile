@@ -21,10 +21,8 @@
     SUBDIR += fmirror
     SUBDIR += fpc-libcurl
     SUBDIR += frox
-    SUBDIR += ftp-tls
     SUBDIR += ftpcopy
     SUBDIR += ftpcube
-    SUBDIR += ftpd-tls
     SUBDIR += ftpfind
     SUBDIR += ftplib
     SUBDIR += ftplocate

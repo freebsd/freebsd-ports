@@ -1,2 +1,0 @@
-Ftp server based on the OpenBSD ftp server code, implements the
-FTP AUTH TLS IETF draft plus a custom SSL/TLS client authentication.

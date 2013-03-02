@@ -1,4 +1,0 @@
-bin/ftp-tls
-%%PORTDOCS%%%%DOCSDIR%%/README.TLS
-%%PORTDOCS%%%%DOCSDIR%%/draft-murray-auth-ftp-ssl-16.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
