@@ -10,6 +10,9 @@ bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/grammar.py
 %%PYTHON_SITELIBDIR%%/pyang/grammar.pyc
 %%PYTHON_SITELIBDIR%%/pyang/grammar.pyo
+%%PYTHON_SITELIBDIR%%/pyang/hello.py
+%%PYTHON_SITELIBDIR%%/pyang/hello.pyc
+%%PYTHON_SITELIBDIR%%/pyang/hello.pyo
 %%PYTHON_SITELIBDIR%%/pyang/plugin.py
 %%PYTHON_SITELIBDIR%%/pyang/plugin.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugin.pyo
@@ -19,9 +22,21 @@ bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/plugins/depend.py
 %%PYTHON_SITELIBDIR%%/pyang/plugins/depend.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugins/depend.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/hypertree.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/hypertree.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/hypertree.pyo
 %%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.py
 %%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugins/ietf.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jsonxsl.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jsonxsl.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jsonxsl.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jstree.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jstree.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jstree.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jtox.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jtox.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/jtox.pyo
 %%PYTHON_SITELIBDIR%%/pyang/plugins/smi.py
 %%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugins/smi.pyo
@@ -31,6 +46,9 @@ bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/plugins/uml.py
 %%PYTHON_SITELIBDIR%%/pyang/plugins/uml.pyc
 %%PYTHON_SITELIBDIR%%/pyang/plugins/uml.pyo
+%%PYTHON_SITELIBDIR%%/pyang/plugins/xmi.py
+%%PYTHON_SITELIBDIR%%/pyang/plugins/xmi.pyc
+%%PYTHON_SITELIBDIR%%/pyang/plugins/xmi.pyo
 %%PYTHON_SITELIBDIR%%/pyang/statements.py
 %%PYTHON_SITELIBDIR%%/pyang/statements.pyc
 %%PYTHON_SITELIBDIR%%/pyang/statements.pyo
@@ -70,27 +88,45 @@ bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.py
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyc
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyo
-share/yang/modules/ietf-inet-types.yang
-share/yang/modules/ietf-netconf-monitoring.yang
-share/yang/modules/ietf-yang-types.yang
-share/yang/modules/yang-smi.yang
-share/yang/schema/relaxng-lib.rng
-share/yang/schema/yin.rng
-share/yang/xslt/basename.xsl
-share/yang/xslt/dsrl2xslt.xsl
-share/yang/xslt/gen-common.xsl
-share/yang/xslt/gen-dsrl.xsl
-share/yang/xslt/gen-relaxng.xsl
-share/yang/xslt/gen-schematron.xsl
-share/yang/xslt/iso_abstract_expand.xsl
-share/yang/xslt/iso_schematron_skeleton_for_xslt1.xsl
-share/yang/xslt/iso_svrl_for_xslt1.xsl
-share/yang/xslt/svrl2text.xsl
-share/yang/xslt/yin2yang.xsl
-@dirrm share/yang/xslt
-@dirrm share/yang/schema
-@dirrm share/yang/modules
-@dirrm share/yang
+%%DATADIR%%/images/case.png
+%%DATADIR%%/images/choice.png
+%%DATADIR%%/images/container.png
+%%DATADIR%%/images/file.gif
+%%DATADIR%%/images/focus.png
+%%DATADIR%%/images/folder-closed.gif
+%%DATADIR%%/images/folder-open.gif
+%%DATADIR%%/images/hammer.png
+%%DATADIR%%/images/leaf-list.png
+%%DATADIR%%/images/leaf-plus.png
+%%DATADIR%%/images/leaf.png
+%%DATADIR%%/images/leafref.png
+%%DATADIR%%/images/list.png
+%%DATADIR%%/images/module.png
+%%DATADIR%%/images/notification.png
+%%DATADIR%%/modules/ietf-inet-types.yang
+%%DATADIR%%/modules/ietf-netconf-monitoring.yang
+%%DATADIR%%/modules/ietf-yang-smiv2.yang
+%%DATADIR%%/modules/ietf-yang-types.yang
+%%DATADIR%%/schema/relaxng-lib.rng
+%%DATADIR%%/schema/yin.rng
+%%DATADIR%%/xslt/basename.xsl
+%%DATADIR%%/xslt/canonicalize.xsl
+%%DATADIR%%/xslt/dsrl2xslt.xsl
+%%DATADIR%%/xslt/gen-common.xsl
+%%DATADIR%%/xslt/gen-dsrl.xsl
+%%DATADIR%%/xslt/gen-relaxng.xsl
+%%DATADIR%%/xslt/gen-schematron.xsl
+%%DATADIR%%/xslt/iso_abstract_expand.xsl
+%%DATADIR%%/xslt/iso_schematron_skeleton_for_xslt1.xsl
+%%DATADIR%%/xslt/iso_svrl_for_xslt1.xsl
+%%DATADIR%%/xslt/jsonxsl-templates.xsl
+%%DATADIR%%/xslt/svrl2text.xsl
+%%DATADIR%%/xslt/yin2yang.xsl
+@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/schema
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pyang/translators
 @dirrm %%PYTHON_SITELIBDIR%%/pyang/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/pyang
