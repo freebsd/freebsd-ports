@@ -1,23 +1,29 @@
-# New ports collection makefile for:	wise
-# Date created:				26 February 2002
-# Whom:					Tony Maher <tonym@biolateral.com.au>
-#
+# Created by: Tony Maher <tonym@biolateral.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	wise
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/unix/wise2/
+MASTER_SITES=	http://www.ebi.ac.uk/~birney/wise2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent algorithms for DNA searches
 
-WRKTOP=		${WRKDIR}/${DISTNAME}
-WRKSRC=		${WRKTOP}/src
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+BUILD_WRKSRC=	${WRKSRC}/src
+
+USE_GNOME=	glib20
 MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
+
 SUB_FILES=	pkg-message
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
+PLIST_DIRS=	%%DATADIR%%
 
 #
 # Actually want an 'ALL_TARGET = all perl' which then requires
@@ -29,68 +35,44 @@ SUB_FILES=	pkg-message
 # something like '@cd ${WRKSRC}/perl/Wise2; ${MAKE} install'
 #
 
-BINFILES=	dba dnal estwise estwisedb genewise genewisedb \
-		genomewise psw pswdb
-DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla \
-		aa.rnd blosum30.bla blosum62.bla cb.tmf codon.table \
-		gene.stat gon120.bla gon160.bla gon200.bla gon250.bla \
-		gon350.bla human.gf human.gp human.stats idenity.bla \
-		methods pb.gf pombe.gf tm.pri wise.2 wise.per worm.gf
-DOCFILES=	README apiend.tex appendix.tex dynamite.tex \
-		genewise21.eps genewise6.eps gettex.pl makefile \
-		wise2.tex wise2api.tex wise3arch.tex
-EXFILES=	README db.hmm hn_est.fa human.genomic \
-		keratin_intron.human keratin_intron.mouse pep.fa \
-		road.pep rrm.HMM vav.dna xeno.cdna xeno.pep
+BINFILES=	dba dnal estwise estwisedb genewise genewisedb promoterwise \
+		psw pswdb scanwise scanwise_server
+DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
+		cb.tmf codon.table gene.stat gon120.bla gon160.bla \
+		gon200.bla gon250.bla gon350.bla human.gf human.gp \
+		human.stats idenity.bla methods pb.gf pombe.gf tm.pri \
+		wise.2 wise.per worm.gf
 
-#
-# Top level makefile does not respect CFLAGS.  Fixing it means
-# having to fix some of the sub-directory makefiles.
-# Note: some makefiles are ok and know that '-c' does not belong
-# in CFLAGS and are part of the rule.
-#
+.include <bsd.port.options.mk>
 
-post-configure:
-	@${REINPLACE_CMD} \
-		-e s'#^CFLAGS = -c -O#CFLAGS ?= -c -O#;' \
-		-e s'#\tcsh welcome.csh##;' \
-		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} \
-		-e s'#CFLAGS) $?#CFLAGS) -c $?#;' \
-		${WRKSRC}/base/${MAKEFILE}
-	@${REINPLACE_CMD} \
-		-e s'#INCFLAGS) $?#INCFLAGS) -c $?#;' \
-		${WRKSRC}/dynlibsrc/${MAKEFILE}
-	@${REINPLACE_CMD} \
-		-e s'#INCFLAGS) $?#INCFLAGS) -c $?#;' \
-		-e s'#CFLAGS) estwise.c#CFLAGS) -c estwise.c#;' \
-		-e s'#CFLAGS) estwiseb.c#CFLAGS) -c estwiseb.c#;' \
-		-e s'#CFLAGS) estwisedb.c#CFLAGS) -c estwisedb.c#;' \
-		-e s'#CFLAGS) genewise.c#CFLAGS) -c genewise.c#;' \
-		-e s'#CFLAGS) genewisedb.c#CFLAGS) -c genewisedb.c#;' \
-		${WRKSRC}/models/${MAKEFILE}
+post-patch:
+	@${FIND} ${BUILD_WRKSRC} -name "makefile" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|^CC =|CC ?=| ; \
+		 s|^CFLAGS =|CFLAGS +=| ; \
+		 s|-O[0-9] | | ; \
+		 s|-g | | ; \
+		 s|-g[0-9] | | ; \
+		 s|-lpthread|-pthread| ; \
+		 s|glib-config|pkg-config glib-2.0| ; \
+		 /welcome.csh/s|^|#|'
 
 do-install:
-.for file in ${BINFILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.for i in ${BINFILES}
+	(cd ${BUILD_WRKSRC}/bin && ${INSTALL_PROGRAM} ${i} ${PREFIX}/bin)
 .endfor
 	@${MKDIR} ${DATADIR}
-.for file in ${DATAFILES}
-	@${INSTALL_DATA} ${WRKTOP}/wisecfg/${file} ${DATADIR}
+.for i in ${DATAFILES}
+	(cd ${WRKSRC}/wisecfg && ${INSTALL_DATA} ${i} ${DATADIR})
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKTOP}/docs/${file} ${DOCSDIR}
-.endfor
-	 @${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXFILES}
-	@${INSTALL_DATA} ${WRKTOP}/test_data/${file} ${EXAMPLESDIR}
-.endfor
-
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
-
-post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	 @${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/test_data && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
