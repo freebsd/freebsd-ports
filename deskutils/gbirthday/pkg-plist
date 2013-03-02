@@ -1,9 +1,12 @@
 bin/gbirthday
-share/applications/gbirthday.desktop
-share/pixmaps/gbirthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/__init__.py
 %%PYTHON_SITELIBDIR%%/gbirthday/addressbook.py
-%%PYTHON_SITELIBDIR%%/gbirthday/databases.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/__init__.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/csv.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/evolution.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/lightning.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/mysql.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases/sunbird.py
 %%PYTHON_SITELIBDIR%%/gbirthday/gtk_funcs.py
 %%PYTHON_SITELIBDIR%%/gbirthday/pics/birthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/pics/birthdaylost.png
@@ -16,6 +19,7 @@ share/pixmaps/gbirthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/test_addressbook.py
 %%PYTHON_SITELIBDIR%%/gbirthday/test_conf.py
 %%PYTHON_SITELIBDIR%%/gbirthday/test_databases.py
+share/applications/gbirthday.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gbirthday.mo
@@ -28,6 +32,8 @@ share/pixmaps/gbirthday.png
 %%NLS%%share/locale/sk/LC_MESSAGES/gbirthday.mo
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
-@dirrm %%PYTHON_SITELIBDIR%%/gbirthday
+share/pixmaps/gbirthday.png
 @dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
+@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/databases
+@dirrm %%PYTHON_SITELIBDIR%%/gbirthday
