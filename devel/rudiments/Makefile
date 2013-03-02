@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.50
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for daemons, clients, servers, and more

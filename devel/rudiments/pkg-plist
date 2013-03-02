@@ -233,6 +233,8 @@ libdata/pkgconfig/rudiments.pc
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classclientserverfactory.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classclientsocket-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classclientsocket.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/classcodetree-members.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/classcodetree.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classcommandline-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classcommandline.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classconststringdictionary-members.html
@@ -426,6 +428,8 @@ libdata/pkgconfig/rudiments.pc
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/clientsocket_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/clientsocketincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/closed.png
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/codetree_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/codetreeincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/commandline_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/commandlineincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/config_8h_source.html
@@ -598,6 +602,7 @@ libdata/pkgconfig/rudiments.pc
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2chat_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2client_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2clientsocket_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2codetree_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2commandline_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2crypt_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2daemonprocess_8h_source.html
