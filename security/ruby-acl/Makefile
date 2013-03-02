@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-acl
-# Date created:		7 Sep 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	acl
 PORTVERSION=	1.0.1
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ufo@februality.com
 COMMENT=	Ruby module to provide Access Control List checks
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 

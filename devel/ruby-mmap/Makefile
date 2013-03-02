@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-Mmap
-# Date created:		8 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mmap
 PORTVERSION=	0.2.6
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby interface to manage memory-mapped file objects
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

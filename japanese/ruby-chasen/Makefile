@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-ChaSen
-# Date created:		1 Mar 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	chasen
 PORTVERSION=	1.7
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	ChaSen module for Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 

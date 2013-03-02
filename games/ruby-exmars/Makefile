@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-exmars
-# Date created:				22 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	exmars
 PORTVERSION=	0.01
@@ -13,6 +9,9 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the exMARS Memory Array Redcode Simulator
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-sdl
-# Date created:		2011-04-10
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl
 PORTVERSION=	2.1.1
@@ -14,6 +10,9 @@ DISTNAME=	rubysdl-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 RUN_DEPENDS=	rubygem-opengl>=0.60.1:${PORTSDIR}/graphics/rubygem-opengl
 

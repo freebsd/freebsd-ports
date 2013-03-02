@@ -12,6 +12,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt/KDE
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
+
 CONFLICTS=	ruby1[89]-kdebindings-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4

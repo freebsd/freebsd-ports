@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-objectdetect
-# Date created:		2008-11-25
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
@@ -15,6 +11,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-opencv23.gem
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A simple library for detecting objects in pictures
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-xmlscan
-# Date created:		7 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlscan
 PORTVERSION=	0.0.10
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby XML/HTML scanner and XPath processor/compiler modules
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 

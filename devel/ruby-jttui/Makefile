@@ -1,11 +1,5 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
-# New ports collection makefile for:	ruby-jttui
-# Date created:		2003-02-12
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jttui
 PORTVERSION=	200205082055
@@ -18,6 +12,9 @@ DISTNAME=	jttui.${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Textmode User Interface by Jakub Travnik
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes

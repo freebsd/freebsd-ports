@@ -9,6 +9,9 @@ DISTNAME=	htmltools-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tools for parsing and manipulating HTML text in Ruby
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes

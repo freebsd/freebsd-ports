@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-tk
-# Date created:		15 March 1999
-# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
-#
+# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	${RUBY_PORTVERSION}
@@ -15,6 +11,9 @@ DISTFILES=	# none
 
 MAINTAINER?=	ruby@FreeBSD.org
 COMMENT?=	Ruby interface to the Tk widget set
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 

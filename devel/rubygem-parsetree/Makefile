@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-parsetree
-# Date created:				13 April 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	parsetree
@@ -12,6 +9,9 @@ DISTNAME=	ParseTree-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby parse tree tools
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 RUN_DEPENDS=	rubygem-inline>=3.7.0:${PORTSDIR}/devel/rubygem-inline \
 		rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor

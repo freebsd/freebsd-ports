@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-BDB1
-# Date created:		16 January 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bdb1
 PORTVERSION=	0.2.3
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Ruby interface to Berkeley DB revision 1.8x with full feature support
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

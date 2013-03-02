@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-getopt-declare
-# Date created:		2011-06-02
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	getopt-declare
 PORTVERSION=	1.29
@@ -12,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Declaratively Expressed Command-Line Arguments via Regular Expressions
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

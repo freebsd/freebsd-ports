@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-linecache
-# Date created:				17 Oct 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	linecache
@@ -11,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Caches(Ruby source) Files as Might Be Used in a Debugger
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-sablot
-# Date created:		9 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sablot
 PORTVERSION=	0.5.2
@@ -15,6 +11,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Ruby interface to the Sablotron XSLT processor
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		expat.6:${PORTSDIR}/textproc/expat2

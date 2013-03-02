@@ -1,14 +1,13 @@
-# New ports collection makefile for:   subversion-ruby
-# Date Created:                4 July 2005
-# Whom:                        Hiroyuki Iwatsuki <don@na.rim.or.jp>
-#
+# Created by: Hiroyuki Iwatsuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	ruby-
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Ruby bindings for version control system
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 .if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 16
 MASTERDIR=	${.CURDIR}/../../devel/subversion16

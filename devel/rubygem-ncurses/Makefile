@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-ncurses
-# Date created:				13 November 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ncurses
 PORTVERSION=	0.9.1
@@ -12,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Wrapper to the ncurses library
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
