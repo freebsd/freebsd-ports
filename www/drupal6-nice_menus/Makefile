@@ -2,24 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	nice_menus
-DISTVERSION=	6.x-1.3
-PORTREVISION=	2
+DISTVERSION=	6.x-2.1
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	CSS / JavaScript pull-down menus for Drupal
 
 USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
-MODULE_DIRS=	po translations
-MODULE_FILES=	po/ja.po po/nice_menus.pot arrow-down.png arrow-left.png \
-		arrow-right.png nice_menus.css nice_menus.info \
-		nice_menus.install nice_menus.js nice_menus.module \
-		nice_menus_default.css screenshot-drupal.org.png \
-		translations/nice_menus.pot translations/sk.po \
-		translations/sv.po
-
+MODULE_DIRS=	superfish/js superfish translations
+MODULE_FILES=	arrow-right.png nice_menus.install nice_menus_default-rtl.css \
+		arrow-down.png nice_menus.css nice_menus.js nice_menus_default.css \
+		arrow-left.png nice_menus.info nice_menus.module screenshot-drupal.org.png \
+		translations/nice_menus.pot translations/de.po translations/sv.po \
+		superfish/js/jquery.bgiframe.min.js \
+		superfish/js/jquery.hoverIntent.minified.js \
+		superfish/js/superfish.js
 DOC_FILES=	CHANGELOG.txt README.txt UPGRADE.txt LICENSE.txt
 
 .include <bsd.port.mk>
