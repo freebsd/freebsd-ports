@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pecl-ssh2
-# Date created:			20050407
-# Whom:				Alexander Leidinger <netchild@FreeBSD.org>
-#
+# Created by: Alexander Leidinger <netchild@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssh2
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -25,4 +21,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-ssh2
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\$$SSH2_DIR/lib|\$$SSH2_DIR/\$$PHP_LIBDIR|g' ${WRKSRC}/config.m4
+
+.include <bsd.port.post.mk>
