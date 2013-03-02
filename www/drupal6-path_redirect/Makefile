@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	path_redirect
-DISTVERSION=	6.x-1.0-beta6
+DISTVERSION=	6.x-1.0-rc2
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to allow redirects
 
 USE_DRUPAL=	yes
