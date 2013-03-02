@@ -15,7 +15,7 @@ COMMENT=	A tool for image blending with multiresolution splines
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
+		lcms2:${PORTSDIR}/graphics/lcms2 \
 		xmi:${PORTSDIR}/graphics/plotutils \
 		tiff:${PORTSDIR}/graphics/tiff \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs \
