@@ -5,7 +5,7 @@ CATEGORIES=	www net-p2p
 PKGNAMESUFFIX=	-web
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A fast and lightweight WebUI for Transmission BitTorrent client
+COMMENT=	Fast and lightweight WebUI for Transmission BitTorrent client
 
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../../net-p2p/transmission-cli
