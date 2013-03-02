@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: devmon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+: ${devmon_enable="NO"}
+: ${devmon_config="%%PREFIX%%/devmon/devmon.cfg"}
+: ${devmon_db="%%PREFIX%%/devmon/hosts.db"}
+: ${devmon_pid="/var/run/devmon.pid"}
+
+. /etc/rc.subr
+
+name="devmon"
+rcvar="devmon_enable"
+load_rc_config $name
+command="%%PREFIX%%/devmon/devmon"
+command_args="-c ${devmon_config} -d ${devmon_db}"
+command_interpreter="/usr/bin/perl"
+pidfile=${devmon_pid}
+
+stop_cmd="devmon_stopcmd"
+status_cmd="devmon_statuscmd"
+
+devmon_statuscmd()                                                                                                                                                              
+{
+if [ ! -e $pidfile ];                                                                                                                                                      
+    then
+        echo "pidfile does not exist. $name is not running?";
+    exit 1;
+fi
+
+if pgrep -F $pidfile >/dev/null;
+    then
+        echo "$name is running.";
+    else
+        echo "$name is not running.";
+    exit 1;
+fi
+}
+
+devmon_stopcmd()
+{
+if pgrep -F $pidfile >/dev/null;
+    then
+	mypid=`cat $pidfile`;
+        kill $sig_stop $mypid;
+        wait_for_pids $mypid;
+    else
+        echo "$name is not running.";
+        exit 1;
+fi
+}
+
+run_rc_command "$1"

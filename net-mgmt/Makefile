@@ -54,6 +54,7 @@
     SUBDIR += cowpatty
     SUBDIR += cricket
     SUBDIR += darkstat
+    SUBDIR += devmon
     SUBDIR += dhcdrop
     SUBDIR += disco
     SUBDIR += docsis
