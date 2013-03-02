@@ -9,7 +9,7 @@
 # Please send all suggested changes to the maintainer instead of committing
 # them to CVS yourself.
 
-bsd_drupal_mk_MAINTAINER=       nick@foobar.org
+bsd_drupal_mk_MAINTAINER=       miwi@FreeBSD.org
 
 # Make sure we cannot define any combination of DRUPAL{5,6}
 .if (defined(DRUPAL5_MODULE) && defined(DRUPAL6_MODULE))
