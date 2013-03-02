@@ -1,17 +1,13 @@
-# New ports collection makefile for:	xpi-it_s_all_text
-# Date created:				2009-04-26
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	it_s_all_text
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.4
 DISTVERSIONSUFFIX=	-sm+fx
 CATEGORIES=	www
 DISTNAME=	${PORTNAME:S/it_s/its/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Edit textareas using an external editor
 
 XPI_NUM=	4125
