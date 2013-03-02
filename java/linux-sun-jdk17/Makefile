@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VERSION=		7
 JDK_INTERNAL_VERSION=	1.7.0
-JDK_UPDATE_VERSION=	13
+JDK_UPDATE_VERSION=	15
 DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}_${JDK_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
@@ -49,11 +49,13 @@ IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${
 
 .if ${PORT_OPTIONS:MDEMO}
 DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
-#DEMO_UPDATE_VERSION=	10
+.if ${DEMO_UPDATE_VERSION} != ${JDK_UPDATE_VERSION}
+DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
+DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
+.else
 DEMO_DISTNAME=	${DISTNAME}-demos
-#DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
 DEMO_WRKSRC=	${WRKSRC}
-#DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
+.endif
 .if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
