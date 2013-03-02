@@ -1,4 +1,3 @@
-%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome/content/about.xul
 %%XPI_XPIDIR%%/chrome/content/block.html
 %%XPI_XPIDIR%%/chrome/content/cbox-check-dis.gif
@@ -13,6 +12,7 @@
 %%XPI_XPIDIR%%/chrome/content/ghostery-clean.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-click2play.json
 %%XPI_XPIDIR%%/chrome/content/ghostery-common.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-compatibility.json
 %%XPI_XPIDIR%%/chrome/content/ghostery-cookiemonster.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-db.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-html-block.js
@@ -40,10 +40,62 @@
 %%XPI_XPIDIR%%/chrome/content/images/arrow-hover.png
 %%XPI_XPIDIR%%/chrome/content/images/arrow.png
 %%XPI_XPIDIR%%/chrome/content/images/arrows.gif
+%%XPI_XPIDIR%%/chrome/content/images/clippy_button_over.png
+%%XPI_XPIDIR%%/chrome/content/images/clippy_button_up.png
 %%XPI_XPIDIR%%/chrome/content/images/down.gif
 %%XPI_XPIDIR%%/chrome/content/images/ghostery-about.png
 %%XPI_XPIDIR%%/chrome/content/images/gradBD.gif
 %%XPI_XPIDIR%%/chrome/content/images/panels.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_down.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_down.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_down.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_down.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_alert.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_down_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_down_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_up_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_up_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_green_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_green_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_grey_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_grey_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_blue_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_blue_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_green_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_green_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_red_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_red_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_yellow_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_yellow_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_hover_left.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_hover_right.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_left_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_left_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_right_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_right_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_close_hover.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_close_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_control_off.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_control_on.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_check_green.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_check_grey.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_blue.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_green.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_grey.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_red.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_yellow.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_track_lrg.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/turorial_panel.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/base-short.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/base.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/bg-bottom.png
@@ -51,6 +103,7 @@
 %%XPI_XPIDIR%%/chrome/content/images/popup/chat.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/email.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/ghosty-top.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/ghosty_TM.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-down.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-up.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/pause-long.png
@@ -74,10 +127,13 @@
 %%XPI_XPIDIR%%/chrome/content/includes/jquery.simplemodal.1.4.1.min.js
 %%XPI_XPIDIR%%/chrome/content/includes/tiptip/jquery.tipTip.minified.js
 %%XPI_XPIDIR%%/chrome/content/includes/tiptip/tipTip.css
+%%XPI_XPIDIR%%/chrome/content/jquery_license.txt
 %%XPI_XPIDIR%%/chrome/content/options.html
 %%XPI_XPIDIR%%/chrome/content/options.xul
+%%XPI_XPIDIR%%/chrome/content/popup.css
 %%XPI_XPIDIR%%/chrome/content/popup.html
 %%XPI_XPIDIR%%/chrome/content/share-16x16.png
+%%XPI_XPIDIR%%/chrome/content/tiptip_license.txt
 %%XPI_XPIDIR%%/chrome/content/transparent-16x16.png
 %%XPI_XPIDIR%%/chrome/content/wizard.html
 %%XPI_XPIDIR%%/chrome/locale/de-DE/ghostery.dtd
@@ -92,6 +148,7 @@
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/ghostery.properties
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.properties
+%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/ghostery-content-policy.js
 %%XPI_XPIDIR%%/defaults/preferences/defaults.js
 %%XPI_XPIDIR%%/ghostery_eula.txt
@@ -117,21 +174,26 @@
 %%XPI_XPIDIR%%/resource/ghosty_blocked.png
 %%XPI_XPIDIR%%/resource/icon128.png
 %%XPI_XPIDIR%%/resource/rbc_50px.png
-@dirrm %%XPI_XPIDIR%%/resource/font
-@dirrm %%XPI_XPIDIR%%/resource
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/content/includes/tiptip
-@dirrm %%XPI_XPIDIR%%/chrome/content/includes
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Footer
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Header
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Settings
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Tracker
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial
 @dirrm %%XPI_XPIDIR%%/chrome/content/images/popup
 @dirrm %%XPI_XPIDIR%%/chrome/content/images
+@dirrm %%XPI_XPIDIR%%/chrome/content/includes/tiptip
+@dirrm %%XPI_XPIDIR%%/chrome/content/includes
 @dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/resource/font
+@dirrm %%XPI_XPIDIR%%/resource
