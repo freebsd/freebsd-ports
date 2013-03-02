@@ -1,8 +1,6 @@
 --- examples/dia2code.kaptn.orig	Sat Nov 17 00:11:04 2001
 +++ examples/dia2code.kaptn	Fri Dec 20 13:17:45 2002
-@@ -1,17 +1,20 @@
--#!/usr/bin/kaptain
-+#!%%PREFIX%%/bin/kaptain
+@@ -2,16 +2,19 @@
  start "Dia2Code" -> dia2code buttons;
  dia2code :tabbed -> main about;
  
