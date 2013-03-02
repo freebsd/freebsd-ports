@@ -1,25 +1,21 @@
-# New ports collection makefile for:	bos
-# Date created:				14 Oct 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	boswars
 PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	martin@arp242.net
-COMMENT=	A real-time strategy game
+COMMENT=	Futuristic real-time strategy game
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_LUA=	5.1
 USE_SDL=	sdl
@@ -29,6 +25,11 @@ SCONS_ARGS+=	opengl=1
 CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
 LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
 CFLAGS+=	-DSTRATAGUS_LIB_PATH='"\"${DATADIR}\""'
+
+DESKTOP_ENTRIES=	"Bos Wars" "${COMMENT}" "" \
+			"boswars" "Game;StrategyGame;" false
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -44,7 +45,7 @@ do-install:
 	${CP} -R ${WRKSRC}/${f} ${DATADIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
