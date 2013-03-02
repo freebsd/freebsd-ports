@@ -22,12 +22,11 @@
 %%XPI_XPIDIR%%/content/newscript.xul
 %%XPI_XPIDIR%%/content/options.js
 %%XPI_XPIDIR%%/content/options.xul
+%%XPI_XPIDIR%%/content/scratchpad-overlay.xul
 %%XPI_XPIDIR%%/content/scriptprefs.js
 %%XPI_XPIDIR%%/content/scriptprefs.xul
 %%XPI_XPIDIR%%/content/third-party/addons4.css
 %%XPI_XPIDIR%%/content/third-party/mpl-utils.js
-%%XPI_XPIDIR%%/content/third-party/toolbar-mac.png
-%%XPI_XPIDIR%%/content/xmlhttprequester.js
 %%XPI_XPIDIR%%/defaults/preferences/greasemonkey.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/locale/ar/gm-addons.dtd
@@ -254,9 +253,11 @@
 %%XPI_XPIDIR%%/modules/stats.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
+%%XPI_XPIDIR%%/modules/third-party/droppedUrls.js
 %%XPI_XPIDIR%%/modules/third-party/getChromeWinForContentWin.js
 %%XPI_XPIDIR%%/modules/util/alert.js
 %%XPI_XPIDIR%%/modules/util/anonWrap.js
+%%XPI_XPIDIR%%/modules/util/apiLeakCheck.js
 %%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
 %%XPI_XPIDIR%%/modules/util/emptyEl.js
 %%XPI_XPIDIR%%/modules/util/getBinaryContents.js
@@ -279,6 +280,7 @@
 %%XPI_XPIDIR%%/modules/util/openInEditor.js
 %%XPI_XPIDIR%%/modules/util/scriptDir.js
 %%XPI_XPIDIR%%/modules/util/scriptMatchesUrlAndRuns.js
+%%XPI_XPIDIR%%/modules/util/setEditor.js
 %%XPI_XPIDIR%%/modules/util/setEnabled.js
 %%XPI_XPIDIR%%/modules/util/sha1.js
 %%XPI_XPIDIR%%/modules/util/showInstallDialog.js
@@ -291,6 +293,7 @@
 %%XPI_XPIDIR%%/modules/util/windowIsClosed.js
 %%XPI_XPIDIR%%/modules/util/writeToFile.js
 %%XPI_XPIDIR%%/modules/util.js
+%%XPI_XPIDIR%%/modules/xmlhttprequester.js
 %%XPI_XPIDIR%%/skin/addons4.css
 %%XPI_XPIDIR%%/skin/bindings.css
 %%XPI_XPIDIR%%/skin/browser.css
