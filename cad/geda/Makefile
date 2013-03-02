@@ -1,15 +1,11 @@
-# New ports collection makefile for:	geda
-# Date created:			24 Nov 1998
-# Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geda
-PORTVERSION=	1.6.2
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://geda.seul.org/release/%SUBDIR%/
+MASTER_SITES=	http://ftp.geda-project.org/geda-gaf/stable/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-gaf-${PORTVERSION}
 
@@ -41,7 +37,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-gaf
 DATADIR=	${PREFIX}/share/gEDA
 
-MAN1=		gnetlist.1 grenum.1 gschem.1 gsymcheck.1
+MAN1=		convert_sym.1 garchive.1 gattrib.1 gmk_sym.1 \
+		gnetlist.1 grenum.1 gsch2pcb.1 gschem.1 \
+		gschlas.1 gsymcheck.1 gsymfix.1 gxyrs.1 \
+		olib.1 pads_backannotate.1 pcb_backannotate.1 refdes_renum.1 \
+		sarlacc_schem.1 sarlacc_sym.1 schdiff.1 smash_megafile.1 \
+		sw2asc.1 tragesym.1
+INFO=		geda-scheme
 
 CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
 		geda-gschem-[0-9]* geda-netlist-[0-9]* geda-symbols-[0-9]* \
@@ -61,8 +63,7 @@ post-patch:
 		'/-x/s|INSTALL_DATA|INSTALL|' ${WRKSRC}/${dir}/data/Makefile.in
 .endfor
 	@${REINPLACE_CMD} -e \
-		'/<glib\/gm/d ; \
-		 s|<glib/types.h>|<glib.h>|' ${WRKSRC}/libgeda/src/s_path.c
+		'/OS_LINUX=/s|no|yes|' ${WRKSRC}/configure
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e '/^#!/s|/usr/bin|${LOCALBASE}/bin|'
 	@${GREP} -lR "/usr/bin/perl" ${WRKSRC} | ${XARGS} \
