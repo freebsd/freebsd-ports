@@ -1,76 +1,92 @@
-# New ports collection makefile for:	silo
-# Date created:		17 jul 2008
-# Whom: 		Pedro F. Giffuni <giffunip@tutopia.com>
-#
+# Created by: Pedro F. Giffuni <giffunip@tutopia.com>
 # $FreeBSD$
-#
 
 PORTNAME=	silo
-PORTVERSION=	4.6.2
-PORTREVISION=	8
+PORTVERSION=	4.9
+DISTVERSIONSUFFIX=	-bsd
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A mesh and field I/O library and scientific database
+COMMENT=	Mesh and field I/O library and scientific database
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
-
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+OPTIONS_DEFINE=	HDF5 PYTHON
+OPTIONS_RADIO=	EXCLUSIVE
+OPTIONS_RADIO_EXCLUSIVE=	FORTRAN QT4
+OPTIONS_DEFAULT=	QT4
 
 NO_LATEST_LINK=	yes
+
+USE_READLINE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-shared
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-USE_QT_VER=	3
+.include <bsd.port.options.mk>
 
-.ifdef WITH_PYTHON
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--enable-pythonmodule
-PLIST_SUB+=	WITH_PYTHON=""
-.else
-PLIST_SUB+=	WITH_PYTHON="@comment "
-.endif
-
-.ifdef WITH_HDF5
+.if ${PORT_OPTIONS:MFORTRAN}
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	${MAKE_ENV}
-CONFIGURE_ARGS+=	--enable-fortran
 .else
 CONFIGURE_ARGS+=	--disable-fortran
 .endif
 
-.ifdef WITH_HDF5
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
-CONFIGURE_ARGS=	--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
-PLIST_SUB+=	WITH_HDF5=""
-PLIST_SUB+=	WITH_NCDF="@comment "
-LIBSILO=	libsiloh5
+.if ${PORT_OPTIONS:MHDF5}
+LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
+CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
+PLIST_SUB+=	HDF5="" NOHDF5="@comment "
 .else
-PLIST_SUB+=	WITH_HDF5="@comment "
-PLIST_SUB+=	WITH_NCDF=""
-LIBSILO=	libsilo
+PLIST_SUB+=	HDF5="@comment " NOHDF5=""
 .endif
 
-.ifdef WITH_OPTIMIZATION
-CONFIGURE_ARGS+=	--enable-optimization
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--enable-pythonmodule
+PLIST_SUB+=	PYTHON=""
+.else
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-post-install:
-	@${RM} ${PREFIX}/lib/libsilo*.settings
-	@${MV} ${PREFIX}/lib/${LIBSILO}.so ${PREFIX}/lib/${LIBSILO}.so.4
-	@${LN} -sf ${PREFIX}/lib/${LIBSILO}.so.4 ${PREFIX}/lib/${LIBSILO}.so
+.if ${PORT_OPTIONS:MQT4}
+USE_XORG=	xext xi xmu xt
+USE_QT4=	qt3support linguist_build moc_build uic_build
+QT_NONSTANDARD=	yes
+CONFIGURE_ARGS+=	--with-Qt-dir=${QT_PREFIX}
+PLIST_SUB+=	QT4=""
+DESKTOP_ENTRIES="Silex" "Silex browser for Silo files" "" "silex" "" true
+.else
+CONFIGURE_ARGS+=	--disable-silex
+PLIST_SUB+=	QT4="@comment "
+.endif
 
-.ifdef MAINTAINER_MODE
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\(_Qt_dir/include\)"|\1/qt4"| ; \
+		 s|\(_Qt_dir/lib\)"|\1/qt4"| ; \
+		 s|\(/uic\)"|\1-qt4"| ; \
+		 s|\(/moc\)"|\1-qt4"| ; \
+		 s|\(/lrelease\)"|\1-qt4"| ; \
+		 s|\(/lupdate\)"|\1-qt4"|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/-avoid-version/s|^|#| ; \
+		 /^install-data-am/s|:.*|:|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/-ldl/s|^|#|' ${WRKSRC}/tests/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|@libdir@|@pythondir@|' ${WRKSRC}/tools/python/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|\(INBUILD\));|\1, me);|' ${WRKSRC}/src/hdf5_drv/silo_hdf5.c
+
+.if defined(MAINTAINER_MODE)
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} check
 .endif
 
 .include <bsd.port.mk>
