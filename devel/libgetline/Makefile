@@ -4,14 +4,11 @@
 PORTNAME=	getline
 PORTVERSION=	3.9
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp2.caldera.com/pub/skunkware/src/libraries/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-39-src
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A small, portable, and easy to use command line library
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2013-02-28
 
 MAN3=		getline.3
 
