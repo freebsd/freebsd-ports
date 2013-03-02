@@ -17,7 +17,8 @@
 %%XPI_XPIDIR%%/chrome/content/minit/minit.js
 %%XPI_XPIDIR%%/chrome/content/minit/renameTab.xul
 %%XPI_XPIDIR%%/chrome/content/minit/tablib.js
-%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay40.css
+%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay17.css
+%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay4.css
 %%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay_base.css
 %%XPI_XPIDIR%%/chrome/content/overlay/tabContextMenu.xul
 %%XPI_XPIDIR%%/chrome/content/places/bookmarkProperties.xul
@@ -36,6 +37,9 @@
 %%XPI_XPIDIR%%/chrome/content/pref/pref-tabmix.xul
 %%XPI_XPIDIR%%/chrome/content/pref/preferencesOverlay.js
 %%XPI_XPIDIR%%/chrome/content/pref/preferencesOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.js
+%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.xml
+%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.xul
 %%XPI_XPIDIR%%/chrome/content/pref/tab_panel.xul
 %%XPI_XPIDIR%%/chrome/content/session/promptservice.js
 %%XPI_XPIDIR%%/chrome/content/session/promptservice.xul
@@ -51,11 +55,13 @@
 %%XPI_XPIDIR%%/chrome/content/tabmix.js
 %%XPI_XPIDIR%%/chrome/content/tabmix.xul
 %%XPI_XPIDIR%%/chrome/content/utils.js
+%%XPI_XPIDIR%%/chrome/locale/ar/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/misc.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/pref-appearance.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/ca/misc.dtd
@@ -63,6 +69,7 @@
 %%XPI_XPIDIR%%/chrome/locale/ca/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/ca/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ca/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/ca/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/ca/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ca/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/misc.dtd
@@ -70,6 +77,7 @@
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/cs-CZ/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/da/misc.dtd
@@ -77,6 +85,7 @@
 %%XPI_XPIDIR%%/chrome/locale/da/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/da/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/de/misc.dtd
@@ -84,6 +93,7 @@
 %%XPI_XPIDIR%%/chrome/locale/de/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/de/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/de/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/de/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/de/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/de/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/el/misc.dtd
@@ -91,6 +101,7 @@
 %%XPI_XPIDIR%%/chrome/locale/el/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/el/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/el/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/el/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/el/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/el/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/en-US/misc.dtd
@@ -98,6 +109,7 @@
 %%XPI_XPIDIR%%/chrome/locale/en-US/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/es-ES/misc.dtd
@@ -105,6 +117,7 @@
 %%XPI_XPIDIR%%/chrome/locale/es-ES/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/es-ES/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/es-ES/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/es-ES/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/es-ES/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/et-EE/misc.dtd
@@ -112,20 +125,25 @@
 %%XPI_XPIDIR%%/chrome/locale/et-EE/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/et-EE/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/et-EE/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/et-EE/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/et-EE/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/et-EE/tabmix.properties
+%%XPI_XPIDIR%%/chrome/locale/eu/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/misc.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/pref-appearance.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/fa-IR/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa-IR/tabmix.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/misc.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/pref-appearance.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/he-IL/misc.dtd
@@ -133,6 +151,7 @@
 %%XPI_XPIDIR%%/chrome/locale/he-IL/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/he-IL/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/misc.dtd
@@ -140,6 +159,7 @@
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/hr-HR/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/misc.dtd
@@ -147,6 +167,7 @@
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/it/misc.dtd
@@ -154,6 +175,7 @@
 %%XPI_XPIDIR%%/chrome/locale/it/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/it/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/it/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/it/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/it/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/it/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/ja/misc.dtd
@@ -161,6 +183,7 @@
 %%XPI_XPIDIR%%/chrome/locale/ja/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/ja/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/misc.dtd
@@ -168,13 +191,16 @@
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/tabmix.properties
+%%XPI_XPIDIR%%/chrome/locale/lv-LV/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/misc.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/pref-appearance.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/nl/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/pl/misc.dtd
@@ -182,6 +208,7 @@
 %%XPI_XPIDIR%%/chrome/locale/pl/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/pl/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pl/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/pl/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/pl/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pl/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/misc.dtd
@@ -189,6 +216,7 @@
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-BR/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/misc.dtd
@@ -196,6 +224,7 @@
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/pt-PT/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/ro/misc.dtd
@@ -203,6 +232,7 @@
 %%XPI_XPIDIR%%/chrome/locale/ro/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/ro/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ro/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/ro/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/ro/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ro/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/misc.dtd
@@ -210,6 +240,7 @@
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/ru-RU/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/misc.dtd
@@ -217,6 +248,7 @@
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/sr/misc.dtd
@@ -224,6 +256,7 @@
 %%XPI_XPIDIR%%/chrome/locale/sr/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/sr/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sr/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/sr/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/sr/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sr/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/misc.dtd
@@ -231,6 +264,7 @@
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/tr/misc.dtd
@@ -238,6 +272,7 @@
 %%XPI_XPIDIR%%/chrome/locale/tr/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/tr/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/tr/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/tr/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/tr/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/tr/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/misc.dtd
@@ -245,6 +280,7 @@
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/uk-UA/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/vi/misc.dtd
@@ -252,6 +288,7 @@
 %%XPI_XPIDIR%%/chrome/locale/vi/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/vi/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/vi/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/vi/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/vi/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/vi/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/misc.dtd
@@ -259,6 +296,7 @@
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/tabmix.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/misc.dtd
@@ -266,6 +304,7 @@
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/pref-filetype.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/pref-tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/session-manager.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/shortcuts.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/tabmix.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/tabmix.properties
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/general.css
@@ -273,6 +312,8 @@
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/mac/browser.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/mac/progress.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser.css
+%%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser_xp15.css
+%%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser_xp16.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/progress.css
 %%XPI_XPIDIR%%/chrome/skin/arrow.png
 %%XPI_XPIDIR%%/chrome/skin/autoreload.png
@@ -280,6 +321,7 @@
 %%XPI_XPIDIR%%/chrome/skin/chevron-rtl.gif
 %%XPI_XPIDIR%%/chrome/skin/chevron-up.gif
 %%XPI_XPIDIR%%/chrome/skin/chevron.gif
+%%XPI_XPIDIR%%/chrome/skin/disabled.png
 %%XPI_XPIDIR%%/chrome/skin/drag-left.png
 %%XPI_XPIDIR%%/chrome/skin/drag-right.png
 %%XPI_XPIDIR%%/chrome/skin/dropmarker-leftright.png
@@ -289,6 +331,7 @@
 %%XPI_XPIDIR%%/chrome/skin/preferences.css
 %%XPI_XPIDIR%%/chrome/skin/prefs.css
 %%XPI_XPIDIR%%/chrome/skin/protected.png
+%%XPI_XPIDIR%%/chrome/skin/refresh.png
 %%XPI_XPIDIR%%/chrome/skin/renameTab.css
 %%XPI_XPIDIR%%/chrome/skin/sessionmanager.png
 %%XPI_XPIDIR%%/chrome/skin/tab.css
@@ -308,6 +351,8 @@
 %%XPI_XPIDIR%%/modules/MergeWindows.jsm
 %%XPI_XPIDIR%%/modules/RenameTab.jsm
 %%XPI_XPIDIR%%/modules/Services.jsm
+%%XPI_XPIDIR%%/modules/Shortcuts.jsm
+%%XPI_XPIDIR%%/modules/SingleWindowModeUtils.jsm
 %%XPI_XPIDIR%%/modules/Slideshow.jsm
 %%XPI_XPIDIR%%/modules/extensions/CompatibilityCheck.jsm
 %%XPI_XPIDIR%%/modules/extensions/TabGroupsManager.jsm
@@ -319,10 +364,12 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/minit
 @dirrm %%XPI_XPIDIR%%/chrome/content/overlay
 @dirrm %%XPI_XPIDIR%%/chrome/content/places
+@dirrm %%XPI_XPIDIR%%/chrome/content/pref/shortcuts
 @dirrm %%XPI_XPIDIR%%/chrome/content/pref
 @dirrm %%XPI_XPIDIR%%/chrome/content/session
 @dirrm %%XPI_XPIDIR%%/chrome/content/tab
 @dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ar
 @dirrm %%XPI_XPIDIR%%/chrome/locale/bg-BG
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ca
 @dirrm %%XPI_XPIDIR%%/chrome/locale/cs-CZ
@@ -332,7 +379,9 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/et-EE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/eu
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fa-IR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fr
 @dirrm %%XPI_XPIDIR%%/chrome/locale/he-IL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hr-HR
@@ -340,6 +389,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ja
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/lv-LV
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
