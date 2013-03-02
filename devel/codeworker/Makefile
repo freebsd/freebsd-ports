@@ -1,34 +1,37 @@
-# ex:ts=8
-# Ports collection makefile for:	CodeWorker
-# Date created:			Dec 31, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	codeworker
-PORTVERSION=	4.2
+PORTVERSION=	4.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://codeworker.free.fr/downloads/
 DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A parsing tool and a source code generator
+COMMENT=	Versatile parsing tool and source code generator
 
-EXTRACT_BEFORE_ARGS=	-qo -aa
+LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/CodeWorker${PORTVERSION:S/./_/g}
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LFLAGS="-lm"
 ALL_TARGET=	build
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-Dstricmp=strcasecmp
 
 PLIST_FILES=	bin/codeworker
 
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|<features.h>|<cstdio>| ; \
+		 s|__GNUC_PREREQ |__GNUC_PREREQ__|'
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} codeworker ${PREFIX}/bin)
 
 .include <bsd.port.mk>
