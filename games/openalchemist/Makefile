@@ -15,7 +15,7 @@ LICENSE=	GPLv2 CCbySA
 LICENSE_COMB=	multi
 LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
 LICENSE_FILE_CCbySA=	${WRKSRC}/GRAPHICS-LICENSE
-LICENSE_PERMS_CCbySA=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1 \

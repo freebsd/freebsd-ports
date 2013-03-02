@@ -31,7 +31,7 @@ MAKE_JOBS_SAFE=	YES
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAN1=		tpm_sealdata.1 tpm_version.1				\
 		tpmtoken_import.1 tpmtoken_init.1 tpmtoken_objects.1	\

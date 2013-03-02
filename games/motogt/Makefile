@@ -22,7 +22,7 @@ LICENSE=	GPLv2 CCbySA
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/gpl.txt
 LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
-LICENSE_PERMS_CCbySA=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_CCbySA=	${WRKSRC}/doc/cc-by-sa.txt
 
 USE_ZIP=	yes

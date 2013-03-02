@@ -20,7 +20,7 @@ COMMENT=	A combine of Kai and Sung with CNS11643 TrueType Fonts
 LICENSE=	CC_BY-ND_3.0_TW
 LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://creativecommons.org/licenses/by-nd/3.0/tw/
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes

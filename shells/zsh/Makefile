@@ -14,7 +14,7 @@ COMMENT=	The Z shell
 LICENSE=	ZSH
 LICENSE_NAME=	ZSH license
 LICENSE_FILE=	${WRKSRC}/LICENCE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -35,7 +35,7 @@ ISOFILES=	Setup.pl Admin/ManageTemplates.pl Languages/English/Admin.lng \
 
 LICENSE=	YABB_PUBLIC_LICENCE
 LICENSE_NAME=	YABB PUBLIC LICENCE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.yabbforum.com/licenses.php
 
 .include <bsd.port.pre.mk>

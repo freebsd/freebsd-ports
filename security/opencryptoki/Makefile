@@ -38,7 +38,7 @@ GROUPS=		_pkcs11
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--disable-crtok --disable-aeptok \

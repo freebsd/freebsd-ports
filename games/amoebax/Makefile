@@ -15,7 +15,7 @@ LICENSE=	GPLv2 FAL
 LICENSE_COMB=	dual
 LICENSE_NAME_FAL=	Free Art License, version 1.2
 LICENSE_FILE_FAL=	${WRKSRC}/COPYING.LAL
-LICENSE_PERMS_FAL=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_FAL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

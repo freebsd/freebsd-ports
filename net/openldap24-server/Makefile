@@ -39,7 +39,7 @@ COMMENT?=		Open source LDAP server implementation
 LICENSE=		OPENLDAP
 LICENSE_NAME=		OpenLDAP Public License
 LICENSE_FILE=		${WRKSRC}/LICENSE
-LICENSE_PERMS=		${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LATEST_LINK?=		${PKGNAMEPREFIX}openldap24${PKGNAMESUFFIX}
 USE_OPENSSL=		yes

@@ -18,7 +18,7 @@ COMMENT=	A dungeon explorin', slashin', hackin' game
 
 LICENSE=	nethack
 LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/dat/license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

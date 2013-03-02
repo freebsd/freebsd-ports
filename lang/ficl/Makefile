@@ -16,7 +16,7 @@ COMMENT=	Forth Inspired Command Language
 LICENSE=	unknown
 LICENSE_NAME=	BSD-style
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://ficl.sourceforge.net/license.html
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	YES
 

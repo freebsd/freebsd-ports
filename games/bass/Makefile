@@ -17,7 +17,7 @@ COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
 LICENSE=	unknown
 LICENSE_NAME=	no name
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
