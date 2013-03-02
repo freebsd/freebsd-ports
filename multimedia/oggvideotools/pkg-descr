@@ -4,8 +4,4 @@ which usually consist of a video stream (Theora) and an audio stream
 creating an manipulating these video files, such as for splitting the
 different streams.
 
-At the moment there are the following tools available: oggResize,
-oggThumb, oggSlideshow, oggCut, oggCat, oggSplit, oggJoin, oggDump,
-oggLength, oggSilence and oggScroll.
-
-WWW: http://dev.streamnik.de/oggvideotools.html
+WWW: http://www.streamnik.de/oggvideotools.html

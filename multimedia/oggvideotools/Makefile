@@ -2,30 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	oggvideotools
-PORTVERSION=	0.8
-PORTREVISION=	5
+PORTVERSION=	0.8a
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	oggvideotools/oggvideotools/${DISTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A toolbox for manipulating Ogg video files
+COMMENT=	Toolbox for manipulating Ogg video files
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+LICENSE=	GPLv2 # (or later)
+
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		ogg:${PORTSDIR}/audio/libogg \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_SDL=	sdl
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-MAKEFILE=	makefile
+USE_PKGCONFIG=	build
+USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-.for app in oggSplit oggDump oggJoin oggCut oggCat oggLength oggSlideshow oggThumb oggResize oggSilence oggScroll mkThumbs mkSlideshow
-PLIST_FILES+=	bin/${app}
-.endfor
-.for app in oggResize oggSlideshow oggThumb oggSplit oggJoin oggCut oggCat oggSilence
-MAN1+=	${app}.1
-.endfor
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		mkThumbs.1 oggCat.1 oggCut.1 oggDump.1 oggJoin.1 \
+		oggLength.1 oggSilence.1 oggSlideshow.1 oggSplit.1 \
+		oggThumb.1 oggTranscode.1
 
 .include <bsd.port.mk>
