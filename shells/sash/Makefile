@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sash
-# Date created:		Jan 22, 2000
-# Whom:			Patrick Gardella <patrick@freebsd.org>
-#
+# Created by: Patrick Gardella <patrick@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sash
 PORTVERSION=	3.7
@@ -18,11 +14,6 @@ MAN1=		sash.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sash ${PREFIX}/bin/sash
 	${INSTALL_MAN} ${WRKSRC}/sash.1 ${MAN1PREFIX}/man/man1/sash.1
-	@${ECHO_MSG} "------------------"
-	@${ECHO_MSG} "Installing into ${PREFIX}/bin"
-	@${ECHO_MSG} "If you want this installed elsewhere, "
-	@${ECHO_MSG} "set the environmental variable PREFIX"
-	@${ECHO_MSG} "------------------"
 
 post-install:
 	@${ECHO_MSG} "Updating /etc/shells"
