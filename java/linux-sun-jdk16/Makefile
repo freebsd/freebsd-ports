@@ -30,7 +30,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.6.0
-JDK_REVISION=	39
+JDK_REVISION=	41
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
@@ -47,12 +47,14 @@ IGNORE?=You must manually fetch the J2SE SDK self-extracting file for the Linux 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMO}
-#DEMO_UPDATE_VERSION=  ${JDK_UPDATE_VERSION}
-DEMO_UPDATE_VERSION=   38
-#DEMO_DISTNAME=        ${DISTNAME}-demos
+DEMO_UPDATE_VERSION=  ${JDK_REVISION}
+.if ${DEMO_UPDATE_VERSION} != ${JDK_REVISION}
 DEMO_DISTNAME= jdk-6u${DEMO_UPDATE_VERSION}-linux-i586-demos
-#DEMO_WRKSRC=  ${WRKSRC}
 DEMO_WRKSRC=   ${WRKDIR}/jdk${JDK_VERSION}_${DEMO_UPDATE_VERSION}
+.else
+DEMO_DISTNAME=        ${DISTNAME}-demos
+DEMO_WRKSRC=  ${WRKSRC}
+.endif
 .if !exists(${DISTDIR}/${DEMO_DISTNAME}.tar.gz) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}.tar.gz) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
