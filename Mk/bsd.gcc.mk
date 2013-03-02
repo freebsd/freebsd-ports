@@ -143,20 +143,16 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 #
-# Determine current GCCVERSION
+# Initialize _GCC_FOUND${v}.
 #
 .for v in ${GCCVERSIONS}
 . if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
 _GCC_FOUND${v}=	port
 . endif
 . if ${OSVERSION} >= ${_GCCVERSION_${v}_L} && ${OSVERSION} < ${_GCCVERSION_${v}_R}
-_GCCVERSION:=		${v}
 _GCC_FOUND${v}:=	base
 . endif
 .endfor
-.if !defined(_GCCVERSION)
-IGNORE=		Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})
-.endif
 
 #
 # If the GCC package defined in USE_GCC does not exist, but a later
