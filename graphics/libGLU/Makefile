@@ -1,12 +1,8 @@
-# New ports collection makefile for:    libGLU
-# Date created:		7 May 2004
-# Whom:			anholt@FreeBSD.org
-#
+# Created by: anholt@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libGLU
-PORTREVISION=	1
+PORTREVISION=	2
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
@@ -25,7 +21,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" || ${ARCH} != "i386"
+.if !(${ARCH} == "amd64" || ${ARCH} == "i386")
 CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 

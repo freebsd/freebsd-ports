@@ -1,13 +1,9 @@
-# New ports collection makefile for:    libGLw
-# Date created:		7 May 2004
-# Whom:			anholt@FreeBSD.org
-#
+# Created by: anholt@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libGLw
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL widgets library
@@ -23,7 +19,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" || ${ARCH} != "i386"
+.if !(${ARCH} == "amd64" || ${ARCH} == "i386")
 CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 
