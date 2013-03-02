@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-openxpki-client-scep
-# Date created:				03 Oct 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	openxpki-client-scep
 PORTVERSION=	0.9.1313
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-Client-SCEP-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Client for SCEP requests to openxpki server
 
 BUILD_DEPENDS=	\

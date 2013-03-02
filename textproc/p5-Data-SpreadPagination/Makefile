@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-SpreadPagination
-# Date created:				21 Mar 2007
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-SpreadPagination
 PORTVERSION=	0.1.2
@@ -11,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Page numbering and spread pagination
 
 BUILD_DEPENDS=	\

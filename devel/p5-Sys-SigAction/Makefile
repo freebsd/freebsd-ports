@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sys-SigAction
-# Date created:				18 Sep 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-SigAction
 PORTVERSION=	0.15
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl extension for Consistent Signal Handling
 
 LICENSE=	ART10 GPLv1
