@@ -60,16 +60,6 @@ PLIST_SUB+=		WORKER="@comment " EVENT=""
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
 .elif ${WITH_MPM} == "itk"
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
-EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
-.  if defined (WITH_ITK_PERDIR_REGEX) && defined (WITH_ITK_LIMITS)
-IGNORE=	Use only one patch option not both (WITH_ITK_PERDIR_REGEX or WITH_ITK_LIMITS)
-.  endif
-.  if defined (WITH_ITK_PERDIR_REGEX)
-EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-perdir-regex
-.  endif
-.  if defined (WITH_ITK_LIMITS)
-EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-limits
-.  endif
 .else
 IGNORE=	Unknown MPM: ${WITH_MPM}
 .endif	# MPM prefork

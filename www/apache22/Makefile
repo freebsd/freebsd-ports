@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache22
-PORTVERSION=	2.2.23
-PORTREVISION=	4
+PORTVERSION=	2.2.24
+#PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -41,10 +41,8 @@ APACHEDIR=	${.CURDIR}
 APACHEDIR=	${MASTERDIR}
 .endif
 
-WITH_MPM?=		prefork # or worker, event, itk
+WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
-
-MPM_ITK_VERSION?=	20110321-01
 
 .include "${APACHEDIR}/Makefile.options"
 
@@ -57,8 +55,8 @@ BROKEN=	WITH/WITHOUT parameters are obsolete. \
 .  endif
 .endfor
 
-.for cat in ${ALL_MODULES_CATEGORIES}
-.  if defined(WITH_${cat}_MODULES)
+.for category in ${ALL_MODULES_CATEGORIES}
+.  if defined(WITH_${category}_MODULES)
 BROKEN=	WITH/WITHOUT_..._MODULES parameters are obsolete. \
 	The port use the new options NG framework. Please read\
 	http://wiki.freebsd.org/Ports/Options/OptionsNG
@@ -77,6 +75,9 @@ APU_DBD_PGSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_pgsql.so
 APU_DBD_SQLITE3?=	${LOCALBASE}/lib/apr-util-1/apr_dbd_sqlite3.so
 # APU module used by AUTHNZ_LDAP LDAP
 APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
+# APU crypto
+APU_CRYPTO_SSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
+APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
@@ -99,7 +100,7 @@ MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}"
 
 #=====================================================
-# CONFIGURE_ARGS willl be handled in Makefile.modules,
+# CONFIGURE_ARGS will be handled in Makefile.modules,
 # here we do only OPTIONS fixups
 
 .if ${PORT_OPTIONS:MSSL}
