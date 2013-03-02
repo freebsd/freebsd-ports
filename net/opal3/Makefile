@@ -24,6 +24,7 @@ CONFLICTS=	opal-2.*
 
 WRKSRC=		${WRKDIR}/opal-${PORTVERSION}
 
+USE_GCC=	any
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
