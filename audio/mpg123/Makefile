@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpg123
-PORTVERSION=	1.14.4
+PORTVERSION=	1.15.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool libltdl
 USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
-USE_GCC=	any		# dumps core on amd64 if built with clang
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimization=0 \
