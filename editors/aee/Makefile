@@ -3,45 +3,56 @@
 
 PORTNAME=	aee
 PORTVERSION=	2.2.15b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=	http://mahon.cwx.net/sources/
+MASTER_SITES=	http://www.users.uswest.net/~hmahon/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy editor with both curses and X11 interfaces
 
+LICENSE=	ART10
+
 OPTIONS_DEFINE=	XAE
 XAE_DESC=	Build X11 version 'xae'
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MXAE}
-ALL_TARGET=	main
-PLIST_SUB=	XAE="@comment "
-.else
-USE_XORG=	x11
-ALL_TARGET=	both
-PLIST_SUB=	XAE=""
-.endif
-
-PLIST_FILES=	bin/aee bin/rae lib/help.ae %%XAE%%bin/xae %%XAE%%bin/rxae
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		aee.1
+PLIST_FILES=	bin/aee bin/rae %%DATADIR%%/help.ae
+PLIST_DIRS=	%%DATADIR%%
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MXAE}
+USE_XORG=	x11
+ALL_TARGET=	both
+PLIST_FILES+=	bin/xae bin/rxae
+DESKTOP_ENTRIES="Xae" "" "" "xae" "" false
+.else
+ALL_TARGET=	main
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/create.mk.aee
-	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/create.mk.xae
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/create.mk.xae
+.for i in create.mk.aee create.mk.xae
+	@${REINPLACE_CMD} -e \
+		's|cc|${CC}|g ; \
+		 s|"-s"|""|g ; \
+		 s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${i}
+.endfor
+.for i in aee.1 localize.c
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/lib|${DATADIR}|g' ${WRKSRC}/${i}
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/aee ${PREFIX}/bin
-	${LN} ${PREFIX}/bin/aee ${PREFIX}/bin/rae
-	${INSTALL_MAN} ${WRKSRC}/aee.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/help.ae ${PREFIX}/lib
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} aee ${PREFIX}/bin)
+	(cd ${PREFIX}/bin && ${LN} aee rae)
+	(cd ${WRKSRC} && ${INSTALL_MAN} aee.1 ${MANPREFIX}/man/man1)
+	@${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} help.ae ${DATADIR})
 .if ${PORT_OPTIONS:MXAE}
-	${INSTALL_PROGRAM} ${WRKSRC}/xae ${PREFIX}/bin
-	${LN} ${PREFIX}/bin/xae ${PREFIX}/bin/rxae
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xae ${PREFIX}/bin)
+	(cd ${PREFIX}/bin && ${LN} xae rxae)
 .endif
 
 .include <bsd.port.mk>
