@@ -1,31 +1,32 @@
-# New ports collection makefile for:	timer-applet
-# Date created:		2005-01-12
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	timer-applet
-PORTVERSION=	2.1.2
-PORTREVISION=	6
+PORTVERSION=	2.1.4
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/timerapplet/timerapplet/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://launchpadlibrarian.net/52401395/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A timer applet for the GNOME panel
+COMMENT=	Timer applet for the GNOME panel
 
-RUN_DEPENDS=	${LOCALBASE}/share/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnome-audio \
-		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify
+LICENSE=	GPLv2 # (or later)
+
+RUN_DEPENDS=	gnome-audio>0:${PORTSDIR}/audio/gnome-audio \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnomedesktop
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 
 GCONF_SCHEMAS=	timer-applet.schemas
 
