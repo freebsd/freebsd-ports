@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-rparsec
-# Date created:				24 September 2008
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
 
 PORTNAME=	rparsec
@@ -11,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Recursive descent parser combinator framework for Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

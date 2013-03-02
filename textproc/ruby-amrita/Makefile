@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/amrita
-# Date created:		10 November 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amrita
 PORTVERSION=	1.0.2
@@ -15,6 +11,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An HTML/XHTML template library for Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	strscan

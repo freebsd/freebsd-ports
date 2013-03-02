@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RuDL
-# Date created:		10 April 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rudl
 PORTVERSION=	0.8
@@ -16,6 +12,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A high level library to use SDL from Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_SDL=	gfx image mixer ttf sdl
 USE_RUBY=	yes

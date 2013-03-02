@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-gtk
-# Date created:		19 April 1999
-# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
-#
+# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -16,6 +12,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GTK+
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

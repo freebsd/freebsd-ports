@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-io-like
-# Date created:		2011-08-06
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	io-like
 PORTVERSION=	0.3.0
@@ -12,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	The interface of IO objects to classes providing a few simple methods
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

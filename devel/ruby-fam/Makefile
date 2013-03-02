@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FAM-Ruby
-# Date created:		11 June 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fam
 PORTVERSION=	0.2.0
@@ -16,6 +12,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FAM bindings for Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby GetText Package
-# Date created:		4 February 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gettext
 PORTVERSION=	1.93.0
@@ -16,6 +12,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby implementation of the gettext library
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 #USE_GETTEXT=	yes	# not actually depends on it
 USE_RUBY=	yes

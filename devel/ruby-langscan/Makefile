@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-langscan
-# Date created:		2011-08-10
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	langscan
 PORTVERSION=	1.2
@@ -15,6 +11,9 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A program analyzer for source code search engine
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

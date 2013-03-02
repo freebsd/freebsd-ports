@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-slang (slanglib)
-# Date created:		23 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	slang
 PORTVERSION=	0.52
@@ -14,6 +10,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	S-Lang extension module for Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 

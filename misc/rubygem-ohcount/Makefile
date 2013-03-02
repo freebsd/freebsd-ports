@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ohcount
-# Date created:		2009-05-31
-# Whom:			Edmondas Girkantas <eg@fbsd.lt>
-#
+# Created by: Edmondas Girkantas <eg@fbsd.lt>
 # $FreeBSD$
-#
 
 PORTNAME=	ohcount
 PORTVERSION=	2.0.1
@@ -12,6 +8,9 @@ MASTER_SITES=	http://labs.ohloh.net/download/
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Ohcount is the source code line counter that powers Ohloh
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		ragel:${PORTSDIR}/devel/ragel

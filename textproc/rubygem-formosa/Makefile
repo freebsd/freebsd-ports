@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	formosa
-# Date created:			Jul 31, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	formosa
 PORTVERSION=	0.2.0
@@ -13,6 +8,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	lukhnos@gmail.com
 COMMENT=	A collection of libraries for Taiwanese languages processing
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 RUN_DEPENDS=	rubygem-activesupport>=1.4.2:${PORTSDIR}/devel/rubygem-activesupport
 

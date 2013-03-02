@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-zoom
-# Date created:		16 September 2005
-# Whom:			Mitsuru YOSHIDA <mitsuru@riken.jp>
-#
+# Created by: Mitsuru YOSHIDA <mitsuru@riken.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	zoom
 PORTVERSION=	0.4.1
@@ -13,6 +9,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding to the Z39.50 Object-Orientation Model (ZOOM)
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 

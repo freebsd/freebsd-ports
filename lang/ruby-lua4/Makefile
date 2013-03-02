@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Lua
-# Date created:		30 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lua
 PORTVERSION=	20010921
@@ -16,6 +12,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_LUA=	4.0
 USE_ZIP=	yes

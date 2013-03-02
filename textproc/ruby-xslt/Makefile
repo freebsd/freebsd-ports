@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-xmlscan
-# Date created:		22 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xslt
 PORTVERSION=	0.9.6
@@ -17,6 +13,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An XSLT processor in pure Ruby
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_GNOME=	libxslt
 USE_RUBY=	yes
