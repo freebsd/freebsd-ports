@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	email2trac
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
@@ -26,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-trac-user=${TRACUSER} --with-mta-user=${MTAUSER}
 USE_PYTHON=	-2.7
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
+PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 .include <bsd.port.options.mk>
 
