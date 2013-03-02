@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/ruby-wx
-# Date created:				03.01.2004
-# Whom:					Ulrich Spoerlein <q@uni.de>
-#
+# Created by: Ulrich Spoerlein <q@uni.de>
 # $FreeBSD$
-#
 
 PORTNAME=	wx
 PORTVERSION=	0.6.0
@@ -17,6 +13,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for wxWindows (aka wxWidgets)
+
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2012-05-02
 
 USE_ICONV=	yes
 USE_RUBY=	yes
