@@ -5,7 +5,7 @@ PORTNAME=	services
 DISTVERSION=	6.x-2.2
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provide an API for creating drupal web services.
 
 USE_DRUPAL=	yes
