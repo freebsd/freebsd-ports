@@ -475,9 +475,9 @@ do-build: ap-gen-plist
 .if !target(do-install)
 do-install:
 .if defined(AP_MODENABLE)
-	@${APXS} -i -A -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
-.else
 	@${APXS} -i -a -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+.else
+	@${APXS} -i -A -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 .endif
 .endif
 .endif
