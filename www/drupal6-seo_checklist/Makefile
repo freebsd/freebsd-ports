@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	seo_checklist
-DISTVERSION=	6.x-2.0
-PORTREVISION=	1
+DISTVERSION=	6.x-3.0
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to provide checklist of actions for SEO
 
 USE_DRUPAL=	yes
