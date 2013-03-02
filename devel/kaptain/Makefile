@@ -1,38 +1,58 @@
-# ex:ts=8
-#
-# New ports collection makefile for:	kaptain
-# Date created:			2002-12-12
-# Whom:				Alan Eldridge <alane@freebsd.org>
-#
+# Created by: Alan Eldridge <alane@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kaptain
-PORTVERSION=	0.72
-PORTREVISION=	7
+PORTVERSION=	0.73
 CATEGORIES=	devel
 MASTER_SITES=	SF
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for building/running QT GUIs for command line programs
+COMMENT=	Tool for building/running Qt GUIs for command line programs
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
+LICENSE=	GPLv2 # (or later)
 
-USE_XORG=	x11 ice xext
-USE_QT_VER=	3
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USE_QT4=	qt3support moc_build qmake_build
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		kaptain.1
 INFO=		kaptain
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/kaptain
 
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/*.info*
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/examples/dia2code.kaptn
+		's|^QMAKE_|#QMAKE_|' ${WRKSRC}/kaptain.pro
+	@${FIND} ${WRKSRC}/examples -maxdepth 1 -type f | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|/usr/bin/kaptain|${SETENV} kaptain|'
+
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
+
+do-install:
+	(cd ${WRKSRC} \
+		&& ${INSTALL_PROGRAM} kaptain ${PREFIX}/bin)
+	(cd ${WRKSRC}/man \
+		&& ${INSTALL_MAN} kaptain.1 ${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/doc \
+		&& ${INSTALL_DATA} kaptain.info ${PREFIX}/${INFO_PATH})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} \
+		&& ${INSTALL_DATA} README ${DOCSDIR})
+	(cd ${WRKSRC}/doc \
+		&& ${INSTALL_DATA} *.gif *.html *.png *.tgz ${DOCSDIR})
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples \
+		&& ${INSTALL_DATA} *.kaptn *.tgz ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.mk>
