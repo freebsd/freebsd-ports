@@ -1,47 +1,88 @@
-# ex:ts=8
-# Ports collection Makefile for:	gdis
-# Date created:			Mar 3, 2002
-# Whom:				ijliao
-#
+# Created y: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gdis
-PORTVERSION=	0.89
-PORTREVISION=	6
+PORTVERSION=	0.90
 CATEGORIES=	science
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	-source.tgz
+MASTER_SITES=	SF
+EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and manipulation of isolated molecules and periodic systems
 
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LICENSE=	GPLv2 # (or later)
 
-USE_GL=		yes
+LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+
+OPTIONS_DEFINE=	DOCS
+
+USE_GL=		glu
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-ALL_TARGET=	${PORTNAME}
-
-CFLAGS+=	-DINSTALL=\"\\\"${DATADIR}\\\"\"
+MAKEFILE=	GNUmakefile
 
 PORTDOCS=	CHANGELOG README TODO
 PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements %%DATADIR%%/gdis.library \
-		%%DATADIR%%/gdis.manual
+		%%DATADIR%%/gdis.manual share/pixmaps/gdis.xpm
 PLIST_DIRS=	%%DATADIR%%
 
+DESKTOP_ENTRIES="GDIS" "Molecular modelling GUI" \
+		"${PREFIX}/share/pixmaps/gdis.xpm" "${PORTNAME}" "" true
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"\(gdis.elements\)|"../share/gdis/\1| ; \
+		 s|"\(gdis.library\)|"../share/gdis/\1|' ${WRKSRC}/gdis.h
+	@${REINPLACE_CMD} -e \
+		's|"\(gdis.manual\)|"../share/gdis/\1|' ${WRKSRC}/gui_help.c
+
+do-configure:
+	@${ECHO_CMD} -n \
+		> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'USE_GUI=YES' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'USE_GRISU=NO' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'include makefile.src' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'CFLAGS:=$$(CFLAGS) -DWITH_GUI' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'INCS=`pkg-config --cflags gtkglext-1.0`' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'LIBS=`pkg-config --libs gtkglext-1.0`' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'OBJ=$$(SRC:.c=.o)' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'all: gdis' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} 'gdis: $$(OBJ)' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} '	$$(CC) $$(OBJ) $$(LDFLAGS) -o gdis $$(LIBS)' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} '.c.o:' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@${ECHO_CMD} '	$$(CC) $$(CFLAGS) -c $$< $$(INCS)' \
+		>> ${WRKSRC}/${MAKEFILE}
+	@(cd ${WRKSRC} && ${SED} -e 's|logo_right_81|gdis|' \
+		< logo_right.xpm > gdis.xpm)
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdis ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} gdis ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} gdis.xpm ${PREFIX}/share/pixmaps)
 	@${MKDIR} ${DATADIR}
-.for file in gdis.elements gdis.library gdis.manual
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+.for i in gdis.elements gdis.library gdis.manual
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DATADIR})
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
 .endfor
 .endif
 
