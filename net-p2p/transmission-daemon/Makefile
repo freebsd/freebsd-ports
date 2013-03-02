@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A fast and lightweight daemon BitTorrent client
+COMMENT=	Fast and lightweight daemon BitTorrent client
 
 RUN_DEPENDS=	${GEN_RUN_DEPENDS}
 

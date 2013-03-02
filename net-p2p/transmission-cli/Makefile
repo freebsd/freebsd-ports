@@ -9,7 +9,7 @@ MASTER_SITES=	http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
 MAINTAINER?=	crees@FreeBSD.org
-COMMENT?=	A lightweight CLI (command line) BitTorrent client and utilities
+COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
 

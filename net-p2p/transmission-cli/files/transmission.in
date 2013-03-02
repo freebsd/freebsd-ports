@@ -53,7 +53,7 @@ transmission_prestart()
 	install -d -o $transmission_user ${pidfile%/*}
 	mkdir -p $transmission_conf_dir $transmission_download_dir
 	chown $transmission_user:$transmission_group $transmission_download_dir
-	chown -R $transmission_user:$transmission_group $transmission_conf_dir/*
+	chown -R $transmission_user:$transmission_group $transmission_conf_dir
 	chgrp $transmission_group $transmission_conf_dir
 	chmod 750 $transmission_conf_dir
 	if [ -n "$transmission_web_home" ]; then
