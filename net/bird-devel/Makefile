@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	20120323
+PORTVERSION=	20130301
 CATEGORIES=	net
 MASTER_SITES=	http://bird.mpls.in/distfiles/bird/
 PKGNAMESUFFIX=	-devel
@@ -19,7 +19,8 @@ CONFLICTS=	bird-[0-9]*
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mpls
+CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls
+USE_CSTD=	gnu89
 
 OPTIONS=	KMPLS		"Enable kernel MPLS support" Off
 

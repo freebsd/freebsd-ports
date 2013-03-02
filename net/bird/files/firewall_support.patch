@@ -966,3 +966,12 @@ index 0000000..e841e06
  fi
  
  if test "$given_suffix" = yes ; then
+@@ -4361,6 +4361,8 @@
+ 		ipv6:freebsd*)	sysdesc=bsd-v6
+ 				;;
+ 		ipv4:freebsd*)	sysdesc=bsd
++				$as_echo "#define CONFIG_FIREWALL_IPFW 1" >>confdefs.h
++				$as_echo "#define CONFIG_FIREWALL_PF 1" >>confdefs.h
+ 				;;
+ 		ipv6:dragonfly*)	sysdesc=bsd-v6
+ 				;;

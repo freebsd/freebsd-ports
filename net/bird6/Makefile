@@ -5,6 +5,7 @@
 
 PORTNAME=	bird6
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -18,7 +19,7 @@ LICENSE=	GPLv2
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6 --localstatedir=/var
 USE_CSTD=	gnu89
 
 MAKE_JOBS_UNSAFE=	yes
