@@ -3,7 +3,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -11,9 +11,9 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:${PORTSDIR}/misc/py-pexpect \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/devel/py-pyzmq
 
 USE_PYTHON=	yes
@@ -36,20 +36,11 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-
 .endif
 
 .if ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.1:${PORTSDIR}/www/py-tornado
-.endif
-
-.ifndef	NOPORTDOCS
-PORTDOCS=	*
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e "s#('data',pjoin(docdirbase,'extensions'),igridhelpfiles),# #g" ${WRKSRC}/setupbase.py
-	${REINPLACE_CMD} -e "s# + manual_files##g" ${WRKSRC}/setupbase.py
-.endif
-
-.if defined(NOPORTEXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e "s# + example_files##g" ${WRKSRC}/setupbase.py
 .endif
 
