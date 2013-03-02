@@ -3167,6 +3167,7 @@
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-dio
+    SUBDIR += pecl-eio
     SUBDIR += pecl-ev
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
