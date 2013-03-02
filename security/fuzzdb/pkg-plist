@@ -1,8 +1,91 @@
+%%DATADIR%%/Discovery/FilenameBruteforce/3CharExtBrute.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/Extensions.Backup.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/Extensions.Common.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/Extensions.Compressed.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/Extensions.Mostcommon.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/Extensions.Skipfish.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/WordlistSkipfish.fuzz.txt
+%%DATADIR%%/Discovery/FilenameBruteforce/copy_of.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/AdobeXML.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Apache.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/ApacheTomcat.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CGI_HTTP_POST.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CGI_HTTP_POST_Windows.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CGI_Microsoft.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CGI_XPlatform.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/drupal_plugins.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/drupal_themes.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/joomla_plugins.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/joomla_themes.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/php-nuke.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/readme.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/wordpress.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/wp_plugins.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/CMS/wp_themes.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/ColdFusion.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/FatwireCMS.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Frontpage.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/HTTP_POST_Microsoft.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Hyperion.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/IIS.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/JBoss.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/JRun.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/JavaServlets_Common.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/KitchensinkDirectories.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Logins.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/LotusNotes.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Netware.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Oracle9i.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/OracleAppServer.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/PHP.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/PHP_CommonBackdoors.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Passwords.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Randomfiles.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/SAP.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Sharepoint.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/SiteMinder.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/SunAppServerGlassfish.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/SuniPlanet.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/UnixDotfiles.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/UserAgents.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Vignette.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Weblogic.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/Websphere.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/proxy-conf.fuzz.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-directories-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-directories.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-extensions-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-extensions.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-files-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-files.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-words-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-large-words.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-directories-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-directories.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-extensions-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-extensions.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-files-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-files.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-words-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-medium-words.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-directories-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-directories.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-extensions-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-extensions.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-files-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-files.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-words-lowercase.txt
+%%DATADIR%%/Discovery/PredictableRes/raft-small-words.txt
+%%DATADIR%%/Discovery/PredictableRes/tftp.fuzz.txt
+%%DATADIR%%/attack-payloads/BizLogic/CommonMethods.fuzz.txt
+%%DATADIR%%/attack-payloads/BizLogic/DebugParams.fuzz.txt
+%%DATADIR%%/attack-payloads/BizLogic/x
 %%DATADIR%%/attack-payloads/all-attacks/all-attacks-unix.txt
 %%DATADIR%%/attack-payloads/all-attacks/all-attacks-win.txt
 %%DATADIR%%/attack-payloads/all-attacks/interesting-metacharacters.txt
-%%DATADIR%%/attack-payloads/control-chars/null.fuzz
-%%DATADIR%%/attack-payloads/disclosure-directory/generic/directory-indexing-generic.txt
+%%DATADIR%%/attack-payloads/control-chars/URIhex.fuzz.txt
+%%DATADIR%%/attack-payloads/control-chars/null.fuzz.txt
+%%DATADIR%%/attack-payloads/disclosure-directory/directory-indexing-generic.fuzz.txt
 %%DATADIR%%/attack-payloads/disclosure-directory/source-directory-file-indexing-cheatsheet.html
 %%DATADIR%%/attack-payloads/disclosure-localpaths/unix/common-unix-httpd-log-locations.txt
 %%DATADIR%%/attack-payloads/disclosure-source/source-disc-cmd-exec-traversal.txt
@@ -35,6 +118,11 @@
 %%DATADIR%%/attack-payloads/ldap/ldap-injection.txt
 %%DATADIR%%/attack-payloads/lfi/common-unix-httpd-log-locations.txt
 %%DATADIR%%/attack-payloads/lfi/readme.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/LinuxCommands.fuzz.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/OSCommandInject.Windows.fuzz.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/OSXCommands.fuzz.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/WindowsCommands.fuzz.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/WindowsPowershell.fuzz.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/command-execution-unix.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/commands-unix.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/commands-windows.txt
@@ -47,16 +135,15 @@
 %%DATADIR%%/attack-payloads/rfi/rfi-cheatsheet.html
 %%DATADIR%%/attack-payloads/rfi/rfi.txt
 %%DATADIR%%/attack-payloads/server-side-include/server-side-includes-generic.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection-active.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection-passive.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/sql-injection-ms-sql-blind-ninja.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/sql-injection-ms-sql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/mysql/sql-injection-mysql-ms-sql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/mysql/sql-injection-mysql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs/docs.oracle_cheat.pdf
-%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs/docs.sql_injection_cheatsheet.html
-%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/sql-injection-oracle.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/GenericBlind.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/MSSQL.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/MSSQL_blind.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/MySQL.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/MySQL_MSSQL.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/docs/docs.oracle_cheat.pdf
+%%DATADIR%%/attack-payloads/sql-injection/detect/docs/docs.sql_injection_cheatsheet.html
+%%DATADIR%%/attack-payloads/sql-injection/detect/oracle.fuzz.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/xplatform.fuzz.txt
 %%DATADIR%%/attack-payloads/sql-injection/exploit/db2-enumeration.txt
 %%DATADIR%%/attack-payloads/sql-injection/exploit/ms-sql-enumeration.txt
 %%DATADIR%%/attack-payloads/sql-injection/exploit/mysql-injection-login-bypass.txt
@@ -71,44 +158,6 @@
 %%DATADIR%%/attack-payloads/xss/docs.wasc-scriptmapping/license.txt
 %%DATADIR%%/attack-payloads/xss/xss-rsnake.txt
 %%DATADIR%%/attack-payloads/xss/xss-uri.txt
-%%DATADIR%%/discovery/filename-bruteforce/copy_of.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-extensions/file-extensions-backup-files.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-extensions/file-extensions-common-datafile-types.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-extensions/file-extensions-compressed-filetypes.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-extensions/file-extensions-mostcommon.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-extensions/file-extensions-skipfish.txt
-%%DATADIR%%/discovery/filename-bruteforce/file-or-dir-root-wordlists/wordlist-skipfish.txt
-%%DATADIR%%/discovery/generic/cgi-HTTP-POST-reqd.txt
-%%DATADIR%%/discovery/generic/cgi-x-platform.txt
-%%DATADIR%%/discovery/generic/cms/drupal_plugins.txt
-%%DATADIR%%/discovery/generic/cms/drupal_themes.txt
-%%DATADIR%%/discovery/generic/cms/joomla_plugins.txt
-%%DATADIR%%/discovery/generic/cms/joomla_themes.txt
-%%DATADIR%%/discovery/generic/cms/readme.txt
-%%DATADIR%%/discovery/generic/cms/wp_plugins.txt
-%%DATADIR%%/discovery/generic/cms/wp_themes.txt
-%%DATADIR%%/discovery/generic/interesting-dirs-kitchensink.txt
-%%DATADIR%%/discovery/generic/interesting-files-apache-tomcat.txt
-%%DATADIR%%/discovery/generic/interesting-files-apache.txt
-%%DATADIR%%/discovery/generic/interesting-files-coldfusion.txt
-%%DATADIR%%/discovery/generic/interesting-files-hyperion.txt
-%%DATADIR%%/discovery/generic/interesting-files-logins.txt
-%%DATADIR%%/discovery/generic/interesting-files-lotus-notes.txt
-%%DATADIR%%/discovery/generic/interesting-files-oracle-application-server.txt
-%%DATADIR%%/discovery/generic/interesting-files-passwords.txt
-%%DATADIR%%/discovery/generic/interesting-files-random.txt
-%%DATADIR%%/discovery/generic/interesting-files-websphere.txt
-%%DATADIR%%/discovery/generic/php-common-backdoors.txt
-%%DATADIR%%/discovery/generic/tftp.txt
-%%DATADIR%%/discovery/unix/interesting-files-dotfiles.txt
-%%DATADIR%%/discovery/unix/interesting-files-iplanet.txt
-%%DATADIR%%/discovery/unix/interesting-files-sun-app-server.txt
-%%DATADIR%%/discovery/win/cgi-HTTP-POST-reqd-microsoft.txt
-%%DATADIR%%/discovery/win/cgi-microsoft.txt
-%%DATADIR%%/discovery/win/interesting-files-microsoft-iis-http-post.txt
-%%DATADIR%%/discovery/win/interesting-files-microsoft-iis.txt
-%%DATADIR%%/discovery/win/interesting-files-microsoft-sharepoint.txt
-%%DATADIR%%/discovery/win/interesting-files-netware.txt
 %%DATADIR%%/regex/errors.txt
 %%DATADIR%%/regex/readme.txt
 %%DATADIR%%/regex/sessionid.txt
@@ -122,7 +171,8 @@
 %%DATADIR%%/web-backdoors/asp/ntdaddy.asp
 %%DATADIR%%/web-backdoors/asp/up.asp
 %%DATADIR%%/web-backdoors/c/cmd.c
-%%DATADIR%%/web-backdoors/cfm/cfexec.cfm
+%%DATADIR%%/web-backdoors/cfm/cfExec.cfm
+%%DATADIR%%/web-backdoors/cfm/cfSQL.cfm
 %%DATADIR%%/web-backdoors/cfm/cmd.cfm
 %%DATADIR%%/web-backdoors/exe/nc.exe
 %%DATADIR%%/web-backdoors/jsp/CmdServlet.class
@@ -205,28 +255,13 @@
 @dirrm %%DATADIR%%/web-backdoors/asp
 @dirrm %%DATADIR%%/web-backdoors
 @dirrm %%DATADIR%%/regex
-@dirrm %%DATADIR%%/discovery/win
-@dirrm %%DATADIR%%/discovery/unix
-@dirrm %%DATADIR%%/discovery/generic/cms
-@dirrm %%DATADIR%%/discovery/generic
-@dirrm %%DATADIR%%/discovery/filename-bruteforce/file-or-dir-root-wordlists
-@dirrm %%DATADIR%%/discovery/filename-bruteforce/file-extensions
-@dirrm %%DATADIR%%/discovery/filename-bruteforce
-@dirrm %%DATADIR%%/discovery
 @dirrm %%DATADIR%%/attack-payloads/xss/docs.wasc-scriptmapping/images
 @dirrm %%DATADIR%%/attack-payloads/xss/docs.wasc-scriptmapping
 @dirrm %%DATADIR%%/attack-payloads/xss
 @dirrm %%DATADIR%%/attack-payloads/xpath
 @dirrm %%DATADIR%%/attack-payloads/xml
 @dirrm %%DATADIR%%/attack-payloads/sql-injection/exploit
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/oracle
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/mysql/docs
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/mysql
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/docs
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/generic/docs
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/generic
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/docs
 @dirrm %%DATADIR%%/attack-payloads/sql-injection/detect
 @dirrm %%DATADIR%%/attack-payloads/sql-injection
 @dirrm %%DATADIR%%/attack-payloads/server-side-include
@@ -248,9 +283,13 @@
 @dirrm %%DATADIR%%/attack-payloads/disclosure-localpaths
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory/win
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory/unix
-@dirrm %%DATADIR%%/attack-payloads/disclosure-directory/generic
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory
 @dirrm %%DATADIR%%/attack-payloads/control-chars
 @dirrm %%DATADIR%%/attack-payloads/all-attacks
+@dirrm %%DATADIR%%/attack-payloads/BizLogic
 @dirrm %%DATADIR%%/attack-payloads
+@dirrm %%DATADIR%%/Discovery/PredictableRes/CMS
+@dirrm %%DATADIR%%/Discovery/PredictableRes
+@dirrm %%DATADIR%%/Discovery/FilenameBruteforce
+@dirrm %%DATADIR%%/Discovery
 @dirrm %%DATADIR%%
