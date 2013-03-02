@@ -51,6 +51,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c88d8a8-8372-11e2-a010-20cf30e32f6d">
+    <topic>apache22 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.24</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.24</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.24</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.24</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_22.html">
+	  <h1>low: XSS due to unescaped hostnames CVE-2012-3499</h1>
+	  <p>Various XSS flaws due to unescaped hostnames and URIs HTML output in
+            mod_info, mod_status, mod_imagemap, mod_ldap, and mod_proxy_ftp.</p>
+	  <h1>moderate: XSS in mod_proxy_balancer CVE-2012-4558</h1>
+          <p>A XSS flaw affected the mod_proxy_balancer manager interface.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3499</cvename>
+      <cvename>CVE-2012-4558</cvename>
+    </references>
+    <dates>
+      <discovery>2012-10-07</discovery>
+      <entry>2013-03-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="764344fb-8214-11e2-9273-902b343deec9">
     <topic>sudo -- Authentication bypass when clock is reset</topic>
     <affects>
@@ -468,27 +514,27 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<cvename>CVE-2013-0879</cvename>	
-	<cvename>CVE-2013-0880</cvename>	
-	<cvename>CVE-2013-0881</cvename>	
-	<cvename>CVE-2013-0882</cvename>	
-	<cvename>CVE-2013-0883</cvename>	
-	<cvename>CVE-2013-0884</cvename>	
-	<cvename>CVE-2013-0885</cvename>	
-	<cvename>CVE-2013-0887</cvename>	
-	<cvename>CVE-2013-0888</cvename>	
-	<cvename>CVE-2013-0889</cvename>	
-	<cvename>CVE-2013-0890</cvename>	
-	<cvename>CVE-2013-0891</cvename>	
-	<cvename>CVE-2013-0892</cvename>	
-	<cvename>CVE-2013-0893</cvename>	
-	<cvename>CVE-2013-0894</cvename>	
-	<cvename>CVE-2013-0895</cvename>	
-	<cvename>CVE-2013-0896</cvename>	
-	<cvename>CVE-2013-0897</cvename>	
-	<cvename>CVE-2013-0898</cvename>	
-	<cvename>CVE-2013-0899</cvename>	
-	<cvename>CVE-2013-0900</cvename>	
+	<cvename>CVE-2013-0879</cvename>
+	<cvename>CVE-2013-0880</cvename>
+	<cvename>CVE-2013-0881</cvename>
+	<cvename>CVE-2013-0882</cvename>
+	<cvename>CVE-2013-0883</cvename>
+	<cvename>CVE-2013-0884</cvename>
+	<cvename>CVE-2013-0885</cvename>
+	<cvename>CVE-2013-0887</cvename>
+	<cvename>CVE-2013-0888</cvename>
+	<cvename>CVE-2013-0889</cvename>
+	<cvename>CVE-2013-0890</cvename>
+	<cvename>CVE-2013-0891</cvename>
+	<cvename>CVE-2013-0892</cvename>
+	<cvename>CVE-2013-0893</cvename>
+	<cvename>CVE-2013-0894</cvename>
+	<cvename>CVE-2013-0895</cvename>
+	<cvename>CVE-2013-0896</cvename>
+	<cvename>CVE-2013-0897</cvename>
+	<cvename>CVE-2013-0898</cvename>
+	<cvename>CVE-2013-0899</cvename>
+	<cvename>CVE-2013-0900</cvename>
 	<url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
     </references>
     <dates>
