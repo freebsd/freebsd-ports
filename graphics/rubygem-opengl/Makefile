@@ -16,4 +16,8 @@ USE_RUBYGEMS=	yes
 USE_GL=		glut
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.8
+IGNORE=	Does not work with Ruby 1.8
+.endif
+.include <bsd.port.post.mk>
