@@ -8,7 +8,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A database driven web content management system (CMS)
 
 USE_DRUPAL=	yes
