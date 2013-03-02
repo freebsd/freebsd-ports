@@ -1,11 +1,9 @@
 # Created by: ijliao
-# $Carpetsmoker: ports/print/scribus/Makefile,v 1.2 2007/09/24 08:06:52 carpetsmoker Exp $
 # $FreeBSD$
-#
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -26,7 +24,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		hyphen:${PORTSDIR}/textproc/hyphen \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 

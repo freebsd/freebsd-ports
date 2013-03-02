@@ -1,12 +1,9 @@
-# New ports collection makefile for:	wsjt
-# Date created:				3rd August 2006
-# Whom:					Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wsjt
 VERSION=	9.1
+PORTREVISION=	1
 DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -16,7 +13,7 @@ DISTNAME=	wsjt-r${SVN_REV}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		samplerate:${PORTSDIR}/audio/libsamplerate

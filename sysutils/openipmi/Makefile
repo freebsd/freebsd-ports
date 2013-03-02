@@ -1,13 +1,9 @@
-# New ports collection makefile for:	sysutils/openipmi
-# Date created:				28/Mar/2010
-# Whom:					Alex Deiter <alex.deiter@gmail.com>
-#
+# Created by: Alex Deiter <alex.deiter@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -69,7 +65,7 @@ CONFIGURE_ARGS+=	--with-openssl=no
 WITH_TCL=		yes
 USE_PYTHON=		yes
 WITH_PYTHON=		yes
-BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
 CONFIGURE_ARGS+=	--with-tkinter
 PLIST_SUB+=		TKINTER=""

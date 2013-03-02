@@ -1,13 +1,9 @@
-# New ports collection makefile for:    PIL
-# Date created:         02 November 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/
@@ -39,8 +35,8 @@ OPTIONS=	TKINTER "Build with tkinter for X support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TKINTER)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 PLIST_SUB+=	TKINTER=""
 .else
 PLIST_SUB+=	TKINTER="@comment "

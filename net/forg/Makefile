@@ -1,14 +1,9 @@
-# ex:ts=8
-# New ports collection makefile for:	forg
-# Date created:			Sep 25, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	forg
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 # Old home website doesn't seem to work anymore (19/05/03)
@@ -17,7 +12,7 @@ MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gopher client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 
 USE_PYTHON=	yes

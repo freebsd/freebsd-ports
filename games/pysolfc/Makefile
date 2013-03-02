@@ -3,7 +3,7 @@
 
 PORTNAME=	pysolfc
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION} \
 		SF/${PORTNAME}/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}:cardsets
@@ -15,7 +15,7 @@ COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USE_BZIP2=	yes

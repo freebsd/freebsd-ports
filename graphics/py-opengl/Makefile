@@ -1,13 +1,9 @@
-# New ports collection makefile for:	PyOpenGL
-# Date created:		Wed Aug 18 18:49:17 EDT 1999
-# Whom:			Randall Hopper <aa8vb@ipass.net>
-#
+# Created by: Randall Hopper <aa8vb@ipass.net>
 # $FreeBSD$
-#
 
 PORTNAME=	opengl
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/py${PORTNAME}/PyOpenGL/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,8 +33,8 @@ USE_DOS2UNIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTKINTER}
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 post-patch:
