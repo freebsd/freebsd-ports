@@ -20,7 +20,7 @@ INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=		PYGNOMEDESKTOP
-PYGNOMEDESKTOP_DESC=	Code syntax hilighting (many dependencies)
+PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
 
 .include <bsd.port.options.mk>
 
