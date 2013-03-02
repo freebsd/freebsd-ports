@@ -16,6 +16,11 @@ COMMENT=	C++ museekd client library
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+BROKEN=		Does not fetch
+
+DEPRECATED=	Not supported by upstream, master site is down
+EXPIRATION_DATE=	2013-04-02
+
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
