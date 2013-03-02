@@ -1,0 +1,11 @@
+--- port.in.orig	2009-09-10 04:59:59.000000000 +0900
++++ port.in	2012-12-27 19:30:02.000000000 +0900
+@@ -19,7 +19,7 @@
+ 	ORGANIZATION=""
+ 	BUILDROOT="/tmp"
+ 	ARCHIVE_DIR=""
+-	DIFF_MODE="CVS"
++	DIFF_MODE="SVN"
+ 	DIFF_VIEWER="more"
+ 	PORTLINT_FLAGS="abct"
+ 	EOF
