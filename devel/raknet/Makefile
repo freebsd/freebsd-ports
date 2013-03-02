@@ -24,7 +24,7 @@ LICENSE=	GPLv3 SpecialAuth
 LICENSE_COMB=	dual
 LICENSE_NAME_SpecialAuth=	Special authorization from developer
 LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
-LICENSE_PERMS_SpecialAuth=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

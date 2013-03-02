@@ -17,7 +17,7 @@ COMMENT=	A program that scans a disk image and extracts useful information
 LICENSE=	PD
 LICENSE_NAME=	public domain
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib \
 		ewf:${PORTSDIR}/devel/libewf \

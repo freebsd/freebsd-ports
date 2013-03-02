@@ -16,7 +16,7 @@ COMMENT=	Portable Scheme interpreter with a Unix interface
 LICENSE=	public
 LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIBDIR=		${DATADIR}
 MAKE_ARGS=	${MAKE_ENV}

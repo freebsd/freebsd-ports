@@ -30,7 +30,7 @@ GROUPS=		_tss
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 .include "Makefile.man"
 

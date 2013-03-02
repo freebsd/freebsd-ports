@@ -18,7 +18,7 @@ MAINTAINER?=	ehaupt@FreeBSD.org
 COMMENT?=	List, test, and extract compressed files in a ZIP archive
 
 LICENSE=	Info-ZIP
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME=	Info-ZIP license
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

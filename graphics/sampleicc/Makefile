@@ -12,7 +12,7 @@ COMMENT=	Library for reading, writing, manipulating, and applying ICC profiles
 LICENSE=	ICC
 LICENSE_NAME=	The ICC Software License, Version 0.2
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack

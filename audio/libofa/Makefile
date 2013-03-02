@@ -19,7 +19,7 @@ LICENSE_COMB=		dual
 LICENSE_GROUPS_APL1=	OSI
 LICENSE_NAME_APL1=	Adaptive Public License version 1.0
 LICENSE_FILE_APL1=	${WRKSRC}/COPYING
-LICENSE_PERMS_APL1=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_APL1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		expat:${PORTSDIR}/textproc/expat2 \

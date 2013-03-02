@@ -13,7 +13,7 @@ COMMENT=	An SQL database engine in a C library
 LICENSE=	public
 LICENSE_NAME=	Public Domain
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]*
 
