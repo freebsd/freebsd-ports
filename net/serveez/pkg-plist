@@ -1,43 +1,10 @@
-bin/mkpassword
 bin/serveez
 bin/serveez-config
 include/libserveez.h
-include/libserveez/alloc.h
-include/libserveez/array.h
-include/libserveez/asprintf.h
-include/libserveez/binding.h
-include/libserveez/boot.h
-include/libserveez/cfg.h
-include/libserveez/codec/codec.h
-include/libserveez/core.h
-include/libserveez/coserver/coserver.h
-include/libserveez/defines.h
-include/libserveez/dynload.h
-include/libserveez/hash.h
-include/libserveez/icmp-socket.h
-include/libserveez/interface.h
-include/libserveez/mutex.h
-include/libserveez/passthrough.h
-include/libserveez/pipe-socket.h
-include/libserveez/portcfg.h
-include/libserveez/raw-socket.h
-include/libserveez/server-core.h
-include/libserveez/server-loop.h
-include/libserveez/server-socket.h
-include/libserveez/server.h
-include/libserveez/snprintf.h
-include/libserveez/socket.h
-include/libserveez/sparsevec.h
-include/libserveez/tcp-socket.h
-include/libserveez/udp-socket.h
-include/libserveez/util.h
-include/libserveez/vector.h
-include/libserveez/windoze.h
-include/svzconfig.h
 lib/libserveez.a
 lib/libserveez.la
 lib/libserveez.so
-lib/libserveez.so.0
+lib/libserveez.so.1
 share/aclocal/serveez.m4
 %%DATADIR%%/echo-server.scm
 %%DATADIR%%/eval-server.scm
@@ -46,9 +13,4 @@ share/aclocal/serveez.m4
 %%DATADIR%%/mandel-client.scm
 %%DATADIR%%/mandel-server.scm
 %%DATADIR%%/mandel-shared.scm
-%%DATADIR%%/serveez-procedures.txt
-%%DATADIR%%/serveez.scm
 @dirrm %%DATADIR%%
-@dirrm include/libserveez/coserver
-@dirrm include/libserveez/codec
-@dirrm include/libserveez

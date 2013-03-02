@@ -1,37 +1,35 @@
-# ex:ts=8
-# Ports collection makefile for:	serveez
-# Date created:			May 16, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	serveez
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.0
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A server framework
+COMMENT=	Server framework
 
-LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3 # (or later)
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-USE_GMAKE=	yes
+USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--with-guile=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-libserveez-install
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		serveez.1 serveez-config.1
-INFO=		serveez serveez-api
+INFO=		serveez
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|test||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's| -release .*||' ${WRKSRC}/src/libserveez/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/date -r/s|^|#|' ${WRKSRC}/src/irc-server/Makefile.in
+	@${ECHO_CMD} 'static char created[] = "2013-01-29 15:17 UTC";' \
+		> ${WRKSRC}/src/irc-server/timestamp.c
 
 .include <bsd.port.mk>
