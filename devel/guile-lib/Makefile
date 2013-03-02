@@ -1,18 +1,13 @@
-# ex:ts=8
-# Ports collection makefile for:	guile-lib
-# Date created:			Mar 22, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	guile-lib
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A down-scaled, limited-scope CPAN for Guile
+COMMENT=	Repository of useful code written in Guile Scheme
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
