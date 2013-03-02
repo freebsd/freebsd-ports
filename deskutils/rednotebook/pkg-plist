@@ -37,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/external/txt2tags.py
 %%PYTHON_SITELIBDIR%%/rednotebook/external/txt2tags.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/external/txt2tags.pyo
+%%PYTHON_SITELIBDIR%%/rednotebook/external/argparse.py
+%%PYTHON_SITELIBDIR%%/rednotebook/external/argparse.pyc
+%%PYTHON_SITELIBDIR%%/rednotebook/external/argparse.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/files/default.cfg
 %%PYTHON_SITELIBDIR%%/rednotebook/files/main_window.glade
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/__init__.py
