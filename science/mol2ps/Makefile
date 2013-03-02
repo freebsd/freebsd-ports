@@ -2,27 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	mol2ps
-PORTVERSION=	0.1e
-PORTREVISION=	4
+PORTVERSION=	0.3
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read molecular structure files and generate Postscript output
 
+LICENSE=	GPLv2 # (or later)
+
+NO_WRKSUBDIR=	yes
+
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	#
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+
 USE_FPC=	yes
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/color.conf
+PLIST_DIRS=	%%DATADIR%%
+
 do-build:
-	cd ${WRKDIR}; ${LOCALBASE}/bin/fpc ${DISTFILES} -S2 -O3 -Op3
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/color.conf ${DATADIR}
+	(cd ${FILESDIR} && ${INSTALL_DATA} color.conf ${DATADIR})
 
 .include <bsd.port.mk>
