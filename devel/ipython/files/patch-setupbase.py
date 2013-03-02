@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- setupbase.py.orig
 +++ setupbase.py
-@@ -197,7 +197,8 @@
+@@ -201,7 +201,8 @@
      """
  
      docdirbase  = pjoin('share', 'doc', 'ipython')
@@ -12,8 +12,8 @@ $FreeBSD$
 +    examplebase = pjoin('share', 'examples', 'ipython')
  
      # Simple file lists can be made by hand
-     manpages  = filter(isfile, glob(pjoin('docs','man','*.1.gz')))
-@@ -211,7 +212,7 @@
+     manpages = [f for f in glob(pjoin('docs','man','*.1.gz')) if isfile(f)]
+@@ -215,7 +216,7 @@
      example_files = make_dir_struct(
          'data',
          pjoin('docs','examples'),
@@ -22,3 +22,11 @@ $FreeBSD$
      )
      manual_files = make_dir_struct(
          'data',
+@@ -225,7 +226,6 @@
+ 
+     # And assemble the entire output list
+     data_files = [ (manpagebase, manpages),
+-                   (pjoin(docdirbase, 'extensions'), igridhelpfiles),
+                    ] + manual_files + example_files
+ 
+     return data_files
