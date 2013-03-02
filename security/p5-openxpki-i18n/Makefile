@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-openxpki-i18n
-# Date created:				03 Oct 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	openxpki-i18n
 PORTVERSION=	0.9.1395
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/openxpki/openxpki/0.9.1300
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: i18n tools
 
 BUILD_DEPENDS=	\

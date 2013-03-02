@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-openxpki
-# Date created:				29 Sep 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	openxpki
 PORTVERSION=	0.9.1389
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: core for server
 
 BUILD_DEPENDS=	\

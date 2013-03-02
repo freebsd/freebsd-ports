@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-openxpki-client-html-mason
-# Date created:				03 Oct 2006
-# Whom:					svysh
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	openxpki-client-html-mason
 PORTVERSION=	0.9.1396
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-Client-HTML-Mason-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Web interface for local openxpki daemon
 
 BUILD_DEPENDS=	\

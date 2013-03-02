@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Proc-SafeExec
-# Date created:				2012-02-13
-# Whom:					Sergei Vyshenski <svysh@pn.sinp.msu.ru>
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Proc-SafeExec
 PORTVERSION=	1.4
@@ -11,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Convenient utility for executing external commands in various ways
 
 LICENSE=	BSD GPLv1
