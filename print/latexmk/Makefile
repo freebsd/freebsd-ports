@@ -2,43 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	latexmk
-PORTVERSION=	431
+PORTVERSION=	435
 CATEGORIES=	print
 MASTER_SITES=	http://www.phys.psu.edu/~collins/software/latexmk/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to completely automate generating output from LaTeX documents
+COMMENT=	Tool to completely automate generating output from LaTeX documents
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+LICENSE=	GPLv2 # (or later)
 
-USE_PERL5_RUN=	yes
-USE_ZIP=	yes
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+USE_ZIP=	yes
+USE_PERL5_RUN=	yes
+
 MAN1=		latexmk.1
-PLIST_FILES=	bin/latexmk
-PORTDOCS=	CHANGES COPYING INSTALL README latexmk.pdf latexmk.ps latexmk.txt
+PORTDOCS=	*
 PORTEXAMPLES=	*
+PLIST_FILES=	bin/latexmk
+
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/latexmk.pl ${PREFIX}/bin/latexmk
-	${INSTALL_MAN} ${WRKSRC}/latexmk.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} latexmk.pl ${PREFIX}/bin/latexmk)
+	(cd ${WRKSRC} && ${INSTALL_MAN} latexmk.1 ${MANPREFIX}/man/man1)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.for doc in CHANGES INSTALL README latexmk.pdf latexmk.ps latexmk.txt
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
 .endfor
 .endif
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} example_rcfiles ${EXAMPLESDIR} )
-	( cd ${WRKSRC} && ${COPYTREE_BIN} extra-scripts ${EXAMPLESDIR} )
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} example_rcfiles ${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_BIN} extra-scripts ${EXAMPLESDIR})
 .endif
-.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
