@@ -41,11 +41,29 @@
  
  ifdef CONFIG_CROSS
  PROGS+=$(PROGS_CROSS)
+@@ -180,7 +193,7 @@
+ endif
+ 
+ %.o: %.c
+-	$(LIBTCC1_CC) -o $@ -c $< -O2 -Wall
++	$(LIBTCC1_CC) -o $@ -c $< $(CFLAGS) -Wall
+ 
+ %.o: %.S
+ 	$(LIBTCC1_CC) -o $@ -c $<
+@@ -189,7 +202,7 @@
+ 	$(AR) rcs $@ $^
+ 
+ bcheck.o: bcheck.c
+-	$(CC) -o $@ -c $< -O2 -Wall
++	$(CC) -o $@ -c $< $(CFLAGS) -Wall
+ 
+ # install
+ TCC_INCLUDES = stdarg.h stddef.h stdbool.h float.h varargs.h tcclib.h
 @@ -210,8 +223,10 @@
  	$(INSTALL) -m644 $(BCHECK_O) "$(tccdir)"
  endif
  	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(tccdir)/include"
-+ifndef NOPORTSDOC
++ifndef NOPORTDOCS
  	mkdir -p "$(docdir)"
  	$(INSTALL) -m644 tcc-doc.html "$(docdir)"
 +endif
