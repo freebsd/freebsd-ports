@@ -2,7 +2,7 @@
 
 PORTNAME=	ri_cal
 PORTVERSION=	0.8.8
-CATEGORIES=	devel rubygems
+CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
