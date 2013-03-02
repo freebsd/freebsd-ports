@@ -3,7 +3,7 @@
 
 PORTNAME=	porttools
 PORTVERSION=	0.99
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 
@@ -14,11 +14,8 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 		cdiff:${PORTSDIR}/textproc/cdiff \
-		sudo:${PORTSDIR}/security/sudo
-
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-docs
-.endif
+		sudo:${PORTSDIR}/security/sudo \
+		svn:${PORTSDIR}/devel/subversion
 
 MAKE_ENV=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 # Make the version information of porttools itself
@@ -43,6 +40,10 @@ NEWFILE_DESC=	Enable newfile support
 
 .if ${PORT_OPTIONS:MNEWFILE}
 RUN_DEPENDS+=	newfile:${PORTSDIR}/devel/newfile
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+INSTALL_TARGET=	install install-docs
 .endif
 
 .include <bsd.port.mk>

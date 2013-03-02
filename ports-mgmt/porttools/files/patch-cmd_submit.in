@@ -1,10 +1,11 @@
---- cmd_submit.in.orig	2009-09-09 20:59:59.000000000 +0100
-+++ cmd_submit.in	2012-03-04 12:02:36.697273154 +0000
-@@ -26,10 +26,12 @@
+--- cmd_submit.in.orig	2009-09-10 04:59:59.000000000 +0900
++++ cmd_submit.in	2012-12-31 23:10:59.000000000 +0900
+@@ -25,11 +25,12 @@
+ 		change - changing a port 
  		update - updating a port to newer version
  	-d <diff mode> - Select diff generation mode:
- 		CVS - against CVS
-+		CVSauto - against CVS, no cvs add/delete required
+-		CVS - against CVS
++		SVN - against SVN
  		<dir> - against Ports tree in <dir>
  		<pattern> - against original port in <pwd><pattern>
  	-s <severity> - Set PR's severity to <severity>
@@ -13,7 +14,7 @@
  	-c	- committer mode: more portlint(1) checks
  	-L	- Skip running portlint(1)
  EOF
-@@ -41,9 +43,10 @@
+@@ -41,9 +42,10 @@
  PRIORITY="low"
  COMMITTER="no"
  RUN_PORTLINT="yes"
@@ -25,7 +26,7 @@
  if [ $? != 0 ]
  then
  	echo "Error: invalid arguments"
-@@ -116,6 +119,10 @@
+@@ -116,6 +118,10 @@
  	-L)
  		RUN_PORTLINT="no"
  		;;
@@ -36,13 +37,18 @@
  	esac
  	shift
  done
-@@ -126,6 +133,15 @@
- 	[ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
+@@ -123,9 +129,19 @@
+ # Determine if this is a new port
+ if [ "${MODE}" = "" ]
+ then
+-	[ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
++	svn status Makefile 2>&1 1>/dev/null | grep -qs 'svn: warning: W155007:'
++	[ $? -eq 0 ] || [ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
  fi
  
 +# util_diff will set
 +# - PORTBASENAME if PORTNAME != port's directory name
-+# - DIFF_TYPE to CVS, CVSauto, ports, or suffix
++# - DIFF_TYPE to SVN, ports, or suffix
 +PORTBASENAME=""
 +DIFF_TYPE=""
 +
@@ -52,7 +58,7 @@
  # Run portlint(1) to validate port's sanity
  if [ "${RUN_PORTLINT}" = "yes" ]
  then
-@@ -133,10 +149,24 @@
+@@ -133,10 +149,13 @@
  	FLAGS="-${PORTLINT_FLAGS:-abt}"
  	[ "${COMMITTER}" = "yes" ] && FLAGS="${FLAGS} -c"
  	[ "${MODE}" = "new" ] && FLAGS="${FLAGS} -N"
@@ -64,22 +70,11 @@
 +	else
 +		cat ${TEMPROOT}/.portlint.out
  		echo "Error validating port"
-+		if [ "$DIFF_MODE" = "CVSauto" ]
-+		then
-+			grep "^FATAL:" ${TEMPROOT}/.portlint.out > ${TEMPROOT}/.portlint.fatal
-+			if ! egrep -qv '^FATAL:[[:space:]]+(file .+ not in CVS|CVS file .+ missing)' ${TEMPROOT}/.portlint.fatal
-+			then
-+				echo "All fatal portlint errors are CVS errors,"
-+				echo "consider using portlint without the -c flag or"
-+				echo "use 'port submit -L' if all portlint messages are"
-+				echo "caused by your intentional addition/deletion of files"
-+			fi
-+		fi
 +		rm -rf ${TEMPROOT}
  		exit 1
  	fi
  else
-@@ -146,6 +176,12 @@
+@@ -146,6 +165,12 @@
  # Collect information about the port
  PORTNAME="`make -V PKGNAMEPREFIX``make -V PORTNAME``make -V PKGNAMESUFFIX`"
  PORTVERSION="`make -V PORTVERSION`"
@@ -92,7 +87,7 @@
  PKGNAME="`make -V PKGNAME`"
  CATEGORY="`make -V CATEGORIES | sed -E 's/^([^ ]+).*$/\1/'`"
  MAINTAINER="`make -V MAINTAINER`"
-@@ -155,9 +191,6 @@
+@@ -155,9 +180,6 @@
  RELEASE="`uname -srp`"
  SYSTEM="`uname -a | cut -d ' ' -f 1-12`"
  
@@ -102,7 +97,7 @@
  CC=""
  if [ "${MODE}" = "new" ]
  then
-@@ -194,10 +227,10 @@
+@@ -194,10 +216,10 @@
  		# Override some parameters if submitting an update to a newer
  		# version of an existing port
  		CLASS="update"
@@ -116,7 +111,7 @@
  	# Check to see if maintainership was requested
  	MAINT_CHANGE="`grep '^[+-]MAINTAINER' ${PATCH} | wc -l`"
  	if [ ${MAINT_CHANGE} -eq 2 ]
-@@ -242,7 +275,12 @@
+@@ -242,7 +264,12 @@
  fi
  
  # Generate Synopsis line
@@ -130,7 +125,7 @@
  
  echo "===> Generating PR form"
  PR_FORM="${TEMPROOT}/PR"
-@@ -266,9 +304,10 @@
+@@ -266,9 +293,10 @@
  	SEND-PR: 	[ low | medium | high ]
  	>Category:	ports 
  	SEND-PR: <choose from the list of categories below (one line)>
@@ -144,7 +139,7 @@
  	>Class:		${CLASS}
  	SEND-PR: [ sw-bug | doc-bug | change-request | update | maintainer-update ]
  	>Release:	${RELEASE}
-@@ -277,24 +316,33 @@
+@@ -277,25 +305,15 @@
  	>Description:
  EOF
  
@@ -156,35 +151,24 @@
  else
  	echo -e ${DESCRIPTION} >> ${PR_FORM}
  
-+	MODESTRING="${MODESTRING}, diff: ${DIFF_TYPE}"
- 	# Get list of added/removed files
- 	if [ "${DIFF_MODE}" = "CVS" ]
- 	then
- 		FILES_ADD=`grep --after-context=1 "^--- /dev/null" ${PATCH} | grep "^+++ " | awk '{print $2;}'`
- 		FILES_DEL=`grep --before-context=1 "^+++ /dev/null" ${PATCH} | grep "^--- " | awk '{print $2;}'`
-+	elif [ "${DIFF_MODE}" = "CVSauto" ]
-+	then
-+		FILES_ADD=`sed -n -e '/^diff -uN / { N;N;N;N;s/^diff -uN \(.*\)\.orig \1\n--- \1\.orig	[-+:.[:digit:] ]\{19,\}\n+++ \1	[-+:.[:digit:] ]\{19,\}\n@@ [-+,[:digit:] ]\{9,\} @@\n+.*$/\1/p; }' ${PATCH}`
-+		FILES_DEL=`sed -n -e '/^diff -uN / { N;N;N;N;s/^diff -uN \(.*\)\.orig \1\n--- \1\.orig	[-+:.[:digit:] ]\{19,\}\n+++ \1	[-+:.[:digit:] ]\{19,\}\n@@ [-+,[:digit:] ]\{9,\} @@\n-.*$/\1/p; }' ${PATCH}`
- 	else
+-	# Get list of added/removed files
+-	if [ "${DIFF_MODE}" = "CVS" ]
+-	then
+-		FILES_ADD=`grep --after-context=1 "^--- /dev/null" ${PATCH} | grep "^+++ " | awk '{print $2;}'`
+-		FILES_DEL=`grep --before-context=1 "^+++ /dev/null" ${PATCH} | grep "^--- " | awk '{print $2;}'`
+-	else
 -		TEMP=`mktemp -t porttools` || exit 1
 -		find -s ${ORIG_DIR} -type f | sed -e "s#${ORIG_DIR}/##" > ${TEMP}
 -		CURR_DIR=`pwd`
 -		FILES_ADD=`find -s ${CURR_DIR} -type f | sed -e "s#${CURR_DIR}/##" | comm -23 - ${TEMP}`
 -		FILES_DEL=`find -s ${CURR_DIR} -type f | sed -e "s#${CURR_DIR}/##" | comm -13 - ${TEMP}`
 -		rm -f ${TEMP}
-+		TEMPORIG=`mktemp -t porttools` || exit 1
-+		TEMPNEW=`mktemp -t porttools` || exit 1
-+		CVS_FILTER="egrep -v /CVS/[^/]*$"
-+		find -s ${ORIG_DIR} -type f | ${CVS_FILTER} | sed -e "s#^${ORIG_DIR}/##" > ${TEMPORIG}
-+		find -s . -type f | ${CVS_FILTER} | sed -e "s#^\./##" > ${TEMPNEW}
-+		FILES_ADD=`comm -13 ${TEMPORIG} ${TEMPNEW}`
-+		FILES_DEL=`comm -23 ${TEMPORIG} ${TEMPNEW}`
-+		rm -f ${TEMPORIG} ${TEMPNEW}
- 	fi
+-	fi
++	MODESTRING="${MODESTRING}, diff: ${DIFF_TYPE}"
  
  	if [ -n "${FILES_ADD}" ]
-@@ -326,14 +374,14 @@
+ 	then
+@@ -326,14 +344,14 @@
  
  cat >> ${PR_FORM} <<- EOF
  

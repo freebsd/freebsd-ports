@@ -1,10 +1,11 @@
---- cmd_diff.in.orig	2009-09-09 21:59:59.000000000 +0200
-+++ cmd_diff.in	2009-10-25 16:28:14.000000000 +0100
-@@ -21,6 +21,7 @@
+--- cmd_diff.in.orig	2009-09-10 04:59:59.000000000 +0900
++++ cmd_diff.in	2012-12-27 20:13:30.000000000 +0900
+@@ -20,7 +20,7 @@
+ Usage: port diff [-h] [-d <diff mode>]
  	-h	- Display this usage summary
  	-d <diff mode> - Select diff generation mode:
- 		CVS - against CVS
-+		CVSauto - against CVS, no cvs add/delete required
+-		CVS - against CVS
++		SVN - against SVN
  		<dir> - against Ports tree in <dir>
  		<pattern> - against original port in <pwd><pattern>
  EOF

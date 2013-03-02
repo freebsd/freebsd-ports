@@ -1,6 +1,16 @@
---- ./util_diff.in.orig	2009-09-09 21:59:59.000000000 +0200
-+++ ./util_diff.in	2011-11-28 21:54:50.000000000 +0100
-@@ -37,49 +37,122 @@
+--- util_diff.in.orig	2009-09-10 04:59:59.000000000 +0900
++++ util_diff.in	2012-12-31 21:44:44.000000000 +0900
+@@ -14,7 +14,8 @@
+ # Determine if this is a new port
+ if [ "${MODE}" = "" ]
+ then
+-	[ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
++	svn status Makefile 2>&1 1>/dev/null | grep -qs 'svn: warning: W155007:'
++	[ $? -eq 0 ] || [ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
+ fi
+ 
+ # Create a temporary dir for generated files (patch/shar, PR form)
+@@ -37,49 +38,96 @@
  	fi
  	cd ${SAVE_CWD}
  else
@@ -14,25 +24,20 @@
 +	if [ "${DIFF_MODE}" = "" ]
  	then
 -		DIFF_MODE="/usr/ports"
-+		if [ -d CVS ]
++		if [ -d /usr/ports/.svn ]
 +		then
-+			if grep -iq ":pserver:anoncvs@anoncvs.fr.FreeBSD.org:" CVS/Root
-+			then
-+				DIFF_MODE="CVSauto"
-+			else
-+				DIFF_MODE="CVS"
-+			fi
++			DIFF_MODE="SVN"
 +		else
 +			DIFF_MODE="/usr/ports"
 +		fi
 +		echo "Default diff mode is ${DIFF_MODE}"
-+	elif [ "${DIFF_MODE}" = "CVS" -o "${DIFF_MODE}" = "CVSauto" ]
++	elif [ "${DIFF_MODE}" = "SVN" ]
 +	then
-+		# If there is no CVS subdirectory then
++		# If there is no .svn directory then
 +		# fallback to diffing against /usr/ports tree
-+		if [ ! -d CVS ]
++		if [ ! -d /usr/ports/.svn ]
 +		then
-+			echo "Diff mode was set to ${DIFF_MODE}, but there's no CVS subdirectory"
++			echo "Diff mode was set to ${DIFF_MODE}, but there's no .svn directory"
 +			echo -n "Trying /usr/ports ... "
 +			if [ -d /usr/ports ]
 +			then
@@ -47,48 +52,33 @@
  	fi
  
 -	if [ "${DIFF_MODE}" = "CVS" ]
-+	if [ "${DIFF_MODE}" = "CVS" -o "${DIFF_MODE}" = "CVSauto" ]
++	if [ "${DIFF_MODE}" = "SVN" ]
  	then
+-		# Test for ~/.cvspass and create if necessary
+-		test -f ${HOME}/.cvspass || touch ${HOME}/.cvspass
 +		DIFF_TYPE=${DIFF_MODE}
- 		# Test for ~/.cvspass and create if necessary
- 		test -f ${HOME}/.cvspass || touch ${HOME}/.cvspass
  
- 		# Run 'cvs update' first
- 		echo "===> Updating from CVS"
+-		# Run 'cvs update' first
+-		echo "===> Updating from CVS"
 -		cvs -R update -Pd
 -		if [ $? -ne 0 ]
-+		if [ "${DIFF_MODE}" = "CVSauto" ]
-+		then
-+			cvs -R update -Pd 2> ${TEMPROOT}/.cvs.err > ${TEMPROOT}/.cvs.out
-+			status=$?
-+			cat ${TEMPROOT}/.cvs.err ${TEMPROOT}/.cvs.out
-+		else
-+			cvs -R update -Pd
-+			status=$?
-+		fi
++		# Run 'svn update' first
++		echo "===> Updating from SVN"
++		svn update
++		status=$?
 +		if [ $status -ne 0 ]
  		then
- 			echo "Error updating CVS"
+-			echo "Error updating CVS"
++			echo "Error updating SVN"
  			rm -rf ${TEMPROOT}
  			exit 1
  		fi
 -
 -		DIFF_CMD="cvs -R diff -uN"
-+		PORTBASENAME=`sed -E -e 's%.*/([^/]+)$%\1%' CVS/Repository`
-+		if [ "${DIFF_MODE}" = "CVSauto" ]
-+		then
-+			sort -k 2,666 ${TEMPROOT}/.cvs.out | \
-+			sed -nE	-e 's/^[?A] (.*)$/echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" /p' \
-+				-e 's/^U (.*)$/mv "\1" "\1.orig" \&\& echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" ; rm "\1.orig"/p' \
-+				-e 's/^R (.*)$/cvs -R -q update -p "\1" > "\1.orig" \&\& echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" ; rm "\1.orig"/p' \
-+				-e 's/^M (.*)$/cvs -R diff -u "\1"/p' \
-+				> ${TEMPROOT}/.cvs.diff_cmd
-+			DIFF_CMD="sh -x ${TEMPROOT}/.cvs.diff_cmd"
-+		else
-+			DIFF_CMD="cvs -R diff -uN"
-+		fi
++		DIFF_CMD="svn diff"
  	else 
- 		# Non-CVS modes
+-		# Non-CVS modes
++		# Non-SVN modes
 +		DIRBASENAME=`basename \`pwd\``
 +		PORTBASENAME_HEADER=`sed -n -E -e '1,/^($|[^#].*$)|\\$FreeBSD\:/s%^#.*\\$FreeBSD\:[[:space:]]*([^/]+/)*([^/]+)/Makefile.*\\$%\2%p' Makefile`
 +		if [ "${DIRBASENAME}" != "${PORTBASENAME_HEADER}" ]
@@ -141,12 +131,12 @@
  		fi
  
  		# Check to see if the original version of port exist 
-@@ -90,7 +163,7 @@
+@@ -90,7 +138,7 @@
  			exit 1
  		fi
  		
 -		DIFF_CMD="diff -ruN --exclude=CVS ${ORIG_DIR} `pwd`"
-+		DIFF_CMD="diff -ruN --exclude=CVS ${ORIG_DIR} ."
++		DIFF_CMD="diff -ruN ${ORIG_DIR} ."
  	fi
  
  	# Generate patch
