@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	7.5.229
+PORTVERSION=	7.5.230
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interactive editor for VLSI layouts
+COMMENT=	Interactive editor for VLSI layouts
 
 LICENSE=	BSD
 
@@ -29,12 +29,14 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 ALL_TARGET=	tcllibrary
 MAKE_JOBS_SAFE=yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN1=		ext2sim.1 ext2spice.1 extcheck.1 magic.1
 MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
 		net.5 sim.5
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^7\.
 
