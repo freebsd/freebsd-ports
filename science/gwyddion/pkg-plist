@@ -111,6 +111,7 @@ include/gwyddion/libgwymodule/gwymoduleenums.h
 include/gwyddion/libgwymodule/gwymoduleloader.h
 include/gwyddion/libgwymodule/gwymoduletypes.h
 include/gwyddion/libprocess/arithmetic.h
+include/gwyddion/libprocess/brick.h
 include/gwyddion/libprocess/cdline.h
 include/gwyddion/libprocess/correct.h
 include/gwyddion/libprocess/correlation.h
@@ -186,6 +187,8 @@ lib/gwyddion/modules/file/gsffile.la
 lib/gwyddion/modules/file/gsffile.so
 lib/gwyddion/modules/file/gwyfile.la
 lib/gwyddion/modules/file/gwyfile.so
+lib/gwyddion/modules/file/gxyzffile.la
+lib/gwyddion/modules/file/gxyzffile.so
 lib/gwyddion/modules/file/hdf4file.la
 lib/gwyddion/modules/file/hdf4file.so
 lib/gwyddion/modules/file/hdrimage.la
@@ -206,6 +209,8 @@ lib/gwyddion/modules/file/jpkscan.la
 lib/gwyddion/modules/file/jpkscan.so
 lib/gwyddion/modules/file/lextfile.la
 lib/gwyddion/modules/file/lextfile.so
+lib/gwyddion/modules/file/magellan.la
+lib/gwyddion/modules/file/magellan.so
 lib/gwyddion/modules/file/mapvue.la
 lib/gwyddion/modules/file/mapvue.so
 lib/gwyddion/modules/file/metropro.la
@@ -220,6 +225,8 @@ lib/gwyddion/modules/file/mulfile.la
 lib/gwyddion/modules/file/mulfile.so
 lib/gwyddion/modules/file/nanoeducator.la
 lib/gwyddion/modules/file/nanoeducator.so
+lib/gwyddion/modules/file/nanomagnetics.la
+lib/gwyddion/modules/file/nanomagnetics.so
 lib/gwyddion/modules/file/nanonics.la
 lib/gwyddion/modules/file/nanonics.so
 lib/gwyddion/modules/file/nanonis.la
@@ -308,6 +315,8 @@ lib/gwyddion/modules/file/tiaser.la
 lib/gwyddion/modules/file/tiaser.so
 lib/gwyddion/modules/file/unisoku.la
 lib/gwyddion/modules/file/unisoku.so
+lib/gwyddion/modules/file/vtkfile.la
+lib/gwyddion/modules/file/vtkfile.so
 lib/gwyddion/modules/file/wipfile.la
 lib/gwyddion/modules/file/wipfile.so
 lib/gwyddion/modules/file/witec-asc.la
@@ -362,6 +371,8 @@ lib/gwyddion/modules/process/averaging.la
 lib/gwyddion/modules/process/averaging.so
 lib/gwyddion/modules/process/basicops.la
 lib/gwyddion/modules/process/basicops.so
+lib/gwyddion/modules/process/brickshow.la
+lib/gwyddion/modules/process/brickshow.so
 lib/gwyddion/modules/process/calcoefs_load.la
 lib/gwyddion/modules/process/calcoefs_load.so
 lib/gwyddion/modules/process/calcoefs_new.la
@@ -390,6 +401,8 @@ lib/gwyddion/modules/process/dwtanisotropy.la
 lib/gwyddion/modules/process/dwtanisotropy.so
 lib/gwyddion/modules/process/edge.la
 lib/gwyddion/modules/process/edge.so
+lib/gwyddion/modules/process/extend.la
+lib/gwyddion/modules/process/extend.so
 lib/gwyddion/modules/process/facet-level.la
 lib/gwyddion/modules/process/facet-level.so
 lib/gwyddion/modules/process/facet_analysis.la
@@ -563,7 +576,7 @@ lib/libgwymodule2.so
 lib/libgwymodule2.so.5
 lib/libgwyprocess2.la
 lib/libgwyprocess2.so
-lib/libgwyprocess2.so.15
+lib/libgwyprocess2.so.16
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
 %%PERL%%libexec/gwyddion/plugins/process/invert_perl.pl

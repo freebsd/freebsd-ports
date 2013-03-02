@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.30
-PORTREVISION=	2
+PORTVERSION=	2.31
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -12,33 +11,18 @@ COMMENT=	Gtk2 based SPM data visualization and analysis tool
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		cairo:${PORTSDIR}/graphics/cairo \
-		IlmThread:${PORTSDIR}/graphics/ilmbase \
-		drm:${PORTSDIR}/graphics/libdrm \
-		png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		fftw3:${PORTSDIR}/math/fftw3 \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		xcb:${PORTSDIR}/x11/libxcb
+		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	PERL PYTHON RUBY UNIQUE
 OPTIONS_DEFAULT=PERL PYTHON UNIQUE
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USE_GNOME=	desktopfileutils gconf2 gnomehack gnomemimedata gtk20 libxml2
-USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+USE_GNOME=	desktopfileutils gconf2 gnomehack gtk20 libxml2
 USE_GL=		glu
 USE_GETTEXT=	yes
-USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc \
