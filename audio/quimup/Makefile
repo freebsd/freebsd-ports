@@ -2,54 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	quimup
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	audio
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=musicpd/Quimup/${PORTVERSION}
-DISTNAME=	${PORTNAME}_${DISTVERSION}_source
+MASTER_SITES=	SF/musicpd/Quimup/${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	QT4 Client for MPD (the Music Player Daemon)
+COMMENT=	Qt4 Client for MPD (the Music Player Daemon)
 
-LIB_DEPENDS=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
+LICENSE=	GPLv2 # (or later)
 
-USE_QT4=	corelib gui network \
-		qmake_build moc_build rcc_build uic_build
-QMAKE_ARGS=	PREFIX=${PREFIX}
+LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/icons/hicolor/32x32/apps/${PORTNAME}.png \
-		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		share/icons/hicolor/64x64/apps/${PORTNAME}.png
-PLIST_DIRS=	share/icons/hicolor/32x32/apps \
-		share/icons/hicolor/32x32 \
-		share/icons/hicolor/48x48/apps \
-		share/icons/hicolor/48x48 \
-		share/icons/hicolor/64x64/apps \
-		share/icons/hicolor/64x64 \
-		share/icons/hicolor \
-		share/icons
+USE_QT4=	corelib gui network \
+		moc_build qmake_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
-.include  <bsd.port.pre.mk>
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
+
+DESKTOP_ENTRIES="Quimup" "" "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Audio;AudioVideo;Qt;" true
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|qt release -O2|qt| ; \
+		 s|/usr/lib/|${LOCALBASE}/lib/| ; \
+		 s|^QMAKE_|#QMAKE_|' ${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
-	${REINPLACE_CMD} -e 's|/usr/lib/libmpdclient.so|${LOCALBASE}/lib/libmpdclient.so|' \
-		${WRKSRC}/${PORTNAME}.pro
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/icons/hicolor/32x32/apps
-	${MKDIR} ${PREFIX}/share/icons/hicolor/48x48/apps
-	${MKDIR} ${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKSRC}/Icons/${PORTNAME}32.png \
-		${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png
-	${INSTALL_DATA} ${WRKSRC}/Icons/${PORTNAME}48.png \
-		${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
-	${INSTALL_DATA} ${WRKSRC}/Icons/${PORTNAME}64.png \
-		${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC}/src/resources && ${INSTALL_DATA} mn_icon.png \
+		${PREFIX}/share/pixmaps/${PORTNAME}.png)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
