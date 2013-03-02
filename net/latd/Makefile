@@ -1,12 +1,8 @@
-# New ports collection makefile for:   latd
-# Date created:        19 December 2003
-# Whom:                Tillman Hodgson <tillman@seekingfire.com>
-#
+# Created by: Tillman Hodgson <tillman@seekingfire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	latd
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	net
 MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
