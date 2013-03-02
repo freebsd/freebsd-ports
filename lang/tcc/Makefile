@@ -2,13 +2,15 @@
 
 PORTNAME=	tcc
 PORTVERSION=	0.9.25
-PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	tinycc
+MASTER_SITES=	SAVANNAH/tinycc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny C Compiler
+
+LICENSE=	LGPL21
+
+OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386
 #ONLY_FOR_ARCHS=	i386 amd64 arm alpha mips powerpc
@@ -16,23 +18,31 @@ ONLY_FOR_ARCHS=	i386
 CONFLICTS=	TenDRA-*
 
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}"
-MAKE_ARGS+=	CONFIG_NOLDL=1
-MAN1=	tcc.1
+MAKE_ARGS=	CONFIG_NOLDL=1
+MAKE_JOBS_SAFE=	yes
 
-.if defined(NOPORTDOCS)
-MAKE_ARGS+=	NOPORTDOCS=1 CFLAGS="${CFLAGS}"
+MAN1=		tcc.1
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+MAKE_ARGS+=	NOPORTDOCS=1
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == i386)
-PLIST_SUB+=	WITH_I386=""
+.if ${ARCH} == "i386"
+PLIST_SUB+=	I386=""
 .else
-PLIST_SUB+=	WITH_I386="@comment "
+PLIST_SUB+=	I386="@comment "
+.endif
+
+.if ${CC:T:M*clang*} || ${OSVERSION} >= 1000024
+CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
 .include <bsd.port.post.mk>
