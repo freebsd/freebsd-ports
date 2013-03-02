@@ -9,10 +9,9 @@ PORTNAME=	farsifonts
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.unixified.net/distfiles/ \
-		http://www.farsiweb.info/font/
+MASTER_SITES=	SF/farsi-fonts/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	Standard set of Unicode Persian fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
