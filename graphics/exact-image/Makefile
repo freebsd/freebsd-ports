@@ -1,13 +1,8 @@
-# New ports collection makefile for:	exact-image
-# Date created:		2 September 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
@@ -17,16 +12,16 @@ COMMENT=	Fast image processing library
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	swig>=1.3.32:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	agg:${PORTSDIR}/graphics/agg \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
-		gif.5:${PORTSDIR}/graphics/giflib \
-		jasper.4:${PORTSDIR}/graphics/jasper \
+		gif:${PORTSDIR}/graphics/giflib \
+		jasper:${PORTSDIR}/graphics/jasper \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.6:${PORTSDIR}/textproc/expat2
+		lcms:${PORTSDIR}/graphics/lcms \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2
 
 CFLAGS+=	-fPIC
 #hack to get custom exactcode configure script to enable tiff support with
