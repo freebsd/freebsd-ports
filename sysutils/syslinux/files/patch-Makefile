@@ -6,13 +6,12 @@
  # for "make installer".
 -BSUBDIRS = codepage com32 lzo core memdisk mbr memdump gpxe sample \
 +BSUBDIRS_ = codepage com32 lzo core memdisk mbr memdump gpxe sample \
- 	   diag libinstaller dos win32 win64 dosutil
+ 	   diag libinstaller dos win32 win64 dosutil txt
  ITARGET  =
  IOBJECTS = $(ITARGET) \
  	utils/gethostip utils/isohybrid utils/mkdiskimage \
--	mtools/syslinux linux/syslinux extlinux/extlinux
+ 	mtools/syslinux linux/syslinux extlinux/extlinux
 -ISUBDIRS = libinstaller mtools linux extlinux utils
-+	mtools/syslinux
 +ISUBDIRS = libinstaller mtools
  
  # Things to install in /usr/bin
