@@ -127,7 +127,6 @@
 %%DATADIR%%/producttype.pl
 %%DATADIR%%/profilelist.pl
 %%DATADIR%%/proxysettings.pl
-%%DATADIR%%/pstools.pl
 %%DATADIR%%/publishingwizard.pl
 %%DATADIR%%/putty.pl
 %%DATADIR%%/rdphint.pl
@@ -198,6 +197,7 @@
 %%DATADIR%%/typedpaths.pl
 %%DATADIR%%/typedpaths_tln.pl
 %%DATADIR%%/typedurls.pl
+%%DATADIR%%/uac.pl
 %%DATADIR%%/uninstall.pl
 %%DATADIR%%/unreadmail.pl
 %%DATADIR%%/urlzone.pl

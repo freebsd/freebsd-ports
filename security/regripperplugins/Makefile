@@ -1,8 +1,8 @@
-# Created by: antoine@FreeBSD.org
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	regripperplugins
-DISTVERSION=	20120926
+DISTVERSION=	20130218
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${DISTVERSION}
