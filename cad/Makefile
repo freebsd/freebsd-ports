@@ -56,6 +56,7 @@
     SUBDIR += libgeda
     SUBDIR += librecad
     SUBDIR += linux-eagle5
+    SUBDIR += logisim
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += meshdev
