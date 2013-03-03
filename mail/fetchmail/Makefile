@@ -9,6 +9,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.24
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
