@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	iroffer
-PORTVERSION=	3.28
+PORTVERSION=	3.29
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -16,6 +16,7 @@ CONFLICTS=	iroffer-1* iroffer-lamm-1.*
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 MAN1=		iroffer.1
+MAN7=		xdcc.7
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
@@ -36,7 +37,7 @@ IROFFER_EXAMPLES= iroffer.cron \
 		sample.config beispiel.config exemple.config \
 		header.html footer.html ruby-sample.rb
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
-		info.txt.rb md5.txt.rb sfv.txt.rb
+		info.txt.rb json.txt.rb md5.txt.rb sfv.txt.rb
 
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
@@ -82,6 +83,7 @@ do-install:
 .endfor
 .endif
 	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${PREFIX}/man/man7/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
