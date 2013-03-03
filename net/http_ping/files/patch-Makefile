@@ -1,0 +1,33 @@
+--- Makefile.orig	2013-03-03 07:36:07.000000000 +0900
++++ Makefile	2013-03-03 07:44:01.000000000 +0900
+@@ -14,13 +14,15 @@
+ #SSL_INC =	-I$(SSL_TREE)/include
+ #SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
+ 
+-
+-BINDIR =	/usr/local/bin
+-MANDIR =	/usr/local/man/man1
+-CC =		gcc -Wall
+-CFLAGS =	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
++SSL_DEFS=	-DUSE_SSL ${OPENSSL_CFLAGS}
++SSL_INC=	-I${OPENSSLINC}
++SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
++bINDIR =	${PREFIX}/bin
++MANDIR =	${MANPREFIX}/man/man1
++CC?=		gcc -Wall
++CFLAGS+=	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
+ #CFLAGS =	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
+-LDFLAGS =	-s $(SSL_LIBS) $(SYSV_LIBS)
++LDFLAGS+=	-s -lssl -lcrypto
+ #LDFLAGS =	-g $(SSL_LIBS) $(SYSV_LIBS)
+ 
+ all:		http_ping
+@@ -32,7 +34,7 @@
+ 	$(CC) $(CFLAGS) -c http_ping.c
+ 
+ 
+-install:	all
++install:
+ 	rm -f $(BINDIR)/http_ping
+ 	cp http_ping $(BINDIR)
+ 	rm -f $(MANDIR)/http_ping.1
