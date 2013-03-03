@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Devel::KYTProf
-# Date created:		20 Oct 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-KYTProf
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +18,7 @@ TEST_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 PERL_CONFIGURE=	yes
 
 MAN3=	Devel::KYTProf.3 \
+	Devel::KYTProf::Logger::LTSV.3 \
 	Devel::README.3
 
 .include <bsd.port.mk>
