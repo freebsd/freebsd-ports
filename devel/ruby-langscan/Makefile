@@ -13,7 +13,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A program analyzer for source code search engine
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

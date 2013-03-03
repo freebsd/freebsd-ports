@@ -13,7 +13,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bind of EB library
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 

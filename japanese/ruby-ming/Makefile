@@ -16,7 +16,7 @@ MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Yet another Ming module for Ruby built with Japanese support
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	ming.3:${PORTSDIR}/japanese/ming
 

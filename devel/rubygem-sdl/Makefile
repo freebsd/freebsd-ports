@@ -12,7 +12,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 RUN_DEPENDS=	rubygem-opengl>=0.60.1:${PORTSDIR}/graphics/rubygem-opengl
 

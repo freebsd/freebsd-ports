@@ -13,7 +13,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A friendly API to libxml for Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

@@ -10,7 +10,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Terminal based Twitter client
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 RUN_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
 		rubygem-termcolor>=1.0.0:${PORTSDIR}/textproc/rubygem-termcolor \

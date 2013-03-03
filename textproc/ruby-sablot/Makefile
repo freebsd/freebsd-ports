@@ -13,7 +13,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Ruby interface to the Sablotron XSLT processor
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		expat.6:${PORTSDIR}/textproc/expat2
