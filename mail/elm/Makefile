@@ -1,9 +1,5 @@
-# New ports collection makefile for:    elm25
-# Date created:				04 Feb 2000
-# Whom:					dhagan@cs.vt.edu
-#
+# Created by: dhagan@cs.vt.edu
 # $FreeBSD$
-#
 
 PORTNAME=	elm
 PORTVERSION=	2.5.8
@@ -24,10 +20,10 @@ CFLAGS+=	-D_SIZE_T
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}
 NO_LATEST_LINK=		yes
 USE_GETTEXT=		yes
-IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=		PREFIX="${PREFIX}"
+CONFIGURE_ARGS=		-d
 MAN1=			answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 			frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
 			printmail.1 readmsg.1 mmencode.1
