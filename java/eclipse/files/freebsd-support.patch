@@ -7459,3 +7459,24 @@ $FreeBSD$
  	else
  		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
  		echo "    *** Mozilla embedding support will not be compiled."
+--- build/eclipse-3.7.1-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	2012-12-25 21:01:56.000000000 -0600
++++ build/eclipse-3.7.1-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	2012-12-25 21:28:35.000000000 -0600
+@@ -491,7 +491,7 @@
+ 		export MOZILLA_INCLUDES
+ 		export MOZILLA_LIBS
+ 		MAKE_MOZILLA=make_mozilla
+-	elif [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
++	elif [ x`pkg-config --exists "libxul < 2" && echo YES` = "xYES" ]; then
+ 		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
+ 		XULRUNNER_LIBS=`pkg-config --libs libxul`
+		XULRUNNER_LIBS=`echo ${XULRUNNER_LIBS} -lxpcomglue`
+--- build/eclipse-3.7.1-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak.orig	2012-12-29 13:05:23.000000000 -0600
++++ build/eclipse-3.7.1-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2012-12-29 13:06:37.000000000 -0600
+@@ -27,6 +27,7 @@
+ MOZILLA_PREFIX = swt-mozilla$(GCC_VERSION)
+ XULRUNNER_PREFIX = swt-xulrunner
+ XPCOMINIT_PREFIX = swt-xpcominit
++WEBKIT_PREFIX = swt-webkit
+ GLX_PREFIX = swt-glx
+ 
+ SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
