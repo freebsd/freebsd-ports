@@ -19,7 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	XFT
-XFT_DESC=	Client-side fonts via libXft (experimental)
+OPTIONS_DEFAULT=	XFT
+XFT_DESC=	Client-side fonts via libXft
 
 CONFIGURE_ARGS=	X11INC=${LOCALBASE}/include X11LIB=${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
@@ -151,6 +152,8 @@ MAN3=		Tie::Watch.3 \
 .if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS=	XFT=1
 USE_XORG+=	xft
+.else
+CONFIGURE_ARGS=	XFT=0
 .endif
 
 post-patch:
