@@ -1,13 +1,10 @@
-# New ports collection makefile for:	xfce4-session
-# Date created:		2003-10-30
-# Whom:			Matt Lancereau <matt@rimasec.net>
-#
+# Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -15,22 +12,21 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's session manager
 
-#CONFLICTS=	xfce4-utils-4.8.*
-
 BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
-LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		upower-glib.1:${PORTSDIR}/sysutils/upower \
-		polkit.2:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		upower-glib:${PORTSDIR}/sysutils/upower \
+		polkit:${PORTSDIR}/sysutils/policykit
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig desktopfileutils
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_XORG=	x11 sm ice
@@ -44,11 +40,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	NLS GNUPG
 
-.include <bsd.port.options.mk>
-
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
 PLIST_SUB=	VERSION="4.6"
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
