@@ -1,12 +1,8 @@
-# New ports collection makefile for:	stunnel
-# Date created:		Mon Jan 11 11:53:54 EET 1999
-# Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
-#
+# Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
 # $FreeBSD$
-#
 
 PORTNAME=	stunnel
-PORTVERSION=	4.54
+PORTVERSION=	4.55
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -34,10 +30,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/tmp \
 		--enable-static --disable-fips
 
-.if !defined(NOPORTDOCS)
-MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
-.endif
-
 OPTIONS_DEFINE=		IPV6 LIBWRAP SSL_PORT
 OPTIONS_SINGLE=		THREAD
 OPTIONS_SINGLE_THREAD=	FORK PTHREAD UCONTEXT
@@ -55,6 +47,10 @@ STUNNEL_GROUP?=	stunnel
 
 USERS=		${STUNNEL_USER}
 GROUPS=		${STUNNEL_GROUP}
+
+.if ${PORT_OPTIONS:MDOCS}
+MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
+.endif
 
 .if ${PORT_OPTIONS:MSSL_PORT}
 USE_OPENSSL=		YES
@@ -102,7 +98,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
 	@${REINPLACE_CMD} -E -e 's|install-confDATA install-data-local|install-confDATA|g' \
 		${WRKSRC}/tools/Makefile.in
-.ifdef(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's/([^n])install-examplesDATA/\1/' \
