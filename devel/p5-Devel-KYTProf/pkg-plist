@@ -1,6 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/KYTProf/.packlist
 %%SITE_PERL%%/Devel/KYTProf.pm
+%%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pm
+%%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pod
 %%SITE_PERL%%/Devel/README.pod
+@dirrm %%SITE_PERL%%/Devel/KYTProf/Logger
+@dirrm %%SITE_PERL%%/Devel/KYTProf
 @dirrmtry %%SITE_PERL%%/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/KYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
