@@ -237,7 +237,7 @@ foreach my $thisdir (@dirs) {
 	}
 
 	# Get the category name and make it suitable for use with svn
-	my @categories = split(/ /, `make -VCATEGORIES`);
+	my @categories = split(/ /, `$make -VCATEGORIES`);
 	my $category = $categories[0];
 	if ($interactive) {
 		if (prompt("Port $portname will be put in category $category.  OK? " )) {
