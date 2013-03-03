@@ -1,12 +1,8 @@
-# New ports collection makefile for:	teTeX
-# Date created:		3 June 2004
-# Whom:			hrs
-#
 # $FreeBSD$
 
 PORTNAME=	teTeX
 PORTVERSION=	1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,6 +21,10 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	xdvi:${PORTSDIR}/japanese/xdvik
 .endif
+
+CONFLICTS=	texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]* 
 
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R

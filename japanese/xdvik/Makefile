@@ -1,13 +1,9 @@
-# New ports collection makefile for:   xdvik + jp-patch
-# Date created:        15 Jun 1998
-# Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
-#
+# Created by: Kentaro Inagaki <inagaki@tg.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	japanese print
 MASTER_SITES=	SF/xdvi/OldFiles
 PKGNAMESUFFIX=	-tetex
@@ -64,7 +60,10 @@ MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		XDVIETCDIR=${XDVIETCDIR}
-CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* xdvik-[0-9]*
+CONFLICTS=	texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]* \
+		xdvi-[0-9]* xdvi-*-[0-9]* xdvik-[0-9]*
 
 VERSION_XDVIK=	22.40y1
 VERSION_JPATCH=	1.21
