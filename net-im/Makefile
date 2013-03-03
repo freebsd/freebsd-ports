@@ -38,7 +38,6 @@
     SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
-    SUBDIR += imcom
     SUBDIR += imspector
     SUBDIR += iserverd
     SUBDIR += jabber

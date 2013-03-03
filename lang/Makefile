@@ -57,7 +57,6 @@
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += embryo
-    SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += execline
     SUBDIR += expect

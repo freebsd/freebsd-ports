@@ -31,13 +31,10 @@
     SUBDIR += e16
     SUBDIR += e16utils
     SUBDIR += e17-module-alarm
-    SUBDIR += e17-module-calendar
     SUBDIR += e17-module-comp-scale
     SUBDIR += e17-module-cpu
     SUBDIR += e17-module-deskshow
     SUBDIR += e17-module-diskio
-    SUBDIR += e17-module-drawer
-    SUBDIR += e17-module-e-tiling
     SUBDIR += e17-module-eektool
     SUBDIR += e17-module-elfe
     SUBDIR += e17-module-empris
@@ -56,7 +53,6 @@
     SUBDIR += e17-module-forecasts
     SUBDIR += e17-module-iiirk
     SUBDIR += e17-module-itask
-    SUBDIR += e17-module-language
     SUBDIR += e17-module-mail
     SUBDIR += e17-module-mem
     SUBDIR += e17-module-moon
@@ -66,7 +62,6 @@
     SUBDIR += e17-module-penguins
     SUBDIR += e17-module-photo
     SUBDIR += e17-module-places
-    SUBDIR += e17-module-quickaccess
     SUBDIR += e17-module-rain
     SUBDIR += e17-module-rmb
     SUBDIR += e17-module-screenshot
@@ -74,13 +69,11 @@
     SUBDIR += e17-module-snow
     SUBDIR += e17-module-taskbar
     SUBDIR += e17-module-tclock
-    SUBDIR += e17-module-tiling
     SUBDIR += e17-module-uptime
     SUBDIR += e17-module-weather
     SUBDIR += e17-module-winlist-ng
     SUBDIR += e17-module-winselector
     SUBDIR += e17-module-wlan
-    SUBDIR += e17-module-xkbswitch
     SUBDIR += e17-modules
     SUBDIR += echinus
     SUBDIR += ede
