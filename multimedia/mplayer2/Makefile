@@ -11,7 +11,8 @@ COMMENT=	Advanced general-purpose video player
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2 \
+		dvdread:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
@@ -49,18 +50,17 @@ MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB JOYSTICK \
-		DVDREAD LIBBLURAY V4L DV THEORA \
+		LIBBLURAY V4L DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
 		JACK PULSE PORTAUDIO ASS LIRC
-OPTIONS_DEFAULT=DVDREAD X11 ASS
+OPTIONS_DEFAULT=X11 ASS
 
 .if !defined(PACKAGE_BUILDING)
 OPTIONS_DEFINE+=	WIN32
 OPTIONS_DEFAULT+=	WIN32
 .endif
 
-DVDREAD_DESC=	Enable dvdread support
 RTC_DESC=	Enable kernel realtime clock timing
 PULSE_DESC=	Enable PulseAudio support
 THEORA_DESC=	Enable ogg theora video support
@@ -164,13 +164,6 @@ CONFIGURE_ARGS+=	--disable-portaudio
 LIB_DEPENDS+=		bluray:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
-.endif
-
-.if ${PORT_OPTIONS:MDVDREAD}
-LIB_DEPENDS+=		dvdread:${PORTSDIR}/multimedia/libdvdread
-CONFIGURE_ARGS+=	--enable-dvdread
-.else
-CONFIGURE_ARGS+=	--disable-dvdread
 .endif
 
 .if ${PORT_OPTIONS:MSMB}
