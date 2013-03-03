@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c97219b6-843d-11e2-b131-000c299b62e1">
+    <topic>stunnel -- Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>stunnel</name>
+	<range><ge>4.21</ge><lt>4.55</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michal Trojnara reports:</p>
+	<blockquote cite="https://www.stunnel.org/CVE-2013-1762.html">
+	  <p>64-bit versions of stunnel with the following conditions:
+	     * NTLM authentication enabled
+	     * CONNECT protocol negotiation enabled
+	     * Configured in SSL client mode
+	     * An attacker that can either control the proxy server specified in
+	       the "connect" option or execute MITM attacks on the TCP session
+	       between stunnel and the proxy</p>
+	  <p>Can be exploited for remote code execution.  The code is executed
+	     within the configured chroot directory, with privileges of the
+	     configured user and group.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1762</cvename>
+      <url>https://www.stunnel.org/CVE-2013-1762.html</url>
+    </references>
+    <dates>
+      <discovery>2013-03-03</discovery>
+      <entry>2013-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c88d8a8-8372-11e2-a010-20cf30e32f6d">
     <topic>apache22 -- several vulnerabilities</topic>
     <affects>
