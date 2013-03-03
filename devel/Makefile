@@ -4148,6 +4148,7 @@
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
+    SUBDIR += rubygem-versionomy
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-webby
