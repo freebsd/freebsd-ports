@@ -14,7 +14,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby implementation of the gettext library
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 #USE_GETTEXT=	yes	# not actually depends on it
 USE_RUBY=	yes

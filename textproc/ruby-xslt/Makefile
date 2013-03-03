@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	An XSLT processor in pure Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 USE_GNOME=	libxslt
 USE_RUBY=	yes

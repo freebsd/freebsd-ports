@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TCP wrappers library for Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
 

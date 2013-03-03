@@ -13,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt/KDE
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 CONFLICTS=	ruby1[89]-kdebindings-4.[0-6].*
 

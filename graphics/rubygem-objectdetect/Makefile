@@ -13,7 +13,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A simple library for detecting objects in pictures
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 

@@ -15,7 +15,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2012-05-02
+EXPIRATION_DATE=	2013-05-02
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
