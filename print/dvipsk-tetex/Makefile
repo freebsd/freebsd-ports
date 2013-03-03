@@ -1,12 +1,8 @@
-# New ports collection makefile for:    dvipsk-tetex
-# Date created:         5 May 2004
-# Whom:                 hrs
-#
 # $FreeBSD$
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.95a
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -53,7 +49,10 @@ CONFLICTS=	*-teTeX-[0-9]* \
 		ja-ptex-*-[0-9]* \
 		dvips-[0-9]* \
 		*-dvips-[0-9]* \
-		*-dvipsk-[0-9]*
+		*-dvipsk-[0-9]* \
+		texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1
 MLINKS=		dvips.1 odvips.1

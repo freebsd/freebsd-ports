@@ -1,13 +1,9 @@
-# New ports collection makefile for:	teTeX-base
-# Date created:		5 December 1996
-# Whom:			Bernd Rosauer <br@netland.inka.de>
-#
+# Created by: Bernd Rosauer <br@netland.inka.de>
 # $FreeBSD$
-#
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -26,8 +22,9 @@ RUN_DEPENDS=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib \
-		gd.4:${PORTSDIR}/graphics/gd
+		gd.4:${PORTSDIR}/${GD_PORT}
 
+GD_PORT?=	graphics/gd
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -53,7 +50,10 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	ja-ptex-base-[0-9]* latex2e-[0-9]* \
-		tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
+		tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
+		texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
 MAN1=	tie.1 kpseaccess.1 kpsereadlink.1 mpost.1 \
 	dmp.1 dvicopy.1 dvilj.1 dvipdfm.1 \

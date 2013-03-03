@@ -1,13 +1,9 @@
-# New ports collection makefile for:    dvipsk + jpatch
-# Date created:         25 Aug 1997
-# Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
-#
+# Created by: Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
@@ -62,7 +58,10 @@ CONFIGURE_ARGS= --disable-multiplatform \
 		--with-t1lib-include=${LIBT1_PREFIX}/include \
 		--without-xdvik --without-oxdvik
 CONFLICTS=	dvipsk-tetex-[0-9]* \
-		dvips-[0-9]*
+		dvips-[0-9]* \
+		texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1
 MLINKS=		dvips.1 odvips.1

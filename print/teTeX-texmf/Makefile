@@ -1,12 +1,8 @@
-# New ports collection makefile for:	teTeX-texmf
-# Date created:		5 June 2004
-# Whom:			hrs
-#
 # $FreeBSD$
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -24,7 +20,10 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/share/fonts/amsfonts/doc/fonts/amsfonts/00README:${PORTSDIR}/print/font-amsfonts
 
 CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
-		ja-ptext-base-[0-9]*
+		ja-ptext-base-[0-9]* \
+		texlive-[0-9]* tex-web2c-[0-9]* \
+		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
+		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
 .include <bsd.port.pre.mk>
 
