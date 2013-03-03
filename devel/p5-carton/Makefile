@@ -1,12 +1,7 @@
-# New ports collection makefile for:	carton
-# Date created:		14 Oct 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	carton
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -17,13 +12,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module dependency manager
 
 RUN_DEPENDS=	\
-	p5-App-cpanminus>=1.5:${PORTSDIR}/devel/p5-App-cpanminus \
-	p5-CPAN-Meta>=2.112:${PORTSDIR}/devel/p5-CPAN-Meta \
+	p5-App-cpanminus>=1.6:${PORTSDIR}/devel/p5-App-cpanminus \
+	p5-CPAN-Meta>=2.120921:${PORTSDIR}/devel/p5-CPAN-Meta \
+	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny \
-	p5-Dist-Metadata>0:${PORTSDIR}/devel/p5-Dist-Metadata \
 	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
-	p5-File-chdir>0:${PORTSDIR}/devel/p5-File-chdir \
 	p5-JSON>=2.53:${PORTSDIR}/converters/p5-JSON \
+	p5-Module-CPANfile>=0.9004:${PORTSDIR}/devel/p5-Module-CPANfile \
 	p5-Module-Metadata>=1.000003:${PORTSDIR}/devel/p5-Module-Metadata \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-local-lib>=1.008:${PORTSDIR}/devel/p5-local-lib
@@ -38,7 +33,6 @@ MAN1=	carton-check.1 \
 	carton-list.1 \
 	carton-show.1 \
 	carton-tree.1 \
-	carton-uninstall.1 \
 	carton-version.1 \
 	carton.1
 MAN3=	Carton.3 \
@@ -49,7 +43,6 @@ MAN3=	Carton.3 \
 	Carton::Doc::List.3 \
 	Carton::Doc::Show.3 \
 	Carton::Doc::Tree.3 \
-	Carton::Doc::Uninstall.3 \
 	Carton::Doc::Version.3
 
 .include <bsd.port.mk>
