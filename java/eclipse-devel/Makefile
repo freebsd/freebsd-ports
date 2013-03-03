@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/4.2.x/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20120119162704/repository/plugins/:2 \
@@ -40,7 +40,8 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		rsync:${PORTSDIR}/net/rsync \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC= 	"Build SDK test suite"
@@ -48,7 +49,6 @@ TESTS_DESC= 	"Build SDK test suite"
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_ANT=	yes
-USE_GECKO=	libxul19
 USE_GL=		glu
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig

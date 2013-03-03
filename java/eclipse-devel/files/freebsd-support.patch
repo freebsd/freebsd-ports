@@ -7206,3 +7206,47 @@ $FreeBSD$
  	else
  		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
  		echo "    *** Mozilla embedding support will not be compiled."
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	2013-02-03 07:08:39.000000000 -0600
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	2013-02-03 07:24:06.000000000 -0600
+@@ -493,7 +493,7 @@
+ 		export MOZILLA_INCLUDES
+ 		export MOZILLA_LIBS
+ 		MAKE_MOZILLA=make_mozilla
+-	elif [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
++	elif [ x`pkg-config --exists "libxul < 2" && echo YES` = "xYES" ]; then
+ 		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
+ 		XULRUNNER_LIBS=`pkg-config --libs libxul`
+ 		XULRUNNER_LIBS=`echo ${XULRUNNER_LIBS} -lxpcomglue`
+@@ -506,6 +506,14 @@
+ 	fi
+ fi
+ 
++if [ x`pkg-config --exists webkit-1.0 && echo YES` = "xYES" ]; then
++	echo "WebKit found, compiling webkit embedded browser support."
++	MAKE_WEBKIT=make_webkit
++else
++	echo "WebKit not found:"
++	echo "    *** WebKit embedding support will not be compiled."
++fi
++
+ # Find AWT if available
+ if [ -z "${AWT_LIB_PATH}" ]; then
+ 	if [ -f ${JAVA_HOME}/jre/lib/${AWT_ARCH}/libjawt.* ]; then
+@@ -534,5 +542,5 @@
+ if [ "x${1}" = "xclean" ]; then
+ 	${MAKE_TYPE} -f $MAKEFILE clean
+ else
+-	${MAKE_TYPE} -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
++	${MAKE_TYPE} -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA $MAKE_WEBKIT ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
+ fi
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak.orig	2013-02-03 07:08:39.000000000 -0600
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2013-02-03 07:24:06.000000000 -0600
+@@ -26,7 +26,8 @@
+ GNOME_PREFIX = swt-gnome
+ MOZILLA_PREFIX = swt-mozilla$(GCC_VERSION)
+ XULRUNNER_PREFIX = swt-xulrunner
+ XPCOMINIT_PREFIX = swt-xpcominit
++WEBKIT_PREFIX = swt-webkit
+ GLX_PREFIX = swt-glx
+
+ SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
