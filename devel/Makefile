@@ -3947,6 +3947,7 @@
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
