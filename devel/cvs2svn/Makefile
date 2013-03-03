@@ -3,7 +3,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49237/ \
 		LOCAL/ohauer
@@ -17,7 +17,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
