@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openh323
-# Date created:		Thu Feb 17 15:00:48 GMT 2000
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	opal
 PORTVERSION=	2.2.11
@@ -11,11 +7,13 @@ PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP abstraction library
 
-OPTIONS=	FFMPEG	"Support H263 audio/video codec"	on \
-		SPEEX	"Use speex installed by audio/speex"	on
+OPTIONS_DEFINE=	FFMPEG SPEEX
+OPTIONS_DEFAULT=FFMPEG SPEEX
+FFMPEG_DESC=	H263 audio/video codec support
+SPEEX_DESC=	Use audio/speex instead of bundled version
 
 LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 
@@ -42,18 +40,19 @@ CFLAGS+=	-fPIC
 BROKEN=		does not compile on 9.X
 .endif
 
-.if defined(WITHOUT_FFMPEG)
-CONFIGURE_ARGS+=--disable-h263avcodec
-.else
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
+.else
+CONFIGURE_ARGS+=--disable-h263avcodec
 .endif
 
-.if defined(WITHOUT_SPEEX)
-CONFIGURE_ARGS+=--enable-localspeex=no
-.else
+.if ${PORT_OPTIONS:MSPEEX}
 LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-localspeex=yes
+.else
+CONFIGURE_ARGS+=--enable-localspeex=no
 .endif
+
 
 .include <bsd.port.post.mk>
