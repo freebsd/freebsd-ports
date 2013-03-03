@@ -1,15 +1,13 @@
-# New ports collection makefile for:	nagiosql
-# Date created:			7 Dec 2010
-# Whom:				Chris St Denis <chris@smartt.com>
-#
+# Created by: Chris St Denis <chris@smartt.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nagiosql
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosQL%20${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}_SP2
 
 MAINTAINER=	chris@smartt.com
 COMMENT=	A web based administration tool for Nagios
@@ -22,36 +20,62 @@ RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios \
 USE_BZIP2=	yes
 USE_MYSQL=	yes
 USE_GETTEXT=	yes
-USE_PHP=	mysql gettext ftp session simplexml
-IGNORE_WITH_PHP=4
+USE_PHP=	mysql gettext session simplexml
 WANT_PHP_WEB=	yes
 
+USERS?=		nagios
+GROUPS?=	nagios
+NAGIOSUSER?=	nagios
+
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}32
+
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} NAGIOSUSER=${NAGIOSUSER}
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-OPTIONS=	CURL "Configure with cURL support" off \
-		SSH2 "Configure with SSH2 support" off
+OPTIONS_DEFINE=	CURL FTP SSH2
+CURL_DESC=	Configure with cURL support
+FTP_DESC=	Configure with FTP support
+SSH2_DESC=	Configure with SSH2 support
 
-#.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
 .endif
 
-.if defined(WITH_SSH2)
+.if ${PORT_OPTIONS:MFTP}
+USE_PHP+=	ftp
+.endif
+
+.if ${PORT_OPTIONS:MSSH2}
 USE_PHP+=	ssh2
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e "s|\'/etc/nagiosql/|\'${ETCDIR}/|g" \
+		-e "s|/opt/nagios/etc/objects/|${LOCALBASE}/etc/nagios/objects/|" \
+		-e "s|/opt/nagios/bin/nagios|${LOCALBASE}/bin/nagios|" \
+		-e "s|/var/nagios/nagios.lock|/var/spool/nagios/nagios.lock|" \
+		-e "s|/var/nagios/rw/nagios.cmd|/var/spool/nagios/rw/nagios.cmd|" \
+		-e "s|nagios/etc/|etc/nagios/|" \
+		-e "s|nagiosql/etc/|${ETCDIR}/|" \
+		-e "s|\>/etc/nagiosql|\>${ETCDIR}|g" \
+		-e "s|\>/etc/nagios/|\>${LOCALBASE}/etc/nagios/|g" \
+		${WRKSRC}/install/sql/nagiosQL_v32_db_mysql.sql
+
+	${REINPLACE_CMD} -e "s|\"/etc/|\"${LOCALBASE}/etc/|" \
+		${WRKSRC}/install/install.php
+
 do-install:
-	${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/${PORTNAME}32/ ${WWWDIR}
-	${CHOWN} ${WWWOWN}:${WWWGROUP} ${WWWDIR}/config
+	@${MKDIR} ${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/config
 
 post-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
