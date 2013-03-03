@@ -356,7 +356,6 @@
     SUBDIR += hudson
     SUBDIR += hydra
     SUBDIR += hypermail
-    SUBDIR += igal
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias

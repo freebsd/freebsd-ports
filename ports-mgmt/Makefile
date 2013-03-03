@@ -52,7 +52,6 @@
     SUBDIR += portaudit
     SUBDIR += portaudit-db
     SUBDIR += portbuilder
-    SUBDIR += portcheck
     SUBDIR += portcheckout
     SUBDIR += portconf
     SUBDIR += portdowngrade
