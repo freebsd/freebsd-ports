@@ -1,0 +1,24 @@
+--- ./dialogs/appearance-settings/appearance-install-theme.orig	2012-04-28 20:48:30.000000000 +0000
++++ ./dialogs/appearance-settings/appearance-install-theme	2013-02-18 21:08:13.000000000 +0000
+@@ -89,7 +89,11 @@
+ 
+ # check file size, abort if bigger then 50Mb, only works for files
+ if test x"`which stat 2>/dev/null`" != x""; then
+-    dndsize=`stat -c %s "$dndfilename"`
++    if test "`uname -s`" = "Linux"; then
++        dndsize=`stat -c %s "$dndfilename"`
++    elif test "`uname -s`" = "FreeBSD"; then
++        dndsize=`stat -f %z "$dndfilename"`
++    fi
+     if test "$dndsize" -gt 52428800; then
+         # 2: File too big
+         exit 2
+@@ -140,7 +144,7 @@
+     detectthemes "gtk-2.0/gtkrc"
+ 
+     # install gtk-3.0 themes
+-    detectthemes "gtk-3.0/gtkrc"
++    detectthemes "gtk-3.0/gtk.css"
+ 
+     # install xfwm4 themes
+     detectthemes "xfwm4/themerc"
