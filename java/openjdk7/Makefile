@@ -135,6 +135,11 @@ BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 .endif
 
+.if ${OSVERSION} < 800000
+PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
+PATCH=		gpatch
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
