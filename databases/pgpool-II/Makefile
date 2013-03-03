@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.6
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/kuriyama \
 		http://www.pgpool.net/mediawiki/images/
@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--with-openssl
 
 CONFLICTS=	pgpool-3.* pgpool-II-2.* pgpool-II-3.0.*
 USE_RC_SUBR=	pgpool
@@ -30,6 +32,16 @@ PORTDOCShtml=	pgpool-en.html pgpool-ja.html pgpool.css
 PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 MAN8=		pgpool.8
+
+OPTIONS_DEFINE+=SSL
+SSL_DESC=	Build with OpenSSL support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl
+.endif
 
 .include <bsd.port.pre.mk>
 
