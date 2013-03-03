@@ -181,7 +181,6 @@
     SUBDIR += noc
     SUBDIR += nocol
     SUBDIR += nrpe2
-    SUBDIR += nrpep
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nsca27

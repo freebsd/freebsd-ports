@@ -84,7 +84,6 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdmoted
-    SUBDIR += bsdsar
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
@@ -754,7 +753,6 @@
     SUBDIR += radmind
     SUBDIR += raincoat
     SUBDIR += rclean
-    SUBDIR += rcsedit
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
@@ -842,7 +840,6 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += samesame
-    SUBDIR += sarah
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbniconfig

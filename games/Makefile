@@ -683,7 +683,6 @@
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pengupop
-    SUBDIR += pentix
     SUBDIR += phalanx
     SUBDIR += phlipple
     SUBDIR += pinball

@@ -133,7 +133,6 @@
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rxtx
     SUBDIR += scmxx
-    SUBDIR += scud
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += seyon

@@ -299,7 +299,6 @@
     SUBDIR += cvsdiff2patch
     SUBDIR += cvsgraph
     SUBDIR += cvslines
-    SUBDIR += cvsmapfs
     SUBDIR += cvsmonitor
     SUBDIR += cvsplot
     SUBDIR += cvsps
@@ -904,7 +903,6 @@
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += lemon
-    SUBDIR += lexi
     SUBDIR += lfc
     SUBDIR += lfcxml
     SUBDIR += libIDL
@@ -3446,7 +3444,6 @@
     SUBDIR += py-experimental.cssselect
     SUBDIR += py-extended_threading
     SUBDIR += py-extremes
-    SUBDIR += py-ez_xml
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
     SUBDIR += py-fam
@@ -4195,7 +4192,6 @@
     SUBDIR += shmap
     SUBDIR += showgrammar
     SUBDIR += shtool
-    SUBDIR += sid
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
