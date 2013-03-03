@@ -150,7 +150,9 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 _GCC_FOUND${v}=	port
 . endif
 . if ${OSVERSION} >= ${_GCCVERSION_${v}_L} && ${OSVERSION} < ${_GCCVERSION_${v}_R}
+.  if exists(/usr/bin/gcc)
 _GCC_FOUND${v}:=	base
+.  endif
 . endif
 .endfor
 
@@ -194,7 +196,7 @@ _USE_GCC:=	${GCC_DEFAULT_VERSION}
 # dependencies, CC, CXX, CPP, and flags.
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-.  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+.  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R} || !exists(/usr/bin/gcc)
 V:=			${_GCCVERSION_${v}_V:S/.//}
 _GCC_PORT_DEPENDS:=	gcc${V}
 .   if ${_USE_GCC} == ${GCC_DEFAULT_VERSION}
@@ -219,7 +221,7 @@ FFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 # ever telling us; to be fixed.
 _GCC_BUILD_DEPENDS:=	${_GCC_PORT_DEPENDS}
 .   endif # ${_USE_GCC} != 3.4
-.  else # ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+.  else # Use GCC in base.
 CC:=			gcc
 CXX:=			g++
 .   if exists(/usr/bin/gcpp)
@@ -227,7 +229,7 @@ CPP:=			gcpp
 .   else
 CPP:=			cpp
 .   endif
-.  endif # ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+.  endif # Use GCC in base.
 . endif # ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .endfor
 .undef V
