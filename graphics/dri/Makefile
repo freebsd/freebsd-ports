@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	I810_DRIVER="@comment "
+PLIST_SUB+=	I810_DRIVER=""
 PLIST_SUB+=	I9X5_DRIVER=""
 PLIST_SUB+=	MACH64_DRIVER=""
 PLIST_SUB+=	MGA_DRIVER=""
