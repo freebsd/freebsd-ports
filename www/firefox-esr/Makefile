@@ -15,7 +15,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 BUILD_DEPENDS=	nspr>=4.9.2:${PORTSDIR}/devel/nspr \
 		nss>=3.13.6_1:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.13:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
