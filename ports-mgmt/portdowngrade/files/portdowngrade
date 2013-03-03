@@ -1,0 +1,114 @@
+#!/bin/sh
+
+# portdowngrade
+
+# Fetch a port directory from an older version;
+# easy to use wrapper around Subversion
+
+# Copyright 2013 Chris Rees
+# crees@FreeBSD.org
+
+# This script is in the public domain
+
+# $FreeBSD$
+
+usage()
+{
+	<<EOF cat
+Usage: $0 port-directory|port [revision/date]
+
+When called without a revision to restore, svn log is called on the port's
+directory so that relevant revisions can be identified.  Look for lines
+containing "Update to X.X"
+
+When called with a port name instead of directory/origin, INDEX is grepped
+for the correct origins and a list is presented.
+EOF
+	exit 1
+}
+
+err()
+{
+	echo "${@:-An unknown error has occurred}"
+	exit 1
+}
+
+svn=$(which svn 2>/dev/null) || err "Where is Subversion??"
+
+PORTSDIR="$(make -f /usr/share/mk/bsd.port.mk -VPORTSDIR)"
+
+[ -d $PORTSDIR ] || err "Where is your ports tree??"
+
+case ${1-NULL} in
+NULL|-*)
+	usage
+	;;
+*/*)
+	# Contains a directory, so we're ready for the next stage
+
+	# noop
+
+	;;
+*)
+	# Probably a port name, get list of origins from INDEX
+	INDEXFILE=$(make -C $PORTSDIR -VINDEXDIR)
+	INDEXFILE="$INDEXFILE/$(make -C $PORTSDIR -VINDEXFILE)"
+
+	[ -f $INDEXFILE ] || err You need to run make -C $PORTSDIR fetchindex
+
+	sed -ne "s,^\([^|]*$1-[^|]*\)|/usr/ports/\([^|]*\)|.*,\1	-> \2,p" \
+	    < $INDEXFILE
+	<<EOF cat
+
+Choose a port origin (directory) from the list
+above, and then run $0 category/port
+
+EOF
+	exit 0
+	;;
+esac
+
+: ${svnroot=http://svn.freebsd.org/ports/head}
+
+# Get port directory
+portdir="${1%$PORTSDIR}"
+portdir="${portdir#/}"
+
+if [ ! -d "$PORTSDIR/$portdir" ]; then
+	err $portdir does not exist in $PORTSDIR
+fi
+
+case ${2-NULL} in
+NULL)
+	# No revision/date provided, get log
+	echo Choose a revision from this list and run $0 $1 revision
+	$svn log $svnroot/$portdir | $PAGER
+	echo Choose a revision from the above list and run $0 $1 revision
+	exit 0
+	;;
+*)
+	case ${2} in
+	*-*-*)
+		rev=\{$2\}
+		;;
+	r*)
+		rev=$2
+		;;
+	*)
+		# Number?
+		echo $2 | grep -q '^[[:digit:]]*$' || \
+		    err Revision argument must be a number or date
+		rev=r$2
+		;;
+	esac
+
+	$svn co "$svnroot/$portdir@$rev" || \
+	    err "Something went wrong with svn...  Ensure you have the correct revision!"
+
+	echo
+	echo "You should be done-- now cd into ${portdir%*/} and you can run"
+	echo "make deinstall install clean"
+	echo
+
+	exit 0
+esac
