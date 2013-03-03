@@ -1,12 +1,7 @@
-# New ports collection makefile for:	DBIx::Inspector
-# Date created:		26 Dec 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Inspector
-PORTVERSION=	0.08
+PORTVERSION=	0.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
