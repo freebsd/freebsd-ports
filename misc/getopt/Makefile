@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getopt
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 
@@ -15,7 +14,7 @@ USE_GMAKE=		yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-MAKE_ENV=	LIBCGETOPT=0
+MAKE_ENV+=	LIBCGETOPT=0
 
 MAN1=		getopt.1
 DOCS=		Changelog README
