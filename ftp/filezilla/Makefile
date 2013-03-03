@@ -1,13 +1,9 @@
-# New ports collection makefile for:	filezilla
-# Date created:				2006-10-24
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
 #
 
 PORTNAME=	filezilla
-PORTVERSION=	3.6.0.1
-PORTREVISION=	1
+PORTVERSION=	3.6.0.2
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
