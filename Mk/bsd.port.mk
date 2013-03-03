@@ -1280,7 +1280,7 @@ GID_OFFSET?=	0
 
 # predefined accounts from src/etc/master.passwd
 # alpha numeric sort order
-USERS_BLACKLIST=	_dhcp _pflogd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
+USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
 
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
@@ -1463,7 +1463,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
-.if defined(USE_QT_VER) && ${USE_QT_VER:L} == 4 || defined(USE_QT4)
+.if defined(USE_QT4)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
@@ -2059,7 +2059,7 @@ IGNORE=	uses unknown USE_BISON construct
 .include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
 .endif
 
-.if defined(USE_QT_VER) && ${USE_QT_VER:L} == 4 || defined(USE_QT4)
+.if defined(USE_QT4)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
