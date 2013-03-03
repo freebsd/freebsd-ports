@@ -27,7 +27,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 		ftp://ftp.is.co.za/pub/imagemagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
 LICENSE=	AL2
