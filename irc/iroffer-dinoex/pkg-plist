@@ -39,6 +39,7 @@ bin/iroffer-it
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/info.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/iroffer-state.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/json.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/md5.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/robots.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sfv.txt.rb
