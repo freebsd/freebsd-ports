@@ -1,7 +1,0 @@
-bin/bsdsar
-bin/bsdsar_gather
-@unexec if cmp -s %D/etc/bsdsar.conf %D/etc/bsdsar.conf.sample; then rm -f %D/etc/bsdsar.conf; fi
-etc/bsdsar.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

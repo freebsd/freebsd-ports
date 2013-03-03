@@ -5,7 +5,6 @@
 
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
-    SUBDIR += IMHear
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-digest
     SUBDIR += aescrypt
@@ -258,7 +257,6 @@
     SUBDIR += l5
     SUBDIR += labrea
     SUBDIR += lasso
-    SUBDIR += lep
     SUBDIR += libassuan
     SUBDIR += libbf
     SUBDIR += libecc
