@@ -429,6 +429,7 @@
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keep
+    SUBDIR += keyboard-daemon
     SUBDIR += kfloppy
     SUBDIR += kgrubeditor
     SUBDIR += kgtk
