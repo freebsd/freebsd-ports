@@ -3,12 +3,13 @@
 
 PORTNAME=	opengl
 PORTVERSION=	0.8.0
+PORTEPOCH=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	RG
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
+COMMENT=	OpenGL wrapper for Ruby
 
 USE_RUBY=	yes
 USE_RAKE=	yes
