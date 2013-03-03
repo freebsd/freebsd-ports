@@ -15,7 +15,7 @@ COMMENT=	The open source, standards compliant web browser
 BUILD_DEPENDS=	nspr>=4.9.4:${PORTSDIR}/devel/nspr \
 		nss>=3.14.1:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
 EM_VERSION=	1.5.1
