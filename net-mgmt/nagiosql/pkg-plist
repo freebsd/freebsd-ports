@@ -8,7 +8,6 @@
 %%WWWDIR%%/admin/configtargets.php
 %%WWWDIR%%/admin/contactgroups.php
 %%WWWDIR%%/admin/contacts.php
-%%WWWDIR%%/admin/contacts.php.orig
 %%WWWDIR%%/admin/contacttemplates.php
 %%WWWDIR%%/admin/datadomain.php
 %%WWWDIR%%/admin/delbackup.php
@@ -22,7 +21,6 @@
 %%WWWDIR%%/admin/hostextinfo.php
 %%WWWDIR%%/admin/hostgroups.php
 %%WWWDIR%%/admin/hosts.php
-%%WWWDIR%%/admin/hosts.php.orig
 %%WWWDIR%%/admin/hosttemplates.php
 %%WWWDIR%%/admin/import.php
 %%WWWDIR%%/admin/index.html
@@ -38,13 +36,11 @@
 %%WWWDIR%%/admin/serviceextinfo.php
 %%WWWDIR%%/admin/servicegroups.php
 %%WWWDIR%%/admin/services.php
-%%WWWDIR%%/admin/services.php.orig
 %%WWWDIR%%/admin/servicetemplates.php
 %%WWWDIR%%/admin/settings.php
 %%WWWDIR%%/admin/specials.php
 %%WWWDIR%%/admin/support.php
 %%WWWDIR%%/admin/templatedefinitions.php
-%%WWWDIR%%/admin/templatedefinitions.php.orig
 %%WWWDIR%%/admin/timedefinitions.php
 %%WWWDIR%%/admin/timeperiods.php
 %%WWWDIR%%/admin/tools.php
@@ -66,6 +62,10 @@
 %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES/en_GB.po
 %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/en_GB/index.html
+%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/es_AR.mo
+%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/es_AR.po
+%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/index.html
+%%WWWDIR%%/config/locale/es_AR/index.html
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/es_ES.mo
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/es_ES.po
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/index.html
@@ -78,10 +78,18 @@
 %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES/it_IT.mo
 %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES/it_IT.po
 %%WWWDIR%%/config/locale/it_IT/index.html
+%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/index.html
+%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/ja_JP.mo
+%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/ja_JP.po
+%%WWWDIR%%/config/locale/ja_JP/index.html
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/nl_NL.mo
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/nl_NL.po
 %%WWWDIR%%/config/locale/nl_NL/index.html
+%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/index.html
+%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/pl_PL.mo
+%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/pl_PL.po
+%%WWWDIR%%/config/locale/pl_PL/index.html
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/pt_BR.mo
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/pt_BR.po
@@ -104,17 +112,13 @@
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/functions/common.js
 %%WWWDIR%%/functions/config_class.php
-%%WWWDIR%%/functions/config_class.php.orig
 %%WWWDIR%%/functions/content_class.php
 %%WWWDIR%%/functions/data_class.php
 %%WWWDIR%%/functions/import_class.php
-%%WWWDIR%%/functions/import_class.php.orig
 %%WWWDIR%%/functions/mysql_class.php
 %%WWWDIR%%/functions/nag_class.php
 %%WWWDIR%%/functions/prepend_adm.php
-%%WWWDIR%%/functions/prepend_adm.php.orig
 %%WWWDIR%%/functions/prepend_content.php
-%%WWWDIR%%/functions/prepend_content.php.orig
 %%WWWDIR%%/functions/prepend_scripting.php
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/license.txt
@@ -355,7 +359,6 @@
 %%WWWDIR%%/templates/admin/support.tpl.htm
 %%WWWDIR%%/templates/admin/timeperiods.tpl.htm
 %%WWWDIR%%/templates/admin/user.tpl.htm
-%%WWWDIR%%/templates/admin/user.tpl.htm.orig
 %%WWWDIR%%/templates/admin/verify.tpl.htm
 %%WWWDIR%%/templates/files/commands.tpl.dat
 %%WWWDIR%%/templates/files/contactgroups.tpl.dat
@@ -463,14 +466,20 @@
 @dirrm %%WWWDIR%%/config/locale/ru_RU
 @dirrm %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/pt_BR
+@dirrm %%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/config/locale/pl_PL
 @dirrm %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/nl_NL
+@dirrm %%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/config/locale/ja_JP
 @dirrm %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/it_IT
 @dirrm %%WWWDIR%%/config/locale/fr_FR/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/fr_FR
 @dirrm %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/es_ES
+@dirrm %%WWWDIR%%/config/locale/es_AR/LC_MESSAGES
+@dirrm %%WWWDIR%%/config/locale/es_AR
 @dirrm %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/en_GB
 @dirrm %%WWWDIR%%/config/locale/de_DE/LC_MESSAGES
@@ -478,6 +487,14 @@
 @dirrm %%WWWDIR%%/config/locale/da_DK/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/da_DK
 @dirrm %%WWWDIR%%/config/locale
-@dirrm %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
+@dirrmtry %%ETCDIR%%/ssh
+@dirrmtry %%ETCDIR%%/services
+@dirrmtry %%ETCDIR%%/hosts
+@dirrmtry %%ETCDIR%%/backup/ssh
+@dirrmtry %%ETCDIR%%/backup/services
+@dirrmtry %%ETCDIR%%/backup/hosts
+@dirrmtry %%ETCDIR%%/backup
+@dirrmtry %%ETCDIR%%

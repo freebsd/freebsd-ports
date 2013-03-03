@@ -1,5 +1,5 @@
 =======================================================================
-Nagiosql is now installed. If you intall it for the first time,
+Nagiosql is now installed. If you install it for the first time,
 you may have to add an alias in apache config for it.
 
 Alias /nagiosql/ "%%WWWDIR%%/"
