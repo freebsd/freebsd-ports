@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -175,6 +175,12 @@ post-patch:
 		${WRKSRC}/tests/threads.impure.lisp
 	@${REINPLACE_CMD} -e 's|( cd ./doc ; sh ./clean.sh )|#&|' \
 		${WRKSRC}/clean.sh
+	@case "`${CC} --version`" in \
+		*clang*) \
+			${REINPLACE_CMD} -e '/#define END()/s/\.end//' \
+				${WRKSRC}/src/runtime/x86-assem.S \
+				${WRKSRC}/src/runtime/x86-64-assem.S ;; \
+	esac
 
 do-build:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
