@@ -1,18 +1,13 @@
-# New ports collection makefile for:	spread
-# Date created:		11 June 2001
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	spread4
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	net perl5
-MASTER_SITES=	LOCAL/wen
+MASTER_SITES=	LOCAL/ohauer
 DISTNAME=	spread-src-${PORTVERSION}
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
@@ -26,6 +21,7 @@ GROUPS=		spread
 RUNDIR=		/var/run/spread
 
 PLIST_SUB+=	USERS=${USERS} GROUPS=${GROUPS} RUNDIR=${RUNDIR}
+SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 
 WRKSRC=		${WRKDIR}/spread-src-${PORTVERSION}
 
@@ -51,18 +47,18 @@ post-extract:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.conf \
+	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.conf \
 		${PREFIX}/etc/spread.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.access_ip \
+	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.access_ip \
 		${PREFIX}/etc/spread.access_ip.sample
 
 .if !exists(${PREFIX}/etc/spread.conf)
-	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.conf \
+	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.conf \
 		${PREFIX}/etc/spread.conf
 .endif
 
 .if !exists(${PREFIX}/etc/spread.access_ip)
-	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.access_ip \
+	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.access_ip \
 		${PREFIX}/etc/spread.access_ip
 .endif
 
