@@ -1,12 +1,8 @@
-# New ports collection makefile for:	monitorix
-# Date created:				15 Aug 2010
-# Whom:					Olli Hauer <ohauer@FreeBSD.org>
-#
+# Created by: Olli Hauer <ohauer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	monitorix
-PORTVERSION=	2.6.0
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -22,9 +18,12 @@ RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
 
-USE_PERL5=	5.12+
+USE_PERL5_RUN=	yes
 MAN5=		monitorix.conf.5
 MAN8=		monitorix.8
 MANCOMPRESSED=	no
@@ -50,6 +49,7 @@ WWW_FILES=	logo_top.png \
 		monitorixico.png
 
 PORTDOCS=	*
+PORTDATA=	*.pm
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -62,30 +62,31 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-.for f in monitorix.cgi monitorix.conf monitorix reports/send_reports
-	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1/usr/bin/env perl|" \
-		${WRKSRC}/${f}
-.endfor
-# eth0 doesn't exist in FreeBSD! Also let's set our own paths.
+# Let's set our own paths.
 # No iptables, so we'll disable PORT_GRAPH
+	@${REINPLACE_CMD} '\,^use lib,s,/usr/lib/monitorix,${DATADIR},' \
+		${WRKSRC}/${PORTNAME} \
+		${WRKSRC}/${PORTNAME}.cgi
 	@${REINPLACE_CMD} \
-		-e 's|\($$BASE_DIR = "\)[^"]*|\1${WWWDIR}/|' \
-		-e 's|\($$BASE_LIB = "\)[^"]*|\1${DATADIR}/|' \
-		-e 's|\($$BASE_CGI = "\)[^"]*|\1${CGIPATH}/|' \
-		-e 's|\($$SECURE_LOG= "\)[^"]*|\1/var/log/auth.log|' \
+		-e 's|^\(base_dir *= *\).*|\1${WWWDIR}/|' \
+		-e 's|^\(base_lib *= *\).*|\1${DATADIR}/|' \
+		-e 's|^\(base_cgi *= *\).*|\1${CGIPATH}/|' \
+		-e 's|^\(secure_log[[:space:]]*= *\).*|\1/var/log/auth.log|' \
 		-e "s|/var/lib/milter-greylist/db/|/var/milter-greylist/|" \
-		-e "s|eth0|lo0|g" \
-		-e 's|\("port"[^Y]*\)Y|\1N|' \
+		-e 's|^\([[:space:]]*port[^=]*=[^y]*\)y|\1n|' \
 			${WRKSRC}/monitorix.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}/
 	@${MKDIR} ${WWWDIR}
 	@${INSTALL} -d -o ${WWW_OWNER} -g ${WWW_GROUP} ${WWWDIR}/imgs
 .for f in ${WWW_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${WWWDIR}/
 .endfor
 	@${MKDIR} ${PREFIX}/${CGIDIR}
+	@${LN} -s ${PREFIX}/${CGIDIR} ${WWWDIR}/cgi
 	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${PREFIX}/${CGIDIR}/
 .for c in 5 8
 . for m in ${MAN$c}
@@ -95,7 +96,7 @@ do-install:
 	@${MKDIR} ${WWWDIR}/reports
 .for l in ${REPORT_LANG}
 	@${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
-		${WWWDIR}/reports/
+		${WWWDIR}/reports/$l.html.sample
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

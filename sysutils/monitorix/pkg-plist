@@ -4,20 +4,20 @@
 etc/monitorix.conf.sample
 @exec if [ ! -f %D/etc/monitorix.conf ]; then cp %B/%f %D/etc/monitorix.conf; fi
 bin/monitorix
-@exec mkdir -p %D/%%DATADIR%%
-@dirrmtry %%DATADIR%%
 @exec mkdir -p %D/%%WWWDIR%%/usage
 @dirrmtry %%WWWDIR%%/usage
 %%CGIDIR%%/monitorix.cgi
+@unexec rm -f %B/monitorix.conf.path
 @dirrmtry %%CGIDIR%%
-%%WWWDIR%%/reports/ca.html
-%%WWWDIR%%/reports/de.html
-%%WWWDIR%%/reports/en.html
-%%WWWDIR%%/reports/it.html
-%%WWWDIR%%/reports/pl.html
+%%WWWDIR%%/reports/ca.html.sample
+%%WWWDIR%%/reports/de.html.sample
+%%WWWDIR%%/reports/en.html.sample
+%%WWWDIR%%/reports/it.html.sample
+%%WWWDIR%%/reports/pl.html.sample
 @dirrm %%WWWDIR%%/reports
 %%WWWDIR%%/logo_bot.png
 %%WWWDIR%%/logo_top.png
 %%WWWDIR%%/monitorixico.png
+%%WWWDIR%%/cgi
 @dirrmtry %%WWWDIR%%/imgs
 @dirrmtry %%WWWDIR%%
