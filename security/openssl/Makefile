@@ -94,7 +94,7 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	EVP_PKEY_derive.3 EVP_PKEY_encrypt.3 EVP_PKEY_get_default_digest.3 \
 	EVP_PKEY_keygen.3 EVP_PKEY_new.3 EVP_PKEY_print_private.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_sign.3 EVP_PKEY_verify.3 \
-	EVP_PKEY_verifyrecover.3 EVP_SealInit.3 EVP_SignInit.3 \
+	EVP_PKEY_verify_recover.3 EVP_SealInit.3 EVP_SignInit.3 \
 	EVP_VerifyInit.3 OBJ_nid2obj.3 OPENSSL_Applink.3 \
 	OPENSSL_VERSION_NUMBER.3 OPENSSL_config.3 OPENSSL_ia32cap.3 \
 	OPENSSL_load_builtin_modules.3 OpenSSL_add_all_algorithms.3 \
@@ -530,7 +530,7 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 	EVP_PKEY_set1_RSA.3 EVP_PKEY_type.3 \
 	EVP_PKEY_sign.3 EVP_PKEY_sign_init.3 \
 	EVP_PKEY_verify.3 EVP_PKEY_verify_init.3 \
-	EVP_PKEY_verifyrecover.3 EVP_PKEY_verifyrecover_init.3 \
+	EVP_PKEY_verify_recover.3 EVP_PKEY_verifyrecover_init.3 \
 	EVP_SealInit.3 EVP_SealFinal.3 \
 	EVP_SealInit.3 EVP_SealUpdate.3 \
 	EVP_SignInit.3 EVP_SignFinal.3 \
