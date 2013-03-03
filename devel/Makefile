@@ -2352,6 +2352,7 @@
     SUBDIR += p5-MooseX-Types-PortNumber
     SUBDIR += p5-MooseX-Types-Set-Object
     SUBDIR += p5-MooseX-Types-Signal
+    SUBDIR += p5-MooseX-Types-Stringlike
     SUBDIR += p5-MooseX-Types-Structured
     SUBDIR += p5-MooseX-Types-VariantTable
     SUBDIR += p5-Mouse
