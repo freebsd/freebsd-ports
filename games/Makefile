@@ -441,7 +441,6 @@
     SUBDIR += kfreerings
     SUBDIR += khangman
     SUBDIR += kiki
-    SUBDIR += kimboot
     SUBDIR += klavaro
     SUBDIR += klondike
     SUBDIR += kmancala

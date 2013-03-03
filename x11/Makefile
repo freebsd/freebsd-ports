@@ -216,7 +216,6 @@
     SUBDIR += nvidia-driver-96
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
-    SUBDIR += oooqs
     SUBDIR += oooqs2
     SUBDIR += ooxcb
     SUBDIR += p5-Clipboard

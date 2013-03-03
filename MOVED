@@ -4080,3 +4080,15 @@ math/eigen||2013-02-27|Has expired: development for 1.x series has ceased, use m
 multimedia/ffmpeg-011||2013-03-01|Has expired: replaced with 1.0.x, use multimedia/ffmpeg1 instead
 ftp/ftp-tls||2013-03-02|Has expired: No longer maintained upstream
 ftp/ftpd-tls||2013-03-02|Has expired: No longer maintained upstream
+lang/eperl||2013-03-03|Has expired: Unfixed upstream remote vulnerability and no activity since 1998
+x11-wm/e17-module-language||2013-03-03|Has expired: Deprecated upstream
+x11-wm/e17-module-xkbswitch||2013-03-03|Has expired: Merged into x11-wm/enlightenment
+x11-wm/e17-module-e-tiling||2013-03-03|Has expired: Deprecated upstream
+x11-wm/e17-module-quickaccess||2013-03-03|Has expired: Merged into x11-wm/enlightenment
+x11-wm/e17-module-tiling||2013-03-03|Has expired: Merged into x11-wm/enlightenment
+x11-wm/e17-module-drawer||2013-03-03|Has expired: Deprecated upstream
+x11-wm/e17-module-calendar||2013-03-03|Has expired: Deprecated upstream
+x11/oooqs||2013-03-03|Has expired: For old OOo versions; uses kde3; unmaintained upstream; see x11/oooqs2
+www/xpi-customizegoogle||2013-03-03|Has expired: Add-on has been discontinued
+games/kimboot||2013-03-03|Has expired: no longer works
+net-im/imcom||2013-03-03|Has expired: No more upstream, no more public distfiles

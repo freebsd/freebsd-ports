@@ -2067,7 +2067,6 @@
     SUBDIR += xpi-conkeror
     SUBDIR += xpi-cookiesafe
     SUBDIR += xpi-cssviewer
-    SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-deepestsender
     SUBDIR += xpi-default_full_zoom_level
