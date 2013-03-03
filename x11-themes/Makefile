@@ -28,8 +28,6 @@
     SUBDIR += cursor-neutral-white-theme
     SUBDIR += cursor-polar-theme
     SUBDIR += e16-themes
-    SUBDIR += e17-theme-cthulhain
-    SUBDIR += e17-theme-darkness
     SUBDIR += emerald-themes
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes

@@ -108,7 +108,6 @@
     SUBDIR += sabernetdcs-client
     SUBDIR += skrooge
     SUBDIR += sql-ledger
-    SUBDIR += tinyerp-server
     SUBDIR += tryton
     SUBDIR += trytond
     SUBDIR += trytond_account

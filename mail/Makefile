@@ -160,7 +160,6 @@
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld
     SUBDIR += gmail-notify
-    SUBDIR += gmime
     SUBDIR += gmime2
     SUBDIR += gmime2-sharp
     SUBDIR += gmime24

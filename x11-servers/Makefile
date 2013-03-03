@@ -4,7 +4,6 @@
     COMMENT = X11 servers
 
     SUBDIR += Xfstt
-    SUBDIR += driglide
     SUBDIR += mga_hal
     SUBDIR += x2vnc
     SUBDIR += x2x
