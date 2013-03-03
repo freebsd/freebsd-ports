@@ -10,7 +10,6 @@ bin/carton
 %%SITE_PERL%%/Carton/Doc/List.pod
 %%SITE_PERL%%/Carton/Doc/Show.pod
 %%SITE_PERL%%/Carton/Doc/Tree.pod
-%%SITE_PERL%%/Carton/Doc/Uninstall.pod
 %%SITE_PERL%%/Carton/Doc/Version.pod
 %%SITE_PERL%%/Carton/Error.pm
 %%SITE_PERL%%/Carton/Tree.pm
