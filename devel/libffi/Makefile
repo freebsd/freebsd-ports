@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libffi
-PORTVERSION=	3.0.11
+PORTVERSION=	3.0.12
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -10,13 +10,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign Function Interface
 
-OPTIONS_DEFINE=	TEST
-TEST_DESC=	Run regression test suite
+TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	Include tools for test suite
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS:=	${TEST_DEPENDS}
 .endif
 
 GNU_CONFIGURE=	yes
@@ -29,15 +31,13 @@ INFO=		libffi
 
 MAN3=		ffi.3 ffi_call.3 ffi_prep_cif.3 ffi_prep_cif_var.3
 
-.if ${PORT_OPTIONS:MTEST}
-post-build:
-	@cd ${WRKSRC} && ${MAKE} check
-.endif
-
 post-install:
 	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffi.h \
 	    ${PREFIX}/include/
 	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffitarget.h \
 	    ${PREFIX}/include/
+
+regression-test: build
+	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
