@@ -1,0 +1,5 @@
+This module provides a more general version of the Str type.  If
+coercions are enabled, it will accepts objects that overload
+stringification and coerces them into strings.
+
+WWW: http://search.cpan.org/dist/MooseX-Types-Stringlike/
