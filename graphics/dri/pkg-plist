@@ -4,7 +4,6 @@ include/GL/internal/dri_interface.h
 %%I9X5_DRIVER%%lib/dri/i965_dri.so
 %%MACH64_DRIVER%%lib/dri/mach64_dri.so
 %%MGA_DRIVER%%lib/dri/mga_dri.so
-%%NEW%%%%NOUVEAU_DRIVER%%lib/dri/nouveau_vieux_dri.so
 %%RADEON_DRIVERS%%lib/dri/r128_dri.so
 %%RADEON_DRIVERS%%lib/dri/r200_dri.so
 %%RADEON_DRIVERS%%lib/dri/r300_dri.so
