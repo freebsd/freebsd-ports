@@ -402,7 +402,6 @@
     SUBDIR += libxslt-reference
     SUBDIR += libyaml
     SUBDIR += link-grammar
-    SUBDIR += linux-aspell
     SUBDIR += linux-expat
     SUBDIR += linux-f10-aspell
     SUBDIR += linux-f10-expat
