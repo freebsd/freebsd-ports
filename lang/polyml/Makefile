@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyml
-PORTVERSION=	5.4.1
-PORTREVISION=	1
+PORTVERSION=	5.5
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -27,7 +26,7 @@ PLIST_FILES=	bin/poly		\
 		lib/libpolyml.a		\
 		lib/libpolyml.la	\
 		lib/libpolyml.so	\
-		lib/libpolyml.so.3
+		lib/libpolyml.so.4
 
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
