@@ -1,32 +1,23 @@
-# New ports collection makefile for:   ocaml-pcre
-# Date created:        21 April 2002
-# Whom:                Henrik Motakef <henrik.motakef@web.de>
-#
+# Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pcre
-PORTVERSION=	6.2.5
-PORTREVISION=	2
+PORTVERSION=	7.0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://hg.ocaml.info/release/pcre-ocaml/archive/
+MASTER_SITES=	http://cdn.bitbucket.org/mmottl/pcre-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	release-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
-WRKSRC=		${WRKDIR}/pcre-ocaml-${DISTNAME}
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LIBDIRS="${LOCALBASE}/lib"
 
-USE_GMAKE=	yes
+PORTEXAMPLES=	*
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
 post-install:
