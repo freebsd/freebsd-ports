@@ -183,6 +183,7 @@
 %%PLUGINS%%%%DATADIR%%/plugins/admin/webapp/style/lightbox.css
 %%PLUGINS%%%%DATADIR%%/plugins/admin/webapp/style/login.css
 %%PLUGINS%%%%DATADIR%%/plugins/admin/webapp/style/setup.css
+%%PLUGINS%%%%DATADIR%%/plugins/fastpath.jar
 %%PLUGINS%%%%DATADIR%%/plugins/broadcast.jar
 %%PLUGINS%%%%DATADIR%%/plugins/clientControl.jar
 %%PLUGINS%%%%DATADIR%%/plugins/contentFilter.jar
