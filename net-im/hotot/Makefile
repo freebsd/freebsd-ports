@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hotot
-PORTVERSION=	0.9.8.11
+PORTVERSION=	0.9.8.13
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 GH_TAGNAME=	master
-GH_COMMIT=	6f87ed7
+GH_COMMIT=	e0c78bf
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
@@ -64,8 +64,8 @@ post-patch:
 # Remove `sourceid' parameter from Google search string
 	@${REINPLACE_CMD} -e 's,sourceid=chrome&,,' \
 		${WRKSRC}/data/js/ui.context_menu.js
-# Sanitize font selection list
-	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/" \
+# Sanitize font selection list and correct version
+	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/ ; /version/s,11,${PORTVERSION:E}," \
 		${WRKSRC}/data/js/conf.js
 # Remove stale backup files (prevent pkg-plist pollution)
 	@${FIND} ${WRKSRC} -type f -name '*.bak' -delete
