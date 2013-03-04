@@ -6,27 +6,3 @@
 %%OCAML_SITELIBDIR%%/pcre/pcre.cmi
 %%OCAML_SITELIBDIR%%/pcre/pcre.cmxa
 %%OCAML_SITELIBDIR%%/pcre/pcre.mli
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/OMakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/OMakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/cloc.ml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/make_win32_cloc.bat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/OMakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/count_hash.ml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/OMakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/pcregrep.ml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/OMakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/subst.ml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/subst
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pcregrep
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/count_hash
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cloc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTEXAMPLES%%@dirrmtry share/examples/ocaml
