@@ -1,15 +1,16 @@
 etc/rc.d/tinderbox
-tinderbox/scripts/.version
 tinderbox/scripts/README
 tinderbox/scripts/contrib/hooks/compress_wrkdir/README.txt
 tinderbox/scripts/contrib/hooks/compress_wrkdir/compress_wrkdir.sh
+tinderbox/scripts/contrib/hooks/create-pkgng-repo/README.txt
+tinderbox/scripts/contrib/hooks/create-pkgng-repo/create-pkgng-repo.sh
 tinderbox/scripts/contrib/hooks/kse-fix/README.txt
 tinderbox/scripts/contrib/hooks/kse-fix/kse-fix.sh
 tinderbox/scripts/contrib/hooks/kse-fix/libmap.conf
 tinderbox/scripts/contrib/hooks/make-jobs-safe/README.txt
 tinderbox/scripts/contrib/hooks/make-jobs-safe/make-jobs-safe.sh
-tinderbox/scripts/contrib/hooks/mass-build-pgsql/README.txt
 tinderbox/scripts/contrib/hooks/mass-build-pgsql/mass-build-pgsql.sh
+tinderbox/scripts/contrib/hooks/mass-build-pgsql/README.txt
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me
 tinderbox/scripts/etc/rc.d/tinderd
@@ -29,6 +30,7 @@ tinderbox/scripts/lib/Tinderbox/User.pm
 tinderbox/scripts/lib/buildscript
 tinderbox/scripts/lib/db-mysql.sh
 tinderbox/scripts/lib/db-pgsql.sh
+tinderbox/scripts/lib/db-sqlite.sh
 tinderbox/scripts/lib/enterbuild
 tinderbox/scripts/lib/makemake
 tinderbox/scripts/lib/pnohang.c
@@ -43,6 +45,8 @@ tinderbox/scripts/sql/schema.mysql.post
 tinderbox/scripts/sql/schema.mysql.pre
 tinderbox/scripts/sql/schema.pgsql.post
 tinderbox/scripts/sql/schema.pgsql.pre
+tinderbox/scripts/sql/schema.sqlite.post
+tinderbox/scripts/sql/schema.sqlite.pre
 tinderbox/scripts/sql/values.config
 tinderbox/scripts/sql/values.hooks
 tinderbox/scripts/sql/values.lp
@@ -57,26 +61,10 @@ tinderbox/scripts/upgrade/builds.map
 tinderbox/scripts/upgrade/config.map
 tinderbox/scripts/upgrade/hooks.map
 tinderbox/scripts/upgrade/jails.map
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.0_to_3.1.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.1_to_3.2.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.1_to_3.2.2.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.2_to_3.2.3.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.3_to_3.2.4.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.4_to_3.2.5.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.5_to_3.2.6.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.6_to_3.3.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2_to_3.2.1.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.0_to_3.1.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.1_to_3.2.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.1_to_3.2.2.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.2_to_3.2.3.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.3_to_3.2.4.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.4_to_3.2.5.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.5_to_3.2.6.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.6_to_3.3.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2_to_3.2.1.sql
-tinderbox/scripts/upgrade/order.lst
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.3_to_4.0.0.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.3_to_4.0.0.sql
 tinderbox/scripts/upgrade/user_permissions.map
+tinderbox/scripts/upgrade/order.lst
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
@@ -168,6 +156,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 @dirrm tinderbox/scripts/contrib/hooks/mass-build-pgsql
 @dirrm tinderbox/scripts/contrib/hooks/make-jobs-safe
 @dirrm tinderbox/scripts/contrib/hooks/kse-fix
+@dirrm tinderbox/scripts/contrib/hooks/create-pkgng-repo
 @dirrm tinderbox/scripts/contrib/hooks/compress_wrkdir
 @dirrm tinderbox/scripts/contrib/hooks
 @dirrm tinderbox/scripts/contrib
