@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmss
-# Date Created:				Tue Feb  4 13:24:50 PST 2003
-# Whom:					Lars Eggert <larse@isi.edu>
-#
+# Created by: Lars Eggert <larse@isi.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmss
 PORTVERSION=	2.7
@@ -12,7 +8,9 @@ CATEGORIES=	audio
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
+COMMENT=	GKrellM plugin with a VU meter showing left/right channel audio
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
@@ -27,6 +25,10 @@ PORTDOCS=	Changelog README Themes
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so \
 		share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O2|=|g ; \
 		 s|= gcc|+=|g' ${WRKSRC}/src/Makefile
@@ -38,11 +40,9 @@ do-install:
 		${PREFIX}/libexec/gkrellm2/plugins/gkrellmss.so
 	${INSTALL_DATA} ${WRKSRC}/po/ru.mo \
 		${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
