@@ -15,7 +15,7 @@ LICENSE_NAME=	Public Domain
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	sqlite34-[0-9]*
+CONFLICTS=	sqlite34-[0-9]* sqlcipher-*
 
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	YES

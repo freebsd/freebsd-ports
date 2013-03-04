@@ -860,6 +860,7 @@
     SUBDIR += spatialite_gui
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
+    SUBDIR += sqlcipher
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
