@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTVERSION=	3.8.1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
