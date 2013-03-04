@@ -4114,4 +4114,3 @@ x11-themes/e17-theme-cthulhain||2013-03-03|Has expired: Dead upstream since 2008
 x11-servers/driglide||2013-03-03|Has expired: 3dfx is dead, fails to compile on recent versions of freebsd
 mail/gmime||2013-03-03|Has expired: Superceded with version 2.4
 archivers/bsdar||2013-03-03|Has expired: part of the base system
-textproc/linux-aspell||2013-03-04|Has expired
