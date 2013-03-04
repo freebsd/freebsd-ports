@@ -1,5 +1,5 @@
-SHA256 (openblas/xianyi-OpenBLAS-v0.2.5-0-ge01b3d4.tar.gz) = e5f097adc09d3384242e387ee39cc7710451e667273b4cb37c13f275e1da8650
-SIZE (openblas/xianyi-OpenBLAS-v0.2.5-0-ge01b3d4.tar.gz) = 3252581
+SHA256 (openblas/xianyi-OpenBLAS-v0.2.6-0-g54e7b37.tar.gz) = f14fed709343a40d32bdfe2c1a0b2e874ef7514661930a20afe8e7e2436b4440
+SIZE (openblas/xianyi-OpenBLAS-v0.2.6-0-g54e7b37.tar.gz) = 3259286
 SHA256 (openblas/lapack-3.4.2.tgz) = 60a65daaf16ec315034675942618a2230521ea7adf85eea788ee54841072faf0
 SIZE (openblas/lapack-3.4.2.tgz) = 6168281
 SHA256 (openblas/large.tgz) = f328d88b7fa97722f271d7d0cfea1c220e0f8e5ed5ff01d8ef1eb51d6f4243a1
