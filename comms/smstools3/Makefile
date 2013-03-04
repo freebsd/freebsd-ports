@@ -1,18 +1,17 @@
-# New ports collection makefile for:   	smstools3
-# Date created:                        	2008-05-18
-# Whom:                                	Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.14
+PORTVERSION=	3.1.15
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
 
@@ -21,9 +20,6 @@ OPTIONS_DEFAULT=	STATS
 STATS_DESC=	Build status and statistics support
 
 WRKSRC=		${WRKDIR}/smstools3
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -44,15 +40,15 @@ PORTEXAMPLES=	.procmailrc .qmailrc *
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSTATS}
-LIB_DEPENDS+=	mm.14:${PORTSDIR}/devel/mm
+LIB_DEPENDS+=	mm:${PORTSDIR}/devel/mm
 CFLAGS+=	-I${LOCALBASE}/include
 .else
 CFLAGS+=	-DNOSTATS
 .endif
 .if ${OSVERSION} < 800045
-SMSTOOLS_DEFAULT_COMPORT?= /dev/cuad0
+SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuad0
 .else
-SMSTOOLS_DEFAULT_COMPORT?= /dev/cuau0
+SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuau0
 .endif
 
 post-patch:
