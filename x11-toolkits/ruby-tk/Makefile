@@ -15,7 +15,7 @@ COMMENT?=	Ruby interface to the Tk widget set
 DEPRECATED=	Does not work with Ruby 1.9
 EXPIRATION_DATE=	2013-05-02
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
