@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DBIx-Custom
-# Date created:		27 December 2009
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.2600
+PORTVERSION=	0.2800
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Custom.3 \
-		DBIx::Custom::Guide.3 \
 		DBIx::Custom::Mapper.3 \
 		DBIx::Custom::Model.3 \
 		DBIx::Custom::NotExists.3 \
