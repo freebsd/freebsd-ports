@@ -1,4 +1,4 @@
-# Created by: Jochem Kossen
+# Created by: Jochem Kossen <j.kossen@home.nl>
 # $FreeBSD$
 
 PORTNAME=	cplay
@@ -8,23 +8,28 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A curses based front-end for various audio players
+COMMENT=	Curses-based front-end for various audio players
+
+LICENSE=	GPLv2
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-MAN1=		cplay.1
 
-MAKE_ARGS+=	PREFIX="${PREFIX}"
+MAKE_ARGS=	PREFIX="${PREFIX}"
+
+MAN1=		cplay.1
+PORTDOCS=	README
 
 .include <bsd.port.options.mk>
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
