@@ -1,12 +1,9 @@
-# New ports collection makefile for:	libftdi
-# Date created:				2006-07-27
-# Whom:					Olexandr Davydenko <o.davydenko@gmail.com>
-#
+# Created by: Olexandr Davydenko <o.davydenko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libftdi
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -29,7 +26,7 @@ PORTDOCS=		COPYING.LIB ChangeLog README
 PLIST_SUB+=		BOOST=""
 CONFIGURE_ARGS+=	--with-boost
 CXXFLAGS+=		"-I${LOCALBASE}/include"
-LIB_DEPENDS+=		boost_system.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		boost_system:${PORTSDIR}/devel/boost-libs
 .else
 PLIST_SUB+=		BOOST="@comment "
 CONFIGURE_ARGS+=	--without-boost
