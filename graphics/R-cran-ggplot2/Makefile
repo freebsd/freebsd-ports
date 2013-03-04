@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ggplot2
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.3.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	An implementation of the Grammar of Graphics
+COMMENT=	Implementation of the Grammar of Graphics
 
 LICENSE=	GPLv2
 
