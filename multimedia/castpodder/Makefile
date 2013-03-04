@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-castpodder
-# Date created:		2006-04-30
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	castpodder
 PORTVERSION=	5.1
@@ -18,7 +14,7 @@ COMMENT=	A podcast receiver written in Python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms \
 		${PYTHON_SITELIBDIR}/bmp/__init__.py:${PORTSDIR}/multimedia/py-pybmp \
 		${PYTHON_SITELIBDIR}/${WX_PYTHON_DIR}/wxPython/_wx.py:${PORTSDIR}/x11-toolkits/py-wxPython26-unicode \
-		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 .if !defined(WITH_BMP)
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .else

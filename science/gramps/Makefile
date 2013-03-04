@@ -14,7 +14,7 @@ COMMENT=	A GTK/GNOME-based genealogy program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 		${PYXML}
 
 USE_BDB=	43

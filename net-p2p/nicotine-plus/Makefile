@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nicotine
-# Date created:				19 Aug 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plus
 PORTVERSION=	1.2.16
@@ -15,7 +11,7 @@ DISTNAME=	${PKGNAMEPREFIX:S/-/+/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A fork of nicotine soulseek client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
 CONFLICTS=	nicotine-[0-9]*
 BROKEN=		does not build
