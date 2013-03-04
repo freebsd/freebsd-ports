@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,28 +13,29 @@ COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
 LICENSE=	MIT
 
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+
 # Python3 ready
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLAlchemy
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-OPTIONS_DEFINE=	DOCS EXAMPLES NOSE
-
-OPTIONS_MULTI=	BACKEND
+OPTIONS_DEFINE=		DOCS EXAMPLES TESTS
+OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE
-
 OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE
 
 FIREBIRD_DESC=	Firebird backend
 MSSQL_DESC=	MS SQL Server backend
-NOSE_DESC=	Use Nose for unit tests
+TESTS_DESC=	Include nose for unit tests
 SYBASE_DESC=	Sybase backend
+
+# bypass infrastructure bug
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
@@ -66,8 +67,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MNOSE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose-1.0.0:${PORTSDIR}/devel/py-nose
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -75,7 +76,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-ps
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
@@ -126,5 +127,8 @@ add-plist-post:
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} sqla_nose.py
 
 .include <bsd.port.post.mk>

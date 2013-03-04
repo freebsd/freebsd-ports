@@ -415,6 +415,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/dialects/sqlite.html
 %%PORTDOCS%%%%DOCSDIR%%/dialects/sybase.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/collections.html
