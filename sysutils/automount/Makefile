@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	automount
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.github.com/vermaden/automount/master/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -15,6 +15,31 @@ LICENSE=	BSD
 PLIST_FILES=	sbin/automount etc/devd/automount_devd.conf etc/automount.conf.sample
 
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=		NTFS3G EXT2 EXT4 EXFAT
+OPTIONS_DEFAULT=	NTFS3G EXT2 EXT4 EXFAT
+NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
+EXT2_DESC=		Support EXT2 and EXT3 filesystems
+EXT4_DESC=		Support EXT4 filesystem
+EXFAT_DESC=		Support Microsoft exFAT filesystem
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNTFS3G}
+RUN_DEPENDS+=	fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs
+.endif
+
+.if ${PORT_OPTIONS:MEXT2}
+RUN_DEPENDS+=	e2fsprogs>=0:${PORTSDIR}/sysutils/e2fsprogs
+.endif
+
+.if ${PORT_OPTIONS:MEXT4}
+RUN_DEPENDS+=	fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse
+.endif
+
+.if ${PORT_OPTIONS:MEXFAT}
+RUN_DEPENDS+=	fusefs-exfat>=0:${PORTSDIR}/sysutils/fusefs-exfat
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/automount             ${PREFIX}/sbin
