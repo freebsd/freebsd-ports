@@ -1,6 +1,7 @@
 bin/amon2-setup.pl
 %%SITE_PERL%%/Amon2.pm
 %%SITE_PERL%%/Amon2/Config/Simple.pm
+%%SITE_PERL%%/Amon2/ContextGuard.pm
 %%SITE_PERL%%/Amon2/Declare.pm
 %%SITE_PERL%%/Amon2/Plugin/Web/CSRFDefender.pm
 %%SITE_PERL%%/Amon2/Plugin/Web/FillInFormLite.pm
@@ -18,6 +19,7 @@ bin/amon2-setup.pl
 %%SITE_PERL%%/Amon2/Setup/Asset/SprintfJS.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/StrftimeJS.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/jQuery.pm
+%%SITE_PERL%%/Amon2/Setup/Asset/MicroDispatcherJS.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor/Basic.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor/Large.pm

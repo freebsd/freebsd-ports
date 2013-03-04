@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Amon2
-PORTVERSION=	3.66
+PORTVERSION=	3.74
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -52,6 +52,7 @@ MAN3=	Amon2.3 \
 	Amon2::Plugin::Web::WebSocket.3 \
 	Amon2::Setup::Flavor.3 \
 	Amon2::Setup::Flavor::Basic.3 \
+	Amon2::Setup::Flavor::Large.3 \
 	Amon2::Setup::Flavor::Minimum.3 \
 	Amon2::Trigger.3 \
 	Amon2::Util.3 \
