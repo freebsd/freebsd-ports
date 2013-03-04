@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Nexuiz
-# Date created:				03 Jun 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xonotic
 PORTVERSION=	0.6.0
@@ -33,16 +29,15 @@ MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
 BINARIES=	#
 
-OPTIONS=	CLIENT		"Build SDL client"		on \
-		SERVER		"Build dedicated server"	on
+OPTIONS_DEFAULT=CLIENT DEDICATED
+OPTIONS_MULTI=	COMPONENTS
+OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !(defined(WITH_CLIENT) || defined(WITH_SERVER))
-IGNORE=		requires at least one of CLIENT or SERVER options
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
@@ -52,7 +47,7 @@ ALL_TARGET+=	sdl-release
 BINARIES+=	xonotic-sdl
 .endif
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	sv-release
 BINARIES+=	xonotic-dedicated
 .endif
@@ -77,7 +72,7 @@ do-install:
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Xonotic/data/*.pk3 ${DATADIR}/data/
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MDEDICATED}
 	cd ${WRKDIR}/Xonotic && ${COPYTREE_SHARE} server ${DATADIR}
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
@@ -85,4 +80,4 @@ do-install:
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
