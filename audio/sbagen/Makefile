@@ -1,9 +1,5 @@
-# New ports collection makefile for:   sbagen
-# Date created:        08 June 2001
-# Whom:                greid
-#
+# Created by: George Reid <greid@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sbagen
 PORTVERSION=	1.4.5
@@ -12,27 +8,32 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sequenced binaural wave generator
+COMMENT=	Sequenced binaural wave generator
 
-DOC_FILES=	ChangeLog.txt README.txt SBAGEN.txt TODO.txt focus.txt \
+LICENSE=	GPLv2
+
+PORTDOCS=	ChangeLog.txt README.txt SBAGEN.txt TODO.txt focus.txt \
 		focus2.txt holosync.txt theory.txt theory2.txt wave.txt
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,linux/soundcard.h,sys/soundcard.h,g' \
+	@${REINPLACE_CMD} -e 's,linux/soundcard\.h,sys/soundcard.h,g' \
 		${WRKSRC}/sbagen.c
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DT_LINUX ${PTHREAD_LIBS} -lm sbagen.c -o sbagen)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DT_LINUX ${PTHREAD_LIBS} -lm \
+		sbagen.c -o sbagen)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbagen ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
