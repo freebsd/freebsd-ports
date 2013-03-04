@@ -7,7 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -104,7 +104,7 @@ PLIST_SUB+=	POPPLER="@comment "
 .endif
 
 .if !defined(WITHOUT_RPM) || exists(${LOCALBASE}/include/rpm/rpmlib.h)
-LIB_DEPENDS+=	rpm.3:${PORTSDIR}/archivers/rpm4
+LIB_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm4
 PLIST_SUB+=	RPM=""
 .else
 PLIST_SUB+=	RPM="@comment "
