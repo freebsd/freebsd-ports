@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 LICENSE_NAME_CHERRYPY=	CherryPy License
 LICENSE_FILE_CHERRYPY=	${WRKSRC}/licenses/License-CherryPy.txt

@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac
-# Date created:                      17 April 2004
-# Whom:                              Kuei-Feng Li <thinker@branda.to>
-#
+# Created by: Kuei-Feng Li <thinker@branda.to>
 # $FreeBSD$
-#
 
 PORTNAME=	trac
 PORTVERSION=	0.12.3
@@ -87,7 +83,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if !defined(WITHOUT_SUBVERSION)

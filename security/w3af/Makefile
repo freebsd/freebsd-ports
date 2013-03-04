@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
 		nltk>0:${PORTSDIR}/textproc/nltk \
 		${PYTHON_SITELIBDIR}/numpy/__init__.py:${PORTSDIR}/math/py-numpy \
@@ -35,7 +35,7 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	GUI
 

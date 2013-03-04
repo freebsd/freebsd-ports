@@ -1,9 +1,5 @@
-# New ports collection makefile for:	umit
-# Date created:				20 April 2007
-# Whom:					Elisey Savateev <b3k@mail.ru>
-#
+# Created by: Elisey Savateev <b3k@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	umit
 PORTVERSION=	1.0
@@ -16,12 +12,12 @@ MAINTAINER=	ayu@commun.jp
 COMMENT=	UMIT is the nmap frontend developed with Python and PyGTK
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>

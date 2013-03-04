@@ -55,7 +55,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib	\
 		iconv:${PORTSDIR}/converters/libiconv
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo

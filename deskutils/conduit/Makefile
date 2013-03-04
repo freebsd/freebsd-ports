@@ -1,10 +1,6 @@
-# New ports collection makefile for:	conduit
-# Date created:		2006-10-10
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/deskutils/conduit/Makefile,v 1.7 2008/03/18 14:53:42 ahze Exp $
-
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
 PORTREVISION=	6
@@ -15,13 +11,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \

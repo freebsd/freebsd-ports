@@ -1,9 +1,5 @@
-# New ports collection makefile for:	font-manager
-# Date created:		2011-03-25
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	font-manager
 PORTVERSION=	0.5.7
@@ -16,7 +12,7 @@ COMMENT=	A font management application for the GNOME desktop
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.6-2.7

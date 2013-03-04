@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	photofilmstrip
-# Date created:		2011-02-04
-# Whom:			Charlie Kester <corky1951@comcast.net>
-#
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	photofilmstrip
 PORTVERSION=	1.5.0
@@ -19,7 +14,7 @@ COMMENT=	Creates movies out of your pictures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pytone
-# Date created:			2007-05-02
-# Whom:				David Thiel <lx@FreeBSD.org>
-#
+# Created by: David Thiel <lx@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pytone
 PORTVERSION=	3.0.2
@@ -17,7 +13,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	2.5+
