@@ -1,12 +1,8 @@
-# Ports collection makefile for:	misc/tinderbox
-# Whom:			Edwin Groothuis <edwin@mavetju.org>
-# Date created:		31 december 2005
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	4.0.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -17,16 +13,23 @@ COMMENT=	Port build tinderbox system
 
 CONFLICTS=	tinderbox-devel-[0-9]*
 
-OPTIONS=	PGSQL "With pgsql" Off \
-		MYSQL "With mysql" On \
-		CSUP  "Use csup for updates" On \
-		CVSUP "Use cvsup for updates" Off \
-		WEBUI   "Install web interface" On \
-		APACHE "Use Apache for web interface" On \
-		HIAWATHA "Use Hiawatha for web interface" Off \
-		LIGHTTPD "Use LightHTTPD for web interface" Off \
-		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
-		LSOF "For killMountProcesses() when using nullfs" On
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	PGSQL MYSQL SQLITE
+
+OPTIONS_RADIO=		WEB
+OPTIONS_RADIO_WEB=	APACHE HIAWATHA LIGHTTPD NGINX
+
+OPTIONS_DEFINE=		CHECK_ROOT EMAILS LSOF LOG_COMPRESS
+
+CHECK_ROOT_DESC=	Check if ./tc is run by uid 0
+EMAILS_DESC=		Support for build failure/completion emails
+LSOF_DESC=		For killMountProcesses() when using nullfs
+LOG_COMPRESS_DESC=	Support bzip'ing the logs
+HIAWATHA_DESC=		Hiawatha server
+NGINX_DESC=		Nginx server
+
+OPTIONS_DEFAULT=	MYSQL APACHE CHECK_ROOT EMAILS LSOF \
+			LOG_COMPRESS
 
 NO_BUILD=	yes
 WANT_PERL=	yes
@@ -35,15 +38,13 @@ SUB_FILES=	pkg-message
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
 
-#PATCH_STRIP=	-p2
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_PGSQL) && defined(WITHOUT_MYSQL)
-IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
+.if ${PORT_OPTIONS:MAPACHE} || ${PORT_OPTIONS:MHIAWATHA} || ${PORT_OPTIONS:MLIGHTTPD} || ${PORT_OPTIONS:MNGINX}
+WEBUI=		yes
 .endif
 
-.if defined(WITH_WEBUI)
+.if defined(WEBUI)
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
@@ -51,58 +52,61 @@ PLIST_SUB+=	WEBUI=""
 PLIST_SUB+=	WEBUI="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-.if defined(WITH_WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
-USE_PHP+=	pgsql
+.if defined(WEBUI)
+USE_PHP+=	pgsql pdo_pgsql
 .endif
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if !defined(WITHOUT_MYSQL)
-.if defined(WITH_WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
-USE_PHP+=	mysql
+.if ${PORT_OPTIONS:MMYSQL}
+.if defined(WEBUI)
+USE_PHP+=	mysql pdo_mysql
 .endif
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_CVSUP)
-RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
+.if ${PORT_OPTIONS:MSQLITE}
+.if defined(WEBUI)
+USE_PHP+=	sqlite3 pdo_sqlite
+.endif
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
-.if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
-.elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
+.elif ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)
+.elif ${PORT_OPTIONS:MHIAWATHA}
 RUN_DEPENDS+=	hiawatha:${PORTSDIR}/www/hiawatha
+.elif ${PORT_OPTIONS:MNGINX}
+RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .endif
 
-.if defined(WITH_LSOF)
+.if ${PORT_OPTIONS:MEMAILS}
+RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+.endif
+
+.if ${PORT_OPTIONS:MLSOF}
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
-pre-everything::
-.if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD) || defined(WITH_HIAWATHA)) && !defined(WITH_WEBUI)
-	@${ECHO_CMD} "It doesn't make sense to depend on Apache, LightHTTPD or Hiawatha if not using the WebUI."
-	@${FALSE}
+.if ${PORT_OPTIONS:MLOG_COMPRESS}
+RUN_DEPENDS+=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
 .endif
 
-.if !defined(WITH_WEBUI)
+.if ! defined(WEBUI)
 post-extract:
 	@${RM} -R ${WRKSRC}/webui
 .endif
 
 post-patch:
-.ifdef WITHOUT_CHECK_FOR_ROOT
+.if ! ${PORT_OPTIONS:MCHECK__ROOT}
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
-	${REINPLACE_CMD} -e 's/.set_rcvar./tinderd_enable/' \
-		${WRKSRC}/etc/rc.d/tinderd
 	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
@@ -114,10 +118,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${PREFIX}/etc/rc.d/${PORTNAME}
 	@${ECHO_CMD} "Installing tinderbox ..."
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
-	${CP} ${WRKSRC}/.version ${PREFIX}/tinderbox/scripts
 	@${ECHO_CMD} "All Done"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
