@@ -372,7 +372,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/devicedrivers.html
-%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/driverbasics-access.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/driverbasics-block.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/driverbasics-char.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/driverbasics-kld.html
@@ -714,7 +713,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-summary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-viewers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/device-hints.html
@@ -853,7 +851,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-plip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-pxe-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
@@ -929,9 +926,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-limiting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-modifying.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-superuser.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
