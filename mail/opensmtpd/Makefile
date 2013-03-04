@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201302212015
+PORTVERSION=	201303011853
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -19,6 +19,10 @@ LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 LICENSE_NAME=	ISCL
+
+OPTIONS_DEFINE=	PAM
+
+OPTIONS_DEFAULT=	PAM
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.2.xp1
 
@@ -40,6 +44,10 @@ GROUPS=		_smtpd
 .include <bsd.port.options.mk>
 
 USE_OPENSSL=	yes
+
+.if ${PORT_OPTIONS:MPAM}
+CONFIGURE_ARGS+=	--with-pam
+.endif
 
 # FreeBSD 7.3 and earlier need to use OpenSSL from ports
 .if ${OSVERSION} < 704000
