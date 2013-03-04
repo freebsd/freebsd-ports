@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Democracy
-# Date created:		30 November 2006
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	miro
 PORTVERSION=	5.0
@@ -23,8 +19,8 @@ BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
 		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/taglib/taglib.h:${PORTSDIR}/audio/taglib
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/libtorrent.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \

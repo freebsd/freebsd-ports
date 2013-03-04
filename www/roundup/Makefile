@@ -12,7 +12,7 @@ COMMENT=	Issue-Tracking System for Knowledge Workers
 LICENSE=	PSFL
 
 USE_GETTEXT=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS
@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=SQLITE NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

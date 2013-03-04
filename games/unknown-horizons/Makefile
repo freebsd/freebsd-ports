@@ -1,7 +1,4 @@
-# New ports collection makefile for: unknown-horizons
-# Date created:      26 May 2012
-# Whom:              GreenDog <fiziologus@gmail.com>
-#
+# Created by: GreenDog <fiziologus@gmail.com>
 # $FreeBSD$
 
 PORTNAME=		unknown-horizons
@@ -15,9 +12,9 @@ COMMENT=		Real time simulation game
 BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 			${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=		${PYTHON_SITELIBDIR}/fife/__init__.py:${PORTSDIR}/games/py-fife \
-			${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 			${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
-			${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
+			${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 

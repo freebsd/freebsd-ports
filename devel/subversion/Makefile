@@ -105,7 +105,7 @@ PLIST_SUB+=	BOOK="@comment "
 
 # testsuite will fail until PR156076 is committed
 .if ${PORT_OPTIONS:MTEST}
-TEST_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 #.if ${PORT_OPTIONS:MASVN}

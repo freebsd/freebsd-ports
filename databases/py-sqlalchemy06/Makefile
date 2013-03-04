@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-sqlalchemy
-# Date created:				12 August 2004
-# Whom:					Dryice Dong Liu <dryice@dryice.name>
-#
+# Created by: Dryice Dong Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlalchemy06
 PORTVERSION=	0.6.9
@@ -87,7 +83,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-ps
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}

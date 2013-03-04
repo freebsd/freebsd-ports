@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-git
-# Date created:		9 August 2010
-# Whom:			Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-git
 PORTVERSION=	0.6.8
@@ -20,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		py*-dulwich>=0.8.0:${PORTSDIR}/devel/dulwich \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.5+

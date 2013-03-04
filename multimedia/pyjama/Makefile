@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pyjama
-# Date created:				10. Sep 2009
-# Whom:					Kjell Tore Ullavik <ktullavik@gmail.com>
-#
+# Created by: Kjell Tore Ullavik <ktullavik@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pyjama
@@ -14,7 +11,7 @@ DISTNAME=	pyjama-0.3.0.1_all
 MAINTAINER=	ktullavik@gmail.com
 COMMENT=	Frontend to the Jamendo music network
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson	\
 		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer

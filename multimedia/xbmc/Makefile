@@ -50,7 +50,7 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		tinyxml:${PORTSDIR}/textproc/tinyxml \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		yajl:${PORTSDIR}/devel/yajl
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \

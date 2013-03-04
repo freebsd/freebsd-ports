@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-ibus-pinyin
-# Date created:				21 October 2008
-# Whom:					Henry Hu <henry.hu.sh@gmail.com>
-#
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ibus-pinyin
 PORTVERSION=	1.4.0
@@ -17,9 +13,9 @@ MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	PinYin engine for IBus
 
 BUILD_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
