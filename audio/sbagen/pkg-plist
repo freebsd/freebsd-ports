@@ -1,14 +1,4 @@
 bin/sbagen
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/SBAGEN.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/focus.txt
-%%PORTDOCS%%%%DOCSDIR%%/focus2.txt
-%%PORTDOCS%%%%DOCSDIR%%/holosync.txt
-%%PORTDOCS%%%%DOCSDIR%%/theory.txt
-%%PORTDOCS%%%%DOCSDIR%%/theory2.txt
-%%PORTDOCS%%%%DOCSDIR%%/wave.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basics/prog-chakras-1.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basics/prog-drop-00d.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basics/prog-drop-old-demo.sbg
@@ -145,4 +135,3 @@ bin/sbagen
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basics
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
