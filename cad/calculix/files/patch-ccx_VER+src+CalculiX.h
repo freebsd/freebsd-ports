@@ -1,6 +1,15 @@
---- ccx_2.4/src/CalculiX.h.orig	Sun Feb 19 22:25:48 2006
-+++ ccx_2.4/src/CalculiX.h	Sun Feb 19 22:27:54 2006
-@@ -26,6 +26,8 @@
+--- ccx_2.5/src/CalculiX.h.orig	2012-10-06 08:13:06.000000000 -0500
++++ ccx_2.5/src/CalculiX.h	2013-03-04 15:33:04.000000000 -0500
+@@ -15,6 +15,8 @@
+ /*     along with this program; if not, write to the Free Software       */
+ /*     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.         */
+ 
++#include <pthread.h>
++
+ #define Linux 1
+ #define IRIX 2
+ #define IRIX64 3
+@@ -26,6 +28,8 @@
  #define FORTRAN(A,B) A##_##B
  #elif ARCH == HP
  #define FORTRAN(A,B) A##B

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -28,6 +27,8 @@ EXTRACT_ONLY+=	${DIST_EXAMPLES}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		spooles.1:${PORTSDIR}/math/spooles \
@@ -50,7 +51,7 @@ USE_GMAKE=	yes
 USE_XORG=	xmu
 USE_GL=	glut
 
-BROWSER?=	mozilla
+BROWSER?=	firefox
 PSVIEWER?=	gv
 
 .include <bsd.port.pre.mk>
