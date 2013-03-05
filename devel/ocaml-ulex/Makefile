@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ulex
-# Date created:			Mar 17, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ulex
 PORTVERSION=	1.1
@@ -24,6 +19,8 @@ OCAMLC_DEPEND=	ocaml>=3.10:${OCAMLC_PORT}
 ALL_TARGET=	all all.opt
 
 USE_GMAKE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	doc

@@ -1,123 +1,127 @@
-# New ports collection makefile for:	lablgtk2
-# Date created:		2004-11-02
-# Whom:			Rene Ladan
-#
+# Created by: Rene Ladan
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.14.2
-PORTREVISION=	3
+PORTVERSION=	2.16.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/561/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
-		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/979/ \
+		LOCAL/bf
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An Objective Caml interface to GTK+ 2.x
 
+LICENSE=	LGPL21
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAMLFIND_PLIST=	yes
+USE_OCAML_LDCONFIG=	yes
+USE_OCAML_WASH= 	yes
 
-OPTIONS=	GLADE "With glade support" ON \
-		GNOMECANVAS "With gnomecanvas support" ON \
-		GNOMEUI "With gnomeui support" ON \
-		GTKGL "With gtkglarea support" ON \
-		GTKSOURCEVIEW2 "With gtksourceview2 support" ON \
-		GTKSPELL "With gtkspell support" ON \
-		RSVG "With rsvg support" ON
-#		GNOMEPANEL "With gnomepanel support" OFF \
+OPTIONS_DEFINE =	GLADE GNOMECANVAS GNOMEUI GTKGLAREA GTKSOURCEVIEW2 GTKSPELL \
+			LIBRSVG2
+OPTIONS_DEFAULT =	${OPTIONS_DEFINE}
 
-DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
-EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
+GNOMECANVAS_DESC=	GnomeCanvas support
+GNOMEUI_DESC=		GNOME 2 UI support
+GTKGLAREA_DESC=		GtkGLArea support
+GTKSOURCEVIEW2_DESC=	GtkSourceView 2 support
+GTKSPELL_DESC=		GtkSpell support
+#GNOMEPANEL_DESC=	GNOME Panel support
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/lib/ocaml --without-gtksourceview
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/${OCAML_LIBDIR} \
+		--without-gtksourceview
+CONFIGURE_ENV=	CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
 
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTKGL)
+.if ${PORT_OPTIONS:MDOCS}
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+PORTDOCS=	COPYING README
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
+PORTEXAMPLES=	*
+.endif
+
+.if ${PORT_OPTIONS:MGTKGLAREA}
 CONFIGURE_ARGS+=	--with-gl
 BUILD_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 RUN_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
-LIB_DEPENDS+=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
-PLIST_SUB+=	GL=""
+LIB_DEPENDS+=	gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2
+EXAMPLES_SUBDIRS+=	GL
 .else
 CONFIGURE_ARGS+=	--without-gl
-PLIST_SUB+=	GL="@comment "
 .endif
 
-.if defined(WITH_GLADE)
+.if ${PORT_OPTIONS:MGLADE}
 CONFIGURE_ARGS+=	--with-glade
 USE_GNOME+=	libglade2
 PLIST_SUB+=	GLADE=""
+EXAMPLES_SUBDIRS+=	glade
 .else
 CONFIGURE_ARGS+=	--without-glade
 PLIST_SUB+=	GLADE="@comment "
 .endif
 
-.if defined(WITH_GNOMEUI)
+.if ${PORT_OPTIONS:MGNOMEUI}
 CONFIGURE_ARGS+=	--with-gnomeui
 USE_GNOME+=	libgnomeui
-PLIST_SUB+=	GNOMEUI=""
 .else
 CONFIGURE_ARGS+=	--without-gnomeui
-PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
-.if defined(WITH_GNOMECANVAS)
+.if ${PORT_OPTIONS:MGNOMECANVAS}
 CONFIGURE_ARGS+=	--with-gnomecanvas
 USE_GNOME+=	libgnomecanvas
-PLIST_SUB+=	GNOMECANVAS=""
+EXAMPLES_SUBDIRS+=	canvas
 .else
 CONFIGURE_ARGS+=	--without-gnomecanvas
-PLIST_SUB+=	GNOMECANVAS="@comment "
 .endif
 
-.if defined(WITH_RSVG)
+.if ${PORT_OPTIONS:MLIBRSVG2}
 CONFIGURE_ARGS+=	--with-rsvg
 USE_GNOME+=	librsvg2
-PLIST_SUB+=	RSVG=""
+EXAMPLES_SUBDIRS+=	rsvg
 .else
 CONFIGURE_ARGS+=	--without-rsvg
-PLIST_SUB+=	RSVG="@comment "
 .endif
 
-#.if defined(WITH_GNOMEPANEL)
+#.if ${PORT_OPTIONS:MGNOMEPANEL}
 #CONFIGURE_ARGS+=	--with-panel
 #USE_GNOME+=	gnomepanel
-#PLIST_SUB+=	PANEL=""
+#EXAMPLES_SUBDIRS+=	panel
 #.else
 CONFIGURE_ARGS+=	--without-panel
-PLIST_SUB+=	PANEL="@comment "
 #.endif
 
-.if defined(WITH_GTKSOURCEVIEW2)
+.if ${PORT_OPTIONS:MGTKSOURCEVIEW2}
 CONFIGURE_ARGS+=	--with-gtksourceview2
 USE_GNOME+=	gtksourceview2
-PLIST_SUB+=	GTKSOURCEVIEW2=""
+EXAMPLES_SUBDIRS+=	sourceview
 .else
 CONFIGURE_ARGS+=	--without-gtksourceview2
-PLIST_SUB+=	GTKSOURCEVIEW2="@comment "
 .endif
 
-.if defined(WITH_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+.if ${PORT_OPTIONS:MGTKSPELL}
+LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--with-gtkspell
-PLIST_SUB+=	GTKSPELL=""
 .else
 CONFIGURE_ARGS+=	--without-gtkspell
-PLIST_SUB+=	GTKSPELL="@comment "
 .endif
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CFLAGS[[:space:]]*\+=[[:space:]]*-O)|\1 ${CFLAGS}|' \
 		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
@@ -126,39 +130,14 @@ post-extract:
 		${WRKSRC}/src/Makefile
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/META ${PREFIX}/${OCAML_LIBDIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/COPYING
+	@cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/image256x256.rgb \
-		${WRKSRC}/examples/test.xpm \
-		${WRKSRC}/examples/*.ml ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/text
-	@${INSTALL_DATA} ${WRKSRC}/examples/text/* ${EXAMPLESDIR}/text
-.if defined(WITH_GTKGL)
-	@${MKDIR} ${EXAMPLESDIR}/GL
-	@${INSTALL_DATA} ${WRKSRC}/examples/GL/* ${EXAMPLESDIR}/GL
-.endif
-.if defined(WITH_GNOMECANVAS)
-	@${MKDIR} ${EXAMPLESDIR}/canvas
-	@${INSTALL_DATA} ${WRKSRC}/examples/canvas/* ${EXAMPLESDIR}/canvas
-.endif
-.if defined(WITH_GLADE)
-	@${MKDIR} ${EXAMPLESDIR}/glade
-	@${INSTALL_DATA} ${WRKSRC}/examples/glade/* ${EXAMPLESDIR}/glade
-.endif
-.if defined(WITH_GNOMEPANEL)
-	@${MKDIR} ${EXAMPLESDIR}/panel
-	@${INSTALL_DATA} ${WRKSRC}/examples/panel/* ${EXAMPLESDIR}/panel
-.endif
-.if defined(WITH_RSVG)
-	@${MKDIR} ${EXAMPLESDIR}/rsvg
-	@${INSTALL_DATA} ${WRKSRC}/examples/rsvg/* ${EXAMPLESDIR}/rsvg
-.endif
+	@cd ${WRKSRC}/examples ; ${COPYTREE_SHARE} \
+	"*.ml *.png *.rgb *.xpm text ${EXAMPLES_SUBDIRS}" ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

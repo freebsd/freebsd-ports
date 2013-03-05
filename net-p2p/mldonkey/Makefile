@@ -1,12 +1,9 @@
-# New ports collection makefile for:	mldonkey
-# Date created:		21 August 2002
-# Whom:			Holger Lamm <holger@e-gitt.net>
-#
+# Created by: Holger Lamm <holger@e-gitt.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mldonkey
 PORTVERSION=	3.1.2
+PORTREVISION?=	1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -74,7 +71,7 @@ PLIST_SUB+=	CORE="@comment " GUI="" GUICORE="@comment "
 .endif # !(defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
 
 .if !defined(WITHOUT_GUI)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
@@ -120,6 +117,15 @@ post-patch:
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
 		-e 's/-O6//' \
 		${BUILD_WRKSRC}/config/Makefile.in
+	@${REINPLACE_CMD} -E \
+		-e 's@(\+)(lablgtk2)@\1site-lib/\2@' \
+		-e 's@(\+)(labl\$$\(GTK\))@\1site-lib/\2@' \
+		-e 's@(OCAMLLIB/)(\$$LABLGTK_NAME)@\1site-lib/\2@' \
+		${WRKSRC}/config/configure.in \
+		${WRKSRC}/config/Makefile.in
+	@${REINPLACE_CMD} -E \
+		-e 's@(#include <)(lablgtk2/)@\1site-lib/\2@'  \
+		${WRKSRC}/src/gtk2/gui/x11/systraystubs.c
 # update server.met provider
 .for file in \
 	src/daemon/common/commonOptions.ml \

@@ -1,13 +1,9 @@
-# New ports collection makefile for:    alt-ergo
-# Date created:         20 December 2011
-# Whom:                 b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	alt-ergo
 PORTVERSION=	0.94
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://alt-ergo.lri.fr/http/ LOCAL/bf
 
@@ -50,10 +46,12 @@ post-patch:
 		\|/usr/share/gtksourceview-2.0|s|/usr|${PREFIX}|; }' \
 		-e 's|make -C|${GMAKE} -C|' \
 			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/configure
 
 .if defined(WITH_GUI)
 pre-configure:
-	@(if [ ! -e ${LOCALBASE}/lib/ocaml/lablgtk2/lablgtksourceview2.cmxa ] ; then \
+	@(if [ ! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/lablgtksourceview2.cmxa ] ; then \
 	${ECHO_MSG} "==> The WITH_GUI option for ${PKGNAME} requires" ; \
 	${ECHO_MSG} "==> x11-toolkits/ocaml-lablgtk2 to be built" ; \
 	${ECHO_MSG} "==> WITH_GTKSOURCEVIEW2" ; \

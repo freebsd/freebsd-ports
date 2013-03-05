@@ -1,14 +1,10 @@
-# New ports collection makefile for:    frama-c
-# Date created:         25 May 2011
-# Whom:                 b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		frama-c
 DISTVERSIONPREFIX=	Nitrogen-
 DISTVERSION=		20111001
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 
@@ -73,6 +69,10 @@ CONFIGURE_ARGS+=	--with-no-plugin
 PLIST_SUB+=		PLUGINS="@comment "
 .endif
 
+post-extract:
+	@cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		ocamlgraph.tar.gz ${EXTRACT_AFTER_ARGS}
+
 post-patch:
 	@${MKDIR} ${WRKSRC}/tests/report \
 		${WRKSRC}/tests/wp \
@@ -106,11 +106,18 @@ post-patch:
 		-e '\|case $$ALTERGO_VERSION in|{N; s|0\.92\.2|0.94*|;}' \
 		-e 's|HAS_COQ=$$||' \
 			${WRKSRC}/configure
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/configure \
+		${WRKSRC}/ocamlgraph/configure \
+		${WRKSRC}/ocamlgraph/view_graph/Makefile \
+		${WRKSRC}/share/Makefile.plugin \
+		${WRKSRC}/src/kernel/dynamic.ml
 
 .if defined(WITH_GUI)
 pre-configure:
-	@(if [ ! -e ${LOCALBASE}/lib/ocaml/lablgtk2/gtkSourceView2.cmi -o \
-	! -e ${LOCALBASE}/lib/ocaml/lablgtk2/gnomeCanvas.cmi ] ; then \
+	@(if [ ! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/gtkSourceView2.cmi -o \
+	! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/gnomeCanvas.cmi ] ; then \
 	${ECHO_MSG} "==> The WITH_GUI option for ${PKGNAME} requires" ; \
 	${ECHO_MSG} "==> x11-toolkits/ocaml-lablgtk2 to be built" ; \
 	${ECHO_MSG} "==> WITH_GNOMECANVAS and WITH_GTKSOURCEVIEW2" ; \

@@ -2,6 +2,7 @@
 
 PORTNAME=	opa
 PORTVERSION=	1.0.5.${GITVER}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.opalang.org/tar-gz/
 DISTNAME=	${PORTNAME}_v${GITVER}

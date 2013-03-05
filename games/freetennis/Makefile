@@ -1,13 +1,9 @@
-# New ports collection makefile for:	freetennis
-# Date created:				07 Mar 2007
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freetennis
 PORTVERSION=	0.4.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	ocamlopt:${PORTSDIR}/lang/ocaml \
 		${OCAML_DEPENDS}
 RUN_DEPENDS=	${OCAML_DEPENDS}
 
-OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/lablgtk2/gtk.ml:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
+OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:${PORTSDIR}/graphics/ocaml-lablgl \
 		${LOCALBASE}/lib/ocaml/site-lib/camlimages/camlimages.a:${PORTSDIR}/graphics/ocaml-images \
 		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:${PORTSDIR}/devel/ocaml-sdl
@@ -33,6 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sfxDir = "sfx"|sfxDir = "${DATADIR}/sfx"|; \
 		s|gfxDir = "graphics"|gfxDir = "${DATADIR}/graphics"|' \
 		${WRKSRC}/freetennis.ml
+	@${REINPLACE_CMD} -Ee 's@(\+)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/Makefile
 
 pre-install:
 	@${RM} -f ${PLIST}

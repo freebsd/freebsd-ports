@@ -1,12 +1,9 @@
-# New ports collection makefile for:   ocaml-ocamlgraph
-# Date created:        25 May 2004
-# Whom:                Joseph Koshy <jkoshy@freebsd.org>
-#
+# Created by: Joseph Koshy <jkoshy@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
@@ -30,6 +27,8 @@ PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LIBDIR}/${PORTNAME}"
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-findlib
 
+MAKE_JOBS_UNSAFE=	yes
+
 PORTSCOUT=	skipv:1.81
 
 .include <bsd.port.options.mk>
@@ -52,6 +51,10 @@ post-patch:
 .if empty(PORT_OPTIONS:MGUI)
 	# Override auto-detection
 	@${REINPLACE_CMD} -Ee 's/(LABLGTK2)=yes/\1=no/' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/configure \
+		${WRKSRC}/view_graph/Makefile
 .endif
 
 post-install:
