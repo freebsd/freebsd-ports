@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 NO_BUILD=	yes
 
-USE_PHP=	ctype json mbstring pcntl posix session xmlrpc
+USE_PHP=	ctype dom hash json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
 WANT_PHP_CLI=	yes
 REINPLACE_ARGS=	-i ""
@@ -57,8 +57,6 @@ pre-configure:
 		-e 's|/usr/bin/env php| ${LOCALBASE}/bin/php|'		\
 		${WRKSRC}/${script}
 .endfor
-	${REINPLACE_CMD} -e 's|/usr/bin/curl|${LOCALBASE}/bin/curl|' \
-		${WRKSRC}/lib/magpierss/extlib/Snoopy.class.inc
 
 do-configure:
 .if !defined(WITH_PGSQL)

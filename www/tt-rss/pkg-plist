@@ -12,100 +12,76 @@
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
-%%WWWDIR%%/classes/auth/internal.php
-%%WWWDIR%%/classes/auth/remote.php
 %%WWWDIR%%/classes/backend.php
-%%WWWDIR%%/classes/button.php
-%%WWWDIR%%/classes/button/mail.php
-%%WWWDIR%%/classes/button/note.php
-%%WWWDIR%%/classes/button/share.php
-%%WWWDIR%%/classes/button/tweet.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feeds.php
-%%WWWDIR%%/classes/filter.php
-%%WWWDIR%%/classes/filter/redditimgur.php
 %%WWWDIR%%/classes/handler.php
 %%WWWDIR%%/classes/handler/protected.php
 %%WWWDIR%%/classes/handler/public.php
+%%WWWDIR%%/classes/iauthmodule.php
+%%WWWDIR%%/classes/ihandler.php
 %%WWWDIR%%/classes/opml.php
+%%WWWDIR%%/classes/plugin.php
+%%WWWDIR%%/classes/pluginhandler.php
+%%WWWDIR%%/classes/pluginhost.php
 %%WWWDIR%%/classes/pref/feeds.php
 %%WWWDIR%%/classes/pref/filters.php
-%%WWWDIR%%/classes/pref/instances.php
 %%WWWDIR%%/classes/pref/labels.php
 %%WWWDIR%%/classes/pref/prefs.php
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
+%%WWWDIR%%/classes/sanitizedummy.php
 @unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php-dist
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
 %%WWWDIR%%/db-updater.php
-%%WWWDIR%%/digest.css
-%%WWWDIR%%/digest.php
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
-%%WWWDIR%%/help/main.php
-%%WWWDIR%%/help/prefs.php
 %%WWWDIR%%/icons/.empty
 %%WWWDIR%%/image.php
+%%WWWDIR%%/images/alert.png
+%%WWWDIR%%/images/alert.svg
 %%WWWDIR%%/images/archive.png
-%%WWWDIR%%/images/art-email.png
-%%WWWDIR%%/images/art-pub-note.png
-%%WWWDIR%%/images/art-set-unread.png
-%%WWWDIR%%/images/art-share.png
-%%WWWDIR%%/images/art-tweet.png
-%%WWWDIR%%/images/art-zoom.png
 %%WWWDIR%%/images/blank_icon.gif
-%%WWWDIR%%/images/digest_checkbox.png
-%%WWWDIR%%/images/down_arrow.png
 %%WWWDIR%%/images/favicon.png
-%%WWWDIR%%/images/feed-icon-12x12.png
-%%WWWDIR%%/images/feed-icon-64x64.png
 %%WWWDIR%%/images/footer.png
 %%WWWDIR%%/images/fresh.png
-%%WWWDIR%%/images/fresh_sign.png
 %%WWWDIR%%/images/indicator_tiny.gif
 %%WWWDIR%%/images/indicator_white.gif
 %%WWWDIR%%/images/label.png
-%%WWWDIR%%/images/logo.png
-%%WWWDIR%%/images/logo_big.png
 %%WWWDIR%%/images/logo_wide.png
-%%WWWDIR%%/images/mark_set.png
 %%WWWDIR%%/images/mark_set.svg
-%%WWWDIR%%/images/mark_unset.png
 %%WWWDIR%%/images/mark_unset.svg
 %%WWWDIR%%/images/new_version.png
-%%WWWDIR%%/images/online.png
 %%WWWDIR%%/images/overlay.png
 %%WWWDIR%%/images/piggie.png
 %%WWWDIR%%/images/piggie_icon.png
-%%WWWDIR%%/images/pub_set.png
-%%WWWDIR%%/images/pub_unset.png
+%%WWWDIR%%/images/pub_set.svg
+%%WWWDIR%%/images/pub_unset.svg
 %%WWWDIR%%/images/recently_read.png
 %%WWWDIR%%/images/score_half_high.png
 %%WWWDIR%%/images/score_half_low.png
 %%WWWDIR%%/images/score_high.png
 %%WWWDIR%%/images/score_low.png
 %%WWWDIR%%/images/score_neutral.png
-%%WWWDIR%%/images/sign_excl.png
-%%WWWDIR%%/images/sign_info.png
-%%WWWDIR%%/images/sign_quest.png
-%%WWWDIR%%/images/small_question.png
+%%WWWDIR%%/images/sign_excl.svg
+%%WWWDIR%%/images/sign_info.svg
 %%WWWDIR%%/images/tag.png
-%%WWWDIR%%/images/tile.png
 %%WWWDIR%%/images/toolbar.png
-%%WWWDIR%%/images/updated.png
-%%WWWDIR%%/images/www.png
+%%WWWDIR%%/include/ccache.php
 %%WWWDIR%%/include/colors.php
 %%WWWDIR%%/include/db-prefs.php
 %%WWWDIR%%/include/db.php
+%%WWWDIR%%/include/digest.php
+%%WWWDIR%%/include/feedbrowser.php
 %%WWWDIR%%/include/functions.php
+%%WWWDIR%%/include/labels.php
 %%WWWDIR%%/include/localized_schema.php
 %%WWWDIR%%/include/login_form.php
 %%WWWDIR%%/include/rssfuncs.php
 %%WWWDIR%%/include/sanity_check.php
 %%WWWDIR%%/include/sanity_config.php
 %%WWWDIR%%/include/sessions.php
-%%WWWDIR%%/include/update_self.php
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/FeedTree.js
@@ -113,15 +89,10 @@
 %%WWWDIR%%/js/PrefFilterTree.js
 %%WWWDIR%%/js/PrefLabelTree.js
 %%WWWDIR%%/js/deprecated.js
-%%WWWDIR%%/js/digest.js
 %%WWWDIR%%/js/feedlist.js
 %%WWWDIR%%/js/functions.js
-%%WWWDIR%%/js/mail_button.js
-%%WWWDIR%%/js/note_button.js
 %%WWWDIR%%/js/prefs.js
-%%WWWDIR%%/js/share_button.js
 %%WWWDIR%%/js/tt-rss.js
-%%WWWDIR%%/js/tweet_button.js
 %%WWWDIR%%/js/viewfeed.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
@@ -1466,13 +1437,6 @@
 %%WWWDIR%%/lib/iui/toolbar.png
 %%WWWDIR%%/lib/iui/whiteButton.png
 %%WWWDIR%%/lib/jsmin.php
-%%WWWDIR%%/lib/magpierss/AUTHORS
-%%WWWDIR%%/lib/magpierss/README
-%%WWWDIR%%/lib/magpierss/extlib/Snoopy.class.inc
-%%WWWDIR%%/lib/magpierss/rss_cache.inc
-%%WWWDIR%%/lib/magpierss/rss_fetch.inc
-%%WWWDIR%%/lib/magpierss/rss_parse.inc
-%%WWWDIR%%/lib/magpierss/rss_utils.inc
 %%WWWDIR%%/lib/otphp/LICENCE
 %%WWWDIR%%/lib/otphp/lib/hotp.php
 %%WWWDIR%%/lib/otphp/lib/otp.php
@@ -1963,12 +1927,74 @@
 %%WWWDIR%%/mobile/mobile.js
 %%WWWDIR%%/mobile/prefs.php
 %%WWWDIR%%/opml.php
+%%WWWDIR%%/plugins/af_buttersafe/init.php
+%%WWWDIR%%/plugins/af_explosm/init.php
+%%WWWDIR%%/plugins/af_gocomics/init.php
+%%WWWDIR%%/plugins/af_pennyarcade/init.php
+%%WWWDIR%%/plugins/af_redditimgur/init.php
+%%WWWDIR%%/plugins/af_unburn/init.php
+%%WWWDIR%%/plugins/auth_imap/init.php
+%%WWWDIR%%/plugins/auth_internal/init.php
+%%WWWDIR%%/plugins/auth_remote/init.php
+%%WWWDIR%%/plugins/bookmarklets/init.php
+%%WWWDIR%%/plugins/close_button/button.png
+%%WWWDIR%%/plugins/close_button/init.php
+%%WWWDIR%%/plugins/digest/digest.css
+%%WWWDIR%%/plugins/digest/digest.js
+%%WWWDIR%%/plugins/digest/digest_body.php
+%%WWWDIR%%/plugins/digest/images/tile.png
+%%WWWDIR%%/plugins/digest/init.php
+%%WWWDIR%%/plugins/example/example.js
+%%WWWDIR%%/plugins/example/init.php
+%%WWWDIR%%/plugins/example_article/init.js
+%%WWWDIR%%/plugins/example_article/init.php
+%%WWWDIR%%/plugins/example_feed/init.php
+%%WWWDIR%%/plugins/example_routing/init.php
+%%WWWDIR%%/plugins/flattr/flattr.png
+%%WWWDIR%%/plugins/flattr/init.php
+%%WWWDIR%%/plugins/googleplus/googleplus.js
+%%WWWDIR%%/plugins/googleplus/googleplus.png
+%%WWWDIR%%/plugins/googleplus/init.php
+%%WWWDIR%%/plugins/identica/identica.js
+%%WWWDIR%%/plugins/identica/identica.png
+%%WWWDIR%%/plugins/identica/init.php
+%%WWWDIR%%/plugins/import_export/import_export.js
+%%WWWDIR%%/plugins/import_export/init.php
+%%WWWDIR%%/plugins/instances/init.php
+%%WWWDIR%%/plugins/instances/instances.js
+%%WWWDIR%%/plugins/mail/init.php
+%%WWWDIR%%/plugins/mail/mail.js
+%%WWWDIR%%/plugins/mail/mail.png
+%%WWWDIR%%/plugins/note/init.php
+%%WWWDIR%%/plugins/note/note.js
+%%WWWDIR%%/plugins/note/note.png
+%%WWWDIR%%/plugins/nsfw/init.js
+%%WWWDIR%%/plugins/nsfw/init.php
+%%WWWDIR%%/plugins/owncloud/init.php
+%%WWWDIR%%/plugins/owncloud/owncloud.js
+%%WWWDIR%%/plugins/owncloud/owncloud.png
+%%WWWDIR%%/plugins/pinterest/init.php
+%%WWWDIR%%/plugins/pinterest/pinterest.js
+%%WWWDIR%%/plugins/pinterest/pinterest.png
+%%WWWDIR%%/plugins/pocket/init.php
+%%WWWDIR%%/plugins/pocket/pocket.js
+%%WWWDIR%%/plugins/pocket/pocket.png
+%%WWWDIR%%/plugins/share/init.php
+%%WWWDIR%%/plugins/share/share.js
+%%WWWDIR%%/plugins/share/share.png
+%%WWWDIR%%/plugins/swap_jk/init.php
+%%WWWDIR%%/plugins/updater/init.php
+%%WWWDIR%%/plugins/updater/updater.js
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
 %%WWWDIR%%/schema/versions/mysql/10.sql
+%%WWWDIR%%/schema/versions/mysql/100.sql
+%%WWWDIR%%/schema/versions/mysql/101.sql
+%%WWWDIR%%/schema/versions/mysql/102.sql
+%%WWWDIR%%/schema/versions/mysql/103.sql
 %%WWWDIR%%/schema/versions/mysql/11.sql
 %%WWWDIR%%/schema/versions/mysql/12.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
@@ -2066,6 +2092,10 @@
 %%WWWDIR%%/schema/versions/mysql/98.sql
 %%WWWDIR%%/schema/versions/mysql/99.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
+%%WWWDIR%%/schema/versions/pgsql/100.sql
+%%WWWDIR%%/schema/versions/pgsql/101.sql
+%%WWWDIR%%/schema/versions/pgsql/102.sql
+%%WWWDIR%%/schema/versions/pgsql/103.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
@@ -2167,9 +2197,6 @@
 %%WWWDIR%%/templates/email_article_template.txt
 %%WWWDIR%%/templates/generated_feed.txt
 %%WWWDIR%%/templates/resetpass_template.txt
-%%WWWDIR%%/themes/triple-pane/theme.css
-%%WWWDIR%%/themes/triple-pane/theme.ini
-%%WWWDIR%%/themes/triple-pane/theme.js
 %%WWWDIR%%/tt-rss.css
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
@@ -2185,13 +2212,43 @@
 @exec chmod 444 %D/%F
 @exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
 @dirrm %%WWWDIR%%/utils
-@dirrm %%WWWDIR%%/themes/triple-pane
-@dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/schema/versions/pgsql
 @dirrm %%WWWDIR%%/schema/versions/mysql
 @dirrm %%WWWDIR%%/schema/versions
 @dirrm %%WWWDIR%%/schema
+@dirrm %%WWWDIR%%/plugins/updater
+@dirrm %%WWWDIR%%/plugins/swap_jk
+@dirrm %%WWWDIR%%/plugins/share
+@dirrm %%WWWDIR%%/plugins/pocket
+@dirrm %%WWWDIR%%/plugins/pinterest
+@dirrm %%WWWDIR%%/plugins/owncloud
+@dirrm %%WWWDIR%%/plugins/nsfw
+@dirrm %%WWWDIR%%/plugins/note
+@dirrm %%WWWDIR%%/plugins/mail
+@dirrm %%WWWDIR%%/plugins/instances
+@dirrm %%WWWDIR%%/plugins/import_export
+@dirrm %%WWWDIR%%/plugins/identica
+@dirrm %%WWWDIR%%/plugins/googleplus
+@dirrm %%WWWDIR%%/plugins/flattr
+@dirrm %%WWWDIR%%/plugins/example_routing
+@dirrm %%WWWDIR%%/plugins/example_feed
+@dirrm %%WWWDIR%%/plugins/example_article
+@dirrm %%WWWDIR%%/plugins/example
+@dirrm %%WWWDIR%%/plugins/digest/images
+@dirrm %%WWWDIR%%/plugins/digest
+@dirrm %%WWWDIR%%/plugins/close_button
+@dirrm %%WWWDIR%%/plugins/bookmarklets
+@dirrm %%WWWDIR%%/plugins/auth_remote
+@dirrm %%WWWDIR%%/plugins/auth_internal
+@dirrm %%WWWDIR%%/plugins/auth_imap
+@dirrm %%WWWDIR%%/plugins/af_unburn
+@dirrm %%WWWDIR%%/plugins/af_redditimgur
+@dirrm %%WWWDIR%%/plugins/af_pennyarcade
+@dirrm %%WWWDIR%%/plugins/af_gocomics
+@dirrm %%WWWDIR%%/plugins/af_explosm
+@dirrm %%WWWDIR%%/plugins/af_buttersafe
+@dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/mobile
 @dirrmtry %%WWWDIR%%/lock
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
@@ -2240,8 +2297,6 @@
 @dirrm %%WWWDIR%%/lib/otphp/vendor
 @dirrm %%WWWDIR%%/lib/otphp/lib
 @dirrm %%WWWDIR%%/lib/otphp
-@dirrm %%WWWDIR%%/lib/magpierss/extlib
-@dirrm %%WWWDIR%%/lib/magpierss
 @dirrm %%WWWDIR%%/lib/iui
 @dirrm %%WWWDIR%%/lib/gettext
 @dirrm %%WWWDIR%%/lib/dojo/store/util
@@ -2467,12 +2522,9 @@
 @dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%/help
 @dirrmtry %%WWWDIR%%/feed-icons
 @dirrm %%WWWDIR%%/classes/pref
 @dirrm %%WWWDIR%%/classes/handler
-@dirrm %%WWWDIR%%/classes/filter
-@dirrm %%WWWDIR%%/classes/button
 @dirrm %%WWWDIR%%/classes/auth
 @dirrm %%WWWDIR%%/classes
 @dirrmtry %%WWWDIR%%/cache/simplepie
