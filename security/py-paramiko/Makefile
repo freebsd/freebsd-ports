@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A python library for making SSH2 connections
+COMMENT=	Python SSH2 protocol library
 
 LICENSE=	GPLv2
 
@@ -19,13 +19,15 @@ USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
-regression-test: build
+regression-test: extract
 	@(cd ${WRKSRC} && ${PYTHON_CMD} test.py)
 
 .include <bsd.port.mk>
