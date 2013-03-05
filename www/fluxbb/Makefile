@@ -20,6 +20,8 @@ USE_PHP=	yes
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
