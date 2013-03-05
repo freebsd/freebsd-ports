@@ -85,6 +85,7 @@
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += csync2
+    SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
@@ -1199,6 +1200,7 @@
     SUBDIR += userfw
     SUBDIR += ushare
     SUBDIR += utftpd
+    SUBDIR += v6eval
     SUBDIR += vblade
     SUBDIR += vchat
     SUBDIR += vde
