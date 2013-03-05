@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	distribute
-PORTVERSION=	0.6.34
+PORTVERSION=	0.6.35
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,6 +54,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/easy_install = / s|".*"||' ${WRKSRC}/setup.py
 .endif
 
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -62,6 +65,7 @@ post-install:
 	${PYTHON_CMD} -m py_compile ${SITE_PY}
 	${PYTHON_CMD} -OO -m py_compile ${SITE_PY}
 	${CP} ${EASYINSTALL_PTH} ${EASYINSTALL_PTH}.dist
+	${LN} ${EASYINSTALL_PTH}.dist ${PYTHON_SITELIBDIR}/distribute.pth
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	if [ -f ${PKGMESSAGE} ]; then ${CAT} ${PKGMESSAGE}; fi
 
