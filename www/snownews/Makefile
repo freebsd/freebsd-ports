@@ -19,6 +19,8 @@ OPTIONS_DEFINE=	OPML NLS
 OPTIONS_DEFAULT=	OPML
 OPML_DESC=		Outline Processor Markup Support
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
