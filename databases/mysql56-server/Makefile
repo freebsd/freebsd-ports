@@ -43,6 +43,8 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	56
 
+USE_PERL5_RUN=	yes
+
 LATEST_LINK=	mysql56-server
 
 CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[0-57-9].* mariadb-server-5.* percona-server-5.*
