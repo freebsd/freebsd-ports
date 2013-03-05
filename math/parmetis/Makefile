@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ParMETIS
-# Date created:         19 May 99
-# Whom:                 Eoin Lawless (eoin@maths.tcd.ie)
-#
+# Created by: Eoin Lawless (eoin@maths.tcd.ie)
 # $FreeBSD$
-#
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0
@@ -21,7 +17,8 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
+OPTIONS_DEFINE=	OPENMPI DOCS
+OPENMPI_DESC=	Use openmpi instead of mpich2
 
 USE_CMAKE=	yes
 USE_GMAKE=	yes
@@ -31,9 +28,9 @@ PLIST_FILES=	include/parmetis/parmetis.h \
 		lib/parmetis/libmetis.a lib/parmetis/libparmetis.a
 PLIST_DIRS=	include/parmetis lib/parmetis
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENMPI)
+.if ${PORT_OPTIONS:MOPENMPI}
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
@@ -60,9 +57,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/parmetis
 	${INSTALL_DATA} ${WRKSRC}/build/libmetis/libmetis.a ${PREFIX}/lib/parmetis
 	${INSTALL_DATA} ${WRKSRC}/build/libparmetis/libparmetis.a ${PREFIX}/lib/parmetis
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

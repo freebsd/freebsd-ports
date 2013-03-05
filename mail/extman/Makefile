@@ -1,9 +1,5 @@
-# New ports collection makefile for:	extman
-# Date created:				3 April 2007
-# Whom:	      				Chifeng QU <chifeng@gmail.com>
-#
+# Created by: Chifeng QU <chifeng@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	extman
 PORTVERSION=	1.1
@@ -20,16 +16,16 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-OPTIONS=	MySQL "Use MySQL support" On \
-		LDAP "Use LDAP support" Off
+OPTIONS_DEFINE=		MYSQL LDAP
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MySQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	p5-DBD-LDAP>=0:${PORTSDIR}/databases/p5-DBD-LDAP
 .endif
 
@@ -66,4 +62,4 @@ post-install:
 		${CHMOD} +w ${WWWDIR}/webman.cf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

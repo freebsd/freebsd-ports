@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shmux
-# Date created:				2 September 2004
-# Whom:					jamundsen
-#
+# Created by: jamundsen
 # $FreeBSD$
-#
 
 PORTNAME=	shmux
 DISTVERSION=	1.0.2
@@ -15,8 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	online@jamundsen.dyndns.org
 COMMENT=	Utility to run commands on multiple hosts using shell commands
 
-OPTIONS=	FPING "Use fping utility" on	\
-		PCRE "Use perl regular expressions library" off
+OPTIONS_DEFINE=		FPING PCRE
+OPTIONS_DEFAULT=	FPING
+FPING_DESC=	Use fping utility
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
@@ -26,17 +23,17 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		shmux.1
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FPING)
+.if ${PORT_OPTIONS:MFPING}
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

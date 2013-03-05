@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tgif
-# Date created:         30 Jan 1999
-# Whom:                 bmc@WillsCreek.COM
-#
+# Created by: bmc@WillsCreek.COM
 # $FreeBSD$
-#
 
 PORTNAME=	tgif
 PORTVERSION=	4.2.2
@@ -19,8 +15,8 @@ COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
-OPTIONS=	NLS "Enable native language support" on \
-		A4SIZE "Set default paper size to A4" off
+OPTIONS_DEFINE=	NLS A4SIZE DOCS
+A4SIZE_DESC=	Set default paper size to A4
 
 USE_GCC=	any
 USE_IMAKE=	yes
@@ -31,16 +27,16 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 
 MAN1=		tgif.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 IMAKEDEFINES+=	WITH_NLS
 PLIST_SUB=	NLS=""
 .else
 PLIST_SUB=	NLS="@comment "
 .endif
-.if defined(WITH_A4SIZE)
+.if ${PORT_OPTIONS:MA4SIZE}
 IMAKEDEFINES+=	WITH_A4SIZE
 .endif
 
@@ -65,9 +61,9 @@ post-install:
 		cd ${WRKSRC}/${D:S/demo//} \
 			&& ${INSTALL_DATA} ${EXAMPLES.${D}} ${EXAMPLESDIR}/${D}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		${MKDIR} ${DOCSDIR}
 		cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

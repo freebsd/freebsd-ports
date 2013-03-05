@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ifstat
-# Date created:                30 Mar 2003
-# Whom:                        spf@xslt.cs.nccu.edu.tw
-#
+# Created by: spf@xslt.cs.nccu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	ifstat
 PORTVERSION=	1.1
@@ -18,17 +14,17 @@ COMMENT=	Network interface statistics monitoring tool
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-OPTIONS=	SNMP "SNMP support" off
+OPTIONS_DEFINE=	SNMP
 
 MAN1=		ifstat.1
 PLIST_FILES=	bin/ifstat
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

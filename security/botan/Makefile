@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	botan
-# Date created:			Mar 3, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	botan
 PORTVERSION=	1.8.13
@@ -19,9 +14,9 @@ COMMENT=	A portable, easy to use, and efficient C++ crypto library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-OPTIONS=	SSL "Enable OpenSSL engine" on \
-		GMP "Enable GMP engine" on \
-		ECC "Enable ECC support" on
+OPTIONS_DEFINE=		SSL GMP ECC
+OPTIONS_DEFAULT=	SSL GMP ECC
+ECC_DESC=	ECC support
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
@@ -38,18 +33,18 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.if !defined(WITHOUT_GMP)
+.if ${PORT_OPTIONS:MGMP}
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS+=--with-gnump
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-.if !defined(WITHOUT_ECC)
+.if ${PORT_OPTIONS:MECC}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/tr1/memory.hpp:${PORTSDIR}/devel/boost-libs
 CONFIGURE_ARGS+=--with-tr1-implementation=boost
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -60,7 +55,7 @@ CONFIGURE_ARGS+=--with-tr1-implementation=none
 post-patch:
 	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
 			${WRKSRC}/configure.py
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/$$(MKDIR_INSTALL) $$(DOCDIR)/d' \
 			-e '/$$(INSTALL_CMD_DATA) $$$$i $$(DOCDIR); /d' \
 			${WRKSRC}/src/build-data/makefile/unix_shr.in

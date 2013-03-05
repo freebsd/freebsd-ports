@@ -23,19 +23,19 @@ CFLAGS+=	${PTHREAD_CFLAGS} -L${LOCALBASE}/lib
 LFLAGS=		${PTHREAD_LIBS}
 CONFIGURE_ENV+=	"LIBS=-largp"
 
-OPTIONS=	MYSQL	"Enable MYSQL storage" 	on \
-		PGSQL	"Enable PGSQL storage"	off
+OPTIONS_DEFINE=		MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include -L${LOCALBASE}/lib/mysql
 LFLAGS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient_r
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CFLAGS+=	-DwithPGSQL -I${LOCALBASE}/include
 LFLAGS+=	-L${LOCALBASE}/lib -lpq
@@ -55,4 +55,4 @@ do-install:
 .	endif
 	${INSTALL_DATA} ${WRKSRC}/traff.conf ${PREFIX}/etc/traff.conf.default
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

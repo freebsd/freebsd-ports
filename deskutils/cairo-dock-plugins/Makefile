@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cairo-dock-plugins
-# Date created:		2010-03-19
-# Whom:			Ivan Klymenko <fidaj@ukr.net>
-#
+# Created by: Ivan Klymenko <fidaj@ukr.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	2.3.0~3
@@ -36,19 +32,24 @@ USE_GCC=	4.6+
 MAKE_JOBS_SAFE=	YES
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
 
-OPTIONS=	GMENU "Common Applications menu" On \
-		KEYBOARD_INDICATOR "Control the keyboard layout" Off \
-		TERMINAL "Add a terminal to your dock" On \
-		WEBLETS "To show an interactive web page" On \
-		XFCE_INTEGRATION "For XFCE environnement" Off \
-		ALSA_MIXER "For ALSA compatibility utils" Off
+
+
+OPTIONS_DEFINE=		GMENU KEYBOARD_INDICATOR TERMINAL WEBLETS \
+			XFCE_INTEGRATION ALSA_MIXER
+OPTIONS_DEFAULT=	GMENU TERMINAL WEBLETS
+GMENU_DESC=		Common Applications menu
+KEYBOARD_INDICATOR_DESC=	 Control the keyboard layout
+TERMINAL_DESC=		 Add a terminal to your dock
+WEBLETS_DESC=		 To show an interactive web page
+XFCE_INTEGRATION_DESC=	For XFCE environnement
+ALSA_MIXER_DESC=	For ALSA compatibility utils
 
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${CP} -R ${WRKDIR}/${ICONS_PACKAGE}/* ${WRKSRC}
 
-.if defined(WITH_GMENU)
+.if ${PORT_OPTIONS:MGMENU}
 LIB_DEPENDS+=	gnome-menu.2:${PORTSDIR}/x11/gnome-menus
 CMAKE_ARGS+=	-Denable_gmenu:STRING=yes
 PLIST_SUB+=	GMENU=""
@@ -57,7 +58,7 @@ CMAKE_ARGS+=	-Denable_gmenu:STRING=no
 PLIST_SUB+=	GMENU="@comment "
 .endif
 
-.if defined(WITH_KEYBOARD_INDICATOR)
+.if ${PORT_OPTIONS:MKEYBOARD_INDICATOR}
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
 CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=yes
@@ -67,7 +68,7 @@ CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=no
 PLIST_SUB+=	KEYBOARD_INDICATOR="@comment "
 .endif
 
-.if defined(WITH_TERMINAL)
+.if ${PORT_OPTIONS:MTERMINAL}
 LIB_DEPENDS+=	vte.9:${PORTSDIR}/x11-toolkits/vte
 CMAKE_ARGS+=	-Denable_terminal:STRING=yes
 PLIST_SUB+=	TERMINAL=""
@@ -76,7 +77,7 @@ CMAKE_ARGS+=	-Denable_terminal:STRING=no
 PLIST_SUB+=	TERMINAL="@comment "
 .endif
 
-.if defined(WITH_WEBLETS)
+.if ${PORT_OPTIONS:MWEBLETS}
 LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 CMAKE_ARGS+=	-Denable_weblets:STRING=yes
 PLIST_SUB+=	WEBLETS=""
@@ -85,7 +86,7 @@ CMAKE_ARGS+=	-Denable_weblets:STRING=no
 PLIST_SUB+=	WEBLETS="@comment "
 .endif
 
-.if defined(WITH_XFCE_INTEGRATION)
+.if ${PORT_OPTIONS:MXFCE_INTEGRATION}
 LIB_DEPENDS+=	thunar-vfs-1.5:${PORTSDIR}/x11-fm/thunar \
 		exif.12:${PORTSDIR}/graphics/libexif
 CMAKE_ARGS+=	-Denable_xfce_integration:STRING=yes
@@ -95,7 +96,7 @@ CMAKE_ARGS+=	-Denable_xfce_integration:STRING=no
 PLIST_SUB+=	XFCE_INTEGRATION="@comment "
 .endif
 
-.if defined(WITH_ALSA_MIXER)
+.if ${PORT_OPTIONS:MALSA_MIXER}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=yes

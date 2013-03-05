@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ng_mikrotik_eoip
-# Date created:				19 Dec 2011
-# Whom:					Maxim Ignatenko
-#
+# Created by: Maxim Ignatenko
 # $FreeBSD$
-#
 
 PORTNAME=	ng_mikrotik_eoip
 PORTVERSION=	1.0
@@ -16,7 +12,8 @@ COMMENT=	Netgraph node for Mikrotik EoIP tunneling
 
 LICENSE=	BSD
 
-OPTIONS=	PTABLE	"Use O(1) lookup for tunnel hooks"	OFF
+OPTIONS_DEFINE=	PTABLE	
+PTABLE_DESC=	Use O(1) lookup for tunnel hooks
 # This option enables usage of static pointer table to find needed decimal-named hook,
 # which increases memory usage for each node by 65536*sizeof(hook_p). You probably want
 # this option if you have many tunnels with single remote IP.
@@ -31,7 +28,7 @@ PLIST_SUB+=	KMODDIR=${KMODDIR} \
 IGNORE=		requires kernel source files
 .endif
 
-.if defined(WITH_PTABLE)
+.if ${PORT_OPTIONS:MPTABLE}
 MAKE_ARGS+=	NO_LINEAR_HOOK_LOOKUP=1
 .endif
 

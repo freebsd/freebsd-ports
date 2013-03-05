@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libssh
-# Date created:				12 April 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libssh
 PORTVERSION=	0.5.2
@@ -14,8 +10,9 @@ MASTER_SITES=	http://www.libssh.org/files/0.5/ \
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library implementing the SSH1 and SSH2 protocol
 
-OPTIONS=	GCRYPT	"Build with libgcrypt"		off \
-		SSH1	"Build with SSH1 support"	off
+OPTIONS_DEFINE=	GCRYPT SSH1
+GCRYPT_DESC=	Build with libgcrypt
+SSH1_DESC=	Build with SSH1 support
 
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
@@ -31,14 +28,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GCRYPT)
+.if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 CMAKE_ARGS+=	-DWITH_GCRYPT:BOOL=ON
 .else
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITH_SSH1)
+.if ${PORT_OPTIONS:MSSH1}
 CMAKE_ARGS+=	-DWITH_SSH1:BOOL=ON
 PLIST_SUB+=	SSH1=""
 .else

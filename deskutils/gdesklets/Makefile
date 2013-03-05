@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
-OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
+OPTIONS_DEFINE=	GDBM
 
 WRKSRC=		${WRKDIR}/gDesklets-${PORTVERSION}
 
@@ -31,9 +31,9 @@ MAN1=		${PORTNAME}.1
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
@@ -47,4 +47,4 @@ post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

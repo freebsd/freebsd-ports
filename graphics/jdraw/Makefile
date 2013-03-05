@@ -16,7 +16,9 @@ COMMENT=	A pixel oriented graphics editor
 NO_BUILD=	yes
 USE_JAVA=	yes
 
-OPTIONS=	PLASTIC3D "Use Plastic3DLook&Feel" on
+OPTIONS_DEFINE=		PLASTIC3D
+OPTIONS_DEFAULT=	PLASTIC3D
+PLASTIC3D_DESC=		Use Plastic3DLook&Feel
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}
@@ -29,12 +31,12 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PLASTIC3D)
+.if ${PORT_OPTIONS:MPLASTIC3D}
 PLASTIC3D=	"-Dlf=\"com.jgoodies.looks.plastic.Plastic3DLookAndFeel\""
 RUN_DEPENDS+=	${JAVAJARDIR}/looks.jar:${PORTSDIR}/devel/looks
 .endif
 JAVA_VERSION=	1.6+
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

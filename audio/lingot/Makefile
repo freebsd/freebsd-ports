@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lingot
-# Date created:		2011-10-17
-# Whom:			Bartoletti <coder@tuxfamily.org>
-#
+# Created by: Bartoletti <coder@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lingot
 PORTVERSION=	0.9.1
@@ -25,12 +21,12 @@ USE_GETTEXT=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	JACK	"Enable jack plugin" on \
-		ALSA	"Enable alsa plugin" off
+OPTIONS_DEFINE=	JACK ALSA
+OPTIONS_DEFAULT=	JACK
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-jack
@@ -38,7 +34,7 @@ CONFIGURE_ARGS+=--enable-jack
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 CONFIGURE_ARGS+=--enable-alsa

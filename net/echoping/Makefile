@@ -1,9 +1,5 @@
-# New ports collection makefile for:	echoping
-# Date created:		13 April 1997
-# Whom:			peter
-#
+# Created by: peter
 # $FreeBSD$
-#
 
 PORTNAME=	echoping
 PORTVERSION=	6.0.0
@@ -20,22 +16,19 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
-		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE}
+		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE} \
+		--enable-plugin="${PING_PLUGINS}"
 
 PING_PLUGINS=	dns random whois
 
 MAN1=		echoping.1 echoping_dns.1 echoping_random.1 echoping_whois.1
 
-OPTIONS=	LDAP "Enable LDAP plug-in" on \
-		PGSQL "Enable PostgreSQL plug-in" off
+OPTIONS_DEFINE=	LDAP PGSQL
+OPTIONS_DEFAULT=	LDAP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		Does not link on ia64 or powerpc
-.endif
-
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 MAN1+=		echoping_ldap.1
 PING_PLUGINS+=	ldap
@@ -44,7 +37,7 @@ PLIST_SUB=	WITH_LDAP=""
 PLIST_SUB=	WITH_LDAP="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 MAN1+=		echoping_postgresql.1
 PING_PLUGINS+=	postgresql
@@ -53,7 +46,11 @@ PLIST_SUB+=	WITH_PGSQL=""
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
-CONFIGURE_ARGS+=--enable-plugin="${PING_PLUGINS}"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not link on ia64 or powerpc
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'

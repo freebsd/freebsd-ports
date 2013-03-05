@@ -22,12 +22,14 @@ PLIST_FILES=	bin/sqtop
 MAN1=		sqtop.1
 
 GNU_CONFIGURE=	yes
+USE_NCURSES=	yes
 
-OPTIONS=	NCURSES	"Enable ncurses user interface"	On
+OPTIONS_DEFINE=		NCURSES
+OPTIONS_DEFAULT=	NCURSES
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NCURSES)
+.if ! ${PORT_OPTIONS:MNCURSES}
 CONFIGURE_ARGS=	--disable-ui
 .endif
 
