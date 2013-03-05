@@ -3,8 +3,9 @@
 PORTNAME=	sma
 PORTVERSION=	1.4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.klake.org/sma/dl/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program that analyses Sendmail log entries
