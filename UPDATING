@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130305:
+  AFFECTS: users of devel/py-setuptools (i.e you)
+  AUTHOR: rm@FreeBSD.org
+
+  devel/py-setuptools was replaced with devel/py-distribute. Please do
+  the following according to package manager used. py-setuptools port
+  will be removed shortly.
+
+  # portmaster -o devel/py-distribute devel/py-setuptools
+    or
+  # portupgrade -fo devel/py-distribute devel/py-setuptools
+    or
+  # pkg set -o devel/py-setuptools:devel/py-distribute
+
 20130226:
   AFFECTS: users of textproc/apache-solr
   AUTHOR: vanilla@FreeBSD.org
