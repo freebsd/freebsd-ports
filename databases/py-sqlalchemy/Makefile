@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -76,7 +77,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-ps
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	%%PYTHON_LIBDIR%%/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
