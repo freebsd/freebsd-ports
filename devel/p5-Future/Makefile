@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Future
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -20,8 +20,9 @@ TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 
 PERL_MODBUILD=	yes
 
-MAN3=		Future.3
+MAN3=		Future.3 Future::Utils.3
 
-PLIST_FILES=	%%SITE_PERL%%/Future.pm
+PLIST_FILES=	%%SITE_PERL%%/Future.pm %%SITE_PERL%%/Future/Utils.pm
+PLIST_DIRS=	%%SITE_PERL%%/Future
 
 .include <bsd.port.mk>
