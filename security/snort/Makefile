@@ -1,13 +1,8 @@
-# New ports collection makefile for:	snort
-# Date created:		Mon Aug  2 12:04:08 CEST 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snort
-PORTVERSION=	2.9.4
-PORTREVISION=	1
+PORTVERSION=	2.9.4.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -169,7 +164,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/normalize_icmp6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
 .endif
 	@${REINPLACE_CMD} -e '/^# include .PREPROC_RULE/s/# include/include/' ${WRKSRC}/etc/snort.conf
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e '/README.u2boat/d' \
 		-e '/test.*docdir.*MKDIR.*DEST/d' ${WRKSRC}/tools/u2boat/Makefile.*
@@ -197,7 +192,7 @@ post-install:
 		${CP} -p ${CONFIG_DIR}/${f}-sample ${CONFIG_DIR}/${f} ; \
 	fi
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
