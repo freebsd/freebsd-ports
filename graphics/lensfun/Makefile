@@ -1,15 +1,10 @@
-# New ports collection makefile for:	LensFun
-# Date created:				Mon 25 May 2009 04:45:47 MSD
-# Whom:					Denis Barov <dindin@dindin.ru>
-#
+# Created by: Denis Barov <dindin@dindin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	lensfun
-PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTVERSION=	0.2.7
 CATEGORIES=	graphics
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	SF/lensfun.berlios
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortions
@@ -23,6 +18,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
+
 MAKEFILE=	GNUmakefile
 LIBVERSION=	2
 
