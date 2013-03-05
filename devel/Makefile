@@ -4136,6 +4136,7 @@
     SUBDIR += rubygem-thor
     SUBDIR += rubygem-thrift
     SUBDIR += rubygem-tilt
+    SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
