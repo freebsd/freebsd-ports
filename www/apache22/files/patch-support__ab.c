@@ -1,5 +1,17 @@
 --- ./support/ab.c.orig	2010-01-07 10:11:53.000000000 -0500
 +++ ./support/ab.c	2010-05-06 19:37:54.262732305 -0400
+@@ -200,9 +200,11 @@
+ #else
+ #define AB_SSL_CIPHER_CONST
+ #endif
++/* prevent build issues with openssl from ports
+ #ifdef SSL_OP_NO_TLSv1_2
+ #define HAVE_TLSV1_X
+ #endif
++*/
+ #endif
+ 
+ #include <math.h>
 @@ -221,13 +221,18 @@
  /* maximum number of requests on a time limited test */
  #define MAX_REQUESTS (INT_MAX > 50000 ? 50000 : INT_MAX)
