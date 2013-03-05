@@ -3,6 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.40.102
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -54,6 +55,10 @@ PATCH_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+post-patch:
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/Makefile.OCaml
+
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}

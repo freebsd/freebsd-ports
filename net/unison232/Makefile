@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -15,14 +15,14 @@ MAINTAINER=	mandree@FreeBSD.org
 # Implicit approval for port changes granted to Guido Falsi <madpilot@FreeBSD.org>
 COMMENT=	User-level file synchronization tool
 
+LICENSE=	GPLv3
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 
 MAKE_JOBS_UNSAFE=	yes
-
-LICENSE=	GPLv3
 
 OPTIONS_DEFINE= DOCS X11
 OPTIONS_DEFAULT=	DOCS X11
@@ -56,6 +56,10 @@ PATCH_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+post-patch:
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+		${WRKSRC}/Makefile.OCaml
+
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}

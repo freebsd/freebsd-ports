@@ -1,26 +1,22 @@
-# New ports collection makefile for:   monotone-viz
-# Date created:        2 July 2006
-# Whom:            Tarasov Alexey <master@preved.cn>
-#
+# Created by: Tarasov Alexey <master@preved.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	monotone-viz
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Visual interface for Monotone VCS with revision graphs
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		mtn:${PORTSDIR}/devel/monotone \
 		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 USE_OCAML=	yes
