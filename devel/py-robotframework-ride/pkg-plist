@@ -3,6 +3,7 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/robotide/__init__.py
 %%PYTHON_SITELIBDIR%%/robotide/__init__.pyc
@@ -172,6 +173,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/editor/popupwindow.py
 %%PYTHON_SITELIBDIR%%/robotide/editor/popupwindow.pyc
 %%PYTHON_SITELIBDIR%%/robotide/editor/popupwindow.pyo
+%%PYTHON_SITELIBDIR%%/robotide/editor/robotframeworklexer.py
+%%PYTHON_SITELIBDIR%%/robotide/editor/robotframeworklexer.pyc
+%%PYTHON_SITELIBDIR%%/robotide/editor/robotframeworklexer.pyo
 %%PYTHON_SITELIBDIR%%/robotide/editor/settingeditors.py
 %%PYTHON_SITELIBDIR%%/robotide/editor/settingeditors.pyc
 %%PYTHON_SITELIBDIR%%/robotide/editor/settingeditors.pyo
@@ -902,6 +906,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/ui/searchdots.py
 %%PYTHON_SITELIBDIR%%/robotide/ui/searchdots.pyc
 %%PYTHON_SITELIBDIR%%/robotide/ui/searchdots.pyo
+%%PYTHON_SITELIBDIR%%/robotide/ui/tagdialogs.py
+%%PYTHON_SITELIBDIR%%/robotide/ui/tagdialogs.pyc
+%%PYTHON_SITELIBDIR%%/robotide/ui/tagdialogs.pyo
 %%PYTHON_SITELIBDIR%%/robotide/ui/tree.py
 %%PYTHON_SITELIBDIR%%/robotide/ui/tree.pyc
 %%PYTHON_SITELIBDIR%%/robotide/ui/tree.pyo
@@ -953,6 +960,8 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/widgets/button.pyc
 %%PYTHON_SITELIBDIR%%/robotide/widgets/button.pyo
 %%PYTHON_SITELIBDIR%%/robotide/widgets/cog.png
+%%PYTHON_SITELIBDIR%%/robotide/widgets/control_fastforward.png
+%%PYTHON_SITELIBDIR%%/robotide/widgets/control_pause.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/control_play.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/control_stop.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/database_refresh.png
@@ -996,6 +1005,7 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/widgets/sizers.py
 %%PYTHON_SITELIBDIR%%/robotide/widgets/sizers.pyc
 %%PYTHON_SITELIBDIR%%/robotide/widgets/sizers.pyo
+%%PYTHON_SITELIBDIR%%/robotide/widgets/switch.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/test_search.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/test_search_button.png
 %%PYTHON_SITELIBDIR%%/robotide/widgets/text.py
