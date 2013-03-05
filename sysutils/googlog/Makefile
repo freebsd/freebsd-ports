@@ -10,8 +10,10 @@ DISTNAME=	GoogLog-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	GoogLog is a simple tool to search inside your syslog files
+COMMENT=	Simple tool to search inside your syslog files
 
+BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
@@ -19,10 +21,6 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
 
 do-install:
 	@${MKDIR} ${WWWDIR}
