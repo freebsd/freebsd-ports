@@ -46,7 +46,7 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-.if ! ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${DOCSDIR})
 	@${MKDIR} ${DOCSDIR}/html
