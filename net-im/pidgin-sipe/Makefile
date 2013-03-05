@@ -1,9 +1,5 @@
-# New ports collection makefile for: pidgin-sipe
-# Date created:  7 May 2009
-# Whom:          John Prather
-#
+# Created by: John Prather
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-sipe
 PORTVERSION=	1.13.1
@@ -28,19 +24,20 @@ PORTDOCS=	AUTHORS ChangeLog COPYING HACKING INSTALL NEWS README TODO VERSION
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
 
-OPTIONS=	OSC2005		"Message timeout for OCS2005"		off \
-			KRB5		"With Kerberos5"		off
+OPTIONS_DEFINE=		OCS2005 KRB5 DOCS NLS
+OSC2005_DESC=		Message timeout for OCS2005
+KRB5_DESC=		With Kerberos5
 
 CONFIGURE_ARGS+=	--enable-purple \
 			--disable-telepathy
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OSC2005)
+.if ${PORT_OPTIONS:MOSC2005}
 CONFIGURE_ARGS+=	--enable-ocs2005-message-hack
 .endif
 
-.if defined(WITHOUT_KRB5)
+.if ${PORT_OPTIONS:MKRB5}
 CONFIGURE_ARGS+=	--without-krb5
 .endif
 
@@ -48,7 +45,7 @@ CONFIGURE_ENV+=	LIBS="${LIBS}" \
 		COM_ERR_CFLAGS="-I/usr/include" \
 		COM_ERR_LIBS="-L/usr/lib -lcom_err"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
@@ -56,7 +53,7 @@ post-install:
 .endfor
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else

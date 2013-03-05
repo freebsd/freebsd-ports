@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	tsclient
-# Date created:				01 Mar 2003
-# Whom:					Koop Mast <einekoai@chello.nl>
-#
+# Created by: Koop Mast <einekoai@chello.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150
@@ -28,23 +24,24 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		tsclient.1
 PORTDOCS=	COPYING NEWS README
 
-OPTIONS=	GNOME		"Build with gnome support" on \
-		TIGHTVNC	"vncviewer support" off \
-		XNEST		"X via Xnest support (experimental)" off
+OPTIONS_DEFINE= GNOME TIGHTVNC XNEST DOCS
+OPTIONS_DEFAULT=	GNOME
+TIGHTVNC_DESC=	vncviewer support
+XNEST_DESC=	X via Xnest support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomeprefix gnomehack gnomepanel libgnomeui 
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
-.if defined(WITH_TIGHTVNC)
+.if ${PORT_OPTIONS:MTIGHTVNC}
 RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
 .endif
 
-.if defined(WITH_XNEST)
+.if ${PORT_OPTIONS:MXNEST}
 RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
 .endif
 
@@ -57,7 +54,7 @@ post-patch:
 post-install:
 	@${LN} -sf ${PREFIX}/share/pixmaps/tsclient/tsclient.png \
 		${PREFIX}/share/pixmaps/tsclient.png
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

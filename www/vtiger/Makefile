@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vtiger
-# Date created:			Fri Mar 11 20:59:31 EST 2005
-# Whom:				Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vtiger
 PORTVERSION=	5.0.3
@@ -24,17 +20,17 @@ IGNORE_WITH_PHP=	4
 
 WRKSRC=		${WRKDIR}/vtigercrm
 
-OPTIONS=	MYSQLSERVER     "Use MySQL-Server on localhost" OFF
+OPTIONS_DEFINE=		MYSQL
 
 .include <bsd.port.pre.mk>
 
 CONFLICTS=	vtiger-4.*
 
-.if !defined(WITHOUT_MYSQLSERVER)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Release_Notes.html DEPENDENCIES.txt README.txt
 .endif
 
@@ -78,7 +74,7 @@ post-install:
 	@${CHMOD} u+w ${WWWDIR}/${FILE}
 . endif
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -115,4 +111,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC} -type d \
 		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bacula-web
-# Date created:        28 April 2006
-# Whom:                Dan Langille <dan@langille.org>
-#
+# Created by: Dan Langille <dan@langille.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bacula-web
 DISTVERSION=	1.38.9
@@ -21,13 +17,14 @@ NO_BUILD=	yes
 USE_PHP=	gd
 WANT_PHP_WEB=	yes
 
-OPTIONS=	POSTGRESQL "Use PostgreSQL database instead of MySQL" on
+OPTIONS_DEFINE=		PGSQL
+OPTIONS_DEFAULT=	PGSQL
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 SUB_LIST+=		REQ_PGSQL=postgresql
@@ -57,4 +54,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

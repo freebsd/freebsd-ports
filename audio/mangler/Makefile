@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mangler
-# Date created:		2010-10-18
-# Whom:			Janik Galasso <janik@hikarihq.com>
-#
+# Created by: Janik Galasso <janik@hikarihq.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mangler
 PORTVERSION=	1.2.3
@@ -30,21 +26,17 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	PULSEAUDIO "Adds support for the PulseAudio sound server" off
+OPTIONS_DEFINE=	PULSEAUDIO
 
 MAN1=   mangler.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not build
-.endif
-
-.if !defined(WITHOUT_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--with-pulseaudio
 .else
 CONFIGURE_ARGS+=--without-pulseaudio
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

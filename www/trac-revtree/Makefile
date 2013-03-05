@@ -19,8 +19,10 @@ COMMENT=	Graphical representation of an SVN repository
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac \
 		subversion>=0:${PORTSDIR}/devel/subversion
 
-OPTIONS=	MINFOENH "Enable mergeinfo display enhancer" On \
-		LOGENH "Enable log message display enhancer" Off
+OPTIONS_DEFINE=		MINFOENH LOGENH
+OPTIONS_DEFAULT=	MINFOENH
+MINFOENH_DESC=		Enable mergeinfo display enhancer
+LOGENH_DESC=		Enable log message display enhancer
 
 USE_ZIP=	yes
 
@@ -32,9 +34,9 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION}dev
 PLIST_SUB+=	EGGVERSION="${PORTVERSION}dev" PYTHONVERSION=${_PYTHON_VERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MINFOENH)
+.if ${PORT_OPTIONS:MMINFOENH}
 MINFOENH_VERSION=	0.2.1
 PLIST_SUB+=	MINFOENH_EGGVERSION="${MINFOENH_VERSION}dev"
 ENH1=""
@@ -43,7 +45,7 @@ ENH1="@comment "
 .endif
 PLIST_SUB+=	ENH1=${ENH1}
 
-.if defined(WITH_LOGENH)
+.if ${PORT_OPTIONS:MLOGENH}
 LOGENH_VERSION=		0.2.0
 PLIST_SUB+=	LOGENH_EGGVERSION="${LOGENH_VERSION}dev"
 ENH2=""
@@ -54,14 +56,14 @@ PLIST_SUB+=	ENH2=${ENH2}
 
 post-install:
 # Install the selected enhancer plugins
-.if defined(WITH_MINFOENH)
+.if ${PORT_OPTIONS:MMINFOENH}
 	@( cd ${WRKSRC}/enhancers/mergeinfoenhancer ; \
 		${PYEASYINSTALL_CMD} . )
 .endif
-.if defined(WITH_LOGENH)
+.if ${PORT_OPTIONS:MLOGENH}
 	@( cd ${WRKSRC}/enhancers/logenhancer ; \
 		${PYEASYINSTALL_CMD} . )
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

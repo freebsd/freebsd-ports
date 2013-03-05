@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ushare
-# Date created:        11 December 2006
-# Whom:                Volker Theile <votdev@gmx.de>
-#
+# Created by: Volker Theile <votdev@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ushare
 PORTVERSION=	1.1a
@@ -27,11 +23,12 @@ CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}
 
 MAN1=		${PORTNAME}.1
 
-OPTIONS=	LIBDLNA "Enable DLNA (PS3) support" off
+OPTION_DEFINE=	LIBDLNA
+LIBDLNA_DESC=	DLNA (PS3) support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LIBDLNA)
+.if ${PORT_OPTIONS:MLIBDLNA}
 LIB_DEPENDS+=	dlna:${PORTSDIR}/devel/libdlna
 CONFIGURE_ARGS=	--enable-dlna
 .endif

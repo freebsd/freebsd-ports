@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grdc-applet
-# Date created:				12 April 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	remmina
 PORTVERSION=	0.8.1
@@ -18,7 +14,7 @@ COMMENT=	A GNOME Desktop applet for Remmina
 
 RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina
 
-OPTIONS=	AVAHI	"Build with Avahi support"	off
+OPTIONS_DEFINE=	AVAHI
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
@@ -30,20 +26,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-ui.0:${PORTSDIR}/net/avahi-gtk
 .else
 CONFIGURE_ARGS+=--disable-avahi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kash3
-# Date created:		2006-02-26
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	kash3
 PORTVERSION=	2008.07.31
@@ -20,7 +16,9 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 NO_CDROM=	not for commercial distribution or use
 NO_BUILD=	yes
 
-OPTIONS=	OPTLIB	"Install optional functions library" on
+OPTIONS_DEFINE=		OPTLIB DOCS
+OPTIONS_DEFAULT=	OPTLIB
+OPTLIB_DESC=		Install optional functions library
 
 PLIST_SUB=	OPTLIB=${OPTLIB}
 
@@ -35,16 +33,16 @@ FIND_DATA=	-type f -mindepth 1 -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 FIND_DIRS=	-type d	-exec ${MKDIR} ${DATADIR}/{} \;
 FIND_HERE=	data gap lib
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 FIND_HERE+=	html pdf
 .endif
 
 LN_OPTS=	-sf
 ELFTYPE=	Linux
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_OPTLIB)
+.if ${PORT_OPTIONS:MOPTLIB}
 DISTFILES+=	${PORTNAME:U}-lib-archindep-${PORTVERSION:S|.|-|g}.tar.bz2
 OPTLIB=
 .else
@@ -53,7 +51,7 @@ OPTLIB=	"@comment "
 
 do-install:
 	${MKDIR} ${DATADIR};
-.if defined(WITH_OPTLIB)
+.if ${PORT_OPTIONS:MOPTLIB}
 	cd ${WRKDIR}/${PORTNAME:U}-lib-archindep-${PORTVERSION:S|.|-|g}; \
 	${COPYTREE_SHARE} . ${DATADIR}
 .endif
@@ -63,9 +61,9 @@ do-install:
 	${BRANDELF} -t ${ELFTYPE} ${PORTNAME}; \
 	${INSTALL_PROGRAM} ${PORTNAME} ${DATADIR}/${PORTNAME};
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}; \
 	${MV} ${DATADIR}/html ${DATADIR}/pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

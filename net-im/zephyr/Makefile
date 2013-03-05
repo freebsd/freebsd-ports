@@ -1,9 +1,5 @@
-# New ports collection makefile for: zephyr
-# Date created: 	12 November 2009
-# Whom: 	Ben Kaduk <kaduk@mit.edu>
-#
+# Created by: Ben Kaduk <kaduk@mit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	zephyr
 DISTVERSION=	3.0.1
@@ -25,11 +21,11 @@ USE_ICONV=	yes
 MAN1=	zephyr.1 zaway.1 zctl.1 zleave.1 zlocate.1 znol.1 zwrite.1 zwgc.1
 MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8
 
-OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	off
+OPTIONS_DEFINE=		HEIMDAL
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_HEIMDAL)
+.if ${PORT_OPTIONS:MHEIMDAL}
 BROKEN=		bad depobj
 LIB_DEPENDS+=	ss.1:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)

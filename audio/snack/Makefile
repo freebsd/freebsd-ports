@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	snack
-# Date created:			Nov 24, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	snack
 PORTVERSION=	2.2.10
@@ -20,17 +15,18 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 
 USE_TK=		84+
 
-OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
+OPTIONS_DEFINE=	VORBIS DOCS
 
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
 PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 
-.include <bsd.port.pre.mk>
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
@@ -38,7 +34,7 @@ MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
 		-I${LOCALBASE}/include
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
@@ -49,9 +45,9 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

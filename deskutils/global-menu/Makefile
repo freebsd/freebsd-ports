@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gnome-globalmenu
-# Date created:        27 February 2009
-# Whom:                Gustavo Perez
-#
+# Created by: Gustavo Perez
 # $FreeBSD$
-#
 
 PORTNAME=		gnome-globalmenu
 PORTVERSION=		0.7.10
@@ -27,11 +23,12 @@ INSTALLS_ICONS=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=		XFCE4_PANEL "Xfce panel applet" Off
+OPTIONS_DEFINE=		XFCE4_PANEL NLS
+XFCE4_PANEL_DESC=	Xfce panel applet
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_XFCE4_PANEL)
+.if ${PORT_OPTIONS:MXFCE4_PANEL}
 CONFIGURE_ARGS+=	--without-xfce4-panel
 PLIST_SUB+=		XFCE4_PANEL="@comment "
 .else
@@ -40,7 +37,7 @@ CONFIGURE_ARGS+=	--with-xfce4-panel
 PLIST_SUB+=		XFCE4_PANEL=""
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else

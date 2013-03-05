@@ -1,9 +1,5 @@
-# New ports collection makefile for: wyrd
-# Date created:                      Apr 5 2006
-# Whom:                              Russell A. Jackson <raj@csub.edu>
-#
+# Created by: Russell A. Jackson <raj@csub.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	wyrd
 PORTVERSION=	1.4.5
@@ -18,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/remind:${PORTSDIR}/deskutils/remind
 
 LICENSE=	GPLv2
 
-OPTIONS=	UTF8 "Enable UTF-8 support" off
+OPTIONS_DEFINE=	UTF8
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -27,9 +23,9 @@ USE_NCURSES=	yes
 MAN1=	wyrd.1
 MAN5=	wyrdrc.5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_UTF8)
+.if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=--enable-utf8
 .else
 CONFIGURE_ARGS+=--disable-utf8
@@ -41,10 +37,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/wyrd.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/wyrdrc.5 ${MAN5PREFIX}/man/man5
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

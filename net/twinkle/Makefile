@@ -1,4 +1,4 @@
-# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	twinkle
@@ -28,20 +28,20 @@ USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_QT_VER=	3
 
-OPTIONS=	KDE	"Compile with kde features"	off
+OPTIONS_DEFINE=	KDE
+KDE_DESC=	Compile with kde3 features
 
-CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE}
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}"
 MAKE_ENV=	QTDIR=${QT_PREFIX}
 SUB_FILES=	pkg-message
 
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KDE)
+.if ${PORT_OPTIONS:MKDE}
 USE_KDELIBS_VER=3
-.include <${PORTSDIR}/Mk/bsd.kde.mk>
 .else
 CONFIGURE_ARGS+=--without-kde
 .endif
@@ -58,4 +58,4 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

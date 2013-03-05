@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trafshow
-# Date created:         25 September 1996
-# Whom:                 igor@zynaps.ru
-#
+# Created by: igor@zynaps.ru
 # $FreeBSD$
-#
 
 PORTNAME=	trafshow
 PORTVERSION=	5.2.3
@@ -23,9 +19,9 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
-OPTIONS=        IPV6           "Build with IPv6 support" on
+OPTIONS_DEFINE=		IPV6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE||' ${WRKSRC}/configure
@@ -35,7 +31,7 @@ post-patch:
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-800074+
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CFLAGS+=	-DINET6
 .endif
 
@@ -47,4 +43,4 @@ do-install:
 		${CP} -p ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

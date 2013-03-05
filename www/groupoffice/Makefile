@@ -1,7 +1,4 @@
-# New ports collection makefile for:	www/groupoffice
-# Date created:							16 February 2007
-# Whom:					Aron Schlesinger <as@bsdgroup.de>
-#
+# Created by: Aron Schlesinger <as@bsdgroup.de>
 # $FreeBSD$
 
 PORTNAME=	groupoffice
@@ -23,26 +20,28 @@ WWWDIR?=	${PREFIX}/www/${PORTNAME}3
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	IMAP		"IMAP support" on \
-		GD		"Gallery support (GD)" on \
-		CALENDAR	"Calendar holiday support" on \
-		WBXML		"Synchronization support" off
+OPTIONS_DEFINE=	IMAP GD CALENDAR WBXML
+OPTIONS_DEFAULT=	IMAP GD CALENDAR
+CALENDAR_DESC=	Calendar holiday support
+IMAP_DESC=	IMAP support
+GD_DESC=	Gallery support (GD)
+WBXML_DESC=	Synchronization Support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_IMAP)
+.if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap iconv
 .endif
 
-.if !defined(WITHOUT_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 
-.if !defined(WITHOUT_CALENDAR)
+.if ${PORT_OPTIONS:MCALENDAR}
 USE_PHP+=	calendar
 .endif
 
-.if !defined(WITHOUT_WBXML)
+.if ${PORT_OPTIONS:MWBXML}
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 .endif
 
@@ -61,4 +60,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC}/${file} -type d \
 	    | ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

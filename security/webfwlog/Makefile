@@ -1,9 +1,5 @@
-# New ports collection makefile for:   webfwlog
-# Date created:        21 November 2004
-# Whom:                Bob Hockney <zeus@ix.netcom.com>
-#
+# Created by: Bob Hockney <zeus@ix.netcom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webfwlog
 PORTVERSION=	0.94
@@ -17,8 +13,8 @@ PATCH_SITES=	http://devel.webfwlog.net/download/patches/
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer
 
-OPTIONS=	MYSQL "Include MySQL Support" on \
-		PGSQL "Include PostgreSQL Support" off
+OPTIONS_DEFINE=		MYSQL PGSQL EXAMPLES
+OPTIONS_DEFAULTS=	MYSQL
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-html-doc-root=${PREFIX}
@@ -36,13 +32,13 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql
@@ -61,7 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${WWWDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/mysql
 	@${MKDIR} ${DOCSDIR}/pgsql
 	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/mysql/)
@@ -71,7 +67,7 @@ post-install:
 .endfor
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
