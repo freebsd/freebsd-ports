@@ -2,6 +2,7 @@
 
 PORTNAME=	reviewboard
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/ReviewBoard/${PORTVERSION:R}/
 DISTNAME=	ReviewBoard-${PORTVERSION}
@@ -11,7 +12,7 @@ COMMENT=	Web-based code review tool
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django14 \
 		${PYTHON_PKGNAMEPREFIX}django-evolution>=0.6.7:${PORTSDIR}/www/py-django-evolution \
 		${PYTHON_PKGNAMEPREFIX}django-pipeline>=1.2.22:${PORTSDIR}/www/py-django-pipeline \
 		${PYTHON_PKGNAMEPREFIX}djblets>=0.7.9:${PORTSDIR}/www/py-djblets \
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django 
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}recaptcha>0:${PORTSDIR}/www/py-recaptcha
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django14 \
 		${PYTHON_PKGNAMEPREFIX}django-evolution>=0.6.7:${PORTSDIR}/www/py-django-evolution \
 		${PYTHON_PKGNAMEPREFIX}djblets>=0.7.7:${PORTSDIR}/www/py-djblets \
 		${PYTHON_PKGNAMEPREFIX}jsmin>0:${PORTSDIR}/devel/py-jsmin
