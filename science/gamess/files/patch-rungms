@@ -1,114 +1,21 @@
---- rungms.orig	2009-01-17 03:17:33.000000000 +0900
-+++ rungms	2009-05-08 14:27:35.000000000 +0900
+--- rungms	2013-03-05 17:53:14.000000000 +0900
++++ rungms	2013-03-05 17:53:45.000000000 +0900
 @@ -1,4 +1,4 @@
 -#!/bin/csh
-+#!/bin/csh -f
++#!/bin/csh -f 
  #
- #  last update = 6 January 2009
+ #  last update = 26 October 2012
  #
-@@ -55,7 +55,13 @@
- #       of using LoadLeveler via a "llgms" front end in ~/gamess/misc.
+@@ -60,9 +60,9 @@
+ #       See also a very old LoadLeveler "ll-gms" for some IBM systems.
  #
  set TARGET=sockets
 -set SCR=/scr/$USER
+-set USERSCR=~$USER/scr
+-set GMSPATH=/u1/mike/gamess
 +set SCR=.
-+if ($#argv == 0 ) then
-+        echo "Usage: gamess <input file>"
-+       exit
-+endif
-+set GMSPATH=%%PREFIX%%/bin/gms
-+
++set USERSCR=.
++set GMSPATH=%%PREFIX%%/bin/gms/
  #
  set JOB=$1      # name of the input file xxx.inp, give only the xxx part
  set VERNO=$2    # revision number of the executable created by 'lked' step
-@@ -67,36 +73,29 @@
- #
- #  ---- the top third of the script is input and other file assignments ----
- #
--echo ----- GAMESS execution script -----
-+#echo ----- GAMESS execution script -----
- set master=`hostname`
--echo This job is running on host $master
--echo under operating system `uname` at `date`
--echo "Available scratch disk space (Kbyte units) at beginning of the job is"
--df -k $SCR
-+#echo This job is running on host $master
-+#echo under operating system `uname` at `date`
-+#echo "Available scratch disk space (Kbyte units) at beginning of the job is"
-+#df -k $SCR
- 
- #        this added as experiment, February 2007
- #        its intent is to detect large arrays allocated off the stack
--limit stacksize 8192
-+#limit stacksize 8192
-+
-+set JOBORG=$JOB
-+set JOB=$JOB:r      # strip off possible .inp
-+
-+if (-e $JOBORG) then
-+   cp  $JOBORG $SCR/$JOB.F05
-+else	
-+   echo "Input file $JOBORG does not exist.  Please fix and resubmit."
-+   exit 4
-+endif
- 
- #  Grab a copy of the input file.
- #  In the case of EXAMnn jobs, this file might be in the "tests" subdirectory.
--if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
--if (-e $JOB.inp) then
--   set echo
--   cp  $JOB.inp  $SCR/$JOB.F05
--   unset echo
--else
--   if (-e tests/$JOB.inp) then
--      set echo
--      cp  tests/$JOB.inp  $SCR/$JOB.F05
--      unset echo
--   else
--      echo "Input file $JOB.inp does not exist."
--      echo "This job expected the input file to be in directory `pwd`"
--      echo "Please fix your file name problem, and resubmit."
--      exit 4
--   endif
--endif
- 
- #  file assignments.
- #
-@@ -120,19 +119,20 @@
- #  d. see NEO plug-in code's documentation regarding the NUCBAS file.
- #         Note that you must edit a+b, but will probably skip c+d.
- #
--set echo
-+# set echo
- #                        ASCII input files (see explanation above)
--setenv ERICFMT ~mike/gamess/ericfmt.dat
--setenv MCPPATH ~mike/gamess/mcpdata
-+setenv  ERICFMT %%PREFIX%%/share/gamess/ericfmt.dat
-+setenv  MCPPATH %%PREFIX%%/share/gamess/mcpdata
- setenv  EXTBAS /dev/null
- setenv  NUCBAS /dev/null
- #
--setenv  MAKEFP ~$USER/scr/$JOB.efp
--setenv   GAMMA ~$USER/scr/$JOB.gamma
--setenv TRAJECT ~$USER/scr/$JOB.trj
--setenv RESTART ~$USER/scr/$JOB.rst
-+setenv  MAKEFP $SCR/scr/$JOB.efp
-+setenv   GAMMA $SCR/scr/$JOB.gamma
-+setenv TRAJECT $SCR/scr/$JOB.trj
-+setenv RESTART $SCR/scr/$JOB.rst
-+setenv IRCDATA $SCR/$JOB.irc
- setenv   INPUT $SCR/$JOB.F05
--setenv   PUNCH ~$USER/scr/$JOB.dat
-+setenv   PUNCH $SCR/$JOB.dat
- setenv  AOINTS $SCR/$JOB.F08
- setenv  MOINTS $SCR/$JOB.F09
- setenv DICTNRY $SCR/$JOB.F10
-@@ -308,7 +308,7 @@
-     if (null$4 == null) set ELGNAME=ELGFILE
-     set echo
-     setenv AOINTS   $SCR/$ELGNAME.F08
--    setenv ELGDOS   ~$USER/scr/$JOB.ldos
-+    setenv ELGDOS   $SCR/$JOB.ldos
-     setenv ELGDAT   $SCR/$ELGNAME.F71
-     setenv ELGPAR   $SCR/$ELGNAME.F72
-     setenv ELGCUT   $SCR/$ELGNAME.F74

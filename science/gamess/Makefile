@@ -7,7 +7,6 @@
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
-PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current
@@ -18,7 +17,7 @@ COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gamess
-SNAPDATE=	20090112.3
+SNAPDATE=	20120501.2
 
 USE_FORTRAN=   yes
 
@@ -55,8 +54,6 @@ BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
 
-MAKE_ENV+=	LANG="C"
-
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
 CFLAGS+=      -pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
@@ -88,18 +85,31 @@ FORTRAN=	gfortran
 .endif
 
 pre-build:
+	${CP} ${FILESDIR}/install.info ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's+%%PREFIX%%+${PREFIX}+g' ${WRKSRC}/gms-files.csh
 .if ${ARCH} == "amd64"
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-amd64+g' ${WRKSRC}/comp
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-amd64+g' ${WRKSRC}/compall
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-amd64+g' ${WRKSRC}/ddi/compddi
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-amd64+g' ${WRKSRC}/lked
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd64+g' ${WRKSRC}/comp
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd64+g' ${WRKSRC}/compall
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd64+g' ${WRKSRC}/ddi/compddi
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd64+g' ${WRKSRC}/lked
+	@${REINPLACE_CMD} -e 's+%%GMS_TARGET%%+freebsd64+g' ${WRKSRC}/install.info
 .elif ${ARCH} == "i386"
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/comp
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/compall
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/ddi/compddi
-	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/lked
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd32+g' ${WRKSRC}/comp
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd32+g' ${WRKSRC}/compall
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd32+g' ${WRKSRC}/ddi/compddi
+	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd32+g' ${WRKSRC}/lked
+	@${REINPLACE_CMD} -e 's+%%GMS_TARGET%%+freebsd32+g' ${WRKSRC}/install.info
 .endif
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
+	@${REINPLACE_CMD} -e 's+%%GMS_PATH%%+${WRKSRC}+g ; \
+			     s+%%GMS_BUILD_DIR%%+${WRKSRC}+g ; \
+				s+%%GMS_FORTRAN%%+${FORTRAN}+g ; \
+				s+%%FC%%+${FC}+g ; \
+				s+%%GMS_GFORTRAN_VERNO%%+${GCC_DEFAULT_VERSION}+g ; \
+				s+%%GMS_DDI_COMM%%+sockets+g ; \
+				s+%%GMS_MATHLIB%%+none+g ; \
+				s+%%GMS_MATHLIB_PATH%%+${LOCALBASE}/lib+g' ${WRKSRC}/install.info
+	${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
 			      s+%%LDFLAGS%%+${LDFLAGS}+g ; \
 			      s+%%LOCALBASE%%+${LOCALBASE}+g ; \
 			      s+%%LIBSVM%%+${LIBSVM}+g ; \
@@ -107,26 +117,26 @@ pre-build:
 			      s+%%BLAS%%+${BLAS}+g ; \
 			      s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
 			 ${WRKSRC}/lked
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
-			      s+%%FFLAGS%%+${FFLAGS}+g ; \
-			      s+%%FORTRAN%%+${FORTRAN}+g' \
+	${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
+			      s+%%FFLAGS%%+${FFLAGS}+g' \
 			 ${WRKSRC}/comp
-	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g' \
+	${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g' \
 			 ${WRKSRC}/compall
-	@${REINPLACE_CMD} -e 's+%%PREFIX%%+${PREFIX}+g' \
+	${REINPLACE_CMD} -e 's+%%PREFIX%%+${PREFIX}+g' \
 			 ${WRKSRC}/rungms
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g ; \
+	${REINPLACE_CMD} -e  's+%%FC%%+${FC}+g ; \
+		   	      s+%%GMS_FORTRAN%%+${FORTRAN}+g ; \
+			      s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g ; \
 			      s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g ; \
 			      s+%%UNDERSCORES%%+${UNDERSCORES}+g ; \
-			      s+%%FORTRAN%%+${FORTRAN}+g ; \
 			      s+%%CC%%+${CC}+g' \
 			 ${WRKSRC}/ddi/compddi
 
-	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/Makefile.tools ${WRKSRC}/tools/Makefile
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
+	${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
 			      s+%%FFLAGS%%+${FFLAGS}+g' \
 		${WRKSRC}/tools/Makefile
+
 do-build:
 	(cd ${WRKSRC}; ${GMAKE})
 
@@ -138,12 +148,21 @@ do-install:
 	${MKDIR} ${PREFIX}/share/examples/gamess
 	${INSTALL_SCRIPT}  ${WRKDIR}/gamess/rungms		${PREFIX}/bin/gamess
 	${CHMOD} 555 ${PREFIX}/bin/gamess
+	${INSTALL_SCRIPT} ${WRKDIR}/gamess/gms-files.csh          ${PREFIX}/bin/gms
 	${INSTALL_PROGRAM} ${WRKDIR}/gamess/gamess.00.x          ${PREFIX}/bin/gms
 	${INSTALL_PROGRAM} ${WRKDIR}/gamess/ddi/ddikick.x            ${PREFIX}/bin/gms
 	${INSTALL_DATA}    ${WRKDIR}/gamess/*.DOC                ${PREFIX}/share/doc/gamess/
-	${INSTALL_DATA}    ${WRKDIR}/gamess/tests/*.inp          ${PREFIX}/share/examples/gamess/
-	${INSTALL_DATA}    ${WRKDIR}/gamess/ericfmt.dat          ${PREFIX}/share/gamess/
-	${INSTALL_DATA}    ${WRKDIR}/gamess/mcpdata/*            ${PREFIX}/share/gamess/mcpdata/
+	${INSTALL_DATA}    ${WRKDIR}/gamess/tests/standard/*.inp          ${PREFIX}/share/examples/gamess/
+	${MKDIR} ${PREFIX}/share/gamess/auxdata
+	${MKDIR} ${PREFIX}/share/gamess/auxdata/BASES
+	${MKDIR} ${PREFIX}/share/gamess/auxdata/EFP
+	${MKDIR} ${PREFIX}/share/gamess/auxdata/MCP
+	${MKDIR} ${PREFIX}/share/gamess/auxdata/QUANPOL
+	${INSTALL_DATA}    ${WRKDIR}/gamess/auxdata/ericfmt.dat	${PREFIX}/share/gamess/auxdata/
+	${INSTALL_DATA}    ${WRKDIR}/gamess/auxdata/BASES/*	${PREFIX}/share/gamess/auxdata/BASES
+	${INSTALL_DATA}    ${WRKDIR}/gamess/auxdata/EFP/*	${PREFIX}/share/gamess/auxdata/EFP
+	${INSTALL_DATA}    ${WRKDIR}/gamess/auxdata/MCP/*	${PREFIX}/share/gamess/auxdata/MCP
+	${INSTALL_DATA}    ${WRKDIR}/gamess/auxdata/QUANPOL/*	${PREFIX}/share/gamess/auxdata/QUANPOL
 	${INSTALL_DATA}    ${WRKDIR}/gamess/ddi/readme.ddi       ${PREFIX}/share/doc/gamess/
 
 .include <bsd.port.post.mk>

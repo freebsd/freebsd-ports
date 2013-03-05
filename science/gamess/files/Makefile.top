@@ -2,7 +2,7 @@
 all: gamess_exe
 
 gamess_exe: 
-	(cd tools ; make )
+	(cd tools ; ${MAKE} )
 	(cd ddi ; ./compddi )
 	./compall
 	csh lked
