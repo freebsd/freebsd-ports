@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmusicbrowser
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.10
 CATEGORIES=	audio
 MASTER_SITES=	http://gmusicbrowser.org/download/
 
@@ -14,12 +13,13 @@ RUN_DEPENDS=	p5-Gtk2>=1.0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
 
-MAN1=	gmusicbrowser.1
+MAN1=		gmusicbrowser.1
 PORTDOCS=	AUTHORS COPYING README NEWS INSTALL layout_doc.html
 PORTDATA=	*
 
-OPTIONS_DEFINE=	GSTREAMER MPLAYER DBUS WEBKIT NLS
-OPTIONS_DEFAULT=	MPLAYER
+OPTIONS_DEFINE=	GSTREAMER MPLAYER DBUS WEBKIT NLS LIBNOTIFY
+OPTIONS_DEFAULT=MPLAYER
+LIBNOTIFY_DESC=	Desktop notification
 
 WEBKIT_DESC=	Enable embedded web browser
 
@@ -39,6 +39,10 @@ RUN_DEPENDS+=	p5-Net-DBus>=1.0:${PORTSDIR}/devel/p5-Net-DBus
 
 .if ${PORT_OPTIONS:MWEBKIT}
 RUN_DEPENDS+=	p5-Gtk2-WebKit>=0:${PORTSDIR}/www/p5-Gtk2-WebKit
+.endif
+
+.if ${PORT_OPTIONS:MLIBNOTIFY}
+RUN_DEPENDS+=	pt-Gtk2-Notify>=0.05:${PORTSDIR}/devel/p5-Gtk2-Notify
 .endif
 
 .if defined(NOPORTDATA)
