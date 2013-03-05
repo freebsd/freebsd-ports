@@ -3181,6 +3181,7 @@
     SUBDIR += pecl-newt
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
+    SUBDIR += pecl-parsekit
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
