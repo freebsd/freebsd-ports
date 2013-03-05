@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${DISTNAME}2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
