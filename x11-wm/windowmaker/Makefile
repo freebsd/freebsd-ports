@@ -3,13 +3,12 @@
 
 PORTNAME?=	windowmaker
 PORTVERSION=	0.95.4
-PORTREVISION?=	0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
 LICENSE?=	GPLv2
