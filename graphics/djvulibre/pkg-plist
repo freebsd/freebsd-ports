@@ -59,8 +59,4 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm share/djvu/osi/cs
 @dirrm share/djvu/osi
 @dirrmtry share/djvu
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/de/man1
-@dirrmtry man/de
 @dirrm include/libdjvu

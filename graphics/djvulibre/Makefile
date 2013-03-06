@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdjvu++
-# Date Created:		20 July 1999
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.25.3
