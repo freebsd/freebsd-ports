@@ -3,10 +3,11 @@
 
 PORTNAME=	smtp-gated
 PORTVERSION=	1.4.20.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Proxy for SMTP sessions with virus and spam scan
 
 LICENSE=	GPLv2
