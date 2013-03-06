@@ -11233,9 +11233,9 @@
  typedef unsigned long uLong;
  #endif
 +#endif
- #ifdef _MSC_VER
- typedef LONGLONG        jlong;
- typedef DWORDLONG       julong;
+ #ifdef _MSC_VER 
+ typedef LONGLONG 	jlong;
+ typedef DWORDLONG 	julong;
 --- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp
 +++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp
 @@ -33,9 +33,14 @@

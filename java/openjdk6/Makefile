@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b27
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -38,6 +38,40 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
 OPENJDK_BUILDDATE=	26_oct_2012
+
+EXTRA_PATCHES=	${FILESDIR}/icedtea/security/20120830/7182135-impossible_to_use_some_editors_directly.patch \
+		${FILESDIR}/icedtea/security/20130201/7201068.patch \
+		${FILESDIR}/icedtea/security/20130201/6563318.patch \
+		${FILESDIR}/icedtea/security/20130201/6664509.patch \
+		${FILESDIR}/icedtea/security/20130201/6776941.patch \
+		${FILESDIR}/icedtea/security/20130201/7141694.patch \
+		${FILESDIR}/icedtea/security/20130201/7173145.patch \
+		${FILESDIR}/icedtea/security/20130201/7186945.patch \
+		${FILESDIR}/icedtea/security/20130201/7186948.patch \
+		${FILESDIR}/icedtea/security/20130201/7186952.patch \
+		${FILESDIR}/icedtea/security/20130201/7186954.patch \
+		${FILESDIR}/icedtea/security/20130201/7192392.patch \
+		${FILESDIR}/icedtea/security/20130201/7192393.patch \
+		${FILESDIR}/icedtea/security/20130201/7192977.patch \
+		${FILESDIR}/icedtea/security/20130201/7197546.patch \
+		${FILESDIR}/icedtea/security/20130201/7200491.patch \
+		${FILESDIR}/icedtea/security/20130201/7200500.patch \
+		${FILESDIR}/icedtea/security/20130201/7201064.patch \
+		${FILESDIR}/icedtea/security/20130201/7201066.patch \
+		${FILESDIR}/icedtea/security/20130201/7201070.patch \
+		${FILESDIR}/icedtea/security/20130201/7201071.patch \
+		${FILESDIR}/icedtea/security/20130201/8000210.patch \
+		${FILESDIR}/icedtea/security/20130201/8000537.patch \
+		${FILESDIR}/icedtea/security/20130201/8000540.patch \
+		${FILESDIR}/icedtea/security/20130201/8000631.patch \
+		${FILESDIR}/icedtea/security/20130201/8001242.patch \
+		${FILESDIR}/icedtea/security/20130201/8001307.patch \
+		${FILESDIR}/icedtea/security/20130201/8001972.patch \
+		${FILESDIR}/icedtea/security/20130201/8002325.patch \
+		${FILESDIR}/icedtea/security/20130201/8001235.patch \
+		${FILESDIR}/icedtea/security/20130219/8006446.patch \
+		${FILESDIR}/icedtea/security/20130219/8006777.patch \
+		${FILESDIR}/icedtea/security/20130219/8007688.patch
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE

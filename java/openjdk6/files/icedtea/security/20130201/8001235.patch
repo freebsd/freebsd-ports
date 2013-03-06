@@ -1,0 +1,37 @@
+diff -Nru jaxp.old/build.properties jaxp/build.properties
+--- jaxp.old/build.properties	2013-02-01 21:59:17.360429006 +0000
++++ jaxp/build.properties	2013-02-01 22:04:56.349681812 +0000
+@@ -77,6 +77,9 @@
+ # Where patches to drop bundle sources live
+ patches.dir=patches
+ 
++# Patches to apply
++jaxp_src.patch.list=8001235.patch
++
+ # Sanity information
+ sanity.info= Sanity Settings:${line.separator}\
+   ant.home=${ant.home}${line.separator}\
+diff -Nru jaxp.old/patches/jaxp_src/8001235.patch jaxp/patches/jaxp_src/8001235.patch
+--- jaxp.old/patches/jaxp_src/8001235.patch	1970-01-01 01:00:00.000000000 +0100
++++ jaxp/patches/jaxp_src/8001235.patch	2013-02-01 22:04:27.369232768 +0000
+@@ -0,0 +1,20 @@
++# HG changeset patch
++# User joehw
++# Date 1351536837 25200
++# Node ID 5df9207c4378b7f4b24d70b365714c5ee6318982
++# Parent  5449d5396bd8deee90f18f29899343129e3cdc4e
++8001235: Improve JAXP HTTP handling
++Reviewed-by: lancea, skoivu
++
++diff --git a/src/com/sun/org/apache/xpath/internal/functions/FuncSystemProperty.java b/src/com/sun/org/apache/xpath/internal/functions/FuncSystemProperty.java
++--- src/com/sun/org/apache/xpath/internal/functions/FuncSystemProperty.java
+++++ src/com/sun/org/apache/xpath/internal/functions/FuncSystemProperty.java
++@@ -165,7 +165,7 @@ public class FuncSystemProperty extends 
++    * should already be fully qualified as path/filename
++    * @param target The target property bag the file will be placed into.
++    */
++-  public void loadPropertyFile(String file, Properties target)
+++  private void loadPropertyFile(String file, Properties target)
++   {
++     try
++     {
