@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130307:
+  AFFECTS: users of audio/liblastfm
+  AUTHOR: nivit@FreeBSD.org
+
+  The audio/liblastfm has been updated to 1.0.6. The shared library version
+  has changed from 0 to 1. Please rebuild all ports that depends on it:
+
+  If you use portmaster:
+        portmaster -r liblastfm
+  If you use portupgrade:
+        portupgrade -fr audio/liblastfm
+  If you use pkgng with binary packages:
+        pkg install -fR audio/liblastfm
+
 20130305:
   AFFECTS: users of devel/py-setuptools (i.e you)
   AUTHOR: rm@FreeBSD.org
