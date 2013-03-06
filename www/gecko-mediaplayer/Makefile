@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 

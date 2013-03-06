@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-mplayer
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
