@@ -26,6 +26,6 @@ bin/salt-api
 %%PYTHON_SITELIBDIR%%/saltapi/version.py
 %%PYTHON_SITELIBDIR%%/saltapi/version.pyc
 %%PYTHON_SITELIBDIR%%/saltapi/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/saltapi/netapi
 @dirrm %%PYTHON_SITELIBDIR%%/saltapi/netapi/rest_cherrypy
+@dirrm %%PYTHON_SITELIBDIR%%/saltapi/netapi
 @dirrm %%PYTHON_SITELIBDIR%%/saltapi
