@@ -951,6 +951,7 @@
     SUBDIR += qadsl
     SUBDIR += qoauth
     SUBDIR += qt4-network
+    SUBDIR += qtweetlib
     SUBDIR += quagga
     SUBDIR += quagga-re
     SUBDIR += queso
