@@ -14,12 +14,12 @@
 
 usage()
 {
-	<<EOF cat
+	<<EOF >/dev/stderr cat
 Usage: $0 port-directory|port [revision/date]
 
 When called without a revision to restore, svn log is called on the port's
 directory so that relevant revisions can be identified.  Look for lines
-containing "Update to X.X"
+containing "Update to X.X".  You may wish to filter it through ${PAGER:-less}.
 
 When called with a port name instead of directory/origin, INDEX is grepped
 for the correct origins and a list is presented.
@@ -29,7 +29,7 @@ EOF
 
 err()
 {
-	echo "${@:-An unknown error has occurred}"
+	echo "${@:-An unknown error has occurred}" > /dev/stderr
 	exit 1
 }
 
@@ -74,15 +74,13 @@ esac
 portdir="${1%$PORTSDIR}"
 portdir="${portdir#/}"
 
-if [ ! -d "$PORTSDIR/$portdir" ]; then
-	err $portdir does not exist in $PORTSDIR
-fi
+[ ! -d "$PORTSDIR/$portdir" ] || err "$portdir does not exist in $PORTSDIR"
 
 case ${2-NULL} in
 NULL)
 	# No revision/date provided, get log
 	echo Choose a revision from this list and run $0 $1 revision
-	$svn log $svnroot/$portdir | $PAGER
+	$svn log $svnroot/$portdir
 	echo Choose a revision from the above list and run $0 $1 revision
 	exit 0
 	;;
