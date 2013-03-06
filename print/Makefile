@@ -78,7 +78,6 @@
     SUBDIR += freetype2
     SUBDIR += frescobaldi
     SUBDIR += ft2demos
-    SUBDIR += gfontview
     SUBDIR += ggv
     SUBDIR += ghostscript7
     SUBDIR += ghostscript7-commfont
@@ -115,7 +114,6 @@
     SUBDIR += html2latex
     SUBDIR += html2ps-a4
     SUBDIR += html2ps-letter
-    SUBDIR += hugelatex
     SUBDIR += hyperlatex
     SUBDIR += ifxetex
     SUBDIR += it-acroread8

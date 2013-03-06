@@ -227,7 +227,6 @@
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
     SUBDIR += plasma-scriptengine-ruby
-    SUBDIR += powershell
     SUBDIR += printproto
     SUBDIR += printscreen
     SUBDIR += props
@@ -304,7 +303,6 @@
     SUBDIR += wmmatrix
     SUBDIR += wmxss
     SUBDIR += workrave
-    SUBDIR += wterm
     SUBDIR += x11perf
     SUBDIR += x3270
     SUBDIR += xaniroc

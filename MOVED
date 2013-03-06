@@ -4113,3 +4113,21 @@ x11-servers/driglide||2013-03-03|Has expired: 3dfx is dead, fails to compile on 
 mail/gmime||2013-03-03|Has expired: Superceded with version 2.4
 archivers/bsdar||2013-03-03|Has expired: part of the base system
 misc/instant-server||2013-03-04|Removed: Non-essential meta port
+sysutils/sge60||2013-03-06|Has expired: Ancient and unsupported release
+sysutils/sge61||2013-03-06|Has expired: Ancient and unsupported release
+x11-themes/sapphire-themes||2013-03-06|Has expired: Broken for more than 6 month
+misc/fep||2013-03-06|Has expired: Broken for more than 6 month
+devel/gauche-gaunit||2013-03-06|Has expired: Broken for more than 6 month
+games/tuxracer_golf||2013-03-06|Has expired: Broken for more than 6 month
+net/bfilter||2013-03-06|Has expired: Broken for more than 6 month
+graphics/fnlib||2013-03-06|Has expired: Broken for more than 6 month
+print/gfontview||2013-03-06|Has expired: Broken for more than 6 month
+print/hugelatex||2013-03-06|Has expired: Broken for more than 6 month
+misc/gtktalog||2013-03-06|Has expired: Broken for more than 6 month
+x11/wterm||2013-03-06|Has expired: Broken for more than 6 month
+databases/xapian-bindings10||2013-03-06|Has expired: Broken for more than 6 month
+databases/adstudio||2013-03-06|Has expired: Broken for more than 6 month
+misc/splitvt||2013-03-06|Has expired: Broken for more than 6 month
+sysutils/udesc_dump||2013-03-06|Has expired: Broken for more than 6 month
+textproc/gxditview||2013-03-06|Has expired: Broken for more than 6 month
+x11/powershell||2013-03-06|Has expired: Broken for more then 6 month

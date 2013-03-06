@@ -224,7 +224,6 @@
     SUBDIR += gu-aspell
     SUBDIR += gutenmark
     SUBDIR += gv-aspell
-    SUBDIR += gxditview
     SUBDIR += gxmlviewer
     SUBDIR += heirloom-doctools
     SUBDIR += hevea

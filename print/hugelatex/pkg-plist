@@ -1,5 +1,0 @@
-bin/hugelatex
-@exec cp %D/share/texmf/web2c/texmf.cnf %D/share/texmf/web2c/texmf.cnf-before-hugelatex
-share/texmf/web2c/texmf.cnf
-@unexec mv %D/share/texmf/web2c/texmf.cnf-before-hugelatex %D/share/texmf/web2c/texmf.cnf
-@unexec %D/bin/mktexlsr
