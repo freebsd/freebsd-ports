@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -38,46 +38,43 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
-OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
-		QDBM	"Enable QDBM support"				off \
-		PGSQL	"Enable PostgreSQL connector"			off \
-		MYSQL	"Enable MySQL connector"			off \
-		LIBVIRT	"Enable libvirt compatibility"			off
+OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	TOKYOCABINET QDBM
+OPTIONS_DEFAULT=	TOKYOCABINET
 
-.include <bsd.port.pre.mk>
+TOKYOCABINET_DESC=	Use TokyoCabinet as backend db
+QDBM_DESC=	Use QDBM as backend db
+PGSQL_DESC=	Enable PostgreSQL connector
+MYSQL_DESC=	Enable MySQL connector
+LIBVIRT_DESC=	Enable libvirt compatibility
 
-.if defined(WITH_TOKYOCABINET) && defined(WITH_QDBM)
-BROKEN=		TOKYOCABINET and QDBM are mutuallly exclusive
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_TOKYOCABINET) && !defined(WITH_QDBM)
-BROKEN=		TOKYOCABINET or QDBM must be defined
-.endif
-
-.if defined(WITH_TOKYOCABINET)
+.if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
 LIB_DEPENDS+=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 .endif
 
-.if defined(WITH_QDBM)
+.if ${PORT_OPTIONS:MQDBM}
 CONFIGURE_ARGS+=	--with-qdbm=${LOCALBASE}
 LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/${_MYSQL_CLIENT}
 LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
-.if defined(WITH_LIBVIRT)
+.if ${PORT_OPTIONS:MLIBVERT}
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
@@ -90,4 +87,4 @@ post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
 				  ${WRKSRC}/docs/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
