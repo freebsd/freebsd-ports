@@ -1,0 +1,33 @@
+@comment $FreeBSD$
+bin/tomahawk
+lib/libtomahawk_account_google.so
+lib/libtomahawk_account_twitter.so
+lib/libtomahawk_account_xmpp.so
+lib/libtomahawk_account_zeroconf.so
+lib/libtomahawk_infoplugin_charts.so
+lib/libtomahawk_infoplugin_discogs.so
+lib/libtomahawk_infoplugin_echonest.so
+lib/libtomahawk_infoplugin_fdonotify.so
+lib/libtomahawk_infoplugin_hypem.so
+lib/libtomahawk_infoplugin_mpris.so
+lib/libtomahawk_infoplugin_musicbrainz.so
+lib/libtomahawk_infoplugin_musixmatch.so
+lib/libtomahawk_infoplugin_newreleases.so
+lib/libtomahawk_infoplugin_rovi.so
+lib/libtomahawk_infoplugin_spotify.so
+lib/libtomahawk_portfwd.so
+lib/libtomahawklib.so
+libexec/tomahawk_crash_reporter
+share/applications/tomahawk.desktop
+share/icons/hicolor/128x128-grayscale/apps/tomahawk.png
+share/icons/hicolor/128x128/apps/tomahawk.png
+share/icons/hicolor/16x16/apps/tomahawk.png
+share/icons/hicolor/256x256/apps/tomahawk.png
+share/icons/hicolor/32x32/apps/tomahawk.png
+share/icons/hicolor/512x512/apps/tomahawk.png
+share/icons/hicolor/64x64/apps/tomahawk.png
+share/icons/hicolor/scalable/apps/tomahawk.svg
+@dirrmtry share/icons/hicolor/128x128-grayscale/apps
+@dirrmtry share/icons/hicolor/128x128-grayscale
+@dirrmtry share/icons/hicolor/512x512/apps
+@dirrmtry share/icons/hicolor/512x512
