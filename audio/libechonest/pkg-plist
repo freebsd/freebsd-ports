@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+include/echonest/Artist.h
+include/echonest/ArtistTypes.h
+include/echonest/AudioSummary.h
+include/echonest/Catalog.h
+include/echonest/CatalogArtist.h
+include/echonest/CatalogItem.h
+include/echonest/CatalogSong.h
+include/echonest/CatalogUpdateEntry.h
+include/echonest/Config.h
+include/echonest/Playlist.h
+include/echonest/Song.h
+include/echonest/Track.h
+include/echonest/TypeInformation.h
+include/echonest/Util.h
+include/echonest/echonest_export.h
+lib/libechonest.so
+lib/libechonest.so.2
+lib/libechonest.so.2.0.1
+libdata/pkgconfig/libechonest.pc
+@dirrm include/echonest

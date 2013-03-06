@@ -369,6 +369,7 @@
     SUBDIR += libcoverart
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
+    SUBDIR += libechonest
     SUBDIR += libfishsound
     SUBDIR += libgig
     SUBDIR += libgme
