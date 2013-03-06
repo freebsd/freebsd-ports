@@ -715,6 +715,7 @@
     SUBDIR += psmisc
     SUBDIR += pstack
     SUBDIR += pstree
+    SUBDIR += ptools
     SUBDIR += puppet
     SUBDIR += puppet26
     SUBDIR += puppet27
