@@ -1,16 +1,12 @@
-# New ports collection makefile for:	dnsjava
-# Date created:				2004-11-19
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dnsjava
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	dns java
 MASTER_SITES=	http://www.dnsjava.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Implementation of DNS in Java
 
 USE_JAVA=	yes
@@ -18,45 +14,37 @@ JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	docs
-.endif
 
-SAMPLE_FILES=	examples.html USAGE dig.java jnamed.java lookup.java update.java
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar ${SAMPLE_FILES:S,^,%%EXAMPLESDIR%%/,}
-PLIST_DIRS=	%%EXAMPLESDIR%%
-.if !defined(NOPORTDOCS)
-OTHERDOCS=	README Changelog
-PORTDOCS=	apidocs ${OTHERDOCS}
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
-.if ${JDK_API} != ""
-MAKE_ARGS+=	-Dj2se.javadoc="${JDK_API}"
+.if ${PORT_OPTIONS:MEXAMPLES}
+SAMPLE_FILES=	examples.html USAGE dig.java jnamed.java lookup.java update.java
+PLIST_SUB+=	EXAMPLES=""
+.else
+PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-post-extract:
-	@${RM} -rf ${WRKSRC}/doc
-	@${MKDIR} ${WRKSRC}/doc
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	docs
+OTHERDOCS=	README Changelog
+PLIST_SUB+=	DOCS=""
+.else
+PLIST_SUB+=	DOCS="@comment "
+.endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${SAMPLE_FILES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
-	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/doc \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/apidocs/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} ${WRKSRC}/doc/{} ${DOCSDIR}/apidocs/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${SAMPLE_FILES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/doc -cf - . | ${TAR} -C ${DOCSDIR} -xf -
+	${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
