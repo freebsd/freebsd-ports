@@ -38,9 +38,9 @@ OPTIONS_DEFAULT=	GCONF
 
 .if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
-PLIST_FILES+=	bin/gsf-office-thumbnailer
 . if !defined(GSF_SLAVE)
 GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
+PLIST_FILES+=	bin/gsf-office-thumbnailer
 . endif
 .else
 CONFIGURE_ARGS+=	--without-gconf
