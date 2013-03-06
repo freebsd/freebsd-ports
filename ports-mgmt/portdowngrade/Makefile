@@ -3,6 +3,7 @@
 
 PORTNAME=	portdowngrade
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none
