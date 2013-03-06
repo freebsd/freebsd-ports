@@ -3520,6 +3520,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-manuel
+    SUBDIR += py-mccabe
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-mimeparse
