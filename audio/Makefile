@@ -234,6 +234,7 @@
     SUBDIR += gmpc-mserver
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-wikipedia
+    SUBDIR += gmtp
     SUBDIR += gmusicbrowser
     SUBDIR += gnaural
     SUBDIR += gnome-audio
