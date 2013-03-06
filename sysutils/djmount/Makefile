@@ -15,7 +15,7 @@ BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	pkgconfig
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-fuse-prefix=${LOCALBASE} \

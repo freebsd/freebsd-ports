@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-cryptofs
-# Date created:				2008-05-21
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
@@ -20,7 +16,7 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 
 PLIST_FILES=	bin/cryptofs
 

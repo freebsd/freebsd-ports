@@ -1,9 +1,5 @@
-# New ports collection makefile for: archivemount
-# Date created: 2008-06-20
-# Whom: Evgeny Zhirnov <jirnov@gmail.com>
-#
+# Created by: Evgeny Zhirnov <jirnov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	archivemount
 PORTVERSION=	0.6.1
@@ -19,7 +15,7 @@ MAN1=		archivemount.1
 GNU_CONFIGURE=	yes
 
 NO_INSTALL_MANPAGES=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PKGCONFIG=	yes

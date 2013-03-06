@@ -75,7 +75,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 	${CONFIGURE_TARGET}
 
 .if ${PORT_OPTIONS:MFUSE}
-USE_FUSE=	yes
+USES+=		fuse
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse-client

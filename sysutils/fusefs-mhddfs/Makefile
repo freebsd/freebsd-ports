@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-mhddfs
-# Date created:		2009-06-25
-# Whom:			Oleg Alexeenkov <proler@gmail.com>
-#
+# Created by: Oleg Alexeenkov <proler@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mhddfs
 PORTVERSION=	0.1.37
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	proler@gmail.com
 COMMENT=	Multi HDD [FUSE] File System
 
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 MAKE_ARGS=	WITHOUT_XATTR=1

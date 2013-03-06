@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-gstfs
-# Date created:		2008-12-26
-# Whom:			Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gstfs
 PORTVERSION=	0.1
@@ -15,7 +11,7 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
 
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	pkgconfig
 USE_GSTREAMER=	yes
 

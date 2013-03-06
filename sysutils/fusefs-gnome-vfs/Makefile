@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-gnome-vfs
-# Date created:		2006-12-23
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fusefs-gnome-vfs
 PORTVERSION=	0.1
@@ -17,7 +13,7 @@ COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	gnomevfs2
 USE_GMAKE=	yes
 USE_PKGCONFIG=	yes

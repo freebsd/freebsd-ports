@@ -1,9 +1,5 @@
-# New ports collection makefile for:    moosefs-client
-# Date created:         1 April 2010
-# Whom:                 Chifeng Qu <chifeng@gmail.com>
-#
+# Created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	moosefs
 PORTREVISION=	#
@@ -16,7 +12,7 @@ COMMENT=	Moosefs client tools
 
 DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo
 
-USE_FUSE=	yes
+USES=		fuse
 USE_PKGCONFIG=	yes
 
 MAN1=		mfstools.1 mfscheckfile.1 mfsdirinfo.1 mfsfileinfo.1 \

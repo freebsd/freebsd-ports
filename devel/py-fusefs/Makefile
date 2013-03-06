@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-fusefs
-# Date created:		22 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fusefs
 DISTVERSION=	0.2.1
@@ -15,7 +11,7 @@ DISTNAME=	fuse-python-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
 
-USE_FUSE=	yes
+USES=		fuse
 USE_PYTHON=	yes
 USE_PKGCONFIG=	yes
 USE_PYDISTUTILS=easy_install

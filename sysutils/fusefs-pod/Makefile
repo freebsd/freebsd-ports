@@ -1,8 +1,5 @@
-# New ports collection makefile for:	fusefs-pod
-# Date created: 			22 Aug 2007
-# Whom:					Max Khon
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	pod
 PORTVERSION=	0.5.2
@@ -19,7 +16,7 @@ LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod\
 		tag.1:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
-USE_FUSE=	yes
+USES=		fuse
 GNU_CONFIGURE=	yes
 MAN1=		fusepod.1
 PLIST_FILES=	bin/fusepod

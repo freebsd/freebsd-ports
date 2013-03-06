@@ -1,9 +1,5 @@
-# New ports collection makefile for:   udfclient
-# Date created:        3 January 2005
-# Whom:                Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	udfclient
 PORTVERSION=	0.7.5
@@ -44,7 +40,7 @@ MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse
 DISTFILES+=	${UDFCLIENTFS_NAME}-${UDFCLIENTFS_VERSION}.tgz:fuse
 EXTRA_PATCHES+=	${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.patch
 
-USE_FUSE=	yes
+USES+=		fuse
 
 PLIST_FILES+=	bin/${UDFCLIENTFS_NAME}
 .endif

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
-USE_FUSE=	yes
+USES=		fuse
 USE_ICONV=	yes
 USE_SCONS=	yes
 

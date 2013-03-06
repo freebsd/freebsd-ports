@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libvshadow
-# Date created:		31 May 2012
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libvshadow
 PORTVERSION=	20130113
@@ -17,9 +13,8 @@ COMMENT=	A library to support the Volume Service Snapshot (VSS) format
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_FUSE=	yes
+USES=		fuse pathfix
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

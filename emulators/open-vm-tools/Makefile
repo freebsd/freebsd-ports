@@ -49,7 +49,7 @@ CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .endif
 
 .if !defined(WITHOUT_FUSE)
-USE_FUSE=	yes
+USES=		fuse
 PLIST_SUB+=	FUSE=""
 .else
 PLIST_SUB+=	FUSE="@comment "

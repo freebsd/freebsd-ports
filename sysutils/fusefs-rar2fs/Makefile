@@ -1,9 +1,5 @@
-# New ports collection Makefile for: rar2fs
-# Date created:        30 May 2011
-# Whom:                Joris Vandalon
-#
+# Created by: Joris Vandalon
 # $FreeBSD$
-#
 
 PORTNAME=	rar2fs
 PORTVERSION=	1.15.1
@@ -27,7 +23,7 @@ CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rar2fs.1
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 
 do-install:

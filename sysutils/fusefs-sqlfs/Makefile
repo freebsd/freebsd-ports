@@ -1,10 +1,6 @@
-# New ports collection makefile for:	fusefs-sqlfs
-# Date created:		2006-08-19
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $MBSDlabs$
 # $FreeBSD$
-#
 
 PORTNAME=	sqlfs
 PORTVERSION=	1.1
@@ -18,7 +14,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
-USE_FUSE=	yes
+USES=		fuse
 USE_SQLITE=	3
 
 .if !defined(NOPORTDOCS)

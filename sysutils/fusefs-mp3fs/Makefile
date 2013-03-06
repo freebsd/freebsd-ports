@@ -18,7 +18,7 @@ FETCH_CMD=	fetch -Fpr
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 MAN1=		mp3fs.1
 PLIST_FILES=	bin/mp3fs
 

@@ -1,10 +1,5 @@
-# Ports collection makefile for: afflib
-#
-# Date created: 	15/02/2008
-# Whom: 		Chris Calvey <chris@securityforensics.co.uk>
-#
+# Created by: Chris Calvey <chris@securityforensics.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	afflib
 PORTVERSION=	3.7.1
@@ -23,10 +18,9 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
-USE_FUSE=	yes
+USES=		fuse pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CPPFLAGS+=	-DFUSE_USE_VERSION=26
