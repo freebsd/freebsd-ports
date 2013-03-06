@@ -21,7 +21,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 MAN1=		salt-cloud.1
 MAN7=		salt-cloud.7
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt:${PORTSDIR}/sysutils/py-salt \
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt>0:${PORTSDIR}/sysutils/py-salt \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0:${PORTSDIR}/net/py-libcloud \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
