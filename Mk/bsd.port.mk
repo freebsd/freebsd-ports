@@ -5740,7 +5740,9 @@ generate-plist:
 .endif
 .endif
 .endif
+.if !defined(WITH_PKGNG)
 	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
+.endif
 .endif
 
 ${TMPPLIST}:
