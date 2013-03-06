@@ -7,7 +7,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	net-im
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Extensible Qt-based asynchronious Jabber library
+COMMENT=	Extensible Qt-based asynchronous Jabber library
 
 LICENSE=	GPLv2
 
