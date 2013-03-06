@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-unionfs
-# Date created:		2006-07-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unionfs
 PORTVERSION=	0.24
@@ -17,7 +13,7 @@ COMMENT=	FUSE based implementation of the well-known unionfs
 
 PLIST_FILES=	bin/unionfs
 
-USE_FUSE=	yes
+USES=		fuse
 USE_BZIP2=	yes
 
 do-build:

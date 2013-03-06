@@ -13,9 +13,8 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
-USE_FUSE=	yes
+USES=		fuse pathfix
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

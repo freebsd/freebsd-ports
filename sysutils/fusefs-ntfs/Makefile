@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
+USES=		fuse
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_FUSE=	yes
 USE_ICONV=	yes
 USE_PKGCONFIG=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \

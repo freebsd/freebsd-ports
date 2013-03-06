@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gphotofs
-# Date created:				21 June 2006
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gphotofs
 PORTVERSION=	0.4.0
@@ -17,8 +13,8 @@ COMMENT=	Mount PTP camera as a file system
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
+USES=		fuse
 USE_BZIP2=	yes
-USE_FUSE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 

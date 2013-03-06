@@ -20,7 +20,7 @@ VCHMOD_DESC=	Fake hook for chmod that just returns 0
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PKGCONFIG=	build

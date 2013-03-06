@@ -14,7 +14,7 @@ LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
 
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
-USE_FUSE=	yes
+USES=		fuse
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1

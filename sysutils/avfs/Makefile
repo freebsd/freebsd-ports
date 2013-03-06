@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avfs
-# Date created:				2008-06-14
-# Whom:					Evgeny Zhirnov <jirnov@gmail.com>
-#
+# Created by: Evgeny Zhirnov <jirnov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	avfs
 PORTVERSION=	0.9.9
@@ -22,7 +18,7 @@ NO_INSTALL_MANPAGES=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv
 
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

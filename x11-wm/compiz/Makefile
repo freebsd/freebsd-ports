@@ -144,7 +144,7 @@ PLIST_SUB+=	DBUS="@comment "
 
 .if ${PORT_OPTIONS:MFUSE}
 CONFIGURE_ARGS+=	--enable-fuse
-USE_FUSE=		yes
+USES+=			fuse
 PLIST_SUB+=		FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse

@@ -1,8 +1,5 @@
-# New ports collection makefile for:    fusefs-fusexmp_fh
-# Date created:         22 August 2010
-# Whom:                 buganini@gmail.com
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	fusexmp_fh
 PORTVERSION=	2.7.4
@@ -17,8 +14,7 @@ COMMENT=	Dummy driver from fusefs-libs example
 
 
 USE_AUTOTOOLS=	libtool
-USE_FUSE=	yes
-USE_GNOME=	pkgconfig
+USES=		fuse pathfix
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

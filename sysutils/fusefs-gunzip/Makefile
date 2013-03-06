@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-gunzip
-# Date created:				2008-06-16
-# Whom:					Evgeny Zhirnov <jirnov@gmail.com>
-#
+# Created by: Evgeny Zhirnov <jirnov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fuse.gunzip
 PORTVERSION=	20070320
@@ -14,7 +10,7 @@ MAINTAINER=	jirnov@gmail.com
 COMMENT=	Fuse.gunzip provides transparent decompression of gzip compressed files
 
 WRKSRC=		${WRKDIR}/fuse.gunzip
-USE_FUSE=	yes
+USES=		fuse
 
 PLIST_FILES=	bin/fuse.gunzip
 

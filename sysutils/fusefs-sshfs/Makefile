@@ -1,8 +1,5 @@
-# New ports collection makefile for:	fusefs-sshfs
-# Date created: 			01 October 2005
-# Whom:					Anish Mistry
+# Created by: Anish Mistry
 # $FreeBSD$
-#
 
 PORTNAME=	sshfs
 PORTVERSION=	2.4
@@ -17,7 +14,7 @@ COMMENT=	Mount remote directories over ssh
 KMODDIR?=	${LOCALBASE}/modules
 
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	glib20
 
 MAN1=	sshfs.1

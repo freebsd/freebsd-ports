@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
 		--with-boost-filesystem=boost_filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

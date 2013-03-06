@@ -1,8 +1,5 @@
-# New ports collection makefile for:	afuse
-# Date created: 			03 March 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	afuse
 PORTVERSION=	0.2
@@ -20,7 +17,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
-USE_FUSE=	yes
+USES=		fuse
 USE_PKGCONFIG=	yes
 
 MAN1=		afuse.1

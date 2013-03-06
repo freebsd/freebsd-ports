@@ -15,7 +15,7 @@ CONFLICTS_INSTALL=	fusefs-ntfs-*
 
 USE_PKGCONFIG=	build
 USE_BZIP2=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

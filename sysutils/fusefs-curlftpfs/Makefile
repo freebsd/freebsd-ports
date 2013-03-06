@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-curlftpfs
-# Date created:		25 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	curlftpfs
 PORTVERSION=	0.9.2
@@ -18,7 +14,7 @@ COMMENT=	Mount remote ftp directories
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	glib20
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/curlftpfs

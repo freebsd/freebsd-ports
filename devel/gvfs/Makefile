@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gvfs
-# Date created:		2007-11-06
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/gvfs/Makefile,v 1.70 2011/01/31 19:06:42 kwm Exp $
 #
@@ -40,7 +37,7 @@ OPTIONS=	FUSE "Enable fuse" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FUSE)
-USE_FUSE=	yes
+USES+=		fuse
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse

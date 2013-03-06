@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-wikipediafs
-# Date created:		10 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wikipediafs
 PORTVERSION=	0.4
@@ -16,7 +12,7 @@ COMMENT=	Mount mediawikis
 
 RUN_DEPENDS=	py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
 
-USE_FUSE=	yes
+USES=		fuse
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO

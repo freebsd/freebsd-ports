@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusefs-funionfs
-# Date created:		2006-07-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	funionfs
 PORTVERSION=	0.4.3
@@ -17,7 +13,7 @@ COMMENT=	Union filesystem for the FUSE driver
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_FUSE=	yes
+USES=		fuse
 
 MAN1=		funionfs.1
 PLIST_FILES=	bin/funionfs

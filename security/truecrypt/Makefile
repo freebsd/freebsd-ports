@@ -22,7 +22,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
-USE_FUSE=	yes
+USES=		fuse
 USE_GMAKE=	yes
 USE_ICONV=	yes
 RESTRICTED=	Downloading requires acceptance of license agreement

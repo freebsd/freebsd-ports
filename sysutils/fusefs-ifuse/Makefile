@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fusefs-ifuse
-# Date created:                         09 October 2011
-# Whom:                                 Gabor Zahemszky
-#
+# Created by: Gabor Zahemszky
 # $FreeBSD$
-#
 
 PORTNAME=	ifuse
 PORTVERSION=	1.1.1
@@ -23,7 +19,7 @@ RUN_DEPENDS=	usbmuxd:${PORTSDIR}/comms/usbmuxd
 
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
-USE_FUSE=	yes
+USES=		fuse
 USE_GNOME=	glib20 pkgconfig
 
 GNU_CONFIGURE=	yes

@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--with-text-scope
 .endif
 
 .if ${PORT_OPTIONS:MFUSE}
-USE_FUSE=	yes
+USES+=		fuse
 MAN1+=		uadefs.1
 PLIST_SUB+=	FUSE=""
 .else
