@@ -1,4 +1,5 @@
 # $FreeBSD$
+#
 # Lookup in Makefile.in and configure for common incorrect paths and set them
 # to respect FreeBSD hier
 #
