@@ -1,6 +1,7 @@
-# Created by:	Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
-#		Jason Bacon <jwbacon@tds.net>
+# Created by: Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
 # $FreeBSD$
+
+# Also created by: Jason Bacon <jwbacon@tds.net>
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4
@@ -27,10 +28,6 @@ OPTIONS_DEFAULT=
 
 .if ${PORT_OPTIONS:MROBOCTL}
 RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
-.endif
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS=		usb:${PORTSDIR}/devel/libusb
 .endif
 
 USE_GMAKE=		yes

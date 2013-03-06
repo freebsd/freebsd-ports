@@ -1,4 +1,4 @@
-# Created by:	rene
+# Created by: rene
 # $FreeBSD$
 
 PORTNAME=	boinc-astropulse
@@ -45,7 +45,7 @@ OPTIONS_DEFAULT=
 
 .include <bsd.port.pre.mk>
 # stolen and adapted from bsd.port.mk
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
+.if ${OSVERSION} >= 900000 && ${OSVERSION} < 900012
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 
