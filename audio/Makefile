@@ -763,6 +763,7 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
+    SUBDIR += tomahawk
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += tracker
