@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+include/quazip/JlCompress.h
+include/quazip/crypt.h
+include/quazip/ioapi.h
+include/quazip/quaadler32.h
+include/quazip/quachecksum32.h
+include/quazip/quacrc32.h
+include/quazip/quagzipfile.h
+include/quazip/quaziodevice.h
+include/quazip/quazip.h
+include/quazip/quazip_global.h
+include/quazip/quazipdir.h
+include/quazip/quazipfile.h
+include/quazip/quazipfileinfo.h
+include/quazip/quazipnewinfo.h
+include/quazip/unzip.h
+include/quazip/zip.h
+lib/libquazip.so
+lib/libquazip.so.1
+lib/libquazip.so.1.0
+lib/libquazip.so.1.0.0
+@dirrm include/quazip
