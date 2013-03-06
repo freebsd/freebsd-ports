@@ -97,7 +97,7 @@ OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
 		CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_COSS HTCP ICAP ICMP IDENT IPV6 KQUEUE \
 		LARGEFILE SNMP SSL SSL_CRTD STACKTRACES STRICT_HTTP \
-		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2
+		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 DOCS EXAMPLES
 
 ARP_ACL_DESC=	Enable ARP/MAC/EUI based authentification
 AUTH_KERB_DESC=	Install Kerberos authentication helpers
@@ -235,11 +235,10 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--disable-linux-tproxy \
 		--disable-translation
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000024
-USE_GCC=any
+.if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
+CXXFLAGS+=	-Wno-unused-private-field
 .endif
 
 # Authentication methods and modules:
@@ -527,7 +526,7 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
 .endif
@@ -535,7 +534,7 @@ post-install:
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} squid ${PREFIX}/libexec/squid/pinger
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
 .endif
