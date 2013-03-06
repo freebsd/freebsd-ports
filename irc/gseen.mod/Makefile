@@ -43,8 +43,9 @@ pre-build:
 	@cd ${WRKSRC} && ./configure
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gseen.so ${PREFIX}/lib/eggdrop
-	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/*lang ${PREFIX}/share/eggdrop/language
+	@${MKDIR} ${LOCALBASE}/lib/eggdrop ${LOCALBASE}/share/eggdrop/language
+	@${INSTALL_PROGRAM} ${WRKSRC}/gseen.so ${LOCALBASE}/lib/eggdrop
+	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/*lang ${LOCALBASE}/share/eggdrop/language
 	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/gseen.conf ${PREFIX}/etc
 	@${ECHO_MSG} "Please add the line"
 	@${ECHO_MSG} "source ${PREFIX}/etc/gseen.conf"
