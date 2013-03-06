@@ -5,7 +5,7 @@ PORTNAME=	rhino
 DISTVERSION=	1_7R4
 CATEGORIES=	lang java
 MASTER_SITES=	http://cloud.github.com/downloads/mozilla/rhino/:rhino \
-		http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/:swingex \
+		LOCAL/nivit/${PORTNAME}/:swingex \
 		${MASTER_SITE_APACHE}:xmlbeans
 MASTER_SITE_SUBDIR=	xmlbeans/binaries/:xmlbeans
 DISTFILES=	${PORTNAME}${DISTVERSION}.zip:rhino \
