@@ -171,6 +171,12 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/README
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/subdir/coin
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/subdir/toto.txt
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects2.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects2.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/regobjects2.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/NOTHING
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/README
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/subdir/coin
