@@ -67,7 +67,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 PATCH_SITE_SUBDIR=	Versions/v3/3.2/changesets
 PATCHFILES=
 
-MAINTAINER=	tmseck@web.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2
@@ -75,7 +75,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid32
 
-SQUID_STABLE_VER=	7
+SQUID_STABLE_VER=	8
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
