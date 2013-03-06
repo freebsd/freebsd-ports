@@ -71,7 +71,9 @@ EXTRA_PATCHES=	${FILESDIR}/icedtea/security/20120830/7182135-impossible_to_use_s
 		${FILESDIR}/icedtea/security/20130201/8001235.patch \
 		${FILESDIR}/icedtea/security/20130219/8006446.patch \
 		${FILESDIR}/icedtea/security/20130219/8006777.patch \
-		${FILESDIR}/icedtea/security/20130219/8007688.patch
+		${FILESDIR}/icedtea/security/20130219/8007688.patch \
+		${FILESDIR}/icedtea/security/20130304/8007014.patch \
+		${FILESDIR}/icedtea/security/20130304/8007675.patch
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
