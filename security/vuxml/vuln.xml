@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b9a347ac-8671-11e2-b73c-0019d18c446a">
+    <topic>typo3 -- Multiple vulnerabilities in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><ge>4.5.0</ge><lt>4.5.23</lt></range>
+	<range><ge>4.6.0</ge><lt>4.6.16</lt></range>
+	<range><ge>4.7.0</ge><lt>4.7.8</lt></range>
+	<range><ge>6.0.0</ge><lt>6.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo Security Team reports:</p>
+	<blockquote cite="http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-001/">
+	  <p>Extbase Framework - Failing to sanitize user input, the Extbase
+	    database abstraction layer is susceptible to SQL Injection. TYPO3
+	    sites which have no Extbase extensions installed are not affected.
+	    Extbase extensions are affected if they use the Query Object Model
+	    and relation values are user generated input. Credits go to Helmut
+	    Hummel and Markus Opahle who discovered and reported the issue.</p>
+	  <p>Access tracking mechanism - Failing to validate user provided
+	    input, the access tracking mechanism allows redirects to arbitrary
+	    URLs. To fix this vulnerability, we had to break existing
+	    behaviour of TYPO3 sites that use the access tracking mechanism
+	    (jumpurl feature) to transform links to external sites. The link
+	    generation has been changed to include a hash that is checked
+	    before redirecting to an external URL. This means that old links
+	    that have been distributed (e.g. by a newsletter) will not work
+	    any more.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-001/</url>
+    </references>
+    <dates>
+      <discovery>2013-03-06</discovery>
+      <entry>2013-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40d5ab37-85f2-11e2-b528-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
