@@ -1,0 +1,23 @@
+bin/gmtp
+%%DATADIR%%/audio-x-mp3-playlist.png
+%%DATADIR%%/audio-x-mpeg.png
+%%DATADIR%%/empty.png
+%%DATADIR%%/folder.png
+%%DATADIR%%/icon-16.png
+%%DATADIR%%/icon.png
+%%DATADIR%%/image-x-generic.png
+%%DATADIR%%/logo.png
+%%DATADIR%%/media-cdrom-audio.png
+%%DATADIR%%/stock-about-16.png
+%%DATADIR%%/text-plain.png
+%%DATADIR%%/video-x-generic.png
+%%DATADIR%%/view-refresh.png
+share/applications/gMTP.desktop
+share/locale/da/LC_MESSAGES/gmtp.mo
+share/locale/de/LC_MESSAGES/gmtp.mo
+share/locale/es/LC_MESSAGES/gmtp.mo
+share/locale/fr/LC_MESSAGES/gmtp.mo
+share/locale/it/LC_MESSAGES/gmtp.mo
+share/pixmaps/gMTPicon.png
+@dirrmtry share/applications
+@dirrm share/gmtp
