@@ -103,7 +103,7 @@ post-extract:
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MCHECK__ROOT}
+.if ! ${PORT_OPTIONS:MCHECK_ROOT}
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
