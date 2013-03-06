@@ -51,6 +51,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40d5ab37-85f2-11e2-b528-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>25.0.1364.152</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/Stable%20Updates">
+	  <p>[176882] High CVE-2013-0902: Use-after-free in frame loader.
+	    Credit to Chamal de Silva.</p>
+	  <p>[176252] High CVE-2013-0903: Use-after-free in browser navigation
+	    handling. Credit to "chromium.khalil".</p>
+	  <p>[172926] [172331] High CVE-2013-0904: Memory corruption in Web
+	    Audio. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[168982] High CVE-2013-0905: Use-after-free with SVG animations.
+	    Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[174895] High CVE-2013-0906: Memory corruption in Indexed DB.
+	    Credit to Google Chrome Security Team (Juri Aedla).</p>
+	  <p>[174150] Medium CVE-2013-0907: Race condition in media thread
+	    handling. Credit to Andrew Scherkus of the Chromium development
+	    community.</p>
+	  <p>[174059] Medium CVE-2013-0908: Incorrect handling of bindings for
+	    extension processes.</p>
+	  <p>[173906] Low CVE-2013-0909: Referer leakage with XSS Auditor.
+	    Credit to Egor Homakov.</p>
+	  <p>[172573] Medium CVE-2013-0910: Mediate renderer -&gt; browser
+	    plug-in loads more strictly. Credit to Google Chrome Security Team
+	    (Chris Evans).</p>
+	  <p>[172264] High CVE-2013-0911: Possible path traversal in database
+	    handling. Credit to Google Chrome Security Team (Juri Aedla).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0902</cvename>
+      <cvename>CVE-2013-0903</cvename>
+      <cvename>CVE-2013-0904</cvename>
+      <cvename>CVE-2013-0905</cvename>
+      <cvename>CVE-2013-0906</cvename>
+      <cvename>CVE-2013-0907</cvename>
+      <cvename>CVE-2013-0908</cvename>
+      <cvename>CVE-2013-0909</cvename>
+      <cvename>CVE-2013-0910</cvename>
+      <cvename>CVE-2013-0911</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/Stable%20Updates</url>
+    </references>
+    <dates>
+      <discovery>2013-03-04</discovery>
+      <entry>2013-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c97219b6-843d-11e2-b131-000c299b62e1">
     <topic>stunnel -- Remote Code Execution</topic>
     <affects>
