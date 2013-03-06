@@ -29,6 +29,7 @@
 %%XPI_XPIDIR%%/content/firebug/chrome/toolbar.js
 %%XPI_XPIDIR%%/content/firebug/chrome/window.js
 %%XPI_XPIDIR%%/content/firebug/console/autoCompleter.js
+%%XPI_XPIDIR%%/content/firebug/console/closureInspector.js
 %%XPI_XPIDIR%%/content/firebug/console/commandEditor.js
 %%XPI_XPIDIR%%/content/firebug/console/commandHistory.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLine.js
