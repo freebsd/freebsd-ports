@@ -1,0 +1,2 @@
+To use gplot (the optional programmatic interface to gnuplot),
+the math/gnuplot port must be installed.

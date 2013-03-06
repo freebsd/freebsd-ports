@@ -2,7 +2,7 @@ bin/adaptmaptest
 bin/adaptnorm_reg
 bin/affine_reg
 bin/alltests_reg
-bin/alphaclean_reg
+bin/alphaops_reg
 bin/alphaxform_reg
 bin/arithtest
 bin/barcodetest
@@ -26,12 +26,14 @@ bin/cctest1
 bin/ccthin1_reg
 bin/ccthin2_reg
 bin/cmapquant_reg
+bin/coloring_reg
 bin/colormask_reg
 bin/colormorphtest
 bin/colorquant_reg
 bin/colorseg_reg
 bin/colorsegtest
 bin/colorspacetest
+bin/compare_reg
 bin/comparepages
 bin/comparetest
 bin/compfilter_reg
@@ -50,10 +52,13 @@ bin/convolvetest
 bin/cornertest
 bin/croptext
 bin/dewarp_reg
-bin/dewarptest
+bin/dewarptest1
+bin/dewarptest2
+bin/dewarptest3
 bin/digitprep1
 bin/distance_reg
 bin/dithertest
+bin/dna_reg
 bin/dwalineargen
 bin/dwamorph1_reg
 bin/dwamorph2_reg
@@ -76,6 +81,7 @@ bin/flipselgen
 bin/fmorphauto_reg
 bin/fmorphautogen
 bin/fpix_reg
+bin/fpixcontours
 bin/gammatest
 bin/genfonts
 bin/gifio_reg
@@ -163,7 +169,6 @@ bin/rotatefastalt
 bin/rotateorth_reg
 bin/rotateorthtest1
 bin/rotatetest1
-bin/rotatetest2
 bin/runlengthtest
 bin/scale_reg
 bin/scaleandtile
@@ -218,7 +223,6 @@ include/leptonica/gplot.h
 include/leptonica/heap.h
 include/leptonica/imageio.h
 include/leptonica/jbclass.h
-include/leptonica/leptprotos.h
 include/leptonica/leptwin.h
 include/leptonica/list.h
 include/leptonica/morph.h
@@ -233,5 +237,5 @@ include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.la
 lib/liblept.so
-lib/liblept.so.2
+lib/liblept.so.3
 @dirrm include/leptonica
