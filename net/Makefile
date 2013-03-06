@@ -47,7 +47,6 @@
     SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += beanstalkd
-    SUBDIR += bfilter
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird

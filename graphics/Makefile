@@ -206,7 +206,6 @@
     SUBDIR += flip
     SUBDIR += flphoto
     SUBDIR += fly
-    SUBDIR += fnlib
     SUBDIR += fortytwo
     SUBDIR += fotofix
     SUBDIR += fotoxx

@@ -86,7 +86,6 @@
     SUBDIR += explosions
     SUBDIR += fbless
     SUBDIR += felis
-    SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += figlet-fonts
     SUBDIR += findutils
@@ -171,7 +170,6 @@
     SUBDIR += grun
     SUBDIR += gtk-gopod
     SUBDIR += gtkfind
-    SUBDIR += gtktalog
     SUBDIR += gwenview-i18n
     SUBDIR += gwhich
     SUBDIR += hb
@@ -504,7 +502,6 @@
     SUBDIR += sls
     SUBDIR += smssend
     SUBDIR += spamcalc
-    SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += sssnips
     SUBDIR += stan

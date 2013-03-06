@@ -941,7 +941,6 @@
     SUBDIR += tuxpaint-stamps
     SUBDIR += tuxpuck
     SUBDIR += tuxracer
-    SUBDIR += tuxracer_golf
     SUBDIR += tuxtype
     SUBDIR += twind
     SUBDIR += twitch

@@ -12,7 +12,6 @@
     SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
-    SUBDIR += adstudio
     SUBDIR += akonadi
     SUBDIR += akonadi-google
     SUBDIR += akonadi-googledata
@@ -893,7 +892,6 @@
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
-    SUBDIR += xapian-bindings10
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
     SUBDIR += xmbase-grok

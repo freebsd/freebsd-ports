@@ -476,7 +476,6 @@
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gaphor
-    SUBDIR += gauche-gaunit
     SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gazpacho

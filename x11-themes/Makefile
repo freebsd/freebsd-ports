@@ -179,7 +179,6 @@
     SUBDIR += qtcurve-kde4
     SUBDIR += qtcurve-qt4
     SUBDIR += rezlooks
-    SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory

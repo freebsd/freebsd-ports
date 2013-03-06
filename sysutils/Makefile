@@ -862,8 +862,6 @@
     SUBDIR += setquota
     SUBDIR += sformat
     SUBDIR += sg3_utils
-    SUBDIR += sge60
-    SUBDIR += sge61
     SUBDIR += sge62
     SUBDIR += shlock
     SUBDIR += shmcat
@@ -956,7 +954,6 @@
     SUBDIR += ucspi-ssl-tls
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
-    SUBDIR += udesc_dump
     SUBDIR += udfclient
     SUBDIR += ufs_copy
     SUBDIR += uhidd
