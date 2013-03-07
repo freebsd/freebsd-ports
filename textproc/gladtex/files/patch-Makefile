@@ -10,7 +10,7 @@
  
 -CC = gcc -O2 -DGIF
 -LIB = -lm -lz -lgif -lpng
-+CC = gcc
++CC ?= gcc
 +CFLAGS+= -DGIF ${INCPATH}
 +LIB = -lm -lz ${LIBPATH} -lgif -lpng
  OBJ = eqn2img.o
