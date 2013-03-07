@@ -31,7 +31,6 @@ SCP_DEST_DIR=/usr/local/www/ports/
 # Location of ports tree and source trees
 export BASEDIR=/a/tindex
 export PORTSDIR=${BASEDIR}/ports
-export SRCDIR7=${BASEDIR}/src.7
 export SRCDIR8=${BASEDIR}/src.8
 export SRCDIR9=${BASEDIR}/src.9
 export SRCDIR10=${BASEDIR}/src.10
@@ -130,9 +129,6 @@ export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-${SVN} -q up ${SRCDIR7}/sys/sys
-OSVERSION7=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR7}/sys/sys/param.h)
-
 ${SVN} -q up ${SRCDIR8}/sys/sys
 OSVERSION8=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR8}/sys/sys/param.h)
 
@@ -144,7 +140,7 @@ OSVERSION10=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR
 
 
 cd ${PORTSDIR}
-rm -f INDEX-7 INDEX-7.bz2 INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2
+rm -f INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2
 (${SVN} up 2>1 ) > svn.log
 if grep -q ^C svn.log ; then
   (echo "svn update failed with conflicts:";
@@ -152,7 +148,7 @@ if grep -q ^C svn.log ; then
     exit 1
 fi
 
-for branch in 7.x 8.x 9.x 10.x; do
+for branch in 8.x 9.x 10.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}
