@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.42
+PORTVERSION=	1.0.46
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Install Debian base system into a directory
 
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
