@@ -3,7 +3,7 @@
 
 PORTNAME=	SuppDists
 DISTVERSION=	1.1-8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_CRAN} \
 		http://r.research.att.com/benchmarks/:benchmark \

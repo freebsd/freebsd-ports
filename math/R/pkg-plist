@@ -206,7 +206,6 @@ lib/R/library/Matrix/doc/Intro2Matrix.pdf
 lib/R/library/Matrix/doc/Introduction.R
 lib/R/library/Matrix/doc/Introduction.Rnw
 lib/R/library/Matrix/doc/Introduction.pdf
-lib/R/library/Matrix/doc/Matrix.bib
 lib/R/library/Matrix/doc/SuiteSparse/AMD.txt
 lib/R/library/Matrix/doc/SuiteSparse/CHOLMOD.txt
 lib/R/library/Matrix/doc/SuiteSparse/COLAMD.txt
@@ -429,6 +428,7 @@ lib/R/library/datasets/help/datasets.rdx
 lib/R/library/datasets/help/paths.rds
 lib/R/library/datasets/html/00Index.html
 lib/R/library/datasets/html/R.css
+lib/R/library/foreign/COPYRIGHTS
 lib/R/library/foreign/DESCRIPTION
 lib/R/library/foreign/INDEX
 lib/R/library/foreign/LICENCE
@@ -914,12 +914,14 @@ lib/R/library/parallel/libs/parallel.so
 %%NLS%%lib/R/library/parallel/po/zh_CN/LC_MESSAGES/parallel.mo
 lib/R/library/rpart/DESCRIPTION
 lib/R/library/rpart/INDEX
+lib/R/library/rpart/NEWS.Rd
 lib/R/library/rpart/Meta/Rd.rds
 lib/R/library/rpart/Meta/data.rds
 lib/R/library/rpart/Meta/hsearch.rds
 lib/R/library/rpart/Meta/links.rds
 lib/R/library/rpart/Meta/nsInfo.rds
 lib/R/library/rpart/Meta/package.rds
+lib/R/library/rpart/Meta/vignette.rds
 lib/R/library/rpart/NAMESPACE
 lib/R/library/rpart/R/rpart
 lib/R/library/rpart/R/rpart.rdb
@@ -927,6 +929,13 @@ lib/R/library/rpart/R/rpart.rdx
 lib/R/library/rpart/data/Rdata.rdb
 lib/R/library/rpart/data/Rdata.rds
 lib/R/library/rpart/data/Rdata.rdx
+lib/R/library/rpart/doc/index.html
+lib/R/library/rpart/doc/longintro.R
+lib/R/library/rpart/doc/longintro.Rnw
+lib/R/library/rpart/doc/longintro.pdf
+lib/R/library/rpart/doc/usercode.R
+lib/R/library/rpart/doc/usercode.Rnw
+lib/R/library/rpart/doc/usercode.pdf
 lib/R/library/rpart/help/AnIndex
 lib/R/library/rpart/help/aliases.rds
 lib/R/library/rpart/help/paths.rds
@@ -1133,6 +1142,7 @@ lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
 lib/R/library/survival/doc/index.html
+lib/R/library/survival/doc/sourcecode.pdf
 lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
@@ -1624,6 +1634,7 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/rpart/libs
 @dirrm lib/R/library/rpart/html
 @dirrm lib/R/library/rpart/help
+@dirrm lib/R/library/rpart/doc
 @dirrm lib/R/library/rpart/data
 @dirrm lib/R/library/rpart/R
 @dirrm lib/R/library/rpart/Meta
