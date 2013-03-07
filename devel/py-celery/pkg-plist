@@ -1,3 +1,9 @@
+bin/celerybeat
+bin/celeryd-multi
+bin/celeryctl
+bin/camqadm
+bin/celeryd
+bin/celeryev
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/celery/result.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/celery/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/celery/log.pyc
@@ -593,12 +599,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-bin/celerybeat
-bin/celeryd-multi
-bin/celeryctl
-bin/camqadm
-bin/celeryd
-bin/celeryev
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/celery/app/task
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/celery/app
