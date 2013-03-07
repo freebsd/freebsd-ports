@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	2.15.2
+PORTVERSION=	2.15.3
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
