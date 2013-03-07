@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rhodecode
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-past
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}waitress>=0.8.1:${PORTSDIR}/www/py-waitress \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.0.8:${PORTSDIR}/www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}beaker>=1.6.4:${PORTSDIR}/www/py-beaker \
 		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:${PORTSDIR}/www/py-formencode \
 		${PYTHON_PKGNAMEPREFIX}webhelpers>=1.3:${PORTSDIR}/www/py-webhelpers \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.7.3:${PORTSDIR}/textproc/py-mako \
