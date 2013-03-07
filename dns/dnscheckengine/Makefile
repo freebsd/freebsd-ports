@@ -1,9 +1,5 @@
-# New ports collection makefile for:  dnscheckengine
-# Date created:        28 July 2010
-# Whom:                dnscheckengine-port@academ.com (Stan Barber)
-#
+# Created by: dnscheckengine-port@academ.com (Stan Barber)
 # $FreeBSD$
-#
 
 PORTNAME=	dnscheckengine
 PORTVERSION=	1.1
@@ -40,11 +36,11 @@ DOCSDB=		indexes.sql schema.sql drop.sql
 PORTDOCS=	${DOCS} db
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
-OPTIONS=	MYSQL "Add MySQL Support (needed for webgui)" off
+OPTIONS_DEFINE=		MYSQL DOCS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 BUILD_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
@@ -82,7 +78,7 @@ MANCOMPRESSED=	no
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g'
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	@@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/contrib/dnscheck-dispatcher.sh
 .endif
 
@@ -90,7 +86,7 @@ pre-install:
 	-@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 # install startup script (if WITH_MYSQL is defined)
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/dnscheck-dispatcher.sh \
 		${PREFIX}/etc/rc.d/dnscheck-dispatcher
@@ -98,7 +94,7 @@ post-install:
 	@${ECHO} bin/dnscheck-dispatcher >> ${TMPPLIST}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/db
 	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 	@${INSTALL_DATA} '${WRKSRC}/doc/DNSCheck Lib Descriptions.pdf' ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    osbf-lua
-# Date created:         2009-01-14
-# Whom:                 RicardoSSP <ricardo.katz@gmail.com>
-#
+# Created by: RicardoSSP <ricardo.katz@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	osbf-lua
 PORTVERSION=	2.0.4
@@ -19,11 +15,13 @@ USE_LUA=	5.1+
 ALL_TARGET=
 INSTALL_TARGET=	install
 
-OPTIONS=	SPAMFILTER_PLUGIN "OSBF Spamfilter Plugin" on
+OPTIONS_DEFINE=		SPAMFILTER_PLUGIN
+OPTIONS_DEFAULT=	SPAMFILTER_PLUGIN
+SPAMFILTER_PLUGIN_DESC=		OSBF Spamfilter Plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SPAMFILTER_PLUGIN)
+.if ${PORT_OPTIONS:MSPAMFILTER_PLUGIN}
 INSTALL_TARGET+=	install_spamfilter
 PLIST_SUB+=		SPAMFILTER=""
 .else
@@ -33,4 +31,4 @@ PLIST_SUB+=		SPAMFILTER="@comment "
 post-patch:	.SILENT
 	${REINPLACE_CMD} '/^CC/s/=/?=/' ${WRKSRC}/config
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

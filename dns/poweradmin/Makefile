@@ -20,8 +20,8 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PEARDIR=	${PREFIX}/share/pear
 
-OPTIONS=	MYSQL	"Use Mysql database support" on \
-		PGSQL	"Use Pgsql database support" off
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
 SUB_FILES=	pkg-message
 
@@ -32,11 +32,11 @@ PLIST=		${WRKDIR}/plist
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 .endif
 

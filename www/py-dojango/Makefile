@@ -20,13 +20,13 @@ PYDISTUTILS_PKGNAME=	${PORTNAME}
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
-OPTIONS=	JAVA	"Java support needed to build dojo libraries"	off
+OPTIONS_DEFINE=		JAVA
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

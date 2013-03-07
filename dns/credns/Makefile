@@ -1,9 +1,5 @@
-# New ports collection makefile for:	credns
-# Date created:	9 July 2012
-# Whom:		jaap
-#
+# Created by: jaap
 # $FreeBSD$
-#
 
 PORTNAME=	credns
 PORTVERSION=	0.2.10
@@ -45,38 +41,38 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		README.icc README.svn RELNOTES REQUIREMENTS TESTPLAN \
 		TODO UPGRADING coding-style differences.pdf differences.tex
 
-OPTIONS=	ROOT_SERVER	"Dnssexy as proxy for a (local) root" Off \
-		IPV6		"Enable IPv6 support" On \
-		CHECKING	"Enable internal runtime checks" Off \
-		MMAP		"Use mmap instead of malloc(experimental)" Off \
-		MAXIPS		"Raise max-ips from 8 to ${NSDMAX_IPS}" Off
+OPTIONS_DEFINE=	ROOT_SERVER IPV6 CHECKING MMAP MAXIPS DOCS
+ROOT_SERVER_DESC=	Dnssexy as proxy for a (local) root
+CHECKING_DESC=	Internal runtime checks
+MMAP_DESC=	Use mmap instead of malloc(experimental)
+MAXIPS_DESC=	Raise max-ips from 8 to ${NSDMAX_IPS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ROOT_SERVER)
+.if ${PORT_OPTIONS:MROOT_SERVER}
 CONFIGURE_ARGS+=	--enable-root-server
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_CHECKING)
+.if ${PORT_OPTIONS:MCHECKING}
 CONFIGURE_ARGS+=	--enable-checking
 .endif
 
-.if defined(WITH_MMAP)
+.if ${PORT_OPTIONS:MMMAP}
 CONFIGURE_ARGS+=	--enable-mmap
 .endif
 
-.if defined(WITH_MAXIPS)
+.if ${PORT_OPTIONS:MMAXIPS}
 CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
 .endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/credns.conf.sample \
 		${PREFIX}/etc/credns/credns.conf.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
@@ -84,4 +80,4 @@ post-install:
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pound
-# Date created:				27 August 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pound
 PORTVERSION=	2.6
@@ -28,20 +24,21 @@ SUB_LIST=	NAME=${PORTNAME}
 
 MAN8=	pound.8 poundctl.8
 
-OPTIONS=	MSDAV		"With the Microsoft WebDAV extensions support" off \
-		PCRE		"Build with libpcre support" on
+OPTIONS_DEFINE=	MSDAV PCRE
+OPTIONS_DEFAULT=	PCRE
+MSDAV_DESC=	Microsoft WebDAV extension support
 
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 PLIST_FILES=	sbin/pound sbin/poundctl
 PORTDOCS=	README FAQ CHANGELOG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MSDAV)
+.if ${PORT_OPTIONS:MMSDAV}
 CONFIGURE_ARGS+=	--enable-msdav
 .endif
 
-.if !defined(WITHOUT_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
 CFLAGS+=		"-I${LOCALBASE}/include"
 CPPFLAGS+=		"-I${LOCALBASE}/include"
@@ -51,11 +48,11 @@ CONFIGURE_ARGS+=	--disable-pcreposix
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

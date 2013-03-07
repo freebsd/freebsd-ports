@@ -22,15 +22,9 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	DCRAW "Enable dcraw support" off \
-		FFMPEG "Enable ffmpeg support" off \
-		GD "Enable gd support" off \
-		GRAPHMAGICK "Enable graphicsmagick support" off \
-		IMAGEMAGICK "Enable imagemagick support" on \
-		JHEAD "Enable jhead support" on \
-		NETPBM "Enable netpbm support" off \
-		NLS "Enable National Language Support" on \
-		UNZIP "Enable unzip support" on
+OPTIONS_DEFINE=	DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD \
+		NETPBM NLS UNZIP
+OPTIONS_DEFAULT=	IMAGEMAGICK JHEAD UNZIP
 
 .include <bsd.port.options.mk>
 
@@ -39,41 +33,41 @@ OPTIONS=	DCRAW "Enable dcraw support" off \
 WWWDIR=		${GALLERY3DIR}
 .endif
 
-.if defined(WITH_DCRAW)
+.if ${PORT_OPTIONS:MDCRAW}
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
 
-.if defined(WITH_GRAPHMAGICK)
+.if ${PORT_OPTIONS:MGRAPHMAGICK}
 RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 .endif
 
-.if !defined(WITHOUT_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if !defined(WITHOUT_JHEAD)
+.if ${PORT_OPTIONS:MJHEAD}
 RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
 .endif
 
-.if defined(WITH_NETPBM)
+.if ${PORT_OPTIONS:MNETPBM}
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_PHP+=	gettext
 USE_GETTEXT=	yes	# Pet portlint
 .endif
 
-.if !defined(WITHOUT_UNZIP)
+.if ${PORT_OPTIONS:MUNZIP}
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 

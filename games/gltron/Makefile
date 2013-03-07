@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gltron
-# Date created:				24 July 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	gltron
 PORTVERSION=	0.70
@@ -26,7 +22,8 @@ CONFIGURE_ARGS=	--disable-warn
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	SDL_NET "With network support" off
+OPTIONS_DEFINE=	SDL_NET
+SDL_NET_DESC=	Network Support
 
 DESKTOP_ENTRIES=	"GLtron" \
 	"3D lightcycle game" \
@@ -37,7 +34,7 @@ DESKTOP_ENTRIES=	"GLtron" \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SDL_NET)
+.if ${PORT_OPTIONS:MSDL_NET}
 USE_SDL+=	net
 CONFIGURE_ARGS+=	--enable-network
 .endif
@@ -51,7 +48,7 @@ post-patch:
 		 s|-ansi -pedantic||g'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

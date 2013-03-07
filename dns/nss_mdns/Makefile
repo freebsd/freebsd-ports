@@ -22,8 +22,8 @@ AUTOTOOLSFILES=	aclocal.m4
 
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 
-OPTIONS=			\
-	SEARCH_DOMAINS "Honour search domains in resolv.conf" Off
+OPTIONS_DEFINE=	SEARCH_DOMAINS DOCS
+SEARCH_DOMAINS_DESC=	Honour search domains in resolv.conf
 
 CONFIGURE_ARGS+=		\
 	--sysconfdir=/etc	\
@@ -35,6 +35,12 @@ CONFIGURE_ARGS+=		\
 	--disable-lynx
 
 INSTALLED_MODULES=nss_mdns nss_mdns_minimal
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSEARCH_DOMAINS}
+CONFIGURE_ARGS+=	--enable-search-domains
+.endif
 
 #
 # libtool is used, therefore we must perform a GNU make based install,
@@ -48,7 +54,7 @@ do-install:
 	( cd ${PREFIX}/lib ; ${LN} -s ${INSTALLED_MODULE}.so.1 ${INSTALLED_MODULE}.so )
 	${RM} ${PREFIX}/lib/${INSTALLED_MODULE}.a ${PREFIX}/lib/${INSTALLED_MODULE}.la
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README ${DOCSDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README.html ${DOCSDIR}
@@ -59,14 +65,8 @@ do-install:
 PLIST_FILES=	${INSTALLED_MODULES:C/^/lib\//:C/$/.so/} ${INSTALLED_MODULES:C/^/lib\//:C/$/.so.1/}
 PORTDOCS=	README README.html
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SEARCH_DOMAINS)
-CONFIGURE_ARGS+=	--enable-search-domains
-.endif
-
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print | \
 		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

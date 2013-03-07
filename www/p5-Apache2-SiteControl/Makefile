@@ -26,7 +26,8 @@ RUN_DEPENDS=	p5-Apache-AuthCookie>=3.08:${PORTSDIR}/www/p5-Apache-AuthCookie \
 		p5-Crypt-CBC>=2.14:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-libapreq2>=2.05:${PORTSDIR}/www/p5-libapreq2
 
-OPTIONS=	RADIUS "Support for RADIUS back-end" on
+OPTIONS_DEFINE=		RADIUS
+OPTIONS_DEFAULT=	RADIUS
 
 PERL_CONFIGURE=	yes
 
@@ -41,7 +42,7 @@ MAN3=		Apache2::SiteControl.3 \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_RADIUS)
+.if ! ${PORT_OPTIONS:MRADIUS}
 RUN_DEPENDS+=	p5-Authen-Radius>=0.10:${PORTSDIR}/security/p5-Authen-Radius
 .endif
 

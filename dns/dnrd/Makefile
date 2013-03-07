@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dnrd
-# Date created:        06 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=		dnrd
 PORTVERSION=		2.20.3
@@ -22,10 +18,11 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 EXAMPLES=	README-cache README-cygwin README-master TODO \
 		master.sample
 
-OPTIONS=	TCP "Enable TCP support" off \
-		MASTER "Enable master file support" on \
-		DEBUG "Enable debugging" off \
-		RANDOM "Enable random source port" off
+OPTIONS_DEFINE=	TCP MASTER DEBUG RANDOM DOCS
+OPTIONS_DEFAULT= MASTER
+TCP_DESC=	TCP support
+MASTER_DESC=	Master file support
+RANDOM_DESC=	Random source port
 
 USERS=		dnrd
 GROUPS=		dnrd
@@ -34,21 +31,21 @@ DNRD_DIR?=	${ETCDIR}
 SUB_FILES=	pkg-install
 SUB_LIST+=	DNRD_DIR=${DNRD_DIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TCP)
+.if ${PORT_OPTIONS:MTCP}
 CONFIGURE_ARGS+=	--enable-tcp
 .endif
 
-.if !defined(WITH_MASTER)
+.if ${PORT_OPTIONS:MMASTER}
 CONFIGURE_ARGS+=	--disable-master
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_RANDOM)
+.if ${PORT_OPTIONS:MRANDOM}
 CONFIGURE_ARGS+=	--enable-random-src
 .endif
 
@@ -58,11 +55,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/dnrd ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/doc/dnrd.8 ${MAN8PREFIX}/man/man8/
 	@${INSTALL_DATA} ${WRKSRC}/doc/master.sample ${ETCDIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

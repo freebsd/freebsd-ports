@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sit
-# Date created:				Wed Oct 7, 2010
-# Whom:					Carsten Jensen <carsten@sitracker.org>
-#
+# Created by: Carsten Jensen <carsten@sitracker.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sit
 PORTVERSION=	3.67
@@ -24,21 +20,22 @@ WRKSRC=		${WRKDIR}/sit-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	IMAP		"If you want email to work"			on \
-		MBSTRING	"If you want to use the inbound email feature"	on \
-		LDAP		"If you want to use LDAP auth"			off
+OPTIONS_DEFINE=	IMAP MBSTRING LDAP
+OPTIONS_DEFAULT=	IMAP MBSTRING
+IMAP_DESC=	Email Support
+MBSTRING_DESC=	Inbound email feature
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IMAP)
+.if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap
 .endif
 
-.if defined(WITH_MBSTRING)
+.if ${PORT_OPTIONS:MMBSTRING}
 USE_PHP+=	mbstring
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
@@ -56,4 +53,4 @@ post-install:
 		${CP} -p ${WWWDIR}/config.inc.php ${WWWDIR}/config.inc.php.bak ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

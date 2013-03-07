@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FusionInventory-Agent
-# Date created:		2011-08-18
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	FusionInventory-Agent
 PORTVERSION=	2.2.5
@@ -35,13 +31,12 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture
 
-OPTIONS=	CUPS "Enable CUPS" OFF \
-		HTTP "Enable HTTP daemon mode" OFF \
-		ZLIB "Enable Zlib compression" ON \
-		SSL "Enable SSL" OFF \
-		DMIDECODE "Enable dmidecode hardware information" ON \
-		PCIUTILS "Enable pciutils hardware information" ON \
-		NMAP "Enable NMAP network inventory" OFF
+OPTIONS_DEFINE=	CUPS HTTP ZLIB SSL DMIDECODE PCIUTILS NMAP
+OPTIONS_DEFAULT=	ZLIB DMIDECODE PCIUTILS
+HTTP_DESC=	HTTP daemon mode
+ZLIB_DESC=	Zlib compression
+DMIDECODE_DESC=	Dmidecode hardware information
+PCIUTILS_DESC=	Pciutils hardware information
 
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -87,34 +82,34 @@ MAN3=		FusionInventory::Agent.3 \
 		FusionInventory::Agent::XML::Query::Prolog.3 \
 		FusionInventory::Agent::XML::Response.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 RUN_DEPENDS+=		p5-Net-CUPS>=0.6:${PORTSDIR}/print/p5-Net-CUPS
 .endif
 
-.if defined(WITH_HTTP)
+.if ${PORT_OPTIONS:MHTTP}
 RUN_DEPENDS+=		p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon
 .endif
 
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 RUN_DEPENDS+=		p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 RUN_DEPENDS+=		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 			p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
 .endif
 
-.if defined(WITH_DMIDECODE)
+.if ${PORT_OPTIONS:MDMIDECODE}
 RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
-.if defined(WITH_PCIUTILS)
+.if ${PORT_OPTIONS:MPCIUTILS}
 RUN_DEPENDS+=	lspci:${PORTSDIR}/sysutils/pciutils
 .endif
 
-.if defined(WITH_NMAP)
+.if ${PORT_OPTIONS:MNMAP}
 RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 .endif
 
@@ -128,4 +123,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/fusioninventory/agent.cfg.sample ${PREFIX}/etc/fusioninventory/agent.cfg ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

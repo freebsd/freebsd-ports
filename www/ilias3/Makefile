@@ -1,7 +1,4 @@
-# New ports collection makefile for:	www/ilias
-# Date created:				Oct 24, 2006
-# Whom:					Bartlomiej Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 # $FreeBSD$
 
 PORTNAME=	ilias
@@ -36,21 +33,23 @@ PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-OPTIONS=	SCORM2004 "Using SCORM2004 support" off	\
-		Checker "Link Checker" off \
-		Mail "Internet compliant E-Mail addresses" off
+OPTIONS_DEFINE=	SCORM2004 CHECKER MAIL
 
-.include <bsd.port.pre.mk>
+SCORM2004_DESC=		Using SCORM2004 support
+CHECKER_DESC=		Link Checker
+MAIL_DESC=		Mail Support
 
-.if defined(WITH_SCORM2004)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSCORM2004}
 USE_PHP+=	json
 .endif
 
-.if defined(WITH_Checker)
+.if ${PORT_OPTIONS:MCHECKER}
 RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
-.if defined(WITH_Mail)
+.if ${PORT_OPTIONS:MMAIL}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail
 .endif
 
@@ -71,10 +70,10 @@ do-install:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}' >>${TMPPLIST}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
