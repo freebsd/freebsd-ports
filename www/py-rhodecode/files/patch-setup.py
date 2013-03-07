@@ -1,5 +1,5 @@
 diff --git setup.py setup.py
-index 17eb71e..1939a2c 100644
+index 70b6aa5..6f2c869 100644
 --- setup.py
 +++ setup.py
 @@ -33,23 +33,23 @@ __platform__ = platform.system()
@@ -8,42 +8,44 @@ index 17eb71e..1939a2c 100644
  requirements = [
 -    "waitress==0.8.1",
 -    "webob==1.0.8",
-+    "waitress>=0.8.1",
-+    "webob>=1.0.8",
-     "Pylons==1.0.0",
+-    "Pylons==1.0.0",
 -    "Beaker==1.6.4",
-+    "Beaker>=1.6.4",
-     "WebHelpers==1.3",
-     "formencode==1.2.4",
+-    "WebHelpers==1.3",
+-    "formencode==1.2.4",
 -    "SQLAlchemy==0.7.9",
 -    "Mako==0.7.3",
++    "waitress>=0.8.1",
++    "webob>=1.0.8",
++    "Pylons>=1.0.0",
++    "Beaker>=1.6.4",
++    "WebHelpers>=1.3",
++    "formencode>=1.2.4",
 +    "SQLAlchemy>=0.7.9",
 +    "Mako>=0.7.3",
      "pygments>=1.5",
-     "whoosh>=2.4.0,<2.5",
-     "celery>=2.2.5,<2.3",
+-    "whoosh>=2.4.0,<2.5",
+-    "celery>=2.2.5,<2.3",
++    "whoosh>=2.4.0",
++    "celery>=2.2.5",
      "babel",
 -    "python-dateutil>=1.5.0,<2.0.0",
-+    "python-dateutil>=1.5.0, != 2.0",
++    "python-dateutil>=1.5.0",
      "dulwich>=0.8.7,<0.9.0",
 -    "markdown==2.2.1",
-+    "markdown>=2.2.1",
-     "docutils==0.8.1",
+-    "docutils==0.8.1",
 -    "simplejson==2.5.2",
++    "markdown>=2.2.1",
++    "docutils>=0.8.1",
 +    "simplejson>=2.5.2",
      "mock",
  ]
  
-@@ -60,10 +60,10 @@ if sys.version_info < (2, 7):
-     requirements.append("unittest2")
- 
- if is_windows:
--    requirements.append("mercurial==2.4.1")
-+    requirements.append("mercurial>=2.4.1")
+@@ -64,7 +64,7 @@ if is_windows:
+     requirements.append("mercurial==2.4.2")
  else:
      requirements.append("py-bcrypt")
--    requirements.append("mercurial==2.4.1")
-+    requirements.append("mercurial>=2.4.1")
+-    requirements.append("mercurial==2.4.2")
++    requirements.append("mercurial>=2.4.2")
  
  
  dependency_links = [
