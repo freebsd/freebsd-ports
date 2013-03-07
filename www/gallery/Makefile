@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gallery
-# Date created:                09 Sep 2001
-# Whom:                        Jamie Hermans <jamie@hermans.ca>
-#
+# Created by: Jamie Hermans <jamie@hermans.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	gallery
 PORTVERSION=	1.5.10
@@ -13,8 +9,8 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
 DIST_SUBDIR=	gallery
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A slick web based photo album written using PHP
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \

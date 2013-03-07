@@ -1,9 +1,5 @@
-# New ports collection makefile for:    GNUMail
-# Date created:         11 Jun 2001
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnumail
 PORTVERSION=	1.2.0
@@ -12,7 +8,7 @@ CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2

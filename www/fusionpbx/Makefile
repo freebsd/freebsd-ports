@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	PHP5 Graphical User Interface for FreeSwitch
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC

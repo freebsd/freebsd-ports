@@ -7,8 +7,8 @@ PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A streaming mp3 audio server
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Streaming mp3 audio server
 
 LICENSE=	GPLv2 # (or later)
 

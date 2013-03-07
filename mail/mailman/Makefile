@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailman
-# Date created:		10 July 2000
-# Whom:			n_hibma@qubesoft.com
-#
+# Created by: n_hibma@qubesoft.com
 # $FreeBSD$
-#
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.14
@@ -15,8 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Mailing list manager (MLM) with a user-friendly web front-end
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL

@@ -6,7 +6,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202.1%20release/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Audited shells in Perl with sudo(8) and script(1)
 
 MAN1=		ss.1 sudoshell.1

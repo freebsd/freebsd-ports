@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
 LICENSE=	BSL GPLv3

@@ -1,14 +1,13 @@
 # Created by: Chris Petrik <chris@officialunix.com>
 # $FreeBSD$
-#
 
 PORTNAME=	diakonos
 PORTVERSION=	0.9.1
 CATEGORIES=	editors ruby
 MASTER_SITES=   http://diakonos.pist0s.ca/archives/ \
          	http://distfiles.bsdjunk.com
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Linux editor for the masses
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Linux editor for the masses
 
 LICENSE=	MIT
 
