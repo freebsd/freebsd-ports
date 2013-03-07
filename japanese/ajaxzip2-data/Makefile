@@ -11,14 +11,11 @@ DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) ZIP data
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	ja-ajaxzip2-core>0:${PORTSDIR}/japanese/ajaxzip2-core \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
 
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	x
-EXTRACT_AFTER_ARGS=
 NO_WRKSUBDIR=	yes
+USE_LHA=	yes
 USE_PERL5_BUILD=yes
 PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}

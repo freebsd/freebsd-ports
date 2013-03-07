@@ -91,9 +91,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${DISTNAME}${EXTRACT_SUFX}
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
-#				  Default: .tar.bz2 if USE_BZIP2 is set, .zip if USE_ZIP is
-#				  set, .tar.xz if USE_XZ is set, .run if USE_MAKESELF is set,
-#				  .tar.gz otherwise).
+#				  Default: .tar.bz2 if USE_BZIP2 is set, .lzh if USE_LHA is set,
+#				  .zip if USE_ZIP is set, .tar.xz if USE_XZ is set, .run if
+#				  USE_MAKESELF is set, .tar.gz otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -303,6 +303,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
 #				  compression.
+# USE_LHA		- If set, this port distfile uses lha for compression
 # USE_XZ		- If set, this port tarballs use xz (or lzma)
 #				  for compression
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
@@ -1369,6 +1370,8 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 
 .if defined(USE_BZIP2)
 EXTRACT_SUFX?=			.tar.bz2
+.elif defined(USE_LHA)
+EXTRACT_SUFX?=			.lzh
 .elif defined(USE_ZIP)
 EXTRACT_SUFX?=			.zip
 .elif defined(USE_XZ)
@@ -1675,6 +1678,9 @@ PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
 .endif
 .endif
 
+.if defined(USE_LHA)
+EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.endif
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
@@ -1730,7 +1736,6 @@ MAKE_ENV+=	${b}="${${b}}"
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lreadline
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 .endif
 
@@ -2326,7 +2331,11 @@ PATCH_DIST_ARGS+=	--suffix .orig
 TAR?=	/usr/bin/tar
 
 # EXTRACT_SUFX is defined in .pre.mk section
-.if defined(USE_ZIP)
+.if defined(USE_LHA)
+EXTRACT_CMD?=		${LHA_CMD}
+EXTRACT_BEFORE_ARGS?=	xfqw=${WRKDIR}
+EXTRACT_AFTER_ARGS?=
+.elif defined(USE_ZIP)
 EXTRACT_CMD?=		${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}

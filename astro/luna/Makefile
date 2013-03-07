@@ -10,17 +10,11 @@ PORTVERSION=	1.9
 CATEGORIES=	astro games
 MASTER_SITES=	http://ftp.vector.co.jp/pack/dos/edu/science/space/
 DISTNAME=	luna19s
-EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
 
-EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
-
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xtfqw=${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
-
+USE_LHA=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/luna
 MAKEFILE=	makefile

@@ -54,6 +54,7 @@ ID?=		/usr/bin/id
 IDENT?=		/usr/bin/ident
 JOT?=		/usr/bin/jot
 LDCONFIG?=	/sbin/ldconfig
+LHA_CMD?=	${LOCALBASE}/bin/lha
 LN?=		/bin/ln
 LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
