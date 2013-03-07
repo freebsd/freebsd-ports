@@ -28,7 +28,6 @@
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
     SUBDIR += SpecTcl
-    SUBDIR += ZendOptimizer
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
     SUBDIR += ace

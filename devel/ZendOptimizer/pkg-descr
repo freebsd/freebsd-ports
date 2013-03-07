@@ -1,9 +1,0 @@
-The Zend Optimizer is a free application that runs the files
-encoded by the Zend Encoder and Zend SafeGuard Suite, while
-enhancing the running speed of PHP applications. 
-
-Benefits:
-- Enables users to run files encoded by the Zend Encoder 
-- Increases runtime performance up to 40%. 
-
-WWW: http://www.zend.com/store/products/zend-optimizer.php

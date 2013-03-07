@@ -1392,6 +1392,7 @@
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-yaf
+    SUBDIR += pecl-zendoptimizerplus
     SUBDIR += pelican
     SUBDIR += perlbal
     SUBDIR += pglogd
