@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130307:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle on demand features, 2 examples has been added to
+    the ports tree:
+
+    pathfix: to replace USE_GNOME= gnomehack
+    fuse: to replace USE_FUSE= yes
+
 20130207:
 AUTHOR: gahr@FreeBSD.org
 
