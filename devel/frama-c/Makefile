@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		frama-c
-DISTVERSIONPREFIX=	Nitrogen-
-DISTVERSION=		20111001
-PORTREVISION=		3
+DISTVERSIONPREFIX=	Oxygen-
+DISTVERSION=		20120901
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 
@@ -13,21 +12,30 @@ COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-cpp="${FRAMAC_DEFAULT_CPP}"
 MAKE_ENV+=	FRAMAC_LIBDIR="${PREFIX}/lib/frama-c"
 MAN1=		frama-c.1 frama-c-gui.1
-OPTIONS=	ALTERGO "Build wp plugin components that use Alt-Ergo" on \
-		COQ	"Build wp plugin components that use Coq" off \
-		GUI	"Build GUI" on \
-		PLUGINS "Build bundled plugins" on
+
+OPTIONS_DEFINE=		ALTERGO COQ GUI PLUGINS
+OPTIONS_DEFAULT=	ALTERGO GUI PLUGINS
+ALTERGO_DESC=	Alt-Ergo plugin (requires PLUGINS)
+COQ_DESC=	Coq plugin (requires PLUGINS)
+GUI_DESC=	Graphical User Interface (requires PLUGINS)
+
 USE_GMAKE=	yes
 USE_OCAML=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ALTERGO)
-.if !defined(WITH_PLUGINS)
-IGNORE =	requires WITH_PLUGINS for WITH_ALTERGO
+FRAMAC_DEFAULT_CPP?=	${CPP} -C -I${DATADIR}/libc -I.
+
+.if ${PORT_OPTIONS:MALTERGO}
+.if !${PORT_OPTIONS:MPLUGINS}
+IGNORE=	the Alt-Ergo plugin requires the PLUGINS option to be enabled
 .endif
 BUILD_DEPENDS +=	alt-ergo:${PORTSDIR}/math/alt-ergo
 RUN_DEPENDS+=		alt-ergo:${PORTSDIR}/math/alt-ergo
@@ -35,9 +43,9 @@ RUN_DEPENDS+=		alt-ergo:${PORTSDIR}/math/alt-ergo
 CONFIGURE_ENV +=	HAS_ALTERGO=no
 .endif
 
-.if defined(WITH_COQ)
-.if !defined(WITH_PLUGINS)
-IGNORE =	requires WITH_PLUGINS for WITH_COQ
+.if ${PORT_OPTIONS:MCOQ}
+.if !${PORT_OPTIONS:MPLUGINS}
+IGNORE=	the Coq plugin requires the PLUGINS option to be enabled
 .endif
 BUILD_DEPENDS +=	coqc:${PORTSDIR}/math/coq
 RUN_DEPENDS+=		coqc:${PORTSDIR}/math/coq
@@ -45,9 +53,9 @@ RUN_DEPENDS+=		coqc:${PORTSDIR}/math/coq
 CONFIGURE_ENV +=	HAS_COQ=no
 .endif
 
-.if defined(WITH_GUI)
-.if !defined(WITH_PLUGINS)
-IGNORE =	requires WITH_PLUGINS for WITH_GUI
+.if ${PORT_OPTIONS:MGUI}
+.if !${PORT_OPTIONS:MPLUGINS}
+IGNORE=	the GUI requires the PLUGINS option to be enabled
 .endif
 BUILD_DEPENDS +=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
@@ -58,7 +66,7 @@ CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=		GUI="@comment "
 .endif
 
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 BUILD_DEPENDS +=	dot:${PORTSDIR}/graphics/graphviz \
 			ltl2ba:${PORTSDIR}/math/ltl2ba
 RUN_DEPENDS+=	 	dot:${PORTSDIR}/graphics/graphviz \
@@ -69,20 +77,9 @@ CONFIGURE_ARGS+=	--with-no-plugin
 PLIST_SUB+=		PLUGINS="@comment "
 .endif
 
-post-extract:
-	@cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		ocamlgraph.tar.gz ${EXTRACT_AFTER_ARGS}
-
 post-patch:
-	@${MKDIR} ${WRKSRC}/tests/report \
-		${WRKSRC}/tests/wp \
-		${WRKSRC}/tests/wp_plugin \
-		${WRKSRC}/tests/wp_acsl \
-		${WRKSRC}/tests/wp_store \
-		${WRKSRC}/tests/wp_hoare \
-		${WRKSRC}/tests/wp_runtime \
-		${WRKSRC}/tests/wp_bts \
-		${WRKSRC}/tests/wp_engine
+	@cd ${WRKSRC}/tests; ${MKDIR} aorai report wp wp_acsl wp_bts \
+	wp_engine wp_hoare wp_plugin wp_runtime wp_store wp_typed
 	@${REINPLACE_CMD} -e 's|@make |@${GMAKE} |' \
 			${WRKSRC}/src/aorai/Makefile.in
 	@${REINPLACE_CMD} \
@@ -95,11 +92,7 @@ post-patch:
 			${WRKSRC}/share/Makefile.dynamic
 	@${REINPLACE_CMD} -e '\|^# Installation|,\|^# File headers|{ \
 		\|$$(CP).*bin|s|$$(CP)|${INSTALL_SCRIPT}|; \
-		\|$$(CP) -R doc/manuals $$(FRAMAC_DATADIR)| \
-		s||${MKDIR} $$(FRAMAC_DATADIR)/manuals ; \
-		${INSTALL_DATA} doc/manuals/* $$(FRAMAC_DATADIR)/manuals|; \
-		\|$$(CP).*man|s|$$(CP)\( -R\)*|${INSTALL_MAN}|; \
-		\|$$(CP).*share|s|$$(CP)\( -R\)*|${INSTALL_DATA}|; \
+		\|$$(CP).*man/|s|$$(CP)|${INSTALL_MAN}|; \
 		s|$$(CP)|${INSTALL_DATA}|; }' \
 			${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|HAS_ALTERGO=$$||' \
@@ -107,14 +100,9 @@ post-patch:
 		-e 's|HAS_COQ=$$||' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/configure \
-		${WRKSRC}/ocamlgraph/configure \
-		${WRKSRC}/ocamlgraph/view_graph/Makefile \
-		${WRKSRC}/share/Makefile.plugin \
 		${WRKSRC}/src/kernel/dynamic.ml
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 pre-configure:
 	@(if [ ! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/gtkSourceView2.cmi -o \
 	! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/gnomeCanvas.cmi ] ; then \
@@ -133,14 +121,9 @@ post-install:
 	@${TOUCH} ${PREFIX}/lib/frama-c/plugins/.keep_me \
 	${PREFIX}/lib/frama-c/plugins/gui/.keep_me
 
-.if defined(MAINTAINER_MODE)
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	FRAMAC_LIB=${WRKSRC}/lib/fc \
-	FRAMAC_PLUGIN=${WRKSRC}/lib/plugins \
-	FRAMAC_SHARE=${WRKSRC}/share \
-	${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS} tests)
-
-.endif
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV:NCPP=*} \
+	CPP="${CPP} -C -I${WRKSRC}/share/libc -I." \
+	${GMAKE} ${MAKE_ARGS} oracles fulltests
 
 .include <bsd.port.mk>
