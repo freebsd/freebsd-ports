@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezmlm
-# Date created:		28 November 1998
-# Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-#
+# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	ezmlm
 PORTVERSION=	0.53
@@ -17,8 +13,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.nl.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/mail/qmail/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Easy-to-use, high-speed mailing list manager for qmail
 
 USE_GCC=	any
 USE_QMAIL_RUN=	yes

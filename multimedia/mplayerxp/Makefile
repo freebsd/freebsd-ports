@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Multi-threaded branch of the well known mplayer media player
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

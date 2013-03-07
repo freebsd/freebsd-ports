@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gnustep-make
-# Date created:         17 April 2001
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnustep-make
 PORTVERSION=	2.6.2
@@ -11,7 +7,7 @@ CATEGORIES=	devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	GNUstep makefile package
 
 LICENSE=        GPLv3

@@ -1,4 +1,3 @@
-# Create by: Patrick Li <pat@databits.net>
 # $FreeBSD$
 
 PORTNAME=	crystality
@@ -10,7 +9,7 @@ MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

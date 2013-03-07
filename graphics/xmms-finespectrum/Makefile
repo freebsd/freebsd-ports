@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/finespectrum/finespectrum/1.0.1alpha
 DISTNAME=	finespectrum-1.0.1alpha
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Fine grain Spectrum analyzers for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

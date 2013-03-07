@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gnustep-guile
-# Date created:         24 April 2001
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	guile
 PORTVERSION=	1.1.4
@@ -15,7 +11,7 @@ PKGNAMEPREFIX=	gnustep-
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile

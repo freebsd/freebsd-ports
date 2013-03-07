@@ -1,9 +1,5 @@
-# New ports collection makefile for: analog
-# Date created:		October 21st 1996
-# Whom:			jfitz
-#
+# Created by: jfitz
 # $FreeBSD$
-#
 
 PORTNAME=	analog
 PORTVERSION=	6.0
@@ -16,8 +12,8 @@ MASTER_SITES=	http://www.analog.cx/ \
 		ftp://ftp.polytechnic.edu.na/pub/analog/ \
 		http://analog.tzone.it/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extremely fast program for analysing WWW logfiles
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Extremely fast program for analysing WWW logfiles
 
 LICENSE=	GPLv2
 

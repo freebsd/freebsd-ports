@@ -1,17 +1,13 @@
-# New ports collection makefile for:	motion
-# Date created:				22 Dec 2005
-# Whom:					Angel Carpintero <ack@telefonica.net>
-#
+# Created by: Angel Carpintero <ack@telefonica.net>
 # $FreeBSD$
-#
 
 PORTNAME=	motion
 PORTVERSION=	3.2.12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20${PORTVERSION:R}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A motion detection application
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Motion detection application
 
 LICENSE=	GPLv2
 

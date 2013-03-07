@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pureadmin
-# Date created:			Mar 4, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pureadmin
 PORTVERSION=	0.4
@@ -12,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	ftp
 MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Management utility for the PureFTPd
 
 USE_GNOME=	gnomehack libglade2

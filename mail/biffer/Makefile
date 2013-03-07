@@ -1,9 +1,5 @@
-# New ports collection makefile for:   biffer
-# Date created:        21 September 1999
-# Whom:                jsellens
-#
+# Created by: jsellens
 # $FreeBSD$
-#
 
 PORTNAME=	biffer
 PORTVERSION=	1.0
@@ -11,8 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A better mail notification server
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Better mail notification server
 
 RUN_DEPENDS=	xmsg:${PORTSDIR}/x11/xmsg
 

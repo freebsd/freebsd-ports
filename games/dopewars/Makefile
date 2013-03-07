@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dopewars
-# Date created:			16 May 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dopewars
 PORTVERSION=	1.5.12
@@ -11,8 +7,8 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	UNIX rewrite of a game originally based on "Drug Wars"
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
 		http://files.etoilebsd.net/livemedia/
 DISTNAME=	live.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	LIVE.COM Streaming Media
 
 LICENSE=	GPLv2

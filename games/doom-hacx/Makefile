@@ -1,9 +1,5 @@
-# New ports collection makefile for:	doom-hacx
-# Date created:				21 Sep 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	hacx
 PORTVERSION=	1.0
@@ -13,8 +9,8 @@ PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}.wad
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A full TC using the Doom II engine
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Full TC using the Doom II engine
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

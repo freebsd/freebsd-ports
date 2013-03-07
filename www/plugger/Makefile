@@ -6,8 +6,8 @@ PORTVERSION=	5.1.5
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multimedia front-end plugin for Mozilla or Opera
+MAINTAINER=	c.petrik.sosa@gmail.com
+COMMENT=	Multimedia front-end plugin for Mozilla or Opera
 
 USE_XORG=	xext xt sm ice xext x11
 GNU_CONFIGURE=	yes

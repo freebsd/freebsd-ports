@@ -1,7 +1,4 @@
-# New ports collection makefile for:	slrnconf
-# Date created:				13 Jun 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
 
 PORTNAME=	slrnconf
@@ -10,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Graphical configuration utility for the newsreader slrn
 
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

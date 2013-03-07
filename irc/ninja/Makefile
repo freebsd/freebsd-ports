@@ -1,16 +1,12 @@
-# New ports collection makefile for: 	Ninja-irc
-# Date created:	 	10 April 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ninja
 PORTVERSION=	1.5.8.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Another ircII based irc client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
