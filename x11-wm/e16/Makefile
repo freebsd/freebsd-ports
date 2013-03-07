@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e16
-PORTVERSION=	1.0.11.001
+PORTVERSION=	1.0.11.002
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-rpath --enable-mans SHELL=/bin/sh
+CFLAGS+=	-g -O0
 
 .include <bsd.port.options.mk>
 
