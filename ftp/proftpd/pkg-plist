@@ -187,6 +187,7 @@ sbin/proftpd
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/proftpd.mo
