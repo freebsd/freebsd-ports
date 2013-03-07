@@ -3,6 +3,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		http://mirror.linux.org.au/software/scm/git/:git
@@ -14,7 +15,7 @@ COMMENT=	A fast webinterface for git
 
 LICENSE=	GPLv2
 
-GIT_VERSION=	1.7.4
+GIT_VERSION=	1.7.4.4
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
