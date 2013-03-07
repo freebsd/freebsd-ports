@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		unknown-horizons
-PORTVERSION=		2012.1
+PORTVERSION=		2013.1
 CATEGORIES=		games
 MASTER_SITES=		SF/unknownhorizons/Unknown%20Horizons/${PORTVERSION}/
 
@@ -32,12 +32,14 @@ MAN6=			unknown-horizons.6
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
+ENET_DIR=	x86
 PLIST_SUB+=	X86_ONLY=""
 .else
 PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
 .if ${ARCH} == amd64
+ENET_DIR=	x64
 PLIST_SUB+=	X64_ONLY=""
 .else
 PLIST_SUB+=	X64_ONLY="@comment "
@@ -46,5 +48,12 @@ PLIST_SUB+=	X64_ONLY="@comment "
 post-patch:
 	${REINPLACE_CMD} -e "s|http://docbook.sourceforge.net/release/xsl/current|${LOCALBASE}/share/xsl/docbook|" \
 		-e "s|share/man/man6|man/man6|" ${WRKSRC}/setup.py
+
+# Install multiplayer lib (enet+pyenet)
+post-install:
+	${MKDIR} ${PYTHON_SITELIBDIR}/horizons/network/libs
+	${MKDIR} ${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}
+	${INSTALL} ${WRKSRC}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so \
+		${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so
 
 .include <bsd.port.post.mk>
