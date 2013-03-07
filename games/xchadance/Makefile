@@ -15,15 +15,10 @@ DISTFILES=	xchada01.lzh
 MAINTAINER=	motoyuki@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
-
+USE_LHA=	yes
 USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
-
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	e
-EXTRACT_AFTER_ARGS=
 
 RESTRICTED=	'contains commercial character data'
 

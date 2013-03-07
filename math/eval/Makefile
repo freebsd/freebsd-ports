@@ -17,11 +17,8 @@ EXTRACT_SUFX=	.lha
 MAINTAINER=	slaven@rezic.de
 COMMENT=	A full featured floating point expression evaluator
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
+USE_LHA=	yes
 
-EXTRACT_CMD=		${CAT}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	| lha x -
 PLIST_FILES=		bin/Eval
 
 WRKSRC=		${WRKDIR}/Eval/source

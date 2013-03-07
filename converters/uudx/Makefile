@@ -10,18 +10,13 @@ PORTVERSION=	2.99
 CATEGORIES=	converters
 MASTER_SITES=	http://ftp.vector.co.jp/pack/dos/util/bin/conv/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
-
+USE_LHA=	yes
 NO_WRKSUBDIR=	yes
 MANLANG=	ja
 MAN1=		uudx.1

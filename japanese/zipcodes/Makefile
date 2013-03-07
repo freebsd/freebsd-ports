@@ -10,13 +10,10 @@ DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	x
-EXTRACT_AFTER_ARGS=
 NO_WRKSUBDIR=	yes
+USE_LHA=	yes
 
 USE_PERL5_BUILD=yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL}

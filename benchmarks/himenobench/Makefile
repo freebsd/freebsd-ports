@@ -18,10 +18,12 @@ DIST_SUBDIR=	himeno
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
+NO_WRKSRCDIR=	yes
+USE_LHA=	yes
+
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_FORTRAN=	yes
 .if defined(WITH_IFC)
@@ -56,11 +58,6 @@ PLIST_SUB+=	WITH_GFORTRAN="@comment "
 PLIST_SUB+=	WITH_GFORTRAN=""
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@for i in ${DISTFILES}; do \
-	cd ${WRKSRC} ; lha xf ${DISTDIR}/${DIST_SUBDIR}/$$i; \
-	done
 do-build:
 .if ${USE_FORTRAN} == yes
 	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp    himenobmtxp.f90

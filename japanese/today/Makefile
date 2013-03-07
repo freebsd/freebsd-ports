@@ -16,14 +16,10 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tells you what day today is
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha \
-		nkf:${PORTSDIR}/japanese/nkf
-
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
 
 NO_WRKSUBDIR=	yes
+USE_LHA=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile
 
