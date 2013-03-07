@@ -1,9 +1,0 @@
-lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager_TS.so
-lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager.so
-lib/php/%%PHP_EXT_DIR%%/Optimizer/php-%%ZEND_PATH%%/ZendOptimizer.so
-lib/php/%%PHP_EXT_DIR%%/Optimizer_TS/php-%%ZEND_PATH%%/ZendOptimizer.so
-@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer_TS/php-%%ZEND_PATH%%
-@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer_TS
-@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer/php-%%ZEND_PATH%%
-@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer
-@dirrmtry lib/php/%%PHP_EXT_DIR%%
