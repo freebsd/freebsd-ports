@@ -1,9 +1,5 @@
-# Ports collection makefile for:	RackMonkey
-# Date created:				2010-02-10
-# Whom:					Eric F Crist <ecrist@secure-computing.net>
-#
+# Created by: Eric F Crist <ecrist@secure-computing.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
@@ -23,12 +19,10 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
-OPTIONS=	\
-	SQLITE		"Use SQLite Backend"	on  \
-	MYSQL		"Use MySQL Backend" 	off \
-	POSTGRES	"Use Posgres Backend"	off \
-	INIT_DB		"Initialize DB at installation (SQLite Only)"	on  \
-	SAMPLE		"Install sample data (SQLite Only)"	on
+OPTIONS_DEFINE=	SQLITE MYSQL PGSQL INIT_DB SAMPLE
+OPTIONS_DEFAULT=	SQLITE INIT_DB SAMPLE
+INIT_DB_DESC=	Initialize DB at installation (SQLite Only)
+SAMPLE_DESC= 	Install sample data (SQLite Only)
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 NO_BUILD=	YES
@@ -38,23 +32,28 @@ USE_PERL5_RUN=	YES
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
-.if defined(WITH_POSTGRES)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	83
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_INIT_DB)
+.if ${PORT_OPTIONS:MINIT_DB}
 PLIST_SUB+=	INIT_DB=""
+INIT_DB=	yes
 .else
 PLIST_SUB+=	INIT_DB="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSAMPLE}
+SAMPLE=	yes
 .endif
 
 do-install:
@@ -65,21 +64,21 @@ do-install:
 	cd ${WRKSRC}/perl && ${COPYTREE_SHARE} RackMonkey ${WWWDIR}/
 	${MKDIR} ${WRKDIR}/build_conf; \
 	${CP} ${WRKSRC}/conf/rackmonkey.conf-default ${WRKDIR}/build_conf/rackmonkey.conf; \
-	if [ "${WITH_SQLITE}" ]; then \
+	if [ "${USE_SQLITE}" ]; then \
 		${ECHO} "Building with SQLite............."; \
 		${SED} -i '' -e 's%dbconnect =%dbconnect = dbi:SQLite:dbname=${WWWDIR}/rackmonkey.db%' ${WRKDIR}/build_conf/rackmonkey.conf; \
-		if [ "${WITH_INIT_DB}" ]; then \
+		if [ "${INIT_DB}" ]; then \
 			if [ -e "${WWWDIR}/rackmonkey.db" ]; then \
 				${ECHO} "Database exists, skipping initalization..."; \
 			else \
 				${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/schema/schema.sqlite.sql; \
 				${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/default_data.sql; \
-				if [ "${WITH_SAMPLE}" ]; then \
+				if [ "${SAMPLE}" ]; then \
 					${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/sample_data.sql; \
 				fi \
 			fi \
 		fi \
-	elif [ "${WITH_MYSQL}" -o "${WITH_POSTGRES}" ]; then \
+	elif [ "${USE_MYSQL}" -o "${USE_PGSQL}" ]; then  \
 		${INSTALL} ${WRKSRC}/conf/rackmonkey.conf-default ${WWWDIR}/; \
 	fi
 	if [ -e "${WWWDIR}/rackmonkey.conf" ]; then \
