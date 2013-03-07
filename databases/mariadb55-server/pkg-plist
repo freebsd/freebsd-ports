@@ -41,10 +41,10 @@ lib/mysql/plugin/dialog_examples.so
 lib/mysql/plugin/feedback.so
 lib/mysql/plugin/ha_archive.so
 lib/mysql/plugin/ha_blackhole.so
-lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
 lib/mysql/plugin/ha_innodb.so
+%%OQGRAPH%%lib/mysql/plugin/ha_oqgraph.so
 lib/mysql/plugin/ha_sphinx.so
 lib/mysql/plugin/handlersocket.so
 lib/mysql/plugin/libdaemon_example.so

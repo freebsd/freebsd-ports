@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	5.5.29
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -23,10 +23,12 @@ USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 NO_OPTIONS_SORT=yes
 
-OPTIONS_DEFINE=	SSL FASTMTX
-OPTIONS_DEFAULT=SSL
+OPTIONS_DEFINE+=	SSL OPENSSL PORTSSL FASTMTX
+OPTIONS_DEFAULT+=	SSL
 
 FASTMTX_DESC=	Replace mutexes with spinlocks
+OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
+PORTSSL_DESC=	Use OpenSSL from port (requires OPENSSL to be set)
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -53,10 +55,33 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 DATADIR=	${PREFIX}/share/mysql
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 
+# MySQL-Server options
+.if !defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=	OQGRAPH PBXT MAXKEY
+
+OQGRAPH_DESC=	Open Query Graph Computation engine
+PBXT_DESC=	MVCC-based transactional engine
+MAXKEY_DESC=	Change max key length from 1000 to 4000
+
+OPTIONS_DEFAULT+=	PBXT MAXKEY
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+.if empty(PORT_OPTIONS:MPORTSSL)
+WITH_OPENSSL_BASE=	yes
+.else
+WITH_OPENSSL_PORT=	yes
+.endif
+CMAKE_ARGS+=	-DWITH_SSL=yes
+.else
 CMAKE_ARGS+=	-DWITH_SSL=bundled
+.endif
+.else
+CMAKE_FLAGS+=	-DWITH_SSL=no
 .endif
 .if ${PORT_OPTIONS:MFASTMTX}
 CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
@@ -86,11 +111,30 @@ MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 
 
 MAN8=		mysqld.8
 
-CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
+CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
+		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${CAT} ${PKGMESSAGE}
+.endif
+
+.if empty(PORT_OPTIONS:MOQGRAPH)
+CMAKE_ARGS+=	-DWITHOUT_OQGRAPH_STORAGE_ENGINE=1
+PLIST_SUB+=	OQGRAPH="@comment "
+.else
+USE_GCC?=	yes
+CMAKE_ARGS+=	-DWITH_OQGRAPH_STORAGE_ENGINE=1
+PLIST_SUB+=	OQGRAPH=""
+LIB_DEPENDS+=	boost_system:${PORTSDIR}/devel/boost-libs
+.endif
+.if empty(PORT_OPTIONS:MPBXT)
+CMAKE_ARGS+=	-DWITHOUT_PBXT_STORAGE_ENGINE=1
+.else
+CMAKE_ARGS+=	-DWITH_PBXT_STORAGE_ENGINE=1
+.endif
+.if ${PORT_OPTIONS:MMAXKEY}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif
 .endif
 
