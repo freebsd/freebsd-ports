@@ -25,8 +25,7 @@ RUN_DEPENDS=	phonon-vlc>=0.6.1:${PORTSDIR}/multimedia/phonon-vlc \
 		phonon-gstreamer>=4.6.3:${PORTSDIR}/multimedia/phonon-gstreamer \
 		qca-ossl>=2.0.0.b3_4:${PORTSDIR}/security/qca-ossl
 
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING="Release" \
-		-DCMAKE_COLOR_MAKEFILE:BOOL="OFF" \
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING="Release" \
 		-DWITH_BREAKPAD:BOOL="OFF" \
 		-DWITH_BUILD:STRING="Release"
 

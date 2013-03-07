@@ -15,8 +15,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
-CMAKE_ARGS=	-DCMAKE_COLOR_MAKEFILE:BOOL=OFF
-
 GH_ACCOUNT=	lastfm
 GH_COMMIT=	5826fe6
 GH_PROJECT=	liblastfm

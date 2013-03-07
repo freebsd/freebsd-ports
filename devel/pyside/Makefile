@@ -24,8 +24,7 @@ LIB_DEPENDS=	apiextractor:${PORTSDIR}/devel/apiextractor \
 
 MANUAL_PACKAGE_BUILD=	requires x11-toolkits/qt4-gui with QGTKSTYLE enabled
 
-CMAKE_ARGS=	-DCMAKE_COLOR_MAKEFILE:BOOL="OFF" \
-		-DGL_H:FILEPATH="${LOCALBASE}/include/GL/gl.h" \
+CMAKE_ARGS+=	-DGL_H:FILEPATH="${LOCALBASE}/include/GL/gl.h" \
 		-DGL_INCLUDE_DIR:FILEPATH="${LOCALBASE}/include"
 
 USE_QT4=	declarative designer gui help qmake_build \
