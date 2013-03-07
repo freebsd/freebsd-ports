@@ -3,6 +3,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.8.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -39,41 +40,42 @@ TMPDOCDEST=	${WRKDIR}/tmpdocdest
 
 PLIST_FILES=	bin/doxygen
 
-OPTIONS_DEFINE=	DOCS DOXYWIZARD LATEX
-OPTIONS_DEFAULT=DOCS DOXYWIZARD LATEX
-DOXYWIZARD_DESC=	Doxywizard support (requires Qt4)
+OPTIONS_DEFINE=	HTMLDOCS QT4 PDFDOCS
+QT4_DESC=	Install Doxywizard GUI
+HTMLDOCS_DESC=	Install documentation in HTML format
+PDFDOCS_DESC=	Install documentation in PDF format
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MHTMLDOCS}
 ALL_TARGET+=	docs
 USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
-.if ${PORT_OPTIONS:MLATEX}
+.if ${PORT_OPTIONS:MPDFDOCS}
 ALL_TARGET+=	pdf
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 USE_GHOSTSCRIPT_BUILD=	yes
-MAKE_ARGS+=	HAVE_LATEX=yes
-.endif # LATEX
-.endif # DOCS
+MAKE_ARGS+=	HAVE_PDFDOCS=yes
+.endif # PDFDOCS
+.endif # HTMLDOCS
 
-.if ${PORT_OPTIONS:MDOXYWIZARD}
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	corelib gui xml qmake_build moc_build rcc_build
 
 # Need this in env for build
 QTDIR?=		${QT_PREFIX}
 CONFIGURE_ENV=	QTDIR="${QTDIR}"
 CONFIGURE_ARGS+=--with-doxywizard
-.endif # DOXYWIZARD
+.endif # QT4
 
 .if ${MACHINE_ARCH:L} == alpha
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
-.if ${PORT_OPTIONS:MDOXYWIZARD}
+.if ${PORT_OPTIONS:MQT4}
 PLIST_FILES+=	bin/doxywizard
-.endif # DOXYWIZARD
+.endif # QT4
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
@@ -93,7 +95,7 @@ post-build:
 pre-install:
 	${RM} -rf ${TMPDOCDEST} ${PLIST}
 	${TOUCH} ${PLIST}
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MHTMLDOCS}
 	${MKDIR} ${TMPDOCDEST}/doxygen
 	${RM} -f ${WRKSRC}/examples/diagrams/html/*.md5 \
 		 ${WRKSRC}/examples/diagrams/html/*.map
@@ -102,27 +104,27 @@ pre-install:
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
 		-cf - examples \
 		| ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
-.if ${PORT_OPTIONS:MLATEX}
+.if ${PORT_OPTIONS:MPDFDOCS}
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.pdf \
 			${WRKSRC}/latex/archoverview.eps \
 			${TMPDOCDEST}/doxygen
-.endif # LATEX
+.endif # PDFDOCS
 	@cd ${TMPDOCDEST} \
 	&& ${FIND} -s * -type f -o -type l \
 		| ${SED} -e 's|^|share/doc/|' >> ${PLIST} \
 	&& ${FIND} -d * -type d \
 		| ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
-.endif # DOCS
+.endif # HTMLDOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOXYWIZARD}
+.if ${PORT_OPTIONS:MQT4}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
-.endif # DOXYWIZARD
-.if ${PORT_OPTIONS:MDOCS}
+.endif # QT4
+.if ${PORT_OPTIONS:MHTMLDOCS}
 	${MKDIR} ${PREFIX}/share/doc/doxygen
 	${TAR} -C ${TMPDOCDEST} -cf - doxygen \
 		| ${TAR} -C ${PREFIX}/share/doc --unlink -xf -
-.endif # DOCS
+.endif # HTMLDOCS
 
 .include <bsd.port.mk>
