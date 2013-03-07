@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libsrs_alt
-# Date created:        22 March 2006
-# Whom:                Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=		libsrs_alt
 DISTVERSION=		1.0
@@ -21,11 +17,12 @@ GNU_CONFIGURE=		yes
 
 PLIST_SUB=		SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-OPTIONS=	COMPAT_BASE64	"Enable MTA Friendly base64 compatibility mode" Off
+OPTIONS_DEFINE=		COMPAT_BASE64
+COMPAT_BASE64_DESC=	MTA Friendly base64 compatibility mode
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_COMPAT_BASE64)
+.if ${PORT_OPTIONS:MCOMPAT_BASE64}
 CONFIGURE_ARGS+=	--with-base64compat
 .endif
 
@@ -33,4 +30,4 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,^(test_LDFLAGS.*$$),\1 -lcompat,' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

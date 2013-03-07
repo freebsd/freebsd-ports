@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mydns
-# Date created:				23 July 2002
-# Whom:					Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mydns-ng
 PORTVERSION=	1.2.8.31
@@ -15,7 +11,6 @@ DISTNAME=	mydns-${PORTVERSION}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A Next Generation DNS Server for sql based DNS services
 
-#WRKSRC=		${WRKDIR}/mydns-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USE_ICONV=	yes
@@ -31,25 +26,24 @@ MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
-OPTIONS=	PGSQL "Build with PostgreSQL backend instead of MySQL" OFF \
-		ALIAS "Enable server side aliases" ON \
-		OPENSSL "Enable OpenSSL (if MySQL is linked with OpenSSL)" OFF	\
-		NLS "Native Language Support with gettext" OFF
+OPTIONS_DEFINE=		PGSQL ALIAS SSL NLS
+OPTIONS_DEFAULT=	ALIAS
+ALIAS_DESC=	Server side aliasas
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ALIAS)
+.if ${PORT_OPTIONS:MALIAS}
 CONFIGURE_ARGS+=--enable-alias
 .endif
 
-.if defined(WITH_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=yes
 CONFIGURE_ARGS+=--with-openssl \
 		--with-openssl-include=${OPENSSLINC} \
 		--with-openssl-lib=${OPENSSLLIB}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--without-mysql \
 		--with-pgsql-include=${LOCALBASE}/include \
@@ -63,17 +57,17 @@ PKGNAMESUFFIX=	-mysql
 USE_MYSQL=	yes
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 CONFIGURE_ARGS+=--with-included-gettext
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/contrib
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
@@ -86,4 +80,4 @@ post-install:
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

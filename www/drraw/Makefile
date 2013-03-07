@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drraw
-# Date created:				2006-08-08
-# Whom:					Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drraw
 DISTVERSION=	2.2b2
@@ -17,10 +13,10 @@ COMMENT=	A simple web-based presentation front-end for RRDtool
 
 RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
-OPTIONS=	ZOOM_PATCH	"Zoom support using jQuery via external patch"	off
+OPTIONS_DEFINE=	ZOOM_PATCH
+ZOOM_PATCH_DESC=	Zoom support using jQuery via external patch
 
 USE_PERL5_RUN=	yes
-
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS
@@ -32,9 +28,9 @@ TMPDIR?=	/var/db/${PORTNAME}/tmp
 
 PLIST_SUB+=	CONFDIR=${CONFDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ZOOM_PATCH)
+.if ${PORT_OPTIONS:MZOOM_PATCH}
 PATCH_SITES+=	http://aprilmayjune.org/wp-content/uploads/2009/09/
 PATCHFILES+=	drraw.cgi.zoom_patch
 .endif
@@ -60,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/${theFile} ${WWWDIR}/icons
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for theFile in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${theFile} ${DOCSDIR}
@@ -73,4 +69,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/drraw.conf-dist ${PREFIX}/etc/drraw.conf; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

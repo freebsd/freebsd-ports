@@ -24,7 +24,7 @@ USE_RC_SUBR=	pdnsd
 CONFIGURE_ARGS=	--with-cachedir=${PDNSDB} \
 		--disable-src-addr-disc
 
-OPTIONS=	IPV6	"Enable IPv6 support"	on
+OPTIONS_DEFINE=	IPV6 DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -38,16 +38,14 @@ DOC_FILES+=	txt/faq.txt txt/intro.txt txt/manual.txt
 
 CFLAGS+=	-pthread
 
-OPTIONS=	IPV6	"IPv6 support"	on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${DOCSDIR}
 .endif
@@ -55,4 +53,4 @@ post-install:
 		${INSTALL_DATA} ${PREFIX}/etc/pdnsd.conf.sample ${PREFIX}/etc/pdnsd.conf
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

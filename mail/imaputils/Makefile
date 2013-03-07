@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	mail/imaputils
-# Date created:				2012-04-08
-# Whom:					Mikhail T. (m.tsatsenko@gmail.com)
-#
+# Created by: Mikhail T. (m.tsatsenko@gmail.com)
 # $FreeBSD$
-#
 
 PORTNAME=	imaputils
 PORTVERSION=	1.0.2
@@ -20,16 +16,15 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 PERL_CONFIGURE=	yes
 
-OPTIONS=	SSL	"Enable SSL support" off \
-		UNICODE	"Adds unicode support" off
+OPTIONS_DEFINE=	SSL UNICODE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 RUN_DEPENDS+=	p5-Unicode-IMAPUtf7>=0:${PORTSDIR}/converters/p5-Unicode-IMAPUtf7
 .endif
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinyproxy
-# Date created:		01 Jul 1999
-# Whom:			Mitsuru Yoshida <mitsuru@riken.go.jp>
-#
+# Created by: Mitsuru Yoshida <mitsuru@riken.go.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.8.3
@@ -34,21 +30,22 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 MAN8=		tinyproxy.8
 MAN5=		tinyproxy.conf.5
 
-OPTIONS=	XHEADER "Enable X-Tinyproxy header" Off \
-		REVERSE "Enable reverse proxy support" Off \
-		TRANSPARENT "Enable transparent proxy support" Off
+OPTIONS_DEFINE=	XHEADER REVERSE TRANSPARENT
+XHEADER_DESC=		X-Tinyproxy header
+REVERSE_DESC=		Reverse proxy support
+TRANSPARENT_DESC=	Transparent proxy support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_REVERSE)
+.if ${PORT_OPTIONS:MREVERSE}
 CONFIGURE_ARGS+=	--enable-reverse
 .endif
 
-.if defined(WITH_TRANSPARENT)
+.if ${PORT_OPTIONS:MTRANSPARENT}
 CONFIGURE_ARGS+=	--enable-transparent
 .endif
 
-.if defined(WITHOUT_XHEADER)
+.if !${PORT_OPTIONS:MXHEADER}
 CONFIGURE_ARGS+=	--disable-xtinyproxy
 .endif
 
@@ -79,4 +76,4 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/${MAN8} ${MAN1PREFIX}/man/man8
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vmailmgr
-# Date created:			24 October 2007
-# Whom:				Mij <mij@bitchx.it>
-#
+# Created by: Mij <mij@bitchx.it>
 # $FreeBSD$
-#
 
 PORTNAME=	vmailmgr
 PORTVERSION=	0.97
@@ -31,15 +27,16 @@ USE_PERL5_BUILD=	yes
 AUTOMAKE_ARGS+=		--add-missing -Wno-portability
 MAKE_JOBS_SAFE=		yes
 
-OPTIONS=		PYTHONLIB	"Install the Python API" Off
+OPTIONS_DEFINE=		PYTHONLIBS
+PYTHONLIBS_DESC=	Install the Python API
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(PREFIX)
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 .endif
 
-.if defined(WITH_PYTHONLIB)
+.if ${PORT_OPTIONS:MPYTHONLIB}
 CONFIGURE_ARGS+=	--with-pythonapi=${PYTHON_SITELIBDIR}
 PLIST_SUB+=		PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
 PLIST_SUB+=		PYTHON=""
@@ -47,4 +44,4 @@ PLIST_SUB+=		PYTHON=""
 PLIST_SUB+=		PYTHON="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

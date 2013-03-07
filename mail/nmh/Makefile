@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nmh
-# Date created:		07 Feb 1999
-# Whom:			Scott Blachowicz <scott+ports@sabami.seaslug.org>
-#
+# Created by: Scott Blachowicz <scott+ports@sabami.seaslug.org>
 # $FreeBSD$
 #
 # Makefile variables of interest:
@@ -94,13 +91,14 @@ CONFIGURE_ARGS+=	${NMH_EXTRA_CONFIGURE_ARGS}
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-D${NMH_LOCKING} -O
-OPTIONS=	SASL2 "Cyrus SASL2" OFF
-
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
-.if defined(WITH_SASL2)
+OPTIONS_DEFINE=	SASL2
+SASL2_DESC=	Cyrus SASL2 support
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSASL2}
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 CONFIGURE_ENV+=		LDFLAGS=-L"${PREFIX}"/lib CPPFLAGS=" -I${PREFIX}/include"
@@ -130,4 +128,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX='${PREFIX}' ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

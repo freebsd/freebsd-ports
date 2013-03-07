@@ -24,58 +24,53 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	NETPBM "Enable netpbm support" off \
-		IMAGEMAGICK "Enable imagemagick support" on \
-		GRAPHMAGICK "Enable graphicsmagick support" off \
-		PGSQL "Use PostgreSQL instead of MySQL" off \
-		JHEAD "Enable jhead support" on \
-		UNZIP "Enable unzip support" on \
-		GD "Enable gd support" off \
-		DCRAW "Enable dcraw support" off \
-		FFMPEG "Enable ffmpeg support" off \
-		NLS "Enable National Language Support" on
+OPTIONS_DEFINE=		DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD \
+			NETPBM NLS UNZIP
+OPTIONS_DEFAULT=	IMAGEMAGICK JHEAD UNZIP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .else
 USE_PHP+=	mysql
 .endif
-.if defined(WITH_GD)
+
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
-.if defined(WITH_NLS)
+
+.if ${PORT_OPTIONS:MNLS}
 USE_PHP+=	gettext
 USE_GETTEXT=	yes	# Pet portlint
 .endif
 
-.if defined(WITH_NETPBM)
+.if ${PORT_OPTIONS:MNETPBM}
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
-.if defined(WITH_GRAPHMAGICK)
+.if ${PORT_OPTIONS:MGRAPHMAGICK}
 RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_JHEAD)
+.if ${PORT_OPTIONS:MJHEAD}
 RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
 .endif
 
-.if defined(WITH_UNZIP)
+.if ${PORT_OPTIONS:MUNZIP}
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-
 .endif
-.if defined(WITH_DCRAW)
+
+.if ${PORT_OPTIONS:MDCRAW}
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .endif
 
@@ -93,4 +88,4 @@ do-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

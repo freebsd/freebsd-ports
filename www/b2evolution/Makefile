@@ -1,9 +1,5 @@
-# New ports collection makefile for:	b2evolution
-# Date created:		2005-04-16
-# Whom:			chinsan <chinsan@mail20000.com.tw>
-#
+# Created by: chinsan <chinsan@mail20000.com.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	b2evolution
 PORTVERSION=	4.0.5
@@ -31,11 +27,12 @@ B2EVO_DIR?=	www/${B2EVO_URL}
 PLIST=		${WRKDIR}/pkg-plist
 WARNING=	${PKGDIR}/pkg-warning
 
-OPTIONS=	LOCAL_DB_SERVER "Want to use local MySQL server?" on
+OPTIONS_DEFINE=	MYSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LOCAL_DB_SERVER)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	server
 .endif
 
@@ -61,4 +58,4 @@ post-install:
 		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
 		${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,12 +26,14 @@ NO_BUILD=	yes
 USE_PHP=	yes
 USE_BZIP2=	yes
 
-OPTIONS=	LANGUAGE_PACK "Install language packs" on \
-		EXTRAS "Install all plugins available" on
+OPTIONS_DEFINE=	LANGUAGE_PACK EXTRAS
+OPTIONS_DEFAULT=	LANGUAGE_PACK EXTRAS
+LANGUAGE_PACK_DESC=	Install language packs
+EXTRAS_DESC=		Install all plugins available
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LANGUAGE_PACK)
+.if ${PORT_OPTIONS:MLANGUAGE_PACK}
 LANGFILES+=	Arabic.zip \
 		Bangla_UTF8.zip \
 		Belarusian.zip \
@@ -87,7 +89,7 @@ PLIST_SUB+=	LANGUAGE_PACK=""
 PLIST_SUB+=	LANGUAGE_PACK="@comment "
 .endif
 
-.if defined(WITH_EXTRAS)
+.if ${PORT_OPTIONS:MEXTRAS}
 PLUGINS+=	AP_User_Merge.zip \
 		AP_Author_Update.zip \
 		AP_PunBB_Shell.zip \
@@ -129,4 +131,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

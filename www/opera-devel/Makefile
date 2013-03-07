@@ -36,26 +36,24 @@ MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
 
-OPTIONS=	CUPS	"Enable support for printing (requires CUPS)"		on \
-		VIDEO	"Enable support for HTML5 video (requires GStreamer)"	on \
-		GTK	"Use GTK backend"	off \
-		KDE4	"Use KDE4 backend"	off
+OPTIONS_DEFINE=		CUPS VIDEO GTK2 KDE4
+OPTIONS_DEFAULT=	CUPS VIDEO
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CUPS)
+.if ! ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
-.if !defined(WITHOUT_VIDEO)
+.if ! ${PORT_OPTIONS:MVIDEO}
 USE_GSTREAMER+=	vorbis ogg theora vp8 good
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 .endif
 
-.if defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MKDE4}
 USE_KDE4+=	kdelibs
 .endif
 

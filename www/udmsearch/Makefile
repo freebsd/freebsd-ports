@@ -1,9 +1,5 @@
-# New ports collection makefile for:	udmsearch
-# Date created:		11/29/1999
-# Whom:			Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	udmsearch
 PORTVERSION=	3.1.7
@@ -14,9 +10,8 @@ MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Full featured SQL-based hypertext search engine
 
-OPTIONS=	MSQL "MSQL support" off \
-		MYSQL "MYSQL support" on \
-		PGSQL "PGSQL support" off
+OPTIONS_DEFINE=		MSQL MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-charset-guesser \
@@ -27,19 +22,19 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MSQL)
+.if ${PORT_OPTIONS:MMSQL}
 BUILD_DEPENDS=		${PREFIX}/lib/libmsql.a:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		YES
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
 .endif
@@ -53,4 +48,4 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lightsquid
-# Date created:				24 Nov 2005
-# Whom:					Alexander Logvinov <info@logvinov.com>
-#
+# Created by: Alexander Logvinov <info@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lightsquid
 PORTVERSION=	1.8
@@ -15,25 +11,26 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A light and fast web based squid proxy traffic analyser
 
-OPTIONS=	GDSUPPORT	"Graphics report support"	on
+OPTIONS_DEFINE=		GD DOCS
+OPTIONS_DEFAULT=	GD
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+
+.include <bsd.port.options.mk>
 
 CONFIGS=	lightsquid.cfg realname.cfg skipuser.cfg group.cfg
 REINPLACE_ARGS=	-i ""
 PORTDOCS=	gnugpl.txt install.txt readme.txt thanks.txt graph.txt logformat.txt \
 		templates.txt version.txt
 SUB_FILES=	pkg-message
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/readme.txt."
 .else
 SUB_LIST+=	NOTEWORK=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_GDSUPPORT)
+.if ${PORT_OPTIONS:MGD}
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 .endif
 
@@ -77,7 +74,7 @@ do-install:
 		${INSTALL_SCRIPT} "{}" "${WWWDIR}/{}" \; && \
 		${INSTALL_DATA} .htaccess ${WWWDIR}/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
@@ -87,4 +84,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

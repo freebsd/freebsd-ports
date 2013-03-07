@@ -1,9 +1,5 @@
-# New ports collection makefile for: awffull
-# Date created:		5 Feburary 2008
-# Whom:			Chadwick Sorrell chad@wickdev.com
-#
+# Created by: Chadwick Sorrell chad@wickdev.com
 # $FreeBSD$
-#
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
@@ -25,7 +21,7 @@ CONFLICTS?=	ja-awffull-[0-9]*
 FONTDEFAULT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraBd.ttf
 FONTLABEL?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
-OPTIONS=	GEOIP "Enable support for GeoIP (Country Detection)" Off
+OPTIONS_DEFINE=	GEOIP
 
 USE_ICONV=	yes
 USE_GETTEXT=	yes
@@ -41,13 +37,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		awffull.1
 MAN5=		awffull.conf.5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=--enable-geoip
 .else
 CONFIGURE_ARGS+=--disable-geoip
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
