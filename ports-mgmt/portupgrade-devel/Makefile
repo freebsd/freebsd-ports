@@ -3,6 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20130303
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
@@ -54,6 +55,11 @@ DOCSDIR=	${PREFIX}/share/doc/pkgtools
 INSTALL_TARGET=		install
 .if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=	install-doc
+.endif
+
+# parsedate is needed for date globbing
+.if ${RUBY_VER} == 1.9
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/parsedate.rb:${PORTSDIR}/devel/ruby-date2
 .endif
 
 # Need to install working script(1)
