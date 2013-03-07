@@ -32,6 +32,7 @@ lib/seed7/lib/dir.s7i
 lib/seed7/lib/draw.s7i
 lib/seed7/lib/duration.s7i
 lib/seed7/lib/echo.s7i
+lib/seed7/lib/editline.s7i
 lib/seed7/lib/enable_input.s7i
 lib/seed7/lib/enable_io.s7i
 lib/seed7/lib/enable_output.s7i
