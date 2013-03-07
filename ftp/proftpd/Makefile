@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	proftpd
-PORTVERSION?=	1.3.4b
-#PORTREVISION?=	1
+PORTVERSION?=	1.3.4c
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
