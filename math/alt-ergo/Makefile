@@ -24,11 +24,12 @@ USE_OCAML=	yes
 
 MAN1=	alt-ergo.1
 
-OPTIONS=	GUI	"Build the GUI" on
+OPTIONS_DEFINE=		GUI
+OPTIONS_DEFAULT=	GUI
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 BUILD_DEPENDS +=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 ALL_TARGET=	all gui
@@ -49,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
 		${WRKSRC}/configure
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 pre-configure:
 	@(if [ ! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/lablgtksourceview2.cmxa ] ; then \
 	${ECHO_MSG} "==> The WITH_GUI option for ${PKGNAME} requires" ; \
