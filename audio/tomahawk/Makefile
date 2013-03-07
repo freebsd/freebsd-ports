@@ -15,7 +15,7 @@ BUILD_DEPENDS=	clucene>=2.3.3.4:${PORTSDIR}/textproc/clucene
 LIB_DEPENDS=	attica:${PORTSDIR}/x11-toolkits/attica \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		echonest:${PORTSDIR}/audio/libechonest \
-		jreen:${PORTSDIR}/net-im/jreen \
+		jreen:${PORTSDIR}/net-im/libjreen \
 		lastfm:${PORTSDIR}/audio/liblastfm \
 		qca:${PORTSDIR}/devel/qca \
 		qjson:${PORTSDIR}/devel/qjson \
