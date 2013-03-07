@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.6.1
+PORTVERSION=	3.0.7
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/ \
