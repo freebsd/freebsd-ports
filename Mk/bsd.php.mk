@@ -21,6 +21,7 @@
 # IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
 # USE_PHPIZE=yes    - Use to build a PHP extension.
 # USE_PHPEXT=yes    - Use to build, install and register a PHP extension.
+# USE_ZENDEXT=yes   - Use to build, install and register a Zend extension.
 # USE_PHP_BUILD=yes - Set PHP also as a build dependency.
 # WANT_PHP_CLI=yes  - Want the CLI version of PHP.
 # WANT_PHP_CGI=yes  - Want the CGI version of PHP.
@@ -148,7 +149,7 @@ RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
-.if defined(USE_PHPIZE) || defined(USE_PHPEXT)
+.if defined(USE_PHPIZE) || defined(USE_PHPEXT) || defined(USE_ZENDEXT)
 BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PORTSDIR}/${PHP_PORT}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:env
@@ -165,7 +166,7 @@ do-phpize:
 
 .endif
 
-.if defined(_POSTMKINCLUDED) && defined(USE_PHPEXT)
+.if defined(_POSTMKINCLUDED) && (defined(USE_PHPEXT) || defined(USE_ZENDEXT))
 PHP_MODNAME?=	${PORTNAME}
 PHP_HEADER_DIRS?=	""
 
@@ -184,8 +185,13 @@ do-install:
 	@${ECHO_CMD} \#include \"ext/${PHP_MODNAME}/config.h\" \
 		>> ${PREFIX}/include/php/ext/php_config.h
 	@${MKDIR} ${PREFIX}/etc/php
+.if defined(USE_ZENDEXT)
+	@${ECHO_CMD} zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so \
+		>> ${PREFIX}/etc/php/extensions.ini
+.else
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
+.endif
 
 add-plist-info: add-plist-phpext
 add-plist-phpext:
@@ -207,12 +213,22 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
 		>> ${TMPPLIST}
+.if defined(USE_ZENDEXT)
+	@${ECHO_CMD} "@exec echo zend_extension=%D/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+.else
 	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
 		>> ${TMPPLIST}
+.endif
 	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
+.if defined(USE_ZENDEXT)
+	@${ECHO_CMD} "@unexec grep -v zend_extension=%D/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
+		>> ${TMPPLIST}
+.else
 	@${ECHO_CMD} "@unexec grep -v extension=${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
 		>> ${TMPPLIST}
+.endif
 	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
@@ -228,7 +244,11 @@ php-ini:
 	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/extensions.ini"
 	@${ECHO_CMD} "configuration file to automatically load the installed extension:"
 	@${ECHO_CMD} ""
+.if defined(USE_ZENDEXT)
+	@${ECHO_CMD} "zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so"
+.else
 	@${ECHO_CMD} "extension=${PHP_MODNAME}.so"
+.endif
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "****************************************************************************"
 .endif
