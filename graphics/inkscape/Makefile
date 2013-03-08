@@ -1,33 +1,29 @@
-# New ports collection makefile for:	inkscape
-# Date created:		17 Nov 2003
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	inkscape
-PORTVERSION=	0.48.2
-PORTREVISION=	3
+PORTVERSION=	0.48.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A program seeks to become a full featured open source SVG editor
+COMMENT=	Full featured open source SVG editor
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		gc.1:${PORTSDIR}/devel/boehm-gc \
-		gsl.16:${PORTSDIR}/math/gsl \
-		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		lcms.1:${PORTSDIR}/graphics/lcms \
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gc:${PORTSDIR}/devel/boehm-gc \
+		gsl:${PORTSDIR}/math/gsl \
+		gtkspell:${PORTSDIR}/textproc/gtkspell \
+		lcms:${PORTSDIR}/graphics/lcms \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		png15:${PORTSDIR}/graphics/png \
 		Magick++:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
+USE_GCC=	any
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
@@ -39,23 +35,25 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAN1=		inkscape.1
-MAN1_EN=	inkview.1
-MANLANG=	"" fr
+MAN1=		inkscape.1 inkview.1
+NO_MANCOMPRESS=	yes
 
-OPTIONS=	POPPLER	"Enable libpoppler-cairo for rendering PDF preview" on
+OPTIONS_DEFINE=	GNOMEVFS POPPLER
+OPTIONS_DEFAULT=POPPLER
+POPPLER_DESC=	PDF preview rendering
+GNOMEVFS_DESC=	Use gnomevfs for loading files
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mgnomevfs2} != ""
+.if ${PORT_OPTIONS:MGNOMEVFS}
 USE_GNOME+=		gnomevfs2
 CONFIGURE_ARGS+=	--with-gnome-vfs
 .else
 CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
 
-.if defined(WITH_POPPLER)
-LIB_DEPENDS+=		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
+.if ${PORT_OPTIONS:MPOPPLER}
+LIB_DEPENDS+=		poppler-glib:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=	--enable-poppler-cairo
 .else
 CONFIGURE_ARGS+=	--enable-poppler-cairo=no
@@ -77,4 +75,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
