@@ -46,6 +46,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/albumuniversal.xml
 %%DATADIR%%/addons/metadata.album.universal/changelog.txt
 %%DATADIR%%/addons/metadata.album.universal/icon.png
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Afrikaans/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Belarusian/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Belarusian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Bulgarian/strings.po
@@ -63,6 +64,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/English/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/English/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Estonian/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/French/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/French/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Galician/strings.xml
@@ -77,6 +79,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Icelandic/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Italian/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Italian/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Japanese/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Korean/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Lithuanian/strings.po
@@ -91,6 +94,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese (Brazil)/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Russian/strings.po
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Slovak/strings.po
@@ -110,6 +114,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.universal/artistuniversal.xml
 %%DATADIR%%/addons/metadata.artists.universal/changelog.txt
 %%DATADIR%%/addons/metadata.artists.universal/icon.png
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Afrikaans/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Belarusian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Bulgarian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Catalan/strings.xml
@@ -119,13 +124,16 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Dutch/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/English/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Estonian/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/French/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Galician/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Greek/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Hebrew/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Hungarian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Icelandic/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Italian/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Japanese/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Macedonian/strings.xml
@@ -133,6 +141,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese (Brazil)/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Slovak/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Slovenian/strings.xml
@@ -170,41 +179,44 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.common.themoviedb.org/addon.xml
 %%DATADIR%%/addons/metadata.common.themoviedb.org/icon.png
 %%DATADIR%%/addons/metadata.common.themoviedb.org/tmdb.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/addon.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/icon.png
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/lastfmmusicvideos.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Afrikaans/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Belarusian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Bulgarian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Catalan/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Chinese (Simple)/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Czech/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Danish/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Dutch/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/English/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Finnish/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/French/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/German/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Greek/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Hebrew/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Hungarian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Italian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Korean/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Lithuanian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Macedonian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Polish/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Portuguese (Brazil)/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Portuguese/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Romanian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Russian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Slovak/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Slovenian/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish (Argentina)/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish (Mexico)/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Swedish/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Thai/strings.xml
-%%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/settings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/addon.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/icon.png
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Afrikaans/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Belarusian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Bulgarian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Catalan/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Chinese (Simple)/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Czech/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Danish/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Dutch/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/English/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Finnish/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/French/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Galician/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/German/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Greek/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Hebrew/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Hungarian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Italian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Japanese/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Korean/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Lithuanian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Macedonian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Norwegian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Polish/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese (Brazil)/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Romanian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Slovak/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish (Argentina)/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish (Mexico)/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Swedish/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Thai/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/settings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/tadb.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/addon.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/changelog.txt
 %%DATADIR%%/addons/metadata.themoviedb.org/icon.png
@@ -213,6 +225,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Bulgarian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Catalan/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Simple)/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Traditional)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Czech/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Danish/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch/strings.xml
@@ -220,6 +233,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Estonian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Galician/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Greek/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hebrew/strings.xml
@@ -250,6 +264,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/changelog.txt
 %%DATADIR%%/addons/metadata.tvdb.com/icon.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Afrikaans/strings.xml
+%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Amharic/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Arabic/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Basque/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Belarusian/strings.xml
@@ -280,6 +295,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Macedonian/strings.xml
+%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Malayalam/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Norwegian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Persian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Polish/strings.xml
@@ -574,6 +590,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonMusic.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonMusicVideoInfo.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonNone.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonPVRClient.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonPicture.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonProgram.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonRepository.png
@@ -1142,6 +1159,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/weather.wunderground/fanart.jpg
 %%DATADIR%%/addons/weather.wunderground/icon.png
 %%DATADIR%%/addons/weather.wunderground/resources/language/Afrikaans/strings.po
+%%DATADIR%%/addons/weather.wunderground/resources/language/Amharic/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Arabic/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Basque/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Belarusian/strings.po
@@ -1171,6 +1189,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/weather.wunderground/resources/language/Lithuanian/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Macedonian/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Norwegian/strings.po
+%%DATADIR%%/addons/weather.wunderground/resources/language/Persian/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Polish/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Portuguese (Brazil)/strings.po
 %%DATADIR%%/addons/weather.wunderground/resources/language/Portuguese/strings.po
@@ -1593,6 +1612,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Portuguese (Brazil)
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Polish
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Persian
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Norwegian
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Macedonian
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Lithuanian
@@ -1622,6 +1642,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Belarusian
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Basque
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Arabic
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Amharic
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Afrikaans
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources
@@ -1985,6 +2006,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Polish
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Persian
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Norwegian
+@dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Malayalam
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Macedonian
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Lithuanian
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Korean
@@ -2015,6 +2037,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Belarusian
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Basque
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Arabic
+@dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Amharic
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Afrikaans
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources
@@ -2043,6 +2066,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hebrew
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Greek
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German
+@dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Galician
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Estonian
@@ -2050,6 +2074,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Danish
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Czech
+@dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Traditional)
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Simple)
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Catalan
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Bulgarian
@@ -2058,40 +2083,43 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Thai
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Swedish
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish (Mexico)
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish (Argentina)
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Spanish
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Slovenian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Slovak
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Russian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Romanian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Portuguese (Brazil)
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Portuguese
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Polish
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Macedonian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Lithuanian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Korean
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Italian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Hungarian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Hebrew
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Greek
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/German
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/French
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Finnish
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/English
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Dutch
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Danish
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Czech
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Chinese (Simple)
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Catalan
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Bulgarian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Belarusian
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language/Afrikaans
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources/language
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm/resources
-@dirrm %%DATADIR%%/addons/metadata.musicvideos.last.fm
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Thai
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish (Mexico)
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish (Argentina)
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Slovenian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Slovak
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Russian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Romanian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese (Brazil)
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Polish
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Norwegian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Macedonian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Lithuanian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Korean
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Japanese
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Italian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Hungarian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Hebrew
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Greek
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/German
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Galician
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/French
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Finnish
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/English
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Dutch
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Danish
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Czech
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Chinese (Simple)
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Catalan
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Bulgarian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Belarusian
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Afrikaans
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources
+@dirrm %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com
 @dirrm %%DATADIR%%/addons/metadata.common.themoviedb.org
 @dirrm %%DATADIR%%/addons/metadata.common.theaudiodb.com
 @dirrm %%DATADIR%%/addons/metadata.common.musicbrainz.org
@@ -2110,6 +2138,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Slovak
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Russian
+@dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese (Brazil)
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Polish
@@ -2117,13 +2146,16 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Macedonian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Lithuanian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Korean
+@dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Japanese
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Italian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Icelandic
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Hungarian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Hebrew
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Greek
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/German
+@dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Galician
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/French
+@dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Estonian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/English
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Dutch
@@ -2133,6 +2165,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Catalan
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Bulgarian
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Belarusian
+@dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language/Afrikaans
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources/language
 @dirrm %%DATADIR%%/addons/metadata.artists.universal/resources
 @dirrm %%DATADIR%%/addons/metadata.artists.universal
@@ -2144,6 +2177,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Slovak
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Russian
+@dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese (Brazil)
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Polish
@@ -2151,6 +2185,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Macedonian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Lithuanian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Korean
+@dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Japanese
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Italian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Icelandic
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Hungarian
@@ -2159,6 +2194,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/German
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Galician
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/French
+@dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Estonian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/English
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Dutch
@@ -2168,6 +2204,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Catalan
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Bulgarian
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Belarusian
+@dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language/Afrikaans
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources/language
 @dirrm %%DATADIR%%/addons/metadata.album.universal/resources
 @dirrm %%DATADIR%%/addons/metadata.album.universal
