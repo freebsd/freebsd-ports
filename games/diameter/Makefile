@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diameter
-# Date created:		15 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	diameter
 PORTVERSION=	0.4.0.3
@@ -14,9 +10,8 @@ MASTER_SITES=	SF/game${PORTNAME}/game${PORTNAME}/${PORTNAME}-0.4.0
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure
 
-BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
+		guichan:${PORTSDIR}/devel/guichan
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
