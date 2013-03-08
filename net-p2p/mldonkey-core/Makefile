@@ -4,8 +4,6 @@
 # build only the CORE
 WITHOUT_GUI=	yes
 
-PORTREVISION=	0
-
 COMMENT=	Client 'core' for the MLDonkey peer-to-peer network
 
 MASTERDIR=	${.CURDIR}/../mldonkey
