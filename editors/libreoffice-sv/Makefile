@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-LO_I18N=	sv	
+LO_I18N=	sv
 LO_HAS_HELPPACK=	yes
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.common"

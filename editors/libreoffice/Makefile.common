@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.6.5
+PORTVERSION=	4.0.1
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -45,19 +45,19 @@ RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
 
 .if defined(PRERELEASE)
 MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86/
-LO_I18N_FILE=	LibO_${LOVERSION}_Linux_x86
+LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
 .else
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
-LO_I18N_FILE=	LibO_${PORTVERSION}_Linux_x86
+LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86_deb
 .endif
 
 DIST_SUBDIR?=	libreoffice/i18n
 
 PKGNAMEPREFIX=	${LO_I18N}-
 
-DISTFILES=	${LO_I18N_FILE}_langpack-deb_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
+DISTFILES=	${LO_I18N_FILE}_langpack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
 .if defined(LO_HAS_HELPPACK)
-DISTFILES+=	${LO_I18N_FILE}_helppack-deb_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
+DISTFILES+=	${LO_I18N_FILE}_helppack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
 .endif
 COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
 

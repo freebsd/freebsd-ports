@@ -1,6 +1,6 @@
---- ./cppunit/freebsd.patch.orig	2012-07-25 15:44:00.000000000 -0400
-+++ ./cppunit/freebsd.patch	2012-07-25 15:46:01.000000000 -0400
-@@ -0,0 +1,128 @@
+--- ./cppunit/freebsd.patch.orig	2013-02-18 18:38:29.000000000 -0500
++++ ./cppunit/freebsd.patch	2013-02-18 18:38:29.000000000 -0500
+@@ -0,0 +1,110 @@
 +--- misc/build/cppunit-1.12.1/configure	2008-02-20 00:59:58.000000000 -0500
 ++++ misc/build/cppunit-1.12.1/configure	2012-07-25 15:06:50.000000000 -0400
 +@@ -8917,7 +8917,7 @@
@@ -111,21 +111,3 @@
 +     *) objformat=elf ;;
 +     esac
 +   fi
-+@@ -21068,6 +21068,7 @@
-+ #include <typeinfo>
-+ #include <cxxabi.h>
-+ #include <string>
-++#include <cstdlib>
-+ 
-+ template<typename TYPE>
-+ class A {};
-+--- misc/build/cppunit-1.12.1/src/cppunit/TypeInfoHelper.cpp	2004-02-18 15:45:44.000000000 -0500
-++++ misc/build/cppunit-1.12.1/src/cppunit/TypeInfoHelper.cpp	2012-07-25 15:05:11.000000000 -0400
-+@@ -6,6 +6,7 @@
-+ #include <string>
-+ 
-+ #if CPPUNIT_HAVE_GCC_ABI_DEMANGLE
-++#include <cstdlib>
-+ #include <cxxabi.h>
-+ #endif
-+ 

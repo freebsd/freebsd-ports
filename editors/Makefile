@@ -190,6 +190,7 @@
     SUBDIR += libreoffice-sd
     SUBDIR += libreoffice-sh
     SUBDIR += libreoffice-si
+    SUBDIR += libreoffice-sid
     SUBDIR += libreoffice-sk
     SUBDIR += libreoffice-sl
     SUBDIR += libreoffice-sq
