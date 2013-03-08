@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-bison
-# Date created:			Aug 23, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	bison
 PORTVERSION=	0.1.8
@@ -23,7 +18,7 @@ BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_BISON=	both
+USES=		bison:both
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.1

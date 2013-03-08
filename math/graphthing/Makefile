@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	GraphThing
-# Date created:			Feb 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	graphthing
 PORTVERSION=	1.3.2
@@ -20,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_BISON=	build
+USES=		bison
 USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes

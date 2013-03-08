@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sfront
-# Date created:				Nov 4, 2001
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sfront
 PORTVERSION=	0.99
@@ -15,7 +11,7 @@ COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
 LICENSE=	BSD
 
-USE_BISON=	build
+USES=		bison
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

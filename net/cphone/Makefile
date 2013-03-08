@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cphone
-# Date created:		Thu May 24 15:50:00 BST 2000
-# Whom:			Roger Hardiman <roger@FreeBSD.org>
-#
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cphone
 DISTVERSION=	0.3.2.cvs.20060407
@@ -22,7 +18,7 @@ EXPIRATION_DATE=	2013-07-01
 
 PLIST_FILES=	bin/cphone
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_QT_VER=	3
 USE_GMAKE=	yes
 ALL_TARGET=	optshared

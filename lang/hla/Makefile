@@ -1,10 +1,5 @@
-# vim: ts=8
-# New ports collection Makefile for:	hla
-# Date created:				29 May 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	hla
 PORTVERSION=	1.103
@@ -24,7 +19,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High Level Assembly
 
 USE_ZIP=	yes
-USE_BISON=	build
+USES=		bison
 
 WRKSRC=		${WRKDIR}/hlasrc/trunk/trunk
 MAKEFILE=	makefile.bsd

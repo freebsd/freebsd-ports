@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avr-gcc
-# Date created:		29 Nov 2000
-# Whom:			Joerg Wunsch <joerg@freebsd.org>
-#
+# Created by: Joerg Wunsch <joerg@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gcc-3
 PORTVERSION=	3.4.6
@@ -33,7 +29,7 @@ USE_AUTOTOOLS=	autoheader213
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	avr-gcc-4*

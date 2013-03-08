@@ -17,7 +17,7 @@ LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
 LATEST_LINK=	${PORTNAME}20${PKGNAMESUFFIX}
 
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes

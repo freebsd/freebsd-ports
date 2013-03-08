@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gcalctool
-# Date created:				12 Jun 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/math/gcalctool/Makefile,v 1.140 2010/11/15 22:06:10 kwm Exp $
-#
 
 PORTNAME=	gcalctool
 PORTVERSION=	5.32.2
@@ -20,7 +16,7 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 CONFLICTS=	gcalctool-2.31.*
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

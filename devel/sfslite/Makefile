@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sfslite
-# Date created:				10 September 2005
-# Whom:					max
-#
+# Created by: max
 # $FreeBSD$
-#
 
 PORTNAME=	sfslite
 PORTVERSION=	1.2.7
@@ -23,7 +19,7 @@ USE_GMAKE=	yes
 #
 # rpcc does not work with byacc, so just require BISON
 #
-USE_BISON=	build
+USES=		bison
 
 #
 # Map X.Y.Z.Q => X.Y

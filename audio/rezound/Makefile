@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

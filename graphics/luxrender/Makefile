@@ -15,6 +15,7 @@ COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
+ONLY_FOR_ARCHS=	i386 amd64
 BROKEN=		does not build with boost-1.48.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
@@ -25,7 +26,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 HG_NODEID=	9206b3ba7011
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes
 WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
@@ -35,17 +36,20 @@ DESKTOP_ENTRIES="LuxRender" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/luxrender.svg" "${PORTNAME}" \
 		"Graphics;3DGraphics;" false
 
-OPTIONS=	QT4	"Build Qt4 GUI executable"		on \
-		WX	"Build wxWidgets GUI executable"	off
+OPTIONS_DEFINE=		QT4 WX
+OPTIONS_DEFAULT=	QT4
+
+QT4_DESC=		Qt4-enabled GUI executable
+WX_DESC=		wxWidgets-enabled GUI executable
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
 PLIST_FILES+=	bin/luxrender
 .endif
 
-.if defined(WITH_WX)
+.if ${PORT_OPTIONS:MWX}
 USE_WX=		2.8+
 PLIST_FILES+=	bin/luxrenderwx
 .endif
@@ -60,10 +64,4 @@ post-patch:
 		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		-e 's|int_p_NULL|NULL|g' ${WRKSRC}/core/external/cimg.h
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile4: uses i386-specific options
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

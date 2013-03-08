@@ -1,9 +1,5 @@
-# New ports collection makefile for:	daq
-# Date created:		13 January 2011
-# Whom:			Dean Freeman (wfreeman@sourcefire.com)
-#
+# Created by: Dean Freeman (wfreeman@sourcefire.com)
 # $FreeBSD$
-#
 
 PORTNAME=	daq
 PORTVERSION=	2.0.0
@@ -24,7 +20,7 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_BISON=	build
+USES=		bison
 USE_AUTOTOOLS=	libtool
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	docsis
-# Date created:				Jul 5, 2002
-# Whom:					James Flemer <jflemer@acm.jhu.edu>
-#
+# Created by: James Flemer <jflemer@acm.jhu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	docsis
 PORTVERSION=	0.9.5
@@ -19,7 +15,7 @@ LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_BISON=	build
+USES=		bison
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 

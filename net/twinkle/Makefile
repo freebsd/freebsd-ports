@@ -21,7 +21,7 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
+USES=		bison
 USE_XORG=	xext
 USE_GMAKE=	yes
 USE_GNOME=	libxml2

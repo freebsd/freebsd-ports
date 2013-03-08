@@ -15,7 +15,7 @@ COMMENT=	Draws ASCII-art configurable boxes around text or code
 LICENSE=	GPLv2
 
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 ALL_TARGET=	boxes
 MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 

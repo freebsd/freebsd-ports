@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	avinfo
-# Date created:			Feb 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	avinfo
 PORTVERSION=	1.0.a15
@@ -17,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A utility for displaying AVI header information
 
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

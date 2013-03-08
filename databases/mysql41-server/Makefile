@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MySQL-server
-# Date created:				Fri Apr 11 10:06:26 CET 2003
-# Whom:					Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME?=	mysql
 PORTVERSION=	4.1.25
@@ -105,7 +101,7 @@ USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 
-USE_BISON=	build
+USES+=		bison
 
 .if defined(WITH_NDB)
 PLIST_SUB+=	NDB=""

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spl
-# Date created:		6 September 2001
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1
@@ -14,7 +10,7 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \

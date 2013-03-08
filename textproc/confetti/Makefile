@@ -13,7 +13,7 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 USE_PERL5=	yes
 DATE=		20120801
 MAKE_ARGS+=	FLEX=${LOCALBASE}/bin/flex

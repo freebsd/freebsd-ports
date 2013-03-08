@@ -1,7 +1,5 @@
 # Created by:	Palle Girgensohn <girgen@pingpong.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PORTREVISION=	0
@@ -18,7 +16,7 @@ USE_PGSQL=	yes
 DEFAULT_PGSQL_VER=90
 MASTERDIR=	${.CURDIR}/../postgresql${DEFAULT_PGSQL_VER}-server
 
-USE_BISON=	build
+USES=		bison
 
 BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib

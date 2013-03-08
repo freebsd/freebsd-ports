@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tcpview
-# Date created:        18 Aug 2000
-# Whom:                Chung-Kie Tung <tung@turtle.ee.ncku.edu.tw>
-#
+# Created by: Chung-Kie Tung <tung@turtle.ee.ncku.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpview
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A Motif-based TCP/IP protocol analyzer
 
-USE_BISON=	build
+USES=		bison
 USE_MOTIF=	yes
 
 MAN1=		tcpview.1

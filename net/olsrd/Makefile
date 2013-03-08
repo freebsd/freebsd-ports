@@ -1,9 +1,5 @@
-# New ports collection makefile for:	olsrd
-# Date created:		6 April 2005
-# Whom:			dave@dogwood.com
-#
+# Created by: dave@dogwood.com
 # $FreeBSD$
-#
 
 PORTNAME=	olsrd
 DISTVERSION=	0.6.3
@@ -21,7 +17,7 @@ BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 
 USE_RC_SUBR=	olsrd

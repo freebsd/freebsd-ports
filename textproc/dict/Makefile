@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  dict
-# Date created:			  19 February 1998
-# Whom:				  Josh Gilliam <josh@quick.net>
-#
+# Created by: Josh Gilliam <josh@quick.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dict
 PORTVERSION=	1.12.0
@@ -18,7 +13,7 @@ COMMENT=	Dictionary Server Protocol (RFC2229) client
 
 LIB_DEPENDS=	maa.3:${PORTSDIR}/devel/libmaa
 
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc

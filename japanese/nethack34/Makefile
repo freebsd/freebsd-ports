@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JNetHack 3.4.x
-# Date created:		16 June 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
@@ -23,7 +19,7 @@ COMMENT=	Japanized NetHack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \

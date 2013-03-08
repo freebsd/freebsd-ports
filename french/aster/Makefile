@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aster
-# Date created:		Thu Jun 26 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
@@ -50,7 +46,7 @@ MANUAL_PACKAGE_BUILD=	runaway python on pointyhat
 
 LICENSE=	GPLv2
 
-USE_BISON=	build
+USES=		bison
 USE_PYTHON=	2.6-2.7	# >2.5 and <3.0
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""

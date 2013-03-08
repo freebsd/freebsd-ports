@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yabasic
-# Date created:		11 Nov 1999
-# Whom:			Frank Gruender
-#
+# Created by: Frank Gruender
 # $FreeBSD$
-#
 
 PORTNAME=	yabasic
 PORTVERSION=	2.763
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Basic for Unix and Windows
 
 USE_XORG=	x11 ice sm xt
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 
 MAN1=		yabasic.1

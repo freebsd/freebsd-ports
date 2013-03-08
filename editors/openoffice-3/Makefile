@@ -140,7 +140,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_AUTOTOOLS=	autoconf
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 WRKSRC?=	${WRKDIR}/aoo-${PORTVERSION}/main
 BASH?=		${PREFIX}/bin/bash

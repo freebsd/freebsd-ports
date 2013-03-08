@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dcss
-# Date created:		2008-07-11
-# Whom:			Tobias Rehbein <tobias.rehbein@web.de>
-#
+# Created by: Tobias Rehbein <tobias.rehbein@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.11.1
@@ -19,7 +15,7 @@ LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
 USE_SQLITE=	yes
 USE_XZ=		yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_LUA=	5.1
 USE_PERL5_BUILD=	yes

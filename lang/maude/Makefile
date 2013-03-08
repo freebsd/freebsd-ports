@@ -1,9 +1,5 @@
-# New ports collection makefile for:	maude
-# Date created:				25 Mar 2005
-# Whom:				Rick van der Zwet <rick@wzoeterwoude.net>
-#
+# Created by: Rick van der Zwet <rick@wzoeterwoude.net>
 # $FreeBSD$
-#
 
 PORTNAME=	maude
 PORTVERSION=	2.6
@@ -19,7 +15,7 @@ LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 		gmp:${PORTSDIR}/math/gmp \
 		sigsegv:${PORTSDIR}/devel/libsigsegv
 
-USE_BISON=	build
+USES=		bison
 USE_AUTOTOOLS=	aclocal autoheader automake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

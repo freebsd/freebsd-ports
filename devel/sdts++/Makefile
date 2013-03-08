@@ -14,7 +14,7 @@ COMMENT=	C++ library for SDTS related development
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_DOS2UNIX=	sdts++/io/sio_Utils.cpp
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--copy --force

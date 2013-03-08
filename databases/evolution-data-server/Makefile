@@ -23,9 +23,9 @@ LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison pathfix
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack gconf2 \
+USE_GNOME=	gnomeprefix intlhack ltverhack ltasneededhack gconf2 \
 		libxml2
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool

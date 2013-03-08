@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bird
-# Date created:				8 November 2011
-# Whom:				Alexander V. Chernikov <melifaro@FreeBSD.org>
-#
+# Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bird
 PORTVERSION=	20130301
@@ -16,7 +12,7 @@ COMMENT=	Dynamic IP routing daemon (devel version)
 
 CONFLICTS=	bird-[0-9]*
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls

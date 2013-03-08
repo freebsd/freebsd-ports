@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	lfhex
-# Date created:			Jul 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	lfhex
 PORTVERSION=	0.42
@@ -18,7 +13,7 @@ COMMENT=	Large file hex editor
 LICENSE=	GPLv2
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build
-USE_BISON=	build
+USES=		bison
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

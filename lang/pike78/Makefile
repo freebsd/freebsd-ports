@@ -75,7 +75,7 @@ MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
 MAKE_ENV=	"ac_cv_lib_nettle_nettle_md5_init=no"
 
 USE_GETTEXT=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 
 # Allow building Embedded Perl

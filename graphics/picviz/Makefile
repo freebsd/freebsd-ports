@@ -1,9 +1,5 @@
-# New ports collection makefile for:	picviz
-# Date created:         08 Nov 2008
-# Whom:                 Tim Hemel
-#
+# Created by: Tim Hemel
 # $FreeBSD$
-#
 
 PORTNAME=	picviz
 PORTVERSION=	0.4
@@ -20,7 +16,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_BISON=	build
+USES=		bison
 
 MAN1=		pcv.1
 

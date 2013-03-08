@@ -10,7 +10,7 @@ COMMENT=	A suite of routing policy tools to interact with the IRR
 
 PLIST_FILES=	bin/rpslcheck bin/peval bin/rtconfig
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

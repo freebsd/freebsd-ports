@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flasm
-# Date created:		22 January 2002
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flasm
 PORTVERSION=	1.62
@@ -20,7 +16,7 @@ PLIST_FILES=	bin/flasm
 USE_ZIP=	YES
 USE_GMAKE=	YES
 USE_DOS2UNIX=	YES
-USE_BISON=	build
+USES=		bison
 NO_WRKSUBDIR=	YES
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 

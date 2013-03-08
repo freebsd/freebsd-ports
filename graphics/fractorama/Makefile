@@ -16,7 +16,7 @@ COMMENT=	Fractal generation program
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_QT_VER=	3
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

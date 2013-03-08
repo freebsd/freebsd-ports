@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	egcs
-# Date created:				9 Jan 1998
-# Whom:					John Polstra <jdp@polstra.com>
-#
+# Created by: John Polstra <jdp@polstra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.6
@@ -23,7 +18,7 @@ COMMENT=	GNU Compiler Collection 3.4
 
 SUFFIX=		34
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

@@ -49,7 +49,7 @@ MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 MLINKS=		winegcc.1 winecpp.1 \
 		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu

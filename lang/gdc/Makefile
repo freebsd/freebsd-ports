@@ -1,9 +1,5 @@
-# New ports collection makefile for:	D Front End for GCC
-# Date created:		18 November 2004
-# Whom:			Masanori OZAWA (ozawa@ongs.co.jp)
-#
+# Created by: Masanori OZAWA (ozawa@ongs.co.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	gdc
 PORTVERSION=	0.24
@@ -23,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 BROKEN=		fails to build
 
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

@@ -17,7 +17,7 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-2.*
 
-USE_BISON=	build
+USES=		bison
 USE_GNOME=	libxml2
 USE_PGSQL=	yes
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ COMMENT=	Fast lexical analyzer generator
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		gm4:${PORTSDIR}/devel/m4
 
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.

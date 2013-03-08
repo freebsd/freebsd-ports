@@ -81,7 +81,7 @@ USE_BDB=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 WANT_GNOME=	yes
 
 USE_XORG=	xaw xrandr

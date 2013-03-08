@@ -12,15 +12,15 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
+USES=		bison pathfix
 USE_XZ=		yes
-USE_GNOME=	gnomehack glib20 gnomeprefix libxslt
+USE_GNOME=	glib20 gnomeprefix libxslt
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_BISON=	build
 USE_LDCONFIG=	yes
 
 MAN1?=		valac.1 valac-${VALA_VER}.1

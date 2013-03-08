@@ -1,7 +1,4 @@
-# New ports collection makefile for: 	libmimedir
-# Date created:                March 2004
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	libmimedir
@@ -12,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
-USE_BISON=	build
+USES=		bison
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

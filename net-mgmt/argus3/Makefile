@@ -21,7 +21,7 @@ USE_RC_SUBR=	argus
 
 .include <bsd.port.options.mk>
 
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	true
 USE_PERL5=	yes
 

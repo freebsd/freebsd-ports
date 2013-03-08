@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	eukleides
-# Date created:			Jun 4, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	eukleides
 PORTVERSION=	1.5.3
@@ -20,7 +15,7 @@ RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX-base
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

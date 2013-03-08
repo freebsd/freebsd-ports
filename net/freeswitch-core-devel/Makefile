@@ -43,7 +43,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 
 USE_PERL5_BUILD=yes
-USE_BISON=	both
+USES=		bison:both
 USE_GCC=	any
 USE_PKGCONFIG=	yes
 USE_GMAKE=	yes

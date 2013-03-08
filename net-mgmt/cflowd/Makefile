@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cflowd
-# Date created:		Di   7 Nov 2000 19:48:50 CET
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
@@ -20,7 +16,7 @@ LIB_DEPENDS=	Arts:${PORTSDIR}/net-mgmt/arts++
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}

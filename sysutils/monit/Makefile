@@ -1,9 +1,5 @@
-# New ports collection makefile for:   monit
-# Date created:        4 January 2005
-# Whom:                Martin Pala <martinp@tildeslash.com>
-#
+# Created by: Martin Pala <martinp@tildeslash.com>
 # $FreeBSD$
-#
 
 PORTNAME=	monit
 PORTVERSION=	5.5
@@ -16,7 +12,7 @@ COMMENT=	Unix system management and proactive monitoring
 MAN1=		monit.1
 
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_RC_SUBR=	${PORTNAME}
 

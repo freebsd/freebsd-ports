@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgnome
-# Date created:				17 June 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
 #   $MCom: ports/x11/libgnome/Makefile,v 1.135 2010/09/27 20:06:45 kwm Exp $
-#
 
 PORTNAME=	libgnome
 PORTVERSION=	2.32.0
@@ -26,9 +22,9 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack esound libbonobo \
+USE_GNOME=	gnomeprefix intlhack esound libbonobo \
 		gnomevfs2 ltverhack referencehack
-USE_BISON=	build
+USES=		bison pathfix
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

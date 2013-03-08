@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slony1
-# Date created:		20 Jun 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	slony1
 PORTVERSION=	1.2.23
@@ -18,7 +14,7 @@ COMMENT=	PostgreSQL master to multiple replicas replication system
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes

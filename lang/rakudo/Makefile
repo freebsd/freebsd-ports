@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--with-parrot=${PREFIX}/bin/parrot \
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-USE_BISON=	build
+USES+=		bison
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 

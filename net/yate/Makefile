@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

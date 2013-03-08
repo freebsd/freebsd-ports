@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qgis
-# Date created:		Apr 2006
-# Whom:			Laurent Courty
-#
+# Created by: Laurent Courty
 # $FreeBSD$
-#
 
 PORTNAME=	qgis
 PORTVERSION=	1.8.0
@@ -24,7 +20,7 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_BISON=	build
+USES=		bison
 USE_CMAKE=	yes
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer linguist_build \

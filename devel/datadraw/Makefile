@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	datadraw
-# Date created:			Aug 31, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	datadraw
 PORTVERSION=	3.1.1
@@ -15,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A feature rich persistent database generator
 
-USE_BISON=	build
+USES=		bison
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty

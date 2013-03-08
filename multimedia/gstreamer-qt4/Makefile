@@ -16,7 +16,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GMAKE=	yes

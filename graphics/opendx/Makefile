@@ -16,7 +16,7 @@ LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick	\
 		cdf.0:${PORTSDIR}/science/cdf
 
 USE_XORG=	xinerama xext xpm xmu sm ice 
-USE_BISON=	build
+USES=		bison
 USE_GCC=	any
 USE_GL=		yes
 USE_MOTIF=	yes

@@ -12,7 +12,7 @@ COMMENT=	vCard library
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

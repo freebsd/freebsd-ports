@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Harbour
-# Date created:				9 May 2003
-# Whom:					David G. Holm <harbour@netfang.net>
-#
+# Created by: David G. Holm <harbour@netfang.net>
 # $FreeBSD$
-#
 
 PORTNAME=	harbour
 PORTVERSION=	3.0.0
@@ -32,7 +28,7 @@ PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
 
 MAKE_JOBS_SAFE=	yes
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${LOCALBASE}/lib/harbour
