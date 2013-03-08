@@ -1,0 +1,15 @@
+# pc-sysinstall hierarchy
+.
+/set type=dir uname=root gname=wheel mode=0755
+            backend
+            ..
+	    backend-partmanager
+            ..
+	    backend-query
+            ..
+	    conf
+                license
+		..
+            ..
+	    doc
+            ..
