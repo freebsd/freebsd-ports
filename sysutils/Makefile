@@ -655,6 +655,7 @@
     SUBDIR += pax-utils
     SUBDIR += pbimaker
     SUBDIR += pbreg
+    SUBDIR += pc-sysinstall
     SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pcpustat
