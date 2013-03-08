@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Perl-Releases
-PORTVERSION=	0.98
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl module for mapping Perl releases to the location of the tarballs
+COMMENT=	Map Perl releases to the location of the tarballs
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
