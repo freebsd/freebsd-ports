@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PolicyKit-qt
-# Date created:		2009-07-09
-# Whom:			Dima Panov <fluffy@Fluffy.Khv.RU>
-#
+# Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	policykit-qt
 PORTVERSION=	0.9.4
@@ -25,6 +21,8 @@ USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+
+PORTSCOUT=	limit:^0
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
