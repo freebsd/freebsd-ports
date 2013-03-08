@@ -17,6 +17,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-debug
 
+PORTSCOUT=	limit:^0\.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,Menu::,,' ${WRKSRC}/src/menu.h
 
