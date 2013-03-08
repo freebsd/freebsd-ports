@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Foreign Function Interface
 
 TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
