@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-orbit2
-# Date created:				04 March 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/py-orbit/Makefile,v 1.1 2008/09/23 20:08:04 mezz Exp $
-#
 
 PORTNAME=	orbit
 PORTVERSION=	2.24.0
@@ -23,6 +19,7 @@ CONFLICTS=	py*-omniorb-[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
+USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config

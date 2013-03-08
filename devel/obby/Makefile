@@ -19,6 +19,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		net6:${PORTSDIR}/net/net6
 
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

@@ -21,6 +21,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-message.h
 include/libsoup-%%VERSION%%/libsoup/soup-method.h
 include/libsoup-%%VERSION%%/libsoup/soup-misc.h
 include/libsoup-%%VERSION%%/libsoup/soup-multipart.h
+include/libsoup-%%VERSION%%/libsoup/soup-multipart-input-stream.h
 include/libsoup-%%VERSION%%/libsoup/soup-password-manager.h
 include/libsoup-%%VERSION%%/libsoup/soup-portability.h
 include/libsoup-%%VERSION%%/libsoup/soup-proxy-resolver.h
@@ -38,6 +39,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-session-sync.h
 include/libsoup-%%VERSION%%/libsoup/soup-session.h
 include/libsoup-%%VERSION%%/libsoup/soup-socket.h
 include/libsoup-%%VERSION%%/libsoup/soup-status.h
+include/libsoup-%%VERSION%%/libsoup/soup-tld.h
 include/libsoup-%%VERSION%%/libsoup/soup-types.h
 include/libsoup-%%VERSION%%/libsoup/soup-uri.h
 include/libsoup-%%VERSION%%/libsoup/soup-value-utils.h
@@ -50,7 +52,131 @@ lib/libsoup-%%VERSION%%.so
 lib/libsoup-%%VERSION%%.so.1
 libdata/pkgconfig/libsoup-%%VERSION%%.pc
 share/gir-1.0/Soup-%%VERSION%%.gir
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupAddress.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupAuth.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupAuthDomain.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupAuthDomainBasic.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupAuthDomainDigest.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupCache.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupContentDecoder.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupContentSniffer.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupCookie.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupCookieJar.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupCookieJarText.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupLogger.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupMessage.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupMessageBody.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupMessageHeaders.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupMultipart.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupMultipartInputStream.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupProxyResolverDefault.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupProxyURIResolver.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequest.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequestData.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequestFile.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequestHTTP.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupServer.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupSession.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupSessionAsync.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupSessionFeature.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupSessionSync.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupSocket.html
+share/gtk-doc/html/libsoup-%%VERSION%%/SoupURI.html
+share/gtk-doc/html/libsoup-%%VERSION%%/annotation-glossary.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch01.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch02.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch03.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch04.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch05.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch06.html
+share/gtk-doc/html/libsoup-%%VERSION%%/ch07.html
+share/gtk-doc/html/libsoup-%%VERSION%%/home.png
+share/gtk-doc/html/libsoup-%%VERSION%%/index.html
+share/gtk-doc/html/libsoup-%%VERSION%%/index.sgml
+share/gtk-doc/html/libsoup-%%VERSION%%/ix01.html
+share/gtk-doc/html/libsoup-%%VERSION%%/left.png
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-GValue-Support.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-HTML-Form-Support.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-Soup-Miscellaneous-Utilities.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-SoupCookieJarSqlite.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-SoupRequester.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-Top-Level-Domain-utils.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-XMLRPC-Support.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-soup-gnome-features.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-soup-method.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-soup-status.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%.devhelp2
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-build-howto.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-client-howto.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-server-howto.html
+share/gtk-doc/html/libsoup-%%VERSION%%/right.png
+share/gtk-doc/html/libsoup-%%VERSION%%/style.css
+share/gtk-doc/html/libsoup-%%VERSION%%/up.png
+share/locale/as/LC_MESSAGES/libsoup.mo
+share/locale/be/LC_MESSAGES/libsoup.mo
+share/locale/bg/LC_MESSAGES/libsoup.mo
+share/locale/bn_IN/LC_MESSAGES/libsoup.mo
+share/locale/ca/LC_MESSAGES/libsoup.mo
+share/locale/ca@valencia/LC_MESSAGES/libsoup.mo
+share/locale/cs/LC_MESSAGES/libsoup.mo
+share/locale/da/LC_MESSAGES/libsoup.mo
+share/locale/de/LC_MESSAGES/libsoup.mo
+share/locale/el/LC_MESSAGES/libsoup.mo
+share/locale/en_GB/LC_MESSAGES/libsoup.mo
+share/locale/eo/LC_MESSAGES/libsoup.mo
+share/locale/es/LC_MESSAGES/libsoup.mo
+share/locale/et/LC_MESSAGES/libsoup.mo
+share/locale/fa/LC_MESSAGES/libsoup.mo
+share/locale/fr/LC_MESSAGES/libsoup.mo
+share/locale/fur/LC_MESSAGES/libsoup.mo
+share/locale/gl/LC_MESSAGES/libsoup.mo
+share/locale/gu/LC_MESSAGES/libsoup.mo
+share/locale/he/LC_MESSAGES/libsoup.mo
+share/locale/hi/LC_MESSAGES/libsoup.mo
+share/locale/hu/LC_MESSAGES/libsoup.mo
+share/locale/id/LC_MESSAGES/libsoup.mo
+share/locale/it/LC_MESSAGES/libsoup.mo
+share/locale/ja/LC_MESSAGES/libsoup.mo
+share/locale/kn/LC_MESSAGES/libsoup.mo
+share/locale/ko/LC_MESSAGES/libsoup.mo
+share/locale/lt/LC_MESSAGES/libsoup.mo
+share/locale/lv/LC_MESSAGES/libsoup.mo
+share/locale/ml/LC_MESSAGES/libsoup.mo
+share/locale/mr/LC_MESSAGES/libsoup.mo
+share/locale/nb/LC_MESSAGES/libsoup.mo
+share/locale/or/LC_MESSAGES/libsoup.mo
+share/locale/pa/LC_MESSAGES/libsoup.mo
+share/locale/pl/LC_MESSAGES/libsoup.mo
+share/locale/pt/LC_MESSAGES/libsoup.mo
+share/locale/pt_BR/LC_MESSAGES/libsoup.mo
+share/locale/ro/LC_MESSAGES/libsoup.mo
+share/locale/ru/LC_MESSAGES/libsoup.mo
+share/locale/sk/LC_MESSAGES/libsoup.mo
+share/locale/sl/LC_MESSAGES/libsoup.mo
+share/locale/sr/LC_MESSAGES/libsoup.mo
+share/locale/sr@latin/LC_MESSAGES/libsoup.mo
+share/locale/sv/LC_MESSAGES/libsoup.mo
+share/locale/ta/LC_MESSAGES/libsoup.mo
+share/locale/te/LC_MESSAGES/libsoup.mo
+share/locale/th/LC_MESSAGES/libsoup.mo
+share/locale/tr/LC_MESSAGES/libsoup.mo
+share/locale/ug/LC_MESSAGES/libsoup.mo
+share/locale/uk/LC_MESSAGES/libsoup.mo
+share/locale/uz@cyrillic/LC_MESSAGES/libsoup.mo
+share/locale/vi/LC_MESSAGES/libsoup.mo
+share/locale/zh_CN/LC_MESSAGES/libsoup.mo
+share/locale/zh_HK/LC_MESSAGES/libsoup.mo
+share/locale/zh_TW/LC_MESSAGES/libsoup.mo
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrm share/gtk-doc/html/libsoup-%%VERSION%%
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc/
 @dirrm include/libsoup-%%VERSION%%/libsoup
 @dirrm include/libsoup-%%VERSION%%
-@dirrmtry lib/girepository-1.0
-@dirrmtry share/gir-1.0

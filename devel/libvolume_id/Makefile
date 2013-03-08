@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libvolume_id
-# Date created:		04 November 2006
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libvolume_id
@@ -14,7 +11,6 @@ COMMENT=	Library to provide file system type information
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ENV=	E=${ECHO_MSG} RANLIB=${RANLIB} AR=${AR} Q=@ \
 		prefix=${PREFIX}

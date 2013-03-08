@@ -1,7 +1,4 @@
-# New ports collection makefile for:   gtkmm2
-# Date created:        30 September 2002
-# Whom:                Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-#
+# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
 #    $MCom: ports/x11-toolkits/gtkmm20/Makefile,v 1.11 2006/09/10 00:51:17 mezz Exp $
 
@@ -36,6 +33,9 @@ post-patch:
 		${WRKSRC}/glib/src/*.ccg ${WRKSRC}/glib/glibmm/*.* \
 		${WRKSRC}/gtk/src/*.* ${WRKSRC}/gtk/gtkmm/*.* \
 		${WRKSRC}/demos/gtk-demo/*.cc
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/glib/glibmm/*.cc ${WRKSRC}/glib/glibmm/*.h \
+		${WRKSRC}/gtk/gtkmm/textbuffer.cc
 .for d in docs examples tests
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/${d}//' ${WRKSRC}/Makefile.in
 .endfor

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
 USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

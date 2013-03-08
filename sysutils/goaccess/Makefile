@@ -22,6 +22,7 @@ LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

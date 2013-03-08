@@ -16,6 +16,7 @@ LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
 GNU_CONFIGURE=	yes
 USES=		fuse
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 
 PLIST_FILES=	bin/wdfs
 

@@ -35,5 +35,9 @@ post-patch:
 		${WRKSRC}/roboradio/mp3/Makefile.in
 	@${REINPLACE_CMD} -e 's|static char|static const char|' \
 		${WRKSRC}/gnomoradio/*.xpm
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/roboradio/mp3/common.c \
+		${WRKSRC}/roboradio/mp3/esd-audio.[ch] \
+		${WRKSRC}/roboradio/mp3/id3.h
 
 .include <bsd.port.mk>

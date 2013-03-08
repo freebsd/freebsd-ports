@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libart_lgpl2
-# Date created:		8 July 2001
-# Whom:			Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.21
@@ -19,7 +15,7 @@ COMMENT=	Library for high-performance 2D graphics
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

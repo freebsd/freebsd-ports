@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GtkRadiant
-# Date created:				9 May 2006
-# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
@@ -41,6 +37,18 @@ post-patch:
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's/\(defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)\)/\1 || defined (__FreeBSD__)/'
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/libs/os/dir.h \
+		${WRKSRC}/libs/gtkutil/idledraw.h \
+		${WRKSRC}/libs/gtkutil/cursor.h \
+		${WRKSRC}/libs/convert.h \
+		${WRKSRC}/plugins/shaders/shaders.cpp \
+		${WRKSRC}/plugins/vfspk3/vfs.cpp \
+		${WRKSRC}/radiant/feedback.h \
+		${WRKSRC}/radiant/environment.cpp \
+		${WRKSRC}/radiant/patch.cpp \
+		${WRKSRC}/radiant/watchbsp.cpp \
+		${WRKSRC}/tools/quake3/common/inout.c
 
 post-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py

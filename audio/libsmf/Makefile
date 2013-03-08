@@ -16,6 +16,7 @@ COMMENT=	Standard MIDI File format library
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 
 USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAN1=		smfsh.1

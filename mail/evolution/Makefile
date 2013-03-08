@@ -1,24 +1,20 @@
-# New ports collection makefile for:	evolution
-# Date created:				28th June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.237 2011/04/30 20:43:20 mezz Exp $
-#
+#   $MCom: ports/mail/evolution/Makefile,v 1.241 2012/09/01 23:02:10 mezz Exp $
 
 PORTNAME=	evolution
 PORTVERSION=	2.32.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Integrated mail, calendar, and address book distributed suite
+COMMENT=	Integrated mail, calendar and address book distributed suite
 
-LIB_DEPENDS=	nss3.1:${PORTSDIR}/security/nss \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
 
 CONFLICTS=	evolution-3.[0-9]*
@@ -109,6 +105,7 @@ post-patch:
 	    	-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
 		-e 's|-Wl,--no-undefined||g' \
 		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \

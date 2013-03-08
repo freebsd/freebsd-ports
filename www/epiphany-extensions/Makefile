@@ -1,10 +1,6 @@
-# Ports collection Makefile for:	epiphany-extensions
-# Date created:				30 December 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.132 2010/09/19 15:40:33 kwm Exp $
-#
+#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.140 2012/12/13 20:33:05 kwm Exp $
 
 PORTNAME=	epiphany-extensions
 PORTVERSION=	2.30.2
@@ -17,9 +13,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of add-ons for the Epiphany web browser
 
 BUILD_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
+
+CONFLICTS=	epiphany-extensions-3.[0-9]*
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
@@ -29,17 +27,19 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 EPHY_EXTENSIONS=really-all
 EPHY_VERSION=	${PORTVERSION:R}
 
 PLIST_SUB=	VERSION=${EPHY_VERSION} EPHY_VERSION=${EPHY_VERSION}
 
-OPTIONS=	OPENSP "Enable OpenSP SGML support" off
+OPTIONS_DEFINE=	OPENSP
+OPENSP_DESC=	OpenSP SGML support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSP)
+.if ${PORT_OPTIONS:MOPENSP}
 CONFIGURE_ARGS+=	--enable-opensp=yes
 LIB_DEPENDS+=		osp.5:${PORTSDIR}/textproc/opensp
 .else
@@ -54,4 +54,4 @@ post-patch:
 		-e 's|EPIPHANY_API_VERSION=2.29|EPIPHANY_API_VERSION=2.30|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

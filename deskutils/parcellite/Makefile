@@ -26,4 +26,8 @@ PLIST_SUB+=	NLS="@comment "
 
 MAN1=	parcellite.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g'\
+		${WRKSRC}/src/keybinder.h
+
 .include <bsd.port.mk>

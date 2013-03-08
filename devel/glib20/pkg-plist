@@ -1,15 +1,19 @@
 bin/gdbus
+bin/gdbus-codegen
 bin/gio-querymodules
+bin/glib-compile-resources
 bin/glib-compile-schemas
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
 bin/gobject-query
+bin/gresource
 bin/gsettings
 bin/gtester
 bin/gtester-report
-etc/bash_completion.d/gdbus-bash-completion.sh
-etc/bash_completion.d/gsettings-bash-completion.sh
+share/bash-completion/completions/gdbus
+share/bash-completion/completions/gsettings
+share/bash-completion/completions/gresource
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
 include/gio-unix-2.0/gio/gunixconnection.h
@@ -22,6 +26,8 @@ include/gio-unix-2.0/gio/gunixoutputstream.h
 include/gio-unix-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gaction.h
 include/glib-2.0/gio/gactiongroup.h
+include/glib-2.0/gio/gactiongroupexporter.h
+include/glib-2.0/gio/gactionmap.h
 include/glib-2.0/gio/gappinfo.h
 include/glib-2.0/gio/gapplication.h
 include/glib-2.0/gio/gapplicationcommandline.h
@@ -38,15 +44,25 @@ include/glib-2.0/gio/gconverteroutputstream.h
 include/glib-2.0/gio/gcredentials.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
+include/glib-2.0/gio/gdbusactiongroup.h
 include/glib-2.0/gio/gdbusaddress.h
 include/glib-2.0/gio/gdbusauthobserver.h
 include/glib-2.0/gio/gdbusconnection.h
 include/glib-2.0/gio/gdbuserror.h
+include/glib-2.0/gio/gdbusinterface.h
+include/glib-2.0/gio/gdbusinterfaceskeleton.h
 include/glib-2.0/gio/gdbusintrospection.h
+include/glib-2.0/gio/gdbusmenumodel.h
 include/glib-2.0/gio/gdbusmessage.h
 include/glib-2.0/gio/gdbusmethodinvocation.h
 include/glib-2.0/gio/gdbusnameowning.h
 include/glib-2.0/gio/gdbusnamewatching.h
+include/glib-2.0/gio/gdbusobject.h
+include/glib-2.0/gio/gdbusobjectmanager.h
+include/glib-2.0/gio/gdbusobjectmanagerclient.h
+include/glib-2.0/gio/gdbusobjectmanagerserver.h
+include/glib-2.0/gio/gdbusobjectproxy.h
+include/glib-2.0/gio/gdbusobjectskeleton.h
 include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
@@ -67,6 +83,7 @@ include/glib-2.0/gio/gfilterinputstream.h
 include/glib-2.0/gio/gfilteroutputstream.h
 include/glib-2.0/gio/gicon.h
 include/glib-2.0/gio/ginetaddress.h
+include/glib-2.0/gio/ginetaddressmask.h
 include/glib-2.0/gio/ginetsocketaddress.h
 include/glib-2.0/gio/ginitable.h
 include/glib-2.0/gio/ginputstream.h
@@ -81,25 +98,33 @@ include/glib-2.0/gio/giotypes.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
 include/glib-2.0/gio/gmemoryoutputstream.h
+include/glib-2.0/gio/gmenu.h
+include/glib-2.0/gio/gmenuexporter.h
+include/glib-2.0/gio/gmenumodel.h
 include/glib-2.0/gio/gmount.h
 include/glib-2.0/gio/gmountoperation.h
 include/glib-2.0/gio/gnativevolumemonitor.h
 include/glib-2.0/gio/gnetworkaddress.h
+include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
+include/glib-2.0/gio/gpollableutils.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
 include/glib-2.0/gio/gproxyresolver.h
-include/glib-2.0/gio/gsimpleaction.h
-include/glib-2.0/gio/gsimpleactiongroup.h
+include/glib-2.0/gio/gremoteactiongroup.h
 include/glib-2.0/gio/gresolver.h
+include/glib-2.0/gio/gresource.h
 include/glib-2.0/gio/gseekable.h
 include/glib-2.0/gio/gsettings.h
 include/glib-2.0/gio/gsettingsbackend.h
+include/glib-2.0/gio/gsettingsschema.h
+include/glib-2.0/gio/gsimpleaction.h
+include/glib-2.0/gio/gsimpleactiongroup.h
 include/glib-2.0/gio/gsimpleasyncresult.h
 include/glib-2.0/gio/gsimplepermission.h
 include/glib-2.0/gio/gsocket.h
@@ -114,12 +139,17 @@ include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
+include/glib-2.0/gio/gtestdbus.h
 include/glib-2.0/gio/gthemedicon.h
 include/glib-2.0/gio/gthreadedsocketservice.h
 include/glib-2.0/gio/gtlsbackend.h
 include/glib-2.0/gio/gtlscertificate.h
 include/glib-2.0/gio/gtlsclientconnection.h
 include/glib-2.0/gio/gtlsconnection.h
+include/glib-2.0/gio/gtlsdatabase.h
+include/glib-2.0/gio/gtlsfiledatabase.h
+include/glib-2.0/gio/gtlsinteraction.h
+include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
@@ -127,7 +157,14 @@ include/glib-2.0/gio/gvolumemonitor.h
 include/glib-2.0/gio/gzlibcompressor.h
 include/glib-2.0/gio/gzlibdecompressor.h
 include/glib-2.0/glib-object.h
+include/glib-2.0/glib-unix.h
 include/glib-2.0/glib.h
+include/glib-2.0/glib/deprecated/gallocator.h
+include/glib-2.0/glib/deprecated/gcache.h
+include/glib-2.0/glib/deprecated/gcompletion.h
+include/glib-2.0/glib/deprecated/gmain.h
+include/glib-2.0/glib/deprecated/grel.h
+include/glib-2.0/glib/deprecated/gthread.h
 include/glib-2.0/glib/galloca.h
 include/glib-2.0/glib/garray.h
 include/glib-2.0/glib/gasyncqueue.h
@@ -136,17 +173,20 @@ include/glib-2.0/glib/gbacktrace.h
 include/glib-2.0/glib/gbase64.h
 include/glib-2.0/glib/gbitlock.h
 include/glib-2.0/glib/gbookmarkfile.h
-include/glib-2.0/glib/gcache.h
+include/glib-2.0/glib/gbytes.h
+include/glib-2.0/glib/gcharset.h
 include/glib-2.0/glib/gchecksum.h
-include/glib-2.0/glib/gcompletion.h
 include/glib-2.0/glib/gconvert.h
 include/glib-2.0/glib/gdataset.h
 include/glib-2.0/glib/gdate.h
 include/glib-2.0/glib/gdatetime.h
 include/glib-2.0/glib/gdir.h
+include/glib-2.0/glib/genviron.h
 include/glib-2.0/glib/gerror.h
 include/glib-2.0/glib/gfileutils.h
+include/glib-2.0/glib/ggettext.h
 include/glib-2.0/glib/ghash.h
+include/glib-2.0/glib/ghmac.h
 include/glib-2.0/glib/ghook.h
 include/glib-2.0/glib/ghostutils.h
 include/glib-2.0/glib/gi18n-lib.h
@@ -171,7 +211,6 @@ include/glib-2.0/glib/gquark.h
 include/glib-2.0/glib/gqueue.h
 include/glib-2.0/glib/grand.h
 include/glib-2.0/glib/gregex.h
-include/glib-2.0/glib/grel.h
 include/glib-2.0/glib/gscanner.h
 include/glib-2.0/glib/gsequence.h
 include/glib-2.0/glib/gshell.h
@@ -181,11 +220,13 @@ include/glib-2.0/glib/gspawn.h
 include/glib-2.0/glib/gstdio.h
 include/glib-2.0/glib/gstrfuncs.h
 include/glib-2.0/glib/gstring.h
+include/glib-2.0/glib/gstringchunk.h
 include/glib-2.0/glib/gtestutils.h
 include/glib-2.0/glib/gthread.h
 include/glib-2.0/glib/gthreadpool.h
 include/glib-2.0/glib/gtimer.h
 include/glib-2.0/glib/gtimezone.h
+include/glib-2.0/glib/gtrashstack.h
 include/glib-2.0/glib/gtree.h
 include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
@@ -193,6 +234,8 @@ include/glib-2.0/glib/gurifuncs.h
 include/glib-2.0/glib/gutils.h
 include/glib-2.0/glib/gvariant.h
 include/glib-2.0/glib/gvarianttype.h
+include/glib-2.0/glib/gversion.h
+include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/glibconfig.h
 include/glib-2.0/gmodule.h
@@ -200,6 +243,7 @@ include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
+include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gobjectnotifyqueue.c
@@ -214,6 +258,30 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
+lib/gdbus-2.0/codegen/__init__.py
+lib/gdbus-2.0/codegen/__init__.pyc
+lib/gdbus-2.0/codegen/__init__.pyo
+lib/gdbus-2.0/codegen/codegen.py
+lib/gdbus-2.0/codegen/codegen.pyc
+lib/gdbus-2.0/codegen/codegen.pyo
+lib/gdbus-2.0/codegen/codegen_docbook.py
+lib/gdbus-2.0/codegen/codegen_docbook.pyc
+lib/gdbus-2.0/codegen/codegen_docbook.pyo
+lib/gdbus-2.0/codegen/codegen_main.py
+lib/gdbus-2.0/codegen/codegen_main.pyc
+lib/gdbus-2.0/codegen/codegen_main.pyo
+lib/gdbus-2.0/codegen/config.py
+lib/gdbus-2.0/codegen/config.pyc
+lib/gdbus-2.0/codegen/config.pyo
+lib/gdbus-2.0/codegen/dbustypes.py
+lib/gdbus-2.0/codegen/dbustypes.pyc
+lib/gdbus-2.0/codegen/dbustypes.pyo
+lib/gdbus-2.0/codegen/parser.py
+lib/gdbus-2.0/codegen/parser.pyc
+lib/gdbus-2.0/codegen/parser.pyo
+lib/gdbus-2.0/codegen/utils.py
+lib/gdbus-2.0/codegen/utils.pyc
+lib/gdbus-2.0/codegen/utils.pyo
 lib/libgio-2.0.a
 lib/libgio-2.0.la
 lib/libgio-2.0.so
@@ -268,9 +336,9 @@ share/locale/da/LC_MESSAGES/glib20.mo
 share/locale/de/LC_MESSAGES/glib20.mo
 share/locale/dz/LC_MESSAGES/glib20.mo
 share/locale/el/LC_MESSAGES/glib20.mo
+share/locale/en@shaw/LC_MESSAGES/glib20.mo
 share/locale/en_CA/LC_MESSAGES/glib20.mo
 share/locale/en_GB/LC_MESSAGES/glib20.mo
-share/locale/en@shaw/LC_MESSAGES/glib20.mo
 share/locale/eo/LC_MESSAGES/glib20.mo
 share/locale/es/LC_MESSAGES/glib20.mo
 share/locale/et/LC_MESSAGES/glib20.mo
@@ -342,26 +410,6 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@exec mkdir -p %D/share/glib-2.0/schemas
-@exec mkdir -p %D/share/GConf/gsettings
-@dirrm share/GConf/gsettings
-@dirrm share/GConf
-@exec glib-compile-schemas --uninstall %D/share/glib-2.0/schemas
-@dirrm share/glib-2.0/schemas
-@dirrm share/glib-2.0/gettext/po
-@dirrm share/glib-2.0/gettext
-@dirrm share/glib-2.0
-@exec mkdir -p %D/lib/gio/modules
-@exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@unexec /bin/rm -f %D/lib/gio/modules/giomodule.cache
-@dirrmtry lib/gio/modules
-@dirrmtry lib/gio
-@dirrm include/glib-2.0/gobject
-@dirrm include/glib-2.0/glib
-@dirrm include/glib-2.0/gio
-@dirrm include/glib-2.0
-@dirrm include/gio-unix-2.0/gio
-@dirrm include/gio-unix-2.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES
@@ -416,4 +464,27 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry etc/bash_completion.d
+@exec mkdir -p %D/share/glib-2.0/schemas
+@exec glib-compile-schemas %D/share/glib-2.0/schemas
+@dirrm share/glib-2.0/schemas
+@dirrm share/glib-2.0/gettext/po
+@dirrm share/glib-2.0/gettext
+@dirrm share/glib-2.0
+@dirrmtry share/bash-completion/completions
+@dirrmtry share/bash-completion
+@exec mkdir -p %D/share/GConf/gsettings
+@dirrm share/GConf/gsettings
+@dirrm share/GConf
+@exec mkdir -p %D/lib/gio/modules
+@exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@dirrmtry lib/gio/modules
+@dirrmtry lib/gio
+@dirrm lib/gdbus-2.0/codegen
+@dirrm lib/gdbus-2.0
+@dirrm include/glib-2.0/gobject
+@dirrm include/glib-2.0/glib/deprecated
+@dirrm include/glib-2.0/glib
+@dirrm include/glib-2.0/gio
+@dirrm include/glib-2.0
+@dirrm include/gio-unix-2.0/gio
+@dirrm include/gio-unix-2.0

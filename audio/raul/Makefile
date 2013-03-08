@@ -17,6 +17,7 @@ LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
 

@@ -84,6 +84,11 @@ CONFIGURE_ARGS+=	--disable-clipart
 PLIST_SUB+=		CLIPART="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/goffice-bits/goffice/app/goffice-app.h \
+		${WRKSRC}/src/af/util/xp/ut_go_file.h
+
 post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${ABIVERSION}/plugins
 	@-update-desktop-database

@@ -8,9 +8,9 @@ MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A grammar checking library
 
-LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	pspell:${PORTSDIR}/textproc/aspell
 
-USE_GNOME=	gnomehack ltverhack pkgconfig
+USE_GNOME=	gnomehack ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

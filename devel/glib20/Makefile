@@ -1,58 +1,64 @@
-# New ports collection makefile for:   glib13
-# Date Created:			28 July 1998
-# Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.209 2011/06/11 19:51:14 mezz Exp $
-#
+#   $MCom: ports/devel/glib20/Makefile,v 1.229 2012/12/09 20:42:55 kwm Exp $
 # !! DON'T FORGET ABOUT devel/gio-fam-backend !!
 
 PORTNAME=	glib
-PORTVERSION=	2.28.8
-PORTREVISION?=	5
+PORTVERSION=	2.34.3
+PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
-		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
-		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
-		http://www.ameth.org/gimp/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
 
-LATEST_LINK=	glib20
-
-USE_XZ=		yes
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+LATEST_LINK=	glib20
+USE_XZ=		yes
+PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
+		ffi:${PORTSDIR}/devel/libffi
 
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig ltverhack
+USE_PKGCONFIG=	build
+USE_GNOME=	gnomehack ltverhack
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
-		--disable-dtrace \
 		--with-pcre=system \
 		--disable-fam
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-OPTIONS=	COLLATION_FIX "fix string collation" off
+OPTIONS_DEFINE=	COLLATION_FIX DEBUG
+COLLATION_FIX_DESC=	fix string collation
 
 .include <bsd.port.pre.mk>
+
+# doesn't build yet
+#.if (${OSVERSION} < 800000) \
+#	|| (${OSVERSION} >= 800000 && ${OSVERSION} < 802000)
+#	|| (${OSVERSION} >= 900000 && ${OSVERSION} < 900021)
+CONFIGURE_ARGS+=--disable-dtrace
+#.else
+#CONFIGURE_ARGS+=--enable-dtrace
+#.endif
+
+.if ${ARCH} == powerpc64
+EXTRA_PATCHES=	${FILESDIR}/extra-arch-powerpc64
+.endif
 
 # Let glib use asm code for implementing atomic ops on i386 and amd64.
 .if ${ARCH} == "i386"
@@ -64,7 +70,7 @@ GLIB_ARCH=	${ARCH}
 .endif
 CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
-.if defined(WITH_COLLATION_FIX)
+.if ${PORT_OPTIONS:MCOLLATION_FIX}
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
@@ -72,8 +78,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 #CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug=yes
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug=yes \
+			--disable-silent-rules
+.else
+CONFIGURE_ARGS+=	--disable-modular-tests
 .endif
 
 post-patch:

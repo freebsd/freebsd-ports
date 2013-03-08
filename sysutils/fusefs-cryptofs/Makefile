@@ -16,6 +16,7 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USES=		fuse
 
 PLIST_FILES=	bin/cryptofs

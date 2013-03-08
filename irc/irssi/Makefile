@@ -17,6 +17,7 @@ CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_NCURSES=	yes
 WANT_PERL=	yes

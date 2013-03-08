@@ -1,6 +1,171 @@
-bin/at-spi-dbus-bus
 etc/at-spi2/accessibility.conf
 etc/xdg/autostart/at-spi-dbus-bus.desktop
+include/at-spi-2.0/atspi/atspi.h
+include/at-spi-2.0/atspi/atspi-accessible.h
+include/at-spi-2.0/atspi/atspi-action.h
+include/at-spi-2.0/atspi/atspi-application.h
+include/at-spi-2.0/atspi/atspi-collection.h
+include/at-spi-2.0/atspi/atspi-component.h
+include/at-spi-2.0/atspi/atspi-constants.h
+include/at-spi-2.0/atspi/atspi-device-listener.h
+include/at-spi-2.0/atspi/atspi-device-listener-private.h
+include/at-spi-2.0/atspi/atspi-document.h
+include/at-spi-2.0/atspi/atspi-editabletext.h
+include/at-spi-2.0/atspi/atspi-event-listener.h
+include/at-spi-2.0/atspi/atspi-event-listener-private.h
+include/at-spi-2.0/atspi/atspi-gmain.c
+include/at-spi-2.0/atspi/atspi-gmain.h
+include/at-spi-2.0/atspi/atspi-hyperlink.h
+include/at-spi-2.0/atspi/atspi-hypertext.h
+include/at-spi-2.0/atspi/atspi-image.h
+include/at-spi-2.0/atspi/atspi-misc.h
+include/at-spi-2.0/atspi/atspi-matchrule.h
+include/at-spi-2.0/atspi/atspi-object.h
+include/at-spi-2.0/atspi/atspi-private.h
+include/at-spi-2.0/atspi/atspi-registry.h
+include/at-spi-2.0/atspi/atspi-relation.h
+include/at-spi-2.0/atspi/atspi-selection.h
+include/at-spi-2.0/atspi/atspi-stateset.h
+include/at-spi-2.0/atspi/atspi-table.h
+include/at-spi-2.0/atspi/atspi-text.h
+include/at-spi-2.0/atspi/atspi-types.h
+include/at-spi-2.0/atspi/atspi-value.h
+lib/girepository-1.0/Atspi-2.0.typelib
+lib/libatspi.a
+lib/libatspi.la
+lib/libatspi.so
+lib/libatspi.so.0
+libdata/pkgconfig/atspi-2.pc
+libexec/at-spi-bus-launcher
 libexec/at-spi2-registryd
+share/dbus-1/services/org.a11y.Bus.service
 share/dbus-1/services/org.a11y.atspi.Registry.service
+share/gir-1.0/Atspi-2.0.gir
+share/gtk-doc/html/libatspi/AtspiAccessible.html
+share/gtk-doc/html/libatspi/AtspiDeviceListener.html
+share/gtk-doc/html/libatspi/AtspiEventListener.html
+share/gtk-doc/html/libatspi/AtspiHyperlink.html
+share/gtk-doc/html/libatspi/AtspiMatchRule.html
+share/gtk-doc/html/libatspi/AtspiObject.html
+share/gtk-doc/html/libatspi/AtspiRelation.html
+share/gtk-doc/html/libatspi/AtspiStateSet.html
+share/gtk-doc/html/libatspi/annotation-glossary.html
+share/gtk-doc/html/libatspi/api-index-full.html
+share/gtk-doc/html/libatspi/ch01.html
+share/gtk-doc/html/libatspi/home.png
+share/gtk-doc/html/libatspi/index.html
+share/gtk-doc/html/libatspi/index.sgml
+share/gtk-doc/html/libatspi/left.png
+share/gtk-doc/html/libatspi/libatspi-AtspiApplication.html
+share/gtk-doc/html/libatspi/libatspi-atspi-action.html
+share/gtk-doc/html/libatspi/libatspi-atspi-collection.html
+share/gtk-doc/html/libatspi/libatspi-atspi-component.html
+share/gtk-doc/html/libatspi/libatspi-atspi-constants.html
+share/gtk-doc/html/libatspi/libatspi-atspi-document.html
+share/gtk-doc/html/libatspi/libatspi-atspi-editabletext.html
+share/gtk-doc/html/libatspi/libatspi-atspi-hypertext.html
+share/gtk-doc/html/libatspi/libatspi-atspi-image.html
+share/gtk-doc/html/libatspi/libatspi-atspi-listener-private.html
+share/gtk-doc/html/libatspi/libatspi-atspi-misc-private.html
+share/gtk-doc/html/libatspi/libatspi-atspi-misc.html
+share/gtk-doc/html/libatspi/libatspi-atspi-registry.html
+share/gtk-doc/html/libatspi/libatspi-atspi-selection.html
+share/gtk-doc/html/libatspi/libatspi-atspi-table.html
+share/gtk-doc/html/libatspi/libatspi-atspi-text.html
+share/gtk-doc/html/libatspi/libatspi-atspi-types.html
+share/gtk-doc/html/libatspi/libatspi-atspi-value.html
+share/gtk-doc/html/libatspi/libatspi.devhelp2
+share/gtk-doc/html/libatspi/object-tree.html
+share/gtk-doc/html/libatspi/right.png
+share/gtk-doc/html/libatspi/style.css
+share/gtk-doc/html/libatspi/up.png
+share/locale/an/LC_MESSAGES/at-spi2-core.mo
+share/locale/as/LC_MESSAGES/at-spi2-core.mo
+share/locale/ast/LC_MESSAGES/at-spi2-core.mo
+share/locale/be/LC_MESSAGES/at-spi2-core.mo
+share/locale/bg/LC_MESSAGES/at-spi2-core.mo
+share/locale/bn_IN/LC_MESSAGES/at-spi2-core.mo
+share/locale/ca/LC_MESSAGES/at-spi2-core.mo
+share/locale/ca@valencia/LC_MESSAGES/at-spi2-core.mo
+share/locale/cs/LC_MESSAGES/at-spi2-core.mo
+share/locale/da/LC_MESSAGES/at-spi2-core.mo
+share/locale/de/LC_MESSAGES/at-spi2-core.mo
+share/locale/el/LC_MESSAGES/at-spi2-core.mo
+share/locale/en_CA/LC_MESSAGES/at-spi2-core.mo
+share/locale/en_GB/LC_MESSAGES/at-spi2-core.mo
+share/locale/eo/LC_MESSAGES/at-spi2-core.mo
+share/locale/es/LC_MESSAGES/at-spi2-core.mo
+share/locale/et/LC_MESSAGES/at-spi2-core.mo
+share/locale/eu/LC_MESSAGES/at-spi2-core.mo
+share/locale/fa/LC_MESSAGES/at-spi2-core.mo
+share/locale/fi/LC_MESSAGES/at-spi2-core.mo
+share/locale/fr/LC_MESSAGES/at-spi2-core.mo
+share/locale/gl/LC_MESSAGES/at-spi2-core.mo
+share/locale/gu/LC_MESSAGES/at-spi2-core.mo
+share/locale/he/LC_MESSAGES/at-spi2-core.mo
+share/locale/hi/LC_MESSAGES/at-spi2-core.mo
+share/locale/hu/LC_MESSAGES/at-spi2-core.mo
+share/locale/id/LC_MESSAGES/at-spi2-core.mo
+share/locale/it/LC_MESSAGES/at-spi2-core.mo
+share/locale/ja/LC_MESSAGES/at-spi2-core.mo
+share/locale/km/LC_MESSAGES/at-spi2-core.mo
+share/locale/kn/LC_MESSAGES/at-spi2-core.mo
+share/locale/ko/LC_MESSAGES/at-spi2-core.mo
+share/locale/lt/LC_MESSAGES/at-spi2-core.mo
+share/locale/lv/LC_MESSAGES/at-spi2-core.mo
+share/locale/ml/LC_MESSAGES/at-spi2-core.mo
+share/locale/mr/LC_MESSAGES/at-spi2-core.mo
+share/locale/ms/LC_MESSAGES/at-spi2-core.mo
+share/locale/nb/LC_MESSAGES/at-spi2-core.mo
+share/locale/nl/LC_MESSAGES/at-spi2-core.mo
+share/locale/or/LC_MESSAGES/at-spi2-core.mo
+share/locale/pa/LC_MESSAGES/at-spi2-core.mo
+share/locale/pl/LC_MESSAGES/at-spi2-core.mo
+share/locale/pt/LC_MESSAGES/at-spi2-core.mo
+share/locale/pt_BR/LC_MESSAGES/at-spi2-core.mo
+share/locale/ro/LC_MESSAGES/at-spi2-core.mo
+share/locale/ru/LC_MESSAGES/at-spi2-core.mo
+share/locale/sk/LC_MESSAGES/at-spi2-core.mo
+share/locale/sl/LC_MESSAGES/at-spi2-core.mo
+share/locale/sq/LC_MESSAGES/at-spi2-core.mo
+share/locale/sr/LC_MESSAGES/at-spi2-core.mo
+share/locale/sr@latin/LC_MESSAGES/at-spi2-core.mo
+share/locale/sv/LC_MESSAGES/at-spi2-core.mo
+share/locale/ta/LC_MESSAGES/at-spi2-core.mo
+share/locale/te/LC_MESSAGES/at-spi2-core.mo
+share/locale/tr/LC_MESSAGES/at-spi2-core.mo
+share/locale/ug/LC_MESSAGES/at-spi2-core.mo
+share/locale/uk/LC_MESSAGES/at-spi2-core.mo
+share/locale/uz@cyrillic/LC_MESSAGES/at-spi2-core.mo
+share/locale/vi/LC_MESSAGES/at-spi2-core.mo
+share/locale/zh_CN/LC_MESSAGES/at-spi2-core.mo
+share/locale/zh_HK/LC_MESSAGES/at-spi2-core.mo
+share/locale/zh_TW/LC_MESSAGES/at-spi2-core.mo
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
+@dirrm share/gtk-doc/html/libatspi
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/at-spi-2.0/atspi
+@dirrm include/at-spi-2.0
 @dirrm etc/at-spi2

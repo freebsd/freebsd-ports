@@ -16,6 +16,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 

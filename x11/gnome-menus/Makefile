@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-menus
-# Date created:				30 November 2004
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome-menus/Makefile,v 1.110 2010/11/17 11:29:19 kwm Exp $
-#
 
 PORTNAME=	gnome-menus
 PORTVERSION=	2.30.5
@@ -22,6 +18,7 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack glib20 ltverhack
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

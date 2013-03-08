@@ -1,36 +1,28 @@
-# New ports collection makefile for:	telepathy-salut
-# Date created:				Apr 16 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.4 2009/01/08 07:12:15 marcus Exp $
-#
+#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.9 2012/08/17 19:06:46 kwm Exp $
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.4.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
-		avahi-glib.pc:${PORTSDIR}/net/avahi-app \
-		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
-		libsoup-2.4.pc:${PORTSDIR}/devel/libsoup
-
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
+LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
+		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack glib20 libxslt:build
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+USE_SQLITE=	3
+CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN8=		telepathy-salut.8
 

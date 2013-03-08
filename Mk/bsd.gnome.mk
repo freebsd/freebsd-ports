@@ -1,9 +1,9 @@
-#-*- tab-width: 4; -*-
+#-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.549 2011/06/10 22:16:59 mezz Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.574 2012/12/18 12:15:14 kwm Exp $
 #
 # Please view me with 4 column tabs!
 
@@ -78,7 +78,7 @@ _USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
 		libgda libghttp libglade libxml imlib oaf orbit
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 \
+_USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 \
 		gdkpixbuf2 gconf2 _glib20 glib20 gnomecontrolcenter2 gnomedesktop \
 		gnomedesktopsharp20 gnomedocutils gnomemenus gnomepanel gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
@@ -93,11 +93,18 @@ _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 \
 # GNOME 3 components
 _USE_GNOME_ALL+= dconf gtk30
 
+# C++ bindings
+_USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
+		gtkmm30 libgdamm \
+		libgtksourceviewmm libxml++ libxml++26 libsigc++12 libsigc++20 \
+		pangomm
+
 GNOME_MAKEFILEIN?=	Makefile.in
 SCROLLKEEPER_DIR=	/var/db/rarian
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "${GNOME_MAKEFILEIN}*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 				 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+				 s|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
@@ -129,6 +136,67 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${GNOME_LOCALSTATEDIR} \
 			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
+atkmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/atkmm-1.6.pc
+atkmm_LIB_DEPENDS=	atkmm-1.6:${PORTSDIR}/accessibility/atkmm
+atkmm_USE_GNOME_IMPL=	glibmm atk
+
+libxml++_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml++-1.0.pc
+libxml++_LIB_DEPENDS=		xml++-1.0:${PORTSDIR}/textproc/libxml++
+libxml++_USE_GNOME_IMPL=	libxml2
+
+libxml++26_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc
+libxml++26_LIB_DEPENDS=		xml++-2.6:${PORTSDIR}/textproc/libxml++26
+libxml++26_USE_GNOME_IMPL=	glibmm libxml2
+
+cairo_DETECT=		${LOCALBASE}/libdata/pkgconfig/cairo.pc
+cairo_LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+
+cairomm_DETECT=		${LOCALBASE}/libdata/pkgconfig/cairomm-1.0.pc
+cairomm_LIB_DEPENDS=	cairomm-1.0:${PORTSDIR}/graphics/cairomm
+cairomm_USE_GNOME_IMPL=	cairo libxml++26
+
+gconfmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/gconfmm-2.0.pc
+gconfmm_LIB_DEPENDS=	gconfmm-2.0:${PORTSDIR}/devel/gconfmm
+gconfmm_USE_GNOME_IMPL=	gtkmm20 gconf2
+
+gconfmm26_DETECT=		${LOCALBASE}/libdata/pkgconfig/gconfmm-2.6.pc
+gconfmm26_LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26
+gconfmm26_USE_GNOME_IMPL=	glibmm gconf2
+
+glibmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc
+glibmm_LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
+glibmm_USE_GNOME_IMPL=	libsigc++20 glib20
+
+gtkmm20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc
+gtkmm20_LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
+gtkmm20_USE_GNOME_IMPL=	libsigc++12 gtk20
+
+gtkmm24_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-2.4.pc
+gtkmm24_LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+gtkmm24_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk20
+
+gtkmm30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc
+gtkmm30_LIB_DEPENDS=	gtkmm-3.0:${PORTSDIR}/x11-toolkits/gtkmm30
+gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
+
+libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
+libgdamm_LIB_DEPENDS=	gdamm-4.0:${PORTSDIR}/databases/libgdamm
+libgdamm_USE_GNOME_IMPL=libgda4 glibmm
+
+libgtksourceviewmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-2.0.pc
+libgtksourceviewmm_LIB_DEPENDS=		gtksourceviewmm-2.0:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
+libgtksourceviewmm_USE_GNOME_IMPL=	gtksourceview2 gtkmm24
+
+libsigc++12_DETECT=		${LOCALBASE}/libdata/pkgconfig/sigc++-1.2.pc
+libsigc++12_LIB_DEPENDS=	sigc-1.2:${PORTSDIR}/devel/libsigc++12
+
+libsigc++20_DETECT=		${LOCALBASE}/libdata/pkgconfig/sigc++-2.0.pc
+libsigc++20_LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
+
+pangomm_DETECT=		${LOCALBASE}/libdata/pkgconfig/pangomm-1.4.pc
+pangomm_LIB_DEPENDS=	pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
+pangomm_USE_GNOME_IMPL=	pango glibmm cairomm
+
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
@@ -143,7 +211,6 @@ glib12_LIB_DEPENDS=	glib-12.3:${PORTSDIR}/devel/glib12
 glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_DETECT=		${GLIB_CONFIG}
-glib12_USE_GNOME_IMPL=	pkgconfig
 
 GTK_CONFIG?=		${LOCALBASE}/bin/gtk12-config
 gtk12_LIB_DEPENDS=	gtk-12.2:${PORTSDIR}/x11-toolkits/gtk12
@@ -246,9 +313,9 @@ libglade_MAKE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
 libglade_DETECT=	${LIBGLADE_CONFIG}
 libglade_USE_GNOME_IMPL=gnomedb
 
-_glib20_LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
+_glib20_LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
+			pcre:${PORTSDIR}/devel/pcre
 _glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
-_glib20_USE_GNOME_IMPL=	pkgconfig
 
 glib20_RUN_DEPENDS=	${LOCALBASE}/lib/gio/modules/libgiofam.so:${PORTSDIR}/devel/gio-fam-backend
 glib20_DETECT=		${LOCALBASE}/lib/gio/modules/libgiofam.so
@@ -301,11 +368,14 @@ libglade2_LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2
 libglade2_DETECT=	${LOCALBASE}/libdata/pkgconfig/libglade-2.0.pc
 libglade2_USE_GNOME_IMPL=libxml2 gtk20
 
+libxml2_BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+libxml2_RUN_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc
-libxml2_USE_GNOME_IMPL=	pkgconfig
 
+libxslt_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 libxslt_LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+libxslt_RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 libxslt_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxslt.pc
 libxslt_USE_GNOME_IMPL=	libxml2
 
@@ -327,7 +397,6 @@ libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
 libartlgpl2_LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl
 libartlgpl2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libart-2.0.pc
-libartlgpl2_USE_GNOME_IMPL=	pkgconfig
 
 libgnomeprint_LIB_DEPENDS=	gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint
 libgnomeprint_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomeprint-2.2.pc
@@ -364,16 +433,17 @@ libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
 gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.17:${PORTSDIR}/x11/gnome-desktop
 gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	gconf2 gnomedocutils pygtk2
-gnomedesktop_GNOME_DESKTOP_VERSION=2
 
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 gnomepanel libwnck nautiluscdburner
+gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
+libwnck_GNOME_DESKTOP_VERSION=2
 
 vte_LIB_DEPENDS=	vte.9:${PORTSDIR}/x11-toolkits/vte
 vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
@@ -397,13 +467,14 @@ gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2
 gnomepanel_GNOME_DESKTOP_VERSION=2
 
 nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus
-nautilus2_DETECT=	${LOCALBASE}/libdata/pkgconfig/libnautilus-extension.pc
+nautilus2_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-2.0.gir
 nautilus2_USE_GNOME_IMPL=librsvg2 gnomedesktop desktopfileutils gvfs
 nautilus2_GNOME_DESKTOP_VERSION=2
 
 metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
 metacity_USE_GNOME_IMPL=gconf2
+metacity_GNOME_DESKTOP_VERSION=2
 
 gal2_LIB_DEPENDS=	gal-2.4.0:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
@@ -412,6 +483,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 gnomecontrolcenter2_LIB_DEPENDS=gnome-window-settings.1:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter2_DETECT=${LOCALBASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
 gnomecontrolcenter2_USE_GNOME_IMPL=metacity gnomemenus desktopfileutils libgnomekbd gnomedesktop librsvg2
+gnomecontrolcenter2_GNOME_DESKTOP_VERSION=2
 
 libgda2_LIB_DEPENDS=	gda-2.3:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgda.pc
@@ -485,6 +557,7 @@ gnomespeech_USE_GNOME_IMPL=libbonobo
 evolutiondataserver_LIB_DEPENDS=edataserverui-1.2.11:${PORTSDIR}/databases/evolution-data-server
 evolutiondataserver_DETECT=		${LOCALBASE}/libdata/pkgconfig/evolution-data-server-1.2.pc
 evolutiondataserver_USE_GNOME_IMPL=gconf2 libxml2
+evolutiondataserver_GNOME_DESKTOP_VERSION=2
 
 desktopfileutils_BUILD_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
@@ -494,10 +567,13 @@ desktopfileutils_USE_GNOME_IMPL=glib20
 nautiluscdburner_LIB_DEPENDS=nautilus-burn.4:${PORTSDIR}/sysutils/nautilus-cd-burner
 nautiluscdburner_DETECT=	${LOCALBASE}/libdata/pkgconfig/libnautilus-burn.pc
 nautiluscdburner_USE_GNOME_IMPL=nautilus2 desktopfileutils
+nautiluscdburner_GNOME_DESKTOP_VERSION=2
 
-gnomemenus_LIB_DEPENDS=		gnome-menu.2:${PORTSDIR}/x11/gnome-menus
+gnomemenus_BUILD_DEPENDS=	gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
+gnomemenus_RUN_DEPENDS=		gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
 gnomemenus_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgnome-menu.pc
 gnomemenus_USE_GNOME_IMPL=	glib20
+gnomemenus_GNOME_DESKTOP_VERSION=2
 
 pygnomeextras_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-extras-2.0.pc
 pygnomeextras_BUILD_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
@@ -513,6 +589,7 @@ pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.
 pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_USE_GNOME_IMPL=pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautilus2 metacity
+pygnomedesktop_GNOME_DESKTOP_VERSION=2
 
 gtksharp10_DETECT=			${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
 gtksharp10_BUILD_DEPENDS=	${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
@@ -529,9 +606,10 @@ gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnom
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_USE_GNOME_IMPL=	gnomepanel gtkhtml3 gtksharp20 librsvg2 vte
 
-libgnomekbd_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
+libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_LIB_DEPENDS=	gnomekbd.4:${PORTSDIR}/x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gconf2
+libgnomekbd_GNOME_DESKTOP_VERSION=2
 
 pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
 pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
@@ -734,34 +812,45 @@ USE_CSTD=	gnu89
 GNOME_PRE_PATCH+=	${lthacks_PRE_PATCH}
 CONFIGURE_ENV+=		${lthacks_CONFIGURE_ENV}
 . endif
-. for component in ${_USE_GNOME_ALL}
-.  if ${_USE_GNOME:M${component}}!=""
+
+. for component in ${_USE_GNOME:O:u}
+.  if defined(${component}_PATCH_DEPENDS)
 PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}
-FETCH_DEPENDS+=	${${component}_FETCH_DEPENDS}
-EXTRACT_DEPENDS+=${${component}_EXTRACT_DEPENDS}
-BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
-.  if defined(MARCUSCOM_CVS)
-.   if !defined(NODEPENDS)
-LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
-RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
-.   endif
-.  else
-LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
-RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
 .  endif
 
+.  if defined(${component}_DETECT)
+.   if ${USE_GNOME:M${component}\:build}!=""
+BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
+.   elif ${USE_GNOME:M${component}\:run}!=""
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.   else
+.    if defined(${component}_LIB_DEPENDS)
+LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
+.    else
+BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.    endif
+.   endif
+.  endif
+
+.  if defined(${component}_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=${${component}_CONFIGURE_ARGS}
+.  endif
+
+.  if defined(${component}_CONFIGURE_ENV)
 CONFIGURE_ENV+=	${${component}_CONFIGURE_ENV}
+.  endif
+
+.  if defined(${component}_MAKE_ENV)
 MAKE_ENV+=	${${component}_MAKE_ENV}
+.  endif
 
-.    if !defined(CONFIGURE_TARGET) && defined(${component}_CONFIGURE_TARGET)
+.  if !defined(CONFIGURE_TARGET) && defined(${component}_CONFIGURE_TARGET)
 CONFIGURE_TARGET=	${${component}_CONFIGURE_TARGET}
-.    endif
+.  endif
 
-.    if defined(${component}_PRE_PATCH)
+.  if defined(${component}_PRE_PATCH)
 GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
-.    endif
-
 .  endif
 . endfor
 .endif
@@ -835,9 +924,9 @@ gnome-post-install:
 		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} "@exec glib-compile-schemas %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
-		>> ${TMPPLIST}; \
-	${ECHO_CMD} "@unexec glib-compile-schemas --uninstall %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
-		>> ${TMPPLIST};
+			>> ${TMPPLIST}; \
+	${ECHO_CMD} "@unexec glib-compile-schemas %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
+			>> ${TMPPLIST};
 .endif
 
 .  if defined(INSTALLS_OMF)

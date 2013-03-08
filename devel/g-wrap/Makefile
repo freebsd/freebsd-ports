@@ -1,10 +1,6 @@
-# Ports collection makefile for:	g-wrap
-# Date created:		Jun 29, 2000
-# Whom:			Matthew Condell (mcondell@alum.mit.edu)
-#
+# Created by: Matthew Condell (mcondell@alum.mit.edu)
 # $FreeBSD$
 #    $MCom: ports/devel/g-wrap/Makefile,v 1.6 2006/12/24 18:45:08 ahze Exp $
-#
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.9.6
@@ -14,7 +10,7 @@ CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A tool for exporting C libraries into Scheme interpreters
+COMMENT=	Tool for exporting C libraries into Scheme interpreters
 
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		slib-guile>0:${PORTSDIR}/lang/slib-guile
@@ -28,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 NOT_FOR_ARCHS=	ia64 powerpc
 
 CFLAGS+=		-fPIC

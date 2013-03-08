@@ -1,10 +1,6 @@
-# New ports collection makefile for:	nautilus-cd-burner
-# Date created:				13 April 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/sysutils/nautilus-cd-burner/Makefile,v 1.149 2009/09/25 18:40:01 kwm Exp $
-#
 
 PORTNAME=	nautilus-cd-burner
 PORTVERSION=	2.24.0
@@ -36,16 +32,24 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	nautilus-cd-burner.schemas
 
-OPTIONS=	DVD "Enable DVD support" on
+OPTIONS_DEFINE=	DVD
+OPTIONS_DEFAULT=DVD
+DVD_DESC=	DVD support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DVD)
+.if ${PORT_OPTIONS:MDVD}
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/g.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/nautilus-burn.h \
+		${WRKSRC}/src/nautilus-burn-init.h \
+		${WRKSRC}/src/nautilus-cd-burner.h
 
 post-install:
 	-@update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bpm
-# Date created:				23 July 2004
-# Whom:					sethk
-#
+# Created by: sethk
 # $FreeBSD$
-#
 
 PORTNAME=	bpm
 PORTVERSION=	0.4.1b
@@ -31,6 +27,8 @@ post-patch:
 # GnomeVFS needs pthread; bpm may use GnomeVFS (via GtkFileChooser)
 	@${REINPLACE_CMD} -e 's|^CFLAGS+=|& ${PTHREAD_CFLAGS}|; \
 		s|^LDLIBS+=|& ${PTHREAD_LIBS}|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|<glib/.*.h>|<glib.h>|g' \
+		${WRKSRC}/src/*.h
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/bpm.desktop ${PREFIX}/share/applications/bpm.desktop

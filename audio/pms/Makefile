@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 
 MAN1=	${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}

@@ -16,6 +16,7 @@ KMODDIR?=	${LOCALBASE}/modules
 GNU_CONFIGURE=	yes
 USES=		fuse
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 
 MAN1=	sshfs.1
 

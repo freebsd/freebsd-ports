@@ -23,7 +23,7 @@ MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig ltverhack:9
+USE_GNOME=	ltverhack:9
 LIBTOOLFILES=	builds/unix/configure
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 

@@ -16,6 +16,7 @@ COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack orbit2
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

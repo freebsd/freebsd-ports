@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/py-gobject/Makefile,v 1.52 2011/06/13 20:37:47 kwm Exp $
+#   $MCom: ports/devel/py-gobject/Makefile,v 1.58 2012/12/30 18:15:16 mezz Exp $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -30,7 +30,7 @@ USE_PYTHON=	2.5+
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-docs
+CONFIGURE_ARGS=	--disable-docs --disable-introspection
 
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"

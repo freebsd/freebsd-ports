@@ -20,6 +20,8 @@ COMMENT=	Vala Toys for gEdit
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
+IGNORE=		doesn't build with vala 0.18+
+
 CONFIGURE_ARGS=	--disable-vtg-plugin --disable-gen-project
 CPPFLAGS=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

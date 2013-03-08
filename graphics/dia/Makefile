@@ -71,6 +71,10 @@ PLIST_SUB+=		GNOME="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/lib/intl.c
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/objects/custom/shape_typeinfo.c \
+		${WRKSRC}/tests/test-objects.c \
+		${WRKSRC}/tests/test-boundingbox.c
 .if defined(NOPORTDOCS)
 	@${FIND} ${WRKSRC}/doc -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(examples)||g ; s|$$(mkinstalldirs) $$(sysdoc)/examples||g ; \

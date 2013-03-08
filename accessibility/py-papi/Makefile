@@ -15,6 +15,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
 
 USE_GNOME=	atk
+USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

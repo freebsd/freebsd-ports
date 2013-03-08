@@ -21,11 +21,12 @@ USE_BZIP2=	yes
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:

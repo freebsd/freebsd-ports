@@ -17,6 +17,7 @@ LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 USE_BZIP2=	yes
 
 USE_AUTOTOOLS=	autoconf
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 

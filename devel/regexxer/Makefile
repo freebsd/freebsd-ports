@@ -32,4 +32,8 @@ INSTALLS_ICONS=		regexxer.png
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${GREP} regexxer) > temp-pkg-plist
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/globalstrings.h ${WRKSRC}/src/translation.h
+
 .include <bsd.port.mk>

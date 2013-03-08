@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>

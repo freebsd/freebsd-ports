@@ -20,6 +20,7 @@ BUILD_DEPENDS=	premake4:${PORTSDIR}/devel/premake4
 WRKSRC=		${WRKDIR}/jaydg-nlarn-NLarn-${PORTVERSION}.0
 USE_LUA=	5.1
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 
 do-configure:

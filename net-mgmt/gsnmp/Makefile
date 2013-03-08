@@ -19,6 +19,7 @@ COMMENT=	SNMP library written on top of glib and gnet2
 LIB_DEPENDS=	gnet:${PORTSDIR}/net/gnet2
 
 USE_GNOME=	gnomehack glib20
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

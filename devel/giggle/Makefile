@@ -28,7 +28,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl `pkg-config -libs gmodule-2.0`
 PLIST_SUB+=	GIGGLE_VER=${PORTVERSION}
 
 .include <bsd.port.options.mk>

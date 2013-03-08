@@ -1,10 +1,6 @@
-# New ports collection makefile for:	clutter
-# Date created:		2008-12-25
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 #  $MCom: ports/graphics/clutter/Makefile,v 1.34 2010/09/24 16:35:42 kwm Exp $
-#
 
 PORTNAME=	clutter
 PORTVERSION=	1.4.0
@@ -16,15 +12,16 @@ MASTER_SITES=	GNOME \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
-LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango
+USE_GNOME=	gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango
+USE_PKGCONFIG=	build
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
@@ -32,5 +29,14 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
+		${WRKSRC}/clutter/cally/*.c \
+		${WRKSRC}/clutter/*.[ch] \
+		${WRKSRC}/clutter/glx/*.c \
+		${WRKSRC}/clutter/x11/*.h \
+		${WRKSRC}/clutter/cogl/cogl/*.h \
+		${WRKSRC}/clutter/json/*.c
 
 .include <bsd.port.mk>

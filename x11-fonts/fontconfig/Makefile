@@ -1,10 +1,6 @@
-# New ports collection makefile for:	fontconfig
-# Date created:		06 October 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.29 2011/04/30 20:43:31 mezz Exp $
-#
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.9.0
@@ -18,13 +14,13 @@ COMMENT=	An XML-based font configuration API for X Windows
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig ltverhack
+USE_GNOME=	gnomehack ltverhack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \

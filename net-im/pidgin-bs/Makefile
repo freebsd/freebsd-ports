@@ -22,6 +22,7 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 

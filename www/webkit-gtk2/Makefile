@@ -28,6 +28,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 libxslt ltverhack
+USE_PKGCONFIG=	build
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

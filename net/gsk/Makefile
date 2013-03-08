@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-gtk-doc

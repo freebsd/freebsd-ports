@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-utils/Makefile,v 1.150 2010/09/28 08:41:46 kwm Exp $
+#   $MCom: ports/deskutils/gnome-utils/Makefile,v 1.159 2012/09/01 23:02:09 mezz Exp $
 #
 
 PORTNAME=	gnome-utils
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
@@ -20,11 +20,14 @@ COMMENT=	GNOME 2 support utilities
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 
+CONFLICTS=	baobob-3.[0-9]* gnome-dictionary-3.[0-9]* \
+		gnome-font-viewer-3.[0-9]* gnome-screenshot-3.[0-9]* \
+		gnome-search-tool-3.[0-9]* gnome-system-log-3.[0-9]*
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-GNOME_DESKTOP_VERSION=2
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel ltverhack
@@ -42,5 +45,10 @@ GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/gnome-dictionary/libgdict/Makefile.in \
+		${WRKSRC}/gsearchtool/Makefile.in \
+		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in \
+		${WRKSRC}/libeggsmclient/Makefile.in
 
 .include <bsd.port.mk>

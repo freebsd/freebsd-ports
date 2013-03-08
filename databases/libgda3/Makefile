@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bdb --without-sybase
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 
 .include <bsd.port.pre.mk>
 

@@ -16,13 +16,13 @@ include/stun/usages/ice.h
 include/stun/usages/timer.h
 include/stun/usages/turn.h
 include/stun/win32_common.h
-lib/gstreamer-0.10/libgstnice.a
-lib/gstreamer-0.10/libgstnice.la
-lib/gstreamer-0.10/libgstnice.so
+lib/gstreamer-0.10/libgstnice010.a
+lib/gstreamer-0.10/libgstnice010.la
+lib/gstreamer-0.10/libgstnice010.so
 lib/libnice.a
 lib/libnice.la
 lib/libnice.so
-lib/libnice.so.0
+lib/libnice.so.10
 libdata/pkgconfig/nice.pc
 share/gtk-doc/html/libnice/NiceAgent.html
 share/gtk-doc/html/libnice/ch01.html
@@ -45,7 +45,6 @@ share/gtk-doc/html/libnice/libnice-StunAgent.html
 share/gtk-doc/html/libnice/libnice-StunMessage.html
 share/gtk-doc/html/libnice/libnice-TURN.html
 share/gtk-doc/html/libnice/libnice-Timer.html
-share/gtk-doc/html/libnice/libnice.devhelp
 share/gtk-doc/html/libnice/libnice.devhelp2
 share/gtk-doc/html/libnice/pt01.html
 share/gtk-doc/html/libnice/pt02.html

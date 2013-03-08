@@ -33,5 +33,44 @@ lib/libcroco-%%VERSION%%.la
 lib/libcroco-%%VERSION%%.so
 lib/libcroco-%%VERSION%%.so.3
 libdata/pkgconfig/libcroco-%%VERSION%%.pc
+share/gtk-doc/html/libcroco/ch01.html
+share/gtk-doc/html/libcroco/home.png
+share/gtk-doc/html/libcroco/index.html
+share/gtk-doc/html/libcroco/index.sgml
+share/gtk-doc/html/libcroco/left.png
+share/gtk-doc/html/libcroco/libcroco-cr-additional-sel.html
+share/gtk-doc/html/libcroco/libcroco-cr-attr-sel.html
+share/gtk-doc/html/libcroco/libcroco-cr-cascade.html
+share/gtk-doc/html/libcroco/libcroco-cr-declaration.html
+share/gtk-doc/html/libcroco/libcroco-cr-doc-handler.html
+share/gtk-doc/html/libcroco/libcroco-cr-enc-handler.html
+share/gtk-doc/html/libcroco/libcroco-cr-fonts.html
+share/gtk-doc/html/libcroco/libcroco-cr-input.html
+share/gtk-doc/html/libcroco/libcroco-cr-num.html
+share/gtk-doc/html/libcroco/libcroco-cr-om-parser.html
+share/gtk-doc/html/libcroco/libcroco-cr-parser.html
+share/gtk-doc/html/libcroco/libcroco-cr-parsing-location.html
+share/gtk-doc/html/libcroco/libcroco-cr-prop-list.html
+share/gtk-doc/html/libcroco/libcroco-cr-pseudo.html
+share/gtk-doc/html/libcroco/libcroco-cr-rgb.html
+share/gtk-doc/html/libcroco/libcroco-cr-sel-eng.html
+share/gtk-doc/html/libcroco/libcroco-cr-selector.html
+share/gtk-doc/html/libcroco/libcroco-cr-simple-sel.html
+share/gtk-doc/html/libcroco/libcroco-cr-statement.html
+share/gtk-doc/html/libcroco/libcroco-cr-string.html
+share/gtk-doc/html/libcroco/libcroco-cr-style.html
+share/gtk-doc/html/libcroco/libcroco-cr-stylesheet.html
+share/gtk-doc/html/libcroco/libcroco-cr-term.html
+share/gtk-doc/html/libcroco/libcroco-cr-tknzr.html
+share/gtk-doc/html/libcroco/libcroco-cr-token.html
+share/gtk-doc/html/libcroco/libcroco-cr-utils.html
+share/gtk-doc/html/libcroco/libcroco-libcroco-config.html
+share/gtk-doc/html/libcroco/libcroco.devhelp2
+share/gtk-doc/html/libcroco/right.png
+share/gtk-doc/html/libcroco/style.css
+share/gtk-doc/html/libcroco/up.png
+@dirrm share/gtk-doc/html/libcroco
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/libcroco-%%VERSION%%/libcroco
 @dirrm include/libcroco-%%VERSION%%

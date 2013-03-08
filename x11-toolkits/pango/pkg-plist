@@ -105,6 +105,72 @@ share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
 %%X11%%share/gir-1.0/PangoXft-1.0.gir
+share/gtk-doc/html/pango/PangoEngineLang.html
+share/gtk-doc/html/pango/PangoEngineShape.html
+share/gtk-doc/html/pango/PangoFcDecoder.html
+share/gtk-doc/html/pango/PangoFcFont.html
+share/gtk-doc/html/pango/PangoFcFontMap.html
+share/gtk-doc/html/pango/PangoMarkupFormat.html
+share/gtk-doc/html/pango/annotation-glossary.html
+share/gtk-doc/html/pango/api-index-1-10.html
+share/gtk-doc/html/pango/api-index-1-12.html
+share/gtk-doc/html/pango/api-index-1-14.html
+share/gtk-doc/html/pango/api-index-1-16.html
+share/gtk-doc/html/pango/api-index-1-18.html
+share/gtk-doc/html/pango/api-index-1-2.html
+share/gtk-doc/html/pango/api-index-1-20.html
+share/gtk-doc/html/pango/api-index-1-22.html
+share/gtk-doc/html/pango/api-index-1-24.html
+share/gtk-doc/html/pango/api-index-1-26.html
+share/gtk-doc/html/pango/api-index-1-28.html
+share/gtk-doc/html/pango/api-index-1-30.html
+share/gtk-doc/html/pango/api-index-1-4.html
+share/gtk-doc/html/pango/api-index-1-6.html
+share/gtk-doc/html/pango/api-index-1-8.html
+share/gtk-doc/html/pango/api-index-deprecated.html
+share/gtk-doc/html/pango/api-index-full.html
+share/gtk-doc/html/pango/home.png
+share/gtk-doc/html/pango/index.html
+share/gtk-doc/html/pango/index.sgml
+share/gtk-doc/html/pango/layout.gif
+share/gtk-doc/html/pango/left.png
+share/gtk-doc/html/pango/lowlevel.html
+share/gtk-doc/html/pango/pango-ATSUI-Fonts.html
+share/gtk-doc/html/pango/pango-Bidirectional-Text.html
+share/gtk-doc/html/pango/pango-Cairo-Rendering.html
+share/gtk-doc/html/pango/pango-CoreText-Fonts.html
+share/gtk-doc/html/pango/pango-Coverage-Maps.html
+share/gtk-doc/html/pango/pango-Engines.html
+share/gtk-doc/html/pango/pango-Fonts.html
+share/gtk-doc/html/pango/pango-FreeType-Fonts-and-Rendering.html
+share/gtk-doc/html/pango/pango-Glyph-Storage.html
+share/gtk-doc/html/pango/pango-Layout-Objects.html
+share/gtk-doc/html/pango/pango-Miscellaneous-Utilities.html
+share/gtk-doc/html/pango/pango-Modules.html
+share/gtk-doc/html/pango/pango-OpenType-Font-Handling.html
+share/gtk-doc/html/pango/pango-Scripts-and-Languages.html
+share/gtk-doc/html/pango/pango-Tab-Stops.html
+share/gtk-doc/html/pango/pango-Text-Attributes.html
+share/gtk-doc/html/pango/pango-Text-Processing.html
+share/gtk-doc/html/pango/pango-Version-Checking.html
+share/gtk-doc/html/pango/pango-Vertical-Text.html
+share/gtk-doc/html/pango/pango-Win32-Fonts-and-Rendering.html
+share/gtk-doc/html/pango/pango-X-Fonts-and-Rendering.html
+share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
+share/gtk-doc/html/pango/pango-hierarchy.html
+share/gtk-doc/html/pango/pango-pango-renderer.html
+share/gtk-doc/html/pango/pango-querymodules.html
+share/gtk-doc/html/pango/pango.devhelp2
+share/gtk-doc/html/pango/pango.html
+share/gtk-doc/html/pango/rendering.html
+share/gtk-doc/html/pango/right.png
+share/gtk-doc/html/pango/rotated-text.png
+share/gtk-doc/html/pango/style.css
+share/gtk-doc/html/pango/tools.html
+share/gtk-doc/html/pango/up.png
+@dirrm share/gtk-doc/html/pango
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm lib/pango/%%VERSION%%/modules
 @dirrm lib/pango/%%VERSION%%
 @dirrm lib/pango

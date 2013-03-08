@@ -41,6 +41,8 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(datadir)/xml|$$(pkgdatadir)/xml|g' \
 		${WRKSRC}/xml/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/*.cc ${WRKSRC}/src/cellitemcrossover.h
 
 pre-configure:
 	@${CP} ${AUTOMAKE_DIR}/depcomp ${WRKSRC}

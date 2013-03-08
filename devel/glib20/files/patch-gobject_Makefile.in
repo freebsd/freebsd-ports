@@ -1,6 +1,6 @@
---- gobject/Makefile.in.orig	2010-06-08 09:19:51.000000000 +0200
-+++ gobject/Makefile.in	2010-06-08 09:20:41.000000000 +0200
-@@ -1236,7 +1236,7 @@ info: info-recursive
+--- gobject/Makefile.in.orig	2012-05-03 11:42:11.000000000 +0200
++++ gobject/Makefile.in	2012-05-03 11:42:51.000000000 +0200
+@@ -1381,7 +1381,7 @@
  
  info-am:
  
@@ -9,13 +9,13 @@
  	install-libgobjectincludeHEADERS install-tapsetDATA
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -1460,9 +1460,7 @@ libgobject-gdb.py: libgobject-gdb.py.in
+@@ -1649,9 +1649,7 @@
  uninstall-gdb:
  	-rm -r $(DESTDIR)$(datadir)/gdb
  
 -install-data-hook: libgobject-gdb.py
 -	mkdir -p $(DESTDIR)$(datadir)/gdb/auto-load/$(ABS_GLIB_RUNTIME_LIBDIR)
--	$(INSTALL) libgobject-gdb.py $(DESTDIR)$(datadir)/gdb/auto-load/$(ABS_GLIB_RUNTIME_LIBDIR)/libgobject-2.0.so.0.$(LT_CURRENT).$(LT_REVISION)-gdb.py
+-	$(INSTALL) $(builddir)/libgobject-gdb.py $(DESTDIR)$(datadir)/gdb/auto-load/$(ABS_GLIB_RUNTIME_LIBDIR)/libgobject-2.0.so.0.$(LT_CURRENT).$(LT_REVISION)-gdb.py
 +install-data-hook:
  @HAVE_GLIB_RUNTIME_LIBDIR_TRUE@	mkdir -p $(DESTDIR)$(libdir)/$(GLIB_RUNTIME_LIBDIR)
  @HAVE_GLIB_RUNTIME_LIBDIR_TRUE@	mv $(DESTDIR)$(libdir)/libgobject-2.0.so.0 $(DESTDIR)$(libdir)/$(GLIB_RUNTIME_LIBDIR)

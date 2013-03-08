@@ -40,6 +40,12 @@ post-patch:
 		's|-D.*_DISABLE_DEPRECATED||g'
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
+	@${REINPLACE_CMD} -e 's|glib/gmacros.h>|glib.h>|g' \
+			-e 's|glib/gstrfuncs.h>|glib.h>|g' \
+		${WRKSRC}/libgnomecups/gnome-cups-ui-init.h \
+		${WRKSRC}/libgnomecups/gnome-cups-ui-print.h \
+		${WRKSRC}/libgnomecups/gnome-cups-i18n.c \
+		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications

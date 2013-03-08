@@ -34,5 +34,7 @@ post-patch:
 		's/x11//g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/_DISABLE_DEPRECATED/d' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/dbus-object.h ${WRKSRC}/src/forward_declarations.h
 
 .include <bsd.port.mk>

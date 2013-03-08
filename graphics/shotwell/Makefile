@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	vala>=0.12.0:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		gee:${PORTSDIR}/devel/libgee \
+		gee:${PORTSDIR}/devel/libgee06 \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
 		gexiv2:${PORTSDIR}/graphics/gexiv2 \

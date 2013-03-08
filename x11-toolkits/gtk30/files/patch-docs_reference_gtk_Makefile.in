@@ -1,12 +1,10 @@
---- docs/reference/gtk/Makefile.in.orig	2011-02-01 22:06:23.000000000 +0000
-+++ docs/reference/gtk/Makefile.in	2011-02-01 22:07:12.000000000 +0000
-@@ -735,8 +735,7 @@ CLEANFILES = $(SCANOBJ_FILES) $(REPORT_F
- 
+--- docs/reference/gtk/Makefile.in.orig	2012-09-25 07:07:36.000000000 +0000
++++ docs/reference/gtk/Makefile.in	2012-09-25 07:08:14.000000000 +0000
+@@ -822,7 +822,6 @@
  ########################################################################
  man_MANS = \
--	gtk-query-immodules-3.0.1	\
--	gtk-update-icon-cache.1
-+	gtk-query-immodules-3.0.1
+ 	gtk-query-immodules-3.0.1	\
+-	gtk-update-icon-cache.1		\
+ 	gtk-launch.1
  
- MAINTAINERCLEANFILES = $(man_MANS) $(BUILT_SOURCES)
- all: all-am
+ @ENABLE_MAN_TRUE@XSLTPROC_FLAGS = \

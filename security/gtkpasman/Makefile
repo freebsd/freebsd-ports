@@ -33,6 +33,9 @@ ACLOCAL_ARGS?=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 PORTDOCS=	README gpasman4.sample
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/src/Makefile.*
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkpasman ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/data/gtkpasman.desktop \

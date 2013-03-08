@@ -1,10 +1,6 @@
-# New ports collection makefile for:	deskbar-applet
-# Date created:		2005-07-13
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.116 2010/09/27 19:36:13 kwm Exp $
-#
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.32.0
@@ -56,5 +52,7 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/deskbar/handlers/mozilla.py \
 		${WRKSRC}/deskbar/core/Utils.py
+	@${REINPLACE_CMD} -e 's|<glib/g.*\.h>|<glib.h>|g' \
+		${WRKSRC}/deskbar/handlers/evolution/evolution.[ch]
 
 .include <bsd.port.post.mk>

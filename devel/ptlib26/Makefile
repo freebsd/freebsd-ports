@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwlib
-# Date created:		Fri Aug 22 07:11:44 GMT 2003
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ptlib
 PORTVERSION=	2.6.7
@@ -25,7 +21,6 @@ USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

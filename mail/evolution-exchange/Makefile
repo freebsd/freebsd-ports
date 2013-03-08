@@ -3,12 +3,12 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.166 2010/11/16 09:52:36 kwm Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.172 2012/09/20 23:06:27 kwm Exp $
 #
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,6 +19,8 @@ COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
 EVO_PC_FILE=	${LOCALBASE}/libdata/pkgconfig/evolution-mail.pc
 BUILD_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
+
+CONFLICTS=	evolution-exchange-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -65,6 +67,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
 		-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
 		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 

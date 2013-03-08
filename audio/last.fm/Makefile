@@ -58,6 +58,8 @@ post-patch:
 		${WRKSRC}/bin/last.fm.sh.bak \
 		${WRKSRC}/bin/*.dll ${WRKSRC}/bin/LastFM.exe.config
 	${RM} -rf ${WRKSRC}/bin/Microsoft* ${WRKSRC}/bin/sqldrivers
+	${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/mediadevices/ipod/IpodDevice.cpp
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \

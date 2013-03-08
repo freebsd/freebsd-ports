@@ -17,6 +17,7 @@ COMMENT=	A simple network library built upon Glib-2
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

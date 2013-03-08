@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
+USE_PKGCONFIG=	build
 
 MAKE_JOBS_SAFE=	yes
 

@@ -27,4 +27,7 @@ CC=		gnatgcc
 
 CONFIGURE_ARGS+=	--disable-nls
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/misc.c
+
 .include <bsd.port.mk>

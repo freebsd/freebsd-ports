@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-gnome-desktop
-# Date created:				20 January 2006
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.103 2010/09/30 06:27:40 kwm Exp $
-#
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.32.0
@@ -19,7 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
-BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
+BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy \
+		metacity<2.34.0:${PORTSDIR}/x11-wm/metacity
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \

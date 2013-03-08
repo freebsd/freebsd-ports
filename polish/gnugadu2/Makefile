@@ -162,6 +162,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,=.*},=${PREFIX},' ${WRKSRC}/src/plugins/dbus/org.freedesktop.im.GG.service
 	@${REINPLACE_CMD} -e 's, -ldl,, ; s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's,(datadir)/pixmaps,(datadir)/icons/hicolor/48x48/apps,' ${WRKSRC}/pixmaps/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/plugins/GUI/gtkimhtml.c
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/applications

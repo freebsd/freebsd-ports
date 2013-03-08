@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	taglib-sharp
 # Date Created:				Aug 25 2008
 # Whom:				 	Florent Thoumie <flz@FreeBSD.org>
@@ -21,6 +22,7 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		VERSIONSUFX="db62eba44689b5b0"

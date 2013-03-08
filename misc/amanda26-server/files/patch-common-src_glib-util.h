@@ -1,6 +1,6 @@
---- common-src/glib-util.h.orig	2011-06-25 22:39:20.000000000 +0200
-+++ common-src/glib-util.h	2011-06-25 22:40:39.000000000 +0200
-@@ -62,10 +62,16 @@ GValue* g_value_unset_init(GValue* val, 
+--- common-src/glib-util.h.orig	2008-12-01 21:17:19.000000000 +0000
++++ common-src/glib-util.h	2013-02-07 15:54:27.000000000 +0000
+@@ -62,11 +62,16 @@
   * Returns its second (reset) argument.*/
  GValue* g_value_unset_copy(const GValue* from, GValue * to);
  
@@ -16,6 +16,7 @@
   * pointers in the container before free()ing the container itself. */
 -void g_list_free_full(GList * list);
 -void g_slist_free_full(GSList * list);
- void g_queue_free_full(GQueue * queue);
+-void g_queue_free_full(GQueue * queue);
  void g_ptr_array_free_full(GPtrArray * array);
  
+ /* g_value_compare() does what you expect. It returns TRUE if and

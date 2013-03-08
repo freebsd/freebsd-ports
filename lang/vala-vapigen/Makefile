@@ -1,10 +1,6 @@
-# New ports collection makefile for:	vala-vapigen
-# Date created:				
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/lang/vala-vapigen/Makefile,v 1.5 2011/04/30 20:43:19 mezz Exp $
-#
+#   $MCom: ports/lang/vala-vapigen/Makefile,v 1.7 2012/12/17 19:46:24 kwm Exp $
 
 PORTREVISION=	0
 CATEGORIES=	devel gnome
@@ -12,8 +8,6 @@ PKGNAMESUFFIX=	-vapigen
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The vapigen program from vala
-
-USE_GMAKE=	yes
 
 MASTERDIR=	${.CURDIR}/../vala
 BUILD_WRKSRC=	${WRKSRC}/vapigen

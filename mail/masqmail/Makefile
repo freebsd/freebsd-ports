@@ -20,6 +20,7 @@ MAN8=		masqmail.8 rmail.8
 .endif
 
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs

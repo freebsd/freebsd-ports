@@ -29,6 +29,9 @@ GCONF_SCHEMAS=	gpass.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|{packageprefix}/share|{datadir}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/include/gpass/error.h \
+		${WRKSRC}/src/helper.h
 
 post-install:
 	@-update-desktop-database

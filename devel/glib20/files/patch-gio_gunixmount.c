@@ -1,6 +1,6 @@
---- gio/gunixmount.c.orig	2007-12-23 15:53:50.000000000 -0500
-+++ gio/gunixmount.c	2007-12-23 15:52:52.000000000 -0500
-@@ -372,12 +372,18 @@ g_unix_mount_eject (GMount             *
+--- gio/gunixmount.c.orig	2011-08-31 19:47:35.000000000 +0200
++++ gio/gunixmount.c	2011-09-15 17:50:24.000000000 +0200
+@@ -449,12 +449,18 @@ g_unix_mount_eject (GMount             *
                      gpointer             user_data)
  {
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
@@ -17,5 +17,5 @@
 +  argv[2] = unix_mount->device_path;
 +#endif
  
-   return eject_unmount_do (mount, cancellable, callback, user_data, argv);
+   eject_unmount_do (mount, cancellable, callback, user_data, argv);
  }

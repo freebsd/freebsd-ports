@@ -13,8 +13,10 @@ COMMENT=	Simple download manager
 
 LICENSE=	GPLv3
 
+BROKEN=		Doesn't build with vala 0.18
+
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		gee:${PORTSDIR}/devel/libgee \
+		gee:${PORTSDIR}/devel/libgee06 \
 		notify:${PORTSDIR}/devel/libnotify \
 		unique-1:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala

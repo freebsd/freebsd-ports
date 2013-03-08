@@ -31,6 +31,7 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ARGS=	--disable-error-on-warning
 
 GCONF_SCHEMAS=	drivel.schemas
 
