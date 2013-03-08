@@ -17,6 +17,9 @@ BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
+DEPRECATED=	no upstream project
+EXPIRATION_DATE=	2013-08-01
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 
