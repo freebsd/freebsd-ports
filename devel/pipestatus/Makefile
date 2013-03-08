@@ -1,4 +1,4 @@
-# Created by:	chinsan
+# Created by: chinsan
 # $FreeBSD$
 
 PORTNAME=	pipestatus

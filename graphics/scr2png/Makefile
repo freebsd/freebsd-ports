@@ -19,6 +19,8 @@ MAN1=		scr2png.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/scr2png
 
+MAKE_JOBS_SAFE=	yes
+
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<gd/gd\.h>|<gd.h>|' ${WRKSRC}/scr2png.c

@@ -19,6 +19,8 @@ MLINKS=		cdecl.1 c++decl.1
 PORTDOCS=	testset testset++
 PLIST_FILES=	bin/cdecl bin/c++decl
 
+MAKE_JOBS_SAFE=	yes
+
 CONFLICTS=	cutils-[0-9]*
 
 .include <bsd.port.options.mk>

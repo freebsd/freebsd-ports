@@ -14,6 +14,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Time::Human.3
 
+MAKE_JOBS_SAFE=	yes
+
 test:		build
 		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 

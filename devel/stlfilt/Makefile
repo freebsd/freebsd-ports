@@ -9,7 +9,7 @@ DISTNAME=	g${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	An STL Error Message Decryptor for C++
+COMMENT=	STL Error Message Decryptor for C++
 
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

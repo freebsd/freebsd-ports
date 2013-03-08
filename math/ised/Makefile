@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A tool for generating number sequences and arithmetic evaluation
+COMMENT=	Tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3
 
@@ -20,6 +20,8 @@ MAN1=		${PORTNAME}.1
 .endif
 
 PLIST_FILES=		bin/${PORTNAME}
+
+MAKE_JOBS_SAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin

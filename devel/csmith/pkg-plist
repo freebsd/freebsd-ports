@@ -30,4 +30,3 @@ lib/libcsmith.so.0
 @dirrm %%DOCSDIR%%
 @dirrm include/csmith-2.1.0/windows
 @dirrm include/csmith-2.1.0
-

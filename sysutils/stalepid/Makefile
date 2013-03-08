@@ -20,4 +20,6 @@ MAN1=		stalepid.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/stalepid
 
+MAKE_JOBS_SAFE=	yes
+
 .include <bsd.port.mk>

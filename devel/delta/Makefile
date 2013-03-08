@@ -13,6 +13,7 @@ LICENSE=	BSD
 PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 do-install:
 .for file in delta multidelta

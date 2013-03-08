@@ -28,6 +28,8 @@ INFO=		nano
 MAN1=		nano.1 rnano.1
 MAN5=		nanorc.5
 
+MAKE_JOBS_SAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--enable-utf8

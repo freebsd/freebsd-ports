@@ -6,11 +6,13 @@ CATEGORIES=	shells
 MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A POSIX-compliant implementation of /bin/sh
+COMMENT=	POSIX-compliant implementation of /bin/sh
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
+
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/dash
 MAN1=		dash.1
