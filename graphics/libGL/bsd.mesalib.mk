@@ -38,7 +38,7 @@ MAINTAINER?=	x11@FreeBSD.org
 BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-USE_BISON=	build
+USES=	bison
 USE_PYTHON_BUILD=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
