@@ -6,7 +6,8 @@ PORTNAME=	polkit
 PORTVERSION=	0.105
 PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
+MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/ \
+		http://miwibox.org/distfiles/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components

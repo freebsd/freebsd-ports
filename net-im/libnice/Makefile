@@ -5,7 +5,8 @@
 PORTNAME=	libnice
 PORTVERSION=	0.1.3
 CATEGORIES=	net-im devel
-MASTER_SITES=	http://nice.freedesktop.org/releases/
+MASTER_SITES=	http://nice.freedesktop.org/releases/ \
+		http://miwibox.org/distfiles/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
