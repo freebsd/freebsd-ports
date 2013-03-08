@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \
@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	automake autoconf libtool
 AUTOTOOLSFILES=	aclocal.m4
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
