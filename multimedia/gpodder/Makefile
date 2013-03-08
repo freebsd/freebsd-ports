@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 

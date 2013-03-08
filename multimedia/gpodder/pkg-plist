@@ -35,6 +35,8 @@ bin/gpodder-migrate2tres
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/__init__.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/channel.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/channel.pyc
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/deviceplaylist.py
+%%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/deviceplaylist.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/episodeselector.py
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/episodeselector.pyc
 %%GTK%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop/podcastdirectory.py
@@ -107,6 +109,10 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/services.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/sync.py
 %%PYTHON_SITELIBDIR%%/gpodder/sync.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/test/__init__.py
+%%PYTHON_SITELIBDIR%%/gpodder/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/test/model.py
+%%PYTHON_SITELIBDIR%%/gpodder/test/model.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/unittests.py
 %%PYTHON_SITELIBDIR%%/gpodder/unittests.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/util.py
@@ -128,16 +134,19 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/extensions/m4a_converter.py
 %%DATADIR%%/extensions/minimize_on_start.py
 %%DATADIR%%/extensions/normalize_audio.py
+%%DATADIR%%/extensions/notification-win32.py
 %%DATADIR%%/extensions/notification.py
+%%DATADIR%%/extensions/ogg2mp3_converter.py
 %%DATADIR%%/extensions/rename_download.py
 %%DATADIR%%/extensions/rm_ogg_cover.py
 %%DATADIR%%/extensions/rockbox_convert2mp4.py
+%%DATADIR%%/extensions/sonos.py
 %%DATADIR%%/extensions/tagging.py
+%%DATADIR%%/extensions/taskbar_progress.py
 %%DATADIR%%/extensions/ted_subtitles.py
 %%DATADIR%%/extensions/ubuntu_appindicator.py
 %%DATADIR%%/extensions/ubuntu_unity.py
 %%DATADIR%%/extensions/update_feeds_on_startup.py
-%%DATADIR%%/extensions/woodchuck.py
 %%DATADIR%%/images/button-flattr-grey.png
 %%DATADIR%%/images/button-flattr.png
 %%DATADIR%%/images/button-flattred.png
@@ -161,6 +170,7 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/ui/web/images/video.png
 %%DATADIR%%/ui/web/index.html
 %%DATADIR%%/ui/web/style.css
+%%GTK%%share/icons/hicolor/16x16/apps/gpodder.ico
 %%GTK%%share/icons/hicolor/16x16/apps/gpodder.png
 %%GTK%%share/icons/hicolor/22x22/apps/gpodder.png
 %%GTK%%share/icons/hicolor/24x24/apps/gpodder.png
@@ -239,6 +249,7 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrm %%DATADIR%%
 %%GTK%%@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/webui
+@dirrm %%PYTHON_SITELIBDIR%%/gpodder/test
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/pipe
 %%GTK%%@dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
