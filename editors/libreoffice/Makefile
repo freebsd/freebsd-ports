@@ -34,7 +34,7 @@ LIB_DEPENDS=	icutu:${PORTSDIR}/devel/icu \
 		lcms2:${PORTSDIR}/graphics/lcms2 \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		png15:${PORTSDIR}/graphics/png \
-		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
+		poppler:${PORTSDIR}/graphics/poppler \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
 		cmis-0.3:${PORTSDIR}/net/libcmis \
 		ldap-2.4:${PORTSDIR}/net/openldap24-client \
