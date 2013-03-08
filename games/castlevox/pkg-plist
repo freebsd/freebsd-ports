@@ -1,12 +1,4 @@
 bin/CastleVox
-%%DATADIR%%/VoxCore.jar
-%%DATADIR%%/VoxIcon.png
-%%DATADIR%%/jide-charts.jar
-%%DATADIR%%/jide-common.jar
-%%DATADIR%%/jogg-0.0.7.jar
-%%DATADIR%%/jorbis-0.0.15.jar
-%%DATADIR%%/tritonus_share.jar
-%%DATADIR%%/vorbisspi1.0.3.jar
 %%DATADIR%%/Support/Maps/Hex Barons.voxb
 %%DATADIR%%/Support/Maps/Tutorial Map.voxb
 %%DATADIR%%/Support/Maps/World War II.voxb
@@ -43,6 +35,7 @@ bin/CastleVox
 %%DATADIR%%/Support/Themes/Tutorial Map/updater3.txt
 %%DATADIR%%/Support/Themes/Tutorial Map/updater4.txt
 %%DATADIR%%/Support/Themes/Tutorial Map/updater5.txt
+%%DATADIR%%/VoxCore.jar
 %%DATADIR%%/docs/Castle_Vox_Instructions.html
 %%DATADIR%%/docs/Castle_Vox_Shortcuts.html
 %%DATADIR%%/docs/Castle_Vox_Version_History.html
@@ -63,6 +56,13 @@ bin/CastleVox
 %%DATADIR%%/docs/docs_files/prefs.png
 %%DATADIR%%/docs/docs_files/recruit.png
 %%DATADIR%%/docs/docs_files/teammate.png
+%%DATADIR%%/jide-charts.jar
+%%DATADIR%%/jide-common.jar
+%%DATADIR%%/jogg-0.0.7.jar
+%%DATADIR%%/jorbis-0.0.15.jar
+%%DATADIR%%/tritonus_share.jar
+%%DATADIR%%/vorbisspi1.0.3.jar
+share/pixmaps/CastleVox.png
 @dirrm %%DATADIR%%/docs/docs_files
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/Support/Themes/Tutorial Map
