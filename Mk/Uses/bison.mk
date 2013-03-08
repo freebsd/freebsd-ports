@@ -15,7 +15,7 @@ _INCLUDE_BISON_MK=	yes
 _BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 .if !defined(bison_ARGS)
-bison_ARGS=build
+bison_ARGS=	build
 .endif
 
 .if ${bison_ARGS} == "build"
