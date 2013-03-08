@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mldonkey
-PORTVERSION=	3.1.2
-PORTREVISION?=	1
+PORTVERSION=	3.1.3
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -27,11 +26,9 @@ ALL_TARGET=	opt
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS+=--enable-ocamlver=3 \
-		--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV+=	NEWCXX="${CXX}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="-pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -115,7 +112,6 @@ post-patch:
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
-		-e 's/-O6//' \
 		${BUILD_WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -E \
 		-e 's@(\+)(lablgtk2)@\1site-lib/\2@' \
@@ -127,23 +123,14 @@ post-patch:
 		-e 's@(#include <)(lablgtk2/)@\1site-lib/\2@'  \
 		${WRKSRC}/src/gtk2/gui/x11/systraystubs.c
 # update server.met provider
-.for file in \
-	src/daemon/common/commonOptions.ml \
-	src/networks/donkey/donkeyServers.ml
 	@${REINPLACE_CMD} -E \
 		-e 's|http://www.gruk.org/server.met.gz|http://www.jd2k.com/server.met|' \
 		-e 's|http://www.bluetack.co.uk/config/antip2p.txt|http://www.bluetack.co.uk/config/level1.gz|' \
-		${WRKSRC}/${file}
-.endfor
+		${WRKSRC}/src/daemon/common/commonOptions.ml \
+		${WRKSRC}/src/networks/donkey/donkeyServers.ml
 
 pre-configure:
 	@cd ${WRKSRC}/config && ${AUTOCONF}
-
-post-configure:
-	@${REINPLACE_CMD} -E \
-		-e 's|^(PTHREAD_CFLAGS[^=]*=).*$$|\1${PTHREAD_CFLAGS}|' \
-		-e 's|^(PTHREAD_LIBS[^=]*=).*$$|\1${PTHREAD_LIBS}|' \
-		${BUILD_WRKSRC}/config/Makefile.config
 
 do-install:
 .ifndef(WITHOUT_CORE)
