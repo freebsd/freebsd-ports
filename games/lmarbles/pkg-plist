@@ -1,11 +1,5 @@
 bin/lmarbles
 share/applications/lmarbles.desktop
-%%PORTDOCS%%%%DOCSDIR%%/arrow.jpg
-%%PORTDOCS%%%%DOCSDIR%%/arrow2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/crumble.jpg
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/marbles.jpg
-%%PORTDOCS%%%%DOCSDIR%%/teleport.jpg
 %%DATADIR%%/gfx/board.bmp
 %%DATADIR%%/gfx/f_red.bmp
 %%DATADIR%%/gfx/f_small.bmp
@@ -63,7 +57,6 @@ share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/wood/wall.bmp
 %%DATADIR%%/gfx/wood/wall_crumble.bmp
 %%DATADIR%%/levels/Original
-%%DATADIR%%/lmarbles.prfs
 %%DATADIR%%/sounds/alarm.wav
 %%DATADIR%%/sounds/arrow.wav
 %%DATADIR%%/sounds/click.wav
@@ -72,7 +65,9 @@ share/applications/lmarbles.desktop
 %%DATADIR%%/sounds/select.wav
 %%DATADIR%%/sounds/stop.wav
 %%DATADIR%%/sounds/teleport.wav
+share/pixmaps/lmarbles32.png
 share/pixmaps/lmarbles48.gif
+share/pixmaps/lmarbles48.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/gfx/wood
@@ -80,5 +75,8 @@ share/pixmaps/lmarbles48.gif
 @dirrm %%DATADIR%%/gfx/metal
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/lmarbles.prfs.sample %D/%%ETCDIR%%/lmarbles.prfs ; then rm -f %D/%%ETCDIR%%/lmarbles.prfs ; fi
+%%ETCDIR%%/lmarbles.prfs.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lmarbles.prfs ] ; then cp -p %D/%F %B/lmarbles.prfs ; fi
+@dirrmtry %%ETCDIR%%
 @dirrmtry share/applications
