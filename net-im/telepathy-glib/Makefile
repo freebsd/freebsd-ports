@@ -4,7 +4,8 @@
 PORTNAME=	telepathy-glib
 PORTVERSION=	0.18.2
 CATEGORIES=	net-im
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
+MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/ \
+		http://miwibox.org/distfiles/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib utility library for the Telepathy framework
