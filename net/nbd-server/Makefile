@@ -14,6 +14,7 @@ COMMENT=	Server for the Linux network block device (nbd)
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 

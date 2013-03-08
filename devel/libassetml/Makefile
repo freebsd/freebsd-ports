@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libassetml
-# Date created:			2 Dec 2003
-# Whom:				Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libassetml
 PORTVERSION=	1.2.1
@@ -14,12 +10,13 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Devel Library to share image and audio files between projects
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack lthack gnomeprefix glib20 libxml2 pkgconfig
+USE_GNOME=	gnomehack lthack gnomeprefix glib20 libxml2
+USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -23,6 +23,7 @@ USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		-e 's|-Werror||g' \
 	    ${WRKSRC}/configure
 
 .include <bsd.port.mk>

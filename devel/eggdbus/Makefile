@@ -1,10 +1,6 @@
-# New ports collection makefile for:   eggdbus
-# Date Created:			30 Juli 2009
-# Whom:				Koop Mast<kwm@FreeBSD.org>
-#
+# Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/eggdbus/Makefile,v 1.3 2009/11/24 01:46:27 marcus Exp $
-#
 
 PORTNAME=	eggdbus
 PORTVERSION=	0.6
@@ -15,9 +11,9 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus bindings for GObject
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USE_GNOME=	pkgconfig glib20 gnomehack
+USE_GNOME=	glib20 gnomehack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes

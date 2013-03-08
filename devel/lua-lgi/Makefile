@@ -18,6 +18,7 @@ GH_ACCOUNT=	pavouk
 
 USE_LUA=	5.1+
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include/${LUA_SUBDIR}
 

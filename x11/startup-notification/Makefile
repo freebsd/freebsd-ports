@@ -1,10 +1,6 @@
-# New ports collection makefile for:	startup-notification
-# Date created:				14 November 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/startup-notification/Makefile,v 1.10 2010/07/21 18:04:43 mezz Exp $
-#
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.12
@@ -21,7 +17,7 @@ LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig ltasneededhack
+USE_GNOME=	gnomehack ltasneededhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

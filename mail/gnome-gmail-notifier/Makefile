@@ -27,5 +27,7 @@ USE_GSTREAMER=	good
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@DATADIRNAME@|share|' ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e 's|<glib/gthread.h>|<glib.h>|g' ${WRKSRC}/src/main.h
+
 
 .include <bsd.port.mk>

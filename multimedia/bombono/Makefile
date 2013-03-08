@@ -43,6 +43,8 @@ MANDIR=		${MANPREFIX}/man/man1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/mgui/author/gb_devices.c
 
 post-install:
 	${MKDIR} ${MANDIR}

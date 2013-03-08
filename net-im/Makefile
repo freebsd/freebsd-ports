@@ -26,6 +26,7 @@
     SUBDIR += farsight2
     SUBDIR += finch
     SUBDIR += folks
+    SUBDIR += folks04
     SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim

@@ -3,7 +3,7 @@
 
 PORTNAME=	abraca
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/Abraca/Abraca/
 
@@ -12,10 +12,11 @@ COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
-		gee:${PORTSDIR}/devel/libgee
+		gee:${PORTSDIR}/devel/libgee06
 
 USE_SCONS=	yes
 USE_GNOME=	gtk30
+USE_PKGCONFIG=	build
 
 SCONS_ARGS=	MANDIR=${MANPREFIX}/man
 

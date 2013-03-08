@@ -39,4 +39,13 @@ CONFIGURE_ARGS+=	--enable-browser-dnd
 CONFIGURE_ARGS+=	--enable-cache
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/syntax.h \
+		${WRKSRC}/src/glib-helpers.[ch] \
+		${WRKSRC}/src/gq-hash.h \
+		${WRKSRC}/src/gq-main-loop.h \
+		${WRKSRC}/src/gq-stack.[ch] \
+		${WRKSRC}/src/gq-tab.h
+
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e '/all_modifiers/d' ${WRKSRC}/src/misc.c
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database

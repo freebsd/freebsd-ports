@@ -627,6 +627,7 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
+@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/modules
 @dirrmtry lib/gtk-2.0/modules
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/modules

@@ -11,6 +11,7 @@ share/applications/empathy-accounts.desktop
 share/applications/empathy.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.AudioVideo.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Auth.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Call.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.service
 %%DATADIR%%/Template.html
 %%DATADIR%%/codec-preferences
@@ -32,6 +33,7 @@ share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.service
 %%DATADIR%%/empathy-chat.ui
 %%DATADIR%%/empathy-chatroom-manager.dtd
 %%DATADIR%%/empathy-chatrooms-window.ui
+%%DATADIR%%/empathy-contact-blocking-dialog.ui
 %%DATADIR%%/empathy-contact-dialogs.ui
 %%DATADIR%%/empathy-contact-groups.dtd
 %%DATADIR%%/empathy-contact-selector-dialog.ui
@@ -1059,6 +1061,7 @@ share/gnome/help/empathy/zh_CN/video-call.page
 share/icons/hicolor/16x16/apps/empathy.png
 share/icons/hicolor/22x22/apps/empathy.png
 share/icons/hicolor/24x24/apps/empathy.png
+share/icons/hicolor/256x256/apps/empathy.png
 share/icons/hicolor/32x32/apps/empathy.png
 share/icons/hicolor/48x48/apps/empathy.png
 share/icons/hicolor/scalable/apps/empathy.svg
@@ -1142,6 +1145,7 @@ share/locale/zh_HK/LC_MESSAGES/empathy.mo
 share/locale/zh_TW/LC_MESSAGES/empathy.mo
 share/telepathy/clients/Empathy.AudioVideo.client
 share/telepathy/clients/Empathy.Auth.client
+share/telepathy/clients/Empathy.Call.client
 share/telepathy/clients/Empathy.client
 @dirrmtry share/telepathy/clients
 @dirrmtry share/telepathy

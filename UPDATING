@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130308:
+  AFFECTS: users of net-im/folks and devel/libgee
+  AUTHOR: kwm@FreeBSD.org
+
+  folks and libgee have been repocopied net-im/folks04 and devel/libgee06 
+  respectively. Please do the following according to package manager used.
+
+  # portmaster -o devel/libgee06 devel/libgee
+  # portmaster -o net-im/folks04 net-im/folks
+    or
+  # portupgrade -fo devel/libgee06 devel/libgee
+  # portupgrade -fo net-im/folks04 net-im/folks
+    or
+  # pkg set -o devel/libgee:devel/libgee06
+  # pkg set -o net-im/folks:net-im/folks04
+
 20130307:
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org

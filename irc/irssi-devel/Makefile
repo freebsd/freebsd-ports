@@ -17,6 +17,7 @@ CONFLICTS=	irssi-0.8*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 WANT_PERL=	yes
 MAKE_JOBS_SAFE=	yes
 

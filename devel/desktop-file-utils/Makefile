@@ -1,10 +1,6 @@
-# New ports collection makefile for:	desktop-file-utils
-# Date created:			11 Jun 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 #   $MCom: ports/devel/desktop-file-utils/Makefile,v 1.8 2007/09/07 20:22:45 mezz Exp $
-#
 
 PORTNAME=	desktop-file-utils
 PORTVERSION=	0.18
@@ -18,7 +14,7 @@ USE_GNOME=	glib20
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-WANT_GNOME=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
 CONFIGURE_ENV=	EMACS="no"

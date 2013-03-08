@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gstreamer plugins
-# Date created:		Wed Jul 10 23:38:01 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.125 2010/03/16 19:33:10 mezz Exp $
-#
 
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
@@ -25,8 +21,8 @@ COMMENT?=	GStreamer written collection of plugins handling several media types
 BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
 		gstreamer>=0.10.36:${PORTSDIR}/multimedia/gstreamer \
 		orc>=0.4.14:${PORTSDIR}/devel/orc
-LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
-		orc-0.4.0:${PORTSDIR}/devel/orc
+LIB_DEPENDS+=	gstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
+		orc-0.4:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
@@ -50,7 +46,8 @@ VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME+=	gnomehack pkgconfig ltverhack ltasneededhack
+USE_GNOME+=	gnomehack ltverhack ltasneededhack
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 

@@ -43,5 +43,6 @@ PLIST_SUB+=	NLS="@comment "
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|glib/.*\.h"|glib.h"|g' ${WRKSRC}/rsa_nss.c
 
 .include <bsd.port.mk>

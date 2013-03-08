@@ -1,48 +1,51 @@
-# New ports collection makefile for:   polkit
-# Date Created:			30 Juli 2009
-# Whom:				Koop Mast<kwm@FreeBSD.org>
-#
+# Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/polkit/Makefile,v 1.10 2010/09/16 02:09:43 avl Exp $
-#
+#   $MCom: ports/sysutils/polkit/Makefile,v 1.23 2012/12/18 13:01:54 kwm Exp $
 
 PORTNAME=	polkit
-PORTVERSION=	0.99
+PORTVERSION=	0.105
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://hal.freedesktop.org/releases/
+MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
 BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	eggdbus-1.0:${PORTSDIR}/devel/eggdbus \
-		expat.6:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
+		dbus-launch:${PORTSDIR}/devel/dbus
 
-USE_GNOME=	gnomehack glib20 intlhack
+USE_GNOME=	gnomehack glib20 intlhack gnomehier
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-authfw=pam \
 		--with-pam-include=system \
 		--with-os-type=freebsd \
+		--disable-systemd \
 		--enable-introspection \
 		--localstatedir=/var
 CONFIGURE_ENV=	GTKDOC="false"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(NO_INSTALL_MANPAGES)
-CONFIGURE_ARGS+=--disable-man-pages
-.else
+OPTIONS_DEFINE=	MANPAGES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
     		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
-MAN1=		pkaction.1 pkcheck.1 pkexec.1
+MAN1=		pkaction.1 pkcheck.1 pkexec.1 pkttyagent.1
 MAN8=		pklocalauthority.8 polkit.8 polkitd.8
+.else
+CONFIGURE_ARGS+=--disable-man-pages
 .endif
 
 post-patch:

@@ -46,6 +46,7 @@ post-patch:
 		${WRKSRC}/qstardict.pro
 .endif
 	@${REINPLACE_CMD} -e "s|/usr/share/stardict/dic|${DICPATH}|g" \
+		-e "s|glib.*\.h|glib.h|g" \
 		${WRKSRC}/plugins/stardict/stardict.cpp
 
 do-configure:

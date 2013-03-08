@@ -1,5 +1,5 @@
---- common-src/glib-util.c.orig	2008-12-01 22:17:19.000000000 +0100
-+++ common-src/glib-util.c	2011-06-25 22:43:28.000000000 +0200
+--- common-src/glib-util.c.orig	2008-12-01 21:17:19.000000000 +0000
++++ common-src/glib-util.c	2013-02-07 15:54:40.000000000 +0000
 @@ -38,26 +38,15 @@
      if (did_glib_init) return;
      did_glib_init = TRUE;
@@ -46,7 +46,7 @@
  }
  
  typedef enum {
-@@ -107,29 +107,19 @@
+@@ -107,38 +107,19 @@
      return to;
  }
  
@@ -76,7 +76,16 @@
  
      g_slist_free(list);
  }
+-
+-void g_queue_free_full(GQueue * queue) {
+-    while (!g_queue_is_empty(queue)) {
+-        gpointer data;
+-        data = g_queue_pop_head(queue);
+-        amfree(data);
+-    }
+-    g_queue_free(queue);
+-}
 +#endif
  
- void g_queue_free_full(GQueue * queue) {
-     while (!g_queue_is_empty(queue)) {
+ void g_ptr_array_free_full(GPtrArray * array) {
+     size_t i;

@@ -69,5 +69,11 @@ post-patch:
 		${WRKSRC}/awn-manager/awnManager.py
 	@${REINPLACE_CMD} -e '1 s|bash|sh|' \
 		${WRKSRC}/awn-manager/awn-launcher-editor.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/libawn/egg/eggchecksum.h \
+		${WRKSRC}/libawn/awn-config-client-shared.c \
+		${WRKSRC}/libawn/awn-config-client-gconf.c
+	@${REINPLACE_CMD} -e 's|glib/gutils.h>|glib.h>|g' \
+		${WRKSRC}/libawn/awn-config-client-gkeyfile.c
 
 .include <bsd.port.post.mk>

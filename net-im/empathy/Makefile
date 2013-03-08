@@ -1,12 +1,9 @@
-# New ports collection makefile for:	empathy
-# Date created:		2007-10-29
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net-im/empathy/Makefile,v 1.76 2010/11/18 18:04:55 kwm Exp $
+#    $MCom: ports/net-im/empathy/Makefile,v 1.90 2012/08/17 19:06:45 kwm Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	2.32.2
+PORTVERSION=	2.34.0
 PORTREVISION=	3
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
@@ -17,19 +14,21 @@ COMMENT=	GNOME IM client based around telepathy
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
-		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
-		telepathy-logger.1:${PORTSDIR}/net-im/telepathy-logger \
-		folks-telepathy.16:${PORTSDIR}/net-im/folks \
-		gcr.0:${PORTSDIR}/security/gnome-keyring \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
+		telepathy:${PORTSDIR}/net-im/libtelepathy \
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
+		telepathy-farsight:${PORTSDIR}/net-im/telepathy-farsight \
+		telepathy-logger:${PORTSDIR}/net-im/telepathy-logger \
+		folks-telepathy:${PORTSDIR}/net-im/folks04 \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		notify:${PORTSDIR}/devel/libnotify \
+		gcr:${PORTSDIR}/security/gnome-keyring \
+		canberra-gtk:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
+
+CONFLICTS=	empathy-3.[0-9]*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -51,39 +50,39 @@ GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml
 
 MAN1=		empathy.1 empathy-accounts.1
 
-OPTIONS=	JABBER	"Enable jabber (XMPP) client support" on \
-		MSN	"Enable MSN client support" on \
-		IRC	"Enable IRC client support" on \
-		SALUT	"Enable link-local (serverless) XMPP support" off \
-		HAZE	"Enable libpurple protocol integration" off \
-		WEBKIT	"Enable Adium Message Style themes" on \
-		NST	"Enable Nautilus SendTo plugin"	on \
-		MAP	"Enable graphical map support" on
+OPTIONS_DEFINE=	JABBER MSN IRC SALUT HAZE WEBKIT NST MAP
+OPTIONS_DEFAULT=JABBER MSN IRC WEBKIT NST MAP
+MSN_DESC=	MSN client support
+IRC_DESC=	IRC client support
+SALUT_DESC=	Link-local (serverless) XMPP support
+HAZE_DESC=	Libpurple protocol integration
+NST_DESC=	Nautilus SendTo plugin
+MAP_DESC=	Graphical map support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
 .endif
 
-.if defined(WITH_MSN)
+.if ${PORT_OPTIONS:MMSN}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-butterfly:${PORTSDIR}/net-im/telepathy-butterfly
 .endif
 
-.if defined(WITH_IRC)
+.if ${PORT_OPTIONS:MIRC}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
 .endif
 
-.if !defined(WITHOUT_SALUT)
+.if ${PORT_OPTIONS:MSALUT}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
 .endif
 
-.if !defined(WITHOUT_HAZE)
+.if ${PORT_OPTIONS:MHAZE}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
 .endif
 
-.if defined(WITH_WEBKIT)
-LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
+.if ${PORT_OPTIONS:MWEBKIT}
+LIB_DEPENDS+=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=--enable-webkit
 PLIST_SUB+=	ADIUM=""
 .else
@@ -91,7 +90,7 @@ CONFIGURE_ARGS+=--disable-webkit
 PLIST_SUB+=	ADIUM="@comment "
 .endif
 
-.if defined(WITH_NST)
+.if ${PORT_OPTIONS:MNST}
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
 CONFIGURE_ARGS+=--enable-nautilus-sendto=yes
@@ -101,8 +100,8 @@ CONFIGURE_ARGS+=--enable-nautilus-sendto=no
 PLIST_SUB+=	NST="@comment "
 .endif
 
-.if !defined(WITHOUT_MAP)
-LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
+.if ${PORT_OPTIONS:MMAP}
+LIB_DEPENDS+=	champlain-0.8:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-map
 PLIST_SUB+=	MAP=""
 .else
@@ -110,4 +109,4 @@ CONFIGURE_ARGS+=--disable-map
 PLIST_SUB+=	MAP="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

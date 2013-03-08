@@ -30,4 +30,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		mudmagic.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/network/network.h \
+		${WRKSRC}/src/configuration/configuration.h \
+		${WRKSRC}/src/interface/tools.c \
+		${WRKSRC}/src/interface/theme_select.c \
+		${WRKSRC}/src/protocols/http.h \
+		${WRKSRC}/src/utils/gamelist.c \
+		${WRKSRC}/src/utils/muderr.h \
+		${WRKSRC}/src/utils/alias_triggers.c \
+		${WRKSRC}/src/utils/gamelist.h
+
 .include <bsd.port.mk>

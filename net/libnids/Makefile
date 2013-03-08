@@ -21,6 +21,7 @@ GLIB2_DESC=	Use GLIB2 for multiprocessing support
 OPTIONS_DEFAULT=	LIBNET GLIB2
 
 WANT_GNOME=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 
 MAN3=		libnids.3

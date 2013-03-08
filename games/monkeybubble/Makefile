@@ -32,5 +32,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-g -O2||g ; \
 		 s|-Werror||g'
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/net/message-handler.c \
+		${WRKSRC}/src/net/simple-server.c \
+		${WRKSRC}/src/ui/main.c
 
 .include <bsd.port.post.mk>

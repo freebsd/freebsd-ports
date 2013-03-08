@@ -12,6 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/gl
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 
 DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 

@@ -1,23 +1,13 @@
-# New ports collection makefile for:   gtk13
-# Date Created:			28 Sep 1997
-# Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
-#
+# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtk30/Makefile,v 1.35 2011/06/07 13:19:12 kwm Exp $
-#
+#   $MCom: ports/x11-toolkits/gtk30/Makefile,v 1.53 2013/01/07 13:35:02 kwm Exp $
 
 PORTNAME=	gtk
-PORTVERSION=	3.0.12
-PORTREVISION?=	2
+PORTVERSION=	3.6.4
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
-		ftp://ftp.gtk.org/pub/gtk/%SUBDIR%/ \
-		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
-		http://www.ameth.org/gimp/%SUBDIR%/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.gimp.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
+MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
@@ -25,15 +15,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_XZ=		yes
 LATEST_LINK=	gtk30
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
+		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
 RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -44,32 +36,42 @@ USE_GNOME=	gnomehack atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache
 USE_GETTEXT=	yes
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-static --enable-xinput=yes
-CONFIGURE_ARGS+=--enable-gtk2-dependency
-CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0` ac_cv_path_SED="${SED}"
-CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 \
-		-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS+=--enable-gtk2-dependency --disable-packagekit
+CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0` ac_cv_path_SED="${SED}"
 
-GLIB_SCHEMAS=	org.gtk.Settings.FileChooser.gschema.xml
+GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
+		org.gtk.Settings.ColorChooser.gschema.xml \
+		org.gtk.Settings.FileChooser.gschema.xml
 
 MAN1=		gtk-query-immodules-3.0.1
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug=yes
-.endif
-
-OPTIONS=	CUPS "Enable cups printing support" on
+OPTIONS_DEFINE=	CUPS COLORD DEBUG
+OPTIONS_DEFAULT=CUPS COLORD
+COLORD_DESC=	Color profile support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CUPS)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+.if ${PORT_OPTIONS:MCUPS}
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=--enable-cups=auto
 PLIST_SUB+=	CUPS=""
 .else
 CONFIGURE_ARGS+=--disable-cups
 PLIST_SUB+=	CUPS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug=yes
+.endif
+
+.if ${PORT_OPTIONS:MCOLORD}
+LIB_DEPENDS+=	colord:${PORTSDIR}/graphics/colord
+CONFIGURE_ARGS+=--enable-colord
+.else
+CONFIGURE_ARGS+=--disable-colord
 .endif
 
 post-patch:
@@ -83,7 +85,7 @@ post-patch:
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
-	@${ECHO_CMD} "${PKGNAME}: Needs cairo build with X11 support."
+	@${ECHO_CMD} "${PKGNAME}: Needs cairo with X11 support enabled."
 	@${FALSE}
 .endif
 

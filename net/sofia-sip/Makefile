@@ -11,6 +11,7 @@ COMMENT=	Open-source SIP User-Agent library
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	glib20 gnomehack
+USE_PKGCONFIG=	build
 
 MAN1=	sip-date.1 \
 	sip-options.1 \

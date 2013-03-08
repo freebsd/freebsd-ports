@@ -1,26 +1,24 @@
 bin/dconf
-bin/dconf-editor
+etc/bash_completion.d/dconf-bash-completion.sh
 include/dconf/dconf-client.h
+include/dconf-dbus-1/dconf-dbus-1.h
 include/dconf/dconf-engine.h
 include/dconf/dconf-paths.h
-include/dconf/dconf-readtype.h
-include/dconf/dconf-resetlist.h
 include/dconf/dconf.h
 lib/gio/modules/libdconfsettings.so
-lib/girepository-1.0/dconf-1.0.typelib
 lib/libdconf.so
 lib/libdconf.so.0
+lib/libdconf-dbus-1.so
+lib/libdconf-dbus-1.so.0
 libdata/pkgconfig/dconf.pc
+libdata/pkgconfig/dconf-dbus-1.pc
 libexec/dconf-service
 share/dbus-1/services/ca.desrt.dconf.service
-share/dbus-1/system-services/ca.desrt.dconf.service
-share/gir-1.0/dconf-1.0.gir
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/dconf-DConf-Paths.html
 share/gtk-doc/html/dconf/annotation-glossary.html
 share/gtk-doc/html/dconf/api-index-full.html
 share/gtk-doc/html/dconf/ch01.html
-share/gtk-doc/html/dconf/dconf.devhelp
 share/gtk-doc/html/dconf/dconf.devhelp2
 share/gtk-doc/html/dconf/home.png
 share/gtk-doc/html/dconf/index.html
@@ -32,13 +30,11 @@ share/gtk-doc/html/dconf/style.css
 share/gtk-doc/html/dconf/up.png
 share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
-@dirrmtry share/vala/vapi
 @dirrm share/gtk-doc/html/dconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry share/dbus-1/system-services
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
+@dirrm include/dconf-dbus-1
 @dirrm include/dconf
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@dirrmtry etc/bash_completion.d

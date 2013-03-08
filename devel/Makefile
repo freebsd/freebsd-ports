@@ -327,6 +327,7 @@
     SUBDIR += dbus-sharp-glib
     SUBDIR += dcmtk
     SUBDIR += dconf
+    SUBDIR += dconf-editor
     SUBDIR += ddd
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
@@ -978,6 +979,7 @@
     SUBDIR += libgconf-java
     SUBDIR += libgdata
     SUBDIR += libgee
+    SUBDIR += libgee06
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii

@@ -3,6 +3,7 @@ bin/gvfs-copy
 bin/gvfs-info
 bin/gvfs-less
 bin/gvfs-ls
+bin/gvfs-mime
 bin/gvfs-mkdir
 bin/gvfs-monitor-dir
 bin/gvfs-monitor-file
@@ -18,8 +19,6 @@ bin/gvfs-tree
 etc/profile.d/gvfs-bash-completion.sh
 include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
-lib/gio/modules/libgiogconf.la
-lib/gio/modules/libgiogconf.so
 lib/gio/modules/libgioremote-volume-monitor.la
 lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.la
@@ -30,6 +29,8 @@ lib/gio/modules/libgvfsdbus.so
 lib/libgvfscommon.la
 lib/libgvfscommon.so
 lib/libgvfscommon.so.0
+libexec/gvfsd-afp
+libexec/gvfsd-afp-browse
 %%FUSE%%libexec/gvfs-fuse-daemon
 %%GPHOTO2%%libexec/gvfs-gphoto2-volume-monitor
 %%HAL%%libexec/gvfs-hal-volume-monitor
@@ -50,32 +51,37 @@ libexec/gvfsd-sftp
 %%SMB%%libexec/gvfsd-smb
 %%SMB%%libexec/gvfsd-smb-browse
 libexec/gvfsd-trash
+%%AVAHI%%share/GConf/gsettings/gvfs-dns-sd.convert
+%%SMB%%share/GConf/gsettings/gvfs-smb.convert
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.Private.GPhoto2VolumeMonitor.service
 %%HAL%%share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
-share/gvfs/mounts/archive.mount
-share/gvfs/mounts/burn.mount
-%%CDDA%%share/gvfs/mounts/cdda.mount
-share/gvfs/mounts/computer.mount
-share/gvfs/mounts/dav.mount
-%%AVAHI%%share/gvfs/mounts/dav+sd.mount
-%%AVAHI%%share/gvfs/mounts/dns-sd.mount
-share/gvfs/mounts/ftp.mount
-%%GPHOTO2%%share/gvfs/mounts/gphoto2.mount
-share/gvfs/mounts/http.mount
-share/gvfs/mounts/localtest.mount
-share/gvfs/mounts/network.mount
-share/gvfs/mounts/sftp.mount
-%%SMB%%share/gvfs/mounts/smb-browse.mount
-%%SMB%%share/gvfs/mounts/smb.mount
-share/gvfs/mounts/trash.mount
-%%GPHOTO2%%share/gvfs/remote-volume-monitors/gphoto2.monitor
-%%HAL%%share/gvfs/remote-volume-monitors/hal.monitor
+share/gvfs/mounts/afp-browse.mount
+share/gvfs/mounts/afp.mount
+%%DATADIR%%/mounts/archive.mount
+%%DATADIR%%/mounts/burn.mount
+%%CDDA%%%%DATADIR%%/mounts/cdda.mount
+%%DATADIR%%/mounts/computer.mount
+%%DATADIR%%/mounts/dav.mount
+%%AVAHI%%%%DATADIR%%/mounts/dav+sd.mount
+%%AVAHI%%%%DATADIR%%/mounts/dns-sd.mount
+%%DATADIR%%/mounts/ftp.mount
+%%GPHOTO2%%%%DATADIR%%/mounts/gphoto2.mount
+%%DATADIR%%/mounts/http.mount
+%%DATADIR%%/mounts/localtest.mount
+%%DATADIR%%/mounts/network.mount
+%%DATADIR%%/mounts/sftp.mount
+%%SMB%%%%DATADIR%%/mounts/smb-browse.mount
+%%SMB%%%%DATADIR%%/mounts/smb.mount
+%%DATADIR%%/mounts/trash.mount
+%%GPHOTO2%%%%DATADIR%%/remote-volume-monitors/gphoto2.monitor
+%%HAL%%%%DATADIR%%/remote-volume-monitors/hal.monitor
 share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
 share/locale/ast/LC_MESSAGES/gvfs.mo
+share/locale/be/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn/LC_MESSAGES/gvfs.mo
@@ -88,9 +94,11 @@ share/locale/de/LC_MESSAGES/gvfs.mo
 share/locale/el/LC_MESSAGES/gvfs.mo
 share/locale/en@shaw/LC_MESSAGES/gvfs.mo
 share/locale/en_GB/LC_MESSAGES/gvfs.mo
+share/locale/eo/LC_MESSAGES/gvfs.mo
 share/locale/es/LC_MESSAGES/gvfs.mo
 share/locale/et/LC_MESSAGES/gvfs.mo
 share/locale/eu/LC_MESSAGES/gvfs.mo
+share/locale/fa/LC_MESSAGES/gvfs.mo
 share/locale/fi/LC_MESSAGES/gvfs.mo
 share/locale/fr/LC_MESSAGES/gvfs.mo
 share/locale/ga/LC_MESSAGES/gvfs.mo
@@ -139,9 +147,9 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
-@dirrm share/gvfs/remote-volume-monitors
-@dirrm share/gvfs/mounts
-@dirrm share/gvfs
+@dirrm %%DATADIR%%/remote-volume-monitors
+@dirrm %%DATADIR%%/mounts
+@dirrm %%DATADIR%%
 @dirrm include/gvfs-client/gvfs
 @dirrm include/gvfs-client
 @dirrmtry etc/profile.d

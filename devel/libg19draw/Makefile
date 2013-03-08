@@ -20,6 +20,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 
 PLIST_FILES=	include/libg19draw.h \
 		lib/libg19draw.a \

@@ -17,6 +17,7 @@ LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
 		talloc:${PORTSDIR}/devel/talloc
 
 HAS_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

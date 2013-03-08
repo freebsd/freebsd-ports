@@ -28,6 +28,7 @@ include/atk-1.0/atk/atktable.h
 include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
+include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
 lib/libatk-1.0.la
@@ -55,9 +56,9 @@ share/locale/da/LC_MESSAGES/atk10.mo
 share/locale/de/LC_MESSAGES/atk10.mo
 share/locale/dz/LC_MESSAGES/atk10.mo
 share/locale/el/LC_MESSAGES/atk10.mo
+share/locale/en@shaw/LC_MESSAGES/atk10.mo
 share/locale/en_CA/LC_MESSAGES/atk10.mo
 share/locale/en_GB/LC_MESSAGES/atk10.mo
-share/locale/en@shaw/LC_MESSAGES/atk10.mo
 share/locale/eo/LC_MESSAGES/atk10.mo
 share/locale/es/LC_MESSAGES/atk10.mo
 share/locale/et/LC_MESSAGES/atk10.mo
@@ -79,6 +80,7 @@ share/locale/it/LC_MESSAGES/atk10.mo
 share/locale/ja/LC_MESSAGES/atk10.mo
 share/locale/ka/LC_MESSAGES/atk10.mo
 share/locale/kk/LC_MESSAGES/atk10.mo
+share/locale/km/LC_MESSAGES/atk10.mo
 share/locale/kn/LC_MESSAGES/atk10.mo
 share/locale/ko/LC_MESSAGES/atk10.mo
 share/locale/ku/LC_MESSAGES/atk10.mo
@@ -99,9 +101,9 @@ share/locale/oc/LC_MESSAGES/atk10.mo
 share/locale/or/LC_MESSAGES/atk10.mo
 share/locale/pa/LC_MESSAGES/atk10.mo
 share/locale/pl/LC_MESSAGES/atk10.mo
+share/locale/ps/LC_MESSAGES/atk10.mo
 share/locale/pt/LC_MESSAGES/atk10.mo
 share/locale/pt_BR/LC_MESSAGES/atk10.mo
-share/locale/ps/LC_MESSAGES/atk10.mo
 share/locale/ro/LC_MESSAGES/atk10.mo
 share/locale/ru/LC_MESSAGES/atk10.mo
 share/locale/rw/LC_MESSAGES/atk10.mo
@@ -110,8 +112,8 @@ share/locale/sk/LC_MESSAGES/atk10.mo
 share/locale/sl/LC_MESSAGES/atk10.mo
 share/locale/sq/LC_MESSAGES/atk10.mo
 share/locale/sr/LC_MESSAGES/atk10.mo
-share/locale/sr@latin/LC_MESSAGES/atk10.mo
 share/locale/sr@ije/LC_MESSAGES/atk10.mo
+share/locale/sr@latin/LC_MESSAGES/atk10.mo
 share/locale/sv/LC_MESSAGES/atk10.mo
 share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/te/LC_MESSAGES/atk10.mo
@@ -129,10 +131,6 @@ share/locale/zh_CN/LC_MESSAGES/atk10.mo
 share/locale/zh_HK/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
 share/locale/zu/LC_MESSAGES/atk10.mo
-@dirrm include/atk-1.0/atk
-@dirrm include/atk-1.0
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -165,6 +163,8 @@ share/locale/zu/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -183,3 +183,5 @@ share/locale/zu/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm include/atk-1.0/atk
+@dirrm include/atk-1.0

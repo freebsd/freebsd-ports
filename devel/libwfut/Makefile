@@ -19,6 +19,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 MAN1=		wfut.1
 

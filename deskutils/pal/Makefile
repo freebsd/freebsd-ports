@@ -15,6 +15,7 @@ MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A calendar application
 
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

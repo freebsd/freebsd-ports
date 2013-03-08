@@ -24,4 +24,7 @@ USE_GNOME=	glib20
 
 WRKSRC=		${WRKDIR}/deadbeef-${PORTVERSION}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>

@@ -31,6 +31,8 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/gtkextra/gtkcharsel.c
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

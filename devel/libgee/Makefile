@@ -1,12 +1,9 @@
-# New ports collection makefile for:	libgee
-# Date created:				2010-03-14
-# Whom:					Frank Steinborn <steinex@nognu.de>
-#
+# Created by: Frank Steinborn <steinex@nognu.de>
 # $FreeBSD$
-#
+#    $MCom: ports/devel/libgee/Makefile,v 1.13 2012/10/14 20:47:22 kwm Exp $
 
 PORTNAME=	libgee
-PORTVERSION=	0.6.2.1
+PORTVERSION=	0.8.5
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -19,7 +16,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20 gnomehier gnomehack
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

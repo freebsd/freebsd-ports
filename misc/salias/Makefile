@@ -17,6 +17,7 @@ COMMENT=	A command-line tool to alias arguments of other programs
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 
 MAN1=		salias.1

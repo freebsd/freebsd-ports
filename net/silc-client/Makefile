@@ -28,6 +28,7 @@ MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -74,6 +75,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
 	@${REINPLACE_CMD} -e 's/^MODULESDIR="$$silc_prefix/MODULESDIR="$$silc_prefix\/share\/silc/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|glib/.*\.h|glib.h|g' \
+		${WRKSRC}/apps/irssi/src/silc/core/silc-core.c
 
 post-install:
 .ifndef(IRSSI_PLUGIN)

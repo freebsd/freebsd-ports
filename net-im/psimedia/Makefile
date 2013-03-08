@@ -36,6 +36,13 @@ CONFIGURE_ARGS+=	--debug
 PLIST_SUB+=	DEBUG=""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/gstprovider/rwcontrol.h \
+		${WRKSRC}/gstprovider/gstthread.h \
+		${WRKSRC}/gstprovider/gstelements/static/gstelements.h \
+		${WRKSRC}/gstprovider/gstcustomelements/gstcustomelements.h	
+
 do-install:
 	${MKDIR} ${PREFIX}/${PSI_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gstprovider/libgstprovider.so \

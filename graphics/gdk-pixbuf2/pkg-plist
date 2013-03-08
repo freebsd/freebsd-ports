@@ -1,4 +1,5 @@
 bin/gdk-pixbuf-csource
+bin/gdk-pixbuf-pixdata
 bin/gdk-pixbuf-query-loaders
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
@@ -98,9 +99,9 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/de/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/dz/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%share/locale/en@shaw/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gdk-pixbuf.mo
-%%NLS%%share/locale/en@shaw/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/et/LC_MESSAGES/gdk-pixbuf.mo
@@ -123,6 +124,7 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/it/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%share/locale/km/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/gdk-pixbuf.mo
@@ -178,7 +180,7 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
-@unexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache
+@unexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>&1 >/dev/null || true
 %%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_HK
 %%NLS%%@dirrmtry share/locale/yi/LC_MESSAGES
@@ -217,6 +219,8 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%@dirrmtry share/locale/mai
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
 %%NLS%%@dirrmtry share/locale/io/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/io
 %%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
@@ -241,11 +245,9 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%@dirrmtry share/locale/as
 %%NLS%%@dirrmtry share/locale/ang/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ang
-@dirrmtry share/gir-1.0
-@dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/
+@dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders
 @dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%
 @dirrm lib/gdk-pixbuf-2.0
-@dirrmtry lib/girepository-1.0
-@dirrm include/gdk-pixbuf-2.0/gdk-pixbuf
 @dirrm include/gdk-pixbuf-2.0/gdk-pixbuf-xlib
+@dirrm include/gdk-pixbuf-2.0/gdk-pixbuf
 @dirrm include/gdk-pixbuf-2.0

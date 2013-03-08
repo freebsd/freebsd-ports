@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libxml
-# Date created:				28 September 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
@@ -18,7 +14,6 @@ DEPRECATED=	Last release in 2002, unsupported by developers
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes

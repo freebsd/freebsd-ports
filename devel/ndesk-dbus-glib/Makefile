@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/deve
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
 
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 

@@ -1,10 +1,6 @@
-# New ports collection makefile for:   libIDL
-# Date Created:			12 February 2002
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/libIDL/Makefile,v 1.7 2010/04/02 17:27:42 kwm Exp $
-#
 
 PORTNAME=	libIDL
 PORTVERSION=	0.8.14
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_BISON=	build
 USE_GNOME=	gnomehack glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

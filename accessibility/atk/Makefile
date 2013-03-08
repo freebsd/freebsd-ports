@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/atk/Makefile,v 1.114 2011/06/13 20:32:27 kwm Exp $
+#   $MCom: ports/accessibility/atk/Makefile,v 1.123 2012/10/07 09:00:37 kwm Exp $
 
 PORTNAME=	atk
-PORTVERSION=	2.0.1
+PORTVERSION=	2.6.0
 PORTREVISION?=	0
 CATEGORIES=	accessibility devel
 MASTER_SITES=	GNOME
@@ -22,16 +22,16 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack glib20 ltverhack referencehack
+USE_GNOME=	gnomehier gnomehack glib20 ltverhack referencehack
+USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--enable-static \
-		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
 
 post-patch:
-	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/tests//" \
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/tests docs//" \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

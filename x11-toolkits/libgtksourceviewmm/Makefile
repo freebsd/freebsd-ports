@@ -25,4 +25,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBAS}/lib
 CONFIGURE_ARGS=	--disable-docs
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/gtksourceview/gtksourceviewmm/sourceiter.cc \
+		${WRKSRC}/tests/test-search.cpp
+
 .include <bsd.port.mk>

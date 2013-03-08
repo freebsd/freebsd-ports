@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-pie
 PORTVERSION=	0.5.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 # Waiting for a tag on the GitHub repository https://github.com/Simmesimme/Gnome-Pie...
 MASTER_SITES=	LOCAL/nivit/${PORTNAME}/
@@ -18,7 +18,7 @@ RUN_DEPENDS=	gnome-icons-elementary>=2.5:${PORTSDIR}/x11-themes/gnome-icons-elem
 		gnome-settings-daemon>=2.32.1_4:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	Xtst:${PORTSDIR}/x11/libXtst \
 		cairo:${PORTSDIR}/graphics/cairo \
-		gee:${PORTSDIR}/devel/libgee \
+		gee:${PORTSDIR}/devel/libgee06 \
 		unique:${PORTSDIR}/x11-toolkits/unique
 
 INSTALLS_ICONS=	yes

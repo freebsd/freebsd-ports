@@ -17,6 +17,7 @@ MAN8=		jnettop.8
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 
 LICENSE=	GPLv2

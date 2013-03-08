@@ -14,6 +14,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

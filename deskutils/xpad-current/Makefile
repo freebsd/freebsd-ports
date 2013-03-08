@@ -30,4 +30,8 @@ USE_GETTEXT=	yes
 
 MAN1=		xpad.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/glist.h|glib.h|g' \
+		${WRKSRC}/src/xpad-undo.c
+
 .include <bsd.port.mk>

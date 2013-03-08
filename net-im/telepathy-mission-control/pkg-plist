@@ -3,6 +3,7 @@ bin/mc-wait-for-name
 include/mission-control-5.5/mission-control-plugins/account-storage.h
 include/mission-control-5.5/mission-control-plugins/account.h
 include/mission-control-5.5/mission-control-plugins/dbus-acl.h
+include/mission-control-5.5/mission-control-plugins/debug.h
 include/mission-control-5.5/mission-control-plugins/dispatch-operation-policy.h
 include/mission-control-5.5/mission-control-plugins/dispatch-operation.h
 include/mission-control-5.5/mission-control-plugins/loader.h
@@ -18,11 +19,10 @@ libdata/pkgconfig/mission-control-plugins.pc
 libexec/mission-control-5
 share/dbus-1/services/org.freedesktop.Telepathy.AccountManager.service
 share/dbus-1/services/org.freedesktop.Telepathy.MissionControl5.service
-share/doc/mission-control-plugins/McpAccountStorage.html
+share/doc/mission-control-plugins/McpAccountManager.html
 share/doc/mission-control-plugins/McpDispatchOperation.html
-share/doc/mission-control-plugins/McpDispatchOperationPolicy.html
 share/doc/mission-control-plugins/McpRequest.html
-share/doc/mission-control-plugins/McpRequestPolicy.html
+share/doc/mission-control-plugins/annotation-glossary.html
 share/doc/mission-control-plugins/api-index-full.html
 share/doc/mission-control-plugins/ch01.html
 share/doc/mission-control-plugins/ch02.html
@@ -32,9 +32,10 @@ share/doc/mission-control-plugins/home.png
 share/doc/mission-control-plugins/index.html
 share/doc/mission-control-plugins/index.sgml
 share/doc/mission-control-plugins/left.png
+share/doc/mission-control-plugins/mission-control-plugins-McpAccountStorage.html
+share/doc/mission-control-plugins/mission-control-plugins-McpDispatchOperationPolicy.html
+share/doc/mission-control-plugins/mission-control-plugins-McpRequestPolicy.html
 share/doc/mission-control-plugins/mission-control-plugins-Plugin-loader-and-global-functions.html
-share/doc/mission-control-plugins/mission-control-plugins-account.html
-share/doc/mission-control-plugins/mission-control-plugins.devhelp
 share/doc/mission-control-plugins/mission-control-plugins.devhelp2
 share/doc/mission-control-plugins/object-tree.html
 share/doc/mission-control-plugins/right.png
@@ -43,4 +44,3 @@ share/doc/mission-control-plugins/up.png
 @dirrm share/doc/mission-control-plugins
 @dirrm include/mission-control-5.5/mission-control-plugins
 @dirrm include/mission-control-5.5
-@dirrmtry lib/mission-control-plugins.0

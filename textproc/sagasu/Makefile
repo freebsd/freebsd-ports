@@ -28,6 +28,7 @@ post-patch:
 		's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/util.h
 
 post-install:
 .if !defined(NOPORTDOCS)

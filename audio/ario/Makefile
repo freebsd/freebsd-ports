@@ -47,4 +47,11 @@ CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gslist.h|glib.h|g ; \
+		 s|glib/gkeyfile.h>|glib.h>|g' \
+		${WRKSRC}/src/ario-util.h \
+		${WRKSRC}/src/plugins/ario-plugin-info.c \
+		${WRKSRC}/src/ario-profiles.h
+
 .include <bsd.port.mk>

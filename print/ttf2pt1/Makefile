@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ttf2pt1
-# Date created:			Aug 11, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.4
@@ -19,6 +14,7 @@ COMMENT=	True Type Font to Postscript Type 1 Converter
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 
+USE_PKGCONFIG=	build
 USE_PERL5=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
 		INSTDIR="${PREFIX}" LIBXDIR="${PREFIX}/bin"

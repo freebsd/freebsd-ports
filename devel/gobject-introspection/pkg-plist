@@ -7,7 +7,6 @@ include/gobject-introspection-1.0/gibaseinfo.h
 include/gobject-introspection-1.0/gicallableinfo.h
 include/gobject-introspection-1.0/giconstantinfo.h
 include/gobject-introspection-1.0/gienuminfo.h
-include/gobject-introspection-1.0/gierrordomaininfo.h
 include/gobject-introspection-1.0/gifieldinfo.h
 include/gobject-introspection-1.0/gifunctioninfo.h
 include/gobject-introspection-1.0/giinterfaceinfo.h
@@ -51,6 +50,9 @@ lib/gobject-introspection/giscanner/annotationmain.pyo
 lib/gobject-introspection/giscanner/annotationparser.py
 lib/gobject-introspection/giscanner/annotationparser.pyc
 lib/gobject-introspection/giscanner/annotationparser.pyo
+lib/gobject-introspection/giscanner/annotationpatterns.py
+lib/gobject-introspection/giscanner/annotationpatterns.pyc
+lib/gobject-introspection/giscanner/annotationpatterns.pyo
 lib/gobject-introspection/giscanner/ast.py
 lib/gobject-introspection/giscanner/ast.pyc
 lib/gobject-introspection/giscanner/ast.pyo
@@ -60,9 +62,9 @@ lib/gobject-introspection/giscanner/cachestore.pyo
 lib/gobject-introspection/giscanner/codegen.py
 lib/gobject-introspection/giscanner/codegen.pyc
 lib/gobject-introspection/giscanner/codegen.pyo
-lib/gobject-introspection/giscanner/config.py
-lib/gobject-introspection/giscanner/config.pyc
-lib/gobject-introspection/giscanner/config.pyo
+lib/gobject-introspection/giscanner/docmain.py
+lib/gobject-introspection/giscanner/docmain.pyc
+lib/gobject-introspection/giscanner/docmain.pyo
 lib/gobject-introspection/giscanner/dumper.py
 lib/gobject-introspection/giscanner/dumper.pyc
 lib/gobject-introspection/giscanner/dumper.pyo
@@ -84,6 +86,27 @@ lib/gobject-introspection/giscanner/libtoolimporter.pyo
 lib/gobject-introspection/giscanner/maintransformer.py
 lib/gobject-introspection/giscanner/maintransformer.pyc
 lib/gobject-introspection/giscanner/maintransformer.pyo
+lib/gobject-introspection/giscanner/mallard-C-class.tmpl
+lib/gobject-introspection/giscanner/mallard-C-default.tmpl
+lib/gobject-introspection/giscanner/mallard-C-enum.tmpl
+lib/gobject-introspection/giscanner/mallard-C-function.tmpl
+lib/gobject-introspection/giscanner/mallard-C-namespace.tmpl
+lib/gobject-introspection/giscanner/mallard-C-property.tmpl
+lib/gobject-introspection/giscanner/mallard-C-record.tmpl
+lib/gobject-introspection/giscanner/mallard-C-signal.tmpl
+lib/gobject-introspection/giscanner/mallard-C-vfunc.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-class.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-default.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-enum.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-function.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-namespace.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-property.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-record.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-signal.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-vfunc.tmpl
+lib/gobject-introspection/giscanner/mallardwriter.py
+lib/gobject-introspection/giscanner/mallardwriter.pyc
+lib/gobject-introspection/giscanner/mallardwriter.pyo
 lib/gobject-introspection/giscanner/message.py
 lib/gobject-introspection/giscanner/message.pyc
 lib/gobject-introspection/giscanner/message.pyo
@@ -148,7 +171,6 @@ share/gtk-doc/html/gi/gi-GIBaseInfo.html
 share/gtk-doc/html/gi/gi-GICallableInfo.html
 share/gtk-doc/html/gi/gi-GIConstantInfo.html
 share/gtk-doc/html/gi/gi-GIEnumInfo.html
-share/gtk-doc/html/gi/gi-GIErrorDomainInfo.html
 share/gtk-doc/html/gi/gi-GIFieldInfo.html
 share/gtk-doc/html/gi/gi-GIFunctionInfo.html
 share/gtk-doc/html/gi/gi-GIInterfaceInfo.html
@@ -161,6 +183,7 @@ share/gtk-doc/html/gi/gi-GITypeInfo.html
 share/gtk-doc/html/gi/gi-GIUnionInfo.html
 share/gtk-doc/html/gi/gi-GIVFuncInfo.html
 share/gtk-doc/html/gi/gi-ffi.html
+share/gtk-doc/html/gi/gi-gierrordomaininfo.html
 share/gtk-doc/html/gi/gi-gir-reference.html
 share/gtk-doc/html/gi/gi-gir.html
 share/gtk-doc/html/gi/gi-girepository.html
@@ -171,7 +194,6 @@ share/gtk-doc/html/gi/gi-overview.html
 share/gtk-doc/html/gi/gi-repository-structs.html
 share/gtk-doc/html/gi/gi-struct-hierarchy.html
 share/gtk-doc/html/gi/gi-typelib.html
-share/gtk-doc/html/gi/gi.devhelp
 share/gtk-doc/html/gi/gi.devhelp2
 share/gtk-doc/html/gi/girepository.html
 share/gtk-doc/html/gi/glib.html
@@ -188,8 +210,6 @@ share/gtk-doc/html/gi/up.png
 @dirrmtry share/gtk-doc
 @dirrm share/gobject-introspection-1.0/tests
 @dirrm share/gobject-introspection-1.0
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
 @dirrm lib/gobject-introspection/giscanner
 @dirrm lib/gobject-introspection
 @dirrm include/gobject-introspection-1.0

@@ -36,7 +36,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bdb
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	loudmouth
-# Date created:				08 July 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.4.3
@@ -14,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
 
-LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -26,23 +22,24 @@ CONFIGURE_ARGS=	--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 
-OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on \
-		OPENSSL "Enable SSL (via OpenSSL) support" off
+OPTIONS_DEFAULT=GNUTLS
+OPTIONS_RADIO=	SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl=openssl
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
-.if !defined(WITH_GNUTLS) && !defined(WITH_OPENSSL)
+.if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=--without-ssl
 .endif
 
@@ -50,4 +47,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    	${WRKSRC}/loudmouth/lm-ssl-gnutls.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

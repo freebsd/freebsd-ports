@@ -20,6 +20,7 @@ CONFLICTS=	rtorrent-[0-9]*
 USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 LDFLAGS+=	-pthread
 CONFIGURE_ARGS=	--disable-debug
 

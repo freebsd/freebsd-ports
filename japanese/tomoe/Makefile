@@ -120,4 +120,11 @@ post-extract:
 		${UNZIP_CMD} -qo ${DISTDIR}/Unihan.zip -d ${WRKSRC}/module/dict
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/ge.*\.h>|glib.h>|g' \
+		-e 's|glib/ga.*\.h>|glib.h>|g' \
+		${WRKSRC}/lib/glib-compat-key-file.h \
+		${WRKSRC}/lib/tomoe.c \
+		${WRKSRC}/lib/glib-utils.h
+
 .include <bsd.port.post.mk>

@@ -18,6 +18,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_NLS)

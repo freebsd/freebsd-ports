@@ -33,4 +33,8 @@ GCONF_SCHEMAS=	guikachu-form-editor.schemas guikachu-interface.schemas \
 #		-e '/(UPDATE_MIME)/s|(mimedir)|(prefix)/share/mime|' \
 #		${WRKSRC}/data/Makefile.in
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gwin32.h>|glib.h>|g' \
+		${WRKSRC}/src/ui.cc
+
 .include <bsd.port.mk>

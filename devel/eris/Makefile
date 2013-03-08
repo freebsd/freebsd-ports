@@ -17,6 +17,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_GNOME=	gnomehack
 
 CXXFLAGS+=	-include wchar.h

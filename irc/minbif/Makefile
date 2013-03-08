@@ -86,6 +86,9 @@ post-patch:
 		's|"-lpthread -lstdc++"||' ${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		'/pam_misc.h/d' ${WRKSRC}/src/im/auth_pam.h
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/server_poll/daemon_fork.cpp \
+		${WRKSRC}/src/server_poll/inetd.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin

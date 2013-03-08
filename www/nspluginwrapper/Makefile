@@ -58,6 +58,9 @@ HOST_ARCH=	${ARCH}
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 	    ${WRKSRC}/src/npw-config.c
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/npruntime.c ${WRKSRC}/src/npw-player.c \
+		${WRKSRC}/src/utils.c
 
 post-install:
 	${MKDIR} ${LIBDIR}/i386/linux

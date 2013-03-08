@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gstreamer
-# Date created:		Tue Jul 9 20:24:02 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer/Makefile,v 1.74 2010/03/09 10:11:45 kwm Exp $
-#
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.36

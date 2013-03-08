@@ -20,6 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack glib20
+USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 GLIB_API_VERSION=	0.4
@@ -29,6 +30,8 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 # Jikes related
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
@@ -51,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/macros/* ${PREFIX}/share/${PORTNAME}/macros
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}

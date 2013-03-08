@@ -25,6 +25,8 @@ DOCS=		AUTHORS ChangeLog README TODO
 post-patch:
 	@${REINPLACE_CMD} -e 's|ps -C tilda -o pid=|pgrep tilda|' \
 		${WRKSRC}/src/tilda.c
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/tomboykeybinder.h
 
 post-install:
 .if !defined (NOPORTDOCS)
