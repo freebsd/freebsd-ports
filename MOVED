@@ -4134,3 +4134,4 @@ x11/powershell||2013-03-06|Has expired: Broken for more then 6 month
 devel/py-setuptools|devel/py-distribute|2013-03-06|Replaced with distribute
 devel/ZendOptimizer|www/pecl-zendoptimizerplus|2013-03-07|Replaced with supported open-source release 
 net-im/jreen||2013-03-07|Removed
+databases/ruby-dbdbd||2013-03-08|Dead project, no knonw users
