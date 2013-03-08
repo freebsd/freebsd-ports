@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54bed676-87ce-11e2-b528-00262d5ed8ee">
+    <topic>chromium -- WebKit vulnerability</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>25.0.1364.160</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/Stable%20Updates">
+	  <p>[180763] High CVE-2013-0912: Type confusion in WebKit. Credit to
+	    Nils and Jon of MWR Labs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0912</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/Stable%20Updates</url>
+    </references>
+    <dates>
+      <discovery>2013-03-07</discovery>
+      <entry>2013-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9a347ac-8671-11e2-b73c-0019d18c446a">
     <topic>typo3 -- Multiple vulnerabilities in TYPO3 Core</topic>
     <affects>
