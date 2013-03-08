@@ -1,6 +1,6 @@
---- ./sysui/desktop/share/create_tree.sh.orig	2012-03-27 18:22:01.000000000 +0200
-+++ ./sysui/desktop/share/create_tree.sh	2012-04-23 19:19:44.734593732 +0200
-@@ -42,32 +42,32 @@
+--- ./sysui/desktop/share/create_tree.sh.orig	2013-01-31 05:54:53.000000000 -0500
++++ ./sysui/desktop/share/create_tree.sh	2013-02-18 18:46:30.000000000 -0500
+@@ -60,32 +60,32 @@
    chmod 0644 "${DESTDIR}/${GNOMEDIR}/share/application-registry/${PREFIX}".*
  fi
  

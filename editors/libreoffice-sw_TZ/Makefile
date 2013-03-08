@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-LO_I18N=	sw_TZ	
+LO_I18N=	sw_TZ
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
 

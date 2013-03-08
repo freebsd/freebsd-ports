@@ -1,5 +1,5 @@
---- ./testtools/Module_testtools.mk.orig	2012-07-27 08:37:04.000000000 -0400
-+++ ./testtools/Module_testtools.mk	2012-08-21 12:06:21.000000000 -0400
+--- ./testtools/Module_testtools.mk.orig	2013-01-31 05:54:53.000000000 -0500
++++ ./testtools/Module_testtools.mk	2013-02-22 14:30:43.000000000 -0500
 @@ -55,14 +55,6 @@
  #))
  #endif

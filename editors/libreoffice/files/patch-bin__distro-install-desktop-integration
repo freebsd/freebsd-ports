@@ -1,6 +1,6 @@
---- ./bin/distro-install-desktop-integration.orig	2012-03-27 18:22:01.000000000 +0200
-+++ ./bin/distro-install-desktop-integration	2012-04-23 19:17:27.574712717 +0200
-@@ -91,13 +91,13 @@
+--- ./bin/distro-install-desktop-integration.orig	2013-01-31 05:54:53.000000000 -0500
++++ ./bin/distro-install-desktop-integration	2013-02-18 18:38:28.000000000 -0500
+@@ -94,13 +94,13 @@
  }
  
  # install desktop integration from plain packages
@@ -17,7 +17,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -111,16 +111,17 @@
+@@ -114,16 +114,17 @@
      export PRODUCTVERSION=
      export KDEMAINDIR=$PREFIXDIR
      export GNOMEDIR=$PREFIXDIR
@@ -38,7 +38,7 @@
  if test -d $DESTDIR/opt ; then
      rm -f $DESTDIR/opt/$INSTALLDIRNAME
      rmdir --ignore-fail-on-non-empty $DESTDIR/opt
-@@ -129,7 +130,7 @@
+@@ -132,7 +133,7 @@
  # we want non-versioned desktop files
  cd $DESTDIR/$INSTALLDIR/share/xdg
  # we want non-versioned stuff in the distro packages
@@ -47,7 +47,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -144,7 +145,7 @@
+@@ -147,7 +148,7 @@
                 $PREFIXDIR/share/mime/packages \
                 $PREFIXDIR/share/mime-info \
                 $PREFIXDIR/share/icons ; do
