@@ -16,6 +16,7 @@
     SUBDIR += filebench
     SUBDIR += fio
     SUBDIR += flops
+    SUBDIR += flowgrind
     SUBDIR += forkbomb
     SUBDIR += geekbench
     SUBDIR += gtkperf
