@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tetzle
-# Date created:		12 Jun 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tetzle
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
 		http://mirror.amdmi3.ru/distfiles/
