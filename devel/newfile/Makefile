@@ -8,13 +8,15 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A tool for creating starter files in various languages
+COMMENT=	Tool for creating starter files in various languages
 
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		newfile.1
 PORTDOCS=	newfile.html
+
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
