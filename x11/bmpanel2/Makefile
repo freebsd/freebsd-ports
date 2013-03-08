@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BMPanel 2
-# Date created:				17 May 2012
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bmpanel2
 DISTVERSION=	2.1pre1
@@ -11,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nice, lightweight NETWM compliant panel for X
+COMMENT=	Nice, lightweight NETWM compliant panel for X11
 
 LICENSE=	MIT
 
@@ -21,6 +17,15 @@ USE_XORG=	x11 xext
 
 LDFLAGS+=	-L${LOCALBASE}/lib		# XXX should not be needed
 
+OPTIONS_DEFINE=	TEMPERATURE
+TEMPERATURE_DESC=	Build with temperature widget (for CPU, etc.)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTEMPERATURE}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-temperature-widget
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/xdg.c
 	@${REINPLACE_CMD} -e '/^#include/s,alloca,stdlib,' \
@@ -28,5 +33,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,uint,unsigned,' ${WRKSRC}/args.c
 # Disable unused optional features (and thus unbreak "make clean")
 	@${REINPLACE_CMD} -e '/^OPTION/s, ON, OFF,' ${WRKSRC}/CMakeLists.txt
+	@${RM} -f ${WRKSRC}/themes/striped/theme.orig
 
 .include <bsd.port.mk>
