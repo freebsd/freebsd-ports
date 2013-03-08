@@ -1,9 +1,5 @@
-# New ports collection makefile for:    asciio
-# Date created:				Mon Apr 22 13:48:17 CEST 2008
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asciio
 PORTVERSION=	1.02.71
@@ -14,7 +10,7 @@ MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 DISTNAME=	App-Asciio-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A Perl/GTK application that lets you draw ASCII charts using a GUI
+COMMENT=	Perl/GTK application that lets you draw ASCII charts using a GUI
 
 BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

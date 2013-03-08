@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A free music creation tool inspired by Fast Tracker 2
+COMMENT=	Music creation tool inspired by Fast Tracker 2
 
 LICENSE=	GPLv3
 

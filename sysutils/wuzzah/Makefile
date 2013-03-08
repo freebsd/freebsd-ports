@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wuzzah
-# Date created:				8 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	wuzzah
 PORTVERSION=	0.53
@@ -11,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line utility for stalking users
+COMMENT=	Command-line utility for stalking users
 
 LICENSE=	GPLv2
 

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.V${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line idea encryption and decryption utility
+COMMENT=	Command-line IDEA encryption and decryption utility
 
 MAKE_JOBS_SAFE=	yes
 

@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A pixelart-oriented bitmap painting program
+COMMENT=	Pixelart-oriented bitmap painting program
 
 LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
 		png15:${PORTSDIR}/graphics/png

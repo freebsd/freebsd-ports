@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpck
-# Date created:				25 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	checkmate
 PORTVERSION=	0.19
@@ -12,7 +8,7 @@ MASTER_SITES=	http://checkmate.gissen.nl/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command-line utility for checking mp3 files for errors
+COMMENT=	Command-line utility for checking mp3 files for errors
 
 LICENSE=	GPLv2
 

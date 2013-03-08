@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A translator that converts MP4-SA files into efficient C programs
+COMMENT=	Translator that converts MP4-SA files into efficient C programs
 
 LICENSE=	BSD
 

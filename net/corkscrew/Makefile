@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.agroman.net/corkscrew/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A HTTP tunnelling utility for SSH
+COMMENT=	HTTP tunnelling utility for SSH
 
 LICENSE=	GPLv2
 

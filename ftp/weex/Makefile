@@ -8,7 +8,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A non-interactive FTP client
+COMMENT=	Non-interactive FTP client
 
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no

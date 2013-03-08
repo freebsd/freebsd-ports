@@ -10,7 +10,7 @@ MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT?=	A command line player for .nsf and .hes audio files
+COMMENT?=	Command line player for .nsf and .hes audio files
 
 LICENSE=	GPLv2
 

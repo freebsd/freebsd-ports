@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A player for many different Amiga and PC module formats
+COMMENT=	Player for many different Amiga and PC module formats
 
 LICENSE=	GPLv2
 

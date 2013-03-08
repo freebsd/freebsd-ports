@@ -1,9 +1,5 @@
-# Ports collection makefile for:	shc
-# Date created:				Feb 14, 2001
-# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shc
 PORTVERSION=	3.8.9
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A generic script compiler
+COMMENT=	Generic script compiler
 
 MAKE_JOBS_SAFE=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vanheusden.com/httping/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A ping-like tool for HTTP requests
+COMMENT=	Ping-like tool for HTTP requests
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

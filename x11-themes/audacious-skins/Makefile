@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audacious-skins
-# Date created:				13 Oct 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	audacious-skins
 PORTVERSION=	0.1
@@ -12,7 +8,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A collection of audacious skins
+COMMENT=	Collection of audacious skins
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 

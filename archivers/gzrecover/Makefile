@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
 DISTNAME=	gzrt-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A gzip recovery toolkit
+COMMENT=	GZIP recovery toolkit
 
 LICENSE=	GPLv2
 

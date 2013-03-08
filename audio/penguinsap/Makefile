@@ -1,9 +1,5 @@
-# New ports collection makefile for:	penguinsap
-# Date created:				16 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	penguinsap
 PORTVERSION=	0.1
@@ -11,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line Atari(TM) .sap player
+COMMENT=	Command-line Atari(TM) .sap player
 
 USE_DOS2UNIX=	yes
 

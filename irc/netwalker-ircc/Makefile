@@ -1,9 +1,5 @@
-# New ports collection makefile for:   netwalker-ircc
-# Date created:        4 December 2004
-# Whom:                Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	netwalker-ircc
 PORTVERSION=	0.5.0
@@ -12,7 +8,7 @@ MASTER_SITES=	CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A lightweight curses-based IRC client
+COMMENT=	Lightweight curses-based IRC client
 
 LICENSE=	GPLv2
 

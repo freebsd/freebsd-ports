@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.easysw.com/~mike/fldiff/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A graphical diff program using FLTK
+COMMENT=	Graphical diff program using FLTK
 
 LICENSE=	GPLv2
 

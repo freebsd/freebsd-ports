@@ -8,7 +8,7 @@ MASTER_SITES=	http://perli.net/projekte/highlnk/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A tool to save disk space on hard disks by using hardlinks
+COMMENT=	Tool to save disk space on hard disks by using hardlinks
 
 LICENSE=	GPLv2
 

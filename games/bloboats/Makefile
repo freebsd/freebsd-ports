@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bloboats
-# Date created:				16 Sep 2006
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bloboats
 PORTVERSION=	1.0.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A boat racing game in the spirit of Elasto Mania or X-Moto
+COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
 
 USE_GMAKE=	yes
 USE_SDL=	mixer image net sdl

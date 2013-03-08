@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pidgin-privacy-please
-# Date created:				01 Sep 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-privacy-please
 PORTVERSION=	0.7.1
@@ -12,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A privacy plugin for the pidgin instant messenger
+COMMENT=	Privacy plugin for the pidgin instant messenger
 
 LICENSE=	GPLv2
 

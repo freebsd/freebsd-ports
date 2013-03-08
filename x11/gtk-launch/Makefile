@@ -9,7 +9,7 @@ MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A fast GTK+ program launcher
+COMMENT=	Fast GTK+ program launcher
 
 USE_GNOME=	gtk12
 MAKE_JOBS_SAFE=	yes

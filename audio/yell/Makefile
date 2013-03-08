@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line pc speaker bell
+COMMENT=	Command-line pc speaker bell
 
 MAKE_JOBS_SAFE=	yes
 

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	xmms-festalon
-# Date created:				13 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	xmms-
 
-COMMENT=	A XMMS plugin for playing .nsf and .hes audio files
+COMMENT=	XMMS plugin for playing .nsf and .hes audio files
 
 MASTERDIR=	${.CURDIR}/../festalon
 

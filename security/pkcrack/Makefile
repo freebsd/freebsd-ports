@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A utility for breaking pkzip encryption
+COMMENT=	Utility for breaking pkzip encryption
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

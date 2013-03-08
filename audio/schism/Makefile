@@ -10,7 +10,7 @@ MASTER_SITES=	http://schismtracker.org/dl/ \
 DISTNAME=	schismtracker-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A module tracker editor/player resembling impulse tracker
+COMMENT=	Module tracker editor/player resembling impulse tracker
 
 LICENSE=	GPLv2
 

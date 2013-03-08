@@ -8,7 +8,7 @@ CATEGORIES=	dns security
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A daemon that filters out private IP addresses in DNS responses
+COMMENT=	Daemon that filters out private IP addresses in DNS responses
 
 PROJECTHOST=	google-dnswall
 USE_AUTOTOOLS=	automake autoconf:env
