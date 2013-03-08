@@ -1,16 +1,13 @@
---- ./midori/midori-view.c.orig	2013-02-05 23:28:05.000000000 +0000
-+++ ./midori/midori-view.c	2013-02-06 22:29:13.000000000 +0000
-@@ -3981,10 +3981,12 @@
-                 gchar const* version_strings[] = {
-                     LIBSOUP_VERSION,
-                     CAIRO_VERSION_STRING, cairo_version_string (),
-+                    #if HAVE_GCR
-                     GCR_VERSION,
-+                    #elif HAVE_GRANITE
-                     GRANITE_VERSION,
-                     LIBNOTIFY_VERSION,
--                    #if HAVE_UNIQUE
-+                    #elif HAVE_UNIQUE
-                     "libunique " UNIQUE_VERSION,
-                     #else
-                     "Sockets",
+--- ./midori/midori-view.c.orig	2013-03-07 17:44:14.000000000 +0000
++++ ./midori/midori-view.c	2013-03-07 23:30:37.000000000 +0000
+@@ -3789,8 +3789,10 @@
+     midori_view_add_version (markup, html, g_strdup_printf ("cairo %s (%s)\tlibnotify %s",
+         CAIRO_VERSION_STRING, cairo_version_string (),
+         LIBNOTIFY_VERSION));
++#if defined HAVE_GCR && defined HAVE_GRANITE
+     midori_view_add_version (markup, html, g_strdup_printf ("gcr %s\tgranite %s",
+         GCR_VERSION, GRANITE_VERSION));
++#endif
+     midori_view_add_version (markup, html, g_strdup_printf ("single instance %s",
+         #if HAVE_UNIQUE
+         "libunique " UNIQUE_VERSION

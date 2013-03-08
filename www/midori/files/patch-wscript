@@ -1,6 +1,6 @@
---- ./wscript.orig	2013-02-05 23:28:05.000000000 +0000
-+++ ./wscript	2013-02-07 21:21:09.000000000 +0000
-@@ -117,8 +117,8 @@
+--- ./wscript.orig	2013-03-07 17:44:14.000000000 +0000
++++ ./wscript	2013-03-07 23:10:59.000000000 +0000
+@@ -113,8 +113,8 @@
      conf.check_tool ('compiler_cc')
      conf.check_tool ('vala')
      conf.check_tool ('glib2')
@@ -11,33 +11,11 @@
          sys.exit (1)
  
      if option_enabled ('nls'):
-@@ -199,8 +199,6 @@
- 
-     if option_enabled ('gtk3'):
-         check_pkg ('gcr-3', '2.32', mandatory=False)
--    else:
+@@ -267,7 +267,6 @@
+     else:
+         check_pkg ('gtk+-2.0', '2.16.0', var='GTK')
+         check_pkg ('webkit-1.0', '1.1.17', args=args)
 -        check_pkg ('gcr-3-gtk2', '2.32', mandatory=False)
- 
-     if option_enabled ('unique'):
-         if option_enabled('gtk3'): unique_pkg = 'unique-3.0'
-@@ -257,7 +255,10 @@
-     if Options.platform == 'win32':
-         args = '--define-variable=target=win32'
-         conf.env.append_value ('VALAFLAGS', '-D HAVE_WIN32')
--    elif sys.platform != 'darwin':
-+    elif sys.platform.startswith('freebsd'):
-+        conf.env.append_value ('VALAFLAGS', '-D HAVE_FREEBSD')
-+
-+    if sys.platform != 'darwin':
-         check_pkg ('x11')
-         # Pass /usr/X11R6/include for OpenBSD
-         conf.check (header_name='X11/extensions/scrnsaver.h',
-@@ -371,8 +372,6 @@
-                 '-Winit-self -Wundef -Wdeclaration-after-statement '
-                 '-Wmissing-format-attribute -Wnested-externs'.split ())
-     conf.env.append_value ('CCFLAGS', '-Wno-unused-variable -Wno-comment'.split ())
--    if compiler == 'gcc':
--        conf.env.append_value ('CCFLAGS', '-Wno-unused-but-set-variable'.split ())
- 
-     if conf.env['UNIQUE_VERSION'] == '1.0.4':
-         Utils.pprint ('RED', 'unique 1.0.4 found, this version is erroneous.')
+         if check_version (conf.env['WEBKIT_VERSION'], 1, 5, 1):
+             check_pkg ('javascriptcoregtk-1.0', '1.5.1', args=args)
+         if check_version (conf.env['GTK_VERSION'], 2, 20, 0):
