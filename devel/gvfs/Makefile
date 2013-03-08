@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-obexftp \
+		--disable-bluray \
 		--disable-afc
 
 OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
