@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	12.0.rc3
-PORTREVISION=	2
+DISTVERSION=	12.0
 CATEGORIES=	multimedia
+MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
 MAINTAINER=	mickael.maillot@gmail.com
-COMMENT=	XBMC is an award winning media center application
+COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
 
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
-		${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
 		swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
@@ -37,14 +36,10 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		mad:${PORTSDIR}/audio/libmad \
 		modplug:${PORTSDIR}/audio/libmodplug \
-		mp3lame:${PORTSDIR}/audio/lame \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
-		ogg:${PORTSDIR}/audio/libogg \
 		pcre:${PORTSDIR}/devel/pcre \
-		plist:${PORTSDIR}/devel/libplist \
 		png15:${PORTSDIR}/graphics/png \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient	\
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		tag:${PORTSDIR}/audio/taglib \
 		tinyxml:${PORTSDIR}/textproc/tinyxml \
@@ -52,15 +47,11 @@ LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		yajl:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
+		nmblookup:${PORTSDIR}/net/samba-nmblookup \
+		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xbmc
-GH_COMMIT=	7a6cb7f
-GH_TAGNAME=	Frodo_rc3
-
+FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
@@ -68,8 +59,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xrandr xtst
 USE_GL=		glu
 USE_SDL=	image sdl
-USE_MYSQL=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 MAKE_JOBS_SAFE=	yes
@@ -85,11 +75,19 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
-OPTIONS_DEFINE=	AVAHI EXTERNAL_FFMPEG LIBBLURAY HAL LIRC NONFREE PULSEAUDIO RTMP VAAPI VDPAU WEBSERVER
+OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC EXTERNAL_FFMPEG LAME \
+		LIBBLURAY HAL LIRC MYSQL NONFREE PULSEAUDIO RTMP SFTP \
+		SMB VAAPI VDPAU VORBIS WEBSERVER
+AIRPLAY_DESC=	AirPlay support via libplist
+AIRTUNES_DESC=	AirTunes support via libshairport
+CEC_DESC=	CEC adapter support
 EXTERNAL_FFMPEG_DESC=	Use external ffmpeg
-NONFREE_DESC=		Enable non-free components (rar, ccx, ffmpeg)
+NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
+SFTP_DESC=	SSH SFTP support via libssh
+VORBIS_DESC=	Ogg Vorbis audio encoder
 
-OPTIONS_DEFAULT=	AVAHI LIBBLURAY HAL RTMP WEBSERVER
+OPTIONS_DEFAULT=	AIRPLAY AVAHI CEC LAME LIBBLURAY HAL MYSQL \
+			RTMP SFTP SMB VORBIS WEBSERVER
 
 CONFIGURE_ARGS+=	--disable-nfs
 
@@ -119,11 +117,32 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
+.if ${PORT_OPTIONS:MAIRPLAY}
+CONFIGURE_ARGS+=	--enable-airplay
+LIB_DEPENDS+=	plist:${PORTSDIR}/devel/libplist
+.else
+CONFIGURE_ARGS+=	--disable-airplay
+.endif
+
+.if ${PORT_OPTIONS:MAIRTUNES}
+CONFIGURE_ARGS+=	--enable-airtunes
+LIB_DEPENDS+=	shairport:${PORTSDIR}/audio/libshairport
+.else
+CONFIGURE_ARGS+=	--disable-airtunes
+.endif
+
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
+.endif
+
+.if ${PORT_OPTIONS:MCEC}
+CONFIGURE_ARGS+=	--enable-libcec
+LIB_DEPENDS+=	cec:${PORTSDIR}/multimedia/libcec
+.else
+CONFIGURE_ARGS+=	--disable-libcec
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL_FFMPEG}
@@ -152,8 +171,22 @@ LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--disable-hal
 .endif
 
+.if ${PORT_OPTIONS:MLAME}
+CONFIGURE_ARGS+=	--enable-libmp3lame
+LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+.else
+CONFIGURE_ARGS+=	--disable-libmp3lame
+.endif
+
 .if ${PORT_OPTIONS:MLIRC}
 RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+CONFIGURE_ARGS+=	--enable-mysql
+USE_MYSQL=	yes
+.else
+CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MNONFREE}
@@ -178,6 +211,21 @@ LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/rtmpdump
 CONFIGURE_ARGS+=	--disable-rtmp
 .endif
 
+.if ${PORT_OPTIONS:MSFTP}
+CONFIGURE_ARGS+=	--enable-ssh
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+.else
+CONFIGURE_ARGS+=	--disable-ssh
+.endif
+
+.if ${PORT_OPTIONS:MSMB}
+CONFIGURE_ARGS+=	--enable-samba
+LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+.else
+CONFIGURE_ARGS+=	--disable-samba
+.endif
+
 .if ${PORT_OPTIONS:MVAAPI}
 LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
 CONFIGURE_ARGS+=	--enable-vaapi
@@ -190,6 +238,13 @@ LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
+.endif
+
+.if ${PORT_OPTIONS:MVORBIS}
+CONFIGURE_ARGS+=	--enable-libvorbisenc
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+.else
+CONFIGURE_ARGS+=	--disable-libvorbisenc
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVER}

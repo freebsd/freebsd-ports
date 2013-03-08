@@ -1,5 +1,18 @@
 --- configure.in.orig	2012-10-01 01:08:50.000000000 +0200
 +++ configure.in	2012-10-03 12:17:13.000000000 +0200
+@@ -726,9 +726,9 @@
+ # platform specific flags
+ if echo "$ARCH" | grep -q "freebsd" ; then
+   LOCALBASE="${LOCALBASE:-/usr/local}"
+-  CFLAGS="$CFLAGS -I$LOCALBASE/include"
+-  CXXFLAGS="$CXXFLAGS -I$LOCALBASE/include"
+-  CPPFLAGS="$CPPFLAGS -I$LOCALBASE/include"
++  CFLAGS="$CFLAGS -idirafter$LOCALBASE/include"
++  CXXFLAGS="$CXXFLAGS -idirafter$LOCALBASE/include"
++  CPPFLAGS="$CPPFLAGS -idirafter$LOCALBASE/include"
+   LDFLAGS="$LDFLAGS -L$LOCALBASE/lib"
+   FFMPEG_EXTRACFLAGS="-I$LOCALBASE/include"
+ fi
 @@ -816,6 +816,7 @@
  
  # Check inotify availability
