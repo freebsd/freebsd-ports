@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	im.telepathy.MissionControl.FromEmpathy.gschema.xml
+CONFIGURE_ARGS=	--disable-upower
 
 MAN1=		mc-tool.1 mc-wait-for-name.1
 MAN8=		mission-control-5.8
