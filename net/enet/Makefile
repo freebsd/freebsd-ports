@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enet
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
@@ -12,16 +12,20 @@ COMMENT=	Simple and robust communication library based on UDP
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	DOCS
-
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|' \
