@@ -12,8 +12,7 @@ COMMENT=	C++ library to build and query a full text inverted index
 LICENSE=	GPLv3
 
 USE_GCC=	any
-USE_GNOME=	gnomehack
-USE_BISON=	build
+USES=		bison pathfix
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-unac

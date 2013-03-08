@@ -42,7 +42,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6+

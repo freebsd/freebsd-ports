@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xxdiff
-# Date created:				11 August 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xxdiff
 PORTVERSION=	3.2
@@ -23,7 +19,7 @@ EXPIRATION_DATE=	2013-07-01
 QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QT_PREFIX}

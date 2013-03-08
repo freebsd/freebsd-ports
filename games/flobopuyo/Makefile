@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flobopuyo
-# Date created:		24 Feb 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
@@ -16,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the famous PuyoPuyo
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 MAKE_JOBS_SAFE=	yes

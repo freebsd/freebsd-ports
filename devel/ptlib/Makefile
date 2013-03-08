@@ -16,7 +16,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	pwlib-1.* ptlib-2.6.*
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

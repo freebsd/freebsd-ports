@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ike
-# Date created:		24 march 2007
-# Whom:			mgrooms@shrew.net
-#
+# Created by: mgrooms@shrew.net
 # $FreeBSD$
-#
 
 PORTNAME=	ike
 PORTVERSION=	2.1.7
@@ -19,7 +15,7 @@ COMMENT=	Shrew Soft IKE daemon and client tools
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	iked
-USE_BISON=	build
+USES=		bison
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
 USE_BZIP2=	yes

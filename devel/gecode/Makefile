@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gecode
-# Date created:				24 January 2011
-# Whom:					roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gecode
 PORTVERSION=	3.7.3
@@ -19,7 +15,7 @@ OPTIONS_DEFINE=	GIST
 GIST_DESC=	Interactive Search Tool (requires Qt)
 
 USE_PERL5_BUILD=yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \

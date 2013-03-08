@@ -1,7 +1,4 @@
-# New ports collection makefile for:	scrollkeeper
-# Date created:				6 April 2001
-# Whom:					Rene Hexel <rh@netbsd.org>
-#
+# Created by: Rene Hexel <rh@netbsd.org>
 # $FreeBSD$
 #    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.12 2007/10/17 21:36:13 mezz Exp $
 
@@ -33,8 +30,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
-USE_GNOME=	gnomehack gnomehier libxslt intlhack
+USES=		bison pathfix
+USE_GNOME=	gnomehier libxslt intlhack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 		--with-omfdirs=${PREFIX}/share/omf \

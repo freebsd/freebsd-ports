@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nonpareil
-# Date created:                        24 Jul 2006
-# Whom:                                trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.79
@@ -19,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_BISON=	build
+USES=		bison
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	sdl
 USE_SCONS=	yes

@@ -1,10 +1,5 @@
-# vim: tabstop=8 softtabstop=0 noexpandtab
-# Ports collection Makefile for:	jags
-# Date created:		21 April 2004
-# Whom:			Eric van Gyzen <vangyzen@stat.duke.edu>
-#
+# Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	mcmc-jags
 PORTVERSION=	3.3.0
@@ -23,7 +18,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 

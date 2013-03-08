@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 
 USE_PERL5=	yes
 USE_XORG=	x11 xcursor
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

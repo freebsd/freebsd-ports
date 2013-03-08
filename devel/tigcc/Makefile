@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tigcc
-# Date created:		15 February 2004
-# Whom:			Ben Haga <tuximus@tuximus.mine.nu>
-#
+# Created by: Ben Haga <tuximus@tuximus.mine.nu>
 # $FreeBSD$
-#
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
@@ -23,7 +19,7 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 NO_WRKSUBDIR=	yes
 
 do-extract:

@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--without-debug \
 MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
 
 USE_GETTEXT=	yes
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 
 # Allow building Embedded Perl

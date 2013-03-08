@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Chemeq
-# Date created:				31 May 2000
-# Whom:					Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
-#
+# Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	chemeq
 PORTVERSION=	1.50
@@ -19,7 +15,7 @@ COMMENT=	Outputs LaTeX code for chemical reaction
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 
-USE_BISON=	build
+USES=		bison
 
 MAN1=		chemeq.1
 

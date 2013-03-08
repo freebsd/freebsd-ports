@@ -14,8 +14,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
     		bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
-USE_BISON=	build
-USE_GNOME=	gnomehack glib20
+USES=		bison pathfix
+USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

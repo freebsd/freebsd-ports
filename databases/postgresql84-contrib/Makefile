@@ -1,7 +1,5 @@
 # Created by:	Palle Girgensohn <girgen@pingpong.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
@@ -14,7 +12,7 @@ USE_PGSQL=	yes
 DEFAULT_PGSQL_VER=84
 MASTERDIR=	${.CURDIR}/../postgresql${DEFAULT_PGSQL_VER}-server
 
-USE_BISON=	build
+USES=		bison
 
 BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib

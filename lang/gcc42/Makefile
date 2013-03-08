@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gcc42
-# Date created:				2005-12-11
-# Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
-#
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.5.20090325
@@ -28,7 +23,7 @@ VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	arm powerpc
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes

@@ -83,7 +83,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 
-USE_BISON=	build
+USES+=		bison
 GNU_CONFIGURE=	yes
 WRKSRC?=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office

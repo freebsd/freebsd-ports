@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkyahoo
-# Date created:			18 August 1999
-# Whom:				dannyman@dannyland.org
-#
+# Created by: dannyman@dannyland.org
 # $FreeBSD$
-#
 
 PORTNAME=	gtkyahoo
 PORTVERSION=	0.18.3
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yahoo Messenger Client using GTK
 
 USE_GNOME=	gtk12
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386

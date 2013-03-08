@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes

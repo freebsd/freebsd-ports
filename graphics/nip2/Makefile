@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vips
-# Date created:		19 December 2003
-# Whom:			Lev Serebryakov <lev@FreeBSD.org>
-#
+# Created by: Lev Serebryakov <lev@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nip2
 PORTVERSION=	7.26.3
@@ -18,7 +14,7 @@ LIB_DEPENDS=	vips.3[0-9]:${PORTSDIR}/graphics/vips	\
 		gsl:${PORTSDIR}/math/gsl	\
 		xml2:${PORTSDIR}/textproc/libxml2
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:  		esmtp
-# Date created:        				12.07.2003
-# Whom:               				Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	esmtp
 PORTVERSION=	1.2
@@ -20,7 +16,7 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 
 MAN1=		esmtp.1

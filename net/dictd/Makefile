@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	dictd
-# Date created:		Jan 23, 2001
-# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dictd
 PORTVERSION=	1.12.0
@@ -21,7 +16,7 @@ MAN1=		dictzip.1
 MAN8=		dictd.8
 
 USE_RC_SUBR=	${PORTNAME}
-USE_BISON=	build
+USES=		bison
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \

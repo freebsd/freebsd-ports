@@ -21,7 +21,7 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 MAKE_JOBS_UNSAFE=	yes
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_PERL5=	yes
 USE_GMAKE=	yes
 

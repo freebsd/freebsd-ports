@@ -1,5 +1,4 @@
-# Created by:				Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bird
@@ -14,7 +13,7 @@ COMMENT=	Dynamic IP routing daemon (IPv4 version)
 
 LICENSE=	GPLv2
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var

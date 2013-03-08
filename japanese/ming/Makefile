@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-Ming
-# Date created:		Aug 6 2002
-# Whom:			kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	ming
 PORTVERSION=	0.1.5
@@ -26,7 +22,7 @@ CONFLICTS=	ming-*
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
 MAKE_ARGS=	NOPROFILE=true
 USE_LDCONFIG=	yes
-USE_BISON=	build
+USES=		bison
 
 UTILS=		gif2dbl \
 		gif2mask \

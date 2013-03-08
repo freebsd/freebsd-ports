@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libaacs
-# Date created:	19 February 2011
-# Whom:		kamikaze@bsdforen.de
-#
+# Created by: kamikaze@bsdforen.de
 # $FreeBSD$
-#
 
 PORTNAME=	libaacs
 PORTVERSION=	0.3.0
@@ -23,7 +19,7 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
-USE_BISON=	build
+USES=		bison
 
 MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes

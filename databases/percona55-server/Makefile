@@ -14,7 +14,7 @@ COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona55-client
 USE_CMAKE=	yes
-USE_BISON=	build
+USES=		bison
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX

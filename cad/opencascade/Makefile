@@ -22,7 +22,7 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
 USE_BZIP2=	yes
-USE_BISON=	build
+USES=		bison
 USE_TK=		84+
 USE_TCL_BUILD=	84+
 USE_TCL_RUN=	84+

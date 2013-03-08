@@ -1,9 +1,5 @@
-# New ports collection makefile for:	buici-clock
-# Date created:		22nd Nov 2004
-# Whom:				Hendrik Scholz <hscholz@raisdorf.net>
-#
+# Created by: Hendrik Scholz <hscholz@raisdorf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.9.2
@@ -21,7 +17,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11 xext
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes

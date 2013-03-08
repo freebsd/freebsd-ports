@@ -17,7 +17,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		expat:${PORTSDIR}/textproc/expat2 \
 		gd:${PORTSDIR}/${GD_PORT}
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 WANT_GNOME=	yes

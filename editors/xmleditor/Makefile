@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xmleditor
-# Date created:			Jan 18, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xmleditor
 PORTVERSION=	0.5.3
@@ -17,8 +12,8 @@ COMMENT=	XML editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BISON=	build
-USE_GNOME=	gnomehack libglade
+USES=		bison pathfix
+USE_GNOME=	libglade
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

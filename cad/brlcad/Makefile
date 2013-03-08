@@ -26,7 +26,7 @@ USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xdamage xdmcp xext xfixes xft xi \
 		xproto xrender xscrnsaver xt xxf86vm
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 USE_TCL=	85
 USE_TK=		85
 USE_LDCONFIG=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openh323
-# Date created:		Thu Feb 17 15:00:48 GMT 2000
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openh323
 PORTVERSION=	1.19.0.1
@@ -21,7 +17,7 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes

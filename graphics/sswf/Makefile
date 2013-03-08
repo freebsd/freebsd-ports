@@ -1,9 +1,5 @@
-# Ports collection makefile for:	sswf
-# Date created:				Oct 17, 2005
-# Whom:					anhot
-#
+# Created by: anhot
 # $FreeBSD$
-#
 
 PORTNAME=	sswf
 PORTVERSION=	1.8.4
@@ -20,7 +16,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BISON=	build
+USES=		bison
 USE_ICONV=	yes
 USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool

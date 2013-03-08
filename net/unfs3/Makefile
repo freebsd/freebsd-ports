@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unfs3
-# Date created:				Mon Feb 16
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unfs3
 PORTVERSION=	0.9.22
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
 USE_AUTOTOOLS=	autoconf
-USE_BISON=	build
+USES=		bison
 
 MAN7=		tags.7
 MAN8=		unfsd.8

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	htmltolatex
-# Date created:			Jan 19, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
@@ -18,7 +13,7 @@ COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes

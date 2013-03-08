@@ -33,7 +33,7 @@ CMAKE_ARGS=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex \
 		-DUSE_TBB:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 USE_LDCONFIG=	yes
-USE_BISON=	build
+USES=		bison
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

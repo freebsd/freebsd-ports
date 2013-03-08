@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kaid
-# Date created:				18 Feb 2005
-# Whom:					Sebastiaan van Erk
-#
+# Created by: Sebastiaan van Erk
 # $FreeBSD$
-#
 
 PORTNAME=		kaid
 PORTVERSION=		7.0.0.4b
@@ -19,7 +15,7 @@ COMMENT=		XLink Kai tunneling server
 
 NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
-USE_BISON=		build
+USES=			bison
 USE_ZIP=		yes
 CC=			gcc
 CPP=			g++

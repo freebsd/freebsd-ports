@@ -1,9 +1,5 @@
-# Ports collection makefile for:	nessus-libnasl
-# Date created:				07 November 1999
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	nessus-libnasl
 PORTVERSION=	2.2.9
@@ -25,7 +21,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	YES
 

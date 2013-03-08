@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	libltdl libtool
-USE_BISON=	build
+USES=		bison
 WANT_GNOME=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

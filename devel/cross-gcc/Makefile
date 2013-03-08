@@ -37,7 +37,7 @@ RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 STRIP=		#empty
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info

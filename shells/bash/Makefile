@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:    bash3
-# Date created:				30 Jul 2004
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=		bash
 PATCHLEVEL=		42
@@ -50,7 +45,7 @@ INFO=			bash
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
-USE_BISON=		build
+USES+=			bison
 
 .if !defined(NOPORTDOCS)
 .if !defined(WITH_INCLUDED_FAQ)

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgnomeui
-# Date created:				07 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/libgnomeui/Makefile,v 1.129 2010/09/27 20:16:41 kwm Exp $
-#
 
 PORTNAME=	libgnomeui
 PORTVERSION=	2.24.4
@@ -27,11 +23,12 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 USE_GETTEXT=	yes
 USE_XORG=	sm
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack \
+USES=		bison pathfix
+USE_GNOME=	gnomeprefix gnomehier libbonoboui ltverhack \
 		referencehack gvfs
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
+
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 

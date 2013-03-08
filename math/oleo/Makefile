@@ -12,7 +12,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
 USE_PERL5_BUILD=	yes
-USE_BISON=	build
+USES=		bison
 USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

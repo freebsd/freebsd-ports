@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tac_plus
-# Date created:		4 Mar 1997
-# Whom:			Igor Vinokurov <igor@zynaps.ru>
-#
+# Created by: Igor Vinokurov <igor@zynaps.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4.19
@@ -16,7 +12,7 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 USE_RC_SUBR=	tac_plus
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \

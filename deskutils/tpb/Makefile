@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tpb
-# Date created:				Fri Jun 10 00:38:03 CEST 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tpb
@@ -21,7 +18,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_BISON=	build
+USES=		bison
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 

@@ -1,6 +1,4 @@
-# New ports collection makefile for: 	filtermail
-# Date created:				8 V 2002
-# Whom:					Harry Newton
+# Created by: Harry Newton
 #
 # Called this port 'filtermail' because there is already a 'mailfilter'
 #  in the ports tree.
@@ -30,7 +28,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

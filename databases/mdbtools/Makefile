@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mdbtools
-# Date created:				25 April 2001
-# Whom:	      				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.5
@@ -32,7 +28,8 @@ MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_XORG=	x11
-USE_GNOME+=	gnomeprefix gnomehack libgnomeui
+USES+=		pathfix
+USE_GNOME+=	gnomeprefix libgnomeui
 PKGNAMESUFFIX=	-gnome
 .endif
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stp
-# Date created:		2008-06-18
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stp
 PORTVERSION=	1407
@@ -16,7 +12,7 @@ COMMENT=	A Decision Procedure for Bitvectors and Arrays
 
 LICENSE=	MIT
 
-USE_BISON=	build
+USES=		bison
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes

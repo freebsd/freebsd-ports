@@ -15,7 +15,7 @@ CONFLICTS=	grub-0*
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_BISON=		build
+USES=			bison
 USE_GETTEXT=		yes
 ONLY_FOR_ARCHS=		i386 amd64
 

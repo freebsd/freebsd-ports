@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openmcu
-# Date created:		Wed Nov 22 08:57:55 GMT 2000
-# Whom:			Roger Hardiman <roger@FreeBSD.org>
-#
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openmcu
 PORTVERSION=	2.2.1
@@ -19,7 +15,7 @@ LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 ALL_TARGET=	optshared
 MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \

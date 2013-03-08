@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pixie
-# Date created:		29 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
@@ -25,9 +21,8 @@ NOT_FOR_ARCHS=	amd64
 
 WRKSRC=		${WRKDIR}/Pixie
 
-USE_GNOME=	gnomehack
 USE_GL=		glu
-USE_BISON=	build
+USES=		bison pathfix
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \

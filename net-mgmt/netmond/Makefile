@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netmond
-# Date created:				2004 Mar 30
-# Whom:					vfom@narod.ru
-#
+# Created by: vfom@narod.ru
 # $FreeBSD$
-#
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
@@ -35,7 +31,7 @@ CONFIGURE_ARGS=	--without-ifgraph
 .endif
 
 GNU_CONFIGURE=	yes
-USE_BISON=	build
+USES=		bison
 
 BINOWN=		root
 BINGRP=		netmon

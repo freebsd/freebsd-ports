@@ -1,9 +1,5 @@
-# New ports collection makefile for:	windstille
-# Date created:		14 Jun 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
@@ -27,7 +23,7 @@ USE_SCONS=	yes
 USE_OPENAL=	al
 USE_GL=		glew
 USE_SDL=	sdl image
-USE_BISON=	build
+USES=		bison
 MAKE_JOBS_SAFE=	yes
 
 post-extract:

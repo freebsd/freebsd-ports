@@ -1,7 +1,4 @@
-# New ports collection makefile for:	alliance
-# Date created:		6 May 2004
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
 
 PORTNAME=	alliance
@@ -23,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libzvt
-# Date created:				12 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libzvt
 PORTVERSION=	2.0.1
@@ -18,10 +14,10 @@ COMMENT=	Library components for Zed's Virtual Terminal
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack gtk20 libartlgpl2
+USE_GNOME=	gnomeprefix gtk20 libartlgpl2
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 

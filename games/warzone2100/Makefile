@@ -26,7 +26,7 @@ LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_XZ=		yes
-USE_BISON=	build
+USES=		bison
 GNU_CONFIGURE=	yes
 USE_OPENAL=	al
 USE_GL=		yes

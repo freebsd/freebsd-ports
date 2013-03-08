@@ -1,7 +1,5 @@
-# Created by:				Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bird6
 PORTVERSION=	1.3.9
@@ -16,7 +14,7 @@ COMMENT=	Dynamic IP routing daemon (IPv6 version)
 
 LICENSE=	GPLv2
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --localstatedir=/var

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsieve
-# Date created:				4 August 2006
-# Whom:					Mark Starovoytov <mark_sf@kikg.ifmo.ru>
-#
+# Created by: Mark Starovoytov <mark_sf@kikg.ifmo.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libsieve
 PORTVERSION=	2.3.1
@@ -18,6 +14,7 @@ LICENSE=LGPL21
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
+USES=		bison
 USE_BISON=	build
 USE_LDCONFIG=	yes
 

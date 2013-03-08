@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yptransitd
-# Date created:				26 September 2002
-# Whom:					Michael Joyner <mjoyner@hq.dyns.cx>
-#
+# Created by: Michael Joyner <mjoyner@hq.dyns.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	yptransitd
 PORTVERSION=	0.5
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for nss_ldap
 
 USE_OPENLDAP=	yes
-USE_BISON=	build
+USES=		bison
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap-prefix=${LOCALBASE}

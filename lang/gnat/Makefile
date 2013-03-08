@@ -1,9 +1,4 @@
-# New ports collection makefile for:	GNU Ada gnat
-# Date created:		Sat Mar 18 02:16:45 1995
-# Whom:			hsu
-# Porter (original):	nils@guru.ims.uni-stuttgart.de
-# Porter (version 3):	maurice@serc.rmit.edu.au
-#
+# Created by: hsu, nils@guru.ims.uni-stuttgart.de, maurice@serc.rmit.edu.au
 # $FreeBSD$
 #
 # Note:
@@ -12,7 +7,6 @@
 #   conflict with other gcc based products. Standard names can be provided
 #   using symbolic links.
 
-PORTNAME=		gnat
 PORTVERSION=		2010
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -31,7 +25,7 @@ LICENSE=	GPLv3 LGPL3
 ONLY_FOR_ARCHS=		i386
 
 USE_GMAKE=		yes
-USE_BISON=		build
+USES=			bison
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
 

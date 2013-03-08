@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asterisk
-# Date created:				17 October 2003
-# Whom:					Maxim Sobolev <sobomax@portaone.com>
-#
+# Created by: Maxim Sobolev <sobomax@portaone.com>
 # $FreeBSD$
-#
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.42
@@ -32,7 +28,7 @@ CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	any
 USE_GMAKE=	yes
-USE_BISON=	build
+USES=		bison
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \

@@ -11,7 +11,7 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text viewer for Japanese vertical writings
 
-USE_BISON=	build
+USES=		bison
 USE_GNOME=	imlib
 MAKE_JOBS_SAFE=	yes
 

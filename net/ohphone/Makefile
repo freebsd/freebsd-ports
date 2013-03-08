@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ohphone
-# Date created:		Fri Aug 18 19:29:00 BST 2000
-# Whom:			Roger Hardiman <roger@FreeBSD.org>
-#
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ohphone
 PORTVERSION=	1.4.5
@@ -16,7 +12,7 @@ COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
-USE_BISON=	build
+USES=		bison
 USE_GMAKE=	yes
 ALL_TARGET=	optshared
 MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
