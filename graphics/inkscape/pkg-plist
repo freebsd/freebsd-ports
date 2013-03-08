@@ -415,6 +415,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/extensions/uniconv-ext.py
 %%DATADIR%%/extensions/uniconv_output.py
 %%DATADIR%%/extensions/voronoi.py
+%%DATADIR%%/extensions/voronoi2svg.py
 %%DATADIR%%/extensions/web-set-att.inx
 %%DATADIR%%/extensions/web-set-att.py
 %%DATADIR%%/extensions/web-transmit-att.inx
@@ -852,8 +853,6 @@ share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 @dirrm %%DATADIR%%/clipart
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/te_IN/LC_MESSAGES
