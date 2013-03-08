@@ -351,10 +351,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  this is for users, not for port maintainers.  This
 #				  should not be used in Makefile.
 ##
-# USE_BISON		- Implies that the port uses bison in one way or another:
-#				  'build', 'run', 'both', implying build,
-#				  runtime, and both build/run dependencies
-##
 # USE_IMAKE		- If set, this port uses imake.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH
 #				  Default: xmkmf -a
@@ -2009,22 +2005,6 @@ LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .  endif
 . endfor
-.endif
-
-.if defined(USE_BISON)
-_BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
-. if ${USE_BISON:L} == "build"
-BUILD_DEPENDS+= ${_BISON_DEPENDS}
-. elif ${USE_BISON:L} == "run"
-RUN_DEPENDS+=	${_BISON_DEPENDS}
-. elif ${USE_BISON:L} == "both"
-BUILD_DEPENDS+= ${_BISON_DEPENDS}
-RUN_DEPENDS+=	${_BISON_DEPENDS}
-. else
-IGNORE=	uses unknown USE_BISON construct
-. endif
-
 .endif
 
 .if defined(WITH_PKGNG)
