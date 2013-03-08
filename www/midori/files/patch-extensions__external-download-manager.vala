@@ -1,5 +1,5 @@
---- ./extensions/external-download-manager.vala.orig	2013-02-05 23:28:05.000000000 +0000
-+++ ./extensions/external-download-manager.vala	2013-02-07 06:20:07.000000000 +0000
+--- ./extensions/external-download-manager.vala.orig	2013-03-07 17:44:14.000000000 +0000
++++ ./extensions/external-download-manager.vala	2013-03-07 23:04:44.000000000 +0000
 @@ -137,18 +137,34 @@
  #if !HAVE_WIN32
      private class Aria2 : ExternalDownloadManager {
@@ -49,12 +49,3 @@
                  return true;
              } catch (Error e) {
                  this.handle_exception (e);
-@@ -311,6 +332,8 @@
-         internal CommandLine () {
- #if HAVE_WIN32
-             string default_commandline = "\"%s\\FlashGet\\flashget.exe\" {URL}".printf (Environment.get_variable ("ProgramFiles"));
-+#elif HAVE_FREEBSD
-+            string default_commandline = "fetch {URL}";
- #else
-             string default_commandline = "wget --no-check-certificate --referer={REFERER} --header={COOKIES} {URL}";
- #endif
