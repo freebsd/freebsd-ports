@@ -1,4 +1,5 @@
 bin/tiled
+bin/tmxrasterizer
 bin/tmxviewer
 lib/libtiled.so
 lib/libtiled.so.1
@@ -8,8 +9,11 @@ lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
 lib/tiled/plugins/libjson.so
 lib/tiled/plugins/liblua.so
+lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtengine.so
 lib/tiled/plugins/libtmw.so
+share/applications/tiled.desktop
+%%DATADIR%%/images/tiled-icon-32.png
 %%DATADIR%%/translations/tiled_cs.qm
 %%DATADIR%%/translations/tiled_de.qm
 %%DATADIR%%/translations/tiled_en.qm
@@ -25,6 +29,8 @@ lib/tiled/plugins/libtmw.so
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_zh.qm
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm lib/tiled/plugins
 @dirrm lib/tiled
