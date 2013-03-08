@@ -40,6 +40,7 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -fo devel/py-distribute devel/py-setuptools
     or
   # pkg set -o devel/py-setuptools:devel/py-distribute
+  # pkg install -f devel/py-distribute
 
 20130226:
   AFFECTS: users of textproc/apache-solr
