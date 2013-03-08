@@ -1,32 +1,41 @@
-# Created by:			Martin Otto
-#
+# Created by: Martin Otto
 # $FreeBSD$
 
 PORTNAME=	CastleVox
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://sillysoft.net/download/
-DISTNAME=	CastleVox-linux
+DISTNAME=	${PORTNAME}-linux
 
 MAINTAINER=	gamato@users.sf.net
-COMMENT=	A fast world domination game
+COMMENT=	Fast world domination game
 
 FETCH_ARGS=	-Fpr
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-
-WRKSRC=		${WRKDIR}/CastleVoxPC
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-SUB_FILES=	CastleVox
+WRKSRC=		${WRKDIR}/${PORTNAME}PC
+PORTDOCS=	README_Vox.txt
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+SUB_FILES=	${PORTNAME}
+
+DESKTOP_ENTRIES="Castle Vox" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Game;StrategyGame;" false
+
+.include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \*.jar ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/VoxIcon.png ${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} Support ${DATADIR})
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs ${DATADIR})
-	${INSTALL_SCRIPT} ${WRKDIR}/CastleVox ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "Support docs *.jar" ${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/VoxIcon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
