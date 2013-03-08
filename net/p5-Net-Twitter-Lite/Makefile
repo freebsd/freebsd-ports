@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter-Lite
-PORTVERSION=	0.11002
+PORTVERSION=	0.12001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,8 @@ BUILD_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-MAN3=		Net::Twitter::Lite.3 Net::Twitter::Lite::Error.3
+MAN3=		Net::Twitter::Lite.3 Net::Twitter::Lite::API::V1.3 \
+		Net::Twitter::Lite::API::V1_1.3 Net::Twitter::Lite::Error.3 \
+		Net::Twitter::Lite::WithAPIv1_1.3
 
 .include <bsd.port.mk>
