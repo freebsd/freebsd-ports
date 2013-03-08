@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A lightweight command line AIM client
+COMMENT=	Lightweight command line AIM client
 
 MAKE_JOBS_SAFE=	yes
 

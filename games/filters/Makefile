@@ -1,9 +1,5 @@
-# New ports collection makefile for:	filters
-# Date created:				7 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	filters
 PORTVERSION=	2.48
@@ -13,7 +9,7 @@ MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A collection of filters, including B1FF, and the Swedish Chef
+COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
 
 CONFLICTS=	talkfilters-* jive-* chef-* kenny-*
 

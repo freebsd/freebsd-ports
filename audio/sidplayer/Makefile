@@ -10,7 +10,7 @@ MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
 DISTNAME=	SIDPlayer-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A C64 SID tune player
+COMMENT=	C64 SID tune player
 
 LICENSE=	GPLv2
 

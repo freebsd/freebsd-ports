@@ -1,9 +1,5 @@
-# New ports collection makefile for:	logstalgia
-# Date created:				13 Oct 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils www
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A website access log visualization tool
+COMMENT=	Website access log visualization tool
 
 LICENSE=	GPLv3
 

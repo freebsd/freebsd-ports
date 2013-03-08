@@ -9,7 +9,7 @@ MASTER_SITES=	http://julien.danjou.info/telak/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A tool to draw pictures on your root window
+COMMENT=	Tool to draw pictures on your root window
 
 LICENSE=	GPLv2
 

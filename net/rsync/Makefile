@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A network file distribution/synchronization utility
+COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
 

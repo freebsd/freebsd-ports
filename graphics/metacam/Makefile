@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A digital camera EXIF meta-information reader
+COMMENT=	Digital camera EXIF meta-information reader
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

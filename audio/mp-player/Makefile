@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp-player
-# Date created:				26 Aug 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	mp-player
 PORTVERSION=	0.6
@@ -11,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A curses based module tracker using libmikmod
+COMMENT=	Curses based module tracker using libmikmod
 
 LICENSE=	GPLv2
 

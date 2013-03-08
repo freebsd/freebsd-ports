@@ -1,9 +1,5 @@
-# New ports collection makefile for:	playgsf
-# Date created:				10 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	playgsf
 PORTVERSION=	0.7.1
@@ -13,7 +9,7 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line player for gsf audio files
+COMMENT=	Command-line player for gsf audio files
 
 LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	screenie
-# Date created:				10 August 2004
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	screenie
 PORTVERSION=	1.30.0
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A small and lightweight screen(1) wrapper
+COMMENT=	Small and lightweight screen(1) wrapper
 
 LICENSE=	GPLv2
 

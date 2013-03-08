@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spfval
-# Date created:				22 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	spfval
 PORTVERSION=	0.0.1
@@ -11,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A SPF validator
+COMMENT=	SPF validator
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

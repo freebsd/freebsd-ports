@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irssi-themes
-# Date created:				17 Sep 2006
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irssi-themes
 PORTVERSION=	20101013
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A collection of additional irssi themes
+COMMENT=	Collection of additional irssi themes
 
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 

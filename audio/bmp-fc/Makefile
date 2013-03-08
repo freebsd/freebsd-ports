@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-fc
-# Date created:				13 Aug 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	bmp-fc
 PORTVERSION=	0.1
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A Future Composer input plug-in for beep-media-player
+COMMENT=	Future Composer input plug-in for beep-media-player
 
 LICENSE=	GPLv2
 

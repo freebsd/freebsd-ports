@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bannerfilter
-# Date created:				14 Aug 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	bannerfilter
 PORTVERSION=	1.31
@@ -12,7 +8,7 @@ MASTER_SITES=	http://phroggy.com/files/unix/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A squid redirect script for filtering web banners
+COMMENT=	Squid redirect script for filtering web banners
 
 LICENSE=	GPLv2
 

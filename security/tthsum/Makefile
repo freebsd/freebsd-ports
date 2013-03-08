@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tthsum
-# Date created:				25 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	tthsum
 PORTVERSION=	1.3.1
@@ -13,7 +9,7 @@ MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command-line utility for generating and checking TTH message digests
+COMMENT=	Command-line utility for generating and checking TTH message digests
 
 LICENSE=	GPLv3
 

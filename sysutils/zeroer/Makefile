@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line utility for wiping unallocated space on a filesystem
+COMMENT=	Command-line utility for wiping unallocated space on a filesystem
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 

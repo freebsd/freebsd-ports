@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cyrus2courier
-# Date created:				21 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus2courier
 DISTVERSION=	1.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.madness.at/~mad/projects/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A Cyrus-Imap to Maildir++ conversion utility
+COMMENT=	Cyrus-IMAP to Maildir++ conversion utility
 
 MAKE_JOBS_SAFE=	yes
 

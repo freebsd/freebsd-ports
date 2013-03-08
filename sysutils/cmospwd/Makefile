@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cgsecurity.org/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A BIOS password recovery tool
+COMMENT=	BIOS password recovery tool
 
 LICENSE=	GPLv2
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   zonenotify
-# Date created:		19 August 2005
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	zonenotify
 PORTVERSION=	0.1
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.morettoni.net/bsd/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A dns notify sender written in C
+COMMENT=	DNS notify sender written in C
 
 MAKE_JOBS_SAFE=	yes
 

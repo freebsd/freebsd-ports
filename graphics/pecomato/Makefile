@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecomato
-# Date created:				16 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	pecomato
 PORTVERSION=	0.0.15
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command-line picture metadata processor
+COMMENT=	Command-line picture metadata processor
 
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes

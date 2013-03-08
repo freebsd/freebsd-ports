@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A flexible SFV checksum utility
+COMMENT=	Flexible SFV checksum utility
 
 MAKE_JOBS_SAFE=	yes
 

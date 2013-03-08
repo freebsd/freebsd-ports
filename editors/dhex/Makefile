@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.dettus.net/dhex/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A ncurses-based hex-editor with diff mode
+COMMENT=	Ncurses-based hex-editor with diff mode
 
 LICENSE=	GPLv2
 

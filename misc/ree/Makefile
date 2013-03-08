@@ -8,7 +8,7 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/ree/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A tool to dump your ROM extensions
+COMMENT=	Tool to dump your ROM extensions
 
 PLIST_FILES=	bin/rom-ree bin/fontdump
 PORTDOCS=	readme

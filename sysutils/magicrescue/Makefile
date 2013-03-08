@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.itu.dk/people/jobr/magicrescue/release/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A file recovery tool which recovers deleted files from a block device
+COMMENT=	File recovery tool which recovers deleted files from a block device
 
 LICENSE=	GPLv2
 

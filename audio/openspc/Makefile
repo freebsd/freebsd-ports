@@ -10,7 +10,7 @@ MASTER_SITES=	http://membres.lycos.fr/pixels/ \
 DISTNAME=	OpenSPC-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A command line player for .spc and .zst files
+COMMENT=	Command-line player for .spc and .zst files
 
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 USE_LDCONFIG=	yes

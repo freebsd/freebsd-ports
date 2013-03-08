@@ -3,7 +3,7 @@
 
 PKGNAMEPREFIX=	xmms-
 
-COMMENT=	A XMMS plugin for playing Nintendo Game Boy(TM) audio
+COMMENT=	XMMS plugin for playing Nintendo Game Boy(TM) audio
 
 MASTERDIR=	${.CURDIR}/../gbsplay
 
