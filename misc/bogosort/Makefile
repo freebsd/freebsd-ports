@@ -21,6 +21,8 @@ MAN1=		bogosort.1
 INFO=		bogosort
 PLIST_FILES=	bin/bogosort
 
+MAKE_JOBS_SAFE=	yes
+
 test:		all
 		${PRINTF} "a\nb\nc\nd\n" > ${WRKDIR}/sorted
 		${PRINTF} "c\na\n\d\nb\n" > ${WRKDIR}/unsorted

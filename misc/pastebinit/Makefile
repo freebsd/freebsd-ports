@@ -6,7 +6,9 @@ CATEGORIES=	misc python
 MASTER_SITES=	https://launchpadlibrarian.net/106457425/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A command line utility for pastebing
+COMMENT=	Command line utility for pastebing
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-configobj
 
@@ -15,8 +17,6 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pastebinit
-
-LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
@@ -30,7 +30,7 @@ PORTDATA=	pastebin.d
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/pastebin.d|${DATADIR}/pastebin.d|' \
-		${WRKSRC}/pastebinit 
+		${WRKSRC}/pastebinit
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MPASTEBINS}

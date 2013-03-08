@@ -8,14 +8,15 @@ MASTER_SITES=	http://hack.org/mc/hacks/${PORTNAME}/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Kbdscan shows the scancodes of keys pressed
 
+LICENSE=	ISC
+LICENSE_GROUPS=	FSF GPL OSI
+LICENSE_NAME=	ISC License - ISCL
+LICENSE_FILE=	${FILESDIR}/LICENSE-kbdscan
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USE_BZIP2=	yes
 
-LICENSE=	ISC
-LICENSE_NAME=	ISC License - ISCL
-LICENSE_GROUPS=	FSF GPL OSI
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-# cut and paste the text from kbdscan.c
-LICENSE_FILE=	${FILESDIR}/LICENSE-kbdscan
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

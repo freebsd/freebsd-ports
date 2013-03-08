@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for editing command lines as they are typed
+COMMENT=	Library for editing command lines as they are typed
 
 LICENSE=	GPLv3
 

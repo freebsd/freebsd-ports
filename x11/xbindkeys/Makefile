@@ -1,4 +1,4 @@
-# Created by:				ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	xbindkeys
@@ -22,6 +22,8 @@ PLIST_FILES=	bin/xbindkeys %%EXAMPLESDIR%%/xbindkeysrc
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 WISH=		${LOCALBASE}/bin/wish8.4
+
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

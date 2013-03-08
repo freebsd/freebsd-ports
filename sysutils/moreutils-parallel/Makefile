@@ -19,6 +19,8 @@ MAN1=		parallel.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/parallel
 
+MAKE_JOBS_SAFE=	yes
+
 post-patch:
 	cd ${FILESDIR} && ${CP} ${MAN1} ${WRKSRC}/
 

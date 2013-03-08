@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A nonsense text generator
+COMMENT=	Nonsense text generator
 
 NO_BUILD=	defined
 

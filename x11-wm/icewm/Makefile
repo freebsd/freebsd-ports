@@ -30,8 +30,7 @@ OPTIONS_DEFAULT=	XFT XINERAMA ASM BEASTIE NLS MENUFIX
 BEASTIE_DESC=	Use Beastie'fied startup button
 MENUFIX_DESC=	MenuIconSize fix
 
-# Restrict to stable (even) versions, indicated by the second component.
-#PORTSCOUT=	limitw:1,even
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
