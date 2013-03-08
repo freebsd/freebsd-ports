@@ -41,7 +41,7 @@
  
 --- widget-temperature.c.orig	1970-01-01 08:00:00.000000000 +0800
 +++ widget-temperature.c	2013-03-08 15:55:36.000000000 +0800
-@@ -0,0 +1,216 @@
+@@ -0,0 +1,218 @@
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
 +#include <math.h>
@@ -105,7 +105,7 @@
 +	int pics_width = 0;
 +
 +	/* this should give us enough width for any real temperature */
-+	char buftemp[8] = "99°";
++	char buftemp[8] = "999°";
 +
 +	text_extents(w->panel->layout, tw->font.pfd, buftemp, &text_width, 0);
 +
@@ -135,10 +135,16 @@
 +	struct temperature_widget *tw = (struct temperature_widget *)w->private;
 +	char buftemp[8];
 +	int temp;
-+	float tempfraq, r, g, b;
++	static int blink;
++	float r, g, b;
 +
 +	temp = get_temperature(tw->sysctl_oid);
-+	snprintf(buftemp, sizeof(buftemp), "%d°", temp);
++	blink = temp > 95 ? !blink : 0;
++
++	if (blink)
++		*buftemp = '\0';
++	else
++		snprintf(buftemp, sizeof(buftemp), "%d°", temp);
 +
 +	/* drawing */
 +	cairo_t *cr = w->panel->cr;
@@ -175,14 +181,7 @@
 +	 * 0%R, 60%G, 100%B (HSV: 200, 100%, 100%) to reddish 100%R, 0%G,
 +	 * 0%B (HSV: 0, 100%, 100%) through the hue shift (think rainbow).
 +	 */
-+#if 0
-+	tempfraq = (temp - 30) / 70.0;
-+	tw->font.color[0] = 255 * tempfraq;
-+	tw->font.color[1] = 153 * (1 - tempfraq);
-+	tw->font.color[2] = 255 * (1 - tempfraq);
-+#endif
-+	tempfraq = (temp - 30) / 70.0;
-+	hsv2rgb(.56 * (1 - tempfraq), 1, 1, &r, &g, &b);
++	hsv2rgb(.56 * (1 - (temp - 30) / 70.0), 1, 1, &r, &g, &b);
 +	tw->font.color[0] = 255 * r;
 +	tw->font.color[1] = 255 * g;
 +	tw->font.color[2] = 255 * b;
@@ -199,6 +198,9 @@
 +
 +	if ((temp = get_temperature(tw->sysctl_oid)) < 0)
 +		return;
++
++	if (temp > 95)
++		w->needs_expose = 1;
 +
 +	if (curtemp == temp)
 +		return;
@@ -269,7 +271,7 @@
 +		offset 0 0
 +		shadow_offset 1 1
 +		shadow_color 0 0 0
-+		align center
++		align right
 +
 +	#sysctl_oid dev.cpu.0.temperature
 +
