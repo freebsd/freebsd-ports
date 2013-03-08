@@ -1,5 +1,5 @@
---- glib/gunicollate.c.orig	2012-03-12 00:42:42.000000000 +0000
-+++ glib/gunicollate.c	2012-09-27 15:11:08.000000000 +0000
+--- glib/gunicollate.c.orig	2012-11-24 20:50:39.000000000 +0000
++++ glib/gunicollate.c	2013-03-08 12:16:59.000000000 +0000
 @@ -26,6 +26,10 @@
  #include <wchar.h>
  #endif
@@ -11,7 +11,13 @@
  #ifdef HAVE_CARBON
  #include <CoreServices/CoreServices.h>
  #endif
-@@ -41,6 +45,48 @@
+@@ -36,11 +40,54 @@
+ #include "gstring.h"
+ #include "gstrfuncs.h"
+ #include "gtestutils.h"
++#include "gthread.h"
+ #include "gcharset.h"
+ #ifndef __STDC_ISO_10646__
  #include "gconvert.h"
  #endif
  
@@ -60,7 +66,7 @@
  
  #ifdef _MSC_VER
  /* Workaround for bug in MSVCR80.DLL */
-@@ -128,6 +174,28 @@
+@@ -128,6 +175,28 @@
    g_return_val_if_fail (str1 != NULL, 0);
    g_return_val_if_fail (str2 != NULL, 0);
  
@@ -89,7 +95,7 @@
    str1_norm = g_utf8_normalize (str1, -1, G_NORMALIZE_ALL_COMPOSE);
    str2_norm = g_utf8_normalize (str2, -1, G_NORMALIZE_ALL_COMPOSE);
  
-@@ -420,6 +488,26 @@
+@@ -419,6 +488,26 @@
  
    g_return_val_if_fail (str != NULL, NULL);
  
