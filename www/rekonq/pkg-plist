@@ -146,7 +146,7 @@ share/locale/hu/LC_MESSAGES/rekonq.mo
 share/locale/ia/LC_MESSAGES/rekonq.mo
 share/locale/it/LC_MESSAGES/rekonq.mo
 share/locale/km/LC_MESSAGES/rekonq.mo
-share/locale/lt/LC_MESSAGES/rekonq.mo
+share/locale/mr/LC_MESSAGES/rekonq.mo
 share/locale/nb/LC_MESSAGES/rekonq.mo
 share/locale/nl/LC_MESSAGES/rekonq.mo
 share/locale/pl/LC_MESSAGES/rekonq.mo
@@ -159,6 +159,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/rekonq.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/rekonq.mo
 share/locale/sr@latin/LC_MESSAGES/rekonq.mo
 share/locale/sv/LC_MESSAGES/rekonq.mo
+share/locale/tr/LC_MESSAGES/rekonq.mo
 share/locale/uk/LC_MESSAGES/rekonq.mo
 share/locale/zh_CN/LC_MESSAGES/rekonq.mo
 share/locale/zh_TW/LC_MESSAGES/rekonq.mo
