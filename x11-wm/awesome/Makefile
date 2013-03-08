@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.15
+PORTVERSION=	3.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
@@ -41,8 +40,7 @@ USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
 
 MAN1=	awesome.1 \
-	awesome-client.1 \
-	awsetbg.1
+	awesome-client.1
 MAN5=	awesomerc.5
 MANLANG=	"" de es fr
 MANCOMPRESSED=	yes
@@ -65,21 +63,16 @@ CMAKE_ARGS += -DWITH_DBUS=YES
 CMAKE_ARGS += -DWITH_DBUS=NO
 .endif
 
-pre-configure:
-	@${REINPLACE_CMD} \
-	-e 's/"generate luadoc" ON/\"generate luadoc" OFF/g' \
-		${WRKSRC}/awesomeConfig.cmake
-	@${REINPLACE_CMD} \
-	-e 's,tr ,env LC_ALL="C" ${TR} ,g' \
-	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
-		${WRKSRC}/build-utils/gperf.sh
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} \
-		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
-		${WRKSRC}/awesomeConfig.cmake
+.if ${PORT_OPTIONS:MDOCS}
+CMAKE_ARGS += -DINSTALL_PORTDOCS=YES -DGENERATE_DOC=YES
+.else
+CMAKE_ARGS += -DINSTALL_PORTDOCS=NO -DGENERATE_DOC=NO
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/awful/placement.lua.in.orig
+	@${REINPLACE_CMD} -e "/LUA_EXECUTABLE lua/ s,lua,lua-${LUA_VER}," \
+		${WRKSRC}/awesomeConfig.cmake
+	@${REINPLACE_CMD} -e '/lgi-check/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>
