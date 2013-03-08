@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tiled
-# Date created:		03 May 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tiled
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics editors games
 MASTER_SITES=	SF/tiled/tiled-qt/${PORTVERSION}
 DISTNAME=	tiled-qt-${PORTVERSION}
@@ -19,6 +15,8 @@ USE_QT4=	corelib gui opengl \
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
+MAN1=		tiled.1 tmxrasterizer.1 tmxviewer.1
+
 PORTDOCS=	*
 
 post-patch:
@@ -26,12 +24,16 @@ post-patch:
 		${WRKSRC}/translations/translations.pro
 	@${REINPLACE_CMD} -e 's|.*\(QT += opengl\)|\1|' \
 		${WRKSRC}/src/tiled/tiled.pro
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/docs/tiled.desktop
+	@${FIND} ${WRKSRC} -name "*.pro" -exec ${REINPLACE_CMD} -e 's|share/man|man|' {} \;
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} PREFIX="${PREFIX}" tiled.pro
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}/
