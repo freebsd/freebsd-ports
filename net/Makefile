@@ -493,6 +493,7 @@
     SUBDIR += ortp
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
+    SUBDIR += ostinato
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
