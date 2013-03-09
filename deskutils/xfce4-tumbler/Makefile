@@ -4,6 +4,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.27
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -169,9 +170,9 @@ PLIST_SUB+=	RAW="@comment "
 .if ! ${PORT_OPTIONS:MPIXBUF}
 USE_GNOME+=	gdkpixbuf2
 CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	PIXBUF=""
 .endif
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--enable-cover-thumbnailer
 PLIST_SUB+=	COVER=""
 .else
