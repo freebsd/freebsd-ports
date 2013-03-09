@@ -10,7 +10,7 @@ PORTVERSION=	0.13
 CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	A high performance webserver with scalability benchmark tools
 
 BUILD_DEPENDS=	libowfat>=0.29:${PORTSDIR}/devel/libowfat

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ohse.de/uwe/usendmail/
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	A replacement for qmail's sendmail drop-in
 
 USE_QMAIL=	yes

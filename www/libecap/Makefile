@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
-MAINTAINER=	tmseck@web.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	Library for module based network content analysis
 
 GNU_CONFIGURE=	yes

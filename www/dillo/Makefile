@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon GTK+
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

@@ -17,7 +17,7 @@ MASTER_SITES=	http://teki.jpn.ph/pc/software/
 PKGNAMESUFFIX=	-i18n
 DISTNAME=	${PORTNAME}-${DILLOVERSION}-i18n-misc-${I18NVERSION}
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser with support for i18n
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
