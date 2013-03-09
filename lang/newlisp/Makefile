@@ -3,6 +3,7 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	10.4.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
@@ -11,6 +12,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+
+CONFLICTS=	newlisp-devel-[0-9]*
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
