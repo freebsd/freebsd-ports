@@ -1,9 +1,8 @@
-# Created by:	ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	libqrencode
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://fukuchi.org/works/qrencode/
@@ -15,7 +14,7 @@ COMMENT=	A C library for encoding data in a QR Code symbol
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_PKGCONFIG=	yes
-USE_GNOME=	gnomehack
+USES+=		pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
