@@ -32,7 +32,7 @@ sbin/praudit
 @cwd /
 @exec mkdir -m 0770 var/audit/dist
 @exec mkdir -m 0700 var/audit/remote
-@exec chown %%USERS%%:%%GROUPS var/audit/dist
+@exec chown %%USERS%%:%%GROUPS%% var/audit/dist
 @exec chown %%USERS%%:wheel var/audit/remote
 @dirrmtry var/audit/dist
 @dirrmtry var/audit/remote
