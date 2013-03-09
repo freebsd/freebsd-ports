@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mlterm
-# Date created:		9 December 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mlterm
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.8
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -134,9 +130,10 @@ post-configure:
 
 post-install:
 	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE} install)
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/mlterm
-	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${PREFIX}/share/doc/ja/mlterm
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
