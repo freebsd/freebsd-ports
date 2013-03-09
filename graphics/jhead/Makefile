@@ -11,12 +11,14 @@ COMMENT=	EXIF JPEG header manipulation tool
 
 RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
 
+OPTIONS_DEFINE=	DOCS
+
 MAKE_JOBS_SAFE=	yes
 MAKEFILE=	makefile
 
-PORTDOCS=	usage.html
-PLIST_FILES=	bin/jhead
 MAN1=		jhead.1
+PLIST_FILES=	bin/jhead
+PORTDOCS=	usage.html
 
 .include <bsd.port.options.mk>
 
