@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	v8
-PORTVERSION=	3.15.10
+PORTVERSION=	3.17.9
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
@@ -13,23 +13,27 @@ COMMENT=	Google\'s open source JavaScript engine
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_GMAKE=	yes
-USE_PYTHON=	2.7+
 USE_XZ=		yes
+USE_PYTHON=	2.6+
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
-
 MAKE_ARGS=	library=shared
 
 .include <bsd.port.pre.mk>
 
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
 MAKE_ENV+=	LINK=clang++
+CFLAGS+=	-Wno-unused-private-field
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	any
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/build/common.gypi ${WRKSRC}/tools/gyp/v8.gyp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${PREFIX}/bin/d8
