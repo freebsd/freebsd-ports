@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Session-Cookie
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,10 @@ RUN_DEPENDS=	\
 	p5-Crypt-CBC>0:${PORTSDIR}/security/p5-Crypt-CBC \
 	p5-Crypt-Rijndael>0:${PORTSDIR}/security/p5-Crypt-Rijndael \
 	p5-Dancer>=1.13:${PORTSDIR}/www/p5-Dancer \
+	p5-HTTP-Date>0:${PORTSDIR}/www/p5-HTTP-Date \
 	p5-Session-Storage-Secure>0:${PORTSDIR}/www/p5-Session-Storage-Secure \
-	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32
+	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32 \
+	p5-Time-Duration-Parse>0:${PORTSDIR}/devel/p5-Time-Duration-Parse
 TEST_DEPENDS=	\
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings \
