@@ -1,0 +1,18 @@
+bin/msiecfexport
+bin/msiecfinfo
+include/libmsiecf.h
+include/libmsiecf/codepage.h
+include/libmsiecf/definitions.h
+include/libmsiecf/error.h
+include/libmsiecf/extern.h
+include/libmsiecf/features.h
+include/libmsiecf/types.h
+lib/libmsiecf.a
+lib/libmsiecf.la
+lib/libmsiecf.so
+lib/libmsiecf.so.1
+%%PYTHON_SITELIBDIR%%/pymsiecf.a
+%%PYTHON_SITELIBDIR%%/pymsiecf.la
+%%PYTHON_SITELIBDIR%%/pymsiecf.so
+libdata/pkgconfig/libmsiecf.pc
+@dirrm include/libmsiecf

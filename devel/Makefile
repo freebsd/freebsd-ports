@@ -1028,6 +1028,7 @@
     SUBDIR += libmonetra
     SUBDIR += libmowgli
     SUBDIR += libmpcbdm
+    SUBDIR += libmsiecf
     SUBDIR += libmsocket
     SUBDIR += libmtrie
     SUBDIR += libnaji
