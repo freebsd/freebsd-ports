@@ -1,9 +1,5 @@
-# New ports collection makefile for:   surf
-# Date created:                December 21, 2009
-# Whom:                        Christopher Knaust <jigboe@gmx.de>
-#
+# Created by: Christopher Knaust <jigboe@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	surf
 PORTVERSION=	0.4.1
@@ -11,8 +7,8 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
-MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	A simple Web browser based on WebKit/Gtk+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple Web browser based on WebKit/Gtk+
 
 LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu

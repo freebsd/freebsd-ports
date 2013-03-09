@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	davide.italiano@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archive manager that uses rsync to manage backups
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ltris
-# Date created:				19 October 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ltris
 PORTVERSION=	1.0.15
@@ -12,8 +8,8 @@ PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
-MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	Another Tetris clone but a good one with bunch of cool features
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tetris clone but a good one with bunch of cool features
 
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes

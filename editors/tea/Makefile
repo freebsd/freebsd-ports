@@ -6,7 +6,7 @@ DISTVERSION=	34.0.1
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
-MAINTAINER=	davide.italiano@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
