@@ -26,4 +26,8 @@ OPTIONS+=	ANIMATION "Animation support" On
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/animation.c
+
 .include <bsd.port.mk>

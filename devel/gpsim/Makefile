@@ -26,6 +26,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/os_dependent.cc
+	@${REINPLACE_CMD} -e 's|glibconfig.h|glib.h|g' \
+		${WRKSRC}/src/bitlog.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
