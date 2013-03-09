@@ -646,6 +646,3 @@ share/xbubble/themes/plain/xbubble_bg.png
 @dirrm share/xbubble/themes/fancy
 @dirrm share/xbubble/themes
 @dirrm share/xbubble
-@unexec rmdir share/locale/fr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir share/locale/fr 2> /dev/null || true
-@unexec rmdir share/locale 2> /dev/null || true
