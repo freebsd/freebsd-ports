@@ -184,36 +184,30 @@ check_dep()
 	persist=${2}
 	alltorm=${3}
 
-	while : ; do
-		log "${catport}: checking dependencies"
+	log "${catport}: checking dependencies"
 
-		err=0
+	err=0
 
-		res="`check_dep_core ${catport} "${alltorm}" 2>&1`" || err=1
+	res="`check_dep_core ${catport} "${alltorm}" 2>&1`" || err=1
 
-		if [ ${err} -eq 0 ] ; then
-			break
-		fi
+	if [ ${err} -eq 0 ] ; then
+		return 0
+	fi
 
-		echo "${res}" |${PAGER:-less}
+	echo "${res}" |${PAGER:-less}
 
-		if [ ${persist} -eq 0 ] ; then
-			break
-		fi
+	if [ ${persist} -eq 0 ] ; then
+		return 0
+	fi
 
-		echo "" >&2
-		echo "you can ignore the above issues and proceed anyway." >&2
-		echo "if this is the case, then either:" >&2
-		echo " * these are false positives" >&2
-		echo " * you want to break something" >&2
-		echo " * your ${PORTSDIR} is out of date, consider setting PORTSDIR in environment" >&2
-		echo "   to point to a newer instance of the ports tree" >&2
-		echo "or you can hit \`n' to repeat the check" >&2
-		answer=`ask "ignore the above issues"`
-		if [ "${answer}" = "y" ] ; then
-			break
-		fi
-	done
+	echo "" >&2
+	echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
+	answer=`ask "do you want to skip ${catport}?"`
+	if [ "${answer}" = "y" ] ; then
+		return 1
+	else
+		return 0
+	fi
 }
 
 # query GNATS via query-pr-summary.cgi, format and return the result
@@ -506,7 +500,9 @@ for catport in $* ; do
 	catport="${cat}/${port}"
 	pkgname=`pkgname ${catport}`
 
-	check_dep ${catport} 1 "${*}"
+	if ! check_dep ${catport} 1 "${*}" ; then
+		continue
+	fi
 
 	if ! check_PRs ${catport} ${port} ; then
 		continue
