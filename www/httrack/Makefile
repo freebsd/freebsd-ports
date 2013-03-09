@@ -1,9 +1,5 @@
-# New ports collection makefile for:	httrack
-# Date created:		Sun Jun 17 10:28:52 CEST 2001
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httrack
 PORTVERSION=	3.46.1
@@ -33,12 +29,9 @@ MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
-		${WRKSRC}/html/server/div/WebHTTrack.desktop \
-		${WRKSRC}/html/server/div/WebHTTrack-Websites.desktop
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| html||' ${WRKSRC}/Makefile.in
 .endif
