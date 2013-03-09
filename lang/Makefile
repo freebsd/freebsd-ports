@@ -179,6 +179,7 @@
     SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
+    SUBDIR += newlisp-devel
     SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += nml
