@@ -1,0 +1,5 @@
+%%SITE_PERL%%/lexical/underscore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/lexical/underscore/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/lexical/underscore
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/lexical
+@dirrmtry %%SITE_PERL%%/lexical
