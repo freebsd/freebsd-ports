@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
