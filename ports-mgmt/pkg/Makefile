@@ -22,6 +22,9 @@ MANCOMPRESSED=	yes
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 USE_STAGE=	yes
+# Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
+# so that pkg-static is used from the wrkdir
+USE_SUBMAKE=	yes
 
 MAN8=	pkg.8 \
 	pkg-add.8 \
