@@ -10,7 +10,7 @@ MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web browser based on WebKit/Gtk+
 
-LIB_DEPENDS=	webkitgtk-1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_GNOME=	gtk20
