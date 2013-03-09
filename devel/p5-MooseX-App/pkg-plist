@@ -8,6 +8,7 @@
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Base.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Command.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Simple.pm
+%%SITE_PERL%%/MooseX/App/ParsedArgv.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta/Class.pm
