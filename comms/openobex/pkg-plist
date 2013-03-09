@@ -1,8 +1,14 @@
 include/openobex/obex.h
 include/openobex/obex_const.h
-lib/libopenobex.so.2
-lib/libopenobex.a
-lib/libopenobex.la
+include/openobex/version.h
+lib/cmake/OpenObex-1.7/openobex-target-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenObex-1.7/openobex-config-version.cmake
+lib/cmake/OpenObex-1.7/openobex-target.cmake
+lib/cmake/OpenObex-1.7/openobex-config.cmake
 lib/libopenobex.so
+lib/libopenobex.so.1.7
+lib/libopenobex.so.2
 libdata/pkgconfig/openobex.pc
 @dirrm include/openobex
+@dirrm lib/cmake/OpenObex-1.7
+@dirrmtry lib/cmake
