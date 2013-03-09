@@ -2346,6 +2346,7 @@
     SUBDIR += p5-MooseX-Types-JSON
     SUBDIR += p5-MooseX-Types-LoadableClass
     SUBDIR += p5-MooseX-Types-Path-Class
+    SUBDIR += p5-MooseX-Types-Path-Tiny
     SUBDIR += p5-MooseX-Types-Perl
     SUBDIR += p5-MooseX-Types-PortNumber
     SUBDIR += p5-MooseX-Types-Set-Object
