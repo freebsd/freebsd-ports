@@ -1,38 +1,14 @@
---- CMakeLists.txt.orig	2012-03-03 00:03:38.000000000 +0100
-+++ CMakeLists.txt	2012-03-03 16:05:27.000000000 +0100
-@@ -63,6 +63,7 @@
- option(ENABLE_TETGEN_NEW "Enable experimental version of Tetgen" OFF)
+--- CMakeLists.txt.orig	2013-03-08 18:06:45.000000000 +0000
++++ CMakeLists.txt	2013-03-09 20:13:20.000000000 +0000
+@@ -70,6 +70,7 @@
+ option(ENABLE_VORO3D "Enable Voro3D" ${DEFAULT})
  option(ENABLE_WRAP_JAVA "Build Java wrappers" OFF)
- option(ENABLE_WRAP_PYTHON "Build Python wrappers" ${DEFAULT})
+ option(ENABLE_WRAP_PYTHON "Build Python wrappers" OFF)
 +option(INSTALL_DOCS "Install the docs (FreeBSD only)" ON)
  
  set(GMSH_MAJOR_VERSION 2)
- set(GMSH_MINOR_VERSION 5)
-@@ -671,13 +672,16 @@
-     endif(NOT HAVE_METIS)
-     find_library(TAUCS_LIB taucs PATH_SUFFIXES lib)
-     if(TAUCS_LIB)
--      find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
--      if(TAUCS_INC)
--        set_config_option(HAVE_TAUCS "Taucs")
--        add_definitions(-DTAUCS_CILK)
--        list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
--        list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
--      endif(TAUCS_INC)
-+      find_library(COMPAT_LIB compat)
-+      if (COMPAT_LIB)
-+        find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
-+        if(TAUCS_INC)
-+          set_config_option(HAVE_TAUCS "Taucs")
-+          add_definitions(-DTAUCS_CILK)
-+          list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
-+          list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
-+        endif(TAUCS_INC)
-+      endif(COMPAT_LIB)
-     endif(TAUCS_LIB)
-   endif(ENABLE_TAUCS)
- 
-@@ -819,7 +823,7 @@
+ set(GMSH_MINOR_VERSION 7)
+@@ -881,7 +885,7 @@
    list(LENGTH OCC_LIBS NUM_OCC_LIBS)
    if(NUM_OCC_LIBS EQUAL NUM_OCC_LIBS_REQUIRED)
      find_path(OCC_INC "BRep_Tool.hxx" PATHS ENV CASROOT PATH_SUFFIXES inc 
@@ -41,9 +17,27 @@
      if(OCC_INC)
        set_config_option(HAVE_OCC "OpenCascade")
        list(APPEND EXTERNAL_LIBRARIES ${OCC_LIBS})
-@@ -1117,11 +1121,13 @@
- install(TARGETS gmsh DESTINATION ${GMSH_BIN} OPTIONAL)
- install(TARGETS lib shared DESTINATION lib OPTIONAL)
+@@ -1166,7 +1170,7 @@
+   else(ENABLE_OS_SPECIFIC_INSTALL)
+     set(GMSH_BIN bin)
+     set(GMSH_DOC share/doc/gmsh)
+-    set(GMSH_MAN share/man/man1)
++    set(GMSH_MAN man/man1)
+   endif(ENABLE_OS_SPECIFIC_INSTALL)
+   if(CYGWIN)
+     unix2dos(GMSH_API)
+@@ -1185,7 +1189,7 @@
+ else(WIN32 OR CYGWIN)
+   set(GMSH_BIN bin)
+   set(GMSH_DOC share/doc/gmsh)
+-  set(GMSH_MAN share/man/man1)
++  set(GMSH_MAN man/man1)
+ endif(WIN32 OR CYGWIN)
+ 
+ # mark targets as optional so we can install them separately if needed
+@@ -1198,11 +1202,13 @@
+   install(TARGETS shared DESTINATION lib OPTIONAL)
+ endif(ENABLE_BUILD_SHARED)
  install(FILES ${GMSH_API} DESTINATION include/gmsh)
 -install(FILES ${WELCOME_FILE} DESTINATION ${GMSH_DOC} RENAME README.txt)
 -install(FILES ${LICENSE_FILE} DESTINATION ${GMSH_DOC})
