@@ -3,23 +3,20 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.9.809-20070726
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/2479/:player \
-		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \
-		ftp://fr2.rpmfind.net/linux/sourceforge/m/project/mp/mplayer-tru/mplayer-codecs/20040704/:codecs \
-		http://mirror.therek.net/freebsd/distfiles/mplayer/:codecs
-DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player,playeralt \
+MASTER_SITES=	http://client-software.real.com/free/unix/:player \
+		http://mirror.therek.net/freebsd/distfiles/mplayer/:codecs \
+		SF/mplayer-tru/mplayer-codecs/20040704:codecs \
+		ftp://fr2.rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/mplayer-codecs/20040704/:codecs \
+
+DISTFILES=	RealPlayer10GOLD.rpm:player \
 		mplayer-codecs-linux-real-20040626-1.i386.rpm:codecs
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-03-05
-BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
@@ -28,7 +25,6 @@ USE_LINUX_APPS=	gtk2 xorglibs
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 WANT_GNOME=	yes
-FETCH_ARGS=	-pRr
 
 RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
