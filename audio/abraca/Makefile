@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	abraca
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/Abraca/Abraca/
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
+COMMENT=	GTK2 client for the XMMS2 music player
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
