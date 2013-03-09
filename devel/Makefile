@@ -3455,7 +3455,7 @@
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flake8
-    SUBDIR += py-flakes
+    SUBDIR += py-pyflakes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
     SUBDIR += py-foolscap
