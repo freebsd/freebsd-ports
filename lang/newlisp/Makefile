@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
@@ -25,21 +27,33 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
-OPTIONS_DEFINE=	GMP MYSQL PGSQL SQLITE GUISERV
+OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV
+GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
 .include <bsd.port.options.mk>
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 CFLAGS+=	-DNEWLISP64
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else
 PLIST_SUB+=	GMP="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGSL}
+LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+MODULES+=	gsl
+PLIST_SUB+=	GSL=""
+.else
+PLIST_SUB+=	GSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -100,6 +114,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/libgmp.so,${LOCALBASE}/lib/libgmp.so," \
 		${WRKSRC}/modules/gmp.lsp
+	@${REINPLACE_CMD} -E -e \
+		"s,/usr/local/lib/libgsl.so,${LOCALBASE}/lib/libgsl.so," \
+		${WRKSRC}/modules/gsl.lsp
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/libpq.so.5.1,${LOCALBASE}/lib/libpq.so.5," \
 		${WRKSRC}/modules/postgres.lsp

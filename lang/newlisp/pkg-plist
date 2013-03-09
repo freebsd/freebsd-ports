@@ -71,6 +71,7 @@ bin/newlispdoc
 %%DATADIR%%/modules/ftp.lsp
 %%DATADIR%%/modules/getopts.lsp
 %%GMP%%%%DATADIR%%/modules/gmp.lsp
+%%GSL%%%%DATADIR%%/modules/gsl.lsp
 %%DATADIR%%/modules/infix.lsp
 %%DATADIR%%/modules/json.lsp
 %%DATADIR%%/modules/macro.lsp
