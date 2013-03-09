@@ -1,30 +1,26 @@
-# New ports collection makefile for:	libdasm
-# Date created:				28 March 2006
-# Whom:					Antoine Brodin <antoine.brodin@laposte.net>
-#
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdasm
 PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.klake.org/~jt/misc/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	A simple x86 disassembly library
+COMMENT=	Simple x86 disassembly library
 
 USE_LDCONFIG=	yes
 
 PORTDOCS=	HISTORY.txt README.txt
 
-.if !defined(WITHOUT_EXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC -DPIC
@@ -38,17 +34,17 @@ post-patch:
 		${WRKSRC}/examples/Makefile
 
 post-install:
-.if !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README.txt ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/das.c ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/simple.c ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@for f in ${PORTDOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$${f} ${DOCSDIR}; \
 	 done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
