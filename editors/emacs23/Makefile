@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--without-rsvg
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk
 .elif ${PORT_OPTIONS:MXAW3D}
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 .elif ${PORT_OPTIONS:MXAW}
 USE_XORG=	xaw

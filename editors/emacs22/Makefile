@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GNU emacs
-# Date created:		11 October 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
@@ -18,7 +14,7 @@ COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)
 .if defined(WITHOUT_GTK)
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \

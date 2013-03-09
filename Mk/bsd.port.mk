@@ -1976,10 +1976,7 @@ MAKE_ENV+=		DISPLAY="localhost:1001"
 .endif
 .endif
 
-XAWVER=				8
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-PLIST_SUB+=			XAWVER=${XAWVER}
 
 _GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
 _GL_glew_LIB_DEPENDS=		GLEW.1:${PORTSDIR}/graphics/glew

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   acfax
-# Date created:        20 February 2002
-# Whom:                Darren <igla@batterybackups.net>
-#
+# Created by: Darren <igla@batterybackups.net>
 # $FreeBSD$
-#
 
 PORTNAME=	acfax
 PORTVERSION=	0.981011
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Receive faxes using sound card and radio
 
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 PLIST_FILES=	bin/acfax
 WRKSRC=		${WRKDIR}/${PORTNAME}
