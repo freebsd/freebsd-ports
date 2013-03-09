@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ccrtp
-# Date created:		2006-04-22
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	ccrtp
 PORTVERSION=	2.0.5
@@ -24,6 +20,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
 INFO=	ccrtp
+
+BROKEN=		does not build
 
 post-patch:
 	@cd ${WRKSRC}/src && \
