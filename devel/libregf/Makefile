@@ -1,8 +1,8 @@
-# Created by: antoine@FreeBSD.org
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libregf
-DISTVERSION=	alpha-20121112
+DISTVERSION=	alpha-20130303
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
