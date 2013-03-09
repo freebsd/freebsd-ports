@@ -1,6 +1,6 @@
---- src/interface.c.orig	2008-04-24 15:30:43.000000000 +0200
-+++ src/interface.c	2008-04-24 15:31:31.000000000 +0200
-@@ -224,7 +224,7 @@
+--- ./src/interface.c.orig	2005-01-05 01:22:54.000000000 +0100
++++ ./src/interface.c	2013-03-09 11:13:27.000000000 +0100
+@@ -227,7 +227,7 @@
      gdouble width;
      GtkWidget *progress;
      BonoboUIComponent *popup;
@@ -8,4 +8,4 @@
 +    gchar info[256] = "No track";
  
      progress = xmms->track_control.progress;
-     if (!xmms_remote_is_running(xmms->session))
+     if (!player_is_running(xmms))

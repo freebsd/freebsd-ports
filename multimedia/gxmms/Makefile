@@ -2,17 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	gxmms
-PORTVERSION=	0.2.1
-PORTREVISION=	14
+PORTVERSION=	0.3.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Simple GNOME panel applet for controlling XMMS
-
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
@@ -21,5 +17,30 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_SINGLE=			FRONTEND
+OPTIONS_SINGLE_FRONTEND=	XMMS # BMP
+OPTIONS_DEFAULT=		XMMS
+
+XMMS_DESC=	Use xmms as frontend
+BMP_DESC=	Use BMP as frontend
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MXMMS}
+CONFIGURE_ARGS+=	--with-xmms
+BUILD_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+.else
+CONFIGURE_ARGS+=--disable-xmms
+.endif
+
+.if ${PORT_OPTIONS:MBMP}
+CONFIGURE_ARGS+=--with-bmp
+BUILD_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
+RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
+.else
+CONFIGURE_ARGS+=--disable-bmp
+.endif
 
 .include <bsd.port.mk>
