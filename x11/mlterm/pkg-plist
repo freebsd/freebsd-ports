@@ -6,11 +6,12 @@ bin/w3mmlconfig
 etc/mlterm/aafont
 etc/mlterm/color
 etc/mlterm/font
+etc/mlterm/font-fb
 etc/mlterm/key
 etc/mlterm/main
 etc/mlterm/menu
-etc/mlterm/termcap
 etc/mlterm/taafont
+etc/mlterm/termcap
 etc/mlterm/tfont
 etc/mlterm/vaafont
 etc/mlterm/vfont
@@ -89,7 +90,8 @@ libexec/mlterm/mlimgloader
 libexec/mlterm/mlterm-menu
 libexec/w3mmlconfig/mlconfig-data.pl
 libexec/w3mmlconfig/mlconfig.cgi
-%%PORTDOCS%%share/doc/ja/mlterm/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
 share/locale/ar/LC_MESSAGES/mlconfig.mo
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo
@@ -100,4 +102,4 @@ share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
 @dirrm lib/mlterm
 @dirrm libexec/mlterm
 @dirrm libexec/w3mmlconfig
-%%PORTDOCS%%@dirrm share/doc/ja/mlterm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
