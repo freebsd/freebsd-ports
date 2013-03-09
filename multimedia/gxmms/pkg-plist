@@ -7,7 +7,9 @@ share/gxmms/gxmms_next.png
 share/gxmms/gxmms_play_pause.png
 share/gxmms/gxmms_prev.png
 share/gxmms/gxmms_stop.png
+share/gxmms/gxmms_mini.png
 share/pixmaps/gxmms_mini.png
+share/pixmaps/gxmms.png
 share/locale/ca/LC_MESSAGES/gxmms.mo
 share/locale/es/LC_MESSAGES/gxmms.mo
 share/locale/fr/LC_MESSAGES/gxmms.mo
