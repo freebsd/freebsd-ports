@@ -17,6 +17,8 @@ COMMENT=	User utilities for zisofs
 
 PORTDOCS=	CHANGES COPYING INSTALL MRULES README
 
+BROKEN=		checksum mismatch
+
 USE_AUTOTOOLS=	autoconf
 USE_BZIP2=	yes
 USE_GMAKE=	yes
