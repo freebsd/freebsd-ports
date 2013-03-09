@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -38,6 +38,7 @@ CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES \
 		-DCMAKE_VERBOSE_MAKEFILE:BOOL=YES
 
 .if !defined(WITHOUT_STATIC_LIB)
+CMAKE_ARGS+=	-DENABLE_BUILD_LIB=ON
 ALL_TARGET+=	lib
 PLIST_SUB+=	STATIC_LIB=""
 .else
@@ -45,6 +46,7 @@ PLIST_SUB+=	STATIC_LIB="@comment "
 .endif
 
 .if !defined(WITHOUT_SHARED_LIB)
+CMAKE_ARGS+=	-DENABLE_BUILD_SHARED=ON
 ALL_TARGET+=	shared
 PLIST_SUB+=	SHARED_LIB=""
 USE_LDCONFIG=	yes
@@ -196,10 +198,6 @@ post-patch:
 		-e s+share/man/man1+man/man1+ ${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if !defined(WITHOUT_SHARED_LIB)
-	${MV} -f ${PREFIX}/lib/libGmsh.so ${PREFIX}/lib/libGmsh.so.0
-	${LN} -s ${PREFIX}/lib/libGmsh.so.0 ${PREFIX}/lib/libGmsh.so
-.endif
 .if !defined(WITHOUT_METIS)
 	${MKDIR} ${DOCSDIR}/metis
 	${INSTALL_DATA} ${WRKDIR}/manual.pdf ${DOCSDIR}/metis
