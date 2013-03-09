@@ -16,7 +16,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIRS}/accessibility/at-spi2-atk
+RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIR}/accessibility/at-spi2-atk
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
