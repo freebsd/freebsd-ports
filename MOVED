@@ -4135,5 +4135,13 @@ x11/powershell||2013-03-06|Has expired: Broken for more then 6 month
 devel/py-setuptools|devel/py-distribute|2013-03-06|Replaced with distribute
 devel/ZendOptimizer|www/pecl-zendoptimizerplus|2013-03-07|Replaced with supported open-source release 
 net-im/jreen||2013-03-07|Removed
-databases/ruby-dbdbd||2013-03-08|Dead project, no knonw users
+databases/ruby-dbdbd||2013-03-08|Dead project, no known users
+databases/ruby-dbdbd||2013-03-08|Dead project, no known users
 japanese/scim-mozc||2013-03-09|Removed
+net-p2p/transmission25|net-p2p/transmission|2013-03-09|gtk version is now fine
+net-p2p/transmission25-cli|net-p2p/transmission-cli|2013-03-09|gtk version is now fine
+net-p2p/transmission25-daemon|net-p2p/transmission-daemon|2013-03-09|gtk version is now fine
+net-p2p/transmission25-gtk2|net-p2p/transmission-gtk2|2013-03-09|gtk version is now fine
+net-p2p/transmission25-qt4|net-p2p/transmission-qt4|2013-03-09|gtk version is now fine
+www/transmission25-web|www/transmission-web|2013-03-09|gtk version is now fine
+net-p2p/transmission-gtk2|net-p2p/transmission-gtk|2013-03-09|Now uses GTK 3

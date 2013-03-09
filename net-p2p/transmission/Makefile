@@ -8,15 +8,13 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	The "meta-port" for Transmission BitTorrent client
+COMMENT=	Meta-port for Transmission BitTorrent client
 
 RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
 		transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon \
-		transmission-gtk:${PORTSDIR}/net-p2p/transmission-gtk2
+		transmission-gtk:${PORTSDIR}/net-p2p/transmission-gtk
 
-CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.6*
-
-BROKEN=		Depends on GTK 3.4.0 frontend; use net-p2p/transmission25 for now
+CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.[56]*
 
 NO_BUILD=	yes
 
