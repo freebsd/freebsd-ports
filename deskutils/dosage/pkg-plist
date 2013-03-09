@@ -54,6 +54,9 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/clonemanga.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/clonemanga.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/clonemanga.pyo
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.py
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.pyc
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.pyo
@@ -138,9 +141,6 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/u.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/u.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/u.pyo
-%%PYTHON_SITELIBDIR%%/dosagelib/plugins/universal.py
-%%PYTHON_SITELIBDIR%%/dosagelib/plugins/universal.pyc
-%%PYTHON_SITELIBDIR%%/dosagelib/plugins/universal.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/v.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/v.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/v.pyo
