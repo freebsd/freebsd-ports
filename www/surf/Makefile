@@ -10,10 +10,11 @@ MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web browser based on WebKit/Gtk+
 
-LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkitgtk-1:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
-USE_GNOME=	gtk20 pkgconfig
+USE_GNOME=	gtk20
+USE_PKGCONFIG=	yes
 
 MAN1=		surf.1
 PLIST_FILES=	bin/surf
@@ -23,6 +24,8 @@ CONFLICTS=	surf-1* # math/surf
 
 # Name conflicts with the math/surf port
 NO_LATEST_LINK=	yes
+
+.include <bsd.port.options.mk>
 
 pre-everything::
 	@${ECHO_MSG} "You can build surf with your own config.h using the SURF_CONF knob:"
@@ -35,7 +38,7 @@ post-extract:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
