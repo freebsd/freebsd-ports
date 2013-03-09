@@ -15,7 +15,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # is defined in the ports' makefile. Define PYTHON_VERSION to override the
 # defaults that USE_PYTHON would give you. If your port requires only some
 # set of Python versions, you can define USE_PYTHON as [min]-[max] or
-# min+. (eg. 2.1-2.3, 2.0+ or -2.2)
+# min+. (eg. 3.1-3.2, 2.7+ or -3.2)
 #
 # The variables:
 #
@@ -548,7 +548,7 @@ ZOPEPRODUCTDIR?=		Products
 .endif
 
 # Python 3rd-party modules
-PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
+PYGAME=			${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYNUMPY=		${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
