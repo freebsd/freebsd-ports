@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.20.2
+PORTVERSION=	1.20.3
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
