@@ -1945,11 +1945,7 @@ LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake
-X_LIBRARIES_PORT=	${PORTSDIR}/x11/xorg-libraries
-X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-apps
-X_SERVER_PORT=		${PORTSDIR}/x11-servers/xorg-server
 X_FONTSERVER_PORT=	${PORTSDIR}/x11-fonts/xfs
-X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-printserver
 X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-vfbserver
 X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-nestserver
 X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/encodings
