@@ -3,8 +3,7 @@
 #
 
 PORTNAME=	parole
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -23,15 +22,15 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GSTREAMER=	core faad flac wavpack
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-power-manager-plugin \
-		--enable-maintainer-mode \
-		--enable-libnotify \
+CONFIGURE_ARGS=	--enable-notify-plugin \
+		--enable-tray-plugin \
 		--enable-taglib \
+		--with-gstreamer=0.10 \
 		--without-html-dir
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
-USE_XFCE=	configenv libmenu libutil xfdev
+USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
@@ -61,13 +60,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-# Downgrade Glib version
-	@${REINPLACE_CMD} -e 's|2\.32|2\.28|g' ${WRKSRC}/configure
 # Fix .rc files path
 	@${REINPLACE_CMD} -e 's|xfce4/src/misc|${PORTNAME}|g' \
-		${WRKSRC}/src/common/parole-rc-utils.h \
-		${WRKSRC}/src/plugins/notify/notify-provider.c \
-		${WRKSRC}/src/plugins/tray/tray-provider.c
+		${WRKSRC}/src/common/parole-rc-utils.h
 
 post-install:
 	@-update-desktop-database
