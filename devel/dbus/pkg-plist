@@ -19,6 +19,7 @@ include/dbus-%%VERSION%%/dbus/dbus-protocol.h
 include/dbus-%%VERSION%%/dbus/dbus-server.h
 include/dbus-%%VERSION%%/dbus/dbus-shared.h
 include/dbus-%%VERSION%%/dbus/dbus-signature.h
+include/dbus-%%VERSION%%/dbus/dbus-syntax.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h
