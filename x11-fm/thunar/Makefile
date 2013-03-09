@@ -4,7 +4,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
@@ -34,11 +34,11 @@ OPTIONS_DEFAULT=	DBUS GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_WALL STARTUP
 # Override NOTIFY_DESC
 NOTIFY_DESC=	Display notifications
 STARTUP_DESC=	Startup notification
-PLUG_APR_DESC=	Thunar Advanced Properties plugin
-PLUG_SBR_DESC=	Thunar Simple Builtin Renamers plugin
-PLUG_TPA_DESC=		Thunar Trash Panel Applet plugin
-PLUG_UCA_DESC=		Thunar User Customizable Actions plugin
-PLUG_WALL_DESC=		Thunar Wallpaper plugin
+PLUG_APR_DESC=	Advanced Properties plugin
+PLUG_SBR_DESC=	Simple Builtin Renamers plugin
+PLUG_TPA_DESC=	Trash Panel Applet plugin
+PLUG_UCA_DESC=	User Customizable Actions plugin
+PLUG_WALL_DESC=	Wallpaper plugin
 
 CONFIGURE_ARGS+=	--disable-gtk-doc-html \
 		--enable-gio-unix \
@@ -134,13 +134,6 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=gvfs
 .endif
-
-post-patch:
-# Downgrade GLib to 2.28
-	@${REINPLACE_CMD} -e 's|2.30.|2.28.|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name '*.c' -type f \
-		| ${XARGS} ${REINPLACE_CMD} -e \
-		's|g_format_size (|g_format_size_for_display (|g'
 
 post-install:
 	@-update-desktop-database
