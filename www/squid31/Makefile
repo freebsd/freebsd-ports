@@ -79,7 +79,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
 PATCHFILES=
 
-MAINTAINER=	tmseck@web.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2

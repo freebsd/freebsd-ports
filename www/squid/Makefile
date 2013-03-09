@@ -111,7 +111,7 @@ PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
 PATCH_DIST_STRIP=	-p1
 PATCHFILES=	# empty
 
-MAINTAINER=	tmseck@web.de
+MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
 SQUID_STABLE_VER=	9
