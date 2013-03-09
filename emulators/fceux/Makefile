@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fceu
-# Date Created:		10 Mov 2002
-# Whom:			HIYAMA Takeshi <gibbon@cocoa.freemail.ne.jp>
-#
+# Created by: HIYAMA Takeshi <gibbon@cocoa.freemail.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	fceux
 PORTVERSION=	2.1.5
@@ -11,8 +7,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra/Source%20Code/2.1.5%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
 USE_SCONS=	yes

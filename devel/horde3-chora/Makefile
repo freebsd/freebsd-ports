@@ -1,9 +1,5 @@
-# Ports collection makefile for:  Chora
-# Date created:			  Mon Nov 26, 2001
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	chora
 PORTVERSION=	2.1.1
@@ -11,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	davide.italiano@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS web-viewer
 
 #-----------------------------------------------------------------------
