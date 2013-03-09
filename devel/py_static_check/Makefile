@@ -16,7 +16,7 @@ COMMENT=	Statically check your python code
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flakes>=0.5:${PORTSDIR}/devel/py-flakes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:${PORTSDIR}/devel/py-pyflakes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
