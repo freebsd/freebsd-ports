@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.Org ati RadeonHD display driver development version
 
+DEPRECATED=	Unsupported devel version
+EXPIRATION_DATE=2013-04-09
+
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros \
 		${LOCALBASE}/libdata/pkgconfig/gl.pc:${PORTSDIR}/graphics/libGL
 LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess
