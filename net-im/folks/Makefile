@@ -15,6 +15,7 @@ BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
+IGNORE=		Doesn't build currently, missing components
 CONFLICTS=	folks-0.4.[0-9]*
 
 USE_XZ=		yes
