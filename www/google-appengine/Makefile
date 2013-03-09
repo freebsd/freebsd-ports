@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.5
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -37,20 +37,23 @@ FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
 LN_OPTS=	-s
 
 XARGS_ARGS=	-0
-REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
+REINPLACE_ARGS=	-e 's,/usr/bin/env python,&${PYTHON_VER},' -i.bak
 
 GAEDATADIR=	google lib new_project_template tools
-GAESCRIPTS=	api_server appcfg bulkload_client bulkloader \
-		dev_appserver download_appstats gen_protorpc \
-		google_sql remote_api_shell
+GAESCRIPTS=	_python_runtime.py api_server.py appcfg.py bulkload_client.py \
+		bulkloader.py dev_appserver.py devappserver2.py \
+		download_appstats.py endpointscfg.py gen_protorpc.py \
+		google_sql.py remote_api_shell.py
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	@${FIND} ${FIND_FILES_BAK} -delete
 
 do-build:
-	${PYTHON_CMD} -m compileall ${WRKSRC} || true
-	${PYTHON_CMD} -OO -m compileall ${WRKSRC} || true
+.for D in ${GAEDATADIR}
+	${PYTHON_CMD} -m compileall ${WRKSRC}/${D} || true
+	${PYTHON_CMD} -OO -m compileall ${WRKSRC}/${D} || true
+.endfor
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -62,10 +65,8 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${EXAMPLESDIR}
 .endif
 .for S in ${GAESCRIPTS}
-.  for EXT in py pyc pyo
-	${INSTALL_SCRIPT} ${WRKSRC}/${S}.${EXT} ${DATADIR}
-	${LN} ${LN_OPTS} ${DATADIR}/${S}.${EXT} ${PREFIX}/bin/${S}.${EXT}
-.  endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/${S} ${DATADIR}
+	${LN} ${LN_OPTS} ${DATADIR}/${S} ${PREFIX}/bin/${S}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${DATADIR}
 
