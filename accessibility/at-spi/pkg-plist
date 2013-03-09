@@ -33,9 +33,6 @@ include/at-spi-1.0/libspi/text.h
 include/at-spi-1.0/libspi/value.h
 include/at-spi-1.0/login-helper/Accessibility_LoginHelper.h
 include/at-spi-1.0/login-helper/login-helper.h
-lib/gtk-2.0/modules/libatk-bridge.a
-lib/gtk-2.0/modules/libatk-bridge.la
-lib/gtk-2.0/modules/libatk-bridge.so
 lib/libcspi.a
 lib/libcspi.la
 lib/libcspi.so
