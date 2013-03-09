@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.18
+PORTVERSION=	1.4.19
 CATEGORIES=	net lang games
-MASTER_SITES=	http://cloud.github.com/downloads/dworkin/${PORTNAME}/
+MASTER_SITES=	https://github.com/dworkin/dgd/archive/
+DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin\'s Game Driver
@@ -24,11 +25,13 @@ OPTIONS_DEFAULT=CPLUSPLUS_COMMENTS
 USE_GMAKE=	yes
 
 DIST_SUBDIR=	dgd
-WRKSRC=		${WRKDIR}/dgd/src
-PATCH_WRKSRC=	${WRKDIR}/dgd
+BASE_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${BASE_WRKSRC}/src
+PATCH_WRKSRC=	${BASE_WRKSRC}
 ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV+=	EXTRA_DEFINES="$(EXTRA_DEFINES)"
+FETCH_ARGS=	-Fpr
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -54,13 +57,13 @@ EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
 .endif
 
 post-patch:
-	@cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
+	@cd ${PATCH_WRKSRC} && ${FIND} . -name '*.orig' -delete
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/driver ${PREFIX}/sbin/dgd
-	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/precomp ${PREFIX}/bin/precomp
+	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/driver ${PREFIX}/sbin/dgd
+	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/precomp ${PREFIX}/bin/precomp
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/dgd/mud.dgd \
+	${INSTALL_DATA} ${BASE_WRKSRC}/mud.dgd \
 		${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
 	@# Install an RC script for DGD
 	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
@@ -69,9 +72,9 @@ do-install:
 	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd.sh.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/dgd/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
-	cd ${WRKDIR}/dgd/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	${INSTALL_DATA} ${BASE_WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${BASE_WRKSRC}/README ${DOCSDIR}
+	cd ${BASE_WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
