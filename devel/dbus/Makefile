@@ -1,21 +1,18 @@
-# New ports collection makefile for:   D-BUS
-# Date Created:			22 June 2004
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/dbus/Makefile,v 1.51 2011/08/30 08:13:48 kwm Exp $
-#
+#   $MCom: ports/devel/dbus/Makefile,v 1.58 2013/02/15 15:06:49 kwm Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	1.4.14
-PORTREVISION=	4
+PORTVERSION=	1.6.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A message bus system for inter-application communication
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
+PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	gnomehack libxml2 ltverhack
 USE_GMAKE=	yes
@@ -42,7 +39,12 @@ PLIST_SUB=	VERSION="1.0"
 MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 		dbus-monitor.1 dbus-send.1 dbus-uuidgen.1
 
-.if !defined(WITHOUT_X11)
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	ice sm x11
 .else
 CONFIGURE_ARGS+=--without-x

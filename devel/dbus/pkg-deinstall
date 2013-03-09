@@ -9,7 +9,7 @@ DEINSTALL)
 	echo "To really remove the dbus port, please remove the following"
 	echo "directories and the content manualy:"
 	echo ""
-	echo "/var/run/dbus /var/db/dbus"
+	echo "/var/run/dbus and /var/db/dbus"
 	echo ""
 	;;
 esac
