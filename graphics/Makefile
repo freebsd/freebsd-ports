@@ -996,7 +996,6 @@
     SUBDIR += unpaper
     SUBDIR += urt
     SUBDIR += vcg
-    SUBDIR += vid
     SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vips
