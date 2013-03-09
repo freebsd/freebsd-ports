@@ -2048,7 +2048,6 @@
     SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
-    SUBDIR += wyvern
     SUBDIR += xapian-omega
     SUBDIR += xapian-omega10
     SUBDIR += xaraya

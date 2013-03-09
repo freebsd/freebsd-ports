@@ -150,7 +150,6 @@
     SUBDIR += findmaildirs
     SUBDIR += firemime
     SUBDIR += firepay
-    SUBDIR += firetray
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gensig

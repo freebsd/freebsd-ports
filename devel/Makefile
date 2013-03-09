@@ -4056,7 +4056,6 @@
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-ncurses
-    SUBDIR += rubygem-ncursesw
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-notify
@@ -4339,7 +4338,6 @@
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
     SUBDIR += xfce4-dev-tools
-    SUBDIR += xlslib
     SUBDIR += xmake
     SUBDIR += xmltooling
     SUBDIR += xorg-macros

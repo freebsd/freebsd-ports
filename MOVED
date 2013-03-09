@@ -4144,3 +4144,10 @@ net-p2p/transmission25-gtk2|net-p2p/transmission-gtk2|2013-03-09|gtk version is 
 net-p2p/transmission25-qt4|net-p2p/transmission-qt4|2013-03-09|gtk version is now fine
 www/transmission25-web|www/transmission-web|2013-03-09|gtk version is now fine
 net-p2p/transmission-gtk2|net-p2p/transmission-gtk|2013-03-09|Now uses GTK 3
+ftp/proma||2013-03-09|Has expired: Broken for more than 6 month
+vietnamese/vnelvis||2013-03-09|Has expired: Broken for more than 6 month
+devel/rubygem-ncursesw||2013-03-09|Has expired: Broken for more than 6 month
+www/wyvern||2013-03-09|Has expired: Broken for more than 6 month
+devel/xlslib||2013-03-09|Has expired: Broken for more than 6 month
+mail/firetray||2013-03-09|Has expired: Broken for more than 6 month
+vietnamese/vnterm||2013-03-09|Has expired: Broken for more than 6 month

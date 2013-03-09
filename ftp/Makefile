@@ -80,7 +80,6 @@
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
     SUBDIR += profxp
-    SUBDIR += proma
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += pureadmin
