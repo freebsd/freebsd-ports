@@ -82,7 +82,7 @@ include/X11/neXtaw/laygram.h
 lib/libneXtaw.a
 lib/libneXtaw.la
 lib/libneXtaw.so
-lib/libneXtaw.so.%%XAWVER%%
+lib/libneXtaw.so.8
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README

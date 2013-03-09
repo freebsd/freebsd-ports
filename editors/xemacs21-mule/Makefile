@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XEmacs with Mule
-# Date created:		8 Dec 1999
-# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
@@ -139,7 +135,7 @@ WITH_DIALOGS?=	--with-dialogs=athena
 WITH_WIDGETS?=	--with-widgets=athena
 
 .if defined(WITH_XAW3D)
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=--with-athena=3d
 .else
 CONFIGURE_ARGS+=--with-athena=xaw

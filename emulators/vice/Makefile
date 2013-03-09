@@ -18,7 +18,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif:${PORTSDIR}/graphics/giflib \
 		mp3lame:${PORTSDIR}/audio/lame
 .if defined(VICE_WITH_XAW3D)
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"

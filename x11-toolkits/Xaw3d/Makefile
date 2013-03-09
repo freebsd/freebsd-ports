@@ -20,6 +20,7 @@ USE_XORG=	x11 xext xmu xt sm ice xpm
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
+XAWVER=		8
 SUB_LIST=	XAWVER="${XAWVER}"
 
 .include <bsd.port.pre.mk>

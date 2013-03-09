@@ -1,6 +1,4 @@
-# New ports collection makefile for:	xmine
-# Date created:		25 December 1994
-# Whom:			joerg
+# Created by: joerg
 #
 # $FreeBSD$
 #
@@ -17,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Xaw
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The `Athena' port of the xminesweeper game
 
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice

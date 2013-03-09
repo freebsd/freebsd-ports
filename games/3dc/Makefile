@@ -1,9 +1,5 @@
-# New ports collection makefile for:	3Dc
-# Date created:				2 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	3dc
 PORTVERSION=	0.8.1
@@ -18,7 +14,7 @@ COMMENT=	3-Dimensional Chess for X Window System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_PERL5_BUILD=yes
 USE_XORG=	x11 xaw xext xmu xpm xt

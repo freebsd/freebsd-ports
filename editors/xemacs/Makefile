@@ -1,9 +1,5 @@
-# New ports collection makefile for:	X-Emacs
-# Date created:		25 Oct 2001
-# Whom:			Gary Jennejohn (gj@FreeBSD.org)
-#
+# Created by: Gary Jennejohn (gj@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
@@ -108,7 +104,7 @@ WITH_SCROLLBARS=	--with-scrollbars=athena
 WITH_DIALOGS=	--with-dialogs=athena
 WITH_WIDGETS=	--with-widgets=athena
 .if defined(WITH_XAW3D)
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 CONFIGURE_ARGS+=	--with-athena=3d
 .endif
