@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qooxdoo
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
 PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
@@ -19,21 +19,19 @@ FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
 
 QXDDIRS=	component framework tool
 
-REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
+REINPLACE_ARGS=	-e 's,/usr/bin/env python,&${PYTHON_VER},' -i.bak
 
 USE_PYTHON=	-2.7
 USE_ZIP=	yes
 
 SHAREMODE=	644
 
-XARGS_ARGS=	-0
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
+	${FIND} ${FIND_FILES} | ${XARGS} -0 ${REINPLACE_CMD}
 	${FIND} ${FIND_FILES_BAK} -delete
 
 do-build:
@@ -53,5 +51,6 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/version.txt ${DATADIR}
 	${CHMOD} ${BINMODE} ${DATADIR}/tool/bin/*.py
+	${INSTALL_SCRIPT} ${WRKSRC}/create-application.py ${DATADIR}/create-application.py
 
 .include <bsd.port.mk>
