@@ -19,6 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
+CONFLICTS_INSTALL=	p5-Scalar-Does-0.[1-9]*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::Detect.3
