@@ -17,7 +17,6 @@ BUILD_DEPENDS=	at-spi2-core>=2.1.4:${PORTSDIR}/accessibility/at-spi2-core
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	at-spi2-core>=2.1.4:${PORTSDIR}/accessibility/at-spi2-core
 
-CONFLICTS=	at-spi-1.[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USE_XZ=		yes
