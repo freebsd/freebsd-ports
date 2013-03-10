@@ -402,6 +402,7 @@
 %%WWWDIR%%/reporting/rep202.php
 %%WWWDIR%%/reporting/rep203.php
 %%WWWDIR%%/reporting/rep204.php
+%%WWWDIR%%/reporting/rep205.php
 %%WWWDIR%%/reporting/rep209.php
 %%WWWDIR%%/reporting/rep210.php
 %%WWWDIR%%/reporting/rep301.php
@@ -410,6 +411,7 @@
 %%WWWDIR%%/reporting/rep304.php
 %%WWWDIR%%/reporting/rep305.php
 %%WWWDIR%%/reporting/rep306.php
+%%WWWDIR%%/reporting/rep307.php
 %%WWWDIR%%/reporting/rep401.php
 %%WWWDIR%%/reporting/rep409.php
 %%WWWDIR%%/reporting/rep501.php
@@ -592,6 +594,7 @@
 %%WWWDIR%%/themes/default/images/download.gif
 %%WWWDIR%%/themes/default/images/edit.gif
 %%WWWDIR%%/themes/default/images/escape.png
+%%WWWDIR%%/themes/default/images/favicon.ico
 %%WWWDIR%%/themes/default/images/gl.png
 %%WWWDIR%%/themes/default/images/help.gif
 %%WWWDIR%%/themes/default/images/invoice.gif
@@ -742,3 +745,4 @@
 @dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%/access
 @dirrm %%WWWDIR%%
+
