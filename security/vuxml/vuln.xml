@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="549787c1-8916-11e2-8549-68b599b52a02">
+    <topic>libpurple -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libpruple</name>
+	<range><lt>2.10.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pidgin reports:</p>
+	<blockquote cite="https://developer.pidgin.im/wiki/ChangeLog">
+	  <p>libpurple</p>
+	  <p> -- Fix a crash when receiving UPnP responses with abnormally long values. (CVE-2013-0274)</p>
+	  <p>MXit</p>
+	  <p> -- Fix two bugs where a remote MXit user could possibly specify a local file path to be written to. (CVE-2013-0271)</p>
+	  <p> -- Fix a bug where the MXit server or a man-in-the-middle could potentially send specially crafted data that could overflow a buffer and lead to a crash or remote code execution. (CVE-2013-0272)</p>
+	  <p>Sametime</p>
+	  <p> -- Fix a crash in Sametime when a malicious server sends us an abnormally long user ID. (CVE-2013-0273)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0274</cvename>
+      <cvename>CVE-2013-0271</cvename>
+      <cvename>CVE-2013-0272</cvename>
+      <cvename>CVE-2013-0273</cvename>
+      <url>https://developer.pidgin.im/wiki/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2013-02-13</discovery>
+      <entry>2013-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="630c8c08-880f-11e2-807f-d43d7e0c7c02">
     <topic>mozilla -- Use-after-free in HTML Editor</topic>
     <affects>
