@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-GopherHandler
-# Date created:				2004-03-31
-# Whom:					Toni Viemerö <toni.viemero@iki.fi>
-#
+# Created by: Toni Viemerö <toni.viemero@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-GopherHandler
 PORTVERSION=	0.1
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Gopher protocol implementation for Apache2
+
+DEPRECATED=	Depends on p5-Net-Gopher which is deprecated and expired
+EXPIRATION_DATE=	2013-04-10
 
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Gopher-Server>=0:${PORTSDIR}/net/p5-Gopher-Server
