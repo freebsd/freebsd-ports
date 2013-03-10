@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	domination
-PORTVERSION=	1.1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.1.3
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
 		http://domination.sourceforge.net/maps/
@@ -14,6 +13,8 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Board game that is a bit like the well known game Risk
 
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	DOCS
 
 FETCH_ARGS?=	-Fpr
 USE_ZIP=	yes
@@ -38,13 +39,6 @@ MAPS=		solar bigeurope google europass europe artic sudamerica \
 		sylsia troisdorf wolken castle naerr cow westfalenhalle \
 		union rub gymnasium simpsons_world simpsons germany2
 
-PLIST_FILES=	bin/${PORTNAME}-FlashGUI \
-		bin/${PORTNAME}-Increment1GUI \
-		bin/${PORTNAME}-SimpleGUI \
-		bin/${PORTNAME}-SwingGUI \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	ChangeLog.txt ReadMe.txt commands.txt todo.txt
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -53,10 +47,17 @@ SUB_FILES=	${PORTNAME}-FlashGUI \
 		${PORTNAME}-SimpleGUI \
 		${PORTNAME}-SwingGUI
 
-DESKTOP_ENTRIES="Domination" "${COMMENT}" "${PORTNAME}" \
+DESKTOP_ENTRIES="Domination" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" "false"
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 
 post-extract-script:
 .for f in ${MAPS:S/$/.zip/}
@@ -66,7 +67,7 @@ post-extract-script:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${PREFIX}/bin
 
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help lib maps resources saves *.jar *.cmd *.htm *.txt *.ini" ${DATADIR})
 	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh ${DATADIR})
 	@(cd ${DATADIR} && ${CHMOD} 774 saves)
