@@ -250,7 +250,6 @@
     SUBDIR += semi
     SUBDIR += semi-emacs21
     SUBDIR += semi-emacs22
-    SUBDIR += semi-xemacs21-mule
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += softmaker-office
