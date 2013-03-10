@@ -1,6 +1,33 @@
---- configure.orig	2012-06-10 15:26:06.000000000 +0200
-+++ configure	2012-07-19 18:59:05.000000000 +0200
-@@ -18840,7 +18840,7 @@
+--- configure.orig	2013-03-03 03:25:56.000000000 +0100
++++ configure	2013-03-10 16:52:56.000000000 +0100
+@@ -18010,6 +18010,26 @@
+   HAVE_BOOST_SPIRIT_FALSE=
+ fi
+ 
++else
++  for ac_header in boost/spirit.hpp
++do :
++  ac_fn_cxx_check_header_mongrel "$LINENO" "boost/spirit.hpp" "ac_cv_header_boost_spirit_hpp" "$ac_includes_default"
++if test "x$ac_cv_header_boost_spirit_hpp" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_BOOST_SPIRIT_HPP 1
++_ACEOF
++  if true; then
++  HAVE_BOOST_SPIRIT_TRUE=
++  HAVE_BOOST_SPIRIT_FALSE='#'
++else
++  HAVE_BOOST_SPIRIT_TRUE='#'
++  HAVE_BOOST_SPIRIT_FALSE=
++fi
++
++fi
++
++done
++
+ 
+ fi
+ 
+@@ -18169,7 +18189,7 @@
    HAVE_TEXTCAT_CAT_FALSE=
  fi
  
