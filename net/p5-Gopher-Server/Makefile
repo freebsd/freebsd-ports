@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gopher-Server
-# Date created:				2004-03-31
-# Whom:					Toni Viemer?<toni.viemero@iki.fi>
-#
+# Created by: Toni Viemer <toni.viemero@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	Gopher-Server
 PORTVERSION=	0.1.1
@@ -14,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Backend for Gopher Servers
+
+DEPRECATED=	Depends on p5-Net-Gopher which is deprecated and expired
+EXPIRATION_DATE=	2013-04-10
 
 RUN_DEPENDS=	p5-Net-Gopher>=0:${PORTSDIR}/net/p5-Net-Gopher \
 				p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
