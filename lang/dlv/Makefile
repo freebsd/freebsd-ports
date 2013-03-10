@@ -1,18 +1,15 @@
-# New ports collection Makefile for:	dlv
-# Date created:				2007-06-01
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	dlv
-PORTVERSION=	20111221
+PORTVERSION=	20121217
 CATEGORIES=	lang
-MASTER_SITES=	http://www.dlvsystem.com/dlvsystem/files/
+MASTER_SITES=	http://www.dlvsystem.com/files/
 DISTNAME=	dlv.i386-linux-elf-static.bin
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Disjunctive Datalog System
+COMMENT=	Disjunctive Datalog System
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/dlv
