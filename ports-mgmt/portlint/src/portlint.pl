@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.266 2012/12/29 23:23:32 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.270 2013/03/10 06:08:07 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -161,7 +161,6 @@ foreach my $i (@osdep) {
 
 # The PORTSDIR environment variable overrides our defaults.
 $portsdir = $ENV{PORTSDIR} if ( defined $ENV{'PORTSDIR'} );
-$ENV{'PL_SVN_IGNORE'} //= '';
 my $mfile_moved = "${portsdir}/MOVED";
 my $mfile_uids = "${portsdir}/UIDs";
 my $mfile_gids = "${portsdir}/GIDs";
@@ -467,7 +466,7 @@ sub checkdistinfo {
 			$n++ if exists($records{$path}{$alg});
 		}
 		if ($n == 0) {
-			&perror("FATAL", $file -1, "no checksum record for $path.");
+			&perror("FATAL", $file, -1, "no checksum record for $path.");
 		}
 		if ($n < scalar(keys %algorithms)) {
 			&perror("WARN", $file, -1, "no checksum records for all ".
@@ -499,8 +498,12 @@ sub checkdescr {
 				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
 				"in $file.");
 		}
-		if (/^WWW:\s+(\S*)/) {
-			my $wwwurl = $1;
+		if (/^WWW:(\s+)(\S*)/) {
+			my $wwwurl = $2;
+			if ($1 ne ' ') {
+				&perror("WARN", $file, -1, "use WWW: with a single space, ".
+					"then $wwwurl");
+			}
 			if ($wwwurl !~ m|^https?://|) {
 				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
 					"with \"http://\" or \"https://\".");
@@ -1341,7 +1344,7 @@ sub checkmakefile {
 		}
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
 		&perror("FATAL", $file, 1, "incorrect header; ".
-			"use Created by: with a space, then \$$rcsidstr\$.");
+			"use Created by: with a single space, then \$$rcsidstr\$.");
 	}
 
 	#
@@ -1431,7 +1434,9 @@ sub checkmakefile {
 		OPTIONS_DEFAULT
 		OPTIONS_DEFINE
 		OPTIONS_EXCLUDE
+		OPTIONS_GROUP.*?
 		OPTIONS_MULTI.*?
+		OPTIONS_RADIO.*?
 		OPTIONS_SINGLE.*?
 	);
 
@@ -1998,7 +2003,9 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	if ($whole =~ /^USE_GCC[?:]?=\s*(.*)$/m) {
 		my $lineno = &linenumber($`);
 		my $gcc_val = $1;
-		if ($gcc_val =~ /3\.[234]\+/) {
+		if ($gcc_val eq 'any' || $gcc_val eq 'yes') {
+			# Just accept these two.
+		} elsif ($gcc_val =~ /3\.[234]\+/) {
 			&perror("WARN", $file, $lineno, "USE_GCC=3.2+, USE_GCC=3.3+, ".
 				"and USE_GCC=3.4+ are noops on all currently (and future) ".
 				"supported versions of FreeBSD.  Do not use them.");
