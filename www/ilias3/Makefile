@@ -22,6 +22,9 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	ilias-4.[0-9].*
 
+DEPRECATED=	Obsolete stable release
+EXPIRATION_DATE=2013-04-30
+
 LATEST_LINK=		ilias3
 NO_BUILD=		yes
 SUB_FILES=		pkg-message
