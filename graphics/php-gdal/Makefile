@@ -12,13 +12,13 @@ PKGNAMEPREFIX=	php-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP binding for GDAL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+LICENSE=	MIT
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 LIBTOOLFILES=	# empty
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
@@ -29,6 +29,7 @@ USE_PHP_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|; s|^CXX=.*$$|CXX=${CXX}|; s|^CFLAGS=.*$$|CFLAGS=${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 
 do-configure:
