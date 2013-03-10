@@ -111,4 +111,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC} -type d \
 		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
