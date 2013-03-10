@@ -1,21 +1,28 @@
 bin/p11-kit
+include/p11-kit-1/p11-kit/iter.h
 include/p11-kit-1/p11-kit/p11-kit.h
 include/p11-kit-1/p11-kit/pin.h
-include/p11-kit-1/p11-kit/uri.h
 include/p11-kit-1/p11-kit/pkcs11.h
+include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.a
 lib/libp11-kit.la
 lib/libp11-kit.so
 lib/libp11-kit.so.0
 lib/p11-kit-proxy.so
+lib/pkcs11/p11-kit-trust.a
+lib/pkcs11/p11-kit-trust.la
+lib/pkcs11/p11-kit-trust.so
 libdata/pkgconfig/p11-kit-1.pc
-share/gtk-doc/html/p11-kit/api-index-full.html
+share/gtk-doc/html/p11-kit/ch01s03.html
 share/gtk-doc/html/p11-kit/config-example.html
-share/gtk-doc/html/p11-kit/config-format.html
-share/gtk-doc/html/p11-kit/config-global.html
-share/gtk-doc/html/p11-kit/config-locations.html
-share/gtk-doc/html/p11-kit/config-module.html
 share/gtk-doc/html/p11-kit/config.html
+share/gtk-doc/html/p11-kit/devel-building-style.html
+share/gtk-doc/html/p11-kit/devel-building.html
+share/gtk-doc/html/p11-kit/devel-commands.html
+share/gtk-doc/html/p11-kit/devel-debugging.html
+share/gtk-doc/html/p11-kit/devel-paths.html
+share/gtk-doc/html/p11-kit/devel-testing.html
+share/gtk-doc/html/p11-kit/devel.html
 share/gtk-doc/html/p11-kit/gtk-doc.css
 share/gtk-doc/html/p11-kit/home.png
 share/gtk-doc/html/p11-kit/index.html
@@ -27,17 +34,29 @@ share/gtk-doc/html/p11-kit/p11-kit-PIN-Callbacks.html
 share/gtk-doc/html/p11-kit/p11-kit-URIs.html
 share/gtk-doc/html/p11-kit/p11-kit-Utilities.html
 share/gtk-doc/html/p11-kit/p11-kit.devhelp2
-share/gtk-doc/html/p11-kit/up.png
+share/gtk-doc/html/p11-kit/p11-kit.html
+share/gtk-doc/html/p11-kit/pkcs11.conf.html
 share/gtk-doc/html/p11-kit/reference.html
 share/gtk-doc/html/p11-kit/right.png
 share/gtk-doc/html/p11-kit/sharing-initialize.html
 share/gtk-doc/html/p11-kit/sharing-module.html
 share/gtk-doc/html/p11-kit/sharing.html
 share/gtk-doc/html/p11-kit/style.css
+share/gtk-doc/html/p11-kit/tools.html
+share/gtk-doc/html/p11-kit/trust-disable.html
+share/gtk-doc/html/p11-kit/trust-glib-networking.html
+share/gtk-doc/html/p11-kit/trust-nss.html
+share/gtk-doc/html/p11-kit/trust.html
+share/gtk-doc/html/p11-kit/up.png
+%%DATADIR%%/modules/p11-kit-trust.module
+%%DATADIR%%/p11-kit-extract-trust
 %%EXAMPLESDIR%%/pkcs11.conf.example
 @dirrm share/gtk-doc/html/p11-kit
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
 @dirrm include/p11-kit-1/p11-kit
 @dirrm include/p11-kit-1
-@dirrm %%EXAMPLESDIR%%
+@dirrm lib/pkcs11
