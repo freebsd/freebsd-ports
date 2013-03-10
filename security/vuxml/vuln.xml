@@ -51,6 +51,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68c1f75b-8824-11e2-9996-c48508086173">
+    <topic>perl -- denial of service via algorithmic complexity attack on hashing routines</topic>
+    <affects>
+      <package>
+        <name>perl</name>
+        <range><lt>5.12.4_5</lt></range>
+        <range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
+        <range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Perl developers report:</p>
+        <blockquote cite="http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html">
+          <p>In order to prevent an algorithmic complexity attack
+            against its hashing mechanism, perl will sometimes
+            recalculate keys and redistribute the contents of a hash.
+            This mechanism has made perl robust against attacks that
+            have been demonstrated against other systems.</p>
+          <p>Research by Yves Orton has recently uncovered a flaw in
+            the rehashing code which can result in pathological
+            behavior.  This flaw could be exploited to carry out a
+            denial of service attack against code that uses arbitrary
+            user input as hash keys.</p>
+          <p>Because using user-provided strings as hash keys is a
+            very common operation, we urge users of perl to update their
+            perl executable as soon as possible.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1667</cvename>
+      <url>http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html</url>
+    </references>
+    <dates>
+      <discovery>2013-03-04</discovery>
+      <entry>2013-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="549787c1-8916-11e2-8549-68b599b52a02">
     <topic>libpurple -- multiple vulnerabilities</topic>
     <affects>
