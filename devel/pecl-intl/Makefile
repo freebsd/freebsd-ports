@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intl
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,6 +18,6 @@ LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=52
+#IGNORE_WITH_PHP=52
 
 .include <bsd.port.mk>
