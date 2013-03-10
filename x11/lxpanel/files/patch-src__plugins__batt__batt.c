@@ -1,7 +1,9 @@
---- src/plugins/batt/batt.c.orig	2012-05-20 09:57:39.000000000 -0400
-+++ src/plugins/batt/batt.c	2012-09-05 13:18:22.428078608 -0400
-@@ -71,7 +71,7 @@
-     GdkPixmap *pixmap;
+diff --git src/plugins/batt/batt.c src/plugins/batt/batt.c
+index d288132..6088c53 100644
+--- src/plugins/batt/batt.c
++++ src/plugins/batt/batt.c
+@@ -68,7 +68,7 @@ typedef struct {
+     cairo_surface_t *pixmap;
      GtkWidget *drawingArea;
      int orientation;
 -    unsigned int alarmTime,
@@ -9,7 +11,7 @@
          border,
          height,
          length,
-@@ -120,16 +120,16 @@
+@@ -118,7 +118,6 @@ void update_display(lx_battery *lx_b, gboolean repaint) {
      char tooltip[ 256 ];
      battery *b = lx_b->b;
      /* unit: mW */
@@ -17,18 +19,21 @@
      gboolean isCharging;
  
      if (! lx_b->pixmap )
-         return;
+@@ -128,9 +127,12 @@ void update_display(lx_battery *lx_b, gboolean repaint) {
+     cairo_set_line_width (cr, 1.0);
  
      /* no battery is found */
 -    if( b == NULL ) 
 +    if( b == NULL || b->percentage < 0 )
      {
  	gtk_widget_set_tooltip_text( lx_b->drawingArea, _("No batteries found") );
-+        gdk_draw_rectangle(lx_b->pixmap, lx_b->bg, TRUE, 0, 0, lx_b->width, lx_b->height);
++	gdk_cairo_set_source_color(cr, &lx_b->background);
++	cairo_rectangle(cr, 0, 0, lx_b->width, lx_b->height);
++	cairo_fill(cr);
  	return;
      }
      
-@@ -138,12 +138,11 @@
+@@ -141,12 +143,11 @@ void update_display(lx_battery *lx_b, gboolean repaint) {
  
      /* fixme: only one battery supported */
  
@@ -43,7 +48,7 @@
      {
  	/* Shrug this should be done using glibs process functions */
  	/* Alarms should not run concurrently; determine whether an alarm is
-@@ -173,7 +172,7 @@
+@@ -176,7 +177,7 @@ void update_display(lx_battery *lx_b, gboolean repaint) {
  	int left_seconds = b->seconds - 3600 * hours;
  	int minutes = left_seconds / 60;
  	snprintf(tooltip, 256,
@@ -52,7 +57,7 @@
  		lx_b->b->percentage,
  		hours,
  		minutes );
-@@ -184,10 +183,10 @@
+@@ -187,10 +188,10 @@ void update_display(lx_battery *lx_b, gboolean repaint) {
  	    int left_seconds = b->seconds - 3600 * hours;
  	    int minutes = left_seconds / 60;
  	    snprintf(tooltip, 256,
@@ -66,7 +71,7 @@
  	} else {
  	    snprintf(tooltip, 256,
  		    _("Battery: %d%% charged"),
-@@ -367,7 +366,7 @@
+@@ -375,7 +376,7 @@ constructor(Plugin *p, char **fp)
              = lx_b->dischargingColor1 = lx_b->dischargingColor2 = NULL;
  
      /* Set default values for integers */
@@ -75,7 +80,7 @@
      lx_b->requestedBorder = 1;
  
      line s;
-@@ -396,8 +395,8 @@
+@@ -404,8 +405,8 @@ constructor(Plugin *p, char **fp)
                      lx_b->dischargingColor1 = g_strdup(s.t[1]);
                  else if (!g_ascii_strcasecmp(s.t[0], "DischargingColor2"))
                      lx_b->dischargingColor2 = g_strdup(s.t[1]);
@@ -86,7 +91,7 @@
                  else if (!g_ascii_strcasecmp(s.t[0], "BorderWidth"))
                      lx_b->requestedBorder = atoi(s.t[1]);
                  else if (!g_ascii_strcasecmp(s.t[0], "Size")) {
-@@ -573,7 +572,7 @@
+@@ -554,7 +555,7 @@ static void config(Plugin *p, GtkWindow* parent) {
              _("Hide if there is no battery"), &b->hide_if_no_battery, CONF_TYPE_BOOL,
  #endif
              _("Alarm command"), &b->alarmCommand, CONF_TYPE_STR,
@@ -95,7 +100,7 @@
              _("Background color"), &b->backgroundColor, CONF_TYPE_STR,
              _("Charging color 1"), &b->chargingColor1, CONF_TYPE_STR,
              _("Charging color 2"), &b->chargingColor2, CONF_TYPE_STR,
-@@ -593,7 +592,7 @@
+@@ -574,7 +575,7 @@ static void save(Plugin* p, FILE* fp) {
  
      lxpanel_put_bool(fp, "HideIfNoBattery",lx_b->hide_if_no_battery);
      lxpanel_put_str(fp, "AlarmCommand", lx_b->alarmCommand);
