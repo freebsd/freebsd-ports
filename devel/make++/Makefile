@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME:S/+/p/g}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 EXTRACT_SUFX=	.txz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gavin@16degrees.com.au
 COMMENT=	A drop-in replacement for GNU make
 
 LICENSE=	ART10 GPLv1 GPLv2 GPLv3
