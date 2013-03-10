@@ -6,6 +6,7 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__init__.pyc
@@ -13,15 +14,25 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/socket_create_connection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/socket_create_connection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/socket_create_connection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/ssl_match_hostname.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/ssl_match_hostname.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat/ssl_match_hostname.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/basecommand.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/basecommand.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/basecommand.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/baseparser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/baseparser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/baseparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/cacert.pem
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/cmdoptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/cmdoptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/cmdoptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/__init__.pyo
@@ -40,9 +51,15 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/install.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/install.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/install.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/list.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/list.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/list.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/search.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/search.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/search.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/show.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/show.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/show.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/uninstall.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/uninstall.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands/uninstall.pyo
@@ -94,19 +111,20 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.pyo
-%%PORTDOCS%%%%DOCSDIR%%/ci-server-step-by-step.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/contributing.txt
-%%PORTDOCS%%%%DOCSDIR%%/glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/cookbook.txt
+%%PORTDOCS%%%%DOCSDIR%%/development.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/installing.txt
+%%PORTDOCS%%%%DOCSDIR%%/logic.txt
 %%PORTDOCS%%%%DOCSDIR%%/news.txt
 %%PORTDOCS%%%%DOCSDIR%%/other-tools.txt
-%%PORTDOCS%%%%DOCSDIR%%/requirements.txt
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
 %%PORTDOCS%%%%DOCSDIR%%/usage.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
