@@ -1,0 +1,21 @@
+--- libpurple/protocols/irc/Makefile.in.orig	2013-02-11 03:17:20.000000000 -0600
++++ libpurple/protocols/irc/Makefile.in	2013-02-15 15:18:43.256590687 -0600
+@@ -92,7 +92,8 @@
+ am__installdirs = "$(DESTDIR)$(pkgdir)"
+ LTLIBRARIES = $(noinst_LTLIBRARIES) $(pkg_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-@STATIC_IRC_FALSE@libirc_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
++@STATIC_IRC_FALSE@libirc_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++@STATIC_IRC_FALSE@	$(am__DEPENDENCIES_1)
+ am__libirc_la_SOURCES_DIST = cmds.c dcc_send.c irc.c irc.h msgs.c \
+ 	parse.c
+ am__objects_1 = libirc_la-cmds.lo libirc_la-dcc_send.lo \
+@@ -415,7 +416,7 @@
+ @STATIC_IRC_TRUE@libirc_la_SOURCES = $(IRCSOURCES)
+ @STATIC_IRC_TRUE@libirc_la_CFLAGS = $(AM_CFLAGS)
+ @STATIC_IRC_FALSE@pkg_LTLIBRARIES = libirc.la
+-@STATIC_IRC_FALSE@libirc_la_LIBADD = $(GLIB_LIBS)
++@STATIC_IRC_FALSE@libirc_la_LIBADD = $(GLIB_LIBS) $(SASL_LIBS)
+ AM_CPPFLAGS = \
+ 	-I$(top_srcdir)/libpurple \
+ 	-I$(top_builddir)/libpurple \
