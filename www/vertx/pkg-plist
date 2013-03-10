@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/deprecated-list.html
@@ -27,19 +28,11 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/RouteMatcher.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/ServerWebSocket.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/WebSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/impl/DefaultHttpClient.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/impl/DefaultHttpServer.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/impl/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/NetClient.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/NetServer.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/NetSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/impl/DefaultNetClient.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/impl/DefaultNetServer.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/impl/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/package-frame.html
@@ -49,9 +42,6 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/parsetools/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/SockJSServer.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/SockJSSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/impl/DefaultSockJSServer.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/impl/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/streams/Pump.html
@@ -60,9 +50,6 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/streams/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/core/streams/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/Container.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/impl/groovy/GroovyVerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/impl/groovy/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/impl/groovy/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/overview-frame.html
@@ -76,10 +63,6 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/index-all.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/busmods/BusModBase.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/busmods/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/busmods/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/busmods/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/AsyncResult.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/AsyncResultHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/Handler.html
@@ -92,22 +75,6 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/buffer/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/EventBus.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/Message.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/BaseMessage.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/ClusterManager.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/DefaultEventBus.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/MessageFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/PingMessage.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/ServerIDs.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/SubsMap.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/HazelcastClusterManager.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/HazelcastServerID.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/HazelcastSubsMap.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/package-tree.html
@@ -116,13 +83,6 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/FileSystem.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/FileSystemException.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/FileSystemProps.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/DefaultAsyncFile.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/DefaultFileSystem.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/ModuleDir.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/PathAdjuster.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/file/package-tree.html
@@ -136,118 +96,24 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/ServerWebSocket.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/WebSocket.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/WebSocketVersion.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/AbstractConnection.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpClient.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpClientRequest.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpClientResponse.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpServer.ServerHandler.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpServer.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpServerRequest.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultHttpServerResponse.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/DefaultWebSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/HeaderUtils.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/HttpReadStreamBase.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/MimeMapping.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/SwitchingHttpResponseDecoder.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/WebSocketMatcher.Match.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/WebSocketMatcher.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/Base64.InputStream.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/Base64.OutputStream.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/Base64.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/DefaultWebSocketFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/Handshake.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/PingHandler.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/WebSocketDisconnectionNegotiator.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/WebSocketFrame.FrameType.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/WebSocketFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/Handshake00.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/WebSocketChallenge00.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/WebSocketFrameDecoder00.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/WebSocketFrameEncoder00.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/Handshake08.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/WebSocketChallenge08.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/WebSocketFrameDecoder08.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/WebSocketFrameEncoder08.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi17/HandshakeRFC6455.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi17/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi17/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi17/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/http/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/BlockingAction.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/ConcurrentHashSet.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/ConnectionPool.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/Context.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/DefaultVertx.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/DefaultVertxFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/DeploymentHandle.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/EventLoopContext.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/LowerCaseKeyMap.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/OrderedExecutorFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/StringEscapeUtils.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/VertxInternal.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/VertxThreadFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/WorkerContext.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/DecodeException.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/EncodeException.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/JsonArray.html
+%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/JsonElement.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/JsonObject.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/impl/Json.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/json/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/Logger.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/JULLogDelegate.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/JULLogDelegateFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/Log4jLogDelegate.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/Log4jLogDelegateFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/LogDelegate.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/LogDelegateFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/LoggerFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/SLF4JLogDelegate.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/SLF4JLogDelegateFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/VertxLoggerFormatter.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/logging/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/NetClient.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/NetServer.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/NetSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/ConnectionBase.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/DefaultNetClient.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/DefaultNetServer.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/DefaultNetSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/HandlerHolder.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/HandlerManager.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/ServerID.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/TCPSSLHelper.ClientAuth.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/TCPSSLHelper.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/VertxWorkerPool.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/net/package-tree.html
@@ -260,24 +126,12 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/parsetools/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/Shareable.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/SharedData.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/Checker.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/SharedMap.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/SharedSet.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/EventBusBridge.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/SockJSServer.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/SockJSSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/DefaultSockJSServer.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/EventBusBridge.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/JsonCodec.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/Transport.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/package-tree.html
@@ -289,57 +143,9 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/core/streams/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/Container.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/Verticle.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/VerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/Args.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/CountingCompletionHandler.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/Deployment.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/ModuleReloader.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/ParentLastURLClassLoader.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/Redeployer.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/VerticleManager.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/VertxLocator.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/cli/Starter.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/cli/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/cli/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/cli/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/CompilingClassLoader.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/CustomJavaFileObject.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/JavaVerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/MemoryFileManager.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/PackageHelper.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby/JRubyVerticle.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby/JRubyVerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython/JythonVerticle.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython/JythonVerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/CoffeeScriptCompiler.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/RhinoContextFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/RhinoVerticle.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/RhinoVerticleFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/deploy/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/EventFields.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/TestBase.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/TestClientBase.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/TestUtils.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/java/api/org/vertx/java/framework/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/overview-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/overview-tree.html
@@ -350,22 +156,11 @@ bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/java/api/resources/titlebar_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/java/api/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/java/api/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.buffer.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.event_bus.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.file_system.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.handlers.html
 %%PORTDOCS%%%%DOCSDIR%%/python/api/core.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.http.html
 %%PORTDOCS%%%%DOCSDIR%%/python/api/core.javautils.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.net.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.parsetools.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.shared_data.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.sock_js.html
 %%PORTDOCS%%%%DOCSDIR%%/python/api/core.ssl_support.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/core.streams.html
 %%PORTDOCS%%%%DOCSDIR%%/python/api/core.tcp_support.html
 %%PORTDOCS%%%%DOCSDIR%%/python/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/python/api/vertx.html
 %%PORTDOCS%%%%DOCSDIR%%/python/epydoc/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/python/epydoc/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/python/epydoc/core-module.html
@@ -592,9 +387,6 @@ bin/vertx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groovy/websockets/WebSocketsServer.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groovy/websockets/ws.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/deploymod/Deploy.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/deploymod/mods/org.foo.MyMod-v1.0/app.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/deploymod/mods/org.foo.MyMod-v1.0/mod.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/echo/EchoClient.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/echo/EchoServer.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/echo/PerfClient.java
@@ -633,6 +425,9 @@ bin/vertx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/server-keystore.jks
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/sockjs/SockJSExample.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/sockjs/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/com/acme/OtherClass.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/mod.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/org/foo/MyMain.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ssl/SSLClient.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ssl/SSLServer.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/upload/UploadClient.java
@@ -646,6 +441,29 @@ bin/vertx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/wsperf/PerfServer.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/wsperf/vertx-server.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/server-keystore.jks
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/static_data.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/bootstrap.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/forms.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/mixins.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/patterns.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/reset.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/scaffolding.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/tables.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/type.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/css/variables.less
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js/client_app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js/vertxbus.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/angular-1.0.1.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/bootstrap-alerts.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/bootstrap-tabs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/jquery-1.7.1.min.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/less-1.2.1.min.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty/sockjs-0.2.1.min.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/commonjs/handler.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/commonjs/main.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/commonjs/server.js
@@ -672,12 +490,14 @@ bin/vertx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/http/http_server.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/https/https_client.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/https/https_server.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/includemod/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/includemod/mods/my-mod/app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/includemod/mods/my-mod/mod.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/includemod/mods/my-mod2/mod.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/proxy/http_client.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/proxy/http_server.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/proxy/proxy_server.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/pubsub/pubsub_server.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/redeploy/mods/test-mod1/app.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/redeploy/mods/test-mod1/mod.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/route_match/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/route_match/route_match_example.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript/sendfile/index.html
@@ -829,22 +649,24 @@ bin/vertx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/websockets/ws.html
 %%DATADIR%%/bin/vertx
 %%DATADIR%%/client/vertxbus.js
+%%DATADIR%%/client/vertxbus.min.js
 %%DATADIR%%/conf/cluster.xml
+%%DATADIR%%/conf/langs.properties
 %%DATADIR%%/conf/logging.properties
-%%DATADIR%%/lib/groovy-all-2.0.0.jar
-%%DATADIR%%/lib/hazelcast-2.1.2.jar
+%%DATADIR%%/lib/groovy-all-2.0.5.jar
+%%DATADIR%%/lib/hazelcast-2.4.1.jar
 %%DATADIR%%/lib/jackson-core-asl-1.9.4.jar
 %%DATADIR%%/lib/jackson-mapper-asl-1.9.4.jar
-%%DATADIR%%/lib/netty-3.5.0.Final.jar
+%%DATADIR%%/lib/netty-3.5.9.Final.jar
 %%DATADIR%%/lib/rhino-1.7R4.jar
-%%DATADIR%%/lib/vertx-core-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-lang-groovy-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-lang-java-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-lang-jruby-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-lang-jython-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-lang-rhino-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-platform-1.2.3.final.jar
-%%DATADIR%%/lib/vertx-testframework-1.2.3.final.jar
+%%DATADIR%%/lib/vertx-core-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-lang-groovy-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-lang-java-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-lang-jruby-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-lang-jython-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-lang-rhino-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-platform-%%VERTXVER%%.final.jar
+%%DATADIR%%/lib/vertx-testframework-%%VERTXVER%%.final.jar
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%/client
@@ -899,11 +721,12 @@ bin/vertx
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/sockjs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/sendfile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/route_match
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/redeploy/mods/test-mod1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/redeploy/mods
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/redeploy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/pubsub
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/proxy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/includemod/mods/my-mod2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/includemod/mods/my-mod
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/includemod/mods
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/includemod
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/https
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/http
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/fanout
@@ -918,11 +741,23 @@ bin/vertx
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/conn_perf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/config
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/commonjs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/angularjs/web/js3rdparty
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/angularjs/web/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/angularjs/web/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/angularjs/web
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript/angularjs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/javascript
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/wsperf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/websockets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/upload
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/ssl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/org/foo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/org
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/com/acme
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0/com
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods/test-mod-v1.0
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod/mods
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sourcemod
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sockjs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/sendfile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/route_match
@@ -936,9 +771,6 @@ bin/vertx
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/fanout
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/eventbusbridge
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/echo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/deploymod/mods/org.foo.MyMod-v1.0
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/deploymod/mods
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/deploymod
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/groovy/websockets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/groovy/webapp/web/js3rdparty
@@ -983,56 +815,29 @@ bin/vertx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javascript/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javascript
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/framework
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/rhino
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jython
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/jruby
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/java
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl/cli
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/deploy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/streams
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/sockjs/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/sockjs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/shareddata/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/shareddata
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/parsetools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/net/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/net
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/logging/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/logging
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/json/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/json
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/impl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi17
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi08
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws/hybi00
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http/impl/ws
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/http
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/file/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/file
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl/hazelcast
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/eventbus/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/eventbus
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core/buffer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/core
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java/busmods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx/java
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org/vertx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api/org
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/java
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/impl/groovy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/deploy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/streams
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/sockjs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/parsetools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/net
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http/impl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/http
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/file
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/groovy/api/org/vertx/groovy/core/eventbus
