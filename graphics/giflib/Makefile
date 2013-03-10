@@ -3,6 +3,7 @@
 
 PORTNAME=	giflib
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x
 PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
@@ -17,11 +18,17 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCBOOK
+DOCBOOK_DESC=	Generate API documentation (requires DOCS)
+
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
+PLIST_SUB+=	WITH_DOCBOOK=''
+.else
+PLIST_SUB+=	WITH_DOCBOOK='@comment '
 .endif
 
 .if defined(WITHOUT_X11)
@@ -36,13 +43,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	${CP} ${FILESDIR}/quantize.c ${WRKSRC}/lib/
-.if ! ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCBOOK} || ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|SUBDIRS = lib util doc pic|SUBDIRS = lib util pic|' \
 		${WRKSRC}/Makefile.in
 .endif
 
+.if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
