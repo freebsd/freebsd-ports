@@ -64,12 +64,16 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Pidgin reports:</p>
 	<blockquote cite="https://developer.pidgin.im/wiki/ChangeLog">
 	  <p>libpurple</p>
-	  <p> -- Fix a crash when receiving UPnP responses with abnormally long values. (CVE-2013-0274)</p>
+	  <p>Fix a crash when receiving UPnP responses with abnormally long values.</p>
 	  <p>MXit</p>
-	  <p> -- Fix two bugs where a remote MXit user could possibly specify a local file path to be written to. (CVE-2013-0271)</p>
-	  <p> -- Fix a bug where the MXit server or a man-in-the-middle could potentially send specially crafted data that could overflow a buffer and lead to a crash or remote code execution. (CVE-2013-0272)</p>
+	  <p>Fix two bugs where a remote MXit user could possibly specify a local file
+	    path to be written to.</p>
+	  <p>Fix a bug where the MXit server or a man-in-the-middle could potentially
+	    send specially crafted data that could overflow a buffer and lead to a crash
+	    or remote code execution.</p>
 	  <p>Sametime</p>
-	  <p> -- Fix a crash in Sametime when a malicious server sends us an abnormally long user ID. (CVE-2013-0273)</p>
+	  <p>Fix a crash in Sametime when a malicious server sends us an abnormally long
+	    user ID.</p>
 	</blockquote>
       </body>
     </description>
@@ -416,8 +420,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mark Evans reports:</p>
 	<blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/dragonfly-users/3c3WIU3VQTo">
-	  <p>Unfortunately there is a security vulnerability in Dragonfly when
-	     used with Rails which would potentially allow an attacker to run
+	  <p>Unfortnately there is a security vulnerability in Dragonfly when
+	      used with Rails which would potentially allow an attacker to run
 	     arbitrary code on a host machine using carefully crafted
              requests.
           </p>
