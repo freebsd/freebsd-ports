@@ -1,7 +1,4 @@
-# New ports collection makefile for: ros-image_common
-# Date created:	2010-11-27
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros-image_common
@@ -14,6 +11,9 @@ DIST_SUBDIR=	ros
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - common image routines
+
+DEPRECATED=	Depends on devel/ros_common which is broken for more than 6 months
+EXPIRATION_DATE=	2013-04-10
 
 LICENSE=	BSD
 
