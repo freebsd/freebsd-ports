@@ -19,7 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_SINGLE=			FRONTEND
-OPTIONS_SINGLE_FRONTEND=	XMMS # BMP
+OPTIONS_SINGLE_FRONTEND=	XMMS BMP
 OPTIONS_DEFAULT=		XMMS
 
 XMMS_DESC=	Use xmms as frontend
@@ -31,16 +31,20 @@ BMP_DESC=	Use BMP as frontend
 CONFIGURE_ARGS+=	--with-xmms
 BUILD_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms
+PLIST_SUB+=	XMMS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBMP}
 CONFIGURE_ARGS+=--with-bmp
 BUILD_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
+PLIST_SUB+=	BMP=""
 .else
 CONFIGURE_ARGS+=--disable-bmp
+PLIST_SUB+=	BMP="@comment "
 .endif
 
 .include <bsd.port.mk>
