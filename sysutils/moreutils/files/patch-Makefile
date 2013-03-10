@@ -1,30 +1,27 @@
---- ./Makefile.orig	2010-10-29 12:47:09.000000000 -0700
-+++ ./Makefile	2010-11-17 16:02:08.000000000 -0800
-@@ -1,51 +1,35 @@
--BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
-+BINS=isutf8 ifne pee sponge mispipe lckdo
+--- Makefile.orig	2012-06-06 01:55:53.000000000 +0800
++++ Makefile	2013-02-24 13:23:52.068205829 +0800
+@@ -1,60 +1,38 @@
+-BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel errno
++BINS=isutf8 ifne pee sponge mispipe lckdo errno
  PERLSCRIPTS=vidir vipe ts combine zrun chronic
--MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 chronic.1 mispipe.1 lckdo.1 parallel.1
+-MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 chronic.1 mispipe.1 lckdo.1 parallel.1 errno.1
 -CFLAGS=-O2 -g -Wall
-+MANS=sponge.1 isutf8.1 ifne.1 pee.1 mispipe.1 lckdo.1
-+CFLAGS+= -Wall
++MANS=sponge.1 isutf8.1 ifne.1 pee.1 mispipe.1 lckdo.1 errno.1
++CFLAGS+=-Wall
  INSTALL_BIN?=install -s
 -PREFIX=/usr
  
 -DOCBOOK2XMAN=docbook2x-man
-+
 +.SUFFIXES: .1 .docbook
 +
-+DOCBOOK2XMAN= ${LOCALBASE}/bin/xsltproc ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
++DOCBOOK2XMAN=${LOCALBASE}/bin/docbook2man
  
  all: $(BINS) $(MANS)
-+ 
-+bins: ${BINS}
-+
-+mans: ${MANS}
  
++bins: errnos.h ${BINS}
++
  clean:
- 	rm -f $(BINS) $(MANS)
+ 	rm -f $(BINS) $(MANS) dump.c errnos.h errno.o
  
  install:
 -	mkdir -p $(DESTDIR)$(PREFIX)/bin
@@ -51,7 +48,9 @@
 -
 -pee.1: pee.docbook
 -	$(DOCBOOK2XMAN) $<
--
++.docbook.1:
++	$(DOCBOOK2XMAN) ${.IMPSRC}
+ 
 -sponge.1: sponge.docbook
 -	$(DOCBOOK2XMAN) $<
 -
@@ -63,12 +62,19 @@
 -
 -parallel.1: parallel.docbook
 -	$(DOCBOOK2XMAN) $<
-+.docbook.1:
-+	$(DOCBOOK2XMAN) ${.IMPSRC}
- 
+-	
+ errno.o: errnos.h
+ errnos.h:
+ 	echo '#include <errno.h>' > dump.c
+ 	$(CC) -E -dD dump.c | awk '/^#define E/ { printf "{\"%s\",%s},\n", $$2, $$2 }' > errnos.h
+ 	rm -f dump.c
+ 	
+-errno.1: errno.docbook
+-	$(DOCBOOK2XMAN) $<
+-
 -%.1: %
 -	pod2man --center=" " --release="moreutils" $< > $@;
-+extraman: ${PERLSCRIPTS}
++mans: ${PERLSCRIPTS}
 +.for i in ${PERLSCRIPTS}
 +	pod2man --center=" " --release="moreutils" ${i} > ${i:S@$@.1$@};
 +.endfor

@@ -1,0 +1,75 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH errno 1 2012-06-05 "" ""
+.SH NAME
+errno \- look up errno names and descriptions
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBerrno\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+{\fIname-or-code\fR}
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBerrno\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-ls] [--list]
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBerrno\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-s] [--search] {\fIword\fR}
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBerrno\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-S] [--search-all-locales] {\fIword\fR}
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBerrno\fR looks up errno macro names,
+errno codes, and the corresponding descriptions. For example,
+if given \*(T<ENOENT\*(T> on a Linux system, it
+prints out the code 2 and the description "No such file or directory".
+If given the code 2, it printes \*(T<ENOENT\*(T>
+and the same description.
+.SH OPTIONS
+.TP 
+\*(T<\fB\-l\fR\*(T>, \*(T<\fB\-\-list\fR\*(T>
+List all errno values.
+.TP 
+\*(T<\fB\-s\fR\*(T>, \*(T<\fB\-\-search\fR\*(T>
+Search for errors whose description contains
+all the given words (case-insensitive).
+.TP 
+\*(T<\fB\-S\fR\*(T>, \*(T<\fB\-\-search\-all\-locales\fR\*(T>
+Like \*(T<\fB\-\-search\fR\*(T>, but searches all
+installed locales.
+.SH AUTHOR
+Lars Wirzenius
+
+.SH "SEE ALSO"
+\fBerrno\fR(3)
