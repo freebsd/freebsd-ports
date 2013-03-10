@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/vtigercrm
 
 OPTIONS_DEFINE=		MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFLICTS=	vtiger-4.*
 
@@ -111,4 +111,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC} -type d \
 		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
