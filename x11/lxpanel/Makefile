@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.12
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
@@ -16,8 +16,8 @@ COMMENT=	LXPanel is a lightweight X11 desktop panel
 LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache
 RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
-OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
-		NLS "NLS support" On
+OPTIONS_DEFINE=	ALSA NLS
+OPTIONS_DEFAULT=NLS
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gnomehack gtk20 pkgconfig libwnck
@@ -34,13 +34,13 @@ MAN1=		lxpanel.1 lxpanelctl.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-f10-alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

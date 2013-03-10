@@ -42,88 +42,136 @@ include/lxpanel/plugin.h
 %%DATADIR%%/images/volume-low.png
 %%DATADIR%%/images/volume-medium.png
 %%DATADIR%%/images/window-manager.png
+%%DATADIR%%/images/xkb-flags/ad.png
 %%DATADIR%%/images/xkb-flags/ae.png
+%%DATADIR%%/images/xkb-flags/af.png
+%%DATADIR%%/images/xkb-flags/al.png
 %%DATADIR%%/images/xkb-flags/am.png
 %%DATADIR%%/images/xkb-flags/ar.png
+%%DATADIR%%/images/xkb-flags/ara.png
 %%DATADIR%%/images/xkb-flags/at.png
 %%DATADIR%%/images/xkb-flags/az.png
+%%DATADIR%%/images/xkb-flags/ba.png
+%%DATADIR%%/images/xkb-flags/bd.png
 %%DATADIR%%/images/xkb-flags/be.png
+%%DATADIR%%/images/xkb-flags/ben.png
 %%DATADIR%%/images/xkb-flags/bg.png
 %%DATADIR%%/images/xkb-flags/bh.png
 %%DATADIR%%/images/xkb-flags/br.png
+%%DATADIR%%/images/xkb-flags/brai.png
+%%DATADIR%%/images/xkb-flags/bt.png
+%%DATADIR%%/images/xkb-flags/bw.png
 %%DATADIR%%/images/xkb-flags/by.png
 %%DATADIR%%/images/xkb-flags/ca.png
+%%DATADIR%%/images/xkb-flags/cd.png
 %%DATADIR%%/images/xkb-flags/ch.png
+%%DATADIR%%/images/xkb-flags/cm.png
+%%DATADIR%%/images/xkb-flags/cn.png
 %%DATADIR%%/images/xkb-flags/cu.png
 %%DATADIR%%/images/xkb-flags/cz.png
 %%DATADIR%%/images/xkb-flags/de.png
+%%DATADIR%%/images/xkb-flags/dev.png
 %%DATADIR%%/images/xkb-flags/dj.png
 %%DATADIR%%/images/xkb-flags/dk.png
+%%DATADIR%%/images/xkb-flags/dvorak.png
 %%DATADIR%%/images/xkb-flags/dz.png
 %%DATADIR%%/images/xkb-flags/ee.png
 %%DATADIR%%/images/xkb-flags/eg.png
+%%DATADIR%%/images/xkb-flags/epo.png
 %%DATADIR%%/images/xkb-flags/es.png
-%%DATADIR%%/images/xkb-flags/eu.png
+%%DATADIR%%/images/xkb-flags/et.png
 %%DATADIR%%/images/xkb-flags/fi.png
+%%DATADIR%%/images/xkb-flags/fo.png
 %%DATADIR%%/images/xkb-flags/fr.png
+%%DATADIR%%/images/xkb-flags/gb.png
 %%DATADIR%%/images/xkb-flags/ge.png
+%%DATADIR%%/images/xkb-flags/gh.png
+%%DATADIR%%/images/xkb-flags/gn.png
 %%DATADIR%%/images/xkb-flags/gr.png
 %%DATADIR%%/images/xkb-flags/hr.png
 %%DATADIR%%/images/xkb-flags/hu.png
+%%DATADIR%%/images/xkb-flags/ie.png
 %%DATADIR%%/images/xkb-flags/il.png
+%%DATADIR%%/images/xkb-flags/in.png
 %%DATADIR%%/images/xkb-flags/iq.png
+%%DATADIR%%/images/xkb-flags/ir.png
 %%DATADIR%%/images/xkb-flags/is.png
 %%DATADIR%%/images/xkb-flags/it.png
 %%DATADIR%%/images/xkb-flags/jo.png
 %%DATADIR%%/images/xkb-flags/jp.png
+%%DATADIR%%/images/xkb-flags/ke.png
+%%DATADIR%%/images/xkb-flags/kg.png
+%%DATADIR%%/images/xkb-flags/kh.png
 %%DATADIR%%/images/xkb-flags/km.png
+%%DATADIR%%/images/xkb-flags/kp.png
 %%DATADIR%%/images/xkb-flags/kr.png
 %%DATADIR%%/images/xkb-flags/kw.png
+%%DATADIR%%/images/xkb-flags/kz.png
 %%DATADIR%%/images/xkb-flags/la.png
+%%DATADIR%%/images/xkb-flags/latam.png
 %%DATADIR%%/images/xkb-flags/lb.png
+%%DATADIR%%/images/xkb-flags/lk.png
 %%DATADIR%%/images/xkb-flags/lt.png
+%%DATADIR%%/images/xkb-flags/lv.png
 %%DATADIR%%/images/xkb-flags/ly.png
 %%DATADIR%%/images/xkb-flags/ma.png
+%%DATADIR%%/images/xkb-flags/mao.png
+%%DATADIR%%/images/xkb-flags/me.png
 %%DATADIR%%/images/xkb-flags/mk.png
+%%DATADIR%%/images/xkb-flags/ml.png
+%%DATADIR%%/images/xkb-flags/mm.png
 %%DATADIR%%/images/xkb-flags/mn.png
+%%DATADIR%%/images/xkb-flags/mt.png
+%%DATADIR%%/images/xkb-flags/mv.png
 %%DATADIR%%/images/xkb-flags/mx.png
+%%DATADIR%%/images/xkb-flags/nec_vndr-jp.png
+%%DATADIR%%/images/xkb-flags/ng.png
 %%DATADIR%%/images/xkb-flags/nl.png
 %%DATADIR%%/images/xkb-flags/no.png
+%%DATADIR%%/images/xkb-flags/np.png
 %%DATADIR%%/images/xkb-flags/om.png
+%%DATADIR%%/images/xkb-flags/ph.png
+%%DATADIR%%/images/xkb-flags/pk.png
 %%DATADIR%%/images/xkb-flags/pl.png
-%%DATADIR%%/images/xkb-flags/ps.png
 %%DATADIR%%/images/xkb-flags/pt.png
 %%DATADIR%%/images/xkb-flags/qa.png
-%%DATADIR%%/images/xkb-flags/qc.png
 %%DATADIR%%/images/xkb-flags/ro.png
+%%DATADIR%%/images/xkb-flags/rs.png
 %%DATADIR%%/images/xkb-flags/ru.png
 %%DATADIR%%/images/xkb-flags/sa.png
 %%DATADIR%%/images/xkb-flags/sd.png
 %%DATADIR%%/images/xkb-flags/se.png
 %%DATADIR%%/images/xkb-flags/si.png
 %%DATADIR%%/images/xkb-flags/sk.png
+%%DATADIR%%/images/xkb-flags/sn.png
 %%DATADIR%%/images/xkb-flags/so.png
 %%DATADIR%%/images/xkb-flags/sr.png
 %%DATADIR%%/images/xkb-flags/sy.png
 %%DATADIR%%/images/xkb-flags/th.png
+%%DATADIR%%/images/xkb-flags/tj.png
+%%DATADIR%%/images/xkb-flags/tm.png
 %%DATADIR%%/images/xkb-flags/tn.png
 %%DATADIR%%/images/xkb-flags/tr.png
+%%DATADIR%%/images/xkb-flags/tw.png
+%%DATADIR%%/images/xkb-flags/tz.png
 %%DATADIR%%/images/xkb-flags/ua.png
-%%DATADIR%%/images/xkb-flags/uk.png
-%%DATADIR%%/images/xkb-flags/un.png
 %%DATADIR%%/images/xkb-flags/us.png
 %%DATADIR%%/images/xkb-flags/uy.png
+%%DATADIR%%/images/xkb-flags/uz.png
 %%DATADIR%%/images/xkb-flags/vn.png
 %%DATADIR%%/images/xkb-flags/ye.png
-%%DATADIR%%/images/xkb-flags/yu.png
-%%DATADIR%%/ui/launchbar.ui
-%%DATADIR%%/ui/netstatus.ui
-%%DATADIR%%/ui/panel-pref.ui
+%%DATADIR%%/images/xkb-flags/za.png
 %%DATADIR%%/profile/default/config
 %%DATADIR%%/profile/default/panels/panel
 %%DATADIR%%/profile/two_panels/config
 %%DATADIR%%/profile/two_panels/panels/bottom
 %%DATADIR%%/profile/two_panels/panels/top
+%%DATADIR%%/ui/launchbar.ui
+%%DATADIR%%/ui/netstatus.ui
+%%DATADIR%%/ui/panel-pref.ui
+%%DATADIR%%/xkeyboardconfig/layouts.cfg
+%%DATADIR%%/xkeyboardconfig/models.cfg
+%%DATADIR%%/xkeyboardconfig/toggle.cfg
 %%NLS%%share/locale/af/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxpanel.mo
@@ -153,10 +201,10 @@ include/lxpanel/plugin.h
 %%NLS%%share/locale/it/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/km/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/lxpanel.mo
@@ -193,8 +241,11 @@ include/lxpanel/plugin.h
 @dirrm %%DATADIR%%/profile/two_panels
 @dirrm %%DATADIR%%/profile
 @dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/xkeyboardconfig
 @dirrm %%DATADIR%%
 @dirrm include/lxpanel
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/es_VE/LC_MESSAGES
 @dirrmtry share/locale/es_VE
 @dirrmtry share/locale/fo/LC_MESSAGES
@@ -207,8 +258,8 @@ include/lxpanel/plugin.h
 @dirrmtry share/locale/km
 @dirrmtry share/locale/lg/LC_MESSAGES
 @dirrmtry share/locale/lg
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -217,8 +268,9 @@ include/lxpanel/plugin.h
 @dirrmtry share/locale/tt_RU
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry lib/lxpanel/plugins
 @dirrmtry lib/lxpanel
-@dirrmtry lib/pkgconfig
