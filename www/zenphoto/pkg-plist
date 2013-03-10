@@ -556,6 +556,10 @@
 %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/pl_PL/flag.png
 %%WWWDIR%%/zp-core/locale/pl_PL/select_files_button.png
+%%WWWDIR%%/zp-core/locale/ru_RU/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/ru_RU/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/ru_RU/flag.png
+%%WWWDIR%%/zp-core/locale/ru_RU/select_files_button.png
 %%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/sk_SK/flag.png
@@ -913,6 +917,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/seo_zenphoto.php
 %%WWWDIR%%/zp-core/zp-extensions/show_not_logged-in.php
 %%WWWDIR%%/zp-core/zp-extensions/simpleSpam.php
+%%WWWDIR%%/zp-core/zp-extensions/site_upgrade/closed.htm
 %%WWWDIR%%/zp-core/zp-extensions/site_upgrade/closed.php
 %%WWWDIR%%/zp-core/zp-extensions/site_upgrade/closed.png
 %%WWWDIR%%/zp-core/zp-extensions/site_upgrade/site_upgrade.php
@@ -1872,6 +1877,8 @@
 @dirrm %%WWWDIR%%/zp-core/locale/sv_SE
 @dirrm %%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/sk_SK
+@dirrm %%WWWDIR%%/zp-core/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/ru_RU
 @dirrm %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/pl_PL
 @dirrm %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES
