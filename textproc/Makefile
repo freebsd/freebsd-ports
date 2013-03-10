@@ -1387,6 +1387,7 @@
     SUBDIR += stardict-BritannicaConcise
     SUBDIR += stardict-MerrianWebster
     SUBDIR += stardict-OxfordCollocation
+    SUBDIR += stardict-dict-fa_IR
     SUBDIR += stardict-longman
     SUBDIR += stardict-oald
     SUBDIR += stardict-rptts
