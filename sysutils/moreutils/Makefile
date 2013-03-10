@@ -1,12 +1,8 @@
-# Ports collection makefile for:	moreutils
-# Date created:	16 June 2009
-# Whom:		Charlie Kester <corky1951@comcast.net>
-#
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	moreutils
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,12 +12,17 @@ COMMENT=	Additional Unix utilities
 
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
 ALL_TARGET=	bins
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MANCOMPRESSED=	no
 PLIST_FILES=	bin/chronic \
 		bin/combine \
+		bin/errno \
 		bin/ifne \
 		bin/isutf8 \
 		bin/lckdo \
@@ -33,10 +34,12 @@ PLIST_FILES=	bin/chronic \
 		bin/vipe \
 		bin/zrun
 
-.if !defined(NO_INSTALL_MANPAGES)
-ALL_TARGET+=	mans extraman
+.include <bsd.port.options.mk>
 
-CANNED_MAN=	ifne.1 \
+.if ${PORT_OPTIONS:MMANPAGES}
+ALL_TARGET+=	mans
+CANNED_MAN1=	errno.1 \
+		ifne.1 \
 		isutf8.1 \
 		lckdo.1 \
 		mispipe.1 \
@@ -48,14 +51,16 @@ MAN1=		chronic.1 \
 		vidir.1 \
 		vipe.1 \
 		zrun.1 \
-		${CANNED_MAN}
-MANCOMPRESSED=	no
+		${CANNED_MAN1}
+.endif
 
 post-patch:
-	cd ${FILESDIR} && ${CP} ${CANNED_MAN} ${WRKSRC}/
+	@${REINPLACE_CMD} -e 's|share/xml/docbook/schema/dtd/|local/share/xml/docbook/|' ${WRKSRC}/*.docbook
+	@cd ${FILESDIR}/ && ${CP} ${CANNED_MAN1} ${WRKSRC}/
 
 post-install:
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
+.if ${PORT_OPTIONS:MMANPAGES}
+	cd ${WRKSRC}/ && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>
