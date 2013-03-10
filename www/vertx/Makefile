@@ -1,12 +1,8 @@
-# New ports collection makefile for:	vertx
-# Date created:		2012-08-08
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vertx
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.1
 #PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://vertx.io/downloads/
@@ -27,10 +23,11 @@ JAVA_VERSION=	1.7+
 
 NO_BUILD=	yes
 
-REINPLACE_ARGS=	-i '' -E \
-		-e 's,^\#!/bin/bash$$,\#!/usr/bin/env bash,1' \
+PLIST_SUB=	VERTXVER=${PORTVERSION}
+
+REINPLACE_ARGS=	-E -e 's,^\#!/bin/bash$$,\#!/usr/bin/env bash,1' \
 		-e '/APP_BASE_NAME=/a \${SED_APPEND_ARGS}' \
-		-e 's,(pattern=)%t,\1%h,1'
+		-e 's,(pattern=)%t,\1%h,1' -i ''
 
 SED_APPEND_ARGS=	${nl}JAVA_HOME=${JAVA_HOME}
 
