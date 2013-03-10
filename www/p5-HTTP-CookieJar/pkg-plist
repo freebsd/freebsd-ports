@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTTP/CookieJar.pm
+%%SITE_PERL%%/HTTP/CookieJar/LWP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/CookieJar/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/CookieJar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrm %%SITE_PERL%%/HTTP/CookieJar
+@dirrmtry %%SITE_PERL%%/HTTP
