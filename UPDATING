@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-im/folks and devel/libgee
   AUTHOR: kwm@FreeBSD.org
 
-  folks and libgee have been repocopied net-im/folks04 and devel/libgee06 
+  folks and libgee have been repocopied net-im/folks04 and devel/libgee06
   respectively. Please do the following according to package manager used.
 
   # portmaster -o devel/libgee06 devel/libgee
@@ -25,7 +25,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
-  textproc/elasticsearch has been updated to 0.20.5.  This update also 
+  textproc/elasticsearch has been updated to 0.20.5.  This update also
   changes the required JDK to OpenJDK 7 as there are known issues when
   running on a Java 1.6 JDK.
 
