@@ -24,6 +24,9 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
+DEPRECATED=	dillo1 is no longer actively maintained. Please consider using www/dillo2 which has full UTF-8 support
+EXPIRATION_DATE=	2013-06-30
+
 DILLOVERSION=	0.8.6
 I18NVERSION=	20060709
 

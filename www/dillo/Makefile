@@ -18,6 +18,9 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
+DEPRECATED=	dillo1 is no longer actively maintained. Please consider using www/dillo2 instead
+EXPIRATION_DATE=	2013-06-30
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
