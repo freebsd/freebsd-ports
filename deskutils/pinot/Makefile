@@ -3,6 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
