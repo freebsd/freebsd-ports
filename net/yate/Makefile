@@ -167,7 +167,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noalsa
 PLIST_SUB+=	WITH_ALSA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs
 .endif
 
