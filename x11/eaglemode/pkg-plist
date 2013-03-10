@@ -27,6 +27,7 @@ lib/eaglemode/doc/html/ChangeLog.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emATMatrix_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emArray_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emAvlTree_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emClipRects_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emClipboard_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emColor_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emConfigModel_h.html
@@ -69,6 +70,7 @@ lib/eaglemode/doc/html/CppApiRef/emCore_emTmpFile_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emToolkit_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emVarModel_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emVarSigModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emViewInputFilter_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emView_h.html
 lib/eaglemode/doc/html/CppApiRef/emCore_emWindow_h.html
 lib/eaglemode/doc/html/CppApiRef/index-noframes.html
@@ -129,6 +131,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emJpeg.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emMines.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emNetwalk.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPcx.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emPdf.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPng.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPnm.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPs.emFpPlugin
@@ -149,7 +152,6 @@ lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_fig.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_g3.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_html.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_iso.emFpPlugin
-lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pdf.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pov.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_rpm.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_sk.emFpPlugin
@@ -323,6 +325,7 @@ lib/eaglemode/include/emClock/emWorldClockPanel.h
 lib/eaglemode/include/emCore/emATMatrix.h
 lib/eaglemode/include/emCore/emArray.h
 lib/eaglemode/include/emCore/emAvlTree.h
+lib/eaglemode/include/emCore/emClipRects.h
 lib/eaglemode/include/emCore/emClipboard.h
 lib/eaglemode/include/emCore/emColor.h
 lib/eaglemode/include/emCore/emConfigModel.h
@@ -367,6 +370,7 @@ lib/eaglemode/include/emCore/emToolkit.h
 lib/eaglemode/include/emCore/emVarModel.h
 lib/eaglemode/include/emCore/emVarSigModel.h
 lib/eaglemode/include/emCore/emView.h
+lib/eaglemode/include/emCore/emViewInputFilter.h
 lib/eaglemode/include/emCore/emWindow.h
 lib/eaglemode/include/emFileMan/emDirEntry.h
 lib/eaglemode/include/emFileMan/emDirEntryAltPanel.h
@@ -403,6 +407,10 @@ lib/eaglemode/include/emNetwalk/emNetwalkControlPanel.h
 lib/eaglemode/include/emNetwalk/emNetwalkModel.h
 lib/eaglemode/include/emNetwalk/emNetwalkPanel.h
 lib/eaglemode/include/emPcx/emPcxImageFileModel.h
+lib/eaglemode/include/emPdf/emPdfFileModel.h
+lib/eaglemode/include/emPdf/emPdfFilePanel.h
+lib/eaglemode/include/emPdf/emPdfPagePanel.h
+lib/eaglemode/include/emPdf/emPdfServerModel.h
 lib/eaglemode/include/emPng/emPngImageFileModel.h
 lib/eaglemode/include/emPnm/emPnmImageFileModel.h
 lib/eaglemode/include/emPs/emPsDocument.h
@@ -443,6 +451,7 @@ lib/eaglemode/include/emXbm/emXbmImageFileModel.h
 lib/eaglemode/include/emXpm/emXpmImageFileModel.h
 %%EMAV%%lib/eaglemode/lib/emAv/emAvServerProc_xine
 lib/eaglemode/lib/emClock/emTimeZonesProc
+%%EMPDF%%lib/eaglemode/lib/emPdf/emPdfServerProc
 %%EMSVG%%lib/eaglemode/lib/emSvg/emSvgServerProc
 lib/eaglemode/lib/emTmpConv/emTmpConvProc
 lib/eaglemode/lib/libSilChess.so
@@ -458,6 +467,7 @@ lib/eaglemode/lib/libemJpeg.so
 lib/eaglemode/lib/libemMines.so
 lib/eaglemode/lib/libemNetwalk.so
 lib/eaglemode/lib/libemPcx.so
+%%EMPDF%%lib/eaglemode/lib/libemPdf.so
 lib/eaglemode/lib/libemPng.so
 lib/eaglemode/lib/libemPnm.so
 lib/eaglemode/lib/libemPs.so
@@ -564,6 +574,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res
 @dirrm lib/eaglemode/lib/emTmpConv
 %%EMSVG%%@dirrm lib/eaglemode/lib/emSvg
+%%EMPDF%%@dirrm lib/eaglemode/lib/emPdf
 @dirrm lib/eaglemode/lib/emClock
 %%EMAV%%@dirrm lib/eaglemode/lib/emAv
 @dirrm lib/eaglemode/lib
@@ -583,6 +594,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/include/emPs
 @dirrm lib/eaglemode/include/emPnm
 @dirrm lib/eaglemode/include/emPng
+@dirrm lib/eaglemode/include/emPdf
 @dirrm lib/eaglemode/include/emPcx
 @dirrm lib/eaglemode/include/emNetwalk
 @dirrm lib/eaglemode/include/emMines
