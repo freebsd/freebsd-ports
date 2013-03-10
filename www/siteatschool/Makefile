@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/Site%40School/Site%40School%20${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	CMS to manage and maintain a school website
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2013-06-30
+
 USE_PHP=	mysql
 USE_ZIP=	yes
 SUB_FILES=	pkg-message
