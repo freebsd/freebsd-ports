@@ -30,7 +30,6 @@ USE_TWISTED_RUN=	conch mail web words
 MAKE_ENV+=		NO_INSTALL_REQS=1
 
 OPTIONS_DEFINE=		TESTS
-OPTIONS_DEFAULT=	TESTS
 TESTS_DESC=		Install py-mock for unit tests
 # Ports infrastructure bug
 OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
@@ -39,7 +38,6 @@ OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if ${PORT_OPTIONS:MTESTS}
 BUILD_DEPENDS:=		${TEST_DEPENDS}
-post-build: regression-test
 .endif
 
 post-patch:
