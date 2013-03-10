@@ -4134,9 +4134,9 @@ textproc/gxditview||2013-03-06|Has expired: Broken for more than 6 month
 x11/powershell||2013-03-06|Has expired: Broken for more then 6 month
 devel/py-setuptools|devel/py-distribute|2013-03-06|Replaced with distribute
 devel/ZendOptimizer|www/pecl-zendoptimizerplus|2013-03-07|Replaced with supported open-source release 
-net-im/jreen||2013-03-07|Removed
+net-im/jreen|net-im/libjreen|2013-03-07|Duplicate of net-im/libjreen
 databases/ruby-dbdbd||2013-03-08|Dead project, no known users
-japanese/scim-mozc||2013-03-09|Removed
+japanese/scim-mozc||2013-03-09|Google droped SCIM support from Mozc
 net-p2p/transmission25|net-p2p/transmission|2013-03-09|gtk version is now fine
 net-p2p/transmission25-cli|net-p2p/transmission-cli|2013-03-09|gtk version is now fine
 net-p2p/transmission25-daemon|net-p2p/transmission-daemon|2013-03-09|gtk version is now fine
