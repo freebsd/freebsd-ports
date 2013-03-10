@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	9.2
+PORTVERSION=	10.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_9.x_Herbig_Haro/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_10.x_Sun/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
@@ -21,15 +21,13 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME} TIKIWIKI_DIR=${TIKIWIKI_DIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-.include <bsd.port.pre.mk>
-
 # This target is only meant to be used by the port maintainer.
 # Stolen from dokuwiki sorry :)
 
-x-generate-plist:
+x-generate-plist: extract
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|%%TIKIWIKI_DIR%%/|' > ${TEMP_PLIST} \
-		&& ${FIND} -d * -type d | \
+		&& ${FIND} -s -d * -type d | \
 		${SED} -e 's|^|@dirrm %%TIKIWIKI_DIR%%/|' >> ${TEMP_PLIST} \
 		&& ${ECHO_CMD} "@dirrmtry %%TIKIWIKI_DIR%%" >> ${TEMP_PLIST}
 
@@ -45,4 +43,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
