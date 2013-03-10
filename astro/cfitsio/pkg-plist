@@ -5,7 +5,3 @@ include/longnam.h
 lib/libcfitsio.so
 lib/libcfitsio.so.0
 libdata/pkgconfig/cfitsio.pc
-%%PORTDOCS%%%%DOCSDIR%%/cfitsio.doc
-%%PORTDOCS%%%%DOCSDIR%%/cfortran.doc
-%%PORTDOCS%%%%DOCSDIR%%/fitsio.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

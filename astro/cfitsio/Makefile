@@ -2,56 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.310
+PORTVERSION=	3.330
 CATEGORIES=	astro
-MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/%SUBDIR%/ \
-		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. oldvers
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
+		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
+		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
+		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/ \
+		LOCAL/sunpoet
+DISTNAME=	${PORTNAME}${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	DOCS
 
+ALL_TARGET=	shared
+CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PKGCONFIG=	build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
-ALL_TARGET=	shared
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-post-extract:
-	@cd ${WRKSRC} && ${MV} zlib.h zlib.h.dist
-
 post-patch:
+	@${REINPLACE_CMD} -e 's|="\.so"|=".so.0"|g' ${WRKSRC}/configure
+	@${MV} ${WRKSRC}/zlib.h ${WRKSRC}/zlib.h.dist
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
-	@${REINPLACE_CMD} -e 's|="\.so"|=".so.0"|g' ${WRKSRC}/configure
 
 do-install:
-.for file in drvrsmem.h fitsio.h fitsio2.h longnam.h
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
-.endfor
-.for f in libcfitsio.so.0
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib
-.endfor
-	@${LN} -sf libcfitsio.so.0 ${PREFIX}/lib/libcfitsio.so
-.for f in cfitsio.pc
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
-.endfor
+	cd ${WRKSRC}/ && \
+		${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${PREFIX}/include/ && \
+		${INSTALL_LIB} libcfitsio.so.0 ${PREFIX}/lib/ && \
+		${INSTALL_DATA} cfitsio.pc ${PREFIX}/libdata/pkgconfig/
+	${LN} -fs libcfitsio.so.0 ${PREFIX}/lib/libcfitsio.so
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
