@@ -1,26 +1,44 @@
-# New ports collection makefile for:	buildbot-slave
-# Date created:		12 Jul 2010
-# Whom:			Frederic Praca <frederic.praca@freebsd-fr.org>
-#
+# Created by: Frederic Praca <frederic.praca@freebsd-fr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.6p1
+PORTVERSION=	0.8.7p1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Slave part of Buildbot, an continuous integration system
 
-PROJECTHOST=	buildbot
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	yes
+LICENSE=	GPLv2
+
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		trial:${PORTSDIR}/devel/py-twistedCore \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+
+PROJECTHOST=		buildbot
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
 USE_TWISTED_RUN=	runner
 
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|/usr/bin/python|${PYTHON_CMD}|g'
-	@${FIND} ${WRKSRC} -name \*.bak -delete
+MAKE_ENV+=		NO_INSTALL_REQS=1
+
+OPTIONS_DEFINE=		TESTS
+TESTS_DESC=		Install py-mock for unit tests
+# Ports infrastructure bug
+OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS:=	${TEST_DEPENDS}
+.endif
+
+MAN1=	buildslave.1
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/buildslave.1 ${MANPREFIX}/man/man1
+
+regression-test:
+	@cd ${WRKSRC} && trial buildslave.test
 
 .include <bsd.port.mk>
