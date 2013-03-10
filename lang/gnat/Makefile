@@ -7,6 +7,7 @@
 #   conflict with other gcc based products. Standard names can be provided
 #   using symbolic links.
 
+PORTNAME=		gnat
 PORTVERSION=		2010
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_LOCAL:S/$/:boot/}
