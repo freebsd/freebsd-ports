@@ -6,7 +6,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	audio
 MASTER_SITES=	http://dist.testbit.eu/beast/v${PORTVERSION:R}/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful music composition and modular synthesis application
 
 LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
