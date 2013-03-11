@@ -1,4 +1,2 @@
-SHA256 (MesaLib-7.6.1.tar.bz2) = 701f0e4cb85d6298181651b780d1c0a439fadd02aad29ee6623fc05588bb8d44
-SIZE (MesaLib-7.6.1.tar.bz2) = 4886995
-SHA256 (MesaDemos-7.6.1.tar.bz2) = d2368fc86d032dc6478df70f99b114abdf6c0c1da57bf1d3927ab179876f9c4b
-SIZE (MesaDemos-7.6.1.tar.bz2) = 1547790
+SHA256 (mesa-demos-8.1.0.tar.bz2) = 9703fa0646b32a1e68d2abf5628f936f77bf97c69ffcaac90de380820a87a828
+SIZE (mesa-demos-8.1.0.tar.bz2) = 10045237
