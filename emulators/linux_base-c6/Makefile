@@ -56,6 +56,8 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 
 .if defined(PACKAGE_BUILDING)
 
+MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
+
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-8.el6.centos.src.rpm \
 		bzip2-1.0.5-7.el6_0.src.rpm \
