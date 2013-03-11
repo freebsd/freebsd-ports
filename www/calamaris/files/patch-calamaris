@@ -1,0 +1,11 @@
+--- calamaris.orig	2013-03-11 16:52:12.000000000 +0400
++++ calamaris	2013-03-11 16:52:45.000000000 +0400
+@@ -2606,7 +2606,7 @@
+ 	    100, 100 * $tcp_hit / $tcp );
+   }
+   outstop(10);
+-  if ( defined(%tcp_content) ) {
++  if ( %tcp_content ) {
+     outstart(11);
+     if ( $tcp == 0 ) {
+       outline( 11, 'no matching requests' );
