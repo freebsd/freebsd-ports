@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkgconf
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.12
 CATEGORIES=	devel
 MASTER_SITES=	http://tortois.es/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
