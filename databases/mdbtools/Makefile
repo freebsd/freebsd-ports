@@ -13,8 +13,8 @@ COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 # To build man-pages
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
+USES=		bison
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
 USE_GNOME=	glib20
 USE_PKGCONFIG=	build
 WANT_GNOME=	yes
