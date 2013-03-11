@@ -17,7 +17,7 @@ COMMENT=	The "meta-port" for The Gimp
 RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
 
 OPTIONS_DEFINE=	PYTHON PRINT HELP
-OPTIONS_DEFAULT=PRINT PYTHON
+OPTIONS_DEFAULT=PRINT
 PYTHON_DESC=	Python-fu support
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 HELP_DESC=	Gimp-Help (50+MB distfile)
