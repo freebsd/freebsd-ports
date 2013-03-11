@@ -1,19 +1,15 @@
-# New ports collection makefile for:	bdftopcf
-# Date Created:				28 Aug 2005
-# Whom:					Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	bdftopcf
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Convert X font from BDF to PCF
 
 XORG_CAT=	app
-USE_XORG=	xfont
+USE_XORG=	xfont xorg-macros
 
 PLIST_FILES=	bin/bdftopcf
 MAN1=		bdftopcf.1
