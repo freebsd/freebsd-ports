@@ -1,12 +1,8 @@
-# New ports collection makefile for:	netdisco-mibs
-# Date created:		2012-02-10
-# Whom:			Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-#
+# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	netdisco-mibs
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 
