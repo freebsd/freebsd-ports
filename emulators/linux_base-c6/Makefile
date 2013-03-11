@@ -1,17 +1,10 @@
-# New ports collection makefile for:	emulators/linux_base-c6
-# Date created:				2012-03-10
-# Whom:					Svyatoslav Lempert <svyatoslav.lempert@gmail dot com>
-#
+# Created by: Svyatoslav Lempert <svyatoslav.lempert@gmail dot com>
 # $FreeBSD$
-#
 
 PORTNAME=		c6
 PORTVERSION=		6.2
 CATEGORIES=		emulators linux
-MASTER_SITES=		http://mirror.yandex.ru/centos/${PORTVERSION}/os/i386/Packages/ \
-			http://mirrors.kernel.org/centos/${PORTVERSION}/os/i386/Packages/ \
-			http://mirror.centos.org/centos/${PORTVERSION}/os/i386/Packages/
-			
+MASTER_SITES=		http://vault.centos.org/${PORTVERSION}/os/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/centos/${PORTVERSION}
@@ -62,8 +55,6 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		zlib-1.2.3-27.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-
-MASTER_SITES+=	http://vault.centos.org/6.2/os/Source/SPackages/
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-8.el6.centos.src.rpm \
@@ -120,7 +111,6 @@ PLIST_SUB=		GLIBCVER="2.12"
 # - look for updates in the updates folder of the CentOS mirrors
 # - research what are the important differences between 2.6.16 and 2.6.18, and
 #   if we need to add something to the linuxulator
-
 
 RPM2CPIO?=		${LOCALBASE}/bin/rpm2cpio
 
