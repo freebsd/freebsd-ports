@@ -3,6 +3,7 @@
 
 PORTNAME=	dateutil
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +20,10 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python-dateutil
+
+# Fix incorrect permissions
+post-patch:
+	@${FIND} ${WRKSRC}/python_dateutil.egg-info -type f -exec ${CHMOD} ${SHAREMODE} {} ";"
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py
