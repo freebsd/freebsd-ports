@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libSM
-# Date Created:			09 Nov, 2003
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libSM
 PORTVERSION=	1.2.0
@@ -15,10 +11,8 @@ COMMENT=	Session Management library for X11
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros
-
 XORG_CAT=	lib
-USE_XORG=	ice xproto:both xtrans
+USE_XORG=	ice xproto:both xtrans xorg-macros
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 

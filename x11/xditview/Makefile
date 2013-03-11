@@ -10,9 +10,7 @@ COMMENT=	Display ditroff output
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xt xaw xorg-macros
 
 MAN1=		xditview.1
 

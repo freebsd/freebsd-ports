@@ -8,9 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Print out X-Video extension adaptor information
 
 XORG_CAT=	app
-USE_XORG=	xv x11
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xv x11 xorg-macros
 
 PLIST_FILES=	bin/xvinfo
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xf86-video-radeonhd-devel
-# Date Created:				2008-09-07
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0.20091101

@@ -48,7 +48,8 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto inputproto xf86dgaproto \
 		videoproto compositeproto trapproto recordproto xineramaproto \
-		xinerama evieproto xfont fontenc xkbui pixman pciaccess
+		xinerama evieproto xfont fontenc xkbui pixman pciaccess \
+		xorg-macros
 
 MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes

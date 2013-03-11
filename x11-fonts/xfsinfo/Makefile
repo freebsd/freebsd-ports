@@ -8,9 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X font server information utility
 
 XORG_CAT=	app
-USE_XORG=	x11 libfs
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	x11 libfs xorg-macros
 
 PLIST_FILES=	bin/xfsinfo
 

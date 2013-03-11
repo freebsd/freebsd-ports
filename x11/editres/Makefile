@@ -8,9 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Dynamic resource editor for X Toolkit Applications
 
 XORG_CAT=	app
-USE_XORG=	x11 xt xmu xaw
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	x11 xt xmu xaw xorg-macros
 
 MAN1=		editres.1
 

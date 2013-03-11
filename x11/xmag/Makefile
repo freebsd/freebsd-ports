@@ -10,9 +10,7 @@ COMMENT=	X application for screen magnifying
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xt xaw xorg-macros
 
 MAN1=		xmag.1
 
