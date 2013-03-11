@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wgetpaste
-# Date created:				2 Jul 2009
-# Whom:					Anonymous
-#
+# Created by: Anonymous
 # $FreeBSD$
-#
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
