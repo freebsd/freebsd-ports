@@ -1,6 +1,4 @@
-bin/rsvg
 bin/rsvg-convert
-bin/rsvg-view
 include/librsvg-2.0/librsvg/librsvg-enum-types.h
 include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
@@ -8,6 +6,7 @@ include/librsvg-2.0/librsvg/rsvg.h
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.a
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.so
+lib/girepository-1.0/Rsvg-2.0.typelib
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.so
@@ -21,6 +20,7 @@ share/doc/rsvg-2.0/annotation-glossary.html
 share/doc/rsvg-2.0/api-index-2-14.html
 share/doc/rsvg-2.0/api-index-2-22.html
 share/doc/rsvg-2.0/api-index-2-32.html
+share/doc/rsvg-2.0/api-index-2-36.html
 share/doc/rsvg-2.0/api-index-2-4.html
 share/doc/rsvg-2.0/api-index-2-8.html
 share/doc/rsvg-2.0/api-index-2-9.html
@@ -33,7 +33,6 @@ share/doc/rsvg-2.0/left.png
 share/doc/rsvg-2.0/licence.html
 share/doc/rsvg-2.0/object-tree.html
 share/doc/rsvg-2.0/right.png
-share/doc/rsvg-2.0/rsvg-2.0.devhelp
 share/doc/rsvg-2.0/rsvg-2.0.devhelp2
 share/doc/rsvg-2.0/rsvg-Using-RSVG-with-GIO.html
 share/doc/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
@@ -42,7 +41,7 @@ share/doc/rsvg-2.0/rsvg-Version-check-and-feature-tests.html
 share/doc/rsvg-2.0/rsvg.html
 share/doc/rsvg-2.0/style.css
 share/doc/rsvg-2.0/up.png
-share/pixmaps/svg-viewer.svg
+share/gir-1.0/Rsvg-2.0.gir
 share/themes/bubble/gtk-2.0/blue.svg
 share/themes/bubble/gtk-2.0/green.svg
 share/themes/bubble/gtk-2.0/gtkrc
@@ -53,7 +52,6 @@ share/themes/bubble/gtk-2.0/red.svg
 @dirrm include/librsvg-2.0/librsvg
 @dirrm include/librsvg-2.0
 @dirrmtry share/themes/bubble/gtk-2.0
-@dirrmtry share/themes/bubble/gtk-3.0
 @dirrmtry share/themes/bubble
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
