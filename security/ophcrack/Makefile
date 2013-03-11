@@ -1,20 +1,16 @@
-# New ports collection makefile for:	ophcrack
-# Date created:				14 Mar 2008
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.4.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Windows password cracker based on rainbow tables
 
-LICENSE=	GPLv2
+LICENSE=	AL2 GPLv2
+LICENSE_COMB=	multi
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -24,38 +20,34 @@ USE_OPENSSL=	yes
 PLIST_FILES=	bin/ophcrack
 PORTDOCS=	*
 
-OPTIONS=	GUI	"Build GUI frontend (Qt4 based)"	on \
-		GRAPH	"Enable graph rendering with Qwt"	on \
-		DEBUG	"Make debug build"			off
+OPTIONS_DEFINE=	X11 GRAPH DOCS
+OPTIONS_DEFAULT=	X11 GRAPH
+
+X11_DESC=	Build GUI frontend (Qt4-based)
+GRAPH_DESC=	Graph rendering support via Qwt
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI) || defined(WITH_GRAPH)
+.if ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MGRAPH}
 USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
 .else
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-.if defined(WITH_GRAPH)
-LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+.if ${PORT_OPTIONS:MGRAPH}
+LIB_DEPENDS=	qwt:${PORTSDIR}/x11-toolkits/qwt5
 .else
 CONFIGURE_ARGS+=	--disable-graph
 .endif
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
