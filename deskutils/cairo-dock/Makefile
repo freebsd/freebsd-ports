@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cairo-dock
-# Date created:		2010-03-18
-# Whom:			Ivan Klymenko <fidaj@ukr.net>
-#
+# Created by: Ivan Klymenko <fidaj@ukr.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cairo-dock
 DISTVERSION=	2.3.0~3

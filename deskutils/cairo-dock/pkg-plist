@@ -266,8 +266,6 @@ share/pixmaps/cairo-dock.svg
 @dirrmtry share/applications
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
-@dirrmtry share/man/man1
-@dirrmtry share/man
 @dirrm include/cairo-dock/implementations
 @dirrm include/cairo-dock/icon-factory
 @dirrm include/cairo-dock/cairo-dock
