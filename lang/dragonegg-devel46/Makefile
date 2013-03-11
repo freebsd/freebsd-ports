@@ -33,7 +33,7 @@ DRAGONEGG_PATH=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 GCC_LIBDIR=		lib/${CC}
 
 ALL_TARGET=
-MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC}
+MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} VERBOSE=1
 
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 

@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.3.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -141,6 +140,8 @@ post-build:
 post-install:
 	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
 	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/Release/bin/llvm-lit ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FileCheck ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}/cmake
 	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
 	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
@@ -164,7 +165,8 @@ regression-test: ${BUILD_COOKIE}
 		${SH} -c ${TEST_CMD}; \
 	fi
 
-PLIST_FILE_LIST=	bin/bugpoint \
+PLIST_FILE_LIST=	bin/FileCheck \
+			bin/bugpoint \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \

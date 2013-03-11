@@ -11,6 +11,7 @@
 %%DATADIR%%/cmake/LLVMProcessSources.cmake
 %%DATADIR%%/cmake/TableGen.cmake
 %%DATADIR%%/cmake/VersionFromVCS.cmake
+bin/FileCheck
 bin/bugpoint
 bin/llc
 bin/lli
@@ -24,6 +25,7 @@ bin/llvm-dis
 bin/llvm-dwarfdump
 bin/llvm-extract
 bin/llvm-link
+bin/llvm-lit
 bin/llvm-mc
 bin/llvm-mcmarkup
 bin/llvm-nm
@@ -80,6 +82,7 @@ include/llvm/ADT/IntEqClasses.h
 include/llvm/ADT/IntervalMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/MapVector.h
+include/llvm/ADT/None.h
 include/llvm/ADT/NullablePtr.h
 include/llvm/ADT/Optional.h
 include/llvm/ADT/OwningPtr.h
@@ -736,6 +739,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToSetUpLLVMStyleRTTI.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToSubmitABug.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToSubmitABug.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToUseAttributes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToUseAttributes.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToUseInstrMappings.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToUseInstrMappings.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LLVMBuild.html
