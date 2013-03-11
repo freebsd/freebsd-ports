@@ -178,6 +178,7 @@
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
+    SUBDIR += lmdb
     SUBDIR += lsdb
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres

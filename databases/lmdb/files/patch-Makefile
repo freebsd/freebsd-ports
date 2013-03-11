@@ -1,0 +1,42 @@
+--- ./Makefile.orig	2013-02-25 05:06:51.000000000 -0800
++++ ./Makefile	2013-03-11 12:29:40.265384057 -0700
+@@ -1,23 +1,21 @@
+-CC	= gcc
+ W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast
+ OPT = -O2 -g
+-CFLAGS	= -pthread $(OPT) $(W) $(XCFLAGS)
++CFLAGS	= $(XCFLAGS)
+ LDLIBS	=
+ SOLIBS	=
+-prefix	= /usr/local
+ 
+ IHDRS	= lmdb.h
+ ILIBS	= liblmdb.a liblmdb.so
+ IPROGS	= mdb_stat mdb_copy
+ IDOCS	= mdb_stat.1 mdb_copy.1
+ PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
+-all:	$(ILIBS) $(PROGS)
++all:	$(ILIBS) $(IPROGS)
+ 
+ install: $(ILIBS) $(IPROGS) $(IHDRS)
+-	cp $(IPROGS) $(DESTDIR)$(prefix)/bin
+-	cp $(ILIBS) $(DESTDIR)$(prefix)/lib
+-	cp $(IHDRS) $(DESTDIR)$(prefix)/include
+-	cp $(IDOCS) $(DESTDIR)$(prefix)/man/man1
++	${INSTALL_PROGRAM} $(IPROGS) $(DESTDIR)$(prefix)/bin
++	${INSTALL_LIB} $(ILIBS) $(DESTDIR)$(prefix)/lib
++	${INSTALL_DATA} $(IHDRS) $(DESTDIR)$(prefix)/include
++	${INSTALL_MAN} $(IDOCS) $(DESTDIR)$(prefix)/man/man1
+ 
+ clean:
+ 	rm -rf $(PROGS) *.[ao] *.so *~ testdb
+@@ -33,7 +31,9 @@
+ 	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.o midl.o $(SOLIBS)
+ 
+ mdb_stat: mdb_stat.o liblmdb.a
++	${CC} ${LDFLAGS} -o ${.TARGET} mdb_stat.o liblmdb.a
+ mdb_copy: mdb_copy.o liblmdb.a
++	${CC} ${LDFLAGS} -o ${.TARGET} mdb_copy.o liblmdb.a
+ mtest:    mtest.o    liblmdb.a
+ mtest2:	mtest2.o liblmdb.a
+ mtest3:	mtest3.o liblmdb.a
