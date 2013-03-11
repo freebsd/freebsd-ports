@@ -10,9 +10,7 @@ COMMENT=	XKB utility demos
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xkbfile x11 xaw inputproto
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xkbfile x11 xaw inputproto xorg-macros
 
 MAN1=		xkbbell.1 xkbvleds.1 xkbwatch.1
 

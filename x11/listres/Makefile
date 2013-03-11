@@ -8,9 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List resources in widgets
 
 XORG_CAT=	app
-USE_XORG=	xproto xt xmu xaw
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xproto xt xmu xaw xorg-macros
 
 PLIST_FILES=	bin/listres
 

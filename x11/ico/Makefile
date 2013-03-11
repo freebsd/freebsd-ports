@@ -8,9 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Displays a wire-frame rotating plyhedron
 
 XORG_CAT=	app
-USE_XORG=	x11
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	x11 xorg-macros
 
 PLIST_FILES=	bin/ico
 

@@ -7,10 +7,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Manage utmp/wtmp entries for non-init X clients
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
-
 XORG_CAT=	app
-USE_XORG=	x11
+USE_XORG=	x11 xorg-macros
 
 PLIST_FILES=	bin/sessreg
 

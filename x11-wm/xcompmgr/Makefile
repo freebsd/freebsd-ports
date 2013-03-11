@@ -9,9 +9,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	A sample X compositing manager
 
 XORG_CAT=	app
-USE_XORG=	x11 xcomposite xfixes xdamage xrender
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	x11 xcomposite xfixes xdamage xorg-macros xrender
 
 PLIST_FILES=	bin/${PORTNAME}
 

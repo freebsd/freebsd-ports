@@ -10,9 +10,7 @@ COMMENT=	Displays the X Window System logo
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xrender xft xext xt xaw xp xprintutil
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
+USE_XORG=	xrender xft xext xt xaw xp xprintutil xorg-macros
 
 MAN1=		xlogo.1
 
