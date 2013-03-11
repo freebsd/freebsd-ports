@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Yadex
-# Date created:				17 June 2001
-# Whom:					Jordan DeLong <fracture@allusion.net>
-#
+# Created by: Jordan DeLong <fracture@allusion.net>
 # $FreeBSD$
-#
 
 PORTNAME=	yadex
 PORTVERSION=	1.7.0
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/ \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A WAD-file editor, for games like Doom and Hexen
+COMMENT=	WAD file editor, for games like Doom and Hexen
 
 LICENSE=	GPLv2
 
@@ -27,13 +23,15 @@ MAKEFILE=	GNUmakefile
 
 MAN6=		yadex.6
 
-OPTIONS=	WHITE_BG "Use alternative (black-on-white) color scheme" off \
-		3D_RENDER "Build with a 3D preview function" off \
-		SEARCH "Search for a thing, linedef or sector by type" off \
-		EXTRA_TOOLS "Add a few extra tools to Yadex' repertoire" off \
-		LAPTOP_KEYS "Key bindings to make editing easier on laptops" off
+OPTIONS_DEFINE=	WHITE_BG 3D_RENDER SEARCH EXTRA_TOOLS LAPTOP_KEYS DOCS
 
-.include <bsd.port.pre.mk>
+WHITE_BG_DESC=	Use alternative (black-on-white) color scheme
+3D_RENDER_DESC=	Build with a 3D preview function
+SEARCH_DESC=	Search for a thing, linedef, or sector by type
+EXTRA_TOOLS_DESC=	Add a few extra tools to Yadex' repertoire
+LAPTOP_KEYS_DESC=	Key bindings to make editing easier on laptops
+
+.include <bsd.port.options.mk>
 
 PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}
@@ -42,32 +40,32 @@ PATCH_PREFIX=	${PORTNAME:U:C/^(.).*$/\1/g}${PORTNAME:C/^(.)//}_${PORTVERSION:S/.
 PATCH_SUFFIX=	.diff
 PATCHFILES=	${PATCH_PREFIX}_Depend${PATCH_SUFFIX}
 
-.if defined(WITH_3D_RENDER)
+.if ${PORT_OPTIONS:M3D_RENDER}
 PATCHFILES+=	${PATCH_PREFIX}_Render3D${PATCH_SUFFIX}
 PLIST_SUB+=	3DRENDER=""
 .else
 PLIST_SUB+=	3DRENDER="@comment "
 .endif
-.if defined(WITH_SEARCH)
+.if ${PORT_OPTIONS:MSEARCH}
 PATCHFILES+=	${PATCH_PREFIX}_Find${PATCH_SUFFIX}
 .endif
-.if defined(WITH_EXTRA_TOOLS)
+.if ${PORT_OPTIONS:MEXTRA_TOOLS}
 PATCHFILES+=	${PATCH_PREFIX}_Tools${PATCH_SUFFIX}
 .endif
-.if defined(WITH_LAPTOP_KEYS)
+.if ${PORT_OPTIONS:MLAPTOP_KEYS}
 PATCHFILES+=	${PATCH_PREFIX}_Keys${PATCH_SUFFIX}
 .endif
 
 post-patch:
-.if defined(WITH_WHITE_BG)
+.if ${PORT_OPTIONS:MWHITE_BG}
 	@${REINPLACE_CMD} -E 's,^#(CXXFLAGS \+= -DWHITE_BACKGROUND)$$,\1,' \
 		${WRKSRC}/${MAKEFILE}
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.[^6]* ${WRKSRC}/doc/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
