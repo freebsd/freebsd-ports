@@ -4,7 +4,7 @@
 PORTNAME=	libxdg-basedir
 PORTVERSION=	1.2.0
 CATEGORIES=	x11
-MASTER_SITES=	http://n.ethz.ch/student/nevillm/download/libxdg-basedir/
+MASTER_SITES=	http://nevill.ch/libxdg-basedir/downloads/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Implementation of the XDG Base Directory specification
