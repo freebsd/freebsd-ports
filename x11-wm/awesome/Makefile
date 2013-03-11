@@ -3,7 +3,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
-		${LUA_LIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi \
+		${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
-RUN_DEPENDS=	${LUA_LIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi
+RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		ev:${PORTSDIR}/devel/libev \
 		freetype:${PORTSDIR}/print/freetype2 \
@@ -75,7 +75,7 @@ CMAKE_ARGS += -DINSTALL_PORTDOCS=NO -DGENERATE_DOC=NO
 post-patch:
 	@${REINPLACE_CMD} -e "/LUA_EXECUTABLE lua/ s,lua,lua-${LUA_VER}," \
 		${WRKSRC}/awesomeConfig.cmake
-	@${REINPLACE_CMD} -e '/lgi-check/d' \
-		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "s,^lua ,${LUA_CMD} ," \
+		${WRKSRC}/build-utils/lgi-check.sh
 
 .include <bsd.port.post.mk>
