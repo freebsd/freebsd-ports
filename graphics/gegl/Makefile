@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gegl
-PORTVERSION=	0.1.8
-PORTREVISION=	6
+PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
 
 OPTIONS_DEFINE=	CAIRO ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER JPEG \
@@ -22,20 +21,22 @@ ENSCRIPT_DESC=	Enscript support
 SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20 intltool
+USES=		pathfix
 USE_PKGCONFIG=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_LDCONFIG=	${PREFIX}/lib/gegl-0.1
+USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS+=--without-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-GEGL_MINOR=	107
-PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
+GEGL_MINOR=	199
+GEGL_VER=	0.2
+PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}" GEGL_VER=${GEGL_VER}
 
 EXAMPLES=	2geglbuffer csugar float-lookup \
 		gegl-convert gegl-slicer geglbuffer-add-image \
@@ -87,7 +88,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
-LIB_DEPENDS+=	gvpr:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=	cgraph:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
 .endif
@@ -198,11 +199,13 @@ CONFIGURE_ARGS+=--disable-docs
 
 post-patch:
 .if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|tools examples tests||' \
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '10s|\\||; 11,13d' \
+		${WRKSRC}/Makefile.am
 .endif
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' \
+		${WRKSRC}/tools/gobj2dot.rb
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
