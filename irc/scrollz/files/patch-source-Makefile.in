@@ -1,0 +1,29 @@
+--- source/Makefile.in.orig	2011-04-29 17:21:18.000000000 +0900
++++ source/Makefile.in	2013-03-09 19:07:14.372106954 +0900
+@@ -86,7 +86,7 @@
+ 	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DTRANSLATION_PATH=\"$(TRANS_DIR)/\" -c translat.c
+ 
+ screen.o: Makefile ../Makefile
+-	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DWSERV_PATH=\"$(INSTALL_WSERV)\" -c screen.c
++	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DWSERV_PATH=\"$(INSTALL_WSERVZ)\" -c screen.c
+ 
+ # auxiliary programs
+ 
+@@ -96,7 +96,7 @@
+ ircio: $(IRCIO_OBJECTS)
+ 	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) $(PPS_DEFS) -o $@ $(IRCIO_OBJECTS) $(LIBS)
+ 
+-wserv: $(WSERV_OBJECTS)
++wservz: $(WSERV_OBJECTS)
+ 	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) -o $@ $(WSERV_OBJECTS) $(LIBS)
+ 
+ clean::
+@@ -106,7 +106,7 @@
+ 	$(RM) ircio ircio.o newio.o
+ 
+ clean::
+-	$(RM) wserv wserv.o wterm.o wterm.c
++	$(RM) wservz wserv.o wterm.o wterm.c
+ 
+ # extra junk
+ 

@@ -1,0 +1,85 @@
+--- Makefile.in.orig	2011-04-29 17:21:18.000000000 +0900
++++ Makefile.in	2013-03-09 19:35:03.628110600 +0900
+@@ -31,14 +31,14 @@
+ # @(#)$Id: Makefile.in,v 1.23 2006-10-31 12:31:27 f Exp $
+ 
+ # targets recognised by this makefile:
+-#   all, everything	- compiles ircii, ircio, ircflush and wserv
++#   all, everything	- compiles ircii, ircio, ircflush and wservz
+ #   ircio		- compiles ircio
+ #   ircflush		- compiles ircflush
+-#   wserv		- compiles wserv
+-#   install		- installs ircii, ircio, ircflush and wserv
++#   wservz		- compiles wservz
++#   install		- installs ircii, ircio, ircflush and wservz
+ #   installirc		- installs ircii
+ #   installio		- installs ircio
+-#   installwserv	- installs wserv
++#   installwservz	- installs wservz
+ #   installflush	- installs ircflush
+ #   installscript 	- installs the scripts
+ #   installhelp		- installs the help files
+@@ -105,7 +105,7 @@
+ 
+ # This program allows you to use screen/xterm's to put new irc windows
+ # on new screen/xterm windows.
+-INSTALL_WSERV = $(bindir)/wserv
++INSTALL_WSERVZ = $(bindir)/wservz
+ 
+ # This command will be used to install the irc help files.  If you don't
+ # want to install them, replace with the following:
+@@ -133,7 +133,7 @@
+ 	'HELP_DIR=$(HELP_DIR)'				\
+ 	'INSTALL_IRC=$(INSTALL_IRC)'			\
+ 	'INSTALL_IRCIO=$(INSTALL_IRCIO)'		\
+-	'INSTALL_WSERV=$(INSTALL_WSERV)'		\
++	'INSTALL_WSERVZ=$(INSTALL_WSERVZ)'		\
+ 	'IRCSHARE=$(IRCSHARE)'				\
+ 	'IRCPATH=$(IRC_PATH)'				\
+ 	'LDFLAGS=$(LDFLAGS)'				\
+@@ -143,9 +143,9 @@
+ 	'LN=$(LN)'					\
+ 	'RM=$(RM)'
+ 
+-all: scrollz scrollz.1
++all: scrollz scrollz.1 wservz
+ 
+-install: all installbin installdirs installman installhelp
++install: all installbin installwservz installdirs installman installhelp
+ 
+ scrollz: source/Makefile Makefile
+ 	@cd source; $(MAKE) all
+@@ -154,9 +154,9 @@
+ 	sed -e "s,SHAREDIR,$(IRCSHARE)," < scrollz.1.in > scrollz.1
+ 
+ installeverything:  install installman installflush installio \
+-		    installwserv installhelp
++		    installwservz installhelp
+ 
+-everything: all ircflush ircio wserv
++everything: all ircflush ircio wservz
+ 
+ ircserv: ircio
+ 
+@@ -166,8 +166,8 @@
+ ircflush: source/ircflush.c source/Makefile
+ 	@cd source; $(MAKE) ircflush
+ 
+-wserv: source/wserv.c source/term.c source/Makefile
+-	@cd source; $(MAKE) wserv
++wservz: source/wserv.c source/term.c source/Makefile
++	@cd source; $(MAKE) wservz
+ 
+ installbin: installirc
+ 
+@@ -189,8 +189,8 @@
+ installflush: ircflush installdirs
+ 	$(INSTALL) source/ircflush $(DESTDIR)/$(INSTALL_IRCFLUSH)
+ 
+-installwserv: wserv installdirs
+-	$(INSTALL) source/wserv $(DESTDIR)/$(INSTALL_WSERV)
++installwservz: wservz installdirs
++	$(INSTALL) source/wservz $(DESTDIR)/$(INSTALL_WSERVZ)
+ 
+ installdirs:
+ 	umask 022; ./mkinstalldirs $(DESTDIR)/$(IRCSHARE) $(DESTDIR)/$(bindir) \
