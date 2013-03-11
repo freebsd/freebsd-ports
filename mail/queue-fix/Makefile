@@ -11,14 +11,12 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
-OPTIONS_DEFINE=	DOCS
-
 USE_QMAIL_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 
-OPTIONS_DEFINE=	BIG_TODO
+OPTIONS_DEFINE=	DOCS BIG_TODO
 
 BIG_TODO_DESC=	Use big_todo patch
 
