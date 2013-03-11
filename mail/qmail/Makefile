@@ -648,7 +648,7 @@ pre-everything::
 	@${ECHO_MSG} "		then \"${LOCALBASE}/qmail\" is suggested"
 	@${ECHO_MSG} "		instead of \"${LOCALBASE}\", but both will"
 	@${ECHO_MSG} "		work."
- 	@${ECHO_MSG} ""
+	@${ECHO_MSG} ""
 .endif
 
 post-extract:
