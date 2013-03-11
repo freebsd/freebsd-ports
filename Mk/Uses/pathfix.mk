@@ -7,11 +7,11 @@
 #
 # Feature:	pathfix
 # Usage:	USES=pathfix
-# Valid ARGS	does not require args
+# Valid ARGS:	does not require args
 #
 #
-.if !defined(_INCLUDE_PATHFIX_MK)
-_INCLUDE_PATHFIX_MK=	yes
+.if !defined(_INCLUDE_USES_PATHFIX_MK)
+_INCLUDE_USES_PATHFIX_MK=	yes
 
 .if defined(pathfix_ARGS)
 IGNORE=	USES=pathfix does not require args
