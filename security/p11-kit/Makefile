@@ -25,6 +25,7 @@ MAKE_ENV=	exampledir=${EXAMPLESDIR}
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack gnomehack
 USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
