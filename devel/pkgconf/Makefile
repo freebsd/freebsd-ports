@@ -3,7 +3,7 @@
 PORTNAME=	pkgconf
 PORTVERSION=	0.8.12
 CATEGORIES=	devel
-MASTER_SITES=	http://tortois.es/~nenolod/distfiles/ \
+MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
 
 MAINTAINER=	bapt@FreeBSD.org
