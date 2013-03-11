@@ -8,7 +8,7 @@
  #include <sys/mman.h>
  #include <sys/wait.h>
  #include "interbench.h"
-@@ -210,7 +211,7 @@
+@@ -210,7 +211,7 @@ int test_fifo(void)
  {
  	struct sched_param sp;
  	memset(&sp, 0, sizeof(sp));
@@ -17,7 +17,7 @@
  	if (sched_setscheduler(0, SCHED_FIFO, &sp) == -1) {
  		if (errno != EPERM)
  			terminal_error("sched_setscheduler");
-@@ -888,7 +889,7 @@
+@@ -888,7 +889,7 @@ void *timekeeping_thread(void *t)
  	 * accurate accounting remains SCHED_NORMAL;
  	 */
  	if (th->dt != &th->benchmarks[NOT_BENCHING])
@@ -26,7 +26,7 @@
  	/* These values must be changed at the appropriate places or race */
  	tk->sleep_interval = tk->slept_interval = 0;
  	post_sem(&s->ready);
-@@ -1133,7 +1134,7 @@
+@@ -1133,7 +1134,7 @@ void get_ram(void)
  	FILE *meminfo;
          char aux[256];
   
@@ -35,7 +35,7 @@
  		terminal_error("fopen");
  
  	ud.ram = ud.swap = 0;
-@@ -1293,7 +1294,8 @@
+@@ -1293,7 +1294,8 @@ void run_benchchild(int i, int j)
  	thi->dt = &thi->benchmarks[j];
  	initialise_thread_data(thi->dt);
  	if (ud.do_rt)
@@ -45,7 +45,7 @@
  	
  	/* Tell main we're ready */
  	wakeup_with(b2m[1]);
-@@ -1344,7 +1346,7 @@
+@@ -1344,7 +1346,7 @@ void bench(int i, int j)
  	 * We want to be higher priority than everything to signal them to
  	 * stop and we lock our memory if we can as well
  	 */
@@ -54,7 +54,7 @@
  	set_mlock();
  
  	/* Wakeup the load process */
-@@ -1652,7 +1654,7 @@
+@@ -1652,7 +1654,7 @@ bench:
  		 * To get as accurate a loop as possible we time it running
  		 * SCHED_FIFO if we can
  		 */
