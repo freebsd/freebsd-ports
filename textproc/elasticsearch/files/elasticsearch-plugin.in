@@ -10,7 +10,7 @@ load_rc_config $name
 : ${elasticsearch_config:="%%PREFIX%%/etc/elasticsearch/elasticsearch.yml"}
 
 ES_LIB="%%PREFIX%%/lib/elasticsearch"
-ES_CLASSPATH=$ES_LIB/elasticsearch-0.19.9.jar:$ES_LIB/*:$ES_LIB/sigar/*
+ES_CLASSPATH=$ES_LIB/elasticsearch-%%PORTVERSION%%.jar:$ES_LIB/*:$ES_LIB/sigar/*
 
 JAVA=%%LOCALBASE%%/bin/java
 
