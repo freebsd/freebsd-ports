@@ -1,0 +1,11 @@
+This benchmark application is designed to benchmark interactivity in Unix,
+originally developed by Con Kolivas for Linux.
+
+It is designed to measure the effect of changes in operating system kernel
+design or system configuration changes such as CPU, I/O scheduler and file
+system changes and options.  With careful benchmarking, different hardware
+can be compared.
+
+Requires linprocfs(5) to be mounted under /compat/linux/proc to run.
+
+WWW: http://users.on.net/~ckolivas/interbench/

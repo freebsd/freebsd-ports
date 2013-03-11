@@ -25,6 +25,7 @@
     SUBDIR += hs-criterion
     SUBDIR += httperf
     SUBDIR += imb
+    SUBDIR += interbench
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += iperf
