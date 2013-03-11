@@ -37,7 +37,6 @@ LIB_DEPENDS=	icutu:${PORTSDIR}/devel/icu \
 		poppler:${PORTSDIR}/graphics/poppler \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
 		cmis-0.3:${PORTSDIR}/net/libcmis \
-		ldap-2.4:${PORTSDIR}/net/openldap24-client \
 		mspub-0.0:${PORTSDIR}/print/libmspub \
 		nss3.1:${PORTSDIR}/security/nss \
 		clucene-core:${PORTSDIR}/textproc/clucene \
@@ -65,6 +64,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GL=		gl glu
 USE_GMAKE=	yes
+USE_OPENLDAP=	yes
 USE_PERL5_BUILD=	yes
 USE_PKGCONFIG=	build
 USE_PYTHON=	yes
