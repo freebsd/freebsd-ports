@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${LLVM_SOURCE}
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
+COMMENT=	C, Objective-C, and C++ compiler
 
 CONFLICTS=	clang-devel-[23]* clang31-*
 
