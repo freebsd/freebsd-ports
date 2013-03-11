@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	scikit-learn
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.1
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=source/s/scikit-learn
