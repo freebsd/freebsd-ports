@@ -104,7 +104,7 @@ NULL)
 	    err "Something went wrong with svn...  Ensure you have the correct revision!"
 
 	echo
-	echo "You should be done-- now cd into ${portdir%*/} and you can run"
+	echo "You should be done-- now cd into ${portdir#*/} and you can run"
 	echo "make deinstall install clean"
 	echo
 
