@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnsmasq
-# Date created:				1 June 2003
-# Whom:					Steven Honson
-#
+# Created by: Steven Honson
 # $FreeBSD$
-#
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.65
