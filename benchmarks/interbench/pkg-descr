@@ -1,5 +1,5 @@
 This benchmark application is designed to benchmark interactivity in Unix,
-originally developed by Con Kolivas for Linux.
+originally written by Con Kolivas et al. for Linux.
 
 It is designed to measure the effect of changes in operating system kernel
 design or system configuration changes such as CPU, I/O scheduler and file
