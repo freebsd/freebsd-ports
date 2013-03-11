@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	babl
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.10
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -16,21 +16,20 @@ MASTER_SITE_SUBDIR=	babl/${PORTVERSION:R}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dynamic pixel format conversion library
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack ltverhack
+USE_GNOME=	ltverhack
 USE_PKGCONFIG=	build
+USES=		pathfix
 USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=yes
+CONFIGURE_ARGS=	--disable-introspection
 
-OPTIONS=	SIMD "Use cpu-specific optimizations if available" off
+OPTIONS_DEFINE=	SIMD
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SIMD)
+.if ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-mmx \
 		--disable-sse \
 		--disable-altivec
@@ -40,4 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

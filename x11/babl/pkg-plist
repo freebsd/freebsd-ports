@@ -5,6 +5,15 @@ include/babl-0.1/babl/babl.h
 lib/babl-0.1/CIE.a
 lib/babl-0.1/CIE.la
 lib/babl-0.1/CIE.so
+lib/babl-0.1/cairo.a
+lib/babl-0.1/cairo.la
+lib/babl-0.1/cairo.so
+lib/babl-0.1/fast-float.a
+lib/babl-0.1/fast-float.la
+lib/babl-0.1/fast-float.so
+lib/babl-0.1/float.a
+lib/babl-0.1/float.la
+lib/babl-0.1/float.so
 lib/babl-0.1/gegl-fixups.a
 lib/babl-0.1/gegl-fixups.la
 lib/babl-0.1/gegl-fixups.so
@@ -23,15 +32,11 @@ lib/babl-0.1/naive-CMYK.so
 lib/babl-0.1/sse-fixups.a
 lib/babl-0.1/sse-fixups.la
 lib/babl-0.1/sse-fixups.so
-lib/girepository-1.0/Babl-0.1.typelib
 lib/libbabl-0.1.a
 lib/libbabl-0.1.la
 lib/libbabl-0.1.so
 lib/libbabl-0.1.so.0
 libdata/pkgconfig/babl.pc
-share/gir-1.0/Babl-0.1.gir
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
 @dirrm lib/babl-0.1
 @dirrm include/babl-0.1/babl
 @dirrm include/babl-0.1
