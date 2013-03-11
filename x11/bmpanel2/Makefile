@@ -23,7 +23,9 @@ TEMPERATURE_DESC=	Build with temperature widget (for CPU, etc.)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEMPERATURE}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-temperature-widget
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	danfe
+PATCHFILES=	${PORTNAME}-temperature-widget.diff
 .endif
 
 post-patch:
