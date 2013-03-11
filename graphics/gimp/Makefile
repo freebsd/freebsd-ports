@@ -1,13 +1,9 @@
-# New ports collection makefile for:    The GIMP
-# Date created:         Mon Nov 18 21:28:43 CST 1996
-# Whom:                 erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp/Makefile,v 1.18 2010/10/08 08:29:33 kwm Exp $
-#
+#   $MCom: ports/graphics/gimp/Makefile,v 1.22 2012/11/26 13:31:16 kwm Exp $
 
 PORTNAME=	gimp
-DISTVERSION?=	2.6.12
+DISTVERSION?=	2.8.4
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
@@ -18,29 +14,31 @@ EXTRACT_ONLY?=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for The Gimp
 
-RUN_DEPENDS=	gimp-2.6:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
 
-OPTIONS=	PYTHON "Python-fu support" Off \
-		PRINT "Gutenprint (gimp-print) plugin" On \
-		HELP "Install Gimp-Help (50+MB distfile)" Off
+OPTIONS_DEFINE=	PYTHON PRINT HELP
+OPTIONS_DEFAULT=PRINT PYTHON
+PYTHON_DESC=	Python-fu support
+PRINT_DESC=	Gutenprint (gimp-print) plugin
+HELP_DESC=	Gimp-Help (50+MB distfile)
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_HELP)
+.if ${PORT_OPTIONS:MHELP}
 RUN_DEPENDS+=	gimp-help*>0:${PORTSDIR}/graphics/gimp-help
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
 .endif
 
-.if !defined(WITHOUT_PRINT)
+.if ${PORT_OPTIONS:MPRINT}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
 RUN_DEPENDS+=	gutenprint>0:${PORTSDIR}/print/gutenprint
 .endif
 
 do-install:	# empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
