@@ -70,7 +70,7 @@ share/aclocal/pstoedit.m4
 %%DATADIR%%/wemf.fmp
 @dirrm %%DATADIR%%/swffonts
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pstoedit
 @dirrm include/pstoedit

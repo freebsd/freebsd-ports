@@ -3,14 +3,14 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Convert PostScript to other vector graphic formats
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
@@ -33,6 +33,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		pstoedit.1
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MMAGICK}
 LIB_DEPENDS+=	Magick++:${PORTSDIR}/graphics/ImageMagick
@@ -75,11 +81,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1/
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCSDIR}
 .endif
+
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${EXAMPLESDIR}
