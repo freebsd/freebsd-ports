@@ -1,17 +1,14 @@
-# New ports collection makefile for:	mkfontdir
-# Date Created:				28 Aug 2005
-# Whom:					Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	mkfontdir
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Create an index of X font files in a directory
 
+USE_XORG=	xorg-macros
 RUN_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 XORG_CAT=	app
