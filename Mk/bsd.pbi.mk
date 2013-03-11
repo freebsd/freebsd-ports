@@ -2,6 +2,9 @@
 #
 # Creates a PBI file from a port with just 'make pbi'
 #
+.if !defined(_INCLUDE_PBI_MK)
+
+_INCLUDE_PBI_MK=	yes
 PBI_MAINTAINER=		kmoore@FreeBSD.org
 
 _PBIMAKEPORT=	pbi_makeport
@@ -49,3 +52,5 @@ pbi-generate: check-pbimanager
 clean-pbi:
 	@${ECHO_MSG} "===> Cleaning PBI for ${PORTNAME}"
 	@${RM} -rf ${_PBIDIR}
+
+.endif
