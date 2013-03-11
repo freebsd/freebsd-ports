@@ -17,11 +17,11 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
 
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-    		gmp:${PORTSDIR}/math/gmp \
+		gmp:${PORTSDIR}/math/gmp \
 		freetype:${PORTSDIR}/print/freetype2
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-    		mftrace:${PORTSDIR}/print/mftrace \
+		mftrace:${PORTSDIR}/print/mftrace \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
@@ -41,7 +41,7 @@ INFO=		lilypond-notation \
 		music-glossary \
 		internals
 
-USES=		bison
+USES=		bison:build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
@@ -65,7 +65,6 @@ NOCCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -84,4 +83,4 @@ post-patch:
 post-install:
 	@${LN} -fs ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
