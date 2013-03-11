@@ -45,7 +45,7 @@ required_files="${elasticsearch_config}"
 pidfile="/var/run/${name}.pid"
 
 ES_LIB="%%PREFIX%%/lib/elasticsearch"
-ES_CLASSPATH=$ES_LIB/elasticsearch-0.19.9.jar:$ES_LIB/*:$ES_LIB/sigar/*
+ES_CLASSPATH=$ES_LIB/elasticsearch-%%PORTVERSION%%.jar:$ES_LIB/*:$ES_LIB/sigar/*
 
 
 java_options=" 	-server \
