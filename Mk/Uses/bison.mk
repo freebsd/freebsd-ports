@@ -6,11 +6,11 @@
 #
 # Feature:	bison
 # Usage:	USES=bison or USES=bison:ARGS
-# Valid ARGS	build (default, implicit), run, both
+# Valid ARGS:	build (default, implicit), run, both
 #
 #
-.if !defined(_INCLUDE_BISON_MK)
-_INCLUDE_BISON_MK=	yes
+.if !defined(_INCLUDE_USES_BISON_MK)
+_INCLUDE_USES_BISON_MK=	yes
 
 _BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
