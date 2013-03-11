@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_GMAKE=	yes
 USES=		bison
-USE_BISON=	build
 
 MAKE_JOBS_SAFE=	yes
 
