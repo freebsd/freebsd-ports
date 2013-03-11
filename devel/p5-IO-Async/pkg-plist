@@ -24,7 +24,6 @@
 %%SITE_PERL%%/IO/Async/Protocol/Stream.pm
 %%SITE_PERL%%/IO/Async/Resolver.pm
 %%SITE_PERL%%/IO/Async/Routine.pm
-%%SITE_PERL%%/IO/Async/Sequencer.pm
 %%SITE_PERL%%/IO/Async/Signal.pm
 %%SITE_PERL%%/IO/Async/Stream.pm
 %%SITE_PERL%%/IO/Async/Socket.pm

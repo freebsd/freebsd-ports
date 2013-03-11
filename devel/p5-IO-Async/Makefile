@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -14,8 +14,7 @@ COMMENT=	Perl modules that implement asynchronous filehandle IO
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CPS>0:${PORTSDIR}/devel/p5-CPS \
-		p5-Future>=0.05:${PORTSDIR}/devel/p5-Future
+BUILD_DEPENDS=	p5-Future>=0.08:${PORTSDIR}/devel/p5-Future
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
@@ -49,7 +48,6 @@ MAN3=		IO::Async.3 \
 		IO::Async::Process.3 \
 		IO::Async::Resolver.3 \
 		IO::Async::Routine.3 \
-		IO::Async::Sequencer.3 \
 		IO::Async::Signal.3 \
 		IO::Async::Socket.3 \
 		IO::Async::Stream.3 \
