@@ -116,7 +116,7 @@ my $PKG_INFO = '/usr/sbin/pkg_info';
 # Which regexp to use for laundering tainted file
 # and package names - note that this must not be let
 # near a shell as it contains glob characters!
-my $UNTAINT  = qr|^([()[\]{}\-+@\w.,/\$%!=~:^ *?]+)$|;
+my $UNTAINT  = qr|^([()[\]{}\-+@\w.,/\$%!=~:^ *?]+)$|o;
 
 # Default for cacheall.
 my $cacheall = 1;
@@ -210,7 +210,7 @@ my $f;
 # - pick random file from hash,
 # - look up the package name (from hash or with pkg_info)
 # - look up list of files in package
-# - purge all files from package
+# - purge all files recorded as belonging to package from the hash
 
 while ($f = each %ufiles) {
     # Find package for file $f and store in $p:
@@ -310,14 +310,27 @@ sub readcache() {
     my @pkgs = map { $_ =~ $UNTAINT; $1; } safebacktick($PKG_INFO, '-EG', '-a');
     my $n = scalar @pkgs;
     debug "subreadcache: got $n packages.\n";
-    foreach my $i (@pkgs) {
-	my @fl = safebacktick($PKG_INFO, '-qGL', $i);
+    # Request file lists of so many packages at once, to save the
+    # overhead of forking and executing pkg_info and its initialization.
+    # This speeds up things by an order of magnitude or so.
+    my $chunksize = 100;
+    while (my @p = splice(@pkgs, 0, $chunksize)) {
+	my @fl = safebacktick($PKG_INFO, '-QGL', @p);
 	chomp @fl;
+	my $pkg;
 	map {
 	    $_ =~ $UNTAINT;
-	    if ($1) {$f2p{$1} = $i;} else {warn "tainted file name in $i: $_"; }
+	    while (s|^([^/:]+:)||o) {
+		$pkg = $1;
+		$pkg =~ s/:$//; # strip trailing colon
+	    }
+	    if ($_) { # file name
+		if ($pkg) { $f2p{$_} = $pkg; push @{$pfl{$pkg}}, $_;}
+		else { warn "pkg_info fault, missed package prefix before line $_."; }
+	    } else {
+		warn "tainted file name in $pkg: $_"; 
+	    }
 	} @fl;
-	$pfl{$i} = [@fl];
     }
     debug "subreadcache: got ", scalar keys %f2p, " files.\n";
     return (\%f2p, \%pfl);
@@ -360,6 +373,10 @@ L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
 
 =head1 HISTORY
 
+0.3.0 2013-03-11
+  - read pkg_info -L information in chunks of 100 packages at a time,
+    to avoid forking once per package, which was slow.
+
 0.2.0 2011-07-25
   - fixed a bug where skipping non-existent command line arguments
     failed and resulted in an unterminated (endless) loop.
@@ -375,7 +392,8 @@ The current CVS Version tag is:
 
 =head1 AUTHORS
 
-Matthias Andree <mandree@FreeBSD.org> - this script is under the GNU
-General Public License v3 or any later version.
+Copyright 2011, 2013 Matthias Andree <mandree@FreeBSD.org>.
+All rights reserved. This script is exclusively licensed under the GNU
+General Public License version 3, or any later version.
 
 =cut
