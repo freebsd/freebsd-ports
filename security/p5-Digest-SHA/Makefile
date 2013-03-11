@@ -20,9 +20,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::SHA.3
 
-# XXX:az - pkg-plist
-PLIST_SUB+=	EXE_FILES="@comment "
-
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 
