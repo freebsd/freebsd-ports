@@ -18,7 +18,8 @@ LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
 		lcms2:${PORTSDIR}/graphics/lcms2
 
 USE_XZ=		yes
-USE_GNOME=	gnomehier gnomehack glib20 intlhack
+USE_GNOME=	gnomehier glib20 intlhack
+USES=		pathfix
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_SQLITE=	yes
@@ -36,10 +37,10 @@ OPTIONS_DEFINE=	SANE MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSANE}
-CONFIGURE_ARGS+=--disable-sane
-.else
 CONFGIURE_ARGS+=--enable-sane=yes
-LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS+=	sane:${PORTSDIR}/graphics/sane-backends
+.else
+CONFIGURE_ARGS+=--disable-sane
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
