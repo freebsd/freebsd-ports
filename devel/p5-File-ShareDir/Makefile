@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-ShareDir
-# Date created:				27 Dec 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-ShareDir
 PORTVERSION=	1.03
