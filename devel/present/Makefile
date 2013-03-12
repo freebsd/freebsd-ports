@@ -17,6 +17,9 @@ COMMENT=	A library for reading Microsoft PowerPoint(tm) documents
 
 LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice1
 
+DEPRECATED=	depends on libgsf_gnome (via goffice1) which going away.
+EXPIRATION_DATE=2013-04-12
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

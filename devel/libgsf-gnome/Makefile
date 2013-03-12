@@ -19,6 +19,9 @@ INSTALL_WRKSRC=	${WRKSRC}/gsf-gnome
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+DEPRECATED=    -gnome support in libgsf is dropped in newer versions.
+EXPIRATION_DATE=2013-04-12
+
 USE_GNOME=	gnomehack libgsf gnomevfs2 libbonobo ltverhack intlhack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--with-bz2 --with-gnome-vfs --with-gio
