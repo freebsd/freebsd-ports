@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.8.1.3
+PORTVERSION=	1.8.1.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -119,7 +119,6 @@ MAN1=		git.1 \
 		git-relink.1 \
 		git-remote-ext.1 \
 		git-remote-fd.1 \
-		git-remote-helpers.1 \
 		git-remote-testgit.1 \
 		git-remote.1 \
 		git-repack.1 \
@@ -164,6 +163,7 @@ MAN1=		git.1 \
 		git-web--browse.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
+		gitremote-helpers.1 \
 		gitweb.1
 MAN5=		gitattributes.5 \
 		githooks.5 \
