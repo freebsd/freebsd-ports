@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
 CONFLICTS=	bind9*-9.[45689].* bind9*-sdb-9.[45689].*
+DEPRECATED=	No longer supported by ISC, use Bind 9.8 or 9.9
+EXPIRATION_DATE=	2013-04-12
 
 OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE SIGCHASE \
