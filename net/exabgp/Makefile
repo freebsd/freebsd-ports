@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -27,7 +27,6 @@ MAN1=		${PORTNAME}.1
 
 post-extract:
 	@${MV} -f ${WRKSRC}/etc/systemd ${WRKSRC}
-	@${MV} -f ${WRKSRC}/lib/forwarding ${WRKSRC}
 
 do-build:
 	${PYTHON_CMD} -m compileall ${WRKSRC}/lib
