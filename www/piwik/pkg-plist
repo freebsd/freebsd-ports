@@ -1,5 +1,5 @@
 %%WWWDIR%%/LEGALNOTICE
-%%WWWDIR%%/README
+%%WWWDIR%%/README.md
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/config.ini.sample.php
 %%WWWDIR%%/config/global.ini.php
@@ -45,6 +45,7 @@
 %%WWWDIR%%/core/DataTable/Filter/AddSummaryRow.php
 %%WWWDIR%%/core/DataTable/Filter/BeautifyRangeLabels.php
 %%WWWDIR%%/core/DataTable/Filter/BeautifyTimeRangeLabels.php
+%%WWWDIR%%/core/DataTable/Filter/CalculateEvolutionFilter.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumn.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnQuotient.php
@@ -166,6 +167,7 @@
 %%WWWDIR%%/core/Timer.php
 %%WWWDIR%%/core/Tracker.php
 %%WWWDIR%%/core/Tracker/Action.php
+%%WWWDIR%%/core/Tracker/Cache.php
 %%WWWDIR%%/core/Tracker/Config.php
 %%WWWDIR%%/core/Tracker/Db.php
 %%WWWDIR%%/core/Tracker/Db/Exception.php
@@ -239,11 +241,15 @@
 %%WWWDIR%%/core/Updates/1.9.3-b10.php
 %%WWWDIR%%/core/Updates/1.10-b4.php
 %%WWWDIR%%/core/Updates/1.10.1.php
+%%WWWDIR%%/core/Updates/1.10.2-b1.php
+%%WWWDIR%%/core/Updates/1.10.2-b2.php
+%%WWWDIR%%/core/Updates/1.11-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
 %%WWWDIR%%/core/View/Interface.php
 %%WWWDIR%%/core/View/OneClickDone.php
+%%WWWDIR%%/core/View/ReportsByDimension.php
 %%WWWDIR%%/core/ViewDataTable.php
 %%WWWDIR%%/core/ViewDataTable/Cloud.php
 %%WWWDIR%%/core/ViewDataTable/GenerateGraphData.php
@@ -396,14 +402,7 @@
 %%WWWDIR%%/libs/PclZip/pclzip.lib.php
 %%WWWDIR%%/libs/PiwikTracker/LICENSE.txt
 %%WWWDIR%%/libs/PiwikTracker/PiwikTracker.php
-%%WWWDIR%%/libs/PiwikTracker/java/pom.xml
-%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/EBrowserPlugins.java
-%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/IPiwikTracker.java
-%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/PiwikException.java
-%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/ResponseData.java
-%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/SimplePiwikTracker.java
-%%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org/piwik/SimplePiwikTrackerTest.java
-%%WWWDIR%%/libs/README_LIBS
+%%WWWDIR%%/libs/README.md
 %%WWWDIR%%/libs/Smarty/Config_File.class.php
 %%WWWDIR%%/libs/Smarty/Smarty.class.php
 %%WWWDIR%%/libs/Smarty/Smarty_Compiler.class.php
@@ -885,6 +884,7 @@
 %%WWWDIR%%/libs/Zend/Version.php
 %%WWWDIR%%/libs/cssmin/MIT-LICENSE.txt
 %%WWWDIR%%/libs/cssmin/cssmin.php
+%%WWWDIR%%/libs/html5shiv/html5shiv.js
 %%WWWDIR%%/libs/javascript/json2.js
 %%WWWDIR%%/libs/javascript/sprintf.js
 %%WWWDIR%%/libs/jqplot/MIT-LICENSE.txt
@@ -913,6 +913,7 @@
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-history.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-jquery.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-jqueryui.txt
+%%WWWDIR%%/libs/jquery/MIT-LICENSE-placeholder.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-scrollto.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-tooltip.txt
 %%WWWDIR%%/libs/jquery/gpl-2.0.txt
@@ -920,6 +921,7 @@
 %%WWWDIR%%/libs/jquery/jquery-ui.js
 %%WWWDIR%%/libs/jquery/jquery.history.js
 %%WWWDIR%%/libs/jquery/jquery.js
+%%WWWDIR%%/libs/jquery/jquery.placeholder.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo.js
 %%WWWDIR%%/libs/jquery/jquery.tooltip.js
 %%WWWDIR%%/libs/jquery/jquery.truncate.js
@@ -956,9 +958,6 @@
 %%WWWDIR%%/libs/sparkline/lib/Sparkline.php
 %%WWWDIR%%/libs/sparkline/lib/Sparkline_Bar.php
 %%WWWDIR%%/libs/sparkline/lib/Sparkline_Line.php
-%%WWWDIR%%/libs/swfobject/MIT-LICENSE.txt
-%%WWWDIR%%/libs/swfobject/expressInstall.swf
-%%WWWDIR%%/libs/swfobject/swfobject.js
 %%WWWDIR%%/libs/tcpdf/2dbarcodes.php
 %%WWWDIR%%/libs/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/libs/tcpdf/README.TXT
@@ -1004,17 +1003,12 @@
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/gpl-3.0.txt
-%%WWWDIR%%/misc/log-analytics/README
+%%WWWDIR%%/misc/log-analytics/README.md
 %%WWWDIR%%/misc/log-analytics/import_logs.py
 %%WWWDIR%%/misc/others/ExamplePiwikTracker.php
 %%WWWDIR%%/misc/others/api_internal_call.php
 %%WWWDIR%%/misc/others/api_rest_call.php
 %%WWWDIR%%/misc/others/crossdomain.xml
-%%WWWDIR%%/misc/others/db-schema-README
-%%WWWDIR%%/misc/others/db-schema.png
-%%WWWDIR%%/misc/others/db-schema.xml
-%%WWWDIR%%/misc/others/diagram_general_request.jpg
-%%WWWDIR%%/misc/others/diagram_general_request.vsd
 %%WWWDIR%%/misc/others/download-count.txt
 %%WWWDIR%%/misc/others/generateDoc.bat
 %%WWWDIR%%/misc/others/generateDoc.sh
@@ -1023,7 +1017,6 @@
 %%WWWDIR%%/misc/others/iframeWidget_localhost.php
 %%WWWDIR%%/misc/others/phpdoc-config.ini
 %%WWWDIR%%/misc/others/stress.sh
-%%WWWDIR%%/misc/others/svn-props-to-set-new-files.svnprops
 %%WWWDIR%%/misc/others/test_cookies_GenerateHundredsWebsitesAndVisits.php
 %%WWWDIR%%/misc/others/test_generateLotsVisitsWebsites.php
 %%WWWDIR%%/misc/others/tracker_simpleImageTracker.php
@@ -1060,6 +1053,9 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.js
 %%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/header.tpl
+%%WWWDIR%%/plugins/CoreAdminHome/templates/jsTrackingGenerator.css
+%%WWWDIR%%/plugins/CoreAdminHome/templates/jsTrackingGenerator.js
+%%WWWDIR%%/plugins/CoreAdminHome/templates/jsTrackingGenerator.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/optOut.tpl
@@ -1088,6 +1084,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/donate.css
 %%WWWDIR%%/plugins/CoreHome/templates/donate.js
 %%WWWDIR%%/plugins/CoreHome/templates/donate.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/graph.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header_message.tpl
@@ -1103,9 +1100,12 @@
 %%WWWDIR%%/plugins/CoreHome/templates/images/more.png
 %%WWWDIR%%/plugins/CoreHome/templates/images/more_date.gif
 %%WWWDIR%%/plugins/CoreHome/templates/images/more_period.gif
+%%WWWDIR%%/plugins/CoreHome/templates/images/promo_splash.png
 %%WWWDIR%%/plugins/CoreHome/templates/images/reset_search.png
 %%WWWDIR%%/plugins/CoreHome/templates/images/search.png
 %%WWWDIR%%/plugins/CoreHome/templates/index.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/index_before_menu.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/index_content.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/jqplot.css
 %%WWWDIR%%/plugins/CoreHome/templates/jqplot.js
 %%WWWDIR%%/plugins/CoreHome/templates/jquery.ui.autocomplete.css
@@ -1116,12 +1116,15 @@
 %%WWWDIR%%/plugins/CoreHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreHome/templates/menu.js
 %%WWWDIR%%/plugins/CoreHome/templates/menu.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/menu_init.js
 %%WWWDIR%%/plugins/CoreHome/templates/misc.js
 %%WWWDIR%%/plugins/CoreHome/templates/period_select.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/piwik_tag.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/popover.js
 %%WWWDIR%%/plugins/CoreHome/templates/popover_multirowevolution.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/popover_rowevolution.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/promo_video.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/reports_by_dimension.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/single_report.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sites_selection.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
@@ -1129,7 +1132,10 @@
 %%WWWDIR%%/plugins/CoreHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/templates/tooltip.js
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/top_bar_hello_menu.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/top_bar_top_menu.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/top_screen.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/warning_invalid_host.tpl
 %%WWWDIR%%/plugins/CorePluginsAdmin/Controller.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/CorePluginsAdmin.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/templates/manage.tpl
@@ -1203,7 +1209,6 @@
 %%WWWDIR%%/plugins/Goals/templates/list_top_dimension.tpl
 %%WWWDIR%%/plugins/Goals/templates/overview.tpl
 %%WWWDIR%%/plugins/Goals/templates/single_goal.tpl
-%%WWWDIR%%/plugins/Goals/templates/table_by_dimension.tpl
 %%WWWDIR%%/plugins/Goals/templates/title_and_evolution_graph.tpl
 %%WWWDIR%%/plugins/ImageGraph/API.php
 %%WWWDIR%%/plugins/ImageGraph/Controller.php
@@ -1301,7 +1306,6 @@
 %%WWWDIR%%/plugins/MobileMessaging/templates/SMSReport.tpl
 %%WWWDIR%%/plugins/MobileMessaging/templates/Settings.tpl
 %%WWWDIR%%/plugins/MultiSites/API.php
-%%WWWDIR%%/plugins/MultiSites/CalculateEvolutionFilter.php
 %%WWWDIR%%/plugins/MultiSites/Controller.php
 %%WWWDIR%%/plugins/MultiSites/MultiSites.php
 %%WWWDIR%%/plugins/MultiSites/images/arrow_asc.gif
@@ -1601,6 +1605,7 @@
 %%WWWDIR%%/plugins/Referers/images/socials/friendster.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/gaiaonline.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/geni.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/github.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/habbo.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/hi5.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/hyves.nl.png
@@ -1618,19 +1623,22 @@
 %%WWWDIR%%/plugins/Referers/images/socials/nk.pl.png
 %%WWWDIR%%/plugins/Referers/images/socials/odnoklassniki.ru.png
 %%WWWDIR%%/plugins/Referers/images/socials/orkut.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/pinterest.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/plaxo.com.png
-%%WWWDIR%%/plugins/Referers/images/socials/plus.google.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/qzone.qq.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/renren.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/ru.netlog.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/skyrock.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/sonico.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/sourceforge.net.png
+%%WWWDIR%%/plugins/Referers/images/socials/stackoverflow.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/studivz.net.png
 %%WWWDIR%%/plugins/Referers/images/socials/stumbleupon.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/tagged.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/taringa.net.png
 %%WWWDIR%%/plugins/Referers/images/socials/tuenti.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/twitter.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/url.google.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/viadeo.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/vk.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/vkontakte.ru.png
@@ -1988,9 +1996,208 @@
 %%WWWDIR%%/plugins/UserCountry/templates/styles.css
 %%WWWDIR%%/plugins/UserCountry/templates/updaterSetup.tpl
 %%WWWDIR%%/plugins/UserCountryMap/Controller.php
-%%WWWDIR%%/plugins/UserCountryMap/PiwikMap.swf
 %%WWWDIR%%/plugins/UserCountryMap/UserCountryMap.php
-%%WWWDIR%%/plugins/UserCountryMap/templates/worldmap.tpl
+%%WWWDIR%%/plugins/UserCountryMap/css/map.css
+%%WWWDIR%%/plugins/UserCountryMap/css/qtip.css
+%%WWWDIR%%/plugins/UserCountryMap/css/realtime-map.css
+%%WWWDIR%%/plugins/UserCountryMap/css/visitor-map.css
+%%WWWDIR%%/plugins/UserCountryMap/img/cities.png
+%%WWWDIR%%/plugins/UserCountryMap/img/info.png
+%%WWWDIR%%/plugins/UserCountryMap/img/realtimemap-loading.gif
+%%WWWDIR%%/plugins/UserCountryMap/img/regions.png
+%%WWWDIR%%/plugins/UserCountryMap/img/world.png
+%%WWWDIR%%/plugins/UserCountryMap/img/zoom-out-disabled.png
+%%WWWDIR%%/plugins/UserCountryMap/img/zoom-out.png
+%%WWWDIR%%/plugins/UserCountryMap/js/realtime-map.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/chroma.min.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/jquery.qtip.min.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/kartograph.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/kartograph.min.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/kmeans.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/raphael-min.js
+%%WWWDIR%%/plugins/UserCountryMap/js/visitor-map.js
+%%WWWDIR%%/plugins/UserCountryMap/svg/AF.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AFG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AGO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ALB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ARE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ARG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ARM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AUS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AUT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/AZE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BDI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BEL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BEN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BFA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BGD.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BGR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BIH.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BLR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BLZ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BOL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BRA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BRB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BRN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BTN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/BWA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CAF.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CAN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CHE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CHL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CHN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CIV.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CMR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/COD.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/COG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/COL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CRI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CUB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CYP.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/CZE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DEU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DJI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DMA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DNK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DOM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/DZA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ECU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/EGY.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ERI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ESP.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/EST.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ETH.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/EU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/FIN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/FJI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/FRA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/FRO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GAB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GBR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GEO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GHA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GIN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GMB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GNB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GNQ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GRC.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GRL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GTM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/GUY.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/HND.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/HRV.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/HTI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/HUN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/IDN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/IND.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/IRL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/IRN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/IRQ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ISL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ISR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ITA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/JAM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/JOR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/JPN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KAZ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KEN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KGZ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KHM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KOR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/KWT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LAO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LBN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LBR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LBY.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LKA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LSO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LTU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LUX.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/LVA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MAR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MDA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MDG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MEX.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MKD.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MLI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MMR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MNE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MNG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MOZ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MRT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MWI.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/MYS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NAM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NCL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NER.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NFK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NGA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NIC.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NLD.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NOR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NPL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/NZL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/OC.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/OMN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PAK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PAN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PER.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PHL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PNG.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/POL.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PRK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PRT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/PRY.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/QAT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ROU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/RUS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/RWA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SAU.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SDN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SDS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SEN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SLB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SLE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SLV.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SOM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SRB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SUR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SVK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SVN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SWE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SWZ.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/SYR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TCD.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TGO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/THA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TIB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TJK.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TKM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TLS.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TTO.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TUN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TUR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TWN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/TZA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/UGA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/UKR.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/URY.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/USA.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/UZB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/VEN.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/VNM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/VUT.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/YEM.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ZAF.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ZMB.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/ZWE.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/tmp.svg
+%%WWWDIR%%/plugins/UserCountryMap/svg/world.svg
+%%WWWDIR%%/plugins/UserCountryMap/templates/realtime-map.tpl
+%%WWWDIR%%/plugins/UserCountryMap/templates/visitor-map.tpl
 %%WWWDIR%%/plugins/UserSettings/API.php
 %%WWWDIR%%/plugins/UserSettings/Controller.php
 %%WWWDIR%%/plugins/UserSettings/UserSettings.php
@@ -2036,6 +2243,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MC.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MO.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/NF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/NS.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OP.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OW.gif
@@ -2043,10 +2251,12 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/RK.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/TB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/TI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/UNK.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WP.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/3DS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AIX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AMI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AND.gif
@@ -2071,6 +2281,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/POS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PSP.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/PSV.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/QNX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SBA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SOS.gif
@@ -2089,15 +2300,17 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/WI7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WI8.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WII.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WIU.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WME.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WMO.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WNT.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WOS.gif
-%%WWWDIR%%/plugins/UserSettings/images/os/WPH.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WP7.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WPH.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WVI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WXP.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/XBX.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/cookie.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/director.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/flash.gif
@@ -2156,13 +2369,13 @@
 %%WWWDIR%%/plugins/Widgetize/templates/test_jsinclude.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/test_jsinclude2.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/widgetize.js
-%%WWWDIR%%/tests/README.txt
+%%WWWDIR%%/tests/README.md
 %%WWWDIR%%/themes/default/ajaxHelper.js
 %%WWWDIR%%/themes/default/common.css
 %%WWWDIR%%/themes/default/common.js
 %%WWWDIR%%/themes/default/genericForm.tpl
-%%WWWDIR%%/themes/default/ie6.tpl
 %%WWWDIR%%/themes/default/ieonly.css
+%%WWWDIR%%/themes/default/images/affix-arrow.png
 %%WWWDIR%%/themes/default/images/arr_r.png
 %%WWWDIR%%/themes/default/images/background-submit.png
 %%WWWDIR%%/themes/default/images/chart_bar.png
@@ -2204,8 +2417,10 @@
 %%WWWDIR%%/themes/default/images/li_dbl_gray.gif
 %%WWWDIR%%/themes/default/images/link.gif
 %%WWWDIR%%/themes/default/images/loading-blue.gif
+%%WWWDIR%%/themes/default/images/login-sprite.png
 %%WWWDIR%%/themes/default/images/logo-header.png
 %%WWWDIR%%/themes/default/images/logo.png
+%%WWWDIR%%/themes/default/images/logo.svg
 %%WWWDIR%%/themes/default/images/maximise.png
 %%WWWDIR%%/themes/default/images/minimise.png
 %%WWWDIR%%/themes/default/images/minus.png
@@ -2239,6 +2454,7 @@
 %%WWWDIR%%/themes/default/images/table.png
 %%WWWDIR%%/themes/default/images/table_more.png
 %%WWWDIR%%/themes/default/images/tagcloud.png
+%%WWWDIR%%/themes/default/images/video_play.png
 %%WWWDIR%%/themes/default/images/warning.png
 %%WWWDIR%%/themes/default/images/warning_medium.png
 %%WWWDIR%%/themes/default/images/warning_small.png
@@ -2277,6 +2493,11 @@
 @dirrm %%WWWDIR%%/plugins/UserSettings/images
 @dirrm %%WWWDIR%%/plugins/UserSettings
 @dirrm %%WWWDIR%%/plugins/UserCountryMap/templates
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/svg
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/js/vendor
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/js
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/img
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/css
 @dirrm %%WWWDIR%%/plugins/UserCountryMap
 @dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
 @dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider
@@ -2364,7 +2585,6 @@
 @dirrm %%WWWDIR%%/plugins/CoreUpdater
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
-@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates
@@ -2390,7 +2610,6 @@
 @dirrm %%WWWDIR%%/libs/tcpdf/config/lang
 @dirrm %%WWWDIR%%/libs/tcpdf/config
 @dirrm %%WWWDIR%%/libs/tcpdf
-@dirrm %%WWWDIR%%/libs/swfobject
 @dirrm %%WWWDIR%%/libs/sparkline/lib
 @dirrm %%WWWDIR%%/libs/sparkline
 @dirrm %%WWWDIR%%/libs/pChart2.1.3/class
@@ -2403,6 +2622,7 @@
 @dirrm %%WWWDIR%%/libs/jqplot/plugins
 @dirrm %%WWWDIR%%/libs/jqplot
 @dirrm %%WWWDIR%%/libs/javascript
+@dirrm %%WWWDIR%%/libs/html5shiv
 @dirrm %%WWWDIR%%/libs/cssmin
 @dirrm %%WWWDIR%%/libs/Zend/Validate/Sitemap
 @dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
@@ -2477,7 +2697,6 @@
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Reader
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Subscriber
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Model
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Http
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Entry
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Builder/Header
@@ -2519,17 +2738,6 @@
 @dirrm %%WWWDIR%%/libs/Smarty/plugins
 @dirrm %%WWWDIR%%/libs/Smarty/internals
 @dirrm %%WWWDIR%%/libs/Smarty
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org/piwik
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/resources
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src
-@dirrm %%WWWDIR%%/libs/PiwikTracker/java
 @dirrm %%WWWDIR%%/libs/PiwikTracker
 @dirrm %%WWWDIR%%/libs/PclZip
 @dirrm %%WWWDIR%%/libs/PEAR
