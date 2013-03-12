@@ -1,6 +1,8 @@
---- configure.in.orig	2012-04-02 08:04:58.000000000 +0000
-+++ configure.in	2012-11-23 22:00:22.424129087 +0000
-@@ -67,6 +67,9 @@
+diff --git configure.in configure.in
+index d50e802..4660787 100644
+--- configure.in
++++ configure.in
+@@ -67,6 +67,9 @@ case $host_os in
  	*openbsd*)
  	ac_system="OpenBSD"
  	;;
@@ -10,7 +12,7 @@
  	*aix*)
  	AC_DEFINE([KERNEL_AIX], 1, [True if program is to be compiled for a AIX kernel])
  	ac_system="AIX"
-@@ -98,7 +101,7 @@
+@@ -99,7 +102,7 @@ then
  fi
  
  # Where to install .pc files.
@@ -19,7 +21,7 @@
  AC_SUBST(pkgconfigdir)
  
  # Check for standards compliance mode
-@@ -1378,6 +1381,7 @@
+@@ -1386,6 +1389,7 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(kstat, kstat_open, [with_kstat="yes"], [with_kstat="no (libkstat not found)"], [])
  fi
@@ -27,7 +29,7 @@
  if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(devinfo, di_init, [with_devinfo="yes"], [with_devinfo="no (not found)"], [])
-@@ -1387,6 +1391,8 @@
+@@ -1395,6 +1399,8 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_DEFINE(HAVE_LIBKSTAT, 1,
  		  [Define to 1 if you have the 'kstat' library (-lkstat)])
@@ -36,7 +38,7 @@
  fi
  AM_CONDITIONAL(BUILD_WITH_LIBKSTAT, test "x$with_kstat" = "xyes")
  AM_CONDITIONAL(BUILD_WITH_LIBDEVINFO, test "x$with_devinfo" = "xyes")
-@@ -1807,9 +1813,6 @@
+@@ -1815,9 +1821,6 @@ then
  		[with_libgcrypt="yes"],
  		[with_libgcrypt="no (symbol gcry_md_hash_buffer not found)"])
  
@@ -46,7 +48,7 @@
  fi
  
  CPPFLAGS="$SAVE_CPPFLAGS"
-@@ -3297,7 +3300,7 @@
+@@ -3376,7 +3379,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python LIBS])
@@ -55,7 +57,7 @@
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
-@@ -3312,7 +3315,7 @@
+@@ -3391,7 +3394,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	LDFLAGS="-L$python_library_path $LDFLAGS"
@@ -64,18 +66,16 @@
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
---- configure.in.orig	2013-01-03 17:07:22.000000000 +0000
-+++ configure.in	2013-01-03 17:07:58.000000000 +0000
-@@ -4057,7 +4057,7 @@
+@@ -4136,7 +4139,7 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING([--with-libvarnish@<:@=PREFIX@:>@], [Pat
  	then
  		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
  		with_libvarnish_cflags="-I$withval/include"
--		with_libvarnish_libs="-L$withval/lib -lvarnish -lvarnishcompat -lvarnishapi"
-+		with_libvarnish_libs="-L$withval/lib/varnish -lvarnish -lvarnishcompat -lvarnishapi"
+-		with_libvarnish_libs="-L$withval/lib -lvarnishapi"
++		with_libvarnish_libs="-L$withval/lib/varnish -lvarnishapi"
  		with_libvarnish="yes"
  	fi; fi; fi
  ],
-@@ -4580,6 +4583,12 @@
+@@ -4661,6 +4664,12 @@ then
  	plugin_zfs_arc="yes"
  fi
  
