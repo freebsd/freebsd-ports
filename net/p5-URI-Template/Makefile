@@ -1,12 +1,8 @@
-# New ports collection makefile for:	URI-Template
-# Date created:				29 May 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Template
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
