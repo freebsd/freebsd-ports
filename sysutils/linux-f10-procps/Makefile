@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.fc${LINUX_DIST_VER}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux psproc binaries (Linux Fedora 10)
 
+CONFLICTS=	linux-procps-[0-9]*
+
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	10
