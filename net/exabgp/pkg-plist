@@ -2,7 +2,10 @@
 etc/exabgp/exabgp.env
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py
-%%PYTHON_SITELIBDIR%%/exabgp/application.py
+%%PYTHON_SITELIBDIR%%/exabgp/application/bgp.py
+%%PYTHON_SITELIBDIR%%/exabgp/application/bmp.py
+%%PYTHON_SITELIBDIR%%/exabgp/application/bgp.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/application/bmp.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/connection.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/__init__.py
@@ -95,6 +98,16 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/peer.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/protocol.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/timer.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/header.py
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/message.py
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/negotiated.py
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/peer.py
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/header.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/message.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/negotiated.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bmp/peer.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.py
@@ -154,7 +167,6 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/structure/utils.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/version.py
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/application.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/debug.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/version.pyc
 %%PYTHON_SITELIBDIR%%/netlink/__init__.py
@@ -232,6 +244,8 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/rib
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/bmp
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/application
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp
 @dirrmtry etc/exabgp
 @unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/exabgp`` to remove any configuration files left."; fi
