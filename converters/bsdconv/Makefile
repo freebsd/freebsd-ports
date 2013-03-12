@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	9.0
+PORTVERSION=	9.1
 CATEGORIES=	converters
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
@@ -13,27 +13,35 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	b514ea8
+GH_COMMIT=	24b9f01
 
-OPTIONS_DEFINE=	EXTRA
-EXTRA_DESC=	Extra codecs (Chinese specifics)
+OPTIONS_DEFINE=	CHINESE EBCDIC
+CHINESE_DESC=	Extra Chinese codecs
+EBCDIC_DESC=	EBCDIC codecs
 
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	PREFIX=${PREFIX}
 
-ALL_TARGET=	libbsdconv bsdconv_mktable meta bsdconv codecs_basic
+ALL_TARGET=	libbsdconv bsdconv_mktable meta bsdconv_completion bsdconv codecs_basic
 INSTALL_TARGET=	installdir install_main install_basic
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MEXTRA}
-ALL_TARGET+=	codecs_extra
-INSTALL_TARGET+=install_extra
-PLIST_SUB+=	EXTRA=""
+.if ${PORT_OPTIONS:MCHINESE}
+ALL_TARGET+=	codecs_chinese
+INSTALL_TARGET+=install_chinese
+PLIST_SUB+=	CHINESE=""
 .else
-PLIST_SUB+=	EXTRA="@comment "
+PLIST_SUB+=	CHINESE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MEBCDIC}
+ALL_TARGET+=	codecs_ebcdic
+INSTALL_TARGET+=install_ebcdic
+PLIST_SUB+=	EBCDIC=""
+.else
+PLIST_SUB+=	EBCDIC="@comment "
 .endif
 
 pre-install:
