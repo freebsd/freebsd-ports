@@ -1,23 +1,20 @@
-# New ports collection makefile for:   port-authoring-tools
-# Date created:        3 April 2004
-# Whom:                Mark Linimon <linimon@FreeBSD.org>
-#
+# Created by: Mark Linimon <linimon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	port-authoring-tools
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	"meta-port" for tools to test and submit changes to ports
 
 # note: portlint is brought in by porttools
 RUN_DEPENDS=	\
-		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
+		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 		${LOCALBASE}/sbin/libchk:${PORTSDIR}/sysutils/libchk \
 		${LOCALBASE}/bin/port:${PORTSDIR}/ports-mgmt/porttools
 
