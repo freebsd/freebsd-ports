@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mk-configure
-# Date created:				16 September 2009
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
