@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-MyXML
-# Date created:		2007-04-30
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-MyXML
-PORTVERSION=	0.09.86
+PORTVERSION=	0.09.87
 PORTEPOCH=	1
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 CATEGORIES=	textproc perl5
