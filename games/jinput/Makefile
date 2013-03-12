@@ -10,7 +10,7 @@ DISTVERSION=	20110801.r247
 CATEGORIES=	games java
 MASTER_SITES=	LOCAL/loader
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Game Controller API
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils

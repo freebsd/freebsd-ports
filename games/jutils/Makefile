@@ -10,7 +10,7 @@ PORTVERSION=	20070610.r26
 CATEGORIES=	games java
 MASTER_SITES=	LOCAL/loader
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common utilities for Java Game Technology Group projects
 
 USE_BZIP2=	yes
