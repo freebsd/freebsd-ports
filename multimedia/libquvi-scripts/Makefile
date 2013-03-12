@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.10
+PORTVERSION=	0.4.13
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -14,8 +14,8 @@ OPTIONS_DEFINE=	NSFW
 NSFW_DESC=	Enable adult website support
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
 USE_XZ=		yes
+USES=		pathfix
 
 MAN7=		libquvi-scripts.7
 
