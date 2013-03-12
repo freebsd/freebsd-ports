@@ -10,5 +10,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Carp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bit
