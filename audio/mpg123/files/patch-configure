@@ -1,0 +1,29 @@
+--- configure.orig	2013-02-23 21:58:36.000000000 +0100
++++ configure	2013-03-11 15:39:07.000000000 +0100
+@@ -15895,7 +15895,7 @@
+   # Is local not POSIX sh?
+   for given_word in "$@"
+   do
+-    if test "x$word" == "x$given_word"; then
++    if test "x$word" = "x$given_word"; then
+       return 0
+     fi
+   done
+@@ -16097,7 +16097,7 @@
+ 		# QSA and ALSA are not distinguishable in these tests, need to block
+ 		# each other and play with test order depending on platform.
+ 		alsa)
+-			if test "x$HAVE_QSA" == xyes; then
++			if test "x$HAVE_QSA" = xyes; then
+ 				HAVE_ALSA=no
+ 			else
+ 
+@@ -16160,7 +16160,7 @@
+ 			fi # HAVE_QSA
+ 		;;
+ 		qsa)
+-			if test "x$HAVE_ALSA" == xyes; then
++			if test "x$HAVE_ALSA" = xyes; then
+ 				HAVE_QSA=no
+ 			else
+ 
