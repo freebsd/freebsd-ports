@@ -13,6 +13,9 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 
 NO_LATEST_LINK=	yes
 
+DEPRECATED=    depends on libgsf_gnome which going away
+EXPIRATION_DATE=2013-04-12
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		pathfix

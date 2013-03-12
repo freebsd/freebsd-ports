@@ -19,6 +19,9 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 NO_LATEST_LINK=	yes
 
+DEPRECATED=    depends on libgsf-gnome which is going away.
+EXPIRATION_DATE=2013-04-12
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprint libglade2 \
