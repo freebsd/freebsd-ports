@@ -13,8 +13,8 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	linimon@FreeBSD.org
-COMMENT=	"meta-port" for administrative tools to maintain ports
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Meta-port for administrative tools to maintain ports
 
 RUN_DEPENDS=	\
 		${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
