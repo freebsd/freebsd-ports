@@ -1,14 +1,14 @@
 # Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
 PORTNAME=	collectd
-PORTVERSION=	5.1.0
-PORTREVISION=	5
+PORTVERSION=	5.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake libltdl
@@ -64,7 +64,7 @@ RRDCACHED_DESC=		RRDTool Cached (requires RRDTOOL)
 WRITE_GRAPHITE_DESC=	write_graphite
 WRITE_HTTP_DESC=	write_http
 
-MAN1=		collectd.1 collectd-nagios.1 collectdmon.1 collectdctl.1
+MAN1=		collectd.1 collectd-nagios.1 collectd-tg.1 collectdmon.1 collectdctl.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
 		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
 		collectd-java.5 collectd-python.5 types.db.5 collectd-threshold.5

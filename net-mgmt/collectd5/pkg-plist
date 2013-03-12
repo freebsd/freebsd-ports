@@ -10,9 +10,14 @@ etc/collectd.conf.sample
 %%CGI%%@exec if [ ! -f %B/collection.conf ] ; then cp -p %B/%f %B/collection.conf; fi
 %%CGI%%@dirrmtry %%WWWDIR%%
 bin/collectd-nagios
+bin/collectd-tg
 bin/collectdctl
 include/collectd/client.h
 include/collectd/lcc_features.h
+include/collectd/network.h
+include/collectd/network_buffer.h
+lib/collectd/aggregation.la
+lib/collectd/aggregation.so
 %%APACHE%%lib/collectd/apache.la
 %%APACHE%%lib/collectd/apache.so
 %%APCUPS%%lib/collectd/apcups.la
@@ -123,7 +128,7 @@ lib/collectd/zfs_arc.la
 lib/collectd/zfs_arc.so
 lib/libcollectdclient.la
 lib/libcollectdclient.so
-lib/libcollectdclient.so.0
+lib/libcollectdclient.so.1
 libdata/pkgconfig/libcollectdclient.pc
 %%WRITE_HTTP%%lib/collectd/write_http.la
 %%WRITE_HTTP%%lib/collectd/write_http.so
