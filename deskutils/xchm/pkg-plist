@@ -5,6 +5,7 @@ bin/xchm
 %%NLS%%share/locale/de/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xchm.mo
+%%NLS%%share/locale/gr/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xchm.mo
@@ -26,3 +27,5 @@ share/pixmaps/xchmdoc-128.xpm
 share/pixmaps/xchmdoc-16.xpm
 share/pixmaps/xchmdoc-32.xpm
 share/pixmaps/xchmdoc-48.xpm
+%%NLS%%@dirrm share/locale/gr/LC_MESSAGES
+%%NLS%%@dirrm share/locale/gr
