@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/enable-app-engine-project
-%%PYTHON_SITELIBDIR%%/google_api_python_client-1.0c2-py2.7.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/client_secrets.json
@@ -22,6 +22,8 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_units_for_custom_channel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels_for_ad_unit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_saved_ad_styles.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_saved_reports.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_url_channels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/sample_utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/README
@@ -54,15 +56,14 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/blogger.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coordinate/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coordinate/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coordinate/coordinate.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/customsearch/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/customsearch/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/index.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/manage.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/models.py
@@ -85,23 +86,12 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/groupsettings.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/client_task.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gen_appengine_access_token
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gtaskqueue
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gtaskqueue_puller
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/task_cmds.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_cmd_base.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_cmds.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_logger.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/setup.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/plus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/latitude.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moderator/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moderator/client_secrets.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moderator/moderator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/plus.py
@@ -110,7 +100,6 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/language_id.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/prediction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/setup.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/runsamples.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/basic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/crowding.py
@@ -126,6 +115,7 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/prediction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/template.tmpl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/urlshortener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage_serviceaccount_appengine/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage_serviceaccount_appengine/listing.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage_serviceaccount_appengine/main.py
@@ -139,28 +129,26 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadqueue/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tz/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tz/tznever
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/urlshortener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/youtube/README
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/youtube
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/urlshortener
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tz
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/translate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threadqueue
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/storage_serviceaccount_appengine
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/storage
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/service_account
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/searchforshopping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/prediction
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/moderator
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keyring
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/groupssettings
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/publishers
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/events
@@ -171,8 +159,8 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/plus
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dailymotion
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/customsearch
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coordinate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/audit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine_with_robots
