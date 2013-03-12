@@ -219,11 +219,8 @@ include/php/main/streams/php_streams_int.h
 include/php/main/streams/php_stream_transport.h
 include/php/main/streams/php_stream_userspace.h
 include/php/main/streams/php_stream_plain_wrapper.h
-include/php/sapi/cli/cli.h
+%%CLI%%include/php/sapi/cli/cli.h
 %%EMBED%%include/php/sapi/embed/php_embed.h
-%%SUHOSIN%%include/php/main/suhosin_globals.h
-%%SUHOSIN%%include/php/main/suhosin_logo.h
-%%SUHOSIN%%include/php/main/suhosin_patch.h
 include/php/main/win32_internal_function_disabled.h
 include/php/main/win95nt.h
 %%EMBED%%lib/libphp5.so

@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	\
 
 USE_GNOME=	libxml2
 
-OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR # SUHOSIN
+OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR
 OPTIONS_DEFAULT=CLI CGI IPV6 LINKTHR
 
 CLI_DESC=	Build CLI version
@@ -47,7 +47,6 @@ FPM_DESC=	Build FPM version
 APACHE_DESC=	Build Apache module
 AP2FILTER_DESC=	Use Apache 2.x filter interface (experimental)
 EMBED_DESC=	Build embedded library
-SUHOSIN_DESC=	Enable Suhosin protection system
 DEBUG_DESC=	Enable debug
 DTRACE_DESC=	Enable DTrace support
 IPV6_DESC=	Enable ipv6 support
@@ -64,14 +63,6 @@ PATCH_DIST_STRIP=	-p1
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
-
-#.if ${PORT_OPTIONS:MSUHOSIN}
-#PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
-#PATCH_SITES+=	http://download.suhosin.org/:suhosin
-#PLIST_SUB+=	SUHOSIN=""
-#.else
-PLIST_SUB+=	SUHOSIN="@comment "
-#.endif
 
 .if ${PORT_OPTIONS:MMAILHEAD}
 PATCHFILES+=	php-5.4.x-mail-header.patch:mail
