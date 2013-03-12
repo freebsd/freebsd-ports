@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
-BUILD_DEPENDS=	vala>=0.11.7:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala>=0.15.1:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 USE_XZ=		yes
