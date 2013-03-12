@@ -480,6 +480,7 @@
     SUBDIR += linux-f10-procps
     SUBDIR += linux-megamgr
     SUBDIR += linux-nero
+    SUBDIR += linux-procps
     SUBDIR += linuxfdisk
     SUBDIR += lire
     SUBDIR += livecd
