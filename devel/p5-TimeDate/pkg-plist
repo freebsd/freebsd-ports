@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Date/Language/Amharic.pm
 %%SITE_PERL%%/Date/Language/Austrian.pm
 %%SITE_PERL%%/Date/Language/Brazilian.pm
+%%SITE_PERL%%/Date/Language/Bulgarian.pm
 %%SITE_PERL%%/Date/Language/Chinese.pm
 %%SITE_PERL%%/Date/Language/Chinese_GB.pm
 %%SITE_PERL%%/Date/Language/Czech.pm
@@ -34,8 +35,9 @@
 %%SITE_PERL%%/Date/Language/Turkish.pm
 %%SITE_PERL%%/Date/Parse.pm
 %%SITE_PERL%%/Time/Zone.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Parse/.packlist
 @dirrm %%SITE_PERL%%/Date/Language
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Parse
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
 @dirrmtry %%SITE_PERL%%/Time
 @dirrmtry %%SITE_PERL%%/Date
