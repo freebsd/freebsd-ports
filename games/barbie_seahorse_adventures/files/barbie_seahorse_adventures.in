@@ -3,4 +3,4 @@
 # $FreeBSD$
 
 cd "%%DATADIR%%"
-exec ./run_game.py "${@}"
+exec /usr/bin/env python ./run_game.py "${@}"
