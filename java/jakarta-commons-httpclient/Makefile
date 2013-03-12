@@ -23,7 +23,7 @@ RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-c
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
-MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES LANG=C LC_ALL=C
+MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	dist
@@ -32,11 +32,18 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
+post-patch:
+	@LANG=C ${REINPLACE_CMD} 's/Ortwin Gl.*ck/Ortwin Glueck/' \
+		${WRKSRC}/src/java/org/apache/commons/httpclient/*.java \
+		${WRKSRC}/src/java/org/apache/commons/httpclient/*/*.java
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
