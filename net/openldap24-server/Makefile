@@ -19,11 +19,11 @@ MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX=		-sasl-client
 COMMENT=		Open source LDAP client implementation with SASL2 support
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!4].*
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[0-3].*
 .else
 PKGNAMESUFFIX=		-client
 COMMENT=		Open source LDAP client implementation
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!4].* \
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 .else
