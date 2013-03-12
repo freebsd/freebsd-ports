@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-procps
-# Date created:				2007-04-04
-# Whom:					leres
-#
+# Created by: leres
 # $FreeBSD$
-#
 
 PORTNAME=	procps
 PORTVERSION=	3.2.5
@@ -13,6 +9,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-6.4
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux psproc binaries
+
+CONFLICTS=	linux-f10-procps-[0-9]*
 
 # EXPIRATION_DATE is the EoL of the last 7.x release
 EXPIRATION_DATE=2013-02-28
