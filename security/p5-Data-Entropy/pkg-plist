@@ -5,8 +5,6 @@
 %%SITE_PERL%%/Data/Entropy/RawSource/RandomOrg.pm
 %%SITE_PERL%%/Data/Entropy/RawSource/RandomnumbersInfo.pm
 %%SITE_PERL%%/Data/Entropy/Source.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Entropy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Entropy/RawSource
 @dirrmtry %%SITE_PERL%%/Data/Entropy
 @dirrmtry %%SITE_PERL%%/Data
