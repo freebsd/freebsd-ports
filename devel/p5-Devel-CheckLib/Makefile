@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Devel-CheckLib
-# Date created:				08 August 2010
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-CheckLib
 PORTVERSION=	0.98
