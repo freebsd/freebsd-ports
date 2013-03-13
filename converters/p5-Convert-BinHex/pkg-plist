@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/BinHex/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/BinHex
 @dirrmtry %%SITE_PERL%%/Convert
-@dirrmtry %%SITE_PERL%%/auto/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
