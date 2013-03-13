@@ -3,7 +3,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -21,8 +21,9 @@ CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		HDF5 OPENEXR PYTHON
+OPTIONS_DEFINE=		HDF5 OPENEXR NUMPY
 OPTIONS_DEFAULT=	HDF5 OPENEXR
+NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC46+)
 
 .include <bsd.port.options.mk>
 
@@ -40,9 +41,11 @@ LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 CMAKE_ARGS+=	-DWITH_OPENEXR=0
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON}
+.if ${PORT_OPTIONS:MNUMPY}
 CONFLICTS_BUILD=	python3*
 CMAKE_ARGS+=	-DWITH_VIGRANUMPY=1
+USE_GCC=	4.6+
+USE_FORTRAN=	yes
 USE_PYTHON=	2.6-2.7
 BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
@@ -56,12 +59,6 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-# Check for clang, else use gcc46+
-CPP_check!=	${CPP} --version | tr -d '()'
-.if !${CPP_check:Mclang}
-USE_GCC=	4.6+
-.endif
 
 # Vigra's CMakeLists.txt does not support disabling those so we hook them
 # as dependencies here unconditionally (without OPTIONS=) even though if
@@ -89,6 +86,15 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .if !defined(WITHOUT_VIGRA_FFTW)
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
+.endif
+
+pre-everything::
+.if ${PORT_OPTIONS:MNUMPY}
+	@${ECHO} ""
+	@${ECHO} "* BEWARE!"
+	@${ECHO} "* Using py-NumPY implies Fortran and GCC4.6+ as hard dependencies"
+	@${ECHO} "* and require to all ports, depended on vigra, set USE_GCC=4.6+"
+	@${ECHO} ""
 .endif
 
 post-patch:
