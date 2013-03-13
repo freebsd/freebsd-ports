@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libadplug
-# Date created:				10 August 2004
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	libadplug
 PORTVERSION=	2.2.1
@@ -14,7 +10,9 @@ DISTNAME=	adplug-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib emulator library supporting many formats
 
-LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	binio:${PORTSDIR}/devel/libbinio
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -26,7 +24,6 @@ MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-LICENSE=	GPLv2
 INFO=		libadplug
 MAN1=		adplugdb.1
 
@@ -42,7 +39,7 @@ post-patch:
 		${WRKSRC}/src/fprovide.cpp \
 		${WRKSRC}/src/database.cpp \
 		${WRKSRC}/src/dmo.cpp
-	@${REINPLACE_CMD} -e 's|^\(pkgconfigdir\ =.*\)|\1 $$(prefix)/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|^\(pkgconfigdir\ =\).*|\1 $$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/Makefile.am
 
