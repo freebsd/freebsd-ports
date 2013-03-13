@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	awesome
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	3.4.15
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -14,13 +14,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		convert:${PORTSDIR}/graphics/ImageMagick \
+		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
-		${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
-RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		ev:${PORTSDIR}/devel/libev \
 		freetype:${PORTSDIR}/print/freetype2 \
@@ -43,9 +42,10 @@ USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
 
 MAN1=	awesome.1 \
-	awesome-client.1
+	awesome-client.1 \
+	awsetbg.1
 MAN5=	awesomerc.5
-MANLANG=	"" de es fr it ru
+MANLANG=	"" de es fr
 MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
@@ -66,16 +66,21 @@ CMAKE_ARGS += -DWITH_DBUS=YES
 CMAKE_ARGS += -DWITH_DBUS=NO
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS += -DINSTALL_PORTDOCS=YES -DGENERATE_DOC=YES
-.else
-CMAKE_ARGS += -DINSTALL_PORTDOCS=NO -DGENERATE_DOC=NO
+pre-configure:
+	@${REINPLACE_CMD} \
+	-e 's/"generate luadoc" ON/\"generate luadoc" OFF/g' \
+		${WRKSRC}/awesomeConfig.cmake
+	@${REINPLACE_CMD} \
+	-e 's,tr ,env LC_ALL="C" ${TR} ,g' \
+	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
+		${WRKSRC}/build-utils/gperf.sh
+.if empty(PORT_OPTIONS:MDOCS)
+	@${REINPLACE_CMD} \
+		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
+		${WRKSRC}/awesomeConfig.cmake
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "/LUA_EXECUTABLE lua/ s,lua,lua-${LUA_VER}," \
-		${WRKSRC}/awesomeConfig.cmake
-	@${REINPLACE_CMD} -e "s,^lua ,${LUA_CMD} ," \
-		${WRKSRC}/build-utils/lgi-check.sh
+	@${RM} -f ${WRKSRC}/lib/awful/placement.lua.in.orig
 
 .include <bsd.port.post.mk>
