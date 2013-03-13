@@ -8,14 +8,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A filesystem metadata benchmark utility
+COMMENT=	Filesystem metadata benchmark utility
 
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	OPENMPI EXAMPLES
-OPENMPI_DESC=	Use openmpi instead of mpich2
+OPENMPI_DESC=	Use Open MPI instead of MPICH2
 
-BROKEN=	checksum mismatch
+BROKEN=		checksum mismatch
 
 MAN1=		${PORTNAME}.1
 PORTEXAMPLES=	*
