@@ -27,5 +27,5 @@ share/pixmaps/xchmdoc-128.xpm
 share/pixmaps/xchmdoc-16.xpm
 share/pixmaps/xchmdoc-32.xpm
 share/pixmaps/xchmdoc-48.xpm
-%%NLS%%@dirrm share/locale/gr/LC_MESSAGES
-%%NLS%%@dirrm share/locale/gr
+%%NLS%%@dirrmtry share/locale/gr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gr
