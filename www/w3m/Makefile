@@ -1,9 +1,5 @@
-# New ports collection makefile for:   w3m
-# Date Created:			7 Oct 1999
-# Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3
