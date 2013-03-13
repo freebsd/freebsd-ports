@@ -3398,6 +3398,7 @@
     SUBDIR += py-async
     SUBDIR += py-avro
     SUBDIR += py-babel
+    SUBDIR += py-billiard
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
