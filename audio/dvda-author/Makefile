@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dvda-author
-# Date created:        9 October 2007
-# Whom:                dieringe@zedat.fu-berlin.de
-#
+# Created by: dieringe@zedat.fu-berlin.de
 # $FreeBSD$
-#
 
 PORTNAME=	dvda-author
 PORTVERSION=	09.05
@@ -34,8 +30,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \
 	--with-ogg=${LOCALBASE}/lib/libogg.so \
 	--enable-glibc
-.if defined(NOPORTDOCS)
+USE_CSTD=	gnu89
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--docdir=${WRKDIR}/doc
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|-std=c99||g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/libats2wav/Makefile.in
+	@${REINPLACE_CMD} 's|-std=c99 -O3||' \
+		${WRKSRC}/fixwav/src/Makefile.in
 
 .include <bsd.port.mk>
