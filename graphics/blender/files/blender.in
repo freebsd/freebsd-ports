@@ -2,12 +2,4 @@
 
 export BLENDER_SYSTEM_SCRIPTS=%%DATADIR%%/scripts
 export BLENDER_SYSTEM_DATAFILES=%%DATADIR%%/datafiles
-
-if [ -L ${HOME}/.blender ]; then
-	echo "A symbolic link for ~/.blender was detected."
-	echo "Due to security restrictions, blender can not be"
-	echo "started until you have removed the link."
-	exit 1
-fi
-
 exec %%PREFIX%%/bin/blender-bin "$@"

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.65a
-PORTREVISION=	4
+PORTVERSION=	2.66a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -31,16 +30,13 @@ CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.65
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.66
 
-LANG=	ar cs de eo es es_ES fa fr he hr hu id it ja ky nl pt pt_BR ru \
-	sr sr@latin sv tr uk zh_CN zh_TW
-
-OPTIONS_DEFINE=	BOOLEAN BULLET CINEON CAMERATRACK CYCLES CYCLESOSL DDS FFMPEG \
-		FFTW3 GAMEENGINE HDR HEADLESS JACK NLS MENU OCEANSIM OPENAL \
+OPTIONS_DEFINE=	BOOLEAN BULLET CINEON CAMERATRACK COMPOSITOR CYCLES CYCLESOSL \
+		DDS FFMPEG FFTW3 GAMEENGINE HDR HEADLESS JACK NLS MENU OCEANSIM OPENAL \
 		OPENCOLORIO OPENEXR OPENJPEG OPENMP PLAYER RAYOPTIMIZATION \
 		REDCODE SAMPLERATE SDL SNDFILE TIFF XINPUT XF86VMODE
-OPTIONS_DEFAULT=	BOOLEAN BULLET CINEON CYCLES CYCLESOSL DDS GAMEENGINE \
+OPTIONS_DEFAULT=	BOOLEAN BULLET CINEON COMPOSITOR CYCLES CYCLESOSL DDS GAMEENGINE \
 			HDR JACK OPENAL OPENCOLORIO OPENEXR OPENJPEG OPENMP \
 			PLAYER SAMPLERATE SDL TIFF XINPUT XF86VMODE
 
@@ -48,6 +44,7 @@ BOOLEAN_DESC=		Boolean library support
 BULLET_DESC=		Bullet physics engine
 CINEON_DESC=		CINEON and DPX graphics format support
 CAMERATRACK_DESC=	Camera tracking support
+COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
 CYCLESOSL_DESC=		Shading support for the cycles render engine
 DDS_DESC=		DDS graphics format support
@@ -64,10 +61,6 @@ REDCODE_DESC=		RedCode graphics format support
 SDL_DESC=		Audio and Joystick support using SDL
 XINPUT_DESC=		X11 Xinput (tablet) support
 XF86VMODE_DESC=		X11 video mode switching support
-
-# TODO: provide switches for the following options
-#
-# WITH_IMAGE_FRAMESERVER WITH_LZO WITH_LZMA WITH_LIBMV WITH_INPUT_NDOF
 
 .include <bsd.port.options.mk>
 
@@ -95,6 +88,12 @@ CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=ON
 LIB_DEPENDS+=	unwind:${PORTSDIR}/devel/libunwind
 .else
 CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MCOMPOSITOR}
+CMAKE_ARGS+=	-DWITH_COMPOSITOR:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_COMPOSITOR:BOOL=OFF
 .endif
 
 # openimageio to enable cycles requires 8.0 or higher
@@ -336,12 +335,8 @@ post-install:
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-.for ii in ${LANG}
-	@${MKDIR} ${DATADIR}/datafiles/locale/${ii}/LC_MESSAGES
-	@${INSTALL_DATA} \
-		${OUTDIR}/datafiles/locale/${ii}/LC_MESSAGES/${PORTNAME}.mo \
-		${DATADIR}/datafiles/locale/${ii}/LC_MESSAGES/${PORTNAME}.mo
-.endfor
+	@cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/locale ${DATADIR}
+	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name languages) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
 	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name ${PORTNAME}.mo) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
 	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
 
