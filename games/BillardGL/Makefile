@@ -1,4 +1,4 @@
-# Created By: Igor Pokrovsky <tiamat@comset.net>
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
 
 PORTNAME=	BillardGL
@@ -26,36 +26,34 @@ USE_GMAKE=	yes
 USE_XORG=	xmu xext x11 xi
 USE_GL=		glut
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png \
-		share/icons/hicolor/32x32/apps/${PORTNAME}.png \
-		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
-		share/icons/hicolor/72x72/apps/${PORTNAME}.png \
-		share/icons/hicolor/96x96/apps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	README
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-DESKTOP_ENTRIES="BillardGL" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+DESKTOP_ENTRIES="BillardGL" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 OPTIONS_DEFINE=	LANG
-LANG_DESC=	Install additional Language
-OPTIONS_DEFAULT=	LANG
+OPTIONS_DEFAULT=LANG
+LANG_DESC=	Install Language
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLANG}
+PLIST_SUB+=	LANG=""
+.else
+PLIST_SUB+=	LANG="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/BillardGL/|${DATADIR}/|' ${WRKSRC}/Namen.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-.for d in Texturen lang
+.for d in Texturen
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
 .endfor
 
@@ -65,7 +63,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
@@ -73,7 +71,8 @@ post-install:
 .endif
 
 .if ${PORT_OPTIONS:MLANG}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-LP-010/*.lang ${DATADIR}/lang
+	@${MKDIR} ${DATADIR}/lang
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-LP-010/*.lang ${DATADIR}/lang/
 .endif
 
 .include <bsd.port.mk>
