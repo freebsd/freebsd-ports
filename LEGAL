@@ -197,8 +197,6 @@ gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may
 						copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the
 						redistribution terms
-goPod-*			misc/*gopod		Unclear legal status in EU
-						countries
 graphviz-*		graphics/graphviz	Needs license before fetching
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
