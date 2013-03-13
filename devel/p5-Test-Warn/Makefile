@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Test-Warn
-# Date created:				June 18, 2005
-# Whom:	      				Brian Minard <bminard@flatfoot.ca>
-#
+# Created by: Brian Minard <bminard@flatfoot.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Warn
 PORTVERSION=	0.24

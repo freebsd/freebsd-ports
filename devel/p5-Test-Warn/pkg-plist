@@ -2,5 +2,4 @@
 %%SITE_PERL%%/Test/Warn.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Warn
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Warn
 @dirrmtry %%SITE_PERL%%/Test
