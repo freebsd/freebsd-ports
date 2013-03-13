@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Chooser
-# Date created:		2008-06-24
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Chooser
 PORTVERSION=	2.0.0
