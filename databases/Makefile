@@ -547,6 +547,7 @@
     SUBDIR += pg_filedump
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
+    SUBDIR += pg_statsinfo
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagent
