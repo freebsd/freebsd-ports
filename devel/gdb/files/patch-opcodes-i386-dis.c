@@ -56,3 +56,4 @@
 +  oappend (&"%es:"[(short)intel_syntax]);
    ptr_reg (code, sizeflag);
  }
+ 
