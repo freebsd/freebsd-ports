@@ -9,9 +9,7 @@ PORTNAME=	links
 PORTVERSION=	1.03
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}		
-
+MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
