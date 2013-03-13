@@ -1,9 +1,5 @@
-# New ports collection makefile for:    String-TT
-# Date created:                         Mat 20 2012
-# Whom:                                 Muhammad Moinur Rahman <5u623l20@gmail.com>
-#
+# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	String-TT
 PORTVERSION=	0.03
