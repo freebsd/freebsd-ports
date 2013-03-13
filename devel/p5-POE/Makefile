@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE
-# Date created:		29 Apr 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE
 PORTVERSION=	1.354

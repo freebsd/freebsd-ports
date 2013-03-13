@@ -44,7 +44,6 @@
 %%SITE_PERL%%/POE/Wheel/ReadWrite.pm
 %%SITE_PERL%%/POE/Wheel/Run.pm
 %%SITE_PERL%%/POE/Wheel/SocketFactory.pm
-@dirrmtry %%SITE_PERL%%/POE/API
 @dirrmtry %%SITE_PERL%%/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/POE/Component
