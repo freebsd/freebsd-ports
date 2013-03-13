@@ -1,15 +1,11 @@
-# New ports collection makefile for:	leafpad
-# Date created:				2004-10-18
-# Whom:					Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	leafpad
 PORTVERSION=	0.8.18.1
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -29,8 +25,10 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
