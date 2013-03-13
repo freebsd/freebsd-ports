@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5ff40cb4-8b92-11e2-bdb6-001060e06fd4">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.275</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-09.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0646</cvename>
+      <cvename>CVE-2013-0650</cvename>
+      <cvename>CVE-2013-1371</cvename>
+      <cvename>CVE-2013-1375</cvename>
+    </references>
+    <dates>
+      <discovery>2013-03-12</discovery>
+      <entry>2013-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cda566a0-2df0-4eb0-b70e-ed7a6fb0ab3c">
     <topic>puppet27 and puppet -- multiple vulnerabilities</topic>
     <affects>
