@@ -1,4 +1,4 @@
-# Created By: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	kye
@@ -9,8 +9,8 @@ MASTER_SITES=	http://games.moria.org.uk/kye/download/ \
 		SF/nemysisfreebsdp/kye/:nemysis
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # Selection of production-ready/well-known Kye Levels
-# (ziped Levels already included from games.moria.org.uk are excluded)
-# Please contact the MAINTAINER if a Level is missing
+# (Zipped levels already included from games.moria.org.uk are excluded)
+# Please contact the maintainer if a Level is missing
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		kye-data_moria_levels.20121101.tar.gz:nemysis \
 		kye-data_nuke_levels.20121101.tar.gz:nemysis \
@@ -27,13 +27,12 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 
-PORTDATA=	*
 PORTDOCS=	NEWS README
 
 SUB_FILES=	pkg-message
 
 DESKTOP_ENTRIES="Python Kye" "${COMMENT}" "Kye" \
-		"Kye" "Game;LogicGame;" ${FALSE}
+		"Kye" "Game;LogicGame;" false
 
 .include <bsd.port.options.mk>
 
