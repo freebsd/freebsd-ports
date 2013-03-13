@@ -5,8 +5,7 @@ PORTNAME=	yadex
 PORTVERSION=	1.7.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/ \
-		http://hjem.get2net.dk/RasII/amajorel/yadex/
+MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -25,18 +24,18 @@ MAN6=		yadex.6
 
 OPTIONS_DEFINE=	WHITE_BG 3D_RENDER SEARCH EXTRA_TOOLS LAPTOP_KEYS DOCS
 
-WHITE_BG_DESC=	Use alternative (black-on-white) color scheme
-3D_RENDER_DESC=	Build with a 3D preview function
-SEARCH_DESC=	Search for a thing, linedef, or sector by type
+WHITE_BG_DESC=		Alternative (black-on-white) color scheme
+3D_RENDER_DESC=		Build with 3D preview function
+SEARCH_DESC=		Thing, linedef, or sector search by type
 EXTRA_TOOLS_DESC=	Add a few extra tools to Yadex' repertoire
-LAPTOP_KEYS_DESC=	Key bindings to make editing easier on laptops
+LAPTOP_KEYS_DESC=	Key bindings for easier editing on laptops
 
 .include <bsd.port.options.mk>
 
 PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}
 PATCH_DIST_STRIP=	-p1
-PATCH_PREFIX=	${PORTNAME:U:C/^(.).*$/\1/g}${PORTNAME:C/^(.)//}_${PORTVERSION:S/.//g}
+PATCH_PREFIX=	Yadex_${PORTVERSION:S/.//g}
 PATCH_SUFFIX=	.diff
 PATCHFILES=	${PATCH_PREFIX}_Depend${PATCH_SUFFIX}
 
