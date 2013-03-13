@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	XML::RSS::SimpleGen
-# Date created:			Jun 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSS-SimpleGen
 PORTVERSION=	11.11
