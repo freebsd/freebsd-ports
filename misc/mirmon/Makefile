@@ -1,4 +1,4 @@
-# Whom:	ijliao
+# Created by:	ijliao
 # $FreeBSD$
 
 PORTNAME=	mirmon
