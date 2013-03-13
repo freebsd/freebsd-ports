@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Astro-FITS-Header
-# Date created:			Mar 10, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-FITS-Header
 PORTVERSION=	3.07
