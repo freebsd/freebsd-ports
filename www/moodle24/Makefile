@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable24/
 EXTRACT_SUFX=	.tgz
@@ -12,8 +12,6 @@ COMMENT=	Course management system based on social constructionism
 
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
-
-BROKEN=		checksum mismatch
 
 CONFLICTS=	moodle-1.*.* moodle-2.2.* moodle-2.3.*
 LATEST_LINK=	moodle24
