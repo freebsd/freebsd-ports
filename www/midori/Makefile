@@ -4,6 +4,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -90,10 +91,6 @@ CONFIGURE_ARGS+=--enable-zeitgeist
 .else
 CONFIGURE_ARGS+=--disable-zeitgeist
 .endif
-
-pre-patch:
-# Disable HTTP Strict Transport Security (hsts)
-	@cd ${WRKSRC}/katze && ${RM} midori-hsts.vala
 
 post-install:
 	@-update-desktop-database
