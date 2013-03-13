@@ -1,13 +1,9 @@
-# New ports collection makefile for:	bubble-chains
-# Date created:		2012-04-21
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/
 DISTNAME=	chains-${DISTVERSION}
@@ -31,13 +27,21 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.ico \
-		share/pixmaps/${PORTNAME}.png
-PLIST_DIRSTRY=	share/applications
+OPTIONS_DEFINE=	DOCS
 
-PORTDATA=	*
 PORTDOCS=	README
+
+DESKTOP_ENTRIES="Bubble Chains" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 
 P7ZIP_CMD=	${LOCALBASE}/bin/7z
 P7ZIP_ARGS=	x -o${WRKDIR}
@@ -50,30 +54,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/chains|${DATADIR}|' \
 		${WRKSRC}/main.cpp ${WRKSRC}/Game.pro
 
-.include <bsd.port.options.mk>
-
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 do-install:
-# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/chains ${PREFIX}/bin/${PORTNAME}
-
-# Data
-	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 
-# Pixmaps and Desktop
 	${INSTALL_DATA} ${WRKSRC}/images/logo.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.ico \
 		${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
