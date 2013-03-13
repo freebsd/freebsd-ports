@@ -11,9 +11,11 @@ lib/hevea/bookcommon.hva
 lib/hevea/booktabs.hva
 lib/hevea/chapterbib.hva
 lib/hevea/chngcntr.hva
+lib/hevea/cleveref.hva
 lib/hevea/comment.hva
 lib/hevea/compat.hva
 lib/hevea/contents_motif.gif
+lib/hevea/crlang.hva
 lib/hevea/czech.hva
 lib/hevea/deepcut.hva
 lib/hevea/english.hva
@@ -56,6 +58,7 @@ lib/hevea/html/undersection.hva
 lib/hevea/html/urlhref.hva
 lib/hevea/html/xypic.hva
 lib/hevea/hyperref.hva
+lib/hevea/hrlang.hva
 lib/hevea/ifpdf.hva
 lib/hevea/ifthen.hva
 lib/hevea/imagen
@@ -72,6 +75,7 @@ lib/hevea/iso-symb.hva
 lib/hevea/iso-text.hva
 lib/hevea/isolatin1.hva
 lib/hevea/keyval.hva
+lib/hevea/labeltype.hva
 lib/hevea/latexcommon.hva
 lib/hevea/latexsym.hva
 lib/hevea/listings.hva
@@ -212,6 +216,7 @@ lib/hevea/xxdate.exe
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual048.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/next_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/sectioning.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.haux
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.htoc
