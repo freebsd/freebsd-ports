@@ -1,6 +1,5 @@
 %%SITE_PERL%%/HTML/Location.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Location/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Location
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML
