@@ -1,12 +1,12 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.92 2013/03/09 09:12:39 kwm Exp $
+#   $MCom: ports/www/webkit-gtk3/Makefile,v 1.32 2013/03/09 09:12:39 kwm Exp $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
-PKGNAMESUFFIX=	-gtk2
+PKGNAMESUFFIX=	-gtk3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
@@ -28,7 +28,7 @@ USE_XORG=	xt
 USES=		bison
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 libxslt ltverhack
+USE_GNOME=	gtk30 libxslt ltverhack
 USE_PKGCONFIG=	build
 USE_SQLITE=	yes
 USE_PERL5=	yes
@@ -40,13 +40,13 @@ CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ac_cv_path_DOLT_BASH=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gtk=2.0 \
+CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--disable-geolocation \
 		--enable-introspection
 MAKEFILE=	GNUmakefile
 
-BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
+BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
 OPTIONS_DEFINE=	WEBGL DEBUG
