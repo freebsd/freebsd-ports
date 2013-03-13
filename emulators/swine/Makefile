@@ -1,10 +1,11 @@
-# Created by: nemysis@gmx.ch
+# Created by:   nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	swine
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators deskutils python
+MASTER_SITES=	https://github.com/downloads/dswd/Swine/
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Qt4 graphical Wine frontend
@@ -19,13 +20,9 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 
 DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dswd
-GH_PROJECT=	Swine
-GH_TAGNAME=	master
-GH_COMMIT=	6567d97
-
+FETCH_ARGS?=	-Fpr
 USE_PYTHON=	yes
+NO_BUILD=	yes
 USE_GMAKE=	yes
 USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64
@@ -40,13 +37,11 @@ RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
-	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|${PREFIX}/share/pixmaps/swine.png|' \
-	${WRKSRC}/resources/swine.desktop
+	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|${PREFIX}/share/pixmaps/swine.png|' ${WRKSRC}/resources/swine.desktop
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
 	${MKDIR} ${DATADIRLIB}
-	${INSTALL_DATA} ${WRKSRC}/resources.qrc ${DATADIRLIB}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIRLIB}
 	${LN} -sf ${DATADIRLIB}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
 	${LN} -sf ${DATADIRLIB}/${PORTNAME}cli.py ${PREFIX}/bin/${PORTNAME}cli
