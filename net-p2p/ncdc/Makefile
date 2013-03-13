@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncdc
-PORTVERSION=	1.14
-PORTREVISION=	2
+PORTVERSION=	1.15
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://dev.yorhel.nl/download/
@@ -16,6 +15,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre:${PORTSDIR}/devel/pcre \
 		gmp:${PORTSDIR}/math/gmp \
 		gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		nettle:${PORTSDIR}/security/nettle \
 		p11-kit:${PORTSDIR}/security/p11-kit
 
