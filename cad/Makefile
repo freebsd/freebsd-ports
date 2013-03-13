@@ -52,6 +52,7 @@
     SUBDIR += kicad-library
     SUBDIR += klayout
     SUBDIR += layouteditor
+    SUBDIR += ldraw
     SUBDIR += leocad
     SUBDIR += libgeda
     SUBDIR += librecad
