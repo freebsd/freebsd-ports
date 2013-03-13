@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-Task-Weaken
-# Date created:				Apr 5, 2007
-# Whom:					lbr@freebsd.org
-#
+# Created by: lbr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	Task-Weaken
 PORTVERSION=	1.04
