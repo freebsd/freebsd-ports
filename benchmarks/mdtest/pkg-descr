@@ -1,4 +1,5 @@
-The mdtest software is used for testing the metadata
-performance of a file system.
+mdtest is an MPI-coordinated metadata filesystem benchmark test that performs
+open/stat/close operations on files and directories and then reports achieved
+performance.
 
 WWW: http://sourceforge.net/projects/mdtest/
