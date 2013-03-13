@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-Wav
-# Date created:		30 Jul 2002
-# Whom:			Dominic Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dominic Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-Wav
 PORTVERSION=	0.13
