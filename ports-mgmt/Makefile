@@ -6,6 +6,7 @@
     SUBDIR += bpkg
     SUBDIR += bpm
     SUBDIR += bxpkg
+    SUBDIR += dialog4ports
     SUBDIR += distilator
     SUBDIR += fastest_sites
     SUBDIR += fbsdmon
