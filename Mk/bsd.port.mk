@@ -6069,7 +6069,7 @@ check-config: _check-config
 .if !target(sanity-config)
 sanity-config: _check-config
 .if !empty(_CHECK_CONFIG_ERROR)
-	@echo -n "Config is invalid. Re-edit? [Y/N] "; \
+	@echo -n "Config is invalid. Re-edit? [Y/n] "; \
 	read answer; \
 	case $$answer in \
 	[Nn]|[Nn][Oo]) \
