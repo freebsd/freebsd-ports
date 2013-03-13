@@ -1,9 +1,5 @@
-# New ports collection makefile for: pyao
-# Date created:		23 Sep 2002
-# Whom:			nbm
-#
+# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ao
 PORTVERSION=	0.82
@@ -15,16 +11,20 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyao-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A python wrapper for ao, an audio device abstraction library
+COMMENT=	Python wrapper for audio device abstraction library (libao)
 
-LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
+LICENSE=	GPLv2
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/aomodule.so
+LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyao
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/aomodule.so
+
 do-configure:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix "${LOCALBASE}"
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py \
+		--prefix "${LOCALBASE}"
 
 .include <bsd.port.mk>
