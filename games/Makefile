@@ -458,7 +458,6 @@
     SUBDIR += kuklomenos
     SUBDIR += kwappen
     SUBDIR += kye
-    SUBDIR += kye-data
     SUBDIR += ladder
     SUBDIR += lander
     SUBDIR += lapispuzzle
