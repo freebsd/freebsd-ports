@@ -5,6 +5,7 @@ PORTNAME=	dialog4ports
 PORTVERSION=	0.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
+		http://files.etoilebsd.net/dialog4ports/ \
 		ftp://invisible-island.net/dialog/:dialog
 
 MAINTAINER=	rum1cro@yandex.ru
