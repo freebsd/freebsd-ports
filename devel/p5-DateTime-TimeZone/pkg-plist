@@ -242,6 +242,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Karachi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kashgar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kathmandu.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Khandyga.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kolkata.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Krasnoyarsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kuala_Lumpur.pm
@@ -277,6 +278,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Tokyo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ulaanbaatar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Urumqi.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Ust_Nera.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Vientiane.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Vladivostok.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Yakutsk.pm
