@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.1.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -28,7 +28,7 @@ SUB_LIST=	RUBY=${RUBY}
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
-MAN8=	puppet-agent.8 puppet-apply.8 puppet-ca.8 \
+MAN8=	extlookup2hiera.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet-catalog.8 puppet-cert.8 puppet-certificate.8 \
 	puppet-certificate_request.8 puppet-certificate_revocation_list.8 \
 	puppet-config.8 puppet-describe.8 puppet-device.8 puppet-doc.8 \

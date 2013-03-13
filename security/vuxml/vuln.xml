@@ -51,6 +51,164 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cda566a0-2df0-4eb0-b70e-ed7a6fb0ab3c">
+    <topic>puppet27 and puppet -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>puppet</name>
+	<range><ge>3.0</ge><lt>3.1.1</lt></range>
+      </package>
+      <package>
+	<name>puppet27</name>
+	<range><ge>2.7</ge><lt>2.7.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Moses Mendoza reports:</p>
+	<blockquote cite="https://puppetlabs.com/blog/security-updates-new-releases-of-puppet-and-puppet-enterprise/">
+	  <p>A vulnerability found in Puppet could allow an authenticated client
+	     to cause the master to execute arbitrary code while responding to a
+	     catalog request. Specifically, in order to exploit the
+	     vulnerability, the puppet master must be made to invoke the
+             'template' or 'inline_template' functions during catalog compilation.
+          </p>
+	  <p>A vulnerability found in Puppet could allow an authenticated client
+	     to connect to a puppet master and perform unauthorized actions.
+	     Specifically, given a valid certificate and private key, an agent
+	     could retrieve catalogs from the master that it is not authorized
+	     to access or it could poison the puppet master's caches for any
+	     puppet-generated data that supports caching such as catalogs,
+	     nodes, facts, and resources. The extent and severity of this
+	     vulnerability varies depending on the specific configuration of the
+	     master: for example, whether it is using storeconfigs or not, which
+             version, whether it has access to the cache or not, etc.
+          </p>
+	  <p>A vulnerability has been found in Puppet which could allow
+	     authenticated clients to execute arbitrary code on agents that have
+	     been configured to accept kick connections. This vulnerability is
+	     not present in the default configuration of puppet agents, but if
+	     they have been configured to listen for incoming connections
+	     ('listen=true'), and the agent's auth.conf has been configured to
+	     allow access to the `run` REST endpoint, then a client could
+	     construct an HTTP request which could execute arbitrary code. The
+	     severity of this issue is exacerbated by the fact that puppet
+             agents typically run as root.
+          </p>
+	  <p>A vulnerability has been found in Puppet that could allow a client
+	     negotiating a connection to a master to downgrade the master's
+	     SSL protocol to SSLv2. This protocol has been found to contain
+	     design weaknesses. This issue only affects systems running older
+	     versions (pre 1.0.0) of openSSL. Newer versions explicitly disable
+             SSLv2.
+          </p>
+	  <p>A vulnerability found in Puppet could allow unauthenticated clients
+	     to send requests to the puppet master which would cause it to load
+	     code unsafely. While there are no reported exploits, this
+	     vulnerability could cause issues like those described in Rails
+	     CVE-2013-0156. This vulnerability only affects puppet masters
+             running Ruby 1.9.3 and higher.
+          </p>
+	  <p>This vulnerability affects puppet masters 0.25.0 and above. By
+	     default, auth.conf allows any authenticated node to submit a report
+	     for any other node. This can cause issues with compliance. The
+             defaults in auth.conf have been changed.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1640</cvename>
+      <cvename>CVE-2013-1652</cvename>
+      <cvename>CVE-2013-1653</cvename>
+      <cvename>CVE-2013-1654</cvename>
+      <cvename>CVE-2013-1655</cvename>
+      <cvename>CVE-2013-2275</cvename>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1640/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1652/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1653/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1654/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1655/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-2275/</url>
+      <url>https://groups.google.com/forum/?fromgroups=#!topic/puppet-announce/f_gybceSV6E</url>
+      <url>https://groups.google.com/forum/?fromgroups=#!topic/puppet-announce/kgDyaPhHniw</url>
+    </references>
+    <dates>
+      <discovery>2013-03-13</discovery>
+      <entry>2013-03-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="04042f95-14b8-4382-a8b9-b30e365776cf">
+    <topic>puppet26 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>puppet26</name>
+	<range><ge>2.6</ge><lt>2.6.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Moses Mendoza reports:</p>
+	<blockquote cite="https://puppetlabs.com/blog/security-updates-new-releases-of-puppet-and-puppet-enterprise/">
+	  <p>A vulnerability found in Puppet could allow an authenticated client
+	     to cause the master to execute arbitrary code while responding to a
+	     catalog request. Specifically, in order to exploit the
+	     vulnerability, the puppet master must be made to invoke the
+             'template' or 'inline_template' functions during catalog compilation.
+          </p>
+	  <p>A vulnerability found in Puppet could allow an authenticated client
+	     to connect to a puppet master and perform unauthorized actions.
+	     Specifically, given a valid certificate and private key, an agent
+	     could retrieve catalogs from the master that it is not authorized
+	     to access or it could poison the puppet master's caches for any
+	     puppet-generated data that supports caching such as catalogs,
+	     nodes, facts, and resources. The extent and severity of this
+	     vulnerability varies depending on the specific configuration of the
+	     master: for example, whether it is using storeconfigs or not, which
+             version, whether it has access to the cache or not, etc.
+          </p>
+	  <p>A vulnerability has been found in Puppet that could allow a client
+	     negotiating a connection to a master to downgrade the master's
+	     SSL protocol to SSLv2. This protocol has been found to contain
+	     design weaknesses. This issue only affects systems running older
+	     versions (pre 1.0.0) of openSSL. Newer versions explicitly disable
+             SSLv2.
+          </p>
+	  <p>A vulnerability found in Puppet could allow an authenticated client
+	     to execute arbitrary code on a puppet master that is running in the
+	     default configuration, or an agent with `puppet kick` enabled.
+	     Specifically, a properly authenticated and connected puppet agent
+	     could be made to construct an HTTP PUT request for an authorized
+	     report that actually causes the execution of arbitrary code on the
+             master.
+          </p>
+	  <p>This vulnerability affects puppet masters 0.25.0 and above. By
+	     default, auth.conf allows any authenticated node to submit a report
+	     for any other node. This can cause issues with compliance. The
+             defaults in auth.conf have been changed.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1640</cvename>
+      <cvename>CVE-2013-1652</cvename>
+      <cvename>CVE-2013-1654</cvename>
+      <cvename>CVE-2013-2274</cvename>
+      <cvename>CVE-2013-2275</cvename>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1640/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1652/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-1654/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-2274/</url>
+      <url>https://puppetlabs.com/security/cve/cve-2013-2275/</url>
+    </references>
+    <dates>
+      <discovery>2013-03-13</discovery>
+      <entry>2013-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68c1f75b-8824-11e2-9996-c48508086173">
     <topic>perl -- denial of service via algorithmic complexity attack on hashing routines</topic>
     <affects>
