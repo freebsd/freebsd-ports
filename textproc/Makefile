@@ -314,6 +314,7 @@
     SUBDIR += irstlm
     SUBDIR += is-aspell
     SUBDIR += is-hyphen
+    SUBDIR += iso-schematron-xslt
     SUBDIR += iso12083
     SUBDIR += iso8879
     SUBDIR += ispell

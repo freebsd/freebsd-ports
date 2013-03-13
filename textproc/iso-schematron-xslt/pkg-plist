@@ -1,0 +1,27 @@
+%%INSTDIR%%/xslt1/ExtractSchFromRNG.xsl
+%%INSTDIR%%/xslt1/ExtractSchFromXSD.xsl
+%%INSTDIR%%/xslt1/iso_abstract_expand.xsl
+%%INSTDIR%%/xslt1/iso_dsdl_include.xsl
+%%INSTDIR%%/xslt1/iso_schematron_message.xsl
+%%INSTDIR%%/xslt1/iso_schematron_skeleton_for_xslt1.xsl
+%%INSTDIR%%/xslt1/iso_svrl_for_xslt1.xsl
+%%INSTDIR%%/xslt1/readme.txt
+%%INSTDIR%%/xslt1/schematron-skeleton-api.htm
+%%INSTDIR%%/xslt2/ExtractSchFromRNG-2.xsl
+%%INSTDIR%%/xslt2/ExtractSchFromXSD-2.xsl
+%%INSTDIR%%/xslt2/iso_abstract_expand.xsl
+%%INSTDIR%%/xslt2/iso_dsdl_include.xsl
+%%INSTDIR%%/xslt2/iso_schematron_message_xslt2.xsl
+%%INSTDIR%%/xslt2/iso_schematron_skeleton_for_saxon.xsl
+%%INSTDIR%%/xslt2/iso_svrl_for_xslt2.xsl
+%%INSTDIR%%/xslt2/readme.txt
+%%INSTDIR%%/xslt2/sch-messages-cs.xhtml
+%%INSTDIR%%/xslt2/sch-messages-de.xhtml
+%%INSTDIR%%/xslt2/sch-messages-en.xhtml
+%%INSTDIR%%/xslt2/sch-messages-fr.xhtml
+%%INSTDIR%%/xslt2/sch-messages-nl.xhtml
+%%INSTDIR%%/xslt2/schematron-skeleton-api.htm
+@dirrm %%INSTDIR%%/xslt1
+@dirrm %%INSTDIR%%/xslt2
+@dirrm %%INSTDIR%%
+@dirrmtry %D/share/xsl
