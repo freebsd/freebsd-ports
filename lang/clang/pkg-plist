@@ -3,6 +3,7 @@ bin/c-index-test
 bin/ccc-analyzer
 bin/clang
 bin/clang++
+bin/clang-check
 bin/clang-tblgen
 bin/scan-build
 bin/scan-view

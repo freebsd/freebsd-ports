@@ -7,6 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -148,6 +149,7 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
 			bin/clang \
 			bin/clang++ \
+			bin/clang-check \
 			bin/clang-tblgen \
 			bin/c-index-test \
 			bin/scan-build \
