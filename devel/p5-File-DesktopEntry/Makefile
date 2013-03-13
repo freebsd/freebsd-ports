@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-DesktopEntry
-# Date created:		2006-05-31
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	File-DesktopEntry
 PORTVERSION=	0.04
