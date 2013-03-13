@@ -26,5 +26,4 @@
 @dirrm %%SITE_PERL%%/Data/Serializer/Convert
 @dirrm %%SITE_PERL%%/Data/Serializer/Config
 @dirrm %%SITE_PERL%%/Data/Serializer
-@dirrmtry %%SITE_PERL%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data
