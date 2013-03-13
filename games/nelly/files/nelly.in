@@ -1,5 +1,7 @@
 #!/bin/sh
 #
-echo "Nelly's Rooftop Garden: Starting up..."
+# $FreeBSD$
+#
+
 cd "%%DATADIR%%"
-./nelly.py
+exec /usr/bin/env python ./nelly.py "${@}"
