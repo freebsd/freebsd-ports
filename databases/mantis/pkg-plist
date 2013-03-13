@@ -33,6 +33,7 @@
 %%WWWDIR%%/admin/upgrade_unattended.php
 %%WWWDIR%%/admin/upgrade_warning.php
 %%WWWDIR%%/api/soap/mantisconnect.php
+%%WWWDIR%%/api/soap/mantisconnect.wsdl
 %%WWWDIR%%/api/soap/mc_account_api.php
 %%WWWDIR%%/api/soap/mc_api.php
 %%WWWDIR%%/api/soap/mc_config_api.php
@@ -97,7 +98,6 @@
 %%WWWDIR%%/bugnote_update.php
 %%WWWDIR%%/bugnote_view_inc.php
 %%WWWDIR%%/build.xml
-%%WWWDIR%%/build/test/testsuites.xml
 %%WWWDIR%%/changelog_page.php
 %%WWWDIR%%/config_defaults_inc.php
 %%WWWDIR%%/config_filter_defaults_inc.php
@@ -201,20 +201,6 @@
 %%WWWDIR%%/docbook/administration_guide/en/about.sgml
 %%WWWDIR%%/docbook/administration_guide/en/administration_guide.sgml
 %%WWWDIR%%/docbook/administration_guide/en/authentication.sgml
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.download.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.history.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.license.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.name.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.news.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.support.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.versioning.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.about.who.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.install.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/admin.install.requirements.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/index.html
-%%WWWDIR%%/docbook/administration_guide/en/build/administration_guide/legal.html
-%%WWWDIR%%/docbook/administration_guide/en/builddate
 %%WWWDIR%%/docbook/administration_guide/en/configuration.sgml
 %%WWWDIR%%/docbook/administration_guide/en/contributing.sgml
 %%WWWDIR%%/docbook/administration_guide/en/customizing_mantis.sgml
@@ -748,9 +734,9 @@
 %%WWWDIR%%/library/nusoap/nusoap.php
 %%WWWDIR%%/library/nusoap/nusoapmime.php
 %%WWWDIR%%/library/nusoap/readme_mantis.txt
-%%WWWDIR%%/library/phpmailer/ChangeLog.txt
 %%WWWDIR%%/library/phpmailer/LICENSE
 %%WWWDIR%%/library/phpmailer/README
+%%WWWDIR%%/library/phpmailer/changelog.txt
 %%WWWDIR%%/library/phpmailer/class.phpmailer.php
 %%WWWDIR%%/library/phpmailer/class.pop3.php
 %%WWWDIR%%/library/phpmailer/class.smtp.php
@@ -929,6 +915,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_chinese_simplified.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_chinese_traditional.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_czech.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_danish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_english.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_finnish.txt
@@ -940,6 +927,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_japanese.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_korean.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_norwegian_bokmal.txt
@@ -959,6 +947,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_turkish.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_ukrainian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config_edit.php
@@ -987,6 +976,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_japanese.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_korean.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_norwegian_bokmal.txt
@@ -1006,6 +996,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_turkish.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_ukrainian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bycategory.php
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bystatus.php
@@ -1049,6 +1040,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_chinese_simplified.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_chinese_traditional.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_czech.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_danish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_english.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_finnish.txt
@@ -1060,6 +1052,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_italian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_japanese.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_korean.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_norwegian_bokmal.txt
@@ -1125,7 +1118,6 @@
 %%WWWDIR%%/tests/Mantis/EnumTest.php
 %%WWWDIR%%/tests/Mantis/StringTest.php
 %%WWWDIR%%/tests/TestConfig.php
-%%WWWDIR%%/tests/bootstrap.php
 %%WWWDIR%%/tests/bootstrap.php.sample
 %%WWWDIR%%/tests/soap/AllTests.php
 %%WWWDIR%%/tests/soap/AttachmentTest.php
@@ -1241,7 +1233,6 @@
 @dirrm %%WWWDIR%%/docbook/developers/en/build
 @dirrm %%WWWDIR%%/docbook/developers/en
 @dirrm %%WWWDIR%%/docbook/developers
-@dirrm %%WWWDIR%%/docbook/administration_guide/en/build/administration_guide
 @dirrm %%WWWDIR%%/docbook/administration_guide/en/build
 @dirrm %%WWWDIR%%/docbook/administration_guide/en
 @dirrm %%WWWDIR%%/docbook/administration_guide
@@ -1255,8 +1246,6 @@
 @dirrm %%WWWDIR%%/core/classes
 @dirrm %%WWWDIR%%/core/cfdefs
 @dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/build/test
-@dirrm %%WWWDIR%%/build
 @dirrm %%WWWDIR%%/api/soap
 @dirrm %%WWWDIR%%/api
 @dirrm %%WWWDIR%%/admin
