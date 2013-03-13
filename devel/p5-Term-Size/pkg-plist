@@ -6,4 +6,3 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term
-@dirrmtry %%SITE_PERL%%/Term
