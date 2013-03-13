@@ -1,9 +1,9 @@
-# Created by:	Florent Thoumie <flz@FreeBSD.org>
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	25.0.1364.160
+DISTVERSION=	25.0.1364.172
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -187,9 +187,9 @@ do-install:
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
 
 post-install:
-	@${ECHO_MSG} "========================================================" 
-	@${ECHO_MSG} "For best performance please enable shared memory support" 
+	@${ECHO_MSG} "========================================================"
+	@${ECHO_MSG} "For best performance please enable shared memory support"
 	@${ECHO_MSG} "in chromium by setting kern.ipc.shm_allow_removed=1"
-	@${ECHO_MSG} "========================================================" 
+	@${ECHO_MSG} "========================================================"
 
 .include <bsd.port.post.mk>
