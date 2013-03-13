@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
-		http://www.logvinov.ru/files/dist/ \
+ 		http://fossies.org/unix/privat/ \
 		LOCAL/avl
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A delimited word diff program
+COMMENT=	Delimited word diff program
 
 LICENSE=	GPLv3
 
