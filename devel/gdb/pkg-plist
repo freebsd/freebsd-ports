@@ -1,6 +1,6 @@
 %%GDB_LINK%%bin/gdb
 bin/gdb%%VER%%
-bin/gdbtui%%VER%%
+%%TUI_LINK%%bin/gdbtui%%VER%%
 %%PYTHON%%share/gdb%%VER%%/python/gdb/__init__.py
 %%PYTHON%%share/gdb%%VER%%/python/gdb/types.py
 %%PYTHON%%share/gdb%%VER%%/python/gdb/printing.py

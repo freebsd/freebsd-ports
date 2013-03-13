@@ -3,4 +3,4 @@ many other languages.  GDB can target (i.e., debug programs running on)
 more than a dozen different processor architectures, and GDB itself can
 run on most popular GNU/Linux, Unix and Microsoft Windows variants.
 
-WWW:	http://www.gnu.org/software/gdb/
+WWW: http://www.gnu.org/software/gdb/
