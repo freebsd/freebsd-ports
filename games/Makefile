@@ -385,6 +385,7 @@
     SUBDIR += hexxagon
     SUBDIR += highmoon
     SUBDIR += hinversi
+    SUBDIR += hitori
     SUBDIR += hllib
     SUBDIR += hlstats
     SUBDIR += hlstatsx
