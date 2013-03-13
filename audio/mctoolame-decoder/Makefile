@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mctooLAME decoder
-# Date created:		Thu Mar 27 20:32:42 UTC 2003
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mctoolame
 PORTVERSION=	0.1.a
@@ -15,51 +11,28 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A LayerII MPEG Audio decoder which supports multi-channel encoding
+COMMENT=	MPEG Layer II audio decoder with multi-channel support
 
 USE_GMAKE=	yes
-ALL_TARGET=
+ALL_TARGET=	#
+MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"
 PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"
 
-pre-everything::
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} '>>>'
-	@${ECHO_MSG} '>>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
-	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
-.endif
-	@${ECHO_MSG} '>>>'
-.ifndef(WITH_PROFILED)
-	@${ECHO_MSG} ">>> You can enable profiling by defining WITH_PROFILED"
-.endif
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
-.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} -e 's|$$(ARCH)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E \
-		-e 's|\$$\(TWEAKS\)||' \
-		${WRKSRC}/Makefile
-.endif
-.ifndef(WITH_PROFILED)
-	@${REINPLACE_CMD} -E \
-		-e 's|\$$\(PG\)||' \
-		${WRKSRC}/Makefile
-.endif
-	@${REINPLACE_CMD} -E \
-		-e 's@\$$\((ARCH|OPTIM|WARNINGS)\)@@g' \
-		${WRKSRC}/Makefile
-
-post-configure:
-# C{C,FLAGS} safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CC[[:space:]]*=).+$$|\1${CC} ${CFLAGS}|' \
-		${WRKSRC}/Makefile
+		's|gets *\(([^,)]+)\)|fgets(\1, sizeof(\1), stdin)|' \
+			${WRKSRC}/musicout.c
 
 do-install:
-.ifndef(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}/html
-	@${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}${PKGNAMESUFFIX}/html
+	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}${PKGNAMESUFFIX}/html
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
