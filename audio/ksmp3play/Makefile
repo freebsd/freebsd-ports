@@ -1,27 +1,21 @@
-# ex:ts=8
-# New ports collection makefile for:	ksmp3play
-# Date created:			Nov 4, 2001
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ksmp3play
 PORTVERSION=	0.5.2.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-0.5.2/0.5.2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An curses-based MP3 player
+COMMENT=	Curses-based MP3 player
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
-NO_WRKSUBDIR=	yes
-
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_SDL=	sdl
-GNU_CONFIGURE=	yes
+NO_WRKSUBDIR=	yes
 
 MAN1=		ksmp3play.1
 

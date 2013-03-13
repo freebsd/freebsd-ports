@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ascd
-# Date created:			29 November 1998
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ascd
 PORTVERSION=	0.13.2
@@ -14,11 +10,11 @@ MASTER_SITES=	http://www.sourcefiles.org/Multimedia/Audio_CD/Other_X11/ \
 DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}:theme
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockable cd player for AfterStep or WindowMaker
+COMMENT=	Dockable CD player for AfterStep or WindowMaker
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
+LIB_DEPENDS=	workman:${PORTSDIR}/audio/libworkman
 
 USE_IMAKE=	yes
 USE_XORG=	xpm

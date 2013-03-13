@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yammi
-# Date created:				27 September 2003
-# Whom:					Arjan van Leeuwen <avleeuwen@piwebs.com>
-#
+# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	yammi
 PORTVERSION=	1.2.3
@@ -12,12 +8,12 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A QT-based music manager with fuzzy search
+COMMENT=	Qt-based music manager with fuzzy search feature
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+		tag:${PORTSDIR}/audio/taglib
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 OPTIONS_DEFINE=	XMMS
@@ -34,7 +30,7 @@ CONFIGURE_ARGS=	--disable-gstreamer
 .if ${PORT_OPTIONS:MXMMS}
 CONFIGURE_ARGS+=--enable-xmms
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .else
 CONFIGURE_ARGS+=--disable-xmms
 .endif

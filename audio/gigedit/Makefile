@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gigedit
-# Date created:		2008-11-15
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gigedit
 PORTVERSION=	0.2.0
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An instrument editor for gig files
+COMMENT=	Instrument editor for gig files
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \

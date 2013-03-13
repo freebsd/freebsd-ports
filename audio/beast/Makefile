@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://dist.testbit.eu/beast/v${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful music composition and modular synthesis application
+COMMENT=	Powerful music composition and modular synthesis application
 
 LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		mad:${PORTSDIR}/audio/libmad \

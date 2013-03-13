@@ -8,12 +8,14 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for creating bass tablature
+COMMENT=	Tool for creating bass tablature
 
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/btc
 PORTDOCS=	btc.doc
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

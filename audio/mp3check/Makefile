@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp3check
-# Date created:			Apr 16, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3check
 PORTVERSION=	1.6
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.icculus.org/mp3check/
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for checking and fixing mp3 archive inconsistencies
+COMMENT=	Tool for checking and fixing MP3 archive inconsistencies
 
 RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \
 		${LOCALBASE}/bin/mp3_check:${PORTSDIR}/audio/mp3_check

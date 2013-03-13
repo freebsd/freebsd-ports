@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	rawrec
-# Date created:			May 9, 2002
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rawrec
 PORTVERSION=	0.9.991
@@ -13,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:S/%SUBDIR%/apps\/sound\/recorders/} \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility to record and playback raw audio data
+COMMENT=	Utility to record and playback raw audio data
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -22,8 +17,8 @@ MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -lm ${PTHREAD_LIBS}"
 
-MAN1=	rawrec.1
-MLINKS=	rawrec.1 rawplay.1
+MAN1=		rawrec.1
+MLINKS=		rawrec.1 rawplay.1
 
 PLIST_FILES=	bin/rawplay bin/rawrec
 

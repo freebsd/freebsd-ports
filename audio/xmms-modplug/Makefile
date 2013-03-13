@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
 MAINTAINER=	c.petrik.sosa@gmail.com
-COMMENT=	Modplug-based plugin for XMMS
+COMMENT=	ModPlug-based plugin for XMMS
 
-LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS?=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
@@ -24,6 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/modplugxmms/.libs/libmodplugxmms.so ${PREFIX}/${PLUGDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/modplugxmms/.libs/libmodplugxmms.so \
+		${PREFIX}/${PLUGDIR}
 
 .include <bsd.port.mk>

@@ -10,9 +10,9 @@ MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	52641-amarokFS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A full screen application for Amarok
+COMMENT=	Full screen application for Amarok
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 PATCH_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

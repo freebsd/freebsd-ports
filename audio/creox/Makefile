@@ -18,11 +18,11 @@ GH_PROJECT=	Creox4
 GH_TAGNAME=	0.3
 GH_COMMIT=	8e27483
 
-USE_XORG=	xft xpm
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=	yes
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USE_XORG=	xft xpm
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	extace
-# Date created:				8 April 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	extace
 PORTVERSION=	1.9.9
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/eXtace/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Audio Visualization plugin for the X Window System
+COMMENT=	Audio visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 

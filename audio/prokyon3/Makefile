@@ -1,9 +1,5 @@
-# New ports collection makefile for:           prokyon3
-# Date created:                                11 November 2002
-# Whom:                                        Kay Lehmann
-#
+# Created by: Kay Lehmann
 # $FreeBSD$
-#
 
 PORTNAME=	prokyon3
 PORTVERSION=	0.9.6
@@ -12,17 +8,17 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multithreaded music manager and tag editor
+COMMENT=	Multithreaded music manager and tag editor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		mad:${PORTSDIR}/audio/libmad \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		tag:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 USE_XORG=	x11 xft
@@ -67,7 +63,8 @@ post-install:
 .if defined(WITH_BURN)
 	${INSTALL_SCRIPT} ${WRKSRC}/prokburn ${PREFIX}/bin
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@sleep 5
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

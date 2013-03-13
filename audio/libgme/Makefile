@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libgme
-# Date created:				9 May 2010
-# Whom:					Anonymous
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libgme
 PORTVERSION=	0.5.5
@@ -13,11 +8,10 @@ DISTNAME=	${PROJECTHOST}-${PORTVERSION}
 EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of video game music emulators
+COMMENT=	Collection of video game music emulators
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
-LICENSE_FILE_LGPL21=${WRKSRC}/license.txt
 
 PROJECTHOST=	game-music-emu
 USE_DOS2UNIX=	yes

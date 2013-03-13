@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rioutil
-# Date created:				01 July 2001
-# Whom:					George Reid <greid@FreeBSD.org>
-#
+# Created by: George Reid <greid@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rioutil
 PORTVERSION=	1.5.0
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to interface with the Rio600, Rio800, and psa[play devices
+COMMENT=	Program to interface with the Rio600, Rio800, and psa[play devices
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

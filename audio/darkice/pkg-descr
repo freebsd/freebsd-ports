@@ -4,8 +4,8 @@ sends it to a stream server.
 
 DarkIce can encode in the following formats:
 
-  - mp3 (using the lame library)
-  - mp2 (using the twolame library)
+  - MP3 (using the lame library)
+  - MP2 (using the twolame library)
   - Ogg Vorbis
   - AAC (using the faac library)
   - AAC HEv2 (using libaacplus library)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amb-plugins
-# Date created:		2007-08-28
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amb-plugins
 PORTVERSION=	0.8.1
@@ -15,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of ambisonics plugins, mainly to be used within Ardour
+COMMENT=	Ambisonics plugins, mainly to be used within Ardour
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -33,7 +29,7 @@ PLIST_DIRSTRY=	share/ladspa/rdf share/ladspa
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[[:space:]]-O3||g ; \
-		 s|g++[[:space:]]|$$(CXX) |g' ${WRKSRC}/Makefile
+		s|g++[[:space:]]|$$(CXX) |g' ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/ladspa
