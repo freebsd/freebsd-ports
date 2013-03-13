@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-Bencode
-# Date created:				February 06th 2006
-# Whom:	      				Oleg R. Muhutdinov <mor@WhiteLuna.com>
-#
+# Created by: Oleg R. Muhutdinov <mor@WhiteLuna.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-Bencode
 PORTVERSION=	1.03
