@@ -1,16 +1,17 @@
-# New Ports collection makefile for:	nelly
-# Date created:		16 July 2012
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	nelly
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://www.partiallydisassembled.net/nelly/ \
-		http://media.pyweek.org/dl/2/rushed/
+		http://media.pyweek.org/dl/2/rushed/ \
+		SF/nemysisfreebsdp/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
@@ -21,41 +22,35 @@ RUN_DEPENDS=	${PYGAME} \
 USE_PYTHON_RUN=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	README
 
 SUB_FILES=	${PORTNAME}
 
+DESKTOP_ENTRIES="Nelly's Rooftop Garden" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
 		${WRKSRC}/*.py
-	@(cd ${WRKSRC} && ${RM} *.py.bak)
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
-# Scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-
-# Executable
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
 
-# Data
-.  for d in fonts levels textures
+.for d in fonts levels textures
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
-.  endfor
+.endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/textures/menu.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
