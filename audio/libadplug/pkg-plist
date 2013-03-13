@@ -62,4 +62,5 @@ lib/libadplug-2.2.1.so.0
 lib/libadplug.a
 lib/libadplug.la
 lib/libadplug.so
+libdata/pkgconfig/adplug.pc
 @dirrm include/adplug
