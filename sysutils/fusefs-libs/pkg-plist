@@ -22,4 +22,4 @@ libdata/pkgconfig/fuse.pc
 %%PORTDOCS%%%%DOCSDIR%%/libs/how-fuse-works
 %%PORTDOCS%%%%DOCSDIR%%/libs/kernel.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
