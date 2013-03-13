@@ -26,12 +26,16 @@ load_rc_config $name
 
 pidfile=${unbound_pidfile:-"%%PREFIX%%/etc/unbound/unbound.pid"}
 unbound_enable=${unbound_enable:-"NO"}
+unbound_anchor_enable=${unbound_anchor_enable:-"YES"}
+unbound_anchor_flags=${unbound_anchor_flags:-""}
 
 start_precmd()
 {
-	%%PREFIX%%/sbin/unbound-checkconf && \
-	echo -n "Obtaining a trust anchor:" && \
-	su -m unbound -c %%PREFIX%%/sbin/unbound-anchor && \
+	%%PREFIX%%/sbin/unbound-checkconf || return 1
+    if checkyesno ${unbound_anchor_enable}; then
+        echo -n "Obtaining a trust anchor:"
+        su -m unbound -c %%PREFIX%%/sbin/unbound-anchor ${unbound_anchor_flags} || return 1
+    fi
 	echo .
 }
 
