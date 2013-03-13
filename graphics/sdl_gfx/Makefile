@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	sdl_gfx
-# Date created:			Apr 25, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.23
+PORTVERSION=	2.0.24
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
@@ -17,7 +12,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 MAKE_JOBS_SAFE=	yes
-USE_GNOME=	gnomehack
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
 USE_GMAKE=	yes
@@ -27,15 +22,15 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 USE_LDCONFIG=	yes
 
-OPTIONS=	MMX	"Enable MMX instruction set (i386 only)"	Off
+OPTIONS_DEFINE_i386=	MMX
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MMX) && (${ARCH} == "i386")
+.if ${PORT_OPTIONS:MMMX}
 CONFIGURE_ARGS+=--enable-mmx
 CFLAGS+=	-DUSE_MMX
 .else
 CONFIGURE_ARGS=--disable-mmx
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
