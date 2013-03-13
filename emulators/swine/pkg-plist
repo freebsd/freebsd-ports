@@ -11,7 +11,6 @@ lib/swine/ShortcutImport.py
 lib/swine/SlotSettings.py
 lib/swine/config.py
 lib/swine/icolib.py
-lib/swine/resources.qrc
 lib/swine/resources_rc.py
 lib/swine/shortcutlib.py
 lib/swine/swine.py
