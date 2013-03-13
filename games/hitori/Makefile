@@ -19,6 +19,7 @@ LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk30
@@ -49,11 +50,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-USE_XZ=		yes
-EXTRACT_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
 .include <bsd.port.mk>
