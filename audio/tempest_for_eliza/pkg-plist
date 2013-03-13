@@ -9,6 +9,4 @@ share/tempest/ungarian
 share/tempest/godfather
 share/tempest/starwars
 share/tempest/tempest
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/tempest
