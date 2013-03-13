@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-modplug
-# Date created:		2 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
@@ -18,10 +14,10 @@ PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modplug-based plugin for beep-media-player
+COMMENT=	ModPlug-based plugin for beep-media-player
 
-LIB_DEPENDS?=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS?=	beep:${PORTSDIR}/multimedia/beep-media-player
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -30,7 +26,8 @@ PLUGDIR?=	lib/bmp/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugbmp.so
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PLUGDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/modplugbmp/.libs/libmodplugbmp.so ${PREFIX}/${PLUGDIR}/
+	@${MKDIR} ${PREFIX}/${PLUGDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/modplugbmp/.libs/libmodplugbmp.so \
+		${PREFIX}/${PLUGDIR}
 
 .include <bsd.port.mk>

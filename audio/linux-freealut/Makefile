@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-freealut
-# Date created:        03 September 2006
-# Whom:                Jona Joachim <walkingshadow@grummel.net>
-#
+# Created by: Jona Joachim <walkingshadow@grummel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free implementation of OpenAL's ALUT standard (Linux version)
+COMMENT=	Free implementation of OpenAL ALUT standard (Linux version)
 
 CONFLICTS=	linux-f8-freealut-[0-9]* linux-f10-freealut-[0-9]*
 

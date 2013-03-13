@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-openal
-# Date created:				25 Nov 2005
-# Whom:					jylefort@FreeBSD.org
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openal
 DISTVERSION=	0.0.9-0.6.20060204cvs.fc4
@@ -12,7 +8,7 @@ CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D positional spatialized sound library (Linux version)
+COMMENT=	3D positional spatialized sound library (Linux version)
 
 CONFLICTS=	linux-f8-openal-[0-9]* linux-f10-openal-[0-9]*
 

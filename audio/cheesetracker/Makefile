@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Impulse Tracker clone
+COMMENT=	Impulse Tracker clone
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		qmake:${PORTSDIR}/devel/qmake
@@ -16,7 +16,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 USE_BZIP2=	yes

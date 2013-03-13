@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Generic music player for UNIX systems
+COMMENT=	Generic music player for Unix-like systems
 
 LICENSE=	GPLv3
 
@@ -32,12 +32,14 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^sysconf_DATA/s|=.*|= xhippo.config.default|' \
-		${WRKSRC}/Makefile.in 
+			${WRKSRC}/Makefile.in
 
 post-install:
 .if !exists(${PREFIX}/etc/xhippo.config)
 	(cd ${PREFIX}/etc && ${CP} xhippo.config.default xhippo.config)
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmmix
-# Date created:		Mon Aug  5 10:54:25 CDT 1996
-# Whom:			erich@FreeBSD.org
-#
+# Created by: Erik Cederstrand <erich@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmmix
 PORTVERSION=	1.2.2
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/1.2.2/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Motif-based audio mixer
+COMMENT=	Motif-based audio mixer
 
 WRKSRC=		${WRKDIR}/xmmix-1.2
 

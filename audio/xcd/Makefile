@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xcd
-# Date created:         22 November 1994
-# Whom:                 jmz
-#
+# Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xcd
 PORTVERSION=	1.7
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Tcl/Tk CD player
+COMMENT=	Tcl/Tk CD player
 
 USE_TK=		yes
 WRKSRC=		${WRKDIR}/xcd

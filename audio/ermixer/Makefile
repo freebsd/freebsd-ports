@@ -8,21 +8,20 @@ PORTEPOCH=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
-
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line, ncurses, and (optional) Qt-GUI OSS audio mixer
+COMMENT=	Command-line, ncurses, and (optional) Qt-GUI OSS audio mixer
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=	yes
 
 .if !defined(WITHOUT_X11)
 USE_QT_VER=	3
-CONFIGURE_ARGS+=--enable-qt
+CONFIGURE_ARGS=	--enable-qt
 .endif
-
-USE_PERL5_BUILD=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 
 LDFLAGS+=	${PTHREAD_LIBS}
 CPPFLAGS+=	${PTHREAD_CFLAGS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-fc
-# Date created:				8 Jan 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-fc
 PORTVERSION=	0.6
@@ -14,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LIBFC_DISTNAME}${EXTRACT_SUFX}:libfc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A XMMS future composer input plugin
+COMMENT=	XMMS future composer input plugin
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

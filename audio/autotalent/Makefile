@@ -8,10 +8,10 @@ MASTER_SITES=	http://web.mit.edu/tbaran/www/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A real-time pitch correction plugin for ladspa
+COMMENT=	Real-time pitch correction plugin for LADSPA
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 
@@ -28,7 +28,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math,${CFLAGS}," ${WRKSRC}/Makefile
 
 do-install:
-	@${MKDIR}  ${PREFIX}/lib/ladspa/
-	${INSTALL_DATA} ${WRKSRC}/autotalent.so ${PREFIX}/lib/ladspa/
+	@${MKDIR} ${PREFIX}/lib/ladspa
+	${INSTALL_DATA} ${WRKSRC}/autotalent.so ${PREFIX}/lib/ladspa
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	madman
-# Date created:		2005-10-12
-# Whom:			Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	madman
 PORTVERSION=	0.93
@@ -12,19 +8,19 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An advanced digital music manager
+COMMENT=	Advanced digital music manager
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
+		id3tag:${PORTSDIR}/audio/libid3tag \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
-DEPRECATED=	Depends on QT3; unmaintained
+DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 USE_QT_VER=	3
 USE_GNOME=	glib12
+USE_PYTHON_RUN=	yes
 
 PLIST_FILES=	bin/madman \
 		lib/madman/plugins/burn_to_audio_cd \
@@ -34,15 +30,17 @@ PLIST_FILES=	bin/madman \
 PLIST_DIRS=	lib/madman/plugins lib/madman
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/scons -C ${WRKSRC} prefix=${PREFIX} \
-	qt_directory=${QT_PREFIX} add_c_include_dirs=${LOCALBASE}/include add_lib_dirs=${LOCALBASE}/lib
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/scons \
+		-C ${WRKSRC} prefix=${PREFIX} qt_directory=${QT_PREFIX} \
+		add_c_include_dirs=${LOCALBASE}/include \
+		add_lib_dirs=${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/madman ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/madman
-	${MKDIR} ${PREFIX}/lib/madman/plugins
-	for plugin in burn_to_audio_cd burn_to_data_cd export_m3u move_to_trash; do \
-		${INSTALL_DATA} -m0755 ${WRKSRC}/plugins/$$plugin ${PREFIX}/lib/madman/plugins; \
-	done
+	@${MKDIR} ${PREFIX}/lib/madman/plugins
+.for plugin in burn_to_audio_cd burn_to_data_cd export_m3u move_to_trash
+	${INSTALL_DATA} -m0755 ${WRKSRC}/plugins/${plugin} \
+		${PREFIX}/lib/madman/plugins
+.endfor
 
 .include <bsd.port.mk>

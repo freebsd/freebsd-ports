@@ -1,9 +1,5 @@
-# New ports collection makefile for:    splaytk
-# Date created:         19 Apr 1998
-# Whom:                 brett@peloton.physics.montana.edu
-#
+# Created by: Brett Taylor <brett@peloton.physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	splaytk
 PORTVERSION=	2.0
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SUNSITE/apps/sound/players
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tk based interface for splay
+COMMENT=	Tk based interface for splay
 
 LICENSE=	GPLv2
 

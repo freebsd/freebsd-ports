@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-eq
-# Date created:			13 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	eq
 PORTVERSION=	0.7
@@ -14,9 +10,9 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A realtime graphical equalizer plugin for XMMS
+COMMENT=	Real-time graphical equalizer plugin for XMMS
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
@@ -27,6 +23,7 @@ PLIST_FILES=	lib/xmms/Effect/libeq.la \
 
 OPTIONS_DEFINE=	BENCHMARK EXT_INS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	EXT_INS OPTIMIZED_CFLAGS
+
 BENCHMARK_DESC=	Enable counting the cycles used by the IIR
 EXT_INS_DESC=	Use MMX/SSE/SSE2 instructions if available
 
