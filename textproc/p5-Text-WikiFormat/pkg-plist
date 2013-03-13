@@ -1,6 +1,4 @@
 %%SITE_PERL%%/Text/WikiFormat.pm
 %%SITE_PERL%%/Text/WikiFormat/Blocks.pm
-@dirrmtry %%SITE_PERL%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text/WikiFormat
 @dirrmtry %%SITE_PERL%%/Text

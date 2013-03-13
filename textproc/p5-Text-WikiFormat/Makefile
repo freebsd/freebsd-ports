@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-WikiFormat
-# Date created:				Sat Jan 17 18:15:01 UTC 2004
-# Whom:					Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-WikiFormat
 PORTVERSION=	0.80
