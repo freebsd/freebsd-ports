@@ -3,8 +3,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/auto/Data/Validate/IP
-@dirrmtry %%SITE_PERL%%/auto/Data/Validate
-@dirrmtry %%SITE_PERL%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Validate
 @dirrmtry %%SITE_PERL%%/Data
