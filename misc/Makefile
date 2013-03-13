@@ -162,13 +162,11 @@
     SUBDIR += gnustep-examples
     SUBDIR += gone
     SUBDIR += gonvert
-    SUBDIR += gopod
     SUBDIR += gplink
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gregexp
     SUBDIR += grun
-    SUBDIR += gtk-gopod
     SUBDIR += gtkfind
     SUBDIR += gwenview-i18n
     SUBDIR += gwhich

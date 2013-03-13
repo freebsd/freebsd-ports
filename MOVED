@@ -4153,3 +4153,5 @@ mail/firetray||2013-03-09|Has expired: Broken for more than 6 month
 vietnamese/vnterm||2013-03-09|Has expired: Broken for more than 6 month
 graphics/vid||2013-03-09|Has expired: Broken for more than 6 month
 games/kye-data||2013-03-12|Deleted: Merged with games/kye
+misc/gopod||2013-03-13|Has expired: does not work with modern iPods anymore
+misc/gtk-gopod||2013-03-13|Has expired: does not work with modern iPods anymore
