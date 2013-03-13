@@ -182,7 +182,7 @@ MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MERGELIBS MMEDIA PGSQL \
 		SDK SYSTRAY TEST WEBDAV
-OPTIONS_DEFAULT=CUPS GTK2 MERGELIBS
+OPTIONS_DEFAULT=CUPS GTK2
 
 JAVA_DESC=	Add java support (XML Filters, macros)
 MERGELIBS_DESC=	Enable linking of big merged library
@@ -296,6 +296,7 @@ CONFIGURE_ARGS+=	--disable-kde4
 .endif
 
 .if ${PORT_OPTIONS:MMERGELIBS}
+BROKEN=		mergelibs causes runtime problems
 CONFIGURE_ARGS+=	--enable-mergelibs
 .else
 CONFIGURE_ARGS+=	--disable-mergelibs
