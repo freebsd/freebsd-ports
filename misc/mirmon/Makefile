@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	mirmon
-# Date created:			Jun 15, 2004
-# Whom:				ijliao
-#
+# Whom:	ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mirmon
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
