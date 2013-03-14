@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -86,16 +85,16 @@ post-patch:
 	@${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
 
 	@${RM} ${WRKSRC}/lib/RXTXcomm.jar
-	@${LN} -s ${JAVA_HOME}/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
+	@${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
 
 	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
 	@${RM} -rf ${WRKSRC}/reference/img/
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}
+	${MKDIR} ${PREFIX}/${PORTNAME}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${PREFIX}/${PORTNAME} ${FIND_EXPR})
-	@${CHMOD} +x ${PREFIX}/${PORTNAME}/arduino
-	@${INSTALL_SCRIPT} ${WRKDIR}/arduino ${PREFIX}/bin/
+	${CHMOD} +x ${PREFIX}/${PORTNAME}/arduino
+	${INSTALL_SCRIPT} ${WRKDIR}/arduino ${PREFIX}/bin/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

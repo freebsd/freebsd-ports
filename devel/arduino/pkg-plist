@@ -8,7 +8,7 @@ arduino/arduino
 %%EXAMPLES%%arduino/examples/02.Digital/BlinkWithoutDelay/BlinkWithoutDelay.ino
 %%EXAMPLES%%arduino/examples/02.Digital/Button/Button.ino
 %%EXAMPLES%%arduino/examples/02.Digital/Debounce/Debounce.ino
-%%EXAMPLES%%arduino/examples/02.Digital/DigitalIputPullup/DigitalIputPullup.ino
+%%EXAMPLES%%arduino/examples/02.Digital/DigitalInputPullup/DigitalInputPullup.ino
 %%EXAMPLES%%arduino/examples/02.Digital/StateChangeDetection/StateChangeDetection.ino
 %%EXAMPLES%%arduino/examples/02.Digital/toneKeyboard/pitches.h
 %%EXAMPLES%%arduino/examples/02.Digital/toneKeyboard/toneKeyboard.ino
@@ -153,8 +153,10 @@ arduino/hardware/arduino/bootloaders/optiboot/pin_defs.h
 arduino/hardware/arduino/bootloaders/optiboot/stk500.h
 arduino/hardware/arduino/bootloaders/stk500v2/License.txt
 arduino/hardware/arduino/bootloaders/stk500v2/Makefile
+arduino/hardware/arduino/bootloaders/stk500v2/Mega2560-prod-firmware-2011-06-29.hex
 arduino/hardware/arduino/bootloaders/stk500v2/STK500V2.pnproj
 arduino/hardware/arduino/bootloaders/stk500v2/STK500V2.pnps
+arduino/hardware/arduino/bootloaders/stk500v2/avr_cpunames.h
 arduino/hardware/arduino/bootloaders/stk500v2/avrinterruptnames.h
 arduino/hardware/arduino/bootloaders/stk500v2/command.h
 arduino/hardware/arduino/bootloaders/stk500v2/stk500boot.c
@@ -188,6 +190,7 @@ arduino/hardware/arduino/cores/arduino/WString.cpp
 arduino/hardware/arduino/cores/arduino/WString.h
 arduino/hardware/arduino/cores/arduino/binary.h
 arduino/hardware/arduino/cores/arduino/main.cpp
+arduino/hardware/arduino/cores/arduino/malloc.c
 arduino/hardware/arduino/cores/arduino/new.cpp
 arduino/hardware/arduino/cores/arduino/new.h
 arduino/hardware/arduino/cores/arduino/wiring.c
@@ -527,13 +530,122 @@ arduino/libraries/EEPROM/EEPROM.cpp
 arduino/libraries/EEPROM/EEPROM.h
 arduino/libraries/Esplora/Esplora.cpp
 arduino/libraries/Esplora/Esplora.h
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraAccelerometer/EsploraAccelerometer.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraBlink/EsploraBlink.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraJoystickMouse/EsploraJoystickMouse.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraLedShow/EsploraLedShow.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraLedShow2/EsploraLedShow2.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraLightCalibrator/EsploraLightCalibrator.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraMusic/EsploraMusic.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraSoundSensor/EsploraSoundSensor.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraTemperatureSensor/EsploraTemperatureSensor.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraKart/EsploraKart.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraPong/EsploraPong.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraRemote/EsploraRemote.ino
+%%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraTable/EsploraTable.ino
 arduino/libraries/Esplora/keywords.txt
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraKart/EsploraKart.ino
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraLedShow/EsploraLedShow.ino
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraLedShow2/EsploraLedShow2.ino
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraMusic/EsploraMusic.ino
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraRemote/EsploraRemote.ino
-%%EXAMPLES%%arduino/libraries/Esplora/examples/EsploraTable/EsploraTable.ino
+arduino/libraries/GSM/GSM.h
+arduino/libraries/GSM/GSM3CircularBuffer.cpp
+arduino/libraries/GSM/GSM3CircularBuffer.h
+arduino/libraries/GSM/GSM3MobileAccessProvider.cpp
+arduino/libraries/GSM/GSM3MobileAccessProvider.h
+arduino/libraries/GSM/GSM3MobileCellManagement.cpp
+arduino/libraries/GSM/GSM3MobileCellManagement.h
+arduino/libraries/GSM/GSM3MobileClientProvider.cpp
+arduino/libraries/GSM/GSM3MobileClientProvider.h
+arduino/libraries/GSM/GSM3MobileClientService.cpp
+arduino/libraries/GSM/GSM3MobileClientService.h
+arduino/libraries/GSM/GSM3MobileDataNetworkProvider.cpp
+arduino/libraries/GSM/GSM3MobileDataNetworkProvider.h
+arduino/libraries/GSM/GSM3MobileMockupProvider.cpp
+arduino/libraries/GSM/GSM3MobileMockupProvider.h
+arduino/libraries/GSM/GSM3MobileNetworkProvider.cpp
+arduino/libraries/GSM/GSM3MobileNetworkProvider.h
+arduino/libraries/GSM/GSM3MobileNetworkRegistry.cpp
+arduino/libraries/GSM/GSM3MobileNetworkRegistry.h
+arduino/libraries/GSM/GSM3MobileSMSProvider.cpp
+arduino/libraries/GSM/GSM3MobileSMSProvider.h
+arduino/libraries/GSM/GSM3MobileServerProvider.cpp
+arduino/libraries/GSM/GSM3MobileServerProvider.h
+arduino/libraries/GSM/GSM3MobileServerService.cpp
+arduino/libraries/GSM/GSM3MobileServerService.h
+arduino/libraries/GSM/GSM3MobileVoiceProvider.cpp
+arduino/libraries/GSM/GSM3MobileVoiceProvider.h
+arduino/libraries/GSM/GSM3SMSService.cpp
+arduino/libraries/GSM/GSM3SMSService.h
+arduino/libraries/GSM/GSM3ShieldV1.cpp
+arduino/libraries/GSM/GSM3ShieldV1.h
+arduino/libraries/GSM/GSM3ShieldV1AccessProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1AccessProvider.h
+arduino/libraries/GSM/GSM3ShieldV1BandManagement.cpp
+arduino/libraries/GSM/GSM3ShieldV1BandManagement.h
+arduino/libraries/GSM/GSM3ShieldV1BaseProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1BaseProvider.h
+arduino/libraries/GSM/GSM3ShieldV1CellManagement.cpp
+arduino/libraries/GSM/GSM3ShieldV1CellManagement.h
+arduino/libraries/GSM/GSM3ShieldV1ClientProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1ClientProvider.h
+arduino/libraries/GSM/GSM3ShieldV1DataNetworkProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1DataNetworkProvider.h
+arduino/libraries/GSM/GSM3ShieldV1DirectModemProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1DirectModemProvider.h
+arduino/libraries/GSM/GSM3ShieldV1ModemCore.cpp
+arduino/libraries/GSM/GSM3ShieldV1ModemCore.h
+arduino/libraries/GSM/GSM3ShieldV1ModemVerification.cpp
+arduino/libraries/GSM/GSM3ShieldV1ModemVerification.h
+arduino/libraries/GSM/GSM3ShieldV1MultiClientProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1MultiClientProvider.h
+arduino/libraries/GSM/GSM3ShieldV1MultiServerProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1MultiServerProvider.h
+arduino/libraries/GSM/GSM3ShieldV1PinManagement.cpp
+arduino/libraries/GSM/GSM3ShieldV1PinManagement.h
+arduino/libraries/GSM/GSM3ShieldV1SMSProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1SMSProvider.h
+arduino/libraries/GSM/GSM3ShieldV1ScanNetworks.cpp
+arduino/libraries/GSM/GSM3ShieldV1ScanNetworks.h
+arduino/libraries/GSM/GSM3ShieldV1ServerProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1ServerProvider.h
+arduino/libraries/GSM/GSM3ShieldV1VoiceProvider.cpp
+arduino/libraries/GSM/GSM3ShieldV1VoiceProvider.h
+arduino/libraries/GSM/GSM3SoftSerial.cpp
+arduino/libraries/GSM/GSM3SoftSerial.h
+arduino/libraries/GSM/GSM3VoiceCallService.cpp
+arduino/libraries/GSM/GSM3VoiceCallService.h
+arduino/libraries/GSM/License.txt
+arduino/libraries/GSM/keywords.txt
+%%EXAMPLES%%arduino/libraries/GSM/examples/GSMPachubeClient/GSMPachubeClient.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/GSMPachubeClientString/GSMPachubeClientString.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/GsmTwitterClient/GsmTwitterClient.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/GsmWebClient/GsmWebClient.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/GsmWebServer/GsmWebServer.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/MakeVoiceCall/MakeVoiceCall.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/ReceiveSMS/ReceiveSMS.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/ReceiveVoiceCall/ReceiveVoiceCall.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/SendSMS/SendSMS.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/BandManagement/BandManagement.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/GsmScanNetworks/GsmScanNetworks.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/PinManagement/PinManagement.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestGPRS/TestGPRS.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestModem/TestModem.ino
+%%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestWebServer/TestWebServer.ino
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestModem
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestGPRS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/PinManagement
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/GsmScanNetworks
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/BandManagement
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/SendSMS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveVoiceCall
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveSMS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/MakeVoiceCall
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmTwitterClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClientString
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples
+@dirrm arduino/libraries/GSM
 arduino/libraries/WiFi/WiFi.cpp
 arduino/libraries/WiFi/WiFi.h
 arduino/libraries/WiFi/WiFiClient.cpp
@@ -1099,19 +1211,27 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/BarometricPressureWebServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples
 @dirrm arduino/libraries/Ethernet
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Experts/EsploraTable
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Experts/EsploraRemote
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Experts/EsploraPong
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Experts/EsploraKart
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Experts
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraTemperatureSensor
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraSoundSensor
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraMusic
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraLightCalibrator
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraLedShow2
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraLedShow
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraJoystickMouse
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraBlink
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners/EsploraAccelerometer
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/Beginners
+%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples
+@dirrm arduino/libraries/Esplora
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_write
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_read
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_clear
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples
-
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraTable
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraRemote
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraMusic
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraLedShow2
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraLedShow
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/EsploraKart
-%%EXAMPLES%%@dirrm arduino/libraries/Esplora/examples/
-@dirrm arduino/libraries/Esplora
 @dirrm arduino/libraries/EEPROM
 @dirrm arduino/libraries
 @dirrm arduino/lib/theme
@@ -1338,7 +1458,7 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/toneMelody
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/toneKeyboard
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/StateChangeDetection
-%%EXAMPLES%%@dirrm arduino/examples/02.Digital/DigitalIputPullup
+%%EXAMPLES%%@dirrm arduino/examples/02.Digital/DigitalInputPullup
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/Debounce
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/Button
 %%EXAMPLES%%@dirrm arduino/examples/02.Digital/BlinkWithoutDelay
