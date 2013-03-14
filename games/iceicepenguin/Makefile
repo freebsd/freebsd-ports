@@ -1,13 +1,14 @@
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	iceicepenguin
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	games python
-MASTER_SITES=	SF/${PORTNAME}/Default/Ice%20Ice%20Penguin/  \
+MASTER_SITES=	SF/${PORTNAME}/Default/Ice%20Ice%20Penguin/ \
 		SF/nemysisfreebsdp/:icons
-DISTNAME=	iip.${DISTVERSION}-final
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}_icons.zip:icons
+DISTFILES=	iip.${DISTVERSION}-final${EXTRACT_SUFX} \
+		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	python
 
 MAINTAINER=	nemysis@gmx.ch
@@ -19,47 +20,45 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 
-FETCH_ARGS?=	-Fpr
 USE_ZIP=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}_48.png \
-		share/pixmaps/${PORTNAME}_64.png \
-		share/pixmaps/${PORTNAME}_72.png \
-		share/pixmaps/${PORTNAME}_96.png
-
-PORTDATA=	*
 PORTDOCS=	CHANGELOG.txt readme.txt
 
+INSTALLS_ICONS=	yes
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
+
 SUB_FILES=	${PORTNAME}
+
+DESKTOP_ENTRIES="Ice Ice Penguin" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
 
 do-install:
-# Scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
 
-# Executable
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
 
-# Data
 	${MKDIR} ${DATADIR}
 .for d in fonts gfx lvls menu sfx
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
 .endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}*.png ${PREFIX}/share/pixmaps
+post-install:
+.for s in ${ICON_SIZES}
+	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+.endfor
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -2,6 +2,6 @@
 #
 # $FreeBSD$
 #
-echo "Ice Ice Penguin: Starting up..."
+
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./iceicepengui.py
+exec /usr/bin/env python ./iceicepengui.py "${@}"
