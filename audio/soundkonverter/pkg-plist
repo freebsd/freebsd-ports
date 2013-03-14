@@ -6,6 +6,7 @@ bin/soundkonverter
 %%FLAKE%%lib/kde4/soundkonverter_codec_flake.so
 %%FLUIDSYNTH%%lib/kde4/soundkonverter_codec_fluidsynth.so
 %%LAME%%lib/kde4/soundkonverter_codec_lame.so
+%%LIBAV%%lib/kde4/soundkonverter_codec_libav.so
 %%MAC%%lib/kde4/soundkonverter_codec_mac.so
 %%MPLAYER%%lib/kde4/soundkonverter_codec_mplayer.so
 %%MUSEPACK%%lib/kde4/soundkonverter_codec_musepack.so
@@ -46,7 +47,6 @@ share/icons/hicolor/64x64/apps/soundkonverter.png
 %%NLS%%share/locale/de/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/es/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/et/LC_MESSAGES/soundkonverter.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
@@ -58,6 +58,7 @@ share/icons/hicolor/64x64/apps/soundkonverter.png
 %%FLAKE%%share/kde4/services/soundkonverter_codec_flake.desktop
 %%FLUIDSYNTH%%share/kde4/services/soundkonverter_codec_fluidsynth.desktop
 %%LAME%%share/kde4/services/soundkonverter_codec_lame.desktop
+%%LIBAV%%share/kde4/services/soundkonverter_codec_libav.desktop
 %%MAC%%share/kde4/services/soundkonverter_codec_mac.desktop
 %%MPLAYER%%share/kde4/services/soundkonverter_codec_mplayer.desktop
 %%MUSEPACK%%share/kde4/services/soundkonverter_codec_musepack.desktop
