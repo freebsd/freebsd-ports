@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mcstas
-# Date created:			Apr 26, 2004
-# Whom:				Joerg Pulz <Joerg.Pulz@frm2.tum.de>
-#
+# Created by: Joerg Pulz <Joerg.Pulz@frm2.tum.de>
 # $FreeBSD$
 
 PORTNAME=	mcstas
@@ -28,7 +25,7 @@ USE_GMAKE=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PERL_ARCHNAME!=	perl -V:archname
+PERL_ARCHNAME!=	perl -V:archname 2>/dev/null || :
 
 PLIST_SUB+=	PERL_PORT=perl5 PERL_ARCHNAME=${PERL_ARCHNAME:S/archname='//:S/';//}
 
