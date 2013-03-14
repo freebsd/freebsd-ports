@@ -183,7 +183,7 @@ CONFIGURE_ARGS+=	--disable-nls
 
 .if ${PORT_OPTIONS:MCYRUS_SASL2}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	with-sasl=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MSMIME_OUTLOOK_COMPAT}
