@@ -640,11 +640,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERS
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
-NGINX_NAXSI_VERSION=	0.46-1
+NGINX_NAXSI_VERSION=	0.49
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
-DISTFILES+=	naxsi-${NGINX_NAXSI_VERSION}.tgz:naxsi
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-naxsi_runtime.c
+DISTFILES+=	naxsi-core-${NGINX_NAXSI_VERSION}.tgz:naxsi
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
@@ -988,7 +987,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
-	${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
+	${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
 	${ETCDIR}
 .endif
 
