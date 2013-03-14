@@ -7,4 +7,3 @@ bin/htmlclean
 %%SITE_PERL%%/auto/HTML/Clean/autosplit.ix
 @dirrm %%SITE_PERL%%/auto/HTML/Clean
 @dirrmtry %%SITE_PERL%%/auto/HTML
-@dirrmtry lib/perl5/%%PERL_VERSION%%/man/man1
