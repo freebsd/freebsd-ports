@@ -27,6 +27,7 @@ include/plplot/qsastimedll.h
 %%WXGTK%%include/plplot/wxPLplotstream.h
 %%WXGTK%%include/plplot/wxPLplotwindow.h
 %%TCLTK%%include/plplot/tclMatrix.h
+%%FORTRAN%%lib/fortran/include/plplot/plplot_parameters.h
 %%FORTRAN%%lib/fortran/modules/plplot/plplot.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplot_flt.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplotp.mod
@@ -628,4 +629,9 @@ libdata/pkgconfig/plplotd.pc
 @dirrm lib/plplot/driversd
 @dirrm lib/plplot
 %%LUA%%@dirrm %%LUA_MODLIBDIR%%/plplot
+%%FORTRAN%%@dirrm lib/fortran/modules/plplot
+%%FORTRAN%%@dirrmtry lib/fortran/modules
+%%FORTRAN%%@dirrm lib/fortran/include/plplot
+%%FORTRAN%%@dirrmtry lib/fortran/include
+%%FORTRAN%%@dirrmtry lib/fortran
 @dirrm include/plplot
