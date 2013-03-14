@@ -14,13 +14,13 @@ bin/gitolite
 %%SITE_PERL%%/Gitolite/Test/Tsh.pm
 %%SITE_PERL%%/Gitolite/Triggers.pm
 %%SITE_PERL%%/Gitolite/Triggers/Alias.pm
+%%SITE_PERL%%/Gitolite/Triggers/AutoCreate.pm
 %%SITE_PERL%%/Gitolite/Triggers/CpuTime.pm
 %%SITE_PERL%%/Gitolite/Triggers/Mirroring.pm
+%%SITE_PERL%%/Gitolite/Triggers/RefexExpr.pm
 %%SITE_PERL%%/Gitolite/Triggers/RepoUmask.pm
 %%SITE_PERL%%/Gitolite/Triggers/Shell.pm
 %%SITE_PERL%%/Gitolite/Triggers/Writable.pm
-%%SITE_PERL%%/Gitolite/Triggers/RefexExpr.pm
-%%SITE_PERL%%/Gitolite/Triggers/AutoCreate.pm
 libexec/gitolite/VERSION
 libexec/gitolite/VREF/COUNT
 libexec/gitolite/VREF/EMAIL-CHECK
@@ -62,6 +62,7 @@ libexec/gitolite/gitolite-shell
 libexec/gitolite/syntactic-sugar/continuation-lines
 libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
 libexec/gitolite/syntactic-sugar/macros
+libexec/gitolite/syntactic-sugar/refex-expr
 libexec/gitolite/triggers/bg
 libexec/gitolite/triggers/partial-copy
 libexec/gitolite/triggers/post-compile/ssh-authkeys
@@ -74,15 +75,16 @@ libexec/gitolite/triggers/post-compile/update-gitweb-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-daemon-from-options
 libexec/gitolite/triggers/renice
 libexec/gitolite/triggers/upstream
-@dirrm %%SITE_PERL%%/Gitolite/Conf
-@dirrm %%SITE_PERL%%/Gitolite/Hooks
-@dirrm %%SITE_PERL%%/Gitolite/Test
-@dirrm %%SITE_PERL%%/Gitolite/Triggers
-@dirrm %%SITE_PERL%%/Gitolite
-@dirrm libexec/gitolite/VREF
-@dirrm libexec/gitolite/commands
+%%GITUSER%%@dirrmtry git
 @dirrm libexec/gitolite/triggers/post-compile
 @dirrm libexec/gitolite/triggers
 @dirrm libexec/gitolite/syntactic-sugar
+@dirrm libexec/gitolite/commands
+@dirrm libexec/gitolite/VREF
 @dirrm libexec/gitolite
-%%GITUSER%%@dirrmtry git
+@dirrm %%SITE_PERL%%/Gitolite/Triggers
+@dirrm %%SITE_PERL%%/Gitolite/Test
+@dirrm %%SITE_PERL%%/Gitolite/Hooks
+@dirrm %%SITE_PERL%%/Gitolite/Conf
+@dirrm %%SITE_PERL%%/Gitolite
+@dirrm %%SITE_PERL%%
