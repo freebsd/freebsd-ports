@@ -1,9 +1,5 @@
-# New ports collection makefile for:    paraview
-# Date created:         		25 May, 2005
-# Whom:					anholt@FreeBSD.ORG
-#
+# Created by: anholt@FreeBSD.ORG
 # $FreeBSD$
-#
 
 PORTNAME=	paraview
 PORTVERSION=	3.10.1
@@ -32,6 +28,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_CMAKE=	yes
+USE_GCC=	any
 #CONFLICTS=	vtk-5.*
 CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DBUILD_SHARED_LIBS="ON" \
