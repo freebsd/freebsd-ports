@@ -31,11 +31,12 @@ PLIST_FILES=	bin/autojump \
 		share/autojump/icon.png
 MAN1=		autojump.1
 
-OPTIONS=	ZSH "Install zsh version as well." On
+OPTIONS_DEFINE=		ZSH
+OPTIONS_DEFAULT=	ZSH
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/zsh:${PORTSDIR}/shells/zsh
 PLIST_FILES+=	 share/zsh/site-functions/_j
 .endif
@@ -48,7 +49,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr$$|${PREFIX}|' -e 's|/usr/local|${PREFIX}|' -e 's|/bin/zsh|${PREFIX}/bin/zsh|' ${WRKSRC}/install.zsh
 
 do-install:
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./install.zsh )
 .else
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./install.sh )

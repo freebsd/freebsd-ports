@@ -1,9 +1,5 @@
-# New ports collection makefile for:   volman
-# Date created:        2012-01-06
-# Whom:                Aragon Gouveia <aragon@phat.za.net>
-#
+# Created by: Aragon Gouveia <aragon@phat.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	volman
 PORTVERSION=	0.7
@@ -18,12 +14,13 @@ USE_XZ=		yes
 USE_RC_SUBR=	volmand
 VM_SUB_FILES=	vmount volmand
 
-OPTIONS=	OPENBOX "Install Openbox pipemenu script" off \
-		NTFS3G "Use fusefs-ntfs extensions" off
+OPTIONS_DEFINE=	 OPENBOX NTFS3G
+OPENBOX_DESC=	Openbox pipemenu script
+NTFS3G_DESC=	Use fusefs-ntfs extensions
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPENBOX)
+.if ${PORT_OPTIONS:MOPENBOX}
 VM_SUB_FILES+=	obvolman
 RUN_DEPENDS+=	${LOCALBASE}/bin/xmessage:${PORTSDIR}/x11/xmessage
 PLIST_SUB+=	OPENBOX=""
@@ -31,7 +28,7 @@ PLIST_SUB+=	OPENBOX=""
 PLIST_SUB+=	OPENBOX="@comment "
 .endif
 
-.if defined(WITH_NTFS3G)
+.if ${PORT_OPTIONS:MNTFS3G}
 RUN_DEPENDS+=	${LOCALBASE}/bin/ntfs-3g:${PORTSDIR}/sysutils/fusefs-ntfs
 SUB_LIST+=	RCFUSEFS=" fusefs"
 .else

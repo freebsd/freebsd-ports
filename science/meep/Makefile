@@ -1,9 +1,5 @@
-# New ports collection makefile for: science/meep
-# Date created:		26 Dec 2009
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	meep
 PORTVERSION=	1.1.1
@@ -35,11 +31,13 @@ LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 
-OPTIONS=	OPENMPI "Enable MPI support using openmpi" On
+OPTIONS_DEFINE=		OPENMPI
+OPTIONS_DEFAULT=	OPENMPI
+OPENMPI_DESC=		MPI support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENMPI)
+.if ${PORT_OPTIONS:MOPENMPI}
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 CONFIGURE_ARGS+=--with-mpi
@@ -54,4 +52,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's+\#\! /bin/sh+\#\! ${PREFIX}/bin/bash+' \
 		-e s+\$$\(SHELL\)+${PREFIX}/bin/bash+ ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
