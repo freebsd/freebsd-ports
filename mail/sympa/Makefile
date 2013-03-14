@@ -3,6 +3,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.1.17
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -52,7 +53,6 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--with-confdir=${PREFIX}/etc		\
 		--with-docdir=${EXAMPLESDIR}		\
 		--with-expldir=${DATADIR}/list_data	\
-		--with-iconsdir=${PREFIX}/${ICONSDIR}	\
 		--with-initdir=${PREFIX}/etc/rc.d	\
 		--with-lockdir=/var/spool/lock		\
 		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
@@ -62,6 +62,8 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install
+
+USE_RC_SUBR=	sympa
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -87,6 +89,7 @@ DB_TYPE:=	${DB_TYPE:U}
 .  for option in ${OPTIONS_RADIO_DATABASE}
 .    if ${DB_TYPE} == ${option:S,PGSQL,PG,}
 OPTIONS_SET+=	${option}
+.warning You need to replace your DB_TYPE variable in make.conf with OPTIONS_SET+=${option}
 .    endif
 .  endfor
 .endif
@@ -104,10 +107,12 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fa
 .if ${PORT_OPTIONS:MORACLE}
 RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
 .elif ${PORT_OPTIONS:MPGSQL}
+SUB_LIST+=	REQ_MYSQL="" REQ_PGSQL=postgresql
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .elif ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
 .elif ${PORT_OPTIONS:MMYSQL}
+SUB_LIST+=	REQ_MYSQL=mysql REQ_PGSQL=""
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
