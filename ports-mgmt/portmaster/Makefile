@@ -30,7 +30,7 @@ PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
 MAN8=		portmaster.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPKGNGPATCH}
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/portmaster/
@@ -79,4 +79,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
