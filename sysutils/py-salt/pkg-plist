@@ -885,9 +885,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/winservice.py
 %%PYTHON_SITELIBDIR%%/salt/utils/winservice.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/winservice.pyo
-%%PYTHON_SITELIBDIR%%/salt/utils/yaml.py
-%%PYTHON_SITELIBDIR%%/salt/utils/yaml.pyc
-%%PYTHON_SITELIBDIR%%/salt/utils/yaml.pyo
+%%PYTHON_SITELIBDIR%%/salt/utils/yamlloader.py
+%%PYTHON_SITELIBDIR%%/salt/utils/yamlloader.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/yamlloader.pyo
 %%PYTHON_SITELIBDIR%%/salt/version.py
 %%PYTHON_SITELIBDIR%%/salt/version.pyc
 %%PYTHON_SITELIBDIR%%/salt/version.pyo
