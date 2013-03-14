@@ -1,0 +1,211 @@
+#!/bin/sh
+#
+# PROVIDE: sympa
+# REQUIRE: LOGIN cleanvar %%REQ_MYSQL%% %%REQ_PGSQL%% 
+# KEYWORD: shutdown
+#
+# $FreeBSD$
+#
+# Written by Michel Bouissou  20/07/2000
+#
+# Modified by Olivier Salaun 27/07/2000
+#    - translations
+#    - lang parameter deleted (defined in sympa.conf)
+#    - introduced --VARS-- parsed by Makefile
+#    - no more sympauser since sympa sets its UID
+# Modified by Michel Bouissou  27/07/2000
+# Modified by Eimar Koort 27/02/2013
+# 	- optimized for FreeBSD
+#
+# sympa_enable (bool):	Set to NO by default.
+# 			Set it to YES to enable sympa.
+#
+
+. /etc/rc.subr
+
+name=sympa
+rcvar=sympa_enable
+
+load_rc_config $name
+
+: ${sympa_enable:=no}
+
+start_cmd=sympa_start
+stop_cmd=sympa_stop
+status_cmd=sympa_status
+extra_commands=status
+
+sympadir=%%PREFIX%%/libexec/sympa
+
+sympaconf=%%PREFIX%%/etc/sympa.conf
+wwsympaconf=%%PREFIX%%/etc/wwsympa.conf
+
+sub_status()
+{
+	# Test syntax.
+	if [ $# = 0 ] ; then
+		echo "Usage: sub_status {program}"
+		return 1
+	fi
+	# First try "/u1/home/sympa/*.pid" files
+	if [ -f /var/run/sympa/$1.pid ] ; then
+		pid=`head -1 /var/run/sympa/$1.pid | tr -s ' ' '|'`
+		if [ "$pid" != "" ] ; then
+			running=`ps -A | egrep "$pid"`
+			if [ "$running" != "" ]; then
+				echo "$1 (pid(s) $pid) is active..."
+				return 0
+					else
+				echo "$1 died, pid file remains."
+				return 1
+			fi
+		fi
+	fi
+	echo "$1 is stopped."
+	return 3
+}
+
+sub_module_start()
+{
+	# Start a module
+	if [ $# = 0 ] ; then
+		echo "Usage: sub_module_start {program}"
+		return 1
+	fi
+	$sympadir/$1.pl $startparam && echo "success" || echo "failure"
+	echo
+}
+
+sub_start()
+{
+	# Test state of module before startup
+	if [ $# = 0 ] ; then
+		echo "Usage: sub_start {program}"
+		return 1
+	fi
+	sub_status $1 > /dev/null
+	case "$?" in
+		3)
+			echo $echo_opt "Starting module $1.pl: "
+			sub_module_start $1
+			;;
+		1) 
+			echo $echo_opt "Starting $1, overwriting old pid file."
+			sub_module_start $1
+			;;
+		0)
+			echo "$1 seems active. No action will be taken."
+			echo "Try \"sympa status\" or \"sympa restart"\".
+			;;
+	esac
+}
+
+sub_stop()
+{
+    # Stop a module
+    if [ $# = 0 ] ; then
+	echo "Usage: sub_stop {program}"
+	return 1
+    fi
+ 
+    if [ -f /var/run/sympa/$1.pid ]; then
+	echo $echo_opt "Stopping module $1.pl: "
+	pids=`head -1 /var/run/sympa/$1.pid`
+	runcount=0
+	if [ "$pids" != "" ]; then
+	    for pid in $pids; do
+		killcount=0
+		running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		while [ "$running" != "" ]; do
+		    if [ $killcount -gt 10 ]; then
+			echo 'failure'
+			return 3
+		    fi
+
+		    kill -TERM $pid >/dev/null 2>&1
+		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		    if [ "$running" = "" ]; then
+			runcount=`expr $runcount + 1`
+			break
+		    fi
+		    sleep 2
+		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		    if [ "$running" = "" ]; then
+			runcount=`expr $runcount + 1`
+			break
+		    fi
+		    killcount=`expr $killcount + 1`
+		done
+	    done
+	fi
+	if [ $runcount -gt 0 ]; then
+		echo 'success'
+	else
+	    echo 'died'
+	fi
+	echo
+    else
+	echo "Module $1.pl not running"
+    fi
+    return 0
+}
+
+sympa_check_config()
+{
+	# Check config files
+	[ -d $sympadir ] || exit 0
+	[ -f $sympaconf ] || exit 0
+	[ -f $wwsympaconf ] || exit 0
+}
+
+sympa_start()
+{
+	sympa_check_config
+	if [ ! -f /var/spool/lock/sympa ]; then
+		echo "Starting Sympa subsystem: "
+		sub_start sympa
+		sub_start bulk
+		sub_start archived
+		sub_start bounced
+		sub_start task_manager
+		touch /var/spool/lock/sympa
+		echo
+	else
+		echo "Sympa seems active. No action will be taken."
+		echo "Try \"sympa status\" or \"sympa restart"\".
+	fi
+}
+
+sympa_stop()
+{
+	sympa_check_config
+	echo "Stopping Sympa subsystem: "
+	sub_stop bounced
+	sub_stop archived
+	sub_stop bulk
+	sub_stop sympa
+	if [ -f /var/run/sympa/sympa-creation.pid ]; then
+		sub_stop sympa-creation
+	fi
+	sub_stop task_manager
+	if [ -f /var/spool/lock/sympa ]; then
+		rm -f /var/spool/lock/sympa
+	fi
+}
+
+sympa_status()
+{
+	echo "Status of Sympa subsystem: "
+	if [ -f /var/spool/lock/sympa ]; then
+		echo "Status file for subsystem found."
+	else
+		echo "Status file for subsystem NOT found."
+	fi
+	sub_status sympa
+	sub_status bulk
+	sub_status archived
+	sub_status bounced
+	sub_status task_manager
+}
+
+run_rc_command $1

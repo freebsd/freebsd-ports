@@ -1,4 +1,3 @@
-etc/rc.d/sympa
 @comment copyover handled in pkg-install
 @unexec cmp -s %D/etc/sympa.conf.sample %D/etc/sympa.conf && rm -f %D/etc/sympa.conf
 etc/sympa.conf.sample
