@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-libpng
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBPNG	"Install png library for manipulating PNG images"	on
+OPTIONS_DEFINE=	LIBPNG
+LIBPNG_DESC=	Install png library for manipulating PNG images
+OPTIONS_DEFAULT=	LIBPNG
 
 .include "${MASTERDIR}/Makefile"

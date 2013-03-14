@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-dbus
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	DBUS	"Install dbus library"	on
+OPTIONS_DEFINE=	DBUS
+DBUS_DESC=	Install dbus library
+OPTIONS_DEFAULT=	DBUS
 
 .include "${MASTERDIR}/Makefile"

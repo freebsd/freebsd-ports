@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-gmp
-# Date created:		2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	math lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	GMP	"Install gmp library"	on
+OPTIONS_DEFINE=	GMP
+GMP_DESC=	Install gmp library
+OPTIONS_DEFAULT=	GMP
 
 .include "${MASTERDIR}/Makefile"

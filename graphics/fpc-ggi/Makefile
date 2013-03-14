@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-ggi
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBGGI	"Install ggi library"	on
+OPTIONS_DEFINE=	LIBGGI
+LIBGGI_DESC=	Install ggi library
+OPTIONS_DEFAULT=	LIBGGI
 
 .include "${MASTERDIR}/Makefile"

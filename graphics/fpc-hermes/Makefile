@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-hermes
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	HERMES	"Install hermes graphics library"	on
+OPTIONS_DEFINE=	HERMES
+HERMES_DESC=	Install hermes graphics library
+OPTIONS_DEFAULT=	HERMES
 
 .include "${MASTERDIR}/Makefile"

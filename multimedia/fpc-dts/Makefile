@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-dts
-# Date created: 	2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	multimedia lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBDCA	"Install dts library"	on
+OPTIONS_DEFINE=	LIBDCA
+LIBDCA_DESC=	Install dts library
+OPTIONS_DEFAULT=	LIBDCA
 
 .include "${MASTERDIR}/Makefile"

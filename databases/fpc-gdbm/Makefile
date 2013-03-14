@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-gdbm
-# Date created: 			2006-06-05
-# Whom: 				Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	databases lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	GDBM	"Install the GNU database manager"	on
+OPTIONS_DEFINE=	GDBM
+GDBM_DESC=	Install the GNU database manager
+OPTIONS_DEFAULT=	GDBM
 
 .include "${MASTERDIR}/Makefile"

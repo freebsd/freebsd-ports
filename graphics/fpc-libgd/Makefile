@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-libgd
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBGD	"Install gd graphic library"	on
+OPTIONS_DEFINE=	LIBGD
+LIBGD_DESC=	Install gd graphic library
+OPTIONS_DEFAULT=	LIBGD
 
 .include "${MASTERDIR}/Makefile"

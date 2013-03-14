@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-mad
-# Date created: 	2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	audio lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBMAD	"Install mad library"	on
+OPTIONS_DEFINE=	LIBMAD
+LIBMAD_DESC=	Install mad library
+OPTIONS_DEFAULT=	LIBMAD
 
 .include "${MASTERDIR}/Makefile"

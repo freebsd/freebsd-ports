@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-newt
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	devel lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	NEWT   "Install newt library"     on
+OPTIONS_DEFINE=	NEWT
+NEWT_DESC=	Install newt library
+OPTIONS_DEFAULT=	NEWT
 
 .include "${MASTERDIR}/Makefile"

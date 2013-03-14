@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			2006-06-05
-# Whom: 				Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBBFD	"Install Universal BFD library from GNU binutils"	on
+OPTIONS_DEFINE=	LIBBFD
+LIBBFD_DESC=	Install Universal BFD library from GNU binutils
+OPTIONS_DEFAULT=	LIBBFD
 
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-cairo
-# Date created:		2006-09-11
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	graphics lang
@@ -19,6 +15,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBCAIRO	"Install cairo vector graphics library"	on
+OPTIONS_DEFINE=	LIBCAIRO
+LIBCAIRO_DESC=	Install cairo vector graphics library
+OPTIONS_DEFAULT=	LIBCAIRO
 
 .include "${MASTERDIR}/Makefile"

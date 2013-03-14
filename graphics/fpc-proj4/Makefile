@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-proj4
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	PROJ	"Install proj library"	on
+OPTIONS_DEFINE=	PROJ
+PROJ_DESC=	Install proj library
+OPTIONS_DEFAULT=	PROJ
 
 .include "${MASTERDIR}/Makefile"

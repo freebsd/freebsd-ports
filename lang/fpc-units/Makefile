@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-units
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	units
 PORTVERSION=	2.6.0
@@ -22,85 +18,94 @@ NO_BUILD=	yes
 
 BUILDNAME=	${ARCH}-freebsd
 
-OPTIONS=	A52	"Interface to a52 library"	on \
-		ASPELL "Interface to aspell spelling checker"	on \
-		BFD	"Interface to GNU Binary Format description"	on \
-		BZIP2	"Free Pascal bzip2 unit"	on \
-		CAIRO	"Interface to cairo library" on \
-		CHM	"Free Pbscal unit to manipulate chm files" on \
-		DBUS	"Interface to dbus library"	on \
-		DTS	"Interface to dts library"	on \
-		FASTCGI	"Free Pascal fastcgi unit" on \
-		FCL_ASYNC "Free Pascal interface to async library" on \
-		FCL_BASE	"Free Pascal Component Library (base)"	on \
-		FCL_DB	"Free Pascal Component Library (db)"	on \
-		FCL_EXTRA	"Free Pascal Component Library (extra)"	on \
-		FCL_FPCUNIT	"Free Pascal Component Library (fpcunit)"	on \
-		FCL_IMAGE	"Free Pascal Component Library (image)"	on \
-		FCL_JSON	"Free Pascal implementation of JSON"	on \
-		FCL_NET	"Free Pascal Component Library (net)"	on \
-		FCL_PASSRC	"Free Pascal Component Library (passrc)"	on \
-		FCL_PROCESS	"Unit to start and manipulate other programs"	on \
-		FCL_REGISTRY	"Free Pascal Component Library (registry)"	on \
-		FCL_RES	"Free Pascal Component Library (res)"	on \
-		FCL_WEB	"Free Pascal Component Library (web)"	on \
-		FCL_XML	"Free Pascal Component Library (xml)"	on \
-		FFTW	"Interface to the FFTW3 library" on \
-		FPGTK	"Interface to create programs with gtk"	on \
-		FPPKG	"Free Pascal package unit"	on \
-		FPMKUNIT "Free Pascal build system unit" on \
-		FPVECTORIAL	"Free Pascal fpvectorial unit"	on \
-		FV	"Free Pascal unit for Delphi support" on \
-		GDBM	"Interface to the GNU database system"	on \
-		GGI	"Interface to libggi library"	on \
-		GMP	"Interface to gmp library"	on \
-		GNOME1	"Interface to create programs for GNOME" on \
-		GTK1	"Interface to gtk libraries"	on \
-		GTK2	"Interface to gtk2 libraries"	on \
-		HERMES	"Free Pascal hermes unit"	on \
-		ICONVENC	"Interface to iconv library"	on \
-		IMAGEMAGICK	"Interface to ImageMagick"	on \
-		IMLIB	"Interface to imlib library"	on \
-		LDAP	"Interface to OpenLDAP"	on \
-		LIBCURL	"Interface to curl library"	on \
-		LIBGD	"Interface to gd library"	on \
-		LIBPNG	"Interface to png library"	on \
-		LIBXML2	"Interface to libxml2 library"	on \
-		LUA	"Interface to lua interpreter"	on \
-		MAD	"Interface to mad library" on \
-		MATROSKA	"Interface to matroska library" on \
-		MODPLUG	"Interface to modplug library"	on \
-		NCURSES	"Interface to ncurses library"	on \
-		NEWT	"Interface to newt library"	on \
-		NUMLIB	"Free Pascal unit for numerical methods"	on \
-		OGGVORBIS	"Interaface to ogg & vorbis libraries"	on \
-		OPENAL	"Interface to openal library"	on \
-		OPENGL	"Interface to opengl library"	on \
-		OPENSSL	"Interface to openssl library"	on \
-		PCAP	"Interface to pcap library"	on \
-		PROJ4	"Interface to proj library"	on \
-		PXLIB	"Unit to read various Paradox file"	on \
-		REXX	"Intrface to rexx-regina library"	on \
-		RSVG	"Interface to rsvg2 library"	on \
-		SDL	"Free Pascal interface to SDL library"	on \
-		SNDFILE	"Interface to sndfile library"	on \
-		SVGALIB	"Interface to svgalib library"	on \
-		SYMBOLIC	"Simple expression parsing and evaluating"	on \
-		SYSLOG	"Interface to system logger"	on \
-		TCL	"Interface to tcl/tk interpreter"	on \
-		UNZIP	"Routines for unzipping zip files"	on \
-		USERS	"Interface to manipulate users"	on \
-		UTMP	"Gather information from the utmp file"	on \
-		UUID	"Free Pascal uuid unit"	on \
-		X11	"Interface to X windows server"	on \
-		XFORMS	"Interface to X-Forms"	on \
-		ZLIB	"Interface to the zlib compression library"	on \
+OPTIONS_DEFINE=	A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DTS FASTCGI FCL-ASYNC FCL-BASE \
+		FCL-EXTRA FCL-DB FCL-FPCUNIT FCL-IMAGE FCL-JSON FCL-NET FCL-PASSRC \
+		FCL-PROCESS FCL-REGISTRY FCL-RES FCL-WEB FCL-XML FFTW FPGTK FPMKUNIT \
+		FPPKG FPVECTORIAL FV GDBM GGI GMP GNOME1 GTK1 GTK2 HERMES ICONVENC \
+		IMAGEMAGICK IMLIB LDAP LIBCURL LIBGD LIBPNG LIBXML2 LUA MAD MATROSKA \
+		MODPLUG NCURSES NEWT NUMLIB OGGVORBIS OPENAL OPENGL OPENSSL PCAP PROJ4 \
+		PXLIB RSVG REXX SDL SNDFILE SVGALIB SYMBOLIC SYSLOG TCL UNZIP USERS \
+		UTMP UUID X11 XFORMS ZLIB
+
+A52_DESC=	Interface to a52 library
+ASPELL_DESC=	Interface to aspell spelling checker
+BFD_DESC=	Interface to GNU Binary Format description
+BZIP2_DESC=	Free Pascal bzip2 unit
+CAIRO_DESC=	Interface to cairo library
+CHM_DESC=	Free Pbscal unit to manipulate chm files
+DBUS_DESC=	Interface to dbus library
+DTS_DESC=	Interface to dts library
+FASTCGI_DESC=	Free Pascal fastcgi unit
+FCL_ASYNC_DESC=	Free Pascal interface to async library
+FCL_BASE_DESC=	Free Pascal Component Library (base)
+FCL_DB_DESC=	Free Pascal Component Library (db)
+FCL_EXTRA_DESC=	Free Pascal Component Library (extra)
+FCL_FPCUNIT_DESC=	Free Pascal Component Library (fpcunit)
+FCL_IMAGE_DESC=	Free Pascal Component Library (image)
+FCL_JSON_DESC=	Free Pascal implementation of JSON
+FCL_NET_DESC=	Free Pascal Component Library (net)
+FCL_PASSRC_DESC=	Free Pascal Component Library (passrc)
+FCL_PROCESS_DESC=	Unit to start and manipulate other programs
+FCL_REGISTRY_DESC=	Free Pascal Component Library (registry)
+FCL_RES_DESC=	Free Pascal Component Library (res)
+FCL_WEB_DESC=	Free Pascal Component Library (web)
+FCL_XML_DESC=	Free Pascal Component Library (xml)
+FFTW_DESC=	Interface to the FFTW3 library
+FPGTK_DESC=	Interface to create programs with gtk
+FPPKG_DESC=	Free Pascal package unit
+FPMKUNIT_DESC=	Free Pascal build system unit
+FPVECTORIAL_DESC=	Free Pascal fpvectorial unit
+FV_DESC=	Free Pascal unit for Delphi support
+GDBM_DESC=	Interface to the GNU database system
+GGI_DESC=	Interface to libggi library
+GMP_DESC=	Interface to gmp library
+GNOME1_DESC=	Interface to create programs for GNOME
+GTK1_DESC=	Interface to gtk libraries
+GTK2_DESC=	Interface to gtk2 libraries
+HERMES_DESC=	Free Pascal hermes unit
+ICONVENC_DESC=	Interface to iconv library
+IMAGEMAGICK_DESC=	Interface to ImageMagick
+IMLIB_DESC=	Interface to imlib library
+LDAP_DESC=	Interface to OpenLDAP
+LIBCURL_DESC=	Interface to curl library
+LIBGD_DESC=	Interface to gd library
+LIBPNG_DESC=	Interface to png library
+LIBXML2_DESC=	Interface to libxml2 library
+LUA_DESC=	Interface to lua interpreter
+MAD_DESC=	Interface to mad library
+MATROSKA_DESC=	Interface to matroska library
+MODPLUG_DESC=	Interface to modplug library
+NCURSES_DESC=	Interface to ncurses library
+NEWT_DESC=	Interface to newt library
+NUMLIB_DESC=	Free Pascal unit for numerical methods
+OGGVORBIS_DESC=	Interaface to ogg & vorbis libraries
+OPENAL_DESC=	Interface to openal library
+OPENGL_DESC=	Interface to opengl library
+OPENSSL_DESC=	Interface to openssl library
+PCAP_DESC=	Interface to pcap library
+PROJ4_DESC=	Interface to proj library
+PXLIB_DESC=	Unit to read various Paradox file
+REXX_DESC=	Intrface to rexx-regina library
+RSVG_DESC=	Interface to rsvg2 library
+SDL_DESC=	Free Pascal interface to SDL library
+SNDFILE_DESC=	Interface to sndfile library
+SVGALIB_DESC=	Interface to svgalib library
+SYMBOLIC_DESC=	Simple expression parsing and evaluating
+SYSLOG_DESC=	Interface to system logger
+TCL_DESC=	Interface to tcl/tk interpreter
+UNZIP_DESC=	Routines for unzipping zip files
+USERS_DESC=	Interface to manipulate users
+UTMP_DESC=	Gather information from the utmp file
+UUID_DESC=	Free Pascal uuid unit
+X11_DESC=	Interface to X windows server
+XFORMS_DESC=	Interface to X-Forms
+ZLIB_DESC=	Interface to the zlib compression library
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
-                
+
 .include <bsd.port.options.mk>
 
-ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DTS FASTCGI FCL-ASYNC FCL-BASE \
+OPTIONS_DEFAULT=	A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DTS FASTCGI FCL-ASYNC FCL-BASE \
 		FCL-EXTRA FCL-DB FCL-FPCUNIT FCL-IMAGE FCL-JSON FCL-NET FCL-PASSRC \
 		FCL-PROCESS FCL-REGISTRY FCL-RES FCL-WEB FCL-XML FFTW FPGTK FPMKUNIT \
 		FPPKG FPVECTORIAL FV GDBM GGI GMP GNOME1 GTK1 GTK2 HERMES ICONVENC \
@@ -110,8 +115,8 @@ ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DTS FASTCGI FCL-ASYNC FCL-BASE 
 		UTMP UUID X11 XFORMS ZLIB
 
 UNITS_SELECTED=		#
-.for OPT in ${ALL_OPTIONS}
-.	if defined(WITH_${OPT}) || !defined(WITHOUT_${OPT})
+.for OPT in ${OPTIONS_DEFINE}
+.	if ${PORT_OPTIONS:M${OPT})
 UNITS_SELECTED+=	${OPT:L}
 .	endif
 .endfor

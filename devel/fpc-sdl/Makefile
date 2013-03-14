@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-sdl
-# Date created:		2009-01-06
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTVERSION=	0
 PORTREVISION=	3
@@ -19,6 +15,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	SDL   "Install SDL library"     on
+OPTIONS_DEFINE=	SDL
+SDL_DESC=	Install SDL library
+OPTIONS_DEFAULT=	SDL
 
 .include "${MASTERDIR}/Makefile"

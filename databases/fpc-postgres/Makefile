@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			28 November 2001
-# Whom: 				John Merryweather Cooper et al
-#
+# Created by: John Merryweather Cooper et al
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	databases lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	PGSQL	"Install PostgreSQL client"	on
+OPTIONS_DEFINE=	PGSQL
+PGSQL_DESC=	Install PostgreSQL client
+OPTIONS_DEFAULT=	PGSQL
 
 .include "${MASTERDIR}/Makefile"

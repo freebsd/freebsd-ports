@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-pcap
-# Date created:		2006-09-11
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	net lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBPCAP	"Install ubiquitous network traffic capture library"	on
+OPTIONS_DEFINE=	LIBPCAP
+LIBPCAP_DESC=	Install ubiquitous network traffic capture library
+OPTIONS_DEFAULT=	LIBPCAP
 
 .include "${MASTERDIR}/Makefile"

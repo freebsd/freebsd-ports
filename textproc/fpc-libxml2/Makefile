@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-libxml2
-# Date created:		2010-04-22
-# Whom:			Christoper Key <cjk32@cam.ac.uk>
-#
+# Created by: Christoper Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	textproc lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//:S/2//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBXML2	"Install xml2 library"	on
+OPTIONS_DEFINE=	LIBXML2
+LIBXML2_DESC=	Install xml2 library
+OPTIONS_DEFAULT=	LIBXML2
 
 .include "${MASTERDIR}/Makefile"

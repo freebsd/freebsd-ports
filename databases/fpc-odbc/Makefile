@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			8 January 2004
-# Whom: 				John Merryweather Cooper
-#
+# Created by: John Merryweather Cooper
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	databases lang
@@ -18,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	ODBC	"Install ODBC library suite for Unix"	off
+OPTIONS_DEFINE=	ODBC
+ODBC_DESC=	Install ODBC library suite for Unix
 
 .include "${MASTERDIR}/Makefile"

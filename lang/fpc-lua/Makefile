@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-lua
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LUA	"Install lua library"	on
+OPTIONS_DEFINE=	LUA
+LUA_DESC=	Install lua library
+OPTIONS_DEFAULT=	LUA
 
 .include "${MASTERDIR}/Makefile"
