@@ -1,12 +1,9 @@
-# New ports collection makefile for:	foxtrotgps
-# Date created:				15 January 2011
-# Whom:						crwhipp@gmail.com
-#
+# Created by: crwhipp@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 

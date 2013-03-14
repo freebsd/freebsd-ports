@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d881d254-70c6-11e2-862d-080027a5ec9a">
+    <topic>libexif -- multiple remote vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libexif</name>
+	<range><lt>0.6.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>libexif project security advisory:</p>
+        <blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29534027">
+	  <p>A number of remotely exploitable issues were discovered in libexif
+	    and exif, with effects ranging from information leakage to potential
+	    remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2812</cvename>
+      <cvename>CVE-2012-2813</cvename>
+      <cvename>CVE-2012-2814</cvename>
+      <cvename>CVE-2012-2836</cvename>
+      <cvename>CVE-2012-2837</cvename>
+      <cvename>CVE-2012-2840</cvename>
+      <cvename>CVE-2012-2841</cvename>
+      <cvename>CVE-2012-2845</cvename>
+      <bid>54437</bid>
+    </references>
+    <dates>
+      <discovery>2012-07-12</discovery>
+      <entry>2013-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ff40cb4-8b92-11e2-bdb6-001060e06fd4">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>

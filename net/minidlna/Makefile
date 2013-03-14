@@ -1,13 +1,9 @@
-# New ports collection makefile for:	minidlna
-# Date created:		2010-06-13
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	minidlna
 PORTVERSION=	1.0.24
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF

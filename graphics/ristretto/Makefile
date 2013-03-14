@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ristretto
-# Date created:		2007-08-27
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ristretto
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}

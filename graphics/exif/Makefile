@@ -1,12 +1,9 @@
-# New ports collection makefile for:	exif
-# Date created:				May 02 2005
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exif
 PORTVERSION=	0.6.20
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -17,6 +14,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"

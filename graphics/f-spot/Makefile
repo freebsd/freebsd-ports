@@ -1,13 +1,9 @@
-# New ports collection makefile for:		f-spot
-# Date created:					20041008
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	f-spot
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}

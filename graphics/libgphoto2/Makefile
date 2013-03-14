@@ -1,12 +1,9 @@
-# New ports collection makefile for: 	libgphoto2
-# Date created:		26 May 1999
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.4.14
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
