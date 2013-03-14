@@ -11,8 +11,22 @@
 %%DATADIR%%/cmake/LLVMProcessSources.cmake
 %%DATADIR%%/cmake/TableGen.cmake
 %%DATADIR%%/cmake/VersionFromVCS.cmake
+%%PYTHON_SITELIBDIR%%/lit/LitConfig.py
+%%PYTHON_SITELIBDIR%%/lit/LitTestCase.py
+%%PYTHON_SITELIBDIR%%/lit/ProgressBar.py
+%%PYTHON_SITELIBDIR%%/lit/ShCommands.py
+%%PYTHON_SITELIBDIR%%/lit/ShUtil.py
+%%PYTHON_SITELIBDIR%%/lit/Test.py
+%%PYTHON_SITELIBDIR%%/lit/TestFormats.py
+%%PYTHON_SITELIBDIR%%/lit/TestRunner.py
+%%PYTHON_SITELIBDIR%%/lit/TestingConfig.py
+%%PYTHON_SITELIBDIR%%/lit/Util.py
+%%PYTHON_SITELIBDIR%%/lit/__init__.py
+%%PYTHON_SITELIBDIR%%/lit/discovery.py
+%%PYTHON_SITELIBDIR%%/lit/main.py
 bin/FileCheck
 bin/bugpoint
+bin/lit
 bin/llc
 bin/lli
 bin/llvm-ar
@@ -923,5 +937,6 @@ lib/libprofile_rt.so
 @dirrm include/llvm-c/Transforms
 @dirrm include/llvm-c
 @dirrm include/llvm
+@dirrm %%PYTHON_SITELIBDIR%%/lit
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
