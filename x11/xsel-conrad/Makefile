@@ -1,9 +1,5 @@
-# Ports collection makefile for:	xsel-conrad
-# Date created:		9 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xsel
 PORTVERSION=	1.2.0
@@ -22,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 CONFLICTS_INSTALL=	xsel-[0-9]*
+USE_GCC=	any
 USE_XORG=	x11 xext xt xproto ice sm
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11
