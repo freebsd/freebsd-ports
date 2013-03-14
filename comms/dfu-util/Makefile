@@ -1,35 +1,29 @@
-# New ports collection makefile for:	dfu-util
-# Date created:		2008-02-04
-# Whom:			Bruce Cran <bruce@cran.org.uk>
-#
+# Created by: Bruce Cran <bruce@cran.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	dfu-util
-DISTVERSION=	0.1.snap${SNAPDATE}
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	comms
-MASTER_SITES=	http://www.cran.org.uk/~brucec/software/
+MASTER_SITES=	http://dfu-util.gnumonks.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device firmware update (DFU) USB programmer
 
-MAN1=		dfu-util.1
-PLIST_FILES=	bin/dfu-util
-USE_AUTOTOOLS=	aclocal automake autoheader
-AUTOMAKE_ARGS=	--add-missing --foreign --copy
+LICENSE=	GPLv2
 
-SNAPDATE=	20090212
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	USE_LIBS="-lusb" \
+		ac_cv_lib_usbpath_usb_path2devnum=no
+CONFIGURE_ARGS=	--disable-silent-rules
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		dfu-util.1
+PLIST_FILES=	bin/dfu-suffix bin/dfu-util
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
 IGNORE=		requires new USB stack in FreeBSD 8
 .endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dfu-util ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/dfu-util.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
