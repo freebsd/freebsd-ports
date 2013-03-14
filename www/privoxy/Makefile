@@ -1,13 +1,8 @@
-# New ports collection makefile for:	privoxy
-# Date created:				21 November 2002
-# Whom:					John von Essen
-#
+# Created by: John von Essen
 # $FreeBSD$
-#
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.19
-PORTREVISION=	1
+PORTVERSION=	3.0.21
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -33,44 +28,57 @@ CONFLICTS=	privoxy-devel-[0-9]*
 
 MAN1=		privoxy.1
 
+USERS=		privoxy
+GROUPS=		privoxy
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ACCEPT_FILTER "Enable support for accf_http(9)" Off \
-		COMPRESSION "Support compression of buffered content" Off \
-		DEBUG "Build with debugging symbols" Off \
-		EDITOR "Support use of the web-based action editor" On \
-		FORCE "Support bypassing of blocks" On \
-		PRIVOXY_TOOLS "Install Privoxy-Log-Parser, uagen, etc." Off \
-		TOGGLE "Support for remote toggling" On
+OPTIONS_DEFINE=	ACCEPT_FILTER BROKEN_STRPTIME COMPRESSION DEBUG \
+		DOCS EDITOR FORCE PRIVOXY_TOOLS TOGGLE
 
-.include <bsd.port.pre.mk>
+ACCEPT_FILTER_DESC=	Support for accf_http(9)
+BROKEN_STRPTIME_DESC=	Enable workaround for standards/173421
+COMPRESSION_DESC=	Support compression of buffered content
+DOCS_DESC=		Let Privoxy serve the user manual
+EDITOR_DESC=		Support use of the web-based action editor
+FORCE_DESC=		Support bypassing of blocks
+PRIVOXY_TOOLS_DESC=	Install Privoxy-Log-Parser, uagen, etc.
+TOGGLE_DESC=		Support for remote toggling
 
-.if defined(WITH_ACCEPT_FILTER)
+OPTIONS_DEFAULT=	BROKEN_STRPTIME EDITOR DOCS FORCE TOGGLE
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MACCEPT_FILTER}
 CONFIGURE_ARGS+=	 --enable-accept-filter
 .endif
 
-.if defined(WITH_COMPRESSION)
+.if ${PORT_OPTIONS:MCOMPRESSION}
 CONFIGURE_ARGS+=	 --enable-compression
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug
 .endif
 
-.if defined(WITHOUT_EDITOR)
+.if ! ${PORT_OPTIONS:MEDITOR}
 CONFIGURE_ARGS+=	--disable-editor
 .endif
 
-.if defined(WITHOUT_FORCE)
+.if ! ${PORT_OPTIONS:MFORCE}
 CONFIGURE_ARGS+=	--disable-force
 .endif
 
-.if defined(WITHOUT_TOGGLE)
+.if ${PORT_OPTIONS:MBROKEN_STRPTIME}
+CONFIGURE_ARGS+=	--enable-strptime-sanity-checks
+.endif
+
+.if ! ${PORT_OPTIONS:MTOGGLE}
 CONFIGURE_ARGS+=	--disable-toggle
 .endif
 
-.if defined(WITH_PRIVOXY_TOOLS)
+.if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
 USE_PERL5_RUN=	yes
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	PRIVOXY_TOOLS=""
@@ -85,7 +93,7 @@ post-patch:
 		-e 's,^\(actionsfile user\),#\1,' \
 		-e 's,^\(filterfile user\),#\1,' \
 	${WRKSRC}/config
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} \
 		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${DOCSDIR}/user-manual,' \
 	${WRKSRC}/config
@@ -96,15 +104,11 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
 
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
 	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
-.if defined(WITH_PRIVOXY_TOOLS)
+.if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
 .for privoxy_tool in privoxy-log-parser.pl privoxy-regression-test.pl uagen.pl
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${PREFIX}/bin
 .endfor
@@ -121,7 +125,7 @@ do-install:
 	@${CHMOD} 0640 ${EXAMPLESDIR}/${examplefile}
 .endfor
 	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/user-manual
 	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${DOCSDIR}/user-manual
 	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${DOCSDIR}/user-manual
@@ -133,4 +137,4 @@ post-install:
 	@${CHMOD} 0750 /var/run/privoxy
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
