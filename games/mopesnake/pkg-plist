@@ -1,0 +1,25 @@
+bin/mopesnake
+%%DATADIR%%/images/hiscores.png
+%%DATADIR%%/images/instructions.png
+%%DATADIR%%/images/title.png
+%%DATADIR%%/images/tryad.png
+%%DATADIR%%/mopelib/__init__.py
+%%DATADIR%%/mopelib/mopelib.py
+%%DATADIR%%/mopesnake.py
+%%DATADIR%%/music/the_final_rewind_loop.ogg
+%%DATADIR%%/sounds/aaa1.wav
+%%DATADIR%%/sounds/aah2.wav
+%%DATADIR%%/sounds/aei1.wav
+%%DATADIR%%/sounds/eee1.wav
+%%DATADIR%%/sounds/mmm3.wav
+%%DATADIR%%/sounds/ooh1.wav
+%%DATADIR%%/sounds/oow1.wav
+%%DATADIR%%/sounds/ouch1.wav
+%%DATADIR%%/sounds/ow1.wav
+%%DATADIR%%/version
+share/pixmaps/mopesnake.png
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/mopelib
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
