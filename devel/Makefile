@@ -4084,6 +4084,7 @@
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rash
     SUBDIR += rubygem-rb-inotify
+    SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-require_all
