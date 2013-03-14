@@ -50,12 +50,13 @@ MAN1=		e16.1
 CONFIGURE_ARGS+=--enable-docs=yes
 .else
 CONFIGURE_ARGS+=--enable-docs=no
-post-patch:
-	${REINPLACE_CMD} -e '/^SUBDIRS/s|docs ||' \
-	    ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
 
 post-patch:
+.if !${PORT_OPTIONS:MDOCS}
+	${REINPLACE_CMD} -e '/^SUBDIRS/s|docs ||' \
+	    ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+.endif
 	${REINPLACE_CMD} -e 's|$$(USER)|${SHAREOWN}:${SHAREGRP}|g' \
 	    ${WRKSRC}/themes/Makefile.am ${WRKSRC}/themes/Makefile.in
 
