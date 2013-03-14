@@ -1,0 +1,14 @@
+# $FreeBSD$
+#
+# MAINTAINER: portmgr@FreeBSD.org
+
+actions: [file]
+post-install: |
+  file=%D/%@
+  install-info --quiet %D/%@ ${file%/*}/dir
+post-deinstall: |
+  file=%D/%@
+  install-info --quiet --delete %D/%@ ${file%/*}/dir
+  if [ $(info -d ${file%/*}  --output - 2>/dev/null | grep -c '^*') -eq 1 ]; then
+    rm -f ${file%/*}/dir
+  fi
