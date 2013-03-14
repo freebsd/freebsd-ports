@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hdup
-# Date created:				6 March 2005
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hdup
 PORTVERSION=	2.0.14
@@ -17,7 +13,8 @@ COMMENT=	The little, spiffy, backup tool
 
 #WRKSRC=		${WRKDIR}/hdup2
 
-OPTIONS=	GNUTAR_PORT "Build with the newest GNU tar from ports" no
+OPTIONS_DEFINE=	GNUTAR_PORT DOCS
+GNUTAR_PORT_DESC=	GNU tar from ports
 
 BUILD_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt
 RUN_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
@@ -34,9 +31,9 @@ USE_AUTOTOOLS=	autoconf
 MAN1=		hdup.1
 MAN5=		hdup.conf.5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GNUTAR_PORT)
+.if ${PORT_OPTIONS:MGNUTAR_PORT}
 BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 GNUTAR=		${LOCALBASE}/bin/gtar
@@ -49,7 +46,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's#%%GNUTAR%%#${GNUTAR}#g' ${WRKSRC}/src/hdup.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}; \
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}; \
 	${INSTALL_DATA} ${WRKSRC}/doc/FAQ.html ${DOCSDIR}; \
@@ -57,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

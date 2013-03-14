@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-uplink-demo
-# Date created:				25 May 2007
-# Whom:					Marcus von Appen <mva@sysfault.org>
-#
+# Created by: Marcus von Appen <mva@sysfault.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55
@@ -29,11 +25,12 @@ SUB_FILES=	uplink
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 
-OPTIONS=	NVIDIA	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA
+NVIDIA_DESC=	support for nvidia
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NVIDIA)
+.if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
@@ -64,4 +61,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

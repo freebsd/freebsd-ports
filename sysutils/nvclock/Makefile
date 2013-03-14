@@ -1,9 +1,5 @@
-# New ports collection makefile for:	NVClock
-# Date created:				August 4, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nvclock
 DISTVERSION=	0.8b4
@@ -24,27 +20,28 @@ PLIST_FILES=	bin/nvclock bin/smartdimmer
 MAN1=		nvclock.1
 PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 
-OPTIONS=	NVCONTROL	"Enable NV-CONTROL support"	on \
-		GTK		"Build GTK+ user interface"	on \
-		QT		"Build Qt 3.x user interface"	off
+OPTIONS_DEFINE=	NVCONTROL GTK2 QT
+OPTIONS_DEFAULT=	NVCONTROL GTK2
+NVCONTROL_DESC=		NV-CONTROL support
+QT_DESC=		Qt 3 toolkit
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NVCONTROL)
+.if ${PORT_OPTIONS:MNVCONTROL}
 USE_XORG=	xext
 USE_GNOME=	pkgconfig
 .else
 CONFIGURE_ARGS+=	--disable-nvcontrol
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 PLIST_FILES+=	bin/nvclock_gtk
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT}
 USE_QT_VER=	3
 CONFIGURE_ARGS+=	--enable-qt --with-qtdir=${LOCALBASE}
 PLIST_FILES+=	bin/nvclock_qt

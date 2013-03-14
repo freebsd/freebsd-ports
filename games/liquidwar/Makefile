@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liquidwar
-# Date created:				9 October 2005
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liquidwar
 PORTVERSION=	5.6.4
@@ -31,12 +27,12 @@ MAN6=		liquidwar.6 \
 		liquidwar-server.6 \
 		liquidwar-mapgen.6
 
-OPTIONS=	ASM "Disable assembly code (if it crashes)" OFF
+OPTIONS_DEFINE=		ASM
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ASM)
+.if ! ${PORT_OPTIONS:MASM}
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
