@@ -5,7 +5,6 @@ PORTNAME=	hitori
 PORTVERSION=	0.3.2
 CATEGORIES=	games
 MASTER_SITES=	GNOME
-EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Logic game similar to Sudoku
