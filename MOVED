@@ -4155,3 +4155,12 @@ graphics/vid||2013-03-09|Has expired: Broken for more than 6 month
 games/kye-data||2013-03-12|Deleted: Merged with games/kye
 misc/gopod||2013-03-13|Has expired: does not work with modern iPods anymore
 misc/gtk-gopod||2013-03-13|Has expired: does not work with modern iPods anymore
+emulators/vmware-tools5||2013-03-14|Has expired: No more supported upstream
+emulators/vmware-tools6||2013-03-14|Has expired: No more supported upstream
+emulators/vmware-tools4||2013-03-14|Has expired: No more supported upstream
+emulators/vmware-guestd4||2013-03-14|Has expired: No more supported upstream
+emulators/linux-vmware-toolbox6||2013-03-14|Has expired: No more supported upstream
+emulators/vmware-guestd6||2013-03-14|Has expired: No more supported upstream
+emulators/linux-vmware-toolbox4||2013-03-14|Has expired: No more supported upstream
+emulators/linux-vmware-toolbox5||2013-03-14|Has expired: No more supported upstream
+emulators/vmware-guestd5||2013-03-14|Has expired: No more supported upstream
