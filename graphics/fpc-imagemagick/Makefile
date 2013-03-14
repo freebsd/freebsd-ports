@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-imagemagick
-# Date created:		2009-01-06
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	graphics lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	IMAGEMAGICK	"Install ImageMagick image proccesing tool"	on
+OPTIONS_DEFINE=	IMAGEMAGICK
+IMAGEMAGICK_DESC=	Install ImageMagick image proccesing tool
+OPTIONS_DEFAULT=	IMAGEMAGICK
 
 .include "${MASTERDIR}/Makefile"

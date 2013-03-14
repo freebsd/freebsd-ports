@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-libcurl
-# Date created:		2007-09-11
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	ftp lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBCURL	"Install curl tools and library "	on
+OPTIONS_DEFINE=	LIBCURL
+LIBCURL_DESC=	Install curl tools and library
+OPTIONS_DEFAULT=	LIBCURL
 
 .include "${MASTERDIR}/Makefile"

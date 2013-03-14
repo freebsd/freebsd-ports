@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-oggvorbis
-# Date created: 	2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	audio lang
@@ -18,7 +14,9 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBOGG		"Install ogg library"	on \
-		LIBVORBIS	"Install vorbis library"	on
+OPTIONS_DEFINE=	LIBOGG LIBVORBIS 
+LIBOGG_DESC=	Install ogg library
+LIBVORBIS_DESC=	Install vorbis library
+OPTIONS_DEFAULT=	LIBOGG LIBVORBIS
 
 .include "${MASTERDIR}/Makefile"

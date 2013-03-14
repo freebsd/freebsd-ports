@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-a52
-# Date created: 	2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	audio lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBA52	"Install a52 library"	on
+OPTIONS_DEFINE=	LIBA52
+LIBA52_DESC= Install a52 library
+OPTIONS_DEFAULT=	LIBA52
 
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-ldap
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	net lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	OPENLDAP	"Install OpenLDAP libraries"	on
+OPTIONS_DEFINE=	OPENLDAP
+OPENLDAP_DESC=	Install OpenLDAP libraries
+OPTIONS_DEFAULT=	OPENLDAP
 
 .include "${MASTERDIR}/Makefile"

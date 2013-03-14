@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-gtk2
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	GTK2	"Gimp Toolkit for X11 GUI (version 2.x)"	on
+OPTIONS_DEFINE=	GTK2
+GTK2_DESC=	Gimp Toolkit for X11 GUI (version 2.x)
+OPTIONS_DEFAULT=	GTK2
 
 .include "${MASTERDIR}/Makefile"

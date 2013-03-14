@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-openssl
-# Date created: 			2007-09-11
-# Whom: 				Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	security lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	OPENSSL	"Install SSL and crypto library"	on
+OPTIONS_DEFINE=	OPENSSL
+OPENSSL_DESC=	Install SSL and crypto library
+OPTIONS_DEFAULT=	OPENSSL
 
 .include "${MASTERDIR}/Makefile"

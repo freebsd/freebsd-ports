@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-svgalib
-# Date created:		2006-06-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	graphics lang
@@ -18,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	SVGA	"Install svgalib low level console graphics library"	off
+OPTIONS_DEFINE=	SVGA
+SVGA_DESC=	Install svgalib low level console graphics library
 
 .include "${MASTERDIR}/Makefile"

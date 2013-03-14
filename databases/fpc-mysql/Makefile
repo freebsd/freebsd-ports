@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal mysql Unit
-# Date created: 			9 February 2004
-# Whom: 				John Merryweather Cooper
-#
+# Created by: John Merryweather Cooper
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	databases lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	MYSQL	"Install MySQL client"	on
+OPTIONS_DEFINE=	MYSQL
+MYSQL_DESC=	Install MySQL client
+OPTIONS_DEFAULT=	MYSQL
 
 .include "${MASTERDIR}/Makefile"

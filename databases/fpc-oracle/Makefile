@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			28 November 2001
-# Whom: 				John Merryweather Cooper et al
-#
+# Created by: John Merryweather Cooper et al
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	databases lang
@@ -18,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	ORACLE	"Install oracle client"	off
+OPTIONS_DEFINE=	ORACLE
+ORACLE_DESC=	Install oracle client
 
 .include "${MASTERDIR}/Makefile"

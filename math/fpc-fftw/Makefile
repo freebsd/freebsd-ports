@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-fftw
-# Date created:		2006-09-05
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	math lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	FFTW3	"Install FFTW3 library"	on
+OPTIONS_DEFINE=	FFTW3
+FFTW3_DESC=	Install FFTW3 library
+OPTIONS_DEFAULT=	FFTW3
 
 .include "${MASTERDIR}/Makefile"

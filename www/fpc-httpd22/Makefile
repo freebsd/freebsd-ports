@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-httpd22
-# Date created: 			2009-01-06
-# Whom: 				Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	www lang
@@ -18,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	APACHE22	"Install apache22 server"	off
+OPTIONS_DEFINE=	APACHE22
+APACHE22_DESC=	Install apache22 server
 
 .include "${MASTERDIR}/Makefile"

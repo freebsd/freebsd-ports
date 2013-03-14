@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-rexx
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	REXX_REGINA	"Install rexx-regina library"	on
+OPTIONS_DEFINE=	REXX_REGINA
+REXX_REGINA_DESC=	Install rexx-regina library
+OPTIONS_DEFAULT=	REXX_REGINA
 
 .include "${MASTERDIR}/Makefile"

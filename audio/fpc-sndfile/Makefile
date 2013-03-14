@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-sndfile
-# Date created: 	2010-04-22
-# Whom: 		Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	audio lang
@@ -18,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	LIBSNDFILE	"Install sndfile library"	on
+OPTIONS_DEFINE=	LIBSNDFILE
+LIBSNDFILE_DESC=	Install sndfile library
+OPTIONS_DEFAULT=	LIBSNDFILE
 
 .include "${MASTERDIR}/Makefile"
