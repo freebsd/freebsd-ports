@@ -1,8 +1,8 @@
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 Installation has successfully completed!
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
-MySQLDuper is now installed, but it requires some additional setup
+MySQLDumper is now installed, but it requires some additional setup.
 
 Usage:
 - to access the application, go to http://your-server/mysqldumper
@@ -10,4 +10,4 @@ Usage:
 Information:
 - create at least one database to use the application
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------

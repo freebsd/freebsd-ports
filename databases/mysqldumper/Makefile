@@ -1,4 +1,4 @@
-# Created by: Marek Holienka	<marekholienka@gmail.com>
+# Created by: Marek Holienka <marekholienka@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mysqldumper
@@ -9,37 +9,41 @@ MASTER_SITES=	SF/${PORTNAME}/MySQLDumper/
 DISTNAME=	MySQLDumper${PORTVERSION}
 
 MAINTAINER=	marekholienka@gmail.com
-COMMENT=	MySQLDumper is tool for backing up MySQL databases
+COMMENT=	Tool for backing up MySQL databases
 
-RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI \
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI
+
+USE_ZIP=	yes
+USE_MYSQL=	yes
+USE_PERL5=	yes
+USE_PHP=	session mysql zlib ftp
+
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/msd${PORTVERSION}
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
-
-USE_ZIP=	yes
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/msd${PORTVERSION}
-USE_PHP=	session mysql zlib ftp
-USE_MYSQL=	yes
-USE_PERL5=	yes
-WWWOWN=		www
-WWWGRP=		${WWWOWN}
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
+
 .if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 do-install:
 	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/msd${PORTVERSION}/ ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CP} -a ${WRKDIR}/msd${PORTVERSION}/ ${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
