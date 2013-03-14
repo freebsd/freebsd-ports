@@ -2,7 +2,7 @@
 
 PORTNAME=	netwalk
 PORTVERSION=	0.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GITHUB \
 		GOOGLE_CODE:icons
@@ -44,7 +44,6 @@ DESKTOP_ENTRIES="NetWalk" "${COMMENT}" "${PORTNAME}" \
 .include <bsd.port.options.mk>
 
 post-patch:
-# Fix SDL, CFLAGS, PREFIX
 	@${REINPLACE_CMD} \
 	-e 's|sdl-config|$(SDL_CONFIG)|' \
 	-e 's|CC=gcc|CC?=g++|' \
@@ -53,10 +52,8 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-# Pixmaps
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/screenshot-0.4.8.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${_DISTDIR}/screenshot-0.4.8.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
