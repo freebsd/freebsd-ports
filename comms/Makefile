@@ -29,6 +29,7 @@
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += ebook2cw
+    SUBDIR += ebook2cwgui
     SUBDIR += echolinux
     SUBDIR += efax
     SUBDIR += efax-gtk
