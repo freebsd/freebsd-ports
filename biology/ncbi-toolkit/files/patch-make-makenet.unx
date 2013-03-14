@@ -8,7 +8,7 @@
  SEQUIN_OPTS =
  LIBCOPY = cp -p
  SRCCOPY = ./ln-if-absent
-@@ -923,17 +924,17 @@
+@@ -934,17 +935,17 @@
  	$(CC) -o ddv $(LDFLAGS) $(OBJDDV) $(LIB41) $(LIB31) $(LIB20) $(LIB61) $(LIB60) $(LIB22) $(LIB45) \
  	$(LIB8) $(LIB7) $(NETCLILIB) $(LIB3) $(LIB4) $(LIB23) \
  	$(LIBCOMPADJ) $(LIB2) $(LIB1) \
@@ -17,19 +17,19 @@
  
  udv    : $(OBJUDV)
  	$(CC) -o udv $(LDFLAGS) $(OBJUDV) $(LIB41) $(LIB31) $(LIB20) $(LIB61) $(LIB60) $(LIB22) $(LIB45) \
-     $(LIB8) $(LIB7) $(NETCLILIB) $(LIB3) $(LIB4) \
+ 	$(LIB8) $(LIB7) $(NETCLILIB) $(LIB3) $(LIB4) \
  	$(LIB23) $(LIBCOMPADJ) $(LIB2) \
 -	$(LIB1) $(VIBLIBS) $(OTHERLIBS)
 +	$(LIB1) $(VIBLIBS) $(OTHERLIBS) $(USERLIBS)
  
  Nentrez : entrez.c $(ULIB31)
  	$(CC) -o Nentrez $(LDFLAGS) entrez.c $(LIB41) $(LIB31) $(LIB30) $(LIB20) $(LIB61) $(LIB60) $(LIB22) $(LIB45) \
--    $(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB8) $(LIB7) $(NETCLILIB) $(LIB5) $(LIB4) $(LIB3) $(LIB2) $(LIB1) $(VIBLIBS) $(OTHERLIBS)
-+    $(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB8) $(LIB7) $(NETCLILIB) $(LIB5) $(LIB4) $(LIB3) $(LIB2) $(LIB1) $(VIBLIBS) $(OTHERLIBS) $(USERLIBS)
+-	$(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB8) $(LIB7) $(NETCLILIB) $(LIB5) $(LIB4) $(LIB3) $(LIB2) $(LIB1) $(VIBLIBS) $(OTHERLIBS)
++	$(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB8) $(LIB7) $(NETCLILIB) $(LIB5) $(LIB4) $(LIB3) $(LIB2) $(LIB1) $(VIBLIBS) $(OTHERLIBS) $(USERLIBS)
  
  # left this in (Tentrez) for script backwards compatibility
  Tentrez : entrez.c $(ULIB31)
-@@ -1114,7 +1115,7 @@
+@@ -1140,7 +1141,7 @@
  entrez2 :	entrez2.c
  	$(CC) -g -o entrez2 $(LDFLAGS) entrez2.c $(LIB41) $(LIB6) $(LIB20) \
  		$(LIB61) $(LIB60) $(LIB22) $(LIB23) $(LIBCOMPADJ) \
@@ -38,7 +38,7 @@
  	$(VIB_POST_LINK) entrez2
  
  # demo program (spidey)
-@@ -1383,7 +1384,7 @@
+@@ -1421,7 +1422,7 @@
  	$(CC) -o Psequin -I. $(LDFLAGS) -UINTERNAL_NCBI_SEQUIN $(SRCSEQUIN) \
  	$(LIB30) $(LIB45) $(LIB31) $(LIB20) $(LIB61) $(LIB60) $(LIB22) \
  	$(LIB40) $(LIB41) $(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB11) \
@@ -47,7 +47,7 @@
  	$(VIB_POST_LINK) Psequin
  
  # 'sbtedit' Submission Template Editor
-@@ -1395,7 +1396,7 @@
+@@ -1433,7 +1434,7 @@
  	$(CC) -o sbtedit -I. $(LDFLAGS) -UINTERNAL_NCBI_SEQUIN $(SRCSBTEDIT) \
  	$(LIB30) $(LIB45) $(LIB31) $(LIB20) $(LIB61) $(LIB60) $(LIB22) \
  	$(LIB40) $(LIB41) $(LIB36) $(LIB23) $(LIBCOMPADJ) $(LIB11) \
@@ -55,4 +55,4 @@
 +	$(ENTREZLIBS) $(LIB4) $(LIB2) $(LIB1) $(VIBLIBS) $(OTHERLIBS) $(USERLIBS)
  	$(VIB_POST_LINK) sbtedit
  
- salogif.o:	salogif.c
+ # 'streamer' Sequinesque Stream Editor
