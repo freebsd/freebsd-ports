@@ -1,19 +1,16 @@
-# New ports collection makefile for:	defendguin
-# Date created:				8 February 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	defendguin
 PORTVERSION=	0.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/ \
 		ftp://ftp.billsgames.com/unix/x/defendguin/src/ \
-		http://www.newbreedsoftware.com/images/prodicons/:icons
+		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.gif:icons
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@gmx.ch
@@ -25,13 +22,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_SDL=	mixer sdl
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.gif
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
 
 MAN6=		${PORTNAME}.6
+
+DESKTOP_ENTRIES="Defendguin" "${COMMENT}"  \
+		"share/pixmaps/${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
 
 .include <bsd.port.options.mk>
 
@@ -41,24 +39,14 @@ do-build:
 		`${SDL_CONFIG} --libs` -lSDL_mixer
 
 do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/defendguin ${PREFIX}/bin
-
-# Manuall
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
-
-# Data
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} "images music sounds" ${DATADIR})
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${MAN6:S|^|${WRKSRC}/|} ${MAN6PREFIX}/man/man6/
 
-# Pixmaps
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.gif ${PREFIX}/share/pixmaps/
-
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/../docs/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../docs/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
