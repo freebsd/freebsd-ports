@@ -90,6 +90,7 @@
     SUBDIR += jboss5
     SUBDIR += jboss7
     SUBDIR += jboss71
+    SUBDIR += jboss72
     SUBDIR += jc
     SUBDIR += jcalendar
     SUBDIR += jcckit

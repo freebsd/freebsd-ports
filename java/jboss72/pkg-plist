@@ -1,0 +1,1615 @@
+%%APP_HOME%%/docs/schema/jboss-as-web_1_1.xsd
+%%APP_HOME%%/docs/schema/service-ref_4_2.dtd
+%%APP_HOME%%/docs/schema/web-jsptaglibrary_1_1.dtd
+%%APP_HOME%%/docs/schema/jboss-as-ejb3_1_2.xsd
+%%APP_HOME%%/docs/schema/jbossws-web-services_1_0.xsd
+%%APP_HOME%%/docs/schema/jsp_2_0.xsd
+%%APP_HOME%%/docs/schema/web-app_2_2.dtd
+%%APP_HOME%%/docs/schema/web-facesconfig_1_1.dtd
+%%APP_HOME%%/docs/schema/jboss-as-threads_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-txn_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-cmp_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-remoting_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-security_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jsr77_1_0.xsd
+%%APP_HOME%%/docs/schema/persistence_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jmx_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-logging_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-resource-adapter-binding_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-pojo_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-mail_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-messaging_1_3.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_2.xsd
+%%APP_HOME%%/docs/schema/web-jsptaglibrary_2_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-deployment-scanner_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-configadmin_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-security_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-pool_1_0.xsd
+%%APP_HOME%%/docs/schema/javaee_5.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-client_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-deployment-structure-1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jca_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb3-2_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jacorb_1_1.xsd
+%%APP_HOME%%/docs/schema/web-app_2_4.xsd
+%%APP_HOME%%/docs/schema/jboss-as-naming_1_3.xsd
+%%APP_HOME%%/docs/schema/jboss-as-cli_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-infinispan_1_4.xsd
+%%APP_HOME%%/docs/schema/jboss-as-infinispan_1_3.xsd
+%%APP_HOME%%/docs/schema/application_1_3.dtd
+%%APP_HOME%%/docs/schema/javaee_web_services_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-resource-adapters_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-app_3_2.dtd
+%%APP_HOME%%/docs/schema/javaee_web_services_client_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-webservices_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-service_7_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_4.xsd
+%%APP_HOME%%/docs/schema/jboss-as-deployment-scanner_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-mail_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-messaging_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_3.xsd
+%%APP_HOME%%/docs/schema/jbossws-jaxws-config_4_0.xsd
+%%APP_HOME%%/docs/schema/web-jsptaglibrary_2_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-logging_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-app_5_0.dtd
+%%APP_HOME%%/docs/schema/application_1_4.xsd
+%%APP_HOME%%/docs/schema/jboss-as-remoting_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-security_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jmx_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-threads_1_1.xsd
+%%APP_HOME%%/docs/schema/web-facesconfig_1_0.dtd
+%%APP_HOME%%/docs/schema/jboss-as-txn_1_3.xsd
+%%APP_HOME%%/docs/schema/jboss-as-cmp_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-osgi_1_2.xsd
+%%APP_HOME%%/docs/schema/web-app_2_3.dtd
+%%APP_HOME%%/docs/schema/jboss-as-ejb3_1_4.xsd
+%%APP_HOME%%/docs/schema/jboss-common_5_1.xsd
+%%APP_HOME%%/docs/schema/jsp_2_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-web_1_0.xsd
+%%APP_HOME%%/docs/schema/module-1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-ejb3_1_3.xsd
+%%APP_HOME%%/docs/schema/jboss-as-messaging-deployment_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-common_6_0.xsd
+%%APP_HOME%%/docs/schema/javaee_web_services_client_1_3.xsd
+%%APP_HOME%%/docs/schema/jboss-as-webservices_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-resource-adapters_1_0.xsd
+%%APP_HOME%%/docs/schema/j2ee_web_services_1_1.xsd
+%%APP_HOME%%/docs/schema/jbxb_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-pojo_7_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-infinispan_1_2.xsd
+%%APP_HOME%%/docs/schema/application_1_2.dtd
+%%APP_HOME%%/docs/schema/jboss-app_4_0.dtd
+%%APP_HOME%%/docs/schema/javaee_web_services_1_3.xsd
+%%APP_HOME%%/docs/schema/application_6.xsd
+%%APP_HOME%%/docs/schema/j2ee_web_services_client_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-xts.xsd
+%%APP_HOME%%/docs/schema/jboss-as-naming_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-cli_1_1.xsd
+%%APP_HOME%%/docs/schema/orm_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-app_7_0.xsd
+%%APP_HOME%%/docs/schema/jboss-deployment-structure-1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jca_1_0.xsd
+%%APP_HOME%%/docs/schema/web-app_2_5.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jacorb_1_0.xsd
+%%APP_HOME%%/docs/schema/persistence_2_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-security_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-jpa_1_0.xsd
+%%APP_HOME%%/docs/schema/ejb-jar_2_1.xsd
+%%APP_HOME%%/docs/schema/jboss-app_3_0.dtd
+%%APP_HOME%%/docs/schema/jboss-as-webservices_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-naming_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-cli_1_2.xsd
+%%APP_HOME%%/docs/schema/java-properties_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jpa_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-cache_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jaxrs_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-infinispan_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jsf_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-mod-cluster_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-security-role_1_0.xsd
+%%APP_HOME%%/docs/schema/application_5.xsd
+%%APP_HOME%%/docs/schema/j2ee_1_4.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-client_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-deployment-structure-1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jacorb_1_3.xsd
+%%APP_HOME%%/docs/schema/web-facesconfig_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-web_7_1.xsd
+%%APP_HOME%%/docs/schema/service-ref_5_0.dtd
+%%APP_HOME%%/docs/schema/jboss-as-datasources_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-ee_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-security_1_2.xsd
+%%APP_HOME%%/docs/schema/application-client_6.xsd
+%%APP_HOME%%/docs/schema/ejb-jar_1_1.dtd
+%%APP_HOME%%/docs/schema/jboss_1_0.xsd
+%%APP_HOME%%/docs/schema/web-fragment_3_0.xsd
+%%APP_HOME%%/docs/schema/user-roles_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-messaging_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-iiop_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-container-interceptors_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jgroups_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-weld_1_0.xsd
+%%APP_HOME%%/docs/schema/ejb-jar_3_1.xsd
+%%APP_HOME%%/docs/schema/ejb-jar_2_0.dtd
+%%APP_HOME%%/docs/schema/jboss-as-sar_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-logging_1_2.xsd
+%%APP_HOME%%/docs/schema/jboss-as-osgi_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-txn_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jaxr_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-web_1_3.xsd
+%%APP_HOME%%/docs/schema/service-ref_4_0.dtd
+%%APP_HOME%%/docs/schema/module-1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-ejb3_1_0.xsd
+%%APP_HOME%%/docs/schema/jndi-binding-service_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-web_1_4.xsd
+%%APP_HOME%%/docs/schema/jsp_2_2.xsd
+%%APP_HOME%%/docs/schema/jboss-deployment-dependencies-1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-web_7_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-datasources_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-ee_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb-client_1_1.xsd
+%%APP_HOME%%/docs/schema/trans-timeout-1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jacorb_1_2.xsd
+%%APP_HOME%%/docs/schema/javaee_6.xsd
+%%APP_HOME%%/docs/schema/jboss-as-infinispan_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-app_4_2.dtd
+%%APP_HOME%%/docs/schema/jboss-as-mod-cluster_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-naming_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jpa_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-client_6_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-web_1_2.xsd
+%%APP_HOME%%/docs/schema/web-jsptaglibrary_1_2.dtd
+%%APP_HOME%%/docs/schema/module-1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-ejb3_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-txn_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jaxr_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-osgi_1_0.xsd
+%%APP_HOME%%/docs/schema/web-app_3_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jmx_1_2.xsd
+%%APP_HOME%%/docs/schema/web-common_3_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jgroups_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-ejb3-spec-2_0.xsd
+%%APP_HOME%%/docs/schema/ejb-jar_3_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-jdr_1_0.xsd
+%%APP_HOME%%/docs/schema/j2ee_jaxrpc_mapping_1_1.xsd
+%%APP_HOME%%/docs/schema/jboss-as-messaging_1_0.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_1.xsd
+%%APP_HOME%%/docs/examples/configs/standalone-xts.xml
+%%APP_HOME%%/docs/examples/configs/standalone-hornetq-colocated.xml
+%%APP_HOME%%/docs/examples/configs/standalone-osgi-only.xml
+%%APP_HOME%%/docs/examples/configs/standalone-minimalistic.xml
+%%APP_HOME%%/docs/examples/configs/standalone-jts.xml
+%%APP_HOME%%/bundles/system/layers/base/org/jboss/as/osgi/configadmin/main/jboss-as-osgi-configadmin-7.2.0.Final.jar
+%%APP_HOME%%/bundles/system/layers/base/org/jboss/osgi/logging/main/jboss-osgi-logging-1.0.0.Final.jar
+%%APP_HOME%%/bundles/system/layers/base/org/apache/felix/log/main/org.apache.felix.log-1.0.0.jar
+%%APP_HOME%%/bundles/system/layers/base/org/apache/felix/configadmin/main/org.apache.felix.configadmin-1.2.8.jar
+%%APP_HOME%%/bundles/system/layers/base/org/projectodd/stilts/main/stilts-stomplet-server-bundle-0.1.26.jar
+%%APP_HOME%%/bundles/system/layers/base/javax/servlet/api/v25/jboss-servlet-api_2.5_spec-1.0.1.Final.jar
+%%APP_HOME%%/jboss-modules.jar
+%%APP_HOME%%/standalone/deployments/README.txt
+%%APP_HOME%%/standalone/configuration/application-roles.properties
+%%APP_HOME%%/standalone/configuration/application-users.properties
+%%APP_HOME%%/standalone/configuration/standalone-full.xml
+%%APP_HOME%%/standalone/configuration/standalone-full-ha.xml
+%%APP_HOME%%/standalone/configuration/standalone-ha.xml
+%%APP_HOME%%/standalone/configuration/logging.properties
+%%APP_HOME%%/standalone/configuration/standalone.xml
+%%APP_HOME%%/standalone/configuration/standalone-osgi.xml
+%%APP_HOME%%/standalone/configuration/mgmt-users.properties
+%%APP_HOME%%/README.txt
+%%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/validation/api/main/validation-api-1.0.0.GA.jar
+%%APP_HOME%%/modules/system/layers/base/javax/validation/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.jar
+%%APP_HOME%%/modules/system/layers/base/javax/activation/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/jms/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/interceptor/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/jaxp-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/registry/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/enterprise/deploy/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main/cdi-api-1.0-SP4.jar
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/el/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/el/api/main/jboss-el-api_2.2_spec-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/annotation/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.2.jar
+%%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/resource/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/jbosgi-xservice.properties
+%%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/faces/api/1.2/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/faces/api/1.2/jsf-api-1.2_15-jbossorg-2.jar
+%%APP_HOME%%/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.1.18.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/faces/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/mail/api/main/mail-1.4.5.jar
+%%APP_HOME%%/modules/system/layers/base/javax/mail/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/jws/api/main/jsr181-api-1.0-MR1.jar
+%%APP_HOME%%/modules/system/layers/base/javax/jws/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/rmi/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/inject/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/javax/inject/api/main/javax.inject-1.jar
+%%APP_HOME%%/modules/system/layers/base/javaee/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main/cal10n-api-0.7.3.jar
+%%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/asm/asm/main/asm-3.3.1.jar
+%%APP_HOME%%/modules/system/layers/base/asm/asm/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/ibm/jdk/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services/java.sql.Driver
+%%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services/javax.script.ScriptEngineFactory
+%%APP_HOME%%/modules/system/layers/base/sun/jdk/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main/relaxngDatatype-2011.1.jar
+%%APP_HOME%%/modules/system/layers/base/com/google/guava/main/guava-13.0.1.jar
+%%APP_HOME%%/modules/system/layers/base/com/google/guava/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main/h2-1.3.168.jar
+%%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16-jbossorg-1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main/jaxb-impl-2.2.5.jboss-1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main/jaxb-xjc-2.2.5.jboss-1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2/main/txw2-20110809.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/istack-commons-tools-2.6.1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/istack-commons-runtime-2.6.1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.1.18-jbossorg-1.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/1.2/jsf-impl-1.2_15-jbossorg-2.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/1.2/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/xsom/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/xsom/main/xsom-20110809.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/codemodel/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/sun/codemodel/main/codemodel-2.6.jar
+%%APP_HOME%%/modules/system/layers/base/net/jcip/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/net/jcip/main/jcip-annotations-1.0.jar
+%%APP_HOME%%/modules/system/layers/base/gnu/getopt/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/gnu/getopt/main/getopt-1.0.13.jar
+%%APP_HOME%%/modules/system/layers/base/nu/xom/main/xom-1.2.5.jar
+%%APP_HOME%%/modules/system/layers/base/nu/xom/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/antlr/main/antlr-2.7.7.jar
+%%APP_HOME%%/modules/system/layers/base/org/antlr/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/osgi/enterprise/main/org.osgi.enterprise-4.2.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/osgi/enterprise/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/osgi/core/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/osgi/core/main/org.osgi.core-4.2.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/dom4j/main/dom4j-1.6.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/dom4j/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/picketlink-jbas7-2.1.6.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/picketlink-core-2.1.6.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/picketlink-core-2.1.6.Final-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/picketlink-core-2.1.6.Final-jandex-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/main/picketlink-jbas7-2.1.6.Final-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/jaxen/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jaxen/main/jaxen-1.1.3.jar
+%%APP_HOME%%/modules/system/layers/base/org/joda/time/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/joda/time/main/joda-time-1.6.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/main/infinispan-core-5.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-5.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-5.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-5.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main/stax2-api-3.1.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main/woodstox-core-asl-4.1.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main/jackson-core-asl-1.9.9.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main/jackson-mapper-asl-1.9.9.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main/jackson-xc-1.9.9.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main/jackson-jaxrs-1.9.9.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison/main/jettison-1.3.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jgroups/main/jgroups-3.2.7.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jgroups/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jdom/main/jdom-1.1.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/jdom/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main/scannotation-1.0.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main/jboss-as-connector-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/jboss-as-domain-http-error-context-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main/jboss-as-jmx-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main/jboss-as-jaxrs-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main/jboss-as-remoting-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main/jboss-as-domain-http-interface-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/win-x86_64/tcnative-1.dll
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-x86_64/libtcnative-1.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-x86_64/libcrypto.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-x86_64/libssl.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-x86_64/libapr-1.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-i686/libtcnative-1.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-i686/libcrypto.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-i686/libapr-1.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-i686/libssl.jnilib
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/win-i686/tcnative-1.dll
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-x86_64/libssl.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-x86_64/libtcnative-1.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-x86_64/libapr-1.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-x86_64/libcrypto.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-i686/libcrypto.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-i686/libtcnative-1.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-i686/libssl.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-i686/libapr-1.so
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/jbossweb-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/jboss-as-web-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/ecj-3.7.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main/jboss-as-appclient-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main/jboss-as-logging-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/jboss-as-jdr-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/resources/plugins.properties
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main/jboss-as-weld-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main/jboss-as-clustering-ejb3-infinispan-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/spi/main/jboss-as-clustering-web-spi-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main/jboss-as-clustering-web-infinispan-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/singleton/main/jboss-as-clustering-singleton-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/singleton/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/jboss-as-clustering-infinispan-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/api/main/jboss-as-clustering-api-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main/jboss-as-clustering-common-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/impl/main/jboss-as-clustering-impl-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/registry/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/registry/main/jboss-as-clustering-registry-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/service/main/jboss-as-clustering-service-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/service/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/jboss-as-clustering-jgroups-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main/jboss-as-mail-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main/jboss-as-jsf-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main/jboss-as-management-client-content-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main/jboss-as-sar-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main/jboss-as-controller-client-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main/jboss-as-host-controller-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jmx/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jmx/main/jboss-as-osgi-jmx-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/web/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/web/main/jboss-as-osgi-web-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jta/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jta/main/jboss-as-osgi-jta-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/http/main/jboss-as-osgi-http-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/http/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/main/jboss-as-osgi-service-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jpa/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jpa/main/jboss-as-osgi-jpa-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/naming/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/naming/main/jboss-as-osgi-naming-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main/jboss-as-jaxr-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/aggregate/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main/jboss-as-xts-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main/jboss-as-threads-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main/jboss-as-network-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main/jboss-as-jsr77-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main/jboss-as-server-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/jboss-as-jsf-injection-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/1.2/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/1.2/jboss-as-jsf-injection-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main/jboss-as-deployment-repository-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main/jboss-as-controller-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main/jboss-as-configadmin-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/util/main/jboss-as-jpa-util-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/util/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa/main/jboss-as-jpa-openjpa-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main/jboss-as-jpa-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/3/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/3/jboss-as-jpa-hibernate3-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/4/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/4/jboss-as-jpa-hibernate4-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main/jboss-as-jpa-spi-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main/jboss-as-version-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main/jboss-as-security-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main/jboss-as-deployment-scanner-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main/jboss-as-console-1.5.1.Final-resources.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main/jboss-as-platform-mbean-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main/jboss-as-cmp-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/mod_cluster-container-catalina-1.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/mod_cluster-container-spi-1.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/jboss-as-modcluster-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/mod_cluster-container-jbossweb-1.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/mod_cluster-core-1.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/embedded/main/jboss-as-embedded-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/embedded/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/jboss-as-ejb3-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main/jboss-as-cli-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main/jboss-as-transactions-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main/jboss-as-naming-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main/jboss-as-messaging-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main/jboss-as-jacorb-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main/jboss-as-process-controller-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main/jboss-as-system-jmx-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main/jboss-as-pojo-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main/jboss-as-ee-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/deployment/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/deployment/main/jboss-as-ee-deployment-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main/jboss-as-protocol-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main/jboss-as-domain-management-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/jaxrpc-integration/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-4.1.3.Final-jboss711.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/jboss-as-webservices-server-integration-7.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/dmr/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.1.6.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.0.7.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.0.7.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/common-core/main/jboss-common-core-2.2.17.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/common-core/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/modules/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans/main/jboss-common-beans-1.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main/bundled/jboss-seam-int.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main/jbossjts-integration-4.17.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main/jbossjts-jacorb-4.17.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-1.4.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main/aesh-0.27.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/netty/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/netty/main/netty-3.6.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client/main/jboss-iiop-client-1.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.0.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main/jboss-remote-naming-1.0.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main/jboss-classfilewriter-1.0.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-2.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-2.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/jbossws-cxf-transports-httpserver-4.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-4.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-4.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-4.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/jaxws-jboss-httpserver-httpspi-1.0.1.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main/jbossws-api-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services/main/jbossws-native-services-4.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core/main/jbossws-native-core-4.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main/jbossws-common-tools-1.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-common-7.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-appclient-7.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-web-7.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ejb-7.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ear-7.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main/remoting-jmx-1.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core/main/shrinkwrap-api-1.0.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core/main/shrinkwrap-impl-base-1.0.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core/main/shrinkwrap-spi-1.0.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-2.2.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-2.2.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-net-2.2.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-2.2.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-2.2.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbossxts-4.17.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbosstxbridge-4.17.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/repository/main/jbosgi-repository-core-2.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/repository/main/jbosgi-repository-api-2.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/repository/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/spi/main/jbosgi-spi-3.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/metadata/main/jbosgi-metadata-2.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/metadata/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/resolver/main/jbosgi-resolver-felix-3.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/resolver/main/jbosgi-resolver-api-3.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/resolver/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/framework/main/jbosgi-framework-core-2.1.0.CR12.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/framework/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/vfs/main/jbosgi-vfs-1.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/vfs/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/vfs/main/jbosgi-vfs30-1.2.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/deployment/main/jbosgi-deployment-1.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/deployment/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/com/sun/httpserver/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/com/sun/httpserver/main/httpserver-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/main/jboss-remoting-3.2.14.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/stdio/main/jboss-stdio-1.0.1.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/stdio/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xb/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xb/main/jbossxb-2.0.3.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main/jandex-1.0.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.1.2.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main/weld-core-1.1.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main/weld-api-1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper/main/staxmapper-1.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main/jboss-msc-1.0.4.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main/jboss-sasl-1.0.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-1.3.16.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-1.3.16.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider/main/resteasy-hibernatevalidator-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client/main/jboss-ejb-client-1.0.16.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main/jboss-threads-2.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main/jboss-invocation-1.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-4.0.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jacorb/main/jacorb-2.3.2.jbossorg-4.jar
+%%APP_HOME%%/modules/system/layers/base/org/jacorb/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/omg/api/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/envers/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/envers/main/hibernate-envers-4.2.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-infinispan-4.2.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-entitymanager-4.2.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-core-4.2.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-4.3.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main/hibernate-commons-annotations-4.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/main/slf4j-api-1.7.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main/slf4j-ext-1.7.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.2.GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main/jcl-over-slf4j-1.7.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/ra/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/ra/main/hornetq-ra-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-commons-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-server-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-jms-client-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/lib/linux-i686/libHornetQAIO32.so
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-journal-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-core-client-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/hornetq/main/hornetq-jms-server-2.3.0.CR1.jar
+%%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main/jansi-1.8.jar
+%%APP_HOME%%/modules/system/layers/base/org/opensaml/main/xmltooling-1.3.2-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/opensaml/main/opensaml-2.5.1-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/opensaml/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/opensaml/main/openws-1.4.2-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml/main/snakeyaml-1.8.jar
+%%APP_HOME%%/modules/system/layers/base/org/kohsuke/rngom/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/kohsuke/rngom/main/rngom-201103.jboss-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/javassist/main/javassist-3.15.0-GA.jar
+%%APP_HOME%%/modules/system/layers/base/org/javassist/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/log4j/main/log4j-1.2.16.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/log4j/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/configuration/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/configuration/main/commons-configuration-1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli/main/commons-cli-1.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec/main/commons-codec-1.4.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main/commons-pool-1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/io/main/commons-io-2.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/io/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang/main/commons-lang-2.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections/main/commons-collections-3.2.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils/main/commons-beanutils-1.8.3.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main/xmlschema-core-2.0.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-1.6.9.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j/main/apache-mime4j-0.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/xerces/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/xerces/main/xercesImpl-2.9.1-jbossas-2.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main/neethi-3.0.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-sts-core-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-ts-2.6.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-boolean-2.6.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-core-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-dv-2.6.0.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-core-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-2.6.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main/cxf-api-2.6.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver/main/xml-resolver-1.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/uddi-ws/main/uddi-ws-3.1.3.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/uddi-ws/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/juddi-client/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/juddi-client/main/juddi-client-3.1.3.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/scout/main/scout-1.2.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/juddi/scout/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpcore-4.2.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpclient-4.2.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpmime-4.2.1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main/velocity-1.7.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main/xalan-2.7.1.jbossorg-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main/serializer-2.7.1.jbossorg-1.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-1.5.3.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main/module.xml
+%%APP_HOME%%/appclient/configuration/appclient.xml
+%%APP_HOME%%/appclient/configuration/logging.properties
+%%APP_HOME%%/bin/domain.conf
+%%APP_HOME%%/bin/wsconsume.bat
+%%APP_HOME%%/bin/jboss-cli.xml
+%%APP_HOME%%/bin/jboss-cli-logging.properties
+%%APP_HOME%%/bin/init.d/jboss-as-standalone.sh
+%%APP_HOME%%/bin/init.d/jboss-as-domain.sh
+%%APP_HOME%%/bin/init.d/jboss-as.conf
+%%APP_HOME%%/bin/wsconsume.sh
+%%APP_HOME%%/bin/appclient.sh
+%%APP_HOME%%/bin/jconsole.sh
+%%APP_HOME%%/bin/vault.bat
+%%APP_HOME%%/bin/domain.sh
+%%APP_HOME%%/bin/standalone.conf
+%%APP_HOME%%/bin/appclient.conf.bat
+%%APP_HOME%%/bin/wsprovide.bat
+%%APP_HOME%%/bin/client/jboss-client.jar
+%%APP_HOME%%/bin/client/jboss-cli-client.jar
+%%APP_HOME%%/bin/client/README-CLI-JCONSOLE.txt
+%%APP_HOME%%/bin/client/README-EJB-JMS.txt
+%%APP_HOME%%/bin/appclient.bat
+%%APP_HOME%%/bin/appclient.conf
+%%APP_HOME%%/bin/jboss-cli.sh
+%%APP_HOME%%/bin/jboss-cli.bat
+%%APP_HOME%%/bin/jconsole.bat
+%%APP_HOME%%/bin/jdr.bat
+%%APP_HOME%%/bin/add-user.sh
+%%APP_HOME%%/bin/run.bat
+%%APP_HOME%%/bin/run.sh
+%%APP_HOME%%/bin/vault.sh
+%%APP_HOME%%/bin/standalone.sh
+%%APP_HOME%%/bin/domain.conf.bat
+%%APP_HOME%%/bin/standalone.conf.bat
+%%APP_HOME%%/bin/wsprovide.sh
+%%APP_HOME%%/bin/add-user.bat
+%%APP_HOME%%/bin/domain.bat
+%%APP_HOME%%/bin/jdr.sh
+%%APP_HOME%%/bin/standalone.bat
+%%APP_HOME%%/welcome-content/jboss_community.png
+%%APP_HOME%%/welcome-content/index_noconsole.html
+%%APP_HOME%%/welcome-content/documentation.html
+%%APP_HOME%%/welcome-content/bkg.gif
+%%APP_HOME%%/welcome-content/as7_style.css
+%%APP_HOME%%/welcome-content/as7_logo.png
+%%APP_HOME%%/welcome-content/noredirect.html
+%%APP_HOME%%/welcome-content/noconsole.html
+%%APP_HOME%%/welcome-content/favicon.ico
+%%APP_HOME%%/welcome-content/index.html
+%%APP_HOME%%/LICENSE.txt
+%%APP_HOME%%/copyright.txt
+%%APP_HOME%%/domain/configuration/mgmt-users.properties
+%%APP_HOME%%/domain/configuration/host-master.xml
+%%APP_HOME%%/domain/configuration/domain.xml
+%%APP_HOME%%/domain/configuration/host-slave.xml
+%%APP_HOME%%/domain/configuration/host.xml
+%%APP_HOME%%/domain/configuration/logging.properties
+%%APP_HOME%%/domain/configuration/application-roles.properties
+%%APP_HOME%%/domain/configuration/application-users.properties
+@dirrm %%APP_HOME%%/domain/configuration
+@dirrm %%APP_HOME%%/domain/tmp/auth
+@dirrm %%APP_HOME%%/domain/tmp
+@dirrm %%APP_HOME%%/domain/data/content
+@dirrm %%APP_HOME%%/domain/data
+@dirrm %%APP_HOME%%/domain
+@dirrm %%APP_HOME%%/welcome-content
+@dirrm %%APP_HOME%%/bin/client
+@dirrm %%APP_HOME%%/bin/init.d
+@dirrm %%APP_HOME%%/bin
+@dirrm %%APP_HOME%%/appclient/configuration
+@dirrm %%APP_HOME%%/appclient
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/santuario
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xalan
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/velocity
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/scout/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/scout
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/juddi-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/juddi-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/uddi-ws/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi/uddi-ws
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/juddi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/cxf
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/neethi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xerces/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/xerces
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/james
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/ws
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/io/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/io
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/configuration/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons/configuration
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/commons
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/log4j/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache/log4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/apache
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/javassist/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/javassist
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/kohsuke/rngom/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/kohsuke/rngom
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/kohsuke
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/yaml
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/opensaml/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/opensaml
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/fusesource
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/main/lib/linux-i686
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/main/lib/linux-x86_64
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/main/lib
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/ra/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq/ra
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hornetq
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/slf4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/envers/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate/envers
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/hibernate
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/omg/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/omg/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/omg
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jacorb/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jacorb
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/picketbox/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/picketbox
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/vfs
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/threads
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/msc
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/weld
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logging
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jandex
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xb/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xb
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/stdio/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/stdio
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/com/sun/httpserver/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/com/sun/httpserver
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/com/sun
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/com
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/deployment/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/deployment
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/vfs/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/vfs
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/framework/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/framework
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/resolver/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/resolver
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/metadata/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/metadata
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/repository/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi/repository
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/osgi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xts
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/security
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap/core
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/shrinkwrap
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/native
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ws
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/netty/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/netty
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/aesh
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/jts
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main/bundled
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/integration
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/modules/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/modules
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/common-core/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/common-core
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/dmr/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/dmr
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/jaxrpc-integration/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/jaxrpc-integration
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/deployment/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/deployment
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/embedded/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/embedded
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/console
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/version
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/4
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/3
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/util/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/util
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/1.2
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/server
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/network
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/aggregate/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/aggregate
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/naming/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/naming
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jpa/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jpa
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/http/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/http
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jta/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jta
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/web/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/web
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jmx/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi/jmx
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/osgi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/service/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/service
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/registry/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/registry
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/singleton/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/singleton
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/spi/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/spi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/resources
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-i686
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/linux-x86_64
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/win-i686
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-i686
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/macosx-x86_64
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib/win-x86_64
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/lib
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss/as
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jboss
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/scannotation
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jdom/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jdom
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jgroups/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jgroups
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/codehaus
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/client
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/infinispan
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/joda/time/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/joda/time
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/joda
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jaxen/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/jaxen
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/picketlink/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/picketlink
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/dom4j/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/dom4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/osgi/core/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/osgi/core
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/osgi/enterprise/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/osgi/enterprise
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/osgi
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/antlr/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/org/antlr
+@dirrm %%APP_HOME%%/modules/system/layers/base/org
+@dirrm %%APP_HOME%%/modules/system/layers/base/nu/xom/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/nu/xom
+@dirrm %%APP_HOME%%/modules/system/layers/base/nu
+@dirrm %%APP_HOME%%/modules/system/layers/base/gnu/getopt/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/gnu/getopt
+@dirrm %%APP_HOME%%/modules/system/layers/base/gnu
+@dirrm %%APP_HOME%%/modules/system/layers/base/net/jcip/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/net/jcip
+@dirrm %%APP_HOME%%/modules/system/layers/base/net
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/codemodel/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/codemodel
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xsom/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xsom
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/1.2
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/istack/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/istack
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun/xml
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/sun
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/h2database/h2
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/h2database
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/google/guava/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/google/guava
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/google
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/github/relaxng
+@dirrm %%APP_HOME%%/modules/system/layers/base/com/github
+@dirrm %%APP_HOME%%/modules/system/layers/base/com
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun/jdk/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun/jdk
+@dirrm %%APP_HOME%%/modules/system/layers/base/sun
+@dirrm %%APP_HOME%%/modules/system/layers/base/ibm/jdk/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/ibm/jdk
+@dirrm %%APP_HOME%%/modules/system/layers/base/ibm
+@dirrm %%APP_HOME%%/modules/system/layers/base/asm/asm/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/asm/asm
+@dirrm %%APP_HOME%%/modules/system/layers/base/asm
+@dirrm %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n
+@dirrm %%APP_HOME%%/modules/system/layers/base/ch/qos
+@dirrm %%APP_HOME%%/modules/system/layers/base/ch
+@dirrm %%APP_HOME%%/modules/system/layers/base/javaee/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javaee/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javaee
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/inject/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/inject/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/inject
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/rmi/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/rmi/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/rmi
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jws/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jws/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jws
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/mail/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/mail/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/mail
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/faces/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/faces/api/1.2
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/faces/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/faces
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/persistence/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/persistence
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/resource/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/resource/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/resource
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ws/rs
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ws
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/management
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/annotation/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/annotation/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/annotation
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/el/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/el/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/el
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/servlet
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise/deploy/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise/deploy/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise/deploy
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/enterprise
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/stream
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/soap
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/registry/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/registry/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/registry
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/ws
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/bind
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/jaxp-provider/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml/jaxp-provider
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/xml
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/transaction/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/transaction
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/interceptor/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/interceptor/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/interceptor
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jms/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jms/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/jms
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/activation/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/activation/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/activation
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/validation/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/validation/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/validation
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ejb/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/ejb
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/auth
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api/main
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security/jacc
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax/security
+@dirrm %%APP_HOME%%/modules/system/layers/base/javax
+@dirrm %%APP_HOME%%/modules/system/layers/base
+@dirrm %%APP_HOME%%/modules/system/layers
+@dirrm %%APP_HOME%%/modules/system
+@dirrm %%APP_HOME%%/modules
+@dirrm %%APP_HOME%%/standalone/lib/ext
+@dirrm %%APP_HOME%%/standalone/lib
+@dirrm %%APP_HOME%%/standalone/configuration
+@dirrm %%APP_HOME%%/standalone/deployments
+@dirrm %%APP_HOME%%/standalone/tmp/auth
+@dirrm %%APP_HOME%%/standalone/tmp
+@dirrm %%APP_HOME%%/standalone
+@dirrm %%APP_HOME%%/bundles/system/layers/base/javax/servlet/api/v25
+@dirrm %%APP_HOME%%/bundles/system/layers/base/javax/servlet/api
+@dirrm %%APP_HOME%%/bundles/system/layers/base/javax/servlet
+@dirrm %%APP_HOME%%/bundles/system/layers/base/javax
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/projectodd/stilts/main
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/projectodd/stilts
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/projectodd
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache/felix/configadmin/main
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache/felix/configadmin
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache/felix/log/main
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache/felix/log
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache/felix
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/apache
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/osgi/logging/main
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/osgi/logging
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/osgi
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/as/osgi/configadmin/main
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/as/osgi/configadmin
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/as/osgi
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss/as
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org/jboss
+@dirrm %%APP_HOME%%/bundles/system/layers/base/org
+@dirrm %%APP_HOME%%/bundles/system/layers/base
+@dirrm %%APP_HOME%%/bundles/system/layers
+@dirrm %%APP_HOME%%/bundles/system
+@dirrm %%APP_HOME%%/bundles
+@dirrm %%APP_HOME%%/docs/examples/configs
+@dirrm %%APP_HOME%%/docs/examples
+@dirrm %%APP_HOME%%/docs/schema
+@dirrm %%APP_HOME%%/docs
+@dirrm %%APP_HOME%%
