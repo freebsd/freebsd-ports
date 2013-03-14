@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-DISTVERSION=	1.9.80
+DISTVERSION=	2.0.0
 CATEGORIES=	audio kde
-MASTER_SITES=	http://dl.dropbox.com/u/29089012/
+MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
+DISTNAME=	29024-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia
@@ -18,7 +21,7 @@ USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkcddb
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_MULTI=	CODEC FILTER REPLAYGAIN
 OPTIONS_MULTI_CODEC=	AFTEN FAAC FFMPEG FLAC FLAKE FLUIDSYNTH LAME MAC MPLAYER \
@@ -47,7 +50,7 @@ VORBISGAIN_DESC=	Ogg Vorbis audio replaygain
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAFTEN}
-RUN_DEPENDS+=	AFTEN:${PORTSDIR}/audio/AFTEN
+RUN_DEPENDS+=	aften:${PORTSDIR}/audio/aften
 PLIST_SUB+=	AFTEN=""
 .else
 SK_CMAKE_RM+=	codec_aften
@@ -87,8 +90,8 @@ SK_CMAKE_RM+=	codec_flac replaygain_metaflac
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MFLAKE} && defined(NOT_IMPLEMENTED)
-RUN_DEPENDS+=	flake:${PORTSDIR}/flake
+.if ${PORT_OPTIONS:MFLAKE}
+RUN_DEPENDS+=	flake:${PORTSDIR}/audio/flake
 PLIST_SUB+=	FLAKE=""
 .else
 SK_CMAKE_RM+=	codec_flake
@@ -109,6 +112,14 @@ PLIST_SUB+=	LAME=""
 .else
 SK_CMAKE_RM+=	codec_lame
 PLIST_SUB+=	LAME="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLIBAV} && defined(NOT_IMPLEMENTED)
+RUN_DEPENDS+=	avconv:${PORTSDIR}/audio/libav
+PLIST_SUB+=	LIBAV=""
+.else
+SK_CMAKE_RM+=	codec_libav
+PLIST_SUB+=	LIBAV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMAC}
@@ -144,7 +155,7 @@ PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEROAAC}
-RUN_DEPENDS+=	neroAacEnc:${PORTSDIR}/linux-neroaaccodec
+RUN_DEPENDS+=	neroAacEnc:${PORTSDIR}/audio/linux-neroaaccodec
 PLIST_SUB+=	NEROAAC=""
 .else
 SK_CMAKE_RM+=	codec_neroaac
