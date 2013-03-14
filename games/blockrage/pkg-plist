@@ -1,0 +1,56 @@
+bin/blockrage
+%%DATADIR%%/blockrage
+%%DATADIR%%/blockrage-fhs.rc
+%%DATADIR%%/blockrage.cfg
+%%DATADIR%%/blockrage.rc
+%%DATADIR%%/data/test/dataset.cfg
+%%DATADIR%%/data/test/fonth.pcx
+%%DATADIR%%/data/test/fonth.txt
+%%DATADIR%%/data/test/fontn.pcx
+%%DATADIR%%/data/test/fontn.txt
+%%DATADIR%%/data/test/g1p.pcx
+%%DATADIR%%/data/test/g2p.pcx
+%%DATADIR%%/data/test/game.col
+%%DATADIR%%/data/test/logo.pcx
+%%DATADIR%%/data/test/menu.pcx
+%%DATADIR%%/data/test/pa0.pcx
+%%DATADIR%%/data/test/pa1.pcx
+%%DATADIR%%/data/test/pa2.pcx
+%%DATADIR%%/data/test/pa3.pcx
+%%DATADIR%%/data/test/pmenu.pcx
+%%DATADIR%%/data/test/s00p1.pcx
+%%DATADIR%%/data/test/s00p1.txt
+%%DATADIR%%/data/test/s00p2.pcx
+%%DATADIR%%/data/test/s00p2.txt
+%%DATADIR%%/data/test/s00p3.pcx
+%%DATADIR%%/data/test/s00p3.txt
+%%DATADIR%%/data/test/s00p4.pcx
+%%DATADIR%%/data/test/s00p4.txt
+%%DATADIR%%/data/test/s00p5.pcx
+%%DATADIR%%/data/test/s00p5.txt
+%%DATADIR%%/data/test/s00p6.pcx
+%%DATADIR%%/data/test/s00p6.txt
+%%DATADIR%%/data/test/sfx0.snd
+%%DATADIR%%/data/test/sfx1.snd
+%%DATADIR%%/data/test/sfx2.snd
+share/icons/hicolor/32x32/apps/blockrage.png
+share/icons/hicolor/48x48/apps/blockrage.png
+share/icons/hicolor/64x64/apps/blockrage.png
+share/icons/hicolor/72x72/apps/blockrage.png
+share/icons/hicolor/96x96/apps/blockrage.png
+share/pixmaps/blockrage.png
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm %%DATADIR%%/data/test
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
