@@ -2,6 +2,7 @@
 
 PORTNAME=	fossil
 PORTVERSION=	20130216000435
+POREREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
