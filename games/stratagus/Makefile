@@ -1,86 +1,81 @@
-# New ports collection makefile for:	stratagus
-# Date created:			30 Jun 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stratagus
-PORTVERSION=	2.2.5.5
-PORTREVISION=	3
+PORTVERSION=	2.2.7
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/59493540/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.orig.tar.gz
+MASTER_SITES=	http://launchpadlibrarian.net/113005346/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
-MNG_DESC=	Enable MNG support
 
-LICENSE=	GPLv2
-USE_GCC=	4.6+
-USE_LUA=	5.0+
+USE_GL=		glu
 USE_SDL=	sdl
-USE_GL=		gl
-USE_AUTOTOOLS=	aclocal autoheader autoconf
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-extra-includes=${LUA_INCDIR} \
-		--with-extra-includes=${LOCALBASE}/include/libpng15 \
-		--with-extra-libs=${LUA_LIBDIR} \
-		--without-gles
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_JOBS_UNSAFE=	yes
+USE_SQLITE=	3
+USE_LUA=	5.0+
+LUA_COMPS=	toluaxx
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=	yes
+CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
+		-DTOLUA++_APP:STRING="${TOLUAXX_CMD}" \
+		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \
+		-DTOLUA++_LIBRARY:STRING="${LUA_LIBDIR}/libtolua++.so"
+MAKE_JOBS_SAFE=	yes
 
+MAN6=		stratagus.6
 PORTDOCS=	*
-PLIST_FILES=	bin/stratagus
+PLIST_FILES=	bin/png2stratagus bin/stratagus sbin/metaserver
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-CONFIGURE_ARGS+=--with-mikmod
+LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
+CMAKE_ARGS+=	-DWITH_MIKMOD:BOOL=ON
 .else
-CONFIGURE_ARGS+=--without-mikmod
+CMAKE_ARGS+=	-DWITH_MIKMOD:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MMNG}
-LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
-CONFIGURE_ARGS+=--with-mng
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+CMAKE_ARGS+=	-DWITH_MNG:BOOL=ON
 .else
-CONFIGURE_ARGS+=--without-mng
+CMAKE_ARGS+=	-DWITH_MNG:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=--with-theora
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
+CMAKE_ARGS+=	-DWITH_THEORA:BOOL=ON
 .else
-CONFIGURE_ARGS+=--without-theora
+CMAKE_ARGS+=	-DWITH_THEORA:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--with-vorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+CMAKE_ARGS+=	-DWITH_OGGVORBIS:BOOL=ON
 .else
-CONFIGURE_ARGS+=--without-vorbis
+CMAKE_ARGS+=	-DWITH_OGGVORBIS:BOOL=OFF
 .endif
 
-pre-configure:
-	@(cd ${WRKSRC}; ./autogen.sh)
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stratagus ${PREFIX}/bin
+post-install:
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} stratagus.6 ${MAN6PREFIX}/man/man6)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} [a-z]*.html *.txt ${DOCSDIR})
+	@${MKDIR} ${DOCSDIR}/graphics
+	(cd ${WRKSRC}/doc/graphics && ${INSTALL_DATA} * ${DOCSDIR}/graphics)
+	@${MKDIR} ${DOCSDIR}/scripts
+	(cd ${WRKSRC}/doc/scripts && ${INSTALL_DATA} * ${DOCSDIR}/scripts)
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
+.endif
 
 .include <bsd.port.mk>
