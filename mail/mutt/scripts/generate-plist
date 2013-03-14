@@ -30,7 +30,7 @@ bin/pgpring
 bin/smime_keys
 EOF
 
-if [ "$MUTT_NLS" = "yes" ]; then
+if [ "$NLS" = "yes" ]; then
   cat >> $tmp_first <<EOF
 share/locale/bg/LC_MESSAGES/mutt.mo
 share/locale/ca/LC_MESSAGES/mutt.mo
@@ -64,7 +64,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 EOF
 fi
 
-if [ "$MUTT_PORTDOCS" = "yes" ]; then
+if [ "$PORTDOCS" = "yes" ]; then
   cat >> $tmp_first <<EOF
 %%DOCSDIR%%/ABOUT-NLS
 %%DOCSDIR%%/COPYRIGHT
@@ -119,11 +119,11 @@ if [ "$MUTT_PORTDOCS" = "yes" ]; then
 %%EXAMPLESDIR%%/iconv/iconv.solaris-2.7.rc
 EOF
 
-  if [ "$MUTT_NNTP" = "yes" ]; then
+  if [ "$NNTP" = "yes" ]; then
     echo "%%DOCSDIR%%/ChangeLog.nntp" >> $tmp_first
   fi
 
-  if [ "$MUTT_HTML" = "yes" ]; then
+  if [ "$HTML" = "yes" ]; then
     echo "%%DOCSDIR%%/html/advancedusage.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/configuration.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/gettingstarted.html" >> $tmp_first
@@ -136,7 +136,7 @@ EOF
     echo "%%DOCSDIR%%/html/reference.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/security.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/tuning.html" >> $tmp_first
-    if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
+    if [ "$COMPRESSED_FOLDERS" = "yes" ]; then
       echo "%%DOCSDIR%%/html/compressed-folders.html" >> $tmp_first
     fi
     echo "@dirrm %%DOCSDIR%%/html" >> $tmp_last
