@@ -1,4 +1,0 @@
-bin/vmware-toolbox
-etc/XF86Config-4_VMware
-lib/modules/drivers/vmware_drv.o_VMware
-lib/modules/input/vmmouse_drv.o_VMware

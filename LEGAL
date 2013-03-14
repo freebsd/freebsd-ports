@@ -439,10 +439,6 @@ vdesk-*			x11/vdesk		Distributed without license
 vice-*			emulators/vice		ROMs are copyrighted by
 						Commodore Business Machines
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
-vmware-freebsd-tools.*	emulators/vmware-guestd4	Not sure if we can
-						redistribute this
-vmware-linux-tools.*	emulators/linux-vmware-toolbox4	Not sure if we can
-						redistribute this
 vpnc-*			security/vpnc		Redistribution is not allowed
 						if liked against OpenSSL
 VTK-*			math/vtk		Portions contain patented

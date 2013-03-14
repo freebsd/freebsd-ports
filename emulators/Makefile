@@ -78,9 +78,6 @@
     SUBDIR += linux-pete-mesagpu
     SUBDIR += linux-pete-xgl2gpu
     SUBDIR += linux-systemsimcell
-    SUBDIR += linux-vmware-toolbox4
-    SUBDIR += linux-vmware-toolbox5
-    SUBDIR += linux-vmware-toolbox6
     SUBDIR += linux-xjoypad
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
@@ -181,12 +178,6 @@
     SUBDIR += vmips
     SUBDIR += vmsbackup
     SUBDIR += vmw
-    SUBDIR += vmware-guestd4
-    SUBDIR += vmware-guestd5
-    SUBDIR += vmware-guestd6
-    SUBDIR += vmware-tools4
-    SUBDIR += vmware-tools5
-    SUBDIR += vmware-tools6
     SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += wine-devel

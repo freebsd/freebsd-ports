@@ -1,9 +1,0 @@
-bin/vmware-toolbox
-%%INSTALLXTCLTOOL%%bin/vmware-toolbox-tcl
-%%INSTALLXGTKTOOL%%bin/vmware-toolbox-gtk
-%%INSTALLXSERVER4%%etc/XF86Config-4_VMware
-%%INSTALLXMODULES%%lib/modules/drivers/vmware_drv.o_VMware
-%%INSTALLXMODULES%%lib/modules/input/vmmouse_drv.o_VMware
-@dirrmtry lib/modules/drivers
-@dirrmtry lib/modules/input
-@unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
