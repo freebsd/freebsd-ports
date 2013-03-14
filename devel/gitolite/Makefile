@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitolite
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
