@@ -1,6 +1,6 @@
 --- contrib/slapd-modules/smbk5pwd/Makefile.orig	2013-03-03 13:17:30.000000000 -0800
-+++ contrib/slapd-modules/smbk5pwd/Makefile	2013-03-11 15:58:44.155103784 -0700
-@@ -24,17 +24,16 @@
++++ contrib/slapd-modules/smbk5pwd/Makefile	2013-03-14 10:54:56.917578861 -0700
+@@ -24,13 +24,12 @@
  HEIMDAL_INC = -I/usr/heimdal/include
  HEIMDAL_LIB = -L/usr/heimdal/lib -lkrb5 -lkadm5srv
  
@@ -15,8 +15,3 @@
  
  PROGRAMS = smbk5pwd.la
  LTVER = 0:0:0
--
-+	-rpath $(PREFIX)/libexec/openldap -module -o $@ $? $(LIBS)
- prefix=/usr/local
- exec_prefix=$(prefix)
- ldap_subdir=/openldap
