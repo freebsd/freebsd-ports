@@ -43,6 +43,8 @@ post-patch:
 		-e "/FIND_PACKAGE( Check )/d" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s|/usr/local/share/swig1.3|${SWIG_DATADIR}/${SWIG_VER}|g" \
 		${WRKSRC}/cmake/modules/FindSWIG.cmake
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/opensync/common/opensync_list.c
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
