@@ -1,6 +1,5 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Thunar
 PORTVERSION=	1.6.2

@@ -1,13 +1,9 @@
-# New ports collection makefile for:	dvdstyler
-# Date created:		2004-07-30
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdstyler
 DISTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}

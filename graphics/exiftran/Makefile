@@ -1,13 +1,10 @@
-# New ports collection makefile for:	exiftran
-# Date created:				June 03 2011
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exiftran
 DISTNAME=	fbida-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 PORTVERSION=	2.09
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 

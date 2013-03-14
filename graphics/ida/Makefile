@@ -3,7 +3,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.09
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}

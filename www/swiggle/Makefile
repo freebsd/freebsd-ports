@@ -1,12 +1,9 @@
-# New ports collection Makefile for: 	swiggle
-# Date created:				19 Feb 2003
-# Whom:					Josef El-Rayes <j.el-rayes@daemon.li>
-#
+# Created by: Josef El-Rayes <j.el-rayes@daemon.li>
 # $FreeBSD$
 
 PORTNAME=	swiggle
 PORTVERSION=	0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
