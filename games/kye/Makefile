@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	games python
 MASTER_SITES=	http://games.moria.org.uk/kye/download/ \
 		SF/nemysisfreebsdp/kye/:nemysis
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # Selection of production-ready/well-known Kye Levels
 # (Zipped levels already included from games.moria.org.uk are excluded)
 # Please contact the maintainer if a Level is missing
