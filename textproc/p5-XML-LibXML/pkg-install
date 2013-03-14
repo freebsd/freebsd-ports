@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ "$2" = "XPOST-INSTALL" ]; then
+if [ "X$2" = "XPOST-INSTALL" ]; then
 	perl -MXML::SAX -e "XML::SAX->add_parser('XML::LibXML::SAX'.\$_)->save_parsers()"
+	perl -MXML::SAX -e "XML::SAX->add_parser('XML::LibXML::SAX::Parser'.\$_)->save_parsers()"
 elif [ "X$2" = "XDEINSTALL" ]; then
 	perl -MXML::SAX -e "XML::SAX->remove_parser('XML::LibXML::SAX'.\$_)->save_parsers()"
+	perl -MXML::SAX -e "XML::SAX->remove_parser('XML::LibXML::SAX::Parser'.\$_)->save_parsers()"
 fi

@@ -1,12 +1,9 @@
-# New ports collection makefile for:	XML::LibXML
-# Date created:		28 May 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-LibXML
 PORTVERSION=	2.0004
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -46,8 +43,5 @@ MAN3=		XML::LibXML.3 XML::LibXML::AttributeHash.3 \
 		XML::LibXML::XPathContext.3 \
 		XML::LibXML::XPathExpression.3 \
 		XML::LibXML::Common.3 XML::LibXML::RegExp.3
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
