@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	1
