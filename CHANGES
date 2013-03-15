@@ -11,6 +11,17 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20130315:
+AUTHOR: bdrewery@FreeBSD.org
+
+ * USE_QMAIL_RUN, USE_QMAIL_BUILD and WANT_QMAIL have been removed
+   and converted into the qmail USE feature
+
+   USES= qmail:run will add qmail into RUN_DEPENDS
+   USES= qmail:build will add qmail into BUILD_DEPENDS
+   USES= qmail[:both] will add qmail into both RUN and BUILD DEPENDS
+   USES= qmail:vars will set QMAIL_PREFIX
+
+20130315:
 AUTHOR: bapt@FreeBSD.org
 
   * Add new Keywords directory and first info.yaml keyword (@info).
