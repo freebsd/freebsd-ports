@@ -1527,6 +1527,15 @@ CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 WWWOWN?=	www
 WWWGRP?=	www
 
+# Loading features
+.for f in ${USES}
+_f=${f:C/\:.*//g}
+.if ${_f} != ${f}
+${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+.endif
+.include "${USESDIR}/${_f}.mk"
+.endfor
+
 .endif
 # End of pre-makefile section.
 
@@ -1540,15 +1549,6 @@ check-makefile::
 .endif
 
 _POSTMKINCLUDED=	yes
-
-# Loading features
-.for f in ${USES}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
-.endif
-.include "${USESDIR}/${_f}.mk"
-.endfor
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
