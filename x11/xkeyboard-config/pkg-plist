@@ -402,3 +402,4 @@ share/X11/xkb/types/pc
 @dirrmtry share/X11
 @cwd /
 @dirrmtry var/lib/xkb
+@dirrmtry var/lib
