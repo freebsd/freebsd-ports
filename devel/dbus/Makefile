@@ -54,12 +54,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/dbus/dbus-sysdeps-unix.c
 	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
+		${WRKSRC}/doc/dbus-uuidgen.1 \
 		${WRKSRC}/dbus/Makefile.in \
 		${WRKSRC}/tools/Makefile.in
 	@${REINPLACE_CMD} '/^SUBDIRS/,/^$$/ s|test||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|THREAD_LIBS -lrt|THREAD_LIBS|g ; \
 		s|dummy man2html|dummy man2html_disable|g' \
 			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|install-data-am: install-data-local|install-data-am:|g' \
+		${WRKSRC}/tools/Makefile.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
