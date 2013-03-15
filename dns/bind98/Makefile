@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--enable-rpz-nsdname
 .endif
 
 .if ${PORT_OPTIONS:MRPZRRL_PATCH}
-PATCHFILES=		rpz+rl-9.8.4-P1.patch
+PATCHFILES=		9.8.4-rpz+rl.072.23-P1.patch
 PATCH_SITES=		http://ss.vix.com/~vjs/
 .endif
 
