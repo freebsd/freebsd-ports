@@ -282,6 +282,12 @@ Note:  Please add new entries to the beginning of this file.
         <range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
         <range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
       </package>
+      <package>
+        <name>perl-threaded</name>
+        <range><lt>5.12.4_5</lt></range>
+        <range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
+        <range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
