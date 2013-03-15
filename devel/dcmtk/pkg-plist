@@ -614,30 +614,10 @@ lib/libofstd.so.%%SHLIBVER%%
 %%DATADIR%%/wlistqry/wlistqry7.dump
 %%DATADIR%%/wlistqry/wlistqry8.dump
 %%DATADIR%%/wlistqry/wlistqry9.dump
-%%DOCSDIR%%/config.txt
-%%DOCSDIR%%/envvars.txt
-%%DOCSDIR%%/modules.txt
-%%DOCSDIR%%/dirstruc.txt
-%%DOCSDIR%%/macros.txt
-%%DOCSDIR%%/datadict.txt
-%%DOCSDIR%%/ciphers.txt
-%%DOCSDIR%%/randseed.txt
-%%DOCSDIR%%/asconfig.txt
-%%DOCSDIR%%/testing.txt
-%%DOCSDIR%%/dcmqrcnf.txt
-%%DOCSDIR%%/dcmqrset.txt
-%%DOCSDIR%%/wwwapp.txt
-%%DOCSDIR%%/ANNOUNCE.360
-%%DOCSDIR%%/CHANGES.360
-%%DOCSDIR%%/COPYRIGHT
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/HISTORY
-%%DOCSDIR%%/VERSION
 @dirrm %%DATADIR%%/wlistdb/OFFIS
 @dirrm %%DATADIR%%/wlistqry
 @dirrm %%DATADIR%%/wlistdb
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 @dirrm etc/dcmtk
 @dirrm bin/dcmtk
