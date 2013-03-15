@@ -33,6 +33,8 @@ DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
 
+CONFLICTS_BUILD=	qt-3.* qt-copy-3.*
+
 # Let configure handle its well known compilers defined in the mkspecs
 # (i.e. `cc` and `c++` are not supported by configure tests).
 CONFIGURE_ENV+=	CC="" CXX=""
