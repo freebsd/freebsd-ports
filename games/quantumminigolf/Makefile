@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quantumminigolf
-# Date created:		13 Sep 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	quantumminigolf
 PORTVERSION=	1.1.1
@@ -20,7 +16,6 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 
 USE_GMAKE=	yes
 USE_SDL=	sdl ttf
-MAKE_ARGS=	CXX=${CXX}
 
 PORTDOCS=	README THANKS
 
@@ -31,11 +26,12 @@ DESKTOP_ENTRIES="Quantum Minigolf" \
 		"Game;ArcadeGame;" \
 		false
 
-OPTIONS=	OCFLAGS	"Use optimized compiler flags" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OCFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CXXFLAGS+=	-O3 -fomit-frame-pointer -finline-functions -funroll-all-loops
 .	if ${ARCH} == "i386"
 CXXFLAGS+=	-malign-double
@@ -56,11 +52,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tracks/*.bmp ${WRKSRC}/tracks/*.cfg \
 		${DATADIR}/tracks
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
