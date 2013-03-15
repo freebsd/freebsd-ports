@@ -17,6 +17,8 @@ GMP_DESC=	PHP GMP extension support
 
 LATEST_LINK=	pear-${PORTNAME}
 
+PEAR_AUTOINSTALL=	yes
+
 .include <bsd.port.options.mk>
 
 .for opt in BCMATH GMP
@@ -24,14 +26,6 @@ LATEST_LINK=	pear-${PORTNAME}
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
-
-CATEGORY=	Crypt
-FILES=		RSA.php RSA/ErrorHandler.php RSA/Key.php RSA/KeyPair.php \
-		RSA/MathLoader.php RSA/Math/BCMath.php RSA/Math/BigInt.php \
-		RSA/Math/GMP.php
-DOCS=		CREDITS LICENSE Crypt_RSA.txt math_wrappers.txt
-EXAMPLES=	web_interface.php
-TESTS=		test1.php test2.php bench.php
 
 post-extract:
 	@${MV} ${WRKSRC}/CREDITS ${WRKSRC}/docs
