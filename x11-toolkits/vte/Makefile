@@ -4,7 +4,7 @@
 
 PORTNAME=	vte
 PORTVERSION=	0.26.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,18 +30,21 @@ CONFIGURE_ARGS?=--disable-python \
 		--disable-freetypetest
 
 .if !defined(MASTERDIR)
-OPTIONS=	GLX	"Enable support for DRI/GLX rendering" off
+OPTIONS_DEFINE=	GLX
+GLX_DESC=	Support for DRI/GLX rendering
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGLX} && !defined(MASTERDIR)
+CONFIGURE_ARGS+=	--with-glX
+USE_GL=			yes
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900007
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
-.endif
-
-.if defined(WITH_GLX) && !defined(MASTERDIR)
-CONFIGURE_ARGS+=	--with-glX
-USE_GL=			yes
 .endif
 
 .include <bsd.port.post.mk>
