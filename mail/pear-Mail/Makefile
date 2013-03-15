@@ -10,11 +10,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class that provides multiple interfaces for sending emails
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
-		Mail/smtp.php Mail/RFC822.php
-TESTS=		rfc822.phpt smtp_error.phpt
+PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS_DEFINE=	PEAR_NET_SMTP
