@@ -1,13 +1,9 @@
-# New ports collection makefile for:	XML::SAX::Expat
-# Date created:		19 Nov 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAX-Expat
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,11 +22,5 @@ MAN3=		XML::SAX::Expat.3
 
 post-patch:
 		@${PERL} -pi -e "s/(?<=XML::SAX::Base          => ')1\.00(?=')/0.25/;" ${WRKSRC}/Makefile.PL
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${PERL} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
