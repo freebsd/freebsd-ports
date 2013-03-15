@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hawkvoice
-# Date created:		2006-03-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	hawkvoice
 PORTVERSION=	0.91
@@ -27,27 +23,27 @@ MAKE_ENV=	MAKE="${GMAKE}"
 
 WRKSRC=	${WRKDIR}/HawkVoiceDI/src
 
-OPTIONS=	OPTIMIZATION	"Enable optimization"	off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if defined(WITH_OPTIMIZATION)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_REENTRANT
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' "{}" \;
+	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' "{}" \;
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in api.txt HVDIchanges.txt readme.txt cryptapi.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
