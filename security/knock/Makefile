@@ -21,8 +21,8 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	CLIENT SERVER
-OPTIONS_DEFAULT=	CLIENT SERVER
+OPTIONS_SINGLE=	SG1
+OPTIONS_SINGLE_SG1=	CLIENT SERVER
 
 .include <bsd.port.options.mk>
 
@@ -39,11 +39,6 @@ PLIST_FILES+=	etc/knockd.conf.sample
 .if ${PORT_OPTIONS:MCLIENT}
 MAN1+=		knock.1
 PLIST_FILES+=	bin/knock
-.endif
-
-pre-configure:
-.if ${PORT_OPTIONS:MSERVER} && ${PORT_OPTIONS:MCLIENT}
-IGNORE=		at least one component must be selected for installation
 .endif
 
 post-patch:
