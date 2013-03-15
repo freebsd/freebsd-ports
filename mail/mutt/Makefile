@@ -97,7 +97,7 @@ SIGNATURE_MENU_DESC=	Signature menu
 SLANG_DESC=	SLANG support
 SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
 SMTP_DESC=	SMTP relay support
-TOKYOCABINET=	Use tokyocabinet instead of Berkley DB
+TOKYOCABINET_DESC=	Use tokyocabinet instead of Berkley DB
 TRASH_PATCH_DESC=	Trash folder support
 XML_DESC=	Use XML tools for building documentation
 
