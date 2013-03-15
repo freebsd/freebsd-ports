@@ -26,6 +26,8 @@ COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
 
+USES+=			bison
+
 .if defined(WITH_OPTIONS) || defined(WITH_BASH_OPTIONS)
 .include "${.CURDIR}/../bash/options"
 .endif
@@ -45,7 +47,6 @@ INFO=			bash
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
-USES+=			bison
 
 .if !defined(NOPORTDOCS)
 .if !defined(WITH_INCLUDED_FAQ)
