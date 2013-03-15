@@ -3,6 +3,7 @@
 
 PORTNAME=	Mail_Mime
 PORTVERSION=	1.8.6
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
@@ -15,9 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 PEAR_AUTOINSTALL=	yes
-
-post-extract:
-	${MV} ${WRKSRC}/scripts/phail.php ${WRKSRC}/pear-phail.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
