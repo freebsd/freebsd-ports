@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A wrapper for AT&T Graphviz
 
-LICENSE=	ART10
+LICENSE=	ART20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Algorithm-Dependency>=1.110:${PORTSDIR}/devel/p5-Algorithm-Dependency \
@@ -37,7 +37,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
 		p5-XML-Tiny>=2.06:${PORTSDIR}/textproc/p5-XML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.44:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -57,15 +57,6 @@ MAN3=		GraphViz2.3 \
 		GraphViz2::Utils.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.if ${PERL_LEVEL} < 501200
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
-.endif
 
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
