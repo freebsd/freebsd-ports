@@ -1,9 +1,5 @@
-# New ports collection makefile for:	skencil
-# Date created:		04 November 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	skencil
 PORTVERSION=	1.0.a784
@@ -11,8 +7,10 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_rev/}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interactive drawing program
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Interactive drawing program
+
+LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
@@ -37,7 +35,9 @@ PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}alpha-py${PYTHON_VER}.egg-info
 CFLAGS+=	-I${TK_INCLUDEDIR} -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	 @${REINPLACE_CMD} -e \
@@ -49,9 +49,9 @@ post-patch:
 		 s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
