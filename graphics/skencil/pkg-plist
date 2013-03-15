@@ -653,9 +653,9 @@ bin/skencil
 %%PYTHON_SITELIBDIR%%/skencil/__init__.pyc
 %%PYTHON_SITELIBDIR%%/skencil/__init__.pyo
 share/applications/skencil.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/pixmaps/skencil.png
 share/pixmaps/skencil.xpm
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/UI
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/Scripting
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/Modules
@@ -697,5 +697,5 @@ share/pixmaps/skencil.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Plugins/Filters
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Plugins
 @dirrm %%PYTHON_SITELIBDIR%%/skencil
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
