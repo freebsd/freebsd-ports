@@ -322,10 +322,6 @@
     SUBDIR += xymon-server
     SUBDIR += yabm
     SUBDIR += yaf
-    SUBDIR += zabbix-agent
-    SUBDIR += zabbix-frontend
-    SUBDIR += zabbix-proxy
-    SUBDIR += zabbix-server
     SUBDIR += zabbix2-agent
     SUBDIR += zabbix2-frontend
     SUBDIR += zabbix2-proxy
