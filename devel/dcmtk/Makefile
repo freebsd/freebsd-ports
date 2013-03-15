@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	dcmtk
-# Date created:				26 July 2010
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	dcmtk
 DISTVERSION=	3.6.0
@@ -14,14 +10,15 @@ MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNA
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A toolkit to work with DICOM files
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
     		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
+CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg8 ijg12 \
@@ -29,6 +26,8 @@ SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 
 SHLIBVER=	${PORTVERSION:R:R}
 PLIST_SUB=	SHLIBVER=${SHLIBVER}
+
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +37,10 @@ CFLAGS+=	-fPIC
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.h.orig" -delete
+.if !${PORT_OPTIONS:MDOCS}
+	${FIND} ${WRKSRC} -name CMakeLists.txt | ${XARGS} \
+	    ${REINPLACE_CMD} -e '/INSTALL_DOCDIR/d'
+.endif
 
 post-install:
 .for shlib in ${SHLIBS}
