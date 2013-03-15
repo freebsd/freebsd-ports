@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Event_Dispatcher
-# Date created:			  15 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Event_Dispatcher
 PORTVERSION=	1.1.0
@@ -13,12 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		Event/Dispatcher.php Event/Notification.php
-EXAMPLES=	bubbling.php cancel.php debugging.php notification-class.php \
-		object.php
-TESTS=		AllTests.php DispatcherTest.php
+PEAR_AUTOINSTALL=	yes
 
 post-extract:
 .for file in ${FILES}
