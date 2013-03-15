@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2013-03-14 02:07:26.000000000 +0100
++++ ./Makefile	2013-03-15 15:56:06.800175465 +0100
+@@ -19,7 +19,7 @@
+ SRCS+=	arrows.c buttons.c dlg_keys.c help.c inputstr.c mouse.c mousewget.c \
+ 	textbox.c rc.c trace.c ui_getc.c util.c version.c
+ .else
+-LDADD+=	-ldialog
++LDADD+=	-ldialog -lm
+ .endif
+ 
+ .include <bsd.prog.mk>
