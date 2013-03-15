@@ -1105,8 +1105,6 @@ share/locale/uk/LC_MESSAGES/FontForge.mo
 share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
-@dirrmtry share/locale/mal/LC_MESSAGES
-@dirrmtry share/locale/mal
 @dirrm %%DATADIR%%/python
 %%NO_PLUGINS%%@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps

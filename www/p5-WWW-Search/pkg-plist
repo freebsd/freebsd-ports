@@ -12,7 +12,6 @@ bin/WebSearch
 %%SITE_PERL%%/WWW/SearchResult.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Search/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/Search/Null
 @dirrmtry %%SITE_PERL%%/WWW/Search
