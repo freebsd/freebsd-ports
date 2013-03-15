@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Console_Color
-# Date created:			  27 December 2006
-# Whom:				  Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Console_Color
 PORTVERSION=	1.0.3
@@ -13,11 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR use ANSI console colors
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	Console
-FILES=		Color.php
-EXAMPLES=	color_example.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
