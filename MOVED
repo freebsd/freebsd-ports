@@ -4164,3 +4164,7 @@ emulators/vmware-guestd6||2013-03-14|Has expired: No more supported upstream
 emulators/linux-vmware-toolbox4||2013-03-14|Has expired: No more supported upstream
 emulators/linux-vmware-toolbox5||2013-03-14|Has expired: No more supported upstream
 emulators/vmware-guestd5||2013-03-14|Has expired: No more supported upstream
+net-mgmt/zabbix-agent|net-mgmt/zabbix2-agent|2013-03-15|Has expired: no longer supported by upstream
+net-mgmt/zabbix-frontend|net-mgmt/zabbix2-frontend|2013-03-15|Has expired: no longer supported by upstream
+net-mgmt/zabbix-proxy|net-mgmt/zabbix2-proxy|2013-03-15|Has expired: no longer supported by upstream
+net-mgmt/zabbix-server|net-mgmt/zabbix2-server|2013-03-15|Has expired: no longer supported by upstream
