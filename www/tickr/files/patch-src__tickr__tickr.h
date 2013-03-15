@@ -6,7 +6,7 @@
  #ifndef G_OS_WIN32
 -# define INSTALL_PATH		"/usr/share/"APP_CMD
 -# define IMAGES_PATH		INSTALL_PATH"/pixmaps"
-+# define INSTALL_PATH		"%%PREFIX%%/share/"
++# define INSTALL_PATH		"%%PREFIX%%/share"
 +# define IMAGES_PATH		INSTALL_PATH"/pixmaps/"APP_CMD
  #else
  # define IMAGES_PATH		APP_NAME	/* actually not a path but a dir name */
