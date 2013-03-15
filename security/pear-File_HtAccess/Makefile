@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-File_HtAccess
-# Date created:			  08 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	File_HtAccess
 PORTVERSION=	1.2.1
@@ -13,10 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to manipulate .htaccess files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	File
-FILES=		HtAccess.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
