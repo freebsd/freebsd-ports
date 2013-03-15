@@ -36,7 +36,7 @@ CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}" \
 		AUTOCONF=true ACLOCAL=true AUTOMAKE=true AUTOHEADER=true
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
-		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp \
+		--enable-tcpserver-file=${VPOPMAIL_DIR}/etc/tcp.smtp \
 		--enable-non-root-build \
 		--enable-vpopuser=${USERS} \
 		--enable-vpopgroup=${GROUPS}
@@ -186,7 +186,7 @@ PORT_OPTIONS+=	SQL_LOG_TRIM
 #                 e - log errors, p - log passwords in errors,
 #		  v - verbose success and errors with passwords
 # QMAIL_PREFIX  - location of qmail directory
-# PREFIX	- installation area for vpopmail (see comment below)
+# VPOPMAIL_DIR	- installation area for vpopmail (see comment below)
 #
 #
 RELAYCLEAR?=	30
@@ -194,9 +194,10 @@ SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
 MAILDROP_PORT?=	mail/maildrop
 WITH_COURIER_IMAPLOGIN?=	${LOCALBASE}/sbin/imaplogin
-WITH_VPOPMAIL_AUTHVCHKPW?=	${PREFIX}/vpopmail/bin/authvchkpw
+WITH_VPOPMAIL_AUTHVCHKPW?=	${VPOPMAIL_DIR}/bin/authvchkpw
 WITH_COURIER_IMAPD?=		${LOCALBASE}/bin/imapd
 WITH_ORACLE_PROC?=	proc
+VPOPMAIL_DIR?=			${PREFIX}/vpopmail
 
 # Uncomment this, or set PREFIX to /home if you have an existing
 # vpopmail install with the vpopmail users' home directory set to
@@ -250,14 +251,14 @@ BROKEN_MYSQL_PARAMS=	true
 BROKEN_MYSQL_PARAMS=	true
 .endif
 .if defined(BROKEN_MYSQL_PARAMS)
-BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/vpopmail.mysql file instead
+BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${VPOPMAIL_DIR}/etc/vpopmail.mysql file instead
 .endif
 .else
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(DEFAULT_DOMAIN)
-BROKEN=	The default vpopmail domain is no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/defaultdomain file instead
+BROKEN=	The default vpopmail domain is no longer setup at compile time - please edit the ${VPOPMAIL_DIR}/etc/defaultdomain file instead
 .endif
 
 .if defined(WITH_APOP)
@@ -461,38 +462,38 @@ pre-configure:
 	${MKDIR} ${VCFGDIR}
 
 post-install:
-	${MKDIR} ${PREFIX}/vpopmail/etc
+	${MKDIR} ${VPOPMAIL_DIR}/etc
 	if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
-		${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
+		${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
 	else \
-		${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
+		${TOUCH} ${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
 	fi;
-	if [ ! -f ${PREFIX}/vpopmail/etc/tcp.smtp ]; then \
-		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/tcp.smtp-dist ${PREFIX}/vpopmail/etc/tcp.smtp; \
+	if [ ! -f ${VPOPMAIL_DIR}/etc/tcp.smtp ]; then \
+		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/tcp.smtp-dist ${VPOPMAIL_DIR}/etc/tcp.smtp; \
 	fi
-	if [ ! -f ${PREFIX}/vpopmail/etc/vlimits.default ]; then \
-		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vlimits.default-dist ${PREFIX}/vpopmail/etc/vlimits.default; \
+	if [ ! -f ${VPOPMAIL_DIR}/etc/vlimits.default ]; then \
+		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/vlimits.default-dist ${VPOPMAIL_DIR}/etc/vlimits.default; \
 	fi
-	if [ ! -f ${PREFIX}/vpopmail/etc/vusagec.conf ]; then \
-		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vusagec.conf-dist ${PREFIX}/vpopmail/etc/vusagec.conf; \
+	if [ ! -f ${VPOPMAIL_DIR}/etc/vusagec.conf ]; then \
+		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/vusagec.conf-dist ${VPOPMAIL_DIR}/etc/vusagec.conf; \
 	fi
 .if ${PORT_OPTIONS:MMYSQL}
-	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.mysql ]; then \
-		${CP} ${PREFIX}/vpopmail/etc/vpopmail.mysql-dist ${PREFIX}/vpopmail/etc/vpopmail.mysql; \
+	if [ ! -f ${VPOPMAIL_DIR}/etc/vpopmail.mysql ]; then \
+		${CP} ${VPOPMAIL_DIR}/etc/vpopmail.mysql-dist ${VPOPMAIL_DIR}/etc/vpopmail.mysql; \
 	fi
 .endif
-	${TOUCH} ${PREFIX}/vpopmail/etc/defaultdomain
+	${TOUCH} ${VPOPMAIL_DIR}/etc/defaultdomain
 .if ${PORT_OPTIONS:MLDAP}
-	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "# Line format:" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "localhost|389|cn=vpopmailuser, o=vpopmail|vpoppasswd|o=vpopmail" >> ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist
-	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.ldap ]; then \
-		${CP} ${PREFIX}/vpopmail/etc/vpopmail.ldap-dist ${PREFIX}/vpopmail/etc/vpopmail.ldap; \
+	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# Line format:" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "localhost|389|cn=vpopmailuser, o=vpopmail|vpoppasswd|o=vpopmail" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	if [ ! -f ${VPOPMAIL_DIR}/etc/vpopmail.ldap ]; then \
+		${CP} ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist ${VPOPMAIL_DIR}/etc/vpopmail.ldap; \
 	fi
-	@${ECHO_CMD} "You need to specify the LDAP connection settings in the ${PREFIX}/vpopmail/etc/vpopmail.ldap file"
+	@${ECHO_CMD} "You need to specify the LDAP connection settings in the ${VPOPMAIL_DIR}/etc/vpopmail.ldap file"
 .endif
-	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail/bin/ ${PREFIX}/vpopmail/etc/
+	${CHOWN} -R vpopmail:vchkpw ${VPOPMAIL_DIR}/bin/ ${VPOPMAIL_DIR}/etc/
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
 	${ECHO_CMD} "***********************************************************************"
 	${ECHO_CMD} "Now you should add the following options to your spamd.sh startup file:"
@@ -500,19 +501,19 @@ post-install:
 	${ECHO_CMD} "***********************************************************************"
 .endif
 .if ${PORT_OPTIONS:MLDAP}
-	${MKDIR} ${PREFIX}/vpopmail/ldap
-	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
+	${MKDIR} ${VPOPMAIL_DIR}/ldap
+	${INSTALL_DATA} ${LDAP_FILES} ${VPOPMAIL_DIR}/ldap
 .endif
 .if ${PORT_OPTIONS:MMAILDROP}
-	${MKDIR} ${PREFIX}/vpopmail/maildrop
-	${INSTALL_DATA} ${MAILDROP_FILES} ${PREFIX}/vpopmail/maildrop
+	${MKDIR} ${VPOPMAIL_DIR}/maildrop
+	${INSTALL_DATA} ${MAILDROP_FILES} ${VPOPMAIL_DIR}/maildrop
 .endif
 .if ${PORT_OPTIONS:MSUID_VCHKPW}
-	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
+	${CHMOD} ug+s ${VPOPMAIL_DIR}/bin/vchkpw
 .endif
 	@${TOUCH} ${QMAIL_PREFIX}/control/locals
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${PREFIX}/vpopmail/doc/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${VPOPMAIL_DIR}/doc/
 .endif
 
 .include <bsd.port.post.mk>
