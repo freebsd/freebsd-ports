@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spamdyke
-# Date created:		11 January 2007
-# Whom:			Peter Kieser <peter@kieser.ca>
-#
+# Created by: Peter Kieser <peter@kieser.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	spamdyke
 PORTVERSION=	4.3.1
@@ -18,7 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 
-USE_QMAIL=	yes
+USES=		qmail
+
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	spamdyke

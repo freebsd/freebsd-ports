@@ -16,8 +16,9 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Easy-to-use, high-speed mailing list manager for qmail
 
+USES=		qmail:run
+
 USE_GCC=	any
-USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-idx-*
 

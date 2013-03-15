@@ -14,7 +14,8 @@ LIB_DEPENDS=	cvm-v2client:${PORTSDIR}/security/cvm
 
 OPTIONS_DEFINE=	LUA
 
-WANT_QMAIL=	yes
+USES=		qmail:vars
+
 CFLAGS+=	-I${CVM_INC}
 CFLAGS_SO=	${CFLAGS} -fPIC -shared -L${CVM_LIB}
 LDFLAGS+=	-g -L${CVM_LIB}

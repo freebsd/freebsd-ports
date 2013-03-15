@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 PATCH_STRIP=	-p1
 
-USE_QMAIL=	yes
+USES=		qmail
 
 CONFLICTS=	vpopmail-devel-5.*
 

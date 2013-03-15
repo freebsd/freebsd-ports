@@ -16,7 +16,7 @@ COMMENT=	Contributed programs for qmail
 
 OPTIONS_DEFINE=	DOCS
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	it

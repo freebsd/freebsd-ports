@@ -21,6 +21,8 @@ RUN_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
+USES=		qmail:vars
+
 CONFLICTS=	qmailadmin-devel-1.*
 
 PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
@@ -57,7 +59,6 @@ VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-WANT_QMAIL=	yes
 
 # Notes and comments:
 #

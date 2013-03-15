@@ -1,9 +1,5 @@
-# New ports collection makefile for:	queue-repair
-# Date created:		22 Aug 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	queue-repair
 PORTVERSION=	0.9.0
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail queue diagnostic and repair tool
 
 .if !defined(WITHOUT_QMAIL_PORT)
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 .endif
 
 USE_PYTHON=	yes

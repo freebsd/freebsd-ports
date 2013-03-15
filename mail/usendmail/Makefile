@@ -1,9 +1,5 @@
-# New ports collection makefile for:	usendmail
-# Date created:		2004-02-19
-# Whom:			Thomas Seck <tmseck@netcologne.de>
-#
+# Created by: Thomas Seck <tmseck@netcologne.de>
 # $FreeBSD$
-#
 
 PORTNAME=	usendmail
 PORTVERSION=	0.1.6
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.ohse.de/uwe/usendmail/
 MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	A replacement for qmail's sendmail drop-in
 
-USE_QMAIL=	yes
+USES=		qmail
 
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 

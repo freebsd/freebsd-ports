@@ -17,7 +17,8 @@ LIB_DEPENDS+=	domainkeys:${PORTSDIR}/mail/libdomainkeys
 PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
-USE_QMAIL=	yes
+USES=		qmail
+
 MAKE_JOBS_SAFE=	yes
 PREFIX?=	${QMAIL_PREFIX}
 
