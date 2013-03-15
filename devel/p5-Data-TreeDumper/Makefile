@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data::TreeDumper
-# Date created:				1 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-TreeDumper
 PORTVERSION=	0.40

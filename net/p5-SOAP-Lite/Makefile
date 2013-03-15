@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-Lite
-# Date created:				May 28 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	0.715
