@@ -3,6 +3,7 @@
 
 PORTNAME=	cutter
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -39,7 +40,8 @@ post-install:
 
 .if ${PORT_OPTIONS:MGOFFICE}
 CONFIGURE_ARGS+=--enable-goffice
-LIB_DEPENDS+=	goffice-0.6:${PORTSDIR}/devel/goffice06
+# the 0.8 is part of the library name don't remove it.
+LIB_DEPENDS+=	goffice-0.8:${PORTSDIR}/devel/goffice
 PLIST_SUB+=	GOFFICE=""
 .else
 CONFIGURE_ARGS+=--disable-goffice
