@@ -11,10 +11,7 @@ COMMENT=	PEAR Finite State Machine
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		FSM.php FSM/GraphViz.php
-DOCS=		guide.txt graphviz.png
-TESTS=		addTransitionsArray.phpt transitions.phpt graphviz.phpt
-EXAMPLES=	rpn.php graphviz.php
+PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS_DEFINE=	PEAR_GRAPGHVIZ
