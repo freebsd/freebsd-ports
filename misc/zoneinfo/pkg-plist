@@ -248,6 +248,7 @@
 %%DATADIR%%/Asia/Karachi
 %%DATADIR%%/Asia/Kashgar
 %%DATADIR%%/Asia/Kathmandu
+%%DATADIR%%/Asia/Khandyga
 %%DATADIR%%/Asia/Kolkata
 %%DATADIR%%/Asia/Krasnoyarsk
 %%DATADIR%%/Asia/Kuala_Lumpur
@@ -283,6 +284,7 @@
 %%DATADIR%%/Asia/Tokyo
 %%DATADIR%%/Asia/Ulaanbaatar
 %%DATADIR%%/Asia/Urumqi
+%%DATADIR%%/Asia/Ust-Nera
 %%DATADIR%%/Asia/Vientiane
 %%DATADIR%%/Asia/Vladivostok
 %%DATADIR%%/Asia/Yakutsk
@@ -359,6 +361,7 @@
 %%DATADIR%%/Europe/Brussels
 %%DATADIR%%/Europe/Bucharest
 %%DATADIR%%/Europe/Budapest
+%%DATADIR%%/Europe/Busingen
 %%DATADIR%%/Europe/Chisinau
 %%DATADIR%%/Europe/Copenhagen
 %%DATADIR%%/Europe/Dublin
