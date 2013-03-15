@@ -1510,6 +1510,15 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
+# Loading features
+.for f in ${USES}
+_f=${f:C/\:.*//g}
+.if ${_f} != ${f}
+${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+.endif
+.include "${USESDIR}/${_f}.mk"
+.endfor
+
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
 .if (${PREFIX:C,(^.).*,\1,} != "/")
@@ -1526,15 +1535,6 @@ CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 # Owner and group of the WWW user
 WWWOWN?=	www
 WWWGRP?=	www
-
-# Loading features
-.for f in ${USES}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
-.endif
-.include "${USESDIR}/${_f}.mk"
-.endfor
 
 .endif
 # End of pre-makefile section.
