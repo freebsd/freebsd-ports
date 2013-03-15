@@ -1,0 +1,12 @@
+===============================================================================
+
+wmweather+ has been installed.
+
+All options are given in the config file and in command line (CLI)
+
+Please copy example.conf to yours home directory and adjust it to your needs!
+
+    mkdir ~/.wmweather+
+    cp -a %%EXAMPLESDIR%%/example.conf ~/.wmweather+/conf
+
+===============================================================================
