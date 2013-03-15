@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-HTML_Common
-# Date created:			  29 November 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	HTML_Common
 PORTVERSION=	1.2.5
@@ -13,10 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR::HTML_Common is a base class for other HTML classes
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	HTML
-FILES=		Common.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
