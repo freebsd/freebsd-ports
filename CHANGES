@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130315:
+AUTHOR: bapt@FreeBSD.org
+
+  * Add new Keywords directory and first info.yaml keyword (@info).
+  Keywords directory will contain all the custom plist keywords allowing to
+  extend pkg-plist with new keywords. Only works with pkgng.
+
 20130307:
 AUTHOR: bapt@FreeBSD.org
 
