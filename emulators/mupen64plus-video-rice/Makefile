@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64plus-video-rice
-# Date created:		2008-05-16
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-video-rice
 
@@ -13,6 +9,6 @@ USE_GL=		yes
 
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
-OPTIONS=	#
+OPTIONS_DEFINE=	#
 
 .include "${MASTERDIR}/Makefile"

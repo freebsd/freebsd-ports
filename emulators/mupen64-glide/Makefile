@@ -17,6 +17,6 @@ PLUGIN_NAME=	Glide64
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS=	#
+OPTIONS_OVERRIDE=	GTK2
 
 .include "${MASTERDIR}/Makefile"

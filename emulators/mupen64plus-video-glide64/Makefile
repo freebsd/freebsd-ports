@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64plus-video-glide64
-# Date created:		2011-12-20
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	2
 PKGNAMESUFFIX=	-video-glide64
@@ -18,7 +14,7 @@ USE_SDL=	yes
 
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
-OPTIONS=	#
+OPTIONS_DEFINE=	#
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib

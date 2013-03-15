@@ -16,6 +16,6 @@ PLUGIN_NAME=	glN64
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS=	#
+OPTIONS_OVERRIDE=	GTK2
 
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64-tr64
-# Date created:		2007-10-09
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTVERSION=	0.7.8
 PORTREVISION=	3
@@ -20,6 +16,6 @@ PLUGIN_NAME=	tr64gl
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS=	#
+OPTIONS_OVERRIDE=	GTK2
 
 .include "${MASTERDIR}/Makefile"
