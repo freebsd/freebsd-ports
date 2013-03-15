@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_Yadis
-# Date created:			  21 Jan 2007
-# Whom:				  Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_Yadis
 PORTVERSION=	0.5.1
@@ -15,14 +11,7 @@ COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-PEAR_CATSRC=	yes
-USE_PHP=	simplexml dom
-CATEGORY=	Services
-FILES=		Yadis.php Yadis/Xri.php Yadis/Xrds.php Yadis/Service.php \
-		Yadis/Exception.php Yadis/Xrds/Namespace.php \
-		Yadis/Xrds/Service.php
-
-TESTS=		AllTests.php TestConfiguration.php.dist TestHelper.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
