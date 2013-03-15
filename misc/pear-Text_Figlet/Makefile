@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Text_Figlet
-# Date created:			  15 December 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Text_Figlet
 PORTVERSION=	1.0.2
@@ -13,13 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Render text using FIGlet fonts
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	Text
-FILES=		Text/Figlet.php fonts/makisupa.flf
-DOCS=		README.TXT
-EXAMPLES=	hello_world.php
-_EXAMPLESDIR=	docs/examples
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
