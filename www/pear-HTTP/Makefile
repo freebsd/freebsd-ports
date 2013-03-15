@@ -9,13 +9,9 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR miscellaneous HTTP utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		HTTP.php
-
-TESTS=		absoluteURI.inc negotiateCharset.phpt negotiateCharset2.phpt \
-		negotiateLanguage.phpt negotiateMimeType.phpt test1a.phpt \
-		test2a.phpt test3a.phpt test4a.phpt test5a.phpt test6a.phpt
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
