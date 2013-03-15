@@ -105,7 +105,7 @@ MAN1=	\
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again."
+IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again
 .endif
 
 pre-everything::
