@@ -3,6 +3,7 @@
 
 PORTNAME=	DB_Table
 PORTVERSION=	1.5.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
@@ -18,11 +19,6 @@ PEAR_HTML_QUICKFORM_DESC=	PEAR::HTML_QuickForm support
 PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 PEAR_AUTOINSTALL=	yes
-
-post-extract:
-	@${MV} ${WRKSRC}/DB/* ${WRKSRC}
-	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" \
-		${WRKSRC}/Table.php
 
 .include <bsd.port.options.mk>
 
