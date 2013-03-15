@@ -316,6 +316,7 @@ SYSLOG_DESC?=		Syslog support
 SZIP_DESC?=		Szip compression
 TCL_DESC?=		Tcl scripting language
 TCLTK_DESC?=		Tcl/Tk toolkit
+TEST_DESC?=		Build and/or run tests
 THEORA_DESC?=		Ogg Theora video codec
 THREADS_DESC?=		Threading support
 TIDY_DESC?=		Tidy HTML cleaner
