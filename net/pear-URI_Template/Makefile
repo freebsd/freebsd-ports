@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-URI_Template
-# Date created:			  07 April 2008
-# Whom:				  wenheping <wenheping@gmail.com>
-#
+# Created by: wenheping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	URI_Template
 PORTVERSION=	0.3.3
@@ -15,10 +11,7 @@ COMMENT=	Parser for URI Templates
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-PEAR_CATSRC=	yes
-CATEGORY=	URI
-FILES=		Template.php
-TESTS=		AllTests.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
