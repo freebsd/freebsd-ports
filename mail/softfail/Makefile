@@ -1,9 +1,5 @@
-# New ports collection makefile for:	softfail
-# Date created:		2007-02-01
-# Whom:			Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
-#
+# Created by: Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	softfail
 PORTVERSION=	2.0
@@ -25,9 +21,10 @@ PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 PORTDOCS=	README softfail.sql
 
+USES=		qmail
+
 USE_BZIP2=	yes
 USE_MYSQL=	yes
-USE_QMAIL=	yes
 
 .if defined(QMAIL_SLAVEPORT) && ( ${QMAIL_SLAVEPORT} != "spamcontrol" && ${QMAIL_SLAVEPORT} != "ldap" )
 IGNORE=		software only works with qmail-spamcontrol or qmail-ldap

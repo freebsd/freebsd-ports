@@ -11,7 +11,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tools to analyze qmail-send's activity
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
+
 MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	it

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qtools
-# Date created:				3 July 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	qtools
 PORTVERSION=	0.56
@@ -16,7 +12,7 @@ COMMENT=	Tools to use in .qmail files
 
 RUN_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-weed:${PORTSDIR}/mail/ezmlm
 
-WANT_QMAIL=	yes
+USES=		qmail:vars
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

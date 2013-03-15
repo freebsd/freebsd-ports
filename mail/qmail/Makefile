@@ -18,6 +18,9 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
+USES=		qmail:vars
+PREFIX?=	${QMAIL_PREFIX}
+
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:1.04
@@ -150,7 +153,6 @@ PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch:tls
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 
-PREFIX?=		${QMAIL_PREFIX}
 QMAIL_VERSION?=		1.03
 
 .if !defined(BARRIER_SMTP_AUTH_PATCH)
@@ -335,8 +337,6 @@ BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
 
 CONFIGUREPROGRAMS=	install dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
-
-WANT_QMAIL=	yes
 
 .include <bsd.port.options.mk>
 

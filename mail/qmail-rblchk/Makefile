@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-rblchk
-# Date created:				21 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-rblchk
 PORTVERSION=	2.4.1
@@ -12,9 +8,10 @@ MASTER_SITES=	http://www.morettoni.net/qmail/ \
 		CRITICAL
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A qmail RBL filter
+COMMENT=	Qmail RBL filter
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
+
 MAKE_JOBS_SAFE=	yes
 
 LDFLAGS?=	-s

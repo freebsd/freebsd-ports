@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-activedir
-# Date created:		2005-11-08
-# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
-#
+# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-activedir
 PORTVERSION=	0.17
@@ -14,7 +10,7 @@ MASTER_SITES=	http://fo2k.com/qmail-activedir/
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Programs to allow qmail to authenticate users through a MS ad
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 SUB_FILES=	pkg-message
 SUB_LIST+=	QMAIL_PREFIX=${QMAIL_PREFIX}
 USE_OPENLDAP=	yes

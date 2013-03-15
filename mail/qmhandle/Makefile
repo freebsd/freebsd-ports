@@ -12,7 +12,7 @@ COMMENT=	Tool to view and manage a qmail queue
 
 OPTIONS_DEFINE=	DOCS
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 
 NO_BUILD=	yes
 USE_PERL5=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for: qscan
-# Date created:		8 Apr 2004
-# Whom:			Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qscan
 PORTVERSION=	1.5
@@ -17,7 +13,8 @@ COMMENT=	A mail filter for Qmail that scans messages with ClamAV
 
 RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav \
 		ripmime:${PORTSDIR}/mail/ripmime
-USE_QMAIL_RUN=	yes
+
+USES=		qmail:run
 
 GNU_CONFIGURE=	yes
 

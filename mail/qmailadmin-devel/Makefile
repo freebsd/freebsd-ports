@@ -1,9 +1,5 @@
-# New ports collection makefile for: qmailadmin
-# Date created:		31 May 2009
-# Whom:			Ismail YENIGUL
-#
+# Created by: Ismail YENIGUL
 # $FreeBSD$
-#
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.13
@@ -42,7 +38,7 @@ LATEST_LINK=	qmailadmin-devel
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-WANT_QMAIL=	yes
+USES=		qmail:vars
 
 #
 # User-configurable variables

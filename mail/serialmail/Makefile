@@ -1,9 +1,5 @@
-# New ports collection makefile for:	serialmail
-# Date created:		2 November 1998
-# Whom:			Tom Hukins <tom@eborcom.com>
-#
+# Created by: Tom Hukins <tom@eborcom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	serialmail
 PORTVERSION=	0.75
@@ -18,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 
 RESTRICTED=	Unsure of DJB license
 

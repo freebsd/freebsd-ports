@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-conf
-# Date created:		8 April 2003
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-conf
 PORTVERSION=	0.60
@@ -18,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
-WANT_QMAIL=	yes
+USES=		qmail:vars
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

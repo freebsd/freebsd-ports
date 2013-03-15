@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mess822
-# Date created:		4 February 2001
-# Whom:			David Siebörger <drs@rucus.ru.ac.za>
-#
+# Created by: David Siebörger <drs@rucus.ru.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	mess822
 PORTVERSION=	0.58
@@ -17,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	drs@rucus.ru.ac.za
 COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
-USE_QMAIL_RUN=	yes
+USES=		qmail:run
 
 RESTRICTED=	Violates djb\'s license
 

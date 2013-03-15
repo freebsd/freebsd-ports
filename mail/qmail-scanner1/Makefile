@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qmail-scanner
-# Date created:	       2003-08-24
-# Whom:                moeti
-#
+# Created by: moeti
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	1.25
@@ -26,6 +22,8 @@ SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	qmail-scanner-2.*
+
+USES=		qmail
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
@@ -81,8 +79,6 @@ CONFIGURE_ARGS+=	--spams-tosuffix "${QMAILSCAN_SPAMSTOSUFFIX}"
 .endif
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-USE_QMAIL=	yes
 
 SPOOLDIR=	${PREFIX}/qmailscan
 PLIST_SUB=	SPOOLDIR="${SPOOLDIR:S,${PREFIX}/,,}"
