@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnids
-# Date created:		08 Jan 2000
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libnids
 PORTVERSION=	1.24
@@ -15,10 +11,11 @@ COMMENT=	Network monitoring library with TCP/IP reassembly
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	LIBNET GLIB2
-LIBNET_DESC=	Use libnet 1.1.x
+OPTIONS_DEFINE=	LIBNET10 LIBNET11 GLIB2
+LIBNET10_DESC=	Use libnet 1.0.x
+LIBNET11_DESC=	Use libnet 1.1.x
 GLIB2_DESC=	Use GLIB2 for multiprocessing support
-OPTIONS_DEFAULT=	LIBNET GLIB2
+OPTIONS_DEFAULT=	LIBNET11 GLIB2
 
 WANT_GNOME=	yes
 USE_PKGCONFIG=	build
@@ -34,9 +31,17 @@ PLIST_SUB+= PORTDOCS=""
 PLIST_SUB+= PORTDOCS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLIBNET}
+.if ${PORT_OPTIONS:MLIBNET10}
+LIBNET_VERSION=	10
+BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet${LIBNET_VERSION}
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet${LIBNET_VERSION}-config
+LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
+		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
+.elif ${PORT_OPTIONS:MLIBNET11}
+LIBNET_VERSION=	11
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet${LIBNET_VERSION}-config
+LIBNET_LIB=	"`${LIBNET_CONFIG} --libs`"
 .else
 CONFIGURE_ARGS+=	--disable-libnet
 .endif
@@ -50,7 +55,7 @@ CONFIGURE_ARGS+=	--disable-libglib
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|(LNET_CFLAGS=).*|\1"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"|; \
-		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		 s|(LNETLIB=).*|\1${LIBNET_LIB}|' \
 		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
