@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64-softgfx
-# Date created:		2007-10-08
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 PKGNAMESUFFIX=	-softgfx
@@ -18,6 +14,6 @@ PLUGIN_NAME=	mupen64_soft_gfx
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS=	#
+OPTIONS_OVERRIDE=	GTK2
 
 .include "${MASTERDIR}/Makefile"

@@ -25,11 +25,12 @@ MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MUPEN64VERSION=	0.5
 FIXFILES?=	r4300/r4300.c memory/dma.c r4300/recomp.c r4300/x86/assemble.c
 
-OPTIONS?=	GTK2	"Use gtk20 instead of gtk12" off 
+OPTIONS_DEFINE=	GTK2
+GTK2_DESC=	Use gtk20 instead of gtk12
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 HAVE_GTK2=	true
 .endif
 

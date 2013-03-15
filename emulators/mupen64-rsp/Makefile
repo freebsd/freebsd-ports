@@ -10,6 +10,6 @@ PLUGIN_NAME=	mupen64_hle_rsp_azimer
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS=	#
+OPTIONS_OVERRIDE=	GTK2
 
 .include "${MASTERDIR}/Makefile"

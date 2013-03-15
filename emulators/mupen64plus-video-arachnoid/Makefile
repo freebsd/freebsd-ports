@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64plus-video-arachnoid
-# Date created:		2011-12-20
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	2
 PKGNAMESUFFIX=	-video-arachnoid
@@ -18,7 +14,7 @@ USE_SDL=	#
 
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
-OPTIONS=	#
+OPTIONS_DEFINE=	#
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib

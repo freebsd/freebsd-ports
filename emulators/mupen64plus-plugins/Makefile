@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mupen64plus-plugins
-# Date created:         2011-12-20
-# Whom:                 Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mupen64plus
 PORTVERSION=	1.99.4
@@ -16,28 +12,31 @@ EXTRACT_ONLY=	# empty
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT=	Third party plugins for Mupen64plus
 
-OPTIONS=	VIDEO_ARACHNOID		"Arachnoid video plugin"	on \
-		VIDEO_GLIDE64		"Glide64 video plugin"	on \
-		VIDEO_Z64		"z64 video plugin"	on \
-		RSP_Z64			"z64 RSP plugin"	on
+OPTIONS_DEFINE=	VIDEO_ARACHNOID VIDEO_GLIDE64 VIDEO_Z64 RSP_Z64
+VIDEO_ARACHNOID_DESC=	Arachnoid video plugin
+VIDEO_GLIDE64_DESC=	Glide64 video plugin
+VIDEO_Z64_DESC=	z64 video plugin
+RSP_Z64_DESC=	z64 RSP plugin
+
+OPTIONS_DEFAULT=	VIDEO_ARACHNOID VIDEO_GLIDE64 VIDEO_Z64 RSP_Z64
 
 .include <bsd.port.pre.mk>
-		
+
 # Graphics plugins
-.if defined(WITH_VIDEO_ARACHNOID)
+.if ${PORT_OPTIONS:MVIDEO_ARACHNOID}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-arachnoid.so:${PORTSDIR}/emulators/mupen64plus-video-arachnoid
 .endif
 
-.if defined(WITH_VIDEO_GLIDE64)
+.if ${PORT_OPTIONS:MVIDEO_GLIDE64}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-glide64.so:${PORTSDIR}/emulators/mupen64plus-video-glide64
 .endif
 
-.if defined(WITH_VIDEO_Z64)
+.if ${PORT_OPTIONS:MVIDEO_Z64}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-z64.so:${PORTSDIR}/emulators/mupen64plus-video-z64
 .endif
 
 # RSP plugins
-.if defined(WITH_RSP_Z64)
+.if ${PORT_OPTIONS:MRSP_Z64}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-z64.so:${PORTSDIR}/emulators/mupen64plus-rsp-z64
 .endif
 
