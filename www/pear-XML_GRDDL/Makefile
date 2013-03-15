@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-XML_GRDDL
-# Date created:			  23 June 2008
-# Whom:				  Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML_GRDDL
 PORTVERSION=	0.2.0
