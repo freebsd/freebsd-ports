@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Net_FTP
-# Date created:			  06 January 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Net_FTP
 PORTVERSION=	1.3.7
@@ -16,15 +12,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	ftp
-
-PORTSCOUT=	skipv:1.4.0a2,1.4.0a1
-CATEGORY=	Net
-FILES=		FTP.php FTP/Observer.php FTP/Socket.php
-EXAMPLES=	extensions.ini index.php observer.php socket.php
-_EXAMPLESDIR=	example
-
-TESTS=		AllTests.php Net_FTPTest.php config.php.dist extensions.ini\
-		testfile.dat
+PEAR_AUTOINSTALL=	ye
 
 post-extract:
 	@${MV} ${WRKSRC}/Net/* ${WRKSRC}
