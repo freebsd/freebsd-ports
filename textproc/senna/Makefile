@@ -1,16 +1,11 @@
-# New ports collection makefile for:	Senna
-# Date created:		May 1 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	senna
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	senna/33763
+MASTER_SITE_SUBDIR=	senna/46945
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
