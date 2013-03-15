@@ -1858,6 +1858,7 @@
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
     SUBDIR += thundersnarf
+    SUBDIR += tickr
     SUBDIR += tidy
     SUBDIR += tidy-devel
     SUBDIR += tidy-lib
