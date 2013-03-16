@@ -13,10 +13,6 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 PEAR_AUTOINSTALL=	yes
 
-post-extract:
-	@cd ${WRKSRC} && ${MKDIR} -p ${WRKSRC}/docs
-	${MV} ${WRKSRC}/README.portscan ${WRKSRC}/docs/
-
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
