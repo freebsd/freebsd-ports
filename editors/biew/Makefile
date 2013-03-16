@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BIEW (now called BEYE, Binary EYE)
-# Date created:				04 February 2000
-# Whom:					Michael Vasilenko <acid@stu.cn.ua>
-#
+# Created by: Michael Vasilenko <acid@stu.cn.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	biew
 PORTVERSION=	6.1.0
@@ -32,16 +28,19 @@ MAN1=		biew.1
 PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 		file_ini.ru release.txt unix.txt
 
-OPTIONS=	SLANG	"Use S-Lang based display renderer"	on
+OPTIONS_DEFINE=	SLANG DOCS
+OPTIONS_DEFAULT=	SLANG
 
-.include <bsd.port.pre.mk>
+SLANG_DESC=	Use S-Lang based display renderer
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile
 .endif
 
-.if defined(WITH_SLANG)
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+.if ${PORT_OPTIONS:MSLANG}
+LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=	--enable-slang
 .else
 CONFIGURE_ARGS+=	--enable-curses
@@ -72,9 +71,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/syntax/* ${DATADIR}/syntax
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/xlt/russian/* ${DATADIR}/xlt
 	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
