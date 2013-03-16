@@ -53,11 +53,6 @@ SRCS=		g_ai.c \
 		q_shared.c
 
 CFLAGS+=	-Dstricmp=strcasecmp
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-ffast-math -funroll-loops -fomit-frame-pointer \
-		-fexpensive-optimizations
-.endif
-
 LDFLAGS+=	-L/lib -L/usr/lib -lm
 
 .include <bsd.lib.mk>
