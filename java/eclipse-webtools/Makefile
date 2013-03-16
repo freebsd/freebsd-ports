@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-webtools
-# Date created:				October 14, 2005
-# Whom:					markhobden@gmail.com
-#
+# Created by: markhobden@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	webtools
 PORTVERSION=	3.3.2
@@ -24,11 +20,13 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
 
-OPTIONS=	DTP "Enable support for EJB and JPT development" on
+OPTIONS_DEFINE=	DTP
+DTP_DEFINE=	Support for EJB and JPT development
+OPTIONS_DEFAULT=	DTP
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DTP)
+.if ${PORT_OPTIONS:MDTP}
 RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/datatools:${PORTSDIR}/java/eclipse-datatools
 .endif
 
