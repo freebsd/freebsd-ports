@@ -5,10 +5,7 @@ PORTNAME=	tremulous
 PORTVERSION=	1.1.0
 PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 \
-		http://0day.icculus.org/mirrors/tremulous/ \
-		ftp://ftp.wireplay.co.uk/pub/quake3arena/mods/tremulous/ \
-		http://www.planetgloom.com/trem/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
@@ -32,7 +29,7 @@ CLIENT_DESC=		Build client
 GAMELIBS_DESC=		Force building game libraries
 DEDICATED_DESC=		Build dedicated server
 MASTER_SERVER_DESC=	Build master server
-OPENAL_DLOPEN_DESC=	Dynamic loading of OpenAL
+OPENAL_DLOPEN_DESC=	Enable dinamic loading of OpenAL
 SDL_AUDIO_DESC=		Use SDL for audio
 SDL_VIDEO_DESC=		Use SDL for video
 SMP_CLIENT_DESC=	Build SMP (threaded) client
