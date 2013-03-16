@@ -52,8 +52,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/deltup.1 ${PREFIX}/man/man1
 pre-build:
 	@${REINPLACE_CMD} -e 's|-Wall -Winline -O2|-Wall -Winline -O2 ${CFLAGS}|' \
+		-e 's|CC=gcc|CC?=gcc|' \
 	${WRKSRC_BZIP2_102}/Makefile
 	@${REINPLACE_CMD} -e 's|-Wall -Winline -O -g|-Wall -Winline -O2 ${CFLAGS}|' \
+		-e 's|CC=gcc|CC?=gcc|' \
 	${WRKSRC_BZIP2_103}/Makefile
 	@cd ${WRKSRC_BZIP2_102}; ${GMAKE} bzip2; \
 	cd ${WRKSRC_BZIP2_103}; ${GMAKE} bzip2;
