@@ -57,7 +57,7 @@ post-patch:
 		-e 's|-Wmissing-parameter-type||g' \
 		-e 's|LIBS="-lusb-1.0|LIBS="-lusb|g' \
 		${WRKSRC}/configure
-.if empty(PORT_OPTIONS:MMANPAGES}
+.if !${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
 		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure
 .endif
