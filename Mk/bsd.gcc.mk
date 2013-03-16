@@ -131,11 +131,9 @@ _GCC_ORLATER:=	true
 
 # Check if USE_GCC points to a valid version.
 .for v in ${GCCVERSIONS}
-. for j in ${GCCVERSION_${v}}
-.  if ${_USE_GCC}==${j}
+. if ${_USE_GCC}==${_GCCVERSION_${v}_V}
 _GCCVERSION_OKAY=	true;
-.  endif
-. endfor
+. endif
 .endfor
 
 .if !defined(_GCCVERSION_OKAY)
@@ -251,6 +249,9 @@ USE_BINUTILS=	yes
 test-gcc:
 	@echo USE_GCC=${USE_GCC}
 	@echo USE_FORTRAN=${USE_FORTRAN}
+.if defined(IGNORE)
+	@echo "IGNORE: ${IGNORE}"
+.else
 .if defined(USE_GCC)
 .if defined(_GCC_ORLATER)
 	@echo Port can use later versions.
@@ -272,3 +273,4 @@ test-gcc:
 	@echo LDFLAGS=\"${LDFLAGS}\"
 	@echo "BUILD_DEPENDS=${BUILD_DEPENDS}"
 	@echo "RUN_DEPENDS=${RUN_DEPENDS}"
+.endif
