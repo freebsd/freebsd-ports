@@ -20,10 +20,12 @@ PLIST_FILES=	bin/nvclock bin/smartdimmer
 MAN1=		nvclock.1
 PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 
-OPTIONS_DEFINE=	NVCONTROL GTK2 QT
+OPTIONS_DEFINE=	NVCONTROL GTK2 QT3 DOCS
 OPTIONS_DEFAULT=	NVCONTROL GTK2
-NVCONTROL_DESC=		NV-CONTROL support
-QT_DESC=		Qt 3 toolkit
+
+NVCONTROL_DESC=	NV-CONTROL support (for OpenGL settings)
+GTK2_DESC=	Build GTK+ 2 GUI program
+QT3_DESC=	Build Qt 3.x (legacy) GUI program
 
 .include <bsd.port.options.mk>
 
@@ -41,7 +43,7 @@ PLIST_FILES+=	bin/nvclock_gtk
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-.if ${PORT_OPTIONS:MQT}
+.if ${PORT_OPTIONS:MQT3}
 USE_QT_VER=	3
 CONFIGURE_ARGS+=	--enable-qt --with-qtdir=${LOCALBASE}
 PLIST_FILES+=	bin/nvclock_qt
@@ -57,8 +59,7 @@ post-patch:
 do-install:
 	${GMAKE} -C ${WRKSRC}/src install
 	${GMAKE} -C ${WRKSRC} install-man
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	${GMAKE} -C ${WRKSRC} install-docs
 .endif
 
