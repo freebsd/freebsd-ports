@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tremulous
-# Date created:				3 Jun 2006
-# Whom:				Alejandro Pulver <alepulver@FreeBSD.org>
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
@@ -15,76 +11,75 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 \
 		http://www.planetgloom.com/trem/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Free FPS game featuring two opposing teams, humans, and aliens
+COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
+
+LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${DISTNAME}-src
 
-OPTIONS=	CLIENT		"Build client" on \
-		GAMELIBS	"Build game libraries (when not mandatory)" off \
-		DEDICATED	"Build dedicated server" on \
-		MASTER_SERVER	"Build master server" off \
-		OPENAL		"Enable OpenAL (3D sound) support" off \
-		OPENAL_DLOPEN	"Enable dynamic loading of OpenAL" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL_AUDIO	"Use SDL for audio" off \
-		SDL_VIDEO	"Use SDL for video" off \
-		SMP		"Build SMP (threaded) client" on \
-		VORBIS		"Enable Ogg Vorbis codec support" off
+OPTIONS_DEFINE=		GAMELIBS MASTER_SERVER OPENAL OPENAL_DLOPEN \
+			OPTIMIZED_CFLAGS SDL_AUDIO SDL_VIDEO VORBIS
+OPTIONS_MULTI=		TYPE
+OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP_CLIENT
+OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS SMP_CLIENT
 
-MAKE_ENV+=	DEFAULT_BASEDIR="${DATADIR}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CLIENT_DESC=		Build client
+GAMELIBS_DESC=		Force building game libraries
+DEDICATED_DESC=		Build dedicated server
+MASTER_SERVER_DESC=	Build master server
+OPENAL_DLOPEN_DESC=	Dynamic loading of OpenAL
+SDL_AUDIO_DESC=		Use SDL for audio
+SDL_VIDEO_DESC=		Use SDL for video
+SMP_CLIENT_DESC=	Build SMP (threaded) client
 
 VM_ARCHS=	amd64 i386
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SMP)
-IGNORE=		needs at least one of CLIENT, DEDICATED, or SMP options
-.endif
-
-.for i in ${ARCH}
-.   if ${VM_ARCHS:M${i}} != ""
+.for arch in ${ARCH}
+.  if ${VM_ARCHS:M${arch}} != ""
 HAVE_VM_COMPILED=	yes
-.   endif
+.  endif
 .endfor
 
 .if defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	HAVE_VM_COMPILED=true
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP_CLIENT}
 # OpenAL
-.   if defined(WITH_OPENAL)
+.  if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
-.       if defined(WITH_OPENAL_DLOPEN)
+.    if ${PORT_OPTIONS:MOPENAL_DLOPEN}
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1
-.       endif
-.   endif
+.    endif
+.  endif
 # SDL
-.   if defined(WITH_SDL_AUDIO)
+.  if ${PORT_OPTIONS:MSDL_AUDIO}
 USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_AUDIO=1
-.   endif
-.   if defined(WITH_SDL_VIDEO)
+.  endif
+.  if ${PORT_OPTIONS:MSDL_VIDEO}
 USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
-.   else
+.  else
 USE_GL=		gl
 USE_XORG=	x11 xxf86dga
-.   endif
+.  endif
 # Vorbis
-.   if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.  if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
-.   endif
+.  endif
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 TRBIN+=		tremulous
@@ -92,7 +87,7 @@ TRBIN+=		tremulous
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
 TRBIN+=		tremded
@@ -100,26 +95,26 @@ TRBIN+=		tremded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	BUILD_GAME_SO=1
 PLIST_SUB+=	GAMELIBS=""
 .else
 PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
-.if defined(WITH_MASTER_SERVER)
-LIB_DEPENDS+=	tdb.1:${PORTSDIR}/databases/tdb
+.if ${PORT_OPTIONS:MMASTER_SERVER}
+LIB_DEPENDS+=	tdb:${PORTSDIR}/databases/tdb
 MAKE_ENV+=	BUILD_MASTER_SERVER=1
 PLIST_SUB+=	MASTER_SERVER=""
 .else
 PLIST_SUB+=	MASTER_SERVER="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=1
 .endif
 
-.if !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MSMP_CLIENT}
 MAKE_ENV+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
 TRBIN+=		tremulous-smp
@@ -138,13 +133,13 @@ do-install:
 .for bin in ${TRBIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build/release/${bin} ${PREFIX}/bin
 .endfor
-.if defined(WITH_MASTER_SERVER)
+.if ${PORT_OPTIONS:MMASTER_SERVER}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/master/release/tremmaster \
 		${PREFIX}/bin
 .endif
-	${MKDIR} ${DATADIR}/base
+	@${MKDIR} ${DATADIR}/base
 	${INSTALL_DATA} ${WRKSRC}/base/* ${DATADIR}/base
-	${MKDIR} ${PREFIX}/share/pixmaps
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${PREFIX}/share/pixmaps
 
 post-install:
@@ -152,4 +147,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
