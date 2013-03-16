@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
 
-OPTIONS=	TEST "Run the self-tests after building automatically" off
+OPTIONS_DEFINE=	TEST
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
@@ -25,9 +25,8 @@ USE_DOS2UNIX=	build.xml
 
 PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+PORTEXAMPLES=	*
 
 test:
 	#
@@ -41,9 +40,9 @@ test:
 		${FALSE} ; \
 	fi
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 post-build:	test
 	#
 	# Please, review the reported failures (if any) and consider
@@ -68,17 +67,13 @@ post-patch:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/build/lib/je.jar ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-
-post-install:
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \*  ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
