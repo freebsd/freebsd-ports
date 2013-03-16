@@ -1,9 +1,5 @@
-# New ports collection makefile for:	veditor
-# Date created:				19 Oct 2006
-# Whom:					lon_kamikaze@gmx.de
-#
+# Created by: lon_kamikaze@gmx.de
 # $FreeBSD$
-#
 
 PORTNAME=	veditor
 PORTVERSION=	0.7.1
@@ -15,20 +11,22 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	kamikaze@bsdforen.de
-COMMENT=	A Verilog and VHDL editor plugin for eclipse
+COMMENT=	Verilog and VHDL editor plugin for eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-OPTIONS=	VERILOG "Support Verilog with Icarus Verilog" On \
-		VHDL "Support VHDL with FreeHDL" On
+OPTIONS_DEFINE=	VERILOG VHDL
+VERILOG_DESC=	Support Verilog with Icarus Verilog
+VHDL_VHDL=	Support VHDL with FreeHDL
+OPTIONS_DEFAULT=	VERILOG VHDL
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_VERILOG)
+.if ${PORT_OPTIONS:MVERILOG}
 RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
 .endif
 
-.if defined(WITH_VHDL)
+.if ${PORT_OPTIONS:MVHDL}
 RUN_DEPENDS+=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
 .endif
 
