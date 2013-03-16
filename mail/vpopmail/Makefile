@@ -511,7 +511,6 @@ post-install:
 .if ${PORT_OPTIONS:MSUID_VCHKPW}
 	${CHMOD} ug+s ${VPOPMAIL_DIR}/bin/vchkpw
 .endif
-	@${TOUCH} ${QMAIL_PREFIX}/control/locals
 .if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${VPOPMAIL_DIR}/doc/
 .endif
