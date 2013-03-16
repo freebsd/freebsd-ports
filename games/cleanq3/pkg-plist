@@ -1,6 +1,6 @@
 %%DEDICATED%%bin/cleanq3ded
 %%CLIENT%%bin/cleanq3
-%%SMP%%bin/cleanq3-smp
+%%SMP_CLIENT%%bin/cleanq3-smp
 %%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
@@ -10,4 +10,3 @@
 %%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
 %%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
 %%GAMELIBS%%@dirrm %%LIBDIR%%
-
