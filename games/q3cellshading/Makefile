@@ -1,9 +1,5 @@
-# New ports collection makefile for:	q3cellshading
-# Date created:				8 Aug 2006
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	q3cellshading
 PORTVERSION=	1.0
@@ -17,44 +13,46 @@ COMMENT=	Quake III engine with Cell Shading capabilities
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 
-OPTIONS_MULTI=	EXE
-OPTIONS_MULTI_EXE=	CLIENT DEDICATED SMP
-OPTIONS_DEFINE=	GAMELIBS OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	CLIETN DEDICATED OPTIMIZED_CFLAGS SMP
-CLIENT_DESC=	Build client
-DEDICATED_DESC=	Build dedicated server
-GAMELIBS_DESC=	Build game libraries (when not mandatory)
-SMP_DESC=	Build SMP (threaded) client
-
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
-LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	i386 powerpc
+
+OPTIONS_DEFINE=	GAMELIBS OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED SMP_CLIENT
+OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS SMP_CLIENT
+
+CLIENT_DESC=		Build client
+DEDICATED_DESC=		Build dedicated server
+GAMELIBS_DESC=		Force building game libraries
+SMP_CLIENT_DESC=	Build SMP (threaded) client
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.for i in ${ARCH}
-.   if ${VM_ARCHS:M${i}} != ""
+.for arch in ${ARCH}
+.  if ${VM_ARCHS:M${arch}} != ""
 HAVE_VM_COMPILED=	yes
-.   endif
+.  endif
 .endfor
 
 .if !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	DLL_ONLY=true
 .endif
 
-.if ${PORT_OPTIONS:MCLIENT} || !empty(PORT_OPTIONS:MSMP)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP_CLIENT}
 USE_GL=		yes
 USE_XORG=	xxf86dga
 .endif
@@ -86,9 +84,8 @@ PLIST_SUB+=	GAMELIBS="@comment "
 MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
 .endif
 
-.if ${PORT_OPTIONS:MSMP}
-MAKE_ENV+=	SMP=YES \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+.if ${PORT_OPTIONS:MSMP_CLIENT}
+MAKE_ENV+=	SMP=YES PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB+=	SMP=""
 Q3BIN+=		quake3-smp
 .else
@@ -105,12 +102,13 @@ post-patch:
 
 do-install:
 .for bin in ${Q3BIN}
+# Adjust program names to avoid conflicts with other Quake3 ports
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} \
 		${PREFIX}/bin/${bin:C/(quake3|q3)/\1cel/}
 .endfor
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
-	${MKDIR} ${LIBDIR}/${dir}
+	@${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
 .endif
