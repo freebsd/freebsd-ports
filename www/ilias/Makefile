@@ -1,13 +1,10 @@
-# New ports collection makefile for:	www/ilias
-# Date created:				Oct 24, 2006
-# Whom:					Bartlomiej Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	4.2.5
+PORTVERSION=	4.3.2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%204.2/ILIAS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%204.3/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
