@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2-data
-# Date created:				28 Sep 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	3.20
@@ -19,13 +15,15 @@ DISTFILES=	${Q2_UPDATE}:data \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II data files
 
-#XXX need info-unzip for q2-314-demo-x86.exe
+# XXX we need info-unzip for q2-314-demo-x86.exe
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	MANUAL "Install game manual" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SHAREWARE "Install demo version of the game data" off
+OPTIONS_DEFINE=	MANUAL OPTIMIZED_CFLAGS SHAREWARE
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+
+MANUAL_DESC=		Install game HTML manual
+SHAREWARE_DESC=		Install demo version of the game data
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${Q2DIR}
@@ -36,24 +34,24 @@ Q2_SRC=		q2src${PORTVERSION:S/.//}.shar.Z
 Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 
 .include "Makefile.include"
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MANUAL) || defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MMANUAL} || ${PORT_OPTIONS:MSHAREWARE}
 DISTFILES+=	${Q2_DEMO}:data
 .endif
 
-.if defined(WITH_MANUAL)
+.if ${PORT_OPTIONS:MMANUAL}
 PLIST_SUB+=	MANUAL=""
 .else
 PLIST_SUB+=	MANUAL="@comment "
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=yes
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CFLAGS+=	-ffast-math -funroll-loops -fomit-frame-pointer \
+		-fexpensive-optimizations
 .endif
 
-.if defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MSHAREWARE}
 PLIST_SUB+=	FULL="@comment " \
 		SHAREWARE=""
 .else
@@ -69,11 +67,11 @@ do-extract:
 		uncompress -c ${DISTDIR}/${Q2_SRC} | ${TAIL} +434 | ${SH}
 	@${UNZIP_CMD} -q -d ${WRKDIR} \
 		${DISTDIR}/${Q2_UPDATE} baseq2/* -x *.dll
-.if defined(WITH_MANUAL)
+.if ${PORT_OPTIONS:MMANUAL}
 	@${UNZIP_CMD} -ajq -d ${WRKDIR}/DOCS \
 		${DISTDIR}/${Q2_DEMO} Install/Data/DOCS/*
 .endif
-.if defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MSHAREWARE}
 	@${RM} ${WRKDIR}/baseq2/pak[^0].pak
 	@${UNZIP_CMD} -jq -d ${WRKDIR}/baseq2 \
 		${DISTDIR}/${Q2_DEMO} Install/Data/baseq2/pak0.pak
@@ -86,19 +84,19 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
 
 do-install:
-	${MKDIR} ${DATADIR}/baseq2
+	@${MKDIR} ${DATADIR}/baseq2
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${DATADIR}/baseq2
 	${CP} -R ${WRKSRC}/baseq2/* ${DATADIR}/baseq2
-.if defined(WITH_MANUAL)
+.if ${PORT_OPTIONS:MMANUAL}
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/DOCS ${DOCSDIR}/manual
+	${CP} -R ${WRKSRC}/DOCS ${DOCSDIR}/manual
 .endif
 
 post-install:
-.if !defined(WITH_SHAREWARE)
+.if ! ${PORT_OPTIONS:MSHAREWARE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

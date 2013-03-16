@@ -1,8 +1,9 @@
-# Makefile for defining variables used by other Quake3 related ports
+# Makefile for defining variables used by other Quake3 related ports.  See
+# `games/quake2-data/Makefile.include' for extensive description.
 
 # Set variables
 
-Q3PKGNAMEPREFIX?=quake3-
+Q3PKGNAMEPREFIX?=	quake3-
 Q3DIR?=		${PREFIX}/share/quake3
 
 # Add them to the environment
