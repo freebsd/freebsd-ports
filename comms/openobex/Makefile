@@ -2,7 +2,7 @@
 
 PORTNAME=	openobex
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -18,7 +18,10 @@ USE_DOS2UNIX=	CMakeLists.txt
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:STRING="${PREFIX}/libdata/pkgconfig"
 
 OPTIONS_DEFINE=	DOXYGEN
-OPTIONS_DEFAULT=	DOXYGEN
+
+.if defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=	DOXYGEN
+.endif
 
 .include <bsd.port.options.mk>
 
