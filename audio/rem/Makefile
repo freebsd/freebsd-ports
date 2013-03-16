@@ -2,6 +2,7 @@
 
 PORTNAME=	rem
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.creytiv.com/pub/
 

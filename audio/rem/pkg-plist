@@ -1,4 +1,6 @@
+include/rem/rem_au.h
 include/rem/rem_aubuf.h
+include/rem/rem_aufile.h
 include/rem/rem_g711.h
 include/rem/rem_dsp.h
 include/rem/rem_video.h
