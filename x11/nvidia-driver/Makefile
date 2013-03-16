@@ -86,6 +86,10 @@ WBINVD_DESC=		Flush CPU caches directly with WBINVD
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
+. if ${OSVERSION} > 1000028
+EXTRA_PATCHES+=	${FILESDIR}/r248084-patch-src-nv-freebsd.h
+EXTRA_PATCHES+=	${FILESDIR}/r248084-patch-src-nvidia_subr.c
+. endif
 
 .if ${PORT_OPTIONS:MLINUX}
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
