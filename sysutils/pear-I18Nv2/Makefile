@@ -14,20 +14,6 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 USE_PHP=	iconv
 PEAR_AUTOINSTALL=	yes
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/${PORTNAME}
-	@${MV} ${WRKSRC}/[A-C]* ${WRKSRC}/${PORTNAME}
-	@${MV} ${WRKSRC}/De* ${WRKSRC}/${PORTNAME}
-	@${MV} ${WRKSRC}/[E-H]* ${WRKSRC}/${PORTNAME}
-	@${MV} ${WRKSRC}/[L-S]* ${WRKSRC}/${PORTNAME}
-
 .include <bsd.port.pre.mk>
-
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 406
-#IGNORE=		You need PHP 4.0.6 or later to install PEAR::I18Nv2
-.endif
-
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
