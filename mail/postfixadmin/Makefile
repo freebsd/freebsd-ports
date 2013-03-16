@@ -20,13 +20,11 @@ SUB_FILES+=	pkg-message
 
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL MYSQLI PGSQL
-MYSQL_DESC=	MySQL back-end (use mysql PHP extension)
 MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
-PGSQL_DESC=	PostgreSQL back-end (use pgsql PHP extension)
 
 OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_PHP=	pcre session mbstring spl xmlrpc
 
@@ -91,4 +89,4 @@ post-install:
 	@${CHMOD} 640 ${PREFIX}/www/postfixadmin/users/*.php
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
