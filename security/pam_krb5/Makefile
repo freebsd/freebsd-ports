@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	pam_krb5
-# Date created:				11/03/2000
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		pam_krb5
 PORTVERSION=		4.6
@@ -33,7 +29,7 @@ LIB_DEPENDS=		krb5.3:${PORTSDIR}/security/krb5
 KRB5_DIR?=		${KRB5_HOME}
 .endif
 .else
-IGNORE=			you must define KRB5_IMPL to be \"mit\" or \"heimdal\"
+IGNORE=			you must define KRB5_IMPL to be "mit" or "heimdal"
 .endif
 
 MANDIR=			${MANPREFIX}/man

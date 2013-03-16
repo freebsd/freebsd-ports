@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-oracle-instantclient-basic
-# Date created:				03 June 2004
-# Whom:					Alexander Novitsky
-#
+# Created by: Alexander Novitsky
 # $FreeBSD$
-#
 
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
@@ -65,7 +61,7 @@ IGNORE+=		Due to Oracle license restrictions, you must fetch the source \n
 IGNORE+=		distribution manually.  Please access  \n
 IGNORE+=		http://www.oracle.com/technology/software/tech/oci/instantclient/index.html \n
 IGNORE+=		with a web browser and follow the link for the \n
-IGNORE+=		\"${DISTFILES}\".  \n
+IGNORE+=		"${DISTFILES}".  \n
 IGNORE+=		You will be required to register and log in, \n
 IGNORE+=		but you can create an account on that page.  \n
 IGNORE+=		After registration and accepting the Oracle License, \n

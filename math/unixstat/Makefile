@@ -1,9 +1,5 @@
-# New ports collection makefile for:   stat
-# Date created:        23 August 2001
-# Whom:                mwm
-#
+# Created by: mwm
 # $FreeBSD$
-#
 
 PORTNAME=	unixstat
 PORTVERSION=	5.4
@@ -31,11 +27,11 @@ MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		stats.1 transpose.1 ts.1 unixstat.1 validata.1
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE="Gary Perlman requires that users agree to his license"\
-"before he will allow access to the distfile."\
-"See his web site at http://www.acm.org/~perlman/stat/ for"\
-"details.  Then put ${DISTNAME}${EXTRACT_SUFX} in"\
-"${DISTDIR} and run make again"
+IGNORE=	Gary Perlman requires that users agree to his license\
+before he will allow access to the distfile.\
+See his web site at http://www.acm.org/~perlman/stat/ for\
+details.  Then put ${DISTNAME}${EXTRACT_SUFX} in\
+${DISTDIR} and run make again
 .endif
 
 post-patch:
