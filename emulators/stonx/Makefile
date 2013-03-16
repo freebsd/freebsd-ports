@@ -69,8 +69,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${TOSIMG})
-IGNORE="Please get a ROM dump from your AtariST and save it as"\
-"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make again"
+IGNORE=	please get a ROM dump from your AtariST and save it as\
+"${TOSIMG}" in "${DISTDIR}" manually, and then make again
 .endif
 
 BUILD_DEPENDS+=		${LOCALBASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc

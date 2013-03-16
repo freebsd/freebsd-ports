@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libflame
-# Date created:				1 Jan 2012
-# Whom: 				bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libflame
 DISTVERSION=	r7421
@@ -117,7 +112,7 @@ WITH_BLAS?=	atlas_c
 WITH_BLAS?=	reference_c
 .endif
 .if !(${WITH_BLAS} == "atlas_c" || ${WITH_BLAS} == "reference_c")
-IGNORE =	: WITH_CBLAS is incompatible with WITH_BLAS = ${WITH_BLAS}"
+IGNORE=	: WITH_CBLAS is incompatible with WITH_BLAS = ${WITH_BLAS}
 .endif
 .elif exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=	gotoblas

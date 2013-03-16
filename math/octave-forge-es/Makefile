@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-es
-# Date created:		6 June 2010
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-es
 PORTVERSION=	0.0.4
@@ -13,7 +9,7 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-BROKEN=		"Does not build"
+BROKEN=		does not build
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

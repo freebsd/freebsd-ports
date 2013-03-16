@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jdk16-doc
-# Date created:		August 18, 2007
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
@@ -36,7 +32,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL} by selecting the \"Download\" link for the \"Java SE 6 Documentation\", place it in ${DISTDIR} and then run make again
+IGNORE=	you must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL} by selecting the "Download" link for the "Java SE 6 Documentation", place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
