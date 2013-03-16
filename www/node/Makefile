@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.8.21
+PORTVERSION=	0.10.0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	2.7
 USE_GMAKE=	yes
 
-CONFLICTS=	node-0.[0-79]* node-devel-0.[0-9]*
+CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
@@ -28,7 +28,6 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/build/common.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
