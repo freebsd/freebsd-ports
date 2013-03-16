@@ -4,6 +4,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.139
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,8 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack
+USES=		pathfix
+USE_GNOME=	intlhack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
