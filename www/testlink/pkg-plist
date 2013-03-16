@@ -2,6 +2,7 @@
 %%WWWDIR%%/cfg/custom_reports.cfg.php
 %%WWWDIR%%/cfg/custom_reports.cfg.php.example
 %%WWWDIR%%/cfg/reports.cfg.php
+%%WWWDIR%%/cfg/tl_ckeditor_config.js
 %%WWWDIR%%/cfg/tl_fckeditor_config.js
 %%WWWDIR%%/cfg/userRightMatrix.php
 %%WWWDIR%%/config.inc.php
@@ -146,6 +147,8 @@
 %%WWWDIR%%/gui/templates/project/fix_tplans.tpl
 %%WWWDIR%%/gui/templates/project/projectEdit.tpl
 %%WWWDIR%%/gui/templates/project/projectView.tpl
+%%WWWDIR%%/gui/templates/reqmgrsystems/reqMgrSystemEdit.tpl
+%%WWWDIR%%/gui/templates/reqmgrsystems/reqMgrSystemView.tpl
 %%WWWDIR%%/gui/templates/requirements/inc_btn_reqSpecView.tpl
 %%WWWDIR%%/gui/templates/requirements/inc_req_import_viewer.tpl
 %%WWWDIR%%/gui/templates/requirements/project_req_spec_mgmt.tpl
@@ -192,6 +195,8 @@
 %%WWWDIR%%/gui/templates/results/resultsTC.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUser.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserGUI.tpl
+%%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProject.tpl
+%%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProjectGUI.tpl
 %%WWWDIR%%/gui/templates/results/tcNotRunAnyPlatform.tpl
 %%WWWDIR%%/gui/templates/results/testCasesWithCF.tpl
 %%WWWDIR%%/gui/templates/results/testCasesWithoutTester.tpl
@@ -239,6 +244,57 @@
 %%WWWDIR%%/gui/templates/usermanagement/usersEdit.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
+%%WWWDIR%%/gui/templates_c/%%05^055^055DF0AD%%inc_del_onclick.tpl.php
+%%WWWDIR%%/gui/templates_c/%%0E^0EC^0EC3F9D8%%eventviewer.tpl.php
+%%WWWDIR%%/gui/templates_c/%%19^194^19441EB5%%inc_refreshTreeWithFilters.tpl.php
+%%WWWDIR%%/gui/templates_c/%%25^252^2520047E%%projectEdit.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2B^2B1^2B14B811%%inc_testsuite_viewer_rw.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2B^2B5^2B5F1EA9%%inc_copyrightnotice.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2C^2C3^2C307F68%%inc_ext_table.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2E^2E1^2E11686C%%tcView_viewer.tpl.php
+%%WWWDIR%%/gui/templates_c/%%31^31A^31A35F5F%%inc_filter_panel.tpl.php
+%%WWWDIR%%/gui/templates_c/%%34^344^344702A7%%input_dimensions.conf%7CnavBar.php
+%%WWWDIR%%/gui/templates_c/%%35^352^352624C3%%input_dimensions.conf%7CprojectView.php
+%%WWWDIR%%/gui/templates_c/%%39^39C^39C78510%%input_dimensions.conf%7CcontainerEdit.php
+%%WWWDIR%%/gui/templates_c/%%47^478^478526D1%%input_dimensions.conf%7Clogin.php
+%%WWWDIR%%/gui/templates_c/%%4A^4AE^4AEE5157%%input_dimensions.conf%7CprojectEdit.php
+%%WWWDIR%%/gui/templates_c/%%4E^4E2^4E21677E%%opt_transfer.inc.tpl.php
+%%WWWDIR%%/gui/templates_c/%%56^560^56038526%%inc_head.tpl.php
+%%WWWDIR%%/gui/templates_c/%%5A^5AB^5AB28840%%containerNew.tpl.php
+%%WWWDIR%%/gui/templates_c/%%5D^5DA^5DAE1AB0%%inc_ext_js.tpl.php
+%%WWWDIR%%/gui/templates_c/%%69^690^6902A81E%%input_dimensions.conf%7CtreeFilterForm.php
+%%WWWDIR%%/gui/templates_c/%%6A^6A5^6A537DD8%%login.tpl.php
+%%WWWDIR%%/gui/templates_c/%%6C^6CC^6CC329AE%%tcStepEdit.tpl.php
+%%WWWDIR%%/gui/templates_c/%%72^72D^72DAF6E8%%main.tpl.php
+%%WWWDIR%%/gui/templates_c/%%74^746^746826BD%%mainPageLeft.tpl.php
+%%WWWDIR%%/gui/templates_c/%%77^773^773CF248%%input_dimensions.conf%7CmainPage.php
+%%WWWDIR%%/gui/templates_c/%%7B^7B8^7B846452%%inc_testsuite_viewer_ro.tpl.php
+%%WWWDIR%%/gui/templates_c/%%7C^7C8^7C86128F%%input_dimensions.conf%7Ceventviewer.php
+%%WWWDIR%%/gui/templates_c/%%7F^7FF^7FFDA7BA%%inc_help.tpl.php
+%%WWWDIR%%/gui/templates_c/%%85^851^85132294%%error_icon.tpl.php
+%%WWWDIR%%/gui/templates_c/%%85^851^8516F146%%inc_attachments.tpl.php
+%%WWWDIR%%/gui/templates_c/%%86^869^86926229%%tcTree.tpl.php
+%%WWWDIR%%/gui/templates_c/%%86^86A^86A1E9DD%%projectView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%8A^8AA^8AAF2C56%%inc_login_title.tpl.php
+%%WWWDIR%%/gui/templates_c/%%93^934^9343D7AD%%inc_update.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A1^A1C^A1CBA8B1%%mainPage.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A2^A28^A281DF89%%input_dimensions.conf%7CtcNew.php
+%%WWWDIR%%/gui/templates_c/%%A3^A3A^A3A847C8%%inc_tcbody.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A5^A55^A55CC92A%%inc_tree_control.tpl.php
+%%WWWDIR%%/gui/templates_c/%%B3^B39^B39DACD9%%inc_jsCfieldsValidation.tpl.php
+%%WWWDIR%%/gui/templates_c/%%B6^B6A^B6AD6561%%containerView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%BB^BB4^BB4E6982%%tcView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%CC^CC0^CC0255CA%%staticPage.tpl.php
+%%WWWDIR%%/gui/templates_c/%%D3^D39^D394A177%%input_dimensions.conf.php
+%%WWWDIR%%/gui/templates_c/%%D4^D4D^D4D455CA%%tcNew.tpl.php
+%%WWWDIR%%/gui/templates_c/%%D7^D7E^D7E0C57C%%inc_filter_panel_js.tpl.php
+%%WWWDIR%%/gui/templates_c/%%E2^E21^E21A3209%%inc_msg_from_array.tpl.php
+%%WWWDIR%%/gui/templates_c/%%E6^E68^E6831641%%navBar.tpl.php
+%%WWWDIR%%/gui/templates_c/%%E9^E9B^E9BD7D0A%%input_dimensions.conf%7CtcStepEdit.php
+%%WWWDIR%%/gui/templates_c/%%EB^EBA^EBAFA72D%%tcEdit_New_viewer.tpl.php
+%%WWWDIR%%/gui/templates_c/%%F1^F13^F1313A5A%%frmInner.tpl.php
+%%WWWDIR%%/gui/templates_c/%%F5^F50^F501ED3C%%mainPageRight.tpl.php
+%%WWWDIR%%/gui/templates_c/README.TXT
 %%WWWDIR%%/gui/themes/default/css/custom.css.example
 %%WWWDIR%%/gui/themes/default/css/testlink.css
 %%WWWDIR%%/gui/themes/default/css/tl_documents.css
@@ -247,6 +303,8 @@
 %%WWWDIR%%/gui/themes/default/images/45px-Nuvola_apps_bug.png
 %%WWWDIR%%/gui/themes/default/images/README.TXT
 %%WWWDIR%%/gui/themes/default/images/accept.png
+%%WWWDIR%%/gui/themes/default/images/add.png
+%%WWWDIR%%/gui/themes/default/images/add_small.png
 %%WWWDIR%%/gui/themes/default/images/answer.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2_16.png
@@ -280,8 +338,10 @@
 %%WWWDIR%%/gui/themes/default/images/checkmark.gif
 %%WWWDIR%%/gui/themes/default/images/close_win.gif
 %%WWWDIR%%/gui/themes/default/images/company_logo.png
+%%WWWDIR%%/gui/themes/default/images/connect.png
 %%WWWDIR%%/gui/themes/default/images/contact.gif
 %%WWWDIR%%/gui/themes/default/images/contact_16.png
+%%WWWDIR%%/gui/themes/default/images/control_equalizer.png
 %%WWWDIR%%/gui/themes/default/images/control_pause.png
 %%WWWDIR%%/gui/themes/default/images/data_copy_16.png
 %%WWWDIR%%/gui/themes/default/images/data_delete_16.png
@@ -289,6 +349,7 @@
 %%WWWDIR%%/gui/themes/default/images/data_new_16.png
 %%WWWDIR%%/gui/themes/default/images/date.png
 %%WWWDIR%%/gui/themes/default/images/disconnect.png
+%%WWWDIR%%/gui/themes/default/images/disconnect_small.png
 %%WWWDIR%%/gui/themes/default/images/door.png
 %%WWWDIR%%/gui/themes/default/images/door_in.png
 %%WWWDIR%%/gui/themes/default/images/door_open.png
@@ -333,6 +394,7 @@
 %%WWWDIR%%/gui/themes/default/images/note_edit_greyed.png
 %%WWWDIR%%/gui/themes/default/images/order_asc.gif
 %%WWWDIR%%/gui/themes/default/images/order_desc.gif
+%%WWWDIR%%/gui/themes/default/images/page_excel.png
 %%WWWDIR%%/gui/themes/default/images/pencil.png
 %%WWWDIR%%/gui/themes/default/images/plus.gif
 %%WWWDIR%%/gui/themes/default/images/question.gif
@@ -346,6 +408,11 @@
 %%WWWDIR%%/gui/themes/default/images/sym_question.gif
 %%WWWDIR%%/gui/themes/default/images/thrash.png
 %%WWWDIR%%/gui/themes/default/images/timeline_marker.png
+%%WWWDIR%%/gui/themes/default/images/tl-logo-transparent-12.5.png
+%%WWWDIR%%/gui/themes/default/images/tl-logo-transparent-25.png
+%%WWWDIR%%/gui/themes/default/images/tl-logo-transparent.png
+%%WWWDIR%%/gui/themes/default/images/tl-solo-logo-transparent-25.png
+%%WWWDIR%%/gui/themes/default/images/tl-solo-logo-transparent.png
 %%WWWDIR%%/gui/themes/default/images/toggle_all.gif
 %%WWWDIR%%/gui/themes/default/images/tool-sprites.gif
 %%WWWDIR%%/gui/themes/default/images/trash-1.png
@@ -510,6 +577,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1/db_schema_update.sql
@@ -534,6 +607,7 @@
 %%WWWDIR%%/lib/ajax/getUsersWithRight.php
 %%WWWDIR%%/lib/ajax/getissuetrackercfgtemplate.php
 %%WWWDIR%%/lib/ajax/getreqlog.php
+%%WWWDIR%%/lib/ajax/getreqmgrsystemcfgtemplate.php
 %%WWWDIR%%/lib/ajax/getreqspeclog.php
 %%WWWDIR%%/lib/ajax/getrequirementnodes.php
 %%WWWDIR%%/lib/ajax/gettestcasesummary.php
@@ -554,11 +628,13 @@
 %%WWWDIR%%/lib/api/sample_clients/perl/clientCreateBuild.pl
 %%WWWDIR%%/lib/api/sample_clients/perl/clientGetProjects.pl
 %%WWWDIR%%/lib/api/sample_clients/php/README.TXT
+%%WWWDIR%%/lib/api/sample_clients/php/clientAddPlatformToTestPlan.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientAddTestCaseToTestPlan.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientAssignRequirements.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCheckDevKey.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateBuild.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateNTestCases.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientCreatePlatform.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCase.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCaseSteps.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestPlan.php
@@ -572,6 +648,7 @@
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetFirstLevelTestSuitesForTestProject.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetFullPath.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetLastExecutionResult.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientGetProjectPlatforms.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetProjectTestPlans.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetProjects.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCase.php
@@ -587,11 +664,13 @@
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetTestSuitesForTestPlan.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetTestSuitesForTestSuite.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetTotalsForPlan.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientRemovePlatformFromTestPlan.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientReportTCResult.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientReportTCResultOVERWRITE.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientSample.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientSample2.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientSetTestCaseExecutionType.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientSetupTicket-5451.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientUploadTestCaseAttachment.php
@@ -698,6 +777,7 @@
 %%WWWDIR%%/lib/functions/tlIssueTracker.class.php
 %%WWWDIR%%/lib/functions/tlKeyword.class.php
 %%WWWDIR%%/lib/functions/tlPlatform.class.php
+%%WWWDIR%%/lib/functions/tlReqMgrSystem.class.php
 %%WWWDIR%%/lib/functions/tlRequirementFilterControl.class.php
 %%WWWDIR%%/lib/functions/tlRight.class.php
 %%WWWDIR%%/lib/functions/tlRole.class.php
@@ -723,12 +803,15 @@
 %%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue01.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue02.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzilladb.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzillaxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugz.api.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugzrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.gforgesoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jiradbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.mantissoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-fman.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-raw-api.01.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.01.php
@@ -741,6 +824,8 @@
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/gforgesoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/issueTrackerInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/jiraCommons.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/jiradbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/mantisdbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/mantissoapInterface.class.php
@@ -781,6 +866,10 @@
 %%WWWDIR%%/lib/project/projectEdit.php
 %%WWWDIR%%/lib/project/projectView.php
 %%WWWDIR%%/lib/project/project_req_spec_mgmt.php
+%%WWWDIR%%/lib/reqmgrsystemintegration/reqMgrSystemInterface.class.php
+%%WWWDIR%%/lib/reqmgrsystems/reqMgrSystemCommands.class.php
+%%WWWDIR%%/lib/reqmgrsystems/reqMgrSystemEdit.php
+%%WWWDIR%%/lib/reqmgrsystems/reqMgrSystemView.php
 %%WWWDIR%%/lib/requirements/reqCommands.class.php
 %%WWWDIR%%/lib/requirements/reqCompareVersions.php
 %%WWWDIR%%/lib/requirements/reqEdit.php
@@ -825,6 +914,7 @@
 %%WWWDIR%%/lib/results/resultsTC.php
 %%WWWDIR%%/lib/results/tcCreatedPerUser.php
 %%WWWDIR%%/lib/results/tcCreatedPerUserGUI.php
+%%WWWDIR%%/lib/results/tcCreatedPerUserOnTestProject.php
 %%WWWDIR%%/lib/results/tcNotRunAnyPlatform.php
 %%WWWDIR%%/lib/results/testCasesWithCF.php
 %%WWWDIR%%/lib/results/testCasesWithoutTester.php
@@ -924,6 +1014,10 @@
 %%WWWDIR%%/locale/zh_CN/texts.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
+%%WWWDIR%%/logs/audits.log
+%%WWWDIR%%/logs/config_check.txt
+%%WWWDIR%%/logs/userlog0.log
+%%WWWDIR%%/logs/userlog1.log
 %%WWWDIR%%/lostPassword.php
 %%WWWDIR%%/third_party/Zend/Exception.php
 %%WWWDIR%%/third_party/Zend/Http/Client.php
@@ -1231,6 +1325,918 @@
 %%WWWDIR%%/third_party/adodb/xsl/remove-0.3.xsl
 %%WWWDIR%%/third_party/adodb_xml/class.ADODB_XML.php
 %%WWWDIR%%/third_party/adodb_xml/class.xml.php
+%%WWWDIR%%/third_party/ckeditor/CHANGES.html
+%%WWWDIR%%/third_party/ckeditor/INSTALL.html
+%%WWWDIR%%/third_party/ckeditor/LICENSE.html
+%%WWWDIR%%/third_party/ckeditor/_samples/adobeair/application.xml
+%%WWWDIR%%/third_party/ckeditor/_samples/adobeair/run.bat
+%%WWWDIR%%/third_party/ckeditor/_samples/adobeair/run.sh
+%%WWWDIR%%/third_party/ckeditor/_samples/adobeair/sample.html
+%%WWWDIR%%/third_party/ckeditor/_samples/ajax.html
+%%WWWDIR%%/third_party/ckeditor/_samples/api.html
+%%WWWDIR%%/third_party/ckeditor/_samples/api_dialog.html
+%%WWWDIR%%/third_party/ckeditor/_samples/api_dialog/my_dialog.js
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/advanced.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/events.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/index.html
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/replace.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/replaceall.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/sample_posteddata.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/asp/standalone.asp
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/_posteddata.php
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/output_for_flash.fla
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/output_for_flash.swf
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/output_xhtml.css
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/parsesample.css
+%%WWWDIR%%/third_party/ckeditor/_samples/assets/swfobject.js
+%%WWWDIR%%/third_party/ckeditor/_samples/autogrow.html
+%%WWWDIR%%/third_party/ckeditor/_samples/bbcode.html
+%%WWWDIR%%/third_party/ckeditor/_samples/devtools.html
+%%WWWDIR%%/third_party/ckeditor/_samples/divreplace.html
+%%WWWDIR%%/third_party/ckeditor/_samples/enterkey.html
+%%WWWDIR%%/third_party/ckeditor/_samples/fullpage.html
+%%WWWDIR%%/third_party/ckeditor/_samples/index.html
+%%WWWDIR%%/third_party/ckeditor/_samples/jqueryadapter.html
+%%WWWDIR%%/third_party/ckeditor/_samples/output_for_flash.html
+%%WWWDIR%%/third_party/ckeditor/_samples/output_html.html
+%%WWWDIR%%/third_party/ckeditor/_samples/output_xhtml.html
+%%WWWDIR%%/third_party/ckeditor/_samples/php/advanced.php
+%%WWWDIR%%/third_party/ckeditor/_samples/php/events.php
+%%WWWDIR%%/third_party/ckeditor/_samples/php/index.html
+%%WWWDIR%%/third_party/ckeditor/_samples/php/replace.php
+%%WWWDIR%%/third_party/ckeditor/_samples/php/replaceall.php
+%%WWWDIR%%/third_party/ckeditor/_samples/php/standalone.php
+%%WWWDIR%%/third_party/ckeditor/_samples/placeholder.html
+%%WWWDIR%%/third_party/ckeditor/_samples/readonly.html
+%%WWWDIR%%/third_party/ckeditor/_samples/replacebyclass.html
+%%WWWDIR%%/third_party/ckeditor/_samples/replacebycode.html
+%%WWWDIR%%/third_party/ckeditor/_samples/sample.css
+%%WWWDIR%%/third_party/ckeditor/_samples/sample.js
+%%WWWDIR%%/third_party/ckeditor/_samples/sample_posteddata.php
+%%WWWDIR%%/third_party/ckeditor/_samples/sharedspaces.html
+%%WWWDIR%%/third_party/ckeditor/_samples/skins.html
+%%WWWDIR%%/third_party/ckeditor/_samples/stylesheetparser.html
+%%WWWDIR%%/third_party/ckeditor/_samples/tableresize.html
+%%WWWDIR%%/third_party/ckeditor/_samples/ui_color.html
+%%WWWDIR%%/third_party/ckeditor/_samples/ui_languages.html
+%%WWWDIR%%/third_party/ckeditor/_source/adapters/jquery.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/_bootstrap.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/ckeditor.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/ckeditor_base.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/ckeditor_basic.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/command.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/commanddefinition.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/config.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dataprocessor.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/comment.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/document.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/documentfragment.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/domobject.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/element.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/elementpath.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/event.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/node.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/nodelist.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/range.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/rangelist.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/text.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/walker.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dom/window.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/dtd.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/editor.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/editor_basic.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/env.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/event.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/eventInfo.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/focusmanager.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/basicwriter.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/cdata.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/comment.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/element.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/filter.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/fragment.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser/text.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/lang.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/loader.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/plugindefinition.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/plugins.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/resourcemanager.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/scriptloader.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/skins.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/themes.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/tools.js
+%%WWWDIR%%/third_party/ckeditor/_source/core/ui.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/_languages.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/lang/af.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ar.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/bn.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/bs.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ca.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/en-au.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/en-ca.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/en-gb.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/es.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/eu.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/fo.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/fr-ca.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/gl.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/hi.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/hu.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/id.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/is.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ja.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ka.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/km.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ko.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/lt.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/mn.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ms.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/pt.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ro.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ru.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/sl.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/sr-latn.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/sr.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/sv.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/th.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/lang/zh.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/ro.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/about/dialogs/about.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/about/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/adobeair/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/ajax/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/autogrow/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/basicstyles/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/bbcode/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/bidi/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/blockquote/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/button/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/clipboard/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/colorbutton/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/colordialog/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/contextmenu/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/dialog/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/dialogadvtab/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/dialogui/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/div/dialogs/div.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/div/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/docprops/dialogs/docprops.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/docprops/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/domiterator/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/editingblock/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/elementspath/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/enterkey/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/entities/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/fakeobjects/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/filebrowser/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/find/dialogs/find.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/find/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/flash/images/placeholder.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/flash/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/floatpanel/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/font/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/format/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/button.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/form.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/select.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/horizontalrule/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/htmldataprocessor/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/htmlwriter/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe/images/placeholder.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/iframedialog/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/image/dialogs/image.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/image/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/indent/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/justify/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/keystrokes/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/link/dialogs/link.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/link/images/anchor.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/link/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/list/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/listblock/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/liststyle/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/maximize/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/menu/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/menubutton/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/newpage/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pagebreak/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/panel/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/panelbutton/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pastefromword/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/pastetext/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/dialogs/placeholder.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/popup/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/preview/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/preview/preview.html
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/print/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/removeformat/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/resize/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/richcombo/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/save/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/scayt/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/selection/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/showborders/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/heart.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/sourcearea/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/styles/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/styles/styles/default.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/stylescombo/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/stylesheetparser/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/tab/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/table/dialogs/table.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/table/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/tableresize/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/tabletools/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates/default.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/toolbar/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/dialogs/uicolor.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/uicolor.gif
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets/hue_bg.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets/hue_thumb.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets/picker_mask.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets/picker_thumb.png
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets/yui.css
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/yui.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/undo/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/wysiwygarea/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/plugins/xml/plugin.js
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/dialog.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/editor.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/elementspath.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/icons.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/icons.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images/toolbar_start.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/mainui.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/menu.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/panel.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/presets.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/reset.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/richcombo.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/skin.js
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/templates.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/kama/toolbar.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/dialog.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/editor.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/elementspath.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/icons.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/icons.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/mainui.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/menu.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/panel.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/presets.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/reset.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/richcombo.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/skin.js
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/templates.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/toolbar.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/dialog.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/editor.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/elementspath.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/icons.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/icons.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images/toolbar_start.gif
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/mainui.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/menu.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/panel.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/presets.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/reset.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/richcombo.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/skin.js
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/templates.css
+%%WWWDIR%%/third_party/ckeditor/_source/skins/v2/toolbar.css
+%%WWWDIR%%/third_party/ckeditor/_source/themes/default/theme.js
+%%WWWDIR%%/third_party/ckeditor/adapters/jquery.js
+%%WWWDIR%%/third_party/ckeditor/ckeditor.asp
+%%WWWDIR%%/third_party/ckeditor/ckeditor.class.php
+%%WWWDIR%%/third_party/ckeditor/ckeditor.js
+%%WWWDIR%%/third_party/ckeditor/ckeditor.pack
+%%WWWDIR%%/third_party/ckeditor/ckeditor.php
+%%WWWDIR%%/third_party/ckeditor/ckeditor_basic.js
+%%WWWDIR%%/third_party/ckeditor/ckeditor_basic_source.js
+%%WWWDIR%%/third_party/ckeditor/ckeditor_php4.php
+%%WWWDIR%%/third_party/ckeditor/ckeditor_php5.php
+%%WWWDIR%%/third_party/ckeditor/ckeditor_source.js
+%%WWWDIR%%/third_party/ckeditor/config.js
+%%WWWDIR%%/third_party/ckeditor/contents.css
+%%WWWDIR%%/third_party/ckeditor/images/spacer.gif
+%%WWWDIR%%/third_party/ckeditor/lang/_languages.js
+%%WWWDIR%%/third_party/ckeditor/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/lang/af.js
+%%WWWDIR%%/third_party/ckeditor/lang/ar.js
+%%WWWDIR%%/third_party/ckeditor/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/lang/bn.js
+%%WWWDIR%%/third_party/ckeditor/lang/bs.js
+%%WWWDIR%%/third_party/ckeditor/lang/ca.js
+%%WWWDIR%%/third_party/ckeditor/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/lang/en-au.js
+%%WWWDIR%%/third_party/ckeditor/lang/en-ca.js
+%%WWWDIR%%/third_party/ckeditor/lang/en-gb.js
+%%WWWDIR%%/third_party/ckeditor/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/lang/es.js
+%%WWWDIR%%/third_party/ckeditor/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/lang/eu.js
+%%WWWDIR%%/third_party/ckeditor/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/lang/fo.js
+%%WWWDIR%%/third_party/ckeditor/lang/fr-ca.js
+%%WWWDIR%%/third_party/ckeditor/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/lang/gl.js
+%%WWWDIR%%/third_party/ckeditor/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/lang/hi.js
+%%WWWDIR%%/third_party/ckeditor/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/lang/hu.js
+%%WWWDIR%%/third_party/ckeditor/lang/id.js
+%%WWWDIR%%/third_party/ckeditor/lang/is.js
+%%WWWDIR%%/third_party/ckeditor/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/lang/ja.js
+%%WWWDIR%%/third_party/ckeditor/lang/ka.js
+%%WWWDIR%%/third_party/ckeditor/lang/km.js
+%%WWWDIR%%/third_party/ckeditor/lang/ko.js
+%%WWWDIR%%/third_party/ckeditor/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/lang/lt.js
+%%WWWDIR%%/third_party/ckeditor/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/lang/mn.js
+%%WWWDIR%%/third_party/ckeditor/lang/ms.js
+%%WWWDIR%%/third_party/ckeditor/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/lang/pt.js
+%%WWWDIR%%/third_party/ckeditor/lang/ro.js
+%%WWWDIR%%/third_party/ckeditor/lang/ru.js
+%%WWWDIR%%/third_party/ckeditor/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/lang/sl.js
+%%WWWDIR%%/third_party/ckeditor/lang/sr-latn.js
+%%WWWDIR%%/third_party/ckeditor/lang/sr.js
+%%WWWDIR%%/third_party/ckeditor/lang/sv.js
+%%WWWDIR%%/third_party/ckeditor/lang/th.js
+%%WWWDIR%%/third_party/ckeditor/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/lang/zh.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/ro.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/plugins/about/dialogs/about.js
+%%WWWDIR%%/third_party/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/third_party/ckeditor/plugins/adobeair/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/ajax/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/autogrow/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/bbcode/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/third_party/ckeditor/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/gu.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/plugins/devtools/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/third_party/ckeditor/plugins/div/dialogs/div.js
+%%WWWDIR%%/third_party/ckeditor/plugins/docprops/dialogs/docprops.js
+%%WWWDIR%%/third_party/ckeditor/plugins/docprops/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/find/dialogs/find.js
+%%WWWDIR%%/third_party/ckeditor/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/third_party/ckeditor/plugins/flash/images/placeholder.png
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/button.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/form.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/select.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/third_party/ckeditor/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/third_party/ckeditor/plugins/iframe/images/placeholder.png
+%%WWWDIR%%/third_party/ckeditor/plugins/iframedialog/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/image/dialogs/image.js
+%%WWWDIR%%/third_party/ckeditor/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/third_party/ckeditor/plugins/link/dialogs/link.js
+%%WWWDIR%%/third_party/ckeditor/plugins/link/images/anchor.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/third_party/ckeditor/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/third_party/ckeditor/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/dialogs/placeholder.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/placeholder/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/preview/preview.html
+%%WWWDIR%%/third_party/ckeditor/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/third_party/ckeditor/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/heart.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/plugins/styles/styles/default.js
+%%WWWDIR%%/third_party/ckeditor/plugins/stylesheetparser/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/table/dialogs/table.js
+%%WWWDIR%%/third_party/ckeditor/plugins/tableresize/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/third_party/ckeditor/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/third_party/ckeditor/plugins/templates/templates/default.js
+%%WWWDIR%%/third_party/ckeditor/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/dialogs/uicolor.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/_translationstatus.txt
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/bg.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/cs.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/cy.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/da.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/de.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/el.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/en.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/eo.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/et.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/fa.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/fi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/fr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/he.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/hr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/it.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/ku.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/lv.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/mk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/nb.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/nl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/no.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/pl.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/pt-br.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/sk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/tr.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/ug.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/uk.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/vi.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang/zh-cn.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/plugin.js
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/uicolor.gif
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets/hue_bg.png
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets/hue_thumb.png
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets/picker_mask.png
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets/picker_thumb.png
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets/yui.css
+%%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/yui.js
+%%WWWDIR%%/third_party/ckeditor/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/third_party/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/third_party/ckeditor/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/third_party/ckeditor/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/third_party/ckeditor/plugins/xml/plugin.js
+%%WWWDIR%%/third_party/ckeditor/skins/kama/dialog.css
+%%WWWDIR%%/third_party/ckeditor/skins/kama/editor.css
+%%WWWDIR%%/third_party/ckeditor/skins/kama/icons.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/skins/kama/images/toolbar_start.gif
+%%WWWDIR%%/third_party/ckeditor/skins/kama/skin.js
+%%WWWDIR%%/third_party/ckeditor/skins/kama/templates.css
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/dialog.css
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/editor.css
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/icons.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/skin.js
+%%WWWDIR%%/third_party/ckeditor/skins/office2003/templates.css
+%%WWWDIR%%/third_party/ckeditor/skins/v2/dialog.css
+%%WWWDIR%%/third_party/ckeditor/skins/v2/editor.css
+%%WWWDIR%%/third_party/ckeditor/skins/v2/icons.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/icons_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/dialog_sides.gif
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/dialog_sides.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/dialog_sides_rtl.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/mini.gif
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/noimage.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/sprites.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/sprites_ie6.png
+%%WWWDIR%%/third_party/ckeditor/skins/v2/images/toolbar_start.gif
+%%WWWDIR%%/third_party/ckeditor/skins/v2/skin.js
+%%WWWDIR%%/third_party/ckeditor/skins/v2/templates.css
+%%WWWDIR%%/third_party/ckeditor/themes/default/theme.js
 %%WWWDIR%%/third_party/codeplex/PHPExcel.php
 %%WWWDIR%%/third_party/codeplex/PHPExcel/Autoloader.php
 %%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/APC.php
@@ -4165,6 +5171,246 @@
 @dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage
 @dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel
 @dirrm %%WWWDIR%%/third_party/codeplex
+@dirrm %%WWWDIR%%/third_party/ckeditor/themes/default
+@dirrm %%WWWDIR%%/third_party/ckeditor/themes
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/v2/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/v2
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/office2003/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/office2003
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/kama/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins/kama
+@dirrm %%WWWDIR%%/third_party/ckeditor/skins
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/xml
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/wsc
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/uicolor
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/templates/templates
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/templates
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/tabletools
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/tableresize
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/table/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/table
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/stylesheetparser
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/styles/styles
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/styles
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/specialchar/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/specialchar
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/smiley/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/smiley
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/showblocks/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/showblocks
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/scayt
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/preview
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/placeholder
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pastetext
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pastefromword
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/pagebreak
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/liststyle
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/link/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/link/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/link
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/image/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/image
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/iframedialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/iframe/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/iframe
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/forms/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/forms
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/flash/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/flash
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/find/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/find
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/docprops
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/div/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/div
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/dialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/devtools/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/devtools
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/colordialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/clipboard
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/bbcode
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/autogrow
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/ajax
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/adobeair
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/about/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/about
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins/a11yhelp
+@dirrm %%WWWDIR%%/third_party/ckeditor/plugins
+@dirrm %%WWWDIR%%/third_party/ckeditor/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/adapters
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/themes/default
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/themes
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/v2/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/v2
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/office2003/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/office2003
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/kama/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins/kama
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/skins
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/xml
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/wysiwygarea
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/wsc
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/undo
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/uicolor
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/toolbar
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/templates
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/templates
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/tabletools
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/tableresize
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/table/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/table
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/tab
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/stylesheetparser
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/stylescombo
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/styles/styles
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/styles
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/specialchar
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/sourcearea
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/smiley
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/showborders
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/showblocks
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/selection
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/scayt
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/save
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/richcombo
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/resize
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/removeformat
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/print
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/preview
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/popup
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/placeholder
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pastetext
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pastefromword
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/panelbutton
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/panel
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/pagebreak
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/newpage
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/menubutton
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/menu
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/maximize
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/liststyle
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/listblock
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/list
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/link/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/link/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/link
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/keystrokes
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/justify
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/indent
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/image/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/image
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/iframedialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/iframe
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/htmlwriter
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/htmldataprocessor
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/horizontalrule
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/forms
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/format
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/font
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/floatpanel
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/flash/images
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/flash
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/find/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/find
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/filebrowser
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/fakeobjects
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/entities
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/enterkey
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/elementspath
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/editingblock
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/domiterator
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/docprops
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/div/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/div
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/dialogui
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/dialogadvtab
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/dialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/devtools
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/contextmenu
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/colordialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/colorbutton
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/clipboard
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/button
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/blockquote
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/bidi
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/bbcode
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/basicstyles
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/autogrow
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/ajax
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/adobeair
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/about/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/about
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins/a11yhelp
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/plugins
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/lang
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/core/htmlparser
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/core/dom
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/core
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source/adapters
+@dirrm %%WWWDIR%%/third_party/ckeditor/_source
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples/php
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples/assets
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples/asp
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples/api_dialog
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples/adobeair
+@dirrm %%WWWDIR%%/third_party/ckeditor/_samples
+@dirrm %%WWWDIR%%/third_party/ckeditor
 @dirrm %%WWWDIR%%/third_party/adodb_xml
 @dirrm %%WWWDIR%%/third_party/adodb/xsl
 @dirrm %%WWWDIR%%/third_party/adodb/tests
@@ -4227,6 +5473,8 @@
 @dirrm %%WWWDIR%%/lib/testcases
 @dirrm %%WWWDIR%%/lib/results
 @dirrm %%WWWDIR%%/lib/requirements
+@dirrm %%WWWDIR%%/lib/reqmgrsystems
+@dirrm %%WWWDIR%%/lib/reqmgrsystemintegration
 @dirrm %%WWWDIR%%/lib/project
 @dirrm %%WWWDIR%%/lib/platforms
 @dirrm %%WWWDIR%%/lib/plan
@@ -4278,6 +5526,19 @@
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5
@@ -4351,6 +5612,7 @@
 @dirrm %%WWWDIR%%/gui/templates/testcases
 @dirrm %%WWWDIR%%/gui/templates/results
 @dirrm %%WWWDIR%%/gui/templates/requirements
+@dirrm %%WWWDIR%%/gui/templates/reqmgrsystems
 @dirrm %%WWWDIR%%/gui/templates/project
 @dirrm %%WWWDIR%%/gui/templates/platforms
 @dirrm %%WWWDIR%%/gui/templates/plan
