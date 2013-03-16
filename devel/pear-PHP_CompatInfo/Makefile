@@ -3,7 +3,7 @@
 
 PORTNAME=	PHP_CompatInfo
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${PEARDIR}/Var/Dump.php:${PORTSDIR}/devel/pear-Var_Dump
 .endif
 
 .if ${PORT_OPTIONS:MPEAR_PHPUNIT}
-RUN_DEPENDS+=	${PEARDIR}/PHPUnit/Framework.php:${PORTSDIR}/devel/pear-PHPUnit3
+RUN_DEPENDS+=	${PEARDIR}/PHPUnit/Autoload.php:${PORTSDIR}/devel/pear-PHPUnit3
 .endif
 
 .if ${PORT_OPTIONS:MPEAR_XML_UTIL}
