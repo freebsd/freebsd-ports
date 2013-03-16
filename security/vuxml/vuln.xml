@@ -323,7 +323,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>libpurple -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>libpruple</name>
+	<name>libpurple</name>
 	<range><lt>2.10.7</lt></range>
       </package>
     </affects>
@@ -355,6 +355,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-02-13</discovery>
       <entry>2013-03-10</entry>
+      <modified>2013-03-16</modified>
     </dates>
   </vuln>
 
