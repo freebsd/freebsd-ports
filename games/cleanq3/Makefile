@@ -1,15 +1,11 @@
-# New ports collection makefile for:	CleanQ3
-# Date created:				17 Mar 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cleanq3
 PORTVERSION=	0.5.2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://tremor.quakedev.com/
+MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/temor/downloads/
 DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,11 +18,15 @@ WRKSRC=		${WRKDIR}/CleanQ3
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		GAMELIBS "Build game libraries (when not mandatory)" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SMP "Build SMP (threaded) client" on
+OPTIONS_DEFINE=	GAMELIBS OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	TYPE
+OPTIONS_MULTI_TYPE=	CLIENT SMP_CLIENT DEDICATED
+OPTIONS_DEFAULT=	CLIENT SMP_CLIENT DEDICATED OPTIMIZED_CFLAGS
+
+CLIENT_DESC=		Build client
+SMP_CLIENT_DESC=	Build SMP (threaded) client
+DEDICATED_DESC=		Build dedicated server
+GAMELIBS_DESC=		Build game libraries (when not mandatory)
 
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
@@ -34,15 +34,10 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SMP)
-IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 .for i in ${ARCH}
@@ -55,12 +50,12 @@ HAVE_VM_COMPILED=	yes
 MAKE_ENV+=	DLL_ONLY=true
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP_CLIENT}
 USE_GL=		yes
 USE_XORG=	xxf86dga
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	CLIENT=YES
 PLIST_SUB+=	CLIENT=""
 Q3BIN+=		cleanq3
@@ -68,7 +63,15 @@ Q3BIN+=		cleanq3
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MSMP_CLIENT}
+MAKE_ENV+=	SMP=YES PTHREAD_LIBS="${PTHREAD_LIBS}"
+PLIST_SUB+=	SMP_CLIENT=""
+Q3BIN+=		cleanq3-smp
+.else
+PLIST_SUB+=	SMP_CLIENT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	DEDICATED=YES
 PLIST_SUB+=	DEDICATED=""
 Q3BIN+=		cleanq3ded
@@ -76,24 +79,15 @@ Q3BIN+=		cleanq3ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	GAMELIBS=YES
 PLIST_SUB+=	GAMELIBS=""
 .else
 PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
-
-.if !defined(WITHOUT_SMP)
-MAKE_ENV+=	SMP=YES \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-PLIST_SUB+=	SMP=""
-Q3BIN+=		cleanq3-smp
-.else
-PLIST_SUB+=	SMP="@comment "
 .endif
 
 post-patch:
@@ -108,12 +102,12 @@ do-install:
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
 .endfor
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
-	${MKDIR} ${LIBDIR}/${dir}
+	@${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
 .endif
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
