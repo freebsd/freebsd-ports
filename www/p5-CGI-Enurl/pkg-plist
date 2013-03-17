@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CGI/Enurl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Enurl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Enurl
