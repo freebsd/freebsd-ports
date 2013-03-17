@@ -69,6 +69,7 @@ include/d/druntime/import/core/thread.di
 include/d/druntime/import/core/sys/freebsd/dlfcn.d
 include/d/druntime/import/core/sys/freebsd/execinfo.d
 include/d/druntime/import/core/sys/freebsd/sys/event.d
+include/d/druntime/import/core/sys/linux/elf.d
 include/d/druntime/import/core/sys/linux/epoll.d
 include/d/druntime/import/core/sys/linux/execinfo.d
 include/d/druntime/import/core/sys/linux/sys/signalfd.d
@@ -84,6 +85,7 @@ include/d/druntime/import/core/sys/posix/config.d
 include/d/druntime/import/core/sys/posix/dirent.d
 include/d/druntime/import/core/sys/posix/dlfcn.d
 include/d/druntime/import/core/sys/posix/fcntl.d
+include/d/druntime/import/core/sys/posix/grp.d
 include/d/druntime/import/core/sys/posix/inttypes.d
 include/d/druntime/import/core/sys/posix/net/if_.d
 include/d/druntime/import/core/sys/posix/netinet/in_.d
