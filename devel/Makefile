@@ -4030,6 +4030,7 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json146
     SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-linecache
