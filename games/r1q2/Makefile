@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	CLIENT DEDICATED REF_GL
 
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
-GAME_DESC=	Build main game shared object file
+GAME_DESC=	Build main game (default mod)
 REF_GL_DESC=	Build renderer (required for client)
 
 .include <bsd.port.options.mk>

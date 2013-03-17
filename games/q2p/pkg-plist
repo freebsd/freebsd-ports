@@ -8,9 +8,6 @@
 %%SDL%%%%LIBDIR%%/snd_sdl.so
 %%GLX%%%%LIBDIR%%/vid_gl.so
 %%SDLGL%%%%LIBDIR%%/vid_sdl.so
-%%PORTDOCS%%%%DOCSDIR%%/Ogg_readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/Q2P_readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIBDIR%%/baseq2
 %%CTF%%@dirrm %%LIBDIR%%/ctf
 @dirrm %%LIBDIR%%
