@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-DB
-# Date created:			  28 November 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	DB
 PORTVERSION=	1.7.14
