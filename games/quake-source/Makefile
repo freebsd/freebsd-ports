@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake-source
-# Date created:				15 Sep 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	source
 PORTVERSION=	1.01
@@ -15,45 +11,50 @@ PKGNAMEPREFIX=	quake-
 DISTNAME=	qcc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quake and QuakeWorld source
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quake game source code
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	QUAKEWORLD "Install QuakeWorld source" on
-
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
-.include "Makefile.include"
+OPTIONS_DEFINE=	QUAKEWORLD
+OPTIONS_DEFAULT=	QUAKEWORLD
 
-.include <bsd.port.pre.mk>
+QUAKEWORLD_DESC=	Install QuakeWorld game source
 
-.if !defined(WITHOUT_QUAKEWORLD)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQUAKEWORLD}
 MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
 DISTFILES+=	qwsv-2.30-glibc-i386-unknown-linux2.0${EXTRACT_SUFX}:qw
+COMMENT:=	${COMMENT:S/Quake/& and QuakeWorld/}
 PLIST_SUB+=	QUAKEWORLD=""
 .else
 PLIST_SUB+=	QUAKEWORLD="@comment "
 .endif
 
 pre-patch:
+# CRLF -> LF conversion (XXX why not USE_DOS2UNIX?)
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${FILE} | \
-		${GREP} 'CRLF' | ${SED} -e 's/:.*//' | \
-		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
+		${GREP} 'CRLF' | ${SED} -e 's/:.*//' | ${XARGS} \
+			${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
 
 post-patch:
-	@${RM} ${WRKSRC}/send/v101qc/progs.src.orig
+	@${REINPLACE_CMD} -e 's,^\.\.,.,' ${WRKSRC}/send/v101qc/progs.src
+	@${RM} ${WRKSRC}/send/v101qc/progs.src.bak
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/send/v101qc ${DATADIR}
-.if !defined(WITHOUT_QUAKEWORLD)
-	${MKDIR} ${DATADIR}/qw
-.   for f in *.h *.qc *.src
+	@${MKDIR} ${DATADIR}
+	${CP} -a ${WRKSRC}/send/v101qc ${DATADIR}
+.if ${PORT_OPTIONS:MQUAKEWORLD}
+	@${MKDIR} ${DATADIR}/qw
+.  for f in *.h *.qc *.src
 	@${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" ${WRKSRC}/qw/${f}
 	${INSTALL_DATA} ${WRKSRC}/qw/${f} ${DATADIR}/qw
-.   endfor
+.  endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include "Makefile.include"
+.include <bsd.port.mk>
