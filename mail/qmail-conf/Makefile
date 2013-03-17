@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${DJBDNS_DIST}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
 USES=		qmail:vars
@@ -19,7 +19,7 @@ USES=		qmail:vars
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-RESTRICTED=	"borrows code from djbdns, thus falls under the same restrictions as dns/djbdns"
+RESTRICTED=	borrows code from djbdns, thus falls under the same restrictions as dns/djbdns
 
 PREFIX?=	${QMAIL_PREFIX}
 
@@ -28,8 +28,6 @@ NO_MTREE=	yes
 DJBDNS_VER=	1.05
 DJBDNS_NAME=	djbdns-${DJBDNS_VER}
 DJBDNS_DIST=	${DJBDNS_NAME}${EXTRACT_SUFX}
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 		@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DJBDNS_DIST} ${EXTRACT_AFTER_ARGS})
@@ -43,4 +41,4 @@ post-patch:
 pre-build:
 		@(cd ${WRKSRC} && ${MAKE} djbdns=${DJBDNS_NAME} -f Makefile.ini)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
