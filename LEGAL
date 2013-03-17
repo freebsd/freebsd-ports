@@ -66,8 +66,6 @@ dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
 defcon			games/linux-defcon	Redistribution limited
-dgd/*			net/dgd			License required for commercial use as a server, and even for distribution of sources and/or binaries into a corporate environment
-dgd/*			net/dgd-lpmud		No monetary gain.  No point in distributing a package, since it depends on dgd, which has restrictions on distribution Source tarball may go on CD-ROM
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
