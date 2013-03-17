@@ -19,4 +19,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL
 @dirrmtry %%SITE_PERL%%/CQL
-

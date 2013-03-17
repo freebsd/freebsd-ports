@@ -869,10 +869,6 @@ bin/updatetm
 %%DATADIR%%/mo/zh_HK/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/zh_TW/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/zu/LC_MESSAGES/django.mo
-
-
-
-
 @dirrmtry etc/pootle
 @dirrm %%PYTHON_SITELIBDIR%%/contact_form_i18n
 @dirrm %%PYTHON_SITELIBDIR%%/djblets/util/templatetags

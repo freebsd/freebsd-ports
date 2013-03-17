@@ -5,4 +5,3 @@ lib/libXss.la
 lib/libXss.a
 libdata/pkgconfig/xscrnsaver.pc
 @dirrmtry include/X11/extensions
-
