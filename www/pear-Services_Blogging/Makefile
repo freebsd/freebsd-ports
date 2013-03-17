@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_Blogging
-# Date created:			  23 June 2008
-# Whom:				  Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_Blogging
 PORTVERSION=	0.2.4
