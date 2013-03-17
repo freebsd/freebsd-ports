@@ -1,16 +1,11 @@
-# New ports collection makefile for:	Quetoo
-# Date created:				10 Apr 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quetoo
 PORTVERSION=	0.6.1
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/ \
-		http://tastyspleen.net/~jdolan/ \
+MASTER_SITES=	http://tastyspleen.net/~jdolan/ \
 		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -30,46 +25,48 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
+OPTIONS_DEFINE=	GAME CTF VANCTF QMASS MYSQL DOCS
 # Main and CTF game.so files are not built/installed by default since
 # they're available via `quake2-data' and `quake2-ctf' ports.
-#
-OPTIONS=	GAME	"Build the main game .so file"		off \
-		CTF	"Build Capture The Flag modification"	off \
-		VANCTF	"Build Vanilla CTF modification"	on \
-		QMASS	"Build QMass deathmatch mod"		on \
-		MYSQL	"Enable MySQL frag logging"		off \
+OPTIONS_DEFAULT=	VANCTF QMASS
 
-.include <bsd.port.pre.mk>
+GAME_DESC=	Build main game shared object file
+CTF_DESC=	Build Capture The Flag modification
+VANCTF_DESC=	Build Vanilla CTF modification
+QMASS_DESC=	Build QMass deathmatch modification
+MYSQL_DESC=	Enable frag logging with MySQL
 
-.if !defined(WITHOUT_GAME)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGAME}
 PLIST_SUB+=	GAME=""
 Q2GAMES+=	baseq2
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if defined(WITH_CTF)
+.if ${PORT_OPTIONS:MCTF}
 PLIST_SUB+=	CTF=""
 Q2GAMES+=	ctf
 .else
 PLIST_SUB+=	CTF="@comment "
 .endif
 
-.if !defined(WITHOUT_QMASS)
+.if ${PORT_OPTIONS:MQMASS}
 PLIST_SUB+=	QMASS=""
 Q2GAMES+=	qmass
 .else
 PLIST_SUB+=	QMASS="@comment "
 .endif
 
-.if defined(WITH_VANCTF)
+.if ${PORT_OPTIONS:MVANCTF}
 PLIST_SUB+=	VANCTF=""
 Q2GAMES+=	vanctf
 .else
 PLIST_SUB+=	VANCTF="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 CONFIGURE_ENV+=	MYSQL_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient" \
@@ -99,28 +96,26 @@ do-install:
 	@${MKDIR} ${LIBDIR}/${g}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${g}/.libs/game.so ${LIBDIR}/${g}
 .endfor
-.if !defined(WITHOUT_QMASS)
+.if ${PORT_OPTIONS:MQMASS}
 	@${MKDIR} ${DATADIR}/qmass/sound
 	${INSTALL_DATA} ${WRKSRC}/data/qmass/sound/*.wav ${DATADIR}/qmass/sound
-.if !defined(WITHOUT_VANCTF)
+.if ${PORT_OPTIONS:MVANCTF}
 	@${MKDIR} ${DATADIR}/vanctf/maps
 	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps/*.ent ${DATADIR}/vanctf/maps
 	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps.lst ${DATADIR}/vanctf
 .endif
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.   if !defined(WITHOUT_QMASS)
+.if ${PORT_OPTIONS:MDOCS}
+.  if ${PORT_OPTIONS:MQMASS}
 	@${MKDIR} ${DOCSDIR}/qmass
 	${INSTALL_DATA} ${WRKSRC}/src/qmass/README ${DOCSDIR}/qmass
-.   endif
-.   if !defined(WITHOUT_VANCTF)
+.  endif
+.  if ${PORT_OPTIONS:MVANCTF}
 	@${MKDIR} ${DOCSDIR}/vanctf
 	${INSTALL_DATA} ${WRKSRC}/src/vanctf/*E* ${DOCSDIR}/vanctf
-.   endif
+.  endif
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
