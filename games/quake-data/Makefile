@@ -24,21 +24,19 @@ NO_WRKSUBDIR=	yes
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
 SKINFILES=	skinbase.zip qw_skins.zip
 
-OPTIONS_DEFINE=	FULL QW_DATA QW_SKINS
+OPTIONS_DEFINE=	FULLGAME QW_DATA QW_SKINS
 OPTIONS_DEFAULT=	QW_DATA QW_SKINS
 
-FULL_DESC=	Install full game version
+FULLGAME_DESC=	Install full game version
 QW_DATA_DESC=	Install QuakeWorld data
 QW_SKINS_DESC=	Install QuakeWorld skins
 
-.include "Makefile.include"
+.include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFULL}
+.if ${PORT_OPTIONS:MFULLGAME}
 DISTFILES+=	pak1.pak
-PLIST_SUB+=	FULL=""
-.else
-PLIST_SUB+=	FULL="@comment "
+PLIST_FILES+=	%%DATADIR%%/id1/pak1.pak
 .endif
 
 .if ${PORT_OPTIONS:MQW_DATA}
@@ -59,9 +57,9 @@ PLIST_SUB+=	QUAKEWORLD="@comment "
 .endif
 
 pre-fetch:
-.if ${PORT_OPTIONS:MFULL} && !exists(${DISTDIR}/${DIST_SUBDIR}/pak1.pak)
+.if ${PORT_OPTIONS:MFULLGAME} && !exists(${_DISTDIR}/pak1.pak)
 	@${ECHO_CMD}
-	@${ECHO_CMD} You need to copy the file pak1.pak from the original Quake CDROM to ${DISTDIR}/${DIST_SUBDIR} in order to install this port. | ${FMT}
+	@${ECHO_CMD} You need to copy the file pak1.pak from the original Quake CDROM to ${_DISTDIR} in order to install this port. | ${FMT}
 	@${ECHO_CMD}
 	@${FALSE}
 .endif
@@ -69,8 +67,8 @@ pre-fetch:
 do-install:
 	@${MKDIR} ${DATADIR}/id1
 	${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${DATADIR}/id1
-.if ${PORT_OPTIONS:MFULL}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pak1.pak ${DATADIR}/id1
+.if ${PORT_OPTIONS:MFULLGAME}
+	${INSTALL_DATA} ${_DISTDIR}/pak1.pak ${DATADIR}/id1
 .endif
 .if ${PORT_OPTIONS:MQW_DATA}
 	@${MKDIR} ${DATADIR}/qw
@@ -79,7 +77,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh ${DATADIR}/qw/skins
 . if ${PORT_OPTIONS:MQW_SKINS}
 .   for f in ${SKINFILES}
-	@${UNZIP_CMD} -nq ${DISTDIR}/${DIST_SUBDIR}/${f} -d ${DATADIR}/qw/skins
+	@${UNZIP_CMD} -nq ${_DISTDIR}/${f} -d ${DATADIR}/qw/skins
 .   endfor
 	@(cd ${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
 . endif
