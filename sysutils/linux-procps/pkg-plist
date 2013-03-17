@@ -36,5 +36,4 @@ usr/share/man/man1/watch.1.gz
 usr/share/man/man5/sysctl.conf.5.gz
 usr/share/man/man8/sysctl.8.gz
 usr/share/man/man8/vmstat.8.gz
-
 @dirrm usr/share/doc/procps-%%PORTVERSION%%

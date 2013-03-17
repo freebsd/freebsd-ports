@@ -50,7 +50,6 @@ share/locale/sr@Latn/LC_MESSAGES/keep.mo
 share/locale/sv/LC_MESSAGES/keep.mo
 share/locale/tr/LC_MESSAGES/keep.mo
 share/services/kded/keep.desktop
-
 @dirrm share/apps/keep/icons/crystalsvg/scalable/actions
 @dirrm share/apps/keep/icons/crystalsvg/scalable
 @dirrm share/apps/keep/icons/crystalsvg/48x48/actions

@@ -37,5 +37,4 @@ include/snmp_pp/vb.h
 lib/libsnmp++.a
 lib/libsnmp++.so
 lib/libsnmp++.so.2.0.0
-
 @dirrm include/snmp_pp

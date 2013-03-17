@@ -410,4 +410,3 @@ lib/ircd-hybrid-ru-modules/m_squit.so
 @unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true
 @unexec rmdir %D/etc/ircd-hybrid-ru/codepages 2>/dev/null || true
 @unexec rmdir %D/etc/ircd-hybrid-ru 2>/dev/null || true
-

@@ -7,4 +7,3 @@ etc/ambit.conf.sample
 @cwd /
 @dirrmtry %%AMBITDIR%%/hosts
 @dirrmtry %%AMBITDIR%%
-

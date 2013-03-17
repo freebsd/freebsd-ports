@@ -180,7 +180,6 @@
 %%DATADIR%%/3com/a3com-huawei-web-authentication.mib
 %%DATADIR%%/3com/a3com-huawei-wips.mib
 %%DATADIR%%/3com/gb15629dot11-wapi.mib
-
 %%DATADIR%%/allied/atswtch2.mib
 %%DATADIR%%/allied/ati-mib.mib
 %%DATADIR%%/allied/.index

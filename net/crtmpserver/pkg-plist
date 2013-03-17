@@ -2,7 +2,6 @@
 @unexec if cmp -s %D/etc/crtmpserver.lua.sample %D/etc/crtmpserver.lua; then rm -f %D/etc/crtmpserver.lua; fi
 etc/crtmpserver.lua.sample
 @exec if [ ! -f %D/etc/crtmpserver.lua ] ; then cp -p %D/%F %B/crtmpserver.lua; fi
-
 sbin/crtmpserver
 @dirrmtry var/crtmpserver/media
 @dirrmtry var/crtmpserver

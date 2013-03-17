@@ -146,7 +146,6 @@ etc/yum/yum-updatesd.conf.sample
 @dirrmtry share/locale/ur
 @dirrmtry etc/dbus-1/system.d
 @dirrmtry etc/dbus-1
-
 @unexec if cmp -s %D/etc/yum/yum.conf.sample %D/etc/yum/yum.conf; then rm -f %D/etc/yum/yum.conf; fi
 @exec if [ ! -f %D/etc/yum/yum.conf ]; then cp -p %D/%F %B/yum.conf; fi
 @unexec if cmp -s %D/etc/yum/yum-updatesd.conf.sample %D/etc/yum/yum-updatesd.conf; then rm -f %D/etc/yum/yum-updatesd.conf; fi

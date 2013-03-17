@@ -58,4 +58,3 @@ bin/tleenx2
 %%DATADIR%%/pixmaps/zlosc.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-
