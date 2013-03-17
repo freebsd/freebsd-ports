@@ -2060,6 +2060,5 @@ share/applications/lmms.desktop
 @dirrm include/lmms
 @dirrmtry share/applications
 @dirrmtry share/menu
-
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

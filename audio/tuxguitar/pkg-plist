@@ -531,5 +531,3 @@ share/pixmaps/tuxguitar.xpm
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-
-
