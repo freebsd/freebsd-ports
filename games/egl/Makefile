@@ -28,15 +28,14 @@ OPTIONS_DEFAULT=	CLIENT DEDICATED GAME OPTIMIZED_CFLAGS
 
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
-GAME_DESC=	Build main game modification
+GAME_DESC=	Build main game (default mod)
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
-USE_GL=		yes
+USE_GL=		gl
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV*=	CFLAGS="${CFLAGS}"
 PLIST_SUB+=	CLIENT=""
@@ -74,4 +73,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/baseq2/*.so ${LIBDIR}/baseq2
 	${INSTALL_DATA} ${DISTDIR}/egl.pkz ${LIBDIR}/baseq2
 
+.include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>
