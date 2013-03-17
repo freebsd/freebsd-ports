@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adrian
 DISTNAME=	Ettus-USRP-3.4.3
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Ettus Research USRP driver framework
 
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs

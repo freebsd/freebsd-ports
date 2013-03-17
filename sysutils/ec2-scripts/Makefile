@@ -1,9 +1,5 @@
-# New ports collection makefile for:		FreeBSD/EC2 startup scripts
-# Date created:					2012-08-14
-# Whom:						Colin Percival
-#
+# Created by: Colin Percival
 # $FreeBSD$
-#
 
 PORTNAME=	ec2-scripts
 PORTVERSION=	1.3
@@ -11,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsd-ec2-dist.s3.amazonaws.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cperciva@freebsd.org
+MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Startup scripts for FreeBSD/EC2 environment
 
 NO_BUILD=	YES

@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	jmx4perl
 PORTVERSION=	1.06
@@ -9,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/R/RO/ROLAND
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tj@freebsd.org
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	JMX access for Perl
 
 RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \

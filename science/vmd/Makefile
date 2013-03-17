@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vmd
-# Date created:		12 August 2004
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=		vmd
 DISTVERSION=		1.9.1
@@ -15,7 +11,7 @@ DISTFILES=		${VMD_DIST} \
 			${TACHYON_DIST}:tachyon \
 			${STRIDE_DIST}:stride
 
-MAINTAINER=		bjk@freebsd.org
+MAINTAINER=		bjk@FreeBSD.org
 COMMENT=		A molecular visualization program
 
 BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \

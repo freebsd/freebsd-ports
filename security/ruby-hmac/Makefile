@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-hmac
-# Date created:		20 February 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hmac
 PORTVERSION=	0.4.0
@@ -12,7 +8,7 @@ MASTER_SITES=	RG
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library which implements the HMAC algorithm
 
 USE_RUBY=	yes
