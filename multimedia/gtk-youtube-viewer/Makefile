@@ -1,8 +1,8 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.7
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nemysis@gmx.ch
@@ -10,12 +10,16 @@ COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
 
 LICENSE=	GPLv3
 
+# According to Build.PL
 BUILD_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 TEST_DEPENDS=	p5-Test-More-UTF8>=0:${PORTSDIR}/devel/p5-Test-More-UTF8
@@ -25,14 +29,19 @@ CONFLICTS=	youtube-viewer-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
 GH_PROJECT=	youtube-viewer
-GH_COMMIT=	c4496ed
+GH_COMMIT=	c26d9a7
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/WWW-YoutubeViewer
 
 PERL_MODBUILD=	yes
 
 MAN1=		youtube-viewer.1
-MAN3=		WWW::YoutubeViewer.3
+MAN3=		WWW::YoutubeViewer::RegularExpressions.3 \
+		WWW::YoutubeViewer.3 \
+		WWW::YoutubeViewer::Itags.3 \
+		WWW::YoutubeViewer::Utils.3 \
+		WWW::YoutubeViewer::GetCaption.3 \
+		WWW::YoutubeViewer::ParseXML.3
 
 PORTDOCS=	Changes README
 
@@ -56,23 +65,28 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gcap:${PORTSDIR}/multimedia/gcap
 .endif
 
 post-patch:
-	cd ${WRKSRC} && ${REINPLACE_CMD} -n '1,/create_build_script()/p' \
-		Build.PL
-	cd ${WRKSRC}/bin && ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
+	@${REINPLACE_CMD} \
+		-e 's|5.016|0|' \
+		-e 's|usr share|${PREFIX}/|' \
+		-e 's|(pixmaps))|(share/pixmaps))|' \
+		-e 's|(applications))|(share/applications))|' \
+		-e 's|(gtk-youtube-viewer))|(share/gtk-youtube-viewer))|' \
+			${WRKSRC}/Build.PL
+	@cd ${WRKSRC}/bin && ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		gtk-youtube-viewer youtube-viewer
 
 post-install:
 .if ${PORT_OPTIONS:MGTK2}
-	${MKDIR} ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.desktop ${PREFIX}/share/applications
-	${MKDIR} ${DATADIR}/icons
+	@${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.glade ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer-icons/* ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/share/icons/gtk-youtube-viewer.png ${PREFIX}/share/pixmaps
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 

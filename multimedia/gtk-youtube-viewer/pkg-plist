@@ -1,18 +1,33 @@
 %%GTK2%%bin/gtk-youtube-viewer
 bin/youtube-viewer
 %%SITE_PERL%%/WWW/YoutubeViewer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/YoutubeViewer/.packlist
+%%SITE_PERL%%/WWW/YoutubeViewer/GetCaption.pm
+%%SITE_PERL%%/WWW/YoutubeViewer/Itags.pm
+%%SITE_PERL%%/WWW/YoutubeViewer/ParseXML.pm
+%%SITE_PERL%%/WWW/YoutubeViewer/RegularExpressions.pm
+%%SITE_PERL%%/WWW/YoutubeViewer/Utils.pm
+%%GTK2%%%%SITE_PERL%%/mach/auto/WWW/YoutubeViewer/.packlist
 %%GTK2%%share/applications/gtk-youtube-viewer.desktop
-%%GTK2%%share/gtk-youtube-viewer/gtk-youtube-viewer.glade
-%%GTK2%%share/gtk-youtube-viewer/icons/default_thumb.jpg
-%%GTK2%%share/gtk-youtube-viewer/icons/feed_icon.png
-%%GTK2%%share/gtk-youtube-viewer/icons/gtk-youtube-viewer.png
-%%GTK2%%share/gtk-youtube-viewer/icons/spinner.gif
-%%GTK2%%share/gtk-youtube-viewer/icons/user.png
+%%GTK2%%%%DATADIR%%/gtk-youtube-viewer.glade
+%%GTK2%%%%DATADIR%%/icons/default_thumb.jpg
+%%GTK2%%%%DATADIR%%/icons/donate.png
+%%GTK2%%%%DATADIR%%/icons/feed_icon.png
+%%GTK2%%%%DATADIR%%/icons/gtk-youtube-viewer.png
+%%GTK2%%%%DATADIR%%/icons/spinner.gif
+%%GTK2%%%%DATADIR%%/icons/user.png
+%%GTK2%%%%DATADIR%%/youtube-viewer
 %%GTK2%%share/pixmaps/gtk-youtube-viewer.png
-%%GTK2%%@dirrm share/gtk-youtube-viewer/icons
-%%GTK2%%@dirrm share/gtk-youtube-viewer
+%%GTK2%%@dirrm %%DATADIR%%/icons
+%%GTK2%%@dirrm %%DATADIR%%
 %%GTK2%%@dirrmtry share/applications
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/YoutubeViewer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW
+%%GTK2%%@dirrm %%SITE_PERL%%/mach/auto/WWW/YoutubeViewer
+%%GTK2%%@dirrm %%SITE_PERL%%/mach/auto/WWW
+%%GTK2%%@dirrm %%SITE_PERL%%/mach/auto
+%%GTK2%%@dirrm %%SITE_PERL%%/mach
+@dirrm %%SITE_PERL%%/WWW/YoutubeViewer
+@dirrm %%SITE_PERL%%/WWW
+@dirrm %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5/5.14.2/man
+@dirrmtry lib/perl5/5.14.2
+@dirrmtry lib/perl5
