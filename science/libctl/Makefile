@@ -26,7 +26,7 @@ MAN1=		gen-ctl-io.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on i386 or sparc64
+BROKEN=		does not build
 .endif
 
 post-install:
