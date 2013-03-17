@@ -22,8 +22,8 @@ NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	MANUAL OPTIMIZED_CFLAGS SHAREWARE
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
-MANUAL_DESC=		Install game HTML manual
-SHAREWARE_DESC=		Install demo version of the game data
+MANUAL_DESC=	Install game HTML manual
+SHAREWARE_DESC=	Install demo version of the game data
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${Q2DIR}
@@ -33,7 +33,7 @@ Q2_DEMO=	q2-314-demo-x86.exe
 Q2_SRC=		q2src${PORTVERSION:S/.//}.shar.Z
 Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 
-.include "Makefile.include"
+.include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANUAL} || ${PORT_OPTIONS:MSHAREWARE}
@@ -52,19 +52,16 @@ CFLAGS+=	-ffast-math -funroll-loops -fomit-frame-pointer \
 .endif
 
 .if ${PORT_OPTIONS:MSHAREWARE}
-PLIST_SUB+=	FULL="@comment " \
-		SHAREWARE=""
+PLIST_SUB+=	FULL="@comment " SHAREWARE=""
 .else
-PLIST_SUB+=	FULL="" \
-		SHAREWARE="@comment "
+PLIST_SUB+=	FULL="" SHAREWARE="@comment "
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		uncompress -c ${DISTDIR}/${Q2_SRC} | ${TAIL} +434 | ${SH}
+	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${Q2_SRC} | \
+		${TAIL} +434 | ${SH}
 	@${UNZIP_CMD} -q -d ${WRKDIR} \
 		${DISTDIR}/${Q2_UPDATE} baseq2/* -x *.dll
 .if ${PORT_OPTIONS:MMANUAL}
@@ -86,10 +83,10 @@ post-patch:
 do-install:
 	@${MKDIR} ${DATADIR}/baseq2
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${DATADIR}/baseq2
-	${CP} -R ${WRKSRC}/baseq2/* ${DATADIR}/baseq2
+	${CP} -a ${WRKSRC}/baseq2/* ${DATADIR}/baseq2
 .if ${PORT_OPTIONS:MMANUAL}
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/DOCS ${DOCSDIR}/manual
+	${CP} -a ${WRKSRC}/DOCS ${DOCSDIR}/manual
 .endif
 
 post-install:
