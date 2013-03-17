@@ -1,88 +1,107 @@
-# New ports collection makefile for:	freerdp
-# Date created:				04 July 2010
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freerdp
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	net comms ipv6
-MASTER_SITES=	SF/${PORTNAME}/0.8
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A free remote desktop protocol client
+COMMENT=	A free implementation of Remote Desktop Protocol
 
-OPTIONS=	CUPS		"Enable printer support via CUPS"		on \
-		SOUND		"Enable sound support via ALSA"			on \
-		SAMPLERATE	"Enable libsamplerate support for sound"	off
+LICENSE=	AL2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
+USE_CMAKE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeRDP
+GH_PROJECT=	FreeRDP
+GH_COMMIT=	616aed4
+GH_TAGNAME=	${GH_COMMIT}
+GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+OPTIONS_DEFINE=	ALSA DIRECTFB FFMPEG PULSEAUDIO SSE X11
+OPTIONS_DEFAULT=	CUPS PULSEAUDIO X11
+X11_DESC=	Build FreeRDP X11 client
+DIRECTFB_DESC=	Build FreeRDP DirectFB client
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--enable-ipv6
-.else
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-.if !defined(WITHOUT_ICONV)
-USE_ICONV=	yes
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-iconv
-.endif
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--with-x=no
-PLIST_SUB+=	X11="@comment "
-.else
-USE_XORG=	x11 xcursor xextproto
-CONFIGURE_ARGS+=--with-x
+.if ${PORT_OPTIONS:MX11}
+USE_XORG=	x11 xkbfile xcursor xextproto xv xinerama xext xcursor
+CMAKE_ARGS+=	-DWITH_X11=ON
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
 MAN1=		xfreerdp.1
 PLIST_SUB+=	X11=""
-.endif
-
-.if !defined(WITHOUT_CUPS)
-CONFIGURE_ARGS+=--with-printer=cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 .else
-CONFIGURE_ARGS+=--with-printer=no
+CMAKE_ARGS+=	-DWITH_X11=OFF
+PLIST_SUB+=	X11="@comment "
 .endif
 
-.if !defined(WITHOUT_SOUND)
-CONFIGURE_ARGS+=--with-sound=alsa
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
-PLIST_SUB+=	SOUND=""
-.if !defined(WITHOUT_SAMPLERATE)
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.if ${PORT_OPTIONS:MDIRECTFB}
+LIB_DEPENDS+=	directfb:${PORTSDIR}/devel/directfb
+CMAKE_ARGS+=	-DWITH_DIRECTFB=ON
+PLIST_SUB+=	DIRECTFB=""
+# currently DirectFB option fails with clang
+USE_GCC=	yes
 .else
-CONFIGURE_ARGS+=--without-libsamplerate
+PLIST_SUB+=	DIRECTFB="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MALSA}
+PLIST_SUB+=	ALSA=""
 .else
-CONFIGURE_ARGS+=--with-sound=no
-PLIST_SUB+=	SOUND="@comment "
+PLIST_SUB+=	ALSA="@comment "
+CMAKE_ARGS+=	-DWITH_ALSA=OFF
 .endif
 
-post-patch:
-.if defined(WITHOUT_X11)
-	@${REINPLACE_CMD} -e 's|man_MANS = |man_MANS1 = |g' ${WRKSRC}/doc/Makefile.in
+.if ${PORT_OPTIONS:MFFMPEG}
+# the newer ffmpeg is prefered
+LIB_DEPENDS+=	avcodec-devel:${PORTSDIR}/multimedia/ffmpeg-devel \
+		avutil-devel:${PORTSDIR}/multimedia/ffmpeg-devel
+AVCODEC_INCLUDE_DIR=	${LOCALBASE}/include/ffmpeg-devel
+AVCODEC_LIBRARY=	${LOCALBASE}/lib/ffmpeg-devel
+AVUTIL_INCLUDE_DIR=	${AVCODEC_INCLUDE_DIR}
+AVUTIL_LIBRARY=		${AVCODEC_LIBRARY}
+CFLAGS+=	-I${AVCODEC_INCLUDE_DIR}
+LDFLAGS+=	-I${AVCODEC_LIBRARY}
+PLIST_SUB+=	FFMPEG=""
+.else
+CMAKE_ARGS+=	-DWITH_FFMPEG=OFF
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
-	@${REINPLACE_CMD} -e 's|-ldl -lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/libfreerdpchanman/Makefile.in
-	@${REINPLACE_CMD} -e 's|-I$$(top_builddir)|-I$$(top_builddir)/include|' \
-		${WRKSRC}/libfreerdp/Makefile.in ${WRKSRC}/libfreerdpgdi/Makefile.in \
-		${WRKSRC}/libfreerdpkbd/Makefile.in ${WRKSRC}/X11/Makefile.in
 
+.if ${PORT_OPTIONS:MCUPS}
+CMAKE_ARGS+=	-DWITH_CUPS=ON
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
+.else
+CMAKE_ARGS+=	-DWITH_CUPS=OFF
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+CMAKE_ARGS+=	-DWITH_PULSEAUDIO=ON
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSE=""
+.else
+PLIST_SUB+=	PULSE="@comment "
+CMAKE_ARGS+=	-DWITH_PULSEAUDIO=OFF
+.endif
+
+.if ${PORT_OPTIONS:MSSE}
+CMAKE_ARGS+=	-DWITH_SSE2=ON
+.else
+CMAKE_ARGS+=	-DWITH_SSE2=OFF
+.endif
+
+post-extract:
+	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
+		${WRKSRC}/client/X11/CMakeLists.txt
 .include <bsd.port.mk>
