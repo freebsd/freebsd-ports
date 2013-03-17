@@ -7,8 +7,8 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A filter for monitoring and intercepting SMTP connections on qmail
+MAINTAINER=	bdrewery@FreeBSD.org
+COMMENT=	Qmail filter for monitoring and intercepting SMTP connections
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
@@ -20,16 +20,13 @@ GNU_CONFIGURE=	yes
 
 ALL_TARGET=	spamdyke
 
+USE_GCC=	any
+
 OPTIONS_DEFINE=	TLS DEBUG DEBUG_EXCESSIVE DOCS
 OPTIONS_DEFAULT=	TLS
-TLS_DESC=	Enable TLS support
 DEBUG_DESC=	Enable debugging output
 
-.include <bsd.port.pre.mk>
-
-.if ${CC:T:Mclang} == "clang"
-IGNORE=	uses nested functions, not supported by clang
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--enable-tls
@@ -72,4 +69,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spamdyke ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
