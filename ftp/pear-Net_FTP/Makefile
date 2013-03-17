@@ -3,6 +3,7 @@
 
 PORTNAME=	Net_FTP
 PORTVERSION=	1.3.7
+PORTREVISION=	yes
 CATEGORIES=	ftp www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -12,10 +13,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	ftp
-PEAR_AUTOINSTALL=	ye
-
-post-extract:
-	@${MV} ${WRKSRC}/Net/* ${WRKSRC}
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
