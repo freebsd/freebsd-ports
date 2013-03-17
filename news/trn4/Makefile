@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trn
-# Date created:		21 October 1994
-# Whom:			smace
-#
+# Created by: smace
 # $FreeBSD$
-#
 
 PORTNAME=	trn
 PORTVERSION=	4.0.b77
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-test/}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Version 4.0 of the threaded readnews newsreader
 
-CONFLICTS_INSTALL=trn-3.[0-9]* inn-[0-9]* cnews-* s-news-[0-9]*
+CONFLICTS_INSTALL=trn-3.[0-9]* cnews-* s-news-[0-9]*
 
 NO_LATEST_LINK=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1
