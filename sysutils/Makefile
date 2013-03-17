@@ -223,7 +223,6 @@
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
-    SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
@@ -817,6 +816,7 @@
     SUBDIR += rubygem-chef-expander
     SUBDIR += rubygem-chef-server
     SUBDIR += rubygem-chef-solr
+    SUBDIR += rubygem-facter
     SUBDIR += rubygem-fluentd
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
