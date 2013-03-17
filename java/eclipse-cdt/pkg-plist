@@ -25,7 +25,6 @@ lib/eclipse/features/org.eclipse.cdt.sdk_6.0.2.201002161416.jar
 lib/eclipse/features/org.eclipse.cdt.testing_6.0.0.201002161416.jar
 lib/eclipse/features/org.eclipse.cdt.util_5.1.0.201002161416.jar
 lib/eclipse/features/org.eclipse.cdt_6.0.2.201002161416.jar
-
 lib/eclipse/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v200803061910.jar
 lib/eclipse/plugins/org.eclipse.ant.optional.junit_3.2.200.jar
 lib/eclipse/plugins/org.eclipse.cdt.build.crossgcc_1.0.0.201002161416.jar

@@ -1,7 +1,6 @@
 bin/scsh
 include/scheme48.h
 include/write-barrier.h
-
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-1.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-10.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-11.html
@@ -180,7 +179,6 @@ include/write-barrier.h
 %%PORTDOCS%%lib/scsh/doc/README
 %%PORTDOCS%%lib/scsh/doc/RELEASE
 %%PORTDOCS%%lib/scsh/doc/COPYING
-
 lib/scsh/rts/bignum.scm
 lib/scsh/rts/defenum.scm
 lib/scsh/rts/floatnum.scm
@@ -189,7 +187,6 @@ lib/scsh/rts/ratnum.scm
 lib/scsh/rts/recnum.scm
 lib/scsh/rts/xnum.scm
 lib/scsh/rts/jar-defrecord.scm
-
 lib/scsh/env/assem.scm
 lib/scsh/env/basic-command.scm
 lib/scsh/env/build.scm
@@ -215,7 +212,6 @@ lib/scsh/env/space.scm
 lib/scsh/env/start.scm
 lib/scsh/env/traverse.scm
 lib/scsh/env/version-info.scm
-
 lib/scsh/big/array.scm
 lib/scsh/big/big-util.scm
 lib/scsh/big/bigbit.scm
@@ -245,14 +241,12 @@ lib/scsh/big/search-tree.scm
 lib/scsh/big/socket.scm
 lib/scsh/big/strong.scm
 lib/scsh/big/thread-fluid.scm
-
 lib/scsh/opt/analyze.scm
 lib/scsh/opt/flatten.scm
 lib/scsh/opt/inline.scm
 lib/scsh/opt/sort.scm
 lib/scsh/opt/tst.scm
 lib/scsh/opt/usage.scm
-
 lib/scsh/misc/annotate.scm
 lib/scsh/misc/doodl.scm
 lib/scsh/misc/either.scm
@@ -274,7 +268,6 @@ lib/scsh/misc/sicp.scm
 lib/scsh/misc/static.scm
 lib/scsh/misc/syscall.scm
 lib/scsh/misc/test-doodl.scm
-
 lib/scsh/link/data.scm
 lib/scsh/link/generate-c-header.scm
 lib/scsh/link/generate-old-c-header.scm
@@ -283,7 +276,6 @@ lib/scsh/link/loadc.scm
 lib/scsh/link/reify.scm
 lib/scsh/link/transport.scm
 lib/scsh/link/write-image.scm
-
 lib/scsh/srfi/srfi-1.scm
 lib/scsh/srfi/srfi-11.scm
 lib/scsh/srfi/srfi-13.scm
@@ -301,7 +293,6 @@ lib/scsh/srfi/srfi-37.scm
 lib/scsh/srfi/srfi-42.scm
 lib/scsh/srfi/srfi-5.scm
 lib/scsh/srfi/srfi-7.scm
-
 lib/scsh/scsh/awk-test.scm
 lib/scsh/scsh/awk.scm
 lib/scsh/scsh/bitwise-ops-test.scm
@@ -404,7 +395,6 @@ lib/scsh/scsh/user-and-group-db-access.scm
 lib/scsh/scsh/utilities.scm
 lib/scsh/scsh/waitcodes.scm
 lib/scsh/scsh/weaktables.scm
-
 lib/scsh/emacs/cmuscheme48.el
 lib/scsh/emacs/cmulisp.el
 lib/scsh/emacs/cmuscheme.el
@@ -412,16 +402,13 @@ lib/scsh/emacs/README
 lib/scsh/emacs/cmushell.el
 lib/scsh/emacs/comint.el
 lib/scsh/emacs/jar-hacks.el
-
 lib/scsh/scshvm
 lib/scsh/scsh.image
 lib/scsh/stripped-scsh.image
 lib/scsh/libscshvm.a
 lib/scsh/libscsh.a
-
 %%PORTDOCS%%@exec ln -fs %D/lib/scsh/doc %D/share/doc/scsh
 @unexec rm -f %D/share/doc/scsh
-
 @dirrm lib/scsh/scsh
 @dirrm lib/scsh/rts
 @dirrm lib/scsh/big
@@ -432,7 +419,6 @@ lib/scsh/libscsh.a
 @dirrm lib/scsh/env
 @dirrm lib/scsh/cig
 @dirrm lib/scsh/emacs
-
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-manual/html
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-manual
 %%PORTDOCS%%@dirrm lib/scsh/doc/s48-manual/html
@@ -440,6 +426,5 @@ lib/scsh/libscsh.a
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-paper/html
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-paper
 %%PORTDOCS%%@dirrm lib/scsh/doc
-
 @dirrm lib/scsh
 @unexec echo 'You might check whether to remove %D/lib/scsh.old'
