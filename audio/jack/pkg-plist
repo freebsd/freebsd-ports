@@ -129,8 +129,6 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/ringbuffer_8h_source.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/session_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/session_8h_source.html
-
-
 %%DOCS%%share/jack-audio-connection-kit/reference/html/simple__client_8c.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h_source.html
