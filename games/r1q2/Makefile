@@ -1,9 +1,5 @@
-# New ports collection makefile for:	r1q2
-# Date created:				16 May 2006
-# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	r1q2
 PORTVERSION=	7904
@@ -15,10 +11,11 @@ DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced Quake II client/server focusing on stability
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	sets the FPU rounding mode and precision (latter not available in fenv.h)
+ONLY_FOR_ARCHS_REASON=	sets the FPU rounding mode and precision (not available in fenv.h)
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
@@ -26,49 +23,47 @@ NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/binaries
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		GAME "Build a main game .so file" off \
-		REF_GL "Build renderer (required by CLIENT)" on
-
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
-LIBDIR=		${PREFIX}/lib/${PORTNAME}
+OPTIONS_DEFINE=	GAME REF_GL DOCS
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+OPTIONS_DEFAULT=	CLIENT DEDICATED REF_GL
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+GAME_DESC=	Build main game shared object file
+REF_GL_DESC=	Build renderer (required for client)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT and DEDICATED)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	r1q2ded
 PLIST_SUB+=	DEDICATED=""
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 ALL_TARGET+=	game
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if !defined(WITHOUT_REF_GL)
-USE_GL=		yes
+.if ${PORT_OPTIONS:MREF_GL}
+USE_GL=		gl
 USE_SDL=	sdl
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_gl
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
@@ -89,23 +84,24 @@ pre-build:
 	@${FIND} ${BUILD_WRKSRC} -type d -depth 1 -exec ${MKDIR} {}/.depends \;
 
 do-install:
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/client/quake2 \
 		${PREFIX}/bin/${PORTNAME}
 .endif
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/r1q2ded/r1q2ded ${PREFIX}/bin
 .endif
-	${MKDIR} ${LIBDIR}/baseq2
-.if defined(WITH_GAME)
+	@${MKDIR} ${LIBDIR}/baseq2
+.if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/game/game.so ${LIBDIR}/baseq2
 .endif
-.if !defined(WITHOUT_REF_GL)
+.if ${PORT_OPTIONS:MREF_GL}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ref_gl/ref_gl.so ${LIBDIR}
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/r1q2.txt ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.mk>
