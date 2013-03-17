@@ -1,75 +1,82 @@
 bin/hitori
 share/applications/hitori.desktop
-share/gnome/help/hitori/C/customization.page
-share/gnome/help/hitori/C/figures/hitori_main_window.png
-share/gnome/help/hitori/C/game.page
-share/gnome/help/hitori/C/index.page
-share/gnome/help/hitori/C/license.page
-share/gnome/help/hitori/C/playing.page
-share/gnome/help/hitori/C/strategy.page
-share/gnome/help/hitori/cs/customization.page
-share/gnome/help/hitori/cs/figures/hitori_main_window.png
-share/gnome/help/hitori/cs/game.page
-share/gnome/help/hitori/cs/index.page
-share/gnome/help/hitori/cs/license.page
-share/gnome/help/hitori/cs/playing.page
-share/gnome/help/hitori/cs/strategy.page
-share/gnome/help/hitori/da/customization.page
-share/gnome/help/hitori/da/figures/hitori_main_window.png
-share/gnome/help/hitori/da/game.page
-share/gnome/help/hitori/da/index.page
-share/gnome/help/hitori/da/license.page
-share/gnome/help/hitori/da/playing.page
-share/gnome/help/hitori/da/strategy.page
-share/gnome/help/hitori/de/customization.page
-share/gnome/help/hitori/de/figures/hitori_main_window.png
-share/gnome/help/hitori/de/game.page
-share/gnome/help/hitori/de/index.page
-share/gnome/help/hitori/de/license.page
-share/gnome/help/hitori/de/playing.page
-share/gnome/help/hitori/de/strategy.page
-share/gnome/help/hitori/en_GB/customization.page
-share/gnome/help/hitori/en_GB/figures/hitori_main_window.png
-share/gnome/help/hitori/en_GB/game.page
-share/gnome/help/hitori/en_GB/index.page
-share/gnome/help/hitori/en_GB/license.page
-share/gnome/help/hitori/en_GB/playing.page
-share/gnome/help/hitori/en_GB/strategy.page
-share/gnome/help/hitori/es/customization.page
-share/gnome/help/hitori/es/figures/hitori_main_window.png
-share/gnome/help/hitori/es/game.page
-share/gnome/help/hitori/es/index.page
-share/gnome/help/hitori/es/license.page
-share/gnome/help/hitori/es/playing.page
-share/gnome/help/hitori/es/strategy.page
-share/gnome/help/hitori/fr/customization.page
-share/gnome/help/hitori/fr/figures/hitori_main_window.png
-share/gnome/help/hitori/fr/game.page
-share/gnome/help/hitori/fr/index.page
-share/gnome/help/hitori/fr/license.page
-share/gnome/help/hitori/fr/playing.page
-share/gnome/help/hitori/fr/strategy.page
-share/gnome/help/hitori/sl/customization.page
-share/gnome/help/hitori/sl/figures/hitori_main_window.png
-share/gnome/help/hitori/sl/game.page
-share/gnome/help/hitori/sl/index.page
-share/gnome/help/hitori/sl/license.page
-share/gnome/help/hitori/sl/playing.page
-share/gnome/help/hitori/sl/strategy.page
-share/gnome/help/hitori/sv/customization.page
-share/gnome/help/hitori/sv/figures/hitori_main_window.png
-share/gnome/help/hitori/sv/game.page
-share/gnome/help/hitori/sv/index.page
-share/gnome/help/hitori/sv/license.page
-share/gnome/help/hitori/sv/playing.page
-share/gnome/help/hitori/sv/strategy.page
-share/gnome/help/hitori/zh_CN/customization.page
-share/gnome/help/hitori/zh_CN/figures/hitori_main_window.png
-share/gnome/help/hitori/zh_CN/game.page
-share/gnome/help/hitori/zh_CN/index.page
-share/gnome/help/hitori/zh_CN/license.page
-share/gnome/help/hitori/zh_CN/playing.page
-share/gnome/help/hitori/zh_CN/strategy.page
+share/help/C/hitori/customization.page
+share/help/C/hitori/figures/hitori_main_window.png
+share/help/C/hitori/game.page
+share/help/C/hitori/index.page
+share/help/C/hitori/license.page
+share/help/C/hitori/playing.page
+share/help/C/hitori/strategy.page
+share/help/cs/hitori/customization.page
+share/help/cs/hitori/figures/hitori_main_window.png
+share/help/cs/hitori/game.page
+share/help/cs/hitori/index.page
+share/help/cs/hitori/license.page
+share/help/cs/hitori/playing.page
+share/help/cs/hitori/strategy.page
+share/help/da/hitori/customization.page
+share/help/da/hitori/figures/hitori_main_window.png
+share/help/da/hitori/game.page
+share/help/da/hitori/index.page
+share/help/da/hitori/license.page
+share/help/da/hitori/playing.page
+share/help/da/hitori/strategy.page
+share/help/de/hitori/customization.page
+share/help/de/hitori/figures/hitori_main_window.png
+share/help/de/hitori/game.page
+share/help/de/hitori/index.page
+share/help/de/hitori/license.page
+share/help/de/hitori/playing.page
+share/help/de/hitori/strategy.page
+share/help/en_GB/hitori/customization.page
+share/help/en_GB/hitori/figures/hitori_main_window.png
+share/help/en_GB/hitori/game.page
+share/help/en_GB/hitori/index.page
+share/help/en_GB/hitori/license.page
+share/help/en_GB/hitori/playing.page
+share/help/en_GB/hitori/strategy.page
+share/help/es/hitori/customization.page
+share/help/es/hitori/figures/hitori_main_window.png
+share/help/es/hitori/game.page
+share/help/es/hitori/index.page
+share/help/es/hitori/license.page
+share/help/es/hitori/playing.page
+share/help/es/hitori/strategy.page
+share/help/fr/hitori/customization.page
+share/help/fr/hitori/figures/hitori_main_window.png
+share/help/fr/hitori/game.page
+share/help/fr/hitori/index.page
+share/help/fr/hitori/license.page
+share/help/fr/hitori/playing.page
+share/help/fr/hitori/strategy.page
+share/help/ro/hitori/customization.page
+share/help/ro/hitori/figures/hitori_main_window.png
+share/help/ro/hitori/game.page
+share/help/ro/hitori/index.page
+share/help/ro/hitori/license.page
+share/help/ro/hitori/playing.page
+share/help/ro/hitori/strategy.page
+share/help/sl/hitori/customization.page
+share/help/sl/hitori/figures/hitori_main_window.png
+share/help/sl/hitori/game.page
+share/help/sl/hitori/index.page
+share/help/sl/hitori/license.page
+share/help/sl/hitori/playing.page
+share/help/sl/hitori/strategy.page
+share/help/sv/hitori/customization.page
+share/help/sv/hitori/figures/hitori_main_window.png
+share/help/sv/hitori/game.page
+share/help/sv/hitori/index.page
+share/help/sv/hitori/license.page
+share/help/sv/hitori/playing.page
+share/help/sv/hitori/strategy.page
+share/help/zh_CN/hitori/customization.page
+share/help/zh_CN/hitori/figures/hitori_main_window.png
+share/help/zh_CN/hitori/game.page
+share/help/zh_CN/hitori/index.page
+share/help/zh_CN/hitori/license.page
+share/help/zh_CN/hitori/playing.page
+share/help/zh_CN/hitori/strategy.page
 %%DATADIR%%/hitori.ui
 share/icons/hicolor/16x16/apps/hitori.png
 share/icons/hicolor/22x22/apps/hitori.png
@@ -111,28 +118,39 @@ share/pixmaps/hitori.png
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry %%DATADIR%%
-@dirrmtry share/gnome/help/hitori/zh_CN/figures
-@dirrmtry share/gnome/help/hitori/zh_CN
-@dirrmtry share/gnome/help/hitori/sv/figures
-@dirrmtry share/gnome/help/hitori/sv
-@dirrmtry share/gnome/help/hitori/sl/figures
-@dirrmtry share/gnome/help/hitori/sl
-@dirrmtry share/gnome/help/hitori/fr/figures
-@dirrmtry share/gnome/help/hitori/fr
-@dirrmtry share/gnome/help/hitori/es/figures
-@dirrmtry share/gnome/help/hitori/es
-@dirrmtry share/gnome/help/hitori/en_GB/figures
-@dirrmtry share/gnome/help/hitori/en_GB
-@dirrmtry share/gnome/help/hitori/de/figures
-@dirrmtry share/gnome/help/hitori/de
-@dirrmtry share/gnome/help/hitori/da/figures
-@dirrmtry share/gnome/help/hitori/da
-@dirrmtry share/gnome/help/hitori/cs/figures
-@dirrmtry share/gnome/help/hitori/cs
-@dirrmtry share/gnome/help/hitori/C/figures
-@dirrmtry share/gnome/help/hitori/C
-@dirrmtry share/gnome/help/hitori
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
+@dirrm %%DATADIR%%
+@dirrmtry share/help/zh_CN/hitori/figures
+@dirrmtry share/help/zh_CN/hitori
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/sv/hitori/figures
+@dirrmtry share/help/sv/hitori
+@dirrmtry share/help/sv
+@dirrmtry share/help/sl/hitori/figures
+@dirrmtry share/help/sl/hitori
+@dirrmtry share/help/sl
+@dirrmtry share/help/ro/hitori/figures
+@dirrmtry share/help/ro/hitori
+@dirrmtry share/help/ro
+@dirrmtry share/help/fr/hitori/figures
+@dirrmtry share/help/fr/hitori
+@dirrmtry share/help/fr
+@dirrmtry share/help/es/hitori/figures
+@dirrmtry share/help/es/hitori
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/hitori/figures
+@dirrmtry share/help/en_GB/hitori
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/de/hitori/figures
+@dirrmtry share/help/de/hitori
+@dirrmtry share/help/de
+@dirrmtry share/help/da/hitori/figures
+@dirrmtry share/help/da/hitori
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/hitori/figures
+@dirrmtry share/help/cs/hitori
+@dirrmtry share/help/cs
+@dirrmtry share/help/C/hitori/figures
+@dirrmtry share/help/C/hitori
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrmtry share/applications
