@@ -529,7 +529,7 @@ MASTER_SITE_GENTOO+= \
 # GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
 #                 (man git-describe(1))
 #                 default: not set, mandatory
-#            
+#
 .if defined(USE_GITHUB)
 MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR% \
 				http://nodeload.github.com/%SUBDIR%
@@ -643,7 +643,7 @@ MASTER_SITE_IDSOFTWARE+= \
 	ftp://ftp.gamers.org/pub/idgames/idstuff/%SUBDIR%/ \
 	http://ftp.iinet.net.au/games/idstuff/%SUBDIR%/ \
 	ftp://ftp.mirror.nl/disk2/idsoftware/idstuff/%SUBDIR%/ \
-	ftp://ftp.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
+	ftp://freebsd.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/%SUBDIR%/ \
 	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/ \
 	ftp://ftp.idsoftware.com/idstuff/%SUBDIR%/
