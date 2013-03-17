@@ -199,4 +199,3 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-

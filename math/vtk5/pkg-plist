@@ -134,7 +134,6 @@
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKTemplate.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKMutableObject.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonConfigure.h
-
 %%STATIC%%lib/vtk-%%VER2%%/libCosmo.a
 %%STATIC%%lib/vtk-%%VER2%%/libMapReduceMPI.a
 %%STATIC%%lib/vtk-%%VER2%%/libVPIC.a

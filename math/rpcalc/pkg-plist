@@ -1,15 +1,12 @@
 bin/rpcalc
-
 share/icons/rpcalc/calc_lg.png
 share/icons/rpcalc/calc_sm.png
 @dirrm share/icons/rpcalc
 @dirrmtry share/icons
-
 share/doc/rpcalc/LICENSE
 share/doc/rpcalc/README.html
 share/doc/rpcalc/INSTALL
 @dirrm share/doc/rpcalc
-
 lib/rpcalc/extradisplay.py
 lib/rpcalc/calcbutton.py
 lib/rpcalc/optiondefaults.py

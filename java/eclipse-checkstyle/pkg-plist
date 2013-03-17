@@ -72,4 +72,3 @@ lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/xmlParserAPIs.j
 @dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0
 @dirrmtry lib/eclipse/plugins
 @dirrmtry lib/eclipse
-

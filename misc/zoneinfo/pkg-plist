@@ -468,7 +468,6 @@
 %%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
-
 @dirrm %%DATADIR%%/SystemV
 @dirrm %%DATADIR%%/Pacific
 @dirrm %%DATADIR%%/Indian

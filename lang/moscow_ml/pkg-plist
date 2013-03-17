@@ -99,7 +99,6 @@
 %%EXAMPLESDIR%%/webserver/minimalserver.sml
 %%EXAMPLESDIR%%/webserver/mosmlserver.sml
 %%EXAMPLESDIR%%/webserver/useit.sml
-
 %%EXAMPLESDIR%%/Makefile.stub
 %%EXAMPLESDIR%%/ffi/crypt/Makefile
 %%EXAMPLESDIR%%/ffi/crypt/README
@@ -110,7 +109,6 @@
 %%EXAMPLESDIR%%/ffi/interface/result.mac
 %%EXAMPLESDIR%%/ffi/interface/smlside.sml
 %%EXAMPLESDIR%%/ffi/interface/smlside_mac.sml
-
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mosmllib.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mosmllib/AppleScript.html
