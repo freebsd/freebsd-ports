@@ -13,13 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR implementation of the RFC2033 LMTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 
-CATEGORY=	Net
-PEAR_CATSRC=	yes
-FILES=		LMTP.php
-TESTS=		test_lmtp.php
-_TESTSDIR=	.
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
