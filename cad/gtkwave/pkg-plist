@@ -98,6 +98,5 @@ share/icons/gtkwave_savefiles_256x256x32.png
 @dirrmtry share/icons/gnome/48x48
 @dirrmtry share/icons/gnome
 @dirrmtry share/icons
-
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

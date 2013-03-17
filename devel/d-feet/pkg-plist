@@ -74,7 +74,6 @@ bin/d-feet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-signal-category.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-signal.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps/dfeet-icon.png
-
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps

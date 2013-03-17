@@ -312,5 +312,4 @@ share/doc/autobook/toc.png
 share/doc/autobook/tocon.png
 share/doc/autobook/up.png
 share/doc/autobook/upon.png
-
-@dirrm share/doc/autobook/
+@dirrm share/doc/autobook

@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods/.packlist
-
 %%SITE_PERL%%/Class/MakeMethods.pm
 %%SITE_PERL%%/Class/MakeMethods/Attribute.pm
 %%SITE_PERL%%/Class/MakeMethods/Autoload.pm
@@ -59,7 +58,6 @@
 %%SITE_PERL%%/Class/MakeMethods/Utility/Inheritable.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/Ref.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/TextBuilder.pm
-
 @dirrmtry %%SITE_PERL%%/Class/MakeMethods/Basic
 @dirrmtry %%SITE_PERL%%/Class/MakeMethods/Composite
 @dirrmtry %%SITE_PERL%%/Class/MakeMethods/Docs
