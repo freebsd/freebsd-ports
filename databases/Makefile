@@ -845,6 +845,7 @@
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
+    SUBDIR += rubygem-mysql
     SUBDIR += rubygem-mysql2
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
