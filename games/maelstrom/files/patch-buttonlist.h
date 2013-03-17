@@ -1,5 +1,5 @@
---- buttonlist.h.orig	Wed Jan 26 01:41:32 2000
-+++ buttonlist.h	Sun Aug 22 19:24:13 2004
+--- buttonlist.h.orig	2000-01-25 17:41:32.000000000 +0100
++++ buttonlist.h	2013-03-16 11:40:09.000000000 +0100
 @@ -16,7 +16,7 @@
  
  	void Add_Button(Uint16 x, Uint16 y, Uint16 width, Uint16 height, 

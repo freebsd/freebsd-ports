@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 13 20:58:01 2000
-+++ configure	Mon Mar 13 20:58:05 2000
-@@ -1633,6 +1633,9 @@
+--- configure.orig	2002-10-20 05:43:07.000000000 +0200
++++ configure	2013-03-16 13:28:11.000000000 +0100
+@@ -3231,6 +3231,9 @@
          ac_default_prefix=/boot/beos
          GAME_INSTALLDIR="\$(prefix)/games/$PACKAGE"
          ;;
