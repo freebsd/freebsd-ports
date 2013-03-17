@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MeQCC
-# Date created:				16 Jan 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	meqcc
 PORTVERSION=	1.4
@@ -13,7 +9,7 @@ MASTER_SITES=	ftp://ftp.clan-rum.org/quake/qutils/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}src
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	MrElusive's QuakeC compiler
+COMMENT=	MrElusive's QuakeC compiler with precompiler support
 
 LICENSE=	GPLv2
 
@@ -25,6 +21,10 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/meqcc
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/<io\.h>/<unistd.h>/ ; /<conio\.h>/d' \
 		${WRKSRC}/l_log.c
@@ -33,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/[^gr]*.txt ${DOCSDIR}
 .endif
