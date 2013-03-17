@@ -9,12 +9,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR classes to detect and protect from attempts to flood a site
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-CATEGORY=	HTTP
-FILES=		FloodControl.php FloodControl/Container.php \
-		FloodControl/Container/DB.php FloodControl/Container/File.php \
-		FloodControl/Container/MDB.php FloodControl/Container/MDB2.php
+RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
 
 LATEST_LINK=	pear-HTTP_FloodControl
 DOCS=		README LICENSE

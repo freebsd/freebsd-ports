@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Browser
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Browser

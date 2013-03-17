@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_OpenSearch
-# Date created:			  10 Dez 2008
-# Whom:				  Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_OpenSearch
 PORTVERSION=	0.2.0
@@ -16,8 +12,7 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializ
 		${PEARDIR}/XML/RSS.php:${PORTSDIR}/devel/pear-XML_RSS
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	Services
-FILES=		OpenSearch.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
