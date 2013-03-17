@@ -1,5 +1,4 @@
 bin/bomberclone
-
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -9,7 +8,6 @@ bin/bomberclone
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/bomberclone.nsi
 @dirrm %%DOCSDIR%%
-
 share/bomberclone/tileset/zbb_frog/stone.png
 share/bomberclone/tileset/zbb_frog/block.png
 share/bomberclone/tileset/zbb_frog/background.png
@@ -161,7 +159,6 @@ share/bomberclone/gfx/logo.png
 share/bomberclone/gfx/font2.png
 share/bomberclone/gfx/font1.png
 share/bomberclone/gfx/font0.png
-
 @dirrm share/bomberclone/tileset/zbb_frog
 @dirrm share/bomberclone/tileset/uccia_garbage
 @dirrm share/bomberclone/tileset/tricked

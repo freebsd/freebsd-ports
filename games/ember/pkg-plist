@@ -2750,4 +2750,3 @@ share/ember/media/user/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/worldforge
 @dirrmtry share/icons
-

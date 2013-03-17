@@ -1,7 +1,6 @@
 bin/robcpp
 bin/rokloc
 bin/rospell
-
 %%DATADIR%%/ctype.info
 %%DATADIR%%/de_DE.aff
 %%DATADIR%%/de_DE.dic
@@ -49,6 +48,5 @@ bin/rospell
 %%DATADIR%%/wchar.info
 %%PORTDOCS%%%%DOCSDIR%%/HANDBOOK
 %%PORTDOCS%%%%DOCSDIR%%/HANDBOOK-RO
-
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
