@@ -4169,3 +4169,4 @@ net-mgmt/zabbix-frontend|net-mgmt/zabbix2-frontend|2013-03-15|Has expired: no lo
 net-mgmt/zabbix-proxy|net-mgmt/zabbix2-proxy|2013-03-15|Has expired: no longer supported by upstream
 net-mgmt/zabbix-server|net-mgmt/zabbix2-server|2013-03-15|Has expired: no longer supported by upstream
 dns/h2n||2013-03-17|Removed: legally questionable and obsolete
+sysutils/facter|sysutils/rubygem-facter|2013-03-17|Renamed to match naming convention for rubygems
