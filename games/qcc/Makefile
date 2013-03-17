@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	source
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	The QuakeC compiler, for building custom games of Quake
+COMMENT=	QuakeC compiler, for building custom games of Quake
 
 LICENSE=	GPLv2
 
