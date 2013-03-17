@@ -45,6 +45,8 @@ post-patch:
 	@${FIND} ${WRKDIR} -name 'gtkrc' -exec \
 	    ${REINPLACE_CMD} -e 's!^include "apps/nautilus\.rc"!#&!' {} +
 	@${FIND} ${WRKDIR} -type f -name 'gtkrc.bak' -exec ${RM} -f {} +
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/src/animation.c
 
 post-install:
 	@${MKDIR} ${DATADIR}
