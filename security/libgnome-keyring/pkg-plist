@@ -80,15 +80,15 @@ share/locale/uk/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-keyring.mo
-@dirrmtry share/local/zh_HK/LC_MESSAGES
-@dirrmtry share/local/zh_HK
-@dirrmtry share/local/sr@latin/LC_MESSAGES
-@dirrmtry share/local/sr@latin
-@dirrmtry share/local/nds/LC_MESSAGES
-@dirrmtry share/local/nds
-@dirrmtry share/local/ca@valencia/LC_MESSAGES
-@dirrmtry share/local/ca@valencia
-@dirrmtry share/local/ast/LC_MESSAGES
-@dirrmtry share/local/ast
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm share/doc/gnome-keyring
 @dirrm include/gnome-keyring-1
