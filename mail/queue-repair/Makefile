@@ -7,14 +7,19 @@ PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A qmail queue diagnostic and repair tool
-
-.if !defined(WITHOUT_QMAIL_PORT)
-USES=		qmail:run
-.endif
+MAINTAINER=	bdrewery@FreeBSD.org
+COMMENT=	Qmail queue diagnostic and repair tool
 
 USE_PYTHON=	yes
+
+OPTIONS_DEFINE=		DOCS QMAIL
+OPTIONS_DEFAULT=	QMAIL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQMAIL}
+USES=		qmail:run
+.endif
 
 PLIST_FILES=	bin/queue-repair
 PORTDOCS=	BLURB CHANGELOG TODO
@@ -22,13 +27,13 @@ PORTDOCS=	BLURB CHANGELOG TODO
 do-build:
 	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
 		${WRKSRC}/queue_repair.py
-.if !defined(WITHOUT_QMAIL_PORT)
+.if ${PORT_OPTIONS:MQMAIL}
 	${REINPLACE_CMD} -e 's,nofiles,qnofiles,' ${WRKSRC}/queue_repair.py
 .endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/queue_repair.py ${PREFIX}/bin/queue-repair
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
