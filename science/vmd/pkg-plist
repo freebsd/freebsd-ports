@@ -1181,7 +1181,6 @@ lib/vmd/surf_%%VMD_ARCH%%
 lib/vmd/tachyon_%%VMD_ARCH%%
 lib/vmd/vmd_%%VMD_ARCH%%
 lib/vmd/vmd_completion.dat
-
 @dirrm lib/vmd/doc
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%/bin/catdcd4.0
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%/bin/cionize1.0

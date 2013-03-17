@@ -13,21 +13,20 @@ share/zsh/site-functions/ezjail-admin
 %%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
 %%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
 %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/remotes
-
-@dirrm etc/ezjail/
-@dirrm %%EXAMPLESDIR%%/example/usr/local/etc/
-@dirrm %%EXAMPLESDIR%%/example/usr/local/
-@dirrm %%EXAMPLESDIR%%/example/usr/
-@dirrm %%EXAMPLESDIR%%/example/etc/rc.d/
-@dirrm %%EXAMPLESDIR%%/example/etc/
-@dirrm %%EXAMPLESDIR%%/example/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/
+@dirrm etc/ezjail
+@dirrm %%EXAMPLESDIR%%/example/usr/local/etc
+@dirrm %%EXAMPLESDIR%%/example/usr/local
+@dirrm %%EXAMPLESDIR%%/example/usr
+@dirrm %%EXAMPLESDIR%%/example/etc/rc.d
+@dirrm %%EXAMPLESDIR%%/example/etc
+@dirrm %%EXAMPLESDIR%%/example
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc
+@dirrm %%EXAMPLESDIR%%/nullmailer-example
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry share/zsh/site-functions
 @dirrmtry share/zsh

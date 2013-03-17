@@ -14,14 +14,12 @@ lib/arch/irix/definitions
 lib/arch/irix/functions
 lib/arch/solaris/definitions
 lib/arch/solaris/functions
-
 @dirrm lib/arch/generic
 @dirrm lib/arch/linux
 @dirrm lib/arch/freebsd
 @dirrm lib/arch/irix
 @dirrm lib/arch/solaris
 @dirrm lib/arch
-
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -26,7 +26,6 @@ sbin/sendfiled
 @unexec perl -pi.bak -e '/^saft/ && ($_="")' /etc/inetd.conf
 @unexec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '` >/dev/null 2>&1||true
 @unexec rm -R /var/spool/sendfile 2>&1 >/dev/null || true
-
 @unexec if cmp -s %D/etc/sendfile.cf.sample %D/etc/sendfile.cf; then rm -f %D/etc/sendfile.cf; fi
 @exec if [ ! -f %D/etc/sendfile.cf ] ; then cp -p %D/etc/sendfile.cf.sample %D/etc/sendfile.cf; fi
 @unexec if cmp -s %D/etc/sendfile.deny.sample %D/etc/sendfile.deny; then rm -f %D/etc/sendfile.deny; fi
