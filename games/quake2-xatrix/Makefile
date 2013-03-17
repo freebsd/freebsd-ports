@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2-xatrix
-# Date created:				26 Jul 2006
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xatrix
 PORTVERSION=	3.20
@@ -15,25 +11,17 @@ DISTNAME=	${PORTNAME}src${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quake II: The Reckoning (Xatrix) Mission Pack
+COMMENT=	Quake II: The Reckoning (Xatrix) official mission pack
 
 NO_WRKSUBDIR=	yes
-
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	%%Q2DIR%%/${PORTNAME}/game.so
 PLIST_DIRS=	%%Q2DIR%%/${PORTNAME}
 
-SUB_FILES=	pkg-message
-
-.include "${.CURDIR}/../quake2-data/Makefile.include"
-
-.include <bsd.port.pre.mk>
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		uncompress -c ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${DISTFILES} | \
 		${TAIL} +441 | ${SH}
 
 post-extract:
@@ -43,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
 
 do-install:
-	${MKDIR} ${Q2DIR}/${PORTNAME}
+	@${MKDIR} ${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/${PORTNAME}
 
 post-install:
@@ -51,4 +39,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.mk>
