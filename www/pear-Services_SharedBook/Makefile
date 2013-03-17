@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_SharedBook
-# Date created:			  22 Jan 2007
-# Whom:				  Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_SharedBook
 PORTVERSION=	0.2.6

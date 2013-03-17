@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_Delicious
-# Date created:			  2006/08/03
-# Whom:				  chinsan <chisnan.tw@gmail.com>
-#
+# Created by: chinsan <chisnan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_Delicious
 PORTVERSION=	0.6.0

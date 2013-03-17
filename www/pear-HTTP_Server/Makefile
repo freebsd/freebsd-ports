@@ -10,7 +10,8 @@ COMMENT=	HTTP server class
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \
 		${PEARDIR}/Net/Server.php:${PORTSDIR}/net/pear-Net_Server
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \
+		${PEARDIR}/Net/Server.php:${PORTSDIR}/net/pear-Net_Server
 
 PEAR_AUTOINSTALL=	yes
 
