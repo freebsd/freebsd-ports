@@ -3,6 +3,7 @@
 
 PORTNAME=	sam2p
 PORTVERSION=	0.49.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
@@ -11,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
@@ -26,19 +26,21 @@ MAKE_ARGS=	CXXX="${CXX}" LDALL="${CXX}" CXXFLAGSB="${CXXFLAGS}"
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	*
+PORTDOCS=	README
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
