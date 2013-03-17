@@ -132,7 +132,6 @@ ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Author rights unclear
 SnowIsh-*		x11-themes/gnome-icons-snowish Author rights unclear
 ICON-Stylish.*		x11-themes/gnome-icons-stylish Author rights unclear
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Author rights unclear
-idea.V*.tar.Z		security/idea		A patented algorithm that requires proper licensing
 iperf-*			benchmarks/iperf	Cannot charge a fee for the software
 jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged binaries not permitted
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
