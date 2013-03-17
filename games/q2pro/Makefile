@@ -1,9 +1,5 @@
-# New ports collection makefile for:	q2pro
-# Date created:				2006-12-25
-# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
@@ -21,29 +17,29 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		GAME "Build a main game .so file" off \
-		GL "Build OpenGL render" on \
-		SOFT "Build software render" on \
-		UI "Build user interface (for CLIENT menus)" on \
-		X86_ASM "Enable use of optimized x86 assembly code" on
+SVN_REV=	142
 
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
-
-SVN_REV=	142
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+OPTIONS_DEFINE=		GAME GL SOFT UI
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_MULTI=		FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+OPTIONS_DEFAULT=	CLIENT DEDICATED GL SOFT UI
+OPTIONS_DEFAULT_I386=	ASM
 
-.include <bsd.port.pre.mk>
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+GAME_DESC=	Build main game (default mod)
+GL_DESC=	Build OpenGL render
+SOFT_DESC=	Build software render
+UI_DESC=	Build user interface (for client menus)
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT and DEDICATED)
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_SDL+=	sdl
 ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
@@ -51,23 +47,23 @@ PLIST_SUB+=	CLIENT=""
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 ALL_TARGET+=	game
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if !defined(WITHOUT_GL)
-USE_GL=		yes
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+.if ${PORT_OPTIONS:MGL}
+USE_GL=		gl
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""
@@ -75,21 +71,21 @@ PLIST_SUB+=	GL=""
 PLIST_SUB+=	GL="@comment "
 .endif
 
-.if !defined(WITHOUT_SOFT)
+.if ${PORT_OPTIONS:MSOFT}
 ALL_TARGET+=	ref_soft
 PLIST_SUB+=	SOFT=""
 .else
 PLIST_SUB+=	SOFT="@comment "
 .endif
 
-.if !defined(WITHOUT_UI)
+.if ${PORT_OPTIONS:MUI}
 ALL_TARGET+=	ui
 PLIST_SUB+=	UI=""
 .else
 PLIST_SUB+=	UI="@comment "
 .endif
 
-.if !defined(WITHOUT_X86_ASM) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MASM}
 MAKE_ENV+=	USE_X86_ASM=yes
 .endif
 
@@ -99,27 +95,27 @@ post-patch:
 		${WRKSRC}/ref_shared/r_images.c
 
 do-install:
-	${MKDIR} ${LIBDIR}/baseq2
-.if !defined(WITHOUT_CLIENT)
+	@${MKDIR} ${LIBDIR}/baseq2
+.if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2pro ${PREFIX}/bin
 .endif
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2proded ${PREFIX}/bin
 .endif
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/game.so ${LIBDIR}/baseq2
 .endif
-.if !defined(WITHOUT_GL)
+.if ${PORT_OPTIONS:MGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_newgl.so ${LIBDIR}
 .endif
-.if !defined(WITHOUT_SOFT)
+.if ${PORT_OPTIONS:MSOFT}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_soft.so ${LIBDIR}
 .endif
-.if !defined(WITHOUT_UI)
+.if ${PORT_OPTIONS:MUI}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ui.so ${LIBDIR}
 .endif
 
-maint-gen-distfile:
+generate-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		${ECHO_CMD} "ERROR: the distfile already exists."; \
 		${FALSE}; \
@@ -129,4 +125,5 @@ maint-gen-distfile:
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} q2pro
 	${RM} -rf q2pro
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.mk>
