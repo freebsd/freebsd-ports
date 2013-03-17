@@ -3,6 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20130313
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
@@ -14,8 +15,6 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 LICENSE=	BSD
-
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
@@ -54,6 +53,11 @@ DOCSDIR=	${PREFIX}/share/doc/pkgtools
 INSTALL_TARGET=		install
 .if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=	install-doc
+.endif
+
+# Reported that ruby-bdb is BROKEN with 2.0
+.if ${RUBY_VER} != 2.0
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 .endif
 
 # parsedate is needed for date globbing
