@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geos
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.8
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
