@@ -104,7 +104,6 @@ fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site 
 fsharp/*		lang/fsharp		Microsoft Research Shared Source License Agreement
 fwtk/*			security/fwtk		No redistribution allowed
 XFrisk-*		games/xfrisk		Copyright/trademark violation?
-gap/*			math/gap		Do not sell for profit
 gibi-*			french/gibi		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
 giftool*		graphics/giftool	Do not redistribute for profit
 glimpse-*		textproc/glimpse	Do not sell for profit
