@@ -12,6 +12,9 @@ COMMENT=	Streaming mp3 audio server
 
 LICENSE=	GPLv2 # (or later)
 
+EXPIRATION_DATE=	2013-04-17
+DEPRECATED=		Unmaintained upstream since 2004. Use audio/icecast2 instead
+
 OPTIONS_DEFINE=	DOCS
 
 USE_READLINE=	yes
