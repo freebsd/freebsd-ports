@@ -15,9 +15,7 @@ COMMENT=	PHP wrapper for SharedBook Open API
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
 RUN_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
 
-FILES=		Services/SharedBook.php Services/SharedBook/Exception.php
-
-EXAMPLES=	example.php photo1.jpg photo2.jpg photo3.jpg photo4.jpg
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"

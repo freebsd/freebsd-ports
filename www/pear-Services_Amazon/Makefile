@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Services_Amazon
-# Date created:			  11 May,2009
-# Whom:				  Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Services_Amazon
 PORTVERSION=	0.9.0
