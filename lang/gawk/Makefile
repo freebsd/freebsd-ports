@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gawk
-# Date created:		Mi  21 Okt 1998 13:53:18 CEST
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
 
 PORTNAME=	gawk
@@ -37,7 +34,9 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-extract:
+post-patch:
 	@${RM} -f ${WRKSRC}/doc/*.info
+	@${REINPLACE_CMD} -e 's/ -export-dynamic/ -Wl,--export-dynamic/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
