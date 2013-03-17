@@ -1,6 +1,5 @@
 bin/startdjg
 share/applications/djgame2.desktop
-
 %%DATADIR%%/libBase.so.1
 %%DATADIR%%/Hall
 %%DATADIR%%/logo.png
@@ -410,7 +409,6 @@ share/applications/djgame2.desktop
 %%DATADIR%%/modules/libShisensho.so
 %%DATADIR%%/modules/libSuoha.so
 %%DATADIR%%/modules/libUpgrade.so
-
 @dirrm %%DATADIR%%/wav/language/Chinese
 @dirrm %%DATADIR%%/wav/language
 @dirrm %%DATADIR%%/wav/Mahjong

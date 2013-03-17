@@ -264,7 +264,6 @@ share/KCemu/tapes/z1013.kct
 share/locale/de/LC_MESSAGES/KCemu.mo
 share/locale/en/LC_MESSAGES/KCemu.mo
 share/doc/kcemu/changelog
-
 @dirrm share/KCemu/asm/autostart
 @dirrm share/KCemu/asm
 @dirrm share/KCemu/config

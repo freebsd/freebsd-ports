@@ -1,4 +1,3 @@
 bin/mxp
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-

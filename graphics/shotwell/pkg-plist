@@ -218,7 +218,6 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/ui/tag_sidebar_context.ui
 %%DATADIR%%/ui/tags.ui
 %%DATADIR%%/ui/trash.ui
-
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%

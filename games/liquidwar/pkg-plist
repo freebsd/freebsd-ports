@@ -1,7 +1,6 @@
 bin/liquidwar
 bin/liquidwar-server
 bin/liquidwar-mapgen
-
 %%DOCSDIR%%/txt/algorithm.txt
 %%DOCSDIR%%/txt/authors.txt
 %%DOCSDIR%%/txt/bugs.txt
@@ -38,7 +37,6 @@ bin/liquidwar-mapgen
 %%DOCSDIR%%/README.fr
 %%DOCSDIR%%/README.de
 %%DOCSDIR%%/README.dk
-
 share/pixmaps/liquidwar.xpm
 share/applications/liquidwar.desktop
 share/games/liquidwar/liquidwar.dat
@@ -55,7 +53,6 @@ share/games/liquidwar/texture/warning.bmp
 games/liquidwar-server
 games/liquidwar-mapgen
 games/liquidwar
-
 @dirrm share/games/liquidwar/texture
 @dirrm share/games/liquidwar/music
 @dirrm share/games/liquidwar/map
@@ -64,6 +61,5 @@ games/liquidwar
 @dirrm %%DOCSDIR%%/txt
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-
 @dirrmtry share/games
 @dirrmtry share/applications
