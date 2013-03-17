@@ -1,15 +1,7 @@
 bin/maildirqmtp
 bin/maildirserial
 bin/maildirsmtp
+%%UCSPI_SSL%%bin/maildirsmtps
 bin/serialqmtp
 bin/serialsmtp
 bin/setlock
-%%PORTDOCS%%%%DOCSDIR%%/AUTOTURN
-%%PORTDOCS%%%%DOCSDIR%%/BLURB
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/FROMISP
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TOISP
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

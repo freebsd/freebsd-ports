@@ -10,25 +10,26 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.de.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.iway.fr/pub/unix/mail/qmail/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+
 USES=		qmail:run
 
 RESTRICTED=	Unsure of DJB license
 
 ALL_TARGET=	it
 
-OPTIONS_DEFINE=	AUTH UCSPI_SSL
+OPTIONS_DEFINE=	AUTH DOCS UCSPI_SSL
 AUTH_DESC=	Add CRAM-MD5, PLAIN and LOGIN authentication
-UCSPI_SSL_DESC=	Add ucspi-ssl SMTP SSL transport layer support
+UCSPI_SSL_DESC=	ucspi-ssl SMTP SSL transport layer support
 
 PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
 SCRIPTS=	maildirqmtp maildirsmtp
 MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
 		serialsmtp.1 setlock.1
-DOCS=		AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
+PORTDOCS=	AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 
 .include <bsd.port.options.mk>
 
@@ -41,8 +42,10 @@ PATCH_DIST_STRIP=	-p1
 .if ${PORT_OPTIONS:MUCSPI_SSL}
 RUN_DEPENDS+=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
 
-PLIST_FILES+=	bin/maildirsmtps
 MLINKS+=	maildirsmtp.1 maildirsmtps.1
+PLIST_SUB+=	UCSPI_SSL=""
+.else
+PLIST_SUB+=	UCSPI_SSL="@comment "
 .endif
 
 post-patch:
@@ -68,7 +71,7 @@ do-install:
 		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MUCSPI_SSL}
 	@${INSTALL_SCRIPT} ${WRKDIR}/maildirsmtps ${PREFIX}/bin
