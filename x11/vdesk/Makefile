@@ -13,7 +13,9 @@ COMMENT=	Command-line utility for setting up and using virtual desktops
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST_DIRS=	share/doc/vdesk
 PLIST_FILES=	bin/vdesk
-.if !defined(NOPORTDOCS)
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MDOCS}	
 .for ii in ${DOCS}
 PLIST_FILES+=	share/doc/vdesk/${ii}
 .endfor
@@ -21,13 +23,9 @@ PLIST_FILES+=	share/doc/vdesk/${ii}
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11
 
-post-extract:
-# Avoid having to read this lengthy file.
-	${RM} ${WRKSRC}/configure
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vdesk ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}	
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
