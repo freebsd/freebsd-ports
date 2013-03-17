@@ -132,28 +132,6 @@ libdata/pkgconfig/allegrogl.pc
 libdata/pkgconfig/jpgalleg.pc
 libdata/pkgconfig/loadpng.pc
 libdata/pkgconfig/logg.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/abi.txt
-%%PORTDOCS%%%%DOCSDIR%%/addons.txt
-%%PORTDOCS%%%%DOCSDIR%%/ahack.txt
-%%PORTDOCS%%%%DOCSDIR%%/allegro.txt
-%%PORTDOCS%%%%DOCSDIR%%/api.txt
-%%PORTDOCS%%%%DOCSDIR%%/const.txt
-%%PORTDOCS%%%%DOCSDIR%%/dat.txt
-%%PORTDOCS%%%%DOCSDIR%%/dat2c.txt
-%%PORTDOCS%%%%DOCSDIR%%/dat2s.txt
-%%PORTDOCS%%%%DOCSDIR%%/datafile.txt
-%%PORTDOCS%%%%DOCSDIR%%/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/grabber.txt
-%%PORTDOCS%%%%DOCSDIR%%/help.txt
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/makedoc.txt
-%%PORTDOCS%%%%DOCSDIR%%/mistakes.txt
-%%PORTDOCS%%%%DOCSDIR%%/packfile.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/allegro/%%SHLIB_VER%%
 @dirrm lib/allegro
 @dirrm include/allegrogl/GLext
