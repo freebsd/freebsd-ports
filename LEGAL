@@ -72,7 +72,6 @@ djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 dnews_*			news/dnews		Only free for schools and universities, but they have to register as well.  4 weeks of free trial for everybody We currently ask for permission to put a package on the CD-ROM
-dns.*.tar.Z		dns/h2n			Never get an approval yet
 doom3-linux-*		games/linux-doom3*	Redistribution limited
 doomsrc.zip		games/doom		Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually

@@ -56,7 +56,6 @@
     SUBDIR += gdnsd
     SUBDIR += geta
     SUBDIR += ghtool
-    SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += idnkit
     SUBDIR += idnkit2
