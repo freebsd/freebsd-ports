@@ -1,12 +1,9 @@
-# New ports collection makefile for:	s10sh
-# Date created:				Tue Feb 27 00:16:34 MST 2001
-# Whom:					John Reynolds <johnjen@reynoldsnet.org>
-#
+# Created by: John Reynolds <johnjen@reynoldsnet.org>
 # $FreeBSD$
-#
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/
@@ -19,20 +16,30 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libusb*'
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/${PORTNAME}
 
-.if defined(NOUSB) || defined(WITHOUT_USB)
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	USB
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 800069
+. if ${PORT_OPTIONS:MUSB}
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+. else
 MAKE_ENV+=	WITHOUT_USB=YES
-.else
-. if ${OSVERSION} < 800069
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . endif
 .endif
 
-.if !defined(NOPORTDOCS)
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
