@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubberband
-# Date created:	2012-01-08
-# Whom:		mathias.picker@gmx.de
-#
+# Created by: mathias.picker@gmx.de
 # $FreeBSD$
-#
 
 PORTNAME=	sooperlooper
 PORTVERSION=	1.6.18
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
-MAINTAINER=	miwi@freebsd.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Vamp audio analysis plugin SDK
 
 LICENSE=	GPLv2

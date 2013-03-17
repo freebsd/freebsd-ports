@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	zpu-toolchain-${PORTVERSION}
 
-MAINTAINER=	db@freebsd.org
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	ZPU gcc compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils

@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	activemq
 PORTVERSION=	5.7.0
@@ -9,7 +8,7 @@ MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
 MASTER_SITE_SUBDIR=${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	tj@freebsd.org
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Messaging and Integration Patterns provider
 
 NO_BUILD=	yes

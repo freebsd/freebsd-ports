@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-passenger
-# Date created:				Dec 18, 2008
-# Whom:					Jacob Atzen <jatzen@gmail.com>
-#
+# Created by: Jacob Atzen <jatzen@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	passenger
@@ -10,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
 
-MAINTAINER=	osa@FreeBSD.ORG
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
 OPTIONS_DEFINE=	DEBUG SYMLINK
