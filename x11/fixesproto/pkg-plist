@@ -4,4 +4,3 @@ libdata/pkgconfig/fixesproto.pc
 %%DOCSDIR%%/fixesproto.txt
 @dirrm %%DOCSDIR%%
 @dirrmtry include/X11/extensions
-

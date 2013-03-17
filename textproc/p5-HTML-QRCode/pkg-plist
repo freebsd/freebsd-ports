@@ -3,4 +3,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/QRCode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML
-

@@ -155,7 +155,6 @@
 %%PYTHON_SITELIBDIR%%/dojango/views.py
 %%PYTHON_SITELIBDIR%%/dojango/views.pyc
 %%PYTHON_SITELIBDIR%%/dojango/views.pyo
-
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/util
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/templatetag
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/templates/dojango
