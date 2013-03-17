@@ -9,20 +9,13 @@ PORTNAME=	XML_HTMLSax
 PORTVERSION=	2.1.2
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR SAX parser for HTML and other badly formed XML documents
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	XML
-FILES=		XML_HTMLSax.php HTMLSax/XML_HTMLSax_States.php \
-		HTMLSax/XML_HTMLSax_Decorators.php
-DOCS=		Readme
-EXAMPLES=	SimpleExample.php HTMLtoXHTML.php ExpatvsHtmlSax.php example.html
-TESTS=		index.php unit_tests.php xml_htmlsax_test.php
-_EXAMPLESDIR=	docs/examples
-_TESTSDIR=	docs/tests
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
