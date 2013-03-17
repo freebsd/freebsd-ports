@@ -3,6 +3,8 @@
 %%WWWDIR%%/README
 %%WWWDIR%%/application/Bootstrap.php
 %%WWWDIR%%/application/config/config.php
+%%WWWDIR%%/bin/.htaccess
+%%WWWDIR%%/bin/README
 %%WWWDIR%%/index.php
 %%WWWDIR%%/installer/cli.php
 %%WWWDIR%%/installer/database_config.php
@@ -24,6 +26,7 @@
 %%WWWDIR%%/installer/web.php
 %%WWWDIR%%/lib/flowplayer.controls.swf
 %%WWWDIR%%/lib/flowplayer.js
+%%WWWDIR%%/lib/flowplayer.pseudostreaming-byterange.swf
 %%WWWDIR%%/lib/flowplayer.pseudostreaming.swf
 %%WWWDIR%%/lib/flowplayer.swf
 %%WWWDIR%%/lib/gallery.ajax.js
@@ -91,18 +94,6 @@
 %%WWWDIR%%/modules/comment/views/comment.mrss.php
 %%WWWDIR%%/modules/comment/views/comments.html.php
 %%WWWDIR%%/modules/comment/views/user_profile_comments.html.php
-%%WWWDIR%%/modules/digibug/config/digibug.php
-%%WWWDIR%%/modules/digibug/controllers/admin_digibug.php
-%%WWWDIR%%/modules/digibug/controllers/digibug.php
-%%WWWDIR%%/modules/digibug/helpers/digibug_event.php
-%%WWWDIR%%/modules/digibug/helpers/digibug_installer.php
-%%WWWDIR%%/modules/digibug/helpers/digibug_theme.php
-%%WWWDIR%%/modules/digibug/images/digibug_logo.png
-%%WWWDIR%%/modules/digibug/js/digibug.js
-%%WWWDIR%%/modules/digibug/models/digibug_proxy.php
-%%WWWDIR%%/modules/digibug/module.info
-%%WWWDIR%%/modules/digibug/views/admin_digibug.html.php
-%%WWWDIR%%/modules/digibug/views/digibug_form.html.php
 %%WWWDIR%%/modules/exif/controllers/exif.php
 %%WWWDIR%%/modules/exif/helpers/exif.php
 %%WWWDIR%%/modules/exif/helpers/exif_event.php
@@ -163,6 +154,7 @@
 %%WWWDIR%%/modules/gallery/controllers/admin_languages.php
 %%WWWDIR%%/modules/gallery/controllers/admin_maintenance.php
 %%WWWDIR%%/modules/gallery/controllers/admin_modules.php
+%%WWWDIR%%/modules/gallery/controllers/admin_movies.php
 %%WWWDIR%%/modules/gallery/controllers/admin_sidebar.php
 %%WWWDIR%%/modules/gallery/controllers/admin_theme_options.php
 %%WWWDIR%%/modules/gallery/controllers/admin_themes.php
@@ -237,12 +229,14 @@
 %%WWWDIR%%/modules/gallery/helpers/user_profile.php
 %%WWWDIR%%/modules/gallery/helpers/xml.php
 %%WWWDIR%%/modules/gallery/hooks/init_gallery.php
+%%WWWDIR%%/modules/gallery/images/ffmpeg.png
 %%WWWDIR%%/modules/gallery/images/gallery.png
 %%WWWDIR%%/modules/gallery/images/gd.png
 %%WWWDIR%%/modules/gallery/images/graphicsmagick.png
 %%WWWDIR%%/modules/gallery/images/imagemagick.jpg
+%%WWWDIR%%/modules/gallery/images/missing_album_cover.jpg
 %%WWWDIR%%/modules/gallery/images/missing_movie.jpg
-%%WWWDIR%%/modules/gallery/images/missing_photo.png
+%%WWWDIR%%/modules/gallery/images/missing_photo.jpg
 %%WWWDIR%%/modules/gallery/js/albums_form_add.js
 %%WWWDIR%%/modules/gallery/js/item_form_delete.js
 %%WWWDIR%%/modules/gallery/js/l10n_client.js
@@ -259,6 +253,7 @@
 %%WWWDIR%%/modules/gallery/libraries/MY_Database.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Forge.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Input.php
+%%WWWDIR%%/modules/gallery/libraries/MY_Kohana.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Kohana_Exception.php
 %%WWWDIR%%/modules/gallery/libraries/MY_ORM.php
 %%WWWDIR%%/modules/gallery/libraries/MY_View.php
@@ -306,6 +301,7 @@
 %%WWWDIR%%/modules/gallery/views/admin_maintenance_task.html.php
 %%WWWDIR%%/modules/gallery/views/admin_modules.html.php
 %%WWWDIR%%/modules/gallery/views/admin_modules_confirm.html.php
+%%WWWDIR%%/modules/gallery/views/admin_movies.html.php
 %%WWWDIR%%/modules/gallery/views/admin_sidebar.html.php
 %%WWWDIR%%/modules/gallery/views/admin_sidebar_blocks.html.php
 %%WWWDIR%%/modules/gallery/views/admin_theme_options.html.php
@@ -463,6 +459,7 @@
 %%WWWDIR%%/modules/slideshow/module.info
 %%WWWDIR%%/modules/tag/controllers/admin_tags.php
 %%WWWDIR%%/modules/tag/controllers/tag.php
+%%WWWDIR%%/modules/tag/controllers/tag_name.php
 %%WWWDIR%%/modules/tag/controllers/tags.php
 %%WWWDIR%%/modules/tag/css/tag.css
 %%WWWDIR%%/modules/tag/helpers/item_tags_rest.php
@@ -880,14 +877,6 @@
 @dirrm %%WWWDIR%%/modules/exif/helpers
 @dirrm %%WWWDIR%%/modules/exif/controllers
 @dirrm %%WWWDIR%%/modules/exif
-@dirrm %%WWWDIR%%/modules/digibug/views
-@dirrm %%WWWDIR%%/modules/digibug/models
-@dirrm %%WWWDIR%%/modules/digibug/js
-@dirrm %%WWWDIR%%/modules/digibug/images
-@dirrm %%WWWDIR%%/modules/digibug/helpers
-@dirrm %%WWWDIR%%/modules/digibug/controllers
-@dirrm %%WWWDIR%%/modules/digibug/config
-@dirrm %%WWWDIR%%/modules/digibug
 @dirrm %%WWWDIR%%/modules/comment/views
 @dirrm %%WWWDIR%%/modules/comment/models
 @dirrm %%WWWDIR%%/modules/comment/js
@@ -910,6 +899,7 @@
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/installer/views
 @dirrm %%WWWDIR%%/installer
+@dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%/application/config
 @dirrm %%WWWDIR%%/application
 @dirrmtry %%WWWDIR%%
