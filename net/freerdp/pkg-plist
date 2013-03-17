@@ -1,59 +1,133 @@
-%%X11%%bin/xfreerdp
-include/freerdp/chanman.h
-include/freerdp/constants_ui.h
-include/freerdp/constants_vchan.h
+%%DIRECTFB%%bin/dfreerdp
+bin/xfreerdp
+include/freerdp/altsec.h
+include/freerdp/api.h
+include/freerdp/cache/bitmap.h
+include/freerdp/cache/brush.h
+include/freerdp/cache/cache.h
+include/freerdp/cache/glyph.h
+include/freerdp/cache/offscreen.h
+include/freerdp/cache/palette.h
+include/freerdp/cache/pointer.h
+include/freerdp/channels/channels.h
+include/freerdp/channels/wtsvc.h
+include/freerdp/codec/bitmap.h
+include/freerdp/codec/color.h
+include/freerdp/codec/nsc.h
+include/freerdp/codec/rfx.h
+include/freerdp/constants.h
 include/freerdp/dvc.h
+include/freerdp/extension.h
 include/freerdp/freerdp.h
-include/freerdp/kbd.h
-include/freerdp/rdpset.h
-include/freerdp/types_ui.h
-include/freerdp/vchan.h
-lib/freerdp/audin.a
-lib/freerdp/audin.la
+include/freerdp/gdi/16bpp.h
+include/freerdp/gdi/32bpp.h
+include/freerdp/gdi/8bpp.h
+include/freerdp/gdi/bitmap.h
+include/freerdp/gdi/brush.h
+include/freerdp/gdi/clipping.h
+include/freerdp/gdi/dc.h
+include/freerdp/gdi/drawing.h
+include/freerdp/gdi/gdi.h
+include/freerdp/gdi/line.h
+include/freerdp/gdi/palette.h
+include/freerdp/gdi/pen.h
+include/freerdp/gdi/region.h
+include/freerdp/gdi/shape.h
+include/freerdp/graphics.h
+include/freerdp/input.h
+include/freerdp/kbd/kbd.h
+include/freerdp/kbd/layouts.h
+include/freerdp/kbd/locales.h
+include/freerdp/kbd/vkcodes.h
+include/freerdp/listener.h
+include/freerdp/peer.h
+include/freerdp/plugins/cliprdr.h
+include/freerdp/plugins/tsmf.h
+include/freerdp/pointer.h
+include/freerdp/primary.h
+include/freerdp/rail.h
+include/freerdp/rail/icon.h
+include/freerdp/rail/rail.h
+include/freerdp/rail/window.h
+include/freerdp/rail/window_list.h
+include/freerdp/secondary.h
+include/freerdp/settings.h
+include/freerdp/svc.h
+include/freerdp/types.h
+include/freerdp/update.h
+include/freerdp/utils/args.h
+include/freerdp/utils/bitmap.h
+include/freerdp/utils/blob.h
+include/freerdp/utils/debug.h
+include/freerdp/utils/dsp.h
+include/freerdp/utils/event.h
+include/freerdp/utils/file.h
+include/freerdp/utils/hexdump.h
+include/freerdp/utils/list.h
+include/freerdp/utils/load_plugin.h
+include/freerdp/utils/memory.h
+include/freerdp/utils/mutex.h
+include/freerdp/utils/passphrase.h
+include/freerdp/utils/pcap.h
+include/freerdp/utils/print.h
+include/freerdp/utils/profiler.h
+include/freerdp/utils/rail.h
+include/freerdp/utils/rect.h
+include/freerdp/utils/registry.h
+include/freerdp/utils/semaphore.h
+include/freerdp/utils/signal.h
+include/freerdp/utils/sleep.h
+include/freerdp/utils/stopwatch.h
+include/freerdp/utils/stream.h
+include/freerdp/utils/string.h
+include/freerdp/utils/svc_plugin.h
+include/freerdp/utils/thread.h
+include/freerdp/utils/unicode.h
+include/freerdp/utils/wait_obj.h
+include/freerdp/window.h
+%%ALSA%%lib/freerdp/audin_alsa.so
+%%ALSA%%lib/freerdp/tsmf_alsa.so
+%%ALSA%%lib/freerdp/rdpsnd_alsa.so
+%%PULSE%%lib/freerdp/audin_pulse.so
+%%PULSE%%lib/freerdp/rdpsnd_pulse.so
+%%PULSE%%lib/freerdp/tsmf_pulse.so
+%%FFMPEG%%lib/freerdp/tsmf_ffmpeg.so
 lib/freerdp/audin.so
-lib/freerdp/cliprdr.a
-lib/freerdp/cliprdr.la
 lib/freerdp/cliprdr.so
-lib/freerdp/disk.a
-lib/freerdp/disk.la
 lib/freerdp/disk.so
-lib/freerdp/drdynvc.a
-lib/freerdp/drdynvc.la
 lib/freerdp/drdynvc.so
-lib/freerdp/parallel.a
-lib/freerdp/parallel.la
 lib/freerdp/parallel.so
-lib/freerdp/pnpdr.a
-lib/freerdp/pnpdr.la
-lib/freerdp/pnpdr.so
-lib/freerdp/printer.a
-lib/freerdp/printer.la
 lib/freerdp/printer.so
-lib/freerdp/rdpdr.a
-lib/freerdp/rdpdr.la
+lib/freerdp/rail.so
+lib/freerdp/rdpdbg.so
 lib/freerdp/rdpdr.so
-%%SOUND%%lib/freerdp/rdpsnd.a
-%%SOUND%%lib/freerdp/rdpsnd.la
-%%SOUND%%lib/freerdp/rdpsnd.so
-lib/freerdp/serial.a
-lib/freerdp/serial.la
+lib/freerdp/rdpsnd.so
 lib/freerdp/serial.so
-lib/libfreerdp.a
-lib/libfreerdp.la
-lib/libfreerdp.so
-lib/libfreerdp.so.0
-lib/libfreerdpchanman.a
-lib/libfreerdpchanman.la
-lib/libfreerdpchanman.so
-lib/libfreerdpchanman.so.0
-lib/libfreerdpgdi.a
-lib/libfreerdpgdi.la
-lib/libfreerdpgdi.so
-lib/libfreerdpgdi.so.0
-lib/libfreerdpkbd.a
-lib/libfreerdpkbd.la
-lib/libfreerdpkbd.so
-lib/libfreerdpkbd.so.0
+lib/freerdp/tsmf.so
+lib/libfreerdp-cache.so
+lib/libfreerdp-cache.so.1.0
+lib/libfreerdp-cache.so.1.0.2
+lib/libfreerdp-channels.so
+lib/libfreerdp-channels.so.1.0
+lib/libfreerdp-channels.so.1.0.2
+lib/libfreerdp-codec.so
+lib/libfreerdp-codec.so.1.0
+lib/libfreerdp-codec.so.1.0.2
+lib/libfreerdp-core.so
+lib/libfreerdp-core.so.1.0
+lib/libfreerdp-core.so.1.0.2
+lib/libfreerdp-gdi.so
+lib/libfreerdp-gdi.so.1.0
+lib/libfreerdp-gdi.so.1.0.2
+lib/libfreerdp-kbd.so
+lib/libfreerdp-kbd.so.1.0
+lib/libfreerdp-kbd.so.1.0.2
+lib/libfreerdp-rail.so
+lib/libfreerdp-rail.so.1.0
+lib/libfreerdp-rail.so.1.0.2
+lib/libfreerdp-utils.so
+lib/libfreerdp-utils.so.1.0
+lib/libfreerdp-utils.so.1.0.2
 libdata/pkgconfig/freerdp.pc
 %%DATADIR%%/keymaps/aliases
 %%DATADIR%%/keymaps/amiga
@@ -66,6 +140,7 @@ libdata/pkgconfig/freerdp.pc
 %%DATADIR%%/keymaps/hp
 %%DATADIR%%/keymaps/ibm
 %%DATADIR%%/keymaps/macintosh
+%%DATADIR%%/keymaps/macosx
 %%DATADIR%%/keymaps/sgi_vndr/indigo
 %%DATADIR%%/keymaps/sgi_vndr/indy
 %%DATADIR%%/keymaps/sgi_vndr/iris
@@ -73,9 +148,18 @@ libdata/pkgconfig/freerdp.pc
 %%DATADIR%%/keymaps/sun
 %%DATADIR%%/keymaps/xfree86
 %%DATADIR%%/keymaps/xfree98
-@dirrm include/freerdp
-@dirrm lib/freerdp
-@dirrm %%DATADIR%%/keymaps/sgi_vndr
-@dirrm %%DATADIR%%/keymaps/digital_vndr
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%
+%%DATADIR%%/keymaps/xkb.pl
+@dirrmtry include/freerdp/utils
+@dirrmtry include/freerdp/channels
+@dirrmtry include/freerdp/cache
+@dirrmtry include/freerdp/gdi
+@dirrmtry include/freerdp/kbd
+@dirrmtry include/freerdp/rail
+@dirrmtry include/freerdp/codec
+@dirrmtry include/freerdp/plugins
+@dirrmtry include/freerdp
+@dirrmtry lib/freerdp
+@dirrmtry %%DATADIR%%/keymaps/digital_vndr
+@dirrmtry %%DATADIR%%/keymaps/sgi_vndr
+@dirrmtry %%DATADIR%%/keymaps
+@dirrmtry %%DATADIR%%
