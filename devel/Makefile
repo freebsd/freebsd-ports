@@ -3936,6 +3936,7 @@
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += rubygem-abstract
+    SUBDIR += rubygem-active_scaffold
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-allison
