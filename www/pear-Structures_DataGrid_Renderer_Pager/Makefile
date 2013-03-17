@@ -12,8 +12,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
 		${PEARDIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager
 
-CATEGORY=	Structures
-FILES=		DataGrid/Renderer/Pager.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
