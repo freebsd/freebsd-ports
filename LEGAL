@@ -97,7 +97,6 @@ festival/festlex_OALD*	audio/festlex-oald	No commercial use
 festival/OGIlexicon-*	audio/festlex-ogi	No commercial use
 fmsx*/*			emulators/fmsx		Unclear legal status of distributed ROMs
 foiltex*		textproc/foiltex	Redistribution on a not-for-profit basis only
-ttf-sil-gentium_*	x11-fonts/gentium	License forbids commercial distribution without permission
 fp-freebsd-ws-*		security/f-prot		Free for personal use only
 freefonts-*		x11-fonts/freefonts	Some of the fonts are shareware.  Some are freeware.  Permission must be obtained before distributing at least four (mazama.license, muriel.license, roosthea.license, shf_____.license).  Two have inconsistent licenses (tempofon.license and tempoita.license say "placed into the public domain and may [not be] sold")
 tspc-*-src.tgz		net/freenet6		Must agree to License Agreement before downloading
@@ -192,7 +191,6 @@ opera-*			www/linux-opera		No redistribution, commercial software
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle*	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
-perforce/p4v-*		devel/p4v		Binary redistribution restrictions in effect
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pam_authsrv-*		security/pam_authsrv	No form of redistribution is allowed, because of linking against fwtk
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
