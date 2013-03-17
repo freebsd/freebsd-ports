@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
 PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	A highly efficient mail filter for identifying spam
 
 LICENSE=	AL2
