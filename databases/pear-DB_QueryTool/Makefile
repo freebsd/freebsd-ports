@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-DB_QueryTool
-# Date created:			  03 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	DB_QueryTool
 PORTVERSION=	1.1.2

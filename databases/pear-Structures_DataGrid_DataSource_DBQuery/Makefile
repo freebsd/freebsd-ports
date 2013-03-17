@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Structures_DataGrid_DataSource_DBQuery
-# Date created:				19 Dec 2007
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Structures_DataGrid_DataSource_DBQuery
 PORTVERSION=	0.1.11
@@ -18,10 +14,7 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structure
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 USE_PHP=	mysql
-
-CATEGORY=	Structures
-
-FILES=		DataGrid/DataSource/DBQuery.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-MDB_QueryTool
-# Date created:			  03 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	MDB_QueryTool
 PORTVERSION=	1.2.3
