@@ -1,10 +1,11 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	hitori
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Logic game similar to Sudoku
@@ -15,7 +16,8 @@ LICENSE_NAME_CCbyNCSA3=	Attribution-NonCommercial-ShareAlike 3.0 Unported
 LICENSE_FILE_CCbyNCSA3=	${WRKSRC}/COPYING-DOCS
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
+BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
 USE_XZ=		yes
@@ -26,6 +28,8 @@ MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog MAINTAINERS NEWS README
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
@@ -44,7 +48,7 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/icons/48x48/${PORTNAME}.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
