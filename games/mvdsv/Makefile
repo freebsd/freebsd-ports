@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MVDSV (+ master port for qwdtools)
-# Date created:				03 Jun 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME?=	mvdsv
 PORTVERSION=	0.29
@@ -27,18 +23,25 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS=	X86_ASM	"Compile with x86 assembly code" on
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFINE_amd64=	ASM
+OPTIONS_DEFAULT_i386=	ASM
+OPTIONS_DEFAULT_amd64=	ASM
+
 .if ${PORTNAME} == "mvdsv"
-OPTIONS+=	KQUEUE	"Enable Kqueue support"		 on
+OPTIONS_DEFINE+=	KQUEUE
+OPTIONS_DEFAULT+=	KQUEUE
 .endif
 
-.include <bsd.port.pre.mk>
+KQUEUE_DESC=	Kqueue support
 
-.if defined(WITHOUT_KQUEUE)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MKQUEUE}
 MAKE_ARGS+=	-DNOKQUEUE
 .endif
 
-.if defined(WITHOUT_X86_ASM)
+.if ! ${PORT_OPTIONS:MASM}
 MAKE_ARGS+=	-DWITHOUT_X86_ASM
 .endif
 
@@ -53,4 +56,4 @@ post-install:
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
