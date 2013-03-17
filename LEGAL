@@ -198,6 +198,7 @@ ppsmall-*		archivers/ppunpack	No commercial redistribution
 prodosemu.*		emulators/prodosemu	Restrictive copyright on the ROM image
 hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming with the TV card
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
+djbdns-1.05.tar.gz	mail/qmail-conf		Borrows code from djbdns, thus falls under the same restrictions as dns/djbdns
 qtools-*		mail/qtools		Possibly restricted binary distribution of modified versions
 quake4-linux-*		games/linux-quake4*	Redistribution is limited; see the license
 Radiator/*		net/radiator		Commercial software
