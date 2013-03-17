@@ -1,9 +1,8 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-#
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.4
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 

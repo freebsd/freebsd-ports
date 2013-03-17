@@ -1955,6 +1955,7 @@
 %%WWWDIR%%/plugins/googleplus/googleplus.js
 %%WWWDIR%%/plugins/googleplus/googleplus.png
 %%WWWDIR%%/plugins/googleplus/init.php
+%%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/identica/identica.js
 %%WWWDIR%%/plugins/identica/identica.png
 %%WWWDIR%%/plugins/identica/init.php
@@ -1982,6 +1983,9 @@
 %%WWWDIR%%/plugins/share/init.php
 %%WWWDIR%%/plugins/share/share.js
 %%WWWDIR%%/plugins/share/share.png
+%%WWWDIR%%/plugins/tweet/init.php
+%%WWWDIR%%/plugins/tweet/tweet.js
+%%WWWDIR%%/plugins/tweet/tweet.png
 %%WWWDIR%%/plugins/swap_jk/init.php
 %%WWWDIR%%/plugins/updater/init.php
 %%WWWDIR%%/plugins/updater/updater.js
@@ -1995,6 +1999,7 @@
 %%WWWDIR%%/schema/versions/mysql/101.sql
 %%WWWDIR%%/schema/versions/mysql/102.sql
 %%WWWDIR%%/schema/versions/mysql/103.sql
+%%WWWDIR%%/schema/versions/mysql/104.sql
 %%WWWDIR%%/schema/versions/mysql/11.sql
 %%WWWDIR%%/schema/versions/mysql/12.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
@@ -2096,6 +2101,7 @@
 %%WWWDIR%%/schema/versions/pgsql/101.sql
 %%WWWDIR%%/schema/versions/pgsql/102.sql
 %%WWWDIR%%/schema/versions/pgsql/103.sql
+%%WWWDIR%%/schema/versions/pgsql/104.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
@@ -2218,6 +2224,7 @@
 @dirrm %%WWWDIR%%/schema/versions
 @dirrm %%WWWDIR%%/schema
 @dirrm %%WWWDIR%%/plugins/updater
+@dirrm %%WWWDIR%%/plugins/tweet
 @dirrm %%WWWDIR%%/plugins/swap_jk
 @dirrm %%WWWDIR%%/plugins/share
 @dirrm %%WWWDIR%%/plugins/pocket
@@ -2229,6 +2236,7 @@
 @dirrm %%WWWDIR%%/plugins/instances
 @dirrm %%WWWDIR%%/plugins/import_export
 @dirrm %%WWWDIR%%/plugins/identica
+@dirrm %%WWWDIR%%/plugins/googlereaderkeys
 @dirrm %%WWWDIR%%/plugins/googleplus
 @dirrm %%WWWDIR%%/plugins/flattr
 @dirrm %%WWWDIR%%/plugins/example_routing
