@@ -15,7 +15,7 @@ MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/contrib/ \
 PKGNAMEPREFIX=	php52-
 DISTNAME=	php_rrdtool
 
-MAINTAINER=	scheidell@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A php 52 rrdtool glue
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
