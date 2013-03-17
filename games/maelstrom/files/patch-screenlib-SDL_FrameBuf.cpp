@@ -1,5 +1,14 @@
---- screenlib/SDL_FrameBuf.cpp.old	2006-10-25 22:37:21.000000000 +0200
-+++ screenlib/SDL_FrameBuf.cpp	2006-10-25 22:38:26.000000000 +0200
+--- screenlib/SDL_FrameBuf.cpp.orig	2001-07-22 23:03:13.000000000 +0200
++++ screenlib/SDL_FrameBuf.cpp	2013-03-16 11:45:02.000000000 +0100
+@@ -628,7 +628,7 @@
+ 
+ 		found = 0;
+ 		for ( which=0; !found; ++which ) {
+-			sprintf(file, "%s%d.bmp", prefix, which);
++			snprintf(file, sizeof(file), "%s%d.bmp", prefix, which);
+ 			if ( ((fp=fopen(file, "r")) == NULL) &&
+ 			     ((fp=fopen(file, "w")) != NULL) ) {
+ 				found = 1;
 @@ -847,10 +847,8 @@
  			/* Update the dirty rectangle map with the new list */
  			for ( i=0; i<dirtymaplen; ++i ) {
