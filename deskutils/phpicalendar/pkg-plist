@@ -374,7 +374,6 @@
 %%WWWDIR%%/templates/tan/year.tpl
 %%WWWDIR%%/week.php
 %%WWWDIR%%/year.php
-
 @dirrm %%WWWDIR%%/templates/tan/images
 @dirrm %%WWWDIR%%/templates/tan
 @dirrm %%WWWDIR%%/templates/red/images

@@ -827,7 +827,6 @@ lib/mono/gac/db4o/5.5.1.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/vb/docs/racecar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/vb/docs/trnflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/vb/index.html
-
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/vb/docs/querygraph
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/vb/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/vb

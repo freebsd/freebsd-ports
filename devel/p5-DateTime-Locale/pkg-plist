@@ -1,4 +1,3 @@
-
 %%SITE_PERL%%/DateTime/Locale.pm
 %%SITE_PERL%%/DateTime/Locale/Base.pm
 %%SITE_PERL%%/DateTime/Locale/Catalog.pm

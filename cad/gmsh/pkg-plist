@@ -1,6 +1,3 @@
-
-
-
 bin/gmsh
 %%STATIC_LIB%%lib/libGmsh.a
 %%SHARED_LIB%%lib/libGmsh.so
