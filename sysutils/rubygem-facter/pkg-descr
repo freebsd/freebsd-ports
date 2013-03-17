@@ -4,4 +4,4 @@ working only on certain operating systems or environments. Facter is
 especially useful for retrieving things like operating system names, IP
 addresses, MAC addresses, and SSH keys.
 
-WWW:	http://www.reductivelabs.com/projects/facter/
+WWW: https://puppetlabs.com/puppet/related-projects/facter/

@@ -3,13 +3,14 @@
 
 PORTNAME=	puppet
 PORTVERSION=	2.6.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
+RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 

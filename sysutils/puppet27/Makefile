@@ -3,13 +3,14 @@
 
 PORTNAME=	puppet
 PORTVERSION=	2.7.21
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
-RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
+RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
 
 LATEST_LINK=	puppet27
