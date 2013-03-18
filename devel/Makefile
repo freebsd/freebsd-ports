@@ -4102,6 +4102,7 @@
     SUBDIR += rubygem-rspec-expectations
     SUBDIR += rubygem-rspec-mocks
     SUBDIR += rubygem-rubigen
+    SUBDIR += rubygem-ruby-bugzilla
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
     SUBDIR += rubygem-ruby-debug-ide
