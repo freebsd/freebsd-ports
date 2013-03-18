@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgcal
-# Date created:		2009-08-16
-# Whom:			Troels Kofoed Jacobsen <tkjacobsen@gmail.com>
-#
+# Created by: Troels Kofoed Jacobsen <tkjacobsen@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libgcal
 PORTVERSION=	0.9.6
@@ -22,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
+CMAKE_ARGS=	-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
 		-DENABLE_TESTS=OFF
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
@@ -33,9 +28,5 @@ USE_GCC=	4.2+
 .if ${ARCH} == "amd64" && (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
 BROKEN=		does not link
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile.am
 
 .include <bsd.port.post.mk>
