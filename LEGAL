@@ -58,7 +58,6 @@ condor_src-*		sysutils/condor		Requires (free) registration
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
-cryptix-jce-*		java/cryptix-jce	Testing purpose only
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Author rights unclear
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by 3rd parties charging for installation or support; not free for commercial use
