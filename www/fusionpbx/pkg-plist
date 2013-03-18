@@ -4,61 +4,87 @@
 %%WWWDIR%%/app/adminer/index.php
 %%WWWDIR%%/app/adminer/root.php
 %%WWWDIR%%/app/call_broadcast/app_config.php
+%%WWWDIR%%/app/call_broadcast/app_languages.php
+%%WWWDIR%%/app/call_broadcast/call_broadcast.php
+%%WWWDIR%%/app/call_broadcast/call_broadcast_delete.php
+%%WWWDIR%%/app/call_broadcast/call_broadcast_edit.php
+%%WWWDIR%%/app/call_broadcast/call_broadcast_send.php
 %%WWWDIR%%/app/call_broadcast/root.php
-%%WWWDIR%%/app/call_broadcast/v_call_broadcast.php
-%%WWWDIR%%/app/call_broadcast/v_call_broadcast_delete.php
-%%WWWDIR%%/app/call_broadcast/v_call_broadcast_edit.php
-%%WWWDIR%%/app/call_broadcast/v_call_broadcast_send.php
 %%WWWDIR%%/app/call_center/app_config.php
-%%WWWDIR%%/app/call_center/root.php
-%%WWWDIR%%/app/call_center/v_call_center_agent.php
-%%WWWDIR%%/app/call_center/v_call_center_agent_delete.php
-%%WWWDIR%%/app/call_center/v_call_center_agent_edit.php
-%%WWWDIR%%/app/call_center/v_call_center_agent_status.php
-%%WWWDIR%%/app/call_center/v_call_center_queue.php
-%%WWWDIR%%/app/call_center/v_call_center_queue_delete.php
-%%WWWDIR%%/app/call_center/v_call_center_queue_edit.php
-%%WWWDIR%%/app/call_center/v_call_center_tier.php
-%%WWWDIR%%/app/call_center/v_call_center_tier_delete.php
-%%WWWDIR%%/app/call_center/v_call_center_tier_edit.php
+%%WWWDIR%%/app/call_center/call_center_agent_delete.php
+%%WWWDIR%%/app/call_center/call_center_agent_edit.php
+%%WWWDIR%%/app/call_center/call_center_agent_status.php
+%%WWWDIR%%/app/call_center/call_center_agents.php
+%%WWWDIR%%/app/call_center/call_center_queue_delete.php
+%%WWWDIR%%/app/call_center/call_center_queue_edit.php
+%%WWWDIR%%/app/call_center/call_center_queues.php
+%%WWWDIR%%/app/call_center/call_center_tier_delete.php
+%%WWWDIR%%/app/call_center/call_center_tier_edit.php
+%%WWWDIR%%/app/call_center/call_center_tiers.php
 %%WWWDIR%%/app/call_center/cmd.php
+%%WWWDIR%%/app/call_center/root.php
 %%WWWDIR%%/app/call_center_active/app_config.php
+%%WWWDIR%%/app/call_center_active/call_center_active.php
+%%WWWDIR%%/app/call_center_active/call_center_active_inc.php
+%%WWWDIR%%/app/call_center_active/call_center_exec.php
+%%WWWDIR%%/app/call_center_active/call_center_queue.php
 %%WWWDIR%%/app/call_center_active/root.php
-%%WWWDIR%%/app/call_center_active/v_call_center_active.php
-%%WWWDIR%%/app/call_center_active/v_call_center_active_inc.php
-%%WWWDIR%%/app/call_center_active/v_call_center_exec.php
-%%WWWDIR%%/app/call_center_active/v_call_center_queue.php
+%%WWWDIR%%/app/call_flows/app_config.php
+%%WWWDIR%%/app/call_flows/call_flow_delete.php
+%%WWWDIR%%/app/call_flows/call_flow_edit.php
+%%WWWDIR%%/app/call_flows/call_flows.php
+%%WWWDIR%%/app/call_flows/root.php
 %%WWWDIR%%/app/calls/app_config.php
+%%WWWDIR%%/app/calls/app_languages.php
+%%WWWDIR%%/app/calls/call_edit.php
+%%WWWDIR%%/app/calls/calls.php
+%%WWWDIR%%/app/calls/resources/classes/switch_call_forward.php
+%%WWWDIR%%/app/calls/resources/classes/switch_do_not_disturb.php
+%%WWWDIR%%/app/calls/resources/classes/switch_follow_me.php
 %%WWWDIR%%/app/calls/root.php
-%%WWWDIR%%/app/calls/v_call_edit.php
-%%WWWDIR%%/app/calls/v_calls.php
 %%WWWDIR%%/app/calls_active/app_config.php
+%%WWWDIR%%/app/calls_active/app_languages.php
+%%WWWDIR%%/app/calls_active/calls_active.php
+%%WWWDIR%%/app/calls_active/calls_active_assigned_extensions_inc.php
+%%WWWDIR%%/app/calls_active/calls_active_extensions.php
+%%WWWDIR%%/app/calls_active/calls_active_extensions_inc.php
+%%WWWDIR%%/app/calls_active/calls_active_inc.php
+%%WWWDIR%%/app/calls_active/calls_exec.php
 %%WWWDIR%%/app/calls_active/root.php
-%%WWWDIR%%/app/calls_active/v_calls_active.php
-%%WWWDIR%%/app/calls_active/v_calls_active_assigned_extensions_inc.php
-%%WWWDIR%%/app/calls_active/v_calls_active_extensions.php
-%%WWWDIR%%/app/calls_active/v_calls_active_extensions_inc.php
-%%WWWDIR%%/app/calls_active/v_calls_active_inc.php
-%%WWWDIR%%/app/calls_active/v_calls_exec.php
 %%WWWDIR%%/app/click_to_call/app_config.php
+%%WWWDIR%%/app/click_to_call/app_languages.php
 %%WWWDIR%%/app/click_to_call/click_to_call.php
 %%WWWDIR%%/app/click_to_call/root.php
+%%WWWDIR%%/app/conference_centers/app_config.php
+%%WWWDIR%%/app/conference_centers/app_languages.php
+%%WWWDIR%%/app/conference_centers/conference_center_delete.php
+%%WWWDIR%%/app/conference_centers/conference_center_edit.php
+%%WWWDIR%%/app/conference_centers/conference_centers.php
+%%WWWDIR%%/app/conference_centers/conference_room_delete.php
+%%WWWDIR%%/app/conference_centers/conference_room_edit.php
+%%WWWDIR%%/app/conference_centers/conference_rooms.php
+%%WWWDIR%%/app/conference_centers/conference_session_details.php
+%%WWWDIR%%/app/conference_centers/conference_sessions.php
+%%WWWDIR%%/app/conference_centers/root.php
 %%WWWDIR%%/app/conferences/app_config.php
+%%WWWDIR%%/app/conferences/app_languages.php
+%%WWWDIR%%/app/conferences/conference_delete.php
+%%WWWDIR%%/app/conferences/conference_edit.php
 %%WWWDIR%%/app/conferences/conferences.php
-%%WWWDIR%%/app/conferences/conferences_delete.php
-%%WWWDIR%%/app/conferences/conferences_edit.php
 %%WWWDIR%%/app/conferences/root.php
 %%WWWDIR%%/app/conferences_active/app_config.php
+%%WWWDIR%%/app/conferences_active/app_languages.php
+%%WWWDIR%%/app/conferences_active/conference_exec.php
+%%WWWDIR%%/app/conferences_active/conference_interactive.php
+%%WWWDIR%%/app/conferences_active/conference_interactive_inc.php
+%%WWWDIR%%/app/conferences_active/conferences_active.php
+%%WWWDIR%%/app/conferences_active/conferences_active_inc.php
 %%WWWDIR%%/app/conferences_active/root.php
-%%WWWDIR%%/app/conferences_active/v_conference_exec.php
-%%WWWDIR%%/app/conferences_active/v_conference_interactive.php
-%%WWWDIR%%/app/conferences_active/v_conference_interactive_inc.php
-%%WWWDIR%%/app/conferences_active/v_conferences_active.php
-%%WWWDIR%%/app/conferences_active/v_conferences_active_inc.php
 %%WWWDIR%%/app/contacts/app_config.php
 %%WWWDIR%%/app/contacts/contact_addresses.php
 %%WWWDIR%%/app/contacts/contact_addresses_delete.php
 %%WWWDIR%%/app/contacts/contact_addresses_edit.php
+%%WWWDIR%%/app/contacts/contact_import.php
 %%WWWDIR%%/app/contacts/contact_notes.php
 %%WWWDIR%%/app/contacts/contact_notes_delete.php
 %%WWWDIR%%/app/contacts/contact_notes_edit.php
@@ -71,6 +97,7 @@
 %%WWWDIR%%/app/contacts/contacts_vcard.php
 %%WWWDIR%%/app/contacts/root.php
 %%WWWDIR%%/app/content/app_config.php
+%%WWWDIR%%/app/content/app_languages.php
 %%WWWDIR%%/app/content/config.php
 %%WWWDIR%%/app/content/index.php
 %%WWWDIR%%/app/content/root.php
@@ -150,23 +177,27 @@
 %%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/370_is_secure.xml
 %%WWWDIR%%/app/dialplan_inbound/app_config.php
 %%WWWDIR%%/app/dialplan_inbound/app_defaults.php
+%%WWWDIR%%/app/dialplan_inbound/app_languages.php
 %%WWWDIR%%/app/dialplan_inbound/dialplan_inbound_add.php
 %%WWWDIR%%/app/dialplan_inbound/root.php
 %%WWWDIR%%/app/dialplan_outbound/app_config.php
 %%WWWDIR%%/app/dialplan_outbound/app_defaults.php
+%%WWWDIR%%/app/dialplan_outbound/app_languages.php
 %%WWWDIR%%/app/dialplan_outbound/dialplan_outbound_add.php
 %%WWWDIR%%/app/dialplan_outbound/root.php
 %%WWWDIR%%/app/exec/app_config.php
+%%WWWDIR%%/app/exec/app_languages.php
+%%WWWDIR%%/app/exec/exec.php
 %%WWWDIR%%/app/exec/root.php
-%%WWWDIR%%/app/exec/v_exec.php
 %%WWWDIR%%/app/extensions/app_config.php
 %%WWWDIR%%/app/extensions/app_defaults.php
+%%WWWDIR%%/app/extensions/extension_copy.php
+%%WWWDIR%%/app/extensions/extension_delete.php
+%%WWWDIR%%/app/extensions/extension_edit.php
+%%WWWDIR%%/app/extensions/extensions.php
 %%WWWDIR%%/app/extensions/root.php
-%%WWWDIR%%/app/extensions/v_extensions.php
-%%WWWDIR%%/app/extensions/v_extensions_copy.php
-%%WWWDIR%%/app/extensions/v_extensions_delete.php
-%%WWWDIR%%/app/extensions/v_extensions_edit.php
 %%WWWDIR%%/app/fax/app_config.php
+%%WWWDIR%%/app/fax/app_languages.php
 %%WWWDIR%%/app/fax/fax.php
 %%WWWDIR%%/app/fax/fax_copy.php
 %%WWWDIR%%/app/fax/fax_delete.php
@@ -174,62 +205,29 @@
 %%WWWDIR%%/app/fax/fax_view.php
 %%WWWDIR%%/app/fax/root.php
 %%WWWDIR%%/app/fifo/app_config.php
+%%WWWDIR%%/app/fifo/fifo.php
+%%WWWDIR%%/app/fifo/fifo_add.php
+%%WWWDIR%%/app/fifo/fifo_delete.php
+%%WWWDIR%%/app/fifo/fifo_detail_delete.php
+%%WWWDIR%%/app/fifo/fifo_detail_edit.php
+%%WWWDIR%%/app/fifo/fifo_edit.php
 %%WWWDIR%%/app/fifo/root.php
-%%WWWDIR%%/app/fifo/v_fifo.php
-%%WWWDIR%%/app/fifo/v_fifo_add.php
-%%WWWDIR%%/app/fifo/v_fifo_delete.php
-%%WWWDIR%%/app/fifo/v_fifo_details_delete.php
-%%WWWDIR%%/app/fifo/v_fifo_details_edit.php
-%%WWWDIR%%/app/fifo/v_fifo_edit.php
-%%WWWDIR%%/app/fifo_agents/app_config.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/root.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/v_fifo_agent.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/v_fifo_agent_edit.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/v_fifo_agent_login.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/v_fifo_agent_logout.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent/v_fifo_agent_remote.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs/root.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs.sql
-%%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs_delete.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs_edit.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/root.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members.sql
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members_delete.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members_edit.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles.sql
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles_delete.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles_edit.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs/root.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs.sql
-%%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs_delete.php
-%%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs_edit.php
-%%WWWDIR%%/app/fifo_agents/fifo_languages/root.php
-%%WWWDIR%%/app/fifo_agents/fifo_languages/v_fifo_agent_languages.php
-%%WWWDIR%%/app/fifo_agents/fifo_languages/v_fifo_agent_languages.sql
-%%WWWDIR%%/app/fifo_agents/fifo_languages/v_fifo_agent_languages_delete.php
-%%WWWDIR%%/app/fifo_agents/fifo_languages/v_fifo_agent_languages_edit.php
-%%WWWDIR%%/app/fifo_agents/root.php
-%%WWWDIR%%/app/fifo_agents/v_fifo_agents.php
-%%WWWDIR%%/app/fifo_agents/v_fifo_agents.sql
-%%WWWDIR%%/app/fifo_agents/v_fifo_agents_delete.php
-%%WWWDIR%%/app/fifo_agents/v_fifo_agents_edit.php
 %%WWWDIR%%/app/fifo_list/app_config.php
+%%WWWDIR%%/app/fifo_list/fifo_exec.php
+%%WWWDIR%%/app/fifo_list/fifo_interactive.php
+%%WWWDIR%%/app/fifo_list/fifo_interactive_inc.php
+%%WWWDIR%%/app/fifo_list/fifo_list.php
+%%WWWDIR%%/app/fifo_list/fifo_list_inc.php
 %%WWWDIR%%/app/fifo_list/root.php
-%%WWWDIR%%/app/fifo_list/v_fifo_exec.php
-%%WWWDIR%%/app/fifo_list/v_fifo_interactive.php
-%%WWWDIR%%/app/fifo_list/v_fifo_interactive_inc.php
-%%WWWDIR%%/app/fifo_list/v_fifo_list.php
-%%WWWDIR%%/app/fifo_list/v_fifo_list_inc.php
+%%WWWDIR%%/app/follow_me/app_config.php
+%%WWWDIR%%/app/follow_me/root.php
 %%WWWDIR%%/app/gateways/app_config.php
+%%WWWDIR%%/app/gateways/app_languages.php
+%%WWWDIR%%/app/gateways/gateway_copy.php
+%%WWWDIR%%/app/gateways/gateway_delete.php
+%%WWWDIR%%/app/gateways/gateway_edit.php
+%%WWWDIR%%/app/gateways/gateways.php
 %%WWWDIR%%/app/gateways/root.php
-%%WWWDIR%%/app/gateways/v_gateways.php
-%%WWWDIR%%/app/gateways/v_gateways_copy.php
-%%WWWDIR%%/app/gateways/v_gateways_delete.php
-%%WWWDIR%%/app/gateways/v_gateways_edit.php
 %%WWWDIR%%/app/grammar_edit/app_config.php
 %%WWWDIR%%/app/grammar_edit/clipadd.php
 %%WWWDIR%%/app/grammar_edit/clipdelete.php
@@ -268,10 +266,10 @@
 %%WWWDIR%%/app/grammar_edit/readme.txt
 %%WWWDIR%%/app/grammar_edit/root.php
 %%WWWDIR%%/app/hardware_phones/app_config.php
+%%WWWDIR%%/app/hardware_phones/hardware_phone_delete.php
+%%WWWDIR%%/app/hardware_phones/hardware_phone_edit.php
+%%WWWDIR%%/app/hardware_phones/hardware_phones.php
 %%WWWDIR%%/app/hardware_phones/root.php
-%%WWWDIR%%/app/hardware_phones/v_hardware_phones.php
-%%WWWDIR%%/app/hardware_phones/v_hardware_phones_delete.php
-%%WWWDIR%%/app/hardware_phones/v_hardware_phones_edit.php
 %%WWWDIR%%/app/hot_desking/app_config.php
 %%WWWDIR%%/app/hot_desking/extension_delete.php
 %%WWWDIR%%/app/hot_desking/extension_edit.php
@@ -280,38 +278,46 @@
 %%WWWDIR%%/app/hot_desking/resources/xml/dialplan/475_hot-desk-logout.xml
 %%WWWDIR%%/app/hot_desking/root.php
 %%WWWDIR%%/app/hunt_group/app_config.php
+%%WWWDIR%%/app/hunt_group/hunt_group_call_forward.php
+%%WWWDIR%%/app/hunt_group/hunt_group_call_forward_edit.php
+%%WWWDIR%%/app/hunt_group/hunt_group_copy.php
+%%WWWDIR%%/app/hunt_group/hunt_group_delete.php
+%%WWWDIR%%/app/hunt_group/hunt_group_destination_delete.php
+%%WWWDIR%%/app/hunt_group/hunt_group_destination_edit.php
+%%WWWDIR%%/app/hunt_group/hunt_group_edit.php
+%%WWWDIR%%/app/hunt_group/hunt_groups.php
 %%WWWDIR%%/app/hunt_group/root.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_call_forward.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_call_forward_edit.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_copy.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_delete.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_destinations_delete.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_destinations_edit.php
-%%WWWDIR%%/app/hunt_group/v_hunt_group_edit.php
 %%WWWDIR%%/app/ivr_menu/app_config.php
+%%WWWDIR%%/app/ivr_menu/app_languages.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_copy.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_delete.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_edit.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_option_delete.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_option_edit.php
+%%WWWDIR%%/app/ivr_menu/ivr_menu_options.php
+%%WWWDIR%%/app/ivr_menu/ivr_menus.php
+%%WWWDIR%%/app/ivr_menu/resources/classes/switch_ivr_menu.php
+%%WWWDIR%%/app/ivr_menu/resources/functions/ivr_menu_xml.php
 %%WWWDIR%%/app/ivr_menu/root.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_copy.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_delete.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_edit.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_options.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_options_delete.php
-%%WWWDIR%%/app/ivr_menu/v_ivr_menu_options_edit.php
 %%WWWDIR%%/app/log_viewer/app_config.php
+%%WWWDIR%%/app/log_viewer/app_languages.php
 %%WWWDIR%%/app/log_viewer/log_viewer.php
 %%WWWDIR%%/app/log_viewer/root.php
+%%WWWDIR%%/app/login/app_config.php
+%%WWWDIR%%/app/meetings/app_config.php
 %%WWWDIR%%/app/modules/app_config.php
 %%WWWDIR%%/app/modules/app_defaults.php
+%%WWWDIR%%/app/modules/modules.php
+%%WWWDIR%%/app/modules/modules_delete.php
+%%WWWDIR%%/app/modules/modules_edit.php
 %%WWWDIR%%/app/modules/root.php
-%%WWWDIR%%/app/modules/v_modules.php
-%%WWWDIR%%/app/modules/v_modules_delete.php
-%%WWWDIR%%/app/modules/v_modules_edit.php
 %%WWWDIR%%/app/music_on_hold/app_config.php
+%%WWWDIR%%/app/music_on_hold/app_languages.php
+%%WWWDIR%%/app/music_on_hold/music_on_hold.php
+%%WWWDIR%%/app/music_on_hold/music_on_hold_play.php
+%%WWWDIR%%/app/music_on_hold/resources/classes/switch_music_on_hold.php
 %%WWWDIR%%/app/music_on_hold/root.php
 %%WWWDIR%%/app/music_on_hold/slim.swf
-%%WWWDIR%%/app/music_on_hold/v_music_on_hold.php
-%%WWWDIR%%/app/music_on_hold/v_music_on_hold_play.php
 %%WWWDIR%%/app/php_edit/app_config.php
 %%WWWDIR%%/app/php_edit/app_defaults.php
 %%WWWDIR%%/app/php_edit/clipadd.php
@@ -350,11 +356,6 @@
 %%WWWDIR%%/app/php_edit/list.php
 %%WWWDIR%%/app/php_edit/readme.txt
 %%WWWDIR%%/app/php_edit/root.php
-%%WWWDIR%%/app/php_service/app_config.php
-%%WWWDIR%%/app/php_service/root.php
-%%WWWDIR%%/app/php_service/v_php_service.php
-%%WWWDIR%%/app/php_service/v_php_service_delete.php
-%%WWWDIR%%/app/php_service/v_php_service_edit.php
 %%WWWDIR%%/app/provision/app_config.php
 %%WWWDIR%%/app/provision/app_defaults.php
 %%WWWDIR%%/app/provision/index.php
@@ -400,21 +401,25 @@
 %%WWWDIR%%/app/provision_editor/root.php
 %%WWWDIR%%/app/recordings/app_config.php
 %%WWWDIR%%/app/recordings/app_defaults.php
+%%WWWDIR%%/app/recordings/app_languages.php
+%%WWWDIR%%/app/recordings/recordings.php
+%%WWWDIR%%/app/recordings/recordings_delete.php
+%%WWWDIR%%/app/recordings/recordings_edit.php
+%%WWWDIR%%/app/recordings/recordings_play.php
 %%WWWDIR%%/app/recordings/root.php
 %%WWWDIR%%/app/recordings/slim.swf
-%%WWWDIR%%/app/recordings/v_recordings.php
-%%WWWDIR%%/app/recordings/v_recordings_delete.php
-%%WWWDIR%%/app/recordings/v_recordings_edit.php
-%%WWWDIR%%/app/recordings/v_recordings_play.php
 %%WWWDIR%%/app/registrations/app_config.php
+%%WWWDIR%%/app/registrations/app_languages.php
 %%WWWDIR%%/app/registrations/root.php
-%%WWWDIR%%/app/registrations/v_status_registrations.php
+%%WWWDIR%%/app/registrations/status_registrations.php
 %%WWWDIR%%/app/ring_groups/app_config.php
+%%WWWDIR%%/app/ring_groups/app_languages.php
 %%WWWDIR%%/app/ring_groups/ring_groups.php
 %%WWWDIR%%/app/ring_groups/ring_groups_delete.php
 %%WWWDIR%%/app/ring_groups/ring_groups_edit.php
 %%WWWDIR%%/app/ring_groups/root.php
 %%WWWDIR%%/app/script_edit/app_config.php
+%%WWWDIR%%/app/script_edit/app_languages.php
 %%WWWDIR%%/app/script_edit/clipadd.php
 %%WWWDIR%%/app/script_edit/clipdelete.php
 %%WWWDIR%%/app/script_edit/cliplist.php
@@ -452,20 +457,16 @@
 %%WWWDIR%%/app/script_edit/readme.txt
 %%WWWDIR%%/app/script_edit/root.php
 %%WWWDIR%%/app/services/app_config.php
+%%WWWDIR%%/app/services/app_languages.php
 %%WWWDIR%%/app/services/root.php
-%%WWWDIR%%/app/services/v_services.php
-%%WWWDIR%%/app/services/v_services_delete.php
-%%WWWDIR%%/app/services/v_services_edit.php
+%%WWWDIR%%/app/services/service_delete.php
+%%WWWDIR%%/app/services/service_edit.php
+%%WWWDIR%%/app/services/services.php
 %%WWWDIR%%/app/settings/app_config.php
 %%WWWDIR%%/app/settings/app_defaults.php
+%%WWWDIR%%/app/settings/app_languages.php
 %%WWWDIR%%/app/settings/root.php
-%%WWWDIR%%/app/settings/v_settings_edit.php
-%%WWWDIR%%/app/signup/app_config.php
-%%WWWDIR%%/app/signup/config.php.dist
-%%WWWDIR%%/app/signup/root.php
-%%WWWDIR%%/app/signup/signup.php
-%%WWWDIR%%/app/signup/user_template.php
-%%WWWDIR%%/app/signup/v_fields.php
+%%WWWDIR%%/app/settings/settings_edit.php
 %%WWWDIR%%/app/sip_profiles/app_config.php
 %%WWWDIR%%/app/sip_profiles/app_defaults.php
 %%WWWDIR%%/app/sip_profiles/resources/xml/sip_profiles/default.xml
@@ -481,21 +482,24 @@
 %%WWWDIR%%/app/sip_profiles/sip_profiles_delete.php
 %%WWWDIR%%/app/sip_profiles/sip_profiles_edit.php
 %%WWWDIR%%/app/sip_status/app_config.php
+%%WWWDIR%%/app/sip_status/app_languages.php
 %%WWWDIR%%/app/sip_status/cmd.php
 %%WWWDIR%%/app/sip_status/root.php
 %%WWWDIR%%/app/sip_status/sip_status.php
 %%WWWDIR%%/app/sql_query/app_config.php
 %%WWWDIR%%/app/sql_query/root.php
-%%WWWDIR%%/app/sql_query/v_sql_backup.php
-%%WWWDIR%%/app/sql_query/v_sql_db_conversion.php
-%%WWWDIR%%/app/sql_query/v_sql_query.php
-%%WWWDIR%%/app/sql_query/v_sql_query_db.php
-%%WWWDIR%%/app/sql_query/v_sql_query_pdo.php
-%%WWWDIR%%/app/sql_query/v_sql_query_result.php
+%%WWWDIR%%/app/sql_query/sql_backup.php
+%%WWWDIR%%/app/sql_query/sql_db_conversion.php
+%%WWWDIR%%/app/sql_query/sql_query.php
+%%WWWDIR%%/app/sql_query/sql_query_db.php
+%%WWWDIR%%/app/sql_query/sql_query_pdo.php
+%%WWWDIR%%/app/sql_query/sql_query_result.php
 %%WWWDIR%%/app/system/app_config.php
+%%WWWDIR%%/app/system/app_languages.php
 %%WWWDIR%%/app/system/root.php
 %%WWWDIR%%/app/system/system.php
 %%WWWDIR%%/app/time_conditions/app_config.php
+%%WWWDIR%%/app/time_conditions/app_languages.php
 %%WWWDIR%%/app/time_conditions/root.php
 %%WWWDIR%%/app/time_conditions/time_condition_add.php
 %%WWWDIR%%/app/traffic_graph/app_config.php
@@ -503,49 +507,48 @@
 %%WWWDIR%%/app/traffic_graph/status_graph.php
 %%WWWDIR%%/app/traffic_graph/status_interface.php
 %%WWWDIR%%/app/traffic_graph/svg_graph.php
-%%WWWDIR%%/app/users/app_config.php
-%%WWWDIR%%/app/users/root.php
-%%WWWDIR%%/app/users/usersupdate.php
 %%WWWDIR%%/app/vars/app_config.php
 %%WWWDIR%%/app/vars/app_defaults.php
 %%WWWDIR%%/app/vars/root.php
-%%WWWDIR%%/app/vars/v_vars.php
-%%WWWDIR%%/app/vars/v_vars.textarea.php
-%%WWWDIR%%/app/vars/v_vars_delete.php
-%%WWWDIR%%/app/vars/v_vars_edit.php
+%%WWWDIR%%/app/vars/var_delete.php
+%%WWWDIR%%/app/vars/var_edit.php
+%%WWWDIR%%/app/vars/vars.php
+%%WWWDIR%%/app/vars/vars_textarea.php
 %%WWWDIR%%/app/virtual_tables/app_config.php
 %%WWWDIR%%/app/virtual_tables/root.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_delete.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_edit.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_types_name_value.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_types_name_value_delete.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_types_name_value_edit.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_data_view.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_fields.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_fields_delete.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_table_fields_edit.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_tables.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_tables_delete.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_tables_edit.php
-%%WWWDIR%%/app/virtual_tables/v_virtual_tables_import.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_delete.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_edit.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_types_name_value.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_types_name_value_delete.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_types_name_value_edit.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_data_view.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_fields.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_fields_delete.php
+%%WWWDIR%%/app/virtual_tables/virtual_table_fields_edit.php
+%%WWWDIR%%/app/virtual_tables/virtual_tables.php
+%%WWWDIR%%/app/virtual_tables/virtual_tables_delete.php
+%%WWWDIR%%/app/virtual_tables/virtual_tables_edit.php
+%%WWWDIR%%/app/virtual_tables/virtual_tables_import.php
 %%WWWDIR%%/app/voicemail_greetings/app_config.php
+%%WWWDIR%%/app/voicemail_greetings/app_languages.php
 %%WWWDIR%%/app/voicemail_greetings/root.php
-%%WWWDIR%%/app/voicemail_greetings/v_voicemail_greetings.php
-%%WWWDIR%%/app/voicemail_greetings/v_voicemail_greetings_delete.php
-%%WWWDIR%%/app/voicemail_greetings/v_voicemail_greetings_edit.php
-%%WWWDIR%%/app/voicemail_greetings/v_voicemail_greetings_play.php
-%%WWWDIR%%/app/voicemail_msgs/app_config.php
-%%WWWDIR%%/app/voicemail_msgs/root.php
-%%WWWDIR%%/app/voicemail_msgs/v_voicemail_msgs.php
-%%WWWDIR%%/app/voicemail_msgs/v_voicemail_msgs_delete.php
-%%WWWDIR%%/app/voicemail_msgs/v_voicemail_msgs_password.php
-%%WWWDIR%%/app/voicemail_msgs/v_voicemail_msgs_play.php
-%%WWWDIR%%/app/voicemail_status/app_config.php
-%%WWWDIR%%/app/voicemail_status/root.php
-%%WWWDIR%%/app/voicemail_status/v_voicemail.php
-%%WWWDIR%%/app/voicemail_status/v_voicemail_prefs_delete.php
+%%WWWDIR%%/app/voicemail_greetings/voicemail_greeting_delete.php
+%%WWWDIR%%/app/voicemail_greetings/voicemail_greeting_edit.php
+%%WWWDIR%%/app/voicemail_greetings/voicemail_greeting_play.php
+%%WWWDIR%%/app/voicemail_greetings/voicemail_greetings.php
+%%WWWDIR%%/app/voicemails/app_config.php
+%%WWWDIR%%/app/voicemails/app_languages.php
+%%WWWDIR%%/app/voicemails/resources/classes/voicemail.php
+%%WWWDIR%%/app/voicemails/root.php
+%%WWWDIR%%/app/voicemails/voicemail_delete.php
+%%WWWDIR%%/app/voicemails/voicemail_edit.php
+%%WWWDIR%%/app/voicemails/voicemail_message_delete.php
+%%WWWDIR%%/app/voicemails/voicemail_message_edit.php
+%%WWWDIR%%/app/voicemails/voicemail_messages.php
+%%WWWDIR%%/app/voicemails/voicemails.php
 %%WWWDIR%%/app/xml_cdr/app_config.php
 %%WWWDIR%%/app/xml_cdr/app_defaults.php
+%%WWWDIR%%/app/xml_cdr/app_languages.php
 %%WWWDIR%%/app/xml_cdr/root.php
 %%WWWDIR%%/app/xml_cdr/v_xml_cdr_import.php
 %%WWWDIR%%/app/xml_cdr/xml_cdr.php
@@ -601,13 +604,13 @@
 %%WWWDIR%%/app/xmpp/client_template.php
 %%WWWDIR%%/app/xmpp/db_create.php
 %%WWWDIR%%/app/xmpp/errors.php
+%%WWWDIR%%/app/xmpp/profile_delete.php
 %%WWWDIR%%/app/xmpp/profile_edit.php
 %%WWWDIR%%/app/xmpp/profile_list.php
 %%WWWDIR%%/app/xmpp/root.php
 %%WWWDIR%%/app/xmpp/update_complete.php
-%%WWWDIR%%/app/xmpp/v_profile_delete.php
-%%WWWDIR%%/app/xmpp/v_profile_edit.php
-%%WWWDIR%%/app/xmpp/v_xmpp.php
+%%WWWDIR%%/app/xmpp/xmpp.php
+%%WWWDIR%%/app/xmpp/xmpp_profile_edit.php
 %%WWWDIR%%/core/apps/app_config.php
 %%WWWDIR%%/core/apps/apps.php
 %%WWWDIR%%/core/apps/apps_delete.php
@@ -624,19 +627,19 @@
 %%WWWDIR%%/core/databases/root.php
 %%WWWDIR%%/core/default_settings/app_config.php
 %%WWWDIR%%/core/default_settings/app_defaults.php
+%%WWWDIR%%/core/default_settings/default_setting_delete.php
+%%WWWDIR%%/core/default_settings/default_setting_edit.php
 %%WWWDIR%%/core/default_settings/default_settings.php
-%%WWWDIR%%/core/default_settings/default_settings_delete.php
-%%WWWDIR%%/core/default_settings/default_settings_edit.php
 %%WWWDIR%%/core/default_settings/root.php
-%%WWWDIR%%/core/domains/app_config.php
-%%WWWDIR%%/core/domains/app_defaults.php
-%%WWWDIR%%/core/domains/domain_settings.php
-%%WWWDIR%%/core/domains/domain_settings_delete.php
-%%WWWDIR%%/core/domains/domain_settings_edit.php
-%%WWWDIR%%/core/domains/domains.php
-%%WWWDIR%%/core/domains/domains_delete.php
-%%WWWDIR%%/core/domains/domains_edit.php
-%%WWWDIR%%/core/domains/root.php
+%%WWWDIR%%/core/domain_settings/app_config.php
+%%WWWDIR%%/core/domain_settings/app_defaults.php
+%%WWWDIR%%/core/domain_settings/domain_settings.php
+%%WWWDIR%%/core/domain_settings/domain_settings_delete.php
+%%WWWDIR%%/core/domain_settings/domain_settings_edit.php
+%%WWWDIR%%/core/domain_settings/domains.php
+%%WWWDIR%%/core/domain_settings/domains_delete.php
+%%WWWDIR%%/core/domain_settings/domains_edit.php
+%%WWWDIR%%/core/domain_settings/root.php
 %%WWWDIR%%/core/menu/app_config.php
 %%WWWDIR%%/core/menu/app_defaults.php
 %%WWWDIR%%/core/menu/menu.php
@@ -649,21 +652,17 @@
 %%WWWDIR%%/core/menu/menu_item_move_up.php
 %%WWWDIR%%/core/menu/menu_restore_default.php
 %%WWWDIR%%/core/menu/root.php
-%%WWWDIR%%/core/servers/app_config.php
-%%WWWDIR%%/core/servers/root.php
-%%WWWDIR%%/core/servers/v_server_settings.php
-%%WWWDIR%%/core/servers/v_server_settings_delete.php
-%%WWWDIR%%/core/servers/v_server_settings_edit.php
-%%WWWDIR%%/core/servers/v_servers.php
-%%WWWDIR%%/core/servers/v_servers_delete.php
-%%WWWDIR%%/core/servers/v_servers_edit.php
 %%WWWDIR%%/core/upgrade/app_config.php
 %%WWWDIR%%/core/upgrade/app_defaults.php
 %%WWWDIR%%/core/upgrade/root.php
 %%WWWDIR%%/core/upgrade/upgrade.php
 %%WWWDIR%%/core/upgrade/upgrade_domains.php
 %%WWWDIR%%/core/upgrade/upgrade_schema.php
-%%WWWDIR%%/core/upgrade/upgrade_svn.php
+%%WWWDIR%%/core/user_settings/app_config.php
+%%WWWDIR%%/core/user_settings/app_languages.php
+%%WWWDIR%%/core/user_settings/root.php
+%%WWWDIR%%/core/user_settings/user_dashboard.php
+%%WWWDIR%%/core/user_settings/user_edit.php
 %%WWWDIR%%/core/users/app_config.php
 %%WWWDIR%%/core/users/app_defaults.php
 %%WWWDIR%%/core/users/group_permissions.php
@@ -708,14 +707,10 @@
 %%WWWDIR%%/includes/captcha/root.php
 %%WWWDIR%%/includes/checkauth.php
 %%WWWDIR%%/includes/checkstring.php
-%%WWWDIR%%/includes/class.phpmailer.php
-%%WWWDIR%%/includes/class.smtp.php
 %%WWWDIR%%/includes/class_vcard.php
 %%WWWDIR%%/includes/classes/array_order.php
-%%WWWDIR%%/includes/classes/call_forward.php
 %%WWWDIR%%/includes/classes/database.php
-%%WWWDIR%%/includes/classes/do_not_disturb.php
-%%WWWDIR%%/includes/classes/follow_me.php
+%%WWWDIR%%/includes/classes/domains.php
 %%WWWDIR%%/includes/classes/install.php
 %%WWWDIR%%/includes/classes/menu.php
 %%WWWDIR%%/includes/classes/root.php
@@ -723,7 +718,6 @@
 %%WWWDIR%%/includes/classes/switch_dialplan.php
 %%WWWDIR%%/includes/classes/switch_directory.php
 %%WWWDIR%%/includes/classes/switch_fax.php
-%%WWWDIR%%/includes/classes/switch_ivr_menu.php
 %%WWWDIR%%/includes/classes/switch_modules.php
 %%WWWDIR%%/includes/cmd.php
 %%WWWDIR%%/includes/config.php.dist
@@ -860,23 +854,65 @@
 %%WWWDIR%%/includes/install/htdocs/slimtest.htm
 %%WWWDIR%%/includes/install/lang/en/en.xml
 %%WWWDIR%%/includes/install/lang/en/wakeup/sounds.xml
+%%WWWDIR%%/includes/install/scripts/app.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/index.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/advanced.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/change_password.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/check_password.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/choose_greeting.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/delete_recording.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/forward_to_extension.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/get_voicemail_id.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/listen_to_recording.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/macro.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/main_menu.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/menu_messages.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/message_saved.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/message_waiting.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/on_dtmf.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/play_greeting.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/record_greeting.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/record_menu.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/record_message.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/record_name.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/return_call.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions/send_email.lua
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/gb/email_body.tpl
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/gb/email_subject.tpl
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/us/email_body.tpl
+%%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/us/email_subject.tpl
 %%WWWDIR%%/includes/install/scripts/call_broadcast_originate.js
+%%WWWDIR%%/includes/install/scripts/call_flow.lua
+%%WWWDIR%%/includes/install/scripts/call_flow_monitor.lua
 %%WWWDIR%%/includes/install/scripts/call_forward.lua
+%%WWWDIR%%/includes/install/scripts/conference_center.lua
+%%WWWDIR%%/includes/install/scripts/confirm.lua
+%%WWWDIR%%/includes/install/scripts/destination_caller_id.lua
 %%WWWDIR%%/includes/install/scripts/dial_string.lua
+%%WWWDIR%%/includes/install/scripts/directory.lua
 %%WWWDIR%%/includes/install/scripts/disa.lua
 %%WWWDIR%%/includes/install/scripts/eavesdrop.lua
+%%WWWDIR%%/includes/install/scripts/email.lua
 %%WWWDIR%%/includes/install/scripts/fax_retry.lua
 %%WWWDIR%%/includes/install/scripts/fifo_member.lua
 %%WWWDIR%%/includes/install/scripts/huntgroup_originate.lua
 %%WWWDIR%%/includes/install/scripts/intercept.lua
+%%WWWDIR%%/includes/install/scripts/ivr_menu.lua
+%%WWWDIR%%/includes/install/scripts/monitor.lua
 %%WWWDIR%%/includes/install/scripts/originate.js
 %%WWWDIR%%/includes/install/scripts/page.lua
 %%WWWDIR%%/includes/install/scripts/park.lua
 %%WWWDIR%%/includes/install/scripts/park_monitor.lua
 %%WWWDIR%%/includes/install/scripts/pin_number.lua
 %%WWWDIR%%/includes/install/scripts/recordings.lua
+%%WWWDIR%%/includes/install/scripts/resources/functions/base64.lua
+%%WWWDIR%%/includes/install/scripts/resources/functions/explode.lua
+%%WWWDIR%%/includes/install/scripts/resources/functions/file_exists.lua
+%%WWWDIR%%/includes/install/scripts/resources/functions/format_seconds.lua
+%%WWWDIR%%/includes/install/scripts/resources/functions/trim.lua
 %%WWWDIR%%/includes/install/scripts/ring_group.lua
 %%WWWDIR%%/includes/install/scripts/roku.lua
+%%WWWDIR%%/includes/install/scripts/voicemail.lua
 %%WWWDIR%%/includes/install/scripts/wakeup.lua
 %%WWWDIR%%/includes/install/scripts/xml_handler.lua
 %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/16000/4.wav
@@ -1005,10 +1041,13 @@
 %%WWWDIR%%/includes/install/sql/mysql.sql
 %%WWWDIR%%/includes/install/sql/pgsql.sql
 %%WWWDIR%%/includes/install/sql/sqlite.sql
+%%WWWDIR%%/includes/javascript/reset_file_input.js
 %%WWWDIR%%/includes/jquery/flot/excanvas.min.js
 %%WWWDIR%%/includes/jquery/flot/jquery.flot.js
 %%WWWDIR%%/includes/jquery/flot/jquery.min.js
-%%WWWDIR%%/includes/jquery/jquery-1.7.2.min.js
+%%WWWDIR%%/includes/jquery/jquery-1.8.3.js
+%%WWWDIR%%/includes/jquery/jquery-ui-1.9.2.min.js
+%%WWWDIR%%/includes/jquery/jquery-ui.css
 %%WWWDIR%%/includes/lib_cdr.php
 %%WWWDIR%%/includes/lib_functions.php
 %%WWWDIR%%/includes/lib_pdo.php
@@ -1020,11 +1059,6 @@
 %%WWWDIR%%/includes/paging.php
 %%WWWDIR%%/includes/persistform.php
 %%WWWDIR%%/includes/persistformvar.php
-%%WWWDIR%%/includes/phpsvnclient/definitions.php
-%%WWWDIR%%/includes/phpsvnclient/http.php
-%%WWWDIR%%/includes/phpsvnclient/phpsvnclient.php
-%%WWWDIR%%/includes/phpsvnclient/xml2Array.php
-%%WWWDIR%%/includes/phpsvnclient/xml_parser.php
 %%WWWDIR%%/includes/pop3/mime_parser.php
 %%WWWDIR%%/includes/pop3/parse_message.php
 %%WWWDIR%%/includes/pop3/pop3.php
@@ -1179,6 +1213,7 @@
 %%WWWDIR%%/includes/templates/conf/voicemail.tpl
 %%WWWDIR%%/includes/templates/conf/web-vm.tpl
 %%WWWDIR%%/includes/templates/provision/aastra/675x/{v_mac}.cfg
+%%WWWDIR%%/includes/templates/provision/cisco/spa112/{v_mac}.xml
 %%WWWDIR%%/includes/templates/provision/cisco/spa303/{v_mac}.xml
 %%WWWDIR%%/includes/templates/provision/cisco/spa504g/{v_mac}.xml
 %%WWWDIR%%/includes/templates/provision/cisco/spa525g/{v_mac}.xml
@@ -1194,21 +1229,52 @@
 %%WWWDIR%%/includes/templates/provision/polycom/8030/sip.cfg
 %%WWWDIR%%/includes/templates/provision/polycom/8030/{v_mac}-registration.cfg
 %%WWWDIR%%/includes/templates/provision/polycom/8030/{v_mac}.cfg
+%%WWWDIR%%/includes/templates/provision/snom/300/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/snom/320/{v_mac}.xml
 %%WWWDIR%%/includes/templates/provision/snom/820/{v_mac}.xml
 %%WWWDIR%%/includes/templates/provision/yealink/t20/{v_mac}.cfg
 %%WWWDIR%%/includes/templates/provision/yealink/t22/{v_mac}.cfg
 %%WWWDIR%%/includes/upload.php
 %%WWWDIR%%/includes/wysiwyg.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/index2.php
-%%WWWDIR%%/install.php
-%%WWWDIR%%/licenses.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
+%%WWWDIR%%/resources/install.php
+%%WWWDIR%%/resources/licenses.php
+%%WWWDIR%%/resources/phpmailer/LICENSE
+%%WWWDIR%%/resources/phpmailer/changelog.txt
+%%WWWDIR%%/resources/phpmailer/class.phpmailer.php
+%%WWWDIR%%/resources/phpmailer/class.pop3.php
+%%WWWDIR%%/resources/phpmailer/class.smtp.php
+%%WWWDIR%%/resources/phpmailer/docs.ini
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ar.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-br.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ca.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ch.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-cz.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-de.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-dk.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-es.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-et.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-fi.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-fo.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-fr.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-hu.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-it.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ja.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-nl.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-no.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-pl.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ro.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-ru.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-se.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-sk.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-tr.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/resources/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/resources/root.php
 %%WWWDIR%%/root.php
 %%WWWDIR%%/secure/.htaccess
-%%WWWDIR%%/secure/class.phpmailer.php
-%%WWWDIR%%/secure/class.smtp.php
 %%WWWDIR%%/secure/fax_to_email.php
 %%WWWDIR%%/secure/htaccess.tmp
 %%WWWDIR%%/secure/index.php
@@ -1275,10 +1341,15 @@
 @dirrm %%WWWDIR%%/themes/accessible
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/secure
+@dirrm %%WWWDIR%%/resources/phpmailer/language
+@dirrm %%WWWDIR%%/resources/phpmailer
+@dirrm %%WWWDIR%%/resources
 @dirrm %%WWWDIR%%/includes/templates/provision/yealink/t22
 @dirrm %%WWWDIR%%/includes/templates/provision/yealink/t20
 @dirrm %%WWWDIR%%/includes/templates/provision/yealink
 @dirrm %%WWWDIR%%/includes/templates/provision/snom/820
+@dirrm %%WWWDIR%%/includes/templates/provision/snom/320
+@dirrm %%WWWDIR%%/includes/templates/provision/snom/300
 @dirrm %%WWWDIR%%/includes/templates/provision/snom
 @dirrm %%WWWDIR%%/includes/templates/provision/polycom/8030
 @dirrm %%WWWDIR%%/includes/templates/provision/polycom/650
@@ -1291,6 +1362,7 @@
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco/spa525g
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco/spa504g
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco/spa303
+@dirrm %%WWWDIR%%/includes/templates/provision/cisco/spa112
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco/7960
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco/7940
 @dirrm %%WWWDIR%%/includes/templates/provision/cisco
@@ -1337,9 +1409,9 @@
 @dirrm %%WWWDIR%%/includes/templates
 @dirrm %%WWWDIR%%/includes/qr
 @dirrm %%WWWDIR%%/includes/pop3
-@dirrm %%WWWDIR%%/includes/phpsvnclient
 @dirrm %%WWWDIR%%/includes/jquery/flot
 @dirrm %%WWWDIR%%/includes/jquery
+@dirrm %%WWWDIR%%/includes/javascript
 @dirrm %%WWWDIR%%/includes/install/sql
 @dirrm %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/8000
 @dirrm %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/16000
@@ -1348,6 +1420,16 @@
 @dirrm %%WWWDIR%%/includes/install/sounds/en/us
 @dirrm %%WWWDIR%%/includes/install/sounds/en
 @dirrm %%WWWDIR%%/includes/install/sounds
+@dirrm %%WWWDIR%%/includes/install/scripts/resources/functions
+@dirrm %%WWWDIR%%/includes/install/scripts/resources
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/us
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en/gb
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates/en
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources/templates
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources/functions
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail/resources
+@dirrm %%WWWDIR%%/includes/install/scripts/app/voicemail
+@dirrm %%WWWDIR%%/includes/install/scripts/app
 @dirrm %%WWWDIR%%/includes/install/scripts
 @dirrm %%WWWDIR%%/includes/install/lang/en/wakeup
 @dirrm %%WWWDIR%%/includes/install/lang/en
@@ -1378,10 +1460,10 @@
 @dirrm %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/core/users
+@dirrm %%WWWDIR%%/core/user_settings
 @dirrm %%WWWDIR%%/core/upgrade
-@dirrm %%WWWDIR%%/core/servers
 @dirrm %%WWWDIR%%/core/menu
-@dirrm %%WWWDIR%%/core/domains
+@dirrm %%WWWDIR%%/core/domain_settings
 @dirrm %%WWWDIR%%/core/default_settings
 @dirrm %%WWWDIR%%/core/databases
 @dirrm %%WWWDIR%%/core/backup
@@ -1392,12 +1474,14 @@
 @dirrm %%WWWDIR%%/app/xml_edit/images
 @dirrm %%WWWDIR%%/app/xml_edit
 @dirrm %%WWWDIR%%/app/xml_cdr
-@dirrm %%WWWDIR%%/app/voicemail_status
-@dirrm %%WWWDIR%%/app/voicemail_msgs
+@dirrm %%WWWDIR%%/app/voicemails/resources/switch/scripts
+@dirrm %%WWWDIR%%/app/voicemails/resources/switch
+@dirrm %%WWWDIR%%/app/voicemails/resources/classes
+@dirrm %%WWWDIR%%/app/voicemails/resources
+@dirrm %%WWWDIR%%/app/voicemails
 @dirrm %%WWWDIR%%/app/voicemail_greetings
 @dirrm %%WWWDIR%%/app/virtual_tables
 @dirrm %%WWWDIR%%/app/vars
-@dirrm %%WWWDIR%%/app/users
 @dirrm %%WWWDIR%%/app/traffic_graph
 @dirrm %%WWWDIR%%/app/time_conditions
 @dirrm %%WWWDIR%%/app/system
@@ -1407,7 +1491,6 @@
 @dirrm %%WWWDIR%%/app/sip_profiles/resources/xml
 @dirrm %%WWWDIR%%/app/sip_profiles/resources
 @dirrm %%WWWDIR%%/app/sip_profiles
-@dirrm %%WWWDIR%%/app/signup
 @dirrm %%WWWDIR%%/app/settings
 @dirrm %%WWWDIR%%/app/services
 @dirrm %%WWWDIR%%/app/script_edit/images/thumbnails
@@ -1420,13 +1503,19 @@
 @dirrm %%WWWDIR%%/app/provision_editor/images
 @dirrm %%WWWDIR%%/app/provision_editor
 @dirrm %%WWWDIR%%/app/provision
-@dirrm %%WWWDIR%%/app/php_service
 @dirrm %%WWWDIR%%/app/php_edit/images/thumbnails
 @dirrm %%WWWDIR%%/app/php_edit/images
 @dirrm %%WWWDIR%%/app/php_edit
+@dirrm %%WWWDIR%%/app/music_on_hold/resources/classes
+@dirrm %%WWWDIR%%/app/music_on_hold/resources
 @dirrm %%WWWDIR%%/app/music_on_hold
 @dirrm %%WWWDIR%%/app/modules
+@dirrm %%WWWDIR%%/app/meetings
+@dirrm %%WWWDIR%%/app/login
 @dirrm %%WWWDIR%%/app/log_viewer
+@dirrm %%WWWDIR%%/app/ivr_menu/resources/functions
+@dirrm %%WWWDIR%%/app/ivr_menu/resources/classes
+@dirrm %%WWWDIR%%/app/ivr_menu/resources
 @dirrm %%WWWDIR%%/app/ivr_menu
 @dirrm %%WWWDIR%%/app/hunt_group
 @dirrm %%WWWDIR%%/app/hot_desking/resources/xml/dialplan
@@ -1438,13 +1527,8 @@
 @dirrm %%WWWDIR%%/app/grammar_edit/images
 @dirrm %%WWWDIR%%/app/grammar_edit
 @dirrm %%WWWDIR%%/app/gateways
+@dirrm %%WWWDIR%%/app/follow_me
 @dirrm %%WWWDIR%%/app/fifo_list
-@dirrm %%WWWDIR%%/app/fifo_agents/fifo_languages
-@dirrm %%WWWDIR%%/app/fifo_agents/fifo_agent_status_logs
-@dirrm %%WWWDIR%%/app/fifo_agents/fifo_agent_profiles
-@dirrm %%WWWDIR%%/app/fifo_agents/fifo_agent_call_logs
-@dirrm %%WWWDIR%%/app/fifo_agents/fifo_agent
-@dirrm %%WWWDIR%%/app/fifo_agents
 @dirrm %%WWWDIR%%/app/fifo
 @dirrm %%WWWDIR%%/app/fax
 @dirrm %%WWWDIR%%/app/extensions
@@ -1464,15 +1548,16 @@
 @dirrm %%WWWDIR%%/app/contacts
 @dirrm %%WWWDIR%%/app/conferences_active
 @dirrm %%WWWDIR%%/app/conferences
+@dirrm %%WWWDIR%%/app/conference_centers
 @dirrm %%WWWDIR%%/app/click_to_call
 @dirrm %%WWWDIR%%/app/calls_active
+@dirrm %%WWWDIR%%/app/calls/resources/classes
+@dirrm %%WWWDIR%%/app/calls/resources
 @dirrm %%WWWDIR%%/app/calls
+@dirrm %%WWWDIR%%/app/call_flows
 @dirrm %%WWWDIR%%/app/call_center_active
 @dirrm %%WWWDIR%%/app/call_center
 @dirrm %%WWWDIR%%/app/call_broadcast
 @dirrm %%WWWDIR%%/app/adminer
 @dirrm %%WWWDIR%%/app
 @dirrm %%WWWDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/grandstream
-@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7960
-@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7940

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fusionpbx
-DISTVERSION=	3.1.2
+DISTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
