@@ -6,7 +6,7 @@ PORTVERSION=	2013.03.07
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
-		http://files.etoilebsd.net/livemedia/
+		LOCAL/bdrewery/${PORTNAME}/
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
