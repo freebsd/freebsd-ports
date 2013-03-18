@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="edd201a5-8fc3-11e2-b131-000c299b62e1">
+    <topic>piwigo -- CSRF/Path Traversal</topic>
+    <affects>
+      <package>
+	<name>piwigo</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>High-Tech Bridge Security Research Lab reports:</p>
+	<blockquote cite="http://piwigo.org/releases/2.4.7">
+	  <p>The CSRF vulnerability exists due to insufficient verification of the
+	     HTTP request origin in "/admin.php" script. A remote attacker can trick
+	     a logged-in administrator to visit a specially crafted webpage and
+	     create arbitrary PHP file on the remote server.</p>
+	  <p>The path traversal vulnerability exists due to insufficient filtration
+	     of user-supplied input in "dl" HTTP GET parameter passed to
+	     "/install.php" script. The script is present on the system after
+	     installation by default, and can be accessed by attacker without any
+	     restrictions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1468</cvename>
+      <cvename>CVE-2013-1469</cvename>
+      <url>http://piwigo.org/bugs/view.php?id=0002843</url>
+      <url>http://piwigo.org/bugs/view.php?id=0002844</url>
+      <url>http://dl.packetstormsecurity.net/1302-exploits/piwigo246-traversalxsrf.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-02-06</discovery>
+      <entry>2013-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d881d254-70c6-11e2-862d-080027a5ec9a">
     <topic>libexif -- multiple remote vulnerabilities</topic>
     <affects>
