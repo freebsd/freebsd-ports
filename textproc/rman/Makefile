@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rman
-# Date created:         27 Dec 1994
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rman
 PORTVERSION=	3.2
