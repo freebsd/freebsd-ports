@@ -50,7 +50,11 @@ RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=    convert:${PORTSDIR}/graphics/ImageMagick
+.else
+RUN_DEPENDS+=    convert:${PORTSDIR}/graphics/ImageMagick-nox11
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MJHEAD}
