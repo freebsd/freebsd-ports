@@ -1,3 +1,4 @@
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME?=	percona
@@ -8,7 +9,7 @@ MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/LATEST/source/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	Percona-Server-5.6.10-alpha60.2
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona56-client
