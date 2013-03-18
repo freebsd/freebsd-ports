@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/callbacks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/callbacks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/callbacks.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/encoding.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/encoding.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/encoding.pyo
@@ -22,9 +25,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_css.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_css.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_css.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_delinkify.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_delinkify.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_delinkify.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_links.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_links.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bleach/tests/test_links.pyo
