@@ -62,7 +62,6 @@ CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Author rights unclear
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by 3rd parties charging for installation or support; not free for commercial use
 darwinia-demo		games/linux-darwinia-demo Redistribution limited
-DarwinStreamingSrvr*-Source.tar net/DarwinStreamingServer Server License restrictions, see http://www.opensource.apple.com/apsl/
 datamodeler		databases/datamodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
