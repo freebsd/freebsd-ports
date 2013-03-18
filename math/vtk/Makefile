@@ -1,17 +1,5 @@
-# New ports collection makefile for:    vtk
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
-# By default
-#
-# There are some options to tune VTK towards your specific needs.
-# You can activate a feature by typing something like
-# "make -DKNOB" or "make KNOB=yes" instead of just "make"
-#
-# WITH_TESTING		build the testing binaries (only for vtk and vtk-java port)
-#
 
 PORTNAME=	vtk
 PORTVERSION=	4.4
@@ -37,6 +25,8 @@ PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
 USE_TCL=	84
 USE_TK=		84
+
+LICENSE=	BSD
 
 .include <bsd.port.pre.mk>
 
