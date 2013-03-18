@@ -19,6 +19,7 @@ RUN_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
 
 GNU_CONFIGURE=	yes
 USE_XZ=		yes
+USE_PKGCONFIG=	build
 
 MAN1=		quvi.1
 PLIST_FILES=	bin/quvi
