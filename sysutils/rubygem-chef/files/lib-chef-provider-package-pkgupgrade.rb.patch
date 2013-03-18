@@ -203,7 +203,7 @@
 +            if package_name =~ /\//
 +              origin = package_name
 +            else
-+              origin = @pkg_pkgdb[:name].index(package_name)
++              origin = @pkg_pkgdb[:name].respond_to?(:key) ? @pkg_pkgdb[:name].key(package_name) : @pkg_pkgdb[:name].index(package_name)
 +              unless origin  # not installed
 +                origins = @pkg_index[:origin][package_name]
 +                case origins.size
@@ -238,7 +238,7 @@
 +            if package_name =~ /\//
 +              origin = package_name
 +            else
-+              origin = @pkg_pkgdb[:name].index(package_name)
++              origin = @pkg_pkgdb[:name].respond_to?(:key) ? @pkg_pkgdb[:name].key(package_name) : @pkg_pkgdb[:name].index(package_name)
 +            end
 +            if origin
 +              @pkg_pkgdb[:version][origin]
