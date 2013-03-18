@@ -18,7 +18,6 @@
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext
     SUBDIR += gfaim
-    SUBDIR += gibi
     SUBDIR += gimp-help
     SUBDIR += homard
     SUBDIR += hunspell

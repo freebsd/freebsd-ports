@@ -108,7 +108,6 @@ fvcom/sourcecode1.tar.gz	science/fvcom*	Requires (free) registration
 fwtk/*			security/fwtk		No redistribution allowed
 gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
-gibi-*			french/gibi		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
 giftool*		graphics/giftool	Do not redistribute for profit
 glimpse-*		textproc/glimpse	Do not sell for profit
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
