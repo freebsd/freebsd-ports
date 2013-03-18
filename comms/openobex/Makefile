@@ -12,7 +12,7 @@ COMMENT=	Open source implementation of the OBEX protocol
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=		pathfix
 MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	CMakeLists.txt
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:STRING="${PREFIX}/libdata/pkgconfig"
