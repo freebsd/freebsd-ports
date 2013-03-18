@@ -3,9 +3,14 @@
 
 PORTNAME=	luajit
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	v${PORTVERSION}_hotfix1.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A Just-In-Time Compiler for Lua
