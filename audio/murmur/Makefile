@@ -3,7 +3,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	ayu@commun.jp
 COMMENT=	Murmur is the server component of Mumble
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}

@@ -3,6 +3,7 @@
 
 PORTNAME=	plinkseq
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	biology science
 MASTER_SITES=	http://atgu.mgh.harvard.edu/${PORTNAME}/dist/version-${PORTVERSION}/
 

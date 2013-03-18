@@ -7,7 +7,7 @@
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tron-like multiplayer racing game
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		protobuf.7:${PORTSDIR}/devel/protobuf \
+		protobuf:${PORTSDIR}/devel/protobuf \
 		glfw.0:${PORTSDIR}/graphics/glfw \
 		Half:${PORTSDIR}/graphics/ilmbase \
 		ftgl.2:${PORTSDIR}/graphics/ftgl \

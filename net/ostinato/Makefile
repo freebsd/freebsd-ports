@@ -3,6 +3,7 @@
 
 PORTNAME=	ostinato
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}${EXTRACTSUFFIX}
@@ -10,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}${EXTRACTSUFFIX}
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Packet crafter/generator and analyzer with friendly GUI
 
-BUILD_DEPENDS=	protobuf>=2.3.0:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build network script \
 		xml
