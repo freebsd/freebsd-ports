@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
+USE_PKGCONFIG=	build
 
 MAN1=		cclive.1
 PLIST_FILES=	bin/ccl \
