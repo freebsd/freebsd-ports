@@ -102,6 +102,7 @@ GGI_DESC?=		General Graphics Interface
 GHOSTSCRIPT_DESC?=	Ghostscript support
 GIF_DESC?=		GIF image format
 GLADE_DESC?=		Glade interface builder
+GLUT_DESC?=		GLUT support
 GLX_DESC?=		X11 OpenGL rendering
 GMP_DESC?=		GMP (multiple precision arithmetic)
 GNOME_DESC?=		GNOME desktop environment
