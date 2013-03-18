@@ -5,7 +5,7 @@ PORTNAME=	alt-ergo
 PORTVERSION=	0.94
 PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	http://alt-ergo.lri.fr/http/ LOCAL/bf
+MASTER_SITES=	http://alt-ergo.lri.fr/http/alt-ergo-${PORTVERSION}/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An automatic theorem prover dedicated to program verification
