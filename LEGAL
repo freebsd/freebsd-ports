@@ -252,7 +252,6 @@ teamspeak*		audio/teamspeak3-server	No redistribution
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed with any commercial product
 TFMESS_BSP_FreeBSD_*	security/bsp_upektfmess	License prohibits redistribution
 thundercache		www/thundercache	Shareware license for 50 threads.  Requires license key to run more than 50 threads, which can be obtained from their website.
-timidity-*		audio/timidity		Uses copyrighted patches
 tinker*			biology/tinker		Distribution is prohibited
 tkman-2.*		misc/tkman		Do not sell for profit
 tracker-*.tgz		audio/tracker		Non-redistributable beta
