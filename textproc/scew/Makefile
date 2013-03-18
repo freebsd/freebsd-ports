@@ -1,25 +1,20 @@
-# New ports collection makefile for:	scew
-# Date created:        10 January 2008
-# Whom:                Pietro Cerutti <gahr@gahr.ch>
-#
+# Created by: Pietro Cerutti <gahr@gahr.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	scew
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple C Expat Wrapper
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=		pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
