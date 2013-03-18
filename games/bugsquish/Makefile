@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bugsquish
-# Date created:				2004 05 July
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bugsquish
 PORTVERSION=	0.0.6
@@ -20,40 +16,31 @@ LICENSE=	GPLv2
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
 
+DESKTOP_ENTRIES="Bug Squish" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
+.include <bsd.port.options.mk>
+
 post-patch:
-# Fix data location
 	@${REINPLACE_CMD} -e 's|/usr/share/bugsquish/|${DATADIR}/|' ${WRKSRC}/Makefile
-# Fix CFLAGS/LDFLAGS
 	@${REINPLACE_CMD} -e 's|CFLAGS=-Wall -O2|CFLAGS+=|' \
 	-e 's|SDL_CFLAGS :=|SDL_CFLAGS+=|' \
 	-e 's|SDL_LDFLAGS :=|SDL_LDFLAGS+=|' ${WRKSRC}/Makefile
 
-.include <bsd.port.options.mk>
-
 do-install:
-# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-# Data
 .  for d in embedded images music sounds
 	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${d} ${DATADIR})
 .  endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/images/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -sf ${PREFIX}/share/bugsquish/embedded/images/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
