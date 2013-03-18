@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gsasl
-# Date created:			Oct 18, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gsasl
 PORTVERSION=	1.8.0
@@ -21,6 +16,7 @@ LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		gnutls.26:${PORTSDIR}/security/gnutls \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
+USES=		charsetfix
 USE_GNOME=	gnomehack pkgconfig
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes

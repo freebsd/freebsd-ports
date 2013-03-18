@@ -35,8 +35,8 @@
 +	echo "eucJP EUC-JP"
 +	echo "eucKR EUC-KR"
 +	echo "Big5 BIG5"
++	echo "Big5HKSCS BIG5-HKSCS"
 +	echo "SJIS SHIFT_JIS"
-+	echo "Shift_JIS SHIFT_JIS"
 +        ;;
    netbsd*)
      echo "646 ASCII"
