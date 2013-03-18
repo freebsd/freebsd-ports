@@ -1,34 +1,36 @@
-# New Ports collection makefile for:	XDG-Menu
-# Date created:		2012-05-07
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	xdg-menu
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
-DISTNAME=	XDG-Menu-${DISTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+		SF/nemysisfreebsdp/:icons
+DISTFILES=	XDG-Menu-${DISTVERSION}.tgz \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	python
+EXTRACT_ONLY=	XDG-Menu-${DISTVERSION}.tgz
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A ROX panel applet that displays an applications menu button
+COMMENT=	ROX panel applet that displays an applications menu button
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
 
 WRKSRC=		${WRKDIR}/XDG-Menu
 DATADIR=	${PREFIX}/apps/XDG-Menu
 
-FETCH_ARGS?=	-Fpr
 USE_PYTHON=	yes
-ALL_TARGET=
-NO_BUILD=	yes
+INSTALLS_ICONS=	yes
+
+PORTDOCS=	*
+
+DESKTOP_ENTRIES="XDG-Menu" "${COMMENT}" ${PORTNAME} \
+		"${PORTNAME}" "Application;System;" false
 
 OPTIONS_DEFINE=	ROX
 ROX_DESC=	Enable ROX panel applet support
@@ -37,8 +39,10 @@ SUB_FILES=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MROX}
 post-patch:
+	@${REINPLACE_CMD} -i '' 's|/usr/lib|../../lib|' ${WRKSRC}/findrox.py
+
+.if ! ${PORT_OPTIONS:MROX}
 	@${REINPLACE_CMD} -i '' '/if not rox.confirm/,/sys.exit/s/^/#/' ${WRKSRC}/AppRun
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You have not enabled ROX panel applet support"
@@ -46,12 +50,25 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
 
-do-install:
-# Scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+do-build:
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
-# Executable and Data
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
+
 	${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu ${DATADIR}
+	@(cd ${WRKSRC} && ${CP} -r Messages .DirIcon AppInfo.xml AppRun AppletRun \
+		Options.xml Messages python *.py *.pyc *.pyo ${DATADIR})
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/Help/|} ${DOCSDIR}
+.endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
