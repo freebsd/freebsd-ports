@@ -52,3 +52,4 @@ share/sokoban/screens/screen.49
 share/sokoban/screens/screen.50
 @dirrm share/sokoban/screens
 @dirrm share/sokoban
+@unexec if [ `stat -f %z /var/games/sokoban 2>/dev/null` = "2" ]; then rm -f /var/games/sokoban; fi

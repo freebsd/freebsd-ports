@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sokoban
-# Date created:				2 July 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=		sokoban
 PORTVERSION=		1.0
