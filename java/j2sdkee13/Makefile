@@ -34,3 +34,4 @@ do-install:
 	(cd ${WRKDIR} && ${TAR} cf - ${PORTNAME}${PORTVERSION} |\
 		${TAR} xf - -C ${PREFIX})
 
+.include <bsd.port.post.mk>
