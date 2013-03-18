@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-GMP
-# Date created:				Wed Jan  3 11:09:25 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Math-GMP
 PORTVERSION=	2.06
