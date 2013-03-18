@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fabric
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -10,11 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYDISTUTILS_PKGNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	A simple pythonic remote deployment tool
+COMMENT=	Simple pythonic remote deployment tool
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.9.0:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.10.0:${PORTSDIR}/security/py-paramiko
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for unit testing
@@ -32,7 +32,7 @@ PYDISTUTILS_PKGNAME=	${PORTNAME:C/f/F/}
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}fudge>0:${PORTSDIR}/devel/py-fudge \
-		nosetests>=0:${PORTSDIR}/devel/py-nose
+		nosetests:${PORTSDIR}/devel/py-nose
 
 regression-test: build
 	@cd ${WRKSRC} && nosetests
