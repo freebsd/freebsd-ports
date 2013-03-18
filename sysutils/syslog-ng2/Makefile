@@ -4,9 +4,10 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ivan.lago@ifom.eu
 COMMENT=	A powerful syslogd replacement
