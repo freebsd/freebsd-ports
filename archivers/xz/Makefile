@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	naddy
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LZMA compression and decompression tools
 
 CONFLICTS=	lzma-[0-9]* lzmautils-[0-9]* lzmalib-[0-9]*
