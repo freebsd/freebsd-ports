@@ -1,10 +1,5 @@
-# New ports collection makefile for:	Yasou picture book - JIS X 4081 version
-# Date created:        	2004.11.08
-# Whom:			Hideyuki KURASHINA <rushani@FreeBSD.org>
-# Based on:		Satoshi Taoka's roget-fpw
-#
+# Created by: Hideyuki KURASHINA <rushani@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yasou-fpw
 PORTVERSION=	1.0.b0
@@ -15,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.b0/beta0/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yasou picture book (EPWING V1 format) by SAS
 
-NO_CDROM=	"No commercial use, and no redistribution allowed with fee except media and/or shipping cost"
+NO_CDROM=	No commercial use, and no redistribution allowed with fee except media and/or shipping cost
 
 USE_ZIP=	yes
 NO_BUILD=	yes

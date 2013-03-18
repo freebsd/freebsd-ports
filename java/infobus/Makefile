@@ -16,7 +16,7 @@ JAVA_VERSION=	1.6+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-NO_CDROM=	"See the license"
+NO_CDROM=	See the license
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

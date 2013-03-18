@@ -15,8 +15,8 @@ JAVA_VERSION=	1.6+
 
 NO_BUILD=	YES
 
-RESTRICTED=	"Redistribution is not permitted"
-NO_CDROM=	"Redistribution is not permitted"
+RESTRICTED=	Redistribution is not permitted
+NO_CDROM=	Redistribution is not permitted
 
 J2SDKEEVERSION=	${PORTVERSION}_02
 DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7917-j2ee_sdk-1.3.1-oth-JPR&SiteId=JSC&TransactionId=noreg
@@ -34,4 +34,3 @@ do-install:
 	(cd ${WRKDIR} && ${TAR} cf - ${PORTNAME}${PORTVERSION} |\
 		${TAR} xf - -C ${PREFIX})
 
-.include <bsd.port.post.mk>

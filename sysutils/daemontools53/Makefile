@@ -1,9 +1,5 @@
-# New ports collection makefile for:	daemontools
-# Date created:		09 June 1998
-# Whom:			Dom Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dom Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	daemontools
 PORTVERSION=	0.53
@@ -14,7 +10,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
-RESTRICTED=	"Unsure of djb\'s license"
+RESTRICTED=	Unsure of djb's license
 NO_LATEST_LINK=	yes
 
 ALL_TARGET=	it man

@@ -21,7 +21,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
+RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 LICENSE=	GPLv2
 
 USE_XORG=	xpm ice sm xext xv xt x11 xmu

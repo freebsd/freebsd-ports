@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Microsoft Windows Chinese TrueType fonts
-# Date created:		28 Feb 2004
-# Whom:			LI Dong <ld@FreeBSD.org.cn>
-#
+# Created by: LI Dong <ld@FreeBSD.org.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	msttf
 PORTVERSION=	1.0
@@ -24,7 +20,7 @@ MSTTF_SIMSUN=	simsun.ttc
 MSTTF_TAHOMA=	tahoma.ttf
 
 IGNOREFILES=	${MSTTF_SIMHEI} ${MSTTF_SIMSUN} ${MSTTF_TAHOMA}
-RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
+RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 
 NO_BUILD=	yes
 SHAREMODE=	644

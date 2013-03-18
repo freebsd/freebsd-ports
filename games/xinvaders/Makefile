@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xinvaders
-# Date created:         3 Jan 1995
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
@@ -17,7 +13,7 @@ COMMENT=	Shoot-em-up them nasty little bugs
 
 ONLY_FOR_ARCHS=	i386
 
-NO_CDROM=	"don't sell for profit"
+NO_CDROM=	don't sell for profit
 
 USE_GETTEXT=	yes
 USE_XORG=	x11 xmu xaw xt

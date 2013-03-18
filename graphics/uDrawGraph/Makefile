@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uDrawGraph
-# Date created:		2005-10-05
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	uDrawGraph
 PORTVERSION=	3.1.1
@@ -31,7 +27,7 @@ LICENSES=	LICENSE.txt LIZENZ.txt
 
 LINK_OPTS=	-sf
 
-RESTRICTED=	"binary under GNU LGPL without accompanying source"
+RESTRICTED=	binary under GNU LGPL without accompanying source
 
 do-install:
 # licenses required at startup

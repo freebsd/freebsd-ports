@@ -1,9 +1,5 @@
-# New ports collection makefile for:    edith
-# Date created:         8 February 2002
-# Whom:                 Christian Brueffer <chris@unixpages.org>
-#
+# Created by: Christian Brueffer <chris@unixpages.org>
 # $FreeBSD$
-#
 
 PORTNAME=	edith
 PORTVERSION=	1.58
@@ -20,7 +16,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 
-RESTRICTED=	"Redistribution not allowed"
+RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 
 MAN1=		edith.1

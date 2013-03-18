@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radiator
-# Date created:				05 March 2003
-# Whom:					shan
-#
+# Created by: shan
 # $FreeBSD$
-#
 
 PORTNAME=	Radiator
 PORTVERSION=	4.7
@@ -21,7 +17,7 @@ MYSQL_DESC=	MySQL support
 
 PERL_CONFIGURE=	yes
 
-RESTRICTED=	"Commercial software"
+RESTRICTED=	Commercial software
 
 .include <bsd.port.pre.mk>
 

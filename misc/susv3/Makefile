@@ -1,9 +1,5 @@
-# New ports collection makefile for:	susv3
-# Date created:		11 April 2002
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	susv3
 PORTVERSION=	1.2
@@ -14,7 +10,7 @@ DISTNAME=	susv3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single UNIX Specification Version 3
 
-RESTRICTED=	"Redistribution of the documents is not permitted"
+RESTRICTED=	Redistribution of the documents is not permitted
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

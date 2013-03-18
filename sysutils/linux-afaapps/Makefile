@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-afaapps
-# Date created:				6 October 2003
-# Whom:					bms@FreeBSD.org
-#
+# Created by: bms@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		afaapps
 PORTVERSION=		2.7
@@ -17,7 +13,7 @@ DIST_SUBDIR=		rpm
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
-RESTRICTED=		"binary redistribution license needs clarification"
+RESTRICTED=		binary redistribution license needs clarification
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	arts

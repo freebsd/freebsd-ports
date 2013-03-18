@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xskat
-# Date created:		27 Apr 1996
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xskat
 PORTVERSION=	4.0
@@ -17,7 +13,7 @@ COMMENT=	Play the card game Skat
 
 .if defined(WITH_ALTENBURGER_CARDS)
 DISTFILES+=	xskat-cards.tar.gz
-RESTRICTED=	"The altenburger card file is NOT freely redistributable!"
+RESTRICTED=	The altenburger card file is NOT freely redistributable!
 .endif
 
 USE_IMAKE=	yes

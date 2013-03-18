@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnews
-# Date created:		Thu May 29 17:16:36 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dnews
 PORTVERSION=	5.7b1
@@ -17,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial nntp server with enhancements over inn and cnews
 
 WRKSRC=		${WRKDIR}/dtemp
-RESTRICTED=	"only free for non-profit organisations"
+RESTRICTED=	only free for non-profit organisations
 IS_INTERACTIVE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes

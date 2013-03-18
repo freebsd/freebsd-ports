@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uzap
-# Date created:		19 Jun 1995
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	uzap
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Visual binary file editor
 
 # restrictive Copyright; the author is no longer reachable, however :-(
-RESTRICTED=	"Restrictive copyright"
+RESTRICTED=	Restrictive copyright
 NO_WRKSUBDIR=	yes
 MAN1=		uzap.1
 PLIST_FILES=	bin/uzap

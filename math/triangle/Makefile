@@ -1,9 +1,5 @@
-# New ports collection makefile for:  triangle
-# Date created:               16 Octobre 2004
-# Whom:                       Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	triangle
 PORTVERSION=	1.6
@@ -17,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
-NO_CDROM=	"Triangle must not be sold for profit"
+NO_CDROM=	Triangle must not be sold for profit
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
