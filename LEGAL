@@ -212,7 +212,6 @@ RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
-rman-3.*		textproc/rman		Do not sell for profit
 rpm/i386/fedora/4/gtk2-* x11-toolkits/linux-gtk2 LGPL binary, no source
 rsmb-*			net/rsmb		Must register for account on IBM web site, must agree to license before downloading, and no redistribution allowed
 savage/Samuraiwars*	games/linux-savage-samuraiwars	Freeware, but license terms are unclear
