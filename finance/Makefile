@@ -66,7 +66,6 @@
     SUBDIR += p5-Business-OnlinePayment-Network1Financial
     SUBDIR += p5-Business-OnlinePayment-OCV
     SUBDIR += p5-Business-OnlinePayment-PayConnect
-    SUBDIR += p5-Business-OnlinePayment-PayflowPro
     SUBDIR += p5-Business-OnlinePayment-PaymenTech
     SUBDIR += p5-Business-OnlinePayment-PaymentsGateway
     SUBDIR += p5-Business-OnlinePayment-SurePay
@@ -94,10 +93,8 @@
     SUBDIR += p5-Finance-YahooQuote
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
-    SUBDIR += p5-PFProAPI
     SUBDIR += p5-PayflowPro
     SUBDIR += pear_Payment_DTA
-    SUBDIR += pfpro
     SUBDIR += php-tclink
     SUBDIR += prestashop
     SUBDIR += py-vatnumber

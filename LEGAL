@@ -196,7 +196,6 @@ palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pam_authsrv-*		security/pam_authsrv	No form of redistribution is allowed, because of linking against fwtk
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
-pfpro*			finance/pfpro		Only available for customers subscribed to the VeriSign PayFlow Pro Service
 pgp*			security/pgp*		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted

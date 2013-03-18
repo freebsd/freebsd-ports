@@ -4171,3 +4171,6 @@ net-mgmt/zabbix-server|net-mgmt/zabbix2-server|2013-03-15|Has expired: no longer
 dns/h2n||2013-03-17|Removed: legally questionable and obsolete
 sysutils/facter|sysutils/rubygem-facter|2013-03-17|Renamed to match naming convention for rubygems
 french/gibi||2013-03-18|Removed: IGNORE for more than 6 months
+finance/pfpro||2013-03-18|Removed: upstream no longer exists
+finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
+finance/p5-Business-OnlinePayment-PayflowPro||2013-03-18|Removed: upstream no longer exists

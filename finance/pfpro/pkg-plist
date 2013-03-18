@@ -1,6 +1,0 @@
-bin/pfpro
-etc/pfpro/certs/f73e89fd.0
-include/pfpro.h
-lib/libpfpro.so
-@dirrmtry etc/pfpro/certs
-@dirrmtry etc/pfpro
