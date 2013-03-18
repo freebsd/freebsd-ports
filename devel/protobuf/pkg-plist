@@ -15,6 +15,7 @@ include/google/protobuf/descriptor.proto
 include/google/protobuf/descriptor_database.h
 include/google/protobuf/dynamic_message.h
 include/google/protobuf/extension_set.h
+include/google/protobuf/generated_enum_reflection.h
 include/google/protobuf/generated_message_reflection.h
 include/google/protobuf/generated_message_util.h
 include/google/protobuf/io/coded_stream.h
@@ -31,6 +32,18 @@ include/google/protobuf/repeated_field.h
 include/google/protobuf/service.h
 include/google/protobuf/stubs/common.h
 include/google/protobuf/stubs/once.h
+include/google/protobuf/stubs/atomicops.h
+include/google/protobuf/stubs/atomicops_internals_arm_gcc.h
+include/google/protobuf/stubs/atomicops_internals_arm_qnx.h
+include/google/protobuf/stubs/atomicops_internals_atomicword_compat.h
+include/google/protobuf/stubs/atomicops_internals_macosx.h
+include/google/protobuf/stubs/atomicops_internals_mips_gcc.h
+include/google/protobuf/stubs/atomicops_internals_pnacl.h
+include/google/protobuf/stubs/atomicops_internals_x86_gcc.h
+include/google/protobuf/stubs/atomicops_internals_x86_msvc.h
+include/google/protobuf/stubs/platform_macros.h
+include/google/protobuf/stubs/template_util.h
+include/google/protobuf/stubs/type_traits.h
 include/google/protobuf/text_format.h
 include/google/protobuf/unknown_field_set.h
 include/google/protobuf/wire_format.h
@@ -39,15 +52,15 @@ include/google/protobuf/wire_format_lite_inl.h
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.la
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.7
+lib/libprotobuf-lite.so.8
 lib/libprotobuf.a
 lib/libprotobuf.la
 lib/libprotobuf.so
-lib/libprotobuf.so.7
+lib/libprotobuf.so.8
 lib/libprotoc.a
 lib/libprotoc.la
 lib/libprotoc.so
-lib/libprotoc.so.7
+lib/libprotoc.so.8
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
 @dirrm include/google/protobuf/stubs

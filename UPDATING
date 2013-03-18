@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130317:
+  AFFECTS: users of devel/protobuf
+  AUTHOR: vanilla@FreeBSD.org
+
+  The devel/protobuf has been updated to 2.5.0. The shared library version
+  has changed from 6 to 7. Please rebuild all ports that depends on it:
+
+  # portmaster -r protobuf
+    or
+  # portupgrade -fr devel/protobuf
+    or
+  # pkg install -fR devel/protobuf
+
 20130316:
   AFFECTS: users of converters/libiconv and devel/gettext
   AUTHOR: bapt@FreeBSD.org
