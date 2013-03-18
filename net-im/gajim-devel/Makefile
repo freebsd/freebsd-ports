@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-2010-10-30
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
+DEPRECATED=	This port is outdated for two years, no distfile available. Please use net-im/gajim instead
+EXPIRATION_DATE=2013-04-18
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
