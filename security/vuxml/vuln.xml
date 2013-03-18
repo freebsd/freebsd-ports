@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1d23109a-9005-11e2-9602-d43d7e0c7c02">
+    <topic>php5 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.13</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>PHP does not validate the relationship between the soap.wsdl_cache_dir
+	    directive and the open_basedir directive, which allows remote attackers to
+	    bypass intended access restrictions by triggering the creation of cached
+	    SOAP WSDL files in an arbitrary directory.</p>
+	  <p>The SOAP parser in PHP allows remote attackers to read arbitrary files
+	    via a SOAP WSDL file containing an XML external entity declaration in
+	    conjunction with an entity reference, related to an XML External Entity
+	    (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1635</cvename>
+      <cvename>CVE-2013-1643</cvename>
+    </references>
+    <dates>
+      <discovery>2013-03-04</discovery>
+      <entry>2013-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="edd201a5-8fc3-11e2-b131-000c299b62e1">
     <topic>piwigo -- CSRF/Path Traversal</topic>
     <affects>
