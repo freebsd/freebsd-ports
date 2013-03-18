@@ -1,12 +1,13 @@
 # New ports collection makefile for:	CalculiX
 # Date created:		19 April 2003
-# Whom:			Pedro Giffuni <giffunip@asme.org>
+# Whom:			Pedro Giffuni
 #
 # $FreeBSD$
 #
 
 PORTNAME=	CalculiX
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -101,8 +102,8 @@ pre-build:
 	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
 		${WRKSRC}/libSNL/src/makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
-	s+"mozilla"+"${BROWSER}"+ ; \
-	s+"ghostview"+"${PSVIEWER}"+ ;' \
+	s+"firefox"+"${BROWSER}"+ ; \
+	s+"gv"+"${PSVIEWER}"+ ;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
 
 do-build:
