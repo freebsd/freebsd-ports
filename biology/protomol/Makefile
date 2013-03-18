@@ -1,7 +1,4 @@
-# New ports collection makefile for:   protomol
-# Date created:         5 May 2006
-# Whom:                 Sangwoo Shim <sangwoos@gmail.com>
-#
+# Created by: Sangwoo Shim <sangwoos@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	protomol
@@ -10,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tar.gz
-EXTRACT_SUFX=	# nada
+EXTRACT_SUFX=	# empty
 
 MAINTAINER=	sangwoos@gmail.com
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
@@ -30,18 +27,20 @@ CXXFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	GLUT "Use glut" on
+OPTIONS_DEFINE=	GLUT
+OPTIONS_DEFAULT=	GLUT
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GLUT)
+.if ${PORT_OPTIONS:MGLUT}
 CONFIGURE_ARGS+=	--with-glut=yes
 USE_GL=	glut
 .else
 CONFIGURE_ARGS+=	--with-glut=no
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | ${EGREP} -v '\.cvsignore' | \
