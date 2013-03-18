@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Glib-Object-Introspection
-PORTVERSION=	0.014
+PORTVERSION=	0.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Dynamically create Perl language bindings
 
 LICENSE=	LGPL21
 
+# t/vfunc-ref-counting.t requires gobject-introspection 1.35.5+
 BUILD_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspection \
 		p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
