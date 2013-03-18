@@ -21,7 +21,8 @@ NO_CCACHE=	yes
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
-MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
+		PORTREVISION=${PORTREVISION}
 USE_STAGE=	yes
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
