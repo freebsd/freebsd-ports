@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130316:
+  AFFECTS: users of converters/libiconv and devel/gettext
+  AUTHOR: bapt@FreeBSD.org
+
+  libiconv now handles the lib/charset.alias file instead of devel/gettext.
+  If you are using pkgng 'and' upgrading from source with portupgrade or
+  portmaster, first delete gettext, upgrade libiconv, then reinstall gettext.
+
+  # pkg delete -f devel/gettext
+  # portmaster converters/libiconv devel/gettext
+    or
+  # pkg delete -f devel/gettext
+  # portupgrade converters/libiconv devel/gettext
+
 20130308:
   AFFECTS: users of net-im/folks and devel/libgee
   AUTHOR: kwm@FreeBSD.org
