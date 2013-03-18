@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ifc
-# Date created:         Oct 30, 2001
-# Whom:                 NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ifc
 PORTVERSION=	8.1.034
@@ -23,7 +19,7 @@ PATCH_DEPENDS=		${LINUX_BASE_PORT}
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
-RESTRICTED=	"Intel forbids any redistribution"
+RESTRICTED=	Intel forbids any redistribution
 
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*

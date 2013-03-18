@@ -1,10 +1,5 @@
-# New ports collection makefile for:	TrueTypeFont Mika-chan
-# Date created:		12 October 2002
-# Whom:			sada
-# Based on:		KANOU Hiroki's kochi-ttfonts
-#
+# Created by: sada
 # $FreeBSD$
-#
 
 PORTNAME=	mikachan-ttfonts
 PORTVERSION=	8.7
@@ -23,7 +18,7 @@ EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 BROKEN=		checksum mismatch
 
-NO_CDROM=	"Don't sell distfile"
+NO_CDROM=	Don't sell distfile
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	pq
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mika.ttf

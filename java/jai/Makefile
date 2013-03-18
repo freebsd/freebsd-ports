@@ -21,7 +21,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	TARGET_DIR=${TARGET_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-RESTRICTED=	"Redistribution is not permitted"
+RESTRICTED=	Redistribution is not permitted
 
 DOWNLOAD_URL=	http://java.sun.com/products/java-media/jai/current.html
 

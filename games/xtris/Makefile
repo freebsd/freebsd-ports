@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xtris
-# Date created:         24. Sep 97
-# Whom:                 sec@42.org
-#
+# Created by: sec@42.org
 # $FreeBSD$
-#
 
 PORTNAME=	xtris
 PORTVERSION=	1.15
@@ -19,7 +15,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sec@42.org
 COMMENT=	A multi-player version of a popular game for the X Window system
 
-RESTRICTED=	"Possible trademark infringement"
+RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris
 USE_XORG=	x11 xext
 

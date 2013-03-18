@@ -16,7 +16,7 @@ COMMENT=	Atari 8-bit computer emulator
 BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
+RESTRICTED=	xf25 contains copyright ROMs and cannot be distributed.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

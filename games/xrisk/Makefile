@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xrisk
-# Date created:		4 Jan 1995
-# Whom:			swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	xrisk
 PORTVERSION=	2.15
@@ -18,6 +14,6 @@ USE_IMAKE=	yes
 USE_XORG=	x11 xext xt
 MAN6=		xrisk.6
 
-RESTRICTED=	"Possible trademark infringement"
+RESTRICTED=	Possible trademark infringement
 
 .include <bsd.port.mk>

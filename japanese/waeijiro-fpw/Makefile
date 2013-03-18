@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WAEIJIRO Dictionary - JIS X 4081 version
-# Date created:        	2002.9.9
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.1
@@ -21,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 MANUAL_PACKAGE_BUILD=Needs data from a CDROM
-RESTRICTED=	"The original dictionary is not free"
+RESTRICTED=	The original dictionary is not free
 USE_GMAKE=	yes
 USE_PERL5=	yes
 DICT_PATH?=	/cdrom

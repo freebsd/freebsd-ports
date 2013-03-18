@@ -1,10 +1,5 @@
-#
-# New ports collection makefile for:	pvr250
-# Date created:				10 October 2004
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pvr250
 PORTVERSION=	20101010
@@ -26,7 +21,7 @@ WRKSRC=		${WRKDIR}
 NOFETCHFILES=	hcwPVRP2.sys
 
 RESTRICTED_FILES=	hcwPVRP2.sys
-RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
+RESTRICTED=	This port uses a binary driver which is owned by Hauppauge
 
 MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1

@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
 DOCDIR=		share/doc/${PORTNAME}
-RESTRICTED=	"uses GNU getopt with BSDish-licensed code from OpenSSL"
+RESTRICTED=	uses GNU getopt with BSDish-licensed code from OpenSSL
 NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_PERL5_BUILD=yes

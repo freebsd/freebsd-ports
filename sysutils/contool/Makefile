@@ -1,9 +1,5 @@
-# New ports collection makefile for:    contool
-# Date created:         2 Dec 1996
-# Whom:                 nsayer@quack.kfu.com
-#
+# Created by: nsayer@quack.kfu.com
 # $FreeBSD$
-#
 
 PORTNAME=	contool
 PORTVERSION=	3.3a
@@ -17,7 +13,7 @@ COMMENT=	Console tool for openlook
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
-NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"
+NO_CDROM=	source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XORG=	x11 xext

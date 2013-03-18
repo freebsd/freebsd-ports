@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srd - JIS X 4081 format version
-# Date created:        	00/06/14
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	srd-fpw
 PORTVERSION=	1.1.5
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
-RESTRICTED=	"The original dictionary is not free"
+RESTRICTED=	The original dictionary is not free
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/srd-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom

@@ -16,7 +16,7 @@ COMMENT=	A collection of ATM fonts (not all free) from the CICA archives
 
 BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
-RESTRICTED=	"see accompanying .license files"
+RESTRICTED=	see accompanying .license files
 NO_WRKSUBDIR=	yes
 
 do-build:

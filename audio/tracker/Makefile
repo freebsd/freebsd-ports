@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tracker
-# Date created:		2 Oct 1994
-# Whom:			swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	tracker
 PORTVERSION=	5.3
@@ -14,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD player
 
-RESTRICTED=	"Non-redistributable beta"
+RESTRICTED=	Non-redistributable beta
 
 LATEST_LINK=	tracker-player
 WRKSRC=		${WRKDIR}/tracker

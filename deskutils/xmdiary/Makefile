@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmdiary
-# Date created:		29 Sep 1997
-# Whom:			mi@aldan.ziplink.net
-#
+# Created by: mi@aldan.ziplink.net
 # $FreeBSD$
-#
 
 PORTNAME=	xmdiary
 PORTVERSION=	3.0.3
@@ -16,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Personal and group calendar utility
 
-NO_CDROM=	"Don't sell for profit"
+NO_CDROM=	Don't sell for profit
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 USE_MOTIF=	yes
 USE_IMAKE=	yes
