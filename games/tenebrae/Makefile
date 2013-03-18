@@ -1,9 +1,5 @@
-# New ports collection makefile for: tenebrae
-# Date created:		14 Mar 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
@@ -14,35 +10,37 @@ DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 		${PORTNAME}data${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Quake 1 source port with advanced graphics
+COMMENT=	Quake engine with lighting similar to that in Doom III
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-USE_XORG=	xxf86dga
-USE_GL=		gl
+USE_GL=		glu
 USE_SDL=	yes
-
-OPTIONS_DEFINE=	X86_ASM DOCS
-OPTIONS_DEFAULT=	X86_ASM
-X86_ASM_DESC=	Enable use of x86 assembly code
+USE_XORG=	xxf86dga
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0
 BUILD_WRKSRC=	${WRKSRC}/linux
 MAKEFILE=	Makefile.i386linux
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT_i386=	ASM
+OPTIONS_DEFINE_amd64=	ASM
+OPTIONS_DEFAULT_amd64=	ASM
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX86_ASM}
+.if ${PORT_OPTIONS:MASM}
 MAKE_ENV+=	USE_ASM=1
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-	${WRKSRC}/gl_warp.c
+	${REINPLACE_CMD} -e 's|gray_1_2_4_to_8|expand_&|' \
+		${WRKSRC}/gl_warp.c
 
 pre-build:
 	@cd ${BUILD_WRKSRC} && ${LN} -sf Makefile.i386linux Makefile
@@ -54,8 +52,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Pak0.pak ${Q1DIR}/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${TR} -d '\r' <${WRKDIR}/Tenebrae_Readme.txt \
-		>${DOCSDIR}/Tenebrae_Readme.txt
+	${TR} -d '\r' < ${WRKDIR}/Tenebrae_Readme.txt \
+		> ${DOCSDIR}/Tenebrae_Readme.txt
 .endif
 
 post-install:
@@ -64,5 +62,4 @@ post-install:
 	@${ECHO_CMD}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
-
 .include <bsd.port.mk>
