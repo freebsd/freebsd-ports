@@ -544,6 +544,8 @@
     SUBDIR += percona-toolkit
     SUBDIR += percona55-client
     SUBDIR += percona55-server
+    SUBDIR += percona56-client
+    SUBDIR += percona56-server
     SUBDIR += pg_filedump
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
