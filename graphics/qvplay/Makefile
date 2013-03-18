@@ -1,12 +1,9 @@
-# New ports collection makefile for:	qvplay
-# Date created:		2 May 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qvplay
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.asahi-net.or.jp/~xg2k-hys/
 
@@ -17,25 +14,34 @@ WRKSRC=		${WRKDIR}/QVplay095/obj/FreeBSD
 
 GNU_CONFIGURE=	yes
 
-MAN1=		qvplay.1 qvrec.1 qvalldel.1
+PLIST_FILES=	bin/qvalldel \
+		bin/qvplay \
+		bin/qvrec
 
-MYPORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
-		README README.eng README.FreeBSD
-SUB_FILES=	pkg-message
+MAN1=		qvalldel.1 qvplay.1 qvrec.1
 
-pre-patch:
+PORTDOCS=	FAQ.txt HISTORY PROTOCOL.eng PROTOCOL.txt \
+		README README.FreeBSD README.eng
+
+.include <bsd.port.options.mk>
+
+post-patch:
 	@${MKDIR} ${WRKSRC}
+	@${REINPLACE_CMD} \
+		-e 's|/usr/local/bin|$${PREFIX}/bin|' \
+		-e 's|/usr/local/man/man1|$${PREFIX}/man/man1|' \
+		-e 's|$$(INSTALL_PROGRAM) -o root -g bin -m 444 $$(MAN1) $$(mandir)/$$(MAN1)|$$(INSTALL_DATA) $$(MAN1) $$(mandir)/$$(MAN1)|' \
+		-e 's|$$(INSTALL_PROGRAM) -o root -g bin -m 444 $$(MAN2) $$(mandir)/$$(MAN2)|$$(INSTALL_DATA) $$(MAN2) $$(mandir)/$$(MAN2)|' \
+		-e 's|$$(INSTALL_PROGRAM) -o root -g bin -m 444 $$(MAN3) $$(mandir)/$$(MAN3)|$$(INSTALL_DATA) $$(MAN3) $$(mandir)/$$(MAN3)|' \
+			${WRKSRC}/../../src/Makefile.in
 
 pre-configure:
-	@( cd ${WRKDIR}/QVplay095; ./setup FreeBSD )
+	@(cd ${WRKDIR}/QVplay095; ./setup FreeBSD)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/../../${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../../|} ${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
