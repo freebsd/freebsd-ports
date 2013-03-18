@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uftp
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tcnj.edu/~bush/downloads/
