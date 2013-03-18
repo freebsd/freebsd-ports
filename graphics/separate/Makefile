@@ -1,13 +1,9 @@
-# New ports collection makefile for:	separate
-# Date created:        30 January 2008
-# Whom:                Pietro Cerutti <gahr@gahr.ch>
-#
+# Created by: Pietro Cerutti <gahr@gahr.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	separate
 PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SFJP
@@ -17,9 +13,9 @@ DISTNAME=	${PORTNAME}+-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
 
-BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
-		gimp-2.6:${PORTSDIR}/graphics/gimp
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
+BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
+LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
+		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
