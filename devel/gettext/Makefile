@@ -62,7 +62,7 @@ pre-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name configure -print | ${XARGS} \
-	    ${REINPLACE_CMD} -e 's|mkdir gmkdir|mkdir|'
+	    ${REINPLACE_CMD} -e 's|mkdir gmkdir|mkdir|; s|gawk|awk|'
 .if defined (NOPORTDOCS)
 .for dir in runtime tools
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = doc|SUBDIRS =|' \

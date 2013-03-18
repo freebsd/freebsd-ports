@@ -51,5 +51,9 @@ PATCH_DIST_STRIP+=	-p1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:ei_ksc5601:ei_euc_kr:g' ${WRKSRC}/lib/aliases.h
+	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
+		${WRKSRC}/libcharset/configure \
+		${WRKSRC}/preload/configure
+
 
 .include <bsd.port.mk>
