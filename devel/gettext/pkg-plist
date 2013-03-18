@@ -25,7 +25,6 @@ include/autosprintf.h
 include/gettext-po.h
 include/libintl.h
 @exec /bin/mkdir -p %D/lib/gettext
-lib/charset.alias
 lib/libasprintf.a
 lib/libasprintf.la
 lib/libasprintf.so

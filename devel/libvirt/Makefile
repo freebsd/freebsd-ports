@@ -39,8 +39,8 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
+USES=		charsetfix pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
 GNOME_MAKEFILEIN=	Makefile.in
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes

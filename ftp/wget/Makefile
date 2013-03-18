@@ -1,9 +1,5 @@
-# Ports collection makefile for:  wget
-# Date created:			  31 December 1996
-# Whom:				  Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wget
 DISTVERSION=	1.14
@@ -14,6 +10,7 @@ MASTER_SITE_SUBDIR=	wget
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 
+USES=		charsetfix
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

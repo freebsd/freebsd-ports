@@ -1,12 +1,9 @@
-# New ports collection makefile for:   gettext
-# Date created:        16 March 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gettext
 PORTVERSION=	0.18.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -17,6 +14,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU gettext package
 
+USES=		charsetfix
 USE_ICONV=	yes
 LIBTOOLFILES=	gettext-runtime/configure \
 		gettext-runtime/libasprintf/configure gettext-tools/configure
