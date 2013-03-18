@@ -19,12 +19,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,linux/soundcard\.h,sys/soundcard.h,g' \
-		${WRKSRC}/sbagen.c
-
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DT_LINUX ${PTHREAD_LIBS} -lm \
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DT_LINUX -pthread -lm \
 		sbagen.c -o sbagen)
 
 do-install:
