@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BioRuby
-# Date created:		24 October 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bio
 PORTVERSION=	1.4.1
@@ -16,27 +12,28 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
-OPTIONS=	XMLPARSER	"xmlparser support for faster Blast processing" off \
-		BDB4		"bdb4 support for faster flat file indexing" off \
-		MYSQL		"MySQL database support for BioSQL" off \
-		PGSQL		"PostgreSQL database support for BioSQL" off
+OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL
+XMLPARSER_DESC=	xmlparser support for faster Blast processing
+BDB4_DESC=	bdb4 support for faster flat file indexing
+
 OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XMLPARSER)
+.if ${PORT_OPTIONS:MXMLPARSER}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
 .endif
-.if defined(WITH_BDB4)
+.if ${PORT_OPTIONS:MBDB4}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/DBD/Mysql/Mysql.rb:${PORTSDIR}/databases/ruby-dbd_mysql
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/DBD/Pg/Pg.rb:${PORTSDIR}/databases/ruby-dbd_pg
 .endif
 
@@ -53,11 +50,11 @@ do-install:
 		${CP} -p ${PREFIX}/${f}.sample ${PREFIX}/${f}; \
 	fi
 .endfor
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README.rdoc ${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd ${RUBY_MODDOCDIR}/
