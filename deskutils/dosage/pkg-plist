@@ -30,6 +30,9 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/helpers.py
 %%PYTHON_SITELIBDIR%%/dosagelib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/helpers.pyo
+%%PYTHON_SITELIBDIR%%/dosagelib/languages.py
+%%PYTHON_SITELIBDIR%%/dosagelib/languages.pyc
+%%PYTHON_SITELIBDIR%%/dosagelib/languages.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/loader.py
 %%PYTHON_SITELIBDIR%%/dosagelib/loader.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/loader.pyo
