@@ -31,6 +31,8 @@ IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 
+USES=			bison
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMPLICITCD}
@@ -46,7 +48,6 @@ INFO=			bash
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
-USES=			bison
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
