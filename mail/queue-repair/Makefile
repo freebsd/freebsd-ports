@@ -12,12 +12,13 @@ COMMENT=	Qmail queue diagnostic and repair tool
 
 USE_PYTHON=	yes
 
-OPTIONS_DEFINE=		DOCS QMAIL
-OPTIONS_DEFAULT=	QMAIL
+OPTIONS_DEFINE=		DOCS QMAIL_PORT
+OPTIONS_DEFAULT=	QMAIL_PORT
+QMAIL_PORT_DESC=	Depend on qmail port
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQMAIL}
+.if ${PORT_OPTIONS:MQMAIL_PORT}
 USES=		qmail:run
 .endif
 
@@ -27,7 +28,7 @@ PORTDOCS=	BLURB CHANGELOG TODO
 do-build:
 	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
 		${WRKSRC}/queue_repair.py
-.if ${PORT_OPTIONS:MQMAIL}
+.if ${PORT_OPTIONS:MQMAIL_PORT}
 	${REINPLACE_CMD} -e 's,nofiles,qnofiles,' ${WRKSRC}/queue_repair.py
 .endif
 
