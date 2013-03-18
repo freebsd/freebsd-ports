@@ -1,6 +1,14 @@
---- ./wrapper.c.orig	2010-07-28 13:03:43.000000000 -0400
-+++ ./wrapper.c	2010-08-16 21:56:14.250979872 -0400
-@@ -131,7 +131,7 @@
+--- wrapper.c.orig	2013-03-13 15:15:22.000000000 -0400
++++ wrapper.c	2013-03-17 20:55:29.000000000 -0400
+@@ -1,6 +1,7 @@
+ /*
+  * Various trivial helper wrappers around standard functions
+  */
++#include <sys/param.h>
+ #include "cache.h"
+ 
+ static void do_nothing(size_t size)
+@@ -139,7 +140,7 @@
  {
  	ssize_t nr;
  	while (1) {
@@ -9,7 +17,7 @@
  		if ((nr < 0) && (errno == EAGAIN || errno == EINTR))
  			continue;
  		return nr;
-@@ -147,7 +147,7 @@
+@@ -155,7 +156,7 @@
  {
  	ssize_t nr;
  	while (1) {
