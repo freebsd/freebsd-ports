@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gibi
-# Date created:		06 September 2003
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gibi
 DISTVERSION=	2003-2
@@ -27,6 +23,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster	\
 		${SHELL_RUN_GIBI}:${PORTSDIR}/shells/${SHRGDEP}
 
+# you can only use the GIBI software with Code_Aster.
+# All other usage requires a special license.
 RESTRICTED=	Toute personne chargeant le logiciel GIBI s'engage à ne\
 		l'utiliser qu'en couplage avec le logiciel Code_Aster. Pour\
 		tout autre usage, un droit de licence est nécessaire.
