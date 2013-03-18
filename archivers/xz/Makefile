@@ -19,8 +19,10 @@ CONFLICTS=	lzma-[0-9]* lzmautils-[0-9]* lzmalib-[0-9]*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
+
+DEPRECATED=	Available in base distribution for all supported releases
 
 # As we want to use xz for extraction of port distfiles,
 # it cannot depend on gettext.
