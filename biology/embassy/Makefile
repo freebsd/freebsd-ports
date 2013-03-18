@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DIST_SUBDIR=	emboss
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A collection of contributed EMBOSS applications
+COMMENT=	Collection of contributed EMBOSS applications
 
 LIB_DEPENDS=	nucleus.6:${PORTSDIR}/biology/emboss
 
@@ -23,23 +23,31 @@ USE_XORG=	x11
 USE_MOTIF=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
-		DOMALIGN	"Protein domain apps" on \
-		DOMSEARCH	"Protein domain apps" on \
-		SIGNATURE	"Protein domain apps" on \
-		STRUCTURE	"Protein domain apps" on \
-		EMNU		"EMBOSS simple menu" on \
-		ESIM4		"Align cDNA/EST to genome" on \
-		HMMER		"HMM alignment and searches" on \
-		MEMENEW		"Motif detection" on \
-		MSE		"A multiple sequence screen editor" on \
-		MYEMBOSS	"Examples for developers of EMBOSS apps" on \
-		PHYLIPNEW	"Phylogeny inference" on \
-		TOPO		"Transmembrane display" on \
-		VIENNA		"RNA folding" on \
-		MIRA		"Whole Genome shotgun and EST assembler" on \
-		IPRSCAN		"InterPro scan" on \
-		CBSTOOLS	"CBS Tools" on
+OPTIONS_DEFINE=	DOMAINATRIX DOMALIGN DOMSEARCH SIGNATURE STRUCTURE \
+		EMNU ESIM4 HMMER MEMENEW MSE MYEMBOSS PHYLIPNEW TOPO \
+		VIENNA MIRA IPRSCAN CBSTOOLS
+
+DOMAINATRIX_DESC=	Protein domain apps
+DOMALIGN_DESC=	Protein domain apps
+DOMSEARCH_DESC=	Protein domain apps
+SIGNATURE_DESC=	Protein domain apps
+STRUCTURE_DESC=	Protein domain apps
+EMNU_DESC=	EMBOSS simple menu
+ESIM4_DESC=	Align cDNA/EST to genome
+HMMER_DESC=	HMM alignment and searches
+MEMENEW_DESC=	Motif detection
+MSE_DESC=	A multiple sequence screen editor
+MYEMBOSS_DESC=	Examples for developers of EMBOSS apps
+PHYLIPNEW_DESC=	Phylogeny inference
+TOPO_DESC=	Transmembrane display
+VIENNA_DESC=	RNA folding
+MIRA_DESC=	Whole Genome shotgun and EST assembler
+IPRSCAN_DESC=	InterPro scan
+CBSTOOLS_DESC=	CBS Tools
+
+OPTIONS_DEFAULT=	DOMAINATRIX DOMALIGN DOMSEARCH SIGNATURE STRUCTURE \
+		EMNU ESIM4 HMMER MEMENEW MSE MYEMBOSS PHYLIPNEW TOPO \
+		VIENNA MIRA IPRSCAN CBSTOOLS
 
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include -I${LOCALBASE}/emboss/include
 LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/emboss/lib
@@ -69,9 +77,10 @@ EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEMENEW MSE PHYLIPNEW \
 			VIENNA MIRA IPRSCAN CBSTOOLS
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for app in ${EMBASSY_APPS}
-.if !defined(WITHOUT_${app})
+.if ${PORT_OPTIONS:M${app}}
 APPLIST+=	${app}
 ${app}_WRKSRC=	${EMBASSY_WRKDIR}/${app}-${${app}_VERSION}
 ${app}_DISTFILE=${app}-${${app}_VERSION}${EXTRACT_SUFX}
