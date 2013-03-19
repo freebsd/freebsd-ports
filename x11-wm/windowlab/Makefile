@@ -1,9 +1,5 @@
-# New ports collection makefile for: windowlab
-# Date created:        19 April 2003
-# Whom:                Pierre-Paul Lavoie <ppl@nbnet.nb.ca>
-#
+# Created by: Pierre-Paul Lavoie <ppl@nbnet.nb.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	windowlab
 PORTVERSION=	1.40
@@ -11,7 +7,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://nickgravgaard.com/windowlab/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ppl@nbnet.nb.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small window manager for X11
 
 MAN1=		windowlab.1x
