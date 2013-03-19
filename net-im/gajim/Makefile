@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gajim
-PORTVERSION=	0.15.2
+PORTVERSION=	0.15.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.15/
 
