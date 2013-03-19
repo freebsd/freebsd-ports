@@ -1,41 +1,42 @@
 # Created by: SriSaiGanesh
 # $FreeBSD$
 
-PORTNAME=		hpacucli
-PORTVERSION=		7.50
-PORTREVISION=		3
-CATEGORIES=		sysutils
-MASTER_SITES=		LOCAL/brooks
+PORTNAME=	hpacucli
+PORTVERSION=	7.50
+PORTREVISION=	3
+CATEGORIES=	sysutils
+MASTER_SITES=	LOCAL/brooks
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		HP ARRAY CONFIGURATION UTILITY for Smart Array RAID cards
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HP configuration utility for Smart Array RAID cards
 
-USE_BZIP2=		yes
-NO_BUILD=		yes
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x \
+		c.5:${PORTSDIR}/misc/compat5x
+
+USE_BZIP2=	yes
+NO_BUILD=	yes
 IA32_BINARY_PORT=	yes
 
-LIB_DEPENDS+=		c.4:${PORTSDIR}/misc/compat4x
-LIB_DEPENDS+=		c.5:${PORTSDIR}/misc/compat5x
+APP_PREFIX=	${PREFIX}/lib/compaq/hpacucli
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${MKDIR} -m 0755 -p ${PREFIX}/${APP_PREFIX}
-	@${CP} ${WRKSRC}/lib* ${PREFIX}/${APP_PREFIX}/
-	@${INSTALL_PROGRAM} ${WRKSRC}/.${PORTNAME} ${PREFIX}/libexec/
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
+	@${MKDIR} ${APP_PREFIX}
+	${CP} -a ${WRKSRC}/lib* ${APP_PREFIX}
+	${INSTALL_PROGRAM} ${WRKSRC}/.${PORTNAME} ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 
 .include <bsd.port.pre.mk>
 
-APP_PREFIX=		lib/compaq/hpacucli
 .if ${ARCH} == amd64
-USE_LDCONFIG32=		${PREFIX}/${APP_PREFIX}
-.if ${OSVERSION} < 1000019
-BROKEN=			currently does not work on amd64 (see ports/128288)
-.endif
+USE_LDCONFIG32=	${APP_PREFIX}
+.  if ${OSVERSION} < 1000019
+BROKEN=		currently does not work on amd64 (see PR ports/128288)
+.  endif
 .else
-USE_LDCONFIG=		${PREFIX}/${APP_PREFIX}
+USE_LDCONFIG=	${APP_PREFIX}
 .endif
 
 .include <bsd.port.post.mk>
