@@ -17,7 +17,7 @@ MAKE_JOBS_SAFE=	yes
 PROJECTHOST=	serf
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \

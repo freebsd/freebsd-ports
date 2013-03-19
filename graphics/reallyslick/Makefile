@@ -24,7 +24,7 @@ GLEW_DESC=	Enable GLEW support
 
 USE_BZIP2=	yes
 USE_GL=		glut
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

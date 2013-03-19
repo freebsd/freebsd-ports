@@ -18,7 +18,7 @@ COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 LICENSE=	LGPL21
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 .if defined(WITH_DEBUG)

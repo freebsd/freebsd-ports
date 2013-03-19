@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 CONFIGURE_ARGS=	--disable-nls --with-libiconv-prefix=${LOCALBASE} --with-readline --with-ui
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes

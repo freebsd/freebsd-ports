@@ -13,7 +13,7 @@ MAINTAINER=	jessekempf@gmail.com
 COMMENT=	Minimal perfect hashes for C
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 MAN1=		cmph.1

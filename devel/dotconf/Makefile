@@ -16,7 +16,7 @@ COMMENT=	A simple, powerful configuration-file parser
 
 LICENSE=	LGPL21
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -12,7 +12,7 @@ COMMENT=	Disk Based Hashtables
 
 CONFLICTS=	dbh-[0-3]*
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build

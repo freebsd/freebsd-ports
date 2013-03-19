@@ -21,7 +21,7 @@ LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 MAN5=		ntp.conf.5 ntp.keys.5
 MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8

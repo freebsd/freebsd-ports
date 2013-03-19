@@ -23,7 +23,7 @@ USE_PKGCONFIG=	yes
 OPTIONS_DEFINE=	NLS
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

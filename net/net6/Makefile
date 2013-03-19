@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.26:${PORTSDIR}/security/gnutls
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

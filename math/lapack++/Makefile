@@ -24,7 +24,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.pre.mk>
 

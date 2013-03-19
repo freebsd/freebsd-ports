@@ -12,7 +12,7 @@ COMMENT=	Lists of the country, language, and currency iso names
 LICENSE=	LGPL21
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

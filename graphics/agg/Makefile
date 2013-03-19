@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_PKGCONFIG=	yes

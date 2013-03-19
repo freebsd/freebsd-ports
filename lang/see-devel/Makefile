@@ -23,7 +23,7 @@ OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 
 CONFLICTS=	see-[0-9]*
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

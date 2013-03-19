@@ -17,7 +17,7 @@ LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes

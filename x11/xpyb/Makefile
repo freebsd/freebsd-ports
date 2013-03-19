@@ -21,7 +21,7 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
-USE_GNOME=	gnomehack
+USES=	pathfix
 PORTDOCS=	README COPYING INSTALL NEWS XcbPythonBinding.txt
 
 GNU_CONFIGURE=	yes

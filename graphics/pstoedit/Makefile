@@ -20,7 +20,7 @@ EMF_DESC=	Enable emf interface
 MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GHOSTSCRIPT=	yes
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool

@@ -22,7 +22,7 @@ USE_XORG=	x11 xext xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
 		--without-glut-inc
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

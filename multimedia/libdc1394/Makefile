@@ -16,7 +16,7 @@ COMMENT=	1394-based DC Control Library
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 MAN1=		dc1394_multiview.1 \

@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_SQLITE=	3
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

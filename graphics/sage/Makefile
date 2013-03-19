@@ -17,7 +17,7 @@ COMMENT=	OpenGL extension library
 CONFIGURE_ARGS=	--program-transform-name=
 GNU_CONFIGURE=	yes
 USE_GL=		yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 

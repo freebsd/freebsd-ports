@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	PYTHON
 
 CONFLICTS=	vde-[0-9]*
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

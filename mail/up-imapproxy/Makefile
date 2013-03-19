@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOVECOT DOCS
 DOVECOT_DESC=	Use with dovecot2
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoheader
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}

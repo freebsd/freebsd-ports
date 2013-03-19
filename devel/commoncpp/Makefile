@@ -16,7 +16,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no

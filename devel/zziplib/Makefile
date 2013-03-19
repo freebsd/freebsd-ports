@@ -21,7 +21,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 OPTIONS_DEFINE=	SDL
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GCC=	4.6+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

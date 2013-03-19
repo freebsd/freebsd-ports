@@ -13,7 +13,7 @@ COMMENT=	Curses-based MP3 player
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_SDL=	sdl
 NO_WRKSUBDIR=	yes
 

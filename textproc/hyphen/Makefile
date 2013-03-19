@@ -17,7 +17,7 @@ COMMENT=	Library for high quality hyphenation and justification
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 

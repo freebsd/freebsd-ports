@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PYTHON=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes

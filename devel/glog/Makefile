@@ -13,7 +13,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		gflags:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 PROJECTHOST=	google-glog

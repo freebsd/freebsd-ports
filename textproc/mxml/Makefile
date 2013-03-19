@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 CONFIGURE_ARGS=	--with-docdir=no
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

@@ -17,7 +17,7 @@ COMMENT=	Common build infrastructure for the GNOME C++ binding libraries
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

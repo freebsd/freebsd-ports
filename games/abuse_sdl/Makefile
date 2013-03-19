@@ -13,7 +13,7 @@ COMMENT=	SDL port of the Abuse game engine
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GL=		gl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes

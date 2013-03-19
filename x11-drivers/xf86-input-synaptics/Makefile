@@ -16,7 +16,7 @@ CONFLICTS=	synaptics-[0-9]*
 
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_XORG=	x11 xextproto videoproto
 XORG_CAT=	driver
 

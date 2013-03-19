@@ -20,7 +20,7 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 INFO=		libmatheval

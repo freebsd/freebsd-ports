@@ -12,6 +12,6 @@ COMMENT=	POSIX wrappers for C++
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.mk>

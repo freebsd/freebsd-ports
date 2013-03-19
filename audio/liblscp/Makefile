@@ -16,7 +16,7 @@ COMMENT=	Wrapper around the LSCP network protocol
 
 LICENSE=	LGPL21
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

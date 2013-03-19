@@ -12,7 +12,7 @@ MAINTAINER=	rodrigo@bebik.net
 COMMENT=	An C++ networking library and application framework
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}

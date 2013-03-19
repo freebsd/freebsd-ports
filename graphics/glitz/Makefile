@@ -13,7 +13,7 @@ COMMENT=	OpenGL image compositing library
 
 USE_GL=		yes
 USE_XORG=	xt
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

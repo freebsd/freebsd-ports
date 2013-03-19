@@ -19,7 +19,7 @@ OPTIONS=	OPENSSL  "Enable SSL/TLS (OpenSSL from base)" on \
 
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DWSDL_TYPEMAP_FILE=\\\"${DATADIR}/WS/typemap.dat\\\" \
 		-DSOAPCPP2_IMPORT_PATH=\\\"${DATADIR}/import\\\"

@@ -12,7 +12,7 @@ COMMENT=	A library for handling uncompressed video and audio data
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes

@@ -13,7 +13,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 

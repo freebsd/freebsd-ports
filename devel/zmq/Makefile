@@ -15,7 +15,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Open source message queue optimised for performance
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 CONFLICTS=	zmq-devel-[0-9]*

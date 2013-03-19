@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -16,6 +16,6 @@ COMMENT=	Lightweight Open Sound Control implementation
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.mk>

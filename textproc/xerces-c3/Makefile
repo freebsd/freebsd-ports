@@ -19,7 +19,7 @@ COMMENT=	Validating XML parser from the Apache XML Project
 CONFLICTS=	xerces_c-[0-9]* xerces-c2-[0-9]*
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \

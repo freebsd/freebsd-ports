@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
 

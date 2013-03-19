@@ -43,7 +43,7 @@ CFLAGS+=	-I${LOCALBASE}/include -Wno-deprecated-declarations
 CONFIGURE_ARGS=	--disable-werror --enable-ltdl-install=no --with-browser-plugins-dir=${LOCALBASE}/lib/browser_plugins
 USE_AUTOTOOLS=	libtool:env autoconf:env automake:env aclocal:env libltdl
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 INSTALLS_ICONS=	yes
 
 OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--disable-gtk-host \
 			--disable-gtkwebkit-browser-element \
 			--disable-soup-xml-http-request
 .elif defined(WITH_GTK)
-USE_GNOME=	gtk20
+USES=	gtk20
 PLIST_SUB+=	GTK=""
 CONFIGURE_ARGS+=	--enable-gtk-host
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libsoup-2.4.pc:${PORTSDIR}/devel/libsoup

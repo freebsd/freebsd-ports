@@ -10,7 +10,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Worldforge math library
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
