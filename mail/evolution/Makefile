@@ -52,20 +52,21 @@ EVO_VERSION=	2.32
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
-OPTIONS=	LDAP "Enable LDAP support" on \
-		CANBERRA "Enable canberra plugin" on \
-		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
+OPTIONS_DEFINE=	LDAP CANBERRA SPAMASSASSIN
+OPTIONS_DEFAULT=LDAP CANBERRA
+CANBERRA_DESC=	Canberra theme audio plugin
+SPAMASSASSIN_DESC=	SpamAssassin spam filtering
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
@@ -80,8 +81,8 @@ CONFIGURE_ARGS+=	--with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
-.if defined(WITH_CANBERRA)
-LIB_DEPENDS+=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+.if ${PORT_OPTIONS:MCANBERRA}
+LIB_DEPENDS+=	canberra-gtk:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-canberra=yes
 PLIST_SUB+=	CANBERRA=""
 .else
@@ -114,4 +115,4 @@ post-patch:
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

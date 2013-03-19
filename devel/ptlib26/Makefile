@@ -13,7 +13,7 @@ COMMENT=	A cross platform C++ library, used by OPAL
 
 LICENSE=MPL
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	pwlib-1.* ptlib-2.4.* ptlib-2.8.*
 
@@ -29,43 +29,40 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-oss --enable-plugins --with-expat-dir="${LOCALBASE}"
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-OPTIONS=	ODBC		"Use ODBC" Off \
-		ALSA		"Use ALSA (experimental)" Off \
-		V4L		"Use Video4Linux" Off \
-		BSDVIDEO	"Enable BSD video support" On \
-		SDL		"Use SDL" On \
-		LDAP		"Enable LDAP support" Off
+OPTIONS_DEFINE=	ODBC ALSA V4L BSDVIDEO SDL LDAP
+OPTIONS_DEFAULT=BSDVIDEO SDL
+BSDVIDEO_DESC=	BSD video support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PVERSION_MAJOR=${PORTVERSION:C/.[0-9]+$//g}  \
 		PVERSION_MINOR=${PORTVERSION:C/^[0-9]+.[0-9]+.//}
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	optshared debugshared
 BROKEN=		debug libs install broken
 .else
 ALL_TARGET=	optshared
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 CONFIGURE_ARGS+=	--enable-alsa
 PLIST_SUB+=	ALSA=""
-LIB_DEPENDS+=		asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=		asound:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--disable-alsa
 PLIST_SUB+=	ALSA="@comment "
 .endif
 
-.if defined(WITH_BSDVIDEO)
+.if ${PORT_OPTIONS:MBSDVIDEO}
 CONFIGURE_ARGS+=--enable-bsdvideo
 PLIST_SUB+=	BSDVIDEO=""
 WITH_VIDEO=1
@@ -74,7 +71,7 @@ CONFIGURE_ARGS+=--disable-bsdvideo
 PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
-.if defined(WITH_V4L)
+.if ${PORT_OPTIONS:MV4L}
 CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -87,7 +84,7 @@ CONFIGURE_ARGS+=--disable-v4l
 PLIST_SUB+=	V4L="@comment "
 .endif
 
-.if defined(WITH_VIDEO)
+.if ${PORT_OPTIONS:MVIDEO}
 CONFIGURE_ARGS+=	--enable-video
 PLIST_SUB+=	VIDEODIR=""
 .else
@@ -95,13 +92,13 @@ CONFIGURE_ARGS+=	--disable-video
 PLIST_SUB+=	VIDEODIR="@comment "
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--enable-openldap --with-ldap-dir="${LOCALBASE}"
 .else
@@ -135,6 +132,8 @@ PLIST_SUB+=	AVC1394="@comment "
 CONFIGURE_ARGS+=	--disable-dc
 #PLIST_SUB+=	DC1394="@comment "
 #.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpt|-lpt-${PORTVERSION:C/.[0-9]+$//g}|' ${WRKSRC}/ptlib.pc.in

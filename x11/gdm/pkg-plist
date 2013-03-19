@@ -10,6 +10,8 @@ etc/gdm/Xsession
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
 etc/gdm/gdm.schemas
+etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
+etc/gdm/home/.local/share/applications/mimeapps.list
 etc/pam.d/gdm
 libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
 libexec/gdm-crash-logger
@@ -223,6 +225,9 @@ share/pixmaps/nohost.png
 @dirrm etc/gdm/PostSession
 @dirrm etc/gdm/PostLogin
 @dirrm etc/gdm/Init
+@dirrmtry etc/gdm/home/.local/share/applications
+@dirrmtry etc/gdm/home/.local/share
+@dirrmtry etc/gdm/home/.local
 @unexec rm -rf %D/etc/gdm/home/.gconf*
 @dirrmtry etc/gdm/home
 @dirrmtry etc/gdm
@@ -230,11 +235,6 @@ share/pixmaps/nohost.png
 @dirrmtry etc/dm
 @dirrmtry share/log/gdm
 @dirrmtry share/log
-@unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
-@unexec /bin/rm -rf /var/log/gdm 2>/dev/null || /usr/bin/true
-@unexec /bin/rm -rf /var/run/gdm 2>/dev/null || /usr/bin/true
-@unexec rmdir /var/cache/gdm 2>/dev/null || /usr/bin/true
-@unexec rmdir /var/cache 2>/dev/null || /usr/bin/true
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

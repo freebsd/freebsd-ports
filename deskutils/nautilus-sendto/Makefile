@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nautilus-sendto
-# Date created:		2004-12-03
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/deskutils/nautilus-sendto/Makefile,v 1.30 2010/09/30 06:21:18 kwm Exp $
 
@@ -19,37 +16,37 @@ GLIB_SCHEMAS=	org.gnome.Nautilus.Sendto.gschema.xml
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intlhack gnomeprefix nautilus2 gnomehack \
-		evolutiondataserver
-GNOME_DESKTOP_VERSION=2
+USES=		pathfix
+USE_GNOME=	intlhack gnomeprefix nautilus2 gnomehack evolutiondataserver
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-plugins="${SENDTO_PLUGINS}"
 
-OPTIONS=	PIDGIN	"Build pidgin sendto plugin" off \
-		UPNP	"Build upnp sendto plugin" off
+OPTIONS_DEFINE=	PIDGIN UPNP
+PIDGIN_DESC=	Build pidgin sendto plugin
+UPNP_DESC=	Build upnp sendto plugin
 
 # check configure script for allowed_plugins="..." for new plugins
 SENDTO_PLUGINS=	evolution gajim nautilus-burn removable-devices
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PIDGIN)
+.if ${PORT_OPTIONS:MPIDGIN}
 SENDTO_PLUGINS:=${SENDTO_PLUGINS} pidgin
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
 PLIST_SUB+=	PIDGIN=""
 .else
 PLIST_SUB+=	PIDGIN="@comment "
 .endif
 
-.if defined(WITH_UPNP)
+.if ${PORT_OPTIONS:MUPNP}
 SENDTO_PLUGINS:=${SENDTO_PLUGINS} upnp
-LIB_DEPENDS+=	gupnp-1.0:${PORTSDIR}/net/gupnp
+LIB_DEPENDS+=	gupnp-1:${PORTSDIR}/net/gupnp
 PLIST_SUB+=	UPNP=""
 .else
 PLIST_SUB+=	UPNP="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,14 +1,10 @@
-# New ports collection makefile for:	avahi
-# Date created:		18 November 2005
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/avahi/Makefile,v 1.30 2011/03/13 17:23:19 kwm Exp $
-#
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.29
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net dns
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,46 +16,45 @@ COMMENT=	The "meta-port" for the Avahi service discovery suite
 RUN_DEPENDS=	avahi-resolve:${PORTSDIR}/net/avahi-app \
 		avahi-app>=0.6.20_2:${PORTSDIR}/net/avahi-app
 
-OPTIONS=	AUTOIPD "IPv4LL network address configuration daemon" off \
-		GTK "Gtk+ tools and bindings" off \
-		LIBDNS "Apple's mDNSResponder compatibility library" off \
-		MONO "Mono bindings" off \
-		QT3 "Qt 3 bindings" off \
-		QT4 "Qt 4 bindings" off \
-		PYTHON "Python bindings and tools" off
+OPTIONS_DEFINE=	AUTOIPD GTK LIBDNS MONO QT3 QT4 PYTHON
+OPTIONS_DEFAULT=AUTOIPD GTK LIBDNS
+AUTOIPD_DESC=	IPv4LL network address configuration daemon
+GTK_DESC=	Gtk+ tools and bindings
+LIBDNS_DESC=	Apple's mDNSResponder compatibility library
+QT3_DESC=	Qt 3 toolkit
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_AUTOIPD)
+.if ${PORT_OPTIONS:MAUTOIPD}
 RUN_DEPENDS+=	avahi-autoipd:${PORTSDIR}/net/avahi-autoipd
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK}
 RUN_DEPENDS+=	avahi-discover-standalone:${PORTSDIR}/net/avahi-gtk
 .endif
 
-.if defined(WITH_LIBDNS)
+.if ${PORT_OPTIONS:MLIBDNS}
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:${PORTSDIR}/net/avahi-libdns
 .endif
 
-.if defined(WITH_MONO)
+.if ${PORT_OPTIONS:MMONO}
 RUN_DEPENDS+=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:${PORTSDIR}/net/avahi-sharp
 .endif
 
-.if defined(WITH_QT3)
+.if ${PORT_OPTIONS:MQT3}
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt3.pc:${PORTSDIR}/net/avahi-qt3
 .endif
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:${PORTSDIR}/net/avahi-qt4
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 RUN_DEPENDS+=	avahi-bookmarks:${PORTSDIR}/net/py-avahi
 .endif
 
 do-install:
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

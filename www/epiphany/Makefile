@@ -1,10 +1,6 @@
-# Ports collection Makefile for:	epiphany
-# Date created:				24 April 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/www/epiphany/Makefile,v 1.246 2011/04/30 20:43:27 mezz Exp $
-#
 
 PORTNAME=	epiphany
 PORTVERSION=	2.30.6
@@ -14,15 +10,15 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	An extremely lightweight and simple web browser for GNOME 2
+COMMENT?=	Extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
-		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
+		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome \
+		notify:${PORTSDIR}/devel/libnotify \
+		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
@@ -34,12 +30,13 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
-WANT_GNOME=	yes
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gnomedesktop desktopfileutils
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS+=--enable-introspection \
+		--enable-compile-warnings=no \
 		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread ${EXTRA_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${EXTRA_CFLAGS}
@@ -50,36 +47,27 @@ PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 
 MAN1=		epiphany.1
 
-OPTIONS=	NSS "Import passwords from 2.26 and older on first run" on \
-		SPELLCHECK "Enable spell checking by default" on \
-		SEED "Enable seed (JavaScript) support" off \
+OPTIONS_DEFINE=	NSS SPELLECHECK SEED
+OPTIONS_DEFAULT=NSS SPELLCHECK
+NSS_DESC=	Import passwords from 2.26 and older on first run
+SPELLCHECK_DESC=Enable spell checking by default
+SEED_DESC=	Seed (JavaScript) support
 
-.if defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
-WITH_GNOME=	yes
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-NO_WERROR=	yes
-# allow build with more warnings enabled
-.if defined(NO_WERROR)
-CONFIGURE_ARGS+=	--enable-compile-warnings=no
-.endif
-
-.if defined(WITH_NSS)
-LIB_DEPENDS+=	nss3.1:${PORTSDIR}/security/nss
+.if ${PORT_OPTIONS:MNSS}
+LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=--enable-nss
 .else
 CONFIGURE_ARGS+=--disable-nss
 .endif
 
-.if defined(WITH_SEED)
-LIB_DEPENDS+=	seed.0:${PORTSDIR}/devel/seed
+.if ${PORT_OPTIONS:MSEED}
+LIB_DEPENDS+=	seed:${PORTSDIR}/devel/seed
 CONFIGURE_ARGS+=--enable-seed
 .endif
 
-.if defined(WITH_SPELLCHECK)
+.if ${PORT_OPTIONS:MSPELLCHECK}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-embed_ephy-embed-prefs.c
 .endif
 
@@ -92,4 +80,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

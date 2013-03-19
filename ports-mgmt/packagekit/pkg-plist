@@ -432,7 +432,6 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 %%PORTS%%@dirrm share/PackageKit
 @dirrm %%PYTHON_SITELIBDIR%%/packagekit
 @dirrm lib/packagekit-backend
-@dirrmtry lib/girepositry-1.0
 @dirrm include/PackageKit/packagekit-glib2
 @dirrm include/PackageKit/backend
 @dirrm include/PackageKit

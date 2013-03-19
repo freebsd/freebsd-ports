@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xscreensaver-gnome-hacks
-# Date created:				12 September 2005
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xscreensaver-gnome-hacks
 PORTREVISION=	1
@@ -17,7 +13,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 CONFLICTS=	xscreensaver-[0-9]* xscreensaver-gnome-[0-9]*
 
-OPTIONS=	ALL_FORTUNES "Enable support for all fortunes" off
+OPTIONS_DEFINE=	ALL_FORTUNES
+ALL_FORTUNES_DESC=	Enable support for all fortunes
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-nodriver
 

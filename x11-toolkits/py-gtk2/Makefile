@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-gtk2
-# Date created:				08/13/2002
-# Whom:					marc@informatik.uni-bremen.de
-#
+# Created by: marc@informatik.uni-bremen.de
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.78 2011/04/01 12:35:27 kwm Exp $
-#
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.0
@@ -17,7 +13,7 @@ DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of Python bindings for GTK+
+COMMENT=	Set of Python bindings for GTK+
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
@@ -25,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cair
 LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libglade2 pygobject
+USES=		pathfix
+USE_GNOME=	libglade2 pygobject
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -41,11 +38,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-0*
 
-OPTIONS=	NUMPY "Enable numpy support (pulls in gcc44)" off
+OPTIONS_DEFINE=	NUMPY
+NUMPY_DESC=	Numpy support (pulls in gcc44)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NUMPY)
+.if ${PORT_OPTIONS:MNUMPY}
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 CONFIGURE_ARGS+=--enable-numpy
@@ -66,17 +64,17 @@ CONFIGURE_ARGS+=	--disable-thread
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
 	${FIND} ${EXAMPLESDIR} -type d -print | ${XARGS} ${CHMOD} 0555
 	${FIND} ${EXAMPLESDIR} -type f -print | ${XARGS} ${CHMOD} 0444
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MAPPING ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/THREADS ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

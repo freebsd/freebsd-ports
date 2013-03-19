@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opal3
-# Date created:		Thu Feb 17 15:00:48 GMT 2000
-# Whom:			Roger Hardiman <roger@freebsd.org>
-#
+# Created by: Roger Hardiman <roger@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
@@ -27,6 +23,7 @@ WRKSRC=		${WRKDIR}/opal-${PORTVERSION}
 USE_GCC=	any
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_SLD=	yes
 USE_LDCONFIG=	yes
@@ -36,32 +33,36 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ZRTP	"Enable ZRTP protocol support" off \
-		JAVA	"Enable Java JNI support" off \
-		CELT	"Use celt codec from ports" on \
-		ILBC	"USE iLBC codec from ports" off \
-		GSM	"Use GSM codec from ports" on \
-		SPEEX	"Use SPEEX codec from ports" on \
-		THEORA	"Enable theora  codec support" off \
-		FFMPEG	"Enable ffmpeg codec support" on \
-		X264	"Enable x.264 codec support" on \
-		SIP	"Enable SIP protocol support" on \
-		H323	"Enable H.323 protocol support" off \
-		IAX	"Enable IAX2 protocol support" off \
-		H224	"Enable H.224 control protocol" on \
-		H281	"Enable H.281 (Far End Camera Control)" on \
-		FAX	"Enable Fax T.38 support" on \
-		MSRP	"Enable MSRP protocol" on \
-		SIPIM	"Enable SIP-IM protocol" on \
-		RTPTEXT	"Enable RFC4103 Text RTP payload" on \
-		H450	"Enable H.450 H.323 subset" off \
-		H460	"Enable H.460 H.323 extension for NAT traversal" off \
-		H501	"Enable H.501 H323 mobility extensions" off \
-		LID	"Enable LID (Light-Weight Identity) support" on \
-		UVIDEO	"Enable RFC4175 uncompressed video RTP payload" off \
-		AEC	"Enable accoustic echo cancellation" on
+OPTIONS_DEFINE=	ZRTP JAVA CELT ILBC GSM SPEEX THEORA FFMPEG X264 SIP H323 IAX \
+		H224 H281 FAX MSRP SIPIM RTPTEXT H450 H460 H501 LID UVIDEO AEC
+OPTIONS_DEFAULT=CELT GSM SPEEX FFMPEG X264 SIP H224 H281 FAX MSRP SIPIM \
+		RTPTEXT LID AEC
+ZRTP_DESC=	ZRTP protocol support
+JAVA_DESC=	Java JNI support
+CELT_DESC=	Celt codec from ports
+ILBC_DESC=	iLBC codec from ports
+GSM_DESC=	GSM codec from ports
+SPEEX_DESC=	SPEEX codec from ports
+THEORA_DESC=	Theora  codec support
+FFMPEG_DESC=	Ffmpeg codec support
+X264_DESC=	x.264 codec support
+SIP_DESC=	SIP protocol support
+H323_DESC=	H.323 protocol support
+IAX_DESC=	IAX2 protocol support
+H224_DESC=	H.224 control protocol
+H281_DESC=	H.281 (Far End Camera Control)
+FAX_DESC=	Fax T.38 support
+MSRP_DESC=	MSRP protocol
+SIPIM_DESC=	SIP-IM protocol
+RTPTEXT_DESC=	RFC4103 Text RTP payload
+H450_DESC=	H.450 H.323 subset
+H460_DESC=	H.460 H.323 extension for NAT traversal
+H501_DESC=	H.501 H323 mobility extensions
+LID_DESC=	LID (Light-Weight Identity) support
+UVIDEO_DESC=	RFC4175 uncompressed video RTP payload
+AEC_DESC=	Accoustic echo cancellation
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef OPALDIR
 .error	OPALDIR is defined as an environment variable, or in the arguments \
@@ -72,36 +73,36 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PVERSION_MAJOR=${PORTVERSION:C/.[0-9]+$//g}  \
 		PVERSION_MINOR=${PORTVERSION:C/^[0-9]+.[0-9]+.//}
 
-.if defined(WITH_ZRTP)
+.if ${PORT_OPTIONS:MZRTP}
 .if !defined(SAFE_ZRTP)
 IGNORE=	please build devel/libzrtpcpp WITHOUT ports SSL and re-run build with SAFE_ZRTP set
 .endif
-LIB_DEPENDS+=	zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
+LIB_DEPENDS+=	zrtpcpp:${PORTSDIR}/devel/libzrtpcpp
 CONFIGURE_ARGS+=	--enable-zrtp
 .else
 CONFIGURE_ARGS+=	--disable-zrtp
 .endif
 
-.if defined(WITH_GSM)
-LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+.if ${PORT_OPTIONS:MGSM}
+LIB_DEPENDS+=	gsm:${PORTSDIR}/audio/gsm
 .else
 CONFIGURE_ARGS+=	--enable-localgsm
 .endif
 
-.if defined(WITH_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.if ${PORT_OPTIONS:MSPEEX}
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--enable-localspeex
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--enable-java
 .else
 CONFIGURE_ARGS+=	--disable-java
 .endif
 
-.if defined(WITH_CELT)
-LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
+.if ${PORT_OPTIONS:MCELT}
+LIB_DEPENDS+=	celt0:${PORTSDIR}/audio/celt
 CONFIGURE_ARGS+=	--enable-celt
 PLIST_SUB+=	CELT=""
 .else
@@ -109,14 +110,14 @@ CONFIGURE_ARGS+=	--disable-celt
 PLIST_SUB+=	CELT="@comment "
 .endif
 
-.if defined(WITH_ILBC)
-LIB_DEPENDS+=	ilbc.0:${PORTSDIR}/net/ilbc
+.if ${PORT_OPTIONS:MILBC}
+LIB_DEPENDS+=	ilbc:${PORTSDIR}/net/ilbc
 .else
 CONFIGURE_ARGS+=	--enable-localilbc
 .endif
 
-.if defined(WITH_THEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora \
+.if ${PORT_OPTIONS:MTHEORA}
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora \
 		ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-theora
 PLIST_SUB+=	THEORA=""
@@ -126,8 +127,8 @@ CONFIGURE_ARGS+=	--disable-theora
 PLIST_SUB+=	THEORA="@comment "
 .endif
 
-.if defined(WITH_X264)
-LIB_DEPENDS+=	x264.125:${PORTSDIR}/multimedia/x264
+.if ${PORT_OPTIONS:MX264}
+LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-h264
 PLIST_SUB+=	X264=""
 WITH_VIDEO=	yes
@@ -136,8 +137,9 @@ CONFIGURE_ARGS+=	--disable-h264
 PLIST_SUB+=	X264="@comment "
 .endif
 
-.if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+BROKEN=chekc ffmpeg
+.if ${PORT_OPTIONS:MFFMPEG}
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg --enable-ffmpeg-h263
 CONFIGURE_ENV+=		ac_cv_lib_avcodec_h263p_encoder=yes \
 			ac_cv_lib_avcodec_h264_decoder=yes \
@@ -158,37 +160,38 @@ CONFIGURE_ARGS+=	--disable-video
 PLIST_SUB+=	VIDEO="@comment "
 .endif
 
-.if defined(WITH_SIP)
+.if ${PORT_OPTIONS:MSIP}
 CONFIGURE_ARGS+=	--enable-sip
 .else
 CONFIGURE_ARGS+=	--disable-sip
 .endif
 
-.if defined(WITH_H323)
+.if ${PORT_OPTIONS:MH323}
 CONFIGURE_ARGS+=	--enable-h323
 .else
 CONFIGURE_ARGS+=	--disable-h323
 .endif
 
-.if defined(WITH_IAX)
+.if ${PORT_OPTIONS:MIAX}
 CONFIGURE_ARGS+=	--enable-iax
 .else
 CONFIGURE_ARGS+=	--disable-iax
 .endif
 
-.if defined(WITH_H224)
+.if ${PORT_OPTIONS:MH224}
 CONFIGURE_ARGS+=	--enable-h224
 .else
 CONFIGURE_ARGS+=	--disable-h224
 .endif
 
-.if defined(WITH_H281)
+.if ${PORT_OPTIONS:MH281}
 CONFIGURE_ARGS+=	--enable-h281
 .else
 CONFIGURE_ARGS+=	--disable-h281
 .endif
 
-.if defined(WITH_FAX)
+# keep version in lib_depend, to see the difference between spandsp-devel and normal
+.if ${PORT_OPTIONS:MFAX}
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 CONFIGURE_ARGS+=	--enable-fax --enable-t38
 PLIST_SUB+=	FAX=""
@@ -197,44 +200,44 @@ CONFIGURE_ARGS+=	--disable-fax --disable-t38 --disable-spandsp
 PLIST_SUB+=	FAX="@comment "
 .endif
 
-.if defined(WITH_MSRP)
+.if ${PORT_OPTIONS:MMSRP}
 CONFIGURE_ARGS+=	--enable-msrp
 ##BROKEN=			Does not compile
 .else
 CONFIGURE_ARGS+=	--disable-msrp
 .endif
 
-.if defined(WITH_SIPIM)
+.if ${PORT_OPTIONS:MSIPIM}
 CONFIGURE_ARGS+=	--enable-sipim
 .else
 CONFIGURE_ARGS+=	--disable-sipim
 .endif
 
-.if defined(WITH_RTPTEXT)
+.if ${PORT_OPTIONS:MRTPTEXT}
 CONFIGURE_ARGS+=	--enable-rfc4103
 .else
 CONFIGURE_ARGS+=	--disable-rfc4103
 .endif
 
-.if defined(WITH_H450)
+.if ${PORT_OPTIONS:MH450}
 CONFIGURE_ARGS+=	--enable-h450
 .else
 CONFIGURE_ARGS+=	--disable-h450
 .endif
 
-.if defined(WITH_H460)
+.if ${PORT_OPTIONS:MH460}
 CONFIGURE_ARGS+=	--enable-h460
 .else
 CONFIGURE_ARGS+=	--disable-h460
 .endif
 
-.if defined(WITH_H501)
+.if ${PORT_OPTIONS:MH501}
 CONFIGURE_ARGS+=	--enable-h501
 .else
 CONFIGURE_ARGS+=	--disable-h501
 .endif
 
-.if defined(WITH_LID)
+.if ${PORT_OPTIONS:MLID}
 CONFIGURE_ARGS+=	--enable-lid --enable-ixj --enable-vpb
 PLIST_SUB+=	LID=""
 .else
@@ -242,23 +245,19 @@ CONFIGURE_ARGS+=	--disable-lid --disable-ixj --disable-vpb
 PLIST_SUB+=	LID="@comment "
 .endif
 
-.if defined(WITH_UVIDEO)
+.if ${PORT_OPTIONS:MUVIDEO}
 CONFIGURE_ARGS+=	--enable-rfc4175
 .else
 CONFIGURE_ARGS+=	--disable-rfc4175
 .endif
 
-.if defined(WITH_AEC)
+.if ${PORT_OPTIONS:MAEC}
 CONFIGURE_ARGS+=	--enable-aec
 .else
 CONFIGURE_ARGS+=	--disable-aec
 .endif
 
-.if defined(WITH_DEBUG)
-BROKEN=DEBUG: Not implemented
-.else
 CONFIGURE_ARGS+=	--disable-debug
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's?-lopal?-lopal-${PORTVERSION:C/.[0-9]+$//g}?' ${WRKSRC}/opal.pc.in
@@ -268,14 +267,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's?^EXTRALIBS = $(ILBC_LIBS)?EXTRALIBS = $(ILBC_LIBS) -L/usr/local/lib?' ${WRKSRC}/plugins/audio/iLBC/Makefile.in
 	@${REINPLACE_CMD} -e 's?ILBC_CFLAGS=""?ILBC_CFLAGS="-L/usr/local/lib"?' ${WRKSRC}/plugins/configure
 	@${REINPLACE_CMD} -e 's?^\(EXTRALIBS\)\(.*\)?\1\2 -L/usr/local/lib?' ${WRKSRC}/plugins/fax/fax_spandsp/Makefile.in
-	@${REINPLACE_CMD} -e 's?/pkgconfig?data/pkgconfig?g' ${WRKSRC}/Makefile.in
+#	@${REINPLACE_CMD} -e 's?/pkgconfig?data/pkgconfig?g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's?@@SO_VER@@?'${PORTVERSION:C/.[0-9]+$//g}'.so.'${PORTVERSION:C/^[0-9]+.[0-9]+.//}'?g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's?@@SO_MAJ@@?'${PORTVERSION:C/.[0-9]+$//g}'.so?g' ${WRKSRC}/Makefile.in
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 	@${REINPLACE_CMD} -e 's/^\(all:\).*/\1 optdepend opt/' ${WRKSRC}/Makefile.in
 .endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's?\$$(LIB_FILENAME_SHARED_PAT)?libopal-${PORTVERSION:C/.[0-9]+$//g}'.so.'${PORTVERSION:C/^[0-9]+.[0-9]+.//}?' ${WRKSRC}/opal_defs.mak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

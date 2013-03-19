@@ -1,5 +1,3 @@
-# New ports collection makefile for:    totem
-# Date created:         17 Oct 2002
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
@@ -24,12 +22,14 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
 
+CONFLICTS=	totem-3.[0-9]*
+
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils \
-		nautilus2 ltverhack pygtk2
-GNOME_DESKTOP_VERSION=2
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack desktopfileutils \
+		nautilus2 ltverhack pygtk2 gnomehier
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
@@ -37,9 +37,10 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lXrandr" \
-		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBS="-lXrandr" \
+		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
 MAN1=		totem.1 totem-video-thumbnailer.1

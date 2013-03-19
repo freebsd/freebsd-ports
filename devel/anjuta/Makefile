@@ -1,10 +1,6 @@
-# New ports collection makefile for:	anjuta
-# Date created:				31 March 2001
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.67 2010/11/13 08:07:29 kwm Exp $
-#
+#   $MCom: ports/devel/anjuta/Makefile,v 1.72 2012/12/13 20:33:05 kwm Exp $
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
@@ -19,10 +15,10 @@ COMMENT=	Integrated Development Environment for C and C++
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		gladeui-1.10:${PORTSDIR}/devel/glade3 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		gladeui-1:${PORTSDIR}/devel/glade3 \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		gdl-1:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
@@ -31,6 +27,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		exctags:${PORTSDIR}/devel/ctags \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		yelp:${PORTSDIR}/x11/yelp
+
+CONFLICTS=	anjuta-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -62,16 +60,17 @@ GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 
 MAN1=		anjuta.1 anjuta-launcher.1
 
-OPTIONS=	SVN "Build subversion plugin" off \
-		DEVHELP "Build devhelp plugin" on \
-		GRAPHVIZ "Build inheritance plugin" on
+OPTIONS_DEFINE=	SVN DEVHELP GRAPHVIZ
+OPTIONS_DEFAULT=DEVHELP GRAPHVIZ
+DEVHELP_DESC=	Devhelp support
+GRAPHVIZ_DESC=	inheritance plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SVN)
+.if ${PORT_OPTIONS:MSVN}
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	neon:${PORTSDIR}/www/neon29
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else
@@ -79,8 +78,8 @@ CONFIGURE_ARGS+=--disable-plugin-subversion
 PLIST_SUB+=	SVN="@comment "
 .endif
 
-.if defined(WITH_DEVHELP)
-LIB_DEPENDS+=	devhelp-2.1:${PORTSDIR}/devel/devhelp
+.if ${PORT_OPTIONS:MDEVHELP}
+LIB_DEPENDS+=	devhelp-2:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp
@@ -90,7 +89,7 @@ CONFIGURE_ARGS+=--disable-plugin-devhelp
 PLIST_SUB+=	DEVHELP=""
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 CONFIGURE_ARGS+=--enable-graphviz
 BUILD_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
@@ -111,7 +110,7 @@ post-configure:
 		${WRKSRC}/plugins/symbol-db/symbol-db-prefs.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
 	doc/ScintillaDoc.html TODO
@@ -120,4 +119,4 @@ post-install:
 .endif
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
