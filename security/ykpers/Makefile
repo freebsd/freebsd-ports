@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ykpers
-PORTVERSION=	1.11.3
+PORTVERSION=	1.12.0
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/ykchalresp \
 		lib/libykpers-1.a \
 		lib/libykpers-1.la \
 		lib/libykpers-1.so \
-		lib/libykpers-1.so.12 \
+		lib/libykpers-1.so.13 \
 		libdata/pkgconfig/ykpers-1.pc
 PLIST_DIRS=	include/ykpers-1
 
