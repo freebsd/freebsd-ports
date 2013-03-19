@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130319:
+  AFFECTS: users of net/freerdp
+  AUTHOR: fluffy@FreeBSD.org
+
+  The net/freerdp package was changed API and require to deinstall previous
+  version first to avoid build conflicts.
+
 20130317:
   AFFECTS: users of devel/protobuf
   AUTHOR: vanilla@FreeBSD.org
