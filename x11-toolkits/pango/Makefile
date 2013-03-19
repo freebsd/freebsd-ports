@@ -53,6 +53,12 @@ CONFIGURE_ARGS+=	--with-x=no
 PLIST_SUB+=		X11="@comment "
 .endif
 
+pre-configure:
+.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-gobject.pc)
+	@${ECHO_CMD} "${PKGNAME}: Needs cairo with GLIB (GObject) support enabled."
+	@${FALSE}
+.endif
+
 .include <bsd.port.mk>
 
 .endif
