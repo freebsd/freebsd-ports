@@ -1,8 +1,3 @@
-HP Array Configuration Utility CLI
-
-The Array Configuration Utility CLI is a commandline-based disk
-configuration program for Smart Array Controllers and
+This port installs Linux version of HP Array Configuration Utility CLI, a
+a command-line disk configuration program for Smart Array Controllers and
 RAID Array Controllers.
-
-* All other product names mentioned herein may be trademarks of their
-respective companies.
