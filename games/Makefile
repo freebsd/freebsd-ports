@@ -792,6 +792,7 @@
     SUBDIR += redeclipse
     SUBDIR += reminiscence
     SUBDIR += rescue
+    SUBDIR += residualvm
     SUBDIR += rezerwar
     SUBDIR += rfksay
     SUBDIR += rftg
