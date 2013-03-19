@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--without-serial
 PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MUS}
+.if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . else
@@ -127,7 +127,7 @@ PLIST_SUB+=	NUT_NEON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-. if empty(PORT_OPTIONS:MUSB}
+. if ! ${PORT_OPTIONS:MUSB}
 BROKEN=		HAL is only usable with USB support enabled. Run 'make config' again!
 . endif
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
