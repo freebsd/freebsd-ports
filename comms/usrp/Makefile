@@ -23,6 +23,7 @@ USE_CMAKE=		yes
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 CMAKE_OUTSOURCE=	yes
+CMAKE_SOURCE_PATH=	${WRKSRC}/host
 
 # for excruciating debug use this -db
 CMAKE_ARGS=	--debug-output --trace
@@ -62,12 +63,6 @@ PLIST_SUB+=	PUSRP2=""
 .else
 PLIST_SUB+=	PUSRP2="@comment "
 .endif
-
-do-configure:
-# Configure the cmake portion of the host build
-	${MKDIR} ${CONFIGURE_WRKSRC}
-	cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CMAKE_ENV} \
-		${CMAKE_BIN} ${CMAKE_ARGS} ${WRKSRC}/host
 
 do-build:
 # build host component
