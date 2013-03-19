@@ -1,64 +1,55 @@
 bin/qterm
 share/applications/qterm.desktop
-share/icons/qterm.png
-%%DATADIR%%/address.cfg
-%%DATADIR%%/credits
-%%DATADIR%%/cursor/end.xpm
-%%DATADIR%%/cursor/enter.xpm
-%%DATADIR%%/cursor/exit.xpm
-%%DATADIR%%/cursor/hand.xpm
-%%DATADIR%%/cursor/home.xpm
-%%DATADIR%%/cursor/next.xpm
-%%DATADIR%%/cursor/pagedown.xpm
-%%DATADIR%%/cursor/pageup.xpm
-%%DATADIR%%/cursor/prev.xpm
-%%DATADIR%%/pic/addr.png
-%%DATADIR%%/pic/anti-idle.png
-%%DATADIR%%/pic/article.png
-%%DATADIR%%/pic/auto-reply.png
-%%DATADIR%%/pic/color-copy.png
-%%DATADIR%%/pic/color.png
-%%DATADIR%%/pic/connect.png
-%%DATADIR%%/pic/copy.png
-%%DATADIR%%/pic/disconnect.png
-%%DATADIR%%/pic/fonts.png
-%%DATADIR%%/pic/keys.png
-%%DATADIR%%/pic/message.png
-%%DATADIR%%/pic/messagebox_critical.png
-%%DATADIR%%/pic/messagebox_info.png
-%%DATADIR%%/pic/messagebox_warning.png
-%%DATADIR%%/pic/mouse.png
-%%DATADIR%%/pic/paste.png
-%%DATADIR%%/pic/popwidget.png
-%%DATADIR%%/pic/pref.png
-%%DATADIR%%/pic/qterm_32x32.png
-%%DATADIR%%/pic/qterm_48x48.png
-%%DATADIR%%/pic/qterm_tray.png
-%%DATADIR%%/pic/quick.png
-%%DATADIR%%/pic/reconnect.png
-%%DATADIR%%/pic/rect.png
-%%DATADIR%%/pic/refresh.png
-%%DATADIR%%/pic/shadow.png
-%%DATADIR%%/pic/sound.png
-%%DATADIR%%/pic/tabpad.png
-%%DATADIR%%/po/qterm_chs.qm
-%%DATADIR%%/po/qterm_cht.qm
-%%DATADIR%%/qterm.cfg
-%%DATADIR%%/schema/Linux.schema
-%%DATADIR%%/schema/Softness.schema
-%%DATADIR%%/schema/VIM.schema
-%%DATADIR%%/schema/XTerm.schema
-%%DATADIR%%/schema/default.schema
-%%DATADIR%%/script/continuous.py
-%%DATADIR%%/script/download.py
-%%DATADIR%%/script/sendmsg.py
-%%DATADIR%%/script/system.py
-%%DATADIR%%/script/tools.py
-@dirrm %%DATADIR%%/script
-@dirrm %%DATADIR%%/schema
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/pic
-@dirrm %%DATADIR%%/cursor
-@dirrm %%DATADIR%%
+share/icons/hicolor/128x128/apps/qterm.png
+share/icons/hicolor/16x16/apps/qterm.png
+share/icons/hicolor/22x22/apps/qterm.png
+share/icons/hicolor/32x32/apps/qterm.png
+share/icons/hicolor/48x48/apps/qterm.png
+share/icons/hicolor/64x64/apps/qterm.png
+share/qterm/address.xml
+share/qterm/credits
+share/qterm/doc/qterm.qhc
+share/qterm/keyboard_profiles/default.keytab
+share/qterm/keyboard_profiles/linux.keytab
+share/qterm/keyboard_profiles/solaris.keytab
+share/qterm/keyboard_profiles/vt420pc.keytab
+share/qterm/po/qterm_chs.qm
+share/qterm/po/qterm_cht.qm
+share/qterm/qterm.cfg
+share/qterm/scheme/Linux.scheme
+share/qterm/scheme/Softness.scheme
+share/qterm/scheme/VIM.scheme
+share/qterm/scheme/XTerm.scheme
+share/qterm/scheme/default.scheme
+share/qterm/scripts/article.js
+share/qterm/scripts/console.js
+share/qterm/scripts/google.js
+share/qterm/scripts/highlight.js
+share/qterm/scripts/ptt.js
+share/qterm/scripts/senddelay.js
+share/qterm/scripts/smth.js
+share/qterm/scripts/ui/senddelay.ui
+share/qterm/scripts/utils.js
+share/qterm/scripts/websnap.js
+@dirrm share/qterm/scripts/ui
+@dirrm share/qterm/scripts
+@dirrm share/qterm/scheme
+@dirrm share/qterm/po
+@dirrm share/qterm/keyboard_profiles
+@dirrm share/qterm/doc
+@dirrm share/qterm
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
