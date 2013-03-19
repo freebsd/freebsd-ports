@@ -37,6 +37,7 @@
 %%DATADIR%%/Modules/CMakeDetermineASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerABI.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerId.cmake
 %%DATADIR%%/Modules/CMakeDetermineFortranCompiler.cmake
@@ -86,11 +87,9 @@
 %%DATADIR%%/Modules/CMakeTestCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCompilerCommon.cmake
-%%DATADIR%%/Modules/CMakeTestForFreeVC.cxx
 %%DATADIR%%/Modules/CMakeTestFortranCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestGNU.c
 %%DATADIR%%/Modules/CMakeTestJavaCompiler.cmake
-%%DATADIR%%/Modules/CMakeTestNMakeCLVersion.c
 %%DATADIR%%/Modules/CMakeTestRCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestWatcomVersion.c
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
@@ -129,6 +128,7 @@
 %%DATADIR%%/Modules/CTest.cmake
 %%DATADIR%%/Modules/CTestScriptMode.cmake
 %%DATADIR%%/Modules/CTestTargets.cmake
+%%DATADIR%%/Modules/CTestUseLaunchers.cmake
 %%DATADIR%%/Modules/CheckCCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckCSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckCSourceRuns.cmake
@@ -159,8 +159,10 @@
 %%DATADIR%%/Modules/CheckVariableExists.c
 %%DATADIR%%/Modules/CheckVariableExists.cmake
 %%DATADIR%%/Modules/Compiler/Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/Clang.cmake
 %%DATADIR%%/Modules/Compiler/Cray-C.cmake
 %%DATADIR%%/Modules/Compiler/Cray-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Cray-Fortran.cmake
@@ -206,6 +208,12 @@
 %%DATADIR%%/Modules/Compiler/XL-CXX.cmake
 %%DATADIR%%/Modules/Compiler/XL-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/XL.cmake
+%%DATADIR%%/Modules/CompilerId/VS-10.vcxproj.in
+%%DATADIR%%/Modules/CompilerId/VS-6.dsp.in
+%%DATADIR%%/Modules/CompilerId/VS-7.vcproj.in
+%%DATADIR%%/Modules/CompilerId/Xcode-1.pbxproj.in
+%%DATADIR%%/Modules/CompilerId/Xcode-2.pbxproj.in
+%%DATADIR%%/Modules/CompilerId/Xcode-3.pbxproj.in
 %%DATADIR%%/Modules/Dart.cmake
 %%DATADIR%%/Modules/DartConfiguration.tcl.in
 %%DATADIR%%/Modules/DeployQt4.cmake
@@ -247,6 +255,7 @@
 %%DATADIR%%/Modules/FindGCCXML.cmake
 %%DATADIR%%/Modules/FindGDAL.cmake
 %%DATADIR%%/Modules/FindGIF.cmake
+%%DATADIR%%/Modules/FindGLEW.cmake
 %%DATADIR%%/Modules/FindGLU.cmake
 %%DATADIR%%/Modules/FindGLUT.cmake
 %%DATADIR%%/Modules/FindGTK.cmake
@@ -259,6 +268,7 @@
 %%DATADIR%%/Modules/FindHDF5.cmake
 %%DATADIR%%/Modules/FindHSPELL.cmake
 %%DATADIR%%/Modules/FindHTMLHelp.cmake
+%%DATADIR%%/Modules/FindHg.cmake
 %%DATADIR%%/Modules/FindITK.cmake
 %%DATADIR%%/Modules/FindImageMagick.cmake
 %%DATADIR%%/Modules/FindJNI.cmake
@@ -418,6 +428,7 @@
 %%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-CXX.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-Fortran.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneP-static.cmake
+%%DATADIR%%/Modules/Platform/CYGWIN-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-Fortran.cmake
@@ -426,6 +437,10 @@
 %%DATADIR%%/Modules/Platform/CYGWIN.cmake
 %%DATADIR%%/Modules/Platform/Catamount.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Darwin-CXX.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Clang-CXX.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Clang.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-Fortran.cmake
@@ -441,14 +456,14 @@
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
 %%DATADIR%%/Modules/Platform/GNU.cmake
+%%DATADIR%%/Modules/Platform/GNUtoMS_lib.bat.in
+%%DATADIR%%/Modules/Platform/GNUtoMS_lib.cmake
 %%DATADIR%%/Modules/Platform/Generic-ADSP-ASM.cmake
 %%DATADIR%%/Modules/Platform/Generic-ADSP-C.cmake
 %%DATADIR%%/Modules/Platform/Generic-ADSP-CXX.cmake
 %%DATADIR%%/Modules/Platform/Generic-ADSP-Common.cmake
 %%DATADIR%%/Modules/Platform/Generic-SDCC-C.cmake
 %%DATADIR%%/Modules/Platform/Generic.cmake
-%%DATADIR%%/Modules/Platform/GNUtoMS_lib.bat.in
-%%DATADIR%%/Modules/Platform/GNUtoMS_lib.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-Fortran.cmake
@@ -463,6 +478,7 @@
 %%DATADIR%%/Modules/Platform/IRIX.cmake
 %%DATADIR%%/Modules/Platform/IRIX64.cmake
 %%DATADIR%%/Modules/Platform/Linux-Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-C.cmake
@@ -513,6 +529,7 @@
 %%DATADIR%%/Modules/Platform/UnixWare.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero.cmake
@@ -529,16 +546,20 @@
 %%DATADIR%%/Modules/Platform/Windows-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel.cmake
+%%DATADIR%%/Modules/Platform/Windows-MSVC-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-MSVC-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-MSVC.cmake
 %%DATADIR%%/Modules/Platform/Windows-NMcl.cmake
-%%DATADIR%%/Modules/Platform/Windows-cl.cmake
-%%DATADIR%%/Modules/Platform/Windows-cl.cmake.in
 %%DATADIR%%/Modules/Platform/Windows-df.cmake
 %%DATADIR%%/Modules/Platform/Windows-wcl386.cmake
 %%DATADIR%%/Modules/Platform/Windows-windres.cmake
 %%DATADIR%%/Modules/Platform/Windows.cmake
+%%DATADIR%%/Modules/Platform/WindowsCE-MSVC-C.cmake
+%%DATADIR%%/Modules/Platform/WindowsCE-MSVC-CXX.cmake
+%%DATADIR%%/Modules/Platform/WindowsCE-MSVC.cmake
+%%DATADIR%%/Modules/Platform/WindowsCE.cmake
 %%DATADIR%%/Modules/Platform/WindowsPaths.cmake
 %%DATADIR%%/Modules/Platform/Xenix.cmake
-%%DATADIR%%/Modules/Platform/cl.cmake
 %%DATADIR%%/Modules/Platform/eCos.cmake
 %%DATADIR%%/Modules/Platform/gas.cmake
 %%DATADIR%%/Modules/Platform/kFreeBSD.cmake
@@ -609,6 +630,7 @@
 @dirrm %%DATADIR%%/Modules/FortranCInterface/Verify
 @dirrm %%DATADIR%%/Modules/FortranCInterface
 @dirrm %%DATADIR%%/Modules/FindCUDA
+@dirrm %%DATADIR%%/Modules/CompilerId
 @dirrm %%DATADIR%%/Modules/Compiler
 @dirrm %%DATADIR%%/Modules/CMakeAddFortranSubdirectory
 @dirrmtry %%DATADIR%%/Modules
