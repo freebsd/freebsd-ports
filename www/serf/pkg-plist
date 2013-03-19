@@ -1,7 +1,6 @@
 include/serf-1/serf.h
 include/serf-1/serf_bucket_types.h
 include/serf-1/serf_bucket_util.h
-include/serf-1/serf_private.h
 lib/libserf-1.a
 lib/libserf-1.la
 lib/libserf-1.so
