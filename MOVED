@@ -4174,4 +4174,4 @@ french/gibi||2013-03-18|Removed: IGNORE for more than 6 months
 finance/pfpro||2013-03-18|Removed: upstream no longer exists
 finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
 finance/p5-Business-OnlinePayment-PayflowPro||2013-03-18|Removed: upstream no longer exists
-www/nspluginwrapper-devel||2013-03-18|Removed: superceded by www/nspluginwrapper
+www/nspluginwrapper-devel||2013-03-19|Removed: superceded by www/nspluginwrapper
