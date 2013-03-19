@@ -27,6 +27,7 @@
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nnls
+    SUBDIR += R-cran-outliers
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-sandwich
