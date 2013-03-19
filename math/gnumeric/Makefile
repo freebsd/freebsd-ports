@@ -1,15 +1,11 @@
-# New ports collection makefile for:	gnumeric
-# Date created:				08 October 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
 #   $MCom: ports-stable/math/gnumeric/Makefile,v 1.5 2010/06/29 11:24:22 kwm Exp $
-#
 # When updating, remember to update pkg-plist of gchemutils.
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.10.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,24 +17,23 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	goffice-0.8.8:${PORTSDIR}/devel/goffice \
-		psiconv.10:${PORTSDIR}/converters/psiconv
+LIB_DEPENDS=	goffice-0.8:${PORTSDIR}/devel/goffice \
+		psiconv:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier pygtk2 \
-		desktopfileutils
-WANT_GNOME=	yes
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gnomehier pygtk2 \
+		desktopfileutils libgsf
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-WANT_PERL=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gnome --disable-silent-rules
+CONFIGURE_ARGS=	--with-gnome=no --disable-silent-rules
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -52,20 +47,13 @@ MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
 PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.17
 
-OPTIONS=	PERL "Enable Perl as extension language" on
-#GNOMEDB "Enable libgnomedb support" off
+OPTIONS_DEFINE=	PERL
+OPTIONS_DEFAULT=PERL
+PERL_DESC=	Support Perl as extension language
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-CONFIGURE_ARGS+=--with-gnome=yes
-USE_GNOME+=	libgnomeui libgsf_gnome
-.else
-CONFIGURE_ARGS+=--with-gnome=no
-USE_GNOME+=	libgsf
-.endif
-
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
 PLIST_SUB+=		PERL=""
 .else
@@ -97,4 +85,4 @@ post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${dir}/gnumeric
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
