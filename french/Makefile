@@ -12,7 +12,6 @@
     SUBDIR += calligra-l10n
     SUBDIR += dico
     SUBDIR += eficas
-    SUBDIR += eficas_doc
     SUBDIR += eric4
     SUBDIR += facturier
     SUBDIR += fortune-mod-zarathoustra
