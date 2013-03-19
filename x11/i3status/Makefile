@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3status
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/i3status/
 
