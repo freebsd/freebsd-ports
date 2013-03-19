@@ -1,10 +1,5 @@
-# New ports collection Makefile for:	cmake-modules
-# Date created:				12 July 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
-#
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-modules
