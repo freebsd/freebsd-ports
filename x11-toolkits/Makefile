@@ -68,6 +68,9 @@
     SUBDIR += gtksourceview-sharp
     SUBDIR += gtksourceview2
     SUBDIR += gtksourceview2-reference
+    SUBDIR += gtksourceview3
+    SUBDIR += gtksourceview3-reference
+    SUBDIR += gtksourceviewmm3
     SUBDIR += gtkunique
     SUBDIR += gtoolkit
     SUBDIR += guile-gtk
