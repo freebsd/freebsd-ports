@@ -1,9 +1,5 @@
-# New ports collection makefile for:	postfix
-# Date created:				18 Mar 1999
-# Whom:					torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	postfix
 PORTVERSION=	2.6.18
@@ -18,7 +14,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	A secure alternative to widely-used Sendmail
+COMMENT=	Secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.6.5
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
@@ -32,32 +28,28 @@ USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-# back compat pull in settings from POSTFIX_OPTIONS for convenience when
-# make config is run (happens first time port is built, too)
-.for o in SASL2 SASLKRB SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
-STATUS_${o}=off
-.endfor
-.if defined(POSTFIX_OPTIONS)
-. for o in ${POSTFIX_OPTIONS}
-STATUS_${o}=on
-. endfor
-.endif
+OPTIONS_DEFINE=	PCRE SASL2 DOVECOT TLS BDB MYSQL PGSQL OPENLDAP CDB NIS VDA TEST
+PCRE_DESC=	Perl Compatible Regular Expressions
+SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
+DOVECOT_DESC=	Dovecot SASL authentication method
+SASLKRB_DESC=	If your SASL req. Kerberos, select this
+SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
+SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
+TLS_DESC=	Enable SSL and TLS support
+BDB_DESC=	Berkeley DB (uses WITH_BDB_VER)
+MYSQL_DESC=	MySQL maps (uses WITH_MYSQL_VER)
+PGSQL_DESC=	PostgreSQL maps (uses DEFAULT_PGSQL_VER)
+OPENLDAP_DESC=	penLDAP maps (uses WITH_OPENLDAP_VER)
+CDB_DESC=	CDB maps lookups
+NIS_DESC=	NIS maps lookups
+VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
+TEST_DESC=	SMTP/LMTP test server and generator
 
-OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
-		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
-		DOVECOT		"Dovecot SASL authentication method"			off \
-		SASLKRB		"If your SASL req. Kerberos, select this"		${STATUS_SASLKRB} \
-		SASLKRB5	"If your SASL req. Kerberos5, select this"		${STATUS_SASLKRB5} \
-		SASLKMIT	"If your SASL req. MIT Kerberos5, select this"		${STATUS_SASLKRB5MIT} \
-		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
-		BDB		"Berkeley DB (uses WITH_BDB_VER)"			${STATUS_BDB} \
-		MYSQL		"MySQL maps (uses WITH_MYSQL_VER)"			${STATUS_MySQL} \
-		PGSQL		"PostgreSQL maps (uses DEFAULT_PGSQL_VER)"		${STATUS_PgSQL} \
-		OPENLDAP	"OpenLDAP maps (uses WITH_OPENLDAP_VER)"		${STATUS_OpenLDAP} \
-		CDB		"CDB maps lookups"					${STATUS_CDB} \
-		NIS		"NIS maps lookups"					${STATUS_NIS} \
-		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
-		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
+OPTIONS_RADIO=	RG1
+RG1_DESC=	Kerberos network authentication protocol type
+OPTIONS_RADIO_RG1=	SASLKRB SASLKRB5 SASLKMIT
+
+OPTIONS_DEFAULT=	PCRE
 
 .include <bsd.port.options.mk>
 
@@ -111,7 +103,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 # Default requirement for postfix rc script
 _REQUIRE=		LOGIN cleanvar
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
@@ -119,69 +111,60 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
-.if defined(WITH_SASL2)
+.if ${PORT_OPTIONS:MSASL2}
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
-.if defined(WITH_DOVECOT)
+.if ${PORT_OPTIONS:MDOVECOT}
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 _REQUIRE+=		dovecot
 .endif
 
-.if defined(WITH_SASLKRB)
-.if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option
-.endif
+.if ${PORT_OPTIONS:MSASLKRB}
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
 
-.if defined(WITH_SASLKRB5)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option
-.endif
+.if ${PORT_OPTIONS:MSASLKRB5}
 POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
-.if defined(WITH_SASLKMIT)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
-BROKEN=			Select only one SASL Kerberos option
-.endif
+.if ${PORT_OPTIONS:MSASLKMIT}
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
-.if defined(WITH_TLS)
+.if ${PORT_OPTIONS:MTLS}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
 POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
 _REQUIRE+=		mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql
 .endif
 
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if defined(WITH_OPENLDAP_VER)
+.if ${PORT_OPTIONS:MOPENLDAP_VER}
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
@@ -189,19 +172,19 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 .endif
 
-.if defined(WITH_CDB)
+.if ${PORT_OPTIONS:MCDB}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb
 POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
 .endif
 
-.if defined(WITH_NIS)
+.if ${PORT_OPTIONS:MNIS}
 POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
 # 32Bit VDA patch (64Bit has different patch)
-.if defined(WITH_VDA)
+.if ${PORT_OPTIONS:MVDA}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
 PATCHFILES+=		postfix-${VDAVERSION}-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
@@ -210,7 +193,7 @@ PLIST_SUB+=	VDA=""
 PLIST_SUB+=	VDA="@comment "
 .endif
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 MAN1+=		${MANTEST}
@@ -219,10 +202,10 @@ PLIST_SUB+=	TEST=""
 PLIST_SUB+=	TEST="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-READMEDIR=	no
-.else
+.if ${PORT_OPTIONS:MDOCS}
 READMEDIR=	${DOCSDIR}
+.else
+READMEDIR=	no
 .endif
 
 DAEMONDIR=	${PREFIX}/libexec/postfix
@@ -248,21 +231,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
-.if defined(POSTFIX_OPTIONS)
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "***** ALERT *****"
-	@${ECHO_MSG} "POSTFIX_OPTIONS is no longer supported,"
-	@${ECHO_MSG} "${PORTNAME} uses options, consider running"
-	@${ECHO_MSG} "# make config"
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@sleep 10
-.endif
-
-.if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
+.if ${PORT_OPTIONS:MSASL2} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "Your SASL2 library it's compiled with MYSQL"; \
@@ -291,7 +260,7 @@ post-patch:
 	@${ECHO} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 .endfor
-.if defined(WITH_VDA)
+.if ${PORT_OPTIONS:MVDA}
 	@${ECHO} '$$readme_directory/VDA_README:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
@@ -316,12 +285,12 @@ do-install:
 		sendmail_path=${PREFIX}/sbin/sendmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
-	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MAN1PREFIX}/man/man1
 .for f in ${BINTEST}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
 .for f in ${MANTEST}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MAN1PREFIX}/man/man1
 .endfor
 
 post-install:
