@@ -55,6 +55,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/advanced_echo_callback.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/authmod_gssapi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/basic_echo_callback.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/basic_echo_callback_extended.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/myappmod.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/server_sent_events.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/shopcart.beam
@@ -62,6 +63,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/advanced_echo_callback.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/authmod_gssapi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/basic_echo_callback.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/basic_echo_callback_extended.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/server_sent_events.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/soap-envelope.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/soap.hrl

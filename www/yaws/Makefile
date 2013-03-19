@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaws
-PORTVERSION=	1.95
-PORTREVISION=	1
+PORTVERSION=	1.96
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -17,7 +16,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/yaws-${PORTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
