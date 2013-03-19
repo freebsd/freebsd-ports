@@ -178,6 +178,7 @@
     SUBDIR += festvox-ked8
     SUBDIR += festvox-rab16
     SUBDIR += festvox-rab8
+    SUBDIR += festvox-russian
     SUBDIR += festvox-us1-mbrola
     SUBDIR += festvox-us2-mbrola
     SUBDIR += festvox-us3-mbrola
