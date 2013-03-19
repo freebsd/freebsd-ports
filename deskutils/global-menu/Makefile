@@ -3,7 +3,7 @@
 
 PORTNAME=		gnome-globalmenu
 PORTVERSION=		0.7.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 
@@ -29,12 +29,12 @@ XFCE4_PANEL_DESC=	Xfce panel applet
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFCE4_PANEL}
-CONFIGURE_ARGS+=	--without-xfce4-panel
-PLIST_SUB+=		XFCE4_PANEL="@comment "
-.else
-LIB_DEPENDS+=		libxfce4panel-1.0:${PORTSDIR}/x11-wm/xfce4-panel
+USE_XFCE=	panel
 CONFIGURE_ARGS+=	--with-xfce4-panel
 PLIST_SUB+=		XFCE4_PANEL=""
+.else
+CONFIGURE_ARGS+=	--without-xfce4-panel
+PLIST_SUB+=		XFCE4_PANEL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
