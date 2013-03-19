@@ -4,8 +4,8 @@
      # UNIX: Start actual work.
      #-----------------------------------------------------------------
      # Support cross-compiling, only search in the target platform.
--    FIND_PROGRAM(wxWidgets_CONFIG_EXECUTABLE wx-config
-+    FIND_PROGRAM(wxWidgets_CONFIG_EXECUTABLE NAMES $ENV{WX_CONFIG} wx-config
+-    find_program(wxWidgets_CONFIG_EXECUTABLE wx-config
++    find_program(wxWidgets_CONFIG_EXECUTABLE NAMES $ENV{WX_CONFIG} wx-config
        ONLY_CMAKE_FIND_ROOT_PATH
        )
  
