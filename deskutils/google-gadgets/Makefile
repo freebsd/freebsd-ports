@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--disable-gtk-host \
 			--disable-gtkwebkit-browser-element \
 			--disable-soup-xml-http-request
 .elif defined(WITH_GTK)
-USES=	gtk20
+USE_GNOME=	gtk20
 PLIST_SUB+=	GTK=""
 CONFIGURE_ARGS+=	--enable-gtk-host
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libsoup-2.4.pc:${PORTSDIR}/devel/libsoup
