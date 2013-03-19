@@ -91,11 +91,11 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 
 		pygtksourceview vte
 
 # GNOME 3 components
-_USE_GNOME_ALL+= dconf gtk30
+_USE_GNOME_ALL+= dconf gtk30 gtksourceview3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
-		gtkmm30 libgdamm \
+		gtkmm30 gtksourcviewmm3 libgdamm \
 		libgtksourceviewmm libxml++ libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
@@ -178,6 +178,10 @@ gtkmm24_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk20
 gtkmm30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc
 gtkmm30_LIB_DEPENDS=	gtkmm-3.0:${PORTSDIR}/x11-toolkits/gtkmm30
 gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
+
+gtksourceviewmm3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
+gtksourceviewmm3_LIB_DEPENDS=	gtksourceviewmm-3.0:${PORTSDIR}/x11-toolkits/gtksourceviewmm3
+gtksourceviewmm3_USE_GNOME_IMPL=gtkmm30 gtksourceview3
 
 libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
 libgdamm_LIB_DEPENDS=	gdamm-4.0:${PORTSDIR}/databases/libgdamm
@@ -508,6 +512,10 @@ gtksourceview_USE_GNOME_IMPL=libgnome libgnomeprintui
 gtksourceview2_LIB_DEPENDS=	gtksourceview-2.0.0:${PORTSDIR}/x11-toolkits/gtksourceview2
 gtksourceview2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-2.0.pc
 gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
+
+gtksourceview3_LIB_DEPENDS=	gtksourceview-3.0.0:${PORTSDIR}/x11-toolkits/gtksourceview3
+gtksourceview3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksoureview-3.0.pc
+gtksourceview3_USE_GNOME_IMPL=	gtk30 libxml2
 
 pkgconfig_DETECT=		${LOCALBASE}/bin/pkgconf
 pkgconfig_BUILD_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
