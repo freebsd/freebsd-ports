@@ -8,7 +8,6 @@ PORTREVISION=	5
 PORTEPOCH?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
-#MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -22,9 +21,9 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
-		--enable-tee \
-		--enable-gobject
-USE_GNOME=	gnomehack ltverhack referencehack
+		--enable-tee
+USES=		pathfix
+USE_GNOME=	ltverhack referencehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
