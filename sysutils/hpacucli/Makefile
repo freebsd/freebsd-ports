@@ -1,9 +1,5 @@
-# New ports collection makefile for: HPACUCLI
-# Date created: 28 October 2007
-# Whom: SriSaiGanesh
-#
+# Created by: SriSaiGanesh
 # $FreeBSD$
-#
 
 PORTNAME=		hpacucli
 PORTVERSION=		7.50
@@ -13,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=		hpacucli-${PORTVERSION}
 
-MAINTAINER=		v.sri.sai.ganesh@hp.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		HP ARRAY CONFIGURATION UTILITY for Smart Array RAID cards
 
 USE_BZIP2=		yes
