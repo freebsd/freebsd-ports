@@ -1,0 +1,13 @@
+--- ./ec2_ephemeralswap.orig	2013-03-19 16:21:30.000000000 +0900
++++ ./ec2_ephemeralswap	2013-03-19 16:21:48.000000000 +0900
+@@ -70,8 +70,8 @@
+ 	for EC2DISK in $EC2DISKS; do
+ 		BLKDEV=`fetch -qo - http://169.254.169.254/latest/meta-data/block-device-mapping/$EC2DISK`
+ 		case "$BLKDEV" in
+-		/dev/sd[a-j])
+-			SWAPDISK="/dev/xbd`echo $BLKDEV | cut -c 8 | tr 'a-j' '0-9'`"
++		sd[a-j])
++			SWAPDISK="/dev/xbd`echo $BLKDEV | cut -c 3 | tr 'a-j' '0-9'`"
+ 			if [ -c $SWAPDISK ]; then
+ 				SWAPDISKS="$SWAPDISKS $SWAPDISK"
+ 				NSWAPDISKS=$(($NSWAPDISKS + 1))
