@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metis-edf
-# Date created:		Thu Jun 26 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	metis-edf
 DISTVERSION=	4.1-2
