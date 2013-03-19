@@ -404,6 +404,7 @@
     SUBDIR += jail2
     SUBDIR += jailadmin
     SUBDIR += jailctl
+    SUBDIR += jaildaemon
     SUBDIR += jailer
     SUBDIR += jailme
     SUBDIR += jailrc
