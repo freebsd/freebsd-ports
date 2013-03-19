@@ -1,14 +1,10 @@
-# New ports collection makefile for:	libgda2
-# Date created:				02 June 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/libgda4-mdb/Makefile,v 1.1 2008/08/18 23:53:35 kwm Exp $
-#
+#   $MCom: ports/databases/libgda4-mdb/Makefile,v 1.5 2012/03/13 01:34:31 mezz Exp $
 
-PORTREVISION?=	1
+PORTREVISION=	0
 CATEGORIES=	databases gnome
-PKGNAMESUFFIX?=	-mdb
+PKGNAMESUFFIX=	4-mdb
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides mdb backend for the libgda4 library

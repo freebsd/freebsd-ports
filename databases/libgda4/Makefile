@@ -1,67 +1,81 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/libgda4/Makefile,v 1.14 2010/11/14 20:57:58 kwm Exp $
+#   $MCom: ports/databases/libgda4/Makefile,v 1.27 2012/09/01 23:02:08 mezz Exp $
 
-PORTNAME=	libgda4
-PORTVERSION?=	4.2.5
-PORTREVISION?=	2
+PORTNAME=	libgda
+PORTVERSION=	4.2.12
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
-DISTNAME=	libgda-${PORTVERSION}
+PKGNAMESUFFIX?=	4
 DIST_SUBDIR=	gnome2
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Provides uniform access to different kinds of data sources
 
-USE_BZIP2=	yes
+CONFLICTS=	libgda5-ui-[0-9]*
+
+USE_XZ=		yes
 LIBGDA4_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-    		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
-RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
+		json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
+USES=		pathfix
+USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--enable-introspection=no
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${LIBGDA4_SLAVE}=="no"
-OPTIONS=	UI "Build UI tools" on
-.endif
-
-.if defined(WITH_UI)
-INSTALLS_ICONS=	yes
+OPTIONS_DEFINE=	UI SOUP KEYRING
+OPTIONS_DEFAULT=UI
+UI_DESC=	Build UI tools
+SOUP_DESC=	Web provider
+KEYRING_DESC=	Support gnome-keyring
 .endif
 
 .include <bsd.port.options.mk>
 
-#VERSION=	${PORTVERSION:R}
 VERSION=	4.0
 PLIST_SUB=	VERSION=${VERSION}
 
 .if ${LIBGDA4_SLAVE}=="no"
-.if defined(WITH_UI)
+.if ${PORT_OPTIONS:MUI}
 CONFIGURE_ARGS+=--with-ui
 BUILD_DEPENDS+=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
 USE_GNOME+=	gtk20
+INSTALLS_ICONS=	yes
 PLIST_SUB+=	UI=""
 .else
 CONFIGURE_ARGS+=--without-ui
 PLIST_SUB+=	UI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSOUP}
+CONFIGURE_ARGS+=--with-libsoup
+LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup
+PLIST_SUB+=	WEB=""
+.else
+CONFIGURE_ARGS+=--without-libsoup
+PLIST_SUB+=	WEB="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MKEYRING}
+CONFIGURE_ARGS+=--with-gnome-keyring
+LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+.else
+CONFIGURE_ARGS+=--without-gnome-keyring
 .endif
 
 MAN1=		gda-sql.1 gda-sql-4.0.1
@@ -74,6 +88,13 @@ USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-bdb
+.endif
+
+.if ${LIBGDA4_SLAVE}=="ldap"
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${LIBGDA4_SLAVE}=="mysql"
@@ -90,16 +111,9 @@ CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-postgres
 .endif
 
-.if ${LIBGDA4_SLAVE}=="firebird"
-LIB_DEPENDS+=		gds.2:${PORTSDIR}/databases/firebird2-client
-CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-firebird
-.endif
-
 # MDB (MS Access)
 .if ${LIBGDA4_SLAVE}=="mdb"
-LIB_DEPENDS+=		mdbsql.0:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		mdbsql:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mdb
@@ -125,7 +139,7 @@ post-patch:
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
-. for d in bdb jdbc mdb mysql postgres reuseable/postgres reuseable/mysql
+. for d in bdb jdbc mdb mysql postgres reuseable/postgres reuseable/mysql ldap
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|${LOCALBASE}/lib/libgda-4.0.la|g' \
 		${WRKSRC}/providers/${d}/Makefile.in
 . endfor
@@ -146,11 +160,6 @@ post-install:
 		${PREFIX}/etc/libgda-${VERSION}/config.default
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.mk>
 
-.if ${LIBGDA4_SLAVE}=="jdbc" && ${OSVERSION} < 800000
-BROKEN=		does not compile on 7.x
-.endif
-
-.include <bsd.port.post.mk>
 .endif

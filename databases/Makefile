@@ -157,6 +157,7 @@
     SUBDIR += libgda4
     SUBDIR += libgda4-bdb
     SUBDIR += libgda4-jdbc
+    SUBDIR += libgda4-ldap
     SUBDIR += libgda4-mdb
     SUBDIR += libgda4-mysql
     SUBDIR += libgda4-postgresql
