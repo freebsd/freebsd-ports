@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130319:
+AUTHOR: bapt@FreeBSD.org
+
+ * The options framework now uses ports-mgmt/dialog4ports contributed by
+   Ilya A. Arkhipov. It boostraps it if not present when one calls
+   make config.
+
+   dialog4ports provides a new UI able to represent all the features
+   provided by the new options framework.
+
 20130315:
 AUTHOR: bdrewery@FreeBSD.org
 

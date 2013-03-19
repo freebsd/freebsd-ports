@@ -34,6 +34,7 @@ CPIO?=		/usr/bin/cpio
 CUT?=		/usr/bin/cut
 DC?=		/usr/bin/dc
 DIALOG?=	/usr/bin/dialog
+DIALOG4PORTS?=	${LOCALBASE}/bin/dialog4ports
 DIFF?=		/usr/bin/diff
 DIRNAME?=	/usr/bin/dirname
 EGREP?=		/usr/bin/egrep

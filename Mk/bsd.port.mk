@@ -2409,6 +2409,7 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 
 DESCR?=			${PKGDIR}/pkg-descr
 PLIST?=			${PKGDIR}/pkg-plist
+PKGHELP?=		${PKGDIR}/pkg-help
 PKGINSTALL?=	${PKGDIR}/pkg-install
 PKGDEINSTALL?=	${PKGDIR}/pkg-deinstall
 PKGREQ?=		${PKGDIR}/pkg-req
@@ -6077,47 +6078,45 @@ sanity-config: _check-config
 
 .if !target(pre-config)
 pre-config:
+D4P_ENV=	PKGNAME="${PKGNAME}" \
+		PORT_OPTIONS="${PORT_OPTIONS}" \
+		ALL_OPTIONS="${ALL_OPTIONS}" \
+		OPTIONS_MULTI="${OPTIONS_MULTI}" \
+		OPTIONS_SINGLE="${OPTIONS_SINGLE}" \
+		OPTIONS_RADIO="${OPTIONS_RADIO}" \
+		OPTIONS_GROUP="${OPTIONS_GROUP}"
+.if exists(${PKGHELP})
+D4P_ENV+=	PKGHELP="${PKGHELP}"
+.endif
 .for opt in ${ALL_OPTIONS}
-.  if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} ""${${opt}_DESC:Q} off
-.  else
-DEFOPTIONS+=	${opt} ""${${opt}_DESC:Q} on
-.  endif
+D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .endfor
 .for multi in ${OPTIONS_MULTI}
+D4P_ENV+=	OPTIONS_MULTI_${multi}="${OPTIONS_MULTI_${multi}}" \
+		${multi}_DESC=""${${opt}_DESC:Q}""
 .  for opt in ${OPTIONS_MULTI_${multi}}
-.    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "M(${multi}): "${${opt}_DESC:Q} off
-.    else
-DEFOPTIONS+=    ${opt} "M(${multi}): "${${opt}_DESC:Q} on
-.    endif
+D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .  endfor
 .endfor
 .for single in ${OPTIONS_SINGLE}
+D4P_ENV+=	OPTIONS_SINGLE_${single}="${OPTIONS_SINGLE_${single}}" \
+		${single}_DESC=""${${single}_DESC:Q}""
 .  for opt in ${OPTIONS_SINGLE_${single}}
-.    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "S(${single}): "${${opt}_DESC:Q} off
-.    else
-DEFOPTIONS+=	${opt} "S(${single}): "${${opt}_DESC:Q} on
-.    endif
+D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .  endfor
 .endfor
 .for radio in ${OPTIONS_RADIO}
+D4P_ENV+=	OPTIONS_RADIO_${radio}="${OPTIONS_RADIO_${radio}}" \
+		${radio}_DESC=""${${radio}_DESC:Q}""
 .  for opt in ${OPTIONS_RADIO_${radio}}
-.    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "R(${radio}): "${${opt}_DESC:Q} off
-.    else
-DEFOPTIONS+=	${opt} "R(${radio}): "${${opt}_DESC:Q} on
-.    endif
+D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .  endfor
 .endfor
 .for group in ${OPTIONS_GROUP}
+D4P_ENV+=	OPTIONS_GROUP_${group}="${OPTIONS_GROUP_${group}}" \
+		${group}_DESC=""${${group}_DESC:Q}""
 .  for opt in ${OPTIONS_GROUP_${group}}
-.    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "G(${group}): "${${opt}_DESC:Q} off
-.    else
-DEFOPTIONS+=	${opt} "G(${group}): "${${opt}_DESC:Q} on
-.    endif
+D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .  endfor
 .endfor
 .undef multi
@@ -6144,7 +6143,7 @@ do-config:
 .endif
 	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
-	${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS} 2> $${TMPOPTIONSFILE} || { \
+	${SETENV} ${D4P_ENV} ${DIALOG4PORTS} > $${TMPOPTIONSFILE} || { \
 		${RM} -f $${TMPOPTIONSFILE}; \
 		${ECHO_MSG} "===> Options unchanged"; \
 		exit 0; \
@@ -6180,8 +6179,21 @@ do-config:
 .endif
 .endif # do-config
 
+.if !target(config-depend)
+config-depend:
+.if !exists(${DIALOG4PORTS})
+	@echo -n "dialog4ports isn't installed, do you want to install it now? [Y/n] "; \
+	read answer; \
+	case $$answer in \
+	[Nn]|[Nn][Oo]) \
+		exit 0; \
+	esac; \
+	cd ${PORTSDIR}/ports-mgmt/dialog4ports; ${MAKE} install
+.endif
+.endif
+
 .if !target(config)
-config: pre-config do-config
+config: pre-config config-depend do-config
 .endif # config
 
 .if !target(config-recursive)
