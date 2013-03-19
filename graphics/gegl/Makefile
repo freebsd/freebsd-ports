@@ -207,6 +207,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' \
 		${WRKSRC}/tools/gobj2dot.rb
 
+.if ${PORT_OPTIONS:MDOCS}
+pre-configure:
+.if !exists(${LOCALBASE}/bin/vimdot)
+	@${ECHO_CMD} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."
+	@${FALSE}
+.endif
+.endif
+
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${GMAKE}
