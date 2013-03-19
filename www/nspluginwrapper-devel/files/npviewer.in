@@ -1,5 +1,0 @@
-#!/bin/sh
-TARGET_OS=linux
-TARGET_ARCH=i386
-ulimit -s 32768 2>/dev/null
-. %%NSPLUGINWRAPPER%%/noarch/npviewer.sh
