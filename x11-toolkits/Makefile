@@ -108,6 +108,7 @@
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
+    SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck-reference
     SUBDIR += libxaw3dxft
