@@ -52,4 +52,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<glib/g.*\.h>|<glib.h>|g' \
 		${WRKSRC}/deskbar/handlers/evolution/evolution.[ch]
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
