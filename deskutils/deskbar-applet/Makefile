@@ -17,7 +17,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack pygnomedesktop intlhack
+USES=		pathfix
+USE_GNOME=	gnomeprefix pygnomedesktop intlhack
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_DISPLAY=	yes
@@ -29,17 +30,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	deskbar-applet.schemas
 
-OPTIONS=	EVO "Enable evolution support" on
+OPTIONS_DEFINE=	EVO
+OPTIONS_DEFAULT=EVO
+EVO_DESC=	Enable evolution support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${PYTHON_REL} < 260
-RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
-.endif
-
-_OSRELEASE!=	${UNAME} -r
-
-.if !defined(WITHOUT_EVO)
+.if ${PORT_OPTIONS:MEVO}
 USE_GNOME+=	evolutiondataserver
 PLIST_SUB+=	EVO=""
 .else
