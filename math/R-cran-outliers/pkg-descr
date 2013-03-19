@@ -1,0 +1,15 @@
+A collection of some tests commonly used for identifying outliers:
+
+  - Chi-squared test for outlier
+  - Test for outlying or inlying variance
+  - Dixon tests for outlier
+  - Grubbs tests for one or two outliers in data sample
+  - Find value with largest difference from the mean
+  - Critical values and p-values for Cochran outlying variance test
+  - Critical values and p-values for Dixon test
+  - Calculate critical values and p-values for Grubbs test
+  - Interpolate tabularized distribution
+  - Remove the value(s) most differing from the mean
+  - Calculate scores of the sample
+
+WWW: http://cran.r-project.org/web/packages/outliers/
