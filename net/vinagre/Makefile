@@ -1,14 +1,10 @@
-# New ports collection makefile for:	vinagre
-# Date created:				16 December 2007
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/vinagre/Makefile,v 1.42 2010/09/29 14:23:36 kwm Exp $
-#
+#   $MCom: ports/net/vinagre/Makefile,v 1.48 2012/09/01 23:02:11 mezz Exp $
 
 PORTNAME=	vinagre
 PORTVERSION=	2.30.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,16 +12,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core.7:${PORTSDIR}/net/avahi-app \
-		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gtk-vnc-1.0:${PORTSDIR}/net/gtk-vnc \
+    		avahi-core:${PORTSDIR}/net/avahi-app \
+		avahi-ui:${PORTSDIR}/net/avahi-gtk \
+		gdbm:${PORTSDIR}/databases/gdbm \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+
+CONFLICTS=	vinagre-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack vte gconf2 gnomedocutils \
-		gnomepanel
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack vte gconf2 gnomedocutils gnomepanel
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -38,13 +36,15 @@ GCONF_SCHEMAS=	vinagre.schemas
 
 MAN1=		vinagre.1
 
-OPTIONS=	TELEPATHY "Enable telepathy integration" on
+OPTIONS_DEFINE=	TELEPATHY
+OPTIONS_DEFAULT=TELEPATHY
+TELEPATHY_DESC=	Telepathy integration
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_TELEPATHY)
+.if ${PORT_OPTIONS:MTELEPATHY}
 CONFIGURE_ARGS+=--enable-telepathy
-LIB_DEPENDS+=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS+=	telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
 PLIST_SUB+=	TELEPATHY=""
 .else
 CONFIGURE_ARGS+=--disable-telepathy
@@ -54,11 +54,11 @@ PLIST_SUB+=	TELEPATHY="@comment "
 post-install:
 	@-update-desktop-database > /dev/null
 	@-update-mime-database ${PREFIX}/share/mime > /dev/null
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog MAINTAINERS NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,8 +18,8 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		popt:${PORTSDIR}/devel/popt
 
 USES=		bison pathfix
 USE_GMAKE=	yes
@@ -34,13 +34,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		LIBVERSION=2.2
 
-OPTIONS=	CUPS "Enable CUPS support" on
+OPTIONS_DEFINE=	CUPS
+OPTIONS_DEFAULT=CUPS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=		gnomecups-1.0:${PORTSDIR}/print/libgnomecups
+LIB_DEPENDS+=		gnomecups-1:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups
@@ -57,6 +58,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
 	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif

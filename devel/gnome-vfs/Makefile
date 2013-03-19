@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomevfs2
-# Date created:				28th June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/gnome-vfs/Makefile,v 1.191 2010/09/29 12:30:29 kwm Exp $
-#
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
@@ -24,7 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gnomemimedata gconf2 \
 		ltverhack referencehack
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
@@ -44,11 +41,12 @@ GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
 		system_http_proxy.schemas system_smb.schemas
 
-OPTIONS=	SAMBA "Enable SMB volume support" on \
-		MDNS "Enable Bonjour/Rendezvous support" on \
-		HAL "Enable HAL support" on
+OPTIONS_DEFINE=	SAMBA MDNS HAL
+OPTIONS_DEFAULT=SAMBA MDNS HAL
+SAMBA_DESC=	Enable SMB volume support
+MDNS_DESC=	Enable Bonjour/Rendezvous support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
 USE_FAM=	yes
@@ -58,22 +56,22 @@ USE_FAM=	yes
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=--enable-hal
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
-.if !defined(WITHOUT_SAMBA)
-LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.if ${PORT_OPTIONS:MSAMBA}
+LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "
 CONFIGURE_ARGS+=--disable-samba
 .endif
 
-.if !defined(WITHOUT_MDNS)
+.if ${PORT_OPTIONS:MMDNS}
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-avahi
@@ -103,6 +101,6 @@ pre-configure:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif

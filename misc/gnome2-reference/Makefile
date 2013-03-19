@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome2-reference
-# Date created:		2006-07-24
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/misc/gnome2-reference/Makefile,v 1.9 2008/08/23 18:22:59 mezz Exp $
-#
 
 PORTNAME=	gnome2-reference
 PORTVERSION=	2.20
@@ -56,7 +52,6 @@ REF_LIST=	accessibility/at-spi-reference \
 		x11-toolkits/pango-reference \
 		x11-toolkits/vte-reference
 
-OPTIONS=	# empty
 NO_BUILD=	yes
 
 REF_LIST_INC=	${.CURDIR}/Makefile.inc

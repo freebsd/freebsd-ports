@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome2
-# Date created:		21 May 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2/Makefile,v 1.300 2010/11/18 01:37:46 kwm Exp $
-#
 
 PORTNAME=	gnome2
 PORTVERSION=	2.32.1
@@ -67,8 +63,9 @@ USE_PYTHON=	yes
 .endif
 
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"
-OPTIONS=	XSCREENSAVER "Use xscreensaver as screen saver app" off \
-		MAPI "Depend on evolution-mapi (pulls in samba4)" off
+OPTIONS_DEFINE=	XSCHEENSAVER
+XSCREENSAVER_DESC=	Use xscreensaver as screen saver app
+#		MAPI "Depend on evolution-mapi (pulls in samba4)
 .endif
 
 do-install:	# empty
@@ -101,14 +98,14 @@ RUN_DEPENDS+=	cheese:${PORTSDIR}/multimedia/cheese
 .if ${ARCH} == "i386"
 #RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
-.if defined(WITH_MAPI)
+.if ${PORT_OPTIONS:MMAPI}
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libexchangemapi-1.0.pc:${PORTSDIR}/mail/evolution-mapi
 .endif
 .endif
 .endif
 
 .if ${.CURDIR}==${MASTERDIR} || ${.CURDIR:T}=="gnome2-lite"
-.if defined(WITH_XSCREENSAVER)
+.if ${PORT_OPTIONS:MXSCREENSAVER}
 RUN_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
 .else
 RUN_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver

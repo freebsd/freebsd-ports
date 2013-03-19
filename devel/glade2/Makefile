@@ -1,10 +1,6 @@
-# New ports collection makefile for:	glade2
-# Date created:		02 June 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/glade2/Makefile,v 1.20 2007/08/04 03:51:29 marcus Exp $
-#
 
 PORTNAME=	glade
 PORTVERSION=	2.12.2
@@ -23,28 +19,25 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 desktopfileutils
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gtk20 desktopfileutils
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	GNOME "Enable gnome support" on #\
-#		GNOMEDB "Enable libgnomedb support" off
+OPTIONS_DEFINE=	GNOME
+OPTIONS_DEFAULT=GNOME
+GNOME_DESC=	Gnome support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=	--disable-gnome
-.else
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=		libgailgnome libgnomeui
 CONFIGURE_ARGS+=	--enable-gnome
+.else
+CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
-#.if defined(WITH_GNOMEDB)
-#USE_GNOME+=		libgnomedb
-#CONFIGURE_ARGS+=	--enable-gnome-db
-#.else
 CONFIGURE_ARGS+=	--disable-gnome-db
-#.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

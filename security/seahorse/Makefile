@@ -1,14 +1,10 @@
-# New ports collection makefile for:	Seahorse
-# Date created:		08 March 2000
-# Whom:			Dave McKay <dave@mu.org>
-#
+# Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.104 2011/07/03 11:57:45 kwm Exp $
-#
+#   $MCom: ports/security/seahorse/Makefile,v 1.109 2012/09/01 23:02:12 mezz Exp $
 
 PORTNAME=	seahorse
 PORTVERSION=	2.32.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,20 +14,21 @@ COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
-    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gcr.0:${PORTSDIR}/security/gnome-keyring \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
+    		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		gcr:${PORTSDIR}/security/gnome-keyring \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		soup-2.4:${PORTSDIR}/devel/libsoup
 
-CONFLICTS=	seahorse-3.[0-9]*
+CONFLICTS=	libcryptui-3.[0-9]* seahorse-3.[0-9]*
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 gnomedocutils
+USES=		pathfix
+USE_GNOME=	intlhack gnomeprefix gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -42,25 +39,25 @@ CONFIGURE_ARGS=	--enable-introspection=no
 GCONF_SCHEMAS=	seahorse.schemas
 MAN1=		seahorse.1 seahorse-daemon.1
 
-OPTIONS=	LDAP "Enable LDAP support" on \
-		NOTIFY "Enable libnotify support" on \
-		MDNS "Enable mDNS key sharing" on
+OPTIONS_DEFINE=	LDAP NOTIFY MDNS
+OPTIONS_DEFAULT=LDAP NOTIFY MDNS
+MDNS_DESC=	mDNS key sharing
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
 
-.if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif
 
-.if !defined(WITHOUT_MDNS)
+.if ${PORT_OPTIONS:MMDNS}
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-sharing
@@ -70,4 +67,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/deskutils/conduit/Makefile,v 1.7 2008/03/18 14:53:42 ahze Exp $
+
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
 PORTREVISION=	6
@@ -32,17 +33,20 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	pygnome2 gnomeprefix
-OPTIONS=	NAUTILUS "Enable Nautilus Plugin" On \
-		EOG "Enable Eye-Of-Gnome Plugin" On
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	NAUTILUS EOG
+OPTIONS_DEFAULT=NAUTILUS EOG
+NAUTILUS_DESC=	Build Nautilus Plugin
+EOG_DESC=	Build Eye-Of-Gnome Plugin
 
-.if defined(WITH_NAUTILUS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNAUTILUS}
 USE_GNOME+=	nautilus2
 CONFIGURE_ARGS+=	--enable-nautilus-extension
 .endif
 
-.if defined(WITH_EOG)
+.if ${PORT_OPTIONS:MEOG}
 BUILD_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
 RUN_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
 CONFIGURE_ARGS+=	--enable-eog-plugin
@@ -55,4 +59,4 @@ post-patch:
 		-e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
 		-e 's|/usr/lib/firefox*|${LOCALBASE}/lib/firefox|'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

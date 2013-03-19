@@ -13,19 +13,20 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source, cross-platform WYSIWYG word processor
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		png15:${PORTSDIR}/graphics/png \
 		wv-1.2:${PORTSDIR}/textproc/wv \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		fribidi.3:${PORTSDIR}/converters/fribidi \
-		psiconv.10:${PORTSDIR}/converters/psiconv \
-		goffice-0.8.8:${PORTSDIR}/devel/goffice
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		fribidi:${PORTSDIR}/converters/fribidi \
+		psiconv:${PORTSDIR}/converters/psiconv \
+		goffice-0.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack libxml2 gtk20 desktopfileutils librsvg2
+USES=		pathfix
+USE_GNOME=	libxml2 gtk20 desktopfileutils librsvg2
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -40,27 +41,27 @@ PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
 MAN1=		abiword.1
 
-OPTIONS=	DEBUG "Enable debug" off \
-		BOOST "Build with boost" on \
-		SPELLCHECK "Enable spell checking support" on \
-		CLIPART "Install clipart" on \
-		TEMPLATES "Install additional templates" on
+OPTIONS_DEFINE=	DEBUG BOOST SPELLCHECK CLIPART TEMPLATES
+OPTIONS_DEFAULT=BOOST SPELLCHECK CLIPART TEMPLATES
+SPELLCHECK_DESC=	Spell checking support
+CLIPART_DESC=		Install clipart
+TEMPLATES_DESC=		Install additional templates
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug --enable-symbols
 .endif
 
-.if defined(WITH_BOOST)
+.if ${PORT_OPTIONS:MBOOST}
 CONFIGURE_ARGS+=	--with-boost
 LIB_DEPENDS+=		boost_system:${PORTSDIR}/devel/boost-libs
 .else
 CONFIGURE_ARGS+=	--without-boost
 .endif
 
-.if defined(WITH_SPELLCHECK)
-LIB_DEPENDS+=		enchant.1:${PORTSDIR}/textproc/enchant
+.if ${PORT_OPTIONS:MSPELLCHECK}
+LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--enable-spell
 PLIST_SUB+=		DICT=""
 .else
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-spell
 PLIST_SUB+=		DICT="@comment "
 .endif
 
-.if defined(WITH_TEMPLATES)
+.if ${PORT_OPTIONS:MTEMPLATES}
 CONFIGURE_ARGS+=	--enable-templates
 PLIST_SUB+=		TEMPLATES=""
 .else
@@ -76,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-templates
 PLIST_SUB+=		TEMPLATES="@comment "
 .endif
 
-.if defined(WITH_CLIPART)
+.if ${PORT_OPTIONS:MCLIPART}
 CONFIGURE_ARGS+=	--enable-clipart
 PLIST_SUB+=		CLIPART=""
 .else
@@ -93,4 +94,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${ABIVERSION}/plugins
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

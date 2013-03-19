@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gedit-plugins
-# Date created:				19 September 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/editors/gedit-plugins/Makefile,v 1.48 2010/10/29 14:47:24 kwm Exp $
-#
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.32.0
@@ -21,12 +17,15 @@ BUILD_DEPENDS=	gedit:${PORTSDIR}/editors/gedit \
 RUN_DEPENDS=	gedit:${PORTSDIR}/editors/gedit \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap
 
+CONFLICTS=	gedit-plugins-3.[0-9]*
+
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnomeprefix intlhack gnomevfs2
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack gnomevfs2
 WANT_GNOME=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,18 +33,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas \
 		gedit-drawspaces.schemas
 
-OPTIONS=	PYTHON "Build plugins that depend on python" off
+OPTIONS_DEFINE=	PYTHON
 
-.if defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
-WITH_GNOME=	yes
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mpygtksourceview}!="" && ${ARCH}!="sparc64" || defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=	pygtksourceview
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte \
 		${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus \
@@ -64,4 +57,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| \\t\\r\\n\\f|[:space:]|g' \
 	    	${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
