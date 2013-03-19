@@ -6,6 +6,7 @@
  * All rights reserved.
  * 
  * Adapted to BSD by jayp and Mikhail T. -- 2010
+ *                   William Grzybowski -- 2013
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -55,6 +56,7 @@
 #include <sys/param.h>
 #include <net/if_dl.h>
 
+#include "upnpglobalvars.h"
 #include "getifaddr.h"
 #include "log.h"
 
@@ -89,40 +91,6 @@ getifaddr(const char * ifname, char * buf, int len)
 	}
 	close(s);
 	return 0;
-}
-
-int
-getsysaddr(char * buf, int len)
-{
-	int rv=-1;
-	struct ifaddrs *ifap = NULL;
-	struct ifaddrs *ifnr;
-
-	if (getifaddrs(&ifap) != 0)
-		err(1, "getifaddrs");
-
-	for (ifnr = ifap; ifnr != NULL; ifnr = ifnr->ifa_next) {
-		if (ifnr->ifa_addr->sa_family == AF_INET) {
-			struct sockaddr_in *addr_in =
-			    (struct sockaddr_in *)ifnr->ifa_addr;
-
-			unsigned a =
-			    (htonl(addr_in->sin_addr.s_addr) >> 0x18) & 0xFF;
-
-			if (a==127)
-				continue;
-
-			if(!inet_ntop(AF_INET, &addr_in->sin_addr, buf, len)) {
-				warn("inet_ntop()");
-				break;
-			}
-			rv=0;
-			break;
-		}
-		rv=0;
-	}
-	freeifaddrs(ifap);
-	return rv;
 }
 
 static int
@@ -241,4 +209,38 @@ get_remote_mac(struct in_addr ip_addr, unsigned char *mac)
 		memset(mac, 0xFF, 6);
         free(buf);
         return !found_entry;
+}
+
+
+int
+getsysaddrs(void)
+{
+        struct sockaddr_in *addr;
+        struct ifaddrs *ifap, *ifa;
+
+	getifaddrs(&ifap);
+        for(ifa=ifap;ifa;ifa=ifa->ifa_next) {
+		if(ifa->ifa_addr == NULL || ifa->ifa_netmask == NULL)
+                        continue;
+
+		addr = (struct sockaddr_in *) ifa->ifa_addr;
+		if(addr->sin_family != AF_INET)
+			continue;
+
+                memcpy(&lan_addr[n_lan_addr].addr, (void *) &addr->sin_addr, sizeof(lan_addr[n_lan_addr].addr));
+                if( !inet_ntop(AF_INET, (void *) &addr->sin_addr, lan_addr[n_lan_addr].str, sizeof(lan_addr[0].str)) )
+                {
+                        DPRINTF(E_ERROR, L_GENERAL, "inet_ntop(): %s\n", strerror(errno));
+                        continue;
+                }
+
+		addr = (struct sockaddr_in *) ifa->ifa_netmask;
+                memcpy(&lan_addr[n_lan_addr].mask, (void *) &addr->sin_addr, sizeof(lan_addr[n_lan_addr].mask));
+                n_lan_addr++;
+                if (n_lan_addr >= MAX_LAN_ADDR)
+                        break;
+        }
+	freeifaddrs(ifap);
+
+        return(n_lan_addr);
 }

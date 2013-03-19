@@ -1,15 +1,16 @@
 Submitted by Vladimir B. Grebenschikov this patch recognizes Samsung's
 images as JPEGs.
 
---- utils.c	2012-01-04 14:16:46.000000000 +0000
-+++ utils.c	2012-01-09 00:29:31.000000000 +0000
-@@ -261,7 +261,8 @@
+diff --git utils.c utils.c
+index 36ff168..5a7ff87 100644
+--- utils.c
++++ utils.c
+@@ -324,7 +324,7 @@ is_audio(const char * file)
  int
  is_image(const char * file)
  {
 -	return (ends_with(file, ".jpg") || ends_with(file, ".jpeg"));
-+	return (ends_with(file, ".jpg") || ends_with(file, ".jpeg") || 
-+	        ends_with(file, ".mpo"));
++	return (ends_with(file, ".jpg") || ends_with(file, ".jpeg") || ends_with(file, ".mpo"));
  }
  
  int
