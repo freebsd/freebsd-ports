@@ -1,0 +1,60 @@
+include/gtksourceviewmm-3.0/gtksourceviewmm.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/buffer.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completion.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completionactivation.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completioncontext.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completioninfo.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completionitem.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completionproposal.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completionprovider.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/completionwords.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/gutter.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/gutterrenderer.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/gutterrendererpixbuf.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/gutterrenderertext.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/init.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/language.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/languagemanager.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/mark.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/markattributes.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/markup.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/printcompositor.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/buffer_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completion_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completionactivation_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completioncontext_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completioninfo_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completionitem_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completionproposal_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completionprovider_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/completionwords_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/gutter_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/gutterrenderer_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/gutterrendererpixbuf_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/gutterrenderertext_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/language_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/languagemanager_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/mark_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/markattributes_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/printcompositor_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/style_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/stylescheme_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/styleschememanager_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/undomanager_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/private/view_p.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/style.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/stylescheme.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/styleschememanager.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/undomanager.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/view.h
+include/gtksourceviewmm-3.0/gtksourceviewmm/wrap_init.h
+lib/gtksourceviewmm-3.0/include/gtksourceviewmmconfig.h
+lib/libgtksourceviewmm-3.0.la
+lib/libgtksourceviewmm-3.0.so
+lib/libgtksourceviewmm-3.0.so.0
+libdata/pkgconfig/gtksourceviewmm-3.0.pc
+@dirrm lib/gtksourceviewmm-3.0/include/
+@dirrm lib/gtksourceviewmm-3.0
+@dirrm include/gtksourceviewmm-3.0/gtksourceviewmm/private
+@dirrm include/gtksourceviewmm-3.0/gtksourceviewmm
+@dirrm include/gtksourceviewmm-3.0
