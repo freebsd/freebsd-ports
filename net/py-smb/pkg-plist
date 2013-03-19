@@ -30,6 +30,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/nmb_NBNSProtocol.html
 %%PORTDOCS%%%%DOCSDIR%%/api/nmb_NetBIOS.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBProtocolFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SharedDevice.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SharedFile.html
