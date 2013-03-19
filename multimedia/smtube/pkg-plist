@@ -1,22 +1,26 @@
 bin/smtube
+share/applications/smtube.desktop
+share/icons/hicolor/128x128/apps/smtube.png
+share/icons/hicolor/16x16/apps/smtube.png
+share/icons/hicolor/256x256/apps/smtube.png
+share/icons/hicolor/32x32/apps/smtube.png
+share/icons/hicolor/48x48/apps/smtube.png
+share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_el.qm
 %%DATADIR%%/translations/smtube_en.qm
 %%DATADIR%%/translations/smtube_es.qm
 %%DATADIR%%/translations/smtube_eu.qm
 %%DATADIR%%/translations/smtube_gl.qm
+%%DATADIR%%/translations/smtube_he_IL.qm
 %%DATADIR%%/translations/smtube_hu.qm
 %%DATADIR%%/translations/smtube_ja.qm
 %%DATADIR%%/translations/smtube_lt.qm
+%%DATADIR%%/translations/smtube_nn_NO.qm
 %%DATADIR%%/translations/smtube_pl.qm
 %%DATADIR%%/translations/smtube_pt.qm
+%%DATADIR%%/translations/smtube_pt_BR.qm
 %%DATADIR%%/translations/smtube_ru_RU.qm
+%%DATADIR%%/translations/smtube_uk.qm
 %%DATADIR%%/translations/smtube_zh_CN.qm
-share/icons/hicolor/256x256/apps/smtube.png
-share/icons/hicolor/128x128/apps/smtube.png
-share/icons/hicolor/64x64/apps/smtube.png
-share/icons/hicolor/48x48/apps/smtube.png
-share/icons/hicolor/32x32/apps/smtube.png
-share/icons/hicolor/16x16/apps/smtube.png
-share/applications/smtube.desktop
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
