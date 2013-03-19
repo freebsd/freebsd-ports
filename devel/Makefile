@@ -3628,6 +3628,7 @@
     SUBDIR += py-robotframework-ride
     SUBDIR += py-robotframework-selenium2library
     SUBDIR += py-rope
+    SUBDIR += py-rose
     SUBDIR += py-roxlib
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
