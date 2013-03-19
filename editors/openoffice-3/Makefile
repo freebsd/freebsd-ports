@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
+USES+=		bison
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
@@ -140,7 +141,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_AUTOTOOLS=	autoconf
-USES=		bison
 GNU_CONFIGURE=	yes
 WRKSRC?=	${WRKDIR}/aoo-${PORTVERSION}/main
 BASH?=		${PREFIX}/bin/bash
