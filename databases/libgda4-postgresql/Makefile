@@ -1,17 +1,13 @@
-# New ports collection makefile for:	libgda2
-# Date created:				02 June 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/libgda4-postgresql/Makefile,v 1.3 2010/10/18 12:47:12 kwm Exp $
-#
+#   $MCom: ports/databases/libgda4-postgresql/Makefile,v 1.7 2012/03/13 01:34:31 mezz Exp $
 
-PORTREVISION?=	1
+PORTREVISION=	0
 CATEGORIES=	databases gnome
-PKGNAMESUFFIX?=	-postgresql
+PKGNAMESUFFIX=	4-postgresql
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Provides postgresql access for the libgda4 library
+COMMENT=	Provides PostgreSQL access for the libgda4 library
 
 MASTERDIR=	${.CURDIR}/../libgda4
 BUILD_WRKSRC=	${WRKSRC}/providers/postgres/

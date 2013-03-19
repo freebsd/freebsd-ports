@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgda3-reference
-# Date created:				09 May 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#    $MCOM$
 
 PORTREVISION=	0
 
