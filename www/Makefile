@@ -2027,6 +2027,7 @@
     SUBDIR += webgo
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
+    SUBDIR += webkit-gtk3
     SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++
