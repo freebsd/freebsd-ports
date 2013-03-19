@@ -1,0 +1,52 @@
+diff --git log.c log.c
+index 91aa564..3f3b503 100644
+--- log.c
++++ log.c
+@@ -63,14 +63,14 @@ log_init(const char *fname, const char *debug)
+ 	if (debug)
+ 	{
+ 		const char *rhs, *lhs, *nlhs, *p;
+-		int n;
++		size_t n;
+ 		int level, facility;
+ 		memset(&log_level_set, 0, sizeof(log_level_set));
+ 		rhs = nlhs = debug;
+ 		while (rhs && (rhs = strchr(rhs, '='))) {
+ 			rhs++;
+ 			p = strchr(rhs, ',');
+-			n = p ? p - rhs : strlen(rhs);
++			n = p ? (size_t) (p - rhs) : strlen(rhs);
+ 			for (level=0; level_name[level]; level++) {
+ 				if (!(strncasecmp(level_name[level], rhs, n)))
+ 					break;
+@@ -84,7 +84,7 @@ log_init(const char *fname, const char *debug)
+ 			do {
+ 				if (*lhs==',') lhs++;
+ 				p = strpbrk(lhs, ",=");
+-				n = p ? p - lhs : strlen(lhs);
++				n = p ? (size_t) (p - lhs) : strlen(lhs);
+ 				for (facility=0; facility_name[facility]; facility++) {
+ 					if (!(strncasecmp(facility_name[facility], lhs, n)))
+ 						break;
+diff --git tagutils/tagutils-wav.c tagutils/tagutils-wav.c
+index 956eef7..f2e397e 100644
+--- tagutils/tagutils-wav.c
++++ tagutils/tagutils-wav.c
+@@ -33,7 +33,7 @@ static int
+ _get_wavtags(char *filename, struct song_metadata *psong)
+ {
+ 	int fd;
+-	uint32_t len;
++	ssize_t len;
+ 	unsigned char hdr[12];
+ 	unsigned char fmt[16];
+ 	//uint32_t chunk_data_length;
+@@ -47,7 +47,7 @@ _get_wavtags(char *filename, struct song_metadata *psong)
+ 	uint32_t sec, ms;
+ 
+ 	uint32_t current_offset;
+-	uint32_t block_len;
++	int32_t block_len;
+ 
+ 	//DEBUG DPRINTF(E_DEBUG,L_SCANNER,"Getting WAV file info\n");
+ 

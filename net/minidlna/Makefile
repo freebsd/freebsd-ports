@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	minidlna
-PORTVERSION=	1.0.24
-PORTREVISION=	3
+PORTVERSION=	1.0.25
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}_${PORTVERSION}_src.tar.gz
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	william88@gmail.com
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
