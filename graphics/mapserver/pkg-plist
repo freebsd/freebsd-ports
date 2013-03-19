@@ -1,12 +1,11 @@
 bin/legend
 bin/scalebar
 bin/shp2img
-bin/shp2mysql
 bin/shptree
 bin/shptreetst
 bin/shptreevis
 bin/sortshp
-%%MAPSERV%%www/cgi-bin/mapserv
+%%MAPSERV%%www/apache%%APA_VER%%/cgi-bin/mapserv
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
