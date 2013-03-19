@@ -1506,6 +1506,14 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
+.if defined(USE_CMAKE)
+. if defined(CMAKE_OUTSOURCE)
+USES+=	cmake:outsource
+. else
+USES+=	cmake
+. endif
+.endif
+
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
@@ -2093,10 +2101,6 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 
 .if defined(USE_KDE4)
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
-.endif
-
-.if defined(USE_CMAKE)
-.include "${PORTSDIR}/Mk/bsd.cmake.mk"
 .endif
 
 .if exists(${PORTSDIR}/Makefile.inc)

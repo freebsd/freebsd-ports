@@ -11,6 +11,21 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20130319:
+AUTHOR: makc@FreeBSD.org
+
+ * New USES macro should be used instead of deprecated USE_CMAKE and
+   CMAKE_OUTSOURCE:
+
+   USES= cmake:outsource
+   to perform out-of-source build (equivalent to former pair usage of
+   USE_CMAKE/CMAKE_OUTSOURCE)
+
+   USES= cmake
+   In-source build (equivalent to plain USE_CMAKE=yes) can be used if
+   project doesn't support out-of-source build.
+
+
+20130319:
 AUTHOR: bapt@FreeBSD.org
 
  * The options framework now uses ports-mgmt/dialog4ports contributed by
