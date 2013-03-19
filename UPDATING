@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: vanilla@FreeBSD.org
 
   The devel/protobuf has been updated to 2.5.0. The shared library version
-  has changed from 6 to 7. Please rebuild all ports that depends on it:
+  has changed from 7 to 8. Please rebuild all ports that depends on it:
 
   # portmaster -r protobuf
     or
