@@ -1,16 +1,20 @@
---- products.py.orig	2012-01-11 16:29:00.000000000 +0100
-+++ products.py	2012-04-30 18:10:46.000000000 +0200
-@@ -933,7 +933,8 @@
+--- products.py.orig	2013-01-28 13:35:55.000000000 +0100
++++ products.py	2013-03-17 21:30:27.000000000 +0100
+@@ -995,9 +995,10 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
             'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS', 'HOME_NUMPY', 'USE_NUMPY',
 -           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', ],
+-      reqobj=['file:?ASTER_ROOT?/bin/as_run',
+-              'file:?ASTER_ROOT?/etc/codeaster/profile.sh'],
 +           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', 'CFLAGS',
 +           'CFLAGS_DBG', 'FFLAGS', 'FFLAGS_DBG','F90FLAGS', 'F90FLAGS_DBG', 'CXXLIB', ],
-       reqobj=['file:?ASTER_ROOT?/bin/as_run',
-               'file:?ASTER_ROOT?/etc/codeaster/profile.sh'],
++      reqobj=['file:/usr/ports/french/aster/work/aster-full-src-10.8.0/instdir/bin/as_run',
++              'file:/usr/ports/french/aster/work/aster-full-src-10.8.0/instdir/etc/codeaster/profile.sh'],
        set=['MEDLIB', 'HDFLIB', 'MATHLIB',
-@@ -976,6 +977,19 @@
+            'MUMPSLIB', 'ZMATLIB', 'SCOTCHLIB',
+            'CINCLUDE', 'FINCLUDE', 'F90INCLUDE',
+@@ -1043,6 +1044,19 @@
     if   cfg['IFDEF'] in ('LINUX', 'P_LINUX'):
        zmat_platform = 'Linux'
        mpilibs.extend(['mpich'])
@@ -30,7 +34,7 @@
     elif cfg['IFDEF'] == 'LINUX64':
        mpilibs.extend(['mpich'])
        # others have not been tested !
-@@ -1031,11 +1045,12 @@
+@@ -1097,11 +1111,12 @@
  
     # ----- libs c++ (for MED and ZMAT)
     #XXX probably to remove (done by check_compiler)
@@ -46,27 +50,5 @@
 +   #         [cfg['HOME_MED'], cfg['HOME_ZMAT']],
 +   #         err=False, append=True, maxdepth=max(ftools.maxdepth,10))
  
-    # ----- MUMPS
-    if cfg.get('MUMPSLIB'):
-@@ -1046,12 +1061,15 @@
-       if not less_than_version(dict_prod['mumps'], '4.8.0'):
-          mumps_lib.extend(['smumps', 'cmumps', 'mumps_common'])
-       mumps_lib.extend(['pord', 'mpiseq'])
--      for lib in mumps_lib:
--         ftools.findlib_and_set(cfg, 'MUMPSLIB', lib,
--            cfg['HOME_MUMPS'],
--            err=False, append=True)
--         if lib == 'dmumps':
--            ftools.CheckFromLastFound(cfg, 'HOME_MUMPS', 'lib')
-+      if cfg['MUMPSLIB'] != '':
-+         opt['MUMPSLIB'] =  cfg['MUMPSLIB']
-+      else:
-+         for lib in mumps_lib:
-+            ftools.findlib_and_set(cfg, 'MUMPSLIB', lib,
-+               cfg['HOME_MUMPS'],
-+               err=False, append=True)
-+            if lib == 'dmumps':
-+               ftools.CheckFromLastFound(cfg, 'HOME_MUMPS', 'lib')
-       if cfg['HOME_METIS'] != '':
-          cfg['MUMPSLIB'] += " -L%s/lib -lmetis" % cfg['HOME_METIS']
-       opt['F90INCLUDE'] += ' -I%s' % osp.join(cfg['ASTER_ROOT'],cfg['ASTER_VERSION'],'bibf90',cfg['INCLUDE_MUMPS'])
+    # ----- METIS
+    if cfg.get('METISLIB'):
