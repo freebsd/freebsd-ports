@@ -1,9 +1,5 @@
-# New ports collection makefile for:   crtmpserver
-# Date created:        5 December 1994
-# Whom:                shiretu
-#
+# Created by: shiretu
 # $FreeBSD$
-#
 
 PORTNAME=	crtmpserver
 PORTVERSION=	0.545
@@ -23,8 +19,7 @@ USE_CMAKE=	yes
 CMAKE_ENV=	"COMPILE_STATIC=1"
 CMAKE_OUTSOURCE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
-CMAKE_BUILD_TYPE=	Release
-CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${CMAKE_INSTALL_PREFIX} -DTEMP_FRAMEWORK_VER=0.545
+CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=0.545
 
 USERS=	crtmpserver
 GROUPS=	crtmpserver
