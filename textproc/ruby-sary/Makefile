@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Sary
-# Date created:		8 October 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
@@ -21,6 +17,7 @@ LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_PKGCONFIG=	build
 
 INSTALL_TARGET=	site-install
 
