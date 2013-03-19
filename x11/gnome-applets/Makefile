@@ -30,6 +30,7 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix
 USE_GNOME=	gnomeprefix intlhack gnomepanel gnomedocutils libgnomekbd
+WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mixer-applet \
@@ -59,6 +60,8 @@ PLIST_SUB+=	COMMANDER="" OLDCOMMANDER="@comment "
 PLIST_SUB+=	COMMANDER="@comment " OLDCOMMANDER=""
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ( exists(${pygnomedesktop_DETECT}) ) || \
 	( ( ${HAVE_GNOME:Mpygnomedesktop}!="" ) && ${ARCH}!="sparc64" )
 USE_PYTHON=	yes
@@ -68,8 +71,6 @@ PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
 CFLAGS+=	-fPIC
