@@ -1,12 +1,8 @@
-# New ports collection makefile for:	med
-# Date created:		Thu Jun 26 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	med
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.6
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,20 +10,16 @@ COMMENT=	Modelisation et Echanges de Donnees
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
-RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-TK_VER?=	8.5
-SHORT_TK_VER=	${TK_VER:S/.//}
-
 USE_FORTRAN=	yes
+USE_TK=		yes
 FFLAGS+=	-O2
 
 CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} 	\
-		WISH=${LOCALBASE}/bin/wish${TK_VER}
+		WISH=${WISH}
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-f90=${FC} --docdir=${DOCSDIR}
@@ -35,6 +27,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
+
+PATCH_TK_SCRIPTS=	tools/mdump/xmdump.in tools/mdump/xmdump3.in
 
 DOC2FIX=	. dox gif html html.dox jpg png
 TST2FIX=	c f

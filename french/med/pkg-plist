@@ -28,12 +28,12 @@ include/medimportcxx_win_dll.h
 lib/libmed.a
 lib/libmed.la
 lib/libmed.so
-lib/libmed.so.4
+lib/libmed.so.5
 lib/libmed3.settings
 lib/libmedC.a
 lib/libmedC.la
 lib/libmedC.so
-lib/libmedC.so.4
+lib/libmedC.so.5
 lib/libmedimport.a
 lib/libmedimport.la
 lib/libmedimport.so
