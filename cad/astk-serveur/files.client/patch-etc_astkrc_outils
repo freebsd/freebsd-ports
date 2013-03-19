@@ -5,7 +5,7 @@
  dist : on
  #
 +nom : qtEficas
-+cmde : ?TOOLS_DIR?/qtEficas (@F)
++cmde : ?TOOLS_DIR?/eficasQt (@F)
 +ext : comm com0 com1 com2
 +dist : on
 +#

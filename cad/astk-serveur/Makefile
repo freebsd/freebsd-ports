@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ASTK
-# Date created:		Thu Jul 09 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	astk
-PORTVERSION=	1.10.4
+PORTVERSION=	1.11.0
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -36,6 +32,9 @@ LICENSE=	GPLv2
 
 .if !defined(CLIENT_SEUL)
 USE_PYTHON=	yes
+USE_TK_BUILD=	yes
+.else
+USE_TK=		yes
 .endif
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
@@ -47,7 +46,8 @@ LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
 S_SCRIPTS=	bin/as_run bin/parallel_cp asrun/installation.py	\
-		share/codeaster/asrun/data/mpirun_template
+		share/codeaster/asrun/data/mpirun_template		\
+		bin/auto_update.cron
 S_PYLIBS=	share/codeaster/asrun/examples/alamain.py		\
 		unittest/datafiles/config_serveurs unittest/010_misc.py	\
 		unittest/015_package.py unittest/run_test.py
@@ -83,10 +83,9 @@ RUN_DEPENDS+=	qsub:${PORTSDIR}/sysutils/torque
 . endif
 .else
 RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
-		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}		\
-		${LOCALBASE}/lib/${TKPKG}/pkgIndex.tcl:${PORTSDIR}/graphics/tkpng
-TKPKG_VER=	0.9
-TKPKG=		tkpng${TKPKG_VER}
+		${LOCALBASE}/lib/${TKPNG}/pkgIndex.tcl:${PORTSDIR}/graphics/tkpng
+TKPNG_VER=	0.9
+TKPNG=		tkpng${TKPNG_VER}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
@@ -97,9 +96,6 @@ FILESDIR=	${PATCHDIR}
 
 SLAVEDIRS=	cad/astk-client
 
-TK_VER?=	8.5
-TCL_VER?=	${TK_VER}
-SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
 vaster=		STA${ASTER_VER:R}
@@ -207,7 +203,7 @@ do-configure:
 		-e 's|?PYTHON_EXE?|${PYTHON_CMD}|'				\
 		-e 's|?HOME_MED?|${LOCALBASE}|'					\
 		-e 's|?HOME_HDF?|${LOCALBASE}|'					\
-		-e "s|?WISH_EXE?|wish${TK_VER}|"				\
+		-e "s|?WISH_EXE?|${WISH}|"				\
 		${WRKSRC}/etc/profile.${sh}
 . endfor
 . for libs in ${S_PYLIBS}
@@ -215,6 +211,10 @@ do-configure:
 		 -e "s|/opt/aster/NEW10|${aster_dir}|"				\
 		-e "s|/opt/aster/ASTK|${inst_dir}|"				\
 		-e "s|/opt/aster/etc|${LOCALBASE}/aster/etc|"			\
+		-e "s|/usr/bin/editor|${WITH_ED}|"				\
+		-e "s|/usr/bin/nedit2|${WITH_ED}|"				\
+		-e "s|/usr/bin/nedit|${WITH_ED}|"				\
+		-e "s|/usr/bin/xterm|${LOCALBASE}/bin/xterm|"			\
 		-e "s|/opt/aster|${aster_dir}|" ${WRKSRC}/${libs}
 . endfor
 . if defined(WITH_PBS)
@@ -241,7 +241,7 @@ do-configure:
 . for scripts in ${C_SCRIPTS}
 	${REINPLACE_CMD} -e "s|?SHELL_EXECUTION?|${SHELL_INSTALL_ASTER}|"	\
 		-e "s|?ASTER_ROOT?|${PREFIX}/aster|"				\
-		-e "s|wish|wish${TK_VER}|;s|%%inst_dir%%|${inst_dir}|"		\
+		-e "s|wish|${WISH}|;s|%%inst_dir%%|${inst_dir}|"		\
 		${WRKSRC}/${scripts}
 . endfor
 	${REINPLACE_CMD} -e "s|?vaster?|${vaster}|"				\
@@ -274,6 +274,8 @@ do-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
 . endfor
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${ETCDIR}/plugins
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${ETCDIR}/plugins
 . if defined(WITH_MPI)
 	${ECHO_CMD} "localhost" > ${PREFIX}/aster/aster-mpihosts
 . endif

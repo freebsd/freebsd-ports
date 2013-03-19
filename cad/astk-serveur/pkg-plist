@@ -289,6 +289,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/contrib/copy_version.py
+%%SERV%%%%ASTKDIR%%/asrun/contrib/copy_version.pyc
+%%SERV%%%%ASTKDIR%%/asrun/contrib/copy_version.pyo
 %%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.py
 %%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.pyc
 %%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.pyo
@@ -441,7 +444,6 @@
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/mpirun_template
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/stanley_post.comm
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.html
-%%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.pdf
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.rst
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/examples/alamain.py
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/examples/alamain.pyc
@@ -547,6 +549,11 @@
 %%SERV%%%%ETCDIR%%/aster
 %%SERV%%%%ETCDIR%%/config_nodename
 %%SERV%%%%ETCDIR%%/plugins/__init__.py
+%%SERV%%%%ETCDIR%%/plugins/__init__.pyc
+%%SERV%%%%ETCDIR%%/plugins/__init__.pyo
+%%SERV%%%%ETCDIR%%/plugins/sge_pe.py
+%%SERV%%%%ETCDIR%%/plugins/sge_pe.pyc
+%%SERV%%%%ETCDIR%%/plugins/sge_pe.pyo
 %%SERV%%%%ETCDIR%%/profile.csh
 %%SERV%%%%ETCDIR%%/profile.sh
 %%SERV%%@dirrm %%ETCDIR%%/plugins
