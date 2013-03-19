@@ -1,13 +1,9 @@
-# New ports collection makefile for:	homard
-# Date created:		08 July 2003
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	homard
 DISTVERSION=	10.1-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
