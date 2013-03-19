@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=MYSQL SQLITE PGSQL
 
 .include <bsd.port.options.mk>
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -16,7 +16,7 @@ COMMENT=	Mathematical expressions parser library written in C++
 
 LICENSE=	MIT
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared=no
 .if defined(NOPORTEXAMPLES)

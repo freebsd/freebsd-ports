@@ -19,6 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.mk>

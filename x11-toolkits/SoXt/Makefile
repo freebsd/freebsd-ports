@@ -23,7 +23,7 @@ USE_XORG=	xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
-USE_GNOME=	gnomehack
+USES=	pathfix
 # avoid renaming of soxt-config and soxt-config.1
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1

@@ -16,7 +16,7 @@ COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 

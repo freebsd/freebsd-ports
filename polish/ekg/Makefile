@@ -17,7 +17,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS= --without-libungif \

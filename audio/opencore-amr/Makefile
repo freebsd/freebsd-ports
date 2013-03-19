@@ -17,7 +17,7 @@ LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

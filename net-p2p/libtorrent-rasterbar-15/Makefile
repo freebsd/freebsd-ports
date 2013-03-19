@@ -22,7 +22,7 @@ BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes

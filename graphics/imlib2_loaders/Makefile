@@ -18,7 +18,7 @@ COMMENT=	Extra image loader plugins for Imlib 2
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_EFL=	imlib2 libtool_hack
 
 OPTIONS=	EDB	"Enable edb loader" on \

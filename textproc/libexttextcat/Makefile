@@ -13,7 +13,7 @@ LICENSE=	BSD
 USE_XZ=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README README.libtextcat TODO

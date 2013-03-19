@@ -20,7 +20,7 @@ LIB_DEPENDS=	nfc.1:${PORTSDIR}/devel/libnfc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 MAN3=		freefare.3 freefare_error.3 mad.3 mifare_application.3 \
 		mifare_classic.3 mifare_desfire.3 mifare_desfire_aid.3 \

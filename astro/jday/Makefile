@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Julian date calculator
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

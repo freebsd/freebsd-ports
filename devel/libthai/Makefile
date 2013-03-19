@@ -16,7 +16,7 @@ LIB_DEPENDS=	datrie:${PORTSDIR}/devel/libdatrie
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 

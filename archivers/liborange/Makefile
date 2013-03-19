@@ -25,7 +25,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include

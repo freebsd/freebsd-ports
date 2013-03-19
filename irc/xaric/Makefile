@@ -13,7 +13,7 @@ MASTER_SITES=	http://xaric.org/software/xaric/releases/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	Open source message queue optimised for performance
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 CONFLICTS=	zmq-[0-9]*

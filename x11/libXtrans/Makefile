@@ -17,6 +17,6 @@ COMMENT=	Network API translation layer for X applications and libraries
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.mk>

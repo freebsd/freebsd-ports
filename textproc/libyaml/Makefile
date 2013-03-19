@@ -18,7 +18,7 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A YAML 1.1 parser and emitter written in C
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

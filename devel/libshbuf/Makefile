@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-lynx
 

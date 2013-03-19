@@ -17,7 +17,7 @@ COMMENT=	A C++ reference implementation of the Atlas protocol
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
-USE_GNOME=	gnomehack
+USES=	pathfix
 NO_LATEST_LINK=	YES
 
 CONFIGURE_ARGS+=--program-transform-name=

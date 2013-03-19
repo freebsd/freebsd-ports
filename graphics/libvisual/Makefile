@@ -17,7 +17,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes

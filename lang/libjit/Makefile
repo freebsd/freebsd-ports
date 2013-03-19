@@ -16,7 +16,7 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

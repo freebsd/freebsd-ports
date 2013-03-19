@@ -15,7 +15,7 @@ COMMENT=	Check bank codes of German banks
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

@@ -18,7 +18,7 @@ CONFLICTS=	libtorrent-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

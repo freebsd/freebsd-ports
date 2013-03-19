@@ -14,7 +14,7 @@ COMMENT=	X.Org bitmaps data
 
 LICENSE=	MIT
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 XORG_CAT=	data
 

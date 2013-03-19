@@ -17,7 +17,7 @@ LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
 		wpd-0.9:${PORTSDIR}/textproc/libwpd
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 USE_XZ=		yes

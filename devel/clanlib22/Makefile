@@ -26,7 +26,7 @@ LATEST_LINK=	${PORTNAME}22
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_PKGCONFIG=	yes

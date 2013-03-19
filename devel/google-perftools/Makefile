@@ -22,7 +22,7 @@ MAN1=		pprof.1
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 post-patch:
 .if defined(NOPORTDOCS)

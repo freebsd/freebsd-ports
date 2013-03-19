@@ -16,7 +16,7 @@ COMMENT=	Extract data from InstallShield CAB files
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 MAN1=		${PORTNAME}.1

@@ -16,7 +16,7 @@ COMMENT=	Simple thesaurus library
 
 LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 

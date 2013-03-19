@@ -15,7 +15,7 @@ DISTNAME=	sidplay-libs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	yes

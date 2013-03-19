@@ -30,7 +30,7 @@ STOMP_DEBUG_DESC=	Enable STOMP Debug
 
 .include <bsd.port.options.mk>
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

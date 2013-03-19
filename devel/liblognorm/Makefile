@@ -14,7 +14,7 @@ LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr
 
 USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

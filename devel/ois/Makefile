@@ -17,7 +17,7 @@ COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool:env aclocal:env autoheader:env automake:env autoconf:env
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes

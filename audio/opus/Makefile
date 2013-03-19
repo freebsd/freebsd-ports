@@ -11,7 +11,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

@@ -20,7 +20,7 @@ LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP:${PORTSDIR}/net/GeoIP
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

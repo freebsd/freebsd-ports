@@ -14,7 +14,7 @@ COMMENT=	A library of assorted spiffy things
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -11,7 +11,7 @@ COMMENT=	Open source lightweight messaging layer
 
 GNU_CONFIGURE=	yes
 USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG DOCS PLUGINS ZMQ

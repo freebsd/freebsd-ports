@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 # --disable-complex: does not compile due to missing carg(3) et al.
 CONFIGURE_ARGS=	--disable-complex
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 

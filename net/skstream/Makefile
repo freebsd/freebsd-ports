@@ -10,7 +10,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An iostream based C++ socket library
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

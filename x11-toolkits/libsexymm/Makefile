@@ -16,7 +16,7 @@ LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

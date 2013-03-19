@@ -25,7 +25,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp

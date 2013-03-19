@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 OPTIONS_DEFINE=	DOCS
 

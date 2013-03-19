@@ -22,7 +22,7 @@ BROKEN=		does not compile
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
 

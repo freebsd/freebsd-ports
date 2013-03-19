@@ -11,7 +11,7 @@ COMMENT=	Library that implement Microsoft's NTLM authentication
 
 LICENSE=	LGPL21
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes

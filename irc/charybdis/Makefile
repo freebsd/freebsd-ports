@@ -29,7 +29,7 @@ PORTDOCS=	charybdis-oper-guide.pdf
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 USERS=	ircd

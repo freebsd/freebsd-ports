@@ -12,7 +12,7 @@ COMMENT=	Library that provides a generic logging layer
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes

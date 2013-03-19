@@ -11,7 +11,7 @@ COMMENT=	Simple library for manipulating structured configuration files
 
 CONFLICTS=	wand-libconfig-[0-9]*
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

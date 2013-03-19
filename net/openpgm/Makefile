@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes

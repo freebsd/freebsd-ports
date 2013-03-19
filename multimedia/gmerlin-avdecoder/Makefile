@@ -29,7 +29,7 @@ DVDREAD_DESC=	libdvdread support
 GMERLIN_DESC=	gmerlin support
 SAMBA_DESC=	Samba support using libsmbclient
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen

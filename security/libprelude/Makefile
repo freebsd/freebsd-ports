@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

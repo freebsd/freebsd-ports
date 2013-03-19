@@ -16,7 +16,7 @@ COMMENT=	Support libraries of science/ghemical port
 GNU_CONFIGURE=  yes
 
 USE_GL=		glut
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

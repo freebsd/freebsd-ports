@@ -30,7 +30,7 @@ USB_DESC=	USB support
 GPHOTO2_DESC=	gPhoto2 support
 IEEE1284_DESC=	libieee1284 support
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

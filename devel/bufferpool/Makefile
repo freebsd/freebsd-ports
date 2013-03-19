@@ -18,6 +18,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 .include <bsd.port.mk>

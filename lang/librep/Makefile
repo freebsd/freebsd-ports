@@ -23,7 +23,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 USE_CSTD=	gnu89
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

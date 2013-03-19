@@ -12,7 +12,7 @@ COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

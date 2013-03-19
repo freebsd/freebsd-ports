@@ -21,7 +21,7 @@ LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
 

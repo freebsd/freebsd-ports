@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USES=	pathfix
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32
 

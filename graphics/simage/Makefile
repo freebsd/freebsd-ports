@@ -21,7 +21,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-mpeg2enc
 USE_LDCONFIG=	yes

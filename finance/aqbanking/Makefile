@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"

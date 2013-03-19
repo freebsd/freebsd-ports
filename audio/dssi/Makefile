@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 OPTIONS_DEFINE=	QT4
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes

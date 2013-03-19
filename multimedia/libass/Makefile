@@ -16,7 +16,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fribidi:${PORTSDIR}/converters/fribidi
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_XZ=	yes
 USE_LDCONFIG=	yes

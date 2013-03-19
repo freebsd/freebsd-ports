@@ -12,7 +12,7 @@ COMMENT=	Very lightweight C++ design pattern library
 
 LICENSE=	LGPL3
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes

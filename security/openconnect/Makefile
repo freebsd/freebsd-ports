@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_AUTOTOOLS=	aclocal autoconf libtool
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes

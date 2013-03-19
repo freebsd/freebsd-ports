@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=	IMAGEMAGICK PSTOEDIT
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
 
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -23,7 +23,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
 
 USE_GL=		glut
 USE_XORG=	sm
-USE_GNOME=	gnomehack
+USES=	pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
