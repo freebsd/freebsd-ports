@@ -1,24 +1,17 @@
-# New ports collection makefile for:	fqterm
-# Date created:					1 Jun 2008
-# Whom:							Denise H. G. <darcsis@gmail.com>
-#
+# Created by: Denise H. G. <darcsis@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fqterm
 PORTVERSION=	0.9.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src-r569${SUTRACT_SUFFIX}
 
 MAINTAINER=	darcsis@gmail.com
-COMMENT=	FQTerm is a BBS client for BSD/Linux
+COMMENT=	BBS client for BSD/Linux
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-install pkg-deinstall ${PORTNAME}.desktop
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_ZIP=	yes
 USE_QT4=	gui network script qt3support imageformats \
@@ -27,35 +20,14 @@ USE_QT4=	gui network script qt3support imageformats \
 
 HAS_CONFIGURE=	yes
 USE_DOS2UNIX=	src/ui/popwidget.cpp
-USE_GMAKE=	yes
 USE_CMAKE=	yes
-CMAKE_INSTALL_PREFIX=	${PREFIX}
+CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS=	-Wno-dev
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DATADIR=	${PREFIX}/share/FQTerm
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${MKDIR} build
-	@cd ${WRKSRC}/build && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${WRKSRC}
-
-do-build:
-	@cd ${WRKSRC}/build && ${GMAKE}
-
-do-install:
-	@cd ${WRKSRC}/build && ${GMAKE}	install/strip
-	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop \
-		${PREFIX}/share/applications
-
+DESKTOP_ENTRIES=	"FQTerm" "BBS client" "${PREFIX}/share/FQTerm/pic/fqterm.png" \
+			"fqterm -caption \"%c\" %i %m %u" "Network;Qt;" ""
 post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
