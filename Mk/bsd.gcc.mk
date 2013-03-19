@@ -146,15 +146,13 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .for v in ${GCCVERSIONS}
 . if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
 _GCC_FOUND${v}=	port
-. endif
-. if ${OSVERSION} >= ${_GCCVERSION_${v}_L} && ${OSVERSION} < ${_GCCVERSION_${v}_R}
+. elif ${OSVERSION} >= ${_GCCVERSION_${v}_L} && ${OSVERSION} < ${_GCCVERSION_${v}_R}
 .  if exists(/usr/bin/gcc)
-_GCC_FOUND${v}:=	base
+_GCC_FOUND${v}=	base
 .  endif
 . endif
 .endfor
 
-#
 # If the GCC package defined in USE_GCC does not exist, but a later
 # version is allowed (for example 4.2+), see if there is a later.
 # First check if the base installed version is good enough, otherwise
