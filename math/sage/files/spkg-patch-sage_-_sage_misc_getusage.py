@@ -1,5 +1,5 @@
 --- sage-5.7.beta4/sage/misc/getusage.py-old	2013-02-09 23:05:24.000000000 +0000
-+++ sage-5.7/sage/misc/getusage.py	2013-02-09 23:09:50.000000000 +0000
++++ sage-5.8/sage/misc/getusage.py	2013-02-09 23:09:50.000000000 +0000
 @@ -20,6 +20,8 @@
      """
      Return the 'top' or 'prstat' line that contains this running Sage
