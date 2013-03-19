@@ -3,7 +3,6 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
-PORTREVISION=	1
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -33,21 +32,18 @@ COMMENT=	Code_Aster finite element method solver
 BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${PYNUMPY}
-LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
-		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
-		hdf5.7:${PORTSDIR}/science/hdf5-18				\
-		med.4:${PORTSDIR}/french/med
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18				\
+		med.5:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-MANUAL_PACKAGE_BUILD=	runaway python on pointyhat
-
 LICENSE=	GPLv2
 
 USES=		bison
 USE_PYTHON=	2.6-2.7	# >2.5 and <3.0
+USE_TK=		yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
@@ -144,12 +140,6 @@ HOME_MPI=	${LOCALBASE}
 
 USE_FORTRAN=	yes
 GCC_VER=	`${CC} -dumpversion`
-
-TK_VER?=	8.5
-SHORT_TK_VER=	${TK_VER:S/.//}
-
-TCL_VER?=	${TK_VER}
-SHORT_TCL_VER=	${TCL_VER:S/.//}
 
 .if defined(WITH_ZSH)
 SHIA=		zsh
@@ -308,25 +298,25 @@ pre-configure:
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
 	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
 .for is in ${INTERACTIVE_SCRIPTS}
 	${REINPLACE_CMD} -e '/should_continue()/d'		\
 		${WRKSRC}/${is}
 .endfor
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-configure:
@@ -361,7 +351,7 @@ do-build:
 do-install:
 	${MKDIR} ${tools_dir} ${inst_dir} ${PREFIX}/${PORTNAME}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru ${inst_dir}
-	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
+	#${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/profile.sh ${inst_dir}
 	${ECHO_CMD} "" >> ${inst_dir}/profile.sh
 	${ECHO_CMD} "HDF5_DISABLE_VERSION_CHECK=1" >> ${inst_dir}/profile.sh
@@ -423,7 +413,6 @@ post-install:
 regression-test:	install
 	@${ECHO_MSG} "Note: homard must be installed to run some steps succesfully."
 	(cd ${inst_dir};	\
-	HDF5_DISABLE_VERSION_CHECK=1	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export) || ${TRUE}
 	@${ECHO_MSG} "Check /tmp/resu_test/*.erre"
 .endif
