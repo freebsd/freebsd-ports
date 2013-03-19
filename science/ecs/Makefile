@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ecs
-# Date created:		Sun 1 apr 2007
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	ecs
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,7 +13,7 @@ COMMENT=	Code_Saturne Preprocessor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	med.4:${PORTSDIR}/french/med		\
+LIB_DEPENDS=	med.5:${PORTSDIR}/french/med		\
 		bft.1:${PORTSDIR}/science/bft		\
 		hdf5.7:${PORTSDIR}/science/hdf5-18	\
 		cgns.3:${PORTSDIR}/science/cgnslib

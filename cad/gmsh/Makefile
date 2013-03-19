@@ -3,6 +3,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -91,7 +92,7 @@ CMAKE_ARGS+=	-DENABLE_TAUCS=OFF
 .endif
 
 .if !defined(WITHOUT_MED)
-LIB_DEPENDS+=	med.4:${PORTSDIR}/french/med
+LIB_DEPENDS+=	med.5:${PORTSDIR}/french/med
 CMAKE_ARGS+=	-DENABLE_MED=ON
 .else
 CMAKE_ARGS+=	-DENABLE_MED=OFF
