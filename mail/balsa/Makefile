@@ -77,6 +77,8 @@ CONFIGURE_ARGS+=--with-libnotify=yes
 CONFIGURE_ARGS+=--with-libnotify=no
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${PREFIX}==${LOCALBASE}
 PLIST_SUB+=	GTKICON="@comment "
 .else
@@ -93,4 +95,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED_SOURCE||g ; s|-D.*_DISABLE_DEPRECATED||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
