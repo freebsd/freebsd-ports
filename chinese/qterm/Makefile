@@ -1,47 +1,70 @@
-# New ports collection makefile for:   qterm
-# Date created:                10 Mar 2001
-# Whom:                        Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	qterm
-PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTVERSION=	0.5.12
 CATEGORIES=	chinese
-MASTER_SITES=	 SF/qterm/qterm/${PORTVERSION}
+MASTER_SITES=	SF/qterm/qterm/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	QTerm is a BBS client for BSD/Linux
+MAINTAINER=	kaiwang27@gmail.com
+COMMENT=	BBS client for BSD/Linux
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
-
-USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
-USE_QT_VER=	3
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX}
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_CMAKE=	yes
+USE_PERL5_BUILD=	yes
+USE_QT4=	codecs-cn_run codecs-tw_run gui help-tools_build \
+		linguist_build moc_build network qt3support_build \
+		qmake_build rcc_build uic_build xml
+USE_XORG=	x11 ice
+MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
 
-.if !defined(WITHOUT_PYTHON)
-USE_PYTHON=	2.5+
-CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
+OPTIONS_DEFINE=	DBUS OPENSSL PHONON QTSCRIPT KDE
+OPTIONS_DEFAULT=	DBUS OPENSSL PHONON QTSCRIPT
+
+PHONON_DESC=	Multimedia support via Phonon
+QTSCRIPT_DESC=	Scripting support via QtScript Bindings
+KDE_DESC=	Password management via KWallet
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+CMAKE_ARGS+=	-DQTERM_ENABLE_SSH:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-DQTERM_ENABLE_SSH:BOOL=FALSE
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_PYTHON)
-	@${ECHO_MSG} "Define WITHOUT_PYTHON to disable Python scripts support."
+.if ${PORT_OPTIONS:MDBUS}
+USE_QT4+=	dbus
+CMAKE_ARGS+=	-DQTERM_ENABLE_DBUS:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-DQTERM_ENABLE_DBUS:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MPHONON}
+USE_QT4+=	phonon
+CMAKE_ARGS+=	-DQTERM_ENABLE_PHONON:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-DQTERM_ENABLE_PHONON:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MQTSCRIPT}
+USE_QT4+=	script
+RUN_DEPENDS+=	${QT_PLUGINDIR}/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
+CMAKE_ARGS+=	-DQTERM_ENABLE_SCRIPT:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-DQTERM_ENABLE_SCRIPT:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MKDE}
+USE_KDE4=	kdelibs automoc4
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
-		${WRKSRC}/configure
-
-post-install:
-	@${CHMOD} +w ${DATADIR}/qterm.cfg
-	@${CHMOD} +w ${DATADIR}/address.cfg
-	@${CAT} ${PKGMESSAGE}
+.if !${PORT_OPTIONS:MKDE}
+	${REINPLACE_CMD} -e "/^find_package(KDE4)/d" ${WRKSRC}/CMakeLists.txt
+.endif
+	${REINPLACE_CMD} -e "/^set(QT_MIN_VERSION/d" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

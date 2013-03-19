@@ -1,12 +1,14 @@
-QTerm is a BBS client for X Window System.  The goal is 
-to make a client similar to Fterm and CTerm in MS Windows.
+QTerm is a BBS client for X Window System.
 
 Features:
-1.mouse support
-2.copy and paste
-3.article download
-4.address book
-5.anti-idle
-6.converting between GB and BIG5
+ * support mouse in Firebird BBS
+ * copy and paste
+ * article download
+ * address book
+ * proxy support
+ * anti-ilde
+ * auto-reply
+ * display and input cross language GB and BIG5
+ * QtScript support
 
 WWW: http://qterm.sourceforge.net/wiki/
