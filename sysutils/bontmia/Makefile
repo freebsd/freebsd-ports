@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bontmia
-# Date created:		11 december 2009
-# Whom:			Henrik Andersen
-#
+# Created by: Henrik Andersen
 # $FreeBSD$
-#
 
 PORTNAME=	bontmia
 PORTVERSION=	0.14
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kosmos.ttyv0.se/attachments/download/37/
 
-MAINTAINER=	ports@henrikandersen.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool for incremental backups over network
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
