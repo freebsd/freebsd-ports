@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -58,7 +57,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
 		-e 's|$${libdir}/\(pkgconfig\)|$${prefix}/libdata/\1|' \
 		-e 's/\(LIBVA_LT_CURRENT\)=libva_lt_current/\1=1/' \
-		-e 's/\(LIBVA_LT_REV\)=libva_lt_revision/\1=3300/' \
+		-e 's/\(LIBVA_LT_REV\)=libva_lt_revision/\1=3301/' \
 		-e 's/\(LIBVA_LT_AGE\)=libva_lt_age/\1=0/' \
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's/va\(info\)/\1/g' -e 's/info\.c/vainfo\.c/' \
