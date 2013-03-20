@@ -13,7 +13,7 @@ COMMENT=	Generate interface introspection data for GObject libraries
 
 # we need cairo otherwise the generated Cairo gir is broken
 BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	ffi.6:${PORTSDIR}/devel/libffi
 
 USES=		bison pathfix
 USE_XZ=		yes
