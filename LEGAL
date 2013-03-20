@@ -23,7 +23,9 @@
 # 
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
+*-for-1.4.tgz	net/dgd-lpmud			No commercial use
 *_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution prohibited
+ASpath-tree-*.tar.gz	net-mgmt/aspathtree	No commercial us
 26410-800.zip		audio/libaacplus	Unclear legal status
 aacplusenc-*		audio/aacplusenc	Unclear legal status
 acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
