@@ -1,18 +1,20 @@
-# New ports collection makefile for:	ruby-mecab
-# Date created:		23 April 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mecab
-PORTVERSION=	0.994
+PORTVERSION=	0.995
 CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MeCab library module for Ruby
+
+LICENSE=	BSD GPLv2 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD=	${WRKSRC}/BSD
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL
 
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
@@ -21,16 +23,19 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONSFILE=	${PORT_DBDIR}/ja-ruby-${PORTNAME}/options
+
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/bindings.html ${RUBY_MODDOCDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
