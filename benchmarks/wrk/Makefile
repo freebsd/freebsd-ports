@@ -1,12 +1,8 @@
-# New ports collection makefile for:	wrk
-# Date created:				01 Aug 2012
-# Whom:					Sergey A. Osokin <osa@FreeBSD.org>
-#
+# Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wrk
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://github.com/wg/${PORTNAME}/tarball/master/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${GITVERSION}
@@ -17,7 +13,7 @@ COMMENT=	The modern HTTP benchmarking tool
 LICENSE=	AL2
 
 FETCH_ARGS=	-pRr
-GITVERSION=	0-g6d143f1
+GITVERSION=	0-gae7a043
 WRKSRC=		${WRKDIR}/wg-${PORTNAME}-${GITVERSION:S/^0-g//}
 USE_GMAKE=	yes
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
@@ -31,7 +27,7 @@ BROKEN=		does not link on FreeBSD 7.x
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} '1d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '1d;2s/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
