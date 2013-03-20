@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httping
-PORTVERSION=	1.6
+PORTVERSION=	2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -16,8 +16,6 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
-
-CFLAGS+=	-D_GNU_SOURCE
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
