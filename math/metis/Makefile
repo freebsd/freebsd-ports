@@ -1,28 +1,21 @@
-# New ports collection makefile for:	METIS
-# Date created:         26 Oct 97
-# Whom:                 Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metis
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A package for unstructured graph partitioning
 
-LICENSE=	METIS
-LICENSE_NAME=	University of Minnesota METIS License
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	auto-accept
+LICENSE=	AL2
 
 CONFLICTS=	metis-4* metis-edf-[0-9]*
 
 USE_CMAKE=	yes
 
-OPTIONS_DEFINE =	OPENMP STATIC SHARED
+OPTIONS_DEFINE =	OPENMP SHARED STATIC
 
 OPENMP_DESC=	multithreading via OpenMP
 #PROFILE_DESC=	profiling libraries
@@ -34,11 +27,8 @@ OPTIONS_DEFAULT=	SHARED STATIC
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
-.if !empty(CC:T:M*clang*)
-IGNORE =	: clang does not support OpenMP. Disable the OPENMP option or\
-		use another compiler
-.endif
 CMAKE_ARGS+=	-DOPENMP=1
+USE_GCC=	any
 .endif
 
 #.if ${PORT_OPTIONS:MPROFILE}
