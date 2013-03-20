@@ -1,12 +1,8 @@
-# New ports collection makefile for:  drood
-# Date created:                       Sun, 03 Feb 2008 23:06:00 EST
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	dkns
-PORTVERSION=	1.89
+PORTVERSION=	1.90
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mammothcheese.ca/
 
