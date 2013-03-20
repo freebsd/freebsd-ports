@@ -1,0 +1,22 @@
+diff --git pkg.c pkg.c
+index ed23b47..58eed08 100644
+--- pkg.c
++++ pkg.c
+@@ -461,6 +461,8 @@ pkg_find(const char *name, unsigned int flags)
+ 	pkg_node_t *n;
+ 	FILE *f;
+ 
++	pkg_dir_list_build(flags);
++
+ 	/* name might actually be a filename. */
+ 	if (str_has_suffix(name, PKG_CONFIG_EXT))
+ 	{
+@@ -485,8 +487,6 @@ pkg_find(const char *name, unsigned int flags)
+ 		}
+ 	}
+ 
+-	pkg_dir_list_build(flags);
+-
+ 	PKG_FOREACH_LIST_ENTRY(pkg_dir_list.head, n)
+ 	{
+ 		pkg_path_t *pkg_path = n->data;
