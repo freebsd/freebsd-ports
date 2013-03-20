@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	4.5.7
+PORTVERSION=	5.0.0
 CATEGORIES=	www
-MASTER_SITES=	http://owncloud.org/releases/
+MASTER_SITES=	http://download.owncloud.org/community/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
+
+LICENSE=	AGPLv3
 
 BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
