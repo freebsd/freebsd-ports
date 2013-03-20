@@ -151,7 +151,6 @@ jre-6*-i586.bin		java/linux-sun-jre16	License does not allow distribution with f
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
 KASH3-*			math/kash3		Not for commercial distribution or use
-KDE/ICONS-*		x11-themes/kde-icons-*	Unclear about licensing status
 komodo-*		editors/komodo-edit	Distribution not permitted
 kzip-*			archivers/kzip		No redistribution allowed
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
