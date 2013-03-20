@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.32.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,6 @@ USE_XORG=	xpm
 USES=		bison pathfix
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
 		ltverhack referencehack
-GNOME_DESKTOP_VERSION=2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes

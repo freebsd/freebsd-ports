@@ -1,0 +1,114 @@
+--- libgnome-desktop/gnome-desktop-thumbnail.c.orig	2013-03-20 11:15:01.000000000 -0500
++++ libgnome-desktop/gnome-desktop-thumbnail.c	2013-03-20 11:30:58.000000000 -0500
+@@ -525,9 +525,14 @@
+   g_assert (digest_len == 16);
+ 
+   file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
+-  
++
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  path = g_build_filename (g_get_user_cache_dir (),
++			   "thumbnails",
++#else
+   path = g_build_filename (g_get_home_dir (),
+ 			   ".thumbnails",
++#endif
+ 			   (priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL)?"normal":"large",
+ 			   file,
+ 			   NULL);
+@@ -587,8 +592,13 @@
+ 
+   file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
+ 
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  path = g_build_filename (g_get_user_cache_dir (),
++			   "thumbnails/fail",
++#else
+   path = g_build_filename (g_get_home_dir (),
+ 			   ".thumbnails/fail",
++#endif
+ 			   appname,
+ 			   file,
+ 			   NULL);
+@@ -678,7 +688,8 @@
+   /* Don't thumbnail thumbnails */
+   if (uri &&
+       strncmp (uri, "file:/", 6) == 0 &&
+-      strstr (uri, "/.thumbnails/") != NULL)
++      (strstr (uri, "/.thumbnails/") != NULL ||
++      strstr (uri, "/.cache/thumbnails/") != NULL))
+     return FALSE;
+   
+   if (!mime_type)
+@@ -917,8 +928,13 @@
+ 
+   res = FALSE;
+ 
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  thumbnail_dir = g_build_filename (g_get_user_cache_dir (),
++				    "thumbnails",
++#else
+   thumbnail_dir = g_build_filename (g_get_home_dir (),
+ 				    ".thumbnails",
++#endif
+ 				    NULL);
+   if (!g_file_test (thumbnail_dir, G_FILE_TEST_IS_DIR))
+     {
+@@ -951,8 +967,13 @@
+ 
+   res = FALSE;
+ 
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  thumbnail_dir = g_build_filename (g_get_user_cache_dir (),
++				    "thumbnails",
++#else
+   thumbnail_dir = g_build_filename (g_get_home_dir (),
+ 				    ".thumbnails",
++#endif
+ 				    NULL);
+   if (!g_file_test (thumbnail_dir, G_FILE_TEST_IS_DIR))
+     {
+@@ -1025,8 +1046,13 @@
+ 
+   file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
+ 
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  path = g_build_filename (g_get_user_cache_dir (),
++			   "thumbnails",
++#else
+   path = g_build_filename (g_get_home_dir (),
+ 			   ".thumbnails",
++#endif
+ 			   (priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL)?"normal":"large",
+ 			   file,
+ 			   NULL);
+@@ -1129,8 +1155,13 @@
+ 
+   file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
+ 
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  path = g_build_filename (g_get_user_cache_dir (),
++			   "thumbnails/fail",
++#else
+   path = g_build_filename (g_get_home_dir (),
+ 			   ".thumbnails/fail",
++#endif
+ 			   appname,
+ 			   file,
+ 			   NULL);
+@@ -1220,9 +1251,14 @@
+   md5 = gnome_desktop_thumbnail_md5 (uri);
+   file = g_strconcat (md5, ".png", NULL);
+   g_free (md5);
+-  
++
++#if GLIB_CHECK_VERSION (2, 34, 0)
++  path = g_build_filename (g_get_user_cache_dir (),
++			   "thumbnails",
++#else
+   path = g_build_filename (g_get_home_dir (),
+ 			   ".thumbnails",
++#endif
+ 			   (size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL)?"normal":"large",
+ 			   file,
+ 			   NULL);
