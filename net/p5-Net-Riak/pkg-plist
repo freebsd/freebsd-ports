@@ -16,6 +16,7 @@
 %%SITE_PERL%%/Net/Riak/Role/REST.pm
 %%SITE_PERL%%/Net/Riak/Role/Replica.pm
 %%SITE_PERL%%/Net/Riak/Role/UserAgent.pm
+%%SITE_PERL%%/Net/Riak/Role/PBC/Meta.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC/Message.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC/Object.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC/MapReduce.pm
