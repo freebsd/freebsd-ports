@@ -75,7 +75,8 @@ LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE} \
-			--enable-dnsrbl --with-thread-safe-resolver
+			--enable-dnsrbl --with-thread-safe-resolver \
+			--with-dumpfile=/var/milter-greylist/greylist.db
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
