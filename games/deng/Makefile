@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.9
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
 
-MAINTAINER=	yuri.pankov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
@@ -21,8 +21,7 @@ USE_LDCONFIG=	yes
 USE_SDL=	sdl mixer net
 USE_XORG=	x11
 USE_PYTHON=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--export-dynamic"
