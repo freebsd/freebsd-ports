@@ -211,7 +211,6 @@
     SUBDIR += zip
     SUBDIR += zipmix
     SUBDIR += zipper
-    SUBDIR += zpaq
     SUBDIR += zoo
     SUBDIR += zutils
 
