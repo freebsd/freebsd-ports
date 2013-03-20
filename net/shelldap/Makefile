@@ -1,17 +1,14 @@
-# New ports collection makefile for:    shelldap
-# Date created:         2006-07-07
-# Whom:                 Mahlon E. Smith <mahlon@martini.nu>
-#
+# Created by: Mahlon E. Smith <mahlon@martini.nu>
 # $FreeBSD$
-#
 
 PORTNAME=	shelldap
-PORTVERSION=	0.5
+PORTVERSION=	1.0.0
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.martini.nu/misc/
+MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
+		http://www.martini.nu/misc/
 
 MAINTAINER=	mahlon@martini.nu
-COMMENT=	A shell-like environment for LDAP
+COMMENT=	Shell-like environment for LDAP
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
