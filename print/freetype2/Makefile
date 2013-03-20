@@ -27,28 +27,13 @@ USE_GNOME=	ltverhack:9
 LIBTOOLFILES=	builds/unix/configure
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 
-.if defined(WITH_LCD_FILTERING)
+OPTIONS_DEFINE=		LCD_FILTERING
+LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLCD_FILTERING}
 CFLAGS+=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
-.endif
-
-.if defined(WITH_CJK)
-#PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
-#		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-#		http://bsdchat.com/dist/firefly-cjk-patchset/
-#PATCHFILES+=	cjk-freetype-2.1.10-20051219.patch.gz
-#PATCH_DIST_STRIP+=	-p1
-.endif
-
-pre-everything::
-.if !defined(WITH_LCD_FILTERING)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may want to enable LCD filtering."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Hit Ctrl-C now and use \"make WITH_LCD_FILTERING=yes\""
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note that there are possible patent issues related to the"
-	@${ECHO_MSG} "use of the LCD filtering technology."
-	@${ECHO_MSG}
 .endif
 
 pre-patch:
