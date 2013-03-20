@@ -1,13 +1,9 @@
-# New ports collection makefile for:	CNS11643-font
-# Date created:		2009/01/03
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	CNS11643-font
 PORTVERSION=	98.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://www.cns11643.gov.tw/AIDB/file.do?path=download/%E5%AD%97%E5%9E%8B%E4%B8%8B%E8%BC%89%601q%60%E5%85%A8%E5%AD%97%E5%BA%AB%E6%AD%A3%E6%A5%B7%E9%AB%94/name/:kai \
 		http://www.cns11643.gov.tw/AIDB/file.do?path=download/%E5%AD%97%E5%9E%8B%E4%B8%8B%E8%BC%89%601q%60%E5%85%A8%E5%AD%97%E5%BA%AB%E6%AD%A3%E5%AE%8B%E9%AB%94/name/:sung
@@ -22,18 +18,17 @@ LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://creativecommons.org/licenses/by-nd/3.0/tw/
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-BROKEN=		checksum mismatch
 
 TTF=		TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 
 do-install:
 	@${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/TW-Kai-98_1.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/TW-Sung-98_1.ttf ${FONTSDIR}
+.for f in ${TTF}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${FONTSDIR}
+.endfor
 
 post-install:
 	@${ECHO_CMD} "*******************************************************************************"
