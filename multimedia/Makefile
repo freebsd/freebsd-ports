@@ -167,6 +167,7 @@
     SUBDIR += libquicktime-lame
     SUBDIR += libquvi
     SUBDIR += libquvi-scripts
+    SUBDIR += libsmacker
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libv4l
