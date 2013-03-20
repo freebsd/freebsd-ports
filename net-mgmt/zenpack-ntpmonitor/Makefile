@@ -12,6 +12,7 @@ COMMENT=	Monitors the offset between system time and a target NTP servers time
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 BROKEN=		fails to fetch
 
@@ -19,6 +20,4 @@ USE_ZIP=	yes
 ZPACKGROUP=	core
 WRKSRC=	${WRKDIR}/tags/zenoss-3.1.0/zenpacks/${ZPACKPREFIX}${PORTNAME}/
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

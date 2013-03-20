@@ -1,9 +1,5 @@
-# New ports collection makefile for: DeviceSearch
-# Date created:    26 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DeviceSearch
 PORTVERSION=	1.0.0
@@ -15,9 +11,8 @@ COMMENT=	Provides the ability to quickly search for devices in Zenoss
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 ZPACKGROUP=	core
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

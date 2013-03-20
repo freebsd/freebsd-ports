@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130320:
+AUTHOR: jgh@FreeBSD.org
+
+  * New USES macro to handle support for Zenoss ports and Zenpacks:
+
+    USES= zenoss
+
 20130319:
 AUTHOR: makc@FreeBSD.org
 

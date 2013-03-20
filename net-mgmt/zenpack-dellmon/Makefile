@@ -1,9 +1,5 @@
-# New ports collection makefile for: DellMon
-# Date created:    13 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DellMon
 PORTVERSION=	2.4
@@ -17,11 +13,10 @@ COMMENT=	Provides additional monitoring options for Dell machines
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 ZPACKGROUP=	community
 WRKSRC=		${WRKDIR}/epuzanov-${ZPACKPREFIX}${PORTNAME}-a4ae347
 ZPACKPREFIX=    ZenPacks.community.
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
