@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-pie
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.5
+PORTREVISION=	0
 CATEGORIES=	x11
-# Waiting for a tag on the GitHub repository https://github.com/Simmesimme/Gnome-Pie...
-MASTER_SITES=	LOCAL/nivit/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Circular application launcher
@@ -14,14 +12,20 @@ COMMENT=	Circular application launcher
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-RUN_DEPENDS=	gnome-icons-elementary>=2.5:${PORTSDIR}/x11-themes/gnome-icons-elementary \
+RUN_DEPENDS=	gnome-icons-faenza>=1.3:${PORTSDIR}/x11-themes/gnome-icons-faenza \
 		gnome-settings-daemon>=2.32.1_4:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	Xtst:${PORTSDIR}/x11/libXtst \
 		cairo:${PORTSDIR}/graphics/cairo \
 		gee:${PORTSDIR}/devel/libgee06 \
 		unique:${PORTSDIR}/x11-toolkits/unique
 
+GH_ACCOUNT=	Simmesimme
+GH_PROJECT=	Gnome-Pie
+GH_COMMIT=	5ea8b11
+GH_TAGNAME=	v${PORTVERSION}
+
 INSTALLS_ICONS=	yes
+
 OPTIONS_DEFINE=	DOCS MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
 
@@ -51,24 +55,27 @@ PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' \
 		-e 's,%%DESKTOPDIR%%,${DESKTOPDIR},1' \
 		-e 's,%%PREFIX%%,${PREFIX},1' \
-		-i.bak
+		-e '/has_resize_grip/d' -i ''
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_GITHUB=	yes
 USE_GNOME=	gconf2 gnomemenus gtk20 libwnck
 USE_PKGCONFIG=	build
 
 post-patch:
-	${REINPLACE_CMD} ${WRKSRC}/src/actions/actionRegistry.vala ${WRKSRC}/src/utilities/paths.vala
+	${REINPLACE_CMD} ${WRKSRC}/src/actions/actionRegistry.vala \
+			${WRKSRC}/src/gui/indicator.vala \
+			${WRKSRC}/src/utilities/paths.vala \
+			${WRKSRC}/resources/ui/*.ui
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
 gnome-pie-user:
-	gconftool-2 --type string --set /desktop/gnome/interface/icon_theme "elementary"
+	gconftool-2 --type string --set /desktop/gnome/interface/icon_theme "Faenza"
 	gconftool-2 --type bool --set /desktop/gnome/interface/menus_have_icons true
 
 .include <bsd.port.mk>
