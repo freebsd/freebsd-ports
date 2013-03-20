@@ -1,13 +1,36 @@
 # $FreeBSD$
 
 GEANY_VER=	1.22
-
-GEANY_PLUGINS_ALL=	addons codenav debugger devhelp doc extrasel gdb \
-			gendoc geniuspaste gproject insertnum latex lipsum \
-			lua macro miniscript multiterm numberedbookmarks \
-			pg pretty-printer prj sendmail shiftcolumn \
-			spellcheck tableconvert treebrowser updatechecker \
-			vc webhelper xmlsnippets
+GEANY_PLUGINS_ALL=	addons \
+			codenav \
+			debugger \
+			devhelp \
+			doc \
+			extrasel \
+			gdb \
+			gendoc \
+			geniuspaste \
+			gproject \
+			insertnum \
+			latex \
+			lipsum \
+			lua \
+			macro \
+			miniscript \
+			multiterm \
+			numberedbookmarks \
+			pg \
+			pretty-printer \
+			prj \
+			sendmail \
+			shiftcolumn \
+			spellcheck \
+			tableconvert \
+			treebrowser \
+			updatechecker \
+			vc \
+			webhelper \
+			xmlsnippets
 
 addons_DESC=		various small addons
 codenav_DESC=		some facilities for navigating in the code
