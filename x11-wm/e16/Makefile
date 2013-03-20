@@ -22,7 +22,6 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-rpath --enable-mans SHELL=/bin/sh
-CFLAGS+=	-g -O0
 
 .include <bsd.port.options.mk>
 
