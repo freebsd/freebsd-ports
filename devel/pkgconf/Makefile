@@ -2,7 +2,7 @@
 
 PORTNAME=	pkgconf
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
