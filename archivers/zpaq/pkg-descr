@@ -1,0 +1,22 @@
+ZPAQ is a journaling, incremental, deduplicating archiver for Windows and
+Unix.  "Journaling" means that when you update a file or directory, both the
+old and new versions are saved.  You can extract from the archive as it
+existed at any time in the past.
+
+"Incremental" means that when you back up your entire hard drive, only those
+files whose last-modified date has changed since the previous backup are
+added.  For 100 GB of files, this typically takes 1-2 minutes, vs. few hours
+to create the first version.
+
+"Deduplicating" means that identical files or fragments are stored only once
+to save time and space.
+
+Files are compressed in the open standard ZPAQ format, which is supported by
+a specification, reference decoder, and a test case (which should decode to
+the Calgary corpus), and a public domain C++ API that provides compression
+and decompression services.  The format is not known to be encumbered by any
+patents.  ZPAQ stores the decompression algorithm description in the archive,
+which means that when archive is updated to a better compression algorithm,
+older extractors will still be able to read the new archives.
+
+WWW: http://mattmahoney.net/dc/zpaq.html
