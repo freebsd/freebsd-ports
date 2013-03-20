@@ -1,17 +1,19 @@
-# New ports collection makefile for:	mecab
-# Date created:		2 April 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mecab
-PORTVERSION=	0.994
+PORTVERSION=	0.995
 CATEGORIES=	japanese textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
+
+LICENSE=	BSD GPLv2 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD=	${WRKSRC}/BSD
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL
 
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
@@ -22,16 +24,13 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-# Default charset (euc-jp/shift_jis/utf-8)
-.if defined(WITH_CHARSET)
-CONFIGURE_ARGS+=	--with-charset=${WITH_CHARSET}
-.endif
-
 MAN1=		mecab.1
 
-DOCS=		AUTHORS README doc/*.html
+PORTDOCS=	AUTHORS README *.html
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
@@ -48,12 +47,13 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/mecabrc ]; then \
 		${INSTALL_DATA} ${PREFIX}/etc/mecabrc.dist ${PREFIX}/etc/mecabrc; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS:N*.html}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
