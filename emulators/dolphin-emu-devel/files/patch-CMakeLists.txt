@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-09-11 12:52:22.000000000 +0200
-+++ CMakeLists.txt	2012-09-18 06:49:30.000000000 +0200
-@@ -249,51 +249,81 @@
+--- CMakeLists.txt.orig	2013-02-25 17:12:52.000000000 +0100
++++ CMakeLists.txt	2013-02-25 17:22:59.000000000 +0100
+@@ -286,51 +286,81 @@
  	message("OpenMP parallelization disabled")
  endif()
  
@@ -67,13 +67,13 @@
 +	message("bluez (bluetooth) support disabled")
 +endif()
  
--check_lib(PULSEAUDIO libpulse QUIET)
+-check_lib(PULSEAUDIO libpulse-simple QUIET)
 -if(PULSEAUDIO_FOUND)
 -	add_definitions(-DHAVE_PULSEAUDIO=1)
 -	message("PulseAudio found, enabling PulseAudio sound backend")
 +option(DISABLE_PULSEAUDIO "Disable PulseAudio sound backend" OFF)
 +if(NOT DISABLE_PULSEAUDIO)
-+	check_lib(PULSEAUDIO libpulse QUIET)
++	check_lib(PULSEAUDIO libpulse-simple QUIET)
 +	if(PULSEAUDIO_FOUND)
 +		add_definitions(-DHAVE_PULSEAUDIO=1)
 +		message("PulseAudio found, enabling PulseAudio sound backend")
@@ -113,7 +113,7 @@
  
  # Note: We do not need to explicitly check for X11 as it is done in the cmake
  # FindOpenGL module on linux.
-@@ -323,22 +353,33 @@
+@@ -359,22 +389,33 @@
  	check_libav()
  endif()
  
@@ -158,9 +158,9 @@
 -endif(PORTAUDIO)
 +endif()
  
- option(OPROFILING "Enable profiling" OFF)
  if(OPROFILING)
-@@ -602,10 +643,13 @@
+ 	check_lib(OPROFILE opagent opagent.h)
+@@ -634,10 +675,13 @@
  	install(DIRECTORY Data/User/ DESTINATION ${datadir}/user PATTERN)
  	install(DIRECTORY Data/Sys/ DESTINATION ${datadir}/sys PATTERN)
  endif()
