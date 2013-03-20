@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}
@@ -23,9 +23,11 @@ USE_JAVA=	yes
 PORTEXAMPLES=	*
 LATEST_LINK=	apache-solr
 
+.include <bsd.port.options.mk>
+
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} \* ${JAVAJARDIR}
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
