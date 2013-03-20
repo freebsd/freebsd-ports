@@ -19,7 +19,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		lzo2:${PORTSDIR}/archivers/lzo2 \
 		sfml-network:${PORTSDIR}/devel/sfml
 
-REVDATE=	20130110
+REVDATE=	20130225
 
 USE_ICONV=	yes
 USE_PKGCONFIG=	build
@@ -41,21 +41,18 @@ USE_GCC=	4.6+
 USE_CMAKE=	yes
 CMAKE_BUILD_TYPE=	Release
 # Disable ao (seems buggy) and ALSA (emulated)
-# XXX ENCODE_FRAMEDUMPS is disabled because it will fail detecting required
-#     libs (libavcodec, libavformat, libswscale, libavutil) as our version of
-#     ffmpeg is currently too old
 CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \
 		-DDISABLE_ALSA:BOOL=ON \
 		-DDISABLE_BLUEZ:BOOL=ON \
-		-DENCODE_FRAMEDUMPS:BOOL=OFF \
 		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	MAINTAINER=${MAINTAINER}
 
-OPTIONS_DEFINE=	PULSEAUDIO PORTAUDIO DEBUG
+OPTIONS_DEFINE=	PULSEAUDIO PORTAUDIO DEBUG FRAMEDUMPS
 PORTAUDIO_DESC=	Enable PortAudio (mic) support
-OPTIONS_DEFAULT=	PORTAUDIO
+FRAMEDUMPS_DESC=	Encode framedumps in AVI format
+OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS
 
 .include <bsd.port.pre.mk>
 
@@ -93,6 +90,16 @@ CMAKE_ARGS+=	-DDISABLE_PULSEAUDIO:BOOL=ON
 LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
 .else
 CMAKE_ARGS+=	-DDISABLE_PORTAUDIO:BOOL=ON
+.endif
+
+.if ${PORT_OPTIONS:MFRAMEDUMPS}
+CMAKE_ARGS+=	-DENCODE_FRAMEDUMPS:BOOL=ON
+LIB_DEPENDS+=	avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
+		avformat1:${PORTSDIR}/multimedia/ffmpeg1 \
+		swscale1:${PORTSDIR}/multimedia/ffmpeg1 \
+		avutil1:${PORTSDIR}/multimedia/ffmpeg1
+.else
+CMAKE_ARGS+=	-DENCODE_FRAMEDUMPS:BOOL=OFF
 .endif
 
 post-install:

@@ -73,6 +73,23 @@ bin/dolphin-emu
 %%DATADIR%%/user/Shaders/auto_toon2.txt
 %%DATADIR%%/user/Shaders/invert_blue.txt
 %%DATADIR%%/user/Shaders/invert.txt
+%%DATADIR%%/user/Themes/Boomy/help.png
+%%DATADIR%%/user/Themes/Boomy/gcpad.png
+%%DATADIR%%/user/Themes/Boomy/refresh.png
+%%DATADIR%%/user/Themes/Boomy/graphics.png
+%%DATADIR%%/user/Themes/Boomy/fullscreen.png
+%%DATADIR%%/user/Themes/Boomy/open.png
+%%DATADIR%%/user/Themes/Boomy/wiimote.png
+%%DATADIR%%/user/Themes/Boomy/README.txt
+%%DATADIR%%/user/Themes/Boomy/dsp.png
+%%DATADIR%%/user/Themes/Boomy/config.png
+%%DATADIR%%/user/Themes/Boomy/play.png
+%%DATADIR%%/user/Themes/Boomy/stop.png
+%%DATADIR%%/user/Themes/Boomy/screenshot.png
+%%DATADIR%%/user/Themes/Boomy/browse.png
+%%DATADIR%%/user/Themes/Boomy/pause.png
+%%DATADIR%%/user/Themes/Boomy/nobanner.png
+%%DATADIR%%/user/GameConfig/GF8P69.ini
 %%DATADIR%%/user/GameConfig/GC3P78.ini
 %%DATADIR%%/user/GameConfig/R8LE20.ini
 %%DATADIR%%/user/GameConfig/SSRPXT.ini
@@ -1458,6 +1475,56 @@ bin/dolphin-emu
 %%DATADIR%%/user/GameConfig/SERF4Q.ini
 %%DATADIR%%/user/GameConfig/GDSP78.ini
 %%DATADIR%%/user/GameConfig/GPAE01.ini
+%%DATADIR%%/user/GameConfig/GAZM69.ini
+%%DATADIR%%/user/GameConfig/GSSP8P.ini
+%%DATADIR%%/user/GameConfig/G5SE7D.ini
+%%DATADIR%%/user/GameConfig/GHSX69.ini
+%%DATADIR%%/user/GameConfig/GHLP69.ini
+%%DATADIR%%/user/GameConfig/R3MP01.ini
+%%DATADIR%%/user/GameConfig/RS5JC8.ini
+%%DATADIR%%/user/GameConfig/RH8E4F.ini
+%%DATADIR%%/user/GameConfig/GQWX69.ini
+%%DATADIR%%/user/GameConfig/G5SP7D.ini
+%%DATADIR%%/user/GameConfig/RS5PC8.ini
+%%DATADIR%%/user/GameConfig/GHLJ69.ini
+%%DATADIR%%/user/GameConfig/GSSJ8P.ini
+%%DATADIR%%/user/GameConfig/SDBP78.ini
+%%DATADIR%%/user/GameConfig/GH4M69.ini
+%%DATADIR%%/user/GameConfig/GKYJ01.ini
+%%DATADIR%%/user/GameConfig/GSSP70.ini
+%%DATADIR%%/user/GameConfig/SDBE78.ini
+%%DATADIR%%/user/GameConfig/RS5EC8.ini
+%%DATADIR%%/user/GameConfig/G2RE52.ini
+%%DATADIR%%/user/GameConfig/GVLF69.ini
+%%DATADIR%%/user/GameConfig/GH4S69.ini
+%%DATADIR%%/user/GameConfig/GAZI69.ini
+%%DATADIR%%/user/GameConfig/GHLX69.ini
+%%DATADIR%%/user/GameConfig/GHSP69.ini
+%%DATADIR%%/user/GameConfig/RH8X4F.ini
+%%DATADIR%%/user/GameConfig/GAZD69.ini
+%%DATADIR%%/user/GameConfig/GAZH69.ini
+%%DATADIR%%/user/GameConfig/GHLY69.ini
+%%DATADIR%%/user/GameConfig/GP5P01.ini
+%%DATADIR%%/user/GameConfig/GAZP69.ini
+%%DATADIR%%/user/GameConfig/GQWP69.ini
+%%DATADIR%%/user/GameConfig/GH4F69.ini
+%%DATADIR%%/user/GameConfig/GH4J69.ini
+%%DATADIR%%/user/GameConfig/GVLD69.ini
+%%DATADIR%%/user/GameConfig/GZPP70.ini
+%%DATADIR%%/user/GameConfig/GHSJ69.ini
+%%DATADIR%%/user/GameConfig/GAZS69.ini
+%%DATADIR%%/user/GameConfig/GVLP69.ini
+%%DATADIR%%/user/GameConfig/GHLZ69.ini
+%%DATADIR%%/user/GameConfig/GH4I69.ini
+%%DATADIR%%/user/GameConfig/GH4P69.ini
+%%DATADIR%%/user/GameConfig/RH8JEL.ini
+%%DATADIR%%/user/GameConfig/GAZF69.ini
+%%DATADIR%%/user/GameConfig/GAZJ69.ini
+%%DATADIR%%/user/GameConfig/GP5J01.ini
+%%DATADIR%%/user/GameConfig/GQWJ69.ini
+%%DATADIR%%/user/GameConfig/GH4D69.ini
+%%DATADIR%%/user/GameConfig/GZPE70.ini
+%%DATADIR%%/user/GameConfig/GH4H69.ini
 %%DATADIR%%/user/Wii/shared2/sys/SYSCONF
 %%DATADIR%%/user/Wii/shared2/ec/shopsetu.log
 %%DATADIR%%/user/Wii/shared2/succession/shop.log
@@ -1486,6 +1553,8 @@ bin/dolphin-emu
 @dirrm %%DATADIR%%/user/OpenCL
 @dirrm %%DATADIR%%/user/Maps
 @dirrm %%DATADIR%%/user/GameConfig
+@dirrm %%DATADIR%%/user/Themes/Boomy
+@dirrm %%DATADIR%%/user/Themes
 @dirrm %%DATADIR%%/user
 @dirrm %%DATADIR%%/sys/Wii
 @dirrm %%DATADIR%%/sys/GC
