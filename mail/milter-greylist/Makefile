@@ -1,15 +1,17 @@
 # Created by: Cyril Guibourg
 # $FreeBSD$
-#
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.3
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
+MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
+		http://fossies.org/unix/privat/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix
+
+LICENSE=	BSD
 
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -27,16 +29,14 @@ MAKE_JOBS_UNSAFE=	yes
 # installed port preference over it.
 ##
 
-OPTIONS_DEFINE=	SPF GEOIP CURL OPENLDAP P0F POSTFIX
+OPTIONS_DEFINE=		MANPAGES SPF GEOIP CURL LDAP P0F POSTFIX
 OPTIONS_DEFAULT=	MANPAGES
-MANPAGES_DESC=	Install manpages
-SPF_DESC=	Include SPF support
-GEOIP_DESC=	Include GeoIP support
-OPENLDAP_DESC=	Include OpenLDAP support
-P0F_DESC=	Include P0F support
-POSTFIX_DESC=	Use Postfix instead of Sendmail
+SPF_DESC=		SPF support
+CURL_DESC=		curl support
+P0F_DESC=		P0F support
+POSTFIX_DESC=		Use Postfix instead of Sendmail
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
 MAN5=		greylist.conf.5
@@ -54,13 +54,13 @@ CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .endif
-.if ${PORT_OPTIONS:MOPENLDAP}
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=yes
 CONFIGURE_ARGS+=	--with-openldap
 .endif
 .if ${PORT_OPTIONS:MP0F}
 RUN_DEPENDS+=	p0f:${PORTSDIR}/net-mgmt/p0f
-CONFIGURE_ARGS+=	--enable-p0f
+CONFIGURE_ARGS+=	--enable-p0f306
 .endif
 .if ${PORT_OPTIONS:MPOSTFIX}
 CONFIGURE_ARGS+=	--enable-postfix
@@ -86,7 +86,7 @@ USE_RC_SUBR=	milter-greylist
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/mail
-.if defined (WITH_MANPAGES)
+.if ${PORT_OPTIONS:MMANPAGES}
 	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
 .endif
@@ -97,11 +97,11 @@ do-install:
 post-install:
 	@${MKDIR} /var/milter-greylist
 	@${CHOWN} -R mailnull:mailnull /var/milter-greylist
-.if !${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-.if !defined (NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
@@ -123,4 +123,4 @@ post-install:
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
