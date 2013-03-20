@@ -1,0 +1,8 @@
+Library and tools to access the Personal Folder File (PFF) and the Offline
+Folder File (OFF) formats.
+PFF/OFF is used in several file types:
+    PAB (Personal Address Book)
+    PST (Personal Storage Table)
+    OST (Offline Storage Table) 
+
+WWW: http://code.google.com/p/libpff/
