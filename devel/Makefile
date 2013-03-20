@@ -1054,6 +1054,7 @@
     SUBDIR += libpciaccess
     SUBDIR += libpdel
     SUBDIR += libpeak
+    SUBDIR += libpff
     SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libplist
