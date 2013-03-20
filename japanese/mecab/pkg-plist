@@ -14,19 +14,3 @@ libexec/mecab/mecab-test-gen
 @unexec if cmp -s %D/etc/mecabrc.dist %D/etc/mecabrc; then rm -f %D/etc/mecabrc; else true; fi
 etc/mecabrc.dist
 @exec if [ ! -f %D/etc/mecabrc ]; then cp -p %D/%F %B/mecabrc; fi
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/bindings.html
-%%PORTDOCS%%%%DOCSDIR%%/dic-detail.html
-%%PORTDOCS%%%%DOCSDIR%%/dic.html
-%%PORTDOCS%%%%DOCSDIR%%/feature.html
-%%PORTDOCS%%%%DOCSDIR%%/format.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/learn.html
-%%PORTDOCS%%%%DOCSDIR%%/libmecab.html
-%%PORTDOCS%%%%DOCSDIR%%/mecab.html
-%%PORTDOCS%%%%DOCSDIR%%/partial.html
-%%PORTDOCS%%%%DOCSDIR%%/posid.html
-%%PORTDOCS%%%%DOCSDIR%%/soft.html
-%%PORTDOCS%%%%DOCSDIR%%/unk.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
