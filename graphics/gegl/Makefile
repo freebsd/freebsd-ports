@@ -3,12 +3,12 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A graph based image processing framework
+COMMENT=	Graph based image processing framework
 
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
 
