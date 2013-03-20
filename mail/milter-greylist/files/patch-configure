@@ -1,9 +1,11 @@
---- configure.orig	2010-07-12 08:27:51.000000000 +0400
-+++ configure	2010-08-05 05:18:10.000000000 +0400
-@@ -4978,7 +4978,7 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	2013-03-07 22:26:11.000000000 +0900
++++ configure	2013-03-14 15:35:15.476674058 +0900
+@@ -5899,7 +5899,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
 -  LIBS="$LIBS -lpthread"
 +  true; #LIBS="$LIBS -lpthread"
  else
