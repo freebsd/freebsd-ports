@@ -8,8 +8,7 @@
 PORTNAME=	calife
 PORTVERSION=	3.0.1
 CATEGORIES=	security
-MASTER_SITES=	http://dev.keltia.net/attachments/download/8/ \
-		http://static.keltia.net/download/
+MASTER_SITES=	http://assets.keltia.net/calife/
 DISTNAME=	calife-3.0.1
 
 MAKE_JOBS_SAFE=yes
