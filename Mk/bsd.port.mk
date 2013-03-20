@@ -6185,14 +6185,14 @@ do-config:
 
 .if !target(config-depend)
 config-depend:
-.if !exists(${DIALOG4PORTS})
+.if !exists(${DIALOG4PORTS}) && !defined(NO_DIALOG)
 	@echo -n "dialog4ports isn't installed, do you want to install it now? [Y/n] "; \
 	read answer; \
 	case $$answer in \
 	[Nn]|[Nn][Oo]) \
 		exit 1; \
 	esac; \
-	cd ${PORTSDIR}/ports-mgmt/dialog4ports; ${MAKE} install
+	cd ${PORTSDIR}/ports-mgmt/dialog4ports; ${MAKE} install clean
 .endif
 .endif
 
