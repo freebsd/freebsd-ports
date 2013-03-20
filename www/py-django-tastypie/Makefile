@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-tastypie
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	william88@gmail.com
 COMMENT=	Create REST API for Django apps
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0:${PORTSDIR}/devel/py-mimeparse \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0:${PORTSDIR}/devel/py-mimeparse \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}rose>=1:${PORTSDIR}/devel/py-rose
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
