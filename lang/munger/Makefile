@@ -1,12 +1,8 @@
-# New ports collection makefile for:  munger
-# Date created:                       Thu, 03 Jul 2003 20:05:06 EDT
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	munger
-PORTVERSION=	4.193
+PORTVERSION=	4.194
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
