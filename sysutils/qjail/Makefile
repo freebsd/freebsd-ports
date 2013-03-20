@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	qjail@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails
 
-LICENSE=	BSD
+RESTRICTED=	license/copyright in dispute
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
