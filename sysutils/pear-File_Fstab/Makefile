@@ -1,26 +1,19 @@
-# Ports collection makefile for:  pear-File_Fstab
-# Date created:			  09 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	File_Fstab
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to read and write fstab files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-PEAR_CATSRC=	yes
+#PEAR_CATSRC=	yes
 
-CATEGORY=	File
-FILES=		Fstab.php Fstab/Entry.php
-EXAMPLES=	example.php
-_EXAMPLESDIR=	.
+PEAR_AUTOINSTALL=	yes
 
 post-extract:
 .for file in ${FILES}
