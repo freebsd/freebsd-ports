@@ -1,15 +1,12 @@
---- ./Makefile.orig	2012-10-18 14:26:39.000000000 +0200
-+++ ./Makefile	2012-10-18 14:27:54.000000000 +0200
-@@ -16,13 +16,11 @@
+--- ./Makefile.orig	2013-03-19 20:10:16.000000000 +0100
++++ ./Makefile	2013-03-20 11:56:23.000000000 +0100
+@@ -18,12 +18,11 @@
  
- TARGET=httping
- 
--DEBUG=yes
--WFLAGS=-Wall -W
+ DEBUG=yes
+ WFLAGS=-Wall -W
 -OFLAGS=-O3
--CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
-+DEBUG=no
-+CFLAGS+=-DVERSION=\"$(VERSION)\"
+ CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
+ LDFLAGS=-lm
  
  PACKAGE=$(TARGET)-$(VERSION)
 -PREFIX=/usr
@@ -17,3 +14,15 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
  DOCDIR=$(PREFIX)/share/doc/$(TARGET)
+@@ -59,11 +58,6 @@
+ CFLAGS+=-DTCP_TFO
+ endif
+ 
+-ifeq ($(DEBUG),yes)
+-CFLAGS+=-D_DEBUG -ggdb
+-LDFLAGS+=-g
+-endif
+-
+ ifeq ($(ARM),yes)
+ CC=arm-linux-gcc
+ endif
