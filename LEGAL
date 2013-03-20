@@ -76,7 +76,8 @@ dlv			lang/dlv		Not sure if we can redistribute it
 dmd-*			lang/dmd		No redistribution of non validated binaries
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 dnews_*			news/dnews		Only free for schools and universities, but they have to register as well.  4 weeks of free trial for everybody We currently ask for permission to put a package on the CD-ROM
-doom3-linux-*		games/linux-doom3*	Redistribution limited
+doom3-linux-*		games/linux-doom3	Redistribution limited
+doom3-linux-*		games/linux-doom3-demo	Redistribution limited
 doomsrc.zip		games/doom		Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
 dsnake-*		games/dsnake		License prohibits any reselling
@@ -105,7 +106,8 @@ fp-freebsd-ws-*		security/f-prot		Free for personal use only
 freefonts-*		x11-fonts/freefonts	Some of the fonts are shareware.  Some are freeware.  Permission must be obtained before distributing at least four (mazama.license, muriel.license, roosthea.license, shf_____.license).  Two have inconsistent licenses (tempofon.license and tempoita.license say "placed into the public domain and may [not be] sold")
 freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
-fvcom/sourcecode1.tar.gz	science/fvcom*	Requires (free) registration
+fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
+fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
 fwtk/*			security/fwtk		No redistribution allowed
 gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
@@ -190,19 +192,26 @@ nttcp-*			benchmarks/nttcp	No commercial use
 OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
-oracle/*		databases/jdbc-oracle*	This software is under license and export controls
+oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
+oracle/*		databases/jdbc-oracle11g	This software is under license and export controls
+oracle/*		databases/jdbc-oracle8i	This software is under license and export controls
+oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pam_authsrv-*		security/pam_authsrv	No form of redistribution is allowed, because of linking against fwtk
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
-pgp*			security/pgp*		Various locality restrictions
+pgp*			security/pgp		Various locality restrictions
+pgp*			security/pgpdump	Various locality restrictions
+pgp*			security/pgpgpg		Various locality restrictions
+pgp*			security/pgpin		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
 prodosemu.*		emulators/prodosemu	Restrictive copyright on the ROM image
 qtools-*		mail/qtools		Possibly restricted binary distribution of modified versions
-quake4-linux-*		games/linux-quake4*	Redistribution is limited; see the license
+quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
+quake4-linux-*		games/linux-quake4-demo	Redistribution is limited; see the license
 Radiator/*		net/radiator		Commercial software
 raknet-*		devel/raknet		Original license is Indy license, special authorization granted to provide RakNet under GPL v3
 rapid-*			math/rapid		No commercial use
@@ -219,7 +228,8 @@ savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
 scv-1.0p2-sysc*		cad/scv			License agreement required
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by hand
 serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.html
-serious.sam*		games/linux-ssam*	Redistribution limited
+serious.sam*		games/linux-ssamtfe	Redistribution limited
+serious.sam*		games/linux-ssamtse	Redistribution limited
 sharefonts-*		x11-fonts/sharefonts	Shareware.  Cannot be distributed without prior authorization
 shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
