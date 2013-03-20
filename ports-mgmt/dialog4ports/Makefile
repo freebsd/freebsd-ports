@@ -14,7 +14,6 @@ COMMENT=	Console Interface to configure ports
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes
-USE_XZ=		yes
 MANCOMPRESSED=	yes
 MAN1=		${PORTNAME}.1
 MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
