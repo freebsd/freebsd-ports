@@ -1,29 +1,34 @@
-# New ports collection makefile for:	p5-MeCab
-# Date created:		23 April 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MeCab
-PORTVERSION=	0.994
+PORTVERSION=	0.995
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
+LICENSE=	BSD GPLv2 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD=	${WRKSRC}/BSD
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL
+
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 PERL_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONSFILE=	${PORT_DBDIR}/ja-p5-${PORTNAME}/options
 
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.pl ${EXAMPLESDIR}
