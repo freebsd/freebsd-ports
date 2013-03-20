@@ -1,4 +1,4 @@
-# Created by:	Thaddeus Covert <tcovert@grimmy.sahuagin.net>
+# Created by: Thaddeus Covert <tcovert@grimmy.sahuagin.net>
 # $FreeBSD$
 
 PORTNAME=	log4cxx
@@ -17,7 +17,6 @@ LICENSE=	AL2
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 OPTIONS_DEFINE=	BOOST DOCS DOXYGEN
-OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 
@@ -42,11 +41,7 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 .endif
 
-pre-configure:
-	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am
-	@(cd ${WRKSRC} && ./autogen.sh)
-	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' ${WRKSRC}/configure
+USES=	pathfix
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
