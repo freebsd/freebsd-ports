@@ -1,9 +1,9 @@
---- doc/fr/Makefile.in.orig	2009-07-05 15:43:34.000000000 +1000
-+++ doc/fr/Makefile.in	2009-07-05 15:42:37.000000000 +1000
-@@ -304,7 +304,7 @@
+--- doc/fr/Makefile.in.orig
++++ doc/fr/Makefile.in
+@@ -285,7 +285,7 @@
+ libexecdir = @libexecdir@
  localedir = @localedir@
  localstatedir = @localstatedir@
- lt_ECHO = @lt_ECHO@
 -mandir = $(datadir)/man/$(lang)
 +mandir = @mandir@/$(lang)
  mkdir_p = @mkdir_p@
