@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 USE_XORG=	x11 xcursor
 USES=		bison
 USE_BZIP2=	yes
