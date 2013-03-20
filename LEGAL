@@ -103,7 +103,6 @@ fp-freebsd-ws-*		security/f-prot		Free for personal use only
 freefonts-*		x11-fonts/freefonts	Some of the fonts are shareware.  Some are freeware.  Permission must be obtained before distributing at least four (mazama.license, muriel.license, roosthea.license, shf_____.license).  Two have inconsistent licenses (tempofon.license and tempoita.license say "placed into the public domain and may [not be] sold")
 freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
-fsharp/*		lang/fsharp		Microsoft Research Shared Source License Agreement
 fvcom/sourcecode1.tar.gz	science/fvcom*	Requires (free) registration
 fwtk/*			security/fwtk		No redistribution allowed
 gamess.*/gamess*	science/gamess		No Redistribution
