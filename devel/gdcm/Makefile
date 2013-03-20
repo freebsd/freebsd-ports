@@ -9,10 +9,11 @@ MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Grassroots DICOM library
 
-LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg \
-   		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
+   		expat:${PORTSDIR}/textproc/expat2
 
-OPTIONS_DEFINE=	VTK
+OPTIONS_DEFINE=	VTK DOCS
+OPTIONS_UNSET=	DOCS
 VTK_DESC=	Build with VTK bindings
 
 USE_BZIP2=	yes
@@ -44,13 +45,13 @@ PLIST_SUB+=	VTK="@comment "
 
 GDCM_SO=	2
 GDCM_MAJ=	2.2
-GDCM_MIN=	1
+GDCM_MIN=	2
 
 PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
 		GDCM_MIN="${GDCM_MIN}" \
 		GDCM_SO="${GDCM_SO}"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
     		pdfopt:${PORTSDIR}/print/ghostscript9 \
    		pdflatex:${PORTSDIR}/print/teTeX-base
@@ -69,5 +70,8 @@ CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
 post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|share/man|man|g;' ${WRKSRC}/CMakeLists.txt
+.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKSRC}/Utilities/doxygen && ${LOCALBASE}/bin/doxygen -u doxyfile.in 
+.endif
 
 .include <bsd.port.mk>
