@@ -99,6 +99,7 @@ include/gdcm-%%GDCM_MAJ%%/gdcmExplicitImplicitDataElement.h
 include/gdcm-%%GDCM_MAJ%%/gdcmExplicitImplicitDataElement.txx
 include/gdcm-%%GDCM_MAJ%%/gdcmFiducials.h
 include/gdcm-%%GDCM_MAJ%%/gdcmFile.h
+include/gdcm-%%GDCM_MAJ%%/gdcmFileAnonymizer.h
 include/gdcm-%%GDCM_MAJ%%/gdcmFileDerivation.h
 include/gdcm-%%GDCM_MAJ%%/gdcmFileExplicitFilter.h
 include/gdcm-%%GDCM_MAJ%%/gdcmFileMetaInformation.h
@@ -309,8 +310,8 @@ include/gdcm-%%GDCM_MAJ%%/gdcmcharls/interface.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/lookuptable.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/losslesstraits.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/processline.h
+include/gdcm-%%GDCM_MAJ%%/gdcmcharls/publictypes.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/scan.h
-include/gdcm-%%GDCM_MAJ%%/gdcmcharls/stdafx.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/streams.h
 include/gdcm-%%GDCM_MAJ%%/gdcmcharls/util.h
 include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/12/jconfig.h
