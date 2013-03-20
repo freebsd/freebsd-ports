@@ -1,13 +1,9 @@
-# New ports collection makefile for:	i3lock
-# Date created:		2009-05-22
-# Whom:			Dennis Herrmann <dhn@FreeBSD.org>
-#
+# Created by: Dennis Herrmann <dhn@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	i3lock
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/ \
 		http://mirror.4bit.ws/ \
