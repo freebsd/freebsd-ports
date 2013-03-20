@@ -160,8 +160,8 @@ lib/gegl-%%GEGL_VER%%/introspect.la
 lib/gegl-%%GEGL_VER%%/introspect.so
 lib/gegl-%%GEGL_VER%%/invert.la
 lib/gegl-%%GEGL_VER%%/invert.so
-lib/gegl-%%GEGL_VER%%/jp2-load.la
-lib/gegl-%%GEGL_VER%%/jp2-load.so
+%%JP2%%lib/gegl-%%GEGL_VER%%/jp2-load.la
+%%JP2%%lib/gegl-%%GEGL_VER%%/jp2-load.so
 lib/gegl-%%GEGL_VER%%/layer.la
 lib/gegl-%%GEGL_VER%%/layer.so
 lib/gegl-%%GEGL_VER%%/lens-distortion.la
