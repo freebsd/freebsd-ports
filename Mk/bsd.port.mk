@@ -6190,7 +6190,7 @@ config-depend:
 	read answer; \
 	case $$answer in \
 	[Nn]|[Nn][Oo]) \
-		exit 0; \
+		exit 1; \
 	esac; \
 	cd ${PORTSDIR}/ports-mgmt/dialog4ports; ${MAKE} install
 .endif
