@@ -1,6 +1,3 @@
-#-*- mode: makefile; tab-width: 4; -*-
-# ex:ts=4
-#
 # $FreeBSD$
 #
 # bsd.zenoss.mk - Support for Zenoss ports and Zenpacks.
@@ -8,8 +5,19 @@
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing
 # them yourself.
+#
+# MAINTAINER: zenoss@experts-exchange.com
+#
+# Feature:      zenoss
+# Usage:        USES=zenoss
+# Valid ARGS:   does not require args
 
-bsd_zenoss_mk_MAINTAINER=	zenoss@experts-exchange.com
+.if !defined(_INCLUDE_ZENOSS_MK)
+_INCLUDE_ZENOSS_MK=    yes
+
+.if defined(zenoss_ARGS)
+IGNORE= USES=zenoss does not require args
+.endif
 
 BUILD_DEPENDS+=	zenoss>=3.1.0:${PORTSDIR}/net-mgmt/zenoss
 RUN_DEPENDS+=	zenoss>=3.1.0:${PORTSDIR}/net-mgmt/zenoss
@@ -70,4 +78,6 @@ do-install:
 	${MKDIR} ${ZPACKHOME}
 	${INSTALL_DATA} ${WRKSRC}/dist/${ZPACK} ${ZPACKHOME}
 	@${CAT} ${PKGMESSAGE}
+.endif
+
 .endif

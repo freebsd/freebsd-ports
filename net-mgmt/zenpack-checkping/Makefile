@@ -1,9 +1,5 @@
-# New ports collection makefile for: CheckPing
-# Date created:    08 June 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CheckPing
 PORTVERSION=	1.0
@@ -16,12 +12,11 @@ COMMENT=	Provides nagios ping check for Zenoss monitoring
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 ZPACKPREFIX=	ZenPacks.Nagios.
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG=            0088e17
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

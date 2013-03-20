@@ -17,12 +17,11 @@ RUN_DEPENDS=	libvirt>=0.9.1:${PORTSDIR}/devel/libvirt
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 ZPACKPREFIX=	ZenPacks.community.
 ZPACKGROUP=	community
 WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG=  4113cfe
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

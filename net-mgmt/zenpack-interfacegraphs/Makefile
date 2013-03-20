@@ -1,9 +1,5 @@
-# New ports collection makefile for: InterfaceGraphs
-# Date created:    26 May 2011
-# Whom:      Zenoss <zenoss@experts-exchange.com>
-#
+# Created by: Zenoss <zenoss@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	InterfaceGraphs
 PORTVERSION=	1.0
@@ -16,12 +12,11 @@ COMMENT=	Provides a link that graphs all network interfaces for a device
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
+USES=		zenoss
 
 ZPACKGROUP=	community
 ZPACKPREFIX=	ZenPacks.community.
 WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG= 7ed2d7d
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.zenoss.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
