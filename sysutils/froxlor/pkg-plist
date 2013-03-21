@@ -39,6 +39,7 @@ www/froxlor/admin_updates.php
 www/froxlor/cache/.keep
 www/froxlor/css/jquery.jqplot.css
 www/froxlor/css/jquery.jqplot.min.css
+www/froxlor/css/jquery.jquery-ui.css
 www/froxlor/customer_aps.php
 www/froxlor/customer_autoresponder.php
 www/froxlor/customer_domains.php
@@ -239,6 +240,8 @@ www/froxlor/install/updates/syscp/1.2/update_1.2.19_1.4.inc.php
 www/froxlor/install/updates/syscp/1.4/update_1.4.inc.php
 www/froxlor/install/updatesql.php
 www/froxlor/js/excanvas.min.js
+www/froxlor/js/jquery-ui-1.8.13.min.js
+www/froxlor/js/jquery-ui.min.js
 www/froxlor/js/jquery.jqplot.min.js
 www/froxlor/js/jquery.min.js
 www/froxlor/js/jquery.tablesorter.min.js
