@@ -120,7 +120,6 @@ groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
 hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming with the TV card
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
-himeno/*		benchmarks/himenobench	Uncertain to distribute sources and binaries
 homard-*		french/homard		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
 huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
