@@ -27,13 +27,15 @@ CONFIGURE_ARGS=	--disable-dependency-tracking --disable-lua-extension
 
 PROJECTHOST=	ibus
 
-OPTIONS=	ANDROID_DB	"Build Android DB" on \
-			OPENPHRASE_DB	"Build Open Phrase DB" off \
-			OPENCC	"Use opencc" off
+OPTIONS_DEFINE=	ANDROID_DB OPENPHRASE_DB OPENCC NLS
+OPTIONS_DEFAULT=	ANDROID_DB
+ANDROID_DB_DESC=	Build Android DB
+OPENPHRASE_DB_DESC=	Build Open Phrase DB
+OPENCC_DESC=		Use opencc
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ANDROID_DB)
+.if ${PORT_OPTIONS:MANDROID_DB}
 CONFIGURE_ARGS+=	--enable-db-android
 PLIST_SUB+=	ANDROID_DB=""
 .else
@@ -44,7 +46,7 @@ PLIST_SUB+=	ANDROID_DB="@comment "
 OPENPHRASE_DBVER=	1.2.99
 OPENPHRASE_DBFILE=	pinyin-database-${OPENPHRASE_DBVER}.tar.bz2
 
-.if defined(WITH_OPENPHRASE_DB)
+.if ${PORT_OPTIONS:MOPENPHRASE_DB}
 CONFIGURE_ARGS+=	--enable-db-open-phrase
 DISTFILES+=	${OPENPHRASE_DBFILE}
 PLIST_SUB+=	OPENPHRASE_DB=""
@@ -53,14 +55,14 @@ CONFIGURE_ARGS+=	--disable-db-open-phrase
 PLIST_SUB+=	OPENPHRASE_DB="@comment "
 .endif
 
-.if defined(WITH_OPENCC)
+.if ${PORT_OPTIONS:MOPENCC}
 CONFIGURE_ARGS+=	--enable-opencc
 LIB_DEPENDS+=		opencc.1:${PORTSDIR}/chinese/opencc
 .else
 CONFIGURE_ARGS+=	--disable-opencc
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -69,11 +71,11 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
-.if defined(WITH_OPENPHRASE_DB)
+.if ${PORT_OPTIONS:MOPENPHRASE_DB}
 	@${CP} ${DISTDIR}/${OPENPHRASE_DBFILE} ${WRKSRC}/data/db/open-phrase
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

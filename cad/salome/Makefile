@@ -14,19 +14,20 @@ EXTRACT_ONLY=	#none
 
 MAINTAINER=	devel@stasyan.com
 
-OPTIONS=	\
-		GEOM		"GEOM module" 					on  \
-		MED		"MED module" 					on  \
-		SMESH		"SMESH module (require MED & GEOM)" 		on  \
-		NETGENPLUGIN	"Netgen-meser plugin"		 		on  \
-		VISU		"VISU module (require MED)" 			on  \
-		LIGHT		"LIGHT module" 					on  \
-		YACS		"Yacs module" 					on  \
-		MULTIPR		"Multipr module" 				on  \
-		RANDOMIZER	"Randomizer module" 				on  \
-		SIERPINSKY	"Sierpinsky module" 				on  \
-		JOBMAN		"Job manager module" 				on  \
-		MPI		"build with support parrallel calculation" 	on
+OPTIONS_DEFINE=	GEOM MED SMESH NETGENPLUGIN VISU LIGHT YACS MULTIPR RANDOMIZER SIERPINSKY
+OPTIONS_DEFAULT= GEOM MED SMESH NETGENPLUGIN VISU LIGHT YACS MULTIPR RANDOMIZER SIERPINSKY
+GEOM_DESC=		GEOM module
+MED_DESC=		MED module
+SMESH_DESC=		SMESH module (require MED & GEOM)
+NETGENPLUGIN_DESC=	Netgen-meser plugin
+VISU_DESC=		VISU module (require MED)
+LIGHT_DESC=		LIGHT module
+YACS_DESC=		Yacs module
+MULTIPR_DESC=		Multipr module
+RANDOMIZER_DESC=	Randomizer module
+SIERPINSKY_DESC=	Sierpinsky module
+JOBMAN_DESC=		Job manager module
+MPI_DESC=		build with support parrallel calculation
 
 RESOURCEDIR=	${PREFIX}/share/salome/resources
 
@@ -47,37 +48,37 @@ NO_BUILD=	yes
 RUN_DEPENDS+=	${RESOURCEDIR}/kernel:${PORTSDIR}/cad/salome-kernel \
 				${RESOURCEDIR}/gui:${PORTSDIR}/cad/salome-gui
 
-.if defined(WITH_GEOM)
+.if ${PORT_OPTIONS:MGEOM}
 RUN_DEPENDS+=	${RESOURCEDIR}/geom:${PORTSDIR}/cad/salome-geom
 .endif
-.if defined(WITH_LIGHT)
+.if ${PORT_OPTIONS:MLIGHT}
 RUN_DEPENDS+=	${RESOURCEDIR}/light:${PORTSDIR}/cad/salome-light
 .endif
-.if defined(WITH_YACS)
+.if ${PORT_OPTIONS:MYACS}
 RUN_DEPENDS+=	${RESOURCEDIR}/yacs:${PORTSDIR}/cad/salome-yacs
 .endif
-.if defined(WITH_RANDOMIZER)
+.if ${PORT_OPTIONS:MRANDOMIZER}
 RUN_DEPENDS+=	${RESOURCEDIR}/randomizer:${PORTSDIR}/cad/salome-randomizer
 .endif
-.if defined(WITH_VISU)
+.if ${PORT_OPTIONS:MVISU}
 RUN_DEPENDS+=	${RESOURCEDIR}/visu:${PORTSDIR}/cad/salome-visu
 .endif
-.if defined(WITH_MED)
+.if ${PORT_OPTIONS:MMED}
 RUN_DEPENDS+=	${RESOURCEDIR}/med:${PORTSDIR}/cad/salome-med
 .endif
-.if defined(WITH_SIERPINSKY)
+.if ${PORT_OPTIONS:MSIERPINSKY}
 RUN_DEPENDS+=	${RESOURCEDIR}/sierpinsky:${PORTSDIR}/cad/salome-sierpinsky
 .endif
-.if defined(WITH_SMESH)
+.if ${PORT_OPTIONS:MSMESH}
 RUN_DEPENDS+=	${RESOURCEDIR}/smesh:${PORTSDIR}/cad/salome-smesh
 .endif
-.if defined(WITH_NETGENPLUGIN)
+.if ${PORT_OPTIONS:MNETGENPLUGIN}
 RUN_DEPENDS+=	${RESOURCEDIR}/netgenplugin:${PORTSDIR}/cad/salome-netgenplugin
 .endif
-.if defined(WITH_MULTIPR)
+.if ${PORT_OPTIONS:MMULTIPR}
 RUN_DEPENDS+=	${RESOURCEDIR}/multipr:${PORTSDIR}/cad/salome-multipr
 .endif
-.if defined(WITH_JOBMAN)
+.if ${PORT_OPTIONS:MJOBMAN}
 RUN_DEPENDS+=	${RESOURCEDIR}/jobmanager:${PORTSDIR}/cad/salome-jobmanager
 .endif
 

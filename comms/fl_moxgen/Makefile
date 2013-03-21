@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fl_moxgen
-# Date created:         2012-05-15
-# Whom:                 Stephen Hurd <shurd@sasktel.net>
-#
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fl_moxgen
 PORTVERSION=	0.05
@@ -23,11 +19,13 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 DESKTOP_ENTRIES=	"Fl_MoxGen" "${COMMENT}" "" "${PORTNAME}" \
 			"Network;HamRadio;" "false"
 
-OPTIONS=	PDF	"Enable PDF Writing (requires libharu)"		on
+OPTIONS_DEFINE=	PDF
+OPTIONS_DEFAULT=	PDF
+PDF_DESC=	Enable PDF Writing (requires libharu)
 
 .include <bsd.port.options.mk>
 
-.ifdef WITH_PDF
+.if ${PORT_OPTIONS:MPDF}
  LIB_DEPENDS+=	hpdf:${PORTSDIR}/print/libharu
  ALL_TARGET=	fl_moxgen
 .else

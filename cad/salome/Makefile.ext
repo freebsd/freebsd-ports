@@ -269,7 +269,7 @@ STRIP=
 
 #turn off cppunit support
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "yacs" ||  ${SAL_MODULE} == "med"
-#.if defined(WITH_CPPUNIT)
+#.if ${PORT_OPTIONS:MCPPUNIT}
 #CONFIGURE_ARGS+=	--with-cppunit=${LOCALBASE} --with-cppunit_inc=${LOCALBASE}/include/cppunit
 #BUILD_DEPENDS+=		cppunit-config:${PORTSDIR}/devel/cppunit
 #PLIST_SUB+=     CPPUNIT=""
@@ -281,7 +281,7 @@ PLIST_SUB+=     CPPUNIT="@comment "
 
 #optionally dependency from mpich2
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med"
-.if defined(WITH_MPI)
+.if ${PORT_OPTIONS:MMPI}
 LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpich=${LOCALBASE}/mpich2 --with-mpi=${LOCALBASE}/mpich2
 PLIST_SUB+=     MPI=""
