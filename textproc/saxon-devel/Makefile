@@ -16,9 +16,10 @@ COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-OPTIONS=	JDOM "Install Jdom support" off \
-		DOM4J "Install dom4j support" off \
-		XOM "Install XOM support" off
+OPTIONS_DEFINE=	JDOM DOM4J XOM DOCS
+JDOM_DESC=	Jdom support
+DOM4J_DESC=	dom4j support
+XOM_DESC=	XOM support
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -36,18 +37,19 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JDOM)
+.if ${PORT_OPTIONS:MJDOM}
 JARFILES+=	saxon9-jdom.jar
 RUN_DEPENDS+=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
 .endif
 
-.if defined(WITH_DOM4J)
+.if ${PORT_OPTIONS:MDOM4J}
 JARFILES+=	saxon9-dom4j.jar
 RUN_DEPENDS+=	${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j
 .endif
 
-.if defined(WITH_XOM)
+.if ${PORT_OPTIONS:MXOM}
 JARFILES+=	saxon9-xom.jar
 RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom
 .endif
@@ -63,7 +65,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${JAVAJARDIR}/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
 	@cd ${WRKSRC}/samples/ \
 	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
@@ -82,7 +84,7 @@ do-install:
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${FIND} -s ${WRKSRC}/samples -not -type d | \
 		${SED} -ne 's,^${WRKSRC}/samples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
