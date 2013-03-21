@@ -1,13 +1,9 @@
-# New ports collection makefile for:	turbogears
-# Date created:		2006-01-08
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	TurboGears
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,31 +25,37 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy 
 		${PYTHON_PKGNAMEPREFIX}TGScheduler>0:${PORTSDIR}/devel/py-TGScheduler
 
 USE_GETTEXT=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-OPTIONS+=	ELIXIR	"Use Elixir as plugin" off \
-		NOSE	"Use nose TG[testtools]" off \
-		SQLOBJECT	"Use SQLObject as DB backend" on \
-		SQLALCHEMY	"Use SQLAlchemy as DB backend TG[future]" off
+OPTIONS_DEFINE=	ELIXIR NOSE SQLOBJECT SQLALCHEMY
+OPTIONS_DEFAULT=SQLOBJECT
+ELIXIR_DESC=	Use Elixir as plugin
+NOSE_DESC=	Use nose TG[testtools]
+SQLOBJECT_DESC=	Use SQLObject as DB backend
+SQLALCHEMY_DESC=Use SQLAlchemy as DB backend TG[future]
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined (WITH_ELIXIR)
+post-patch:
+	@${REINPLACE_CMD} -e 's,< 2.0a,!=2.0,g' ${WRKSRC}/setup.py \
+		${WRKSRC}/TurboGears.egg-info/requires.txt
+
+.if ${PORT_OPTIONS:MELIXIR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Elixir>=0.6.1:${PORTSDIR}/databases/py-Elixir
 .endif
 
-.if defined (WITH_NOSE)
+.if ${PORT_OPTIONS:MNOSE}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0.9.1:${PORTSDIR}/devel/py-nose
 .endif
 
-.if defined (WITH_SQLOBJECT)
+.if ${PORT_OPTIONS:MSQLOBJECT}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:${PORTSDIR}/databases/py-sqlobject
 .endif
 
-.if defined (WITH_SQLALCHEMY)
+.if ${PORT_OPTIONS:MSQLALCHEMY}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy06
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
