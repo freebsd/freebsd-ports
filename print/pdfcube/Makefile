@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfcube
-DISTVERSION=	0.0.4-beta
-PORTREVISION=	3
+PORTVERSION=	0.0.5
 CATEGORIES=	print
 MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 
@@ -17,7 +16,6 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PLIST_FILES=	bin/pdfcube
 
