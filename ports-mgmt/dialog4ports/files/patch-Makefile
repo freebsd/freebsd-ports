@@ -1,9 +1,0 @@
---- ./Makefile.orig	2013-03-20 05:02:31.000000000 -0500
-+++ ./Makefile	2013-03-21 07:55:18.790295806 -0500
-@@ -22,4 +22,6 @@
- LDADD+=	-ldialog
- .endif
- 
-+LDADD+=	-lm
-+
- .include <bsd.prog.mk>
