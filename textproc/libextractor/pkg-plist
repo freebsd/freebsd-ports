@@ -53,8 +53,8 @@ lib/libextractor/libextractor_nsfe.la
 lib/libextractor/libextractor_nsfe.so
 lib/libextractor/libextractor_odf.la
 lib/libextractor/libextractor_odf.so
-%%VORBISFILE%%lib/libextractor/libextractor_ogg.la
-%%VORBISFILE%%lib/libextractor/libextractor_ogg.so
+%%VORBIS%%lib/libextractor/libextractor_ogg.la
+%%VORBIS%%lib/libextractor/libextractor_ogg.so
 %%GSF%%lib/libextractor/libextractor_ole2.la
 %%GSF%%lib/libextractor/libextractor_ole2.so
 %%POPPLER%%lib/libextractor/libextractor_pdf.la
