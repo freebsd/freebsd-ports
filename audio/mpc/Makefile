@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpc
-# Date created:		Oct 02 2003
-# Whom:			Mark Reidel <ports@mark.reidle.info>
-#
+# Created by: Mark Reidel <ports@mark.reidle.info>
 # $FreeBSD$
-#
 
 PORTNAME=	mpc
 PORTVERSION=	0.21
@@ -15,7 +11,9 @@ COMMENT=	Command line client for the musicpd
 
 LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
 
-OPTIONS=	ICONV "Support for international characters" on
+OPTIONS_DEFINE=	EXAMPLES DOCS ICONV
+OPTIONS_DEFAULT=	ICONV
+ICONV_DESC=	Support for international characters
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -27,7 +25,9 @@ PORTDOCS=	AUTHORS README NEWS
 
 PLIST_FILES=	bin/${PORTNAME} %%PORTEXAMPLES%%%%EXAMPLESDIR%%/${PORTNAME}-completion.bash
 
-.ifndef(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLESDIR}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
@@ -35,12 +35,10 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 MAN1=		${PORTNAME}.1
 .endif
 
-.include <bsd.port.pre.mk>
-
-.ifdef(WITHOUT_ICONV)
-CONFIGURE_ARGS+=--disable-iconv
-.else
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=--disable-iconv
 .endif
 
 post-patch:
@@ -48,13 +46,13 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}-completion.bash ${EXAMPLESDIR}
 .endif
@@ -62,4 +60,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

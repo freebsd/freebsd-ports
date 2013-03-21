@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmpdclient
-# Date created:		4 June 2007
-# Whom:			uyamba@gmail.com
-#
+# Created by: uyamba@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	qmpdclient
 PORTVERSION=	1.2.2
@@ -27,32 +23,31 @@ INSTALLS_ICONS=	yes
 QMAKE_ARGS=	${QMAKE_PRO}
 QMAKE_PRO=	${PORTNAME}.pro
 
-OPTIONS=	DBUS	"Enable D-BUS support"	off \
-		NLS	"Enable National Language Support" on
+OPTIONS_DEFINE=	DBUS NLS DEBUG
 
 DATADIR=	${PREFIX}/share/QMPDClient
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include  <bsd.port.pre.mk>
+.include  <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITH_DBUS) && !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 USE_QT4+=	dbus
 QMAKEFLAGS+=	"CONFIG+=qdbus"
 .endif
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 QMAKEFLAGS+=	"CONFIG+=debug"
 .endif
 
 post-patch:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
 		${WRKSRC}/${QMAKE_PRO}
 .endif
@@ -67,4 +62,4 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
 		${QMAKEFLAGS} ${QMAKE_ARGS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

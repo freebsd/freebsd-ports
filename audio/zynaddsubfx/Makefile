@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zynaddsubfx
-# Date created:		2007-01-25
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.4.1
@@ -27,26 +23,24 @@ USE_GMAKE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	ALSAMIDI	"Enable midi input through ALSA" off \
-		GUI		"Enable graphical front-end" on \
-		JACK		"Enable sound output through JackAudio" off \
-		PORTAUDIO	"Enable sound output through PortAudio" off
+OPTIONS_DEFINE=	ALSAMIDI GUI
+OPTIONS_DEFAULT=	GUI
+ALSAMIDI_DESC=		midi input through ALSA
+OPTIONS_RADIO=	OUTPUT
+OPTIONS_RADIO_OUTPUT=	JACK PORTAUDIO
+OUTPUT_DESC=	Audio output type
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ALSAMIDI)
+.if ${PORT_OPTIONS:MALSAMIDI}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .endif
 
-.if (defined(WITH_JACK) && defined(WITH_PORTAUDIO))
-BROKEN=		only one output type can be chosen
-.endif
-
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
@@ -66,19 +60,19 @@ post-patch:
 		's|LIBS= -lm  -lmxml -lz|LIBS= -lm  -lmxml -lz -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/Makefile
 
-.if !defined(WITH_ALSAMIDI)
+.if ! ${PORT_OPTIONS:MALSAMIDI}
 	${REINPLACE_CMD} -e 's|LINUX_MIDIIN=ALSA|LINUX_MIDIIN=OSS|g' \
 		${WRKSRC}/Makefile.inc
 .endif
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=OSS_AND_JACK|g' \
 		${WRKSRC}/Makefile.inc
 .endif
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=PA|g' \
 		${WRKSRC}/Makefile.inc
 .endif
-.if defined(WITHOUT_GUI)
+.if ! ${PORT_OPTIONS:MGUI}
 	${REINPLACE_CMD} -e 's|DISABLE_GUI=NO|DISABLE_GUI=YES|g' \
 		${WRKSRC}/Makefile.inc
 .endif
@@ -91,4 +85,4 @@ do-install:
 		cd ${WRKDIR}/${DISTNAME}/banks && ${FIND} . -type f \
 			-exec ${INSTALL_DATA} {} ${DATADIR}/banks/{} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

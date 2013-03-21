@@ -1,9 +1,5 @@
-# New ports collection makefile for: liquidsoap
-# Date created:                4 Nov 2009
-# Whom:                        Mykola Dzham <i@levsha.me>
-#
+# Created by: Mykola Dzham <i@levsha.me>
 # $FreeBSD$
-#
 
 PORTNAME=	liquidsoap
 PORTVERSION=	1.0.0
@@ -29,30 +25,30 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 BUILD_DEPENDS+=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 .endif
 
-OPTIONS=	AACPLUS		"AAC+ encoding"	On	\
-		AO		"portable and stable, but it does only output"	Off \
-		CRY		"streaming to icecast and compatible servers"	On	\
-		DSSI		"standard for synthesizer plugins (need LADSPA)"	Off	\
-		FAAD		"AAC decoding"	On \
-		FESTIVAL	"speech synthesis (say)"	On	\
-		FLAC		"flac format decoding and encoding" Off	\
-		GAVL		"converts from and to many formats"	Off \
-		GSTREAMER	"used to provide V4l inputs"	Off \
-		JACK		"audio connection kit, designed for low latency"	On \
-		LADSPA		"audio plugins providing sound effects"	Off \
-		LO		"OSC protocol to have external controls"	Off	\
-		MAD		"for MP3 decoding"	On \
-		OGG		"ogg/vorbis and ogg/theora encoding and decoding"	On \
-		VOAACENC	"AAC encoding"	On	\
-		VORBIS		"ogg/vorbis encoding and decoding (need OGG)"	On \
-		SCHROEDINGER	"for ogg/dirac encoding and decoding (need OGG)"	Off	\
-		SPEEX		"ogg/speex encoding and decoding (need OGG)"	Off \
-		THEORA		"ogg/theora encoding and decoding (need OGG)"	Off \
-		SAMPLERATE	"for having better quality resampling"	Off \
-		SOUNDTOUCH	"for changing pitch and tempo of sound" Off \
-		PULSEAUDIO	"cross-platform audio sound server"	Off \
-		TAGLIB		"for MP3 ID3 tag reading"	On \
-		WGET		"for downloading remote files (http, https, ftp)"	On
+OPTIONS_DEFINE=	AACPLUS AO CRY DSSI FAAD FESTIVAL FLAC GAVL GSTREAMER JACK LADSPA LO \
+		MAD OGG VOAACENC VORBIS SCHROEDINGER SPEEX THEORA SAMPLERATE PULSEAUDIO \
+		TAGLIB WGET DOCS EXAMPLES
+OPTIONS_DEFAULT=	AACPLUS CRY FAAD FESTIVAL JACK MAD OGG VOAACENC VORBIS TAGLIB WGET
+AACPLUS_DESC=		AAC+ encoding
+AO_DESC=		portable and stable, but it does only output
+CRY_DESC=		streaming to icecast and compatible servers
+DSSI_DESC=		standard for synthesizer plugins (need LADSPA)
+FESTIVAL_DESC=		speech synthesis (say)
+GAVL_DESC=		converts from and to many formats
+GSTREAMER_DESC=		used to provide V4l inputs
+JACK_DESC=		audio connection kit, designed for low latency
+LADSPA_DESC=		audio plugins providing sound effects
+LO_DESC=		OSC protocol to have external controls
+OGG_DESC=		ogg/vorbis and ogg/theora encoding and decoding
+VOAACENC_DESC=		AAC encoding
+VORBIS_DESC=		ogg/vorbis encoding and decoding (need OGG)
+SCHROEDINGER_DESC=	ogg/dirac encoding and decoding (need OGG)
+SPEEX_DESC=		ogg/speex encoding and decoding (need OGG)
+THEORA_DESC=		ogg/theora encoding and decoding (need OGG)
+SAMPLERATE_DESC=	for having better quality resampling
+SOUNDTOUCH_DESC=	for changing pitch and tempo of sound
+TAGLIB_DESC=		for MP3 ID3 tag reading
+WGET_DESC=		for downloading remote files (http, https, ftp)
 
 # xmplapalylist disabled now: missing ocaml-xmlm port
 #		XMLPLAYLIST	"support various xml format (rss/podcast/etc)"	Off \
@@ -81,13 +77,6 @@ CONFIGURE_ARGS=	--disable-gui --localstatedir=/var
 CFLAGS+=	-I${LOCALBASE}/${OCAML_LIBDIR}
 
 MAKE_ENV+=	OCAMLMKLIB_FLAGS="-L${LOCALBASE}/lib"
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	PORTDOCS="@: "
-.endif
-.if defined(NOPORTEXAMPLES)
-MAKE_ENV+=	PORTEXAMPLES="@: "
-.endif
-
 MAN1=	liquidsoap.1
 
 LIQUIDSOAP_USER=	liquidsoap
@@ -105,7 +94,14 @@ PLIST_SUB=	RELVER=${PORTVERSION} \
 
 .include <bsd.port.options.mk>
 
-WITH_LAME=	yes
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ENV+=	PORTDOCS="@: "
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+MAKE_ENV+=	PORTEXAMPLES="@: "
+.endif
+
+PORT_OPTIONS+=	LAME
 
 # alsa and portaudio disabled permanently - alsa is linux only, portaudio broken
 _ALL_PACKAGES=	aacplus alsa ao cry dssi faad flac gavl gstreamer ladspa lame lo mad ogg vorbis schroedinger speex theora samplerate soundtouch voaacenc portaudio pulseaudio taglib xmlplaylist lastfm
@@ -132,36 +128,36 @@ LIB_DEPENDS_pulseaudio=	pulse.0:${PORTSDIR}/audio/pulseaudio
 LIB_DEPENDS_taglib=	tag.1:${PORTSDIR}/audio/taglib
 LIB_DEPENDS_voaacenc=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
 
-.if defined(WITH_FESTIVAL)
+.if ${PORT_OPTIONS:MFESTIVAL}
 RUN_DEPENDS+=	${LOCALBASE}/bin/festival:${PORTSDIR}/audio/festival
 .endif
 
-.if defined(WITH_WGET)
+.if ${PORT_OPTIONS:MWGET}
 RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 .endif
 
-.if defined(WITH_VORBIS) && !defined(WITH_OGG)
+.if ${PORT_OPTIONS:MVORBIS} && ! ${PORT_OPTIONS:MDOCS}
 IGNORE=	ogg required for vorbis. please rerun make config and select ogg
 .endif
 
-.if defined(WITH_SPEEX) && !defined(WITH_OGG)
+.if ${PORT_OPTIONS:MSPEEX} && ! ${PORT_OPTIONS:MOGG}
 IGNORE=	ogg required for speex. please rerun make config and select ogg
 .endif
 
-.if defined(WITH_THEORA) && ( !defined(WITH_OGG) || !defined(WITH_VORBIS) )
+.if ${PORT_OPTIONS:MTHEORA} && ( ! ${PORT_OPTIONS:MOGG} || ! ${PORT_OPTIONS:MVORBIS} )
 IGNORE=	ogg and vorbis required for theora. Please rerun make config and select ogg and vorbis
 .endif
 
-.if defined(WITH_LASTFM) && !defined(WITH_XMLPLAYLIST)
+.if ${PORT_OPTIONS:MLASTFM} && ${PORT_OPTIONS:MXMLPLAYLIST}
 IGNORE=	xmlplaylist required for lastfm. please rerun make config and select xmlplaylist
 .endif
 
-.if defined(WITH_DSSI) && !defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MDSSI} &&  ! ${PORT_OPTIONS:MLADSPA}
 IGNORE=	ladspa required for dssi. Please rerun make config and select ladspa
 .endif
 
 #Server is known as JACK, but module named ocaml-bjack
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 _DISABLE_SED_ARGS+=	-e "s/^ocaml-bjack/\#ocaml-bjack/"
@@ -169,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-bjack
 .endif
 
 .for i in ${_ALL_PACKAGES}
-.if defined(WITH_${i:U})
+.if ${PORT_OPTIONS:M${i:U}}
 .if defined(LIB_DEPENDS_${i})
 LIB_DEPENDS+=	${LIB_DEPENDS_${i}}
 .endif
@@ -182,7 +178,7 @@ CONFIGURE_ARGS+=	--disable-${i}
 .endif
 .endfor
 
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET=	all doc
 .endif
 

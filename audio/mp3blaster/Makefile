@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp3blaster
-# Date created:		5 January 2000
-# Whom:			Michael Vasilenko <acid@stu.cn.ua>
-#
+# Created by: Michael Vasilenko <acid@stu.cn.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3blaster
 PORTVERSION=	3.2.5
@@ -25,41 +21,41 @@ MAN1=		mp3blaster.1 nmixer.1 splay.1
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	LIRC "LIRC support" off \
-		SIDPLAY "Sidplayer support" on \
-		VORBIS "Ogg Vorbis support" on
+OPTIONS_DEFINE=	LIRC SIDPLAY VORBIS DOCS
+OPTIONS_DEFAULT=	SIDPLAY VORBIS
+SIDPLAY_DESC=	Sidplayer support
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=		lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--with-lirc
 .endif
 
-.if !defined(WITHOUT_SIDPLAY)
+.if ${PORT_OPTIONS:MSIDPLAY}
 LIB_DEPENDS+=		sidplay.1:${PORTSDIR}/audio/libsidplay
 .else
 CONFIGURE_ARGS+=	--without-sidplay
 .endif
 
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=	--without-oggvorbis
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=		vorbisfile.6:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=	--without-oggvorbis
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=	--with-sdl
 USE_SDL=	yes
 .else
 CONFIGURE_ARGS+=	--without-sdl
 .endif
 
-.if defined(WITH_NAS)
+.if ${PORT_OPTIONS:MNAS}
 CONFIGURE_ARGS+=	--with-nas
 LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
 LDFLAGS+=		-laudio
@@ -67,8 +63,9 @@ LDFLAGS+=		-laudio
 CONFIGURE_ARGS+=	--without-nas
 .endif
 
+.include <bsd.port.pre.mk>
 .if ${HAVE_GNOME:Mesound} != ""
-USE_GNOME+=     	esound
+USE_GNOME+=		esound
 CONFIGURE_ARGS+=	--with-esd
 .else
 CONFIGURE_ARGS+=	--without-esd
@@ -80,7 +77,7 @@ post-patch:
 				${WRKSRC}/doc/sample.mp3blasterrc
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

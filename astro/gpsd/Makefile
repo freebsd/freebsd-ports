@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpsd
-# Date created:				Jan, 10. 2006
-# Whom:					Anton Karpov <toxa@toxahost.ru>
-#
+# Created by: Anton Karpov <toxa@toxahost.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gpsd
 PORTVERSION=	3.6
@@ -17,7 +13,8 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-USE_GNOME=	pkgconfig
+USES=		pathfix
+USE_PKGCONFIG=	build
 USE_SCONS=	yes
 USE_RC_SUBR=	gpsd
 USE_PYTHON=	yes
@@ -37,214 +34,217 @@ MAN5=	srec.5 gpsd_json.5
 MAN8=	gpsd.8 gpsdctl.8
 MANCOMPRESSED=	no
 
-OPTIONS=	AIVDM "Aivdm support" on \
-		ASHTECH "Ashtech support" on \
-		CPPBIND "Build C++ bindings" on \
-		DBUS "DBUS support" off \
-		EARTHMATE "DeLorme EarthMate Zodiac support" on \
-		EVERMORE "Evermore binary support" on \
-		FV18 "San Jose Navigation FV-18 support" on \
-		GARMIN "Garmin kernel driver support" on \
-		GARMINTXT "Garmin Simple Text support" on \
-		GEOSTAR "Geostar Protocol support" on \
-		GPSCLOCK "GPSclock support" on \
-		GTK2 "Install py-gtk2 (required for xgps & xgpsspeed)" off \
-		IP6 "IPv6 support" on \
-		ITRAX "iTrax support" on \
-		MTK "MTK-3301 support" on \
-		NAVCOM "Navcom support" on \
-		NETFEED "Build support for handling TCP/IP data sources" on \
-		NCURSES "Build with ncurses(3)" off \
-		NMEA "NMEA support" on \
-		NTPSHM "NTP time hinting support" on \
-		NTRIP "NTRIP support" on \
-		OCEANSERVER "Oceanserver support" on \
-		OLDPROTO "Old (pre-JSON) protocol support in client lib" on \
-		ONCORE "Motorola OnCore chipset support" on \
-		PASSTHROUGH "Build support for passing through JSON" on \
-		PPS "PPS time syncing support" on \
-		PPSONCTS "PPS pulse on CTS rather than DCD" off \
-		PROFILING "Profiling support" off \
-		RECONFIGURE "Allow gpsd to change device settings" on \
-		RTCM104V2 "rtcm104v2 support" on \
-		RTCM104V3 "rtcm104v3 support" on \
-		SHMEXPORT "Enable export via shared memory" on \
-		SIRF "SiRF chipset support" on \
-		SOCKEXPORT "Enable export over sockets" on \
-		SUPERSTARII "SuperStarII support" on \
-		TIMING "Build latency timing support" on \
-		TNT "True North Technologies support" on \
-		TRIPMATE "DeLorme TripMate support" on \
-		TSIP "Trimble TSIP support" on \
-		QTBIND "build QT bindings" off \
-		UBX "UBX protocol support" on \
-		USB "libusb support for USB devices" on
+OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FV18 GARMIN GARMINTXT \
+		GEOSTAR GPSCLOCK GTK2 IPV6 ITRAX MTK NAVCOM NETFEED NCURSES NMEA NTPSHM NTRIP \
+		OCEANSERVER OLDPROTO ONCORE PASSTHROUGH PPS PPSONCTS PROFILING RECONFIGURE \
+		RTCM104V2 RTCM104V3 SHMEXPORT SIRF SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE \
+		TSIP QTBIND UBX USB
+OPTIONS_DEFAULT=	AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FV18 GARMIN GARMINTXT GEOSTAR \
+			GPSCLOCK ITRAX NAVCOM NETFEED NMEA NTPSHM NTRIP OCEANSERVER OLDPROTO \
+			ONCORE PASSTHROUGH PPS RECONFIGURE RTCM104V2 RTCM104V3 SHMEXPORT SIRF \
+			SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE TSIP UBX USB
+
+AIVDM_DESC=		Aivdm support
+ASHTECH_DESC=		Ashtech support
+CPPBIND_DESC=		Build C++ bindings
+EARTHMATE_DESC=		DeLorme EarthMate Zodiac support
+EVERMORE_DESC=		Evermore binary support
+FV18_DESC=		San Jose Navigation FV-18 support
+GARMIN_DESC=		Garmin kernel driver support
+GARMINTXT_DESC=		Garmin Simple Text support
+GEOSTAR_DESC=		Geostar Protocol support
+GPSCLOCK_DESC=		GPSclock support
+GTK2_DESC=		Install py-gtk2 (required for xgps & xgpsspeed)
+ITRAX_DESC=		iTrax support
+MTK_DESC=		MTK-3301 support
+NAVCOM_DESC=		Navcom support
+NCURSES_DESC=		Build with ncurses(3)
+NETFEED_DESC=		Build support for handling TCP/IP data sources
+NMEA_DESC=		NMEA support
+NTPSHM_DESC=		NTP time hinting support
+NTRIP_DESC=		NTRIP support
+OCEANSERVER_DESC=	Oceanserver support
+OLDPROTO_DESC=		Old (pre-JSON) protocol support in client lib
+ONCORE_DESC=		Motorola OnCore chipset support
+PASSTHROUGH_DESC=	Build support for passing through JSON
+PPS_DESC=		PPS time syncing support
+PPSONCTS_DESC=		PPS pulse on CTS rather than DCD
+PROFILING_DESC=		Profiling support
+RECONFIGURE_DESC=	Allow gpsd to change device settings
+RTCM104V2_DESC=		rtcm104v2 support
+RTCM104V3_DESC=		rtcm104v3 support
+SHMEXPORT_DESC=		Enable export via shared memory
+SIRF_DESC=		SiRF chipset support
+SOCKEXPORT_DESC=	Enable export over sockets
+SUPERSTARII_DESC=	SuperStarII support
+TIMING_DESC=		Build latency timing support
+TNT_DESC=		True North Technologies support
+TRIPMATE_DESC=		DeLorme TripMate support
+TSIP_DESC=		Trimble TSIP support
+QTBIND_DESC=		build QT bindings
+UBX_DESC=		UBX protocol support
+USB_DESC=		libusb support for USB devices
 
 .include <bsd.port.options.mk>
 
-# Requires libusb.h available in 8.x
-.if ${OSVERSION} < 800069
-WITHOUT_USB=	yes
-.endif
-
 # Options related to GPS protocols
-.if defined(WITHOUT_NMEA)
+.if ! ${PORT_OPTIONS:MNMEA}
 SCONS_ARGS+=	nmea=no
 .endif
 
-.if defined(WITHOUT_ASHTECH)
+.if ! ${PORT_OPTIONS:MASHTECH}
 SCONS_ARGS+=	ashtech=no
 .endif
 
-.if defined(WITHOUT_EARTHMATE)
+.if ! ${PORT_OPTIONS:MEARTHMATE}
 SCONS_ARGS+=	earthmate=no
 .endif
 
-.if defined(WITHOUT_EVERMORE)
+.if ! ${PORT_OPTIONS:MEVERMORE}
 SCONS_ARGS+=	evermore=no
 .endif
 
-.if defined(WITHOUT_FV18)
+.if ! ${PORT_OPTIONS:MFV18}
 SCONS_ARGS+=	fv18=no
 .endif
 
-.if defined(WITHOUT_GARMIN)
+.if ! ${PORT_OPTIONS:MGARMIN}
 SCONS_ARGS+=	garmin=no
 .endif
 
-.if defined(WITHOUT_GARMINTXT)
+.if ! ${PORT_OPTIONS:MGARMINTXT}
 SCONS_ARGS+=	garmintxt=no
 .endif
 
-.if defined(WITHOUT_GEOSTAR)
+.if ! ${PORT_OPTIONS:MGEOSTAR}
 SCONS_ARGS+=	geostar=no
 .endif
 
-.if defined(WITHOUT_ITRAX)
+.if ! ${PORT_OPTIONS:MITRAX}
 SCONS_ARGS+=	itrax=no
 .endif
 
-.if defined(WITHOUT_MTK)
+.if ! ${PORT_OPTIONS:MMTK}
 SCONS_ARGS+=	mtk3301=no
 .endif
 
-.if defined(WITHOUT_NAVCOM)
+.if ! ${PORT_OPTIONS:MNAVCOM}
 SCONS_ARGS+=	navcom=no
 .endif
 
-.if defined(WITHOUT_ONCORE)
+.if ! ${PORT_OPTIONS:MONCORE}
 SCONS_ARGS+=	oncore=no
 .endif
 
-.if defined(WITHOUT_SIRF)
+.if ! ${PORT_OPTIONS:MSIRF}
 SCONS_ARGS+=	sirf=no
 .endif
 
-.if defined(WITHOUT_SUPERSTARII)
+.if ! ${PORT_OPTIONS:MSUPERSTARII}
 SCONS_ARGS+=	superstar2=no
 .endif
 
-.if defined(WITHOUT_TNT)
+.if ! ${PORT_OPTIONS:MTNT}
 SCONS_ARGS+=	tnt=no
 .endif
 
-.if defined(WITHOUT_TRIPMATE)
+.if ! ${PORT_OPTIONS:MTRIPMATE}
 SCONS_ARGS+=	tripmate=no
 .endif
 
-.if defined(WITHOUT_TSIP)
+.if ! ${PORT_OPTIONS:MTSIP}
 SCONS_ARGS+=	tsip=no
 .endif
 
-.if defined(WITHOUT_UBX)
+.if ! ${PORT_OPTIONS:MUBX}
 SCONS_ARGS+=	ubx=no
 .endif
 
 # Options related to Non-GPS protocols
-.if defined(WITHOUT_AIVDM)
+.if ! ${PORT_OPTIONS:MAIVDM}
 SCONS_ARGS+=	aivdm=no
 .endif
 
-.if defined(WITHOUT_GPSCLOCK)
+.if ! ${PORT_OPTIONS:MGPSCLOCK}
 SCONS_ARGS+=	gpsclock=no
 .endif
 
-.if defined(WITHOUT_NTRIP)
+.if ! ${PORT_OPTIONS:MNTRIP}
 SCONS_ARGS+=	ntrip=no
 .endif
 
-.if defined(WITHOUT_OCEANSERVER)
+.if ! ${PORT_OPTIONS:MOCEANSERVER}
 SCONS_ARGS+=	oceanserver=no
 .endif
 
-.if defined(WITHOUT_RTCM104V2)
+.if ! ${PORT_OPTIONS:MRTCM104V2}
 SCONS_ARGS+=	rtcm104v2=no
 .endif
 
-.if defined(WITHOUT_RTCM104V3)
+.if ! ${PORT_OPTIONS:MRTCM104V3}
 SCONS_ARGS+=	rtcm104v3=no
 .endif
 
 # Time service
-.if defined(WITHOUT_NTPSHM)
+.if ! ${PORT_OPTIONS:MNTPSHM}
 SCONS_ARGS+=	ntpshm=no
 .endif
 
-.if defined(WITHOUT_PPS)
+.if ! ${PORT_OPTIONS:MPPS}
 SCONS_ARGS+=	pps=no
 .else
-.	if defined(WITHOUT_NTPSHM)
+.	if ! ${PORT_OPTIONS:MNTPSHM}
 IGNORE=		PPS requires NTPSHM
 .	endif
 .endif
 
-.if defined(WITH_PPSONCTS)
+.if ${PORT_OPTIONS:MPPSONCTS}
 SCONS_ARGS+=	pps_on_cts=yes
 .endif
 
 # Export methods
-.if defined(WITHOUT_SOCKEXPORT)
+.if ! ${PORT_OPTIONS:MSOCKEXPORT}
 SCONS_ARGS+=	socket_export=no
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 SCONS_ARGS+=	dbus_export=yes
 .endif
 
-.if defined(WITHOUT_SHMEXPORT)
+.if ! ${PORT_OPTIONS:MSHMEXPORT}
 SCONS_ARGS+=	shm_export=no
 .endif
 
 # Communication
-.if defined(WITHOUT_USB)
+.if ! ${PORT_OPTIONS:MUSB}
 SCONS_ARGS+=	usb=no
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 SCONS_ARGS+=	ipv6=no
 .endif
 
-.if defined(WITHOUT_NETFEED)
+.if ! ${PORT_OPTIONS:MNETFEED}
 SCONS_ARGS+=	netfeed=no
 .endif
 
-.if defined(WITHOUT_PASSTHROUGH)
+.if ! ${PORT_OPTIONS:MPASSTHROUGH}
 SCONS_ARGS+=	passthrough=no
 .endif
 
 # Other daemon options
-.if defined(WITHOUT_TIMING)
+.if ! ${PORT_OPTIONS:MTIMING}
 SCONS_ARGS+=	timing=no
 .endif
 
 # Client-side options
-.if defined(WITHOUT_OLDPROTO)
+.if ! ${PORT_OPTIONS:MOLDPROTO}
 SCONS_ARGS+=	oldstyle=no
 .endif
 
-.if defined(WITH_QTBIND)
+.if ${PORT_OPTIONS:MQTBIND}
 USE_QT4=	network
 SCONS_ARGS+=	libQgpsmm=yes
 PLIST_SUB+=	QTBIND=""
@@ -253,23 +253,24 @@ SCONS_ARGS+=	libQgpsmm=no
 PLIST_SUB+=	QTBIND="@comment "
 .endif
 
-.if defined(WITHOUT_RECONFIGURE)
+.if ! ${PORT_OPTIONS:MRECONFIGURE}
 SCONS_ARGS+=	reconfigure=no
 .endif
 
-.if defined(WITHOUT_CPPBIND)
+.if ! ${PORT_OPTIONS:MCPPBIND}
 SCONS_ARGS+=	libgpsmm=no
 .endif
 
-.if defined(WITHOUT_NCURSES)
+.if ! ${PORT_OPTIONS:MNCURSES}
 SCONS_ARGS+=	ncurses=no
 PLIST_SUB+=	CURSES="@comment "
 .else
 PLIST_SUB+=	CURSES=""
+USE_NCURSES=	yes
 .endif
 
 # Build control
-.if defined(WITH_PROFILING)
+.if ${PORT_OPTIONS:MPROFILING}
 SCONS_ARGS+=	profiling=yes
 .endif
 

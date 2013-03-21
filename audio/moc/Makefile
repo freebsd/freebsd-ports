@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moc
-# Date created:				24 July 2005
-# Whom:					Revis Zinkov <rzinkov@gmail.com>
-#
+# Created by: Revis Zinkov <rzinkov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
@@ -24,27 +20,20 @@ MAN1=		mocp.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	JACK "JACK support" off \
-		MP3 "MP3 support" on \
-		FFMPEG "FFMPEG support" off \
-		MUSEPACK "Musepack (mpc) support" off \
-		VORBIS "Ogg Vorbis support" on \
-		FLAC "FLAC support" off \
-		SNDFILE "libsndfile support" off \
-		SPEEX "Speex support" off \
-		SAMPLERATE "libsamplerate support" off \
-		CURL "curl support (Internet streams)" on \
-		RCC "RCC support" off
+OPTIONS_DEFINE=	JACK MP3 FFMPEG MUSEPACK VORBIS FLAC SNDFILE SPEEX SAMPLERATE CURL RCC
+OPTIONS_DEFAULT=	MP3 VORBIS CURL
+CURL_DESC=	curl support (Internet streams)
+RCC_DESC=	RCC support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
-.if defined(WITH_MP3)
+.if ${PORT_OPTIONS:MMP3}
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.a \
@@ -54,7 +43,7 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.a \
 CONFIGURE_ARGS+=	--without-mp3
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack \
 		tag_c.0:${PORTSDIR}/audio/taglib
 PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.a \
@@ -64,7 +53,7 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.a \
 CONFIGURE_ARGS+=	--without-musepack
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.a \
 		lib/moc/decoder_plugins/libvorbis_decoder.la \
@@ -73,7 +62,7 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.a \
 CONFIGURE_ARGS+=	--without-ogg
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.a \
 		lib/moc/decoder_plugins/libflac_decoder.la \
@@ -82,7 +71,7 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.a \
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_FILES+=   lib/moc/decoder_plugins/libffmpeg_decoder.a \
 		lib/moc/decoder_plugins/libffmpeg_decoder.la \
@@ -91,7 +80,7 @@ PLIST_FILES+=   lib/moc/decoder_plugins/libffmpeg_decoder.a \
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.a \
 		lib/moc/decoder_plugins/libsndfile_formats_decoder.la \
@@ -100,7 +89,7 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.a \
 CONFIGURE_ARGS+=	--without-sndfile
 .endif
 
-.if defined(WITH_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.a \
 		lib/moc/decoder_plugins/libspeex_decoder.la \
@@ -109,23 +98,23 @@ PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.a \
 CONFIGURE_ARGS+=	--without-speex
 .endif
 
-.if defined(WITH_SAMPLERATE)
+.if ${PORT_OPTIONS:MSAMPLERATE}
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=	--without-samplerate
 .endif
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
-.if defined(WITH_RCC)
+.if ${PORT_OPTIONS:MRCC}
 LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc \
 		rcd.1:${PORTSDIR}/devel/librcd
 .else
 CONFIGURE_ARGS+=	--without-rcc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

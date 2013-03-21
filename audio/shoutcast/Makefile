@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shoutcast
-# Date created:				15 January 2011
-# Whom:					Jarrod Sayers <jarrod@downtools.com.au>
-#
+# Created by: Jarrod Sayers <jarrod@downtools.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	shoutcast
 PORTVERSION=	2.0.0.29
@@ -27,7 +23,8 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS=	CONFIG_BUILDER "Install SHOUTcast Configuration Builder" off
+OPTIONS_DEFINE=	CONFIG_BUILDER DOCS EXAMPLE
+CONFIG_BUILDER_DESC=	SHOUTcast Configuration Builder
 
 SHOUTCASTUSER=	${PORTNAME}
 SHOUTCASTGROUP=	${PORTNAME}
@@ -48,9 +45,9 @@ SUB_LIST=	${SHOUTCAST_SUB}
 USERS=		${SHOUTCASTUSER}
 GROUPS=		${SHOUTCASTGROUP}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CONFIG_BUILDER)
+.if ${PORT_OPTIONS:MCONFIG_BUILDER}
 PLIST_SUB+=	CONFIG_BUILDER=""
 .else
 PLIST_SUB+=	CONFIG_BUILDER="@comment "
@@ -62,7 +59,7 @@ post-patch:
 		-e 's#=.*/\([^\.]*.log\)#=${SHOUTCASTLDIR}/\1#g' \
 		-e 's#=control/#=${SHOUTCASTDIR}/#g' ${WRKSRC}/sc_serv_${_file}.conf
 .endfor
-.if defined(WITH_CONFIG_BUILDER)
+.if ${PORT_OPTIONS:MCONFIG_BUILDER}
 	@${REINPLACE_CMD} -e 's#<[^>]*>Windows<[^>]*>##g' \
 		-e 's#<[^>]*>Macintosh<[^>]*>##g' ${WRKSRC}/config_builder/config_builder.html
 	@${REINPLACE_CMD} -e 's#\(LogFile="\)\([^"/]*\)#\1${SHOUTCASTLDIR}/\2#g' \
@@ -74,7 +71,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
 	${MKDIR} ${ETCDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/changes.txt ${DOCSDIR}/changes.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/getting_started.txt ${DOCSDIR}/getting_started.txt
@@ -84,7 +81,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/shoutcast_system_overview.txt ${DOCSDIR}/shoutcast_system_overview.txt
 	${INSTALL_DATA} ${WRKSRC}/tos.txt ${DOCSDIR}/tos.txt
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/crossdomain.xml ${EXAMPLESDIR}/crossdomain.xml
 	${INSTALL_DATA} ${WRKSRC}/sc_serv_basic.conf ${EXAMPLESDIR}/sc_serv_basic.conf
@@ -93,7 +90,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sc_serv_relay.conf ${EXAMPLESDIR}/sc_serv_relay.conf
 	${INSTALL_DATA} ${WRKSRC}/sc_serv_simple.conf ${EXAMPLESDIR}/sc_serv_simple.conf
 .endif
-.if defined(WITH_CONFIG_BUILDER)
+.if ${PORT_OPTIONS:MCONFIG_BUILDER}
 	${MKDIR} ${WWWDIR}/config_builder
 	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.html ${WWWDIR}/config_builder/config_builder.html
 	${MKDIR} ${WWWDIR}/config_builder/db
@@ -119,4 +116,4 @@ post-install:
 	@${CHOWN} ${SHOUTCASTUSER}:wheel ${SHOUTCASTLDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

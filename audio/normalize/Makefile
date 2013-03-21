@@ -1,9 +1,5 @@
-# New ports collection makefile for:   normalize
-# Date created:        31 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	normalize
 PORTVERSION=	0.7.7
@@ -24,14 +20,13 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=		normalize.1 normalize-mp3.1
 
-OPTIONS=	XMMS "Build XMMS plugin" off \
-		MP3 "MP3 support" on \
-		OGG "OGG support" off \
-		FLAG "FLAC support" off
+OPTIONS_DEFINE=	XMMS MP3 OGG FLAC NLS
+OPTIONS_DEFAULT=	MP3
+XMMS_DESC=	XMMS plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XMMS)
+.if ${PORT_OPTIONS:MXMMS}
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .else
@@ -39,20 +34,20 @@ CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
-.if defined(WITH_MP3)
+.if ${PORT_OPTIONS:MMP3}
 RUN_DEPENDS+=	madplay:${PORTSDIR}/audio/madplay \
 		lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_OGG)
+.if ${PORT_OPTIONS:MOGG}
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -60,4 +55,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
