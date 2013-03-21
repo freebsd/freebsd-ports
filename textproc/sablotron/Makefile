@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sablotron
-# Date created:		13 Nov 2000
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Sablot
 PORTVERSION=	1.0.3
@@ -15,12 +11,14 @@ COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	DISABLE_META "Do not output the META html tag" off \
-		ICONV_TYPECAST "Use iconv typecast" off \
-		DOM "Use DOM" on \
-		DOCUMENT_ERRORS "Allow document errors" on \
-		CHECK_LEAKS "Enable memory leaks checking" off \
-		DEBUGGER "Enable debugger" off
+OPTIONS_DEFINE=	DISABLE_META ICONV_TYPECAST DOM DOCUMENT_ERRORS CHECK_LEAKS DEBUGGER DOCS
+DISABLE_META_DESC=	Do not output the META html tag
+ICONV_TYPECAST_DESC=	Use iconv typecast
+DOM_DESC=	Use DOM
+DOCUMENT_ERRORS_DESC=	Allow document errors
+CHECK_LEAKS_DESC=	Enable memory leaks checking
+DEBUGGER_DESC=	Enable debugger
+OPTIONS_DEFAULT=	DOM DOCUMENT_ERRORS
 
 USE_LDCONFIG=	yes
 
@@ -39,32 +37,33 @@ USE_PERL5_BUILD=	yes
 MAN1=	sabcmd.1
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DISABLE_META)
+.if ${PORT_OPTIONS:MDISABLE_META}
 CONFIGURE_ARGS+=	--disable-adding-meta
 .endif
 
-.if defined(WITH_ICONV_TYPECAST)
+.if ${PORT_OPTIONS:MICONV_TYPECAST}
 CONFIGURE_ARGS+=	--enable-iconv-typecast
 .endif
 
-.if defined(WITHOUT_DOM)
+.if ! ${PORT_OPTIONS:MDOM}
 CONFIGURE_ARGS+=	--disable-dom
 .endif
 
-.if defined(WITHOUT_DOCUMENT_ERRORS)
+.if ! ${PORT_OPTIONS:MDOCUMENT_ERRORS}
 CONFIGURE_ARGS+=	--disable-document-errors
 .endif
 
-.if defined(WITH_CHECK_LEAKS)
+.if ${PORT_OPTIONS:MCHECK_LEAKS}
 CONFIGURE_ARGS+=	--enable-check-leaks
 .endif
 
-.if defined(WITH_DEBUGGER)
+.if ${PORT_OPTIONS:MDEBUGGER}
 CONFIGURE_ARGS+=	--enable-debugger
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}
 .endif
@@ -81,7 +80,7 @@ post-patch:
 .endif
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing additional documentation for ${PKGNAME}"
 	@${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!}	${DOCSDIR}
 .endif
