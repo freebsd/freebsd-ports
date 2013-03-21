@@ -25,9 +25,12 @@ USE_RC_SUBR=	xaira-server
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	PHP5 "Build PHP5 extension" no
+OPTIONS_DEFINE=	PHP5
+PHP5_DESC=	Build PHP5 extension
+OPTIONS_DEFAULT=	PHP5
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 700042
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
@@ -35,7 +38,7 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 .endif
 
-.if defined(WITH_PHP5)
+.if ${PORT_OPTIONS:MPHP5}
 BUILD_DEPENDS+=	php5>=5:${PORTSDIR}/lang/php5
 CONFIGURE_ARGS+=	--with-php5=`${LOCALBASE}/bin/php-config --include-dir`
 PLIST_FILES+=	lib/libphpXaira.a \
