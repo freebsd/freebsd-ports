@@ -232,7 +232,6 @@
     SUBDIR += omegaT
     SUBDIR += openoffice-3
     SUBDIR += openoffice-3-devel
-    SUBDIR += openoffice.org-vcltesttool
     SUBDIR += p5-Padre
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana

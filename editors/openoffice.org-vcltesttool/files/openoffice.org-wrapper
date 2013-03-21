@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-vcltesttool/files/openoffice.org-wrapper,v 1.4 2009-07-22 09:53:44 maho Exp $
-
-oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/program/
-$oopath/testtool
-
