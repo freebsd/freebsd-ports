@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Tie::DNS
-# Date created:				25 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-DNS
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 PORTEPOCH=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
