@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugin
+PORTNAME=	geany-plugin-multiterm
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
@@ -9,8 +9,6 @@ COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 USE_GNOME=	vte
-
-GEANY_PLUGIN=	multiterm
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

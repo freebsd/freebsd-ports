@@ -1,13 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugin-updatechecker
+PORTNAME=	geany-plugins-l10n
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
+COMMENT=	Localization messages for Geany plugins
 
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
+USES=		pathfix
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

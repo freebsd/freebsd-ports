@@ -3,30 +3,37 @@
 .include "${.CURDIR}/../../devel/geany-plugins/files/bsd.geany-plugins.mk"
 
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
-PKGNAMESUFFIX?=	-${GEANY_PLUGIN}
 DISTNAME=	geany-plugins-${PORTVERSION}
 DISTINFO_FILE=	${.CURDIR}/../../devel/geany-plugins/distinfo
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
 RUN_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
 
 CONFLICTS_INSTALL=	geany-plugins-0.*
+
+EXTRA_PATCHES=  ${.CURDIR}/../../devel/geany-plugins/files/extrapatch-configure
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	libtool
 USE_PKGCONFIG=	build
-USE_GETTEXT=	yes
 USE_GNOME+=	gtk20
 
-GEANY_PLUGIN_DIR?=	${GEANY_PLUGIN}
-GEANY_PLUGIN_SWITCH?=	--enable-${GEANY_PLUGIN_DIR}
+# geany-plugins-l10n is not a plugin, thus special treatment
+.if ${PORTNAME} == "geany-plugins-l10n"
+GEANY_PLUGIN=	NLS
+NLS_DIR=	po
+NLS_SWITCH=	--enable-nls
+.endif
 
-CONFIGURE_ARGS+=	${GEANY_PLUGIN_SWITCH}
+GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}
+${GEANY_PLUGIN}_DIR?=		${GEANY_PLUGIN}
+${GEANY_PLUGIN}_SWITCH?=	--enable-${${GEANY_PLUGIN}_DIR}
 
-BUILD_WRKSRC=	${WRKSRC}/${GEANY_PLUGIN_DIR}
+CONFIGURE_ARGS+=	${${GEANY_PLUGIN}_SWITCH}
+
+BUILD_WRKSRC=	${WRKSRC}/${${GEANY_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 DATADIR=	share/geany-plugins
@@ -34,15 +41,16 @@ DOCSDIR=	share/doc/geany-plugins
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORTNAME} != "geany-plugins-l10n"
+. if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
-.else
+. else
 CONFIGURE_ARGS+=	--disable-nls
+. endif
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,/bin/sh,${LOCALBASE}/bin/bash,g' \
-		-e 's,zlib,,g' \
+	${REINPLACE_CMD} -e 's,zlib,,g' \
 		${WRKSRC}/configure
 
 post-configure:
