@@ -6088,7 +6088,13 @@ D4P_ENV=	PKGNAME="${PKGNAME}" \
 		OPTIONS_MULTI="${OPTIONS_MULTI}" \
 		OPTIONS_SINGLE="${OPTIONS_SINGLE}" \
 		OPTIONS_RADIO="${OPTIONS_RADIO}" \
-		OPTIONS_GROUP="${OPTIONS_GROUP}"
+		OPTIONS_GROUP="${OPTIONS_GROUP}" \
+		DIALOG4PORTS="${DIALOG4PORTS}" \
+		PORTSDIR="${PORTSDIR}" \
+		MAKE="${MAKE}" \
+		D4PHEIGHT="${D4PHEIGHT}" \
+		D4PWIDTH="${D4PWIDTH}" \
+		D4PFULLSCREEN="${D4PFULLSCREEN}"
 .if exists(${PKGHELP})
 D4P_ENV+=	PKGHELP="${PKGHELP}"
 .endif
@@ -6147,11 +6153,12 @@ do-config:
 .endif
 	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
-	${SETENV} ${D4P_ENV} ${DIALOG4PORTS} > $${TMPOPTIONSFILE} || { \
+	${SETENV} ${D4P_ENV} ${SH} ${PORTSDIR}/Tools/scripts/dialog4ports.sh $${TMPOPTIONSFILE} || { \
 		${RM} -f $${TMPOPTIONSFILE}; \
 		${ECHO_MSG} "===> Options unchanged"; \
 		exit 0; \
 	}; \
+	${ECHO_CMD}; \
 	if [ ! -e $${TMPOPTIONSFILE} ]; then \
 		${ECHO_MSG} "===> No user-specified options to save for ${PKGNAME}"; \
 		exit 0; \
@@ -6183,21 +6190,13 @@ do-config:
 .endif
 .endif # do-config
 
-.if !target(config-depend)
-config-depend:
-.if !exists(${DIALOG4PORTS}) && !defined(NO_DIALOG)
-	@echo -n "dialog4ports isn't installed, do you want to install it now? [Y/n] "; \
-	read answer; \
-	case $$answer in \
-	[Nn]|[Nn][Oo]) \
-		exit 1; \
-	esac; \
-	cd ${PORTSDIR}/ports-mgmt/dialog4ports; ${MAKE} install clean
-.endif
-.endif
-
 .if !target(config)
-config: pre-config config-depend do-config
+.if !defined(NO_DIALOG)
+config: pre-config do-config
+.else
+config:
+	@${ECHO_MSG} "===> Skipping 'config' as NO_DIALOG is defined"
+.endif
 .endif # config
 
 .if !target(config-recursive)
