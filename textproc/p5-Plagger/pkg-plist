@@ -237,21 +237,21 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Util.pm
 %%SITE_PERL%%/Plagger/Walker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/atode.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/bloglines2gmail.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/iefav2opml.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/irc.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/livedoorreader2gmail.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/planet-old.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/planet.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/podcast.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/rss2email.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/schema.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/search.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather-notify.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/xoxo-planet.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/xoxo2opml.yaml
-%%PORTDOCS%%%%EXAMPLESDIR%%/yapcvideo.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atode.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bloglines2gmail.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iefav2opml.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/irc.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/livedoorreader2gmail.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/planet-old.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/planet.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/podcast.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rss2email.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/schema.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather-notify.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xoxo-planet.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xoxo2opml.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yapcvideo.yaml
 %%DATADIR%%/assets/common/html.tt
 %%DATADIR%%/assets/common/mail.tt
 %%DATADIR%%/assets/plugins/CustomFeed-Script/domain-expire.pl
@@ -506,7 +506,7 @@ bin/plagger-ircbot
 @dirrm %%SITE_PERL%%/Plagger/Cache
 @dirrm %%SITE_PERL%%/Plagger
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/assets/plugins/Widget-Simple
 @dirrm %%DATADIR%%/assets/plugins/Subscription-Planet
 @dirrm %%DATADIR%%/assets/plugins/Search-Spotlight
