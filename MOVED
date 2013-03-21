@@ -4176,3 +4176,4 @@ finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
 finance/p5-Business-OnlinePayment-PayflowPro||2013-03-18|Removed: upstream no longer exists
 www/nspluginwrapper-devel||2013-03-19|Removed: superceded by www/nspluginwrapper
 french/eficas_doc||2013-03-19|Removed: eficas is now able to open the documentation through a web browser so the pdf files are no longer included
+editors/openoffice.org-vcltesttool||2013-03-21|Removed
