@@ -1,9 +1,5 @@
-# New ports collection makefile for:	catdoc
-# Date created:				11 November 1997
-# Whom:					Brion Moss <brion@queeg.com>
-#
+# Created by: Brion Moss <brion@queeg.com>
 # $FreeBSD$
-#
 
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
@@ -21,7 +17,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		catdoc.1 xls2csv.1 catppt.1
 
-OPTIONS=	WORDVIEW	"Build Tcl/Tk document viewer" On
+OPTIONS_DEFINE=	WORDVIEW
+WORDVIEW_DESC=	Build Tcl/Tk document viewer
+OPTIONS_DEFAULT=	WORDVIEW
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
@@ -32,8 +30,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/catdoc.1.in
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_WORDVIEW)
+.if ${PORT_OPTIONS:MWORDVIEW}
 USE_TK=			83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-wish=${WISH}
