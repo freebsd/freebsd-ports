@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=--disable-v4l
 PLIST_SUB+=	V4L="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MVIDEO}
+.if defined(WITH_VIDEO)
 CONFIGURE_ARGS+=	--enable-video
 PLIST_SUB+=	VIDEODIR=""
 .else
