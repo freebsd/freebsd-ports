@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ocaml-text
-# Date created:				April 18, 2011
-# Whom:					Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
 
 PORTNAME=	text
@@ -25,18 +22,20 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
 
-OPTIONS=	PCRE "Compile with PCRE support" ON
+OPTIONS_DEFINE=	PCRE
+OPTIONS_DEFAULT=	PCRE
 
 SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PCRE)
-CONFIGURE_ARGS+=	--disable-pcre
-.else
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=	--enable-pcre
 BUILD_DEPENDS+=		${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 RUN_DEPENDS+=		${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+.else
+CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 post-extract:
