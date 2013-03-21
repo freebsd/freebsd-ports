@@ -1,7 +1,8 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ "$2" = DEINSTALL ]; then
+if [ "$2" == "POST-DEINSTALL" ]; then
+if [ -d %%WWWDIR%% ]; then
 	echo ""
 	echo "-------------------------------------------------------"
 	echo "Run the following command, if you plan to permanently"
@@ -10,4 +11,5 @@ if [ "$2" = DEINSTALL ]; then
 	echo "  rm -rf %%WWWDIR%%"
 	echo "-------------------------------------------------------"
 	echo ""
+fi
 fi
