@@ -6114,7 +6114,7 @@ D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .endfor
 .for multi in ${OPTIONS_MULTI}
 D4P_ENV+=	OPTIONS_MULTI_${multi}="${OPTIONS_MULTI_${multi}}" \
-		${multi}_DESC=""${${opt}_DESC:Q}""
+		${multi}_DESC=""${${multi}_DESC:Q}""
 .  for opt in ${OPTIONS_MULTI_${multi}}
 D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .  endfor
