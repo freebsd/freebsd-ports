@@ -46,7 +46,6 @@ USE_TK=		yes
 CONFIGURE_ARGS+=--with-tclconfig=${TCL_LIBDIR} \
 		--with-tkconfig=${TK_LIBDIR}
 PLIST_SUB+=	NOSDL=""
-.else
 .endif
 
 post-patch:
