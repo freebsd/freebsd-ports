@@ -627,7 +627,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERS
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
-NGINX_NAXSI_VERSION=	0.49
+NGINX_NAXSI_VERSION=	0.50
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
 DISTFILES+=	naxsi-core-${NGINX_NAXSI_VERSION}.tgz:naxsi
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_src
@@ -691,8 +691,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.9.11
-GIT_RTMP_VERSION=	0-gcb5e1df
+NGINX_RTMP_VERSION=	0.9.12
+GIT_RTMP_VERSION=	0-g6d328d3
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
