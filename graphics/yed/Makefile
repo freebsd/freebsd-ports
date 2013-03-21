@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	yed
-PORTVERSION=	3.10.1
+PORTVERSION=	3.10.2
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
 
 MAINTAINER=	myc@barev.net
-COMMENT=	An editor for graphs and diagrams
+COMMENT=	Editor for graphs and diagrams
 
 LICENSE=	YED_1_1
 LICENSE_NAME=	yEd Software License Agreement (Version 1.1)
