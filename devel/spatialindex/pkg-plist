@@ -31,11 +31,11 @@ include/spatialindex/tools/rand48.h
 lib/libspatialindex.a
 lib/libspatialindex.la
 lib/libspatialindex.so
-lib/libspatialindex.so.2
+lib/libspatialindex.so.3
 lib/libspatialindex_c.a
 lib/libspatialindex_c.la
 lib/libspatialindex_c.so
-lib/libspatialindex_c.so.2
+lib/libspatialindex_c.so.3
 libdata/pkgconfig/libspatialindex.pc
 @dirrm include/spatialindex/capi
 @dirrm include/spatialindex/tools
