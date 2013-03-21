@@ -231,7 +231,6 @@
     SUBDIR += nxml-emacs21
     SUBDIR += omegaT
     SUBDIR += openoffice-3
-    SUBDIR += openoffice-3-devel
     SUBDIR += p5-Padre
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
