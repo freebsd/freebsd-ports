@@ -1,11 +1,5 @@
-# New ports collection makefile for:  Sphinx full-text search engine
-# Date created:		18 January 2008
-# Whom:			Daniel Gerzo <danger@FreeBSD.org>
-#
+# Created by: Daniel Gerzo <danger@FreeBSD.org>
 # $FreeBSD$
-#
-# Note: the Sphinx Storage Engine MySQL plugin is not supported by
-# this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.0.1b
@@ -36,51 +30,49 @@ CONFLICTS=	sphinxsearch-[0-9]* \
 # of turning this off. So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	MYSQL		 "MySQL support"		    on	\
-		PGSQL		 "PostgreSQL support"		    off \
-		ICONV		 "Iconv support"		    on	\
-		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)"  off \
-		ID64		 "use 64-bit document and word IDs" off \
-		UNIXODBC	 "unixODBC support"		    off
+OPTIONS=	MYSQL PGSQL ICONV OPTIMIZED_CFLAGS ID64 UNIXODBC \
+		DOCS EXAMPLES
+ID64_DESC=	64-bit document and word IDs
+OPTIONS_DEFAULT=	MYSQL ICONV
 
 .include <bsd.port.options.mk>
 
 # The port will successfully compile with both PGSQL and MYSQL support
 # simultaneously.  Not sure how useful that is in practice though.
 
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-mysql
 USE_MYSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-pgsql
 USE_PGSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
-.if defined(WITH_ICONV) && !defined(WITHOUT_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=        --with-iconv
 USE_ICONV=              yes
 .else
 CONFIGURE_ARGS+=        --without-iconv
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CXXFLAGS+=              -O3 -fomit-frame-pointer
 .endif
 
 # Changes document and word IDs to a 64bit type, useful if you have
 # more than about 4.2E9 such items to deal with.  Means corresponding
 # changes in DB schema.  Disabled by default.
-.if defined(WITH_ID64)
+.if ${PORT_OPTIONS:MID64}
 CONFIGURE_ARGS+=        --enable-id64
 .endif
 
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=        --with-unixodbc
 LIB_DEPENDS+=           odbc.2:${PORTSDIR}/databases/unixODBC
 .else
@@ -110,12 +102,12 @@ SUB_LIST+=	PORTNAME=${PORTNAME}	 \
 		SPHINX_LOG=${SPHINX_LOG}
 SUB_FILES+=	pkg-deinstall
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLES=	example.sql api
 PORTEXAMPLES=	*
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:DOCS}
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 .endif
 
@@ -137,12 +129,12 @@ do-install: install-bin install-docs install-examples
 
 install-bin:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer ${PREFIX}/bin/indexer
-	${INSTALL_PROGRAM} ${WRKSRC}/src/search	 ${PREFIX}/bin/search
+	${INSTALL_PROGRAM} ${WRKSRC}/src/search  ${PREFIX}/bin/search
 	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd ${PREFIX}/sbin/searchd
 	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
 
 install-docs:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:DOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
@@ -150,7 +142,7 @@ install-docs:
 .endif
 
 install-examples:
-.if !defined(NOPORTEXAMPLES)
+.if .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}
