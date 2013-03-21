@@ -18,6 +18,7 @@ USE_TCL=	84+
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--exec-prefix=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/thread${PORTVERSION}
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
@@ -32,12 +33,14 @@ OPTIONS_DEFINE=	GDBM DOCS
 OPTIONS_DEFAULT=GDBM
 GDBM_DESC=	Persistent shared variables using GDBM
 
+PORTDOCS=	*
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-tcl="${TCL_LIBDIR}"
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
 .endif
 
