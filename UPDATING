@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   The graphics/poppler has been updated to 0.22.2. The shared library version
   has changed from 18 to 34. Please rebuild all ports that depends on it:
 
-  # portmaster -r poppler
+  # portmaster -r poppler-0
     or
   # portupgrade -fr graphics/poppler
     or
