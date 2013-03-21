@@ -3,12 +3,12 @@
 
 PORTNAME=	maverik
 PORTVERSION=	6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A publicly available virtual reality (VR) system
+COMMENT=	Publicly available virtual reality (VR) system
 
 USE_SUBMAKE=	yes
 USE_GL=		yes
@@ -23,11 +23,12 @@ USE_LDCONFIG=	yes
 MANCOMPRESSED=	no
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
 
-.if defined(WITH_PNG)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-
 CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
 			--PNGINCL="-I${LOCALBASE}/include"
 .endif
@@ -36,32 +37,26 @@ post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,%%CC%%,${CC},g ; \
-		s,%%CXX%%,${CXX},g ; \
-		s,%%CFLAGS%%,${CFLAGS},g ; \
-		s,%%CXXFLAGS%%,${CXXFLAGS},g ; \
-		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
-		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" ${WRKSRC}/setup
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e 's|%%CC%%|${CC}|g' \
+		-e 's|%%CXX%%|${CXX}|g' \
+		-e 's|%%CFLAGS%%|${CFLAGS}|g' \
+		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|g' \
+		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g'  \
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/setup
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/maverik
-	${INSTALL_DATA} ${WRKSRC}/incl/*.* ${PREFIX}/include/maverik
+	${INSTALL_DATA} ${WRKSRC}/incl/* ${PREFIX}/include/maverik
 	${FIND} ${WRKSRC}/doc/MFS/man3 -name '*.3' -exec \
 		${INSTALL_MAN} \{} ${MAN3PREFIX}/man/man3 \;
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/MFS/html
-	${FIND} ${WRKSRC}/doc/MFS/html -name '*.html' -exec \
-		${INSTALL_DATA} \{} ${DOCSDIR}/MFS/html \;
-	@${MKDIR} ${DOCSDIR}/MFS/pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/MFS/pdf/*.* ${DOCSDIR}/MFS/pdf
-	@${MKDIR} ${DOCSDIR}/MFS/ps
-	${INSTALL_DATA} ${WRKSRC}/doc/MFS/ps/*.* ${DOCSDIR}/MFS/ps
-	@${MKDIR} ${DOCSDIR}/MPG/pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/MPG/pdf/*.* ${DOCSDIR}/MPG/pdf
-	@${MKDIR} ${DOCSDIR}/MPG/ps
-	${INSTALL_DATA} ${WRKSRC}/doc/MPG/ps/*.* ${DOCSDIR}/MPG/ps
+
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}/MFS
+	@(cd ${WRKSRC}/doc/MFS && ${COPYTREE_SHARE} "html pdf ps" ${DOCSDIR}/MFS)
+	@${MKDIR} ${DOCSDIR}/MPG
+	@(cd ${WRKSRC}/doc//MPG && ${COPYTREE_SHARE} "pdf ps" ${DOCSDIR}/MPG)
 .endif
 
 post-clean:
@@ -71,4 +66,4 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
