@@ -1,8 +1,8 @@
---- src/font.c.orig	Wed May 15 18:34:08 2002
-+++ src/font.c	Fri May 17 23:56:23 2002
-@@ -833,8 +833,8 @@
+--- src/font.c.orig	2005-07-27 22:35:06.000000000 +0200
++++ src/font.c	2013-03-21 03:00:23.000000000 +0100
+@@ -881,8 +881,8 @@
  
- #ifdef HAVE_XML2
+ #ifdef HAVE_LIBXML2
  
 -#include <libxml/parser.h>
 -#include <libxml/parserInternals.h>
