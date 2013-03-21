@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/dcc-dccd
-# Date created:		Wed Oct 9 19:30:00 WST 2002
-# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.141
@@ -177,7 +173,7 @@ PLIST_SUB+=	WITH_DCCGREY="@comment "
 
 pre-everything::
 	@${ECHO_MSG} ' '
-	@${ECHO_MSG} 'A description of ALT_HOME may be found in the port's Makefile.'
+	@${ECHO_MSG} "A description of ALT_HOME may be found in the port's Makefile."
 	@${ECHO_MSG} ' '
 
 post-install:
