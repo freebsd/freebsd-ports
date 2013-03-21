@@ -1,0 +1,323 @@
+--- unoxml/source/dom/attr.hxx.orig	2011-11-03 21:05:47.000000000 -0500
++++ unoxml/source/dom/attr.hxx	2011-11-03 21:06:26.000000000 -0500
+@@ -30,6 +30,7 @@
+ 
+ #include <memory>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <cppuhelper/implbase1.hxx>
+--- unoxml/source/dom/characterdata.hxx.orig	2011-11-03 21:12:41.000000000 -0500
++++ unoxml/source/dom/characterdata.hxx	2011-11-03 21:13:08.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_CHARACTERDATA_HXX
+ #define DOM_CHARACTERDATA_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/dom/childlist.cxx.orig	2011-11-03 21:36:22.000000000 -0500
++++ unoxml/source/dom/childlist.cxx	2011-11-03 21:37:22.000000000 -0500
+@@ -27,6 +27,7 @@
+ 
+ #include <childlist.hxx>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <node.hxx>
+--- unoxml/source/dom/document.hxx.orig	2011-11-03 20:59:53.000000000 -0500
++++ unoxml/source/dom/document.hxx	2011-11-03 21:00:40.000000000 -0500
+@@ -31,6 +31,7 @@
+ #include <set>
+ #include <memory>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/dom/documentbuilder.cxx.orig	2011-11-03 21:15:44.000000000 -0500
++++ unoxml/source/dom/documentbuilder.cxx	2011-11-03 21:16:26.000000000 -0500
+@@ -31,6 +31,7 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/xmlerror.h>
+ #include <libxml/tree.h>
+ 
+--- unoxml/source/dom/documenttype.hxx.orig	2011-11-03 21:19:12.000000000 -0500
++++ unoxml/source/dom/documenttype.hxx	2011-11-03 21:19:39.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_DOCUMENTTYPE_HXX
+ #define DOM_DOCUMENTTYPE_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/dom/element.hxx.orig	2011-11-03 21:02:39.000000000 -0500
++++ unoxml/source/dom/element.hxx	2011-11-03 21:03:48.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_ELEMENT_HXX
+ #define DOM_ELEMENT_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <com/sun/star/uno/Reference.h>
+--- unoxml/source/dom/elementlist.hxx.orig	2011-11-03 21:33:35.000000000 -0500
++++ unoxml/source/dom/elementlist.hxx	2011-11-03 21:34:07.000000000 -0500
+@@ -32,6 +32,7 @@
+ 
+ #include <boost/scoped_array.hpp>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/dom/entity.hxx.orig	2011-11-03 21:21:42.000000000 -0500
++++ unoxml/source/dom/entity.hxx	2011-11-03 21:22:28.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_ENTITY_HXX
+ #define DOM_ENTITY_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ #include <libxml/entities.h>
+ 
+--- unoxml/source/dom/entityreference.hxx.orig	2011-11-03 21:24:36.000000000 -0500
++++ unoxml/source/dom/entityreference.hxx	2011-11-03 21:25:13.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_ENTITYREFERENCE_HXX
+ #define DOM_ENTITYREFERENCE_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <com/sun/star/uno/Reference.h>
+--- unoxml/source/dom/node.hxx.orig	2011-11-03 20:54:49.000000000 -0500
++++ unoxml/source/dom/node.hxx	2011-11-03 20:56:47.000000000 -0500
+@@ -30,6 +30,7 @@
+ 
+ #include <hash_map>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/dom/notation.hxx.orig	2011-11-03 21:27:17.000000000 -0500
++++ unoxml/source/dom/notation.hxx	2011-11-03 21:28:12.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_NOTATION_HXX
+ #define DOM_NOTATION_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <com/sun/star/uno/Reference.h>
+--- unoxml/source/dom/processinginstruction.hxx.orig	2011-11-03 21:30:54.000000000 -0500
++++ unoxml/source/dom/processinginstruction.hxx	2011-11-03 21:31:30.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_PROCESSINGINSTRUCTION_HXX
+ #define DOM_PROCESSINGINSTRUCTION_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <com/sun/star/uno/Reference.h>
+--- unoxml/source/dom/text.hxx.orig	2011-11-03 21:10:46.000000000 -0500
++++ unoxml/source/dom/text.hxx	2011-11-03 21:11:14.000000000 -0500
+@@ -28,6 +28,7 @@
+ #ifndef DOM_TEXT_HXX
+ #define DOM_TEXT_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <sal/types.h>
+--- unoxml/source/events/eventdispatcher.hxx.orig	2011-11-03 21:51:05.000000000 -0500
++++ unoxml/source/events/eventdispatcher.hxx	2011-11-03 21:55:59.000000000 -0500
+@@ -31,6 +31,7 @@
+ #include <map>
+ #include <vector>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ 
+ #include <rtl/ustring.hxx>
+--- jvmfwk/source/elements.hxx.orig	2011-11-03 14:14:18.000000000 -0500
++++ jvmfwk/source/elements.hxx	2011-11-03 14:24:14.000000000 -0500
+@@ -32,6 +32,7 @@
+ #include "fwkutil.hxx"
+ #include "rtl/ustring.hxx"
+ #include "rtl/byteseq.hxx"
++#include <cwchar>      // for std::mbstate_t
+ #include "libxml/parser.h"
+ #include "boost/optional.hpp"
+ 
+--- jvmfwk/source/fwkbase.cxx.orig	2011-11-03 14:31:12.000000000 -0500
++++ jvmfwk/source/fwkbase.cxx	2011-11-03 14:32:34.000000000 -0500
+@@ -32,6 +32,7 @@
+ #include "rtl/uri.hxx"
+ #include "osl/thread.hxx"
+ #include "osl/process.h"
++#include <cwchar>      // for std::mbstate_t
+ #include "libxml/xpathInternals.h"
+ #include "osl/file.hxx"
+ #include "osl/module.hxx"
+--- jvmfwk/source/libxmlutil.hxx.orig	2011-11-03 14:28:02.000000000 -0500
++++ jvmfwk/source/libxmlutil.hxx	2011-11-03 14:28:52.000000000 -0500
+@@ -27,7 +27,7 @@
+ #if !defined INCLUDED_JVMFWK_LIBXMLUTIL_HXX
+ #define INCLUDED_JVMFWK_LIBXMLUTIL_HXX
+ 
+-
++#include <cwchar>      // for std::mbstate_t
+ #include "libxml/parser.h"
+ #include "libxml/xpath.h"
+ //#include "libxml/xpathinternals.h"
+--- xmlhelp/source/cxxhelp/provider/urlparameter.cxx.orig	2011-11-03 23:28:51.000000000 -0500
++++ xmlhelp/source/cxxhelp/provider/urlparameter.cxx	2011-11-03 23:33:15.000000000 -0500
+@@ -46,6 +46,7 @@
+ #include <comphelper/processfactory.hxx>
+ #include <rtl/uri.hxx>
+ #include <rtl/ustrbuf.hxx>
++#include <cwchar>      // for std::mbstate_t
+ #include <libxslt/xslt.h>
+ #include <libxslt/transform.h>
+ #include <libxslt/xsltutils.h>
+--- unoxml/source/xpath/nodelist.hxx.orig	2011-11-03 21:42:28.000000000 -0500
++++ unoxml/source/xpath/nodelist.hxx	2011-11-03 21:43:53.000000000 -0500
+@@ -38,6 +38,7 @@
+ #include <com/sun/star/xml/dom/XNodeList.hpp>
+ #include <com/sun/star/xml/xpath/XXPathObject.hpp>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include "libxml/tree.h"
+ #include "libxml/xpath.h"
+ 
+--- unoxml/source/xpath/xpathapi.cxx.orig	2011-11-03 21:46:02.000000000 -0500
++++ unoxml/source/xpath/xpathapi.cxx	2011-11-03 21:46:34.000000000 -0500
+@@ -30,6 +30,7 @@
+ #include <stdarg.h>
+ #include <string.h>
+ 
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ #include <libxml/xmlerror.h>
+ #include <libxml/xpath.h>
+Index: main/forms/source/xforms/xpathlib/xpathlib.hxx
+===================================================================
+--- forms/source/xforms/xpathlib/xpathlib.hxx	(revision 1235458)
++++ forms/source/xforms/xpathlib/xpathlib.hxx	(working copy)
+@@ -20,7 +20,7 @@
+  *************************************************************/
+ 
+ 
+-
++#include <cwchar>      // for std::mbstate_t
+ #include <libxml/tree.h>
+ #include <libxml/xpath.h>
+ #include <libxml/xpathInternals.h>
+
+--- avmedia/source/gstreamer/gstplayer.hxx	2012-02-02 07:33:58.000000000 +0900
++++ avmedia/source/gstreamer/gstplayer.hxx	2012-02-02 07:35:03.000000000 +0900
+@@ -24,6 +24,8 @@
+ #ifndef _GSTPLAYER_HXX
+ #define _GSTPLAYER_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
++
+ #include "gstcommon.hxx"
+ #include <glib.h>
+ #include <glib/gatomic.h>
+
+
+--- xmlsecurity/source/xmlsec/biginteger.cxx	2012-02-04 10:36:05.000000000 +0900
++++ xmlsecurity/source/xmlsec/biginteger.cxx	2012-02-01 16:51:40.000000000 +0900
+@@ -19,7 +19,7 @@
+  * 
+  *************************************************************/
+ 
+-
++#include <cwchar>      // for std::mbstate_t
+ 
+ // MARKER(update_precomp.py): autogen include statement, do not remove
+ #include "precompiled_xmlsecurity.hxx"
+
+--- xmlsecurity/source/xmlsec/errorcallback.cxx	2012-02-04 10:37:52.000000000 +0900
++++ xmlsecurity/source/xmlsec/errorcallback.cxx	2012-02-01 16:51:40.000000000 +0900
+@@ -19,7 +19,7 @@
+  * 
+  *************************************************************/
+ 
+-
++#include <cwchar>      // for std::mbstate_t
+
+ 
+ // MARKER(update_precomp.py): autogen include statement, do not remove
+ #include "precompiled_xmlsecurity.hxx"
+
+--- xmlsecurity/source/xmlsec/nss/securityenvironment_nssimpl.hxx	2012-02-03 13:03:47.000000000 +0900
++++ xmlsecurity/source/xmlsec/nss/securityenvironment_nssimpl.hxx	2012-02-01 16:51:40.000000000 +0900
+@@ -24,6 +24,8 @@
+ #ifndef _XSECURITYENVIRONMENT_NSSIMPL_HXX_
+ #define _XSECURITYENVIRONMENT_NSSIMPL_HXX_
+ 
++#include <cwchar>      // for std::mbstate_t
++
+ #include <sal/config.h>
+ #include <rtl/ustring.hxx>
+ #include <cppuhelper/factory.hxx>
+
+
+--- xmlsecurity/source/xmlsec/nss/seinitializer_nssimpl.hxx	2012-02-04 10:33:01.000000000 +0900
++++ xmlsecurity/source/xmlsec/nss/seinitializer_nssimpl.hxx	2012-02-01 16:51:40.000000000 +0900
+@@ -24,6 +24,8 @@
+ #ifndef _SEINITIALIZERIMPL_HXX
+ #define _SEINITIALIZERIMPL_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
++
+ #include <com/sun/star/xml/crypto/XXMLSecurityContext.hpp>
+ #include <com/sun/star/xml/crypto/XSEInitializer.hpp>
+ 
+
+--- xmlsecurity/source/xmlsec/saxhelper.hxx	2012-02-04 10:34:58.000000000 +0900
++++ xmlsecurity/source/xmlsec/saxhelper.hxx	2012-02-01 16:51:40.000000000 +0900
+@@ -24,6 +24,8 @@
+ #ifndef _SAXHELPER_HXX
+ #define _SAXHELPER_HXX
+ 
++#include <cwchar>      // for std::mbstate_t
++
+ #include "libxml/tree.h"
+ 
+ #include <com/sun/star/xml/sax/SAXException.hpp>
+
+--- xmlsecurity/source/xmlsec/xmlelementwrapper_xmlsecimpl.hxx	2012-02-04 10:36:45.000000000 +0900
++++ xmlsecurity/source/xmlsec/xmlelementwrapper_xmlsecimpl.hxx	2012-02-01 16:51:40.000000000 +0900
+@@ -20,6 +20,7 @@
+  *************************************************************/
+ 
+ 
++#include <cwchar>      // for std::mbstate_t
+ 
+ #ifndef _XMLELEMENTWRAPPER_XMLSECIMPL_HXX
+ #define _XMLELEMENTWRAPPER_XMLSECIMPL_HXX
+
+--- xmlsecurity/source/xmlsec/xmlstreamio.hxx	2012-02-04 10:37:09.000000000 +0900
++++ xmlsecurity/source/xmlsec/xmlstreamio.hxx	2012-02-01 16:51:40.000000000 +0900
+@@ -19,7 +19,7 @@
+  * 
+  *************************************************************/
+ 
+-
++#include <cwchar>      // for std::mbstate_t
+
+ 
+ #ifndef _XMLSTREAMIO_XMLSECIMPL_HXX_
+ #define _XMLSTREAMIO_XMLSECIMPL_HXX_
