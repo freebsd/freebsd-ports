@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.2.0
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -27,9 +28,10 @@ CONFIGURE_ARGS=		--with-proj=${LOCALBASE} \
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		AGG TIFF PDF GDAL GEOS KML MING MYGIS POSTGIS PHP PERL PYTHON \
-			WMS WFS MAPSERV FASTCGI DEBUG
+			WMS WFS MAPSERV FASTCGI DEBUG CAIRO CAIRO_SVG
 OPTIONS_DEFAULT=	AGG GDAL GEOS MAPSERV
 AGG_DESC=		AGG image rendering support
+CAIRO_SVG_DESC=		Cairo SVG parser support
 GDAL_DESC=		GDAL library support
 KML_DESC=		KML support
 MING_DESC=		Macromedia Flash output support
@@ -60,7 +62,23 @@ PLIST_SUB+=		PYTHON="@comment "
 
 .if ${PORT_OPTIONS:MAGG}
 LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
-#CONFIGURE_ARGS+=	--with-agg=${LOCALBASE} --with-freetype=${LOCALBASE}
+.endif
+
+.if ${PORT_OPTIONS:MCAIRO}
+LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
+			expat:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=	--with-cairo=yes --with-expat=${LOCALBASE}
+USE_PKGCONFIG=		yes
+.endif
+
+.if ${PORT_OPTIONS:MCAIRO_SVG}
+LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
+			svg-cairo:${PORTSDIR}/graphics/libsvg-cairo \
+			expat:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=	--with-cairo=yes \
+			--with-libsvg-cairo \
+			--with-expat=${LOCALBASE}
+USE_PKGCONFIG=		yes
 .endif
 
 .if ${PORT_OPTIONS:MKML}
@@ -151,7 +169,8 @@ CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis sortshp
+PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
+			sortshp msencrypt tile4ms
 
 post-patch:
 .if ${PORT_OPTIONS:MMING}
@@ -168,6 +187,8 @@ do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmapserver-6.2.0.so ${PREFIX}/lib
+
 .if ${PORT_OPTIONS:MMAPSERV}
 	${MKDIR} ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
