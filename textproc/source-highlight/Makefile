@@ -1,9 +1,5 @@
-# Ports collection makefile for:  source-highlight
-# Date created:			  24 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	source-highlight
 PORTVERSION=	3.1.6
@@ -27,9 +23,10 @@ USE_LDCONFIG=	yes
 MAN1=	check-regexp.1 source-highlight.1 source-highlight-settings.1
 INFO=	source-highlight source-highlight-lib
 
-OPTIONS=	BASH	"Support Bash completion"	Off
+OPTIONS_DEFINE=	BASH DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 700042
 .if ${ARCH} == "sparc64"
@@ -37,7 +34,7 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 .endif
 
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 RUN_DEPENDS+=	${LOCALBASE}/etc/bash_completion:${PORTSDIR}/shells/bash-completion
 CONFIGURE_ARGS+=	--with-bash-completion
 PLIST_SUB+=	BASH=""
@@ -53,11 +50,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdataDATA//g' \
 		${WRKSRC}/doc/Makefile.in ${WRKSRC}/src/Makefile.in
 .endif
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdocDATA//g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in ${WRKSRC}/tests/Makefile.in
 .endif
-.if defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightlibexampleDATA//g' \
 		${WRKSRC}/lib/examples/Makefile.in
 .endif
