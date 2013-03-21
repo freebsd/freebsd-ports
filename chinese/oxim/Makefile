@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oxim
-# Date created:				Mar 19 2006
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oxim
 PORTVERSION=	1.2.2
@@ -17,9 +13,11 @@ COMMENT=	Open X Input Method server
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
 
-OPTIONS=	GTK2 "Enable GTK2 input method module" On \
-		CHEWING "Enable Chewing input module" On \
-		UNICODE "Enable Unicode input module" On
+OPTIONS_DEFINE=	GTK2 CHEWING UNICODE
+OPTIONS_DEFAULT=	GTK2 CHEWING UNICODE
+GTK2_DESC=	 GTK2 input method module
+CHEWING_DESC=	 Chewing input module
+UNICODE_DESC=	 Unicode input module
 
 USE_ICONV=	yes
 USE_XORG=	x11 xft xpm xtst
@@ -38,18 +36,18 @@ CONFIGURE_ARGS+=--disable-qt-immodule
 
 MAN1=		oxim.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GTK2)
-CONFIGURE_ARGS+=	--disable-gtk-immodule
-PLIST_SUB+=	GTK2="@comment "
-.else
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk-immodule
 PLIST_SUB+=	GTK2=""
+.else
+CONFIGURE_ARGS+=	--disable-gtk-immodule
+PLIST_SUB+=	GTK2="@comment "
 .endif
 
-.if !defined(WITHOUT_CHEWING)
+.if ${PORT_OPTIONS:MCHEWING}
 # make sure we have the required libchewing
 BUILD_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
@@ -62,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-chewing-module
 PLIST_SUB+=	CHEWING="@comment "
 .endif
 
-.if !defined(WITHOUT_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 CONFIGURE_ARGS+=	--enable-unicode-module
 PLIST_SUB+=	UNICODE=""
 .else
@@ -71,7 +69,7 @@ PLIST_SUB+=	UNICODE="@comment "
 .endif
 
 # TODO WITHOUT_NLS knob
-#.if !defined(WITHOUT_NLS)
+#.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 LDFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
@@ -85,10 +83,10 @@ post-patch:
 			${WRKSRC}/src/gtk-immodule/gtkintl.h
 
 post-install:
-.if !defined(WITHOUT_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
