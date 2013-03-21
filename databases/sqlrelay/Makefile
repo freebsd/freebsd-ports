@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SQL Relay
-# Date created:		2 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
@@ -36,18 +32,13 @@ PORTDOCS=	*
 
 .include "${.CURDIR}/Makefile.common"
 
-OPTIONS=	MSQL "Build MSQL connection" off \
-		MYSQL "Build MySQL connection" off \
-		ODBC "Build ODBC connection" off \
-		POSTGRESQL "Build PostgreSQL connection" off \
-		SQLITE "Build SQLite connection" off \
-		FREETDS "Build FreeTDS connection" off \
-		INTERBASE "Build Interbase connection" off \
-		GTK "Build GTK configuration tool" off
+OPTIONS_DEFINE=	MSQL MYSQL ODBC PGSQL SQLITE2 FREETDS INTERBASE GTK1 DOCS
+SQLITE2_DESC=	SQLite 2 database
+INTERBASE_DESC=	Interbase database
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
+.if ${PORT_OPTIONS:MSQLITE2}
 LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm \
 			sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
@@ -59,7 +50,7 @@ CONFIGURE_ARGS+=	--without-gdbm-prefix \
 IF_SQLITE=	"@comment "
 .endif
 
-.if defined(WITH_MYSQL) && ${WITH_MYSQL:L} != no
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
 IF_MYSQL=	""
@@ -68,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 IF_MYSQL=	"@comment "
 .endif
 
-.if defined(WITH_INTERBASE) && ${WITH_INTERBASE:L} != no
+.if ${PORT_OPTIONS:MINTERBASE}
 USE_FIREBIRD=	yes
 CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}"
 IF_INTERBASE=	""
@@ -77,7 +68,7 @@ CONFIGURE_ARGS+=	--disable-interbase
 IF_INTERBASE=	"@comment "
 .endif
 
-.if defined(WITH_MSQL) && ${WITH_MSQL:L} != no
+.if ${PORT_OPTIONS:MMSQL}
 LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql-prefix="${LOCALBASE}"
 IF_MSQL=	""
@@ -86,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-msql
 IF_MSQL=	"@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL) && ${WITH_POSTGRESQL:L} != no
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
@@ -95,7 +86,7 @@ CONFIGURE_ARGS+=	--disable-postgresql
 IF_POSTGRESQL=	"@comment "
 .endif
 
-.if defined(WITH_[BODBC) && ${WITH_ODBC:L} != no
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-prefix="${LOCALBASE}"
 IF_ODBC=	""
@@ -104,7 +95,7 @@ CONFIGURE_ARGS+=	--disable-odbc
 IF_ODBC=	"@comment "
 .endif
 
-.if defined(WITH_FREETDS) && ${WITH_FREETDS:L} != no
+.if ${PORT_OPTIONS:MFREETDS}
 LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 IF_FREETDS=	""
@@ -113,7 +104,7 @@ CONFIGURE_ARGS+=	--disable-freetds
 IF_FREETDS=	"@comment "
 .endif
 
-.if defined(WITH_GTK) && ${WITH_GTK:L} != no
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=		gtk12
 CONFIGURE_ARGS+=	--with-gtk-prefix="${LOCALBASE}"
 IF_GTK=		""
@@ -147,8 +138,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/EXAMPLEDIR/d' ${WRKSRC}/etc/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
-.ifdef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	 @${REINPLACE_CMD} '/$$(MAKE) -C doc/d' ${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

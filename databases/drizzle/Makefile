@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drizzle
-# Date created:		2010-04-22
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drizzle
 PORTVERSION=	2010.05.1561
@@ -34,7 +30,7 @@ GROUPS=		drizzle
 # Replace token in the rc.d script
 SUB_LIST+=	USERS=${USERS}
 
-OPTIONS=	DOCS "Build documentation with doxygen (very slow)" Off
+OPTIONS_DEFINE=	DOXYGEN NLS
 
 BUILD_DEPENDS+=	libdrizzle>=0:${PORTSDIR}/databases/libdrizzle \
 		e2fsprogs-libuuid>=0:${PORTSDIR}/misc/e2fsprogs-libuuid \
@@ -57,22 +53,21 @@ MAN8=	drizzled.8
 
 USE_RC_SUBR=	drizzle-server
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--disable-64bit
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen>=0:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 ALL_TARGET=	all doxygen
@@ -84,6 +79,5 @@ post-install::
 .else
 PLIST_SUB+=	PORTDOCS="@comment "
 .endif
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

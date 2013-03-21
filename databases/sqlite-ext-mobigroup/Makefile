@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sqlite-ext-mobigroup
-# Date created:		28 Jul 2010
-# Whom:			Pavel Volkov <pavelivolkov@googlemail.com>
-#
+# Created by: Pavel Volkov <pavelivolkov@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite-ext-mobigroup
 PORTVERSION=	3.7.5.1
@@ -22,10 +18,11 @@ WRKSRC=		${WRKDIR}/sqlite3-${PORTVERSION:R}
 
 USE_LDCONFIG=	${PREFIX}/libexec/${DIST_SUBDIR}
 
-OPTIONS=	COMPRESS "compress content into a blob using libz" off \
-		ENV "implements the getenv" off \
-		INET "provide the ipv4 functions in SQL queries" on \
-		MD5 "implements the MD5 message-digest algorithm" off
+OPTIONS_DEFINE=	COMPRESS ENV INET MD5 EXAMPLES DOCS
+COMPRESS_DESC=	compress content into a blob using libz
+ENV_DESC=	implements the getenv
+INET_DESC=	provide the ipv4 functions in SQL queries
+MD5_DESC=	implements the MD5 message-digest algorithm
 
 PLIST_DIRS=	libexec/${DIST_SUBDIR}
 PORTDOCS=	*
@@ -33,74 +30,74 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
-.ifdef WITH_COMPRESS
+.if ${PORT_OPTIONS:MCOMPRESS}
 PLIST_FILES+=	libexec/${DIST_SUBDIR}/libsqlitecompress.so
 .endif
-.ifdef WITH_INET
+.if ${PORT_OPTIONS:MINET}
 PLIST_FILES+=	libexec/${DIST_SUBDIR}/libsqliteipv4.so
 .endif
-.ifdef WITH_ENV
+.if ${PORT_OPTIONS:MENV}
 PLIST_FILES+=	libexec/${DIST_SUBDIR}/libsqliteenv.so
 .endif
-.ifdef WITH_MD5
+.if ${PORT_OPTIONS:MMD5}
 PLIST_FILES+=	libexec/${DIST_SUBDIR}/libsqlitemd5.so
 .endif
 
 CFLAGS+=	-I${PREFIX}/include -fPIC -lm -shared
 
 do-build:
-.ifdef WITH_COMPRESS
+.if ${PORT_OPTIONS:MCOMPRESS}
 	@cd ${WRKSRC}/ext/_compress && \
 		${CC} -lz ${CFLAGS} compress.c -o libsqlitecompress.so
 .endif
-.ifdef WITH_INET
+.if ${PORT_OPTIONS:MINET}
 	@cd ${WRKSRC}/ext/inet && \
 		${CC} ${CFLAGS} ipv4-ext.c -o libsqliteipv4.so
 .endif
-.ifdef WITH_ENV
+.if ${PORT_OPTIONS:MENV}
 	@cd ${WRKSRC}/ext/env && \
 		${CC} ${CFLAGS} env.c -o libsqliteenv.so
 .endif
-.ifdef WITH_MD5
+.if ${PORT_OPTIONS:MMD5}
 	@cd ${WRKSRC}/ext/md5 && \
 		${CC} ${CFLAGS} md5.c -o libsqlitemd5.so
 .endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/${DIST_SUBDIR}
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .endif
-.ifndef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .endif
-.ifdef WITH_COMPRESS
+.if ${PORT_OPTIONS:MCOMPRESS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/ext/_compress/libsqlitecompress.so ${PREFIX}/libexec/${DIST_SUBDIR}
 .endif
-.ifdef WITH_INET
+.if ${PORT_OPTIONS:MINET}
 	@${INSTALL_PROGRAM} ${WRKSRC}/ext/inet/libsqliteipv4.so ${PREFIX}/libexec/${DIST_SUBDIR}
-.	ifndef NOPORTDOCS
+.	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/inet/ipv4-ext.c > ${WRKSRC}/ext/inet/README-ipv4.txt
 		@${INSTALL_DATA} ${WRKSRC}/ext/inet/README-ipv4.txt ${DOCSDIR}
 .	endif
-.	ifndef NOPORTEXAMPLES
+.	if ${PORT_OPTIONS:MEXAMPLES}
 		@${INSTALL_DATA} ${WRKSRC}/ext/inet/ipv4-ext.sql ${EXAMPLESDIR}
 .	endif
 .endif
-.ifdef WITH_ENV
+.if ${PORT_OPTIONS:MENV}
 	@${INSTALL_PROGRAM} ${WRKSRC}/ext/env/libsqliteenv.so ${PREFIX}/libexec/${DIST_SUBDIR}
-.	ifndef NOPORTDOCS
+.	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/env/env.c > ${WRKSRC}/ext/env/README-env.txt
 		@${INSTALL_DATA} ${WRKSRC}/ext/env/README-env.txt ${DOCSDIR}
 .	endif
 .endif
-.ifdef WITH_MD5
+.if ${PORT_OPTIONS:MMD5}
 	@${INSTALL_PROGRAM} ${WRKSRC}/ext/md5/libsqlitemd5.so ${PREFIX}/libexec/${DIST_SUBDIR}
-.	ifndef NOPORTDOCS
+.	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/md5/md5.c > ${WRKSRC}/ext/md5/README-md5.txt
 		@${INSTALL_DATA} ${WRKSRC}/ext/md5/README-md5.txt ${DOCSDIR}
 .	endif
-.	ifndef NOPORTEXAMPLES
+.	if ${PORT_OPTIONS:MEXAMPLES}
 		@${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.sql ${EXAMPLESDIR}
 .	endif
 .endif

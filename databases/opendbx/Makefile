@@ -1,9 +1,5 @@
-# New ports collection makefile for:    opendbx
-# Date Created:                         17 March 2006
-# Whom:                                 tremere@cainites.net
-#
+# Created by: tremere@cainites.net
 # $FreeBSD$
-#
 
 PORTNAME=	opendbx
 PORTVERSION=	1.4.5
@@ -23,20 +19,17 @@ CONFIGURE_ARGS+=	--with-backends="${CONFIGURE_MODULES}"
 
 USE_LDCONFIG=	${PREFIX}/lib/opendbx
 
-OPTIONS=	MYSQL	"Support for the MySQL database" on \
-		PGSQL	"Support for the PostgreSQL database" off \
-		SQLITE	"Support for the SQLite 2 database" off \
-		SQLITE3	"Support for the SQLite 3 database" off \
-		MSSQL	"Support for the MSSQL database" off \
-		SYBASE	"Support for the Sybase database" off
+OPTIONS_DEFINE=	NLS
+OPTIONS_MULTI=	DRIVER
+OPTIONS_MULTI_DRIVER=	MYSQL PGSQL SQLITE2 MSSQL SYBASE
+OPTIONS_DEFAULT=	MYSQL
+SQLITE2_DESC=	SQLite 2 database
+SYBASE_DESC=	Sybase database
+DRIVER_DESC=	Database drivers
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE) && !defined(WITH_SQLITE3) && !defined(WITH_MSSQL) && !defined(WITH_SYBASE)
-IGNORE=		needs at least one database backend
-.endif
-
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL?=		YES
 CONFIGURE_MODULES+=	"mysql"
 CPPFLAGS+=		-I${LOCALBASE}/include/mysql
@@ -46,7 +39,7 @@ PLIST_SUB+=		WITHMYSQL=""
 PLIST_SUB+=		WITHMYSQL="@comment "
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL?=		YES
 CONFIGURE_MODULES+=	"pgsql"
 PLIST_SUB+=		WITHPGSQL=""
@@ -54,7 +47,7 @@ PLIST_SUB+=		WITHPGSQL=""
 PLIST_SUB+=		WITHPGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_MODULES+=	"sqlite"
 PLIST_SUB+=		WITHSQLITE=""
@@ -62,7 +55,7 @@ PLIST_SUB+=		WITHSQLITE=""
 PLIST_SUB+=		WITHSQLITE="@comment "
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_MODULES+=	"sqlite3"
 PLIST_SUB+=		WITHSQLITE3=""
@@ -70,7 +63,7 @@ PLIST_SUB+=		WITHSQLITE3=""
 PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 LIB_DEPENDS+=		sybdb.5:${PORTSDIR}/databases/freetds
 CONFIGURE_MODULES+=	"mssql"
 PLIST_SUB+=		WITHMSSQL=""
@@ -78,7 +71,7 @@ PLIST_SUB+=		WITHMSSQL=""
 PLIST_SUB+=		WITHMSSQL="@comment "
 .endif
 
-.if defined(WITH_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 LIB_DEPENDS+=		ct.4:${PORTSDIR}/databases/freetds
 CONFIGURE_MODULES+=	"sybase"
 PLIST_SUB+=		WITHSYBASE=""
@@ -86,12 +79,12 @@ PLIST_SUB+=		WITHSYBASE=""
 PLIST_SUB+=		WITHSYBASE="@comment "
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

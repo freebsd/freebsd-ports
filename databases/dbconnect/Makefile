@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	dbconnect
-# Date created:			Jul 23, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dbconnect
 PORTVERSION=	0.3.5
@@ -23,14 +18,14 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS} -fPIC -DFREEBSD
 LDFLAG+=	${PTHREAD_LIBS}
 
-OPTIONS=	MYSQL "With MySQL driver" on \
-		PGSQL "With PostgreSQL driver" off
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--enable-mysql=yes \
 			--with-mysql_include=${LOCALBASE}/include/mysql \
@@ -40,7 +35,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-pgsql=yes \
 			--with-pgsql_include=${LOCALBASE}/include \
@@ -65,4 +60,4 @@ do-install:
 			$${libname}.so); \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

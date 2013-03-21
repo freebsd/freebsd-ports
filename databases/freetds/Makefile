@@ -1,7 +1,4 @@
-# New ports collection makefile for:   freetds
-# Date created:		02 Nov 1999
-# Whom:			Domas Mituzas <midom@dammit.lt>
-#
+# Created by: Domas Mituzas <midom@dammit.lt>
 # $FreeBSD$
 
 PORTNAME=	freetds
@@ -30,35 +27,34 @@ PORTDOCS=	*
 
 MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 defncopy.1
 
-OPTIONS=	OPENSSL "Use openssl" off       \
-		GNUTLS "Use GNUTLS" off \
-		IODBC   "Use iodbc (Mutually Exclusive)" off    \
-		UNIXODBC "Use unixodbc (Mutually Exclusive)" off        \
-		MSDBLIB "MS SQL Server support (breaks databases/sybtcl)" off
+OPTIONS_DEFINE=	OPENSSL GNUTLS MSDBLIB DOCS
+OPTIONS_RADIO=	ODBC
+OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
+MSDBLIB_DESC=	MS SQL Server support (breaks databases/sybtcl)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls
 .endif
 
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .endif
 
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .endif
 
-.if defined(WITH_IODBC) || defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MIODBC) || defined(WITH_UNIXODBC}
 PLIST_SUB+=	ODBC=""
 .else
 PLIST_SUB+=	ODBC="@comment "
@@ -66,7 +62,7 @@ PLIST_SUB+=	ODBC="@comment "
 
 # We cannot use msdblib-style by default, because port databases/sybtcl
 # relies on sybase-style dblib
-.if defined(WITH_MSDBLIB)
+.if ${PORT_OPTIONS:MMSDBLIB}
 CONFIGURE_ARGS+=	--enable-msdblib
 .endif
 
@@ -84,7 +80,7 @@ post-patch:
 		 s| common.h||g'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc ${DOCSDIR}
 .endif
@@ -93,4 +89,4 @@ post-install:
 	@${ECHO_CMD} "Sample configuration files have been installed in ${PREFIX}/etc"
 	@${ECHO_CMD} "You should edit them and remove the .dist-suffix from their names"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: adodb
-# Date created:		4 May 2001
-# Whom:			abgoeree@uwnet.nl
-#
+# Created by: abgoeree@uwnet.nl
 # $FreeBSD$
-#
 
 PORTNAME=	adodb
 PORTVERSION=	4.99.2
@@ -26,13 +22,14 @@ NO_BUILD=	YES
 
 ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 
-OPTIONS=	TESTS "Install tests" off
+OPTIONS_DEFINE=	TESTS DOCS
+TESTS_DESC=	Install tests
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message
 
-.if defined (WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 PLIST_SUB+=	TESTS=
 .else
 PLIST_SUB+=	TESTS="@comment "
@@ -50,14 +47,14 @@ do-install:
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
 
-.if defined (WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 	@${MKDIR} ${DATADIR}/tests
 	@cd ${WRKSRC}; ${FIND} tests -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
 .endif
 
 post-install:
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/cute_icons_for_site
 	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f -name '*.txt' \
 		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${DOCSDIR}/{} \;
@@ -68,4 +65,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

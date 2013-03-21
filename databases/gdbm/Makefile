@@ -1,9 +1,5 @@
-# New ports collection makefile for: gdbm
-# Date created:		8 Apr 1996
-# Whom:			Brent J. Nordquist <bjn@visi.com>
-#
+# Created by: Brent J. Nordquist <bjn@visi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gdbm
 PORTVERSION=	1.9.1
@@ -13,7 +9,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The GNU database manager
 
-OPTIONS=	COMPAT	"dbm/ndbm compatibility" off
+OPTIONS_DEFINE=	COMPAT
+COMPAT_DESC=	dbm/ndbm compatibility
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
@@ -25,7 +22,7 @@ MAN3=		gdbm.3
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_COMPAT)
+.if ${PORT_OPTIONS:MCOMPAT}
 CONFIGURE_ARGS+=--enable-libgdbm-compat
 PLIST_SUB=	GDBM_COMPAT=""
 .else
@@ -33,10 +30,10 @@ PLIST_SUB=	GDBM_COMPAT="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_COMPAT)
+.if ! ${PORT_OPTIONS:MCOMPAT}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you need UNIX dbm/ndbm compatibility functions,"
-	@${ECHO_MSG} "use \"make WITH_COMPAT=yes\""
+	@${ECHO_MSG} "use \"make WITH=COMPAT\""
 	@${ECHO_MSG}
 .endif
 

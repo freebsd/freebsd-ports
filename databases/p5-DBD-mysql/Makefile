@@ -1,9 +1,5 @@
-# New ports collection makefile for:    DBD::mysql
-# Date created:				27 Nov 2001
-# Whom:	      				Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-mysql
 PORTVERSION=	4.021
@@ -29,11 +25,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3
 
-OPTIONS=	SSL	"build with OpenSSL support" off
+OPTIONS_DEFINE=	SSL
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--ssl
 RUN_DEPENDS+=		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 .endif
