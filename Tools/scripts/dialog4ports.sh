@@ -15,7 +15,9 @@ OPTIONSFILE="$1"
 
 if ! [ -e $DIALOG4PORTS ]; then
 	# If INSTALL_AS_USER is set then just build and use the WRKDIR version
-	if [ -n "${INSTALL_AS_USER}" ]; then
+	# Also do this if PREFIX!=LOCALBASE to avoid missing file or double
+	# installs
+	if [ -n "${INSTALL_AS_USER}" -o "${PREFIX}" != "${LOCALBASE}" ]; then
 		if ! [ -d "${PORTSDIR}/${DIALOGPORT}" ]; then
 			echo "===> Skipping 'config' as ${DIALOGPORT} is not checked out" >&2
 			exit 1
