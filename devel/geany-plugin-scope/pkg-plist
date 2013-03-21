@@ -1,0 +1,42 @@
+lib/geany/scope.a
+lib/geany/scope.la
+lib/geany/scope.so
+%%DOCSDIR%%/scope/AUTHORS
+%%DOCSDIR%%/scope/COPYING
+%%DOCSDIR%%/scope/ChangeLog
+%%DOCSDIR%%/scope/NEWS
+%%DOCSDIR%%/scope/README
+%%DOCSDIR%%/scope/html/codes.html
+%%DOCSDIR%%/scope/html/scope.html
+share/geany-plugins/scope/BreakPoint.png
+share/geany-plugins/scope/BreakPoint22.png
+share/geany-plugins/scope/Continue.png
+share/geany-plugins/scope/Continue22.png
+share/geany-plugins/scope/Continue24.png
+share/geany-plugins/scope/Kill.png
+share/geany-plugins/scope/Kill22.png
+share/geany-plugins/scope/Kill24.png
+share/geany-plugins/scope/Pause.png
+share/geany-plugins/scope/Pause22.png
+share/geany-plugins/scope/Pause24.png
+share/geany-plugins/scope/RunToCursor.png
+share/geany-plugins/scope/RunToCursor22.png
+share/geany-plugins/scope/RunToCursor24.png
+share/geany-plugins/scope/RunToMethod.png
+share/geany-plugins/scope/RunToMethod22.png
+share/geany-plugins/scope/RunToMethod24.png
+share/geany-plugins/scope/StepInto.png
+share/geany-plugins/scope/StepInto22.png
+share/geany-plugins/scope/StepInto24.png
+share/geany-plugins/scope/StepOut.png
+share/geany-plugins/scope/StepOut22.png
+share/geany-plugins/scope/StepOut24.png
+share/geany-plugins/scope/StepOver.png
+share/geany-plugins/scope/StepOver22.png
+share/geany-plugins/scope/StepOver24.png
+share/geany-plugins/scope/scope.glade
+@dirrm share/geany-plugins/scope
+@dirrmtry share/geany-plugins
+@dirrm %%DOCSDIR%%/scope/html
+@dirrm %%DOCSDIR%%/scope
+@dirrm %%DOCSDIR%%

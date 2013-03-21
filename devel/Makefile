@@ -493,11 +493,11 @@
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
     SUBDIR += geany-plugin-codenav
+    SUBDIR += geany-plugin-commander
     SUBDIR += geany-plugin-debugger
     SUBDIR += geany-plugin-devhelp
     SUBDIR += geany-plugin-doc
     SUBDIR += geany-plugin-extrasel
-    SUBDIR += geany-plugin-gdb
     SUBDIR += geany-plugin-gendoc
     SUBDIR += geany-plugin-geniuspaste
     SUBDIR += geany-plugin-gproject
@@ -512,6 +512,7 @@
     SUBDIR += geany-plugin-pg
     SUBDIR += geany-plugin-pretty-printer
     SUBDIR += geany-plugin-prj
+    SUBDIR += geany-plugin-scope
     SUBDIR += geany-plugin-sendmail
     SUBDIR += geany-plugin-shiftcolumn
     SUBDIR += geany-plugin-spellcheck
@@ -522,6 +523,7 @@
     SUBDIR += geany-plugin-webhelper
     SUBDIR += geany-plugin-xmlsnippets
     SUBDIR += geany-plugins
+    SUBDIR += geany-plugins-l10n
     SUBDIR += gearmand
     SUBDIR += gecode
     SUBDIR += generate

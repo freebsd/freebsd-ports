@@ -1,14 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugin
+PORTNAME=	geany-plugin-extrasel
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
-
-GEANY_PLUGIN=	extrasel
-GEANY_PLUGIN_DIR=	geanyextrasel
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

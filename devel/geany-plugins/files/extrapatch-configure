@@ -1,0 +1,72 @@
+--- ./configure.orig	2013-03-10 17:01:27.000000000 +0000
++++ ./configure	2013-03-21 00:22:04.580741068 +0000
+@@ -21101,69 +21101,3 @@
+     expanded_docdir=$(eval echo $expanded_docdir)
+ 
+ 
+-    cat <<GPEOF
+-
+-${PACKAGE}-${VERSION}
+-
+-  Build Environment:
+-    Geany version:                ${GEANY_VERSION}
+-    Install prefix:               ${prefix}
+-    Datadir:                      ${expanded_datadir}/${PACKAGE_TARNAME}
+-    Libdir:                       ${expanded_libdir}/${PACKAGE_TARNAME}
+-    Docdir:                       ${expanded_docdir}
+-    Plugins path:                 ${geanypluginsdir}
+-
+-  Build Features:
+-GPEOF
+-
+-
+-    while read line; do
+-        test -z "$line" && break;
+-        plugin="    ${line%:*}:"
+-        status=${line#*:}
+-        let extracols=34-${#plugin}
+-        echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
+-            echo -n ' '
+-        done
+-        echo $status
+-    done << GPEOF
+-$build_feature_statusmsg
+-GPEOF
+-
+-    echo
+-    echo "  Plugins:"
+-
+-    while read line; do
+-        test -z "$line" && break;
+-        plugin="    ${line%:*}:"
+-        status=${line#*:}
+-        let extracols=34-${#plugin}
+-        echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
+-            echo -n ' '
+-        done
+-        echo $status
+-    done << GPEOF
+-$plugins_statusmsg
+-GPEOF
+-
+-    echo
+-    echo "  Features:"
+-
+-    while read line; do
+-        test -z "$line" && break;
+-        plugin="    ${line%:*}:"
+-        status=${line#*:}
+-        let extracols=34-${#plugin}
+-        echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
+-            echo -n ' '
+-        done
+-        echo $status
+-    done << GPEOF
+-$feature_statusmsg
+-GPEOF
+-
+-    echo
+-

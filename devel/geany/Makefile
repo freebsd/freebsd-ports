@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -15,13 +15,14 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gtk20
 USE_PKGCONFIG=	build
+USES=		pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	VTE NLS
+OPTIONS_DEFINE=	VTE NLS DOCS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 VTE_DESC=	Embedded virtual terminal
 

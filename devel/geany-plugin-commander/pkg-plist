@@ -1,0 +1,10 @@
+lib/geany/commander.a
+lib/geany/commander.la
+lib/geany/commander.so
+%%DOCSDIR%%/commander/AUTHORS
+%%DOCSDIR%%/commander/COPYING
+%%DOCSDIR%%/commander/ChangeLog
+%%DOCSDIR%%/commander/NEWS
+%%DOCSDIR%%/commander/README
+@dirrm %%DOCSDIR%%/commander
+@dirrmtry %%DOCSDIR%%

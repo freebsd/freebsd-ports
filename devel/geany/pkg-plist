@@ -83,10 +83,13 @@ share/applications/geany.desktop
 %%DATADIR%%/filetype_extensions.conf
 %%DATADIR%%/filetypes.Cython.conf
 %%DATADIR%%/filetypes.Genie.conf
+%%DATADIR%%/filetypes.Go.conf
 %%DATADIR%%/filetypes.Scala.conf
+%%DATADIR%%/filetypes.abaqus
 %%DATADIR%%/filetypes.abc
 %%DATADIR%%/filetypes.actionscript
 %%DATADIR%%/filetypes.ada
+%%DATADIR%%/filetypes.asciidoc
 %%DATADIR%%/filetypes.asm
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
@@ -138,6 +141,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/filetypes.yaml
 %%DATADIR%%/geany.glade
+%%DATADIR%%/geany.gtkrc
 %%DATADIR%%/html_entities.tags
 %%DATADIR%%/pascal.tags
 %%DATADIR%%/php.tags
@@ -160,6 +164,15 @@ share/applications/geany.desktop
 %%DATADIR%%/templates/function
 %%DATADIR%%/templates/gpl
 %%DATADIR%%/ui_toolbar.xml
+share/icons/Tango/16x16/actions/geany-save-all.png
+share/icons/Tango/24x24/actions/geany-save-all.png
+share/icons/Tango/32x32/actions/geany-save-all.png
+share/icons/Tango/48x48/actions/geany-save-all.png
+share/icons/Tango/icon-theme.cache
+share/icons/Tango/scalable/actions/geany-save-all.svg
+share/icons/hicolor/16x16/actions/geany-build.png
+share/icons/hicolor/16x16/actions/geany-close-all.png
+share/icons/hicolor/16x16/actions/geany-save-all.png
 share/icons/hicolor/16x16/apps/classviewer-class.png
 share/icons/hicolor/16x16/apps/classviewer-macro.png
 share/icons/hicolor/16x16/apps/classviewer-member.png
@@ -169,7 +182,19 @@ share/icons/hicolor/16x16/apps/classviewer-other.png
 share/icons/hicolor/16x16/apps/classviewer-struct.png
 share/icons/hicolor/16x16/apps/classviewer-var.png
 share/icons/hicolor/16x16/apps/geany.png
+share/icons/hicolor/24x24/actions/geany-build.png
+share/icons/hicolor/24x24/actions/geany-close-all.png
+share/icons/hicolor/24x24/actions/geany-save-all.png
+share/icons/hicolor/32x32/actions/geany-build.png
+share/icons/hicolor/32x32/actions/geany-close-all.png
+share/icons/hicolor/32x32/actions/geany-save-all.png
+share/icons/hicolor/48x48/actions/geany-build.png
+share/icons/hicolor/48x48/actions/geany-close-all.png
+share/icons/hicolor/48x48/actions/geany-save-all.png
 share/icons/hicolor/48x48/apps/geany.png
+share/icons/hicolor/scalable/actions/geany-build.svg
+share/icons/hicolor/scalable/actions/geany-close-all.svg
+share/icons/hicolor/scalable/actions/geany-save-all.svg
 share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/geany.mo
@@ -181,10 +206,14 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/el/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/es/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/et/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/he/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/id/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
@@ -203,6 +232,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/geany.mo
@@ -215,6 +245,32 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable/actions
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48/actions
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/actions
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons/Tango/scalable/actions
+@dirrmtry share/icons/Tango/scalable
+@dirrmtry share/icons/Tango/48x48/actions
+@dirrmtry share/icons/Tango/48x48
+@dirrmtry share/icons/Tango/32x32/actions
+@dirrmtry share/icons/Tango/32x32
+@dirrmtry share/icons/Tango/24x24/actions
+@dirrmtry share/icons/Tango/24x24
+@dirrmtry share/icons/Tango/16x16/actions
+@dirrmtry share/icons/Tango/16x16
+@dirrmtry share/icons/Tango
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/templates/files
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/colorschemes
