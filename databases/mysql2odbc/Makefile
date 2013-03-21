@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mysql2odbc
-# Date created:				8 Aug 2005
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql2odbc
 PORTVERSION=	0.99.2
@@ -14,25 +10,18 @@ MASTER_SITES=	http://www.iodbc.org/downloads/mysql2odbc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Openlink MySQL-ODBC Gateway
 
-OPTIONS=	UNIXODBC	"Build with unixODBC" on \
-		IODBC		"Build with iODBC" off \
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	UNIXODBC IODBC
+OPTIONS_DEFAULT=	UNIXODBC
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_UNIXODBC) && !defined(WITH_IODBC)
-WITH_UNIXODBC=	yes
-.endif
-
-.if defined(WITH_UNIXODBC) && defined(WITH_IODBC)
-BROKEN=		UNIXODBC and IODBC options are mutually exclusive
-.endif
-
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
 .endif
 
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS=	--with-iodbc
 .endif
@@ -44,4 +33,4 @@ LDFLAGS+=	${PTHREAD_LIBS}
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

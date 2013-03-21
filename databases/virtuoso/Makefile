@@ -1,9 +1,5 @@
-# New ports collection makefile for:    virtuoso
-# Date created:         		Jul 08, 2006
-# Whom:                 		Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	virtuoso
 PORTVERSION=	6.1.6
@@ -47,9 +43,7 @@ GROUPS=		virtuoso
 
 CHECK_PORT=	/usr/bin/nc -z localhost $$\1 2>\&1
 
-OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
-		KERBEROS "Kerberos extension" off\
-		OPENLDAP "OpenLDAP support" off
+OPTIONS_DEFINE=	IMAGEMAGICK KERBEROS LDAP
 #		PERL "Perl hosting" off
 #		PYTHON "Python hosting" off
 #		MONO "Mono extension" off\
@@ -73,9 +67,9 @@ post-install:
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
 LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
@@ -84,47 +78,47 @@ CONFIGURE_ARGS+=--disable-imagemagick
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .endif
 
-.if defined(WITH_KERBEROS)
+.if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 .endif
 
 # XXX broken (does not build, requires gc.h)
-#.if defined(WITH_MONO)
+#.if ${PORT_OPTIONS:MMONO}
 #CONFIGURE_ARGS+=--enable-mono
 #.endif
 
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MOPENLDAP}
 CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
 USE_OPENLDAP=	yes
 .endif
 
 # XXX broken (requires perl to be built with -Dusemultiplicity)
-#.if defined(WITH_PERL)
+#.if ${PORT_OPTIONS:MPERL}
 #CONFIGURE_ARGS+=--enable-perl
 #USE_PERL5=	yes
 #.endif
 
 # XXX broken (no libphp)
-#.if defined(WITH_PHP4)
+#.if ${PORT_OPTIONS:MPHP4}
 #CONFIGURE_ARGS+=--enable-php4
 #.endif
 
 # XXX broken (no libphp)
-#.if defined(WITH_PHP5)
+#.if ${PORT_OPTIONS:MPHP5}
 #CONFIGURE_ARGS+=--enable-php5
 #.endif
 
 # XXX broken (USE_PYTHON does not work with OPTIONS)
-#.if defined(WITH_PYTHON)
+#.if ${PORT_OPTIONS:MPYTHON}
 #CONFIGURE_ARGS+=--enable-python
 #USE_PYTHON=	yes
 #.endif
 
 # XXX broken (USE_LIBRUBY does not work with OPTIONS)
-#.if defined(WITH_RUBY)
+#.if ${PORT_OPTIONS:MRUBY}
 #CONFIGURE_ARGS+=--enable-ruby
 #USE_LIBRUBY=	yes
 #.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

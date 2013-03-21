@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tokyotyrant
-# Date created:		2009-03-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.41
@@ -25,14 +21,14 @@ MAN1=		tcrmgr.1 tcrmttest.1 tcrtest.1 ttserver.1 ttulmgr.1 ttultest.1
 MAN3=		tcrdb.3 tculog.3 ttutil.3
 MAN8=		ttservctl.8
 
-OPTIONS=	LUA	"Enable LUA support" off
+OPTIONS_DEFINE=	LUA
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--enable-lua
 LDFLAGS+=	-L${LUA_LIBDIR}
 CFLAGS+=	-I${LUA_INCDIR}
@@ -47,4 +43,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

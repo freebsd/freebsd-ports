@@ -23,13 +23,14 @@ USE_RC_SUBR=	slon
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
 
-OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
+OPTIONS_DEFINE=	PERLTOOLS DOCS
+PERLTOOLS_DESC=	Install perl configuration tools
 
 CONFLICTS?=	slony1v2-2*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PERLTOOLS)
+.if ${PORT_OPTIONS:MPERLTOOLS}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perltools=${LOCALBASE}/sbin
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
@@ -55,7 +56,7 @@ MAN1=	slon.1 slonik.1
 .endif
 
 post-install:
-.if ! defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/adminguide
 	${MKDIR} ${DOCSDIR}/howto
@@ -70,4 +71,4 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

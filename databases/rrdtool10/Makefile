@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rrdtool
-# Date created:				20 July 1999
-# Whom:					Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.0.50
@@ -37,11 +33,12 @@ MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
 MAN3=		RRDp.3 RRDs.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-OPTIONS=	LATIN2 "ISO-8859-2 fonts support" off
+OPTIONS_DEFINE=	LATIN2
+LATIN2_DESC=	ISO-8859-2 fonts support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LATIN2)
+.if ${PORT_OPTIONS:MLATIN2}
 CONFIGURE_ARGS+=--enable-latin2
 .endif
 
@@ -54,7 +51,7 @@ BROKEN=		Does not build on ia64
 .endif
 
 post-extract:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
 		${WRKSRC}/doc/Makefile.in
 .endif
@@ -67,4 +64,4 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

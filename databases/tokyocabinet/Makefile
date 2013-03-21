@@ -1,5 +1,5 @@
-# $FreeBSD$
 # Created by: Gea-Suan Lin <gslin@gslin.org>
+# $FreeBSD$
 
 PORTNAME=	tokyocabinet
 PORTVERSION=	1.4.48
@@ -17,9 +17,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
-.endif
 
 MAN1=		tcamgr.1 tcamttest.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tcfmgr.1 tcfmttest.1 tcftest.1 \
@@ -29,54 +26,61 @@ MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
 		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3 tctree.3 \
 		tctdb.3
 
-OPTIONS=	DEBUG "Debugging support" off \
-		DEVEL "Development build" off \
-		FASTEST "Fastest run" off \
-		LZMA "Enable LZMA codec" off \
-		LZO "Enable LZO codec" off \
-		PTHREAD "Enable POSIX thread support" on \
-		PROFILE "Profiling build" off \
-		SHARED "Shared build" on \
-		SWAB "Swapping byte-orders build" off \
-		UYIELD "Detecting race conditions" off
+OPTIONS_DEFINE=	DEBUG DEVEL FASTEST LZMA LZO PTHREAD PROFILE SHARED SWAB UYIELD DOCS
+OPTIONS_DEFAULT=	PTHREAD SHARED
+DEBUG_DESC=	Debugging support
+DEVEL_DESC=	Development build
+FASTEST_DESC=	Fastest run
+LZMA_DESC=	LZMA codec
+LZO_DESC=	LZO codec
+PTHREAD_DESC=	Enable POSIX thread support
+PROFILE_DESC=	Profiling build
+SHARED_DESC=	Shared build
+SWAB_DESC=	Swapping byte-orders build
+UYIELD_DESC=	Detecting race conditions
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 PORTDOCS=	*
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.if defined(WITH_DEVEL)
+.if ${PORT_OPTIONS:MDEVEL}
 CONFIGURE_ARGS+=	--enable-devel
 .endif
-.if defined(WITH_FASTEST)
+.if ${PORT_OPTIONS:MFASTEST}
 CONFIGURE_ARGS+=	--enable-fastest
 .endif
 # liblzma on 9-current does not have liblzma.h file.
-.if defined(WITH_LZMA) || exists(${LOCALBASE}/include/liblzma.h)
+.if ${PORT_OPTIONS:MLZMA}
 CONFIGURE_ARGS+=	--enable-exlzma
 LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/lzmalib
+.else
+CONFIGURE_ARGS+=	--disable-exlzma
 .endif
-.if defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo2.so)
+.if ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-exlzo
 LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
+.else
+CONFIGURE_ARGS+=	--disable-exlzo
 .endif
-.if defined(WITHOUT_PTHREAD)
+.if ! ${PORT_OPTIONS:MPTHREAD}
 CONFIGURE_ARGS+=	--disable-pthread
 .endif
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--enable-profile
 .endif
-.if defined(WITHOUT_SHARED)
+.if ! ${PORT_OPTIONS:MSHARED}
 CONFIGURE_ARGS+=	--disable-shared
 .endif
-.if defined(WITH_SWAB)
+.if ${PORT_OPTIONS:MSWAB}
 CONFIGURE_ARGS+=	--enable-swab
 .endif
-.if defined(WITH_UYIELD)
+.if ${PORT_OPTIONS:MUYIELD}
 CONFIGURE_ARGS+=	--enable-uyield
 .endif
 
@@ -92,4 +96,4 @@ post-patch:
 		-e 's|@datarootdir@|@datarootdir@/doc|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

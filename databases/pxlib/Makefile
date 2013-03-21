@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pxlib
-# Date created:				10 December 2005
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pxlib
 PORTVERSION=	0.6.3
@@ -27,11 +23,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOCS	"Build and install documentation" off
+OPTIONS_DEFINE=	MAN
+MAN_DESC=	Build and install manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MMAN}
 BUILD_DEPENDS+=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
 		docbook2man:${PORTSDIR}/textproc/docbook-utils
 
@@ -58,4 +55,4 @@ pre-build:
 	${REINPLACE_CMD} -e 's/^DOCDIR =.*/DOCDIR =/' ${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
