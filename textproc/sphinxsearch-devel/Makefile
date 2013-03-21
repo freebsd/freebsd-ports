@@ -30,7 +30,7 @@ CONFLICTS=	sphinxsearch-[0-9]* \
 # of turning this off. So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	MYSQL PGSQL ICONV OPTIMIZED_CFLAGS ID64 UNIXODBC \
+OPTIONS_DEFINE=	MYSQL PGSQL ICONV OPTIMIZED_CFLAGS ID64 UNIXODBC \
 		DOCS EXAMPLES
 ID64_DESC=	64-bit document and word IDs
 OPTIONS_DEFAULT=	MYSQL ICONV
@@ -142,7 +142,7 @@ install-docs:
 .endif
 
 install-examples:
-.if .if ${PORT_OPTIONS:MEXAMPLES}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}
