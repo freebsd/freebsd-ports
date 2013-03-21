@@ -1,9 +1,5 @@
-# Ports collection makefile for:	stardict2
-# Date created:			13 April 2003
-# Whom:				Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.8
@@ -13,7 +9,7 @@ MASTER_SITES=	SF
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	A cross-platform and international dictionary written in Gtk2
+COMMENT=	Cross-platform and international dictionary written in Gtk2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
@@ -25,13 +21,15 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	stardict2
 
-OPTIONS=	GNOMEUI "GNOME support" On
+OPTIONS_DEFINE=	GNOME
+OPTIONS_DEFAULT=	GNOME
 
 CONFLICTS=	stardict-3.[0-9]*
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GNOMEUI)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
