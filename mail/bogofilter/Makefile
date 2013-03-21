@@ -62,7 +62,8 @@ post-patch:
 		${WRKSRC}/src/tests/unsort.pl \
 		${WRKSRC}/contrib/*.pl
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \
-		${WRKSRC}/src/tests/Makefile.in
+		-e 's/ENVIRON_TESTS = t.abort/ENVIRON_TESTS =/' \
+		${WRKSRC}/src/tests/Makefile.am
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
