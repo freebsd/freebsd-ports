@@ -99,6 +99,7 @@
     SUBDIR += scv
     SUBDIR += slffea
     SUBDIR += spice
+    SUBDIR += sweethome3d
     SUBDIR += systemc
     SUBDIR += tkgate
     SUBDIR += tochnog

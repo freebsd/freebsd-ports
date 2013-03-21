@@ -1,0 +1,15 @@
+--- ./build.xml.orig	2012-09-18 23:53:21.000000000 +0200
++++ ./build.xml	2012-09-18 23:53:37.000000000 +0200
+@@ -388,12 +388,6 @@
+       <zipfileset src="build/Textures.jar"/>
+       <zipfileset src="build/Help.jar"/>
+       <fileset dir="lib">
+-        <include name="windows/**/*.dll"/>
+-        <include name="linux/**/*.so"/>
+-        <include name="macosx/*.jnilib"/>
+-        <include name="macosx/*.jar"/>
+-      </fileset>
+-      <fileset dir="lib">
+         <include name="*.jar"/>
+       </fileset>
+       <fileset dir="libtest">
