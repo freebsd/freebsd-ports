@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- /home/sbruno/ports/virtualbox-ose-kmod/work/VirtualBox-4.2.6/src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:19:36.795745576 -0700
-+++ ../work/VirtualBox-4.2.6/src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:15:35.164791970 -0700
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:19:36.795745576 -0700
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:15:35.164791970 -0700
 @@ -162,7 +162,11 @@
          case RTR0MEMOBJTYPE_PHYS:
          case RTR0MEMOBJTYPE_PHYS_NC:
