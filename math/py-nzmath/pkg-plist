@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/nzmath/algorithm.py
 %%PYTHON_SITELIBDIR%%/nzmath/algorithm.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/algorithm.pyo
+%%PYTHON_SITELIBDIR%%/nzmath/all.py
+%%PYTHON_SITELIBDIR%%/nzmath/all.pyc
+%%PYTHON_SITELIBDIR%%/nzmath/all.pyo
 %%PYTHON_SITELIBDIR%%/nzmath/arith1.py
 %%PYTHON_SITELIBDIR%%/nzmath/arith1.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/arith1.pyo
@@ -112,6 +115,9 @@
 %%PYTHON_SITELIBDIR%%/nzmath/poly/__init__.py
 %%PYTHON_SITELIBDIR%%/nzmath/poly/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/poly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nzmath/poly/array.py
+%%PYTHON_SITELIBDIR%%/nzmath/poly/array.pyc
+%%PYTHON_SITELIBDIR%%/nzmath/poly/array.pyo
 %%PYTHON_SITELIBDIR%%/nzmath/poly/factor.py
 %%PYTHON_SITELIBDIR%%/nzmath/poly/factor.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/poly/factor.pyo
@@ -166,6 +172,9 @@
 %%PYTHON_SITELIBDIR%%/nzmath/round2.py
 %%PYTHON_SITELIBDIR%%/nzmath/round2.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/round2.pyo
+%%PYTHON_SITELIBDIR%%/nzmath/sequence.py
+%%PYTHON_SITELIBDIR%%/nzmath/sequence.pyc
+%%PYTHON_SITELIBDIR%%/nzmath/sequence.pyo
 %%PYTHON_SITELIBDIR%%/nzmath/squarefree.py
 %%PYTHON_SITELIBDIR%%/nzmath/squarefree.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/squarefree.pyo
@@ -205,6 +214,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/imaginary.pdf
 %%PORTDOCS%%%%DOCSDIR%%/intresidue.pdf
 %%PORTDOCS%%%%DOCSDIR%%/lattice.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual_overview.pdf
 %%PORTDOCS%%%%DOCSDIR%%/matrix.pdf
 %%PORTDOCS%%%%DOCSDIR%%/module.pdf
 %%PORTDOCS%%%%DOCSDIR%%/multiplicative.pdf

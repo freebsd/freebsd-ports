@@ -1,14 +1,10 @@
-# New ports collection makefile for:	py-nzmath
-# Date created:				3rd June, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nzmath
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	math python
-MASTER_SITES=	http://tnt.math.se.tmu.ac.jp/nzmath/download/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NZMATH-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	NZMATH-${PORTVERSION}
 
