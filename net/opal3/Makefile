@@ -137,7 +137,6 @@ CONFIGURE_ARGS+=	--disable-h264
 PLIST_SUB+=	X264="@comment "
 .endif
 
-BROKEN=chekc ffmpeg
 .if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg --enable-ffmpeg-h263
@@ -267,7 +266,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's?^EXTRALIBS = $(ILBC_LIBS)?EXTRALIBS = $(ILBC_LIBS) -L/usr/local/lib?' ${WRKSRC}/plugins/audio/iLBC/Makefile.in
 	@${REINPLACE_CMD} -e 's?ILBC_CFLAGS=""?ILBC_CFLAGS="-L/usr/local/lib"?' ${WRKSRC}/plugins/configure
 	@${REINPLACE_CMD} -e 's?^\(EXTRALIBS\)\(.*\)?\1\2 -L/usr/local/lib?' ${WRKSRC}/plugins/fax/fax_spandsp/Makefile.in
-#	@${REINPLACE_CMD} -e 's?/pkgconfig?data/pkgconfig?g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's?@@SO_VER@@?'${PORTVERSION:C/.[0-9]+$//g}'.so.'${PORTVERSION:C/^[0-9]+.[0-9]+.//}'?g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's?@@SO_MAJ@@?'${PORTVERSION:C/.[0-9]+$//g}'.so?g' ${WRKSRC}/Makefile.in
 .if ! ${PORT_OPTIONS:MDEBUG}
