@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomepilot2
-# Date created:		12 March 2003
-# Whom:			Joe Marcus Clarke <marcus@marcuscom.com>
-#
+# Created by: Joe Marcus Clarke <marcus@marcuscom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-pilot
 PORTVERSION=	2.0.17
@@ -18,9 +14,11 @@ COMMENT=	PalmPilot conduit system for GNOME 2
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
+USES=		pathfix
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack \
+USE_PKGCONFIG=	build
+USE_GNOME=	gnomeprefix gnomehier gnomepanel intlhack \
 		ltverhack libgnomeui
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
