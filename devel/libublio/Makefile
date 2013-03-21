@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libublio
-# Date created:				2007-09-10
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	libublio
 PORTVERSION=	20070103
@@ -16,7 +12,7 @@ COMMENT=	User space caching library
 
 USE_LDCONFIG=	yes
 
-.if defined(NO_PROFILE) || defined(NOPROFILE)
+.if defined(NO_PROFILE) || defined(NOPROFILE) || defined(WITHOUT_PROFILE)
 PLIST_SUB+=	PROFLIB="@comment "
 .else
 PLIST_SUB+=	PROFLIB=""
@@ -25,11 +21,20 @@ PLIST_SUB+=	PROFLIB=""
 SRCCONF=	${NONEXISTENT}
 MAKE_ENV+=	SRCCONF=${SRCCONF}
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
+# this pre-install is only for debugging pointyhat failures
+pre-install:
+	@${ECHO_CMD} "===> Environment:"
+	@${SETENV} | ${SETENV} LC_ALL=C ${SORT} -f
+	@${ECHO_CMD} "===> Makefiles used:"
+	@${ECHO_CMD} ${.MAKEFILE_LIST}
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
