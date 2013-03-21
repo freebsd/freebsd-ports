@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}

@@ -2,6 +2,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,7 +15,7 @@ LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		qca.2:${PORTSDIR}/devel/qca \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
+		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		spectre.1:${PORTSDIR}/print/libspectre \
 		chm.0:${PORTSDIR}/misc/chmlib \
 		freetype.9:${PORTSDIR}/print/freetype2 \

@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130317:
+  AFFECTS: users of graphics/poppler
+  AUTHOR: gnome@FreeBSD.org
+
+  The graphics/poppler has been updated to 0.22.2. The shared library version
+  has changed from 18 to 34. Please rebuild all ports that depends on it:
+
+  # portmaster -r poppler
+    or
+  # portupgrade -fr graphics/poppler
+    or
+  # pkg install -fR graphics/poppler
+
 20130319:
   AFFECTS: users of net/freerdp
   AUTHOR: fluffy@FreeBSD.org

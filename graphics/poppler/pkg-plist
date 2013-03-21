@@ -58,6 +58,7 @@ include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
+include/poppler/UTF.h
 include/poppler/UTF8.h
 include/poppler/UnicodeCClassTables.h
 include/poppler/UnicodeCompTables.h
@@ -81,6 +82,7 @@ include/poppler/cpp/poppler-toc.h
 include/poppler/cpp/poppler-version.h
 include/poppler/fofi/FoFiBase.h
 include/poppler/fofi/FoFiEncodings.h
+include/poppler/fofi/FoFiIdentifier.h
 include/poppler/fofi/FoFiTrueType.h
 include/poppler/fofi/FoFiType1.h
 include/poppler/fofi/FoFiType1C.h
@@ -97,6 +99,7 @@ include/poppler/goo/PNGWriter.h
 include/poppler/goo/TiffWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
+include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
 include/poppler/goo/gtypes.h
 include/poppler/poppler-config.h
@@ -130,7 +133,7 @@ lib/libpoppler-cpp.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.18
+lib/libpoppler.so.34
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

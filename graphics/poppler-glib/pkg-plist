@@ -30,6 +30,8 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/api-index-0-14.html
 %%DOCSDIR%%/poppler/api-index-0-16.html
 %%DOCSDIR%%/poppler/api-index-0-18.html
+%%DOCSDIR%%/poppler/api-index-0-20.html
+%%DOCSDIR%%/poppler/api-index-0-22.html
 %%DOCSDIR%%/poppler/api-index-deprecated.html
 %%DOCSDIR%%/poppler/api-index-full.html
 %%DOCSDIR%%/poppler/ch01.html

@@ -3,6 +3,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 
