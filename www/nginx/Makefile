@@ -559,8 +559,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MCHUNKIN}
-NGINX_CHUNKIN_VERSION=	0.22rc1
-GIT_CHUNKIN_VERSION=	0-gb0a3ee3
+NGINX_CHUNKIN_VERSION=	0.23
+GIT_CHUNKIN_VERSION=	0-g81c04f6
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_VERSION}/:chunkin
 DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_VERSION}-${GIT_CHUNKIN_VERSION}.tar.gz:chunkin
