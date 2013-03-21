@@ -9,11 +9,9 @@ PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
-		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/
+MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
+MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
 USE_AUTOTOOLS=	autoconf
