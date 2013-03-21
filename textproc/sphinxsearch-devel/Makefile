@@ -107,7 +107,7 @@ EXAMPLES=	example.sql api
 PORTEXAMPLES=	*
 .endif
 
-.if ${PORT_OPTIONS:DOCS}
+.if ${PORT_OPTIONS:MDOCS}
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 .endif
 
@@ -134,7 +134,7 @@ install-bin:
 	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
 
 install-docs:
-.if ${PORT_OPTIONS:DOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
