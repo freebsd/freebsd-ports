@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
+USES+=		bison
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
@@ -67,8 +68,8 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
-OOODIR=			apache_openoffice4
-SVNREVISION=		1444279
+OOODIR=			openoffice4
+SVNREVISION=		1457623
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -144,7 +145,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_AUTOTOOLS=	autoconf
-USES=		bison
 GNU_CONFIGURE=	yes
 WRKSRC?=	${WRKDIR}/ooo/main
 BASH?=		${PREFIX}/bin/bash
@@ -192,12 +192,11 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-package-format="archive" \
 			--enable-gstreamer \
-			--enable-minimizer \
-			--enable-presenter-console \
 			--enable-wiki-publisher \
 			--enable-dbus \
 			--enable-opengl \
 			--enable-category-b \
+			--enable-lockdown \
 			--with-system-hunspell \
 			--with-system-saxon     \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
@@ -206,9 +205,10 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--without-fonts \
 			--with-system-serf
 #			--with-system-jpeg
+#			--enable-pdfimport
 
-OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
-OOOEXTENSIONS+=		presenter/presenter-screen.oxt
+#OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
+#OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 #OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
 
@@ -269,8 +269,8 @@ do-install:
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
-	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice4/program/bootstraprc
-	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/4/' ${PREFIX}/${INSTALLATION_BASEDIR}/apache_openoffice4/program/bootstraprc
+	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
+	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/4/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice4/program/bootstraprc
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@cd ${WRKSRC}/solver/4?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
