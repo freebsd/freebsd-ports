@@ -24,6 +24,12 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+## This is used by 'make config' via Tools/scripts/dialog4ports.sh
+## Use caution in changing
+.if !exists(${DIALOG4PORTS})
+DIALOG4PORTS=	${WRKSRC}/dialog4ports
+.endif
+
 .if ${OSVERSION} < 900030
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${DIALOGNAME}.tgz:dialog
