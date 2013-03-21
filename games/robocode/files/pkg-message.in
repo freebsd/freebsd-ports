@@ -1,0 +1,18 @@
+==============================================================================
+
+Robocode has been installed.
+
+Robocode requires a java compiler. By default Robocode will look for
+the IBM Jikes compiler.
+
+You can override this in the Robocode compiler preferences menu:
+
+    Robot -> Editor -> Compiler -> Options -> Preferences
+
+
+After deinstallation, some files may stay in %%DATADIR%%,
+you can delete them with
+
+    /bin/rm -fr %%DATADIR%%
+
+==============================================================================

@@ -1,6 +1,8 @@
 bin/robocode
 %%DATADIR%%/battles/intro.battle
 %%DATADIR%%/battles/sample.battle
+%%DATADIR%%/compilers/CompilerTest.java
+%%DATADIR%%/compilers/ecj.jar
 %%DATADIR%%/javadoc/allclasses-frame.html
 %%DATADIR%%/javadoc/allclasses-noframe.html
 %%DATADIR%%/javadoc/constant-values.html
@@ -8,12 +10,10 @@ bin/robocode
 %%DATADIR%%/javadoc/help-doc.html
 %%DATADIR%%/javadoc/index-all.html
 %%DATADIR%%/javadoc/index.html
-%%DATADIR%%/javadoc/options
 %%DATADIR%%/javadoc/overview-frame.html
 %%DATADIR%%/javadoc/overview-summary.html
 %%DATADIR%%/javadoc/overview-tree.html
 %%DATADIR%%/javadoc/package-list
-%%DATADIR%%/javadoc/packages
 %%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
 %%DATADIR%%/javadoc/robocode/BattleEndedEvent.html
@@ -145,7 +145,7 @@ bin/robocode
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar
-%%DATADIR%%/libs/picocontainer-2.8.jar
+%%DATADIR%%/libs/picocontainer-2.14.2.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.host-%%PORTVERSION%%.jar
@@ -156,7 +156,16 @@ bin/robocode
 %%DATADIR%%/libs/robocode.ui.editor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/epl-v10.html
+%%DATADIR%%/meleerumble.sh
 %%DATADIR%%/robocode.ico
+%%DATADIR%%/robocode.sh
+%%DATADIR%%/roborumble.ico
+%%DATADIR%%/roborumble.sh
+%%DATADIR%%/roborumble/meleerumble.txt
+%%DATADIR%%/roborumble/roborumble.properties
+%%DATADIR%%/roborumble/roborumble.txt
+%%DATADIR%%/roborumble/teamrumble.txt
+%%DATADIR%%/roborumble/twinduel.txt
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
@@ -234,15 +243,19 @@ bin/robocode
 %%DATADIR%%/robots/sampleteam/Point.java
 %%DATADIR%%/robots/sampleteam/RobotColors.class
 %%DATADIR%%/robots/sampleteam/RobotColors.java
+%%DATADIR%%/teamrumble.sh
 %%DATADIR%%/templates/newjavafile.tpt
 %%DATADIR%%/templates/newjuniorrobot.tpt
 %%DATADIR%%/templates/newrobot.tpt
-%%DATADIR%%/versions.txt
+%%DATADIR%%/twinduel.sh
+%%DATADIR%%/versions.md
+share/pixmaps/robocode.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sampleex
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
+@dirrm %%DATADIR%%/roborumble
 @dirrm %%DATADIR%%/license
 @dirrm %%DATADIR%%/libs
 @dirrm %%DATADIR%%/javadoc/robocode/util
@@ -255,9 +268,7 @@ bin/robocode
 @dirrm %%DATADIR%%/javadoc/robocode
 @dirrm %%DATADIR%%/javadoc/resources
 @dirrm %%DATADIR%%/javadoc
-@dirrm %%DATADIR%%/config
+@dirrmtry %%DATADIR%%/config
 @dirrm %%DATADIR%%/compilers
 @dirrm %%DATADIR%%/battles
-@dirrm %%DATADIR%%
-@exec mkdir -p %D/%%DATADIR%%/config
-@exec mkdir -p %D/%%DATADIR%%/compilers
+@dirrmtry %%DATADIR%%

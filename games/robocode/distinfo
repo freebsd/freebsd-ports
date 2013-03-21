@@ -1,2 +1,4 @@
-SHA256 (robocode-1.7.4.2-setup.jar) = f6bbdc998254ad19bd8dd6967473716c9a0e26f101c1ff2601509899be4c71c8
-SIZE (robocode-1.7.4.2-setup.jar) = 5127560
+SHA256 (java/robocode-1.8.0.0-setup.jar) = d23ac510dbf67114d7598c842a4f2c215d1992cd2400d75b7db10707da143157
+SIZE (java/robocode-1.8.0.0-setup.jar) = 5249183
+SHA256 (java/robocode.png) = f828749aacde1f1ee58a0f838e1e0e60bf2950153e3891687ff8a1734d3fcfa7
+SIZE (java/robocode.png) = 1823
