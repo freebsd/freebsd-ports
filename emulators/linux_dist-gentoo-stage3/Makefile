@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	20120710
+PORTVERSION=	20121213
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/autobuilds/current-stage3$-{GENTOO_OPTIMIZED}
@@ -16,7 +16,6 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
 
-BROKEN=			does not fetch
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
