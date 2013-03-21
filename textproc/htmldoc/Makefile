@@ -1,9 +1,5 @@
-# New ports collection makefile for:   htmldoc
-# Date created:        12 June 2001
-# Whom:                Glenn Trewitt <glenn@trewitt.org>
-#
+# Created by: Glenn Trewitt <glenn@trewitt.org>
 # $FreeBSD$
-#
 
 PORTNAME=	htmldoc
 PORTVERSION=	1.8.27
@@ -19,7 +15,8 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg	\
 		png15:${PORTSDIR}/graphics/png
 
-OPTIONS=	HTMLDOCGUI "Build GUI front-end" off
+OPTIONS_DEFINE=	HTMLDOCGUI
+HTMLDOCGUI_DESC=	Build GUI front-end
 # .bz2 file is available since Aug 2, but we don't want to
 # start mirroring _in addition to_ the .gz variant. When the
 # vendor's release is updated again, we should switch to .bz2
@@ -47,8 +44,9 @@ post-configure:
 	    's|../png/libpng.a ../zlib/libz.a ../jpeg/libjpeg.a|-ljpeg -lpng -lz|' ${WRKSRC}/Makedefs
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_HTMLDOCGUI)
+.if ${PORT_OPTIONS:MHTMLDOCGUI}
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=--with-gui=yes
 .else
