@@ -70,7 +70,7 @@ WEBSERVICE_DESC=	Build Webservice
 
 .include <bsd.port.options.mk>
 
-KMODDIR?=	/boot/modules
+KMODDIR=	/boot/modules
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
