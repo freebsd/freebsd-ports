@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libextractor
-# Date created:		25 May 2005
-# Whom:			kevlo@FreeBSD.org
-#
+# Created by: kevlo@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
@@ -30,15 +26,10 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
 MAN1=	extract.1
 MAN3=	libextractor.3
 
-OPTIONS=	EXIV2 "Hook in Exiv2 dependency" on \
-		FLAC "Hook in FLAC dependency" on \
-		MPEG2 "Hook in MPEG2 dependency" on \
-		VORBISFILE "Hook in VORBISFILE dependency" on \
-		GSF "Hook in GSF (OLE2 (MS office) support) dependency" on \
-		POPPLER "Hook in POPPLER (PDF support) dependency" on \
-		RPM "Hook in RPM dependency" on \
-		QT "Hook in QT dependency" on \
-		FFMPEG "Hook in FFMPEG dependency" on
+OPTIONS_DEFINE=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
+GSF_DESC=	GSF (OLE2 (MS office) support)
+RPM_DESC=	RPM support
+OPTIONS_DEFAULT=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
@@ -61,49 +52,52 @@ BROKEN=	does not package
 # libextractor's configure logic is: if exiv2 is present it will add support
 # for it, if not present then it will not add support for it, but it cannot
 # be disabled if present
-.if !defined(WITHOUT_EXIV2) || exists(${LOCALBASE}/include/exiv2/exif.hpp)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXIV2}
 LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 PLIST_SUB+=	EXIV2="@comment "
 .endif
 
-.if !defined(WITHOUT_FLAC) || exists(${LOCALBASE}/include/FLAC/all.h)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if !defined(WITHOUT_MPEG2) || exists(${LOCALBASE}/include/mpeg2dec/mpeg2.h)
+.if ${PORT_OPTIONS:MMPEG2}
 LIB_DEPENDS+=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 PLIST_SUB+=	MPEG2=""
 .else
 PLIST_SUB+=	MPEG2="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBISFILE) || exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBISFILE=""
+PLIST_SUB+=	VORBIS=""
 .else
-PLIST_SUB+=	VORBISFILE="@comment "
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if !defined(WITHOUT_GSF) || exists(${LOCALBASE}/include/libgsf-1/gsf/gsf.h)
+.if ${PORT_OPTIONS:MGSF}
 LIB_DEPENDS+=	gsf-1:${PORTSDIR}/devel/libgsf
 PLIST_SUB+=	GSF=""
 .else
 PLIST_SUB+=	GSF="@comment "
 .endif
 
-.if !defined(WITHOUT_POPPLER) || exists(${LOCALBASE}/include/poppler/goo/gmem.h)
+.if ${PORT_OPTIONS:MPOPPLER}
 LIB_DEPENDS+=	poppler:${PORTSDIR}/graphics/poppler
 PLIST_SUB+=	POPPLER=""
 .else
 PLIST_SUB+=	POPPLER="@comment "
 .endif
 
-.if !defined(WITHOUT_RPM) || exists(${LOCALBASE}/include/rpm/rpmlib.h)
+.if ${PORT_OPTIONS:MRPM}
 LIB_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm4
 PLIST_SUB+=	RPM=""
 .else
@@ -111,7 +105,7 @@ PLIST_SUB+=	RPM="@comment "
 .endif
 
 # QT can be disabled
-.if !defined(WITHOUT_QT)
+.if ${PORT_OPTIONS:MQT}
 LIB_DEPENDS+=	QtGui:${PORTSDIR}/x11-toolkits/qt4-gui
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4
 CONFIGURE_ARGS+=--with-qt=${LOCALBASE}
@@ -122,7 +116,7 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 # FFMPEG can be disabled
-.if !defined(WITHOUT_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 LIB_DEPENDS+=	swscale:${PORTSDIR}/multimedia/ffmpeg
