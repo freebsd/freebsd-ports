@@ -13,8 +13,9 @@ DISTFILES=	${DISTNAME}-beta.tar.gz 	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-OPTIONS=	NAS "Enable Network Audio System (NAS) backend" on \
-		ESD "Enable ESound backend" on
+OPTIONS_DEFINE=	NAS ESD
+OPTIONS_DEFAULT=	NAS ESD
+ESD_DESC=	${ESOUND_DESC}
 
 DIST_SUBDIR=	festival
 
@@ -45,10 +46,10 @@ post-patch::
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
 		${WRKSRC}/*/config/systems/default.mak
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for m in nas esd
-.	ifdef WITH_${m:U}
+.	ifdef ${PORT_OPTIONS:M${m:U}}
 LIB_DEPENDS+=	${m:nas=audio}:${PORTSDIR}/audio/${m:esd=esound}
 post-patch::
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:U}_AUDIO,INCLUDE_MODULES += ${m:U}_AUDIO,' \
@@ -103,4 +104,4 @@ do-install:
 	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${PREFIX}/man/man1/festival_client.1
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

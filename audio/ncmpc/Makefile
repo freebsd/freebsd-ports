@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ncmpc
-# Date created:		Apr 14 2004
-# Whom:			Mark Reidel <ports@mark.reidel.info>
-#
+# Created by: Mark Reidel <ports@mark.reidel.info>
 # $FreeBSD$
-#
 
 PORTNAME=	ncmpc
 PORTVERSION=	0.20
@@ -20,10 +16,11 @@ USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	NLS "Native language support" on \
-		LYRICS "Compile with lyrics screen" on
+OPTIONS_DEFINE=	NLS LYRICS
+OPTIONS_DEFAULT=	LYRICS
+LYRICS_DESC=	Compile with lyrics screen
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_ICONV=	yes
 PLIST_FILES=	bin/ncmpc \
@@ -32,18 +29,17 @@ PLIST_FILES=	bin/ncmpc \
 		%%EXAMPLESDIR%%/ncmpc.lirc
 PLIST_DIRS=%%EXAMPLESDIR%%
 
-.ifdef(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 LANGUAGES=cs da de eo es fi fr gl he hu it ko nb nl pl pt_BR ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
-
+.else
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.ifdef(WITH_LYRICS)
+.if ${PORT_OPTIONS:MLYRICS}
 CONFIGURE_ARGS+=--enable-lyrics-screen
 PLIST_FILES+=	lib/ncmpc/lyrics/10-hd.sh \
 		lib/ncmpc/lyrics/15-leoslyrics.sh \
@@ -68,13 +64,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${EXAMPLESDIR}/keys
 	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${MAN1PREFIX}/man/man1/
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 .for language in ${LANGUAGES}
 	${MKDIR} ${LOCALBASE}/share/locale/${language}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo ${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
 .endif
-.if !defined(WITHOUT_LYRICS)
+.if ${PORT_OPTIONS:MLYRICS}
 	${MKDIR} ${PREFIX}/lib/ncmpc/lyrics
 	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/10-hd.sh ${PREFIX}/lib/ncmpc/lyrics/10-hd.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/15-leoslyrics.sh ${PREFIX}/lib/ncmpc/lyrics/15-leoslyrics.sh
@@ -82,4 +78,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/30-leoslyrics.py ${PREFIX}/lib/ncmpc/lyrics/30-leoslyrics.py
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

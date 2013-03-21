@@ -21,38 +21,38 @@ USE_NCURSES=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyTone
 
-OPTIONS=	MAD "MPEG Audio Decoder (libmad) support" On \
-		VORBIS "Ogg/Vorbis support" On \
-		PYAO "Libao cross-platform audio library" Off \
-		XMMS "Enable XMMS player engine" Off \
-		MPG123 "Enable mpg123 player engine" Off \
-		MPG321 "Enable mpg321 player engine" Off
+OPTIONS_DEFINE=	MAD VORBIS PYAO XMMS MPG123 MPG321
+OPTIONS_DEFAULT=	MAD VORBIS
+PYAO_DESC=	${AO_DESC}
+XMMS_DESC=	XMMS player engine
+MPG123_DESC=	mpg123 player engine
+MPG321_DESC=	mpg321 player engine
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_MAD)
+.if ${PORT_OPTIONS:MMAD}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 .endif
 
-.if defined(WITH_PYAO)
+.if ${PORT_OPTIONS:MPYAO}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao
 .endif
 
-.if defined(WITH_XMMS)
+.if ${PORT_OPTIONS:MXMMS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmms/xmmscontrol.so:${PORTSDIR}/audio/py-xmms
 .endif
 
-.if defined(WITH_MPG123)
+.if ${PORT_OPTIONS:MMPG123}
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
-.if defined(WITH_MPG321)
+.if ${PORT_OPTIONS:MMPG321}
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpg321:${PORTSDIR}/audio/mpg321
 .endif
 
@@ -66,4 +66,4 @@ post-install:
 	@${CP} ${WRKSRC}/conf/pytonerc ${PREFIX}/etc/pytonerc.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

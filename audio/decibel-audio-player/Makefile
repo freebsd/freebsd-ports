@@ -1,9 +1,5 @@
-# New ports collection makefile for:	decibel-audio-player
-# Date created:		2010-03-17
-# Whom:			kipz <somicide@gmail.com>
-#
+# Created by: kipz <somicide@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	decibel-audio-player
 PORTVERSION=	1.08
@@ -27,57 +23,53 @@ NO_BUILD=	yes
 MAN1=		decibel-audio-player.1 decibel-audio-player-remote.1
 
 #Audio gstreamer plugins
-OPTIONS=	AUDIOCD "AudioCD support" on \
-		FLAC "FLAC support" on \
-		MP3 "MP3 support" on \
-		MPEG4IP "AAC/MP4P support" on \
-		OGG "OGG support" on \
-		SPEEX "OGG/Speex support" off \
-		VORBIS "OGG/Vorbis support" on \
-		WAVPACK "Wavpack support" on
+OPTIONS_DEFINE=	AUDIOCD FLAC MP3 MPEG4IP OGG VORBIS SPEEX WAVPACK EXTRAS
+OPTIONS_DEFAULT=	AUDIOCD FLAC MP3 MPEG4IP OGG VORBIS WAVPACK EXTRAS
+AUDIOCD_DESC=	AudioCD support
+MPEG4IP_DESC=	AAC/MP4P support
+#
+##A few extra requirements if we want to use some nifty plugins in decibel
+EXTRAS_DESC=	Extra dependencies for plugins
 
-#A few extra requirements if we want to use some nifty plugins in decibel
-OPTIONS+=	EXTRAS "Extra dependencies for plugins" on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_AUDIOCD)
+.if ${PORT_OPTIONS:MAUDIOCD}
 RUN_DEPENDS+=	cd-discid>=0.9:${PORTSDIR}/audio/cd-discid \
 		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb \
 		gstreamer-plugins-cdio>=0.10.16:${PORTSDIR}/sysutils/gstreamer-plugins-cdio
 .endif
 
-.if !defined(WITHOUT_EXTRAS)
+.if ${PORT_OPTIONS:MEXTRAS}
 RUN_DEPENDS+=	py*-imaging>=1.1.6:${PORTSDIR}/graphics/py-imaging \
 		py*-notify>=0.1.1:${PORTSDIR}/devel/py-notify
 .endif
 
-.if !defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 USE_GSTREAMER+=	flac
 .endif
 
-.if !defined(WITHOUT_MP3)
+.if ${PORT_OPTIONS:MMP3}
 USE_GSTREAMER+=	mp3
 .endif
 
-.if !defined(WITHOUT_MPEG4IP)
+.if ${PORT_OPTIONS:MMPEG4IP}
 LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 USE_GSTREAMER+=	faad
 .endif
 
-.if !defined(WITHOUT_OGG)
+.if ${PORT_OPTIONS:MOGG}
 USE_GSTREAMER+=	ogg
 .endif
 
-.if !defined(WITHOUT_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 USE_GSTREAMER+=	speex
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 USE_GSTREAMER+=	vorbis
 .endif
 
-.if !defined(WITHOUT_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 USE_GSTREAMER+=	wavpack
 .endif
@@ -86,4 +78,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

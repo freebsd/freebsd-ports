@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openal
-# Date created:		25 September 2000
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openal
 PORTVERSION=	20060211
@@ -23,37 +19,35 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		pathfix
+USE_PKGCONFIG=	build
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	ARTS "aRts backend" off \
-		ESD "esd backend" off \
-		SDL "SDL backend" off \
-		VORBIS "vorbis support" off \
-		SMPEG "smpeg support" off
+OPTIONS_DEFINE=	ARTS ESOUND SDL VORBIS SMPEG
+SMPEG_DESC=	smpeg support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SMPEG)
+.if ${PORT_OPTIONS:MSMPEG}
 WITH_SDL=	yes	# smpeg requires SDL
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-arts
 .else
 CONFIGURE_ARGS+=--disable-arts
 .endif
 
-.if defined(WITH_ESD)
+.if ${PORT_OPTIONS:MESD}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
 .else
 CONFIGURE_ARGS+=--disable-esd
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 CONFIGURE_ENV+=	HAVESDL="${SDL_CONFIG}"
 CONFIGURE_ARGS+=--enable-sdl
@@ -61,14 +55,14 @@ CONFIGURE_ARGS+=--enable-sdl
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if defined(WITH_SMPEG)
+.if ${PORT_OPTIONS:MSMPEG}
 LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 CONFIGURE_ARGS+=--enable-smpeg
 .else
@@ -104,4 +98,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

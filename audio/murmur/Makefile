@@ -23,25 +23,26 @@ CONFIG=		no-client
 MAN1=		murmurd.1
 USE_RC_SUBR=	murmur
 
-OPTIONS=	ICE "Ice Support" on \
-		DBUS "D-Bus Support" off \
-		BONJOUR "Bonjour Support" on
+OPTIONS_DEFINE=	ICE DBUS BONJOUR DOCS
+OPTIONS_DEFAULT=	ICE BONJOUR
+ICE_DESC=	Ice Support
+BONJOUR_DESC=	Bonjour Support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ICE)
+.if ${PORT_OPTIONS:MICE}
 LIB_DEPENDS+=	Ice.34:${PORTSDIR}/devel/ice
 .else
 CONFIG+=	no-ice
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 USE_QT4+=	dbus
 .else
 CONFIG+=	no-dbus
 .endif
 
-.if defined(WITH_BONJOUR)
+.if ${PORT_OPTIONS:MBONJOUR}
 LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/mDNSResponder
 .else
 CONFIG+=	no-bonjour
@@ -69,7 +70,7 @@ do-install:
 		${CP} -p ${PREFIX}/etc/murmur.ini.sample ${PREFIX}/etc/murmur.ini; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/man/murmurd.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in CHANGES INSTALL LICENSE README README.Linux
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -79,4 +80,4 @@ do-install:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

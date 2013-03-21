@@ -12,8 +12,8 @@ COMMENT=	Mp3 bitrate plot tool
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	GD "Enable support for GD library" on \
-		IMAGEMAGICK "Enable support for Magick++" off
+OPTIONS_DEFINE=	GD IMAGEMAGICK
+OPTIONS_DEFAULT=	GD
 
 LICENSE=	GPLv2
 
@@ -28,15 +28,15 @@ PLIST_FILES=	bin/${PORTNAME}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GD)
-CONFIGURE_ARGS+=	--disable-gd
-.else
+.if ${PORT_OPTIONS:MGD}
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+.else
+CONFIGURE_ARGS+=	--disable-gd
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--disable-magick
@@ -47,4 +47,4 @@ post-patch:
 		-e 's|^extra_LD.*||g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

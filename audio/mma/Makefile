@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mma
-# Date created:		2007-03-10
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mma
 PORTVERSION=	12.02
@@ -17,8 +13,10 @@ COMMENT=	Musical MIDI Accompaniment generator
 
 USE_PYTHON=	-2.7
 
-OPTIONS=	TIMIDITY	"Install timidity++ as MIDI player" Off \
-		PLAYMIDI	"Install playmidi as MIDI player" Off
+OPTIONS_DEFINE=	TIMIDITY PLAYMIDI DOCS EXAMPLES
+
+TIMIDITY_DESC=	Install timidity++ as MIDI player
+PLAYMIDI_DESC=	Install playmidi as MIDI player
 
 REINPLACE_ARGS=	-i.bak -e 's,%%DATADIR%%,${DATADIR},'
 
@@ -32,8 +30,18 @@ MAN1=	mma.1 mma-renum.1
 MAN8=	mma-libdoc.8
 .endif
 
-.if !defined (NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
+.endif
+
+.if ${PORT_OPTIONS:MTIMIDITY}
+RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
+.endif
+
+.if ${PORT_OPTIONS:MPLAYMIDI}
+RUN_DEPENDS+=	playmidi:${PORTSDIR}/audio/playmidi
 .endif
 
 post-patch:
@@ -48,10 +56,10 @@ do-install:
 .for d in lib includes MMA
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR}
 .endfor
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR} && cd ${WRKSRC}/egs && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/pdf && ${CP} ${WRKDOC}/*.pdf ${DOCSDIR}/pdf/ && \
 	cd ${WRKSRC}/docs/html && ${COPYTREE_SHARE} . ${DOCSDIR}/html
 .endif
@@ -63,14 +71,4 @@ do-install:
 post-install:
 	${MMABIN} -G
 
-.include <bsd.port.pre.mk>
-
-.if defined (WITH_TIMIDITY)
-RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
-.endif
-
-.if defined (WITH_PLAYMIDI)
-RUN_DEPENDS+=	playmidi:${PORTSDIR}/audio/playmidi
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
