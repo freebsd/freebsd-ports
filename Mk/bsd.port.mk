@@ -4301,7 +4301,7 @@ _PKG_DEP=		check-sanity
 _PKG_SEQ=		pkg-depends
 _FETCH_DEP=		pkg
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
-				do-fetch post-fetch post-fetch-script
+				do-fetch fetch-specials post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				pre-extract pre-extract-script do-extract \
@@ -5167,6 +5167,7 @@ lib-depends:
 
 _UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
 _DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,}
+_DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 all-depends-list:
 	@${ALL-DEPENDS-LIST}
@@ -5299,6 +5300,14 @@ limited-clean-depends:
 deinstall-depends:
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} deinstall); \
+	done
+.endif
+
+.if !target(fetch-specials)
+fetch-specials:
+	@${ECHO_MSG} "===> Fetching all distfiles required by ${PKGNAME} for building"
+	@for dir in ${_DEPEND_SPECIALS}; do \
+		(cd $$dir; ${MAKE} fetch); \
 	done
 .endif
 
