@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libtre
-# Date created:			Oct 14, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
@@ -15,12 +10,14 @@ MASTER_SITES=	http://laurikari.net/tre/ \
 DISTNAME=	tre-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A lightweight fully POSIX compliant regexp matching library
+COMMENT=	Lightweight fully POSIX compliant regexp matching library
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=	pathfix
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--enable-static
 USE_LDCONFIG=	yes
@@ -28,15 +25,15 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	NLS "native language support" off \
-		OPTIMIZED_CFLAGS "append optimization flags to CFLAGS" off \
-		PGO "Enable Profile-Guided Optimization" off
+OPTIONS_DEFINE=	NLS OPTIMIZED_CFLAGS PGO DOCS
+PGO_DESC=	Enable Profile-Guided Optimization
 
 MAN1=	tre_agrep.1
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -44,13 +41,13 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 		-fomit-frame-pointer -fexpensive-optimizations \
 		-fforce-mem -fforce-addr -O3
 .endif
 
-.if defined(WITH_PGO)
+.if ${PORT_OPTIONS:MPGO}
 LDFLAGS+=	-fprofile-generate
 CFLAGS+=	-fprofile-generate
 .endif
@@ -61,7 +58,7 @@ post-patch:
 	${WRKSRC}/tre.spec.in ${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's;agrep;tre_agrep;g' ${WRKSRC}/tests/agrep/*.ok
 
-.if defined(WITH_PGO)
+.if ${PORT_OPTIONS:MPGO}
 .if target(pre-build)
 .error Makefile error since pre-build target has already been defined
 .endif
@@ -69,7 +66,7 @@ pre-build: pgo
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in tre-api.html tre-syntax.html
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
@@ -79,7 +76,7 @@ post-install:
 regression-test: build
 	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} check )
 
-.if defined(WITH_PGO)
+.if ${PORT_OPTIONS:MPGO}
 pgo: pgo-pre-build pgo-build pgo-run pgo-post-run pgo-clean
 
 pgo-pre-build:
@@ -120,6 +117,6 @@ pgo-clean:
 # Only remove some files from lib to preserve profiling information.
 	@${FIND} -E ${BUILD_WRKSRC}/lib -iregex ".*\.(a|la|lai|lo|o|so|so\..*)$$" \
 		-exec ${RM} -f {} \;
-.endif # if defined(WITH_PGO)
+.endif # if ${PORT_OPTIONS:MPGO}
 
 .include <bsd.port.post.mk>
