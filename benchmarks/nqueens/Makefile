@@ -1,9 +1,5 @@
-# New ports collection makefile for:	N-Queens
-# Date Created:				2 March 2005
-# Whom:					NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
-#
+# Created by: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nqueens
 PORTVERSION=	1.0
@@ -17,22 +13,22 @@ COMMENT=	N-queens benchmark
 
 WRKSRC=		${WRKDIR}/version${PORTVERSION}
 
-OPTIONS=	MPI "Build distributed MPI version" off \
-		STATIC "Link resulting binaries statically" off \
-		OPTIMIZED_CFLAGS "Enable extra optimization options" off
+OPTIONS_DEFINE=	MPI STATIC OPTIMIZED_CFLAGS
+MPI_DESC=	Build distributed MPI version
+STATIC_DESC=	Link resulting binaries statically
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 .endif
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 CFLAGS+=	-static
 .endif
 
 PROGS=		qn24b_base
 
-.if defined(WITH_MPI)
+.if ${PORT_OPTIONS:MMPI}
 MPICC?=		${LOCALBASE}/mpich/bin/mpicc
 BUILD_DEPENDS=	${MPICC}:${PORTSDIR}/net/mpich
 PROGS+=		qn24b_mpi
@@ -44,7 +40,7 @@ post-extract:
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -o qn24b_base base/queens.c
-.if defined(WITH_MPI)
+.if ${PORT_OPTIONS:MMPI}
 	cd ${WRKSRC} && \
 	${MPICC} ${CFLAGS} -o qn24b_mpi mpi/main.c
 .endif
@@ -56,4 +52,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

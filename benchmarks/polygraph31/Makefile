@@ -1,9 +1,5 @@
-# New ports collection makefile for:	polygraph
-# Date created:         3 March 1999
-# Whom:                 Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	polygraph31
 PORTVERSION=	3.1.5
@@ -23,10 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/31//}-${PORTVERSION}
 
 CONFLICTS=	ltrace-0* polygraph-[0-9]*
 
-OPTIONS=	GNUPLOT "gnuplot if you want full report functionality" ON \
-		PERL	"install Perl for polygraph tools"		OFF
+OPTIONS_DEFINE=	GNUPLOT PERL
+OPTIONS_DEFAULT=	GNUPLOT
+GNUPLOT_DESC=	gnuplot if you want full report functionality
+PERL_DESC=	install Perl for polygraph tools
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900009 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800503)
 BROKEN=		does not build
@@ -34,12 +32,12 @@ BROKEN=		does not build
 
 DATADIR:=	${DATADIR:S/31//}
 
-.if !defined(WITHOUT_GNUPLOT)
+.if ${PORT_OPTIONS:MGNUPLOT}
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
 
-.if !defined(WITHOUT_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5_RUN=	yes
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
