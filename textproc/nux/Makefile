@@ -14,7 +14,9 @@ COMMENT=	Small open-source XQuery extension of the XOM library
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
 
-OPTIONS=	XQUERY_TOOL "Install the XQuery command-line tool" on
+OPTIONS_DEFINE=	XQUERY_TOOL DOCS
+XQUERY_TOOL_DESC=	Install the XQuery command-line tool
+OPTIONS_DEFAULT=	XQUERY_TOOL
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -22,23 +24,23 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XQUERY_TOOL)
+.if ${PORT_OPTIONS:MXQUERY_TOOL}
 RUN_DEPENDS+=	${JAVALIBDIR}/getopt.jar:${PORTSDIR}/java/java-getopt \
 		classpath:${PORTSDIR}/java/javavmwrapper
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-.if defined(WITH_XQUERY_TOOL)
+.if ${PORT_OPTIONS:MXQUERY_TOOL}
 PLIST_FILES+=	bin/fire-xquery
 .endif
-.if !defined(NOPORTDOCS)
+
 PORTDOCS=	api changelog.html cvs.html dependencies.html \
 		gettingstarted.html images index.html license.html licenses \
 		mailing.html readme.html related.html style.css todo.html
-.endif
 
-.if defined(WITH_XQUERY_TOOL)
+.if ${PORT_OPTIONS:MXQUERY_TOOL}
 SUB_FILES=	fire-xquery.sh
 .endif
 
@@ -47,12 +49,12 @@ do-install:
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
-.if defined(WITH_XQUERY_TOOL)
+.if ${PORT_OPTIONS:MXQUERY_TOOL}
 	@${ECHO_MSG} -n ">> Installing XQuery command-line tool as ${PREFIX}/bin/fire-xquery..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/fire-xquery.sh ${PREFIX}/bin/fire-xquery
 	@${ECHO_MSG} " [ DONE ]"
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/doc/ && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
 	@cd ${WRKSRC}/doc/ && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
