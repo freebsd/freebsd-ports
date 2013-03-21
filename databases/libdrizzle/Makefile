@@ -50,4 +50,4 @@ post-install::
 CONFIGURE_ARGS+=--disable-64bit
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
