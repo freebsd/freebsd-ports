@@ -45,7 +45,7 @@ VIMAGE_DESC=	VIMAGE virtual networking support
 
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
-KMODDIR?=	/boot/modules
+KMODDIR=	/boot/modules
 SRC_BASE?=	/usr/src
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
