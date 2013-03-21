@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hailo
-# Date created:	   2011-07-19
-# Whom:		   milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Hailo
 PORTVERSION=	0.70
@@ -69,21 +65,21 @@ MAN3=		Hailo.3 \
 		Hailo::Tokenizer::Words.3 \
 		Hailo::UI::ReadLine.3
 
-OPTIONS=	SQLITE "Use SQLite as a database backend" On \
-		PSQL "Use PostgreSQL as database backend" Off \
-		MYSQL "Use MySQL as database backend" Off
+OPTIONS_DEFINE=	SQLITE PGSQL MYSQL
+OPTIONS_DEFAULT=	SQLITE
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
-.if !defined(WITHOUT_PSQL)
+.if ${PORT_OPTIONS:MPSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
