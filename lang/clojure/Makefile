@@ -2,27 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	clojure
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 PORTEPOCH=	2
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://repo1.maven.org/maven2/org/clojure/clojure/${PORTVERSION}/
 
 MAINTAINER=	jan0sch@gmx.net
-COMMENT=	A dynamic programming language for the JVM
+COMMENT=	Dynamic programming language for the JVM
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 SUB_FILES=	clojure-bin
-OPTIONS=	JLINE "Enable jline support for the REPL" on
+
+OPTIONS_DEFINE=	JLINE
+OPTIONS_DEFAULT=	JLINE
+JLINE_DESC=	jline support for the REPL
 
 PLIST_FILES=	bin/clojure \
 		%%JAVAJARDIR%%/clojure.jar
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_JLINE)
+.if ${PORT_OPTIONS:MJLINE}
 RUN_DEPENDS+=	jline>=0.9.91:${PORTSDIR}/devel/jline
 CLOJURE_JLINE_RUNNER=jline.ConsoleRunner
 .endif
@@ -33,4 +36,4 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
 	@${INSTALL_DATA} ${WRKSRC}/clojure-${PORTVERSION}.jar ${JAVAJARDIR}/clojure.jar
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
