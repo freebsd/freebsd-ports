@@ -30,6 +30,7 @@ USES=		bison
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
