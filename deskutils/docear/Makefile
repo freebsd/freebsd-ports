@@ -4,8 +4,8 @@
 PORTNAME=	docear
 PORTVERSION=	1.0.0.b08
 CATEGORIES=	deskutils java
-MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.b/_beta/:S/08/8/}/ \
-		SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
+MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.b/_beta/}/ \
+		LOCAL/mandree/${PORTNAME}-${PORTVERSION:S/.b/_beta/}/
 DISTNAME=	docear_linux
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
