@@ -1,12 +1,8 @@
-# New ports collection makefile for:	TacacsPlus
-# Date created:				Mon Jan  1 04:34:25 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-TacacsPlus
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIKEM/Authen-TacacsPlus
