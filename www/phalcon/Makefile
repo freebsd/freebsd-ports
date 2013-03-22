@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PORTNAME}/c${PORTNAME}/tarball/${GITVERSION}/
-DISTNAME=	${PORTNAME}-c${PORTNAME}-${GITVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Phalcon PHP Framework written in C-language
@@ -13,12 +11,18 @@ COMMENT=	Phalcon PHP Framework written in C-language
 BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/pdo/php_pdo_driver.h:${PORTSDIR}/databases/php5-pdo
 RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pdo/php_pdo_driver.h:${PORTSDIR}/databases/php5-pdo
 
-GITVERSION=	7b3b060
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	c${PORTNAME}
+GH_TAGNAME=	1.0.0
+GH_COMMIT=	0d052fc
+
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-c${PORTNAME}-${GITVERSION}/build/
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/build/
 
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-phalcon --prefix=${PREFIX} --with-php-config=${LOCALBASE}/bin/php-config
+CONFIGURE_ARGS=	--enable-phalcon --prefix=${PREFIX} \
+		--with-php-config=${LOCALBASE}/bin/php-config
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
