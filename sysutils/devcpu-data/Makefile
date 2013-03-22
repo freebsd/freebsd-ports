@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devcpu-data
-# Date created:		2007-07-19
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	0.6
@@ -23,11 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 701102
 DATADIR=	${PREFIX}/share/cpucontrol
-.else
-DATADIR=	${PREFIX}/share/devcpu
-.endif
 
 USE_RC_SUBR=	microcode_update
 
