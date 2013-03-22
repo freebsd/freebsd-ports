@@ -17,8 +17,6 @@ USE_DOS2UNIX=	readme.lyx readme.txt
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui network
 PORTDOCS=	*
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 post-patch:
