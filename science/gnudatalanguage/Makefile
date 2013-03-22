@@ -35,6 +35,7 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 
 USE_GCC=	4.6+
 USE_WX=		2.8
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
 CONFIGURE_FLAGS=--with_ncursesdir=/usr --with_readlinedir=/usr
