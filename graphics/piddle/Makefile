@@ -20,7 +20,7 @@ PORTDOCS=	*
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
