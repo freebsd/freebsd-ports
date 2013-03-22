@@ -27,5 +27,10 @@ libexec/rbenv-whence
 libexec/rbenv-which
 %%DATADIR%%/completions/rbenv.bash
 %%DATADIR%%/completions/rbenv.zsh
+@exec mkdir -p %D/rbenv_root/shims
+@exec mkdir -p %D/rbenv_root/versions
 @dirrm %%DATADIR%%/completions
 @dirrm %%DATADIR%%
+@dirrmtry rbenv_root/shims
+@dirrmtry rbenv_root/versions
+@dirrmtry rbenv_root
