@@ -113,7 +113,7 @@ post-extract:
 		-e 's/^[[:space:]].*cd .* rrdtool.html index.html/	#/' \
 		${WRKSRC}/doc/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
 		${WRKSRC}/Makefile.in
 .endif
