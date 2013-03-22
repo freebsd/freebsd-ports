@@ -2,21 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mikachan-ttfonts
-PORTVERSION=	8.7
-PORTREVISION=	2
+PORTVERSION=	9.1
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://members.tripod.co.jp/mikachan_font/ \
-		${MASTER_SITE_PORTS_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://mikachan.sourceforge.jp/
 DISTNAME=	ver${PORTVERSION}
 EXTRACT_SUFX=	.lzh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
-
-BROKEN=		checksum mismatch
 
 NO_CDROM=	Don't sell distfile
 EXTRACT_CMD=	lha
