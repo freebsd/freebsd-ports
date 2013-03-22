@@ -18,7 +18,7 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 USE_KDE4=	kate_run kdehier kdelibs kdeprefix automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
