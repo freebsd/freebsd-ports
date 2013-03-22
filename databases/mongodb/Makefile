@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.3
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 
 MAINTAINER=	mail@derzinn.de
-COMMENT=	A NOSQL distributed document-oriented database
+COMMENT=	NOSQL distributed document-oriented database
 
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
