@@ -4,7 +4,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	devel
 MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 
@@ -27,9 +27,11 @@ CONFLICTS=	fam-[0-9]*
 GNU_CONFIGURE=	yes
 
 .if !defined(GAMIN_SLAVE)
-OPTIONS_DEFINE=	GAM_POLLER LIBINOTIFY
+OPTIONS_DEFINE=	GAM_POLLER LIBINOTIFY RUN_AS_EUID
+OPTIONS_DEFAULT=RUN_AS_EUID
 GAM_POLLER_DESC=Use gamin's poller instead of kqueue's
 LIBINOTIFY_DESC=Use libinotify as the FAM backend
+RUN_AS_EUID_DESC=Drop privileges to effective user
 .endif
 
 .include <bsd.port.options.mk>
@@ -46,6 +48,10 @@ LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
 .else
 CONFIGURE_ARGS+=--disable-inotify
 .endif
+.endif
+
+.if ${PORT_OPTIONS:MRUN_AS_EUID}
+CPPFLAGS+=	-DRUN_AS_EUID=1
 .endif
 
 post-patch:
