@@ -47,7 +47,7 @@ PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 
 MAN1=		epiphany.1
 
-OPTIONS_DEFINE=	NSS SPELLECHECK SEED
+OPTIONS_DEFINE=	NSS SPELLCHECK SEED
 OPTIONS_DEFAULT=NSS SPELLCHECK
 NSS_DESC=	Import passwords from 2.26 and older on first run
 SPELLCHECK_DESC=Enable spell checking by default
