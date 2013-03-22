@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt-cloud
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,12 +21,11 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 MAN1=		salt-cloud.1
 MAN7=		salt-cloud.7
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt>0:${PORTSDIR}/sysutils/py-salt \
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt>=0.13.0:${PORTSDIR}/sysutils/py-salt \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}libcloud>=0:${PORTSDIR}/net/py-libcloud \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		${PYTHON_PKGNAMEPREFIX}libcloud>=0.11.4:${PORTSDIR}/net/py-libcloud \
+		${PYTHON_PKGNAMEPREFIX}botocore>=0:${PORTSDIR}/devel/py-botocore \
+		sshpass>=0:${PORTSDIR}/security/sshpass
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
