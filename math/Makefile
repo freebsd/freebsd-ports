@@ -48,6 +48,7 @@
     SUBDIR += ann
     SUBDIR += apc
     SUBDIR += aribas
+    SUBDIR += armadillo
     SUBDIR += arpack
     SUBDIR += arpack++
     SUBDIR += arpack-ng
