@@ -28,9 +28,42 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/templatetags/sekizai_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/templatetags/sekizai_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/templatetags/sekizai_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/basic.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/css.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/css2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/easy_base.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/easy_inherit.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/eat.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors/failadd.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors/failbase.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors/failbase2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors/failinc.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors/failrender.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/base.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/baseinc.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/chain.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/extend.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/extinc.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/nullbase.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/nullext.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/spacechain.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/subvarchain.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/super_blocks.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit/varchain.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/named_end.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/namespaces.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/processors/namespace.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/processors/null.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/unique.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/variables.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/with_data.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/tests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/tests.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/processors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/inherit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates/errors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/test_templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sekizai
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
