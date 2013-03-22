@@ -32,9 +32,9 @@ M17N_DESC=		Multilingualization support
 JAPANESE_DESC=		Japanese messages and migemo support
 INLINE_IMAGE_DESC=	Inline image support
 KEY_LYNX_DESC=		Keymap like lynx browser
+.endif
 
 .include <bsd.port.options.mk>
-.endif
 
 .if ${PORT_OPTIONS:MM17N}
 CONFIGURE_ARGS+=	--enable-m17n
