@@ -13,6 +13,8 @@
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-ecl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-gcl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-lispworks.lisp
+%%LIB32DIR%%/common-lisp/cffi/src/cffi-mcl.lisp
+%%LIB32DIR%%/common-lisp/cffi/src/cffi-mkcl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-openmcl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-sbcl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-scl.lisp
@@ -24,6 +26,7 @@
 %%LIB32DIR%%/common-lisp/cffi/src/libraries.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/package.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/strings.lisp
+%%LIB32DIR%%/common-lisp/cffi/src/structures.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/types.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/utils.lisp
 %%LIB32DIR%%/common-lisp/cffi/uffi-compat/uffi-compat.lisp
@@ -55,7 +58,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/defcfun.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/enum.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/foreign-globals.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/fsbv.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/funcall.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libfsbv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libtest.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libtest2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/memory.lisp

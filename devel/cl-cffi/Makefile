@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	0.10.6
-PORTREVISION=	3
+PORTVERSION=	0.11.0
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://olgeni.olgeni.com/~olgeni/cffi/${PORTVERSION}/:doc
