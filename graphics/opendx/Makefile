@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -80,6 +80,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|startserver.bat||" \
 		${WRKSRC}/src/uipp/java/server/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(ARCH)|@ARCH@|' \
+		${WRKSRC}/src/misc/Makefile.*
 
 post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
