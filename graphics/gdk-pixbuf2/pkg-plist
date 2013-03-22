@@ -251,5 +251,3 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 @dirrm include/gdk-pixbuf-2.0/gdk-pixbuf-xlib
 @dirrm include/gdk-pixbuf-2.0/gdk-pixbuf
 @dirrm include/gdk-pixbuf-2.0
-@dirrmtry lib/girepository-1.0
-@dirrmtry share/gir-1.0
