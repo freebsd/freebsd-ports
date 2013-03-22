@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tokyopromenade
-# Date created:		2009-08-13
-# Whom:			Qing Feng <qingfeng@douban.com>
-#
+# Created by: Qing Feng <qingfeng@douban.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.22
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
 LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 RUN_DEPENDS=	spawn-fcgi>=0:${PORTSDIR}/www/spawn-fcgi
 
-OPTIONS=	LUA	"Build lua extension" off
+OPTIONS_DEFINE=	LUA
 
 CONFIGURE_ARGS=	--enable-fcgi
 GNU_CONFIGURE=	yes
@@ -30,7 +26,7 @@ MAN1=		prommgr.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--enable-lua
 LDFLAGS+=	-L${LUA_LIBDIR}
 CFLAGS+=	-I${LUA_INCDIR}

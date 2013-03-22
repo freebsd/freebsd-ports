@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cakephp2
-# Date created:        			20 February 2012
-# Whom:                			Christoph Theis <theis@gmx.at>
-#
+# Created by: Christoph Theis <theis@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	cakephp
 PORTVERSION=	2.1.3
@@ -45,13 +41,15 @@ CAKE_CONF_FILES=	\
 		app/Config/email.php
 CAKE_CONSOLE=	lib/Cake/Console/cake
 
-OPTIONS=	PROD "Install for production server (make confighelp)" Off \
-		AP "Add Apache 2.2+ dependency" Off \
-		MYSQL "Check for/install MySQL support in PHP" Off \
-		PGSQL "Check for/install PostgreSQL support in PHP" Off \
-		SQLITE "Check for/install SQLite support in PHP" Off \
-		APC "Enable APC caching engine" Off \
-		MEMCACHE "Enable Memcached caching engine client" Off
+OPTIONS_DEFINE=	PROD AP MYSQL PGSQL SQLITE APC MEMCACHE DOCS
+
+PROD_DESC=	Install for production server (make confighelp)
+AP_DESC=	Add Apache 2.2+ dependency
+MYSQL_DESC=	Check for/install MySQL support in PHP
+PGSQL_DESC=	Check for/install PostgreSQL support in PHP
+SQLITE_DESC=	Check for/install SQLite support in PHP
+APC_DESC=	Enable APC caching engine
+MEMCACHE_DESC=	Enable Memcached caching engine client
 
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
@@ -68,7 +66,7 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_AP)
+.if ${PORT_OPTIONS:MAP}
 SUB_FILES=	pkg-message
 USE_APACHE_RUN=	22+
 PKGMESSAGE=	pkg-message
@@ -79,7 +77,7 @@ PKGMESSAGE=	pkg-message-no-apache
 APDEP=		"@comment "
 .endif
 
-.if defined(WITH_PROD)
+.if ${PORT_OPTIONS:MPROD}
 PROD=		production
 HTACCESS=	""
 .else
@@ -94,23 +92,23 @@ SUB_FILES+=	${CONF}
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
 		HTACCESS=${HTACCESS} APDEP=${APDEP}
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	pdo pdo_mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo pdo_pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo pdo_sqlite
 .endif
 
-.if defined(WITH_APC)
+.if ${PORT_OPTIONS:MAPC}
 USE_PHP+=	apc
 .endif
 
-.if defined(WITH_MEMCACHE)
+.if ${PORT_OPTIONS:MMEMCACHE}
 USE_PHP+=	memcache
 .endif
 
@@ -147,7 +145,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		".htaccess app lib index.php plugins vendors" ${WWWDIR}
 
-.if !defined(WITH_PROD)
+.if ! ${PORT_OPTIONS:MPROD}
 # If installed in development mode, get rid of .htaccess files,
 # as noted by:
 # http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
@@ -179,7 +177,7 @@ post-install:
 			${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
 		fi \
 	done
-.if defined(WITH_AP)
+.if ${PORT_OPTIONS:MAP}
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
 	else \
@@ -191,7 +189,7 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -208,4 +206,4 @@ post-install:
 .endif
 	@${ECHO_MSG}	"*********************************************************************"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

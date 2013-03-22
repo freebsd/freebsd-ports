@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dokeos
-# Date created:				21 January 2006
-# Whom:					Filipe Rocha <filiperocha@gmail.com>
-#
+# Created by: Filipe Rocha <filiperocha@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dokeos
 PORTVERSION=	1.8.6
@@ -16,9 +12,11 @@ COMMENT=	Dokeos is an elearning and course management web application
 USE_PHP=	mysql session gd pcre zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-OPTIONS=	LDAP "Use LDAP" off
+OPTIONS_DEFINE=	LDAP
 
-.if defined(WITH_LDAP)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 

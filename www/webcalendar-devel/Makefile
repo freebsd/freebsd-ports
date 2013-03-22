@@ -21,28 +21,23 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${DISTNAME}
 WWWDIR=		${PREFIX}/www/${PORTNAME:L}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	APACHE LDAP GRADIENTBG REMINDERS PALM DOCS
+OPTIONS_DEFAULT=	MYSQL REMINDERS
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE MSSQL DBASE ODBC ORACLE
+GRADIENTBG_DESC=	Gradient background image support
+REMINDERS_DESC=		Email reminder support
+PALM_DESC=		Palm export support
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 PORTDOCS=	WebCalendar-SysAdmin.html \
 		newwin.gif
 .endif
 
-OPTIONS=	APACHE "Configure for Apache-2.x" off \
-		MYSQL "Use MySQL database backend (default)" On \
-		PGSQL "Use PostgreSQL database backend" Off \
-		SQLITE "Use SQLite database backend" Off \
-		MSSQL "Use MSSQL database backend" Off \
-		DBASE "Use DBase database backend" Off \
-		ODBC "Use ODBC database backend" Off \
-		ORACLE "Use Oracle database backend" Off \
-		LDAP "Use LDAP user authentication" Off \
-		GRADIENTBG "Add gradient background image support" Off \
-		REMINDERS "Add email reminder support" On \
-		PALM "Add Palm export support" Off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
@@ -65,67 +60,54 @@ DEFAULT_PHP_VER=5
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-DB_DEFINED=	no
-
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite3
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_DBASE)
+.if ${PORT_OPTIONS:MDBASE}
 USE_PHP+=	dbase
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 USE_PHP+=	odbc
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 USE_PHP+=	oracle
-DB_DEFINED=	yes
 .endif
 
-.if ${DB_DEFINED} == "no"
-IGNORE=		please choose database backend by running 'make config'
-.endif
-
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_GRADIENTBG)
+.if ${PORT_OPTIONS:MGRADIENTBG}
 USE_PHP+=	gd
 .endif
 
-.if defined(WITH_REMINDERS)
+.if ${PORT_OPTIONS:MREMINDERS}
 WANT_PHP_CLI=	yes
 .endif
 
-.if defined(WITH_PALM)
+.if ${PORT_OPTIONS:MPALM}
 RUN_DEPENDS+=	${LOCALBASE}/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
 .endif
 
-.if defined(NOPORTDOCS)
-SUB_LIST+=	HASHMARK=\#
-.else
+.if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	HASHMARK=
+.else
+SUB_LIST+=	HASHMARK=\#
 .endif
 
 CONF=		webcalendar${CGI_EXT}.conf
@@ -144,7 +126,7 @@ do-install:
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/webcalendar.conf; \
 	else \
@@ -157,7 +139,7 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pserv
-# Date created:				Wed Oct 15 14:16:14 CEST 2003
-# Whom:					Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pserv
 PORTVERSION=	3.4
@@ -18,12 +14,13 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS=	popular-[0-9]*
 
-OPTIONS=	LOG "Enable logging" on \
-		PHP "Enable PHP support" on
+OPTIONS_DEFINE=	LOG PHP
+OPTIONS_DEFAULT=	LOG PHP
+LOG_DESC=	Enable loggin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PHP)
+.if ${PORT_OPTIONS:MPHP}
 USE_PHP=	yes
 WANT_PHP_CGI=	yes
 .endif
@@ -31,11 +28,11 @@ WANT_PHP_CGI=	yes
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/defaults/pserv.conf ${WRKSRC}/sources/main.h
-.if defined(WITHOUT_LOG)
+.if ! ${PORT_OPTIONS:MLOG}
 	@${REINPLACE_CMD} "s|define LOG|undef LOG|" \
 		${WRKSRC}/sources/main.h
 .endif
-.if defined(WITHOUT_PHP)
+.if ! ${PORT_OPTIONS:MPHP}
 	@${REINPLACE_CMD} "s|define PHP|undef PHP|" \
 		${WRKSRC}/sources/main.h
 .endif
@@ -47,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/pserv/pserv.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

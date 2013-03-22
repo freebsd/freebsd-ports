@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pylot
-# Date created:		2009-06-01
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pylot
 PORTVERSION=	1.26
@@ -15,8 +11,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tool for testing performance and scalability of web services
 
-OPTIONS=	GUI	"Enable GUI mode" off \
-		REPORTGRAPHS "Enable report graphs" on
+OPTIONS_DEFINE=	GUI REPORTGRAPHS
+OPTIONS_DEFAULT=	REPORTGRAPHS
+GUI_DESC=		Enable GUI mode
+REPORTGRAPHS_DESC=	Enable report graphs
 
 PROJECTHOST=	pylt
 
@@ -34,16 +32,16 @@ do-install:
 	@${MKDIR} ${DATADIR} && cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 USE_WX=	2.4+
 WX_COMPS=	python:run
 .endif
 
-.if defined(WITH_REPORTGRAPHS)
+.if ${PORT_OPTIONS:MREPORTGRAPHS}
 RUN_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:${PORTSDIR}/math/py-matplotlib
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

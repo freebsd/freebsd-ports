@@ -11,32 +11,34 @@ MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Web reporting and trending analysis for Thunder Cache Pro
 
-OPTIONS=	APACHE "Install apache for reporting viewing" on \
-		PHP "Install PHP for reporting generating" on \
-		PGSQL "Install PostgreSQL (report data storing)" on
+OPTIONS_DEFINE=	APACHE PHP PGSQL DOCS
+OPTIONS_DEFAULT=	APACHE PHP PGSQL
+APACHE_DESC=	Install apache for reporting viewing
+PHP_DESC=	Install PHP for reporting generating
+PGSQL_DESC=	Install PostgreSQL (report data storing)
 
 USE_BZIP2=	yes
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:R}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined (WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if defined (WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	84+
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
-.if defined(WITH_PHP) && defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPHP} && ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
 .endif
 
@@ -53,7 +55,7 @@ do-install:
 	@${CHMOD} -R g+rwx ${WWWDIR}/protected/runtime \
 		${WWWDIR}/assets
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -Rv ${WRKSRC}/README ${DOCSDIR}/README.pt_BR
 .endif
@@ -61,4 +63,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

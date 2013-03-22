@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cakephp
-# Date created:        19 January 2007
-# Whom:                Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cakephp
 PORTVERSION=	1.1.19.6305
@@ -35,10 +31,8 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/cake_${DISTVERSION}
 
-OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
-		MYSQL "Check for/install MySQL support in PHP" Off \
-		PGSQL "Check for/install PostgreSQL support in PHP" Off \
-		SQLITE "Check for/install SQLite support in PHP" Off
+OPTIONS_DEFINE=	PROD MYSQL PGSQL SQLITE DOCS
+PROD_DESC=	Install for production server (see: make confighelp)
 
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 
@@ -57,7 +51,7 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_PROD)
+.if ${PORT_OPTIONS:MPROD}
 PROD=		production
 .else
 PROD=		development
@@ -69,17 +63,17 @@ SUB_FILES+=	${CONF}
 
 DB_DEFINED=	no
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
 DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_sqlite.so:${PORTSDIR}/databases/php5-pdo_sqlite
 DB_DEFINED=	yes
 .endif
@@ -126,7 +120,7 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 .endif

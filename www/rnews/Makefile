@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rnews
-# Date created:		22 December 2003
-# Whom:			Vincent Tantardini <vinc@FreeBSD-fr.org>
-#
+# Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rnews
 PORTVERSION=	1.01
@@ -18,25 +14,26 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	GD		"Enable Graphic (GD) support"	ON \
-		MYSQLSERVER	"Use MySQL-Server on localhost"	OFF
+OPTIONS_DEFINE=	GD MYSQLSERVER DOCS
+OPTIONS_DEFAULT=	GD
+MYSQLSERVER_DESC=	Use MySQL-Server on localhost
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_PHP=	mysql mbstring pcre xml iconv
 USE_MYSQL=	yes
 
-.if !defined(WITHOUT_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 
-.if !defined(WITHOUT_MYSQLSERVER)
+.if ${PORT_OPTIONS:MMYSQLSERVER}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE
 .endif
 
@@ -75,7 +72,7 @@ post-install:
 	@${CHMOD} u+w ${WWWDIR}/${FILE}
 . endif
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -103,4 +100,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC} -type d -a -not -name feeds \
 		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

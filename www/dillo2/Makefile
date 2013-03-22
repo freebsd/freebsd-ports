@@ -1,7 +1,4 @@
-# New ports collection makefile for:   dillo
-# Date created:        28 August 2008
-# Whom:                bf <bf2006a@yahoo.com>
-#
+# Created by: bf <bf2006a@yahoo.com>
 # $FreeBSD$
 
 PORTNAME=	dillo
@@ -22,48 +19,50 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		dillo.1
-.ifndef(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
 		dillo-0*
 LATEST_LINK=	dillo2
 
-OPTIONS=	COOKIES 	"Enable cookies" On \
-		DEBUG		"Enable profiling and extra logging" Off \
-		IPV6		"Enable ipv6"	On \
-		SSL		"Enable (experimental) https support" On \
-		THREADED_DNS	"Enable re-entrant resolver library" On
+OPTIONS_DEFINE=	COOKIES DEBUG IPV6 SSL THREADED_DNS
+OPTIONS_DEFAULT=	COOKIES SSL THREADED_DNS
+COOKIES_DESC=		Enable cookies
+DEBUG_DESC=		Enable profiling and extra logging
+SSL_DESC=		Enable (experimental) https support
+THREADED_DNS_DESC=	Enable re-entrant resolver library
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_COOKIES)
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.endif
+
+.if ${PORT_OPTIONS:MCOOKIES}
 CONFIGURE_ARGS+=	--enable-cookies
 .else
 CONFIGURE_ARGS+=	--disable-cookies
 .endif
 
-.ifdef(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-gprof --enable-rtfl
 .else
 CONFIGURE_ARGS+=	--disable-gprof --disable-rtfl
 .endif
 
-.ifdef(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.ifdef(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--enable-ssl
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.ifdef(WITH_THREADED_DNS)
+.if ${PORT_OPTIONS:MTHREADED_DNS}
 CONFIGURE_ARGS+=	--enable-threaded-dns
 .else
 CONFIGURE_ARGS+=	--disable-threaded-dns
@@ -77,7 +76,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dillorc|dillorc.dist|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.dist|g" ${WRKSRC}/dpid/Makefile.in
 	@${REINPLACE_CMD} -e "s|keysrc|keysrc.dist|g" ${WRKSRC}/src/Makefile.in
-.ifdef(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-dist_docDATA||" ${WRKSRC}/doc/Makefile.in
 .endif
 
@@ -87,7 +86,7 @@ post-install:
 	${INSTALL_DATA} ${PREFIX}/etc/dillo/${f}.dist ${PREFIX}/etc/dillo/${f}
 . endif
 .endfor
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 

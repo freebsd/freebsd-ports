@@ -14,10 +14,12 @@ DISTNAME=	thundercache-6.1.201104260900-64bits-fbsd
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-efficiency caching proxy system
 
-OPTIONS=	DEPENDACK "I have read and understood the depends needs" on \
-		APACHE "Install apache for reporting viewing" on \
-		PHP "Install PHP for reporting generating" on \
-		PGSQL "Install PostgreSQL (report data storing)" on
+OPTIONS_DEFINE=	DEPENDACK APACHE PHP PGSQL DOCS
+OPTIONS_DEFAULT=	DEPENDACK APACHE PHP PGSQK
+DEPENDACK_DESC=		I have read and understood the depends needs
+APACHE_DESC=		Install apache for reporting viewing
+PHP_DESC=		Install PHP for reporting generating
+PGSQL_DESC=		Install PostgreSQL (report data storing)
 
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
@@ -33,11 +35,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 RESTRICTED=	Commercial software with shareware license to 50 threads
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		Won't run on systems version < FreeBSD 8.0-RELEASE
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
@@ -45,22 +43,22 @@ DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
 
 WRKSRC=		${WRKDIR}/thunder
 
-.if defined (WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if defined (WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	84+
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
-.if defined(WITH_PHP) && defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPHP} && ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pgsql.so:${PORTSDIR}/databases/php5-pgsql
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session
 .endif
 
@@ -85,7 +83,7 @@ show-info:
 	@${ECHO_MSG} " After you understood it correctly, select DEPENDACK on"
 	@${ECHO_MSG} " the OPTIONS screen. Run ''make config'' to acknowledge"
 	@${ECHO_MSG} ""
-.if !defined(WITH_DEPENDACK)
+.if ! ${PORT_OPTIONS:MDEPENDACK}
 	@${FALSE}
 .endif
 
@@ -112,4 +110,4 @@ post-install:
 		${ECHO_MSG} "" ; \
 	fi)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: publicfile
-# Date created:		24 Jan 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	publicfile
 PORTVERSION=	0.52
@@ -17,46 +13,47 @@ COMMENT=	A secure, read-only, anonymous HTTP/FTP server
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-OPTIONS=	BASICAUTH "basic HTTP authentication support" off \
-		COMMONLOG "support for Apache common log format" off \
-		REDIRECT_SLASH "don't require trailing slash on directories" off \
-		ENV_FILETYPES "get mime types from the environment" off \
-		SSL "provide SSL support through ucspi-ssl" off
+OPTIONS_DEFINE=	BASICAUTH COMMONLOG REDIRECT_SLASH ENV_FILETYPES SSL
+BASICAUTH_DESC=		basic HTTP authentication support
+COMMONLOG_DESC=		support for Apache common log format
+REDIRECT_SLASH_DESC=	do not require trailing slash on directories
+ENV_FILETYPES_DESC=	get mime types from the environment
+SSL_DESC=		provide SSL support through ucspi-ssl
 
 .include <bsd.port.pre.mk>
 
 pre-everything::
-.if defined(WITH_BASICAUTH) && defined(WITH_COMMONLOG)
+.if ${PORT_OPTIONS:MBASICAUTH} && ${PORT_OPTIONS:MCOMMONLOG}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Currently the common log and auth patches conflict."
 	@${ECHO_MSG}
 BROKEN=	Currently the common log and auth patches conflict.
 .endif
 
-.if defined(WITH_BASICAUTH) && defined(WITH_REDIRECT_SLASH)
+.if ${PORT_OPTIONS:MBASICAUTH} && ${PORT_OPTIONS:MREDIRECT_SLASH}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Currently the redirect slash and auth patches conflict."
 	@${ECHO_MSG}
 BROKEN=	Currently the redirect slash and auth patches conflict.
 .endif
 
-.if defined(WITH_REDIRECT_SLASH)
+.if ${PORT_OPTIONS:MREDIRECT_SLASH}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/redirect-slash-patch
 .endif
 
-.if defined(WITH_ENV_FILETYPES)
+.if ${PORT_OPTIONS:MENV_FILETYPES}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/publicfile-0.52-filetype-diff
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/publicfile.sslserver
 RUN_DEPENDS+=	sslserver:${PORTSDIR}/sysutils/ucspi-ssl
 .endif
 
-.if defined(WITH_BASICAUTH)
+.if ${PORT_OPTIONS:MBASICAUTH}
 pre-configure::
 	@${SED} -e "s:__PORTSDIR__:${PORTSDIR}:g" \
 		-e "s:__WRKSRC__:${WRKSRC}:g" \
@@ -70,7 +67,7 @@ PLIST_SUB+=	BASICAUTH=""
 PLIST_SUB+=	BASICAUTH="@comment "
 .endif
 
-.if defined(WITH_COMMONLOG)
+.if ${PORT_OPTIONS:MCOMMONLOG}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} -p1 < \
 		${PATCHDIR}/publicfile-0.52-commonlog-2.patch
@@ -80,7 +77,7 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
 post-extract:
-.if defined(WITH_BASICAUTH)
+.if ${PORT_OPTIONS:MBASICAUTH}
 	@${LN} -s ${PORTSDIR}/databases/cdb/work/cdb-0.75 ${WRKSRC}/cdb-0.75
 .endif
 
@@ -89,4 +86,4 @@ post-patch:
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

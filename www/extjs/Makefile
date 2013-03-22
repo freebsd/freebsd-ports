@@ -1,9 +1,5 @@
-# New ports collection makefile for:	extjs
-# Date created:		2010-01-28
-# Whom:			Joe Horn <joehorn@gmail.com>
-#
+# Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	extjs
 PORTVERSION=	4.1.1
@@ -24,8 +20,7 @@ WRKSRC=		${WRKDIR}/extjs-${PORTVERSION}
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-OPTIONS=	DOC	"Install with documents" on \
-		EXAMPLE "Install with examples" on
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
 		 ext-all-debug.js ext-all-dev.js ext-all.js \
@@ -34,36 +29,34 @@ WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
 		 ext-neptune.js	ext.js index.html license.txt locale \
 		 pkgs release-notes.html resources src welcome"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message
 
-.if !defined(WITH_DOC)
-NOPORTDOCS=	YES
-SUB_LIST+=	COMMENTDOCS="\# "
-.else
+.if ${PORT_OPTIONS:MDOC}
 SUB_LIST+=	COMMENTDOCS=
+.else
+SUB_LIST+=	COMMENTDOCS="\# "
 .endif
 
-.if !defined(WITH_EXAMPLE)
-NOPORTEXAMPLES=	YES
-SUB_LIST+=	COMMENTEXAMPLES="\# "
-.else
+.if ${PORT_OPTIONS:MEXAMPLE}
 SUB_LIST+=	COMMENTEXAMPLES=
+.else
+SUB_LIST+=	COMMENTEXAMPLES="\# "
 .endif
 
 do-install:
 	@cd ${WRKSRC} && ${RM} -rf resources/sass/.sass-cache/*
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${WWW_SUB} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MNLS}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

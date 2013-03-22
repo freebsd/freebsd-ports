@@ -62,7 +62,7 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_AP)
+.if ${PORT_OPTIONS:MAP}
 SUB_FILES=	pkg-message
 USE_APACHE_RUN=	22+
 PKGMESSAGE=	pkg-message
