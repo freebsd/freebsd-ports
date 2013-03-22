@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kports
-# Date created:				Thu Jan 12 12:47:58 UTC 2006
-# Whom:				Hannes Hauswedell <hannes.hauswedell@gmail.com>
-#
+# Created by: Hannes Hauswedell <hannes.hauswedell@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kports
 PORTVERSION=	0.6.1
@@ -23,30 +19,32 @@ CONFLICTS=	kports-0.[89]*
 RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 RUN_DEPENDS+=	kdehier>=0:${PORTSDIR}/misc/kdehier
 
-OPTIONS=	PORTAUDIT "Require Portaudit" on \
-		KDESU "With KDE3 kdesu" on \
-		KDESU4 "With KDE4 kdesu" off \
-		GKSU "With gksu" off
+OPTIONS_DEFINE=	PORTAUDIT KDESU KDESU4 GKSU
+OPTIONS_DEFAULT=	PORTAUDIT KDESU
+PORTAUDIT_DESC=	Require Portaudit
+KDESU_DESC=	With KDE3 kdesu
+KDESU4_DESC=	With KDE4 kdesu
+GKSU_DESC=	With gksu
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_KDESU) && defined(WITHOUT_KDESU4) && defined(WITHOUT_GKSU)
+.if ! ${PORT_OPTIONS:MKDESU} && ! ${PORT_OPTIONS:MKDESU4} && ! ${PORT_OPTIONS:MGKSU}
 PKGMESSAGE=	${FILESDIR}/pkg-message.nosu
 .endif
 
-.if !defined(WITHOUT_PORTAUDIT)
+.if ${PORT_OPTIONS:MPORTAUDIT}
 RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 
-.if defined(WITH_KDESU)
+.if ${PORT_OPTIONS:MKDESU}
 RUN_DEPENDS+=	${LOCALBASE}/bin/kdesu:${PORTSDIR}/x11/kdebase3
 .endif
 
-.if defined(WITH_KDESU4)
+.if ${PORT_OPTIONS:MKDESU4}
 USE_KDE4+=	runtime
 .endif
 
-.if defined(WITH_GKSU)
+.if ${PORT_OPTIONS:MGKSU}
 RUN_DEPENDS+=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu
 .endif
 
@@ -54,7 +52,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/src/kports.desktop
 
 post-install:
-.if defined(WITHOUT_KDESU) && defined(WITHOUT_KDESU4) && defined(WITHOUT_GKSU)
+.if ! ${PORT_OPTIONS:MKDESU} && ! ${PORT_OPTIONS:MKDESU4} && ! ${PORT_OPTIONS:MGKSU}
 	@${CAT} ${PKGMESSAGE}
 .endif
 

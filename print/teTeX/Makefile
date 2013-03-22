@@ -18,11 +18,12 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 
-OPTIONS=	LETTERSIZE "Use letter size by default" off
+OPTIONS_DEFINE=	LETTERSIZE X11
+LETTERSIZE_DESC=	Use letter size by default
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
 .endif
 
@@ -35,7 +36,7 @@ CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
-.if defined(WITH_LETTERSIZE)
+.if ${PORT_OPTIONS:MLETTERSIZE}
 FLAVOR+=	letter
 DEPENDS_ARGS+=	WITH_LETTERSIZE=true
 PAPERSIZE=	letter
@@ -57,4 +58,4 @@ do-build:
 do-install: #emtpy
 	@${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

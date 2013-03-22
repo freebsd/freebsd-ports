@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-reportlab2
-# Date created:		2006-12-31
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	reportlab2
 PORTVERSION=	2.5
@@ -20,8 +16,9 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
-OPTIONS=	CJK "Adobe CMaps" on \
-		FREETYPE "FreeType" on
+OPTIONS_DEFINE=	CJK FREETYPE DOCS
+OPTIONS_DEFAULT=	CJK FREETYPE
+CJK_DESC=	Adobe CMaps
 
 WRKSRC=		${WRKDIR}/reportlab-${PORTVERSION}
 
@@ -45,22 +42,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/ports/distfiles|${DISTDIR}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|pfbfer.zip|pfbfer-${PFBFER_VERSION}.zip|g' ${WRKSRC}/setup.py
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64
 
 .endif
 
-.if !defined(WITHOUT_CJK)
+.if ${PORT_OPTIONS:MCJK}
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
 .endif
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
@@ -68,4 +65,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

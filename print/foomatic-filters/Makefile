@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foomatic-rip
-# Date created:		2005-01-28
-# Whom:			Michael Nottebrock <lofi@FreeBSD.org>
-#
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.7
@@ -32,76 +28,57 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	CUPS_IMAGE	"Install cups image utilities"	on \
-		A2PS_A4	"Install a2ps convertor (A4)"	on \
-		A2PS_LETTER	"Install a2ps convertor (letter)"	off \
-		A2PS_LETTERDJ	"Install a2ps convertor (letterdj)"	off \
-		ENSCRIPT_A4 "Install enscript convertor (A4)"	on \
-		ENSCRIPT_LETTER "Install enscript convertor (letter)"	off \
-		ENSCRIPT_LETTERDJ "Install enscript convertor (letterdj)"	off \
-		MPAGE	"Print multiple pages per sheet of paper"	on
+OPTIONS_DEFINE=	CUPS_IMAGE MPAGE
+OPTIONS_SINGLE=	A2PS ENSCRIPT
+OPTIONS_SINGLE_A2PS=	A2PS_A4 A2PS_LETTER A2PS_LETTERDJ
+OPTIONS_SINGLE_ENSCRIPT=	ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
+OPTIONS_DEFAULT=	CUPS_IMAGE A2PS_A4 ENSCRIPT_A4 MPAGE
+CUPS_IMAGE_DESC=	Install cups image utilities
+A2PS_A4_DESC=		Install a2ps convertor (A4)
+A2PS_LETTER_DESC=	Install a2ps convertor (letter)
+A2PS_LETTERDJ_DESC=	Install a2ps convertor (letterdj)
+ENSCRIPT_A4_DESC=	Install enscript convertor (A4)
+ENSCRIPT_LETTER_DESC=	Install enscript convertor (letter)
+ENSCRIPT_LETTERDJ_DESC=	Install enscript convertor (letterdj)
+MPAGE_DESC=		Print multiple pages per sheet of paper
 
 MAN1=		foomatic-rip.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CUPS_IMAGE)
+.if ${PORT_OPTIONS:MCUPS_IMAGE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:${PORTSDIR}/print/cups-image
 .endif
 
-.if defined(WITH_A2PS_A4)
-.	if defined(WITH_A2PS_LETTER) || defined(WITH_A2PS_LETTERDJ)
-IGNORE=		Please select only one a2ps convertor
-.	else
+.if ${PORT_OPTIONS:MA2PS_A4}
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
-.	endif
 .endif
 
-.if defined(WITH_A2PS_LETTER)
-.	if defined(WITH_A2PS_A4) || defined(WITH_A2PS_LETTERDJ)
-IGNORE=		Please select only one a2ps convertor
-.	else
+.if ${PORT_OPTIONS:MA2PS_LETTER}
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
-.	endif
 .endif
 
-.if defined(WITH_A2PS-LETTERDJ)
-.	if defined(WITH_A2PS-A4) || defined(WITH_A2PS_LETTER)
-IGNORE=		Please select only one a2ps convertor
-.	else
+.if ${PORT_OPTIONS:MA2PS-LETTERDJ}
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letterdj
-.	endif
 .endif
 
-.if defined(WITH_ENSCRIPT_A4)
-.	if defined(WITH_ENSCRIPT_LETTER) || defined(WITH_ENSCRIPT_LETTERDJ)
-IGNORE=		Please select only one enscript convertor
-.	else
+.if ${PORT_OPTIONS:MENSCRIPT_A4}
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
-.	endif
 .endif
 
-.if defined(WITH_ENSCRIPT_LETTER)
-.	if defined(WITH_ENSCRIPT_A4) || defined(WITH_ENSCRIPT_LETTERDJ)
-IGNORE=		Please select only one enscript convertor
-.	else
+.if ${PORT_OPTIONS:MENSCRIPT_LETTER}
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
-.	endif
 .endif
 
-.if defined(WITH_ENSCRIPT_LETTERDJ)
-.	if defined(WITH_ENSCRIPT_A4) || defined(WITH_ENSCRIPT_LETTER)
-IGNORE=		Please just select only one enscript convertor
-.	else
+.if ${PORT_OPTIONS:MENSCRIPT_LETTERDJ}
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letterdj
-.	endif
 .endif
 
-.if defined(WITH_MPAGE)
+.if ${PORT_OPTIONS:MMPAGE}
 RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

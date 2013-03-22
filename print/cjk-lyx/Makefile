@@ -26,13 +26,10 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
-OPTIONS=	ASPELL	"Utilize ASPELL library"	on \
-		ISPELL	"Depend on ISPELL as well"	off
-.if defined(LANG) && ${LANG:C/_.*//} == "ja"
-OPTIONS+=	JATETEX "Use pLaTeX (Japanese LaTeX)" ON
-.else
-OPTIONS+=	JATETEX "Use pLaTeX (Japanese LaTeX)" OFF
-.endif
+OPTIONS_DEFINE=	ASPELL ISPELL JATETEX
+OPTIONS_DEFAULT=	ASPELL
+OPTIONS_DEFAULT+=	JATETEX
+JATETEX_DESC=	pLaTeX (Japanese LaTeX)
 
 ALL_TARGET=	all check
 USE_GNOME=	lthack
@@ -67,23 +64,23 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "User setting folder will be created under ~/.${PKGNAMEPREFIX}lyx when ${PKGNAMEPREFIX}lyx is run for the first time."
 	@${ECHO_MSG}
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 PLIST_SUB=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 
-.if defined(WITH_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
 			--with-pspell-include="${LOCALBASE}/include"
 .endif
 
-.if defined(WITH_ISPELL)
+.if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 # Choose appropriate settings for each LaTeX
-.if defined(WITH_JATETEX)
+.if ${PORT_OPTIONS:MJATETEX}
 BUILD_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
 RUN_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
 .else
@@ -91,4 +88,4 @@ BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

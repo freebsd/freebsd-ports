@@ -1,9 +1,5 @@
-# New ports collection makefile for:		portscout
-# Date created:					2006-05-15
-# Whom:						Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
@@ -15,7 +11,8 @@ MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A tool to scan for new versions of FreeBSD ports
 
-OPTIONS=	SQLITE3 "Use SQLite backend instead of PostgreSQL" off
+OPTIONS_DEFINE=	SQLITE3 DOCS
+SQLITE3_DESC=	Use SQLite backend instead of PostgreSQL
 
 NO_BUILD=	yes
 USE_PERL5=	yes
@@ -34,7 +31,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .elif !defined(WITHOUT_PGSQL)
@@ -43,7 +40,7 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 pre-everything::
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 	@${ECHO_MSG} "+-------------------------------------------------------------+"
 	@${ECHO_MSG} "| Warning! although SQLite is supported, portscout will only  |"
 	@${ECHO_MSG} "| operate in non-forking mode with this database backend. It  |"
@@ -52,7 +49,7 @@ pre-everything::
 .endif
 
 post-patch:
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 	@${REINPLACE_CMD} 's/^\([^#]*DBI:Pg.*\)$$/#\1/g' ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} 's/^#\(.*DBI:SQLite.*\)$$/\1/g' ${WRKSRC}/portscout.conf
 .endif
@@ -93,7 +90,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/portscout.conf ]; then \
 		${CP} -p ${PREFIX}/etc/portscout.conf.sample ${PREFIX}/etc/portscout.conf; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .	for f in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -103,7 +100,7 @@ post-install:
 test:
 	${PERL} ${WRKSRC}/t/00-use.t
 	${PERL} ${WRKSRC}/t/01-vercompare.t
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 	${PERL} ${WRKSRC}/t/10-sqlite.t
 #.else
 #	${PERL} ${WRKSRC}/10-postgresql.t
