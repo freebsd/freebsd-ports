@@ -1,6 +1,8 @@
 # Created by: Alex Varju <varju@webct.com>
 # $FreeBSD$
 
+# "?=" and "+=" are for including this Makefile from japanese/jpilot"
+
 PORTNAME=	jpilot
 PORTVERSION=	1.8.1
 PORTREVISION=	1
