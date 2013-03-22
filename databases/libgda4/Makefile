@@ -33,7 +33,10 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
-		--enable-introspection=no
+		--enable-introspection=no \
+		--without-gtksourceview \
+		--without-goocanvas \
+		--without-graphviz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDDFLAGS+=	-L${LOCALBASE}/lib
 
