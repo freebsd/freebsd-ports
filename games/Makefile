@@ -802,6 +802,7 @@
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds
+    SUBDIR += rocksndiamonds-data
     SUBDIR += rottdc
     SUBDIR += rt2-demo
     SUBDIR += rtb
