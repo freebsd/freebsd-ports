@@ -1,5 +1,5 @@
---- configure.orig	2010-05-22 09:12:00.000000000 +0200
-+++ configure	2010-05-22 09:12:01.000000000 +0200
+--- configure.orig	2013-03-22 13:57:57.000000000 +0100
++++ configure	2013-03-22 13:58:05.000000000 +0100
 @@ -16637,9 +16637,9 @@
  xp_funcs='localeconv strcspn strncasecmp strtoul' # "sqrt" test fails, hmm
  funcs=
@@ -1670,9 +1670,10 @@
  
 -if test "$enable_collab_backend_tcp" == "yes" || \
 -   test "$enable_collab_backend_service" == "yes"; then
+-	COLLAB_LIBS="$COLLAB_LIBS -lgcrypt -lpthread"
 +if test "$enable_collab_backend_tcp" = "yes" || \
 +   test "$enable_collab_backend_service" = "yes"; then
- 	COLLAB_LIBS="$COLLAB_LIBS -lgcrypt -pthread"
++	COLLAB_LIBS="$COLLAB_LIBS -lgcrypt -pthread"
  fi
  
 -test "$enable_collab" == "auto" && PLUGINS="$PLUGINS collab"
