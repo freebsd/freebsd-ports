@@ -18,9 +18,12 @@ include/MEDimport.h
 include/MEDimport.hxx
 include/med.h
 include/med.hf
+include/med.hf77
+include/med.hf90
 include/medC_win_dll.h
 include/med_err.h
 include/med_exit_if.h
+include/med_parameter.hf
 include/med_proto.h
 include/med_utils.h
 include/medimport_win_dll.h
