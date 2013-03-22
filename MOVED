@@ -4179,3 +4179,4 @@ french/eficas_doc||2013-03-19|Removed: eficas is now able to open the documentat
 editors/openoffice.org-vcltesttool||2013-03-21|Removed: no longer used for openoffice qa.
 editors/openoffice-3-devel|editors/openoffice-devel|2013-03-21|Renamed to match current version number
 devel/geany-plugin-gdb||2013-03-21|Removed from geany plugins distribution
+www/kompozer||2013-03-22|Has expired: Dead upstream

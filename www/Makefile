@@ -382,7 +382,6 @@
     SUBDIR += kdewebdev
     SUBDIR += kdewebdev4
     SUBDIR += khtml2png
-    SUBDIR += kompozer
     SUBDIR += kpartsplugin
     SUBDIR += kplaylist
     SUBDIR += kwebkitpart
