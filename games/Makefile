@@ -797,6 +797,7 @@
     SUBDIR += rfksay
     SUBDIR += rftg
     SUBDIR += ri-li
+    SUBDIR += rnd_jue
     SUBDIR += robocode
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
