@@ -167,8 +167,14 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
 
-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} test
+#prevent regression test coredumps from causing failures on the
+#package-building cluster:
+.ifndef(MAINTAINER_MODE)
+CORELIMIT?=	/usr/bin/limits -Sc 0
+.endif
+
+check test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CORELIMIT} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} test
 
 regression-test: test
 
