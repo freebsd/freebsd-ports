@@ -23,6 +23,7 @@ COMMENT=	Kernel Accelerator for QEMU CPU Emulator
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	any
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 CONFLICTS=	kqemu-kmod-devel-[0-9]*
 
