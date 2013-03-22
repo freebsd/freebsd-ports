@@ -66,7 +66,6 @@ CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
-USES+=		pkgconfig
 BUILD_DEPENDS+=	fc-list:${PORTSDIR}/x11-fonts/fontconfig \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
