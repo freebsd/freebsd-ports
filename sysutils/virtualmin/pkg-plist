@@ -208,20 +208,28 @@
 %%LIB32DIR%%/webmin/virtual-server/get-template.pl
 %%LIB32DIR%%/webmin/virtual-server/help/accesslog.html
 %%LIB32DIR%%/webmin/virtual-server/help/accesslog.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/accesslog.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_create.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_create.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_create.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_desc.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_desc.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_desc.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_doms.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_doms.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_doms.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_edit.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_edit.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_edit.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_email.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_email.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_email.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_features.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_features.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_features.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_modules.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_modules.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/admin_modules.no.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_name.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_name.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_pass.html
@@ -583,6 +591,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_mem_low.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_move_command.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_move_command.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_mx_validate.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mysql.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mysql.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mysql_replicas.html
@@ -952,6 +961,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/phpmode_children.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/phpmode_maxtime.html
 %%LIB32DIR%%/webmin/virtual-server/help/phpmode_maxtime.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/phpmode_ssi.html
 %%LIB32DIR%%/webmin/virtual-server/help/phpmode_suexec.html
 %%LIB32DIR%%/webmin/virtual-server/help/phpmode_suexec.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/phpver.html
@@ -1245,7 +1255,6 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_mkdb.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_mkdb.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_nopass.html
-%%LIB32DIR%%/webmin/virtual-server/help/template_mysql_nopass.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_nouser.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_nouser.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_mysql_suffix.html
@@ -1309,6 +1318,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_skel_subs.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_spam_exitcode.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam_host.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam_host.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam_size.html
@@ -1367,6 +1377,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_webmaildom.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_webmin_group.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_webmin_group.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_webssi.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_writelogs.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_writelogs.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/tmpls.html
@@ -1535,6 +1546,7 @@
 %%LIB32DIR%%/webmin/virtual-server/lang/fr
 %%LIB32DIR%%/webmin/virtual-server/lang/it
 %%LIB32DIR%%/webmin/virtual-server/lang/nl
+%%LIB32DIR%%/webmin/virtual-server/lang/no
 %%LIB32DIR%%/webmin/virtual-server/lang/ru_RU
 %%LIB32DIR%%/webmin/virtual-server/lang/tr
 %%LIB32DIR%%/webmin/virtual-server/lang/zh_CN
@@ -1716,6 +1728,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96/1-security
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98/2-autoconfig
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98/3-webmincron
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99/1-ssi
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99/2-php54
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1738,6 +1752,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.91/2-s3gpl
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.92/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93/0-scripts
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/newip_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/newkey.cgi
@@ -1881,6 +1896,7 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
 @dirrm %%LIB32DIR%%/webmin/virtual-server/scripts
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.92
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.91
@@ -1902,6 +1918,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.94

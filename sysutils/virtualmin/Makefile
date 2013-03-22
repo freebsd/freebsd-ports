@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualmin
-PORTVERSION=	3.98
+PORTVERSION=	3.99
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}.gpl
