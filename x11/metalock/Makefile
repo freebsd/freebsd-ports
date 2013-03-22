@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metalock
-# Date created:		21 March 2012
-# Whom:			Timothy Beyer <beyert@cs.ucr.edu>
-#
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	metalock
 PORTVERSION=	0.8.0
@@ -23,29 +19,29 @@ FETCH_ARGS=	"-Fpr"
 USE_BZIP2=	yes
 USE_XORG=	x11 xt xproto xext xpm
 
-OPTIONS=	IMLIB2 "Use Imlib2" on  \
-		XFT "Use Xft Fonts"	on  \
-		ULTRAGETOPT "Use Ultragetopt" on
+OPTIONS_DEFINE=	IMLIB2 XFT ULTRAGETOPT
+OPTIONS_DEFAULT=	IMLIB2 XFT ULTRAGETOPT
+ULTRAGETOPT_DESC=	Use Ultragetopt
 
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" CC="${CC}"
 
-.if !defined(WITHOUT_ULTRAGETOPT)
+.if ${PORT_OPTIONS:MULTRAGETOPT}
 LIB_DEPENDS+=	ultragetopt.0:${PORTSDIR}/devel/ultragetopt
 MAKE_ARGS+=	USE_ULTRAGETOPT=yes
 .else
 MAKE_ARGS+=	USE_ULTRAGETOPT=no
 .endif
 
-.if !defined(WITHOUT_IMLIB2)
+.if ${PORT_OPTIONS:MIMLIB2}
 USE_EFL=	imlib2
 MAKE_ARGS+=	USE_IMLIB2=yes
 .else
 MAKE_ARGS+=	USE_IMLIB2=no
 .endif
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 MAKE_ARGS+=	USE_XFT=yes
 .else

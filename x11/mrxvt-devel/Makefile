@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mrxvt-devel
-# Date created:				24 Apr 2005
-# Whom:					Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
@@ -28,19 +24,19 @@ DESKTOP_ENTRIES=	"mrxvt" "mrxvt terminal emulator" \
 			"mrxvt" "Utility;TerminalEmulator;" \
 			false
 
-OPTIONS=	XFT "Enable Xft support for fonts" Off \
-		BACKGROUND "Enable background images" On\
-		JPEG "Enable JPEG background images" On \
-		PNG "Enable PNG background images" On \
-		TRANSPARENCY "Enable transparency" On \
-		SWAPSCREEN "Enable swapscreen" On \
-		JAPANESE "Enable support for Japanese language" Off \
-		24BITS "Prefer 24 bits color" On \
-		MENUBAR "Enable menubar" On \
-		TEXTSHADOW "Enable text shadow" Off \
-		FRILLS "Enable internal borders and smart resizing" Off
+OPTIONS_DEFINE=	XFT BACKGROUND JPEG PNG TRANSPARENCY SWAPSCREEN JAPANESE 24BITS \
+		MENUBAR TEXTSHADOW FRILLS DOCS EXAMPLES
+OPTIONS_DEFAULT=	BACKGROUND JPEG PNG TRANSPARENCY SWAPSCREEN 24BITS MENUBAR
+BACKGROUND_DESC=	Background images
+TRANSPARENCY_DESC=	transparency
+SWAPSCREEN_DESC=	Swapscreen
+JAPANESE_DESC=		Support for Japanese language
+24BITS_DESC=		Prefer 24 bits color
+MENUBAR_DESC=		Menubar
+TEXTSHADOW_DESC=	Text shadow
+FRILLS_DESC=		Internal borders and smart resizing
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--enable-utempter
 .if ${OSVERSION} >= 900004
@@ -49,52 +45,52 @@ CONFIGURE_ARGS+=	--disable-lastlog
 LIB_DEPENDS+=		utempter.0:${PORTSDIR}/sysutils/libutempter
 .endif
 
-.if defined(WITH_JAPANESE)
+.if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
 .endif
 
-.if defined(WITH_XFT)
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
-.if defined(WITH_24BITS)
+.if ${PORT_OPTIONS:M24BITS}
 CONFIGURE_ARGS+=	--enable-24bits
 .endif
 
-.if defined(WITHOUT_BACKGROUND)
+.if ! ${PORT_OPTIONS:MBACKGROUND}
 CONFIGURE_ARGS+=	--disable-xpm
 .endif
 
-.if defined(WITHOUT_JPEG) || defined(WITHOUT_BACKGROUND)
+.if ! ${PORT_OPTIONS:MJPEG} || ! ${PORT_OPTIONS:MBACKGROUND}
 CONFIGURE_ARGS+=	--disable-jpeg
 .else
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 .endif
 
-.if defined(WITHOUT_PNG) || defined(WITHOUT_BACKGROUND)
+.if ! ${PORT_OPTIONS:MPNG} || ! ${PORT_OPTIONS:MBACKGROUND}
 CONFIGURE_ARGS+=	--disable-png
 .else
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
-.if defined(WITHOUT_TRANSPARENCY)
+.if ! ${PORT_OPTIONS:MTRANSPARENCY}
 CONFIGURE_ARGS+=	--disable-transparency
 .endif
 
-.if !defined(WITHOUT_MENUBAR)
+.if ${PORT_OPTIONS:MMENUBAR}
 CONFIGURE_ARGS+=	--enable-menubar
 .endif
 
-.if defined(WITH_TEXTSHADOW)
+.if ${PORT_OPTIONS:MTEXTSHADOW}
 CONFIGURE_ARGS+=	--enable-text-shadow
 .endif
 
-.if defined(WITHOUT_SWAPSCREEN)
+.if ! ${PORT_OPTIONS:MSWAPSCREEN}
 CONFIGURE_ARGS+=	--disable-swapscreen
 .endif
 
-.if defined(WITH_FRILLS)
+.if ${PORT_OPTIONS:MFRILLS}
 CONFIGURE_ARGS+=	--enable-frills
 .endif
 
@@ -135,16 +131,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/default.menu ${PREFIX}/etc/mrxvt/default.menu.sample
 	${INSTALL_DATA} ${WRKSRC}/share/submenus.menu ${PREFIX}/etc/mrxvt/submenus.menu.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/mrxvtset.pl ${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/settitle.c ${EXAMPLESDIR}/scripts
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/doc/*.bz2 ${DOCSDIR}
 	${BZIP2_CMD} -d ${DOCSDIR}/*.bz2
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

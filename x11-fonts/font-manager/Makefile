@@ -24,8 +24,8 @@ MAKE_JOBS_SAFE=	yes
 LICENSE_FILE=	${WRKSRC}/COPYING
 PORTDATA=	*
 
-OPTIONS=	REPORTLAB "Enable font-sampler (PDF sample sheet)" off \
-		NLS "Enable Native Language Support" on
+OPTIONS_DEFINE=	REPORTLAB NLS
+REPORTLAB_DESC=	Enable font-sampler (PDF sample sheet)
 
 .include <bsd.port.options.mk>
 
@@ -33,7 +33,7 @@ OPTIONS=	REPORTLAB "Enable font-sampler (PDF sample sheet)" off \
 IGNORE=	port data is source code, undefine NOPORTDATA
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_REPORTLAB)
+.if ${PORT_OPTIONS:MREPORTLAB}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/:${PORTSDIR}/print/py-reportlab2
 .endif
 

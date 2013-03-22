@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dmenu
-# Date created:				August 4, 2006
-# Whom:					Jeroen Schot <schot@a-eskwadraat.nl>
-#
+# Created by: Jeroen Schot <schot@a-eskwadraat.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	dmenu
 PORTVERSION=	4.5
@@ -21,8 +17,8 @@ COMMENT=	X11 menu application designed for the dwm window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS=	XINERAMA	"Enable Xinerama support"	On \
-		XFT		"Enable Xft support"		Off
+OPTIONS_DEFINE=	XINERAMA XFT
+OPTIONS_DEFAULT=	XINERAMA
 
 USE_XORG=	x11
 
@@ -31,11 +27,11 @@ PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 .endif
 
-.if defined(WITH_XFT)
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 PATCHFILES+=	${PORTNAME}-${PORTVERSION}-xft.diff
 .endif
@@ -45,7 +41,7 @@ post-patch:
 	         -e "s,%%PREFIX%%,${PREFIX},g" \
 	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
-.if defined(WITHOUT_XINERAMA)
+.if ! ${PORT_OPTIONS:MXINERAMA}
 	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
 	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
 .endif

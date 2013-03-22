@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alltray
-# Date created:		2005-10-15
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	alltray
 PORTVERSION=	0.70
@@ -22,11 +18,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		alltray.1
 
-OPTIONS=	KDE	"Support only KDE desktop"	off
+OPTIONS_DEFINE=	KDE
+KDE_DESC=	Support only KDE desktop
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KDE)
+.if ${PORT_OPTIONS:MKDE}
 CONFIGURE_ARGS=	--disable-gconf
 .else
 USE_GNOME+=	gconf2
@@ -42,4 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|liballtray\.so\.0\.0\.0|liballtray.so.0|; \
 		s|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

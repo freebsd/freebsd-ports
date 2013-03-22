@@ -1,7 +1,4 @@
-# New ports collection makefile for:	TkShape
-# Date created:				13 March 2004
-# Whom:					nivit@users.sourceforge.net
-#
+# Created by: nivit@users.sourceforge.net
 # $FreeBSD$
 
 PORTNAME=		tkshape
@@ -23,11 +20,13 @@ PLIST_SUB=		PORTNAME="${PORTNAME}"
 
 USE_LDCONFIG=		yes
 
-OPTIONS=		MANPAGES "Install manual pages" on
+OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+MANPAGES_DESC=	Install manual pages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MANPAGES)
+.if ${PORT_OPTIONS:MMANPAGES}
 MAN3=			CombShape.3 QuryShape.3
 MANN=			shape.n
 .endif
@@ -83,7 +82,7 @@ do-install:
 	${INSTALL_DATA} unix/pkgIndex.tcl ${TARGET_DIR}/pkgIndex.tcl;
 
 # manpages
-.if defined(WITH_MANPAGES)
+.if ${PORT_OPTIONS:MMANPAGES}
 	cd ${WRKSRC}; \
 	for m in ${MANPAGES} ; do \
 	    s=$${m##*.}; \
@@ -91,4 +90,4 @@ do-install:
 	done;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

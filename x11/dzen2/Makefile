@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dzen2
-# Date created:        May 26 2008
-# Whom:                Morten Slot Kristensen
-#
+# Created by: Morten Slot Kristensen
 # $FreeBSD$
-#
 
 PORTNAME=	dzen2
 PORTVERSION=	0.8.5
@@ -18,26 +14,26 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS=	XPM		"Enable XPM support" On \
-		XINERAMA	"Enable Xinerama support" On
+OPTIONS_DEFINE=	XPM XINERAMA
+OPTIONS_DEFAULT=	XPM XINERAMA
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XPM)
+.if ${PORT_OPTIONS:MXPM}
 USE_XORG+=	xpm
 .endif
 
-.if !defined(WITHOUT_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 .endif
 
 post-patch:
-.if !defined(WITHOUT_XPM)
+.if ${PORT_OPTIONS:MXPM}
 	${REINPLACE_CMD} -e 's/^LIBS =\(.*\)$$/LIBS =\1 -lXpm/g'	\
 	  	-e 's/^CFLAGS =\(.*\)$$/CFLAGS =\1 -DDZEN_XPM/g'	\
 		${WRKSRC}/config.mk
 .endif
-.if !defined(WITHOUT_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 	${REINPLACE_CMD} -e 's/^LIBS =\(.*\)$$/LIBS =\1 -lXinerama/g'	\
 	  	-e 's/^CFLAGS =\(.*\)$$/CFLAGS =\1 -DDZEN_XINERAMA/g'	\
 		${WRKSRC}/config.mk
@@ -45,4 +41,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'       \
 		${WRKSRC}/config.mk
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

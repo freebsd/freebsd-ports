@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Fvwm2
-# Date created:		20 Jan 1996
-# Whom:			peter
-#
+# Created by: peter
 # $FreeBSD$
-#
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.5
@@ -32,26 +28,23 @@ USE_XORG=	xpm xft
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	ICONS		"Install default icon set" on \
-		ICONV		"Enable iconv character conversion support" on \
-		STROKE		"Enable support for mouse gestures" off \
-		RPLAY		"Enable RPlay support in FvwmEvent" off \
-		SESSION_MGMT	"Enable Session Management support" on \
-		PNG		"Build with PNG graphics support" on \
-		SVG		"Build with SVG graphics support using librsvg2" off \
-		BIDI		"Enable Asian bi-directional text support" off \
-		NLS		"Enable National Language Support" on \
-		IMLIB		"Enable imlib library (requires gtk12)" off \
-		GNOME		"Enable GNOME desktop support" off
+OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS IMLIB GNOME1
+OPTIONS_DEFAULT=	ICONV ICONV PNG
+STROKE_DESC=		support for mouse gestures
+RPLAY_DESC=		RPlay support in FvwmEvent
+SESSION_MGMT_DESC=	Session Management support
+BIDI_DESC=		Asian bi-directional text support
+IMLIB_DESC=		imlib library (requires gtk12)
+GNOME1_DESC=		GNOME 1 desktop support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ICONS)
+.if ${PORT_OPTIONS:MICONS}
 FVWM_ICONS=	fvwm_icons-20070101
 DISTFILES+=	${FVWM_ICONS}.tar.bz2
 .endif
 
-.if defined(WITHOUT_ICONV)
+.if ! ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 USE_ICONV=		yes
@@ -59,7 +52,7 @@ CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include
 .endif
 
-.if defined(WITH_STROKE)
+.if ${PORT_OPTIONS:MSTROKE}
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 CONFIGURE_ARGS+=	--with-stroke-library=${LOCALBASE}/lib \
 			--with-stroke-includes=${LOCALBASE}/include
@@ -67,7 +60,7 @@ CONFIGURE_ARGS+=	--with-stroke-library=${LOCALBASE}/lib \
 CONFIGURE_ARGS+=	--without-stroke-library
 .endif
 
-.if defined(WITH_RPLAY)
+.if ${PORT_OPTIONS:MRPLAY}
 LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
 CONFIGURE_ARGS+=	--with-rplay-library=${LOCALBASE}/lib \
 			--with-rplay-includes=${LOCALBASE}/include
@@ -75,11 +68,11 @@ CONFIGURE_ARGS+=	--with-rplay-library=${LOCALBASE}/lib \
 CONFIGURE_ARGS+=	--without-rplay-library
 .endif
 
-.if defined(WITHOUT_SESSION_MGMT)
+.if ! ${PORT_OPTIONS:MSESSION_MGMT}
 CONFIGURE_ARGS+=	--disable-sm
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
@@ -87,23 +80,23 @@ CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--without-png-library
 .endif
 
-.if defined(WITH_SVG) && !defined(WITHOUT_SVG)
+.if ${PORT_OPTIONS:MSVG) && !defined(WITHOUT_SVG}
 USE_GNOME+=	librsvg2
 .else
 CONFIGURE_ARGS+=	--disable-rsvg
 .endif
 
-.if defined(WITHOUT_BIDI)
-CONFIGURE_ARGS+=	--disable-bidi
-.else
+.if ${PORT_OPTIONS:MBIDI}
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--enable-bidi \
 			--with-bidi-bindir=${LOCALBASE}/bin
+.else
+CONFIGURE_ARGS+=	--disable-bidi
 .endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.if defined(WITH_IMLIB) && !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MIMLIB) && !defined(WITHOUT_GTK}
 USE_GNOME+=	imlib
 CONFIGURE_ARGS+=	--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
@@ -115,7 +108,7 @@ PLIST_SUB+=	GTK="@comment not installed: "
 WITHOUT_GNOME=	true
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--with-intl-library=${LOCALBASE}/lib \
 			--with-intl-includes=${LOCALBASE}/include
@@ -125,11 +118,11 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment not installed: "
 .endif
 
-.if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=	--without-gnome
-.else
+.if ${PORT_OPTIONS:MGNOME1}
 USE_GNOME+=gnomelibs
 CONFIGURE_ARGS+=	--with-gnome
+.else
+CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
@@ -147,7 +140,7 @@ MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 MLINKS=	fvwm.1 fvwm2.1 \
 	fvwm-root.1 xpmroot.1
 
-.if !defined(WITHOUT_ICONS)
+.if ${PORT_OPTIONS:MICONS}
 PLIST_SUB+=	ICONS=""
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
@@ -169,10 +162,10 @@ post-install:
 			${PREFIX}/etc/system.fvwm2rc; \
 	fi
 
-.if !defined(WITHOUT_ICONS)
+.if ${PORT_OPTIONS:MICONS}
 	@${MKDIR} ${PREFIX}/share/fvwm/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/icons/${FVWM_ICONS}/*.xpm \
 		${PREFIX}/share/fvwm/pixmaps
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
