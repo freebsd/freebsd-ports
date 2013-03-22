@@ -70,27 +70,30 @@ include/strigi/tarinputstream.h
 include/strigi/textutils.h
 include/strigi/variant.h
 include/strigi/zipinputstream.h
+lib/cmake/LibSearchClient/LibSearchClientConfig.cmake
+lib/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
+lib/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfigVersion.cmake
+lib/cmake/LibStreams/LibStreamsConfig.cmake
+lib/cmake/LibStreams/LibStreamsConfigVersion.cmake
+lib/cmake/LibStreams/LibStreamsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LibStreams/LibStreamsTargets.cmake
+lib/cmake/Strigi/StrigiConfig.cmake
+lib/cmake/Strigi/StrigiConfigVersion.cmake
 lib/libsearchclient.so
 lib/libsearchclient.so.0
-lib/libsearchclient.so.0.7.7
-lib/libsearchclient/LibSearchClientConfig.cmake
+lib/libsearchclient.so.0.7.8
 lib/libstreamanalyzer.so
 lib/libstreamanalyzer.so.0
-lib/libstreamanalyzer.so.0.7.7
-lib/libstreamanalyzer/LibStreamAnalyzerConfig.cmake
+lib/libstreamanalyzer.so.0.7.8
 lib/libstreams.so
 lib/libstreams.so.0
-lib/libstreams.so.0.7.7
-lib/libstreams/LibStreamsConfig.cmake
-lib/libstreams/LibStreamsTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/libstreams/LibStreamsTargets.cmake
+lib/libstreams.so.0.7.8
 lib/libstrigihtmlgui.so
 lib/libstrigihtmlgui.so.0
-lib/libstrigihtmlgui.so.0.7.7
+lib/libstrigihtmlgui.so.0.7.8
 lib/libstrigiqtdbusclient.so
 lib/libstrigiqtdbusclient.so.0
-lib/libstrigiqtdbusclient.so.0.7.7
-lib/strigi/StrigiConfig.cmake
+lib/libstrigiqtdbusclient.so.0.7.8
 lib/strigi/strigiea_digest.so
 lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
@@ -115,21 +118,23 @@ libdata/pkgconfig/libstreamanalyzer.pc
 libdata/pkgconfig/libstreams.pc
 share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
-%%DATADIR%%/fieldproperties/homeless.rdfs
-%%DATADIR%%/fieldproperties/nao_data.rdfs
-%%DATADIR%%/fieldproperties/ncal_data.rdfs
-%%DATADIR%%/fieldproperties/nco_data.rdfs
-%%DATADIR%%/fieldproperties/nexif_data.rdfs
-%%DATADIR%%/fieldproperties/nfo_data.rdfs
-%%DATADIR%%/fieldproperties/nid3_data.rdfs
-%%DATADIR%%/fieldproperties/nie_data.rdfs
-%%DATADIR%%/fieldproperties/nmo_data.rdfs
-%%DATADIR%%/fieldproperties/strigi.rdfs
-@dirrmtry %%DATADIR%%/fieldproperties
-@dirrmtry %%DATADIR%%
+share/strigi/fieldproperties/homeless.rdfs
+share/strigi/fieldproperties/nao_data.rdfs
+share/strigi/fieldproperties/ncal_data.rdfs
+share/strigi/fieldproperties/nco_data.rdfs
+share/strigi/fieldproperties/nexif_data.rdfs
+share/strigi/fieldproperties/nfo_data.rdfs
+share/strigi/fieldproperties/nid3_data.rdfs
+share/strigi/fieldproperties/nie_data.rdfs
+share/strigi/fieldproperties/nmo_data.rdfs
+share/strigi/fieldproperties/strigi.rdfs
+@dirrmtry share/strigi/fieldproperties
+@dirrmtry share/strigi
 @dirrmtry lib/strigi
-@dirrmtry lib/libstreams
-@dirrmtry lib/libstreamanalyzer
-@dirrmtry lib/libsearchclient
+@dirrmtry lib/cmake/Strigi
+@dirrmtry lib/cmake/LibStreams
+@dirrmtry lib/cmake/LibStreamAnalyzer
+@dirrmtry lib/cmake/LibSearchClient
+@dirrmtry lib/cmake
 @dirrmtry include/strigi/qtdbus
 @dirrmtry include/strigi
