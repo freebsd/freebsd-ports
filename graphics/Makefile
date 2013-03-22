@@ -358,6 +358,7 @@
     SUBDIR += hugin
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
+    SUBDIR += iccxml
     SUBDIR += icoconvert
     SUBDIR += icon-slicer
     SUBDIR += icontact

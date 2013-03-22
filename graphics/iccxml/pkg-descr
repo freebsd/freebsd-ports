@@ -1,0 +1,6 @@
+The IccXML project acts as an extension of SampleICC's IccProfLib
+that provides additional I/O capabilities for reading and writing
+the ICC profile contents as XML files. Command line tools and an
+XML schema are provided.
+
+WWW: http://iccxml.sourceforge.net/
