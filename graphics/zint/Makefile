@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build designer
 MAKE_JOBS_SAFE=	yes

@@ -14,9 +14,8 @@ COMMENT=	Parallel coordinates plotter
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		bison
+USES=		bison cmake
 
 MAN1=		pcv.1
 

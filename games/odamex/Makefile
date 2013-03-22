@@ -12,7 +12,7 @@ COMMENT=	The Standard in Online Multiplayer Doom
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer
-USE_CMAKE=	yes
+USES=		cmake
 USE_DOS2UNIX=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
 
 OPTIONS_DEFINE=	LAUNCHER

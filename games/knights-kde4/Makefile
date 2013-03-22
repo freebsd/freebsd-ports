@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 LATEST_LINK=	${PORTNAME}-kde4
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 

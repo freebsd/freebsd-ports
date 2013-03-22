@@ -29,7 +29,7 @@ GUI_DESC=	Build QT4 GUI for EasyQuantis application
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	# empty but required
 USE_LDCONFIG=	yes
 

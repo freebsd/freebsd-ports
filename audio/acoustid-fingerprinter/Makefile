@@ -14,7 +14,7 @@ LIB_DEPENDS=	chromaprint:${PORTSDIR}/audio/chromaprint \
 		tag:${PORTSDIR}/audio/taglib \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes

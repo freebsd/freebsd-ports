@@ -15,7 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
 

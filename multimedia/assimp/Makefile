@@ -17,7 +17,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_PKGCONFIG=	build
 USE_GCC=	4.6+ # 4.2+ causes compiler warnings
 USE_LDCONFIG=	yes

@@ -24,7 +24,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
 USE_QT4=	dbus gui network webkit xml \
 		moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 CONFLICTS=	libopensync-plugin-python-0.2*
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
 CMAKE_ARGS+=	-Wno-dev  \

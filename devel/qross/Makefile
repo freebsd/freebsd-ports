@@ -11,7 +11,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Qt-only fork of Kross, the KDE scripting framework
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_QT4=	designer gui network xml qmake_build uic_build moc_build \
 		rcc_build script

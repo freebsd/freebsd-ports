@@ -22,7 +22,7 @@ LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 APP_VER=	2.0.2

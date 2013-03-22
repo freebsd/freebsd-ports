@@ -18,7 +18,7 @@ USE_ZIP=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_DOS2UNIX=	yes
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"

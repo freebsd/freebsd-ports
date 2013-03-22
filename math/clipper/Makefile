@@ -15,6 +15,6 @@ WRKSRC=		${WRKDIR}/cpp
 
 USE_LDCONFIG=	yes
 USE_ZIP=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config:${PORTSDIR}/devel/llvm \
 LIB_DEPENDS=	ncurses:${PORTSDIR}/devel/ncurses
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/llvm-config
 
 CXX=	${LOCALBASE}/bin/clang++

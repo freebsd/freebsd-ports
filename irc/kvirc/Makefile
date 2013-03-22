@@ -31,7 +31,7 @@ USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes

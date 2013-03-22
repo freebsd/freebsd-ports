@@ -15,7 +15,7 @@ MAKE_JOBS_SAFE=	yes
 
 PROJECTHOST=	tint2
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	pango glib20
 USE_XORG=	xinerama xrandr xdamage xcomposite
 USE_EFL=	imlib2

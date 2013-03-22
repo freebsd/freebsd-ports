@@ -21,7 +21,7 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 
 SAMBA_PORT?=	net/samba36
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4

@@ -20,7 +20,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 

@@ -17,7 +17,7 @@ MAINTAINER=	5u623l20@gmail.com
 COMMENT=	QtCurve KDE3 widget style
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT_VER=	3
 CMAKE_ARGS=	-DQT_PLUGINS_DIR=${PREFIX}/lib/plugins
 

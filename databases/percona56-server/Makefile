@@ -13,8 +13,7 @@ MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona56-client
-USE_CMAKE=	yes
-USES=		bison
+USES=		bison cmake
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX

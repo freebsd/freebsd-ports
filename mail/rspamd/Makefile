@@ -25,7 +25,7 @@ PLIST_SUB+=	ETCDIR=etc/rspamd \
 CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
 		-DBUILD_PORT=yes
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20

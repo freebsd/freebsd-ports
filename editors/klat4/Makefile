@@ -17,7 +17,7 @@ COMMENT=	A LaTeX source editor for KDE4
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 

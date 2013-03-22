@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

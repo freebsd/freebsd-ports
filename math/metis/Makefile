@@ -13,7 +13,7 @@ LICENSE=	AL2
 
 CONFLICTS=	metis-4* metis-edf-[0-9]*
 
-USE_CMAKE=	yes
+USES=		cmake
 
 OPTIONS_DEFINE =	OPENMP SHARED STATIC
 

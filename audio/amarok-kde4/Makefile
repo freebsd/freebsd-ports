@@ -32,7 +32,7 @@ USE_QT4=	dbus designer gui network opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://ctpp.havoc.ru/download/
 MAINTAINER=	reki@reki.ru
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

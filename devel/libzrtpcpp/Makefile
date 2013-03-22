@@ -18,7 +18,7 @@ COMMENT=	ZRTP extension for GNU ccRTP
 LIB_DEPENDS=	ccrtp:${PORTSDIR}/devel/ccrtp \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=yes
 

@@ -20,7 +20,7 @@ OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 NO_PACKAGE=	License does not allow redistribution of binaries
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 SUB_FILES=	pkg-message

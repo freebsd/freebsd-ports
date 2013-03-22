@@ -18,8 +18,7 @@ GH_PROJECT=	Creox4
 GH_TAGNAME=	0.3
 GH_COMMIT=	8e27483
 
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XORG=	xft xpm

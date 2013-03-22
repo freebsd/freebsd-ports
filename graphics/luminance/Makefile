@@ -26,7 +26,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		raw_r:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build imageformats_run
 INSTALLS_ICONS=	yes

@@ -18,9 +18,7 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
 CONFLICTS=	ccaudio-[0-9]*
 
 USE_PKGCONFIG=	build
-USES=	pathfix
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		pathfix cmake:outsource
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include \

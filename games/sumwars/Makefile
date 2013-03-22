@@ -27,7 +27,7 @@ LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_GMAKE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		gl glu
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
@@ -38,7 +38,6 @@ MAKE_JOBS_SAFE=	yes
 
 FETCH_ARGS?=	-pRr
 
-CMAKE_VERBOSE=	yes
 CMAKE_ARGS+=	-DGETTEXT_SEARCH_PATH=${LOCALBASE}/lib
 
 post-patch:

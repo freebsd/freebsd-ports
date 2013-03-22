@@ -16,8 +16,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \

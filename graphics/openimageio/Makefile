@@ -28,9 +28,7 @@ WRKSRC=		${WRKDIR}/OpenImageIO-oiio-${GH_COMMIT}/src
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
 
-USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_ARGS?=	-DBUILDSTATIC:BOOL=OFF \
 		-DLINKSTATIC:BOOL=OFF \
 		-DNOTHREADS:BOOL=OFF \

@@ -19,7 +19,7 @@ LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes

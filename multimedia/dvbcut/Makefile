@@ -46,7 +46,7 @@ MAKEFILE=	makefile
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 .else
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=  gui qt3support xml  moc_build qmake_build rcc_build uic_build
 CXXFLAGS+=	-I${PREFIX}/include \
 		-I${PREFIX}/include/libavcodec \

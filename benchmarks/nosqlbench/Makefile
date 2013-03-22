@@ -13,7 +13,7 @@ LIB_DEPENDS=	tarantool:${PORTSDIR}/databases/tarantool
 
 DATE=		20120802
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DLIBTNT_INCLUDE=${LOCALBASE}/include \
 		-DLIBTNT_LIB=${LOCALBASE}/lib
 

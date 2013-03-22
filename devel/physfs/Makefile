@@ -10,7 +10,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

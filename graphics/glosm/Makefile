@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		gl
 USE_SDL=	sdl
 MAKE_JOBS_SAFE=	yes

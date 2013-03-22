@@ -12,7 +12,7 @@ COMMENT=	Library for lossless LAS compression
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 CMAKE_DEFS+=	-DCMAKE_USE_PTHREADS:BOOL=ON

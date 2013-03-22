@@ -15,7 +15,7 @@ LIB_DEPENDS=	ofx:${PORTSDIR}/finance/libofx \
 		kactivities:${PORTSDIR}/x11/kactivities
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_SQLITE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		dbus gui script xml sql sql-sqlite3_run

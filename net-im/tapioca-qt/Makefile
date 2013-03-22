@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_SOURCE_PATH=	..
 USE_QT4=	corelib qmake_build uic_build moc_build rcc_build
 USE_LDCONFIG=	yes

@@ -24,7 +24,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 CONFLICTS=	osg-[0-9]*
 
 USE_ZIP=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		gl glu
 USE_GNOME=	pkgconfig
 USE_XORG=	x11

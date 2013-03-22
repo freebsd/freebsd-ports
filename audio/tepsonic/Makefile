@@ -17,7 +17,7 @@ COMMENT=	TepSonic is a simple and fast audio player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	gui xml sql phonon network linguist_build \

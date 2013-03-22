@@ -17,7 +17,7 @@ USE_BZIP2=	yes
 USE_QT4=	corelib dbus gui network xml \
 		moc_build qmake_build rcc_build uic_build
 USE_OPENSSL=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
 		-DMANPAGE_DIRECTORY:STRING="${MANPREFIX}/man/man1" \
 		-DMARKDOWN_LOCATION:STRING="${LOCALBASE}/bin/markdown"

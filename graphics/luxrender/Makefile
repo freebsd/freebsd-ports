@@ -26,9 +26,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 HG_NODEID=	9206b3ba7011
 
 USE_BZIP2=	yes
-USES=		bison
-USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
+USES=		bison cmake
 WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
 MAKE_JOBS_SAFE=	yes
 

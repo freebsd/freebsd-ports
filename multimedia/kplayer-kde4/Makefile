@@ -20,7 +20,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 MAKE_JOBS_SAFE=	yes

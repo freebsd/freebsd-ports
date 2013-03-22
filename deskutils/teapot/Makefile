@@ -15,7 +15,7 @@ COMMENT=	Full-screen curses based spread sheet program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_CMAKE=	yes
+USES=		cmake
 
 NO_MANCOMPRESS=	no
 MAN1=	teapot.1

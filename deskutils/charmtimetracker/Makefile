@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 WRKSRC=		${WRKDIR}/KDAB-Charm-3151d25
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DCharm_VERSION:STRING=${PORTVERSION}
 USE_KDE4=	kdehier kdeprefix
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui network \

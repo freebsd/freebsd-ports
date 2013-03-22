@@ -18,9 +18,8 @@ COMMENT=	OCR system developed and open sourced by Cognitive technologies
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
-CMAKE_OUTSOURCE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include

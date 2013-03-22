@@ -18,7 +18,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		lcms2:${PORTSDIR}/graphics/lcms2
 
 GNU_CONFIGURE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 MAN1=		image_to_j2k.1 j2k_dump.1 j2k_to_image.1

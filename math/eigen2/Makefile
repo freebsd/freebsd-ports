@@ -16,7 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 LATEST_LINK=	${PORTNAME}2
 

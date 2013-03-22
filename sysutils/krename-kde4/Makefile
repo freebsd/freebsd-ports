@@ -21,7 +21,7 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes

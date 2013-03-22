@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 PROJECTHOST=	game-music-emu
 USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 # XXX: dialog(1) doesn't like ^M in LICENSE_FILE

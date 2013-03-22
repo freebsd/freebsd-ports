@@ -18,7 +18,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkipi automoc4
 USE_QT4=	corelib qt3support \
 		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4

@@ -26,14 +26,11 @@ GH_COMMIT=	d722707
 
 WRKSRC=		${WRKDIR}/imageworks-OpenShadingLanguage-${GH_COMMIT}/src
 
-USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
-CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex \
 		-DUSE_TBB:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 USE_LDCONFIG=	yes
-USES=		bison
+USES=		bison cmake:outsource
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

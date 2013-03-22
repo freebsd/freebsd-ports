@@ -10,9 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source implementation of the OBEX protocol
 
-USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		pathfix cmake
 MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	CMakeLists.txt
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:STRING="${PREFIX}/libdata/pkgconfig"

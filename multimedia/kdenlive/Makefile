@@ -26,7 +26,7 @@ USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdenlive.1 kdenlive_render.1

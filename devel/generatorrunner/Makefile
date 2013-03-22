@@ -30,7 +30,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_QT4=	gui qmake_build qtestlib moc_build rcc_build uic_build xml
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_GL=		glu
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib opengl qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 

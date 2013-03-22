@@ -26,7 +26,7 @@ USE_QT4=	gui moc_build qmake_build qtestlib_build \
 		rcc_build uic_build xml xmlpatterns
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

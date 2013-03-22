@@ -35,7 +35,7 @@ FFLAGS+=		-O2
 
 USE_GL=			yes
 USE_PKGCONFIG=		yes
-USE_CMAKE=		yes
+USES=			cmake
 USE_QT4=		gui network opengl moc_build rcc_build uic_build \
 			qmake_build xml svg
 CPPFLAGS+=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}

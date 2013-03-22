@@ -13,7 +13,7 @@ LIB_DEPENDS=	gloox:${PORTSDIR}/net-im/gloox \
 
 LICENSE=	GPLv2
 
-USE_CMAKE=	yes
+USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 DOCFILES=	README

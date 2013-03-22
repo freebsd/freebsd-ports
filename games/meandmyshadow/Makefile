@@ -17,7 +17,7 @@ COMMENT=	Me and My Shadow puzzle/platform game
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_SDL=	sdl ttf image mixer image gfx
 MAKE_JOBS_SAFE=	yes
 

@@ -10,12 +10,11 @@ MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
-CMAKE_OUTSOURCE=	yes
 MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	${PORTNAME}2
 

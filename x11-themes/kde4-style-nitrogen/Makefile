@@ -19,6 +19,6 @@ COMMENT=	KDE style with animations
 WRKSRC=		${WRKDIR}/kde4-kstyle-nitrogen-${PORTVERSION}-Source
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 
 .include <bsd.port.mk>

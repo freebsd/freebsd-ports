@@ -18,7 +18,7 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	master
 GH_COMMIT=	f9a55d1
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

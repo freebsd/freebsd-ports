@@ -10,7 +10,7 @@ MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_PERL5_BUILD=	yes
 USE_QT4=	codecs-cn_run codecs-tw_run gui help-tools_build \
 		linguist_build moc_build network qt3support_build \

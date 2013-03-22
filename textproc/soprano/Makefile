@@ -17,7 +17,7 @@ USE_QT4=	corelib dbus qtestlib network \
 		qmake_build moc_build uic_build rcc_build
 USE_PKGCONFIG=	both
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DSOPRANO_DISABLE_CLUCENE_INDEX=yes \
 		-DSOPRANO_DISABLE_SESAME2_BACKEND=yes
 MAKE_JOBS_SAFE=	yes

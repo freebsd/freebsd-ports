@@ -24,7 +24,7 @@ OFX_DESC=	Enable OFX plugin
 QUOTES_DESC=	Enable online price quotes
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_PKGCONFIG=	build
 USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build

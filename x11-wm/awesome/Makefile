@@ -34,7 +34,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 
 USE_XZ=		yes
 USE_ICONV=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_EFL=	imlib2
 USE_GNOME=	glib20 pango

@@ -31,10 +31,9 @@ CONFLICTS=	xqilla-[0-9]*
 USE_GNOME=	libxml2 libxslt
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CMAKE_OUTSOURCE=yes
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}

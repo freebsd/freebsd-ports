@@ -15,7 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A desktop calculator for power users
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui xml
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_SOURCE_PATH=	src
 
 MAKE_JOBS_SAFE=	yes

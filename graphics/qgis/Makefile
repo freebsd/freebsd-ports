@@ -20,8 +20,7 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		bison
-USE_CMAKE=	yes
+USES=		bison cmake
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer linguist_build \
 		qmake_build moc_build rcc_build uic_build

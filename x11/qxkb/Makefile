@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	xkbfile:${PORTSDIR}/x11/libxkbfile
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	qmake_build linguist_build moc_build rcc_build uic_build \
 		corelib gui svg
 

@@ -16,7 +16,7 @@ COMMENT=	PC-BSD Support Library
 
 WRKSRC=		${WRKDIR}/libpcbsd
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 
 PLIST_FILES=	lib/libpcbsd.so \

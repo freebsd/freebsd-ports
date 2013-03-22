@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 
 USE_QT4=	corelib gui qtestlib_build script \
 		qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes

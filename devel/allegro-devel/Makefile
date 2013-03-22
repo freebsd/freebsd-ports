@@ -11,7 +11,7 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Cross-platform library for games and multimedia programming
 
 USE_GMAKE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build

@@ -20,7 +20,7 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 CONFLICTS=	knutclient-0.*
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes

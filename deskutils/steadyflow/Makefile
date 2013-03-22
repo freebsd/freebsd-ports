@@ -21,7 +21,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		unique-1:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-USE_CMAKE=	yes
+USES=		cmake
 GLIB_SCHEMAS=	net.launchpad.steadyflow.gschema.xml
 USE_GNOME=	desktopfileutils glib20 gtk20
 USE_GETTEXT=	yes

@@ -18,7 +18,7 @@ COMMENT=	GRUB configuration utility for KDE
 RUN_DEPENDS=	grub:${PORTSDIR}/sysutils/grub
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

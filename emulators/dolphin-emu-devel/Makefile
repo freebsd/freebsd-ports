@@ -38,7 +38,7 @@ DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 USE_GCC=	4.6+
 .endif
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_BUILD_TYPE=	Release
 # Disable ao (seems buggy) and ALSA (emulated)
 CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \

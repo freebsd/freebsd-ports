@@ -16,7 +16,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 MAKE_JOBS_SAFE=	yes
 

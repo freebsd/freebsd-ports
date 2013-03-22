@@ -14,7 +14,7 @@ COMMENT=	VTK MPEG2 encoding library
 NO_CDROM=	the MPEG2 format and all software that uses it is subject to patent restrictions
 NO_PACKAGE=	${NO_CDROM}
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS?=	-DBUILD_SHARED_LIBS:BOOL=ON
 VTK_VERSION=	5.10.1

@@ -27,7 +27,7 @@ USE_QT4=	gui qmake_build qtestlib moc_build \
 		uic_build rcc_build xml xmlpatterns
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 

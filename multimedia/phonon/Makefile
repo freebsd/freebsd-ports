@@ -22,7 +22,7 @@ USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT4=	dbus gui \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:BOOL=TRUE \
 		-DPHONON_NO_PLATFORMPLUGIN:BOOL=TRUE \
 		-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF

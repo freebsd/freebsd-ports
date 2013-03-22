@@ -26,14 +26,13 @@ USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xdamage xdmcp xext xfixes xft xi \
 		xproto xrender xscrnsaver xt xxf86vm
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix cmake
 USE_TCL=	85
 USE_TK=		85
 USE_LDCONFIG=	yes
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
 NO_MTREE=	yes
-USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}

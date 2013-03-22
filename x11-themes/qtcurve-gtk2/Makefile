@@ -13,7 +13,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve GTK2 Theme Engine
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>

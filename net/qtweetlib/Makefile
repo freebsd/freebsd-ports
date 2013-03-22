@@ -18,7 +18,7 @@ GH_COMMIT=	2af0b78
 GH_PROJECT=	QTweetLib
 GH_TAGNAME=	${PORTVERSION}
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	gui moc_build network qmake_build rcc_build uic_build

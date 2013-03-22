@@ -27,7 +27,7 @@ LUA_COMPS=	lua
 USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
 USE_PERL5=	yes
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DLUA_INCDIR:STRING="${LUA_INCDIR}" \
 		-DLUA_LIBDIR:STRING="${LUA_LIBDIR}" \

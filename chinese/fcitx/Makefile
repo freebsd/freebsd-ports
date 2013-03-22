@@ -34,7 +34,7 @@ USE_GNOME=	pango intltool libxml2 gnomehack
 USE_GETTEXT=	yes
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
+USES=		cmake
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC

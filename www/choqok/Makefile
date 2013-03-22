@@ -27,7 +27,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	gui imageformats_run network \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

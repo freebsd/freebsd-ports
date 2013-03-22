@@ -17,7 +17,7 @@ COMMENT=	Akonadi Resources for Google Contacts and Calendar
 LIB_DEPENDS=	gcal:${PORTSDIR}/deskutils/libgcal
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_QT4=	qmake_build rcc_build moc_build uic_build dbus
 USE_KDE4=	kdelibs kdeprefix pimlibs automoc4 akonadi

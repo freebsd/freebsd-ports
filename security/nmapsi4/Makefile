@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build network \

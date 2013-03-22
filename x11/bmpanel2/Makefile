@@ -11,7 +11,7 @@ COMMENT=	Nice, lightweight NETWM compliant panel for X11
 
 LICENSE=	MIT
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	pango
 USE_XORG=	x11 xext
 

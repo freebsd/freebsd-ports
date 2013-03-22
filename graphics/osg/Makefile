@@ -24,7 +24,7 @@ CONFLICTS=	osg-devel-[0-9]*
 
 USE_GCC=	any
 USE_ZIP=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		gl glu
 USE_GNOME=	pkgconfig
 USE_XORG=	x11

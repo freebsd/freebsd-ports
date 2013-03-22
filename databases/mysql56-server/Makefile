@@ -13,7 +13,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql56-client
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \

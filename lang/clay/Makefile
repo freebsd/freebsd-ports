@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/jckarter-${PORTNAME}-${GITVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-G "Unix Makefiles" -DBUILD_FIX=false
 
 CC=		clang

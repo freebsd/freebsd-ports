@@ -21,7 +21,7 @@ LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
 		GLEW:${PORTSDIR}/graphics/glew \
 		freetype:${PORTSDIR}/print/freetype2
 
-USE_CMAKE=	yes
+USES=		cmake
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 

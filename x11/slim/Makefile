@@ -22,7 +22,7 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		xcb:${PORTSDIR}/x11/libxcb \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_XORG=	ice sm x11 xau xdmcp xext xft xmu xorg-server xrender xt
 USE_PKGCONFIG=	build
 USE_RC_SUBR=	slim

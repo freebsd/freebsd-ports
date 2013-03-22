@@ -19,7 +19,7 @@ GH_ACCOUNT=	guyru
 GH_TAGNAME=	cb0de64
 GH_COMMIT=	cb0de64
 
-USE_CMAKE=	yes
+USES=		cmake
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

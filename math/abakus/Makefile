@@ -17,8 +17,7 @@ LIB_DEPENDS=	mpfr:${PORTSDIR}/math/mpfr
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USES=		bison
-USE_CMAKE=	yes
+USES=		bison cmake
 CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_FLAGS:STRING="${LDFLAGS}" \
 		-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 DATE=		20121210
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_MYSQL=	client
 USE_GITHUB=	yes

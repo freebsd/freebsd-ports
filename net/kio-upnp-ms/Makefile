@@ -20,7 +20,7 @@ COMMENT=	KIO slave to access UPnP MediaServers
 LIB_DEPENDS=	HUpnp.1:${PORTSDIR}/net/hupnp
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4=	corelib network xml dbus gui \
 		qmake_build moc_build rcc_build uic_build

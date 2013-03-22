@@ -15,7 +15,7 @@ COMMENT=	Drop-down terminal emulator for KDE
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdeprefix automoc4
 
 .include <bsd.port.options.mk>

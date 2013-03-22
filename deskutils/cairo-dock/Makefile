@@ -21,7 +21,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		cairo-dock.1

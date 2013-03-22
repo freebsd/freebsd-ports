@@ -16,7 +16,7 @@ LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb

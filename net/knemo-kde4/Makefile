@@ -12,7 +12,7 @@ COMMENT=	KDE network monitor
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_KDE4=	kdeprefix kdelibs workspace automoc4
 

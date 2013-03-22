@@ -16,7 +16,7 @@ COMMENT=	Fullscreen mode for Amarok 2.x
 
 RUN_DEPENDS=	amarok>=2:${PORTSDIR}/audio/amarok-kde4
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdehier kdelibs
 USE_QT4=	gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build

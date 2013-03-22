@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia
 
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb
 USE_QT4=	gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build

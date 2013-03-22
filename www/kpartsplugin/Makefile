@@ -13,7 +13,7 @@ COMMENT=	Browser file viewer using KDE technology
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DNSPLUGIN_INSTALL_DIR:PATH="${WEBPLUGINS_DIR}"
 MAKE_JOBS_SAFE=	yes
 

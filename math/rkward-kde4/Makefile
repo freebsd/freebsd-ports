@@ -25,7 +25,7 @@ USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

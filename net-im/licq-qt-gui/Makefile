@@ -16,7 +16,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 LICENSE=	GPLv2
 
 USE_XORG=	x11 xext ice xscrnsaver
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
 
 .if defined(WITH_KDE)

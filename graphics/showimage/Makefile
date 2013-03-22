@@ -12,7 +12,7 @@ MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	ShowImage is a simple KDE based image viewer
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes

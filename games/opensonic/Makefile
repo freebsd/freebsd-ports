@@ -22,7 +22,7 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		"Game;KidsGame;" \
 		"false"
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ENV+=	OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" OPENSNC_ALLEGRO_VERSION="`allegro-config --version`"
 
 CFLAGS+=	-I${LOCALBASE}/include

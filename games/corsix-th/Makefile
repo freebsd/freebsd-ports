@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LUA=	yes
 USE_SDL=	mixer
 

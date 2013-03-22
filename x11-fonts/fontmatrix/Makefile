@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 USE_QT4=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
 INSTALLS_ICONS=	yes
 
-USE_CMAKE=	yes
+USES=		cmake
 
 OPTIONS_DEFINE=	FONTFORGE
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

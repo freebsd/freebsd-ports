@@ -23,7 +23,7 @@ RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSD
 SUB_FILES=	pkg-message
 
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_DOS2UNIX=	yes
 USE_GL=		glew gl glu
 USE_LUA=	5.1

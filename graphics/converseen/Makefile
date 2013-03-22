@@ -23,7 +23,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
-USE_CMAKE=	yes
+USES=		cmake
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xrender xt

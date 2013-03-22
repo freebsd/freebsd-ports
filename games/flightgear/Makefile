@@ -30,7 +30,7 @@ USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xft xi xinerama xt xmu
 USE_GL=		gl glu glut
 USE_OPENAL=	al alut
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man

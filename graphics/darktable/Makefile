@@ -23,8 +23,7 @@ ONLY_FOR_ARCHS_REASON=	uses SSE extensions
 
 MAKE_JOBS_SAFE=	yes
 
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 USE_GNOME=	librsvg2
 USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

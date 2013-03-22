@@ -10,11 +10,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GTK2 and GTK3 Configurator for KDE
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_GNOME=	gtk20 gtk30
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-CMAKE_OUTSOURCE=	yes
 
 post-patch:
 	cd ${WRKSRC}/src && \

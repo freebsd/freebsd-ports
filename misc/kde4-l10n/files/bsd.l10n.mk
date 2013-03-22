@@ -8,7 +8,7 @@ USE_XZ=	yes
 USE_QT4=	uic_build moc_build qmake_build rcc_build xml
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
-USE_CMAKE=	yes
+USES=		cmake
 
 MAKE_JOBS_SAFE=	yes
 

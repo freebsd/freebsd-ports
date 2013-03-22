@@ -28,7 +28,7 @@ USE_QT4=	gui phonon xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}

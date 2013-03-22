@@ -24,7 +24,7 @@ PLUGINS_DESC=	Compile additional libpurple-plugins
 USE_RC_SUBR=	minbif
 USE_GNOME=	glib20
 USE_EFL=	imlib2
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
 MAKE_JOBS_SAFE=	yes
 
