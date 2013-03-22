@@ -23,7 +23,7 @@ OPTIONS=	UNICODE "System locale is utf-8" off
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_KDEBASE_VER=3
-USE_CMAKE=	yes
+USES=		cmake
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 CMAKE_SOURCE_PATH=	..

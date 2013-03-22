@@ -20,7 +20,7 @@ USE_XORG=	x11
 USE_GCC=	any
 MAKE_JOBS_SAFE=	yes
 
-USE_CMAKE=	yes
+USES=		cmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-pthread

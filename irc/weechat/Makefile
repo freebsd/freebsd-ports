@@ -17,7 +17,7 @@ CONFLICTS=	weechat-devel-0.*
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	gui dbus network opengl svg phonon webkit xml \
 		qmake_build moc_build rcc_build uic_build

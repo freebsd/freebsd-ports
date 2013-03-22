@@ -14,7 +14,7 @@ COMMENT=	High performance key/value storage server
 LICENSE=	BSD
 
 TR_REV=		31-g9ca7fda
-USE_CMAKE=	yes
+USES=		cmake
 USE_GCC=	4.6+
 USE_GETTEXT=	build
 USE_GMAKE=	yes

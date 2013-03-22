@@ -68,7 +68,7 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../unix/cmake/configure
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
-# USE_CMAKE=	yes
+# USES+=		cmake
 CMAKE_SOURCE_PATH=	../unix
 
 SUB_FILES=		pkg-message

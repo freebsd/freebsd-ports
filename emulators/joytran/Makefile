@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 # This is needed to fetch from BerliOS
 FETCH_ARGS=	"-Fpr"
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" -DPREFIX="${PREFIX}"
 
 .if !defined(NOPORTDOCS)

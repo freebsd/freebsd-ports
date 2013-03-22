@@ -15,9 +15,8 @@ COMMENT=	Shrew Soft IKE daemon and client tools
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	iked
-USES=		bison
+USES=		bison cmake
 USE_OPENSSL=	yes
-USE_CMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

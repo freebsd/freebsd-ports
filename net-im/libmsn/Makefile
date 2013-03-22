@@ -12,7 +12,7 @@ COMMENT=	A library for connecting to MSN Messenger service
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/kicad
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	*.cmake
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes

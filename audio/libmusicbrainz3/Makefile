@@ -23,7 +23,7 @@ LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
 
 LATEST_LINK=	${PORTNAME}3
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes

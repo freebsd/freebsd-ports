@@ -25,7 +25,7 @@ USE_PYTHON_BUILD=	yes
 USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

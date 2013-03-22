@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
 		automoc4 qimageblitz libkcddb
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 

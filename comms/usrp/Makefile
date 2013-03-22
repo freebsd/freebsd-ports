@@ -19,10 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boos
 		sdcc:${PORTSDIR}/lang/sdcc
 
 USE_DOS2UNIX=		yes
-USE_CMAKE=		yes
+USES=			cmake:outsource
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
-CMAKE_OUTSOURCE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 
 # for excruciating debug use this -db

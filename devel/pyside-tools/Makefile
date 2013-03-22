@@ -37,7 +37,7 @@ REINPLACE_ARGS=	-i.bak -e 's+/usr/bin/env python+&${PYTHON_VER}+' \
 		${WRKSRC}/pyside-uic ${WRKSRC}/pysideuic/icon_cache.py
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_PYTHON=	2.5-2.7
 
 post-patch:

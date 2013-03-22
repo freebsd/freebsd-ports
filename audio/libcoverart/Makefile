@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson \
 		neon:${PORTSDIR}/www/neon29
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes

@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		zmq:${PORTSDIR}/devel/zmq
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GCC=	4.6+
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

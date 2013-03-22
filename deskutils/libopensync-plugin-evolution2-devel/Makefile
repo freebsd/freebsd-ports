@@ -21,7 +21,7 @@ RUN_DEPENDS=	vconvert:${PORTSDIR}/deskutils/libopensync-plugin-vformat-devel
 CONFLICTS=	libopensync-plugin-evolution2-0.2*
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	evolutiondataserver gconf2
 
 CMAKE_ARGS+=	-Wno-dev

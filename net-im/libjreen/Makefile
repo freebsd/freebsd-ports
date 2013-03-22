@@ -20,7 +20,7 @@ LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca \
 
 USE_BZIP2=	yes
 USE_QT4=	network moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

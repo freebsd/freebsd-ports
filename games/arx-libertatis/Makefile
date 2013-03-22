@@ -22,7 +22,7 @@ USE_XZ=		yes
 USE_OPENAL=	yes
 USE_SDL=	sdl
 USE_GL=		gl glu
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx
 MAKE_JOBS_SAFE=	yes
 

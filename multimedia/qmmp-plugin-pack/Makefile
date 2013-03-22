@@ -20,7 +20,7 @@ LIB_DEPENDS=	qmmpui:${PORTSDIR}/multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.6.0:${PORTSDIR}/multimedia/qmmp
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_QT4=	corelib gui qmake_build rcc_build moc_build linguist_build
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
@@ -79,7 +79,6 @@ USE_QT4+=	uic_build
 
 CMAKE_ARGS+=	${PLUGIN_OPTIONS_CMAKE} \
 	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
-CMAKE_OUTSOURCE=yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

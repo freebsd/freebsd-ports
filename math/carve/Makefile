@@ -15,8 +15,7 @@ LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GUI
 
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 USE_GL=		glut
 USE_LDCONFIG=	yes
 

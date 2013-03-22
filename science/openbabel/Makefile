@@ -14,9 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
 CONFLICTS_INSTALL=	babel-*
 
 USE_GNOME=	libxml2
-USE_CMAKE=	yes
+USES=		cmake:outsource
 CMAKE_ARGS=	-DBUILD_GUI=off
-CMAKE_OUTSOURCE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

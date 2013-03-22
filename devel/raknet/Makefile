@@ -33,7 +33,7 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 USE_GMAKE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 # XXX Do not provide Samples for the following reason :
 # - potential licensing problems

@@ -19,7 +19,7 @@ MAN1=		jack-keyboard.1
 
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gtk20
-USE_CMAKE=	yes
+USES=		cmake
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=        LASH

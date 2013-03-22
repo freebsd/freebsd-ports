@@ -34,7 +34,7 @@ USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml networ
 USE_GNOME=	desktopfileutils libartlgpl2 libxml2 pkgconfig
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/Scribus
 

@@ -22,7 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP_${PORTVERSION}/src
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_DOS2UNIX=	yes
 USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xdamage xdmcp xext xfixes xft \

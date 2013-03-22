@@ -17,7 +17,7 @@ LICENSE=	AL2
 
 MAN1=	opencc.1 opencc_dict.1
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)

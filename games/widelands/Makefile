@@ -18,9 +18,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_GETTEXT=	yes
-CMAKE_OUTSOURCE=yes
 CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="share/widelands" \
 		-DWL_INSTALL_BINDIR="bin" \

@@ -13,7 +13,7 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_GL=		glu
 USE_ICONV=	yes

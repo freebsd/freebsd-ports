@@ -16,8 +16,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 USE_MYSQL=	51+
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

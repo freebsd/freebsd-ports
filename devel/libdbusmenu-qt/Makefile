@@ -16,8 +16,7 @@ USE_QT4=	dbus gui xml \
 		moc_build qmake_build rcc_build uic_build
 FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

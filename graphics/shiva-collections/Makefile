@@ -14,7 +14,7 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Collection of kernels for OpenGTL
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 NO_BUILD=	yes
 
 .include <bsd.port.mk>

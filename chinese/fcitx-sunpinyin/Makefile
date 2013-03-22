@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_XZ=		yes
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

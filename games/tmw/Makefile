@@ -23,7 +23,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 RUN_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_SDL=	sdl gfx image mixer net ttf
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

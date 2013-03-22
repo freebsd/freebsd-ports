@@ -20,7 +20,7 @@ LICENSE_PERMS=	auto-accept
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GMAKE=	yes
 
 PORTDOCS=	manual.pdf

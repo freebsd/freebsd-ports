@@ -20,7 +20,7 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 CONFLICTS=	msynctool-0.2*
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 PLIST_FILES=	bin/${PORTNAME}
 

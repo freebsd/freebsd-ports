@@ -24,7 +24,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 CONFLICTS=	autopano-sift-[0-9]*
 
 USE_GNOME=	libxml2
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/autopano bin/autopano-c-complete.sh \

@@ -14,7 +14,7 @@ MASTER_SITES=	http://cdrkit.org/releases/ \
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Command-line CD/DVD writing suite
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_ICONV=	yes
 
 MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \

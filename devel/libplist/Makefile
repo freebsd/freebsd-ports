@@ -14,7 +14,7 @@ USE_GNOME=	libxml2
 # Unlisted dependency.
 USE_ICONV=	yes
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 # Required for iconv headers.
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes

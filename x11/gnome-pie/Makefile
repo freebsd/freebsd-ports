@@ -60,7 +60,7 @@ REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' \
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GITHUB=	yes
 USE_GNOME=	gconf2 gnomemenus gtk20 libwnck
 USE_PKGCONFIG=	build

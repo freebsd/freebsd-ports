@@ -11,5 +11,5 @@ USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	xml moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 .endif

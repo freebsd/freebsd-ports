@@ -31,10 +31,9 @@ USE_BZIP2=	yes
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
 		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
 
-USE_CMAKE=	yes
+USES=		cmake
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
-CMAKE_VERBOSE=	yes
 
 USE_WX=		2.8+
 WX_UNICODE=	yes

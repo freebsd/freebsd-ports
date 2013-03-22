@@ -17,7 +17,7 @@ COMMENT=	Free Libre Action Roleplaying Engine
 
 LICENSE=	GPLv3
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_SDL=	sdl mixer image ttf
 MAKE_JOBS_SAFE=	yes
 CMAKE_BUILD_TYPE=	#empty

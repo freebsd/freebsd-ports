@@ -23,7 +23,7 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		tiff:${PORTSDIR}/graphics/tiff \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20

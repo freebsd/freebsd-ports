@@ -18,7 +18,7 @@ COMMENT=	A new K-menu for KDE
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3

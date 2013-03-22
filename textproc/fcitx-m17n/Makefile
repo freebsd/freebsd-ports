@@ -16,7 +16,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 
 USE_XZ=		yes
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	intltool
 
 .include <bsd.port.mk>

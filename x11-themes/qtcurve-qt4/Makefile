@@ -14,7 +14,7 @@ CONFLICTS_BUILD=	qt-3.* qt-copy-3.*
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	dbus gui svg imageformats_run \
 		qmake_build uic_build moc_build rcc_build
 CFLAGS+=	-I${LOCALBASE}/include

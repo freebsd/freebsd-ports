@@ -16,7 +16,7 @@ COMMENT=	A terminal emulator based on GTK and VTE
 
 USE_GNOME=	vte
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_BZIP2=	yes
 USE_PKGCONFIG=	build
 

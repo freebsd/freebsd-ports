@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTNAME}-2.4/
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Yet another sourcecode indexing tool
 
-USE_CMAKE=	yes
+USES=		cmake
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkcddb
 INSTALLS_ICONS=	yes

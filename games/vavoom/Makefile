@@ -14,7 +14,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 OPTIONS_SINGLE=	HWAPI
 OPTIONS_SINGLE_HWAPI=	ALLEGRO SDL

@@ -13,7 +13,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		pcre:${PORTSDIR}/devel/pcre       \
 		ctpp2:${PORTSDIR}/textproc/ctpp2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 WITHOUT_NLS=	yes

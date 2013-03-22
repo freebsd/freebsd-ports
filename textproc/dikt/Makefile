@@ -18,7 +18,7 @@ USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib gui network svg xml \
 		qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 
 PLIST_FILES=	bin/dikt \
 		share/applications/kde4/dikt.desktop \

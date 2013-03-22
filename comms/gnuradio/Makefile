@@ -30,9 +30,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4
 
-USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 #CMAKE_ARGS=	--debug-output --trace
 CMAKE_ARGS=+	--debug-output

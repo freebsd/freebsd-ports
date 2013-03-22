@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv

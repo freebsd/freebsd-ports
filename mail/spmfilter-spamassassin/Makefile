@@ -17,7 +17,7 @@ COMMENT=	Spamassassin plugin for spmfilter
 BUILD_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 RUN_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
 

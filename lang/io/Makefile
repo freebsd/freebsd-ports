@@ -16,8 +16,7 @@ GH_ACCOUNT=	stevedekorte
 GH_COMMIT=	23afbcc
 
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=release
 
 PORTDOCS=	*

@@ -21,7 +21,7 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XORG=	x11 xft xpm
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx

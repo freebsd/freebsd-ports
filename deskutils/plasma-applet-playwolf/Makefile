@@ -16,7 +16,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Amarok 2.x plasma applet for KDE4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build

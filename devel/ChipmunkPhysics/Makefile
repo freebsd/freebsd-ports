@@ -15,7 +15,7 @@ COMMENT=	2D physics engine written in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DBUILD_DEMOS=OFF
 MAKE_JOBS_SAFE=	yes
 

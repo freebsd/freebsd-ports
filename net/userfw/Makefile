@@ -19,9 +19,8 @@ COMMENT=	Modular packet filter
 LICENSE=	BSD
 
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
-CMAKE_OUTSOURCE=	yes
 
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}

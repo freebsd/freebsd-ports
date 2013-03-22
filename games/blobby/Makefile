@@ -24,7 +24,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 USE_XORG=	ice x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
 USE_SDL=	sdl
 USE_GL=		glu
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DDATADIR:PATH="${DATADIR}"
 WRKSRC=		${WRKDIR}/blobby-1.0rc1
 

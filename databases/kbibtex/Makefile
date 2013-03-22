@@ -13,7 +13,7 @@ COMMENT=	Bibliography editor for KDE
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix automoc4 sharedmime
 USE_QT4=	qmake_build moc_build uic_build rcc_build \

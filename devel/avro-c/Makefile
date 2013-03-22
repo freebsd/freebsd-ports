@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Data serialization system for ANSI C
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 

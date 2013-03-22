@@ -16,7 +16,7 @@ MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 CONFLICTS=	synergy-[0-9]*
-USE_CMAKE=	yes
+USES=		cmake
 USE_XORG=	ice xtst x11 sm
 USE_DOS2UNIX=	yes
 

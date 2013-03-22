@@ -14,7 +14,7 @@ COMMENT=	Board game for KDE, also known as Mancala or Kalah
 LIB_DEPENDS=	kdegames:${PORTSDIR}/games/kdegames4
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

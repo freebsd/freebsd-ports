@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 
 post-patch:

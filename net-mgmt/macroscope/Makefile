@@ -23,7 +23,7 @@ LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
 USE_RC_SUBR=		${PORTNAME}
 USE_BZIP2=		yes
 USE_DOS2UNIX=		yes
-USE_CMAKE=		yes
+USES=			cmake
 
 OPTIONS=		MYSQL		"With MySQL support" on \
 			FIREBIRD	"With Firebird support" off

@@ -17,7 +17,7 @@ COMMENT=	A program for recording streams for KDE4
 RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:${PORTSDIR}/audio/streamripper
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 

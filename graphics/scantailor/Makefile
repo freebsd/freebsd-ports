@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \

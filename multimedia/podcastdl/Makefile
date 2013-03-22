@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	mrss:${PORTSDIR}/textproc/libmrss
 
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/podcastdl

@@ -20,7 +20,7 @@ USE_PKGCONFIG=	yes
 USE_PYTHON_BUILD=	2.5+
 USE_QT4=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=True \
 		-DENABLE_TESTS:BOOL=False
 MAKE_JOBS_SAFE=	yes

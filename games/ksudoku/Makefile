@@ -20,6 +20,6 @@ EXPIRATION_DATE=	2013-07-01
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_CMAKE=	yes
+USES=		cmake
 
 .include <bsd.port.mk>

@@ -15,8 +15,7 @@ LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 
 USE_OPENAL=	soft
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
-CMAKE_VERBOSE=	yes
+USES=		cmake
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

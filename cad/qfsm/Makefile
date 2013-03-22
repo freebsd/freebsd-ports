@@ -24,7 +24,7 @@ USE_XORG=	xi
 USE_QT4=	corelib gui qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_GNOME=	desktopfileutils
-USE_CMAKE=	yes
+USES=		cmake
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 

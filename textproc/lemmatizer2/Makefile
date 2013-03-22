@@ -21,7 +21,7 @@ COMMENT=	Russian / German / English lemmatizer library
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-USE_CMAKE=	yes
+USES=		cmake
 
 DB_DIR?=	/var/db/lemmatizer
 

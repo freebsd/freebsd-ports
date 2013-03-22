@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

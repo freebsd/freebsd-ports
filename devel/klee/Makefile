@@ -16,8 +16,7 @@ RUN_DEPENDS=	llvm-ar:${PORTSDIR}/devel/llvm \
 
 OPTIONS_DEFINE=	DEBUG
 
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 CMAKE_ARGS=	-DCMAKE_MODULE_PATH=${WRKSRC}/cmake/llvm-3.1-modules \
 		-DKLEE_PATH_TO_LLVM_BUILD=${LOCALBASE}
 

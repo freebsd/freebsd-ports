@@ -13,7 +13,7 @@ COMMENT=	A personal accounting software
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 INSTALLS_ICONS=	yes

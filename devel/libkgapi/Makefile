@@ -18,7 +18,7 @@ CONFLICTS=	akonadi-google-0.*
 
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	automoc4 kdelibs kdeprefix kdehier pimlibs
 USE_LDCONFIG=	yes
 USE_QT4=	corelib network webkit xml \

@@ -20,8 +20,7 @@ USE_QT4=	gui network script qt3support imageformats \
 
 HAS_CONFIGURE=	yes
 USE_DOS2UNIX=	src/ui/popwidget.cpp
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_ARGS=	-Wno-dev
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

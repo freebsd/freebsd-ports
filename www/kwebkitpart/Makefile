@@ -12,7 +12,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	designer gui webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

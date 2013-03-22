@@ -18,7 +18,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 
 USE_SDL=	sdl
 USE_PKGCONFIG=	build
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

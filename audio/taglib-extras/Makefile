@@ -14,7 +14,7 @@ COMMENT=	Extra taglib features for Amarok 2.2
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
-USE_CMAKE=	yes
+USES=		cmake
 
 .include <bsd.port.pre.mk>
 

@@ -15,7 +15,7 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 		proj:${PORTSDIR}/graphics/proj \
 		gps:${PORTSDIR}/astro/gpsd
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_QT4=	dbus gui opengl network sql xml linguist_build \
 		moc_build uic_build rcc_build qmake_build
 USE_GL=		glu

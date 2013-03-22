@@ -27,8 +27,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
 CMAKE_ARGS=	-DBUILD_ALSA:BOOL=OFF
 ALL_TARGET=	lrelease all

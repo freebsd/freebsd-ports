@@ -22,7 +22,7 @@ OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL
 OPTIONS_DEFAULT=	SQLITE
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz sharedmime

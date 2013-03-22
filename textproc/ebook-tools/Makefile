@@ -11,7 +11,7 @@ COMMENT=	Accesses and converts various ebook file formats
 
 LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 

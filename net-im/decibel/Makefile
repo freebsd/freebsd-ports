@@ -17,7 +17,7 @@ LIB_DEPENDS=	QtTapioca.0:${PORTSDIR}/net-im/tapioca-qt
 
 USE_QT4=	xml dbus gui qtestlib qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 post-patch:
 	${REINPLACE_CMD} -e \

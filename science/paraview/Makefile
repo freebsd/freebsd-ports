@@ -27,7 +27,7 @@ USE_XORG=	x11 xt
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_GCC=	any
 #CONFLICTS=	vtk-5.*
 CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
@@ -82,7 +82,6 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 MAKE_JOBS_SAFE=	yes
-CMAKE_OUTSOURCE=	yes
 
 PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
 CMAKE2INST=	ParaViewConfig.cmake \

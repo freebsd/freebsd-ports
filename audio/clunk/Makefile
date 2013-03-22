@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Real-time 3D sound generation library
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

@@ -27,7 +27,7 @@ FINGERPRINT_DESC=	Build the lastfm-fingerprint library
 TESTS_DESC=		Build liblastfm tests
 OPTIONS_DEFAULT=	FINGERPRINT
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build

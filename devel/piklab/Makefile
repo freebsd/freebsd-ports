@@ -21,7 +21,7 @@ USE_QT4=	corelib gui qt3support qtestlib xml \
 USE_NCURSES=	yes
 USE_READLINE=	yes
 USE_GETTEXT=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		piklab-hex.1 piklab-prog.1

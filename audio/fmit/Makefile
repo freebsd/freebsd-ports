@@ -27,7 +27,7 @@ USE_XORG=	xmu
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glut
-USE_CMAKE=	yes
+USES=		cmake
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 

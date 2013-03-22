@@ -20,7 +20,7 @@ LIB_DEPENDS=	projectM:${PORTSDIR}/graphics/libprojectm \
 		visual-${LIBVISUAL_VER}:${PORTSDIR}/graphics/libvisual${LIBVISUAL_VER:S/.//} \
 		SDL:${PORTSDIR}/devel/sdl12
 
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DLIBVISUAL_LIBRARIES=visual-${LIBVISUAL_VER}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

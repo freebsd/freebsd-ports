@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_SDL=	image mixer
 USE_OPENAL=	al
 USE_GL=		glew
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

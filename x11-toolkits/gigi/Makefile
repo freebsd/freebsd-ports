@@ -17,7 +17,7 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GCC=	4.4+
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DBUILD_TUTORIALS:BOOL=OFF
 USE_BZIP2=	yes
 USE_SDL=	sdl

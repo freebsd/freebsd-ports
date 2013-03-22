@@ -17,7 +17,7 @@ TCMALLOC_DESC=	Use Google's TCMalloc
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

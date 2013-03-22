@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-g
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui
 
-USE_CMAKE=	yes
+USES=		cmake
 
 LOCALES=	be de cs es fr pt pt_BR ro ru sv sk
 PLIST_FILES=	lib/licq/licq_osd.so \

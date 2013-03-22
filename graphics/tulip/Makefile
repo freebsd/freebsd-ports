@@ -27,8 +27,7 @@ USE_QT4=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_buil
 USE_GL=		glew glut
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DLOCALBASE:PATH=${LOCALBASE} \
 		-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR}
 USE_LDCONFIG=	${PREFIX}/lib/tlp

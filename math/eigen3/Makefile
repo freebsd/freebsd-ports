@@ -14,8 +14,7 @@ LICENSE=	LGPL21 MPL
 LICENSE_COMB=	multi
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
+USES=		cmake:outsource
 CMAKE_ENV+=	PKG_CONFIG_LIBDIR="${PREFIX}/libdata"
 NO_BUILD=	yes
 

@@ -11,7 +11,7 @@ COMMENT=	Graphical user interface around gdb using KDE
 
 LICENSE=	GPLv2
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes

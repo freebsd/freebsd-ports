@@ -47,8 +47,7 @@ USE_QT4=	dbus designer gui opengl phonon porting_build qt3support \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
 USE_BZIP2=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DBUILD_active:BOOL=FALSE \
 		-DBUILD_mobile:BOOL=FALSE \

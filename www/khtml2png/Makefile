@@ -15,7 +15,7 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Command line program to create screenshots of webpages
 
 USE_KDELIBS_VER=	3
-USE_CMAKE=		yes
+USES=			cmake
 
 PLIST_FILES=	bin/khtml2png2
 

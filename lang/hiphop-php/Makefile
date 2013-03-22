@@ -64,7 +64,7 @@ WRKSRC=		${WRKDIR}/facebook-hiphop-php-${GITVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_MYSQL=	yes
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes

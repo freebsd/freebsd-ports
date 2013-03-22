@@ -21,7 +21,7 @@ USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT4=	gui phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 
 PHONON_BRANCH=	stable

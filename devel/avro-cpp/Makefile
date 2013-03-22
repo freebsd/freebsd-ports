@@ -15,7 +15,7 @@ COMMENT=	Data serialization system for C++
 
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 

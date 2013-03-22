@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_GL=		glu
 USE_QT4=	gui opengl network linguist_build \
 		qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS=	-DENABLE_GLSL=OFF \
 		-DQT_MKSPECS_RELATIVE=share/qt4/mkspecs
 USE_GCC=	4.4+

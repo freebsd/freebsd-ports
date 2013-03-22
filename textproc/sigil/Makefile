@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 LICENCE=	GPLv3
 
 USE_ZIP=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_DOS2UNIX=	CMakeLists.txt DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
 NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist

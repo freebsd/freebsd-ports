@@ -19,7 +19,7 @@ BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
-USE_CMAKE=	yes
+USES=		cmake
 .if defined(NOPORTDOCS)
 CMAKE_ARGS=	-Dbuild_docs=off
 .endif

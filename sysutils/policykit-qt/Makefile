@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
+USES=		cmake
 
 PORTSCOUT=	limit:^0
 

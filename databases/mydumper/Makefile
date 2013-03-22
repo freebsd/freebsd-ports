@@ -21,7 +21,7 @@ PLIST_FILES=	sbin/mydumper sbin/myloader
 USE_GNOME=	glib20
 USE_PKGCONFIG=	build
 USE_MYSQL=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt

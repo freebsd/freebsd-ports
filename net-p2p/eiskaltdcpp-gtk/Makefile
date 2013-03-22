@@ -28,7 +28,7 @@ PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
 USE_GCC=	4.6+
-USE_CMAKE=	yes
+USES=		cmake
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes

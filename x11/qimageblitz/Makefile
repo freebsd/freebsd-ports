@@ -18,7 +18,7 @@ COMMENT=	Graphical effects and filters library for KDE4
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	gui qmake_build moc_build uic_build rcc_build
-USE_CMAKE=	yes
+USES=		cmake
 
 post-patch:
 	${REINPLACE_CMD} -e \

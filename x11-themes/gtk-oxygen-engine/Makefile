@@ -18,7 +18,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_CMAKE=	yes
+USES=		cmake
 USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

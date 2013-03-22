@@ -23,7 +23,7 @@ EXPIRATION_DATE=	2013-07-01
 
 USE_KDEBASE_VER=	3
 USE_SQLITE=	yes
-USE_CMAKE=	yes
+USES=		cmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \

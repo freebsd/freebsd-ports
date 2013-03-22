@@ -14,7 +14,7 @@ MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes

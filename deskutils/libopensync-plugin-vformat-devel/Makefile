@@ -19,7 +19,7 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-Wno-dev
 CFLAGS+=	"-I${LOCALBASE}/include"
 

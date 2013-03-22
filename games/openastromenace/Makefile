@@ -27,7 +27,7 @@ USE_GL=		gl glu
 USE_OPENAL=	al alut
 WANT_SDL=	yes
 USE_SDL=	sdl
-USE_CMAKE=	yes
+USES=		cmake
 WRKSRC=		${WRKDIR}/OpenAstroMenaceSVN
 USE_DOS2UNIX=	yes
 

@@ -23,9 +23,7 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=	yes
-CMAKE_VERBOSE=	yes
+USES=		cmake:outsource
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
 PLIST_SUB+=	LIBVERS=${PORTVERSION:R}
 
