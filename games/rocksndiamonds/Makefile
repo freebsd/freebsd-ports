@@ -5,15 +5,15 @@ PORTNAME=	rocksndiamonds
 PORTVERSION=	3.3.0.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
-		http://www.jb-line.de/rnd/ \
-		SF/${PORTNAME}.mirror/ \
+MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
+		SF/${PORTNAME}.mirror/:game \
+		http://www.jb-line.de/rnd/:rnd \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels \
 		http://www.bd-fans.com/Files/RnD/Levels/ \
 		SF/nemysisfreebsdp/${PORTNAME}/:icons
 # Please contact the MAINTAINER if a Level is missing
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		rnd_jue-3.3.0.0.tar.gz \
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:game \
+		rnd_jue-3.3.0.0.tar.gz:rnd \
 		Sokoban-1.0.0.zip:levels \
 		Contributions-1.2.0.zip:levels \
 		${LEVELS_BD_FANS:S/$/.zip/} \
