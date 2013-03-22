@@ -1,9 +1,5 @@
-# New ports collection makefile for:	paragui
-# Date Created:			Mar 28, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	paragui
 PORTVERSION=	1.1.8
@@ -33,11 +29,11 @@ USE_LDCONFIG=	yes
 SHLIB_VER=	4
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-OPTIONS=	DEBUG	"Debug information"	off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
@@ -54,4 +50,4 @@ post-patch:
 		 s|-L[./]*../src|&/.libs |g ; \
 		 s|-release $$(LT_RELEASE)||g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

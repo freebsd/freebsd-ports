@@ -25,16 +25,17 @@ USE_LDCONFIG=	yes
 # Ensure local headers are found first, otherwise updating would fail.
 CFLAGS+=	-I.
 
-OPTIONS=	OGRE "Enable Ogre (3D engine) support"	on
+OPTIONS_DEFINE=	OGRE
+OGRE_DESC=	Ogre (3D engine) support
 
 SHLIB_VER=	0
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 GIGI_LIBS=	GiGi GiGiSDL
 WRKSRC=		${WRKDIR}/gigi/GG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OGRE)
+.if ${PORT_OPTIONS:MOGRE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
 RUN_DEPENDS+=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
@@ -69,4 +70,4 @@ maint-gen-distfile:
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -rf ${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

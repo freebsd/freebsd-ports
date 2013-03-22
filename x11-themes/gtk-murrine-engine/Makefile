@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-murrine-engine
-# Date created:		2006-08-20
-# Whom:			Phillip Neumann <pneumann@gmail.com>
-#
+# Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	murrine
 PORTVERSION=	0.98.1.1
@@ -26,12 +22,14 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	ANIMATION "Enable animation support" off
+OPTIONS_DEFINE=	ANIMATION
+OPTIONS_DEFAULT=	ANIMATION
+ANIMATION_DESC=	Animation support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ANIMATION)
+.if ${PORT_OPTIONS:MANIMATION}
 CONFIGURE_ARGS+=--enable-animation
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

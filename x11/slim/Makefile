@@ -32,11 +32,11 @@ CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes
 
 MAN1=		slim.1
 
-OPTIONS=	PAM "Use pam" off
+OPTIONS_DEFINE=	PAM
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CMAKE_ARGS+=	-DUSE_PAM=yes
 PLIST_SUB+=	PAM=""
 .else
@@ -64,7 +64,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/slim.conf ]; then \
 		${CP} ${PREFIX}/etc/slim.conf.sample ${PREFIX}/etc/slim.conf ; \
 	fi
-.	if defined(WITH_PAM)
+.	if ${PORT_OPTIONS:MPAM}
 	@${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/slim.default
 	@if [ ! -f ${PREFIX}/etc/pam.d/slim ]; then \
 		${CP} ${PREFIX}/etc/pam.d/slim.default ${PREFIX}/etc/pam.d/slim ; \
@@ -72,4 +72,4 @@ post-install:
 .	endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

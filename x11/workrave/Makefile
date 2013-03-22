@@ -1,9 +1,5 @@
-# New ports collection makefile for:	workrave
-# Date created:				15 Jul 2003
-# Whom:					Koop Mast <einekoai@chello.nl>
-#
+# Created by: Koop Mast <einekoai@chello.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	workrave
 PORTVERSION=	1.9.4
@@ -16,8 +12,8 @@ COMMENT=	RSI prevention tool
 
 BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
 
-OPTIONS=	GNOME "Build with Gnome support" off \
-		NETWORK "Build with network support" off
+OPTIONS_DEFINE=	GNOME NETWORK NLS
+NETWORK_DESC=	Build with network support
 
 INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
@@ -27,19 +23,21 @@ DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
 					false
 
 USE_XORG=	x11 xmu recordproto xtst xext
+USES=		pathfix
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
+USE_GNOME=	gnomeprefix intlhack gconf2 intltool
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 LIB_DEPENDS+=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 USE_GNOME+=	gnomepanel
 PLIST_SUB+=	GNOME=""
@@ -49,13 +47,13 @@ CONFIGURE_ARGS+=--disable-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if defined(WITH_NETWORK)
+.if ${PORT_OPTIONS:MNETWORK}
 LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 .else
 CONFIGURE_ARGS+=--disable-distribution
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -63,4 +61,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

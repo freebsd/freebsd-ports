@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wxgtk26
-# Date created:         		June 27, 2004
-# Whom:					fjoe@FreeBSD.ORG
-#
+# Created by: fjoe@FreeBSD.ORG
 # $FreeBSD$
-#
 
 PORTNAME=	wx
 PORTVERSION=	2.8.12
@@ -49,12 +45,13 @@ PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
 
-OPTIONS=	GSTREAMER "media support" on\
-		MSPACK "MS archives support" on
+OPTIONS_DEFINE=	GSTREAMER MSPACK
+OPTIONS_DEFAULT=	GSTREAMER MSPACK
+MSPACK_DESC=	MS archives support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 CONFIGURE_ARGS+=--enable-mediactrl
 USE_GNOME+=	gconf2
 USE_GSTREAMER=	yes
@@ -64,7 +61,7 @@ CONFIGURE_ARGS+=--disable-mediactrl
 PLIST_SUB+=     GSTREAMER="@comment "
 .endif
 
-.if defined(WITH_MSPACK)
+.if ${PORT_OPTIONS:MMSPACK}
 CONFIGURE_ARGS+=--with-libmspack
 LIB_DEPENDS+=	mspack.1:${PORTSDIR}/archivers/libmspack
 .else
@@ -113,4 +110,4 @@ post-patch:
 		-e 's|png_check_sig|png_sig_cmp|g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

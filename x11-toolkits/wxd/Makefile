@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wxd
-# Date created:        29 August 2006
-# Whom:                Jona Joachim <walkingshadow@grummel.net>
-#
+# Created by: Jona Joachim <walkingshadow@grummel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wxd
 PORTVERSION=	0.14
@@ -22,15 +18,16 @@ USE_LDCONFIG=	yes
 USE_WX=		2.8
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	UNICODE "Build the Unicode version" On
+OPTIONS_DEFINE=	UNICODE
+OPTIONS_DEFAULT=	UNICODE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		does not compile
 .endif
 
-.if !defined(WITHOUT_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 WX_UNICODE=	yes
 .endif
 
@@ -42,4 +39,4 @@ pre-patch:
 	@${RM} ${WRKSRC}/wx/Makefile
 	@${MV} ${WRKSRC}/wx/GNUmakefile ${WRKSRC}/wx/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
