@@ -3,7 +3,7 @@
 
 PORTNAME=	milkytracker
 PORTVERSION=	0.90.85
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
@@ -12,6 +12,8 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
 
 LICENSE=	GPLv3
+
+NOT_FOR_ARCH=	powerpc
 
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
 		zzip:${PORTSDIR}/devel/zziplib
@@ -26,8 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--disable-alsatest --without-alsa
 
-PLIST_FILES=	bin/milkytracker share/pixmaps/milkytracker.ico \
-		share/pixmaps/milkytracker.png
 PORTDOCS=	FAQ.html MilkyTracker.html ChangeLog.html
 ICONS=		carton.ico carton.png
 
@@ -40,18 +40,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
 		${LOCALBASE}/share/pixmaps/${f:C/carton/milkytracker/}
 .endfor
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 .endfor
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: fails in assembler
-.else
-BROKEN=		does not build
 .endif
 
 .include <bsd.port.mk>
