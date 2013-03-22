@@ -11,14 +11,15 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official last.fm radio player
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod \
 		mad.2:${PORTSDIR}/audio/libmad \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		fftw3f:${PORTSDIR}/math/fftw3-float
+		fftw3f:${PORTSDIR}/math/fftw3-float \
+		asound.2:${PORTSDIR}/audio/alsa-lib
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
