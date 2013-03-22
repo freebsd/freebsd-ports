@@ -4,7 +4,7 @@
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.26.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -21,7 +21,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_XORG=	xt xi x11
 USE_AUTOTOOLS=	libtool
-USE_GNOME+=	gnomehack glib20 ltverhack
+USE_GNOME+=	gnomehack gnomehier glib20 ltverhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
