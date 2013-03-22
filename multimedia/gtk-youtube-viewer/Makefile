@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nemysis@gmx.ch
@@ -33,9 +34,9 @@ GH_COMMIT=	c26d9a7
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/WWW-YoutubeViewer
 
+CONFIGURE_ARGS+=${DATADIR}
 PERL_MODBUILD=	yes
 
-MAN1=		youtube-viewer.1
 MAN3=		WWW::YoutubeViewer::RegularExpressions.3 \
 		WWW::YoutubeViewer.3 \
 		WWW::YoutubeViewer::Itags.3 \
@@ -45,11 +46,24 @@ MAN3=		WWW::YoutubeViewer::RegularExpressions.3 \
 
 PORTDOCS=	Changes README
 
-OPTIONS_DEFINE=	GTK2 GCAP
-OPTIONS_DEFAULT=GTK2 GCAP
+OPTIONS_DEFINE=	GCAP
+
+OPTIONS_MULTI=	USER_INTERFACE
+OPTIONS_MULTI_USER_INTERFACE=	CLI GTK2
+
+OPTIONS_DEFAULT=	GTK2 GCAP
+
+CLI_DESC=	Enable CLI version
 GCAP_DESC=	Enable YouTube captions support
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCLI}
+MAN1=		youtube-viewer.1
+PLIST_SUB+=	CLI=""
+.else
+PLIST_SUB+=	CLI="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MGTK2}
 BUILD_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
@@ -64,16 +78,32 @@ PLIST_SUB+=	GTK2="@comment "
 RUN_DEPENDS+=	${LOCALBASE}/bin/gcap:${PORTSDIR}/multimedia/gcap
 .endif
 
+post-extract:
+.if ! exists(${LOCALBASE}/bin/per5.16.2)
+	@${ECHO_CMD}
+	@${ECHO_MSG} "GTK Youtube Viewer 3.07 requires lang/perl5.16 to use CLI version"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please read /usr/ports/UPDATING"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Hit ^c now if you don't wish to do this."
+	@${ECHO_MSG}
+.endif
+
 post-patch:
+	@${REINPLACE_CMD} -n '1,/create_build_script()/p' \
+			${WRKSRC}/Build.PL
 	@${REINPLACE_CMD} \
 		-e 's|5.016|0|' \
-		-e 's|usr share|${PREFIX}/|' \
-		-e 's|(pixmaps))|(share/pixmaps))|' \
-		-e 's|(applications))|(share/applications))|' \
-		-e 's|(gtk-youtube-viewer))|(share/gtk-youtube-viewer))|' \
 			${WRKSRC}/Build.PL
 	@cd ${WRKSRC}/bin && ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		gtk-youtube-viewer youtube-viewer
+
+.if ! ${PORT_OPTIONS:MCLI}
+	@${REINPLACE_CMD} -e "s|'bin/youtube-viewer',||" \
+		${WRKSRC}/Build.PL
+	@${REINPLACE_CMD} -i '' -e '/copy(catfile($$main_dir, qw(bin youtube-viewer))/,+1d' \
+		${WRKSRC}/Build.PL
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MGTK2}

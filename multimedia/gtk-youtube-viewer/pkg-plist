@@ -1,5 +1,5 @@
 %%GTK2%%bin/gtk-youtube-viewer
-bin/youtube-viewer
+%%CLI%%bin/youtube-viewer
 %%SITE_PERL%%/WWW/YoutubeViewer.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/GetCaption.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Itags.pm
@@ -15,7 +15,6 @@ bin/youtube-viewer
 %%GTK2%%%%DATADIR%%/icons/gtk-youtube-viewer.png
 %%GTK2%%%%DATADIR%%/icons/spinner.gif
 %%GTK2%%%%DATADIR%%/icons/user.png
-%%GTK2%%%%DATADIR%%/youtube-viewer
 %%GTK2%%share/pixmaps/gtk-youtube-viewer.png
 %%GTK2%%@dirrm %%DATADIR%%/icons
 %%GTK2%%@dirrm %%DATADIR%%
