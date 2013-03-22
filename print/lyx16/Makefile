@@ -41,19 +41,19 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		lyx.1 lyxclient.1 tex2lyx.1
 
-OPTIONS=	ASPELL	"Use Aspell library"	on \
-		AIKSAUR	"Build Aiksaurus support (English thesaurus)"	on \
-		NLS	"Native language support"	on
+OPTIONS_DEFINE=	ASPELL AIKSAUR NLS
+OPTIONS_DEFAULT=	ASPELL AIKSAUR NLS
+AIKSAUR_DESC=	Aiksaurus support (English thesaurus)
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_AIKSAUR)
+.if ${PORT_OPTIONS:MAIKSAUR}
 LIB_DEPENDS+=	Aiksaurus:${PORTSDIR}/textproc/aiksaurus
 .else
 CONFIGURE_ARGS+=	--without-aiksaurus
 .endif
 
-.if !defined(WITHOUT_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-pspell \
 CONFIGURE_ARGS+=	--without-aspell --without-pspell
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else

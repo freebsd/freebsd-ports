@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kports
-# Date created:				Thu Jan 12 12:47:58 UTC 2006
-# Whom:				Hannes Hauswedell <hannes.hauswedell@gmail.com>
-#
+# Created by: Hannes Hauswedell <hannes.hauswedell@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kports
 PORTVERSION=	0.8.2
@@ -29,24 +25,25 @@ HAS_CONFIGURE=	yes
 
 LATEST_LINK=	kports-qt4
 
-OPTIONS=	DEBUG "Add Debugging Symbols" off \
-		OXYGEN "Pull in Oxygen icons (recommended)" on \
-		KDEBASE "Pull in kdebase-runtime for kdesu" on
+OPTIONS_DEFINE=	DEBUG OXYGEN KDEBASE
+OPTIONS_DEFAULT=	OXYGEN KDEBASE
+OXYGEN_DESC=	Pull in Oxygen icons (recommended)
+KDEBASE_DESC=	Pull in kdebase-runtime for kdesu
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OXYGEN)
+.if ${PORT_OPTIONS:MOXYGEN}
 USE_KDE4=	oxygen
 .endif
 
-.if !defined(WITHOUT_KDEBASE)
+.if ${PORT_OPTIONS:MKDEBASE}
 USE_KDE4=	runtime
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/data/kports.desktop
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 pre-configure:
 	@(${ECHO_CMD} "CONFIG += debug" >> ${WRKSRC}/src/src.pro)
 	@(${ECHO_CMD} "CONFIG -= release warn_off" >> ${WRKSRC}/src/src.pro)
@@ -59,11 +56,11 @@ do-configure:
 		${QMAKE} -unix ${QMAKE_ARGS} kports.pro
 
 post-install:
-.if defined(WITHOUT_OXYGEN)
+.if ! ${PORT_OPTIONS:MOXYGEN}
 	@${CAT} pkg-message.nooxygen
 .endif
 
-.if defined(WITHOUT_KDEBASE)
+.if ! ${PORT_OPTIONS:MKDEBASE}
 	@${CAT} pkg-message.nokdebase
 .endif
 

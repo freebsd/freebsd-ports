@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-CJK
-# Date created:		5 Sep 1999
-# Whom:			Jing-Tang Keith Jang (keith@FreeBSD.org)
-#
+# Created by: Jing-Tang Keith Jang (keith@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	latex-cjk
 PORTVERSION=	4.8.2
@@ -38,27 +34,28 @@ INSTALL_DIR=	${INSTALL} -d -m 0755 -o root -g wheel
 
 WRKFONTDIR=	${WRKDIR}/fonts
 
-# Options: WITH_*/WITHOUT_*
-OPTIONS=	CCMAP       "CCT CCMap package (for PDFTeX's CID support)" on \
-		DVIPDFMX    "Install and configure DVIPDFMx for CJK" on \
-		UTF8ARPHIC  "Arphic free fonts in UTF-8 (no Type 1)" on
+OPTIONS_DEFINE=	CCMAP DVIPDFMX UTF8ARPHIC DOCS NLS
+OPTIONS_DEFAULT=	CCMAP DVIPDFMX UTF8ARPHIC
+CCMAP_DESC=	CCT CCMap package (for PDFTeX's CID support)
+DVIPDFMX_DESC=	Install and configure DVIPDFMx for CJK
+UTF8ARPHIC_DESC=	Arphic free fonts in UTF-8 (no Type 1)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CCMAP)
-PLIST_SUB+=	CCMAP="@comment "
-.else
+.if ${PORT_OPTIONS:MCCMAP}
 MASTER_SITES+=	http://ftp.intron.ac/pub/FreeBSD/local-distfiles/:cct
 DISTFILES+=	cct-20060219-ccmap.tar.gz:cct
 PLIST_SUB+=	CCMAP=""
+.else
+PLIST_SUB+=	CCMAP="@comment "
 .endif
 
-.if !defined(WITHOUT_DVIPDFMX)
+.if ${PORT_OPTIONS:MDVIPDFMX}
 RUN_DEPENDS+=	dvipdfmx:${PORTSDIR}/print/dvipdfmx
 # Configuration is done by "pkg-install"
 .endif
 
-.if defined(WITH_UTF8ARPHIC)
+.if ${PORT_OPTIONS:MUTF8ARPHIC}
 PLIST_SUB+=	UTF8ARPHIC=""
 .else
 PLIST_SUB+=	UTF8ARPHIC="@comment "
@@ -71,7 +68,7 @@ post-patch:
 	# be compatible with Debian
 	@${CP} -p ${WRKSRC}/texinput/Bg5/c00kai.fd ${WRKSRC}/texinput/Bg5/c00bkai.fd
 	@${REINPLACE_CMD} -e 's,c00kai.fd,c00bkai.fd,; s,{kai},{bkai},' ${WRKSRC}/texinput/Bg5/c00bkai.fd
-.if defined(WITH_CCMAP)
+.if ${PORT_OPTIONS:MCCMAP}
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKDIR}/ccmap/make.sh
 .endif
 	@${FIND} -E ${WRKSRC} ${WRKDIR}/ccmap -regex '.*.(orig|bak)' -delete
@@ -80,11 +77,11 @@ pre-su-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
@@ -115,14 +112,14 @@ post-install:
 		${SCRIPTDIR}/installt1enc.sh argbkai argbkai.ttf GB
 
 # Install package ccmap
-.if !defined(WITHOUT_CCMAP)
+.if ${PORT_OPTIONS:MCCMAP}
 	@${ECHO_CMD} "Installing ccmap..."
 	${MKTEXLSR}
 	cd ${WRKDIR}/ccmap && ${SH} make.sh && ${COPYTREE_SHARE} \* ${CJKDIR}/ccmap
 .endif
 
 # Install Arphic fonts in Unicode separation for Type 3 or DVIPDFMx
-.if defined(WITH_UTF8ARPHIC)
+.if ${PORT_OPTIONS:MUTF8ARPHIC}
 	@${ECHO_CMD} "Generating Arphic fonts' TFM files in Unicode..."
 	${SETENV} LOCALBASE=${LOCALBASE} ${SH} ${SCRIPTDIR}/installtfm.sh \
 		arb5sungu arb5sung.ttf Unicode
@@ -145,4 +142,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 
 .include "../../print/latex-cjk/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

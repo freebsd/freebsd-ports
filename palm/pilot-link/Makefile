@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pilot-link
-# Date created:         November, 1997
-# Whom:                 Paul Traina <pst@FreeBSD.org>
-#
+# Created by: Paul Traina <pst@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.12.5
@@ -17,41 +13,41 @@ COMMENT=	Suite of tools used to connect and sync your Palm handled
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
+USES=		pathfix
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits --enable-xsltproc
 USE_LDCONFIG=	yes
 
-OPTIONS=	PNG "build with png support" off \
-		THREADS "built-in thread safety" on \
-		USB "Compile with USB via libusb support (READ MANUAL!)" off
+OPTIONS_DEFINE=	PNG THREADS USB
+USB_DESC=	Compile with USB via libusb support (READ MANUAL!)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
 CFLAGS+=		${PTHREAD_LIBS}
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .endif
 
-.if defined(WITH_USB)
+.if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . endif
 CONFIGURE_ARGS+=--enable-libusb
 LDFLAGS+=	-L${PREFIX}/lib -lusb
 
-.if defined(WITHOUT_THREADS)
+.if ! ${PORT_OPTIONS:THREADS}
 IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconfigure using 'make config'
 .else
 LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 .endif
 
-.if defined(WITH_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
@@ -67,8 +63,8 @@ post-patch:
 		${WRKSRC}/src/pilot-read-palmpix.c \
 		${WRKSRC}/src/pilot-read-screenshot.c \
 		${WRKSRC}/src/pilot-read-veo.c
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 	@${REINPLACE_CMD} -e 's|Libs: |Libs: ${PTHREAD_LIBS} |' ${WRKSRC}/pilot-link.pc.in ${WRKSRC}/pilot-link-pp.pc.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
