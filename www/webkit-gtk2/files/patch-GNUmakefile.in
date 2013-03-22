@@ -1,6 +1,6 @@
---- GNUmakefile.in.orig	2012-07-13 11:41:16.000000000 +0200
-+++ GNUmakefile.in	2012-07-13 11:46:05.000000000 +0200
-@@ -73545,7 +73545,7 @@
+--- GNUmakefile.in.orig	2013-03-21 23:46:15.000000000 -0500
++++ GNUmakefile.in	2013-03-21 23:49:07.000000000 -0500
+@@ -70033,7 +70033,7 @@
  
  info-am:
  
@@ -9,7 +9,16 @@
  	install-dist_audioDATA install-dist_resourcesDATA \
  	install-dist_webinspectorDATA \
  	install-dist_webinspectorimagesDATA \
-@@ -74192,7 +74192,7 @@
+@@ -70388,7 +70388,7 @@
+ @ENABLE_INTROSPECTION_TRUE@	     --pkg=gobject-2.0 \
+ @ENABLE_INTROSPECTION_TRUE@	     --pkg=gtk+-@GTK_API_VERSION@ \
+ @ENABLE_INTROSPECTION_TRUE@	     --pkg=libsoup-2.4 \
+-@ENABLE_INTROSPECTION_TRUE@	     --pkg-export=webkitgtk-@WEBKITGTK_API_VERSION@ \
++@ENABLE_INTROSPECTION_TRUE@	     --pkg-export=@WEBKITGTK_PC_NAME@-@WEBKITGTK_API_VERSION@ \
+ @ENABLE_INTROSPECTION_TRUE@	     --output=$@ \
+ @ENABLE_INTROSPECTION_TRUE@	     --add-include-path=$(WebKit) \
+ @ENABLE_INTROSPECTION_TRUE@	     --add-include-path=$(top_builddir) \
+@@ -70680,7 +70680,7 @@
  	echo "File $$lang.po does not exist. If you are a translator, you can create it through 'msginit'." 1>&2; \
  	exit 1
  
