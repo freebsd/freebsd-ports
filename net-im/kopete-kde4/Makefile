@@ -35,7 +35,7 @@ DISTINFO_FILE=	${.CURDIR}/../../net/kdenetwork4/distinfo
 
 CONFLICTS_INSTALL=	kdenetwork-4.[1-8].*
 
-USE_CMAKE=	yes
+USES=		cmake:outsource
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
@@ -44,9 +44,9 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_XZ=		yes
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CMAKE_OUTSOURCE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/${PORTNAME}
 
 USE_WEBPLUGINS=	native

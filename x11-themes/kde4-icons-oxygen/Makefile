@@ -14,7 +14,7 @@ COMMENT=	The Oxygen icon theme for KDE
 
 USE_XZ=	yes
 USE_KDE4=	kdeprefix kdehier
-USE_CMAKE=	yes
+USES=		cmake
 INSTALL_TARGET=	install
 EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --exclude '${DISTNAME}/scalable'
 

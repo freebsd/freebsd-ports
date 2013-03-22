@@ -18,9 +18,10 @@ CONFLICTS_INSTALL=	kdepim-runtime-4.[89].*
 LATEST_LINK=	${PORTNAME}44
 
 USE_KDE4=	pimlibs kdeprefix kdehier sharedmime automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

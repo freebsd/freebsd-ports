@@ -20,12 +20,13 @@ LATEST_LINK=	${PORTNAME}4
 
 USE_GL=		glu
 USE_KDE4=	kdehier kdelibs kdeprefix sharedmime automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_OPENAL=	al
 USE_QT4=	dbus gui network opengl qt3support script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 CMAKE_ARGS+=	-DBUILD_kajongg:BOOL=FALSE
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	KAJONGG

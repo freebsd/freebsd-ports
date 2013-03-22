@@ -18,10 +18,9 @@ USE_XZ=	yes
 USE_PERL5=	yes
 USE_KDE4=	kdehier kdeprefix smokeqt qimageblitz
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USE_CMAKE=	yes
+USES=		cmake
 
 MAKE_JOBS_SAFE=	yes
-USE_LDCONFIG=	yes
 
 # Respect PREFIX
 CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}

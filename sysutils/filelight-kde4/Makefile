@@ -16,7 +16,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 CONFLICTS=	kdeutils-4.6.*
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes

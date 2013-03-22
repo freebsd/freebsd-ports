@@ -15,8 +15,9 @@ LIB_DEPENDS=		musicbrainz5:${PORTSDIR}/audio/libmusicbrainz5
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
+USE_LDCONFIG=		yes
 MAKE_JOBS_SAFE=		yes
-KDE4_BUILDENV=		yes
+USES=			cmake:outsource
 USE_KDE4=		automoc4 kdehier kdelibs kdeprefix
 USE_QT4=		moc_build qmake_build rcc_build uic_build
 USE_XZ=			yes

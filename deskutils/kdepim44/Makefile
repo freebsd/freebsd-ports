@@ -23,10 +23,11 @@ CONFLICTS_INSTALL=	kdepim-4.[89].*
 
 USE_KDE4=	kdelibs pimlibs \
 		akonadi kdeprefix kdehier automoc4 oxygen
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kabcclient.1

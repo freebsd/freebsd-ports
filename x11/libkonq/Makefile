@@ -14,7 +14,7 @@ COMMENT=	Core library for Konqueror
 CONFLICTS_INSTALL=	kdebase-4.[0-6].* kde-baseapps-4.7.*
 
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

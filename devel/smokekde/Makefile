@@ -17,7 +17,7 @@ USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 USE_QT4=	dbus designer gui network opengl qt3support sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

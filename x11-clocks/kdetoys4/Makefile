@@ -14,7 +14,7 @@ COMMENT=	Collection of entertaining programs for KDE
 LATEST_LINK=	${PORTNAME}4
 
 USE_KDE4=	kdehier kdelibs kdeprefix workspace automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus gui qt3support \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11

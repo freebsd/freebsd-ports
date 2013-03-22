@@ -21,7 +21,7 @@ USE_QT4=	dbus declarative designer gui help multimedia \
 		script sql svg xml xmlpatterns webkit \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

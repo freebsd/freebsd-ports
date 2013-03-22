@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtSql.so:${PORTSDIR}/databases/py-qt4-sq
 CONFLICTS=	kdegames-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_PYTHON=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_SQLITE=	3

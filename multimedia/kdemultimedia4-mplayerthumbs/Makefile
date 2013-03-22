@@ -19,7 +19,7 @@ RUN_DEPENDS=		mplayer:${PORTSDIR}/multimedia/mplayer
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 MAKE_JOBS_SAFE=		yes
-KDE4_BUILDENV=		yes
+USES=			cmake:outsource
 USE_KDE4=		automoc4 kdehier kdelibs kdeprefix
 USE_QT4=		phonon moc_build qmake_build rcc_build uic_build
 USE_XZ=			yes

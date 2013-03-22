@@ -23,9 +23,10 @@ USE_XZ=	yes
 USE_GNOME=	libxml2
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
 		akonadi automoc4 ontologies sharedmime soprano strigi
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus designer gui network xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS=	-DKDEPIM_MOBILE_UI:BOOL=OFF
 
