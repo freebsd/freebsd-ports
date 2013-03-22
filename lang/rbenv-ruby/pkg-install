@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+if [ x$2 != xPOST-INSTALL ]; then
+    exit
+fi
+
+export PATH="${PKG_PREFIX}/rbenv/bin:$PATH"
+export RBENV_ROOT="${PKG_PREFIX}/rbenv_root"
+eval "$(rbenv init -)"
+rbenv rehash $1

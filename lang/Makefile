@@ -281,6 +281,7 @@
     SUBDIR += racket-textual
     SUBDIR += rakudo
     SUBDIR += ratfor
+    SUBDIR += rbenv-ruby
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
     SUBDIR += rexx-regutil
