@@ -192,7 +192,8 @@ PLIST_SUB+=	EXIV2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc
+BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
+		vimdot:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--disable-docs
 .endif
