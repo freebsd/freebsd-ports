@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AEstats
-# Date created:				27 Jan 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aestats
 PORTVERSION=	5.39
@@ -14,7 +10,9 @@ MASTER_SITE_SUBDIR=	danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An advanced HTML statistics generator for various games
+COMMENT=	Advanced HTML statistics generator for various games
+
+NO_CDROM=	Commercial use is prohibited
 
 ONLY_FOR_ARCHS=	i386
 
