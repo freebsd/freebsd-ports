@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eyeOS-themes
-# Date created:		2006-04-06
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	themes
 PORTVERSION=	1.2
@@ -24,19 +20,19 @@ USE_ZIP=	yes
 EYEDIR?=	${PREFIX}/www/eyeOS
 THEMESDIR=	${EYEDIR}/system/themes
 
-OPTIONS=	Crystal_THEME "based on the Crystal Open Source icons" On
-OPTIONS+=	Executive_THEME "designed specially for Companies" On
-OPTIONS+=	Kids_THEME "designed specially for Kids and Schools" On
-OPTIONS+=	LateBloomer_THEME "based on the Crystal theme" On
-OPTIONS+=	Mac_THEME "based on OSX 2.1 Open Source icons" On
-OPTIONS+=	Mini_THEME "with mall icons based on Nuvola icon set" On
-OPTIONS+=	NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
-OPTIONS+=	Nuvola_THEME "inspired in the great icons Nuvola" On
-OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
-OPTIONS+=	fromX_THEME "based on Tango Icons" On
-OPTIONS+=	eyeOSVista_THEME "based on the new Vista style" On
-OPTIONS+=	animus_THEME "created by AnimusMedia.com" On
-OPTIONS+=	minimal_THEME "based on minimalist art" On
+Crystal_THEME "based on the Crystal Open Source icons" On
+Executive_THEME "designed specially for Companies" On
+Kids_THEME "designed specially for Kids and Schools" On
+LateBloomer_THEME "based on the Crystal theme" On
+Mac_THEME "based on OSX 2.1 Open Source icons" On
+Mini_THEME "with mall icons based on Nuvola icon set" On
+NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
+Nuvola_THEME "inspired in the great icons Nuvola" On
+WaterSide_THEME "inspired in countryside of Saskatchewan" On
+fromX_THEME "based on Tango Icons" On
+eyeOSVista_THEME "based on the new Vista style" On
+animus_THEME "created by AnimusMedia.com" On
+minimal_THEME "based on minimalist art" On
 
 .include <bsd.port.pre.mk>
 

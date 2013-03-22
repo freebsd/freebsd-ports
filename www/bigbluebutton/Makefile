@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/bigbluebutton
-# Date created:				23 October 2010
-# Whom:					alex.deiter@gmail.com
-#
+# Created by: alex.deiter@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	bigbluebutton
 PORTVERSION=	0.71
@@ -53,10 +49,12 @@ FS_USER?=	freeswitch
 FS_GROUP?=	${FS_USER}
 WWWROOT?=	${WWWDIR:S|/${PORTNAME}$||}
 
-OPTIONS=	MEETME "meetme Asterisk module" off \
-		KONFERENCE "konference Asterisk module" on \
-		FREESWITCH "mod_conference FreeSWITCH module" off \
-		OPENOFFICE "Include OpenOffice support" off
+OPTIONS_DEFINE=	MEETME KONFERENCE FREESWITCH OPENOFFICE
+OPTIONS_DEFAULT=	KONFERENCE
+MEETME_DESC=	meetme Asterisk module
+KONFERENCE_DESC=	konference Asterisk module
+FREESWITCH_DESC=	mod_conference FreeSWITCH module
+OPENOFFICE_DESC=	Include OpenOffice support
 
 PLIST_SUB+=	RED5_HOME=${RED5_HOME:S,^${PREFIX}/,,} \
 		TOMCAT_HOME=${TOMCAT_HOME:S,^${PREFIX}/,,} \
@@ -79,26 +77,26 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 
 SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MEETME) || defined(WITH_KONFERENCE)
+.if ${PORT_OPTIONS:MMEETME} || ${PORT_OPTIONS:MKONFERENCE}
 BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
-.if  defined(WITH_MEETME)
+.if  ${PORT_OPTIONS:MMEETME}
 .if !exists(${LOCALBASE}/lib/asterisk/modules/app_meetme.so)
 IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with WITH_DAHDI=yes
 .endif
 .endif
-.if  defined(WITH_KONFERENCE)
+.if  ${PORT_OPTIONS:MKONFERENCE}
 BUILD_DEPENDS+=${LOCALBASE}/lib/asterisk/modules/app_konference.so:${PORTSDIR}/net/appkonference
 .endif
 .endif
 
-.if defined(WITH_FREESWITCH)
+.if ${PORT_OPTIONS:MFREESWITCH}
 BROKEN=freeswitch 1.0.6 does not work with BigBlueButton
 BUILD_DEPENDS+=${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch
 .endif
 
-.if defined(WITH_OPENOFFICE)
+.if ${PORT_OPTIONS:MOPENOFFICE}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice.org-3.2.1:${PORTSDIR}/editors/openoffice.org-3
 .endif
 
@@ -173,4 +171,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

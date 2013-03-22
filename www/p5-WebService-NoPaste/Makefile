@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WebService-NoPaste
-# Date created:		2005-12-26
-# Whom:			Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
-#
+# Created by: Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-NoPaste
 PORTVERSION=	0.03
@@ -23,11 +19,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WebService::NoPaste.3
 
-OPTIONS=	X11	"Enable X11 Clipboard support"	off
+OPTIONS_DEFINE=	X11
+X11_DESC=	X11 Clipboard support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
@@ -35,8 +32,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
 
 post-patch:
 	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|;" ${WRKSRC}/nopaste
-.if !defined(WITH_X11)
+.if ! ${PORT_OPTIONS:MX11}
 	@${RM} ${WRKSRC}/lib/WebService/NoPaste.pm.orig
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

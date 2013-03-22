@@ -1,78 +1,5 @@
-# New ports collection makefile for:	squid24
-# Date created:		Tue Mar 27 14:56:08 CEST 2001
-# Whom:			Adrian Chadd <adrian@FreeBSD.org>
-#
+# Created by: Adrian Chadd <adrian@FreeBSD.org>
 # $FreeBSD$
-#
-# Tunables not (yet) configurable via 'make config':
-# SQUID_{U,G}ID
-#   Which user/group Squid should run as (default: squid/squid).
-#   The user and group will be created if they do not already exist using
-#   a uid:gid of 100:100.
-#   NOTE: older versions of Squid defaulted to nobody/nogroup.
-#   If you wish to run Squid as "nobody" (which is not recommended), please
-#   define SQUID_UID=nobody and SQUID_GID=nogroup in your make environment
-#   before you start the update or installation of this port.
-#
-# SQUID_LANGUAGES
-#   A list of languages for which error page files should be installed
-#   (default: all)
-#
-#   E.g. use `make SQUID_LANGUAGES="English French"' if you want to
-#   install the files for these languages only.
-#   Use `make -VSQUID_LANGUAGES' or scroll down to this variable's
-#   definition to see which values are valid.
-#
-# SQUID_DEFAULT_LANG
-#   If you define SQUID_LANGUAGES, select which language should be the default
-#   one (this variable defaults to English). This setting can be overwritten
-#   with squid.conf's error_directory directive.
-#
-# SQUID_CONFIGURE_ARGS
-#   Additional configuration options.
-#
-#   To enable them, use e.g
-#   `make SQUID_CONFIGURE_ARGS="--enable-dlmalloc --enable-truncate" install'
-#
-#   The list below may be incomplete, please see the configure script
-#   in the Squid source distribution for the complete list of additional
-#   options.
-#   Note that you probably do not need to worry about these options in most
-#   cases, they are included in case you want to experiment with them.
-#
-#    --enable-dlmalloc
-#     Compile and use the malloc package from Doug Lea
-#    --enable-gnuregex
-#     Compile and use the supplied GNUregex routines instead of BSD regex
-#     (not recommended).
-#    --enable-xmalloc-statistics
-#     Show malloc statistics in status page
-#    --enable-cachemgr-hostname=some.hostname
-#     Set an explicit hostname in cachemgr.cgi
-#    --enable-truncate
-#     Use truncate() rather than unlink()
-#    --disable-unlinkd
-#     Do not use "unlinkd"
-#    --with-aufs-threads=N_THREADS
-#     Tune the number of worker threads for the aufs object
-#    --with-coss-membuf-size
-#     COSS membuf size (default: 1048576 bytes)
-#    --with-maxfd=N
-#     Override the maximum number of filedescriptors. Useful if you
-#     build as another user who is not privileged to use the amount
-#     of filedescriptors the resulting binary is expected to support.
-#    --enable-ntlm-fail-open
-#     Enable NTLM fail open, where a helper that fails one of the
-#     Authentication steps can allow Squid to still authenticate the user
-#    --enable-x-accelerator-vary
-#     Enable support for the X-Accelerator-Vary HTTP header. Can be used
-#     to indicate variance within an accelerator setup. Typically used
-#     together with other code that adds custom HTTP headers to the
-#     requests.
-#    --enable-forward-log
-#     Enable experimental forward_log directive.
-#    --enable-multicast-miss
-#     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	cacheboy
 DISTVERSION=	1.6
@@ -101,33 +28,40 @@ PORTEXAMPLES=	passwd.sql
 SUB_FILES+=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
-OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
-		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
-		SQUID_DELAY_POOLS "Enable delay pools" off \
-		SQUID_SNMP "Enable SNMP support" off \
-		SQUID_CARP "Enable CARP support" on \
-		SQUID_SSL "Enable SSL support for reverse proxies" off \
-		SQUID_PINGER "Install the icmp helper" off \
-		SQUID_DNS_HELPER "Use the old 'dnsserver' helper" off \
-		SQUID_HTCP "Enable HTCP support" off \
-		SQUID_VIA_DB "Enable forward/via database" off \
-		SQUID_CACHE_DIGESTS "Enable cache digests" off \
-		SQUID_WCCP "Enable Web Cache Coordination Prot. v1" on \
-		SQUID_WCCPV2 "Enable Web Cache Coordination Prot. v2" off \
-		SQUID_STRICT_HTTP "Be strictly HTTP compliant" off \
-		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
-		SQUID_REFERER_LOG "Enable Referer-header logging" off \
-		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
-		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
-		SQUID_PF "Enable transparent proxying with PF" off \
-		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
-		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
-		SQUID_AUFS "Enable the aufs storage scheme" off \
-		SQUID_COSS "Enable the COSS storage scheme" off \
-		SQUID_KQUEUE "Use kqueue(2) instead of poll(2)" on \
-		SQUID_LARGEFILE "Support log and cache files >2GB" off \
-		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
-		SQUID_TPROXY "Enable FreeBSD-current TPROXY support" off
+OPTIONS_DEFINE=	DOCS NLS SQUID_LDAP_AUTH SQUID_SASL_AUTH SQUID_DELAY_POOLS SQUID_SNMP \
+		SQUID_CARP SQUID_SSL SQUID_PINGER SQUID_DNS_HELPER SQUID_HTCP SQUID_VIA_DB \
+		SQUID_CACHE_DIGESTS SQUID_WCCP SQUID_WCCPV2 SQUID_STRICT_HTTP SQUID_IDENT \
+		SQUID_REFERER_LOG SQUID_USERAGENT_LOG SQUID_ARP_ACL SQUID_PF SQUID_IPFILTER \
+		SQUID_FOLLOW_XFF SQUID_AUFS SQUID_COSS SQUID_KQUEUE SQUID_LARGEFILE \
+		SQUID_STACKTRACES TPROXY
+OPTIONS_DEFAULT=	SQUID_CARP SQUID_WCCP SQUID_KQUEUE
+SQUID_LDAP_AUTH_DESC=		Install LDAP authentication helpers
+SQUID_SASL_AUTH_DESC=		Install SASL authentication helpers
+SQUID_DELAY_POOLS_DESC=		Enable delay pools
+SQUID_SNMP_DESC=		Enable SNMP support
+SQUID_CARP_DESC=		Enable CARP support
+SQUID_SSL_DESC=			Enable SSL support for reverse proxies
+SQUID_PINGER_DESC=		Install the icmp helper
+SQUID_DNS_HELPER_DESC=		Use the old 'dnsserver' helper
+SQUID_HTCP_DESC=		Enable HTCP support
+SQUID_VIA_DB_DESC=		Enable forward/via database
+SQUID_CACHE_DIGESTS_DESC=	Enable cache digests
+SQUID_WCCP_DESC=		Enable Web Cache Coordination Prot. v1
+SQUID_WCCPV2_DESC=		Enable Web Cache Coordination Prot. v2
+SQUID_STRICT_HTTP_DESC=		Be strictly HTTP compliant
+SQUID_IDENT_DESC=		Enable ident (RFC 931) lookups
+SQUID_REFERER_LOG_DESC=		Enable Referer-header logging
+SQUID_USERAGENT_LOG_DESC=	Enable User-Agent-header logging
+SQUID_ARP_ACL_DESC=		Enable ACLs based on ethernet address
+SQUID_PF_DESC=			Enable transparent proxying with PF
+SQUID_IPFILTER_DESC=		Enable transp. proxying with IPFilter
+SQUID_FOLLOW_XFF_DESC=		Follow X-Forwarded-For headers
+SQUID_AUFS_DESC=		Enable the aufs storage scheme
+SQUID_COSS_DESC=		Enable the COSS storage scheme
+SQUID_KQUEUE_DESC=		Use kqueue(2) instead of poll(2)
+SQUID_LARGEFILE_DESC=		Support log and cache files >2GB
+SQUID_STACKTRACES_DESC=		Create backtraces on fatal errors
+SQUID_TPROXY_DESC=		Enable FreeBSD-current TPROXY support
 
 etc_files=	squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
@@ -177,7 +111,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--disable-linux-tproxy \
 		--disable-epoll
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 800037
 MAKE_ENV+=	KRB5_LDADD=-lhx509
@@ -194,7 +128,7 @@ digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
 MAN8+=		ncsa_auth.8 pam_auth.8 squid_db_auth.8 squid_session.8 \
 		squid_unix_group.8
-.if defined(WITH_SQUID_LDAP_AUTH)
+.if ${PORT_OPTIONS:MSQUID_LDAP_AUTH}
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -204,7 +138,7 @@ digest_auth+=	ldap
 external_acl+=	ldap_group
 libexec+=	digest_ldap_auth squid_ldap_auth squid_ldap_group
 .endif
-.if defined(WITH_SQUID_SASL_AUTH)
+.if ${PORT_OPTIONS:MSQUID_SASL_AUTH}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -212,7 +146,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 basic_auth+=	SASL
 libexec+=	sasl_auth
 .endif
-.if !defined(NO_NIS) && !defined(WITHOUT_NIS)
+.if !defined(NO_NIS) && ${PORT_OPTIONS:MNIS}
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
@@ -221,7 +155,7 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB"
-.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+.if !defined(NO_KERBEROS) && ${PORT_OPTIONS:MKERBEROS}
 # XXX This currently only works with heimdal from the base system,
 #     see files/patch-helpers_negotiate_auth-squid_kerb_auth_*
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
@@ -231,15 +165,15 @@ libexec+=	squid_kerb_auth
 # Storage schemes:
 
 storage_schemes=	ufs diskd null
-.if defined(WITH_SQUID_AUFS)
+.if ${PORT_OPTIONS:MSQUID_AUFS}
 storage_schemes+=	aufs
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
 CONFIGURE_ARGS+=	--with-pthreads
 .endif
-.if defined(WITH_SQUID_COSS)
+.if ${PORT_OPTIONS:MSQUID_COSS}
 storage_schemes+=	coss
-.if !defined(WITH_SQUID_AUFS)
+.if ! ${PORT_OPTIONS:MSQUID_AUFS}
 # use Posix AIO instead of aufs' AIO; note that you then need the kernel to
 # supply AIO support, either by loading the aio(4) module (n/a on 4.x) or by
 # adding the option VFS_AIO to your kernel configuration if you want to
@@ -252,85 +186,85 @@ CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
 # Other options set via 'make config':
 
-.if defined(WITH_SQUID_DELAY_POOLS)
+.if ${PORT_OPTIONS:MSQUID_DELAY_POOLS}
 CONFIGURE_ARGS+=	--enable-delay-pools
 .endif
-.if defined(WITH_SQUID_SNMP)
+.if ${PORT_OPTIONS:MSQUID_SNMP}
 CONFIGURE_ARGS+=	--enable-snmp
 .endif
-.if defined(WITHOUT_SQUID_CARP)
+.if ! ${PORT_OPTIONS:MSQUID_CARP}
 CONFIGURE_ARGS+=	--disable-carp
 .endif
-.if defined(WITH_SQUID_SSL)
+.if ${PORT_OPTIONS:MSQUID_SSL}
 # we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
 # works when it is defined before bsd.port{.pre}.mk is .included.
 # This makes it currently impossible to combine this macro with OPTIONS to
 # conditionally include OpenSSL support.
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .endif
-.if defined(WITH_SQUID_PINGER)
+.if ${PORT_OPTIONS:MSQUID_PINGER}
 CONFIGURE_ARGS+=	--enable-icmp
 libexec+=	pinger
 .endif
-.if defined(WITH_SQUID_DNS_HELPER)
+.if ${PORT_OPTIONS:MSQUID_DNS_HELPER}
 CONFIGURE_ARGS+=	--disable-internal-dns
 libexec+=	dnsserver
 .endif
-.if defined(WITH_SQUID_HTCP)
+.if ${PORT_OPTIONS:MSQUID_HTCP}
 CONFIGURE_ARGS+=	--enable-htcp
 .endif
-.if defined(WITH_SQUID_VIA_DB)
+.if ${PORT_OPTIONS:MSQUID_VIA_DB}
 CONFIGURE_ARGS+=	--enable-forw-via-db
 .endif
-.if defined(WITH_SQUID_CACHE_DIGESTS)
+.if ${PORT_OPTIONS:MSQUID_CACHE_DIGESTS}
 CONFIGURE_ARGS+=	--enable-cache-digests
 .endif
-.if defined(WITHOUT_SQUID_WCCP)
+.if ! ${PORT_OPTIONS:MSQUID_WCCP}
 CONFIGURE_ARGS+=	--disable-wccp
 .endif
-.if defined(WITH_SQUID_WCCPV2)
+.if ${PORT_OPTIONS:MSQUID_WCCPV2}
 CONFIGURE_ARGS+=	--enable-wccpv2
 .endif
-.if defined(WITH_SQUID_STRICT_HTTP)
+.if ${PORT_OPTIONS:MSQUID_STRICT_HTTP}
 CONFIGURE_ARGS+=	--disable-http-violations
 .endif
-.if defined(WITHOUT_SQUID_IDENT)
+.if ! ${PORT_OPTIONS:MSQUID_IDENT}
 CONFIGURE_ARGS+=	--disable-ident-lookups
 .endif
-.if defined(WITH_SQUID_REFERER_LOG)
+.if ${PORT_OPTIONS:MSQUID_REFERER_LOG}
 CONFIGURE_ARGS+=	--enable-referer-log
 .endif
-.if defined(WITH_SQUID_USERAGENT_LOG)
+.if ${PORT_OPTIONS:MSQUID_USERAGENT_LOG}
 CONFIGURE_ARGS+=	--enable-useragent-log
 .endif
-.if defined(WITH_SQUID_ARP_ACL)
+.if ${PORT_OPTIONS:MSQUID_ARP_ACL}
 CONFIGURE_ARGS+=	--enable-arp-acl
 .endif
-.if defined(WITH_SQUID_PF)
+.if ${PORT_OPTIONS:MSQUID_PF}
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .endif
-.if defined(WITH_SQUID_IPFILTER)
+.if ${PORT_OPTIONS:MSQUID_IPFILTER}
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
-.if defined(WITH_SQUID_FOLLOW_XFF)
+.if ${PORT_OPTIONS:MSQUID_FOLLOW_XFF}
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
-.if defined(WITHOUT_SQUID_KQUEUE)
+.if ! ${PORT_OPTIONS:MSQUID_KQUEUE}
 CONFIGURE_ARGS+=	--disable-kqueue
 .endif
-.if defined(WITH_SQUID_LARGEFILE)
+.if ${PORT_OPTIONS:MSQUID_LARGEFILE}
 CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
 .endif
-.if defined(WITH_SQUID_STACKTRACES)
+.if ${PORT_OPTIONS:MSQUID_STACKTRACES}
 CONFIGURE_ARGS+=	--enable-stacktraces
 CFLAGS+=	-g
 STRIP=
 .endif
-.if defined(WITH_SQUID_TPROXY)
+.if ${PORT_OPTIONS:MSQUID_TPROXY}
 CONFIGURE_ARGS+=	--enable-freebsd-tproxy
 .endif
 
@@ -380,15 +314,15 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
 .endif
-.if defined(WITH_SQUID_PINGER)
+.if ${PORT_OPTIONS:MSQUID_PINGER}
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
 .endif
@@ -400,4 +334,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpGedView
-# Date created:				20 février 2004
-# Whom:					Hubert Tournier <hubert@frbsd.org>
-#
+# Created by: Hubert Tournier <hubert@frbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	phpGedView
 PORTVERSION=	4.2.3
@@ -25,30 +21,23 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 DISTATE=	config.php config_download.php config_gedcom.php
 
-OPTIONS=\
-	MYSQL	"Install MYSQL data storage option"		off \
-	PGSQL	"Install Postgress data storage option"		off \
-	SQLITE	"Install SQLITE data storage option"		on
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+DB_DESC=	Data storage
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-check-makevars::
-		@${ECHO_CMD} "${PKGNAME}: Makefile options: at least one database: MYSQL, PGSQL or SQLITE must be installed."
-		@${FALSE}
-.endif
-
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_PHP +=	pdo_mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_PHP +=	pdo_pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP +=	pdo_sqlite
 .endif
 
@@ -73,4 +62,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

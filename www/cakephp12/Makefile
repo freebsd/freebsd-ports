@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cakephp-devel
-# Date created:        20 December 2007
-# Whom:                Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cakephp
 PORTVERSION=	1.2.10
@@ -43,13 +39,10 @@ CAKE_CONF_FILES=	\
 		app/config/routes.php
 CAKE_CONSOLE=	cake/console/cake
 
-OPTIONS=	PROD "Install for production server (make confighelp)" Off \
-		AP "Add Apache 2.2+ dependency" Off \
-		MYSQL "Check for/install MySQL support in PHP" Off \
-		PGSQL "Check for/install PostgreSQL support in PHP" Off \
-		SQLITE "Check for/install SQLite support in PHP" Off \
-		APC "Enable APC caching engine" Off \
-		MEMCACHE "Enable Memcached caching engine client" Off
+OPTIONS_DEFINE=	PROD AP MYSQL PGSQL SQLITE APC MEMCACHE DOCS
+PROD_DESC=	Install for production server (make confighelp)
+APC_DESC=	APC caching engine
+MEMCACHE_DESC=	Memcached caching engine client
 
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
@@ -66,7 +59,7 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_AP)
+.if ${PORT_OPTIONS:MAP}
 SUB_FILES=	pkg-message
 USE_APACHE_RUN=	22+
 PKGMESSAGE=	pkg-message
@@ -77,7 +70,7 @@ PKGMESSAGE=	pkg-message-no-apache
 APDEP=		"@comment "
 .endif
 
-.if defined(WITH_PROD)
+.if ${PORT_OPTIONS:MPROD}
 PROD=		production
 HTACCESS=	""
 .else
@@ -94,17 +87,17 @@ PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
 
 DB_DEFINED=	no
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
 DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_sqlite.so:${PORTSDIR}/databases/php5-pdo_sqlite
 DB_DEFINED=	yes
 .endif
@@ -114,11 +107,11 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/p
 		${DB_DEPENDS}
 .endif
 
-.if defined(WITH_APC)
+.if ${PORT_OPTIONS:MAPC}
 USE_PHP+=	apc
 .endif
 
-.if defined(WITH_MEMCACHE)
+.if ${PORT_OPTIONS:MMEMCACHE}
 USE_PHP+=	memcache
 .endif
 
@@ -147,7 +140,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		".htaccess app cake index.php vendors" ${WWWDIR}
 
-.if !defined(WITH_PROD)
+.if ! ${PORT_OPTIONS:MPROD}
 # If installed in development mode, get rid of .htaccess files,
 # as noted by:
 # http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
@@ -181,7 +174,7 @@ do-install:
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
-.if defined(WITH_AP)
+.if ${PORT_OPTIONS:MAP}
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
 	else \
@@ -193,7 +186,7 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pivotx
-# Date created:		2011-01-05
-# Whom:			Fumiyuki Shimizu <fumifumi@abacustech.jp>
-#
+# Created by: Fumiyuki Shimizu <fumifumi@abacustech.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	pivotx
 PORTVERSION=	2.3.3
@@ -26,8 +22,9 @@ PORTEXAMPLES=	example.htaccess
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
-OPTIONS=	MYSQL	"Use MySQL instead of flat files" off \
-		PHPDOM	"Use PHP:DOM instead of SimpleXML" off
+OPTIONS_DEFINE=	MYSQL PHPDOM NLS DOCS
+MYSQL_DESC=	Use MySQL instead of flat files
+PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
 .include <bsd.port.options.mk>
 
@@ -35,13 +32,13 @@ WANT_PHP_WEB=	yes
 USE_PHP=	session gettext xml tokenizer gd pcre
 USE_GETTEXT=	yes
 
-.if defined(WITH_PHPDOM)
+.if ${PORT_OPTIONS:MPHPDOM}
 USE_PHP+=	dom
 .else
 USE_PHP+=	simplexml
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	client
 USE_PHP+=	mysql
 .endif
@@ -99,13 +96,13 @@ do-install:
 	   ${ECHO} 'Press ctrl-C *now* to backup them manually.';	\
 	   sleep 7;	\
 	 fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} '${DOCSDIR}'
 .for FILES in ${PORTDOCS}
 	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${DOCSDIR}'
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} '${EXAMPLESDIR}'
 .for FILES in ${PORTEXAMPLES}
 	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${EXAMPLESDIR}'

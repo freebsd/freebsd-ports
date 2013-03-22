@@ -1,9 +1,5 @@
-# New ports collection makefile for:   WebCalendar
-# Date created:        21 June 2005
-# Whom:                glarkin
-#
+# Created by: glarkin
 # $FreeBSD$
-#
 
 PORTNAME=	WebCalendar
 PORTVERSION=	1.0.5
@@ -29,7 +25,16 @@ PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	LDAP DOCS
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL MSSQL DBASE ODBC ORACLE
+OPTIONS_DEFAULT=	MYSQL
+DB_DESC=	Database backend
+DBASE_DESC=	DBase database support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 PORTDOCS=	README \
 		WebCalendar-Database.html \
@@ -39,53 +44,31 @@ PORTDOCS=	README \
 		newwin.gif
 .endif
 
-OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
-		PGSQL "Use PostgreSQL database backend" Off \
-		MSSQL "Use MSSQL database backend" Off \
-		DBASE "Use DBase database backend" Off \
-		ODBC "Use ODBC database backend" Off \
-		ORACLE "Use Oracle database backend" Off \
-		LDAP "Use LDAP user authentication" Off
-
-.include <bsd.port.pre.mk>
-
-DB_DEFINED=	no
-
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_DBASE)
+.if ${PORT_OPTIONS:MDBASE}
 USE_PHP+=	dbase
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 USE_PHP+=	odbc
-DB_DEFINED=	yes
 .endif
 
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 USE_PHP+=	oracle
-DB_DEFINED=	yes
 .endif
 
-.if ${DB_DEFINED} == "no"
-IGNORE=		please choose database backend by running 'make config'
-.endif
-
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
@@ -106,10 +89,10 @@ do-install:
 		${WCDIR:S|^|%D/|}' >> ${TMPPLIST}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

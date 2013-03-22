@@ -1,9 +1,5 @@
-# New ports collection makefile for:	prado
-# Date created:        04 January 2008
-# Whom:                Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	prado
 PORTVERSION=	3.1.6.r2699
@@ -11,12 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	prado3
-.if defined(NOPORTDOCS)
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-.else
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-docs-${PORTVERSION:C|.r|-r|}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
@@ -36,9 +27,11 @@ IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
-		REQPHP "Install required PHP dependencies" On \
-		OPTPHP "Install optional PHP dependencies" Off
+OPTIONS_DEFINE=	PROD REQPHP OPTPHP DOCS EXAMPLES
+OPTIONS_DEFAULT=	REQPHP
+PROD_DESC=	Install for production server (see: make confighelp)
+REQPHP_DESC=	Install required PHP dependencies
+OPTPHP_DESC=	Install optional PHP dependencies
 
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 
@@ -46,6 +39,10 @@ CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${PORTNAME}-docs-${PORTVERSION:C|.r|-r|}${EXTRACT_SUFX}
+.endif
 
 WITH_PHP_CGI?=	/cgi-bin/php
 
@@ -57,32 +54,32 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_PROD)
+.if ${PORT_OPTIONS:MPROD}
 PROD=		production
 .else
 PROD=		development
 .endif
 
-.if defined(NOPORTDOCS)
-SUB_LIST+=	HASHMARK=\#
-.else
+.if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	HASHMARK=
+.else
+SUB_LIST+=	HASHMARK=\#
 .endif
 
-.if defined(NOPORTEXAMPLES)
-DEMOS=
-.else
+.if ${PORT_OPTIONS:MEXAMPLES}
 DEMOS=		demos
+.else
+DEMOS=
 .endif
 
 CONF=		prado-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
-.if defined(WITH_REQPHP)
+.if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	dom spl ctype pcre
 .endif
 
-.if defined(WITH_OPTPHP)
+.if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	pdo iconv zlib sqlite memcache mcrypt xsl soap
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
@@ -136,7 +133,7 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRCDOCS} && ${COPYTREE_SHARE} . ${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "HISTORY UPGRADE" ${DOCSDIR}
 .endif

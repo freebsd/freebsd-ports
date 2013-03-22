@@ -22,17 +22,11 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/yui
 NO_BUILD=	yes
 
-OPTIONS=	APACHE	"Configure for Apache-2.x" off \
-		MINIMAL "Do not install documentation and examples" off
+OPTIONS_DEFINE=	APACHE DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MINIMAL)
-NOPORTDOCS=	yes
-NOPORTEXAMPLES=	yes
-.endif
-
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
@@ -41,17 +35,18 @@ PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 CONF=		yui.conf
 SUB_FILES+=	pkg-message ${CONF}
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+SUB_LIST+=	HASHMARK1=
 SUB_LIST+=	HASHMARK1=\#
 .else
-SUB_LIST+=	HASHMARK1=
 .endif
 
-.if defined(NOPORTEXAMPLES)
-SUB_LIST+=	HASHMARK2=\#
-.else
+.if ${PORT_OPTIONS:MEXAMPLES}
 SUB_LIST+=	HASHMARK2=
+.else
+SUB_LIST+=	HASHMARK2=\#
 .endif
+
 .else
 PLIST_SUB+=	NOAPACHE="@comment "
 .endif
@@ -81,7 +76,7 @@ do-install:
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 .if !defined(MAINTAINER_MODE)
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}; \
@@ -96,11 +91,11 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MNLS}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

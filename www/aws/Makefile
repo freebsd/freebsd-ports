@@ -1,9 +1,5 @@
-# New ports collection makefile for:  aws
-# Date created:                       12 December 2010
-# Whom:                               John Marino <draco@marino.st>
-#
+# Created by: John Marino <draco@marino.st>
 # $FreeBSD$
-#
 
 PORTNAME=	aws
 PORTVERSION=	2.10.0
@@ -28,13 +24,12 @@ CC=		gnatgcc
 DOTBUILD=	release
 MAKE_ENV+=	ADA_PROJECT_PATH=${PREFIX}/lib/gnat
 
-OPTIONS=	SSL   "Enable HTTPS/SSL support" on
-OPTIONS+=	IPV6  "Enable IPv6 support" off
-OPTIONS+=	DEMOS "Build demo programs in examples/aws/demos" off
-OPTIONS+=	DEBUG "Build AWS with debugging symbols" off
-OPTIONS+=	LDAP  "Enable LDAP support" off
-OPTIONS+=	DSRT  "Disable shared runtime" off
-OPTIONS+=	RELOC "Build shared libraries (default is static)" off
+OPTIONS_DEFINE=	SSL IPV6 DEMOS DEBUG LDAP DSRT RELOC
+OPTIONS_DEFAULT=	SSL
+SSL_DESC=	Enable HTTPS/SSL support
+DEMOS_DESC=	Build demo programs in examples/aws/demos
+DSRT_DESC=	Disable shared runtime
+RELOC_DESC=	Build shared libraries (default is static)
 
 CONF_ARGS=	PROCESSORS=1
 CONF_ARGS+=	GCC=gnatgcc
@@ -46,7 +41,7 @@ CONF_ARGS+=	PYTHON=python${PYTHON_VER}
 ##  SSL Support  ##
 ###################
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONF_ARGS+=	SOCKET=openssl
 BUILD_DEPENDS+=	openssl>=1:${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl>=1:${PORTSDIR}/security/openssl
@@ -61,7 +56,7 @@ PLIST_SUB+=	NSSL=""
 ##  LDAP Support  ##
 ####################
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONF_ARGS+=	LDAP=true
 RUN_DEPENDS+=	openldap24>=2.4:${PORTSDIR}/net/openldap24-client
 .endif
@@ -70,7 +65,7 @@ RUN_DEPENDS+=	openldap24>=2.4:${PORTSDIR}/net/openldap24-client
 ##  IPv6 Support  ##
 ####################
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONF_ARGS+=	IPv6=true
 .endif
 
@@ -78,7 +73,7 @@ CONF_ARGS+=	IPv6=true
 ##  Debug Support  ##
 #####################
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONF_ARGS+=	DEBUG=true
 .endif
 
@@ -86,7 +81,7 @@ CONF_ARGS+=	DEBUG=true
 ##  Shared Runtime Library  ##
 ##############################
 
-.if defined(WITH_DSRT)
+.if ${PORT_OPTIONS:MDSRT}
 CONF_ARGS+=	ENABLE_SHARED=false
 .endif
 
@@ -94,7 +89,7 @@ CONF_ARGS+=	ENABLE_SHARED=false
 ##  Default Library Type  ##
 ############################
 
-.if defined(WITH_RELOC)
+.if ${PORT_OPTIONS:MRELOC}
 CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=relocatable
 .endif
 
@@ -102,7 +97,7 @@ CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=relocatable
 ##  DEMOS Support  ##
 #####################
 
-.if defined(WITH_DEMOS)
+.if ${PORT_OPTIONS:MDEMOS}
 DEMO_DIRS+=	agent
 DEMO_DIRS+=	auth
 DEMO_DIRS+=	com
@@ -131,7 +126,7 @@ DEMO_DIRS+=	wps
 DEMO_DIRS+=	ws
 DEMO_DIRS+=	zdemo
 
-.if defined (WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 DEMO_DIRS+=	test_ldap
 PLIST_SUB+=	LDAP=""
 .else
@@ -157,7 +152,7 @@ test: install
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
-.if defined(WITH_DEMOS)
+.if ${PORT_OPTIONS:MDEMOS}
 	${MAKE} demos
 	${MAKE} demos-install
 .endif

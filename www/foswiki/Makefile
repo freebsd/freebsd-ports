@@ -20,17 +20,19 @@ LICENSE=	GPLv2
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-OPTIONS=	OPTINT "Install Perl modules for intl character support" On \
-		OPTOTH "Install other optional Perl modules" On \
-		APACHE "Install Apache web server and sample config file" Off
+OPTIONS_DEFINE=	OPTINT OPTOTH APACHE
+OPTIONS_DEFAULT=	OPTINT OPTOTH
+OPTINT_DESC=	Install Perl modules for intl character support
+OPTOTH_DESC=	Install other optional Perl modules
+APACHE_DESC=	Install Apache web server and sample config file
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPTINT)
+.if ${PORT_OPTIONS:MOPTINT}
 RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
 .endif
 
-.if defined(WITH_OPTOTH)
+.if ${PORT_OPTIONS:MOPTOTH}
 RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -44,7 +46,7 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
 .endif
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN?=22+
 PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
@@ -93,7 +95,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${INSTALL_DATA} ${WRKSRC}/foswiki_httpd_conf.txt \
 		${CONFDIR}/foswiki.conf.sample; \
