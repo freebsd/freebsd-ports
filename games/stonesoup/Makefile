@@ -18,6 +18,7 @@ USE_XZ=		yes
 USES=		bison
 USE_GMAKE=	yes
 USE_LUA=	5.1
+USE_PKGCONFIG=	build
 USE_PERL5_BUILD=	yes
 
 MAKE_JOBS_SAFE=	yes
@@ -65,7 +66,7 @@ CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 BUILD_DEPENDS+=	fc-list:${PORTSDIR}/x11-fonts/fontconfig \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
