@@ -11,9 +11,15 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.pyo
-%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.py
-%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.pyc
-%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/ec2.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/ec2.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/ec2.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.pyo
@@ -39,7 +45,7 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/Arch.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/Debian-git.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/Debian.sh
-%%PYTHON_SITELIBDIR%%/saltcloud/deploy/bootstrap-salt-minion.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/bootstrap-salt.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/curl-bootstrap-git.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/curl-bootstrap.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/Fedora-git.sh
