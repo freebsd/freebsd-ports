@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sdcc
-# Date created:		3 May 2004
-# Whom:			Tijl Coosemans <tijl@ulyssis.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sdcc
 PORTVERSION=	3.2.0
@@ -23,7 +18,6 @@ CONFLICTS_INSTALL=	sdcc-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	4.6+
 
 OPTIONS_DEFINE= DEVLIB DOCS HC08 MCS51 PIC UCSIM Z80
 OPTIONS_DEFAULT=${OPTIONS_DEFINE:NDOCS}
