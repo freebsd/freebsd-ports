@@ -2,6 +2,7 @@
 
 PORTNAME=	rbenv
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
@@ -29,5 +30,7 @@ do-install:
 	@${LN} -sf ${PREFIX}/libexec/rbenv ${PREFIX}/bin/rbenv
 	@${MKDIR} ${DATADIR}/completions
 	@( cd ${WRKSRC}/completions && ${COPYTREE_BIN} \* ${DATADIR}/completions )
+	@${MKDIR} ${PREFIX}/rbenv_root/shims
+	@${MKDIR} ${PREFIX}/rbenv_root/versions
 
 .include <bsd.port.mk>
