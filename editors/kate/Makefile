@@ -16,10 +16,11 @@ CONFLICTS=	kdebase-4.[0-6].* kdelibs-4.[0-6].* kdesdk-4.[0-6].*
 USE_XZ=	yes
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 sharedmime
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_PERL5_BUILD=	yes
 USE_QT4=	dbus gui qt3support script sql xml \
 		moc_build qmake_build rcc_build uic_build
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=	kate.1

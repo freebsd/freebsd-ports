@@ -18,7 +18,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix pykde4 pykdeuic4 automoc4
 USE_PYTHON=	2.5+
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DINSTALL_PRINTER_APPLET:BOOL=ON
 
 post-patch:

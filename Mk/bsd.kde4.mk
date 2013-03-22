@@ -102,7 +102,8 @@ NO_MTREE=				yes
 . endif
 .endif
 
-PLIST_SUB+=				KDE4_PREFIX="${KDE4_PREFIX}"
+PLIST_SUB+=				KDE4_PREFIX="${KDE4_PREFIX}" \
+					KDE4_VERSION="${KDE4_VERSION}"
 
 # Keep in sync with cmake/modules/PythonMacros.cmake
 _PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
@@ -115,34 +116,6 @@ PLIST_SUB+=	PYCACHE="" \
 		PYC_SUFFIX=pyc \
 		PYO_SUFFIX=pyo
 .endif
-
-# The following definitions are not intended for usage in KDE4-dependent ports.
-.if defined(KDE4_BUILDENV)
-
-USE_CMAKE=				yes
-CMAKE_SOURCE_PATH=		${WRKSRC}
-USE_LDCONFIG=			yes
-
-. if ${KDE4_BRANCH} == "unstable"
-WITH_DEBUG=				yes
-. endif
-
-. if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=		DebugFull
-. endif
-
-PLIST_SUB+=				KDE4_VERSION="${KDE4_VERSION}"
-
-CONFIGURE_WRKSRC=		${CMAKE_SOURCE_PATH}/build
-BUILD_WRKSRC=			${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC?=		${BUILD_WRKSRC}
-
-post-extract:	kde4-create-builddir
-
-kde4-create-builddir:
-	${MKDIR} ${BUILD_WRKSRC}
-
-.endif # defined(KDE4_BUILDENV)
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Kde_Pre_Include)
 

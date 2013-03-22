@@ -18,7 +18,7 @@ LATEST_LINK=		kdemultimedia-dragon
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 MAKE_JOBS_SAFE=		yes
-KDE4_BUILDENV=		yes
+USES=			cmake:outsource
 USE_KDE4=		automoc4 kdehier kdelibs kdeprefix
 USE_QT4=		dbus phonon \
 			moc_build qmake_build rcc_build uic_build

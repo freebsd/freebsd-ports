@@ -19,10 +19,11 @@ USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
 		automoc4 soprano strigi
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus gui qt3support script \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"

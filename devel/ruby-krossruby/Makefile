@@ -21,7 +21,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
 USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DBUILD_python:BOOL=FALSE \
 		-DBUILD_falcon:BOOL=FALSE \
 		-DBUILD_java:BOOL=FALSE

@@ -18,9 +18,10 @@ CONFLICTS=	kdegraphics-4.[0-6].*
 
 USE_XZ=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus gui xml \
 		moc_build qmake_build rcc_build uic_build
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 pre-configure:

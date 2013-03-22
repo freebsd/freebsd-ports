@@ -13,12 +13,13 @@ COMMENT=	Virtual globe and world atlas for KDE
 CONFLICTS=	kdeedu-4.4.[0-4]
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus declarative gui network \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS=	-DMOBILE:BOOL=FALSE
 

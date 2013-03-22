@@ -15,7 +15,7 @@ LATEST_LINK=	${PORTNAME}4
 
 USE_XZ=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 

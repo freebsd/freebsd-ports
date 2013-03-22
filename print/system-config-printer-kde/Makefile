@@ -20,7 +20,7 @@ USE_PYTHON=	2.5+
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 DISTINFO_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DINSTALL_SYSTEM_CONFIG_PRINTER:BOOL=ON \
 		-DBUILD_kuser:BOOL=OFF # Avoid checking for kdepimlibs.
 

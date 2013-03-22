@@ -19,9 +19,10 @@ LATEST_LINK=	${PORTNAME}4
 USE_XZ=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

@@ -23,10 +23,11 @@ CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 USE_XZ=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 pimlibs workspace \
 		akonadi attica automoc4 qimageblitz sharedmime soprano
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_QT4=	dbus gui network opengl script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11 xrender xtst
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	MARBLE IBUS SCIM

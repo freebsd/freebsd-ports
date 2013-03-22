@@ -48,7 +48,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdeprefix oxygen \
 		attica automoc4 ontologies sharedmime soprano strigi
-KDE4_BUILDENV=	yes
+USES=		cmake:outsource
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_QT4=	dbus declarative designer gui imageformats_run \
@@ -56,6 +56,7 @@ USE_QT4=	dbus declarative designer gui imageformats_run \
 		qtestlib script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	sm x11 xcursor xext xfixes xrender xtst
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \

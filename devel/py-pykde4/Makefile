@@ -31,7 +31,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 USE_PYTHON=	2.5+
 USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
 

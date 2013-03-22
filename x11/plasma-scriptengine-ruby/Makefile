@@ -16,10 +16,9 @@ USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
 DISTINFO_FILE=	${PORTSDIR}/x11/kde4-workspace/distinfo
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/ruby
-CMAKE_OUTSOURCE=	yes
 
 .include <bsd.port.mk>
