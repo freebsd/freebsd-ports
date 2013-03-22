@@ -281,7 +281,6 @@ vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allow
 vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and all software that uses it is subject to patent restrictions
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
-warsow/*		games/linux-warsow	Redistribution is limited, art is copyrighted
 webcopy-*		www/webcopy		Do not sell for profit
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
