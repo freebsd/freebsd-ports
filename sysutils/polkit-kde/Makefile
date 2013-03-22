@@ -1,34 +1,37 @@
-# New ports collection makefile for:	PolKit-kde
-# Date created:		2009-12-25
-# Whom:			Dima Panov <fluffy@Fluffy.Khv.RU>
-#
+# Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	polkit-kde
-PORTVERSION=	0.99.0
-PORTREVISION=	3
+PORTVERSION=	0.99.1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
-DISTNAME=	${PORTNAME}-agent-1-${PORTVERSION}
+DISTNAME=	${PORTNAME}-agent-1-${PORTVERSION:C/1$/0/}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE4 frontend to PolKit-1
+COMMENT=	Polkit authentication UI for KDE Workspaces
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	polkit-qt-agent-1.1:${PORTSDIR}/sysutils/polkit-qt
+LIB_DEPENDS=	polkit-qt-agent-1:${PORTSDIR}/sysutils/polkit-qt
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_CMAKE=	yes
-USE_LDCONFIG=	yes
+USES=		cmake
+MAKE_JOBS_SAFE=	yes
 
-post-extract:
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
