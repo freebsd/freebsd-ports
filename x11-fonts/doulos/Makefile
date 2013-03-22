@@ -1,12 +1,8 @@
-# New ports collection makefile for:	DoulosSIL
-# Date created:		March 3 2011
-# Whom:			bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DoulosSIL
-PORTVERSION=	4.110
+PORTVERSION=	4.112
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=${MEDIA_ID}&filename=/ \
 		LOCAL/bf
