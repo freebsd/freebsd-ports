@@ -1,14 +1,9 @@
-# New ports collection makefile for:   sawfish
-# Date created:        13 September 1999
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-wm/sawfish/Makefile,v 1.5 2007/10/10 22:57:29 mezz Exp $
-#
 
 PORTNAME=	sawfish
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
@@ -19,13 +14,14 @@ COMMENT=	Lisp configurable window manager
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		rep.16:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		rep:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
 USE_XORG=	ice sm x11 xft xinerama xrandr
-USE_GNOME=	gnomehack gtk20
+USES=		pathfix
+USE_GNOME=	gnomehier gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
