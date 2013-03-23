@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 
 MAKE_JOBS_UNSAFE=	yes
 
+USE_PKGCONFIG=		yes
 USE_SQLITE=	3
 USE_BZIP2=	yes
 USES=	pathfix
