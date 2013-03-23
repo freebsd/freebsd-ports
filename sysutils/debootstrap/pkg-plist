@@ -22,6 +22,7 @@ share/debootstrap/scripts/oneiric
 share/debootstrap/scripts/potato
 share/debootstrap/scripts/precise
 share/debootstrap/scripts/quantal
+share/debootstrap/scripts/raring
 share/debootstrap/scripts/sarge
 share/debootstrap/scripts/sarge.buildd
 share/debootstrap/scripts/sarge.fakechroot
