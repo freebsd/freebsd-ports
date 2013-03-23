@@ -1,12 +1,8 @@
-# Ports collection makefile for:	Config::Model
-# Date created:			Jan 29, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.029
+PORTVERSION=	2.030
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
