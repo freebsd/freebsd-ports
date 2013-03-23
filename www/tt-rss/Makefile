@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 

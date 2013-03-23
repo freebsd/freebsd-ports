@@ -24,7 +24,8 @@ for /var/log/ttrssd.log in your /etc/newsyslog.conf .
 
 Important note: after an upgrade, you have to set SINGLE_USER_MODE to true
 in your config.php; remember to modify after that if needed. And your
-DB_USER must be granted to ALTER any tables of your DB_NAME.
+DB_USER must be granted to ALTER any tables of your DB_NAME. And don't
+forget to empty the cache of your browser!
 
 Please read <http://tt-rss.org/redmine/wiki/tt-rss/InstallationNotes> and
 <http://tt-rss.org/redmine/wiki/tt-rss/UpdatingFeeds> for important points.
