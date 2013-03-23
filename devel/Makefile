@@ -443,6 +443,7 @@
     SUBDIR += fpc-fcl-extra
     SUBDIR += fpc-fcl-fpcunit
     SUBDIR += fpc-fcl-image
+    SUBDIR += fpc-fcl-js
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
