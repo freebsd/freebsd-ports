@@ -3,6 +3,7 @@
 
 PORTNAME=	phone
 PORTVERSION=	0.3.11
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.defora.org/os/download/download/3721/
 PKGNAMEPREFIX=	deforaos-
@@ -26,5 +27,9 @@ USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/dev/modem,/dev/cuaU0,g' \
+		${WRKSRC}/src/modems/hayes.c
 
 .include <bsd.port.mk>
