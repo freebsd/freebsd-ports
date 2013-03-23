@@ -58,7 +58,7 @@ _USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo \
 			ffmpeg flac flite gconf gio gl gme gnomevfs gnonlin \
 			gsm hal jack jpeg ladspa lame libcaca libmms \
 			libpng libvisual mm mp3 mpeg2enc mpeg2dec musepack \
-			nas neon ogg opencv pango pulse python resindvd schroedinger \
+			nas neon ogg opencv opus pango pulse python resindvd schroedinger \
 			sdl shout2 sidplay sndfile spc soundtouch soup \
 			speex taglib theora twolame v4l2 vorbis vdpau \
 			vp8 wavpack x264 xvid
@@ -135,6 +135,8 @@ nas_DEPENDS=	audio/gstreamer-plugins-nas
 neon_DEPENDS=	www/gstreamer-plugins-neon
 
 ogg_DEPENDS=	audio/gstreamer-plugins-ogg
+
+opus_DEPENDS=	audio/gstreamer-plugins-opus
 
 polyp_DEPENDS=	audio/gstreamer-plugins-polyp
 
