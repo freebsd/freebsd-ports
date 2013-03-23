@@ -1,4 +1,4 @@
-# $FreeBSD: ports/editors/lazarus/Makefile.common,v 1.2 2012/11/17 05:57:14 svnexp Exp $
+# $FreeBSD: ports/editors/lazarus/Makefile.common,v 1.3 2012/12/12 21:08:13 svnexp Exp $
 
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
