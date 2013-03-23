@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gupnp-ui
-# Date created:		2009-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
@@ -19,11 +15,12 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	gupnp>=0.3:${PORTSDIR}/net/gupnp
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp \
 		soup-2.4:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	gupnp>=0.3:${PORTSDIR}/net/gupnp
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+USES=		pathfix
 
 .include <bsd.port.mk>
