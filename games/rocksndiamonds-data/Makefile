@@ -95,7 +95,7 @@ post-extract-script:
 	@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
 
 do-install:
-	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${DATADIR}/levels)
+	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${DATADIR}/levels)
 
 post-install:
 # Dynamically generate part of the PLIST, because the Levels are large
