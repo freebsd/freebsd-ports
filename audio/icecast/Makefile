@@ -25,6 +25,8 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
+PORTSCOUT=	limit:^1\.3\.12
+
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
