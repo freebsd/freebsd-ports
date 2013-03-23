@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cil
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -28,7 +28,6 @@ PORTDOCS=	*
 PLIST_FILES=	${BINFILES:S,^,bin/,} ${LEXECFILES:S,^,libexec/cil/,} \
 		%%SITE_PERL%%/CilConfig.pm ${LIBFILES:S,^,%%SITE_PERL%%/CIL/,}
 PLIST_DIRS=	%%SITE_PERL%%/CIL libexec/cil
-
 BINFILES=	cilly patcher teetwo
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
 LEXECFILES=	cilly.asm.exe cilly.byte.exe
