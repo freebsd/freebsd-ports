@@ -136,6 +136,7 @@ etc/yum/yum-updatesd.conf.sample
 @dirrm etc/yum
 @dirrm %%PYTHON_SITELIBDIR%%/rpmUtils
 @dirrm %%PYTHON_SITELIBDIR%%/yum
+@dirrmtry etc/bash_completion.d
 @dirrmtry etc/logrotate.d
 @dirrmtry etc/rc.d/init.d
 @dirrmtry share/locale/id_ID/LC_MESSAGES
