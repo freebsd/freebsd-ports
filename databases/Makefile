@@ -74,6 +74,7 @@
     SUBDIR += flamerobin
     SUBDIR += flare
     SUBDIR += fortytwo-bdb
+    SUBDIR += fpc-dblib
     SUBDIR += fpc-gdbm
     SUBDIR += fpc-ibase
     SUBDIR += fpc-mysql
