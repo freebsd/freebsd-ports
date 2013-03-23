@@ -32,13 +32,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	README.txt index.html
 
-OPTIONS_DEFINE=	DOCS EXAMPLES JACK PATEST DOXYGEN
+OPTIONS_DEFINE=	JACK PATEST DOXYGEN
 OPTIONS_DEFAULT=PATEST DOXYGEN
 
 PATEST_DESC=	PortAudio Test Programs
@@ -70,6 +71,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(DESTDIR)$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
+.if ! ${PORT_OPTIONS:MEXAMPLES}
+	@${REINPLACE_CMD} -i '' '/EXAMPLES =/,/bin\/paex_write_sine_nonint/s/^/#/' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MPATEST}
 	@(cd ${WRKSRC}/bin && for i in *; do ${MV} "$$i" "$${i}"-2; done)
@@ -87,7 +93,7 @@ post-install:
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
