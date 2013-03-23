@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130323:
+  AFFECTS: users of archivers/libarchive
+  AUTHOR: glewis@FreeBSD.org
+
+  The archivers/libarchive port has been updated to 3.1.2.  The shared library
+  version has changed from 12 to 14.  Please rebuild all ports that depend on
+  it:
+
+  # portmaster -r libarchive
+    or
+  # portupgrade -fr archivers/libarchive
+    or
+  # pkg install -fR archivers/libarchive
+
 20130319:
   AFFECTS: users of ports
   AUTHOR: bdrewery@FreeBSD.org
