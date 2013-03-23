@@ -32,6 +32,10 @@ INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gstrfuncs.h|glib.h|g' \
+		${WRKSRC}/gp_cppsupport/gprinter.cpp
+
 post-install:
 		-@update-desktop-database
 
