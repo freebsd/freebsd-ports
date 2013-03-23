@@ -3,6 +3,7 @@ bin/makebin
 bin/packihx
 %%UCSIM%%%%MCS51%%bin/s51
 bin/sdar
+%%MCS51%%bin/sdas390
 %%HC08%%bin/sdas6808
 %%MCS51%%bin/sdas8051
 %%Z80%%bin/sdasgb
@@ -19,6 +20,7 @@ bin/sdld6808
 bin/sdldgb
 bin/sdldz80
 bin/sdnm
+bin/sdobjcopy
 bin/sdranlib
 %%UCSIM%%%%HC08%%bin/shc08
 %%UCSIM%%%%Z80%%bin/sz80
@@ -391,6 +393,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65j15.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65j50.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65j90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65k80.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f65k90.lib
@@ -410,6 +413,8 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66j65.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66k80.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f66k90.lib
@@ -422,6 +427,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67j60.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f67k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f8310.lib
@@ -443,6 +449,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85j15.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85j50.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85j90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f85k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f8620.lib
@@ -462,6 +469,8 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86j72.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f86k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f8720.lib
@@ -474,11 +483,16 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87j72.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f87k90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f95j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f96j60.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f96j65.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f96j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f96j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f97j60.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libio18f97j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libm18f.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/libsdcc.lib
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/r2k/crt0.rel
@@ -570,6 +584,8 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1784.h
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1786.h
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1787.h
+%%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1788.h
+%%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1789.h
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1823.h
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1824.h
 %%PIC%%%%DATADIR%%/non-free/include/pic14/pic16f1825.h
@@ -800,6 +816,7 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65j15.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65j50.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65j90.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65k80.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f65k90.h
@@ -819,6 +836,8 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66j65.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66j90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66j93.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66j94.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66j99.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66k80.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f66k90.h
@@ -831,6 +850,7 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67j60.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67j90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67j93.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f67k90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f8310.h
@@ -852,6 +872,7 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85j15.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85j50.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85j90.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f85k90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f8620.h
@@ -871,6 +892,8 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86j72.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86j90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86j93.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86j94.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86j99.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f86k90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f8720.h
@@ -883,11 +906,16 @@ bin/sdranlib
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87j72.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87j90.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87j93.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87k22.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f87k90.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f95j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f96j60.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f96j65.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f96j94.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f96j99.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f97j60.h
+%%PIC%%%%DATADIR%%/non-free/include/pic16/pic18f97j94.h
 %%PIC%%%%DATADIR%%/non-free/include/pic16/pic18fam.h
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic10f320.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic10f322.lib
@@ -956,6 +984,8 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1784.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1786.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1787.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1788.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1789.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1823.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1824.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic14/pic16f1825.lib
@@ -1185,6 +1215,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65j15.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65j50.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65j90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65k80.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f65k90.lib
@@ -1204,6 +1235,8 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66j65.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66k80.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f66k90.lib
@@ -1216,6 +1249,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67j60.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f67k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f8310.lib
@@ -1237,6 +1271,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85j15.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85j50.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85j90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f85k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f8620.lib
@@ -1256,6 +1291,8 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86j72.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f86k90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f8720.lib
@@ -1268,11 +1305,16 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87j72.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87j90.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87j93.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87k22.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f87k90.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f95j94.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f96j60.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f96j65.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f96j94.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f96j99.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f97j60.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/non-free/lib/pic16/libdev18f97j94.lib
 %%DEVLIB%%%%PIC%%@dirrm %%DATADIR%%/non-free/lib/pic16
 %%DEVLIB%%%%PIC%%@dirrm %%DATADIR%%/non-free/lib/pic14
 %%DEVLIB%%@exec mkdir -p %D/%%DATADIR%%/non-free/lib
