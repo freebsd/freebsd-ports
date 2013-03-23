@@ -19,9 +19,7 @@ GH_COMMIT=	31009f6
 GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH PKGNGPATCH
-.if defined(WITH_PKGNG)
 OPTIONS_DEFAULT+=	PKGNGPATCH
-.endif
 BASH_DESC=	Install programmable completions for Bash
 ZSH_DESC=	Install programmable completions for zsh
 PKGNGPATCH_DESC=Enable PKGNG support
