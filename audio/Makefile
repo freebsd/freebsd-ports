@@ -765,6 +765,7 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
+    SUBDIR += tkeca
     SUBDIR += tomahawk
     SUBDIR += toolame
     SUBDIR += tosha

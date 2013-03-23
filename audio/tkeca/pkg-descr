@@ -1,0 +1,14 @@
+Tkeca is a TCL/TK frontend for Kai Vehmanen's ECASOUND.
+
+It's intended to have all the ECASOUND features including:
+- unlimited number of tracks
+- volume and pan control on each track
+- up to 8 effects for each track
+- LADSPA support
+- multitrack support
+- multiple inputs/outputs/soundcards
+- effects preview
+- multiple takes on each track
+- mute track
+
+WWW: http://tkeca.sourceforge.net/
