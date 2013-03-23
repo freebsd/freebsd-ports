@@ -136,6 +136,7 @@ fcl_res_UNIT=	devel/fpc-fcl-res
 fcl_web_UNIT=	devel/fpc-fcl-web
 fcl_xml_UNIT=	devel/fpc-fcl-xml
 fftw_UNIT=	math/fpc-fftw
+fpindexer_UNIT=	databases/fpc-fpindexer
 fpmkunit_UNIT=	devel/fpc-fpmkunit
 fpgtk_UNIT=	graphics/fpc-fpgtk
 fppkg_UNIT=	devel/fpc-fppkg
