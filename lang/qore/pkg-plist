@@ -28,6 +28,7 @@ include/qore/QoreFloatNode.h
 include/qore/QoreFtpClient.h
 include/qore/QoreHTTPClient.h
 include/qore/QoreHashNode.h
+include/qore/QoreQueueHelper.h
 include/qore/QoreLib.h
 include/qore/QoreListNode.h
 include/qore/QoreNamespace.h
@@ -74,15 +75,15 @@ include/qore/safe_dslist
 include/qore/support.h
 lib/libqore.la
 lib/libqore.so
-lib/libqore.so.14
-lib/qore-modules/%%VERSION%%/CsvUtil.qm
-lib/qore-modules/%%VERSION%%/HttpServer.qm
-lib/qore-modules/%%VERSION%%/MailMessage.qm
-lib/qore-modules/%%VERSION%%/Mime.qm
-lib/qore-modules/%%VERSION%%/Pop3Client.qm
-lib/qore-modules/%%VERSION%%/SmtpClient.qm
-lib/qore-modules/%%VERSION%%/TelnetClient.qm
+lib/libqore.so.15
+lib/qore-modules/%%PORTVERSION%%/HttpServer.qm
+lib/qore-modules/%%PORTVERSION%%/SmtpClient.qm
+lib/qore-modules/%%PORTVERSION%%/Mime.qm
+lib/qore-modules/%%PORTVERSION%%/TelnetClient.qm
+lib/qore-modules/%%PORTVERSION%%/MailMessage.qm
+lib/qore-modules/%%PORTVERSION%%/Pop3Client.qm
+lib/qore-modules/%%PORTVERSION%%/CsvUtil.qm
 libdata/pkgconfig/qore.pc
-@dirrm lib/qore-modules/%%VERSION%%
-@dirrmtry lib/qore-modules
 @dirrm include/qore
+@dirrm lib/qore-modules/%%PORTVERSION%%
+@dirrm lib/qore-modules
