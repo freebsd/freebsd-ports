@@ -1,12 +1,11 @@
-# Created by: Tijl Coosemans <tijl@ulyssis.org>
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.2.1.2012.11.01
+PORTVERSION=	3.2.1.2013.03.22
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20121101-8180
+DISTNAME=	${PORTNAME}-src-20130322-8457
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -67,7 +66,7 @@ PLIST_SUB+=	MCS51="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPIC}
-BUILD_DEPENDS+= gputils>=0.14.3:${PORTSDIR}/devel/gputils
+BUILD_DEPENDS+= gputils>=1.0.0:${PORTSDIR}/devel/gputils
 RUN_DEPENDS+=	gpasm:${PORTSDIR}/devel/gputils
 PLIST_SUB+=	PIC=""
 .else
