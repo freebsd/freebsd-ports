@@ -1,35 +1,57 @@
-# New ports collection makefile for: http-analyze
-# Date created:		Fri Jul 11 06:11:41 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
 
 PORTNAME=	http-analyze
-PORTVERSION=	2.01
-PORTREVISION=	11
+PORTVERSION=	2.4.4
 CATEGORIES=	www
-MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/
+DIST_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}${PORTVERSION:R}-src
+
+PATCH_SITES=	http://http-analyze.org/
+PATCHFILES=	patch04.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast Log-Analyzer for web servers
+COMMENT=	Fast Log-Analyzer for web servers
 
-PATCH_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
+
+MAKE_ARGS=	HA_BINDIR="${PREFIX}/bin" HA_LIBDIR="${DATADIR}" \
+		REQINCS="${CPPFLAGS}" REQLIBS="${LDFLAGS}" \
+		DEFINES="-DBSD -Dunix" OPTIM="${CFLAGS}" \
+		CC="${CC}"
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	$$(gdlib-config --includes)
+LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)
 
 MAN1=		http-analyze.1
 
-post-patch:
-	@${ECHO_MSG} "Converting GIFs to PNG format"
-	@${FIND} "${WRKSRC}/files/btn" -name "*.gif" -type f \
-		-exec gif2png -d -O {} \;
+.include <bsd.port.options.mk>
 
-.ifndef(NOPORTDOCS)
-post-install:
+do-install:
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} http-analyze \
+		${PREFIX}/bin/http-analyze)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} http-analyze.man \
+		${MANPREFIX}/man/man1/http-analyze.1)
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}/files && ${COPYTREE_SHARE} . ${DATADIR})
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/http-analyze.pdf ${WRKSRC}/http-analyze.ps \
-		${DOCSDIR}
+.for i in http-analyze.pdf http-analyze.ps.gz
+	(cd ${WRKSRC}/man && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+.for i in contrib tools
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${EXAMPLESDIR})
+.endfor
 .endif
 
 .include <bsd.port.mk>
