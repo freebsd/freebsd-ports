@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	scala-ide
-DISTVERSION=	3.0-RC3
+DISTVERSION=	3.0
 CATEGORIES=	devel java
-MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala210/dev/
+MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala210/stable/
 DISTNAME=	update-site
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}-scala-2.10.1
 
