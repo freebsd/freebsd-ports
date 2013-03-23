@@ -1,12 +1,9 @@
-# New ports collection makefile for:	debootstrap
-# Date created:		2011-02-26
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.46
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
