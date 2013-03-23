@@ -235,6 +235,7 @@
     SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += ezquake
+    SUBDIR += f1lt
     SUBDIR += f1spirit-remake
     SUBDIR += fairymax
     SUBDIR += falconseye
