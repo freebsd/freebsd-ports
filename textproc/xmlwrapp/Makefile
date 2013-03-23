@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlwrapp
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -18,11 +17,12 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
 OPTIONS_DEFINE=	XSLT
 XSLT_DESC=	Build libxsltwrap library (requires libxslt)
 
-USE_GNOME=	gnomehack libxml2
+USES=		pathfix
+USE_GNOME=	libxml2
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
