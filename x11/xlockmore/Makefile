@@ -1,12 +1,11 @@
-# Created by: smace
-#
+# Created by: Scott Mace <smace@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.41
+PORTVERSION=	5.42
 CATEGORIES?=	x11
-MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
-		http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
+MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
+		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		CRITICAL
 
 MAINTAINER=	jgh@FreeBSD.org
