@@ -26,7 +26,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
-LIB_DEPENDS+=	archive.12:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	archive:${PORTSDIR}/archivers/libarchive
 .endif
 
 .include <bsd.port.post.mk>
