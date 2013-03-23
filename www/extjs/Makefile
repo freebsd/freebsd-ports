@@ -33,13 +33,13 @@ WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
 
 SUB_FILES+=	pkg-message
 
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	COMMENTDOCS=
 .else
 SUB_LIST+=	COMMENTDOCS="\# "
 .endif
 
-.if ${PORT_OPTIONS:MEXAMPLE}
+.if ${PORT_OPTIONS:MEXAMPLES}
 SUB_LIST+=	COMMENTEXAMPLES=
 .else
 SUB_LIST+=	COMMENTEXAMPLES="\# "
@@ -52,7 +52,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
