@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dnsmasq
-# Date created:				2012-08-07
-# Whom:					Matthias Andree
-#
+# Created by: Matthias Andree
 # $FreeBSD$
-#
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.64rc3
+DISTVERSION=	2.66rc2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
