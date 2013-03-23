@@ -1,8 +1,0 @@
-bin/comclear
-%%PORTDOCS%%share/doc/comclear/README
-%%PORTDOCS%%share/doc/comclear/NEWS
-%%PORTDOCS%%share/doc/comclear/ChangeLog
-%%PORTDOCS%%share/doc/comclear/AUTHORS
-%%PORTDOCS%%share/doc/comclear/COPYING
-%%PORTDOCS%%share/doc/comclear/INSTALL
-%%PORTDOCS%%@dirrm share/doc/comclear
