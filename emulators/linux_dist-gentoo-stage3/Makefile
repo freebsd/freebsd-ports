@@ -1,7 +1,3 @@
-# New ports collection makefile for:	linux_base-gentoo-stage3
-# Date created:				11 May 2006
-# Whom:					Gabor Kovesdan
-#
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
@@ -14,7 +10,6 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
-
 
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
