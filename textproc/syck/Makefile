@@ -9,8 +9,6 @@ MASTER_SITES=	http://cloud.github.com/downloads/indeyets/syck/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for reading and writing YAML 1.0
 
-BROKEN=		does not build
-
 GNU_CONFIGURE=	yes
 USES=		bison
 CFLAGS+=	-fPIC
