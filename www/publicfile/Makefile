@@ -20,7 +20,7 @@ REDIRECT_SLASH_DESC=	do not require trailing slash on directories
 ENV_FILETYPES_DESC=	get mime types from the environment
 SSL_DESC=		provide SSL support through ucspi-ssl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 pre-everything::
 .if ${PORT_OPTIONS:MBASICAUTH} && ${PORT_OPTIONS:MCOMMONLOG}
