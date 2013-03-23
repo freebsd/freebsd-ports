@@ -9,10 +9,3 @@ if [ "$2" = "POST-DEINSTALL" ]; then
     find %%PREFIX%%/share/rnd_jue -type l -exec rm -- {} +
 fi
 
-#if [ "$2" != "POST-DEINSTALL" ]; then
-#	exit 0
-#fi
-
-#set -x
-#find %%PREFIX%%/share/rocksndiamonds -type l -exec rm -- {} +
-#find %%PREFIX%%/share/rnd_jue -type l -exec rm -- {} +
