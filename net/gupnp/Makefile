@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gupnp
-# Date created:		2009-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gupnp
-PORTVERSION=	0.18.4
+PORTVERSION=	0.20.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,15 +17,16 @@ LIB_DEPENDS=	gssdp-1.0:${PORTSDIR}/net/gssdp \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--enable-introspection=yes
+CONFIGURE_ENV=	VAPIGEN=""
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
+USES=		pathfix
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
-		${WRKSRC}/tools/gupnp-binding-tool
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/tools/gupnp-binding-tool
 
 .include <bsd.port.mk>

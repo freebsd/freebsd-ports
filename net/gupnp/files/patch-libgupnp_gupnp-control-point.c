@@ -1,6 +1,6 @@
---- libgupnp/gupnp-control-point.c.orig	2009-08-24 18:29:33.000000000 +0200
-+++ libgupnp/gupnp-control-point.c	2009-12-26 14:32:06.000000000 +0100
-@@ -658,7 +658,7 @@
+--- libgupnp/gupnp-control-point.c.orig	2012-11-29 07:13:43.000000000 +0800
++++ libgupnp/gupnp-control-point.c	2013-03-15 16:00:16.921426942 +0800
+@@ -692,7 +692,7 @@
          /* Count elements */
          count = g_strv_length (bits);
  
