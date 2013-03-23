@@ -16,6 +16,13 @@ you update your ports collection, before attempting any port upgrades.
   dialog4ports provides a new UI able to represent all the features provided
   by the new options framework.
 
+20130319:
+  AFFECTS: users of net/freerdp
+  AUTHOR: fluffy@FreeBSD.org
+
+  The net/freerdp package was changed API and require to deinstall previous
+  version first to avoid build conflicts.
+
 20130317:
   AFFECTS: users of graphics/poppler
   AUTHOR: gnome@FreeBSD.org
@@ -28,13 +35,6 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -fr graphics/poppler
     or
   # pkg install -fR graphics/poppler
-
-20130319:
-  AFFECTS: users of net/freerdp
-  AUTHOR: fluffy@FreeBSD.org
-
-  The net/freerdp package was changed API and require to deinstall previous
-  version first to avoid build conflicts.
 
 20130317:
   AFFECTS: users of devel/protobuf
