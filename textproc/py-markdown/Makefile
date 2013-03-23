@@ -8,7 +8,7 @@ MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		Markdown-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		koobs@FreeBSD.org
 COMMENT=		Text markup to HTML conversion engine for Python
 
 USE_PYTHON=		2.5+
