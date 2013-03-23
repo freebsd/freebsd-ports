@@ -18,27 +18,20 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
+NO_BUILD=	yes
+USE_THUNDERBIRD=	17
+USE_XPI=	thunderbird linux-thunderbird
+USE_SUBMAKE=	yes
+
+.include "${.CURDIR}/Makefile.option"
+.include <bsd.port.pre.mk>
+
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
-NO_BUILD=	yes
-USE_THUNDERBIRD=	17
-USE_XPI=	thunderbird linux-thunderbird
+.include "${.CURDIR}/Makefile.lang"
 
-THUNDERBIRD_I18N_ALL=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
-			fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO \
-			pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-TW
-
-.ifdef PACKAGE_BUILDING
-THUNDERBIRD_I18N?=	all
-.else
-THUNDERBIRD_I18N?=	es-ES pt-BR ru ja de fr ko it
-.endif
-
-.if ${THUNDERBIRD_I18N} == all
-THUNDERBIRD_I18N_=	${THUNDERBIRD_I18N_ALL}
-.endif
 THUNDERBIRD_I18N_?=	${THUNDERBIRD_I18N}
 
 WDIR=	langpack-*@thunderbird.mozilla.org
@@ -86,4 +79,4 @@ list-langs:
 		perl -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

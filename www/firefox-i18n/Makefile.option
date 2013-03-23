@@ -1,89 +1,90 @@
-# New ports collection makefile.option for:    firefox3-i18n
-# Date created:         30 Nov 2008
-# Whom:                 Koji Yokota <yokota@res.otaru-uc.ac.jp>
-#
+# Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
-#
-OPTIONS=        LANG_AF  "Africaans"              off \
-                LANG_AK  "Akan"                   off \
-                LANG_SQ  "Albanian"               off \
-                LANG_AR  "Arabic"                 on \
-                LANG_AM  "Armenian"               off \
-                LANG_AST "Asturian"               off \
-                LANG_EU  "Basque"                 off \
-                LANG_BN  "Bengali"                on \
-                LANG_BB  "Bengali (Bangladesh)"   off \
-                LANG_BS  "Bosnian"                off \
-                LANG_BR  "Breton"                 off \
-                LANG_BG  "Bulgarian"              off \
-                LANG_BE  "Byelorussian"           off \
-                LANG_CA  "Catalan"                off \
-                LANG_CN  "Chinese"                on \
-                LANG_CS  "Czech"                  off \
-                LANG_DA  "Danish"                 off \
-                LANG_NL  "Dutch"                  off \
-                LANG_GB  "English (UK)"           off \
-                LANG_US  "English (US)"           off \
-                LANG_EO  "Esperanto"              off \
-                LANG_ET  "Estonian"               off \
-                LANG_GL  "Galician"               off \
-                LANG_DE  "German"                 on \
-                LANG_EL  "Greek"                  off \
-                LANG_GU  "Gujarati"               off \
-                LANG_FI  "Finnish"                off \
-                LANG_FR  "French"                 on \
-                LANG_FY  "Frisian"                off \
-                LANG_GA  "Irish"                  off \
-                LANG_HE  "Hebrew"                 off \
-                LANG_HI  "Hindi"                  on \
-                LANG_HR  "Hrvatski"               off \
-                LANG_HU  "Hungarian"              off \
-                LANG_IS  "Icelandic"              off \
-                LANG_ID  "Indonesian"             off \
-                LANG_IT  "Italian"                on \
-                LANG_JA  "Japanese"               on \
-                LANG_KN  "Kannada"                off \
-                LANG_KK  "Kazakh"                 off \
-                LANG_KO  "Korean"                 on \
-                LANG_KU  "Kurdish"                off \
-                LANG_LV  "Latvian"                off \
-                LANG_LT  "Lithuanian"             off \
-                LANG_LG  "Luganda"                off \
-                LANG_MK  "Macedonian"             off \
-                LANG_MAI "Maithili"               off \
-                LANG_ML  "Malayalam"              off \
-                LANG_MR  "Marathi"                on \
-                LANG_MN  "Mongolian"              off \
-                LANG_NSO "Northern Sotho"         off \
-                LANG_NB  "Norwegian"              off \
-                LANG_NN  "Norwegian Nynorsk"      off \
-                LANG_OR  "Oriya"                  off \
-                LANG_FA  "Persian"                off \
-                LANG_PL  "Polish"                 off \
-                LANG_PT  "Portuguese"             off \
-                LANG_PBR "Portuguese (Brazil)"    on \
-                LANG_PA  "Punjabi"                on \
-                LANG_RO  "Romanian"               off \
-                LANG_RM  "Romansh"                off \
-                LANG_RU  "Russian"                on \
-                LANG_SR  "Serbian"                off \
-                LANG_SI  "Singhalese"             off \
-                LANG_ES  "Spanish"                on \
-                LANG_SON "Songhai"                off \
-                LANG_SA  "Spanish (Argentina)"    off \
-                LANG_SC  "Spanish (Chile)"        off \
-                LANG_SM  "Spanish (Mexico)"       off \
-                LANG_SK  "Slovak"                 off \
-                LANG_SL  "Slovenian"              off \
-                LANG_SV  "Swedish"                off \
-                LANG_TW  "Taiwanese"              off \
-                LANG_TA  "Tamil"                  off \
-                LANG_LK  "Tamil (Sri Lanka)"      off \
-                LANG_TE  "Telugu"                 on \
-                LANG_TH  "Thai"                   off \
-                LANG_TR  "Turkish"                off \
-                LANG_UK  "Ukrainian"              off \
-                LANG_VI  "Vietnamese"             off \
-                LANG_CY  "Welsh"                  off \
-                LANG_ZA  "English (South Afrika)" off \
-                LANG_ZU  "Zulu"                   off 
+
+OPTIONS_DEFINE=	LANG_AF \
+		LANG_AK \
+		LANG_SQ \
+		LANG_AR \
+		LANG_AM \
+		LANG_AST \
+		LANG_EU \
+		LANG_BN \
+		LANG_BB \
+		LANG_BS \
+		LANG_BR \
+		LANG_BG \
+		LANG_BE \
+		LANG_CA \
+		LANG_CN \
+		LANG_CS \
+		LANG_DA \
+		LANG_NL \
+		LANG_GB \
+		LANG_US \
+		LANG_EO \
+		LANG_ET \
+		LANG_GL \
+		LANG_DE \
+		LANG_EL \
+		LANG_GU \
+		LANG_FI \
+		LANG_FR \
+		LANG_FY \
+		LANG_GA \
+		LANG_HE \
+		LANG_HI \
+		LANG_HR \
+		LANG_HU \
+		LANG_IS \
+		LANG_ID \
+		LANG_IT \
+		LANG_JA \
+		LANG_KN \
+		LANG_KK \
+		LANG_KO \
+		LANG_KU \
+		LANG_LV \
+		LANG_LT \
+		LANG_LG \
+		LANG_MK \
+		LANG_MAI \
+		LANG_ML \
+		LANG_MR \
+		LANG_MN \
+		LANG_NSO \
+		LANG_NB \
+		LANG_NN \
+		LANG_OR \
+		LANG_FA \
+		LANG_PL \
+		LANG_PT \
+		LANG_PBR\
+		LANG_PA \
+		LANG_RO \
+		LANG_RM \
+		LANG_RU \
+		LANG_SR \
+		LANG_SI \
+		LANG_ES \
+		LANG_SON \
+		LANG_SA \
+		LANG_SC \
+		LANG_SM \
+		LANG_SK \
+		LANG_SL \
+		LANG_SV \
+		LANG_TW \
+		LANG_TA \
+		LANG_LK \
+		LANG_TE \
+		LANG_TH \
+		LANG_TR \
+		LANG_UK \
+		LANG_VI \
+		LANG_CY \
+		LANG_ZA \
+		LANG_ZU
+
+OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
+		LANG_HI LANG_ID LANG_IT LANG_JA LANG_KO LANG_MK LANG_MR \
+		LANG_MN LANG_PBR LANG_PA LANG_RU LANG_ES LANG_SON LANG_TE
