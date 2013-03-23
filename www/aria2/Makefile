@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.16.3
+PORTVERSION=	1.16.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -14,16 +14,19 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS NLS SQLITE
 OPTIONS_DEFAULT=SQLITE
 
-CONFIGURE_ARGS=	--enable-bittorrent --disable-epoll --enable-metalink --enable-threads=pth \
-		--with-libz --with-libxml2 --with-openssl \
-		--without-gnutls --without-libcares
+CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-metalink \
+		--enable-shared --enable-threads=posix --with-libz \
+		--with-libxml2 --with-openssl --without-gnutls \
+		--without-libcares --without-libexpat --without-libgcrypt \
+		--without-libgmp --without-libnettle
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
 		ZLIB_CFLAGS=-I${INCLUDEDIR} ZLIB_LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack libxml2
+USE_GNOME=	libxml2
 USE_OPENSSL=	yes
+USE_XZ=		yes
+USES=		pathfix
 
 MAN1=		aria2c.1
 MANLANG=	"" ru
