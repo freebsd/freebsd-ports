@@ -5,8 +5,11 @@ PORTNAME=	pstotext
 PORTVERSION=	1.9
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	support/ghostscript/contrib
+MASTER_SITES=	http://ftp.gwdg.de/pub/%SUBDIR%/ \
+		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/%SUBDIR%/ \
+		http://gd.tuwien.ac.at/pub/publishing/%SUBDIR%/ \
+		http://fossies.org/unix/misc/
+MASTER_SITE_SUBDIR=	ghostscript/contrib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript to Text converter
