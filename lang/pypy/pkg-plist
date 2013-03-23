@@ -1447,8 +1447,6 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_refactor.pyc
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.py
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
-%%PYPY_LIBDIR%%/lib_pypy/PyQt4.py
-%%PYPY_LIBDIR%%/lib_pypy/PyQt4.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
@@ -1509,8 +1507,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_irc_topic.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_wait.py
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_wait.pyc
-%%PYPY_LIBDIR%%/lib_pypy/_rpyc_support.py
-%%PYPY_LIBDIR%%/lib_pypy/_rpyc_support.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_scproxy.py
 %%PYPY_LIBDIR%%/lib_pypy/_scproxy.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_sha.py
@@ -1570,28 +1566,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/dbm.pyc
 %%PYPY_LIBDIR%%/lib_pypy/disassembler.py
 %%PYPY_LIBDIR%%/lib_pypy/disassembler.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/demo/sockdemo.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/demo/sockdemo.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/faker.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/faker.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/objkeeper.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/objkeeper.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/protocol.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/protocol.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/socklayer.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/socklayer.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/support.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/support.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_distributed.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_distributed.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_greensock.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_greensock.pyc
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_socklayer.py
-%%PYPY_LIBDIR%%/lib_pypy/distributed/test/test_socklayer.pyc
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.py
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.pyc
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.py
@@ -1600,8 +1574,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/grp.pyc
 %%PYPY_LIBDIR%%/lib_pypy/identity_dict.py
 %%PYPY_LIBDIR%%/lib_pypy/identity_dict.pyc
-%%PYPY_LIBDIR%%/lib_pypy/itertools.py
-%%PYPY_LIBDIR%%/lib_pypy/itertools.pyc
 %%PYPY_LIBDIR%%/lib_pypy/marshal.py
 %%PYPY_LIBDIR%%/lib_pypy/marshal.pyc
 %%PYPY_LIBDIR%%/lib_pypy/msvcrt.py
@@ -1634,8 +1606,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_collections.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_coroutine.py
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_coroutine.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_ctypes_support.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_ctypes_support.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_datetime.py
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_datetime.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_dbm_extra.py
@@ -1648,8 +1618,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_exception_extra.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_grp_extra.py
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_grp_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_itertools.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_itertools.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_marshal_extra.py
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_marshal_extra.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_md5_extra.py
@@ -1734,8 +1702,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/readline.pyc
 %%PYPY_LIBDIR%%/lib_pypy/resource.py
 %%PYPY_LIBDIR%%/lib_pypy/resource.pyc
-%%PYPY_LIBDIR%%/lib_pypy/sip.py
-%%PYPY_LIBDIR%%/lib_pypy/sip.pyc
 %%PYPY_LIBDIR%%/lib_pypy/stackless.py
 %%PYPY_LIBDIR%%/lib_pypy/stackless.pyc
 %%PYPY_LIBDIR%%/lib_pypy/syslog.py
@@ -2503,6 +2469,10 @@
 %%PYPY_LIBDIR%%/test/cjkencodings/gbk.txt
 %%PYPY_LIBDIR%%/test/cjkencodings/hz-utf8.txt
 %%PYPY_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYPY_LIBDIR%%/test/cjkencodings/iso2022_jp-utf8.txt
+%%PYPY_LIBDIR%%/test/cjkencodings/iso2022_jp.txt
+%%PYPY_LIBDIR%%/test/cjkencodings/iso2022_kr-utf8.txt
+%%PYPY_LIBDIR%%/test/cjkencodings/iso2022_kr.txt
 %%PYPY_LIBDIR%%/test/cjkencodings/johab-utf8.txt
 %%PYPY_LIBDIR%%/test/cjkencodings/johab.txt
 %%PYPY_LIBDIR%%/test/cjkencodings/shift_jis-utf8.txt
@@ -2721,6 +2691,7 @@
 %%PYPY_LIBDIR%%/test/mapping_tests.py
 %%PYPY_LIBDIR%%/test/mapping_tests.pyc
 %%PYPY_LIBDIR%%/test/math_testcases.txt
+%%PYPY_LIBDIR%%/test/nokia.pem
 %%PYPY_LIBDIR%%/test/nullcert.pem
 %%PYPY_LIBDIR%%/test/outstanding_bugs.py
 %%PYPY_LIBDIR%%/test/outstanding_bugs.pyc
@@ -2741,8 +2712,6 @@
 %%PYPY_LIBDIR%%/test/randv3.pck
 %%PYPY_LIBDIR%%/test/re_tests.py
 %%PYPY_LIBDIR%%/test/re_tests.pyc
-%%PYPY_LIBDIR%%/test/regex_tests.py
-%%PYPY_LIBDIR%%/test/regex_tests.pyc
 %%PYPY_LIBDIR%%/test/regrtest.py
 %%PYPY_LIBDIR%%/test/regrtest.pyc
 %%PYPY_LIBDIR%%/test/relimport.py
@@ -2765,7 +2734,6 @@
 %%PYPY_LIBDIR%%/test/string_tests.pyc
 %%PYPY_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
 %%PYPY_LIBDIR%%/test/subprocessdata/sigchild_ignore.pyc
-%%PYPY_LIBDIR%%/test/svn_python_org_https_cert.pem
 %%PYPY_LIBDIR%%/test/test_MimeWriter.py
 %%PYPY_LIBDIR%%/test/test_MimeWriter.pyc
 %%PYPY_LIBDIR%%/test/test_SimpleHTTPServer.py
@@ -2878,6 +2846,8 @@
 %%PYPY_LIBDIR%%/test/test_codecencodings_cn.pyc
 %%PYPY_LIBDIR%%/test/test_codecencodings_hk.py
 %%PYPY_LIBDIR%%/test/test_codecencodings_hk.pyc
+%%PYPY_LIBDIR%%/test/test_codecencodings_iso2022.py
+%%PYPY_LIBDIR%%/test/test_codecencodings_iso2022.pyc
 %%PYPY_LIBDIR%%/test/test_codecencodings_jp.py
 %%PYPY_LIBDIR%%/test/test_codecencodings_jp.pyc
 %%PYPY_LIBDIR%%/test/test_codecencodings_kr.py
@@ -3299,6 +3269,8 @@
 %%PYPY_LIBDIR%%/test/test_pwd.pyc
 %%PYPY_LIBDIR%%/test/test_py3kwarn.py
 %%PYPY_LIBDIR%%/test/test_py3kwarn.pyc
+%%PYPY_LIBDIR%%/test/test_py_compile.py
+%%PYPY_LIBDIR%%/test/test_py_compile.pyc
 %%PYPY_LIBDIR%%/test/test_pyclbr.py
 %%PYPY_LIBDIR%%/test/test_pyclbr.pyc
 %%PYPY_LIBDIR%%/test/test_pydoc.py
@@ -3803,9 +3775,6 @@
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/pypy_test
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy/core
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/distributed/test
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/distributed/demo
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/distributed
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/test
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/_ctypes

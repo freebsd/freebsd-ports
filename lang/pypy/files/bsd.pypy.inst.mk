@@ -18,7 +18,7 @@ PYPY_CLI_TRANSLATE_ARGS?=	--backend=cli
 PYPY_CLI_OPT?=			2
 PYPY_CLI_OBJSPACE_ARGS?=
 
-PYPY_JVM_NAME?=                 pypy-jvm
-PYPY_JVM_TRANSLATE_ARGS?=       --backend=jvm
-PYPY_JVM_OPT?=                  2
+PYPY_JVM_NAME?=			pypy-jvm
+PYPY_JVM_TRANSLATE_ARGS?=	--backend=jvm
+PYPY_JVM_OPT?=			2
 PYPY_JVM_OBJSPACE_ARGS?=

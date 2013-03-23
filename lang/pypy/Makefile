@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	1.9
-PORTREVISION=	2
+DISTVERSION=	2.0-beta1
 CATEGORIES=	lang python java
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
 DISTNAME=	release-${DISTVERSION}
 DIST_SUBDIR=	pypy
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	PyPy is a fast, compliant implementation of the Python language
+COMMENT=	Fast, compliant implementation of the Python language
 
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
@@ -18,18 +17,30 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		ffi:${PORTSDIR}/devel/libffi
 
-OPTIONS_DEFINE=	SANDBOX
+CLI_DESC=	(BROKEN) Translate a CLI (.NET) based pypy
+JVM_DESC=	(BROKEN) Translate a JVM (Java) based pypy
+PYPY_DESC=	Use pypy to translate (faster but uses more memory)
 SANDBOX_DESC=	Translate a sandboxed pypy
+.if !defined(PYPY_INST)
+OPTIONS_DEFINE+=	CLI JVM SANDBOX
+.endif
+LOCALBASE?=	/usr/local
+.if exists(${LOCALBASE}/bin/pypy)
+OPTIONS_DEFINE+=	PYPY
+.endif
 
+ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
+MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-341e1e3821ff
+WRKSRC=		${WRKDIR}/pypy-pypy-fcb6b056f00e
 
-PYPY_VER=	${DISTVERSION}
+PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
 PYPY_LIBDIR=	lib/pypy${PYPY_VER}
 PYPY_INCLUDEDIR=	include/pypy${PYPY_VER}
@@ -38,18 +49,24 @@ PYPYDIRS=	${PYPY_INCLUDEDIR} ${PYPY_LIBDIR}
 PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 		PYPY_INCLUDEDIR=${PYPY_INCLUDEDIR}
 
-MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
-.if exists(/usr/bin/clang)
-MAKE_ARGS+=	CC=clang
-MAKE_JOBS_SAFE=	yes
+MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
+		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
+
+.include <bsd.port.options.mk>
+.include "${MASTERDIR}/files/bsd.pypy.inst.mk"
+
+.if ${OSVERSION} < 1000024 || ( ${ARCH} != "i386" && ${ARCH} != "amd64" )
+.if ${CC:T} == cc && ( exists(/usr/bin/clang) || exists(${LOCALBASE}/clang) )
+CC=		clang
+.else
+USE_GCC=	yes
+.endif
 .endif
 
-# XXX !.include <bsd.port.pre.mk> as USE_* need to be set prior
-.include <bsd.port.options.mk>
-.include "${.CURDIR}/files/bsd.pypy.inst.mk"
-
-.if defined(PACKAGE_BUILDING)
-MANUAL_PACKAGE_BUILD=	fails to finish compilation on pointyhat, reason unknown
+.if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)
+PYTHON_CMD?=	${LOCALBASE}/bin/pypy
+.else
+USE_PYTHON_BUILD=	-2.7
 .endif
 
 # List of PyPy instances
@@ -60,13 +77,26 @@ PYPY_INST=	DEFAULT
 PYPY_INST+=	SANDBOX
 .endif
 
+.if ${PORT_OPTIONS:MCLI}
+PYPY_INST+=	CLI
+.endif
+
+.if ${PORT_OPTIONS:MJVM}
+PYPY_INST+=	JVM
+.endif
+
 .endif # !defined(PYPY_INST)
 
-PYPY_NAMES=
+MAKE_ENV+=	PYPY_INST="${PYPY_INST}"
+
 .for inst in ${PYPY_INST}
 
 PYPY_NAMES+=	${PYPY_${inst}_NAME}
 PYPY_PRIMARY?=	${PYPY_${inst}_NAME}
+MAKE_ENV+=	PYPY_${inst}_NAME="${PYPY_${inst}_NAME}" \
+		PYPY_${inst}_OBJSPACE_ARGS="${PYPY_${inst}_OBJSPACE_ARGS}" \
+		PYPY_${inst}_OPT="${PYPY_${inst}_OPT}" \
+		PYPY_${inst}_TRANSLATE_ARGS="${PYPY_${inst}_TRANSLATE_ARGS}"
 
 # Check if the boehm GC will be used
 .if ${PYPY_${inst}_OPT} == 0 || ${PYPY_${inst}_OPT} == 1 || ${PYPY_${inst}_OPT} == size
@@ -85,26 +115,8 @@ WITH_JVM=	yes
 
 .endfor # inst in ${PYPY_INST}
 
-# Use pypy if it is installed, else use python (to translate)
-.if !defined(PY)
-.if !defined(PYPY)
-.if ${PYPY_PRIMARY} == pypy
-PYPY!=		${WHICH} ${PYPY_PRIMARY} 2> /dev/null || true
-.else
-PYPY!=		${WHICH} ${PYPY_PRIMARY} 2> /dev/null || ${WHICH} pypy 2> /dev/null || true
-.endif
-.endif # !defined(PYPY)
-
-.if exists(${PYPY})
-PY=		${PYPY}
-.else
-USE_PYTHON_BUILD=	2.5+
-PY=		${PYTHON_CMD}
-.endif
-.endif # !defined(PY)
-
 .if defined(WITH_BOEHM_GC)
-LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
 .endif
 
 .if defined(WITH_CLI)
@@ -117,7 +129,7 @@ BROKEN=		CLI backend broken, unsupported upstream
 
 .if defined(WITH_JVM)
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.5+
 ONLY_FOR_ARCHS=	i386 powerpc
 ONLY_FOR_ARCHS_REASON=	only translates on 32bit systems
 BROKEN=		JVM backend broken, partially supported upstream
@@ -149,19 +161,60 @@ PYPY_${inst}_OPT=	2
 .endfor # inst in ${PYPY_INST}
 .endif # !defined(PYPY_JITTABLE)
 
-pre-fetch:
-	@${ECHO} "PyPy requires a large amount of free RAM and time to translate and compile."
-	@${ECHO}
-	@${ECHO} "To translate, PyPy requires on 32bit 3G (min 2G) free RAM and on 64bit"
-	@${ECHO} "6G (min 4G) free RAM.  Also, to compile, PyPy on amd64 gcc requires an"
-	@${ECHO} "extra 4G however clang only requires 400M (CC=clang) but clang is slower"
-	@${ECHO} "in compiling PyPy."
-	@${ECHO}
-	@${ECHO} "If memory is in short supply consider using a lower optimisation level"
-	@${ECHO} "(e.g. PYPY_DEFAULT_OPT=2) however that makes PyPy much slower.  Also,"
-	@${ECHO} "consider forcing the build to use python (-DPYPY) however that makes the"
-	@${ECHO} "build much slower."
-	@${ECHO}
+# Translating requires a large amount of memory, with a two by two matrix
+# requirement (bitness vs PYTHON_CMD).  A more refined matrix is possible based
+# on optimisation level however this assumes "jit" is the preferred optimisation
+# level.
+#
+.if ${PYPY_ARCH:M*64}
+.  if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
+# 64bit + pypy = 5.5 GiB
+PYPY_TRANSLATION_MEMORY=	5582872
+.  else
+# 64bit + python = 4.3 GiB
+PYPY_TRANSLATION_MEMORY=	4349620
+.  endif
+# 64bit system += 366 MiB
+PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 374784))
+.else
+.  if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
+# 32bit + pypy = 2.4GiB
+PYPY_TRANSLATION_MEMORY=	2423888
+.  else
+# 32bit + python = 2.1 GiB
+PYPY_TRANSLATION_MEMORY=	2111388
+.  endif
+# 32bit system += 168 MiB
+PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 171787))
+.endif
+
+.if !defined(DISABLE_MAKE_JOBS) && ${PYPY_PRIMARY} != ${PYPY_NAMES}
+PYPY_MEMORY_MULTIPLY=	`echo ${PYPY_NAMES} | wc -w`
+.else
+PYPY_MEMORY_MULTIPLY=	1
+.endif
+
+PYPY_IGNORE_MEMORY=	Memory checks non-fatal until revised figures are obtained.
+PYPY_MEM_WARNING=	\
+	${ECHO} "warn: this system has insufficient memory, expected at least $$((${PYPY_MINIMUM_MEMORY} / 1024 * ${PYPY_MEMORY_MULTIPLY} + 1))MiB RAM"
+.if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
+PYPY_MEM_WARNING+=	;\
+	${ECHO} "warn: pypy is being used for translation, consider using cpython as it uses less memory"
+.endif
+.if ${PYPY_MEMORY_MULTIPLY} != 1
+PYPY_MEM_WARNING+=	;\
+	${ECHO} "warn: consider using -DDISABLE_MAKE_JOBS to serialise builds and to conserve memory"
+.endif
+.if !defined(PYPY_IGNORE_MEMORY)
+PYPY_MEM_WARNING+=	;\
+	${ECHO} "err: memory warnings are terminal, to overwrite this error define -DPYPY_IGNORE_MEMORY and try again"; \
+	exit 1
+.else
+PYPY_MEM_WARNING+=	;\
+	${ECHO} "warn: THIS SYSTEM MAY END UP SWAP THRASHING AD INFINITUM"
+.endif
+
+usage:
 	@${ECHO} "PyPy supports a large number of parameters and customisations.  This port"
 	@${ECHO} "supports building multiple instances of PyPy, for example:"
 	@${ECHO} "PYPY_INST=	SANDBOX CUSTOM"
@@ -174,26 +227,14 @@ pre-fetch:
 	@${ECHO} "See for a list of parameters:"
 	@${ECHO} "	http://readthedocs.org/docs/pypy/latest/config/index.html"
 	@${ECHO} "See for predefined instances:"
-	@${ECHO} "	${.CURDIR}/files/bsd.pypy.inst.mk"
+	@${ECHO} "	${FILESDIR}/bsd.pypy.inst.mk"
 	@${ECHO}
 	@${ECHO} "On a fast machine PyPy takes around 45 minutes to translate and compile,"
 	@${ECHO} "however an average machine takes in excess of 4 hours, per instance."
-.if !defined(PYPY_IGNORE_MEM) && (${PYPY_ARCH} == "x86_32" || ${PYPY_ARCH} == "ppc_32")
-	@if [ $$((`sysctl -n hw.physmem` / 1024 / 1024)) -le 2000 ]; then \
-		${ECHO}; \
-		${ECHO} "err: this system has insufficient memory, expected at least 2G RAM",; \
-		${ECHO} "err: to overwrite this error define -DPYPY_IGNORE_MEM and try again"; \
-		exit 1; \
-	fi
-.elif !defined(PYPY_IGNORE_MEM)
-	@if [ $$((`sysctl -n hw.physmem` / 1024 / 1024)) -le 4000 ]; then \
-		${ECHO}; \
-		${ECHO} "err: this system has insufficient memory, expected at least 4G RAM",; \
-		${ECHO} "err: to overwrite this error define -DPYPY_IGNORE_MEM and try again"; \
-		exit 1; \
-	fi
-.endif
-	@sleep 1
+
+pre-fetch:
+	@${ECHO} Please see http://wiki.FreeBSD.org/PyPy for more details on the port or 'make usage' for a summary
+	@if [ $$((`sysctl -n hw.physmem` / 1024)) -le $$((${PYPY_MINIMUM_MEMORY} * ${PYPY_MEMORY_MULTIPLY})) ]; then ${PYPY_MEM_WARNING}; fi
 
 post-extract:
 	${MKDIR} ${WRKSRC}/lib
@@ -210,26 +251,6 @@ do-configure:
 		${FILESDIR}/use.pypy > ${WRKDIR}/use.pypy
 	${CP} ${WRKDIR}/use.pypy ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.pypy ${PKGDEINSTALL}
-	${ECHO} "all: ${PYPY_NAMES}" > ${WRKDIR}/Makefile
-	${ECHO} >> ${WRKDIR}/Makefile
-.for inst in ${PYPY_INST}
-	${ECHO} "${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c" >> ${WRKDIR}/Makefile
-	${ECHO} "	${CP} build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c ${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} >> ${WRKDIR}/Makefile
-	${ECHO} ".done_translate_${PYPY_${inst}_NAME}:" >> ${WRKDIR}/Makefile
-	${ECHO} "	${RM} -rf build_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} "	${MKDIR} build_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} "	(cd ${WRKSRC}/pypy/translator/goal; \
-				${SETENV} TMPDIR=${WRKDIR}/build_${PYPY_${inst}_NAME} \
-				${PY} translate.py --source ${PYPY_${inst}_TRANSLATE_ARGS} -O${PYPY_${inst}_OPT} \
-					targetpypystandalone.py ${PYPY_${inst}_OBJSPACE_ARGS} )" >> ${WRKDIR}/Makefile
-	${ECHO} "	${TOUCH} .done_translate_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} >> ${WRKDIR}/Makefile
-	${ECHO} "build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c: .done_translate_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} "	${REINPLACE_CMD} -e 's|^%.o: %.c\$$\$$|.c.o:|g' build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/Makefile" >> ${WRKDIR}/Makefile
-	${ECHO} "	${MAKE} -C build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1 pypy-c" >> ${WRKDIR}/Makefile
-	${ECHO} >> ${WRKDIR}/Makefile
-.endfor
 
 post-build:
 	-${FIND} ${WRKSRC}/${PYPY_LIBDIR} -type d | \
@@ -245,7 +266,7 @@ do-install:
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}${PYPY_VER}
-	${ECHO} bin/${name}${DISTVERSION} >> ${TMPPLIST}
+	${ECHO} bin/${name}${PYPY_VER} >> ${TMPPLIST}
 .endfor
 
 post-install:
@@ -254,7 +275,7 @@ post-install:
 test: patch
 .for inst in ${PYPY_INST}
 	@${WHICH} ${PYPY_${inst}_NAME} > /dev/null 2>&1 || (${ECHO} "Unable to find ${PYPY_${inst}_NAME}, please install port first!"; exit 1)
-	(${CD} ${PYPY_LIBDIR}; ${PYPY_${inst}_NAME} ../../pypy/test_all.py)
+	(cd ${WRKSRC}; ${PYPY_${inst}_NAME} pypy/test_all.py ${PYPY_LIBDIR}/lib_pypy/pypy_test pypy/module)
 .endfor
 
 pkg-plist: build

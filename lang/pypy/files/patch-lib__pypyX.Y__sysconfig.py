@@ -1,5 +1,5 @@
---- lib/pypy1.9/sysconfig.py.orig	2012-07-15 09:57:14.000000000 +0200
-+++ lib/pypy1.9/sysconfig.py	2012-07-15 10:03:25.000000000 +0200
+--- lib/pypy2.0/sysconfig.py.orig	2012-07-15 09:57:14.000000000 +0200
++++ lib/pypy2.0/sysconfig.py	2012-07-15 10:03:25.000000000 +0200
 @@ -27,12 +27,12 @@
          'data'   : '{base}',
          },
@@ -23,8 +23,8 @@
                  'scripts', 'data')
  _PY_VERSION = sys.version.split()[0]
  _PY_VERSION_SHORT = sys.version[:3]
-+_PYPY_VERSION = sys.version[-6:-1]
-+_PYPY_VERSION_SHORT = sys.version[-6:-3]
++_PYPY_VERSION = sys.version.rsplit(' ', 1)[-1][:-1]
++_PYPY_VERSION_SHORT = _PYPY_VERSION[:3]
  _PY_VERSION_SHORT_NO_DOT = _PY_VERSION[0] + _PY_VERSION[2]
  _PREFIX = os.path.normpath(sys.prefix)
  _EXEC_PREFIX = os.path.normpath(sys.exec_prefix)
