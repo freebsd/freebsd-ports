@@ -1,37 +1,39 @@
-# New ports collection makefile for:	comclear
-# Date created:		26 November 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	comclear
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://www.neuro-tech.net/files/
+MASTER_SITES=	http://lukereeves.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A history cleaner for Netscape Navigator and Communicator
+COMMENT=	History cleaner for Netscape Navigator and Communicator
 
-WANT_GNOME=	yes
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	GTK1 DOCS
+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake14 autoconf213
+CONFIGURE_ARGS=	--disable-gtktest
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
+PLIST_FILES=	bin/comclear
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.else
+CONFIGURE_ENV+=	ac_cv_path_GTK_CONFIG=no
 .endif
 
-# Do not install docs by default, see the ifdef'd post-install below.
-post-configure:
-		${REINPLACE_CMD} 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} comclear ${PREFIX}/bin)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 
-.if		!defined(NOPORTDOCS)
-post-install:
-		cd ${WRKSRC} && ${GMAKE} install-docDATA
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
