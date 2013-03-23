@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dblib/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dblib/dblib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dblib/dblib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dblib/libpdblib.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dblib
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
