@@ -146,6 +146,10 @@ CONFIGURE_ARGS+=--enable-maintainer-mode --enable-debug
 CFLAGS+=	-g
 .endif
 
+.if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
+CFLAGS+= -DHAS_ORGANIZATION_NAME
+.endif
+
 .if ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-all-static
 PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
@@ -193,4 +197,7 @@ post-patch:
 	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
 	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
+.endif
+.if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
+	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
 .endif

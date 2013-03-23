@@ -1,7 +1,16 @@
-diff -ruN subversion/svn/util.c subversion/svn/util.c
---- subversion/svn/util.c	2011-06-28 21:10:44.000000000 +0400
-+++ subversion/svn/util.c	2011-09-07 21:47:19.000000000 +0400
-@@ -682,6 +682,67 @@
+--- subversion/svn/util.c.orig	2011-10-20 07:01:47.000000000 -0700
++++ subversion/svn/util.c	2013-03-12 11:45:35.754374859 -0700
+@@ -63,6 +63,9 @@
+ #include "private/svn_opt_private.h"
+ #include "private/svn_client_private.h"
+ #include "private/svn_string_private.h"
++#ifdef HAS_ORGANIZATION_NAME
++#include "freebsd-organization.h"
++#endif
+ 
+ 
+ 
+@@ -682,6 +685,68 @@
  }
  
  
@@ -20,6 +29,7 @@ diff -ruN subversion/svn/util.c subversion/svn/util.c
 +  "Obtained from:",
 +  "MFC after:",
 +  "Security:",
++  "Sponsored by:"
 +};
 +
 +void
@@ -69,7 +79,7 @@ diff -ruN subversion/svn/util.c subversion/svn/util.c
  #define EDITOR_EOF_PREFIX  _("--This line, and those below, will be ignored--")
  
  svn_error_t *
-@@ -697,8 +758,26 @@
+@@ -697,8 +762,32 @@
  
    /* Set default message.  */
    default_msg = svn_stringbuf_create(APR_EOL_STR, pool);
@@ -81,6 +91,11 @@ diff -ruN subversion/svn/util.c subversion/svn/util.c
 +  svn_stringbuf_appendcstr(default_msg, "Obtained from:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "MFC after:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Security:\t" APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "Sponsored by:\t"
++#ifdef HAS_ORGANIZATION_NAME
++      ORGANIZATION_NAME
++#endif
++      APR_EOL_STR);
    svn_stringbuf_appendcstr(default_msg, EDITOR_EOF_PREFIX);
 -  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
@@ -92,12 +107,13 @@ diff -ruN subversion/svn/util.c subversion/svn/util.c
 +  svn_stringbuf_appendcstr(default_msg, "> Obtained from: If the change is from a third party." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> MFC after:     N [day[s]|week[s]|month[s]].  Request a reminder email." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Security:      Vulnerability reference (one per line) or description." APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "> Sponsored by:  If the change was sponsored by an organization." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Empty fields above will be automatically removed." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
  
    *tmp_file = NULL;
    if (lmb->message)
-@@ -710,6 +789,7 @@
+@@ -710,6 +799,7 @@
           that follows it.  */
        truncate_buffer_at_prefix(&(log_msg_buf->len), log_msg_buf->data,
                                  EDITOR_EOF_PREFIX);
@@ -105,7 +121,7 @@ diff -ruN subversion/svn/util.c subversion/svn/util.c
  
        /* Make a string from a stringbuf, sharing the data allocation. */
        log_msg_str->data = log_msg_buf->data;
-@@ -830,6 +910,13 @@
+@@ -830,6 +920,13 @@
        if (message)
          truncate_buffer_at_prefix(&message->len, message->data,
                                    EDITOR_EOF_PREFIX);
