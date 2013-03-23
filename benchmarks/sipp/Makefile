@@ -28,7 +28,7 @@ OPENSSL_DESC=	OpenSSL support (for digest auth and SIP over TLS)
 GSL_DESC=	GSL support (for statistical distributed pauses)
 PCAPPLAY_DESC=	RTP play support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSL}
 LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
