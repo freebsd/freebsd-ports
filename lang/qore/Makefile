@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qore
-PORTVERSION=	0.8.6.2
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	lang
 MASTER_SITES=	SF/qore/qore/${PORTVERSION}/
 
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=	pathfix
+USES=		pathfix
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
@@ -32,10 +31,7 @@ CONFIGURE_ARGS=	--disable-debug --disable-static --with-doxygen=no
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		qore.1
-
-# VERSION sub should always be the first three components of
-# PORTVERSION (x.y.z).  Adjust with :R accordingly.
-PLIST_SUB=	VERSION=${PORTVERSION:R}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
