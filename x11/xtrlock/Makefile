@@ -1,29 +1,40 @@
-# New ports collection makefile for:	xtrlock
-# Date created:		18 May 2004
-# Whom:			Alexey Mikhailov <karma@ez.pereslavl.ru>
-#
+# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xtrlock
-PORTVERSION=	2.0.14
+PORTVERSION=	2.2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/x/xtrlock/
-DISTNAME=	${PORTNAME}_2.0-${PORTVERSION:E}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Transparent Lock
 
-LICENSE=	GPLv2 # or higher
-LICENSE_FILE=	${WRKSRC}/debian/copyright
+LICENSE=	GPLv2 # (or later)
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.0
-MAKEFILE=	${FILESDIR}/Makefile
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lcrypt
 
 MAN1=		xtrlock.1
 PLIST_FILES=	bin/xtrlock
+
+post-extract:
+	@${LN} -sf xtrlock.man ${WRKSRC}/xtrlock.1
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|<crypt.h>|<unistd.h>| ; \
+		 s|<values.h>|<limits.h>|' ${WRKSRC}/xtrlock.c
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o xtrlock xtrlock.c ${LDFLAGS})
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xtrlock ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xtrlock.1 ${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
