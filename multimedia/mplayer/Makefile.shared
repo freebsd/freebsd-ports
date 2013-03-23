@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2012-07-21
+MPLAYER_SNAPSHOT_DATE=	2013-03-08
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -40,7 +40,11 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-alsa \
 		--disable-libbs2b \
 		--disable-mp3lib \
-		--enable-ass-internal
+		--enable-ass-internal \
+		--disable-libvorbis \
+		--disable-speex \
+		--disable-libopus \
+		--disable-libilbc
 
 WANT_GNOME=	yes
 WANT_SDL=	yes

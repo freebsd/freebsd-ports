@@ -1,6 +1,6 @@
---- configure.orig	2012-07-20 15:11:42.000000000 +0200
-+++ configure	2012-10-08 19:16:19.637797462 +0200
-@@ -645,7 +645,7 @@
+--- configure.orig	2013-03-03 11:29:18.000000000 +0100
++++ configure	2013-03-22 17:20:44.452775673 +0100
+@@ -668,7 +668,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1467,7 +1467,6 @@
+@@ -1534,7 +1534,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,7 @@
      ;;
  
    esac
-@@ -1515,7 +1514,7 @@
+@@ -1669,7 +1668,7 @@
    case "$(uname -m 2>&1)" in
        x86_64|amd64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -26,16 +26,15 @@
        alpha) host_arch=alpha ;;
        sun4*|sparc*) host_arch=sparc ;;
        parisc*|hppa*|9000*) host_arch=hppa ;;
-@@ -1555,7 +1554,7 @@
+@@ -1709,6 +1708,7 @@
  fi
  
  extra_cflags="-I. -Iffmpeg $extra_cflags"
--extra_ldflags="-lm $extra_ldflags"
-+extra_ldflags="-lm $extra_ldflags -L$_prefix/lib"
++extra_ldflags="$extra_ldflags -L$_prefix/lib"
  _timer=timer-linux.c
  _getch=getch2.c
  
-@@ -3601,7 +3600,7 @@
+@@ -3765,7 +3765,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -44,7 +43,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -3611,7 +3610,7 @@
+@@ -3775,7 +3775,7 @@
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -53,7 +52,25 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -6271,7 +6270,7 @@
+@@ -5904,7 +5904,7 @@
+ elif dragonfly ; then
+   default_cdrom_device="/dev/cd0"
+ elif freebsd ; then
+-  default_cdrom_device="/dev/acd0"
++  default_cdrom_device="/dev/cdrom"
+ elif openbsd ; then
+   default_cdrom_device="/dev/rcd0c"
+ elif sunos ; then
+@@ -5917,7 +5917,7 @@
+   default_cdrom_device="/dev/cdrom"
+ fi
+ 
+-if win32 || os2 || dragonfly || freebsd || openbsd || sunos || amigaos ; then
++if win32 || os2 || dragonfly || openbsd || sunos || amigaos ; then
+   default_dvd_device=$default_cdrom_device
+ elif darwin ; then
+   default_dvd_device="/dev/rdiskN"
+@@ -6470,7 +6470,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -62,7 +79,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -6733,6 +6732,16 @@
+@@ -6954,6 +6954,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -79,7 +96,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7125,7 +7134,7 @@
+@@ -7346,7 +7356,7 @@
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -88,7 +105,7 @@
  fi
  echores "$_mencoder"
  
-@@ -7463,8 +7472,11 @@
+@@ -7684,8 +7694,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -102,7 +119,7 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no &&
-@@ -8029,7 +8041,7 @@
+@@ -8271,7 +8284,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  

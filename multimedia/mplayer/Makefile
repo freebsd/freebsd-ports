@@ -3,67 +3,39 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
 
-OPTIONS=	DEBUG "Include debug symbols in mplayer's binaries" off
-OPTIONS+=	RTCPU "Allow runtime CPU detection" on
-OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	OTCHAIN "Use gcc 4.6+ toolchain on legacy systems" off
-OPTIONS+=	IPV6 "Include inet6 network support" on
-OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
-OPTIONS+=	X11XV "X11 video drivers: XV" on
-OPTIONS+=	X11DGA "X11 video drivers: DGA" on
-OPTIONS+=	X11GL "X11 video drivers: OpenGL" on
-OPTIONS+=	X11XIN "X11 video drivers: Xinerama" on
-OPTIONS+=	X11VM "X11 VidMode support" on
-OPTIONS+=	X11XVMC "Enable XvMC acceleration" off
-OPTIONS+=	VDPAU "Enable Nvidia VDPAU acceleration" off
-OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
-OPTIONS+=	SDL "Enable SDL video output" off
-OPTIONS+=	SKINS "Force dependency on mplayer-skins" on
-OPTIONS+=	RTC "Add support for kernel real time clock timing" off
-OPTIONS+=	ARTS "Enable KDE sound system support" off
-OPTIONS+=	ESOUND "Enable GNOME esound support" off
-OPTIONS+=	JACK "Enable JackIt audio server support" off
-OPTIONS+=	NAS "Enable NAS sound server support" off
-OPTIONS+=	OPENAL "Enable OpenAL sound support" off
-OPTIONS+=	PULSE "Enable PulseAudio" off
-OPTIONS+=	LIBUNGIF "Enable gif support" on
-OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
-OPTIONS+=	MNG "Enable MNG input support" off
-OPTIONS+=	AALIB "Enable aalib support" off
-OPTIONS+=	LIBCACA "Enable libcaca support" off
-OPTIONS+=	SVGALIB "Enable svgalib support" off
-OPTIONS+=	LIBDV "Enable libdv support" off
-OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
-OPTIONS+=	AMR_NB "AMR Narrow Band encoder (opencore)" off
-OPTIONS+=	AMR_WB "AMR Wide Band encoder (opencore)" off
-OPTIONS+=	GSM "GSM audio codec" off
-OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
-OPTIONS+=	SPEEX "Enable speex audio codec support" on
-OPTIONS+=	THEORA "Enable ogg theora video support" off
-OPTIONS+=	VPX "Enable VP8 video via libvpx" off
-OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
-.if !defined(PACKAGE_BUILDING)
-OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
-.endif
-OPTIONS+=	REALPLAYER "Enable real player plugin" off
-OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
-OPTIONS+=	SMB "Enable Samba input support" off
-OPTIONS+=	BLURAY "Build with libbluray support" off
-OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
-OPTIONS+=	LIRC "Enable lirc support" off
-OPTIONS+=	LIBCDIO "Enable libcdio support" off
-OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
-OPTIONS+=	LIBLZO "Enable external liblzo library" off
-OPTIONS+=	JOYSTICK "Enable joystick support" off
-OPTIONS+=	V4L "Enable Video4Linux TV support" off
-OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
-OPTIONS+=	ENCA "Enable enca charset detection" off
+OPTIONS_DEFINE= AALIB AMR_NB AMR_WB ARTS BLURAY CACA DEBUG DV \
+		ENCA ESOUND FRIBIDI GIF GSM GUI IPV6 JACK \
+		JOYSTICK LADSPA LIBMNG LIRC LIVEMEDIA LZO MAD \
+		NAS OCFLAGS OPENAL OPENGL OPENJPEG OTCHAIN \
+		PULSEAUDIO REAL RTC RTCPU RTMP SCHROEDINGER SDL \
+		SKINS SMB SVGALIB V4L VDPAU WIN32 \
+		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
+
+OPTIONS_RADIO=	RGCD
+OPTIONS_RADIO_RGCD=	CDIO CDPARANOIA
+
+OPTIONS_DEFAULT=GUI IPV6 OCFLAGS OPENGL RTCPU SKINS \
+		WIN32 X11 X11DGA X11VM XINERAMA XVIDEO
+
+BLURAY_DESC?=	BluRay support
+ENCA_DESC?=	Charset conversion via enca
+JOYSTICK_DESC?=	Joystick support
+LZO_DESC?=	External liblzo support
+OCFLAGS_DESC?=	Use optimized compiler flags
+OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
+REAL_DESC?=	Enable realplayer plugin
+RTC_DESC?=	Add support for kernel real time clock
+RTCPU_DESC?=	Use runtime CPU detection
+SKINS_DESC?=	Install skins for GUI
+WIN32_DESC?=	Install win32 binary codecs
+X11DGA_DESC?=	X11 DGA video driver support
+X11VM_DESC?=	X11 VidMode support
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -82,13 +54,15 @@ CONFIGURE_ARGS+=	--disable-directfb \
 			--disable-faac \
 			--disable-faad \
 			--disable-libdca \
+			--disable-toolame \
 			--disable-twolame \
 			--disable-x264 \
 			--disable-xvid \
 			--disable-libdirac-lavc \
 			--disable-mencoder \
 			--disable-mpg123 \
-			--disable-musepack
+			--disable-musepack \
+			--disable-theora
 
 # Fix a problem with unknown assembly opcodes in embedded ffmpeg
 .if ${ARCH} == "ppc"
@@ -97,11 +71,11 @@ CONFIGURE_ARGS+=	--disable-asm
 
 .include "${.CURDIR}/Makefile.options"
 
-.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 MLINKS+=	mplayer.1 gmplayer.1
 PLIST_SUB+=	GMPLAYER=""
 DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
-.if !defined(WITHOUT_SKINS)
+.if ${PORT_OPTIONS:MSKINS}
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/skins:${PORTSDIR}/multimedia/mplayer-skins
 .endif
 
@@ -114,52 +88,52 @@ WITH_LANG=	""
 
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
-.endif #WITHOUT_GUI
+.endif #GUI && X11
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
-.if !defined(WITHOUT_X11XV)
+.if ${PORT_OPTIONS:MXVIDEO}
 USE_XORG+=	xv
 .else
 CONFIGURE_ARGS+=--disable-xv
 .endif
-.if !defined(WITHOUT_X11DGA)
+.if ${PORT_OPTIONS:MX11DGA}
 USE_XORG+=	xxf86dga
 .else
 CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
 .endif
-.if !defined(WITHOUT_X11GL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=	glproto
 LIB_DEPENDS+=	GL:${PORTSDIR}/graphics/libGL
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif
-.if !defined(WITHOUT_X11XIN)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama xineramaproto
 .else
 CONFIGURE_ARGS+=--disable-xinerama
 .endif
-.if !defined(WITHOUT_X11VM)
+.if ${PORT_OPTIONS:MX11VM}
 USE_XORG+=	xxf86vm
 .else
 CONFIGURE_ARGS+=--disable-vm
 .endif
-.if defined(WITH_X11XVMC)
+.if ${PORT_OPTIONS:MXVMC}
 USE_XORG+=	xvmc
 CONFIGURE_ARGS+=--enable-xvmc --with-xvmclib=XvMCW
 .endif
-.else				#WITHOUT_X11
+.else	#X11
 CONFIGURE_ARGS+=--disable-x11 \
 		--disable-fontconfig
 .endif
 
-.if defined(WITH_VDPAU)
+.if ${PORT_OPTIONS:MVDPAU}
 LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
-.if defined(WITH_RTC)
+.if ${PORT_OPTIONS:MRTC}
 BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 CONFIGURE_ARGS+=	--enable-rtc
@@ -167,45 +141,43 @@ CONFIGURE_ARGS+=	--enable-rtc
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=		artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
-.if defined(WITH_LIBCACA)
+.if ${PORT_OPTIONS:MCACA}
 LIB_DEPENDS+=		caca:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=		lirc_client:${PORTSDIR}/comms/lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
-WITH_AALIB=	yes
-.undef(WITHOUT_AALIB)
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if defined(WITH_SVGALIB)
+.if ${PORT_OPTIONS:MSVGALIB}
 LIB_DEPENDS+=		vga:${PORTSDIR}/graphics/svgalib
 .else
 CONFIGURE_ARGS+=	--disable-svga
 .endif
 
-.if defined(WITH_AALIB)
+.if ${PORT_OPTIONS:MAALIB} || ${PORT_OPTIONS:MSDL}
 LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
 .else
 CONFIGURE_ARGS+=	--disable-aa
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
@@ -217,14 +189,14 @@ DEFAULT_KERN_HZ=${WITH_KERN_HZ}
 DEFAULT_KERN_HZ=1024
 .endif
 
-.if defined(WITH_JOYSTICK)
+.if ${PORT_OPTIONS:MJOYSTICK}
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 CONFIGURE_ARGS+=--enable-joystick
 .else
 CONFIGURE_ARGS+=--disable-joystick
 .endif
 
-.if defined(WITH_ENCA)
+.if ${PORT_OPTIONS:MENCA}
 LIB_DEPENDS+=		enca:${PORTSDIR}/converters/enca
 .else
 CONFIGURE_ARGS+=	--disable-enca
@@ -234,14 +206,17 @@ pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
-	@${ECHO_MSG} "OPTIONS framework. You might want to check Makefile.options"
-	@${ECHO_MSG} "in order to learn more about them."
+	@${ECHO_MSG} "OPTIONS framework. At the moment, their defaults are:"
+	@${ECHO_MSG} "WITH_LANG=<LanguageCode>"
+	@${ECHO_MSG} "WITH_KERN_HZ=1024"
+	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=/dev/cd0"
+	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=/dev/cd0"
 
-.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
-	@${ECHO_MSG} "If you want to use the GUI, you can either install"
+.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
+	@${ECHO_MSG} "If you want to use the GUI, you can use the skins from"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
-	@${ECHO_MSG} "or download official skin collections from"
-	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
+	@${ECHO_MSG} "or download them from"
+	@${ECHO_MSG} "http://www.mplayerhq.hu/"
 .endif
 
 post-patch:
@@ -269,7 +244,7 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
-.if defined(WITH_RTC)
+.if ${PORT_OPTIONS:MRTC}
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
@@ -283,7 +258,7 @@ post-install:
 .for conf in ${CONFFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}/examples/etc
 .endfor
-.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
 	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${LOCALBASE}/share/pixmaps/mplayer.png
 .endif

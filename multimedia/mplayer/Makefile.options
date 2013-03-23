@@ -14,14 +14,12 @@
 # the variable to make during build, e.g. make WITH_DVD_DEVICE=/dev/cd0
 #
 # WITH_DVD_DEVICE=/path/to/desired/device
-# default 5.x: /dev/acd0
-# default 4.x: /dev/acd0c
+# default: /dev/cd0
 # This option changes the default device where mplayer looks for
 # a DVD medium
 #
 # WITH_CDROM_DEVICE=/path/to/desired/device
-# default 5.x: /dev/acd0
-# default 4.x: /dev/acd0c
+# default: /dev/cd0
 # This option changes the default cdrom device, maybe useful for VCDs
 #
 # WITH_LANG=<your choice>
@@ -39,24 +37,24 @@ CONFIGURE_ARGS+=--language=${WITH_LANG}
 
 #On i386, gcc runs out of general purpose registers when
 #trying to compile a debug version with the default flags.
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 .if ${ARCH} == "i386"
 DEBUG_FLAGS=	-g -O -fomit-frame-pointer
 .endif
 .else
-.if defined(WITHOUT_OCFLAGS)
-CFLAGS+=	-O -fomit-frame-pointer
-.else
+.if ${PORT_OPTIONS:MOCFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
-.endif
-.endif #WITH_DEBUG
+.else
+CFLAGS+=	-O -fomit-frame-pointer
+.endif #OCFLAGS
+.endif #DEBUG
 
 #Supported architectures for clang
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 MPLAYER_CLANG_SUPPORTED_ARCH=	yes
 .endif
 
-.if !defined(WITHOUT_RTCPU)
+.if ${PORT_OPTIONS:MRTCPU}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
@@ -70,8 +68,9 @@ WITH_BASE_CLANG=yes
 CC=		clang
 CXX=		clang++
 CPP=		clang-cpp
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 .else
-.if defined(WITH_OTCHAIN)
+.if ${PORT_OPTIONS:MOTCHAIN}
 USE_GCC?=	4.6+
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 .else
@@ -85,61 +84,55 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-inet6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
+.else
+CONFIGURE_ARGS+=	--disable-inet6
 .endif
 
-.if !defined(WITHOUT_LIBUNGIF)
+.if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=		gif:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if defined(WITH_OPENJPEG)
+.if ${PORT_OPTIONS:MOPENJPEG}
 LIB_DEPENDS+=		openjpeg:${PORTSDIR}/graphics/openjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libopenjpeg
 .endif
 
-.if defined(WITH_MAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=		mad:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
-.if defined(WITH_LIBDV)
+.if ${PORT_OPTIONS:MDV}
 LIB_DEPENDS+=		dv:${PORTSDIR}/multimedia/libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
-.if defined(WITH_THEORA)
+.if ${PORT_OPTIONS:MTHEORA}
 LIB_DEPENDS+=		theora:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
-.if defined(WITH_VPX)
+.if ${PORT_OPTIONS:MVPX}
 LIB_DEPENDS+=		vpx:${PORTSDIR}/multimedia/libvpx
 .else
 CONFIGURE_ARGS+=	--disable-libvpx-lavc
 .endif
 
-.if defined(WITH_SCHROEDINGER)
+.if ${PORT_OPTIONS:MSCHROEDINGER}
 LIB_DEPENDS+=		schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 .else
 CONFIGURE_ARGS+=	--disable-libschroedinger-lavc
 .endif
 
-.if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=		speex:${PORTSDIR}/audio/speex
-.else
-CONFIGURE_ARGS+=	--disable-speex
-.endif
-
-.if defined(WITH_LIVEMEDIA)
+.if ${PORT_OPTIONS:MLIVEMEDIA}
 CONFIGURE_ARGS+=	--enable-live
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 CFLAGS+=		-I${LOCALBASE}/live/liveMedia/include \
@@ -159,67 +152,67 @@ LDFLAGS+=		-L${LOCALBASE}/live/liveMedia \
 CONFIGURE_ARGS+=	--disable-live
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if defined(WITH_NAS)
+.if ${PORT_OPTIONS:MNAS}
 LIB_DEPENDS+=		audio:${PORTSDIR}/audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas
 .endif
 
-.if defined(WITH_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	soft
 .else
 CONFIGURE_ARGS+=	--disable-openal
 .endif
 
-.if defined(WITH_PULSE)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=		pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
-.if defined(WITH_BLURAY)
+.if ${PORT_OPTIONS:MBLURAY}
 LIB_DEPENDS+=		bluray:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
 .endif
 
-.if defined(WITH_SMB)
+.if ${PORT_OPTIONS:MSMB}
 LIB_DEPENDS+=		smbclient:${PORTSDIR}/net/samba-libsmbclient
 .else
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
-.if defined(WITH_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 LIB_DEPENDS+=		fribidi:${PORTSDIR}/converters/fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
-.if defined(WITH_CDPARANOIA)
+.if ${PORT_OPTIONS:MCDPARANOIA}
 LIB_DEPENDS+=		cdda_paranoia:${PORTSDIR}/audio/cdparanoia
 .else
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
-.if defined(WITH_LIBCDIO) && !defined(WITH_CDPARANOIA)
+.if ${PORT_OPTIONS:MCDIO}
 LIB_DEPENDS+=		cdio:${PORTSDIR}/sysutils/libcdio
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
 .endif
 
-.if defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 .else
 CONFIGURE_ARGS+=	--disable-ladspa
 .endif
 
-.if defined(WITH_LIBLZO)
+.if ${PORT_OPTIONS:MLZO}
 LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
 .else
 CONFIGURE_ARGS+=	--disable-liblzo
@@ -228,17 +221,17 @@ CONFIGURE_ARGS+=	--disable-liblzo
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-DEFAULT_DVD_DEVICE=/dev/acd0
+DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
-DEFAULT_CDROM_DEVICE=/dev/acd0
+DEFAULT_CDROM_DEVICE=/dev/cd0
 .endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MWIN32} && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
@@ -249,32 +242,32 @@ CONFIGURE_ARGS+=	--disable-win32dll \
 .endif
 .endif # ARCH == i386/amd64
 
-.if defined(WITH_REALPLAYER)
+.if ${PORT_OPTIONS:MREAL}
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else
 CONFIGURE_ARGS+=	--disable-real
 .endif
 
-.if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
+.if ${PORT_OPTIONS:MAMR_NB} || ${PORT_OPTIONS:MAMR_WB}
 LIB_DEPENDS+=		opencore-amrnb:${PORTSDIR}/audio/opencore-amr
 .endif
 
-.ifdef(WITHOUT_AMR_NB)
+.if !${PORT_OPTIONS:MAMR_NB}
 CONFIGURE_ARGS+=	--disable-libopencore_amrnb
 .endif
 
-.ifdef(WITHOUT_AMR_WB)
+.if !${PORT_OPTIONS:MAMR_WB}
 CONFIGURE_ARGS+=	--disable-libopencore_amrwb
 .endif
 
-.ifdef(WITH_GSM)
+.if ${PORT_OPTIONS:MGSM}
 LIB_DEPENDS+=		gsm:${PORTSDIR}/audio/gsm
 .else
 CONFIGURE_ARGS+=	--disable-libgsm
 .endif
 
-.if defined(WITH_V4L)
+.if ${PORT_OPTIONS:MV4L}
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=		v4l2.0:${PORTSDIR}/multimedia/libv4l
 CONFIGURE_ARGS+=	--enable-tv-v4l1 \
@@ -285,7 +278,7 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 			--disable-tv-v4l2
 .endif
 
-.if defined(WITH_LIBRTMP)
+.if ${PORT_OPTIONS:MRTMP}
 LIB_DEPENDS+=		rtmp:${PORTSDIR}/multimedia/rtmpdump
 CONFIGURE_ARGS+=	--enable-librtmp
 EXTRA_LIBS+=		-lrtmp
@@ -293,7 +286,7 @@ EXTRA_LIBS+=		-lrtmp
 CONFIGURE_ARGS+=	--disable-librtmp
 .endif
 
-.if defined(WITH_MNG)
+.if ${PORT_OPTIONS:MLIBMNG}
 LIB_DEPENDS+=		mng:${PORTSDIR}/graphics/libmng
 .else
 CONFIGURE_ARGS+=	--disable-mng
