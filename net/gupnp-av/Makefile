@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gupnp-av
-# Date created:		2009-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gupnp-av
-PORTVERSION=	0.10.3
+PORTVERSION=	0.12.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -16,15 +12,17 @@ COMMENT=	Helpers for audio/video applications using GUPnP
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	gobject-introspection>=0.9.5:${PORTSDIR}/devel/gobject-introspection \
-		gupnp>=0.17.0:${PORTSDIR}/net/gupnp
+		gupnp>=0.19.0:${PORTSDIR}/net/gupnp
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
-RUN_DEPENDS=	gupnp>=0.17.0:${PORTSDIR}/net/gupnp
+RUN_DEPENDS=	gupnp>=0.19.0:${PORTSDIR}/net/gupnp
 
 CONFIGURE_ARGS=	--enable-introspection=yes
+CONFIGURE_ENV=	VAPIGEN=""
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_XZ=		yes
+USES=		pathfix
 
 .include <bsd.port.mk>
