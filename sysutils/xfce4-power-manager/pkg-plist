@@ -186,7 +186,6 @@ share/icons/hicolor/48x48/status/xfpm-ups-100-charging.png
 share/icons/hicolor/48x48/status/xfpm-ups-100.png
 share/icons/hicolor/48x48/status/xfpm-ups-charged.png
 share/icons/hicolor/48x48/status/xfpm-ups-missing.png
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/actions/xfpm-hibernate.svg
 share/icons/hicolor/scalable/actions/xfpm-suspend.svg
 share/icons/hicolor/scalable/status/xfpm-ac-adapter.svg
@@ -346,5 +345,3 @@ share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
 @dirrmtry share/applications
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
