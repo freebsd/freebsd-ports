@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE

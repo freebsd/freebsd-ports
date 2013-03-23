@@ -59,6 +59,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/videobash.lua
 %%DATADIR%%/lua/website/vimeo.lua
 %%DATADIR%%/lua/website/wdrmaus.lua
+%%DATADIR%%/lua/website/wimp.lua
 %%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
 %%NSFW%%%%DATADIR%%/lua/website/xnxx.lua
 %%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
