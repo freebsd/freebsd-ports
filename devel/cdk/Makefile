@@ -41,13 +41,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) cdk-config|$(INSTALL_SCRIPT) cdk-config|g' \
 		${WRKSRC}/Makefile.in
 
-pre-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL} -d ${EXAMPLESDIR}
