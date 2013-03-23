@@ -77,6 +77,7 @@
     SUBDIR += fpc-dblib
     SUBDIR += fpc-gdbm
     SUBDIR += fpc-ibase
+    SUBDIR += fpc-fpindexer
     SUBDIR += fpc-mysql
     SUBDIR += fpc-odbc
     SUBDIR += fpc-oracle
