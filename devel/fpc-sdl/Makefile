@@ -1,8 +1,7 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTVERSION=	0
-PORTREVISION=	3
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-sdl
 

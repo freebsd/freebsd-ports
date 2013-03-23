@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fpc-base
-# Date created:				10 February 2004
-# Whom:				John Merryweather Cooper <coop9211@uidaho.edu>
-#
+# Created by:	John Merryweather Cooper <coop9211@uidaho.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	base
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	fpc-

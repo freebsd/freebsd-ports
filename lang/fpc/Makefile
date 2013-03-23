@@ -1,13 +1,9 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			28 November 2001
-# Whom: 				John Merryweather Cooper et al
-#
+# Created by:	John Merryweather Cooper et al
 # $FreeBSD$
-#
 
 PORTNAME=	fpc
-PORTVERSION=	2.6.0
-PORTREVISION?=	2
+PORTVERSION=	2.6.2
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -85,7 +81,6 @@ MAN1=	bin2obj.1 \
 	h2pas.1 \
 	h2paspp.1 \
 	makeskel.1 \
-	mkxmlrpc.1 \
 	plex.1 \
 	postw32.1 \
 	ppc386.1 \

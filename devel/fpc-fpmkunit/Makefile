@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-fpmkunit
-# Date created:				2006-09-11
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang

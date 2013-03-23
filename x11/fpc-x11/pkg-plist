@@ -1,9 +1,12 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/cursorfont.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/cursorfont.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/fontconfig.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/fontconfig.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/keysym.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/keysym.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpcursorfont.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpfontconfig.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpkeysym.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpx.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxatom.a
@@ -12,6 +15,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxf86dga.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxf86vmode.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxinerama.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxft.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxkb.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxkblib.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxlib.a
@@ -32,6 +36,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86dga.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86dga.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86vmode.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86vmode.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xft.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xft.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xinerama.o

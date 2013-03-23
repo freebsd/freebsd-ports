@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-gnome
-# Date created:		2006-06-22
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang

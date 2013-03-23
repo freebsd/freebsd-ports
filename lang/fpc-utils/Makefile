@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-utils
-# Date created: 			2006-07-12
-# Whom: 				Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	lang

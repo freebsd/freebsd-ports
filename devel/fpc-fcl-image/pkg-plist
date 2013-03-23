@@ -1,6 +1,7 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimgcmn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimage.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimggauss.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pngcomn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadgif.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadpng.ppu
@@ -42,6 +43,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/ftfont.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/xwdfile.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimgcmn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimage.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimggauss.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pngcomn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadgif.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadpng.o
@@ -83,6 +85,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/ftfont.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/xwdfile.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpimgcmn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpimage.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpimggauss.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libppngcomn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpreadgif.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpreadpng.a

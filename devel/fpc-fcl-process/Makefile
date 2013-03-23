@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-fcl-process
-# Date created:		2009-01-07
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang
