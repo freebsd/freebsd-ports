@@ -1142,6 +1142,7 @@
     SUBDIR += py-creole
     SUBDIR += py-docutils
     SUBDIR += py-dsv
+    SUBDIR += py-elib.intl
     SUBDIR += py-empy
     SUBDIR += py-enchant
     SUBDIR += py-errorhandler
