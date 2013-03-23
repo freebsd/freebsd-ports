@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
 
