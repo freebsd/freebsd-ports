@@ -377,7 +377,7 @@ include/telepathy-qt4/TelepathyQt/types.h
 include/telepathy-qt4/TelepathyQt/utils.h
 lib/cmake/TelepathyQt4/TelepathyQt4Config.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4ConfigVersion.cmake
-lib/cmake/TelepathyQt4/TelepathyQt4Targets-release.cmake
+lib/cmake/TelepathyQt4/TelepathyQt4Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4Targets.cmake
 lib/cmake/TelepathyQt4Farsight/TelepathyQt4FarsightConfig.cmake
 lib/cmake/TelepathyQt4Farsight/TelepathyQt4FarsightConfigVersion.cmake
