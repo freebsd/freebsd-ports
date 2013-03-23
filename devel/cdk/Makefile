@@ -6,7 +6,8 @@ PORTVERSION=	5.0.20120323
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/cdk/
+MASTER_SITES=	ftp://invisible-island.net/cdk/ \
+		http://fossies.org/linux/misc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
