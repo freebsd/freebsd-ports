@@ -1,0 +1,36 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+WWWDIR="%%WWWDIR%%"
+
+CP="%%CP%%"
+MKDIR="%%MKDIR%%"
+CHOWN="%%CHOWN%%"
+TOUCH="%%TOUCH%%"
+
+WWWOWN="%%WWWOWN%%"
+WWWGRP="%%WWWGRP%%"
+
+post-install() {
+	if [ ! -e ${WWWDIR}/local ]; then
+		${CP} -a ${WWWDIR}/local.sample ${WWWDIR}/local
+	fi
+	if [ ! -e ${WWWDIR}/_data ]; then
+		${MKDIR} -m 777 ${WWWDIR}/_data
+		${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/_data
+		${TOUCH} ${WWWDIR}/_data/dummy.txt
+	fi
+	${CHOWN} -fR ${WWWOWN}:${WWWGRP} ${WWWDIR}/plugins
+	if [ ! -e ${WWWDIR}/upload ]; then
+		${MKDIR} -m 750 ${WWWDIR}/upload
+		${CHOWN} -fR ${WWWOWN}:${WWWGRP} ${WWWDIR}/upload
+		${TOUCH} ${WWWDIR}/upload/.keepme
+	fi
+}
+
+case $2 in
+	POST-INSTALL)
+		post-install
+		;;
+esac
