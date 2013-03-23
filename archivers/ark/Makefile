@@ -44,7 +44,7 @@ RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	archive.12:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	archive:${PORTSDIR}/archivers/libarchive
 .endif
 
 .if ${PORT_OPTIONS:MRAR}
