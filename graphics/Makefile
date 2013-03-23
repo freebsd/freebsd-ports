@@ -213,7 +213,6 @@
     SUBDIR += founts
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
-    SUBDIR += fpc-fpvectorial
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
     SUBDIR += fpc-hermes
