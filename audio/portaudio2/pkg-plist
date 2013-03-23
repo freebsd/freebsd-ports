@@ -1,13 +1,13 @@
-%%PATEST%%bin/pa_devs-2
-%%PATEST%%bin/pa_fuzz-2
+%%PORTEXAMPLES%%bin/pa_devs-2
+%%PORTEXAMPLES%%bin/pa_fuzz-2
 %%PATEST%%bin/pa_minlat-2
-%%PATEST%%bin/paex_pink-2
-%%PATEST%%bin/paex_read_write_wire-2
-%%PATEST%%bin/paex_record-2
-%%PATEST%%bin/paex_saw-2
-%%PATEST%%bin/paex_sine-2
-%%PATEST%%bin/paex_write_sine-2
-%%PATEST%%bin/paex_write_sine_nonint-2
+%%PORTEXAMPLES%%bin/paex_pink-2
+%%PORTEXAMPLES%%bin/paex_read_write_wire-2
+%%PORTEXAMPLES%%bin/paex_record-2
+%%PORTEXAMPLES%%bin/paex_saw-2
+%%PORTEXAMPLES%%bin/paex_sine-2
+%%PORTEXAMPLES%%bin/paex_write_sine-2
+%%PORTEXAMPLES%%bin/paex_write_sine_nonint-2
 %%PATEST%%bin/paqa_devs-2
 %%PATEST%%bin/paqa_errs-2
 %%PATEST%%bin/paqa_latency-2
@@ -46,18 +46,5 @@ lib/portaudio2/libportaudio.la
 lib/portaudio2/libportaudio.so
 lib/portaudio2/libportaudio.so.2
 libdata/pkgconfig/portaudio-2.0.pc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pa_devs.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pa_fuzz.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_mono_asio_channel_select.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_pink.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_read_write_wire.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_record.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_saw.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_sine.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_wmme_ac3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_wmme_surround.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_write_sine.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paex_write_sine_nonint.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/portaudio2
 @dirrm include/portaudio2
