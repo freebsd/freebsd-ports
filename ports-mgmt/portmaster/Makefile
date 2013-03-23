@@ -20,8 +20,6 @@ GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH PKGNGPATCH
 OPTIONS_DEFAULT+=	PKGNGPATCH
-BASH_DESC=	Install programmable completions for Bash
-ZSH_DESC=	Install programmable completions for zsh
 PKGNGPATCH_DESC=Enable PKGNG support
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
