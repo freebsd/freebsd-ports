@@ -278,6 +278,7 @@
     SUBDIR += gstreamer-plugins-mp3
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-nas
+    SUBDIR += gstreamer-plugins-opus
     SUBDIR += gstreamer-plugins-ogg
     SUBDIR += gstreamer-plugins-pulse
     SUBDIR += gstreamer-plugins-shout2
