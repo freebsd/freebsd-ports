@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize \
 		ecasound:${PORTSDIR}/audio/ecasound
 
+USE_GNOME=	desktopfileutils
 USE_TCL=	yes
 USE_TK=		yes
 
