@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	tagpy
-PORTVERSION=	0.94.8
-PORTREVISION=	1
+PORTVERSION=	2013.1
+PORTREVISION=	0
 CATEGORIES=	audio python
-MASTER_SITES=	CHEESESHOP \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for Scott Wheeler's TagLib
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		tag.1:${PORTSDIR}/audio/taglib
+LICENSE=	MIT
 
-BROKEN=		does not build
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
+		tag:${PORTSDIR}/audio/taglib
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
@@ -24,6 +23,8 @@ CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
 		--boost-inc-dir="${PYTHON_INCLUDEDIR},${LOCALBASE}/include" \
 		--boost-lib-dir="${PYTHON_LIBDIR},${LOCALBASE}/lib" \
 		--boost-python-libname="boost_python"
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 USE_GCC=	4.4+
 USE_PYTHON=	yes
