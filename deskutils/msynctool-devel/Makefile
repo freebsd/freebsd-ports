@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msynctool-devel
-# Date created:				11 June 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	msynctool
 PORTVERSION=	0.36
@@ -21,6 +17,7 @@ CONFLICTS=	msynctool-0.2*
 
 USE_BZIP2=	yes
 USES=		cmake
+USE_PKGCONFIG=	build
 
 PLIST_FILES=	bin/${PORTNAME}
 
