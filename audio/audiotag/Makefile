@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	GHC
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line tool for mass tagging/renaming of audio files
 
 LICENSE=	GPLv2
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Daenyth
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
