@@ -60,6 +60,9 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicfury.pyo
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicgenesis.py
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicgenesis.pyc
+%%PYTHON_SITELIBDIR%%/dosagelib/plugins/comicgenesis.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.py
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/plugins/creators.pyo
