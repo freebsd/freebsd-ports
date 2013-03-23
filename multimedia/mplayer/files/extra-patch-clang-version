@@ -1,0 +1,22 @@
+--- configure.orig	2013-03-10 17:43:53.684182000 +0100
++++ configure	2013-03-10 17:47:47.157190568 +0100
+@@ -1614,7 +1614,7 @@
+     if $_cc -v 2>&1 | grep -q "clang"; then
+       echocheck "$_cc version"
+       cc_vendor=clang
+-      cc_version=$($_cc -dumpversion 2>&1)
++      cc_version=$($_cc -v 2>&1 | head -n 1 | cut -d ' ' -f 4)
+       res_comment="experimental support only"
+       echores "clang $cc_version"
+       break
+--- Makefile.orig	2013-03-10 17:44:21.865184000 +0100
++++ Makefile	2013-03-10 17:47:47.248184374 +0100
+@@ -792,7 +792,7 @@
+ 
+ # rebuild version.h each time the working copy is updated
+ version.h: version.sh $(wildcard .svn/entries .git/logs/HEAD)
+-	./$< `$(CC) -dumpversion`
++	./$< `$(CC) -v 2>&1 | head -n 1 | cut -d ' ' -f 4`
+ 
+ %$(EXESUF): %.c
+ 	$(CC) $(CC_DEPFLAGS) $(CFLAGS) -o $@ $^

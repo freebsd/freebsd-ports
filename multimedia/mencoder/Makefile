@@ -1,56 +1,28 @@
-# New ports collection makefile for:	mencoder
-# Date created:		23 June 2007
-# Whom:			Thomas E. Zander
+# Created by: Thomas E. Zander
 # $FreeBSD$
-#
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Convenient video file and movie encoder
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
-OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
-OPTIONS+=	RTCPU "Allow runtime CPU detection" on
-OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	OTCHAIN "Use gcc 4.6+ toolchain on legacy systems" off
-OPTIONS+=	IPV6 "Include inet6 network support" on
-OPTIONS+=	JACK "Enable JackIt audio server support" off
-OPTIONS+=	NAS "Enable NAS sound server support" off
-OPTIONS+=	OPENAL "Enable OpenAL sound support" off
-OPTIONS+=	PULSE "Enable PulseAudio" off
-OPTIONS+=	FONTCONFIG "Enable fontconfig support" off
-OPTIONS+=	LIBUNGIF "Enable gif support" on
-OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
-OPTIONS+=	MNG "Enable MNG input support" off
-OPTIONS+=	LIBDV "Enable libdv support" off
-OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
-OPTIONS+=	AMR_NB "AMR Narrow Band encoder (opencore)" off
-OPTIONS+=	AMR_WB "AMR Wide Band encoder (opencore)" off
-OPTIONS+=	GSM "GSM audio codec" off
-OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
-OPTIONS+=	FAAC "Enable FAAC audio codec support" off
-OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
-OPTIONS+=	SPEEX "Enable speex audio codec support" off
-OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
-OPTIONS+=	THEORA "Enable ogg theora video support" off
-OPTIONS+=	XVID "Enable XVID video codec support" on
-OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
-OPTIONS+=	VPX "Enable VP8 video via libvpx" off
-OPTIONS+=	DIRAC "Enable dirac video codec support" off
-OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
-OPTIONS+=	REALPLAYER "Enable real player plugin" off
-OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
-OPTIONS+=	SMB "Enable Samba input support" off
-OPTIONS+=	BLURAY "Build with libbluray support" off
-OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
-OPTIONS+=	LIBCDIO "Enable libcdio support" off
-OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
-OPTIONS+=	LIBLZO "Enable external liblzo library" off
-OPTIONS+=	V4L "Enable Video4Linux TV support" off
-OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
+OPTIONS_DEFINE= AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
+		DV FAAC FONTCONFIG FRIBIDI GIF GSM IPV6 JACK LADSPA \
+		LIBMNG LIVEMEDIA LZO MAD NAS OCFLAGS OPENAL OPENJPEG \
+		OTCHAIN PULSEAUDIO REAL RTCPU RTMP SCHROEDINGER SMB \
+		THEORA TWOLAME V4L VPX WIN32 X264 XVID
+
+OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
+
+BLURAY_DESC?=	BluRay support
+OCFLAGS_DESC?=	Use optimized compiler flags
+OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
+REAL_DESC?=	Enable realplayer plugin
+RTCPU_DESC?=	Use runtime CPU detection
+WIN32_DESC?=	Install win32 binary codecs
 
 MAN1=		mencoder.1
 
@@ -95,37 +67,37 @@ ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
 
-.if defined(WITH_FONTCONFIG)
+.if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 .else
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
-.if defined(WITH_TWOLAME)
+.if ${PORT_OPTIONS:MTWOLAME}
 LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
 .else
 CONFIGURE_ARGS+=	--disable-twolame
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 LIB_DEPENDS+=		faac:${PORTSDIR}/audio/faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
-.if !defined(WITHOUT_X264)
+.if ${PORT_OPTIONS:MX264}
 LIB_DEPENDS+=		x264.125:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
-.if !defined(WITHOUT_XVID)
+.if ${PORT_OPTIONS:MXVID}
 LIB_DEPENDS+=		xvidcore:${PORTSDIR}/multimedia/xvid
 .else
 CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
-.ifdef(WITH_DIRAC)
+.if ${PORT_OPTIONS:MDIRAC}
 LIB_DEPENDS+=		dirac_encoder:${PORTSDIR}/multimedia/dirac
 .else
 CONFIGURE_ARGS+=	--disable-libdirac-lavc
@@ -135,9 +107,10 @@ pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
-	@${ECHO_MSG} "OPTIONS framework. As this one is a slave port of multimedia/"
-	@${ECHO_MSG} "mplayer, you might want to check mplayer's Makefile(s) in"
-	@${ECHO_MSG} "order to learn more about them."
+	@${ECHO_MSG} "OPTIONS framework. At the moment, their defaults are:"
+	@${ECHO_MSG} "WITH_LANG=<LanguageCode>"
+	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=/dev/cd0"
+	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=/dev/cd0"
 
 post-patch:
 .if ${OSVERSION} >= 900010
