@@ -1,7 +1,10 @@
+include/gupnp-av-1.0/libgupnp-av/gupnp-av-enums.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-av-error.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-av.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-cds-last-change-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-container.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-contributor.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-createclass.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-descriptor.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-item.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-object.h
@@ -9,7 +12,10 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-resource.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-writer.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-dlna.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-feature-list-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-feature.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-last-change-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-media-collection.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
 lib/girepository-1.0/GUPnPAV-1.0.typelib
@@ -19,6 +25,7 @@ lib/libgupnp-av-1.0.so
 lib/libgupnp-av-1.0.so.2
 libdata/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/GUPnPAV-1.0.gir
+share/gtk-doc/html/gupnp-av/GUPnPCDSLastChangeParser.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContainer.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContributor.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteDescriptor.html
@@ -27,13 +34,17 @@ share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteObject.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteParser.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteResource.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteWriter.html
+share/gtk-doc/html/gupnp-av/GUPnPFeature.html
+share/gtk-doc/html/gupnp-av/GUPnPFeatureListParser.html
 share/gtk-doc/html/gupnp-av/GUPnPLastChangeParser.html
+share/gtk-doc/html/gupnp-av/GUPnPMediaCollection.html
 share/gtk-doc/html/gupnp-av/GUPnPProtocolInfo.html
 share/gtk-doc/html/gupnp-av/GUPnPSearchCriteriaParser.html
 share/gtk-doc/html/gupnp-av/annotation-glossary.html
 share/gtk-doc/html/gupnp-av/ch01.html
 share/gtk-doc/html/gupnp-av/ch02.html
 share/gtk-doc/html/gupnp-av/gupnp-av-Error-codes.html
+share/gtk-doc/html/gupnp-av/gupnp-av-GUPnPDIDLLiteCreateClass.html
 share/gtk-doc/html/gupnp-av/gupnp-av.devhelp2
 share/gtk-doc/html/gupnp-av/home.png
 share/gtk-doc/html/gupnp-av/index.html
@@ -42,10 +53,16 @@ share/gtk-doc/html/gupnp-av/left.png
 share/gtk-doc/html/gupnp-av/right.png
 share/gtk-doc/html/gupnp-av/style.css
 share/gtk-doc/html/gupnp-av/up.png
-@dirrmtry share/gtk-doc/html/gupnp-av
+%%DATADIR%%/av.xsd
+%%DATADIR%%/didl-lite-v2.xsd
+%%DATADIR%%/simpledc20021212.xsd
+%%DATADIR%%/upnp.xsd
+%%DATADIR%%/xml.xsd
+@dirrm %%DATADIR%%
+@dirrm share/gtk-doc/html/gupnp-av
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrmtry share/gir-1.0
 @dirrmtry lib/girepository-1.0
-@dirrmtry include/gupnp-av-1.0/libgupnp-av
-@dirrmtry include/gupnp-av-1.0
+@dirrm include/gupnp-av-1.0/libgupnp-av
+@dirrm include/gupnp-av-1.0
