@@ -1,0 +1,7 @@
+bin/tkeca
+share/applications/tkeca.desktop
+share/pixmaps/tkeca.png
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
