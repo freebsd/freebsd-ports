@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-numlib
-# Date created:		2009-01-06
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	math lang

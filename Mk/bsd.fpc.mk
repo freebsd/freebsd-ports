@@ -30,7 +30,7 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.6.0
+DEFAULT_FPC_VER=	2.6.2
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
@@ -56,10 +56,10 @@ BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
 BUILDNAME=		${FPC_ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 
-_FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dbus dts fastcgi fcl-async fcl-base \
-		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc \
-		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit \
-		fppkg fpvectorial fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash \
+_FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async fcl-base \
+		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-js fcl-json fcl-net fcl-passrc \
+		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpindexer \
+		fpmkunit fppkg fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash \
 		hermes httpd22 ibase iconvenc imagemagick imlib ldap libcurl libgd \
 		libpng libxml2 lua mad matroska modplug mysql ncurses newt numlib \
 		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
@@ -116,6 +116,7 @@ bfd_UNIT=	devel/fpc-bfd
 bzip2_UNIT=	archivers/fpc-bzip2
 cairo_UNIT=	graphics/fpc-cairo
 chm_UNIT=	misc/fpc-chm
+dblib_UNIT=	databases/fpc-dblib
 dbus_UNIT=	devel/fpc-dbus
 dts_UNIT=	multimedia/fpc-dts
 fastcgi_UNIT=	www/fpc-fastcgi
@@ -125,6 +126,7 @@ fcl_db_UNIT=	devel/fpc-fcl-db
 fcl_extra_UNIT=	devel/fpc-fcl-extra
 fcl_fpcunit_UNIT=	devel/fpc-fcl-fpcunit
 fcl_image_UNIT=	devel/fpc-fcl-image
+fcl_js_UNIT=	devel/fpc-fcl-js
 fcl_json_UNIT=	devel/fpc-fcl-json
 fcl_net_UNIT=	devel/fpc-fcl-net
 fcl_passrc_UNIT=	devel/fpc-fcl-passrc

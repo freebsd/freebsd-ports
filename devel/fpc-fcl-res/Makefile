@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-fcl-res
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by:	Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang

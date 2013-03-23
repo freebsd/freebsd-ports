@@ -1,11 +1,7 @@
-# New ports collection makefile for:	fpc-graph
-# Date created:		2006-09-05
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-graph
 

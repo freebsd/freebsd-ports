@@ -1,4 +1,4 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.rog>
 # $FreeBSD$
 
 PORTREVISION=	0

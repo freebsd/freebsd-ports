@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-fppkg
-# Date created:				2012-03-16
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel lang

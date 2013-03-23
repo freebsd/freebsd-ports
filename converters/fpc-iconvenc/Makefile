@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-iconv
-# Date created:		2009-04-26
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	converters lang

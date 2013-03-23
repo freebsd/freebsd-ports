@@ -68,6 +68,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dateutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dateutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dllprt0.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dos.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dos.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dynlibs.o

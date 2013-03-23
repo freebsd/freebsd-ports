@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Free Pascal Compiler
-# Date created: 			28 November 2001
-# Whom: 				John Merryweather Cooper et al
-#
+# Created by:	John Merryweather Cooper et al
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel

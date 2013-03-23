@@ -70,7 +70,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpasciitab.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libptimeddlg.a
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.lpi
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.pas
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/platform.inc
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile.fpc
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv

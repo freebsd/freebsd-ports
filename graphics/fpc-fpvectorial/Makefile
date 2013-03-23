@@ -1,11 +1,7 @@
-# New ports collection makefile for:	fpc-fpvectorial
-# Date created:		2010-04-22
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by:	Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-fpvectorial
 

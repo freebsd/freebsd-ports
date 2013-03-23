@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpc-md5
-# Date created: 			8 February 2004
-# Whom: 				John Merryweather Cooper
-#
+# Created by:	John Merryweather Cooper
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	security lang
