@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssdp
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -18,18 +18,22 @@ OPTIONS_DEFINE=	GTK2
 OPTIONS_DEFAULT=GTK2
 
 CONFIGURE_ARGS=	--enable-introspection=yes
+CONFIGURE_ENV=	VAPIGEN=""
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_XZ=		yes
+USES=		pathfix
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
+CONFIGURE_ARGS+=--with-gtk
 USE_GNOME+=	gtk20
 PLIST_SUB=	GTK=""
 .else
+CONFIGURE_ARGS+=--without-gtk
 PLIST_SUB=	GTK="@comment "
 .endif
 
