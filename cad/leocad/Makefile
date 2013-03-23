@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leocad
-PORTVERSION=	0.79.2
+PORTVERSION=	0.79.3
 CATEGORIES=	cad
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${LEOCAD_PIECES}
@@ -12,9 +12,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CAD modeling with LEGO-like bricks
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=		jpeg:${PORTSDIR}/graphics/jpeg \
-			png15:${PORTSDIR}/graphics/png
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -22,7 +22,7 @@ USE_GL=		gl
 USE_GNOME=	gtk20
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes
-INSTALL_ICONS=	yes
+INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		leocad.1
@@ -46,8 +46,10 @@ post-patch:
 		's|+= -g|+=| ; \
 		 s|@$$(CXX)|$$(CXX)| ; \
 		 s|@install -c -m 0755|$${BSD_INSTALL_PROGRAM}| ; \
-		 s|@install -c -m 0644|$${BSD_INSTALL_MAN}| ; \
+		 s|@install -c -m 0644|$${BSD_INSTALL_DATA}| ; \
 		 s|share/man|man|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|-ldl||' ${WRKSRC}/common/module.mk
 
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} PREFIX="${PREFIX}" ${GMAKE} config)
