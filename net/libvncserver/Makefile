@@ -3,7 +3,7 @@
 
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
@@ -23,7 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x
 
-OPTIONS_DEFINE=	GNUTLS OPENSSL GCRYPT
+OPTIONS_DEFINE=	GNUTLS OPENSSL GCRYPT IPV6
 OPTIONS_DEFAULT=	OPENSSL
 GNUTLS_DESC=	Enable GnuTLS support
 OPENSSL_DESC=	Enable OpenSSL support
@@ -32,7 +32,7 @@ GCRYPT_DESC=	Enable libgcrypt support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
@@ -40,16 +40,22 @@ CONFIGURE_ARGS+=	--without-gnutls
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-CONFIGURE_ARGS=		--with-ssl
+CONFIGURE_ARGS+=	--with-ssl
 .else
 CONFIGURE_ARGS+=	--without-crypto --without-ssl
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-gcrypt
 .else
 CONFIGURE_ARGS+=	--without-gcrypt
+.endif
+
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--with-ipv6
+.else
+CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 post-patch:
