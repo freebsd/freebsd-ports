@@ -3,7 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -67,6 +67,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/src/uGlobsPaths.pas
 	@${REINPLACE_CMD} -e 's|.GetSize|.Size|g' ${WRKSRC}/src/platform/uClipboard.pas
+	@${REINPLACE_CMD} -e '176d' ${WRKSRC}/src/uxmlconfig.pas
 
 do-build:
 	@cd ${WRKSRC}/components && \
