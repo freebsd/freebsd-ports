@@ -1,19 +1,16 @@
-# ex:ts=8
-# New ports collection makefile for:	imc
-# Date created:				Apr 30, 2002
-# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imc
 PORTVERSION=	4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://users.skynet.be/Peter.Verthez/projects/imc/
+MASTER_SITES=	http://www.peterverthez.net/projects/imc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Compiler
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
@@ -23,16 +20,32 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-MAN1=		imc.1
+PLIST_FILES=	bin/${PORTNAME}
+MAN1=		${PORTNAME}.1
+
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS ChangeLog NEWS README THANKS Todo
+
+DOCSRCDIR2=	${WRKSRC}/doc
+DOCSDIR2=	${DOCSDIR}/doc
+DOC_FILES2=	*.html *.ref *.txt
+
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
