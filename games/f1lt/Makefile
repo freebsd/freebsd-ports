@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS
 
 USE_QT4=	gui network moc_build qmake_build rcc_build uic_build
-WRKSRC=	${PORTNAME}-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
