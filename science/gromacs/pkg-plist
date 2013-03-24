@@ -343,13 +343,13 @@ include/gromacs/xdrf.h
 include/gromacs/xtcio.h
 include/gromacs/xvgr.h
 lib/libgmx%%SUFFIX_MPI%%%%SUFFIX_D%%.so
-lib/libgmx%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6
+lib/libgmx%%SUFFIX_MPI%%%%SUFFIX_D%%.so.8
 lib/libgmxana%%SUFFIX_MPI%%%%SUFFIX_D%%.so
-lib/libgmxana%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6
+lib/libgmxana%%SUFFIX_MPI%%%%SUFFIX_D%%.so.8
 lib/libgmxpreprocess%%SUFFIX_MPI%%%%SUFFIX_D%%.so
-lib/libgmxpreprocess%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6
+lib/libgmxpreprocess%%SUFFIX_MPI%%%%SUFFIX_D%%.so.8
 lib/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.so
-lib/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6
+lib/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.so.8
 libdata/pkgconfig/libgmx%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 libdata/pkgconfig/libgmxana%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 libdata/pkgconfig/libgmxpreprocess%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
@@ -431,6 +431,8 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/html/online/g_dipoles.html
 %%DATADIR%%/html/online/g_disre.html
 %%DATADIR%%/html/online/g_dist.html
+%%DATADIR%%/html/online/g_dos.html
+%%DATADIR%%/html/online/g_dyecoupl.html
 %%DATADIR%%/html/online/g_dyndom.html
 %%DATADIR%%/html/online/g_enemat.html
 %%DATADIR%%/html/online/g_energy.html
@@ -440,6 +442,8 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/html/online/g_hbond.html
 %%DATADIR%%/html/online/g_helix.html
 %%DATADIR%%/html/online/g_helixorient.html
+%%DATADIR%%/html/online/g_hydorder.html
+%%DATADIR%%/html/online/g_kinetics.html
 %%DATADIR%%/html/online/g_lie.html
 %%DATADIR%%/html/online/g_mdmat.html
 %%DATADIR%%/html/online/g_membed.html
@@ -449,7 +453,9 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/html/online/g_nmeig.html
 %%DATADIR%%/html/online/g_nmens.html
 %%DATADIR%%/html/online/g_nmtraj.html
+%%DATADIR%%/html/online/g_options.html
 %%DATADIR%%/html/online/g_order.html
+%%DATADIR%%/html/online/g_pme_error.html
 %%DATADIR%%/html/online/g_polystat.html
 %%DATADIR%%/html/online/g_potential.html
 %%DATADIR%%/html/online/g_principal.html
@@ -462,6 +468,7 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/html/online/g_rotacf.html
 %%DATADIR%%/html/online/g_rotmat.html
 %%DATADIR%%/html/online/g_saltbr.html
+%%DATADIR%%/html/online/g_sans.html
 %%DATADIR%%/html/online/g_sas.html
 %%DATADIR%%/html/online/g_select.html
 %%DATADIR%%/html/online/g_sgangle.html
