@@ -56,7 +56,9 @@ MAN1=		chronic.1 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/xml/docbook/schema/dtd/|local/share/xml/docbook/|' ${WRKSRC}/*.docbook
+.if ${PORT_OPTIONS:MMANPAGES}
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MAN1} ${WRKSRC}/
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MMANPAGES}
