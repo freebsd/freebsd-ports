@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	skrooge
-PORTVERSION=	1.4.0
+PORTVERSION=	1.6.0
 CATEGORIES=	finance kde
 MASTER_SITES=	http://skrooge.org/files/
 
@@ -15,10 +15,10 @@ LIB_DEPENDS=	ofx:${PORTSDIR}/finance/libofx \
 		kactivities:${PORTSDIR}/x11/kactivities
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake:outsource
 USE_SQLITE=	yes
-USE_QT4=	qmake_build moc_build uic_build rcc_build \
-		dbus gui script xml sql sql-sqlite3_run
+USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
+		corelib dbus gui script sql webkit xml sql-sqlite3_run
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix pimlibs sharedmime
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
