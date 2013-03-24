@@ -1,9 +1,5 @@
-# New ports collection makefile for:	syncterm
-# Date created:		3 October 2006
-# Whom:			shurd
-#
+# Created by: shurd
 # $FreeBSD$
-#
 
 PORTNAME=	syncterm
 PORTVERSION=	0.9.${PORTVER}
@@ -14,7 +10,7 @@ DISTNAME=	syncterm-src-${PORTVER}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shurd@sasktel.net
-COMMENT=	An ANSI-BBS terminal which supports telnet, rlogin, and SSH
+COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 
 WRKSRC=		${WRKDIR}/syncterm-${PORTVER}
 USE_GMAKE=	yes
@@ -23,11 +19,11 @@ PORTVER=	20110320
 MAN1=		syncterm.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	X11	"Build with X11 support"	on \
-		SDL	"Build with SDL support"	on \
-		DEBUG	"Build a debug version"		off
+OPTIONS_DEFINE=	X11 SDL DEBUG
+OPTIONS_DEFAULT=	X11 SDL
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	does not configure except on i386 amd64
@@ -41,16 +37,16 @@ MAKE_ARGS+=	WITHOUT_PORTAUDIO=yes
 MAKE_ARGS+=	-C syncterm
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 MAKE_ARGS+=	INSTALL_EXE="${INSTALL_PROGRAM}"
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 .else
 MAKE_ARGS+=	NO_X=1
 .endif
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ARGS+=	USE_SDL=1
 .endif
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=	DEBUG=1
 .else
 MAKE_ARGS+=	RELEASE=1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qpage
-# Date created:		02 Aug 1997
-# Whom:			joes@seaport.net
-#
+# Created by: joes@seaport.net
 # $FreeBSD$
-#
 
 PORTNAME=	qpage
 PORTVERSION=	3.3
@@ -18,13 +14,15 @@ COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 USE_RC_SUBR=	qpage
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	IDENT_PATCH
+IDENT_PATCH_DESC=	Disable libwrap ident lookups
+
 MAN1=		qpage.1
 
-OPTIONS=	IDENT_PATCH "Patch to disable libwrap ident lookups" off
-
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IDENT_PATCH)
+.if ${PORT_OPTIONS:MIDENT_PATCH}
 EXTRA_PATCHES=${FILESDIR}/libwrap_ident_patch-srvrsnpp.c
 .endif
 
