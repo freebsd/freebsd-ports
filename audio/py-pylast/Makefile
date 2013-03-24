@@ -1,0 +1,22 @@
+# Created by: Mark Felder <feld@feld.me>
+# $FreeBSD$
+
+PORTNAME=	pylast
+PORTVERSION=	0.5.11
+CATEGORIES=	audio python
+MASTER_SITES=	CHEESESHOP
+
+MAINTAINER=	feld@feld.me
+COMMENT=	A Python interface to Last.fm
+
+LICENSE=	AL2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylast.py \
+		%%PYTHON_SITELIBDIR%%/pylast.pyc \
+		%%PYTHON_SITELIBDIR%%/pylast.pyo
+
+.include <bsd.port.mk>
