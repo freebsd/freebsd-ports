@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
+MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
+		LOCAL/bdrewery/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
 # Also maintained by bdrewery@freeBSD.org
@@ -32,7 +33,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/options.sh \
 		share/poudriere/ports.sh \
 		share/poudriere/queue.sh \
-		share/poudriere/test_ports.sh
+		share/poudriere/testport.sh
 
 PLIST_DIRS=	share/poudriere
 
