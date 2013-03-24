@@ -1,24 +1,24 @@
-# New ports collection makefile for:	wwwoffle
-# Date created:		1 Jun 1998
-# Whom:			Peter Mutsaers
-#
+# Creaed by: Peter Mutsaers
 # $FreeBSD$
-#
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9i
 PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.gedanken.demon.co.uk/download-wwwoffle/
+MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
+COMMENT=	Caching proxy server for HTTP and FTP designed for dial-up hosts
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+
 USE_RC_SUBR=	${PORTNAME}d
 
 # $SPOOL seems like a common name which could be used for other things, so
@@ -30,25 +30,17 @@ PLIST_SUB+=	WWWOFFLE_SPOOL=${WWWOFFLE_SPOOL}
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
-		--with-gnutls=${PREFIX} \
+		--with-gnutls=${LOCALBASE} \
 		--with-spooldir=${WWWOFFLE_SPOOL} \
 		--docdir=${DOCSDIR} \
 		--mandir=${MANPREFIX}/man
 
+SUB_FILES=	pkg-message
+SUB_LIST=	WWWOFFLE_SPOOL="${WWWOFFLE_SPOOL}"
+
 MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
 MAN8=		wwwoffled.8
-
-.if ${WWWOFFLE_SPOOL} != "/var/spool/wwwoffle"
-# If using a non-standard spool, change all the documentation (and anything
-# else) to reflect that.
-PKGMESSAGE=${WRKDIR}/MESSAGE
-
-post-configure:
-	@${SED} 's@/var/spool/wwwoffle@${WWWOFFLE_SPOOL}/wwwoffle@g' \
-	  ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-
-.endif
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
