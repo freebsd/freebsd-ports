@@ -242,7 +242,7 @@ afterinstall: realinstall
 realinstall: beforeinstall ${SUBDIR:S/^/_/:S/$/.realinstall/}
 .endif
 
-IGNOREDIR=	CVS Mk Templates Tools distfiles packages pkg
+IGNOREDIR=	CVS Mk Templates Tools distfiles packages pkg Keywords
 
 .if !target(checksubdirs)
 .if defined(PORTSTOP)
