@@ -1,16 +1,5 @@
 --- make/Makefile.orig	2012-06-29 14:51:42.000000000 +0900
 +++ make/Makefile	2012-11-10 00:12:19.000000000 +0900
-@@ -9,8 +9,8 @@
- ##
- ##   1. make all              Build all the TINKER executables
- ##   2. make rename           Move the executables to BINDIR
--##   3. make remove_links     Create soft links in LINKDIR
--##   4. make create_links     Remove soft links from LINKDIR
-+##   3. make remove_links     Remove soft links in LINKDIR
-+##   4. make create_links     Create soft links from LINKDIR
- ##   6. make listing          Concatenate source to tinker.txt
- ##   5. make clean            Delete objects and executables
- ##
 @@ -30,9 +30,9 @@
  ##  LINKDIR      Linked Copies of TINKER Executables
  ##
@@ -64,7 +53,7 @@
  
  ##
  ##  Machine:  Macintosh
-@@ -592,6 +606,8 @@
+@@ -595,6 +609,8 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -73,7 +62,7 @@
  .f.o:
  	${F77} ${F77FLAGS} ${OPTFLAGS} $*.f 
  
-@@ -601,8 +617,8 @@
+@@ -604,8 +620,8 @@
  server.o:
  	${F77} ${F77FLAGS} ${OPTFLAGS} server.f
  
@@ -84,7 +73,7 @@
  
  all:	${EXEFILES}
  
-@@ -613,65 +629,65 @@
+@@ -616,66 +632,66 @@
  	cat *.i *.f *.c > tinker.txt
  
  rename:
@@ -133,6 +122,7 @@
 -	mv  testgrad.x   $(BINDIR)/testgrad
 -	mv  testhess.x   $(BINDIR)/testhess
 -	mv  testpair.x   $(BINDIR)/testpair
+-	mv  testpol.x    $(BINDIR)/testpol
 -	mv  testrot.x    $(BINDIR)/testrot
 -	mv  timer.x      $(BINDIR)/timer
 -	mv  timerot.x    $(BINDIR)/timerot
@@ -192,6 +182,7 @@
 +	${BSD_INSTALL_PROGRAM}  testgrad.x   $(BINDIR)/testgrad
 +	${BSD_INSTALL_PROGRAM}  testhess.x   $(BINDIR)/testhess
 +	${BSD_INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair
++	${BSD_INSTALL_PROGRAM}  testpol.x    $(BINDIR)/testpol
 +	${BSD_INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot
 +	${BSD_INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer
 +	${BSD_INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot
