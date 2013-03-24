@@ -633,6 +633,7 @@
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal
+    SUBDIR += py-pylast
     SUBDIR += py-pyliblo
     SUBDIR += py-shout
     SUBDIR += py-speex
