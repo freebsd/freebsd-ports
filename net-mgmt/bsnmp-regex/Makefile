@@ -2,23 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	bsnmp-regex
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-regex/
+MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-regex/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A bsnmpd module allowing creation of counters from log files
+MAINTAINER=	koobs@FreeBSD.org
+COMMENT=	bsnmpd module allowing creation of counters from log files
+
+LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	"-I${LOCALBASE}/include"
 
-OPTIONS_DEFINE=	PCRE
+OPTIONS_DEFINE=	DEBUG PCRE
 PCRE_DESC=	Use PCRE instead of the default regex library
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=--enable-debug
+.else
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre

@@ -3,4 +3,4 @@ files, program output or other text data. The counters use regular expressions
 to count the number of matches, or parse out specific text/numbers. The
 resulting data can then be queried or graphed with the usual SNMP tools.
 
-WWW: http://memberwebs.com/stef/software/bsnmp-regex/
+WWW: http://thewalter.net/stef/software/bsnmp-regex/
