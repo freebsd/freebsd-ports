@@ -7,7 +7,7 @@
 
 PORTNAME=	fretsonfire
 PORTVERSION=	1.3.110
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games python
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION}
@@ -16,17 +16,15 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A game of musical skill and fast fingers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:${PORTSDIR}/games/fretsonfire-data
 
 USE_PYTHON=	yes
 USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
-
-BROKEN=		does not build
 
 DATADIR=	share/${PORTNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude 'data'
@@ -56,7 +54,7 @@ do-install:
 	${LN} -s ${LOCALBASE}/${DATADIR}/* ${FOF_DIR}/data
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:S/f/F/g:S/o/O/} ${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/install.txt ${DOCSDIR}/INSTALL
