@@ -1,13 +1,9 @@
-# New ports collection makefile for:	xpra
-# Date created:		2011-01-11
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpra
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.8.8
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
