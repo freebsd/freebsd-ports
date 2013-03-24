@@ -2,7 +2,7 @@
 
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
@@ -20,19 +20,14 @@ CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
 # Local variables
 LOGDIR=		/var/log
 RUNDIR=		/var/run
-STARTUP_SCRIPT=	${PORTNAME}.sh
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
+USE_RC_SUBR=	ebhttpd ebnetd ndtpd
+SUB_FILES=	pkg-message
+PLIST_SUB=	EBNETD_RUNDIR=${RUNDIR}/${PORTNAME}
 
 INFO=		ebnetd ebnetd-ja
 
-post-build:
-	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${STARTUP_SCRIPT} > ${WRKDIR}/${STARTUP_SCRIPT}
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}

@@ -1,12 +1,13 @@
 **********************************************************************
-You'll need manual configurations to actually activate EBNETD servers.
+You'll need manual configurations to actually activate EBNETD servers 
+(ebhttpd/ebnetd/ndtpd).
 
 Step 0(optional):
 If you want to setup private syslog, edit /etc/syslog.conf.
 
 Step 1:
 Copy a sample configuration file `ebnetd.conf.sample' to `ebnetd.conf'
-in `${PREFIX}/etc' directory, and edit it. Consult the "Configuration
+in `%%PREFIX%%/etc' directory, and edit it. Consult the "Configuration
 File" section of info file.
 
 Step 2a:
