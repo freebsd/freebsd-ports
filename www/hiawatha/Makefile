@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	8.7
+PORTVERSION=	8.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -21,7 +21,7 @@ MAN1=		cgi-wrapper.1 hiawatha.1 ssi-cgi.1 wigwam.1
 
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
-USES=		cmake
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	hiawatha
 WANT_GNOME=	yes
