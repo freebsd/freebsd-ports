@@ -21,7 +21,7 @@ CONFLICTS=	tridiavnc-[0-9]* \
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_GL=		gl
