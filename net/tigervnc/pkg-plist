@@ -1,0 +1,21 @@
+bin/Xvnc
+bin/vncconfig
+bin/vncpasswd
+bin/vncserver
+%%VIEWER%%bin/vncviewer
+bin/x0vncserver
+lib/xorg/modules/extensions/libvnc.la
+lib/xorg/modules/extensions/libvnc.so
+%%NLS%%share/locale/de/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/tigervnc.mo
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/LICENCE.TXT
+@dirrm %%DOCSDIR%%
+@unexec %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry lib/xorg/modules/extensions
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg
