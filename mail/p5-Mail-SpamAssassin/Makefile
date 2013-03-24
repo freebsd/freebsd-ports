@@ -87,7 +87,7 @@ PLIST_SUB+=	SSL="@comment "
 .endif
 
 .if !defined(WITHOUT_GNUPG)
-RUN_DEPENDS+=	gnupg>=1.4.7:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gnupg>=1.4.7:${PORTSDIR}/security/gnupg1
 .endif
 
 .if defined(WITH_MYSQL)
