@@ -112,6 +112,12 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.py
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/schema/definition.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/schema/definition.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/debug.py
 %%PYTHON_SITELIBDIR%%/exabgp/leak/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/leak/gcdump.py
@@ -239,6 +245,7 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/compatibility
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration/schema
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
