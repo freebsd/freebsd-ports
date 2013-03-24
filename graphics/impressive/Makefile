@@ -1,9 +1,5 @@
-# New ports collection makefile for:	impressive
-# Date created:		2010-02-10
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	impressive
 PORTVERSION=	0.10.3
@@ -15,15 +11,15 @@ DISTNAME=	Impressive-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	The stylish way of giving presentations
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/wrapper.py:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_SITELIBDIR}/pygame/surfarray.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/PIL/ImageGL.py:${PORTSDIR}/graphics/py-imaging \
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xpdf:${PORTSDIR}/graphics/xpdf \
 		pdftk:${PORTSDIR}/print/pdftk \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		mplayer:${PORTSDIR}/multimedia/mplayer
-
-LICENSE=	GPLv2
+RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 USE_GHOSTSCRIPT_RUN=	yes
@@ -32,16 +28,16 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
-PORTDOCS=	${PORTNAME}.html demo.pdf license.txt
+PORTDOCS=	${PORTNAME}.html demo.pdf
+
+.include <bsd.port.options.mk>
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
