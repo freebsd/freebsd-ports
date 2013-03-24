@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdf2djvu
-# Date created:			7 Mar 2008
-# Whom:					Denise H. G. <darcsis@gmail.com>
-#
+# Created by: Denise H. G. <darcsis@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.5.11
@@ -23,6 +19,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
+
+BROKEN=		does not build
 
 PLIST_FILES=	bin/pdf2djvu
 MAN1=		pdf2djvu.1
