@@ -1,30 +1,25 @@
-# New ports collection makefile for:	libggiwmh
-# Date created:				7 December 2004
-# Whom:					antoine.brodin@laposte.net
-#
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libggiwmh
 PORTVERSION=	0.3.2
 PORTREVISION=	2
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
-		SF/ggi/misc/${PORTNAME}-${PORTVERSION}		
-
+MASTER_SITES=	SF/ggi/misc/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	antoine.brodin@laposte.net
-COMMENT=	A libggi extension, wmh stands for Window Manager Hints
+MAINTAINER=	antoine@FreeBSD.org
+COMMENT=	Libggi extension, wmh stands for Window Manager Hints
 
-LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
+LICENSE=	MIT
+
+LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN3=		ggiWmhIconify.3 \
@@ -41,11 +36,17 @@ MLINKS=		ggiWmhIconify.3 ggiWmhMoveIcon.3 \
 		- ggiWmhGetPos.3 - ggiWmhGetSize.3 \
 		- ggiWmhMaximize.3 - ggiWmhResize.3
 
-.if !defined(WITHOUT_X11)
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+CONFIGURE_ARGS+=--enable-x --with-x
 USE_XORG=	x11
 PLIST_SUB+=	XWMH=""
 .else
-CONFIGURE_ARGS+=--disable-x
+CONFIGURE_ARGS+=--disable-x --without-x
 PLIST_SUB+=	XWMH="@comment "
 .endif
 

@@ -1,23 +1,19 @@
-# New ports collection makefile for:	libgiigic
-# Date created:				7 December 2004
-# Whom:					antoine.brodin@laposte.net
-#
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgiigic
 PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
-		SF/ggi/ggi-libs/${PORTNAME}-${PORTVERSION}		
-
+MASTER_SITES=	SF/ggi/ggi-libs/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	antoine.brodin@laposte.net
-COMMENT=	A library on top of libgii, gic stands for General Input Configuration
+MAINTAINER=	antoine@FreeBSD.org
+COMMENT=	Library on top of libgii, gic stands for General Input Configuration
 
-LIB_DEPENDS=	gii.1:${PORTSDIR}/devel/libgii
+LICENSE=	MIT
+
+LIB_DEPENDS=	gii:${PORTSDIR}/devel/libgii
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes

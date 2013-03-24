@@ -1,30 +1,25 @@
-# New ports collection makefile for:	libggigcp
-# Date created:				7 December 2004
-# Whom:					antoine.brodin@laposte.net
-#
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libggigcp
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
-		SF/ggi/misc/${PORTNAME}-${PORTVERSION}		
-
+MASTER_SITES=	SF/ggi/misc/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	antoine.brodin@laposte.net
-COMMENT=	A libggi extension for advanced color and palette handling
+MAINTAINER=	antoine@FreeBSD.org
+COMMENT=	Libggi extension for advanced color and palette handling
 
-LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
+LICENSE=	MIT
+
+LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN3=		gcpBlendColor.3 \
