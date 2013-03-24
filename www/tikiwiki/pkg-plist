@@ -83,7 +83,7 @@
 %%TIKIWIKI_DIR%%/db/tiki-db-adodb.php
 %%TIKIWIKI_DIR%%/db/tiki-db-pdo.php
 %%TIKIWIKI_DIR%%/db/tiki-db.php
-%%TIKIWIKI_DIR%%/db/tiki-secdb_10.1_mysql.sql
+%%TIKIWIKI_DIR%%/db/tiki-secdb_10.2_mysql.sql
 %%TIKIWIKI_DIR%%/db/tiki.sql
 %%TIKIWIKI_DIR%%/db/tiki_1.8to1.9.sql
 %%TIKIWIKI_DIR%%/db/tiki_1.9to2.0.sql
@@ -1999,8 +1999,10 @@
 %%TIKIWIKI_DIR%%/installer/schema/20120930_tiki_p_view_poll_choices_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20121009_module_search_box_to_search_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20121016_actionlog_comment_text_tiki.sql
+%%TIKIWIKI_DIR%%/installer/schema/20121027_tracker_samerow_fix_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20121210_add_missing_index_user_assigned_modules_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/20121210_better_forum_reported_index_tiki.sql
+%%TIKIWIKI_DIR%%/installer/schema/20130228_bigger_token_groups_tiki.sql
 %%TIKIWIKI_DIR%%/installer/schema/999999991_decode_pages_sources_tiki.php
 %%TIKIWIKI_DIR%%/installer/schema/99999999_image_plugins_kill_tiki.php
 %%TIKIWIKI_DIR%%/installer/schema/index.php
@@ -7676,7 +7678,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/cupertino/images/ui-icons_72a7cf_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/cupertino/images/ui-icons_ffffff_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/cupertino/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dark-hive/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dark-hive/images/ui-bg_flat_30_cccccc_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dark-hive/images/ui-bg_flat_50_5c5c5c_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dark-hive/images/ui-bg_glass_40_ffc73d_1x400.png
@@ -7705,7 +7706,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dot-luv/images/ui-icons_9ccdfc_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dot-luv/images/ui-icons_ffffff_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/dot-luv/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/eggplant/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/eggplant/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/eggplant/images/ui-bg_flat_0_eeeeee_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/eggplant/images/ui-bg_flat_55_994d53_40x100.png
@@ -7736,7 +7736,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/excite-bike/images/ui-icons_fcdd4a_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/excite-bike/images/ui-icons_ffffff_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/excite-bike/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/flick/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/flick/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/flick/images/ui-bg_flat_0_eeeeee_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/flick/images/ui-bg_flat_55_ffffff_40x100.png
@@ -7782,7 +7781,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/humanity/images/ui-icons_ff7519_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/humanity/images/ui-icons_ffffff_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/humanity/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/le-frog/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_15_444444_40x40.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_95_ffdc2e_40x40.png
@@ -7812,7 +7810,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/mint-choc/images/ui-icons_f1fd86_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/mint-choc/images/ui-icons_ffffff_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/mint-choc/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/ui-bg_flat_0_eeeeee_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/ui-bg_flat_55_c0402a_40x100.png
@@ -7828,7 +7825,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/ui-icons_999999_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/images/ui-icons_fbc856_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/overcast/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/pepper-grinder/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_10_eceadf_60x60.png
@@ -7908,7 +7904,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/start/images/ui-icons_f7a50d_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/start/images/ui-icons_fcd113_256x240.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/start/jquery-ui.css
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/sunny/images/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/sunny/images/ui-bg_flat_30_cccccc_40x100.png
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui/themes/sunny/images/ui-bg_flat_50_5c5c5c_40x100.png
@@ -8016,7 +8011,6 @@
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui-selectmenu/ui/jquery.ui.selectmenu.js
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui-selectmenu/version.txt
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-ui-timepicker-addon.js
-%%TIKIWIKI_DIR%%/lib/jquery/jquery-validate/.DS_Store
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-validate/README.md
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-validate/additional-methods.js
 %%TIKIWIKI_DIR%%/lib/jquery/jquery-validate/additional-methods.min.js

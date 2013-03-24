@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	10.1
+PORTVERSION=	10.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_10.x_Sun/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
@@ -34,6 +34,7 @@ x-generate-plist: extract
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${TAR} -yxf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
+	@${FIND} ${WRKSRC} -name '.DS_Store' -delete
 
 do-install:
 	-${MKDIR} ${PREFIX}/${TIKIWIKI_DIR}
