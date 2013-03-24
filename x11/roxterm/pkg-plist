@@ -2,7 +2,7 @@ bin/roxterm
 bin/roxterm-config
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/en/guide.html
 %%PORTDOCS%%%%DOCSDIR%%/en/index.html
