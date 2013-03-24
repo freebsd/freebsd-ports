@@ -6,7 +6,7 @@
  
 +ifeq ($(OSNAME), FreeBSD)
 +EXTRALIB	+= -lm
-+FCOMMON_OPT	+= -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
++FCOMMON_OPT	+= -Wl,-rpath=%%_GCC_RUNTIME%%
 +endif
 +
  ifeq ($(OSNAME), AIX)
