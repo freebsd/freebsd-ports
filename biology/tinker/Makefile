@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	6.1.01
+PORTVERSION=	6.2.01
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
@@ -11,8 +11,7 @@ COMMENT=	A general purpose molecular modelling package
 
 RESTRICTED=	author requests no distribution except from his FTP site
 
-OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DATA DOCS EXAMPLES
-OPTIONS_DEFAULT=DATA
+OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DOCS EXAMPLES
 OPTIMIZED_FFLAGS_DESC=	compilation optimizations
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -28,9 +27,6 @@ MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 
-DOCS=		0README *.pdf *.txt
-SAMPLES=	0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.xyz
-BENCHES=	0README *.dyn0 *.log *.key *.run *.xyz results*
 
 .include <bsd.port.pre.mk>
 
@@ -41,31 +37,29 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
 .endif
 
-.if empty(PORT_OPTIONS:MDATA)
-NOPORTDATA=	yes
-.endif
-
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/tinker.txt ${DATADIR}
-	@${MKDIR} ${DATADIR}/params
-	${INSTALL_DATA} ${WRKSRC}/params/* ${DATADIR}/params
-.if ${PORT_OPTIONS:MDATA}
+	(cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} tinker.txt ${DATADIR})
 	@${MKDIR} ${DATADIR}/bench
-	${INSTALL_DATA} ${BENCHES:S|^|${WRKSRC}/bench/|} ${DATADIR}/bench
+	(cd ${WRKSRC}/bench && ${INSTALL_DATA} \
+		0README *.dyn0 *.log *.key *.run *.xyz results* \
+		${DATADIR}/bench)
+	@${MKDIR} ${DATADIR}/params
+	(cd ${WRKSRC}/params && ${INSTALL_DATA} * ${DATADIR}/params)
 	@${MKDIR} ${DATADIR}/test
-	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
-.endif
+	(cd ${WRKSRC}/test && ${INSTALL_DATA} * ${DATADIR}/test)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} 0README *.pdf *.txt ${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${SAMPLES:S|^|${WRKSRC}/example/|} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${INSTALL_DATA} \
+		0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.xyz \
+		${EXAMPLESDIR})
 .endif
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
