@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libboard
-# Date created:		Fri 24 aug 2007
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		libboard
 DISTVERSION=		0.9.0
@@ -12,7 +8,7 @@ CATEGORIES=		graphics
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=		thierry@FreeBSD.org
-COMMENT=		A vector graphics C++ library
+COMMENT=		Vector graphics C++ library
 
 LICENSE=		LGPL3
 
@@ -41,12 +37,12 @@ pre-configure:
 post-install:
 	${MV} ${PREFIX}/lib/libboard.so ${PREFIX}/lib/libboard.so.0
 	${LN} -sf ${PREFIX}/lib/libboard.so.0 ${PREFIX}/lib/libboard.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${DOCSDIR}/
 	${RM} -rf ${DOCSDIR}/.svn
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 	cd ${WRKSRC}/bin/ && ${COPYTREE_BIN} . ${EXAMPLESDIR}/
