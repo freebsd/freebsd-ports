@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME?=	firebird
-PORTVERSION=	2.0.6
-PORTREVISION=	2
+PORTVERSION=	2.0.7
+PORTREVISION=	0
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Release/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.13266-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.13318-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -59,7 +59,7 @@ ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
 		inet_server extlib embed_gfix embed_gbak embed_gdef embed_util \
 		embed_fbudf
 
-SUB_FILES=	pkg-install pkg-message aliases.conf
+SUB_FILES=	pkg-message aliases.conf
 
 UTIL_BIN=	fb_inet_server fb_lock_print fbstat gbak gdef gfix gsec nbackup
 UDF_SO=		ib_udf.so fbudf.so
@@ -104,8 +104,9 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if !defined(CLIENT_ONLY)
-pre-su-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
+USERS=	${PORTNAME}
+GROUPS=	${USERS}
 
 post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
@@ -115,8 +116,7 @@ post-install:
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
 .ifndef PACKAGE_BUILDING
-	@if [ `${ID} -u` -eq 0 ]; then \
-	${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' because this may cause conflicts with SysV semaphores of running services."; exit 1; fi
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
 		${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.pre.build
