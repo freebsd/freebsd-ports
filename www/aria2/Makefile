@@ -11,8 +11,9 @@ COMMENT=	Yet another download tool
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS NLS SQLITE
+OPTIONS_DEFINE=	CA_BUNDLE DOCS NLS SQLITE
 OPTIONS_DEFAULT=SQLITE
+CA_BUNDLE_DESC=	Use CA bundle from Mozilla Project
 
 CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-metalink \
 		--enable-shared --enable-threads=posix --with-libz \
@@ -33,6 +34,13 @@ MANLANG=	"" ru
 PLIST_FILES=	bin/aria2c
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCA_BUNDLE}
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CONFIGURE_ARGS+=--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+.else
+CONFIGURE_ARGS+=--without-ca-bundle
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	%%DOCSDIR%%/README \
@@ -73,8 +81,7 @@ CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
-.else
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|\(install-exec-am\) install-data-am|\1|' ${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
