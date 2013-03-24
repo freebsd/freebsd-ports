@@ -1,0 +1,15 @@
+#!/bin/sh
+
+JAVA=`which java`
+JITSI="/usr/local/lib/jitsi"
+JITSI_LIB="${JITSI}/lib"
+JITSI_BUNDLES="${JITSI}/sc-bundles"
+
+COMMAND="${JAVA} -Dfelix.config.properties=file:${JITSI_LIB}/felix.client.run.properties \
+        -Djava.util.logging.config.file=${JITSI_LIB}/logging.properties \
+        -Djna.library.path=${JITSI_LIB}/native \
+        -classpath ${JITSI_LIB}/felix.jar:${JITSI_LIB}/jdic-all.jar:${JITSI_LIB}/jdic_stub.jar:${JITSI_BUNDLES}/sc-launcher.jar:${JITSI_BUNDLES}/util.jar \
+        net.java.sip.communicator.launcher.SIPCommunicator"
+
+cd ${JITSI}
+exec ${COMMAND} $*
