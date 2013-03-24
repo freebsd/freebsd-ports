@@ -1,7 +1,4 @@
-# New ports collection makefile for: yaf
-# Date created:		2009-06-29
-# Whom:			Dikshie <dikshie@sfc.wide.ad.jp>
-#
+# Created by: Dikshie <dikshie@sfc.wide.ad.jp>
 # $FreeBSD$
 
 PORTNAME=	yaf
@@ -25,6 +22,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIOGURE_ARGS+=	--disable-doxygen
+USE_PKGCONFIG=	build
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
