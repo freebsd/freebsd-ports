@@ -1,13 +1,8 @@
-# New ports collection makefile for:	roxterm
-# Date created:		19 Jun 2007
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	roxterm
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.6.5
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -16,45 +11,65 @@ COMMENT=	GTK+ 2.0 terminal emulator with tabs
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
+		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USE_XORG=	sm ice
+OPTIONS_DEFINE=	DOCS
+
+USE_BZIP2=	yes
 USE_GNOME=	libglade2 vte
+USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_prog_HAVE_XMLTO=no ac_cv_prog_HAVE_PO4A=no
+USE_PKGCONFIG=	build
+USE_AUTOTOOLS=	libtool:env
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=	roxterm.1 \
 	roxterm-config.1
 
-post-patch:
-.for file in Makefile.in po4a/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-data-local||g' \
-		${WRKSRC}/${file}
-.endfor
-.for file in src/Makefile.in
-	@${REINPLACE_CMD} -e '/roxterm-config.ui/s|-i |-i.orig |g' \
-		${WRKSRC}/${file}
-.endfor
+MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${_make_jobs}
 
-post-install:
+.include <bsd.port.options.mk>
+
+.if !defined(DISABLE_MAKE_JOBS)
+_make_jobs=	${MAKE_JOBS_NUMBER}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${LOCALBASE}|' ${WRKSRC}/maitch.py
+
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} MAITCHFLAGS="${MAITCHFLAGS}" \
+		${PYTHON_CMD} mscript.py configure --prefix=${PREFIX} \
+		--disable-gtk3 --disable-po4a --disable-git)
+
+do-build:
+	@(cd ${WRKSRC} && ${PYTHON_CMD} mscript.py build \
+		&& ${PYTHON_CMD} mscript.py install)
+
+do-install:
+	(cd ${WRKSRC}/build/usr/local/bin \
+		&& ${INSTALL_PROGRAM} * ${PREFIX}/bin)
+	(cd ${WRKSRC}/build/usr/local/share/man/man1 \
+		&& ${INSTALL_MAN} * ${MANPREFIX}/man/man1)
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}/build/usr/local/share/roxterm \
+		&& ${COPYTREE_SHARE} . ${DATADIR})
+	@${MKDIR} ${DESKTOPDIR}
+	(cd ${WRKSRC}/build/usr/local/share/applications \
+		&& ${INSTALL_DATA} * ${DESKTOPDIR})
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/roxterm.svg \
-		${PREFIX}/share/icons/hicolor/scalable/apps
-.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/build/usr/local/share/icons/hicolor/scalable/apps \
+		&& ${INSTALL_DATA} * \
+		${PREFIX}/share/icons/hicolor/scalable/apps)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS Changes README
-	${INSTALL_DATA} ${WRKSRC}/Help/${file} ${DOCSDIR}
-.endfor
-.for dir in en lib
-	@(cd ${WRKSRC}/Help && ${COPYTREE_SHARE} ${dir} ${DOCSDIR})
-.endfor
+	@(cd ${WRKSRC}/build/usr/local/share/doc/roxterm \
+		&& ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
