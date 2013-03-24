@@ -2,21 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	oauthlib
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.8
 CATEGORIES=	security net python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	An RFC-compliant Python implementation of OAuth
+COMMENT=	RFC-compliant Python implementation of OAuth
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 
-# Python3 ready
-USE_PYTHON=	yes
+USE_GITHUB=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.mk>
+GH_ACCOUNT=	idan
+GH_COMMIT=	554182c
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 300
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
+.endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+
+.include <bsd.port.post.mk>
