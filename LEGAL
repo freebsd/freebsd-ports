@@ -261,7 +261,6 @@ triangle-*/*		math/triangle		No commercial use without prior arrangement with th
 Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed for more than the cost of duplication
 tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for more than the cost of duplication
 TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to download.
-tspc-*-src.tgz		net/freenet6		Must agree to License Agreement before downloading
 tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 twelf-*			lang/twelf		License is currently indeterminate
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
