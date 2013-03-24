@@ -1,14 +1,9 @@
-#
-# ports collection makefile for:	mysar
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-# Date created:				2006-01-10
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mySAR
 PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -23,6 +18,7 @@ WRKSRC=		${WRKROOT}/bin/mysar-binary-importer/
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre
+USE_CSTD=	gnu89
 
 CONFIGURE_ARGS=	--with-mysql-lib=${LOCALBASE}
 
@@ -46,10 +42,8 @@ post-patch:
 		${WRKROOT}/etc/mysar.apache
 
 	${REINPLACE_CMD} \
-		-e 's,%%MYSARDIR%%,${MYSARDIR},g' \
-		`find ${WRKROOT}/etc -type f`
-	${REINPLACE_CMD} \
-		-e 's,%%PHP%%,${LOCALBASE}/bin/php,g' \
+		-e 's,/usr/bin/php,${LOCALBASE}/bin/php,g' \
+		-e 's,\([=,. ]\)mktime(),\1time(),g' \
 		`find ${WRKROOT}/bin -type f`
 	${REINPLACE_CMD} \
 		-e 's,/bin/sh,${LOCALBASE}/bin/bash,g' \
