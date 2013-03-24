@@ -1,0 +1,6 @@
+SHA256 (tigervnc-1.2.0.tar.gz) = 6e0910f1ff1681bc8b52e7ea805e586b88b352c88f66e4c2cc31aa39c4a32f53
+SIZE (tigervnc-1.2.0.tar.gz) = 2487050
+SHA256 (xorg-server-1.10.6.tar.bz2) = c4da5a97b6986688efe74bc9bff6a38795977019ac032dd6d787abad32c50682
+SIZE (xorg-server-1.10.6.tar.bz2) = 5406712
+SHA256 (xorg-server-1.7.7.tar.bz2) = 54c4d32bfeb8852adbea3ddae6981f3bc2eadb330124d9b35226c617c01926ff
+SIZE (xorg-server-1.7.7.tar.bz2) = 4939257
