@@ -16,6 +16,10 @@ COMMENT=	Multi-language editor from ActiveState
 
 CONFLICTS=	komodo-ide-*
 
+RESTRICTED=	Distribution not permitted
+NO_CDROM=	Distribution not permitted
+NO_PACKAGE=	Distribution not permitted
+
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	f10
