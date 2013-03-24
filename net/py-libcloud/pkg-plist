@@ -73,6 +73,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/cloudstack.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/cloudstack.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/cloudstack.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/digitalocean.py
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/digitalocean.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/digitalocean.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/dreamhost.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/dreamhost.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/dreamhost.pyo
