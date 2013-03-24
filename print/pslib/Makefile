@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	EXAMPLES MAN NLS
 OPTIONS_DEFAULT=	MAN NLS
 MAN_DESC=	Manual pages
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 EX_NAME=	pslib-examples-0.0.10
@@ -69,4 +69,4 @@ post-install:
 	cd ${EX_WRKSRC} && ${PAX} -rw * ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
