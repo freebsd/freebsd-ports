@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	hppsmtools
-# Date created:		2 September 1999
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	hppsmtools
 PORTVERSION=	1.1
@@ -14,7 +10,9 @@ MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for HP PhotoSmart C5340A & Konica Q-EZ digital cameras
 
-PORTDOCS=	README
+LICENSE=	GPLv2
+
+PORTDOCS=	README changes.txt
 PLIST_FILES=	bin/psmdel bin/psmdir bin/psmget bin/psmsho
 
 post-patch:
@@ -23,13 +21,15 @@ post-patch:
 	@${REINPLACE_CMD} -e '/typedef unsigned char/d' ${WRKSRC}/exif.h
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/psm*.c
 
+.include <bsd.port.options.mk>
+
 do-install:
 .for file in psmdel psmdir psmget psmsho
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
