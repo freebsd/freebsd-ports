@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ebhttpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ebhttpd:
+# ebhttpd_enable (bool): Set to "NO" by default.
+#                        Set it to "YES" to enable ebhttpd.
+# ebhttpd_flags (str):   Set to "" by default.
+#                        Extra flags passed to start ebhttpd.
+
+. /etc/rc.subr
+
+name=ebhttpd
+rcvar=ebhttpd_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/ebnetd/${name}.pid"
+required_dirs="/var/run/ebnetd"
+required_files=%%PREFIX%%/etc/ebnetd.conf
+
+ebhttpd_enable=${ebhttpd_enable:-"NO"}
+ebhttpd_flags=${ebhttpd_flags:-""}
+
+sig_reload=SIGHUP
+extra_commands="reload"
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 etc/ebnetd.conf.sample
-etc/rc.d/ebnetd.sh
 libexec/ebhtstat
 libexec/ebnstat
 libexec/ndtpstat
@@ -15,5 +14,5 @@ sbin/ebnupgrade
 sbin/ndtpcheck
 sbin/ndtpcontrol
 sbin/ndtpd
-@exec /bin/mkdir -m 0755 -p /var/run/ebnetd
-@dirrmtry /var/run/ebnetd
+@exec mkdir -m 0755 -p %%EBNETD_RUNDIR%%
+@unexec rmdir %%EBNETD_RUNDIR%%

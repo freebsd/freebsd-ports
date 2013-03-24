@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ndtpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ndtpd:
+# ndtpd_enable (bool):   Set to "NO" by default.
+#                        Set it to "YES" to enable ndtpd.
+# ndtpd_flags (str):     Set to "" by default.
+#                        Extra flags passed to start ndtpd.
+
+. /etc/rc.subr
+
+# ndtpd
+name=ndtpd
+rcvar=ndtpd_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/ebnetd/${name}.pid"
+required_dirs="/var/run/ebnetd"
+required_files=%%PREFIX%%/etc/ebnetd.conf
+
+ndtpd_enable=${ndtpd_enable:-"NO"}
+ndtpd_flags=${ndtpd_flags:-""}
+
+sig_reload=SIGHUP
+extra_commands="reload"
+
+load_rc_config $name
+run_rc_command "$1"
