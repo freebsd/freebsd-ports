@@ -1,12 +1,5 @@
-# New ports collection makefile for:	linux-q3ademo
-# Date created:				11 December 2000
-# Whom:					Marc van Woerkom <3d@freebsd.org>
-#
-# - inspired by linux realplayer 7 port
-# - special thanks to the Emacs key board macro
-#
+# Created by: Marc van Woerkom <3d@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quake3
 DISTVERSION=	1.11-6
@@ -21,6 +14,10 @@ EXTRACT_SUFX=	.gz.sh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Demo
+
+RESTRICTED=	Restrictive license by Loki Software
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 
 USE_LINUX=	yes
 USE_LINUX_APPS+=dri

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Quake 3 Arena Dedicated Server
-# Date created:				Sun Jun  3 00:52:38 EDT 2001
-# Whom:					pat@databits.net
-#
+# Created by: pat@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c
@@ -21,6 +17,10 @@ COMMENT=	Quake III Arena for Linux
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
+
+RESTRICTED=	Restrictive license by Loki Software
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 
 OPTIONS_MULTI=	TYPE
 OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP
