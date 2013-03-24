@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	le
-PORTVERSION=	1.14.8
+PORTVERSION=	1.14.9
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
