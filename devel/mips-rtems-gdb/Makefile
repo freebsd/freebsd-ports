@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mips-rtems-gdb
-# Date created:		31 October 2002
-# Whom:			James Housley <jeh@FreeBSD.org>
-#
+# Created by: James Housley <jeh@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -11,6 +7,10 @@ TGTARCH=	mips
 TGTABI=		rtems
 
 WITH_RTEMS_PATCHES=	yes
+
+BROKEN=		many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099#c5
+DEPRECATED=	many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099#c5
+EXPIRATION_DATE=	2013-06-01
 
 MASTERDIR=	${.CURDIR}/../cross-gdb
 .include "${MASTERDIR}/Makefile"
