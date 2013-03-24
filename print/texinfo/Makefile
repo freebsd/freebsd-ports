@@ -3,6 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	5.1.20130313
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -24,7 +25,6 @@ INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	*
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
 CPPFLAGS+=	-I${LOCALBASE}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
