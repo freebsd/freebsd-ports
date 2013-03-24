@@ -30,6 +30,7 @@ lib/kde4/skrooge_bank.so
 lib/kde4/skrooge_budget.so
 lib/kde4/skrooge_calculator.so
 lib/kde4/skrooge_categories.so
+lib/kde4/skrooge_import_backend.so
 lib/kde4/skrooge_import_csv.so
 lib/kde4/skrooge_import_gnc.so
 lib/kde4/skrooge_import_gsb.so
@@ -62,8 +63,11 @@ lib/libskgbasegui.so.%%VERSION%%
 lib/libskgbasemodeler.so
 lib/libskgbasemodeler.so.1
 lib/libskgbasemodeler.so.%%VERSION%%
-share/applications/kde4/skrooge.desktop
 share/akonadi/agents/skroogeakonadiresource.desktop
+share/applications/kde4/skrooge.desktop
+share/apps/plasma/plasmoids/account-qml/contents/ui/main.qml
+share/apps/plasma/plasmoids/account-qml/metadata.desktop
+share/apps/plasma/plasmoids/adviceapplet-qml/contents/CMakeLists.txt
 share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui/main.qml
 share/apps/plasma/plasmoids/adviceapplet-qml/metadata.desktop
 share/apps/skg/skgmainpanel.rc
@@ -79,6 +83,7 @@ share/apps/skg_print/skg_print.rc
 share/apps/skg_properties/skg_properties.rc
 share/apps/skg_selectall/skg_selectall.rc
 share/apps/skg_undoredo/skg_undoredo.rc
+share/apps/skrooge/backends/weboob.backend
 share/apps/skrooge/html/dark.txt
 share/apps/skrooge/html/default.txt
 share/apps/skrooge/html/default/account_table.html
@@ -499,6 +504,7 @@ share/kde4/services/skg-plugin-selectall.desktop
 share/kde4/services/skg-plugin-undoredo.desktop
 share/kde4/services/skgadvicedataengine.desktop
 share/kde4/services/skgdataengine.desktop
+share/kde4/services/skrooge-import-backend.desktop
 share/kde4/services/skrooge-import-csv.desktop
 share/kde4/services/skrooge-import-gnc.desktop
 share/kde4/services/skrooge-import-gsb.desktop
@@ -611,6 +617,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge/html/skrooge_bank
 @dirrm share/apps/skrooge/html/default
 @dirrm share/apps/skrooge/html
+@dirrm share/apps/skrooge/backends
 @dirrm share/apps/skrooge
 @dirrm share/apps/skg_undoredo
 @dirrm share/apps/skg_selectall
@@ -628,6 +635,9 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml
+@dirrm share/apps/plasma/plasmoids/account-qml/contents/ui
+@dirrm share/apps/plasma/plasmoids/account-qml/contents
+@dirrm share/apps/plasma/plasmoids/account-qml
 @dirrmtry share/apps/plasma/plasmoids
 @dirrmtry share/akonadi/agents
 @dirrmtry share/akonadi
