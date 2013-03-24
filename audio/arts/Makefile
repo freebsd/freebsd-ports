@@ -44,6 +44,7 @@ USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xft xi \
 		xinerama xrandr xrender xt
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
 DO_NOT_COMPILE+=gmcop
 _NO_KDE_FINAL=	yes

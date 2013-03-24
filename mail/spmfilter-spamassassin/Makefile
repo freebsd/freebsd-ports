@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spmfilter-spamassassin
-# Date created:				2010-04-29
-# Whom:					Axel Steiner <ast@treibsand.com>
-#
+# Created by: Axel Steiner <ast@treibsand.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spmfilter-spamassassin
 PORTVERSION=	0.1
@@ -22,6 +18,7 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
+USE_PKGCONFIG=	build
 
 OPTIONS=	DEBUG	"Enable Debugging"	off
 
