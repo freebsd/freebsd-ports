@@ -21,11 +21,20 @@ USE_GNOME=	libxml2
 USE_PKGCONFIG=	build
 USE_FAM=	yes
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake:outsource
 MAKE_JOBS_UNSAFE=	yes
 
 # supported versions: ffmpeg, ffmpeg1, ffmpeg-devel
+# corresponding FFMPEG_SUFFIX: '', '1', '-devel'
 FFMPEG_SUFFIX?=	#
+CMAKE_ARGS+=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFFIX}"
+
+.if !empty(FFMPEG_SUFFIX)
+# Reorder include directories to allow build with multiple ffmpeg installed.
+# This patch must NOT be used, if ffmpeg headers are installed
+# directly to ${LOCALBASE}/include
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libstreamanalyzer__plugins__endplugins__CMakeLists.txt
+.endif
 
 post-patch:
 	${MKDIR} ${WRKSRC}

@@ -23,7 +23,7 @@
  if (NOT FFMPEG_LIBRARIES)
  
 +  # Look for ffmpeg1 by default. Use empty suffix for ffmpeg-0.7
-+  if (NOT FFMPEG_SUFFIX)
++  if (NOT DEFINED FFMPEG_SUFFIX)
 +    set(FFMPEG_SUFFIX 1)
 +  endif ()
 +
