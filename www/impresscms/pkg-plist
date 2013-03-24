@@ -2558,14 +2558,45 @@
 %%WWWDIR%%/htdocs/libraries/recaptcha/recaptchalib.php
 %%WWWDIR%%/htdocs/libraries/simplepie/LICENSE.txt
 %%WWWDIR%%/htdocs/libraries/simplepie/README.markdown
-%%WWWDIR%%/htdocs/libraries/simplepie/README.txt
+%%WWWDIR%%/htdocs/libraries/simplepie/autoloader.php
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/LICENCE
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/ReadMe.txt
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/idna_convert.class.php
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/index.html
 %%WWWDIR%%/htdocs/libraries/simplepie/idn/npdata.ser
 %%WWWDIR%%/htdocs/libraries/simplepie/index.html
-%%WWWDIR%%/htdocs/libraries/simplepie/simplepie.inc
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Author.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/Base.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/DB.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/File.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/Memcache.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache/MySQL.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Caption.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Category.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content/Type/Sniffer.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Copyright.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Core.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Credit.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Decode/HTML/Entities.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Enclosure.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/File.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/gzdecode.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/HTTP/Parser.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/IRI.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Item.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Locator.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Misc.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Net/IPv6.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Parse/Date.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Parser.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Rating.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Registry.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Restriction.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML/Declaration/Parser.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Sanitize.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Source.php
+%%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie.php
 %%WWWDIR%%/htdocs/libraries/smarty/Config_File.class.php
 %%WWWDIR%%/htdocs/libraries/smarty/Smarty.class.php
 %%WWWDIR%%/htdocs/libraries/smarty/Smarty_Compiler.class.php
@@ -4507,6 +4538,18 @@
 @dirrm %%WWWDIR%%/htdocs/libraries/phpopenid/admin
 @dirrm %%WWWDIR%%/htdocs/libraries/phpopenid
 @dirrm %%WWWDIR%%/htdocs/libraries/recaptcha
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Cache
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content/Type
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Content
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Decode/HTML
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Decode
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/HTTP
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Net
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/Parse
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML/Declaration
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie/XML
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library/SimplePie
+@dirrm %%WWWDIR%%/htdocs/libraries/simplepie/library
 @dirrm %%WWWDIR%%/htdocs/libraries/simplepie/idn
 @dirrm %%WWWDIR%%/htdocs/libraries/simplepie
 @dirrm %%WWWDIR%%/htdocs/libraries/smarty/configs
