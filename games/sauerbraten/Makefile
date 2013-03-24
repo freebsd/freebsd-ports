@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20100728
-PORTREVISION=	2
+PORTVERSION=	20130203
+PORTREVISION=	0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2010_07_19
-DISTNAME=	${PORTNAME}_2010_07_28_justice_edition_linux
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2013_01_04
+DISTNAME=	${PORTNAME}_2013_02_03_collect_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
+
+LICENSE_COMB=	multi
+LICENSE=	MIT ZLIB
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -31,31 +34,34 @@ MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat file size limits
 PORTDATA=	data packages
 PORTDOCS=	*
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		MASTER "Build master server" off
+OPTIONS_MULTI=	BUILD
+OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
+OPTIONS_DEFAULT=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+MASTER_DESC=	Build master server
 
 SUB_FILES=	sauer_client sauer_master sauer_server pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && defined(WITHOUT_MASTER)
-IGNORE=		needs at least one executable (CLIENT, DEDICATED or MASTER)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
 SAUER_BIN+=	client
+
+DESKTOP_ENTRIES="Sauerbraten" "${COMMENT}" \
+			"${PREFIX}/share/${PORTNAME}/data/cube.png" "sauer_client" \
+				"Game;" false
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	server
 SAUER_BIN+=	server
 .endif
 
-.if !defined(WITHOUT_MASTER)
+.if ${PORT_OPTIONS:MMASTER}
 ALL_TARGET+=	master
 SAUER_BIN+=	master
 .endif
@@ -77,7 +83,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
@@ -91,4 +97,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

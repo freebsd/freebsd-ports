@@ -1,8 +1,8 @@
---- src/Makefile.orig	2010-05-14 01:30:28.000000000 +0700
-+++ src/Makefile	2010-09-24 18:44:00.000000000 +0700
+--- src/Makefile	2012-08-28 00:30:07.000000000 -0500
++++ src/Makefile	2013-03-24 00:38:04.000000000 -0500
 @@ -1,8 +1,7 @@
 -CXXFLAGS= -O3 -fomit-frame-pointer
- override CXXFLAGS+= -Wall -fsigned-char
+ override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
  
  PLATFORM= $(shell uname -s)
 -PLATFORM_PREFIX= native
@@ -10,25 +10,25 @@
  
  INCLUDES= -Ishared -Iengine -Ifpsgame -Ienet/include
  
-@@ -20,8 +19,8 @@
- CLIENT_INCLUDES= $(INCLUDES) -Iinclude
- CLIENT_LIBS= -mwindows -Llib -lSDL -lSDL_image -lSDL_mixer -lzdll -lopengl32 -lenet -lws2_32 -lwinmm
+@@ -36,8 +35,8 @@
+ endif
+ CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else	
 -CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
--CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
+-CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
 +CLIENT_INCLUDES= $(INCLUDES) `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 +CLIENT_LIBS= -Lenet/.libs -lenet `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -90,8 +89,8 @@
- SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -Iinclude
- SERVER_LIBS= -Llib -lzdll -lenet -lws2_32 -lwinmm
+@@ -105,8 +104,8 @@
+ SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
+ MASTER_LIBS= $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else
 -SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
 -SERVER_LIBS= -Lenet/.libs -lenet -lz
 +SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I${LOCALBASE}/include
 +SERVER_LIBS= -Lenet/.libs -lenet -lz -L${LOCALBASE}/lib
+ MASTER_LIBS= $(SERVER_LIBS)
  endif
  SERVER_OBJS= \
- 	shared/crypto-standalone.o \
