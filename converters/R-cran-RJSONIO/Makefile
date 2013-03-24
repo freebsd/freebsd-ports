@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RJSONIO
-DISTVERSION=	1.0-1
-PORTREVISION=	2
+DISTVERSION=	1.0-2
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,8 +13,5 @@ LICENSE=	BSD
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
-
-post-patch:
-	${REINPLACE_CMD} "s/std::snprintf/snprintf/" ${WRKSRC}/src/libjson/Source/NumberToString.h
 
 .include <bsd.port.mk>
