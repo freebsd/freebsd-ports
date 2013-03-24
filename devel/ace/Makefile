@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -109,7 +109,11 @@ do-configure:
 		&& ${ECHO_CMD} "LDFLAGS=	${LDFLAGS}" >> platform_macros.GNU \
 		&& ${ECHO_CMD} "DCFLAGS=" >> platform_macros.GNU \
 		&& ${ECHO_CMD} "OCFLAGS=	${CFLAGS}" >> platform_macros.GNU \
-		&& ${ECHO_CMD} "INSTALL_PREFIX=	${PREFIX}" >> platform_macros.GNU
+		&& ${ECHO_CMD} "INSTALL_PREFIX=	${PREFIX}" >> platform_macros.GNU \
+		&& ${ECHO_CMD} "PLATFORM_TK_CPPFLAGS=	\$$(shell . ${TK_LIBDIR}/tkConfig.sh && ${ECHO_CMD} -n \$$\$$TK_INCLUDE_SPEC)" >> platform_macros.GNU \
+		&& ${ECHO_CMD} "PLATFORM_TK_LIBS=	\$$(shell . ${TK_LIBDIR}/tkConfig.sh && ${ECHO_CMD} -n \$$\$$TK_LIB_FLAG)" >> platform_macros.GNU \
+		&& ${ECHO_CMD} "PLATFORM_TCL_CPPFLAGS=	\$$(shell . ${TCL_LIBDIR}/tclConfig.sh && ${ECHO_CMD} -n \$$\$$TCL_INCLUDE_SPEC)" >> platform_macros.GNU \
+		&& ${ECHO_CMD} "PLATFORM_TCL_LIBS=	\$$(shell . ${TCL_LIBDIR}/tclConfig.sh && ${ECHO_CMD} -n \$$\$$TCL_LIB_FLAG)" >> platform_macros.GNU
 
 post-install:
 	@for f in `${LS} -d \

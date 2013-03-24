@@ -1100,7 +1100,7 @@ include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h
 include/ace/config-macosx-leopard.h
 include/ace/config-macosx-lion.h
-include/ace/config-macosx-mountain-lion.h
+include/ace/config-macosx-mountainlion.h
 include/ace/config-macosx-panther.h
 include/ace/config-macosx-snowleopard.h
 include/ace/config-macosx-tiger.h
@@ -1500,7 +1500,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_macosx_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_leopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_lion.GNU
-%%DATADIR%%/include/makeinclude/platform_macosx_mountain_lion.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_mountainlion.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_panther.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_snowleopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_tiger.GNU
