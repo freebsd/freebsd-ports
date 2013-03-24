@@ -40,9 +40,7 @@ PLIST_SUB+=	MONO="@comment "
 SUB_LIST+=	MONO="@comment "
 .endif
 
-.if defined(PACKAGE_BUILDING)
 RESTRICTED=	Have to agree to license before download
-.endif
 
 SUB_FILES=	simian
 SUB_LIST+=	VERSION=${PORTVERSION}
