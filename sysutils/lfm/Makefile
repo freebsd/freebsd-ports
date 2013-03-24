@@ -1,37 +1,41 @@
-# ex:ts=8
-# New ports collection makefile for:	lfm
-# Date created:			Jul 21, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	lfm
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
+MASTER_SITES=	GOOGLE_CODE \
+		https://inigo.katxi.org/devel/lfm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	2.4+
+OPTIONS_DEFINE=	DOCS
+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
 MAN1=		lfm.1 pyview.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/MAN_FILES/d' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e \
+		'/DOC_FILES/d ; \
+		 /MAN_FILES/d' ${WRKSRC}/setup.py
+
+.include <bsd.port.options.mk>
 
 post-install:
 .for f in lfm pyview
-	@${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MAN1PREFIX}/man/man1/
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${f}.1 ${MAN1PREFIX}/man/man1)
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for f in COPYING ChangeLog NEWS README README.pyview TODO
+.for f in ChangeLog NEWS README README.pyview TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${DOCSDIR})
 .endfor
 .endif
 

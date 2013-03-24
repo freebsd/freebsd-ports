@@ -1,6 +1,6 @@
-Last File Manager - lfm - is a simple 'midnight commander'-type file manager.
-It includes a simple file viewer, pyview.  Lfm is a curses-based application
-for the UNIX console. 
+Last File Manager - lfm - is a simple 'midnight commander'-type file
+manager. It includes a simple file viewer, pyview. Lfm is a curses-based
+application for the UNIX console. 
 
 Author: inigoserna@gmail.com
-WWW:    http://www.terra.es/personal7/inigoserna/lfm/
+WWW: https://inigo.katxi.org/devel/lfm/
