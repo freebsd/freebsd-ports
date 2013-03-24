@@ -21,6 +21,7 @@ bin/rnano
 %%NLS%%share/locale/hu/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/id/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/it/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/nano.mo
@@ -30,6 +31,7 @@ bin/rnano
 %%NLS%%share/locale/ro/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/nano.mo
