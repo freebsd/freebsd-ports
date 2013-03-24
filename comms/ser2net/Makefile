@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ser2net
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	comms net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
