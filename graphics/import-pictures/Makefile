@@ -1,9 +1,5 @@
-# New ports collection makefile for:   import-pictures
-# Date created:        7 May 2008
-# Whom:                Alexander Kuehn
-#
+# Created by: Alexander Kuehn
 # $FreeBSD$
-#
 
 PORTNAME=	import-pictures
 PORTVERSION=	1.4
@@ -13,22 +9,30 @@ MASTER_SITES=	http://www.nagilum.org/unix/
 MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Utility to copy/move pictures from a directory
 
-RUN_DEPENDS=	p5-Image-ExifTool>=7.0:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		p5-TimeDate>=1.10:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Time-modules>=2006:${PORTSDIR}/devel/p5-Time-modules
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-MAN1=		import-pictures.1
+PLIST_FILES=	bin/${PORTNAME}
+
+MAN1=		${PORTNAME}.1
+
+PORTDOCS=	import-pictures.html
+
+.include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/import-pictures ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/import-pictures.1 ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/import-pictures.html ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
