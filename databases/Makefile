@@ -13,7 +13,6 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
-    SUBDIR += akonadi-google
     SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
