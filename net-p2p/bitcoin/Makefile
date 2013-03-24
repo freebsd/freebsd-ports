@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com
@@ -20,7 +20,7 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=	f4d5f06
+GH_COMMIT=	38f8657
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_GMAKE=	yes
