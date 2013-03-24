@@ -82,6 +82,9 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/wimpiggy/selection.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/selection.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/selection.pyo
+%%PYTHON_SITELIBDIR%%/wimpiggy/tray.py
+%%PYTHON_SITELIBDIR%%/wimpiggy/tray.pyc
+%%PYTHON_SITELIBDIR%%/wimpiggy/tray.pyo
 %%PYTHON_SITELIBDIR%%/wimpiggy/util.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/util.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/util.pyo
@@ -121,6 +124,15 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/client_window.py
 %%PYTHON_SITELIBDIR%%/xpra/client_window.pyc
 %%PYTHON_SITELIBDIR%%/xpra/client_window.pyo
+%%PYTHON_SITELIBDIR%%/xpra/codec_constants.py
+%%PYTHON_SITELIBDIR%%/xpra/codec_constants.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codec_constants.pyo
+%%PYTHON_SITELIBDIR%%/xpra/cursor_names.py
+%%PYTHON_SITELIBDIR%%/xpra/cursor_names.pyc
+%%PYTHON_SITELIBDIR%%/xpra/cursor_names.pyo
+%%PYTHON_SITELIBDIR%%/xpra/daemon_thread.py
+%%PYTHON_SITELIBDIR%%/xpra/daemon_thread.pyc
+%%PYTHON_SITELIBDIR%%/xpra/daemon_thread.pyo
 %%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.py
 %%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.pyc
 %%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.pyo
@@ -130,6 +142,21 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.py
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.pyc
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.pyo
+%%PYTHON_SITELIBDIR%%/xpra/gl/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/gl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_check.py
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_check.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_check.pyo
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_client_window.py
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_client_window.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_client_window.pyo
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_colorspace_conversions.py
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_colorspace_conversions.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_colorspace_conversions.pyo
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_window_backing.py
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_window_backing.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gl/gl_window_backing.pyo
 %%PYTHON_SITELIBDIR%%/xpra/gl_client_window.py
 %%PYTHON_SITELIBDIR%%/xpra/gl_client_window.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gl_client_window.pyo
@@ -160,6 +187,9 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.pyo
+%%PYTHON_SITELIBDIR%%/xpra/platform/client_tray.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/client_tray.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/client_tray.pyo
 %%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.pyo
@@ -172,6 +202,12 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.pyo
+%%PYTHON_SITELIBDIR%%/xpra/platform/keyboard_layouts.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/keyboard_layouts.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/keyboard_layouts.pyo
+%%PYTHON_SITELIBDIR%%/xpra/platform/session_info.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/session_info.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/session_info.pyo
 %%PYTHON_SITELIBDIR%%/xpra/protocol.py
 %%PYTHON_SITELIBDIR%%/xpra/protocol.pyc
 %%PYTHON_SITELIBDIR%%/xpra/protocol.pyo
@@ -188,6 +224,9 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/scripts/client_launcher.py
 %%PYTHON_SITELIBDIR%%/xpra/scripts/client_launcher.pyc
 %%PYTHON_SITELIBDIR%%/xpra/scripts/client_launcher.pyo
+%%PYTHON_SITELIBDIR%%/xpra/scripts/exec_util.py
+%%PYTHON_SITELIBDIR%%/xpra/scripts/exec_util.pyc
+%%PYTHON_SITELIBDIR%%/xpra/scripts/exec_util.pyo
 %%PYTHON_SITELIBDIR%%/xpra/scripts/main.py
 %%PYTHON_SITELIBDIR%%/xpra/scripts/main.pyc
 %%PYTHON_SITELIBDIR%%/xpra/scripts/main.pyo
@@ -197,9 +236,52 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/server.py
 %%PYTHON_SITELIBDIR%%/xpra/server.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server.pyo
+%%PYTHON_SITELIBDIR%%/xpra/server_base.py
+%%PYTHON_SITELIBDIR%%/xpra/server_base.pyc
+%%PYTHON_SITELIBDIR%%/xpra/server_base.pyo
+%%PYTHON_SITELIBDIR%%/xpra/server_keyboard_config.py
+%%PYTHON_SITELIBDIR%%/xpra/server_keyboard_config.pyc
+%%PYTHON_SITELIBDIR%%/xpra/server_keyboard_config.pyo
 %%PYTHON_SITELIBDIR%%/xpra/server_source.py
 %%PYTHON_SITELIBDIR%%/xpra/server_source.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server_source.pyo
+%%PYTHON_SITELIBDIR%%/xpra/server_uuid.py
+%%PYTHON_SITELIBDIR%%/xpra/server_uuid.pyc
+%%PYTHON_SITELIBDIR%%/xpra/server_uuid.pyo
+%%PYTHON_SITELIBDIR%%/xpra/shadow_server.py
+%%PYTHON_SITELIBDIR%%/xpra/shadow_server.pyc
+%%PYTHON_SITELIBDIR%%/xpra/shadow_server.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/gstreamer_util.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/gstreamer_util.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/gstreamer_util.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/pulseaudio_util.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/pulseaudio_util.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/pulseaudio_util.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/sink.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/sink.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/sink.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/sound_pipeline.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/sound_pipeline.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/sound_pipeline.pyo
+%%PYTHON_SITELIBDIR%%/xpra/sound/src.py
+%%PYTHON_SITELIBDIR%%/xpra/sound/src.pyc
+%%PYTHON_SITELIBDIR%%/xpra/sound/src.pyo
+%%PYTHON_SITELIBDIR%%/xpra/stats/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/stats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/stats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xpra/stats/base.py
+%%PYTHON_SITELIBDIR%%/xpra/stats/base.pyc
+%%PYTHON_SITELIBDIR%%/xpra/stats/base.pyo
+%%PYTHON_SITELIBDIR%%/xpra/stats/cymaths.so
+%%PYTHON_SITELIBDIR%%/xpra/stats/maths.py
+%%PYTHON_SITELIBDIR%%/xpra/stats/maths.pyc
+%%PYTHON_SITELIBDIR%%/xpra/stats/maths.pyo
+%%PYTHON_SITELIBDIR%%/xpra/stats/pymaths.py
+%%PYTHON_SITELIBDIR%%/xpra/stats/pymaths.pyc
+%%PYTHON_SITELIBDIR%%/xpra/stats/pymaths.pyo
 %%PYTHON_SITELIBDIR%%/xpra/version_util.py
 %%PYTHON_SITELIBDIR%%/xpra/version_util.pyc
 %%PYTHON_SITELIBDIR%%/xpra/version_util.pyo
@@ -236,6 +318,13 @@ etc/xpra/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/xkbhelper.py
 %%PYTHON_SITELIBDIR%%/xpra/xkbhelper.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xkbhelper.pyo
+%%PYTHON_SITELIBDIR%%/xpra/xor/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/xor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/xor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xpra/xor/cyxor.so
+%%PYTHON_SITELIBDIR%%/xpra/xor/numpyxor.py
+%%PYTHON_SITELIBDIR%%/xpra/xor/numpyxor.pyc
+%%PYTHON_SITELIBDIR%%/xpra/xor/numpyxor.pyo
 %%PYTHON_SITELIBDIR%%/xpra/xposix/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/xposix/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xposix/__init__.pyo
@@ -258,30 +347,44 @@ share/parti/parti.README
 share/wimpiggy/wimpiggy.README
 share/xpra/xpra.README
 share/xpra/COPYING
-share/xpra/icons/quit.png
-share/xpra/icons/retry.png
-share/xpra/icons/xpra.ico
-share/xpra/icons/slider.png
-share/xpra/icons/keyboard.png
-share/xpra/icons/compressed.png
-share/xpra/icons/raise.png
+share/xpra/icons/browse.png
 share/xpra/icons/clipboard.png
 share/xpra/icons/close.png
-share/xpra/icons/statistics.png
-share/xpra/icons/xpra.png
-share/xpra/icons/information.png
+share/xpra/icons/compressed.png
+share/xpra/icons/connect.png
 share/xpra/icons/encoding.png
+share/xpra/icons/features.png
+share/xpra/icons/information.png
+share/xpra/icons/keyboard.png
+share/xpra/icons/microphone.png
+share/xpra/icons/opengl.png
+share/xpra/icons/package.png
+share/xpra/icons/quit.png
+share/xpra/icons/raise.png
+share/xpra/icons/retry.png
+share/xpra/icons/slider.png
+share/xpra/icons/speaker.png
+share/xpra/icons/speed.png
+share/xpra/icons/statistics.png
+share/xpra/icons/ticked-small.png
+share/xpra/icons/unticked-small.png
+share/xpra/icons/xpra.ico
+share/xpra/icons/xpra.png
 share/xpra/webm/LICENSE
 @dirrm %%PYTHON_SITELIBDIR%%/parti/trays
 @dirrm %%PYTHON_SITELIBDIR%%/parti/addons
 @dirrm %%PYTHON_SITELIBDIR%%/parti/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/parti
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/gl
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/platform
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/rencode
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/sound
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/stats
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/vpx
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/webm
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/x264
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/xor
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/xposix
 @dirrm %%PYTHON_SITELIBDIR%%/xpra
 @dirrm %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel

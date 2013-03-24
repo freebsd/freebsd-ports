@@ -1,11 +1,11 @@
---- setup.py.orig	2012-11-08 10:32:55.726940413 -0500
-+++ setup.py	2012-11-08 10:33:07.064940881 -0500
-@@ -436,7 +436,7 @@
- #*******************************************************************************
- else:
+--- setup.py.orig	2013-02-21 15:27:40.000000000 +0000
++++ setup.py	2013-03-24 18:51:02.000000000 +0000
+@@ -568,7 +568,7 @@
+     scripts = ["scripts/xpra", "scripts/xpra_launcher"]
+     man_pages = ["man/xpra.1", "man/xpra_launcher.1"]
      data_files += [
--                    ("share/man/man1", ["man/xpra.1", "man/xpra_launcher.1", "man/parti.1"]),
-+                    ("man/man1", ["man/xpra.1", "man/xpra_launcher.1", "man/parti.1"]),
-                     ("share/parti", ["README", "parti.README"]),
+-                    ("share/man/man1", man_pages),
++                    ("man/man1", man_pages),
                      ("share/xpra", ["xpra.README", "COPYING"]),
                      ("share/wimpiggy", ["wimpiggy.README"]),
+                     ("share/xpra/icons", glob.glob("icons/*")),
