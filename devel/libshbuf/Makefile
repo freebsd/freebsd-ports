@@ -11,10 +11,21 @@ COMMENT=	Library for Shared Buffer IPC
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOXYGEN
+
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=	pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-lynx
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOXYGEN}
+CONFIGURE_ARGS+=	--enable-doxygen
+BUILD_DEPENDS+=	doxygen>0:${PORTSDIR}/devel/doxygen
+.else
+CONFIGURE_ARGS+=	--disable-doxygen
+.endif
 
 .include <bsd.port.mk>
