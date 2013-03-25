@@ -11,7 +11,7 @@ LIB_DEPENDS=	Aiksaurus-1.2.0:${PORTSDIR}/textproc/aiksaurus
 MASTERDIR=	${.CURDIR}/../aiksaurus
 PKGDIR=		${.CURDIR}
 
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gtk20
 CONFIGURE_ARGS=--with-gtk
 
 pre-install:
