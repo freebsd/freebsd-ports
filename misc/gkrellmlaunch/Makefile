@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmlaunch
-# Date Created:				Tue Nov  6 19:15:45 EST 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmlaunch
 PORTVERSION=	0.4
@@ -12,12 +8,12 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An application launcher plugin for GKrellM
-
-PORTSCOUT=	ignore:1
+COMMENT=	Application launcher plugin for GKrellM
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+
+PORTSCOUT=	ignore:1
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmlaunch.so
 USE_GNOME=	imlib

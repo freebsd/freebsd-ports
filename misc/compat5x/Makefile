@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compat5x libraries
-# Date created:				19 Aug 2005
-# Whom:					hrs, lesi
-#
+# Created by: hrs, lesi
 # $FreeBSD$
-#
 
 # NOTE: libc.so.5 is built with _PATH_LOCALE defined to
 # "/usr/local/share/compat/locale" in src/include/paths.h so data installed by
@@ -19,7 +15,7 @@ PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A convenience package to install the compat5x libraries
+COMMENT=	Convenience package to install the compat5x libraries
 
 RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellshoot2
-# Date Created:			28 Jan 2003
-# Whom:				Andrew Stuart <elitetek@tekrealm.net>
-#
+# Created by: Andrew Stuart <elitetek@tekrealm.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellshoot
 PORTVERSION=	0.4.4
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/GkrellM2.0%20Port/${PORTVERSION}
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A screen locking and screen capture plugin for GKrellM 2
+COMMENT=	Screen locking and screen capture plugin for GKrellM 2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \

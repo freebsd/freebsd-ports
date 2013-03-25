@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gregexp
-# Date created:			May 4, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gregexp
 PORTVERSION=	0.3
@@ -14,7 +9,7 @@ MASTER_SITES=	http://dentrassi.de/download/gregexp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical regular expression explorer
+COMMENT=	Graphical regular expression explorer
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 

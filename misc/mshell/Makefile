@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mshell
-# Date created:         24 September 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	mshell
 PORTVERSION=	1.0
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	jmz
 DISTFILES=	7432.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Unix menuing shell
+COMMENT=	Unix menuing shell
 
 NO_WRKSUBDIR=	yes
 MAN1=		mshell.1

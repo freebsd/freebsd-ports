@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mc-light
-# Date created:				31.08.2004
-# Whom:					Roman Y. Bogdanov <sam@brj.pp.ru>
-#
+# Created by: Roman Y. Bogdanov <sam@brj.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mc-light
 PORTVERSION=	4.1.40.p9
@@ -13,7 +9,7 @@ MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight Midnight Commander clone
+COMMENT=	Lightweight Midnight Commander clone
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 

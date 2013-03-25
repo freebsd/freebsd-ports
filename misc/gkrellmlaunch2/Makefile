@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmlaunch2
-# Date Created:				23 Aug 2004
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmlaunch
 PORTVERSION=	0.5
@@ -12,8 +8,8 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
-MAINTAINER= 	ports@FreeBSD.org
-COMMENT=	An application launcher plugin for GKrellM2
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Application launcher plugin for GKrellM2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
