@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-PORTVERSION=	5.2.4
-PORTREVISION=	1
+PORTVERSION=	5.2.5
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	NLS PCRE DOCS
 OPTIONS_RADIO=	GUI
-OPTIONS_RADIO_GUI=	GTK2 QT4
+OPTIONS_RADIO_GUI=	GTK3 GTK2 QT4
 OPTIONS_DEFAULT=	PCRE
 
 USE_NCURSES=	yes
@@ -37,10 +36,19 @@ CONFIGURE_ARGS+=	--without-gettext
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+CONFOPT_GTK=	3
+.endif
+
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
-.else
+CONFOPT_GTK=	2
+.endif
+
+.if empty(PORT_OPTIONS:MGTK3) && empty(PORT_OPTIONS:MGTK2)
 CONFIGURE_ARGS+=	--without-gtk
+CONFOPT_GTK=	0
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
@@ -56,14 +64,20 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g ; \
-		 s|-I/usr/local/include||g ; \
-		 s|-L/usr/local/lib||g ; \
-		 /gtk+/s|3.0|2.0|g ; \
-		 /OK/s|3.0|2.0|g ; \
-		 /CONFOPT_GTK/s|3|2|g ; \
-		 s|-lX11||g' ${WRKSRC}/config.sh
+	@${REINPLACE_CMD} -e 's|<ncursesw/|<| ; \
+		 s|-I/usr/local/include|| ; \
+		 s|-L/usr/local/lib|| ; \
+		 s|-lX11|| ; \
+		 /gtk+/s|3.0|${CONFOPT_GTK}.0| ; \
+		 /OK/s|3.0|${CONFOPT_GTK}.0| ; \
+		 /CONFOPT_GTK/s|3|${CONFOPT_GTK}|' ${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g' ${WRKSRC}/mpv_curses.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/mpdm/config.sh
 .for i in mpdm/mpdm.h mpdm/mpdm_s.c mpsl/mpsl_d.c
@@ -87,15 +101,9 @@ do-install:
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS README RELEASE_NOTES mp_templates.sample doc/*.*
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in AUTHORS README RELEASE_NOTES mp_templates.sample doc/*.*
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .include <bsd.port.post.mk>
