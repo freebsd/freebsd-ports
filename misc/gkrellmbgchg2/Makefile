@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmbgchg
-# Date Created:			8 Aug 2002
-# Whom:				Chris Stuart <firewolf@lightningfire.net>
-#
+# Created by: Chris Stuart <firewolf@lightningfire.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmbgchg2
 PORTVERSION=	0.1.11
@@ -12,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A plugin for GKrellM, which changes the desktop's background image
+COMMENT=	Plugin for GKrellM, which changes the desktop's background image
 
 LICENSE=	GPLv2
 

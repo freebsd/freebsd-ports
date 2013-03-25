@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gplink
-# Date created:				Sun Dec  5 23:17:44 CET 2004
-# Whom:					king@v2project.com
-#
+# Created by: king@v2project.com
 # $FreeBSD$
-#
 
 PORTNAME=	gplink
 PORTVERSION=	1.5
@@ -12,7 +8,7 @@ MASTER_SITES=	http://gp2x.org/gp32/gplink/ \
 		http://www.gnu-darwin.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GP32 USB linker tool
+COMMENT=	GP32 USB linker tool
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

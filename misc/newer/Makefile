@@ -1,9 +1,5 @@
-# New ports collection makefile for:    newer
-# Date created:         22 January 2006
-# Whom:                 Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-#
+# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
 # $FreeBSD$
-#
 
 PORTNAME=	newer
 PORTVERSION=	1.0
@@ -13,7 +9,7 @@ DISTFILES=	newer.c
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of AT&T Research UNIX V8 newer(1)
+COMMENT=	Implementation of AT&T Research UNIX V8 newer(1)
 
 CONFLICTS=	teTeX-base-[0-9]* tex-[0-9]* ja-ptex-base-*
 

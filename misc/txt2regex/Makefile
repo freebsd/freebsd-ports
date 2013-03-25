@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	txt2regex
-# Date created:			Jun 14, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	txt2regex
 PORTVERSION=	0.8
@@ -14,7 +9,7 @@ MASTER_SITES=	http://txt2regex.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Regular Expression "wizard"
+COMMENT=	Regular Expression "wizard"
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A screen locking and screen capture plugin for GKrellM
+COMMENT=	Screen locking and screen capture plugin for GKrellM
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pexpect
-# Date created:			Jan 11, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pexpect
 PORTVERSION=	2.4
@@ -14,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Pure Python Expect-like module
+COMMENT=	Pure Python Expect-like module
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

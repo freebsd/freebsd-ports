@@ -8,7 +8,7 @@ CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp that shows fireworks in action
+COMMENT=	Dockapp that shows fireworks in action
 
 PLIST_FILES=	bin/wmfirew
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}

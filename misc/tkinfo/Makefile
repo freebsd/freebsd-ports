@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkinfo
-# Date created:         16 Jan 1995
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkinfo
 PORTVERSION=	2.8
@@ -12,7 +8,7 @@ CATEGORIES=	misc tk
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tk script to read GNU "info" files and display them
+COMMENT=	Tk script to read GNU "info" files and display them
 
 LICENSE=	BSD
 

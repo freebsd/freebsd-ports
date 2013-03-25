@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pdmenu
-# Date created:		14 December 1998
-# Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-#
+# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 # $FreeBSD$
 
 PORTNAME=	pdmenu
@@ -12,7 +9,7 @@ MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple console menu program
+COMMENT=	Simple console menu program
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

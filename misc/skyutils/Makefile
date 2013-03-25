@@ -1,9 +1,5 @@
-# ports collection makefile for:	skyutils
-# Date created:				21 February 2004
-# Whom: 				Machiel Mastenbroek <machiel_mastenbroek@hotmail.com>
-#
+# Created by: Machiel Mastenbroek <machiel_mastenbroek@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	skyutils
 PORTVERSION=	2.9
@@ -13,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	laszlof
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library required by smssend (same author)
+COMMENT=	Library required by smssend (same author)
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf libtool

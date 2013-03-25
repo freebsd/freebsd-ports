@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compat6x
-# Date created:				30 Nov 2006
-# Whom:					mnag
-#
+# Created by: mnag
 # $FreeBSD$
-#
 
 PORTNAME=	compat6x
 PORTVERSION=	6.4.604000.200810
@@ -16,7 +12,7 @@ PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A convenience package to install the compat6x libraries
+COMMENT=	Convenience package to install the compat6x libraries
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
