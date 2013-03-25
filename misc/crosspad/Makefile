@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crosspad
-# Date created:		23 September 1998
-# Whom:			itojun@itojun.org
-#
+# Created by: itojun@itojun.org
 # $FreeBSD$
-#
 
 PORTNAME=	crosspad
 PORTVERSION=	19991202
@@ -21,8 +17,10 @@ MAN1=	crosspad2ps.1 crosspad2eps.1 crosspad2tgif.1 crosspad2idraw.1 \
 
 DOCS=	PROTOCOL README.english README.japanese
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/crosspad
 	for i in $(DOCS); do \
 		${INSTALL_DATA} ${WRKSRC}/../$$i ${PREFIX}/share/doc/crosspad; \

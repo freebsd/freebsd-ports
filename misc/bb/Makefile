@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bb
-# Date created:				22 June 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	bb
 PORTVERSION=	1.3.r1
@@ -25,12 +21,14 @@ PORTDOCS=	README
 PLIST_FILES=	bin/bb share/bb/bb.s3m share/bb/bb2.s3m share/bb/bb3.s3m
 PLIST_DIRS=	share/bb
 
+.include <bsd.port.options.mk>
+
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g" \
 		-e 's, REGISTERS \(3\),,g'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

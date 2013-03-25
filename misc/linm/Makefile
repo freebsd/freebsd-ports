@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linm
-# Date created:		24 Jan 2005
-# Whom:			cjh@FreeBSD.org
-#
+# Created by: cjh@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	linm
 PORTVERSION=	${LINM_VER}.1
@@ -34,17 +30,19 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 #.endif
 
-CONFIGURE_ARGS+= --enable-cfgpath="${PREFIX}/etc/linm" --enable-kolocalepath="${PREFIX}/share/locale/ko/LC_MESSAGES"
+CONFIGURE_ARGS+=	--enable-cfgpath="${PREFIX}/etc/linm" --enable-kolocalepath="${PREFIX}/share/locale/ko/LC_MESSAGES"
 
 LINM_VER=	0.7.7
 WRKSRC=		${WRKDIR}/linm-${LINM_VER}
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|Panel::SetCur|SetCur|' ${WRKSRC}/panel/common/panel.h
 	@${REINPLACE_CMD} -e 's|Position::Show|Show|' ${WRKSRC}/src/ncurses/dialog.h
 
 post-install:
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/linm
 .for file in AUTHORS COPYING ChangeLog README README.ko_euckr README.ko_utf8
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cmatrix
-# Date created:				1 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	cmatrix
 PORTVERSION=	1.2a
@@ -21,10 +17,12 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/cmatrix
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

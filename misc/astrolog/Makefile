@@ -1,10 +1,5 @@
-# New ports collection makefile for:    astrolog
-#
-# Date created:         31 July 1995
-# Whom:                 faulkner@cactus.org
-#
+# Created by: faulkner@cactus.org
 # $FreeBSD$
-#
 
 PORTNAME=	astrolog
 PORTVERSION=	5.41g
@@ -13,11 +8,11 @@ CATEGORIES=	misc astro
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
 		ftp://ftp.astro.com/pub/swisseph/:libswe \
 		http://astrolog.offline.ee/astrolog/changed/:dist
-DISTFILES=      a541gsrc.tar.gz:dist ${EPHE} \
+DISTFILES=	a541gsrc.tar.gz:dist ${EPHE} \
 		swe_unix_src_1.78.00.tar.gz:libswe
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An astrology program for X11 and alpha-numeric terminals
+COMMENT=	Astrology program for X11 and alpha-numeric terminals
 
 # Swiss Ephemeris GPLv2 licensed, see
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
@@ -44,6 +39,8 @@ NO_WRKSUBDIR=	yes
 
 DOCS=		helpfile.540 readme.541 changes.txt
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	${RM} ${WRKDIR}/swe[a-z]*
 
@@ -57,7 +54,7 @@ do-install:
 			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog; \
 		fi
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

@@ -1,15 +1,10 @@
-# ex:ts=8
-# Ports collection makefile for:	terraform
-# Date created:			Feb 8, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	terraform
 PORTVERSION=	0.9.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -34,6 +29,8 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s| desktop-links docs | |' \
 		 ${WRKSRC}/Makefile.in
@@ -48,7 +45,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/terraform.png \
 		${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in FAQ.sgml README.sgml UsersGuide.sgml i18n.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
