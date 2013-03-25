@@ -2,32 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	beast
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.8
 CATEGORIES=	audio
-MASTER_SITES=	http://dist.testbit.eu/beast/v${PORTVERSION:R}/
+MASTER_SITES=	http://dist.testbit.eu/beast/%SUBDIR%/
+MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful music composition and modular synthesis application
 
-LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 		mad:${PORTSDIR}/audio/libmad \
-		guile:${PORTSDIR}/lang/guile \
-		asound.2:${PORTSDIR}/audio/alsa-lib
+		vorbisfile:${PORTSDIR}/audio/libvorbis \
+		guile:${PORTSDIR}/lang/guile
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+OPTIONS_DEFINE_i386=	SSE
 
-USE_XORG=	x11
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack libgnomecanvas
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USES=		pathfix
+USE_GCC=	4.6+
+USE_GNOME=	gnomehier libgnomecanvas
 USE_GETTEXT=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -DENODATA=255
-CONFIGURE_ARGS=	--disable-debug \
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
-MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CXXFLAGS+=	-fpermissive
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+MAN1=		beast.1 bsescm.1 bsewavetool.1 sfidl.1
+MAN5=		bse.5
 
 .include <bsd.port.pre.mk>
 
@@ -35,31 +48,31 @@ MAKE_JOBS_UNSAFE=	yes
 BROKEN=		Does not compile on powerpc: array bound is not an integer constant
 .endif
 
-HAS_SSE!=	${SYSCTL} -n hw.instruction_sse 2> /dev/null
-.if ${HAS_SSE} == 1
+.if ${PORT_OPTIONS:MSSE} || ${ARCH} == "amd64"
 PLIST_SUB+=	SSE=""
+SSE_FLAGS=	-mmmx -msse
 .else
 PLIST_SUB+=	SSE="@comment "
+SSE_FLAGS=	# none
 .endif
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-MAN1=		beast.1 bsescm.1 bsewavetool.1 sfidl.1
-MAN5=		bse.5
+.if empty(PORT_OPTIONS:MDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|$${libdir}/ladspa|${LOCALBASE}/lib/ladspa|; \
-		/FLAGS=/ s/(-g|-ggdb3|-pipe|-O2|-ftracer|-finline-functions|-fno-keep-static-consts)//; \
-		s|echo aout|echo elf|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/autotools/intltool-merge
-	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
-		${WRKSRC}/mkrelease.sh
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/bse/Makefile.in \
-		${WRKSRC}/bse/zintern/Makefile.in
-	@${REINPLACE_CMD} -e 's|; q|;|; /pipefail/s|-o ||;' \
-	    ${WRKSRC}/docs/Makefile.in ${WRKSRC}/docs/Makefile.am
+	@${REINPLACE_CMD} -e \
+		'/^[[:space:]].*FLAGS -[Ofgp].*"/s|^|#| ; \
+		 s|-mmmx -msse \(-ftree-vectorize\)|${SSE_FLAGS} \1| ; \
+		 s|\(if test 0\) ==|\1 -eq| ; \
+		 s|\(bseladspapath=\)$${|\1\\\$${| ; \
+		 s|\(LDFLAGS=\)""|\1"$$LDFLAGS"|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/bin/bash|${SH}|' ${WRKSRC}/mkrelease.sh
+	@${REINPLACE_CMD} -e \
+		's|BIRNET_.*_UINT == 0|1|' ${WRKSRC}/birnet/birnetcdefs.h
+	@${REINPLACE_CMD} -e \
+		's|; q|;| ; \
+		 s|-o \(pipefail\)|\1|' ${WRKSRC}/docs/Makefile.in
 
 .include <bsd.port.post.mk>
