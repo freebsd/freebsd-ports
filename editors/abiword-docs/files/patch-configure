@@ -1,11 +1,11 @@
---- configure.orig	2009-10-28 18:13:56.000000000 +0100
-+++ configure	2009-10-28 18:14:55.000000000 +0100
-@@ -2548,7 +2548,7 @@
+--- configure.orig	2010-05-30 21:34:34.000000000 +0200
++++ configure	2010-06-09 18:25:08.000000000 +0200
+@@ -2447,7 +2447,7 @@
  
  
  
 -if test "x$ABIWORD" == "x"; then
-+if test "x$ABIWORD" \= "x"; then
- 	{ { $as_echo "$as_me:$LINENO: error: abiword not found in PATH" >&5
- $as_echo "$as_me: error: abiword not found in PATH" >&2;}
-    { (exit 1); exit 1; }; }
++if test "x$ABIWORD" = "x"; then
+ 	{ as_fn_set_status 1
+ as_fn_error "abiword not found in PATH" "$LINENO" 5; }
+ fi
