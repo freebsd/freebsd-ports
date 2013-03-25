@@ -14,6 +14,8 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for multiple sequence alignments
 
+BROKEN=		checksum mismatch
+
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
