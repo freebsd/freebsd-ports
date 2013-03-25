@@ -1,14 +1,11 @@
-# New ports collection makefile for:	p5-Pod-Autopod
-# Date created:				31 Oct, 2009
-# Whom:		   			Wen Heping<wen@FreeBSD.org>
-#
+# Created by: Wen Heping<wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Autopod
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:AHERNIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
