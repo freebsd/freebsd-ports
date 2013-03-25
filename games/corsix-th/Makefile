@@ -31,10 +31,6 @@ MOVIES_DESC=	Play in-game movies
 .if ${PORT_OPTIONS:MMOVIES}
 CMAKE_ARGS+=	-DWITH_MOVIES=ON
 LIB_DEPENDS+=	swresample1:${PORTSDIR}/multimedia/ffmpeg1
-.else
-CMAKE_ARGS+=	-DWITH_MOVIES=OFF
-.endif
-
 # partly copied from editors/libreoffice
 .if ${ARCH} == "i386"
 .if exists(/usr/bin/clang) && ${OSVERSION} > 900014
@@ -44,6 +40,9 @@ CXX=		/usr/bin/clang++
 .else
 USE_GCC=	4.6+
 .endif
+.endif
+.else
+CMAKE_ARGS+=	-DWITH_MOVIES=OFF
 .endif
 
 post-patch:
