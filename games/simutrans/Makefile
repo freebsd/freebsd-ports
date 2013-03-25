@@ -1,25 +1,32 @@
-# Created by: Tijl Coosemans <tijl@ulyssis.org>
 # $FreeBSD$
 
 PORTNAME=	simutrans
-PORTVERSION=	112.0
+DISTVERSION=	112-2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIMUTRANS_VERSION} \
-		SF/${PORTNAME}/pak64/${SIMUTRANS_PAK64}:pak64
-DISTFILES=	simutrans-src-${SIMUTRANS_VERSION}.zip \
-		simupak64-${SIMUTRANS_PAK64}.zip:pak64
+MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
+		SF/simutrans/pak64/${PAK64_DISTVERSION}:pak64 \
+		SF/simutrans/pak128/pak128%20for%20${PAK128_SUBDIR}:pak128
+DISTFILES=	simutrans-src-${DISTVERSION}.zip \
+		simulinux-${DISTVERSION}.zip
 
 MAINTAINER=	tijl@coosemans.org
-COMMENT=	Transportation simulation game
+COMMENT=	Transport Simulator
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
 
-SIMUTRANS_VERSION=	${PORTVERSION:S,.,-,g}
-SIMUTRANS_REVISION=	6000
-SIMUTRANS_PAK64=	112-0
+PAK64_DISTVERSION=	${DISTVERSION}
+PAK128_DISTVERSION=	2.3.0--112.2
+PAK128_SUBDIR=		${DISTVERSION}
+SIMUTRANS_REVISION=	6390
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE= 	DOCS
+OPTIONS_MULTI=		PAK
+OPTIONS_MULTI_PAK=	PAK64 PAK128
+OPTIONS_DEFAULT=	PAK64
+PAK64_DESC=		Default graphics
+PAK128_DESC=		High resolution graphics
+
 MAKE_ARGS=	BACKEND=mixer_sdl \
 		COLOUR_DEPTH=16 \
 		OSTYPE=freebsd \
@@ -30,13 +37,19 @@ USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 USE_ZIP=	yes
 
-PLIST_DIRSTRY=	share/applications
-PLIST_FILES=	bin/simutrans \
-		bin/simutrans-bin \
-		share/applications/simutrans.desktop
+DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" "false"
+PLIST_FILES=	bin/simutrans bin/simutrans-bin
 PORTDATA=	*
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPAK64}
+DISTFILES+=	simupak64-${PAK64_DISTVERSION}.zip:pak64
+.endif
+
+.if ${PORT_OPTIONS:MPAK128}
+DISTFILES+=	pak128-${PAK128_DISTVERSION}.zip:pak128
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/-O[^ ]*//' ${WRKSRC}/Makefile
@@ -44,15 +57,18 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		"config font music pak skin text" ${DATADIR}
+		"config font music script skin text" ${DATADIR}
+.if ${PORT_OPTIONS:MPAK64}
+	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak ${DATADIR}
+.endif
+.if ${PORT_OPTIONS:MPAK128}
+	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak128 ${DATADIR}
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${DATADIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/build/default/sim \
 		${PREFIX}/bin/simutrans-bin
 	${INSTALL_SCRIPT} ${FILESDIR}/simutrans ${PREFIX}/bin/simutrans
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_SCRIPT} ${FILESDIR}/simutrans.desktop \
-		${PREFIX}/share/applications/simutrans.desktop
 
 .include <bsd.port.mk>
