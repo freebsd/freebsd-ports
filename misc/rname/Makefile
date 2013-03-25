@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rname
-# Date created:		26 October 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	rname
 PORTVERSION=	1.0
@@ -17,7 +13,9 @@ COMMENT=	Execute a program with a fake name
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
-.if 		!defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install-doc
 .endif
 

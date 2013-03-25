@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkman
-# Date created:         27 Dec 1994
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkman
 PORTVERSION=	2.2
@@ -12,7 +8,7 @@ CATEGORIES=	misc tk
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Tcl/Tk based manual browser
+COMMENT=	Tcl/Tk based manual browser
 
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		rman:${PORTSDIR}/textproc/rman
@@ -28,6 +24,8 @@ MAKE_ARGS=	WISH="${WISH}" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/wish|${WISH}|' \
 		${WRKSRC}/contrib/tkmanclient
@@ -37,7 +35,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/retkman ${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
 .endif

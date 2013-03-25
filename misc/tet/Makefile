@@ -1,9 +1,5 @@
-# New ports collection makefile for: tet
-# Date created:		02 Oct 1998
-# Whom:			jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=		tet
 PORTVERSION=		3.7
@@ -18,7 +14,7 @@ DIST_SUBDIR=		tet/${PORTVERSION}
 EXTRACT_ONLY=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		An test execution framework from the Open Group
+COMMENT=		Test execution framework from the Open Group
 
 NO_PACKAGE=		$${TET_ROOT} needs to be set at compile time.
 HAS_CONFIGURE=		yes
@@ -27,7 +23,9 @@ PLIST=			${WRKDIR}/PLIST
 
 TET_CONFIG_TARGET?=	inet	# options are `lite', `xti' and `inet'
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 TET_DOCS=		37_all_pdf.zip
 DISTFILES+=		${TET_DOCS}:docs
 BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
@@ -66,7 +64,7 @@ do-build:
 .endif
 	cd ${TET_ROOT}/src && ${MAKE} ${ALL_TARGET}
 	cd ${TET_ROOT}/src && ${MAKE} ${INSTALL_TARGET}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${TET_ROOT}/doc
 	${UNZIP_CMD} -d ${TET_ROOT}/doc ${DISTDIR}/${DIST_SUBDIR}/${TET_DOCS}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quotes
-# Date created:         9 February 1999
-# Whom:                 Dima Sivachenko
-#
+# Created by: Dima Sivachenko
 # $FreeBSD$
-#
 
 PORTNAME=	quotes
 DISTVERSION=	1.7-2
@@ -19,6 +15,8 @@ COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/quotes
 	@ ${PERL} -pi -e "s:/usr/local/lib/Quotes:${PREFIX}/etc:g" ${WRKSRC}/quotes
@@ -30,11 +28,11 @@ do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotes ${PREFIX}/bin
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotesmailer ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/sample.quotesrc ${PREFIX}/etc/quotesrc.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/quotes.txt ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${EXAMPLESDIR}
 .endif

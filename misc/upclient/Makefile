@@ -1,9 +1,5 @@
-# New ports collection makefile for:	upclient
-# Date created:		20 Aug 1999
-# Whom:			Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
@@ -76,7 +72,7 @@ install-conf:
 .endif
 
 install-doc:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

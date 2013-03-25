@@ -1,9 +1,5 @@
-# New ports collection makefile for:   callid
-# Date created:        19 February 2004
-# Whom:                M. Possamai
-#
+# Created by: M. Possamai
 # $FreeBSD$
-#
 
 PORTNAME=	callid
 PORTVERSION=	1.2
@@ -25,6 +21,8 @@ PORTDOCS=	CHANGES README TODO make-db.mysql
 
 RUN_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
+.include <bsd.port.options.mk>
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You have to configure PHP with MYSQL support."
@@ -40,7 +38,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/www/callid/images
 	@${INSTALL_DATA} ${WRKSRC}/src/images/*.jpg ${PREFIX}/www/callid/images
 	@${INSTALL_DATA} -m 550 ${WRKSRC}/sbin/call-logd ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}

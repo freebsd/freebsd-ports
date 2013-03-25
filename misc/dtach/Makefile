@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dtach
-# Date created:		21 Jun 2004
-# Whom:			Bjorn Lindstrom <bkhl@elektrubadur.se>
-#
+# Created by: Bjorn Lindstrom <bkhl@elektrubadur.se>
 # $FreeBSD$
-#
 
 PORTNAME=		dtach
 PORTVERSION=		0.8
@@ -21,11 +17,13 @@ MAN1=		dtach.1
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dtach ${PREFIX}/bin/
 	@${INSTALL_MAN} ${WRKSRC}/dtach.1 ${MAN1PREFIX}/man/man1/
 
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif

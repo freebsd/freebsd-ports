@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kcd
-# Date created:				5 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	kcd
 PORTVERSION=	7.15.0
@@ -25,6 +21,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 MAN1=		kcd.1
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcd-inst ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${PREFIX}/bin
@@ -35,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \
 		${PREFIX}/share/locale/${i}/LC_MESSAGES/kcd.mo
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	explosions
-# Date created:				8 August 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
@@ -19,6 +15,8 @@ USE_SDL=	sdl image
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${PERL} -pi -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \
 		s!sdl-config!${SDL_CONFIG}!' \
@@ -30,7 +28,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/explosions ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/spark?.png ${DATADIR}
-.if !defined(NOPORTDOCS)
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in BUGS.txt CHANGES.txt README.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

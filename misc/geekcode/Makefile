@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geekcode generator
-# Date created:		30 Aug 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geekcode
 PORTVERSION=	1.7.3
@@ -11,16 +7,18 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Geek Code Generator
+COMMENT=	Geek Code Generator
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/geekcode
 PORTDOCS=	geekcode.txt
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/geekcode.txt ${DOCSDIR}
 .endif
