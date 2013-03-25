@@ -4,7 +4,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -17,9 +17,9 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
 		ck-connector:${PORTSDIR}/sysutils/consolekit
-#RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
-#		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
-#		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
+		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
+		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
