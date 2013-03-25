@@ -1,28 +1,23 @@
-# New ports collection makefile for:	samba36
-# Date created:				1 May 2011
-# Whom:					timur@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.12
+PORTVERSION=		3.6.13
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	samba samba/old-versions samba/rc samba/pre
+MASTER_SITE_SUBDIR=	samba samba/stable samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
+LICENSE=		GPLv3
+LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
+
 CONFLICTS?=		*samba3[2-5]-3.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
-
-LICENSE=		GPLv3
-LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 
 SAMBA_BASENAME=		samba
 
@@ -80,15 +75,14 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
-			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 # XXX: Temporary hack for RELENG6
 CONFIGURE_ENV+=		ac_cv_header_sys_mount_h=yes
 # XXX: readdir test fails on ZFS, bringing unusable replacement code
 CONFIGURE_ENV+=		libreplace_cv_READDIR_NEEDED=no
 # Let process generate meaningful backtrace on a core dump
-LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=		execinfo:${PORTSDIR}/devel/libexecinfo
 # tdb
 BUILD_DEPENDS+=		tdb>=1.2.6:${PORTSDIR}/databases/tdb
 RUN_DEPENDS+=		tdb>=1.2.6:${PORTSDIR}/databases/tdb
@@ -102,26 +96,30 @@ CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}" \
 			--disable-as-needed
 
 .if !defined(SAMBA_SUBPORT)
-OPTIONS=	LDAP		"With LDAP support" on \
-		ADS		"With Active Directory support" off \
-		CUPS		"With CUPS printing support" on \
-		WINBIND		"With WinBIND support" on \
-		SWAT		"With SWAT WebGUI" off \
-		ACL_SUPPORT	"With ACL support" on \
-		AIO_SUPPORT	"With Asyncronous IO support" on \
-		FAM_SUPPORT	"With File Alteration Monitor" off \
-		SYSLOG		"With Syslog support" off \
-		QUOTAS		"With Disk quota support" off \
-		UTMP		"With UTMP accounting support" off \
-		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
-		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
-		AVAHI		"With Bonjour service discovery support" off \
-		PTHREADPOOL	"With pthread pool" on \
-		EXP_MODULES	"With experimental modules" off \
-		POPT		"With system-wide POPT library" on \
-		IPV6		"With IPv6 support" on \
-		MAX_DEBUG	"With maximum debugging" off \
-		SMBTORTURE	"With smbtorture" off
+OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT AVAHI CUPS DNSUPDATE \
+			EXP_MODULES FAM_SUPPORT IPV6 LDAP MAX_DEBUG \
+			PAM_SMBPASS POPT PTHREADPOOL QUOTAS SMBTORTURE \
+			SWAT SYSLOG UTMP WINBIND
+
+OPTIONS_DEFAULT=	ACL_SUPPORT AIO_SUPPORT CUPS LDAP POPT PTHREADPOOL \
+			WINBIND
+
+ACL_SUPPORT_DESC=	ACL support
+ADS_DESC=		Active Directory support
+AIO_SUPPORT_DESC=	Asyncronous IO support
+DNSUPDATE_DESC=		Dynamic DNS update(require ADS)
+EXP_MODULES_DESC=	Experimental modules
+FAM_SUPPORT_DESC=	File Alteration Monitor
+MAX_DEBUG_DESC=		Maximum debugging
+PAM_SMBPASS_DESC=	PAM authentication vs passdb backends
+POPT_DESC=		System-wide POPT library
+PTHREADPOOL_DESC=	Pthread pool
+QUOTAS_DESC=		Disk quota support
+SMBTORTURE_DESC=	smbtorture
+SWAT_DESC=		SWAT WebGUI
+UTMP_DESC=		UTMP accounting support
+WINBIND_DESC=		WinBIND support
+
 # !SAMBA_SUBPORT
 .endif
 
@@ -142,10 +140,6 @@ CONFIGURE_ARGS+=	--disable-cups --disable-fam --without-winbind \
 			--without-syslog --without-quotas --without-utmp \
 			--without-pam --without-pam_smbpass \
 			--without-aio-support --with-included-popt
-# Dirty hack to work around usage of OPTIONS in slave ports
-.	if exists(${.CURDIR}/Makefile.inc)
-.		include "${.CURDIR}/Makefile.inc"
-.	endif
 .else
 # Samba server itself
 USE_RC_SUBR=		${SAMBA_BASENAME}
@@ -163,16 +157,16 @@ CONFIGURE_ARGS+=	--with-pam --with-readline=/usr \
 			--without-libnetapi \
 			--without-libsmbsharemodes
 
-.if !defined(WITH_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ENV+=		libreplace_cv_HAVE_IPV6=no
 .endif
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 SAMBA_WANT_LDAP=	yes
 .endif
 
-.if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-client
+.if ${PORT_OPTIONS:MCUPS}
+LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 SUB_LIST+=		CUPS=""
 .else
@@ -180,10 +174,10 @@ CONFIGURE_ARGS+=	--disable-cups --disable-iprint
 SUB_LIST+=		CUPS="@comment "
 .endif
 
-.if defined(WITH_MAX_DEBUG)
+.if ${PORT_OPTIONS:MMAX_DEBUG}
 CPPFLAGS+=		-g
 LDFLAGS+=		-g
-LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
+LIB_DEPENDS+=		dmalloc:${PORTSDIR}/devel/dmalloc
 CONFIGURE_ARGS+=	--enable-debug
 #			--enable-socket-wrapper --enable-nss-wrapper \
 #			--enable-developer --enable-krb5developer \
@@ -197,25 +191,25 @@ CONFIGURE_ARGS+=	--disable-debug \
 			--disable-dmalloc --without-profiling-data
 .endif
 
-.if defined(WITH_SYSLOG)
+.if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--with-syslog
 .else
 CONFIGURE_ARGS+=	--without-syslog
 .endif
 
-.if defined(WITH_QUOTAS)
+.if ${PORT_OPTIONS:MQUOTAS}
 CONFIGURE_ARGS+=	--with-quotas
 .else
 CONFIGURE_ARGS+=	--without-quotas
 .endif
 
-.if !defined(WITHOUT_UTMP)
+.if ${PORT_OPTIONS:MUTMP}
 CONFIGURE_ARGS+=	--with-utmp
 .else
 CONFIGURE_ARGS+=	--without-utmp
 .endif
 
-.if !defined(WITHOUT_WINBIND)
+.if ${PORT_OPTIONS:MWINBIND}
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
 SUB_LIST+=		WINBIND=""
@@ -225,7 +219,7 @@ PLIST_SUB+=		WINBIND="@comment "
 SUB_LIST+=		WINBIND="@comment "
 .endif
 
-.if !defined(WITHOUT_SWAT)
+.if ${PORT_OPTIONS:MSWAT}
 CONFIGURE_ARGS+=	--enable-swat
 PLIST_SUB+=		SWAT=""
 .else
@@ -233,11 +227,11 @@ CONFIGURE_ARGS+=	--disable-swat
 PLIST_SUB+=		SWAT="@comment "
 .endif
 # Add some shared modules
-.if defined(WITH_EXP_MODULES)
+.if ${PORT_OPTIONS:MEXP_MODULES}
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=	idmap_tdb2 idmap_ad idmap_adex idmap_hash idmap_rid \
 			charset_weird
-.		if !defined(WITH_MAX_DEBUG)
+.		if ! ${PORT_OPTIONS:MMAX_DEBUG}
 WANT_EXP_MODULES+=	rpc_echo
 .		endif
 WANT_EXP_MODULES+=	vfs_cacheprime vfs_catia vfs_commit vfs_dirsort \
@@ -245,7 +239,7 @@ WANT_EXP_MODULES+=	vfs_cacheprime vfs_catia vfs_commit vfs_dirsort \
 .	endif
 .endif
 
-.if defined(WITH_FAM_SUPPORT)
+.if ${PORT_OPTIONS:MFAM_SUPPORT}
 USE_FAM=		yes
 WANT_EXP_MODULES+=	vfs_notify_fam
 CONFIGURE_ARGS+=	--enable-fam
@@ -253,17 +247,17 @@ CONFIGURE_ARGS+=	--enable-fam
 CONFIGURE_ARGS+=	--disable-fam
 .endif
 
-.if defined(WITH_ACL_SUPPORT)
+.if ${PORT_OPTIONS:MACL_SUPPORT}
 CONFIGURE_ARGS+=	--with-acl-support
 .	if ${OSVERSION} > 800000
 WANT_EXP_MODULES+=	vfs_zfsacl
-LIB_DEPENDS+=		sunacl.1:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		sunacl:${PORTSDIR}/sysutils/libsunacl
 .	endif
 .else
 CONFIGURE_ARGS+=	--without-acl-support
 .endif
 
-.if defined(WITH_AIO_SUPPORT)
+.if ${PORT_OPTIONS:MAIO_SUPPORT}
 .if ${OSVERSION} < 700055
 IGNORE=			an AIO support requires 7.0-RELEASE or later. Disable AIO support
 .endif
@@ -272,7 +266,7 @@ CONFIGURE_ARGS+=	--with-aio-support
 CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
-.if defined(WITH_PAM_SMBPASS)
+.if ${PORT_OPTIONS:MPAM_SMBPASS}
 CONFIGURE_ARGS+=	--with-pam_smbpass
 PLIST_SUB+=		SMBPASS=""
 .else
@@ -280,39 +274,39 @@ CONFIGURE_ARGS+=	--without-pam_smbpass
 PLIST_SUB+=		SMBPASS="@comment "
 .endif
 
-.if defined(WITH_DNSUPDATE)
-.	if !defined(WITH_ADS)
+.if ${PORT_OPTIONS:MDNSUPDATE}
+.	if ! ${PORT_OPTIONS:MADS}
 IGNORE=			dynamic DNS updates require ADS support. Disable DNSUPDATE support
 .	endif
-LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS+=		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=	--with-dnsupdate
 .else
 CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
-.if defined(WITH_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 CPPFLAGS+=		`pkg-config --cflags avahi-client`
 CONFIGURE_ENV+=		DNSSD_LIBS="`pkg-config --libs avahi-client`"
-LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
-.if defined(WITH_PTHREADPOOL)
+.if ${PORT_OPTIONS:MPTHREADPOOL}
 CONFIGURE_ARGS+=	--enable-pthreadpool
 .else
 CONFIGURE_ARGS+=	--disable-pthreadpool
 .endif
 
-.if !defined(WITHOUT_POPT)
-LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
+.if ${PORT_OPTIONS:MPOPT}
+LIB_DEPENDS+=		popt:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--without-included-popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-.if defined(WITH_SMBTORTURE)
+.if ${PORT_OPTIONS:MSMBTORTURE}
 PLIST_SUB+=		SMBTORTURE=""
 .else
 PLIST_SUB+=		SMBTORTURE="@comment "
@@ -324,7 +318,7 @@ PLIST_SUB+=		SMBTORTURE="@comment "
 ### Common part for port and it's subports
 ###
 
-.if defined(WITH_ADS)
+.if ${PORT_OPTIONS:MADS}
 SAMBA_WANT_LDAP=	yes
 SAMBA_WANT_KRB5=	yes
 CONFIGURE_ARGS+=	--with-ads
@@ -371,7 +365,7 @@ post-patch:
 
 .if !defined(SAMBA_SUBPORT)
 # Samba server only
-MAN1=		findsmb.1 \
+MAN1=		dbwrap_tool.1 findsmb.1 \
 		log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 rpcclient.1 \
 		sharesec.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
@@ -387,22 +381,22 @@ MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 		vfs_shadow_copy2.8 vfs_smb_traffic_analyzer.8 \
 		vfs_streams_xattr.8 vfs_xattr_tdb.8
 
-.if !defined(WITHOUT_WINBIND)
+.if ${PORT_OPTIONS:MWINBIND}
 MAN1+=		wbinfo.1
 MAN5+=		pam_winbind.conf.5
 MAN7+=		winbind_krb5_locator.7
 MAN8+=		pam_winbind.8 winbindd.8
 .endif
 
-.if !defined(WITHOUT_SWAT)
+.if ${PORT_OPTIONS:MSWAT}
 MAN8+=		swat.8
 .endif
 
-.if defined(WITH_FAM_SUPPORT)
+.if ${PORT_OPTIONS:MFAM_SUPPORT}
 MAN8+=		vfs_notify_fam.8
 .endif
 
-.if defined(WITH_PTHREADPOOL)
+.if ${PORT_OPTIONS:MPTHREADPOOL}
 MAN8+=		vfs_aio_pthread.8
 .endif
 
@@ -460,7 +454,7 @@ PLIST_SUB+=	${SAMBA_SUB}
 SUB_LIST+=	${SAMBA_SUB}
 
 ALL_TARGET=	all
-.if defined(WITH_SMBTORTURE)
+.if ${PORT_OPTIONS:MSMBTORTURE}
 ALL_TARGET+=	smbtorture
 .endif
 
@@ -468,7 +462,7 @@ ALL_TARGET+=	smbtorture
 INSTALL_TARGET=	installservers installbin installscripts installdat \
 		installmodules installlibs
 
-.if !defined(WITHOUT_SWAT)
+.if ${PORT_OPTIONS:MSWAT}
 INSTALL_TARGET+=installswat
 .endif
 
@@ -505,23 +499,23 @@ post-install:
 # Put examples in place
 	@${MKDIR} "${EXAMPLESDIR}"
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* "${EXAMPLESDIR}"
-.if defined(WITH_PAM_SMBPASS)
+.if ${PORT_OPTIONS:MPAM_SMBPASS}
 	@${MKDIR} "${EXAMPLESDIR}/pam_smbpass"
 	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* "${EXAMPLESDIR}/pam_smbpass"
 .endif
 	${INSTALL_DATA} "${WRKDIR}/smb.conf.sample" "${EXAMPLESDIR}/${SAMBA_CONFIG}.sample"
 	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
 # Winbind
-.if !defined(WITHOUT_WINBIND)
+.if ${PORT_OPTIONS:MWINBIND}
 	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
 	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 .endif
-.if defined(WITH_PAM_SMBPASS)
+.if ${PORT_OPTIONS:MPAM_SMBPASS}
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${SAMBA_LIBDIR}"
 .endif
 # smbtorture
-.if defined(WITH_SMBTORTURE)
+.if ${PORT_OPTIONS:MSMBTORTURE}
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbtorture" "${PREFIX}/bin"
 .endif
 # Lib
@@ -530,7 +524,7 @@ post-install:
 	    ${ECHO_CMD} "@unexec ${RMDIR} \"$$d\" 2>/dev/null || true" >> ${TMPPLIST}; \
 	done
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -Rp "${WRKDIR}/${DISTNAME}/docs/registry" "${DOCSDIR}"
 .	for f in Samba3-ByExample.pdf Samba3-HOWTO.pdf Samba3-Developers-Guide.pdf
@@ -541,13 +535,12 @@ post-install:
 	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/${f}" "${DOCSDIR}"
 .	endfor
 	@${INSTALL_DATA} "${FILESDIR}/README.FreeBSD" "${DOCSDIR}"
-# !NOPORTDOCS
 .endif
 # Run post-install script
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(WITH_MAX_DEBUG)
+.if ${PORT_OPTIONS:MMAX_DEBUG}
 test:
 	(cd ${WRKSRC} && ${GMAKE} test_nss_modules test_pam_modules && ${GMAKE} test)
 .endif
