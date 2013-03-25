@@ -81,7 +81,7 @@ OPTIONS_DEFINE+=	${opt}
 
 # Add per arch defaults
 .for opt in ${OPTIONS_DEFAULT_${ARCH}}
-.if empty(OPTIONS_DEFAULT:M${opt}}
+.if empty(OPTIONS_DEFAULT:M${opt})
 OPTIONS_DEFAULT+=	${opt}
 .endif
 .endfor
