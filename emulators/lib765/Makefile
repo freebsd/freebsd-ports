@@ -1,4 +1,4 @@
-# Created by:	Alexey V. Antipovsky <kemm@in-line.ru>
+# Created by: Alexey V. Antipovsky <kemm@in-line.ru>
 # $FreeBSD$
 
 PORTNAME=	lib765

@@ -1,4 +1,4 @@
-# Created by:	ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	epydoc
@@ -14,8 +14,6 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	DOCS UTF8
 
 UTF8_DESC=	Use UTF-8 instead of iso-8859-1 in HTMLs
-
-OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 

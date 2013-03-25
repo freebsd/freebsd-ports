@@ -1,4 +1,4 @@
-# Created by:	rene
+# Created by: rene
 # $FreeBSD$
 
 PORTNAME=	boinc-setiathome-enhanced
@@ -39,8 +39,6 @@ BOINC_CLIENT_HOME?=	/var/db/boinc
 OPTIONS_DEFINE=	X11
 
 X11_DESC=	Build screensaver (requires net/boinc-client with X11)
-
-OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 
