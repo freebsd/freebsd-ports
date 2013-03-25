@@ -3,52 +3,65 @@
 
 PORTNAME=	impact
 PORTVERSION=	0.7.06.038
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
-DISTNAME=	Impact-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION} \
+		SF/nemysisfreebsdp/:icons
+DISTFILES=	Impact-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	Impact-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Finite Element Program Suite
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	java3d>0:${PORTSDIR}/java/java3d
 
 WRKSRC=		${WRKDIR}/Impact
-NO_BUILD=	yes
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/Impact
 
 SUB_FILES=	impact impactgui
 
-PLIST=		${WRKDIR}/PLIST
+PLIST_FILES=	bin/impact \
+		bin/impactgui \
+		share/pixmaps/impact.png
 
-pre-install:
-	@${ECHO_CMD} -n > ${PLIST}
-	@${ECHO_CMD} "bin/impact" >> ${PLIST}
-	@${ECHO_CMD} "bin/impactgui" >> ${PLIST}
-	@(cd ${WRKDIR} && ${FIND} Impact ! -type d | ${GREP} -v \
-		-e "CVS" -e "lib_j3d" -e "\.bat" -e "\.dll" -e "\.ico" \
-		-e "\.jnilib" -e "\.sh" -e "\.so" | ${SORT} | \
-		${SED} "s|^Impact|%%DATADIR%%|" >> ${PLIST})
-	@(cd ${WRKDIR} && ${FIND} Impact -type d | ${GREP} -v \
-		-e "CVS" -e "lib_j3d" -e "\.bat" -e "\.dll" -e "\.ico" \
-		-e "\.jnilib" -e "\.sh" -e "\.so" | ${SORT} -r | \
-		${SED} "s|^Impact|@dirrm %%DATADIR%%|" >> ${PLIST})
+OPTIONS_DEFINE=	GMSH
+
+GMSH_DESC=	Enable automatic 3D finite element mesh generator
+
+DESKTOP_ENTRIES="Impact" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}gui" "Graphics;3DGraphics;Education;" false
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGMSH}
+RUN_DEPENDS+=	gmsh:${PORTSDIR}/cad/gmsh
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -name CVS -type d -print0 -or -name .cvsignore -type f -print0 | \
+		${XARGS} -0 ${RM} -rf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/impact ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/impactgui ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@(${TAR} -C ${WRKSRC} --exclude "CVS" --exclude "lib_j3d" \
-		--exclude "*.bat" --exclude "*.dll" --exclude "*.ico" \
-		--exclude "*.jnilib" --exclude "*.sh" --exclude "*.so" \
-		-cf - . | ${TAR} -C ${DATADIR} --unlink -xf -)
-	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGPR}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	${INSTALL_SCRIPT} ${WRKDIR}/impact ${WRKDIR}/impactgui ${PREFIX}/bin
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR})
+
+post-install:
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+
+	@${FIND} ${DATADIR} ! -type d | \
+		${SED} 's|^${PREFIX}/||' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
