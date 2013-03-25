@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-MyXML
-PORTVERSION=	0.09.88
+PORTVERSION=	0.09.89
 PORTEPOCH=	1
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 CATEGORIES=	textproc perl5
@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple-to-use XML module parsing and creating XML documents
+
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	yes
 
