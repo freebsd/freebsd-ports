@@ -33,7 +33,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900027
+# after merging log2 and log2f into libm
+.if ${OSVERSION} >= 802502
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-modplug__snd_gm.c
 .endif
 
