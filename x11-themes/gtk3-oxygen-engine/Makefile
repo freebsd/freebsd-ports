@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxygen
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-gtk3/${PORTVERSION}/src/
@@ -19,7 +18,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk30
-USES=		cmake
+USES=		cmake:outsource
 USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
