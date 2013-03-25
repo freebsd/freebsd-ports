@@ -14,8 +14,8 @@ COMMENT=	A puzzle solver
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		xmlwrapp.5:${PORTSDIR}/textproc/xmlwrapp \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		xmlwrapp:${PORTSDIR}/textproc/xmlwrapp \
+		fltk:${PORTSDIR}/x11-toolkits/fltk \
 		boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_XORG=	x11 xt xext xmu xi
