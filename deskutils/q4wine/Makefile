@@ -1,7 +1,4 @@
-# New ports collection makefile for:	q4wine
-# Date created:		05 Feb 2009
-# Whom:			Sergey V. Dyatko <sergey.dyatko@gmail.com>
-#
+# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	q4wine
@@ -31,14 +28,15 @@ MAN1=		q4wine-cli.1 q4wine-helper.1 q4wine.1
 USES=		cmake
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man/
 
-OPTIONS=	DBUS "Enable DBus notification support" on
+OPTIONS_DEFINE=	DBUS
+OPTIONS_DEFAULT=	DBUS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_DBUS)
-CMAKE_ARGS+=	-DWITH_DBUS:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MDBUS}
 USE_QT4+=	dbus
+.else
+CMAKE_ARGS+=	-DWITH_DBUS:BOOL=OFF
 .endif
 
 post-install:
