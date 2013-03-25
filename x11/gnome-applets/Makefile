@@ -74,10 +74,10 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
 CFLAGS+=	-fPIC
-PLIST_SUB=	BATTERY="@comment "
+PLIST_SUB+=	BATTERY="@comment "
 .else
 GCONF_SCHEMAS+=	battstat.schemas
-PLIST_SUB=	BATTERY=""
+PLIST_SUB+=	BATTERY=""
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
