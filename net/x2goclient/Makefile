@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.0.3
+PORTVERSION=	4.0.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -44,10 +44,6 @@ post-patch:
 		's|Q_OS_LINUX|Q_OS_UNIX| ; \
 		 /<linux\/fs.h>/s|^|//| ; \
 		 /#define USELDAP/s|^|//|'
-	@${REINPLACE_CMD} -e \
-		'/MACOSX/s|^|#|' ${WRKSRC}/x2goclient.pro
-	@${REINPLACE_CMD} -e \
-		's|/usr/bin/||' ${WRKSRC}/desktop/x2goclient.desktop
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
@@ -62,7 +58,7 @@ do-install:
 	@${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/desktop/x2goclient.desktop \
 		${DESKTOPDIR}
-.for dir in 16x16 32x32 64x64 128x128
+.for dir in 16x16 32x32 48x48 64x64 128x128
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/${dir}/apps
 	${INSTALL_DATA} ${WRKSRC}/icons/${dir}/x2goclient.png \
 		${PREFIX}/share/icons/hicolor/${dir}/apps

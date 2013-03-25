@@ -4,6 +4,7 @@ share/applications/x2goclient.desktop
 share/icons/hicolor/128x128/apps/x2goclient.png
 share/icons/hicolor/16x16/apps/x2goclient.png
 share/icons/hicolor/32x32/apps/x2goclient.png
+share/icons/hicolor/48x48/apps/x2goclient.png
 share/icons/hicolor/64x64/apps/x2goclient.png
 %%DATADIR%%/icons/x2goclient.xpm
 %%DATADIR%%/icons/x2goclient.png
@@ -12,6 +13,8 @@ share/icons/hicolor/64x64/apps/x2goclient.png
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/16x16/apps
