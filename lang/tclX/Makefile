@@ -30,16 +30,16 @@ MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries
 
-check test regression-check:
-	#
-	# Define TCLX_NO_SELF_TESTS to disable automatic
-	# running of TclX' checks after building
-	#
-	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} test
+#check test regression-check:
+#	#
+#	# Define TCLX_NO_SELF_TESTS to disable automatic
+#	# running of TclX' checks after building
+#	#
+#	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} test
 
-.ifndef TCLX_NO_SELF_TESTS
-post-build:	test
-.endif
+#.ifndef TCLX_NO_SELF_TESTS
+#post-build:	test
+#.endif
 
 MAN3=	CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
 MANN=	TclX.n
