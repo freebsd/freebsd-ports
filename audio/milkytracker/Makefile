@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
-		${LOCALBASE}/share/pixmaps/${f:C/carton/milkytracker/}
+		${PREFIX}/share/pixmaps/${f:C/carton/milkytracker/}
 .endfor
 	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
