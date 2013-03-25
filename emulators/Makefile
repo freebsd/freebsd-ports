@@ -58,6 +58,7 @@
     SUBDIR += hfsutils
     SUBDIR += higan
     SUBDIR += hugo
+    SUBDIR += i386-wine-devel
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += its

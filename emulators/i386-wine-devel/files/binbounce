@@ -1,0 +1,32 @@
+#!/bin/sh
+
+TARGET="$0"
+_count=0
+while [ -L "$TARGET" ]
+do
+  _old="$TARGET"
+  TARGET="`readlink "$TARGET"`"
+  if [ ! -e "$TARGET" ]
+  then
+    TARGET="`dirname "$_old"`/$TARGET"
+  fi
+  _count=$(($_count + 1))
+  if [ $_count -gt 100 ]
+  then
+    echo "$0: to many symbolic links" > /dev/stderr
+    exit 1
+  fi
+done
+
+LOCALBASE=`dirname "$TARGET"`/..
+BINNAME=`basename "$TARGET"`
+
+if [ `uname -p` = i386 ]
+then
+  export LD_LIBRARY_PATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_LIBRARY_PATH"
+else
+  export LD_32_LIBRARY_PATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_32_LIBRARY_PATH":/usr/lib32
+fi
+export PATH="$LOCALBASE/bin32":"$PATH"
+
+exec "$LOCALBASE/bin32/$BINNAME" "$@"
