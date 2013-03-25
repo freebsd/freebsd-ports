@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \
@@ -15,7 +15,7 @@ COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes
 USE_GL=		gl
-USE_GNOME=	gtk12 gnomehack
+USE_GNOME=	desktopfileutils gtk12 gnomehack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -155,7 +155,6 @@ post-patch:
 .if ${HAVE_GNOME:Mesound}==""
 	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
 .endif
-	@${CP} ${FILESDIR}/xmms.desktop.in ${WRKSRC}/xmms.desktop
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
@@ -164,7 +163,8 @@ post-configure:
 post-install:
 	@${INSTALL} -d ${PREFIX}/share/xmms/Skins
 	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/xmms.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKDIR}/xmms.desktop ${PREFIX}/share/applications/
+	-update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

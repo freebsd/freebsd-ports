@@ -98,3 +98,5 @@ share/locale/zh_TW/LC_MESSAGES/xmms.mo
 @dirrm include/xmms
 @exec mkdir -p %D/share/xmms/Skins
 @unexec echo "If you are permanently removing xmms, do not forget to remove skin files left under %D/share/xmms/Skins. Use \`\`rm -Rf %D/share/xmms/Skins; rmdir %D/share/xmms''" | fmt
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
