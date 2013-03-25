@@ -1,4 +1,4 @@
-# Created by:	thierry@pompo.net
+# Created by: thierry@pompo.net
 # $FreeBSD$
 
 PORTNAME=	torcs

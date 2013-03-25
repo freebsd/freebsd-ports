@@ -1,4 +1,4 @@
-# Created by:	bms
+# Created by: bms
 # $FreeBSD$
 
 PORTNAME=	chrpath
@@ -22,7 +22,6 @@ PLIST_FILES=	bin/chrpath
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 
