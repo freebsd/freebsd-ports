@@ -3,9 +3,9 @@ bin/crosspad2ps
 @exec cd %D/bin; ln -s crosspad2ps crosspad2eps
 @exec cd %D/bin; ln -s crosspad2ps crosspad2tgif
 @exec cd %D/bin; ln -s crosspad2ps crosspad2idraw
-@unexec rm %D/bin/crosspad2eps
-@unexec rm %D/bin/crosspad2tgif
-@unexec rm %D/bin/crosspad2idraw
+@unexec rm %D/bin/crosspad2eps 2>&1 >/dev/null || true
+@unexec rm %D/bin/crosspad2tgif 2>&1 >/dev/null || true
+@unexec rm %D/bin/crosspad2idraw 2>&1 >/dev/null || true
 %%PORTDOCS%%share/doc/crosspad/PROTOCOL
 %%PORTDOCS%%share/doc/crosspad/README.english
 %%PORTDOCS%%share/doc/crosspad/README.japanese
