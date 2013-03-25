@@ -1,20 +1,18 @@
-# New ports collection makefile for:   libcaca
-# Date created:			11 January 2004
-# Whom:				Vincent Tantardini <vinc@FreeBSD-fr.org>
-#
+# Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USE_GNOME=	gnomehack ltverhack pkgconfig
+USES=		pathfix
+USE_GNOME=	ltverhack
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-doc \
@@ -22,28 +20,35 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-java \
 		--disable-csharp \
 		--disable-ruby \
-		--disable-python
+		--disable-python \
+		--disable-cppunit \
+		--disable-zzuf
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS
 MAN1=		caca-config.1 cacademo.1 cacafire.1 cacaplay.1 cacaserver.1 \
 		cacaview.1 img2txt.1
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-x11
-.else
+OPTIONS_DEFINE=	X11 IMLIB2 SLANG DOCS
+OPTIONS_DEFAULT=	X11 IMLIB2
+X11_DESC=	X11 and OpenGL support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
-.endif
-
-.if defined(WITHOUT_IMLIB2)
-CONFIGURE_ARGS+=--disable-imlib2
+USE_GL=		glut
 .else
-USE_EFL+=	imlib2
+CONFIGURE_ARGS+=--disable-x11 --disable-gl
 .endif
 
-.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MIMLIB2}
+USE_EFL+=	imlib2
+.else
+CONFIGURE_ARGS+=--disable-imlib2
+.endif
 
-.if defined(WITH_SLANG)
+.if ${PORT_OPTIONS:MSLANG}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=--enable-slang
 .else
@@ -56,12 +61,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; s| csharp||g' \
 			${WRKSRC}/Makefile.in
 
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
