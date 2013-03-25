@@ -33,7 +33,7 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${DATADIR}/qtiplot.png" \
 		"qtiplot" "" false
 
-OPTIONS_DEFINE=	DOCS PYTHON
+OPTIONS_DEFINE=	DOCS PYTHON NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 DOCS_DESC=	Install the QtiPlot Handbook

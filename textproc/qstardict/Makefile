@@ -20,7 +20,7 @@ USE_DOS2UNIX=	qstardict.pri
 
 DICPATH=	${LOCALBASE}/share/stardict/dic
 
-OPTIONS_DEFINE=	DBUS
+OPTIONS_DEFINE=	DBUS DOCS NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.options.mk>

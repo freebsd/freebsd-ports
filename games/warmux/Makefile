@@ -30,7 +30,7 @@ USE_DOS2UNIX=	fixed_class.h
 MANCOMPRESSED=	no
 MAN6=		warmux.6
 
-OPTIONS_DEFINE=	FRIBIDI SERVER
+OPTIONS_DEFINE=	FRIBIDI SERVER NLS
 FRIBIDI_DESC=	Enable bi-directional unicode support
 SERVER_DESC=	Enable dedicated server
 

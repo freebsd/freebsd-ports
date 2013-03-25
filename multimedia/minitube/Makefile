@@ -22,8 +22,6 @@ LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 STRIP_FILES=	bin/minitube
 
-OPTIONS_DEFINE=	NLS
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

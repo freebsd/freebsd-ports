@@ -30,7 +30,7 @@ DESKTOP_ENTRIES=	"QDevelop" \
 			"Development;IDE;Qt;" \
 			"false"
 
-OPTIONS_DEFINE=	TOOLS
+OPTIONS_DEFINE=	TOOLS DOCS NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 TOOLS_DESC=	Install Qt4 dev. tools (qmake, moc, etc.)
 

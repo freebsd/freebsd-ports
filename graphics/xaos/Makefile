@@ -16,7 +16,7 @@ USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-OPTIONS_DEFINE=	GTK2 PTHREAD
+OPTIONS_DEFINE=	GTK2 PTHREAD NLS
 GTK2_DESC=	GTK+ User Interface (experimental)
 PTHREAD_DESC=	Enable SMP support (experimental)
 
