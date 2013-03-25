@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libDnd
-# Date created:                8 August 1997
-# Whom:                        lukin@okbmei.msk.su
-#
+# Created by: lukin@okbmei.msk.su
 # $FreeBSD$
-#
 
 PORTNAME=	libdnd
 PORTVERSION=	1.1
@@ -24,8 +20,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include/
 LDFLAGS+=	-L${LOCALBASE}/lib/
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/libdnd
 	${INSTALL_MAN} ${WRKDIR}/DND/DNDdoc/* ${DOCSDIR}
 .endif

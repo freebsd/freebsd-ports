@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gromit
-# Date Created:				03 Mar 2003
-# Whom:					Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gromit
 PORTVERSION=	20041213
@@ -19,11 +15,13 @@ USE_PKGCONFIG=	build
 
 DOCS=		AUTHORS ChangeLog README
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gromit ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}   ${WRKSRC}/gromitrc       ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif

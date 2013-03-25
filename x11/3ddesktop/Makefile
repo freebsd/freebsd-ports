@@ -1,9 +1,5 @@
-# New ports collection makefile for:	3ddesktop
-# Date created:				12 June 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	3ddesktop
 PORTVERSION=	0.2.9
@@ -27,6 +23,8 @@ PLIST_DIRS=	%%DATADIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O3||g ; \
@@ -36,7 +34,7 @@ post-patch:
 		 s|@AUTOMAKE@|${TRUE}|g'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README README.windowmanagers
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

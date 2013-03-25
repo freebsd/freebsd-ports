@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmappl
-# Date created:				3 March 2002
-# Whom:					od <od@iclub.nsu.ru>
-#
+# Created by: od <od@iclub.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmappl
 PORTVERSION=	0.71
@@ -23,6 +19,8 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 MAN1=	wmappl.1
 MAN5=	wmapplrc.5
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/icons/CVS
 
@@ -32,7 +30,7 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKDIR} && ${INSTALL_DATA} *.xpm ${DATADIR}
 	@cd ${WRKDIR}/smallicons && ${INSTALL_DATA} *.xpm ${DATADIR}
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_CMD} "===>   Installing README as ${DOCSDIR}/README"
 	@${ECHO_CMD} "===>   Please read for configuration information"
 	@${MKDIR} ${DOCSDIR}

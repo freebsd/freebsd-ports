@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Temperature.app
-# Date created:				06 May 2001
-# Whom:					Per Otterstr=F6m <pelle@fukt.bth.se>
-#
+# Created by: Per Otterstr=F6m <pelle@fukt.bth.se>
 # $FreeBSD$
-#
 
 PORTNAME=	temperature.app
 PORTVERSION=	1.4
@@ -22,9 +18,11 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_XORG=	x11 xpm
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Temperature.app ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	simdock
-# Date created:				28 Jul 2007
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	simdock
 PORTVERSION=	1.2
@@ -25,6 +21,8 @@ WRKSRC=		${WRKDIR}/trunk
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL LICENSE NEWS README TODO
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/Makefile.in \
@@ -34,7 +32,7 @@ post-patch:
 		${WRKSRC}/src/main.cc
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
