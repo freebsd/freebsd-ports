@@ -19,6 +19,8 @@ DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
 CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
@@ -28,7 +30,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.icc ${EXAMPLESDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

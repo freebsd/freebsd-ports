@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsx
-# Date created:			5 December 1996
-# Whom:				Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	libsx
 PORTVERSION=	1.1
@@ -23,6 +19,8 @@ USE_XORG=	x11 xaw xext xmu xt
 ALL_TARGET=	src freq
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/freq/libfreq.a  ${PREFIX}/lib
@@ -31,7 +29,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/freq/freq.h ${PREFIX}/include/X11/libsx
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/libsx
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
 	${GZIP_CMD} ${PREFIX}/share/doc/libsx/*.doc

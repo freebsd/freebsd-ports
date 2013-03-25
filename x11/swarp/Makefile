@@ -1,9 +1,5 @@
-# Ports collection makefile for:	swarp
-# Date created:				2008-01-15
-# Whom:					Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	swarp
 PORTVERSION=	0.1
@@ -26,11 +22,13 @@ MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \
 PORTDOCS=	README
 PLIST_FILES=	bin/swarp
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${ECHO_CMD} -n > ${WRKSRC}/config.mk
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BBDock
-# Date created:				July 31, 2006
-# Whom:					Francis Bacque <idroxid01@yahoo.fr>
-#
+# Created by: Francis Bacque <idroxid01@yahoo.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	bbdock
 PORTVERSION=	0.2.9
@@ -25,8 +21,10 @@ PORTDOCS=	README
 
 PLIST_FILES=	bin/bbdock
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

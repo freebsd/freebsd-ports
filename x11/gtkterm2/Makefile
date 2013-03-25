@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkterm2
-# Date created:		2004-06-12
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkterm2
 PORTVERSION=	0.2.3
@@ -28,6 +24,8 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||g' ${WRKSRC}/configure
 
@@ -38,7 +36,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/gtkterm2.png \
 		${DATADIR}/pixmaps/gtkterm2.png
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif

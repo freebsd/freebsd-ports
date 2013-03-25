@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multi-aterm
-# Date created:		2003-07-11
-# Whom:			Sebastian Yepes <esn@x123.info>
-#
+# Created by: Sebastian Yepes <esn@x123.info>
 # $FreeBSD$
-#
 
 PORTNAME=	multi-aterm
 PORTVERSION=	0.2.1

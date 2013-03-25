@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XMangekyou
-# Date created:		30 October 1998
-# Whom:			Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xmangekyou
 PORTVERSION=	2.0.1
@@ -23,6 +19,8 @@ PORTDOCS=	COPYRIGHT.euc HISTORY.euc README.euc
 PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat
 PLIST_DIRS=	lib/X11/XMangekyou
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|= /usr/X11R6|= $${PREFIX}|g ; \
 		 s|gcc |$${CC} |g ; \
@@ -35,7 +33,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/xmangekyou.1.gz ${MANPREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/lib/X11/XMangekyou
 	${INSTALL_DATA} ${WRKSRC}/animation.dat ${PREFIX}/lib/X11/XMangekyou
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.euc ${DOCSDIR}
 .endif

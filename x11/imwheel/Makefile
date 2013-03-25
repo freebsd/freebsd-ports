@@ -1,9 +1,5 @@
-# New ports collection makefile for: imwheel-0.9.7
-# Date created:		18 Feb 2000
-# Whom:			jhb
-#
+# Created by: jhb
 # $FreeBSD$
-#
 
 PORTNAME=	imwheel
 PORTVERSION=	1.0.0.p12
@@ -24,13 +20,15 @@ CONFIGURE_ARGS=	--disable-gpm
 
 MAN1=		imwheel.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .for i in imwheel.1 util.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS ${DOCSDIR}
 .endif
