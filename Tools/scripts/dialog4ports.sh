@@ -36,4 +36,4 @@ if ! [ -e $DIALOG4PORTS ]; then
 	fi
 fi
 
-exec $DIALOG4PORTS > $OPTIONSFILE
+exec $DIALOG4PORTS 2> $OPTIONSFILE
