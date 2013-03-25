@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \

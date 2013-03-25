@@ -7,7 +7,7 @@ $FreeBSD$
          case RTR0MEMOBJTYPE_PHYS_NC:
          {
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
 +#endif
@@ -19,7 +19,7 @@ $FreeBSD$
              vm_page_unlock_queues();
  #endif
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RUNLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
 +#endif
@@ -32,14 +32,14 @@ $FreeBSD$
      while (cTries <= 1)
      {
 +#if __FreeBSD_version >= 1000030
-+        VM_OBJECT_RLOCK(pObject);
++        VM_OBJECT_WLOCK(pObject);
 +#else
          VM_OBJECT_LOCK(pObject);
 +#endif
          pPages = vm_page_alloc_contig(pObject, iPIndex, fFlags, cPages, 0,
                                        VmPhysAddrHigh, uAlignment, 0, VM_MEMATTR_DEFAULT);
 +#if __FreeBSD_version >= 1000030
-+        VM_OBJECT_RUNLOCK(pObject);
++        VM_OBJECT_WUNLOCK(pObject);
 +#else
          VM_OBJECT_UNLOCK(pObject);
 +#endif
@@ -51,7 +51,7 @@ $FreeBSD$
      if (!pPages)
          return pPages;
 +#if __FreeBSD_version >= 1000030
-+    VM_OBJECT_RLOCK(pObject);
++    VM_OBJECT_WLOCK(pObject);
 +#else
      VM_OBJECT_LOCK(pObject);
 +#endif
@@ -63,7 +63,7 @@ $FreeBSD$
          }
      }
 +#if __FreeBSD_version >= 1000030
-+    VM_OBJECT_RUNLOCK(pObject);
++    VM_OBJECT_WUNLOCK(pObject);
 +#else
      VM_OBJECT_UNLOCK(pObject);
 +#endif
@@ -75,7 +75,7 @@ $FreeBSD$
          {
              /* Free all allocated pages */
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RLOCK(pObject);
++            VM_OBJECT_WLOCK(pObject);
 +#else
              VM_OBJECT_LOCK(pObject);
 +#endif
@@ -87,7 +87,7 @@ $FreeBSD$
  #endif
              }
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RUNLOCK(pObject);
++            VM_OBJECT_WUNLOCK(pObject);
 +#else
              VM_OBJECT_UNLOCK(pObject);
 +#endif
@@ -99,13 +99,13 @@ $FreeBSD$
          {
              Assert(enmType == RTR0MEMOBJTYPE_PHYS);
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
 +#endif
              pMemFreeBSD->Core.u.Phys.PhysBase = VM_PAGE_TO_PHYS(vm_page_find_least(pMemFreeBSD->pObject, 0));
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RUNLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
 +#endif
@@ -117,13 +117,13 @@ $FreeBSD$
          {
              RTHCPHYS addr;
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
 +#endif
              addr = VM_PAGE_TO_PHYS(vm_page_lookup(pMemFreeBSD->pObject, iPage));
 +#if __FreeBSD_version >= 1000030
-+            VM_OBJECT_RUNLOCK(pMemFreeBSD->pObject);
++            VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
 +#endif
