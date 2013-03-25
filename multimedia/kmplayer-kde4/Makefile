@@ -30,5 +30,7 @@ post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
 		${WRKSRC}/doc/index.docbook
+	${REINPLACE_CMD} -e 's,glib/gthread.h,glib.h,g' \
+		${WRKSRC}/src/npplayer.cpp
 
 .include <bsd.port.mk>
