@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corsixth
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
@@ -19,6 +18,33 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 USES=		cmake
 USE_LUA=	yes
 USE_SDL=	mixer
+MAKE_JOBS_SAFE=	yes
+USE_DOS2UNIX=	CMake/FindFFmpeg.cmake \
+		CorsixTH/CMakeLists.txt
+
+OPTIONS_DEFINE=	MOVIES
+OPTIONS_DEFAULT=	MOVIES
+MOVIES_DESC=	Play in-game movies
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMOVIES}
+CMAKE_ARGS+=	-DWITH_MOVIES=ON
+LIB_DEPENDS+=	swresample1:${PORTSDIR}/multimedia/ffmpeg1
+.else
+CMAKE_ARGS+=	-DWITH_MOVIES=OFF
+.endif
+
+# partly copied from editors/libreoffice
+.if ${ARCH} == "i386"
+.if exists(/usr/bin/clang) && ${OSVERSION} > 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+.else
+USE_GCC=	4.6+
+.endif
+.endif
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts
