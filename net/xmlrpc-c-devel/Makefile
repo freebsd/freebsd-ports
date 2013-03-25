@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.32.99
+PORTVERSION=	1.33.2
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/garga/xmlrpc-c
 PKGNAMESUFFIX=	-devel
@@ -20,7 +20,7 @@ CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
@@ -70,5 +70,9 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e '/#include.*features.h/ s/features.h/sys\/cdefs.h/' \
 		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
+	@${REINPLACE_CMD} -e '/define _XOPEN_SOURCE 600/ s,^,//,' \
+		${WRKSRC}/src/xmlrpc_server_abyss.c
+	@${REINPLACE_CMD} -e 's,sys/unistd.h,unistd.h,' \
+		${WRKSRC}/test/cpp/server_abyss.cpp
 
 .include <bsd.port.post.mk>
