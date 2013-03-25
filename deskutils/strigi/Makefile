@@ -3,6 +3,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.7.8
+PORTREVISON=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.vandenoever.info/software/strigi/
 
@@ -12,8 +13,7 @@ COMMENT=	Desktop searching program
 LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
 		clucene-core:${PORTSDIR}/textproc/clucene \
 		dbus-1:${PORTSDIR}/devel/dbus \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+		exiv2:${PORTSDIR}/graphics/exiv2
 
 USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build
 USE_BZIP2=	yes
@@ -37,7 +37,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libstreamanalyzer__plugins__endplugins__C
 .endif
 
 post-patch:
-	${MKDIR} ${WRKSRC}
 	${REINPLACE_CMD} -e \
 		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/libstreamanalyzer/CMakeLists.txt \
