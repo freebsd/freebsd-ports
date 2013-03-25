@@ -73,7 +73,7 @@ FILES4FIX=	Makefile.in \
 		ui/setupform.py \
 		ui4/devmgr5.py
 
-OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE
+OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE DOCS
 OPTIONS_DEFAULT=	QT
 
 QT_DESC=	Graphical User Interface (Qt4)
