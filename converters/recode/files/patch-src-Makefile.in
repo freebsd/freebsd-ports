@@ -1,5 +1,3 @@
-diff --git src/Makefile.in src/Makefile.in
-index 9bdb85d..5c2765f 100644
 --- src/Makefile.in
 +++ src/Makefile.in
 @@ -129,11 +129,11 @@ L_SURFACES =
