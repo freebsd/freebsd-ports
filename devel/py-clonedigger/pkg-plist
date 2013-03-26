@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/clonedigger
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/java_antlr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/lua_antlr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/abstract_syntax_tree.py
@@ -260,10 +261,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/logilab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/logilab/astng
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/logilab/common/ureports
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/logilab/common
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/logilab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/antlr_runtime
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/java_antlr
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/js_antlr
