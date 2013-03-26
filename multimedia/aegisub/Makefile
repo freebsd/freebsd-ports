@@ -6,7 +6,7 @@ PORTVERSION=	2.1.9
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
-		ftp://ftp.aegisub.org/pub/archives/releases/srouce/ \
+		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
 		ftp://ftp2.aegisub.org/pub/archives/releases/source/ \
 		GOOGLE_CODE:ffms
 PROJECTHOST=	ffmpegsource
@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=	ASS PULSEAUDIO FFMPEG HUNSPELL LUA
 GCOV_DESC=	GCOV (require profiling)
 EFENCE_DESC=	Electric Fence (require profiling)
 ASS_DESC=	libASS subtitle provider
-HUNSPELL_DESC=	Hunspell support
+HUNSPELL_DESC=	Spell checking via Hunspell
 
 USE_GNOME=	intltool
 USE_WX=		2.8
@@ -39,7 +39,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-lua50
+CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -99,11 +99,9 @@ CONFIGURE_ARGS+=	--without-openal
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-BROKEN=		portaudio2 support is broken
 BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-CFLAGS+=	-isystem ${LOCALBASE}/include/portaudio2
-LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2
+CONFIGURE_ENV+=	PORTAUDIO_LIBS="${LOCALBASE}/lib/portaudio2/libportaudio.so"
 .else
 CONFIGURE_ARGS+=	--without-portaudio
 .endif
@@ -169,6 +167,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@HAVE_AUTO3_LUA_TRUE@|#| ; \
 		 s|@HAVE_AUTO3_LUA_FALSE@||' ${WRKSRC}/${i}
+.endfor
+.for i in src/audio_player_portaudio.h
+	@${REINPLACE_CMD} -e \
+		's|<portaudio\.h>|<portaudio2/portaudio.h>|' ${WRKSRC}/${i}
 .endfor
 
 pre-configure:
