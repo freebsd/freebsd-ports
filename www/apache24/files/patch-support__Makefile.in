@@ -1,0 +1,33 @@
+--- ./support/Makefile.in.orig	2012-12-11 11:37:25.000000000 +0100
++++ ./support/Makefile.in	2013-03-22 18:55:53.000000000 +0100
+@@ -17,23 +17,23 @@
+ 	@test -d $(DESTDIR)$(sbindir) || $(MKINSTALLDIRS) $(DESTDIR)$(sbindir)
+ 	@test -d $(DESTDIR)$(libexecdir) || $(MKINSTALLDIRS) $(DESTDIR)$(libexecdir)
+ 	@cp -p $(top_builddir)/server/httpd.exp $(DESTDIR)$(libexecdir)
+-	@for i in apxs dbmmanage; do \
++	@chown root:wheel $(DESTDIR)$(libexecdir)/httpd.exp
++	@for i in apxs dbmmanage split-logfile; do \
+ 	    if test -f "$(builddir)/$$i"; then \
+-	        cp -p $$i $(DESTDIR)$(bindir); \
+-	        chmod 755 $(DESTDIR)$(bindir)/$$i; \
++	        cp -p $$i $(DESTDIR)$(sbindir); \
++	        chmod 755 $(DESTDIR)$(sbindir)/$$i; \
++		chown root:wheel $(DESTDIR)$(sbindir)/$$i; \
+ 	    fi ; \
+ 	done
+ 	@for i in apachectl; do \
+ 	    if test -f "$(builddir)/$$i"; then \
+ 	        cp -p $$i $(DESTDIR)$(sbindir); \
+ 	        chmod 755 $(DESTDIR)$(sbindir)/$$i; \
++		chown root:wheel $(DESTDIR)$(sbindir)/$$i; \
+ 	    fi ; \
+ 	done
+ 	@if test -f "$(builddir)/envvars-std"; then \
+-	    cp -p envvars-std $(DESTDIR)$(sbindir); \
+-	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
+-	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
+-	    fi ; \
++	    cp -p envvars-std $(DESTDIR)$(sbindir)/envvars; \
+ 	fi
+ 
+ htpasswd.lo: passwd_common.h

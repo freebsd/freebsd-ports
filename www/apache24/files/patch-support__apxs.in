@@ -1,0 +1,27 @@
+--- ./support/apxs.in.orig	2012-07-25 13:42:40.000000000 +0200
++++ ./support/apxs.in	2013-03-22 18:55:53.000000000 +0100
+@@ -636,7 +636,13 @@
+                 }
+             } else {
+                 # replace already existing LoadModule line
+-                $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1$c$lmd\n|s;
++                # Custom FreeBSD mod
++                if ($opt_A) {
++                    $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1|s;
++                }
++                else {
++                    $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1$c$lmd\n|s;
++                }
+             }
+             $lmd =~ m|LoadModule\s+(.+?)_module.*|;
+             notice("[$what module `$1' in $CFG_SYSCONFDIR/$CFG_TARGET.conf]");
+@@ -645,8 +651,7 @@
+             if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
+                 print FP $content;
+                 close(FP);
+-                system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf $CFG_SYSCONFDIR/$CFG_TARGET.conf.bak && " .
+-                       "cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " .
++                system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " .
+                        "rm $CFG_SYSCONFDIR/$CFG_TARGET.conf.new");
+             } else {
+                 notice("unable to open configuration file");
