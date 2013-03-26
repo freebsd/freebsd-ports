@@ -3,6 +3,7 @@
 
 PORTNAME=	Crypt_RSA
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -26,10 +27,6 @@ PEAR_AUTOINSTALL=	yes
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
-
-post-extract:
-	@${MV} ${WRKSRC}/CREDITS ${WRKSRC}/docs
-	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/docs
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.mk>
