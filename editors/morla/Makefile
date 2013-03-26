@@ -1,9 +1,5 @@
-# New ports collection makefile for:	morla
-# Date created:		2006-04-09
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	morla
 PORTVERSION=	0.16.1
@@ -22,7 +18,8 @@ LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-OPTIONS=	XULRUNNER	"Install xulrunner as JavaScript engine" off
+OPTIONS_DEFINE=	XULRUNNER
+XULRUNNER_DESC=	Xulrunner as JavaScript engine
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -45,13 +42,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XULRUNNER)
+.if ${PORT_OPTIONS:MXULRUNNER}
 USE_GECKO=	libxul19
 CONFIGURE_ARGS+=	--with-javascript=xulrunner
 .else
 CONFIGURE_ARGS+=	--with-javascript=none
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
