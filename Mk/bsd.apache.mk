@@ -81,7 +81,7 @@
 Apache_Pre_Include=		bsd.apache.mk
 
 DEFAULT_APACHE_VERSION=		22
-APACHE_SUPPORTED_VERSION=	22 # preferred version first
+APACHE_SUPPORTED_VERSION=	22 24 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
@@ -93,9 +93,9 @@ _ERROR_MSG=	: Error from bsd.apache.mk.
 .if defined(USE_APACHE) && !empty(USE_APACHE)
 .	if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	yes
-.	elif ${USE_APACHE:C/\-//:S/^22//:C/\+$//} == ""
+.	elif ${USE_APACHE:C/\-//:S/^22//:S/^24//:C/\+$//} == ""
 AP_PORT_IS_MODULE=	yes
-.		if ${USE_APACHE:C/\-//:S/^22//} == "+"
+.		if ${USE_APACHE:C/\-//:S/^22//:S/^24//} == "+"
 AP_PLUS=	yes
 .		endif
 .	else
@@ -382,7 +382,7 @@ AP_EXTRAS+=	-L ${AP_LIB}
 Apache_Post_Include=	bsd.apache.mk
 
 .if defined(USE_APACHE_RUN) && !empty(USE_APACHE_RUN)
-.	if ${USE_APACHE_RUN:C/\-//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_RUN:C/\-//:S/^22//:S/^24//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( ${USE_APACHE_RUN} )
 .	endif
 .elif defined(USE_APACHE_RUN)
@@ -390,7 +390,7 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( no valid version specified
 .endif
 
 .if defined(USE_APACHE_BUILD) && !empty(USE_APACHE_BUILD)
-.	if ${USE_APACHE_BUILD:C/\-//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_BUILD:C/\-//:S/^22//:S/^24//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_BUILD ( ${USE_APACHE_BUILD} )
 .	endif
 .elif defined(USE_APACHE_BUILD)
