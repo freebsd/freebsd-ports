@@ -453,6 +453,7 @@
     SUBDIR += lmms
     SUBDIR += lpac
     SUBDIR += lplayer
+    SUBDIR += lua51-mpd
     SUBDIR += lv2core
     SUBDIR += lxmusic
     SUBDIR += mac
