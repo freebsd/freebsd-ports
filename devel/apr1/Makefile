@@ -119,7 +119,7 @@ APU_CONF_ARGS+=	--without-ldap
 APU_EXTRAS=	yes
 PLIST_SUB+=	FREETDS=""
 APU_CONF_ARGS+=	--with-freetds=${LOCALBASE}
-LIB_DEPENDS=	sybdb:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	sybdb:${PORTSDIR}/databases/freetds
 .else
 PLIST_SUB+=	FREETDS="@comment "
 APU_CONF_ARGS+=	--without-freetds
