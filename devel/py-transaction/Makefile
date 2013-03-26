@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-transaction
-# Date created:		9 August,2009
-# Whom:	      		Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	transaction
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
