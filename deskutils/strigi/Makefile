@@ -2,44 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	strigi
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	${STRIGI_VERSION}
+PORTREVISION=	2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.vandenoever.info/software/strigi/
+DISTFILES=      #
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Desktop searching program
+COMMENT=	Strigi desktop search (meta port)
 
-LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
-		clucene-core:${PORTSDIR}/textproc/clucene \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		exiv2:${PORTSDIR}/graphics/exiv2
+USE_KDE4=	strigi_run
+NO_BUILD=	yes
 
-USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build
-USE_BZIP2=	yes
-USE_GNOME=	libxml2
-USE_PKGCONFIG=	build
-USE_FAM=	yes
-USE_LDCONFIG=	yes
-USES=		cmake:outsource
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=	CLIENT DAEMON UTILITIES
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-# supported versions: ffmpeg, ffmpeg1, ffmpeg-devel
-# corresponding FFMPEG_SUFFIX: '', '1', '-devel'
-FFMPEG_SUFFIX?=	#
-CMAKE_ARGS+=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFFIX}"
+.include <${.CURDIR}/Makefile.common>
+.include <bsd.port.options.mk>
 
-.if !empty(FFMPEG_SUFFIX)
-# Reorder include directories to allow build with multiple ffmpeg installed.
-# This patch must NOT be used, if ffmpeg headers are installed
-# directly to ${LOCALBASE}/include
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libstreamanalyzer__plugins__endplugins__CMakeLists.txt
+.if ${PORT_OPTIONS:MCLIENT}
+RUN_DEPENDS+=	${LOCALBASE}/bin/strigiclient:${PORTSDIR}/deskutils/strigiclient
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e \
-		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \
-		${WRKSRC}/libstreamanalyzer/CMakeLists.txt \
-		${WRKSRC}/libstreams/CMakeLists.txt
+.if ${PORT_OPTIONS:MDAEMON}
+RUN_DEPENDS+=	${LOCALBASE}/bin/strigidaemon:${PORTSDIR}/deskutils/strigidaemon
+.endif
+
+.if ${PORT_OPTIONS:MUTILITIES}
+RUN_DEPENDS+=	${LOCALBASE}/bin/xmlindexer:${PORTSDIR}/deskutils/strigiutils
+.endif
+
+do-install:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
