@@ -1,0 +1,9 @@
+********************************************************
+NOTE: If you want "Shutdown" and "Restart"
+menu actions to work properly, manually set SUID bit on
+"%%PREFIX%%/lib/enlightenment/utils/enlightenment_sys"
+executable.
+
+WARNING: this program might be vulnerable so do not
+set suid bit if do not trust all users of this machine.
+********************************************************
