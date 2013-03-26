@@ -249,7 +249,7 @@ qimageblitz_PATH=	${LOCALBASE}/lib/libqimageblitz.so.4
 soprano_PORT=		textproc/soprano
 soprano_PATH=		${LOCALBASE}/lib/libsoprano.so.4
 
-strigi_PORT=		deskutils/strigi
+strigi_PORT=		deskutils/libstreamanalyzer
 strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
 
 # Iterate through components deprived of suffix.

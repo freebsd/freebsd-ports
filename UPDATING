@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130204:
+  AFFECTS: users of deskutils/strigi
+  AUTHOR: makc@FreeBSD.org
+
+  Strigi port has been split on libraries, client, daemon, and utilities.
+  Manual update is required:
+
+  # cd /usr/ports/deskutils/strigi && make deinstall && \
+    make clean && make install clean
+
 20130323:
   AFFECTS: users of archivers/libarchive
   AUTHOR: glewis@FreeBSD.org

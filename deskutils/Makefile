@@ -155,6 +155,8 @@
     SUBDIR += libopensync-plugin-synce-devel
     SUBDIR += libopensync-plugin-synce-legacy
     SUBDIR += libopensync-plugin-vformat-devel
+    SUBDIR += libstreamanalyzer
+    SUBDIR += libstreams
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += ljit
@@ -239,6 +241,9 @@
     SUBDIR += splashsetter
     SUBDIR += steadyflow
     SUBDIR += strigi
+    SUBDIR += strigiclient
+    SUBDIR += strigidaemon
+    SUBDIR += strigiutils
     SUBDIR += sugarcrm
     SUBDIR += superkaramba
     SUBDIR += superswitcher

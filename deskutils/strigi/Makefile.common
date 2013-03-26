@@ -1,0 +1,16 @@
+STRIGI_VERSION=		0.7.8
+STRIGI_MASTER_SITES=	http://www.vandenoever.info/software/strigi/
+
+.if !defined(NO_BUILD)
+DISTNAME=		strigi-${STRIGI_VERSION}
+DISTINFO_FILE=		${.CURDIR}/../strigi/distinfo
+DESCR=			${.CURDIR}/../strigi/pkg-descr
+
+CONFLICTS_INSTALL=	strigi-0.*
+
+USE_BZIP2=		yes
+USES+=			cmake:outsource
+CMAKE_SOURCE_PATH=	${WRKSRC}/${PORTNAME}
+
+PLIST_SUB=		SHLIB_VER=${STRIGI_VERSION}
+.endif

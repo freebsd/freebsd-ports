@@ -1,0 +1,4 @@
+bin/deepfind
+bin/deepgrep
+bin/rdfindexer
+bin/xmlindexer
