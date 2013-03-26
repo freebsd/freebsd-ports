@@ -1,0 +1,10 @@
+--- engine/MakefileKyra.orig
++++ engine/MakefileKyra
+@@ -130,6 +130,7 @@
+ 		../util/glstring.cpp \
+ 		../util/glisomath.cpp \
+ 		../../grinliz/gldebug.cpp \
++		../../grinliz/gldynamic.cpp \
+ 		../../grinliz/glperformance.cpp \
+ 		../../grinliz/glgeometry.cpp \
+ 		../../grinliz/glprime.cpp \
