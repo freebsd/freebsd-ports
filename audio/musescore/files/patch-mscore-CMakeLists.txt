@@ -9,7 +9,7 @@
  set(STATIC_SCRIPT_BINDINGS FALSE)
  set(USE_SSE FALSE)
  
-@@ -147,6 +147,8 @@
+@@ -151,6 +151,8 @@
  ## alsa >= 1.0.0
  ##
  
@@ -18,7 +18,7 @@
  if (APPLE OR MINGW)
  	message("Disabling ALSA support due to OS X or MINGW build.")
        set (USE_ALSA 0)
-@@ -161,6 +163,11 @@
+@@ -165,6 +167,11 @@
              set (HAS_MIDI 1)
        endif (NOT ALSA_INCDIR)
  endif (APPLE OR MINGW)
@@ -30,7 +30,7 @@
  
  
  ##
-@@ -215,6 +222,8 @@
+@@ -219,6 +226,8 @@
  ## portaudio
  ##
  
@@ -39,7 +39,7 @@
  if (MINGW)
        set ( USE_PORTAUDIO 1 )
        set ( USE_PORTMIDI  1 )
-@@ -233,6 +242,9 @@
+@@ -237,6 +246,9 @@
        set (USE_PORTMIDI 0)
     endif (APPLE)
  endif (MINGW)
@@ -49,34 +49,29 @@
  
  ##
  ## produce config.h file
-@@ -254,7 +266,7 @@
+@@ -257,8 +269,8 @@
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     )
  
- set(CMAKE_CXX_FLAGS_DEBUG   "")
--set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
-+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG")
+-set(CMAKE_CXX_FLAGS_DEBUG   "-g")
+-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
++#set(CMAKE_CXX_FLAGS_DEBUG   "-g")
++#set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
  
  if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
        if (MINGW)
-@@ -276,7 +288,7 @@
-       add_custom_command(
-          OUTPUT ${PROJECT_BINARY_DIR}/all.h.pch
-          COMMAND ${CMAKE_CXX_COMPILER}
--           -x c++-header -g ${FLAGS}
-+           -x c++-header ${FLAGS}
-            -I${QT_INCLUDE_DIR}
-            -o all.h.pch all.h
-          DEPENDS ${PROJECT_BINARY_DIR}/all.h
-@@ -287,7 +299,7 @@
-       add_custom_command(
-          OUTPUT ${PROJECT_BINARY_DIR}/all.h.gch
-          COMMAND ${CMAKE_CXX_COMPILER}
--           -x c++-header -g  ${FLAGS} -m32
-+           -x c++-header ${FLAGS}
-            -I${QT_HEADERS_DIR}
-            -o all.h.gch all.h
-          DEPENDS ${PROJECT_BINARY_DIR}/all.h
-@@ -324,9 +336,10 @@
+@@ -294,7 +306,9 @@
+ 
+ 
+ ADD_CUSTOM_TARGET(mops1 DEPENDS ${PROJECT_BINARY_DIR}/all.h)
+-ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
++if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
++endif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+ 
+ 
+ if (NOT MINGW AND NOT APPLE)
+@@ -321,9 +335,10 @@
     ${PROJECT_SOURCE_DIR}/mscore
     ${PROJECT_BINARY_DIR}
     ${PROJECT_BINARY_DIR}/mscore
@@ -88,7 +83,7 @@
  )
  
  ##
-@@ -421,8 +434,8 @@
+@@ -427,8 +442,8 @@
  
  add_custom_target(lrelease
     COMMAND ${PROJECT_SOURCE_DIR}/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro

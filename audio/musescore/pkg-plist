@@ -120,12 +120,12 @@ share/applications/mscore.desktop
 %%DATADIR%%/man/MuseScore-ro.pdf
 %%DATADIR%%/man/MuseScore-ru.pdf
 %%DATADIR%%/man/MuseScore-zh_CN.pdf
-%%DATADIR%%/plugins/abc_import.js
+%%DATADIR%%/plugins/abc_import/abc_import.js
+%%DATADIR%%/plugins/abc_import/abc_import.ui
 %%DATADIR%%/plugins/break/break.js
 %%DATADIR%%/plugins/break/break.ui
 %%DATADIR%%/plugins/chordchart.js
 %%DATADIR%%/plugins/colornotes.js
-%%DATADIR%%/plugins/createscore.js
 %%DATADIR%%/plugins/musescore.com/README.txt
 %%DATADIR%%/plugins/musescore.com/icons/filesaveonline.svg
 %%DATADIR%%/plugins/musescore.com/musescore.com.js
@@ -197,6 +197,7 @@ share/pixmaps/mscore.xpm
 @dirrm %%DATADIR%%/plugins/musescore.com/icons
 @dirrm %%DATADIR%%/plugins/musescore.com
 @dirrm %%DATADIR%%/plugins/break
+@dirrm %%DATADIR%%/plugins/abc_import
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/man
 @dirrm %%DATADIR%%/locale

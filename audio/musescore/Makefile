@@ -1,12 +1,8 @@
-# New ports collection makefile for:	musescore
-# Date created:		28 Jul 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	musescore
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}
 DISTNAME=	mscore-${PORTVERSION}
@@ -23,11 +19,10 @@ RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 OPTIONS_DEFINE=	JACK PORTAUDIO
 OPTIONS_DEFAULT=PORTAUDIO
 
-USE_LDCONFIG=	yes
 USE_BZIP2=	yes
+USES=		cmake:outsource
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
-USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
 CMAKE_ARGS=	-DBUILD_ALSA:BOOL=OFF
 ALL_TARGET=	lrelease all
