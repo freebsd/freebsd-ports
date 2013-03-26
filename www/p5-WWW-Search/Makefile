@@ -1,12 +1,8 @@
-# New ports collection makefile for:    p5-WWW-Search
-# Date created:				June 26th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.508
+PORTVERSION=	2.509
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
