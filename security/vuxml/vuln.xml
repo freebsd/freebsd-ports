@@ -51,6 +51,70 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdd48858-9656-11e2-a9a8-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>26.0.1410.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/Stable%20Updates">
+	  <p>[172342] High CVE-2013-0916: Use-after-free in Web Audio. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[180909] Low CVE-2013-0917: Out-of-bounds read in URL loader.
+	    Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[180555] Low CVE-2013-0918: Do not navigate dev tools upon drag
+	    and drop. Credit to Vsevolod Vlasov of the Chromium development
+	    community.</p>
+	  <p>[Linux only] [178760] Medium CVE-2013-0919: Use-after-free with
+	    pop-up windows in extensions. Credit to Google Chrome Security Team
+	    (Mustafa Emre Acer).</p>
+	  <p>[177410] Medium CVE-2013-0920: Use-after-free in extension
+	    bookmarks API. Credit to Google Chrome Security Team (Mustafa Emre
+	    Acer).</p>
+	  <p>[174943] High CVE-2013-0921: Ensure isolated web sites run in
+	    their own processes.</p>
+	  <p>[174129] Low CVE-2013-0922: Avoid HTTP basic auth brute force
+	    attempts. Credit to "t3553r".</p>
+	  <p>[169981] [169972] [169765] Medium CVE-2013-0923: Memory safety
+	    issues in the USB Apps API. Credit to Google Chrome Security Team
+	    (Mustafa Emre Acer).</p>
+	  <p>[169632] Low CVE-2013-0924: Check an extension's permissions API
+	    usage again file permissions. Credit to Benjamin Kalman of the
+	    Chromium development community.</p>
+	  <p>[168442] Low CVE-2013-0925: Avoid leaking URLs to extensions
+	    without the tabs permissions. Credit to Michael Vrable of
+	    Google.</p>
+	  <p>[112325] Medium CVE-2013-0926: Avoid pasting active tags in
+	    certain situations. Credit to Subho Halder, Aditya Gupta, and Dev
+	    Kar of xys3c (xysec.com).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0916</cvename>
+      <cvename>CVE-2013-0917</cvename>
+      <cvename>CVE-2013-0918</cvename>
+      <cvename>CVE-2013-0919</cvename>
+      <cvename>CVE-2013-0920</cvename>
+      <cvename>CVE-2013-0921</cvename>
+      <cvename>CVE-2013-0922</cvename>
+      <cvename>CVE-2013-0923</cvename>
+      <cvename>CVE-2013-0924</cvename>
+      <cvename>CVE-2013-0925</cvename>
+      <cvename>CVE-2013-0926</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/Stable%20Updates</url>
+    </references>
+    <dates>
+      <discovery>2013-03-26</discovery>
+      <entry>2013-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6adca5e9-95d2-11e2-8549-68b599b52a02">
     <topic>firebird -- Remote Stack Buffer Overflow</topic>
     <affects>
