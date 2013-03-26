@@ -3,6 +3,7 @@
 
 PORTNAME=	Imager
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,6 +42,7 @@ MAN3=		Imager.3 \
 		Imager::Expr.3 \
 		Imager::Expr::Assem.3 \
 		Imager::ExtUtils.3 \
+		Imager::File::GIF.3 \
 		Imager::File::ICO.3 \
 		Imager::File::JPEG.3 \
 		Imager::File::PNG.3 \
