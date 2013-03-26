@@ -1,0 +1,11 @@
+--- configure.orig
++++ configure
+@@ -5919,7 +5919,7 @@
+ fi
+ 
+ 
+-if test "${build}" != "${host}"
++if test "$cross_compiling" != no
+ then
+   CC=${CC-${host_alias-gcc}}
+   CFLAGS=${CFLAGS-"-g -O2"}
