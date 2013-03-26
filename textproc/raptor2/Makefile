@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raptor2
-PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTVERSION=	2.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -17,7 +16,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 
-USE_GNOME=	gnomehack libxml2 libxslt
+USE_GNOME=	libxml2 libxslt
+USES=		pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
