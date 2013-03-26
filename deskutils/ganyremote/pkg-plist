@@ -1,42 +1,46 @@
 bin/ganyremote
 share/applications/ganyremote.desktop
-%%NLS%%share/locale/bg/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/cs_CZ/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/de_AT/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/de_DE/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/es_ES/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/fi_FI/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/hu_HU/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/it_IT/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/nl_NL/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/pl_PL/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/ru_RU/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/sk_SK/LC_MESSAGES/ganyremote.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/ganyremote.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/bg/LC_MESSAGES/ganyremote.mo
+share/locale/cs_CZ/LC_MESSAGES/ganyremote.mo
+share/locale/de_AT/LC_MESSAGES/ganyremote.mo
+share/locale/de_DE/LC_MESSAGES/ganyremote.mo
+share/locale/es_ES/LC_MESSAGES/ganyremote.mo
+share/locale/fi_FI/LC_MESSAGES/ganyremote.mo
+share/locale/fr_FR/LC_MESSAGES/ganyremote.mo
+share/locale/hu_HU/LC_MESSAGES/ganyremote.mo
+share/locale/it_IT/LC_MESSAGES/ganyremote.mo
+share/locale/nl_NL/LC_MESSAGES/ganyremote.mo
+share/locale/pl_PL/LC_MESSAGES/ganyremote.mo
+share/locale/pt_BR/LC_MESSAGES/ganyremote.mo
+share/locale/ru_RU/LC_MESSAGES/ganyremote.mo
+share/locale/sk_SK/LC_MESSAGES/ganyremote.mo
+share/locale/sv_SE/LC_MESSAGES/ganyremote.mo
 share/pixmaps/ganyremote.png
 share/pixmaps/ganyremote_flash.png
 share/pixmaps/ganyremote_light.png
 share/pixmaps/ganyremote_off.png
-%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs_CZ
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi_FI
-%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu_HU
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl_PL
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk_SK
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/sk_SK/LC_MESSAGES
+@dirrmtry share/locale/sk_SK
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/fi_FI/LC_MESSAGES
+@dirrmtry share/locale/fi_FI
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
 @dirrmtry share/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
