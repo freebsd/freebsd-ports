@@ -8,7 +8,9 @@
 PORTNAME=	pyla
 PORTVERSION=	1.1.7.1
 CATEGORIES=	comms python
-MASTER_SITES=	http://www.teamsw.it/pyla/download/
+#MASTER_SITES=	http://www.teamsw.it/pyla/download/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     mr
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyla${PORTVERSION}
 EXTRACT_SUFX=	.tgz
