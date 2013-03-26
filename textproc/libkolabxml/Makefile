@@ -1,8 +1,7 @@
-# Created by: Raphael Kubo da Costa <rakuco@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libkolabxml
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 
@@ -27,7 +26,9 @@ CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
 		-DPHP_BINDINGS:BOOL=OFF \
 		-DPYTHON_BINDINGS:BOOL=OFF
 MAKE_JOBS_SAFE=	yes
-USES=		cmake
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
