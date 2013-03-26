@@ -3,6 +3,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -28,6 +29,7 @@ USE_EFL_ECORE=	ipc
 USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--with-profile=MEDIUM_PC \
 		--disable-connman
@@ -62,15 +64,7 @@ post-patch:
 		${WRKSRC}/src/bin/e_fm/Makefile.in
 
 post-install:
-	@${ECHO_MSG} '********************************************************'
-	@${ECHO_MSG} 'NOTE: If you want "Shutdown" and "Restart"'
-	@${ECHO_MSG} 'menu actions to work properly, manually set SUID bit on'
-	@${ECHO_MSG} '"${PREFIX}/lib/enlightenment/utils/enlightenment_sys"'
-	@${ECHO_MSG} 'executable.'
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'WARNING: this program might be vulnerable so do not'
-	@${ECHO_MSG} 'set suid bit if do not trust all users of this machine.'
-	@${ECHO_MSG} '********************************************************'
+	@${CAT} ${PKGMESSAGE}
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: signal 10
