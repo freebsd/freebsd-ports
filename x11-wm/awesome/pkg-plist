@@ -213,4 +213,10 @@ share/xsessions/awesome.desktop
 @dirrmtry man/fr/man1
 @dirrmtry man/fr/man5
 @dirrmtry man/fr
+@dirrmtry man/it/man1
+@dirrmtry man/it/man5
+@dirrmtry man/it
+@dirrmtry man/ru/man1
+@dirrmtry man/ru/man5
+@dirrmtry man/ru
 @dirrmtry share/xsessions
