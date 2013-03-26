@@ -1685,6 +1685,7 @@
     SUBDIR += roundup
     SUBDIR += rsskit
     SUBDIR += rssowl
+    SUBDIR += rssroll
     SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rt38
