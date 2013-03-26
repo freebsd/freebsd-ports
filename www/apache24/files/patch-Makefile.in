@@ -1,0 +1,115 @@
+--- ./Makefile.in.orig	2012-12-17 12:50:41.000000000 +0100
++++ ./Makefile.in	2013-03-24 16:01:58.000000000 +0100
+@@ -32,9 +32,10 @@
+ install-conf:
+ 	@echo Installing configuration files
+ 	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) $(DESTDIR)$(sysconfdir)/extra
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)/original/extra
++	@$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) $(DESTDIR)$(EXAMPLESDIR)/extra
+ 	@cd $(top_srcdir)/docs/conf; \
+ 	for i in mime.types magic; do \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(EXAMPLESDIR); \
+ 	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
+ 	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
+ 	    fi; \
+@@ -78,14 +79,14 @@
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
+ 	    				< $$i; \
+ 	    		fi \
+-	    	) > $(DESTDIR)$(sysconfdir)/original/$$i; \
+-	    	chmod 0644 $(DESTDIR)$(sysconfdir)/original/$$i; \
++	    	) > $(DESTDIR)$(EXAMPLESDIR)/$$i; \
++	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
+ 	    	file=$$i; \
+ 	    	if [ "$$i" = "httpd.conf" ]; then \
+ 	    		file=`echo $$i|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
+ 	    	fi; \
+ 	    	if test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
+-	    		$(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/original/$$i $(DESTDIR)$(sysconfdir)/$$file; \
++	    		$(INSTALL_DATA) $(DESTDIR)$(EXAMPLESDIR)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
+ 	    	fi; \
+ 	    	fi; \
+ 	    done ; \
+@@ -137,48 +138,26 @@
+ 	doxygen $(top_srcdir)/docs/doxygen.conf
+ 
+ install-htdocs:
+-	-@if [ -d $(DESTDIR)$(htdocsdir) ]; then \
+-           echo "[PRESERVING EXISTING HTDOCS SUBDIR: $(DESTDIR)$(htdocsdir)]"; \
+-        else \
+-	    echo Installing HTML documents ; \
++	    @echo Installing HTML documents ; \
+ 	    $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir) ; \
+-	    if test -d $(htdocs-srcdir) && test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
+-		$(RSYNC) --exclude .svn -rlpt --numeric-ids $(htdocs-srcdir)/ $(DESTDIR)$(htdocsdir)/; \
+-	    else \
+-		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
+-		cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	    fi; \
+-	fi
++	    $(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
++		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) && \
++		( [ ! -f $(DESTDIR)$(htdocsdir)/index.html ] && cp -p $(DESTDIR)$(EXAMPLESDIR)/index.html $(DESTDIR)$(htdocsdir)/index.html) || true
+ 
+ install-error:
+-	-@if [ -d $(DESTDIR)$(errordir) ]; then \
+-           echo "[PRESERVING EXISTING ERROR SUBDIR: $(DESTDIR)$(errordir)]"; \
+-        else \
+-	    echo Installing error documents ; \
++	    @echo Installing error documents ; \
+ 	    $(MKINSTALLDIRS) $(DESTDIR)$(errordir) ; \
+-	    cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir) ; \
+-	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	fi
++	    cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir) ;
+ 
+ install-icons:
+-	-@if [ -d $(DESTDIR)$(iconsdir) ]; then \
+-           echo "[PRESERVING EXISTING ICONS SUBDIR: $(DESTDIR)$(iconsdir)]"; \
+-        else \
+-	    echo Installing icons ; \
++	    @echo Installing icons ; \
+ 	    $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir) ; \
+-	    cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir) ; \
+-	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	fi
++	    cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir) ;
+ 
+ install-cgi:
+-	-@if [ -d $(DESTDIR)$(cgidir) ];then \
+-	    echo "[PRESERVING EXISTING CGI SUBDIR: $(DESTDIR)$(cgidir)]"; \
+-	else \
+-	   echo Installing CGIs ; \
++	   @echo Installing CGIs ; \
+ 	   $(MKINSTALLDIRS) $(DESTDIR)$(cgidir) ; \
+-	   cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir) ; \
+-	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	fi
++	   cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir) ;
+ 
+ install-other:
+ 	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
+@@ -229,14 +208,15 @@
+ 	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
+ 	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
+ 	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
+-	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
+-	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
+-	@if test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
+-	  $(RSYNC) --exclude .svn -rlpt --numeric-ids $(top_srcdir)/docs/manual/ $(DESTDIR)$(manualdir)/; \
+-	else \
+-	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir); \
+-	  cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
+-	fi
++	for i in ab.1 apxs.1 dbmmanage.1 htdbm.1 htdigest.1 htpasswd.1 httxt2dbm.1 logresolve.1 ; do \
++	 ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i $(DESTDIR)$(mandir)/man1; \
++	done
++	for i in apachectl.8 fcgistarter.8 htcacheclean.8 httpd.8 rotatelogs.8 suexec.8 ; do \
++	 ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i $(DESTDIR)$(mandir)/man8; \
++	done
++.if !defined(NOPORTDOCS)
++	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir);
++.endif
+ 
+ install-suexec:
+ 	@if test -f $(builddir)/support/suexec; then \
