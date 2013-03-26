@@ -9,6 +9,6 @@ include/zdb/zdb.h
 lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
-lib/libzdb.so.8
+lib/libzdb.so.9
 libdata/pkgconfig/zdb.pc
 @dirrm include/zdb
