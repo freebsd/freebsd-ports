@@ -433,6 +433,7 @@
     SUBDIR += p5-Net-SMTP-SSL
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
+    SUBDIR += p5-Net-SMTP-TLS-ButMaintained
     SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-SenderBase
     SUBDIR += p5-Net-Server-Mail
