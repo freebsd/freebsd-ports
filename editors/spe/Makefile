@@ -62,7 +62,7 @@ do-install:
 	@${RM} ${RM_OPTS} ${SPEDOCS}
 .endif
 # examples
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MV} ${SPEXAMPLES} ${EXAMPLESDIR} && \
 	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${SPEXAMPLES}
 .else
