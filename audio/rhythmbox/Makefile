@@ -1,14 +1,9 @@
-# New ports collection makefile for:	rhythmbox
-# Date created:		17 August 2003
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/audio/rhythmbox/Makefile,v 1.115 2011/05/04 18:44:36 kwm Exp $
-#
-
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -80,7 +75,7 @@ PLIST_SUB+=	LIRC="@comment "
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=		mtp.9:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=		mtp:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=		MTP=""
 CONFIGURE_ARGS+=	--with-mtp
 .else
