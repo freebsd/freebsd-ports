@@ -21,7 +21,7 @@ USE_PKGCONFIG=	build
 
 PLIST_FILES=	bin/${PORTNAME}
 
-BROKEN=		failes to build
+BROKEN=		fails to build with recent libopensync
 
 post-patch:
 # Help find opensync, which is apparently renamed in ports

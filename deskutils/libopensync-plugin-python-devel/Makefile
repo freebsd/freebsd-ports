@@ -19,8 +19,10 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	libopensync-plugin-python-0.2*
 
+BROKEN=		fails to build with recent libopensync
+
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake:outsource
 USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
 CMAKE_ARGS+=	-Wno-dev  \
@@ -32,9 +34,10 @@ CMAKE_ARGS+=	-Wno-dev  \
 OS_PLUGIN_DIR=	${PREFIX}/lib/opensync-1.0/plugins
 OS_PYPLUGIN_DIR=${PREFIX}/lib/opensync-1.0/python-plugins
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s|MESSAGE|# MESSAGE|" \
-		${WRKSRC}/cmake/modules/MacroEnsureOutOfSourceBuild.cmake
+post-patch:
+# Help find opensync, which is apparently renamed in ports
+	${REINPLACE_CMD} -e "s,opensync-1.0,libopensync,g" \
+		${WRKSRC}/cmake/modules/FindOpenSync.cmake
 
 do-install:
 	${MKDIR} -p ${OS_PLUGIN_DIR} ${OS_PYPLUGIN_DIR}
