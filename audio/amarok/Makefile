@@ -1,13 +1,9 @@
-# New ports collection makefile for:	amarok
-# Date created:			Tue Feb 24 02:21:14 CET 2004
-# Whom:				Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.10
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -68,7 +64,7 @@ PLIST_SUB+=	NJB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
 .else
