@@ -68,8 +68,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Firebird Project reports:</p>
 	<blockquote cite="http://tracker.firebirdsql.org/browse/CORE-4058">
 	  <p>The FirebirdSQL server is vulnerable to a stack buffer overflow
-	     that can be triggered when an unauthenticated user sends a 
-	     specially crafted packet. The  result can lead to remote code 
+	     that can be triggered when an unauthenticated user sends a
+	     specially crafted packet. The  result can lead to remote code
 	     execution as the user which runs the FirebirdSQL server.</p>
 	</blockquote>
       </body>
