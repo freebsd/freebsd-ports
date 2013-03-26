@@ -80,6 +80,17 @@ validate: tidy
 	else \
 		return 1; \
 	fi
+	@${ECHO_MSG} Checking for space/tab...
+	@unexpand "${VUXML_FILE}" | ${SED} 's,[[:space:]]*$$,,g' > "${VUXML_FILE}.unexpanded"
+	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.unexpanded"; \
+	then \
+		${ECHO_MSG} ... seems okay; \
+		${RM} "${VUXML_FILE}.unexpanded"; \
+	else \
+		${ECHO_MSG} ... see above; \
+		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
+		return 1; \
+	fi
 
 tidy: vuln.xml
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
