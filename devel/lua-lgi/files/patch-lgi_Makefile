@@ -1,17 +1,23 @@
---- lgi/Makefile.orig	2013-03-11 08:48:54.000000000 -0300
-+++ lgi/Makefile	2013-03-11 08:50:03.000000000 -0300
-@@ -5,9 +5,7 @@
+--- ./lgi/Makefile.orig	2013-03-04 22:10:19.000000000 +0100
++++ ./lgi/Makefile	2013-03-26 23:07:31.000000000 +0100
+@@ -5,10 +5,13 @@
  # License: MIT
  #
  
 -PREFIX = /usr/local
--LUA_LIBDIR = $(PREFIX)/lib/lua/5.1
--LUA_SHAREDIR = $(PREFIX)/share/lua/5.1
 +PREFIX ?= /usr/local
+ LUA_VERSION=5.1
+-LUA_LIBDIR = $(PREFIX)/lib/lua/$(LUA_VERSION)
+-LUA_SHAREDIR = $(PREFIX)/share/lua/$(LUA_VERSION)
++LUA_LIBDIR ?= $(PREFIX)/lib/lua/$(LUA_VERSION)
++LUA_SHAREDIR ?= $(PREFIX)/share/lua/$(LUA_VERSION)
++LUA_CFLAGS ?= -I$(LUA_INCDIR) $(CPPFLAGS)
++LUA_LIBDIR ?= $(LUA_MODLIBDIR)
++LUA_SHAREDIR ?= $(LUA_MODSHAREDIR)
  
  GINAME = gobject-introspection-1.0
  PKGS = $(GINAME) gmodule-2.0 libffi
-@@ -60,11 +58,11 @@
+@@ -74,11 +77,11 @@
  CORESOURCES = $(wildcard *.lua)
  
  install : $(CORE) $(VERSION_FILE)
