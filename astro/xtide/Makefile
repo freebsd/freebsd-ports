@@ -42,7 +42,8 @@ WVS_DESC=	Use world vector shoreline data (37MB)
 .if ${PORT_OPTIONS:MWVS}
 DISTFILES+=	${WVS_DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB+=	WVS=""
-.elsePLIST_SUB+=	WVS="@comment "
+.else
+PLIST_SUB+=	WVS="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
