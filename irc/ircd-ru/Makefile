@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ircd-ru
-# Date Created:				2003.07.11
-# Whom:					Khamushkin Ilya <ilya@ircd.ru>
-#
+# Created by: Khamushkin Ilya <ilya@ircd.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
@@ -27,60 +23,61 @@ GROUPS=		${USERS}
 VARDIR=		/var
 PLIST_SUB=	VARDIR=${VARDIR}
 
-OPTIONS=	WENET "irc.wenet.ru specific options" off \
-		HUB "hub support" off \
-		ENCRYPTION "enable RC4 crypt (server to server connection)" off \
-		SYSLOGFILE "log to file instead of syslog" off \
-		DRONEMODULE "enable dronemodule support" off \
-		AUTHMODULE "enable authmodule support" off \
-		DNSBL "enable DNSBL support" off \
-		SELECT "enable select I/O" off
+OPTIONS_DEFINE=	WENET HUB ENCRYPTION SYSLOGFILE DRONEMODULE AUTHMODULE DNSBL SELECT DOCS
+WENET_DESC=		irc.wenet.ru specific options
+HUB_DESC=		hub support
+ENCRYPTION_DESC=	RC4 crypt (server to server connection)
+SYSLOGFILE_DESC=	log to file instead of syslog
+DRONEMODULE_DESC=	dronemodule support
+AUTHMODULE_DESC=	authmodule support
+DNSBL_DESC=		DNSBL support
+SELECT_DESC=		enable select I/O
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # irc.wenet.ru specific options
-.if defined(WITH_WENET)
+.if ${PORT_OPTIONS:MWENET}
 CONFIGURE_ARGS+=--enable-wenet XFLAGS=-g
 .endif
 
 # enable hub support
-.if defined(WITH_HUB)
+.if ${PORT_OPTIONS:MHUB}
 CONFIGURE_ARGS+=--enable-hub
 .endif
 
 # enable RC4 crypt (server to server connection)
-.if defined(WITH_ENCRYPTION)
+.if ${PORT_OPTIONS:MENCRYPTION}
 CONFIGURE_ARGS+=--enable-encryption
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
 
 # log to file instead of syslog
-.if defined(WITH_SYSLOGFILE)
+.if ${PORT_OPTIONS:MSYSLOGFILE}
 CONFIGURE_ARGS+=--enable-syslogfile
 .endif
 
 # enable dronemodule support
-.if defined(WITH_DRONEMODULE)
+.if ${PORT_OPTIONS:MDRONEMODULE}
 CONFIGURE_ARGS+=--enable-dronemodule
 .endif
 
 # enable authmodule support
-.if defined(WITH_AUTHMODULE)
+.if ${PORT_OPTIONS:MAUTHMODULE}
 CONFIGURE_ARGS+=--enable-authmodule
 .endif
 
 # enable DNSBL support
-.if defined(WITH_DNSBL)
+.if ${PORT_OPTIONS:MDNSBL}
 CONFIGURE_ARGS+=--enable-dnsbl
 .endif
 
 # enable select I/O
-.if defined(WITH_SELECT)
+.if ${PORT_OPTIONS:MSELECT}
 CONFIGURE_ARGS+=--enable-select
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -Ee '/(dir_HPATH)|opers.txt/d' ${WRKSRC}/tools/install_ircd.in
 .endif
 
@@ -94,4 +91,4 @@ post-install:
 	@${CHOWN} -R ircd:ircd ${VARDIR}/log/ircd-ru
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

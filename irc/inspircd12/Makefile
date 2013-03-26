@@ -1,9 +1,5 @@
-# New ports collection Makefile for:   inspircd
-# Date created:        07 March 2011
-# Whom:                Maxim Ignatenko <gelraen.ua@gmail.com>
-#
+# Created by: Maxim Ignatenko <gelraen.ua@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	inspircd
 PORTVERSION=	1.2.9
@@ -53,35 +49,32 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR}                   \
 		--disable-interactive
 MAKEFILE=	BSDmakefile
 
-OPTIONS=	LDAPMODULES    "Build m_ldap{auth,oper} modules"          off \
-		MYSQL       "Build m_mysql module"             off \
-		PGSQL       "Build m_pgsql module"             off \
-		SQLITE3     "Build m_sqlite3 module"           off \
-		SQLMODULES  "Build m_sql{log,oper,utils,auth}" off \
-		GNUTLS	    "Build m_ssl_gnutls module"        off \
-		OPENSSL     "Build m_ssl_openssl module"       on \
-		ZIPLINK     "Build m_ziplink module"           off \
-		POSIX_RE    "Build m_regex_posix module"       on \
-		PCRE        "Build m_regex_pcre module"        off \
-		TRE         "Build m_regex_tre module"         off \
-		IPV6        "Enable IPv6 support"              on
+OPTIONS_DEFINE=	LDAPMODULES MYSQL PGSQL SQLITE3 SQLMODULES GNUTLS OPENSSL \
+		ZIPLINK POSIX_RE PCRE TRE IPV6
+OPTIONS_DEFAULT=	OPENSSL POSIX_RE
+LDAPMODULES_DESC=	Build m_ldap{auth,oper} modules
+SQLMODULES_DESC=	Build m_sql{log,oper,utils,auth}
+ZIPLINK_DESC=		Build m_ziplink module
+POSIX_RE_DESC=		Build m_regex_posix module
+PCRE_DESC=		Build m_regex_pcre module
+TRE_DESC=		Build m_regex_tre module
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6) && !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6 --enable-remote-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-remote-ipv6
 .endif
 
-.if defined(WITH_POSIX_RE) && !defined(WITHOUT_POSIX_RE)
+.if ${PORT_OPTIONS:MPOSIX_RE}
 PLIST_SUB+=	POSIX_RE=""
 SYMLINK_FILES+=	m_regex_posix.cpp
 .else
 PLIST_SUB+=	POSIX_RE="@comment "
 .endif
 
-.if defined(WITH_PCRE) && !defined(WITHOUT_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 PLIST_SUB+=	PCRE=""
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 SYMLINK_FILES+=	m_regex_pcre.cpp
@@ -89,7 +82,7 @@ SYMLINK_FILES+=	m_regex_pcre.cpp
 PLIST_SUB+=	PCRE="@comment "
 .endif
 
-.if defined(WITH_TRE) && !defined(WITHOUT_TRE)
+.if ${PORT_OPTIONS:MTRE}
 PLIST_SUB+=	TRE=""
 LIB_DEPENDS+=	tre:${PORTSDIR}/textproc/libtre
 CONFIGURE_ARGS+=	--tre-includes=${LOCALBASE}/include
@@ -98,7 +91,7 @@ SYMLINK_FILES+=	m_regex_tre.cpp
 PLIST_SUB+=	TRE="@comment "
 .endif
 
-.if defined(WITH_LDAPMODULES) && !defined(WITHOUT_LDAPMODULES)
+.if ${PORT_OPTIONS:MLDAPMODULES}
 USE_OPENLDAP=	yes
 SYMLINK_FILES+=	m_ldapauth.cpp m_ldapoper.cpp
 PLIST_SUB+=	LDAPMODULES=""
@@ -106,7 +99,7 @@ PLIST_SUB+=	LDAPMODULES=""
 PLIST_SUB+=	LDAPMODULES="@comment "
 .endif
 
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 SYMLINK_FILES+=	m_mysql.cpp m_sqlv2.h
 PLIST_SUB+=	MYSQL=""
@@ -114,7 +107,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 SYMLINK_FILES+=	m_pgsql.cpp m_sqlv2.h
 PLIST_SUB+=	PGSQL=""
@@ -122,7 +115,7 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE3) && !defined(WITHOUT_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 SYMLINK_FILES+=	m_sqlite3.cpp m_sqlv2.h
 PLIST_SUB+=	SQLITE3=""
@@ -130,8 +123,8 @@ PLIST_SUB+=	SQLITE3=""
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
-.if defined(WITH_SQLMODULES) && !defined(WITHOUT_SQLMODULES)
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLMODULES}
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && !defined(WITH_SQLITE3}
 BROKEN=		Please enable at least one of MYSQL, PGSQL or SQLITE3 required by SQLMODULES
 .endif
 SYMLINK_FILES+=	m_sqlauth.cpp m_sqllog.cpp m_sqloper.cpp m_sqlutils.cpp \
@@ -141,7 +134,7 @@ PLIST_SUB+=	SQLMODULES=""
 PLIST_SUB+=	SQLMODULES="@comment "
 .endif
 
-.if defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS) && !defined(WITHOUT_GNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 SYMLINK_FILES+=	m_ssl_gnutls.cpp
@@ -150,7 +143,7 @@ PLIST_SUB+=	GNUTLS=""
 PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
-.if defined(WITH_OPENSSL) && !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL) && !defined(WITHOUT_OPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-openssl
 SYMLINK_FILES+=	m_ssl_openssl.cpp
@@ -159,8 +152,8 @@ PLIST_SUB+=	OPENSSL=""
 PLIST_SUB+=	OPENSSL="@comment "
 .endif
 
-.if defined(WITH_SSLMODULES) && !defined(WITHOUT_SSLMODULES)
-.if !defined(WITH_GNUTLS) && !defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MSSLMODULES) && !defined(WITHOUT_SSLMODULES}
+.if ! ${PORT_OPTIONS:MGNUTLS) && !defined(WITH_OPENSSL}
 BROKEN=		Please enable at least one of GNUTLS or OPENSSL required by SSLMODULES
 .endif
 SYMLINK_FILES+=	m_ssl_oper_cert.cpp m_sslinfo.cpp
@@ -169,7 +162,7 @@ PLIST_SUB+=	SSLMODULES=""
 PLIST_SUB+=	SSLMODULES="@comment "
 .endif
 
-.if defined(WITH_ZIPLINK) && !defined(WITHOUT_ZIPLINK)
+.if ${PORT_OPTIONS:MZIPLINK) && !defined(WITHOUT_ZIPLINK}
 SYMLINK_FILES+=	m_ziplink.cpp
 PLIST_SUB+=	ZIPLINK=""
 .else

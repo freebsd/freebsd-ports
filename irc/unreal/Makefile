@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Unreal-IRCd
-# Date created:				15 April 2004
-# Whom:					Gerrit Beine (<tux@pinguru.net>)
-#
+# Created by: Gerrit Beine (<tux@pinguru.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.9
@@ -47,17 +43,17 @@ CONFIGURE_ARGS=	--with-listen=5 \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
 
-OPTIONS=	HUB "Configure as a hub (otherwise configure as a leaf)" on \
-		NOSPOOF "Enable anti-spoof protection" off \
-		ZIPLINKS "Enable ziplinks support" off \
-		SSL "Support SSL connecions" off \
-		IPV6 "Enable ipv6 support" off \
-		PREFIXAQ "Enable prefixes for chanadmin and chanowner" off \
-		REMOTE "Enable remote includes" off
+OPTIONS_DEFINE=	HIB NOSPOOF ZIPLINKS SSL IPV6 PREFIXAQ REMOTE DOCS
+OPTIONS_DEFAULT=	HUB
+HUB_DESC=	Configure as a hub (otherwise configure as a leaf)
+NOSPOOF_DESC=	Enable anti-spoof protection
+ZIPLINKS_DESC=	Enable ziplinks support
+PREFIXAQ_DESC=	Enable prefixes for chanadmin and chanowner
+REMOTE_DESC=	Enable remote includes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DOCS=		Donation doc/Authors doc/coding-guidelines \
 		doc/example.conf doc/tao.of.irc \
 		doc/translations.txt doc/unreal32docs.html \
@@ -66,34 +62,34 @@ DOCS=		Donation doc/Authors doc/coding-guidelines \
 		doc/technical/vl.txt
 .endif
 
-.if defined(WITH_HUB)
+.if ${PORT_OPTIONS:MHUB}
 CONFIGURE_ARGS+=	--enable-hub
 .endif
 
-.if defined(WITH_NOSPOOF)
+.if ${PORT_OPTIONS:MNOSPOOF}
 CONFIGURE_ARGS+=	--enable-nospoof
 .endif
 
-.if defined(WITH_ZIPLINKS)
+.if ${PORT_OPTIONS:MZIPLINKS}
 CONFIGURE_ARGS+=	--enable-ziplinks
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-inet6
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--enable-ssl
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(WITH_REMOTE)
+.if ${PORT_OPTIONS:MREMOTE}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
 .endif
 
-.if defined(WITH_PREFIXAQ)
+.if ${PORT_OPTIONS:MPREFIXAQ}
 CONFIGURE_ARGS+=	--enable-prefixaq
 .endif
 
@@ -153,7 +149,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/networks/networks.ndx ${DATADIR}/networks
 	${INSTALL_SCRIPT} ${WRKSRC}/networks/makenet ${DATADIR}/networks
 	${INSTALL} ${WRKSRC}/src/modules/*.so ${MODULESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
@@ -186,4 +182,4 @@ post-install:
 	@${CP} ${WRKSRC}/SQLMod/LICENSE ${DOCSDIR}/LICENSE.sqlmod
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
