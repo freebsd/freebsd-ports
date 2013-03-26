@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	epic4
-# Date created:		11 November 1998
-# Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
-#
+# Created by: Ben Hutchinson <benhutch@xfiles.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.1
@@ -31,54 +27,44 @@ USE_BZIP2=	yes
 WANT_PERL=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
-OPTIONS=	IPV6	"IPv6 support"		on \
-		TCL	"TCL support"		on \
-		PERL    "Perl scripting support" on \
-		SSL     "Enable SSL support" on \
-		TERMCAP	"Refuse to use terminfo/ncurses" off
+OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
+OPTIONS_DEFAULT=	TCL PERL SSL
+TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-##  WITHOUT_IPV6:   disable IPv6 support
-#
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-##  WITH_TCL:       enable Tcl support
-#
-.if !defined(WITHOUT_TCL)
+.if ${PORT_OPTIONS:MTCL}
 LIB_DEPENDS+=		tcl84:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl
 .else
 CONFIGURE_ARGS+=	--without-tcl
 .endif
 
-##  WITH_PERL:      enable perl5 support (requires perl 5.6.1 or newer)
+#  enable perl5 support (requires perl 5.6.1 or newer)
 #
 # The path provided to --with-perl is needed, since the configure script
 # looks for libperl.so in places very specific to Linux.  Possibly a
 # patch to configure would be a better idea, but we need to rely on
 # SITE_PERL and PERL_VERSION to create the path.
 #
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl
 .endif
 
-## WITH_SSL            enable SSL support
-#
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-ssl
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
-## WITH_TERMCAP                forceably refuse to use terminfo/ncurses
-#
-.if defined(WITH_TERMCAP)
+.if ${PORT_OPTIONS:MTERMCAP}
 CONFIGURE_ARGS+=	--with-termcap
 .endif
 
@@ -90,7 +76,7 @@ post-patch:
 
 post-install:
 	@${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -98,4 +84,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

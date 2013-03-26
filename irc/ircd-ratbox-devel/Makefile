@@ -1,10 +1,5 @@
-# New ports collection makefile for:	ircd-ratbox
-# Date Created:				2006-01-27
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
-# ex: ts=8
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.7
@@ -51,48 +46,48 @@ PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 #-- Options ------------------------------------------------------------
 
-OPTIONS=	OPENSSL		"Enable openssl support"			on  \
-		IPV6		"Enable IPv6 support"				on  \
-		ZIPLINKS	"Enable ziplinks support"			on  \
-		SHARED_MODULES	"Enable shared modules support"			on  \
-		ASSERT		"Enable debugging code"				off \
-		SMALL_NET	"Tune server for small networks"		off \
-		SERVICES	"Enable ratbox-services compatibility code"	off
+OPTIONS_DEFINE=	OPENSSL IPV6 ZIPLINKS SHARED_MODULES ASSERT SMALL_NET SERVICES DOCS
+OPTIONS_DEFAULT=	OPENSSL ZIPLINKS SHARED_MODULES
+ZIPLINKS_DESC=		ziplinks support
+SHARED_MODULES_DESC=	shared modules support
+ASSERT_DESC=		Enable debugging code
+SMALL_NET_DESC=		Tune server for small networks
+SERVICES_DESC=		ratbox-services compatibility code
 
 #----------------------------------------------------------------------
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-openssl
 .else
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_ZIPLINKS)
+.if ! ${PORT_OPTIONS:MZIPLINKS}
 CONFIGURE_ARGS+=	--disable-zlib
 .endif
 
-.if defined(WITHOUT_SHARED_MODULES)
+.if ! ${PORT_OPTIONS:MSHARED_MODULES}
 CONFIGURE_ARGS+=	--disable-shared-modules
 .endif
 
-.if defined(WITH_ASSERT)
+.if ${PORT_OPTIONS:MASSERT}
 CONFIGURE_ARGS+=	--enable-assert
 .else
 CONFIGURE_ARGS+=	--disable-assert
 .endif
 
-.if defined(WITH_SMALL_NET)
+.if ${PORT_OPTIONS:MSMALL_NET}
 CONFIGURE_ARGS+=	--enable-small-net
 .endif
 
-.if defined(WITH_SERVICES)
+.if ${PORT_OPTIONS:MSERVICES}
 CONFIGURE_ARGS+=	--enable-services
 .endif
 
@@ -195,7 +190,7 @@ pre-su-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -226,4 +221,4 @@ post-install:
 
 #-----------------------------------------------------------------------
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

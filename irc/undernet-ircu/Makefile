@@ -1,7 +1,4 @@
-# New ports collection makefile for:	undernet-ircu
-# Date created:				2004-2-17
-# Whom:					Walter Venable <weaseal@users.sourceforge.net>
-#
+# Created by: Walter Venable <weaseal@users.sourceforge.net>
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
@@ -24,66 +21,67 @@ CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
 PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example
 
-OPTIONS=	IPV6 "Disable IPv6 support (default is autodetect)" off \
-		POLL "Force poll to be used even if not a sys call" off \
-		DEBUG "Turn on debugging mode" off \
-		ASSERTS "Disable assertion checking" off \
-		PROFILE "Enable profiling support" off \
-		PEDANTIC "Enable pedantic warnings" off \
-		WARNINGS "Enable warnings (add -Wall to CFLAGS)" off \
-		INLINES "Disable inlining for a few critical functions" off \
-		DEVPOLL "Disable the /dev/poll-based engine" off \
-		KQUEUE "Disable the kqueue-based engine" off \
-		EPOLL "Disable the epoll-based engine" off \
-		LEAKDETECT "Turn on the leak detector (reqs patched boehm)" off
+OPTIONS_DEFINE=	IPV6 POLL DEBUG ASSERTS PROFILE PEDANTIC WARNINGS INLINES DEVPOLL KQUEUE \
+		EPOLL LEAKDETECT
+POLL_DESC=	Force poll to be used even if not a sys call
+ASSERTS_DESC=	Disable assertion checking
+PEDANTIC_DESC=	Enable pedantic warnings
+WARNINGS_DESC=	Enable warnings (add -Wall to CFLAGS)
+INLINES_DESC=	Disable inlining for a few critical functions
+DEVPOLL_DESC=	Disable the /dev/poll-based engine
+KQUEUE_DESC=	Disable the kqueue-based engine
+EPOLL_DESC=	Disable the epoll-based engine
+LEAKDETECT_DESC=	Turn on the leak detector (reqs patched boehm)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--with-ipv6
+.else
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-.if defined(WITH_POLL)
+.if ${PORT_OPTIONS:MPOLL}
 CONFIGURE_ARGS+=	--enable-poll
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_ASSERTS)
+.if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--disable-asserts
 .endif
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
-.if defined(WITH_PEDANTIC)
+.if ${PORT_OPTIONS:MPEDANTIC}
 CONFIGURE_ARGS+=	--enable-pedantic
 .endif
 
-.if defined(WITH_WARNINGS)
+.if ${PORT_OPTIONS:MWARNINGS}
 CONFIGURE_ARGS+=	--enable-warnings
 .endif
 
-.if defined(WITH_INLINES)
+.if ${PORT_OPTIONS:MINLINES}
 CONFIGURE_ARGS+=	--disable-inlines
 .endif
 
-.if defined(WITH_DEVPOLL)
+.if ${PORT_OPTIONS:MDEVPOLL}
 CONFIGURE_ARGS+=	--disable-devpoll
 .endif
 
-.if defined(WITH_KQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=	--disable-kqueue
 .endif
 
-.if defined(WITH_EPOLL)
+.if ${PORT_OPTIONS:MEPOLL}
 CONFIGURE_ARGS+=	--disable-epoll
 .endif
 
-.if defined(WITH_LEAKDETECT)
+.if ${PORT_OPTIONS:MLEAKDETECT}
 CONFIGURE_ARGS+=	--with-leak-detect
 .endif
 
@@ -98,4 +96,4 @@ post-install:
 	@${ECHO_MSG}    "	your needs.  See documentation at http://coder-com.undernet.org."
 	@${ECHO_MSG}    ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

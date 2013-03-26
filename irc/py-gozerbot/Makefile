@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-gozerbot
-# Date created:		Wed Sep 19 00:04:39 CEST 2007
-# Whom:			Sten Spans <sten@blinkenlights.nl>
-#
+# Created by: Sten Spans <sten@blinkenlights.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	gozerbot
 PORTVERSION=	0.8.1.1
@@ -21,32 +17,33 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 SUB_FILES=		pkg-message
 
-OPTIONS=	XMPP  "Jabber functions" off \
-		MYSQL "Mysql functions" off
+OPTIONS_DEFINE=	XMPP MYSQL DOCS
+XMPP_DESC=	Jabber functions
+MYSQL_DESC=	Mysql functions
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 MAN1=		gozerbot.1
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
+.include <bsd.port.options.mk>
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 	${CP} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${INSTALL_MAN} ${WRKSRC}/man/gozerbot.1.FreeBSD ${PREFIX}/man/man1/gozerbot.1
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if defined(WITH_XMPP)
+.if ${PORT_OPTIONS:MXMPP}
 RUN_DEPENDS+=${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

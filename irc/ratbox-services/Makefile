@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ratbox-services
-# Date Created:				2006-01-27
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
 
 PORTNAME=	ratbox-services
@@ -24,7 +21,7 @@ LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
 PERL?=		${LOCALBASE}/bin/perl
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
@@ -46,84 +43,83 @@ MAKE_JOBS_UNSAFE=yes
 
 #-- Options ------------------------------------------------------------
 
-OPTIONS=	NICKSERV	"Enable nickname registration service"		on \
-		CHANSERV	"Enable channel registration service"		on \
-		USERSERV	"Enable user service"				on \
-		OPERSERV	"Enable oper service"				on \
-		ALIS		"Enable advanced listing service"		on \
-		JUPESERV	"Enable jupe service"				on \
-		OPERBOT		"Enable operbot service"			on \
-		GLOBALMSG	"Enable global messaging service"		on \
-		BANSERV		"Enable ban service"				on \
-		WATCHSERV	"Enable command watching service"		on \
-		MEMOSERV	"Enable memo services"				on \
-		SQLITE		"Enable sqlite3 support (default)"		on \
-		MYSQL		"Enable mysql support"				off \
-		PGSQL		"Enable pgsql backend support"			off
+OPTIONS_DEFINE=	NICKSERV CHANSERV USERSERV OPERSERV ALIS JUPESERV OPERBOT GLOBALMSG \
+		BANSERV WATCHSERV MEMOSERV
+OPTIONS_DEFAULT=	NICKSERV CHANSERV USERSERV OPERSERV ALIS JUPESERV OPERBOT GLOBALMSG \
+			BANSERV WATCHSERV MEMOSERV SQLITE
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+NICKSERV_DESC=	nickname registration service
+CHANSERV_DESC=	channel registration service
+USERSERV_DESC=	user service
+OPERSERV_DESC=	oper service
+ALIS_DESC=	advanced listing service
+JUPESERV_DESC=	jupe service
+OPERBOT_DESC=	operbot service
+GLOBALMSG_DESC=	global messaging service
+BANSERV_DESC=	ban service
+WATCHSERV_DESC=	command watching service
+MEMOSERV_DESC=	memo services
 
 #----------------------------------------------------------------------
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NICKSERV)
+.if ! ${PORT_OPTIONS:MNICKSERV}
 CONFIGURE_ARGS+=	--disable-nickserv
 .endif
 
-.if defined(WITHOUT_CHANSERV)
+.if ! ${PORT_OPTIONS:MCHANSERV}
 CONFIGURE_ARGS+=	--disable-chanserv
 .endif
 
-.if defined(WITHOUT_USERSERV)
+.if ! ${PORT_OPTIONS:MUSERSERV}
 CONFIGURE_ARGS+=	--disable-userserv
 .endif
 
-.if defined(WITHOUT_OPERSERV)
+.if ! ${PORT_OPTIONS:MOPERSERV}
 CONFIGURE_ARGS+=	--disable-operserv
 .endif
 
-.if defined(WITHOUT_ALIS)
+.if ! ${PORT_OPTIONS:MALIS}
 CONFIGURE_ARGS+=	--disable-alis
 .endif
 
-.if defined(WITHOUT_JUPESERV)
+.if ! ${PORT_OPTIONS:MJUPESERV}
 CONFIGURE_ARGS+=	--disable-jupeserv
 .endif
 
-.if defined(WITHOUT_OPERBOT)
+.if ! ${PORT_OPTIONS:MOPERBOT}
 CONFIGURE_ARGS+=	--disable-operbot
 .endif
 
-.if defined(WITHOUT_GLOBALMSG)
+.if ! ${PORT_OPTIONS:MGLOBALMSG}
 CONFIGURE_ARGS+=	--disable-global
 .endif
 
-.if defined(WITHOUT_BANSERV)
+.if ! ${PORT_OPTIONS:MBANSERV}
 CONFIGURE_ARGS+=	--disable-banserv
 .endif
 
-.if defined(WITHOUT_WATCHSERV)
+.if ! ${PORT_OPTIONS:MWATCHSERV}
 CONFIGURE_ARGS+=	--disable-watchserv
 .endif
 
-.if defined(WITHOUT_MEMOSERV)
+.if ! ${PORT_OPTIONS:MMEMOSERV}
 CONFIGURE_ARGS+=	--disable-memoserv
 .endif
 
-.if !defined(WITH_SQLITE) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=			requires either an sqlite, mysql or pgsql backend
-.endif
-
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=		3
 CONFIGURE_ARGS+=	--enable-sqlite3=${LOCALBASE}
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-pgsql=${LOCALBASE}
 .endif
@@ -172,7 +168,7 @@ pre-su-install:
 	${MKDIR} ${DATADIR}/help
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${DOCSDIR}/INSTALL.mysql
@@ -202,4 +198,4 @@ post-install:
 
 #-----------------------------------------------------------------------
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
