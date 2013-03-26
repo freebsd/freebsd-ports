@@ -3,4 +3,4 @@ by using non-blocking io while at the same time retaining high programmer
 usability by using coroutines to make the non-blocking IO operations appear
 blocking at the source code level.
 
-WWW:	http://eventlet.net/
+WWW: http://eventlet.net/
