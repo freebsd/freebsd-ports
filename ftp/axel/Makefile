@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	axel
-# Date created:			Jul 23, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	axel
 PORTVERSION=	2.4
@@ -21,12 +16,11 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
-OPTIONS=	NLS	"I18N support"		on	\
-		DEBUG	"Debugging support"	off
+OPTIONS_DEFINE=	NLS DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
@@ -36,7 +30,7 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--i18n=0
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--debug=1 --strip=0
 .endif
 
@@ -47,4 +41,4 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

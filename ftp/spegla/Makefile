@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:    spegla
-# Date created:         Sun Apr 19 16:17:25 PDT 1998
-# Whom:                 Jordan Hubbard <jkh@FreeBSD.org>
-#
+# Created by: Jordan Hubbard <jkh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spegla
 PORTVERSION=	1.1p4
@@ -26,9 +21,11 @@ PORTEXAMPLES=	freebsd.org spegla.conf spegla.sh
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
 
-OPTIONS=	IPV6	"IPv6 support"	on
+OPTIONS_DEFINE=	IPV6 NLS
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && \
@@ -36,10 +33,8 @@ post-install:
 		${INSTALL_SCRIPT} spegla.sh ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	-DINET6
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
