@@ -71,10 +71,6 @@ TESTS_DESC=		Run bundled self-tests after build
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPDF} && defined(WITH_GHOSTSCRIPT_VER) && ${WITH_GHOSTSCRIPT_VER} == "7"
-IGNORE=		support for the PDF format requires ghostscript 8 and higher
-.endif
-
 .if ${PORT_OPTIONS:MHDRI}
 CONFIGURE_ARGS+=	--enable-hdri
 .else
