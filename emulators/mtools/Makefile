@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mtools
-# Date created:         5 October 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	mtools
 PORTVERSION=	4.0.10
@@ -33,22 +29,27 @@ MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mclasserase.1 mcopy.1 \
 MAN5=		mtools.5
 INFO=		mtools
 
-.if defined(WITHOUT_ICONV)
-CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
-.else
+OPTIONS_DEFINE=	ICONV X11
+OPTIONS_DEFAULT=ICONV X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+.else
+CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB=	X11="@comment "
-MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 sm ice xau
 PLIST_SUB=	X11=""
 MAN1+=		floppyd.1 floppyd_installtest.1
+.else
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB=	X11="@comment "
+MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
 .endif
 
 post-patch:
