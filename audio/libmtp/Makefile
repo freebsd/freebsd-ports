@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USES=	pathfix
+USES=		pathfix
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
