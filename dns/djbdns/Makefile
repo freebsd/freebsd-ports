@@ -1,9 +1,5 @@
-# New ports collection makefile for: dnscache
-# Date created:		24 Jan 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
@@ -20,20 +16,22 @@ COMMENT?=	A collection of secure and reliable DNS tools
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
-		IPV6		"IPv6 support by Felix von Leitner" off \
-		IGNOREIP	"ignoreip2 patch by Russell Nelson" off \
-		JUMBO		"jumbo patch by Claudiu Costin" off \
-		MAN		"manual pages by Gerritt Pape" on \
-		PERSISTENT_MMAP	"persistent mmap patch by Lennert Buytenhek" off \
-		SRV		"SRV record patch by Michael Handler" off \
-		DNSCURVE	"DNSCurve support by Matthew Dempsky" off
+OPTIONS_DEFINE=	DUMPCACHE IPV6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE
+OPTIONS_DEFAULT=	MAN
+DUMPCACHE_DESC=	persistent cache for dnscache
+IPV6_DESC=	IPv6 support by Felix von Leitner
+IGNOREIP_DESC=	ignoreip2 patch by Russell Nelson
+JUMBO_DESC=	jumbo patch by Claudiu Costin
+MAN_DESC=	manual pages by Gerritt Pape
+PERSISTENT_MMAP_DESC=	persistent mmap patch by Lennert Buytenhek
+SRV_DESC=	SRV record patch by Michael Handler
+DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JUMBO)
-.if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV) || \
-	defined(WITH_DNSCURVE)
+.if ${PORT_OPTIONS:MJUMBO}
+.if ${PORT_OPTIONS:MIPV6} || ${PORT_OPTIONS:MIGNOREIP} || ${PORT_OPTIONS:MSRV} || \
+	${PORT_OPTIONS:MDNSCURVE}
 BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, SRV and DNSCURVE patches
 .endif
 
@@ -41,12 +39,12 @@ PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/dns/djbdns/:jumbo \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%\//roam\/dns\/djbdns\/:jumbo/}
 PATCHFILES+=	jumbo-p13.patch.gz:jumbo
 PATCH_DIST_STRIP=	-p1
-.if defined(WITH_DUMPCACHE)
+.if ${PORT_OPTIONS:MDUMPCACHE}
 CFLAGS+=	-DDUMPCACHE
 .endif
 .endif
 
-.if defined(WITH_MAN)
+.if ${PORT_OPTIONS:MMAN}
 MANDATE=	-20031023
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:manpages
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:manpages
@@ -61,7 +59,7 @@ MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
 MANCOMPRESSED=	no
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 PKGNAMESUFFIX=	-ipv6
 PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
 PATCH_SITES+=	http://www.fefe.de/dns/:ipv6
@@ -70,8 +68,8 @@ PATCH_DIST_STRIP=	-p1
 EXTRA_PATCHES+=	${FILESDIR}/uint32.patch ${FILESDIR}/djbdns-ipv6-ooyama.patch
 .endif
 
-.if defined(WITH_DUMPCACHE) && !defined(WITH_JUMBO)
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MDUMPCACHE} && ! ${PORT_OPTIONS:MJUMBO}
+.if ${PORT_OPTIONS:MIPV6}
 BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict
 .endif
 PATCH_SITES+=	http://efge.free.fr/djbdns/:dumpcache
@@ -80,8 +78,8 @@ PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DDUMPCACHE
 .endif
 
-.if defined(WITH_IGNOREIP)
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIGNOREIP}
+.if ${PORT_OPTIONS:MIPV6}
 BROKEN=		The IPv6 patch already includes the ignoreip2 functionality
 .endif
 PATCH_SITES+=	http://tinydns.org/:ignoreip
@@ -89,20 +87,20 @@ PATCHFILES+=	djbdns-1.05-ignoreip2.patch:ignoreip
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if defined(WITH_PERSISTENT_MMAP)
+.if ${PORT_OPTIONS:MPERSISTENT_MMAP}
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/patches/dns/:persistent
 PATCHFILES+=	tinydns-persistmmap-20040418.patch:persistent
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if defined(WITH_SRV)
+.if ${PORT_OPTIONS:MSRV}
 PATCH_SITES+=	http://tinydns.org/:srv
 PATCHFILES+=	srv-patch:srv
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if defined(WITH_DNSCURVE)
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MDNSCURVE}
+.if ${PORT_OPTIONS:MIPV6}
 BROKEN=	The IPv6 and DNSCurve patches are currently in conflict
 .endif
 PATCH_SITES+=	http://shinobi.dempsky.org/~matthew/patches/:dnscurve
@@ -119,7 +117,7 @@ DJBDNS_V6_VER=	test23
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 PLIST_SUB+=	WITH_IPV6=""
 .else
 PLIST_SUB+=	WITH_IPV6="@comment "
@@ -130,10 +128,10 @@ post-patch:
 	@echo "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
-.if defined(WITH_MAN)
+.if ${PORT_OPTIONS:MMAN}
 post-install:
 	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${PREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${PREFIX}/man/man8/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	powerdns-recursor
-# Date Created:				14.Nov 2006
-# Whom:					sten@blinkenlights.nl
-#
+# Created by: sten@blinkenlights.nl
 # $FreeBSD$
-#
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.3
@@ -21,9 +17,10 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	SETUID	"Run as pdns_recursor user" on \
-		LUA	"Enable Lua bindings" off \
-		STATIC	"Build static binaries" off
+OPTIONS_DEFINE=	SETUID LUA STATIC
+OPTIONS_DEFAULT=	SETUID
+SETUID_DESC=		Run as pdns_recursor user
+STATIC_DESC=		Build static binaries
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN8=		rec_control.8 pdns_recursor.8
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
@@ -39,13 +36,13 @@ BROKEN=		Does not compile on sparc64
 
 USE_RC_SUBR+=	pdns-recursor
 
-.if defined(WITH_SETUID)
+.if ${PORT_OPTIONS:MSETUID}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
 USERS=		pdns_recursor
 GROUPS=		pdns
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=5.1
 LUA_COMPS=lua
 MAKE_ENV+=LUA=1
@@ -53,7 +50,7 @@ MAKE_ENV+=LUA_CPPFLAGS_CONFIG=-I${LOCALBASE}/include/lua51
 MAKE_ENV+="LUA_LIBS_CONFIG=-L${LOCALBASE}/lib/lua51/ -llua"
 .endif
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 MAKE_ENV+=STATIC=full
 .endif
 
@@ -81,4 +78,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/*.8 ${PREFIX}/man/man8/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
