@@ -1,6 +1,5 @@
 bin/krencoder
 bin/krspriteed
-bin/kyra-config
 include/Kyra/engine/action.h
 include/Kyra/engine/box.h
 include/Kyra/engine/boxresource.h
@@ -28,7 +27,6 @@ include/Kyra/engine/parser.h
 include/Kyra/engine/pixelblock.h
 include/Kyra/engine/rle.h
 include/Kyra/engine/sdlutil.h
-include/Kyra/engine/splash.h
 include/Kyra/engine/sprite.h
 include/Kyra/engine/spriteresource.h
 include/Kyra/engine/tags.h
@@ -46,33 +44,20 @@ include/Kyra/guiExtended/KrImageListBox.h
 include/Kyra/guiExtended/progress.h
 include/Kyra/kyra.h
 include/Kyra/tinyxml/tinyxml.h
+include/Kyra/tinyxml/tinystr.h
 include/Kyra/util/glbitstream.h
 include/Kyra/util/glcirclelist.h
 include/Kyra/util/gldebug.h
-include/Kyra/util/gldynarray.h
 include/Kyra/util/glfixed.h
-include/Kyra/util/glgraph.h
 include/Kyra/util/glinsidelist.h
 include/Kyra/util/glintarrayset.h
 include/Kyra/util/glisomath.h
 include/Kyra/util/gllist.h
-include/Kyra/util/glmap.h
-include/Kyra/util/glmemorypool.h
-include/Kyra/util/glperformance.h
-include/Kyra/util/glprime.h
-include/Kyra/util/glrandom.h
-include/Kyra/util/glstack.h
 include/Kyra/util/glstring.h
-include/Kyra/util/gltypes.h
-include/Kyra/util/glutil.h
 lib/libkyra.a
-lib/libkyra.la
-lib/libkyra.so
-lib/libkyra.so.0
-share/aclocal/kyra.m4
 @dirrm include/Kyra/util
-@dirrm include/Kyra/gui
-@dirrm include/Kyra/guiExtended
-@dirrm include/Kyra/engine
 @dirrm include/Kyra/tinyxml
+@dirrm include/Kyra/guiExtended
+@dirrm include/Kyra/gui
+@dirrm include/Kyra/engine
 @dirrm include/Kyra

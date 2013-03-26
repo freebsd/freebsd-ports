@@ -1,0 +1,11 @@
+--- encoder/MakefileKyra.orig
++++ encoder/MakefileKyra
+@@ -110,7 +110,7 @@
+ # Output
+ #****************************************************************************
+ 
+-${OUTPUT}: ${OBJS} ${LIBS}
++${OUTPUT}: ${OBJS} ../engine/libkyra.a
+ 	${LD} -o $@ ${LDFLAGS} ${OBJS} ${LIBS} ${EXTRA_LIBS}
+ 
+ #****************************************************************************
