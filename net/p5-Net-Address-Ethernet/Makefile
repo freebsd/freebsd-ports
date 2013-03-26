@@ -1,13 +1,8 @@
-# New ports collection makefile for:	p5-Net-Address-Ethernet
-# Date created:		2006-07-21
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Address-Ethernet
-PORTVERSION=	1.114
-PORTREVISION=	1
+PORTVERSION=	1.116
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
