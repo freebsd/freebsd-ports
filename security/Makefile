@@ -768,6 +768,7 @@
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-pysha3
+    SUBDIR += py-python-registry
     SUBDIR += py-rsa
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
