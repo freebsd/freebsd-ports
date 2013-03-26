@@ -1,9 +1,5 @@
-# New ports collection makefile for:	curl
-# Date created:		12 December 1998
-# Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-#
+# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	curl
 PORTVERSION=	7.24.0
@@ -18,21 +14,17 @@ COMMENT?=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 LICENSE=	MIT
 
-OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
-		CURL_DEBUG "Enable curl diagnostic output" off \
-		GNUTLS "Use GNU TLS if OPENSSL is OFF" off \
-		IPV6 "IPv6 support" on \
-		KERBEROS4 "Kerberos 4 authentication" off \
-		LDAP "LDAP support" off \
-		LDAPS "LDAPS support (requires LDAP and SSL)" off \
-		LIBIDN "Internationalized Domain Names via libidn" off \
-		LIBSSH2 "SCP/SFTP support via libssh2" off \
-		NTLM "NTLM authentication" off \
-		OPENSSL "OpenSSL support" on \
-		CA_BUNDLE "Install CA bundle for OpenSSL" on \
-		PROXY "Proxy support" on \
-		RTMP "RTMP streams support" off \
-		TRACKMEMORY "Enable curl memory diagnostic output" off
+OPTIONS_DEFINE=	CARES CURL_DEBUG IPV6 KERBEROS4 LDAP LDAPS LIBIDN LIBSSH2 \
+		NTLM CA_BUNDLE PROXY RTMP TRACKMEMORY DOCS EXAMPLES
+OPTIONS_RADIO=	SSL
+OPTIONS_RADIO_SSL=	OPENSSL GNUTLS
+OPTIONS_DEFAULT=	CA_BUNDLE PROXY OPENSSL
+CURL_DEBUG_DESC=	curl diagnostic output
+LIBIDN_DESC=		Internationalized Domain Names via libidn
+LIBSSH2_DESC=		SCP/SFTP support via libssh2
+NTLM_DESC=		NTLM authentication
+CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
+TRACKMEMORY_DESC=	curl memory diagnostic output
 
 CONFIGURE_ARGS+=--disable-threaded-resolver --disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp
@@ -79,32 +71,28 @@ SHLIB_VER=	6
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
-IGNORE=		may only use GNU TLS if OpenSSL support is disabled
-.endif
-
-.if defined(WITH_LIBSSH2) && !defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MLIBSSH2} && ! ${PORT_OPTIONS:MOPENSSL}
 IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
-.if defined(WITH_NTLM) && !defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MNTLM} && ! ${PORT_OPTIONS:MOPENSSL}
 IGNORE=		only supports NTLM with OpenSSL
 .endif
 
-.if defined(WITH_LDAPS)
-.if !defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAPS}
+.if ! ${PORT_OPTIONS:MLDAP}
 IGNORE=		only supports LDAPS with LDAP
 .else
-.if !defined(WITH_OPENSSL) && !defined(WITH_GNUTLS)
+.if ! ${PORT_OPTIONS:MOPENSSL} && ! ${PORT_OPTIONS:MGNUTLS}
 IGNORE=		only supports LDAPS with SSL (OpenSSL or GNUTLS)
 .endif
 .endif
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.if !defined(WITHOUT_CA_BUNDLE)
+.if ${PORT_OPTIONS:MCA_BUNDLE}
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 CONFIGURE_ARGS+=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 .else
@@ -112,49 +100,49 @@ CONFIGURE_ARGS+=	--without-ca-bundle
 .endif
 .else
 CONFIGURE_ARGS+=	--without-ssl
-.if defined(WITH_CA_BUNDLE)
+.if ${PORT_OPTIONS:MCA_BUNDLE}
 IGNORE=			only supports CA bundle with OpenSSL
 .endif
 .endif
 
-.if defined(WITH_CARES)
+.if ${PORT_OPTIONS:MCARES}
 LIB_DEPENDS+=	cares.2:${PORTSDIR}/dns/c-ares
 CONFIGURE_ARGS+=	--enable-ares=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-ares
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-gnutls
 .endif
 
-.if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MOPENSSL} || ${PORT_OPTIONS:MGNUTLS}
 PLIST_SUB+=	SSL=""
 .else
 PLIST_SUB+=	SSL="@comment "
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
+.if exists(/usr/lib/libkrb.a) && ${PORT_OPTIONS:MKERBEROS4}
 CONFIGURE_ARGS += --with-krb4=/usr
 .else
 CONFIGURE_ARGS += --without-krb4
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--enable-ldap
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.if defined(WITH_LDAPS)
+.if ${PORT_OPTIONS:MLDAPS}
 CONFIGURE_ARGS+=	--enable-ldaps
 .else
 CONFIGURE_ARGS+=	--disable-ldaps
@@ -163,44 +151,44 @@ CONFIGURE_ARGS+=	--disable-ldaps
 CONFIGURE_ARGS+=	--disable-ldap --disable-ldaps
 .endif
 
-.if defined(WITH_LIBIDN)
+.if ${PORT_OPTIONS:MLIBIDN}
 LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libidn
 .endif
 
-.if defined(WITH_LIBSSH2)
+.if ${PORT_OPTIONS:MLIBSSH2}
 LIB_DEPENDS+=	ssh2.1:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-libssh2=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libssh2
 .endif
 
-.if defined(WITH_CURL_DEBUG)
+.if ${PORT_OPTIONS:MCURL_DEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_RTMP)
+.if ${PORT_OPTIONS:MRTMP}
 LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
 CONFIGURE_ARGS+=	--with-librtmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-librtmp
 .endif
 
-.if defined(WITH_TRACKMEMORY)
+.if ${PORT_OPTIONS:MTRACKMEMORY}
 CONFIGURE_ARGS+=	--enable-curldebug
 .else
 CONFIGURE_ARGS+=	--disable-curldebug
 .endif
 
-.if defined(WITH_NTLM)
+.if ${PORT_OPTIONS:MNTLM}
 CONFIGURE_ARGS+=	--enable-ntlm
 .else
 CONFIGURE_ARGS+=	--disable-ntlm
 .endif
 
-.if !defined(WITHOUT_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=	--enable-proxy
 .else
 CONFIGURE_ARGS+=	--disable-proxy
@@ -213,12 +201,12 @@ post-patch:
 post-install:
 .if !defined(BUILDING_HIPHOP)
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/ ${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${DOCSDIR}/libcurl/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cc ${EXAMPLESDIR}/
 .endif
@@ -227,7 +215,7 @@ post-install:
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
 # the user's locale when dates are sent to the server.
 test:	build
-.if defined(WITHOUT_PROXY)
+.if ! ${PORT_OPTIONS:MPROXY}
 	@${ECHO_MSG} "******************************************"
 	@${ECHO_MSG} "* You have disabled curl proxy support.  *"
 	@${ECHO_MSG} "* Some tests SHALL FAIL!                 *"

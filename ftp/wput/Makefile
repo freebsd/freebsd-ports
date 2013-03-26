@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wput
-# Date created:				2 December 2003
-# Whom:					Nosov Artem <chip-set@mail.ru>
-#
+# Created by: Nosov Artem <chip-set@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wput
 PORTVERSION=	0.6.2
@@ -24,21 +20,21 @@ CONFIGURE_ENV=	LIBS="${LDFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	TLS "Enable TLS support" On \
-		NLS "Native Language Support with gettext" On
+OPTIONS_DEFINE=	TLS NLS DOCS EXAMPLES
+OPTIONS_DEFAULT=	TLS
 
 MAN1=		wdel.1 wput.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_TLS)
+.if ${PORT_OPTIONS:MTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls \
@@ -58,14 +54,14 @@ pre-configure:
 post-install:
 	@${INSTALL_MAN}	${MAN1:S,^,${WRKSRC}/doc/,} ${MANPREFIX}/man/man1/
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

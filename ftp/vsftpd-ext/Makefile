@@ -1,9 +1,5 @@
-# New ports collection makefile for: vsftpd-ext
-# Date created:		11 Mar 2009
-# Whom:			Maxim Ignatenko
-#
+# Created by: Maxim Ignatenko
 # $FreeBSD$
-#
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
@@ -15,7 +11,7 @@ DISTNAME=	vsFTPd-${UPSTREAMVERSION}-ext${EXTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gelraen.ua@gmail.com
-COMMENT=	A FTP daemon that aims to be "very secure". Extended build
+COMMENT=	FTP daemon that aims to be "very secure". Extended build
 
 CONFLICTS=	vsftpd-2* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-2*
 
@@ -30,20 +26,18 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-OPTIONS=	RC_SCRIPT	"install RC_SCRIPT"		on \
-		VSFTPD_SSL	"Include support for SSL"	off
+OPTIONS_DEFINE=	RC_SCRIPT SSL DOCS
+OPTIONS_DEFAULTL=	RC_SCRIPT
+RC_SCRIPT_DESC=	install RC_SCRIPT
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RC_SCRIPT)
+.if ${PORT_OPTIONS:MRC_SCRIPT}
 USE_RC_SUBR=	vsftpd
 .endif
 
-.if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
-.if ${OSVERSION} < 700000
-WITH_OPENSSL_PORT=	yes
-.endif
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
@@ -73,7 +67,7 @@ do-configure:
 		-e 's|delay_failed_logins|delay_failed_login|' \
 		-e 's|delay_successful_logins|delay_successful_login|' \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
-.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
 		${WRKSRC}/builddefs.h
@@ -97,7 +91,7 @@ do-install:
 		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
 		done
 	${MKDIR} /var/ftp
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCFILES}
 	${INSTALL_DATA} -m 644 ${WRKSRC}/${i} ${DOCSDIR}
@@ -109,4 +103,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
