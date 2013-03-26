@@ -19,9 +19,9 @@ MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK?=	apache22
 
-CONFLICTS=	caudium14-1.* \
-		apache-2.0.* apache-*-2.0.* \
-		apache-*-2.2.* apache22-*-2.2.*
+CONFLICTS_INSTALL=	caudium14-1.* \
+		apache-*-2.2.* apache22-*-2.2.* \
+		apache-*-2.4.* apache24-*-2.4.*
 
 USE_APACHE=	common22
 USE_BZIP2=	yes
