@@ -6,7 +6,6 @@ lib/libraptor2.la
 lib/libraptor2.so
 lib/libraptor2.so.0
 libdata/pkgconfig/raptor2.pc
-@exec mkdir -p %D/share/gtk-doc/html/raptor2
 share/gtk-doc/html/raptor2/home.png
 share/gtk-doc/html/raptor2/index.html
 share/gtk-doc/html/raptor2/index.sgml
