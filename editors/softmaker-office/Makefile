@@ -1,9 +1,5 @@
-# Ports collection makefile for:SoftMaker Office
-# Date created:			2006-12-20
-# Whom:				Ion-Mihai "IOnut" Tetcu<itetcu@FreeBSD.org>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu<itetcu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SoftMaker-Office
 PORTVERSION=	2006
@@ -23,16 +19,18 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/officetrial
 
-OPTIONS=	ALL_DICTS "Install all available dictionaries" on
+OPTIONS_DEFINE=	ALL_DICTS
+OPTIONS_DEFAULT=	ALL_DICTS
+ALL_DICTS_DESC=	Install all available dictionaries
 
 NO_CDROM=	distribution with other products of any kind forbiden
 NO_PACKAGE=	distribution with other products of any kind forbiden
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_ALL_DICTS)
+.if ${PORT_OPTIONS:MALL_DICTS}
 DISTFILES+=	sml06dict.tgz
 .endif
 
@@ -46,4 +44,4 @@ do-install:
 	${LN} -s ${PREFIX}/${PORTNAME}/planmaker ${PREFIX}/bin/planmaker
 	${LN} -s ${PREFIX}/${PORTNAME}/textmaker ${PREFIX}/bin/textmaker
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

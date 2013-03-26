@@ -1,7 +1,4 @@
-# New ports collection makefile for:	setedit
-# Date created:				29 September 2005
-# Whom:					Sten Feldman
-#
+# Created by: Sten Feldman
 # $FreeBSD$
 
 PORTNAME=	setedit
@@ -27,34 +24,33 @@ CFLAGS+=	-Wno-write-strings -I${LOCALBASE}/include
 MAN1=		setedit.1 infview.1
 INFO=		setedit sdg infview
 
-OPTIONS=	BZIP2 "Support for bzip2" On \
-		CALC "Enable internal calculator" On \
-		CALENDAR "Enable internal calendar" On \
-		NLS "International support (requires intl)" On \
-		AALIB "Support for AAlib" Off \
-		ELECTRIC "Compile with Electric Fence memory debugger" Off
+OPTIONS_DEFINE=	BZIP2 CALC CALENDAR NLS AALIB ELECTRIC DOCS
+OPTIONS_DEFAULT=	BZIP2 CALC CALENDAR
+CALC_DESC=	Internal calculator
+CALENDAR_DESC=	Internal calendar
+ELECTRIC_DESC=	Compile with Electric Fence memory debugger
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-mp3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_BZIP2)
+.if ! ${PORT_OPTIONS:MBZIP2}
 CONFIGURE_ARGS+=	--no-bzip2
 .else
 CONFIGURE_ARGS+=	--bzip2
 .endif
 
-.if defined(WITHOUT_CALC)
+.if ! ${PORT_OPTIONS:MCALC}
 CONFIGURE_ARGS+=	--without-calc
 .endif
 
-.if defined(WITHOUT_CALENDAR)
+.if ! ${PORT_OPTIONS:MCALENDAR}
 CONFIGURE_ARGS+=	--without-calendar
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--no-intl
 .else
 USE_GETTEXT=	yes
@@ -62,14 +58,14 @@ PLIST_FILES=	share/locale/es/LC_MESSAGES/setedit.mo \
 		share/locale/de/LC_MESSAGES/setedit.mo
 .endif
 
-.if defined(WITH_AALIB)
+.if ${PORT_OPTIONS:MAALIB}
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=	--with-aa
 .else
 CONFIGURE_ARGS+=	--without-aa
 .endif
 
-.if defined(WITH_ELECTRIC)
+.if ${PORT_OPTIONS:MELECTRIC}
 LIB_DEPENDS+=	efence.0:${PORTSDIR}/devel/ElectricFence
 CONFIGURE_ARGS+=	--with-efence
 .endif
@@ -133,11 +129,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/errors.cle ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/readme.1st ${DATADIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${MAN1} ${MANPREFIX}/man/man1
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${INSTALL_DATA} ${WRKSRC}/internac/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/setedit.mo
 	${INSTALL_DATA} ${WRKSRC}/internac/de.mo ${PREFIX}/share/locale/de/LC_MESSAGES/setedit.mo
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/examples
 	@${MKDIR} ${DOCSDIR}/tag_imgs
@@ -166,4 +162,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sdg.info ${PREFIX}/info
 	${INSTALL_DATA} ${WRKSRC}/doc/infview.info ${PREFIX}/info
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	texmakerx
-# Date created:			Feb 22, 2009
-# Whom:				lx
-#
+# Created by: lx
 # $FreeBSD$
-#
 
 PORTNAME=	texmakerx
 PORTVERSION=	2.1
@@ -30,16 +26,17 @@ HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	XDVI "view dvi with xdvi" On \
-		GV "view ps with gv" On
+OPTIONS_DEFINE=	XDVI GV
+GV_DESC=	View ps files with gv
+XDVI_DESC=	View dvi files with xdvi
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XDVI)
+.if ${PORT_OPTIONS:MXDVI}
 RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
 .endif
 
-.if !defined(WITHOUT_GV)
+.if ${PORT_OPTIONS:MGV}
 RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
 .endif
 
@@ -53,4 +50,4 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} PREFIX=${PREFIX} ${PORTNAME}.pro
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
