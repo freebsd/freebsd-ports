@@ -388,6 +388,7 @@
     SUBDIR += p5-DBIx-DBHResolver
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
+    SUBDIR += p5-DBIx-Dump
     SUBDIR += p5-DBIx-Ease
     SUBDIR += p5-DBIx-HA
     SUBDIR += p5-DBIx-Inspector
