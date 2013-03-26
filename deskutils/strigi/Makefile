@@ -3,7 +3,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.7.8
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.vandenoever.info/software/strigi/
 
