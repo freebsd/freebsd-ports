@@ -1,33 +1,33 @@
 # Created by: Raphael Kubo da Costa <rakuco@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		libkcompactdisc
-PORTVERSION=		${KDE4_VERSION}
-CATEGORIES=		audio kde
-MASTER_SITES=		${MASTER_SITE_KDE}
+PORTNAME=	libkcompactdisc
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	audio kde
+MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=		KDE
+DIST_SUBDIR=	KDE
 
-MAINTAINER=		kde@FreeBSD.org
-COMMENT=		KDE library for interfacing with audio CDs
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE library for interfacing with audio CDs
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
-USE_LDCONFIG=		yes
-MAKE_JOBS_SAFE=		yes
-USES=			cmake:outsource
-USE_KDE4=		automoc4 kdehier kdelibs kdeprefix
-USE_QT4=		dbus phonon moc_build qmake_build rcc_build uic_build
-USE_XZ=			yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+USES=		cmake:outsource
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_QT4=	dbus phonon moc_build qmake_build rcc_build uic_build
+USE_XZ=		yes
 
-OPTIONS_DEFINE=		ALSA
+OPTIONS_DEFINE=	ALSA
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=		asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
-EXTRA_PATCHES+=		${FILESDIR}/extrapatch-no_alsa
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no_alsa
 .endif
 
 .include <bsd.port.mk>
