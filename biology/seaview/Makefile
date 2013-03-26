@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.4.1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://pbil.univ-lyon1.fr/software/seaview_data/archive/
@@ -12,14 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		xcb:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 
 OPTIONS_DEFINE=	PDFLIB
 OPTIONS_DEFAULT=PDFLIB
@@ -27,7 +19,7 @@ PDFLIB_DESC=	PDFlib support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_XORG=	x11 xau xdmcp xext xft xinerama xrender
+USE_XORG=	xext xft xinerama
 USE_GMAKE=	yes
 MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 		PHYMLNAME='-DPHYMLNAME=\"phyml\"' \
@@ -38,11 +30,11 @@ MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-DESKTOP_ENTRIES="SeaView" "${COMMENT}" "" \
-		"${PORTNAME}" "Biology;Science;" "true"
-
 PLIST_FILES=	bin/seaview %%DATADIR%%/seaview.html
 PLIST_DIRS=	%%DATADIR%%
+
+DESKTOP_ENTRIES="SeaView" "${COMMENT}" "" \
+		"${PORTNAME}" "Biology;Science;" "true"
 
 .include <bsd.port.options.mk>
 
@@ -55,17 +47,17 @@ MAKE_ENV+=	PDF_PS_FLAGS='-DNO_PDF'
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^PDF_PS_FLAGS |#PDF_PS_FLAGS | ; \
-		 s|^FLTK |#FLTK | ; \
-		 s|^USE_XFT |#USE_XFT | ; \
-		 s|^CC |#CC | ; \
-		 s|^CXX |#CXX | ; \
-		 s|^OPT |#OPT | ; \
-		 s|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
+		's|^\(PDF_PS_FLAGS\) |#\1 | ; \
+		 s|^\(FLTK\) |#\1 | ; \
+		 s|^\(USE_XFT\) |#\1 | ; \
+		 s|^\(CC\) |#\1 | ; \
+		 s|^\(CXX\) |#\1 | ; \
+		 s|^\(OPT\) |#\1 | ; \
+		 s|-lpthread|-pthread|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview ${PREFIX}/bin)
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/seaview.html ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.html ${DATADIR})
 
 .include <bsd.port.mk>
