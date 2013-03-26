@@ -377,6 +377,7 @@ share/icons/elementary.png
 %%NLS%%share/locale/pt/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/yi/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/elementary.mo
 @dirrm include/elementary-1
 @dirrm lib/edje/modules/elm/%%E17_ARCH%%
 @dirrm lib/edje/modules/elm
@@ -431,5 +432,7 @@ share/icons/elementary.png
 %%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/yi/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/yi
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
 @dirrmtry share/applications
 @dirrmtry share/icons
