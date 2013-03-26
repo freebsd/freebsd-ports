@@ -31,7 +31,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 # kdehier		- Hierarchy of common KDE directories
 # kdelibs		- KDE Developer Platform
 # kdeprefix		- If set, port will be installed into ${KDE4_PREFIX} instead of
-#				  ${LOCALBASE}
+#			  ${LOCALBASE}
 # korundum		- KDE Ruby bindings
 # libkcddb		- KDE CDDB library
 # libkcompactdisc	- KDE library for interfacing with audio CDs
@@ -51,7 +51,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 # pykdeuic4		- PyKDE user interface compiler
 # qtruby		- Qt 4 Ruby bindings
 # runtime		- Components required by many KDE Applications
-# sharedmime	- MIME types database for KDE ports
+# sharedmime		- MIME types database for KDE ports
 # smokegen		- SMOKE base libraries
 # smokekde		- KDE SMOKE libraries
 # smokeqt		- Qt 4 SMOKE libraries
@@ -59,8 +59,8 @@ Kde_Pre_Include=	bsd.kde4.mk
 # akonadi		- Storage server for KDE-Pim
 # attica		- Qt library implementing Open Collaboration Services API
 # automoc4		- Automatic moc for Qt 4 packages
-# ontologies	- Shared ontologies for semantic searching
-# qimageblitz	- KDE graphical effects and filters library
+# ontologies		- Shared ontologies for semantic searching
+# qimageblitz		- KDE graphical effects and filters library
 # soprano		- Qt 4 RDF framework
 # strigi		- Desktop search daemon
 #
@@ -71,16 +71,16 @@ Kde_Pre_Include=	bsd.kde4.mk
 #				  be used when port needs multiple distfiles from different
 #				  sites. See for details the Porter's Handbook:
 #				  http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-distfiles.html
-# KDE4_PREFIX	- The place where KDE4 ports live. Currently it is
-#				  ${LOCALBASE}/kde4, but this could change in the future.
+# KDE4_PREFIX		- The place where KDE4 ports live. Currently it is
+#			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=			4.9.5
-KDE4_BRANCH?=			stable
-CALLIGRA_VERSION?=		2.5.5
-CALLIGRA_BRANCH?=		stable
-KDEVELOP_VERSION?=		4.4.1
-KDEVELOP_BRANCH?=		stable
+KDE4_VERSION?=		4.9.5
+KDE4_BRANCH?=		stable
+CALLIGRA_VERSION?=	2.5.5
+CALLIGRA_BRANCH?=	stable
+KDEVELOP_VERSION?=	4.4.1
+KDEVELOP_BRANCH?=	stable
 
 #
 # KDE4 is installed into its own prefix to avoid conflicting with KDE3.
@@ -95,15 +95,15 @@ KDE4_PREFIX?=	${LOCALBASE}/kde4
 # ${PREFIX} and ${NO_MTREE} have to be defined in the pre-makefile section.
 .if defined(USE_KDE4) && ${USE_KDE4:Mkdeprefix} != ""
 . if ${.MAKEFLAGS:MPREFIX=*} == ""
-PREFIX=					${KDE4_PREFIX}
+PREFIX=		${KDE4_PREFIX}
 .  if ${KDE4_PREFIX} != ${LOCALBASE}
-NO_MTREE=				yes
+NO_MTREE=	yes
 .  endif
 . endif
 .endif
 
-PLIST_SUB+=				KDE4_PREFIX="${KDE4_PREFIX}" \
-					KDE4_VERSION="${KDE4_VERSION}"
+PLIST_SUB+=	KDE4_PREFIX="${KDE4_PREFIX}" \
+		KDE4_VERSION="${KDE4_VERSION}"
 
 # Keep in sync with cmake/modules/PythonMacros.cmake
 _PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
@@ -130,20 +130,20 @@ Kde_Post_Include=	bsd.kde4.mk
 #
 
 _USE_KDE4_ALL=		baseapps kate kdehier kdelibs kdeprefix korundum libkcddb \
-					libkcompactdisc libkdcraw libkdeedu libkexiv2 libkipi \
-					libkonq libksane marble okular oxygen perlkde perlqt \
-					pimlibs pykde4 pykdeuic4 qtruby runtime sharedmime \
-					smokegen smokekde smokeqt workspace
+			libkcompactdisc libkdcraw libkdeedu libkexiv2 libkipi \
+			libkonq libksane marble okular oxygen perlkde perlqt \
+			pimlibs pykde4 pykdeuic4 qtruby runtime sharedmime \
+			smokegen smokekde smokeqt workspace
 # These components are not part of the Software Compilation.
 _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
-					strigi
+			strigi
 
 baseapps_PORT=		x11/kde4-baseapps
 baseapps_PATH=		${KDE4_PREFIX}/bin/kfmclient
 baseapps_TYPE=		run
 
-kate_PORT=			editors/kate
-kate_PATH=			${KDE4_PREFIX}/lib/libkateinterfaces.so.5
+kate_PORT=		editors/kate
+kate_PATH=		${KDE4_PREFIX}/lib/libkateinterfaces.so.5
 
 kdehier_PORT=		misc/kdehier4
 kdehier_PATH=		kdehier4>=0
@@ -159,8 +159,8 @@ korundum_TYPE=		run
 libkcddb_PORT=		audio/libkcddb
 libkcddb_PATH=		${KDE4_PREFIX}/lib/libkcddb.so.5
 
-libkcompactdisc_PORT=		audio/libkcompactdisc
-libkcompactdisc_PATH=		${KDE4_PREFIX}/lib/libkcompactdisc.so.5
+libkcompactdisc_PORT=	audio/libkcompactdisc
+libkcompactdisc_PATH=	${KDE4_PREFIX}/lib/libkcompactdisc.so.5
 
 libkdcraw_PORT=		graphics/libkdcraw-kde4
 libkdcraw_PATH=		${KDE4_PREFIX}/lib/libkdcraw.so.21
