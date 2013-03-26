@@ -1,9 +1,5 @@
-# New ports collection makefile for:	verbiste
-# Date created:				16 November 2005
-# Whom:					Dan Phillips <dan-ports@dp.id.au>
-#
+# Created by: Dan Phillips <dan-ports@dp.id.au>
 # $FreeBSD$
-#
 
 PORTNAME=	verbiste
 PORTVERSION=	0.1.33
@@ -13,15 +9,16 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
 
-OPTIONS=	GTK	"With GTK+ application"		no	\
-		GNOME	"With GNOME application"	no
+OPTIONS_DEFINE=	GTK2 GNOME
 
 LICENSE=	GPLv2
 
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack ltverhack libxml2
+USE_GNOME=	ltverhack libxml2
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -30,9 +27,9 @@ MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3
 MANLANG=	"" fr
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=--with-gtk-app
 USE_GNOME+=	gtk20
 PLIST_SUB+=	HASGTK=""
@@ -40,7 +37,7 @@ PLIST_SUB+=	HASGTK=""
 PLIST_SUB+=	HASGTK="@comment "
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 CONFIGURE_ARGS+=--with-gnome-app
 USE_GNOME+=	gnomeprefix libgnomeui
 PLIST_SUB+=	HASGNOME=""
@@ -48,7 +45,7 @@ PLIST_SUB+=	HASGNOME=""
 PLIST_SUB+=	HASGNOME="@comment "
 .endif
 
-.if defined(WITH_GTK) || defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
 USE_GETTEXT=	yes
 PLIST_SUB+=	HASGUI=""
 .else
@@ -62,4 +59,4 @@ post-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
