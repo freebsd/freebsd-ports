@@ -3,7 +3,7 @@
 
 PORTNAME=	libdbusmenu-qt
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -12,7 +12,7 @@ COMMENT=	Qt4 implementation of the DBusMenu protocol
 
 LICENSE=	LGPL20
 
-USE_QT4=	dbus gui xml \
+USE_QT4=	corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build
 FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
@@ -20,16 +20,21 @@ USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	GENDOCS
+GENDOCS_DESC=	Build documentation (requires doxygen)
+.if defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=	GENDOCS
+.endif
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MGENDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PORTDOCS=	*
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH="${DOCSDIR_REL}"
+PLIST_SUB+=	GENDOCS=""
 .else
 CMAKE_ARGS+=	-DWITH_DOC:BOOL=OFF
+PLIST_SUB+=	GENDOCS="@comment "
 .endif
 
 post-patch:
