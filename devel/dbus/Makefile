@@ -41,6 +41,7 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
+X11_DESC=	X11 Desktop Environments
 
 .include <bsd.port.options.mk>
 
