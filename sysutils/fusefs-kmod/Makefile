@@ -1,15 +1,12 @@
-# New ports collection makefile for:	fusefs-kmod
-# Date created:				08 October 2005
-# Whom:					Anish Mistry <amistry@am-productions.biz>
-#
+# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1.20080208
 PORTREVISION=	11
 CATEGORIES=	sysutils kld
-MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/
+MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/ \
+  		LOCAL/bdrewery/${PORTNAME}/
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	${HG_SHORTREV}
 DIST_SUBDIR=	fuse4bsd
@@ -18,10 +15,6 @@ MAINTAINER=	mirror176@cox.net
 COMMENT=	Kernel module for fuse
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
-
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
-.endif
 
 USE_RC_SUBR=	fusefs
 KMODDIR?=	${PREFIX}/modules
@@ -32,9 +25,14 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
 DISABLE_SIZE=	yes
 
-OPTIONS=	AUTOSETUP "Automatic global config file setup" off
+OPTIONS_DEFINE=	AUTOSETUP DOCS
+AUTOSETUP_DESC=	Automatic global config file setup
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
+.endif
 
 SRC_BASE?=	/usr/src
 SETUP=		setup.sh
@@ -77,7 +75,7 @@ IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is no
 BROKEN=		Does not compile on other than i386/amd64
 .endif
 
-.if defined(WITH_AUTOSETUP)
+.if ${PORT_OPTIONS:MAUTOSETUP}
 SUB_FILES+=	${SETUP}
 .else
 SUB_FILES+=	pkg-message
@@ -93,7 +91,7 @@ post-configure:
 	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
 
 post-build:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/doc && make plaintext html_chunked
 .endif
 
@@ -102,14 +100,14 @@ pre-su-install:
 
 post-install:
 	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin
-.if defined(WITH_AUTOSETUP) && !defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MAUTOSETUP} && !defined(PACKAGE_BUILDING)
 	@${ECHO} "Modifying global startup config files and loading module..."
 	@${SH} ${WRKDIR}/${SETUP}
 .else
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/kmod/html
 .for i in ${TXT_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/plaintext_out/$i ${DOCSDIR}/kmod
