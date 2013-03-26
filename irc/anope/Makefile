@@ -45,7 +45,7 @@ pre-install:
 	@${MKDIR} ${DATADIR}
 
 post-install:
-.if ${PORT_OPTIONS:MDCOS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
 .endif
