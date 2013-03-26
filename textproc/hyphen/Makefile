@@ -1,9 +1,4 @@
-# New ports collection makefile for:	hyphen
-# Date created:		2011-06-18
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hyphen
 PORTVERSION=	2.8.6
@@ -20,6 +15,8 @@ GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
+
+CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 
 PLIST_FILES=	bin/substrings.pl \
 		include/hyphen.h \
