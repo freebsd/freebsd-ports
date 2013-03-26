@@ -55,12 +55,12 @@ Note:  Please add new entries to the beginning of this file.
     <topic>firebird -- Remote Stack Buffer Overflow</topic>
     <affects>
       <package>
-        <name>firebird25-server</name>
-        <range><ge>2.5.0</ge><le>2.5.2</le></range>
+	<name>firebird25-server</name>
+	<range><ge>2.5.0</ge><le>2.5.2</le></range>
       </package>
       <package>
-        <name>firebird21-server</name>
-        <range><ge>2.1.0</ge><le>2.1.5</le></range>
+	<name>firebird21-server</name>
+	<range><ge>2.1.0</ge><le>2.1.5</le></range>
       </package>
     </affects>
     <description>
@@ -88,22 +88,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>optipng -- use-after-free vulnerability</topic>
     <affects>
       <package>
-        <name>optipng</name>
-        <range><ge>0.7</ge><lt>0.7.4</lt></range>
+	<name>optipng</name>
+	<range><ge>0.7</ge><lt>0.7.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia reports:</p>
-        <blockquote cite="https://secunia.com/advisories/50654">
-          <p>A vulnerability has been reported in OptiPNG, which can be
-             exploited by malicious people to potentially compromise a user's
-             system.</p>
-          <p>The vulnerability is caused due to a use-after-free error related
-             to the palette reduction functionality. No further information is
-             currently available.</p>
-          <p>Success exploitation may allow execution of arbitrary code.</p>
-        </blockquote>
+	<p>Secunia reports:</p>
+	<blockquote cite="https://secunia.com/advisories/50654">
+	  <p>A vulnerability has been reported in OptiPNG, which can be
+	     exploited by malicious people to potentially compromise a user's
+	     system.</p>
+	  <p>The vulnerability is caused due to a use-after-free error related
+	     to the palette reduction functionality. No further information is
+	     currently available.</p>
+	  <p>Success exploitation may allow execution of arbitrary code.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -200,8 +200,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>libexif project security advisory:</p>
-        <blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29534027">
+	<p>libexif project security advisory:</p>
+	<blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29534027">
 	  <p>A number of remotely exploitable issues were discovered in libexif
 	    and exif, with effects ranging from information leakage to potential
 	    remote code execution.</p>
@@ -274,8 +274,8 @@ Note:  Please add new entries to the beginning of this file.
 	     to cause the master to execute arbitrary code while responding to a
 	     catalog request. Specifically, in order to exploit the
 	     vulnerability, the puppet master must be made to invoke the
-             'template' or 'inline_template' functions during catalog compilation.
-          </p>
+	     'template' or 'inline_template' functions during catalog compilation.
+	  </p>
 	  <p>A vulnerability found in Puppet could allow an authenticated client
 	     to connect to a puppet master and perform unauthorized actions.
 	     Specifically, given a valid certificate and private key, an agent
@@ -285,8 +285,8 @@ Note:  Please add new entries to the beginning of this file.
 	     nodes, facts, and resources. The extent and severity of this
 	     vulnerability varies depending on the specific configuration of the
 	     master: for example, whether it is using storeconfigs or not, which
-             version, whether it has access to the cache or not, etc.
-          </p>
+	     version, whether it has access to the cache or not, etc.
+	  </p>
 	  <p>A vulnerability has been found in Puppet which could allow
 	     authenticated clients to execute arbitrary code on agents that have
 	     been configured to accept kick connections. This vulnerability is
@@ -296,27 +296,27 @@ Note:  Please add new entries to the beginning of this file.
 	     allow access to the `run` REST endpoint, then a client could
 	     construct an HTTP request which could execute arbitrary code. The
 	     severity of this issue is exacerbated by the fact that puppet
-             agents typically run as root.
-          </p>
+	     agents typically run as root.
+	  </p>
 	  <p>A vulnerability has been found in Puppet that could allow a client
 	     negotiating a connection to a master to downgrade the master's
 	     SSL protocol to SSLv2. This protocol has been found to contain
 	     design weaknesses. This issue only affects systems running older
 	     versions (pre 1.0.0) of openSSL. Newer versions explicitly disable
-             SSLv2.
-          </p>
+	     SSLv2.
+	  </p>
 	  <p>A vulnerability found in Puppet could allow unauthenticated clients
 	     to send requests to the puppet master which would cause it to load
 	     code unsafely. While there are no reported exploits, this
 	     vulnerability could cause issues like those described in Rails
 	     CVE-2013-0156. This vulnerability only affects puppet masters
-             running Ruby 1.9.3 and higher.
-          </p>
+	     running Ruby 1.9.3 and higher.
+	  </p>
 	  <p>This vulnerability affects puppet masters 0.25.0 and above. By
 	     default, auth.conf allows any authenticated node to submit a report
 	     for any other node. This can cause issues with compliance. The
-             defaults in auth.conf have been changed.
-          </p>
+	     defaults in auth.conf have been changed.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -358,8 +358,8 @@ Note:  Please add new entries to the beginning of this file.
 	     to cause the master to execute arbitrary code while responding to a
 	     catalog request. Specifically, in order to exploit the
 	     vulnerability, the puppet master must be made to invoke the
-             'template' or 'inline_template' functions during catalog compilation.
-          </p>
+	     'template' or 'inline_template' functions during catalog compilation.
+	  </p>
 	  <p>A vulnerability found in Puppet could allow an authenticated client
 	     to connect to a puppet master and perform unauthorized actions.
 	     Specifically, given a valid certificate and private key, an agent
@@ -369,28 +369,28 @@ Note:  Please add new entries to the beginning of this file.
 	     nodes, facts, and resources. The extent and severity of this
 	     vulnerability varies depending on the specific configuration of the
 	     master: for example, whether it is using storeconfigs or not, which
-             version, whether it has access to the cache or not, etc.
-          </p>
+	     version, whether it has access to the cache or not, etc.
+	  </p>
 	  <p>A vulnerability has been found in Puppet that could allow a client
 	     negotiating a connection to a master to downgrade the master's
 	     SSL protocol to SSLv2. This protocol has been found to contain
 	     design weaknesses. This issue only affects systems running older
 	     versions (pre 1.0.0) of openSSL. Newer versions explicitly disable
-             SSLv2.
-          </p>
+	     SSLv2.
+	  </p>
 	  <p>A vulnerability found in Puppet could allow an authenticated client
 	     to execute arbitrary code on a puppet master that is running in the
 	     default configuration, or an agent with `puppet kick` enabled.
 	     Specifically, a properly authenticated and connected puppet agent
 	     could be made to construct an HTTP PUT request for an authorized
 	     report that actually causes the execution of arbitrary code on the
-             master.
-          </p>
+	     master.
+	  </p>
 	  <p>This vulnerability affects puppet masters 0.25.0 and above. By
 	     default, auth.conf allows any authenticated node to submit a report
 	     for any other node. This can cause issues with compliance. The
-             defaults in auth.conf have been changed.
-          </p>
+	     defaults in auth.conf have been changed.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -416,36 +416,36 @@ Note:  Please add new entries to the beginning of this file.
     <topic>perl -- denial of service via algorithmic complexity attack on hashing routines</topic>
     <affects>
       <package>
-        <name>perl</name>
-        <range><lt>5.12.4_5</lt></range>
-        <range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
-        <range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
+	<name>perl</name>
+	<range><lt>5.12.4_5</lt></range>
+	<range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
+	<range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
       </package>
       <package>
-        <name>perl-threaded</name>
-        <range><lt>5.12.4_5</lt></range>
-        <range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
-        <range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
+	<name>perl-threaded</name>
+	<range><lt>5.12.4_5</lt></range>
+	<range><ge>5.14.0</ge><lt>5.14.2_3</lt></range>
+	<range><ge>5.16.0</ge><lt>5.16.2_1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Perl developers report:</p>
-        <blockquote cite="http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html">
-          <p>In order to prevent an algorithmic complexity attack
-            against its hashing mechanism, perl will sometimes
-            recalculate keys and redistribute the contents of a hash.
-            This mechanism has made perl robust against attacks that
-            have been demonstrated against other systems.</p>
-          <p>Research by Yves Orton has recently uncovered a flaw in
-            the rehashing code which can result in pathological
-            behavior.  This flaw could be exploited to carry out a
-            denial of service attack against code that uses arbitrary
-            user input as hash keys.</p>
-          <p>Because using user-provided strings as hash keys is a
-            very common operation, we urge users of perl to update their
-            perl executable as soon as possible.</p>
-        </blockquote>
+	<p>Perl developers report:</p>
+	<blockquote cite="http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html">
+	  <p>In order to prevent an algorithmic complexity attack
+	    against its hashing mechanism, perl will sometimes
+	    recalculate keys and redistribute the contents of a hash.
+	    This mechanism has made perl robust against attacks that
+	    have been demonstrated against other systems.</p>
+	  <p>Research by Yves Orton has recently uncovered a flaw in
+	    the rehashing code which can result in pathological
+	    behavior.  This flaw could be exploited to carry out a
+	    denial of service attack against code that uses arbitrary
+	    user input as hash keys.</p>
+	  <p>Because using user-provided strings as hash keys is a
+	    very common operation, we urge users of perl to update their
+	    perl executable as soon as possible.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -737,9 +737,9 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_22.html">
 	  <h1>low: XSS due to unescaped hostnames CVE-2012-3499</h1>
 	  <p>Various XSS flaws due to unescaped hostnames and URIs HTML output in
-            mod_info, mod_status, mod_imagemap, mod_ldap, and mod_proxy_ftp.</p>
+	    mod_info, mod_status, mod_imagemap, mod_ldap, and mod_proxy_ftp.</p>
 	  <h1>moderate: XSS in mod_proxy_balancer CVE-2012-4558</h1>
-          <p>A XSS flaw affected the mod_proxy_balancer manager interface.</p>
+	  <p>A XSS flaw affected the mod_proxy_balancer manager interface.</p>
 	</blockquote>
       </body>
     </description>
@@ -831,8 +831,8 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Unfortnately there is a security vulnerability in Dragonfly when
 	      used with Rails which would potentially allow an attacker to run
 	     arbitrary code on a host machine using carefully crafted
-             requests.
-          </p>
+	     requests.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -883,7 +883,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OTRS Project reports:</p>
+	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-03">
 	  <p>This advisory covers vulnerabilities discovered in the OTRS core
 	  system. This is a variance of the XSS vulnerability, where an attacker
@@ -917,7 +917,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OTRS Project reports:</p>
+	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-02/">
 	  <p>This advisory covers vulnerabilities discovered in the OTRS core
 	  system. This is a variance of the XSS vulnerability, where an attacker
@@ -952,7 +952,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OTRS Project reports:</p>
+	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2012-01">
 	  <p>This advisory covers vulnerabilities discovered in the OTRS core
 	  system. Due to the XSS vulnerability in Internet Explorer an attacker
@@ -989,13 +989,13 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://www.ruby-lang.org/en/news/2013/02/22/rexml-dos-2013-02-22/">
 	  <p>Unrestricted entity expansion can lead to a DoS vulnerability in
 	     REXML. (The CVE identifier will be assigned later.) We strongly
-             recommend to upgrade ruby.
-          </p>
+	     recommend to upgrade ruby.
+	  </p>
 	  <p>When reading text nodes from an XML document, the REXML parser can
 	     be coerced in to allocating extremely large string objects which
 	     can consume all of the memory on a machine, causing a denial of
-             service.
-          </p>
+	     service.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -1047,14 +1047,14 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Django Project reports:</p>
+	<p>The Django Project reports:</p>
 	<blockquote cite="https://www.djangoproject.com/weblog/2013/feb/19/security/">
 	  <p>These security releases fix four issues: one potential phishing
 	    vector, one denial-of-service vector, an information leakage issue,
 	    and a range of XML vulnerabilities.</p>
-          <ol>
+	  <ol>
 	  <li>
-            <p>Host header poisoning</p>
+	    <p>Host header poisoning</p>
 	    <p>an attacker could cause Django to generate and display URLs that
 	      link to arbitrary domains. This could be used as part of a phishing
 	      attack. These releases fix this problem by introducing a new
@@ -1287,13 +1287,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal7 -- Denial of service</topic>
     <affects>
       <package>
-        <name>drupal7</name>
-        <range><lt>7.19</lt></range>
+	<name>drupal7</name>
+	<range><lt>7.19</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Drupal Security Team reports:</p>
+	<p>Drupal Security Team reports:</p>
 	<blockquote cite="https://drupal.org/SA-CORE-2013-002">
 	  <p>Drupal core's Image module allows for the on-demand generation
 	    of image derivatives. This capability can be abused by requesting
@@ -1482,7 +1482,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://www.ruby-forum.com/topic/4410659">
 	  <p>Today we are proud to announce the release of Rack 1.4.5.</p>
 	  <p>Fix CVE-2013-0263, timing attack against Rack::Session::Cookie</p>
-          <p>Fix CVE-2013-0262, symlink path traversal in Rack::File</p>
+	  <p>Fix CVE-2013-0262, symlink path traversal in Rack::File</p>
 	</blockquote>
       </body>
     </description>
@@ -1515,11 +1515,11 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The attr_protected method allows developers to specify a blacklist
 	     of model attributes which users should not be allowed to assign to.
 	     By using a specially crafted request, attackers could circumvent
-             this protection and alter values that were meant to be protected.</p>
+	     this protection and alter values that were meant to be protected.</p>
 	  <p>All users running an affected release should either upgrade or use
 	     one of the work arounds immediately. Users should also consider
 	     switching from attr_protected to the whitelist method
-             attr_accessible which is not vulnerable to this attack.</p>
+	     attr_accessible which is not vulnerable to this attack.</p>
 	</blockquote>
       </body>
     </description>
@@ -1584,9 +1584,9 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
        <p>Multiple cross-site scripting (XSS) vulnerabilities</p>
-        <blockquote cite="https://www.poweradmin.org/trac/ticket/468">
-          <p>Multiple scripts are vulnerable to XSS attacks.</p>
-        </blockquote>
+	<blockquote cite="https://www.poweradmin.org/trac/ticket/468">
+	  <p>Multiple scripts are vulnerable to XSS attacks.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1630,7 +1630,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>When parsing certain JSON documents, the JSON gem can be coerced in
 	     to creating Ruby symbols in a target system. Since Ruby symbols
 	     are not garbage collected, this can result in a denial of service
-             attack.</p>
+	     attack.</p>
 	  <p>The same technique can be used to create objects in a target system
 	     that act like internal objects. These "act alike" objects can be
 	     used to bypass certain security mechanisms and can be used as a
@@ -1718,20 +1718,20 @@ Note:  Please add new entries to the beginning of this file.
   <topic>OpenSSL -- TLS 1.1, 1.2 denial of service</topic>
     <affects>
       <package>
-        <name>openssl</name>
-        <range><lt>1.0.1_6</lt></range>
+	<name>openssl</name>
+	<range><lt>1.0.1_6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>OpenSSL security team reports:</p>
-        <blockquote cite="http://www.openssl.org/news/secadv_20130205.txt">
-          <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1
-            and TLS 1.2 on AES-NI supporting platforms can be exploited in a
+	<p>OpenSSL security team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20130205.txt">
+	  <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1
+	    and TLS 1.2 on AES-NI supporting platforms can be exploited in a
 	    DoS attack.</p>
-          <p>A flaw in the OpenSSL handling of OCSP response verification can
-            be exploited in a denial of service attack.</p>
-        </blockquote>
+	  <p>A flaw in the OpenSSL handling of OCSP response verification can
+	    be exploited in a denial of service attack.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1795,22 +1795,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- execution of arbitrary code</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <name>opera-devel</name>
-        <name>linux-opera</name>
-        <name>linux-opera-devel</name>
-        <range><lt>12.13</lt></range>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<name>linux-opera-devel</name>
+	<range><lt>12.13</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Opera reports:</p>
-        <blockquote cite="http://www.opera.com/support/kb/view/1042/">
-          <p>Particular DOM event manipulations can cause Opera to crash. In
-            some cases, this crash might occur in a way that allows execution
-            of arbitrary code. To inject code, additional techniques would
-            have to be employed.</p>
-        </blockquote>
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/1042/">
+	  <p>Particular DOM event manipulations can cause Opera to crash. In
+	    some cases, this crash might occur in a way that allows execution
+	    of arbitrary code. To inject code, additional techniques would
+	    have to be employed.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1993,26 +1993,26 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>drupal6</name>
-        <range><lt>6.28</lt></range>
+	<name>drupal6</name>
+	<range><lt>6.28</lt></range>
       </package>
       <package>
-        <name>drupal7</name>
-        <range><lt>7.19</lt></range>
+	<name>drupal7</name>
+	<range><lt>7.19</lt></range>
       </package>
     </affects>
     <description>
      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Drupal Security Team reports:</p>
-        <blockquote cite="https://drupal.org/SA-CORE-2013-001">
-          <p>Cross-site scripting (Various core and contributed modules)</p>
-          <p>Access bypass (Book module printer friendly version)</p>
-          <p>Access bypass (Image module)</p>
-        </blockquote>
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-001">
+	  <p>Cross-site scripting (Various core and contributed modules)</p>
+	  <p>Access bypass (Book module printer friendly version)</p>
+	  <p>Access bypass (Image module)</p>
+	</blockquote>
       </body>
     </description>
     <references>
-        <url>https://drupal.org/SA-CORE-2013-001</url>
+	<url>https://drupal.org/SA-CORE-2013-001</url>
     </references>
     <dates>
       <discovery>2013-01-16</discovery>
@@ -2024,21 +2024,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>ettercap -- buffer overflow in target list parsing</topic>
     <affects>
       <package>
-        <name>ettercap</name>
-        <range><lt>0.7.4.1</lt></range>
-        <range><ge>0.7.5</ge><lt>0.7.5.2</lt></range>
+	<name>ettercap</name>
+	<range><lt>0.7.4.1</lt></range>
+	<range><ge>0.7.5</ge><lt>0.7.5.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Host target list parsing routine in ettercap
-          0.7.4-series prior to 0.7.4.1 and 0.7.5-series
-          is prone to the stack-based buffer overflow that
-          may lead to the code execution with the privileges
-          of the ettercap process.</p>
-        <p>In order to trigger this vulnerability, user or service
-          that use ettercap should be tricked to pass the crafted list
-          of targets via the "-j" option.</p>
+	<p>Host target list parsing routine in ettercap
+	  0.7.4-series prior to 0.7.4.1 and 0.7.5-series
+	  is prone to the stack-based buffer overflow that
+	  may lead to the code execution with the privileges
+	  of the ettercap process.</p>
+	<p>In order to trigger this vulnerability, user or service
+	  that use ettercap should be tricked to pass the crafted list
+	  of targets via the "-j" option.</p>
       </body>
     </description>
     <references>
@@ -2056,79 +2056,79 @@ Note:  Please add new entries to the beginning of this file.
     <topic>java 7.x -- security manager bypass</topic>
     <affects>
       <package>
-        <name>openjdk7</name>
-        <range><gt>0</gt></range>
+	<name>openjdk7</name>
+	<range><gt>0</gt></range>
       </package>
       <package>
-        <name>linux-sun-jdk</name>
-        <range><ge>7.0</ge><lt>7.11</lt></range>
+	<name>linux-sun-jdk</name>
+	<range><ge>7.0</ge><lt>7.11</lt></range>
       </package>
       <package>
-        <name>linux-sun-jre</name>
-        <range><ge>7.0</ge><lt>7.11</lt></range>
+	<name>linux-sun-jre</name>
+	<range><ge>7.0</ge><lt>7.11</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>US CERT reports:</p>
-        <blockquote cite="http://www.kb.cert.org/vuls/id/625617">
-          <p>Java 7 Update 10 and earlier versions of Java 7 contain a
-            vulnerability that can allow a remote, unauthenticated
-            attacker to execute arbitrary code on a vulnerable
-            system.</p>
-          <p>The Java JRE plug-in provides its own Security Manager.
-            Typically, a web applet runs with a security manager
-            provided by the browser or Java Web Start plugin. Oracle's
-            document states, "If there is a security manager already
-            installed, this method first calls the security manager's
-            checkPermission method with a
-            RuntimePermission("setSecurityManager") permission to ensure
-            it's safe to replace the existing security manager.  This may
-            result in throwing a SecurityException".</p>
-          <p>By leveraging the vulnerability in the Java Management
-            Extensions (JMX) MBean components, unprivileged Java code
-            can access restricted classes.  By using that vulnerability
-            in conjunction with a second vulnerability involving the
-            Reflection API and the invokeWithArguments method of the
-            MethodHandle class, an untrusted Java applet can escalate
-            its privileges by calling the the setSecurityManager()
-            function to allow full privileges, without requiring code
-            signing.  Oracle Java 7 update 10 and earlier Java 7 versions
-            are affected. The invokeWithArguments method was introduced
-            with Java 7, so therefore Java 6 is not affected.</p>
-          <p>This vulnerability is being attacked in the wild, and is
-            reported to be incorporated into exploit kits. Exploit code
-            for this vulnerability is also publicly available.</p>
-        </blockquote>
-        <p>Esteban Guillardoy from Immunity Inc. additionally clarifies
-          on the recursive reflection exploitation technique:</p>
-        <blockquote cite="https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf">
-          <p>The real issue is in the native
-            sun.reflect.Reflection.getCallerClass method.</p>
-          <p>We can see the following information in the Reflection
-            source code:</p>
-          <p>Returns the class of the method realFramesToSkip frames
-            up the stack (zero-based), ignoring frames associated with
-            java.lang.reflect.Method.invoke() and its
-            implementation.</p>
-          <p>So what is happening here is that they forgot to skip the
-          frames related to the new Reflection API and only the old
-          reflection API is taken into account.</p>
-        </blockquote>
-        <p>This exploit does not only affect Java applets, but every
-          piece of software that relies on the Java Security Manager for
-          sandboxing executable code is affected: malicious code can
-          totally disable Security Manager.</p>
-        <p>For users who are running native Web browsers with enabled
-          Java plugin, the workaround is to remove the java/icedtea-web
-          port and restart all browser instances.</p>
-        <p>For users who are running Linux Web browser flavors, the
-          workaround is either to disable the Java plugin in browser
-          or to upgrade linux-sun-* packages to the non-vulnerable
-          version.</p>
-        <p>It is not recommended to run untrusted applets using
-          appletviewer, since this may lead to the execution of the
-          malicious code on vulnerable versions on JDK/JRE.</p>
+	<p>US CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/625617">
+	  <p>Java 7 Update 10 and earlier versions of Java 7 contain a
+	    vulnerability that can allow a remote, unauthenticated
+	    attacker to execute arbitrary code on a vulnerable
+	    system.</p>
+	  <p>The Java JRE plug-in provides its own Security Manager.
+	    Typically, a web applet runs with a security manager
+	    provided by the browser or Java Web Start plugin. Oracle's
+	    document states, "If there is a security manager already
+	    installed, this method first calls the security manager's
+	    checkPermission method with a
+	    RuntimePermission("setSecurityManager") permission to ensure
+	    it's safe to replace the existing security manager.  This may
+	    result in throwing a SecurityException".</p>
+	  <p>By leveraging the vulnerability in the Java Management
+	    Extensions (JMX) MBean components, unprivileged Java code
+	    can access restricted classes.  By using that vulnerability
+	    in conjunction with a second vulnerability involving the
+	    Reflection API and the invokeWithArguments method of the
+	    MethodHandle class, an untrusted Java applet can escalate
+	    its privileges by calling the the setSecurityManager()
+	    function to allow full privileges, without requiring code
+	    signing.  Oracle Java 7 update 10 and earlier Java 7 versions
+	    are affected. The invokeWithArguments method was introduced
+	    with Java 7, so therefore Java 6 is not affected.</p>
+	  <p>This vulnerability is being attacked in the wild, and is
+	    reported to be incorporated into exploit kits. Exploit code
+	    for this vulnerability is also publicly available.</p>
+	</blockquote>
+	<p>Esteban Guillardoy from Immunity Inc. additionally clarifies
+	  on the recursive reflection exploitation technique:</p>
+	<blockquote cite="https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf">
+	  <p>The real issue is in the native
+	    sun.reflect.Reflection.getCallerClass method.</p>
+	  <p>We can see the following information in the Reflection
+	    source code:</p>
+	  <p>Returns the class of the method realFramesToSkip frames
+	    up the stack (zero-based), ignoring frames associated with
+	    java.lang.reflect.Method.invoke() and its
+	    implementation.</p>
+	  <p>So what is happening here is that they forgot to skip the
+	  frames related to the new Reflection API and only the old
+	  reflection API is taken into account.</p>
+	</blockquote>
+	<p>This exploit does not only affect Java applets, but every
+	  piece of software that relies on the Java Security Manager for
+	  sandboxing executable code is affected: malicious code can
+	  totally disable Security Manager.</p>
+	<p>For users who are running native Web browsers with enabled
+	  Java plugin, the workaround is to remove the java/icedtea-web
+	  port and restart all browser instances.</p>
+	<p>For users who are running Linux Web browser flavors, the
+	  workaround is either to disable the Java plugin in browser
+	  or to upgrade linux-sun-* packages to the non-vulnerable
+	  version.</p>
+	<p>It is not recommended to run untrusted applets using
+	  appletviewer, since this may lead to the execution of the
+	  malicious code on vulnerable versions on JDK/JRE.</p>
       </body>
     </description>
     <references>
@@ -2405,56 +2405,56 @@ Note:  Please add new entries to the beginning of this file.
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>rubygem-rails</name>
-        <range><lt>3.2.11</lt></range>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.11</lt></range>
       </package>
       <package>
-        <name>rubygem-actionpack</name>
-        <range><lt>3.2.11</lt></range>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.11</lt></range>
       </package>
       <package>
-        <name>rubygem-activerecord</name>
-        <range><lt>3.2.11</lt></range>
+	<name>rubygem-activerecord</name>
+	<range><lt>3.2.11</lt></range>
       </package>
       <package>
-        <name>rubygem-activesupport</name>
-        <range><lt>3.2.11</lt></range>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.11</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Ruby on Rails team reports:</p>
-        <blockquote cite="http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/">
-          <p>Two high-risk vulnerabilities have been discovered:</p>
-          <p>(CVE-2013-0155) There is a vulnerability when Active Record is
-             used in conjunction with JSON parameter parsing.</p>
-          <p>Due to the way Active Record interprets parameters in combination
-             with the way that JSON parameters are parsed, it is possible for an
-             attacker to issue unexpected database queries with "IS NULL" or
-             empty "WHERE" clauses. This issue does not let an attacker insert
-             arbitrary values into an SQL query, however they can cause the
-             query to check for NULL or eliminate a WHERE clause when most users
-             would not expect it.</p>
-          <p>(CVE-2013-0156) There are multiple weaknesses in the parameter
-             parsing code for Ruby on Rails which allows attackers to bypass
-             authentication systems, inject arbitrary SQL, inject and execute
-             arbitrary code, or perform a DoS attack on a Rails application.</p>
-          <p>The parameter parsing code of Ruby on Rails allows applications to
-             automatically cast values from strings to certain data types.
-             Unfortunately the type casting code supported certain conversions
-             which were not suitable for performing on user-provided data
-             including creating Symbols and parsing YAML. These unsuitable
-             conversions can be used by an attacker to compromise a Rails
-             application.</p>
-        </blockquote>
+	<p>Ruby on Rails team reports:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/">
+	  <p>Two high-risk vulnerabilities have been discovered:</p>
+	  <p>(CVE-2013-0155) There is a vulnerability when Active Record is
+	     used in conjunction with JSON parameter parsing.</p>
+	  <p>Due to the way Active Record interprets parameters in combination
+	     with the way that JSON parameters are parsed, it is possible for an
+	     attacker to issue unexpected database queries with "IS NULL" or
+	     empty "WHERE" clauses. This issue does not let an attacker insert
+	     arbitrary values into an SQL query, however they can cause the
+	     query to check for NULL or eliminate a WHERE clause when most users
+	     would not expect it.</p>
+	  <p>(CVE-2013-0156) There are multiple weaknesses in the parameter
+	     parsing code for Ruby on Rails which allows attackers to bypass
+	     authentication systems, inject arbitrary SQL, inject and execute
+	     arbitrary code, or perform a DoS attack on a Rails application.</p>
+	  <p>The parameter parsing code of Ruby on Rails allows applications to
+	     automatically cast values from strings to certain data types.
+	     Unfortunately the type casting code supported certain conversions
+	     which were not suitable for performing on user-provided data
+	     including creating Symbols and parsing YAML. These unsuitable
+	     conversions can be used by an attacker to compromise a Rails
+	     application.</p>
+	</blockquote>
       </body>
     </description>
     <references>
-        <cvename>CVE-2013-0155</cvename>
-        <cvename>CVE-2013-0156</cvename>
-        <url>http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/</url>
-        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/t1WFuuQyavI</url>
-        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/61bkgvnSGTQ</url>
+	<cvename>CVE-2013-0155</cvename>
+	<cvename>CVE-2013-0156</cvename>
+	<url>http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/</url>
+	<url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/t1WFuuQyavI</url>
+	<url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/61bkgvnSGTQ</url>
     </references>
     <dates>
       <discovery>2013-01-08</discovery>
@@ -2466,20 +2466,20 @@ Note:  Please add new entries to the beginning of this file.
     <topic>rubygem-rails -- SQL injection vulnerability</topic>
     <affects>
       <package>
-        <name>rubygem-rails</name>
-        <range><lt>3.2.10</lt></range>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.10</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Ruby on Rails team reports:</p>
-        <blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/DCNTNp_qjFM">
-          <p>There is a SQL injection vulnerability in Active Record in ALL
-             versions. Due to the way dynamic finders in Active Record extract
-             options from method parameters, a method parameter can mistakenly
-             be used as a scope. Carefully crafted requests can use the scope
-             to inject arbitrary SQL.</p>
-        </blockquote>
+	<p>Ruby on Rails team reports:</p>
+	<blockquote cite="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/DCNTNp_qjFM">
+	  <p>There is a SQL injection vulnerability in Active Record in ALL
+	     versions. Due to the way dynamic finders in Active Record extract
+	     options from method parameters, a method parameter can mistakenly
+	     be used as a scope. Carefully crafted requests can use the scope
+	     to inject arbitrary SQL.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2513,11 +2513,11 @@ Note:  Please add new entries to the beginning of this file.
 	     that may apply to specific installations.</p>
 	    <ul>
 	      <li>The particular attack vector is only applicable on Jenkins
-	          instances that have slaves attached to them, and allow
-	          anonymous read access.</li>
+		  instances that have slaves attached to them, and allow
+		  anonymous read access.</li>
 	      <li>Jenkins allows users to re-generate the API tokens. Those
-	          re-generated API tokens cannot be impersonated by the
-	          attacker.</li>
+		  re-generated API tokens cannot be impersonated by the
+		  attacker.</li>
 	    </ul>
 	</blockquote>
       </body>
@@ -2535,21 +2535,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>django</name>
-        <range><lt>1.4.3</lt></range>
+	<name>django</name>
+	<range><lt>1.4.3</lt></range>
       </package>
       <package>
-        <name>django13</name>
-        <range><lt>1.3.5</lt></range>
+	<name>django13</name>
+	<range><lt>1.3.5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Django Project reports:</p>
+	<p>The Django Project reports:</p>
 	<blockquote cite="https://www.djangoproject.com/weblog/2012/dec/10/security/">
-        <ol>
-          <li>
-          <p>Host header poisoning</p>
+	<ol>
+	  <li>
+	  <p>Host header poisoning</p>
 	  <p>Several earlier Django security releases focused on the issue of
 	      poisoning the HTTP Host header, causing Django to generate URLs
 	      pointing to arbitrary, potentially-malicious domains.</p>
@@ -2566,9 +2566,9 @@ Note:  Please add new entries to the beginning of this file.
 	    </ul>
 	  <p>Any deviation from this will now be rejected, raising the exception
 	      django.core.exceptions.SuspiciousOperation.</p>
-          </li>
-          <li>
-          <p>Redirect poisoning</p>
+	  </li>
+	  <li>
+	  <p>Redirect poisoning</p>
 	  <p>Also following up on a previous issue: in July of this year, we made
 	      changes to Django's HTTP redirect classes, performing additional
 	      validation of the scheme of the URL to redirect to (since, both
@@ -2591,8 +2591,8 @@ Note:  Please add new entries to the beginning of this file.
 		    authentication system -- which allow user-supplied redirect
 		    targets now use is_safe_url to validate the supplied URL.</li>
 	    </ol>
-          </li>
-          </ol>
+	  </li>
+	  </ol>
 	</blockquote>
       </body>
     </description>
@@ -2773,20 +2773,20 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>puppet -- multiple vulnerabilities</p>
 	<blockquote cite="http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.6.17">
-          <p>Arbitrary file read on the puppet master from authenticated clients (high). It is possible to construct an HTTP get request from an authenticated client with a valid certificate that will return the contents of an arbitrary file on the Puppet master that the master has read-access to.</p>
-          <p>Arbitrary file delete/D.O.S on Puppet Master from authenticated clients (high). Given a Puppet master with the "Delete" directive allowed in auth.conf for an authenticated host, an attacker on that host can send a specially crafted Delete request that can cause an arbitrary file deletion on the Puppet master, potentially causing a denial of service attack. Note that this vulnerability does *not* exist in Puppet as configured by default.</p>
-          <p>Insufficient input validation for agent hostnames (low). An attacker could trick the administrator into signing an attacker's certificate rather than the intended one by constructing specially crafted certificate requests containing specific ANSI control sequences. It is possible to use the sequences to rewrite the order of text displayed to an administrator such that display of an invalid certificate and valid certificate are transposed. If the administrator signs the attacker's certificate, the attacker can then man-in-the-middle the agent.</p>
+	  <p>Arbitrary file read on the puppet master from authenticated clients (high). It is possible to construct an HTTP get request from an authenticated client with a valid certificate that will return the contents of an arbitrary file on the Puppet master that the master has read-access to.</p>
+	  <p>Arbitrary file delete/D.O.S on Puppet Master from authenticated clients (high). Given a Puppet master with the "Delete" directive allowed in auth.conf for an authenticated host, an attacker on that host can send a specially crafted Delete request that can cause an arbitrary file deletion on the Puppet master, potentially causing a denial of service attack. Note that this vulnerability does *not* exist in Puppet as configured by default.</p>
+	  <p>Insufficient input validation for agent hostnames (low). An attacker could trick the administrator into signing an attacker's certificate rather than the intended one by constructing specially crafted certificate requests containing specific ANSI control sequences. It is possible to use the sequences to rewrite the order of text displayed to an administrator such that display of an invalid certificate and valid certificate are transposed. If the administrator signs the attacker's certificate, the attacker can then man-in-the-middle the agent.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-        <cvename>CVE-2012-3864</cvename>
-        <cvename>CVE-2012-3865</cvename>
-        <cvename>CVE-2012-3867</cvename>
-        <url>http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.6.17</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3864/</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3865/</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3867/</url>
+	<cvename>CVE-2012-3864</cvename>
+	<cvename>CVE-2012-3865</cvename>
+	<cvename>CVE-2012-3867</cvename>
+	<url>http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.6.17</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3864/</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3865/</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3867/</url>
     </references>
     <dates>
       <discovery>2012-07-10</discovery>
@@ -2889,25 +2889,25 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>squid -- denial of service</topic>
     <affects>
       <package>
-        <name>squid</name>
-        <range><lt>3.1.23</lt></range>
-        <range><ge>3.2</ge><lt>3.2.6</lt></range>
-        <range><ge>3.3</ge><lt>3.3.0.3</lt></range>
+	<name>squid</name>
+	<range><lt>3.1.23</lt></range>
+	<range><ge>3.2</ge><lt>3.2.6</lt></range>
+	<range><ge>3.3</ge><lt>3.3.0.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Squid developers report:</p>
-        <blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2012_1.txt">
-          <p>Due to missing input validation Squid cachemgr.cgi tool
-          is vulnerable to a denial of service attack when processing
-          specially crafted requests.</p>
-          <p>This problem allows any client able to reach the
-          cachemgr.cgi to perform a denial of service attack on the
-          service host.</p>
-          <p>The nature of the attack may cause secondary effects
-          through resource consumption on the host server.</p>
-        </blockquote>
+	<p>Squid developers report:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2012_1.txt">
+	  <p>Due to missing input validation Squid cachemgr.cgi tool
+	  is vulnerable to a denial of service attack when processing
+	  specially crafted requests.</p>
+	  <p>This problem allows any client able to reach the
+	  cachemgr.cgi to perform a denial of service attack on the
+	  service host.</p>
+	  <p>The nature of the attack may cause secondary effects
+	  through resource consumption on the host server.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2926,24 +2926,24 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>opera -- execution of arbitrary code</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <name>opera-devel</name>
-        <name>linux-opera</name>
-        <name>linux-opera-devel</name>
-        <range><lt>12.12</lt></range>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<name>linux-opera-devel</name>
+	<range><lt>12.12</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Opera reports:</p>
-        <blockquote cite="http://www.opera.com/support/kb/view/1038/">
-          <p>When loading GIF images into memory, Opera should allocate the
-            correct amount of memory to store that image. Specially crafted
-            image files can cause Opera to allocate the wrong amount of memory.
-            Subsequent data may then overwrite unrelated memory with
-            attacker-controlled data. This can lead to a crash, which may also
-            execute that data as code.</p>
-        </blockquote>
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/1038/">
+	  <p>When loading GIF images into memory, Opera should allocate the
+	    correct amount of memory to store that image. Specially crafted
+	    image files can cause Opera to allocate the wrong amount of memory.
+	    Subsequent data may then overwrite unrelated memory with
+	    attacker-controlled data. This can lead to a crash, which may also
+	    execute that data as code.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3042,11 +3042,11 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Apache Software Foundation reports:</p>
-        <blockquote cite="http://tomcat.apache.org/security-7.html">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-7.html">
 	  <p>The CSRF prevention filter could be bypassed if a request was made to a
 	     protected resource without a session identifier present in the request.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3074,12 +3074,12 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Apache Software Foundation reports:</p>
-        <blockquote cite="http://tomcat.apache.org/security-7.html">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-7.html">
 	  <p>When using the NIO connector with sendfile and HTTPS enabled, if a
 	     client breaks the connection while reading the response an infinite loop
 	     is entered leading to a denial of service.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3097,24 +3097,24 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>tomcat -- bypass of security constraints</topic>
     <affects>
       <package>
-        <name>tomcat6</name>
-        <range><ge>6.0.0</ge><le>6.0.35</le></range>
+	<name>tomcat6</name>
+	<range><ge>6.0.0</ge><le>6.0.35</le></range>
       </package>
       <package>
-        <name>tomcat7</name>
-        <range><ge>7.0.0</ge><le>7.0.29</le></range>
+	<name>tomcat7</name>
+	<range><ge>7.0.0</ge><le>7.0.29</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Apache Software Foundation reports:</p>
-        <blockquote cite="http://tomcat.apache.org/security-7.html">
-          <p>When using FORM authentication it was possible to bypass the security
-             constraint checks in the FORM authenticator by appending
-             "/j_security_check" to the end of the URL if some other component
-             (such as the Single-Sign-On valve) had called request.setUserPrincipal()
-             before the call to FormAuthenticator#authenticate().</p>
-        </blockquote>
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-7.html">
+	  <p>When using FORM authentication it was possible to bypass the security
+	     constraint checks in the FORM authenticator by appending
+	     "/j_security_check" to the end of the URL if some other component
+	     (such as the Single-Sign-On valve) had called request.setUserPrincipal()
+	     before the call to FormAuthenticator#authenticate().</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3154,11 +3154,11 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>ISC reports:</p>
 	<blockquote cite="https://kb.isc.org/article/AA-00828">
 	  <p>BIND 9 nameservers using the DNS64 IPv6 transition mechanism are
-  	     vulnerable to a software defect that allows a crafted query to
+	     vulnerable to a software defect that allows a crafted query to
 	     crash the server with a REQUIRE assertion failure.  Remote
 	     exploitation of this defect can be achieved without extensive
-  	     effort, resulting in a denial-of-service (DoS) vector against
-  	     affected servers.</p>
+	     effort, resulting in a denial-of-service (DoS) vector against
+	     affected servers.</p>
 	</blockquote>
       </body>
     </description>
@@ -3183,7 +3183,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>David Relson reports:</p>
 	<blockquote cite="https://bogofilter.svn.sourceforge.net/svnroot/bogofilter/trunk/bogofilter/NEWS">
 	  <p>Fix a heap corruption in base64 decoder on invalid input.
-	        Analysis and patch by Julius Plenz, [FU Berlin, Germany].</p>
+		Analysis and patch by Julius Plenz, [FU Berlin, Germany].</p>
 	</blockquote>
       </body>
     </description>
@@ -3399,25 +3399,25 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>opera -- execution of arbitrary code</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <name>opera-devel</name>
-        <name>linux-opera</name>
-        <name>linux-opera-devel</name>
-        <range><lt>12.11</lt></range>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<name>linux-opera-devel</name>
+	<range><lt>12.11</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Opera reports:</p>
-        <blockquote cite="http://www.opera.com/support/kb/view/1036/">
-          <p>When requesting pages using HTTP, Opera temporarily stores the
-            response in a buffer.  In some cases, Opera may incorrectly allocate
-            too little space for a buffer, and may then store too much of the
-            response in that buffer.  This causes a buffer overflow, which in
-            turn can lead to a memory corruption and crash.  It is possible to
-            use this crash to execute the overflowing data as code, which may
-            be controlled by an attacking site.</p>
-        </blockquote>
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/1036/">
+	  <p>When requesting pages using HTTP, Opera temporarily stores the
+	    response in a buffer.  In some cases, Opera may incorrectly allocate
+	    too little space for a buffer, and may then store too much of the
+	    response in that buffer.  This causes a buffer overflow, which in
+	    turn can lead to a memory corruption and crash.  It is possible to
+	    use this crash to execute the overflowing data as code, which may
+	    be controlled by an attacking site.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3725,8 +3725,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>US-CERT reports:</p>
 	<blockquote cite="http://www.kb.cert.org/vuls/id/268267">
 	  <p>DomainKeys Identified Mail (DKIM) Verifiers may
-          inappropriately convey message trust when messages are
-          signed using test or small bit signing keys.</p>
+	  inappropriately convey message trust when messages are
+	  signed using test or small bit signing keys.</p>
 	</blockquote>
       </body>
     </description>
@@ -3779,25 +3779,25 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>ruby -- Hash-flooding DoS vulnerability for ruby 1.9</topic>
     <affects>
       <package>
-        <name>ruby</name>
-        <range><ge>1.9</ge><lt>1.9.3.327</lt></range>
+	<name>ruby</name>
+	<range><ge>1.9</ge><lt>1.9.3.327</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The official ruby site reports:</p>
-        <blockquote cite="http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/">
-          <p>Carefully crafted sequence of strings can cause a denial of service
-             attack on the service that parses the sequence to create a Hash
-             object by using the strings as keys. For instance, this
-             vulnerability affects web application that parses the JSON data
-             sent from untrusted entity.</p>
-          <p>This vulnerability is similar to CVS-2011-4815 for ruby 1.8.7. ruby
-             1.9 versions were using modified MurmurHash function but it's
-             reported that there is a way to create sequence of strings that
-             collide their hash values each other.  This fix changes the Hash
-             function of String object from the MurmurHash to SipHash 2-4.</p>
-        </blockquote>
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/">
+	  <p>Carefully crafted sequence of strings can cause a denial of service
+	     attack on the service that parses the sequence to create a Hash
+	     object by using the strings as keys. For instance, this
+	     vulnerability affects web application that parses the JSON data
+	     sent from untrusted entity.</p>
+	  <p>This vulnerability is similar to CVS-2011-4815 for ruby 1.8.7. ruby
+	     1.9 versions were using modified MurmurHash function but it's
+	     reported that there is a way to create sequence of strings that
+	     collide their hash values each other.  This fix changes the Hash
+	     function of String object from the MurmurHash to SipHash 2-4.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -4304,35 +4304,35 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>drupal7 -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>drupal7</name>
-        <range><lt>7.16</lt></range>
+	<name>drupal7</name>
+	<range><lt>7.16</lt></range>
       </package>
     </affects>
     <description>
      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Drupal Security Team reports:</p>
-        <blockquote cite="http://drupal.org/node/1815912">
-        <ol>
-          <li>
-          <p>Arbitrary PHP code execution</p>
-          <p>A bug in the installer code was identified that allows an attacker
-             to re-install Drupal using an external database server under certain
-             transient conditions. This could allow the attacker to execute
-             arbitrary PHP code on the original server.</p>
-          </li>
-          <li>
-          <p>Information disclosure - OpenID module</p>
-          <p>For sites using the core OpenID module, an information disclosure
-             vulnerability was identified that allows an attacker to read files
-             on the local filesystem by attempting to log in to the site using a
-             malicious OpenID server.</p>
-          </li>
-        </ol>
-        </blockquote>
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="http://drupal.org/node/1815912">
+	<ol>
+	  <li>
+	  <p>Arbitrary PHP code execution</p>
+	  <p>A bug in the installer code was identified that allows an attacker
+	     to re-install Drupal using an external database server under certain
+	     transient conditions. This could allow the attacker to execute
+	     arbitrary PHP code on the original server.</p>
+	  </li>
+	  <li>
+	  <p>Information disclosure - OpenID module</p>
+	  <p>For sites using the core OpenID module, an information disclosure
+	     vulnerability was identified that allows an attacker to read files
+	     on the local filesystem by attempting to log in to the site using a
+	     malicious OpenID server.</p>
+	  </li>
+	</ol>
+	</blockquote>
       </body>
     </description>
     <references>
-        <url>http://drupal.org/node/1815912</url>
+	<url>http://drupal.org/node/1815912</url>
     </references>
     <dates>
       <discovery>2012-10-17</discovery>
@@ -4399,29 +4399,29 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>Exim -- remote code execution</topic>
     <affects>
       <package>
-        <name>exim</name>
-        <range><ge>4.70</ge><lt>4.80.1</lt></range>
+	<name>exim</name>
+	<range><ge>4.70</ge><lt>4.80.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>This vulnerability affects Exim instances built with DKIM
-        enabled (this is the default for FreeBSD Exim port) and running
-        verification of DKIM signatures on the incoming mail
-        messages.</p>
-        <p>Phil Penncock reports:</p>
-        <blockquote cite="https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html">
-          <p>This is a SECURITY release, addressing a CRITICAL remote
-            code execution flaw in versions of Exim between 4.70 and
-            4.80 inclusive, when built with DKIM support (the default).</p>
-          <p>This security vulnerability can be exploited by anyone
-            who can send email from a domain for which they control the
-            DNS.</p>
-          <p>You are not vulnerable if you built Exim with DISABLE_DKIM
-            or if you put this at the start of an ACL plumbed into
-            acl_smtp_connect or acl_smtp_rcpt:</p>
-          <pre>warn control = dkim_disable_verify</pre>
-        </blockquote>
+	<p>This vulnerability affects Exim instances built with DKIM
+	enabled (this is the default for FreeBSD Exim port) and running
+	verification of DKIM signatures on the incoming mail
+	messages.</p>
+	<p>Phil Penncock reports:</p>
+	<blockquote cite="https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html">
+	  <p>This is a SECURITY release, addressing a CRITICAL remote
+	    code execution flaw in versions of Exim between 4.70 and
+	    4.80 inclusive, when built with DKIM support (the default).</p>
+	  <p>This security vulnerability can be exploited by anyone
+	    who can send email from a domain for which they control the
+	    DNS.</p>
+	  <p>You are not vulnerable if you built Exim with DISABLE_DKIM
+	    or if you put this at the start of an ACL plumbed into
+	    acl_smtp_connect or acl_smtp_rcpt:</p>
+	  <pre>warn control = dkim_disable_verify</pre>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -4438,59 +4438,59 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>django</name>
-        <range><lt>1.4.2</lt></range>
+	<name>django</name>
+	<range><lt>1.4.2</lt></range>
       </package>
       <package>
-        <name>django13</name>
-        <range><lt>1.3.4</lt></range>
+	<name>django13</name>
+	<range><lt>1.3.4</lt></range>
       </package>
     </affects>
     <description>
      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Django Project reports:</p>
-        <blockquote cite="https://www.djangoproject.com/weblog/2012/oct/17/security/">
-        <ol>
-          <li>
-          <p>Host header poisoning</p>
-          <p>Some parts of Django -- independent of end-user-written applications
-             -- make use of full URLs, including domain name, which are generated
-             from the HTTP Host header. Some attacks against this are beyond Django's
-             ability to control, and require the web server to be properly configured;
-             Django's documentation has for some time contained notes advising users
-             on such configuration.</p>
-          <p>Django's own built-in parsing of the Host header is, however, still
-             vulnerable, as was reported to us recently. The Host header parsing
-             in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host()
-             -- was incorrectly handling username/password information in the header.
-             Thus, for example, the following Host header would be accepted by Django when
-             running on "validsite.com":</p>
-          <p>Host: validsite.com:random@evilsite.com</p>
-          <p>Using this, an attacker can cause parts of Django -- particularly the
-             password-reset mechanism -- to generate and display arbitrary URLs to users.</p>
-          <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host
-             headers which contain potentially dangerous content (such as username/password
-             pairs) now raise the exception django.core.exceptions.SuspiciousOperation.</p>
-          </li>
-          <li>
-          <p>Documentation of HttpOnly cookie option</p>
-          <p>As of Django 1.4, session cookies are always sent with the HttpOnly flag, which
-             provides some additional protection from cross-site scripting attacks by denying
-             client-side scripts access to the session cookie.</p>
-          <p>Though not directly a security issue in Django, it has been reported that the
-             Django 1.4 documentation incorrectly described this change, by claiming that this
-             was now the default for all cookies set by the HttpResponse.set_cookie() method.</p>
-          <p>The Django documentation has been updated to reflect that this only applies to the
-             session cookie. Users of Django are encouraged to review their use of set_cookie()
-             to ensure that the HttpOnly flag is being set or unset appropriately.</p>
-          </li>
-          </ol>
-        </blockquote>
+	<p>The Django Project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2012/oct/17/security/">
+	<ol>
+	  <li>
+	  <p>Host header poisoning</p>
+	  <p>Some parts of Django -- independent of end-user-written applications
+	     -- make use of full URLs, including domain name, which are generated
+	     from the HTTP Host header. Some attacks against this are beyond Django's
+	     ability to control, and require the web server to be properly configured;
+	     Django's documentation has for some time contained notes advising users
+	     on such configuration.</p>
+	  <p>Django's own built-in parsing of the Host header is, however, still
+	     vulnerable, as was reported to us recently. The Host header parsing
+	     in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host()
+	     -- was incorrectly handling username/password information in the header.
+	     Thus, for example, the following Host header would be accepted by Django when
+	     running on "validsite.com":</p>
+	  <p>Host: validsite.com:random@evilsite.com</p>
+	  <p>Using this, an attacker can cause parts of Django -- particularly the
+	     password-reset mechanism -- to generate and display arbitrary URLs to users.</p>
+	  <p>To remedy this, the parsing in HttpRequest.get_host() is being modified; Host
+	     headers which contain potentially dangerous content (such as username/password
+	     pairs) now raise the exception django.core.exceptions.SuspiciousOperation.</p>
+	  </li>
+	  <li>
+	  <p>Documentation of HttpOnly cookie option</p>
+	  <p>As of Django 1.4, session cookies are always sent with the HttpOnly flag, which
+	     provides some additional protection from cross-site scripting attacks by denying
+	     client-side scripts access to the session cookie.</p>
+	  <p>Though not directly a security issue in Django, it has been reported that the
+	     Django 1.4 documentation incorrectly described this change, by claiming that this
+	     was now the default for all cookies set by the HttpResponse.set_cookie() method.</p>
+	  <p>The Django documentation has been updated to reflect that this only applies to the
+	     session cookie. Users of Django are encouraged to review their use of set_cookie()
+	     to ensure that the HttpOnly flag is being set or unset appropriately.</p>
+	  </li>
+	  </ol>
+	</blockquote>
       </body>
     </description>
     <references>
-        <cvename>CVE-2012-4520</cvename>
-        <url>https://www.djangoproject.com/weblog/2012/oct/17/security/</url>
+	<cvename>CVE-2012-4520</cvename>
+	<url>https://www.djangoproject.com/weblog/2012/oct/17/security/</url>
     </references>
     <dates>
       <discovery>2012-10-17</discovery>
@@ -4966,27 +4966,27 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>OpenX -- SQL injection vulnerability</topic>
     <affects>
       <package>
-        <name>openx</name>
-        <range><lt>2.8.10</lt></range>
+	<name>openx</name>
+	<range><lt>2.8.10</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/50598/">
-          <p>A vulnerability has been discovered in OpenX, which can be
-             exploited by malicious people to conduct SQL injection
-             attacks.</p>
-          <p>Input passed via the "xajaxargs" parameter to
-             www/admin/updates-history.php (when "xajax" is set to
-             "expandOSURow") is not properly sanitised in e.g. the
-             "queryAuditBackupTablesByUpgradeId()" function
-             (lib/OA/Upgrade/DB_UpgradeAuditor.php) before being used in SQL
-             queries. This can be exploited to manipulate SQL queries by
-             injecting arbitrary SQL code.</p>
-          <p>The vulnerability is confirmed in version 2.8.9. Prior versions
-             may also be affected.</p>
-        </blockquote>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/50598/">
+	  <p>A vulnerability has been discovered in OpenX, which can be
+	     exploited by malicious people to conduct SQL injection
+	     attacks.</p>
+	  <p>Input passed via the "xajaxargs" parameter to
+	     www/admin/updates-history.php (when "xajax" is set to
+	     "expandOSURow") is not properly sanitised in e.g. the
+	     "queryAuditBackupTablesByUpgradeId()" function
+	     (lib/OA/Upgrade/DB_UpgradeAuditor.php) before being used in SQL
+	     queries. This can be exploited to manipulate SQL queries by
+	     injecting arbitrary SQL code.</p>
+	  <p>The vulnerability is confirmed in version 2.8.9. Prior versions
+	     may also be affected.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -5403,39 +5403,39 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>mod_pagespeed -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>mod_pagespeed</name>
-        <range><lt>0.10.22.6</lt></range>
+	<name>mod_pagespeed</name>
+	<range><lt>0.10.22.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Google Reports:</p>
-        <blockquote cite="https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6">
-          <p>mod_pagespeed 0.10.22.6 is a security update that fixes two
-             critical issues that affect earlier versions:</p>
-          <ul>
-            <li>CVE-2012-4001, a problem with validation of own host name.</li>
-            <li>CVE-2012-4360, a cross-site scripting attack, which affects versions starting from 0.10.19.1.</li>
-          </ul>
-          <p>The effect of the first problem is that it is possible to confuse
-             mod_pagespeed about its own host name, and to trick it into
-             fetching resources from other machines. This could be an issue if
-             the HTTP server has access to machines that are not otherwise
-             publicly visible.</p>
-          <p>The second problem would permit a hostile third party to execute
-             JavaScript in users' browsers in context of the domain running
-             mod_pagespeed, which could permit interception of users' cookies or
-             data on the site.</p>
-          <p>Because of the severity of the two problems, users are strongly
-             encouraged to update immediately.</p>
-          <p>Behavior Changes in the Update:</p>
-          <p>As part of the fix to the first issue, mod_pagespeed will not fetch
-             resources from machines other than localhost if they are not
-             explicitly mentioned in the configuration. This means that if you
-             need resources on the server's domain to be handled by some other
-             system, you'll need to explicitly use ModPagespeedMapOriginDomain
-             or ModPagespeedDomain to authorize that.</p>
-        </blockquote>
+	<p>Google Reports:</p>
+	<blockquote cite="https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6">
+	  <p>mod_pagespeed 0.10.22.6 is a security update that fixes two
+	     critical issues that affect earlier versions:</p>
+	  <ul>
+	    <li>CVE-2012-4001, a problem with validation of own host name.</li>
+	    <li>CVE-2012-4360, a cross-site scripting attack, which affects versions starting from 0.10.19.1.</li>
+	  </ul>
+	  <p>The effect of the first problem is that it is possible to confuse
+	     mod_pagespeed about its own host name, and to trick it into
+	     fetching resources from other machines. This could be an issue if
+	     the HTTP server has access to machines that are not otherwise
+	     publicly visible.</p>
+	  <p>The second problem would permit a hostile third party to execute
+	     JavaScript in users' browsers in context of the domain running
+	     mod_pagespeed, which could permit interception of users' cookies or
+	     data on the site.</p>
+	  <p>Because of the severity of the two problems, users are strongly
+	     encouraged to update immediately.</p>
+	  <p>Behavior Changes in the Update:</p>
+	  <p>As part of the fix to the first issue, mod_pagespeed will not fetch
+	     resources from machines other than localhost if they are not
+	     explicitly mentioned in the configuration. This means that if you
+	     need resources on the server's domain to be handled by some other
+	     system, you'll need to explicitly use ModPagespeedMapOriginDomain
+	     or ModPagespeedDomain to authorize that.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -5453,36 +5453,36 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>freeradius -- arbitrary code execution for TLS-based authentication</topic>
     <affects>
       <package>
-        <name>freeradius</name>
-        <range><ge>2.1.10</ge><lt>2.1.12_2</lt></range>
+	<name>freeradius</name>
+	<range><ge>2.1.10</ge><lt>2.1.12_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>freeRADIUS security team reports:</p>
-        <blockquote cite="http://freeradius.org/security.html">
-          <p>Overflow in EAP-TLS for 2.1.10, 2.1.11 and 2.1.12.</p>
-          <p>The issue was found by Timo Warns, and communicated to
-          security@freeradius.org.  A sample exploit for the issue was
-          included in the notification.</p>
-          <p>The vulnerability was created in commit a368a6f4f4aaf on
-          August 18, 2010.  Vulnerable versions include 2.1.10, 2.1.11,
-          and 2.1.12.  Also anyone running the git "master" branch
-          after August 18, 2010 is vulnerable.</p>
-          <p>All sites using TLS-based EAP methods and the above
-          versions are vulnerable.  The only configuration change which
-          can avoid the issue is to disable EAP-TLS, EAP-TTLS, and
-          PEAP.</p>
-          <p>An external attacker can use this vulnerability to
-          over-write the stack frame of the RADIUS server, and cause
-          it to crash.  In addition, more sophisticated attacks may
-          gain additional privileges on the system running the RADIUS
-          server.</p>
-          <p>This attack does not require local network access to the
-          RADIUS server.  It can be done by an attacker through a WiFi
-          Access Point, so long as the Access Point is configured to
-          use 802.1X authentication with the RADIUS server.</p>
-        </blockquote>
+	<p>freeRADIUS security team reports:</p>
+	<blockquote cite="http://freeradius.org/security.html">
+	  <p>Overflow in EAP-TLS for 2.1.10, 2.1.11 and 2.1.12.</p>
+	  <p>The issue was found by Timo Warns, and communicated to
+	  security@freeradius.org.  A sample exploit for the issue was
+	  included in the notification.</p>
+	  <p>The vulnerability was created in commit a368a6f4f4aaf on
+	  August 18, 2010.  Vulnerable versions include 2.1.10, 2.1.11,
+	  and 2.1.12.  Also anyone running the git "master" branch
+	  after August 18, 2010 is vulnerable.</p>
+	  <p>All sites using TLS-based EAP methods and the above
+	  versions are vulnerable.  The only configuration change which
+	  can avoid the issue is to disable EAP-TLS, EAP-TTLS, and
+	  PEAP.</p>
+	  <p>An external attacker can use this vulnerability to
+	  over-write the stack frame of the RADIUS server, and cause
+	  it to crash.  In addition, more sophisticated attacks may
+	  gain additional privileges on the system running the RADIUS
+	  server.</p>
+	  <p>This attack does not require local network access to the
+	  RADIUS server.  It can be done by an attacker through a WiFi
+	  Access Point, so long as the Access Point is configured to
+	  use 802.1X authentication with the RADIUS server.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -5808,37 +5808,37 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Mediawiki reports:</p>
-        <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2012-August/000119.html">
-          <p>(Bug 39700) Wikipedia administrator Writ Keeper discovered
-            a stored XSS (HTML injection) vulnerability. This was
-            possible due to the handling of link text on File: links for
-            nonexistent files. MediaWiki 1.16 and later is affected.</p>
-          <p>(Bug 39180) User Fomafix reported several DOM-based XSS
-            vulnerabilities, made possible by a combination of loose
-            filtering of the uselang parameter, and JavaScript gadgets
-            on various language Wikipedias.</p>
-          <p>(Bug 39180) During internal review, it was discovered that
-            CSRF tokens, available via the api, were not protected with
-            X-Frame-Options headers. This could lead to a CSRF vulnerability
-            if the API response is embedded in an external website using
-            using an iframe.</p>
-          <p>(Bug 39824) During internal review, it was discovered extensions
-            were not always allowed to prevent the account creation action.
-            This allowed users blocked by the GlobalBlocking extension to
-            create accounts.</p>
-          <p>(Bug 39184) During internal review, it was discovered that
-            password data was always saved to the local MediaWiki database
-            even if authentication was handled by an extension, such as LDAP.
-            This could allow a compromised MediaWiki installation to leak
-            information about user's LDAP passwords. Additionally, in situations
-            when an authentication plugin returned false in its strict
-            function, this would allow old passwords to be used for accounts
-            that did not exist in the external system, indefinitely.</p>
-          <p>(Bug 39823) During internal review, it was discovered that metadata
-            about blocks, hidden by a user with suppression rights, was visible
-            to administrators.</p>
-        </blockquote>
+	<p>Mediawiki reports:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2012-August/000119.html">
+	  <p>(Bug 39700) Wikipedia administrator Writ Keeper discovered
+	    a stored XSS (HTML injection) vulnerability. This was
+	    possible due to the handling of link text on File: links for
+	    nonexistent files. MediaWiki 1.16 and later is affected.</p>
+	  <p>(Bug 39180) User Fomafix reported several DOM-based XSS
+	    vulnerabilities, made possible by a combination of loose
+	    filtering of the uselang parameter, and JavaScript gadgets
+	    on various language Wikipedias.</p>
+	  <p>(Bug 39180) During internal review, it was discovered that
+	    CSRF tokens, available via the api, were not protected with
+	    X-Frame-Options headers. This could lead to a CSRF vulnerability
+	    if the API response is embedded in an external website using
+	    using an iframe.</p>
+	  <p>(Bug 39824) During internal review, it was discovered extensions
+	    were not always allowed to prevent the account creation action.
+	    This allowed users blocked by the GlobalBlocking extension to
+	    create accounts.</p>
+	  <p>(Bug 39184) During internal review, it was discovered that
+	    password data was always saved to the local MediaWiki database
+	    even if authentication was handled by an extension, such as LDAP.
+	    This could allow a compromised MediaWiki installation to leak
+	    information about user's LDAP passwords. Additionally, in situations
+	    when an authentication plugin returned false in its strict
+	    function, this would allow old passwords to be used for accounts
+	    that did not exist in the external system, indefinitely.</p>
+	  <p>(Bug 39823) During internal review, it was discovered that metadata
+	    about blocks, hidden by a user with suppression rights, was visible
+	    to administrators.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -6233,18 +6233,18 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>roundcube -- cross-site scripting in HTML email messages</topic>
     <affects>
       <package>
-        <name>roundcube</name>
-        <range><ge>0.8.0,1</ge><lt>0.8.1,1</lt></range>
+	<name>roundcube</name>
+	<range><ge>0.8.0,1</ge><lt>0.8.1,1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>RoundCube branch 0.8.x prior to the version 0.8.1 is prone
-        to the cross-scripting attack (XSS) originating from incoming
-        HTML e-mails: due to the lack of proper sanitization
-        of JavaScript code inside the "href" attribute, sender
-        could launch XSS attack when recipient opens the message
-        in RoundCube interface.</p>
+	<p>RoundCube branch 0.8.x prior to the version 0.8.1 is prone
+	to the cross-scripting attack (XSS) originating from incoming
+	HTML e-mails: due to the lack of proper sanitization
+	of JavaScript code inside the "href" attribute, sender
+	could launch XSS attack when recipient opens the message
+	in RoundCube interface.</p>
       </body>
     </description>
     <references>
@@ -6302,22 +6302,22 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>squidclamav -- cross-site scripting in default virus warning pages</topic>
     <affects>
       <package>
-        <name>squidclamav</name>
-        <range><lt>5.8</lt></range>
-        <range><ge>6.0</ge><lt>6.7</lt></range>
+	<name>squidclamav</name>
+	<range><lt>5.8</lt></range>
+	<range><ge>6.0</ge><lt>6.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>SquidClamav developers report:</p>
-        <blockquote cite="http://squidclamav.darold.net/news.html">
-          <p>This release fix several security issues by escaping CGI
-          parameters.</p>
-        </blockquote>
-        <p>Prior to versions 6.7 and 5.8, CGI script clwarn.cgi was not
-        properly sanitizing input variables, so they could be used to
-        inject arbitrary strings to the generated page, leading
-        to the cross-site scripting attacks.</p>
+	<p>SquidClamav developers report:</p>
+	<blockquote cite="http://squidclamav.darold.net/news.html">
+	  <p>This release fix several security issues by escaping CGI
+	  parameters.</p>
+	</blockquote>
+	<p>Prior to versions 6.7 and 5.8, CGI script clwarn.cgi was not
+	properly sanitizing input variables, so they could be used to
+	inject arbitrary strings to the generated page, leading
+	to the cross-site scripting attacks.</p>
       </body>
     </description>
     <references>
@@ -6334,25 +6334,25 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>squidclamav -- Denial of Service</topic>
     <affects>
       <package>
-        <name>squidclamav</name>
-        <range><lt>5.7_1</lt></range>
-        <range><ge>6.0</ge><lt>6.7</lt></range>
+	<name>squidclamav</name>
+	<range><lt>5.7_1</lt></range>
+	<range><ge>6.0</ge><lt>6.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>SquidClamav developers report:</p>
-        <blockquote cite="http://squidclamav.darold.net/news.html">
-          <p>Add a workaround for a squidGuard bug that unescape
-          the URL and send it back unescaped.  This result in garbage
-          staying into pipe of the system command call and could crash
-          squidclamav on next read or return false information.
-          This is specially true with URL containing the %0D or %0A
-          character.</p>
-        </blockquote>
-        <p>This vulnerability can be triggered only in configurations
-        where external chained URL checker is configured via
-        "squidguard" directive.</p>
+	<p>SquidClamav developers report:</p>
+	<blockquote cite="http://squidclamav.darold.net/news.html">
+	  <p>Add a workaround for a squidGuard bug that unescape
+	  the URL and send it back unescaped.  This result in garbage
+	  staying into pipe of the system command call and could crash
+	  squidclamav on next read or return false information.
+	  This is specially true with URL containing the %0D or %0A
+	  character.</p>
+	</blockquote>
+	<p>This vulnerability can be triggered only in configurations
+	where external chained URL checker is configured via
+	"squidguard" directive.</p>
       </body>
     </description>
     <references>
@@ -6370,22 +6370,22 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>inn -- plaintext command injection into encrypted channel</topic>
     <affects>
       <package>
-        <name>inn</name>
-        <range><lt>2.5.2_2</lt></range>
+	<name>inn</name>
+	<range><lt>2.5.2_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>INN developers report:</p>
-        <blockquote cite="https://www.isc.org/software/inn/2.5.3article">
-          <p>Fixed a possible plaintext command injection during the
-          negotiation of a TLS layer.  The vulnerability detailed
-          in CVE-2011-0411 affects the STARTTLS and AUTHINFO SASL
-          commands.  nnrpd now resets its read buffer upon
-          a successful negotiation of a TLS layer.  It prevents
-          malicious commands, sent unencrypted, from being executed
-          in the new encrypted state of the session.</p>
-        </blockquote>
+	<p>INN developers report:</p>
+	<blockquote cite="https://www.isc.org/software/inn/2.5.3article">
+	  <p>Fixed a possible plaintext command injection during the
+	  negotiation of a TLS layer.  The vulnerability detailed
+	  in CVE-2011-0411 affects the STARTTLS and AUTHINFO SASL
+	  commands.  nnrpd now resets its read buffer upon
+	  a successful negotiation of a TLS layer.  It prevents
+	  malicious commands, sent unencrypted, from being executed
+	  in the new encrypted state of the session.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -6403,23 +6403,23 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>jabberd -- domain spoofing in server dialback protocol</topic>
     <affects>
       <package>
-        <name>jabberd</name>
-        <range><lt>2.2.16_2</lt></range>
+	<name>jabberd</name>
+	<range><lt>2.2.16_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>XMPP Standards Foundation reports:</p>
-        <blockquote cite="http://xmpp.org/resources/security-notices/server-dialback/">
-          <p>Some implementations of the XMPP Server Dialback protocol
-          (RFC 3920/XEP-0220) have not been checking dialback
-          responses to ensure that validated results are correlated
-          with requests.</p>
-          <p>An attacking server could spoof one or more domains in
-          communicating with a vulnerable server implementation,
-          thereby avoiding the protections built into the Server
-          Dialback protocol.</p>
-        </blockquote>
+	<p>XMPP Standards Foundation reports:</p>
+	<blockquote cite="http://xmpp.org/resources/security-notices/server-dialback/">
+	  <p>Some implementations of the XMPP Server Dialback protocol
+	  (RFC 3920/XEP-0220) have not been checking dialback
+	  responses to ensure that validated results are correlated
+	  with requests.</p>
+	  <p>An attacking server could spoof one or more domains in
+	  communicating with a vulnerable server implementation,
+	  thereby avoiding the protections built into the Server
+	  Dialback protocol.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -6436,26 +6436,26 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>rssh -- configuration restrictions bypass</topic>
     <affects>
       <package>
-        <name>rssh</name>
-        <range><lt>2.3.3</lt></range>
+	<name>rssh</name>
+	<range><lt>2.3.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Derek Martin (rssh maintainer) reports:</p>
-        <blockquote cite="http://www.pizzashack.org/rssh/security.shtml">
-          <p>John Barber reported a problem where, if the system
-          administrator misconfigures rssh by providing too few access
-          bits in the configuration file, the user will be given
-          default permissions (scp) to the entire system, potentially
-          circumventing any configured chroot.  Fixing this required a
-          behavior change: in the past, using rssh without a config
-          file would give all users default access to use scp on an
-          unchrooted system.  In order to correct the reported bug,
-          this feature has been eliminated, and you must now have a
-          valid configuration file.  If no config file exists, all
-          users will be locked out.</p>
-        </blockquote>
+	<p>Derek Martin (rssh maintainer) reports:</p>
+	<blockquote cite="http://www.pizzashack.org/rssh/security.shtml">
+	  <p>John Barber reported a problem where, if the system
+	  administrator misconfigures rssh by providing too few access
+	  bits in the configuration file, the user will be given
+	  default permissions (scp) to the entire system, potentially
+	  circumventing any configured chroot.  Fixing this required a
+	  behavior change: in the past, using rssh without a config
+	  file would give all users default access to use scp on an
+	  unchrooted system.  In order to correct the reported bug,
+	  this feature has been eliminated, and you must now have a
+	  valid configuration file.  If no config file exists, all
+	  users will be locked out.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -6471,21 +6471,21 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>rssh -- arbitrary command execution</topic>
     <affects>
       <package>
-        <name>rssh</name>
-        <range><lt>2.3.4</lt></range>
+	<name>rssh</name>
+	<range><lt>2.3.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Derek Martin (rssh maintainer) reports:</p>
-        <blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29235647">
-          <p>Henrik Erkkonen has discovered that, through clever
-          manipulation of environment variables on the ssh command
-          line, it is possible to circumvent rssh.  As far as I can
-          tell, there is no way to effect a root compromise, except of
-          course if the root account is the one you're attempting to
-          protect with rssh...</p>
-        </blockquote>
+	<p>Derek Martin (rssh maintainer) reports:</p>
+	<blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29235647">
+	  <p>Henrik Erkkonen has discovered that, through clever
+	  manipulation of environment variables on the ssh command
+	  line, it is possible to circumvent rssh.  As far as I can
+	  tell, there is no way to effect a root compromise, except of
+	  course if the root account is the one you're attempting to
+	  protect with rssh...</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -7444,8 +7444,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	     Plain text bugmails are not affected as bug and attachment
 	     IDs are not linkified.</p>
 	  <h1>Information Leak</h1>
-          <p>Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to
-              4.2.1, 4.3.1</p>
+	  <p>Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to
+	      4.2.1, 4.3.1</p>
 	  <p>The description of a private attachment could be visible
 	     to a user who hasn't permissions to access this attachment
 	     if the attachment ID is mentioned in a public comment in
@@ -7510,7 +7510,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<blockquote cite="https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/vxJjrc15qYM">
 	  <p>There is a DoS vulnerability in Action Pack digest authentication
 	    handling in authenticate_or_request_with_http_digest.</p>
-         </blockquote>
+	 </blockquote>
       </body>
     </description>
     <references>
@@ -7660,38 +7660,38 @@ executed in your Internet Explorer while displaying the email.</p>
   <vuln vid="748aa89f-d529-11e1-82ab-001fd0af1a4c">
      <topic>rubygem-activerecord -- multiple vulnerabilities</topic>
      <affects>
-        <package>
-           <name>rubygem-activemodel</name>
-           <range><lt>3.2.4</lt></range>
-        </package>
+	<package>
+	   <name>rubygem-activemodel</name>
+	   <range><lt>3.2.4</lt></range>
+	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <p>rubygem-activerecord -- multiple vulernabilities</p>
-           <blockquote>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	   <p>rubygem-activerecord -- multiple vulernabilities</p>
+	   <blockquote>
 	      <p>Due to the way Active Record interprets parameters in
 		 combination with the way that Rack parses query parameters, it
 		 is possible for an attacker to issue unexpected database
 		 queries with "IS NULL" where clauses.  This issue does *not*
 		 let an attacker insert arbitrary values into an SQL query,
 		 however they can cause the query to check for NULL where most
-                 users wouldn't expect it.</p>
+		 users wouldn't expect it.</p>
 	      <p>Due to the way Active Record handles nested query parameters,
 		 an attacker can use a specially crafted request to inject some
-                 forms of SQL into your application's SQL queries.</p>
-           </blockquote>
-        </body>
+		 forms of SQL into your application's SQL queries.</p>
+	   </blockquote>
+	</body>
      </description>
      <references>
-        <cvename>CVE-2012-2660</cvename>
-        <cvename>CVE-2012-2661</cvename>
-        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/8SA-M3as7A8</url>
-        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/dUaiOOGWL1k</url>
+	<cvename>CVE-2012-2660</cvename>
+	<cvename>CVE-2012-2661</cvename>
+	<url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/8SA-M3as7A8</url>
+	<url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/dUaiOOGWL1k</url>
      </references>
      <dates>
-        <discovery>2012-05-31</discovery>
-        <entry>2012-07-23</entry>
-        <modified>2012-07-23</modified>
+	<discovery>2012-05-31</discovery>
+	<entry>2012-07-23</entry>
+	<modified>2012-07-23</modified>
      </dates>
   </vuln>
 
@@ -7841,79 +7841,79 @@ executed in your Internet Explorer while displaying the email.</p>
   <vuln vid="3a6960ef-c8a8-11e1-9924-001fd0af1a4c">
      <topic>puppet -- multiple vulnerabilities</topic>
      <affects>
-        <package>
-           <name>puppet</name>
-           <range><gt>2.7.*</gt><lt>2.7.18</lt></range>
-        </package>
+	<package>
+	   <name>puppet</name>
+	   <range><gt>2.7.*</gt><lt>2.7.18</lt></range>
+	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <p>puppet -- multiple vulnerabilities</p>
-           <blockquote cite="http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18">
-              <p>Arbitrary file read on the puppet master from authenticated
-                 clients (high). It is possible to construct an HTTP get request
-                 from an authenticated client with a valid certificate that will
-                 return the contents of an arbitrary file on the Puppet master
-                 that the master has read-access to.</p>
-              <p>Arbitrary file delete/D.O.S on Puppet Master from authenticated
-                 clients (high). Given a Puppet master with the "Delete"
-                 directive allowed in auth.conf for an authenticated host, an
-                 attacker on that host can send a specially crafted Delete
-                 request that can cause an arbitrary file deletion on the Puppet
-                 master, potentially causing a denial of service attack. Note
-                 that this vulnerability does *not* exist in Puppet as
-                 configured by default.</p>
-              <p>The last_run_report.yaml is world readable (medium). The most
-                 recent Puppet run report is stored on the Puppet master with
-                 world-readable permissions. The report file contains the
-                 context diffs of any changes to configuration on an agent,
-                 which may contain sensitive information that an attacker can
-                 then access. The last run report is overwritten with every
-                 Puppet run.</p>
-              <p>Arbitrary file read on the Puppet master by an agent (medium).
-                 This vulnerability is dependent upon vulnerability
-                 "last_run_report.yml is world readable" above. By creating a
-                 hard link of a Puppet-managed file to an arbitrary file that
-                 the Puppet master can read, an attacker forces the contents to
-                 be written to the puppet run summary. The context diff is
-                 stored in last_run_report.yaml, which can then be accessed by
-                 the attacker.</p>
-              <p>Insufficient input validation for agent hostnames (low). An
-                 attacker could trick the administrator into signing an
-                 attacker's certificate rather than the intended one by
-                 constructing specially crafted certificate requests containing
-                 specific ANSI control sequences. It is possible to use the
-                 sequences to rewrite the order of text displayed to an
-                 administrator such that display of an invalid certificate and
-                 valid certificate are transposed. If the administrator signs
-                 the attacker's certificate, the attacker can then
-                 man-in-the-middle the agent.</p>
-              <p>Agents with certnames of IP addresses can be impersonated
-                 (low). If an authenticated host with a certname of an IP
-                 address changes IP addresses, and a second host assumes the
-                 first host's former IP address, the second host will be treated
-                 by the puppet master as the first one, giving the second host
-                 access to the first host's catalog. Note: This will not be
-                 fixed in Puppet versions prior to the forthcoming 3.x. Instead,
-                 with this announcement IP-based authentication in Puppet &lt; 3.x
-                 is deprecated.</p>
-           </blockquote>
-        </body>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	   <p>puppet -- multiple vulnerabilities</p>
+	   <blockquote cite="http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18">
+	      <p>Arbitrary file read on the puppet master from authenticated
+		 clients (high). It is possible to construct an HTTP get request
+		 from an authenticated client with a valid certificate that will
+		 return the contents of an arbitrary file on the Puppet master
+		 that the master has read-access to.</p>
+	      <p>Arbitrary file delete/D.O.S on Puppet Master from authenticated
+		 clients (high). Given a Puppet master with the "Delete"
+		 directive allowed in auth.conf for an authenticated host, an
+		 attacker on that host can send a specially crafted Delete
+		 request that can cause an arbitrary file deletion on the Puppet
+		 master, potentially causing a denial of service attack. Note
+		 that this vulnerability does *not* exist in Puppet as
+		 configured by default.</p>
+	      <p>The last_run_report.yaml is world readable (medium). The most
+		 recent Puppet run report is stored on the Puppet master with
+		 world-readable permissions. The report file contains the
+		 context diffs of any changes to configuration on an agent,
+		 which may contain sensitive information that an attacker can
+		 then access. The last run report is overwritten with every
+		 Puppet run.</p>
+	      <p>Arbitrary file read on the Puppet master by an agent (medium).
+		 This vulnerability is dependent upon vulnerability
+		 "last_run_report.yml is world readable" above. By creating a
+		 hard link of a Puppet-managed file to an arbitrary file that
+		 the Puppet master can read, an attacker forces the contents to
+		 be written to the puppet run summary. The context diff is
+		 stored in last_run_report.yaml, which can then be accessed by
+		 the attacker.</p>
+	      <p>Insufficient input validation for agent hostnames (low). An
+		 attacker could trick the administrator into signing an
+		 attacker's certificate rather than the intended one by
+		 constructing specially crafted certificate requests containing
+		 specific ANSI control sequences. It is possible to use the
+		 sequences to rewrite the order of text displayed to an
+		 administrator such that display of an invalid certificate and
+		 valid certificate are transposed. If the administrator signs
+		 the attacker's certificate, the attacker can then
+		 man-in-the-middle the agent.</p>
+	      <p>Agents with certnames of IP addresses can be impersonated
+		 (low). If an authenticated host with a certname of an IP
+		 address changes IP addresses, and a second host assumes the
+		 first host's former IP address, the second host will be treated
+		 by the puppet master as the first one, giving the second host
+		 access to the first host's catalog. Note: This will not be
+		 fixed in Puppet versions prior to the forthcoming 3.x. Instead,
+		 with this announcement IP-based authentication in Puppet &lt; 3.x
+		 is deprecated.</p>
+	   </blockquote>
+	</body>
      </description>
      <references>
-        <cvename>CVE-2012-3864</cvename>
-        <cvename>CVE-2012-3865</cvename>
-        <cvename>CVE-2012-3866</cvename>
-        <cvename>CVE-2012-3867</cvename>
-        <url>http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3864/</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3865/</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3866/</url>
-        <url>http://puppetlabs.com/security/cve/cve-2012-3867/</url>
+	<cvename>CVE-2012-3864</cvename>
+	<cvename>CVE-2012-3865</cvename>
+	<cvename>CVE-2012-3866</cvename>
+	<cvename>CVE-2012-3867</cvename>
+	<url>http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3864/</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3865/</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3866/</url>
+	<url>http://puppetlabs.com/security/cve/cve-2012-3867/</url>
      </references>
      <dates>
-        <discovery>2012-07-05</discovery>
-        <entry>2012-07-10</entry>
+	<discovery>2012-07-05</discovery>
+	<entry>2012-07-10</entry>
      </dates>
   </vuln>
 
@@ -8004,7 +8004,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	    arbitrary SQL code. The param 'num' is vulnerable to a XSS issue
 	    where the attacker can execute arbitrary HTML and script code in
 	    a user's browser session in context of an affected site.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -8412,9 +8412,9 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>ImageMagick reports:</p>
 	<blockquote cite="http://www.cert.fi/en/reports/2012/vulnerability635606.html">
 	  <p>Three vulnerabilities have been identified in ImageMagick's
-             handling of JPEG and TIFF files. With these vulnerabilities, it is
-             possible to cause a denial of service situation in the target
-             system.</p>
+	     handling of JPEG and TIFF files. With these vulnerabilities, it is
+	     possible to cause a denial of service situation in the target
+	     system.</p>
 	</blockquote>
       </body>
     </description>
@@ -9006,21 +9006,21 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>sympa -- Multiple Security Bypass Vulnerabilities</topic>
     <affects>
       <package>
-        <name>sympa</name>
-        <range><lt>6.1.11</lt></range>
+	<name>sympa</name>
+	<range><lt>6.1.11</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia team reports:</p>
-        <blockquote cite="http://secunia.com/advisories/49045/">
-          <p>Multiple vulnerabilities have been reported in Sympa, which can be
-             exploited by malicious people to bypass certain security
-             restrictions.</p>
-          <p>The vulnerabilities are caused due to the application allowing
-             access to archive functions without checking credentials. This can
-             be exploited to create, download, and delete an archive.</p>
-        </blockquote>
+	<p>Secunia team reports:</p>
+	<blockquote cite="http://secunia.com/advisories/49045/">
+	  <p>Multiple vulnerabilities have been reported in Sympa, which can be
+	     exploited by malicious people to bypass certain security
+	     restrictions.</p>
+	  <p>The vulnerabilities are caused due to the application allowing
+	     access to archive functions without checking credentials. This can
+	     be exploited to create, download, and delete an archive.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -9037,27 +9037,27 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>foswiki -- Script Insertion Vulnerability via unchecked user registration fields</topic>
     <affects>
       <package>
-        <name>foswiki</name>
-        <range><lt>1.1.5</lt></range>
+	<name>foswiki</name>
+	<range><lt>1.1.5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Foswiki team reports:</p>
-        <blockquote cite="http://foswiki.org/Support/SecurityAlert-CVE-2012-1004">
-          <p>When a new user registers, the new user can add arbitrary HTML and
-             script code into the user topic which is generated by the
-             RegistrationAgent via standard registration fields such as
-             "FirstName" or "OrganisationName".</p>
-          <p>By design, Foswiki's normal editing features allow arbitrary HTML
-             markup, including script code, to be inserted into any topic anyway,
-             assuming the authenticated user has CHANGE permission - which is the
-             case on many Foswiki sites. However, the assumption that only
-             authenticated users with CHANGE permission may create script content
-             is false if new users exploit the vulnerability detailed in this
-             alert to manipulate the registration agent into creating that
-             content for them.</p>
-        </blockquote>
+	<p>Foswiki team reports:</p>
+	<blockquote cite="http://foswiki.org/Support/SecurityAlert-CVE-2012-1004">
+	  <p>When a new user registers, the new user can add arbitrary HTML and
+	     script code into the user topic which is generated by the
+	     RegistrationAgent via standard registration fields such as
+	     "FirstName" or "OrganisationName".</p>
+	  <p>By design, Foswiki's normal editing features allow arbitrary HTML
+	     markup, including script code, to be inserted into any topic anyway,
+	     assuming the authenticated user has CHANGE permission - which is the
+	     case on many Foswiki sites. However, the assumption that only
+	     authenticated users with CHANGE permission may create script content
+	     is false if new users exploit the vulnerability detailed in this
+	     alert to manipulate the registration agent into creating that
+	     content for them.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -9214,18 +9214,18 @@ executed in your Internet Explorer while displaying the email.</p>
     <topic>OpenSSL -- DTLS and TLS 1.1, 1.2 denial of service</topic>
     <affects>
       <package>
-        <name>openssl</name>
-        <range><lt>1.0.1_2</lt></range>
+	<name>openssl</name>
+	<range><lt>1.0.1_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>OpenSSL security team reports:</p>
-        <blockquote cite="http://www.openssl.org/news/secadv_20120510.txt">
-          <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1, 1.2 and
-            DTLS can be exploited in a denial of service attack on both clients and
-            servers.</p>
-        </blockquote>
+	<p>OpenSSL security team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20120510.txt">
+	  <p>A flaw in the OpenSSL handling of CBC mode ciphersuites in TLS 1.1, 1.2 and
+	    DTLS can be exploited in a denial of service attack on both clients and
+	    servers.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -9286,7 +9286,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	    font encoding name. Credit to Mateusz Jurczyk of Google Security
 	    Team and Gynvael Coldwind of Google Security Team.</p>
 	  <p>[124652] Medium CVE-2011-3100: Out-of-bounds read drawing dash
- 	    paths. Credit to Google Chrome Security Team (Inferno).</p>
+	    paths. Credit to Google Chrome Security Team (Inferno).</p>
 	</blockquote>
       </body>
     </description>
@@ -9473,8 +9473,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	    all users with Geforce 8 or newer, G80 Quadro or newer, and all
 	    Tesla GPUs to update their drivers to 295.40 or later.</p>
 	</blockquote>
-        <p>Later, it was additionally discovered that similar exploit could
-          be achieved through remapping of VGA window:</p>
+	<p>Later, it was additionally discovered that similar exploit could
+	  be achieved through remapping of VGA window:</p>
 	<blockquote cite="http://nvidia.custhelp.com/app/answers/detail/a_id/3140">
 	  <p>NVIDIA received notification of a security exploit that uses
 	    NVIDIA UNIX device files to map and program registers to redirect
@@ -9499,80 +9499,80 @@ executed in your Internet Explorer while displaying the email.</p>
   <vuln vid="3d55b961-9a2e-11e1-a2ef-001fd0af1a4c">
      <topic>rubygem-mail -- multiple vulnerabilities</topic>
      <affects>
-        <package>
-           <name>rubygem-mail</name>
-           <range><lt>2.4.4</lt></range>
-        </package>
+	<package>
+	   <name>rubygem-mail</name>
+	   <range><lt>2.4.4</lt></range>
+	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <p>rubygem-mail -- multiple vulnerabilities</p>
-           <blockquote cite="http://seclists.org/oss-sec/2012/q2/190">
-              <p>Two issues were fixed. They are a file system traversal in file_delivery method and arbitrary command execution when using exim or sendmail from the command line.</p>
-           </blockquote>
-        </body>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	   <p>rubygem-mail -- multiple vulnerabilities</p>
+	   <blockquote cite="http://seclists.org/oss-sec/2012/q2/190">
+	      <p>Two issues were fixed. They are a file system traversal in file_delivery method and arbitrary command execution when using exim or sendmail from the command line.</p>
+	   </blockquote>
+	</body>
      </description>
      <references>
-        <cvename>CVE-2012-2139</cvename>
-        <cvename>CVE-2012-2140</cvename>
-        <url>http://seclists.org/oss-sec/2012/q2/190</url>
+	<cvename>CVE-2012-2139</cvename>
+	<cvename>CVE-2012-2140</cvename>
+	<url>http://seclists.org/oss-sec/2012/q2/190</url>
      </references>
      <dates>
-        <discovery>2012-03-14</discovery>
-        <entry>2012-05-09</entry>
+	<discovery>2012-03-14</discovery>
+	<entry>2012-05-09</entry>
      </dates>
   </vuln>
 
   <vuln vid="a1d0911f-987a-11e1-a2ef-001fd0af1a4c">
      <topic>node -- private information disclosure</topic>
      <affects>
-        <package>
-           <name>node</name>
-           <name>node-devel</name>
-           <range><lt>0.6.17</lt></range>
-        </package>
+	<package>
+	   <name>node</name>
+	   <name>node-devel</name>
+	   <range><lt>0.6.17</lt></range>
+	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <p>Private information disclosure</p>
-           <blockquote cite="http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/">
-              <p>An attacker can cause private information disclosure.</p>
-           </blockquote>
-        </body>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	   <p>Private information disclosure</p>
+	   <blockquote cite="http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/">
+	      <p>An attacker can cause private information disclosure.</p>
+	   </blockquote>
+	</body>
      </description>
      <references>
-        <url>http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/</url>
+	<url>http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/</url>
      </references>
      <dates>
-        <discovery>2012-04-17</discovery>
-        <entry>2012-05-07</entry>
+	<discovery>2012-04-17</discovery>
+	<entry>2012-05-07</entry>
      </dates>
   </vuln>
 
   <vuln vid="725ab25a-987b-11e1-a2ef-001fd0af1a4c">
      <topic>p5-Config-IniFiles -- unsafe temporary file creation</topic>
      <affects>
-        <package>
-           <name>p5-Config-IniFiles</name>
-           <range><lt>2.71</lt></range>
-        </package>
+	<package>
+	   <name>p5-Config-IniFiles</name>
+	   <range><lt>2.71</lt></range>
+	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <p>Unsafe Temporary file creation</p>
-           <blockquote cite="https://bitbucket.org/shlomif/perl-config-inifiles/changeset/a08fa26f4f59">
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	   <p>Unsafe Temporary file creation</p>
+	   <blockquote cite="https://bitbucket.org/shlomif/perl-config-inifiles/changeset/a08fa26f4f59">
        <p>Config::IniFiles used a predictable name for its temporary
-                 file without opening it correctly.</p>
-           </blockquote>
-        </body>
+		 file without opening it correctly.</p>
+	   </blockquote>
+	</body>
      </description>
      <references>
-        <cvename>CVE-2012-2451</cvename>
-        <url>https://bitbucket.org/shlomif/perl-config-inifiles/changeset/a08fa26f4f59</url>
+	<cvename>CVE-2012-2451</cvename>
+	<url>https://bitbucket.org/shlomif/perl-config-inifiles/changeset/a08fa26f4f59</url>
      </references>
      <dates>
-        <discovery>2012-05-02</discovery>
-        <entry>2012-05-07</entry>
+	<discovery>2012-05-02</discovery>
+	<entry>2012-05-07</entry>
      </dates>
   </vuln>
 
@@ -9631,8 +9631,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<p>Hanno Boeck reports:</p>
 	<blockquote cite="http://www.openwall.com/lists/oss-security/2012/04/28/1">
 	  <p>Fixes [are now available] for various security vulnerabilities
-            including LFI (local file inclusion), XSS (cross site scripting)
-            and others.</p>
+	    including LFI (local file inclusion), XSS (cross site scripting)
+	    and others.</p>
 	</blockquote>
       </body>
     </description>
@@ -9704,9 +9704,9 @@ executed in your Internet Explorer while displaying the email.</p>
 	</package>
      </affects>
      <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-          <p>php development team reports:</p>
-          <blockquote cite="http://www.php.net/archive/2012.php#id2012-04-26-1">
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>php development team reports:</p>
+	  <blockquote cite="http://www.php.net/archive/2012.php#id2012-04-26-1">
 	    <p>Security Enhancements for both PHP 5.3.11 and PHP 5.4.1:</p>
 	    <ul>
 	      <li>Insufficient validating of upload name leading to corrupted $_FILES indices. (CVE-2012-1172) </li>
@@ -9716,17 +9716,17 @@ executed in your Internet Explorer while displaying the email.</p>
 	    <ul>
 	      <li>Regression in magic_quotes_gpc fix for CVE-2012-0831.</li>
 	    </ul>
-          </blockquote>
-        </body>
+	  </blockquote>
+	</body>
      </description>
      <references>
-        <cvename>CVE-2012-0831</cvename>
-        <cvename>CVE-2012-1172</cvename>
-        <url>http://www.php.net/archive/2012.php#id2012-04-26-1</url>
+	<cvename>CVE-2012-0831</cvename>
+	<cvename>CVE-2012-1172</cvename>
+	<url>http://www.php.net/archive/2012.php#id2012-04-26-1</url>
      </references>
      <dates>
-        <discovery>2012-03-01</discovery>
-        <entry>2012-04-28</entry>
+	<discovery>2012-03-01</discovery>
+	<entry>2012-04-28</entry>
 	<modified>2012-05-04</modified>
      </dates>
   </vuln>
