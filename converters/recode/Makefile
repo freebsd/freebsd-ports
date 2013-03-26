@@ -1,13 +1,9 @@
-# New ports collection makefile for:	recode
-# Date created:		14 Jul 1995
-# Whom:			torstenb@FreeBSD.org
-#
+# Created by: torstenb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	recode
 PORTVERSION=	3.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
@@ -19,6 +15,7 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
