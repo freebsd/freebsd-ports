@@ -6,4 +6,4 @@ package is wrapped around the superb Python Requests.
 - Service wrappers for convenient connection initialization
 - Well tested (100% coverage)
 
-WWW:	https://github.com/litl/rauth
+WWW: https://github.com/litl/rauth
