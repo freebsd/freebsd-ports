@@ -32,14 +32,14 @@ RDEP=	AIFF:sox SHN:shorten FLAC APE:mac OFR:ofr:optimfrog LPAC WV:wavpack \
 
 .include <bsd.port.options.mk>
 
-.for i in ${RDEP}
-o=	${i:C/:.*//}
-.	if ${PORT_OPTIONS:M${o}}
-b=	${i:C/^[A-Z]*://:C/:.*//:L}
-p=	${i:C/^[A-Z]*://:C/.*://:L}
+.for o in ${PORT_OPTIONS}
+m=	${RDEP:M${o}*}
+.if ${m}
+b=	${m:C/^[A-Z]*://:C/:.*//:L}
+p=	${m:C/^[A-Z]*://:C/.*://:L}
 RUN_DEPENDS+=	${b}:${PORTSDIR}/audio/${p}
 RUN_DEPENDS:=	${RUN_DEPENDS}
-.	endif
+.endif
 .endfor
 
 .include <bsd.port.mk>
