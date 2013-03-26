@@ -54,7 +54,7 @@ MEMCACHE_DESC=	Enable Memcached caching engine client
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 WITH_PHP_CGI?=	/cgi-bin/php
 
