@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
-MAINTAINER=	geckoFreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An extension to add various web developer tools
 
 XPI_NUM=	60
