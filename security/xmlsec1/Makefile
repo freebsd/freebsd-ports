@@ -1,13 +1,8 @@
-# Ports collection makefile for:	xmlsec1
-# Date created:			Apr 17, 2003
-# Whom:				Jim Geovedi <jim@corebsd.or.id>
-#
+# Created by: Jim Geovedi <jim@corebsd.or.id>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.18
-PORTREVISION=	2
+PORTVERSION=	1.2.19
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
