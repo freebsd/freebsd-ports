@@ -13,7 +13,7 @@ COMMENT=	Library to build an IP-netmask based mtrie
 
 USE_LDCONFIG= yes
 
-.if defined(NOPROFILE)
+.if defined(NO_PROFILE)
 PLIST_SUB+=     HURRRR="@comment "
 .else
 PLIST_SUB+=     HURRRR=""
