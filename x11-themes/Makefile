@@ -56,6 +56,7 @@
     SUBDIR += gnome-look
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
+    SUBDIR += greybird-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
     SUBDIR += gtk-aluminumalloy-toxic-theme
