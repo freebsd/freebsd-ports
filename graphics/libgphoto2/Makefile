@@ -3,7 +3,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -11,7 +11,8 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		hal:${PORTSDIR}/sysutils/hal
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig ltverhack
