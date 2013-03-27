@@ -616,6 +616,7 @@ share/pixmaps/gbrainy48.png
 @dirrm share/gnome/help/gbrainy/C
 @dirrm share/gnome/help/gbrainy
 @dirrm share/games/gbrainy
+@dirrmtry share/games
 @dirrm lib/gbrainy
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
