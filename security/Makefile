@@ -795,6 +795,7 @@
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
     SUBDIR += pyobfsproxy
+    SUBDIR += pyptlib
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
