@@ -2,18 +2,16 @@
 #
 
 PORTNAME=	steadyflow
-PORTVERSION=	0.1.7
-PORTREVISION=	3
+PORTVERSION=	0.2.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
-		https://launchpadlibrarian.net/72208624/
+MASTER_SITES=	https://launchpadlibrarian.net/109019071/ \
+	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
+	LOCAL/olivierd
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Simple download manager
 
 LICENSE=	GPLv3
-
-BROKEN=		Doesn't build with vala 0.18
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gee:${PORTSDIR}/devel/libgee06 \
@@ -21,9 +19,10 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		unique-1:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
+USE_XZ=	yes
 USES=		cmake
 GLIB_SCHEMAS=	net.launchpad.steadyflow.gschema.xml
-USE_GNOME=	desktopfileutils glib20 gtk20
+USE_GNOME=	desktopfileutils glib20 gtk30
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_PKGCONFIG=	build
