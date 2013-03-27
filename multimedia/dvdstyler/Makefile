@@ -2,49 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-DISTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.4.1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
-DISTNAME=	DVDStyler-${DISTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	DVDStyler-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
+COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+BUILD_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
+		avcodec1:${PORTSDIR}/multimedia/ffmpeg1
+RUN_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		xmlto:${PORTSDIR}/textproc/xmlto
-LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
-		exif:${PORTSDIR}/graphics/libexif
+		zip:${PORTSDIR}/archivers/zip
+
+OPTIONS_DEFINE=	GNOME DOCS
 
 USE_BZIP2=	yes
 USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
-USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils
-USE_PKGCONFIG=	build
-WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
+USE_PKGCONFIG=	build
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+= 	"-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}" \
+		ac_cv_path_FFMPEG_PATH="${LOCALBASE}/bin/ffmpeg1"
+MAKE_ENV=	AM_CPPFLAGS="${LIBAV_CFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN1=		dvdstyler.1
 
-.include <bsd.port.pre.mk>
+LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
+LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
+LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	libgnomeui
+GNOMEUI_PC=	libgnomeui-2.0
+.else
+GNOMEUI_PC=	_libgnomeui-2.0_
 .endif
 
 .if defined(WITH_DVD_DEVICE)
@@ -62,18 +77,22 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/GNOMEUI2/s|"libgnomeui-2.0"|"${GNOMEUI_PC}"|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-docDATA||g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|"sg\*"|"cd*"|g' \
+		${WRKSRC}/src/BurnDlg.cpp
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
-		${WRKSRC}/src/BurnDlg.cpp ${WRKSRC}/src/Config.h
-	@${REINPLACE_CMD} -e 's|gnome-config|disable-config|g ;  \
-		s|kde-config|disable-config|g' ${WRKSRC}/configure
+		${WRKSRC}/src/Config.h
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/data/dvdstyler.desktop \
-		${PREFIX}/share/applications/
-	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/src/rc/dvdstyler.png \
-		${PREFIX}/share/pixmaps/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in AUTHORS ChangeLog INSTALL README
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
