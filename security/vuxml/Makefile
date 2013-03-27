@@ -81,7 +81,7 @@ validate: tidy
 		return 1; \
 	fi
 	@${ECHO_MSG} Checking for space/tab...
-	@unexpand "${VUXML_FILE}" | ${SED} 's,[[:space:]]*$$,,g' > "${VUXML_FILE}.unexpanded"
+	@unexpand "${VUXML_FILE}" | ${SED} -E 's,[[:space:]]*$$,,g' > "${VUXML_FILE}.unexpanded"
 	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.unexpanded"; \
 	then \
 		${ECHO_MSG} ... seems okay; \
