@@ -5,7 +5,7 @@ PORTNAME=	PyGreSQL
 PORTVERSION=	4.1.1
 PORTEPOCH=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://pygresql.org/files/
+MASTER_SITES=	http://www.pygresql.org/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
