@@ -767,6 +767,7 @@
     SUBDIR += py-pycryptopp
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
+    SUBDIR += py-pyptlib
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
     SUBDIR += py-rsa
@@ -795,7 +796,6 @@
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
     SUBDIR += pyobfsproxy
-    SUBDIR += pyptlib
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
