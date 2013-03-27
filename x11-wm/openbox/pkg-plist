@@ -173,8 +173,6 @@ share/xsessions/openbox-kde.desktop
 @dirrm share/themes/Syscrash
 @dirrmtry share/themes
 @comment @dirrm %%DATADIR%%
-@dirrmtry share/gnome/wm-properties
-@dirrmtry share/gnome
 @dirrmtry libdata/pkgconfig
 @dirrm include/openbox/%%VERSION%%/obt
 @dirrm include/openbox/%%VERSION%%/obrender
