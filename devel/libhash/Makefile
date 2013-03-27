@@ -31,7 +31,7 @@ MLINKS=		libhash.3 hash_initialise.3 \
 
 USE_LDCONFIG=	yes
 
-.if defined(NOPROFILE)
+.if defined(NO_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""
