@@ -1,25 +1,24 @@
-# Ports collection makefile for:	ksudoku
-# Date created:				30 September 2005
-# Whom:					Bartosz Fabianowski <freebsd@chillt.de>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ksudoku
-PORTVERSION=	0.4
-PORTREVISION=	6
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	games kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
-MAINTAINER=	freebsd@chillt.de
-COMMENT=	A Sudoku generator and solver for KDE
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	${${PORTNAME}_DESC}
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
+CONFLICTS_INSTALL=	kdegames-4.[0-9].*
 
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_GL=		yes
-USES=		cmake
+USE_GL=		glu
+USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
+USES=		cmake:outsource
+USE_QT4=	corelib gui corelib gui opengl \
+		moc_build qmake_build rcc_build uic_build
+USE_XZ=		yes
+MAKE_JOBS_SAFE=	yes
 
+.include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

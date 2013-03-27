@@ -4,6 +4,7 @@ bin/akonadi_birthdays_resource
 bin/akonadi_davgroupware_resource
 bin/akonadi_googlecalendar_resource
 bin/akonadi_googlecontacts_resource
+bin/akonadi_icaldir_resource
 bin/akonadi_imap_resource
 bin/akonadi_invitations_agent
 bin/akonadi_kabc_resource
@@ -26,6 +27,7 @@ bin/kaddressbookmigrator
 bin/kjotsmigrator
 bin/kmail-migrator
 bin/kres-migrator
+bin/nepomukpimindexerutility
 lib/kde4/accountwizard_plugin.so
 lib/kde4/akonadi_akonotes_resource.so
 lib/kde4/akonadi_contacts_resource.so
@@ -64,7 +66,6 @@ lib/libakonadi-xml.so.5.0.1
 lib/libkdepim-copy.so
 lib/libkdepim-copy.so.5
 lib/libkdepim-copy.so.5.0.1
-lib/libkdepim-runtime-dms-copy.so
 lib/libkmindexreader.so
 lib/libkmindexreader.so.5
 lib/libkmindexreader.so.5.0.1
@@ -79,6 +80,7 @@ share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
+share/akonadi/agents/icaldirresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/invitationsagent.desktop
@@ -143,6 +145,8 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
+share/apps/akonadi_nepomuk_feeder/akonadi_nepomuk_feeder.notifyrc
+share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
 share/autostart/kaddressbookmigrator.desktop
 share/config/accountwizard.knsrc
 share/config/kmail-migratorrc
@@ -185,6 +189,8 @@ share/ontology/kde/aneo.trig
 @dirrmtry share/ontology
 @dirrm share/kde4/services/akonadi/davgroupware-providers
 @dirrmtry share/kde4/services/akonadi
+@dirrm share/apps/nepomukpimindexerutility
+@dirrm share/apps/akonadi_nepomuk_feeder
 @dirrm share/apps/akonadi_maildispatcher_agent
 @dirrm share/apps/akonadi_knut_resource
 @dirrm share/apps/akonadi/plugins/serializer
@@ -202,5 +208,3 @@ share/ontology/kde/aneo.trig
 @dirrmtry share/apps/akonadi
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

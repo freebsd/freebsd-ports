@@ -137,6 +137,7 @@
     SUBDIR += kde4-style-polyester
     SUBDIR += kde4-style-skulpture
     SUBDIR += kde4-wallpapers
+    SUBDIR += kde4-wallpapers-freebsd
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kde4-windeco-nitrogen

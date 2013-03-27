@@ -62,6 +62,7 @@ lib/kde4/imports/org/kde/plasma/components/ListItem.qml
 lib/kde4/imports/org/kde/plasma/components/Page.qml
 lib/kde4/imports/org/kde/plasma/components/PageStack.qml
 lib/kde4/imports/org/kde/plasma/components/ProgressBar.qml
+lib/kde4/imports/org/kde/plasma/components/QueryDialog.qml
 lib/kde4/imports/org/kde/plasma/components/RadioButton.qml
 lib/kde4/imports/org/kde/plasma/components/ScrollBar.qml
 lib/kde4/imports/org/kde/plasma/components/SectionScroller.qml
@@ -82,7 +83,7 @@ lib/kde4/imports/org/kde/plasma/components/private/AppManager.js
 lib/kde4/imports/org/kde/plasma/components/private/ButtonShadow.qml
 lib/kde4/imports/org/kde/plasma/components/private/Config.js
 lib/kde4/imports/org/kde/plasma/components/private/DualStateButton.qml
-lib/kde4/imports/org/kde/plasma/components/private/IconLoader.qml
+lib/kde4/imports/org/kde/plasma/components/private/InlineDialog.qml
 lib/kde4/imports/org/kde/plasma/components/private/PageStack.js
 lib/kde4/imports/org/kde/plasma/components/private/RoundShadow.qml
 lib/kde4/imports/org/kde/plasma/components/private/ScrollBarDelegate.qml
@@ -95,7 +96,9 @@ lib/kde4/imports/org/kde/plasma/components/qmldir
 lib/kde4/imports/org/kde/plasma/core/libcorebindingsplugin.so
 lib/kde4/imports/org/kde/plasma/core/qmldir
 lib/kde4/imports/org/kde/plasma/extras/App.qml
+lib/kde4/imports/org/kde/plasma/extras/ConditionalLoader.qml
 lib/kde4/imports/org/kde/plasma/extras/Heading.qml
+lib/kde4/imports/org/kde/plasma/extras/PageRow.qml
 lib/kde4/imports/org/kde/plasma/extras/Paragraph.qml
 lib/kde4/imports/org/kde/plasma/extras/ScrollArea.qml
 lib/kde4/imports/org/kde/plasma/extras/Title.qml
@@ -129,7 +132,6 @@ lib/kde4/kcm_knotify.so
 lib/kde4/kcm_locale.so
 lib/kde4/kcm_nepomuk.so
 lib/kde4/kcm_phonon.so
-%%XINE%%lib/kde4/kcm_phononxine.so
 lib/kde4/kcm_trash.so
 lib/kde4/kcmspellchecking.so
 lib/kde4/kded_desktopnotifier.so
@@ -165,6 +167,7 @@ lib/kde4/kio_remote.so
 lib/kde4/kio_settings.so
 lib/kde4/kio_sftp.so
 lib/kde4/kio_smb.so
+lib/kde4/kio_tags.so
 lib/kde4/kio_thumbnail.so
 lib/kde4/kio_timeline.so
 lib/kde4/kio_trash.so
@@ -237,7 +240,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/private/AppManager.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/ButtonShadow.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/Config.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/DualStateButton.qml
-lib/kde4/platformimports/touch/org/kde/plasma/components/private/IconLoader.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/InlineDialog.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/PageStack.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/RoundShadow.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/ScrollBarDelegate.qml
@@ -304,6 +307,12 @@ share/apps/desktoptheme/default/opaque/dialogs/shutdowndialog.svgz
 share/apps/desktoptheme/default/opaque/widgets/extender-background.svgz
 share/apps/desktoptheme/default/opaque/widgets/panel-background.svgz
 share/apps/desktoptheme/default/opaque/widgets/tooltip.svgz
+share/apps/desktoptheme/default/toolbar-icons/configure.svgz
+share/apps/desktoptheme/default/toolbar-icons/edit.svgz
+share/apps/desktoptheme/default/toolbar-icons/go.svgz
+share/apps/desktoptheme/default/toolbar-icons/list.svgz
+share/apps/desktoptheme/default/toolbar-icons/media.svgz
+share/apps/desktoptheme/default/toolbar-icons/window.svgz
 share/apps/desktoptheme/default/translucent/dialogs/background.svgz
 share/apps/desktoptheme/default/translucent/dialogs/krunner.svgz
 share/apps/desktoptheme/default/translucent/widgets/extender-background.svgz
@@ -339,6 +348,7 @@ share/apps/desktoptheme/default/widgets/media-delegate.svgz
 share/apps/desktoptheme/default/widgets/monitor.svgz
 share/apps/desktoptheme/default/widgets/pager.svgz
 share/apps/desktoptheme/default/widgets/panel-background.svgz
+share/apps/desktoptheme/default/widgets/picker.svgz
 share/apps/desktoptheme/default/widgets/plot-background.svgz
 share/apps/desktoptheme/default/widgets/scrollbar.svgz
 share/apps/desktoptheme/default/widgets/scrollwidget.svgz
@@ -522,16 +532,16 @@ share/desktop-directories/kde-utilities.directory
 share/doc/HTML/en/fundamentals/colors.png
 share/doc/HTML/en/fundamentals/common
 share/doc/HTML/en/fundamentals/config.docbook
-share/doc/HTML/en/fundamentals/find-find-inline.png
-share/doc/HTML/en/fundamentals/find-replace-inline.png
 share/doc/HTML/en/fundamentals/files-locationbar-breadcrumb.png
 share/doc/HTML/en/fundamentals/files-locationbar-context-menu.png
 share/doc/HTML/en/fundamentals/files-locationbar-editable.png
 share/doc/HTML/en/fundamentals/files-locationbar-places-icon.png
 share/doc/HTML/en/fundamentals/files-open.png
 share/doc/HTML/en/fundamentals/files-save.png
+share/doc/HTML/en/fundamentals/find-find-inline.png
 share/doc/HTML/en/fundamentals/find-find.png
 share/doc/HTML/en/fundamentals/find-found.png
+share/doc/HTML/en/fundamentals/find-replace-inline.png
 share/doc/HTML/en/fundamentals/find-replace.png
 share/doc/HTML/en/fundamentals/fonts.png
 share/doc/HTML/en/fundamentals/index.cache.bz2
@@ -825,7 +835,6 @@ share/kde4/services/kcm_attica.desktop
 share/kde4/services/kcm_kdnssd.desktop
 share/kde4/services/kcm_nepomuk.desktop
 share/kde4/services/kcm_phonon.desktop
-%%XINE%%share/kde4/services/kcm_phononxine.desktop
 share/kde4/services/kcmcgi.desktop
 share/kde4/services/kcmkded.desktop
 share/kde4/services/kcmnotify.desktop
@@ -1001,6 +1010,7 @@ share/kde4/services/sftp.protocol
 share/kde4/services/smb.protocol
 share/kde4/services/spellchecking.desktop
 share/kde4/services/svgthumbnail.desktop
+share/kde4/services/tags.protocol
 share/kde4/services/tar.protocol
 share/kde4/services/textthumbnail.desktop
 share/kde4/services/thumbnail.protocol
@@ -2211,6 +2221,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/desktoptheme/default/translucent/widgets
 @dirrm share/apps/desktoptheme/default/translucent/dialogs
 @dirrm share/apps/desktoptheme/default/translucent
+@dirrm share/apps/desktoptheme/default/toolbar-icons
 @dirrm share/apps/desktoptheme/default/opaque/widgets
 @dirrm share/apps/desktoptheme/default/opaque/dialogs
 @dirrm share/apps/desktoptheme/default/opaque

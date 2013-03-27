@@ -4,6 +4,7 @@ lib/kde4/libkonsolepart.so
 lib/libkdeinit4_konsole.so
 lib/libkonsoleprivate.so
 share/applications/kde4/konsole.desktop
+share/apps/kconf_update/konsole-2.10.0-remove-menuindex-from-profiles.sh
 share/apps/kconf_update/konsole-2.9.0-colorscheme-bold-key.sh
 share/apps/kconf_update/konsole-2.9.0-global-options.sh
 share/apps/kconf_update/konsole.upd

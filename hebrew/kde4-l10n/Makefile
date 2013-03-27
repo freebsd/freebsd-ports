@@ -5,7 +5,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	hebrew kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Hebrew messages and documentation for KDE4
+COMMENT=	Hebrew messages and documentation for KDE SC 4
 
 KDE4_L10N=	he
 

@@ -7,7 +7,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Utility port that creates hierarchy of shared KDE4 directories
+COMMENT=	Hierarchy of shared directories for KDE 4 ports
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

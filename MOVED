@@ -1249,7 +1249,6 @@ graphics/xaralx||2010-09-14|Has expired: Does not compile with png-1.4 and lates
 misc/kde4-l10n-bn_IN||2010-09-14|Has expired
 misc/kde4-l10n-hne||2010-09-14|Has expired
 misc/kde4-l10n-ku||2010-09-14|Has expired
-misc/kde4-l10n-mr||2010-09-14|Has expired
 multimedia/vlconwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 net-im/wooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 russian/php_doc||2010-09-14|Has expired: Support for the Russian translation of the PHP manual seems to have stopped
@@ -4188,3 +4187,5 @@ print/ghostscript7-commfont|print/ghostscript9|2013-03-26|ghostscript 7 is outda
 print/ghostscript7-jpnfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 print/ghostscript7-korfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
+print/kdeutils4-printer-applet||2013-03-27|Superseded by print/kde4-print-manager
+print/system-config-printer-kde||2013-03-27|Superseded by print/kde4-print-manager

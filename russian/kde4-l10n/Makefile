@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	russian kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Russian messages and documentation for KDE4
+COMMENT=	Russian messages and documentation for KDE SC 4
 
 KDE4_L10N=	ru
 

@@ -1,0 +1,32 @@
+lib/kde4/kcm_printer_manager.so
+lib/kde4/kded_printmanager.so
+lib/kde4/libexec/add-printer
+lib/kde4/libexec/configure-printer
+lib/kde4/libexec/print-queue
+lib/kde4/plasma_engine_printers.so
+lib/kde4/plasma_engine_printjobs.so
+lib/libkcupslib.so
+share/apps/plasma/plasmoids/printmanager/contents/config/main.xml
+share/apps/plasma/plasmoids/printmanager/contents/ui/JobItem.qml
+share/apps/plasma/plasmoids/printmanager/contents/ui/PrinterItem.qml
+share/apps/plasma/plasmoids/printmanager/contents/ui/ScrollableListView.qml
+share/apps/plasma/plasmoids/printmanager/contents/ui/config.ui
+share/apps/plasma/plasmoids/printmanager/contents/ui/printmanager.qml
+share/apps/plasma/plasmoids/printmanager/metadata.desktop
+share/apps/plasma/services/org.kde.printers.operations
+share/apps/plasma/services/org.kde.printjobs.operations
+share/apps/printmanager/printmanager.notifyrc
+share/dbus-1/services/org.kde.AddPrinter.service
+share/dbus-1/services/org.kde.ConfigurePrinter.service
+share/dbus-1/services/org.kde.PrintQueue.service
+share/kde4/services/kcm_printer_manager.desktop
+share/kde4/services/kded/printmanager.desktop
+share/kde4/services/plasma-applet-printmanager.desktop
+share/kde4/services/plasma-engine-printers.desktop
+share/kde4/services/plasma-engine-printjobs.desktop
+@dirrm share/apps/printmanager
+@dirrm share/apps/plasma/plasmoids/printmanager/contents/ui
+@dirrm share/apps/plasma/plasmoids/printmanager/contents/config
+@dirrm share/apps/plasma/plasmoids/printmanager/contents
+@dirrm share/apps/plasma/plasmoids/printmanager
+@dirrmtry share/apps/plasma/plasmoids

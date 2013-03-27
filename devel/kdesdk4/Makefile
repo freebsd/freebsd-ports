@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
@@ -22,14 +22,14 @@ LATEST_LINK=	${PORTNAME}4
 
 CONFLICTS=	kdeutils-4.5.[0-5]
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs sharedmime \
 		akonadi automoc4 qimageblitz_build strigi
 USES=		cmake:outsource
 USE_PERL5=	yes
-USE_QT4=	dbus designer gui qt3support \
-		script scripttools sql svg xml \
+USE_QT4=	corelib dbus declarative designer gui qt3support \
+		script scripttools sql xml \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -60,11 +60,12 @@ MAN1=	adddebug.1 \
 	xml2pot.1 \
 	zonetab2pot.py.1
 
-OPTIONS_DEFINE=	ANTLR KATE
+OPTIONS_DEFINE=	ANTLR KATE KATE_PATE
 OPTIONS_DEFAULT=	KATE
 
 ANTLR_DESC=	Support for po2xml and swappo tools
 KATE_DESC=	Install Kate advanced text editor
+KATE_PATE_DESC=	Support for Python plugins in Kate
 
 .include <bsd.port.options.mk>
 
@@ -81,14 +82,15 @@ PLIST_SUB+=	ANTLR="@comment "
 USE_KDE4+=	kate_run
 .endif
 
+.if ${PORT_OPTIONS:MKATE_PATE}
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/pateplugin.so:${PORTSDIR}/editors/kate-plugin-pate
+.endif
+
 post-patch:
 	${FIND} ${WRKSRC}/scripts -type f | \
 		${XARGS} ${REINPLACE_CMD} -Ee 's,/usr/bin/(perl|python|ruby|svn),${LOCALBASE}/bin/\1,g'
 	# Prevent updating MIME during build.
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/okteta/mimetypes/CMakeLists.txt
-
-post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
 .include <bsd.port.mk>

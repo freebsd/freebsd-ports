@@ -68,7 +68,6 @@ share/locale/fa/LC_MESSAGES/kcm_memory.mo
 share/locale/fa/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/fa/LC_MESSAGES/kcm_pci.mo
 share/locale/fa/LC_MESSAGES/kcm_phonon.mo
-share/locale/fa/LC_MESSAGES/kcm_phononxine.mo
 share/locale/fa/LC_MESSAGES/kcm_platform.mo
 share/locale/fa/LC_MESSAGES/kcm_solid.mo
 share/locale/fa/LC_MESSAGES/kcm_solid_actions.mo
@@ -192,12 +191,14 @@ share/locale/fa/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/fa/LC_MESSAGES/kio_nfs.mo
 share/locale/fa/LC_MESSAGES/kio_nntp.mo
 share/locale/fa/LC_MESSAGES/kio_pop3.mo
+share/locale/fa/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/fa/LC_MESSAGES/kio_remote.mo
 share/locale/fa/LC_MESSAGES/kio_sftp.mo
 share/locale/fa/LC_MESSAGES/kio_sieve.mo
 share/locale/fa/LC_MESSAGES/kio_smb.mo
 share/locale/fa/LC_MESSAGES/kio_smtp.mo
 share/locale/fa/LC_MESSAGES/kio_svn.mo
+share/locale/fa/LC_MESSAGES/kio_tags.mo
 share/locale/fa/LC_MESSAGES/kio_thumbnail.mo
 share/locale/fa/LC_MESSAGES/kio_timeline.mo
 share/locale/fa/LC_MESSAGES/kio_trash.mo
@@ -356,7 +357,6 @@ share/locale/fa/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fa/LC_MESSAGES/plasma_scriptengine_qscript.mo
-share/locale/fa/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/fa/LC_MESSAGES/plasmagenericshell.mo
 share/locale/fa/LC_MESSAGES/plasmapkg.mo
 share/locale/fa/LC_MESSAGES/processcore.mo

@@ -93,8 +93,6 @@ share/apps/dolphinpart/kpartplugins/kshellcmdplugin.rc
 share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/fsview_part.rc
 share/apps/kcmcss/template.css
-share/apps/kconf_update/kfmclient_3_2.upd
-share/apps/kconf_update/kfmclient_3_2_update.sh
 share/apps/kcontrol/pics/onlyone.png
 share/apps/kcontrol/pics/overlapping.png
 share/apps/kdm/pics/users/Blackbox.png
@@ -229,6 +227,7 @@ share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
 share/doc/HTML/en/dolphin/locationbar-context-menu.png
 share/doc/HTML/en/dolphin/locationbar-editable.png
 share/doc/HTML/en/dolphin/locationbar-places-icon.png
+share/doc/HTML/en/dolphin/nepomuk-search-more-options.png
 share/doc/HTML/en/dolphin/nepomuk-search.png
 share/doc/HTML/en/dolphin/preferences-general-behavior.png
 share/doc/HTML/en/dolphin/preferences-navigation.png

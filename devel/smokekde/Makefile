@@ -5,7 +5,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for KDE
@@ -14,10 +14,10 @@ CONFLICTS=	kdebindings-smoke-4.[0-6].*
 
 USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 		smokegen smokeqt akonadi automoc4 soprano
-USE_QT4=	dbus designer gui network opengl qt3support sql svg xml \
+USE_QT4=	corelib dbus designer_build gui network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USE_XZ=	yes
-USES=		cmake
+USE_XZ=		yes
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

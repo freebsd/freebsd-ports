@@ -105,7 +105,6 @@ share/locale/wa/LC_MESSAGES/kate.mo
 share/locale/wa/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/wa/LC_MESSAGES/kateopenheader.mo
 share/locale/wa/LC_MESSAGES/katepart4.mo
-share/locale/wa/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/wa/LC_MESSAGES/kblankscrn.mo
 share/locale/wa/LC_MESSAGES/kbreakout.mo
 share/locale/wa/LC_MESSAGES/kcalc.mo
@@ -124,7 +123,6 @@ share/locale/wa/LC_MESSAGES/kcm_memory.mo
 share/locale/wa/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/wa/LC_MESSAGES/kcm_pci.mo
 share/locale/wa/LC_MESSAGES/kcm_phonon.mo
-share/locale/wa/LC_MESSAGES/kcm_phononxine.mo
 share/locale/wa/LC_MESSAGES/kcm_platform.mo
 share/locale/wa/LC_MESSAGES/kcm_solid.mo
 share/locale/wa/LC_MESSAGES/kcm_solid_actions.mo
@@ -365,9 +363,9 @@ share/locale/wa/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_news.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_notes.mo
-share/locale/wa/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/wa/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -431,11 +429,8 @@ share/locale/wa/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
 share/locale/wa/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/wa/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/wa/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/wa/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/wa/LC_MESSAGES/plasmagenericshell.mo
 share/locale/wa/LC_MESSAGES/plasmapkg.mo
-share/locale/wa/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/wa/LC_MESSAGES/plasmoidviewer.mo
 share/locale/wa/LC_MESSAGES/powerdevil.mo
 share/locale/wa/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/wa/LC_MESSAGES/powerdevilprofilesconfig.mo

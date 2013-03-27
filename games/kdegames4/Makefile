@@ -1,50 +1,37 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	games kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Games for KDE 4
-
-LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
-		qca.2:${PORTSDIR}/devel/qca \
-		qhull.5:${PORTSDIR}/math/qhull5 \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+COMMENT=	Games for KDE 4 (meta port)
 
 LATEST_LINK=	${PORTNAME}4
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
 
-USE_GL=		glu
-USE_KDE4=	kdehier kdelibs kdeprefix sharedmime automoc4
-USES=		cmake:outsource
-USE_OPENAL=	al
-USE_QT4=	dbus gui network opengl qt3support script svg xml \
-		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
-CMAKE_ARGS+=	-DBUILD_kajongg:BOOL=FALSE
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+OPTIONS_DEFINE=	${KDE4_GAMES_ALL}
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-OPTIONS_DEFINE=	KAJONGG
+.include <${.CURDIR}/Makefile.common>
 
-KAJONGG_DESC=	Install the classical Mah Jongg for four players
+.for game in ${KDE4_GAMES_ALL}
+${game}_PORT?=		games/${game}
+${game}_DETECT?=	${KDE4_PREFIX}/bin/${game}
+${game}_DESC?=		Please fix a typo in option name/desc!
+.endfor
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MKAJONGG}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kajongg:${PORTSDIR}/games/kajongg
-.endif
+.for game in ${KDE4_GAMES_ALL}
+. if ${PORT_OPTIONS:M${game}}
+RUN_DEPENDS+=	${${game}_DETECT}:${PORTSDIR}/${${game}_PORT}
+. endif
+.endfor
 
-post-patch:
-	# Prevent updating MIME during build.
-	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
-		${WRKSRC}/palapeli/mime/CMakeLists.txt
-
-post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.mk>

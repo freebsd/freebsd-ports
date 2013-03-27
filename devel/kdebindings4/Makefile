@@ -7,7 +7,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE bindings meta port
+COMMENT=	KDE bindings (meta port)
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes

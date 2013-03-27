@@ -8,7 +8,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Set of entertaining, educational programs for KDE 4 (meta-port)
+COMMENT=	Entertaining and educational programs for KDE 4 (meta port)
 
 LATEST_LINK=	${PORTNAME}4
 

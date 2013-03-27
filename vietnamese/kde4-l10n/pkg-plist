@@ -34,10 +34,10 @@ share/locale/vi/LC_MESSAGES/kblackbox.mo
 share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/vi/LC_MESSAGES/kcm_attica.mo
 share/locale/vi/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/vi/LC_MESSAGES/kcm_emoticons.mo
 share/locale/vi/LC_MESSAGES/kcm_krfb.mo
 share/locale/vi/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/vi/LC_MESSAGES/kcm_phonon.mo
-share/locale/vi/LC_MESSAGES/kcm_phononxine.mo
 share/locale/vi/LC_MESSAGES/kcm_platform.mo
 share/locale/vi/LC_MESSAGES/kcmaccess.mo
 share/locale/vi/LC_MESSAGES/kcmaudiocd.mo
@@ -138,6 +138,7 @@ share/locale/vi/LC_MESSAGES/kio_thumbnail.mo
 share/locale/vi/LC_MESSAGES/kio_timeline.mo
 share/locale/vi/LC_MESSAGES/kio_trash.mo
 share/locale/vi/LC_MESSAGES/kio_zeroconf.mo
+share/locale/vi/LC_MESSAGES/kioclient.mo
 share/locale/vi/LC_MESSAGES/kioexec.mo
 share/locale/vi/LC_MESSAGES/kjumpingcube.mo
 share/locale/vi/LC_MESSAGES/klettres.mo
@@ -198,6 +199,7 @@ share/locale/vi/LC_MESSAGES/libkscreensaver.mo
 share/locale/vi/LC_MESSAGES/libkworkspace.mo
 share/locale/vi/LC_MESSAGES/libphonon.mo
 share/locale/vi/LC_MESSAGES/libplasma.mo
+share/locale/vi/LC_MESSAGES/libplasmaweather.mo
 share/locale/vi/LC_MESSAGES/libtaskmanager.mo
 share/locale/vi/LC_MESSAGES/mf_konqplugin.mo
 share/locale/vi/LC_MESSAGES/minitoolsplugin.mo
@@ -211,13 +213,18 @@ share/locale/vi/LC_MESSAGES/nsplugin.mo
 share/locale/vi/LC_MESSAGES/phonon_kde.mo
 share/locale/vi/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_battery.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_clock.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_newspaper.mo
-share/locale/vi/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_notifier.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_qstardict.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_weather.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/vi/LC_MESSAGES/plasmapkg.mo
 share/locale/vi/LC_MESSAGES/rellinks.mo

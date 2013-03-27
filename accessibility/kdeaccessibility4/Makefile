@@ -8,7 +8,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Accessibility applications for KDE4
+COMMENT=	Accessibility applications for KDE 4
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes

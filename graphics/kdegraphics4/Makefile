@@ -8,7 +8,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Graphics utilities for KDE 4 (meta-port)
+COMMENT=	Graphics utilities for KDE 4 (meta port)
 
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/mobithumbnail.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket \
 		${KDE4_PREFIX}/lib/strigi/strigiea_dvi.so:${PORTSDIR}/graphics/kdegraphics4-strigi-analyzer \

@@ -9,15 +9,15 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for KDE
+COMMENT=	Localized messages and documentation for KDE SC 4
 
 NO_BUILD=	yes
 USE_KDE4=	kdeprefix
 
 KDE4_LANG_ALL=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fa \
-		fi fr ga gl he hi hr hu ia is it ja kk km ko lt lv nb nds \
-		nl nn pa pl pt pt_BR ro ru si sk sl sr sv tg th tr ug uk \
-		vi wa zh_CN zh_TW
+		fi fr ga gl he hi hr hu ia is it ja kk km ko lt lv mr nb \
+		nds nl nn pa pl pt pt_BR ro ru si sk sl sr sv tg th tr ug \
+		uk vi wa zh_CN zh_TW
 
 ar_PORT=	arabic/kde4-l10n
 ca@valencia_PORT=	misc/kde4-l10n-ca_valencia

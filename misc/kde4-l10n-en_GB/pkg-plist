@@ -177,7 +177,7 @@ share/locale/en_GB/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_nepomukfeeder.mo
+share/locale/en_GB/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_next.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -255,7 +255,6 @@ share/locale/en_GB/LC_MESSAGES/kate.mo
 share/locale/en_GB/LC_MESSAGES/kate_kttsd.mo
 share/locale/en_GB/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katebuild-plugin.mo
-share/locale/en_GB/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefiletemplates.mo
 share/locale/en_GB/LC_MESSAGES/kategdbplugin.mo
@@ -264,7 +263,6 @@ share/locale/en_GB/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/en_GB/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/en_GB/LC_MESSAGES/kateopenheader.mo
 share/locale/en_GB/LC_MESSAGES/katepart4.mo
-share/locale/en_GB/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/en_GB/LC_MESSAGES/katesnippets_tng.mo
 share/locale/en_GB/LC_MESSAGES/katesql.mo
 share/locale/en_GB/LC_MESSAGES/katesymbolviewer.mo
@@ -304,7 +302,6 @@ share/locale/en_GB/LC_MESSAGES/kcm_memory.mo
 share/locale/en_GB/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/en_GB/LC_MESSAGES/kcm_pci.mo
 share/locale/en_GB/LC_MESSAGES/kcm_phonon.mo
-share/locale/en_GB/LC_MESSAGES/kcm_phononxine.mo
 share/locale/en_GB/LC_MESSAGES/kcm_platform.mo
 share/locale/en_GB/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/en_GB/LC_MESSAGES/kcm_solid.mo
@@ -631,7 +628,6 @@ share/locale/en_GB/LC_MESSAGES/libplasma.mo
 share/locale/en_GB/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/en_GB/LC_MESSAGES/libplasmaclock.mo
 share/locale/en_GB/LC_MESSAGES/libplasmaweather.mo
-share/locale/en_GB/LC_MESSAGES/librtm.mo
 share/locale/en_GB/LC_MESSAGES/libtaskmanager.mo
 share/locale/en_GB/LC_MESSAGES/libtemplateparser.mo
 share/locale/en_GB/LC_MESSAGES/lokalize.mo
@@ -726,12 +722,12 @@ share/locale/en_GB/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_news.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_notes.mo
-share/locale/en_GB/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
+share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -797,6 +793,7 @@ share/locale/en_GB/LC_MESSAGES/plasma_runner_kill.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_kopete.mo
+share/locale/en_GB/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
@@ -822,20 +819,18 @@ share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_pattern.mo
 share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_weather.mo
-share/locale/en_GB/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/en_GB/LC_MESSAGES/plasmagenericshell.mo
 share/locale/en_GB/LC_MESSAGES/plasmapkg.mo
-share/locale/en_GB/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/en_GB/LC_MESSAGES/plasmoidviewer.mo
 share/locale/en_GB/LC_MESSAGES/powerdevil.mo
 share/locale/en_GB/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/en_GB/LC_MESSAGES/powerdevilprofilesconfig.mo
-share/locale/en_GB/LC_MESSAGES/printer-applet.mo
 share/locale/en_GB/LC_MESSAGES/processcore.mo
 share/locale/en_GB/LC_MESSAGES/processui.mo
 share/locale/en_GB/LC_MESSAGES/randrmonitor.mo
 share/locale/en_GB/LC_MESSAGES/rellinks.mo
 share/locale/en_GB/LC_MESSAGES/rocs.mo
+share/locale/en_GB/LC_MESSAGES/rocscore.mo
+share/locale/en_GB/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/en_GB/LC_MESSAGES/searchbarplugin.mo
 share/locale/en_GB/LC_MESSAGES/solid-hardware.mo
 share/locale/en_GB/LC_MESSAGES/solid-network.mo
@@ -848,7 +843,6 @@ share/locale/en_GB/LC_MESSAGES/strigila_diff.mo
 share/locale/en_GB/LC_MESSAGES/superkaramba.mo
 share/locale/en_GB/LC_MESSAGES/svgpart.mo
 share/locale/en_GB/LC_MESSAGES/sweeper.mo
-share/locale/en_GB/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/en_GB/LC_MESSAGES/systemsettings.mo
 share/locale/en_GB/LC_MESSAGES/tasks-mobile.mo
 share/locale/en_GB/LC_MESSAGES/timezones4.mo

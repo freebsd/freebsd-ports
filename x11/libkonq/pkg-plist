@@ -19,8 +19,6 @@ lib/libkonq.so
 lib/libkonq.so.7
 lib/libkonq.so.7.0.1
 share/apps/kbookmark/directory_bookmarkbar.desktop
-share/apps/kconf_update/favicons.upd
-share/apps/kconf_update/move_favicons.sh
 share/apps/konqueror/pics/arrow_bottomleft.png
 share/apps/konqueror/pics/arrow_bottomright.png
 share/apps/konqueror/pics/arrow_topleft.png

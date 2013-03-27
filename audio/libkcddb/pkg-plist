@@ -13,7 +13,6 @@ lib/kde4/kcm_cddb.so
 lib/libkcddb.so
 lib/libkcddb.so.5
 lib/libkcddb.so.5.0.1
-share/apps/kconf_update/kcmcddb-emailsettings.upd
 share/config.kcfg/libkcddb.kcfg
 share/doc/HTML/en/kcontrol/cddbretrieval/common
 share/doc/HTML/en/kcontrol/cddbretrieval/index.cache.bz2

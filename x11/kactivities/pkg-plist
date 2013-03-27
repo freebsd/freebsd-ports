@@ -1,50 +1,48 @@
-bin/kactivitymanagerd
 include/KDE/KActivities/Consumer
 include/KDE/KActivities/Controller
 include/KDE/KActivities/Info
+include/KDE/KActivities/Models/ActivityModel
+include/KDE/KActivities/Models/ResourceModel
 include/KDE/KActivities/ResourceInstance
+include/kactivities-models/activitymodel.h
+include/kactivities-models/kactivities_models_export.h
+include/kactivities-models/resourcemodel.h
 include/kactivities/consumer.h
 include/kactivities/controller.h
 include/kactivities/info.h
 include/kactivities/kactivities_export.h
 include/kactivities/resourceinstance.h
+lib/cmake/KActivities-Models/KActivities-ModelsConfig.cmake
+lib/cmake/KActivities-Models/KActivities-ModelsConfigVersion.cmake
+lib/cmake/KActivities-Models/KActivitiesModelsLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KActivities-Models/KActivitiesModelsLibraryTargets.cmake
 lib/cmake/KActivities/KActivitiesConfig.cmake
 lib/cmake/KActivities/KActivitiesConfigVersion.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
-lib/kde4/activitymanager_plugin_globalshortcuts.so
-lib/kde4/activitymanager_plugin_slc.so
-lib/kde4/activitymanager_plugin_sqlite.so
-lib/kde4/activitymanager_uihandler_declarative.so
-lib/kde4/activitymanager_uihandler_kdialog.so
-lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
-lib/kde4/kio_activities.so
+lib/kde4/imports/org/kde/activities/models/libkactivities-models-component-plugin.so
+lib/kde4/imports/org/kde/activities/models/qmldir
+lib/libkactivities-models.so
+lib/libkactivities-models.so.1
+lib/libkactivities-models.so.1.0.0
 lib/libkactivities.so
 lib/libkactivities.so.6
-lib/libkactivities.so.6.0.0
+lib/libkactivities.so.6.1.0
+libdata/pkgconfig/libkactivities-models.pc
 libdata/pkgconfig/libkactivities.pc
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/ChoiceDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/MessageDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/NewPasswordDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/PasswordDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/uihandler.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/metadata.desktop
-share/kde4/services/activities.protocol
-share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
-share/kde4/services/activitymanager-plugin-slc.desktop
-share/kde4/services/activitymanager-plugin-sqlite.desktop
-share/kde4/services/kactivitymanagerd.desktop
-share/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
-share/kde4/servicetypes/activitymanager-plugin.desktop
 share/ontology/kde/kao.ontology
 share/ontology/kde/kao.trig
 @dirrmtry share/ontology/kde
 @dirrmtry share/ontology
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler
-@dirrmtry share/apps/plasma/packages
+@dirrm lib/kde4/imports/org/kde/activities/models
+@dirrm lib/kde4/imports/org/kde/activities
+@dirrmtry lib/kde4/imports/org/kde
+@dirrmtry lib/kde4/imports/org
+@dirrmtry lib/kde4/imports
+@dirrm lib/cmake/KActivities-Models
 @dirrm lib/cmake/KActivities
 @dirrmtry lib/cmake
+@dirrm include/kactivities-models
 @dirrm include/kactivities
+@dirrm include/KDE/KActivities/Models
 @dirrm include/KDE/KActivities

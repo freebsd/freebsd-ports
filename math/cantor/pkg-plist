@@ -42,7 +42,7 @@ lib/kde4/cantor_variablemanagerplugin.so
 lib/kde4/libcantorpart.so
 lib/libcantor_config.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.0.0.3
+lib/libcantorlibs.so.0.0.4
 lib/libcantorlibs.so.1
 share/applications/kde4/cantor.desktop
 share/apps/cantor/cantor_advancedplot_assistant.rc
@@ -60,6 +60,7 @@ share/apps/cantor/cantor_runscript_assistant.rc
 share/apps/cantor/cantor_scripteditor.rc
 share/apps/cantor/cantor_shell.rc
 share/apps/cantor/cantor_solve_assistant.rc
+share/apps/cantor/maximabackend/cantor-initmaxima.lisp
 share/apps/cantor/maximabackend/keywords.xml
 share/apps/cantor/octavebackend/cantor_eigenvectors.m
 share/apps/cantor/octavebackend/cantor_plot2d.m

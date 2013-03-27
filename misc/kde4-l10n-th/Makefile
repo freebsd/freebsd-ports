@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Thai messages and documentation for KDE4
+COMMENT=	Thai messages and documentation for KDE SC 4
 
 KDE4_L10N=	th
 

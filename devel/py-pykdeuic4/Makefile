@@ -7,20 +7,22 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pykde4-${PORTVERSION}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	An enhanced version of pyuic4
+COMMENT=	Enhanced version of pyuic4
 
 USE_KDE4=	kdelibs automoc4 pykde4
 USE_PYTHON=	2.5+
-USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
-USE_XZ=	yes
+USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_XZ=		yes
 DISTINFO_FILE=	${PORTSDIR}/devel/py-pykde4/distinfo
-USES=		cmake
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
+
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${PYTHON_SITE_PACKAGES_INSTALL_DIR},${PYTHONPREFIX_SITELIBDIR},g' \

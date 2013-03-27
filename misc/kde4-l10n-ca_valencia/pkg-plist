@@ -26,7 +26,7 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_nepomukfeeder.mo
+share/locale/ca@valencia/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_next.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -104,7 +104,6 @@ share/locale/ca@valencia/LC_MESSAGES/kate.mo
 share/locale/ca@valencia/LC_MESSAGES/kate_kttsd.mo
 share/locale/ca@valencia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katebuild-plugin.mo
-share/locale/ca@valencia/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefiletemplates.mo
 share/locale/ca@valencia/LC_MESSAGES/kategdbplugin.mo
@@ -113,7 +112,6 @@ share/locale/ca@valencia/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kateopenheader.mo
 share/locale/ca@valencia/LC_MESSAGES/katepart4.mo
-share/locale/ca@valencia/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katesnippets_tng.mo
 share/locale/ca@valencia/LC_MESSAGES/katesql.mo
 share/locale/ca@valencia/LC_MESSAGES/katesymbolviewer.mo
@@ -153,7 +151,6 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_memory.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_pci.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_phonon.mo
-share/locale/ca@valencia/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_platform.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_solid.mo
@@ -479,7 +476,6 @@ share/locale/ca@valencia/LC_MESSAGES/libplasma.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasmaclock.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasmaweather.mo
-share/locale/ca@valencia/LC_MESSAGES/librtm.mo
 share/locale/ca@valencia/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca@valencia/LC_MESSAGES/lokalize.mo
 share/locale/ca@valencia/LC_MESSAGES/lskat.mo
@@ -574,12 +570,12 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_news.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_notes.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -671,20 +667,18 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_wallpaper_pattern.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_wallpaper_weather.mo
-share/locale/ca@valencia/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ca@valencia/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ca@valencia/LC_MESSAGES/plasmapkg.mo
-share/locale/ca@valencia/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/ca@valencia/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ca@valencia/LC_MESSAGES/powerdevil.mo
 share/locale/ca@valencia/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/powerdevilprofilesconfig.mo
-share/locale/ca@valencia/LC_MESSAGES/printer-applet.mo
 share/locale/ca@valencia/LC_MESSAGES/processcore.mo
 share/locale/ca@valencia/LC_MESSAGES/processui.mo
 share/locale/ca@valencia/LC_MESSAGES/randrmonitor.mo
 share/locale/ca@valencia/LC_MESSAGES/rellinks.mo
 share/locale/ca@valencia/LC_MESSAGES/rocs.mo
+share/locale/ca@valencia/LC_MESSAGES/rocscore.mo
+share/locale/ca@valencia/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/searchbarplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/solid-hardware.mo
 share/locale/ca@valencia/LC_MESSAGES/solid-network.mo
@@ -697,7 +691,6 @@ share/locale/ca@valencia/LC_MESSAGES/strigila_diff.mo
 share/locale/ca@valencia/LC_MESSAGES/superkaramba.mo
 share/locale/ca@valencia/LC_MESSAGES/svgpart.mo
 share/locale/ca@valencia/LC_MESSAGES/sweeper.mo
-share/locale/ca@valencia/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/ca@valencia/LC_MESSAGES/systemsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/tasks-mobile.mo
 share/locale/ca@valencia/LC_MESSAGES/timezones4.mo

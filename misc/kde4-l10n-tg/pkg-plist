@@ -72,7 +72,6 @@ share/locale/tg/LC_MESSAGES/kcm_memory.mo
 share/locale/tg/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/tg/LC_MESSAGES/kcm_pci.mo
 share/locale/tg/LC_MESSAGES/kcm_phonon.mo
-share/locale/tg/LC_MESSAGES/kcm_phononxine.mo
 share/locale/tg/LC_MESSAGES/kcm_solid.mo
 share/locale/tg/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/tg/LC_MESSAGES/kcmaccess.mo
@@ -358,10 +357,8 @@ share/locale/tg/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
 share/locale/tg/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/tg/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/tg/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/tg/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/tg/LC_MESSAGES/plasmagenericshell.mo
 share/locale/tg/LC_MESSAGES/plasmapkg.mo
-share/locale/tg/LC_MESSAGES/plasmoidviewer.mo
 share/locale/tg/LC_MESSAGES/powerdevil.mo
 share/locale/tg/LC_MESSAGES/processcore.mo
 share/locale/tg/LC_MESSAGES/processui.mo

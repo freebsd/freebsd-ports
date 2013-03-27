@@ -563,6 +563,7 @@
     SUBDIR += nbosd
     SUBDIR += ncdu
     SUBDIR += nepomuk-core
+    SUBDIR += nepomuk-widgets
     SUBDIR += netident
     SUBDIR += news
     SUBDIR += nitrogen

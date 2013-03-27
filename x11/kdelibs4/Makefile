@@ -3,17 +3,15 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		aspell:${PORTSDIR}/textproc/aspell \
 		jasper:${PORTSDIR}/graphics/jasper \
 		pcre:${PORTSDIR}/devel/pcre \
 		avahi-core:${PORTSDIR}/net/avahi-app \
@@ -25,24 +23,21 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		qca:${PORTSDIR}/devel/qca \
 		HUpnp:${PORTSDIR}/net/hupnp \
 		polkit-qt-core-1:${PORTSDIR}/sysutils/polkit-qt \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		dbusmenu-qt:${PORTSDIR}/devel/libdbusmenu-qt
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xauth:${PORTSDIR}/x11/xauth \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/aspell/en.multi:${PORTSDIR}/textproc/en-aspell
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 CONFLICTS=	kdebase-runtime-4.5.[0-5]
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2 libxslt
@@ -51,17 +46,19 @@ USE_KDE4=	kdehier kdeprefix oxygen \
 USES=		cmake:outsource
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_QT4=	dbus declarative designer gui imageformats_run \
-		network opengl phonon qdbusviewer_run qt3support \
+USE_QT4=	corelib dbus declarative designer_build gui \
+		network opengl phonon qt3support \
 		qtestlib script sql svg webkit xml \
-		moc_build qmake_build rcc_build uic_build
+		moc_build qmake_build rcc_build uic_build \
+		imageformats_run qdbusviewer_run
 USE_XORG=	sm x11 xcursor xext xfixes xrender xtst
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DWITH_FAM:BOOL=On \
-		-DHUPNP_INCLUDE_PATH:PATH="${LOCALBASE}/include" \
+		-DWITH_ASPELL:BOOL=Off \
+		-DWITH_HSPELL:BOOL=Off \
 		-DKDE_DISTRIBUTION_TEXT:STRING="${OPSYS}" \
 		-DKDE_DEFAULT_HOME:STRING=".kde4"
 
@@ -82,6 +79,9 @@ MAN8=	kbuildsycoca4.8 \
 	kdeinit4.8 \
 	meinproc4.8
 
+OPTIONS_DEFINE=	AVAHI
+AVAHI_DESC=	Use Avahi's mDNSResponder (otherwise Apple's)
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
@@ -93,9 +93,8 @@ LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
 .endif
 
-.if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h) || defined(WITH_LIBDNS)
-LIB_DEPENDS+=	avahi-qt4.1:${PORTSDIR}/net/avahi-qt4 \
-		dns_sd:${PORTSDIR}/net/avahi-libdns
+.if ${PORT_OPTIONS:MAVAHI}
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/avahi-libdns
 .else
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .endif
@@ -139,8 +138,5 @@ pre-configure:
 # then we can disable it.
 	${REINPLACE_CMD} -e '/macro_bool_to_01/ s|^.*X11_Xscreensaver.*$$|set(HAVE_XSCREENSAVER 0)|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-
-post-install:
-	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>

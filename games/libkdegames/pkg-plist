@@ -1,0 +1,155 @@
+include/KDE/KExtHighscore
+include/KDE/KGameClock
+include/KDE/KGamePopupItem
+include/KDE/KGameRenderedItem
+include/KDE/KGameRenderedObjectItem
+include/KDE/KGameRenderer
+include/KDE/KGameRendererClient
+include/KDE/KHighscore
+include/KDE/KScoreDialog
+include/KDE/KStandardGameAction
+include/KDE/KgAudioScene
+include/KDE/KgDifficulty
+include/KDE/KgSound
+include/KDE/KgTheme
+include/KDE/KgThemeProvider
+include/KDE/KgThemeSelector
+include/highscore/kexthighscore.h
+include/highscore/kexthighscore_item.h
+include/highscore/khighscore.h
+include/highscore/kscoredialog.h
+include/kgameclock.h
+include/kgamepopupitem.h
+include/kgamerendereditem.h
+include/kgamerenderedobjectitem.h
+include/kgamerenderer.h
+include/kgamerendererclient.h
+include/kgaudioscene.h
+include/kgdifficulty.h
+include/kgsound.h
+include/kgtheme.h
+include/kgthemeprovider.h
+include/kgthemeselector.h
+include/kstandardgameaction.h
+include/libkdegames_capabilities.h
+include/libkdegames_export.h
+include/libkdegamesprivate/kchat.h
+include/libkdegamesprivate/kchatbase.h
+include/libkdegamesprivate/kchatbaseitemdelegate.h
+include/libkdegamesprivate/kchatbasemodel.h
+include/libkdegamesprivate/kchatdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgameconnectdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedebugdialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedialog.h
+include/libkdegamesprivate/kgame/dialogs/kgamedialogconfig.h
+include/libkdegamesprivate/kgame/dialogs/kgameerrordialog.h
+include/libkdegamesprivate/kgame/kgame.h
+include/libkdegamesprivate/kgame/kgamechat.h
+include/libkdegamesprivate/kgame/kgameerror.h
+include/libkdegamesprivate/kgame/kgameio.h
+include/libkdegamesprivate/kgame/kgamemessage.h
+include/libkdegamesprivate/kgame/kgamenetwork.h
+include/libkdegamesprivate/kgame/kgameprocess.h
+include/libkdegamesprivate/kgame/kgameproperty.h
+include/libkdegamesprivate/kgame/kgamepropertyarray.h
+include/libkdegamesprivate/kgame/kgamepropertyhandler.h
+include/libkdegamesprivate/kgame/kgamesequence.h
+include/libkdegamesprivate/kgame/kgameversion.h
+include/libkdegamesprivate/kgame/kmessageclient.h
+include/libkdegamesprivate/kgame/kmessageio.h
+include/libkdegamesprivate/kgame/kmessageserver.h
+include/libkdegamesprivate/kgame/kplayer.h
+include/libkdegamesprivate/kgamecanvas.h
+include/libkdegamesprivate/kgamedifficulty.h
+include/libkdegamesprivate/kgamesvgdocument.h
+include/libkdegamesprivate/kgametheme.h
+include/libkdegamesprivate/kgamethemeselector.h
+include/libkdegamesprivate/libkdegamesprivate_export.h
+lib/cmake/KDEGames/KDEGamesConfig.cmake
+lib/cmake/KDEGames/KDEGamesConfigVersion.cmake
+lib/cmake/KDEGames/KDEGamesLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KDEGames/KDEGamesLibraryDepends.cmake
+lib/libkdegames.so
+lib/libkdegames.so.6
+lib/libkdegames.so.6.0.0
+lib/libkdegamesprivate.so
+lib/libkdegamesprivate.so.1
+lib/libkdegamesprivate.so.1.0.0
+share/apps/carddecks/svg-ancient-egyptians/11.png
+share/apps/carddecks/svg-ancient-egyptians/Ancient_Egyptians.svgz
+share/apps/carddecks/svg-ancient-egyptians/index.desktop
+share/apps/carddecks/svg-dondorf/11.png
+share/apps/carddecks/svg-dondorf/dondorf.svgz
+share/apps/carddecks/svg-dondorf/index.desktop
+share/apps/carddecks/svg-future/11.png
+share/apps/carddecks/svg-future/future.svgz
+share/apps/carddecks/svg-future/index.desktop
+share/apps/carddecks/svg-gm-paris/11.png
+share/apps/carddecks/svg-gm-paris/index.desktop
+share/apps/carddecks/svg-gm-paris/paris.svgz
+share/apps/carddecks/svg-jolly-royal/11.png
+share/apps/carddecks/svg-jolly-royal/index.desktop
+share/apps/carddecks/svg-jolly-royal/jolly-royal.svgz
+share/apps/carddecks/svg-konqi-modern/11.png
+share/apps/carddecks/svg-konqi-modern/index.desktop
+share/apps/carddecks/svg-konqi-modern/konqi.svgz
+share/apps/carddecks/svg-nicu-ornamental/11.png
+share/apps/carddecks/svg-nicu-ornamental/AUTHORS
+share/apps/carddecks/svg-nicu-ornamental/COPYING
+share/apps/carddecks/svg-nicu-ornamental/index.desktop
+share/apps/carddecks/svg-nicu-ornamental/ornamental.svgz
+share/apps/carddecks/svg-nicu-white/11.png
+share/apps/carddecks/svg-nicu-white/AUTHORS
+share/apps/carddecks/svg-nicu-white/COPYING
+share/apps/carddecks/svg-nicu-white/index.desktop
+share/apps/carddecks/svg-nicu-white/white.svgz
+share/apps/carddecks/svg-oxygen-air/11.png
+share/apps/carddecks/svg-oxygen-air/index.desktop
+share/apps/carddecks/svg-oxygen-air/oxygen-air.svgz
+share/apps/carddecks/svg-oxygen-white/11.png
+share/apps/carddecks/svg-oxygen-white/index.desktop
+share/apps/carddecks/svg-oxygen-white/oxygen-white.svgz
+share/apps/carddecks/svg-oxygen/11.png
+share/apps/carddecks/svg-oxygen/index.desktop
+share/apps/carddecks/svg-oxygen/oxygen.svgz
+share/apps/carddecks/svg-penguins/11.png
+share/apps/carddecks/svg-penguins/COPYRIGHT
+share/apps/carddecks/svg-penguins/index.desktop
+share/apps/carddecks/svg-penguins/penguins.svgz
+share/apps/carddecks/svg-standard/11.png
+share/apps/carddecks/svg-standard/index.desktop
+share/apps/carddecks/svg-standard/standard.svgz
+share/apps/carddecks/svg-tigullio-international/index.desktop
+share/apps/carddecks/svg-tigullio-international/queen-of-hearts.png
+share/apps/carddecks/svg-tigullio-international/tigullio-international.svgz
+share/apps/carddecks/svg-xskat-french/11.png
+share/apps/carddecks/svg-xskat-french/COPYRIGHT
+share/apps/carddecks/svg-xskat-french/french.svgz
+share/apps/carddecks/svg-xskat-french/index.desktop
+share/apps/carddecks/svg-xskat-german/11.png
+share/apps/carddecks/svg-xskat-german/COPYRIGHT
+share/apps/carddecks/svg-xskat-german/german.svgz
+share/apps/carddecks/svg-xskat-german/index.desktop
+share/apps/kconf_update/kgthemeprovider-migration.upd
+@dirrm share/apps/carddecks/svg-xskat-german
+@dirrm share/apps/carddecks/svg-xskat-french
+@dirrm share/apps/carddecks/svg-tigullio-international
+@dirrm share/apps/carddecks/svg-standard
+@dirrm share/apps/carddecks/svg-penguins
+@dirrm share/apps/carddecks/svg-oxygen-white
+@dirrm share/apps/carddecks/svg-oxygen-air
+@dirrm share/apps/carddecks/svg-oxygen
+@dirrm share/apps/carddecks/svg-nicu-white
+@dirrm share/apps/carddecks/svg-nicu-ornamental
+@dirrm share/apps/carddecks/svg-konqi-modern
+@dirrm share/apps/carddecks/svg-jolly-royal
+@dirrm share/apps/carddecks/svg-gm-paris
+@dirrm share/apps/carddecks/svg-future
+@dirrm share/apps/carddecks/svg-dondorf
+@dirrm share/apps/carddecks/svg-ancient-egyptians
+@dirrm share/apps/carddecks
+@dirrm lib/cmake/KDEGames
+@dirrm include/libkdegamesprivate/kgame/dialogs
+@dirrm include/libkdegamesprivate/kgame
+@dirrm include/libkdegamesprivate
+@dirrm include/highscore

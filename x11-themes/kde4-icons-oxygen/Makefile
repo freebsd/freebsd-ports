@@ -7,14 +7,14 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	kde4-icons-
 DISTNAME=	${PORTNAME}-icons-${PORTVERSION}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier
-USES=		cmake
+USES=		cmake:outsource
 INSTALL_TARGET=	install
 EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --exclude '${DISTNAME}/scalable'
 

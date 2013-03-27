@@ -6,7 +6,7 @@ CATEGORIES=	devel kde perl5
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	p5-
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for Qt
@@ -14,11 +14,12 @@ COMMENT=	Perl bindings for Qt
 LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_PERL5=	yes
 USE_KDE4=	kdehier kdeprefix smokeqt qimageblitz
-USE_QT4=	qmake_build moc_build uic_build rcc_build
-USES=		cmake
+USE_QT4=	corelib dbus gui network xml \
+		qmake_build moc_build uic_build rcc_build
+USES=		cmake:outsource
 
 MAKE_JOBS_SAFE=	yes
 

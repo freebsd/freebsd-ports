@@ -6,7 +6,7 @@ CATEGORIES=	devel kde ruby
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for KDE
@@ -16,11 +16,11 @@ CONFLICTS=	ruby1[89]-kdebindings-4.[0-6].*
 USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 		qtruby smokegen smokekde smokeqt \
 		akonadi automoc4 soprano
-USE_QT4=	dbus network opengl sql svg xml \
+USE_QT4=	corelib network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
-USE_XZ=	yes
-USES=		cmake
+USE_XZ=		yes
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

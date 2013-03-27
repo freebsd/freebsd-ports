@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	hungarian kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Hungarian messages and documentation for KDE4
+COMMENT=	Hungarian messages and documentation for KDE SC 4
 
 KDE4_L10N=	hu
 

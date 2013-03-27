@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	polish kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Polish messages and documentation for KDE4
+COMMENT=	Polish messages and documentation for KDE SC 4
 
 KDE4_L10N=	pl
 

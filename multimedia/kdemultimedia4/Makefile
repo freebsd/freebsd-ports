@@ -8,7 +8,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Multimedia applications (meta-port)
+COMMENT=	KDE Multimedia applications (meta port)
 
 LATEST_LINK=	${PORTNAME}4
 

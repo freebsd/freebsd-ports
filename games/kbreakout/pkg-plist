@@ -1,0 +1,35 @@
+bin/kbreakout
+share/applications/kde4/kbreakout.desktop
+share/apps/kbreakout/kbreakoutui.rc
+share/apps/kbreakout/levelsets/default.levelset
+share/apps/kbreakout/themes/IceWorld.desktop
+share/apps/kbreakout/themes/IceWorld.svgz
+share/apps/kbreakout/themes/IceWorld_preview.png
+share/apps/kbreakout/themes/alien_preview.png
+share/apps/kbreakout/themes/alienbreakout.desktop
+share/apps/kbreakout/themes/alienbreakout.svgz
+share/apps/kbreakout/themes/crystal.desktop
+share/apps/kbreakout/themes/crystal.svgz
+share/apps/kbreakout/themes/crystal_preview.png
+share/apps/kbreakout/themes/default.desktop
+share/apps/kbreakout/themes/egyptian_breakout_preview.png
+share/apps/kbreakout/themes/egyptianbreakout.svgz
+share/apps/kbreakout/themes/simple.desktop
+share/apps/kbreakout/themes/simple.svgz
+share/apps/kbreakout/themes/simple_preview.png
+share/apps/kbreakout/themes/web20.desktop
+share/apps/kbreakout/themes/web20.svgz
+share/apps/kbreakout/themes/web20_preview.png
+share/doc/HTML/en/kbreakout/common
+share/doc/HTML/en/kbreakout/index.cache.bz2
+share/doc/HTML/en/kbreakout/index.docbook
+share/icons/hicolor/128x128/apps/kbreakout.png
+share/icons/hicolor/16x16/apps/kbreakout.png
+share/icons/hicolor/22x22/apps/kbreakout.png
+share/icons/hicolor/32x32/apps/kbreakout.png
+share/icons/hicolor/48x48/apps/kbreakout.png
+share/icons/hicolor/64x64/apps/kbreakout.png
+@dirrm share/doc/HTML/en/kbreakout
+@dirrm share/apps/kbreakout/themes
+@dirrm share/apps/kbreakout/levelsets
+@dirrm share/apps/kbreakout

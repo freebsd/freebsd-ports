@@ -1,0 +1,23 @@
+bin/kbattleship
+share/applications/kde4/kbattleship.desktop
+share/apps/kbattleship/kbattleshipui.rc
+share/apps/kbattleship/pictures/default.desktop
+share/apps/kbattleship/pictures/default_theme.svgz
+share/apps/kbattleship/sounds/ship-player-shoot-water.ogg
+share/apps/kbattleship/sounds/ship-player1-shoot.ogg
+share/apps/kbattleship/sounds/ship-player2-shoot.ogg
+share/apps/kbattleship/sounds/ship-sink.ogg
+share/doc/HTML/en/kbattleship/common
+share/doc/HTML/en/kbattleship/index.cache.bz2
+share/doc/HTML/en/kbattleship/index.docbook
+share/icons/hicolor/128x128/apps/kbattleship.png
+share/icons/hicolor/16x16/apps/kbattleship.png
+share/icons/hicolor/22x22/apps/kbattleship.png
+share/icons/hicolor/32x32/apps/kbattleship.png
+share/icons/hicolor/48x48/apps/kbattleship.png
+share/icons/hicolor/64x64/apps/kbattleship.png
+share/kde4/services/kbattleship.protocol
+@dirrm share/doc/HTML/en/kbattleship
+@dirrm share/apps/kbattleship/sounds
+@dirrm share/apps/kbattleship/pictures
+@dirrm share/apps/kbattleship

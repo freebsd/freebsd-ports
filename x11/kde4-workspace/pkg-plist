@@ -34,10 +34,6 @@ bin/plasma-desktop
 bin/plasma-netbook
 bin/plasma-overlay
 bin/plasma-windowed
-bin/plasmaengineexplorer
-bin/plasmawallpaperviewer
-bin/plasmoidviewer
-bin/remote-widgets-browser
 bin/solid-action-desktop-gen
 bin/startkde
 bin/startkde4
@@ -156,17 +152,28 @@ lib/cmake/KDE4Workspace/KDE4WorkspaceConfig.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfigVersion.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets.cmake
+lib/kconf_update_bin/force_krunner_lock_shortcut_unreg
 lib/kconf_update_bin/krdb_clearlibrarypath
 lib/kconf_update_bin/kwin_update_default_rules
+lib/kconf_update_bin/kwin_update_settings_410
 lib/kconf_update_bin/kwin_update_settings_49
 lib/kconf_update_bin/kwin_update_tabbox_qml_settings
 lib/kconf_update_bin/kwin_update_tabbox_settings
+lib/kconf_update_bin/notifications-to-orgkdenotifications
 lib/kconf_update_bin/plasma-add-shortcut-to-menu
 lib/kconf_update_bin/plasma-to-plasma-desktop
 lib/kde4/classic_mode.so
 lib/kde4/devinfo.so
 lib/kde4/fontthumbnail.so
 lib/kde4/icon_mode.so
+lib/kde4/imports/org/kde/kwin/decoration/ButtonGroup.qml
+lib/kde4/imports/org/kde/kwin/decoration/Decoration.qml
+lib/kde4/imports/org/kde/kwin/decoration/DecorationButton.qml
+lib/kde4/imports/org/kde/kwin/decoration/MenuButton.qml
+lib/kde4/imports/org/kde/kwin/decoration/libdecorationplugin.so
+lib/kde4/imports/org/kde/kwin/decoration/qmldir
+lib/kde4/imports/org/kde/kwin/decorations/plastik/libplastikplugin.so
+lib/kde4/imports/org/kde/kwin/decorations/plastik/qmldir
 lib/kde4/ion_bbcukmet.so
 lib/kde4/ion_debianweather.so
 lib/kde4/ion_envcan.so
@@ -219,10 +226,12 @@ lib/kde4/kcm_standard_actions.so
 lib/kde4/kcm_style.so
 lib/kde4/kcm_usb.so
 lib/kde4/kcm_workspaceoptions.so
+lib/kde4/kded_appmenu.so
 lib/kde4/kded_freespacenotifier.so
 lib/kde4/kded_kephal.so
 lib/kde4/kded_keyboard.so
 lib/kde4/kded_khotkeys.so
+lib/kde4/kded_ktouchpadenabler.so
 lib/kde4/kded_kwrited.so
 lib/kde4/kded_powerdevil.so
 lib/kde4/kded_randrmonitor.so
@@ -255,11 +264,9 @@ lib/kde4/kwin3_aurorae.so
 lib/kde4/kwin3_b2.so
 lib/kde4/kwin3_laptop.so
 lib/kde4/kwin3_oxygen.so
-lib/kde4/kwin3_plastik.so
 lib/kde4/kwin4_effect_builtins.so
 lib/kde4/kwin_b2_config.so
 lib/kde4/kwin_oxygen_config.so
-lib/kde4/kwin_plastik_config.so
 lib/kde4/libexec/backlighthelper
 lib/kde4/libexec/fontinst
 lib/kde4/libexec/fontinst_helper
@@ -271,7 +278,7 @@ lib/kde4/libexec/kdm_config
 lib/kde4/libexec/kdm_greet
 lib/kde4/libexec/kfontprint
 lib/kde4/libexec/krootimage
-lib/kde4/libexec/kscreenlocker
+lib/kde4/libexec/kscreenlocker_greet
 lib/kde4/libexec/ksysguardprocesslist_helper
 lib/kde4/libexec/kwin_killer_helper
 lib/kde4/libexec/kwin_opengl_test
@@ -287,7 +294,6 @@ lib/kde4/plasma_applet_dig_clock.so
 lib/kde4/plasma_applet_icon.so
 lib/kde4/plasma_applet_keyboard.so
 lib/kde4/plasma_applet_launcher.so
-lib/kde4/plasma_applet_notifications.so
 lib/kde4/plasma_applet_pager.so
 lib/kde4/plasma_applet_panelspacer_internal.so
 lib/kde4/plasma_applet_quicklaunch.so
@@ -525,23 +531,21 @@ share/apps/kcmkeys/win3.kksrc
 share/apps/kcmkeys/win4.kksrc
 share/apps/kcmkeys/wm3.kksrc
 share/apps/kcmsolidactions/solid-action-template.desktop
+share/apps/kcmstyle/kcmstyle.notifyrc
 share/apps/kcmusb/usb.ids
-share/apps/kconf_update/convertShortcuts.pl
-share/apps/kconf_update/kaccel.upd
-share/apps/kconf_update/kcmdisplayrc.upd
 share/apps/kconf_update/klipper-kconfigxt.upd
 share/apps/kconf_update/krdb_libpathwipe.upd
-share/apps/kconf_update/ksmserver.upd
+share/apps/kconf_update/kscreenlocker_locksession-shortcut.upd
 share/apps/kconf_update/ksmserver_shortcuts.upd
 share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwin_remove_delay_focus.sh
 share/apps/kconf_update/kwin_remove_delay_focus.upd
 share/apps/kconf_update/kwin_remove_effects.upd
+share/apps/kconf_update/kwin_update_410.upd
 share/apps/kconf_update/kwin_update_49.upd
 share/apps/kconf_update/kwin_update_tabbox_qml_settings.upd
 share/apps/kconf_update/kwin_update_tabbox_settings.upd
-share/apps/kconf_update/mouse_cursor_theme.upd
-share/apps/kconf_update/move_session_config.sh
+share/apps/kconf_update/notifications-to-orgkdenotifications.upd
 share/apps/kconf_update/plasma-add-shortcut-to-menu.upd
 share/apps/kconf_update/plasma-to-plasmadesktop-shortcuts.upd
 share/apps/kconf_update/plasmarc-to-plasmadesktoprc.upd
@@ -661,6 +665,20 @@ share/apps/kdm/themes/circles/flower.png
 share/apps/kdm/themes/circles/help.png
 share/apps/kdm/themes/circles/options.png
 share/apps/kdm/themes/circles/screenshot.png
+share/apps/kdm/themes/elarun/KdmGreeterTheme.desktop
+share/apps/kdm/themes/elarun/elarun.xml
+share/apps/kdm/themes/elarun/lineedit_active.png
+share/apps/kdm/themes/elarun/lineedit_normal.png
+share/apps/kdm/themes/elarun/lock.png
+share/apps/kdm/themes/elarun/login_active.png
+share/apps/kdm/themes/elarun/login_normal.png
+share/apps/kdm/themes/elarun/pw_icon.png
+share/apps/kdm/themes/elarun/rectangle.png
+share/apps/kdm/themes/elarun/rectangle_overlay.png
+share/apps/kdm/themes/elarun/screenshot.png
+share/apps/kdm/themes/elarun/session_normal.png
+share/apps/kdm/themes/elarun/system_normal.png
+share/apps/kdm/themes/elarun/user_icon.png
 share/apps/kdm/themes/horos/KdmGreeterTheme.desktop
 share/apps/kdm/themes/horos/horos.xml
 share/apps/kdm/themes/horos/lineedit_active.png
@@ -721,7 +739,12 @@ share/apps/kmenuedit/icons/hicolor/32x32/actions/menu_new.png
 share/apps/kmenuedit/icons/hicolor/32x32/actions/menu_new_sep.png
 share/apps/kmenuedit/kmenueditui.rc
 share/apps/konqsidebartng/virtual_folders/services/fonts.desktop
-share/apps/kscreenlocker/kscreenlocker.notifyrc
+share/apps/ksmserver/ksmserver.notifyrc
+share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/AccelButton.qml
+share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/Greeter.qml
+share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/SessionSwitching.qml
+share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/main.qml
+share/apps/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop
 share/apps/ksmserver/themes/contour/ContourButton.qml
 share/apps/ksmserver/themes/contour/main.qml
 share/apps/ksmserver/themes/contour/metadata.desktop
@@ -733,27 +756,6 @@ share/apps/ksmserver/themes/default/helper.js
 share/apps/ksmserver/themes/default/main.qml
 share/apps/ksmserver/themes/default/metadata.desktop
 share/apps/ksmserver/themes/default/screenshot.png
-share/apps/ksplash/Themes/Horos/1024x768/background.png
-share/apps/ksplash/Themes/Horos/1280x1024/background.png
-share/apps/ksplash/Themes/Horos/1600x1200/background.png
-share/apps/ksplash/Themes/Horos/1600x1200/description.txt
-share/apps/ksplash/Themes/Horos/1600x1200/icon1.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon1_anim.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon2.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon2_anim.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon3.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon3_anim.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon4.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon4_anim.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon5.png
-share/apps/ksplash/Themes/Horos/1600x1200/icon5_anim.png
-share/apps/ksplash/Themes/Horos/1600x1200/rectangle.png
-share/apps/ksplash/Themes/Horos/1920x1080/background.png
-share/apps/ksplash/Themes/Horos/1920x1200/background.png
-share/apps/ksplash/Themes/Horos/600x400/background.png
-share/apps/ksplash/Themes/Horos/800x600/background.png
-share/apps/ksplash/Themes/Horos/Preview.png
-share/apps/ksplash/Themes/Horos/Theme.rc
 share/apps/ksplash/Themes/Minimalistic/Preview.png
 share/apps/ksplash/Themes/Minimalistic/Theme.rc
 share/apps/ksplash/Themes/Minimalistic/images/kdegear.png
@@ -825,6 +827,11 @@ share/apps/kwin/cube-reflection.glsl
 share/apps/kwin/cubecap.png
 share/apps/kwin/cylinder.frag
 share/apps/kwin/cylinder.vert
+share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/config/main.xml
+share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/PlastikButton.qml
+share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/config.ui
+share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/main.qml
+share/apps/kwin/decorations/kwin4_decoration_qml_plastik/metadata.desktop
 share/apps/kwin/default_rules/fsp_workarounds_1.kwinrules
 share/apps/kwin/default_rules/plasma_desktop_containment.kwinrules
 share/apps/kwin/effects/kwin4_effect_fade/contents/code/main.js
@@ -832,12 +839,15 @@ share/apps/kwin/effects/kwin4_effect_fade/contents/config/main.xml
 share/apps/kwin/effects/kwin4_effect_fade/metadata.desktop
 share/apps/kwin/effects/kwin4_effect_fadedesktop/contents/code/main.js
 share/apps/kwin/effects/kwin4_effect_fadedesktop/metadata.desktop
+share/apps/kwin/effects/kwin4_effect_maximize/contents/code/maximize.js
+share/apps/kwin/effects/kwin4_effect_maximize/metadata.desktop
 share/apps/kwin/explosion-end.png
 share/apps/kwin/explosion-start.png
 share/apps/kwin/explosion.frag
 share/apps/kwin/invert.frag
 share/apps/kwin/kcm_kwindecoration/AuroraeDecoration.qml
 share/apps/kwin/kcm_kwindecoration/AuroraePreview.qml
+share/apps/kwin/kcm_kwindecoration/DecorationPreview.qml
 share/apps/kwin/kcm_kwindecoration/main.qml
 share/apps/kwin/kcm_kwintabbox/dolphin.png
 share/apps/kwin/kcm_kwintabbox/kmail.png
@@ -849,7 +859,6 @@ share/apps/kwin/laptop.desktop
 share/apps/kwin/logout-blur.frag
 share/apps/kwin/lookingglass.frag
 share/apps/kwin/oxygenclient.desktop
-share/apps/kwin/plastik.desktop
 share/apps/kwin/scripts/desktopchangeosd/contents/ui/main.qml
 share/apps/kwin/scripts/desktopchangeosd/metadata.desktop
 share/apps/kwin/scripts/synchronizeskipswitcher/contents/code/main.js
@@ -857,22 +866,31 @@ share/apps/kwin/scripts/synchronizeskipswitcher/metadata.desktop
 share/apps/kwin/scripts/videowall/contents/code/main.js
 share/apps/kwin/scripts/videowall/metadata.desktop
 share/apps/kwin/sphere.vert
+share/apps/kwin/stripTitle.js
+share/apps/kwin/tabbox/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/big_icons/contents/ui/IconTabBox.qml
+share/apps/kwin/tabbox/big_icons/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/big_icons/contents/ui/main.qml
 share/apps/kwin/tabbox/big_icons/metadata.desktop
+share/apps/kwin/tabbox/compact/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/compact/contents/ui/main.qml
 share/apps/kwin/tabbox/compact/metadata.desktop
 share/apps/kwin/tabbox/desktop.qml
+share/apps/kwin/tabbox/informative/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/informative/contents/ui/main.qml
 share/apps/kwin/tabbox/informative/metadata.desktop
+share/apps/kwin/tabbox/present_windows/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/present_windows/contents/ui/main.qml
 share/apps/kwin/tabbox/present_windows/metadata.desktop
 share/apps/kwin/tabbox/small_icons/contents/ui/IconTabBox.qml
+share/apps/kwin/tabbox/small_icons/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/small_icons/contents/ui/main.qml
 share/apps/kwin/tabbox/small_icons/metadata.desktop
 share/apps/kwin/tabbox/tabbox.qml
+share/apps/kwin/tabbox/text/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/text/contents/ui/main.qml
 share/apps/kwin/tabbox/text/metadata.desktop
+share/apps/kwin/tabbox/thumbnails/contents/ui/ShadowedSvgItem.qml
 share/apps/kwin/tabbox/thumbnails/contents/ui/main.qml
 share/apps/kwin/tabbox/thumbnails/metadata.desktop
 share/apps/kwin/tabbox/window_strip/contents/ui/main.qml
@@ -882,7 +900,6 @@ share/apps/kwin/tm_outer.png
 share/apps/kwin/vignetting.frag
 share/apps/kwrited/kwrited.notifyrc
 share/apps/plasma-desktop/init/00-defaultLayout.js
-share/apps/plasma-desktop/init/05-freebsdWallpaper.js
 share/apps/plasma-desktop/plasma-desktop.notifyrc
 share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
 share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
@@ -920,6 +937,20 @@ share/apps/plasma/packages/org.kde.desktop.widgetexplorer/contents/ui/AppletDele
 share/apps/plasma/packages/org.kde.desktop.widgetexplorer/contents/ui/Tooltip.qml
 share/apps/plasma/packages/org.kde.desktop.widgetexplorer/contents/ui/main.qml
 share/apps/plasma/packages/org.kde.desktop.widgetexplorer/metadata.desktop
+share/apps/plasma/packages/org.kde.pager/contents/ui/main.qml
+share/apps/plasma/packages/org.kde.pager/contents/ui/utils.js
+share/apps/plasma/packages/org.kde.pager/metadata.desktop
+share/apps/plasma/packages/org.kde.systemtray/contents/code/IconsList.js
+share/apps/plasma/packages/org.kde.systemtray/contents/code/TasksSet.js
+share/apps/plasma/packages/org.kde.systemtray/contents/code/main.js
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/ArrowArea.qml
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/IconsGrid.qml
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/IconsList.qml
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/StatusNotifierItem.qml
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/TrayIcon.qml
+share/apps/plasma/packages/org.kde.systemtray/contents/ui/main.qml
+share/apps/plasma/plasmoids/battery/contents/code/logic.js
+share/apps/plasma/plasmoids/battery/contents/code/platform.js
 share/apps/plasma/plasmoids/battery/contents/config/main.xml
 share/apps/plasma/plasmoids/battery/contents/ui/BatteryIcon.qml
 share/apps/plasma/plasmoids/battery/contents/ui/PopupDialog.qml
@@ -938,6 +969,22 @@ share/apps/plasma/plasmoids/notifier/contents/ui/StatusBar.qml
 share/apps/plasma/plasmoids/notifier/contents/ui/config.ui
 share/apps/plasma/plasmoids/notifier/contents/ui/devicenotifier.qml
 share/apps/plasma/plasmoids/notifier/metadata.desktop
+share/apps/plasma/plasmoids/org.kde.notifications/contents/config/main.xml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/JobDelegate.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/Jobs.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/LastNotificationPopup.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/NotificationDelegate/NotificationDelegate.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/NotificationDelegate/qmldir
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/NotificationIcon.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/Notifications.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/Title.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/config.ui
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/main.qml
+share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/uiproperties.js
+share/apps/plasma/plasmoids/org.kde.notifications/metadata.desktop
+share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch/ui/NotificationDelegate/NotificationDelegate.qml
+share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch/ui/NotificationDelegate/qmldir
+share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch/ui/uiproperties.js
 share/apps/plasma/plasmoids/org.kde.showActivityManager/contents/ui/main.qml
 share/apps/plasma/plasmoids/org.kde.showActivityManager/metadata.desktop
 share/apps/plasma/services/activities.operations
@@ -1006,7 +1053,6 @@ share/autostart/plasma-desktop.desktop
 share/autostart/plasma.desktop
 share/config.kcfg/freespacenotifier.kcfg
 share/config.kcfg/klaunch.kcfg
-share/config.kcfg/kscreensaversettings.kcfg
 share/config.kcfg/kwin.kcfg
 share/config.kcfg/plasma-shell-desktop.kcfg
 share/config/activities.knsrc
@@ -1017,18 +1063,19 @@ share/config/kdm.knsrc
 share/config/kfontinst.knsrc
 share/config/ksplash.knsrc
 share/config/ksysguard.knsrc
+share/config/kwineffect.knsrc
 share/config/kwinscripts.knsrc
 share/config/kwinswitcher.knsrc
 share/config/plasma-overlayrc
 share/config/plasma-themes.knsrc
 share/config/wallpaper.knsrc
 share/config/xcursor.knsrc
-share/dbus-1/interfaces/org.freedesktop.ScreenSaver.xml
+share/dbus-1/interfaces/com.canonical.AppMenu.Registrar.xml
 share/dbus-1/interfaces/org.kde.KSMServerInterface.xml
 share/dbus-1/interfaces/org.kde.KWin.xml
+share/dbus-1/interfaces/org.kde.kded.appmenu.xml
 share/dbus-1/interfaces/org.kde.khotkeys.xml
 share/dbus-1/interfaces/org.kde.krunner.App.xml
-share/dbus-1/interfaces/org.kde.screensaver.xml
 share/dbus-1/services/org.kde.fontinst.service
 share/dbus-1/services/org.kde.krunner.service
 share/dbus-1/system-services/org.kde.fontinst.service
@@ -1693,10 +1740,12 @@ share/kde4/services/kcmaccess.desktop
 share/kde4/services/kcmlaunch.desktop
 share/kde4/services/kcmsmserver.desktop
 share/kde4/services/kcmusb.desktop
+share/kde4/services/kded/appmenu.desktop
 share/kde4/services/kded/freespacenotifier.desktop
 share/kde4/services/kded/kephal.desktop
 share/kde4/services/kded/keyboard.desktop
 share/kde4/services/kded/khotkeys.desktop
+share/kde4/services/kded/ktouchpadenabler.desktop
 share/kde4/services/kded/kwrited.desktop
 share/kde4/services/kded/powerdevil.desktop
 share/kde4/services/kded/randrmonitor.desktop
@@ -1736,8 +1785,10 @@ share/kde4/services/kwin/glide_config.desktop
 share/kde4/services/kwin/highlightwindow.desktop
 share/kde4/services/kwin/invert.desktop
 share/kde4/services/kwin/invert_config.desktop
+share/kde4/services/kwin/kwin4_decoration_qml_plastik.desktop
 share/kde4/services/kwin/kwin4_effect_fade.desktop
 share/kde4/services/kwin/kwin4_effect_fadedesktop.desktop
+share/kde4/services/kwin/kwin4_effect_maximize.desktop
 share/kde4/services/kwin/kwin4_window_switcher_big_icons.desktop
 share/kde4/services/kwin/kwin4_window_switcher_compact.desktop
 share/kde4/services/kwin/kwin4_window_switcher_informative.desktop
@@ -1756,6 +1807,8 @@ share/kde4/services/kwin/magiclamp_config.desktop
 share/kde4/services/kwin/magnifier.desktop
 share/kde4/services/kwin/magnifier_config.desktop
 share/kde4/services/kwin/minimizeanimation.desktop
+share/kde4/services/kwin/mouseclick.desktop
+share/kde4/services/kwin/mouseclick_config.desktop
 share/kde4/services/kwin/mousemark.desktop
 share/kde4/services/kwin/mousemark_config.desktop
 share/kde4/services/kwin/outline.desktop
@@ -1814,7 +1867,7 @@ share/kde4/services/plasma-applet-digitalclock.desktop
 share/kde4/services/plasma-applet-icon.desktop
 share/kde4/services/plasma-applet-launcher.desktop
 share/kde4/services/plasma-applet-lockout.desktop
-share/kde4/services/plasma-applet-notifications.desktop
+share/kde4/services/plasma-applet-org.kde.notifications.desktop
 share/kde4/services/plasma-applet-org.kde.showActivityManager.desktop
 share/kde4/services/plasma-applet-panelspacer-internal.desktop
 share/kde4/services/plasma-applet-quicklaunch.desktop
@@ -1986,6 +2039,7 @@ share/kde4/services/style.desktop
 share/kde4/services/workspaceoptions.desktop
 share/kde4/services/xserver.desktop
 share/kde4/servicetypes/kinfocentercategory.desktop
+share/kde4/servicetypes/kwindecoration.desktop
 share/kde4/servicetypes/kwineffect.desktop
 share/kde4/servicetypes/kwinscript.desktop
 share/kde4/servicetypes/kwinwindowswitcher.desktop
@@ -1998,6 +2052,7 @@ share/kde4/servicetypes/screensaver.desktop
 share/kde4/servicetypes/solid-device-type.desktop
 share/kde4/servicetypes/solidmodemmanager.desktop
 share/kde4/servicetypes/solidnetworkmanager.desktop
+share/kde4/servicetypes/solidremotecontrolmanager.desktop
 share/kde4/servicetypes/systemsettingscategory.desktop
 share/kde4/servicetypes/systemsettingsexternalapp.desktop
 share/kde4/servicetypes/systemsettingsview.desktop
@@ -2007,34 +2062,8 @@ share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy
 share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
 share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
 share/sounds/pop.wav
-share/wallpapers/stripes-freebsd-blue/contents/images/1024x768.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1280x1024.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1280x800.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1440x900.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1600x1200.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1920x1080.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/1920x1200.jpg
-share/wallpapers/stripes-freebsd-blue/contents/images/800x600.jpg
-share/wallpapers/stripes-freebsd-blue/contents/screenshot.jpg
-share/wallpapers/stripes-freebsd-blue/metadata.desktop
-share/wallpapers/stripes-freebsd-red/contents/images/1024x768.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1280x1024.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1280x800.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1440x900.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1600x1200.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1920x1080.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/1920x1200.jpg
-share/wallpapers/stripes-freebsd-red/contents/images/800x600.jpg
-share/wallpapers/stripes-freebsd-red/contents/screenshot.jpg
-share/wallpapers/stripes-freebsd-red/metadata.desktop
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
-@dirrm share/wallpapers/stripes-freebsd-red/contents/images
-@dirrm share/wallpapers/stripes-freebsd-red/contents
-@dirrm share/wallpapers/stripes-freebsd-red
-@dirrm share/wallpapers/stripes-freebsd-blue/contents/images
-@dirrm share/wallpapers/stripes-freebsd-blue/contents
-@dirrm share/wallpapers/stripes-freebsd-blue
 @dirrm share/kde4/services/solidbackends
 @dirrm share/kde4/services/kwin
 @dirrm share/icons/Oxygen_Zion/cursors
@@ -2124,6 +2153,15 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/plasmoids/org.kde.showActivityManager/contents/ui
 @dirrm share/apps/plasma/plasmoids/org.kde.showActivityManager/contents
 @dirrm share/apps/plasma/plasmoids/org.kde.showActivityManager
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch/ui/NotificationDelegate
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch/ui
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/platformcontents/touch
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/platformcontents
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/contents/ui/NotificationDelegate
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/contents/ui
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/contents/config
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications/contents
+@dirrm share/apps/plasma/plasmoids/org.kde.notifications
 @dirrm share/apps/plasma/plasmoids/notifier/contents/ui
 @dirrm share/apps/plasma/plasmoids/notifier/contents/config
 @dirrm share/apps/plasma/plasmoids/notifier/contents
@@ -2134,15 +2172,24 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/plasmoids/lockout
 @dirrm share/apps/plasma/plasmoids/battery/contents/ui
 @dirrm share/apps/plasma/plasmoids/battery/contents/config
+@dirrm share/apps/plasma/plasmoids/battery/contents/code
 @dirrm share/apps/plasma/plasmoids/battery/contents
 @dirrm share/apps/plasma/plasmoids/battery
 @dirrm share/apps/plasma/plasmoids
+@dirrm share/apps/plasma/packages/org.kde.systemtray/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.systemtray/contents/code
+@dirrm share/apps/plasma/packages/org.kde.systemtray/contents
+@dirrm share/apps/plasma/packages/org.kde.systemtray
+@dirrm share/apps/plasma/packages/org.kde.pager/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.pager/contents
+@dirrm share/apps/plasma/packages/org.kde.pager
 @dirrm share/apps/plasma/packages/org.kde.desktop.widgetexplorer/contents/ui
 @dirrm share/apps/plasma/packages/org.kde.desktop.widgetexplorer/contents
 @dirrm share/apps/plasma/packages/org.kde.desktop.widgetexplorer
 @dirrm share/apps/plasma/packages/org.kde.desktop.activitymanager/contents/ui
 @dirrm share/apps/plasma/packages/org.kde.desktop.activitymanager/contents
 @dirrm share/apps/plasma/packages/org.kde.desktop.activitymanager
+@dirrmtry share/apps/plasma/packages
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultPanel/contents
@@ -2206,6 +2253,9 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kwin/scripts
 @dirrm share/apps/kwin/kcm_kwintabbox
 @dirrm share/apps/kwin/kcm_kwindecoration
+@dirrm share/apps/kwin/effects/kwin4_effect_maximize/contents/code
+@dirrm share/apps/kwin/effects/kwin4_effect_maximize/contents
+@dirrm share/apps/kwin/effects/kwin4_effect_maximize
 @dirrm share/apps/kwin/effects/kwin4_effect_fadedesktop/contents/code
 @dirrm share/apps/kwin/effects/kwin4_effect_fadedesktop/contents
 @dirrm share/apps/kwin/effects/kwin4_effect_fadedesktop
@@ -2215,6 +2265,11 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kwin/effects/kwin4_effect_fade
 @dirrm share/apps/kwin/effects
 @dirrm share/apps/kwin/default_rules
+@dirrm share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui
+@dirrm share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/config
+@dirrm share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents
+@dirrm share/apps/kwin/decorations/kwin4_decoration_qml_plastik
+@dirrm share/apps/kwin/decorations
 @dirrm share/apps/kwin/aurorae
 @dirrm share/apps/kthememanager/themes/YellowOnBlue-big
 @dirrm share/apps/kthememanager/themes/YellowOnBlue
@@ -2238,21 +2293,16 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/ksplash/Themes/None
 @dirrm share/apps/ksplash/Themes/Minimalistic/images
 @dirrm share/apps/ksplash/Themes/Minimalistic
-@dirrm share/apps/ksplash/Themes/Horos/800x600
-@dirrm share/apps/ksplash/Themes/Horos/600x400
-@dirrm share/apps/ksplash/Themes/Horos/1920x1200
-@dirrm share/apps/ksplash/Themes/Horos/1920x1080
-@dirrm share/apps/ksplash/Themes/Horos/1600x1200
-@dirrm share/apps/ksplash/Themes/Horos/1280x1024
-@dirrm share/apps/ksplash/Themes/Horos/1024x768
-@dirrm share/apps/ksplash/Themes/Horos
 @dirrmtry share/apps/ksplash/Themes
 @dirrmtry share/apps/ksplash
 @dirrm share/apps/ksmserver/themes/default
 @dirrm share/apps/ksmserver/themes/contour
 @dirrm share/apps/ksmserver/themes
+@dirrm share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui
+@dirrm share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents
+@dirrm share/apps/ksmserver/screenlocker/org.kde.passworddialog
+@dirrm share/apps/ksmserver/screenlocker
 @dirrm share/apps/ksmserver
-@dirrm share/apps/kscreenlocker
 @dirrm share/apps/kmenuedit/icons/hicolor/32x32/actions
 @dirrm share/apps/kmenuedit/icons/hicolor/32x32
 @dirrm share/apps/kmenuedit/icons/hicolor/22x22/actions
@@ -2275,6 +2325,7 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kdm/themes/oxygen-air
 @dirrm share/apps/kdm/themes/oxygen
 @dirrm share/apps/kdm/themes/horos
+@dirrm share/apps/kdm/themes/elarun
 @dirrm share/apps/kdm/themes/circles
 @dirrm share/apps/kdm/themes/ariya
 @dirrmtry share/apps/kdm/themes
@@ -2284,6 +2335,7 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kdisplay/app-defaults
 @dirrm share/apps/kdisplay
 @dirrm share/apps/kcmusb
+@dirrm share/apps/kcmstyle
 @dirrm share/apps/kcmsolidactions
 @dirrm share/apps/kcmkeys
 @dirrm share/apps/kcmkeyboard/pics
@@ -2299,6 +2351,13 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/desktoptheme/air-netbook/widgets
 @dirrm share/apps/desktoptheme/air-netbook
 @dirrm lib/kde4/plugins/gui_platform
+@dirrm lib/kde4/imports/org/kde/kwin/decorations/plastik
+@dirrm lib/kde4/imports/org/kde/kwin/decorations
+@dirrm lib/kde4/imports/org/kde/kwin/decoration
+@dirrm lib/kde4/imports/org/kde/kwin
+@dirrmtry lib/kde4/imports/org/kde
+@dirrmtry lib/kde4/imports/org
+@dirrmtry lib/kde4/imports
 @dirrm lib/cmake/KDE4Workspace
 @dirrmtry lib/cmake
 @dirrm include/taskmanager

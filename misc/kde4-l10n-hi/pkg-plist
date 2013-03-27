@@ -41,7 +41,6 @@ share/locale/hi/LC_MESSAGES/kalgebra.mo
 share/locale/hi/LC_MESSAGES/kalzium.mo
 share/locale/hi/LC_MESSAGES/kanagram.mo
 share/locale/hi/LC_MESSAGES/kate.mo
-share/locale/hi/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/hi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/hi/LC_MESSAGES/katefiletemplates.mo
 share/locale/hi/LC_MESSAGES/katehelloworld.mo
@@ -49,7 +48,6 @@ share/locale/hi/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/hi/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/hi/LC_MESSAGES/kateopenheader.mo
 share/locale/hi/LC_MESSAGES/katepart4.mo
-share/locale/hi/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/hi/LC_MESSAGES/katesymbolviewer.mo
 share/locale/hi/LC_MESSAGES/katetabbarextension.mo
 share/locale/hi/LC_MESSAGES/katetextfilter.mo
@@ -80,7 +78,6 @@ share/locale/hi/LC_MESSAGES/kcm_memory.mo
 share/locale/hi/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/hi/LC_MESSAGES/kcm_pci.mo
 share/locale/hi/LC_MESSAGES/kcm_phonon.mo
-share/locale/hi/LC_MESSAGES/kcm_phononxine.mo
 share/locale/hi/LC_MESSAGES/kcm_platform.mo
 share/locale/hi/LC_MESSAGES/kcm_solid.mo
 share/locale/hi/LC_MESSAGES/kcm_solid_actions.mo
@@ -399,9 +396,9 @@ share/locale/hi/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_newspaper.mo
-share/locale/hi/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
@@ -447,11 +444,8 @@ share/locale/hi/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/hi/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/hi/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/hi/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/hi/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hi/LC_MESSAGES/plasmagenericshell.mo
 share/locale/hi/LC_MESSAGES/plasmapkg.mo
-share/locale/hi/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/hi/LC_MESSAGES/plasmoidviewer.mo
 share/locale/hi/LC_MESSAGES/powerdevil.mo
 share/locale/hi/LC_MESSAGES/processcore.mo
 share/locale/hi/LC_MESSAGES/processui.mo

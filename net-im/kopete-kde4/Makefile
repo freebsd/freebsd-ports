@@ -6,7 +6,7 @@ CATEGORIES=	net-im kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DISTNAME=	kdenetwork-${PORTVERSION}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger
@@ -40,7 +40,8 @@ USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
 USE_OPENSSL=	yes
-USE_QT4=	moc_build qmake_build rcc_build uic_build uic3_build
+USE_QT4=	corelib gui network qt3support sql xml \
+		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_XZ=		yes

@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	archivers kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
@@ -15,10 +15,10 @@ LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
 
 CONFLICTS_INSTALL=	kdeutils-4.[0-7].*
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier automoc4 kdelibs libkonq
 USES=		cmake:outsource
-USE_QT4=	qmake_build moc_build rcc_build uic_build
+USE_QT4=	qtestlib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

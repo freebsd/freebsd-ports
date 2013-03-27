@@ -5,7 +5,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and browser for KDE 4
@@ -17,11 +17,11 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	kdegraphics-4.[0-6].*
 
-USE_KDE4=	kdehier kdelibs kdeprefix libkipi libkonq \
+USE_KDE4=	kactivities kdehier kdelibs kdeprefix libkipi libkonq \
 		automoc4 soprano
 USES=		cmake:outsource
-USE_QT4=	dbus qmake_build moc_build uic_build rcc_build
-USE_XZ=	yes
+USE_QT4=	corelib gui opengl qmake_build moc_build uic_build rcc_build
+USE_XZ=		yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
