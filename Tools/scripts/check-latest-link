@@ -41,7 +41,7 @@ cd ${PORTSDIR}
 
 grep -f .latest_dups .latest_link | sort -i -k4 > .latest_full
 
-maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ',')
+maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ' ')
 
 (echo "Dear port maintainers,"
   echo
