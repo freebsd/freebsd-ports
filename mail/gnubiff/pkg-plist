@@ -36,8 +36,6 @@ share/pixmaps/gnubiff.png
 %%WITH_GNOME%%share/gnome-2.0/ui/GNOME_gnubiffApplet.xml
 @dirrmtry %%BONOBODIR%%/servers
 @dirrmtry %%BONOBODIR%%
-@dirrmtry share/gnome-2.0/ui
-@dirrmtry share/gnome-2.0
 %%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CA
 @dirrm share/gnubiff
