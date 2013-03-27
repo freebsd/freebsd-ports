@@ -74,3 +74,4 @@ share/locale/tr/LC_MESSAGES/gnome-breakout.mo
 @dirrm share/gnome-breakout/pixmaps
 @dirrm share/gnome-breakout/levels
 @dirrm share/gnome-breakout
+@dirrmtry share/games
