@@ -13,8 +13,6 @@ sbin/VBoxService
 %%X11%%@dirrmtry lib/xorg/modules
 %%X11%%@dirrmtry lib/xorg
 %%X11%%@dirrmtry lib
-%%X11%%@dirrmtry etc/xdg/autostart
-%%X11%%@dirrmtry etc/xdg
 @cwd /
 %%KMODDIR%%/vboxguest.ko
 @exec /usr/sbin/kldxref /%%KMODDIR%%
