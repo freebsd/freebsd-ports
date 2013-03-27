@@ -11,6 +11,8 @@ COMMENT=	Toolset based on Solaris ptools functionality
 
 LICENSE=	BSD
 
+LATEST_LINK=	${PORTNAME}2
+
 PLIST_FILES=	bin/pargs \
 		bin/pwdx \
 		bin/pldd \
