@@ -40,6 +40,8 @@ NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
+IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
+DEFAULT_PHP_VER=53
 
 pre-everything::
 	@${ECHO} ""
