@@ -34,6 +34,7 @@ libdata/pkgconfig/zeitgeist-1.0.pc
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistResultSet.html
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistSubject.html
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistTimeRange.html
+%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/annotation-glossary.html
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/api-index-full.html
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch01.html
 %%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch02.html
