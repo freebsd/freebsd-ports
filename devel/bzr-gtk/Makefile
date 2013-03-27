@@ -1,13 +1,9 @@
-# New ports collection makefile for:	bzr-gtk
-# Date created:		2007-03-04
-# Whom:			Radim Kolar <hsn@sanatana.dharma>
-#
+# Created by: Radim Kolar <hsn@sanatana.dharma>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-gtk
 PORTVERSION=	0.100.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65442805/ \
 		http://www.c-s.li/ports/
@@ -26,12 +22,13 @@ USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	GTKSOURCE "GTKSourceview support" OFF
+OPTIONS_DEFINE=	GTKSOURCE
+GTKSOURCE_DESC=	GTKSourceview support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTKSOURCE)
+.if ${PORT_OPTIONS:MGTKSOURCE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtksourceview.so:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
