@@ -20,7 +20,7 @@ MAKE_JOBS_SAFE=		yes
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.0.3
+SAMBA4_VERSION=		4.0.4
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -70,6 +70,7 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 USE_PYTHON_BUILD=	-2.7
 USE_PERL5_BUILD=	yes
 
+USE_GCC=		4.2+
 USE_PYTHON=		yes
 USE_ICONV=		yes
 USE_GETTEXT=		yes
@@ -181,6 +182,7 @@ SUB_LIST+=		NSUPDATE=""
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=		yes
 CONFIGURE_ARGS+=	--verbose
 _MAKE_JOBS+=		--verbose
 CONFIGURE_ARGS+=	--enable-debug
@@ -352,11 +354,11 @@ PLIST_SUB+=		LDAP="@comment "
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=	${WANT_EXP_MODULES}
-CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C/(\\\\ )+/,/g}"
+CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
 .if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
-CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C/(\\\\ )+/,/g}"
+CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
 # XXX
