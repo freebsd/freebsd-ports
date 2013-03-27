@@ -4187,3 +4187,4 @@ print/ghostscript7-nox11|print/ghostscript9-nox11|2013-03-26|ghostscript 7 is ou
 print/ghostscript7-commfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 print/ghostscript7-jpnfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 print/ghostscript7-korfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
+www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
