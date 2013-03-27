@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
+MASTER_SITES=	http://mosh.mit.edu/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
@@ -14,7 +13,6 @@ COMMENT=	Mobile terminal that supports intermittent connectivity
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
