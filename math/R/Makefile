@@ -12,7 +12,6 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.ch.r-project.org/src/base/R-2/ \
 		http://cran.es.r-project.org/src/base/R-2/ \
 		http://cran.dk.r-project.org/src/base/R-2/ \
-		http://cran.hu.r-project.org/src/base/R-2/ \
 		http://cran.uk.r-project.org/src/base/R-2/ \
 		http://cran.us.r-project.org/src/base/R-2/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
