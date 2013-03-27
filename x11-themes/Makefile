@@ -89,6 +89,7 @@
     SUBDIR += gtk-qt4-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
+    SUBDIR += gtk3-unico-engine
     SUBDIR += icon-bluecurve-theme
     SUBDIR += icon-naming-utils
     SUBDIR += icons-buuf
