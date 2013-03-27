@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glipper
-# Date created:		2007-10-21
-# Whom:			Yuri Pankov <yuri.pankov@gmail.com>
-#
+# Created by: Yuri Pankov <yuri.pankov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	glipper
 PORTVERSION=	1.0
@@ -25,5 +21,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 
 GCONF_SCHEMAS=	glipper.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gtypes.h|glib.h|g' \
+		${WRKSRC}/glipper/keybinder/tomboykeybinder.h
 
 .include <bsd.port.mk>
