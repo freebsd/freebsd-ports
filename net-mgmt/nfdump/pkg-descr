@@ -19,5 +19,3 @@ the network to another host.
 ft2nfdump - flow-tools to nfdump - optional component
 
 WWW: http://nfdump.sourceforge.net
-
-Janos Mohacsi <janos.mohacsi@bsd.hu>
