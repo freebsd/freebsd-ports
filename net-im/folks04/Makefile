@@ -4,7 +4,7 @@
 
 PORTNAME=	folks
 PORTVERSION=	0.4.3
-PORTREVISOIN=	1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -18,14 +18,16 @@ LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 
 CONFLICTS=	folks-0.[6-9].[0-9]*
 
+LATEST_LINK=	${PORTNAME}04
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier
+USES=		pathfix
+USE_GNOME=	intlhack gnomehier
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=22
 
