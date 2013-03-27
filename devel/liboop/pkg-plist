@@ -13,10 +13,6 @@ lib/liboop-glib.a
 lib/liboop-glib.la
 lib/liboop-glib.so
 lib/liboop-glib.so.1
-lib/liboop-glib2.a
-lib/liboop-glib2.la
-lib/liboop-glib2.so
-lib/liboop-glib2.so.0
 lib/liboop-rl.a
 lib/liboop-rl.la
 lib/liboop-rl.so
