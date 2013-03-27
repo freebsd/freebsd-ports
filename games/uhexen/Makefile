@@ -3,7 +3,7 @@
 
 PORTNAME=	uhexen
 PORTVERSION=	0.601
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/U-hexen%20version%20${PORTVERSION}
 
@@ -16,6 +16,8 @@ USE_SDL=	mixer sdl
 OPTIONS_DEFINE=	MUSIC
 OPTIONS_DEFAULT=	MUSIC
 MUSIC_DESC=	In-game MIDI music support
+
+PLIST_FILES=	bin/uhexen
 
 .include <bsd.port.pre.mk>
 
