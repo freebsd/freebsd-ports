@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-scrubyt
-# Date created:		2007-03-13
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	scrubyt
 PORTVERSION=	0.4.11
@@ -11,17 +7,18 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A powerful web scraping toolkit written in Ruby
+COMMENT=	Powerful web scraping toolkit written in Ruby
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-hpricot>=0.5:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
 
-LICENSE=	GPLv2
-
-GEM_NAME=	${PORTNAME}-0.4.1
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's/0.4.1/${PORTVERSION}/' ${BUILD_WRKSRC}/${GEMFILES}spec
 
 .include <bsd.port.mk>
