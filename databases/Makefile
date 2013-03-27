@@ -767,6 +767,7 @@
     SUBDIR += pydbdesigner
     SUBDIR += pydbx
     SUBDIR += pymongo
+    SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qt-mysql-plugin
