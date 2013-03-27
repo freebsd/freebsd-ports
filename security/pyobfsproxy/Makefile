@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.c-s.li/ports/
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Pluggable transport proxy
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0:${PORTSDIR}/security/pyptlib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0:${PORTSDIR}/security/py-pyptlib
 
 LICENSE=	BSD
 
