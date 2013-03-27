@@ -2,6 +2,7 @@
 
 PORTNAME=	twirssi
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
@@ -26,7 +27,7 @@ DEVEL_DESC=	Use development irc/irssi-devel port
 RUN_DEPENDS+=	irssi:${PORTSDIR}/irc/irssi
 .endif
 
-.if ${PORT_OPTIONS:MPROD}
+.if ${PORT_OPTIONS:MDEVEL}
 RUN_DEPENDS+=	irssi:${PORTSDIR}/irc/irssi-devel
 .endif
 
