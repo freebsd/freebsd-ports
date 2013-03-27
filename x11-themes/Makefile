@@ -10,6 +10,7 @@
     SUBDIR += claws-mail-themes
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity
+    SUBDIR += clearlooks-phenix-theme
     SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
     SUBDIR += cursor-bluecurve-theme
