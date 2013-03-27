@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gal2
-# Date created:				25 August 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/gal2/Makefile,v 1.54 2007/05/23 14:37:18 ahze Exp $
-#
 
 PORTNAME=	gal2
 PORTVERSION=	2.5.3
@@ -24,8 +20,8 @@ USE_BZIP2=	yes
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \
-		ltverhack
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui ltverhack
 USE_GETTEXT=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -37,14 +33,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="2.6" PORTVERSION=${PORTVERSION} \
 		SHLIBVERSION="2.4"
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	${TOUCH} -f ${WRKSRC}/gal/util/e-util-private.h
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/gmacros.h|glib.h|g' \
+		${WRKSRC}/gal/util/e-text-event-processor-types.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif
