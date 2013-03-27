@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	py-bcrypt
-# Date created:			07 maerch, 2007
-# Whom:				Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bcrypt
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security python
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.mindrot.org/files/py-bcrypt/
