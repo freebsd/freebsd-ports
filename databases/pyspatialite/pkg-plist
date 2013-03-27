@@ -1,0 +1,52 @@
+%%PYTHON_SITELIBDIR%%/pyspatialite/__init__.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/_spatialite.so
+%%PYTHON_SITELIBDIR%%/pyspatialite/dbapi2.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/dbapi2.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/dbapi2.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/dump.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/dump.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/dump.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/__init__.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dbapi.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dbapi.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dbapi.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dump.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dump.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/dump.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/factory.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/factory.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/factory.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/hooks.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/hooks.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/hooks.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/__init__.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/py25tests.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/py25tests.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/py25/py25tests.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/regression.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/regression.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/regression.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/spatial.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/spatial.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/spatial.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/transactions.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/transactions.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/transactions.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/types.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/types.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/types.pyo
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/userfunctions.py
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/userfunctions.pyc
+%%PYTHON_SITELIBDIR%%/pyspatialite/test/userfunctions.pyo
+%%DOCSDIR%%/install-source.txt
+@dirrm %%DOCSDIR%%/code
+@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite/test/py25
+@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite/test
+@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite
