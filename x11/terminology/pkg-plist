@@ -1,4 +1,10 @@
 bin/terminology
+bin/tyalpha
+bin/tybg
+bin/tycat
+bin/tyls
+bin/typop
+bin/tyq
 share/applications/terminology.desktop
 share/icons/terminology.png
 %%DATADIR%%/fonts/10x20.pcf
@@ -25,9 +31,12 @@ share/icons/terminology.png
 %%DATADIR%%/fonts/terminus-20-bold.pcf
 %%DATADIR%%/fonts/terminus-20.pcf
 %%DATADIR%%/images/terminology.png
+%%DATADIR%%/themes/black.edj
 %%DATADIR%%/themes/default.edj
 %%DATADIR%%/themes/mild.edj
-%%DATADIR%%/themes/black.edj
+%%DATADIR%%/themes/mustang.edj
+%%DATADIR%%/themes/solarized.edj
+%%DATADIR%%/themes/solarized_light.edj
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
