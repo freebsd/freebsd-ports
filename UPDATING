@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130327:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  Privilege separation is enabled in OpenSMTPD port from 5.3,1. Users
+  upgrading from version 201303011853 or earlier are required to follow
+  the instructions in pkg-message to fix the filesystem permissions on
+  OpenSMTPD spool directories.
+
+20130327:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
   KDE SC ports have been updated to 4.10.1. kdelibs4 does no longer
