@@ -9,16 +9,17 @@ PORTNAME=	himenobench
 PORTVERSION=	2004.08.16
 PORTREVISION=	3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://accc.riken.jp/assets/files/himenob_loadmodule/
-DISTFILES=	himenoBMTxp_xl.lzh himenoBMTxp_l.lzh himenoBMTxp_m.lzh \
-		himenoBMTxp_s.lzh cc_himenoBMTxp_xl.lzh cc_himenoBMTxp_l.lzh \
-		cc_himenoBMTxp_m.lzh cc_himenoBMTxp_s.lzh f90_xp.lzh himenoBMTxpa.lzh
+MASTER_SITES=	http://accc.riken.jp/secure/4502/:C http://accc.riken.jp/secure/4503/:C \
+		http://accc.riken.jp/secure/4504/:F90 http://accc.riken.jp/secure/4505/:F77
+DISTFILES=	himenoBMTxp_xl.lzh:F77 himenoBMTxp_l.lzh:F77 himenoBMTxp_m.lzh:F77 \
+		himenoBMTxp_s.lzh:F77 cc_himenoBMTxp_xl.lzh:C cc_himenoBMTxp_l.lzh:C \
+		cc_himenoBMTxp_m.lzh:C cc_himenoBMTxp_s.lzh:C f90_xp.lzh:F90 himenobmtxpa.lzh:C
 DIST_SUBDIR=	himeno
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
-NO_WRKSRCDIR=	yes
+NO_WRKSUBDIR=	yes
 USE_LHA=	yes
 
 .if defined(WITH_ICC)
