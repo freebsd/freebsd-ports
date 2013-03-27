@@ -26,9 +26,6 @@ lib/planner/file-modules/libmrp-xml.so
 lib/planner/file-modules/libmrp-xsl.a
 lib/planner/file-modules/libmrp-xsl.la
 lib/planner/file-modules/libmrp-xsl.so
-%%EVO%%lib/planner/plugins/libeds-plugin.a
-%%EVO%%lib/planner/plugins/libeds-plugin.la
-%%EVO%%lib/planner/plugins/libeds-plugin.so
 lib/planner/plugins/libhtml-plugin.a
 lib/planner/plugins/libhtml-plugin.la
 lib/planner/plugins/libhtml-plugin.so

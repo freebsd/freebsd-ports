@@ -35,7 +35,6 @@ MAN1=		planner.1
 
 OPTIONS_DEFINE=	GDA
 GDA_DESC=	Enable database support (though libgda)
-#		EVO "Enable evolution data server support" off
 
 .include <bsd.port.options.mk>
 
