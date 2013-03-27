@@ -1,8 +1,8 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	zendoptimizerplus
-PORTVERSION=	7.0.0
+PORTNAME=	zendopcache
+PORTVERSION=	7.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +17,7 @@ LICENSE=	PHP301
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_ZENDEXT=	yes
-PHP_MODNAME=	ZendOptimizerPlus
+PHP_MODNAME=	opcache
 
 PORTDOCS=	*
 
