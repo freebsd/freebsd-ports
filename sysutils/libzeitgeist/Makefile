@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libzeitgeist
-PORTVERSION=	0.3.14
+PORTVERSION=	0.3.18
 CATEGORIES=	sysutils
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/ \
-	https://launchpadlibrarian.net/92774729/
+MASTER_SITES=	https://launchpadlibrarian.net/100152436/ \
+	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/ \
+	LOCAL/olivierd
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Zeitgeist client library
 
-RUN_DEPENDS=	zeitgeist-daemon:${PORTSDIR}/sysutils/zeitgeist
-
+USES=	pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 intltool intlhack
+USE_GNOME=	glib20 intltool intlhack
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
