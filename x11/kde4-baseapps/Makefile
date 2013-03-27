@@ -5,22 +5,23 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Basic applications for the KDE system
+COMMENT=	Basic applications for KDE
 
 LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 
 CONFLICTS=	kdebase-4.[0-6].* konq-plugins-4.[0-6].*
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
-		automoc4 soprano strigi
+		automoc4 soprano strigi nepomuk-core \
+		nepomuk-widgets kactivities
 USES=		cmake:outsource
-USE_QT4=	dbus gui qt3support script \
+USE_QT4=	corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes

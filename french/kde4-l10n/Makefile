@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	french kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	French messages and documentation for KDE4
+COMMENT=	French messages and documentation for KDE SC 4
 
 KDE4_L10N=	fr
 

@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130327:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+  KDE SC ports have been updated to 4.10.1. kdelibs4 does no longer
+  directly use aspell or hspell, to regain their functionality enable
+  corresponding option in textproc/enchant.
+  A number of ports have been split and must be deinstalled before
+  upgrading:
+
+  # pkg_delete -f kdegames-4\* kde-workspace-4\* kde-wallpapers-4\*
+
 20130326:
   AFFECTS: users of deskutils/strigi
   AUTHOR: makc@FreeBSD.org

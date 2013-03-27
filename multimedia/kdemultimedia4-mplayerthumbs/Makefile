@@ -7,7 +7,7 @@ CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	kdemultimedia-
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	MPlayer-based thumbnail generator for video files
@@ -18,10 +18,10 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
-MAKE_JOBS_SAFE=	yes
 USES=		cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

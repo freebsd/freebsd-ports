@@ -6,7 +6,7 @@ CATEGORIES=	devel kde python
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for KDE
@@ -29,37 +29,36 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 		akonadi automoc4 soprano
 USE_PYTHON=	2.5+
-USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
-USE_XZ=	yes
-USES=		cmake
+USE_QT4=	corelib dbus designer_build gui network xml \
+		qmake_build moc_build uic_build rcc_build
+USE_XZ=		yes
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	kdebindings4.pth
 SUB_LIST=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-patch:
-.if ${OSVERSION} < 800069
-	${REINPLACE_CMD} -e '/dlopen("kpythonpluginfactory.so"/ s,RTLD_NOLOAD |,,' \
-		${PATCH_WRKSRC}/kpythonpluginfactory/kpythonpluginfactory.cpp
-.endif
 	${FIND} -d ${PATCH_WRKSRC}/sip -name "*.orig" -delete
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/share/py-sip,g' \
-		${BUILD_WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY(examples)/ d' \
-		-e '/ADD_SUBDIRECTORY(tools)/ d' \
-		${BUILD_WRKSRC}/CMakeLists.txt
-	${RM} ${BUILD_WRKSRC}/examples/CMakeLists.txt
+		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/add_subdirectory(examples)/ d' \
+		-e '/add_subdirectory(tools)/ d' \
+		${WRKSRC}/CMakeLists.txt
+	${RM} ${WRKSRC}/examples/CMakeLists.txt
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-	cd ${BUILD_WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	${INSTALL_DATA} ${WRKDIR}/kdebindings4.pth ${PYTHON_SITELIBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -59,6 +59,7 @@ bin/pprof2calltree
 bin/pruneemptydirs
 bin/qtdoc
 bin/split2po
+bin/struct2osd.sh
 bin/svn-clean
 bin/svnbackport
 bin/svnchangesince
@@ -488,13 +489,13 @@ lib/libkasten2gui.so
 lib/libkasten2gui.so.0.2.0
 lib/libkasten2gui.so.2
 lib/libkasten2okteta1controllers.so
-lib/libkasten2okteta1controllers.so.0.2.0
+lib/libkasten2okteta1controllers.so.0.2.1
 lib/libkasten2okteta1controllers.so.1
 lib/libkasten2okteta1core.so
-lib/libkasten2okteta1core.so.0.2.0
+lib/libkasten2okteta1core.so.0.2.1
 lib/libkasten2okteta1core.so.1
 lib/libkasten2okteta1gui.so
-lib/libkasten2okteta1gui.so.0.2.0
+lib/libkasten2okteta1gui.so.0.2.1
 lib/libkasten2okteta1gui.so.1
 lib/libkdeinit4_cervisia.so
 lib/libkdeinit4_cvsaskpass.so
@@ -509,10 +510,10 @@ lib/libkompareinterface.so
 lib/libkompareinterface.so.5
 lib/libkompareinterface.so.5.0.1
 lib/libokteta1core.so
-lib/libokteta1core.so.0.8.0
+lib/libokteta1core.so.0.8.1
 lib/libokteta1core.so.1
 lib/libokteta1gui.so
-lib/libokteta1gui.so.0.8.0
+lib/libokteta1gui.so.0.8.1
 lib/libokteta1gui.so.1
 lib/strigi/strigila_diff.so
 lib/strigi/strigila_po.so
@@ -537,10 +538,6 @@ share/apps/kcachegrind/icons/hicolor/22x22/actions/percent.png
 share/apps/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/apps/kcachegrind/kcachegrindui.rc
 share/apps/kcachegrind/tips
-share/apps/kconf_update/cervisia-change_repos_list.pl
-share/apps/kconf_update/cervisia-normalize_cvsroot.pl
-share/apps/kconf_update/cervisia.upd
-share/apps/kconf_update/change_colors.pl
 share/apps/kdevappwizard/template_previews/akonadi-resources.png
 share/apps/kdevappwizard/template_previews/akonadi-serializer.png
 share/apps/kdevappwizard/template_previews/default.png
@@ -596,6 +593,7 @@ share/apps/lokalize/translationmemoryrui.rc
 share/apps/okteta/oktetaui.rc
 share/apps/okteta/structures/elf/elf.desktop
 share/apps/okteta/structures/elf/elf.osd
+share/apps/okteta/structures/gccxml-to-osd.xsl
 share/apps/okteta/structures/png/png.desktop
 share/apps/okteta/structures/png/png.osd
 share/apps/oktetapart/oktetapartbrowserui.rc
@@ -1194,5 +1192,3 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm include/kasten2
 @dirrm include/KDE/Okteta1
 @dirrm include/KDE/Kasten2
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

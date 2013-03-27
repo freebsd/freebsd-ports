@@ -10,8 +10,10 @@ bin/kdeinit4_wrapper
 bin/kfilemetadatareader
 bin/kjs
 bin/kjscmd
+bin/kmailservice
 bin/kross
 bin/kshell4
+bin/ktelnetservice
 bin/kunittestmodrunner
 bin/kwrapper4
 bin/makekdewidgets
@@ -230,6 +232,7 @@ include/KDE/KAuth/ActionWatcher
 include/KDE/KAuth/HelperSupport
 include/KDE/KAuthorized
 include/KDE/KAutoMount
+include/KDE/KAutoSaveFile
 include/KDE/KAutoUnmount
 include/KDE/KAutostart
 include/KDE/KBookmark
@@ -245,6 +248,7 @@ include/KDE/KBookmarkImporterBase
 include/KDE/KBookmarkManager
 include/KDE/KBookmarkMenu
 include/KDE/KBookmarkOwner
+include/KDE/KBreadcrumbSelectionModel
 include/KDE/KBugReport
 include/KDE/KBuildSycocaProgressDialog
 include/KDE/KButtonGroup
@@ -256,6 +260,7 @@ include/KDE/KCModuleProxy
 include/KDE/KCMultiDialog
 include/KDE/KCalendarSystem
 include/KDE/KCalendarSystemFactory
+include/KDE/KCapacityBar
 include/KDE/KCategorizedSortFilterProxyModel
 include/KDE/KCategorizedView
 include/KDE/KCategoryDrawer
@@ -301,6 +306,7 @@ include/KDE/KCurrencyCode
 include/KDE/KCursor
 include/KDE/KDBusServiceStarter
 include/KDE/KDEDModule
+include/KDE/KDEPrintDialog
 include/KDE/KDEsuClient
 include/KDE/KDataTool
 include/KDE/KDataToolAction
@@ -316,8 +322,10 @@ include/KDE/KDateWidget
 include/KDE/KDebug
 include/KDE/KDescendantsProxyModel
 include/KDE/KDesktopFile
+include/KDE/KDeviceListModel
 include/KDE/KDialog
 include/KDE/KDialogButtonBox
+include/KDE/KDialogJobUiDelegate
 include/KDE/KDirLister
 include/KDE/KDirModel
 include/KDE/KDirNotify
@@ -361,6 +369,7 @@ include/KDE/KFileSharePropsPlugin
 include/KDE/KFileTreeBranch
 include/KDE/KFileTreeView
 include/KDE/KFileWidget
+include/KDE/KFileWritePlugin
 include/KDE/KFilterBase
 include/KDE/KFilterDev
 include/KDE/KFilterProxySearchLine
@@ -379,6 +388,7 @@ include/KDE/KGenericFactoryBase
 include/KDE/KGlobal
 include/KDE/KGlobalAccel
 include/KDE/KGlobalSettings
+include/KDE/KGlobalShortcutInfo
 include/KDE/KGradientSelector
 include/KDE/KGraphicsWebView
 include/KDE/KGuiItem
@@ -442,6 +452,7 @@ include/KDE/KIconDialog
 include/KDE/KIconEffect
 include/KDE/KIconLoader
 include/KDE/KIconTheme
+include/KDE/KIdentityProxyModel
 include/KDE/KIdleTime
 include/KDE/KImageCache
 include/KDE/KImageFilePreview
@@ -451,6 +462,7 @@ include/KDE/KIntNumInput
 include/KDE/KIntSpinBox
 include/KDE/KIntValidator
 include/KDE/KJob
+include/KDE/KJobTrackerInterface
 include/KDE/KJobUiDelegate
 include/KDE/KKeySequenceWidget
 include/KDE/KLanguageButton
@@ -459,9 +471,11 @@ include/KDE/KLibFactory
 include/KDE/KLibLoader
 include/KDE/KLibrary
 include/KDE/KLineEdit
+include/KDE/KLinkItemSelectionModel
 include/KDE/KListWidget
 include/KDE/KListWidgetSearchLine
 include/KDE/KLocale
+include/KDE/KLocalizedDate
 include/KDE/KLocalizedString
 include/KDE/KLockFile
 include/KDE/KMD5
@@ -483,7 +497,9 @@ include/KDE/KMimeTypeChooserDialog
 include/KDE/KMimeTypeResolver
 include/KDE/KMimeTypeTrader
 include/KDE/KMimeTypeValidator
+include/KDE/KModelIndexProxyMapper
 include/KDE/KModifierKeyInfo
+include/KDE/KMountPoint
 include/KDE/KMozillaBookmarkImporterImpl
 include/KDE/KMultiTabBar
 include/KDE/KMultiTabBarButton
@@ -504,6 +520,7 @@ include/KDE/KNSBookmarkExporterImpl
 include/KDE/KNSBookmarkImporter
 include/KDE/KNSBookmarkImporterImpl
 include/KDE/KNTLM
+include/KDE/KNameAndUrlInputDialog
 include/KDE/KNetwork/KActiveSocketBase
 include/KDE/KNetwork/KBufferedSocket
 include/KDE/KNetwork/KClientSocketBase
@@ -526,6 +543,7 @@ include/KDE/KNetwork/KSocksSocketDevice
 include/KDE/KNetwork/KStreamSocket
 include/KDE/KNetwork/KUnixSocketAddress
 include/KDE/KNewFileMenu
+include/KDE/KNewPasswordDialog
 include/KDE/KNotification
 include/KDE/KNotificationRestrictions
 include/KDE/KNotifyConfigWidget
@@ -608,6 +626,7 @@ include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
 include/KDE/KRecursiveFilterProxyModel
+include/KDE/KRegExpEditorInterface
 include/KDE/KRemoteEncoding
 include/KDE/KReplace
 include/KDE/KReplaceDialog
@@ -627,6 +646,7 @@ include/KDE/KSelectionWatcher
 include/KDE/KSelector
 include/KDE/KSeparator
 include/KDE/KService
+include/KDE/KServiceAction
 include/KDE/KServiceGroup
 include/KDE/KServiceType
 include/KDE/KServiceTypeProfile
@@ -659,6 +679,8 @@ include/KDE/KStartupInfo
 include/KDE/KStartupInfoData
 include/KDE/KStartupInfoId
 include/KDE/KStatusBar
+include/KDE/KStatusBarJobTracker
+include/KDE/KStatusBarOfflineIndicator
 include/KDE/KStatusNotifierItem
 include/KDE/KStringHandler
 include/KDE/KStringListValidator
@@ -767,12 +789,14 @@ include/KDE/KUser
 include/KDE/KUserGroup
 include/KDE/KVBox
 include/KDE/KViewStateMaintainer
+include/KDE/KViewStateSaver
 include/KDE/KWallet/Wallet
 include/KDE/KWebPage
 include/KDE/KWebPluginFactory
 include/KDE/KWebView
 include/KDE/KWebWallet
 include/KDE/KWidgetItemDelegate
+include/KDE/KWidgetJobTracker
 include/KDE/KWindowInfo
 include/KDE/KWindowSystem
 include/KDE/KWordMacroExpander
@@ -1938,9 +1962,7 @@ lib/kde4/krosskjs.so
 lib/kde4/krossmoduleforms.so
 lib/kde4/krossmodulekdetranslation.so
 lib/kde4/krossqts.so
-lib/kde4/kspell_aspell.so
 lib/kde4/kspell_enchant.so
-lib/kde4/kspell_hspell.so
 lib/kde4/ktranscript.so
 lib/kde4/libexec/filesharelist
 lib/kde4/libexec/fileshareset
@@ -1950,10 +1972,8 @@ lib/kde4/libexec/kdesu_stub
 lib/kde4/libexec/kio_http_cache_cleaner
 lib/kde4/libexec/kioslave
 lib/kde4/libexec/klauncher
-lib/kde4/libexec/kmailservice
 lib/kde4/libexec/kpac_dhcp_helper
 lib/kde4/libexec/ksendbugmail
-lib/kde4/libexec/ktelnetservice
 lib/kde4/libexec/lnusertemp
 lib/kde4/libexec/start_kdeinit
 lib/kde4/libexec/start_kdeinit_wrapper
@@ -2111,10 +2131,6 @@ share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/LGPL_V3
 share/apps/LICENSES/QPL_V1.0
 share/apps/cmake/modules/BasicFindPackageVersion.cmake.in
-share/apps/cmake/modules/CMakeParseArguments.cmake
-share/apps/cmake/modules/CheckCXXSourceCompiles.cmake
-share/apps/cmake/modules/CheckCXXSourceRuns.cmake
-share/apps/cmake/modules/CheckCXXSymbolExists.cmake
 share/apps/cmake/modules/CheckPointerMember.cmake
 share/apps/cmake/modules/CheckPrototypeExists.cmake
 share/apps/cmake/modules/CheckStructMember.cmake
@@ -2127,7 +2143,6 @@ share/apps/cmake/modules/FindAvahi.cmake
 share/apps/cmake/modules/FindBerkeleyDB.cmake
 share/apps/cmake/modules/FindBlitz.cmake
 share/apps/cmake/modules/FindBlueZ.cmake
-share/apps/cmake/modules/FindBoost.cmake
 share/apps/cmake/modules/FindCarbon.cmake
 share/apps/cmake/modules/FindDBusMenuQt.cmake
 share/apps/cmake/modules/FindDNSSD.cmake
@@ -2140,8 +2155,6 @@ share/apps/cmake/modules/FindFFmpeg.cmake
 share/apps/cmake/modules/FindFlac.cmake
 share/apps/cmake/modules/FindFlex.cmake
 share/apps/cmake/modules/FindFontconfig.cmake
-share/apps/cmake/modules/FindFreetype.cmake
-share/apps/cmake/modules/FindGIF.cmake
 share/apps/cmake/modules/FindGLIB2.cmake
 share/apps/cmake/modules/FindGMP.cmake
 share/apps/cmake/modules/FindGObject.cmake
@@ -2169,7 +2182,6 @@ share/apps/cmake/modules/FindLibAttica.cmake
 share/apps/cmake/modules/FindLibKonq.cmake
 share/apps/cmake/modules/FindLibLZMA.cmake
 share/apps/cmake/modules/FindLibPython.py
-share/apps/cmake/modules/FindLibXml2.cmake
 share/apps/cmake/modules/FindLibXslt.cmake
 share/apps/cmake/modules/FindLibintl.cmake
 share/apps/cmake/modules/FindLibraryWithDebug.cmake
@@ -2181,11 +2193,8 @@ share/apps/cmake/modules/FindNepomuk.cmake
 share/apps/cmake/modules/FindNetworkManager.cmake
 share/apps/cmake/modules/FindOggVorbis.cmake
 share/apps/cmake/modules/FindOpenEXR.cmake
-share/apps/cmake/modules/FindOpenSSL.cmake
 share/apps/cmake/modules/FindPCRE.cmake
-share/apps/cmake/modules/FindPackageHandleStandardArgs.cmake
 share/apps/cmake/modules/FindPhonon.cmake
-share/apps/cmake/modules/FindPkgConfig.cmake
 share/apps/cmake/modules/FindPlasma.cmake
 share/apps/cmake/modules/FindPolkitQt-1.cmake
 share/apps/cmake/modules/FindPolkitQt.cmake
@@ -2265,6 +2274,7 @@ share/apps/kauth/dbus_service.stub
 share/apps/kcharselect/kcharselect-data
 share/apps/kcm_componentchooser/kcm_instantmessenger.desktop
 share/apps/kcm_componentchooser/kcm_ktexteditor.desktop
+share/apps/kconf_update/kcookiescfg.pl
 share/apps/kconf_update/kcookiescfg.upd
 share/apps/kconf_update/kded.upd
 share/apps/kconf_update/kio_help.upd
@@ -2282,7 +2292,7 @@ share/apps/kdeui/about/bar-middle-right.png
 share/apps/kdeui/about/bar-top-left.png
 share/apps/kdeui/about/bar-top-middle.png
 share/apps/kdeui/about/bar-top-right.png
-share/apps/kdeui/about/body-background.jpg
+share/apps/kdeui/about/body-background.png
 share/apps/kdeui/about/box-bottom-left.png
 share/apps/kdeui/about/box-bottom-middle.png
 share/apps/kdeui/about/box-bottom-right.png
@@ -3387,9 +3397,7 @@ share/kde4/services/khtmladaptorpart.desktop
 share/kde4/services/khtmlimage.desktop
 share/kde4/services/kjavaappletviewer.desktop
 share/kde4/services/kmultipart.desktop
-share/kde4/services/kspell_aspell.desktop
 share/kde4/services/kspell_enchant.desktop
-share/kde4/services/kspell_hspell.desktop
 share/kde4/services/metainfo.protocol
 share/kde4/services/mms.protocol
 share/kde4/services/mmst.protocol
@@ -3675,5 +3683,3 @@ share/mime/uri/rtspu.xml
 @dirrm include/KDE/ConversionCheck
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

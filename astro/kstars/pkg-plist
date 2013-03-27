@@ -316,6 +316,16 @@ share/apps/kstars/wzscope.png
 share/apps/kstars/wzstars.png
 share/config.kcfg/kstars.kcfg
 share/config/kstars.knsrc
+share/doc/HTML/en/kstars/Add_Object_to_Session_plan.png
+share/doc/HTML/en/kstars/Another_way4.png
+share/doc/HTML/en/kstars/Another_way5.png
+share/doc/HTML/en/kstars/Another_way6.png
+share/doc/HTML/en/kstars/Another_way_to_add.png
+share/doc/HTML/en/kstars/Another_way_to_add_part3.png
+share/doc/HTML/en/kstars/Delete_all_images.png
+share/doc/HTML/en/kstars/KStars_Neptune.png
+share/doc/HTML/en/kstars/Savin_session.png
+share/doc/HTML/en/kstars/WUT.png
 share/doc/HTML/en/kstars/aavso.png
 share/doc/HTML/en/kstars/ai-contents.docbook
 share/doc/HTML/en/kstars/alpha.png
@@ -353,6 +363,7 @@ share/doc/HTML/en/kstars/colorandtemp.docbook
 share/doc/HTML/en/kstars/commands.docbook
 share/doc/HTML/en/kstars/common
 share/doc/HTML/en/kstars/config.docbook
+share/doc/HTML/en/kstars/cosmicdist.docbook
 share/doc/HTML/en/kstars/cpoles.docbook
 share/doc/HTML/en/kstars/credits.docbook
 share/doc/HTML/en/kstars/csphere.docbook
@@ -360,10 +371,14 @@ share/doc/HTML/en/kstars/darkmatter.docbook
 share/doc/HTML/en/kstars/detaildialog.png
 share/doc/HTML/en/kstars/details.docbook
 share/doc/HTML/en/kstars/devicemanager.png
+share/doc/HTML/en/kstars/dss.png
 share/doc/HTML/en/kstars/dumpmode.docbook
 share/doc/HTML/en/kstars/ecliptic.docbook
 share/doc/HTML/en/kstars/ellipticalgalaxies.docbook
+share/doc/HTML/en/kstars/epoch.docbook
 share/doc/HTML/en/kstars/equinox.docbook
+share/doc/HTML/en/kstars/execute_session_nt.png
+share/doc/HTML/en/kstars/execute_session_the_nt.png
 share/doc/HTML/en/kstars/faq.docbook
 share/doc/HTML/en/kstars/find.png
 share/doc/HTML/en/kstars/fitsarea.png
@@ -401,8 +416,7 @@ share/doc/HTML/en/kstars/luminosity_ex.png
 share/doc/HTML/en/kstars/magnitude.docbook
 share/doc/HTML/en/kstars/meridian.docbook
 share/doc/HTML/en/kstars/newfov.png
-share/doc/HTML/en/kstars/observinglist.docbook
-share/doc/HTML/en/kstars/observinglist.png
+share/doc/HTML/en/kstars/obsplanner.docbook
 share/doc/HTML/en/kstars/parallax.docbook
 share/doc/HTML/en/kstars/popup.png
 share/doc/HTML/en/kstars/precession.docbook
@@ -411,6 +425,7 @@ share/doc/HTML/en/kstars/retrograde.docbook
 share/doc/HTML/en/kstars/screen1.png
 share/doc/HTML/en/kstars/scriptbuilder.docbook
 share/doc/HTML/en/kstars/scriptbuilder.png
+share/doc/HTML/en/kstars/sds.png
 share/doc/HTML/en/kstars/sidereal.docbook
 share/doc/HTML/en/kstars/skycoords.docbook
 share/doc/HTML/en/kstars/skymapdevice.png
@@ -419,6 +434,7 @@ share/doc/HTML/en/kstars/solarsystem.png
 share/doc/HTML/en/kstars/spiralgalaxies.docbook
 share/doc/HTML/en/kstars/star_colors.png
 share/doc/HTML/en/kstars/stars.docbook
+share/doc/HTML/en/kstars/telescopes.docbook
 share/doc/HTML/en/kstars/timezones.docbook
 share/doc/HTML/en/kstars/tools.docbook
 share/doc/HTML/en/kstars/utime.docbook

@@ -115,8 +115,8 @@
     SUBDIR += jabref
     SUBDIR += jadetex
     SUBDIR += kcdlabel
+    SUBDIR += kde4-print-manager
     SUBDIR += kde_poster
-    SUBDIR += kdeutils4-printer-applet
     SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex
@@ -279,7 +279,6 @@
     SUBDIR += splix
     SUBDIR += sv-acroread8
     SUBDIR += system-config-printer
-    SUBDIR += system-config-printer-kde
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-base

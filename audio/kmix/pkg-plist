@@ -38,7 +38,6 @@ share/dbus-1/interfaces/org.kde.kmix.mixset.xml
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
-share/doc/HTML/en/kmix/kmix-channels.png
 share/doc/HTML/en/kmix/kmix-configure.png
 share/doc/HTML/en/kmix/kmix-file.png
 share/doc/HTML/en/kmix/kmix-master.png

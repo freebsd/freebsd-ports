@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Gallegan messages and documentation for KDE4
+COMMENT=	Gallegan messages and documentation for KDE SC 4
 
 KDE4_L10N=	gl
 

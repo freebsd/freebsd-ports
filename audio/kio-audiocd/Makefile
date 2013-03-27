@@ -7,7 +7,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DISTNAME=	audiocd-kio-${PORTVERSION}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE IOSlave for accessing audio CDs
@@ -21,13 +21,13 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 USES=		cmake:outsource
 USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
 		automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	LAME
 LAME_DESC=	Install LAME MP3 audio encoder

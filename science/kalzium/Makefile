@@ -5,7 +5,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE 4
@@ -24,9 +24,9 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USES=		cmake:outsource
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_QT4=	dbus designer opengl script xml \
+USE_QT4=	corelib declarative designer opengl script xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=	yes
+USE_XZ=		yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

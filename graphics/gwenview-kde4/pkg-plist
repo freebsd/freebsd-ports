@@ -9,6 +9,7 @@ share/apps/gvpart/gvpart.rc
 share/apps/gwenview/color-schemes/fullscreen.colors
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/gwenviewui.rc
+share/apps/gwenview/images/background.png
 share/apps/solid/actions/gwenview_importer.desktop
 share/apps/solid/actions/gwenview_importer_camera.desktop
 share/doc/HTML/en/gwenview/browse_mode.png
@@ -35,6 +36,7 @@ share/icons/hicolor/scalable/apps/gwenview.svgz
 share/kde4/services/ServiceMenus/slideshow.desktop
 share/kde4/services/gvpart.desktop
 @dirrm share/doc/HTML/en/gwenview
+@dirrm share/apps/gwenview/images
 @dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview/color-schemes
 @dirrm share/apps/gwenview

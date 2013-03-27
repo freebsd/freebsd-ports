@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comprehensive html/website development environment
@@ -16,7 +16,7 @@ LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib \
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 USES=		cmake:outsource

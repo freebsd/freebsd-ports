@@ -1,0 +1,43 @@
+lib/kde4/pateplugin.so
+%%PYTHON_SITELIBDIR%%/PyKate4/__init__.py
+%%PYTHON_SITELIBDIR%%/PyKate4/kate.so
+share/apps/kate/pate/block.py
+share/apps/kate/pate/close_tag.py
+share/apps/kate/pate/commentar.py
+share/apps/kate/pate/console/config.ui
+share/apps/kate/pate/console/console.py
+share/apps/kate/pate/expand.py
+share/apps/kate/pate/expand/all.expand
+share/apps/kate/pate/expand/text_css.expand
+share/apps/kate/pate/expand/text_html.expand
+share/apps/kate/pate/expand/text_x-c++hdr.expand
+share/apps/kate/pate/expand/text_x-c++src.expand
+share/apps/kate/pate/expand/text_x-chdr.expand
+share/apps/kate/pate/expand/text_x-python.expand
+share/apps/kate/pate/format.py
+share/apps/kate/pate/gid/config.ui
+share/apps/kate/pate/gid/gid.py
+share/apps/kate/pate/gid/idutils.py
+share/apps/kate/pate/gid/tool.ui
+share/apps/kate/pate/libkatepate/__init__.py
+share/apps/kate/pate/libkatepate/common.py
+share/apps/kate/pate/libkatepate/decorators.py
+share/apps/kate/pate/libkatepate/pred.py
+share/apps/kate/pate/libkatepate/selection.py
+share/apps/kate/pate/libkatepate/ui.py
+share/apps/kate/pate/tools.py
+share/apps/kate/plugins/pate/kate/__init__.py
+share/apps/kate/plugins/pate/kate/gui.py
+share/kde4/services/pate.desktop
+@dirrm share/apps/kate/plugins/pate/kate
+@dirrm share/apps/kate/plugins/pate
+@dirrm share/apps/kate/plugins
+@dirrm share/apps/kate/pate/libkatepate
+@dirrm share/apps/kate/pate/gid
+@dirrm share/apps/kate/pate/expand
+@dirrm share/apps/kate/pate/console
+@dirrm share/apps/kate/pate
+@dirrm share/apps/kate
+@dirrm %%PYTHON_SITELIBDIR%%/PyKate4
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

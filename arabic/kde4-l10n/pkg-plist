@@ -92,7 +92,6 @@ share/locale/ar/LC_MESSAGES/kalzium.mo
 share/locale/ar/LC_MESSAGES/kanagram.mo
 share/locale/ar/LC_MESSAGES/kapman.mo
 share/locale/ar/LC_MESSAGES/kate.mo
-share/locale/ar/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ar/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ar/LC_MESSAGES/katefiletemplates.mo
 share/locale/ar/LC_MESSAGES/katehelloworld.mo
@@ -100,7 +99,6 @@ share/locale/ar/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ar/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ar/LC_MESSAGES/kateopenheader.mo
 share/locale/ar/LC_MESSAGES/katepart4.mo
-share/locale/ar/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/ar/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ar/LC_MESSAGES/katetabbarextension.mo
 share/locale/ar/LC_MESSAGES/katetextfilter.mo
@@ -136,7 +134,6 @@ share/locale/ar/LC_MESSAGES/kcm_memory.mo
 share/locale/ar/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ar/LC_MESSAGES/kcm_pci.mo
 share/locale/ar/LC_MESSAGES/kcm_phonon.mo
-share/locale/ar/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ar/LC_MESSAGES/kcm_platform.mo
 share/locale/ar/LC_MESSAGES/kcm_solid.mo
 share/locale/ar/LC_MESSAGES/kcm_solid_actions.mo
@@ -362,6 +359,7 @@ share/locale/ar/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/ar/LC_MESSAGES/ktimer.mo
 share/locale/ar/LC_MESSAGES/ktimetracker.mo
 share/locale/ar/LC_MESSAGES/ktouch.mo
+share/locale/ar/LC_MESSAGES/ktouchpadenabler.mo
 share/locale/ar/LC_MESSAGES/ktraderclient.mo
 share/locale/ar/LC_MESSAGES/ktuberling.mo
 share/locale/ar/LC_MESSAGES/kturtle.mo
@@ -503,10 +501,10 @@ share/locale/ar/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_news.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_notes.mo
-share/locale/ar/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_opendesktop.mo
+share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_panel.mo
@@ -588,21 +586,16 @@ share/locale/ar/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/ar/LC_MESSAGES/plasma_wallpaper_pattern.mo
 share/locale/ar/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/ar/LC_MESSAGES/plasma_wallpaper_weather.mo
-share/locale/ar/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ar/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ar/LC_MESSAGES/plasmapkg.mo
-share/locale/ar/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/ar/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ar/LC_MESSAGES/powerdevil.mo
 share/locale/ar/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ar/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/ar/LC_MESSAGES/powerdevilprofilesconfig.mo
-share/locale/ar/LC_MESSAGES/printer-applet.mo
 share/locale/ar/LC_MESSAGES/processcore.mo
 share/locale/ar/LC_MESSAGES/processui.mo
 share/locale/ar/LC_MESSAGES/randrmonitor.mo
 share/locale/ar/LC_MESSAGES/rellinks.mo
-share/locale/ar/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/ar/LC_MESSAGES/searchbarplugin.mo
 share/locale/ar/LC_MESSAGES/solid-hardware.mo
 share/locale/ar/LC_MESSAGES/solid-network.mo

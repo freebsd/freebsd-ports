@@ -32,21 +32,6 @@ lib/kde4/kwin_keramik_config.so
 lib/kde4/kwin_modernsys_config.so
 lib/kde4/kwin_quartz_config.so
 lib/kde4/plugins/styles/phasestyle.so
-share/apps/aurorae/themes/Air-Oxygen/air-oxygenrc
-share/apps/aurorae/themes/Air-Oxygen/close.svgz
-share/apps/aurorae/themes/Air-Oxygen/decoration.svgz
-share/apps/aurorae/themes/Air-Oxygen/maximize.svgz
-share/apps/aurorae/themes/Air-Oxygen/metadata.desktop
-share/apps/aurorae/themes/Air-Oxygen/minimize.svgz
-share/apps/aurorae/themes/Air-Oxygen/restore.svgz
-share/apps/aurorae/themes/Oxygen/Oxygenrc
-share/apps/aurorae/themes/Oxygen/close.svgz
-share/apps/aurorae/themes/Oxygen/decoration.svgz
-share/apps/aurorae/themes/Oxygen/help.svgz
-share/apps/aurorae/themes/Oxygen/maximize.svgz
-share/apps/aurorae/themes/Oxygen/metadata.desktop
-share/apps/aurorae/themes/Oxygen/minimize.svgz
-share/apps/aurorae/themes/Oxygen/restore.svgz
 share/apps/color-schemes/CherryBlossom.colors
 share/apps/color-schemes/Chrome.colors
 share/apps/color-schemes/Desert.colors
@@ -218,7 +203,31 @@ share/apps/desktoptheme/slim-glow/colors
 share/apps/desktoptheme/slim-glow/dialogs/background.svgz
 share/apps/desktoptheme/slim-glow/dialogs/krunner.svgz
 share/apps/desktoptheme/slim-glow/dialogs/shutdowndialog.svgz
+share/apps/desktoptheme/slim-glow/icons/amarok.svgz
+share/apps/desktoptheme/slim-glow/icons/audio.svgz
+share/apps/desktoptheme/slim-glow/icons/battery.svgz
+share/apps/desktoptheme/slim-glow/icons/device.svgz
+share/apps/desktoptheme/slim-glow/icons/kget.svgz
+share/apps/desktoptheme/slim-glow/icons/kgpg.svgz
+share/apps/desktoptheme/slim-glow/icons/klipper.svgz
+share/apps/desktoptheme/slim-glow/icons/konv_message.svgz
+share/apps/desktoptheme/slim-glow/icons/konversation.svgz
+share/apps/desktoptheme/slim-glow/icons/kopete.svgz
+share/apps/desktoptheme/slim-glow/icons/korgac.svgz
+share/apps/desktoptheme/slim-glow/icons/kpackagekit.svgz
+share/apps/desktoptheme/slim-glow/icons/ktorrent.svgz
+share/apps/desktoptheme/slim-glow/icons/location.svgz
+share/apps/desktoptheme/slim-glow/icons/mail.svgz
+share/apps/desktoptheme/slim-glow/icons/nepomuk.svgz
+share/apps/desktoptheme/slim-glow/icons/network.svgz
 share/apps/desktoptheme/slim-glow/icons/notification.svgz
+share/apps/desktoptheme/slim-glow/icons/preferences.svgz
+share/apps/desktoptheme/slim-glow/icons/presence-applet.svgz
+share/apps/desktoptheme/slim-glow/icons/printer.svgz
+share/apps/desktoptheme/slim-glow/icons/quassel.svgz
+share/apps/desktoptheme/slim-glow/icons/slc.svgz
+share/apps/desktoptheme/slim-glow/icons/wallet.svgz
+share/apps/desktoptheme/slim-glow/icons/weather.svgz
 share/apps/desktoptheme/slim-glow/metadata.desktop
 share/apps/desktoptheme/slim-glow/opaque/dialogs/background.svgz
 share/apps/desktoptheme/slim-glow/opaque/dialogs/kickoff.svgz
@@ -243,9 +252,11 @@ share/apps/desktoptheme/slim-glow/widgets/lineedit.svgz
 share/apps/desktoptheme/slim-glow/widgets/notes.svgz
 share/apps/desktoptheme/slim-glow/widgets/panel-background.svgz
 share/apps/desktoptheme/slim-glow/widgets/picture-frame-default.svgz
+share/apps/desktoptheme/slim-glow/widgets/plot-background.svgz
 share/apps/desktoptheme/slim-glow/widgets/scrollbar.svgz
 share/apps/desktoptheme/slim-glow/widgets/systemtray.svgz
 share/apps/desktoptheme/slim-glow/widgets/tasks.svgz
+share/apps/desktoptheme/slim-glow/widgets/toolbox.svgz
 share/apps/desktoptheme/slim-glow/widgets/tooltip.svgz
 share/apps/desktoptheme/slim-glow/widgets/translucentbackground.svgz
 share/apps/desktoptheme/slim-glow/widgets/viewitem.svgz
@@ -6372,11 +6383,17 @@ share/wallpapers/Aghi/contents/images/1920x1200.jpg
 share/wallpapers/Aghi/contents/images/800x600.jpg
 share/wallpapers/Aghi/contents/screenshot.jpg
 share/wallpapers/Aghi/metadata.desktop
+share/wallpapers/Air/contents/images/1280x1024.jpg
+share/wallpapers/Air/contents/images/1600x1200.jpg
+share/wallpapers/Air/contents/images/1920x1080.jpg
+share/wallpapers/Air/contents/images/1920x1200.jpg
+share/wallpapers/Air/contents/screenshot.png
+share/wallpapers/Air/metadata.desktop
 share/wallpapers/Atra_Dot/contents/images/1280x1024.jpg
 share/wallpapers/Atra_Dot/contents/images/1600x1200.jpg
 share/wallpapers/Atra_Dot/contents/images/1920x1080.jpg
 share/wallpapers/Atra_Dot/contents/images/1920x1200.jpg
-share/wallpapers/Atra_Dot/contents/screnshot.jpg
+share/wallpapers/Atra_Dot/contents/screenshot.jpg
 share/wallpapers/Atra_Dot/metadata.desktop
 share/wallpapers/Autumn/contents/images/3008x2000.jpg
 share/wallpapers/Beach_Reflecting_Clouds/contents/images/1280x1024.jpg
@@ -6454,7 +6471,7 @@ share/wallpapers/Evening/contents/images/1280x1024.jpg
 share/wallpapers/Evening/contents/images/1600x1200.jpg
 share/wallpapers/Evening/contents/images/1920x1080.jpg
 share/wallpapers/Evening/contents/images/1920x1200.jpg
-share/wallpapers/Evening/contents/screnshot.jpg
+share/wallpapers/Evening/contents/screenshot.jpg
 share/wallpapers/Evening/metadata.desktop
 share/wallpapers/Field/contents/images/1280x1024.jpg
 share/wallpapers/Field/contents/images/1600x1200.jpg
@@ -6467,11 +6484,21 @@ share/wallpapers/Fields_of_Peace/contents/images/1600x1200.JPG
 share/wallpapers/Fields_of_Peace/contents/images/1920x1200.JPG
 share/wallpapers/Fields_of_Peace/contents/screenshot.png
 share/wallpapers/Fields_of_Peace/metadata.desktop
+share/wallpapers/Finally_Summer_in_Germany/contents/images/1280x1024.jpg
+share/wallpapers/Finally_Summer_in_Germany/contents/images/1600x1200.jpg
+share/wallpapers/Finally_Summer_in_Germany/contents/images/1920x1200.jpg
+share/wallpapers/Finally_Summer_in_Germany/contents/screenshot.png
+share/wallpapers/Finally_Summer_in_Germany/metadata.desktop
 share/wallpapers/Flower_drops/contents/images/1280x1024.jpg
 share/wallpapers/Flower_drops/contents/images/1600x1200.jpg
 share/wallpapers/Flower_drops/contents/images/1920x1200.jpg
 share/wallpapers/Flower_drops/contents/screenshot.png
 share/wallpapers/Flower_drops/metadata.desktop
+share/wallpapers/Fresh_Morning/contents/images/1280x1024.jpg
+share/wallpapers/Fresh_Morning/contents/images/1600x1200.jpg
+share/wallpapers/Fresh_Morning/contents/images/1920x1200.jpg
+share/wallpapers/Fresh_Morning/contents/screenshot.png
+share/wallpapers/Fresh_Morning/metadata.desktop
 share/wallpapers/Golden_Ripples/contents/images/1280x1024.jpg
 share/wallpapers/Golden_Ripples/contents/images/1600x1200.jpg
 share/wallpapers/Golden_Ripples/contents/images/1920x1200.jpg
@@ -6531,8 +6558,13 @@ share/wallpapers/Midnight_in_Karelia/contents/images/1280x1024.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1600x1200.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1920x1080.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1920x1200.jpg
-share/wallpapers/Midnight_in_Karelia/contents/screnshot.jpg
+share/wallpapers/Midnight_in_Karelia/contents/screenshot.jpg
 share/wallpapers/Midnight_in_Karelia/metadata.desktop
+share/wallpapers/Plasmalicious/contents/images/1280x1024.jpg
+share/wallpapers/Plasmalicious/contents/images/1600x1200.jpg
+share/wallpapers/Plasmalicious/contents/images/1920x1200.jpg
+share/wallpapers/Plasmalicious/contents/screenshot.png
+share/wallpapers/Plasmalicious/metadata.desktop
 share/wallpapers/Quadros/contents/images/1024x768.jpg
 share/wallpapers/Quadros/contents/images/1280x1024.jpg
 share/wallpapers/Quadros/contents/images/1280x800.jpg
@@ -6557,7 +6589,7 @@ share/wallpapers/Spring_Sunray/contents/images/1280x1024.jpg
 share/wallpapers/Spring_Sunray/contents/images/1600x1200.jpg
 share/wallpapers/Spring_Sunray/contents/images/1920x1080.jpg
 share/wallpapers/Spring_Sunray/contents/images/1920x1200.jpg
-share/wallpapers/Spring_Sunray/contents/screnshot.jpg
+share/wallpapers/Spring_Sunray/contents/screenshot.jpg
 share/wallpapers/Spring_Sunray/metadata.desktop
 share/wallpapers/Storm/contents/contents.png
 share/wallpapers/Storm/contents/images/1600x1200.jpg
@@ -6627,6 +6659,9 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/Quadros/contents/images
 @dirrm share/wallpapers/Quadros/contents
 @dirrm share/wallpapers/Quadros
+@dirrm share/wallpapers/Plasmalicious/contents/images
+@dirrm share/wallpapers/Plasmalicious/contents
+@dirrm share/wallpapers/Plasmalicious
 @dirrm share/wallpapers/Midnight_in_Karelia/contents/images
 @dirrm share/wallpapers/Midnight_in_Karelia/contents
 @dirrm share/wallpapers/Midnight_in_Karelia
@@ -6666,9 +6701,15 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/Golden_Ripples/contents/images
 @dirrm share/wallpapers/Golden_Ripples/contents
 @dirrm share/wallpapers/Golden_Ripples
+@dirrm share/wallpapers/Fresh_Morning/contents/images
+@dirrm share/wallpapers/Fresh_Morning/contents
+@dirrm share/wallpapers/Fresh_Morning
 @dirrm share/wallpapers/Flower_drops/contents/images
 @dirrm share/wallpapers/Flower_drops/contents
 @dirrm share/wallpapers/Flower_drops
+@dirrm share/wallpapers/Finally_Summer_in_Germany/contents/images
+@dirrm share/wallpapers/Finally_Summer_in_Germany/contents
+@dirrm share/wallpapers/Finally_Summer_in_Germany
 @dirrm share/wallpapers/Fields_of_Peace/contents/images
 @dirrm share/wallpapers/Fields_of_Peace/contents
 @dirrm share/wallpapers/Fields_of_Peace
@@ -6720,6 +6761,9 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/Atra_Dot/contents/images
 @dirrm share/wallpapers/Atra_Dot/contents
 @dirrm share/wallpapers/Atra_Dot
+@dirrm share/wallpapers/Air/contents/images
+@dirrm share/wallpapers/Air/contents
+@dirrm share/wallpapers/Air
 @dirrm share/wallpapers/Aghi/contents/images
 @dirrm share/wallpapers/Aghi/contents
 @dirrm share/wallpapers/Aghi
@@ -6855,7 +6899,5 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/apps/desktoptheme/Androbit/opaque
 @dirrm share/apps/desktoptheme/Androbit/dialogs
 @dirrmtry share/apps/desktoptheme/Androbit
-@dirrm share/apps/aurorae/themes/Oxygen
-@dirrm share/apps/aurorae/themes/Air-Oxygen
 @dirrmtry share/apps/aurorae/themes
 @dirrmtry share/apps/aurorae

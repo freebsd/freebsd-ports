@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	korean kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Korean messages and documentation for KDE4
+COMMENT=	Korean messages and documentation for KDE SC 4
 
 KDE4_L10N=	ko
 

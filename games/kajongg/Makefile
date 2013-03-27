@@ -5,27 +5,21 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DISTNAME=	kdegames-${PORTVERSION}
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Ancient Chinese board game for KDE 4
+COMMENT=	${${PORTNAME}_DESC}
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtSql.so:${PORTSDIR}/databases/py-qt4-sql \
-		ogg123:${PORTSDIR}/audio/vorbis-tools
+CONFLICTS_INSTALL=	kdegames-4.[0-6].*
 
-CONFLICTS=	kdegames-4.[0-6].*
-
-USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
 USES=		cmake:outsource
-USE_PYTHON=	yes
+USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_PYTHON=	yes
 USE_SQLITE=	3
 USE_TWISTED_RUN=	yes
-DISTINFO_FILE=	${PORTSDIR}/games/kdegames4/distinfo
-USE_XZ=	yes
-CMAKE_ARGS+=	-DINSTALL_KAJONGG:BOOL=TRUE
+USE_XZ=		yes
+CMAKE_ARGS=	-DINSTALL_KAJONGG:BOOL=TRUE
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-
+.include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

@@ -5,6 +5,7 @@ include/analitza/analitzautils.h
 include/analitza/analyzer.h
 include/analitza/builtinmethods.h
 include/analitza/expression.h
+include/analitza/expressionstream.h
 include/analitza/expressiontype.h
 include/analitza/importqobjectmetatype.h
 include/analitza/object.h
@@ -17,14 +18,22 @@ include/analitza/vector.h
 include/analitzagui/algebrahighlighter.h
 include/analitzagui/analitzaguiexport.h
 include/analitzagui/expressionedit.h
-include/analitzagui/function.h
-include/analitzagui/functionfactory.h
-include/analitzagui/functionsmodel.h
-include/analitzagui/functionspainter.h
-include/analitzagui/functionsview.h
-include/analitzagui/graph2d.h
 include/analitzagui/operatorsmodel.h
+include/analitzagui/plotsview2d.h
+include/analitzagui/plotsview3d.h
 include/analitzagui/variablesmodel.h
+include/analitzaplot/analitzaplotexport.h
+include/analitzaplot/functiongraph.h
+include/analitzaplot/planecurve.h
+include/analitzaplot/plotitem.h
+include/analitzaplot/plotsdictionarymodel.h
+include/analitzaplot/plotsfactory.h
+include/analitzaplot/plotsmodel.h
+include/analitzaplot/plotter2d.h
+include/analitzaplot/plotter3d.h
+include/analitzaplot/plottingenums.h
+include/analitzaplot/spacecurve.h
+include/analitzaplot/surface.h
 lib/cmake/analitza/AnalitzaConfig.cmake
 lib/cmake/analitza/AnalitzaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/analitza/AnalitzaTargets.cmake
@@ -34,7 +43,14 @@ lib/libanalitza.so.5.0.1
 lib/libanalitzagui.so
 lib/libanalitzagui.so.5
 lib/libanalitzagui.so.5.0.1
+lib/libanalitzaplot.so
+lib/libanalitzaplot.so.5
+lib/libanalitzaplot.so.5.0.1
+share/apps/libanalitza/plots/basic_curves.plots
+@dirrm share/apps/libanalitza/plots
+@dirrm share/apps/libanalitza
 @dirrm lib/cmake/analitza
 @dirrmtry lib/cmake
+@dirrm include/analitzaplot
 @dirrm include/analitzagui
 @dirrm include/analitza

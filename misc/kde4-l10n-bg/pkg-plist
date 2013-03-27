@@ -90,7 +90,6 @@ share/locale/bg/LC_MESSAGES/kcm_memory.mo
 share/locale/bg/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/bg/LC_MESSAGES/kcm_pci.mo
 share/locale/bg/LC_MESSAGES/kcm_phonon.mo
-share/locale/bg/LC_MESSAGES/kcm_phononxine.mo
 share/locale/bg/LC_MESSAGES/kcm_platform.mo
 share/locale/bg/LC_MESSAGES/kcm_solid.mo
 share/locale/bg/LC_MESSAGES/kcm_solid_actions.mo
@@ -228,6 +227,7 @@ share/locale/bg/LC_MESSAGES/kio_sieve.mo
 share/locale/bg/LC_MESSAGES/kio_smb.mo
 share/locale/bg/LC_MESSAGES/kio_smtp.mo
 share/locale/bg/LC_MESSAGES/kio_svn.mo
+share/locale/bg/LC_MESSAGES/kio_tags.mo
 share/locale/bg/LC_MESSAGES/kio_thumbnail.mo
 share/locale/bg/LC_MESSAGES/kio_timeline.mo
 share/locale/bg/LC_MESSAGES/kio_trash.mo
@@ -403,6 +403,7 @@ share/locale/bg/LC_MESSAGES/okular_xps.mo
 share/locale/bg/LC_MESSAGES/parley.mo
 share/locale/bg/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/bg/LC_MESSAGES/phonon_kde.mo
+share/locale/bg/LC_MESSAGES/phonon_vlc.mo
 share/locale/bg/LC_MESSAGES/phononserver.mo
 share/locale/bg/LC_MESSAGES/plasma-desktop.mo
 share/locale/bg/LC_MESSAGES/plasma-netbook.mo
@@ -466,16 +467,13 @@ share/locale/bg/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/bg/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/bg/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/bg/LC_MESSAGES/plasma_wallpaper_color.mo
-share/locale/bg/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/bg/LC_MESSAGES/plasmagenericshell.mo
 share/locale/bg/LC_MESSAGES/plasmapkg.mo
-share/locale/bg/LC_MESSAGES/plasmoidviewer.mo
 share/locale/bg/LC_MESSAGES/powerdevil.mo
 share/locale/bg/LC_MESSAGES/processcore.mo
 share/locale/bg/LC_MESSAGES/processui.mo
 share/locale/bg/LC_MESSAGES/randrmonitor.mo
 share/locale/bg/LC_MESSAGES/rellinks.mo
-share/locale/bg/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/bg/LC_MESSAGES/searchbarplugin.mo
 share/locale/bg/LC_MESSAGES/solid-hardware.mo
 share/locale/bg/LC_MESSAGES/solid_qt.mo
@@ -487,7 +485,6 @@ share/locale/bg/LC_MESSAGES/strigila_diff.mo
 share/locale/bg/LC_MESSAGES/superkaramba.mo
 share/locale/bg/LC_MESSAGES/svgpart.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
-share/locale/bg/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/bg/LC_MESSAGES/systemsettings.mo
 share/locale/bg/LC_MESSAGES/timezones4.mo
 share/locale/bg/LC_MESSAGES/uachangerplugin.mo

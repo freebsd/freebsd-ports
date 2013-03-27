@@ -96,6 +96,7 @@ include/lancelot/widgets/TabBar.h
 include/lancelot/widgets/Widget.h
 lib/kde4/kcm_krunner_audioplayercontrol.so
 lib/kde4/kcm_krunner_charrunner.so
+lib/kde4/kcm_krunner_dictionary.so
 lib/kde4/kcm_krunner_spellcheck.so
 lib/kde4/kcm_plasma_runner_events.so
 lib/kde4/krunner_audioplayercontrol.so
@@ -103,6 +104,7 @@ lib/kde4/krunner_browserhistory.so
 lib/kde4/krunner_charrunner.so
 lib/kde4/krunner_contacts.so
 lib/kde4/krunner_converter.so
+lib/kde4/krunner_dictionary.so
 lib/kde4/krunner_katesessions.so
 lib/kde4/krunner_konquerorsessions.so
 lib/kde4/krunner_konsolesessions.so
@@ -118,7 +120,6 @@ lib/kde4/plasma_applet_binaryclock.so
 lib/kde4/plasma_applet_blackboard.so
 lib/kde4/plasma_applet_bookmarks.so
 lib/kde4/plasma_applet_bubblemon.so
-lib/kde4/plasma_applet_calculator.so
 lib/kde4/plasma_applet_charselect.so
 lib/kde4/plasma_applet_comic.so
 lib/kde4/plasma_applet_dict.so
@@ -185,6 +186,7 @@ lib/kde4/plasma_wallpaper_mandelbrot.so
 %%MARBLE%%lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
 lib/kde4/plasma_wallpaper_potd.so
+lib/kde4/plasma_wallpaper_qml.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
 lib/liblancelot-datamodels.so
@@ -288,8 +290,11 @@ share/apps/desktoptheme/default/rssnow/background.svgz
 share/apps/desktoptheme/default/rssnow/rssnow.svgz
 share/apps/desktoptheme/default/stylesheets/news.css
 share/apps/desktoptheme/default/weather/wind-arrows.svgz
-share/apps/desktoptheme/default/weatherstation/lcd.svgz
+share/apps/desktoptheme/default/weatherstation/lcd2.svgz
+share/apps/desktoptheme/default/weatherstation/lcd_digits.svgz
 share/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
+share/apps/desktoptheme/default/weatherstation/weather_icons.svgz
+share/apps/desktoptheme/default/weatherstation/wind_arrows.svgz
 share/apps/desktoptheme/default/widgets/eyes.svg
 share/apps/desktoptheme/default/widgets/luna.svgz
 share/apps/desktoptheme/default/widgets/microblog.svgz
@@ -328,11 +333,35 @@ share/apps/lancelot/lancelot.notifyrc
 share/apps/plasma-applet-frame/picture-frame-default.jpg
 share/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 share/apps/plasma-applet-opendesktop/user.css
+share/apps/plasma/packages/org.kde.comic/contents/ui/ButtonBar.qml
+share/apps/plasma/packages/org.kde.comic/contents/ui/ComicBottomInfo.qml
+share/apps/plasma/packages/org.kde.comic/contents/ui/ComicCentralView.qml
+share/apps/plasma/packages/org.kde.comic/contents/ui/FullViewWidget.qml
+share/apps/plasma/packages/org.kde.comic/contents/ui/ImageWidget.qml
+share/apps/plasma/packages/org.kde.comic/contents/ui/main.qml
+share/apps/plasma/packages/org.kde.comic/metadata.desktop
+share/apps/plasma/packages/org.kde.lcdweather/contents/ui/LCDDigit.qml
+share/apps/plasma/packages/org.kde.lcdweather/contents/ui/LCDDisplay.qml
+share/apps/plasma/packages/org.kde.lcdweather/contents/ui/Wind.qml
+share/apps/plasma/packages/org.kde.lcdweather/contents/ui/main.qml
+share/apps/plasma/packages/org.kde.lcdweather/metadata.desktop
+share/apps/plasma/packages/org.kde.weather/contents/ui/DetailsView.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/FiveDaysView.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/Notice.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/NoticesView.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/TopPanel.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/Utils.js
+share/apps/plasma/packages/org.kde.weather/contents/ui/WeatherListView.qml
+share/apps/plasma/packages/org.kde.weather/contents/ui/main.qml
+share/apps/plasma/packages/org.kde.weather/metadata.desktop
+share/apps/plasma/plasmoids/calculator/contents/ui/calculator.qml
+share/apps/plasma/plasmoids/calculator/metadata.desktop
 share/apps/plasma/plasmoids/konqprofiles/contents/ui/konqprofiles.qml
 share/apps/plasma/plasmoids/konqprofiles/metadata.desktop
 share/apps/plasma/plasmoids/konsoleprofiles/contents/ui/konsoleprofiles.qml
 share/apps/plasma/plasmoids/konsoleprofiles/metadata.desktop
 share/apps/plasma/plasmoids/nowplaying/contents/code/service.js
+share/apps/plasma/plasmoids/nowplaying/contents/config/main.xml
 share/apps/plasma/plasmoids/nowplaying/contents/images/nocover.svgz
 share/apps/plasma/plasmoids/nowplaying/contents/ui/AlbumArt.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/CompactLayout.qml
@@ -345,6 +374,7 @@ share/apps/plasma/plasmoids/nowplaying/contents/ui/Mpris2.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/PlayPauseButton.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/PositionSlider.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/VLayout.qml
+share/apps/plasma/plasmoids/nowplaying/contents/ui/config.ui
 share/apps/plasma/plasmoids/nowplaying/contents/ui/nowplaying.qml
 share/apps/plasma/plasmoids/nowplaying/metadata.desktop
 share/apps/plasma/services/kdeobservatory.operations
@@ -356,6 +386,18 @@ share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
 share/apps/plasma/services/rtmtasks.operations
 share/apps/plasma/services/tweet.operations
+share/apps/plasma/wallpapers/org.kde.animals/contents/ui/Animal.qml
+share/apps/plasma/wallpapers/org.kde.animals/contents/ui/animals.qml
+share/apps/plasma/wallpapers/org.kde.animals/metadata.desktop
+share/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BackgroundElement.qml
+share/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BottomBackgroundElement.qml
+share/apps/plasma/wallpapers/org.kde.haenau/contents/ui/RightBackgroundElement.qml
+share/apps/plasma/wallpapers/org.kde.haenau/contents/ui/main.qml
+share/apps/plasma/wallpapers/org.kde.haenau/contents/ui/wallpaper.svgz
+share/apps/plasma/wallpapers/org.kde.haenau/metadata.desktop
+share/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/main.qml
+share/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/wallpaper.svgz
+share/apps/plasma/wallpapers/org.kde.hunyango/metadata.desktop
 share/apps/plasma_pastebin/plasma_pastebin.notifyrc
 share/apps/plasma_wallpaper_pattern/patterns/bees.desktop
 share/apps/plasma_wallpaper_pattern/patterns/bees.png
@@ -547,6 +589,8 @@ share/kde4/services/plasma-runner-audioplayercontrol_config.desktop
 share/kde4/services/plasma-runner-contacts.desktop
 share/kde4/services/plasma-runner-converter.desktop
 share/kde4/services/plasma-runner-datetime.desktop
+share/kde4/services/plasma-runner-dictionary.desktop
+share/kde4/services/plasma-runner-dictionary_config.desktop
 share/kde4/services/plasma-runner-events.desktop
 share/kde4/services/plasma-runner-events_config.desktop
 share/kde4/services/plasma-runner-kopete.desktop
@@ -560,6 +604,7 @@ share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 %%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-potd.desktop
+share/kde4/services/plasma-wallpaper-qml.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
 share/kde4/services/plasma_applet_plasmaboard.desktop
@@ -572,8 +617,19 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma_wallpaper_pattern/patterns
 @dirrm share/apps/plasma_wallpaper_pattern
 @dirrm share/apps/plasma_pastebin
+@dirrm share/apps/plasma/wallpapers/org.kde.hunyango/contents/ui
+@dirrm share/apps/plasma/wallpapers/org.kde.hunyango/contents
+@dirrm share/apps/plasma/wallpapers/org.kde.hunyango
+@dirrm share/apps/plasma/wallpapers/org.kde.haenau/contents/ui
+@dirrm share/apps/plasma/wallpapers/org.kde.haenau/contents
+@dirrm share/apps/plasma/wallpapers/org.kde.haenau
+@dirrm share/apps/plasma/wallpapers/org.kde.animals/contents/ui
+@dirrm share/apps/plasma/wallpapers/org.kde.animals/contents
+@dirrm share/apps/plasma/wallpapers/org.kde.animals
+@dirrm share/apps/plasma/wallpapers
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/ui
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/images
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/config
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/code
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents
 @dirrm share/apps/plasma/plasmoids/nowplaying
@@ -583,6 +639,18 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma/plasmoids/konqprofiles/contents/ui
 @dirrm share/apps/plasma/plasmoids/konqprofiles/contents
 @dirrm share/apps/plasma/plasmoids/konqprofiles
+@dirrm share/apps/plasma/plasmoids/calculator/contents/ui
+@dirrm share/apps/plasma/plasmoids/calculator/contents
+@dirrm share/apps/plasma/plasmoids/calculator
+@dirrm share/apps/plasma/packages/org.kde.weather/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.weather/contents
+@dirrm share/apps/plasma/packages/org.kde.weather
+@dirrm share/apps/plasma/packages/org.kde.lcdweather/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.lcdweather/contents
+@dirrm share/apps/plasma/packages/org.kde.lcdweather
+@dirrm share/apps/plasma/packages/org.kde.comic/contents/ui
+@dirrm share/apps/plasma/packages/org.kde.comic/contents
+@dirrm share/apps/plasma/packages/org.kde.comic
 @dirrm share/apps/plasma-applet-opendesktop-activities
 @dirrm share/apps/plasma-applet-opendesktop
 @dirrm share/apps/plasma-applet-frame
@@ -619,5 +687,3 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm include/lancelot
 @dirrm include/KDE/Lancelot/Models
 @dirrm include/KDE/Lancelot
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

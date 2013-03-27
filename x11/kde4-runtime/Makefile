@@ -5,10 +5,10 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Basic applications for the KDE system
+COMMENT=	Runtime components for KDE Plasma Desktop
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -16,9 +16,7 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		slp:${PORTSDIR}/net/openslp \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		ssh:${PORTSDIR}/security/libssh \
-		qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist \
-		nepomukcore:${PORTSDIR}/sysutils/nepomuk-core \
-		kactivities:${PORTSDIR}/x11/kactivities
+		qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist
 # Explicitly depend on libssh to avoid interference with ssh.4 from
 # compat7x.
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
@@ -28,25 +26,24 @@ CONFLICTS=	kdebase-runtime-4.[0-6].* kdebase-workspace-4.5.[0-5] nepomukcontroll
 
 USE_XZ=		yes
 USE_GETTEXT=	yes
-USE_KDE4=	kdehier kdelibs kdeprefix oxygen \
-		attica automoc4 pimlibs sharedmime strigi
+USE_KDE4=	kactivities kdehier kdelibs kdeprefix oxygen \
+		attica automoc4 pimlibs sharedmime strigi nepomuk-core
 USES=		cmake:outsource
-USE_QT4=	dbus declarative designer gui phonon qt3support \
-		script svg webkit xml \
+USE_QT4=	corelib dbus declarative designer_build gui phonon \
+		network qtestlib script svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xcursor
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		kdesu.1
+MAN1=		kdesu.1 plasmapkg.1
 MAN8=		nepomukserver.8 nepomukservicestub.8
 
-OPTIONS_DEFINE=	NEPOMUK PULSEAUDIO XINE ZEITGEIST
+OPTIONS_DEFINE=	NEPOMUK PULSEAUDIO ZEITGEIST
 
 NEPOMUK_DESC=	Nepomuk semantic desktop via Virtuoso
 PULSEAUDIO_DESC=Audio configuration via PulseAudio
-XINE_DESC=	Phonon-xine configuration via xine
 ZEITGEIST_DESC=	Event logging via Zeitgeist
 
 # Explicitly disable ALSA, see for details:
@@ -65,14 +62,6 @@ LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio \
 USE_GNOME+=	glib20
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
-PLIST_SUB+=	XINE=""
-.else
-CMAKE_ARGS+=	-DWITH_Xine:BOOL=OFF
-PLIST_SUB+=	XINE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZEITGEIST}

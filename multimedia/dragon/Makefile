@@ -6,10 +6,10 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A KDE multimedia player with a focus on simplicity instead of features
+COMMENT=	KDE multimedia player with a focus on simplicity
 
 LICENSE=	GPLv2
 
@@ -17,12 +17,11 @@ LICENSE=	GPLv2
 LATEST_LINK=	kdemultimedia-dragon
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
-MAKE_JOBS_SAFE=	yes
 USES=		cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
-USE_QT4=	dbus phonon \
-		moc_build qmake_build rcc_build uic_build
+USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		dragon.1
 

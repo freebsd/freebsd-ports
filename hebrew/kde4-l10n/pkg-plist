@@ -132,7 +132,6 @@ share/locale/he/LC_MESSAGES/kcm_memory.mo
 share/locale/he/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/he/LC_MESSAGES/kcm_pci.mo
 share/locale/he/LC_MESSAGES/kcm_phonon.mo
-share/locale/he/LC_MESSAGES/kcm_phononxine.mo
 share/locale/he/LC_MESSAGES/kcm_platform.mo
 share/locale/he/LC_MESSAGES/kcm_solid.mo
 share/locale/he/LC_MESSAGES/kcm_solid_actions.mo
@@ -171,6 +170,7 @@ share/locale/he/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/he/LC_MESSAGES/kcmkwm.mo
 share/locale/he/LC_MESSAGES/kcmlaunch.mo
 share/locale/he/LC_MESSAGES/kcmlocale.mo
+share/locale/he/LC_MESSAGES/kcmnic.mo
 share/locale/he/LC_MESSAGES/kcmnotify.mo
 share/locale/he/LC_MESSAGES/kcmopengl.mo
 share/locale/he/LC_MESSAGES/kcmperformance.mo
@@ -235,6 +235,7 @@ share/locale/he/LC_MESSAGES/kiconfinder.mo
 share/locale/he/LC_MESSAGES/kinetd.mo
 share/locale/he/LC_MESSAGES/kinfocenter.mo
 share/locale/he/LC_MESSAGES/kio4.mo
+share/locale/he/LC_MESSAGES/kio_activities.mo
 share/locale/he/LC_MESSAGES/kio_applications.mo
 share/locale/he/LC_MESSAGES/kio_archive.mo
 share/locale/he/LC_MESSAGES/kio_audiocd.mo
@@ -312,6 +313,8 @@ share/locale/he/LC_MESSAGES/krfb.mo
 share/locale/he/LC_MESSAGES/kruler.mo
 share/locale/he/LC_MESSAGES/krunner.mo
 share/locale/he/LC_MESSAGES/kscd.mo
+share/locale/he/LC_MESSAGES/kscreenlocker.mo
+share/locale/he/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/he/LC_MESSAGES/kscreensaver.mo
 share/locale/he/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/he/LC_MESSAGES/kshisen.mo
@@ -368,6 +371,7 @@ share/locale/he/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/he/LC_MESSAGES/libmailimporter.mo
 share/locale/he/LC_MESSAGES/libmessagelist.mo
 share/locale/he/LC_MESSAGES/libmessageviewer.mo
+share/locale/he/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/he/LC_MESSAGES/libphonon.mo
 share/locale/he/LC_MESSAGES/libplasma.mo
 share/locale/he/LC_MESSAGES/libplasmaclock.mo
@@ -468,9 +472,7 @@ share/locale/he/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/he/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/he/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/he/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/he/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/he/LC_MESSAGES/plasmapkg.mo
-share/locale/he/LC_MESSAGES/plasmoidviewer.mo
 share/locale/he/LC_MESSAGES/powerdevil.mo
 share/locale/he/LC_MESSAGES/processcore.mo
 share/locale/he/LC_MESSAGES/processui.mo

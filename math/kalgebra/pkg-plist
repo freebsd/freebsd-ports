@@ -2,6 +2,9 @@ bin/kalgebra
 lib/kde4/plasma_applet_kalgebra.so
 share/applications/kde4/kalgebra.desktop
 share/apps/katepart/syntax/kalgebra.xml
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
 share/doc/HTML/en/kalgebra/commands.docbook
 share/doc/HTML/en/kalgebra/common
 share/doc/HTML/en/kalgebra/index.cache.bz2
@@ -17,5 +20,10 @@ share/icons/hicolor/32x32/apps/kalgebra.png
 share/icons/hicolor/48x48/apps/kalgebra.png
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
+share/kde4/services/graphsplasmoid.desktop
 share/kde4/services/kalgebraplasmoid.desktop
 @dirrm share/doc/HTML/en/kalgebra
+@dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui
+@dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents
+@dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid
+@dirrmtry share/apps/plasma/plasmoids

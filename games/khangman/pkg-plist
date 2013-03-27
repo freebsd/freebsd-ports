@@ -13,6 +13,7 @@ share/apps/khangman/pics/bees/khangman_bees.svg
 share/apps/khangman/pics/desert/khangman_desert.svg
 share/apps/khangman/pics/sea/khangman_sea.svg
 share/apps/khangman/pics/standardthemes.xml
+share/apps/khangman/pics/winter/khangman_winter.svg
 share/apps/khangman/sounds/EW_Dialogue_Appear.ogg
 share/apps/khangman/sounds/new_game.ogg
 share/config.kcfg/khangman.kcfg
@@ -43,6 +44,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 @dirrmtry share/icons/hicolor/80x80
 @dirrm share/doc/HTML/en/khangman
 @dirrm share/apps/khangman/sounds
+@dirrm share/apps/khangman/pics/winter
 @dirrm share/apps/khangman/pics/sea
 @dirrm share/apps/khangman/pics/desert
 @dirrm share/apps/khangman/pics/bees

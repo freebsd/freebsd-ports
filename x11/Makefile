@@ -119,6 +119,7 @@
     SUBDIR += inputproto
     SUBDIR += ipager
     SUBDIR += kactivities
+    SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kbproto
     SUBDIR += kde-lite

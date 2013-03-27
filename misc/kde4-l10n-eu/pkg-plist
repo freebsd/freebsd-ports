@@ -58,7 +58,6 @@ share/locale/eu/LC_MESSAGES/kate.mo
 share/locale/eu/LC_MESSAGES/kate_kttsd.mo
 share/locale/eu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katebuild-plugin.mo
-share/locale/eu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletemplates.mo
 share/locale/eu/LC_MESSAGES/kategdbplugin.mo
@@ -67,7 +66,6 @@ share/locale/eu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/eu/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/eu/LC_MESSAGES/kateopenheader.mo
 share/locale/eu/LC_MESSAGES/katepart4.mo
-share/locale/eu/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/eu/LC_MESSAGES/katesearch.mo
 share/locale/eu/LC_MESSAGES/katesnippets_tng.mo
 share/locale/eu/LC_MESSAGES/katesql.mo
@@ -104,7 +102,6 @@ share/locale/eu/LC_MESSAGES/kcm_memory.mo
 share/locale/eu/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/eu/LC_MESSAGES/kcm_pci.mo
 share/locale/eu/LC_MESSAGES/kcm_phonon.mo
-share/locale/eu/LC_MESSAGES/kcm_phononxine.mo
 share/locale/eu/LC_MESSAGES/kcm_platform.mo
 share/locale/eu/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/eu/LC_MESSAGES/kcm_solid.mo
@@ -385,7 +382,6 @@ share/locale/eu/LC_MESSAGES/libphonon.mo
 share/locale/eu/LC_MESSAGES/libplasma.mo
 share/locale/eu/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/eu/LC_MESSAGES/libplasmaclock.mo
-share/locale/eu/LC_MESSAGES/librtm.mo
 share/locale/eu/LC_MESSAGES/libtaskmanager.mo
 share/locale/eu/LC_MESSAGES/lokalize.mo
 share/locale/eu/LC_MESSAGES/lskat.mo
@@ -447,9 +443,9 @@ share/locale/eu/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_newspaper.mo
-share/locale/eu/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_panel.mo
@@ -491,6 +487,7 @@ share/locale/eu/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_kill.mo
+share/locale/eu/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -509,21 +506,16 @@ share/locale/eu/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
 share/locale/eu/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/eu/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/eu/LC_MESSAGES/plasma_wallpaper_image.mo
-share/locale/eu/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/eu/LC_MESSAGES/plasmagenericshell.mo
 share/locale/eu/LC_MESSAGES/plasmapkg.mo
-share/locale/eu/LC_MESSAGES/plasmawallpaperviewer.mo
-share/locale/eu/LC_MESSAGES/plasmoidviewer.mo
 share/locale/eu/LC_MESSAGES/powerdevil.mo
 share/locale/eu/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/eu/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/eu/LC_MESSAGES/powerdevilprofilesconfig.mo
-share/locale/eu/LC_MESSAGES/printer-applet.mo
 share/locale/eu/LC_MESSAGES/processcore.mo
 share/locale/eu/LC_MESSAGES/processui.mo
 share/locale/eu/LC_MESSAGES/randrmonitor.mo
 share/locale/eu/LC_MESSAGES/rellinks.mo
-share/locale/eu/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/eu/LC_MESSAGES/searchbarplugin.mo
 share/locale/eu/LC_MESSAGES/solid-hardware.mo
 share/locale/eu/LC_MESSAGES/solid-network.mo
@@ -534,7 +526,6 @@ share/locale/eu/LC_MESSAGES/strigila_diff.mo
 share/locale/eu/LC_MESSAGES/superkaramba.mo
 share/locale/eu/LC_MESSAGES/svgpart.mo
 share/locale/eu/LC_MESSAGES/sweeper.mo
-share/locale/eu/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/eu/LC_MESSAGES/systemsettings.mo
 share/locale/eu/LC_MESSAGES/timezones4.mo
 share/locale/eu/LC_MESSAGES/uachangerplugin.mo

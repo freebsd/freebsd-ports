@@ -97,6 +97,7 @@
     SUBDIR += jove
     SUBDIR += jupp
     SUBDIR += kate
+    SUBDIR += kate-plugin-pate
     SUBDIR += kate-plugins
     SUBDIR += kile
     SUBDIR += kile-kde4

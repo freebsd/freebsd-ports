@@ -3,16 +3,12 @@
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE:C@$@:kde@} \
-		LOCAL/avilla
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src/:kde
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kde \
-		stripes-freebsd-1.0.tar.bz2
-DIST_SUBDIR=	KDE
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Basic applications for the KDE system
+COMMENT=	KDE Plasma Desktop
 
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		ck-connector:${PORTSDIR}/sysutils/consolekit \
@@ -26,7 +22,8 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		freetype:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		kactivities:${PORTSDIR}/x11/kactivities
+		xcb-render-util:${PORTSDIR}/x11/xcb-util-renderutil \
+		xcb-image:${PORTSDIR}/x11/xcb-util-image
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
@@ -49,12 +46,12 @@ USE_GETTEXT=	yes
 USE_GL=		glu
 USE_GNOME=	glib20
 USE_ICONV=	yes
-USE_KDE4=	kdehier kdelibs kdeprefix oxygen pimlibs \
+USE_KDE4=	kactivities kdehier kdelibs kdeprefix oxygen pimlibs \
 		akonadi automoc4 ontologies qimageblitz soprano strigi
 USES=		cmake:outsource
 USE_PKGCONFIG=	build
-USE_QT4=	dbus declarative gui network opengl phonon \
-		qt3support qtestlib script sql webkit xml \
+USE_QT4=	corelib dbus declarative designer_build gui network \
+		opengl phonon qtestlib script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	kbproto x11 xau xcomposite xcursor xdamage xdmcp xfixes \
 		xft xi xinerama xkbfile xrandr xrender xres xscrnsaver xtst
@@ -67,20 +64,15 @@ MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DBUILD_python:BOOL=OFF \
 		-DBUILD_ruby:BOOL=OFF \
-		-DWITH_BlueZ:BOOL=OFF \
-		-DWITH_Sensors:BOOL=OFF \
 		-DWITH_NetworkManager:BOOL=OFF \
 		-DWITH_Xmms:BOOL=OFF \
-		-DWITH_Googlegadgets:BOOL=OFF \
-		-DWITH_PyKDE4:BOOL=OFF
+		-DWITH_Googlegadgets:BOOL=OFF
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	kdm4
 
 USERS=		kdm
 GROUPS=		kdm
-
-MAN1=		plasmaengineexplorer.1 plasmapkg.1 plasmoidviewer.1
 
 OPTIONS_DEFINE=	GPS UPOWER WALLPAPERS
 OPTIONS_GROUP=	PHONON PLASMA
@@ -129,7 +121,8 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:${POR
 .endif
 
 .if ${PORT_OPTIONS:MWALLPAPERS}
-RUN_DEPENDS+=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers
+RUN_DEPENDS+=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers \
+		${KDE4_PREFIX}/share/wallpapers/stripes-freebsd-blue/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers-freebsd
 .endif
 
 .include <bsd.port.pre.mk>
@@ -142,10 +135,6 @@ LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
-post-extract:
-	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/stripes-freebsd-1.0.tar.bz2 ${EXTRACT_AFTER_ARGS})
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/startkde.cmake \
@@ -155,7 +144,6 @@ post-patch:
 		${PATCH_WRKSRC}/kdm/backend/client.c \
 		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	@${RM} ${WRKSRC}/plasma/generic/applets/batterymonitor/contents/ui/*.orig
 
 pre-configure:
 	${REINPLACE_CMD} -e '/ksysguardd/ d' \
@@ -168,9 +156,6 @@ pre-configure:
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
-	${INSTALL_DATA} ${FILESDIR}/05-freebsdWallpaper.js ${PREFIX}/share/apps/plasma-desktop/init
-	cd ${WRKDIR}/stripes-freebsd-1.0 && \
-		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers
 .if ! ${PORT_OPTIONS:MGSTREAMER}
 	@${CAT} ${FILESDIR}/pkg-message.gstreamer >> ${PKGMESSAGE}
 .endif

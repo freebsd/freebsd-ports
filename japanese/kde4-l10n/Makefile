@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	japanese kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Japanese messages and documentation for KDE4
+COMMENT=	Japanese messages and documentation for KDE SC 4
 
 KDE4_L10N=	ja
 

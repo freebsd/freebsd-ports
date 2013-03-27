@@ -6,7 +6,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
@@ -19,12 +19,13 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 CONFLICTS=		akonadi-google-0.*
 CONFLICTS_INSTALL=	kdepim-runtime-4.4.*
 
-USE_XZ=	yes
+USE_XZ=		yes
 USE_GNOME=	libxml2
-USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
+USE_KDE4=	kdehier kdelibs kdeprefix pimlibs nepomuk-core \
 		akonadi automoc4 ontologies sharedmime soprano strigi
 USES=		cmake:outsource
-USE_QT4=	dbus designer gui network xml xmlpatterns \
+USE_QT4=	corelib dbus declarative designer_build gui network qtestlib \
+		script xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
@@ -37,8 +38,5 @@ post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		${PATCH_WRKSRC}/CMakeLists.txt \
 		${PATCH_WRKSRC}/accountwizard/CMakeLists.txt
-
-post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
 .include <bsd.port.mk>

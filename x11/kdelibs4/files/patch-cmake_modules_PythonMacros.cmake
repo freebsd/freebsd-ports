@@ -1,39 +1,36 @@
---- ./cmake/modules/PythonMacros.cmake.orig	2012-11-30 07:17:39.000000000 +0000
-+++ ./cmake/modules/PythonMacros.cmake	2013-01-03 16:30:53.706219657 +0000
-@@ -41,8 +41,10 @@
-         # To get the right version for suffix
-         STRING(REPLACE "." "" _suffix ${PYTHON_SHORT_VERSION})
-         SET(_bin_pyc ${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/__pycache__/${_filenamebase}.cpython-${_suffix}.pyc)
-+        SET(_bin_pyo ${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/__pycache__/${_filenamebase}.cpython-${_suffix}.pyo)
-     ELSE(PYTHON_SHORT_VERSION GREATER 3.1)
-         SET(_bin_pyc ${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/${_filenamebase}.pyc)
-+        SET(_bin_pyo ${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/${_filenamebase}.pyo)
-     ENDIF(PYTHON_SHORT_VERSION GREATER 3.1)
+--- cmake/modules/PythonMacros.cmake.orig	2013-01-23 22:44:16.000000000 +0100
++++ cmake/modules/PythonMacros.cmake	2013-02-27 13:39:48.000000000 +0100
+@@ -43,9 +43,11 @@
+     if(PYTHON_VERSION_STRING VERSION_GREATER 3.1)
+       # To get the right version for suffix
+       set(_bin_pyc "${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/__pycache__/${_filenamebase}.cpython-${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR}.pyc")
++      set(_bin_pyo "${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/__pycache__/${_filenamebase}.cpython-${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR}.pyo")
+       set(_py_install_dir "${DESTINATION_DIR}/__pycache__/")
+     else()
+       set(_bin_pyc "${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/${_filenamebase}.pyc")
++      set(_bin_pyo "${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/${_filenamebase}.pyo")
+       set(_py_install_dir "${DESTINATION_DIR}")
+     endif()
  
-     FILE(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${_basepath})
-@@ -55,6 +57,7 @@
+@@ -60,6 +62,7 @@
          TARGET compile_python_files
-         COMMAND ${CMAKE_COMMAND} -E echo ${_message}
-         COMMAND ${PYTHON_EXECUTABLE} ${_python_compile_py} ${_bin_py}
-+        COMMAND ${PYTHON_EXECUTABLE} -O ${_python_compile_py} ${_bin_py}
-         DEPENDS ${_absfilename}
-         )
-     ELSE(_abs_bin_py STREQUAL ${_absfilename})
-@@ -63,14 +66,15 @@
-         COMMAND ${CMAKE_COMMAND} -E echo ${_message} 
-         COMMAND ${CMAKE_COMMAND} -E copy ${_absfilename} ${_bin_py}
-         COMMAND ${PYTHON_EXECUTABLE} ${_python_compile_py} ${_bin_py}
-+        COMMAND ${PYTHON_EXECUTABLE} -O ${_python_compile_py} ${_bin_py}
-         DEPENDS ${_absfilename}
-         )
-     ENDIF(_abs_bin_py STREQUAL ${_absfilename})
+         COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
+         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "${_bin_py}"
+         DEPENDS "${_absfilename}"
+       )
+     else()
+@@ -68,11 +71,13 @@
+         COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
+         COMMAND "${CMAKE_COMMAND}" -E copy "${_absfilename}" "${_bin_py}"
+         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "${_bin_py}"
+         DEPENDS "${_absfilename}"
+       )
+     endif()
  
-     IF(PYTHON_SHORT_VERSION GREATER 3.1)
--        INSTALL(FILES ${_bin_pyc} DESTINATION ${DESTINATION_DIR}/__pycache__/)
-+        INSTALL(FILES ${_bin_pyc} ${_bin_pyo} DESTINATION ${DESTINATION_DIR}/__pycache__/)
-     ELSE (PYTHON_SHORT_VERSION GREATER 3.1)
--        INSTALL(FILES ${_bin_pyc} DESTINATION ${DESTINATION_DIR})
-+        INSTALL(FILES ${_bin_pyc} ${_bin_pyo} DESTINATION ${DESTINATION_DIR})
-     ENDIF (PYTHON_SHORT_VERSION GREATER 3.1)
-   ENDIF("$ENV{PYTHONDONTWRITEBYTECODE}" STREQUAL "")
+     install(FILES ${_bin_pyc} DESTINATION "${_py_install_dir}")
++    install(FILES ${_bin_pyo} DESTINATION "${_py_install_dir}")
+     unset(_py_install_dir)
+     unset(_message)
  

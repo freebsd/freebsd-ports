@@ -16,7 +16,7 @@ USE_KDE4=	kdeprefix
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	ARK FILELIGHT KCALC KCHARSELECT KDF KFLOPPY KGPG \
-		KREMOTECONTROL KTIMER KWALLET PRINTER_APPLET \
+		KREMOTECONTROL KTIMER KWALLET PRINTMANAGER \
 		SUPERKARAMBA SWEEPER
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
@@ -30,7 +30,7 @@ KGPG_DESC=		Install encryption tool KGpg
 KREMOTECONTROL_DESC=	Install KRemoteControl
 KTIMER_DESC=		Install countdown launcher KTimer
 KWALLET_DESC=		Install password manager KWallet
-PRINTER_APPLET_DESC=	Install printer system tray utility
+PRINTMANAGER_DESC=	Install print manager
 SUPERKARAMBA_DESC=	Install widget framework SuperKaramba
 SWEEPER_DESC=		Install system cleaner Sweeper
 
@@ -76,8 +76,8 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
 .endif
 
-.if ${PORT_OPTIONS:MPRINTER_APPLET}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-printer-applet
+.if ${PORT_OPTIONS:MPRINTMANAGER}
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kcm_printer_manager.so:${PORTSDIR}/print/kde4-print-manager
 .endif
 
 .if ${PORT_OPTIONS:MSUPERKARAMBA}

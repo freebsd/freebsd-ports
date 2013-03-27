@@ -288,6 +288,7 @@
     SUBDIR += kde4-l10n-mai
     SUBDIR += kde4-l10n-mk
     SUBDIR += kde4-l10n-ml
+    SUBDIR += kde4-l10n-mr
     SUBDIR += kde4-l10n-nb
     SUBDIR += kde4-l10n-nds
     SUBDIR += kde4-l10n-nl
