@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dnsperf
-# Date created:        1 November 2006
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	dnsperf
 PORTVERSION=	1.0.1.0
@@ -16,6 +12,8 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	DNSPerf and ResPerf deliver accurate performance metrics of Domain Name Services
 
 BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind97
+
+BROKEN=		fails to build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
