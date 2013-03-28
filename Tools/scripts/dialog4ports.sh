@@ -36,4 +36,13 @@ if ! [ -e $DIALOG4PORTS ]; then
 	fi
 fi
 
-exec $DIALOG4PORTS 2> $OPTIONSFILE >&2
+# Backwards compat with older version which used stdout [<= 0.1.1] (or stderr [0.1.2]).
+# Clear environment of PKGNAME or the dialog will show on older versions
+# that do not understand -v.
+if ! env -u PKGNAME ${DIALOG4PORTS} -v > /dev/null 2>&1; then
+	exec $DIALOG4PORTS > $OPTIONSFILE 2>&1
+fi
+
+# Newer versions use stderr to work around a jail issue
+# http://lists.freebsd.org/pipermail/freebsd-ports/2013-March/082383.html
+exec $DIALOG4PORTS 2> $OPTIONSFILE
