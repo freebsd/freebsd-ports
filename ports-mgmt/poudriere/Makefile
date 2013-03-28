@@ -18,7 +18,6 @@ MANCOMPRESSED=	yes
 MAN8=	poudriere.8
 
 OPTIONS_DEFINE=	ZSH
-ZSH_DESC=	Install zsh completion
 
 CONFLICTS_INSTALL=	poudriere-devel-*
 
