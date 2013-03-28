@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-wicked
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wicked
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	plonetheme.classic
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	The classic Plone 3 default theme
+COMMENT=	Classic Plone 3 default theme
 
 LICENSE=	GPLv2
 

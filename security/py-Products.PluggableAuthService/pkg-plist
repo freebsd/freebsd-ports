@@ -82,6 +82,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DomainAuthHelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DomainAuthHelper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DynamicGroupsPlugin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DynamicGroupsPlugin.py.~1~
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DynamicGroupsPlugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/DynamicGroupsPlugin.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/HTTPBasicAuthHelper.py
@@ -93,6 +94,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/LocalRolePlugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/LocalRolePlugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/LocalRolePlugin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/NotCompetentHelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/NotCompetentHelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/NotCompetentHelper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/RecursiveGroupsPlugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/RecursiveGroupsPlugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/RecursiveGroupsPlugin.pyo
@@ -109,12 +113,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/SessionAuthHelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/SessionAuthHelper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBGroupManager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBGroupManager.py.~1~
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBGroupManager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBGroupManager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBRoleManager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBRoleManager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBRoleManager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBUserManager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBUserManager.py.~1~
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBUserManager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/ZODBUserManager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/__init__.py
@@ -151,6 +157,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_LocalRolePlugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_LocalRolePlugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_LocalRolePlugin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_NotCompetentHelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_NotCompetentHelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_NotCompetentHelper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_RecursiveGroupsPlugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_RecursiveGroupsPlugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/tests/test_RecursiveGroupsPlugin.pyo
@@ -200,6 +209,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/hbAdd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/iaAdd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/lrpAdd.zpt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/ncbrAdd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/rgpAdd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/rtsAdd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/saAdd.zpt
@@ -219,6 +229,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/delegatepath.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/domainauth.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/dynamicgroups.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/notcompetent.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/titleonly.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/zodbgroups.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/zodbroles.xml

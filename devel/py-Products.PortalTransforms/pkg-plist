@@ -72,6 +72,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/rest3.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/rss2html.xslt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test.doc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_invalid_tags.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_js.doc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_js_on.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_js_uri.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_lynx.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_python.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/input/test_python.pyc
@@ -111,6 +115,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_intelligenttext.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_intelligenttext.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_intelligenttext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_js_uri.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_transforms.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_transforms.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PortalTransforms/tests/test_transforms.pyo

@@ -23,6 +23,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/default/jsregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/default/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/default/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/test_fixture/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/test_fixture/registry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/querywidget.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/querywidget.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins/querywidget/querywidget.pt
@@ -41,7 +43,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/integration.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/integration.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/javascripts/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/javascripts/jquery.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/javascripts/querywidget.js
@@ -51,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_integration_doctest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_integration_doctest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_integration_doctest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_multi_select_widget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_multi_select_widget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/test_multi_select_widget.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/views.pyo
@@ -63,6 +68,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins/querywidget
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/test_fixture
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/default
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget

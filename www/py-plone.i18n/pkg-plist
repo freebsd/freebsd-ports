@@ -45,9 +45,11 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bh.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bi.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bj.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bl.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bm.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bn.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bq.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/br.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bs.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/bt.gif
@@ -71,6 +73,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cs.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cu.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cv.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cw.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cx.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/cz.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/de.gif
@@ -152,6 +155,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ma.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/mc.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/md.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/me.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/mf.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/mg.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/mh.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/mk.gif
@@ -199,6 +204,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/qa.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/re.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ro.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/rs.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ru.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/rw.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sa.gif
@@ -216,8 +222,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sn.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/so.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sr.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ss.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/st.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sv.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sx.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sy.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/sz.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/tc.gif
@@ -251,6 +259,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/vu.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/wf.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ws.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/xk.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/ye.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/yt.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/i18n/locales/browser/country-flags/za.gif

@@ -15,6 +15,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/browser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/browser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/django_random.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/django_random.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/django_random.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/dtml/explainPWResetTool.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/__init__.pyc

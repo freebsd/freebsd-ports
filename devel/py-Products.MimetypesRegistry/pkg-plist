@@ -61,6 +61,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/setuphandlers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/setuphandlers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/setuphandlers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/smi_mimetypes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/smi_mimetypes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/smi_mimetypes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/skins/mimetypes_icons/application.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/skins/mimetypes_icons/audio.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MimetypesRegistry/skins/mimetypes_icons/avi.png

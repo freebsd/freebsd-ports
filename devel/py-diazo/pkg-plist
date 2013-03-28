@@ -21,7 +21,10 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/diazo-debug.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/diazo-iframe.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/defaults.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/diazo-debug.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/dummy.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/emit-stylesheet.xsl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/filter.xsl
@@ -40,6 +43,7 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace_to_html.xsl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyo
@@ -575,6 +579,14 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/rules.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple-if-true/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple-if-true/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple-if-true/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple-if-true/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple/theme.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/content.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/rules.xml
@@ -704,6 +716,8 @@ bin/diazorun
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple-if-true
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-multiple
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path
@@ -823,6 +837,7 @@ bin/diazorun
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

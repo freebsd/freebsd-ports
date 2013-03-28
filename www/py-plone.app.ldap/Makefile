@@ -1,18 +1,14 @@
-# New ports collection makefile for:	py-plone.app.ldap
-# Date created:				20 May 2012
-# Whom:					Lawrence Stewart <lstewart@freebsd.org>
-#
+# Created by: Lawrence Stewart <lstewart@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.ldap
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.0
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	LDAP control panel for Plone 3 and Plone 4
+COMMENT=	LDAP control panel for Plone
 
 LICENSE=	GPLv2
 
@@ -21,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:${PORTSDIR}/devel/py
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
+USE_ZIP=	yes
 
 .include <bsd.port.mk>

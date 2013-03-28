@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.session
-# Date created:				22 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.session
-PORTVERSION=	3.5
+PORTVERSION=	3.5.3
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

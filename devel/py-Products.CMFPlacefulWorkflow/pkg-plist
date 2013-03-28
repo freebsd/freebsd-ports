@@ -60,6 +60,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/messagefactory_.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/messagefactory_.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/messagefactory_.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/permissions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/permissions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/permissions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/permissions.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/base/actionicons.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/base/componentregistry.xml
@@ -75,6 +79,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/default/portal_placeful_workflow/old-plone.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/default/portal_placeful_workflow/one-state.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/default/portal_placeful_workflow/simple-publication.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/profiles/default/rolemap.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/setuphandlers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/setuphandlers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/setuphandlers.pyo
@@ -120,7 +125,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/tests/test_policy_form.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/tool.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/WorkflowPolicyConfig_icon.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/add_workflow_policy.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/add_workflow_policy.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/add_workflow_policy_config_form.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/define_local_workflow_policy.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlacefulWorkflow/www/manage_workflow_policy_config.zpt
