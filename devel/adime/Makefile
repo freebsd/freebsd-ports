@@ -16,8 +16,6 @@ USE_GMAKE=	yes
 
 .include "Makefile.man"
 
-INFO=		adime
-
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-man
 USE_LDCONFIG=	yes
