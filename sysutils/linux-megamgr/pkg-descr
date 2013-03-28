@@ -7,4 +7,4 @@ FreeBSD >= 6.1 supports running this tool by the means of the
 amr_linux.ko kernel module and the /dev/megadev0 device.
 
 Author:	LSI Logic Corporation
-WWW:	http://www.lsi.com/
+WWW: http://www.lsi.com/

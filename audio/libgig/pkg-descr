@@ -4,4 +4,4 @@ files.  libgig is used by linuxsampler to load Gigasampler files and
 it can be used by qsampler to retrieve additional informations about
 Gigasampler files.
 
-WWW:	http://www.linuxsampler.org/
+WWW: http://www.linuxsampler.org/

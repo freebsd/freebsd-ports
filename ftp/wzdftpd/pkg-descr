@@ -16,4 +16,4 @@ wzdftpd offers the following features:
 - Logging support (compatible with the wu-ftpd standard)
 - Designed for high performances: coded with C, multithreaded
 
-WWW:	http://www.wzdftpd.net/
+WWW: http://www.wzdftpd.net/

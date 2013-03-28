@@ -3,4 +3,4 @@ used separately from the form generation. The validation works on compound data
 structures, with all parts being nestable. It is separate from HTTP or any
 other input mechanism.
 
-WWW:	http://www.formencode.org/
+WWW: http://www.formencode.org/

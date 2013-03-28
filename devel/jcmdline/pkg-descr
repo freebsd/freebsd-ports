@@ -6,4 +6,4 @@ The jcmdline package is a Java package with the following goals:
  * Automatically generate a command usage based upon defined command line
    parameters.
 
-WWW:	http://jcmdline.sourceforge.net/
+WWW: http://jcmdline.sourceforge.net/

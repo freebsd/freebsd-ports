@@ -7,4 +7,4 @@ interconnect can be easily modified. You can also expand Verilog-2001 ".*"
 instantiations, to see what ports will be connected by simulators.
 
 Author:	Michael McNamara <mac@verilog.com>, Wilson Snyder <wsnyder@wsnyder.org>
-WWW:	http://www.veripool.org/wiki/verilog-mode
+WWW: http://www.veripool.org/wiki/verilog-mode

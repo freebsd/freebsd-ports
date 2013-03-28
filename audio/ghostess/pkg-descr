@@ -8,4 +8,4 @@ in recent versions (>=0.102.27) of JACK. ghostess also comes with
 a universal DSSI GUI, which attempts to provide GUI services for
 any DSSI or LADSPA plugin, and may be used with any DSSI host.
 
-WWW:	http://home.jps.net/~musound/
+WWW: http://home.jps.net/~musound/

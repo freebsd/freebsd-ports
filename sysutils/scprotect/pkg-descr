@@ -4,4 +4,4 @@ but may be used for already running processes. Also rc.d/scprotect
 scripts allow you to set protection flag even if process was
 restarted by user.
 
-WWW:	http://dindin.ru/scprotect/
+WWW: http://dindin.ru/scprotect/

@@ -12,4 +12,4 @@ be printed or plotted using gnuplot/plotmtv, CalculiX or gmsh.
 TOCHNOG supports a choice of description frames including Lagrangian,
 Eulerian and arbitrary Eulerian-Lagrangian (AEL).
 
-WWW:	http://tochnog.sourceforge.net/
+WWW: http://tochnog.sourceforge.net/
