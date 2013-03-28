@@ -3,6 +3,6 @@ protein retention time in liquid chromatography. It is based on
 BioLCCC model (Liquid Chromatography of Biomacromolecules at Critical
 Conditions).
 
-pyBioLCCC is set of Python wrappings around libBioLCCC.
+pyteomics.biolccc is set of Python wrappings around libBioLCCC.
 
-WWW:	http://theorchromo.ru/lib/
+WWW: http://pypi.python.org/pypi/pyteomics.biolccc

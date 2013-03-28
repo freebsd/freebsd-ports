@@ -4189,3 +4189,4 @@ print/ghostscript7-korfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdat
 www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
 print/kdeutils4-printer-applet||2013-03-27|Superseded by print/kde4-print-manager
 print/system-config-printer-kde||2013-03-27|Superseded by print/kde4-print-manager
+science/py-biolccc|science/pyteomics.biolccc|2013-03-28|Renamed upstream

@@ -152,7 +152,6 @@
     SUBDIR += psi3
     SUBDIR += psychopy
     SUBDIR += py-DendroPy
-    SUBDIR += py-biolccc
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
@@ -178,6 +177,7 @@
     SUBDIR += pycdf
     SUBDIR += pynn
     SUBDIR += pyteomics
+    SUBDIR += pyteomics.biolccc
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
