@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils-parallel
-PORTVERSION=	0.44
+PORTVERSION=	0.47
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN
+MASTER_SITE_SUBDIR=	pool/main/m/moreutils
 DISTNAME=	moreutils_${PORTVERSION}
 
 MAINTAINER=	eadler@FreeBSD.org
@@ -12,7 +13,6 @@ COMMENT=	Run programs in parallel
 
 CONFLICTS=	parallel-[0-9]*
 
-ALL_TARGET=	bins
 WRKSRC=		${WRKDIR}/moreutils
 
 MAN1=		parallel.1
@@ -22,7 +22,7 @@ PLIST_FILES=	bin/parallel
 MAKE_JOBS_SAFE=	yes
 
 post-patch:
-	cd ${FILESDIR} && ${CP} ${MAN1} ${WRKSRC}/
+	${CP} ${FILESDIR}/parallel.1 ${WRKSRC}/
 
 post-install:
 	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
