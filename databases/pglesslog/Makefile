@@ -1,22 +1,18 @@
-# New ports collection makefile for:	pglesslog
-# Date created:				4 March 2010
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pglesslog
-PORTVERSION=	1.2
+PORTVERSION=	1.4.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2127/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2684/
+DISTNAME=	pg_lesslogg_${PORTVERSION}_pg84
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Reduce size of PostgreSQL archive log files by replacing backup blocks
 
 USE_GMAKE=	yes
 USE_PGSQL=	client server:build
-WANT_PGSQL_VER=	83
-WRKSRC=		${WRKDIR}/lesslog-${PORTVERSION}
+WANT_PGSQL_VER=	84
+WRKSRC=		${WRKDIR}/pg_lesslog_${PORTVERSION}_pg84
 
 PGSQL_PORT=	databases/postgresql${PGSQL_VER}
 PGSQL_SRCDIR=	`cd ${PORTSDIR}/${PGSQL_PORT}-server; ${MAKE} -VWRKSRC`
