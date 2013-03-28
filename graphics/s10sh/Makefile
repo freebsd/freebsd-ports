@@ -22,7 +22,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	USB
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
