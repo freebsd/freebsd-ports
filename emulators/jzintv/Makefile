@@ -1,23 +1,19 @@
-# New ports collection makefile for: jzintv
-# Date created:                      05 Apr 2008
-# Whom:                              Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jzintv
-PORTVERSION=	1.0b3
-PORTREVISION=	2
+PORTVERSION=	1.0b4
 CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
-DISTNAME=	jzintv-1.0-beta3-src
+DISTFILES=	${PORTNAME}-1.0-beta4-src${EXTRACT_SUFX} \
+		${PORTNAME}-1.0-beta4-sdk1600${EXTRACT_SUFX}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Portable Intellivision(TM) Emulator
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/jzintv-1.0-beta3
+WRKSRC=		${WRKDIR}/jzintv-1.0-beta4
 BUILD_WRKSRC=	${WRKSRC}/src
 USE_GMAKE=	yes
 USE_XORG=	x11 xau xdmcp
@@ -29,9 +25,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 OPTIONS_DEFINE=	TOOLS
 TOOLS_DESC=	Install additional tools
 
-TOOLS=		as1600 crc32 dasm1600 dis1600 frombit_r gms2rom imvtoppm rom2bin \
-		show_grom tobit tobit_r bin2rom dasm0256 dasm1600o frombit fromhex \
-		imvtogif rom_merge split_rom tobit_f tohex
+TOOLS=	as1600 bin2rom cgc_update crc32 dasm0256 dasm1600 dasm1600o dis1600 \
+	frombit frombit_r fromhex gms2rom imvtogif imvtoppm rom2bin rom_merge \
+	show_grom split_rom tobit tobit_f tobit_r tohex
 
 SUB_FILES=	pkg-message
 
@@ -44,10 +40,12 @@ PLIST_SUB+=	PL_TOOLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} '227s|/usr/local/share/jzintv|${DATADIR}|' ${BUILD_WRKSRC}/config.h
+	@${REINPLACE_CMD} '288s|/usr/local/share/jzintv|${DATADIR}|' ${BUILD_WRKSRC}/config.h
 	@${CP} ${BUILD_WRKSRC}/Makefile.freebsd ${BUILD_WRKSRC}/Makefile
-	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e 's|dprintf|dbprintf|g'
-	@${FIND} ${WRKSRC} -name "*.c.bak" -delete
+
+pre-build:
+	${MKDIR} ${WRKSRC}/bin
+	${MKDIR} ${WRKSRC}/rom
 
 do-install:
 	${MKDIR} ${DATADIR}/rom
@@ -60,8 +58,6 @@ do-install:
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Release-Notes.txt ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
