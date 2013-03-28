@@ -202,9 +202,6 @@ PLIST_SUB+=	${opt}="@comment "
 .endfor
 
 .if ${PORT_OPTIONS:MMODFREETDM}
-.if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
-IGNORE=	sorry you can not use mod_freetdm on this version of freebsd ( dahdi support broken ) please update
-.else
 CONFIGURE_ARGS+=	--with-libpri=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri:${PORTSDIR}/misc/libpri
@@ -254,13 +251,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa \
 .if ${PORT_OPTIONS:MMODVLC}
 LIB_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
-.endif
-
-# FreeBSD 7 doesn't have lrintl, but lrint will do the trick just fine
-# It's quite cryptic as to why the reinplace doesn't work; there's no mention
-# of lrintl anywhere in any source....
-.if ${OSVERSION} < 800012
-BROKEN=	Requires lrintl, which is not present on FreeBSD 7
 .endif
 
 pre-configure:

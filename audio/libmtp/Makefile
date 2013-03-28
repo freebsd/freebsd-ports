@@ -35,12 +35,7 @@ CONFIGURE_ARGS+=--disable-mtpz
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-CONFIGURE_ENV+=	ac_cv_lib_openusb_openusb_init=no
-.else
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-lusb" LIBS="-lusb"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

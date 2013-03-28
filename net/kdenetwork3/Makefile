@@ -45,14 +45,9 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800074
 DO_NOT_COMPILE+=	kppp
 PLIST_SUB+=	KPPP="@comment "
 KPPP=
-.else
-KPPP=		kppp
-PLIST_SUB+=	KPPP=""
-.endif
 
 .if ${OSVERSION} >= 900004
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-find_user.cpp

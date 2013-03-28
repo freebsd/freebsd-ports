@@ -62,17 +62,13 @@ PLIST_SUB+=	SPARC64="@comment "
 
 do-install:
 	@${MKDIR} -m 0755 ${TARGET_DIR}
-.if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/libpthread.so.1
 	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.1 libpthread.so.1)
-.endif
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${TARGET32_DIR}
-. if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib32/libpthread.so.1
 	(cd ${TARGET32_DIR} && ${LN} -sf libthr.so.1 libpthread.so.1)
-. endif
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
 

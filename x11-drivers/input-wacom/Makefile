@@ -56,14 +56,7 @@ UWACOMKLD_DESC=	Install USB kernel module (not supported on 8.x)
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800064
-OPTIONS_DEFAULT=	UWACOMKLD
-.endif
-
 .if ${PORT_OPTIONS:MUWACOMKLD}
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build with USB support
-.endif
 PLIST_SUB+=	UWACOMKLD="uwacom.ko"
 PORTTYPE=	usb
 .else

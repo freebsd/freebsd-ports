@@ -45,10 +45,6 @@ PLIST_SUB+=	KDE4="@comment "
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/man/s|^|#| ; \

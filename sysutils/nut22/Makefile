@@ -93,11 +93,7 @@ PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUSB}
-. if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-. else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-m4_nut_check_libusb.m4
-. endif
 CONFIGURE_ARGS+=	--with-usb=auto
 MAN8+=		bcmxcp_usb.8 megatec_usb.8 tripplite_usb.8 usbhid-ups.8
 PLIST_SUB+=	NUT_USB=""

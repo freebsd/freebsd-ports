@@ -42,13 +42,7 @@ DYNAMIPS_ARCH=	"amd64"
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-.if ${OSVERSION} < 700021
-BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
-.endif
-
-.if ${OSVERSION} >= 700013
 MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

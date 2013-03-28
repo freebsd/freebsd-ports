@@ -54,10 +54,6 @@ MAN3=		_U_dyn_cancel.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 701100 || (${OSVERSION} > 800000 && ${OSVERSION} < 800053)
-IGNORE=	your FreeBSD version is not supported
-.endif
-
 .if ${ARCH} == i386
 PLIST_SUB=	ARCH=x86
 .elif ${ARCH} == amd64

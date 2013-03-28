@@ -80,11 +80,6 @@ post-patch:
 		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e \
 		's|-ldl||' ${L7Z_WRKSRC}/Test7Zip/Makefile.in
-.if ${OSVERSION} < 800501
-	@${REINPLACE_CMD} -e \
-		's|const struct dirent|struct dirent|' \
-		${L7Z_WRKSRC}/Lib7Zip/OSFunctions_UnixLike.cpp
-.endif
 
 pre-configure:
 	@cd ${L7Z_WRKSRC} && ./configure --disable-shared \

@@ -46,10 +46,6 @@ RESTRICTED=	Commercial license
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-.endif
-
 APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
 
 CNFLSTS=	account/admin.ndt	\

@@ -27,9 +27,7 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
 
 post-patch:
-.if ${OSVERSION} >= 800100
 	${REINPLACE_CMD} -e "s,#.*include <nfs/rpcv2.h>,," ${WRKSRC}/nfs/syscalls.c
-.endif
 
 post-build:
 	cd ${WRKDIR}/unshlight && make

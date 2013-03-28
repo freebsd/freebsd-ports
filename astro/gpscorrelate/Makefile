@@ -27,12 +27,6 @@ PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui
 
 .include <bsd.port.options.mk>
 
-# This port depends on nan(3) added in r174684, Sun Dec 16 21:19:28 2007 UTC.
-# There was no __FreeBSD_version bump for this change, so use the nearest one.
-.if ${OSVERSION} < 800007
-BROKEN=		Does not compile on 7.x: Requires nan(3)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|^CFLAGS|#CFLAGS| ; \

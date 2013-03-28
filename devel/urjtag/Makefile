@@ -39,11 +39,7 @@ CONFIGURE_ARGS+=	--enable-jedec
 
 .if ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--with-libusb
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MFTDI}

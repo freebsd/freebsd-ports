@@ -43,10 +43,6 @@ GDBM_DESC=	Enable GDBM support
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 701000
-MANUAL_PACKAGE_BUILD=	hangs on pointyhat
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif

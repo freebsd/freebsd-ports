@@ -25,14 +25,8 @@ PLIST_FILES=	bin/gplink
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-USB_CFLAGS=	`libusb-config --cflags`
-USB_LDFLAGS=	`libusb-config --libs`
-.else
 USB_CFLAGS=	# none
 USB_LDFLAGS=	-lusb
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gplink ${PREFIX}/bin

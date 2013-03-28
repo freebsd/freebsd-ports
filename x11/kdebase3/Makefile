@@ -56,11 +56,7 @@ HTDIG_DESC=		Use htdig to build manual indices
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libusb20
-.endif
 
 .if ${PORT_OPTIONS:MARTSWRAPPER}
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper

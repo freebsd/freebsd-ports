@@ -25,11 +25,7 @@ PLIST_FILES+=	bin/ifp
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.else
 LDFLAGS+=	-lusb
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

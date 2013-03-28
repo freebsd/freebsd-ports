@@ -30,9 +30,7 @@ MAKE_ENV=	WITHOUT_DEBUG=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
 BROKEN=	does not build
-.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files

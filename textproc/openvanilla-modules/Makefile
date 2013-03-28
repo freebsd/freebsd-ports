@@ -36,9 +36,7 @@ MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
 .include <bsd.port.options.mk>
 
-.if (${OSVERSION} >= 800501)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Modules-SharedSource-OVCINInfo.cpp
-.endif
 
 .if ${PORT_OPTIONS:MOVIMArray}
 PLIST_SUB+=	OVIMArray=""

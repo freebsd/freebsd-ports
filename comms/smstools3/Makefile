@@ -45,11 +45,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 .else
 CFLAGS+=	-DNOSTATS
 .endif
-.if ${OSVERSION} < 800045
-SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuad0
-.else
 SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuau0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile \

@@ -23,9 +23,7 @@ PORTDOCS=	pimd-dense.html README CHANGES RELEASE.NOTES
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800070
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-defs.h
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/pimd.conf|${PREFIX}/etc/pimd.conf|g' ${WRKSRC}/pathnames.h

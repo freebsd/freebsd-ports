@@ -31,9 +31,7 @@ USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
 BROKEN=		does not build
-.endif
 
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/${ALCATELDRIVER} -C ${WRKSRC}

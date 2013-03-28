@@ -25,9 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-js-jsBSD.cxx
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||g ; \
