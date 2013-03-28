@@ -1,13 +1,9 @@
-# New ports collection makefile for:	yzis
-# Date created:        Tue May 20 19:00:00 UTC 2008
-# Whom:                Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/
