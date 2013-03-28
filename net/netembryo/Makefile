@@ -15,8 +15,8 @@ OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
 USE_BZIP2=	yes
-USES=        pathfix
-USE_GNOME=	glib20 gnomehack
+USES=		pathfix
+USE_GNOME=	glib20
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

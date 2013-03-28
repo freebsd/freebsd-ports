@@ -17,8 +17,8 @@ LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
 		cdio:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
-USES=        pathfix
-USE_GNOME=	glib20 gnomehack
+USES=		pathfix
+USE_GNOME=	glib20
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_PKGCONFIG=	build

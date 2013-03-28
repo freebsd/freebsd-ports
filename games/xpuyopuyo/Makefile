@@ -30,8 +30,8 @@ CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USES=        pathfix
-USE_GNOME+=	gnomelibs gnomehack
+USES=		pathfix
+USE_GNOME+=	gnomelibs
 PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome

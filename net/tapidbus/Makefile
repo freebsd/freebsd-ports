@@ -15,8 +15,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USES=        pathfix
-USE_GNOME=	glib20 gnomehack
+USES=		pathfix
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 
