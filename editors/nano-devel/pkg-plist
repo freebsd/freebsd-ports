@@ -1,3 +1,4 @@
+@comment $FreeBSD: head/editors/nano/pkg-plist 315129 2013-03-24 15:50:36Z eadler $
 bin/nano
 bin/rnano
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
@@ -15,6 +16,7 @@ bin/rnano
 %%NLS%%share/locale/hu/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/id/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/it/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/nano.mo
@@ -24,6 +26,7 @@ bin/rnano
 %%NLS%%share/locale/ro/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/nano.mo
@@ -32,48 +35,48 @@ bin/rnano
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
 %%EXAMPLESDIR%%/nanorc.sample
-%%DATADIR%%/awk.nanorc
-%%DATADIR%%/cmake.nanorc
-%%DATADIR%%/fortran.nanorc
-%%DATADIR%%/xml.nanorc
-%%DATADIR%%/php.nanorc
-%%DATADIR%%/tcl.nanorc
-%%DATADIR%%/ocaml.nanorc
-%%DATADIR%%/debian.nanorc
-%%DATADIR%%/css.nanorc
-%%DATADIR%%/lua.nanorc
-%%DATADIR%%/objc.nanorc
-%%DATADIR%%/gentoo.nanorc
 %%DATADIR%%/asm.nanorc
+%%DATADIR%%/awk.nanorc
 %%DATADIR%%/c.nanorc
+%%DATADIR%%/cmake.nanorc
+%%DATADIR%%/css.nanorc
+%%DATADIR%%/debian.nanorc
+%%DATADIR%%/fortran.nanorc
+%%DATADIR%%/gentoo.nanorc
 %%DATADIR%%/groff.nanorc
 %%DATADIR%%/html.nanorc
+%%DATADIR%%/lua.nanorc
 %%DATADIR%%/java.nanorc
 %%DATADIR%%/makefile.nanorc
-%%DATADIR%%/mgp.nanorc
-%%NLS%%%%DATADIR%%/man-html/fr/nano.1.html
-%%NLS%%%%DATADIR%%/man-html/fr/nanorc.5.html
-%%NLS%%%%DATADIR%%/man-html/fr/rnano.1.html
-%%DATADIR%%/man-html/nano.1.html
-%%DATADIR%%/man-html/nanorc.5.html
-%%DATADIR%%/man-html/rnano.1.html
-%%DATADIR%%/spec.nanorc
 %%DATADIR%%/man.nanorc
+%%DATADIR%%/mgp.nanorc
 %%DATADIR%%/mutt.nanorc
 %%DATADIR%%/nanorc.nanorc
+%%DATADIR%%/objc.nanorc
+%%DATADIR%%/ocaml.nanorc
 %%DATADIR%%/patch.nanorc
 %%DATADIR%%/perl.nanorc
+%%DATADIR%%/php.nanorc
 %%DATADIR%%/pov.nanorc
 %%DATADIR%%/python.nanorc
 %%DATADIR%%/ruby.nanorc
 %%DATADIR%%/sh.nanorc
+%%DATADIR%%/spec.nanorc
+%%DATADIR%%/tcl.nanorc
 %%DATADIR%%/tex.nanorc
-%%NLS%%@dirrm %%DATADIR%%/man-html/fr
-@dirrm %%DATADIR%%/man-html
-@dirrm %%DATADIR%%
+%%DATADIR%%/xml.nanorc
+@dirrm share/nano
 @dirrm %%EXAMPLESDIR%%
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry man/fr/man5
-%%NLS%%@dirrmtry man/fr/man1
-%%NLS%%@dirrmtry man/fr
+@dirrm man/fr
+@dirrm man/fr/man5
+@dirrm man/fr/man1
+%%DOCSDIR%%/nano.1.html
+%%DOCSDIR%%/nanorc.5.html
+%%DOCSDIR%%/rnano.1.html
+%%NLS%%%%DOCSDIR%%/fr/nano.1.html
+%%NLS%%%%DOCSDIR%%/fr/nanorc.5.html
+%%NLS%%%%DOCSDIR%%/fr/rnano.1.html
+%%NLS%%@dirrm %%DOCSDIR%%/fr
+@dirrm %%DOCSDIR%%
