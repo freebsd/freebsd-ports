@@ -32,7 +32,8 @@ XNEST_DESC=	X via Xnest support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomeprefix gnomehack gnomepanel libgnomeui 
+USES=		pathfix
+USE_GNOME+=	gnomeprefix gnomepanel libgnomeui 
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
