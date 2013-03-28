@@ -25,8 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 USE_GETTEXT=	yes
-USES=        pathfix
-USE_GNOME=	gnomehack
+USES=		pathfix
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
