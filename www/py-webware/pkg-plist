@@ -132,6 +132,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.1.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.1.1.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes.html
 %%WEBWARE_MASTER_DIR%%/Docs/ReleaseProcedures.html
@@ -1024,17 +1025,19 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/make.bat
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/marshal.c
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/mod_webkit.c
-%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/mod_webkit.dll
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/mod_webkit.h
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1/mod_webkit_apache13_win_32bit.so
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/Makefile
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/README
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/apache.conf
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/make.bat
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/marshal.c
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.c
-%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.dll
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.h
-%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit64.dll
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit_apache22_win_32bit.so
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit_apache22_win_64bit.so
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit_apache24_win_32bit.so
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit_apache24_win_64bit.so
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.c
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.def
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.dsp
@@ -1131,6 +1134,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.1.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassList.html
@@ -1637,6 +1641,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebUtils/HTTPStatusCodes.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/Properties.py
 %%WEBWARE_MASTER_DIR%%/WebUtils/Properties.pyc
+%%WEBWARE_MASTER_DIR%%/WebUtils/Tests/TestFieldStorage.py
+%%WEBWARE_MASTER_DIR%%/WebUtils/Tests/TestFieldStorage.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/Tests/TestFuncs.py
 %%WEBWARE_MASTER_DIR%%/WebUtils/Tests/TestFuncs.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/Tests/TestHTMLTag.py
