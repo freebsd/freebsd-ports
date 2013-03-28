@@ -1,12 +1,8 @@
-# New ports collection makefile for:  sflowtool
-# Date created:        21 Mar 2006
-# Whom:                Gregory Edigarov <greg@bestnet.kharkov.ua>
-#
+# Created by: Gregory Edigarov <greg@bestnet.kharkov.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	sflowtool
-PORTVERSION=	3.18
+PORTVERSION=	3.28
 CATEGORIES=	net
 MASTER_SITES=	http://www.inmon.com/bin/
 
@@ -21,12 +17,14 @@ PORTDOCS=	README
 PORTEXAMPLES=	README ipTopTalkers ipTrafficMatrix sflowRRDChart.cgi \
 		sflowRRDLoad sflowenable
 
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 . for f in ${PORTEXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/scripts/$f ${EXAMPLESDIR}/
