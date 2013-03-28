@@ -164,15 +164,15 @@
 +.if ${BUILD_SRV} == no
 +PAGES=	
 +.else
-+PAGES=	slapacl.{MANSECT}		\
-+	slapadd.{MANSECT}		\
-+	slapauth.{MANSECT}		\
-+	slapcat.{MANSECT}		\
-+	slapd.{MANSECT}			\
-+	slapdn.{MANSECT}		\
-+	slapindex.{MANSECT}		\
-+	slappasswd.{MANSECT}		\
-+	slapschema.{MANSECT}		\
-+	slaptest.{MANSECT}
++PAGES=	slapacl.${MANSECT}		\
++	slapadd.${MANSECT}		\
++	slapauth.${MANSECT}		\
++	slapcat.${MANSECT}		\
++	slapd.${MANSECT}		\
++	slapdn.${MANSECT}		\
++	slapindex.${MANSECT}		\
++	slappasswd.${MANSECT}		\
++	slapschema.${MANSECT}		\
++	slaptest.${MANSECT}
 +.endif
 +
