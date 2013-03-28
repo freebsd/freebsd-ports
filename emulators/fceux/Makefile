@@ -8,7 +8,7 @@ MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION:R}%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	c.petrik.sosa@gmail.com
-COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
+COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
 USE_PKGCONFIG=	build
 USE_SCONS=	yes
