@@ -11,7 +11,7 @@
 +ALLDIRS= include libraries clients servers tests doc
 +CLEANDIRS= include libraries clients servers tests doc
 +DEPENDDIRS= include libraries clients servers tests doc
-+INSTALLDIRS=  servers
++INSTALLDIRS=  servers doc
  
  makefiles:	FORCE
  	./config.status
