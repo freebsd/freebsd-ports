@@ -323,6 +323,12 @@ lib/node_modules/npm/node_modules/block-stream/test/nopad.js
 lib/node_modules/npm/node_modules/block-stream/test/pause-resume.js
 lib/node_modules/npm/node_modules/block-stream/test/thorough.js
 lib/node_modules/npm/node_modules/block-stream/test/two-stream.js
+lib/node_modules/npm/node_modules/chmodr/LICENSE
+lib/node_modules/npm/node_modules/chmodr/README.md
+lib/node_modules/npm/node_modules/chmodr/chmodr.js
+lib/node_modules/npm/node_modules/chmodr/package.json
+lib/node_modules/npm/node_modules/chmodr/test/basic.js
+lib/node_modules/npm/node_modules/chmodr/test/sync.js
 lib/node_modules/npm/node_modules/chownr/LICENCE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
@@ -390,6 +396,7 @@ lib/node_modules/npm/node_modules/glob/test/bash-comparison.js
 lib/node_modules/npm/node_modules/glob/test/bash-results.json
 lib/node_modules/npm/node_modules/glob/test/cwd-test.js
 lib/node_modules/npm/node_modules/glob/test/mark.js
+lib/node_modules/npm/node_modules/glob/test/nocase-nomagic.js
 lib/node_modules/npm/node_modules/glob/test/pause-resume.js
 lib/node_modules/npm/node_modules/glob/test/root-nomount.js
 lib/node_modules/npm/node_modules/glob/test/root.js
@@ -450,6 +457,8 @@ lib/node_modules/npm/node_modules/lru-cache/README.md
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
+lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
+lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
 lib/node_modules/npm/node_modules/minimatch/.travis.yml
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
@@ -2331,6 +2340,8 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/fstream-npm
 @dirrm lib/node_modules/npm/node_modules/fstream
 @dirrm lib/node_modules/npm/node_modules/chownr
+@dirrm lib/node_modules/npm/node_modules/chmodr/test
+@dirrm lib/node_modules/npm/node_modules/chmodr
 @dirrm lib/node_modules/npm/node_modules/block-stream/test
 @dirrm lib/node_modules/npm/node_modules/block-stream/bench
 @dirrm lib/node_modules/npm/node_modules/block-stream
