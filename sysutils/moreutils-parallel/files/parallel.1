@@ -44,15 +44,15 @@ Use to limit the number of jobs
 that are run at the same time.
 .TP 
 \*(T<\fB\-l maxload\fR\*(T>
-Avoid starting new jobs when
-the system's load average is not below
-the specified limit.
+Wait as needed to avoid starting
+new jobs when the system's load average
+is not below the specified limit.
 .TP 
 \*(T<\fB\-i\fR\*(T>
 Normally the command is passed the
 argument at the end of its command line. With
-this option, the first instance of "{}" in
-the command is replaced with the argument.
+this option, any instances of "{}" in
+the command are replaced with the argument.
 .TP 
 \*(T<\fB\-n\fR\*(T>
 Number of arguments to pass to a
@@ -103,3 +103,5 @@ This runs three independent commands in parallel.
 Its exit status is the combination of the exit statuses of each
 command ran, ORed together. (Thus, if any one command
 exits nonzero, \fBparallel\fR as a whole will exit nonzero.)
+.SH AUTHOR
+Tollef Fog Heen
