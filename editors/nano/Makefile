@@ -11,9 +11,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
+CONFLICTS=	nano-2*
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

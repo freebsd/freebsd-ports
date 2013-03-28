@@ -1,9 +1,11 @@
+#
 # $FreeBSD$
 
 PORTNAME=	nano
 PORTVERSION=	2.3.2
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/
+MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
+		${MASTER_SITE_GNU}
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	eadler@FreeBSD.org
@@ -11,7 +13,14 @@ COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 CONFLICTS=	nano-2*
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -24,11 +33,17 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
+.else
+MAKE_ARGS+=	install_htmlmanDATA=""
+.endif
+
 INFO=		nano
 MAN1=		nano.1 rnano.1
 MAN5=		nanorc.5
 
-MAKE_JOBS_SAFE=	yes
+PORTSCOUT=	limitw:1,odd
 
 .include <bsd.port.pre.mk>
 
