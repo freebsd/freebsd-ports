@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +20,7 @@ PLIST_FILES=	bin/tmux \
 		etc/bash_completion.d/tmux
 PLIST_DIRSTRY=	etc/bash_completion.d
 
-PORTDOCS=	CHANGES FAQ NOTES
+PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	LIBEVENT2 LIBEVENT_STATIC BACKSPACE
@@ -39,7 +38,7 @@ CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
 LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
 . else
-LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 . endif
 .else
 CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
@@ -48,7 +47,7 @@ CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 LESTATIC=	${LOCALBASE}/lib/libevent.a
 . else
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 . endif
 .endif
 
@@ -74,14 +73,13 @@ do-install:
 post-install:
 	${MKDIR} ${PREFIX}/etc/bash_completion.d
 	@${INSTALL_DATA} ${WRKSRC}/examples/bash_completion_tmux.sh ${PREFIX}/etc/bash_completion.d/tmux
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
