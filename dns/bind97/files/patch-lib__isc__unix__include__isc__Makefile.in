@@ -1,0 +1,11 @@
+--- ./lib/isc/unix/include/isc/Makefile.in.orig	2013-03-28 12:50:14.000000000 +0900
++++ ./lib/isc/unix/include/isc/Makefile.in	2013-03-28 12:50:23.000000000 +0900
+@@ -22,7 +22,7 @@
+ @BIND9_VERSION@
+ 
+ HEADERS =	dir.h int.h net.h netdb.h offset.h stdtime.h \
+-		syslog.h time.h
++		syslog.h time.h stat.h
+ 
+ SUBDIRS =
+ TARGETS =
