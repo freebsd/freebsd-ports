@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libusb
-# Date created:				27 January 2001
-# Whom:					John Reynolds <johnjen@reynoldsnet.org>
-#
+# Created by: John Reynolds <johnjen@reynoldsnet.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libusb
 PORTVERSION=	0.1.12
@@ -18,6 +14,9 @@ OPTIONS_DEFINE=	SGML
 SGML_DESC=	Install developer guide from SGML
 
 .include <bsd.port.pre.mk>
+
+DEPRECATED=	has been already included into base system
+EXPIRATION_DATE=	2012-04-30
 
 .if ${OSVERSION} >= 800069
 IGNORE=		has been already included into base system
