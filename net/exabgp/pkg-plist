@@ -114,17 +114,21 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/check.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/check.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/validation.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/validation.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.py
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/configuration/schema/definition.py
-%%PYTHON_SITELIBDIR%%/exabgp/configuration/schema/definition.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/debug.py
-%%PYTHON_SITELIBDIR%%/exabgp/leak/__init__.py
-%%PYTHON_SITELIBDIR%%/exabgp/leak/gcdump.py
-%%PYTHON_SITELIBDIR%%/exabgp/leak/objgraph.py
-%%PYTHON_SITELIBDIR%%/exabgp/leak/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/leak/gcdump.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/leak/objgraph.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/memory/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/memory/gcdump.py
+%%PYTHON_SITELIBDIR%%/exabgp/memory/objgraph.py
+%%PYTHON_SITELIBDIR%%/exabgp/memory/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/memory/gcdump.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/memory/objgraph.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/memory/profiler.py
+%%PYTHON_SITELIBDIR%%/exabgp/memory/profiler.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/family.py
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/ip/__init__.py
@@ -157,7 +161,11 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/structure/configuration.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/daemon.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/environment.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/enumeration.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/enumeration.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/log.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/ordereddict.py
+%%PYTHON_SITELIBDIR%%/exabgp/structure/ordereddict.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/structure/processes.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/supervisor.py
 %%PYTHON_SITELIBDIR%%/exabgp/structure/utils.py
@@ -248,6 +256,7 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration/schema
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/memory
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/rib
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp
