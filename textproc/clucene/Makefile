@@ -3,6 +3,7 @@
 
 PORTNAME=	clucene
 PORTVERSION=	2.3.3.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-core-unstable/2.3
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
@@ -21,5 +22,9 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_CONTRIBS_LIB=ON
 CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR_REL}|' \
+	    ${WRKSRC}/src/core/CMakeLists.txt
 
 .include <bsd.port.mk>

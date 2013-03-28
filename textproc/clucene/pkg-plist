@@ -348,7 +348,6 @@ include/CLucene/util/byteinputstream.h
 include/CLucene/util/gzipcompressstream.h
 include/CLucene/util/gzipinputstream.h
 include/CLucene/util/streamarray.h
-lib/CLucene/CLuceneConfig.cmake
 lib/libclucene-contribs-lib.so
 lib/libclucene-contribs-lib.so.1
 lib/libclucene-contribs-lib.so.2.3.3.4
@@ -359,7 +358,8 @@ lib/libclucene-shared.so
 lib/libclucene-shared.so.1
 lib/libclucene-shared.so.2.3.3.4
 libdata/pkgconfig/libclucene-core.pc
-@dirrm lib/CLucene
+%%DATADIR%%/CLuceneConfig.cmake
+@dirrm %%DATADIR%%
 @dirrm include/CLucene/util
 @dirrm include/CLucene/store
 @dirrm include/CLucene/snowball/src_c
