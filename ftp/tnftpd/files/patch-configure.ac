@@ -1,8 +1,13 @@
---- configure.ac.orig	2010-03-24 05:31:39.000000000 -0700
-+++ configure.ac	2012-05-03 15:55:32.000000000 -0700
-@@ -87,3 +87,4 @@
- #
--AC_PROG_CC
-+AM_PROG_CC_C_O
-+AM_PROG_AR
- AC_PROG_AWK
+Fix compilation error.
+
+--- configure.ac.orig	2013-03-25 04:52:48.000000000 +0100
++++ configure.ac	2013-03-25 17:03:53.000000000 +0100
+@@ -22,6 +22,8 @@
+ AM_INIT_AUTOMAKE([-Wall -Werror foreign nostdinc silent-rules])
+ AM_MAINTAINER_MODE()
+ 
++AM_PROG_AR()
++
+ LT_PREREQ([2.4])
+ LT_INIT()
+ 

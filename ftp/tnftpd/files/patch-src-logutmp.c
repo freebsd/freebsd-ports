@@ -1,4 +1,3 @@
-
 FreeBSD does not have header file util.h, fortunately it is not needed.
 Add header file time.h for time(). Rewrite utmpx support.
 

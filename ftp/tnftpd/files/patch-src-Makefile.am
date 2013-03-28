@@ -12,7 +12,7 @@ a build.
 +	logutmp.c \
 +	logwtmp.c
  
- tnftpd_CPPFLAGS = \
+ AM_CPPFLAGS = \
  	-DHAVE_TNFTPD_H=1 \
 @@ -45,8 +47,6 @@
  	extern.h \

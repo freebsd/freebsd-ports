@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tnftpd
-PORTVERSION=	20100324
+PORTVERSION=	20130325
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 

@@ -1,4 +1,3 @@
-
 FreeBSD does not have header file util.h, fortunately it is not needed. Add
 header files sys/socket.h and netdb.h for getaddrinfo() and getnameinfo().
 If host name is longer than UT_HOSTSIZE (16 characters), log numeric
