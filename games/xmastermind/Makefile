@@ -32,9 +32,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|' ${WRKSRC}/list.h
 
+.include <bsd.port.options.mk>
+
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
