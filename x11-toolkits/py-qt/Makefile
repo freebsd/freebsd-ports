@@ -1,12 +1,9 @@
-# New ports collection makefile for:	PyQt
-# Date created:		Sun Oct 17 00:24:28 PDT 1999
-# Whom:			adsharma@sharmas.dhs.org
-#
+# Created by: adsharma@sharmas.dhs.org
 # $FreeBSD$
 
 PORTNAME=	qt
 PORTVERSION=	3.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.riverbankcomputing.com/static/Downloads/PyQt3/ \
@@ -22,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
 		qmake:${PORTSDIR}/devel/qmake
 
-BROKEN=		does not build with latest devel/py-sip
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
