@@ -177,6 +177,7 @@
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += pynn
+    SUBDIR += pyteomics
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
