@@ -207,7 +207,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri:${PORTSDIR}/misc/libpri
 RUN_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 .endif
-.endif
 
 .if ${PORT_OPTIONS:MMODSHOUT}
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
