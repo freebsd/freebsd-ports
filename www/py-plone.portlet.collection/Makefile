@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	plone.portlet.collection
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	A portlet that fetches results from a collection
+COMMENT=	Portlet that fetches results from a collection
 
 LICENSE=	GPLv2
 

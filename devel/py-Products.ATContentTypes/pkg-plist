@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/criteria.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/criteria.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/criteria.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/download.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/download.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/download.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/nextprevious.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/nextprevious.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ATContentTypes/browser/nextprevious.pyo

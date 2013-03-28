@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.keyring
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.keyring
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

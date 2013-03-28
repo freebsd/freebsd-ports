@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.folder
-# Date created:				25 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.folder
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -38,12 +38,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/manager.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/storage.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_docs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_docs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_docs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_exportimport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_exportimport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/test_exportimport.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests/tests.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager/exportimport
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/viewletmanager

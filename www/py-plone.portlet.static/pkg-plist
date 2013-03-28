@@ -16,6 +16,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/profiles/default/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/profiles/default/portlets.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/static.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/portlet/static/static.py

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.PortalTransforms
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.PortalTransforms
-PORTVERSION=	2.0.7
+PORTVERSION=	2.1.2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.intelligenttext
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.intelligenttext
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

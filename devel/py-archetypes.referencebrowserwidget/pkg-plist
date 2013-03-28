@@ -49,6 +49,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/reference_access.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/reference_order.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/sample.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_browser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_browser.pyc

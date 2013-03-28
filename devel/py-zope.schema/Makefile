@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.schema
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:${PORTSDIR}/devel/py-z
 		${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.event
 
 DIST_SUBDIR=	zope
-# Python3 ready
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
+USE_ZIP=	yes
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	archetypes.referencebrowserwidget
-PORTVERSION=	2.4.12
+PORTVERSION=	2.4.17
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	A referencebrowser implementation for Archetypes
+COMMENT=	Implementation of referencebrowser widget for Archetypes
 
 LICENSE=	ZPL21
 

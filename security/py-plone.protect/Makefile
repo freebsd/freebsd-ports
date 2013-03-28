@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.protect
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.protect
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

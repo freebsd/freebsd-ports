@@ -151,6 +151,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/widgets.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/widgets.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/widgets.pyo
@@ -366,6 +369,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/getImageTag.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/getUniqueWidgetAttr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/go_back.cpy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/keywordwidget.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/lookupMime.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/metadata_macros.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/reference_focus_js.dtml
@@ -423,6 +427,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/wysiwyg_support.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes_kss/at.kss
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes_kss/at_experimental.kss
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/__init__.pyc

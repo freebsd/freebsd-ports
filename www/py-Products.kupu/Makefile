@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.kupu
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.kupu
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,11 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.outputfilters>=0:${PORTSDIR}/www/py-pl
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFPlone>=4.1:${PORTSDIR}/www/py-Products.CMFPlone \
 		${PYTHON_PKGNAMEPREFIX}Products.MimetypesRegistry>=0:${PORTSDIR}/devel/py-Products.MimetypesRegistry \
-		${PYTHON_PKGNAMEPREFIX}Products.PortalTransforms>=0:${PORTSDIR}/devel/py-Products.PortalTransforms
+		${PYTHON_PKGNAMEPREFIX}Products.PortalTransforms>=0:${PORTSDIR}/devel/py-Products.PortalTransforms \
+		${PYTHON_PKGNAMEPREFIX}zope.app.component>0:${PORTSDIR}/devel/py-zope.app.component
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 .include <bsd.port.mk>

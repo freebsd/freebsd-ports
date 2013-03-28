@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	plone
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Plone-${PORTVERSION}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	The Plone Content Management System
+COMMENT=	Plone Content Management System
 
 LICENSE=	GPLv2
 

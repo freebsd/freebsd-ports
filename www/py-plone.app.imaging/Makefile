@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.imaging
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.imaging
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
