@@ -3,4 +3,4 @@ interface to the user interface description and command language Tcl/Tk. It
 allows the implementation of graphical user interfaces in a structured and
 reusable way, supported by the powerful module system of Standard ML.
 
-WWW:	http://www.informatik.uni-bremen.de/~cxl/sml_tk
+WWW: http://www.informatik.uni-bremen.de/~cxl/sml_tk

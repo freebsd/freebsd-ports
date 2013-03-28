@@ -12,4 +12,4 @@ The skadnsd daemon, usable as a child process or as a separate service,
 handles the grunt work of DNS querying and makes the network 
 completely invisible to the client.
 
-WWW:	http://www.skarnet.org/software/skadns/
+WWW: http://www.skarnet.org/software/skadns/

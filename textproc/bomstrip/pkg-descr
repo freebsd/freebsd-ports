@@ -17,4 +17,4 @@ utf-8-BOM) that do not say anything about the byte-order (since there
 is nothing to say).
 
 Author:	Mechiel Lukkien <mechiel@ueber.net>
-WWW:	http://www.ueber.net/who/mjl/projects/bomstrip/
+WWW: http://www.ueber.net/who/mjl/projects/bomstrip/

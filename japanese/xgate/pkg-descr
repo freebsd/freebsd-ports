@@ -14,4 +14,4 @@ LoadModule proxy_ajp_module libexec/apache22/mod_proxy_ajp.so
 ProxyPass /xgate/ ajp://localhost:8009/xgate/
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-WWW:	http://www.orangesoft.co.jp/xGate/
+WWW: http://www.orangesoft.co.jp/xGate/

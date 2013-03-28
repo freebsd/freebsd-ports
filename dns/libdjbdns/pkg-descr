@@ -5,4 +5,4 @@ The library was packaged by Gerrit Pape. The port contains both static
 and shared versions of the DNS client library.
 
 Author:	D.J. Bernstein
-WWW:	http://cr.yp.to/djbdns/dns.html
+WWW: http://cr.yp.to/djbdns/dns.html

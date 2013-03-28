@@ -12,4 +12,4 @@ goals. It provides routines such as elliptic curve generation, elliptic
 curve arithmetic and pairing computation. Thanks to the GMP library,
 despite being written in C, pairings times are reasonable.
 
-WWW:	http://crypto.stanford.edu/pbc/
+WWW: http://crypto.stanford.edu/pbc/

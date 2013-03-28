@@ -21,4 +21,4 @@ You can install merely also that port and, if, for any reasons, you want
 to use a particular font set, you have to change the loading priority in
 your configuration files.
 
-WWW:	http://packages.debian.org/unstable/x11/ttf-indic-fonts
+WWW: http://packages.debian.org/unstable/x11/ttf-indic-fonts
