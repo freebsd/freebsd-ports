@@ -23,6 +23,7 @@ DISTATE=	config.php config_download.php config_gedcom.php
 
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
 DB_DESC=	Data storage
 
 .include <bsd.port.options.mk>
