@@ -1,4 +1,3 @@
-
 FreeBSD does not have LOGIN_NAME_MAX, but it has MAXLOGNAME instead,
 so use it as much as possible. Rewrite utmpx support.
 

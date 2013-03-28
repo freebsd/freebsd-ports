@@ -1,4 +1,3 @@
-
 Rewrite utmpx support.
 
 --- src/ftpd.c.orig	2009-11-07 04:26:48.000000000 +0100
@@ -13,7 +12,7 @@ Rewrite utmpx support.
  #ifdef SUPPORT_UTMP
  		ftpd_initwtmp();
  #endif
-@@ -1319,23 +1316,18 @@
+@@ -1320,23 +1317,18 @@
  	(void)gettimeofday(&tv, NULL);
  #endif
  #ifdef SUPPORT_UTMPX
@@ -42,7 +41,7 @@ Rewrite utmpx support.
  #endif
  #ifdef SUPPORT_UTMP
  	if (doutmp) {
-@@ -1355,17 +1347,23 @@
+@@ -1356,17 +1348,23 @@
  logout_utmp(void)
  {
  #ifdef SUPPORT_UTMPX
