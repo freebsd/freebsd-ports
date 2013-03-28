@@ -21,4 +21,4 @@ API for reading and writing ZPAQ compressed data to or from files or objects
 in memory; serial and multi-threaded archivers;  extra preprocessors for
 compression; and stubs for creating self-extracting archives.
 
-WWW:	http://mattmahoney.net/dc/zpaq.html
+WWW: http://mattmahoney.net/dc/zpaq.html
