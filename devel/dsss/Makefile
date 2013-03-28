@@ -28,10 +28,6 @@ MAN1=		dsss.1 rebuild.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 701000
-MANUAL_PACKAGE_BUILD=	hangs on pointyhat
-.endif
-
 .if ${OSVERSION} >= 900027
 BROKEN=		does not build
 .endif

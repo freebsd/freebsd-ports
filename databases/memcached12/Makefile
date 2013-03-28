@@ -41,9 +41,7 @@ PORTDOCS=	protocol.txt threads.txt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
 CFLAGS+=       -fstack-protector
-.endif
 
 .if ${PORT_OPTIONS:MREPCACHED}
 # WWW: http://repcached.lab.klab.org/

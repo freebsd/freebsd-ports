@@ -42,9 +42,7 @@ UNIFONT_DESC=		Install pan-unicode font
 BINMODE?=	4555
 .endif
 
-.if ${OSVERSION} >= 800504
 ONLY_FOR_ARCHS+=amd64
-.endif
 
 .if !defined(INSTALL_AS_USER)
 TERMCAP_FILE?=	/usr/share/misc/termcap

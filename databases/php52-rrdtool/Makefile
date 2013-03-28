@@ -29,10 +29,4 @@ USE_PHP=	yes
 DEFAULT_PHP_VER=52
 USE_PHPEXT=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

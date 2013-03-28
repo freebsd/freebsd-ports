@@ -69,10 +69,6 @@ PLIST_SUB+=	SDL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 740000 && ${ARCH} == "amd64"
-BROKEN=		segfaults during build
-.endif
-
 test check:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} check)

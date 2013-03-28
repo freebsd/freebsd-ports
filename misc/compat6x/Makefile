@@ -24,10 +24,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700043
-IGNORE=		is for FreeBSD 7.x and newer
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.2
 .endif
@@ -39,17 +35,13 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 
 do-install:
 	@${MKDIR} -m 755 ${TARGET_DIR}
-.if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib/libpthread.so.2
 	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
-.endif
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	@${MKDIR} ${TARGET32_DIR}
-. if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib32/libpthread.so.2
 	(cd ${TARGET32_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
-. endif
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
 

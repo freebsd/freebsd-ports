@@ -54,10 +54,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MUSB}
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=		usb-0.1:${PORTSDIR}/devel/libusb
-.endif
-.else
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
 

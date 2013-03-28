@@ -56,10 +56,6 @@ MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
-
 post-extract:
 	${CP} ${_DISTDIR}/nxt_description.parts.tar.gz ${WRKSRC}/nxt_description/meshes/nxt_description.tar.gz
 	${MKDIR} ${WRKSRC}/nxt_python/build

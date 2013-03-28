@@ -35,10 +35,6 @@ CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN=no
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SHOW_DIRECTORIES/d' ${WRKSRC}/doc/Doxyfile.in

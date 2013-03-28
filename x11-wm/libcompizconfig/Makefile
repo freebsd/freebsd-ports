@@ -31,11 +31,6 @@ INOTIFY_DESC?=	Enable inotify support
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 800501) || \
-    ((${OSVERSION} >= 900000) && (${OSVERSION} < 900006))
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-compiz.cpp
-.endif
-
 .if ${PORT_OPTIONS:MINOTIFY}
 LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
 LDFLAGS+=	-linotify

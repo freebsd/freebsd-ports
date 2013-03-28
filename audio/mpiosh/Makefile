@@ -27,15 +27,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-.endif
 
 post-patch:
-.if ${OSVERSION} >= 800069
 	${RM} -f ${WRKSRC}/configure
-.endif
 
 .include <bsd.port.post.mk>

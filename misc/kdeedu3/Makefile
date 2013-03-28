@@ -36,10 +36,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} \
 	-e 's|pylibdir in.*|pylibdir in "${LOCALBASE}/lib" \\|g' \

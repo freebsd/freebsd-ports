@@ -22,12 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES=  ${FILESDIR}/extra-patch-configure.ac
 USE_AUTOTOOLS=	autoconf
-.endif
 
 post-extract:
 #	@${RM} -f ${WRKSRC}/src/getopt*

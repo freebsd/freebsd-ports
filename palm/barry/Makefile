@@ -27,12 +27,8 @@ OPENSYNC_DESC=	Build the OpenSync plugin
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.else
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
 BROKEN=		does not configure
-.endif
 
 .if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \

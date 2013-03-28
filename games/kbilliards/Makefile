@@ -28,10 +28,6 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800024
-CFLAGS+=	-Dsqrtl=sqrt
-.endif
-
 pre-configure:
 	@cd ${WRKSRC} && ${PERL} admin/am_edit
 

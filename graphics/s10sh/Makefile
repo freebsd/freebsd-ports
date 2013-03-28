@@ -22,16 +22,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	USB
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 800069
-. if ${PORT_OPTIONS:MUSB}
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-. else
-MAKE_ENV+=	WITHOUT_USB=YES
-. endif
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/

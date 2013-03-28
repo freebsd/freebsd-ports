@@ -20,10 +20,4 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		dfu-util.1
 PLIST_FILES=	bin/dfu-suffix bin/dfu-util
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-IGNORE=		requires new USB stack in FreeBSD 8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

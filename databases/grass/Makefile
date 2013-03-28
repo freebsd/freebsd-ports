@@ -83,10 +83,6 @@ BASH_SCRIPTS=	i.spectral r.tileset
 BROKEN=		Does not configure on sparc64
 .endif
 
-.if ${OSVERSION} < 800000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vector-v.info-main.c
-.endif
-
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
