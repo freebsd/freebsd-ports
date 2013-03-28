@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-translate
-# Date created:			28 Jan 2005
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=		gnome-translate
 PORTVERSION=		0.99
@@ -20,7 +16,8 @@ LIB_DEPENDS=		translate:${PORTSDIR}/textproc/libtranslate
 INSTALLS_OMF=		yes
 INSTALLS_ICONS=		yes
 GCONF_SCHEMAS=		gnome-translate.schemas
-USE_GNOME=		gnomehack gnomeprefix eel2 intlhack libgnomeui
+USES=        pathfix
+USE_GNOME=		gnomeprefix eel2 intlhack libgnomeui
 USE_GMAKE=		yes
 USE_PKGCONFIG=		build
 GNU_CONFIGURE=		yes

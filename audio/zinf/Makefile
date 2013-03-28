@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freeamp
-# Date Created:				26 Oct 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zinf
 PORTVERSION=	2.2.5
@@ -17,7 +13,8 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		gdbm.4:${PORTSDIR}/databases/gdbm
 
-USE_GNOME=	gnomehack gtk20 lthack
+USES=        pathfix
+USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes

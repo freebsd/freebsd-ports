@@ -20,7 +20,8 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 OPTIONS_DEFINE=	READLINE DOCS
 OPTIONS_DEFAULT=READLINE
 
-USE_GNOME=	gnomehack gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi

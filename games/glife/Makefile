@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glife
-# Date created:				18th May 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glife
 PORTVERSION=	0.2.1
@@ -16,7 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conway's Game of Life for GNOME
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade
+USES=        pathfix
+USE_GNOME=	gnomeprefix libglade
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -1,11 +1,6 @@
-# New ports collection makefile for:	glunarclock
-# Date created:		9 December 2003
-# Whom:			Vincent Tantardini <vinc@freebsd-fr.org>
-#
+# Created by: Vincent Tantardini <vinc@freebsd-fr.org>
 # $FreeBSD$
 #   $MCom: ports/astro/glunarclock/Makefile,v 1.12 2009/04/07 03:25:51 marcus Exp $
-#
-
 PORTNAME=	glunarclock
 PORTVERSION=	0.34.1
 PORTREVISION=	1
@@ -17,7 +12,8 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
-USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomepanel gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

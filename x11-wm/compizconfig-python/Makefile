@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compizconfig-python
-# Date created:				2007-08-17
-# Whom:					Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	compizconfig-python
 PORTVERSION=	0.8.4
@@ -24,7 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	-2.7
 USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack glib20
+USES=        pathfix
+USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtool
 
 post-patch:

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libsigcx
-# Date created:			Apr 6, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libsigcx
 PORTVERSION=	0.6.6
@@ -18,7 +13,8 @@ COMMENT=	An extension of libSigC++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""

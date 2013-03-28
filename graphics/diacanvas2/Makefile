@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	diacanvas2
-# Date created:			Feb 9, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	diacanvas2
 PORTVERSION=	0.15.4
@@ -16,7 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
 
-USE_GNOME=	gnomehack pygnome2
+USES=        pathfix
+USE_GNOME=	pygnome2
 USE_PYTHON=	2.2+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

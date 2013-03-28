@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gmetadom
-# Date created:			Jul 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gmetadom
 PORTVERSION=	0.2.6
@@ -17,7 +12,8 @@ COMMENT=	A Collection of DOM Implementations
 LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GNOME=	glib20 gnomehack libxml2
+USES=        pathfix
+USE_GNOME=	glib20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-genmon-plugin
-# Date created:		2004-09-12
-# Whom:			Matt Lancereau <ports@FreeBSD.org>
-#
+# Created by: Matt Lancereau <ports@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	3.4.0
@@ -20,7 +16,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
+USES=        pathfix
+USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libmenu panel
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

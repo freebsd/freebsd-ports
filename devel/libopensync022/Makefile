@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopensync
-# Date created:		2005-06-19
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync
 PORTVERSION=	0.22
@@ -22,7 +18,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack glib20 libxml2
+USES=        pathfix
+USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 
 CONFLICTS=	libopensync-0.[3-9]*

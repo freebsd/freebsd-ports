@@ -1,9 +1,5 @@
-# New ports collection makefile for:	regexxer
-# Date created:				15 February 2003
-# Whom:					Rui Lopes <rui@ruilopes.com>
-#
+# Created by: Rui Lopes <rui@ruilopes.com>
 # $FreeBSD$
-#
 
 PORTNAME=		regexxer
 PORTVERSION=		0.9
@@ -21,7 +17,8 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 USE_GETTEXT=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_GNOME=		gnomehack gnomeprefix intltool intlhack
+USES=        pathfix
+USE_GNOME=		gnomeprefix intltool intlhack
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 

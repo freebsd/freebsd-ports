@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	truevision
-# Date created:			Mar 12, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	truevision
 PORTVERSION=	0.5.5.2
@@ -22,7 +17,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack libgnomeui
 USE_GL=		gl
 USE_PYTHON=	yes
 USE_GMAKE=	yes

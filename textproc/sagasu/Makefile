@@ -11,7 +11,8 @@ COMMENT=	A GNOME tool to find strings in a set of files
 
 LICENSE=	GPLv2 # (or later)
 
-USE_GNOME=	gnomehack gnomehier libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomehier libgnomeui
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes

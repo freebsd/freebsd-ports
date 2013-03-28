@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monkeybubble
-# Date created:				06 October 2003
-# Whom:					Adam Weinberger
-#
+# Created by: Adam Weinberger
 # $FreeBSD$
-#
 
 PORTNAME=	monkeybubble
 PORTVERSION=	0.4.0
@@ -15,7 +11,8 @@ DISTNAME=	monkey-bubble-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
-USE_GNOME=	gnomedocutils gnomehack gnomeprefix intlhack \
+USES=        pathfix
+USE_GNOME=	gnomedocutils gnomeprefix intlhack \
 		librsvg2 libgnomeui
 USE_GSTREAMER=	yes
 USE_GMAKE=	yes

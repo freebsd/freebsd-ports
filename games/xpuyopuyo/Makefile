@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpuyopuyo
-# Date created:		19 Sep 1999
-# Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
-#
+# Created by: Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	xpuyopuyo
 PORTVERSION=	0.9.8
@@ -34,6 +30,7 @@ CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
+USES=        pathfix
 USE_GNOME+=	gnomelibs gnomehack
 PKGNAMESUFFIX=	-gnome
 .else

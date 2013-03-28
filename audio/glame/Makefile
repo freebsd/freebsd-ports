@@ -20,7 +20,8 @@ USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11
 
 INFO=		glame glame-dev

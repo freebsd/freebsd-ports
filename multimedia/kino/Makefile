@@ -1,9 +1,5 @@
-# New ports collection makefile for:   kino
-# Date created:        10 April 2004
-# Whom:                pb@FreeBSD.org
-#
+# Created by: pb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kino
 PORTVERSION=	1.3.4
@@ -28,7 +24,8 @@ USE_XORG=	x11 xv ice
 USE_AUTOTOOLS=	autoconf
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
+USES=        pathfix
+USE_GNOME=	gnomeprefix libglade2 libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"

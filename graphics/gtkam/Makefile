@@ -14,7 +14,8 @@ LIB_DEPENDS=	exif-gtk.5:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnomehier gtk20
+USES=        pathfix
+USE_GNOME=	gnomehier gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

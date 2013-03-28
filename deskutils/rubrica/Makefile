@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubrica
-# Date created:		27 February 2003
-# Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-#
+# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	rubrica
 PORTVERSION=	2.0.10
@@ -22,7 +18,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_BZIP2=	yes
-USE_GNOME=	gconf2 gnomehack gnomeprefix libglade2
+USES=        pathfix
+USE_GNOME=	gconf2 gnomeprefix libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

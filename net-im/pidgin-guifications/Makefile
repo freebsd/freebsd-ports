@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gaim-guifications
-# Date created:		2004-05-04
-# Whom:			ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-guifications
 PORTVERSION=	2.16
@@ -20,7 +16,8 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gnomeprefix gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

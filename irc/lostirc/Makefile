@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irc/lostirc
-# Date created:				01 Jul 2002
-# Whom:					Juan Salaverria <rael@vectorstar.net>
-#
+# Created by: Juan Salaverria <rael@vectorstar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lostirc
 PORTVERSION=	0.4.6
@@ -19,7 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_GNOME=	gnomehack gnomeprefix
+USES=        pathfix
+USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde
 MAKE_JOBS_SAFE=	yes

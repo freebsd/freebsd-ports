@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MToolsFM
-# Date created:				12 Jan 2000
-# Whom:					Michael Vasilenko <acid@stu.cn.ua>
-#
+# Created by: Michael Vasilenko <acid@stu.cn.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	mtoolsfm
 PORTVERSION=	1.9.5
@@ -17,7 +13,8 @@ COMMENT=	A graphical frontend to mtools
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USE_GNOME=	gnomehack gtk12
+USES=        pathfix
+USE_GNOME=	gtk12
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

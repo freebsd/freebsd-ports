@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grm
-# Date created:				20 July 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grn
 PORTVERSION=	0.0.28
@@ -16,7 +12,8 @@ COMMENT=	A NNTP client for Gnome
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomehack gnomelibs gnomeprefix
+USES=        pathfix
+USE_GNOME=	gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure libmutt/configure

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	flowdesigner
-# Date created:			Apr 14, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	flowdesigner
 PORTVERSION=	0.9.1
@@ -19,7 +14,8 @@ COMMENT=	A free (GPL) "data flow oriented" development environment
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		fftw.2:${PORTSDIR}/math/fftw
 
-USE_GNOME=	gnomehack libgnomeui libxml2
+USES=        pathfix
+USE_GNOME=	libgnomeui libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	${CONFIGURE_SCRIPT} FuzzyEngine/configure \

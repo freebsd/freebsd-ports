@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wargus
-# Date created:			1 Jul 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wargus
 PORTVERSION=	2.2.5.5
@@ -22,6 +18,7 @@ RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 LICENSE=	GPLv2
 NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
+USES=        pathfix
 USE_GNOME=	gtk20 gnomehack
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	${PORTNAME} pkg-message

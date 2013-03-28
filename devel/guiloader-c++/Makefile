@@ -1,9 +1,5 @@
-# New ports collection makefile for:	guiloader-c++
-# Date created:		11 May 2007
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	guiloader-c++
 PORTVERSION=	2.19.0
@@ -20,7 +16,8 @@ LIB_DEPENDS=	guiloader.1:${PORTSDIR}/devel/guiloader \
 
 PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility

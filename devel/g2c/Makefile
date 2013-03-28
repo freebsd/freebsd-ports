@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	g2c
-# Date created:			Mar 21, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	g2c
 PORTVERSION=	0.4
@@ -16,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glade to C translator
 
 PLIST_FILES=	bin/g2c
-USE_GNOME=	gtk12 gnomehack libxml orbit
+USES=        pathfix
+USE_GNOME=	gtk12 libxml orbit
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vqcc-gtk
-# Date created:			07 Sep 2004
-# Whom:				Saulius Menkevicius <bob@nulis.lt>
-#
+# Created by: Saulius Menkevicius <bob@nulis.lt>
 # $FreeBSD$
-#
 
 PORTNAME=	vqcc-gtk
 PORTVERSION=	0.5
@@ -16,7 +12,8 @@ COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-USE_GNOME=	gnomehack gnomeprefix gtk20
+USES=        pathfix
+USE_GNOME=	gnomeprefix gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

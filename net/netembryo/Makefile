@@ -1,9 +1,5 @@
-# New ports collection makefile for:   netembryo
-# Date created:        7 November 2007
-# Whom:                Emmanuel Richiardone (err@tollari.org)
-#
+# Created by: Emmanuel Richiardone (err@tollari.org)
 # $FreeBSD$
-#
 
 PORTNAME=	netembryo
 PORTVERSION=	0.1.1
@@ -19,6 +15,7 @@ OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
 USE_BZIP2=	yes
+USES=        pathfix
 USE_GNOME=	glib20 gnomehack
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes

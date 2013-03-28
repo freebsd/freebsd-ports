@@ -1,9 +1,5 @@
-# Ports collection makefile for:	srecite
-# Date created:				28 Oct 2004
-# Whom:					hamigua <hamigua@cuc.cn>
-#
+# Created by: hamigua <hamigua@cuc.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	srecite
 PORTVERSION=	0.6.2
@@ -22,7 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix libgnomeui
 
 WORDBOOKS_PATH=	${PREFIX}/share/${PORTNAME}/wordbooks
 

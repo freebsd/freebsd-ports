@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ogmrip
-# Date created:				2004-11-19
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.0
@@ -37,7 +33,8 @@ MP4BOX_DESC=	Enable Mpeg-4 container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
 
-USE_GNOME=	glib20 gnomehack intlhack libxml2
+USES=        pathfix
+USE_GNOME=	glib20 intlhack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

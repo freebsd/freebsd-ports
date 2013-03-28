@@ -1,7 +1,6 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/audio/terminatorx/Makefile,v 1.6 2007/08/04 03:51:28 marcus Exp $
-
 PORTNAME=	terminatorx
 PORTVERSION=	3.84
 PORTREVISION=	2
@@ -27,7 +26,8 @@ MPG123_DESC=	mpg123 support
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xi xxf86dga ice sm
-USE_GNOME=	gnomehack gnomehier gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	gnomehier gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal

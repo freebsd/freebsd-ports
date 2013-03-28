@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amcl
-# Date created:				15 Apr 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-mud
 PORTVERSION=	0.11.2
@@ -18,7 +14,8 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
-USE_GNOME=	gconf2 gnomehack gnomeprefix intlhack libglade2 vte
+USES=        pathfix
+USE_GNOME=	gconf2 gnomeprefix intlhack libglade2 vte
 USE_GSTREAMER=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

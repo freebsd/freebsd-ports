@@ -1,9 +1,4 @@
-# New ports collection makefile for:	emerald
-# Date created:				Oct 29 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	emerald
 PORTVERSION=	0.8.4
@@ -22,7 +17,8 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 libwnck pango
+USES=        pathfix
+USE_GNOME=	gtk20 libwnck pango
 USE_XORG=	xrender
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

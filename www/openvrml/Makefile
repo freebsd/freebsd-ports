@@ -19,7 +19,8 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
-USE_GNOME=	gnomehack libglade2 libgnomeui
+USES=        pathfix
+USE_GNOME=	libglade2 libgnomeui
 USE_SDL=	sdl
 USE_JAVA=	yes
 USE_GCC=	4.6+

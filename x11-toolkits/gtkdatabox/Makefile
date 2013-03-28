@@ -16,7 +16,8 @@ OPTIONS_DEFINE=	GLADE GLADEUI DOCS EXAMPLES
 GLADE_DESC=	Enable libglade2 support
 GLADEUI_DESC=	Enable glade3 support
 
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \

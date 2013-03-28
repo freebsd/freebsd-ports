@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compizconfig-backend-gconf
-# Date created:				2007-08-17
-# Whom:					Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	compizconfig-backend-gconf
 PORTVERSION=	0.8.4
@@ -24,7 +20,8 @@ USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
-USE_GNOME=	gnomehack glib20 gconf2
+USES=        pathfix
+USE_GNOME=	glib20 gconf2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\

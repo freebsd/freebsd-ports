@@ -1,9 +1,5 @@
-# New ports collection makefile for:	preps-gui
-# Date created:		Fri Mar 19 14:27:30 EET 2004
-# Whom:			shadow@psoft.net
-#
+# Created by: shadow@psoft.net
 # $FreeBSD$
-#
 
 PORTNAME=	preps
 PORTVERSION=	2.0.4
@@ -20,7 +16,8 @@ COMMENT=	Problem reporting system
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 gconf2 libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
 USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	preps.schema

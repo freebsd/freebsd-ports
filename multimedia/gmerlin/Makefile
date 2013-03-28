@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmerlin
-# Date created:		07 Nov 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
@@ -30,7 +26,8 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz
-USE_GNOME=	gnomehack gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl
 USE_LDCONFIG=	yes

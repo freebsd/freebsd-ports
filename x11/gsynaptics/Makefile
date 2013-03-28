@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	xf86-input-synaptics>0:${PORTSDIR}/x11-drivers/xf86-input-synaptics
 
-USE_GNOME=	gconf2 gnomehack libglade2 gnomedocutils
+USES=        pathfix
+USE_GNOME=	gconf2 libglade2 gnomedocutils
 USE_GETTEXT=	yes
 USE_PKGCONFIG=	build
 USE_GMAKE=	yes

@@ -1,11 +1,6 @@
-# New ports collection makefile for:	contact lookup applet
-# Date created:				22 January 2004
-# Whom:					kwm@rainbow-runner.nl
-#
+# Created by: kwm@rainbow-runner.nl
 # $FreeBSD$
 #   $MCom: ports/mail/contact-lookup-applet/Makefile,v 1.15 2007/07/29 22:17:31 mezz Exp $
-#
-
 PORTNAME=	contact
 PORTVERSION=	0.17
 PORTREVISION=	8
@@ -17,7 +12,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
-USE_GNOME=	evolutiondataserver gnomehack gnomepanel gnomeprefix \
+USES=        pathfix
+USE_GNOME=	evolutiondataserver gnomepanel gnomeprefix \
 		libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

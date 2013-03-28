@@ -34,7 +34,8 @@ USE_AUTOTOOLS=	libtool
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 USE_GL=		glu
-USE_GNOME=	gdkpixbuf2 gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
