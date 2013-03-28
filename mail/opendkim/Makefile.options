@@ -4,8 +4,7 @@
 # This file is used to tune build time options.
 # Please refer FEATURES file distributed with the source for details.
 
-OPTIONS_DEFINE+=	XML FFR
-XML_DESC=		Prefer textproc/libxml2 to devel/jansson for JSON processing
+OPTIONS_DEFINE+=	FFR
 FFR_DESC=		Use features marked as For-Future-Releases
 
 OPTIONS_GROUP+=		FFR
@@ -15,7 +14,7 @@ OPTIONS_GROUP_FFR=	ADSP_LISTS ALLSYMBOLS ATPS CODECOVERAGE \
 			LDAP_CACHING POSTGRES_RECONNECT_HACK \
 			RATE_LIMIT RBL REDIRECT REPLACE_RULES REPRRD \
 			REPUTATION RESIGN SENDER_MACRO SOCKETDB \
-			STATSEXT VBR
+			STATSEXT VBR XML
 
 ADSP_LISTS_DESC=		ADSP filtering for lists (experimental)
 ALLSYMBOLS_DESC=		Export internal symbols for test
@@ -41,3 +40,4 @@ SENDER_MACRO_DESC=		Macro to determine sender
 SOCKETDB_DESC=			Arbitrary socket data sets
 STATSEXT_DESC=			Extended stats
 VBR_DESC=			Vouch-By-Reference support
+XML_DESC=			Prefer textproc/libxml2 to devel/jansson for JSON processing
