@@ -1,20 +1,11 @@
-# ex:ts=8
-# Ports collection makefile for:	spblas
-# Date created:			5 January 2012
-# Whom:				bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	spblas
 DISTVERSION=	1_02
 CATEGORIES=	math
 MASTER_SITES=	http://math.nist.gov/spblas/:1 LOCAL/bf/:1 NL/blas/blast-forum/:2
 DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
-.ifndef(NOPORTDOCS) || make(makesum)
-DISTFILES+=	blas-report.pdf:2
-EXTRACT_ONLY=	nist_spblas_${DISTVERSION}.zip
-.endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	NIST Sparse Basic Linear Algebra Subprograms (BLAS)
@@ -26,10 +17,10 @@ USE_ZIP=	yes
 HEADERS=	blas_enum.h blas_sparse.h blas_sparse_proto.h
 HDIR =		include/spblas
 MAKE_ENV=	LIB=spblas SHLIB_MAJOR="${SHLIB_MAJOR}" \
-		SRCCONF="${NONEXISTENT}" SRCS="${SRCS}"
+		SRCCONF=/dev/null SRCS="${SRCS}"
 
 NO_WRKSUBDIR=	yes
-OPTIONS=	PROFILE "Build and install a profiling library" Off
+OPTIONS_DEFINE=	PROFILE
 
 PLIST_DIRS=	${HDIR}
 PLIST_FILES=	${HEADERS:S|^|${HDIR}/|} lib/libspblas.a lib/libspblas.so \
@@ -40,7 +31,7 @@ SRCS=		nist_spblas.cc
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
 IGNORE =	you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
@@ -53,11 +44,16 @@ PLIST_FILES+=	lib/libspblas_p.a
 MAKE_ENV+=	NO_PROFILE=yes
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	blas-report.pdf
 .endif
 
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MDOCS} || make(makesum)
+DISTFILES+=	blas-report.pdf:2
+EXTRACT_ONLY=	nist_spblas_${DISTVERSION}.zip
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	${SRCS}
 .endif
 
@@ -68,11 +64,11 @@ post-extract:
 post-install:
 	@${MKDIR} ${PREFIX}/${HDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif

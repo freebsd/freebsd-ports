@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eispack
-# Date created:		31 October 1994
-# Whom:			ljo
-#
+# Created by: ljo
 # $FreeBSD$
-#
 
 PORTNAME=	eispack
 PORTVERSION=	1.0
@@ -26,15 +22,15 @@ SHLIB_MAJOR=	2
 PLIST_FILES=	lib/libeispack.a lib/libeispack.so lib/libeispack.so.${SHLIB_MAJOR}
 
 LDFLAGS+=	${FFLAGS}
-SRCCONF=	${NONEXISTENT}
+SRCCONF=	/dev/null
 MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
 
-OPTIONS=	PROFILE "Build and install a profiling library" Off
+OPTIONS_DEFINE=	PROFILE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
 IGNORE =	you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
@@ -44,7 +40,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libeispack_p.a
 .else
-MAKE_ENV+=	NO_PROFILE=
+MAKE_ENV+=	NO_PROFILE=yes
 .endif
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
