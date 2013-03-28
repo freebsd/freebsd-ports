@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
+USES=        pathfix
 USE_GNOME=	esound gdkpixbuf gnomehack
 
 CPPFLAGS+=	-I${LOCALBASE}/include

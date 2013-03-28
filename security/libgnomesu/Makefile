@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgnomesu
-# Date created:				12 January 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/security/libgnomesu/Makefile,v 1.2 2007/05/19 21:36:21 marcus Exp $
-
 PORTNAME=	libgnomesu
 PORTVERSION=	1.0.0
 PORTREVISION=	10
@@ -16,7 +12,8 @@ COMMENT=	Library and frontend for running commands as root
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix libgnomeui
 CONFIGURE_ARGS+=--disable-install-pam
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

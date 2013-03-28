@@ -1,9 +1,5 @@
-# New ports collection makefile for:   synce-gnomevfs
-# Date created:                28 August 2003
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	synce-gvfs
 PORTVERSION=	0.3.1
@@ -22,7 +18,8 @@ MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack gvfs
+USES=        pathfix
+USE_GNOME=	gnomeprefix gvfs
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

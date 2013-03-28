@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gtetrinet
-# Date created:				27 Feb 2000
-# Whom:					Dan Papasian <bugg@bugg.strangled.net>
-#
+# Created by: Dan Papasian <bugg@bugg.strangled.net>
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
@@ -16,7 +13,8 @@ COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_GNOME=	esound gnomehack gnomeprefix libgnomeui
+USES=        pathfix
+USE_GNOME=	esound gnomeprefix libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

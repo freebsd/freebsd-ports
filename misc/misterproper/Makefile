@@ -11,7 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME application designed to manage cyclic tasks
 
-USE_GNOME=	gnomehack gnomelibs gnomeprefix
+USES=        pathfix
+USE_GNOME=	gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

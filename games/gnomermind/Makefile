@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomermind
-# Date created:				11 April 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnomermind
 PORTVERSION=	1.0.1
@@ -15,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game
 
 USE_BZIP2=	yes
-USE_GNOME=	gdkpixbuf gnomehack gnomelibs gnomeprefix
+USES=        pathfix
+USE_GNOME=	gdkpixbuf gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

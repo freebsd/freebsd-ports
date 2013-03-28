@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpm
-# Date created:				10 June 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	fpm
 PORTVERSION=	0.60
@@ -14,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Figaro's Password Manager, an app to securely store your passwords
 
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USES=        pathfix
+USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+=	--without-included-gettext
 LDFLAGS+=	-L${LOCALBASE}/lib

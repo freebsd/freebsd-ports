@@ -1,9 +1,5 @@
-# New ports collection makefile for:	g2ipmsg
-# Date created:				2006/12/18
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	g2ipmsg
 PORTVERSION=	0.9.3
@@ -20,7 +16,8 @@ COMMENT=	A popup style message communication tool for GNOME2
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack intltool \
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack intltool \
 		libgnomeui libbonobo desktopfileutils gnomepanel
 USE_GSTREAMER=	vorbis
 USE_PKGCONFIG=	build

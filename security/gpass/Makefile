@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpass
-# Date created:		2006-07-24
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
@@ -23,7 +19,8 @@ USE_GMAKE=	yes
 
 MAN1=		gpass.1 gpass.ja.1 gpass-convert.1 gpass-convert.ja.1
 
-USE_GNOME=	gnomehack gnomeprefix gtk20 libgnomeui intltool libglade2
+USES=        pathfix
+USE_GNOME=	gnomeprefix gtk20 libgnomeui intltool libglade2
 GCONF_SCHEMAS=	gpass.schemas
 
 post-patch:

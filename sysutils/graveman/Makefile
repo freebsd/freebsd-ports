@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graveman
-# Date created:		2005-02-01
-# Whom:			Anton Karpov <toxa@toxahost.ru>
-#
+# Created by: Anton Karpov <toxa@toxahost.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	graveman
 PORTVERSION=	0.3.12.5
@@ -23,7 +19,8 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
 USE_PKGCONFIG=	build
-USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
+USES=        pathfix
+USE_GNOME=	libglade2 intlhack gnomeprefix
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 

@@ -20,7 +20,8 @@ OPTIONS_DEFAULT=PERL PYTHON UNIQUE
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USE_GNOME=	desktopfileutils gconf2 gnomehack gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	desktopfileutils gconf2 gtk20 libxml2
 USE_GL=		glu
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

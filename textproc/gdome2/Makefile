@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdome2
-# Date created:		7 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdome2
 PORTVERSION=	0.8.1
@@ -17,6 +13,7 @@ COMMENT=	Gnome DOM Engine
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
+USES=        pathfix
 USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"

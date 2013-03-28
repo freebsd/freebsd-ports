@@ -12,7 +12,8 @@ COMMENT=	Elegant music organizer
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
-USE_GNOME=	gnomehack gnomeprefix intltool gtksharp20
+USES=        pathfix
+USE_GNOME=	gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -17,7 +17,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A natural language translation library
 
-USE_GNOME=		glib20 gnomehack intlhack
+USES=        pathfix
+USE_GNOME=		glib20 intlhack
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes

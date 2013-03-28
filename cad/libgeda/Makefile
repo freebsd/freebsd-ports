@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgeda
-# Date created:			4 April 2001
-# Whom:				bruno schwander <bruno@tinkerbox.org>
-#
+# Created by: bruno schwander <bruno@tinkerbox.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgeda
 PORTVERSION=	1.4.3
@@ -21,6 +17,7 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
+USES=        pathfix
 USE_GNOME=	gtk20 gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database \

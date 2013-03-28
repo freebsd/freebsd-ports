@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkjournal
-# Date created:				08 February 2004
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
@@ -27,7 +23,8 @@ USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack lthack
+USES=        pathfix
+USE_GNOME=	lthack
 CONFIGURE_ARGS=	--enable-gtkspell
 USE_LDCONFIG=	yes
 

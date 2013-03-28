@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gno3dtet
-# Date created:		21 Dec 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.96.1
@@ -17,7 +13,8 @@ COMMENT=	GNOME version of the classic 3D-ified T*tris
 
 EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
 
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui librsvg2
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack libgnomeui librsvg2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader automake aclocal autoconf
 ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal

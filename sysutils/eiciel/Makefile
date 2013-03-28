@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eiciel
-# Date created:				July 20, 2005
-# Whom:					andreas@syndrom23.de
-#
+# Created by: andreas@syndrom23.de
 # $FreeBSD$
-#
 
 PORTNAME=	eiciel
 PORTVERSION=	0.9.8.1
@@ -19,7 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2 libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack nautilus2 libgnomeui
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

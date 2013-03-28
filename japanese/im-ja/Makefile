@@ -1,9 +1,5 @@
-# New ports collection makefile for:	im-ja
-# Date created:				2003/09/02
-# Whom:					Jacques Vidrine <nectar@FreeBSD.org>
-#
+# Created by: Jacques Vidrine <nectar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	im-ja
 PORTVERSION=	1.5
@@ -19,7 +15,8 @@ OPTIONS+=	CANNA		"Use Canna" on
 OPTIONS+=	WNN		"Use FreeWnn" on
 OPTIONS+=	GNOMEPANEL	"Build GNOME Panel Applet" off
 
-USE_GNOME=	gconf2 gnomehack gnomeprefix intlhack libglade2
+USES=        pathfix
+USE_GNOME=	gconf2 gnomeprefix intlhack libglade2
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

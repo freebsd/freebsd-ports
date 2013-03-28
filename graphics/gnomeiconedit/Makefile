@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomeiconedit
-# Date created:				28th January 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
@@ -17,7 +13,8 @@ COMMENT=	Small GNOME icon editor
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
+USES=        pathfix
+USE_GNOME=	gnomeprefix bonobo gnomeprint
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

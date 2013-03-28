@@ -1,10 +1,6 @@
-# New ports collection makefile for:   gTweakUI
-# Date Created:			17 June 2004
-# Whom:				Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
 #    $MCom: ports/deskutils/gtweakui/Makefile,v 1.2 2007/05/19 21:36:03 marcus Exp $
-
 PORTNAME=	gTweakUI
 PORTVERSION=	0.4.0
 PORTREVISION=	11
@@ -16,7 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of simple dialogs as a front end to GConf
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui gconf2 libglade2 intlhack
+USES=        pathfix
+USE_GNOME=	gnomeprefix libgnomeui gconf2 libglade2 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

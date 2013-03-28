@@ -1,9 +1,5 @@
-# New ports collection makefile for:   PyGtkGLExt
-# Date created:                18 April 2003
-# Whom:                        Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.1.0
@@ -22,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack pygtk2
+USES=        pathfix
+USE_GNOME=	pygtk2
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gtkhx
-# Date created:        9 February 2002
-# Whom:                Josh Elsasser <jre@vineyard.net>
-#
+# Created by: Josh Elsasser <jre@vineyard.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkhx
 PORTVERSION=	0.9.4
@@ -14,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ version of Hx, a UNIX Hotline Client
 
+USES=        pathfix
 USE_GNOME=	gdkpixbuf gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

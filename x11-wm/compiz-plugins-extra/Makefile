@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compiz-plugins-extra
-# Date created:				2007-08-17
-# Whom:					Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	compiz-plugins-extra
 PORTVERSION=	0.8.4
@@ -25,7 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GL=		yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intltool
+USES=        pathfix
+USE_GNOME=	intltool
 USE_XORG=	glproto
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

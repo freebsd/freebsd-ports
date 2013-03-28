@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-cleanice-engine
-# Date Created:				13 March 2003
-# Whom:					Philip Paeps <philip@paeps.cx>
-#
+# Created by: Philip Paeps <philip@paeps.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-cleanice-engine
 PORTVERSION=	2.4.1
@@ -18,7 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	build
 

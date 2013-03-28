@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomechess
-# Date created:				29 January 2000
-# Whom:					Jeremy Lea <reg@shale.csir.co.za>
-#
+# Created by: Jeremy Lea <reg@shale.csir.co.za>
 # $FreeBSD$
-#
 
 PORTNAME=	gnomechess
 PORTVERSION=	0.3.3
@@ -19,7 +15,8 @@ COMMENT=	A GUI chess front-end to crafy, for the GNOME Desktop Environment
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-USE_GNOME=	gnomecanvas gnomehack gnomeprefix libglade
+USES=        pathfix
+USE_GNOME=	gnomecanvas gnomeprefix libglade
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes

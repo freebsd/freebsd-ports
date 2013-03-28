@@ -12,7 +12,8 @@ COMMENT=	Audio visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
-USE_GNOME=	esound gnomehack gnomehier gtk20
+USES=        pathfix
+USE_GNOME=	esound gnomehier gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

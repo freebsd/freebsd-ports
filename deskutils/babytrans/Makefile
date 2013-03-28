@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	babytrans
-# Date created:			18 September 2002
-# Whom:				Frederic Cambus
-#
+# Created by: Frederic Cambus
 # $FreeBSD$
-#
 
 PORTNAME=	babytrans
 PORTVERSION=	0.9.1
@@ -16,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
 USE_GETTEXT=	yes
-USE_GNOME=	gtk12 gnomehack gnomeprefix
+USES=        pathfix
+USE_GNOME=	gtk12 gnomeprefix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

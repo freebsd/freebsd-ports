@@ -1,9 +1,5 @@
-# New ports collection makefile for:	timemachine
-# Date created:		2007-01-25
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	timemachine
 PORTVERSION=	0.3.3
@@ -22,7 +18,8 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 
 OPTIONS_DEFINE=	LASH
 
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

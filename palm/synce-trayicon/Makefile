@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-trayicon
-# Date created:                28 August 2003
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	synce-trayicon
@@ -26,7 +23,8 @@ MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui desktopfileutils
+USES=        pathfix
+USE_GNOME=	gnomeprefix libgnomeui desktopfileutils
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

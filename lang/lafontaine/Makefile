@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	lafontaine
-# Date created:			Sep 6, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	lafontaine
 PORTVERSION=	0.4.1
@@ -18,7 +13,8 @@ COMMENT=	Graphical logo interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
-USE_GNOME=	gnomehack gtk20
+USES=        pathfix
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

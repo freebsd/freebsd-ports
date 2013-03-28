@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pharmacy
-# Date created:				02 October 1999
-# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@fxp.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pharmacy
 PORTVERSION=	0.3
@@ -15,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USES=        pathfix
+USE_GNOME=	gnomeprefix gnomelibs
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPCFLAGS="-I${LOCALBASE}/include" \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dbf
-# Date created:			Apr 3, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dbf
 PORTVERSION=	0.9.0
@@ -21,7 +16,8 @@ OPTIONS_DEFINE=	NLS
 WRKSRC=		${WRKDIR}/lib${PORTNAME}
 
 USE_ZIP=	yes
-USE_GNOME=	gnomehack intltool
+USES=        pathfix
+USE_GNOME=	intltool
 USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_DOC_TO_MAN=""

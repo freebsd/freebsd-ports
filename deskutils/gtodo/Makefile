@@ -11,7 +11,8 @@ COMMENT=	An Gtk2 Todo list manager
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs2
+USES=        pathfix
+USE_GNOME=	gnomeprefix gnomevfs2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

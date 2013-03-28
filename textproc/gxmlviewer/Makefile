@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gxmlviewer
-# Date created:			Nov 8, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gxmlviewer
 PORTVERSION=	1.3.3
@@ -15,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
-USE_GNOME=	bonobo gnomehack gnomelibs gnomeprefix libxml2
+USES=        pathfix
+USE_GNOME=	bonobo gnomelibs gnomeprefix libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"

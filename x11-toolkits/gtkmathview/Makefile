@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gtkmathview
-# Date created:			Oct 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gtkmathview
 PORTVERSION=	0.8.0
@@ -20,7 +15,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		t1:${PORTSDIR}/devel/t1lib \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
-USE_GNOME=	gnomehack gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	build

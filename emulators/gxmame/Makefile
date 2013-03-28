@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gxmame
-# Date created:			04 Oct 2003
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gxmame
 DISTVERSION=	0.35beta2
@@ -19,7 +15,8 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
+USES=        pathfix
+USE_GNOME=	gtk20 intlhack gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

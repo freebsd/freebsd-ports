@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sensors-applet
-# Date created:			03 May 2006
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sensors-applet
 PORTVERSION=	1.6.1
@@ -17,7 +13,8 @@ COMMENT=	A GNOME applet displaying hardware sensor values
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_GNOME=	gnomehack gnomeprefix intlhack gnomepanel libgnomeui
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack gnomepanel libgnomeui
 USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

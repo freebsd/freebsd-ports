@@ -14,7 +14,8 @@ OPTIONS_DEFINE=	GNOME PGPLOT OPENGL
 OPTIONS_DEFAULT=	PGPLOT OPENGL
 PGPLOT_DESC=	Enable PGPLOT support
 
-USE_GNOME=	gnomehack gnomehier gtk20
+USES=        pathfix
+USE_GNOME=	gnomehier gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

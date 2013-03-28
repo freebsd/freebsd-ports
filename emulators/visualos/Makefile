@@ -1,9 +1,5 @@
-# New ports collection makefile for:	VisualOS
-# Date created:				26 October 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	VisualOS
 PORTVERSION=	1.0.5
@@ -16,7 +12,8 @@ COMMENT=	Visual simulator of an operating system to help understand an OSes
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gnomehack gnomeprefix libglade
+USES=        pathfix
+USE_GNOME=	gnomeprefix libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

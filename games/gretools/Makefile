@@ -13,7 +13,8 @@ COMMENT=	GNOME vocabulary builder
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gnomehack gnomeprefix pygnome2
+USES=        pathfix
+USE_GNOME=	gnomeprefix pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

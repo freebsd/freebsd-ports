@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-sudoku
-# Date created:				2005-09-12
-# Whom:					Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnomesudoku
 PORTVERSION=	0.6.0
@@ -28,7 +24,8 @@ MAKE_ENV+=	DISPLAY="localhost:1001"
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-USE_GNOME=	gnomehack gnomeprefix pygnome2 pygnomedesktop
+USES=        pathfix
+USE_GNOME=	gnomeprefix pygnome2 pygnomedesktop
 
 PYDISTUTILS_PKGNAME=	gnome-sudoku
 

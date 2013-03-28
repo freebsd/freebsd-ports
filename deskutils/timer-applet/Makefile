@@ -17,7 +17,8 @@ RUN_DEPENDS=	gnome-audio>0:${PORTSDIR}/audio/gnome-audio \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOME=	gnomehack gnomeprefix intlhack pygnomedesktop
+USES=        pathfix
+USE_GNOME=	gnomeprefix intlhack pygnomedesktop
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

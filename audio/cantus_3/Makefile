@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cantus_3
-# Date created:				18 May 2004
-# Whom:					asa@gascom.ru
-#
+# Created by: asa@gascom.ru
 # $FreeBSD$
-#
 
 PORTNAME=	cantus
 PORTVERSION=	3.0.2
@@ -27,7 +23,8 @@ LATEST_LINK=	${PORTNAME}3
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2 glib20
+USES=        pathfix
+USE_GNOME=	gnomeprefix libglade2 glib20
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

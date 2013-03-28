@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dlume
-# Date created:				07 November 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dlume
 PORTVERSION=	0.2.4
@@ -14,7 +10,8 @@ MASTER_SITES=	${MASTER_SITE_TUCOWS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
-USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2
+USES=        pathfix
+USE_GNOME=	gnomeprefix gtk20 libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

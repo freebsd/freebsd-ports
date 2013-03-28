@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libcompizconfig
-# Date created:				2007-08-16
-# Whom:					Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libcompizconfig
 PORTVERSION=	0.8.4
@@ -23,7 +19,8 @@ USE_LDCONFIG=	yes
 USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 
-USE_GNOME=	gnomehack intltool libxml2
+USES=        pathfix
+USE_GNOME=	intltool libxml2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
