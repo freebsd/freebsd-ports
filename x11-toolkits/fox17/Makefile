@@ -1,8 +1,8 @@
-# Whom: gahr
+# Created by: gahr
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.7.37
+PORTVERSION=	1.7.38
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-opengl=yes \
 		--bindir=${PREFIX}/bin/${PORTNAME}-${MAJORVER}
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		reswrap-17.1 shutterbug-17.1 adie-17.1 PathFinder-17.1 \
 		calculator-17.1 ControlPanel-17.1
@@ -70,15 +70,17 @@ BROKEN=		Does not link on powerpc
 .endif
 
 post-patch:
+# Rename man pages as in manpage.1 --> manpage-17.1 to avoid
+# conflicts with x11-toolkits/fox16
 	for f in ${MAN1}; do \
-	    old=$$(echo $$f | sed -e 's|-17||'); \
+	    old=$$(echo $$f | ${SED} -e 's|-17||'); \
 	    dir=$$(dirname $$(find ${WRKSRC} -name $$old)); \
-	    mv $$dir/$$old $$dir/$$f; \
+	    ${MV} $$dir/$$old $$dir/$$f; \
 	done
 	${FIND} ${WRKSRC} -name Makefile.am -o -name Makefile.in | ${XARGS} \
 	    ${REINPLACE_CMD} -i '' -e '${MAN_REPLACE}'
-	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|; s|"||g' ${WRKSRC}/fox17.pc.in
-.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/^Libs:/s|$$| -pthread|; s|"||g' ${WRKSRC}/fox17.pc.in
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
 

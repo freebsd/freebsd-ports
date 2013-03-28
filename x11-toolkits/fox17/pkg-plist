@@ -90,7 +90,6 @@ include/fox-%%MAJORVER%%/FXComplexd.h
 include/fox-%%MAJORVER%%/FXComplexf.h
 include/fox-%%MAJORVER%%/FXComposeContext.h
 include/fox-%%MAJORVER%%/FXComposite.h
-include/fox-%%MAJORVER%%/FXConcurrent.h
 include/fox-%%MAJORVER%%/FXCondition.h
 include/fox-%%MAJORVER%%/FXConsole.h
 include/fox-%%MAJORVER%%/FXCursor.h
@@ -181,6 +180,7 @@ include/fox-%%MAJORVER%%/FXJPGImage.h
 include/fox-%%MAJORVER%%/FXKOI8RCodec.h
 include/fox-%%MAJORVER%%/FXKnob.h
 include/fox-%%MAJORVER%%/FXLabel.h
+include/fox-%%MAJORVER%%/FXLFQueue.h
 include/fox-%%MAJORVER%%/FXList.h
 include/fox-%%MAJORVER%%/FXListBox.h
 include/fox-%%MAJORVER%%/FXLocale.h
@@ -214,6 +214,7 @@ include/fox-%%MAJORVER%%/FXMutex.h
 include/fox-%%MAJORVER%%/FXObject.h
 include/fox-%%MAJORVER%%/FXObjectList.h
 include/fox-%%MAJORVER%%/FXOptionMenu.h
+include/fox-%%MAJORVER%%/FXParallel.h
 include/fox-%%MAJORVER%%/FXPCXIcon.h
 include/fox-%%MAJORVER%%/FXPCXImage.h
 include/fox-%%MAJORVER%%/FXPNGIcon.h
@@ -257,11 +258,13 @@ include/fox-%%MAJORVER%%/FXRootWindow.h
 include/fox-%%MAJORVER%%/FXRuler.h
 include/fox-%%MAJORVER%%/FXRulerView.h
 include/fox-%%MAJORVER%%/FXRunnable.h
+include/fox-%%MAJORVER%%/FXScopedThread.h
 include/fox-%%MAJORVER%%/FXScrollArea.h
 include/fox-%%MAJORVER%%/FXScrollBar.h
 include/fox-%%MAJORVER%%/FXScrollPane.h
 include/fox-%%MAJORVER%%/FXScrollWindow.h
 include/fox-%%MAJORVER%%/FXSearchDialog.h
+include/fox-%%MAJORVER%%/FXSemaQueue.h
 include/fox-%%MAJORVER%%/FXSemaphore.h
 include/fox-%%MAJORVER%%/FXSeparator.h
 include/fox-%%MAJORVER%%/FXSettings.h
