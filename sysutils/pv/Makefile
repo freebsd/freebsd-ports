@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pv
-# Date created:		04 May 2004
-# Whom:			Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	pv
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ivarch.com/programs/sources/
 
