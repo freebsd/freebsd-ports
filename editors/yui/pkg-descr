@@ -1,5 +1,5 @@
-y is a multi-windowed console text editor, primarly intended for program-
-mers and system administrators.
+y is a multi-windowed console text editor, primarily intended for
+programmers and system administrators.
 
 y main features is:
       -   Multi-windows interface with up and down menu lines
@@ -7,7 +7,7 @@ y main features is:
       -   Operable window list
       -   Copy/paste between windows
       -   Inter-windows search and replace
-      -   Help window with ablility to browse manual pages and info files
+      -   Help window with ability to browse manual pages and info files
       -   Internal terminal window
       -   Internal GDB interface with ability to set up breakpoints
           inside text window

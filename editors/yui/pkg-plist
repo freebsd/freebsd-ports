@@ -1,4 +1,6 @@
 bin/y
+lib/yui/README
+lib/yui/README.utf8
 lib/yui/colormap
 lib/yui/colortrans
 lib/yui/help_eng.html
