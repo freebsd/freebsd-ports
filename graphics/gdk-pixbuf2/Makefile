@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=JASPER JPEG PNG TIFF NLS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:M_NLS}
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
