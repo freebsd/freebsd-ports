@@ -1,0 +1,27 @@
+--- Makefile.orig	2012-07-06 20:29:35.000000000 +0300
++++ Makefile	2013-03-09 11:15:05.000000000 +0200
+@@ -102,13 +102,13 @@
+   LDFLAGS += $(shell pkg-config --libs glib-2.0)
+ 
+   # Configuration for ncurses
+-  ifeq ($(filter Darwin DragonFly OpenBSD,$(OS)),)
++  ifeq ($(filter Darwin DragonFly FreeBSD OpenBSD,$(OS)),)
+     CFLAGS  += $(shell ncurses5-config --cflags)
+     LDFLAGS += $(shell ncurses5-config --libs) -lpanel
+   else
+     # OS X is handled separately
+     ifneq ($(OS), Darwin)
+-      # DragonFly and OpenBSD have ncurses in base (and no config tool)
++      # DragonFly, FreeBSD and OpenBSD have ncurses in base (and no config tool)
+       LDFLAGS += -lncurses -lpanel
+     endif
+   endif
+@@ -117,6 +117,8 @@
+   # Debian and derivates use lua5.1, the rest of the world lua
+   ifneq ($(wildcard /etc/debian_version),)
+     lua = lua5.1
++  else ifeq ($(OS), FreeBSD)
++    lua = lua-5.1
+   else
+     lua = lua
+   endif
