@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin/${PORTNAME}-1.3 \
 		http://www.c-s.li/ports/
