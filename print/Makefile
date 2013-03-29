@@ -102,6 +102,7 @@
     SUBDIR += gutenprint-foomatic
     SUBDIR += gutenprint-ijs
     SUBDIR += gv
+    SUBDIR += harfbuzz
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
