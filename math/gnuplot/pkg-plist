@@ -40,7 +40,7 @@ bin/lasergnu
 %%TETEX%%@dirrm share/texmf/tex/latex/gnuplot
 @dirrm %%DATADIR%%/4.6/lua
 @dirrm %%DATADIR%%/4.6/js
-@dirrm %%DATADIR%%/4.6/app-defaults
+%%X11%%@dirrm %%DATADIR%%/4.6/app-defaults
 @dirrm %%DATADIR%%/4.6/PostScript
 @dirrm %%DATADIR%%/4.6
 @dirrm %%DATADIR%%
