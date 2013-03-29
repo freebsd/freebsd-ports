@@ -14,6 +14,8 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
 
+PORTSCOUT=	limit:^5\.1
+
 PATCH_WRKSRC=	${WRKSRC}/src
 USE_LUA=	5.1
 LUA_COMPS=	# only define variables
