@@ -1,11 +1,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Call.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/filter-util.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/perlfilter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/cpp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/decrypt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/exec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/sh.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/tee.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.bs
@@ -14,8 +16,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee/tee.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee/tee.so
-%%SITE_PERL%%/%%PERL_ARCH%%/filter-util.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/perlfilter.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec
@@ -23,4 +23,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter
