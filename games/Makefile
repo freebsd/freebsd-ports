@@ -130,10 +130,10 @@
     SUBDIR += chanta
     SUBDIR += chapping
     SUBDIR += chessx
-    SUBDIR += chocolate-doom
     SUBDIR += cheech
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
+    SUBDIR += chocolate-doom
     SUBDIR += chroma
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
