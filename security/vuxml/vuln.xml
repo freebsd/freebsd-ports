@@ -51,6 +51,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="daf0a339-9850-11e2-879e-d43d7e0c7c02">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><gt>11.*</gt><lt>11.2.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk10</name>
+	<range><gt>10.*</gt><lt>10.12.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.20.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Buffer Overflow Exploit Through SIP SDP Header</p>
+	  <p>Username disclosure in SIP channel driver</p>
+	  <p>Denial of Service in HTTP server</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2685</cvename>
+      <cvename>CVE-2013-2686</cvename>
+      <cvename>CVE-2013-2264</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-001.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-002.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-003.html</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2013-03-27</discovery>
+      <entry>2013-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a282e49-95b6-11e2-8433-0800273fe665">
     <topic>dns/bind9* -- Malicious Regex Can Cause Memory Exhaustion</topic>
     <affects>
