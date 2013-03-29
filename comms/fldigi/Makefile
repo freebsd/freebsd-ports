@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fldigi
-# Date created:				December 20 2006
-# Whom:					Diane Bruce <db@db.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fldigi
 PORTVERSION=	3.21.59
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
@@ -124,7 +120,7 @@ post-configure:
 	${RM} ${WRKSRC}/doc/*.1
 
 post-install:
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} ""
 	${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
