@@ -14,6 +14,7 @@ bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-mips64
 %%NONX86%%bin/qemu-system-mips64el
 %%NONX86%%bin/qemu-system-mipsel
+%%NONX86%%bin/qemu-system-or32
 %%NONX86%%bin/qemu-system-ppc
 %%NONX86%%bin/qemu-system-ppc64
 %%NONX86%%bin/qemu-system-ppcemb
@@ -22,11 +23,16 @@ bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-sh4eb
 %%NONX86%%bin/qemu-system-sparc
 %%NONX86%%bin/qemu-system-sparc64
+%%NONX86%%bin/qemu-system-unicore32
 %%BSD_USER%%bin/qemu-arm
+%%BSD_USER%%bin/qemu-armeb
 %%BSD_USER%%bin/qemu-i386
+%%BSD_USER%%bin/qemu-mips
+%%BSD_USER64%%bin/qemu-mips64
+%%BSD_USER%%bin/qemu-mipsel
 %%BSD_USER%%bin/qemu-sparc
-%%BSD_USER%%bin/qemu-sparc64
-%%BSD_USER%%bin/qemu-x86_64
+%%BSD_USER64%%bin/qemu-sparc64
+%%BSD_USER64%%bin/qemu-x86_64
 bin/qemu-system-x86_64
 %%NONX86%%bin/qemu-system-xtensa
 %%NONX86%%bin/qemu-system-xtensaeb
@@ -40,6 +46,8 @@ etc/qemu-ifdown.sample
 etc/qemu/target-x86_64.conf.sample
 @exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %D/etc/qemu/target-x86_64.conf; fi
 @dirrmtry etc/qemu
+%%DATADIR%%/acpi-dsdt.aml
+%%DATADIR%%/q35-acpi-dsdt.aml
 %%DATADIR%%/bios.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
@@ -58,7 +66,6 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/pxe-pcnet.rom
 %%DATADIR%%/pxe-virtio.rom
 %%DATADIR%%/petalogix-ml605.dtb
-%%DATADIR%%/mpc8544ds.dtb
 %%DATADIR%%/spapr-rtas.bin
 %%DATADIR%%/slof.bin
 %%DATADIR%%/s390-zipl.rom
@@ -67,10 +74,10 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/sgabios.bin
 %%DATADIR%%/petalogix-s3adsp1800.dtb
 %%DATADIR%%/bamboo.dtb
-%%DATADIR%%/cpus-x86_64.conf
 %%DATADIR%%/kvmvapic.bin
 %%DATADIR%%/qemu-icon.bmp
 %%DATADIR%%/keymaps/ar
+%%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/da
 %%DATADIR%%/keymaps/de

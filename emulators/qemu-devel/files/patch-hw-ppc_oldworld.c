@@ -1,5 +1,5 @@
---- a/hw/ppc_oldworld.c
-+++ b/hw/ppc_oldworld.c
+--- a/hw/ppc/mac_oldworld.c
++++ b/hw/ppc/mac_oldworld.c
 @@ -47,6 +47,11 @@
  #define MAX_IDE_BUS 2
  #define CFG_ADDR 0xf0000510

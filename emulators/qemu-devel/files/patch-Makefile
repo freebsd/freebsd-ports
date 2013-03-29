@@ -1,5 +1,5 @@
 Index: qemu/Makefile
-@@ -40,7 +40,11 @@ LIBS+=-lz $(LIBS_TOOLS)
+@@ -53,7 +53,11 @@ LIBS+=-lz $(LIBS_TOOLS)
  HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
@@ -11,7 +11,7 @@ Index: qemu/Makefile
  ifdef CONFIG_VIRTFS
  DOCS+=fsdev/virtfs-proxy-helper.1
  endif
-@@ -270,8 +274,10 @@ endif
+@@ -311,8 +315,10 @@ endif
  
  install-doc: $(DOCS)
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
@@ -22,7 +22,7 @@ Index: qemu/Makefile
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
-@@ -290,7 +296,10 @@ install-confdir:
+@@ -331,7 +337,10 @@ install-confdir:
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_confdir)"
  
  install-sysconfig: install-datadir install-confdir
@@ -31,6 +31,6 @@ Index: qemu/Makefile
 +	if [ ! -f "$(qemu_confdir)/target-x86_64.conf" ]; then \
 +	    $(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(qemu_confdir)"; \
 +	fi
- 	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/cpus-x86_64.conf "$(DESTDIR)$(qemu_datadir)"
  
  install: all $(if $(BUILD_DOCS),install-doc) install-sysconfig install-datadir
+ 	$(INSTALL_DIR) "$(DESTDIR)$(bindir)"

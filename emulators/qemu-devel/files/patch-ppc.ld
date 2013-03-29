@@ -1,5 +1,5 @@
---- a/ppc.ld
-+++ b/ppc.ld
+--- a/ldscripts/ppc.ld
++++ b/ldscripts/ppc.ld
 @@ -99,7 +99,7 @@ SECTIONS
       PROVIDE (__init_array_start = .);
       KEEP (*(SORT(.init_array.*)))

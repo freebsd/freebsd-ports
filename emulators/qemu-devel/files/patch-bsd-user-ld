@@ -1,5 +1,5 @@
---- a/x86_64.ld
-+++ b/x86_64.ld
+--- a/ldscripts/x86_64.ld
++++ b/ldscripts/x86_64.ld
 @@ -1,54 +1,58 @@
 -/* Default linker script, for normal executables */
 -OUTPUT_FORMAT("elf64-x86-64", "elf64-x86-64", "elf64-x86-64")
@@ -256,8 +256,8 @@
 +  .gnu.attributes 0 : { KEEP (*(.gnu.attributes)) }
 +  /DISCARD/ : { *(.note.GNU-stack) }
  }
---- a/i386.ld
-+++ b/i386.ld
+--- a/ldscripts/i386.ld
++++ b/ldscripts/i386.ld
 @@ -1,45 +1,47 @@
 -/* ld script to make i386 Linux kernel
 - * Written by Martin Mares <mj@atrey.karlin.mff.cuni.cz>;
