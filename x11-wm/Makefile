@@ -133,6 +133,7 @@
     SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qlwm
+    SUBDIR += qtile
     SUBDIR += ratmen
     SUBDIR += ratmenu
     SUBDIR += ratpoison
