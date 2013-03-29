@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::OnlinePayment::Beanstream
-# Date created:				24 October 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment-Beanstream
 PORTVERSION=	0.02
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ILYALIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Business::OnlinePayment backend module for Beanstream
+COMMENT=	Business::OnlinePayment backend module for Beanstream
 
 RUN_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI

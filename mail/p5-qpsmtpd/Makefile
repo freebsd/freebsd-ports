@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qpsmtpd
-# Date created:        1 January 2007
-# Whom:                Zane C. Bowers
-#
+# Created by: Zane C. Bowers
 # $FreeBSD$
-#
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.84
@@ -13,7 +9,7 @@ MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
+COMMENT=	Flexible SMTP daemon written in Perl and featuring a plugin API
 
 BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \

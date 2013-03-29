@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-S3
-# Date created:		2007-04-30
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	S3
 PORTVERSION=	20071102
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	s3-example-perl-library
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A library in Perl for working with the Amazon S3 REST interface
+COMMENT=	Library in Perl for working with the Amazon S3 REST interface
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgperl
-# Date created:		22 December 1996
-# Whom:			jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	PGPLOT
 PORTVERSION=	2.21
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:KGB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl5 extension which makes available the pgplot library
+COMMENT=	Perl5 extension which makes available the pgplot library
 
 BUILD_DEPENDS=	p5-ExtUtils-F77>=1.13:${PORTSDIR}/lang/p5-ExtUtils-F77
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot

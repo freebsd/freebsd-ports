@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Apache-ConfigFile
-# Date created:				January 24th 2003
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-ConfigFile
 PORTVERSION=	1.23

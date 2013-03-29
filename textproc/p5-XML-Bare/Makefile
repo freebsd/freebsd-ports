@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Bare
-# Date created:				17 March, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Bare
 PORTVERSION=	0.47
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A minimal XML Parser
+COMMENT=	Minimal XML Parser
 
 PERL_CONFIGURE=	yes
 

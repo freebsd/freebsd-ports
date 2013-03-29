@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Git-PurePerl
-# Date created:				Nov 21 2008
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Git-PurePerl
 PORTVERSION=	0.41
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:LBROCARD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Pure Perl interface to Git repositories
+COMMENT=	Pure Perl interface to Git repositories
 
 BUILD_DEPENDS=	p5-Archive-Extract>=0:${PORTSDIR}/archivers/p5-Archive-Extract \
 		p5-Data-Stream-Bulk>=0:${PORTSDIR}/devel/p5-Data-Stream-Bulk \

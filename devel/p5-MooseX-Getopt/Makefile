@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Moose role for processing command line options
+COMMENT=	Moose role for processing command line options
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

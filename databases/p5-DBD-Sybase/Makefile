@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-DBD-Sybase
-# Date created:				May 10th 2001
-# Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
-#
+# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-Sybase
 PORTVERSION=	1.14
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Sybase DBI driver for Perl 5
+COMMENT=	Sybase DBI driver for Perl 5
 
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	ct.4:${PORTSDIR}/databases/freetds

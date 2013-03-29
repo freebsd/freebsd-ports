@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Iterator
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Iterator
 PORTVERSION=	0.03
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A general-purpose iterator class
+COMMENT=	General-purpose iterator class
 
 BUILD_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}

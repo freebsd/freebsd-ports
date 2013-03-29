@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	RadiusPerl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl5 module to provide simple Radius client facilities
+COMMENT=	Perl5 module to provide simple Radius client facilities
 
 RUN_DEPENDS=	p5-Data-HexDump>=0.02:${PORTSDIR}/devel/p5-Data-HexDump
 BUILD_DEPENDS:=	${RUN_DEPENDS}

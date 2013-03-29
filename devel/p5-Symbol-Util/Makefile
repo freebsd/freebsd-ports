@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Symbol-Util
-# Date created:		2011-11-17
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Symbol-Util
 PORTVERSION=	0.0203

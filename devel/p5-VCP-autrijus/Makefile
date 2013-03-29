@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-VCP
-# Date created:			19 October 2004
-# Whom:				autrijus@autrijus.org
-#
+# Created by: autrijus@autrijus.org
 # $FreeBSD$
 
 PORTNAME=	VCP
@@ -15,7 +12,7 @@ PKGNAMESUFFIX=	-autrijus
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-snapshot-${PORTVERSION:C/\.([^.]*)$/-\1/}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A tool for copying files between various SCM repositories
+COMMENT=	Tool for copying files between various SCM repositories
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-AutoWriter>=0:${PORTSDIR}/textproc/p5-XML-AutoWriter \

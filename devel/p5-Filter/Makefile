@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Filter
-# Date created:				June 26th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Filter
 PORTVERSION=	1.45
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A number of source filters for perl5 programs
+COMMENT=	Number of source filters for perl5 programs
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A collection of useful astronomical routines in Perl
+COMMENT=	Collection of useful astronomical routines in Perl
 
 PERL_CONFIGURE=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tk-ResizeButton
-# Date created:							August 10th 2004
-# Whom:									Lubomir Marinov <lubomir_m@abv.bg>
-#
+# Created by: Lubomir Marinov <lubomir_m@abv.bg>
 # $FreeBSD$
-#
 
 PORTNAME=		Tk-ResizeButton
 PORTVERSION=	0.01
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=		perl@FreeBSD.org
-COMMENT=		A resizeable button to be used in a Tk::HList column header
+COMMENT=		Resizeable button to be used in a Tk::HList column header
 
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}

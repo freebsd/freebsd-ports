@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Alzabo-GUI-Mason
-# Date created:				13 Oct 2004
-# Whom:	      				mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Alzabo-GUI-Mason
 PORTVERSION=	0.12.01
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A GUI for Alzabo using Mason
+COMMENT=	GUI for Alzabo using Mason
 
 BUILD_DEPENDS=	p5-Alzabo>=0:${PORTSDIR}/devel/p5-Alzabo \
 		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \

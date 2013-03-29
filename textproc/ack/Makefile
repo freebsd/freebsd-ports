@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	App
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A grep-like text finder for large trees of text
+COMMENT=	Grep-like text finder for large trees of text
 
 BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -1,7 +1,4 @@
-# New ports collection makefile for: p5-dTemplate
-# Date created:			9 December 2000
-# Whom:				Jeremy Shaffner <jeremy@external.org>
-#
+# Created by: Jeremy Shaffner <jeremy@external.org>
 # $FreeBSD$
 
 PORTNAME=	dTemplate
@@ -11,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A powerful template handling logic with advanced features
+COMMENT=	Powerful template handling logic with advanced features
 
 PERL_CONFIGURE=	yes
 

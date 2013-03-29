@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Asterisk
-# Date created:				11 October 2004
-# Whom:					Alexander Timoshenko <gonzo@univ.kiev.ua>
-#
+# Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	Asterisk
 PORTVERSION=	1.03

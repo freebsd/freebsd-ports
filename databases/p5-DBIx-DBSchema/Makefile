@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-DBIx-DBSchema
-# Date created:				21 September 2002
-# Whom:					Peter Avalos <pavalos@theshell.com>
-#
+# Created by: Peter Avalos <pavalos@theshell.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-DBSchema
 PORTVERSION=	0.40
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An OO-interface to database schemas
+COMMENT=	OO-interface to database schemas
 
 BUILD_DEPENDS=	p5-FreezeThaw>=0:${PORTSDIR}/devel/p5-FreezeThaw \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI

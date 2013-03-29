@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Peek
-# Date created:	   			10 June , 2011
-# Whom:		   			Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Peek
 PORTVERSION=	0.38
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A collection of low-level debug facilities
+COMMENT=	Collection of low-level debug facilities
 
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 

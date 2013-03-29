@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-KinoSearch1
-# Date created:		2012-04-03
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	KinoSearch1
 PORTVERSION=	1.01
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:CREAMYG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl search engine library
+COMMENT=	Perl search engine library
 
 BUILD_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		p5-Lingua-Stem-Snowball>=0.94:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \

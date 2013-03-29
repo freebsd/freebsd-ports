@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dvdrip
-# Date created:	18 April 2002
-# Whom:		Michael Nottebrock <michaelnottebrock@gmx.net>
-#
+# Created by: Michael Nottebrock <michaelnottebrock@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.98.11
@@ -14,7 +10,7 @@ MASTER_SITES=	CPAN \
 MASTER_SITE_SUBDIR=	CPAN:JRED
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl Gtk+ based dvd-ripper
+COMMENT=	Perl Gtk+ based dvd-ripper
 
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \

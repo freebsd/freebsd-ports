@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Catalyst & DBIx::Class powered Wiki
+COMMENT=	Catalyst & DBIx::Class powered Wiki
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

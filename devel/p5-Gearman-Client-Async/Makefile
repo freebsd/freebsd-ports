@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gearman-Client-Async
-# Date created:		2007-09-03
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gearman-Client-Async
 PORTVERSION=	0.94

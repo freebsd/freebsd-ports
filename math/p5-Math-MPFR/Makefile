@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl interface to MPFR Library
+COMMENT=	Perl interface to MPFR Library
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		mpfr:${PORTSDIR}/math/mpfr

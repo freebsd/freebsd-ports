@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-MPC
-# Date created:				05 April, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-MPC
 PORTVERSION=	1.00
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl interface to MPC Library
+COMMENT=	Perl interface to MPC Library
 
 BUILD_DEPENDS=	p5-Math-MPFR>=2.01:${PORTSDIR}/math/p5-Math-MPFR
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \

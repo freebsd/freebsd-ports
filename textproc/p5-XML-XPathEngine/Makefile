@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-XPathEngine
-# Date created:		2006-07-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XPathEngine
 PORTVERSION=	0.13
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A re-usable XPath engine for DOM-like trees
+COMMENT=	Re-usable XPath engine for DOM-like trees
 
 PERL_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ''

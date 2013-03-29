@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Apache-Admin-Config
-# Date created:				05 December 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-Admin-Config
 PORTVERSION=	0.95
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module to manipulate Apache configuration files
+COMMENT=	Perl module to manipulate Apache configuration files
 
 PERL_CONFIGURE=	yes
 

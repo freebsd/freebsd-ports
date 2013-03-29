@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Filter::DetectWS
-# Date created:		13 Mar 2002
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Filter-DetectWS
 PORTVERSION=	0.01
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A PerlSAX filter that detects ignorable whitespace
+COMMENT=	PerlSAX filter that detects ignorable whitespace
 
 RUN_DEPENDS=	p5-XML-Filter-SAXT>=0:${PORTSDIR}/textproc/p5-XML-Filter-SAXT
 BUILD_DEPENDS:=	${RUN_DEPENDS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Hook
-# Date created:			Fri Nov  7 19:40:58 EST 2002
-# Whom:				Brian Skrab <brian@quynh-and-brian.org>
-#
+# Created by: Brian Skrab <brian@quynh-and-brian.org>
 # $FreeBSD$
-#
 
 PORTNAME=		Class-Hook
 PORTVERSION=		0.03

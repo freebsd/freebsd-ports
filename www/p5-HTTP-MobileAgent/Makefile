@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-MobileAgent
-# Date created:		27 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-MobileAgent
 PORTVERSION=	0.36
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:KURIHARA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An HTTP mobile user agent string parser for Perl
+COMMENT=	HTTP mobile user agent string parser for Perl
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CDDB_get
-# Date created:		25-Sep-2001
-# Whom:			Oyvind Moll <oyvindmo@initio.no>
-#
+# Created by: Oyvind Moll <oyvindmo@initio.no>
 # $FreeBSD$
-#
 
 PORTNAME=	CDDB_get
 PORTVERSION=	2.28
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:FONKIE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A high-level interface to the Compact Disc Database
+COMMENT=	High-level interface to the Compact Disc Database
 
 PERL_CONFIGURE=	yes
 

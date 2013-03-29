@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Aligner
-# Date created:				May  2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Aligner
 PORTVERSION=	0.07

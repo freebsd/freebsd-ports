@@ -1,6 +1,5 @@
 # Created by: Donald Burr <dburr@FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	PathTools
 PORTVERSION=	3.4000
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl module for portably manipulating file specifications
+COMMENT=	Perl module for portably manipulating file specifications
 
 PERL_CONFIGURE=	yes
 

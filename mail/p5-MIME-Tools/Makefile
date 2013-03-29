@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	MIME-tools-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A set of perl5 modules for MIME
+COMMENT=	Set of perl5 modules for MIME
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

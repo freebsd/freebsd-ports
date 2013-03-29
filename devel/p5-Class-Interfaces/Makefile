@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Interfaces
-# Date created:	   23 February 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Interfaces
 PORTVERSION=	0.04
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A module for defining interface classes inline
+COMMENT=	Module for defining interface classes inline
 
 PERL_CONFIGURE=	yes
 

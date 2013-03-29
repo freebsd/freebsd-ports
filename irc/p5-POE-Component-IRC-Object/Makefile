@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-IRC-Object
-# Date created:	   05 July 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IRC-Object
 PORTVERSION=	0.02
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A slightly simpler OO interface to POE::Component::IRC
+COMMENT=	Slightly simpler OO interface to POE::Component::IRC
 
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC

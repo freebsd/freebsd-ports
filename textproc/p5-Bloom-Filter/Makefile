@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	p5-Bloom-Filter
-# Date created: 		     	August 06, 2004
-# Whom:					Aaron Straup Cope <ascope@cpan.org>
-#
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Bloom-Filter
 PORTVERSION=	1.0
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MCEGLOWS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A probabilistic algorithm for doing existence tests
+COMMENT=	Probabilistic algorithm for doing existence tests
 
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}

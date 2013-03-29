@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils-AutoInstall
-# Date created:	   2 December 2005
-# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-AutoInstall
 PORTVERSION=	0.63

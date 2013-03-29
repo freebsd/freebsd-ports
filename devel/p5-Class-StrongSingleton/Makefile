@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-StrongSingleton
-# Date created:	   22 February 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-StrongSingleton
 PORTVERSION=	0.02
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A stronger and more secure Singleton base class
+COMMENT=	Stronger and more secure Singleton base class
 
 PERL_CONFIGURE=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Bio-NEXUS
-# Date created:				20 Sug, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-NEXUS
 PORTVERSION=	0.78
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An object-oriented Perl API for the NEXUS file format
+COMMENT=	Object-oriented Perl API for the NEXUS file format
 
 BUILD_DEPENDS=	p5-Clone-PP>=1.02:${PORTSDIR}/devel/p5-Clone-PP
 RUN_DEPENDS:=	${BUILD_DEPENDS}

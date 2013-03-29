@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ODF-lpOD
-# Date created:				March 11, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ODF-lpOD
 PORTVERSION=	1.121
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An OpenDocument management interface
+COMMENT=	OpenDocument management interface
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-XML-Twig>=3.37:${PORTSDIR}/textproc/p5-XML-Twig \

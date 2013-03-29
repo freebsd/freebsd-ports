@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/p5-Authen-Libwrap
-# Date created:				05 February 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Libwrap
 PORTVERSION=	0.22

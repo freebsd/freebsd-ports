@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A loader class for phrasebook implementations using YAML
+COMMENT=	Loader class for phrasebook implementations using YAML
 
 LICENSE=	ART20
 

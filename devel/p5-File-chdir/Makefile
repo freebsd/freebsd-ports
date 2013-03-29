@@ -1,9 +1,5 @@
-# New ports collection makefile for:	File-chdir
-# Date created:	   10 December 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	File-chdir
 PORTVERSION=	0.1008
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A more sensible way to change directories
+COMMENT=	More sensible way to change directories
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

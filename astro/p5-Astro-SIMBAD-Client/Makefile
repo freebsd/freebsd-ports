@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:WYANT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An object-oriented interface to SIMBAD4
+COMMENT=	OO interface to SIMBAD4
 
 BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Template-Magic
-# Date created:				July 23 2004
-# Whom:	      				Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Magic
 PORTVERSION=	1.39
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl Module with magic merger of runtime values with templates
+COMMENT=	Perl Module with magic merger of runtime values with templates
 
 BUILD_DEPENDS=	p5-IO-Util>=0:${PORTSDIR}/devel/p5-IO-Util \
 		p5-OOTools>=0:${PORTSDIR}/devel/p5-OOTools \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Catalyst-Authentication-Store-LDAP
-# Date created:	   20 February 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Authentication-Store-LDAP
 PORTVERSION=	1.012

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-C3
-# Date created:	   1 Dec 2005
-# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-C3
 PORTVERSION=	0.24
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A pragma to use the C3 method resolution order algorithm
+COMMENT=	Pragma to use the C3 method resolution order algorithm
 
 OPTIONS_DEFINE=	XS
 XS_DESC=	XS speed optimizations

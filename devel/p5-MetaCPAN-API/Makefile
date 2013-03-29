@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-MetaCPAN-API
-# Date created:				14 November 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MetaCPAN-API
 PORTVERSION=	0.43
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A comprehensive, DWIM-featured API to MetaCPAN
+COMMENT=	Comprehensive, DWIM-featured API to MetaCPAN
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \

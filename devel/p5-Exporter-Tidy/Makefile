@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Exporter::Tidy
-# Date created:			Sep 24, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Exporter-Tidy
 PORTVERSION=	0.07

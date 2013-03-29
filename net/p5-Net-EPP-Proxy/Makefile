@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-EPP-Proxy
-# Date created:				19 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-EPP-Proxy
 PORTVERSION=	0.04
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A proxy server for the EPP protocol
+COMMENT=	Proxy server for the EPP protocol
 
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \

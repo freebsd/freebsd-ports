@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IRC-Bot-Hangman
-# Date created:				23 Dec 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IRC-Bot-Hangman
 PORTVERSION=	0.1
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:PDENIS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An IRC hangman bot
+COMMENT=	IRC hangman bot
 
 BUILD_DEPENDS=	p5-Bot-BasicBot>=0:${PORTSDIR}/irc/p5-Bot-BasicBot \
 		p5-Games-GuessWord>=0:${PORTSDIR}/games/p5-Games-GuessWord \

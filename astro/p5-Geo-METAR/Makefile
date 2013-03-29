@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Geo-METAR
-# Date created:				Mon Jan  1 01:42:56 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-METAR
 PORTVERSION=	1.15
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module that processes METAR information from NOAA sources
+COMMENT=	Perl module that processes METAR information from NOAA sources
 
 MAKE_JOBS_SAFE=  yes
 

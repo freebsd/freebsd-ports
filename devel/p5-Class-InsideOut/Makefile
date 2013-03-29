@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A safe, simple inside-out object construction kit
+COMMENT=	Safe, simple inside-out object construction kit
 
 BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
 RUN_DEPENDS:=	${BUILD_DEPENDS}

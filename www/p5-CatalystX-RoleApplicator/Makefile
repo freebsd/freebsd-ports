@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-CatalystX-RoleApplicator
-# Date created:		January 31, 2010
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-RoleApplicator
 PORTVERSION=	0.005

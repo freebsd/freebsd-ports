@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-NeatTemplate
-# Date created:				Wed Sep 20 12:37:36 CST 2006
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-NeatTemplate
 PORTVERSION=	0.10.01
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A fast, middleweight template engine
+COMMENT=	Fast, middleweight template engine
 
 PERL_MODBUILD=	yes
 

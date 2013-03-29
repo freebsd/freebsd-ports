@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-chklinks
-# Date created:				2007/06/07
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	chklinks
 PORTVERSION=	3.09
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	Locale/IMACAT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A non-threaded Perl link checker
+COMMENT=	Non-threaded Perl link checker
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \

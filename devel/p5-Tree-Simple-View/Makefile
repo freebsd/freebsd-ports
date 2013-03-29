@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tree::Simple::View
-# Date created:				1 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Tree-Simple-View
 PORTVERSION=	0.17
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A set of classes for viewing Tree::Simple hierarchies
+COMMENT=	Set of classes for viewing Tree::Simple hierarchies
 
 BUILD_DEPENDS=	p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Class-Throwable>=0:${PORTSDIR}/devel/p5-Class-Throwable \

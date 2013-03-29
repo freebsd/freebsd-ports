@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Format
-# Date created:				25 April 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Format
 PORTVERSION=	2.10
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A module to format HTML to text or PS
+COMMENT=	Module to format HTML to text or PS
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An implementation of the XMPP Protocol
+COMMENT=	Implementation of the XMPP Protocol
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN \

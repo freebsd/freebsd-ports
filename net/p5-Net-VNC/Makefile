@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-VNC
-# Date created:		2006-07-29
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-VNC
 PORTVERSION=	0.40
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple VNC client
+COMMENT=	Simple VNC client
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

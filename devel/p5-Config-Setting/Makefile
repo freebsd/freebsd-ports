@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Config-Setting
-# Date created:				1 July 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Setting
 PORTVERSION=	0.04
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A class that provides an easy interface to use config files
+COMMENT=	Class that provides an easy interface to use config files
 
 RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-SVN-ACL
-# Date created:				Jan  2006
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-ACL
 PORTVERSION=	0.02
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple ACL frontend for subversion
+COMMENT=	Simple ACL frontend for subversion
 
 BUILD_DEPENDS=	\
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-Amazon-S3
-# Date created:		2007-04-30
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-Amazon-S3
 PORTVERSION=	0.040.1
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A module for interfacing with Amazon S3 through SOAP
+COMMENT=	Module for interfacing with Amazon S3 through SOAP
 
 RUN_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \

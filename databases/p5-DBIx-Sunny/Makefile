@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBIx::Sunny
-# Date created:				18 October 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Sunny
 PORTVERSION=	0.21
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple DBI wrapper supports SQLite and MySQL
+COMMENT=	Simple DBI wrapper supports SQLite and MySQL
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

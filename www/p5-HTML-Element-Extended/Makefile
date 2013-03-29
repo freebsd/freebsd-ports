@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Element-Extended
-# Date created:			20 September 2002
-# Whom:				Garrett A. Wollman
-#
+# Created by: Garrett A. Wollman
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Element-Extended
 PORTVERSION=	1.18
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An extended interface to HTML::Tree's HTML::Element class
+COMMENT=	Extended interface to HTML::Tree's HTML::Element class
 
 BUILD_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
 RUN_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
