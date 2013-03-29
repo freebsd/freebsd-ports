@@ -1,13 +1,10 @@
-# New ports collection makefile for:	libxml2
-# Date created:				28 September 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
 #    $MCom: ports/textproc/libxml2/Makefile,v 1.15 2012/11/26 19:55:23 kwm Exp $
 
 PORTNAME=	libxml2
 PORTVERSION=	2.8.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/
@@ -47,11 +44,11 @@ THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSCHEMA}
+.if ! ${PORT_OPTIONS:MSCHEMA}
 CONFIGURE_ARGS+=	--without-schemas
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
+.if ! ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--without-threads
 .endif
 
