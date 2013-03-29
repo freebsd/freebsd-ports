@@ -44,7 +44,7 @@ post-build:
 
 post-install:
 	${LN} -f ${PREFIX}/bin/gnuchess ${PREFIX}/bin/gnuchessx
-.if ${PORT_OPITONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
