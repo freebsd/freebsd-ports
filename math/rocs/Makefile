@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Graph teory IDE for KDE 4
+COMMENT=	KDE Graph theory IDE
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
