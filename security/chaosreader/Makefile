@@ -1,7 +1,4 @@
-# New ports collection makefile for:	chaosreader
-# Date created:				1 Aug 2007
-# Whom:					pauls
-#
+# Created by: pauls
 # $FreeBSD$
 #
 
@@ -15,7 +12,7 @@ EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	A tool to extract data from tcpdump logs
+COMMENT=	Tool to extract data from tcpdump logs
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

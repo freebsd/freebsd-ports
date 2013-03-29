@@ -9,7 +9,7 @@ MASTER_SITES=	http://swupdate.openvpn.net/community/releases/ \
 # Eric F. Crist <ecrist@secure-computing.net> does not require my
 # approval for changes to this package. -- mandree@FreeBSD.org
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	A small RSA key management package based on openssl
+COMMENT=	Small RSA key management package based on openssl
 
 LICENSE=	GPLv2
 

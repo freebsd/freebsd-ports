@@ -1,7 +1,4 @@
-# New ports collection makefile for:	log2timeline
-# Date created:	24 December 2010
-# Whom:		Nobutaka Mantani <nobutaka@FreeBSD.org>
-#
+# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A log file parser for computer forensic investigations
+COMMENT=	Log file parser for computer forensic investigations
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

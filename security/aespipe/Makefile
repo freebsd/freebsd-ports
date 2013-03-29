@@ -1,7 +1,4 @@
-# New ports collection makefile for:    aespipe
-# Date created:         20 February 1007
-# Whom:			Ekkehard 'Ekki' Gehm <gehm@physik.tu-berlin.de>
-#
+# Created by: Ekkehard 'Ekki' Gehm <gehm@physik.tu-berlin.de>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://loop-aes.sourceforge.net/${PORTNAME}/ \
 		http://koti.tnnet.fi/jari.ruusu/linux/
 
 MAINTAINER=	gehm@physik.tu-berlin.de
-COMMENT=	An AES encrypting or decrypting pipe
+COMMENT=	AES encrypting or decrypting pipe
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 

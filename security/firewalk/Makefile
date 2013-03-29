@@ -1,7 +1,4 @@
-# New ports collection makefile for:  firewalk
-# Date created:		Sun May 3, 1999
-# Whom:			shipley@dis.org
-#
+# Created by: shipley@dis.org
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	A remote firewall auditing tool
+COMMENT=	Remote firewall auditing tool
 
 LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \
 		net:${PORTSDIR}/net/libnet

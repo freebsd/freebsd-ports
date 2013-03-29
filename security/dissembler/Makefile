@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	A tool that polymorphs bytecode to a printable ASCII string
+COMMENT=	Tool that polymorphs bytecode to a printable ASCII string
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_FILES=bin/${PORTNAME}

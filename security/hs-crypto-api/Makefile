@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A generic interface for cryptographic operations
+COMMENT=	Generic interface for cryptographic operations
 
 LICENSE=	BSD
 

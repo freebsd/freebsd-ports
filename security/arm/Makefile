@@ -1,7 +1,4 @@
-# ports collection makefile for:	arm
-# Date created:				20111019
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	https://archive.torproject.org/arm/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	A terminal status monitor for Tor
+COMMENT=	Terminal status monitor for Tor
 
 LICENSE=	GPLv3
 

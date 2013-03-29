@@ -8,7 +8,7 @@ CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A password manager for GNOME2
+COMMENT=	Password manager for GNOME2
 
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 		mhash:${PORTSDIR}/security/mhash

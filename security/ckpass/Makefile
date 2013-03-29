@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ckpass
-# Date created:		2011-09-12
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	An ncurses based password database client
+COMMENT=	Ncurses based password database client
 
 LICENSE=	GPLv3
 

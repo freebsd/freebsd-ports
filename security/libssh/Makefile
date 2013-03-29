@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.libssh.org/files/0.5/ \
 		LOCAL/avl
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A library implementing the SSH1 and SSH2 protocol
+COMMENT=	Library implementing the SSH1 and SSH2 protocol
 
 OPTIONS_DEFINE=	GCRYPT SSH1
 GCRYPT_DESC=	Build with libgcrypt

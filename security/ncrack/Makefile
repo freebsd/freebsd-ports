@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ncrack
-# Date created:		2010-07-27
-# Whom:			David E. Thiel <lx@FreeBSD.org>
-#
+# Created by: David E. Thiel <lx@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://nmap.org/ncrack/dist/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}ALPHA
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A high-speed network authentication cracking tool
+COMMENT=	High-speed network authentication cracking tool
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

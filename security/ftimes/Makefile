@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ftimes
-# Date created:		20 August 2002
-# Whom:			Klayton Monroe <klm@uidzero.org>
-#
+# Created by: Klayton Monroe <klm@uidzero.org>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=		SF
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		klm@uidzero.org
-COMMENT=		A system baselining and evidence collection tool
+COMMENT=		System baselining and evidence collection tool
 
 GNU_CONFIGURE=		yes
 USE_PERL5=		yes

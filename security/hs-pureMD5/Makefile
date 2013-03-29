@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Haskell-only implementation of MD5 digest (hash) yalgorithm
+COMMENT=	Haskell-only implementation of MD5 digest (hash) yalgorithm
 
 LICENSE=	BSD
 

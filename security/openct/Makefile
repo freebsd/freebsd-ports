@@ -1,7 +1,4 @@
-# New ports collection makefile for:	openct
-# Date created:		2004-09-08
-# Whom:			Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A middleware framework for smart card terminals
+COMMENT=	Middleware framework for smart card terminals
 
 OPTIONS=	PCSC "Enable PC/SC support" off
 

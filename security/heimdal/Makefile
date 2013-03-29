@@ -1,7 +1,4 @@
-# Ports collection Makefile for:	heimdal
-# Date created:						10/23/1999
-# Whom:								nectar@FreeBSD.ORG
-#
+# Created by: nectar@FreeBSD.ORG
 # $FreeBSD$
 #
 
@@ -15,7 +12,7 @@ MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
-COMMENT=	A popular BSD-licensed implementation of Kerberos 5
+COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
 

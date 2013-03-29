@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 DISTNAME=	ipv6-toolkit-v${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A set of IPv6 security assessment tools
+COMMENT=	Set of IPv6 security assessment tools
 
 LICENSE=	GPLv3
 

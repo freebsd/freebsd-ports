@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	LOCAL/cpiazza
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple port scanner that prints out open ports
+COMMENT=	Simple port scanner that prints out open ports
 
 OPTIONS_DEFINE=	GTK2
 

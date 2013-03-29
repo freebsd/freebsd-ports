@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libp11
-# Date created:			1 Jun 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A small layer on top of PKCS\#11 API
+COMMENT=	Small layer on top of PKCS\#11 API
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

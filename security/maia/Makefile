@@ -1,7 +1,4 @@
-# Ports collection Makefile for:    maia
-# Date created:                         03 Jan 2008
-# Whom:                                 Janky Jay <ek@purplehat.org>
-#
+# Created by: Janky Jay <ek@purplehat.org>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
 MAINTAINER=	ek@purplehat.org
-COMMENT=	A web-based management system based on amavisd-new and SpamAssassin
+COMMENT=	Web-based management system based on amavisd-new and SpamAssassin
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-MIME-Tools>=4.116:${PORTSDIR}/mail/p5-MIME-Tools \

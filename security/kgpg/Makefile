@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kgpg
-# Date created:				15 Nov 2002
-# Whom:					Arjan van Leeuwen <avleeuwen@piwebs.com>
-#
+# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ CATEGORIES=		security kde
 MASTER_SITES=		http://developer.kde.org/~kgpg/src/
 
 MAINTAINER=		rick@rptn.net
-COMMENT=		A simple KDE frontend for GnuPG
+COMMENT=		Simple KDE frontend for GnuPG
 
 RUN_DEPENDS=		gpgv:${PORTSDIR}/security/gnupg1
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gtk-knocker
-# Date created:				Tue Jul 10 02:18:39 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
 #
 
@@ -14,7 +11,7 @@ PKGNAMEPREFIX=	gtk-
 DISTNAME=	gtk-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and easy to use TCP only port scanner (GTK+ version)
+COMMENT=	Simple and easy to use TCP only port scanner (GTK+ version)
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm

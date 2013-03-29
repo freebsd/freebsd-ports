@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A low-level cryptographic library
+COMMENT=	Low-level cryptographic library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

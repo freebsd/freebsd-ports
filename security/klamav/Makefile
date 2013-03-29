@@ -1,7 +1,4 @@
-# New ports collection makefile for:   klamav
-# Date created:        30 July 2005
-# Whom:                Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
-#
+# Created by: Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source%20%28For%20ClamAV%20and%20gt_%3D%200.9x%29/K
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	anderson@cnpm.embrapa.br
-COMMENT=	A KDE 3 front-end to Clam Anti-Virus
+COMMENT=	KDE 3 front-end to Clam Anti-Virus
 
 LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgnome-keyring
-# Date created:		2009-12-21
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/security/libgnome-keyring/Makefile,v 1.7 2010/09/28 08:11:06 kwm Exp $
 
 PORTNAME=	libgnome-keyring
 PORTVERSION=	2.32.0
@@ -12,7 +8,7 @@ CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A program that keeps passwords and other secrets
+COMMENT=	Program that keeps passwords and other secrets
 
 LIB_DEPENDS=    tasn1.5:${PORTSDIR}/security/libtasn1 \
                 gcrypt.18:${PORTSDIR}/security/libgcrypt

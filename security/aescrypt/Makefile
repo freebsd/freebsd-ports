@@ -1,7 +1,4 @@
-# New ports collection makefile for:	aescrypt
-# Date created:		12 December 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
 #
 
@@ -16,7 +13,7 @@ PATCH_SITES=	http://devel.ringlet.net/security/aescrypt/patches/ \
 PATCHFILES=	aescrypt-0.7-roam-whopper-01.patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line AES encryption/decryption suite
+COMMENT=	Command-line AES encryption/decryption suite
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	BINGRP=wheel

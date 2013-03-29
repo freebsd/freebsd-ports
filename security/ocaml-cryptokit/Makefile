@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ocaml cryptokit
-# Date created:		Thu Jan  9 03:04:06 BRST 2003
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/891/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	jaapb@kerguelen.org
-COMMENT=	A variety of cryptographic primitives for Objective Caml
+COMMENT=	Variety of cryptographic primitives for Objective Caml
 
 HAS_CONFIGURE=	yes
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	medusa
-# Date created:		2006-05-01
-# Whom:			David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A speedy, massively parallel, modular, login brute-forcer
+COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
 OPTIONS=	SVN "Enable Subversion module" off \
 		POSTGRESQL "Enable PostgreSQL module" off

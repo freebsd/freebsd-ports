@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A platform-independent entropy source
+COMMENT=	Platform-independent entropy source
 
 LICENSE=	BSD
 
