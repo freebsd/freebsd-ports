@@ -8,7 +8,7 @@ MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	An x86 CPU identification utility
+COMMENT=	x86 CPU identification utility
 
 LICENSE=	GPLv2
 
