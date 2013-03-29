@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		spidermonkey
+PORTNAME=		spidermonkey170
 PORTVERSION=		17.0.0
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_MOZILLA}
