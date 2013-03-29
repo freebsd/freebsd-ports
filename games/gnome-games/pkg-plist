@@ -3155,6 +3155,7 @@ share/omf/swell-foop/swell-foop-sv.omf
 @dirrm share/glchess
 @dirrmtry share/ggz/gnome-games
 @dirrmtry share/ggz
+@dirrmtry share/games
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
