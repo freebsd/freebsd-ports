@@ -94,6 +94,7 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/crh/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%share/locale/csb/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gdk-pixbuf.mo
@@ -231,6 +232,8 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%@dirrmtry share/locale/en@shaw
 %%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/csb
 %%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/crh
 %%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
