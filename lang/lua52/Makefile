@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lua
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 
