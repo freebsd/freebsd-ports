@@ -125,10 +125,12 @@ PLIST_SUB+=		WITH_TK="@comment "
 CPPFLAGS+=		-I${TCL_INCLUDEDIR}
 USE_TCL_BUILD=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
-CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
+CONFIGURE_ARGS+=	--with-tclsh=${TCLSH} --enable-tcl=yes
 CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
 MAN3+=			gdtclft.3tcl tcldot.3tcl
 PLIST_SUB+=		TCL_VER="${TCL_VER}"
+.else
+CONFIGURE_ARGS+=	--enable-tcl=no
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
