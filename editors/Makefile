@@ -22,6 +22,7 @@
     SUBDIR += bvi
     SUBDIR += calligra
     SUBDIR += calligra-l10n
+    SUBDIR += calligra-l10n-bs
     SUBDIR += calligra-l10n-ca
     SUBDIR += calligra-l10n-ca_valencia
     SUBDIR += calligra-l10n-cs
@@ -38,7 +39,9 @@
     SUBDIR += calligra-l10n-nds
     SUBDIR += calligra-l10n-nl
     SUBDIR += calligra-l10n-sk
+    SUBDIR += calligra-l10n-sl
     SUBDIR += calligra-l10n-sv
+    SUBDIR += calligra-l10n-tr
     SUBDIR += chexedit
     SUBDIR += code-browser
     SUBDIR += codeeditor
