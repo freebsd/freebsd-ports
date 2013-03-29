@@ -129,6 +129,7 @@
     SUBDIR += cgoban
     SUBDIR += chanta
     SUBDIR += chapping
+    SUBDIR += chessx
     SUBDIR += chocolate-doom
     SUBDIR += cheech
     SUBDIR += childsplay
