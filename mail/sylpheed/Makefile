@@ -3,6 +3,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
@@ -10,6 +11,7 @@ MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/ 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight, featureful, and fast GTK+ based e-mail client
 
+LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
