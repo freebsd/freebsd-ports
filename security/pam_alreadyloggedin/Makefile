@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pam_alreadyloggedin
-# Date created:				6 March 2002
-# Whom:					green@FreeBSD.org
-#
+# Created by: green@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	pam_alreadyloggedin
 PORTVERSION=	0.3
@@ -24,7 +20,7 @@ MANCOMPRESSED=	yes
 BROKEN=		fails to build with new utmpx
 .endif
 
-.if defined(NOPROFILE)
+.if defined(NO_PROFILE) || defined(NOPROFILE) || defined(WITHOUT_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""
