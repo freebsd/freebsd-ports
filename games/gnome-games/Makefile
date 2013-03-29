@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomegames2
-# Date created:				08 May 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games/Makefile,v 1.232 2010/11/15 22:52:01 kwm Exp $
-#
+#   $MCom: ports/games/gnome-games/Makefile,v 1.240 2012/09/01 23:02:09 mezz Exp $
 
 PORTNAME=	gnome-games
 PORTVERSION=	2.32.1
@@ -17,10 +13,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the GNOME 2 Desktop Environment
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
-		clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
-		clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
+		clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk \
+		clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
+
+CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -28,8 +26,9 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack \
-		librsvg2 desktopfileutils pygnomedesktop gnomedocutils
+USES=		pathfix
+USE_GNOME=	gnomeprefix intlhack librsvg2 desktopfileutils \
+		pygnomedesktop gnomedocutils
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sound=gstreamer \
@@ -42,8 +41,6 @@ GCONF_SCHEMAS=	aisleriot.schemas glchess.schemas glines.schemas \
 		gnome-sudoku.schemas gnomine.schemas gnotravex.schemas \
 		gnotski.schemas gtali.schemas iagno.schemas lightsoff.schemas \
 		mahjongg.schemas quadrapassel.schemas swell-foop.schemas
-
-CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]*
 
 #DSC_FILES=	iagno/iagno-client.dsc gnect/data/gnect-client.dsc \
 #		gnibbles/gnibbles-client.dsc
@@ -67,6 +64,9 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/ggz/gnome-games
+	${CHGRP} games ${LOCALBASE}/share/games
+	${CHMOD} g=rwXs ${LOCALBASE}/share/games
+
 #.for dsc in ${DSC_FILES}
 #	${INSTALL_DATA} ${WRKSRC}/${dsc} ${PREFIX}/share/ggz/gnome-games/${dsc:T}
 #.endfor
