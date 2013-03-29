@@ -1,14 +1,10 @@
-# New ports collection makefile for:    quagga
-# Date created:         3 September 2003
-# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.21
+PORTVERSION=	0.99.22
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	quagga
 
 PATCH_SITES=	http://quagga.net/
@@ -17,7 +13,6 @@ MAINTAINER=	boris@tagnet.ru
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
