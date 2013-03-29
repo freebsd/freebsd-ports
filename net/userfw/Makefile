@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	userfw
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	net kld
 MASTER_SITES=	http://userfw.net/files/release/ \
 		http://imax.in.ua/files/ \
-		http://projects.ukrweb.net/files/ \
-		https://github.com/downloads/gelraen/userfw/
+		http://projects.ukrweb.net/files/
 
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Modular packet filter
