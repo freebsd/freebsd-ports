@@ -15,7 +15,7 @@ Index: qemu/hw/dma.c
  }
  
 Index: qemu/hw/fdc.c
-@@ -1322,7 +1322,8 @@
+@@ -1445,7 +1445,8 @@ static uint32_t fdctrl_read_data(FDCtrl 
                                     fd_sector(cur_drv));
                      return 0;
                  }
@@ -25,16 +25,16 @@ Index: qemu/hw/fdc.c
                  FLOPPY_DPRINTF("error getting sector %d\n",
                                 fd_sector(cur_drv));
                  /* Sure, image size is too small... */
-@@ -1776,7 +1777,8 @@
+@@ -1905,7 +1906,8 @@ static void fdctrl_write_data(FDCtrl *fd
          if (pos == FD_SECTOR_LEN - 1 ||
              fdctrl->data_pos == fdctrl->data_len) {
              cur_drv = get_cur_drv(fdctrl);
 -            if (bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
 +            if (cur_drv->bs == NULL ||
 +                bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
-                 FLOPPY_ERROR("writing sector %d\n", fd_sector(cur_drv));
+                 FLOPPY_DPRINTF("error writing sector %d\n",
+                                fd_sector(cur_drv));
                  return;
-             }
 Index: qemu-0.8.2/hw/sb16.c
 ===================================================================
 --- qemu-0.8.2.orig/hw/sb16.c	2006-07-22 20:23:34.000000000 +0300

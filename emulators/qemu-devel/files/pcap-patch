@@ -1,31 +1,33 @@
---- configure.orig	2010-01-29 14:36:00.000000000 -0500
-+++ configure	2010-01-29 14:36:00.000000000 -0500
-@@ -194,6 +194,9 @@ zlib="yes"
- guest_agent="yes"
- libiscsi=""
- coroutine=""
+--- configure.orig
++++ configure
+@@ -226,6 +226,9 @@ coroutine=""
+ seccomp=""
+ glusterfs=""
+ virtio_blk_data_plane=""
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # parse CC options first
  for opt do
-@@ -670,6 +673,8 @@ for opt do
+@@ -729,6 +732,10 @@ for opt do
    ;;
-   --enable-vnc-thread) vnc_thread="yes"
+   --enable-vnc-ws) vnc_ws="yes"
    ;;
 +  --enable-pcap) pcap="yes"
++  ;;
++  --disable-pcap) pcap="no"
 +  ;;
    --disable-slirp) slirp="no"
    ;;
    --disable-uuid) uuid="no"
-@@ -1619,6 +1624,49 @@ EOF
+@@ -1730,6 +1737,51 @@ EOF
  fi
  
  ##########################################
 +# pcap probe
 +
-+if test "$pcap" = "yes" ; then
++if test "$pcap" = "yes" -a "$pcap" != "no"; then
 +  cat > $TMPC << EOF
 +#include <pcap.h>
 +int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
@@ -35,7 +37,9 @@
 +  else
 +    libpcap=-lwpcap
 +  fi
-+  if ! $cc $ARCH_CFLAGS -o $TMPE $libpcap $TMPC 2> /dev/null ; then
++  if compile_prog "$libpcap" ; then
++    :
++  else
 +    echo
 +    echo "Error: Could not find pcap"
 +    echo "Make sure to have the pcap libs and headers installed."
@@ -50,7 +54,7 @@
 +  return (pcap_create("foo", errbuf) == (pcap_t *)0 ? 1 : 0);
 +}
 +EOF
-+  if $cc $ARCH_CFLAGS -o $TMPE $libpcap $TMPC 2> /dev/null ; then
++  if compile_prog "$libpcap" ; then
 +    pcap_create="yes"
 +  fi
 +  cat > $TMPC << EOF
@@ -59,17 +63,25 @@
 +#include <net/bpf.h>
 +int main(void) { return (BPF_MAJOR_VERSION); }
 +EOF
-+  if $cc $ARCH_CFLAGS -o $TMPE $TMPC 2> /dev/null ; then
++  if compile_prog ; then
 +    bpf="yes"
 +  fi
 +  libs_softmmu="$libpcap $libs_softmmu"
 +fi # test "$pcap"
 +
 +##########################################
- # VNC TLS detection
- if test "$vnc" = "yes" -a "$vnc_tls" != "no" ; then
+ # VNC TLS/WS detection
+ if test "$vnc" = "yes" -a \( "$vnc_tls" != "no" -o "$vnc_ws" != "no" \) ; then
    cat > $TMPC <<EOF
-@@ -3117,6 +3165,15 @@ fi
+@@ -3307,6 +3359,7 @@ echo "Extra audio cards $audio_card_list
+ echo "Block whitelist   $block_drv_whitelist"
+ echo "Mixer emulation   $mixemu"
+ echo "VirtFS support    $virtfs"
++echo "pcap support      $pcap"
+ echo "VNC support       $vnc"
+ if test "$vnc" = "yes" ; then
+     echo "VNC TLS support   $vnc_tls"
+@@ -3445,6 +3498,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -85,20 +97,33 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-Index: net.c
-@@ -37,6 +37,11 @@
- #include "hw/qdev.h"
- #include "iov.h"
+Index: net/clients.h
+@@ -47,6 +47,11 @@ int net_init_tap(const NetClientOptions 
+ int net_init_bridge(const NetClientOptions *opts, const char *name,
+                     NetClientState *peer);
+ 
++#ifdef CONFIG_PCAP
++int net_init_pcap(const NetClientOptions *opts, const char *name,
++                  NetClientState *peer);
++#endif
++
+ #ifdef CONFIG_VDE
+ int net_init_vde(const NetClientOptions *opts, const char *name,
+                  NetClientState *peer);
+Index: net/net.c
+@@ -40,6 +40,11 @@
+ #include "qapi/opts-visitor.h"
+ #include "qapi/dealloc-visitor.h"
  
 +#include <sys/ioctl.h>
 +#ifdef __FreeBSD__
 +#include <net/if.h>
 +#endif
 +
- static QTAILQ_HEAD(, VLANState) vlans;
- static QTAILQ_HEAD(, VLANClientState) non_vlan_clients;
- 
-@@ -797,6 +802,226 @@ static int net_init_nic(QemuOpts *opts,
+ /* Net bridge is currently not supported for W32. */
+ #if !defined(_WIN32)
+ # define CONFIG_NET_BRIDGE
+@@ -704,6 +709,221 @@ static int net_init_nic(const NetClientO
      return idx;
  }
  
@@ -109,26 +134,27 @@ Index: net.c
 +#endif
 +#include <pcap.h>
 +
-+typedef struct PCAPState {
-+    VLANClientState nc;
-+    pcap_t *handle;
-+    int max_eth_frame_size;
-+} PCAPState;
++struct PCAPState {
++    NetClientState     nc;
++    pcap_t            *handle;
++    int                max_eth_frame_size;
++};
 +
-+static ssize_t pcap_receive(VLANClientState *nc, const uint8_t *buf, size_t size)
++static ssize_t pcap_receive(NetClientState *nc, const uint8_t *buf, size_t size)
 +{
-+    PCAPState *s = DO_UPCAST(PCAPState, nc, nc);
++    struct PCAPState *s = DO_UPCAST(struct PCAPState, nc, nc);
 +
 +    return pcap_inject(s->handle, (u_char*)buf, size);
 +}
 +
-+static void pcap_callback(u_char *user, struct pcap_pkthdr *phdr, u_char *pdata)
++static void pcap_callback(u_char *user, struct pcap_pkthdr *phdr, u_char *pdata
++		)
 +{
-+    VLANClientState *nc = (VLANClientState *)user;
++    NetClientState *nc = (NetClientState *)user;
 +
 +    int len = phdr->len;
 +#ifdef __FreeBSD__
-+    PCAPState *s = DO_UPCAST(PCAPState, nc, nc);
++    struct PCAPState *s = DO_UPCAST(struct PCAPState, nc, nc);
 +    int max_eth_frame_size = s->max_eth_frame_size;
 +
 +    if (len > max_eth_frame_size) {
@@ -143,7 +169,7 @@ Index: net.c
 +
 +static void pcap_send(void *opaque)
 +{
-+    PCAPState *s = (PCAPState *)opaque;
++    struct PCAPState *s = (struct PCAPState *)opaque;
 +
 +    for (;;) {
 +        if (pcap_dispatch(s->handle, 0, (pcap_handler)&pcap_callback, (u_char *)&s->nc) >= 0)
@@ -151,36 +177,47 @@ Index: net.c
 +    }
 +}
 +
-+static void pcap_cleanup(VLANClientState *nc)
++static void pcap_cleanup(NetClientState *nc)
 +{
-+    PCAPState *s = DO_UPCAST(PCAPState, nc, nc);
++    struct PCAPState *s = DO_UPCAST(struct PCAPState, nc, nc);
 +
++    qemu_purge_queued_packets(nc);
 +    pcap_close(s->handle);
 +}
 +
 +static NetClientInfo net_pcap_info = {
-+    .type = NET_CLIENT_TYPE_PCAP,
-+    .size = sizeof(PCAPState),
++    .type = NET_CLIENT_OPTIONS_KIND_PCAP,
++    .size = sizeof(struct PCAPState),
 +    .receive = pcap_receive,
++//    .receive_raw = pcap_receive_raw,
++//    .receive_iov = pcap_receive_iov,
++//    .poll = pcap_poll,
 +    .cleanup = pcap_cleanup,
 +};
++/*
++ * ... -net pcap,ifname="..."
++ */
 +
-+static int net_pcap_init(VLANState *vlan, const char *model, const char *name, const char *ifname)
++int net_init_pcap(const NetClientOptions *opts, const char *name, NetClientState *peer)
 +{
-+    VLANClientState *nc;
-+    PCAPState *s = NULL;
++    const NetdevPcapOptions *pcap_opts = opts->pcap;
++    NetClientState *nc;
++    struct PCAPState *s;
++    const char *ifname;
 +    char errbuf[PCAP_ERRBUF_SIZE];
 +#if defined(_WIN32)
 +    HANDLE h;
 +#endif
 +    int i;
 +
-+    s = g_malloc0(sizeof(PCAPState));
-+    nc = qemu_new_net_client(&net_pcap_info, vlan, NULL, model, name);
-+
-+    s = DO_UPCAST(PCAPState, nc, nc);
-+    if (!s)
++    if (!pcap_opts->has_ifname)
 +        return -1;
++
++    ifname = pcap_opts->ifname;
++
++    /* create the object */
++    nc = qemu_new_net_client(&net_pcap_info, peer, "pcap", ifname);
++    s = DO_UPCAST(struct PCAPState, nc, nc);
 +
 +    if (ifname == NULL && (ifname = pcap_lookupdev(errbuf)) == NULL) {
 +        fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
@@ -206,6 +243,7 @@ Index: net.c
 +        close(i);
 +    }
 +#endif
++
 +#if defined(CONFIG_PCAP_CREATE) || defined(_WIN32)
 +    /*
 +     * Create pcap handle for the device, set promiscuous mode and activate.
@@ -260,7 +298,6 @@ Index: net.c
 +        }
 +    }
 +#endif /* BIOCIMMEDIATE */
-+
 +#if defined(BIOCFEEDBACK)
 +    /*
 +     * Tell the kernel that the sent packet has to be fed back.
@@ -299,72 +336,43 @@ Index: net.c
 +    if (s) {
 +        if (s->handle)
 +            pcap_close(s->handle);
-+        g_free(s);
 +    }
 +
 +    return -1;
 +}
 +
-+static int net_init_pcap(QemuOpts *opts,
-+                          Monitor *mon,
-+                          const char *name,
-+                          VLANState *vlan)
-+{
-+    const char *ifname;
-+
-+    ifname = qemu_opt_get(opts, "ifname");
-+
-+    if (net_pcap_init(vlan, "pcap", name, ifname) == -1) {
-+        return -1;
-+    }
-+
-+    return 0;
-+}
-+#endif /* CONFIG_PCAP */
-+
- #define NET_COMMON_PARAMS_DESC                     \
-     {                                              \
-         .name = "type",                            \
-@@ -973,6 +1198,21 @@ static const struct {
-             { /* end of list */ }
-         },
-     },
-+#ifdef CONFIG_PCAP
-+    [NET_CLIENT_TYPE_PCAP] = {
-+        .type = "pcap",
-+        .init = net_init_pcap,
-+        .desc = {
-+            NET_COMMON_PARAMS_DESC,
-+            {
-+                .name = "ifname",
-+                .type = QEMU_OPT_STRING,
-+                .help = "interface name",
-+            },
-+            { /* end of list */ }
-+        },
-+    },
 +#endif
-     [NET_CLIENT_TYPE_SOCKET] = {
-         .type = "socket",
-         .init = net_init_socket,
-@@ -1343,6 +1583,7 @@ void net_check_clients(void)
-             case NET_CLIENT_TYPE_TAP:
-             case NET_CLIENT_TYPE_SOCKET:
-             case NET_CLIENT_TYPE_VDE:
-+            case NET_CLIENT_TYPE_PCAP:
-                 has_host_dev = 1;
-                 break;
-             default: ;
---- qemu-options.hx.orig	2010-01-14 17:18:00.000000000 -0500
-+++ qemu-options.hx	2010-01-29 14:36:00.000000000 -0500
-@@ -799,6 +799,10 @@ DEF("smb", HAS_ARG, QEMU_OPTION_smb, "")
- DEF("net", HAS_ARG, QEMU_OPTION_net,
-     "-net nic[,vlan=n][,macaddr=mac][,model=type][,name=str][,addr=str][,vectors=v]\n"
-     "                create a new Network Interface Card and connect it to VLAN 'n'\n"
+ 
+ static int (* const net_client_init_fun[NET_CLIENT_OPTIONS_KIND_MAX])(
+     const NetClientOptions *opts,
+@@ -722,6 +944,9 @@ static int (* const net_client_init_fun[
+ #ifdef CONFIG_NET_BRIDGE
+         [NET_CLIENT_OPTIONS_KIND_BRIDGE]    = net_init_bridge,
+ #endif
 +#ifdef CONFIG_PCAP
-+    "-net pcap[,vlan=n][,name=str][,ifname=name]\n"
-+    "                connect the host network interface using PCAP to VLAN 'n'\n"
++	[NET_CLIENT_OPTIONS_KIND_PCAP]      = net_init_pcap,
 +#endif
- #ifdef CONFIG_SLIRP
-     "-net user[,vlan=n][,name=str][,net=addr[/mask]][,host=addr][,restrict=y|n]\n"
-     "         [,hostname=host][,dhcpstart=addr][,dns=addr][,tftp=dir][,bootfile=f]\n"
+         [NET_CLIENT_OPTIONS_KIND_HUBPORT]   = net_init_hubport,
+ };
+ 
+--- qapi-schema.json.orig
++++ qapi-schema.json
+@@ -2622,6 +2622,10 @@
+     '*br':     'str',
+     '*helper': 'str' } }
+ 
++{ 'type': 'NetdevPcapOptions',
++  'data': {
++    '*ifname':     'str' } }
++
+ ##
+ # @NetdevHubPortOptions
+ #
+@@ -2648,6 +2652,7 @@
+     'nic':      'NetLegacyNicOptions',
+     'user':     'NetdevUserOptions',
+     'tap':      'NetdevTapOptions',
++    'pcap':     'NetdevPcapOptions',
+     'socket':   'NetdevSocketOptions',
+     'vde':      'NetdevVdeOptions',
+     'dump':     'NetdevDumpOptions',

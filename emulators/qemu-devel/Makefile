@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -14,8 +13,10 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
+LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
+
 HAS_CONFIGURE=	yes
-EXTRACT_SUFX=	.tar.bz2
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
@@ -29,7 +30,8 @@ CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
-		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER
+		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER \
+		STATIC_LINK
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -40,11 +42,12 @@ CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
-GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
+GNS3_DESC=		gns3 patches (promiscuous multicast)
 ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 CLANG_HACK_DESC=		clang workaround (result slow and less stable!)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
+STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>
@@ -64,13 +67,22 @@ USE_GCC=	any
 
 .if ${PORT_OPTIONS:MX86_TARGETS}
 .if ${PORT_OPTIONS:MBSD_USER}
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--enable-nptl --target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,armeb-bsd-user,mips-bsd-user,mipsel-bsd-user
+.else
+CONFIGURE_ARGS+=	--enable-nptl --target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,armeb-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user
+.endif
 .else
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 .endif
 .else
 .if empty(PORT_OPTIONS:MBSD_USER)
 CONFIGURE_ARGS+=	--disable-bsd-user
+.else
+CONFIGURE_ARGS+=	--enable-nptl
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,armeb-bsd-user,mips-bsd-user,mipsel-bsd-user
+.endif
 .endif
 .endif
 
@@ -82,6 +94,11 @@ PLIST_SUB+=	BSD_USER=""
 IGNORE=		bsd-user targets not tested on sparc64
 .endif
 .endif
+.if empty(PORT_OPTIONS:MBSD_USER) || ${ARCH} != "amd64"
+PLIST_SUB+=	BSD_USER64="@comment "
+.else
+PLIST_SUB+=	BSD_USER64=""
+.endif
 
 .if ${PORT_OPTIONS:MX86_TARGETS}
 PLIST_SUB+=	NONX86="@comment "
@@ -90,13 +107,7 @@ PLIST_SUB+=	NONX86=""
 .endif
 
 .if ${PORT_OPTIONS:MGNS3}
-EXTRA_PATCHES+=	${FILESDIR}/hw_e1000_c.patch \
-		${FILESDIR}/net_c.patch \
-		${FILESDIR}/net_h.patch \
-		${FILESDIR}/net_udp_c.patch \
-		${FILESDIR}/net_udp_h.patch \
-		${FILESDIR}/Makefile_objs.patch \
-		${FILESDIR}/gns3-qemu-options.hx.patch
+EXTRA_PATCHES+=	${FILESDIR}/hw_e1000_c.patch
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -105,6 +116,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--disable-linux-user --disable-linux-aio \
 	--disable-kvm --disable-xen \
 	--smbd=${LOCALBASE}/sbin/smbd \
+	--enable-debug \
+	--enable-debug-info \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if empty(PORT_OPTIONS:MSDL)
@@ -160,6 +173,10 @@ RUN_DEPENDS+=	usbredir>=0.4.3:${PORTSDIR}/net/usbredir
 CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
+.if ${PORT_OPTIONS:MSTATIC_LINK}
+CONFIGURE_ARGS+=	--static
+.endif
+
 .if ${PORT_OPTIONS:MADD_AUDIO}
 CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus,hda
 .endif
@@ -201,9 +218,11 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 post-patch:
+.if ${OSVERSION} < 900000
+	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat||' ${WRKSRC}/configure
+.endif
 .if ${PORT_OPTIONS:MPCAP}
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
-	@${REINPLACE_CMD} -f ${FILESDIR}/pcap-client-type.sed ${WRKSRC}/net.h
 .endif
 .if empty(PORT_OPTIONS:MCDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
