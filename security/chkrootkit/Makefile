@@ -1,7 +1,4 @@
-# Ports collection makefile for:	chkrootkit
-# Date created:				13 Mar 2001
-# Whom:					Luiz Eduardo R. Cordeiro
-#
+# Created by: Luiz Eduardo R. Cordeiro
 # $FreeBSD$
 #
 
@@ -18,7 +15,7 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 		http://chkrootkit.mirror.fr/
 
 MAINTAINER=	cordeiro@nic.br
-COMMENT=	A tool to locally check for signs of a rootkit
+COMMENT=	Tool to locally check for signs of a rootkit
 
 SCRIPT_FILES=	chkrootkit
 PROG_FILES=	chklastlog \

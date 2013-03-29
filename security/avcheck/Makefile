@@ -1,7 +1,4 @@
-# New ports collection makefile for: avcheck
-# Date created:         Fri Jun 14 14:31:42 MSD 2002
-# Whom:                 dsh@vlink.ru
-#
+# Created by: dsh@vlink.ru
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	A simple antivirus solution for a mail system
+COMMENT=	Simple antivirus solution for a mail system
 
 MAN1=		avcheck.1
 

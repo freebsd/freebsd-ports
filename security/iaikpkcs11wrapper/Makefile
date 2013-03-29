@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	ale
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PKCS\#11 Java wrapper
+COMMENT=	PKCS\#11 Java wrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes

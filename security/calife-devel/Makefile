@@ -1,7 +1,4 @@
-# New ports collection makefile for:	calife-devel
-# Date created:				14 Jun 2005
-# Whom:					Thomas Quinot <thomas@cuivre.fr.eu.org>
-#
+# Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ DISTNAME=	calife-3.0.1
 
 MAKE_JOBS_SAFE=yes
 MAINTAINER=	thomas@FreeBSD.org
-COMMENT=	A lightweight alternative to sudo
+COMMENT=	Lightweight alternative to sudo
 
 LATEST_LINK=	${PORTNAME}-devel
 

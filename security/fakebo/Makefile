@@ -1,7 +1,4 @@
-# New ports collection makefile for:   fakebo
-# Date created:        16 March 1999
-# Whom:                Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fake BackOrifice client emulator
+COMMENT=	Fake BackOrifice client emulator
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING

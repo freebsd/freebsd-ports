@@ -1,7 +1,4 @@
-# New ports collection makefile for:	lsh secure shell
-# Date created:				29 MAY 2000
-# Whom:					Eric Schwertfeger <eric@cybernut.com>
-#
+# Created by: Eric Schwertfeger <eric@cybernut.com>
 # $FreeBSD$
 
 PORTNAME=	lsh
@@ -13,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 MASTER_SITE_SUBDIR=	lsh lsh/old
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
+COMMENT=	Secure (encrypted) remote shell compatible with ssh 2.0
 
 LIB_DEPENDS=	oop:${PORTSDIR}/devel/liboop \
 		gmp.10:${PORTSDIR}/math/gmp

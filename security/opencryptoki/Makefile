@@ -1,7 +1,4 @@
-# New ports collection makefile for:	opencryptoki
-# Date created:				2010-07-16
-# Whom:					Ralf Meister
-#
+# Created by: Ralf Meister
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open PKCS\#11 implementation library
+COMMENT=	Open PKCS\#11 implementation library
 
 LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	chrootuid
-# Date created:				12 Dec 1999
-# Whom:					truckman
-#
+# Created by: truckman
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple wrapper that combines chroot(8) and su(1) into  one  program
+COMMENT=	Simple wrapper that combines chroot(8) and su(1) into  one  program
 
 MAN8=		chrootuid.8
 

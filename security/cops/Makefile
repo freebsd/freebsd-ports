@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cops
-# Date created:				29 August 1996
-# Whom:					oly
-#
+# Created by: oly
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://www.fish2.com/cops/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A system secureness checker
+COMMENT=	System secureness checker
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes

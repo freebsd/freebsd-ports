@@ -1,7 +1,4 @@
-# New ports collection makefile for:	honggfuzz
-# Date created:				2010-12-13
-# Whom:					Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A general-purpose fuzzer with simple, command-line interface
+COMMENT=	General-purpose fuzzer with simple, command-line interface
 
 LICENSE=	AL2
 LICENSE_FILE=   ${WRKSRC}/COPYING

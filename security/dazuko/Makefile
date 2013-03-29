@@ -1,7 +1,4 @@
-# New ports collection makefile for:	dazuko
-# Date created:				01 March 2004
-# Whom:					Rob Evers <rob@debank.tv>
-#
+# Created by: Rob Evers <rob@debank.tv>
 # $FreeBSD$
 
 PORTNAME=	dazuko
@@ -10,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://dazuko.dnsalias.org/files/
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A common interface for 3rd party file access control
+COMMENT=	Common interface for 3rd party file access control
 
 HAS_CONFIGURE=	yes
 SUB_FILES=	pkg-message

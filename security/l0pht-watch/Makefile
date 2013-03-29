@@ -1,7 +1,4 @@
-# New ports collection makefile for:	l0pht-query
-# Date created:		11 Jan 1999
-# Whom:			Dom Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dom Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITE_SUBDIR=	vs
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to report on what goes on in /tmp
+COMMENT=	Program to report on what goes on in /tmp
 
 PLIST_FILES=	bin/temp-watch
 WRKSRC=		${WRKDIR}/temp-watch

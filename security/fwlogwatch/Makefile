@@ -1,8 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:	fwlogwatch
-# Date created:			Nov 20, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 #
 
@@ -13,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
 MAINTAINER=	michael@ranner.eu
-COMMENT=	A packet filter and firewall log analyzer
+COMMENT=	Packet filter and firewall log analyzer
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
+COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
 LICENSE=		MIT
 

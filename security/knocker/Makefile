@@ -1,7 +1,4 @@
-# New ports collection makefile for:	knocker
-# Date created:				Tue Jul 10 01:42:52 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security net
 MASTER_SITES=	SF
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A simple and easy to use TCP only port scanner (Console version)
+COMMENT=	Simple and easy to use TCP only port scanner (Console version)
 
 GNU_CONFIGURE=	yes
 

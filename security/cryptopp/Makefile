@@ -10,7 +10,7 @@ MASTER_SITES=		SF \
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=		delphij@FreeBSD.org
-COMMENT=		A free C++ class library of Cryptographic Primitives
+COMMENT=		Free C++ class library of Cryptographic Primitives
 
 OPTIONS_DEFINE=		DEBUG DOCS GCC46 STATIC THREADS
 OPTIONS_DEFAULT=	STATIC THREADS

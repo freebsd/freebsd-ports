@@ -1,7 +1,4 @@
-# New ports collection makefile for:    libpwstor
-# Date created:                         2008-10-23
-# Whom:                                 Matt Harris <mattdharris@users.sourceforge.net>
-#
+# Created by: Matt Harris <mattdharris@users.sourceforge.net>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=     security devel
 MASTER_SITES=   SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=     ports@FreeBSD.org
-COMMENT=        A password storage library for C programmers
+COMMENT=        Password storage library for C programmers
 
 USE_BZIP2=      yes
 USE_LDCONFIG=   yes

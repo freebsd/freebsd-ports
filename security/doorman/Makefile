@@ -1,7 +1,4 @@
-# New ports collection makefile for:	doorman
-# Date created:				08 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lupe@lupe-christoph.de
-COMMENT=	A Port Knocking implementation, both daemon and client
+COMMENT=	Port knocking implementation, both daemon and client
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS:=	${BUILD_DEPENDS}

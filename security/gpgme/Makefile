@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gpgme
-# Date created:		15 June 2001
-# Whom:			teramoto@comm.eng.osaka-u.ac.jp
-#
+# Created by: teramoto@comm.eng.osaka-u.ac.jp
 # $FreeBSD$
 #
 
@@ -14,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	A library to make access to GnuPG easier
+COMMENT=	Library to make access to GnuPG easier
 
 LICENSE=	LGPL21
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for: 	nessus
-# Date created:		1 May 1999
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
 #
 # If you want to only have the command-line client even if gtk is already
@@ -22,7 +19,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
-COMMENT=	A security scanner: looks for vulnerabilities in a given network
+COMMENT=	Security scanner: looks for vulnerabilities in a given network
 
 LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
 

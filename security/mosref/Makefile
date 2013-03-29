@@ -1,7 +1,4 @@
-# Ports collection makefile for: security/mosref
-# Date created: 2006-08-18
-# Whom:         Piet Delport
-#
+# Created by: Piet Delport
 # $FreeBSD$
 
 PORTNAME=	mosref
@@ -11,7 +8,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/2.0-beta3
 DISTNAME=		${PORTNAME}-2.0-beta3
 
 MAINTAINER=	pjdelport@gmail.com
-COMMENT=	A secure remote execution framework using a compact Scheme-influenced VM
+COMMENT=	Secure remote execution framework using a compact Scheme-influenced VM
 
 USE_GMAKE=	yes
 

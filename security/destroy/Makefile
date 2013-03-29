@@ -1,7 +1,4 @@
-# New ports collection makefile for:  Destroy
-# Date created:		2003 March 07
-# Whom:			shane@freebsdhackers.net
-#
+# Created by: shane@freebsdhackers.net
 # $FreeBSD$
 #
 
@@ -13,7 +10,7 @@ MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
 		http://www.impurity.org/mirrors/destroy/
 
 MAINTAINER=	shane@freebsdhackers.net
-COMMENT=	A program to securely destroy files on the hard disk
+COMMENT=	Program to securely destroy files on the hard disk
 
 USE_GMAKE=	yes
 

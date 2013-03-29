@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A client for Cisco's AnyConnect SSL VPN
+COMMENT=	Client for Cisco's AnyConnect SSL VPN
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

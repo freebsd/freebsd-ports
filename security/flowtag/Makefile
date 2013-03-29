@@ -1,7 +1,4 @@
-# New ports collection makefile for:	flowtag
-# Date created:		14 July 2008
-# Whom:			Lee Hinman <lee@writequit.org>
-#
+# Created by: Lee Hinman <lee@writequit.org>
 # $FreeBSD$
 #
 
@@ -14,7 +11,7 @@ MASTER_SITES=	http://hexbit.csc.gatech.edu/portfiles/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lee@writequit.org
-COMMENT=	A collaborative attack-analysis tool for security researchers
+COMMENT=	Collaborative attack-analysis tool for security researchers
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

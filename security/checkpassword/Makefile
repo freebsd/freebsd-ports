@@ -9,7 +9,7 @@ MASTER_SITES=	http://cr.yp.to/checkpwd/ \
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A simple password-checking interface
+COMMENT=	Simple password-checking interface
 
 OPTIONS_DEFINE=	DOCS
 

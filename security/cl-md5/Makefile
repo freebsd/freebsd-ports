@@ -9,7 +9,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig
 PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A native MD5 implementation in Common Lisp
+COMMENT=	Native MD5 implementation in Common Lisp
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes

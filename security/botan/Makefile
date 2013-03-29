@@ -9,7 +9,7 @@ DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	lapo@lapo.it
-COMMENT=	A portable, easy to use, and efficient C++ crypto library
+COMMENT=	Portable, easy to use, and efficient C++ crypto library
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/license.txt

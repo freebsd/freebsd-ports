@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ipfw2dshield
-# Date created:				8 June 2004
-# Whom:					Frank W. Josellis <frank@dynamical-systems.org>
-#
+# Created by: Frank W. Josellis <frank@dynamical-systems.org>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.dynamical-systems.org/ipfw/
 
 MAINTAINER=	frank@dynamical-systems.org
-COMMENT=	A DShield client for ipfw logs
+COMMENT=	DShield client for ipfw logs
 
 PORTDOCS=	CHANGES README.html README.txt
 

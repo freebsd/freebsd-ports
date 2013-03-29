@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libssh2.org/download/ \
 		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A library implementing the SSH2 protocol
+COMMENT=	Library implementing the SSH2 protocol
 
 LICENSE=	BSD
 

@@ -1,7 +1,4 @@
-# Ports collection Makefile for:	MIT Kerberos V Application Suite
-# Date created:				4/19/2010
-# Whom:					cy@FreeBSD.org
-#
+# Created by: cy@FreeBSD.org
 # $FreeBSD$
 #
 
@@ -14,7 +11,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
+COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4 \
 			krb5-config:${PORTSDIR}/security/krb5

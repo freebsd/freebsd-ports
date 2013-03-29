@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mussh
-# Date created:				24 January 2002
-# Whom:					Yen-Ming Lee <leeym@leeym.com>
-#
+# Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for easily running the same commands on multiple hosts
+COMMENT=	Tool for easily running the same commands on multiple hosts
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

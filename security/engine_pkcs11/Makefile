@@ -1,7 +1,4 @@
-# New ports collection makefile for:	engine_pkcs11
-# Date created:			1 Jun 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An implementation of a PKCS\#11 engine for OpenSSL
+COMMENT=	Implementation of a PKCS\#11 engine for OpenSSL
 
 LIB_DEPENDS=	p11.2:${PORTSDIR}/security/libp11
 

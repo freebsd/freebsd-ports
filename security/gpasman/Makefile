@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://gpasman.sourceforge.net/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A password manager that stores password information encrypted
+COMMENT=	Password manager that stores password information encrypted
 
 PLIST_FILES=	bin/gpasman
 USE_GMAKE=	yes

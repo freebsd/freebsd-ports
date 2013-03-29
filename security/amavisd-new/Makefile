@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirror.mainloop.se/amavisd/
 
 MAINTAINER=	gabor@FreeBSD.org
-COMMENT=	A mail scanner interface between mailer and content checkers
+COMMENT=	Mail scanner interface between mailer and content checkers
 
 LICENSE=	GPLv2
 

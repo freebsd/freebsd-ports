@@ -1,7 +1,4 @@
-# Ports collection makefile for:  mac-robber
-# Date created:			  Jan 12 2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	A tool for listing Modify, Access, Create timestamps from files
+COMMENT=	Tool for listing Modify, Access, Create timestamps from files
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -o mac-robber mac-robber.c

@@ -1,7 +1,4 @@
-# Ports collection makefile for:  fwtk
-# Date created:			  15th June 1996
-# Whom:				  gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
 #
 
@@ -15,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.Z fwtk-doc-only.tar.Z
 DIST_SUBDIR=	fwtk
 
 MAINTAINER=	pirzyk@FreeBSD.org
-COMMENT=	A toolkit used for building firewalls based on proxy services
+COMMENT=	Toolkit used for building firewalls based on proxy services
 
 RESTRICTED=	No form of redistribution is allowed
 BROKEN=		Won't fetch, ftp site mentioned in 'IGNORE' has no readme. Web site changed hands?

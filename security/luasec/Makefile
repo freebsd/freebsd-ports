@@ -1,7 +1,4 @@
-# New ports collection makefile for:    luasec
-# Date created:				25 June 2009
-# Whom:					Andrew Lewis <freeghb@gmail.com>
-#
+# Created by: Andrew Lewis <freeghb@gmail.com>
 # $FreeBSD$
 #
 
@@ -12,7 +9,7 @@ MASTER_SITES=	http://www.inf.puc-rio.br/~brunoos/luasec/download/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	kelly.hays@jkhfamily.org
-COMMENT=	A Lua binding for the OpenSSL library to provide TLS/SSL communication
+COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
 RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
 

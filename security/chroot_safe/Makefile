@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	chroot_safe
-# Date created:				11 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	chroot_safe
@@ -11,7 +9,7 @@ MASTER_SITES=	SF/chrootsafe/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to chroot softwares easily
+COMMENT=	Tool to chroot softwares easily
 
 GNU_CONFIGURE=	YES
 
