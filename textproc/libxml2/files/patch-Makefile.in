@@ -1,17 +1,17 @@
  $FreeBSD$
 
---- Makefile.in.orig	2012-08-16 19:47:20.000000000 +0200
-+++ Makefile.in	2012-08-16 19:47:48.000000000 +0200
-@@ -564,7 +564,7 @@ top_build_prefix = @top_build_prefix@
+--- Makefile.in.orig	2012-08-16 19:38:10.000000000 +0200
++++ Makefile.in	2012-08-16 19:39:09.000000000 +0200
+@@ -586,7 +586,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = include . doc example xstc @PYTHON_SUBDIR@
 +SUBDIRS = include . doc example xstc @WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
  DIST_SUBDIRS = include . doc example python xstc
- INCLUDES = -I$(top_builddir)/include -I@srcdir@/include @THREAD_CFLAGS@ @Z_CFLAGS@ 
+ INCLUDES = -I$(top_builddir)/include -I@srcdir@/include @THREAD_CFLAGS@ @Z_CFLAGS@ @LZMA_CFLAGS@
  bin_SCRIPTS = xml2-config
-@@ -574,7 +574,7 @@ libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIB
+@@ -596,7 +596,7 @@
  @USE_VERSION_SCRIPT_TRUE@LIBXML2_VERSION_SCRIPT = $(VERSION_SCRIPT_FLAGS)$(srcdir)/libxml2.syms
  libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ \
                       $(LIBXML2_VERSION_SCRIPT) \
@@ -20,7 +20,7 @@
  		     @MODULE_PLATFORM_LIBS@
  
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
-@@ -690,7 +690,7 @@ runxmlconf_LDFLAGS = 
+@@ -712,7 +712,7 @@
  runxmlconf_DEPENDENCIES = $(DEPS)
  runxmlconf_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh *.gcda *.gcno
@@ -29,7 +29,7 @@
  confexec_DATA = xml2Conf.sh
  CVS_EXTRA_DIST = 
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
-@@ -713,8 +713,8 @@ pkgconfig_DATA = libxml-2.0.pc
+@@ -735,8 +735,8 @@
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -40,16 +40,16 @@
  
  #
  # Coverage support, largely borrowed from libvirt
-@@ -1069,7 +1069,7 @@ distclean-compile:
+@@ -1094,7 +1094,7 @@
  @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
  
  .c.lo:
--@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-+@am__fastdepCC_TRUE@	$(LTCOMPILE) -fPIC -DPIC -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
- @am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -fPIC -DPIC -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+ @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+ @am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
- @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -1548,7 +1548,7 @@ distcleancheck: distclean
+@@ -1574,7 +1574,7 @@
  	       exit 1; } >&2
  check-am: all-am
  check: check-recursive
@@ -58,3 +58,12 @@
  		config.h
  install-binPROGRAMS: install-libLTLIBRARIES
  
+@@ -1634,7 +1634,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-m4dataDATA install-man \
++install-data-am:  install-m4dataDATA install-man \
+ 	install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive

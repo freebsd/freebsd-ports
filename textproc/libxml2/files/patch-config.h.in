@@ -1,11 +1,11 @@
---- config.h.in.orig	Sun Nov  3 16:55:05 2002
-+++ config.h.in	Tue Nov 19 00:06:05 2002
-@@ -1,4 +1,8 @@
+--- config.h.in.orig	2012-05-23 10:56:31.000000000 +0200
++++ config.h.in	2012-07-23 09:34:22.000000000 +0200
+@@ -1,5 +1,8 @@
  /* config.h.in.  Generated from configure.in by autoheader.  */
-+
+ 
 +/* XXX */
 +#define HAVE_VFSCANF
 +
- #undef PACKAGE
- #undef VERSION
- #undef HAVE_LIBZ
+ /* Define to 1 if you have the <ansidecl.h> header file. */
+ #undef HAVE_ANSIDECL_H
+ 
