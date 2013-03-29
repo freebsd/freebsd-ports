@@ -1,15 +1,6 @@
---- configure.orig	2010-11-27 15:40:06.000000000 +0100
-+++ configure	2010-11-27 15:40:06.000000000 +0100
-@@ -11414,7 +11414,7 @@ else
-   esac
- fi
- 
-- if test -z "$VERSION_SCRIPT_FLAGS"; then
-+ if test -n "$VERSION_SCRIPT_FLAGS"; then
-   USE_VERSION_SCRIPT_TRUE=
-   USE_VERSION_SCRIPT_FALSE='#'
- else
-@@ -13501,11 +13501,12 @@ fi
+--- configure.orig	2012-08-04 11:48:19.000000000 +0200
++++ configure	2012-08-04 11:50:50.000000000 +0200
+@@ -14228,11 +14228,12 @@ fi
      fi
      if test "$PYTHON_VERSION" != ""
      then
@@ -23,7 +14,7 @@
  	else
  	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
  	    then
-@@ -13901,6 +13902,8 @@ fi
+@@ -14635,6 +14636,8 @@ fi
  	       fi
  	   fi
         ;;

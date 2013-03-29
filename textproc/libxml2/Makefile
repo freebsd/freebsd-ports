@@ -3,17 +3,11 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#
-# WITHOUT_SCHEMA disable XML schema support
-# WITHOUT_THREADS disable threads support
-# WITH_MEM_DEBUG enable memory debugging (DEVELOPERS ONLY!)
-# WITH_XMLLINT_HIST enable history for xmllint
-# WITH_THREAD_ALLOC enable per-thread memory (DEVELOPERS ONLY!)
-#
+#    $MCom: ports/textproc/libxml2/Makefile,v 1.15 2012/11/26 19:55:23 kwm Exp $
 
 PORTNAME=	libxml2
-PORTVERSION=	2.7.8
-PORTREVISION?=	5
+PORTVERSION=	2.8.0
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/
@@ -27,46 +21,52 @@ COMMENT?=	XML parser library for GNOME
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME?=	gnomehack pkgconfig
+USES=		pathfix
+USE_GNOME?=	pkgconfig
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
+		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--without-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_ICONV)
-USE_ICONV=	yes
-CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-iconv=no
-.endif
-
 .if !defined(MASTERDIR)
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
-.endif
 
-.if defined(WITHOUT_SCHEMA)
+OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
+OPTIONS_DEFAULT=SCHEMA THREADS
+SCHEMA_DESC=	XML schema support
+THREADS_DESC=	Threads support
+MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
+XMLLINT_HIST_DESC= History for xmllint
+THREAD_ALLOC_DESc= Per-thread memory (DEVELOPERS ONLY!)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSCHEMA}
 CONFIGURE_ARGS+=	--without-schemas
 .endif
 
-.if defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--without-threads
 .endif
 
-.if defined(WITH_MEM_DEBUG)
+.if ${PORT_OPTIONS:MMEM_DEBUG}
 CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
-.if defined(WITH_XMLLINT_HIST)
+.if ${PORT_OPTIONS:MXMLLINT_HIST}
 CONFIGURE_ARGS+=	--with-history
 .endif
 
-.if defined(WITH_THREAD_ALLOC)
+.if ${PORT_OPTIONS:MTHREAD_ALLOC}
 CONFIGURE_ARGS+=	--with-thread-alloc
 .endif
+.endif # !defined(MASTERDIR)
 
 post-patch:
 .for d in . doc doc/devhelp doc/examples
