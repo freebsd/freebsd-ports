@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	crypto-conduit
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	cereal>=0.3 conduit>=0.5 crypto-api>=0.9 transformers>=0.2
+USE_CABAL=	cereal>=0.3 conduit>=1.0 crypto-api>=0.9 transformers>=0.2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

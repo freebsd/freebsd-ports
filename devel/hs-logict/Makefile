@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	logict
-PORTVERSION=	0.5.0.2
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A backtracking logic-programming monad
+COMMENT=	Backtracking logic-programming monad
 
 LICENSE=	BSD
 

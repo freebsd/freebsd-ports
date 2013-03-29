@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	testpack
-PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTVERSION=	2.1.2.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +13,7 @@ FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	HUnit mtl QuickCheck>=2.1.0.3
+USE_CABAL=	HUnit mtl QuickCheck>=2.1.0.3 random
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

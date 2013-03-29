@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	basic-prelude
-PORTVERSION=	0.3.2.0
+PORTVERSION=	0.3.4.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

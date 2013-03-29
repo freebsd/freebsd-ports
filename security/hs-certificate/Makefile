@@ -2,6 +2,7 @@
 
 PORTNAME=	certificate
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

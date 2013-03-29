@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	Boolean
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Generalized booleans
+COMMENT=	Generalized Booleans and numbers
 
 LICENSE=	BSD
 FILE_LICENSE=	COPYING

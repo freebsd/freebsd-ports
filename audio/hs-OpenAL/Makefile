@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenAL
-PORTVERSION=	1.4.0.1
-PORTREVISION=	3
+PORTVERSION=	1.4.0.2
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org

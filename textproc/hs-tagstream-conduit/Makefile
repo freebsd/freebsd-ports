@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tagstream-conduit
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,8 +11,9 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	attoparsec blaze-builder blaze-builder-conduit>=0.5 \
-		conduit>=0.5 text
+USE_CABAL=	attoparsec attoparsec-conduit>=0.5 blaze-builder \
+		blaze-builder-conduit>=0.5 case-insensitive conduit>=0.5 \
+		text transformers>=0.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

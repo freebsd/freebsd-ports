@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	time-compat
-PORTVERSION=	0.1.0.2
-PORTREVISION=	1
+PORTVERSION=	0.1.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

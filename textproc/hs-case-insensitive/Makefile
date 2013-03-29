@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	case-insensitive
-PORTVERSION=	0.4.0.4
+PORTVERSION=	1.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Case insensitive string comparison
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	hashable>=1.0 text>=0.3
 

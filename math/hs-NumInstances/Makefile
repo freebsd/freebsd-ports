@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	NumInstances
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

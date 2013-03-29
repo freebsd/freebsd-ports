@@ -266,6 +266,7 @@
     SUBDIR += hs-regex-compat
     SUBDIR += hs-regex-pcre-builtin
     SUBDIR += hs-regex-posix
+    SUBDIR += hs-regex-tdfa
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
     SUBDIR += hs-tagstream-conduit

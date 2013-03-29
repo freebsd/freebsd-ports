@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	warp
-PORTVERSION=	1.3.7.1
+PORTVERSION=	1.3.7.4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A fast, light-weight web server for WAI applications
+COMMENT=	Fast, light-weight web server for WAI applications
 
 LICENSE=	MIT
 

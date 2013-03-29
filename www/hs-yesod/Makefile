@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod
-PORTVERSION=	1.1.7.2
+PORTVERSION=	1.1.9.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

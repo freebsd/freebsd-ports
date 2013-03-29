@@ -1,9 +1,5 @@
-This library offers an alternative parallel programming API to that
-provided by the 'parallel' package. The Par monad allows the simple
-description of parallel computations, and can be used to add parallelism
-to pure Haskell code. The basic API is straightforward: the monad
-supports forking and simple communication in terms of IVars. The library
-comes with an efficient work-stealing implementation, but the internals
-are also exposed so that you can build your own scheduler if necessary.
+The Par monad offers a simple API for parallel programming.  The library
+works for parallelising both pure and IO computations, although only the
+pure version is deterministic.
 
 WWW: http://github.com/simonmar/monad-par

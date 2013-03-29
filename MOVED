@@ -4190,3 +4190,4 @@ www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
 print/kdeutils4-printer-applet||2013-03-27|Superseded by print/kde4-print-manager
 print/system-config-printer-kde||2013-03-27|Superseded by print/kde4-print-manager
 science/py-biolccc|science/pyteomics.biolccc|2013-03-28|Renamed upstream
+math/hs-Agda-executable||2013-03-29|Removed: it has become part of math/hs-Agda

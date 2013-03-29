@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlet
-PORTVERSION=	1.1.3.1
+PORTVERSION=	1.1.6.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

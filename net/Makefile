@@ -221,11 +221,13 @@
     SUBDIR += hping
     SUBDIR += hping-devel
     SUBDIR += hs-hostname
+    SUBDIR += hs-maccatcher
     SUBDIR += hs-network
     SUBDIR += hs-network-conduit
     SUBDIR += hs-network-info
     SUBDIR += hs-network-multicast
     SUBDIR += hs-pcap
+    SUBDIR += hs-publicsuffixlist
     SUBDIR += hs-sendfile
     SUBDIR += hs-simple-sendfile
     SUBDIR += hs-socks

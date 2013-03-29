@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-annex
-PORTVERSION=	3.20130124
+PORTVERSION=	4.20130323
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,10 +13,10 @@ FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	async bloomfilter dataenc edit-distance hslogger HTTP IfElse \
-		json lifted-base MissingH monad-control mtl network pcre-light \
-		QuickCheck>=2.1 SafeSemaphore SHA text transformers-base \
-		utf8-string
+USE_CABAL=	bloomfilter dataenc edit-distance hslogger HTTP IfElse json \
+		lifted-base MissingH monad-control mtl network pcre-light \
+		QuickCheck>=2.1 regex-tdfa SafeSemaphore SHA text \
+		transformers-base utf8-string uuid
 
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
@@ -30,7 +30,7 @@ RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
 EXECUTABLE=	git-annex git-annex-shell
 STANDALONE=	yes
 
-OPTIONS_DEFINE=		S3 ASSISTANT INOTIFY WEBAPP PAIRING
+OPTIONS_DEFINE=		S3 ASSISTANT INOTIFY WEBAPP PAIRING PRODUCTION
 OPTIONS_DEFAULT=	S3 ASSISTANT
 
 S3_DESC=		S3 support
@@ -38,6 +38,7 @@ ASSISTANT_DESC=		'assistant' and 'watch' commands
 INOTIFY_DESC=		File system notifications support
 WEBAPP_DESC=		Web application (req. assistant)
 PAIRING_DESC=		Enable pairing (req. web application)
+PRODUCTION_DESC=	Production build
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
@@ -50,7 +51,7 @@ CONFIGURE_ARGS+=	--flags="-S3"
 
 .if ${PORT_OPTIONS:MASSISTANT}
 CONFIGURE_ARGS+=	--flags="Assistant"
-USE_CABAL+=		stm>=2.3
+USE_CABAL+=		async stm>=2.3
 .else
 CONFIGURE_ARGS+=	--flags="-Assistant"
 .endif
@@ -81,6 +82,12 @@ CONFIGURE_ARGS+=	--flags="-Pairing"
 
 # Disable all the other options
 CONFIGURE_ARGS+=	--flags="-DNS -XMPP -Dbus"
+
+.if ${PORT_OPTIONS:MPRODUCTION}
+CONFIGURE_ARGS+=	--flags="Production"
+.else
+CONFIGURE_ARGS+=	--flags="-Production"
+.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

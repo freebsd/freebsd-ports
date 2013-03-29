@@ -155,7 +155,6 @@
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hs-Agda
-    SUBDIR += hs-Agda-executable
     SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
