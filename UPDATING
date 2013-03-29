@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130329:
+  AFFECTS: users of net/kio-upnp-ms
+  AUTHOR: avilla@FreeBSD.org
+
+  A wrong setting in x11/kdelibs4 was causing some unlisted files to
+  be installed. Remember to delete them after updating x11/kdelibs4 to
+  4.10.1_1:
+
+  # rm /usr/local/kde4/bin/upnpmstest
+  # rm /usr/local/kde4/bin/stattest
+  # rm /usr/local/kde4/bin/recursive_upnp
+
 20130327:
   AFFECTS: users of mail/opensmtpd
   AUTHOR: ashish@FreeBSD.org
@@ -17,6 +29,7 @@ you update your ports collection, before attempting any port upgrades.
 20130327:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
+
   KDE SC ports have been updated to 4.10.1. kdelibs4 does no longer
   directly use aspell or hspell, to regain their functionality enable
   corresponding option in textproc/enchant.
