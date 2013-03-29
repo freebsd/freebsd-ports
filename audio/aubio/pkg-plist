@@ -50,4 +50,3 @@ lib/libaubioext.so.3
 libdata/pkgconfig/aubio.pc
 share/sounds/aubio/woodblock.aiff
 @dirrm share/sounds/aubio
-@dirrm share/sounds

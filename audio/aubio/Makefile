@@ -1,13 +1,9 @@
-# New ports collection makefile for:	aubio
-# Date created:				2008-07-21
-# Whom:				Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aubio
 PORTVERSION=	0.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
