@@ -1014,10 +1014,6 @@
 %%WWWDIR%%/locale/zh_CN/texts.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
-%%WWWDIR%%/logs/audits.log
-%%WWWDIR%%/logs/config_check.txt
-%%WWWDIR%%/logs/userlog0.log
-%%WWWDIR%%/logs/userlog1.log
 %%WWWDIR%%/lostPassword.php
 %%WWWDIR%%/third_party/Zend/Exception.php
 %%WWWDIR%%/third_party/Zend/Http/Client.php
