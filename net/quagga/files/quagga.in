@@ -13,6 +13,7 @@
 # You may also wish to use the following variables to fine-tune startup:
 #  quagga_flags="-d"
 #  quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
+#  quagga_vysh_boot="YES"
 # Per daemon tuning may be done with daemon_name_flags
 #  zebra_flags="-dP 0"
 #  bgpd_flags="-dnrP 0" and so on
@@ -32,6 +33,20 @@ rcvar=quagga_enable
 
 start_postcmd=start_postcmd
 stop_postcmd=stop_postcmd
+configtest_cmd=check_config
+extra_commands="configtest"
+
+check_config() {
+    echo "Checking $daemon.conf"
+    $command $daemon_flags -C
+    result=$?
+    if [ "$result" -eq "0" ]; then
+	echo "OK"
+    else
+	echo "FAILED"
+	exit
+    fi
+}
 
 start_postcmd()
 {
@@ -61,6 +76,9 @@ do_cmd()
 	    command=%%PREFIX%%/sbin/${daemon}
 	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
 	    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
+	    if [ ${quagga_cmd} = "restart" -o ${quagga_cmd} = "start" ]; then
+		check_config
+	    fi
 	    if [ ${quagga_cmd} = "start" -a ! -f ${required_files} ]; then
 			continue
 	    fi
@@ -72,6 +90,10 @@ do_cmd()
 	    _rc_restart_done=false
 	    run_rc_command "$1" || ret=1
 	done
+	if checkyesno quagga_vtysh_boot; then
+	    echo "Booting for integrated-vtysh-config..."
+	    %%PREFIX%%/bin/vtysh -b
+	fi
 	return ${ret}
 }
 
@@ -82,6 +104,7 @@ load_rc_config $name
 : ${quagga_enable="NO"}
 : ${quagga_flags="-d"}
 : ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+: ${quagga_vtysh_boot="NO"}
 
 quagga_cmd=$1
 
