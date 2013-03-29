@@ -151,7 +151,8 @@ PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch:tls
 .endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
+PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:tls
 
 QMAIL_VERSION?=		1.03
 
