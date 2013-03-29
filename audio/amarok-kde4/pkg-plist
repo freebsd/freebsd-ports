@@ -22,24 +22,30 @@ lib/kde4/amarok_context_applet_info.so
 lib/kde4/amarok_context_applet_labels.so
 lib/kde4/amarok_context_applet_lyrics.so
 lib/kde4/amarok_context_applet_photos.so
+lib/kde4/amarok_context_applet_similarArtists.so
 lib/kde4/amarok_context_applet_tabs.so
+lib/kde4/amarok_context_applet_upcomingEvents.so
 lib/kde4/amarok_context_applet_wikipedia.so
 lib/kde4/amarok_data_engine_current.so
 lib/kde4/amarok_data_engine_info.so
 lib/kde4/amarok_data_engine_labels.so
 lib/kde4/amarok_data_engine_lyrics.so
 lib/kde4/amarok_data_engine_photos.so
+lib/kde4/amarok_data_engine_similarArtists.so
 lib/kde4/amarok_data_engine_tabs.so
+lib/kde4/amarok_data_engine_upcomingEvents.so
 lib/kde4/amarok_data_engine_wikipedia.so
 lib/kde4/amarok_runnerscript_javascript.so
 lib/kde4/amarok_service_amazonstore.so
 lib/kde4/amarok_service_ampache.so
 lib/kde4/amarok_service_jamendo.so
+lib/kde4/amarok_service_lastfm.so
 lib/kde4/amarok_service_magnatunestore.so
 %%MP3TUNES%%lib/kde4/amarok_service_mp3tunes.so
 lib/kde4/amarok_service_opmldirectory.so
 lib/kde4/kcm_amarok_service_amazonstore.so
 lib/kde4/kcm_amarok_service_ampache.so
+lib/kde4/kcm_amarok_service_lastfm.so
 lib/kde4/kcm_amarok_service_magnatunestore.so
 %%MP3TUNES%%lib/kde4/kcm_amarok_service_mp3tunes.so
 lib/libamarok-sqlcollection.so
@@ -48,6 +54,7 @@ lib/libamarok-sqlcollection.so.1.0.0
 lib/libamarok-transcoding.so
 lib/libamarok-transcoding.so.1
 lib/libamarok-transcoding.so.1.0.0
+lib/libamarok_service_lastfm_shared.so
 lib/libamarokcore.so
 lib/libamarokcore.so.1
 lib/libamarokcore.so.1.0.0
@@ -74,6 +81,7 @@ share/apps/amarok/data/first_run_jingle.ogg
 share/apps/amarok/data/hover_info_template.html
 share/apps/amarok/data/info_frontpage.html
 share/apps/amarok/data/podcast_directory.opml
+share/apps/amarok/data/upcoming-events-map.html
 share/apps/amarok/icons/hicolor/128x128/status/audio-volume-high-amarok.png
 share/apps/amarok/icons/hicolor/128x128/status/audio-volume-low-amarok.png
 share/apps/amarok/icons/hicolor/128x128/status/audio-volume-medium-amarok.png
@@ -401,6 +409,7 @@ share/apps/amarok/images/hover_info_dynamic_playlists.png
 share/apps/amarok/images/hover_info_files.png
 share/apps/amarok/images/hover_info_internet.png
 share/apps/amarok/images/hover_info_jamendo.png
+share/apps/amarok/images/hover_info_lastfm.png
 share/apps/amarok/images/hover_info_magnatune.png
 share/apps/amarok/images/hover_info_playlists.png
 share/apps/amarok/images/hover_info_podcasts.png
@@ -1074,14 +1083,18 @@ share/kde4/services/amarok-context-applet-info.desktop
 share/kde4/services/amarok-context-applet-labels.desktop
 share/kde4/services/amarok-context-applet-lyrics.desktop
 share/kde4/services/amarok-context-applet-photos.desktop
+share/kde4/services/amarok-context-applet-similarArtists.desktop
 share/kde4/services/amarok-context-applet-tabs.desktop
+share/kde4/services/amarok-context-applet-upcomingEvents.desktop
 share/kde4/services/amarok-context-applet-wikipedia.desktop
 share/kde4/services/amarok-data-engine-current.desktop
 share/kde4/services/amarok-data-engine-info.desktop
 share/kde4/services/amarok-data-engine-labels.desktop
 share/kde4/services/amarok-data-engine-lyrics.desktop
 share/kde4/services/amarok-data-engine-photos.desktop
+share/kde4/services/amarok-data-engine-similarArtists.desktop
 share/kde4/services/amarok-data-engine-tabs.desktop
+share/kde4/services/amarok-data-engine-upcomingEvents.desktop
 share/kde4/services/amarok-data-engine-wikipedia.desktop
 share/kde4/services/amarok-scriptengine-applet-simple-javascript.desktop
 share/kde4/services/amarok-scriptengine-runner-javascript.desktop
@@ -1101,12 +1114,15 @@ share/kde4/services/amarok_service_amazonstore_config.desktop
 share/kde4/services/amarok_service_ampache.desktop
 share/kde4/services/amarok_service_ampache_config.desktop
 share/kde4/services/amarok_service_jamendo.desktop
+share/kde4/services/amarok_service_lastfm.desktop
+share/kde4/services/amarok_service_lastfm_config.desktop
 share/kde4/services/amarok_service_magnatunestore.desktop
 share/kde4/services/amarok_service_magnatunestore_config.desktop
 %%MP3TUNES%%share/kde4/services/amarok_service_mp3tunes.desktop
 %%MP3TUNES%%share/kde4/services/amarok_service_mp3tunes_config.desktop
 share/kde4/services/amarok_service_opmldirectory.desktop
 share/kde4/services/amarokitpc.protocol
+share/kde4/services/amaroklastfm.protocol
 share/kde4/servicetypes/amarok_codecinstall.desktop
 share/kde4/servicetypes/amarok_context_applet.desktop
 share/kde4/servicetypes/amarok_data_engine.desktop
@@ -1288,5 +1304,3 @@ share/mime/packages/amzdownloader.xml
 @dirrm share/apps/amarok/icons
 @dirrm share/apps/amarok/data
 @dirrm share/apps/amarok
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
