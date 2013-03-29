@@ -4,29 +4,23 @@ share/doc/HTML/pt/calligra/index.docbook
 share/doc/HTML/pt/kexi/common
 share/doc/HTML/pt/kexi/index.cache.bz2
 share/doc/HTML/pt/kexi/index.docbook
-share/doc/HTML/pt/sheets/a11y.docbook
 share/doc/HTML/pt/sheets/advanced.docbook
 share/doc/HTML/pt/sheets/basics.docbook
 share/doc/HTML/pt/sheets/commands.docbook
 share/doc/HTML/pt/sheets/common
 share/doc/HTML/pt/sheets/config.docbook
 share/doc/HTML/pt/sheets/configdialog.docbook
-share/doc/HTML/pt/sheets/faq.docbook
 share/doc/HTML/pt/sheets/format.docbook
 share/doc/HTML/pt/sheets/functions.docbook
-share/doc/HTML/pt/sheets/importexport.docbook
 share/doc/HTML/pt/sheets/index.cache.bz2
 share/doc/HTML/pt/sheets/index.docbook
-share/doc/HTML/pt/stage/a11y.docbook
 share/doc/HTML/pt/stage/common
-share/doc/HTML/pt/stage/faq.docbook
 share/doc/HTML/pt/stage/great-presentations.docbook
 share/doc/HTML/pt/stage/guides.docbook
 share/doc/HTML/pt/stage/index.cache.bz2
 share/doc/HTML/pt/stage/index.docbook
 share/doc/HTML/pt/stage/menus.docbook
 share/doc/HTML/pt/stage/options.docbook
-share/doc/HTML/pt/stage/screen.docbook
 share/doc/HTML/pt/stage/tutorial.docbook
 share/locale/pt/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/pt/LC_MESSAGES/AutocorrectPlugin.mo
@@ -45,6 +39,7 @@ share/locale/pt/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pt/LC_MESSAGES/TableShape.mo
 share/locale/pt/LC_MESSAGES/TemplateShape.mo
 share/locale/pt/LC_MESSAGES/TextShape.mo
+share/locale/pt/LC_MESSAGES/ThreedShape.mo
 share/locale/pt/LC_MESSAGES/VariablesPlugin.mo
 share/locale/pt/LC_MESSAGES/VectorShape.mo
 share/locale/pt/LC_MESSAGES/VideoShape.mo
@@ -70,7 +65,7 @@ share/locale/pt/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/pt/LC_MESSAGES/koreport_webplugin.mo
 share/locale/pt/LC_MESSAGES/krita.mo
 share/locale/pt/LC_MESSAGES/krossmoduleplan.mo
-share/locale/pt/LC_MESSAGES/krossmoduletables.mo
+share/locale/pt/LC_MESSAGES/krossmodulesheets.mo
 share/locale/pt/LC_MESSAGES/krossmodulewords.mo
 share/locale/pt/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/pt/LC_MESSAGES/plan.mo
@@ -79,8 +74,8 @@ share/locale/pt/LC_MESSAGES/planrcpsplugin.mo
 share/locale/pt/LC_MESSAGES/plantjplugin.mo
 share/locale/pt/LC_MESSAGES/planwork.mo
 share/locale/pt/LC_MESSAGES/sheets.mo
+share/locale/pt/LC_MESSAGES/sheetssolver.mo
 share/locale/pt/LC_MESSAGES/stage.mo
-share/locale/pt/LC_MESSAGES/tablessolver.mo
 share/locale/pt/LC_MESSAGES/thesaurus_tool.mo
 share/locale/pt/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/pt/stage

@@ -39,7 +39,7 @@ share/locale/zh_CN/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/koreport_webplugin.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_CN/LC_MESSAGES/krossmoduleplan.mo
-share/locale/zh_CN/LC_MESSAGES/krossmoduletables.mo
+share/locale/zh_CN/LC_MESSAGES/krossmodulesheets.mo
 share/locale/zh_CN/LC_MESSAGES/krossmodulewords.mo
 share/locale/zh_CN/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/zh_CN/LC_MESSAGES/plan.mo
@@ -48,7 +48,7 @@ share/locale/zh_CN/LC_MESSAGES/planrcpsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/plantjplugin.mo
 share/locale/zh_CN/LC_MESSAGES/planwork.mo
 share/locale/zh_CN/LC_MESSAGES/sheets.mo
+share/locale/zh_CN/LC_MESSAGES/sheetssolver.mo
 share/locale/zh_CN/LC_MESSAGES/stage.mo
-share/locale/zh_CN/LC_MESSAGES/tablessolver.mo
 share/locale/zh_CN/LC_MESSAGES/thesaurus_tool.mo
 share/locale/zh_CN/LC_MESSAGES/words.mo

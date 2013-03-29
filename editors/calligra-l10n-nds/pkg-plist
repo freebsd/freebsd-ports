@@ -1,4 +1,3 @@
-share/apps/koffice/autocorrect/nds.xml
 share/locale/nds/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/nds/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/nds/LC_MESSAGES/CalendarTool.mo
@@ -41,7 +40,7 @@ share/locale/nds/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/nds/LC_MESSAGES/koreport_webplugin.mo
 share/locale/nds/LC_MESSAGES/krita.mo
 share/locale/nds/LC_MESSAGES/krossmoduleplan.mo
-share/locale/nds/LC_MESSAGES/krossmoduletables.mo
+share/locale/nds/LC_MESSAGES/krossmodulesheets.mo
 share/locale/nds/LC_MESSAGES/krossmodulewords.mo
 share/locale/nds/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/nds/LC_MESSAGES/plan.mo
@@ -50,9 +49,7 @@ share/locale/nds/LC_MESSAGES/planrcpsplugin.mo
 share/locale/nds/LC_MESSAGES/plantjplugin.mo
 share/locale/nds/LC_MESSAGES/planwork.mo
 share/locale/nds/LC_MESSAGES/sheets.mo
+share/locale/nds/LC_MESSAGES/sheetssolver.mo
 share/locale/nds/LC_MESSAGES/stage.mo
-share/locale/nds/LC_MESSAGES/tablessolver.mo
 share/locale/nds/LC_MESSAGES/thesaurus_tool.mo
 share/locale/nds/LC_MESSAGES/words.mo
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

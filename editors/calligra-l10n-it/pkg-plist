@@ -1,10 +1,19 @@
-share/apps/calligra/autocorrect/it_IT.xml
 share/doc/HTML/it/calligra/common
 share/doc/HTML/it/calligra/index.cache.bz2
 share/doc/HTML/it/calligra/index.docbook
 share/doc/HTML/it/kexi/common
 share/doc/HTML/it/kexi/index.cache.bz2
 share/doc/HTML/it/kexi/index.docbook
+share/doc/HTML/it/sheets/advanced.docbook
+share/doc/HTML/it/sheets/basics.docbook
+share/doc/HTML/it/sheets/commands.docbook
+share/doc/HTML/it/sheets/common
+share/doc/HTML/it/sheets/config.docbook
+share/doc/HTML/it/sheets/configdialog.docbook
+share/doc/HTML/it/sheets/format.docbook
+share/doc/HTML/it/sheets/functions.docbook
+share/doc/HTML/it/sheets/index.cache.bz2
+share/doc/HTML/it/sheets/index.docbook
 share/doc/HTML/it/stage/common
 share/doc/HTML/it/stage/great-presentations.docbook
 share/doc/HTML/it/stage/guides.docbook
@@ -30,6 +39,7 @@ share/locale/it/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/it/LC_MESSAGES/TableShape.mo
 share/locale/it/LC_MESSAGES/TemplateShape.mo
 share/locale/it/LC_MESSAGES/TextShape.mo
+share/locale/it/LC_MESSAGES/ThreedShape.mo
 share/locale/it/LC_MESSAGES/VariablesPlugin.mo
 share/locale/it/LC_MESSAGES/VectorShape.mo
 share/locale/it/LC_MESSAGES/VideoShape.mo
@@ -55,7 +65,7 @@ share/locale/it/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/it/LC_MESSAGES/koreport_webplugin.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krossmoduleplan.mo
-share/locale/it/LC_MESSAGES/krossmoduletables.mo
+share/locale/it/LC_MESSAGES/krossmodulesheets.mo
 share/locale/it/LC_MESSAGES/krossmodulewords.mo
 share/locale/it/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/it/LC_MESSAGES/plan.mo
@@ -64,12 +74,11 @@ share/locale/it/LC_MESSAGES/planrcpsplugin.mo
 share/locale/it/LC_MESSAGES/plantjplugin.mo
 share/locale/it/LC_MESSAGES/planwork.mo
 share/locale/it/LC_MESSAGES/sheets.mo
+share/locale/it/LC_MESSAGES/sheetssolver.mo
 share/locale/it/LC_MESSAGES/stage.mo
-share/locale/it/LC_MESSAGES/tablessolver.mo
 share/locale/it/LC_MESSAGES/thesaurus_tool.mo
 share/locale/it/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/it/stage
+@dirrm share/doc/HTML/it/sheets
 @dirrm share/doc/HTML/it/kexi
 @dirrm share/doc/HTML/it/calligra
-@dirrmtry share/apps/calligra/autocorrect
-@dirrmtry share/apps/calligra

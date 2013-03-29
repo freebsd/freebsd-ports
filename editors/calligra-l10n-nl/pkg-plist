@@ -111,6 +111,7 @@ share/locale/nl/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/nl/LC_MESSAGES/TableShape.mo
 share/locale/nl/LC_MESSAGES/TemplateShape.mo
 share/locale/nl/LC_MESSAGES/TextShape.mo
+share/locale/nl/LC_MESSAGES/ThreedShape.mo
 share/locale/nl/LC_MESSAGES/VariablesPlugin.mo
 share/locale/nl/LC_MESSAGES/VectorShape.mo
 share/locale/nl/LC_MESSAGES/VideoShape.mo
@@ -136,7 +137,7 @@ share/locale/nl/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/nl/LC_MESSAGES/koreport_webplugin.mo
 share/locale/nl/LC_MESSAGES/krita.mo
 share/locale/nl/LC_MESSAGES/krossmoduleplan.mo
-share/locale/nl/LC_MESSAGES/krossmoduletables.mo
+share/locale/nl/LC_MESSAGES/krossmodulesheets.mo
 share/locale/nl/LC_MESSAGES/krossmodulewords.mo
 share/locale/nl/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/nl/LC_MESSAGES/plan.mo
@@ -145,8 +146,8 @@ share/locale/nl/LC_MESSAGES/planrcpsplugin.mo
 share/locale/nl/LC_MESSAGES/plantjplugin.mo
 share/locale/nl/LC_MESSAGES/planwork.mo
 share/locale/nl/LC_MESSAGES/sheets.mo
+share/locale/nl/LC_MESSAGES/sheetssolver.mo
 share/locale/nl/LC_MESSAGES/stage.mo
-share/locale/nl/LC_MESSAGES/tablessolver.mo
 share/locale/nl/LC_MESSAGES/thesaurus_tool.mo
 share/locale/nl/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/nl/stage

@@ -1,4 +1,3 @@
-share/apps/calligra/autocorrect/ru_RU.xml
 share/doc/HTML/ru/calligra/common
 share/doc/HTML/ru/calligra/index.cache.bz2
 share/doc/HTML/ru/calligra/index.docbook
@@ -55,7 +54,7 @@ share/locale/ru/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/ru/LC_MESSAGES/koreport_webplugin.mo
 share/locale/ru/LC_MESSAGES/krita.mo
 share/locale/ru/LC_MESSAGES/krossmoduleplan.mo
-share/locale/ru/LC_MESSAGES/krossmoduletables.mo
+share/locale/ru/LC_MESSAGES/krossmodulesheets.mo
 share/locale/ru/LC_MESSAGES/krossmodulewords.mo
 share/locale/ru/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ru/LC_MESSAGES/plan.mo
@@ -64,8 +63,8 @@ share/locale/ru/LC_MESSAGES/planrcpsplugin.mo
 share/locale/ru/LC_MESSAGES/plantjplugin.mo
 share/locale/ru/LC_MESSAGES/planwork.mo
 share/locale/ru/LC_MESSAGES/sheets.mo
+share/locale/ru/LC_MESSAGES/sheetssolver.mo
 share/locale/ru/LC_MESSAGES/stage.mo
-share/locale/ru/LC_MESSAGES/tablessolver.mo
 share/locale/ru/LC_MESSAGES/thesaurus_tool.mo
 share/locale/ru/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/ru/sheets

@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	calligra-l10n
-PORTVERSION=	2.5.5
-CATEGORIES=	japanese editors kde
+PORTVERSION=	${CALLIGRA_VERSION}
+CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Japanese messages and documentation for Calligra
+COMMENT=	Turkish Bokmaal messages and documentation for Calligra
 
-CALLIGRA_L10N=	ja
+CALLIGRA_L10N=	tr
 
 .include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

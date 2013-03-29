@@ -1,4 +1,3 @@
-share/apps/calligra/autocorrect/uk_UA.xml
 share/doc/HTML/uk/calligra/common
 share/doc/HTML/uk/calligra/index.cache.bz2
 share/doc/HTML/uk/calligra/index.docbook
@@ -40,6 +39,9 @@ share/doc/HTML/uk/sheets/config.docbook
 share/doc/HTML/uk/sheets/configdialog.docbook
 share/doc/HTML/uk/sheets/configure2.png
 share/doc/HTML/uk/sheets/configure3.png
+share/doc/HTML/uk/sheets/configure4.png
+share/doc/HTML/uk/sheets/configure5.png
+share/doc/HTML/uk/sheets/configure6.png
 share/doc/HTML/uk/sheets/copy1.png
 share/doc/HTML/uk/sheets/format.docbook
 share/doc/HTML/uk/sheets/functions.docbook
@@ -98,6 +100,7 @@ share/locale/uk/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/uk/LC_MESSAGES/TableShape.mo
 share/locale/uk/LC_MESSAGES/TemplateShape.mo
 share/locale/uk/LC_MESSAGES/TextShape.mo
+share/locale/uk/LC_MESSAGES/ThreedShape.mo
 share/locale/uk/LC_MESSAGES/VariablesPlugin.mo
 share/locale/uk/LC_MESSAGES/VectorShape.mo
 share/locale/uk/LC_MESSAGES/VideoShape.mo
@@ -123,7 +126,7 @@ share/locale/uk/LC_MESSAGES/koreport_mapsplugin.mo
 share/locale/uk/LC_MESSAGES/koreport_webplugin.mo
 share/locale/uk/LC_MESSAGES/krita.mo
 share/locale/uk/LC_MESSAGES/krossmoduleplan.mo
-share/locale/uk/LC_MESSAGES/krossmoduletables.mo
+share/locale/uk/LC_MESSAGES/krossmodulesheets.mo
 share/locale/uk/LC_MESSAGES/krossmodulewords.mo
 share/locale/uk/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/uk/LC_MESSAGES/plan.mo
@@ -132,8 +135,8 @@ share/locale/uk/LC_MESSAGES/planrcpsplugin.mo
 share/locale/uk/LC_MESSAGES/plantjplugin.mo
 share/locale/uk/LC_MESSAGES/planwork.mo
 share/locale/uk/LC_MESSAGES/sheets.mo
+share/locale/uk/LC_MESSAGES/sheetssolver.mo
 share/locale/uk/LC_MESSAGES/stage.mo
-share/locale/uk/LC_MESSAGES/tablessolver.mo
 share/locale/uk/LC_MESSAGES/thesaurus_tool.mo
 share/locale/uk/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/uk/stage
