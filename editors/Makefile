@@ -247,6 +247,7 @@
     SUBDIR += rox-edit
     SUBDIR += scite
     SUBDIR += scribes
+    SUBDIR += se
     SUBDIR += semi
     SUBDIR += semi-emacs21
     SUBDIR += semi-emacs22
