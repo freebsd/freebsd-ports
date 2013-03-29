@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MooX/Options.pm
+%%SITE_PERL%%/MooX/Options/Role.pm
+@dirrmtry %%SITE_PERL%%/MooX/Options
+@dirrmtry %%SITE_PERL%%/MooX
