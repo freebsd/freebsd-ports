@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-CPAN-Meta
-# Date created:				April 20 2010
-# Whom:					jupengfei <jupengfei@gmail.com>
-#
+# Created by: jupengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.120921
+PORTVERSION=	2.130880
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
 		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
-RUN_DEPENDS=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
-		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -35,10 +29,6 @@ MAN3=		CPAN::Meta.3 \
 		CPAN::Meta::Validator.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
 
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-version>=0.88:${PORTSDIR}/devel/p5-version
