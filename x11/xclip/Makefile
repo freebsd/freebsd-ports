@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	An interface to X selections ("the clipboard") from the command line
+COMMENT=	Interface to X selections ("the clipboard") from the command line
 
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env
 USE_XORG=	x11 xmu

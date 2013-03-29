@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/Launchy%20on%20Linux/${PORTVERSION}
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	An open source keystroke launcher
+COMMENT=	Open source keystroke launcher
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils

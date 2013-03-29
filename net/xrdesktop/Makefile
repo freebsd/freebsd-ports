@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	A p5-Gtk frontend to rdesktop
+COMMENT=	p5-Gtk frontend to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
