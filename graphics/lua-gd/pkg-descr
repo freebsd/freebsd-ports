@@ -1,0 +1,4 @@
+Lua-GD is a library that allows you to use the gd graphic library from
+programs written in the Lua programming language.
+
+WWW: http://lua-gd.luaforge.net/
