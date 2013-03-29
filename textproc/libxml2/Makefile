@@ -43,7 +43,7 @@ SCHEMA_DESC=	XML schema support
 THREADS_DESC=	Threads support
 MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
 XMLLINT_HIST_DESC= History for xmllint
-THREAD_ALLOC_DESc= Per-thread memory (DEVELOPERS ONLY!)
+THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
 
 .include <bsd.port.options.mk>
 
