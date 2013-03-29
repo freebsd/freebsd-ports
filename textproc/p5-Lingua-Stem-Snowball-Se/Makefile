@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::Stem::Snowball::Se
-# Date created:				29 Dec 2003
-# Whom:					Thorsten Greiner <thorsten.greiner@web.de>
-#
+# Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=		Lingua-Stem-Snowball-Se
 PORTVERSION=		1.2
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=		p5-
 DISTNAME=		Snowball-Swedish-${PORTVERSION}
 
 MAINTAINER=		perl@FreeBSD.org
-COMMENT=		A stemmer for Swedish
+COMMENT=		Stemmer for Swedish
 
 PERL_CONFIGURE=		yes
 

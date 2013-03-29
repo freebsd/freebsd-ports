@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-NodeFilter
-# Date created:				11 Sep 2003
-# Whom:					Oliver Eikemeier <eikemeier@fillmore-labs.com>
-#
+# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-NodeFilter
 PORTVERSION=	0.01
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A XML::NodeFilter is an object that know how to "filter out" nodes
+COMMENT=	XML::NodeFilter is an object that know how to "filter out" nodes
 
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}

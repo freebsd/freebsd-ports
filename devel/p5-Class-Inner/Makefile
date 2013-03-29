@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Inner
-# Date created:	   26 September 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Inner
 PORTVERSION=	0.200001
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perlish implementation of Java like inner classes
+COMMENT=	Perlish implementation of Java like inner classes
 
 PERL_CONFIGURE=	yes
 

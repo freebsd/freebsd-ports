@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Net-Blogger
-# Date created:			Jan 10, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Blogger
 PORTVERSION=	1.02
@@ -14,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An OOP-ish interface for accessing a weblog via the XML-RPC API
+COMMENT=	OOP-ish interface for accessing a weblog via the XML-RPC API
 
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

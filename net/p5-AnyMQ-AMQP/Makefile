@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AnyMQ-AMQP
-# Date created:		2011-10-29
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyMQ-AMQP
 PORTVERSION=	0.30

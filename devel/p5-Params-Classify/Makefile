@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Params-Classify
-# Date created:		2006-07-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Params-Classify
 PORTVERSION=	0.013

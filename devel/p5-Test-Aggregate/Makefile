@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Aggregate
-# Date created:		2012-01-18
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Aggregate
 PORTVERSION=	0.364

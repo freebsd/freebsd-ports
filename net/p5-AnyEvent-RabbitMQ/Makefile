@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An asynchronous and multi channel Perl AMQP client
+COMMENT=	Asynchronous and multi channel Perl AMQP client
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

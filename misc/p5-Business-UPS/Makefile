@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::UPS
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-UPS
 PORTVERSION=	2.0
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:JWHEELER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A UPS Interface Module
+COMMENT=	UPS Interface Module
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}

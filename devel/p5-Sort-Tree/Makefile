@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Sort-Tree
-# Date created:				Oct 16th 2003
-# Whom:	      				clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Sort-Tree
 PORTVERSION=	1.09
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module for sorting a objects into a tree structure
+COMMENT=	Perl module for sorting a objects into a tree structure
 
 PERL_CONFIGURE=	YES
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Rose-Object
-# Date created:				09 June 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Rose-Object
 PORTVERSION=	0.859
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple object base class
+COMMENT=	Simple object base class
 
 PERL_CONFIGURE=	yes
 

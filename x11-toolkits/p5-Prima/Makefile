@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An extensible Perl toolkit for multi-platform GUI development
+COMMENT=	Extensible Perl toolkit for multi-platform GUI development
 
 LICENSE=	BSD
 

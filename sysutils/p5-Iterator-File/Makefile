@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Iterator-File
-# Date created:				2008/06/20
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Iterator-File
 PORTVERSION=	1.01
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A file iterator, optionally stateful and verbose
+COMMENT=	File iterator, optionally stateful and verbose
 
 PERL_CONFIGURE=	yes
 MAN3=		Iterator::File::Status.3 \

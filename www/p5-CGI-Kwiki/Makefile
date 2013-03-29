@@ -1,9 +1,5 @@
-# New ports collection makefile for:		p5-CGI-Kwiki
-# Date created:					14th October 2003
-# Whom:	      					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Kwiki
 PORTVERSION=	0.18
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Quickie Wiki Package that's not too Tricky
+COMMENT=	Quickie Wiki Package that's not too Tricky
 
 BUILD_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS} \

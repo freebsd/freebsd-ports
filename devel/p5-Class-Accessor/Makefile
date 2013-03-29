@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Accessor
-# Date created:		17 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor
 PORTVERSION=	0.34

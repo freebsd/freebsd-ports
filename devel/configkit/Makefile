@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	ConfigKit
-# Date created:		2 September 2008
-# Whom:			mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	configkit
 PORTVERSION=	0.4.20080902
@@ -15,7 +11,7 @@ DISTNAME=	ConfigKit.${PORTVERSION:C/0.4.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A somewhat prototypical facility for generating CLI interfaces
+COMMENT=	Somewhat prototypical facility for generating CLI interfaces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:${PORTSDIR}/devel/libphk
 

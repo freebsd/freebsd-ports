@@ -1,4 +1,4 @@
-# Created by:			Gea-Suan Lin <gslin@gslin.org>
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 
 PORTNAME=	Sys-Syscall

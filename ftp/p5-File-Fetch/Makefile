@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A generic file fetching mechanism
+COMMENT=	Generic file fetching mechanism
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

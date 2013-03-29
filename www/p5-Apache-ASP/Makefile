@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-ASP
-# Date created:				31 December 1999
-# Whom:					Igor Vinokurov <igor@zynaps.ru>
-#
+# Created by: Igor Vinokurov <igor@zynaps.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-ASP
 PORTVERSION=	2.61

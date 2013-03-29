@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module which is meatier versions of caller
+COMMENT=	Perl module which is meatier versions of caller
 
 BUILD_DEPENDS=	p5-PadWalker>=0.08:${PORTSDIR}/devel/p5-PadWalker
 RUN_DEPENDS:=	${BUILD_DEPENDS}

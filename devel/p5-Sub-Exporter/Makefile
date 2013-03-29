@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A sophisticated exporter for custom-built routines
+COMMENT=	Sophisticated exporter for custom-built routines
 
 BUILD_DEPENDS=	p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util \

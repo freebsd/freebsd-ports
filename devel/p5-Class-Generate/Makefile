@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class:Generate
-# Date created:				24 October 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Generate
 PORTVERSION=	1.11
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl5 module to simplify creating class hierarchies
+COMMENT=	Perl5 module to simplify creating class hierarchies
 
 PERL_CONFIGURE=	yes
 

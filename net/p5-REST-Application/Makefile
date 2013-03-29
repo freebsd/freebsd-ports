@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-REST-Application
-# Date created:				04 June 2007
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	REST-Application
 PORTVERSION=	0.992
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MOCONNOR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A framework for building RESTful web-applications
+COMMENT=	Framework for building RESTful web-applications
 
 BUILD_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}

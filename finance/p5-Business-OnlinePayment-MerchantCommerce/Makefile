@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::OnlinePayment::MerchantCommerce
-# Date created:				24 February 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment-MerchantCommerce
 PORTVERSION=	0.01
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Business::OnlinePayment backend module for MerchantCommerce authorization service
+COMMENT=	Business::OnlinePayment backend module for MerchantCommerce authorization service
 
 BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment
 RUN_DEPENDS:=	${BUILD_DEPENDS}

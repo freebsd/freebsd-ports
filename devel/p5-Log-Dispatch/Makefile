@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A suite of OO modules for logging messages to multiple outputs
+COMMENT=	Suite of OO modules for logging messages to multiple outputs
 
 LICENSE=	ART20
 

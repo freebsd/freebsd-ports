@@ -1,6 +1,5 @@
 # Created by: Alex Kapranoff <kappa@rambler-co.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Set-Array
 PORTVERSION=	0.28

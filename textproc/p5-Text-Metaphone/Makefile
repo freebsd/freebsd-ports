@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text::Metaphone
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Metaphone
 PORTVERSION=	20081017
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A modern soundex: phonetic encoding of words
+COMMENT=	Modern soundex: phonetic encoding of words
 
 PERL_CONFIGURE=	yes
 

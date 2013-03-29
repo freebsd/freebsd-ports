@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Element-Replacer
-# Date created:		2012-04-02
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Element-Replacer
 PORTVERSION=	0.06
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl HTML::Element replacer
+COMMENT=	Perl HTML::Element replacer
 
 BUILD_DEPENDS=	p5-HTML-Element-Library>=4.2:${PORTSDIR}/www/p5-HTML-Element-Library \
 		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \

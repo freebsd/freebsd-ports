@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-REST-Google
-# Date created:				01 May 2008
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	REST-Google
 PORTVERSION=	1.0.8

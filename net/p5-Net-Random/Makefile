@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Random
-# Date created:				Wed Dec 14 11:40:50 CST 2005
-# Whom:	      				clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Random
 PORTVERSION=	2.2.2
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl5 module to get random data from online sources
+COMMENT=	Perl5 module to get random data from online sources
 
 BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww

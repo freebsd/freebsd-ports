@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Framework
-# Date created:				25 feb 2004
-# Whom:	      				Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Framework
 PORTVERSION=	0.23
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple-to-use, lightweight web CGI framework
+COMMENT=	Simple-to-use, lightweight web CGI framework
 
 BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \

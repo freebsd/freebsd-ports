@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A JSON-RPC 2.0 server
+COMMENT=	JSON-RPC 2.0 server
 
 RUN_DEPENDS=	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
 		p5-Log-Any>=0.11:${PORTSDIR}/devel/p5-Log-Any \

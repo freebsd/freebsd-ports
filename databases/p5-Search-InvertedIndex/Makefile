@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Search-InvertedIndex
-# Date created:				Oct 23 2003
-# Whom:					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Search-InvertedIndex
 PORTVERSION=	1.14
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A manager for inverted index maps
+COMMENT=	Manager for inverted index maps
 
 BUILD_DEPENDS=	p5-Class-NamedParms>=0:${PORTSDIR}/devel/p5-Class-NamedParms \
 		p5-Class-ParmList>=0:${PORTSDIR}/devel/p5-Class-ParmList \

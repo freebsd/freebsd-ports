@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FCGI-Engine
-# Date created:		2010-12-03
-# Whom:			Anes Muhametov <anes@anes.su>
-#
+# Created by: Anes Muhametov <anes@anes.su>
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI-Engine
 PORTVERSION=	0.20
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A flexible engine for running FCGI-based applications
+COMMENT=	Flexible engine for running FCGI-based applications
 
 BUILD_DEPENDS=	p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \

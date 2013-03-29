@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Perlanet
-# Date created:		2010-12-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Perlanet
 PORTVERSION=	0.56
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:DAVECROSS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A program for creating programs that aggregate web feeds
+COMMENT=	Program for creating programs that aggregate web feeds
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

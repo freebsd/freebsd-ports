@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A data model and utility API for the MAGE-TAB format
+COMMENT=	Data model and utility API for the MAGE-TAB format
 
 LICENSE=	GPLv2
 

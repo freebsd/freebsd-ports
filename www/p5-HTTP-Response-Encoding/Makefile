@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Response-Encoding
-# Date created:		2007-10-27
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Response-Encoding
 PORTVERSION=	0.06

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Mail-Procmailrc
-# Date created:			Sep 13, 2002
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Procmailrc
 PORTVERSION=	1.09
@@ -14,7 +9,7 @@ MASTER_SITES=	CPAN \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl OO interface to procmail rc files
+COMMENT=	Perl OO interface to procmail rc files
 
 PERL_CONFIGURE=	YES
 

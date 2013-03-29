@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-STX
-# Date created:	   12 October 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-STX
 PORTVERSION=	0.43
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A pure Perl STX processor
+COMMENT=	Pure Perl STX processor
 
 BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \

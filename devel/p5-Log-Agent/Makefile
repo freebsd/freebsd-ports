@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Log-Agent
-# Date created:				24 Apr 2001
-# Whom:					Jesse McConnell <jesse@gallup.com>
-#
+# Created by: Jesse McConnell <jesse@gallup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Agent
 PORTVERSION=	0.307
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A set of perl modules that allows you to enhance logging capabilities
+COMMENT=	Set of perl modules that allows you to enhance logging capabilities
 
 PERL_CONFIGURE=	yes
 

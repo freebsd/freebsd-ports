@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An easy way to use Log::Any in applications
+COMMENT=	Easy way to use Log::Any in applications
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

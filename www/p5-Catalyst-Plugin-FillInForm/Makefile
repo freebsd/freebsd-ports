@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-FillInForm
-# Date created:			May 6, 2005
-# Whom:				Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-FillInForm
 PORTVERSION=	0.12

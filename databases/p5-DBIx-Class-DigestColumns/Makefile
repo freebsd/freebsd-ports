@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBIx-Class-DigestColumns
-# Date created:		23 Aug 2006
-# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-DigestColumns
 PORTVERSION=	0.06000

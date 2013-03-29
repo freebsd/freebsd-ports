@@ -1,9 +1,4 @@
-# New ports collection makefile for:	MooseX-RelatedClassRoles
-# Date created:	                        January 31, 2010
-# Whom:		                        	Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-RelatedClassRoles
 PORTVERSION=	0.004

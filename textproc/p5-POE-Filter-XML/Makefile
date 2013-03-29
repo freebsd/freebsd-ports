@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	POE::Filter::XML
-# Date created:		Aug 19, 2001
-# Whom:			Jeff Putsch <jdputsch@comcast.net>
-#
+# Created by: Jeff Putsch <jdputsch@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Filter-XML
 PORTVERSION=	1.102960
@@ -13,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A POE Filter for parsing XML
+COMMENT=	POE Filter for parsing XML
 
 BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Declare>=0:${PORTSDIR}/devel/p5-MooseX-Declare \

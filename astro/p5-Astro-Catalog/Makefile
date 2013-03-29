@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Astro-Catalog
-# Date created:				Oct 19, 2002
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-Catalog
 PORTVERSION=	4.2.4
@@ -14,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A generic stellar catalogue object
+COMMENT=	Generic stellar catalogue object
 
 LICENSE=	GPLv3
 

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An incomplete DateTime, like January 5
+COMMENT=	Incomplete DateTime, like January 5
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	POE::Component::Jabber
-# Date created:		6 Aug 2004
-# Whom:			Jeff Putsch <jdputsch@comcast.net>
-#
+# Created by: Jeff Putsch <jdputsch@comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Jabber
 PORTVERSION=	3.00
@@ -14,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A POE Component for communicating over Jabber
+COMMENT=	POE Component for communicating over Jabber
 
 BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class::ObjectTemplate
-# Date created:				9 Nov 2001
-# Whom:					Tony Maher <tonym@biolateral.com.au>
-#
+# Created by: Tony Maher <tonym@biolateral.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-ObjectTemplate-DB
 PORTVERSION=	0.27
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An optimized template builder base class with lookup capability
+COMMENT=	Optimized template builder base class with lookup capability
 
 RUN_DEPENDS=	p5-Class-ObjectTemplate>=0:${PORTSDIR}/devel/p5-Class-ObjectTemplate
 

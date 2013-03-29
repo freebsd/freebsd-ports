@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Plucene-Simple
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Plucene-Simple
 DISTVERSION=	1.04
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An interface to Plucene
+COMMENT=	Interface to Plucene
 
 BUILD_DEPENDS=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-Time-Piece-Range>=1.0:${PORTSDIR}/devel/p5-Time-Piece-Range \

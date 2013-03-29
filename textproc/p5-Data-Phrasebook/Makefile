@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Data-Phrasebook
-# Date created:				05 May 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Phrasebook
 PORTVERSION=	0.33

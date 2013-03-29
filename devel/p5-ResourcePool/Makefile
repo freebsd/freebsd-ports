@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-ResourcePool
-# Date created:			Aug 9, 2002
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ResourcePool
 PORTVERSION=	1.0106
@@ -15,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:MWS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A generic way to use connection caching for any kind of resources
+COMMENT=	Generic way to use connection caching for any kind of resources
 
 PERL_CONFIGURE=	YES
 

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple, extensible Perl debugger
+COMMENT=	Simple, extensible Perl debugger
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

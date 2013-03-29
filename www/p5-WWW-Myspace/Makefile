@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Myspace
-# Date created:		2006-08-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Myspace
 PORTVERSION=	0.92

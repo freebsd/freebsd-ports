@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Astro-DSS
-# Date created:			Oct 19, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-DSS
 PORTVERSION=	1.6.1
@@ -14,7 +9,7 @@ MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An OO interface to the 1st and 2nd Digital Sky Surveys
+COMMENT=	OO interface to the 1st and 2nd Digital Sky Surveys
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww

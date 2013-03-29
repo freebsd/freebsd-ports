@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Pluggable
-# Date created:	   2006/12/22
-# Whom:		   chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Pluggable
 PORTVERSION=	1.26
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A base class for creating plugin enabled POE Components
+COMMENT=	Base class for creating plugin enabled POE Components
 
 BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken

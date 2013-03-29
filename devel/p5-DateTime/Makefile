@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A date and time object
+COMMENT=	Date and time object
 
 LICENSE=	ART20
 

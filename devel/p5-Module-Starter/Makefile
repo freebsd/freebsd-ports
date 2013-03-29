@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Module-Starter
-# Date created:				March 15 2005
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Starter
 PORTVERSION=	1.58
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple starter kit for any Perl module
+COMMENT=	Simple starter kit for any Perl module
 
 BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class

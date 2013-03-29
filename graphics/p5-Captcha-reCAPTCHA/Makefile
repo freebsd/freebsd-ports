@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Captcha-reCAPTCHA
-# Date created:				2008/01/26
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Captcha-reCAPTCHA
 PORTVERSION=	0.94
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ANDYA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl implementation of the reCAPTCHA API
+COMMENT=	Perl implementation of the reCAPTCHA API
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Tiny>=0:${PORTSDIR}/textproc/p5-HTML-Tiny

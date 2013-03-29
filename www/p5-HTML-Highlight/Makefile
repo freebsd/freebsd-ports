@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Highlight
-# Date created:		2008-07-31
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Highlight
 PORTVERSION=	0.20
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A module to highlight words or patterns in HTML documents
+COMMENT=	Module to highlight words or patterns in HTML documents
 
 PERL_CONFIGURE=	Yes
 MAN3=	HTML::Highlight.3

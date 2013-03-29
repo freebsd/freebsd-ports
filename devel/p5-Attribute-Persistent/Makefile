@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Attribute-Persistent
-# Date created:				5 Jan 2004
-# Whom:					Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		Attribute-Persistent
 PORTVERSION=		1.1

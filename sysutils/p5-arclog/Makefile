@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-arclog
-# Date created:				2008/05/18
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	arclog
 PORTVERSION=	3.04

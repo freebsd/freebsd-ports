@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	zoidberg
-# Date created:			Sep 24, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	zoidberg
 PORTVERSION=	0.96
@@ -15,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:PARDUS
 DISTNAME=	Zoidberg-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A modular PERL shell
+COMMENT=	Modular PERL shell
 
 BUILD_DEPENDS=	p5-Exporter-Tidy>=0:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		p5-Term-ReadLine-Zoid>=0:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \

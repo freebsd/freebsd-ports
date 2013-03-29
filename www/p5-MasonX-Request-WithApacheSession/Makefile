@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MasonX-Request-WithApacheSession
-# Date created:			2003.07.21
-# Whom:				Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MasonX-Request-WithApacheSession
 PORTVERSION=	0.31
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An interface to Apache::Session for HTML::Mason
+COMMENT=	Interface to Apache::Session for HTML::Mason
 
 BUILD_DEPENDS=	p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
 		p5-Apache-Session-Wrapper>=0:${PORTSDIR}/www/p5-Apache-Session-Wrapper

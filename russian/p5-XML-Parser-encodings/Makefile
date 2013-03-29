@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Encoding
-# Date created:		15 Oct 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Parser-encodings
 PORTVERSION=	1.03

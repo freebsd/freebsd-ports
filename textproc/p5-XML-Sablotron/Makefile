@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Sablotron
-# Date created:		13 Nov 2000
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Sablotron
 PORTVERSION=	1.01
@@ -12,7 +8,7 @@ MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl interface to the Sablotron XSLT processor
+COMMENT=	Perl interface to the Sablotron XSLT processor
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 

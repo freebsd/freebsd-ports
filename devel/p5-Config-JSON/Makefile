@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Config-JSON
-# Date created:		2008-07-31
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-JSON
 PORTVERSION=	1.5100
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A JSON based config file system
+COMMENT=	JSON based config file system
 
 RUN_DEPENDS=	\
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \

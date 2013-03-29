@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:DOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A complete modern object system for Perl 5
+COMMENT=	Complete modern object system for Perl 5
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

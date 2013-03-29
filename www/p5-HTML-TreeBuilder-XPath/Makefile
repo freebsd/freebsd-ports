@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-TreeBuilder-XPath
-# Date created:		2006-07-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-TreeBuilder-XPath
 PORTVERSION=	0.14

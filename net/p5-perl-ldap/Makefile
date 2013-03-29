@@ -1,9 +1,5 @@
-# New ports collection makefile for:	perl-ldap
-# Date created:	October 27th 2000
-# Whom:		scrappy@freebsd.org
-#
+# Created by: scrappy@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	perl-ldap
 PORTVERSION=	0.4400
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Client interface to LDAP (includes Net::LDAP)
+COMMENT=	Client interface to LDAP (includes Net::LDAP)
 
 BUILD_DEPENDS=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-Convert-ASN1>=0.07:${PORTSDIR}/converters/p5-Convert-ASN1 \

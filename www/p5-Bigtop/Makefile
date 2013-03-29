@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Bigtop
-# Date created:		2006-09-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Bigtop
 PORTVERSION=	0.38
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A web application data language processor
+COMMENT=	Web application data language processor
 
 RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-IO-Prompt>=0:${PORTSDIR}/devel/p5-IO-Prompt \

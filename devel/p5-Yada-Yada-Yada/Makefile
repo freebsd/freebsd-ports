@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Yada-Yada-Yada
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Yada-Yada-Yada
 PORTVERSION=	1.00

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::OnlinePayment::Network1Financial
-# Date created:				27 December 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment-Network1Financial
 PORTVERSION=	0.02
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Business::OnlinePayment backend module for Network1 Financial
+COMMENT=	Business::OnlinePayment backend module for Network1 Financial
 
 BUILD_DEPENDS=	p5-Business-CreditCard>=0:${PORTSDIR}/finance/p5-Business-CreditCard \
 		p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment

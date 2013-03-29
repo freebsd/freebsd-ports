@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Acme-GuessNumber
-# Date created:				2008/05/18
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Acme-GuessNumber
 PORTVERSION=	0.03

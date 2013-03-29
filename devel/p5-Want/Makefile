@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Want
-# Date created:	   19 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Want
 PORTVERSION=	0.21
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ROBIN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A generalisation of wantarray
+COMMENT=	Generalisation of wantarray
 
 PERL_CONFIGURE=	yes
 

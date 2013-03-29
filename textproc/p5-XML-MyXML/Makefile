@@ -10,7 +10,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple-to-use XML module parsing and creating XML documents
+COMMENT=	Simple-to-use XML module parsing and creating XML documents
 
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-SessionX
-# Date created:				01 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-SessionX
 PORTVERSION=	2.01
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An extented persistence framework for session data
+COMMENT=	Extented persistence framework for session data
 
 BUILD_DEPENDS=	p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}

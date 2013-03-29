@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::NamespaceSupport
-# Date created:		19 Nov 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-NamespaceSupport
 PORTVERSION=	1.11
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A simple generic namespace support class
+COMMENT=	Simple generic namespace support class
 
 PERL_CONFIGURE=	yes
 

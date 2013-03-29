@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl5 module for WWW searches
+COMMENT=	Perl5 module for WWW searches
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \

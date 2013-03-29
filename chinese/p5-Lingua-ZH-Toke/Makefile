@@ -1,7 +1,4 @@
-# Ports collection makefile for:	p5-Lingua-ZH-Toke
-# Date Created:			Oct 13th 2003
-# Whom:				clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Toke
@@ -12,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Chinese Tokenizer on steroids
+COMMENT=	Chinese Tokenizer on steroids
 
 BUILD_DEPENDS=	p5-Lingua-ZH-TaBE>=0:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE
 RUN_DEPENDS:=	${BUILD_DEPENDS}

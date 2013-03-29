@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tcl
-# Date created:				June 15th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tcl
 PORTVERSION=	1.02
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:VKON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Tcl extension module for Perl5
+COMMENT=	Tcl extension module for Perl5
 
 CONFIGURE_ARGS=	--nousestubs --tclsh ${TCLSH}
 PERL_CONFIGURE=	yes

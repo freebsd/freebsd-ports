@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:JSIRACUSA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A DBI wrapper and abstraction layer
+COMMENT=	DBI wrapper and abstraction layer
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
