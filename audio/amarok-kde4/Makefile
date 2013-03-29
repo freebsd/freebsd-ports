@@ -13,20 +13,20 @@ COMMENT=	KDE music player
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		tag-extras:${PORTSDIR}/audio/taglib-extras \
+		lastfm:${PORTSDIR}/audio/liblastfm \
 		ofa:${PORTSDIR}/audio/libofa \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		qjson:${PORTSDIR}/devel/qjson \
 		qca:${PORTSDIR}/devel/qca \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		nepomukcore:${PORTSDIR}/sysutils/nepomuk-core
+		dbus-1:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_KDE4=	kdehier kdelibs kdeprefix libkcddb \
-		libkcompactdisc runtime automoc4 sharedmime strigi
+USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
+		nepomuk-core runtime automoc4 sharedmime strigi
 USE_MYSQL=	embedded
 USE_QT4=	dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
@@ -103,6 +103,5 @@ post-install:
 		${PREFIX}/share/mime/packages
 	${INSTALL_SCRIPT} ${WRKSRC}/utilities/amzdownloader/amzdownloader.desktop \
 		${PREFIX}/share/applications/kde4
-	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
