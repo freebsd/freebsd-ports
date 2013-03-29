@@ -65,6 +65,19 @@ IGNORE_WITH_MYSQL=	41 55
 CONFIGURE_ARGS+=	--enable-python-modules
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+		${WRKSRC}/backend/windows/wbprivate.wr/src/stdafx.h \
+		${WRKSRC}/backend/wbprivate/workbench/stdafx.h \
+		${WRKSRC}/library/canvas/src/stdafx.h \
+		${WRKSRC}/library/canvas/src/mdc_canvas_view.h \
+		${WRKSRC}/library/canvas/src/mdc_canvas_view_printing.cpp \
+		${WRKSRC}/modules/wb.mysql.import/src/stdafx.h \
+		${WKRSRC}/modules/db.mysql.sqlparser/src/stdafx.h \
+		${WKRSRC}/modules/db.mysql.sqlparser/src/mysql_sql_parser_fe.cpp \
+		${WRKSRC}/plugins/wb.printing/backend/stdafx.h \
+		${WRKSRC}/plugins/db.mysql/backend/db_plugin_be.cpp
+
 run-autotools-aclocal:
 .for dir in ${SUBDIRS}
 	@(cd ${WRKSRC}/${dir} && \
