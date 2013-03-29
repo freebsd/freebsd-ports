@@ -76,6 +76,7 @@
     SUBDIR += bitefusion
     SUBDIR += black-box
     SUBDIR += blackjack
+    SUBDIR += blackjackclient
     SUBDIR += blackshadeselite
     SUBDIR += blinken
     SUBDIR += blinkensisters
