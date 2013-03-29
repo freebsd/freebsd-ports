@@ -74,7 +74,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 USE_GCC?=	4.6+
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 .else
-CONFIGURE_ARGS+=--disable-ssse3 --disable-fast-cmov
+CONFIGURE_ARGS+=--disable-ssse3 --disable-sse4 --disable-sse42 \
+		--disable-avx --disable-fast-cmov
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_gcc
 .if ${ARCH} == "amd64"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
