@@ -555,6 +555,7 @@
     SUBDIR += linux_dri
     SUBDIR += linux_glide
     SUBDIR += lprof-devel
+    SUBDIR += lua-gd
     SUBDIR += luminance
     SUBDIR += luxrender
     SUBDIR += mahotas
