@@ -739,6 +739,7 @@
     SUBDIR += hs-haskell-platform
     SUBDIR += hs-haskell-src
     SUBDIR += hs-haskell-src-exts
+    SUBDIR += hs-hasktags
     SUBDIR += hs-hastache
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
