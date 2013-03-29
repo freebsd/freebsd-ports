@@ -8,17 +8,15 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interactive Gtkmm/Gnomecanvasmm widget
-
-BROKEN=		Does not build with recent graphviz
+COMMENT=	Interactive Gtkmm/Gnomecanvasmm widget
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs \
-		gvc.6:${PORTSDIR}/graphics/graphviz \
+		gvc:${PORTSDIR}/graphics/graphviz \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=yes
