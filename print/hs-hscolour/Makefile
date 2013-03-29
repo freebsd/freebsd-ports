@@ -19,12 +19,3 @@ EXECUTABLE=	HsColour
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
-
-pre-everything::
-.if ${PORT_OPTIONS:MHSCOLOUR}
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} " Please note that you will not be able to build HsColour-enabled "
-	@${ECHO_MSG} " documentation without installing HsColour without that first.   "
-	@${ECHO_MSG} "================================================================="
-	@sleep 5
-.endif

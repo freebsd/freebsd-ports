@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	distributive
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

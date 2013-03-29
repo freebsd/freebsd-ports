@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	monad-par
-PORTVERSION=	0.3
-PORTREVISION=	3
+PORTVERSION=	0.3.4.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A library for parallel programming based on a monad
+COMMENT=	Library for parallel programming based on a monad
 
 LICENSE=	BSD
 

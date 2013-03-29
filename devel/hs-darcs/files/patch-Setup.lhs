@@ -1,15 +1,15 @@
---- ./Setup.lhs.orig	2011-02-11 00:35:43.000000000 +0100
-+++ ./Setup.lhs	2011-03-13 18:05:02.180256196 +0100
-@@ -21,7 +21,7 @@
+--- Setup.lhs.orig	2013-02-06 07:07:21.000000000 +0100
++++ Setup.lhs	2013-02-10 10:48:49.000000000 +0100
+@@ -26,7 +26,7 @@
  import Data.Version( showVersion )
  import Distribution.Simple.LocalBuildInfo
           ( LocalBuildInfo(..), absoluteInstallDirs, externalPackageDeps )
 -import Distribution.Simple.InstallDirs (mandir, CopyDest (NoCopyDest))
 +import Distribution.Simple.InstallDirs (prefix, CopyDest (NoCopyDest))
+ import Distribution.Simple.PackageIndex ( topologicalOrder )
+ import Distribution.Simple.Program ( gccProgram, rawSystemProgramStdoutConf )
  import Distribution.Simple.Setup
-     (buildVerbosity, copyDest, copyVerbosity, fromFlag,
-      haddockVerbosity, installVerbosity, sDistVerbosity)
-@@ -180,7 +180,7 @@
+@@ -200,7 +200,7 @@
                    -> Verbosity -> CopyDest -> IO ()
  installManpage pkg lbi verbosity copy =
      copyFiles verbosity

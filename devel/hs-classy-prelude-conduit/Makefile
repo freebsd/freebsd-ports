@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	classy-prelude-conduit
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	classy-prelude>=0.4.3 conduit>=0.5.4.1 monad-control \
+USE_CABAL=	classy-prelude>=0.5.3 conduit>=0.5.4.1 monad-control \
 		resourcet transformers void xml-conduit>=1.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

@@ -720,6 +720,7 @@
     SUBDIR += hs-filesystem-conduit
     SUBDIR += hs-fsnotify
     SUBDIR += hs-generic-deriving
+    SUBDIR += hs-geniplate
     SUBDIR += hs-gconf
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghc-mtl
@@ -821,6 +822,7 @@
     SUBDIR += hs-uuagc
     SUBDIR += hs-uuagc-bootstrap
     SUBDIR += hs-uuagc-cabal
+    SUBDIR += hs-uuid
     SUBDIR += hs-uulib
     SUBDIR += hs-vault
     SUBDIR += hs-vector

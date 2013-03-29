@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	shakespeare
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A toolkit for making compile-time interpolated templates
+COMMENT=	Toolkit for making compile-time interpolated templates
 
 LICENSE=	MIT
 

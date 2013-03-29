@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	1.0.1.0
-PORTREVISION=	8
+PORTVERSION=	1.0.3.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell interface to the GNU readline library
+COMMENT=	Interface to the GNU readline library
 
 LICENSE=	GPLv2
 
