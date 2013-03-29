@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.14
-PORTREVISION=	9
+PORTVERSION=	3.15
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
+		LOCAL/bdrewery/${PORTNAME}/ \
   		http://mirror.shatow.net/freebsd/portmaster/
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
@@ -15,28 +15,16 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	portmaster
-GH_COMMIT=	31009f6
+GH_COMMIT=	36a0273
 GH_TAGNAME=	${GH_COMMIT}
 
-OPTIONS_DEFINE=	BASH ZSH PKGNGPATCH
-OPTIONS_DEFAULT+=	PKGNGPATCH
-PKGNGPATCH_DESC=Enable PKGNG support
+OPTIONS_DEFINE=	BASH ZSH
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
 MAN8=		portmaster.8
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPKGNGPATCH}
-PATCH_SITES+=	http://mirror.shatow.net/freebsd/portmaster/
-PATCHFILES+=	patch-portmaster-pkgng.gz
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::with_pkgng_current
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::pkg_install-pkgng-ss
-.  if ${PORT_OPTIONS:MZSH}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-files::zsh-completions
-.  endif
-.endif
 
 .if ${PORT_OPTIONS:MBASH}
 PLIST_FILES+=	etc/bash_completion.d/portmaster.sh
@@ -71,8 +59,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/files/zsh-completions \
 		${PREFIX}/share/zsh/site-functions/_portmaster
 .endif
-.if ${PORT_OPTIONS:MPKGNGPATCH}
 	${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
