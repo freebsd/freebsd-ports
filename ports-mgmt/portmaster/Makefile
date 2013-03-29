@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
 		LOCAL/bdrewery/${PORTNAME}/ \
@@ -15,12 +15,10 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	portmaster
-GH_COMMIT=	36a0273
+GH_COMMIT=	2a29846
 GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH
-
-BROKEN=		invokes pkgng bootstrapper when it should not
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
