@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tooLAME
-# Date created:		Wed May 22 16:53:26 BRT 2002
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	toolame
 PORTVERSION=	0.2l
@@ -21,6 +17,7 @@ LICENSE=	LGPL21
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CC="${CC}" TWEAKS="${CFLAGS}" ARCH="" PG="" OPTIM=""
+USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/toolame
 PORTDOCS=	FUTURE HISTORY LGPL.txt README
