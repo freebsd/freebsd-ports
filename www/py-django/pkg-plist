@@ -1533,6 +1533,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls_admin.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls_admin.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/urls_admin.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/utils.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/utils.pyo
