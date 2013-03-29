@@ -129,20 +129,8 @@ _GCC_ORLATER:=	true
 
 . endif # ${USE_GCC} == any
 
-# Check if USE_GCC points to a valid version.
-.for v in ${GCCVERSIONS}
-. if ${_USE_GCC}==${_GCCVERSION_${v}_V}
-_GCCVERSION_OKAY=	true;
-. endif
-.endfor
-
-.if !defined(_GCCVERSION_OKAY)
-IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
-.endif
-
-#
-# Initialize _GCC_FOUND${v}.
-#
+# Initialize _GCC_FOUND${v}.  In parallel, check if USE_GCC points to a
+# valid version to begin with.
 .for v in ${GCCVERSIONS}
 . if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
 _GCC_FOUND${v}=	port
@@ -151,7 +139,14 @@ _GCC_FOUND${v}=	port
 _GCC_FOUND${v}=	base
 .  endif
 . endif
+. if ${_USE_GCC}==${_GCCVERSION_${v}_V}
+_GCCVERSION_OKAY=	true
+. endif
 .endfor
+
+.if !defined(_GCCVERSION_OKAY)
+IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
+.endif
 
 # If the GCC package defined in USE_GCC does not exist, but a later
 # version is allowed (for example 4.2+), see if there is a later.
