@@ -20,6 +20,8 @@ GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH
 
+BROKEN=		invokes pkgng bootstrapper when it should not
+
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
 
 MAN8=		portmaster.8
