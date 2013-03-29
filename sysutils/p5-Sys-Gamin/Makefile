@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sys-Gamin
-# Date created:		03 May 2007
-# Whom: 	Nick Hibma <n_hibma@FreeBSD.org>
-#
+# Created by: Nick Hibma <n_hibma@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-Gamin
 PORTVERSION=	0.1
