@@ -1,12 +1,19 @@
-%%SITE_PERL%%/App/ClusterSSH/L10N/en.pm
-%%SITE_PERL%%/App/ClusterSSH/L10N.pm
-@dirrmtry %%SITE_PERL%%/App/ClusterSSH/L10N
-%%SITE_PERL%%/App/ClusterSSH/Host.pm
-%%SITE_PERL%%/App/ClusterSSH/Helper.pm
-%%SITE_PERL%%/App/ClusterSSH/Config.pm
-%%SITE_PERL%%/App/ClusterSSH/Cluster.pm
-%%SITE_PERL%%/App/ClusterSSH/Base.pm
+bin/ccon
+bin/crsh
+bin/cscp
+bin/cssh
+bin/ctel
 %%SITE_PERL%%/App/ClusterSSH.pm
+%%SITE_PERL%%/App/ClusterSSH/Base.pm
+%%SITE_PERL%%/App/ClusterSSH/Cluster.pm
+%%SITE_PERL%%/App/ClusterSSH/Config.pm
+%%SITE_PERL%%/App/ClusterSSH/Helper.pm
+%%SITE_PERL%%/App/ClusterSSH/Host.pm
+%%SITE_PERL%%/App/ClusterSSH/L10N.pm
+%%SITE_PERL%%/App/ClusterSSH/L10N/en.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/ClusterSSH/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/ClusterSSH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App/ClusterSSH/L10N
 @dirrmtry %%SITE_PERL%%/App/ClusterSSH
 @dirrmtry %%SITE_PERL%%/App
-bin/cssh
