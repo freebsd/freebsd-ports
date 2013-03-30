@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro-ids.org/downloads/release/
 
