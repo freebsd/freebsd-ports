@@ -64,6 +64,7 @@ SUB_FILES=	pkg-message aliases.conf
 UTIL_BIN=	fb_inet_server fb_lock_print fbstat gbak gdef gfix gsec nbackup
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
+PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 .else
 # Client part stuff
 AUTOGENARGS=	--with-editline
@@ -115,7 +116,7 @@ post-install:
 
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
-.ifndef PACKAGE_BUILDING
+.if !defined(CLIENT_ONLY)
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
