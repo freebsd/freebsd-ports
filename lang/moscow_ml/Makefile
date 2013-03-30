@@ -1,15 +1,11 @@
-# New ports collection makefile for:    moscow-ml
-# Date created:         2 August 1998
-# Whom:                 chuckr
-#
+# Created by: chuckr
 # $FreeBSD$
-#
 
 PORTNAME=	moscow_ml
 PORTVERSION=	2.01
 PORTREVISION=	5
 CATEGORIES=	lang
-MASTER_SITES=	http://www.dina.kvl.dk/~sestoft/mosml/
+MASTER_SITES=	http://www.itu.dk/~sestoft/mosml/
 DISTNAME=	mos201src
 
 MAINTAINER=	johans@FreeBSD.org
