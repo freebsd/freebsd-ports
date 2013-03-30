@@ -16,6 +16,8 @@ LICENSE=	GPLv2 # (or later)
 
 NO_WRKSUBDIR=	yes
 
+BROKEN=	checksum mismatch
+
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKDIR}
