@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slatec
-# Date created:		3 November 2010
-# Whom:			Anton Shterenlikht
-#
+# Created by: Anton Shterenlikht
 # $FreeBSD$
-#
 
 PORTNAME=	slatec
 PORTVERSION=	4.1
@@ -30,7 +26,7 @@ PORTDOCS=	guide toc
 
 LDFLAGS+=	${FFLAGS}
 LDADD ?=	-lgfortran -lm
-SRCCONF=	${NONEXISTENT}
+SRCCONF=	/dev/null
 MAKE_ENV+=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
 
