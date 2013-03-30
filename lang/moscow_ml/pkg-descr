@@ -12,4 +12,4 @@ The current version (v2.01) of Moscow ML
     * includes several new libraries (sockets, regex, unix)
     * offers an easy-to-use foreign-function interface
 
-WWW: http://www.dina.kvl.dk/~sestoft/mosml.html
+WWW: http://www.itu.dk/~sestoft/mosml.html
