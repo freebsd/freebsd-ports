@@ -22,7 +22,7 @@ include/tclap/OptionalUnlabeledTracker.h
 include/tclap/ValuesConstraint.h
 include/tclap/ArgTraits.h
 include/tclap/StandardTraits.h
-lib/pkgconfig/tclap.pc
+libdata/pkgconfig/tclap.pc
 share/doc/tclap/html/CVS/Entries
 share/doc/tclap/html/CVS/Repository
 share/doc/tclap/html/CVS/Root
