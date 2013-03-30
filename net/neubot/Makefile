@@ -3,6 +3,7 @@
 
 PORTNAME=	neubot
 PORTVERSION=	0.4.15.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
