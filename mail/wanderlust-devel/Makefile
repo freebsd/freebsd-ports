@@ -3,6 +3,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/ftp/pub/github-snapshots/ \
 		${MASTER_SITE_LOCAL}

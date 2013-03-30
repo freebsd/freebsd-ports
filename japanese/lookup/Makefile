@@ -3,7 +3,7 @@
 
 PORTNAME=	lookup
 PORTVERSION=	1.4.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
