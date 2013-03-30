@@ -1,13 +1,9 @@
-# New ports collection makefile for:  petsc
-# Date created:               25 September 2004
-# Whom:                       Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -51,9 +47,9 @@ TARGET=		${OPSYS:L}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 
 .if !defined(WITHOUT_UMFPACK)
-UMFPACK_LIBS=	umfpack.so,cholmod.so,colamd.so,amd.so
+UMFPACK_LIBS=	umfpack.so,cholmod.so,colamd.so,amd.so,suitesparseconfig.so
 L=${LOCALBASE}/lib/lib
-LIB_DEPENDS+=		umfpack.1:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS+=		umfpack:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 			--with-umfpack-lib="[${UMFPACK_LIBS:C/^/${L}/:C/,/, ${L}/g}]"
 .endif
@@ -122,11 +118,11 @@ PLIST_SUB+=		MPIUNI=""
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 LIBBLASLAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas
 CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 LIBBLASLAPACK=	-L${LOCALBASE}/lib -llapack -lblas
 CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .endif
@@ -160,7 +156,7 @@ CONFLICTS+=		metis-4*
 WITH_BLACS=	yes
 .endif
 .if defined(WITH_BLACS) && defined(WITH_MPI)
-LIB_DEPENDS+=		blacs.1:${PORTSDIR}/math/blacs
+LIB_DEPENDS+=		blacs:${PORTSDIR}/math/blacs
 CONFIGURE_ARGS+=	--with_blacs=1	\
 			--with-blacs-include=${LOCALBASE}/include	\
 			--with-blacs-lib=[${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a,${LOCALBASE}/lib/libblacs.a]
@@ -168,7 +164,7 @@ CONFIGURE_ARGS+=	--with_blacs=1	\
 WITH_SCALAPACK=	yes
 . endif
 . if defined(WITH_SCALAPACK)
-LIB_DEPENDS+=		scalapack.1:${PORTSDIR}/math/scalapack
+LIB_DEPENDS+=		scalapack:${PORTSDIR}/math/scalapack
 CONFIGURE_ARGS+=	--with-scalapack=1	\
 			--with-scalapack-dir=${LOCALBASE}
 . endif
