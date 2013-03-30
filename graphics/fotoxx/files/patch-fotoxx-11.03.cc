@@ -1,5 +1,5 @@
---- fotoxx-11.03.cc.orig	2011-02-28 17:04:24.000000000 +0100
-+++ fotoxx-11.03.cc	2011-05-26 10:36:11.000000000 +0200
+--- fotoxx-11.03.cc.orig	2011-02-28 16:04:24.000000000 +0000
++++ fotoxx-11.03.cc	2013-03-30 08:59:16.000000000 +0000
 @@ -24,6 +24,13 @@
  #include <tiffio.h>
  #include "zfuncs.h"
@@ -14,6 +14,15 @@
  #define fversion "Fotoxx v.11.03    2011.03.01"                            //  version and date
  #define fversioncc 16                                                      //  cc to use for window title bar
  #define flicense "Free software - GNU General Public License v.3"
+@@ -200,7 +207,7 @@
+ PXM         *Dpxm16 = 0;                                                   //  drawing window pixmap, 1x 16-bits
+ PXM         *Dpxm8 = 0;                                                    //  drawing window pixmap, Mscale 8-bits
+ 
+-mutex       Fpixmap_lock;                                                  //  lock for accessing PXM pixmaps
++mutex_tp       Fpixmap_lock;                                                  //  lock for accessing PXM pixmaps
+ 
+ int         Fww, Fhh;                                                      //  input image dimensions
+ int         E1ww, E1hh, E3ww, E3hh;                                        //  edit image dimensions
 @@ -986,7 +993,7 @@
     }
     
