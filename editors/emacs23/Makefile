@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GNU emacs
-# Date created:		11 October 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
@@ -36,6 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LATEST_LINK=	emacs23
+INSTALLS_ICONS=	yes
 
 MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
@@ -114,19 +111,19 @@ CONFIGURE_ARGS+=	--without-sync-input
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
@@ -145,17 +142,17 @@ CONFIGURE_ARGS+=	--without-xpm
 
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-xft
 .if ${PORT_OPTIONS:MM17N}
 CONFIGURE_ARGS+=	--with-m17n-flt
-LIB_DEPENDS+=	m17n.4:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS+=	m17n:${PORTSDIR}/devel/m17n-lib
 .else
 CONFIGURE_ARGS+=	--without-m17n-flt
 .endif
 .if ${PORT_OPTIONS:MOTF}
 CONFIGURE_ARGS+=	--with-otf
-LIB_DEPENDS+=	otf.0:${PORTSDIR}/print/libotf
+LIB_DEPENDS+=	otf:${PORTSDIR}/print/libotf
 .else
 CONFIGURE_ARGS+=	--without-libotf
 .endif
@@ -187,7 +184,7 @@ PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=		canna:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .endif
@@ -199,7 +196,7 @@ CONFIGURE_ARGS+=	--without-sound
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus

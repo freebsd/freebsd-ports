@@ -1,9 +1,5 @@
-# New ports collection makefile for:    emacs22
-# Date created:				April 12 2005
-# Whom:	      				Kenneth Vestergaard Schmidt <kvs@pil.dk>
-#
+# Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
@@ -27,7 +23,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.3.50
-EMACS_REV=	111818
+EMACS_REV=	112178
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
@@ -37,6 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+INSTALLS_ICONS=	yes
 
 EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
 		${PREFIX}/libexec/${PORTNAME}

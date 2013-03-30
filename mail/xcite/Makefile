@@ -7,7 +7,7 @@
 
 PORTNAME=	xcite
 PORTVERSION=	1.60
-PORTREVISION=	13
+PORTREVISION=	19
 PORTREVISION=	5
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/

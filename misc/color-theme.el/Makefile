@@ -7,7 +7,7 @@
 
 PORTNAME=	color-theme.el
 PORTVERSION=	6.6.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc elisp
 MASTER_SITES=	http://download.gna.org/color-theme/
 PKGNAMESUFFIX=	-${EMACS_NAME}
