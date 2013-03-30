@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	no
 MAN6=		xvmines.6
 PORTDOCS=	Copyright
-PLIT_FILES=	bin/xvmines
+PLIST_FILES=	bin/xvmines
 
 .include <bsd.port.options.mk>
 
