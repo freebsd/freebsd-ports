@@ -15,6 +15,8 @@ COMMENT=	ReStructuredText Support for Emacs
 
 USE_EMACS=	yes
 
+BROKEN=		checksum mismatch
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
