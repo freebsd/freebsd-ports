@@ -29,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-INSTALLS_ICONS=	yes
 
 MAN1=		ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1
@@ -93,6 +92,7 @@ CONFIGURE_ARGS+=	--without-x
 .else
 USE_XORG=	x11
 USE_GNOME=
+INSTALLS_ICONS=	yes
 
 .if ${PORT_OPTIONS:MSVG}
 USE_GNOME+=	librsvg2
