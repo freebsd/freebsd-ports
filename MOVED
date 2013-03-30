@@ -4187,7 +4187,7 @@ print/ghostscript7-commfont|print/ghostscript9|2013-03-26|ghostscript 7 is outda
 print/ghostscript7-jpnfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 print/ghostscript7-korfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
-print/kdeutils4-printer-applet||2013-03-27|Superseded by print/kde4-print-manager
-print/system-config-printer-kde||2013-03-27|Superseded by print/kde4-print-manager
+print/kdeutils4-printer-applet|print/kde4-print-manager|2013-03-27|Superseded by print/kde4-print-manager
+print/system-config-printer-kde|print/kde4-print-manager|2013-03-27|Superseded by print/kde4-print-manager
 science/py-biolccc|science/pyteomics.biolccc|2013-03-28|Renamed upstream
 math/hs-Agda-executable||2013-03-29|Removed: it has become part of math/hs-Agda
