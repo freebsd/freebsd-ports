@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-DBD-cego
-# Date created:				Jul  2, 2010
-# Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
-#
+# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
@@ -23,5 +20,8 @@ PERL_CONFIGURE=	yes
 CC:=		${CXX}
 
 MAN3=		DBD::Cego.3
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|fno-strict-aliasing|fno-strict-aliasing -fpermissive|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
