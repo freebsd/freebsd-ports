@@ -6,7 +6,11 @@ PORTVERSION=	0.1.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
 		http://files.etoilebsd.net/dialog4ports/ \
-		ftp://invisible-island.net/dialog/:dialog
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		http://m1cro.tk/dialog4ports/:dialog \
+		http://files.etoilebsd.net/dialog4ports/:dialog \
+		ftp://invisible-island.net/dialog/:dialog \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:dialog \
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Console Interface to configure ports
