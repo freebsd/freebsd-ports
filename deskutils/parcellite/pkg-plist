@@ -24,5 +24,3 @@ share/pixmaps/parcellite.xpm
 %%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl_PL
 @dirrmtry share/applications
-@dirrmtry etc/xdg/autostart/
-@dirrmtry etc/xdg/
