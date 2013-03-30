@@ -1,6 +1,6 @@
---- zfuncs.h.orig	2009-10-07 08:40:43.000000000 +0700
-+++ zfuncs.h	2009-10-07 08:50:37.000000000 +0700
-@@ -19,7 +19,201 @@
+--- zfuncs.h.orig	2009-10-29 08:38:40.000000000 +0000
++++ zfuncs.h	2013-03-30 09:03:57.000000000 +0000
+@@ -36,7 +36,201 @@
  #include <signal.h>
  #include <execinfo.h>
  #include <locale.h>
@@ -203,3 +203,21 @@
  
  #define  int8   char                                                       //  number types
  #define  int16  short
+@@ -52,7 +246,7 @@
+ 
+ #define  wstrerror(err) strerror(WEXITSTATUS(err))                         //  get text status for child process
+ 
+-#define  mutex          pthread_mutex_t                                    //  abbreviations
++#define  mutex_tp          pthread_mutex_t                                    //  abbreviations
+ #define  mutex_init     pthread_mutex_init
+ #define  mutex_lock     pthread_mutex_lock
+ #define  mutex_trylock  pthread_mutex_trylock
+@@ -495,7 +689,7 @@
+ {
+    char        wmi[8];
+    Vxstring  * vd;                                                         //  vector of xstrings
+-   mutex       qmutex;                                                     //  for multi-thread access
++   mutex_tp       qmutex;                                                     //  for multi-thread access
+    int         qcap;                                                       //  queue capacity
+    int         qcount;                                                     //  curr. queue count
+    int         ent1;                                                       //  first entry pointer

@@ -1,7 +1,7 @@
---- zfuncs.cpp.orig	2009-10-02 03:20:15.000000000 +0700
-+++ zfuncs.cpp	2009-10-07 12:35:45.000000000 +0700
+--- zfuncs.cpp.orig	2009-10-29 08:38:40.000000000 +0000
++++ zfuncs.cpp	2013-03-30 09:06:21.000000000 +0000
 @@ -23,6 +23,11 @@
- //     zfuncs version  v.2.25
+ //     zfuncs.cpp   version  v.2.28
  
  #include "zfuncs.h"
 +#ifdef __FreeBSD__
@@ -12,7 +12,16 @@
  
  /**************************************************************************
     system-level utility functions
-@@ -2875,7 +2880,7 @@
+@@ -236,7 +241,7 @@
+ //  safely access parameters from multiple threads
+ //  limitation: one lock for any number of parameters
+ 
+-mutex    zget_lock = PTHREAD_MUTEX_INITIALIZER;
++mutex_tp    zget_lock = PTHREAD_MUTEX_INITIALIZER;
+ 
+ int zget_locked(int &param)                                                //  lock and return parameter
+ {
+@@ -2916,7 +2921,7 @@
     strcpy(zicondir,zdatadir);
     strcat(zicondir,"/icons");
  
@@ -21,3 +30,12 @@
     if (strEqu(pp,"root")) snprintf(zuserdir,199,"/root/.%s",zappname);     //  get /root/.appname
     else snprintf(zuserdir,199,"%s/.%s",getenv("HOME"),zappname);           //  or /home/user/.appname
  
+@@ -3415,7 +3420,7 @@
+ pthread_t   tids[tmax];
+ int         tlocks[tmax];
+ int         zinit = 0;
+-mutex       zmutex;
++mutex_tp       zmutex;
+ 
+ void zlockInit()                                                           //  initz. call from main()
+ {

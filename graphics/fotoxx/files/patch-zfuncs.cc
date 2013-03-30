@@ -1,5 +1,5 @@
---- zfuncs.cc.orig	2011-02-28 17:04:24.000000000 +0100
-+++ zfuncs.cc	2011-05-26 10:04:13.000000000 +0200
+--- zfuncs.cc.orig	2011-02-28 16:04:24.000000000 +0000
++++ zfuncs.cc	2013-03-30 09:00:04.000000000 +0000
 @@ -24,6 +24,15 @@
  
  #include "zfuncs.h"
@@ -16,6 +16,15 @@
  
  /**************************************************************************
     system-level utility functions
+@@ -281,7 +290,7 @@
+ //  safely access parameters from multiple threads
+ //  limitation: one lock for any number of parameters
+ 
+-mutex    zget_lock = PTHREAD_MUTEX_INITIALIZER;
++mutex_tp    zget_lock = PTHREAD_MUTEX_INITIALIZER;
+ 
+ int zget_locked(int &param)                                                //  lock and return parameter
+ {
 @@ -778,23 +787,27 @@
        char        fname[200];       //  null-terminated file name within directory
     };
@@ -117,3 +126,12 @@
     if (strEqu(pp,"root")) snprintf(zuserdir,199,"/root/.%s",zappname);     //  get /root/.appname
     else snprintf(zuserdir,199,"%s/.%s",getenv("HOME"),zappname);           //  or /home/user/.appname
  
+@@ -3435,7 +3441,7 @@
+ pthread_t   tids[tmax];
+ int         tlocks[tmax];
+ int         zinit = 0;
+-mutex       zmutex;
++mutex_tp       zmutex;
+ 
+ void zlockInit()                                                           //  initz. call from main()
+ {
