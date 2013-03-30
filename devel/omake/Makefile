@@ -24,6 +24,8 @@ INFO=		omake-doc
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not build on powerpc
+.else
+BROKEN=	fails to build
 .endif
 
 post-patch:
