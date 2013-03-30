@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.9
-PORTREVISION=	2
+DISTVERSION=	1.0.10
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
-		http://files.etoilebsd.net/pkg/
+		http://files.etoilebsd.net/pkg/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
