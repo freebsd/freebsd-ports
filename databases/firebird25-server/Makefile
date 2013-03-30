@@ -82,6 +82,8 @@ UTIL_BIN=	fbguard fbsplit fbstat fbsvcmgr fbtracemgr gbak gdef gfix gsec \
 		nbackup
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
+
+PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 .else
 # Client part stuff
 ALL_TARGET=	firebird_basic libfbembed libfbclient embed_isql embed_gpre \
@@ -128,7 +130,7 @@ post-install:
 
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
-.ifndef PACKAGE_BUILDING
+.if !defined(CLIENT_ONLY)
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
