@@ -39,7 +39,7 @@ post-patch:
 pre-configure:
 .for f in ${AUTOFILES}
 	@${RM} ${WRKSRC}/${f}
-	@${LN} ${AUTOMAKE_DIR}/${f} ${WRKSRC}/${f}
+	@${LN} -s ${AUTOMAKE_DIR}/${f} ${WRKSRC}/${f}
 .endfor
 
 .include <bsd.port.mk>
