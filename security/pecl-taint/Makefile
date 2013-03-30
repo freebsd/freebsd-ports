@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	taint
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
