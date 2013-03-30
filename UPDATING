@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130329:
+  AFFECTS: users of ports-mgmt/portmaster
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Portmaster 3.15 should be skipped if you are not using pkgng and are on
+  9.1, 8-STABLE, 9-STABLE, or CURRENT. It may require manual upgrading to
+  3.16:
+
+  # make -C /usr/ports/ports-mgmt/portmaster build deinstall install clean
+
+20130329:
   AFFECTS: users of net/kio-upnp-ms
   AUTHOR: avilla@FreeBSD.org
 
