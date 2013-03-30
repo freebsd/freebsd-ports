@@ -18,7 +18,7 @@ PLIST_SUB+=	PROFLIB="@comment "
 PLIST_SUB+=	PROFLIB=""
 .endif
 
-SRCCONF=	${NONEXISTENT}
+SRCCONF=	/dev/null
 MAKE_ENV+=	SRCCONF=${SRCCONF}
 
 .include <bsd.port.options.mk>
