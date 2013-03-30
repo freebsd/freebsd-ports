@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/binpac
 bin/bro
+lib/libbinpac.a
 include/binpac.h
 include/binpac_analyzer.h
 include/binpac_buffer.h
