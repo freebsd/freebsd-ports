@@ -25,6 +25,14 @@ RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
-MAN1=		cssh.1
+MAN1=		cssh.1 ccon.1 crsh.1 ctel.1
+MAN3=		App::ClusterSSH.3 \
+		App::ClusterSSH::Base.3 \
+		App::ClusterSSH::Cluster.3 \
+		App::ClusterSSH::Config.3 \
+		App::ClusterSSH::Helper.3 \
+		App::ClusterSSH::Host.3 \
+		App::ClusterSSH::L10N.3 \
+		App::ClusterSSH::L10N::en.3
 
 .include <bsd.port.mk>
