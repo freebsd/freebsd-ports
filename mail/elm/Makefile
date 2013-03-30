@@ -24,6 +24,7 @@ HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=		PREFIX="${PREFIX}"
 CONFIGURE_ARGS=		-d
+MAKE_FLAGS=		CATMAN=catman-none
 MAN1=			answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 			frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
 			printmail.1 readmsg.1 mmencode.1
