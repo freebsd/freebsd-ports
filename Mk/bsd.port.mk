@@ -3424,7 +3424,14 @@ check-vulnerable:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@if [ -f "${AUDITFILE}" ]; then \
 		if [ -n "${WITH_PKGNG}" ]; then \
-			vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+			if [ -x "${PKG_BIN}" ]; then \
+				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+			elif [ "${PORTNAME}" = "pkg" ]; then \
+				vlist=""; \
+			else \
+				${ECHO_MSG} "===> Unable to check vuln database as pkg(8) is missing"; \
+				exit 1; \
+			fi; \
 		elif [ -x "${LOCALBASE}/sbin/portaudit" ]; then \
 			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
 				2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
