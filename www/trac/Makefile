@@ -35,11 +35,11 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSILVERCITY)
+.if ${PORT_OPTIONS:MSILVERCITY}
 RUN_DEPENDS+=	${LOCALBASE}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 .endif
 
-.if ${PORT_OPTIONS:MDOCUTILS)
+.if ${PORT_OPTIONS:MDOCUTILS}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
 .endif
 
