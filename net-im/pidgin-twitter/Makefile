@@ -25,4 +25,7 @@ PLIST_FILES=	lib/pidgin/pidgin-twitter.so \
 		${DATADIR_REL}/prefs.ui
 PLIST_DIRS=	${DATADIR_REL}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
