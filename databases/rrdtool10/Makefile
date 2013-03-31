@@ -51,7 +51,7 @@ BROKEN=		Does not build on ia64
 .endif
 
 post-extract:
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
 		${WRKSRC}/doc/Makefile.in
 .endif
