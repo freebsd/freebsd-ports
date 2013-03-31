@@ -1,4 +1,3 @@
-bin/kxmlkipicmd
 include/libkipi/configwidget.h
 include/libkipi/imagecollection.h
 include/libkipi/imagecollectionselector.h
@@ -11,7 +10,6 @@ include/libkipi/plugin.h
 include/libkipi/pluginloader.h
 include/libkipi/uploadwidget.h
 include/libkipi/version.h
-lib/kde4/kipiplugin_kxmlhelloworld.so
 lib/libkipi.so
 lib/libkipi.so.10
 lib/libkipi.so.10.0.0
@@ -19,17 +17,12 @@ libdata/pkgconfig/libkipi-kde4.pc
 share/apps/kipi/data/kipi-icon.svg
 share/apps/kipi/data/kipi-logo.svg
 share/apps/kipi/data/kipi-plugins_logo.png
-share/apps/kipi/kipiplugin_kxmlhelloworldui.rc
-share/apps/kxmlkipicmd/kxmlkipicmd_defaultui.rc
-share/apps/kxmlkipicmd/kxmlkipicmd_gwenviewui.rc
 share/icons/hicolor/128x128/apps/kipi.png
 share/icons/hicolor/16x16/apps/kipi.png
 share/icons/hicolor/22x22/apps/kipi.png
 share/icons/hicolor/32x32/apps/kipi.png
 share/icons/hicolor/48x48/apps/kipi.png
-share/kde4/services/kipiplugin_kxmlhelloworld.desktop
 share/kde4/servicetypes/kipiplugin.desktop
-@dirrm share/apps/kxmlkipicmd
 @dirrm share/apps/kipi/data
 @dirrm share/apps/kipi
 @dirrm include/libkipi
