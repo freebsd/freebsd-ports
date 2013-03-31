@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="92f30415-9935-11e2-ad4c-080027ef73ec">
+    <topic>OpenVPN -- potential side-channel/timing attack when comparing HMACs</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVPN project reports:</p>
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23#OpenVPN2.3.1<">
+	  <p>[OpenVPN 2.3.1 adds a fix to prevent potential side-channel
+	    attacks by switching to a] constant time memcmp when comparing HMACs in [the] openvpn_decrypt [function].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23#OpenVPN2.3.1</url>
+      <url>http://openvpn.git.sourceforge.net/git/gitweb.cgi?p=openvpn/openvpn-testing.git;a=commit;h=11d21349a4e7e38a025849479b36ace7c2eec2ee</url>
+    </references>
+    <dates>
+      <discovery>2013-03-19</discovery>
+      <entry>2013-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="843a4641-9816-11e2-9c51-080027019be0">
     <topic>libxml2 -- cpu consumption Dos</topic>
     <affects>
