@@ -17,6 +17,8 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		ffi:${PORTSDIR}/devel/libffi
 
+BROKEN=		does not build
+
 CLI_DESC=	(BROKEN) Translate a CLI (.NET) based pypy
 JVM_DESC=	(BROKEN) Translate a JVM (Java) based pypy
 PYPY_DESC=	Use pypy to translate (faster but uses more memory)
