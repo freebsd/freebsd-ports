@@ -23,6 +23,9 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
