@@ -50,11 +50,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdataDATA//g' \
 		${WRKSRC}/doc/Makefile.in ${WRKSRC}/src/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdocDATA//g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in ${WRKSRC}/tests/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightlibexampleDATA//g' \
 		${WRKSRC}/lib/examples/Makefile.in
 .endif
