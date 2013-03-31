@@ -174,6 +174,7 @@ CONFIGURE_ARGS+=	--haddock-options=-w --with-haddock=${HADDOCK_CMD}
 
 .if ${PORT_OPTIONS:MDYNAMIC}
 CONFIGURE_ARGS+=	--enable-shared --enable-executable-dynamic
+CONFIGURE_ARGS+=	"--ghc-option=-optl -rpath" "--ghc-option=-optl ${CABAL_LIBDIR}/${DISTNAME}"
 .else
 CONFIGURE_ARGS+=	--disable-shared --disable-executable-dynamic
 .endif
