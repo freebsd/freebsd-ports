@@ -4,6 +4,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/3.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/docbook.css

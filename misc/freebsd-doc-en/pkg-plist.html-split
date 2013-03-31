@@ -322,7 +322,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/x40.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/ackno.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/releng/biblio.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/distribution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/extensibility.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/future.html
@@ -573,10 +572,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/bibliography.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-sound.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
@@ -936,7 +933,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-data-integrity.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-examples.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-object-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-objects.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-root.html
@@ -980,6 +976,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/theway.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/variables.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/writeanddebug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html

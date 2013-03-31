@@ -28,6 +28,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-support.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/adding-a-user.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/comments-welcome.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/editing-text.html
