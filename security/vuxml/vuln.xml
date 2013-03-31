@@ -62,7 +62,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenVPN project reports:</p>
-	<blockquote cite="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23#OpenVPN2.3.1<">
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23#OpenVPN2.3.1">
 	  <p>[OpenVPN 2.3.1 adds a fix to prevent potential side-channel
 	    attacks by switching to a] constant time memcmp when comparing HMACs in [the] openvpn_decrypt [function].</p>
 	</blockquote>
@@ -1550,6 +1550,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bugzilla</name>
+	<name>de-bugzilla</name>
+	<name>ru-bugzilla</name>
+	<name>ja-bugzilla</name>
 	<range><ge>3.6.0</ge><lt>3.6.13</lt></range>
 	<range><ge>4.0.0</ge><lt>4.0.10</lt></range>
 	<range><ge>4.2.0</ge><lt>4.2.5</lt></range>
@@ -1587,6 +1590,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-02-19</discovery>
       <entry>2013-02-20</entry>
+      <modified>2013-03-31</modified>
     </dates>
   </vuln>
 
