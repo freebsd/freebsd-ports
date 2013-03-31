@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130331:
+  AFFECTS: users of */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  Due to some unexpected dynamic linking problems, Haskell Cabal ports with
+  binaries that link to their own libraries may not work.  With default
+  configuration, the following ports are known to have this problem:
+  Agda, BNFC, pandoc, and uuagc.  (Their port revision are now bumped.)
+
+  In general, it is recommended to rebuild the port if you are
+  experiencing that the corresponding binary will not start, e.g.:
+
+  % agda
+  Shared object "libHSAgda-2.3.2-ghc7.4.2.so" not found, required by "agda"
+
 20130329:
   AFFECTS: users of ports-mgmt/portmaster
   AUTHOR: bdrewery@FreeBSD.org
