@@ -10,7 +10,7 @@ MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
 		http://m1cro.tk/dialog4ports/:dialog \
 		http://files.etoilebsd.net/dialog4ports/:dialog \
 		ftp://invisible-island.net/dialog/:dialog \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/:dialog \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:dialog
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Console Interface to configure ports
