@@ -4,7 +4,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -43,6 +43,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-vala \
+		--disable-graphviz \
 		--enable-introspection=no
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
@@ -60,10 +61,9 @@ GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 
 MAN1=		anjuta.1 anjuta-launcher.1
 
-OPTIONS_DEFINE=	SVN DEVHELP GRAPHVIZ
-OPTIONS_DEFAULT=DEVHELP GRAPHVIZ
+OPTIONS_DEFINE=	SVN DEVHELP
+OPTIONS_DEFAULT=DEVHELP
 DEVHELP_DESC=	Devhelp support
-GRAPHVIZ_DESC=	inheritance plugin
 
 .include <bsd.port.options.mk>
 
@@ -87,16 +87,6 @@ CONFIGURE_ARGS+=--disable-plugin-devhelp
 # See if versions beyond 2.26.1.0 still do this.
 #PLIST_SUB+=	DEVHELP="@comment "
 PLIST_SUB+=	DEVHELP=""
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-CONFIGURE_ARGS+=--enable-graphviz
-BUILD_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
-PLIST_SUB+=	GRAPHVIZ=""
-.else
-CONFIGURE_ARGS+=--disable-graphviz
-PLIST_SUB+=	GRAPHVIZ="@comment "
 .endif
 
 post-patch:
