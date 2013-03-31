@@ -549,6 +549,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 @dirrm share/type-convert
 @dirrm share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info
+@dirrmtry share/games
 @dirrm share/doc/libart
 @dirrm %%DOCSDIR%%/zvt
 @dirrm %%DOCSDIR%%/gnorba

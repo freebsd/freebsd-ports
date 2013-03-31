@@ -205,6 +205,7 @@ share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/games/pioneers/themes/ccFlickr
 @dirrm share/games/pioneers/themes
 @dirrm share/games/pioneers
+@dirrmtry share/games
 @dirrm share/gnome/help/pioneers/C/images
 @dirrm share/gnome/help/pioneers/C
 @dirrm share/gnome/help/pioneers
