@@ -1,20 +1,15 @@
-# New ports collection makefile for:	tclxml
-# Date created:				2 May 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tclxml
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	devel tcl
-MASTER_SITES=	SF/tclxml/TclXML/${PORTVERSION}
+MASTER_SITES=	LOCAL/bf SF/tclxml/TclXML/${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl
 
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
 
 PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
@@ -22,23 +17,29 @@ PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
 		tclxslt.html tclxslt.xml transform.tcl txt.xsl
 
 USE_TCL=	83+
+USE_XZ=		yes
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		XML_CONFIG="${XML_CONFIG}"
-PLIST=		${PKGDIR}${PKGNAMESUFFIX}/pkg-plist
-PATCHDIR=	${PKGDIR}${PKGNAMESUFFIX}/files/
 PLIST_SUB=	VER=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-pre-install:
+post-patch:
+	@${REINPLACE_CMD} -e '/^TCLSH_ENV[[:blank:]]*=/,/[^\]$$/d' \
+	${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+post-install:
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} doc
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+check test: install
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
+
+.include <bsd.port.mk>
