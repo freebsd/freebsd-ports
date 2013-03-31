@@ -8,7 +8,7 @@
 PORTNAME=	anonymous-pro
 PORTVERSION=	1.002
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.ms-studio.com/FontSales/
+MASTER_SITES=	http://www.marksimonson.com/assets/content/fonts/
 DISTNAME=	AnonymousPro-${PORTVERSION}
 
 MAINTAINER=	nlopes.ml@gmail.com
