@@ -30,6 +30,6 @@ include/cgicc/XMLPI.h
 lib/libcgicc.a
 lib/libcgicc.so
 lib/libcgicc.so.5
-lib/pkgconfig/cgicc.pc
+libdata/pkgconfig/cgicc.pc
 share/aclocal/cgicc.m4
 @dirrm include/cgicc
