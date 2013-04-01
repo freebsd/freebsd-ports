@@ -1,5 +1,3 @@
-bin/akonadi_benchmarker
-bin/akonaditest
 include/KDE/Akonadi/AgentBase
 include/KDE/Akonadi/AgentFactory
 include/KDE/Akonadi/AgentFilterProxyModel
@@ -823,8 +821,6 @@ include/kimap/setquotajob.h
 include/kimap/storejob.h
 include/kimap/subscribejob.h
 include/kimap/unsubscribejob.h
-include/kimaptest/fakeserver.h
-include/kimaptest/mockjob.h
 include/kldap/ber.h
 include/kldap/kldap_export.h
 include/kldap/ldapattributeproxymodel.h
@@ -1084,7 +1080,6 @@ lib/libkholidays.so.5.0.1
 lib/libkimap.so
 lib/libkimap.so.5
 lib/libkimap.so.5.0.1
-lib/libkimaptest.a
 lib/libkldap.so
 lib/libkldap.so.5
 lib/libkldap.so.5.0.1
@@ -1368,7 +1363,6 @@ share/mime/text/x-vnd.akonadi.socialfeeditem.xml
 @dirrm include/kmime
 @dirrm include/kmbox
 @dirrm include/kldap
-@dirrm include/kimaptest
 @dirrm include/kimap
 @dirrm include/kholidays
 @dirrm include/kcalutils
