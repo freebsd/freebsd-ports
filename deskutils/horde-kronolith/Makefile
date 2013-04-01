@@ -1,9 +1,5 @@
-# Ports collection makefile for:  horde-kronolith
-# Date created:			  Sun Dec 02, 2001
-# Whom:				  Thierry Thomas (<thierry@thomas.as>)
-#
+# Created by: Thierry Thomas (<thierry@thomas.as>)
 # $FreeBSD$
-#
 
 PORTNAME=	kronolith
 PORTVERSION=	4.0.4
@@ -64,7 +60,7 @@ USE_HORDE_RUN=	Horde_Role \
 RUN_DEPENDS+=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 .endif
 
-.if ${PORT_OPTIONS:MTIMEOBJECTS
+.if ${PORT_OPTIONS:MTIMEOBJECTS}
 USE_HORDE_RUN+=	timeobjects
 .endif
 
