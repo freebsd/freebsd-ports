@@ -37,6 +37,8 @@ pre-configure:
 	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the WITH_KMS option."
 	@${FALSE}
 .endif
+.else
+BROKEN=	This port need libdrm version that is available when WITH_NEW_XORG is set
 .endif
 
 post-patch:	.SILENT
