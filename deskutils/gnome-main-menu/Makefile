@@ -29,4 +29,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	application-browser.schemas slab.schemas
 
+post-patch:
+	${REINPLACE_CMD} -e 's|glib/gmacros.h|glib.h|g' \
+		-e 's|glib/gfileutils.h|glib.h|g' \
+		-e 's|glib/gtypes.h|glib.h|g' \
+		${WRKSRC}/libslab/system-tile.c \
+		${WRKSRC}/libslab/application-tile.c \
+		${WRKSRC}/main-menu/src/tomboykeybinder.h
+
 .include <bsd.port.mk>
