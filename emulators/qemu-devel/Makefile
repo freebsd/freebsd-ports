@@ -13,7 +13,8 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
-LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
+LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman \
+		curl:${PORTSDIR}/ftp/curl
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -29,7 +30,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
+OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
 		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER \
 		STATIC_LINK
 SAMBA_DESC=		samba dependency (for -smb)
@@ -37,7 +38,6 @@ GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
 JPEG_DESC=		jpeg dependency (vnc lossy compression)
 PNG_DESC=		png dependency (vnc compression)
-CURL_DESC=		libcurl dependency (remote images)
 CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
@@ -48,7 +48,7 @@ CLANG_HACK_DESC=		clang workaround (result slow and less stable!)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
-OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
+OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>
 
@@ -148,12 +148,6 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-.endif
-
-.if empty(PORT_OPTIONS:MCURL)
-CONFIGURE_ARGS+=	--disable-curl
-.else
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
