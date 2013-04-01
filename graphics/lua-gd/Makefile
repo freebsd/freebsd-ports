@@ -35,7 +35,7 @@ LUA_MODLIBDIR=	${PREFIX}/lib/lua/${LUA_VER}
 do-install:
 	${MKDIR} ${LUA_MODLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gd.so ${LUA_MODLIBDIR}
-	lua-5.1 ${WRKSRC}/test_features.lua
+	${LUA_CMD} ${WRKSRC}/test_features.lua
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} * ${DOCSDIR}/
