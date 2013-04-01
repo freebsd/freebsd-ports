@@ -829,6 +829,7 @@
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-munin-ruby
     SUBDIR += rubygem-murder
+    SUBDIR += rubygem-nagiosplugin
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
