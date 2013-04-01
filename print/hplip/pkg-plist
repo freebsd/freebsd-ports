@@ -1590,8 +1590,6 @@ share/ppd/HP/hp-psc_950xi-hpijs.ppd.gz
 @dirrmtry libexec/cups
 %%SCAN%%@dirrmtry lib/sane
 @dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
 @dirrmtry etc/hp
 %%FAX%%@dirrmtry etc/cups
 %%GUI%%@exec mkdir -p %D/%%DATADIR%%/ui4/plugins
