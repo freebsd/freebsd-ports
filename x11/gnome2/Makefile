@@ -63,7 +63,7 @@ USE_PYTHON=	yes
 .endif
 
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"
-OPTIONS_DEFINE=	XSCHEENSAVER
+OPTIONS_DEFINE=	XSCREENSAVER
 XSCREENSAVER_DESC=	Use xscreensaver as screen saver app
 #		MAPI "Depend on evolution-mapi (pulls in samba4)
 .endif
