@@ -16,6 +16,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 GNU_CONFIGURE=	yes
 USES=		fuse
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/curlftpfs
 
