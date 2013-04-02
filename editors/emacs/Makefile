@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=	--without-rsvg
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--with-x-toolkit=gtk
+CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 .elif ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
