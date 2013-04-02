@@ -616,8 +616,8 @@ lib/kde4/kritadynapaintop.so
 lib/kde4/kritaembossfilter.so
 lib/kde4/kritaexample.so
 lib/kde4/kritaexperimentpaintop.so
-%%GTL%%lib/kde4/kritaexrexport.so
-%%GTL%%lib/kde4/kritaexrimport.so
+lib/kde4/kritaexrexport.so
+lib/kde4/kritaexrimport.so
 lib/kde4/kritaextensioncolorsfilters.so
 lib/kde4/kritafastcolortransferfilter.so
 lib/kde4/kritafilterop.so
@@ -922,7 +922,7 @@ share/applications/kde4/karbon.desktop
 share/applications/kde4/kexi.desktop
 share/applications/kde4/krita.desktop
 share/applications/kde4/krita_bmp.desktop
-%%GTL%%share/applications/kde4/krita_exr.desktop
+share/applications/kde4/krita_exr.desktop
 share/applications/kde4/krita_jp2.desktop
 share/applications/kde4/krita_jpeg.desktop
 share/applications/kde4/krita_odg.desktop
@@ -5578,7 +5578,7 @@ share/apps/krita/images/krita-sumi.png
 share/apps/krita/krita.rc
 share/apps/krita/metadata/schemas/dc.schema
 share/apps/krita/metadata/schemas/exif.schema
-%%GTL%%share/apps/krita/metadata/schemas/exrchannels.schema
+share/apps/krita/metadata/schemas/exrchannels.schema
 share/apps/krita/metadata/schemas/mkn.schema
 share/apps/krita/metadata/schemas/tiff.schema
 share/apps/krita/metadata/schemas/xmp.schema
@@ -6739,8 +6739,8 @@ share/kde4/services/krita_colorselectorng.desktop
 share/kde4/services/krita_colorspaces_extensions_plugin.desktop
 share/kde4/services/krita_compositiondocker.desktop
 share/kde4/services/krita_digitalmixer.desktop
-%%GTL%%share/kde4/services/krita_exr_export.desktop
-%%GTL%%share/kde4/services/krita_exr_import.desktop
+share/kde4/services/krita_exr_export.desktop
+share/kde4/services/krita_exr_import.desktop
 share/kde4/services/krita_jp2_export.desktop
 share/kde4/services/krita_jp2_import.desktop
 share/kde4/services/krita_jpeg_export.desktop
