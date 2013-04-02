@@ -36,7 +36,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB+=	FULLVERSION=${PORTVERSION} \
 		MIDVERSION=${PORTVERSION:R} \
@@ -97,14 +97,14 @@ PLIST_SUB+=	WITH_JAVA="@comment "
 BUILD_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	   ${WRKSRC}/CMakeLists.txt ${WRKSRC}/cmake_modules/FindPHP5.cmake
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '531s|^|#|' ${WRKSRC}/CMakeLists.txt
 .endif
 
