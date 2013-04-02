@@ -24,4 +24,4 @@
 @dirrm %%INSTDIR%%/xslt1
 @dirrm %%INSTDIR%%/xslt2
 @dirrm %%INSTDIR%%
-@dirrmtry %D/share/xsl
+@dirrmtry share/xsl
