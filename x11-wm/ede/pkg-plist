@@ -1538,6 +1538,7 @@ share/xsessions/ede.desktop
 @dirrm share/icons/edeneu/128x128/actions
 @dirrm share/icons/edeneu/128x128
 @dirrm share/icons/edeneu
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/tips
 @dirrm %%DATADIR%%/themes/splash-themes/standard
 @dirrm %%DATADIR%%/themes/splash-themes/scape
