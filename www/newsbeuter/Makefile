@@ -1,11 +1,9 @@
-# New ports collection makefile for:		newsbeuter
-# Date created:					2007-06-01
-# Whom:						arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
