@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	2011-07-20 20:20:26.000000000 -0700
-+++ doc/Makefile.in	2011-07-20 20:21:37.000000000 -0700
-@@ -559,7 +559,7 @@
+--- doc/Makefile.in.orig	2013-02-08 22:19:36.000000000 -0500
++++ doc/Makefile.in	2013-03-31 19:16:17.000000000 -0500
+@@ -568,7 +568,7 @@
  
  # The rest of the Makefile is enabled only if we have asciidoc
  
 -@HAVE_ASCIIDOC_TRUE@ASCIIDOC_ICONS_DIR ?= /usr/share/asciidoc/images/icons
-+@HAVE_ASCIIDOC_TRUE@ASCIIDOC_ICONS_DIR ?= $(prefix)/etc/asciidoc/images/icons
++@HAVE_ASCIIDOC_TRUE@ASCIIDOC_ICONS_DIR ?= ${prefix}/etc/asciidoc/images/icons
  
  @HAVE_ASCIIDOC_TRUE@%.html: $$*.txt $(ASCIIDOC_CONF)
  @HAVE_ASCIIDOC_TRUE@	@if ! test -d $(ASCIIDOC_ICONS_DIR); then \

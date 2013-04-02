@@ -1,6 +1,6 @@
---- src/misc/configuration.cxx.orig	2013-03-28 08:57:53.000000000 -0500
-+++ src/misc/configuration.cxx	2013-03-28 08:59:54.000000000 -0500
-@@ -901,8 +901,6 @@
+--- src/misc/configuration.cxx.orig	2013-02-08 21:00:53.000000000 -0500
++++ src/misc/configuration.cxx	2013-04-01 08:06:29.000000000 -0500
+@@ -891,8 +891,6 @@
  
  void configuration::testCommPorts()
  {
@@ -9,7 +9,7 @@
  	inpTTYdev->clear();
  	inpRIGdev->clear();
  	inpXmlRigDevice->clear();
-@@ -919,6 +917,7 @@
+@@ -909,6 +907,7 @@
  #endif
  
  #ifdef __linux__
@@ -17,7 +17,7 @@
  	bool ret = false;
  	DIR* sys = NULL;
  	char cwd[PATH_MAX] = { '.', '\0' };
-@@ -965,9 +964,7 @@
+@@ -955,9 +954,7 @@
  		"/dev/ttyS%u",
  		"/dev/ttyUSB%u",
  		"/dev/usb/ttyUSB%u"
