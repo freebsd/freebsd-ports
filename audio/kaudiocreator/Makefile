@@ -22,7 +22,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 USE_BZIP2=	yes
 USES=		cmake
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdehier kdeprefix libkcddb
+USE_KDE4=	automoc4 kdehier kdeprefix libkcddb libkcompactdisc
 
 LICENSE=	GPLv2
 MAKE_JOBS_SAFE=	yes
