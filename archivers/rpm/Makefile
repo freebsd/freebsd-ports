@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rpm
-# Date created:		30 April 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
@@ -27,18 +23,39 @@ CONFIGURE_ARGS=	--with-glob
 USE_LDCONFIG=	yes
 MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -liconv"
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		gendiff.1
 MAN8=		rpm.8 rpm2cpio.8
+
+X86_SUB=	"@comment "
+AMD64_SUB=	"@comment "
+PPC_SUB=	"@comment "
+SPARC_SUB=	"@comment "
+IA64_SUB=	"@comment "
+.if ${ARCH} == i386
+X86_SUB=	""
+.elif ${ARCH} == amd64
+AMD64_SUB=	""
+.elif ${ARCH} == sparc64
+SPARC_SUB=	""
+.elif ${ARCH} == powerpc || ${ARCH} == powerpc64
+PPC_SUB=	""
+.elif ${ARCH} == ia64
+IA64_SUB=	""
+.endif
+
+PLIST_SUB+=	X86=${X86_SUB} PPC=${PPC_SUB} SPARC=${SPARC_SUB} IA64=${IA64_SUB} AMD64=${AMD64_SUB}
 
 post-patch:
 .for file in rpm.c doc/rpm.8 lib/macro.c lib/rpmrc.c
