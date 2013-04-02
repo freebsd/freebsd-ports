@@ -4,7 +4,7 @@
 PORTNAME=	javamail
 PORTVERSION=	1.4.7
 CATEGORIES=	java mail
-MASTER_SITES=	http://kenai.com/downloads/javamail/
+MASTER_SITES=	https://kenai.com/downloads/javamail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
