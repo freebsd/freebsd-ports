@@ -3,7 +3,7 @@
 
 PORTNAME=	weex
 PORTVERSION=	2.6.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
@@ -17,9 +17,17 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	ChangeLog README
 MAN1=		weex.1
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS.*\)debian|\1|' \
@@ -35,7 +43,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
-
-NOT_FOR_ARCHS=	amd64
 
 .include <bsd.port.mk>
