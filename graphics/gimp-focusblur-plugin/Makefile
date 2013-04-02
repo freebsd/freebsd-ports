@@ -44,5 +44,7 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^bindir = .*|bindir = ${PREFIX}/${PLUGIN_DIR}|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|glib/.*\.h|glib.h|g' \
+		${WRKSRC}/src/*.[ch]
 
 .include <bsd.port.mk>

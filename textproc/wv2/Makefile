@@ -20,4 +20,8 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/giochannel.h|glib.h|g' \
+		${WRKSRC}/src/olestream.h
+
 .include <bsd.port.mk>

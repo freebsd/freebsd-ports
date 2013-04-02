@@ -73,8 +73,8 @@ post-patch:
 		${WRKSRC}/library/canvas/src/mdc_canvas_view.h \
 		${WRKSRC}/library/canvas/src/mdc_canvas_view_printing.cpp \
 		${WRKSRC}/modules/wb.mysql.import/src/stdafx.h \
-		${WKRSRC}/modules/db.mysql.sqlparser/src/stdafx.h \
-		${WKRSRC}/modules/db.mysql.sqlparser/src/mysql_sql_parser_fe.cpp \
+		${WRKSRC}/modules/db.mysql.sqlparser/src/stdafx.h \
+		${WRKSRC}/modules/db.mysql.sqlparser/src/mysql_sql_parser_fe.cpp \
 		${WRKSRC}/plugins/wb.printing/backend/stdafx.h \
 		${WRKSRC}/plugins/db.mysql/backend/db_plugin_be.cpp
 

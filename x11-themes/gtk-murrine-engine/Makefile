@@ -32,4 +32,8 @@ ANIMATION_DESC=	Animation support
 CONFIGURE_ARGS+=--enable-animation
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gtimer.h|glib.h|g' \
+		${WRKSRC}/src/animation.c
+
 .include <bsd.port.mk>
