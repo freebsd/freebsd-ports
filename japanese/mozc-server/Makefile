@@ -29,6 +29,8 @@ USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_PKGCONFIG=	build
 
+BROKEN=	fails to build
+
 MAKE_JOBS_SAFE=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
