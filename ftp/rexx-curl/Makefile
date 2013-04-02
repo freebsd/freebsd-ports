@@ -21,6 +21,7 @@ BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
+BROKEN=		fails to build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
