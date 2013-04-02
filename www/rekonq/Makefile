@@ -16,10 +16,10 @@ USE_QT4=	script webkit \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	OPERA NUPOMUK
-OPTIONS_DEFAULT=	NUPOMUK
+OPTIONS_DEFINE=	OPERA NEPOMUK
+OPTIONS_DEFAULT=	NEPOMUK
 OPERA_DESC=	Support for Opera Sync service
-NUPOMUK_DESC=	Bookmarks tagging via Nepomuk
+NEPOMUK_DESC=	Bookmarks tagging via Nepomuk
 
 .include <bsd.port.options.mk>
 
@@ -28,7 +28,7 @@ post-patch:
 		's,FIND_PACKAGE(NepomukCore,MACRO_OPTIONAL_FIND_PACKAGE(NepomukCore,' \
 		${WRKSRC}/CMakeLists.txt
 
-.if ${PORT_OPTIONS:MNUPOMUK}
+.if ${PORT_OPTIONS:MNEPOMUK}
 USE_KDE4+=	nepomuk-core
 .else
 CMAKE_ARGS+=	-DWITH_NepomukCore=off
