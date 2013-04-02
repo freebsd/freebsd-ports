@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emulators/linux_base-f10
-# Date created:				2009-04-30
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		f10
 PORTVERSION=		10

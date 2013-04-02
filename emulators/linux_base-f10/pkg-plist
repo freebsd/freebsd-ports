@@ -2055,7 +2055,6 @@ var/cache/ldconfig/aux-cache
 @exec /bin/mkdir -p %D/usr/share/locale/vo/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/ve/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/vai/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/uz@cyrillic/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/uz@Latn/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/uz/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/ur/LC_MESSAGES
@@ -2104,7 +2103,6 @@ var/cache/ldconfig/aux-cache
 @exec /bin/mkdir -p %D/usr/share/locale/ss/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/srr/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/srn/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/sr@Latn/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/sq_AL/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/son/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/sog/LC_MESSAGES
@@ -2436,7 +2434,6 @@ var/cache/ldconfig/aux-cache
 @exec /bin/mkdir -p %D/usr/share/locale/cad/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/ca_ES@valencian/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/ca_ES/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/ca@valencia/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/byn/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/bug/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/bua/LC_MESSAGES
@@ -2600,7 +2597,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/vo/LC_MESSAGES
 @dirrm usr/share/locale/ve/LC_MESSAGES
 @dirrm usr/share/locale/vai/LC_MESSAGES
-@dirrmtry usr/share/locale/uz@cyrillic/LC_MESSAGES
 @dirrm usr/share/locale/uz@Latn/LC_MESSAGES
 @dirrm usr/share/locale/uz/LC_MESSAGES
 @dirrm usr/share/locale/ur/LC_MESSAGES
@@ -2648,7 +2644,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/ss/LC_MESSAGES
 @dirrm usr/share/locale/srr/LC_MESSAGES
 @dirrm usr/share/locale/srn/LC_MESSAGES
-@dirrmtry usr/share/locale/sr@Latn/LC_MESSAGES
 @dirrm usr/share/locale/sq_AL/LC_MESSAGES
 @dirrm usr/share/locale/son/LC_MESSAGES
 @dirrm usr/share/locale/sog/LC_MESSAGES
@@ -2979,7 +2974,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/cad/LC_MESSAGES
 @dirrm usr/share/locale/ca_ES@valencian/LC_MESSAGES
 @dirrm usr/share/locale/ca_ES/LC_MESSAGES
-@dirrmtry usr/share/locale/ca@valencia/LC_MESSAGES
 @dirrm usr/share/locale/byn/LC_MESSAGES
 @dirrm usr/share/locale/bug/LC_MESSAGES
 @dirrm usr/share/locale/bua/LC_MESSAGES
@@ -3133,7 +3127,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/vi
 @dirrm usr/share/locale/ve
 @dirrm usr/share/locale/vai
-@dirrmtry usr/share/locale/uz@cyrillic
 @dirrm usr/share/locale/uz@Latn
 @dirrm usr/share/locale/uz
 @dirrm usr/share/locale/ur
@@ -3204,7 +3197,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/srn
 @dirrm usr/share/locale/sr@latin/LC_MESSAGES
 @dirrm usr/share/locale/sr@latin
-@dirrmtry usr/share/locale/sr@Latn
 @dirrm usr/share/locale/sr@ije/LC_MESSAGES
 @dirrm usr/share/locale/sr@ije
 @dirrm usr/share/locale/sr/LC_MESSAGES
@@ -3688,7 +3680,6 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/locale/cad
 @dirrm usr/share/locale/ca_ES@valencian
 @dirrm usr/share/locale/ca_ES
-@dirrmtry usr/share/locale/ca@valencia
 @dirrm usr/share/locale/ca/LC_TIME
 @dirrm usr/share/locale/ca/LC_MESSAGES
 @dirrm usr/share/locale/ca
