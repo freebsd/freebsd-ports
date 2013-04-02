@@ -176,6 +176,7 @@ share/doc/HTML/et/kphotoalbum/plugins.docbook
 share/doc/HTML/et/kphotoalbum/setting-properties.docbook
 share/doc/HTML/et/kphotoalbum/thumbnail-view.docbook
 share/doc/HTML/et/kphotoalbum/viewer.docbook
+share/doc/HTML/et/kphotoalbum/workflows.docbook
 share/doc/HTML/fr/kphotoalbum/browsing.docbook
 share/doc/HTML/fr/kphotoalbum/common
 share/doc/HTML/fr/kphotoalbum/datebar.docbook
@@ -230,6 +231,7 @@ share/doc/HTML/pt/kphotoalbum/plugins.docbook
 share/doc/HTML/pt/kphotoalbum/setting-properties.docbook
 share/doc/HTML/pt/kphotoalbum/thumbnail-view.docbook
 share/doc/HTML/pt/kphotoalbum/viewer.docbook
+share/doc/HTML/pt/kphotoalbum/workflows.docbook
 share/doc/HTML/pt_BR/kphotoalbum/browsing.docbook
 share/doc/HTML/pt_BR/kphotoalbum/common
 share/doc/HTML/pt_BR/kphotoalbum/datebar.docbook
@@ -310,15 +312,19 @@ share/doc/HTML/uk/kphotoalbum/zoomed-view.png
 share/icons/hicolor/128x128/apps/kphotoalbum.png
 share/icons/hicolor/16x16/actions/ellipsetool.png
 share/icons/hicolor/16x16/actions/linetool.png
+share/icons/hicolor/16x16/actions/open-raw.png
 share/icons/hicolor/16x16/actions/recttool.png
 share/icons/hicolor/16x16/actions/selecttool.png
 share/icons/hicolor/16x16/actions/texttool.png
 share/icons/hicolor/16x16/actions/video.png
 share/icons/hicolor/16x16/apps/kphotoalbum.png
 share/icons/hicolor/22x22/actions/key.png
+share/icons/hicolor/22x22/actions/open-raw.png
 share/icons/hicolor/22x22/apps/kphotoalbum.png
 share/icons/hicolor/32x32/apps/kphotoalbum.png
+share/icons/hicolor/48x48/actions/open-raw.png
 share/icons/hicolor/48x48/apps/kphotoalbum.png
+share/icons/hicolor/64x64/actions/open-raw.png
 share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%NLS%%share/locale/ar/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/be/LC_MESSAGES/kphotoalbum.mo
@@ -349,6 +355,7 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%NLS%%share/locale/km/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/mai/LC_MESSAGES/kphotoalbum.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kphotoalbum.mo
