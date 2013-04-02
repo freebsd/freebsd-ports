@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cgal
-PORTVERSION=	3.6.1
+PORTVERSION=	4.1
 CATEGORIES=	math
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/27222/:source1 \
-		http://gforge.inria.fr/frs/download.php/27226/:source2 \
-		http://gforge.inria.fr/frs/download.php/27227/:source3
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/31640/:source1 \
+		http://gforge.inria.fr/frs/download.php/31645/:source2 \
+		http://gforge.inria.fr/frs/download.php/31644/:source3
 DISTNAME=	CGAL-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source1 \
 		${DISTNAME}-doc_html${EXTRACT_SUFX}:source2 \
@@ -16,9 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A computational geometry library
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-03-05
-BROKEN=		does not build with boost-1.48.0
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
@@ -28,11 +26,12 @@ LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
 
 FETCH_ARGS=	-pRr
 
+USE_BZIP2=		yes
 USE_LDCONFIG=		yes
 USES=			cmake
-USE_QT4=		corelib opengl qmake_build gui moc_build rcc_build
+USE_QT4=		corelib opengl qmake_build gui moc_build rcc_build uic_build
 HAS_CONFIGURE=		yes
-DOCSDIR=		${PREFIX}/share/doc/CGAL-3.4
+DOCSDIR=		${PREFIX}/share/doc/CGAL-${PORTVERSION}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=			cgal_create_cmake_script.1
@@ -40,7 +39,7 @@ MAN1=			cgal_create_cmake_script.1
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.LGPL LICENSE.QPL
+.for i in AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}_manual.pdf ${DOCSDIR}
