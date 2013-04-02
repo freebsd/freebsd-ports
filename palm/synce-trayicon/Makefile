@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs \
 
 MAKE_JOBS_SAFE=	yes
 
+BROKEN=		fails to build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
