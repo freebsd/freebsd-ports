@@ -2,6 +2,7 @@
 
 PORTNAME=	iso-schematron-xslt
 PORTVERSION=	20130313
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.schematron.com/tmp/
 DISTFILES=	iso-schematron-xslt1.zip \
