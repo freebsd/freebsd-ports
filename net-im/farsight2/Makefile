@@ -5,7 +5,8 @@
 PORTNAME=	farsight2
 PORTVERSION=	0.0.31
 CATEGORIES=	net-im devel
-MASTER_SITES=	http://farsight.freedesktop.org/releases/farsight2/
+MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ \
+		http://miwibox.org/distfiles/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
@@ -14,7 +15,6 @@ LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 
-FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
