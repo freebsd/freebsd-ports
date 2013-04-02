@@ -13,8 +13,13 @@ RUN_DEPENDS=	rubygem-timers>=1.0.0:${PORTSDIR}/devel/rubygem-timers \
     		rubygem-facter>=1.6.12:${PORTSDIR}/sysutils/rubygem-facter
 
 USE_RUBY=	yes
-RUBY_VER=	1.9
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.8
+BROKEN=		does not build with ruby ${RUBY_VER}
+.endif
+
+.include <bsd.port.post.mk>
