@@ -553,15 +553,15 @@ LDFLAGS+=		-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
 .if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*}
 # prefer clang
-. if ${CC} == "cc" && (exists(/usr/bin/clang) || \
+. if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014 || \
   exists(${LOCALBASE}/bin/clang))
 CC=				clang
 . endif
-. if ${CXX} == "c++" && (exists(/usr/bin/clang++) || \
+. if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014 || \
   exists(${LOCALBASE}/bin/clang++))
 CXX=			clang++
 . endif
-. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) || \
+. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900014 || \
   exists(${LOCALBASE}/bin/clang-cpp))
 CPP=			clang-cpp
 . endif
