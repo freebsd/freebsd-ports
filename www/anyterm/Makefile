@@ -1,9 +1,5 @@
-# New ports collection makefile for:	anyterm
-# Date created:				19 November 2009
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	anyterm
 PORTVERSION=	1.1.29
@@ -16,15 +12,16 @@ EXTRACT_SUFX=	.tbz2
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	A terminal emulator on a Web page
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
-
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
 MAN1=		anytermd.1
 USE_RC_SUBR=	anytermd
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_GCC=	any
 ALL_TARGET=	default_target
 PLIST_FILES=	sbin/anytermd
 
