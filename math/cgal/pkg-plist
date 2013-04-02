@@ -2,18 +2,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.FREE_USE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.GPL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.LGPL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.QPL
 %%PORTDOCS%%%%DOCSDIR%%/cgal_manual.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/cgal_create_CMakeLists
 bin/cgal_create_cmake_script
 bin/cgal_make_macosx_app
-include/CGAL/AABB_drawing_traits.h
 include/CGAL/AABB_intersections.h
-include/CGAL/AABB_node.h
 include/CGAL/AABB_polyhedron_segment_primitive.h
 include/CGAL/AABB_polyhedron_triangle_primitive.h
-include/CGAL/AABB_search_tree.h
 include/CGAL/AABB_segment_primitive.h
 include/CGAL/AABB_traits.h
 include/CGAL/AABB_tree.h
@@ -21,9 +19,47 @@ include/CGAL/AABB_triangle_primitive.h
 include/CGAL/Aff_transformation_2.h
 include/CGAL/Aff_transformation_3.h
 include/CGAL/Algebraic_extension_traits.h
+include/CGAL/Algebraic_kernel_d/Algebraic_curve_kernel_2.h
+include/CGAL/Algebraic_kernel_d/Algebraic_real_d_1.h
+include/CGAL/Algebraic_kernel_d/Algebraic_real_quadratic_refinement_rep_bfi.h
+include/CGAL/Algebraic_kernel_d/Algebraic_real_rep.h
+include/CGAL/Algebraic_kernel_d/Algebraic_real_rep_bfi.h
+include/CGAL/Algebraic_kernel_d/Bitstream_coefficient_kernel.h
+include/CGAL/Algebraic_kernel_d/Bitstream_coefficient_kernel_at_alpha.h
+include/CGAL/Algebraic_kernel_d/Bitstream_descartes.h
+include/CGAL/Algebraic_kernel_d/Bitstream_descartes_E08_tree.h
+include/CGAL/Algebraic_kernel_d/Bitstream_descartes_rndl_tree.h
+include/CGAL/Algebraic_kernel_d/Bitstream_descartes_rndl_tree_traits.h
+include/CGAL/Algebraic_kernel_d/Curve_analysis_2.h
+include/CGAL/Algebraic_kernel_d/Curve_pair_analysis_2.h
+include/CGAL/Algebraic_kernel_d/Descartes.h
+include/CGAL/Algebraic_kernel_d/Event_line_builder.h
+include/CGAL/Algebraic_kernel_d/Float_traits.h
+include/CGAL/Algebraic_kernel_d/Interval_evaluate_1.h
+include/CGAL/Algebraic_kernel_d/Interval_evaluate_2.h
+include/CGAL/Algebraic_kernel_d/LRU_hashed_map.h
+include/CGAL/Algebraic_kernel_d/Real_embeddable_extension.h
+include/CGAL/Algebraic_kernel_d/Real_roots.h
+include/CGAL/Algebraic_kernel_d/Shear_controller.h
+include/CGAL/Algebraic_kernel_d/Shear_transformation.h
+include/CGAL/Algebraic_kernel_d/Status_line_CA_1.h
+include/CGAL/Algebraic_kernel_d/Status_line_CPA_1.h
+include/CGAL/Algebraic_kernel_d/Xy_coordinate_2.h
+include/CGAL/Algebraic_kernel_d/algebraic_curve_kernel_2_tools.h
+include/CGAL/Algebraic_kernel_d/bound_between_1.h
+include/CGAL/Algebraic_kernel_d/construct_binary.h
+include/CGAL/Algebraic_kernel_d/enums.h
+include/CGAL/Algebraic_kernel_d/exceptions.h
+include/CGAL/Algebraic_kernel_d/flags.h
+include/CGAL/Algebraic_kernel_d/macros.h
+include/CGAL/Algebraic_kernel_d/refine_zero_against.h
+include/CGAL/Algebraic_kernel_d/shear.h
+include/CGAL/Algebraic_kernel_d/univariate_polynomial_utils.h
 include/CGAL/Algebraic_kernel_converter.h
-include/CGAL/Algebraic_kernel_d_1_RS_Gmpq.h
-include/CGAL/Algebraic_kernel_d_1_RS_Gmpz.h
+include/CGAL/Algebraic_kernel_d_1.h
+include/CGAL/Algebraic_kernel_d_2.h
+include/CGAL/Algebraic_kernel_rs_gmpq_d_1.h
+include/CGAL/Algebraic_kernel_rs_gmpz_d_1.h
 include/CGAL/Algebraic_kernel_for_circles_2_2.h
 include/CGAL/Algebraic_kernel_for_circles/function_objects_on_roots_and_polynomials_2_2.h
 include/CGAL/Algebraic_kernel_for_circles/internal_functions_comparison_root_for_circles_2_2.h
@@ -108,8 +144,12 @@ include/CGAL/Approximate_min_ellipsoid_d_traits_2.h
 include/CGAL/Approximate_min_ellipsoid_d_traits_3.h
 include/CGAL/Approximate_min_ellipsoid_d_traits_d.h
 include/CGAL/Arithmetic_kernel.h
+include/CGAL/Arithmetic_kernel/Arithmetic_kernel_base.h
 include/CGAL/Arr_Bezier_curve_traits_2.h
 include/CGAL/Arr_accessor.h
+include/CGAL/Arr_algebraic_segment_traits_2.h
+include/CGAL/Arr_extended_rational_arc_traits_d_1.h
+include/CGAL/Arr_face_index_map.h
 include/CGAL/Arrangement_2/Arrangement_2_iterators.h
 include/CGAL/Arrangement_2/Arrangement_on_surface_2_global.h
 include/CGAL/Arrangement_2/Arrangement_on_surface_2_impl.h
@@ -159,7 +199,6 @@ include/CGAL/Arr_geometry_traits/Conic_x_monotone_arc_2.h
 include/CGAL/Arr_geometry_traits/Consolidated_curve_data_aux.h
 include/CGAL/Arr_geometry_traits/Curve_data_aux.h
 include/CGAL/Arr_geometry_traits/Hyperbolic_arc_2.h
-include/CGAL/Arr_geometry_traits/One_root_number.h
 include/CGAL/Arr_geometry_traits/Polyline_2.h
 include/CGAL/Arr_geometry_traits/Rational_arc_2.h
 include/CGAL/Arr_geometry_traits/Segment_assertions.h
@@ -190,6 +229,16 @@ include/CGAL/Arr_point_location/Arr_trapezoid_ric_pl_impl.h
 include/CGAL/Arr_point_location/Arr_triangulation_pl_functions.h
 include/CGAL/Arr_point_location/Arr_triangulation_pl_impl.h
 include/CGAL/Arr_point_location/Arr_walk_along_line_pl_impl.h
+include/CGAL/Arr_point_location/Td_active_edge.h
+include/CGAL/Arr_point_location/Td_active_fictitious_vertex.h
+include/CGAL/Arr_point_location/Td_active_trapezoid.h
+include/CGAL/Arr_point_location/Td_active_vertex.h
+include/CGAL/Arr_point_location/Td_dag_node.h
+include/CGAL/Arr_point_location/Td_inactive_edge.h
+include/CGAL/Arr_point_location/Td_inactive_fictitious_vertex.h
+include/CGAL/Arr_point_location/Td_inactive_trapezoid.h
+include/CGAL/Arr_point_location/Td_inactive_vertex.h
+include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_impl.h
 include/CGAL/Arr_point_location/Td_X_trapezoid.h
 include/CGAL/Arr_point_location/Td_dag.h
 include/CGAL/Arr_point_location/Td_ninetuple.h
@@ -200,7 +249,17 @@ include/CGAL/Arr_point_location/Trapezoidal_decomposition_2.h
 include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_iostream.h
 include/CGAL/Arr_point_location/Trapezoidal_decomposition_2_misc.h
 include/CGAL/Arr_polyline_traits_2.h
+include/CGAL/Arr_rat_arc/Algebraic_point_2.h
+include/CGAL/Arr_rat_arc/Base_rational_arc_ds_1.h
+include/CGAL/Arr_rat_arc/Cache.h
+include/CGAL/Arr_rat_arc/Rational_arc_d_1.h
+include/CGAL/Arr_rat_arc/Rational_function.h
+include/CGAL/Arr_rat_arc/Rational_function_canonicalized_pair.h
+include/CGAL/Arr_rat_arc/Rational_function_ordered_pair.h
+include/CGAL/Arr_rat_arc/Rational_function_pair.h
+include/CGAL/Arr_rat_arc/Singleton.h
 include/CGAL/Arr_rational_arc_traits_2.h
+include/CGAL/Arr_rational_function_traits_2.h
 include/CGAL/Arr_segment_traits_2.h
 include/CGAL/Arr_simple_point_location.h
 include/CGAL/Arr_spherical_gaussian_map_3/Arr_polyhedral_sgm_arr_dcel.h
@@ -239,6 +298,7 @@ include/CGAL/Arr_tracing_traits_2.h
 include/CGAL/Arr_trapezoid_ric_point_location.h
 include/CGAL/Arr_triangulation_point_location.h
 include/CGAL/Arr_unb_planar_topology_traits_2.h
+include/CGAL/Arr_vertex_index_map.h
 include/CGAL/Arr_vertex_map.h
 include/CGAL/Arr_vertical_decomposition_2.h
 include/CGAL/Arr_walk_along_line_point_location.h
@@ -336,6 +396,7 @@ include/CGAL/CORE/poly/Curves.tcc
 include/CGAL/CORE/poly/Poly.h
 include/CGAL/CORE/poly/Poly.tcc
 include/CGAL/CORE/poly/Sturm.h
+include/CGAL/CORE_arithmetic_kernel.h
 include/CGAL/Cache.h
 include/CGAL/Cartesian/Aff_transformation_2.h
 include/CGAL/Cartesian/Aff_transformation_3.h
@@ -388,6 +449,10 @@ include/CGAL/Cartesian/predicates_on_planes_3.h
 include/CGAL/Cartesian/predicates_on_points_2.h
 include/CGAL/Cartesian/predicates_on_points_3.h
 include/CGAL/Cartesian/solve_3.h
+include/CGAL/Cell_attribute.h
+include/CGAL/Cell_attribute_with_point.h
+include/CGAL/Cell_const_iterators.h
+include/CGAL/Cell_iterators.h
 include/CGAL/Chinese_remainder_traits.h
 include/CGAL/Circle_2_Circle_2_intersection.h
 include/CGAL/Circle_2_Line_2_intersection.h
@@ -435,6 +500,12 @@ include/CGAL/Circulator_identity.h
 include/CGAL/Circulator_on_node.h
 include/CGAL/Circulator_project.h
 include/CGAL/Coercion_traits.h
+include/CGAL/Combinatorial_map.h
+include/CGAL/Combinatorial_map_basic_operations.h
+include/CGAL/Combinatorial_map_constructors.h
+include/CGAL/Combinatorial_map_iterators_base.h
+include/CGAL/Combinatorial_map_min_items.h
+include/CGAL/Combinatorial_map_operations.h
 include/CGAL/Compact_container.h
 include/CGAL/Complex_2_in_triangulation_3.h
 include/CGAL/Complex_2_in_triangulation_cell_base_3.h
@@ -480,12 +551,36 @@ include/CGAL/Convex_hull_2/convexity_check_2_impl.h
 include/CGAL/Convex_hull_d.h
 include/CGAL/Convex_hull_d_to_polyhedron_3.h
 include/CGAL/Convex_hull_d_traits_3.h
+include/CGAL/Convex_hull_face_base_2.h
 include/CGAL/Convex_hull_projective_xy_traits_2.h
 include/CGAL/Convex_hull_projective_xz_traits_2.h
 include/CGAL/Convex_hull_projective_yz_traits_2.h
 include/CGAL/Convex_hull_traits_3.h
 include/CGAL/Counted_number.h
 include/CGAL/Counting_iterator.h
+include/CGAL/Curved_kernel_via_analysis_2/Arc_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Curve_interval_arcno_cache.h
+include/CGAL/Curved_kernel_via_analysis_2/Curve_renderer_facade.h
+include/CGAL/Curved_kernel_via_analysis_2/Curved_kernel_via_analysis_2_functors.h
+include/CGAL/Curved_kernel_via_analysis_2/Curved_kernel_via_analysis_2_impl.h
+include/CGAL/Curved_kernel_via_analysis_2/Fig_stream_Curve_renderer_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Filtered_curved_kernel_via_analysis_2_impl.h
+include/CGAL/Curved_kernel_via_analysis_2/Generic_arc_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Generic_point_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Make_x_monotone_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Non_x_monotone_arc_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Point_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Qt_widget_Curve_renderer_2.h
+include/CGAL/Curved_kernel_via_analysis_2/Sweep_curves_adapter_2.h
+include/CGAL/Curved_kernel_via_analysis_2/gfx/Curve_renderer_2.h
+include/CGAL/Curved_kernel_via_analysis_2/gfx/Curve_renderer_internals.h
+include/CGAL/Curved_kernel_via_analysis_2/gfx/Curve_renderer_traits.h
+include/CGAL/Curved_kernel_via_analysis_2/gfx/Subdivision_1.h
+include/CGAL/Curved_kernel_via_analysis_2/gfx/Subdivision_2.h
+include/CGAL/Curved_kernel_via_analysis_2/test/simple_models.h
+include/CGAL/Dart.h
+include/CGAL/Dart_const_iterators.h
+include/CGAL/Dart_iterators.h
 include/CGAL/Default.h
 include/CGAL/Delaunay_d.h
 include/CGAL/Delaunay_mesh_area_criteria_2.h
@@ -509,8 +604,13 @@ include/CGAL/Double_map.h
 include/CGAL/Dummy_tds_2.h
 include/CGAL/Dynamic_matrix.h
 include/CGAL/Edge_hash_function.h
+include/CGAL/Eigen_matrix.h
+include/CGAL/Eigen_solver_traits.h
+include/CGAL/Eigen_svd.h
+include/CGAL/Eigen_vector.h
 include/CGAL/Enum_converter.h
 include/CGAL/Env_default_diagram_1.h
+include/CGAL/Envelope_diagram_1.h
 include/CGAL/Envelope_2/Env_divide_and_conquer_2.h
 include/CGAL/Envelope_2/Env_divide_and_conquer_2_impl.h
 include/CGAL/Envelope_3/Envelope_base.h
@@ -540,7 +640,6 @@ include/CGAL/Extended_cartesian.h
 include/CGAL/Extended_homogeneous.h
 include/CGAL/Extremal_polygon_traits_2.h
 include/CGAL/FPU.h
-include/CGAL/Fast_orthogonal_k_neighbor_search.h
 include/CGAL/Filter_circulator.h
 include/CGAL/Filtered_bbox_circular_kernel_2/bbox_filtered_predicates.h
 include/CGAL/Filtered_bbox_circular_kernel_2.h
@@ -552,6 +651,9 @@ include/CGAL/Filtered_kernel/Cartesian_coordinate_iterator_3.h
 include/CGAL/Filtered_kernel_fwd.h
 include/CGAL/Filtered_kernel.h
 include/CGAL/Filtered_predicate.h
+include/CGAL/Fixed_alpha_shape_3.h
+include/CGAL/Fixed_alpha_shape_cell_base_3.h
+include/CGAL/Fixed_alpha_shape_vertex_base_3.h
 include/CGAL/Fixed_border_parameterizer_3.h
 include/CGAL/Flattening_iterator.h
 include/CGAL/Fourtuple.h
@@ -565,10 +667,12 @@ include/CGAL/GMP/Gmpfr_type_static.h
 include/CGAL/GMP/Gmpq_type.h
 include/CGAL/GMP/Gmpzf_type.h
 include/CGAL/GMP/Gmpz_type.h
+include/CGAL/GMP_arithmetic_kernel.h
 include/CGAL/General_polygon_2.h
 include/CGAL/General_polygon_set_2.h
 include/CGAL/General_polygon_set_on_surface_2.h
 include/CGAL/General_polygon_with_holes_2.h
+include/CGAL/Get_arithmetic_kernel.h
 include/CGAL/Gmp_coercion_traits.h
 include/CGAL/Gmpfi.h
 include/CGAL/Gmpfr.h
@@ -603,9 +707,18 @@ include/CGAL/Handle_for_virtual.h
 include/CGAL/Handle.h
 include/CGAL/Handle_hash_function.h
 include/CGAL/Handle_with_policy.h
+include/CGAL/Hilbert_policy_tags.h
 include/CGAL/Hilbert_sort_2.h
 include/CGAL/Hilbert_sort_3.h
 include/CGAL/Hilbert_sort_base.h
+include/CGAL/Hilbert_sort_d.h
+include/CGAL/Hilbert_sort_median_2.h
+include/CGAL/Hilbert_sort_median_3.h
+include/CGAL/Hilbert_sort_median_d.h
+include/CGAL/Hilbert_sort_middle_2.h
+include/CGAL/Hilbert_sort_middle_3.h
+include/CGAL/Hilbert_sort_middle_base.h
+include/CGAL/Hilbert_sort_middle_d.h
 include/CGAL/Homogeneous/Aff_transformationH2.h
 include/CGAL/Homogeneous/Aff_transformationH3.h
 include/CGAL/Homogeneous/CircleH2.h
@@ -663,13 +776,11 @@ include/CGAL/IO/Fig_stream_Conic_arc_2.h
 include/CGAL/IO/Fig_stream.h
 include/CGAL/IO/File_header_OFF.h
 include/CGAL/IO/File_header_extended_OFF.h
-include/CGAL/IO/File_header_gocad.h
 include/CGAL/IO/File_medit.h
 include/CGAL/IO/File_poly.h
 include/CGAL/IO/File_scanner_OFF.h
 include/CGAL/IO/File_writer_OFF.h
 include/CGAL/IO/File_writer_VRML_2.h
-include/CGAL/IO/File_writer_gocad.h
 include/CGAL/IO/File_writer_inventor.h
 include/CGAL/IO/File_writer_wavefront.h
 include/CGAL/IO/Generic_writer.h
@@ -821,7 +932,6 @@ include/CGAL/Iso_rectangle_2_Ray_2_intersection.h
 include/CGAL/Iso_rectangle_2_Segment_2_intersection.h
 include/CGAL/Iso_rectangle_2.h
 include/CGAL/Iso_rectangle_d.h
-include/CGAL/Iterator_identity.h
 include/CGAL/Iterator_project.h
 include/CGAL/Iterator_transform.h
 include/CGAL/Join_input_iterator.h
@@ -976,6 +1086,7 @@ include/CGAL/Kinetic/internal/tds_2_helpers.h
 include/CGAL/Kinetic/internal/triangulation_helpers_3.h
 include/CGAL/Kinetic/listeners.h
 include/CGAL/K_neighbor_search.h
+include/CGAL/LEDA_arithmetic_kernel.h
 include/CGAL/LEDA_basic.h
 include/CGAL/LSCM_parameterizer_3.h
 include/CGAL/Labeled_image_mesh_domain_3.h
@@ -997,10 +1108,18 @@ include/CGAL/Line_2.h
 include/CGAL/Line_3.h
 include/CGAL/Linear_algebraCd.h
 include/CGAL/Linear_algebraHd.h
+include/CGAL/Linear_cell_complex.h
+include/CGAL/Linear_cell_complex_constructors.h
+include/CGAL/Linear_cell_complex_incremental_builder.h
+include/CGAL/Linear_cell_complex_min_items.h
+include/CGAL/Linear_cell_complex_operations.h
+include/CGAL/Linear_cell_complex_traits.h
 include/CGAL/Line_arc_2.h
 include/CGAL/Line_arc_3.h
 include/CGAL/Location_policy.h
 include/CGAL/MP_Float.h
+include/CGAL/MP_Float_arithmetic_kernel.h
+include/CGAL/MP_Float_impl.h
 include/CGAL/Manhattan_distance_iso_box_point.h
 include/CGAL/Marching_tetrahedra_observer_default_3.h
 include/CGAL/Marching_tetrahedra_traits_skin_surface_3.h
@@ -1015,18 +1134,31 @@ include/CGAL/Mesh_2/Refine_edges_visitor.h
 include/CGAL/Mesh_2/Refine_edges_with_clusters.h
 include/CGAL/Mesh_2/Refine_faces.h
 include/CGAL/Mesh_3/C3T3_helpers.h
+include/CGAL/Mesh_3/Cell_criteria_visitor_with_balls.h
 include/CGAL/Mesh_3/Creator_weighted_point_3.h
+include/CGAL/Mesh_3/Detect_features_in_polyhedra.h
+include/CGAL/Mesh_3/Detect_features_in_polyhedra_fwd.h
+include/CGAL/Mesh_3/Detect_polylines_in_polyhedra.h
+include/CGAL/Mesh_3/Detect_polylines_in_polyhedra_fwd.h
+include/CGAL/Mesh_3/Facet_criteria_visitor_with_balls.h
+include/CGAL/Mesh_3/Facet_on_same_surface_criterion.h
 include/CGAL/Mesh_3/IO.h
 include/CGAL/Mesh_3/Image_to_labeled_function_wrapper.h
 include/CGAL/Mesh_3/Implicit_surface_mesher_visitor.h
 include/CGAL/Mesh_3/Labeled_mesh_domain_3.h
 include/CGAL/Mesh_3/Lloyd_move.h
 include/CGAL/Mesh_3/Mesher_3.h
+include/CGAL/Mesh_3/Mesh_complex_3_in_triangulation_3_base.h
 include/CGAL/Mesh_3/Mesh_global_optimizer.h
 include/CGAL/Mesh_3/Mesh_sizing_field.h
 include/CGAL/Mesh_3/Mesh_surface_cell_base_3.h
+include/CGAL/Mesh_3/Null_exuder_visitor.h
+include/CGAL/Mesh_3/Null_global_optimizer_visitor.h
+include/CGAL/Mesh_3/Null_perturber_visitor.h
 include/CGAL/Mesh_3/Odt_move.h
 include/CGAL/Mesh_3/Poisson_refine_cells_3.h
+include/CGAL/Mesh_3/Polyline_with_context.h
+include/CGAL/Mesh_3/Protect_edges_sizing_field.h
 include/CGAL/Mesh_3/Refine_cells_3.h
 include/CGAL/Mesh_3/Refine_facets_3.h
 include/CGAL/Mesh_3/Refine_tets_visitor.h
@@ -1041,10 +1173,17 @@ include/CGAL/Mesh_3/Triangulation_helpers.h
 include/CGAL/Mesh_3/Triangulation_sizing_field.h
 include/CGAL/Mesh_3/Uniform_sizing_field.h
 include/CGAL/Mesh_3/dihedral_angle_3.h
+include/CGAL/Mesh_3/parameters_defaults.h
+include/CGAL/Mesh_3/utilities.h
+include/CGAL/Mesh_constant_domain_field_3.h
 include/CGAL/Mesh_criteria_3.h
 include/CGAL/Mesh_cell_base_3.h
 include/CGAL/Mesh_cell_criteria_3.h
 include/CGAL/Mesh_complex_3_in_triangulation_3.h
+include/CGAL/Mesh_domain_with_polyline_features_3.h
+include/CGAL/Mesh_edge_criteria_3.h
+include/CGAL/Mesh_facet_topology.h
+include/CGAL/Mesh_polyhedron_3.h
 include/CGAL/Mesh_vertex_base_3.h
 include/CGAL/Mesher_level_default_implementations.h
 include/CGAL/Mesher_level.h
@@ -1109,6 +1248,9 @@ include/CGAL/Min_sphere_annulus_d_traits_d.h
 include/CGAL/Min_sphere_d/Min_sphere_d_impl.h
 include/CGAL/Min_sphere_d/Optimisation_sphere_d.h
 include/CGAL/Min_sphere_d.h
+include/CGAL/Min_sphere_of_points_d_traits_2.h
+include/CGAL/Min_sphere_of_points_d_traits_3.h
+include/CGAL/Min_sphere_of_points_d_traits_d.h
 include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_configure.h
 include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_impl.h
 include/CGAL/Min_sphere_of_spheres_d/Min_sphere_of_spheres_d_pair.h
@@ -1266,61 +1408,6 @@ include/CGAL/Origin.h
 include/CGAL/Orthogonal_incremental_neighbor_search.h
 include/CGAL/Orthogonal_k_neighbor_search.h
 include/CGAL/PCA_util.h
-include/CGAL/PDB/Atom.h
-include/CGAL/PDB/Chain.h
-include/CGAL/PDB/Heterogen.h
-include/CGAL/PDB/Matrix.h
-include/CGAL/PDB/Model.h
-include/CGAL/PDB/Monomer.h
-include/CGAL/PDB/PDB.h
-include/CGAL/PDB/Point.h
-include/CGAL/PDB/Quaternion.h
-include/CGAL/PDB/Transform.h
-include/CGAL/PDB/align.h
-include/CGAL/PDB/basic.h
-include/CGAL/PDB/distance.h
-include/CGAL/PDB/internal/Error_logger.h
-include/CGAL/PDB/internal/Monomer_data.h
-include/CGAL/PDB/internal/Nested_iterator.h
-include/CGAL/PDB/internal/align_points.h
-include/CGAL/PDB/internal/dummies.h
-include/CGAL/PDB/internal/foreach.h
-include/CGAL/PDB/internal/pdb_utils.h
-include/CGAL/PDB/internal/rangelib/algo.hpp
-include/CGAL/PDB/internal/rangelib/algo_old.hpp
-include/CGAL/PDB/internal/rangelib/break.hpp
-include/CGAL/PDB/internal/rangelib/filter.hpp
-include/CGAL/PDB/internal/rangelib/generate.hpp
-include/CGAL/PDB/internal/rangelib/indirect.hpp
-include/CGAL/PDB/internal/rangelib/multi_byeach.hpp
-include/CGAL/PDB/internal/rangelib/multi_byrange.hpp
-include/CGAL/PDB/internal/rangelib/multi.hpp
-include/CGAL/PDB/internal/rangelib/priv/defs.hpp
-include/CGAL/PDB/internal/rangelib/priv/rng_fun.hpp
-include/CGAL/PDB/internal/rangelib/priv/traits.hpp
-include/CGAL/PDB/internal/rangelib/range.hpp
-include/CGAL/PDB/internal/rangelib/resort.hpp
-include/CGAL/PDB/internal/rangelib/reverse.hpp
-include/CGAL/PDB/internal/rangelib/slice_byeach.hpp
-include/CGAL/PDB/internal/rangelib/slice_byrange.hpp
-include/CGAL/PDB/internal/rangelib/slice.hpp
-include/CGAL/PDB/internal/rangelib/transform.hpp
-include/CGAL/PDB/internal/tnt/jama_cholesky.h
-include/CGAL/PDB/internal/tnt/jama_eig.h
-include/CGAL/PDB/internal/tnt/jama_lu.h
-include/CGAL/PDB/internal/tnt/jama_qr.h
-include/CGAL/PDB/internal/tnt/jama_svd.h
-include/CGAL/PDB/internal/tnt/tnt_array1d.h
-include/CGAL/PDB/internal/tnt/tnt_array1d_utils.h
-include/CGAL/PDB/internal/tnt/tnt_array2d.h
-include/CGAL/PDB/internal/tnt/tnt_array2d_utils.h
-include/CGAL/PDB/internal/tnt/tnt_cmat.h
-include/CGAL/PDB/internal/tnt/tnt_i_refvec.h
-include/CGAL/PDB/internal/tnt/tnt_math_utils.h
-include/CGAL/PDB/internal/tnt/tnt_subscript.h
-include/CGAL/PDB/internal/tnt/tnt_vec.h
-include/CGAL/PDB/range.h
-include/CGAL/PDB/small_map.h
 include/CGAL/Parabola_2.h
 include/CGAL/Parabola_segment_2.h
 include/CGAL/Parameterization_mesh_feature_extractor.h
@@ -1359,7 +1446,6 @@ include/CGAL/Partition_2/partition_optimal_convex_2.h
 include/CGAL/Partition_2/partition_y_monotone_2.h
 include/CGAL/Partition_is_valid_traits_2.h
 include/CGAL/Partition_traits_2.h
-include/CGAL/Peak_memory_sizer.h
 include/CGAL/Periodic_3_Delaunay_triangulation_3.h
 include/CGAL/Periodic_3_offset_3.h
 include/CGAL/Periodic_3_triangulation_3.h
@@ -1408,6 +1494,7 @@ include/CGAL/Polygon_traits_2.h
 include/CGAL/Polygon_with_holes_2.h
 include/CGAL/PolyhedralSurf_neighbors.h
 include/CGAL/Polyhedral_mesh_domain_3.h
+include/CGAL/Polyhedral_mesh_domain_with_features_3.h
 include/CGAL/Polyhedron_3.h
 include/CGAL/Polyhedron_copy_3.h
 include/CGAL/Polyhedron_decorator_3.h
@@ -1417,7 +1504,6 @@ include/CGAL/Polyhedron_items_with_id_3.h
 include/CGAL/Polyhedron_min_items_3.h
 include/CGAL/Polyhedron_traits_3.h
 include/CGAL/Polyhedron_traits_with_normals_3.h
-include/CGAL/Polynomial/Algebraic_structure_traits_extended.h
 include/CGAL/Polynomial/Algebraic_structure_traits.h
 include/CGAL/Polynomial/CORE_Expr_root_stack.h
 include/CGAL/Polynomial/CORE_kernel.h
@@ -1427,6 +1513,7 @@ include/CGAL/Polynomial/Coercion_traits.h
 include/CGAL/Polynomial/Degree.h
 include/CGAL/Polynomial/Fixed_polynomial.h
 include/CGAL/Polynomial/Fraction_traits.h
+include/CGAL/Polynomial/Get_arithmetic_kernel.h
 include/CGAL/Polynomial/Interpolator.h
 include/CGAL/Polynomial/Interval_polynomial.h
 include/CGAL/Polynomial/Kernel.h
@@ -1547,17 +1634,18 @@ include/CGAL/Polynomial/modular_gcd_utcf_dfai.h
 include/CGAL/Polynomial/modular_gcd_utils.h
 include/CGAL/Polynomial/polynomial_converters.h
 include/CGAL/Polynomial/polynomial_gcd.h
+include/CGAL/Polynomial/polynomial_gcd_ntl.h
 include/CGAL/Polynomial/polynomial_gcd_implementations.h
 include/CGAL/Polynomial/prs_resultant.h
 include/CGAL/Polynomial/resultant.h
+include/CGAL/Polynomial/square_free_factorize.h
+include/CGAL/Polynomial/sturm_habicht_sequence.h
+include/CGAL/Polynomial/subresultants.h
 include/CGAL/Polynomials_1_2.h
 include/CGAL/Polynomials_1_3.h
 include/CGAL/Polynomials_2_2.h
 include/CGAL/Polynomials_2_3.h
 include/CGAL/Polynomials_for_line_3.h
-include/CGAL/Polynomial/square_free_factorize.h
-include/CGAL/Polynomial/sturm_habicht_sequence.h
-include/CGAL/Polynomial/subresultants.h
 include/CGAL/Polynomial_traits_d.h
 include/CGAL/Polynomial_type_generator.h
 include/CGAL/Polytope_distance_d.h
@@ -1566,6 +1654,9 @@ include/CGAL/Polytope_distance_d_traits_3.h
 include/CGAL/Polytope_distance_d_traits_d.h
 include/CGAL/Profile_counter.h
 include/CGAL/Profile_timer.h
+include/CGAL/Projection_traits_xy_3.h
+include/CGAL/Projection_traits_xz_3.h
+include/CGAL/Projection_traits_yz_3.h
 include/CGAL/QP_functions.h
 include/CGAL/QP_models.h
 include/CGAL/QP_options.h
@@ -1593,6 +1684,9 @@ include/CGAL/QP_solver/assertions.h
 include/CGAL/QP_solver/basic.h
 include/CGAL/QP_solver/debug.h
 include/CGAL/QP_solver/functors.h
+include/CGAL/Qt/AlphaShapeGraphicsItem.h
+include/CGAL/Qt/ApolloniusGraphGraphicsItem.h
+include/CGAL/Qt/CGAL_Qt4_config.h
 include/CGAL/Qt/CircularArcGraphicsItem.h
 include/CGAL/Qt/ConstrainedTriangulationGraphicsItem.h
 include/CGAL/Qt/Converter.h
@@ -1609,18 +1703,26 @@ include/CGAL/Qt/GraphicsViewPolygonWithHolesInput.h
 include/CGAL/Qt/GraphicsViewPolylineInput.h
 include/CGAL/Qt/LineGraphicsItem.h
 include/CGAL/Qt/PainterOstream.h
+include/CGAL/Qt/PointsGraphicsItem.h
+include/CGAL/Qt/PointsInKdTreeGraphicsItem.h
 include/CGAL/Qt/PolygonGraphicsItem.h
 include/CGAL/Qt/PolygonWithHolesGraphicsItem.h
+include/CGAL/Qt/PolylinesGraphicsItem.h
 include/CGAL/Qt/PowerdiagramGraphicsItem.h
+include/CGAL/Qt/RegularGridGraphicsItem.h
+include/CGAL/Qt/RegularGridVectorFieldGraphicsItem.h
 include/CGAL/Qt/RegularTriangulationGraphicsItem.h
 include/CGAL/Qt/SegmentDelaunayGraphGraphicsItem.h
+include/CGAL/Qt/SegmentsGraphicsItem.h
+include/CGAL/Qt/StreamLinesGraphicsItem.h
 include/CGAL/Qt/TriangulationGraphicsItem.h
 include/CGAL/Qt/VoronoiGraphicsItem.h
 include/CGAL/Qt/debug.h
+include/CGAL/Qt/resources.h
 include/CGAL/Qt/utility.h
-include/CGAL/Qualified_result_of.h
 include/CGAL/Quotient.h
-include/CGAL/RS/Algebraic_kernel_d_1_RS.h
+include/CGAL/Quotient_fwd.h
+include/CGAL/RS/Algebraic_kernel_rs_1.h
 include/CGAL/RS/algebraic_1_comparisons.h
 include/CGAL/RS/algebraic_1_constructors.h
 include/CGAL/RS/algebraic_1.h
@@ -1630,14 +1732,13 @@ include/CGAL/RS/algebraic_1_other.h
 include/CGAL/RS/algebraic_1_real_embeddable.h
 include/CGAL/RS/basic.h
 include/CGAL/RS/compare_1.h
-include/CGAL/RS/crt.h
 include/CGAL/RS/dyadic.h
-include/CGAL/RS/functors.h
-include/CGAL/RS/inverse.h
-include/CGAL/RS/pagealloc.h
-include/CGAL/RS/p.h
+include/CGAL/RS/functors_1.h
+include/CGAL/RS/isolator_1.h
+include/CGAL/RS/isole_1.h
 include/CGAL/RS/polynomial_1_constructors.h
 include/CGAL/RS/polynomial_1_eval.h
+include/CGAL/RS/polynomial_1_functors.h
 include/CGAL/RS/polynomial_1.h
 include/CGAL/RS/polynomial_1_impl.h
 include/CGAL/RS/polynomial_1_io.h
@@ -1646,15 +1747,19 @@ include/CGAL/RS/polynomial_1_operators.h
 include/CGAL/RS/polynomial_1_parser.h
 include/CGAL/RS/polynomial_1_utils.h
 include/CGAL/RS/polynomial_converter.h
-include/CGAL/RS/polynomial_functors.h
-include/CGAL/RS/pp.h
-include/CGAL/RS/primes.h
 include/CGAL/RS/refine_1_rs.h
+include/CGAL/RS/rs_calls_1.h
 include/CGAL/RS/sign_1.h
 include/CGAL/RS/sign_1_no_rs.h
 include/CGAL/RS/sign_1_rs.h
 include/CGAL/RS/solve_1.h
-include/CGAL/RS/ugcd.h
+include/CGAL/RS/ugcd/crt.h
+include/CGAL/RS/ugcd/inverse.h
+include/CGAL/RS/ugcd/p.h
+include/CGAL/RS/ugcd/pagealloc.h
+include/CGAL/RS/ugcd/pp.h
+include/CGAL/RS/ugcd/primes.h
+include/CGAL/RS/ugcd/ugcd.h
 include/CGAL/Random_access_adaptor.h
 include/CGAL/Random_access_value_adaptor.h
 include/CGAL/Random_convex_set_traits_2.h
@@ -1699,11 +1804,12 @@ include/CGAL/Robust_circumcenter_traits_3.h
 include/CGAL/Robust_construction.h
 include/CGAL/Root_for_circles_2_2.h
 include/CGAL/Root_for_spheres_2_3.h
-include/CGAL/Root_of_2.h
 include/CGAL/Root_of_traits.h
+include/CGAL/Root_of_traits_specializations.h
 include/CGAL/Runge_kutta_integrator_2.h
 include/CGAL/Safe_circulator_from_iterator.h
 include/CGAL/Scalar_factor_traits.h
+include/CGAL/Search_traits_adapter.h
 include/CGAL/Search_traits_2.h
 include/CGAL/Search_traits_3.h
 include/CGAL/Search_traits_d.h
@@ -1722,6 +1828,7 @@ include/CGAL/Segment_Delaunay_graph_2/Are_same_points_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Are_same_segments_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Arrangement_enum.h
 include/CGAL/Segment_Delaunay_graph_2/Arrangement_type_C2.h
+include/CGAL/Segment_Delaunay_graph_2/Arrangement_type_non_intersecting_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Basic_predicates_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Cartesian_converter.h
 include/CGAL/Segment_Delaunay_graph_2/Compare_x_2.h
@@ -1741,7 +1848,6 @@ include/CGAL/Segment_Delaunay_graph_2/Oriented_side_of_bisector_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Predicates_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Segment_Delaunay_graph_2_impl.h
 include/CGAL/Segment_Delaunay_graph_2/Segment_Delaunay_graph_hierarchy_2_impl.h
-include/CGAL/Segment_Delaunay_graph_2/Sqrt_extension_1.h
 include/CGAL/Segment_Delaunay_graph_2/Sqrt_extension_2.h
 include/CGAL/Segment_Delaunay_graph_2/Traits_base_2.h
 include/CGAL/Segment_Delaunay_graph_2/Traits_wrapper_2.h
@@ -1750,11 +1856,14 @@ include/CGAL/Segment_Delaunay_graph_2/Vertex_conflict_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Voronoi_vertex_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Voronoi_vertex_ring_C2.h
 include/CGAL/Segment_Delaunay_graph_2/Voronoi_vertex_sqrt_field_C2.h
+include/CGAL/Segment_Delaunay_graph_2/Voronoi_vertex_sqrt_field_new_C2.h
 include/CGAL/Segment_Delaunay_graph_2/basic.h
 include/CGAL/Segment_Delaunay_graph_2/edge_list.h
+include/CGAL/Segment_Delaunay_graph_2/in_place_edge_list.h
 include/CGAL/Segment_Delaunay_graph_2.h
 include/CGAL/Segment_Delaunay_graph_adaptation_policies_2.h
 include/CGAL/Segment_Delaunay_graph_adaptation_traits_2.h
+include/CGAL/Segment_Delaunay_graph_face_base_2.h
 include/CGAL/Segment_Delaunay_graph_filtered_traits_2.h
 include/CGAL/Segment_Delaunay_graph_hierarchy_2.h
 include/CGAL/Segment_Delaunay_graph_hierarchy_vertex_base_2.h
@@ -1788,6 +1897,9 @@ include/CGAL/Snap_rounding_2.h
 include/CGAL/Snap_rounding_kd_2.h
 include/CGAL/Snap_rounding_traits_2.h
 include/CGAL/Sorted_matrix_search_traits_adaptor.h
+include/CGAL/Spatial_sort_traits_adapter_2.h
+include/CGAL/Spatial_sort_traits_adapter_3.h
+include/CGAL/Spatial_sort_traits_adapter_d.h
 include/CGAL/Sphere_3.h
 include/CGAL/Spherical_kernel_3.h
 include/CGAL/Spherical_kernel_intersections.h
@@ -1798,10 +1910,14 @@ include/CGAL/Sqrt_extension/Algebraic_structure_traits.h
 include/CGAL/Sqrt_extension/Chinese_remainder_traits.h
 include/CGAL/Sqrt_extension/Coercion_traits.h
 include/CGAL/Sqrt_extension/Fraction_traits.h
+include/CGAL/Sqrt_extension/Get_arithmetic_kernel.h
 include/CGAL/Sqrt_extension/Modular_traits.h
 include/CGAL/Sqrt_extension/Real_embeddable_traits.h
 include/CGAL/Sqrt_extension/Scalar_factor_traits.h
 include/CGAL/Sqrt_extension/Sqrt_extension_type.h
+include/CGAL/Sqrt_extension/Wang_traits.h
+include/CGAL/Sqrt_extension/convert_to_bfi.h
+include/CGAL/Sqrt_extension_fwd.h
 include/CGAL/Sqrt_extension.h
 include/CGAL/Sqrt_extension/io.h
 include/CGAL/Square_border_parameterizer_3.h
@@ -1932,6 +2048,7 @@ include/CGAL/Triangle_3_Ray_3_do_intersect.h
 include/CGAL/Triangle_3_Segment_3_do_intersect.h
 include/CGAL/Triangle_3_Tetrahedron_3_do_intersect.h
 include/CGAL/Triangle_3_Triangle_3_do_intersect.h
+include/CGAL/Triangle_3_Triangle_3_intersection.h
 include/CGAL/Triangle_3.h
 include/CGAL/Triangle_accessor_3.h
 include/CGAL/Triangular_field_2.h
@@ -1972,6 +2089,7 @@ include/CGAL/Triangulation_incremental_builder_3.h
 include/CGAL/Triangulation_iterator_adaptator.h
 include/CGAL/Triangulation_line_face_circulator_2.h
 include/CGAL/Triangulation_simplex_3.h
+include/CGAL/Triangulation_structural_filtering_traits.h
 include/CGAL/Triangulation_utils_2.h
 include/CGAL/Triangulation_utils_3.h
 include/CGAL/Triangulation_vertex_base_2.h
@@ -2024,7 +2142,6 @@ include/CGAL/Voronoi_diagram_2/Validity_testers.h
 include/CGAL/Voronoi_diagram_2/Vertex.h
 include/CGAL/Voronoi_diagram_2/basic.h
 include/CGAL/Voronoi_diagram_2.h
-include/CGAL/Voronoi_diagram_2/tags.h
 include/CGAL/Voronoi_intersection_2_traits_3.h
 include/CGAL/Weighted_Minkowski_distance.h
 include/CGAL/Weighted_alpha_shape_euclidean_traits_2.h
@@ -2046,14 +2163,11 @@ include/CGAL/arrange_offset_polygons_2.h
 include/CGAL/array.h
 include/CGAL/assertions_behaviour.h
 include/CGAL/assertions.h
-include/CGAL/auto_link/CGALQt.h
 include/CGAL/auto_link/CGAL.h
+include/CGAL/auto_link/CGALQt3.h
 include/CGAL/auto_link/CORE.h
-include/CGAL/auto_link/GMP.h
 include/CGAL/auto_link/ImageIO.h
 include/CGAL/auto_link/LAPACK.h
-include/CGAL/auto_link/MPFR.h
-include/CGAL/auto_link/PDB.h
 include/CGAL/auto_link/Qt4.h
 include/CGAL/auto_link/TAUCS.h
 include/CGAL/auto_link/auto_link.h
@@ -2111,12 +2225,14 @@ include/CGAL/convert_to_bfi.h
 include/CGAL/convex_decomposition_3.h
 include/CGAL/convex_hull_2.h
 include/CGAL/convex_hull_3.h
+include/CGAL/convex_hull_3_to_polyhedron_3.h
 include/CGAL/convex_hull_constructive_traits_2.h
 include/CGAL/convex_hull_incremental_3.h
 include/CGAL/convex_hull_traits_2.h
 include/CGAL/convexity_check_2.h
 include/CGAL/convexity_check_3.h
 include/CGAL/copy_n.h
+include/CGAL/corefinement_operations.h
 include/CGAL/create_offset_polygons_2.h
 include/CGAL/create_offset_polygons_from_polygon_with_holes_2.h
 include/CGAL/create_straight_skeleton_2.h
@@ -2131,6 +2247,11 @@ include/CGAL/enum.h
 include/CGAL/envelope_2.h
 include/CGAL/envelope_3.h
 include/CGAL/exceptions.h
+include/CGAL/export/CGAL.h
+include/CGAL/export/CORE.h
+include/CGAL/export/ImageIO.h
+include/CGAL/export/Qt4.h
+include/CGAL/export/helpers.h
 include/CGAL/extended_euclidean_algorithm.h
 include/CGAL/extremal_polygon_2.h
 include/CGAL/exude_mesh_3.h
@@ -2147,6 +2268,7 @@ include/CGAL/global_functions_on_roots_and_polynomials_1_3.h
 include/CGAL/global_functions_on_roots_and_polynomials_2_3.h
 include/CGAL/global_functions_spherical_kernel_3.h
 include/CGAL/glu.h
+include/CGAL/gmp.h
 include/CGAL/gmpxx_coercion_traits.h
 include/CGAL/gmpxx.h
 include/CGAL/grabbers.h
@@ -2157,28 +2279,43 @@ include/CGAL/halfedgeDS_cut_component.h
 include/CGAL/halfedgeds_connected_components.h
 include/CGAL/hilbert_sort.h
 include/CGAL/in_place_edge_list.h
-include/CGAL/internal/AABB_Intersections_3/Bbox_3_Plane_3_do_intersect.h
-include/CGAL/internal/AABB_Intersections_3/Bbox_3_Sphere_3_do_intersect.h
-include/CGAL/internal/AABB_Intersections_3/Bbox_3_Triangle_3_do_intersect.h
-include/CGAL/internal/AABB_Intersections_3/Triangle_3_Plane_3_intersection.h
+include/CGAL/internal/AABB_tree/AABB_drawing_traits.h
+include/CGAL/internal/AABB_tree/AABB_node.h
+include/CGAL/internal/AABB_tree/AABB_search_tree.h
+include/CGAL/internal/AABB_tree/AABB_traversal_traits.h
 include/CGAL/internal/AABB_tree/nearest_point_segment_3.h
 include/CGAL/internal/AABB_tree/nearest_point_triangle_3.h
+include/CGAL/internal/Classification_type.h
+include/CGAL/internal/Combinatorial_map_functors.h
+include/CGAL/internal/Combinatorial_map_utility.h
+include/CGAL/internal/Combinatorial_map_utility_novariadic.h
 include/CGAL/internal/Delaunay_triangulation_hierarchy_3.h
 include/CGAL/internal/Dummy_tds_3.h
 include/CGAL/internal/Exact_type_selector.h
 include/CGAL/internal/Intersections_3/Bbox_3_Bbox_3_do_intersect.h
+include/CGAL/internal/Intersections_3/Bbox_3_Plane_3_do_intersect.h
 include/CGAL/internal/Intersections_3/Bbox_3_Line_3_do_intersect.h
 include/CGAL/internal/Intersections_3/Bbox_3_Ray_3_do_intersect.h
 include/CGAL/internal/Intersections_3/Bbox_3_Segment_3_do_intersect.h
+include/CGAL/internal/Intersections_3/Bbox_3_Sphere_3_do_intersect.h
+include/CGAL/internal/Intersections_3/Bbox_3_Triangle_3_do_intersect.h
 include/CGAL/internal/Intersections_3/Triangle_3_Line_3_intersection.h
 include/CGAL/internal/Intersections_3/Triangle_3_Ray_3_intersection.h
 include/CGAL/internal/Intersections_3/Triangle_3_Segment_3_intersection.h
+include/CGAL/internal/K_neighbor_search.h
+include/CGAL/internal/Lazy_alpha_nt_2.h
+include/CGAL/internal/Lazy_alpha_nt_3.h
+include/CGAL/internal/Projection_traits_3.h
 include/CGAL/internal/Regular_triangulation_filtered_traits_3.h
+include/CGAL/internal/Static_filters/Angle_3.h
 include/CGAL/internal/Static_filters/Compare_squared_radius_3.h
 include/CGAL/internal/Static_filters/Compare_weighted_squared_radius_3.h
 include/CGAL/internal/Static_filters/Compare_y_at_x_2.h
 include/CGAL/internal/Static_filters/Coplanar_orientation_3.h
 include/CGAL/internal/Static_filters/Coplanar_side_of_bounded_circle_3.h
+include/CGAL/internal/Static_filters/Do_intersect_3.h
+include/CGAL/internal/Static_filters/Equal_3.h
+include/CGAL/internal/Static_filters/Is_degenerate_3.h
 include/CGAL/internal/Static_filters/Orientation_2.h
 include/CGAL/internal/Static_filters/Orientation_3.h
 include/CGAL/internal/Static_filters/Periodic_3_orientation_3.h
@@ -2192,7 +2329,20 @@ include/CGAL/internal/Static_filters/Static_filters.h
 include/CGAL/internal/Static_filters/tools.h
 include/CGAL/internal/Triangulation_ds_circulators_3.h
 include/CGAL/internal/Triangulation_ds_iterators_3.h
+include/CGAL/internal/boost/array_binary_tree.hpp
+include/CGAL/internal/boost/mutable_heap.hpp
+include/CGAL/internal/boost/mutable_queue.hpp
+include/CGAL/internal/boost/property_map.h
+include/CGAL/internal/bounded_priority_queue.h
+include/CGAL/internal/corefinement/Combinatorial_map_for_corefinement.h
+include/CGAL/internal/corefinement/Polyhedron_constness_types.h
+include/CGAL/internal/corefinement/Polyhedron_subset_extraction.h
+include/CGAL/internal/corefinement/intersection_coplanar_triangles_3.h
+include/CGAL/internal/corefinement/intersection_triangle_segment_3.h
+include/CGAL/internal/corefinement/intersection_triangle_segment_3_coplanar.h
 include/CGAL/internal/container_fwd_fixed.hpp
+include/CGAL/internal/deprecation_warning.h
+include/CGAL/internal/info_check.h
 include/CGAL/interpolation_functions.h
 include/CGAL/intersection_2_1.h
 include/CGAL/intersection_2_2.h
@@ -2200,10 +2350,15 @@ include/CGAL/intersection_2_3.h
 include/CGAL/intersection_2.h
 include/CGAL/intersection_3_1.h
 include/CGAL/intersection_3.h
+include/CGAL/intersection_of_Polyhedra_3.h
+include/CGAL/intersection_of_Polyhedra_3_refinement_visitor.h
 include/CGAL/intersections_d.h
 include/CGAL/intersections.h
 include/CGAL/int.h
 include/CGAL/ipower.h
+include/CGAL/is_convertible.h
+include/CGAL/is_iterator.h
+include/CGAL/is_streamable.h
 include/CGAL/is_y_monotone_2.h
 include/CGAL/iterator.h
 include/CGAL/jet_estimate_normals.h
@@ -2329,6 +2484,7 @@ include/CGAL/squared_distance_3_1.h
 include/CGAL/squared_distance_3_2.h
 include/CGAL/squared_distance_3.h
 include/CGAL/squared_distance_utils.h
+include/CGAL/sse2.h
 include/CGAL/streamlines_assertions.h
 include/CGAL/subdivide_skin_surface_mesh_3.h
 include/CGAL/subdivide_union_of_balls_mesh_3.h
@@ -2345,6 +2501,7 @@ include/CGAL/triangulate_power_diagram_3.h
 include/CGAL/triangulation_assertions.h
 include/CGAL/tuple.h
 include/CGAL/type_traits.h
+include/CGAL/use.h
 include/CGAL/user_classes.h
 include/CGAL/utility.h
 include/CGAL/utils_classes.h
@@ -2352,38 +2509,43 @@ include/CGAL/utils.h
 include/CGAL/value_type_traits.h
 include/CGAL/vector.h
 include/CGAL/version.h
+include/CGAL/version_macros.h
 include/CGAL/vtkSurfaceMesherContourFilter.h
 include/CGAL/width_assertions.h
 include/CGAL/wmult.h
+lib/CGAL/2.6.2-to-2.8.1/FindQt4-Copyright.txt
+lib/CGAL/2.6.2-to-2.8.1/FindQt4.cmake
+lib/CGAL/2.6.2-to-2.8.1/Qt4ConfigDependentSettings.cmake
+lib/CGAL/2.6.2-to-2.8.1/Qt4Macros.cmake
+lib/CGAL/2.6.2-to-2.8.1/UseQt4.cmake
 lib/CGAL/CGAL_CheckCXXFileRuns.cmake
+lib/CGAL/CGALConfig_install.cmake.in
 lib/CGAL/CGAL_Common.cmake
 lib/CGAL/CGALConfig_binary.cmake.in
 lib/CGAL/CGALConfig.cmake
-lib/CGAL/CGALConfig_install.cmake.fhs.in
-lib/CGAL/CGALConfig_install.cmake.source.in
 lib/CGAL/CGAL_CreateSingleSourceCGALProgram.cmake
-lib/CGAL/CGAL_FindPackageHandleStandardArgs.cmake
 lib/CGAL/CGAL_GeneratorSpecificSettings.cmake
 lib/CGAL/CGAL_Locate_CGAL_TAUCS.cmake
 lib/CGAL/CGAL_Macros.cmake
 lib/CGAL/CGAL_SetupBoost.cmake
 lib/CGAL/CGAL_SetupDependencies.cmake
 lib/CGAL/CGAL_SetupFlags.cmake
-lib/CGAL/CGAL_SetupGMPXX.cmake
-lib/CGAL/CGAL_SetupGMP.cmake
-lib/CGAL/CGAL_SetupLEDA.cmake
+lib/CGAL/CGAL_TweakFindBoost.cmake
 lib/CGAL/CGAL_UseBLAS.cmake
 lib/CGAL/CGAL_UseLAPACK.cmake
+lib/CGAL/CGAL_UseLEDA.cmake
 lib/CGAL/CGAL_UseMKL.cmake
 lib/CGAL/CGAL_UseMPFI.cmake
 lib/CGAL/CGAL_UseRS.cmake
+lib/CGAL/CGAL_UseRS3.cmake
 lib/CGAL/CGAL_UseTAUCS.cmake
 lib/CGAL/CGAL_VersionUtils.cmake
 lib/CGAL/FindBLAS.cmake
-lib/CGAL/FindBoost.cmake
 lib/CGAL/FindCGAL_CORE.cmake
 lib/CGAL/FindCGAL.cmake
 lib/CGAL/FindCORE.cmake
+lib/CGAL/FindESBTL.cmake
+lib/CGAL/FindEigen3.cmake
 lib/CGAL/FindF2C.cmake
 lib/CGAL/FindGMPXX.cmake
 lib/CGAL/FindGMP.cmake
@@ -2393,43 +2555,49 @@ lib/CGAL/FindLEDA.cmake
 lib/CGAL/FindMKL.cmake
 lib/CGAL/FindMPFI.cmake
 lib/CGAL/FindMPFR.cmake
+lib/CGAL/FindNTL.cmake
 lib/CGAL/FindOpenGL.cmake
-lib/CGAL/FindPackageMessage.cmake
 lib/CGAL/FindQGLViewer.cmake
 lib/CGAL/FindQt3-patched.cmake
-lib/CGAL/FindQt4.cmake
 lib/CGAL/FindRS.cmake
+lib/CGAL/FindRS3.cmake
 lib/CGAL/FindTAUCS.cmake
 lib/CGAL/Qt3Macros-patched.cmake
 lib/CGAL/UseCGAL.cmake
+lib/CGAL/UseESBTL.cmake
+lib/CGAL/UseEigen3.cmake
+lib/CGAL/test_MPFI.cpp
 lib/libCGAL_Core.so
-lib/libCGAL_Core.so.5
-lib/libCGAL_Core.so.5.0.0
+lib/libCGAL_Core.so.10
+lib/libCGAL_Core.so.10.0.0
 lib/libCGAL_ImageIO.so
-lib/libCGAL_ImageIO.so.5
-lib/libCGAL_ImageIO.so.5.0.0
-lib/libCGAL_PDB.so
-lib/libCGAL_PDB.so.5
-lib/libCGAL_PDB.so.5.0.0
-lib/libCGAL_Qt4.so
-lib/libCGAL_Qt4.so.5
-lib/libCGAL_Qt4.so.5.0.0
+lib/libCGAL_ImageIO.so.10
+lib/libCGAL_ImageIO.so.10.0.0
 lib/libCGAL.so
-lib/libCGAL.so.5
-lib/libCGAL.so.5.0.0
+lib/libCGAL.so.10
+lib/libCGAL.so.10.0.0
+lib/libCGAL_Qt4.so
+lib/libCGAL_Qt4.so.10
+lib/libCGAL_Qt4.so.10.0.0
+@dirrm lib/CGAL/2.6.2-to-2.8.1
 @dirrm lib/CGAL
 @dirrm include/CGAL/predicates
 @dirrm include/CGAL/internal/Intersections_3
-@dirrm include/CGAL/internal/AABB_Intersections_3
 @dirrm include/CGAL/internal/Static_filters
 @dirrm include/CGAL/internal/AABB_tree
+@dirrm include/CGAL/internal/boost
+@dirrm include/CGAL/internal/corefinement
 @dirrm include/CGAL/internal
 @dirrm include/CGAL/constructions
 @dirrm include/CGAL/boost/graph
 @dirrm include/CGAL/boost
+@dirrm include/CGAL/export
 @dirrm include/CGAL/auto_link
+@dirrm include/CGAL/Qt
 @dirrm include/CGAL/Voronoi_diagram_2
 @dirrm include/CGAL/Tools
+@dirrm include/CGAL/Segment_Delaunay_graph_2
+@dirrm include/CGAL/Sqrt_extension
 @dirrm include/CGAL/Sweep_line_2
 @dirrm include/CGAL/Surface_mesher
 @dirrm include/CGAL/Surface_mesh_simplification/Policies/Edge_collapse/Detail
@@ -2438,10 +2606,8 @@ lib/libCGAL.so.5.0.0
 @dirrm include/CGAL/Surface_mesh_simplification/Detail
 @dirrm include/CGAL/Surface_mesh_simplification
 @dirrm include/CGAL/Straight_skeleton_2
-@dirrm include/CGAL/Sqrt_extension
-@dirrm include/CGAL/Segment_Delaunay_graph_2
+@dirrm include/CGAL/RS/ugcd
 @dirrm include/CGAL/RS
-@dirrm include/CGAL/Qt
 @dirrm include/CGAL/QP_solver
 @dirrm include/CGAL/Polynomial/internal/Rational
 @dirrm include/CGAL/Polynomial/internal/Kernel
@@ -2451,11 +2617,6 @@ lib/libCGAL.so.5.0.0
 @dirrm include/CGAL/Polynomial
 @dirrm include/CGAL/Polygon_2
 @dirrm include/CGAL/Partition_2
-@dirrm include/CGAL/PDB/internal/rangelib/priv
-@dirrm include/CGAL/PDB/internal/rangelib
-@dirrm include/CGAL/PDB/internal/tnt
-@dirrm include/CGAL/PDB/internal
-@dirrm include/CGAL/PDB
 @dirrm include/CGAL/Optimisation
 @dirrm include/CGAL/OpenNL
 @dirrm include/CGAL/Number_types
@@ -2490,6 +2651,9 @@ lib/libCGAL.so.5.0.0
 @dirrm include/CGAL/Filtered_bbox_circular_kernel_2
 @dirrm include/CGAL/Envelope_3
 @dirrm include/CGAL/Envelope_2
+@dirrm include/CGAL/Curved_kernel_via_analysis_2/gfx
+@dirrm include/CGAL/Curved_kernel_via_analysis_2/test
+@dirrm include/CGAL/Curved_kernel_via_analysis_2
 @dirrm include/CGAL/Convex_hull_2
 @dirrm include/CGAL/Convex_decomposition_3
 @dirrm include/CGAL/Circular_kernel_3
@@ -2501,16 +2665,18 @@ lib/libCGAL.so.5.0.0
 @dirrm include/CGAL/CORE
 @dirrm include/CGAL/Box_intersection_d
 @dirrm include/CGAL/Boolean_set_operations_2
+@dirrm include/CGAL/Arr_rat_arc
 @dirrm include/CGAL/Arrangement_2
 @dirrm include/CGAL/Arr_topology_traits
 @dirrm include/CGAL/Arr_spherical_gaussian_map_3
 @dirrm include/CGAL/Arr_point_location
 @dirrm include/CGAL/Arr_geometry_traits
+@dirrm include/CGAL/Arithmetic_kernel
 @dirrm include/CGAL/Approximate_min_ellipsoid_d
 @dirrm include/CGAL/Apollonius_graph_2/uncertain
-@dirrm include/CGAL/Apollonius_graph_2/new_traits
 @dirrm include/CGAL/Apollonius_graph_2/Delage_traits
 @dirrm include/CGAL/Apollonius_graph_2
 @dirrm include/CGAL/Algebraic_kernel_for_spheres
 @dirrm include/CGAL/Algebraic_kernel_for_circles
+@dirrm include/CGAL/Algebraic_kernel_d
 @dirrm include/CGAL
