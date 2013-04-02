@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.59
-PORTREVISION=	1
+PORTVERSION=	3.21.68
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
@@ -14,12 +13,12 @@ COMMENT=	Digital decoder for psk, cw, psk31, olivia
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
+		docbook-xsl>=1.0:${PORTSDIR}/textproc/docbook-xsl\
 		xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate\
 		fltk:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
