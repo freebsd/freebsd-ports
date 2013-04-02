@@ -142,18 +142,6 @@ share/locale/uk/LC_MESSAGES/yakuake.mo
 share/locale/wa/LC_MESSAGES/yakuake.mo
 share/locale/zh_CN/LC_MESSAGES/yakuake.mo
 share/locale/zh_TW/LC_MESSAGES/yakuake.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
-@dirrmtry share/locale/sr@ijekavianlatin
-@dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
-@dirrmtry share/locale/sr@ijekavian
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/yakuake/skins/plastik_light/title
 @dirrm share/apps/yakuake/skins/plastik_light/tabs
 @dirrm share/apps/yakuake/skins/plastik_light
