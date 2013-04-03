@@ -6,7 +6,7 @@ DISTNAME=		strigi-${STRIGI_VERSION}
 DISTINFO_FILE=		${.CURDIR}/../strigi/distinfo
 DESCR=			${.CURDIR}/../strigi/pkg-descr
 
-CONFLICTS_INSTALL=	strigi-0.*
+CONFLICTS_INSTALL=	strigi-0.7.[0-7]* strigi-0.7.8 strigi-0.7.8_1
 
 USE_BZIP2=		yes
 USES+=			cmake:outsource
