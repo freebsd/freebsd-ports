@@ -30,6 +30,7 @@ LDFLAGS+=	-lgetline
 PLIST_FILES=	bin/fxite \
 		share/pixmaps/fxite.xpm \
 		share/applications/fxite.desktop
+PLIST_DIRSTRY=	share/applications
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
