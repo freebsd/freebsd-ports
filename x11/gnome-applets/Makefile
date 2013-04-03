@@ -60,6 +60,11 @@ PLIST_SUB+=	COMMANDER="" OLDCOMMANDER="@comment "
 PLIST_SUB+=	COMMANDER="@comment " OLDCOMMANDER=""
 .endif
 
+.if defined(PACKAGE_BUILDING)
+.undef WITHOUT_GNOME 	 
+WITH_GNOME=	yes 	 
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ( exists(${pygnomedesktop_DETECT}) ) || \
