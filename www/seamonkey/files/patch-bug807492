@@ -2,7 +2,7 @@ diff --git config/system-headers config/system-headers
 index 9bd1efa..1095a01 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1066,8 +1066,10 @@ gst/app/gstappsink.h
+@@ -1121,8 +1121,10 @@ gst/app/gstappsink.h
  gst/app/gstappsrc.h
  gst/video/video.h
  sys/msg.h
@@ -17,7 +17,7 @@ diff --git configure.in configure.in
 index c167461..8346c11 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -1413,16 +1413,27 @@ if test "$GNU_CC"; then
+@@ -1449,16 +1449,27 @@ if test "$GNU_CC"; then
      _SAVE_CFLAGS=$CFLAGS
      CFLAGS="$CFLAGS -mssse3"
      AC_TRY_COMPILE([asm ("pmaddubsw %xmm2,%xmm3");],,AC_MSG_RESULT([yes])
@@ -45,7 +45,7 @@ index c167461..8346c11 100644
      # -Werror=return-type - catches missing returns, zero false positives
      # -Wtype-limits - catches overflow bugs, few false positives
      # -Wempty-body - catches bugs, e.g. "if (c); foo();", few false positives
-@@ -5232,17 +5243,17 @@ dnl Turn off webrtc for OS's we don't handle yet, but allow
+@@ -5259,17 +5270,17 @@ dnl Turn off webrtc for OS's we don't handle yet, but allow
  dnl --enable-webrtc to override.  Can disable for everything in
  dnl the master list above.
  if test -n "$MOZ_WEBRTC"; then
@@ -64,13 +64,13 @@ index c167461..8346c11 100644
          ;;
      esac
  fi
-@@ -8909,16 +8920,21 @@ if test "${OS_TARGET}" = "WINNT"; then
-    if test "$HAVE_64BIT_OS"; then
-       OS_BITS=64
+@@ -9065,16 +9076,21 @@ elif test "${OS_TARGET}" = "Android"; then
+    EXTRA_GYP_DEFINES="-D gtest_target_type=executable -D android_toolchain=${android_toolchain} -G os=android "
+    if test -n "$ARM_ARCH" && test "$ARM_ARCH" -lt 7; then
+       EXTRA_GYP_DEFINES+=" -D armv7=0 "
     else
-       OS_BITS=32
+       EXTRA_GYP_DEFINES+=" -D armv7=1 "
     fi
-    EXTRA_GYP_DEFINES="-D MSVS_VERSION=${_MSVS_VERSION} -D MSVS_OS_BITS=${OS_BITS}"
  fi
  
 +# Don't try to compile sse4.1 code if toolchain doesn't support
@@ -85,12 +85,12 @@ index c167461..8346c11 100644
  dnl so that regeneration via dependencies works correctly
     WEBRTC_CONFIG="-D build_with_mozilla=1 --include ${srcdir}/media/webrtc/webrtc_config.gypi -D FORCED_INCLUDE_FILE=${srcdir}/media/webrtc/webrtc_config.gypi"
  
-    GYP_WEBRTC_OPTIONS="--format=mozmake ${WEBRTC_CONFIG} ${EXTRA_GYP_DEFINES} --depth=${srcdir}/media/webrtc/trunk --toplevel-dir=${srcdir} -G OBJDIR=${_objdir}"
+    GYP_WEBRTC_OPTIONS="--format=mozmake ${WEBRTC_CONFIG} -D target_arch=${WEBRTC_TARGET_ARCH} ${EXTRA_GYP_DEFINES} --depth=${srcdir}/media/webrtc/trunk --toplevel-dir=${srcdir} -G OBJDIR=${_objdir}"
 diff --git js/src/config/system-headers js/src/config/system-headers
 index 9bd1efa..1095a01 100644
 --- mozilla/js/src/config/system-headers
 +++ mozilla/js/src/config/system-headers
-@@ -1066,8 +1066,10 @@ gst/app/gstappsink.h
+@@ -1121,8 +1121,10 @@ gst/app/gstappsink.h
  gst/app/gstappsrc.h
  gst/video/video.h
  sys/msg.h
@@ -114,20 +114,20 @@ index f1fc85f..141e8ca 100644
   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/event \
   $(NULL)
  
--ifeq ($(OS_ARCH), Darwin)
+-ifeq ($(OS_TARGET), Darwin)
 +ifneq (,$(filter Darwin DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
  LOCAL_INCLUDES += \
    -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/darwin/include \
    -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/generic/include \
    $(NULL)
-+ifeq ($(OS_ARCH), Darwin)
++ifeq ($(OS_TARGET), Darwin)
  DEFINES += -DDARWIN
 +else
 +DEFINES += -DBSD
 +endif
  endif
  
- ifeq ($(OS_ARCH), Linux)
+ ifeq ($(OS_TARGET), Linux)
  LOCAL_INCLUDES += \
    -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/linux/include \
    -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/generic/include \
@@ -146,7 +146,7 @@ index c1d5bf4..2ecf2c7 100644
  endif
  endif
  
--ifeq ($(OS_ARCH), Darwin)
+-ifeq ($(OS_TARGET), Darwin)
 +ifneq (,$(filter Darwin DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
  LOCAL_INCLUDES +=  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/darwin/include
 +ifeq ($(OS_TARGET), Darwin)
@@ -156,13 +156,13 @@ index c1d5bf4..2ecf2c7 100644
  endif
 +endif
  
- ifeq ($(OS_ARCH), Linux)
+ ifeq ($(OS_TARGET), Linux)
  LOCAL_INCLUDES +=  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/linux/include
  endif
  
- ifneq ($(OS_TARGET),WINNT)
- CPP_UNIT_TESTS = \
-   ice_unittest.cpp \
+ ifeq ($(OS_TARGET), Android)
+ LOCAL_INCLUDES +=  -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/port/android/include
+ 
 diff --git media/mtransport/third_party/nICEr/nicer.gyp media/mtransport/third_party/nICEr/nicer.gyp
 index 0e1f8b4..9a4b995 100644
 --- mozilla/media/mtransport/third_party/nICEr/nicer.gyp
@@ -210,7 +210,27 @@ diff --git media/mtransport/third_party/nICEr/src/stun/addrs.c media/mtransport/
 index b0b66b2..04fea94 100644
 --- mozilla/media/mtransport/third_party/nICEr/src/stun/addrs.c
 +++ mozilla/media/mtransport/third_party/nICEr/src/stun/addrs.c
-@@ -69,17 +69,17 @@ static char *RCSSTRING __UNUSED__="$Id: addrs.c,v 1.2 2008/04/28 18:21:30 ekr Ex
+@@ -50,17 +50,19 @@ static char *RCSSTRING __UNUSED__="$Id: addrs.c,v 1.2 2008/04/28 18:21:30 ekr Ex
+ #else
+ #include <syslog.h>
+ /* Work around an Android NDK < r8c bug */
+ #undef __unused
+ #include <linux/sysctl.h>
+ #endif
+ #include <net/if.h>
+ #ifndef LINUX
++#if !defined(__OpenBSD__) && !defined(__NetBSD__)
+ #include <net/if_var.h>
++#endif
+ #include <net/if_dl.h>
+ #include <net/if_types.h>
+ #include <sys/sockio.h>
+ #else
+ #include <linux/if.h>
+ #endif
+ #include <net/route.h>
+ 
+@@ -75,17 +77,17 @@ static char *RCSSTRING __UNUSED__="$Id: addrs.c,v 1.2 2008/04/28 18:21:30 ekr Ex
  #include <netdb.h>
  #endif  /* UNIX */
  
@@ -229,7 +249,7 @@ index b0b66b2..04fea94 100644
   * modification, are permitted provided that the following conditions
   * are met:
   * 1. Redistributions of source code must retain the above copyright
-@@ -675,17 +675,17 @@ nr_stun_remove_duplicate_addrs(nr_transport_addr addrs[], int remove_loopback, i
+@@ -685,17 +687,17 @@ nr_stun_remove_duplicate_addrs(nr_transport_addr addrs[], int remove_loopback, i
  }
  
  int
@@ -252,12 +272,18 @@ diff --git media/mtransport/third_party/nICEr/src/stun/stun.h media/mtransport/t
 index a3c51f9..eb65ac8 100644
 --- mozilla/media/mtransport/third_party/nICEr/src/stun/stun.h
 +++ mozilla/media/mtransport/third_party/nICEr/src/stun/stun.h
-@@ -40,17 +40,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+@@ -36,21 +36,25 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ #ifdef WIN32
+ #include <winsock2.h>
+ #else
  #include <sys/param.h>
  #include <sys/socket.h>
  #include <net/if.h>
  #ifndef LINUX
++#if !defined(__OpenBSD__) && !defined(__NetBSD__)
  #include <net/if_var.h>
++#endif
  #include <net/if_dl.h>
  #include <net/if_types.h>
  #endif
@@ -341,13 +367,13 @@ index cc260b7..66af2d7 100644
      if (!(my_locale = r_strdup(setlocale(LC_CTYPE, 0))))
          ABORT(R_NO_MEMORY);
  
-@@ -91,28 +99,28 @@ mbslen(const char *s, size_t *ncharsp)
-     if (!strstr(my_locale, "UTF-8"))
-         ABORT(R_NOT_FOUND);
+@@ -93,28 +101,28 @@ mbslen(const char *s, size_t *ncharsp)
  #else
-         /* can't count UTF-8 characters with mbrlen if the locale isn't UTF-8 */
-         if (! strcasestr(setlocale(LC_CTYPE, 0), "UTF-8"))
-             ABORT(R_NOT_FOUND);
+     /* can't count UTF-8 characters with mbrlen if the locale isn't UTF-8 */
+     /* null-checking setlocale is required because Android */
+     char *locale = setlocale(LC_CTYPE, 0);
+     if (!locale || !strcasestr(locale, "UTF-8"))
+         ABORT(R_NOT_FOUND);
  #endif
  
 -#ifdef DARWIN
@@ -416,6 +442,28 @@ index 3cc8e1c..74016c6 100644
                       'NEW_STDIO'
                       'RETSIGTYPE=void',
                       'TIME_WITH_SYS_TIME_H=1',
+diff --git media/mtransport/third_party/nrappkit/src/log/r_log.c media/mtransport/third_party/nrappkit/src/log/r_log.c
+index b25d5c2..b207b8c 100644
+--- mozilla/media/mtransport/third_party/nrappkit/src/log/r_log.c
++++ mozilla/media/mtransport/third_party/nrappkit/src/log/r_log.c
+@@ -43,16 +43,17 @@ static char *RCSSTRING __UNUSED__ ="$Id: r_log.c,v 1.10 2008/11/25 22:25:18 adam
+ #ifdef LINUX
+ #define _BSD_SOURCE
+ #endif
+ 
+ #include "r_log.h"
+ #include "hex.h"
+ 
+ #include <string.h>
++#include <errno.h>
+ #ifndef _MSC_VER
+ #include <strings.h>
+ #include <syslog.h>
+ #endif
+ #include <registry.h>
+ #include <time.h>
+ 
+ 
 diff --git media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h
 index 15452e3..2c9651a 100644
 --- mozilla/media/mtransport/third_party/nrappkit/src/port/darwin/include/csi_platform.h
@@ -446,20 +494,20 @@ diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/qu
 index bcb1ec0..bb73591 100644
 --- mozilla/media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 +++ mozilla/media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
-@@ -33,5 +33,5 @@
- #define        _SYS_QUEUE_H_
-
+@@ -33,7 +33,7 @@
+ #ifndef _SYS_QUEUE_H_
+ #define	_SYS_QUEUE_H_
+ 
 -#ifndef DARWIN
-+#if !defined(BSD) && !defined(DARWIN)
++#if !defined(__FreeBSD__) && !defined(DARWIN)
  #include <stddef.h>
  #define __offsetof offsetof
  #endif
-
 diff --git media/mtransport/third_party/nrappkit/src/util/util.c media/mtransport/third_party/nrappkit/src/util/util.c
 index 3aced8b..be020bb 100644
 --- mozilla/media/mtransport/third_party/nrappkit/src/util/util.c
 +++ mozilla/media/mtransport/third_party/nrappkit/src/util/util.c
-@@ -36,16 +36,19 @@
+@@ -36,20 +36,24 @@
     ekr@rtfm.com  Wed Dec 26 17:19:36 2001
   */
  
@@ -475,11 +523,16 @@ index 3aced8b..be020bb 100644
  #include <dirent.h>
  #endif
  #include <string.h>
++#include <errno.h>
  #include <ctype.h>
  #include <sys/stat.h>
  #ifdef OPENSSL
  #include <openssl/evp.h>
-@@ -431,17 +434,17 @@ int nr_reg_uint8_fetch_and_check(NR_registry key, UINT8 min, UINT8 max, int log_
+ #endif
+ #include "nr_common.h"
+ #include "r_common.h"
+ #include "registry.h"
+@@ -431,17 +435,17 @@ int nr_reg_uint8_fetch_and_check(NR_registry key, UINT8 min, UINT8 max, int log_
    abort:
      if(die && _status){
        r_log(log_fac,LOG_CRIT,"Exiting due to invalid configuration (key '%s')",key);
@@ -499,15 +552,15 @@ index 3aced8b..be020bb 100644
  
      if (! buf)
 diff --git media/webrtc/signaling/signaling.gyp media/webrtc/signaling/signaling.gyp
-index f0cbf870..ba0f801 100644
+index 2a91e3d..31de641 100644
 --- mozilla/media/webrtc/signaling/signaling.gyp
 +++ mozilla/media/webrtc/signaling/signaling.gyp
-@@ -208,16 +208,29 @@
+@@ -212,16 +212,29 @@
              'SIPCC_BUILD',
              'HAVE_WINSOCK2_H',
              'CPR_STDINT_INCLUDE=\\"mozilla/StandardInteger.h\\"'
            ],
-           
+ 
            'cflags_mozilla': [
            ],
          }],
@@ -529,34 +582,34 @@ index f0cbf870..ba0f801 100644
            ],
            'defines': [
              'SIP_OS_OSX',
-             'OSX', 
+             'OSX',
              '_FORTIFY_SOURCE=2',
            ],
-@@ -701,17 +714,17 @@
+@@ -747,17 +760,17 @@
              'EXTERNAL_TICK_REQUIRED',
              'GIPS_VER=3480',
            ],
-           
+ 
            'cflags_mozilla': [
            ],
-           
+ 
          }],
 -        ['OS=="mac"', {
 +        ['OS=="mac" or os_bsd==1', {
  
            'include_dirs': [
            ],
-           
+ 
            'sources': [
              # SIPSTACK
              './src/sipcc/core/sipstack/sip_platform_task.c',
-             
-@@ -746,24 +759,23 @@
+ 
+@@ -792,24 +805,23 @@
              './src/sipcc/cpr/darwin/cpr_darwin_timers_using_select.c',
              './src/sipcc/cpr/darwin/cpr_darwin_tst.h',
              './src/sipcc/cpr/darwin/cpr_darwin_types.h',
            ],
-           
+ 
  
            'defines' : [
              'SIP_OS_OSX',
@@ -571,12 +624,12 @@ index f0cbf870..ba0f801 100644
 -            '_DARWIN_C_SOURCE',
              'NO_NSPR_10_SUPPORT',
            ],
-           
+ 
            'cflags_mozilla': [
            ],
          }],
        ],
-             
+ 
 diff --git media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
 index a7c47e1..4f191de 100644
 --- mozilla/media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
@@ -611,7 +664,7 @@ diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/M
 index a30e330..cfbd8a3 100644
 --- mozilla/media/webrtc/signaling/test/Makefile.in
 +++ mozilla/media/webrtc/signaling/test/Makefile.in
-@@ -22,32 +22,32 @@ LIBS = \
+@@ -22,17 +22,17 @@ LIBS = \
    $(DEPTH)/media/webrtc/signalingtest/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
    $(DEPTH)/media/webrtc/signalingtest/signaling_sipcc/$(LIB_PREFIX)sipcc.$(LIB_SUFFIX) \
    $(DEPTH)/layout/media/$(LIB_PREFIX)gkmedias.$(LIB_SUFFIX) \
@@ -620,7 +673,7 @@ index a30e330..cfbd8a3 100644
    $(NULL)
  
  ifdef MOZ_SYDNEYAUDIO
--ifeq ($(OS_ARCH),Linux)
+-ifeq ($(OS_TARGET),Linux)
 +ifneq (,$(filter Linux DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
  LIBS += \
    $(MOZ_ALSA_LIBS) \
@@ -628,22 +681,25 @@ index a30e330..cfbd8a3 100644
  endif
  endif
  
- ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
+ ifeq ($(OS_TARGET),Android)
+ LIBS += \
+@@ -76,17 +76,17 @@ endif
+ ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
  LIBS += \
    $(XLIBS) \
-   $(MOZ_GTK2_LIBS) \
-   -lgthread-2.0 \
+   $(TK_LIBS) \
+   $(MOZ_PANGO_LIBS) \
    $(NULL)
  endif
  
--ifeq ($(OS_ARCH),Linux)
+-ifeq ($(OS_TARGET),Linux)
 +ifneq (,$(filter Linux DragonFly FreeBSD NetBSD OpenBSD,$(OS_TARGET)))
  LIBS += \
    $(MOZ_CAIRO_OSLIBS) \
    $(NULL)
  endif
  
- ifeq ($(OS_ARCH),Darwin)
+ ifeq ($(OS_TARGET),Darwin)
  LIBS += \
    -framework AudioToolbox \
 diff --git media/webrtc/trunk/build/common.gypi media/webrtc/trunk/build/common.gypi
@@ -750,7 +806,7 @@ diff --git media/webrtc/trunk/src/build/common.gypi media/webrtc/trunk/src/build
 index 9ca9f7c..d5c4ab9 100644
 --- mozilla/media/webrtc/trunk/src/build/common.gypi
 +++ mozilla/media/webrtc/trunk/src/build/common.gypi
-@@ -101,16 +101,23 @@
+@@ -101,16 +101,21 @@
          'enable_protobuf%': 1,
          'include_tests%': 1,
  
@@ -760,10 +816,8 @@ index 9ca9f7c..d5c4ab9 100644
          'clang_use_chrome_plugins%': 0,
        }],
 +      ['OS=="linux" or OS=="solaris" or os_bsd==1', {
-+        'include_alsa_audio%': 1,
 +        'include_v4l2_video_capture%': 1,
 +      }, {
-+        'include_alsa_audio%': 0,
 +        'include_v4l2_video_capture%': 0,
 +      }],
      ], # conditions
@@ -774,7 +828,7 @@ index 9ca9f7c..d5c4ab9 100644
        '..','../..',
      ],
      'defines': [
-@@ -174,16 +181,28 @@
+@@ -176,16 +181,28 @@
          'defines': [
            'WEBRTC_LINUX',
            'WEBRTC_THREAD_RR',
@@ -803,68 +857,6 @@ index 9ca9f7c..d5c4ab9 100644
            'WEBRTC_CLOCK_TYPE_REALTIME',
          ],
        }],
-diff --git media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
-index 8457737..4d0f322 100644
---- mozilla/media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
-+++ mozilla/media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
-@@ -41,21 +41,25 @@
-         'audio_device_utility.h',
-         'audio_device_impl.cc',
-         'audio_device_impl.h',
-         'audio_device_config.h',
-         'dummy/audio_device_dummy.h',
-         'dummy/audio_device_utility_dummy.h',
-       ],
-       'conditions': [
--        ['OS=="linux"', {
-+        ['include_alsa_audio==1', {
-           'include_dirs': [
-             'linux',
-           ],
--        }], # OS==linux
-+          'defines': [
-+            # avoiding pointless ifdef churn
-+            'WEBRTC_LINUX',
-+          ],
-+        }], # include_alsa_audio==1
-         ['OS=="mac"', {
-             'include_dirs': [
-               'mac',
-             ],
-         }], # OS==mac
-         ['OS=="win"', {
-             'include_dirs': [
-               'win',
-@@ -111,24 +115,26 @@
-               'link_settings': {
-                 'libraries': [
-                   '-llog',
-                   '-lOpenSLES',
-                 ],
-               },
-             }],
-             ['OS=="linux"', {
--              'defines': [
--                'LINUX_ALSA',
--              ],
-               'link_settings': {
-                 'libraries': [
-                   '-ldl',
-                 ],
-               },
-+            }],
-+            ['include_alsa_audio==1', {
-+              'defines': [
-+                'LINUX_ALSA',
-+              ],
-               'conditions': [
-                 ['include_pulse_audio==1', {
-                   'defines': [
-                     'LINUX_PULSE',
-                   ],
-                   'sources': [
-                     'linux/audio_device_pulse_linux.cc',
-                     'linux/audio_device_pulse_linux.h',
 diff --git media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc
 index 203f09a..0b0b70e 100644
 --- mozilla/media/webrtc/trunk/src/modules/audio_device/main/source/audio_device_utility.cc
@@ -1341,7 +1333,7 @@ diff --git media/webrtc/trunk/src/modules/video_capture/main/source/video_captur
 index 0a9765e..8d4bbf4 100644
 --- mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
 +++ mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
-@@ -50,17 +50,17 @@
+@@ -55,17 +55,17 @@
          ['include_internal_video_capture==0', {
            'sources': [
              'External/device_info_external.cc',
@@ -1360,7 +1352,7 @@ index 0a9765e..8d4bbf4 100644
                  'Linux/video_capture_linux.h',
                  'Linux/device_info_linux.cc',
                  'Linux/video_capture_linux.cc',
-@@ -157,31 +157,35 @@
+@@ -162,31 +162,35 @@
              '../interface',
            ],
            'sources': [
@@ -1798,7 +1790,7 @@ index 6334490..852ebaa 100644
  
  namespace webrtc {
  extern "C"
-@@ -116,16 +125,28 @@ ThreadPosix::ThreadPosix(ThreadRunFunction func, ThreadObj obj,
+@@ -116,16 +125,30 @@ ThreadPosix::ThreadPosix(ThreadRunFunction func, ThreadObj obj,
      }
  }
  
@@ -1811,6 +1803,8 @@ index 6334490..852ebaa 100644
 +  return _lwp_self();
 +#elif defined(__DragonFly__)
 +  return lwp_gettid();
++#elif defined(__OpenBSD__)
++  return reinterpret_cast<uintptr_t> (pthread_self());
 +#elif defined(__FreeBSD__)
 +#  if __FreeBSD_version > 900030
 +    return pthread_getthreadid_np();
@@ -1827,7 +1821,7 @@ index 6334490..852ebaa 100644
  int ThreadPosix::Construct()
  {
      int result = 0;
-@@ -154,16 +175,17 @@ ThreadPosix::~ThreadPosix()
+@@ -154,16 +177,17 @@ ThreadPosix::~ThreadPosix()
  {
      pthread_attr_destroy(&_attr);
      delete _event;
@@ -1845,7 +1839,7 @@ index 6334490..852ebaa 100644
  #endif
  {
      if (!_runFunction)
-@@ -229,31 +251,39 @@ bool ThreadPosix::Start(unsigned int& /*threadID*/)
+@@ -229,31 +253,39 @@ bool ThreadPosix::Start(unsigned int& /*threadID*/)
      {
          return false;
      }
@@ -1887,7 +1881,7 @@ index 6334490..852ebaa 100644
  #else
    // "Normal" Linux.
    const int result = sched_setaffinity(_pid,
-@@ -340,16 +370,20 @@ void ThreadPosix::Run()
+@@ -340,16 +372,20 @@ void ThreadPosix::Run()
  #endif
      // The event the Start() is waiting for.
      _event->Set();
@@ -1908,6 +1902,29 @@ index 6334490..852ebaa 100644
          WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
                       "Thread without name started");
      }
+diff --git media/webrtc/trunk/src/system_wrappers/source/trace_posix.cc media/webrtc/trunk/src/system_wrappers/source/trace_posix.cc
+index f3a5306..d9c2810 100644
+--- mozilla/media/webrtc/trunk/src/system_wrappers/source/trace_posix.cc
++++ mozilla/media/webrtc/trunk/src/system_wrappers/source/trace_posix.cc
+@@ -52,17 +52,17 @@ WebRtc_Word32 TracePosix::AddTime(char* traceMessage,
+ {
+     struct timeval systemTimeHighRes;
+     if (gettimeofday(&systemTimeHighRes, 0) == -1)
+     {
+         return -1;
+     }
+     struct tm buffer;
+     const struct tm* systemTime =
+-        localtime_r(&systemTimeHighRes.tv_sec, &buffer);
++        localtime_r((const time_t *)(&systemTimeHighRes.tv_sec), &buffer);
+ 
+     const WebRtc_UWord32 ms_time = systemTimeHighRes.tv_usec / 1000;
+     WebRtc_UWord32 prevTickCount = 0;
+     if (level == kTraceApiCall)
+     {
+         prevTickCount = _prevTickCount;
+         _prevTickCount = ms_time;
+     } else {
 diff --git media/webrtc/trunk/src/video_engine/vie_defines.h media/webrtc/trunk/src/video_engine/vie_defines.h
 index 2cc18cc7..2c042a0 100644
 --- mozilla/media/webrtc/trunk/src/video_engine/vie_defines.h
@@ -1996,7 +2013,7 @@ diff --git media/webrtc/trunk/src/voice_engine/voice_engine_defines.h media/webr
 index 7d4c729..4104719 100644
 --- mozilla/media/webrtc/trunk/src/voice_engine/voice_engine_defines.h
 +++ mozilla/media/webrtc/trunk/src/voice_engine/voice_engine_defines.h
-@@ -434,41 +434,44 @@ namespace webrtc
+@@ -437,41 +437,44 @@ namespace webrtc
  
  #else
  #define ANDROID_NOT_SUPPORTED(stat)
@@ -2042,7 +2059,7 @@ index 7d4c729..4104719 100644
  #define TRUE 1
  #define SOCKADDR_IN struct sockaddr_in
  #define UINT unsigned int
-@@ -576,13 +579,13 @@ namespace webrtc
+@@ -579,13 +582,13 @@ namespace webrtc
  //  Defines
  // ----------------------------------------------------------------------------
  

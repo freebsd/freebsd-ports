@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.16.1
+DISTVERSION=	2.17
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -13,13 +13,13 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.9.4:${PORTSDIR}/devel/nspr \
-		nss>=3.14.1:${PORTSDIR}/security/nss \
+		nss>=3.14.3:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
 EM_VERSION=	1.5.1
-L_VERSION=	2.1b1
+L_VERSION=	2.2b1
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
@@ -72,17 +72,6 @@ MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
-.elif ${ARCH} == powerpc64
-.if ${OSVERSION} < 900033
-BROKEN=		Needs binutils 2.17.50 to build
-.else
-MOZ_EXPORT+=	UNAME_m="powerpc64"
-CFLAGS+=	-mminimal-toc
-.endif
-.endif
-
 .if ! ${PORT_OPTIONS:MMAILNEWS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-mailnews-patch-bridge-bridge.mk \
 		${FILESDIR}/extra-patch-configure.in
@@ -133,6 +122,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
+		-e '/^SQLITE_VERSION/s/=.*/=3.7.14.1/' \
 		${MOZSRC}/configure.in ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/suite/app/nsSuiteApp.cpp
@@ -165,18 +155,16 @@ post-build:
 		-C ${MOZ_OBJDIR}/mailnews/extensions/enigmail
 .endif
 
-pre-install:
+port-pre-install:
 	${ECHO_CMD} share/applications/${MOZILLA}.desktop >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${MOZILLA}.png' >> ${PLIST}
 
-do-install:
+post-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
 	${LN} -sf ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png \
 		${PREFIX}/share/pixmaps/${MOZILLA}.png
-
-post-install:
 .if ${PORT_OPTIONS:MLIGHTNING}
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/seamonkey
 	@(cd ${XPI_LIBDIR}/${XPI_ID}; ${TAR} -xf ${XPI_FILE})

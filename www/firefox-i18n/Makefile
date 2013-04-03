@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	19.0.2
+PORTVERSION=	20.0
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -14,7 +14,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	19
+USE_FIREFOX=	20
 USE_XPI=	firefox linux-firefox
 
 USE_SUBMAKE=	yes
@@ -50,7 +50,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@for lang in ${FIREFOX_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \

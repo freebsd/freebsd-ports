@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	17.0.4
+PORTVERSION=	17.0.5
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -51,7 +51,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@for lang in ${FIREFOX_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \

@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130403:
+  AFFECTS: users of mail/thunderbird-esr*
+  AUTHOR: flo@FreeBSD.org
+
+  Mozilla stopped providing 2 versions of thunderbird. The only one lives
+  in mail/thunderbird if you are using thunderbird-esr please switch to
+  thunderbird by running on of the following commands.
+
+  # portupgrade -o mail/thunderbird mail/thunderbird-esr
+  # portupgrade -o mail/thunderbird-i18n \
+    mail/thunderbird-esr-i18n (if installed)
+  or
+  # portmaster -o mail/thunderbird mail/thunderbird-esr
+  # portmaster -o mail/thunderbird-i18n \
+    mail/thunderbird-esr-i18n (if installed)
+
 20130331:
   AFFECTS: users of */hs-*
   AUTHOR: haskell@FreeBSD.org

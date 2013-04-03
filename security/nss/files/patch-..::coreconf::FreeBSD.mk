@@ -27,13 +27,7 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -65,20 +80,20 @@
- USE_PTHREADS		= 1
- DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
- OS_LIBS			+= -pthread
--DSO_LDOPTS		+= -pthread
-+DSO_LDOPTS		+= $(BSD_LDOPTS)
- endif
+@@ -70,15 +85,15 @@
  
  ARCH			= freebsd
  
