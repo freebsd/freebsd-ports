@@ -23,6 +23,7 @@ lib/libscience.so
 lib/libscience.so.5
 lib/libscience.so.5.0.1
 share/applications/kde4/kalzium.desktop
+share/applications/kde4/kalzium_cml.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/kalzium/data/bg.jpg
 share/apps/kalzium/data/hazardsymbols/hazard_C.png
@@ -354,6 +355,7 @@ share/apps/kalzium/icons/hicolor/scalable/actions/statematter.svgz
 share/apps/kalzium/icons/hicolor/scalable/actions/timeline.svgz
 share/apps/kalzium/icons/hicolor/scalable/actions/tooltip.svgz
 share/apps/kalzium/kalziumui.rc
+share/apps/kalzium/qml/detailview.qml
 share/apps/libkdeedu/data/elements.xml
 share/apps/libkdeedu/data/isotopes.xml
 share/apps/libkdeedu/data/spectra.xml
@@ -413,6 +415,7 @@ share/kde4/services/plasma_didyouknow.desktop
 @dirrm share/doc/HTML/en/kalzium
 @dirrm share/apps/libkdeedu/data
 @dirrm share/apps/libkdeedu
+@dirrm share/apps/kalzium/qml
 @dirrm share/apps/kalzium/icons/hicolor/scalable/actions
 @dirrm share/apps/kalzium/icons/hicolor/scalable
 @dirrm share/apps/kalzium/icons/hicolor/64x64/actions
