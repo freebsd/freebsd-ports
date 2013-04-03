@@ -13,7 +13,6 @@ COMMENT=	NSCA alternative
 LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
 				ev:${PORTSDIR}/devel/libev
 
-CONFLICTS=	nsca-[0-9]*
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${LOCALBASE}/man \
 					--with-confuse=${LOCALBASE} \
@@ -24,6 +23,7 @@ USE_OPENSSL_PORT=	yes
 MANCOMPRESSED=	no
 
 .if defined(_BUILDING_NSCA_CLIENT)
+CONFLICTS=	nsca-client-[0-9]*
 CONFIGURE_ARGS+=	--disable-server --enable-client
 MAN5+=	send_nsca.cfg.5
 MAN8+=	send_nsca.8
