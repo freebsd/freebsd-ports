@@ -1,0 +1,11 @@
+--- ./man/Makefile.in.orig	2013-03-06 18:25:40.000000000 +0900
++++ ./man/Makefile.in	2013-04-03 12:38:13.000000000 +0900
+@@ -456,7 +456,7 @@
+ 
+ install-info-am:
+ 
+-install-man: install-man5 install-man8
++install-man:
+ 
+ install-pdf: install-pdf-am
+ 
