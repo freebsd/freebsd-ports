@@ -27,7 +27,7 @@ PLIST_FILES=	bin/${PORTNAME} %%PORTEXAMPLES%%%%EXAMPLESDIR%%/${PORTNAME}-complet
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MEXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
