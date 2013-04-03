@@ -3,7 +3,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.40.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL
@@ -16,13 +16,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gstreamermm-0.10.2:${PORTSDIR}/multimedia/gstreamermm \
-		enchant.1:${PORTSDIR}/textproc/enchant \
-		pcre.3:${PORTSDIR}/devel/pcre
+		enchant:${PORTSDIR}/textproc/enchant \
+		pcre:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,10 +29,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 MAN1=		subtitleeditor.1
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	NLS
 
-.if ${OSVERSION} < 700043
-BROKEN=		does not compile
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -41,4 +46,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/plugins/actions/findandreplace/findandreplace.cc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
