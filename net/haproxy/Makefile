@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.22
-PORTREVISION=	2
+PORTVERSION=	1.4.23
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
