@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/drizzle
 
+BROKEN=		fails to build
+
 USE_ICONV=	yes
 
 .if defined(MAINTAINER_MODE)
