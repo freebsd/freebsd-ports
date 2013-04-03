@@ -42,5 +42,7 @@ post-patch:
 		${WRKSRC}/createrepo/merge.py
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' -e 's|$$(datadir)/$$(PKGNAME)|${DATADIR}|' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^PYSYSDIR/s|:= \(.*\)|= ${PREFIX}|' \
+	    ${WRKSRC}/createrepo/Makefile
 
 .include <bsd.port.mk>
