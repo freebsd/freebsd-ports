@@ -32,7 +32,7 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 
-regression-test: install
+regression-test: build
 	cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.mk>
