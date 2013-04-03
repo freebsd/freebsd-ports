@@ -3,7 +3,7 @@
 
 PORTNAME=	playgsf
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 		CRITICAL
@@ -11,28 +11,31 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for gsf audio files
 
-LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-
-# disable optimization flags to avoid a possible bug in gcc
-# (gcc tries to allocate memory in an endless loop)
-CFLAGS+=	-O0
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV+=	LIBS="${LDFLAGS}"
 CONFIGURE_ENV+=	LIBS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--enable-ccore --disable-optimisations
 
 PLIST_FILES=	bin/playgsf
 
-# contains x86 assembler
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 PORTSCOUT=	skipv:0.7.2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 901000
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-VBA__Util.cpp
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -51,4 +54,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
