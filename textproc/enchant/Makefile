@@ -4,6 +4,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	gnome2
@@ -27,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		enchant.1
 
 OPTIONS_DEFINE=	ASPELL HSPELL HUNSPELL ISPELL ZEMBEREK
+OPTIONS_DEFAULT=ASPELL
 HSPELL_DESC=	Spell checking via Hspell
 HUNSPELL_DESC=	Spell checking via Hunspell
 ZEMBEREK_DESC=	Spell checking via Zemberek
