@@ -1,32 +1,37 @@
-# ex:ts=8
-# Ports collection makefile for:  Queso
-# Date created:			  13 Oct 1998
-# Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
+# Created by: Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	queso
 PORTVERSION=	980922
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/queso/ \
-		http://www.mirrors.wiretapped.net/security/network-mapping/
+MASTER_SITES=	PACKETSTORM/UNIX/scanners
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the remote OS using simple TCP packets
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} 's,$(CFGDIR)/queso.conf,$(CFGDIR)/queso.conf.sample,' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-O2 -pipe|| ; \
+		 s|^LDFLAGS|#LDFLAGS|' ${WRKSRC}/Makefile.in
+	@${LN} -sf queso.conf ${WRKSRC}/queso.conf.sample
 
-post-install:
-.if !defined(NOPORTDOCS)
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} queso ${PREFIX}/sbin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} queso.conf.sample ${PREFIX}/etc)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Documentation.txt ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
