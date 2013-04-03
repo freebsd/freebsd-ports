@@ -1,0 +1,8 @@
+The NSCA-ng package provides a client-server pair which makes the Nagios
+command file accessible to remote systems. This allows for submitting passive
+check results, downtimes, and many other commands to Nagios or compatible
+monitoring solutions. The submitted data is queued by the NSCA?ng server if
+Nagios goes down. Multiple check results or commands can be submitted in one
+go, and multiline plugin output is fully supported.
+
+WWW: http://www.nsca-ng.org/

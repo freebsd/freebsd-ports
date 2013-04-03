@@ -1,0 +1,17 @@
+--- ./etc/Makefile.in.orig	2013-04-03 10:46:06.000000000 +0900
++++ ./etc/Makefile.in	2013-04-03 10:50:22.000000000 +0900
+@@ -392,11 +392,11 @@
+ 
+ install-nsca-server-conf:
+ 	$(AM_V_at)$(MKDIR_P) '$(DESTDIR)$(sysconfdir)'
+-	$(AM_V_at)if [ -r '$(DESTDIR)$(sysconfdir)/nsca-ng.cfg' ]; then \
+-	    echo 'Preserving the installed nsca-ng.cfg file.'; \
++	$(AM_V_at)if [ -r '$(DESTDIR)$(sysconfdir)/nsca-ng.cfg-dist' ]; then \
++	    echo 'Preserving the installed nsca-ng.cfg-dist file.'; \
+ 	else \
+ 	    $(INSTALL_DATA) '$(srcdir)/nsca-ng.cfg' \
+-	      '$(DESTDIR)$(sysconfdir)'; \
++	      '$(DESTDIR)$(sysconfdir)/nsca-ng.cfg-dist'; \
+ 	fi
+ 
+ uninstall-nsca-client-conf:

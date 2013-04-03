@@ -184,6 +184,7 @@
     SUBDIR += nrpep
     SUBDIR += nsca
     SUBDIR += nsca-client
+    SUBDIR += nsca-ng
     SUBDIR += nsca27
     SUBDIR += nsca27-client
     SUBDIR += nstreams

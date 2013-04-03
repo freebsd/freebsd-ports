@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+etc/nsca-ng.cfg-dist
+@comment etc/send_nsca.cfg
+sbin/nsca-ng
+@comment sbin/send_nsca
