@@ -1,5 +1,18 @@
---- ./etc/Makefile.in.orig	2013-04-03 10:46:06.000000000 +0900
-+++ ./etc/Makefile.in	2013-04-03 10:50:22.000000000 +0900
+--- ./etc/Makefile.in.orig	2013-03-06 18:25:40.000000000 +0900
++++ ./etc/Makefile.in	2013-04-03 12:38:13.000000000 +0900
+@@ -373,10 +373,10 @@
+ 	pdf-am ps ps-am tags-am uninstall uninstall-am uninstall-local
+ 
+ 
+-@BUILD_CLIENT_TRUE@install-data-local: install-nsca-client-conf
++@BUILD_CLIENT_TRUE@install-data-local:
+ @BUILD_CLIENT_TRUE@uninstall-local: uninstall-nsca-client-conf
+ 
+-@BUILD_SERVER_TRUE@install-data-local: install-nsca-server-conf
++@BUILD_SERVER_TRUE@install-data-local:
+ @BUILD_SERVER_TRUE@uninstall-local: uninstall-nsca-server-conf
+ 
+ # We use "test -r" because Solaris 10 doesn't provide "test -e".
 @@ -392,11 +392,11 @@
  
  install-nsca-server-conf:
