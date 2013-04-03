@@ -63,17 +63,6 @@ OPTIONS_SINGLE:=${OPTIONS_SINGLE:NTOOLKIT}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss
 .endif
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
-.elif ${ARCH} == powerpc64
-.if ${OSVERSION} < 900033
-BROKEN=		Needs binutils 2.17.50 to build
-.else
-MOZ_EXPORT+=	UNAME_m="powerpc64"
-CFLAGS+=	-mminimal-toc
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_VERSION+=	1.5+

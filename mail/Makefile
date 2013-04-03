@@ -715,8 +715,6 @@
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
-    SUBDIR += thunderbird-esr
-    SUBDIR += thunderbird-esr-i18n
     SUBDIR += thunderbird-i18n
     SUBDIR += tkrat2
     SUBDIR += tlb

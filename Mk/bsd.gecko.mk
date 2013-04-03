@@ -179,7 +179,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 19+ 17 19+
+#                         Available values: yes 17+ 20+ 17 20+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -190,9 +190,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 16+ 16
+#                         Available values: yes 17+ 17
 #                         NOTE:
-#                         default value 16 is used in case of USE_SEAMONKEY=yes
+#                         default value 17 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -201,7 +201,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 17+ 10 17
+#                         Available values: yes 17+ 17
 #                         NOTE:
 #                         default value 17 is used in case of USE_THUNDERBIRD=yes
 #
@@ -221,11 +221,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 19
-_FIREFOX_RANGE_VERSIONS=	17+ 19+
+_FIREFOX_VERSIONS=			17 20
+_FIREFOX_RANGE_VERSIONS=	17+ 20+
 
 # For specifying [17, ..]+
-_FIREFOX_19P=	19 ${_FIREFOX_17P}
+_FIREFOX_20P=	20 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-19_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+20_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -294,12 +294,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	16
-_SEAMONKEY_VERSIONS=		16
-_SEAMONKEY_RANGE_VERSIONS=	16+
+_SEAMONKEY_DEFAULT_VERSION=	17
+_SEAMONKEY_VERSIONS=		17
+_SEAMONKEY_RANGE_VERSIONS=	17+
 
-# For specifying [16, ..]+
-_SEAMONKEY_16P=	16
+# For specifying [17, ..]+
+_SEAMONKEY_17P=	17
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -341,7 +341,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-16_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+17_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -363,13 +363,12 @@ USE_THUNDERBIRD:=			${USE_THUNDERBIRD_BUILD}
 _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
-_THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 17
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 17+
+_THUNDERBIRD_DEFAULT_VERSION=	17
+_THUNDERBIRD_VERSIONS=			17
+_THUNDERBIRD_RANGE_VERSIONS=	17+
 
-# For specifying [10, ..]+
-_THUNDERBIRD_17P=	17 ${_THUNDERBIRD_10P}
-_THUNDERBIRD_10P=	10
+# For specifying [17, ..]+
+_THUNDERBIRD_17P=	17
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
 .if ${USE_THUNDERBIRD} == "yes"
@@ -413,7 +412,6 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 .endif
 
 # Dependence lines for different Thunderbird versions
-10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
 17_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
@@ -543,27 +541,18 @@ MOZ_EXPORT+=	${CONFIGURE_ENV} \
 MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-
-.if ${OSVERSION} > 800072
-LDFLAGS+=		-Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
-.else
-LDFLAGS+=		-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
-.endif
+LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
 
 .if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*}
-# prefer clang
-. if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014 || \
-  exists(${LOCALBASE}/bin/clang))
-CC=				clang
+# prefer base clang, for lang/clang{,-devel} see ports/177224
+. if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
+CC=				/usr/bin/clang
 . endif
-. if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014 || \
-  exists(${LOCALBASE}/bin/clang++))
-CXX=			clang++
+. if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014)
+CXX=			/usr/bin/clang++
 . endif
-. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900014 || \
-  exists(${LOCALBASE}/bin/clang-cpp))
-CPP=			clang-cpp
+. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900045)
+CPP=			/usr/bin/clang-cpp
 . endif
 . if ${CC} != "cc" && ${CPP} == "cpp"
 CPP=			${CC} -E
@@ -574,18 +563,17 @@ USE_GCC?=		yes
 . endif
 .endif
 
-.if ${MOZILLA_VER:R:R} >= 16 || exists(${.CURDIR}/files/patch-bug788955)
+.if ${MOZILLA_VER:R:R} >= 19 || exists(${.CURDIR}/files/patch-bug788955)
 .if ${OSVERSION} > 1000011
 # use jemalloc 3.0.0 API in libc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
-.elif ${OSVERSION} > 701106
+.else
 MOZ_OPTIONS+=	--enable-jemalloc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
 .endif
 .endif
 
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900045) \
-  || ${OSVERSION} < 802513
+.if ${OSVERSION} >= 900000 && ${OSVERSION} < 900045
 MOZ_EXPORT+=	ac_cv_thread_keyword=no \
 				je_cv_tls_model=no
 .endif
@@ -629,7 +617,7 @@ png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
 sqlite_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
-.if ${MOZILLA_VER:R:R} >= 20 || exists(${.CURDIR}/files/patch-bug787804)
+.if ${MOZILLA_VER:R:R} >= 20 || ${MOZILLA:Mseamonkey*}
 sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
 .endif
 
@@ -680,12 +668,15 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 		--disable-gtktest		\
 		--disable-freetypetest		\
 		--disable-installer		\
-		--disable-necko-wifi		\
 		--disable-updater		\
 		--disable-pedantic
 
 .if exists(/usr/lib/libcxxrt.so)
 LIBS+=		-Wl,--as-needed,-lcxxrt,--no-as-needed
+.endif
+
+.if !exists(${FILESDIR}/patch-bug803480) || ! ${PORT_OPTIONS:MDBUS}
+MOZ_OPTIONS+=	--disable-necko-wifi
 .endif
 
 .if ${MOZ_TOOLKIT:Mcairo-qt}
@@ -717,7 +708,7 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
+USE_GSTREAMER?=	good ffmpeg
 MOZ_OPTIONS+=	--enable-gstreamer
 .else
 MOZ_OPTIONS+=	--disable-gstreamer
@@ -761,8 +752,14 @@ MOZ_OPTIONS+=	--disable-libproxy
 .if ${PORT_OPTIONS:MWEBRTC}
 BUILD_DEPENDS+=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	v4l2:${PORTSDIR}/multimedia/libv4l
-. if ! ${PORT_OPTIONS:MALSA}
+. if ${MOZILLA_VER:R:R} >= 21
+.  if ${PORT_OPTIONS:MOSS}
+IGNORE=		WEBRTC works only with ALSA and PULSEAUDIO audio backends
+.  endif
+. else
+.  if ! ${PORT_OPTIONS:MALSA}
 IGNORE=		WEBRTC works only with ALSA audio backend
+.  endif
 . endif
 .else
 MOZ_OPTIONS+=	--disable-webrtc
@@ -820,7 +817,16 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
-.if ${ARCH}=="sparc64"
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH:Mpowerpc*}
+USE_GCC?=	yes
+CFLAGS+=	-D__STDC_CONSTANT_MACROS
+. if ${ARCH} == "powerpc64"
+MOZ_EXPORT+=	UNAME_m="${ARCH}"
+CFLAGS+=	-mminimal-toc
+. endif
+.elif ${ARCH} == "sparc64"
 # Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
 MOZ_OPTIONS+=	--disable-v1-string-abi
 .endif
@@ -932,14 +938,12 @@ gecko-post-patch:
 		-e 's|mozilla/plugins|browser_plugins|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
-.if ${CXX} == "clang++" && ${OSVERSION} < 900506
+.if !empty(CXX:M*clang*) && ${OSVERSION} < 900506
 	@${GREP} -Flr -- '-mss' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's/-mss/-mmmx &/'
 .endif
-.if ${MOZILLA} != "kompozer"
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${MOZSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp
-.endif
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
@@ -1032,13 +1036,6 @@ gecko-do-install:
 	${TAR} cf - -C${FAKEDIR}/${dir} -s'|${FAKEDIR}|${PREFIX}|s' . | \
 		${TAR} xof - -C${PREFIX}/${dir}
 .endfor
-.if (${OSVERSION} < 800081 )
-	# XXX: make sure bsdtar(1) corrected symlinks
-	${FIND} ${FAKEDIR} -type l -exec \
-		${ECHO_CMD} stat -f \'${LN} -hfs \"%Y\" \"%N\"\' {} + | \
-		${SED} s'|${FAKEDIR}|${PREFIX}|g' | ${SH} | \
-		${SED} -n s'|${FAKEDIR}|${PREFIX}|p' | ${SH} -x
-.endif
 .for pcfile in ${MOZ_PKGCONFIG_FILES}
 	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
 		${PREFIX}/libdata/pkgconfig/${pcfile}.pc

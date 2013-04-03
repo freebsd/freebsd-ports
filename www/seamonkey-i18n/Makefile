@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.16.1
+PORTVERSION=	2.17
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -18,7 +18,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-USE_SEAMONKEY=	16
+USE_SEAMONKEY=	17
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes
@@ -49,7 +49,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@for lang in ${SEAMONKEY_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \

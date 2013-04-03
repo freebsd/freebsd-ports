@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	17.0.4
+DISTVERSION=	17.0.5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -55,17 +55,6 @@ OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-esr17
-
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
-.elif ${ARCH} == powerpc64
-.if ${OSVERSION} < 900033
-BROKEN=		Needs binutils 2.17.50 to build
-.else
-MOZ_EXPORT+=	UNAME_m="powerpc64"
-CFLAGS+=	-mminimal-toc
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MPGO}
 USE_GCC?=	any

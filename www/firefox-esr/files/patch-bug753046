@@ -460,7 +460,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 
 --- ipc/chromium/src/base/platform_thread_posix.cc.orig	2012-03-13 01:36:53.000000000 +0000
 +++ ipc/chromium/src/base/platform_thread_posix.cc
-@@ -9,16 +9,30 @@
+@@ -9,16 +9,24 @@
  
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
@@ -474,13 +474,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 -#include <pthread_np.h>
 +#elif defined(OS_FREEBSD)
 +#include <sys/param.h>
-+#if __FreeBSD_version > 802500
 +#include <sys/thr.h>
-+#else
-+_Pragma("GCC visibility push(default)")
-+extern "C" int thr_self(long *);
-+_Pragma("GCC visibility pop")
-+#endif
  #endif
 +
 +#if !defined(OS_MACOSX)

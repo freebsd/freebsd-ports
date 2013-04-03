@@ -14,15 +14,15 @@
      fi
      MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
      DSO_CFLAGS=-fPIC
-@@ -6271,11 +6271,6 @@
+@@ -6271,11 +6271,9 @@
  #define _THREAD_SAFE 1
  EOF
  
--	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
--	        _PTHREAD_LDFLAGS="-pthread"
+ 	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+ 	        _PTHREAD_LDFLAGS="-pthread"
 -	    else
 -	        _PTHREAD_LDFLAGS="-lc_r"
--	    fi
+ 	    fi
  	    ;;
      *-netbsd*)
  	    if test "$ac_cv_have_dash_pthread" = "yes"; then

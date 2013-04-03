@@ -22,11 +22,11 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib" \
 		SQLITE_INCLUDE_DIR="${LOCALBASE}/include" \
 		NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
 ALL_TARGET=	nss_build_all
-CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 SUB_FILES=	nss-config nss.pc
 SUB_LIST=	MAJOR_VERSION=${PORTVERSION:R:R} \
@@ -55,13 +55,6 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .if ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
-.if defined(WITH_CLANG_IS_CC) || ${CC:Mcc} && ${OSVERSION} > 1000023
-EXTRA_PATCHES+=	${FILESDIR}/extra-bug835050
-.endif
-.if ${CC:Mcc} && (${OSVERSION} >= 800000 && ${OSVERSION} < 802503 \
-	|| ${OSVERSION} < 704101)
-USE_GCC?=	yes # -mssse3
-.endif
 .endif
 
 check regression-test test:
@@ -79,8 +72,6 @@ check regression-test test:
 	fi
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
 	@${REINPLACE_CMD} '/NSS_DEFAULT_SYSTEM/s,/etc,${PREFIX}&,' \
 		${WRKSRC}/lib/sysinit/nsssysinit.c
 	@cd ${WRKSRC} && \

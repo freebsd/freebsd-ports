@@ -17,7 +17,7 @@ The SSH server on remote_host must allow pub key authentication.
 Firefox and HTML5
 
 Certain functions used to display HTML5 elements need the sem module
-on 7.x and 8.x releases.
+only on 8.x releases.
 
 If your Firefox crashes with the following message while viewing a
 HTML5 page:
