@@ -31,12 +31,12 @@ TRAY_DESC=	Tray icon and libnotify support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
