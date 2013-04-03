@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: nsca
+# REQUIRE: nagios
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable nsca-ng:
+# nsca_ng_enable (bool):    Set to "NO" by default.
+#                          Set it to "YES" to enable nsca-ng.
+# nsca_ng_flags (str):      Set to "" by default.
+# nsca_ng_configfile (str): Set to "%%PREFIX%%/etc/nagios/nsca.cfg" by default.
+#
+
+# TODO remove nsca_ng_configfile, remove "REQUIRE nagios"
+
+. /etc/rc.subr
+
+name="nsca_ng"
+rcvar=nsca_ng_enable
+
+command="%%PREFIX%%/sbin/nsca-ng"
+pidfile="/var/run/nsca-ng.pid"
+extra_commands=reload
+
+nsca_ng_enable=${nsca_ng_enable:-"NO"}
+nsca_ng_flags=${nsca_ng_flags:-""}
+nsca_ng_configfile=${nsca_ng_configfile:-"%%PREFIX%%/etc/nagios/nsca-ng.cfg"}
+
+load_rc_config "${name}"
+
+required_files="${nsca_ng_configfile}"
+command_args="-c ${nsca_ng_configfile}"
+
+run_rc_command "$1"
