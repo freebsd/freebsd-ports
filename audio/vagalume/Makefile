@@ -31,12 +31,13 @@ TRAY_DESC=	Tray icon and libnotify support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS="@comment "
-.else
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=--enable-gconf
 post-patch:
 	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
 		${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MNLS}
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|SUBDIRS = src po|SUBDIRS = src|' \
 		${WRKSRC}/Makefile.in
 .endif
