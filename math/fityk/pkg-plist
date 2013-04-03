@@ -5,10 +5,25 @@ include/fityk.h
 lib/libfityk.a
 lib/libfityk.la
 lib/libfityk.so
-lib/libfityk.so.2
+lib/libfityk.so.3
 share/applications/fityk.desktop
 share/mime/packages/fityk.xml
 share/pixmaps/fityk.png
+share/fityk/samples/hello.lua
+share/fityk/samples/SiC_Zn.dat
+share/fityk/samples/hello.cc
+share/fityk/samples/SiC_Zn.fit
+share/fityk/samples/hello.pl
+share/fityk/samples/hello.py
+share/fityk/samples/enso.fit
+share/fityk/samples/nacl01.dat
+share/fityk/samples/enso.dat
+share/fityk/samples/nacl01.fit
+share/fityk/samples/README
+share/fityk/samples/test_syntax.fit
+share/fityk/samples/read-shockley.fit
 @dirrmtry share/applications
+@dirrm share/fityk/samples
+@dirrm share/fityk
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

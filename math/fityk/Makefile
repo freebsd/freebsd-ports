@@ -1,30 +1,26 @@
-# ex:ts=8
-# Ports collection makefile for:	fityk
-# Date created:			Mar 8, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fityk
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	math
-MASTER_SITES=	SF \
-		SF/xylib:xylib
+MASTER_SITES=	SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${XYLIB_DISTNAME}${EXTRACT_SUFX}:xylib
 
-MAINTAINER=	armin@frozen-zone.org
+MAINTAINER=	sperber@FreeBSD.org
 COMMENT=	Free peak fitting software
-
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost-libs \
-		gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORTSDIR}/devel/boost-libs \
+		gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	wojdyr
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_WX=		2.8+
@@ -33,6 +29,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-doc --disable-xyconvert
 USE_LDCONFIG=	yes
+USE_GCC=	any
 
 MAN1=		fityk.1 xyconv.1
 PORTDOCS=	*
@@ -43,7 +40,9 @@ CPPFLAGS+=	-I${WRKDIR}/${XYLIB_DISTNAME} \
 LDFLAGS+=	-L${WRKDIR}/${XYLIB_DISTNAME}/xylib/.libs \
 		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-XYLIB_DISTNAME=	xylib-0.6
+XYLIB_DISTNAME=	xylib-1.1
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/HELP_DEF/s|pkgdatadir|docdir|g' \
@@ -68,7 +67,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/fityk.1 ${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if defined(PORT_OPTIONS:MDOCS)
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
 .endif
