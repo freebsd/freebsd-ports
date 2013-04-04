@@ -20,7 +20,8 @@ PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
 						gio-querymodules \
-						update-desktop-database update-mime-database
+						update-desktop-database update-mime-database \
+						gdk-pixbuf-query-loaders
 
 PLIST_REINPLACE:=	${PLIST_REINPLACE:Ndirrmtry}
 PLIST_REINPLACE:=	${PLIST_REINPLACE:Nstopdaemon}
