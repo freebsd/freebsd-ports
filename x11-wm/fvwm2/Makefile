@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--without-png-library
 .endif
 
-.if ${PORT_OPTIONS:MSVG) && !defined(WITHOUT_SVG}
+.if ${PORT_OPTIONS:MSVG}
 USE_GNOME+=	librsvg2
 .else
 CONFIGURE_ARGS+=	--disable-rsvg
@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--disable-bidi
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.if ${PORT_OPTIONS:MIMLIB) && !defined(WITHOUT_GTK}
+.if ${PORT_OPTIONS:MIMLIB} && !defined(WITHOUT_GTK)
 USE_GNOME+=	imlib
 CONFIGURE_ARGS+=	--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
