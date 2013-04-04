@@ -3,6 +3,7 @@
 
 PORTNAME=	regripper
 DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	rrv${DISTVERSION}
@@ -25,7 +26,7 @@ PLIST_FILES=	bin/rip.pl
 post-patch:
 	${REINPLACE_CMD} -e 's|#! c:\\perl\\bin\\perl.exe|#!${PERL}| ; \
 		s|plugindir = $$str|plugindir = "${DATADIR}"| ; \
-		s|require "plugins\\\\|require "${DATADIR}plugins/|' ${WRKSRC}/rip.pl
+		s|require "plugins/|require "${DATADIR}plugins/|' ${WRKSRC}/rip.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rip.pl ${PREFIX}/bin
