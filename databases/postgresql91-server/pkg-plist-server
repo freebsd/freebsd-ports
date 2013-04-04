@@ -417,6 +417,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Kashgar
 %%TZDATA%%share/postgresql/timezone/Asia/Kathmandu
 %%TZDATA%%share/postgresql/timezone/Asia/Katmandu
+%%TZDATA%%share/postgresql/timezone/Asia/Khandyga
 %%TZDATA%%share/postgresql/timezone/Asia/Kolkata
 %%TZDATA%%share/postgresql/timezone/Asia/Krasnoyarsk
 %%TZDATA%%share/postgresql/timezone/Asia/Kuala_Lumpur
@@ -461,6 +462,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Ulaanbaatar
 %%TZDATA%%share/postgresql/timezone/Asia/Ulan_Bator
 %%TZDATA%%share/postgresql/timezone/Asia/Urumqi
+%%TZDATA%%share/postgresql/timezone/Asia/Ust-Nera
 %%TZDATA%%share/postgresql/timezone/Asia/Vientiane
 %%TZDATA%%share/postgresql/timezone/Asia/Vladivostok
 %%TZDATA%%share/postgresql/timezone/Asia/Yakutsk
@@ -569,6 +571,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Europe/Brussels
 %%TZDATA%%share/postgresql/timezone/Europe/Bucharest
 %%TZDATA%%share/postgresql/timezone/Europe/Budapest
+%%TZDATA%%share/postgresql/timezone/Europe/Busingen
 %%TZDATA%%share/postgresql/timezone/Europe/Chisinau
 %%TZDATA%%share/postgresql/timezone/Europe/Copenhagen
 %%TZDATA%%share/postgresql/timezone/Europe/Dublin
