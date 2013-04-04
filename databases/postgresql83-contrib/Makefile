@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
+PORTREVISION=	0
 PKGNAMESUFFIX=	-contrib
 CATEGORIES=	databases
 
