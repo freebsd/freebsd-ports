@@ -22,6 +22,8 @@ USE_OPENSSL=	yes
 USE_OPENSSL_PORT=	yes
 MANCOMPRESSED=	no
 
+# TODO
+# - DOCS
 .if defined(_BUILDING_NSCA_CLIENT)
 CONFLICTS=	nsca-client-[0-9]*
 CONFIGURE_ARGS+=	--disable-server --enable-client
@@ -32,6 +34,7 @@ PLIST_SUB+=	SERVER="@comment "
 PLIST_SUB+=	CLIENT=""
 .else
 CONFIGURE_ARGS+=	--enable-server --disable-client
+USE_RC_SUBR=	nsca-ng
 MAN5+=	nsca-ng.cfg.5
 MAN8+=	nsca-ng.8
 NSCA_NG_CONF=	nsca-ng.cfg
