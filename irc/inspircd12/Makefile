@@ -124,7 +124,7 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLMODULES}
-.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && !defined(WITH_SQLITE3}
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MSQLITE3}
 BROKEN=		Please enable at least one of MYSQL, PGSQL or SQLITE3 required by SQLMODULES
 .endif
 SYMLINK_FILES+=	m_sqlauth.cpp m_sqllog.cpp m_sqloper.cpp m_sqlutils.cpp \
@@ -134,7 +134,7 @@ PLIST_SUB+=	SQLMODULES=""
 PLIST_SUB+=	SQLMODULES="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGNUTLS) && !defined(WITHOUT_GNUTLS}
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 SYMLINK_FILES+=	m_ssl_gnutls.cpp
@@ -143,7 +143,7 @@ PLIST_SUB+=	GNUTLS=""
 PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MOPENSSL) && !defined(WITHOUT_OPENSSL}
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-openssl
 SYMLINK_FILES+=	m_ssl_openssl.cpp
@@ -152,8 +152,8 @@ PLIST_SUB+=	OPENSSL=""
 PLIST_SUB+=	OPENSSL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSSLMODULES) && !defined(WITHOUT_SSLMODULES}
-.if ! ${PORT_OPTIONS:MGNUTLS) && !defined(WITH_OPENSSL}
+.if ${PORT_OPTIONS:MSSLMODULES}
+.if ! ${PORT_OPTIONS:MGNUTLS} && ! ${PORT_OPTIONS:MOPENSSL}
 BROKEN=		Please enable at least one of GNUTLS or OPENSSL required by SSLMODULES
 .endif
 SYMLINK_FILES+=	m_ssl_oper_cert.cpp m_sslinfo.cpp
@@ -162,7 +162,7 @@ PLIST_SUB+=	SSLMODULES=""
 PLIST_SUB+=	SSLMODULES="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MZIPLINK) && !defined(WITHOUT_ZIPLINK}
+.if ${PORT_OPTIONS:MZIPLINK}
 SYMLINK_FILES+=	m_ziplink.cpp
 PLIST_SUB+=	ZIPLINK=""
 .else
