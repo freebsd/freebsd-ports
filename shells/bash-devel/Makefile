@@ -88,7 +88,7 @@ CONFIGURE_ENV=		YACC="bison -y"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
-.if ${PORT_OPTIONS:MSYSLOG)
+.if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
