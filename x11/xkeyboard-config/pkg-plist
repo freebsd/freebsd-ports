@@ -366,11 +366,11 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/crh/LC_MESSAGES
 @exec mkdir -p /var/lib/xkb
 @dirrmtry share/locale/crh
 @dirrm share/X11/xkb/types
