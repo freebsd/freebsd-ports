@@ -88,3 +88,13 @@ share/polkit-1/actions/org.freedesktop.policykit.policy
 @dirrmtry etc/polkit-1/localauthority/10-vendor.d
 @dirrmtry etc/polkit-1/localauthority
 @dirrmtry etc/polkit-1
+@cwd /
+@dirrmtry var/lib/polkit-1/localauthority/90-mandatory.d
+@dirrmtry var/lib/polkit-1/localauthority/50-local.d
+@dirrmtry var/lib/polkit-1/localauthority/30-site.d
+@dirrmtry var/lib/polkit-1/localauthority/20-org.d
+@dirrmtry var/lib/polkit-1/localauthority/10-vendor.d
+@dirrmtry var/lib/polkit-1/localauthority
+@dirrmtry var/lib/polkit-1/localauthority
+@dirrmtry var/lib/polkit-1
+@dirrmtry var/lib
