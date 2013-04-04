@@ -32,7 +32,7 @@ PORTDOCS=	AUTHORS ChangeLog README TODO
 .include	<bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} 's#/install-man install-doc#install-man#' \
+	@${REINPLACE_CMD} 's/install-man install-doc/install-man/' \
 		${WRKSRC}/Makefile
 
 post-install:
