@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portmon
-# Date created:				18.06.2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	portmon
 PORTVERSION=	2.0
@@ -36,7 +32,7 @@ do-install:
 	@${ECHO} "------------------------------------------------------------"
 	@${ECHO} "Sample of configuration file placed at"
 	@${ECHO} "${PREFIX}/etc/portmon.hosts.sample"
-	@${ECHO} "------------------------------------------------------------
+	@${ECHO} "------------------------------------------------------------"
 
 post-install:
 .if !defined(NOPORTDOCS)
