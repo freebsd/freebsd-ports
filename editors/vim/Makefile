@@ -112,11 +112,12 @@ WANT_GNOME=	yes
 
 .if defined(LITE)
 PKGNAMESUFFIX=	-lite
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
+CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp --disable-luainterp"
 .else	# !LITE
 MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
+CONF_OPT_GUI="--enable-gui=no --without-x"
 .endif
 
 .if ${PORT_OPTIONS:MCSCOPE}
@@ -131,7 +132,6 @@ CTAGS_CMD=	exctags -R .
 CTAGS_CMD=	${FIND} . -type f \\|${XARGS} ctags
 .endif
 
-CONF_OPT_GUI="--enable-gui=no --without-x"
 
 .if ${PORT_OPTIONS:MX11}
 CONF_OPT_GUI="--enable-gui=no --with-x"
