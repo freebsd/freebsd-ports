@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eae8e3cf-9dfe-11e2-ac7f-001fd056c417">
+    <topic>otrs -- Information disclosure and Data manipulation</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-01/">
+	  <p>An attacker with a valid agent login could manipulate URLs in the
+object linking mechanism to see titles of tickets and other objects that are not
+obliged to be seen. Furthermore, links to objects without permission can be
+placed and removed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2625</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-01/</url>
+    </references>
+    <dates>
+      <discovery>2013-04-02</discovery>
+      <entry>2013-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f332f16-9b6b-11e2-8fe9-08002798f6ff">
     <topic>PostgreSQL -- anonymous remote access data corruption vulnerability</topic>
     <affects>
