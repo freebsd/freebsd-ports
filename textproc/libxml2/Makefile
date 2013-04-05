@@ -7,6 +7,7 @@ PORTVERSION=	2.8.0
 PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
+		http://xmlsoft.org/sources/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/
 DIST_SUBDIR=	gnome2
 
