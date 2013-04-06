@@ -42,7 +42,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/init.sh ${PREFIX}/libexec/jerm
 	${INSTALL_SCRIPT} ${WRKSRC}/rock.pl ${PREFIX}/libexec/jerm
 .endif
-.if ${PORT_OPTIONS:MOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
