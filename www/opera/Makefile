@@ -21,10 +21,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-FORBIDDEN=	contains a "moderately severe issue" with unknown impact
-
-OPERA_VER?=	12.14
-OPERA_BUILD?=	1738
+OPERA_VER?=	12.15
+OPERA_BUILD?=	1748
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
