@@ -40,7 +40,7 @@ LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=--enable-libusb
 LDFLAGS+=	-L${PREFIX}/lib -lusb
 
-.if ! ${PORT_OPTIONS:THREADS}
+.if ! ${PORT_OPTIONS:MTHREADS}
 IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconfigure using 'make config'
 .else
 LDFLAGS+=	${PTHREAD_LIBS}
