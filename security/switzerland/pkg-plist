@@ -77,8 +77,6 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
-%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.pyo
@@ -100,8 +98,6 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.pyo
-%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
-%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.pyo
