@@ -51,6 +51,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6beb137-9dc0-11e2-882f-20cf30e32f6d">
+    <topic>Subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><lt>1.7.9</lt></range>
+	<range><lt>1.6.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion team reports:</p>
+	  <blockquote cite="http://subversion.apache.org/security/CVE-2013-1845-advisory.txt">
+	    <p>Subversion's mod_dav_svn Apache HTTPD server module will use excessive
+	      amounts of memory when a large number of properties are set or deleted
+	      on a node.</p>
+	</blockquote>
+	  <blockquote cite="http://subversion.apache.org/security/CVE-2013-1846-advisory.txt">
+	    <p>Subversion's mod_dav_svn Apache HTTPD server module will crash when
+	      a LOCK request is made against activity URLs.</p>
+	</blockquote>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2013-1847-advisory.txt">
+	    <p>Subversion's mod_dav_svn Apache HTTPD server module will crash in some
+	      circumstances when a LOCK request is made against a non-existent URL.</p>
+	</blockquote>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2013-1849-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will crash when a
+	    PROPFIND request is made against activity URLs.</p>
+	</blockquote>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2013-1884-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will crash when a
+	    log REPORT request receives a limit that is out of the allowed range.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1845</cvename>
+      <cvename>CVE-2013-1846</cvename>
+      <cvename>CVE-2013-1847</cvename>
+      <cvename>CVE-2013-1849</cvename>
+      <cvename>CVE-2013-1884</cvename>
+    </references>
+    <dates>
+      <discovery>2013-04-05</discovery>
+      <entry>2013-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eae8e3cf-9dfe-11e2-ac7f-001fd056c417">
     <topic>otrs -- Information disclosure and Data manipulation</topic>
     <affects>
@@ -63,10 +111,10 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-01/">
-	  <p>An attacker with a valid agent login could manipulate URLs in the
-object linking mechanism to see titles of tickets and other objects that are not
-obliged to be seen. Furthermore, links to objects without permission can be
-placed and removed.</p>
+		<p>An attacker with a valid agent login could manipulate URLs in the
+		  object linking mechanism to see titles of tickets and other objects
+		  that are not obliged to be seen. Furthermore, links to objects without
+		  permission can be placed and removed.</p>
 	</blockquote>
       </body>
     </description>
@@ -17163,7 +17211,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Subversion tram reports:</p>
+	<p>Subversion team reports:</p>
 	<blockquote cite="http://subversion.apache.org/security/CVE-2011-1752-advisory.txt">
 	  <p>Subversion's mod_dav_svn Apache HTTPD server module will
 	    dereference a NULL pointer if asked to deliver baselined WebDAV
