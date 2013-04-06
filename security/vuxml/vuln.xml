@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cebed39d-9e6f-11e2-b3f5-003067c2616f">
+    <topic>opera -- moderately severe issue</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<name>linux-opera-devel</name>
+	<range><lt>12.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/1042/">
+	  <p>Fixed a moderately severe issue, as reported by Attila Suszte.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/unified/1215/</url>
+      <url>http://www.opera.com/support/kb/view/1046/</url>
+      <url>http://www.opera.com/support/kb/view/1047/</url>
+    </references>
+    <dates>
+      <discovery>2013-04-04</discovery>
+      <entry>2013-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6beb137-9dc0-11e2-882f-20cf30e32f6d">
     <topic>Subversion -- multiple vulnerabilities</topic>
     <affects>

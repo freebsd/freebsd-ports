@@ -216,6 +216,9 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/in/standard_speeddial.ini
 %%DATADIR%%/region/ke/bookmarks.adr
 %%DATADIR%%/region/ke/standard_speeddial.ini
+%%DATADIR%%/region/kz/bookmarks.adr
+%%DATADIR%%/region/kz/search.ini
+%%DATADIR%%/region/kz/standard_speeddial.ini
 %%DATADIR%%/region/latin_america/bookmarks.adr
 %%DATADIR%%/region/latin_america/search.ini
 %%DATADIR%%/region/latin_america/standard_speeddial.ini
@@ -359,6 +362,7 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/region/mx
 @dirrm %%DATADIR%%/region/middle_east
 @dirrm %%DATADIR%%/region/latin_america
+@dirrm %%DATADIR%%/region/kz
 @dirrm %%DATADIR%%/region/ke
 @dirrm %%DATADIR%%/region/in
 @dirrm %%DATADIR%%/region/id
