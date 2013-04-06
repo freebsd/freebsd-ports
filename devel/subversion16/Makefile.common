@@ -120,6 +120,7 @@ LIB_DEPENDS+=	serf-1:${PORTSDIR}/www/serf
 CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
 PLIST_SUB+=	SERF=""
 .else
+CONFIGURE_ARGS+=--without-serf
 PLIST_SUB+=	SERF="@comment "
 .endif
 
