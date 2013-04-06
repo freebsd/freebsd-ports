@@ -7480,3 +7480,18 @@ $FreeBSD$
  GLX_PREFIX = swt-glx
  
  SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+--- build/eclipse-3.7.1-src/plugins/org.eclipse.core.net/natives/unix/gnomeproxy.c.orig	2008-10-17 09:48:23.000000000 -0500
++++ build/eclipse-3.7.1-src/plugins/org.eclipse.core.net/natives/unix/gnomeproxy.c	2013-03-24 21:44:14.000000000 -0500
+@@ -13,11 +13,10 @@
+ #include <jni.h>
+ 
+ #include <glib.h>
+-#include <glib/gslist.h>
+ #include <gconf/gconf-value.h>
+ #include <gconf/gconf-client.h>
+ 
+-#ifdef __linux__
++#ifdef __STDC__
+ #include <string.h>
+ #else
+ #include <strings.h>
