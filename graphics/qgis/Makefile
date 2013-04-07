@@ -3,6 +3,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -11,12 +12,12 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
-		proj.7:${PORTSDIR}/graphics/proj \
-		gsl.16:${PORTSDIR}/math/gsl \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+		proj:${PORTSDIR}/graphics/proj \
+		gsl:${PORTSDIR}/math/gsl \
+		qwt:${PORTSDIR}/x11-toolkits/qwt5 \
 		gdal:${PORTSDIR}/graphics/gdal \
-		spatialite.4:${PORTSDIR}/databases/spatialite \
-		spatialindex.2:${PORTSDIR}/devel/spatialindex
+		spatialite:${PORTSDIR}/databases/spatialite \
+		spatialindex:${PORTSDIR}/devel/spatialindex
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
