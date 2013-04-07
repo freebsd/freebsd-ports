@@ -12,11 +12,11 @@
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	310.32
-# Always try to set PORTREVISION as can be overridden by the slave ports
+# Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
-# MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
+# MASTER_SITE_SUBDIR it set later because it depends on NVVERSION
 DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -86,18 +86,11 @@ WBINVD_DESC=		Flush CPU caches directly with WBINVD
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
-. if ${OSVERSION} > 1000028
-EXTRA_PATCHES+=	${FILESDIR}/r248084-patch-src-nv-freebsd.h
-EXTRA_PATCHES+=	${FILESDIR}/r248084-patch-src-nvidia_subr.c
-. endif
 
 .if ${PORT_OPTIONS:MLINUX}
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
-. if ${OSVERSION} > 1000026
-EXTRA_PATCHES+=	${FILESDIR}/r246085-patch-src-nvidia_linux.c
-. endif
 .else
 PLIST_SUB+=	LINUX="@comment "
 # Propagate WITHOUT_LINUX variable down to inner Makefiles
@@ -109,23 +102,47 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
+# ABI version is hardcoded inside the binary, so better be explicit here
 LIB_DEPENDS=	m.3:${PORTSDIR}/misc/compat5x
 .endif
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/nv-freebsd.h
-# Adjust legacy drivers for updated d_mmap() since early 9.X
+# Adjust legacy drivers for updated d_mmap() since FreeBSD src SVN r201223
 .if ${OSVERSION} > 900005 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} -e 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
+# In the legacy drivers: remove paqe queue locking and add page locking
+# around vm_page_(un)wire() after FreeBSD src SVN r207410, r207617, and
+# r207644; also remove paqe queue locking around vm_page_wakeup() after
+# FreeBSD src SVN r163622
+.if ${OSVERSION} > 900011 && ${NVVERSION} < 3046400
+	${REINPLACE_CMD} -E '/vm_page_(un)?lock_queues\(\);/d ; \
+		s/(vm_page_(un)?wire\()([^,]+)(, 0)?(\);)/vm_page_lock(\3); & vm_page_unlock(\3);/' \
+			${WRKSRC}/src/nvidia_subr.c
+.endif
 # Catch up legacy drivers with FreeBSD src SVN r225617
 .if ${OSVERSION} > 900043 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
 		${WRKSRC}/src/nvidia_linux.c
+.endif
+# Adjust Linux headers #include's after FreeBSD src SVN r246085
+.if ${OSVERSION} > 1000027 && ${NVVERSION} >= 964323
+	${REINPLACE_CMD} -E '/#include "machine\/\.\.\/linux(32)?\/linux.h"/ \
+		{ x ; s/.*/#include "machine\/..\/..\/compat\/linux\/linux_ioctl.h"/ ; H ; x ; }' \
+			${WRKSRC}/src/nvidia_linux.c
+.endif
+# Adjust vm_object locking after FreeBSD src SVN r248084
+.if ${OSVERSION} > 1000029
+	${REINPLACE_CMD} -e '/#include <vm\/vm_object.h>/ \
+		{ x ; s/.*/#include <sys\/rwlock.h>/ ; G ; }' \
+			${WRKSRC}/src/nv-freebsd.h
+	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/' \
+		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
