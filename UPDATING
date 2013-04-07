@@ -78,6 +78,8 @@ you update your ports collection, before attempting any port upgrades.
   upgrading:
 
   # pkg_delete -f kdegames-4\* kde-workspace-4\* kde-wallpapers-4\*
+    or
+  # pkg delete -fg kdegames-4\* kde-workspace-4\* kde-wallpapers-4\*
 
 20130326:
   AFFECTS: users of deskutils/strigi
@@ -88,6 +90,8 @@ you update your ports collection, before attempting any port upgrades.
 
   # cd /usr/ports/deskutils/strigi && make deinstall && \
     make clean && make install clean
+    or
+  # pkg delete -f strigi && pkg upgrade && pkg install deskutils/strigi
 
 20130323:
   AFFECTS: users of archivers/libarchive
