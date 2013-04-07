@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkmol
-PORTVERSION=	0.4d
+PORTVERSION=	0.4e
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 DISTNAME=	${PORTNAME}
@@ -15,8 +15,6 @@ COMMENT=	Analyze molecules for the presence of functional groups
 LICENSE=	GPLv2 # (or later)
 
 NO_WRKSUBDIR=	yes
-
-BROKEN=	checksum mismatch
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
