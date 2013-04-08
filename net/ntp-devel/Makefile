@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ntp
-# Date created:		Di   5 Mai 1998 21:31:03 CEST
-# Whom:			andreas
-#
+# Created by: andreas
 # $FreeBSD$
-#
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.7p364
@@ -23,7 +19,7 @@ LATEST_LINK=	${PORTNAME}-dev
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 USES=	pathfix
-LIB_DEPENDS=    event-2.0:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
 
 MAN5=		ntp.conf.5 ntp.keys.5
 MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8
@@ -32,25 +28,25 @@ MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=	--without-crypto
-PLIST_SUB+=		SSL="@comment "
-.else
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 PLIST_SUB+=		SSL=""
+.else
+CONFIGURE_ARGS+=	--without-crypto
+PLIST_SUB+=		SSL="@comment "
 .endif
 
-.if !defined(DISABLE_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITH_NTP_SIGND)
+.if ${PORT_OPTIONS:MNTP_SIGND}
 CONFIGURE_ARGS+=	--enable-ntp-signd
 .endif
 
-.if defined(WITH_NTPSNMPD)
+.if ${PORT_OPTIONS:MNTPSNMPD}
 PLIST_FILES+=		sbin/ntpsnmpd
 MAN8+=			ntpsnmpd.8
 BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
@@ -61,12 +57,12 @@ CONFIGURE_ARGS+=	--without-ntpsnmpd
 .endif
 
 .for D in ${NTP_DRIVERS}
-.if defined(WITH_${D})
+.if ${PORT_OPTIONS:M${D}}
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
 
-.if defined(WITH_MX4200)
+.if ${PORT_OPTIONS:MMX4200}
 BROKEN=		Fails to compile when MX4200 is enabled.
 .endif
  
@@ -88,7 +84,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \

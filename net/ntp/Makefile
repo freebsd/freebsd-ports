@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ntp
-# Date created:		Di   5 Mai 1998 21:31:03 CEST
-# Whom:			andreas
-#
+# Created by: andreas
 # $FreeBSD$
-#
 
 PORTNAME=	ntp
 PORTVERSION?=	4.2.6p5
@@ -34,7 +30,7 @@ MAN1=		sntp.1 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NTPSNMPD)
+.if ${PORT_OPTIONS:MNTPSNMPD}
 PLIST_FILES+=		bin/ntpsnmpd
 BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
@@ -42,26 +38,26 @@ RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-m
 CONFIGURE_ARGS+=	--without-ntpsnmpd
 .endif
 
-.if !defined(WITH_SSL)
-CONFIGURE_ARGS+=	--without-crypto
-PLIST_SUB+=		SSL="@comment "
-.else
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 PLIST_SUB+=		SSL=""
+.else
+CONFIGURE_ARGS+=        --without-crypto
+PLIST_SUB+=             SSL="@comment "
 .endif
 
-.if !defined(DISABLE_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=        --enable-ipv6
 .endif
 
-.if defined(WITH_NTP_SIGND)
+.if ${PORT_OPTIONS:MNTP_SIGND}
 CONFIGURE_ARGS+=        --enable-ntp-signd
 .endif
 
 .for D in ${NTP_DRIVERS}
-.if defined(WITH_${D})
+.if ${PORT_OPTIONS:M${D}}
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
@@ -75,7 +71,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
