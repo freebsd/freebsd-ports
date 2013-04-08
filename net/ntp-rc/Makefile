@@ -7,7 +7,7 @@
 
 PORTNAME=	ntp
 PORTVERSION?=	4.2.6p5.r1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
@@ -57,7 +57,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=        --enable-ipv6
 .endif
 
-.if !defined(WITH_NTP_SIGND)
+.if defined(WITH_NTP_SIGND)
 CONFIGURE_ARGS+=        --enable-ntp-signd
 .endif
 

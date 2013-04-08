@@ -7,6 +7,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.7p364
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -22,6 +23,7 @@ LATEST_LINK=	${PORTNAME}-dev
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 USES=	pathfix
+LIB_DEPENDS=    event-2.0:${PORTSDIR}/devel/libevent2
 
 MAN5=		ntp.conf.5 ntp.keys.5
 MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8
@@ -44,7 +46,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if !defined(WITH_NTP_SIGND)
+.if defined(WITH_NTP_SIGND)
 CONFIGURE_ARGS+=	--enable-ntp-signd
 .endif
 
