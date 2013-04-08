@@ -25,20 +25,3 @@
      IF(USE_SCRIPT_IFACE)
          INCLUDE_DIRECTORIES(${QT_QTSCRIPT_INCLUDE_DIR})
      ENDIF(USE_SCRIPT_IFACE)
-@@ -1689,6 +1694,16 @@
-         MACRO_OPTIONAL_ADD_SUBDIRECTORY(tests)
-     ENDIF(KDE4_BUILD_TESTS)
- 
-+    OPTION(WITH_NLS "NLS Support" ON)
-+    IF(WITH_NLS)
-+        FIND_PACKAGE(Msgfmt REQUIRED)
-+        FIND_PACKAGE(Gettext REQUIRED)
-+        ADD_SUBDIRECTORY(po)
-+    ENDIF(WITH_NLS)
-+
-+    ADD_SUBDIRECTORY(doc/digikam/digikam)
-+    ADD_SUBDIRECTORY(doc/digikam/showfoto)
-+
-     IF(NOT WIN32)
-         CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/digikam.lsm.cmake ${CMAKE_CURRENT_BINARY_DIR}/digikam.lsm)
-     ENDIF(NOT WIN32)

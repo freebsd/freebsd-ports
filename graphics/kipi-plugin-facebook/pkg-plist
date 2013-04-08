@@ -1,0 +1,8 @@
+lib/kde4/kipiplugin_facebook.so
+share/apps/kipi/kipiplugin_facebookui.rc
+share/icons/hicolor/16x16/actions/facebook.png
+share/icons/hicolor/22x22/actions/facebook.png
+share/icons/hicolor/32x32/actions/facebook.png
+share/icons/hicolor/48x48/actions/facebook.png
+share/icons/hicolor/scalable/actions/facebook.svgz
+share/kde4/services/kipiplugin_facebook.desktop

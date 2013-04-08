@@ -1,0 +1,3 @@
+lib/kde4/kipiplugin_kopete.so
+share/apps/kipi/kipiplugin_kopeteui.rc
+share/kde4/services/kipiplugin_kopete.desktop

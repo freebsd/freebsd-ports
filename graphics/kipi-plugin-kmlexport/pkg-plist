@@ -1,0 +1,3 @@
+lib/kde4/kipiplugin_kmlexport.so
+share/apps/kipi/kipiplugin_kmlexportui.rc
+share/kde4/services/kipiplugin_kmlexport.desktop
