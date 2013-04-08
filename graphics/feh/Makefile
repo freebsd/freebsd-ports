@@ -3,6 +3,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
@@ -36,7 +37,7 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
