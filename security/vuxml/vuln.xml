@@ -221,7 +221,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>firefox</name>
 	<range><gt>18.0,1</gt><lt>20.0,1</lt></range>
-	<range><lt>17.0.3,1</lt></range>
+	<range><lt>17.0.5,1</lt></range>
       </package>
       <package>
 	<name>linux-firefox</name>
@@ -298,6 +298,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-04-02</discovery>
       <entry>2013-04-03</entry>
+      <modefied>2013-04-08</modified>
     </dates>
   </vuln>
 
