@@ -1,59 +1,114 @@
 # $FreeBSD: /tmp/pcvs/ports/net/ntp-rc/Makefile.inc,v 1.2 2011-11-27 20:04:08 cy Exp $
 
-OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
-		SSL		"Enable SSL" ON \
-		IPV6		"Enable IPv6" OFF \
-  		NTP_SIGND	"Enable signed NTP" OFF \
-  		BANCOMM		"Enable Datum/Bancomm bc635/VME interface" OFF \
-  		GPSVME		"Enable TrueTime GPS receiver/VME interface" OFF \
-  		ACTS		"Enable ACTS modem service" OFF \
-  		ARBITER		"Enable Arbiter 1088A/B GPS receiver" OFF \
-  		ARCRON_MSF	"Enable Arcron MSF receiver" OFF \
-  		AS2201		"Enable Austron 2200A/2201A GPS receiver" OFF \
-  		ATOM		"Enable ATOM PPS interface" ON \
-  		CHRONOLOG	"Enable Chrono-log K-series WWVB receiver" OFF \
-  		CHU		"Enable CHU modem/decoder" OFF \
-  		AUDIO_CHU	"Enable CHU audio/decoder" OFF \
-  		DATUM		"Enable Datum Programmable Time System" OFF \
-  		DUMBCLOCK	"Enable Dumb generic hh:mm:ss local clock" OFF \
-  		FG		"Enable Forum Graphic GPS" OFF \
-  		HEATH		"Enable Heath GC-1000 WWV/WWVH receiver" OFF \
-  		HOPFSERIAL	"Enable hopf serial clock device" OFF \
-  		HOPFPCI		"Enable hopf 6039 PCI board" OFF \
-  		HPGPS		"Enable HP 58503A GPS receiver" OFF \
-  		IRIG		"Enable IRIG audio decoder" OFF \
-  		JJY		"Enable JJY receiver" OFF \
-  		JUPITER		"Enable Rockwell Jupiter GPS receiver" OFF \
-  		LEITCH		"Enable Leitch CSD 5300 Master Clock" OFF \
-  		LOCAL_CLOCK	"Enable local clock reference" OFF \
-  		MX4200		"Enable Magnavox MX4200 GPS receiver" OFF \
-  		NEOCLOCK4X	"Enable NeoClock4X DCF77 / TDF receiver" OFF \
-  		NMEA		"Enable NMEA GPS receiver" ON \
-  		ONCORE		"Enable Motorola VP/UT Oncore GPS receiver" OFF \
-  		PALISADE	"Enable Palisade clock" OFF \
-  		PCF		"Enable Conrad parallel port radio clock" OFF \
-  		PST		"Enable PST/Traconex 1020 WWV/WWVH receiver" OFF \
-  		RIPENCC		"Enable RIPENCC specific Trimble driver" OFF \
-  		SHM		"Enable SHM clock attached thru shared memory" OFF \
-  		SPECTRACOM	"Enable Spectracom 8170/Netclock/2 WWVB" OFF \
-  		TRUETIME	"Enable Kinemetrics/TrueTime receivers" OFF \
-  		ULINK		"Enable Ultralink WWVB receiver" OFF \
-  		WWV		"Enable WWV Audio receiver" OFF \
-  		ZYFER		"Enable Zyfer GPStarplus receiver" OFF \
-  		COMPUTIME	"Enable Diem Computime Radio Clock" OFF \
-  		DCF7000		"Enable ELV/DCF7000 clock" OFF \
-  		HOPF6021	"Enable HOPF 6021 clock" OFF \
-  		MEINBERG	"Enable Meinberg clocks" OFF \
-  		RAWDCF		"Enable DCF77 raw time code" OFF \
-  		RCC8000		"Enable RCC 8000 clock" OFF \
-  		SCHMID		"Enable Schmid DCF77 clock" OFF \
-  		TRIMTAIP	"Enable Trimble GPS receiver/TAIP protocol" OFF \
-  		TRIMTSIP	"Enable Trimble GPS receiver/TSIP protocol" OFF \
-  		WHARTON		"Enable WHARTON 400A Series clock" OFF \
-  		VARITEXT	"Enable VARITEXT clock" OFF
+OPTIONS_DEFINE=	NTPSNMPD \
+		SSL \
+		IPV6 \
+		NTP_SIGND \
+  		BANCOMM	 \
+  		GPSVME \
+  		ACTS \
+  		ARBITER	 \
+  		ARCRON_MSF \
+  		AS2201 \
+  		ATOM \
+  		CHRONOLOG \
+  		CHU \
+  		AUDIO_CHU \
+  		DATUM \
+  		DUMBCLOCK \
+  		FG \
+  		HEATH \
+  		HOPFSERIAL \
+  		HOPFPCI	 \
+  		HPGPS \
+  		IRIG \
+  		JJY \
+  		JUPITER \
+  		LEITCH \
+  		LOCAL_CLOCK \
+  		MX4200 \
+  		NEOCLOCK4X \
+  		NMEA \
+  		ONCORE \
+  		PALISADE \
+  		PCF \
+  		PST \
+  		RIPENCC \
+  		SHM \
+  		SPECTRACOM \
+  		TRUETIME \
+  		ULINK \
+  		WWV \
+  		ZYFER \
+  		COMPUTIME \
+  		DCF7000	 \
+  		HOPF6021 \
+  		MEINBERG \
+  		RAWDCF	 \
+  		RCC8000 \
+  		SCHMID \
+  		TRIMTAIP \
+  		TRIMTSIP \
+  		WHARTON	 \
+  		VARITEXT
 
-# Not supported by FreeBSD:   		TPRO		"Enable KSI/Odetics TPRO/S GPS receiver/IRIG" OFF \
-# XXX Broken under FreeBSD: TT560		"Enable TrueTime 560 IRIG-B decoder" OFF \
+OPTIONS_DEFAULT=	SSL \
+		NTP_SIGND_DESC \
+  		ATOM \
+  		NMEA
+
+NTPSNMPD_DESC=	Build and install ntpsnmpd
+NTP_SIGND_DESC=	Enable signed NTP
+BANCOMM_DESC=	Enable Datum/Bancomm bc635/VME interface
+GPSVME_DESC=	Enable TrueTime GPS receiver/VME interface
+ACTS_DESC=	Enable ACTS modem service
+ARBITER_DESC=	Enable Arbiter 1088A/B GPS receiver
+ARCRON_MSF_DESC=	Enable Arcron MSF receiver
+AS2201_DESC=	Enable Austron 2200A/2201A GPS receiver
+ATOM_DESC=	Enable ATOM PPS interface
+CHRONOLOG_DESC=	Enable Chrono-log K-series WWVB receiver
+CHU_DESC=	Enable CHU modem/decoder
+AUDIO_CHU_DESC=	Enable CHU audio/decoder
+DATUM_DESC=	Enable Datum Programmable Time System
+DUMBCLOCK_DESC=	Enable Dumb generic hh:mm:ss local clock
+FG_DESC=	Enable Forum Graphic GPS
+HEATH_DESC=	Enable Heath GC-1000 WWV/WWVH receiver
+HOPFSERIAL_DESC=	Enable hopf serial clock device
+HOPFPCI_DESC=	Enable hopf 6039 PCI board
+HPGPS_DESC=	Enable HP 58503A GPS receiver
+IRIG_DESC=	Enable IRIG audio decoder
+JJY_DESC=	Enable JJY receiver
+JUPITER_DESC=	Enable Rockwell Jupiter GPS receiver
+LEITCH_DESC=	Enable Leitch CSD 5300 Master Clock
+LOCAL_CLOCK_DESC=	Enable local clock reference
+MX4200_DESC=	Enable Magnavox MX4200 GPS receiver
+NEOCLOCK4X_DESC=	Enable NeoClock4X DCF77 / TDF receiver
+NMEA_DESC=	Enable NMEA GPS receiver
+ONCORE_DESC=	Enable Motorola VP/UT Oncore GPS receiver
+PALISADE_DESC=	Enable Palisade clock
+PCF_DESC=	Enable Conrad parallel port radio clock
+PST_DESC=	Enable PST/Traconex 1020 WWV/WWVH receiver
+RIPENCC_DESC=	Enable RIPENCC specific Trimble driver
+SHM_DESC=	Enable SHM clock attached thru shared memory
+SPECTRACOM_DESC=	Enable Spectracom 8170/Netclock/2 WWVB
+TRUETIME_DESC=	Enable Kinemetrics/TrueTime receivers
+ULINK_DESC=	Enable Ultralink WWVB receiver
+WWV_DESC=	Enable WWV Audio receiver
+ZYFER_DESC=	Enable Zyfer GPStarplus receiver
+COMPUTIME_DESC=	Enable Diem Computime Radio Clock
+DCF7000_DESC=	Enable ELV/DCF7000 clock
+HOPF6021_DESC=	Enable HOPF 6021 clock
+MEINBERG_DESC=	Enable Meinberg clocks
+RAWDCF_DESC=	Enable DCF77 raw time code
+RCC8000_DESC=	Enable RCC 8000 clock
+SCHMID_DESC=	Enable Schmid DCF77 clock
+TRIMTAIP_DESC=	Enable Trimble GPS receiver/TAIP protocol
+TRIMTSIP_DESC=	Enable Trimble GPS receiver/TSIP protocol
+WHARTON_DESC=	Enable WHARTON 400A Series clock
+VARITEXT_DESC=	Enable VARITEXT clock
+
+# Not supported by FreeBSD:   	TPRO	Enable KSI/Odetics TPRO/S GPS receiver/IRIG
+# XXX Broken under FreeBSD: TT560	Enable TrueTime 560 IRIG-B decoder
 
 NTP_DRIVERS= \
   		BANCOMM \
