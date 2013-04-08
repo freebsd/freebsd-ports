@@ -53,7 +53,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MUSB}
+.if empty(PORT_OPTIONS:MUSB)
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
