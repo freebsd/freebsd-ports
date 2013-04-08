@@ -1,0 +1,3 @@
+lib/kde4/kipiplugin_calendar.so
+share/apps/kipi/kipiplugin_calendarui.rc
+share/kde4/services/kipiplugin_calendar.desktop

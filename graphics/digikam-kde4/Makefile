@@ -1,13 +1,8 @@
-# New ports collection makefile for:	digikam
-# Date created: 			3 February 2003
-# Whom:					Arjan van Leeuwen <avleeuwen@piwebs.com>
-#
+# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	digikam
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 
@@ -28,7 +23,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-OPTIONS_DEFINE=		NLS GPHOTO2 PIMLIBS MYSQL
+OPTIONS_DEFINE=		DOCS NLS GPHOTO2 PIMLIBS MYSQL
 OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
 NO_OPTIONS_SORT=	yes
 
@@ -38,6 +33,8 @@ PIMLIBS_DESC=		Enable address book support
 USE_PKGCONFIG=	build
 USE_KDE4+=	libkdcraw libkexiv2 libkipi
 USE_QT4+=	sql-sqlite3_run
+USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DWITH_Sqlite2=off
 
 MAN1=		digitaglinktree.1 \
 		cleanup_digikamdb.1
@@ -47,11 +44,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/core
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DWITH_NLS:BOOL=OFF
-PLIST_SUB+=	NLS="@comment "
+RUN_DEPENDS+=	digikam-l10n>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-l10n
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+RUN_DEPENDS+=	digikam-doc>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-doc
 .endif
 
 .if ${PORT_OPTIONS:MGPHOTO2}
@@ -76,10 +73,5 @@ PLIST_SUB+=	MYSQL=""
 CMAKE_ARGS+=	-DENABLE_INTERNALMYSQL:BOOL=OFF
 PLIST_SUB+=	MYSQL="@comment "
 .endif
-
-post-patch:
-	${LN} -s ../doc ${WRKSRC}/doc
-	${LN} -s ../po ${WRKSRC}/po
-	${RM} ${WRKSRC}/po/*/libkgeomap.po ${WRKSRC}/po/*/kipi*
 
 .include <bsd.port.mk>

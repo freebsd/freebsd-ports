@@ -1,0 +1,16 @@
+bin/panoramagui
+lib/kde4/kipiplugin_panorama.so
+share/applications/kde4/panoramagui.desktop
+share/apps/kipi/kipiplugin_panoramaui.rc
+share/apps/kipiplugin_panorama/pics/assistant-hugin.png
+share/apps/kipiplugin_panorama/pics/assistant-preprocessing.png
+share/apps/kipiplugin_panorama/pics/assistant-stack.png
+share/apps/kipiplugin_panorama/pics/assistant-tripod.png
+share/icons/hicolor/16x16/actions/panorama.png
+share/icons/hicolor/22x22/actions/panorama.png
+share/icons/hicolor/32x32/actions/panorama.png
+share/icons/hicolor/48x48/actions/panorama.png
+share/icons/hicolor/scalable/actions/panorama.svgz
+share/kde4/services/kipiplugin_panorama.desktop
+@dirrm share/apps/kipiplugin_panorama/pics
+@dirrm share/apps/kipiplugin_panorama
