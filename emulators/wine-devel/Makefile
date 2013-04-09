@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
 
-MAINTAINER=	gerald@FreeBSD.org
+MAINTAINER?=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
 
 LICENSE=	LGPL21 LGPL3
@@ -25,7 +25,7 @@ LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS_INSTALL=	wine-1.4*
 
-LATEST_LINK=	wine-devel
+LATEST_LINK?=	wine-devel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GCC=	any

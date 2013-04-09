@@ -3,6 +3,9 @@
 
 PKGNAMEPREFIX=	i386-
 
+MAINTAINER=	dbn@FreeBSD.org
+LATEST_LINK=	${PKGNAMEPREFIX}wine-devel
+
 # Use the wine port to do most of the heavy lifting
 MASTERDIR=	${.CURDIR}/../wine-devel
 PKGINSTALL=	${.CURDIR}/files/pkg-install
