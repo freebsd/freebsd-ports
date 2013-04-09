@@ -3,7 +3,7 @@
 
 PORTNAME=	HTTP-Message
 PORTVERSION=	6.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,5 +31,8 @@ MAN3=		HTTP::Config.3 \
 		HTTP::Request::Common.3 \
 		HTTP::Response.3 \
 		HTTP::Status.3
+
+post-patch:
+		@${RM} ${WRKSRC}/lib/HTTP/Headers.pm.orig
 
 .include <bsd.port.mk>
