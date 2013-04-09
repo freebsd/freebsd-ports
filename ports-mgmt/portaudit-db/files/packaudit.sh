@@ -67,8 +67,27 @@ fi
 
 TMPNAME=`$BASENAME "$0"`
 
-VULVER=`$SED -En -e '/^.*\\$FreeBSD\: [^$ ]+,v ([0-9]+(\.[0-9]+)+) [^$]+\\$.*$/{s//\1/p;q;}' "$VUXMLDIR/vuln.xml"`
-VULURL="http://cvsweb.freebsd.org/ports/security/vuxml/vuln.xml?rev=$VULVER"
+# Is CVS still used for generation of VuXML entries?  That's bad.
+ISCVS=`$SED -En -e '/^.*\\$FreeBSD\: [^$ ]+\/vuln.xml,v ([0-9]+(\.[0-9]+)+) [^$]+\\$.*$/{s//\1/p;q;}' "$VUXMLDIR/vuln.xml"`
+if [ -n "$ISCVS" ]; then
+	cat << EOF
+File $VUXMLDIR/vuln.xml seem to come from CVS.
+
+CVS for FreeBSD ports is no longer synced with Subversion, so you will
+get outdated vulnerability list.  Please, check out your sources from
+Subversion, refer to
+  http://www.freebsd.org/doc/handbook/svn.html
+for the up to date instructions on how to actually do that.
+EOF
+	exit 1
+fi
+
+VULPATH=`$SED -En -e '/^.*\\$FreeBSD\: ([^$ ]+\/vuln.xml) ([0-9]+) [^$]+\\$/{s//\1?revision=\2/p;q;}' "$VUXMLDIR/vuln.xml"`
+if [ -z  "$VULPATH" ]; then
+	echo "Can't determine origin and version of vuln.xml from $VUXMLDIR/vuln.xml"
+	exit 1
+fi
+VULURL="https://svnweb.freebsd.org/ports/$VULPATH"
 
 [ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
 
@@ -90,7 +109,7 @@ fi
 TMPDIR=`$MKTEMP -d -t "$TMPNAME.$$"` || exit 1
 
 TESTPORT="vulnerability-test-port>=2000<`$DATE -u +%Y.%m.%d`"
-TESTURL="http://cvsweb.freebsd.org/ports/security/vulnerability-test-port/"
+TESTURL="https://svnweb.freebsd.org/ports/head/ports-mgmt/vulnerability-test-port/"
 TESTREASON="Not vulnerable, just a test port (database: `$DATE -u +%Y-%m-%d`)"
 
 XLIST_FILE="$PORTAUDITDBDIR/database/portaudit.xlist"
