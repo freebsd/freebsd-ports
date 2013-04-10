@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-skins
-PORTVERSION=	0.1
-PORTREVISION=	11
+PORTVERSION=	0.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	CRITICAL
 
@@ -12,8 +11,13 @@ COMMENT=	Collection of audacious skins
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
+USE_XZ=		yes
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/audacious
+
+do-install:
+	${MKDIR} ${DATADIR}/Skins
+	${INSTALL_DATA} ${WRKSRC}/Skins/*.zip ${DATADIR}/Skins
 
 .include <bsd.port.mk>
