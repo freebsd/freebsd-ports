@@ -1,5 +1,5 @@
 --- subversion/svn/util.c.orig	2011-10-20 07:01:47.000000000 -0700
-+++ subversion/svn/util.c	2013-03-12 11:45:35.754374859 -0700
++++ subversion/svn/util.c	2013-04-09 23:14:37.817293627 -0700
 @@ -63,6 +63,9 @@
  #include "private/svn_opt_private.h"
  #include "private/svn_client_private.h"
@@ -10,7 +10,7 @@
  
  
  
-@@ -682,6 +685,68 @@
+@@ -682,6 +685,67 @@
  }
  
  
@@ -20,8 +20,7 @@
 + * projects that won't be expecting them.
 + */
 +
-+#define NPREFIX 7
-+char *prefixes[NPREFIX] = {
++static const char *prefixes[] = {
 +  "PR:",
 +  "Submitted by:",
 +  "Reviewed by:",
@@ -41,7 +40,7 @@
 +  char *p;
 +  int empty;
 +
-+  for (i = 0; i < NPREFIX; i++) {
++  for (i = 0; i < sizeof(prefixes) / sizeof(prefixes[0]); i++) {
 +    pos = s;
 +    while ((kw = strstr(pos, prefixes[i])) != NULL) {
 +      /* Check to see if keyword is at start of line (or buffer) */
@@ -79,7 +78,7 @@
  #define EDITOR_EOF_PREFIX  _("--This line, and those below, will be ignored--")
  
  svn_error_t *
-@@ -697,8 +762,32 @@
+@@ -697,8 +761,32 @@
  
    /* Set default message.  */
    default_msg = svn_stringbuf_create(APR_EOL_STR, pool);
@@ -113,7 +112,7 @@
  
    *tmp_file = NULL;
    if (lmb->message)
-@@ -710,6 +799,7 @@
+@@ -710,6 +798,7 @@
           that follows it.  */
        truncate_buffer_at_prefix(&(log_msg_buf->len), log_msg_buf->data,
                                  EDITOR_EOF_PREFIX);
@@ -121,7 +120,7 @@
  
        /* Make a string from a stringbuf, sharing the data allocation. */
        log_msg_str->data = log_msg_buf->data;
-@@ -830,6 +920,13 @@
+@@ -830,6 +919,13 @@
        if (message)
          truncate_buffer_at_prefix(&message->len, message->data,
                                    EDITOR_EOF_PREFIX);
