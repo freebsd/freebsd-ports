@@ -13,11 +13,11 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
+USES=		bison
 
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
-USES=		bison
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
