@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-mail
-# Date created:				30 Aug 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mail
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.3
 PORTEPOCH=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
