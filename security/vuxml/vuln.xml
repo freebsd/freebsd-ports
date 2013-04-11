@@ -132,6 +132,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2013-0131</cvename>
+      <url>http://nvidia.custhelp.com/app/answers/detail/a_id/3290</url>
     </references>
     <dates>
       <discovery>2013-03-27</discovery>
