@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.275
+PORTVERSION=	11.2r202.280
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
@@ -54,7 +54,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${DESKTOPDIR}
 	@(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons)
-	-@update-desktop-database
+.if ${PORT_OPTIONS:MGNOME}
+	@update-desktop-database
+.endif
 
 .include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
 .include <bsd.port.post.mk>

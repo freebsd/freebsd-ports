@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="15236023-a21b-11e2-a460-208984377b34">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.280</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-12.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1383</cvename>
+      <cvename>CVE-2013-1384</cvename>
+      <cvename>CVE-2013-1385</cvename>
+      <cvename>CVE-2013-1386</cvename>
+    </references>
+    <dates>
+      <discovery>2013-04-09</discovery>
+      <entry>2013-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="db0c4b00-a24c-11e2-9601-000d601460a4">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
