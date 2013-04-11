@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.1.13
+PORTVERSION=	3.1.14
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -13,8 +13,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3
-
-FORBIDDEN=	CVE-2013-2625
 
 BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
