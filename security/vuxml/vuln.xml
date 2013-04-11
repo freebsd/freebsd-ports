@@ -51,6 +51,60 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="db0c4b00-a24c-11e2-9601-000d601460a4">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.13</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.13</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activerecord</name>
+	<range><lt>3.2.13</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails team reports:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2013/3/18/SEC-ANN-Rails-3-2-13-3-1-12-and-2-3-18-have-been-released/">
+	  <p>Rails versions 3.2.13 has been released. This release
+	  contains important security fixes.  It is recommended
+	  users upgrade as soon as possible.</p>
+	  <p>Four vulnerabilities have been discovered and fixed:</p>
+	  <ol>
+	    <li>(CVE-2013-1854) Symbol DoS vulnerability in Active Record</li>
+	    <li>(CVE-2013-1855) XSS vulnerability in sanitize_css in Action Pack</li>
+	    <li>(CVE-2013-1856) XML Parsing Vulnerability affecting JRuby users</li>
+	    <li>(CVE-2013-1857) XSS Vulnerability in the `sanitize` helper of Ruby on Rails</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-1854</cvename>
+	<cvename>CVE-2013-1856</cvename>
+	<cvename>CVE-2013-1856</cvename>
+	<cvename>CVE-2013-1857</cvename>
+	<url>http://weblog.rubyonrails.org/2013/3/18/SEC-ANN-Rails-3-2-13-3-1-12-and-2-3-18-have-been-released/</url>
+	<url>https://groups.google.com/forum/#!topic/ruby-security-ann/o0Dsdk2WrQ0</url>
+	<url>https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/4_QHo4BqnN8</url>
+	<url>https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/KZwsQbYsOiI</url>
+	<url>https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/zAAU7vGTPvI</url>
+    </references>
+    <dates>
+      <discovery>2013-03-18</discovery>
+      <entry>2013-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1431f2d6-a06e-11e2-b9e0-001636d274f3">
     <topic>NVIDIA UNIX driver -- ARGB cursor buffer overflow in "NoScanout" mode</topic>
     <affects>
