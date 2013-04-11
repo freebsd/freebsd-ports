@@ -14,6 +14,8 @@ COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3
 
+FORBIDDEN=	CVE-2013-2625
+
 BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
