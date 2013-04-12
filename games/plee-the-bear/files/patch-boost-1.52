@@ -340,17 +340,6 @@ diff -up plee-the-bear/CMakeLists.txt.boost146 plee-the-bear/CMakeLists.txt
  
  #-------------------------------------------------------------------------------
  # Include directories for Boost
-diff -up plee-the-bear/data/CMakeLists.txt.boost146 plee-the-bear/data/CMakeLists.txt
---- plee-the-bear/data/CMakeLists.txt.boost146	2010-11-21 08:24:51.000000000 -0600
-+++ plee-the-bear/data/CMakeLists.txt	2012-08-21 15:33:24.611557060 -0500
-@@ -25,6 +25,7 @@ install(
-   PATTERN "*.gz" EXCLUDE
-   PATTERN "*.bz2" EXCLUDE
-   PATTERN "README" EXCLUDE
-+  PATTERN "AUTHORS" EXCLUDE
- )
- 
- install(
 diff -up plee-the-bear/src/ptb/frame/code/frame_profile_name.cpp.boost146 plee-the-bear/src/ptb/frame/code/frame_profile_name.cpp
 --- plee-the-bear/src/ptb/frame/code/frame_profile_name.cpp.boost146	2012-08-21 15:44:43.707601717 -0500
 +++ plee-the-bear/src/ptb/frame/code/frame_profile_name.cpp	2012-08-21 15:45:22.604604268 -0500
