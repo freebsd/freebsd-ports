@@ -496,7 +496,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenVPN project reports:</p>
-	<blockquote cite="https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23#OpenVPN2.3.1">
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-f375aa67cc">
 	  <p>OpenVPN 2.3.0 and earlier running in UDP mode are subject
 	    to chosen ciphertext injection due to a non-constant-time
 	    HMAC comparison function.</p>
