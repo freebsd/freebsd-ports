@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lp_solve
-# Date created:         31 June 2003
-# Whom:			Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lp_solve
 PORTVERSION=	5.5.2.0
@@ -19,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R:R}
 USE_LDCONFIG=	yes
 
 .if defined(TMPDIR)
-BUILDENV=	${ENV} TMPDIR="${TMPDIR}"
+BUILDENV=	${SETENV} TMPDIR="${TMPDIR}"
 .endif
 
 .include <bsd.port.pre.mk>
