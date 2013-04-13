@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsmail
-# Date created:		23rd August, 2000
-# Whom:			Ben Smithurst <ben@FreeBSD.org>
-#
+# Created by: Ben Smithurst <ben@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsmail
 PORTVERSION=	2.2
@@ -14,6 +10,7 @@ DISTNAME=	mailutils-${PORTVERSION}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
 
+DIST_SUBDIR=	${PORTNAME}
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no
 MAN1=		cvsmail.1
