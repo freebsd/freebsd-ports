@@ -52,12 +52,12 @@ do-build:
 .ifdef(JBIGI_BUILD_JCPUID)
 # jcpuid
 	cd ${BUILD_WRKSRC}/jcpuid && \
-		${ENV} ${JBIGI_BUILD_ENV} \
+		${SETENV} ${JBIGI_BUILD_ENV} \
 			${SH} ./build.sh
 .endif
 # jbigi
 	cd ${BUILD_WRKSRC}/jbigi && \
-		${ENV} ${JBIGI_BUILD_ENV} \
+		${SETENV} ${JBIGI_BUILD_ENV} \
 			${SH} ./build_jbigi.sh dynamic
 ## prepare jar
 .ifdef(JBIGI_BUILD_JCPUID)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zenoss
-# Date created:		19 April 2011
-# Whom:			Phil Phillips
-#
+# Created by: Phil Phillips
 # $FreeBSD$
-#
 
 PORTNAME=	zenoss
 PORTVERSION=	3.1.0
@@ -97,7 +93,7 @@ do-install:
 		&& ${LN} -sF ${ZENHOME}/libdata/pkgconfig \
 		${ZENHOME}/lib/pkgconfig
 
-	@cd ${WRKSRC} && ${ENV} ${BUILD_ENV} SVNVERSION=${FALSE} bash ./build.sh 2>/dev/null
+	@cd ${WRKSRC} && ${SETENV} ${BUILD_ENV} SVNVERSION=${FALSE} bash ./build.sh 2>/dev/null
 
 	@${RM} ${ZENHOME}/lib/pkgconfig
 
