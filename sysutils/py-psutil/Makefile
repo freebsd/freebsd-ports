@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-psutil
-# Date created:				04 May 2010
-# Whom:					Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	psutil
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
