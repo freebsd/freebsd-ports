@@ -4004,7 +4004,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </dates>
   </vuln>
 
-  <vuln vid="0f020b7b-e033-11e1-90a2-000c299b62e1">
+  <vuln vid="4b79538b-a450-11e2-9898-001060e06fd4">
     <topic>FreeBSD -- Multiple Denial of Service vulnerabilities with named(8)</topic>
     <affects>
       <package>
@@ -13071,7 +13071,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </dates>
   </vuln>
 
-  <vuln vid="7a09a8df-ca41-11df-aade-0050568f000c">
+  <vuln vid="87261557-a450-11e2-9898-001060e06fd4">
     <topic>FreeBSD -- Network ACL mishandling in mountd(8)</topic>
     <affects>
       <package>
@@ -14822,7 +14822,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </dates>
   </vuln>
 
-  <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
+  <vuln vid="7be92050-a450-11e2-9898-001060e06fd4">
     <topic>libxml -- Integer overflow</topic>
     <affects>
       <package>
