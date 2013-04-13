@@ -46,7 +46,7 @@ pre-install:
 .endfor
 
 post-build:
-	@${ENV} LD_LIBRARY_PATH=${WRKSRC} \
+	@${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
 		${WRKSRC}/leapsecs < ${WRKSRC}/leapsecs.txt > \
 		${WRKSRC}/leapsecs.dat
 
