@@ -232,7 +232,6 @@ share/icons/hicolor/48x48/proofgeneral.png
 share/mime-info/proofgeneral.keys
 share/mime-info/proofgeneral.mime
 share/pixmaps/proofgeneral.png
-@dirrmtry share/mime-info
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/16x16
@@ -254,5 +253,4 @@ share/pixmaps/proofgeneral.png
 @dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/acl2
 @dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral
 @dirrmtry share/applications
-@dirrmtry share/application-registry
 @dirrmtry share/pixmaps
