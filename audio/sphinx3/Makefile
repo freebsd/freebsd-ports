@@ -3,6 +3,7 @@
 
 PORTNAME=	sphinx3
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
@@ -16,6 +17,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=libtool
 USE_CSTD=	gnu99
 MAKE_JOBS_UNSAFE=	yes
+USES=		pathfix
 
 CFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase
 CXXFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase
@@ -23,8 +25,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
