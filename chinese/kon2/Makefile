@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kon2 with 16dot font
-# Date created:         31 March 2003
-# Whom:                 Chen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Chen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTREVISION=	3
 
@@ -37,7 +33,7 @@ post-install: post-install-zhkon2
 post-install-zhkon2:
 	@${MKDIR} ${PREFIX}/share/fonts/bdf
 	cd ${KCFONTS_WRKSRC} && ./kc15f | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/kc15f.bdf.gz
-	cd ${CCE_WRKSRC} && cat fonts/gb16fs.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16fs.bdf.gz
-	cd ${CCE_WRKSRC} && cat fonts/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
+	cd ${CCE_WRKSRC} && ${CAT} fonts/gb16fs.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16fs.bdf.gz
+	cd ${CCE_WRKSRC} && ${CAT} fonts/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
 
 .include "${MASTERDIR}/Makefile"
