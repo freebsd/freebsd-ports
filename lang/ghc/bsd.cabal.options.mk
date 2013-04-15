@@ -35,6 +35,7 @@ OPTIONS_DEFINE+=	PROFILE
 .if !exists(${GHC_CMD}) || ((exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) && !defined(NOPORTDOCS))
 OPTIONS_DEFINE+=	DOCS
 OPTIONS_DEFAULT+=	DOCS
+HADDOCK_AVAILABLE=	yes
 
 .if (${PORTNAME} != hscolour || exists(${HSCOLOUR_CMD})) && !defined(IGNORE_HSCOLOUR)
 OPTIONS_DEFINE+=	HSCOLOUR
