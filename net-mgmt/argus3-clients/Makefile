@@ -17,9 +17,10 @@ CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 OPTIONS_DEFINE=	GEOIP MANPAGES MYSQL SASL
 OPTIONS_DEFAULT=MANPAGES MYSQL SASL
 
+USES=		bison
+
 .include <bsd.port.options.mk>
 
-USE_BISON=	build
 GNU_CONFIGURE=	true
 USE_NCURSES=	yes
 USE_PERL5=	yes
