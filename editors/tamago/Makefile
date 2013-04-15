@@ -3,7 +3,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -29,8 +29,7 @@ PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		ChangeLog.2000-2001 PROBLEMS README.ja.txt TODO \
 		README.Debian changelog.Debian
-
-POSTPATCHES=	${FILESDIR}/post-patch-*
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -43,9 +42,6 @@ PLIST_SUB+=	HAS_JISX0213="@comment "
 pre-configure:
 	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
-
-post-patch:
-	cd ${PATCH_WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 
 post-build:
 	cd ${WRKSRC}/helper && ${MAKE} egg-helper
