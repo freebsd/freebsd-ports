@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a2ff483f-a5c6-11e2-9601-000d601460a4">
+    <topic>sieve-connect -- TLS hostname verification was not occurring</topic>
+    <affects>
+      <package>
+	<name>sieve-connect</name>
+	<range><lt>0.85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>sieve-connect developer Phil Pennock reports:</p>
+	<blockquote cite="http://mail.globnix.net/pipermail/sieve-connect-announce/2013/000005.html">
+	  <p>sieve-connect was not actually verifying TLS certificate identities
+	    matched the expected hostname.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mail.globnix.net/pipermail/sieve-connect-announce/2013/000005.html</url>
+    </references>
+    <dates>
+      <discovery>2013-04-14</discovery>
+      <entry>2013-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15236023-a21b-11e2-a460-208984377b34">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
