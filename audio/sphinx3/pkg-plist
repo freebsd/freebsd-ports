@@ -40,7 +40,6 @@ include/sphinx3/fsg_search.h
 include/sphinx3/gmm_wrap.h
 include/sphinx3/gs.h
 include/sphinx3/hmm.h
-include/sphinx3/hyp.h
 include/sphinx3/interp.h
 include/sphinx3/kb.h
 include/sphinx3/kbcore.h
@@ -65,6 +64,7 @@ include/sphinx3/s3_endpointer.h
 include/sphinx3/s3types.h
 include/sphinx3/search.h
 include/sphinx3/sort.h
+include/sphinx3/sphinx3_export.h
 include/sphinx3/srch.h
 include/sphinx3/srch_allphone.h
 include/sphinx3/srch_debug.h
@@ -126,14 +126,15 @@ libdata/pkgconfig/sphinx3.pc
 %%DATADIR%%/model/ep/means
 %%DATADIR%%/model/ep/mixture_weights
 %%DATADIR%%/model/ep/variances
-%%DATADIR%%/model/hmm/RM1_cd_semi/RM1.1000.mdef
 %%DATADIR%%/model/hmm/RM1_cd_semi/feat.params
 %%DATADIR%%/model/hmm/RM1_cd_semi/kdtrees
 %%DATADIR%%/model/hmm/RM1_cd_semi/means
+%%DATADIR%%/model/hmm/RM1_cd_semi/mdef
 %%DATADIR%%/model/hmm/RM1_cd_semi/mixture_weights
 %%DATADIR%%/model/hmm/RM1_cd_semi/transition_matrices
 %%DATADIR%%/model/hmm/RM1_cd_semi/variances
 %%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd/8gau.6000sen.quant
+%%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd/feat.params
 %%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd/mdef
 %%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd/means
 %%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd/mixture_weights
