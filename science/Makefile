@@ -193,6 +193,7 @@
     SUBDIR += v_sim
     SUBDIR += veusz
     SUBDIR += vmd
+    SUBDIR += voro++
     SUBDIR += x11iraf
     SUBDIR += xmakemol
     SUBDIR += xmds
