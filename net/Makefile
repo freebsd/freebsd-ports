@@ -527,7 +527,6 @@
     SUBDIR += p5-Geo-IPfree
     SUBDIR += p5-Google-SAML-Request
     SUBDIR += p5-Google-SAML-Response
-    SUBDIR += p5-Gopher-Server
     SUBDIR += p5-Growl-GNTP
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-INET6
@@ -594,7 +593,6 @@
     SUBDIR += p5-Net-Google-Code
     SUBDIR += p5-Net-Google-DataAPI
     SUBDIR += p5-Net-Google-Spreadsheets
-    SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-Growl
     SUBDIR += p5-Net-GrowlClient
     SUBDIR += p5-Net-HL7

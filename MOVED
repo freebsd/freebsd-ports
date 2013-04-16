@@ -4195,3 +4195,6 @@ mail/thunderbird-esr|mail/thunderbird|2013-04-03|Removed: Mozilla stopped provid
 mail/thunderbird-esr-i18n|mail/thunderbird-i18n|2013-04-03|Removed: Mozilla stopped providing 2 versions of thunderbird
 www/mod_security21|www/mod_security|2013-04-16|Removed: It is outdate and had a vulnerability, consider using a newer version
 www/linux-flashplugin9||2013-04-16|Has expired: Vulnerable, BROKEN for more than six months
+www/p5-Apache-GopherHandler||2013-04-16|Has expired: Depends on p5-Net-Gopher which is deprecated and expired
+net/p5-Gopher-Server||2013-04-16|Has expired: Depends on p5-Net-Gopher which is deprecated and expired
+net/p5-Net-Gopher||2013-04-16|Has expired: gone from CPAN
