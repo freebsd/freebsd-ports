@@ -1,12 +1,8 @@
-# New ports collection makefile for:	MooseX-ClassAttribute
-# Date created:	   07 Jun 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-ClassAttribute
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -17,11 +13,14 @@ COMMENT=	Declare class attributes Moose-style
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moose>=1.23:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
+		p5-namespace-autoclean>=0.11:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+TEST_DEPENDS=	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+		p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
+		p5-MooseX-Role-Strict>=0:${PORTSDIR}/devel/p5-MooseX-Role-Strict \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
