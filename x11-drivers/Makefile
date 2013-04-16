@@ -40,7 +40,6 @@
     SUBDIR += xf86-video-openchrome
     SUBDIR += xf86-video-r128
     SUBDIR += xf86-video-radeonhd
-    SUBDIR += xf86-video-radeonhd-devel
     SUBDIR += xf86-video-rdc
     SUBDIR += xf86-video-rendition
     SUBDIR += xf86-video-s3

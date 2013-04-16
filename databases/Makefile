@@ -613,7 +613,6 @@
     SUBDIR += php52-pdo_pgsql
     SUBDIR += php52-pdo_sqlite
     SUBDIR += php52-pgsql
-    SUBDIR += php52-rrdtool
     SUBDIR += php52-sqlite
     SUBDIR += php52-sybase_ct
     SUBDIR += php53-dba

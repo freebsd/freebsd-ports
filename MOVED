@@ -4198,3 +4198,8 @@ www/linux-flashplugin9||2013-04-16|Has expired: Vulnerable, BROKEN for more than
 www/p5-Apache-GopherHandler||2013-04-16|Has expired: Depends on p5-Net-Gopher which is deprecated and expired
 net/p5-Gopher-Server||2013-04-16|Has expired: Depends on p5-Net-Gopher which is deprecated and expired
 net/p5-Net-Gopher||2013-04-16|Has expired: gone from CPAN
+x11-drivers/xf86-video-radeonhd-devel||2013-04-16|Has expired: Unsupported devel version
+devel/ros-image_common||2013-04-16|Has expired: Depends on devel/ros_common which is broken for more than 6 months
+devel/ros-laser_pipeline||2013-04-16|Has expired: Depends on devel/ros_common which is broken for more than 6 months
+databases/php52-rrdtool||2013-04-16|Has expired: PHP 5.2 series is strongly discouraged for new installations, migrate now
+devel/ros-common||2013-04-16|Has expired: Broken for more than 6 month
