@@ -1,26 +1,27 @@
-# New ports collection makefile for:	torque
-# Date created:			20 Jul 2006
-# Whom:				trasz
-#
+# Created by: trasz
 # $FreeBSD$
-#
 
 PORTNAME=	torque
-PORTVERSION=	3.0.2
+PORTVERSION=	2.5.12
+PORTEPOCH=	1
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
+MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=77/ \
+		http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Open source distributed computing resource manager based on PBS
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-rcp=scp
+CONFIGURE_ARGS=	--enable-syslog \
+		--disable-spool
 USE_GMAKE=	yes
 USE_RC_SUBR=	pbs_server pbs_sched pbs_mom
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message torque-config
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	qstat-[0-9]* zh-qterm-[0-9]*
 
 MAN1=		qalter.1 qdel.1 qhold.1 qmove.1 qmsg.1 qorder.1 qrerun.1 \
 		qrls.1 qselect.1 qsig.1 qstat.1 qsub.1 pbs.1 pbsdsh.1 \
@@ -56,8 +57,19 @@ MAN8=		pbs_mom.8 pbsnodes.8 pbs_sched_basl.8 pbs_sched_cc.8 \
 MLINKS=		pbs_sched_cc.8 pbs_sched.8 \
 		pbs_resources_freebsd.7 pbs_resources.7
 
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -E 's|ps[ \t]+-ef|ps -ax|g' ${WRKSRC}/torque.setup
+	@${REINPLACE_CMD} -E 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
+
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/torque-config ${PREFIX}/bin
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL_SCRIPT} ${WRKSRC}/torque.setup ${EXAMPLESDIR}
+.else
+	${RM} -rf ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

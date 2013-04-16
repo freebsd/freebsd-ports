@@ -1,69 +1,16 @@
 ******************************************************************************
-You can find an example configuration in
+On the server, run:
 
-	%%PREFIX%%/share/examples/torque/var/spool/torque
-
-On all machines, both server and compute nodes:
-
-	1. Run
-
-		cp -Rp %%PREFIX%%/share/examples/torque/var/spool/torque \
-			/var/spool
-
-	2. Put the hostname of the server into
-
-		/var/spool/torque/server_name
+	torque-config head
 
 ******************************************************************************
-On compute nodes:
+On compute nodes, run:
 
-	1. Put '$pbsserver ip.address.of.server' into
-	
-		/var/spool/torque/mom_priv/config
-
-	2. Add the following line to /etc/rc.conf:
-
-		pbs_mom_enable="YES"
-
-	This may include the server if you allow it to be used
-	as a compute node as well.
-
-******************************************************************************
-On the server:
-
-	1. Put hostnames of compute nodes, one per line, into
-
-		/var/spool/torque/server_priv/nodes
-
-	Additional options can be specified for each entry.  Consult
-	the torque documentation for details.
-
-	2. Add the following lines to /etc/rc.conf:
-
-		pbs_server_enable="YES"
-		pbs_sched_enable="YES"
-
-	3. To configure queues, execute
-
-		%%PREFIX%%/share/examples/torque/torque.setup <admin>
-
-	The recommended <admin> user is root.
-
-******************************************************************************
-After installation is complete on the server and compute nodes:
-
-	1. Start node services on all compute nodes with:
-
-		%%PREFIX%%/etc/rc.d/pbs_mom restart
-
-	2. Start scheduler services on the server with:
-
-		%%PREFIX%%/etc/rc.d/pbs_server restart
-		%%PREFIX%%/etc/rc.d/pbs_sched restart
+	torque-config compute
 
 ******************************************************************************
 For further information, see
 
-	http://www.clusterresources.com/torquedocs21/
+	http://www.adaptivecomputing.com/products/open-source/torque/
 
 ******************************************************************************

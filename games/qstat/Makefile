@@ -11,6 +11,8 @@ COMMENT=	Command-line program to query game servers on the net
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	torque-[0-9]*
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
