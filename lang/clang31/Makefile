@@ -28,8 +28,8 @@ WRKSRC=		${WRKDIR}/${LLVM_NAME}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
-BUILD_DEPENDS+=	llvm31>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm31>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm31>=${PORTVERSION}:${PORTSDIR}/devel/llvm31
+RUN_DEPENDS+=	llvm31>=${PORTVERSION}:${PORTSDIR}/devel/llvm31
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
