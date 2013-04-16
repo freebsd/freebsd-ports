@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gigalomania
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/130757462/
+MASTER_SITES=	https://launchpadlibrarian.net/135701637/
 DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -19,7 +19,8 @@ PORTDOCS=	readme.html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=g++|CC=${CXX}|' \
-		-e '/^CCFLAGS/ s|-O2|${CXXFLAGS}|; s|-O2||' \
+		-e '/^CCFLAGS/ s|-O2|${CXXFLAGS}|' \
+		-e 's|-O2 $$(INC)|$$(INC)|' \
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "__linux" {} \; \
