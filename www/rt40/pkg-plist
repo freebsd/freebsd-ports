@@ -86,6 +86,7 @@ etc/rt40/schema.mysql
 %%SITE_PERL%%/RT/Handle.pm
 %%SITE_PERL%%/RT/I18N.pm
 %%SITE_PERL%%/RT/I18N/cs.pm
+%%SITE_PERL%%/RT/I18N/de.pm
 %%SITE_PERL%%/RT/I18N/i_default.pm
 %%SITE_PERL%%/RT/I18N/ru.pm
 %%SITE_PERL%%/RT/Installer.pm
@@ -724,13 +725,17 @@ share/rt40/html/NoAuth/RichText/ckeditor/lang/he.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/hi.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/hr.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/hu.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/id.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/is.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/it.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/ja.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ka.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/km.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/ko.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ku.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/lt.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/mk.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/mn.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/ms.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/nb.js
@@ -748,20 +753,82 @@ share/rt40/html/NoAuth/RichText/ckeditor/lang/sr.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/sv.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/th.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ug.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/uk.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/vi.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/zh-cn.js
 share/rt40/html/NoAuth/RichText/ckeditor/lang/zh.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/da.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/el.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/gu.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/ku.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/mk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/ro.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/ug.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/vi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/zh-cn.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs/about.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/adobeair/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/ajax/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/autogrow/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/bbcode/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard/dialogs/paste.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog/dialogs/colordialog.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/bg.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/da.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/el.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/et.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/gu.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/hr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/ku.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/pl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/ug.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/uk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/vi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang/zh-cn.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/dialog/dialogDefinition.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/div/dialogs/div.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/docprops/dialogs/docprops.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/docprops/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/find/dialogs/find.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/dialogs/flash.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/images/placeholder.png
@@ -774,6 +841,8 @@ share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/select.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/textarea.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/textfield.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/images/hiddenfield.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframe/dialogs/iframe.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframe/images/placeholder.png
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframedialog/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/image/dialogs/image.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/dialogs/anchor.js
@@ -783,6 +852,39 @@ share/rt40/html/NoAuth/RichText/ckeditor/plugins/liststyle/dialogs/liststyle.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/pagebreak/images/pagebreak.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastefromword/filter/default.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext/dialogs/pastetext.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/dialogs/placeholder.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/bg.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/da.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/el.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/et.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/hr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/ku.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/pl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/ug.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/uk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/vi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang/zh-cn.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/placeholder.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/preview/preview.html
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs/options.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs/toolbar.css
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_address.png
@@ -819,7 +921,32 @@ share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/tounge_smile.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/wink_smile.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs/specialchar.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/el.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/et.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/hr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/ku.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/ug.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang/zh-cn.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles/styles/default.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/stylesheetparser/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/table/dialogs/table.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/tableresize/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/tabletools/dialogs/tableCell.js
@@ -829,7 +956,36 @@ share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/temp
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/template2.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/template3.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs/uicolor.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/bg.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/da.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/el.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/et.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/hr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/ku.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/mk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/pl.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/ug.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/uk.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/vi.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/zh-cn.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/uicolor.gif
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/hue_bg.png
@@ -842,6 +998,7 @@ share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/ciframe.html
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/wsc.css
 share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/wsc.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/xml/plugin.js
 share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/dialog.css
 share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/editor.css
 share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/icons.png
@@ -1244,6 +1401,7 @@ share/rt40/html/m/ticket/show
 share/rt40/html/m/tickets/search
 share/rt40/po/ar.po
 share/rt40/po/bg.po
+share/rt40/po/ca.po
 share/rt40/po/cs.po
 share/rt40/po/da.po
 share/rt40/po/de.po
@@ -1349,12 +1507,15 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/kama
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/xml
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates
@@ -1365,9 +1526,12 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/tableresize
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/table/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/table
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/stylesheetparser
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles/styles
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/dialogs
@@ -1376,6 +1540,10 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/preview
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/placeholder
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastefromword/filter
@@ -1390,6 +1558,9 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/image/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/image
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframedialog
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframe/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframe/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframe
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms
@@ -1398,14 +1569,21 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/find/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/find
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/docprops/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/docprops
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/div/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/div
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/dialog
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/devtools
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/bbcode
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/autogrow
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/ajax
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/adobeair
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/about
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang
