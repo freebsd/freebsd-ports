@@ -4,6 +4,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrmtry %%SITE_PERL%%/Object/Simple/Guide
 @dirrmtry %%SITE_PERL%%/Object/Simple
 @dirrmtry %%SITE_PERL%%/Object
