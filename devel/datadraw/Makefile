@@ -8,14 +8,24 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A feature rich persistent database generator
+COMMENT=	Feature rich persistent database generator
 
-USES=		bison
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000013
+USES+=		bison
+.else
+post-patch:
+	${REINPLACE_CMD} -e "s/bison/byacc/g" ${WRKSRC}/configure
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 
 post-install:
