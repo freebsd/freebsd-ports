@@ -1924,6 +1924,7 @@
     SUBDIR += p5-ExtUtils-Config
     SUBDIR += p5-ExtUtils-Constant
     SUBDIR += p5-ExtUtils-Depends
+    SUBDIR += p5-ExtUtils-Helpers
     SUBDIR += p5-ExtUtils-Install
     SUBDIR += p5-ExtUtils-InstallPaths
     SUBDIR += p5-ExtUtils-LibBuilder
