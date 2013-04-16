@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.12
-PORTREVISION=	2
+PORTVERSION=	0.0.13
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -45,10 +44,6 @@ MANUAL_PACKAGE_BUILD=	yes # huge
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800067
-BROKEN=		Does not compile on 7.x: Requires wcsnlen(3)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
