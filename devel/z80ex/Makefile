@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	z80ex
-PORTVERSION=	1.1.20
+PORTVERSION=	1.1.20.1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/1.1.20rev1
+DISTNAME=	${PORTNAME}-1.1.20rev1
 
 MAINTAINER=	hardy.schumacher@gmx.de
 COMMENT=	ZiLOG Z80 CPU emulator library
-
-BROKEN=		checksum mismatch
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
