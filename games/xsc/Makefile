@@ -1,17 +1,12 @@
-# New ports collection makefile for:	xsc
-# Date created:			Apr 16, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	xsc
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	A vector graphics space shoot'em up game
 
 USE_XORG=	x11
