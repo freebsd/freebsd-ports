@@ -1,4 +1,5 @@
 @comment file listing
+bin/[
 bin/arch
 bin/basename
 bin/bash
@@ -13,6 +14,7 @@ bin/dd
 bin/echo
 bin/egrep
 bin/env
+bin/expr
 bin/false
 bin/fgrep
 bin/grep
@@ -33,10 +35,12 @@ bin/sleep
 bin/sort
 bin/stty
 bin/sync
+bin/test
 bin/touch
 bin/true
 bin/uname
 bin/unlink
+bin/uuidgen
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
 etc/DIR_COLORS.xterm
