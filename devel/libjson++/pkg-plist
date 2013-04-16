@@ -1,7 +1,5 @@
 include/json/iarray.hpp
 include/json/ibool.hpp
-include/json/ifixed.hpp
-include/json/ifloat.hpp
 include/json/inumeric.hpp
 include/json/iobject.hpp
 include/json/iscalar.hpp
@@ -12,6 +10,6 @@ include/json/util.hpp
 include/json/value.hpp
 lib/libjson++.a
 lib/libjson++.so
-lib/libjson++.so.0
-lib/libjson++.so.0.3.4
+lib/libjson++.so.0.4
+lib/libjson++.so.0.4.0
 @dirrm include/json

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libjson++
-# Date created:				15 May 2012
-# Whom:					krichy
-#
+# Created by: Kojedzinszky Richard <krichy@tvnetwork.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	libjson++
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cflinux.hu/pub/
 
