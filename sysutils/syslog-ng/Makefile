@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
