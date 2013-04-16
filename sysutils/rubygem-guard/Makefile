@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	guard
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool to easily handle events on file system modifications
 
-RUN_DEPENDS=	rubygem-listen>=0.6.0:${PORTSDIR}/devel/rubygem-listen \
+RUN_DEPENDS=	rubygem-formatador>=0.2.4:${PORTSDIR}/devel/rubygem-formatador \
+		rubygem-listen>=0.6.0:${PORTSDIR}/devel/rubygem-listen \
 		rubygem-lumberjack>=1.0.2:${PORTSDIR}/devel/rubygem-lumberjack \
 		rubygem-pry>=0.9.10:${PORTSDIR}/devel/rubygem-pry \
-		rubygem-terminal-table>=1.4.3:${PORTSDIR}/textproc/rubygem-terminal-table \
 		rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
