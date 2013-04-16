@@ -527,7 +527,6 @@
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_security
-    SUBDIR += mod_security21
     SUBDIR += mod_setenvifplus
     SUBDIR += mod_smooth_streaming
     SUBDIR += mod_spdy
