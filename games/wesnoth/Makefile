@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.10.5
-PORTREVISION=	1
+PORTVERSION=	1.10.6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
-COMMENT=	A fantasy turn-based strategy game
+COMMENT=	Fantasy turn-based strategy game
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
