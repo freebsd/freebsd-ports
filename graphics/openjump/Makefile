@@ -1,11 +1,11 @@
-# Created by: Wen Heping<wenheping@gmail.com>
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	OpenJUMP
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics java geography
 MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
+DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	An open source GIS software written in Java
@@ -42,8 +42,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
-PLUS_REV=	2721
+PLUS_REV=	3501
 
 do-install:
 	@${ECHO_CMD} "---> Installing JAR files"
@@ -58,7 +59,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/default-plugins.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "---> Installing documentation"
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${DOCSDIR}
