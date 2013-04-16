@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ipe
-# Date created:				October 25 2000
-# Whom:					bremner@unb.ca
-#
+# Created by: bremner@unb.ca
 # $FreeBSD$
-#
 
 PORTNAME=	ipe
 DISTVERSION=	7.1.2
@@ -13,10 +9,10 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}7/${PORTNAME}/7.1.0
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	tkjacobsen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible drawing editor
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
@@ -24,11 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 USE_LDCONFIG=	yes
 USE_LUA=	5.1
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_QT4=	gui qt3support qmake_build moc_build uic_build rcc_build
 MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 ipescript.1
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-ipe__Makefile
 .endif
 
