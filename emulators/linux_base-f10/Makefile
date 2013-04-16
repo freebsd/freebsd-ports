@@ -3,7 +3,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
 PKGNAMEPREFIX=		linux_base-
@@ -210,6 +210,10 @@ do-install:
 		| ${CPIO} -pm -R root:wheel ${PREFIX}
 
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
+	@${LN} -sf ../usr/bin/[ ${PREFIX}/bin/[
+	@${LN} -sf ../usr/bin/expr ${PREFIX}/bin/expr
+	@${LN} -sf ../usr/bin/test ${PREFIX}/bin/test
+	@${LN} -sf ../usr/bin/uuidgen ${PREFIX}/bin/uuidgen
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 #
