@@ -1,6 +1,6 @@
---- build/premake/premake4.lua.orig	2012-10-30 01:56:24.000000000 +0100
-+++ build/premake/premake4.lua	2012-12-26 18:37:28.882327928 +0100
-@@ -134,7 +134,7 @@
+--- build/premake/premake4.lua.orig	2013-03-07 14:49:49.000000000 +0100
++++ build/premake/premake4.lua	2013-04-03 00:14:47.033326555 +0200
+@@ -136,7 +136,7 @@
  
  function project_set_build_flags()
  
@@ -9,7 +9,7 @@
  	if not _OPTIONS["icc"] and (os.is("windows") or not _OPTIONS["minimal-flags"]) then
  		-- adds the -Wall compiler flag
  		flags { "ExtraWarnings" } -- this causes far too many warnings/remarks on ICC
-@@ -215,7 +215,6 @@
+@@ -217,7 +217,6 @@
  
  					-- enable security features (stack checking etc) that shouldn't have
  					-- a significant effect on performance and can catch bugs
@@ -17,18 +17,18 @@
  					"-D_FORTIFY_SOURCE=2",
  
  					-- always enable strict aliasing (useful in debug builds because of the warnings)
-@@ -287,11 +286,11 @@
+@@ -343,11 +342,11 @@
  		-- X11 includes may be installed in one of a gadzillion of three places
  		-- Famous last words: "You can't include too much! ;-)"
  		includedirs {
 -			"/usr/X11R6/include/X11",
 -			"/usr/X11R6/include",
-+			"%%LOCALBASE%%/X11",
++			"%%LOCALBASE%%/include/X11",
 +			"%%LOCALBASE%%/include",
  			"/usr/include/X11"
  		}
 -		libdirs { "/usr/X11R6/lib" }
 +		libdirs { "%%LOCALBASE%%/lib" }
+ 	end
+ end
  
- 		if _OPTIONS["bindir"] then
- 			defines { "INSTALLED_BINDIR=" .. _OPTIONS["bindir"] }

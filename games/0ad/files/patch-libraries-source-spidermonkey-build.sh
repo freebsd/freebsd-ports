@@ -1,5 +1,5 @@
---- libraries/spidermonkey/build.sh.orig	2012-06-11 00:39:26.000000000 +0200
-+++ libraries/spidermonkey/build.sh	2012-12-18 10:58:11.343785532 +0100
+--- libraries/source/spidermonkey/build.sh.orig	2013-02-04 01:31:03.000000000 +0100
++++ libraries/source/spidermonkey/build.sh	2013-04-03 00:34:16.221257333 +0200
 @@ -53,6 +53,14 @@
  
  cd js-1.8.5/js/src

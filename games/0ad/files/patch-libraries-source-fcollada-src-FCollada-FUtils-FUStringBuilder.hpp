@@ -1,5 +1,5 @@
---- libraries/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp.orig	2012-05-21 22:08:59.267251130 +0200
-+++ libraries/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp	2012-05-21 22:13:05.450463479 +0200
+--- libraries/source/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp.orig	2013-04-03 00:21:34.395291619 +0200
++++ libraries/source/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp	2013-04-03 00:23:23.590274415 +0200
 @@ -18,6 +18,42 @@
  #include <float.h>
  #endif
