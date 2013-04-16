@@ -1,15 +1,15 @@
---- bin/oj_linux.sh.orig	2012-01-25 20:15:16.000000000 +0100
-+++ bin/oj_linux.sh	2012-03-10 18:01:15.000000000 +0100
-@@ -6,7 +6,7 @@
- #JUMP_SETTINGS="/tmp/foobar"
- 
- ## uncomment and put the path to your jre here
--#JAVA_HOME="/home/ed/jre1.6.0_21"
+--- bin/oj_linux.sh.orig	2012-12-31 17:00:38.000000000 +0100
++++ bin/oj_linux.sh	2013-04-13 22:28:29.000000000 +0200
+@@ -3,7 +3,7 @@
+ ## uncomment and put in the path where oj log, settings should end up
+ ## if unset defaults to
+ ##   JUMP_HOME (oj app folder) if writable or $HOME/.openjump (user home)
+-#JUMP_SETTINGS="/tmp/foobar"
 +JAVA_HOME="/usr/local"
  
- ## uncomment and change your memory configuration here 
- ## Xms is initial size, Xmx is maximum size
-@@ -121,7 +121,7 @@
+ ## uncomment and put the path to your jre here
+ #JAVA_HOME="/home/ed/jre1.6.0_21"
+@@ -126,7 +126,7 @@
   echo "The found java binary '$JAVA' is no executable file." && ERROR=1 && end
  
  # java version check
