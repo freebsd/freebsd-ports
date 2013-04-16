@@ -4203,3 +4203,7 @@ devel/ros-image_common||2013-04-16|Has expired: Depends on devel/ros_common whic
 devel/ros-laser_pipeline||2013-04-16|Has expired: Depends on devel/ros_common which is broken for more than 6 months
 databases/php52-rrdtool||2013-04-16|Has expired: PHP 5.2 series is strongly discouraged for new installations, migrate now
 devel/ros-common||2013-04-16|Has expired: Broken for more than 6 month
+devel/goffice04||2013-04-16|Removed: No users, blocking libgsf update.
+devel/goffice06||2013-04-16|Removed: No users, blocking libgsf update.
+devel/goffice1||2013-04-16|Removed: Only one port user which has no user itself. blocking libgsf update.
+devel/present||2013-04-16|Removed: No users, blocking libgsf update.
