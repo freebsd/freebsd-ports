@@ -4193,3 +4193,4 @@ science/py-biolccc|science/pyteomics.biolccc|2013-03-28|Renamed upstream
 math/hs-Agda-executable||2013-03-29|Removed: it has become part of math/hs-Agda
 mail/thunderbird-esr|mail/thunderbird|2013-04-03|Removed: Mozilla stopped providing 2 versions of thunderbird
 mail/thunderbird-esr-i18n|mail/thunderbird-i18n|2013-04-03|Removed: Mozilla stopped providing 2 versions of thunderbird
+www/mod_security21|www/mod_security|2013-04-16|Removed: It is outdate and had a vulnerability, consider using a newer version
