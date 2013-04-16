@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.3.15
+PORTVERSION=	1.3.16
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -555,7 +555,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
+LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.4
 GIT_DRIZZLE_VERSION=	0-g59e12ad
 FETCH_ARGS=	-pRr
