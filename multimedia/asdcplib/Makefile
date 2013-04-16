@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	asdcplib
-PORTVERSION=	1.10.48
+PORTVERSION=	1.11.49
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.cinecert.com/asdcplib/
+MASTER_SITES=	http://download.cinecert.com/asdcplib/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An open source implementation of SMPTE and the MXF Interop format
