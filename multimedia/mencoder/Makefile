@@ -18,6 +18,7 @@ OPTIONS_DEFINE= AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
 OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
 
 BLURAY_DESC?=	BluRay support
+LZO_DESC?=	Enable external liblzo library
 OCFLAGS_DESC?=	Use optimized compiler flags
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
