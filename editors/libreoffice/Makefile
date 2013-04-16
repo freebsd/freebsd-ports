@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	0
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
@@ -360,6 +360,7 @@ CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
 BUILD_DEPENDS+=	clang>=3.2:${PORTSDIR}/lang/clang
+USE_BINUTILS=	yes
 CC=		${LOCALBASE}/bin/clang
 CPP=		${CC} -E
 CXX=		${LOCALBASE}/bin/clang++
