@@ -3,11 +3,12 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.12
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		net
-MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/
+MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
+    			http://mirrors.rit.edu/zi/
 
-MAINTAINER?=		ports@FreeBSD.org
+MAINTAINER?=		zi@FreeBSD.org
 COMMENT?=		Advanced fork of nss_ldap
 
 LICENSE=		LGPL21 LGPL3
