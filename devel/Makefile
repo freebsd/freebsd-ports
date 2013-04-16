@@ -2335,6 +2335,7 @@
     SUBDIR += p5-MooseX-RelatedClassRoles
     SUBDIR += p5-MooseX-Role-Loggable
     SUBDIR += p5-MooseX-Role-Parameterized
+    SUBDIR += p5-MooseX-Role-Strict
     SUBDIR += p5-MooseX-Role-WithOverloading
     SUBDIR += p5-MooseX-Runnable
     SUBDIR += p5-MooseX-SemiAffordanceAccessor
