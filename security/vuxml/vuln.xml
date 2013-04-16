@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2070c79a-8e1e-11e2-b34d-000c2957946c">
+    <topic>ModSecurity -- XML External Entity Processing Vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_security</name>
+	<range><gt>2.*</gt><lt>2.7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Positive Technologies has reported a vulnerability in ModSecurity,
+	  which can be exploited by malicious people to disclose potentially
+	  sensitive information or cause a DoS (Denial Of Serice).</p>
+	<p>The vulnerability is caused due to an error when parsing external
+	  XML entities and can be exploited to e.g. disclose local files or
+	  cause excessive memory and CPU consumption.</p>
+	<blockquote cite="https://secunia.com/advisories/52847/">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1915</cvename>
+      <url>https://secunia.com/advisories/52847/</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-1915</url>
+      <url>https://bugs.gentoo.org/show_bug.cgi?id=464188</url>
+    </references>
+    <dates>
+      <discovery>2013-04-02</discovery>
+      <entry>2013-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dfd92cb2-7d48-11e2-ad48-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
