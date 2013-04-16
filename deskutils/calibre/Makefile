@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	0.9.11
-PORTREVISION=	2
+PORTVERSION=	0.9.27
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -59,22 +58,15 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}" \
 		PODOFO_LIB_DIR="${LOCALBASE}/lib" \
-		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-MAKE_ENV+=	WITH_USB=no
-.else
-MAKE_ENV+=	WITH_USB=yes
-.endif
+		PODOFO_INC_DIR="${LOCALBASE}/include/podofo" \
+		WITH_USB=yes
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} build)
 
 do-install:
-.for dir in desktop-directories applications  gnome/apps mime/packages icons/hicolor/128x128/apps
+.for dir in desktop-directories applications  gnome/apps mime/packages icons/hicolor/128x128/apps zsh/site-functions
 	${MKDIR} ${PREFIX}/share/${dir}
 .endfor
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
@@ -83,4 +75,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
