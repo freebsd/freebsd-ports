@@ -1,0 +1,19 @@
+--- lib/ohai/plugins/freebsd/virtualization.rb.orig	2010-06-26 15:31:55.000000000 +0900
++++ lib/ohai/plugins/freebsd/virtualization.rb	2010-07-23 15:53:51.000000000 +0900
+@@ -20,6 +20,16 @@
+ 
+ virtualization Mash.new
+ 
++if from("sysctl -n security.jail.jailed").to_i == 1
++  virtualization[:system] = "jail"
++  virtualization[:role] = "guest"
++end
++
++if from("jls -n \| wc -l").to_i >= 1
++    virtualization[:system] = "jail"
++    virtualization[:role] = "host"
++end
++
+ # KVM Host support for FreeBSD is in development
+ # http://feanor.sssup.it/~fabio/freebsd/lkvm/
+ 

@@ -1,0 +1,40 @@
+--- lib/ohai/plugins/freebsd/network.rb.org	1970-01-01 09:00:00.000000000 +0900
++++ lib/ohai/plugins/freebsd/network.rb	2011-08-15 18:12:43.000000000 +0900
+@@ -18,7 +18,8 @@
+ 
+ provides "network", "counters/network"
+ 
+-from("route -n get default").split("\n").each do |line|
++# XXX ignore error here because routing socket is not available inside jail
++from("route -n get default || true").split("\n").each do |line|
+   if line =~ /(\w+): ([\w\.]+)/
+     case $1
+     when "gateway"
+@@ -44,6 +45,7 @@
+     end
+     # call the family lladdr to match linux for consistency
+     if line =~ /\s+ether (.+?)\s/
++      iface[cint][:encapsulation] = "Ethernet"
+       iface[cint][:addresses] = Mash.new unless iface[cint][:addresses]
+       iface[cint][:addresses][$1] = { "family" => "lladdr" }
+     end
+@@ -91,6 +93,19 @@
+ 
+ network["interfaces"] = iface
+ 
++# when default interface cannot be determined for some reason (i.e. jail)
++# XXX doesn't work if the jail has multiple IP addresses
++if network[:default_interface] == ""
++  network["interfaces"].keys.sort.each do |iface|
++    next unless network["interfaces"][iface]["addresses"]
++    network["interfaces"][iface]["addresses"].keys.each do |addr|
++      if network["interfaces"][iface]["addresses"][addr]["family"] =~ /^inet6?$/
++        network[:default_interface] = iface
++      end
++    end
++  end
++end
++
+ net_counters = Mash.new
+ # From netstat(1), not sure of the implications:
+ # Show the state of all network interfaces or a single interface
