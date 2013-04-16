@@ -3,7 +3,9 @@
 # $FreeBSD$
 #
 # PROVIDE: pbs_mom
-# REQUIRE: 
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
@@ -14,7 +16,7 @@
 
 . /etc/rc.subr
 
-name="pbs_mom"
+name=pbs_mom
 rcvar=pbs_mom_enable
 
 pidfile=/var/spool/torque/mom_priv/mom.lock
@@ -22,6 +24,6 @@ command=%%PREFIX%%/sbin/${name}
 
 load_rc_config $name
 
-: ${pbs_mom_enable="NO"}
+: ${pbs_mom_enable:="NO"}
 
 run_rc_command "$1"

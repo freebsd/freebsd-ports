@@ -31,6 +31,7 @@ bin/qstat
 bin/qstop
 bin/qsub
 bin/qterm
+bin/torque-config
 bin/tracejob
 include/pbs_error.h
 include/pbs_error_db.h
