@@ -168,6 +168,9 @@ share/apps/rkward/data/sort.js
 share/apps/rkward/data/sort.rkh
 share/apps/rkward/data/sort.xml
 share/apps/rkward/data/sort2.xml
+share/apps/rkward/data/subset_dataframe.js
+share/apps/rkward/data/subset_dataframe.rkh
+share/apps/rkward/data/subset_dataframe.xml
 share/apps/rkward/descriptive/descriptive_statistics.js
 share/apps/rkward/descriptive/descriptive_statistics.rkh
 share/apps/rkward/descriptive/descriptive_statistics.xml
@@ -489,6 +492,7 @@ share/apps/rkward/plots/stem.rkh
 share/apps/rkward/plots/stem.xml
 share/apps/rkward/plots/stripchart_plot.js
 share/apps/rkward/plots/stripchart_plot.xml
+share/apps/rkward/pluginmap_meta.inc
 share/apps/rkward/resource.ver
 share/apps/rkward/rkcatchedx11windowpart.rc
 share/apps/rkward/rkcommandeditorwindowpart.rc
@@ -500,9 +504,12 @@ share/apps/rkward/rkhelpwindow.rc
 share/apps/rkward/rkoutputwindow.rc
 share/apps/rkward/rkstandardactions.rc
 share/apps/rkward/rktoplevelwindowgui.rc
+share/apps/rkward/rkwarddev_scripts/subset_dataframe.R
 share/apps/rkward/rkwardui.rc
 share/apps/rkward/simple_anova/code.js
 share/apps/rkward/simple_anova/description.xml
+share/apps/rkward/testing/matrix1.js
+share/apps/rkward/testing/matrix1.xml
 share/apps/rkward/testing/optionset.js
 share/apps/rkward/testing/optionset.xml
 share/apps/rkward/testing/run_code.js
@@ -551,6 +558,7 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 @dirrm share/apps/rkward/uni1.2
 @dirrm share/apps/rkward/testing
 @dirrm share/apps/rkward/simple_anova
+@dirrm share/apps/rkward/rkwarddev_scripts
 @dirrm share/apps/rkward/pages
 @dirrm share/apps/rkward/plots/irt/tests
 @dirrm share/apps/rkward/plots/irt/polytomous
