@@ -1,16 +1,10 @@
-# Ports collection Makefile for:	get_iplayer
-# Date created:				2nd March 2011
-# Whom:					Chris Rees <utisoft@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	get_iplayer
-PORTVERSION=	2.80
+PORTVERSION=	2.82
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
-PKGNAMEPREFIX=	uk-
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
@@ -22,25 +16,21 @@ NO_BUILD=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-USERS  =	get_iplayer
-GROUPS =	get_iplayer
+USERS=		get_iplayer
+GROUPS=		get_iplayer
 
-MAN1=	get_iplayer.1
+MAN1=		get_iplayer.1
 
 SCRIPTS=	${PORTNAME} ${PORTNAME}.cgi
-PLIST_FILES=	bin/${PORTNAME} ${SCRIPTS:C,^,${WWWDIR_REL}/,}
+PLIST_FILES=	bin/${PORTNAME} ${SCRIPTS:S,^,${WWWDIR_REL}/,}
 
-.if !defined(NOPORTDATA)
 DATADIR=	${WWWDIR}
 PORTDATA=	html plugins
-.else
-PLIST_DIRS=	${WWWDIR_REL}
-.endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
 		README-get_iplayer.cgi.txt README.txt web.sh
-.endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/usr/bin/get_iplayer|${PREFIX}/bin/${PORTNAME}|" \
@@ -51,18 +41,16 @@ post-patch:
 		${WRKSRC}/get_iplayer
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${WWWDIR})
-	@${LN} -sf ${WWWDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDATA)
+	${MKDIR} ${WWWDIR}
+	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${WWWDIR})
+	${LN} -sf ${WWWDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .for DIR in html plugins
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${WWWDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${WWWDIR})
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
 post-install:
