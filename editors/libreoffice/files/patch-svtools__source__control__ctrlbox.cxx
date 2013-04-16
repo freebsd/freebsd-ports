@@ -1,5 +1,5 @@
---- ./svtools/source/control/ctrlbox.cxx.orig	2013-01-31 05:54:53.000000000 -0500
-+++ svtools/source/control/ctrlbox.cxx	2013-02-19 18:17:07.000000000 -0500
+--- ./svtools/source/control/ctrlbox.cxx.orig	2013-03-12 07:00:34.000000000 -0400
++++ ./svtools/source/control/ctrlbox.cxx	2013-03-20 17:11:17.000000000 -0400
 @@ -829,7 +829,7 @@
          if ( nPos < pLineList->size() ) {
              ImpLineList::iterator it = pLineList->begin();
