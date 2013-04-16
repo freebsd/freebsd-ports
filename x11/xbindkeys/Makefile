@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.5
 CATEGORIES=	x11
-MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
+MASTER_SITES=	http://www.nongnu.org/xbindkeys/
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
+
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GUILE TCLTK
 TCLTK_DESC=	Tcl Scripting Support
@@ -25,7 +27,7 @@ WISH=		${LOCALBASE}/bin/wish8.4
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUILE}
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
@@ -48,4 +50,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/xbindkeysrc ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
