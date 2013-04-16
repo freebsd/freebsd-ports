@@ -1,0 +1,23 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	ExtUtils-InstallPaths
+PORTVERSION=	0.009
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Build.PL install path logic made easy
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-ExtUtils-Config>=0.002:${PORTSDIR}/devel/p5-ExtUtils-Config
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		ExtUtils::InstallPaths.3
+
+.include <bsd.port.mk>

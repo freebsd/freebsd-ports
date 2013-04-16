@@ -1925,6 +1925,7 @@
     SUBDIR += p5-ExtUtils-Constant
     SUBDIR += p5-ExtUtils-Depends
     SUBDIR += p5-ExtUtils-Install
+    SUBDIR += p5-ExtUtils-InstallPaths
     SUBDIR += p5-ExtUtils-LibBuilder
     SUBDIR += p5-ExtUtils-MakeMaker
     SUBDIR += p5-ExtUtils-MakeMaker-Coverage
