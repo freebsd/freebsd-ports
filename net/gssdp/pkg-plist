@@ -30,7 +30,7 @@ share/gtk-doc/html/gssdp/up.png
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrmtry share/gir-1.0
-@dirrm %%DATADIR%%
+%%GTK%%@dirrm %%DATADIR%%
 @dirrmtry lib/girepository-1.0
 @dirrmtry include/gssdp-1.0/libgssdp
 @dirrmtry include/gssdp-1.0
