@@ -539,6 +539,7 @@ include/wine/windows/rpcsal.h
 include/wine/windows/rstbas.idl
 include/wine/windows/rstinf.idl
 include/wine/windows/rstloc.idl
+include/wine/windows/rstnot.idl
 include/wine/windows/rtutils.h
 include/wine/windows/scarderr.h
 include/wine/windows/schannel.h
@@ -1156,6 +1157,7 @@ lib/wine/fakedlls/msvcirt.dll
 lib/wine/fakedlls/msvcm80.dll
 lib/wine/fakedlls/msvcm90.dll
 lib/wine/fakedlls/msvcp100.dll
+lib/wine/fakedlls/msvcp110.dll
 lib/wine/fakedlls/msvcp60.dll
 lib/wine/fakedlls/msvcp70.dll
 lib/wine/fakedlls/msvcp71.dll
@@ -1688,6 +1690,7 @@ lib/wine/msvcirt.dll.so
 lib/wine/msvcm80.dll.so
 lib/wine/msvcm90.dll.so
 lib/wine/msvcp100.dll.so
+lib/wine/msvcp110.dll.so
 lib/wine/msvcp60.dll.so
 lib/wine/msvcp70.dll.so
 lib/wine/msvcp71.dll.so
