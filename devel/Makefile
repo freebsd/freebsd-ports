@@ -582,9 +582,6 @@
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += goffice
-    SUBDIR += goffice04
-    SUBDIR += goffice06
-    SUBDIR += goffice1
     SUBDIR += gonzui
     SUBDIR += google-gdata
     SUBDIR += google-perftools
@@ -3292,7 +3289,6 @@
     SUBDIR += premake4
     SUBDIR += preps-gui
     SUBDIR += prepstools
-    SUBDIR += present
     SUBDIR += prettygo
     SUBDIR += privman
     SUBDIR += projectcenter
