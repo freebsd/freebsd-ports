@@ -38,16 +38,9 @@ BOINC_CLIENT_GROUP?=	nobody
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
 OPTIONS_DEFINE=	X11
-
 X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 
-OPTIONS_DEFAULT=
-
-.include <bsd.port.pre.mk>
-# stolen and adapted from bsd.port.mk
-.if ${OSVERSION} >= 900000 && ${OSVERSION} < 900012
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
@@ -106,4 +99,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
