@@ -1,6 +1,8 @@
 bin/cdr2raw
+bin/cdr2text
 bin/cdr2xhtml
 bin/cmx2raw
+bin/cmx2text
 bin/cmx2xhtml
 include/libcdr-0.0/libcdr/CDRDocument.h
 include/libcdr-0.0/libcdr/CDRStringVector.h

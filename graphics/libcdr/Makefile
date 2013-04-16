@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdr
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
