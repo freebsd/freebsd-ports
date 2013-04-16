@@ -26,6 +26,8 @@ PLIST_FILES=	${BIN_PROGRAMS:S,^,bin/,} ${BIN_SCRIPTS:S,^,bin/,} bin/sdel
 BIN_PROGRAMS=	srm sfill sswap smem
 BIN_SCRIPTS=	the_cleaner.sh
 
+BROKEN=	does not fetch - master sites missing
+
 .include <bsd.port.options.mk>
 
 post-patch:
