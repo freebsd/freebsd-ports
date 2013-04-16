@@ -27,26 +27,21 @@
 
 . /etc/rc.subr
 
-name="get_iplayer"
+name=get_iplayer
 rcvar=get_iplayer_enable
 
 load_rc_config $name
 
-: ${get_iplayer_enable="NO"}
-: ${get_iplayer_bind_port="9370"}
-: ${get_iplayer_listen_address="127.0.0.1"}
-: ${get_iplayer_chdir="/tmp"}
+: ${get_iplayer_enable:=NO}
+: ${get_iplayer_bind_port=9370}
+: ${get_iplayer_listen_address=127.0.0.1}
+: ${get_iplayer_chdir=/tmp}
 
-command="/usr/sbin/daemon"
+command=/usr/sbin/daemon
 command_args="-f -u ${name} -p /var/run/${name}/${name}.pid %%WWWDIR%%/${name}.cgi -p ${get_iplayer_bind_port} -l ${get_iplayer_listen_address} --getiplayer %%WWWDIR%%/${name}"
-procname="/usr/bin/perl"
-pidfile="/var/run/${name}/${name}.pid"
+procname=/usr/bin/perl
+pidfile=/var/run/${name}/${name}.pid
 
-start_precmd="${name}_prestart"
-
-get_iplayer_prestart()
-{
-	install -d -o ${name} -m755 /var/run/${name}
-}
+start_precmd="install -d -o ${name} -m755 /var/run/${name}"
 
 run_rc_command "$1"
