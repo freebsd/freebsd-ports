@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	tkjacobsen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced molecular editor and viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
@@ -44,13 +44,7 @@ CMAKE_ARGS+=	-DENABLE_PYTHON=OFF
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700013
-BROKEN=		requires posix_memalign
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's|share/man|man|' ${WRKSRC}/doc/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

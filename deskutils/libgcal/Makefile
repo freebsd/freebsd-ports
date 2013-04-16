@@ -6,15 +6,15 @@ PORTVERSION=	0.9.6
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	tkjacobsen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library allowing communication with Google calendar and contacts
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		iconv:${PORTSDIR}/converters/libiconv \
 		xml2:${PORTSDIR}/textproc/libxml2
-
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USES=		cmake
@@ -23,10 +23,4 @@ CMAKE_ARGS=	-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" && (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
-BROKEN=		does not link
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
