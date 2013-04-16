@@ -1,16 +1,14 @@
-# New ports collection makefile for:	Nanum Hangul fonts
-# Date created:		August 4, 2011
-# Whom:			Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nanumfonts
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	korean
 MASTER_SITES=	http://cdn.naver.com/naver/NanumFont/fontfiles/
 PKGNAMESUFFIX=	-${FONTTYPE}
-DISTNAME=	NanumFont_${FONTTYPE:U}_ALL
+DISTFILES=	NanumFont_${FONTTYPE:U}_ALL${EXTRACT_SUFX} \
+		NanumFontSetup_${FONTTYPE:U}_GOTHICECO${EXTRACT_SUFX} \
+		NanumFontSetup_${FONTTYPE:U}_GOTHICLIGHT${EXTRACT_SUFX} \
+		NanumFontSetup_${FONTTYPE:U}_MYUNGJOECO${EXTRACT_SUFX}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Nanum family Hangul fonts (${FONTFORMAT})
@@ -35,9 +33,16 @@ FONTSDIR=	lib/X11/fonts/nanum-${FONTTYPE}
 FONTLIST=	NanumBrush \
 		NanumGothic \
 		NanumGothicBold \
+		NanumGothicEco \
+		NanumGothicEcoBold \
+		NanumGothicEcoExtraBold \
 		NanumGothicExtraBold \
+		NanumGothicLight \
 		NanumMyeongjo \
 		NanumMyeongjoBold \
+		NanumMyeongjoEco \
+		NanumMyeongjoEcoBold \
+		NanumMyeongjoEcoExtraBold \
 		NanumMyeongjoExtraBold \
 		NanumPen
 
