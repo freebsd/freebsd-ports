@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.b08
+PORTVERSION=	1.0.0.b09
 CATEGORIES=	deskutils java
 MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.b/_beta/}/ \
 		SF/docear/1.x/${PORTVERSION:S/.b/_beta/} \
@@ -26,7 +26,7 @@ NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0.8_beta_build145
+WRKSRC=		${WRKDIR}/docear-1.0.0.9_beta_build147
 SUB_FILES=	docear.desktop
 
 post-patch:
