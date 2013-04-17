@@ -1,10 +1,10 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	epiar
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	games
-MASTER_SITES=	http://epiar.net/files/epiar/releases/${PORTVERSION}/
+MASTER_SITES=	http://epiar.net/files/epiar/releases/0.5/
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Space trading/exploring sim with RPG elements
@@ -20,30 +20,33 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		physfs:${PORTSDIR}/devel/physfs
 
-PORTSCOUT=	skipv:0.5.1
-
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal
 USE_GMAKE=	yes
+USE_GNOME=	desktopfileutils
 USE_PKGCONFIG=	build
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's|9.22|2.4|' ${WRKSRC}/configure.in
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
 .include <bsd.port.options.mk>
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+
+	@-update-desktop-database -q
 
 .include <bsd.port.mk>
