@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-zope.configuration
-# Date created:				2011-03-21
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zope.configuration
 PORTVERSION=	3.8.0
@@ -12,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Configuration Markup Language (ZCML)
 
 LICENSE=	ZPL21
