@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bluecurve-themes
-# Date created:			29 May 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 # NOTE TO VISITING COMMITTER: if you need to bump the port revisions
 # of the slave ports, you should add PORTREVISION?= to the "master
@@ -47,8 +43,6 @@ MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/7/Fedora/source/SRPMS/
 DISTFILES=	redhat-artwork-${PORTVERSION}-9.fc7.src.rpm
 
-EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
 USE_PKGCONFIG=	build
 
 WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
@@ -61,9 +55,7 @@ SCRIPTDIR=	${.CURDIR}/scripts
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-	rpm2cpio.pl ${_DISTDIR}/${_DISTFILES} | ${CPIO} -id --quiet && \
-	${TAR} -zxf redhat-artwork-${PORTVERSION}.tar.gz
+	cd ${WRKDIR} && ${TAR} -O -xf ${_DISTDIR}/${_DISTFILES} redhat-artwork-${PORTVERSION}.tar.gz | ${TAR} -xf -
 
 .if defined(BC_HIERS)
 .if !exists(${PLIST})
