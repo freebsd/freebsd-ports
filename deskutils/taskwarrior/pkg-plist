@@ -7,6 +7,8 @@ bin/task
 %%DATADIR%%/README
 %%DATADIR%%/i18n/tips.de-DE
 %%DATADIR%%/i18n/tips.en-US
+%%DATADIR%%/i18n/tips.es-ES
+%%DATADIR%%/i18n/tips.fr-FR
 %%DATADIR%%/i18n/tips.it-IT
 %%DATADIR%%/i18n/tips.ja-JP
 %%DATADIR%%/i18n/tips.sv-SE
@@ -43,6 +45,7 @@ bin/task
 %%DATADIR%%/scripts/add-ons/export-html.pl
 %%DATADIR%%/scripts/add-ons/export-ical.pl
 %%DATADIR%%/scripts/add-ons/export-sql.py
+%%DATADIR%%/scripts/add-ons/export-tsv.pl
 %%DATADIR%%/scripts/add-ons/export-xml.pl
 %%DATADIR%%/scripts/add-ons/export-xml.py
 %%DATADIR%%/scripts/add-ons/export-xml.rb
@@ -52,12 +55,6 @@ bin/task
 %%DATADIR%%/scripts/add-ons/import-yaml.pl
 %%DATADIR%%/scripts/bash/task.sh
 %%DATADIR%%/scripts/add-ons/update-holidays.pl
-%%DATADIR%%/scripts/extensions/command.lua
-%%DATADIR%%/scripts/extensions/dom.lua
-%%DATADIR%%/scripts/extensions/format.lua
-%%DATADIR%%/scripts/extensions/program_hook.lua
-%%DATADIR%%/scripts/extensions/task_hook.lua
-%%DATADIR%%/scripts/extensions/uda.lua
 %%DATADIR%%/scripts/fish/task.fish
 %%DATADIR%%/scripts/vim/README
 %%DATADIR%%/scripts/vim/ftdetect/task.vim
@@ -71,7 +68,6 @@ bin/task
 @dirrm %%DATADIR%%/scripts/vim/ftdetect
 @dirrm %%DATADIR%%/scripts/vim
 @dirrm %%DATADIR%%/scripts/fish
-@dirrm %%DATADIR%%/scripts/extensions
 @dirrm %%DATADIR%%/scripts/bash
 @dirrm %%DATADIR%%/scripts/add-ons
 @dirrm %%DATADIR%%/scripts
