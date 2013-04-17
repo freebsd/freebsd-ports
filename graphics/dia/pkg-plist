@@ -1849,5 +1849,3 @@ share/mime-info/dia.mime
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrm lib/dia
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
