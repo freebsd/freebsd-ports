@@ -1,15 +1,11 @@
-# New ports collection makefile for:   tcl-manual
-# Date created:        13 December 2001
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	tcl-manual
-PORTVERSION=	20041118
+PORTVERSION=	20130208
 CATEGORIES=	lang
-MASTER_SITES=	SF/tcl/Tcl/8.3.5
-DISTFILES=	tcl8.3.5-html.tar.gz tcl8.4.7-html.tar.gz tcl8.5a1-html.tar.gz
+MASTER_SITES=	SF/tcl/Tcl/
+DISTFILES=	
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Documentation for TCL (Tool Command Language)
@@ -17,28 +13,33 @@ COMMENT=	Documentation for TCL (Tool Command Language)
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+VERSIONS=	8.4.19 \
+		8.5.14 \
+		8.6.0
+
+.for v in ${VERSIONS}
+DISTFILES+=	$v/tcl$v-html.tar.gz
+.endfor
+
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${REINPLACE_CMD} -e 's|tcl\.h|tcl8.3/tcl.h|g' \
-		${WRKDIR}/tcl8.3.5/html/TclLib/*
-	@${REINPLACE_CMD} -e 's|tk\.h|tk8.3/tk.h|g' \
-		${WRKDIR}/tcl8.3.5/html/TkLib/*
-	@${REINPLACE_CMD} -e 's|tcl\.h|tcl8.4/tcl.h|g' \
-		${WRKDIR}/tcl8.4.7/html/TclLib/*
-	@${REINPLACE_CMD} -e 's|tk\.h|tk8.4/tk.h|g' \
-		${WRKDIR}/tcl8.4.7/html/TkLib/*
-	@${REINPLACE_CMD} -e 's|tcl\.h|tcl8.5/tcl.h|g' \
-		${WRKDIR}/tcl8.5a1/html/TclLib/*
-	@${REINPLACE_CMD} -e 's|tk\.h|tk8.5/tk.h|g' \
-		${WRKDIR}/tcl8.5a1/html/TkLib/*
+.for v in ${VERSIONS}
+	@${REINPLACE_CMD} -e 's|<b>tclsh</b>|<b>tclsh${v:R}</b>|g; \
+	    s|/usr/local/bin/tclsh|${PREFIX}/bin/tclsh${v:R}|g' \
+	    ${WRKSRC}/tcl${v}/html/UserCmd/tclsh.htm
+	@${REINPLACE_CMD} -e 's|<b>wish</b>|<b>wish${v:R}</b>|g; \
+	    s|/usr/local/bin/wish|${PREFIX}/bin/wish${v:R}|g' \
+	    ${WRKSRC}/tcl${v}/html/UserCmd/wish.htm
+	@${REINPLACE_CMD} -e 's|tcl\.h|tcl${v:R}/tcl.h|g' \
+		${WRKDIR}/tcl${v}/html/TclLib/*
+	@${REINPLACE_CMD} -e 's|tk\.h|tk${v:R}/tk.h|g' \
+		${WRKDIR}/tcl${v}/html/TkLib/*
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
+.endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/tcl83
-	${MKDIR} ${PREFIX}/share/doc/tcl84
-	${MKDIR} ${PREFIX}/share/doc/tcl85
-	${CP} -R ${WRKDIR}/tcl8.5a1/html/* ${PREFIX}/share/doc/tcl85
-	${CP} -R ${WRKDIR}/tcl8.4.7/html/* ${PREFIX}/share/doc/tcl84
-	${CP} -R ${WRKDIR}/tcl8.3.5/html/* ${PREFIX}/share/doc/tcl83
+.for v in ${VERSIONS}
+	${MKDIR} ${PREFIX}/share/doc/tcl${v:R:S/.//}
+	${CP} -R ${WRKDIR}/tcl${v}/html/* ${PREFIX}/share/doc/tcl${v:R:S/.//}
+.endfor
 
 .include <bsd.port.mk>
