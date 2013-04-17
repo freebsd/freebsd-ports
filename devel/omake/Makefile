@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	omake
-PORTVERSION=	0.9.8.5
-PORTREVISION=	1
+DISTVERSION=	0.9.8.6-0.rc1
 CATEGORIES=	devel
 MASTER_SITES=	http://main.metaprl.org/download/omake/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A flexible build system
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C|-.*||}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 USE_NCURSES=	yes
@@ -24,8 +22,6 @@ INFO=		omake-doc
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not build on powerpc
-.else
-BROKEN=	fails to build
 .endif
 
 post-patch:
@@ -43,6 +39,20 @@ post-patch:
 		's|cp -f -m 444|$$(BSD_INSTALL_DATA)| ; \
 		 s|cp -f -m 555|$$(BSD_INSTALL_PROGRAM)|' ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's| -j2 | |' ${WRKSRC}/Makefile
+.if ${NCURSESBASE} == "/usr"
+.for f in lib/configure/ncurses.om src/libmojave-external/cutil/lm_terminfo.c
+	@${REINPLACE_CMD} -E -e 's|ncurses/(term\.h)|\1|' ${WRKSRC}/${f}
+.endfor
+.endif
+
+check regression-test test: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake check
+	@${FIND} -ds ${WRKSRC}/test -type f -name 'result.log' -print0 | \
+		${XARGS} -0tI @ ${CAT} @
+
+bench: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake bench
 
 post-install:
 	@(cd ${WRKSRC}/doc/info \

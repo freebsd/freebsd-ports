@@ -1,5 +1,4 @@
 bin/cvs_realclean
-bin/ocamldep-omake
 bin/omake
 bin/osh
 lib/omake/OMakefile.default
@@ -20,21 +19,11 @@ lib/omake/configure/readline.om
 lib/omake/configure/snprintf.om
 lib/omake/parse/C/Lex.om
 lib/omake/parse/C/Parse.om
-%%PORTDOCS%%%%DOCSDIR%%/announce.txt
-%%PORTDOCS%%%%DOCSDIR%%/changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/contents_motif.gif
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/images/announce.ps
-%%PORTDOCS%%%%DOCSDIR%%/images/announce.tex
-%%PORTDOCS%%%%DOCSDIR%%/images/grid.ai
-%%PORTDOCS%%%%DOCSDIR%%/images/omake-manual.ai
-%%PORTDOCS%%%%DOCSDIR%%/images/omake-manual.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/omake.ai
-%%PORTDOCS%%%%DOCSDIR%%/images/omake.eps
-%%PORTDOCS%%%%DOCSDIR%%/images/omake.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/omake.psd
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/next_motif.gif
+lib/omake/parse/LaTeX/Lex.om
+lib/omake/parse/LaTeX/Macros.om
+lib/omake/parse/LaTeX/Parse.om
+lib/omake/parse/LaTeX/Spell.om
+lib/omake/web/simple-xml.om
 %%PORTDOCS%%%%DOCSDIR%%/omake-all-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-autoconf.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-base.html
@@ -62,13 +51,10 @@ lib/omake/parse/C/Parse.om
 %%PORTDOCS%%%%DOCSDIR%%/omake-toc.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-var-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake.html
-%%PORTDOCS%%%%DOCSDIR%%/omake_lists.html
-%%PORTDOCS%%%%DOCSDIR%%/omake_papers.html
-%%PORTDOCS%%%%DOCSDIR%%/omake_users.html
 %%PORTDOCS%%%%DOCSDIR%%/osh.html
-%%PORTDOCS%%%%DOCSDIR%%/previous_motif.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/omake/web
+@dirrm lib/omake/parse/LaTeX
 @dirrm lib/omake/parse/C
 @dirrm lib/omake/parse
 @dirrm lib/omake/configure
