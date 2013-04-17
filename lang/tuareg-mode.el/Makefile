@@ -1,26 +1,22 @@
-# New ports collection makefile for:	tuareg-mode
-# Date created:			28 October 2004
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	tuareg-mode
-PORTVERSION=	1.45.6
-PORTREVISION=	13
+PORTVERSION=	2.0.6
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/882/
 
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Emacs major mode for editing Caml code
 
 USE_EMACS=	yes
-USE_BZIP2=	yes
 
-DOC_FILES=	README HISTORY append-tuareg.el custom-tuareg.el
+WRKSRC=		${WRKDIR}/tuareg-${PORTVERSION}
+
+DOC_FILES=	README
 DOC_DIR=	share/doc/tuareg-mode
-ELISP_FILES=	camldebug.el tuareg.el
+ELISP_FILES=	ocamldebug.el tuareg.el
 
 PLIST_FILES=	${ELISP_FILES:S/^/${EMACS_SITE_LISPDIR}\//} \
 		${ELISP_FILES:S/^/${EMACS_SITE_LISPDIR}\//S/$/c/} \
@@ -34,14 +30,9 @@ PLIST_DIRS=	${DOC_DIR}
 # Operations
 #
 
-# We do provide our own build and install procedures, instead of using
-# mainstream author's one.
-
 do-build:
-.for tuareg_mode_f in ${ELISP_FILES}
 	cd ${WRKSRC} &&\
-	  ${EMACS_CMD} -batch -q -l ${SCRIPTDIR}/batch-compile.el ${tuareg_mode_f}
-.endfor
+	${EMACS_CMD} -batch -q -f batch-byte-compile ${ELISP_FILES}
 
 do-install:
 .for tuareg_mode_f in ${ELISP_FILES}
