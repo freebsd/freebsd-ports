@@ -25,9 +25,11 @@ load_rc_config ${name}
 : ${openssh_skipportscheck="NO"}
 
 command=%%PREFIX%%/sbin/sshd
-extra_commands="reload keygen"
+extra_commands="configtest reload keygen"
 start_precmd="${name}_checks"
+reload_precmd="${name}_configtest"
 restart_precmd="${name}_checks"
+configtest_cmd="${name}_configtest"
 keygen_cmd="${name}_keygen"
 pidfile=${openssh_pidfile:="/var/run/sshd.pid"}
 
@@ -137,6 +139,12 @@ openssh_check_same_ports(){
     fi
 }
 
+openssh_configtest()
+{
+	echo "Performing sanity check on ${name} configuration."
+	eval ${command} ${openssh_flags} -t
+}
+
 openssh_checks()
 {
 	if checkyesno sshd_enable ; then
@@ -146,7 +154,7 @@ openssh_checks()
 	fi
 
 	run_rc_command keygen
-	eval "${command} -t"
+	openssh_configtest
 }
 
 run_rc_command "$1"
