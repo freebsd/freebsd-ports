@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION:C/^([0-9]+\.[0-9]+)\..*/\1/}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_nix_bsd
+DISTNAME=	${PORTNAME}_${PORTVERSION}_nix
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single-player and multi-player first-person ego-shooter
@@ -21,17 +20,19 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
+USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
 BUILD_WRKSRC=	${WRKSRC}/src
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-ALL_TARGET=	libenet ${BINARIES}
+ALL_TARGET=	libenet
 MAKE_JOBS_SAFE=	yes
 
-SUB_FILES=	reclient reserver
+SUB_FILES=	redeclipse redeclipse_server
 
 PORTDATA=	*
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 OPTIONS_MULTI=	COMPONENTS
 OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=CLIENT DEDICATED OPTIMIZED_CFLAGS
@@ -47,20 +48,22 @@ BROKEN=		does not build on sparc64
 .if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		yes
 USE_SDL=	image mixer sdl
-PLIST_FILES+=	bin/reclient libexec/reclient share/pixmaps/redeclipse.ico
-BINARIES+=	client
+PLIST_FILES+=	bin/redeclipse libexec/redeclipse share/pixmaps/redeclipse.ico
+BINARIES+=	redeclipse
+ALL_TARGET+=	client
 
 DESKTOP_ENTRIES="Red Eclipse" \
 		"${COMMENT}" \
 		"${PREFIX}/share/pixmaps/redeclipse.ico" \
-		"reclient" \
+		"redeclipse" \
 		"Game;" \
 		false
 .endif
 
 .if ${PORT_OPTIONS:MDEDICATED}
-PLIST_FILES+=	bin/reserver libexec/reserver
-BINARIES+=	server
+PLIST_FILES+=	bin/redeclipse_server libexec/redeclipse_server
+BINARIES+=	redeclipse_server
+ALL_TARGET+=	server
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -70,12 +73,16 @@ CXXFLAGS+=	-O3 -fomit-frame-pointer
 
 do-install:
 .for f in ${BINARIES}
-	${INSTALL_SCRIPT} ${WRKDIR}/re${f} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/re${f} ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/libexec
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
+.endif
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "." ${DATADIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "game data" ${DATADIR}/
 .endif
 .if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_DATA} ${WRKSRC}/src/redeclipse.ico ${PREFIX}/share/pixmaps/
