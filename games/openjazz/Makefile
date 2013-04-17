@@ -1,24 +1,19 @@
-# New ports collection makefile for: openjazz
-# Date created:					01 Apr 2008
-# Whom:							Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openjazz
-PORTVERSION=	20120730
+PORTVERSION=	20120819
 CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/ \
 		LOCAL/martymac
-DISTNAME=	OpenJazz-src-300712
+DISTNAME=	OpenJazz-src-190812
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 LICENSE=	GPLv2
 
-WRKSRC=	${WRKDIR}
-
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	OpenJazz
