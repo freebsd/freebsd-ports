@@ -118,6 +118,7 @@ share/java/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.optionpane/lib/plugin.jar
 share/java/docear/plugins/org.docear.plugin.optionpane/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/docear-pdf-utilities.jar
+share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/guava-14.0.1.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/iscwt.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/isrt.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jbig2.jar
