@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp3guessenc
-DISTVERSION=	${DIST_REL}${ALPHA_REL}
+DISTVERSION=	${DIST_REL}${BETA_REL}
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${DIST_REL}
 
@@ -12,17 +12,17 @@ COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 MAKE_JOBS_SAFE=	yes
 
 DIST_REL=	0.25
-ALPHA_REL=	alpha23-HPR
+BETA_REL=	beta1
 
 PLIST_FILES=	bin/mp3guessenc
-SRC=		decode.c mp3guessenc.c
+SRC=		decode.c mp3guessenc.c bit_utils.c tags.c
 
 do-build:
 .for f in ${SRC}
 	${CC} ${CFLAGS} ${WRKSRC}/${f} -c -o ${WRKSRC}/${f:C/\.c/.o/}
 .endfor
 	${CC} ${SRC:S|\.c|${WRKSRC}/.o|:S|^|${WRKSRC}/|} \
-		-o ${WRKSRC}/${PORTNAME}
+		-o ${WRKSRC}/${PORTNAME} ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
