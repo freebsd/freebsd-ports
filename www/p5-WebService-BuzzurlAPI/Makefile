@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-WebService-BuzzurlAPI
-# Date created:		2007-11-06
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-BuzzurlAPI
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HOLLY
