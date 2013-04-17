@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2013-04-02 15:50:03.000000000 +0200
++++ CMakeLists.txt	2013-04-02 15:51:59.000000000 +0200
+@@ -212,9 +212,9 @@
+   set( CLANG_BINARY "${CL_SRC_ROOT}/sdk/clang/lib/libclang.dylib")
+ 
+ elseif (UNIX)
+-  set( CLANG_INCLUDE "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/include" )
+-  set( CLANG_LIBRARY "-L${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib -lclang" )
+-  set( CLANG_BINARY "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib/libclang.so")
++  set( CLANG_INCLUDE "%%LOCALBASE%%/include" )
++  set( CLANG_LIBRARY "-L%%LOCALBASE%%/lib/ -lclang" )
++  set( CLANG_BINARY "%%LOCALBASE%%/lib/libclang.so")
+ endif()
+ 
+ message( "-- clang link line ${CLANG_LIBRARY} ")
