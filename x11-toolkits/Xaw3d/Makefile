@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/ \
 		ftp.slackware.com/pub/slackware/slackware_source/x/xaw3d/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3-D Athena Widget set that looks like Motif
 
 LICENSE=	MIT
@@ -39,7 +39,6 @@ post-extract:
 	${REINPLACE_CMD} -e '/LINTLIBS =/s/=.*/=/' \
 		-e '/#ifdef XawI18nDefines/s//#if 0/' \
 		${WRKSRC}/Imakefile
-		
 .endif
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
