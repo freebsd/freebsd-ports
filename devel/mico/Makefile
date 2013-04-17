@@ -71,9 +71,10 @@ CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 MICO_GTK=		"@comment "
 .endif
 .if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS=		tcl83:${PORTSDIR}/lang/tcl83
+USE_TCL=		yes
 CONFIGURE_ARGS+=	--with-tcl
-CPPFLAGS+=		-I${LOCALBASE}/include/tcl8.3
+CPPFLAGS+=		-I${TCL_INCLUDEDIR}
+LDFLAGS+=		-L${LOCALBASE}/lib
 .else
 MICO_TCL=		"@comment "
 .endif
