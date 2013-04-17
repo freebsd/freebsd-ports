@@ -1,11 +1,20 @@
 @comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/bitarray/__init__.py
-%%PYTHON_SITELIBDIR%%/bitarray/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bitarray/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.py
-%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.pyc
-%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.pyo
-%%PYTHON_SITELIBDIR%%/bitarray/_bitarray.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/_bitarray.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/_bitarray.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/_bitarray.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/test_bitarray.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/test_bitarray.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/test_bitarray.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray/_bitarray.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bloom.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/compress.py
@@ -18,4 +27,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/runall
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smallints.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/bitarray
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bitarray
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
