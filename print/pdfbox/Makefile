@@ -1,21 +1,21 @@
-# Created by: Pedro Giffuni <giffunip@tutopia.com>
+# Created by: Pedro Giffuni
 # $FreeBSD$
 
 PORTNAME=	pdfbox
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.1
 CATEGORIES=	print textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,pdfbox/${PORTVERSION},}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-app-${PORTVERSION}.jar	\
 		fontbox-${PORTVERSION}.jar jempbox-${PORTVERSION}.jar
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java PDF Library
+
+LICENSE=	AL2
 
 RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle	\
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
-
-LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
