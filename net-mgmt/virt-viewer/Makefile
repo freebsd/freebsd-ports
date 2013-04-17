@@ -14,6 +14,8 @@ BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2 \
 LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt \
 		gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc
 
+FETCH_ARGS=	-Fpr
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 USE_GMAKE=	yes
