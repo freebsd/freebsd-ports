@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	dparser
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	d-${PORTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A simple but powerful tool for parsing
+COMMENT=	Simple but powerful tool for parsing
 
 OPTIONS_DEFINE=	BOEHM DOCS
 BOEHM_DESC=	Boehm garbage collector support
