@@ -1,28 +1,16 @@
-# New ports collection Makefile for:	taskwarrior
-# Date created:				12 June 2009
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	taskwarrior
-DISTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
-DISTNAME=	task-${DISTVERSION}
+DISTNAME=	task-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A framework for supercharged task and contact management
 
-OPTIONS_DEFINE=	LUA
-
-WRKSRC=		${WRKDIR}/task-${DISTVERSION}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1
-.endif
+WRKSRC=		${WRKDIR}/task-${PORTVERSION}
 
 USES=		cmake:outsource
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
