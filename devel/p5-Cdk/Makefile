@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Cdk
-# Date created:				May 27th 2001
-# Whom:	      				Chia-liang Kao <clkao@clkao.org>
-#
+# Created by: Chia-liang Kao <clkao@clkao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Cdk
 PORTVERSION=	4.9.10
@@ -18,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
 LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
+
+BROKEN=	does not build
 
 PERL_CONFIGURE=	yes
 
