@@ -1,48 +1,20 @@
---- ./Makefile.orig	2013-04-04 21:46:48.000000000 +0200
-+++ ./Makefile	2013-04-17 21:50:18.735645308 +0200
-@@ -12,8 +12,6 @@
- # version.  If you delete this exception statement from all source
+--- ./Makefile.orig	2013-04-17 22:46:50.000000000 +0200
++++ ./Makefile	2013-04-17 23:49:01.771634044 +0200
+@@ -13,8 +13,6 @@
  # files in the program, then also delete it here.
+ # $Revision: 178 $
  
 --include makefile.inc
 -
  # *** configure script ***
  # support for tcp fast open?
  #TFO=yes
-@@ -32,12 +30,11 @@
+@@ -31,7 +29,7 @@
  
- DEBUG=yes
+ TARGET=httping
+ 
+-DEBUG=yes
++DEBUG?=no
  WFLAGS=-Wall -W
--OFLAGS=-O3
+ OFLAGS=
  CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
--LDFLAGS=-lm
-+LDFLAGS+=-lm
- 
- PACKAGE=$(TARGET)-$(VERSION)
--PREFIX=/usr
-+PREFIX?=/usr
- BINDIR=$(PREFIX)/bin
- MANDIR=$(PREFIX)/share/man
- DOCDIR=$(PREFIX)/share/doc/$(TARGET)
-@@ -82,11 +79,6 @@
- LDFLAGS+=-lfftw3
- endif
- 
--ifeq ($(DEBUG),yes)
--CFLAGS+=-D_DEBUG -ggdb
--LDFLAGS+=-g
--endif
--
- ifeq ($(ARM),yes)
- CC=arm-linux-gcc
- endif
-@@ -109,9 +101,6 @@
- 	$(STRIP) $(DESTDIR)/$(BINDIR)/$(TARGET)
- endif
- 
--makefile.inc:
--	./configure
--
- clean:
- 	$(RMDIR) $(OBJS) $(TARGET) makefile.inc *~ core cov-int
- 
