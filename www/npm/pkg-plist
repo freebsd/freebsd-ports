@@ -261,7 +261,6 @@ lib/node_modules/npm/lib/unbuild.js
 lib/node_modules/npm/lib/uninstall.js
 lib/node_modules/npm/lib/unpublish.js
 lib/node_modules/npm/lib/update.js
-lib/node_modules/npm/lib/utils/cmd-shim.js
 lib/node_modules/npm/lib/utils/completion.sh
 lib/node_modules/npm/lib/utils/completion/file-completion.js
 lib/node_modules/npm/lib/utils/completion/installed-deep.js
@@ -333,6 +332,15 @@ lib/node_modules/npm/node_modules/chownr/LICENCE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
+lib/node_modules/npm/node_modules/cmd-shim/.npmignore
+lib/node_modules/npm/node_modules/cmd-shim/.travis.yml
+lib/node_modules/npm/node_modules/cmd-shim/LICENSE
+lib/node_modules/npm/node_modules/cmd-shim/README.md
+lib/node_modules/npm/node_modules/cmd-shim/index.js
+lib/node_modules/npm/node_modules/cmd-shim/package.json
+lib/node_modules/npm/node_modules/cmd-shim/test/00-setup.js
+lib/node_modules/npm/node_modules/cmd-shim/test/basic.js
+lib/node_modules/npm/node_modules/cmd-shim/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/fstream-npm/.npmignore
 lib/node_modules/npm/node_modules/fstream-npm/LICENCE
 lib/node_modules/npm/node_modules/fstream-npm/README.md
@@ -456,6 +464,7 @@ lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
+lib/node_modules/npm/node_modules/lru-cache/s.js
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
 lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
@@ -1660,13 +1669,196 @@ lib/node_modules/npm/node_modules/read/test/defaults.js
 lib/node_modules/npm/node_modules/read/test/many.js
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
-lib/node_modules/npm/node_modules/request/aws.js
-lib/node_modules/npm/node_modules/request/forever.js
-lib/node_modules/npm/node_modules/request/main.js
-lib/node_modules/npm/node_modules/request/mimetypes.js
-lib/node_modules/npm/node_modules/request/oauth.js
+lib/node_modules/npm/node_modules/request/index.js
+lib/node_modules/npm/node_modules/request/node_modules/aws-sign/index.js
+lib/node_modules/npm/node_modules/request/node_modules/aws-sign/package.json
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/index.js
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/jar.js
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/package.json
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/tests/run.js
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/tests/test-cookie.js
+lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/tests/test-cookiejar.js
+lib/node_modules/npm/node_modules/request/node_modules/forever-agent/index.js
+lib/node_modules/npm/node_modules/request/node_modules/forever-agent/package.json
+lib/node_modules/npm/node_modules/request/node_modules/form-data/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/form-data/License
+lib/node_modules/npm/node_modules/request/node_modules/form-data/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/form-data/Readme.md
+lib/node_modules/npm/node_modules/request/node_modules/form-data/lib/form_data.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/.gitmodules
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/README.md
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/index.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/package.json
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/License
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/Readme.md
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/lib/combined_stream.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/License
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/Readme.md
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/package.json
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/common.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-delayed-http-upload.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-delayed-stream-auto-pause.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-delayed-stream-pause.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-delayed-stream.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-handle-source-errors.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-max-data-size.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-pipe-resumes.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration/test-proxy-readable.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/run.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/package.json
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/common.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/fixture/file1.txt
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/fixture/file2.txt
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-callback-streams.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-data-size.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-delayed-streams-and-buffers-and-strings.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-delayed-streams.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-empty-string.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-is-stream-like.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-max-data-size.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-unpaused-streams.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/run.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/package.json
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/common.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture/bacon.txt
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture/unicycle.jpg
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-custom-headers.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-form-get-length.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-get-boundary.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-http-response.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-pipe.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-submit-custom.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-submit.js
+lib/node_modules/npm/node_modules/request/node_modules/form-data/test/run.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/hawk/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/hawk/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/hawk/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/hawk/README.md
+lib/node_modules/npm/node_modules/request/node_modules/hawk/example/usage.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/images/hawk.png
+lib/node_modules/npm/node_modules/request/node_modules/hawk/images/logo.png
+lib/node_modules/npm/node_modules/request/node_modules/hawk/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/client.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/crypto.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/server.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/uri.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/lib/utils.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/README.md
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/lib/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/package.json
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/README.md
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/lib/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/package.json
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/README.md
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/images/hoek.png
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/lib/escape.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/lib/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/package.json
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/escaper.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test1.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test2.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test3.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/README.md
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/examples/offset.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/examples/time.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/package.json
+lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/package.json
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/client.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/crypto.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/readme.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/server.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/uri.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/utils.js
+lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe/README.md
+lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe/package.json
+lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe/stringify.js
+lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe/test.js
+lib/node_modules/npm/node_modules/request/node_modules/mime/LICENSE
+lib/node_modules/npm/node_modules/request/node_modules/mime/README.md
+lib/node_modules/npm/node_modules/request/node_modules/mime/mime.js
+lib/node_modules/npm/node_modules/request/node_modules/mime/package.json
+lib/node_modules/npm/node_modules/request/node_modules/mime/test.js
+lib/node_modules/npm/node_modules/request/node_modules/mime/types/mime.types
+lib/node_modules/npm/node_modules/request/node_modules/mime/types/node.types
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/LICENSE.md
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/README.md
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/README.md
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench.gnu
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench.sh
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark-native.c
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark.js
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/package.json
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test/compare_v1.js
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test/test.html
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test/test.js
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/uuid.js
+lib/node_modules/npm/node_modules/request/node_modules/oauth-sign/index.js
+lib/node_modules/npm/node_modules/request/node_modules/oauth-sign/package.json
+lib/node_modules/npm/node_modules/request/node_modules/oauth-sign/test.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/.gitmodules
+lib/node_modules/npm/node_modules/request/node_modules/qs/.npmignore
+lib/node_modules/npm/node_modules/request/node_modules/qs/.travis.yml
+lib/node_modules/npm/node_modules/request/node_modules/qs/History.md
+lib/node_modules/npm/node_modules/request/node_modules/qs/Makefile
+lib/node_modules/npm/node_modules/request/node_modules/qs/Readme.md
+lib/node_modules/npm/node_modules/request/node_modules/qs/benchmark.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/component.json
+lib/node_modules/npm/node_modules/request/node_modules/qs/examples.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/index.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/package.json
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/expect.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/index.html
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/jquery.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/mocha.css
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/mocha.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/qs.css
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser/qs.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/parse.js
+lib/node_modules/npm/node_modules/request/node_modules/qs/test/stringify.js
+lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js
+lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/package.json
 lib/node_modules/npm/node_modules/request/package.json
-lib/node_modules/npm/node_modules/request/tests/googledoodle.png
+lib/node_modules/npm/node_modules/request/tests/googledoodle.jpg
 lib/node_modules/npm/node_modules/request/tests/run.js
 lib/node_modules/npm/node_modules/request/tests/server.js
 lib/node_modules/npm/node_modules/request/tests/squid.conf
@@ -1684,13 +1876,15 @@ lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.key
 lib/node_modules/npm/node_modules/request/tests/ssl/npm-ca.crt
 lib/node_modules/npm/node_modules/request/tests/ssl/test.crt
 lib/node_modules/npm/node_modules/request/tests/ssl/test.key
+lib/node_modules/npm/node_modules/request/tests/test-basic-auth.js
 lib/node_modules/npm/node_modules/request/tests/test-body.js
-lib/node_modules/npm/node_modules/request/tests/test-cookie.js
-lib/node_modules/npm/node_modules/request/tests/test-cookiejar.js
 lib/node_modules/npm/node_modules/request/tests/test-defaults.js
+lib/node_modules/npm/node_modules/request/tests/test-digest-auth.js
 lib/node_modules/npm/node_modules/request/tests/test-errors.js
 lib/node_modules/npm/node_modules/request/tests/test-follow-all-303.js
 lib/node_modules/npm/node_modules/request/tests/test-follow-all.js
+lib/node_modules/npm/node_modules/request/tests/test-form.js
+lib/node_modules/npm/node_modules/request/tests/test-hawk.js
 lib/node_modules/npm/node_modules/request/tests/test-headers.js
 lib/node_modules/npm/node_modules/request/tests/test-httpModule.js
 lib/node_modules/npm/node_modules/request/tests/test-https-strict.js
@@ -1698,18 +1892,17 @@ lib/node_modules/npm/node_modules/request/tests/test-https.js
 lib/node_modules/npm/node_modules/request/tests/test-oauth.js
 lib/node_modules/npm/node_modules/request/tests/test-params.js
 lib/node_modules/npm/node_modules/request/tests/test-pipes.js
+lib/node_modules/npm/node_modules/request/tests/test-piped-redirect.js
 lib/node_modules/npm/node_modules/request/tests/test-pool.js
 lib/node_modules/npm/node_modules/request/tests/test-protocol-changing-redirect.js
 lib/node_modules/npm/node_modules/request/tests/test-proxy.js
 lib/node_modules/npm/node_modules/request/tests/test-qs.js
 lib/node_modules/npm/node_modules/request/tests/test-redirect.js
+lib/node_modules/npm/node_modules/request/tests/test-s3.js
 lib/node_modules/npm/node_modules/request/tests/test-timeout.js
 lib/node_modules/npm/node_modules/request/tests/test-toJSON.js
 lib/node_modules/npm/node_modules/request/tests/test-tunnel.js
-lib/node_modules/npm/node_modules/request/tunnel.js
-lib/node_modules/npm/node_modules/request/uuid.js
-lib/node_modules/npm/node_modules/request/vendor/cookie/index.js
-lib/node_modules/npm/node_modules/request/vendor/cookie/jar.js
+lib/node_modules/npm/node_modules/request/tests/unicycle.jpg
 lib/node_modules/npm/node_modules/retry/.npmignore
 lib/node_modules/npm/node_modules/retry/License
 lib/node_modules/npm/node_modules/retry/Makefile
@@ -1944,11 +2137,65 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/retry/lib
 @dirrm lib/node_modules/npm/node_modules/retry/example
 @dirrm lib/node_modules/npm/node_modules/retry
-@dirrm lib/node_modules/npm/node_modules/request/vendor/cookie
-@dirrm lib/node_modules/npm/node_modules/request/vendor
 @dirrm lib/node_modules/npm/node_modules/request/tests/ssl/ca
 @dirrm lib/node_modules/npm/node_modules/request/tests/ssl
 @dirrm lib/node_modules/npm/node_modules/request/tests
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/qs/test/browser
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/qs/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/qs
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/oauth-sign
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/node-uuid
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/mime/types
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/mime
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/json-stringify-safe
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/examples
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek/images
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/hoek
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/images
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/images
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/example
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/fixture
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/integration
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/lib
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/forever-agent
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/cookie-jar/tests
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/cookie-jar
+@dirrm lib/node_modules/npm/node_modules/request/node_modules/aws-sign
+@dirrm lib/node_modules/npm/node_modules/request/node_modules
 @dirrm lib/node_modules/npm/node_modules/request
 @dirrm lib/node_modules/npm/node_modules/read/test
 @dirrm lib/node_modules/npm/node_modules/read/node_modules/mute-stream/test
@@ -2339,6 +2586,8 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/example
 @dirrm lib/node_modules/npm/node_modules/fstream-npm
 @dirrm lib/node_modules/npm/node_modules/fstream
+@dirrm lib/node_modules/npm/node_modules/cmd-shim/test
+@dirrm lib/node_modules/npm/node_modules/cmd-shim
 @dirrm lib/node_modules/npm/node_modules/chownr
 @dirrm lib/node_modules/npm/node_modules/chmodr/test
 @dirrm lib/node_modules/npm/node_modules/chmodr
