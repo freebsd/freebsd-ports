@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmovie
-# Date created:		20 December 1998
-# Whom:			MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>
-#
+# Created by: MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmovie
 PORTVERSION=	1.9.8.1
@@ -17,14 +13,12 @@ EXTRACT_SUFX=
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Movie player for AVI, MPEG-2/4, and MOV movies
 
-EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-EXTRACT_CMD=	rpm2cpio
+EXTRACT_CMD=	${TAR} -xf
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS= | ${CPIO} -id --quiet
+EXTRACT_AFTER_ARGS=
 NO_BUILD=	yes
 PLIST_FILES=	bin/xmovie
 WRKSRC=		${WRKDIR}/usr/bin
