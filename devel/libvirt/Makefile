@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://libvirt.org/sources/
+MASTER_SITES=	http://libvirt.org/sources/ \
+		ftp://libvirt.org/libvirt/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-OPTIONS_DEFINE=	QEMU DOCS
-QEMU_DESC=	QEMU bindings
-
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		gnutls:${PORTSDIR}/security/gnutls \
 		ssh2:${PORTSDIR}/security/libssh2
+
+OPTIONS_DEFINE=	QEMU DOCS
+QEMU_DESC=	QEMU bindings
 
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
@@ -37,11 +38,9 @@ CONFIGURE_ARGS=	--without-sasl \
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 USES=		charsetfix pathfix
 USE_GMAKE=	yes
-GNOME_MAKEFILEIN=	Makefile.in
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 SHLIB_VER=	1000
