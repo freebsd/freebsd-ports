@@ -75,6 +75,42 @@ bin/keyring
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Gnome.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Gnome.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Gnome.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Google.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Google.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Google.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_OS_X.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_OS_X.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_OS_X.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_SecretService.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_SecretService.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_SecretService.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Windows.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Windows.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_Windows.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_crypto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_crypto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_crypto.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_file.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_file.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_file.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_keyczar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_keyczar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_keyczar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_kwallet.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_kwallet.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_kwallet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_multi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_multi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_multi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_pyfs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_pyfs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends/test_pyfs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/mocks.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/mocks.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/mocks.pyo
@@ -109,6 +145,7 @@ bin/keyring
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/properties.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/properties.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/backends
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/backends
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring
