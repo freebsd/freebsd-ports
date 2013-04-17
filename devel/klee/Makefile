@@ -14,6 +14,8 @@ BUILD_DEPENDS=	llvm-ar:${PORTSDIR}/devel/llvm \
 RUN_DEPENDS=	llvm-ar:${PORTSDIR}/devel/llvm \
 		ccc-analyzer:${PORTSDIR}/lang/clang
 
+BROKEN=		fails to build
+
 OPTIONS_DEFINE=	DEBUG
 
 USES=		cmake:outsource
