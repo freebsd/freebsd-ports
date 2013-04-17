@@ -60,6 +60,7 @@ lib/seed7/lib/image.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/keybd.s7i
+lib/seed7/lib/keydescr.s7i
 lib/seed7/lib/line.s7i
 lib/seed7/lib/listener.s7i
 lib/seed7/lib/lower.s7i
