@@ -25,6 +25,8 @@ APPS=		awk basename bc cat cleanname date dc echo grep mk rc sed \
 MAN1=		${APPS:S|$|.1|}
 MAN7=		regexp.7
 
+BROKEN=		fails to build
+
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has low-level code unavailable for ${ARCH}
 
