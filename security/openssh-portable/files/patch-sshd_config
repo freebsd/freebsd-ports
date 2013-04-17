@@ -1,3 +1,10 @@
+r99051 | des | 2002-06-29 05:55:18 -0500 (Sat, 29 Jun 2002) | 4 lines
+Changed paths:
+   M /head/crypto/openssh/ssh_config
+   M /head/crypto/openssh/sshd_config
+
+Document FreeBSD defaults.
+
 --- sshd_config.orig	2009-10-11 04:51:09.000000000 -0600
 +++ sshd_config	2010-09-14 16:14:13.000000000 -0600
 @@ -36,7 +36,7 @@

@@ -24,7 +24,3 @@ sbin/sshd
 libexec/sftp-server
 libexec/ssh-keysign
 libexec/ssh-pkcs11-helper
-@exec if [ ! -d %%EMPTYDIR%% ]; then mkdir -p %%EMPTYDIR%% ; fi
-%%ERASEEMPTY%%@dirrm empty
-@exec if ! pw groupshow sshd 2>/dev/null; then pw groupadd sshd -g 22; fi
-@exec if ! pw usershow sshd 2>/dev/null; then pw useradd sshd -g sshd -u 22 -h - -d %%EMPTYDIR%% -s /nonexistent -c "sshd privilege separation"; fi

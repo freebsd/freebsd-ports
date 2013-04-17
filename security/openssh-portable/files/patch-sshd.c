@@ -1,3 +1,13 @@
+r109683 | des | 2003-01-22 08:12:59 -0600 (Wed, 22 Jan 2003) | 7 lines
+Changed paths:
+   M /head/crypto/openssh/sshd.c
+
+Force early initialization of the resolver library, since the resolver
+configuration files will no longer be available once sshd is chrooted.
+
+PR:             39953, 40894
+Submitted by:   dinoex
+
 --- sshd.c.orig	2010-04-15 23:56:22.000000000 -0600
 +++ sshd.c	2010-09-14 16:14:13.000000000 -0600
 @@ -83,6 +83,13 @@

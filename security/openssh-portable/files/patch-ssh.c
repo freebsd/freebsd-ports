@@ -1,6 +1,10 @@
 $FreeBSD$
 
-Make the same change to use the canonical hostname as the base FreeBSD ssh.
+r99054 | des | 2002-06-29 05:57:53 -0500 (Sat, 29 Jun 2002) | 4 lines
+Changed paths:
+   M /head/crypto/openssh/ssh.c
+
+Canonicize the host name before looking it up in the host file.
 
 --- ssh.c.orig	2010-08-16 09:59:31.000000000 -0600
 +++ ssh.c	2010-08-25 17:55:01.000000000 -0600

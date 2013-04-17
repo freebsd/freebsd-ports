@@ -1,3 +1,11 @@
+r99048 | des | 2002-06-29 05:51:56 -0500 (Sat, 29 Jun 2002) | 4 lines
+Changed paths:
+   M /head/crypto/openssh/myproposal.h
+   M /head/crypto/openssh/readconf.c
+   M /head/crypto/openssh/servconf.c
+
+Apply FreeBSD's configuration defaults.
+
 --- servconf.c.orig	2010-06-25 17:38:45.000000000 -0600
 +++ servconf.c	2010-09-14 16:14:12.000000000 -0600
 @@ -139,7 +139,7 @@

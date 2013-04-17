@@ -1,3 +1,20 @@
+r56266 | dinoex | 2002-03-17 14:24:24 -0600 (Sun, 17 Mar 2002) | 4 lines
+Changed paths:
+   M /head/security/hpn-ssh/Makefile
+   M /head/security/hpn-ssh/files/patch-auth.c
+   A /head/security/hpn-ssh/files/patch-auth1.c
+   A /head/security/hpn-ssh/files/patch-auth2.c
+   M /head/security/hpn-ssh/files/patch-session.c
+   M /head/security/openssh-portable/Makefile
+   M /head/security/openssh-portable/files/patch-auth.c
+   A /head/security/openssh-portable/files/patch-auth1.c
+   A /head/security/openssh-portable/files/patch-auth2.c
+   M /head/security/openssh-portable/files/patch-session.c
+
+Merged patches for HAVE_LOGIN_CAP from stable
+
+PR:             35904
+
 --- session.c.orig	2011-07-21 18:55:33.883559116 +0200
 +++ session.c	2011-07-21 19:02:17.789294035 +0200
 @@ -896,6 +896,24 @@
