@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Interface extension for defining data schemas
 
 LICENSE=	ZPL21
