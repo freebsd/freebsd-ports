@@ -9,6 +9,7 @@
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Command.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Simple.pm
 %%SITE_PERL%%/MooseX/App/ParsedArgv.pm
+%%SITE_PERL%%/MooseX/App/ParsedArgv/Element.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta/Class.pm
@@ -53,6 +54,7 @@
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin
+@dirrmtry %%SITE_PERL%%/MooseX/App/ParsedArgv
 @dirrmtry %%SITE_PERL%%/MooseX/App/Meta/Role/Class
 @dirrmtry %%SITE_PERL%%/MooseX/App/Meta/Role/Attribute
 @dirrmtry %%SITE_PERL%%/MooseX/App/Meta/Role
