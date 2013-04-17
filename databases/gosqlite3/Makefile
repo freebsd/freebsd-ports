@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gosqlite3
-# Date created:				Apr 11, 2011
-# Whom:					Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gosqlite3
 PORTVERSION=	20120330
@@ -15,7 +11,6 @@ COMMENT=	A Go interface for SQLite3
 
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 
-USE_GO=		yes
 GO_PKGNAME=	${SUBLIBDIR}/${PORTNAME}
 
 SUBLIBDIR=	github.com/kuroneko

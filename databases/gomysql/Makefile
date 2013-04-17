@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gomysql
-# Date created:				Dec 06, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gomysql
 PORTVERSION=	0.3.2
@@ -19,8 +15,6 @@ BROKEN=		Does not compile with go1
 
 WRKSRC=		${WRKDIR}/Philio-GoMySQL-f1112aa
 PLIST_FILES=	${GO_LIBDIR}/mysql.a
-
-USE_GO=		yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

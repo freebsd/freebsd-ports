@@ -9,7 +9,6 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Pretty-printing package for go values
 
-USE_GO=		yes
 GO_PKGNAME=	github.com/kr/pretty
 
 SUBLIBDIR=	github.com/kr

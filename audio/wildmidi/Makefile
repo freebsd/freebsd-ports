@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wildmidi
-# Date created:				02 Aug 2010
-# Whom:					SimaMoto,RyoTa <liangtai.s4@gmail.com>
-#
+# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wildmidi
 PORTVERSION=	0.2.3.5
@@ -20,7 +16,6 @@ LICENSE_COMB=	multi
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

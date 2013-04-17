@@ -1,9 +1,5 @@
-# New ports collection makefile for:	goprotobuf
-# Date created:		2012-01-22
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	goprotobuf
 PORTVERSION=	20120409
@@ -17,7 +13,6 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
 
-USE_GO=		yes
 GO_PKGNAME=	code.google.com/p/goprotobuf
 GO_TARGET=	${GO_PKGNAME}/proto ${GO_PKGNAME}/protoc-gen-go
 

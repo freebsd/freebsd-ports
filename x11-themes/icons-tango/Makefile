@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
-USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack
 USES+=		pathfix
