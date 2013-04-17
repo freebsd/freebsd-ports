@@ -16,8 +16,6 @@ DISTFILES=	RealPlayer10GOLD.rpm:player \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
@@ -60,9 +58,8 @@ PLIST_SUB+=	X11="@comment "
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@set -x; for f in ${_DISTFILES}; do\
-		cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/$$f | \
-		    ${CPIO} -idm --quiet; \
+	@for f in ${_DISTFILES}; do\
+		cd ${WRKDIR}; ${TAR} -xf ${DISTDIR}/$$f ; \
 	done
 
 post-patch:
