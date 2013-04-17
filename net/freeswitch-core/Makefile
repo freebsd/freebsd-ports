@@ -30,6 +30,8 @@ EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch SoftSwitch Port
 
+BROKEN=		Does not build
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
