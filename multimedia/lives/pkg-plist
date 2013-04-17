@@ -28,14 +28,12 @@ include/weed/weed-effects.h
 include/weed/weed-events.h
 include/weed/weed-host.h
 include/weed/weed-palettes.h
-include/weed/weed-plugin-utils.h
 include/weed/weed-plugin.h
 include/weed/weed-utils.h
 include/weed/weed.h
-lib/libweed-plugin-utils.a
-lib/libweed-plugin-utils.la
-lib/libweed-utils.a
 lib/libweed-utils.la
+lib/libweed-utils.so
+lib/libweed-utils.so.0
 lib/libweed.la
 lib/libweed.so
 lib/libweed.so.0
