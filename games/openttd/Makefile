@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
-MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
+MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
 		http://de.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
+COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 
 LICENSE=	GPLv2
 
@@ -116,7 +114,7 @@ do-install:
 		${PREFIX}/share/icons/hicolor/${n}x${n}/apps/openttd.png
 .  endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}
 .endif
