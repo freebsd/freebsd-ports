@@ -1,5 +1,5 @@
---- OMakefile.orig	2007-06-22 12:03:37.000000000 -0700
-+++ OMakefile	2011-04-04 20:32:58.000000000 -0700
+--- OMakefile.orig	2010-10-26 20:42:37.000000000 -0400
++++ OMakefile	2013-04-03 16:50:13.000000000 -0400
 @@ -33,7 +33,6 @@
      #
      # Extra options for the C compiler
@@ -17,17 +17,3 @@
  if $(THREADS_ENABLED)
      OCAMLFLAGS += -thread
      export
-@@ -229,11 +228,11 @@
- 
- install: $(DEFAULTFILES)  $(INSTALLFILES)
-     mkdir -p $(INSTALL_LIBDIR)/omake
--    cp -f -m 444 $(DEFAULTFILES) $(INSTALL_LIBDIR)/omake/
-+    $(BSD_INSTALL_DATA) $(DEFAULTFILES) $(INSTALL_LIBDIR)/omake/
-     foreach(name, $(STDLIBNAMES))
-         node = $(file $(INSTALL_LIBDIR)/omake/$(name).om)
-         mkdir -p $(dirof $(node))
--	cp -f -m 444 lib/$(name).install $(node)
-+	$(BSD_INSTALL_DATA) lib/$(name).install $(node)
- 
- ########################################################################
- # Testing
