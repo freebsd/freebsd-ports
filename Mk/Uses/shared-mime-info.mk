@@ -24,7 +24,7 @@ post-install: shared-mime-post-install
 
 shared-mime-post-install:
 # run for port post-install
-	@-update-desktop-database
+	@-update-mime-database
 # plist entries for packages.
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-mime-database %D/share/mime" \
 		>> ${TMPPLIST}; \
