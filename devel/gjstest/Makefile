@@ -26,6 +26,8 @@ CXXFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+BROKEN=		fails to build
+
 PROJECTHOST=	google-js-test
 
 post-patch:
