@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 BUILD_DEPENDS=		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
@@ -21,14 +20,10 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	lib/X11/fonts/local/sgi
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_IMAKE=	yes
+EXTRACT_CMD=	${TAR}
+EXTRACT_BEFORE_ARGS=	-O -xf
+EXTRACT_AFTER_ARGS=	sgi-fonts.tar.gz | ${TAR} -xf -
 WRKSRC=		${WRKDIR}/sgi-fonts
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
-		| ${CPIO} --extract --no-preserve-owner \
-		--preserve-modification-time --unconditional --quiet
-	@${TAR} -C ${WRKDIR} -xf ${WRKDIR}/sgi-fonts.tar.gz
 
 pre-install:
 	@${RM} -f ${PLIST}
