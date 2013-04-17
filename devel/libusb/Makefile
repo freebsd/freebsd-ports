@@ -16,7 +16,7 @@ SGML_DESC=	Install developer guide from SGML
 .include <bsd.port.pre.mk>
 
 DEPRECATED=	has been already included into base system
-EXPIRATION_DATE=	2012-04-30
+EXPIRATION_DATE=	2013-04-30
 
 .if ${OSVERSION} >= 800069
 IGNORE=		has been already included into base system
