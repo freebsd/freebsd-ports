@@ -9,7 +9,6 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A Redis client library written in Go
 
-USE_GO=		yes
 GO_PKGNAME=	${SUBLIBDIR}/${PORTNAME}
 
 SUBLIBDIR=	github.com/simonz05

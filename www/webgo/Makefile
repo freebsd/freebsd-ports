@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webgo
-# Date created:				Nov 22, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webgo
 PORTVERSION=	0.1.0.${SVNVERSION}
@@ -16,7 +12,6 @@ COMMENT=	Simplest way to write web applications in the Go programming language
 
 SVNVERSION=	20120419
 
-USE_GO=		yes
 GO_PKGNAME=	${SUBLIBDIR}/web
 
 SUBLIBDIR=	github.com/hoisie

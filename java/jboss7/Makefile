@@ -23,7 +23,6 @@ USER=		www
 GROUP=		www
 DIST_SUBDIR=	${DISTNAME}
 NO_BUILD=	yes
-USE_GZIP=	yes
 
 .include <bsd.port.pre.mk>
 
