@@ -20,16 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MANL=		idea.l
 MANCOMPRESSED=	no
 
-.if !defined(MAKE_IDEA) || ${MAKE_IDEA} == "no" || ${MAKE_IDEA} == "NO"
-IGNORE=		you chose not to use idea related code
-.endif
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-build:
-	${CC} ${WRKSRC}/idea.c ${WRKSRC}/idea_cmd.c ${CFLAGS} -o ${WRKSRC}/${PORTNAME}
+	${CC} ${WRKSRC}/idea.c ${WRKSRC}/idea_cmd.c ${CFLAGS} \
+		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/manl/idea.l ${PREFIX}/man/manl
@@ -41,8 +38,5 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/byte_ord.ps ${WRKSRC}/idea_cmd.txt ${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
