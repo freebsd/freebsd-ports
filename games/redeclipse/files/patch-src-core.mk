@@ -1,14 +1,14 @@
---- src/Makefile.orig	2012-08-31 09:59:06.000000000 +0400
-+++ src/Makefile	2012-09-03 02:40:29.298539115 +0400
+--- src/core.mk.orig	2013-03-21 23:45:14.000000000 +0400
++++ src/core.mk	2013-04-16 21:14:33.351621428 +0400
 @@ -3,7 +3,6 @@
- APPSERVER=reserver
+ APPSERVER=$(APPNAME)_server
  
  #CXXFLAGS= -ggdb3
 -CXXFLAGS= -O3 -fomit-frame-pointer
  override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
  
  PLATFORM= $(shell uname -s)
-@@ -41,8 +40,8 @@
+@@ -65,8 +64,8 @@
  CLIENT_INCLUDES= $(INCLUDES) -Iinclude
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
