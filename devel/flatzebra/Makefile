@@ -1,13 +1,8 @@
-# New ports collection makefile for:	flatzebra
-# Date created:				2005-10-18
-# Whom:					Edwin Groothuis <edwin2mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin2mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flatzebra
-PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTVERSION=	0.1.6
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -19,15 +14,17 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl mixer image
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO THANKS
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-pkgconfigDATA|' ${WRKSRC}/Makefile.in
 .endif
 
