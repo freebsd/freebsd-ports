@@ -801,6 +801,7 @@
     SUBDIR += qca-ossl
     SUBDIR += qca-tls
     SUBDIR += qtfw
+    SUBDIR += qtkeychain
     SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
