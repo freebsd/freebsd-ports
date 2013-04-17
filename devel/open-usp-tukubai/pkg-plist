@@ -1,3 +1,4 @@
+bin/calclock
 bin/cgi-name
 bin/check_attr_name
 bin/check_need_name
@@ -7,9 +8,11 @@ bin/cjoin2
 bin/comma
 bin/count
 bin/ctail
+bin/dayslash
 bin/delf
 bin/divsen
 bin/filehame
+bin/formhame
 bin/getfirst
 bin/getlast
 bin/gyo
@@ -23,6 +26,7 @@ bin/keta
 bin/keycut
 bin/loopj
 bin/loopx
+bin/man2
 bin/map
 bin/marume
 bin/mdate
@@ -53,12 +57,13 @@ share/open-usp-tukubai/devel/doc/README
 share/open-usp-tukubai/devel/html/COMMON/CSS/IE67HACK.CSS
 share/open-usp-tukubai/devel/html/COMMON/CSS/IE6HACK.CSS
 share/open-usp-tukubai/devel/html/COMMON/CSS/IE7HACK.CSS
-share/open-usp-tukubai/devel/html/COMMON/CSS/IE8HACK.CSS
 share/open-usp-tukubai/devel/html/COMMON/CSS/MAIN.CSS
 share/open-usp-tukubai/devel/html/COMMON/CSS/MENU.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/PRINT.CSS
 share/open-usp-tukubai/devel/html/COMMON/IMG/BACKGROUND.JPG
 share/open-usp-tukubai/devel/html/COMMON/IMG/TUKUBAI_LOGO.JPG
 share/open-usp-tukubai/devel/html/COMMON/JS/MENU.JS
+share/open-usp-tukubai/devel/html/calclock.html
 share/open-usp-tukubai/devel/html/cgi-name.html
 share/open-usp-tukubai/devel/html/check_attr_name.html
 share/open-usp-tukubai/devel/html/check_need_name.html
@@ -68,9 +73,11 @@ share/open-usp-tukubai/devel/html/cjoin2.html
 share/open-usp-tukubai/devel/html/comma.html
 share/open-usp-tukubai/devel/html/count.html
 share/open-usp-tukubai/devel/html/ctail.html
+share/open-usp-tukubai/devel/html/dayslash.html
 share/open-usp-tukubai/devel/html/delf.html
 share/open-usp-tukubai/devel/html/divsen.html
 share/open-usp-tukubai/devel/html/filehame.html
+share/open-usp-tukubai/devel/html/formhame.html
 share/open-usp-tukubai/devel/html/getfirst.html
 share/open-usp-tukubai/devel/html/getlast.html
 share/open-usp-tukubai/devel/html/gyo.html
@@ -109,6 +116,7 @@ share/open-usp-tukubai/devel/html/ycat.html
 share/open-usp-tukubai/devel/html/yobi.html
 share/open-usp-tukubai/devel/html/ysum.html
 share/open-usp-tukubai/devel/html/zen.html
+share/open-usp-tukubai/devel/man/calclock.txt
 share/open-usp-tukubai/devel/man/cgi-name.txt
 share/open-usp-tukubai/devel/man/check_attr_name.txt
 share/open-usp-tukubai/devel/man/check_need_name.txt
@@ -118,9 +126,11 @@ share/open-usp-tukubai/devel/man/cjoin2.txt
 share/open-usp-tukubai/devel/man/comma.txt
 share/open-usp-tukubai/devel/man/count.txt
 share/open-usp-tukubai/devel/man/ctail.txt
+share/open-usp-tukubai/devel/man/dayslash.txt
 share/open-usp-tukubai/devel/man/delf.txt
 share/open-usp-tukubai/devel/man/divsen.txt
 share/open-usp-tukubai/devel/man/filehame.txt
+share/open-usp-tukubai/devel/man/formhame.txt
 share/open-usp-tukubai/devel/man/getfirst.txt
 share/open-usp-tukubai/devel/man/getlast.txt
 share/open-usp-tukubai/devel/man/gyo.txt
