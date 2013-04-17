@@ -23,17 +23,16 @@ share/applications/epiar.desktop
 %%DATADIR%%/Resources/Audio/Interface/28853__junggle__btn043.ogg
 %%DATADIR%%/Resources/Audio/Music/beyond_the_network.it
 %%DATADIR%%/Resources/Audio/Music/cyberm00n.mod
-%%DATADIR%%/Resources/Audio/Weapons/18397__inferno__smalllas.ogg
-%%DATADIR%%/Resources/Audio/Weapons/32954__HardPCM__Chip054.wav.ogg
-%%DATADIR%%/Resources/Audio/Weapons/36847__EcoDTR__LaserRocket2.ogg
-%%DATADIR%%/Resources/Audio/Weapons/goldbeam.ogg
-%%DATADIR%%/Resources/Audio/Weapons/laser.ogg
-%%DATADIR%%/Resources/Fonts/FreeMono.ttf
+%%DATADIR%%/Resources/Audio/Weapons/flaunch.ogg
+%%DATADIR%%/Resources/Audio/Weapons/iceball.ogg
+%%DATADIR%%/Resources/Audio/Weapons/rlaunch.ogg
+%%DATADIR%%/Resources/Audio/Weapons/slimeball.ogg
+%%DATADIR%%/Resources/Fonts/Alfphabet-IV.ttf
+%%DATADIR%%/Resources/Fonts/ConsolaMono.ttf
 %%DATADIR%%/Resources/Fonts/FreeSans.ttf
 %%DATADIR%%/Resources/Fonts/FreeSerif.ttf
 %%DATADIR%%/Resources/Fonts/usuziv2.ttf
 %%DATADIR%%/Resources/Fonts/usuzv2i.ttf
-%%DATADIR%%/Resources/Fonts/visitor1.ttf
 %%DATADIR%%/Resources/Fonts/visitor2.ttf
 %%DATADIR%%/Resources/Graphics/Epiar_Icon.png
 %%DATADIR%%/Resources/Graphics/Epiar_Icon2.png
@@ -244,3 +243,5 @@ share/pixmaps/epiar.png
 @dirrm %%DATADIR%%/Resources
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
