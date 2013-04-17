@@ -565,6 +565,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kashgar
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kathmandu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Katmandu
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Khandyga
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kolkata
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Krasnoyarsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Kuala_Lumpur
@@ -606,6 +607,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ulaanbaatar
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ulan_Bator
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Urumqi
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ust-Nera
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Vientiane
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Vladivostok
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Yakutsk
@@ -706,6 +708,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Brussels
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Bucharest
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Budapest
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Busingen
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Chisinau
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Copenhagen
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Dublin
@@ -858,11 +861,11 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
-%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.10.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.11.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.10.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.0.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.4.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.11.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.1.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.5.tm
 @dirrm lib/tcl%%TCL_VER%%/platform
 @dirrm lib/tcl%%TCL_VER%%/opt0.4
 @dirrm lib/tcl%%TCL_VER%%/msgs
