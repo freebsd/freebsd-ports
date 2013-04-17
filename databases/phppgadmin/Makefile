@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phppgadmin
-PORTVERSION=	5.0.4
+PORTVERSION=	5.1
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.0
+MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.1
 DISTNAME=	phpPgAdmin-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
