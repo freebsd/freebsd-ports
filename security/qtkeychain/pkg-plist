@@ -2,7 +2,7 @@ include/qtkeychain/keychain.h
 include/qtkeychain/qkeychain_export.h
 lib/cmake/QtKeychain/QtKeychainConfig.cmake
 lib/cmake/QtKeychain/QtKeychainConfigVersion.cmake
-lib/cmake/QtKeychain/QtKeychainLibraryDepends-release.cmake
+lib/cmake/QtKeychain/QtKeychainLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QtKeychain/QtKeychainLibraryDepends.cmake
 lib/libqtkeychain.so
 lib/libqtkeychain.so.0
