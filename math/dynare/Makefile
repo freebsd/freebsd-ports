@@ -1,9 +1,8 @@
-# Created by:	Fernando Apesteguia <fernando.apesteguia@gmail.com>
-#
+# Created by: Fernando Apesteguia <fernando.apesteguia@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
