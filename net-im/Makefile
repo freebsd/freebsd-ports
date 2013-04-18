@@ -30,7 +30,6 @@
     SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim
-    SUBDIR += gajim-devel
     SUBDIR += gale
     SUBDIR += gloox
     SUBDIR += gtkyahoo
