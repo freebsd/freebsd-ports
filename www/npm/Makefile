@@ -44,6 +44,9 @@ RUN_DEPENDS+=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 RUN_DEPENDS+=	node>=0.8.0:${PORTSDIR}/www/node
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKSRC}/tmp|' ${WRKSRC}/Makefile
+
 # maintainer section:
 # require: bash, git, gmake, node
 
