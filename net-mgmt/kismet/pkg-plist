@@ -8,7 +8,9 @@ etc/kismet.conf.sample
 @unexec if cmp -s %D/etc/kismet_drone.conf %D/etc/kismet_drone.conf.sample; then rm -f %D/etc/kismet_drone.conf; fi
 etc/kismet_drone.conf.sample
 %%PLUGINS%%lib/kismet/aircrack-kismet.so
+%%PLUGINS%%lib/kismet/alertsyslog.so
 %%PLUGINS%%lib/kismet/autowep-kismet.so
+%%PLUGINS%%lib/kismet/kismet-syslog.so
 %%PLUGINS%%lib/kismet/spectool_net.so
 %%PLUGINS%%lib/kismet_client/spectools_ui.so
 %%DATADIR%%/wav/alert.wav

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	kismet
-# Date created:			3 May 2004
-# Whom:					Thomas Spreng <spreng@socket.ch>
-#
+# Created by: Thomas Spreng <spreng@socket.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	kismet
-DISTVERSION=	2011-03-R2
-PORTREVISION=	1
+DISTVERSION=	2013-03-R1b
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/:1 \
@@ -19,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,30 +24,32 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		kismet.1 kismet_drone.1
 MAN5=		kismet.conf.5 kismet_drone.conf.5
 
-OPTIONS=	PCRE "Build kismet with PCRE regex filters" on \
-		PLUGINS "Build and install plugins" off \
-		SETUID "Build kismet with privilege separation" on
+OPTIONS_DEFINE=		PCRE PLUGINS SETUID
+OPTIONS_DEFAULT=	PCRE PLUGINS SETUID
+SETUID_DESC=		Use privilege separation
+
+WRKSRC=	${WRKDIR}/${DISTNAME:S/a$$//}
 
 .include <bsd.port.options.mk>
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README manuf
 DISTFILES+=	manuf:2
 IGNOREFILES=	manuf
 .endif
 
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 .endif
 
-.ifdef(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=--enable-pcre
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=--disable-pcre
 .endif
 
-.ifdef(WITH_SETUID)
+.if ${PORT_OPTIONS:MSETUID}
 GROUPS =	kismet
 CONFIGURE_ARGS+=--with-suidgroup=${GROUPS}
 INSTALL_TARGET =	suidinstall
@@ -63,9 +62,9 @@ CONFIGURE_ARGS+=--without-suidgroup
 PLIST_SUB+=	SUID="@comment "
 .endif
 
-.ifdef(WITH_PLUGINS)
-ALL_TARGET=	depend all-with-plugins
-INSTALL_TARGET+=	plugins-install
+.if ${PORT_OPTIONS:MPLUGINS}
+ALL_TARGET=	depend all all-plugins
+INSTALL_TARGET+=	all-plugins-install
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
@@ -80,16 +79,19 @@ post-patch:
 		-e "s/make/${GMAKE}/" \
 		-e "s/\$$(MAKE)/${GMAKE}/" \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "/PLUGINLDFLAGS/d" \
-		${WRKSRC}/Makefile.inc.in
+	@${REINPLACE_CMD} -e "s/CXXFLAGS/CPPFLAGS/" \
+		${WRKSRC}/plugin-alertsyslog/Makefile
+	@${FIND} ${WRKSRC} -type f -name 'Makefile' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -E \
+		'/C(XX)?FLAGS[[:blank:]]*\+=/s/ -g / /'
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manuf ${DOCSDIR}
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${EXAMPLESDIR}
 .endif
