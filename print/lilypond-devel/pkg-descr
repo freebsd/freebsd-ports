@@ -1,0 +1,12 @@
+LilyPond is a music typesetter.  It produces sheet music using a
+high-level description file, which is plain text, as input.  You
+can use your favorite text editor to enter the description files.
+The font and the layout were inspired by engraved music, but can
+be modified.  The program also has limited MIDI functionality: you
+can write MIDI files, and there is a MIDI to lilypond conversion
+tool, midi2ly.  Conversion tools for PMX, MUP, ABC, Finale and
+Musedata are also included.
+
+WWW:  http://lilypond.org/web/
+
+Patrick Atamaniuk
