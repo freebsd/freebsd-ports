@@ -1214,6 +1214,7 @@
     SUBDIR += vnc
     SUBDIR += vncreflector
     SUBDIR += vnstat
+    SUBDIR += vortex
     SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += wackamole
