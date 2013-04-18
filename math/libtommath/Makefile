@@ -33,10 +33,8 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 USE_LDCONFIG=	yes
 PLIST_FILES+=	lib/libtommath.la lib/libtommath.so.0 lib/libtommath.so
 MAKEFILE=	makefile.shared
-PLIST_SUB+=	SHARED=""
 .else
 MAKEFILE=	makefile
-PLIST_SUB+=	SHARED="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -46,5 +44,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/poster.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/tommath.pdf ${DOCSDIR}/
 .endif
+
+regression-test:
+	(cd ${WRKSRC}; \
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} -f ${MAKEFILE} mtest test; \
+	 ./mtest/mtest | ./test)
 
 .include <bsd.port.mk>
