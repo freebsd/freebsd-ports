@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	9.0
+PORTVERSION=	9.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -13,7 +13,7 @@ COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL
+PORTDOCS=	ChangeLog README.md
 CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
 		index.xslt
 
@@ -37,24 +37,21 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/bin \
 		-DPID_DIR=/var/run
 
 OPTIONS_DEFINE=	CACHE \
-		CHROOT \
-		COMMAND \
-		DEBUG \
 		DOCS \
 		IPV6 \
 		MONITOR \
 		RPROXY \
 		SSL \
+		TOMAHAWK \
 		TOOLKIT \
 		XSLT
 
 OPTIONS_DEFAULT=CACHE IPV6 RPROXY SSL TOOLKIT XSLT DOCS
 
 CACHE_DESC=	Enable cache support
-CHROOT_DESC=	Enable chroot support
-COMMAND_DESC=	Enable Hiawatha command channel
 MONITOR_DESC=	Enable Hiawatha Monitor
 RPROXY_DESC=	Enable reverse proxy
+TOMAHAWK_DESC=	Enable Tomahawk command channel
 TOOLKIT_DESC=	Enable URL toolkit
 XSLT_DESC=	Enable XSLT support
 
@@ -66,22 +63,10 @@ CMAKE_ARGS+=	-DENABLE_CACHE=on
 CMAKE_ARGS+=	-DENABLE_CACHE=off
 .endif
 
-.if ${PORT_OPTIONS:MCHROOT}
-CMAKE_ARGS+=	-DENABLE_CHROOT=on
+.if ${PORT_OPTIONS:MTOMAHAWK}
+CMAKE_ARGS+=	-DENABLE_TOMAHAWK=on
 .else
-CMAKE_ARGS+=	-DENABLE_CHROOT=off
-.endif
-
-.if ${PORT_OPTIONS:MCOMMAND}
-CMAKE_ARGS+=	-DENABLE_COMMAND=on
-.else
-CMAKE_ARGS+=	-DENABLE_COMMAND=off
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=	-DENABLE_DEBUG=on
-.else
-CMAKE_ARGS+=	-DENABLE_DEBUG=off
+CMAKE_ARGS+=	-DENABLE_TOMAHAWK=off
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
