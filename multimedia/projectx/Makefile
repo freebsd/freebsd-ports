@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	projectx
-PORTVERSION=	0.90.4.00
-PORTREVISION=	2
+PORTVERSION=	0.91.0
 CATEGORIES=	multimedia java
-MASTER_SITES=	SF/project-x/project-x/ProjectX_Source_${PORTVERSION}
-DISTNAME=	ProjectX_Source_${PORTVERSION}
-DISTFILES=	ProjectX_Source_eng_${PORTVERSION}${EXTRACT_SUFX} \
-		ProjectX_LanguagePack_${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF/project-x/project-x/ProjectX_${PORTVERSION}.00
+DISTNAME=	ProjectX_${PORTVERSION}
+DISTFILES=	ProjectX_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	DVB (mpeg) cutting/demux tool
@@ -21,7 +19,7 @@ JAVA_VERSION=	1.6+
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME:C/\.00$//}
+WRKSRC=		${WRKDIR}/Project-X_${PORTVERSION}
 EXTRACT_BEFORE_ARGS+=	-aq
 
 do-configure:
