@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-review
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=	source/g/${PORTNAME}
@@ -19,13 +19,15 @@ NO_BUILD=	yes
 
 MAN1=		git-review.1
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-review ${PREFIX}/bin/git-review
 	${INSTALL_MAN} ${WRKSRC}/git-review.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/HACKING ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/HACKING.rst ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/AUTHORS ${DOCSDIR}
 .endif
 
