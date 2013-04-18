@@ -1,5 +1,5 @@
---- ./client/dhclient.conf.orig	2010-05-02 20:39:06.000000000 -0400
-+++ ./client/dhclient.conf	2010-05-02 20:39:16.000000000 -0400
+--- ./client/dhclient.conf.example.orig	2013-01-25 20:26:40.000000000 -0500
++++ ./client/dhclient.conf.example	2013-01-25 20:26:53.000000000 -0500
 @@ -11,7 +11,7 @@
  reboot 10;
  select-timeout 5;
