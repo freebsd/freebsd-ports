@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
