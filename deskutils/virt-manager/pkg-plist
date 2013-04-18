@@ -67,6 +67,7 @@ share/icons/hicolor/48x48/apps/virt-manager.png
 %%DATADIR%%/virtManager/manager.py
 %%DATADIR%%/virtManager/mediadev.py
 %%DATADIR%%/virtManager/migrate.py
+%%DATADIR%%/virtManager/module_trace.py
 %%DATADIR%%/virtManager/netdev.py
 %%DATADIR%%/virtManager/network.py
 %%DATADIR%%/virtManager/nodedev.py
