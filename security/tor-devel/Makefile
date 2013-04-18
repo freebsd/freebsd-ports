@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.11-alpha
+DISTVERSION=	0.2.4.12-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -174,11 +174,6 @@ CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \
-		${WRKSRC}/contrib/tor-tsocks.conf.sample
-	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
-		-e "\|^install-data-am:|s|install-docDATA||" \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
 		-e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
