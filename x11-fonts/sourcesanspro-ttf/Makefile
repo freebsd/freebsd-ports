@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.038
+PORTVERSION=	1.040
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcesans.adobe
 DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
