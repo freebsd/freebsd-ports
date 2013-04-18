@@ -234,6 +234,7 @@
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
     SUBDIR += john
+    SUBDIR += kc
     SUBDIR += kedpm
     SUBDIR += keepassx
     SUBDIR += keychain
