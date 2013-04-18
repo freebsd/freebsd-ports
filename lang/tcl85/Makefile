@@ -70,6 +70,14 @@ PLIST_SUB+=		TZDATA="@comment "
 CONFIGURE_ARGS+=--without-tzdata
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e \
+	    's|@TCL_BUILD_LIB_SPEC@|@TCL_LIB_SPEC@|; \
+	     s|@TCL_BUILD_STUB_LIB_SPEC@|@TCL_STUB_LIB_SPEC@|; \
+	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
+	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
+	     ${WRKSRC}/tclConfig.sh.in
+
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \

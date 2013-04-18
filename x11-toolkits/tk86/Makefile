@@ -76,6 +76,14 @@ CONFIGURE_ARGS+=--enable-threads
 CONFIGURE_ARGS+=--disable-threads
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e \
+	    's|@TK_BUILD_LIB_SPEC@|@TK_LIB_SPEC@|; \
+	     s|@TK_BUILD_STUB_LIB_SPEC@|@TK_STUB_LIB_SPEC@|; \
+	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
+	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
+	     ${WRKSRC}/tkConfig.sh.in
+
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
