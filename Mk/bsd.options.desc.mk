@@ -312,6 +312,7 @@ MUSEPACK_DESC?=		MPC audio format support
 MYSQL_DESC?=		MySQL database support
 MYSQL_JDBC_DESC?=	JDBC connection to MySQL databases
 NAS_DESC?=		Network Audio System support
+NCURSES_DESC?=		NCURSES support
 NETCDF_DESC?=		NetCDF data format support
 NETPBM_DESC?=		Netpbm graphics toolkit support
 NFS_DESC?=		Network File System support
