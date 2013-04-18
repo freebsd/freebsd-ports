@@ -3,6 +3,7 @@
 
 PORTNAME=	httping
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -17,17 +18,31 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
 
-OPTIONS_DEFINE=	NCURSES
+OPTIONS_DEFINE=	NCURSES FFTW SSL
 
-NCURSES_DESC=	ncurses support
+OPTIONS_DEFAULT=NCURSES SSL
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNCURSES}
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
-MAKE_ENV+=	SSL=yes NC=yes FW=yes
+MAKE_ENV+=	NC=yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+MAKE_ENV+=	NC=no
+.endif
+
+.if ${PORT_OPTIONS:MFFTW}
+MAKE_ENV+=	FW=yes
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+.else
+MAKE_ENV+=	FW=no
+.endif
+
+.if ${PORT_OPTIONS:MSSL}
+MAKE_ENV+=	SSL=yes
+.else
+MAKE_ENV+=	SSL=no
 .endif
 
 do-install:
