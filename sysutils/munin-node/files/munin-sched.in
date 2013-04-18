@@ -31,7 +31,7 @@ stop_precmd=find_pidfile
 find_pidfile()
 {
 	if type get_pidfile_from_conf >/dev/null 2>&1 &&
-		get_pidfile_from_conf pid_file $munin_node_config; then
+		get_pidfile_from_conf pid_file $munin_sched_config; then
 	    pidfile="${_pidfile_from_conf%node*}sched"
 	    pidfile="${pidfile}${_pidfile_from_conf#*node}"
 	else
