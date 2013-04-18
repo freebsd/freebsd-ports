@@ -1,9 +1,13 @@
 bin/dillo
+bin/dillo-install-hyphenation
 bin/dpid
 bin/dpidc
 @unexec if cmp -s %D/etc/dillo/dillorc.dist %D/etc/dillo/dillorc; then rm -f %D/etc/dillo/dillorc; fi
 etc/dillo/dillorc.dist
 @exec if [ ! -f %B/dillorc ]; then cp -p %D/%F %B/dillorc; fi
+@unexec if cmp -s %D/etc/dillo/domainrc.dist %D/etc/dillo/domainrc; then rm -f %D/etc/dillo/domainrc; fi
+etc/dillo/domainrc.dist
+@exec if [ ! -f %B/domainrc ]; then cp -p %D/%F %B/domainrc; fi
 @unexec if cmp -s %D/etc/dillo/dpidrc.dist %D/etc/dillo/dpidrc; then rm -f %D/etc/dillo/dpidrc; fi
 etc/dillo/dpidrc.dist
 @exec if [ ! -f %B/dpidrc ]; then cp -p %D/%F %B/dpidrc; fi
@@ -19,6 +23,8 @@ libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
 libexec/dillo/dpi/vsource/vsource.filter.dpi
+libexec/dillo/hyphenation/.keep_me
+@dirrmtry libexec/dillo/hyphenation
 @dirrm libexec/dillo/dpi/https
 @dirrm libexec/dillo/dpi/hello
 @dirrm libexec/dillo/dpi/ftp
@@ -29,5 +35,5 @@ libexec/dillo/dpi/vsource/vsource.filter.dpi
 @dirrm libexec/dillo/dpi/bookmarks
 @dirrm libexec/dillo/dpi/vsource
 @dirrm libexec/dillo/dpi
-@dirrm libexec/dillo
+@dirrmtry libexec/dillo
 @dirrmtry etc/dillo
