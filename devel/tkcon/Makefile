@@ -3,7 +3,7 @@
 
 PORTNAME=	tkcon
 PORTVERSION=	2.5
-CATEGORIES=	devel tcl tk
+CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
