@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.028
+PORTVERSION=	0.029
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -30,9 +30,11 @@ RUN_DEPENDS+=	p5-HTTP-CookieJar>=0.001:${PORTSDIR}/www/p5-HTTP-CookieJar
 .endif
 
 .if ${PORT_OPTIONS:MHTTPS}
-BUILD_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
+BUILD_DEPENDS+=	p5-IO-Socket-SSL>=1.42:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
-RUN_DEPENDS+=	p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.42:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Net-SSLeay>=1.49:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20120823:${PORTSDIR}/www/p5-Mozilla-CA
 .endif
 
