@@ -1,12 +1,11 @@
---- plugin-ptw/Makefile.orig	2010-05-24 19:53:16.000000000 +0200
-+++ plugin-ptw/Makefile	2010-05-24 19:53:19.000000000 +0200
-@@ -22,8 +22,7 @@
+--- restricted-plugin-ptw/Makefile.orig	2013-04-04 15:43:05.000000000 -0400
++++ restricted-plugin-ptw/Makefile	2013-04-04 15:44:50.000000000 -0400
+@@ -22,7 +22,7 @@
  
  install:	$(PLUGOUT)
- 	mkdir -p $(DESTDIR)$(prefix)/lib/kismet/
--
--	install -o $(INSTUSR) -g $(INSTGRP) -m 644 $^ $(DESTDIR)$(prefix)/lib/kismet/$^
-+	install -o $(INSTUSR) -g $(INSTGRP) -m 644 $(PLUGOUT) $(DESTDIR)$(prefix)/lib/kismet/$(PLUGOUT)
+ 	mkdir -p $(DESTDIR)/$(plugindir)
+-	$(INSTALL) -o $(INSTUSR) -g $(INSTGRP) -m 644 $^ $(DESTDIR)/$(plugindir)/$^
++	$(INSTALL) -o $(INSTUSR) -g $(INSTGRP) -m 644 $(PLUGOUT) $(DESTDIR)/$(plugindir)/$(PLUGOUT)
  
  userinstall:	$(PLUGOUT)
  	mkdir -p ${HOME}/.kismet/plugins/

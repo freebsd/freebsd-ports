@@ -1,5 +1,5 @@
---- plugin-ptw/aircrack-crypto.cc.orig	2010-05-24 11:40:15.000000000 +0200
-+++ plugin-ptw/aircrack-crypto.cc	2010-05-24 11:39:34.000000000 +0200
+--- restricted-plugin-ptw/aircrack-crypto.cc.orig	2010-05-24 11:40:15.000000000 +0200
++++ restricted-plugin-ptw/aircrack-crypto.cc	2010-05-24 11:39:34.000000000 +0200
 @@ -21,6 +21,7 @@
  #include <string.h>
  #include <arpa/inet.h>
