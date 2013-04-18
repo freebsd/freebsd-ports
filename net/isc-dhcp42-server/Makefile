@@ -1,12 +1,8 @@
-# Ports collection makefile for:	isc-dhcp42-server
-# Date created:				29 June 2011
-# Whom:					Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	dhcp
-DISTVERSION=	4.2.4
+DISTVERSION=	4.2.5
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
@@ -22,8 +18,8 @@ LICENSE=	ISCL
 
 USE_GMAKE=	yes
 
-PATCHLEVEL=	P2
-PORTREVISION_SERVER=	2
+PATCHLEVEL=	P1
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
@@ -70,7 +66,7 @@ SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 .if ${SUBSYS} == client
 MAN5+=		dhclient.conf.5 dhclient.leases.5
 MAN8+=		dhclient.8 dhclient-script.8
-CONF_FILE=	dhclient.conf
+CONF_FILE=	dhclient.conf.example
 .elif ${SUBSYS} == server
 CONFIGURE_ARGS+=--localstatedir=/var
 MAN5+=		dhcpd.conf.5 dhcpd.leases.5 dhcp-eval.5 dhcp-options.5
@@ -152,7 +148,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local||g' \
 		${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/client/dhclient.conf
+		${WRKSRC}/client/dhclient.conf.example
 
 do-install:
 	${MAKE} -C ${WRKSRC}/${SUBSYS} install
@@ -165,14 +161,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
 .if ${PORT_OPTIONS:MIPV6}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf \
-		${PREFIX}/etc/dhcpd6.conf.sample
+		${PREFIX}/etc/dhcpd6.conf.example
 .endif
 .if ${PORT_OPTIONS:MLDAP}
 	@${MKDIR} ${SCHEMA_DIR}
 	${INSTALL_DATA} ${LDAP_SCHEMA} ${SCHEMA_DIR}
 	${INSTALL_SCRIPT} ${LDAP_SCRIPT} ${PREFIX}/bin
 .endif
-.if ${PORT_OPTIONS:MLDAP} && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MLDAP} && empty(PORT_OPTIONS:MDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/contrib/ldap/README.ldap ${DOCSDIR}
 .endif
@@ -182,7 +178,7 @@ post-install:
 .if defined(CONF_FILE)
 .for FILE in ${CONF_FILE}
 	if [ ! -f ${PREFIX}/etc/${FILE} ]; then \
-		${CP} -p ${PREFIX}/etc/${FILE}.sample ${PREFIX}/etc/${FILE} ; \
+		${CP} -p ${PREFIX}/etc/${FILE}.example ${PREFIX}/etc/${FILE} ; \
 	fi
 .endfor
 .endif
