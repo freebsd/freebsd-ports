@@ -82,6 +82,12 @@ INSTALL_TARGET+=install-doc
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
 post-patch:
+	${REINPLACE_CMD} -e \
+	    's|@TK_BUILD_LIB_SPEC@|@TK_LIB_SPEC@|; \
+	     s|@TK_BUILD_STUB_LIB_SPEC@|@TK_STUB_LIB_SPEC@|; \
+	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
+	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
+	     ${WRKSRC}/tkConfig.sh.in
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g; s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile.in
 
