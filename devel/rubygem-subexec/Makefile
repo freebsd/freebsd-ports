@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-subexec
-# Date created:		2011-11-02
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	subexec
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
