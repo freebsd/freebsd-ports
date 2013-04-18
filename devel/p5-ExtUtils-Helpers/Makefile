@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-Helpers
-PORTVERSION=	0.016
+PORTVERSION=	0.018
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,6 @@ MAN3=		ExtUtils::Helpers.3 \
 		ExtUtils::Helpers::Windows.3
 
 post-patch:
-	@${RM} ${WRKSRC}/lib/ExtUtils/Helpers.pm.orig
-	@${REINPLACE_CMD} -e 's|3pm|3|' ${WRKSRC}/t/man_pagename.t
+	@${SED} -i '' -e 's|3pm|3|' ${WRKSRC}/lib/ExtUtils/Helpers.pm ${WRKSRC}/t/man_pagename.t
 
 .include <bsd.port.mk>
