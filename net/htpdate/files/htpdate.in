@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: htpdate
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable htpdate:
+#
+#  htpdate_enable="YES"
+
+
+. /etc/rc.subr
+
+load_rc_config htpdate
+
+htpdate_enable="${htpdate_enable:-"NO"}"
+htpdate_servers="${htpdate_servers:-"www.freebsd.org www.linux.com"}"
+
+name=htpdate
+rcvar=htpdate_enable
+servers=${htpdate_servers}
+pidfile=/var/run/htpdate.pid
+
+command="/usr/local/bin/htpdate"
+command_args="-l -s -D $servers"
+stop_cmd=htpdate_stop
+
+htpdate_stop ()
+{
+	if [ -f ${pidfile} ]; then
+		echo "Stopping htpdate."
+		kill `cat ${pidfile}`
+	else
+		echo "htpdate is not running."
+	fi
+
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"
