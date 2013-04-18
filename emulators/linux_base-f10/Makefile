@@ -3,7 +3,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		emulators linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
 PKGNAMEPREFIX=		linux_base-
@@ -137,7 +137,10 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
 ADD_DIRS=		usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
-			usr/X11R6/include usr/X11R6/bin
+			usr/X11R6/include usr/X11R6/bin \
+			usr/share/locale/ca@valencia/LC_MESSAGES \
+			usr/share/locale/sr@Latn/LC_MESSAGES \
+			usr/share/locale/uz@cyrillic/LC_MESSAGES
 ADD_FILES=		#empty
 
 .if (${MACHINE_ARCH} == "amd64")
