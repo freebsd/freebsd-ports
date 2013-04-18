@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	svnup
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	net
 MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 		LOCAL/jgh/net/${PORTNAME}/ \
-		LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	jcm@visi.com
