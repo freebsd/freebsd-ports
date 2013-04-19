@@ -1,8 +1,8 @@
-sbin/auto-amd-local-setup
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-clean-ports
+sbin/auto-db-dir
 sbin/auto-disable-service
 sbin/auto-enable-compat32
 sbin/auto-enable-passwdqc
@@ -15,9 +15,10 @@ sbin/auto-kdm3-toggle
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-package-installed
+sbin/auto-print-make-variable
 sbin/auto-replace-file
 sbin/auto-service-enabled
-sbin/auto-set-suspend-on-lid
+sbin/auto-set-suspend-mode
 sbin/auto-update-port-framework
 sbin/auto-update-xorg.conf
 sbin/auto-xdm-toggle
