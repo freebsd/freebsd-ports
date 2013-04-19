@@ -1,8 +1,8 @@
-# Created by:	Masaki TAGAWA <masaki@club.kyutech.ac.jp>
+# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	sourcecodepro-ttf
-PORTVERSION=	1.013
+PORTVERSION=	1.017
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcecodepro.adobe
 DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
