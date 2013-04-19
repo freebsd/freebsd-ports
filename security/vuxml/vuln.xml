@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a592e991-a919-11e2-ade0-8c705af55518">
+    <topic>roundcube -- arbitrary file disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>0.8.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RoundCube development team reports:</p>
+	<blockquote cite="http://lists.roundcube.net/pipermail/dev/2013-March/022337.html">
+	  <p>After getting reports about a possible vulnerability
+	    of Roundcube which allows an attacker to modify its
+	    users preferences in a way that he/she can then read
+	    files from the server, we now published updated packages
+	    as well as patches that fix this security issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1904</cvename>
+      <url>https://secunia.com/advisories/52806/</url>
+    </references>
+    <dates>
+      <discovery>2013-03-27</discovery>
+      <entry>2013-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ff84335-a7da-11e2-b3f5-003067c2616f">
     <topic>jasper -- buffer overflow</topic>
     <affects>
