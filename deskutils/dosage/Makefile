@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dosage
-PORTVERSION=	1.14
+PORTVERSION=	2.1
 CATEGORIES=	deskutils python
+MASTER_SITES=	GHC
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Application to keep a local mirror of web comics
@@ -14,8 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wummel
-GH_TAGNAME=	upstream/${PORTVERSION}
-GH_COMMIT=	179ba7f
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
