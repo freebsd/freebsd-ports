@@ -25,11 +25,11 @@
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) \
+ 	$(GTK3_CFLAGS) \
  	-I../../libpcsxcore -I../../include
  
 @@ -31,5 +31,5 @@
- cfgDFCdrom_LDADD = $(GTK2_LIBS)
+ cfgDFCdrom_LDADD = $(GTK3_LIBS)
  
  glade_DATA = cdrcfg-0.1df/dfcdrom.ui
 -gladedir = $(datadir)/psemu/

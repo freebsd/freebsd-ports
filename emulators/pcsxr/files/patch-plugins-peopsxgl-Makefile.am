@@ -5,7 +5,7 @@
  	-DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) \
+ 	$(GTK3_CFLAGS) \
  	-I../../libpcsxcore -I../../include
  
 -bindir = @libdir@/games/psemu/
@@ -16,7 +16,7 @@
  lib_LTLIBRARIES = libpeopsxgl.la
  
 @@ -19,5 +19,5 @@
- cfgpeopsxgl_LDADD = $(GTK2_LIBS)
+ cfgpeopsxgl_LDADD = $(GTK3_LIBS)
  
  glade_DATA = gpucfg/peopsxgl.ui
 -gladedir = $(datadir)/psemu/
