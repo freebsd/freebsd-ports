@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	f1lt
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GOOGLE_CODE \
+		LOCAL/jgh/games/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -19,24 +20,22 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/F1LT \
-		share/F1LT/season.dat \
-		share/F1LT/trackdata.dat \
-		share/F1LT/trackrecords.dat
-PLIST_DIRSTRY=	share/F1LT
+		bin/f1lt \
+		share/f1lt/season.dat \
+		share/f1lt/trackdata.dat \
+		share/f1lt/trackrecords.dat
+PLIST_DIRSTRY=	share/f1lt
 PORTDOCS=	CHANGELOG
 
 .include <bsd.port.pre.mk>
 
 post-patch-script:
-	@${REINPLACE_CMD} -e 's|PREFIX = /opt|PREFIX = /usr/local|g' \
+	@${REINPLACE_CMD} -e 's|PREFIX = /opt/$$$$TARGET|PREFIX = ${PREFIX}|g' \
 		${WRKSRC}/F1LT.pro
-	@${REINPLACE_CMD} -e 's|$$PREFIX/share/|$$PREFIX/share/$$$$TARGET/|g' \
-		${WRKSRC}/F1LT.pro
-	@${REINPLACE_CMD} -e 's|PREFIX = /usr/local/$$$$TARGET|PREFIX = /usr/local/|g' \
-		${WRKSRC}/F1LT.pro
-	@${REINPLACE_CMD} -e 's|target.path = $$PREFIX/bin/|target.path = /usr/local/bin/|g' \
+	@${REINPLACE_CMD} -e 's|SHARE=$$$$PREFIX/share|SHARE=$$$$PREFIX/share/${PORTNAME}|g' \
 		${WRKSRC}/F1LT.pro
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|999999999998|1000000|g' \
@@ -54,6 +53,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
 .endif
-	@${CHMOD} 0664 ${PREFIX}/share/F1LT/trackrecords.dat
+	@${LN} -s ${PREFIX}/bin/F1LT ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
