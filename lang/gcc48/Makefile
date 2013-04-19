@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.1.20130328
+PORTVERSION=	4.8.1.20130418
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -132,8 +132,7 @@ MAN3=		ffi${SUFFIX}.3 \
 		ffi_prep_cif${SUFFIX}.3 \
 		ffi_prep_cif_var${SUFFIX}.3
 INFO+=		gcc${SUFFIX}/cp-tools \
-		gcc${SUFFIX}/gcj \
-		gcc${SUFFIX}/libffi
+		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
