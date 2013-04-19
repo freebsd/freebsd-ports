@@ -212,6 +212,7 @@
     SUBDIR += eject
     SUBDIR += empower
     SUBDIR += endian
+    SUBDIR += entr
     SUBDIR += enteruser
     SUBDIR += env4801
     SUBDIR += epylog
