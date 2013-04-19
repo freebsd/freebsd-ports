@@ -8,9 +8,9 @@ a bibliography in HTML format. Here are some features:
  o Sort by dates or authors, in increasing or decreasing order;
  o Read simple macros in TeX or LaTeX files;
  o Show syntax errors in BibTeX files;
- o Extract from one or several BibTeX files the set of entries satisfying a
-   given criterion.
+ o Extract from one or several BibTeX files the set of entries satisfying
+   a given criterion.
 
-WWW: http://www.lri.fr/~filliatr/bibtex2html/
+WWW: https://www.lri.fr/~filliatr/bibtex2html/
 
 Gerald Pfeifer <gerald@FreeBSD.org>
