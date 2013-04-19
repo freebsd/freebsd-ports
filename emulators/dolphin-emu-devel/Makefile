@@ -19,7 +19,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		lzo2:${PORTSDIR}/archivers/lzo2 \
 		sfml-network:${PORTSDIR}/devel/sfml
 
-REVDATE=	20130225
+REVDATE=	20130415
 
 USE_ICONV=	yes
 USE_PKGCONFIG=	build
@@ -56,6 +56,10 @@ OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: uses i386-specific option
+.endif
+
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -70,14 +74,6 @@ INSTALL_TARGET=	install
 CFLAGS+=	-g
 CXXFLAGS+=	-g
 MAKE_ENV+=	VERBOSE=yes
-.endif
-
-# XXX Needs spawn.h header to build
-.if ${OSVERSION} < 800041
-BROKEN=	requires FreeBSD 8.0 or newer
-.endif
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: uses i386-specific option
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}

@@ -25,6 +25,8 @@ bin/dolphin-emu
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dolphin-emu.mo
 %%DATADIR%%/sys/codehandler.bin
 %%DATADIR%%/sys/totaldb.dsy
+%%DATADIR%%/sys/GC/dsp_coef.bin
+%%DATADIR%%/sys/GC/dsp_rom.bin
 %%DATADIR%%/sys/GC/font_sjis.bin
 %%DATADIR%%/sys/GC/font_ansi.bin
 %%DATADIR%%/sys/Wii/setting-usa.txt
@@ -32,6 +34,7 @@ bin/dolphin-emu
 %%DATADIR%%/sys/Wii/setting-eur.txt
 %%DATADIR%%/sys/Wii/setting-kor.txt
 %%DATADIR%%/user/Shaders/acidtrip2.txt
+%%DATADIR%%/user/Shaders/asciiart.txt
 %%DATADIR%%/user/Shaders/sunset.txt
 %%DATADIR%%/user/Shaders/chrismas.txt
 %%DATADIR%%/user/Shaders/nightvision2.txt
@@ -89,6 +92,9 @@ bin/dolphin-emu
 %%DATADIR%%/user/Themes/Boomy/browse.png
 %%DATADIR%%/user/Themes/Boomy/pause.png
 %%DATADIR%%/user/Themes/Boomy/nobanner.png
+%%DATADIR%%/user/GameConfig/GWLE6L.ini
+%%DATADIR%%/user/GameConfig/GSZP41.ini
+%%DATADIR%%/user/GameConfig/GFZJ01.ini
 %%DATADIR%%/user/GameConfig/GF8P69.ini
 %%DATADIR%%/user/GameConfig/GC3P78.ini
 %%DATADIR%%/user/GameConfig/R8LE20.ini
@@ -1525,6 +1531,12 @@ bin/dolphin-emu
 %%DATADIR%%/user/GameConfig/GH4D69.ini
 %%DATADIR%%/user/GameConfig/GZPE70.ini
 %%DATADIR%%/user/GameConfig/GH4H69.ini
+%%DATADIR%%/user/GameConfig/GWKE41.ini
+%%DATADIR%%/user/GameConfig/GLSF64.ini
+%%DATADIR%%/user/GameConfig/GHYE6S.ini
+%%DATADIR%%/user/GameConfig/GLSD64.ini
+%%DATADIR%%/user/GameConfig/GLSP64.ini
+%%DATADIR%%/user/GameConfig/GM4J01.ini
 %%DATADIR%%/user/Wii/shared2/sys/SYSCONF
 %%DATADIR%%/user/Wii/shared2/ec/shopsetu.log
 %%DATADIR%%/user/Wii/shared2/succession/shop.log
