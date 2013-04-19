@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_replace
-# Date created:				16 October 2006
-# Whom:					Securedog <securedog@users.sourceforge.jp>
-#
+# Created by: Securedog <securedog@users.sourceforge.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_replace
 PORTVERSION=	0.8.0
@@ -12,7 +8,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=portutil/22116
 
 MAINTAINER=	securedog@users.sourceforge.jp
-COMMENT=	A utility for upgrading installed packages
+COMMENT=	Utility for upgrading installed packages
+
+DEPRECATED=	Abandoned upstream, does not support pkgng. Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng
+EXPIRATION_DATE=	2013-12-31
 
 USE_BZIP2=	YES
 MAKE_ARGS=	PREFIX="${PREFIX}" \
