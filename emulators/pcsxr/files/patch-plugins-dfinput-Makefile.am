@@ -17,11 +17,11 @@
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) \
+ 	$(GTK3_CFLAGS) \
  	-I../../include -I../../libpcsxcore $(SDL_CFLAGS)
  
 @@ -17,5 +17,5 @@
- cfgDFInput_LDADD = $(GTK2_LIBS) $(SDL_LIBS) -lX11
+ cfgDFInput_LDADD = $(GTK3_LIBS) $(SDL_LIBS) -lX11
  
  glade_DATA = dfinput.ui
 -gladedir = $(datadir)/psemu/

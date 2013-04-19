@@ -2,7 +2,7 @@
 +++ gui/Makefile.am	2011-06-30 11:43:02.263535649 +0200
 @@ -3,8 +3,8 @@
  	-DLOCALE_DIR=\"${datadir}/locale/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	$(GTK3_CFLAGS) $(GLADE2_CFLAGS) \
  	-I$(top_srcdir)/libpcsxcore -I$(top_srcdir)/include \
 -	-DPSEMU_DATA_DIR=\"${datadir}/psemu\" \
 -	-DDEF_PLUGIN_DIR=\"${libdir}/games/psemu\"
@@ -15,6 +15,6 @@
  
  pcsxr_LDADD = \
  	../libpcsxcore/libpcsxcore.a \
--	$(GTK2_LIBS) $(GLADE2_LIBS) -lpthread -lz -lm -lXext -lXtst
-+	$(GTK2_LIBS) $(GLADE2_LIBS) -lz -lm -lXext -lXtst -lGL
+-	$(GTK3_LIBS) $(GLADE2_LIBS) -lpthread -lz -lm -lXext -lXtst
++	$(GTK3_LIBS) $(GLADE2_LIBS) -lz -lm -lXext -lXtst -lGL
 +pcsxr_LDFLAGS = -pthread
