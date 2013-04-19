@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bibtex2html
-# Date created:         2002-01-21
-# Whom:			Gerald Pfeifer <gerald@pfeifer.com>
-#
+# Created by: Gerald Pfeifer <gerald@pfeifer.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bibtex2html
 PORTVERSION=	1.97
