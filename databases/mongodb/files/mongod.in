@@ -14,8 +14,6 @@
 #                        just before mongod starts.
 # mongod_dbpath (str):   Default to "/var/db/mongodb"
 #                        Base database directory.
-# mongod_pidfile (str):  Custum PID file path and name.
-#                        Default to "${mongod_dbpath}/mongod.pid".
 # mongod_flags (str):    Custom additional arguments to be passed to mongod.
 #                        Default to "--logpath ${mongod_dbpath}/mongod.log --logappend".
 #
@@ -34,9 +32,9 @@ load_rc_config $name
 : ${mongod_user="mongodb"}
 : ${mongod_group="mongodb"}
 
-pidfile=${mongod_pidfile:-"${mongod_dbpath}/mongod.pid"}
+pidfile="${mongod_dbpath}/mongod.lock"
 command=%%PREFIX%%/bin/${name}
-command_args="--config %%PREFIX%%/etc/mongodb.conf --dbpath $mongod_dbpath --pidfilepath ${pidfile} --fork"
+command_args="--config %%PREFIX%%/etc/mongodb.conf --dbpath $mongod_dbpath --fork >/dev/null 2>/dev/null"
 start_precmd="${name}_prestart"
 
 mongod_create_dbpath()

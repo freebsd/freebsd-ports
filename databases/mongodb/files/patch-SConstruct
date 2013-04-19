@@ -23,7 +23,7 @@
 +        if not conf.CheckLib("snappy"):
 +            Exit(1)
 +
-+    if usesm and use_system_version_of_library("js"):
++    if usesm and use_system_version_of_library("sm"):
 +        if not conf.CheckLib("js"):
 +            Exit(1)
 +
