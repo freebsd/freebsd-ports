@@ -2,7 +2,7 @@
 
 PORTNAME=	entr
 PORTVERSION=	1.9
-CATEGORIES=	devel
+CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/
 
 MAINTAINER=	eadler@FreeBSD.org
