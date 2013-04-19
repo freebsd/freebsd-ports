@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
