@@ -1,52 +1,58 @@
-# New ports collection makefile for:	x48
-# Date created:				Thu Oct 24 13:10:59 CDT 1996
-# Whom:					Eric L. Hernes <erich@FreeBSD.org>
-#
+# Created by: Eric L. Hernes <erich@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	x48
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	emulators math
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		x48-gxrom-r${EXTRACT_SUFX} x48-sxrom-e${EXTRACT_SUFX}
+MASTER_SITES=	SF/${PORTNAME}.berlios
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gxrom-r.bz2 sxrom-e.bz2
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An HP48 SX/GX graphic calculator emulator
+COMMENT=	HP48 SX/GX graphic calculator emulator
 
 LICENSE=	GPLv3
 
-GNU_CONFIGURE=	yes
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/misc/7x14B-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc \
+		${LOCALBASE}/lib/X11/fonts/75dpi/helvR12-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-adobe-75dpi
+
+USE_BZIP2=	yes
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+AUTOMAKE_ARGS=	--add-missing --copy -Wno-portability
+ACLOCAL_ARGS=	# default args (--acdir=...) produce broken configure script
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS=-lutil
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt
+NO_WRKSUBDIR=	yes
 
 PORTDOCS=	ChangeLog README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-extract: .SILENT
 # Extract official HP ROM images for GX/SX
-	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-gxrom-r${EXTRACT_SUFX}
-	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/gxrom-r
-	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-sxrom-e${EXTRACT_SUFX}
-	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/sxrom-e
+	${CP} ${_DISTDIR}/gxrom-r.bz2 ${WRKSRC} && ${EXTRACT_CMD} \
+		-d ${WRKSRC}/gxrom-r.bz2
+# The latest SX ROM revision is J, but it does not work with x48, so use E
+	${CP} ${_DISTDIR}/sxrom-e.bz2 ${WRKSRC} && ${EXTRACT_CMD} \
+		-d ${WRKSRC}/sxrom-e.bz2
 
 post-patch:
-# Prefer GX Revision R ROM by default
-	@${REINPLACE_CMD} -e 's+rom\.dump+${DATADIR}/gxrom-r+' \
-		${WRKSRC}/src/X48.ad
+# Enable serial communication and prefer GX Revision R ROM by default
+	@${REINPLACE_CMD} -e '/useSerial/s+False+True+ ; s+ttyS+cuau+ ; \
+		s+rom\.dump+${DATADIR}/gxrom-r+' ${WRKSRC}/src/X48.ad.h
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${p} ${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/src/X48.ad ${PREFIX}/lib/X11/app-defaults/X48
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/??rom-? ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S+^+${WRKSRC}/+} ${DOCSDIR}
 .endif
