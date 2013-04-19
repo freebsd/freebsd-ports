@@ -1,5 +1,4 @@
 bin/dosage
-bin/mainline
 %%PYTHON_SITELIBDIR%%/_Dosage_configdata.py
 %%PYTHON_SITELIBDIR%%/_Dosage_configdata.pyc
 %%PYTHON_SITELIBDIR%%/_Dosage_configdata.pyo
@@ -177,6 +176,9 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosagelib/scraper.py
 %%PYTHON_SITELIBDIR%%/dosagelib/scraper.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/scraper.pyo
+%%PYTHON_SITELIBDIR%%/dosagelib/updater.py
+%%PYTHON_SITELIBDIR%%/dosagelib/updater.pyc
+%%PYTHON_SITELIBDIR%%/dosagelib/updater.pyo
 %%PYTHON_SITELIBDIR%%/dosagelib/util.py
 %%PYTHON_SITELIBDIR%%/dosagelib/util.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/util.pyo

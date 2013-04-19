@@ -1,9 +1,7 @@
-Dosage is an application designed to keep a local "mirror" of specific web
-comics, and other picture-based content such as Picture of the Day sites,
-with a variety of options for updating and maintaining comics.
-Dosage supports a recursive "catch-up" method, where it traverses a comic
-by essentially "visiting" previous comics and picking out the comics.
-Dosage is written entirely in Python, and relies on regular expressions to
-do most of the grunt work.
+Dosage is an application designed to keep a local copy of specific webcomics
+and other picture-based content such as Picture of the Day sites. With the
+dosage commandline script you can get the latest strip of a webcomic, or
+catch-up to the last strip downloaded, or download a strip for a particular
+date/index (if the webcomic's site layout allows this).
 
-WWW: https://github.com/wummel/dosage
+WWW: http://wummel.github.io/dosage/
