@@ -125,6 +125,7 @@ bin/drush
 %%DATADIR%%/tests/makefiles/get.make
 %%DATADIR%%/tests/makefiles/patches.make
 %%DATADIR%%/tests/makefiles/md5-succeed.make
+%%DATADIR%%/tests/drushScriptTest.php
 %%DATADIR%%/tests/quickDrupalTest.php
 %%DATADIR%%/tests/completetest.drush.inc
 %%DATADIR%%/tests/completetestsite.drush.inc

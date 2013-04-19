@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	5.8
-PORTREVISION=	1
+PORTVERSION=	5.9
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drush-7.x-${PORTVERSION}
