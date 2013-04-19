@@ -65,6 +65,9 @@ lib/meld/meld/recent.pyo
 lib/meld/meld/task.py
 lib/meld/meld/task.pyc
 lib/meld/meld/task.pyo
+lib/meld/meld/test_matchers.py
+lib/meld/meld/test_matchers.pyc
+lib/meld/meld/test_matchers.pyo
 lib/meld/meld/tree.py
 lib/meld/meld/tree.pyc
 lib/meld/meld/tree.pyo
