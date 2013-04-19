@@ -9,6 +9,7 @@ lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libcookie-permissions.so
 lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
 lib/midori/libexternal-download-manager.so
@@ -38,7 +39,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/index.sgml
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeItem.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzePreferences.html
-%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeScrolled.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-gtk3-compat.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-arrayaction.html
@@ -46,7 +46,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-cookies.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-cookies-sqlite.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-net.html
-%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-separatoraction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-throbber.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-utils.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp
