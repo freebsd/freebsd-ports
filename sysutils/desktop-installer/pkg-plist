@@ -14,6 +14,10 @@ sbin/desktop-installer
 %%DATADIR%%/LXDE/bsd_background.jpg
 %%DATADIR%%/LXDE/xdmshutdown
 %%DATADIR%%/LXDE/xinitrc
+%%DATADIR%%/Patches/linux-f10-flashplugin11/Makefile
+%%DATADIR%%/Patches/linux-f10-flashplugin11/distinfo
+%%DATADIR%%/Patches/linux-f10-flashplugin11/pkg-descr
+%%DATADIR%%/Patches/linux-f10-flashplugin11/pkg-plist
 %%DATADIR%%/PolicyKit.conf
 %%DATADIR%%/Scripts/battery_shutdown.sh
 %%DATADIR%%/XFCE4/GiveConsole
@@ -47,6 +51,8 @@ sbin/desktop-installer
 @dirrm %%DATADIR%%/gcc45
 @dirrm %%DATADIR%%/XFCE4
 @dirrm %%DATADIR%%/Scripts
+@dirrm %%DATADIR%%/Patches/linux-f10-flashplugin11
+@dirrm %%DATADIR%%/Patches
 @dirrm %%DATADIR%%/LXDE
 @dirrm %%DATADIR%%/KDE4
 @dirrm %%DATADIR%%/KDE3
