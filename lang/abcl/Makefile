@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcl
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://common-lisp.net/project/armedbear/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
