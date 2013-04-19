@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pp
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE \
 		http://de.nologin.ru/distfiles/sysutils/pp/
