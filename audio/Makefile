@@ -351,6 +351,7 @@
     SUBDIR += lash
     SUBDIR += last-cmus
     SUBDIR += last.fm
+    SUBDIR += lastfm-desktop
     SUBDIR += liba52
     SUBDIR += libaacplus
     SUBDIR += libadplug
