@@ -75,7 +75,7 @@
  	uint_fast16_t compno;
  	crg->numcomps = cstate->numcomps;
 -	if (!(crg->comps = jas_malloc(cstate->numcomps * sizeof(uint_fast16_t)))) {
-+	if (!(crg->comps = jas_malloc2(cstate->numcomps, sizeof(uint_fast16_t)))) {
++	if (!(crg->comps = jas_malloc2(cstate->numcomps, sizeof(jpc_crgcomp_t)))) {
  		return -1;
  	}
  	for (compno = 0, comp = crg->comps; compno < cstate->numcomps;
