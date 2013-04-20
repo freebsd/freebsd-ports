@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	29024-${PORTNAME}-${DISTVERSION}
