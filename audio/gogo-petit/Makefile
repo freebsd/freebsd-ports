@@ -1,9 +1,5 @@
-# New ports collection makefile for:  GOGO-no-coda-petit
-# Date created:        06 November, 2003
-# Whom:                Evgueni V. Gavrilov <aquatique@rusunix.org>
-#
+# Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gogo
 PORTVERSION=	3.13
@@ -16,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New variant of well-known GOGO-no-coda mp3 encoder
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2013-05-20
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
