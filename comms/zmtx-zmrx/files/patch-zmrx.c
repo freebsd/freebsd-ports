@@ -35,3 +35,12 @@
  	}
  }
  
+@@ -386,8 +387,6 @@
+ 	printf("	-q          quiet\n");
+ 	printf("	(only one of -n -c or -p may be specified)\n");
+ 
+-	cleanup();
+-
+ 	exit(1);
+ }
+ 

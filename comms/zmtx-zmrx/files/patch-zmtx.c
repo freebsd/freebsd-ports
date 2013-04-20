@@ -35,3 +35,12 @@
  		}
  
  	} while (type != ZRPOS);
+@@ -441,8 +442,6 @@
+ 	printf("	-v          verbose output\n");
+ 	printf("	(only one of -n -c or -p may be specified)\n");
+ 
+-	cleanup();
+-
+ 	exit(1);
+ }
+ 
