@@ -1,5 +1,4 @@
-# Created by:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
 
 PORTNAME=	pycrypto
@@ -10,7 +9,7 @@ MASTER_SITES=	CHEESESHOP \
 		https://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=		yes
