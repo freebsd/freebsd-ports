@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ezjail
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/ezjail/
 
