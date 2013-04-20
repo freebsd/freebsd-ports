@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_openid
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www
-MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
+MASTER_SITES=	http://cloud.github.com/downloads/bmuller/mod_auth_openid/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	zhoushuqun@gmail.com
