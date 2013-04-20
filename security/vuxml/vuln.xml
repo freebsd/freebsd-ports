@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7280c3f6-a99a-11e2-8cef-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS due to unescaped HTML output in GIS visualisation page</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>3.5</ge><lt>3.5.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-1.php">
+	  <p> When modifying a URL parameter with a crafted value it
+	    is possible to trigger an XSS.</p>
+	  <p>These XSS can only be triggered when a valid database is
+	    known and when a valid cookie token is used.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1937</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-1.php</url>
+    </references>
+    <dates>
+      <discovery>2013-04-18</discovery>
+      <entry>2013-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a592e991-a919-11e2-ade0-8c705af55518">
     <topic>roundcube -- arbitrary file disclosure vulnerability</topic>
     <affects>
