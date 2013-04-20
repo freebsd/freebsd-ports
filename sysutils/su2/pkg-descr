@@ -16,5 +16,5 @@ is a 'www' account which is a common occurrence with the proliferation
 of the web.  While the www user's password may be starred out to
 disable direct logins, root could put a set of usernames into
 ~www/.su2rc to enable these users to 'become' www and do Web
-adiministration.  [This feature can be disabled if you are worried
+administration.  [This feature can be disabled if you are worried
 about 'account sharing.']
