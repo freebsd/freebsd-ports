@@ -185,6 +185,8 @@ OPTIONS_DEFAULT=X11
 
 .include <bsd.port.options.mk>
 
+CONFIGURE_ARGS=	--disable-linux-kbd --disable-linux-joy --disable-linux-evdev
+
 .if exists(/usr/include/dev/kii/kii.h)
 CONFIGURE_ARGS+=--enable-kii --with-extra-includes=/usr/include/dev
 PLIST_SUB+=	KII=""
