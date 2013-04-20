@@ -1,5 +1,8 @@
 %%SITE_PERL%%/File/Flock.pm
+%%SITE_PERL%%/File/Flock/Forking.pm
+%%SITE_PERL%%/File/Flock/Subprocess.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Flock/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Flock
-@dirrmtry %%SITE_PERL%%/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrm %%SITE_PERL%%/File/Flock
+@dirrmtry %%SITE_PERL%%/File
