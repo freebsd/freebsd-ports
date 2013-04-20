@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_setenvifplus
-PORTVERSION=	0.19
+PORTVERSION=	0.22
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modsetenvifplus
