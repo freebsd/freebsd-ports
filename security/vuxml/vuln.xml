@@ -115,7 +115,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>jasper</name>
-	<range><lt>1.900.1_11</lt></range>
+	<range><lt>1.900.1_12</lt></range>
       </package>
     </affects>
     <description>
