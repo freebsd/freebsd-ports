@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
