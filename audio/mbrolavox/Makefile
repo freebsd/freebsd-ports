@@ -34,8 +34,6 @@ FILE_${ii}!=	${AWK} -F'|' '$$1 == "${ii}" { print $$2 }' < ${VOICESCONF}
 MASTER_SITES+=	http://www.tcts.fpms.ac.be/synthesis/mbrola/dba/${ii}/:${ii} \
 		http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
 		http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/:${ii} \
-		ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/:${ii} \
-		ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/:${ii}
 DISTFILES+=	${FILE_${ii}}:${ii}
 FILEDIRS+=	${ii}
 MYFILES+=	${FILE_${ii}}
