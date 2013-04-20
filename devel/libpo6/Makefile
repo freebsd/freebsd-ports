@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpo6
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 

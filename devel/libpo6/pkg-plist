@@ -1,5 +1,6 @@
 include/po6/error.h
 include/po6/io/fd.h
+include/po6/net/hostname.h
 include/po6/net/ipaddr.h
 include/po6/net/location.h
 include/po6/net/socket.h
