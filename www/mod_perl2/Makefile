@@ -1,13 +1,8 @@
-# New ports collection makefile for:	mod_perl2
-# Date created:				February 13th 2003
-# Whom:					Lars Eggert <larse@isi.edu>
-#
+# Created by: Lars Eggert <larse@isi.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
@@ -96,6 +91,9 @@ PLIST_SUB+=	THREADRWLOCK="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's/APR_INLINE//g' \
 		${PATCH_WRKSRC}/src/modules/perl/modperl_common_util.h
+	${REINPLACE_CMD} -e "s|/usr/local/apache/bin/apxs|${APXS}|" \
+			-e "s|'bin', 'apxs'|'sbin', 'apxs'|" \
+			${WRKSRC}/lib/Apache2/Build.pm
 
 post-configure:
 	${REINPLACE_CMD} -e 's/-pthread -Wl,-E//g' \
@@ -113,5 +111,8 @@ post-install:
 
 	${APXS} -e -A -n perl ${PREFIX}/${APACHEMODDIR}/mod_perl.so
 	@${CAT} ${PKGMESSAGE}
+
+test:	build
+	-@(cd ${WRKSRC} && ${MAKE} test)
 
 .include <bsd.port.post.mk>
