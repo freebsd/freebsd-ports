@@ -1,0 +1,16 @@
+bin/lastfm-desktop
+%%DATADIR%%/Last.fm Scrobbler
+%%DATADIR%%/Last.fm Scrobbler.css
+%%DATADIR%%/liblistener.so
+%%DATADIR%%/liblistener.so.1
+%%DATADIR%%/liblistener.so.1.0
+%%DATADIR%%/liblistener.so.1.0.0
+%%DATADIR%%/liblogger.so
+%%DATADIR%%/liblogger.so.1
+%%DATADIR%%/liblogger.so.1.0
+%%DATADIR%%/liblogger.so.1.0.0
+%%DATADIR%%/libunicorn.so
+%%DATADIR%%/libunicorn.so.1
+%%DATADIR%%/libunicorn.so.1.0
+%%DATADIR%%/libunicorn.so.1.0.0
+@dirrm %%DATADIR%%
