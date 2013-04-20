@@ -36,11 +36,10 @@ PLIST_FILES=	bin/yafc
 .if ${PORT_OPTIONS:MNLS}
 USE_GNOME+=	intltool
 USE_GETTEXT=	yes
-LDFLAGS+=	-lintl
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/yafc.mo \
 		share/locale/sv/LC_MESSAGES/yafc.mo
 .else
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--without-gettext
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
