@@ -36,7 +36,7 @@ PGSQL_DESC=	Use PostgreSQL backend
 SQLITE_DESC=	Use SQLite backend (needs PHP 5.3 or below)
 SSL_DESC=	Enable SSL support (imaps or google spellcheck)
 LDAP_DESC=	Enable LDAP support (address book)
-GD_DESC=	Enable GD support (image convertion)
+GD_DESC=	Enable GD support (image conversion)
 PSPELL_DESC=	Enable PSpell support (internal spellcheck)
 NSC_DESC=	Install network spellchecker
 
