@@ -16,7 +16,7 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engin
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	2fa8b40
+GH_COMMIT=	dc5c676
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
