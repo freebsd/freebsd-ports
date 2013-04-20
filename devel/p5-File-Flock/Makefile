@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-File-Flock
-# Date created:				3 May 2003
-# Whom:	      				Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Flock
-PORTVERSION=	2008.01
+PORTVERSION=	2013.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +10,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for file locking with flock
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-Data-Structure-Util>=0:${PORTSDIR}/devel/p5-Data-Structure-Util \
+		p5-IO-Event>=0.812:${PORTSDIR}/devel/p5-IO-Event
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Test-SharedFork>=0:${PORTSDIR}/devel/p5-Test-SharedFork
+
 PERL_CONFIGURE=	yes
 
-MAN3=		File::Flock.3
+MAN3=		File::Flock.3 \
+		File::Flock::Forking.3 \
+		File::Flock::Subprocess.3
 
 .include <bsd.port.mk>
