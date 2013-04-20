@@ -124,6 +124,7 @@ CONFIGURE_ARGS+=	--without-portmixer
 LIB_DEPENDS+=		samplerate:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-libsamplerate
 .else
+BUILD_DEPENDS+=		cmake:${PORTSDIR}/devel/cmake
 CONFIGURE_ARGS+=	--without-libsamplerate
 .endif
 
