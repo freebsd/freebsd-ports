@@ -127,10 +127,6 @@ MAN1+=		aot-compile${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-convert${SUFFIX}.1 \
 		rebuild-gcj-db${SUFFIX}.1
-MAN3=		ffi${SUFFIX}.3 \
-		ffi_call${SUFFIX}.3 \
-		ffi_prep_cif${SUFFIX}.3 \
-		ffi_prep_cif_var${SUFFIX}.3
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
