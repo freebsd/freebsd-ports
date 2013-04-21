@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		pathfix
