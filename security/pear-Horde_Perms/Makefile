@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Perms
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org

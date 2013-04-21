@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Mime_Viewer
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
