@@ -27,6 +27,7 @@ horde-Horde_Browser-DEPEND=	${PEARDIR}/Horde/Browser.php:${PORTSDIR}/www/pear-Ho
 horde-Horde_Cache-DEPEND=	${PEARDIR}/Horde/Cache.php:${PORTSDIR}/devel/pear-Horde_Cache
 horde-Horde_Cli-DEPEND=		${PEARDIR}/Horde/Cli.php:${PORTSDIR}/devel/pear-Horde_Cli
 horde-Horde_Compress-DEPEND=	${PEARDIR}/Horde/Compress.php:${PORTSDIR}/archivers/pear-Horde_Compress
+horde-Horde_Compress_Fast-DEPEND=	${PEARDIR}/Horde/Compress/Fast.php:${PORTSDIR}/archivers/pear-Horde_Compress_Fast
 horde-Horde_Constraint-DEPEND=	${PEARDIR}/Horde/Constraint.php:${PORTSDIR}/devel/pear-Horde_Constraint
 horde-Horde_Controller-DEPEND=	${PEARDIR}/Horde/Controller.php:${PORTSDIR}/devel/pear-Horde_Controller
 horde-Horde_Core-DEPEND=	${PEARDIR}/Horde.php:${PORTSDIR}/devel/pear-Horde_Core
