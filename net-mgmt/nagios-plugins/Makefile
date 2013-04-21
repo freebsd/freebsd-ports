@@ -1,12 +1,9 @@
-# New ports collection makefile for:	nagios-plugins
-# Date created:				14 Jul 2002
-# Whom:					Blaz Zupan <blaz@si.FreeBSD.org>
-#
+# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.16
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
