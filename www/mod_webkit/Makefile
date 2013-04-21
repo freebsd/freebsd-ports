@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mod_webkit
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	www
-MASTER_SITES=	SF/webware/Webware/1.1
+MASTER_SITES=	SF/webware/Webware/1.1.1
 DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	A apache module for WebWare WebKit AppServer
+COMMENT=	Apache module for WebWare WebKit AppServer
 
 MAKE_JOBS_SAFE=  yes
 
