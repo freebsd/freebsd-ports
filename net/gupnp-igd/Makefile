@@ -1,15 +1,10 @@
-# New ports collection makefile for:	gupnp-igd
-# Date created:		2009-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gupnp-igd
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/ \
-		LOCAL/sunpoet
+MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to handle UPnP IGD port mapping
@@ -22,13 +17,17 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
 RUN_DEPENDS=	gupnp>=0.18:${PORTSDIR}/net/gupnp
 
-BROKEN=		does not package
-
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+USE_XZ=		yes
+USES=		pathfix
+
+post-patch:
+	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
