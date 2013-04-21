@@ -1,12 +1,14 @@
---- docs/Makefile.in.orig	2012-11-02 13:21:14.000000000 -0700
-+++ docs/Makefile.in	2012-11-02 13:21:48.000000000 -0700
+$FreeBSD$
+
+--- docs/Makefile.in.orig	2013-03-22 09:33:00.000000000 -0700
++++ docs/Makefile.in	2013-04-21 09:35:41.000000000 -0700
 @@ -395,15 +395,15 @@
  # Thanks to Bruce Ravel for doc2texi.el!
  gnuplot.texi $(srcdir)/gnuplot-eldoc.el $(srcdir)/gnuplot-eldoc.elc: $(srcdir)/doc2texi.el $(srcdir)/gnuplot.doc
  	@echo "Creating texinfo and eldoc strings file"
 -	@if test "$(EMACS)" != no; then \
--	   @test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
--	   @test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
+-	   test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
+-	   test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
 -	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
 -	   echo "Compiling gnuplot-eldoc.el" ; \
 -	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
@@ -14,8 +16,8 @@
 -	   echo "No emacs found - cannot create texinfo file" ; \
 -	fi
 +#	@if test "$(EMACS)" != no; then \
-+#	   @test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
-+#	   @test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
++#	   test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
++#	   test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
 +#	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
 +#	   echo "Compiling gnuplot-eldoc.el" ; \
 +#	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
