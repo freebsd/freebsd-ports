@@ -5,6 +5,7 @@ share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
 share/icons/hicolor/48x48/apps/xfce4-notifyd.png
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-notifyd.mo
@@ -16,11 +17,15 @@ share/icons/hicolor/48x48/apps/xfce4-notifyd.png
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-notifyd.mo
@@ -34,6 +39,7 @@ share/icons/hicolor/48x48/apps/xfce4-notifyd.png
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-notifyd.mo
