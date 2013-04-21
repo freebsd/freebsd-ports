@@ -3,6 +3,7 @@
 
 PORTNAME=	epiar
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://epiar.net/files/epiar/releases/0.5/
 
@@ -26,7 +27,6 @@ USE_GL=		glu
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal
 USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils
 USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
@@ -46,7 +46,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-
-	@-update-desktop-database -q
 
 .include <bsd.port.mk>
