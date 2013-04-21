@@ -1,25 +1,22 @@
-# New ports collection makefile for:	ChromeOS fonts
-# Date created:		17 May 2007
-# Whom:			Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	croscorefonts
-PORTVERSION=	1.21.0
+PORTVERSION=	1.23.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/
+MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept
+#LICENSE=	OFL
+#LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
+#LICENSE_FILE=	${WRKSRC}/LICENSE
+#LICENSE_PERMS=	auto-accept
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 FETCH_ARGS=	-Fpr
 
@@ -33,7 +30,7 @@ SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	ChromeOS
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=	LICENSE fonts.dir fonts.scale
+INSTDAT=	fonts.dir fonts.scale
 
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
