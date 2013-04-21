@@ -1,44 +1,40 @@
-# ex:ts=8
-# Ports collection makefile for:	gretl
-# Date created:			Mar 22, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.12
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		fftw3:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		pathfix
 WANT_GNOME=	yes
 
-ALL_TARGET=	# empty
+ALL_TARGET=		# empty
 CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake \
-			--without-gnome
+			--disable-xdg-utils
+CONFIGURE_ENV=		ac_cv_lib_dl_dlopen=""
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}"
+CONFIGURE_ENV=		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
-MAN1=		gretl.1
+MAN1=			gretl.1
 
 OPTIONS_DEFINE =	ATLAS GUI ODBC OPENMP R
 
-ATLAS_DESC =	Use ATLAS for BLAS and LAPACK
-GUI_DESC=	Build the graphical user interface and plugins
-ODBC_DESC=	Build with unixODBC database support
-OPENMP_DESC=	Use multithreading via OpenMP
-R_DESC=		Build with libR support
+ATLAS_DESC =		Use ATLAS for BLAS and LAPACK
+GUI_DESC=		Graphical user interface and plugins
+R_DESC=			libR support
 
 OPTIONS_DEFAULT=	GUI OPENMP
 
@@ -57,12 +53,15 @@ LAPACK=		-llapack
 
 .if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--enable-gui=yes
-USE_GNOME=		gnomehier gtksourceview2
+INSTALLS_ICONS=		yes
+USE_GNOME=		gtksourceview2
+USES+=			desktop-file-utils shared-mime-info
 BUILD_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
 PLIST_SUB+=		GUI=""
 .else
-CONFIGURE_ARGS+=	--enable-gui=no
+USE_GNOME=		glib20 libxml2
+CONFIGURE_ARGS+=	--enable-gui=no --enable-xdg=no
 PLIST_SUB+=		GUI="@comment "
 .endif
 
@@ -77,7 +76,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--with-odbc
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		ODBC=""
 .else
 CONFIGURE_ARGS+=	--without-odbc
@@ -106,40 +105,11 @@ post-patch:
 		{x; s/.*/#include <netinet\/in.h>/; H; x;}' \
 		${WRKSRC}/configure \
 		${WRKSRC}/plugin/mailer.c
-	@${REINPLACE_CMD} -e 's|set term png|set term dumb|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOMAIN| CEPHES_DOMAIN|g' \
 		${WRKSRC}/cephes/iv.c
-	@${REINPLACE_CMD} -e 's|@gnome_prefix@|@prefix@|g' \
-		${WRKSRC}/gnome/gretl.keys.in
-
-.if ${PORT_OPTIONS:MGUI}
-post-install:
-	@${MKDIR} ${PREFIX}/share/applications
-.for _file in gretl.desktop
-	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/applications
-.endfor
-	@${MKDIR} ${PREFIX}/share/mime/packages
-.for _file in gretl.xml
-	${INSTALL_DATA} ${WRKSRC}/xdg/${_file} ${PREFIX}/share/mime/packages
-.endfor
-	@${MKDIR} ${PREFIX}/share/mime-info
-.for _file in gretl.keys gretl.mime
-	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/mime-info
-.endfor
-	@${MKDIR} ${PREFIX}/share/pixmaps
-.for _file in gnome-application-x-gretldata.png gnome-application-x-gretlsession.png
-	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/pixmaps
-.endfor
-.for _file in gretl-logo.xpm gretl.xpm
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/${_file} ${PREFIX}/share/pixmaps
-.endfor
-	@-update-mime-database ${PREFIX}/share/mime
-
-.endif
 
 regression-test test check: build
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-		${MAKE_ARGS} check)
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check
 
 .include <bsd.port.mk>

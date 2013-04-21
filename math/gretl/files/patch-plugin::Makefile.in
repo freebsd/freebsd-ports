@@ -1,26 +1,6 @@
---- plugin/Makefile.in.orig	2011-02-14 08:52:57.000000000 -0500
-+++ plugin/Makefile.in	2011-03-02 09:02:20.000000000 -0500
-@@ -12,6 +12,10 @@
- INSTALL = @INSTALL@
- LN = @LN_S@
- 
-+CPPFLAGS = @CPPFLAGS@
-+LDFLAGS = @LDFLAGS@
-+INTL_LIBS = @LTLIBINTL@
-+
- build_gui = @build_gui@
- build_mailer = @build_mailer@
- have_odbc = @have_odbc@
-@@ -198,7 +202,7 @@
- 
- override CFLAGS += $(GRETLINC) $(GTK_CFLAGS) $(GMP_CFLAGS) $(MPFR_CFLAGS) \
- 	$(XML_CFLAGS) $(GRETL_LIBOLE2_CFLAGS) $(ZIP_CFLAGS) $(AUDIO_CFLAGS) \
--	$(ODBC_CFLAGS) -I. 
-+	$(ODBC_CFLAGS) -I. $(CPPFLAGS)
- 
- %.lo: %.c
- 	$(CCECHO)
-@@ -340,13 +344,13 @@
+--- plugin/Makefile.in.orig	2013-02-19 10:08:31.000000000 -0500
++++ plugin/Makefile.in	2013-04-20 18:20:25.000000000 -0400
+@@ -350,13 +350,13 @@
  .PHONY: 
  
  install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs 

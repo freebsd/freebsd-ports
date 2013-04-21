@@ -35,7 +35,6 @@ include/gretl/gretl_panel.h
 include/gretl/gretl_paths.h
 include/gretl/gretl_prn.h
 include/gretl/gretl_restrict.h
-include/gretl/gretl_scalar.h
 include/gretl/gretl_string_table.h
 include/gretl/gretl_untar.h
 include/gretl/gretl_utils.h
@@ -69,6 +68,7 @@ include/gretl/texprint.h
 include/gretl/transforms.h
 include/gretl/tsls.h
 include/gretl/usermat.h
+include/gretl/uservar.h
 include/gretl/var.h
 include/gretl/varprint.h
 include/gretl/vartest.h
@@ -164,6 +164,9 @@ lib/gretl-gtk2/quantreg.so
 lib/gretl-gtk2/range-mean.a
 lib/gretl-gtk2/range-mean.la
 lib/gretl-gtk2/range-mean.so
+lib/gretl-gtk2/reprobit.a
+lib/gretl-gtk2/reprobit.la
+lib/gretl-gtk2/reprobit.so
 lib/gretl-gtk2/sas_import.a
 lib/gretl-gtk2/sas_import.la
 lib/gretl-gtk2/sas_import.so
@@ -194,7 +197,7 @@ lib/gretl-gtk2/vif.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.la
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.4
+lib/libgretl-1.0.so.7
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
@@ -385,15 +388,12 @@ libdata/pkgconfig/gretl.pc
 %%GUI%%%%DATADIR%%/gretl-logo.xpm
 %%DATADIR%%/gretl.stamp
 %%DATADIR%%/gretlcli.hlp
-%%DATADIR%%/gretlcli.hlp.es
 %%DATADIR%%/gretlcli.hlp.it
 %%DATADIR%%/gretlcli.hlp.pt
 %%DATADIR%%/gretlcmd.hlp
-%%DATADIR%%/gretlcmd.hlp.es
 %%DATADIR%%/gretlcmd.hlp.it
 %%DATADIR%%/gretlcmd.hlp.pt
 %%DATADIR%%/gretlgui.hlp
-%%DATADIR%%/gretlgui.hlp.es
 %%DATADIR%%/gretlgui.hlp.it
 %%DATADIR%%/gretlgui.hlp.pt
 %%DATADIR%%/gretlhelp.refs
@@ -553,11 +553,17 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/ps9-8.inp
 %%DATADIR%%/scripts/ps9-9.inp
 %%DATADIR%%/scripts/ps_descriptions
-%%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
 %%GUI%%%%DATADIR%%/ui/gretlmain.xml
+%%GUI%%%%DATADIR%%/ui/gretlmodel.xml
 %%GUI%%share/gtksourceview-2.0/language-specs/gnuplot.lang
 %%GUI%%share/gtksourceview-2.0/language-specs/gretl.lang
+%%GUI%%share/icons/hicolor/32x32/apps/gretl.png
+%%GUI%%share/icons/hicolor/32x32/mimetypes/application-gretl.data.png
+%%GUI%%share/icons/hicolor/32x32/mimetypes/application-gretl.session.png
+%%GUI%%share/icons/hicolor/32x32/mimetypes/text-gretl.script.png
+%%GUI%%share/icons/hicolor/48x48/apps/gretl.png
+%%GUI%%share/icons/hicolor/64x64/apps/gretl.png
 %%NLS%%share/locale/cs/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gretl.mo
@@ -573,12 +579,6 @@ libdata/pkgconfig/gretl.pc
 %%NLS%%share/locale/tr/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
 %%GUI%%share/mime/packages/gretl.xml
-%%GUI%%share/mime-info/gretl.keys
-%%GUI%%share/mime-info/gretl.mime
-%%GUI%%share/pixmaps/gnome-application-x-gretldata.png
-%%GUI%%share/pixmaps/gnome-application-x-gretlsession.png
-%%GUI%%share/pixmaps/gretl-logo.xpm
-%%GUI%%share/pixmaps/gretl.xpm
 %%GUI%%@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/scripts/misc
 @dirrm %%DATADIR%%/scripts
@@ -596,5 +596,3 @@ libdata/pkgconfig/gretl.pc
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
