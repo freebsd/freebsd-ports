@@ -1,18 +1,14 @@
-# New ports collection makefile for:	RSIBreak
-# Date created:			15 Mar 2006
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rsibreak
-DISTVERSION=	0.11-beta1
-PORTREVISION=	2
+DISTVERSION=	0.11
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://www.rsibreak.org/files/
+MASTER_SITES=	LOCAL/crees/${PORTNAME} \
+		http://pkgs.fedoraproject.org/repo/pkgs/rsibreak/rsibreak-0.11.tar.bz2/d5dd540efd18900aa508eee381bcaafd/
 
 MAINTAINER=	avg@icyb.net.ua
-COMMENT=	A KDE RSI prevention tool
+COMMENT=	KDE RSI prevention tool
 
 LATEST_LINK=	${PORTNAME}-kde4
 
