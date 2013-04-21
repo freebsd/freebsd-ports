@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Code benchmarking tool
 
-LICENSE=	GPL
+LICENSE=	GPLv2
 
 PERL_CONFIGURE=	yes
 
