@@ -4,6 +4,7 @@
 PORTNAME=	python-registry
 PORTVERSION=	0.2.5
 CATEGORIES=	security devel python
+MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
