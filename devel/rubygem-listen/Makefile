@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	0.7.3
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,5 +14,8 @@ RUN_DEPENDS=	rubygem-rb-kqueue>=0.2.0:${PORTSDIR}/devel/rubygem-rb-kqueue
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '14,41 d' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
