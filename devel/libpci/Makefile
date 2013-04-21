@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libpci
-# Date created:				June 14, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.org>
-#
+# Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libpci
-PORTVERSION=	3.1.10
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet
