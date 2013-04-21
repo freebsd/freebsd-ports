@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	regripperplugins
-PORTVERSION=	20130404
+PORTVERSION=	20130418
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	plugins${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	regripper>=0:${PORTSDIR}/security/regripper
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/plugins
+NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 PROJECTHOST=	regripper
