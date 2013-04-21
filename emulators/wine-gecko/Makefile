@@ -15,7 +15,7 @@ COMMENT=	Gecko Layout Engine for Wine (HTML support)
 LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi
 
-PORTSCOUT=	ignore	# for newer versions see emulators/wine-gecko-devel
+PORTSCOUT=	ignore:1	# for newer versions see emulators/wine-gecko-devel
 
 NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"
