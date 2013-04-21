@@ -243,5 +243,3 @@ share/pixmaps/epiar.png
 @dirrm %%DATADIR%%/Resources
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
