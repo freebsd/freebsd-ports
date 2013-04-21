@@ -54,7 +54,3 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.tool.svgz
 %%DATADIR%%/jlm_greek.jar
 share/mime/packages/geogebra.xml
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime || /usr/bin/true

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	4.2.23.0
+PORTVERSION=	4.2.31.0
 #PORTREVISION=	0
 CATEGORIES=	math java
 MASTER_SITES=	GOOGLE_CODE
@@ -12,8 +12,12 @@ DISTNAME=	GeoGebra-Unixlike-Installer-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+LICENSE=	GEOGEBRA
+LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
+LICENSE_FILE=	${WRKSRC}/_license.txt
+LICENSE_PERMS=	dist-sell pkg-sell auto-accept
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -23,8 +27,8 @@ JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 
-USE_GNOME=	desktopfileutils
 USE_JAVA=	yes
+USES=	desktop-file-utils shared-mime-info
 
 WRKSRC=	${WRKDIR}/geogebra-${PORTVERSION}
 
@@ -40,7 +44,5 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications && \
 	${INSTALL_DATA} ${WRKSRC}/geogebra.xml ${PREFIX}/share/mime/packages && \
 	${INSTALL_DATA} ${WRKSRC}/geogebra.desktop ${DESKTOPDIR}
-	-${LOCALBASE}/bin/update-desktop-database
-	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
 
 .include <bsd.port.mk>
