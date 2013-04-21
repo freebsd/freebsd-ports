@@ -32,6 +32,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Cache \
 		Horde_Cli \
 		Horde_Compress \
+		Horde_Compress_Fast \
 		Horde_Controller \
 		Horde_Data \
 		Horde_Date \

@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	APC MEMCACHE
 APC_DESC=	Require APC PHP extension
 MEMCACHE_DESC=	Enable Memcache support
 		
-USE_HORDE_RUN=	Horde_Exception Horde_Util
+USE_HORDE_RUN=	Horde_Compress_Fast Horde_Exception Horde_Util
 USE_PHP=	hash
 
 .include <bsd.port.pre.mk>
