@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	5.2.1.1588
-PORTREVISION=	1
+PORTVERSION=	6.0.3.2197
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
 		http://dl.google.com/earth/client/current/:current
-DISTFILES=	GoogleEarthLinux.bin:previous
+DISTFILES=	GoogleEarthLinux.bin:current
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
@@ -49,9 +48,10 @@ IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x
 IGNORE=	needs non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f10 and OVERRIDE_LINUX_NONBASE_PORTS=f10)
 .endif
 
-.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
-BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
-.endif
+# Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
+#.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+#BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
+#.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -61,6 +61,7 @@ do-extract:
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
 
 post-patch:
+	@${REINPLACE_CMD} -i "" -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
 	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
