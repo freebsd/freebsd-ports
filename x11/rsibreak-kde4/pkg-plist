@@ -7,7 +7,6 @@ share/apps/rsibreak/rsibreak.notifyrc
 share/autostart/rsibreak.desktop
 share/dbus-1/interfaces/org.rsibreak.rsiwidget.xml
 share/doc/HTML/en/rsibreak/common
-share/doc/HTML/en/rsibreak/dcop.png
 share/doc/HTML/en/rsibreak/index.cache.bz2
 share/doc/HTML/en/rsibreak/index.docbook
 share/doc/HTML/en/rsibreak/logo.png
@@ -43,6 +42,7 @@ share/doc/HTML/sv/rsibreak/index.docbook
 share/doc/HTML/uk/rsibreak/common
 share/doc/HTML/uk/rsibreak/index.cache.bz2
 share/doc/HTML/uk/rsibreak/index.docbook
+share/doc/HTML/uk/rsibreak/statistics.png
 share/icons/hicolor/128x128/apps/rsibreak.png
 share/icons/hicolor/16x16/actions/rsibreak0.png
 share/icons/hicolor/16x16/actions/rsibreak1.png
