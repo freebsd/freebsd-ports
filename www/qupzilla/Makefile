@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qupzilla
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.qupzilla.com/uploads/
 DISTNAME=	QupZilla-${PORTVERSION}
@@ -10,6 +10,8 @@ MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	Modern web browser based on WebKit core and Qt Framework
 
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
 
 HAS_CONFIGURE=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build webkit \
@@ -23,10 +25,10 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} QupZilla.pro
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/|${LOCALBASE}/|g' \
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/tests/autotests/qztoolstest.cpp \
 		${WRKSRC}/src/lib/plugins/qtwebkit/spellcheck/speller.cpp
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/src/install.pri
 
 .include <bsd.port.mk>
