@@ -1,12 +1,8 @@
-# New ports collection makefile for:	validns
-# Date created:		2012-04-25
-# Whom:			Hirohisa Yamaguchi <umq@ueo.co.jp>
-#
+# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	validns
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
@@ -21,6 +17,7 @@ ALL_TARGET=
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
 
