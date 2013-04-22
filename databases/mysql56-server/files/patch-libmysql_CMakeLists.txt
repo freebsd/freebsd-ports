@@ -1,9 +1,9 @@
---- libmysql/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
-+++ libmysql/CMakeLists.txt	2010-12-23 22:01:37.000000000 +0100
-@@ -153,13 +153,14 @@
+--- libmysql/CMakeLists.txt.orig	2013-04-05 14:27:18.000000000 +0200
++++ libmysql/CMakeLists.txt	2013-04-19 15:04:52.000000000 +0200
+@@ -173,13 +173,14 @@
+ ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
- # and link them together into shared library.
 -MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
 +MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
  
@@ -16,21 +16,26 @@
  IF(UNIX)
    MACRO(GET_VERSIONED_LIBNAME LIBNAME EXTENSION VERSION OUTNAME)
      SET(DOT_VERSION ".${VERSION}")
-@@ -174,9 +175,11 @@
+@@ -194,13 +195,15 @@
    ENDMACRO()
    INSTALL_SYMLINK(${CMAKE_STATIC_LIBRARY_PREFIX}mysqlclient_r.a mysqlclient ${INSTALL_LIBDIR} Development)
  ENDIF()
 +ENDIF()
  
  IF(NOT DISABLE_SHARED)
--  MERGE_LIBRARIES(libmysql SHARED ${LIBS} EXPORTS ${CLIENT_API_FUNCTIONS} COMPONENT SharedLibraries)
-+  MERGE_LIBRARIES(libmysql SHARED ${LIBS} EXPORTS ${CLIENT_API_FUNCTIONS} COMPONENT SharedLibraries NOINSTALL)
-+IF(FALSE)
+   # Merge several convenience libraries into one big mysqlclient
+   # and link them together into shared library.
+   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+     EXPORTS ${CLIENT_API_FUNCTIONS}
+-    COMPONENT SharedLibraries)
++    COMPONENT SharedLibraries NOINSTALL)
++ IF(FALSE)
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -223,3 +226,4 @@
+@@ -251,4 +254,5 @@
+       INSTALL_SYMLINK(${linkname} libmysql ${INSTALL_LIBDIR} SharedLibraries)
      ENDFOREACH()
    ENDIF()
++ ENDIF()
  ENDIF()
-+ENDIF()
