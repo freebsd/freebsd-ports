@@ -258,6 +258,9 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi;
+	@for cat in ${CATEGORIES}; do \
+		${RM} -fv ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
+	done
 	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
 		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" ]; then \
 			if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
@@ -266,7 +269,7 @@ do-package: ${TMPPLIST}
 					exit 1; \
 				fi; \
 			fi ; \
-			${LN} -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
+			${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
