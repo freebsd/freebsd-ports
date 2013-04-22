@@ -1,13 +1,9 @@
-# New ports collection makefile for:	tiemu3
-# Date created:				13 Aug 2007
-# Whom:					Naram Qashat <cyberbotx@cyberbotx.com>
-#
+# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gtktiemu/tiemu-linux/TIEmu%20${DISTVERSION}
 DISTNAME=	tiemu-${DISTVERSION}
@@ -16,9 +12,9 @@ EXTRACT_SUFX=	-nogdb.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	ticalcs2.10:${PORTSDIR}/comms/libticalcs2 \
-		ticables2.5:${PORTSDIR}/comms/libticables2 \
-		tifiles2.8:${PORTSDIR}/devel/libtifiles2
+LIB_DEPENDS=	ticalcs2:${PORTSDIR}/comms/libticalcs2 \
+		ticables2:${PORTSDIR}/comms/libticables2 \
+		tifiles2:${PORTSDIR}/devel/libtifiles2
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

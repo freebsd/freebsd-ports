@@ -1,12 +1,9 @@
-# New ports collection makefile for:	TilEm (TI Linux Emulator)
-# Date created:				5 Sep 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tilem
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
