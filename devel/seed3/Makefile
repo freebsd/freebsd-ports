@@ -61,4 +61,4 @@ pre-build:
 post-build:
 	${CP} ${WRKSRC}/extensions/Seed.js.sav ${WRKSRC}/extensions/Seed.js
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
