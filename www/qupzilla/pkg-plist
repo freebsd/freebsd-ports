@@ -1,14 +1,14 @@
 bin/qupzilla
-etc/bash_completion.d/bash_completion.sh
 lib/libQupZilla.so
 lib/libQupZilla.so.1
 lib/libQupZilla.so.1.4
-lib/libQupZilla.so.1.4.0
+lib/libQupZilla.so.1.4.1
 lib/qupzilla/libAccessKeysNavigation.so
 lib/qupzilla/libGreaseMonkey.so
 lib/qupzilla/libMouseGestures.so
 lib/qupzilla/libPIM.so
 share/applications/qupzilla.desktop
+share/bash-completion/completions/qupzilla
 share/icons/hicolor/128x128/apps/qupzilla.png
 share/icons/hicolor/16x16/apps/qupzilla.png
 share/icons/hicolor/256x256/apps/qupzilla.png
@@ -273,5 +273,6 @@ share/qupzilla/themes/windows/windows.css
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/bash-completion/completions
+@dirrmtry share/bash-completion
 @dirrmtry share/applications
-@dirrmtry etc/bash_completion.d
