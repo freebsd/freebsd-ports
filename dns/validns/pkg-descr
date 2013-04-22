@@ -3,4 +3,4 @@ validation tool that, in addition to basic syntactic and semantic zone
 checks, includes DNSSEC signature verification and NSEC/NSEC3 chain
 validation, as well a number of optional policy checks on the zone.
 
-WWW:	http://www.validns.net/
+WWW: http://www.validns.net/
