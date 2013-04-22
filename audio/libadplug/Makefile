@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	binio:${PORTSDIR}/devel/libbinio
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_CSTD=	gnu89
 
 MAKE_JOBS_SAFE=	yes

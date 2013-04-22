@@ -15,11 +15,10 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

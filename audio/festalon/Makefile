@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
 
 MAKE_JOBS_SAFE=	yes
 

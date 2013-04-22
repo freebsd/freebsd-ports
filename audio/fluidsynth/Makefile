@@ -16,8 +16,7 @@ OPTIONS_DEFAULT=	JACK
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes

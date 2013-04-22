@@ -19,10 +19,10 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_SCONS=	yes
-USE_PKGCONFIG=	build
 SCONS_BUILDENV=	CXX="${CXX}" QTDIR="${QT_PREFIX}"
 
 PORTEXAMPLES=	beek-dolphinisland.it ll-globule.it reduz-maschizo.it \

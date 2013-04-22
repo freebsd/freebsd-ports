@@ -13,7 +13,7 @@ LIB_DEPENDS=	ogg.8:${PORTSDIR}/audio/libogg \
 		opus:${PORTSDIR}/audio/opus
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/opusdec bin/opusenc bin/opusinfo

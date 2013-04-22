@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsidplay2
-# Date created:				6 October 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libsidplay2
 PORTVERSION=	2.1.1
@@ -15,10 +11,9 @@ DISTNAME=	sidplay-libs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	yes
 LIBTOOLFILES=	builders/hardsid-builder/configure \
 		builders/resid-builder/configure \
 		libsidplay/configure \

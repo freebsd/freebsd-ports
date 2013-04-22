@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	ALSA FFTW JACK DOCS
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
+USES=		pkgconfig
 USE_TK_WRAPPER=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -24,7 +25,6 @@ USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

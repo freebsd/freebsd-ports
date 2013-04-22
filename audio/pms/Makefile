@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pms
-# Date created:		2010-05-13
-# Whom:			Ashish SHUKLA <wahjava@gmail.com>
-#
+# Created by: Ashish SHUKLA <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pms
 PORTVERSION=	0.42
@@ -16,10 +12,10 @@ COMMENT=	A ncurses-based client for the Music Player Daemon
 
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 
 MAN1=	${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}

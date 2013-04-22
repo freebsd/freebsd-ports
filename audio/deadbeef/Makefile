@@ -18,12 +18,12 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
 		CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"

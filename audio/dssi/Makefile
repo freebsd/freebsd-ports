@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dssi
-# Date created:		2007-01-12
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	dssi
 PORTVERSION=	1.1.1
@@ -26,9 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 OPTIONS_DEFINE=	QT4
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

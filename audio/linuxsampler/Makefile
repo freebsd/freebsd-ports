@@ -23,9 +23,8 @@ DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_SQLITE=	3
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	HAVE_UNIX98=1
