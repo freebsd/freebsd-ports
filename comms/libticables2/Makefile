@@ -1,43 +1,37 @@
-# New ports collection makefile for:	libticables2
-# Date created:		11 October 2006
-# Whom:			Tijl Coosemans <tijl@ulyssis.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libticables2
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.16
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
+USES=		pathfix
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+OPTIONS_DEFINE=	NLS
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 800069
-CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
