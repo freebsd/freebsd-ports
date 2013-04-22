@@ -346,7 +346,6 @@
     SUBDIR += graphicboot
     SUBDIR += graveman
     SUBDIR += grok
-    SUBDIR += grub
     SUBDIR += grub2
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
@@ -431,7 +430,6 @@
     SUBDIR += keep
     SUBDIR += keyboard-daemon
     SUBDIR += kfloppy
-    SUBDIR += kgrubeditor
     SUBDIR += kgtk
     SUBDIR += kiconvtool
     SUBDIR += kkbswitch
