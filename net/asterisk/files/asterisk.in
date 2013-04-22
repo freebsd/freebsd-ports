@@ -23,7 +23,7 @@ stop_cmd="asterisk_stop"
 reload_cmd="asterisk_reload"
 
 command="%%PREFIX%%/sbin/asterisk"
-command_args="-n -U %%ASTERISK_USER%%"
+command_args="-n -F -U %%ASTERISK_USER%%"
 pidfile=${asterisk_pidfile:-"/var/run/asterisk/asterisk.pid"}
 
 asterisk_stop() {
