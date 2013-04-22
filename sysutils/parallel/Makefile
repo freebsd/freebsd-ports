@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20130222
+PORTVERSION=	20130422
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -26,6 +26,10 @@ PORTDOCS=	parallel.html sem.html sql.html niceload.html \
 		parallel.texi sem.texi sql.texi niceload.texi
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	pod2texi:${PORTSDIR}/print/texinfo
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/src/parallel
