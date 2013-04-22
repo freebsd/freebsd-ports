@@ -3,13 +3,15 @@ share/applications/qmetro.desktop
 share/icons/hicolor/64x64/apps/qmetro.png
 share/icons/hicolor/80x80/apps/qmetro.png
 share/icons/hicolor/scalable/apps/qmetro.svg
-share/qmetro/locale/cs.lng
-share/qmetro/locale/es.lng
-share/qmetro/locale/fr.lng
-share/qmetro/map/Moscow.pmz
-@dirrm share/qmetro/map
-@dirrm share/qmetro/locale
-@dirrm share/qmetro
+%%DATADIR%%/locale/cs.lng
+%%DATADIR%%/locale/es.lng
+%%DATADIR%%/locale/fr.lng
+%%DATADIR%%/map/Moscow.pmz
+%%DATADIR%%/skin/Android.zip
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/map
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/80x80/apps
@@ -17,4 +19,5 @@ share/qmetro/map/Moscow.pmz
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
