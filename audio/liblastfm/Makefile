@@ -27,10 +27,9 @@ FINGERPRINT_DESC=	Build the lastfm-fingerprint library
 TESTS_DESC=		Build liblastfm tests
 OPTIONS_DEFAULT=	FINGERPRINT
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_QT4=	dbus moc_build rcc_build network qmake_build qtestlib sql xml
 
 .include <bsd.port.options.mk>

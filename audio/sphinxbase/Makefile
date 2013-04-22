@@ -33,7 +33,7 @@ THREADS_DESC=	Build with thread safety support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSNDFILE}
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ENV+=	HAVE_PKGCONFIG=no

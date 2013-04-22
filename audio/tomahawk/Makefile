@@ -40,10 +40,9 @@ OPTIONS_DEFINE=	QTWEETLIB
 OPTIONS_DEFAULT=	QTWEETLIB
 QTWEETLIB_DESC=	Enable Twitter SIP plugin
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 USE_QT4=	dbus designer gui linguist_build moc_build \
 		network phonon qmake_build qtestlib rcc_build \

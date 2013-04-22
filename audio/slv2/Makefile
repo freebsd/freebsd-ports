@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slv2
-# Date created:		2008-11-25
-# Whom:			xaimus <xaimus@gmail.com>
-#
+# Created by: xaimus <xaimus@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	slv2
 PORTVERSION=	0.6.6
@@ -20,10 +16,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		rdf.0:${PORTSDIR}/textproc/redland
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

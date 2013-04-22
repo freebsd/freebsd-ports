@@ -1,6 +1,4 @@
-# New ports collection Makefile for: 	swhplugins
-# Date created:			12 May 2002
-# Whom:				Tilman Linneweh <arved@FreeBSD.org>
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -22,7 +20,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

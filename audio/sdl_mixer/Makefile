@@ -15,8 +15,7 @@ LICENSE=	ZLIB
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
-USE_PKGCONFIG=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

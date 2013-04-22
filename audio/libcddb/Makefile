@@ -12,8 +12,7 @@ COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio

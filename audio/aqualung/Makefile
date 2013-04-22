@@ -32,9 +32,9 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		cddb:${PORTSDIR}/audio/libcddb \
 		strfunc:${PORTSDIR}/devel/libstrfunc
 
+USES=		pkgconfig
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libxml2
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no \

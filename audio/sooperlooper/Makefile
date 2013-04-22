@@ -25,17 +25,17 @@ LIB_DEPENDS=	fftw3.6:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_WX=		2.6+
 WX_UNICODE=	yes
 CONFIGURE_ARGS=	-with-wxconfig-path=${WX_CONFIG}
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GNOME=	pkgconfig libxml2
+USE_GNOME=	libxml2
 
 .include <bsd.port.mk>

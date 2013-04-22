@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.10.0

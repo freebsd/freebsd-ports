@@ -21,9 +21,8 @@ GNU_CONFIGURE=	yes
 # --disable-complex: does not compile due to missing carg(3) et al.
 CONFIGURE_ARGS=	--disable-complex
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

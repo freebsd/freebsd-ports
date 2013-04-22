@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lv2core
-# Date created:		2008-11-20
-# Whom:			xaimus <xaimus@gmail.com>
-#
+# Created by: xaimus <xaimus@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lv2core
 PORTVERSION=	6.0
@@ -16,9 +12,9 @@ COMMENT=	LV2 Core Package
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

@@ -13,7 +13,7 @@ COMMENT=	Commodore SID music player using libsidplay2
 LIB_DEPENDS=	sidplay2:${PORTSDIR}/audio/libsidplay2
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 MAN1=		sidplay2.1
 PLIST_FILES=	bin/sidplay2

@@ -19,8 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture
 USE_GMAKE=	yes
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		pathfix pkgconfig
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
 
