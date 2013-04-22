@@ -51,6 +51,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aeb962f6-ab8d-11e2-b3f5-003067c2616f">
+    <topic>tinc -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>tinc</name>
+	<range><lt>1.0.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>tinc-vpn.org reports:</p>
+	<blockquote cite="http://www.tinc-vpn.org/news/">
+	  <p>Drop packets forwarded via TCP if they are too big.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1428</cvename>
+    </references>
+    <dates>
+      <discovery>2013-01-26</discovery>
+      <entry>2013-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7280c3f6-a99a-11e2-8cef-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS due to unescaped HTML output in GIS visualisation page</topic>
     <affects>
