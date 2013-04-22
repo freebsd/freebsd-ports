@@ -10,11 +10,11 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		jbig:${PORTSDIR}/graphics/jbigkit
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		jbig:${PORTSDIR}/graphics/jbigkit
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
