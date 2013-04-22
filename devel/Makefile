@@ -4292,6 +4292,7 @@
     SUBDIR += tclgetopts
     SUBDIR += tcllib
     SUBDIR += tclmore
+    SUBDIR += tcloo
     SUBDIR += tclreadline
     SUBDIR += tclthread
     SUBDIR += tcltls
