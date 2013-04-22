@@ -24,6 +24,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		ebml:${PORTSDIR}/textproc/libebml \
 		matroska:${PORTSDIR}/multimedia/libmatroska
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GCC=	4.6+
 USE_GETTEXT=	yes
@@ -31,7 +32,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
 USE_RUBY=	yes
-USE_PKGCONFIG=	build
 RUBY_NO_RUN_DEPENDS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -34,6 +34,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		bash:${PORTSDIR}/shells/bash \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 
+USES=		pkgconfig
 USE_WX=		2.6
 WX_COMPS=	python
 NO_BUILD=	yes
