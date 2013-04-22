@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-DBD-mysql51
-# Date created:                28 Jan 2006
-# Whom:                        Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	51
 
