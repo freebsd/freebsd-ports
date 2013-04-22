@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.20.2
+PORTVERSION=	1.8.21.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
