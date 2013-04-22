@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130323:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle support for pkgconf (pkg-config) dependency:
+
+    USES= pkgconfig[:build] will add pkgconf into BUILD_DEPENDS
+    USES= pkgconfig:run will add pkgconf into RUN_DEPENDS
+    USES= pkgconfig:both will add pkgconf into both RUN and BUILD DEPENDS
+
+    It deprecates USE_PKGCONFIG which will be removed as soon as it is not
+    used anymore
+
 20130320:
 AUTHOR: jgh@FreeBSD.org
 
