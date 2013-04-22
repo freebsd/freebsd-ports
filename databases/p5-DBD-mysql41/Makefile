@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-DBD-mysql41
-# Date created:                27 Nov 2003
-# Whom:                        Oliver Eikemeier <eikemeier@fillmore-labs.com>
-#
+# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	41
 
