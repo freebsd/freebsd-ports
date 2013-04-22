@@ -17,12 +17,13 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		cdio.13:${PORTSDIR}/sysutils/libcdio
 
+USES=		pkgconfig pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PKGCONFIG=	build
-USE_GNOME=	gnomehack lthack
+USE_GNOME=	lthack
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

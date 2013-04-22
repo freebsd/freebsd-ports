@@ -18,7 +18,7 @@ QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
