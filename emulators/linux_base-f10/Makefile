@@ -132,6 +132,8 @@ REMOVE_DIRS=		boot dev etc/fonts home initrd media root tmp var/log var/run var/
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
+# These are shared directories that some linux packages (e.g. linux-f10-gtk2)
+# use but aren't in any of the distfiles above.
 ADD_DIRS=		usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
 			usr/X11R6/include usr/X11R6/bin \
 			usr/share/locale/ca@valencia/LC_MESSAGES \
