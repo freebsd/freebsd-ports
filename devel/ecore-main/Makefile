@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	main
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.7.6
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -18,9 +17,10 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	eina libtool_hack
-USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
+USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ecore

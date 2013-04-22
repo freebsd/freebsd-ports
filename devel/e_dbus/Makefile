@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e_dbus
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -18,9 +18,9 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	eina evas ecore libtool_hack librt_hack
 USE_EFL_ECORE=	evas
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-ehal \

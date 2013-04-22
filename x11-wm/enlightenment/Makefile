@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.17.1
-PORTREVISION=	1
+PORTVERSION=	0.17.2.1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -20,13 +19,13 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_GMAKE=	yes
 USE_EFL=	eina eet evas ecore eio edbus efreet edje \
 		libtool_hack librt_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_EVAS_ENGINES=	buffer
 USE_EFL_ECORE=	ipc
-USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message

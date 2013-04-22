@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loader-gif
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6.1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -21,7 +21,6 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas librt_hack libtool_hack
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/gif

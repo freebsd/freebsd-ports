@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecore
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none

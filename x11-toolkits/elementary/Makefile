@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.7.6
 CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -16,10 +15,10 @@ LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LUA=	5.1+
+USES=		pathfix
 USE_EFL=	ecore eio edbus efreet embryo edje emotion ethumb \
 		libtool_hack librt_hack modarch_hack
-USE_GNOME=	gnomehack pkgconfig
+USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 

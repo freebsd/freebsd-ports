@@ -367,6 +367,7 @@ share/icons/elementary.png
 %%NLS%%share/locale/az_IR/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/de/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/elementary.mo
 %%NLS%%share/locale/he/LC_MESSAGES/elementary.mo
@@ -412,6 +413,8 @@ share/icons/elementary.png
 %%NLS%%@dirrmtry share/locale/cs
 %%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
 %%NLS%%@dirrmtry share/locale/fa/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fa
 %%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES

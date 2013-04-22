@@ -70,5 +70,3 @@ share/mime/packages/edje.xml
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

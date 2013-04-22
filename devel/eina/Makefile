@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eina
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -15,8 +15,8 @@ LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	librt_hack libtool_hack
-USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

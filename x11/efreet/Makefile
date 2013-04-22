@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efreet
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -15,9 +15,10 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	eet eina ecore libtool_hack librt_hack
 USE_EFL_ECORE=	file
-USE_GNOME=	gnomehack pkgconfig
+USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-nls
