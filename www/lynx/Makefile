@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lynx
-# Date created:				15 Dec 1994
-# Whom:					Andrey Chernov <ache@FreeBSD.org>
-#
+# Created by: Andrey Chernov <ache@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.7.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	A non-graphical, text-based World-Wide Web client
+COMMENT=	Non-graphical, text-based World-Wide Web client
 
 CONFLICTS=	lynx-2.8.[8-9]*
 
@@ -28,14 +24,13 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	SSL		"SSL support" on \
-		DEFAULT_COLORS	"Colors support" off \
-		IPV6		"IPv6 support" off \
-		NLS 		"Native language support" on
+OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL
+OPTIONS_DEFAULT=	SSL
+DEFAULT_COLORS_DESC=	Colors support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS='@comment '
 .else
@@ -45,21 +40,21 @@ CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
 PLIST_SUB+=	NLS=''
 .endif
 
-.if defined(WITH_IPV6) && !defined(NO_INET6)
+.if ${PORT_OPTIONS:MIPV6} && !defined(NO_INET6)
 CONFIGURE_ARGS+=--enable-ipv6
 .else
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_DEFAULT_COLORS)
+.if ${PORT_OPTIONS:MDEFAULT_COLORS}
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 CONFIGURE_ARGS+=--disable-local-docs
 INSTALL_TARGET=	install
 DOCSDIR=
@@ -78,7 +73,7 @@ L_LIB=		${PREFIX}/etc
 SUB_FILES=	pkg-message
 
 post-install:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	[ -f ${L_LIB}/lynx.cfg ] || ${INSTALL} ${L_LIB}/lynx.cfg.sample ${L_LIB}/lynx.cfg
 	[ -f ${L_LIB}/lynx.lss ] || ${INSTALL} ${L_LIB}/lynx.lss.sample ${L_LIB}/lynx.lss
 .else
@@ -87,4 +82,4 @@ post-install:
 .endif
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
