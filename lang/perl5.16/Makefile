@@ -1,9 +1,5 @@
-# New ports collection makefile for:	perl5
-# Date created:		16 April 1995
-# Whom:			markm
-#
+# Created by: markm
 # $FreeBSD$
-#
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
@@ -18,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${BSDPAN_VERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	perl
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1
