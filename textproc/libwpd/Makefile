@@ -1,19 +1,16 @@
-# New ports collection makefile for:    libwpd
-# Date created:         Mon May 19 09:09:10 PDT 2003
-# Whom:                 reed@pugetsoundtechnology.com
-#
+# Created by: reed@pugetsoundtechnology.com
 # $FreeBSD$
-#
 
 PORTNAME=	libwpd
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 MPL
+LICENSE_COMB=	dual
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
