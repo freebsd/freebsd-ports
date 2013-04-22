@@ -114,14 +114,10 @@ PLIST_SUB=		GLIBCVER="2.12"
 # - research what are the important differences between 2.6.16 and 2.6.18, and
 #   if we need to add something to the linuxulator
 
-RPM2CPIO?=		${LOCALBASE}/bin/rpm2cpio
-
-EXTRACT_DEPENDS+=	${RPM2CPIO}:${PORTSDIR}/archivers/rpm
-
 EXTRACT_ONLY=		${BIN_DISTFILES}
-EXTRACT_CMD?=		${RPM2CPIO}
-EXTRACT_BEFORE_ARGS?=
-EXTRACT_AFTER_ARGS?=	| ${CPIO} -id --quiet
+EXTRACT_CMD?=		${TAR}
+EXTRACT_BEFORE_ARGS?=	-xf
+EXTRACT_AFTER_ARGS?=
 
 .include <bsd.port.pre.mk>
 
