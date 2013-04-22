@@ -23,7 +23,7 @@ INSTALL = $(SRCDIR)/buildtools/install.sh
 
 STRIPFLAG = -s
 
-SYMLINK = ln -s
+SYMLINK = ln -sf
 
 MANPAGE_FORMAT = nroff
 
