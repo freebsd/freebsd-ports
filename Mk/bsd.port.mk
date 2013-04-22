@@ -1525,7 +1525,7 @@ ${_f}_ARGS:=	${f:C/^[^\:]*\://g}
 
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
-.if (${PREFIX:C,(^.).*,\1,} != "/")
+.if ! ${PREFIX:M/*}
 .BEGIN:
 	@${ECHO_MSG} "PREFIX must be defined as an absolute path so that when 'make'"
 	@${ECHO_MSG} "is invoked in the work area PREFIX points to the right place."
