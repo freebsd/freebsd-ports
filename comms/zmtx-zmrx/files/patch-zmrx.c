@@ -26,7 +26,15 @@
  	}
  
  	sscanf(rx_data_subpacket + strlen(rx_data_subpacket) + 1,
-@@ -342,7 +343,7 @@
+@@ -243,6 +244,7 @@
+ 		fstat(fileno(fp),&s);
+ 
+ 		fclose(fp);
++		fp = NULL;
+ 	}
+ 	else {
+ 		exists = FALSE;
+@@ -342,7 +344,7 @@
  	 */
  
  	if (opt_v) {
@@ -35,7 +43,7 @@
  	}
  }
  
-@@ -386,8 +387,6 @@
+@@ -386,8 +388,6 @@
  	printf("	-q          quiet\n");
  	printf("	(only one of -n -c or -p may be specified)\n");
  
