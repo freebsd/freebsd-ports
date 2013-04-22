@@ -3495,6 +3495,7 @@
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
     SUBDIR += py-gobject
+    SUBDIR += py-gobject3
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch

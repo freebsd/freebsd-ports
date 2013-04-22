@@ -1,0 +1,76 @@
+include/pygobject-3.0/pygobject.h
+lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.la
+lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so
+lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
+%%PYTHON_SITELIBDIR%%/gi/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/_gi.la
+%%PYTHON_SITELIBDIR%%/gi/_gi.so
+%%PYTHON_SITELIBDIR%%/gi/_gi_cairo.la
+%%PYTHON_SITELIBDIR%%/gi/_gi_cairo.so
+%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/_glib/_glib.la
+%%PYTHON_SITELIBDIR%%/gi/_glib/_glib.so
+%%PYTHON_SITELIBDIR%%/gi/_glib/option.py
+%%PYTHON_SITELIBDIR%%/gi/_glib/option.pyc
+%%PYTHON_SITELIBDIR%%/gi/_glib/option.pyo
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/_gobject/_gobject.la
+%%PYTHON_SITELIBDIR%%/gi/_gobject/_gobject.so
+%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.py
+%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.pyc
+%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.pyo
+%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.py
+%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyc
+%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyo
+%%PYTHON_SITELIBDIR%%/gi/importer.py
+%%PYTHON_SITELIBDIR%%/gi/importer.pyc
+%%PYTHON_SITELIBDIR%%/gi/importer.pyo
+%%PYTHON_SITELIBDIR%%/gi/module.py
+%%PYTHON_SITELIBDIR%%/gi/module.pyc
+%%PYTHON_SITELIBDIR%%/gi/module.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/GIMarshallingTests.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GIMarshallingTests.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/GIMarshallingTests.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/GLib.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GLib.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/GLib.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gio.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gio.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gio.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gtk.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gtk.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gtk.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/Pango.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Pango.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/Pango.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/keysyms.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/keysyms.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/keysyms.pyo
+%%PYTHON_SITELIBDIR%%/gi/pygtkcompat.py
+%%PYTHON_SITELIBDIR%%/gi/pygtkcompat.pyc
+%%PYTHON_SITELIBDIR%%/gi/pygtkcompat.pyo
+%%PYTHON_SITELIBDIR%%/gi/repository/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/repository/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gi/repository/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/types.py
+%%PYTHON_SITELIBDIR%%/gi/types.pyc
+%%PYTHON_SITELIBDIR%%/gi/types.pyo
+libdata/pkgconfig/pygobject-3.0.pc
+@dirrm %%PYTHON_SITELIBDIR%%/gi/repository
+@dirrm %%PYTHON_SITELIBDIR%%/gi/overrides
+@dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject
+@dirrm %%PYTHON_SITELIBDIR%%/gi/_glib
+@dirrm %%PYTHON_SITELIBDIR%%/gi
+@dirrmtry include/pygobject-3.0
