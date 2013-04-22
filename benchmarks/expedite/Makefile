@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expedite
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -17,7 +17,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas
 USE_EFL_EVAS_ENGINES=	buffer
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	OPENGL SDL X11

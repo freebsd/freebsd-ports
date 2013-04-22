@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evas
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore libtool_hack
 USE_EFL_ECORE=	input input_evas
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_evas
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -55,11 +54,11 @@ CONFIGURE_ARGS+=	--disable-ecore-evas-opengl-x11
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
-CONFIGURE_ARGS+=	--enable-ecore-evas-software-sdl --enable-ecore-sdl
+CONFIGURE_ARGS+=	--enable-ecore-sdl
 USE_EFL_EVAS_ENGINES+=	sdl
 USE_EFL_ECORE+=	sdl
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-software-sdl --disable-ecore-sdl
+CONFIGURE_ARGS+=	--disable-ecore-sdl
 .endif
 
 .if ${PORT_OPTIONS:MX11}

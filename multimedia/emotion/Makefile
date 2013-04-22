@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emotion
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -16,9 +16,9 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	ecore edje eet eio embryo evas libtool_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	png jpeg
-USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 # emotion's vlc plugin needs updating due to libvlc API changes

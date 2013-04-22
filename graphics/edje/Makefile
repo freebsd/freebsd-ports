@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edje
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -18,11 +18,11 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LUA=	5.1+
+USES=		pathfix shared-mime-info
 USE_EFL=	eet evas ecore embryo libtool_hack librt_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_ECORE=	evas file imf imf_evas
-USE_GNOME=	gnomehack pkgconfig
+USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
@@ -32,8 +32,5 @@ post-patch:
 	    ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|= \$$(datadir)/\$$(PACKAGE)/examples|= $$(datadir)/examples/$$(PACKAGE)|' \
 		${WRKSRC}/src/examples/Makefile.in
-
-post-install:
-	-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>

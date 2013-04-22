@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eet
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
@@ -18,9 +18,10 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_EFL=	eina librt_hack libtool_hack
-USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
+USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" OPENSSL_LIBS="-lssl"
