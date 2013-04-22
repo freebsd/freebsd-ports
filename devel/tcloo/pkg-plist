@@ -1,0 +1,6 @@
+lib/TclOO%%PORTVERSION%%/libTclOO.so.1
+lib/TclOO%%PORTVERSION%%/pkgIndex.tcl
+lib/TclOO%%PORTVERSION%%/tclooConfig.sh
+lib/TclOO%%PORTVERSION%%/libTclOOstub.a
+include/tclOO.h
+include/tclOODecls.h
