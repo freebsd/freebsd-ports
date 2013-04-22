@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mohawk
-# Date created:		2011-04-15
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
 		http://fossil.bsdsx.fr/mohawk/tarball/
@@ -32,11 +28,6 @@ MAN5=	mohawk.conf.5
 MAN8=	mhtpasswd.8 \
 	mohawk.8
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800502
-BROKEN=		does not build
-.endif
-
 CFLAGS+=        -I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib/event2
 
@@ -48,4 +39,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
