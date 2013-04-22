@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsnmp-jails
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-jails/
 
