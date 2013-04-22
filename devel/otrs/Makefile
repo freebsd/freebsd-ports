@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		http://ftp.gwdg.de/pub/misc/otrs/ \
 		http://mirror.xaranet.de/otrs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3
