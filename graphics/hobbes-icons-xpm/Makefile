@@ -16,18 +16,20 @@ NO_BUILD=	yes
 # Where it will be installed (change pkg/PLIST if you change this)
 LIBDIR=		${PREFIX}/include/X11/pixmaps
 
+.include <bsd.port.options.mk>
+
 do-install:
-	@${MKDIR} ${LIBDIR}
+	${MKDIR} ${LIBDIR}
 	${CP} -R ${WRKSRC}/* ${LIBDIR}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${LIBDIR}
 	-${RM} ${LIBDIR}/README
 	-${RM} ${LIBDIR}/readem.shar
 
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
