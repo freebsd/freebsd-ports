@@ -1,15 +1,11 @@
-# New ports collection makefile for:	foswiki-ModPerlEngineContrib
-# Date created:		26 Feb 2011
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ModPerlEngineContrib
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Permits Foswiki to be executed under mod_perl
 
 RUN_DEPENDS=	foswiki>=0:${PORTSDIR}/www/foswiki \

@@ -1,16 +1,12 @@
-# New ports collection makefile for:	jailer
-# Date created:	   27 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	jailer
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/stef/freebsd/jails/jailer/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage FreeBSD jail startup, shutdown and console
 
 GNU_CONFIGURE=	YES

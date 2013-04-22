@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsmonitor
-# Date created:    18 May 2003
-# Whom:		   Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsmonitor
 PORTVERSION=	0.6.3
@@ -12,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Stable
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor activity on a CVS Repository
 
 BUILD_DEPENDS=	p5-Time-Duration>=0:${PORTSDIR}/devel/p5-Time-Duration \

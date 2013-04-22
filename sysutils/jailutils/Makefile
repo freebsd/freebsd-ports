@@ -1,16 +1,12 @@
-# New ports collection makefile for:	jailutils
-# Date created:	   27 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	jailutils
 PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/stef/freebsd/jails/jailutils/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several utilities for managing jails
 
 GNU_CONFIGURE=	YES

@@ -1,16 +1,12 @@
-# New ports collection makefile for:	twiki-MathModePlugin
-# Date created:		17 Jun 2008
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MathModePlugin
 SVNREV=		15934
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Include LaTeX formatted math in your TWiki pages
 
 RUN_DEPENDS=	dvipng:${PORTSDIR}/print/teTeX-base \

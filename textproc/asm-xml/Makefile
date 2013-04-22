@@ -1,16 +1,12 @@
-# New ports collection makefile for:	asm-xml
-# Date created:	   22 February 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	asm-xml
 PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast XML parser and decoder written in pure assembler
 
 BUILD_DEPENDS=	fasm:${PORTSDIR}/lang/fasm

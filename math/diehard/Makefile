@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diehard
-# Date created:	   04 Jule 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	diehard
 PORTVERSION=	0.1
@@ -12,7 +8,7 @@ MASTER_SITES=	http://www.cs.hku.hk/~diehard/cdrom/ \
 		http://stat.fsu.edu/pub/diehard/
 DISTNAME=	die.c
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
 ALL_TARGET=	diehard

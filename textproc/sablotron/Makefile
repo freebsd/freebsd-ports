@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2

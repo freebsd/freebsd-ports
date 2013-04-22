@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		http://ftp.gwdg.de/pub/misc/otrs/ \
 		http://mirror.xaranet.de/otrs/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3

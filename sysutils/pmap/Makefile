@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pmap
-# Date created:		14 Oct 2002
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pmap
 PORTVERSION=	20060622
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils kld
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detailed process memory display
 
 NO_PACKAGE=	Depends on kernel

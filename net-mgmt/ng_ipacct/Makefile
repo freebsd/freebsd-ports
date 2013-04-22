@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ng_ipacct
-# Date created:		30 Nov 2004
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20061223
@@ -11,7 +7,7 @@ CATEGORIES=	net-mgmt kld
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
 .ifndef PACKAGE_BUILDING

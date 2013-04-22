@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liblzxcomp
-# Date created:	   27 Feb 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	liblzxcomp
 PORTVERSION=	20020619
@@ -11,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.speakeasy.org/~russotto/chm/
 DISTNAME=	lzx_compress
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LZX compression library
 
 USE_LDCONFIG=	YES

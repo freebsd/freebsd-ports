@@ -1,16 +1,12 @@
-# New ports collection makefile for:	diffmark
-# Date created:	   05 September 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	diffmark
 PORTVERSION=	0.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mangrove.cz/diffmark/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML diff and merge package
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
