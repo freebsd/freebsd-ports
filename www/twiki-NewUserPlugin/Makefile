@@ -6,7 +6,6 @@ SVNREV=		17515
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create user's topic for externally authenticated users
 
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"

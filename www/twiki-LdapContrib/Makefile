@@ -7,7 +7,6 @@ PORTREVISION=	1
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP services for TWiki
 
 RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap

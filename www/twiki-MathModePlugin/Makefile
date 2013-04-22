@@ -6,7 +6,6 @@ SVNREV=		15934
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Include LaTeX formatted math in your TWiki pages
 
 RUN_DEPENDS=	dvipng:${PORTSDIR}/print/teTeX-base \

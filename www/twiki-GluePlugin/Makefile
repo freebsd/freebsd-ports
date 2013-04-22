@@ -6,7 +6,6 @@ SVNREV=		15708
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow to format tags and arguments on multiple lines
 
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"

@@ -6,7 +6,6 @@ SVNREV=		15560
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Link to Bugzilla bugs using shorthand references
 
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
