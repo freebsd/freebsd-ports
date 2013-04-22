@@ -6,7 +6,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3293/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD
