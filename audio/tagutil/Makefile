@@ -11,7 +11,7 @@ COMMENT=	A tool to manage tags in music files
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	DESTDIR="${PREFIX}"
 
