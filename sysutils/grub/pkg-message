@@ -1,0 +1,9 @@
+#############################################################
+To install GRUB on the master boot record of your hard drive
+use 'grub-install <drive-to-install>' command.
+
+NOTE: Don't forget to run 'sysctl kern.geom.debugflags=16'
+      to enable writing in hard disk system areas.
+
+For details read the GRUB info page using 'info grub'.
+#############################################################
