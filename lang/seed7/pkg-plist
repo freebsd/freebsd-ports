@@ -92,6 +92,7 @@ lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
 lib/seed7/lib/sokoban1.s7i
 lib/seed7/lib/stars.s7i
+lib/seed7/lib/stdfont9.s7i
 lib/seed7/lib/stdfont10.s7i
 lib/seed7/lib/stdfont12.s7i
 lib/seed7/lib/stdfont14.s7i
