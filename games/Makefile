@@ -364,7 +364,6 @@
     SUBDIR += gridlock
     SUBDIR += gru
     SUBDIR += grubik
-    SUBDIR += grubinvaders
     SUBDIR += gshisen
     SUBDIR += gtetrinet
     SUBDIR += gti
