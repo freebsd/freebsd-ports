@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	fb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to Firebird/Interbase library
 
 DEPRECATED=	Does not work with Ruby 1.9

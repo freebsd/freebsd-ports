@@ -1,16 +1,12 @@
-# New ports collection makefile for:	NunniMCAX
-# Date created:	   15 August 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	NunniMCAX
 PORTVERSION=	1.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C, non validating XML parser with SAX-like API
 
 USE_LDCONFIG=	YES

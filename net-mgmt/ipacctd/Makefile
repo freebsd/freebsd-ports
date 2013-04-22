@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipacctd
-# Date created:		22 Aug 2003
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ipacctd
 PORTVERSION=	1.47
@@ -11,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 		${MASTER_SITE_LOCAL:S!$!skv/!}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP accounting using divert socket
 
 USE_RC_SUBR=	ipacctd

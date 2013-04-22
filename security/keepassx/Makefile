@@ -1,9 +1,5 @@
-# New ports collection makefile for:	keepassx
-# Date created:	   18 September 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	KeePassX
 PORTVERSION=	0.4.3
@@ -12,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME:L}/KeePassX/${PORTVERSION}/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Platform Password Manager
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info

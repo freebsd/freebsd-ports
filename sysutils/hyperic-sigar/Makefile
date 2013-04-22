@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hyperic-sigar
-# Date created:	   08 Feb 2010
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hyperic-sigar
 PORTVERSION=	1.6.4
@@ -12,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sigar/sigar/${PORTVERSION:C/\.[0-9]+$//}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIGAR - System Information Gatherer and Reporter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bindings/java/

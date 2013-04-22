@@ -1,16 +1,12 @@
-# New ports collection makefile for:	Judy
-# Date created:	   19 August 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Judy
 PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose dynamic array
 
 GNU_CONFIGURE=	yes

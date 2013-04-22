@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3274/
 PKGNAMEPREFIX=	postgresql-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PL/Proxy is database partitioning system
 
 USE_PGSQL=	yes

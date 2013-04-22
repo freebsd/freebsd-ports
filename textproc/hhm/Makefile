@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hhm
-# Date created:	   27 February 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hhm
 PORTVERSION=	0.1.1
@@ -11,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Help Maker
 
 LIB_DEPENDS=	lzxcomp.1:${PORTSDIR}/archivers/liblzxcomp

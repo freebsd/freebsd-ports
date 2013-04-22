@@ -6,7 +6,7 @@ PORTVERSION=	${SQLRELAY_PORTVERSION}
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments

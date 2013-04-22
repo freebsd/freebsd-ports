@@ -1,9 +1,5 @@
-# New ports collection makefile for:	swfmill
-# Date created:	   09 June 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	swfmill
 PORTVERSION=	0.3.0
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfmill.org/releases/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xml2swf and swf2xml processor with import functionalities
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \

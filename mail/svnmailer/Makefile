@@ -1,9 +1,5 @@
-# New ports collection makefile for:	svnmailer
-# Date created:		2005-08-30
-# Whom:			Andrej Zverev <az@inec.ru>
-#
+# Created by: Andrej Zverev <az@inec.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	svnmailer
 DISTVERSION=	1.1.0-dev-r1373
@@ -12,7 +8,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to post subversion repository commit information
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion

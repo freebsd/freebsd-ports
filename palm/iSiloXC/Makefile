@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	iSiloXC
-# Date created:		17 Aug 2002
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iSiloXC
 PORTVERSION=	4.30
@@ -11,7 +7,7 @@ CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.isilox.com/download/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts documents from text/html files or URLs to iSilo format
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x

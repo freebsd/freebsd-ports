@@ -1,16 +1,12 @@
-# New ports collection makefile for:	libcsv
-# Date created:	   23 Apr 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libcsv
 PORTVERSION=	3.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, simple and fast CSV library
 
 USE_LDCONFIG=	YES

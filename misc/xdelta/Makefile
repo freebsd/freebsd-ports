@@ -1,9 +1,5 @@
-# New ports collection makefile for:		xdelta
-# Date created:					Sun May  4 21:40:06 CDT 1997
-# Whom:						jmacd
-#
+# Created by: jmacd
 # $FreeBSD$
-#
 
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
 USE_AUTOTOOLS=	libtool

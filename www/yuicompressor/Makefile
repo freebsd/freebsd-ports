@@ -6,7 +6,7 @@ PORTVERSION=	2.4.7
 CATEGORIES=	www java
 MASTER_SITES=	http://yui.zenfs.com/releases/yuicompressor/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Yahoo! JavaScript and CSS Compressor
 
 USE_ZIP=	yes

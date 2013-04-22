@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oracle7-client
-# Date created:		3 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	oracle7-client
 PORTVERSION=	0.02
@@ -12,7 +8,7 @@ MASTER_SITES=	ftp://ftp.atnet.ru/pub/OS/FreeBSD/oracle/ \
 		ftp://www.kuzbass.ru/pub/freebsd/oracle/
 DISTNAME=	oracle7.client.OCI
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle 7 client
 
 ONLY_FOR_ARCHS=	i386
