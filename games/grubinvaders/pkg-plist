@@ -1,4 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/invaders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
