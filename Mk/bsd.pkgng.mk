@@ -259,8 +259,14 @@ do-package: ${TMPPLIST}
 		fi; \
 	fi;
 	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
-		if [ -d ${PACKAGES} ]; then \
-			cd ${.CURDIR} && eval ${MAKE} package-links; \
+		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" ]; then \
+			if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+				if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+					${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+					exit 1; \
+				fi; \
+			fi ; \
+			${LN} -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
