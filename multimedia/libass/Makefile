@@ -16,8 +16,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fribidi:${PORTSDIR}/converters/fribidi
 
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_XZ=	yes
 USE_LDCONFIG=	yes
 

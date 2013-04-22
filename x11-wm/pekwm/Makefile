@@ -13,11 +13,11 @@ COMMENT=	Light, Unobtrusive, and configurable windowmanager
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
+USES=		pkgconfig
 USE_XORG=	xft xpm x11
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \
