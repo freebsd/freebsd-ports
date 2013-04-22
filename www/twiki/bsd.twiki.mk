@@ -1,12 +1,7 @@
 # ex:ts=4 sw=4
 #
-# New ports collection makefile for:	twiki infrastructure
-# Date created:		17 April 2008
-# Whom:				Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
-
 #
 # For more info, please go to http://wiki.FreeBSD.org/TWiki
 #
@@ -30,7 +25,7 @@ WWWDIR?=	${PREFIX}/www/twiki
 PLIST_SUB+=	TWDIR="share/twiki/${PNAME}"
 SUB_LIST+=	TWDIR="${TWDIR}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES+=	pkg-install pkg-deinstall
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	c.petrik.sosa@gmail.com
 DIST_SUBDIR?=	twiki
 RUN_DEPENDS+=	${TWDEP:C/([^=<>]*)([=<>]*)(.*)/twiki-\1\20.0.\3:${PORTSDIR}\/www\/twiki-\1/}
 
