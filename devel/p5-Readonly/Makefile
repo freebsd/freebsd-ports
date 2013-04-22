@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Readonly
-# Date created:	   31 August 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Readonly
 PORTVERSION=	1.03
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-XS-${PORTVERSION_XS}${EXTRACT_SUFX}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Facility for creating read-only scalars, arrays, hashes
 
 PERL_CONFIGURE=	yes
