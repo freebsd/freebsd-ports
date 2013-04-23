@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
-USES=		fuse
+USES=		fuse pkgconfig:build
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	gerard
 GH_COMMIT=	33f57f6
