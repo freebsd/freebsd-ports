@@ -2,7 +2,8 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.96
-CATEGORIES=	www
+PORTREVISION=	1
+CATEGORIES=	www devel
 MASTER_SITES=	http://yaws.hyber.org/download/
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/yaws-${PORTVERSION}
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 
-APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
+APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
@@ -34,7 +35,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
-		${WRKSRC}/README
+		${WRKSRC}/README ${WRKSRC}/scripts/gen-yaws
+	@${REINPLACE_CMD} -e 's|!!VERSION!!|${PORTVERSION}|g' \
+		${WRKSRC}/scripts/gen-yaws
 	@${FIND} ${WRKSRC} \( -name \*.orig -or -name \*.bak \) -delete
 
 do-install:
@@ -66,7 +69,6 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${MANPREFIX}/man/man5
 
 post-install:
-	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
