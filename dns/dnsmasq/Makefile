@@ -40,7 +40,7 @@ CFLAGS+=	-DNO_IPV6
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
@@ -56,7 +56,7 @@ LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 CFLAGS+=	-DHAVE_DBUS
 .endif
 
