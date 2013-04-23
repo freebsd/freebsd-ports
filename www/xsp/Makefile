@@ -1,9 +1,5 @@
-# New ports collection makefile for:		xsp
-# Date created:					20040828
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xsp
 PORTVERSION=	2.10.2
@@ -18,10 +14,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_PKGCONFIG=		yes
 USE_SQLITE=	3
 USE_BZIP2=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

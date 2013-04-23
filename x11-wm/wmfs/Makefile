@@ -15,7 +15,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	x11 xft xpm
 HAS_CONFIGURE=	yes
 

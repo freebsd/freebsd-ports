@@ -20,10 +20,10 @@ LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-softhddevie
-# Date created:		Sun Apr 29 17:00:02 CEST 2012
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-softhddevice
 PORTVERSION=	0.5.1
@@ -22,7 +18,7 @@ LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		asound:${PORTSDIR}/audio/alsa-lib
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG+=	xv x11 xinerama
 USE_GL+=	gl glu
 PATCH_STRIP=	-p1

@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm xaw xproto
 USE_GNOME=	atk gconf2 glib20 gnomevfs2 gtk20 libglade2 libidl libxml2 orbit2 pango
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1

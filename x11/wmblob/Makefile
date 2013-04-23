@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmblob
-# Date created:				Thu Feb  6 12:24:23 MSK 2003
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmblob
 PORTVERSION=	1.0.3
@@ -17,7 +13,7 @@ COMMENT=	Showing moving blobs
 USE_XORG=	xpm
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 MAN1=		wmblob.1

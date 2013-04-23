@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Panda
-# Date created:		28 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	panda
 PORTVERSION=	0.5.4
@@ -24,13 +20,12 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_BDB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}

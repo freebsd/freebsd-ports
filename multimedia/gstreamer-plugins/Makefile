@@ -47,7 +47,7 @@ WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	gnomehack ltverhack ltasneededhack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 

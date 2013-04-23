@@ -17,7 +17,7 @@ SOX_DESC=	Install SOX to play audio
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11 xt
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXt -lm

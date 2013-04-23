@@ -16,7 +16,7 @@ LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	NLS
 

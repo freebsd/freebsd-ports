@@ -18,8 +18,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
-USE_PKGCONFIG=	build
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	libglade2 intlhack gnomeprefix
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -23,7 +23,7 @@ USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	DBUS DOCS GVFS NLS NOTIFY STARTUP
 OPTIONS_GROUP=	PLUGINS

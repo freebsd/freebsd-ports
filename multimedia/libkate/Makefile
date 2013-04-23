@@ -16,9 +16,9 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 

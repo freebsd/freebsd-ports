@@ -1,8 +1,5 @@
-# Ports collection makefile for:	sdcv
-# Date created:			2005/07/07
-# Whom:				chinsan <chinsan.tw@gmail.com>
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sdcv
 PORTVERSION=	0.4.2
@@ -18,7 +15,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_NLS)

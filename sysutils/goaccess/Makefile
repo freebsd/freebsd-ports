@@ -1,9 +1,5 @@
-# New ports collection makefile for:	goaccess
-# Date created:		2010-11-17
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	goaccess
 PORTVERSION=	0.5
@@ -22,7 +18,7 @@ LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

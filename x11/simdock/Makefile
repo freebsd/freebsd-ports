@@ -12,10 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and customizable dockbar
 
 GNU_CONFIGURE=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix gconf2 libwnck
 USE_WX=		2.8
-USE_PKGCONFIG=	yes
 WX_CONF_ARGS=	absolute
 
 WRKSRC=		${WRKDIR}/trunk

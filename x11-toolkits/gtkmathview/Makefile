@@ -15,11 +15,10 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		t1:${PORTSDIR}/devel/t1lib \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 MAN1=		mathmlviewer.1

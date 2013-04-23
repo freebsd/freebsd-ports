@@ -15,7 +15,7 @@ RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 .include <bsd.port.pre.mk>
 

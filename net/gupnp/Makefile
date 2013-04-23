@@ -22,10 +22,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 USE_XZ=		yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/tools/gupnp-binding-tool

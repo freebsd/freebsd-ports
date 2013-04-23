@@ -18,12 +18,11 @@ LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 gtk20 pygtk2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
 CPPFLAGS+=	-I${LOCALBASE}/include

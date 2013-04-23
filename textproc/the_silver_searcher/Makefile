@@ -17,7 +17,7 @@ AUTOMAKE_ARGS+=	--add-missing
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/ag
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN1=		ag.1
 

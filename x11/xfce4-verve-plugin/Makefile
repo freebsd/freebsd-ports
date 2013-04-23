@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 intltool intlhack
 USE_XFCE=	configenv panel libexo libgui libutil
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS=	--disable-debug
 

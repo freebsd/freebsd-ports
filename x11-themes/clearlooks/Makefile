@@ -1,10 +1,6 @@
-# New ports collection makefile for:	clearlooks
-# Date created:		2005-02-26
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-themes/clearlooks/Makefile,v 1.8 2007/08/07 04:34:29 mezz Exp $
-#
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
@@ -18,7 +14,7 @@ COMMENT?=	GTK+ 2.x engine based on Bluecurve
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

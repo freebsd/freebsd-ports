@@ -34,12 +34,11 @@ CONFLICTS=	scribus-1.[0-4]*
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
-USE_PKGCONFIG=	yes
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	desktopfileutils libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 MAN1=		scribus.1

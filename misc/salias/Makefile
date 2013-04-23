@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/C%20${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tool to alias arguments of other programs
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 
 MAN1=		salias.1

@@ -44,8 +44,7 @@ GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=	yes
-USES=		cmake
-USE_PKGCONFIG=	build
+USES=		cmake pkgconfig
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xfixes xrender xscrnsaver

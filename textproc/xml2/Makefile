@@ -13,7 +13,7 @@ COMMENT=	Convert between XML and a line-oriented format similar to XPath
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/xml2 \

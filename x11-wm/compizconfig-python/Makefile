@@ -19,8 +19,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	-2.7
-USE_PKGCONFIG=	build
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtool
 

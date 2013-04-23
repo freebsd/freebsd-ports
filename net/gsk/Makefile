@@ -9,9 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-gtk-doc

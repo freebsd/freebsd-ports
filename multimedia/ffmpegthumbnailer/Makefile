@@ -19,7 +19,7 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --enable-gio
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gnomehack _glib20
 USE_LDCONFIG=	yes
 

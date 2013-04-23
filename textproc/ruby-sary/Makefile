@@ -17,7 +17,7 @@ LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 INSTALL_TARGET=	site-install
 

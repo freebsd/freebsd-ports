@@ -29,7 +29,7 @@ MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20 ltverhack referencehack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

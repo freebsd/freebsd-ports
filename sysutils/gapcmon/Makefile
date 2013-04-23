@@ -15,7 +15,7 @@ SUB_FILES=	pkg-message
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gconf2
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README

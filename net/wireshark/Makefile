@@ -76,7 +76,7 @@ WIRESHARK_LIBS+=${PTHREAD_LIBS}
 .else
 PLIST_SUB+=	WIRESHARK="@comment wireshark not built"
 USE_GNOME+=	glib20
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 CONFIGURE_ARGS+=	--enable-wireshark=no \
 			--disable-gtktest
 .endif

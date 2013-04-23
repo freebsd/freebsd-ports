@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 WITH_OPENSSL_HACK7=	yes

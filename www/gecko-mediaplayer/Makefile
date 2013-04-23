@@ -22,7 +22,7 @@ OPTIONS_DEFAULT=CACHE
 CACHE_DESC=	Enable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	glib20
 USE_GECKO=	libxul libxul19
 USE_WEBPLUGINS=	native

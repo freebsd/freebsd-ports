@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 PLIST_FILES=	bin/twf
 

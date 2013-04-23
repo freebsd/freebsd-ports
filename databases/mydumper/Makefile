@@ -19,9 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 FETCH_ARGS?=	-pRr
 PLIST_FILES=	sbin/mydumper sbin/myloader
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 USE_MYSQL=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt

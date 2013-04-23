@@ -18,7 +18,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN1=		${PORTNAME}.1
 

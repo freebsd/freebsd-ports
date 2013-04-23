@@ -17,9 +17,8 @@ LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
 		wpd-0.9:${PORTSDIR}/textproc/libwpd
 
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_XZ=		yes
 
 CONFIGURE_ARGS=	--disable-werror --without-docs

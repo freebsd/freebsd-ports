@@ -20,7 +20,7 @@ PLIST_FILES=	bin/gtkportscan bin/portscan
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 GTK_CONFIG=	pkg-config gtk+-2.0
 .else
 USE_GNOME=	gtk12

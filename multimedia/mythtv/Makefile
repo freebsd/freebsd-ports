@@ -23,8 +23,8 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 CONFLICTS=	mythtv-frontend-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
+USES=		pkgconfig
 USE_BZIP2=	yes
-USE_PKGCONFIG=	yes
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes

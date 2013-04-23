@@ -12,8 +12,7 @@ COMMENT=	Moosefs client tools
 
 DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo
 
-USES=		fuse
-USE_PKGCONFIG=	yes
+USES=		fuse pkgconfig
 
 MAN1=		mfstools.1 mfscheckfile.1 mfsdirinfo.1 mfsfileinfo.1 \
 		mfsfilerepair.1 mfsgetgoal.1 mfsgettrashtime.1 \

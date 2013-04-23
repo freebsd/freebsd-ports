@@ -21,9 +21,8 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 .include <bsd.port.pre.mk>
 

@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem
 
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 

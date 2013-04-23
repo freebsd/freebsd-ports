@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	xpm
 USE_GL=		yes
 USE_GMAKE=	yes

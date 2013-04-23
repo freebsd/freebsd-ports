@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mc
-# Date created:		15 Jul 1995
-# Whom:			torstenb@FreeBSD.org
-#
+# Created by: torstenb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mc
 PORTVERSION=	4.8.1.7
@@ -22,9 +18,9 @@ LICENSE=	GPLv3
 
 CONFLICTS=	mc-light-4*
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	glib20
-USE_PKGCONFIG=	yes
 USE_PERL5=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

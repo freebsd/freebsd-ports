@@ -19,8 +19,7 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		Xrandr:${PORTSDIR}/x11/libXrandr
 
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
-USE_GETTEXT=	yes
+USES=		pkgconfig gettext
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 

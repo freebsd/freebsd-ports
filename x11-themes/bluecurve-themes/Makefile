@@ -43,7 +43,7 @@ MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/7/Fedora/source/SRPMS/
 DISTFILES=	redhat-artwork-${PORTVERSION}-9.fc7.src.rpm
 
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 
 WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
 

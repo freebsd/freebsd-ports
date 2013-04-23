@@ -15,12 +15,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack nautilus2 libgnomeui
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-nautilus-extensions-dir=${PREFIX}/lib/nautilus/extensions-2.0

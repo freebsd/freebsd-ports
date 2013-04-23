@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libxfce4menu
-# Date created:		7 Oktober 2008
-# Whom:			Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.10.0
@@ -23,7 +19,7 @@ USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack desktopfileutils
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 INSTALLS_ICONS=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS=	--disable-gtk-doc-html \
 		--with-vendor-info=FreeBSD

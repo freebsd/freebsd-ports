@@ -11,8 +11,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library, tools, and PAM module for OATH authentication
 
 USE_GMAKE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

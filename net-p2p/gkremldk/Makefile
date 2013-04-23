@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GKrellM MLDonkey plugin
-# Date created:		Sat Mar 25 05:17:51 UTC 2006
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gkremldk
 PORTVERSION=	0.9.8
@@ -22,9 +18,9 @@ BUILD_DEPENDS=	\
 		${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_SAFE=	yes

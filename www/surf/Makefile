@@ -19,7 +19,7 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_CSTD=	c99
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 MAN1=		surf.1
 PORTDOCS=	README

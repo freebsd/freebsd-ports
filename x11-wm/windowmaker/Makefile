@@ -27,8 +27,7 @@ OPTIONS_DEFINE=	NLS XRANDR
 
 USE_GCC=	any
 USE_XORG=	xft xinerama xmu xpm
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \

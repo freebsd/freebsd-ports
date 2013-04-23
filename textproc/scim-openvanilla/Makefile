@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scim-openvanilla
-# Date Created:				3 September 2005
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-openvanilla
 PORTVERSION=	0.7.2.20070514
@@ -26,7 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	OV_MODULEDIR=${PREFIX}/lib/openvanilla/
 CPPFLAGS+=	-I${LOCALBASE}/include

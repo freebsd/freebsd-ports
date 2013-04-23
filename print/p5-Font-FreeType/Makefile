@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Font::FreeType
-# Date created:		12 Aug 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Font-FreeType
 PORTVERSION=	0.03
@@ -17,7 +13,7 @@ COMMENT=	Perl extension to read font files and render glyphs using FreeType2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 PERL_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN3=	Font::FreeType.3 \
 	Font::FreeType::Face.3 \

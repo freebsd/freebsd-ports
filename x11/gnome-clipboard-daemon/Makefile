@@ -13,7 +13,7 @@ COMMENT=	Program that keeps the content of your X clipboard in memory
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gtk20
 MAKE_JOBS_SAFE=	yes
 

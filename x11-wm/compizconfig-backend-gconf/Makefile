@@ -17,10 +17,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 gconf2
 
 post-patch:

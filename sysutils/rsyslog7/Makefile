@@ -34,7 +34,7 @@ SNMP_DESC=	SNMP trap sender for rsyslog
 
 .if ${PORT_OPTIONS:MDBI}
 LIB_DEPENDS+=	dbi.1:${PORTSDIR}/databases/libdbi
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-libdbi
 PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 		lib/rsyslog/omlibdbi.so
@@ -43,7 +43,7 @@ PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 .if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
 		lib/rsyslog/lmnsd_gtls.so
@@ -75,7 +75,7 @@ PLIST_FILES+=	lib/rsyslog/ompgsql.so \
 
 .if ${PORT_OPTIONS:MRELP}
 LIB_DEPENDS+=	relp.0:${PORTSDIR}/devel/librelp
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 CONFIGURE_ARGS+=--enable-relp
 PLIST_FILES+=	lib/rsyslog/imrelp.la \
 		lib/rsyslog/imrelp.so \
@@ -85,7 +85,7 @@ PLIST_FILES+=	lib/rsyslog/imrelp.la \
 
 .if ${PORT_OPTIONS:MRFC3195}
 LIB_DEPENDS+=	logging.0:${PORTSDIR}/devel/liblogging
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.la \
 		lib/rsyslog/im3195.so

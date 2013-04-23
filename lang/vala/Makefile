@@ -12,11 +12,10 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison pathfix
+USES=		bison pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix libxslt
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

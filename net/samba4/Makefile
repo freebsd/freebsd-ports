@@ -74,7 +74,7 @@ USE_GCC=		4.2+
 USE_PYTHON=		yes
 USE_ICONV=		yes
 USE_GETTEXT=		yes
-USE_PKGCONFIG=		build
+USES=			pkgconfig
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig

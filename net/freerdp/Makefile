@@ -11,10 +11,9 @@ COMMENT=	A free implementation of Remote Desktop Protocol
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PKGCONFIG=	build
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	FreeRDP

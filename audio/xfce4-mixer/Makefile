@@ -17,12 +17,12 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils
 USE_XFCE=	configenv libmenu libutil panel xfconf
-USE_PKGCONFIG=	build
 USE_GSTREAMER=	good
 
 MAKE_JOBS_UNSAFE=	yes

@@ -16,10 +16,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	intltool libxml2
 
 CPPFLAGS+=	-I${LOCALBASE}/include

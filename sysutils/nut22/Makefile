@@ -16,7 +16,7 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 NO_LATEST_LINK=	yes
 

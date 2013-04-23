@@ -258,7 +258,7 @@ PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINTERFACE}
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-interface
 LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
 PLIST_SUB+=	INTERFACE=""
@@ -297,7 +297,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIPMI}
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-ipmi
 LIB_DEPENDS+=	OpenIPMI:${PORTSDIR}/sysutils/openipmi
 PLIST_SUB+=	IPMI=""

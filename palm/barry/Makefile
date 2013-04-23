@@ -14,7 +14,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I/usr/include \
 		OPENSSL_LIBS="-L/lib -lssl -lcrypto"

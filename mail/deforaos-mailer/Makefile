@@ -20,7 +20,7 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

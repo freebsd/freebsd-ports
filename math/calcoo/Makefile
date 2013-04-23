@@ -9,8 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	RPN and algebraic scientific calculator
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

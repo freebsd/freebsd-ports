@@ -15,10 +15,9 @@ MAN1=		archivemount.1
 GNU_CONFIGURE=	yes
 
 NO_INSTALL_MANPAGES=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_PKGCONFIG=	yes
 USE_GCC=	4.2+
 
 .include <bsd.port.mk>

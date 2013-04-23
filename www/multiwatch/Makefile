@@ -13,7 +13,7 @@ LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
 GNU_CONFIGURE=	yes
 
 MAN1=		multiwatch.1
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	_glib20
 

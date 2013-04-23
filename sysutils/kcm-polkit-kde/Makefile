@@ -14,10 +14,9 @@ LIB_DEPENDS=	polkit-qt-agent-1:${PORTSDIR}/sysutils/polkit-qt
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:${PORTSDIR}/sysutils/polkit-kde
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USE_PKGCONFIG=	build
 USE_QT4=	dbus xml moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

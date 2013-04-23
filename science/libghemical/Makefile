@@ -17,12 +17,11 @@ LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes
 USE_GETTEXT=	yes
-USE_PKGCONFIG=	build
 
 USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--enable-mpqc

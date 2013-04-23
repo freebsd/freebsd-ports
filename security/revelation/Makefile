@@ -21,11 +21,10 @@ OPTIONS_DEFINE=	APPLET
 APPLET_DESC=	Build with applet
 
 USE_BZIP2=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	desktopfileutils gnomeprefix pygnome2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

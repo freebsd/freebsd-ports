@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-fsguard-plugin
-# Date created:		2003-12-20
-# Whom:			Matt Lancereau <matt@rimasec.net>
-#
+# Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	1.0.1
@@ -22,7 +18,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE= NLS
 

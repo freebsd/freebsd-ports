@@ -1,7 +1,4 @@
-# New ports collection makefile for:	prelude-manager
-# Date created:			Sun Aug 4 19:31:17 CEST 2002
-# Whom:				Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
@@ -22,10 +19,10 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		nettle:${PORTSDIR}/security/nettle \
 		p11-kit:${PORTSDIR}/security/p11-kit
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

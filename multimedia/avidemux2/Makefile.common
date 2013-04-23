@@ -24,9 +24,8 @@ USE_QT4=	# empty
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_PKGCONFIG=	build
 WANT_SDL=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
 MAKE_JOBS_UNSAFE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmime2
-# Date created:				16 Apr 2001
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gmime
 PORTVERSION=	2.4.33
@@ -25,7 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}24
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

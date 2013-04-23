@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.10.0
@@ -16,7 +15,7 @@ LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
 		cairo:${PORTSDIR}/graphics/cairo \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
@@ -26,7 +25,6 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	x11 sm
-USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 		--disable-gtk-doc-html

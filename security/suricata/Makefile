@@ -21,7 +21,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 LIB_DEPENDS+=	net:${PORTSDIR}/net/libnet
 
 USE_AUTOTOOLS=	automake autoconf libtool
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 USE_RC_SUBR=	suricata
 

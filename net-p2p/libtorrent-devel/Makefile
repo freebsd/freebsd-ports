@@ -18,8 +18,7 @@ CONFLICTS=	libtorrent-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -12,14 +12,13 @@ COMMENT=	A Collection of DOM Implementations
 LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 OPTIONS_DEFINE=	OCAML
 

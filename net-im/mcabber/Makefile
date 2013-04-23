@@ -19,11 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sigwinch --libdir=${PREFIX}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		pkgconfig
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-USE_PKGCONFIG=	build
 USE_GNOME=	glib20
 
 MAN1=		mcabber.1

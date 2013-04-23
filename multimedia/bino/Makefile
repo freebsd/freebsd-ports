@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bino
-# Date created:		2012-03-12
-# Whom:			Mykola Dzham <i@levsha.me>
-#
+# Created by: Mykola Dzham <i@levsha.me>
 # $FreeBSD$
-#
 
 PORTNAME=	bino
 PORTVERSION=	1.2.1
@@ -17,10 +13,10 @@ COMMENT=	3D video player with multi-display support
 LICENSE=	GPLv3
 
 FETCH_ARGS=	-Fpr
+USES=		pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 USE_QT4=	moc_build opengl rcc_build
 

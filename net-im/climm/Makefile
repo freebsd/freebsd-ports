@@ -1,9 +1,5 @@
-# New ports collection makefile for:	micq
-# Date created:				11 Oct 1998
-# Whom:					mph
-#
+# Created by: mph
 # $FreeBSD$
-#
 
 PORTNAME=	climm
 PORTVERSION=	0.7.1
@@ -16,8 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	CLI-based Multi-Messenger
 
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -72,7 +68,6 @@ CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
 			--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkgconf gnutls"
-USE_PKGCONFIG=		yes
 LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 			gnutls:${PORTSDIR}/security/gnutls \
 			gcrypt:${PORTSDIR}/security/libgcrypt \

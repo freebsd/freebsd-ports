@@ -22,8 +22,7 @@ BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 CONFLICTS=	amule-devel-[0-9]*
 
 USE_BZIP2=	yes
-USES=		bison
-USE_PKGCONFIG=	yes
+USES=		bison pkgconfig
 USE_GMAKE=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute

@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	unico
 PORTVERSION=	1.0.2
@@ -16,7 +15,7 @@ COMMENT=	Gtk+ 3.0 engine
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	cairo glib20 gtk30
 USE_LDCONFIG=	yes
 

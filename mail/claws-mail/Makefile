@@ -42,7 +42,7 @@ USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	atk glib20 gnomehack gtk20 libartlgpl2 libxml2 pango
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 

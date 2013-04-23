@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.sqlite.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library
 
+USES=		pkgconfig
 USE_GMAKE=	YES
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
-USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 

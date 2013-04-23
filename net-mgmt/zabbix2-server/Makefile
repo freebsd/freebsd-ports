@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zabbix-server
-# Date created:		2009-12-09
-# Whom:			Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zabbix2
 PORTVERSION=	2.0.5
@@ -36,7 +32,7 @@ USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
 .endif
 
 USE_ICONV=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 USERS=		zabbix
 GROUPS=		zabbix

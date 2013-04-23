@@ -1,6 +1,5 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.10.0
@@ -22,7 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 desktopfileutils intltool intlhack
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	inputproto x11 xi
-USE_PKGCONFIG=	build
+USEs=		pkgconfig
 
 CONFIGURE_ARGS=	--enable-pluggable-dialogs \
 		--enable-gio-unix

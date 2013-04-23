@@ -18,7 +18,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 CFLAGS+=	-I${LOCALBASE}/include

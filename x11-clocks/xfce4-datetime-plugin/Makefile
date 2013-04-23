@@ -1,6 +1,5 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-datetime-plugin
 PORTVERSION=	0.6.2
@@ -19,6 +18,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devil's Pie
-# Date created:			08 Jun 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	devilspie
 PORTVERSION=	0.22
@@ -18,7 +14,7 @@ USE_GNOME=	libwnck
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

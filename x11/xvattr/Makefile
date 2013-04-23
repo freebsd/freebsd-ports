@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xvattr
-# Date created:			Jan 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xvattr
 PORTVERSION=	1.3
@@ -21,7 +16,7 @@ GTK1_DESC=	GTK1 support (Default is GTK2)
 
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME}

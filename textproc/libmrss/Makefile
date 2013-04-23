@@ -18,7 +18,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 
 .include <bsd.port.mk>

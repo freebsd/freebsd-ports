@@ -18,7 +18,7 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS=	DEBUG	"Enable Debugging"	off
 

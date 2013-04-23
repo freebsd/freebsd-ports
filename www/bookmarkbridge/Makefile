@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bookmarkbridge
-# Date Created:				January 2004
-# Whom:					Marco Molteni <molter@gufi.org>
-#
+# Created by: Marco Molteni <molter@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bookmarkbridge
 PORTVERSION=	0.76
@@ -21,7 +17,7 @@ USE_XORG=	x11 ice xext
 USE_QT4=	corelib gui moc_build rcc_build uic_build qt3support
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 

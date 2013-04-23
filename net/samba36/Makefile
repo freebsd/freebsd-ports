@@ -32,7 +32,7 @@ AUTOCONF_ARGS=		${IPATHS}
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_PKGCONFIG=		build
+USES=			pkgconfig
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 # pkg-config is used to find talloc

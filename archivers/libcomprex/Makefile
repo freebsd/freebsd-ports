@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libcomprex
-# Date created:			Nov 22, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
@@ -17,13 +12,12 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 
 LICENSE=	LGPL21
 
-USE_PKGCONFIG=	yes
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	NLS
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

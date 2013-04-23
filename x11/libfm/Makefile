@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_FAM=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc

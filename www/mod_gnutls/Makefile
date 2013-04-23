@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_APACHE=	22
 GNU_CONFIGURE=	yes
 

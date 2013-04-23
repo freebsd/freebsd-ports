@@ -23,9 +23,9 @@ RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
-USE_PKGCONFIG=	build
 USE_GCC=	4.2+
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes

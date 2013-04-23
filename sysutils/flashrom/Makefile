@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flashrom
-# Date created:				06 May 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.6.1
@@ -45,7 +41,7 @@ RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
 .if ${PORT_OPTIONS:MFTDI}
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 LIB_DEPENDS+=	ftdi:${PORTSDIR}/devel/libftdi
 .endif
 

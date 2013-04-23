@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ffmpeg cvs
-# Date created:		Sun May  1 20:46:59 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
@@ -24,12 +21,12 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 USE_PERL5_BUILD=	yes
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB CELT DEBUG DIRAC FAAC \
 		FFSERVER FREETYPE FREI0R GSM LAME OPENCV OPENJPEG \

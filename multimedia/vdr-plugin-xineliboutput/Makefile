@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-xineliboutput
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20120511
@@ -25,7 +21,7 @@ LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine \
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG+=	xrandr xrender
 USE_GL=		gl glu glut
 PORTDOCS=	COPYING README HISTORY

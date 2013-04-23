@@ -1,9 +1,5 @@
-# New ports collection makefile for:		lighttpd
-# Date created:					20 May 2004
-# Whom:						k@123.org
-#
+# Created by: k@123.org
 # $FreeBSD$
-#
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.32
@@ -25,7 +21,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 MAKE_JOBS_SAFE=	yes
 
 #.if !defined(_BUILDING_LIGHTTPD_MODULE)

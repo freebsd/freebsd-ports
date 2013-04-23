@@ -16,11 +16,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man

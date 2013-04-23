@@ -1,6 +1,5 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	midori
 PORTVERSION=	0.5.0
@@ -44,7 +43,7 @@ USE_GNOME=	glib20 gtk20 intltool libxml2 desktopfileutils
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 

@@ -19,12 +19,11 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
-USES=        pathfix
+USES=		 pathfix pkgconfig
 USE_GNOME=	libglade2 libgnomeui
 USE_SDL=	sdl
 USE_JAVA=	yes
 USE_GCC=	4.6+
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--enable-gecko-rpath \

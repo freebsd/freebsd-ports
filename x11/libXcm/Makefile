@@ -11,7 +11,7 @@ COMMENT=	X Colour Management Library
 LICENSE=	MIT
 
 XORG_CAT=	lib
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	xfixes xmu
 
 MAN3=		Xcm.3 XcmDDC.3 XcmEdidParse.3 XcmEvents.3 XcolorProfile.3 \

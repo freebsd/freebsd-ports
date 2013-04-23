@@ -1,9 +1,5 @@
-# New ports collection makefile for:	soothsayer
-# Date created:		7 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
@@ -24,7 +20,7 @@ CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_prog_HAVE_DOXYGEN=no
 CONFIGURE_ARGS=	--disable-python-binding
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 MAN1=		soothsayer_demo.1 soothsayer_demo_text.1 \
 		soothsayer_simulator.1 text2ngram.1

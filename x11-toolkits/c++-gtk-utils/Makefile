@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.4+
-USE_PKGCONFIG=	build
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

@@ -28,9 +28,9 @@ EFENCE_DESC=	Electric Fence (require profiling)
 ASS_DESC=	libASS subtitle provider
 HUNSPELL_DESC=	Spell checking via Hunspell
 
+USES=		pkgconfig
 USE_GNOME=	intltool
 USE_WX=		2.8
-USE_PKGCONFIG=	yes
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute

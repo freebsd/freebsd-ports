@@ -20,7 +20,7 @@ USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
-USE_PKGCONFIG=		build
+USES=			pkgconfig
 
 MAKE_JOBS_SAFE=		yes
 

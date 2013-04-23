@@ -15,9 +15,8 @@ COMMENT=	Dictionary/spellchecking framework
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 ltverhack
-USE_PKGCONFIG=	build
 CONFIGURE_ARGS=	--disable-uspell \
 		--disable-voikko
 MAKE_JOBS_SAFE=	yes

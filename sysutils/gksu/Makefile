@@ -14,8 +14,7 @@ LIB_DEPENDS=	gksu2:${PORTSDIR}/sysutils/libgksu \
 		nautilus-extension:${PORTSDIR}/x11-fm/nautilus \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		pathfix pkgconfig
 USE_GNOME=	desktopfileutils gconf2 gnomeprefix gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

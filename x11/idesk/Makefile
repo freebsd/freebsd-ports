@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	SHAPE SN
 SHAPE_DESC=	Support of XShape extension

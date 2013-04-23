@@ -14,9 +14,8 @@ COMMENT=	Mount remote directories over ssh
 KMODDIR?=	${LOCALBASE}/modules
 
 GNU_CONFIGURE=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 
 MAN1=	sshfs.1
 
