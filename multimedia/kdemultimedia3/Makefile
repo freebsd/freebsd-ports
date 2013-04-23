@@ -38,8 +38,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
-BROKEN=		plist error
-
 MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" --disable-xinetest

@@ -414,9 +414,6 @@ lib/mcop/VoiceRemoval.mcopclass
 %%AKODE%%lib/mcop/akodeMPCPlayObject.mcopclass
 %%AKODE%%lib/mcop/akodeMPEGPlayObject.mcopclass
 %%AKODE%%lib/mcop/akodePlayObject.mcopclass
-%%AKODE%%lib/mcop/akodeSpeexStreamPlayObject.mcopclass
-%%AKODE%%lib/mcop/akodeVorbisStreamPlayObject.mcopclass
-%%AKODE%%lib/mcop/akodeXiphPlayObject.mcopclass
 %%AKODE%%lib/mcop/akodearts.mcopclass
 %%AKODE%%lib/mcop/akodearts.mcoptype
 lib/mcop/artsbuilder.mcopclass
