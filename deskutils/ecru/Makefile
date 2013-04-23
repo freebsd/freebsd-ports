@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecru
-# Date created:				2008-12-13
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ecru
 PORTVERSION=	0.1.0
@@ -18,11 +14,11 @@ LIB_DEPENDS=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c \
 		config++.10:${PORTSDIR}/devel/libconfig \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
+USES=			pkgconfig
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=		yes
 MANCOMPRESSED=		yes
 USE_LDCONFIG=		yes
-USE_PKGCONFIG=		build
 
 MAN1=	ecru-config.1 ecru-delete.1 ecru-edit.1 \
 	ecru-info.1 ecru-list.1 ecru-post.1

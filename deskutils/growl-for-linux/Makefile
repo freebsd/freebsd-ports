@@ -23,6 +23,8 @@ OPTIONS_DEFINE=	LIBNOTIFY
 OPTIONS_DEFAULT=	LIBNOTIFY
 LIBNOTIFY_DESC=	Use notify-osd for libnotify display plugin
 
+USES=		pkgconfig
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}
@@ -37,7 +39,6 @@ USE_GITHUB=	yes
 USE_GNOME=	desktopfileutils gtk20
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	build
 USE_SQLITE=	3
 
 WITH_OPENSSL_PORT=	yes

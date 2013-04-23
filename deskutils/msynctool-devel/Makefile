@@ -16,8 +16,7 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 CONFLICTS=	msynctool-0.2*
 
 USE_BZIP2=	yes
-USES=		cmake:outsource
-USE_PKGCONFIG=	build
+USES=		cmake:outsource pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME}
 
