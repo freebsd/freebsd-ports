@@ -456,7 +456,7 @@ CONFIGURE_ARGS+=	--enable-ecap
 LIB_DEPENDS+=	ecap:${PORTSDIR}/www/libecap
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		pkgc
+USES+=		pkgconfig
 .else
 CONFIGURE_ARGS+=	--disable-ecap
 .endif
