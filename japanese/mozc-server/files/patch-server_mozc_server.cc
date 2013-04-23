@@ -1,15 +1,15 @@
---- server/mozc_server.cc.orig	2012-09-07 10:21:29.170020927 +0900
-+++ server/mozc_server.cc	2012-09-07 10:30:28.034021395 +0900
+--- server/mozc_server.cc.orig	2013-04-21 03:48:44.841269792 +0900
++++ server/mozc_server.cc	2013-04-21 04:14:37.821269328 +0900
 @@ -32,6 +32,9 @@
- #ifdef OS_WINDOWS
+ #ifdef OS_WIN
  #include <windows.h>
  #endif
 +#ifdef __FreeBSD__
 +#include <signal.h>
 +#endif
  
- #include "base/base.h"
- #include "base/crash_report_util.h"
+ #include <cstddef>
+ #include <string>
 @@ -51,6 +54,23 @@
  mozc::SessionServer *g_session_server = NULL;
  }
@@ -44,6 +44,6 @@
 +    ::signal(SIGTERM, sig_func);
 +#endif
 +
- #if defined(OS_WINDOWS)
+ #if defined(OS_WIN)
      // On Windows, ShutdownSessionCallback is not called intentionally in order
      // to avoid crashes oritinates from it. See b/2696087.

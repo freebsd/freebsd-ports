@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mozc
-PORTVERSION=	1.6.1187.102
-PORTREVISION=	3
+PORTVERSION=	1.10.1390.102
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -16,10 +16,7 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT?=	Mozc server for IBus and others
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gtest.0:${PORTSDIR}/devel/googletest \
-		protobuf:${PORTSDIR}/devel/protobuf \
-		zinnia.0:${PORTSDIR}/japanese/zinnia
+LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
@@ -29,22 +26,16 @@ USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_PKGCONFIG=	build
 
-BROKEN=	fails to build
-
 MAKE_JOBS_SAFE=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 
-.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
-USE_GNOME+=	glib20 gtk20
-.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USE_QT4+=	gui dbus qmake_build moc_build uic_build rcc_build
-.elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-USE_GNOME+=	glib20 gtk20 pygtk2
-.elif ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-USE_GNOME+=	glib20 gtk20
-.elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-USE_EMACS=	yes
+GYP_OPTIONS=	
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || \
+    ${BUILD_MOZC_LIST:Mibus_mozc}   == "ibus_mozc"   || \
+    ${BUILD_MOZC_LIST:Mfcitx_mozc}  == "fcitx_mozc"  || \
+    ${BUILD_MOZC_LIST:Mmozc_el}     == "mozc_el"
+GYP_OPTIONS=	--noqt
 .endif
 
 .include <bsd.port.pre.mk>
@@ -55,12 +46,6 @@ BROKEN=		Does not compile on FreeBSD 7.X
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile: segfault
-.endif
-
-.if defined(WITH_DEBUG_CODE)
-BUILD_MODE=	Debug
-.else
-BUILD_MODE=	Release
 .endif
 
 LOCALBASE_REPLACE_FILES=	\
@@ -80,13 +65,11 @@ SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}:S/\\/\\\\/g:S/"/\"/g:S/\$/\\$/g:S/,/\,
 .endfor
 LOCALBASE_PTN=	${LOCALBASE:S/\\/\\\\/g:S/"/\"/g:S/\$/\\$/g:S/,/\,/g}
 
-GYP_DEFINES="use_libprotobuf=1"
-
+BUILD_MODE=	Release 
 BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \
-		GYP_DEFINES=${GYP_DEFINES} \
 		${PYTHON_CMD} build_mozc.py
 BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
 
@@ -96,6 +79,8 @@ post-patch:
 		${LOCALBASE_REPLACE_FILES}
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} ${SSL_REINPLACE_STR} base/base.gyp
+	${MKDIR} -p ${WRKSRC}/mozc_build_tools/linux
+	${LN} -sf ${LOCALBASE}/bin/protoc ${WRKSRC}/mozc_build_tools/linux/ 
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
@@ -111,12 +96,16 @@ pre-build:
 	${BUILD_GYP_CMD} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_INSTALL_TARGET} --prefix=${WRKSRC}/third_party/gyp/local
-	${BUILD_MOZC_CMD} gyp --gypdir=${WRKSRC}/third_party/gyp/local/bin \
-		--server_dir="${PREFIX}/bin" --channel_dev=0
+	${BUILD_MOZC_CMD} gyp \
+			--gypdir=${WRKSRC}/third_party/gyp/local/bin \
+			--server_dir="${PREFIX}/bin" --channel_dev=0 \
+			${GYP_OPTIONS}
 	${BUILD_MOZC_CMD} build_tools -c ${BUILD_MODE}
 
 # mozc_server
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+BUILD_DEPENDS+=	glib:${PORTSDIR}/devel/glib20 \
+		gtk:${PORTSDIR}/x11-toolkits/gtk20
 PLIST_FILES+=	bin/mozc_server
 
 do-build-mozc_server:
@@ -131,6 +120,9 @@ do-install-mozc_server:
 
 # mozc_tool
 .if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+LIB_DEPENDS+=	zinnia.0:${PORTSDIR}/japanese/zinnia
+BUILD_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
+USE_QT4+=	corelib gui
 RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
 
 PLIST_FILES+=	bin/mozc_tool \
@@ -158,7 +150,8 @@ do-install-mozc_tool:
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 LIB_DEPENDS+=	ibus-1.0.401:${PORTSDIR}/textproc/ibus \
-		xcb-xfixes.0:${PORTSDIR}/x11/libxcb
+		xcb-xfixes.0:${PORTSDIR}/x11/libxcb \
+		zinnia.0:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
@@ -204,10 +197,12 @@ do-install-ibus_mozc:
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 PATCH_SITES=	http://fcitx.googlecode.com/files/
-PATCHFILES=	fcitx-mozc-${PORTVERSION}.1.patch
+PATCHFILES=	fcitx-mozc-${PORTVERSION}.2.patch
 PATCH_DIST_STRIP=-p2
 
-LIB_DEPENDS+=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
+LIB_DEPENDS+=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
+		zinnia.0:${PORTSDIR}/japanese/zinnia
+BUILD_DEPENDS+=	glib:${PORTSDIR}/devel/glib20
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
@@ -267,7 +262,11 @@ do-install-fcitx_mozc:
 
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
+USE_EMACS=	yes
 CATEGORIES+=	editors elisp
+LIB_DEPENDS+=	zinnia.0:${PORTSDIR}/japanese/zinnia
+BUILD_DEPENDS+=	glib:${PORTSDIR}/devel/glib20 \
+		gtk:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
 

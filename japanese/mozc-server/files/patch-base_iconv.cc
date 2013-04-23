@@ -1,5 +1,5 @@
---- base/iconv.cc.orig	2012-09-07 10:21:29.102021368 +0900
-+++ base/iconv.cc	2012-09-07 10:38:00.914022679 +0900
+--- base/iconv.cc.orig	2013-04-21 03:48:45.174270168 +0900
++++ base/iconv.cc	2013-04-21 04:16:39.946269033 +0900
 @@ -53,7 +53,11 @@
    size_t olen_org = olen;
    iconv(ic, 0, &ilen, 0, &olen);  // reset iconv state
