@@ -6,7 +6,7 @@ PORTVERSION=	0.9.3.20121019
 CATEGORIES=	dns net perl5
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FPDNS - Fingerprinting DNS servers
 
 RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS
