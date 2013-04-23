@@ -32,7 +32,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
 		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER \
-		STATIC_LINK
+		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -246,7 +246,7 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/)
 .endif
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc

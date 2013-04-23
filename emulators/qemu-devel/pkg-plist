@@ -114,3 +114,4 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/keymaps/tr
 @dirrm %%DATADIR%%/keymaps
 @dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%

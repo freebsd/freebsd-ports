@@ -66,12 +66,11 @@ USE_GL=		gl glu
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_PERL5_BUILD=	yes
-USE_PKGCONFIG=	build
 USE_PYTHON=	yes
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
 USE_XZ=		yes
-USES=		bison
+USES=		bison pkgconfig
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}

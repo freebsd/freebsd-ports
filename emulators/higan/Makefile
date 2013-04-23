@@ -10,10 +10,10 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}-source
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
+USES=		pkgconfig
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GCC=	4.6+
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -21,8 +21,8 @@ GH_ACCOUNT=	yetanothergeek
 GH_TAGNAME=	FXITE-0_91
 GH_COMMIT=	c2ecac3
 
+USES=		pkgconfig
 USE_LUA=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	aclocal autoconf automake
 ACLOCAL_ARGS=	--force -I m4
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
