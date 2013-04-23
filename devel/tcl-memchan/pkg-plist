@@ -1,4 +1,9 @@
-%%DIR%%/pkgIndex.tcl
-%%DIR%%/%%SHLIB_NAME%%
-%%DIR%%/%%SHLIB_LINK%%
-@dirrm %%DIR%%
+lib/Memchan%%PORTVERSION%%/libMemchan.so.1
+lib/Memchan%%PORTVERSION%%/libMemchanstub.a
+lib/Memchan%%PORTVERSION%%/pkgIndex.tcl
+include/memchan.h
+include/memchanDecls.h
+include/buf.h
+include/bufDecls.h
+include/bufIntDecls.h
+@dirrm lib/Memchan%%PORTVERSION%%
