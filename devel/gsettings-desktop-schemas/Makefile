@@ -15,12 +15,12 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack intltool glib20
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jclassinfo
-# Date created:			May 5, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1
@@ -15,11 +10,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies, and more
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 MAN1=	jclassinfo.1
 

@@ -15,9 +15,8 @@ LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_EFL=	eina eet ecore libtool_hack
-USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

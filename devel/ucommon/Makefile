@@ -12,9 +12,8 @@ COMMENT=	Very lightweight C++ design pattern library
 
 LICENSE=	LGPL3
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/bin/${PORTNAME}
 

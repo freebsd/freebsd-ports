@@ -20,7 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_GNOME=	gnomehack glib20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 GLIB_API_VERSION=	0.4

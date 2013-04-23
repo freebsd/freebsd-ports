@@ -14,8 +14,8 @@ COMMENT=	DeforaOS core system library
 
 LICENSE=	GPLv3
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 post-patch:

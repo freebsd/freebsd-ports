@@ -21,7 +21,7 @@ HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
-USE_PKGCONFIG=		build
+USES=			pkgconfig
 
 MAKE_JOBS_SAFE=		yes
 

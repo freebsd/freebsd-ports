@@ -13,9 +13,9 @@ FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
 
+USES=		pkgconfig
 USE_CABAL=	gtk2hs-buildtools
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

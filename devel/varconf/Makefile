@@ -13,8 +13,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

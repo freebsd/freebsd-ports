@@ -18,9 +18,8 @@ LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip \
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost-system=boost_system

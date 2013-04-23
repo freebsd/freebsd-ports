@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-dev-tools
-# Date created:		19 April 2006
-# Whom:			Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-dev-tools
 PORTVERSION=	4.10.0
@@ -20,6 +16,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 .include <bsd.port.mk>

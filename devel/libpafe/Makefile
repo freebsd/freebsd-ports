@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libpafe
-# Date created:				21 February 2010
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libpafe
@@ -18,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 PLIST_FILES=	bin/felica_dump bin/pasori_test \
 		include/libpafe/felica_command.h \

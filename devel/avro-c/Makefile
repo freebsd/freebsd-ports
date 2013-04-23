@@ -12,9 +12,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Data serialization system for ANSI C
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c
 

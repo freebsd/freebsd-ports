@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bufferpool
-# Date created:        7 November 2007
-# Whom:                Emmanuel Richiardone (err@tollari.org)
-#
+# Created by: Emmanuel Richiardone (err@tollari.org)
 # $FreeBSD$
-#
 
 PORTNAME=	bufferpool
 PORTVERSION=	0.0.4
@@ -17,7 +13,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 
 .include <bsd.port.mk>

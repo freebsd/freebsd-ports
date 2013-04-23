@@ -17,8 +17,8 @@ LIB_DEPENDS=	pciaccess:${PORTSDIR}/devel/libpciaccess
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-libxml2
+USES=		pkgconfig
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 gnomehack

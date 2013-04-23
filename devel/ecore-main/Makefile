@@ -17,10 +17,9 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_EFL=	eina libtool_hack
 USE_ICONV=	yes
-USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ecore

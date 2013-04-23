@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt3 compatibility library
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_QT4=	qmake_build moc_build corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rvm
-# Date created:				Thu Apr  6 21:30:52 EDT 2000
-# Whom:					jaharkes
-#
+# Created by: jaharkes
 # $FreeBSD$
-#
 
 PORTNAME=	rvm
 PORTVERSION=	1.17
@@ -18,10 +14,10 @@ COMMENT=	A persistent VM library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

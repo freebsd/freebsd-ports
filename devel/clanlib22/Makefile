@@ -26,10 +26,9 @@ LATEST_LINK=	${PORTNAME}22
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		yes
-USE_PKGCONFIG=	yes
 USE_SQLITE=	yes
 MAKE_JOBS_SAFE=	yes
 

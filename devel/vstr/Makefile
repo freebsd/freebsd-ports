@@ -1,9 +1,5 @@
-# Ports collection makefile for:	vstr
-# Date created:		11 February 2004
-# Whom:			Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-#
+# Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
 # $FreeBSD$
-#
 
 PORTNAME=	vstr
 PORTVERSION=	1.0.15
@@ -21,9 +17,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_CSTD=	gnu89
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3
 

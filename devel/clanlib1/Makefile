@@ -24,11 +24,10 @@ LATEST_LINK=	${PORTNAME}1
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_XORG=	x11 xi
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
-USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15

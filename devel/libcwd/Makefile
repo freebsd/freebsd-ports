@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libcwd
-# Date created:			Nov 10, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libcwd
 PORTVERSION=	1.0.4
@@ -14,9 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \
 		--disable-pch

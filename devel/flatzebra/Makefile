@@ -12,9 +12,9 @@ COMMENT=	A generic game engine for 2D double-buffering animation
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl mixer image
-USE_PKGCONFIG=	build
 
 USE_LDCONFIG=	yes
 

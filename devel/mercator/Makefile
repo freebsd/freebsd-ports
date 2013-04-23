@@ -11,8 +11,7 @@ COMMENT=	A procedural terrain library
 
 LIB_DEPENDS=	wfmath-1.0.1:${PORTSDIR}/math/wfmath
 
-USES=	pathfix
-USE_PKGCONFIG=	yes
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
