@@ -940,6 +940,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # WITH_CCACHE_BUILD
 # 				- Enable CCACHE support (devel/ccache).  User settable.
+# CCACHE_DIR
+# 				- Which directory to use for ccache (default: $HOME/.ccache)
 # NO_CCACHE
 #				- Disable CCACHE support for example for certain ports if
 #				  CCACHE is enabled.  User settable.
@@ -2245,7 +2247,12 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
 .	endif
 
 # Prepend the ccache dir into the PATH and setup ccache env
-MAKE_ENV+=	PATH=${LOCALBASE}/libexec/ccache:${PATH}
+MAKE_ENV+=		PATH=${LOCALBASE}/libexec/ccache:${PATH}
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/libexec/ccache:${PATH}
+.	if defined(CCACHE_DIR)
+MAKE_ENV+=		CCACHE_DIR="${CCACHE_DIR}"
+CONFIGURE_ENV+=	CCACHE_DIR="${CCACHE_DIR}"
+.	endif
 .endif
 
 PTHREAD_CFLAGS?=

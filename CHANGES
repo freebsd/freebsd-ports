@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130422:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * The entry for 20120830 to change CCACHE_DIR was not fully supported
+    by all ports. There is now a CCACHE_DIR variable that can be used
+    in /etc/make.conf for more complete coverage:
+
+    CCACHE_DIR=/var/cache/ccache
+
 20130323:
 AUTHOR: bapt@FreeBSD.org
 
