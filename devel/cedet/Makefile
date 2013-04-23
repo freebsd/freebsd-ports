@@ -1,13 +1,9 @@
-# New ports collection makefile for:   cedet
-# Date created:                2004-02-28
-# Whom:                        Dryice Liu
-#
+# Created by: Dryice Liu
 # $FreeBSD$
-#
 
 PORTNAME=	cedet
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -21,14 +17,14 @@ USE_GMAKE=		yes
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-INFO=		bovine cogre ede-cedet eieio-cedet grammar-fw semantic-cedet \
-		semantic-appdev semantic-langdev semantic-user \
-		wisent speedbar-cedet srecode
+INFO=		bovine-cedet cogre ede-cedet eieio-cedet grammar-fw \
+		semantic-cedet semantic-appdev semantic-langdev semantic-user \
+		wisent-cedet speedbar-cedet srecode-cedet
 
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
-SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
+SEMANTIC_INFOS=	bovine-cedet.info grammar-fw.info semantic-appdev.info \
 		semantic-langdev.info semantic-user.info semantic-cedet.info \
-		wisent.info
+		wisent-cedet.info
 
 CONFLICTS=	eieio-[0-9]* semantic-[0-9]* speedbar-[0-9]*
 
@@ -112,7 +108,7 @@ do-install:
 .for i in *.srt
 	${INSTALL_DATA} ${WRKSRC}/srecode/templates/${i} ${CEDET_LISPDIR}/srecode/templates
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/srecode/srecode.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/srecode/srecode-cedet.info ${PREFIX}/info
 
 #contrib
 	${MKDIR} ${CEDET_LISPDIR}/contrib
