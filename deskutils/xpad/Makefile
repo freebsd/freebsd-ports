@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 gnomehier intltool
-USE_PKGCONFIG=	build
+USES=	pkgconfig
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 
