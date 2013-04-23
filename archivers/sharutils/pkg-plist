@@ -6,6 +6,7 @@ bin/gunshar
 %%NLS%%share/locale/da/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/el/LC_MESSAGES/sharutils.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/et/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sharutils.mo
