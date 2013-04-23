@@ -18,7 +18,7 @@ LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
 		pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig:build
 USE_SDL=	sdl image
 
 CFLAGS+=	-L/usr/local/lib -I/usr/local/include

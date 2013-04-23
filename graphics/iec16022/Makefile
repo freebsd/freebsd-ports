@@ -1,9 +1,5 @@
-# New ports collection makefile for:    iec16022
-# Date created:                         Thu Jul  3 14:13:08 CEST 2008
-# Whom:                                 Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iec16022
 PORTVERSION=	0.2.4
@@ -20,7 +16,7 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig:build
 
 MAKE_JOBS_SAFE=	yes
 
