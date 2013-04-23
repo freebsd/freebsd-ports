@@ -19,9 +19,9 @@ LUA_COMPS=	lua
 
 CONFLICTS=	powerdns-devel-[2-3].[0-9]*
 
+USES=		pkgconfig
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
