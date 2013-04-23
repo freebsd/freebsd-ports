@@ -1,30 +1,28 @@
-# New ports collection Makefile for:	yajl-tcl
-# Date created:				17 July 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	yajl-tcl
 PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://cloud.github.com/downloads/flightaware/yajl-tcl/
 
-MAINTAIER=	gahr@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl bindings for Yet Another JSON Library
 
 LICENSE=	BSD
 
-USE_TCL=	yes
+LIB_DEPENDS=	yajl:${PORTSDIR}/devel/yajl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	flightaware
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_TCL=	85+
 USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR}
 
 PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
 		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
 PLIST_DIRS=	lib/yajltcl${PORTVERSION}
-
-LIB_DEPENDS=	yajl:${PORTSDIR}/devel/yajl
 
 .include <bsd.port.mk>
