@@ -28,6 +28,7 @@ include/tbb/aggregator.h
 include/tbb/task_arena.h
 include/tbb/machine/icc_generic.h
 include/tbb/machine/mic_common.h
+include/tbb/machine/gcc_armv7.h
 include/tbb/machine/gcc_ia32_common.h
 include/tbb/machine/msvc_ia32_common.h
 include/tbb/machine/gcc_generic.h
