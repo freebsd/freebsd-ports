@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	xmlrpc-${PORTVERSION}
@@ -15,12 +15,18 @@ COMMENT=	A library for XMLRPC support in Erlang
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+PLIST_SUB=      VERSION="${PORTVERSION}"
+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
 MAN3=		erlang_xmlrpc.3
 
-XMLRPC_DOCS=	xmlrpc.pdf xmlrpc.ps xmlrpc.txt
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|XMERL_PATH=.*|XMERL_PATH=${LOCALBASE}/lib/erlang/lib/xmerl|g' ${WRKSRC}/src/Makefile
@@ -30,16 +36,21 @@ do-build:
 	@cd ${WRKSRC}/src && ${GMAKE}
 
 do-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@for FILE in ${XMLRPC_DOCS}; do \
+	@for FILE in xmlrpc.pdf xmlrpc.ps xmlrpc.txt; do \
 		${INSTALL_DATA} ${WRKSRC}/doc/$${FILE} ${DOCSDIR}; \
 	done
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmlrpc
-	@${CP} -r ${WRKSRC}/ebin ${PREFIX}/lib/erlang/lib/xmlrpc
-	@${CP} -r ${WRKSRC}/src ${PREFIX}/lib/erlang/lib/xmlrpc
+.endif
+	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}
+	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}/ebin
+	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}/src
+	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}/ebin
+	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}/src
 	@${INSTALL_MAN} ${WRKSRC}/doc/xmlrpc.3 ${MANPREFIX}/man/man3/erlang_xmlrpc.3
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang/lib/xmlrpc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

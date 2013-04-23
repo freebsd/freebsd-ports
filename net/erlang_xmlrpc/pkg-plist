@@ -1,37 +1,33 @@
-lib/erlang/lib/xmlrpc/ebin/tcp_serv.beam
-lib/erlang/lib/xmlrpc/ebin/xmlrpc.beam
-lib/erlang/lib/xmlrpc/ebin/xmlrpc_decode.beam
-lib/erlang/lib/xmlrpc/ebin/xmlrpc_encode.beam
-lib/erlang/lib/xmlrpc/ebin/xmlrpc_http.beam
-lib/erlang/lib/xmlrpc/ebin/xmlrpc_util.beam
-lib/erlang/lib/xmlrpc/src/Makefile
-lib/erlang/lib/xmlrpc/src/example_serv.erl
-lib/erlang/lib/xmlrpc/src/log.hrl
-lib/erlang/lib/xmlrpc/src/tcp_serv.erl
-lib/erlang/lib/xmlrpc/src/xmlrpc.erl
-lib/erlang/lib/xmlrpc/src/xmlrpc.hrl
-lib/erlang/lib/xmlrpc/src/xmlrpc_decode.erl
-lib/erlang/lib/xmlrpc/src/xmlrpc_encode.erl
-lib/erlang/lib/xmlrpc/src/xmlrpc_http.erl
-lib/erlang/lib/xmlrpc/src/xmlrpc_util.erl
-%%DOCSDIR%%/xmlrpc.pdf
-%%DOCSDIR%%/xmlrpc.ps
-%%DOCSDIR%%/xmlrpc.txt
-%%EXAMPLESDIR%%/BankClient.java
-%%EXAMPLESDIR%%/DateClient.java
-%%EXAMPLESDIR%%/EchoClient.java
-%%EXAMPLESDIR%%/FibClient.java
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/date_server.erl
-%%EXAMPLESDIR%%/echo_server.erl
-%%EXAMPLESDIR%%/fib_server.erl
-%%EXAMPLESDIR%%/robust_bank_client.erl
-%%EXAMPLESDIR%%/robust_bank_server.erl
-%%EXAMPLESDIR%%/robust_banking.txt
-%%EXAMPLESDIR%%/validator.erl
-@dirrm lib/erlang/lib/xmlrpc/src
-@dirrm lib/erlang/lib/xmlrpc/ebin
-@dirrm lib/erlang/lib/xmlrpc/
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/tcp_serv.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/xmlrpc.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/xmlrpc_decode.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/xmlrpc_encode.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/xmlrpc_http.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/ebin/xmlrpc_util.beam
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/Makefile
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/example_serv.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/log.hrl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/tcp_serv.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc.hrl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_decode.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_encode.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_http.erl
+%%LIB32DIR%%/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_util.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BankClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DateClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EchoClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FibClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_server.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo_server.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fib_server.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robust_bank_client.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robust_bank_server.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robust_banking.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validator.erl
+@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%/src
+@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
