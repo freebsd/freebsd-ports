@@ -1,5 +1,5 @@
-*** rmsg.h.orig	Mon Oct  9 13:17:57 1995
---- rmsg.h	Mon Oct  9 13:31:18 1995
+*** rmsg.h	Sat Jun 26 17:05:59 1993
+--- rmsg.h	Tue Apr 23 17:18:46 2013
 ***************
 *** 11,16 ****
 --- 11,20 ----
@@ -14,8 +14,20 @@
   # define index strchr
   # define rindex strrchr
 ***************
-*** 46,54 ****
---- 50,67 ----
+*** 46,57 ****
+  #define PATHLEN 1024
+  #define LINELEN 1024
+  
+  #define UTMP "/etc/utmp"
+  #define UTMP_TTY_SIZE 8
+  #define UTMP_NAME_SIZE 8
+  
+  struct command {
+!      char *token;               /* Command name, e.g. msglast */
+       int (*function)();         /* Function which it is supposed to run */
+  };
+  
+--- 50,70 ----
   #define PATHLEN 1024
   #define LINELEN 1024
   
@@ -33,4 +45,7 @@
 + #endif
   
   struct command {
-       char *token;               /* Command name, e.g. msglast */
+!      const char *token;         /* Command name, e.g. msglast */
+       int (*function)();         /* Function which it is supposed to run */
+  };
+  

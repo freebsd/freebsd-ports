@@ -1,8 +1,44 @@
-*** parser.c.orig	Sat Jun 26 23:04:41 1993
---- parser.c	Mon Oct  9 14:20:54 1995
+*** parser.c	Sat Jun 26 17:04:41 1993
+--- parser.c	Tue Apr 23 17:26:30 2013
+***************
+*** 11,22 ****
+   * Last modified: Sat Aug 20 18:47:54 1988
+   */
+  
+  #include <stdio.h>
+! #if defined(SVR4)
+! # include <string.h>
+! #else
+! # include <strings.h>
+! #endif /* SVR4 */
+  #include <pwd.h>
+  #include <ctype.h>
+  #include <sys/types.h>
+--- 11,19 ----
+   * Last modified: Sat Aug 20 18:47:54 1988
+   */
+  
++ #include <stdlib.h>
+  #include <stdio.h>
+! #include <string.h>
+  #include <pwd.h>
+  #include <ctype.h>
+  #include <sys/types.h>
+***************
+*** 71,79 ****
+  
+  /* end of config params */
+  
+- struct passwd *getpwnam();
+- char *malloc();
+- 
+  extern char *progname;
+  extern int debug;
+  
+--- 68,73 ----
 ***************
 *** 89,94 ****
---- 89,95 ----
+--- 83,89 ----
   char *user;
   {
        struct passwd *pwd;
@@ -25,7 +61,7 @@
        }
   
        (void) strcpy (home, pwd->pw_dir);
---- 108,125 ----
+--- 102,119 ----
        a->next = 0;
        cur_ali = aliases = a;
   

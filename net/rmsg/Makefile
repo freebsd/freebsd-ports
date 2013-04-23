@@ -17,10 +17,4 @@ WRKSRC=		${WRKDIR}/rmsg
 MAN1=		rmsg.1
 MAN8=		rmsgd.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
