@@ -7,10 +7,7 @@
     SUBDIR += adsuck
     SUBDIR += ares
     SUBDIR += autotrust
-    SUBDIR += bind-tools
     SUBDIR += bind96
-    SUBDIR += bind97
-    SUBDIR += bind97-sdb
     SUBDIR += bind98
     SUBDIR += bind99
     SUBDIR += bindgraph
