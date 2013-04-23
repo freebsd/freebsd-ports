@@ -7,8 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:${PORTSDIR}/devel/py-qt4-qscintilla2
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
@@ -16,7 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/PyQt4/QtHelp.so:${PORTSDIR}/devel/py-qt4-help \
 		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-USE_GNOME=	desktopfileutils
+USES=		desktop-file-utils shared-mime-info
 INSTALL_CMD=	install.py -c -f eric4config.freebsd
 PLIST_FILES=
 SUB_FILES=	eric4.desktop
@@ -34,7 +33,5 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${PREFIX}/share/applications/
 	${LN} ${PYTHON_SITELIBDIR}/eric4/icons/default/eric.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/i18n
-	-update-desktop-database
-	-update-mime-database ${PREFIX}/share/mime
 
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"
