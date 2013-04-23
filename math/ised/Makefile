@@ -15,9 +15,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	4.6+
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		${PORTNAME}.1
-.endif
 
 PLIST_FILES=		bin/${PORTNAME}
 
@@ -25,8 +23,6 @@ MAKE_JOBS_SAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>
