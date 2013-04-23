@@ -345,7 +345,6 @@
     SUBDIR += tcc
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
-    SUBDIR += tcl83
     SUBDIR += tcl84
     SUBDIR += tcl85
     SUBDIR += tcl86

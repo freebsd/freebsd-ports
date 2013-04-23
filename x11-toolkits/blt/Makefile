@@ -30,7 +30,7 @@ CFLAGS+=	-Wall -Wno-uninitialized
 CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 MAKE_JOBS_SAFE=	yes
 
-USE_TK=		83+
+USE_TK=		84+
 INVALID_TK_VER=	86
 USE_XORG=	x11
 

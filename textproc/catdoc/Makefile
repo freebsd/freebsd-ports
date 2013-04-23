@@ -33,7 +33,7 @@ post-patch:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWORDVIEW}
-USE_TK=			83+
+USE_TK=			84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 PLIST_SUB+=		WORDVIEW=""

@@ -4216,3 +4216,5 @@ dns/dnsperf||2013-04-20|Removed
 dns/bind97||2013-04-20|Has expired: No longer supported by ISC, use Bind 9.8 or 9.9
 dns/bind97-sdb||2013-04-20|Has expired: No longer supported by ISC, use Bind 9.8 or 9.9
 dns/bind-tools||2013-04-20|Has expired: No longer supported by ISC, use Bind 9.8 or 9.9
+lang/tcl83||2013-04-23|Has expired: No longer supported
+x11-toolkits/tk83||2013-04-23|Has expired: No longer supported

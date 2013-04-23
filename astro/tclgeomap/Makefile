@@ -13,7 +13,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
 
-USE_TCL=	83+
+USE_TCL=	84+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

@@ -16,7 +16,7 @@ COMMENT=	TCL extension to connect to Sybase servers
 
 LIB_DEPENDS=	sybdb:${PORTSDIR}/databases/freetds
 
-USE_TCL=	83+
+USE_TCL=	84+
 TCL_DVER=	${TCL_VER:S/.//}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	TCL_VER=${TCL_VER}
