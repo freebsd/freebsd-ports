@@ -1,28 +1,25 @@
-# New ports collection makefile for:	Ruby-BDB
-# Date created:		8 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+		LOCAL/knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
+COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 USE_BDB=	yes
 USE_BZIP2=	yes
 
 CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
@@ -32,44 +29,40 @@ CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
 
-DOCS=	Changes \
-	README.en \
-	bdb.rd \
-	docs/*.rd
+DOCS=		Changes README.en bdb.rd docs/*.rd
+DOCSDIR=	${RUBY_MODDOCDIR}
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
-
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${RUBY_MODDOCDIR}
-PORTDOCS=	*
-.endif
-.if !defined(NOPORTEXAMPLES)
-EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
-PORTEXAMPLES=	*
+post-patch:
+.if ${RUBY_VER} == 2.0
+	@${REINPLACE_CMD} -e '/remove_const/d' ${WRKSRC}/src/features.rb
 .endif
 
 post-build:
-.if !defined(NOPORTDOCS)
-	( cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc )
+.if ${PORT_OPTIONS:MDOCS}
+	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc)
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/doc
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${DOCSDIR})
-	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc)
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR})
+	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/doc)
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR} "! -empty")
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR} "! -empty")
 .endif
 
-regression-test:
+regression-test: build
 	@${MKDIR} ${BUILD_WRKSRC}/tmp
-	( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test )
+	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.post.mk>
