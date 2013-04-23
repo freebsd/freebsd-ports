@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.18
+PORTVERSION=	2.6.19
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -16,9 +16,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
+DEPRECATED=		No longer supported by upstream
+EXPIRATION_DATE=	2013-05-30
+
 VDAVERSION=	2.6.5
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-base-2.[0-57-9].* \
+		postfix-2.10.* postfix-base-2.10.* postfix-current-2.* \
+		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
+		smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
