@@ -1,19 +1,19 @@
 # $FreeBSD$
 #
-# handle dependency depends on desktop-file-info and package regen
+# handle dependency depends on desktop-file-utils and package regen
 #
 # MAINTAINER: gnome@FreeBSD.org
 #
-# Feature:	desktop-file-info
-# Usage:	USES=desktop-file-info
+# Feature:	desktop-file-utils
+# Usage:	USES=desktop-file-utils
 # Valid ARGS:	does not require args
 #
 #
-.if !defined(_INCLUDE_USES_DESKTOP_FILE_INFO_MK)
-_INCLUDE_USES_DESKTOP_FILE_INFO_MK=	yes
+.if !defined(_INCLUDE_USES_DESKTOP_FILE_UTILS_MK)
+_INCLUDE_USES_DESKTOP_FILE_UTILS_MK=	yes
 
-.if defined(desktop-file-info_ARGS)
-IGNORE=	USES=desktop-file-info does not require args
+.if defined(desktop-file-utils_ARGS)
+IGNORE=	USES=desktop-file-utils does not require args
 .endif
 
 BUILD_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
