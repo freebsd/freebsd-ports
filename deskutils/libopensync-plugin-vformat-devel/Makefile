@@ -17,6 +17,8 @@ COMMENT=	Vformat plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 
+BROKEN=		fails to build
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USES=		cmake
