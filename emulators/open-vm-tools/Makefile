@@ -20,8 +20,8 @@ BUILD_VER=		425873
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
+USES=			pkgconfig
 USE_LDCONFIG=		yes
-USE_PKGCONFIG=		build
 CPPFLAGS+=		-Wno-deprecated-declarations
 
 CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc

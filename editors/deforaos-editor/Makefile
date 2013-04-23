@@ -17,8 +17,8 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
 MAKE_ARGS=	PREFIX=${PREFIX}
+USES=		pkgconfig
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 
 .include <bsd.port.mk>

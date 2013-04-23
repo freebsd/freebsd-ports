@@ -22,7 +22,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 REVDATE=	20130415
 
 USE_ICONV=	yes
-USE_PKGCONFIG=	build
 USE_SDL=	sdl
 USE_OPENAL=	yes
 USE_XORG=	ice xext x11 xrandr
@@ -38,7 +37,7 @@ DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 USE_GCC=	4.6+
 .endif
 
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_BUILD_TYPE=	Release
 # Disable ao (seems buggy) and ALSA (emulated)
 CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \

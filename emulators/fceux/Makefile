@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_SCONS=	yes
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
