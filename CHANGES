@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130423:
+AUTHOR: jgh@FreeBSD.org
+
+  * New USES macro to handle support for gettext dependency:
+
+    USES= gettext:build will add gettext into BUILD_DEPENDS
+    USES= gettext:run will add gettext into RUN_DEPENDS
+    USES= gettext:lib will add gettext into LIB_DEPENDS
+
+    It deprecates USE_GETTEXT which will be removed as soon as it is not
+    used anymore
+
+
 20130422:
 AUTHOR: bdrewery@FreeBSD.org
 
