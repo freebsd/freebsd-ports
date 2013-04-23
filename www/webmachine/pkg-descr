@@ -1,0 +1,6 @@
+Webmachine is an application layer that adds HTTP semantic awareness
+on top of the excellent bit-pushing and HTTP syntax-management
+provided by mochiweb. It provides a simple and clean way to connect
+that to your application's behavior.
+
+WWW: https://github.com/basho/webmachine/
