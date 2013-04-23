@@ -95,6 +95,9 @@ post-patch:
 			-e "s|'bin', 'apxs'|'sbin', 'apxs'|" \
 			${WRKSRC}/lib/Apache2/Build.pm
 
+pre-configure:
+	@${FIND} ${WRKSRC} -type f \( -name \*.bak -o -name \*.orig \) -delete
+
 post-configure:
 	${REINPLACE_CMD} -e 's/-pthread -Wl,-E//g' \
 		${PATCH_WRKSRC}/xs/APR/APR/Makefile
