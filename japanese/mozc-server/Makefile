@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.10.1390.102
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -157,8 +157,8 @@ RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
-PLIST_FILES+=	libexec/ibus-engine-mozc \
-		share/ibus/component/mozc.xml \
+PLIST_FILES+=	bin/mozc_renderer \
+		libexec/ibus-engine-mozc \
 		${DATADIR_REL}/icons/alpha_full.png \
 		${DATADIR_REL}/icons/alpha_half.png \
 		${DATADIR_REL}/icons/dictionary.png \
@@ -168,14 +168,19 @@ PLIST_FILES+=	libexec/ibus-engine-mozc \
 		${DATADIR_REL}/icons/katakana_half.png \
 		${DATADIR_REL}/icons/product_logo.png \
 		${DATADIR_REL}/icons/properties.png \
-		${DATADIR_REL}/icons/tool.png
+		${DATADIR_REL}/icons/tool.png \
+		share/ibus/component/mozc.xml 
 PLIST_DIRS+=	${DATADIR_REL}/icons ${DATADIR_REL}
 
 do-build-ibus_mozc:
 	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
-		unix/ibus/ibus.gyp:ibus_mozc
+		unix/ibus/ibus.gyp:ibus_mozc \
+		renderer/renderer.gyp:mozc_renderer
 
 do-install-ibus_mozc:
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_renderer \
+		${PREFIX}/bin/mozc_renderer
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/ibus_mozc \
 		${PREFIX}/libexec/ibus-engine-mozc
