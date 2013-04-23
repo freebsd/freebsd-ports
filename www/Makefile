@@ -449,6 +449,7 @@
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mnogosearch
     SUBDIR += mochiweb
+    SUBDIR += mochiweb-basho
     SUBDIR += mod_amazon_proxy
     SUBDIR += mod_antiloris
     SUBDIR += mod_asn
