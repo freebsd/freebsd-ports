@@ -22,7 +22,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

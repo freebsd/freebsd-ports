@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libskk
-# Date created:	21 December 2011
-# Whom:		Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libskk
 PORTVERSION=	1.0.0
@@ -21,7 +17,7 @@ LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool gnomehack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 MAN1=		skk.1

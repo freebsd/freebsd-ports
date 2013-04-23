@@ -30,7 +30,7 @@ PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-sort
 
 .if ${PORT_OPTIONS:MEXPR2}
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 PORTDOCS+=	README.skkdic-expr2
 PLIST_FILES+=	bin/skkdic-expr2
 .else

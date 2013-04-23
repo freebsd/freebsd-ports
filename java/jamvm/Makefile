@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-classpath-install-dir=${LOCALBASE}
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	FFI ZIP
 OPTIONS_DEFAULT=FFI ZIP

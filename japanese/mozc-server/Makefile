@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mozc-server
-# Date created:				26 June 2010
-# Whom:					Daichi GOTO <daichi@freebsd.org>
-#
+# Created by: Daichi GOTO <daichi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mozc
 PORTVERSION=	1.10.1390.102
@@ -19,12 +15,12 @@ COMMENT?=	Mozc server for IBus and others
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	build
 
 MAKE_JOBS_SAFE=	yes
 
