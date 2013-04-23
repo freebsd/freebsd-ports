@@ -10,13 +10,13 @@ COMMENT=	Erlang library for building lightweight HTTP servers
 
 LICENSE=	MIT
 
-PLIST_SUB=      VERSION="${PORTVERSION}"
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     mochi
-GH_PROJECT=     mochiweb
-GH_COMMIT=      92b8f5b
-GH_TAGNAME=     v${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	mochi
+GH_PROJECT=	mochiweb
+GH_COMMIT=	92b8f5b
+GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
