@@ -19,9 +19,9 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/alt-cannadic/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	lthack
-USE_PKGCONFIG=	build
 
 DOCSDIR=	share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
