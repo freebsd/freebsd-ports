@@ -12,8 +12,8 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT?=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
 HAS_CONFIGURE=	yes
+USES=		gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_CSTD=	gnu89
 
