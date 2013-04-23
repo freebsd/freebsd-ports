@@ -18,12 +18,12 @@ USE_XZ=		yes
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
+USES=		pathfix pkgconfig
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehier gnomehack glib20 ltverhack referencehack
-USE_PKGCONFIG=	build
+USE_GNOME=	gnomehier glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
