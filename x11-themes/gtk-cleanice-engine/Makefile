@@ -14,10 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme

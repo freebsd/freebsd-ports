@@ -37,6 +37,7 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
+USES=		pkgconfig
 USE_XZ=		yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -48,7 +49,6 @@ USE_GL=		gl glu
 USE_PERL5_BUILD=yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"

@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack lthack gtk20 libxml2
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

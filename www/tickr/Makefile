@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' -i.bak
 
 USE_DOS2UNIX=	tickr.h
 USE_GNOME=	desktopfileutils gtk20 libxml2
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 post-patch:
 	${REINPLACE_CMD} ${WRKSRC}/${PORTNAME}.desktop ${WRKSRC}/src/tickr/tickr.h

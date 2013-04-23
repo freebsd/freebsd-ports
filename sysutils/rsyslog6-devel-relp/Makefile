@@ -1,9 +1,5 @@
-# New ports collection makefile for: rsyslog4-relp
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
+# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
-#
 
 COMMENT=	RELP input/output module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6-devel
@@ -11,7 +7,7 @@ MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 MNAME=	relp
 LIB_DEPENDS=	relp.0:${PORTSDIR}/devel/librelp
 
-USE_PKGCONFIG=	yes
+USEs=		pkgconfig
 
 CONFIGURE_ARGS+=--enable-relp
 

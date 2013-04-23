@@ -14,7 +14,7 @@ COMMENT=	GTK2 multimedia player
 
 LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gnomehack gtk20 libglade2 desktopfileutils
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

@@ -15,12 +15,12 @@ LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
-USE_PKGCONFIG=	build
 USE_GSTREAMER=	core good bad python
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

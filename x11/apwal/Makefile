@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apwal
-# Date created:			Nov 26, 2003
-# Whom:				Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-#
+# Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	apwal
 PORTVERSION=	0.4.5
@@ -16,7 +12,7 @@ COMMENT=	Simple and powerful application launcher
 
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

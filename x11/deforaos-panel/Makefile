@@ -23,8 +23,7 @@ RUN_DEPENDS=	keyboard:${PORTSDIR}/x11/deforaos-keyboard \
 		sudo:${PORTSDIR}/security/sudo
 
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
-USE_GETTEXT=	yes
+USES=		pkgconfig gettext
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 

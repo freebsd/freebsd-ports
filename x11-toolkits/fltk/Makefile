@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 USE_LDCONFIG=	yes
 USE_XORG=	xft
 USE_GL=		glu
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-threads \
 		--enable-shared \

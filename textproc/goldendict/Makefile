@@ -19,7 +19,7 @@ LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	xtst
 USE_GNOME=	desktopfileutils
 USE_QT4=	corelib gui webkit phonon \

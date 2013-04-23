@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ffmpeg-devel
-# Date created:		2009-08-12
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2012-10-13
@@ -34,11 +30,11 @@ FETCH_URL=	"http://git.videolan.org/?p=ffmpeg.git;a=snapshot;h=${GIT_SNAPSHOT};s
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
+USES=		pkgconfig
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 USE_PERL5_BUILD=	yes
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS GSM LAME \

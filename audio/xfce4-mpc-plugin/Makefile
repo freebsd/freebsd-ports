@@ -1,6 +1,5 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.4.4
@@ -15,12 +14,12 @@ COMMENT=	An MPC plugin for Xfce
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu panel
-USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>

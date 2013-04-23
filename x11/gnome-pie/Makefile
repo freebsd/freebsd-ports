@@ -60,10 +60,9 @@ REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' \
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-USES=		cmake
+USES+=		cmake pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gconf2 gnomemenus gtk20 libwnck
-USE_PKGCONFIG=	build
 
 post-patch:
 	${REINPLACE_CMD} ${WRKSRC}/src/actions/actionRegistry.vala \

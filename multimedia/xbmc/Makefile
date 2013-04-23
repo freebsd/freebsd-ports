@@ -52,8 +52,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 FETCH_ARGS=	-Fpr
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xrandr xtst

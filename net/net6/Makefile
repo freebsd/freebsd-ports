@@ -1,9 +1,5 @@
-# Ports collection makefile for:	net6
-# Date created:				2005-10-14
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	net6
 PORTVERSION=	1.3.14
@@ -19,11 +15,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.26:${PORTSDIR}/security/gnutls
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

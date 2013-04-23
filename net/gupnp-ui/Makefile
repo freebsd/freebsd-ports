@@ -20,8 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 USE_PYTHON=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 
 .include <bsd.port.mk>

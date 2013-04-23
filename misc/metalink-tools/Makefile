@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Metalink tools
-# Date created:		Sun 10 Aug 2008 04:22:51 UTC
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metalink
 PORTVERSION=	0.3.6
@@ -25,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 CONFIGURE_ENV+=	AWK="${AWK}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

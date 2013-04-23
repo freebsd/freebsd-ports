@@ -13,7 +13,7 @@ COMMENT=	Broadcast keystrokes to multiple X windows for Gnome2
 
 USE_XORG=	xmu
 USE_GNOME=	libwnck libglade2 gtk20
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 INSTALLS_ICONS=	yes
 
 post-install:

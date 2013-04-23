@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 USE_XORG=	x11 xext xrender
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PYTHON LUA

@@ -25,7 +25,7 @@ CONFLICTS_INSTALL=	hpijs-[0-9]*
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	2.5+
 USE_GNOME=	pygobject
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \

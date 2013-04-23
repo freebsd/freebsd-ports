@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Gnome2-VFS
-# Date created:			Jan 2, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Gnome2-VFS
 PORTVERSION=	1.081
@@ -25,7 +20,7 @@ RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_GNOME=	gnomevfs2
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 PERL_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

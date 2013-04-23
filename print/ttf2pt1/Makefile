@@ -14,7 +14,7 @@ COMMENT=	True Type Font to Postscript Type 1 Converter
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_PERL5=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
 		INSTDIR="${PREFIX}" LIBXDIR="${PREFIX}/bin"

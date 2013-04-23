@@ -17,9 +17,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig gettext
 USE_XORG=	xtst
-USE_GETTEXT=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

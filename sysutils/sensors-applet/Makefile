@@ -13,9 +13,8 @@ COMMENT=	A GNOME applet displaying hardware sensor values
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomepanel libgnomeui
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 DEFINES=	-DMBMON_EXECUTABLE=\\\"${LOCALBASE}/bin/mbmon\\\" \

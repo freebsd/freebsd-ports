@@ -19,11 +19,10 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libgui libutil panel
 USE_XORG=	x11 sm
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	TAGLIB DBUS STARTUP
 OPTIONS_DEFAULT=	DBUS STARTUP

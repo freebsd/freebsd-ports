@@ -15,7 +15,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	x11 xau xdmcp xext xft xrender xrandr
 
 MAN1=		echinus.1

@@ -20,8 +20,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
-USE_PKGCONFIG=	build
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-introspection
 

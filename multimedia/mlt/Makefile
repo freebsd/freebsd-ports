@@ -19,8 +19,8 @@ SLAVE_PORT?=	no
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
 
+USES=		pkgconfig
 USE_GNOME=	gnomehack libxml2
-USE_PKGCONFIG=	build
 USE_SDL=	image
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gpl --enable-gpl3

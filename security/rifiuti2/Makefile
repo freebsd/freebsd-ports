@@ -14,7 +14,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GNOME=	glib20

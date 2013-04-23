@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack glib20 desktopfileutils
 USE_XFCE=	configenv libexo libmenu libutil panel xfconf
 USE_XORG=	xtst
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 INSTALLS_ICONS=	yes
 

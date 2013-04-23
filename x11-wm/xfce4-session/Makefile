@@ -1,6 +1,5 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.10.0
@@ -26,7 +25,7 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_XORG=	x11 sm ice

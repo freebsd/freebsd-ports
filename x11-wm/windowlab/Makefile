@@ -30,7 +30,7 @@ PLIST_DIRS=	%%ETCDIR%%
 
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 MAKE_ENV+=	EXTRA_INC="$$(pkg-config --cflags xft)" \
 		EXTRA_LIBS="$$(pkg-config --libs xft)"
 CFLAGS+=	-DXFT

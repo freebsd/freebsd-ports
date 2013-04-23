@@ -17,8 +17,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
-USES=		fuse
-USE_PKGCONFIG=	yes
+USES=		fuse pkgconfig
 
 MAN1=		afuse.1
 

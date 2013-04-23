@@ -15,9 +15,8 @@ OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
 USE_BZIP2=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules

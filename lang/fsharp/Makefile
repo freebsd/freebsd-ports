@@ -16,9 +16,9 @@ LICENSE=	AL2
 BUILD_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
-USE_PKGCONFIG=	build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

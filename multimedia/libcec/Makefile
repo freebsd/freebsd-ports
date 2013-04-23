@@ -16,12 +16,12 @@ GH_ACCOUNT=	Pulse-Eight
 GH_COMMIT=	178d498
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_AUTORECONF=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

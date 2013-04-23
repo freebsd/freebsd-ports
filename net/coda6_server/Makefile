@@ -1,7 +1,4 @@
-# New ports collection makefile for:	coda-server-6
-# Date created:				9 september 2003
-# Whom:					Tim Robbins
-
+# Created by: Tim Robbins
 # $FreeBSD$
 
 PORTNAME=	coda
@@ -21,9 +18,9 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.9:${PORTSDIR}/devel/rpc2 \
 		rvmlwp.3:${PORTSDIR}/devel/rvm
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=	--enable-${CODA_SUITE}
 

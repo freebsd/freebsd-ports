@@ -16,7 +16,7 @@ COMMENT=	Standalone menu and keybinding editors for enlightenment 0.16
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	imlib gtk20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 SUB_STUBS=	e16menuedit-0.1 e16keyedit-0.7
 

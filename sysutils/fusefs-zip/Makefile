@@ -13,8 +13,7 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
 
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
-USES=		fuse
+USES=		fuse pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1

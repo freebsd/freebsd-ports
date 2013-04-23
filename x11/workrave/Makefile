@@ -23,8 +23,7 @@ DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
 					false
 
 USE_XORG=	x11 xmu recordproto xtst xext
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix intlhack gconf2 intltool

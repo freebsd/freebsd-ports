@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpa
-# Date created:		16 August 2000
-# Whom:			Clive Lin <clive@CirX.ORG>
-#
+# Created by: Clive Lin <clive@CirX.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	gpa
 PORTVERSION=	0.9.3
@@ -21,9 +17,9 @@ LIB_DEPENDS=	assuan:${PORTSDIR}/security/libassuan \
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap" \

@@ -20,7 +20,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_GCC=	any
 HAS_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/qt4
 USE_XORG=	xrender xrandr xinerama inputproto xfixes \
 		sm xcursor xext x11 ice xi xt

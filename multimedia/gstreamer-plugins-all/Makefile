@@ -21,7 +21,7 @@ NO_BUILD=	yes
 USE_GSTREAMER=	yes
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
-.for all in ${_USE_GSTREAMER10_ALL}
+.for all in ${_GSTREAMER_PLUGINS}
 OPTIONS_DEFINE+=	${all:U}
 ${all:U}_DESC=	${all} plugin
 OPTIONS_DEFAULT+=	${all:U}

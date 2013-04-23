@@ -1,6 +1,5 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.3
@@ -24,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_XFCE=	configenv libexo libgui
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for: volta
-# Date created: 28 November 2011
-# Whom: mahlon
-#
+# Created by: mahlon
 # $FreeBSD$
-#
 
 PORTNAME=	volta
 DISTVERSION=	0.2.0
@@ -20,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cdb:${PORTSDIR}/databases/tinycdb
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_LUA=	5.1
 ALL_TARGET=	${PORTNAME}

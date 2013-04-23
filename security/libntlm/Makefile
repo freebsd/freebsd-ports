@@ -11,9 +11,8 @@ COMMENT=	Library that implement Microsoft's NTLM authentication
 
 LICENSE=	LGPL21
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

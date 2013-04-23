@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bwm-ng
-# Date created:		19 February 2006
-# Whom:			Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bwm-ng
 PORTVERSION=	0.6
@@ -16,7 +12,7 @@ COMMENT=	A small and simple bandwidth monitor
 LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 MAN1=		bwm-ng.1
 PLIST_FILES=	bin/bwm-ng
 

@@ -1,9 +1,5 @@
-# ports collection makefile for:	mysqlcppapi
-# Date created:				4 August 2004
-# Whom:					Jie Gao <gaoj@cpsc.ucalgary.ca>
-#
+# Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	mysqlcppapi
 PORTVERSION=	1.9.3
@@ -16,8 +12,7 @@ COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
-USES=	pathfix
-USE_PKGCONFIG=	yes
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

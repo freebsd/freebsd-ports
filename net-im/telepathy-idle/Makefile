@@ -15,10 +15,10 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
-USE_PKGCONFIG=	build
 
 MAN8=		telepathy-idle.8
 

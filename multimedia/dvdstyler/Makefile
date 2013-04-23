@@ -29,14 +29,13 @@ RUN_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
 
 OPTIONS_DEFINE=	GNOME DOCS
 
+USES=		pkgconfig gettext
 USE_BZIP2=	yes
 USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
 USE_GNOME=	desktopfileutils
-USE_GETTEXT=	yes
 USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}" \

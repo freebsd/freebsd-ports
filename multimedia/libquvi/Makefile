@@ -19,12 +19,11 @@ OPTIONS_DEFINE=	DOCS
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_LUA=	yes
 USE_XZ=		yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 
 MAN3=		libquvi.3
 

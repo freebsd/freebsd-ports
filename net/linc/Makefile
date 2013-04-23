@@ -1,9 +1,5 @@
-# New ports collection makefile for:   linc
-# Date Created:			12 February 2002
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linc
 PORTVERSION=	1.0.3
@@ -19,9 +15,9 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

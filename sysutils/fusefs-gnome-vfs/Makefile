@@ -13,10 +13,9 @@ COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
-USES=		fuse
+USES=		fuse pkgconfig
 USE_GNOME=	gnomevfs2
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 

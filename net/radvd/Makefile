@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radvd
-# Date created:				Fri Jul  6 03:17:33 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	radvd
 PORTVERSION=	1.9.1
@@ -17,8 +13,8 @@ LIB_DEPENDS=	daemon.0:${PORTSDIR}/devel/libdaemon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 USE_RC_SUBR=	radvd
 
 MAN5=	radvd.conf.5

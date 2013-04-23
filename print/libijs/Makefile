@@ -1,9 +1,4 @@
-# New ports collection makefile for:	hpijs
-# Date created:		1 May 2002
-# Whom:			ports@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libijs
 PORTVERSION=	0.35
@@ -16,12 +11,12 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that supports plugin printer driver for Ghostscript
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 MAN1=		ijs-config.1
 

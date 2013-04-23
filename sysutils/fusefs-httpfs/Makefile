@@ -15,8 +15,7 @@ COMMENT=	Fuse-based http filesystem
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${VERSION}
 
 VERSION=	0.1.5
-USES=		fuse
-USE_PKGCONFIG=	yes
+USES=		fuse pkgconfig
 USE_GMAKE=	yes
 CFLAGS+=	-D__BSD_VISIBLE
 ALL_TARGET=	httpfs2

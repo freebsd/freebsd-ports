@@ -11,7 +11,7 @@ COMMENT=	Cantarell, a Humanist sans-serif font family
 
 LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

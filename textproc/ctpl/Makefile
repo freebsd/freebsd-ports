@@ -10,7 +10,7 @@ COMMENT=	C Template (Parser) Library
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gnomehack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 MAN1=	ctpl.1

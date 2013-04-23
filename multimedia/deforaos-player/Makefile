@@ -19,7 +19,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
-USE_GETTEXT=	yes
+USES=		pkgconfig gettext
 
 .include <bsd.port.mk>

@@ -25,8 +25,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

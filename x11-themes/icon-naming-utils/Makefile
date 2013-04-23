@@ -17,7 +17,6 @@ RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
-USES+=		pathfix
+USES=		pathfix pkgconfig
 
 .include <bsd.port.mk>

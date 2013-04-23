@@ -23,8 +23,8 @@ PLIST_FILES=	bin/gmolwt bin/molwt
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
+USES+=		pkgconfig
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
 MAKE_ENV+=	GTKCONFIG="pkg-config gtk+-2.0"
 .else
 USE_GNOME=	gtk12

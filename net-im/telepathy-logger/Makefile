@@ -16,13 +16,13 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 intltool gnomedocutils ltverhack libxml2 \
 		libxslt:build
-USE_PKGCONFIG=	build
 USE_SQLITE=	yes
 USE_PYTHON_BUILD=	yes
 GLIB_SCHEMAS=	org.freedesktop.Telepathy.Logger.gschema.xml

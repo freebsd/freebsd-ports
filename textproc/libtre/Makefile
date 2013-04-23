@@ -16,8 +16,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_BZIP2=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--enable-static
 USE_LDCONFIG=	yes

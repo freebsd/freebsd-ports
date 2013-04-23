@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libxfce4util
-# Date created:		7 June 2003
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libxfce4util
 PORTVERSION=	4.10.0
@@ -22,7 +18,7 @@ USE_GNOME=	glib20 gnomehack intltool intlhack
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 

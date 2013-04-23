@@ -19,11 +19,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygobject gnomehack
-USE_PKGCONFIG=	build
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${GST_VERSION}"

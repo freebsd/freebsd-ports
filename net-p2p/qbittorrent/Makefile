@@ -13,7 +13,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
 
 HAS_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_QT4=	corelib network qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 

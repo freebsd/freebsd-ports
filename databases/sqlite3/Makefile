@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 

@@ -10,7 +10,7 @@ COMMENT=	Create an index of X font files in a directory
 
 XORG_CAT=	font
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XORG=	xorg-macros
 
 MAN1=		bdftruncate.1 ucs2any.1

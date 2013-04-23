@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvas-libraries
-# Date created:		2008-04-26
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	2.0.3
@@ -17,9 +13,9 @@ COMMENT=	Libraries for OpenVAS
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 USE_GNOME=	glib20
 MAKE_JOBS_UNSAFE=	yes
 

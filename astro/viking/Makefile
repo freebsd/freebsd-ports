@@ -23,13 +23,13 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	desktopfileutils gnomedocutils gtk20
-USE_PKGCONFIG=	build
 USE_PERL5_RUN=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

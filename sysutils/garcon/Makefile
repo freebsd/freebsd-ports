@@ -1,9 +1,5 @@
-# New ports collection makefile for:	garcon
-# Date created:				11 January 2011
-# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	garcon
 PORTVERSION=	0.2.0
@@ -20,7 +16,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 intltool intlhack
 USE_XFCE=	configenv libutil
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 

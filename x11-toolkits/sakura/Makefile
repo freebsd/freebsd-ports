@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sakura
-# Date created:				2008/06/20
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	sakura
 PORTVERSION=	2.4.2
@@ -16,9 +12,8 @@ COMMENT=	A terminal emulator based on GTK and VTE
 
 USE_GNOME=	vte
 USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
 
 MAN1=		sakura.1
 

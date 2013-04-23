@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-utempter
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 LATEST_LINK=	mosh-term
 

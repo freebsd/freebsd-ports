@@ -19,7 +19,7 @@ USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack vte \
 	libxml2 desktopfileutils
 USE_XFCE=	configenv libmenu
 USE_XORG=	x11
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS=	--without-gnome-default-appsdir
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	samba34
-# Date created:				1 May 2009
-# Whom:					timur@FreeBSD.org
-#
+# Created by: timur@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		samba34
 PORTVERSION=		3.4.17
@@ -75,7 +71,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 
-USE_PKGCONFIG=		yes
+USES=			pkgconfig
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # Always use external libtalloc

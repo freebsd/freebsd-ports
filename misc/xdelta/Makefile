@@ -10,9 +10,9 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

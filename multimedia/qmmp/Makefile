@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	qmmp
-# Date created:		Fri Jan 30 01:13:20 JST 2009
-# Whom:      SimaMoto,RyoTa <liangtai.s4@gmail.com>
-#
+# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmmp
 PORTVERSION=	0.6.3
@@ -17,11 +13,10 @@ COMMENT=	A Qt4-based multimedia player
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib gui network xml \
 		qmake_build rcc_build uic_build moc_build linguist_build
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	SKINNEDUI DIR_ASSOC APIDOC PULSEAUDIO ALSA OSS OSS4 \
 		JACK NULLOUT FLAC MUSEPACK FFMPEG MODPLUG WILDMIDI GME MAD \

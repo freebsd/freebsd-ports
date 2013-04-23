@@ -20,10 +20,10 @@ LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
 		oglappth:${PORTSDIR}/science/liboglappth \
 		mopac7:${PORTSDIR}/biology/mopac
 
+USES=		pkgconfig
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
-USE_PKGCONFIG=	build
 USE_GL=		glut
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

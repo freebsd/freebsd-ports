@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomehack lthack libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 MAN1=	xmlsec1.1 xmlsec1-config.1
 CFLAGS+=	-I${LOCALBASE}/include

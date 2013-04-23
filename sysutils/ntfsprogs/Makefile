@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
-USE_PKGCONFIG=	build
 USE_BZIP2=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 WRKSRC=		${WRKDIR}/gkx86info${PORTVERSION}

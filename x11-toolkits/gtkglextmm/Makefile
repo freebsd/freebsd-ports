@@ -15,11 +15,10 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 post-patch:

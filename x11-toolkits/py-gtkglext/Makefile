@@ -18,9 +18,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	pygtk2
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

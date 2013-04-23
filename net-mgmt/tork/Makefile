@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tork
-# Date created:                         09 Feb 2008
-# Whom:                                 Beat Gätzi <beat@chruetertee.ch>
-#
+# Created by: Beat Gätzi <beat@chruetertee.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	tork
 PORTVERSION=	0.30

@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 

@@ -15,9 +15,9 @@ BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 # This should be updated to the newer version of libotr
 LIB_DEPENDS=	otr.4:${PORTSDIR}/security/libotr3
 
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_PKGCONFIG=	build
 PYDISTUTILS_PKGNAME=	python-otr
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

@@ -15,9 +15,9 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple network library built upon Glib-2
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -17,8 +17,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_SDL=	sdl
-USE_PKGCONFIG=	build
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

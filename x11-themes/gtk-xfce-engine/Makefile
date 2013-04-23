@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-xfce-engine
-# Date Created:				10 October 2002
-# Whom:				 	olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	3.0.1
@@ -19,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS+=--disable-glibtest \
 	--enable-gtk2 \

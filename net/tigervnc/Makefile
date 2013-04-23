@@ -21,8 +21,7 @@ CONFLICTS=	tridiavnc-[0-9]* \
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		cmake
-USE_PKGCONFIG=	build
+USES=		cmake pkgconfig
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_AUTOTOOLS+=	autoconf:env automake:env libtool:env

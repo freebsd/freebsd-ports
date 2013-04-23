@@ -12,7 +12,7 @@ COMMENT=	A Terminal Multiplexer
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN1=		tmux.1
 

@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lglib-2.0
 USE_GMAKE=	yes
 USE_GNOME=	_glib20
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr

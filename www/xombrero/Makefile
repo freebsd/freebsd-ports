@@ -1,4 +1,4 @@
-# Created by:				Aldis Berjoza <aldis@bsdroot.lv>
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
 
 PORTNAME=	xombrero
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
 		webkitgtk-1:${PORTSDIR}/www/webkit-gtk2
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

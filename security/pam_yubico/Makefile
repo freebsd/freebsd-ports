@@ -16,7 +16,7 @@ LIB_DEPENDS=	ykclient:${PORTSDIR}/security/ykclient \
 		yubikey:${PORTSDIR}/security/libyubikey
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 PLIST_FILES=	include/drop_privs.h \
 		include/util.h \

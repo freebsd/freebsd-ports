@@ -14,7 +14,7 @@ LIB_DEPENDS=	yubikey:${PORTSDIR}/security/libyubikey
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 MAN1=		ykchalresp.1 \
 		ykinfo.1 \

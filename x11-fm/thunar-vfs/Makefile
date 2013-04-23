@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 CONFIGURE_ARGS=	--disable-debug
 

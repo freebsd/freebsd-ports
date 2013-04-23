@@ -1,6 +1,5 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	parole
 PORTVERSION=	0.5.0
@@ -33,7 +32,7 @@ USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	CDDA HTTP NLS
 OPTIONS_DEFAULT=	CDDA HTTP NLS

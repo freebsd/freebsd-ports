@@ -29,6 +29,8 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 USALIASES=	en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_HK \
 		en_IE en_IN en_JM en_NA en_NZ en_PH en_SG en_TT en_ZA en_ZW
+
+CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 .for ALIAS in ${USALIASES}
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor

@@ -15,8 +15,7 @@ COMMENT=	Write filesystems in Perl using FUSE
 PERL_CONFIGURE=	yes
 PORTSCOUT=	skipv:0.09_4
 
-USES=		fuse
-USE_PKGCONFIG=	build
+USES=		fuse pkgconfig
 
 MAN3=		Fuse.3
 

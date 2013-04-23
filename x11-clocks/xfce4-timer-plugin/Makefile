@@ -1,9 +1,5 @@
-# New ports collection makefile for:	timer plugin for xfce4
-# Date created:				23 Januar 2007
-# Whom:					Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-timer-plugin
 PORTVERSION=	1.0.0
@@ -22,6 +18,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 .include <bsd.port.mk>

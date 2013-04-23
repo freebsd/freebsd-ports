@@ -16,7 +16,7 @@ USE_AUTOTOOLS=	libltdl
 USE_GNOME=	gnomehack libxml2 lthack
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
-USE_PKGCONFIG=	both
+USES=		pkgconfig:both
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no

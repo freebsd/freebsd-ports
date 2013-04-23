@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DeCurs
-# Date created:				19 January 2002
-# Whom:				Miguel Mendez <flynn@energyhq.homeip.net>
-#
+# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
 # $FreeBSD$
-#
 
 PORTNAME=	decurs
 PORTVERSION=	0.55.1
@@ -20,7 +16,7 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
 USE_XORG=	x11
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 .include <bsd.port.pre.mk>
 

@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.10.2
@@ -24,8 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack desktopfileutils
 USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
-USE_PKGCONFIG=	build
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_XORG=	x11 sm
 
 CONFIGURE_ARGS+=--enable-gio-unix \

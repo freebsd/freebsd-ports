@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	qmmp-plugin-pack
-# Date created:		Fri Jul 01 02:59:13 JST 2012
-# Whom:      SimaMoto,RyoTa <liangtai.s4@gmail.com>
-#
+# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmmp-plugin-pack
 PORTVERSION=	0.6.2
@@ -20,10 +16,9 @@ LIB_DEPENDS=	qmmpui:${PORTSDIR}/multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.6.0:${PORTSDIR}/multimedia/qmmp
 
 USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib gui qmake_build rcc_build moc_build linguist_build
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	FFAP MPG123 QSUI
 OPTIONS_DEFAULT=	FFAP MPG123 QSUI

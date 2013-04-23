@@ -13,10 +13,9 @@ COMMENT=	Collection of GTK+ widgets geared toward pro-audio apps
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=        pathfix
-USE_GNOME=	gtk20 libgnomecanvas gnomehack
+USES=		pathfix pkgconfig
+USE_GNOME=	gtk20 libgnomecanvas
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \

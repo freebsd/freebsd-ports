@@ -19,12 +19,11 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 LICENCE=	GPLv3
 
 USE_ZIP=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_DOS2UNIX=	CMakeLists.txt DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
 NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 USE_GNOME=	desktopfileutils
-USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt

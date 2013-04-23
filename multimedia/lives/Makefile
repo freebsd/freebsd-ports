@@ -42,9 +42,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_CSTD=	gnu89
 USE_PYTHON=	yes
 USE_PERL5=	yes

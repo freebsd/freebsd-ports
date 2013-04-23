@@ -17,9 +17,8 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
 OPTIONS_DEFINE=	XSLT
 XSLT_DESC=	Build libxsltwrap library (requires libxslt)
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	libxml2
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes

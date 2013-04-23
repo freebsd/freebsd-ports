@@ -12,11 +12,11 @@ COMMENT=	Program used to time subtitles
 LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
 
 USE_GNOME=	gtk20
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

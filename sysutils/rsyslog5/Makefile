@@ -1,9 +1,5 @@
-# New ports collection makefile for: rsyslog4
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
+# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rsyslog
 PORTVERSION=	5.10.0
@@ -42,7 +38,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/rsyslog
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 OPTIONS=	DEBUG	"Enable debugging"	off
 

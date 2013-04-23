@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkleds2
-# Date Created:		Dec 10 2002
-# Whom:			Jan Stocker <Jan.Stocker@t-online.de>
-#
+# Created by: Jan Stocker <Jan.Stocker@t-online.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gkleds2
 PORTVERSION=	0.8.2
@@ -18,11 +14,11 @@ COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 USE_XORG=	x11 xtst
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

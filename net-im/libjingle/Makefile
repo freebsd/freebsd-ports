@@ -18,11 +18,11 @@ LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
 
+USES=		pkgconfig
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 USE_DOS2UNIX=	README
-USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \

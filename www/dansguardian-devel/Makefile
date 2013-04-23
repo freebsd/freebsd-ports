@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 USE_BZIP2=	yes
 
 CONFLICTS=	dansguardian-2.10.*

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mythes
-# Date created:		2011-06-18
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	1.2.3
@@ -16,8 +11,7 @@ COMMENT=	Simple thesaurus library
 
 LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

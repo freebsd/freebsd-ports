@@ -24,10 +24,10 @@ OPENCT_DESC=	Use OpenCT backend
 CTAPI_DESC=	Use CT-API backend
 SM_DESC=	Enable secure messaging support
 
+USES=		pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	\

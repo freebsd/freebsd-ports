@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	ice
 
