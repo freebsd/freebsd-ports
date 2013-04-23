@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	20130217
+PORTVERSION=	20130423
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
