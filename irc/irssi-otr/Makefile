@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irssi-otr
-# Date created:		2008-08-16
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	irssi-otr
 PORTVERSION=	0.3
@@ -24,10 +20,9 @@ RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 
 PLIST_FILES=	lib/irssi/modules/libotr.so \
 		%%DOCSDIR%%/LICENSE %%DOCSDIR%%/README

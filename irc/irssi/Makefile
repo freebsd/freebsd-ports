@@ -1,6 +1,4 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.15
@@ -15,9 +13,9 @@ LIB_DEPENDS=	glib-2:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_NCURSES=	yes
 WANT_PERL=	yes

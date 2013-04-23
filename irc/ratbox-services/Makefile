@@ -21,7 +21,7 @@ LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
 PERL?=		${LOCALBASE}/bin/perl
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}

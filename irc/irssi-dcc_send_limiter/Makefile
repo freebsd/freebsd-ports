@@ -20,8 +20,8 @@ COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
+USES=		pkgconfig
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	lib/irssi/modules/lib/${DISTNAME}.so
