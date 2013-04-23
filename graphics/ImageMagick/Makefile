@@ -35,6 +35,7 @@ LICENSE=	AL2
 USES=		pkgconfig pathfix
 USE_XZ=		yes
 USE_PERL5=	yes
+WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
