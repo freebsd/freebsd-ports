@@ -37,12 +37,12 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		xcb:${PORTSDIR}/x11/libxcb
 
 MAKE_JOBS_SAFE=	yes
+USES=		pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20 libxml2
 USE_GL=		glu glut
 USE_AUTOTOOLS=	automake libtool
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_PKGCONFIG=	build
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 

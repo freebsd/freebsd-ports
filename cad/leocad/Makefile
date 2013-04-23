@@ -18,9 +18,9 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		pkgconfig
 USE_GL=		gl
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes

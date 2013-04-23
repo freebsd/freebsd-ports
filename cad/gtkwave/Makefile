@@ -10,10 +10,10 @@ DISTNAME=	gtkwave-${PORTVERSION}
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	TCL

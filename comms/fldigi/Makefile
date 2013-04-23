@@ -19,8 +19,8 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate\
 		fltk:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 MAN1=		fldigi.1
 

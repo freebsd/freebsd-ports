@@ -35,10 +35,10 @@ MAN5=	svxlink.conf.5 \
 	ModuleSelCallEnc.conf.5 \
 	remotetrx.conf.5
 MANCOMPRESSED=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_TCL=	yes
-USE_PKGCONFIG=	yes
 USE_RC_SUBR=	svxlink remotetrx
 USE_LDCONFIG=	${LOCALBASE}/lib ${LOCALBASE}/lib/svxlink
 

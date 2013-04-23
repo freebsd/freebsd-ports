@@ -22,8 +22,8 @@ LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 BUILD_DEPENDS=	locker:${PORTSDIR}/x11/deforaos-locker \
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
+USES=		pkgconfig
 USE_GNOME=	gtk20 desktopfileutils
-USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
