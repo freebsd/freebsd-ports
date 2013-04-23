@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130423:
+  AFFECTS: users of mail/postfix
+  AUTHOR: sahil@FreeBSD.org
+
+  This is a significant update; so, please carefully review the
+  RELEASE_NOTES to identify which incompatible changes impact your
+  environment.
+
 20130408:
   AFFECTS: users of astro/libkgeomap, graphics/digikam-kde4, graphics/kipi-plugins-kde4
   AUTHOR: makc@FreeBSD.org
