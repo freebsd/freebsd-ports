@@ -1,8 +1,8 @@
-# Created by: torstenb
+# Created by: Torsten Blum <torstenb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.7.12
+PORTVERSION=	2.7.13
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -16,10 +16,16 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
+LICENSE=	IPL10
+LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 VDAVERSION=	2.7.8
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-689].* postfix-base-2.[0-689].* \
-		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
-		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+		postfix-2.10.* postfix-base-2.10.* postfix-current-2.* \
+		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
+		smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -136,7 +142,7 @@ POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
-LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		krb5:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
@@ -147,7 +153,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=		spf2:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
 PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x-4.patch.gz
