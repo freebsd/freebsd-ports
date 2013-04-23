@@ -66,7 +66,7 @@
  
       else {
 -          (void) fprintf (stderr, "Starting from inetd not yet supported, rename me ase rmsgd and start\nfrom /etc/rc\n");
-+          (void) fprintf (stderr, "Starting from inetd not yet supported, rename me as rmsgd and start\nfrom /etc/rc.local\n");
++          (void) fprintf (stderr, "Starting from inetd not yet supported. Start via the rc.d script\n");
       }
  
       if (argc > 1)
