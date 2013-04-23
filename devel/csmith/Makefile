@@ -20,8 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
-
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
