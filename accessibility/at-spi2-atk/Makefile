@@ -19,10 +19,10 @@ RUN_DEPENDS=	at-spi2-core>=2.1.4:${PORTSDIR}/accessibility/at-spi2-core
 
 PORTSCOUT=	limitw:1,even
 
+USES=		pkgconfig pathfix
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomehier intlhack glib20 atk
-USE_PKGCONFIG=	build
+USE_GNOME=	gnomehier intlhack glib20 atk
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
