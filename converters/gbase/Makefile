@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gbase
-# Date created:				Fri Sep  7 22:08:24 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gbase
 PORTVERSION=	0.5
@@ -19,7 +15,7 @@ LICENSE=	ART10
 OPTIONS_DEFINE=	GTK2
 
 PLIST_FILES=	bin/${PORTNAME}
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 .include <bsd.port.options.mk>
 

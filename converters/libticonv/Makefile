@@ -15,7 +15,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
-USES=		pathfix
+USES=		pathfix pkgconfig
 
 .include <bsd.port.mk>

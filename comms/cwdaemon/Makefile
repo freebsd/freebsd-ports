@@ -1,9 +1,5 @@
-# ports collection makefile for:	cwdaemon
-# Date created:		17 Mar 2005
-# Whom:			Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cwdaemon
 PORTVERSION=	0.9.4
@@ -19,7 +15,7 @@ LIB_DEPENDS=	cw:${PORTSDIR}/comms/unixcw
 
 INSTALL_TARGET=	install-exec
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 MAN8=		cwdaemon.8
 

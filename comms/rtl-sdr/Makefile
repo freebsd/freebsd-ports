@@ -13,7 +13,7 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

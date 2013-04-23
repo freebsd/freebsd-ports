@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sunpinyin
-# Date created:				10 Nov 2011
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sunpinyin
 DISTVERSION=	2.0.4rc2
@@ -26,11 +22,11 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL.LICENSE
 LICENSE_FILE_CDDL=	${WRKSRC}/OPENSOLARIS.LICENSE
 
+USES=		pkgconfig
 USE_XZ=		yes
 USE_SCONS=	yes
 SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 
 post-patch:

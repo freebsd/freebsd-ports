@@ -15,10 +15,10 @@ LIB_DEPENDS=	ticables2:${PORTSDIR}/comms/libticables2	\
 		ticalcs2:${PORTSDIR}/comms/libticalcs2		\
 		ticonv:${PORTSDIR}/converters/libticonv
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	NLS
 

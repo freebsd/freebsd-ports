@@ -18,8 +18,8 @@ LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 
 BROKEN=		does not build
 
