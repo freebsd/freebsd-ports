@@ -13,9 +13,9 @@ LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFI
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		streams:${PORTSDIR}/deskutils/libstreams
 
+USES=		pkgconfig
 USE_ICONV=	yes
 USE_GNOME=	libxml2
-USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

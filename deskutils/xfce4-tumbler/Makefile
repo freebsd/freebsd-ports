@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.27
@@ -17,13 +16,13 @@ COMMENT=	Thumbnail service for Xfce desktop
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
-USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--enable-xdg-cache \
 		--disable-gtk-doc-html

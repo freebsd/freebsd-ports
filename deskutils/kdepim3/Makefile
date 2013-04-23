@@ -26,11 +26,10 @@ PREFIX=		${KDE_PREFIX}
 _NO_KDE_FINAL=	yes
 
 USE_BZIP2=	yes
-USES=		bison
+USES=		bison pkgconfig
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \

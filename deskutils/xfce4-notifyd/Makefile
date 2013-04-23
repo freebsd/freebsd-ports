@@ -16,12 +16,12 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	dbus-glib:${PORTSDIR}/devel/dbus-glib \
 		notify:${PORTSDIR}/devel/libnotify
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack desktopfileutils
-USE_PKGCONFIG=	build
 USE_XFCE=	configenv libmenu libutil xfconf
 INSTALLS_ICONS=	yes
 USE_XORG=	x11

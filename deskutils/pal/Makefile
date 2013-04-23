@@ -1,7 +1,4 @@
-# Ports collection makefile for:	pal
-# Date created:				Mar 16, 2004
-# Whom:					Herbert J. Skuhra <h.skuhra@gmail.com>
-#
+# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pal
@@ -14,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A calendar application
 
+USES=		pkgconfig
 USE_GNOME=	glib20
-USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

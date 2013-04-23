@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	steadyflow
 PORTVERSION=	0.2.0
@@ -20,12 +19,11 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
 USE_XZ=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 GLIB_SCHEMAS=	net.launchpad.steadyflow.gschema.xml
 USE_GNOME=	desktopfileutils glib20 gtk30
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-USE_PKGCONFIG=	build
 CMAKE_ARGS=	-DCOMPILE_GSETTINGS_ON_INSTALL:BOOL=ON \
 		-DWANT_AYATANA:BOOL=OFF
 
