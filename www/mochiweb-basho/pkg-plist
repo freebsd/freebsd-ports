@@ -1,0 +1,82 @@
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochifmt.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochifmt_records.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochifmt_std.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiglobal.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochihex.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochijson.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochijson2.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochilists.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochilogfile2.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochinum.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochitemp.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiutf8.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb.app
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_acceptor.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_app.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_charref.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_cookies.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_cover.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_echo.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_headers.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_html.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_http.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_io.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_mime.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_multipart.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_request.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_request_tests.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_response.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_skel.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_socket.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_socket_server.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_sup.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_util.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin/reloader.beam
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/include/internal.hrl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt_records.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt_std.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiglobal.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochihex.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochijson.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochijson2.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochilists.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochilogfile2.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochinum.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochitemp.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiutf8.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb.app.src
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_acceptor.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_app.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_charref.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_cookies.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_cover.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_echo.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_headers.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_html.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_http.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_io.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_mime.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_multipart.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_request.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_request_tests.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_response.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_skel.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_socket.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_socket_server.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_sup.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_util.erl
+%%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/https_store.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_cert.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_key.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keepalive/keepalive.erl
+@dirrm %%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/include
+@dirrm %%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/mochiweb-%%VERSION%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keepalive
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/https
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
