@@ -737,6 +737,7 @@
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
+    SUBDIR += py-pytsk
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-salt-api
