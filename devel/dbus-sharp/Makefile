@@ -1,6 +1,4 @@
-# New ports collection makefile for:		dbus-sharp
-# Date Created:					20041011
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
 #
@@ -19,8 +17,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

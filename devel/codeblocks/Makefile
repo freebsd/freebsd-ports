@@ -19,10 +19,10 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		rsync:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+USES=		pkgconfig
 USE_WX=		2.8
 WANT_UNICODE=	yes
 USE_GNOME=	gnomehack desktopfileutils
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

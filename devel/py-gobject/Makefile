@@ -24,12 +24,11 @@ LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_PYTHON=	2.5+
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi

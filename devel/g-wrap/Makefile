@@ -19,12 +19,12 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 
 INFO=		g-wrap
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
-USE_PKGCONFIG=	build
 NOT_FOR_ARCHS=	ia64 powerpc
 
 CFLAGS+=		-fPIC

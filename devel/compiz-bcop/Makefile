@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compiz-bcop
-# Date created:				2007-08-15
-# Whom:					Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	compiz-bcop
 PORTVERSION=	0.8.4
@@ -19,8 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
+USES=		pkgconfig
 USE_GNOME=	libxslt
-USE_PKGCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \

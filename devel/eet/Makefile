@@ -18,10 +18,9 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_EFL=	eina librt_hack libtool_hack
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" OPENSSL_LIBS="-lssl"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rpc2
-# Date created:				Wed Mar 22 19:06:45 EST 2000
-# Whom:					jaharkes
-#
+# Created by: jaharkes
 # $FreeBSD$
-#
 
 PORTNAME=	rpc2
 PORTVERSION=	2.10
@@ -18,8 +14,8 @@ COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 

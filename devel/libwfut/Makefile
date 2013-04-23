@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libwfut
-# Date created:				4th April 2007
-# Whom:					Oliver Lehmann
-#
+# Created by: Oliver Lehmann
 # $FreeBSD$
-#
 
 PORTNAME=	libwfut
 PORTVERSION=	0.2.2
@@ -18,8 +14,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 MAN1=		wfut.1
 

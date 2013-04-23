@@ -13,8 +13,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
-USES+=		pathfix
+USES=		pathfix pkgconfig
 ONLY_FOR_ARCHS=	i386 amd64
 
 tests: build

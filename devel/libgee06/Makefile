@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GMAKE=	yes
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomehier gnomehack
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libg19draw
-# Date created:				Apr 15 2011
-# Whom:					Armin Pirkovitsch <armin@frozen-zone.org>
-#
+# Created by: Armin Pirkovitsch <armin@frozen-zone.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libg19draw
 PORTVERSION=	1.0.0
@@ -20,7 +16,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 PLIST_FILES=	include/libg19draw.h \
 		lib/libg19draw.a \

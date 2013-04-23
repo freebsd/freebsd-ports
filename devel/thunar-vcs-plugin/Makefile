@@ -1,6 +1,5 @@
 # Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
@@ -20,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	desktopfileutils gnomehack gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

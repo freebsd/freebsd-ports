@@ -15,9 +15,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pavouk
 GH_COMMIT=	1bbf1bc
 
+USES=		pkgconfig
 USE_LUA=	5.1+
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include/${LUA_SUBDIR}
 

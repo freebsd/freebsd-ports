@@ -11,11 +11,11 @@ COMMENT=	Java bindings for ZeroMQ
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
 
+USES=	pkgconfig
 USE_AUTOTOOLS=	autoconf:env libtool automake:env
 USE_GMAKE=	yes
 USE_JAVA=	1.4+
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--with-zeromq=${LOCALBASE}
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}

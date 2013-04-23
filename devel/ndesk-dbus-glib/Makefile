@@ -1,10 +1,6 @@
-# New ports collection makefile for:	ndesk-dbus-glib
-# Date created:				14 January 2008
-# Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
-#
+# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/ndesk-dbus-glib/Makefile,v 1.2 2008/01/14 22:35:41 mezz Exp $
-#
 
 PORTNAME=	ndesk-dbus-glib
 PORTVERSION=	0.4.1
@@ -19,8 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/deve
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
 
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING README

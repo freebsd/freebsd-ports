@@ -13,8 +13,8 @@ LICENSE=	LGPL20
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		pkgconfig
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--with-ssl-libs=-L${OPENSSLLIB} \

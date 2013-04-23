@@ -16,9 +16,8 @@ LIB_DEPENDS=	datrie:${PORTSDIR}/devel/libdatrie
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	DOXYGEN
 

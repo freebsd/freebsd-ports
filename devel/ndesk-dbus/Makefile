@@ -1,10 +1,6 @@
-# New ports collection makefile for:	ndesk-dbus
-# Date created:				14 January 2008
-# Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
-#
+# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/ndesk-dbus/Makefile,v 1.2 2008/01/14 22:35:41 mezz Exp $
-#
 
 PORTNAME=	ndesk-dbus
 PORTVERSION=	0.6.1a
@@ -18,8 +14,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 USE_GMAKE=	yes
-USES=	pathfix
-USE_PKGCONFIG=	build
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING README

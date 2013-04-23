@@ -26,10 +26,9 @@ RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}3
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20
 USE_PYTHON=	2.5+
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

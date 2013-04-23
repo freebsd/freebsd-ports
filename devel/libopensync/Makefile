@@ -16,9 +16,8 @@ LIB_DEPENDS=	exslt:${PORTSDIR}/textproc/libxslt
 CONFLICTS=	libopensync-0.22*
 
 USE_SQLITE=	3
-USE_PKGCONFIG=	yes
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS+=	-Wno-dev
 USE_GNOME=	glib20 libxml2
 USE_PYTHON=	yes

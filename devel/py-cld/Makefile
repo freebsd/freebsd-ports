@@ -16,7 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	cld:${PORTSDIR}/devel/cld
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	chromium_compact_language_detector

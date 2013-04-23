@@ -12,9 +12,9 @@ COMMENT=	Qt core library
 
 LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu
 
+USES=		pkgconfig
 USE_GNOME=	_glib20
 USE_GCC=	any
-USE_PKGCONFIG=	build
 USE_QT4=	qmake_build moc_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

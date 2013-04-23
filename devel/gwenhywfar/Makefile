@@ -20,12 +20,11 @@ OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
 MEMDEBUG_DESC=	Enable memory debugger statistic
 .endif
 
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \

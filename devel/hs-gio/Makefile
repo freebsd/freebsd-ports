@@ -13,8 +13,8 @@ FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
 
+USES=		pkgconfig
 USE_CABAL=	glib>=0.12.0 mtl
-USE_PKGCONFIG=	build
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -11,9 +11,8 @@ DISTNAME=	fuse-python-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
 
-USES=		fuse
+USES=		fuse pkgconfig
 USE_PYTHON=	yes
-USE_PKGCONFIG=	yes
 USE_PYDISTUTILS=easy_install
 USE_ICONV=	yes
 PORTDOCS=	AUTHORS Changelog FAQ INSTALL README.1st README.historic \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	orbitcpp
-# Date created:		30 August 2001
-# Whom:	      	  Thomas Hentschel <thomas at hentschel dot net>
-#
+# Created by: Thomas Hentschel <thomas at hentschel dot net>
 # $FreeBSD$
-#
 
 PORTNAME=	orbitcpp
 PORTVERSION=	1.3.9
@@ -16,7 +12,7 @@ COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack orbit2
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

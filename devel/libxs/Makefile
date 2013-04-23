@@ -10,8 +10,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Open source lightweight messaging layer
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG DOCS PLUGINS ZMQ

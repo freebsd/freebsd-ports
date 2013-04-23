@@ -33,11 +33,10 @@ MPI_DESC=	Enable build of MPI wrappers
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
