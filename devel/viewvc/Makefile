@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.18
-#PORTREVISION=	1
+PORTVERSION=	1.1.19
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/ohauer
