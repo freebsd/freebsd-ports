@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unalz
-# Date created:		23 October 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	unalz
 PORTVERSION=	0.65
@@ -17,6 +13,7 @@ COMMENT=	Extracts AlZip archives
 
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
+BROKEN=		fails to build
 USE_ICONV=	yes
 PLIST_FILES=	bin/unalz
 MAKEFILE=	Makefile.freebsd
