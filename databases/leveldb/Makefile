@@ -3,6 +3,7 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -48,16 +49,21 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/leveldb/ ${DATADIR}/
+	${MKDIR} ${PREFIX}/include/leveldb/ ${PREFIX}/include/memenv/ ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${PREFIX}/include/leveldb/
+	${INSTALL_DATA} ${WRKSRC}/helpers/memenv/memenv.h ${PREFIX}/include/memenv/
 	${INSTALL_LIB} ${WRKSRC}/libleveldb.a ${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libmemenv.a ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/
+	${LN} -s libleveldb.so.${SHLIB_MAJOR} ${PREFIX}/lib/libleveldb.so
+	${LN} -s libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}
+	${LN} -s libmemenv.so.${SHLIB_MAJOR} ${PREFIX}/lib/libmemenv.so
+	${LN} -s libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libmemenv.so.${SHLIB_MAJOR}
 # backward compatibility
 	${ECHO} "SNAPPY=${SNAPPY}" >> ${WRKSRC}/build_config.mk
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PORT_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PLATFORM_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${DATADIR}/
-	${LN} -s libleveldb.so.${SHLIB_MAJOR} ${PREFIX}/lib/libleveldb.so
-	${LN} -s libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}
 
 .include <bsd.port.mk>
