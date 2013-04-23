@@ -19,8 +19,8 @@ LIB_DEPENDS=	raw:${PORTSDIR}/graphics/libraw
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_EFL=	eina
-USE_PKGCONFIG=	yes
 USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}

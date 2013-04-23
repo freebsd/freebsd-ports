@@ -13,10 +13,10 @@ COMMENT=	An application to view PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 desktopfileutils intltool intlhack
 USE_PYTHON=	yes
-USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 

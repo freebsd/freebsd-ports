@@ -22,8 +22,7 @@ SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
 USE_GNOME=	glib20 intltool
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		pathfix pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

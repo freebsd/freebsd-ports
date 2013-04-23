@@ -30,8 +30,7 @@ USB_DESC=	USB support
 GPHOTO2_DESC=	gPhoto2 support
 IEEE1284_DESC=	libieee1284 support
 
-USES=	pathfix
-USE_PKGCONFIG=	yes
+USES=	pathfix pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${WRKDIR}/tmproot \

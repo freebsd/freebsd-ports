@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openexr_ctl
-# Date created:				2007-10-09
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	openexr_ctl
 PORTVERSION=	1.0.1
@@ -18,7 +14,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		IlmCtl:${PORTSDIR}/graphics/ampasCTL
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

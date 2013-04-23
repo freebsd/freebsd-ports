@@ -16,12 +16,12 @@ LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango
-USE_PKGCONFIG=	build
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes

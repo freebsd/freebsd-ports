@@ -12,7 +12,7 @@ COMMENT=	Font engine for complex non-Roman writing systems
 OPTIONS_DEFINE=	FREETYPE
 OPTIONS_DEFAULT=	FREETYPE
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xft --without-pangographite

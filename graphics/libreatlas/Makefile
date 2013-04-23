@@ -31,8 +31,8 @@ LIB_DEPENDS=	mspack:${PORTSDIR}/archivers/libmspack \
 		xcb:${PORTSDIR}/x11/libxcb
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pngwriter
-# Date created:			Nov 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pngwriter
 PORTVERSION=	0.5.4
@@ -18,7 +13,7 @@ COMMENT=	C++ library for creating PNG images
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

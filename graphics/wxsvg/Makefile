@@ -15,11 +15,10 @@ LIB_DEPENDS=	avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
 		expat:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_WX=		yes
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}"

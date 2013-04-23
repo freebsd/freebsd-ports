@@ -13,7 +13,7 @@ COMMENT=	Tile matching game
 
 LICENSE=	GPLv2
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gtk20 esound
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 MAKE_JOBS_SAFE=	yes

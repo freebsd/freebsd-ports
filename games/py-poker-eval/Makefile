@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	py-poker-eval
-# Date created:			Dec 14, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	poker-eval
 PORTVERSION=	0.138
@@ -21,8 +16,8 @@ LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pkgconfig
 USE_PYTHON=	2.5-2.7
-USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
 ACLOCAL_ARGS=	-I config
 CONFIGURE_ARGS=	PYTHON=""

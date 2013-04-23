@@ -11,10 +11,10 @@ COMMENT=	Library to read digital camera file meta-data
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

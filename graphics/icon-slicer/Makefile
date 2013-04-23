@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

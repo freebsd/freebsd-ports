@@ -16,12 +16,11 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTS
 
 USE_XZ=	yes
 USE_GETTEXT=	yes
-USES=		bison pathfix
+USES=		bison pathfix pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2
 WANT_GSTREAMER=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

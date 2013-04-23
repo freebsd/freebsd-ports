@@ -21,8 +21,8 @@ LIB_DEPENDS=	spatialite:${PORTSDIR}/databases/spatialite \
 		freexl:${PORTSDIR}/textproc/freexl
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

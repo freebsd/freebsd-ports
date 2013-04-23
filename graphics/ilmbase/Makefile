@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 CONFLICTS=	OpenEXR-1.[0-4].*
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

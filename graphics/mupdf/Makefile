@@ -21,8 +21,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
+USES=		pkgconfig
 USE_XORG=	x11 xext
-USE_PKGCONFIG=	build
 MAN1=		mupdf.1 mubusy.1 mudraw.1
 
 MAKE_JOBS_SAFE=	yes

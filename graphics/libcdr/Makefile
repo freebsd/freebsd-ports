@@ -19,9 +19,8 @@ LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror --without-docs
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 CXXFLAGS+=	-Wno-long-long
 

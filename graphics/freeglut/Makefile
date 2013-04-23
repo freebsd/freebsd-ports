@@ -1,10 +1,4 @@
-# vim:ts=8:sw=8
-# New ports collection makefile for:	freeglut
-# Date created:		Wed Apr 23 2003
-# Whom:			thierry@pompo.net
-#
 # $FreeBSD$
-#
 
 PORTNAME=	freeglut
 PORTVERSION=	2.8.0

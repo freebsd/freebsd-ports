@@ -16,10 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize automake
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --ignore-deps

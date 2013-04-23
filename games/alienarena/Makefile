@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alienarena
-# Date created:				11 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	alienarena
 PORTVERSION=	2011.753
@@ -47,10 +43,10 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_CLIENT)
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -107,4 +103,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
