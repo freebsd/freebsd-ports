@@ -378,5 +378,3 @@ bin/yaws
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%
 @dirrm %%ETCDIR%%
-@exec ln -sf yaws-%%VERSION%% %D/lib/erlang/lib/yaws
-@unexec rm -f %D/lib/erlang/lib/yaws
