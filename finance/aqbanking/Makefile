@@ -23,9 +23,8 @@ PAYPAL_DESC=		Build PayPal backend (separate license)
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wzdftpd
-# Date created:		2003-10-22
-# Whom:			Roman Bogorodskiy
-#
+# Created by: Roman Bogorodskiy
 # $FreeBSD$
-#
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.1
@@ -14,12 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	wzdftpd
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 USE_GNOME=	ltverhack
 CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
