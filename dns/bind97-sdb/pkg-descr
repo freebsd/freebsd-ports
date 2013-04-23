@@ -1,4 +1,0 @@
-BIND version 9.7 with support for sdb database drivers, including ldap and
-postgresql.
-
-WWW: https://www.isc.org/software/bind/
