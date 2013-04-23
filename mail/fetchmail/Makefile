@@ -8,7 +8,7 @@
 # want fetchmailconf to work, define the X11 option.
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.25
+PORTVERSION=	6.3.26
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
