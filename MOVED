@@ -4212,3 +4212,4 @@ net-im/gajim-devel|net-im/gajim|2013-04-18|Has expired: This port is outdated fo
 sysutils/grub||2013-04-22|Unmaintained and broken
 sysutils/kgrubeditor||2013-04-22|Depends on broken and removed grub port
 games/grubinvaders||2013-04-22|Depends on broken and removed grub port
+dns/dnsperf||2013-04-20|Removed
