@@ -33,7 +33,7 @@ HELP_DESC=		Enable builtin help
 
 USES=			bison
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMPLICITCD}
 EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-implicitcd
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
 USE_ICONV=		yes
-USE_GETTEXT=		yes
+USES+=			gettext
 PLIST_SUB+=		NLS=""
 .endif
 
@@ -137,4 +137,4 @@ cklatest:
 	    ftp://ftp.cwru.edu/pub/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
 		| fgrep -v .sig | ${TAIL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
