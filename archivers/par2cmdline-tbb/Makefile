@@ -1,13 +1,9 @@
-# New ports collection makefile for:    par2cmdline-tbb
-# Whom:                                 Ganael Laplanche <ganael.laplanche@martymac.org>
-# Date created:                         27 December 2007
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}

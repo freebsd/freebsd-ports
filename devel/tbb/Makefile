@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	tbb41_20130116oss_src
+DISTNAME=	tbb41_20130314oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -21,10 +21,12 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/tbb41_20130116oss
+WRKSRC=	${WRKDIR}/tbb41_20130314oss
 
 post-extract:
+.if ${CC} != "gcc"
 	@${CP} ${WRKSRC}/build/FreeBSD.gcc.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
+.endif
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
