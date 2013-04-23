@@ -41,7 +41,7 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 
 .if ${PORT_OPTIONS:MTCL}
 CATEGORIES+=	tcl
-USE_TCL=	83+
+USE_TCL=	84+
 .endif
 
 .include <bsd.port.pre.mk>

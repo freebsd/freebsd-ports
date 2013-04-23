@@ -29,10 +29,10 @@ OPTIONS_DEFINE=	TCL THREADS DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		83+
+USE_TCL=		84+
 .else
 .if ${PORT_OPTIONS:MDOCS}
-USE_TCL_BUILD=		83+
+USE_TCL_BUILD=		84+
 . endif
 .endif
 

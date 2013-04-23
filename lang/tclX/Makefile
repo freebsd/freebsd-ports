@@ -16,7 +16,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
 USE_BZIP2=	yes
-USE_TCL=	83+
+USE_TCL=	84+
+#INVALID_TCL_VER=86
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -63,11 +64,6 @@ EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
 PLIST_SUB+=	BELOW_85='@comment '
 .else
 PLIST_SUB+=	BELOW_85=''
-.endif
-.if ${TCL_VER} > 8.3
-PLIST_SUB+=	ABOVE_83=''
-.else
-PLIST_SUB+=	ABOVE_83='@comment '
 .endif
 
 pre-configure:

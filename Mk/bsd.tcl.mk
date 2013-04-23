@@ -12,7 +12,7 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 # USE_TCL		- Add library dependency on Tcl. If no version is given by the maintainer
 #			  via the port or by the user via defined variable try to find the highest
 #			  stable installed version.
-#			  Available values: yes 86+ 85+ 84+ 83+ 85 84 83
+#			  Available values: yes 86+ 85+ 84+ 85 84
 #			  NOTE: - default value 85 is used in case of USE_TCL=yes
 #
 # USE_TCL_BUILD		- Add buildtime dependency on Tcl (tclsh).
@@ -31,9 +31,9 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 #			        - ports using the wrapper should support default Tcl (8.5)
 ##
 # INVALID_TCL_VER	- This variable contains a list of Tcl versions not supported by the port.
-#			  This setting is effective only when USE_TCL is set to a range (e.g. 83+)
+#			  This setting is effective only when USE_TCL is set to a range (e.g. 84+)
 # WITH_TCL_VER		- User defined global variable to set Tcl version
-#			  This variable is effective only if USE_TCL is set to a range (e.g. 83+)
+#			  This variable is effective only if USE_TCL is set to a range (e.g. 84+)
 #			  and WITH_TCL_VER points inside that range.
 #			  NOTE: INVALID_TCL_VER takes precedence
 # <UNIQUENAME>_WITH_TCL_VER	- User defined port specific variable to set Tcl version
@@ -44,7 +44,7 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 # USE_TK		- Add library dependency on Tk. If no version is given by the maintainer
 #			  via the port or by the user via defined variable try to find the highest
 #			  stable installed version.
-#			  Avaliable values: yes 86+ 85+ 84+ 83+ 85 84 83
+#			  Avaliable values: yes 86+ 85+ 84+ 85 84
 #			  NOTE: - overrides USE_TCL
 #			        - default value 85 is used in case of USE_TK=yes
 #
@@ -64,9 +64,9 @@ Tcl_Include_MAINTAINER=		mm@FreeBSD.org
 #			        - ports using the wrapper should support default Tk (8.5)
 ##
 # INVALID_TK_VER	- This variable contains a list of Tk versions not supported by the port
-#			  This setting is effective only when USE_TK is set to a range (e.g. 83+)
+#			  This setting is effective only when USE_TK is set to a range (e.g. 84+)
 # WITH_TK_VER		- User defined global variable to set Tk version.
-#			  This variable is effective only if USE_TK is set to a range (e.g. 83+)
+#			  This variable is effective only if USE_TK is set to a range (e.g. 84+)
 #			  and WITH_TK_VER points inside that range.
 #			  NOTE: overrides WITH_TCL_VER.
 # <UNIQUENAME>_WITH_TK_VER	- User defined port specific variable to set Tk version
@@ -158,11 +158,10 @@ INVALID_TCL_VER:=	${INVALID_TK_VER}
 . if defined(USE_TCL)
 
 _TCL_DEFAULT_VERSION=		85
-_TCL_VERSIONS=			86 85 84 83
-_TCL_RANGE_VERSIONS= 		86+ 85+ 84+ 83+
+_TCL_VERSIONS=			86 85 84
+_TCL_RANGE_VERSIONS= 		86+ 85+ 84+
 
 # For specifying [85, 84, ..]+
-_TCL_83P=	83 84 85 86
 _TCL_84P=	84 85 86
 _TCL_85P=	85 86
 _TCL_86P=	86
@@ -201,7 +200,7 @@ USE_TCL=	${_TCL_VER}
 .   endfor
 .  endif
 
-# Check for highest installed Tcl (if e.g. 83+ is specified)
+# Check for highest installed Tcl (if e.g. 84+ is specified)
 # The default version of Tcl counts as the highest
 .  if ${_TCL_VER} == "no"
 .   for ver in ${_TCL_RANGE_VERSIONS}

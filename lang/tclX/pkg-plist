@@ -132,7 +132,7 @@ lib/tclx%%TCLX_VER%%/help.tcl
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lreplace
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lrmdups
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lsearch
-%%PORTDOCS%%%%ABOVE_83%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lset
+%%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lset
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lsort
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lvarcat
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lvarpop

@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.wagner.pp.ru/pub/tcl/tclsyslog/
 MAINTAINER=	frank@fenor.de
 COMMENT=	Tcl Interface to Syslog
 
-USE_TCL=	83+
+USE_TCL=	84+
 MANN=		syslog.n
 MANCOMPRESSED=	no
 

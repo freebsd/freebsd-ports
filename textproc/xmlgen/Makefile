@@ -9,7 +9,7 @@ MASTER_SITES=	SF/tclxml/${PORTNAME}/v${PORTVERSION}
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Write XML documents using Tcl
 
-USE_TCL=	83+
+USE_TCL=	84+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

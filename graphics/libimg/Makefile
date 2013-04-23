@@ -29,7 +29,7 @@ PLIST_SUB+=	DIR="${DIR}" SHLIB_NAME="${SHLIB_NAME}" \
 
 WRKSRC=		${WRKDIR}/img${PORTVERSION}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-USE_TK=		83+
+USE_TK=		84+
 USE_TK_BUILD=	${USE_TK}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
 MAKE_JOBS_SAFE=	yes
@@ -54,17 +54,13 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${TCL_VER} == 8.3
-PKGNAMESUFFIX=	-tk83
-EXTRA_PATCHES=	${FILESDIR}/pre-tk84-warnings
-CONFLICTS=	libimg-1.* libimg-tkstep-1.*
-.elif ${TCL_VER} == 8.4
+.if ${TCL_VER} == 8.4
 PKGNAMESUFFIX=	-tk84
 EXTRA_PATCHES=	${FILESDIR}/tk84-Tk_PhotoPutBlock ${FILESDIR}/tk84-warnings
-CONFLICTS=	libimg-tk83-1.* libimg-tkstep-1.*
+CONFLICTS=	libimg-tkstep-1.*
 .else
 EXTRA_PATCHES=	${FILESDIR}/tk85-Tk_PhotoPutBlock ${FILESDIR}/tk84-warnings
-CONFLICTS=	libimg-tk83-1.* libimg-tk84-1.* libimg-tkstep-1.*
+CONFLICTS=	libimg-tk84-1.* libimg-tkstep-1.*
 .endif
 
 .include <bsd.port.post.mk>
