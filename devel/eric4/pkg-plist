@@ -392,7 +392,6 @@
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ShellPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TasksPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TemplatesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TerminalPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TrayStarterPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.VcsPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ViewmanagerPage.html
@@ -484,7 +483,6 @@
 %%DOCSDIR%%/Source/eric4.QScintilla.ShellHistoryDialog.html
 %%DOCSDIR%%/Source/eric4.QScintilla.SpellChecker.html
 %%DOCSDIR%%/Source/eric4.QScintilla.SpellCheckingDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Terminal.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterBase.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterPython.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterRuby.html
@@ -893,10 +891,20 @@
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/dialogbuttonsright.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/dialogbuttonsright4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/mainwindow4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qdockwidget4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qframe4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qgroupbox4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qmdiarea4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qscrollarea4.tmpl   
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qstackedwidget4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qtabwidget4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qtoolbox4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/tabdialog.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/widget.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/widget4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/wizard.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/wizard4.tmpl
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/wizardpage4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DocumentationTools/APIGenerator.py
 %%PYTHON_SITELIBDIR%%/eric4/DocumentationTools/APIGenerator.pyc
 %%PYTHON_SITELIBDIR%%/eric4/DocumentationTools/Config.py
@@ -1829,8 +1837,6 @@
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TasksPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TemplatesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TemplatesPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TerminalPage.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TerminalPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TrayStarterPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/TrayStarterPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_ApplicationPage.py
@@ -1916,8 +1922,6 @@
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TasksPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TemplatesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TemplatesPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TerminalPage.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TerminalPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TrayStarterPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_TrayStarterPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_VcsPage.py
@@ -2158,8 +2162,6 @@
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/SpellChecker.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/SpellCheckingDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/SpellCheckingDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Terminal.py
-%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Terminal.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterBase.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterBase.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterPython.py
