@@ -1,42 +1,30 @@
-# New ports collection makefile for:	TclTrf
-# Date created:			May 22, 2000
-# Whom:				Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	memchan
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	tcl-
+DISTNAME=	Memchan${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Two new channel types for in-memory channels in TCL8
 
-BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	-j`${SYSCTL} -n hw.ncpu`
+MAKE_JOBS_SAFE=	yes
+ALL_TARGET=	binaries libraries doc-old
 
 USE_TCL=	84+
-DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
-
-MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
-		PORTVERSION="${PORTVERSION:R}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}
 
 # Too bad, n is no longer an acceptable section for bsd.man.mk
 MANN= fifo.n fifo2.n memchan.n memchanapi.n null.n random.n zero.n
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-post-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
-#.ifndef(NOPORTDOCS)
-#	${MKDIR} ${DOCSDIR}
-#	${CP} -pR ${WRKSRC}/doc/html/* ${DOCSDIR}
-#.endif
+regression-test test:
+	${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>
-
-PLIST_SUB!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} env
