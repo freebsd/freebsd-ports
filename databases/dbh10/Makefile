@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dbh
-# Date created:			Aug 9, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dbh
 PORTVERSION=	1.0.24
@@ -18,10 +13,9 @@ COMMENT=	Disk Based Hashtables
 CONFLICTS=	dbh-[2-9]*
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 LATEST_LINK=	dbh10
 

@@ -12,10 +12,9 @@ COMMENT=	Disk Based Hashtables
 
 CONFLICTS=	dbh-[0-3]*
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
 
 MAN1=		dbh.1 dbh.h.1
 MAN3=		dbh_close.3 dbh_create.3 dbh_destroy.3 dbh_erase.3 \
