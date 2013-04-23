@@ -34,7 +34,7 @@ MAKE_ARGS+=	NOTTF=1
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 USE_LUA=	5.1
 .else
 MAKE_ARGS+=	NOLUA=1
