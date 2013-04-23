@@ -366,13 +366,13 @@
     SUBDIR += interchange
     SUBDIR += ismail
     SUBDIR += iwebcal
-    SUBDIR += jmeter
     SUBDIR += jawstats
     SUBDIR += jdresolve
     SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetty
     SUBDIR += jinzora
+    SUBDIR += jmeter
     SUBDIR += joomla15
     SUBDIR += joomla25
     SUBDIR += jspacker
@@ -531,8 +531,8 @@
     SUBDIR += mod_spdy
     SUBDIR += mod_tidy
     SUBDIR += mod_tsa
-    SUBDIR += mod_umask
     SUBDIR += mod_uid
+    SUBDIR += mod_umask
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit
