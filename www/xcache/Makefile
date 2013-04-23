@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcache
-DISTVERSION=	3.0.1-rc1
+DISTVERSION=	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
