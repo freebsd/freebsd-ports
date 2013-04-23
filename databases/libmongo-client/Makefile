@@ -17,7 +17,7 @@ GH_COMMIT=	13cc0ee
 
 USE_AUTOTOOLS=	automake autoconf libtool
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes

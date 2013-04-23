@@ -16,7 +16,7 @@ LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal libtool
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 

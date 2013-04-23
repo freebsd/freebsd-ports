@@ -14,10 +14,10 @@ COMMENT=	AnimeNfo client with GTK support
 
 LICENSE=	GPLv2
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}

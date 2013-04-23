@@ -15,12 +15,12 @@ LICENSE=		GPLv3
 
 CONFLICTS=		*samba3[0-4]-3.*
 
+USES=			pkgconfig
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
-USE_PKGCONFIG=		build
 
 USE_OPENLDAP=		yes
 

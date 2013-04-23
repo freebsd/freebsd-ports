@@ -1,7 +1,4 @@
-# New ports collection makefile for:	hk_classes
-# Date created:				25 July 2002
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	hk_classes
@@ -16,11 +13,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USES=	pkgconfig
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_PKGCONFIG=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool
