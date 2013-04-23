@@ -12,4 +12,4 @@ queue, external after queue), Berkeley DB database, LDAP database, MySQL
 database, PostgreSQL database, Maildir and mailbox format, Virtual domains,
 VERP envelope return addresses and others.
 
-WWW:	http://www.postfix.org/
+WWW: http://www.postfix.org/
