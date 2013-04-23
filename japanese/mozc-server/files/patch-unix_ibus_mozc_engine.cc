@@ -1,6 +1,6 @@
---- unix/ibus/mozc_engine.cc.orig	2012-09-07 10:21:29.111022215 +0900
-+++ unix/ibus/mozc_engine.cc	2012-09-07 10:30:26.452021649 +0900
-@@ -756,7 +756,7 @@
+--- unix/ibus/mozc_engine.cc.orig	2013-04-21 03:48:44.433270458 +0900
++++ unix/ibus/mozc_engine.cc	2013-04-21 04:12:50.609270610 +0900
+@@ -758,7 +758,7 @@
        //     on size_t, not uint32.
        string selection_text;
        const uint32 selection_start = min(cursor_pos, anchor_pos);

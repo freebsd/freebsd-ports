@@ -1,56 +1,80 @@
---- ipc/unix_ipc.cc.orig	2012-09-07 10:21:32.692021977 +0900
-+++ ipc/unix_ipc.cc	2012-09-07 10:38:01.136021395 +0900
-@@ -41,7 +41,7 @@
+--- ipc/unix_ipc.cc.orig	2013-04-21 03:48:45.257269513 +0900
++++ ipc/unix_ipc.cc	2013-04-21 08:33:27.207272333 +0900
+@@ -41,6 +41,9 @@
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/un.h>
--#ifdef OS_MACOSX
 +#if defined(OS_MACOSX) || defined(__FreeBSD__)
- #include <sys/ucred.h>
- #endif
++#include <sys/ucred.h>
++#endif
  #include <sys/wait.h>
-@@ -125,7 +125,7 @@
+ #include <unistd.h>
+ 
+@@ -123,6 +126,29 @@
  bool IsPeerValid(int socket, pid_t *pid) {
    *pid = 0;
  
--#ifdef OS_MACOSX
 +#if defined(OS_MACOSX) || defined(__FreeBSD__)
-   // If the OS is MAC, we should validate the peer by using LOCAL_PEERCRED.
-   struct xucred peer_cred;
-   socklen_t peer_cred_len = sizeof(struct xucred);
-@@ -147,7 +147,7 @@
-   *pid = 0;
- #endif
- 
--#ifdef OS_LINUX
++  // If the OS is MAC, we should validate the peer by using LOCAL_PEERCRED.
++  struct xucred peer_cred;
++  socklen_t peer_cred_len = sizeof(struct xucred);
++  if (::getsockopt(socket, 0, LOCAL_PEERCRED,
++                   &peer_cred, &peer_cred_len) < 0) {
++    LOG(ERROR) << "cannot get peer credential.  NOT a Unix socket?";
++    return false;
++  }
++  if (peer_cred.cr_version != XUCRED_VERSION) {
++    LOG(WARNING) << "credential version mismatch.";
++    return false;
++  }
++  if (peer_cred.cr_uid != ::geteuid()) {
++    LOG(WARNING) << "uid mismatch." << peer_cred.cr_uid << "!=" << ::geteuid();
++    return false;
++  }
++
++  // MacOS doesn't have cr_pid;
++  *pid = 0;
++#endif
++
 +#if defined(OS_LINUX) && !defined(__FreeBSD__)
    // On ARM Linux, we do nothing and just return true since the platform
    // sometimes doesn't support the getsockopt(sock, SOL_SOCKET, SO_PEERCRED)
    // system call.
-@@ -310,7 +310,7 @@
+@@ -144,6 +170,7 @@
+ 
+   *pid = peer_cred.pid;
+ #endif  // __arm__
++#endif
+ 
+   return true;
+ }
+@@ -278,7 +305,12 @@
      address.sun_family = AF_UNIX;
      ::memcpy(address.sun_path, server_address.data(), server_address_length);
      address.sun_path[server_address_length] = '\0';
--#ifdef OS_MACOSX
 +#if defined(OS_MACOSX) || defined(__FreeBSD__)
-     address.sun_len = SUN_LEN(&address);
-     const size_t sun_len = sizeof(address);
- #else
-@@ -435,21 +435,21 @@
++    address.sun_len = SUN_LEN(&address);
++    const size_t sun_len = sizeof(address);
++#else
+     const size_t sun_len = sizeof(address.sun_family) + server_address_length;
++#endif
+     pid_t pid = 0;
+     if (::connect(socket_,
+                   reinterpret_cast<const sockaddr*>(&address),
+@@ -398,16 +430,21 @@
                 SO_REUSEADDR,
                 reinterpret_cast<char *>(&on),
                 sizeof(on));
--#ifdef OS_MACOSX
 +#if defined(OS_MACOSX) || defined(__FreeBSD__)
-   addr.sun_len = SUN_LEN(&addr);
-   const size_t sun_len = sizeof(addr);
- #else
++  addr.sun_len = SUN_LEN(&addr);
++  const size_t sun_len = sizeof(addr);
++#else
    const size_t sun_len = sizeof(addr.sun_family) + server_address_.size();
- #endif
 -  if (!IsAbstractSocket(server_address_)) {
 -    // Linux does not use files for IPC.
 -    ::chmod(server_address_.c_str(), 0600);
 -  }
++#endif
    if (::bind(socket_, reinterpret_cast<sockaddr *>(&addr), sun_len) != 0) {
      // The UNIX domain socket file (server_address_) already exists?
      LOG(FATAL) << "bind() failed: " << strerror(errno);

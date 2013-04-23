@@ -1,8 +1,8 @@
---- base/base.gyp.orig	2012-09-07 10:21:29.099021913 +0900
-+++ base/base.gyp	2012-09-12 12:53:34.737234489 +0900
-@@ -262,20 +262,20 @@
-         }],
-         ['OS=="linux" and target_platform!="Android"', {
+--- base/base.gyp.orig	2013-04-21 03:48:45.178270244 +0900
++++ base/base.gyp	2013-04-21 04:16:38.943269499 +0900
+@@ -265,20 +265,20 @@
+         ['OS=="linux" and target_platform!="Android" and '
+          'not (target_platform=="NaCl" and _toolset=="target")', {
            'cflags': [
 -            '<!@(<(pkg_config_command) --cflags-only-other openssl)',
 +            '%%OPENSSL_CFLAGS%%',
