@@ -1,0 +1,85 @@
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine.app
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_app.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_decision_core.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_deps.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_dispatcher.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_error_handler.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_log.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_log_handler.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_logger_watcher.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_logger_watcher_sup.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_mochiweb.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_multipart.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_perf_log_handler.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_request.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_resource.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_router.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_sup.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_util.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/wmtrace_resource.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin/wrq.beam
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include/webmachine.hrl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include/webmachine_logger.hrl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include/wm_reqdata.hrl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include/wm_reqstate.hrl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include/wm_resource.hrl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/Makefile
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/README
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/priv/dispatch.conf
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/rebar.config
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.app.src
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_app.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_resource.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_sup.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/start.sh
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/wmskel.template
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/trace/http-headers-status-v3.png
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/trace/wmtrace.css
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/trace/wmtrace.js
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/www/index.html
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine.app.src
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_app.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_decision_core.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_deps.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_dispatcher.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_error_handler.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_log.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_log_handler.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_logger_watcher.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_logger_watcher_sup.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_mochiweb.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_multipart.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_perf_log_handler.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_request.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_resource.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_router.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_sup.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/webmachine_util.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/wmtrace_resource.erl
+%%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src/wrq.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/priv/dispatch.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rebar.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo.app.src
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_app.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_fs_resource.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_resource.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_sup.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/start.sh
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/www
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/trace
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/src
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates/priv
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv/templates
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/priv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

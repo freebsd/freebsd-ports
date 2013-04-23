@@ -2038,6 +2038,7 @@
     SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++
+    SUBDIR += webmachine
     SUBDIR += webobjects
     SUBDIR += webpy
     SUBDIR += webreport
