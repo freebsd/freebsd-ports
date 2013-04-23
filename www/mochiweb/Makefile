@@ -13,6 +13,8 @@ LICENSE=	MIT
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+CONFLICTS=	mochiweb-basho-[0-9]*
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_GITHUB=	yes
