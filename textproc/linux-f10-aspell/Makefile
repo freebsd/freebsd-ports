@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f10-aspell
-# Date created:				2009-05-05
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6
@@ -21,7 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	3.fc10
-BRANDELF_DIRS==	usr/bin
+BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
