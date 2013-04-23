@@ -1,9 +1,5 @@
-# Ports collection makefile for:  opentaxsolver
-# Date created:			  Sat Apr 08, 2006
-# Whom:				  John Hein (jhein@timing.com)
-#
+# Created by: John Hein (jhein@timing.com)
 # $FreeBSD$
-#
 
 PORTNAME=	${UPPORTNAME:L}
 PORTVERSION=	9.01
@@ -24,7 +20,7 @@ UPPORTNAME=	OpenTaxSolver
 .if !defined(WITHOUT_X11)
 USE_GL=		yes
 USE_XORG=	xmu xext x11
-USE_PKGCONFIG=	yes
+USES=		pkgconfig
 CPPFLAGS+=	$$(pkg-config --cflags-only-I glu xext xmu)
 LDFLAGS+=	$$(pkg-config --libs-only-L glu xext xmu)
 SUB_LIST+=	X11=
