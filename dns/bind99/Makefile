@@ -223,8 +223,6 @@ post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
-PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
-PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
