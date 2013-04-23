@@ -68,7 +68,7 @@ LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
 LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
 			expat:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--with-cairo=yes --with-expat=${LOCALBASE}
-USE_PKGCONFIG=		yes
+USES+=			pkgconfig
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO_SVG}
@@ -78,7 +78,7 @@ LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
 CONFIGURE_ARGS+=	--with-cairo=yes \
 			--with-libsvg-cairo \
 			--with-expat=${LOCALBASE}
-USE_PKGCONFIG=		yes
+USES+=			pkgconfig
 .endif
 
 .if ${PORT_OPTIONS:MKML}

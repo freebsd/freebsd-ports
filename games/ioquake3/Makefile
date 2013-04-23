@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ioquake3
-# Date created:				3 Jun 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
@@ -16,8 +12,8 @@ EXTRACT_SUFX?=	.zip
 MAINTAINER?=	kamikaze@bsdforen.de
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*-server}
 # Server config

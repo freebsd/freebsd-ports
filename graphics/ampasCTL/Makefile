@@ -1,6 +1,4 @@
-# New ports collection makefile for:	ampasCTL
-# Date created:				2007-10-08
-# Whom:					nork@FreeBSD.org
+# Created by: nork@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -18,7 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase
 
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

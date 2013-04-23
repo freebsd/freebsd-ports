@@ -13,12 +13,11 @@ COMMENT=	GNOME vocabulary builder
 
 LICENSE=	GPLv2
 
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 INSTALLS_OMF=	yes
 
 post-patch:

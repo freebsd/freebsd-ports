@@ -12,9 +12,8 @@ COMMENT=	C library for calculating fields of view on low resolution rasters
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_PKGCONFIG=	yes
 CONFIGURE_ENV=	ac_cv_prog_doxygen=no ac_cv_path_SDL_CONFIG=no
 USE_LDCONFIG=	yes
 

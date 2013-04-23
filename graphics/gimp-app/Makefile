@@ -39,8 +39,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier \
 		desktopfileutils
-USES=		pathfix
-USE_PKGCONFIG=	build
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

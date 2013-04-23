@@ -15,9 +15,9 @@ FETCH_ARGS=	-pRr
 CHANGESET=	8fa5c0b5f16b
 WRKSRC=		${WRKDIR}/BattleClinic-${PORTNAME}-${CHANGESET}/${PORTNAME}
 
+USES=		pkgconfig:both
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
-USE_PKGCONFIG=	both
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>

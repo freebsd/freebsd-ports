@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fv
-# Date created:				07 Sep 2005
-# Whom:					Igor Pokrovsky <ip@doom.homeunix.org>
-#
+# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fv
 PORTVERSION=	1.03
@@ -19,10 +15,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+USES=		pkgconfig
 USE_ZIP=	yes
 USE_GL=		glut
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 

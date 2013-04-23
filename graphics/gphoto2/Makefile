@@ -12,9 +12,9 @@ COMMENT=	A command-line frontend to libgphoto2
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		gphoto2:${PORTSDIR}/graphics/libgphoto2
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cdk
 MAKE_JOBS_SAFE=	yes

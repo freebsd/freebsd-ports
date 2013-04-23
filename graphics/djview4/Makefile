@@ -1,9 +1,5 @@
-# New ports collection makefile for:	djview
-# Date created:		2007-02-13
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	djview
 PORTVERSION=	4.9
@@ -19,8 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_QT4=	gui network rcc_build uic_build moc_build qmake_build
-USE_PKGCONFIG=	yes
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"

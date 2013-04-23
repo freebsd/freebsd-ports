@@ -32,10 +32,9 @@ COMMENT=	Image processing tools
 
 LICENSE=	AL2
 
+USES=		pkgconfig pathfix
 USE_XZ=		yes
 USE_PERL5=	yes
-USE_PKGCONFIG=	yes
-USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool

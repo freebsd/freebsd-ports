@@ -20,9 +20,8 @@ EMF_DESC=	Enable emf interface
 MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_GHOSTSCRIPT=	yes
-USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=yes

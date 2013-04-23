@@ -30,7 +30,7 @@ NO_OPTIONS_SORT=	yes
 GPHOTO2_DESC=		Enable gphoto2 camera support
 PIMLIBS_DESC=		Enable address book support
 
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 USE_KDE4+=	libkdcraw libkexiv2 libkipi
 USE_QT4+=	sql-sqlite3_run
 USE_LDCONFIG=	yes

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	qtgtl
-# Date created:				28 September 2009
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
+# Created by: Alberto Villa <villa.alberto@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	qtgtl
@@ -19,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	GTLCore.0:${PORTSDIR}/graphics/opengtl
 
-USE_PKGCONFIG=	build
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

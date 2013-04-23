@@ -20,7 +20,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	jpegtopnm:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_GNOME=	libgnomeui
 MAKE_JOBS_SAFE=	yes
 

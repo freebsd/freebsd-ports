@@ -17,10 +17,10 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_LUA=	5.1
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 USE_QT4=	gui qt3support qmake_build moc_build uic_build rcc_build
 MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 ipescript.1
 

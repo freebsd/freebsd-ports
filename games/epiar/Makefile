@@ -21,13 +21,13 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		physfs:${PORTSDIR}/devel/physfs
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README

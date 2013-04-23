@@ -13,8 +13,8 @@ COMMENT=	Command line utility to read and manipulate EXIF data
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		popt.0:${PORTSDIR}/devel/popt
 
+USES=		pkgconfig
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"

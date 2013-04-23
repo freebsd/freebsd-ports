@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	clan23Core:${PORTSDIR}/devel/clanlib \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
+USES=		pkgconfig
 USE_GCC=	4.6+
 USE_GL=		glu
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LDFLAGS}"
 MAKE_JOBS_UNSAFE=	yes

@@ -14,11 +14,11 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd
 
 USE_AUTOTOOLS=	libtool
+USES=		pkgconfig
 USE_GNOME=	gnomeprefix gnomehack ltverhack
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 CONFIGURE_ARGS=	--disable-werror
 
 OPTIONS_DEFINE=	DOCS

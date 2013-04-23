@@ -127,7 +127,7 @@ DISTINFO_FILE=	${.CURDIR}/../../graphics/digikam-kde4/distinfo
 CONFLICTS_INSTALL=	kipi-plugins-2.*
 
 DESCR=		${.CURDIR}/../../graphics/kipi-plugins-kde4/pkg-descr
-USE_PKGCONFIG=	build
+USES+=		pkgconfig
 
 .if ${KIPI_PLUGIN} != "libkipiplugins"
 EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt

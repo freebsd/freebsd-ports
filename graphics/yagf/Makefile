@@ -21,10 +21,9 @@ TESSERACT_DESC=		Tesseract OCR engine
 
 OPTIONS_DEFAULT=	CUNEIFORM
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_PKGCONFIG=	build
 USE_GNOME=	desktopfileutils
 USE_QT4=	corelib gui imageformats linguist_build \
 		moc_build qmake_build rcc_build uic_build

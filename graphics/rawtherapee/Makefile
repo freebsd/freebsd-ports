@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rawtherapee
-# Date created:				01/10/2010
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.0.9
@@ -23,12 +19,11 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		tiff:${PORTSDIR}/graphics/tiff \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USES=		cmake
+USES=		cmake pkgconfig
 MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

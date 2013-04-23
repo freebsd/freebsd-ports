@@ -39,7 +39,7 @@ USE_PYTHON=		2.7
 USE_XORG=		xcursor
 USE_GL=			gl
 
-USE_PKGCONFIG=		build
+USES=			pkgconfig
 
 post-patch:
 	${REINPLACE_CMD} -e 's/X11R6/local/g; s/libpng/ligpng15/g' ${WRKSRC}/build/openbsd4-config.py && \

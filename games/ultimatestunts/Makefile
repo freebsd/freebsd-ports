@@ -17,11 +17,11 @@ LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		pkgconfig
 USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl image
 USE_GETTEXT=	yes
-USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openal
 MAKE_JOBS_UNSAFE=	yes

@@ -11,8 +11,8 @@ COMMENT=	Tools for reading and writing the ICC profile contents as XML files
 
 LIB_DEPENDS=	SampleICC:${PORTSDIR}/graphics/sampleicc
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
-USE_PKGCONFIG=	build
 USE_GMAKE=	yes
 USE_GCC=	any
 USE_GNOME=	libxml2
