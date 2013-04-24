@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	paredit-mode.el
-PORTVERSION=	22
-PORTREVISION=	4
+PORTVERSION=	23
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://mumble.net/~campbell/emacs/
-DISTNAME=	paredit-22.el
+DISTNAME=	paredit-${PORTVERSION}.el
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
