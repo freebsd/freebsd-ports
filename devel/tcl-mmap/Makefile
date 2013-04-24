@@ -3,25 +3,31 @@
 
 PORTNAME=	tcl-mmap
 PORTVERSION=	1.1
-CATEGORIES=	devel tcl
+CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	New TCL channel type using mmap-ed files
 
-MAKEFILE=	${FILESDIR}/Makefile.bsd
+LICENSE=	GPLv3
 
 USE_TCL=	84+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
+		--prefix=${PREFIX} \
+		--exec-prefix=${PREFIX}
 
-MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
-		PORTVERSION="${PORTVERSION}" \
-		FILESDIR="${FILESDIR}" \
-		TCLSH="${TCLSH}" \
-		INSTALL_DATA="${INSTALL_DATA}"
-PLIST_DIRS=	lib/tcl${TCL_VER}/mmap
-PLIST_FILES=	${PLIST_DIRS}/pkgIndex.tcl ${PLIST_DIRS}/libmmap${PORTVERSION}.so
+PLIST_DIRS=	lib/mmap${PORTVERSION}
+PLIST_FILES=	lib/mmap${PORTVERSION}/pkgIndex.tcl \
+		lib/mmap${PORTVERSION}/libmmap${PORTVERSION}.so
 
 MANN=	tcl-mmap.n
-MANCOMPRESSED=	maybe
+
+regression-test: build
+	cd ${WRKSRC}/tests; \
+	for t in *.tcl; \
+	do \
+	    echo "load ../libmmap${PORTVERSION}.so; source $$t" | ${TCLSH}; \
+	done;
 
 .include <bsd.port.mk>
