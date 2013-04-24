@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	1.05
+PORTVERSION=	1.08
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -16,7 +16,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Exception-LessClever>=0.005:${PORTSDIR}/devel/p5-Test-Exception-LessClever \
-		p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires
+		p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 
 MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
