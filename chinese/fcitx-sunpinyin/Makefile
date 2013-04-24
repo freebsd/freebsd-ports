@@ -19,8 +19,7 @@ BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

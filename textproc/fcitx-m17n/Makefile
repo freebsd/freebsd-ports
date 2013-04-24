@@ -15,8 +15,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		m17n:${PORTSDIR}/devel/m17n-lib
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 USE_GNOME=	intltool
 
 .include <bsd.port.mk>

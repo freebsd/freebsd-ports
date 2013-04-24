@@ -19,9 +19,8 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_XORG=	x11 xft xpm
-USES=		cmake
+USES=		cmake gettext
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx

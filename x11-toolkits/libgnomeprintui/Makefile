@@ -18,10 +18,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 USE_BZIP2=	yes
 USE_XORG=	x11 xpm
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	gnomeprefix libgnomeprint libgnomecanvas \
 		intlhack ltverhack
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_BISON=	build

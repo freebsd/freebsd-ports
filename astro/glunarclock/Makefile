@@ -12,10 +12,9 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomepanel gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -18,8 +18,7 @@ USE_XZ=		yes
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
-USES=		pathfix pkgconfig
-USE_GETTEXT=	yes
+USES=		pathfix pkgconfig gettext
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

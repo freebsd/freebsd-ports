@@ -19,8 +19,7 @@ USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5_BUILD=yes
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kover.1

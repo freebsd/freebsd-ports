@@ -14,10 +14,9 @@ COMMENT=	Query search engines from the Xfce panel
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	ice
 

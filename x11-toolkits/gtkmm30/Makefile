@@ -20,11 +20,10 @@ LATEST_LINK=	gtkmm30
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gtk30 ltverhack glibmm cairomm atkmm pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -14,10 +14,9 @@ COMMENT=	An MPC plugin for Xfce
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu panel

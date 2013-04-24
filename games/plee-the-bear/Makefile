@@ -18,11 +18,10 @@ USE_GL=		gl glu
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.6+
 
-USES=		cmake
+USES=		cmake gettext
 CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
 		-DBEAR_NO_EDITOR=YES
 

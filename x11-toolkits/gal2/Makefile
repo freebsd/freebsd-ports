@@ -20,9 +20,8 @@ USE_BZIP2=	yes
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui ltverhack
-USE_GETTEXT=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool

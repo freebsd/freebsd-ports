@@ -15,9 +15,8 @@ COMMENT=	GNOME JavaScript common modules and tests
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack intltool
-USES=		pkgconfig
+USES=		pkgconfig gettext
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 

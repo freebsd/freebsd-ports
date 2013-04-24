@@ -16,9 +16,8 @@ LIB_DEPENDS=	gpilotd.2:${PORTSDIR}/palm/gnome-pilot
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	gnomeprefix libgnome
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -16,9 +16,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
 		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GNOME=	gtk20 desktopfileutils
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 

@@ -15,13 +15,12 @@ COMMENT=	Generate interface introspection data for GObject libraries
 BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	ffi.6:${PORTSDIR}/devel/libffi
 
-USES=		bison pathfix pkgconfig
+USES=		bison pathfix pkgconfig gettext
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier glib20 ltverhack
 USE_PYTHON=	-2.7
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes

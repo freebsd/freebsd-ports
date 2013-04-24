@@ -15,9 +15,8 @@ LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 ltverhack

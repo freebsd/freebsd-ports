@@ -17,10 +17,9 @@ LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack lthack gtk20 libxml2
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

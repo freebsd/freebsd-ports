@@ -16,9 +16,8 @@ COMMENT=	A time tracker for gnome2
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_XORG=	xscrnsaver
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgnomeui
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure

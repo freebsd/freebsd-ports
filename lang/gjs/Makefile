@@ -19,12 +19,11 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		mozjs185:${PORTSDIR}/lang/spidermonkey185
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack glib20 ltverhack
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

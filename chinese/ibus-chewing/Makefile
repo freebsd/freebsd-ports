@@ -21,8 +21,7 @@ LIB_DEPENDS=	chewing:${PORTSDIR}/chinese/libchewing
 CMAKE_ARGS+=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc \
 		-DLIB_DIR=${PREFIX}/lib
 GCONF_SCHEMAS=	${PORTNAME}.schemas
-USES=		cmake
-USE_GETTEXT=	yes
+USES=		cmake gettext
 USE_GNOME=	gconf2 gtk20
 USE_XORG=	xtst
 

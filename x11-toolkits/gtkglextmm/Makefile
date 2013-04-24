@@ -14,8 +14,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

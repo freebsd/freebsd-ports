@@ -14,12 +14,11 @@ COMMENT=	PalmPilot conduit system for GNOME 2
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehier gnomepanel intlhack \
 		ltverhack libgnomeui
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes

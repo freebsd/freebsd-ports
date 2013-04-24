@@ -21,8 +21,7 @@ LICENSE=	GPLv3
 
 USE_GCC=	any
 USE_BZIP2=	yes
-USES=		cmake
-USE_GETTEXT=	yes
+USES=		cmake gettext
 USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_GNOME=	glib20

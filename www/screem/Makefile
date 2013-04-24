@@ -12,8 +12,7 @@ COMMENT=	Nice GNOME/GTK-based HTML editor
 
 LIB_DEPENDS=	croco-0.6.3:${PORTSDIR}/textproc/libcroco
 
-USE_GETTEXT=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	desktopfileutils gnomemenus gnomeprefix \
 		gtksourceview intlhack libgnomeprintui libgnomeui libgtkhtml
 USE_XORG=	xpm

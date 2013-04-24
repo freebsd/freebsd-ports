@@ -20,10 +20,9 @@ LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_GETTEXT=	yes
 USE_XORG=	sm
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	gnomeprefix gnomehier libbonoboui ltverhack \
 		referencehack gvfs
 USE_LDCONFIG=	yes

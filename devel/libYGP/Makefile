@@ -17,9 +17,8 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 USE_BZIP2=	yes
 USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gettext
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
 		--disable-static --disable-rpath --enable-network-trav

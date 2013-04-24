@@ -16,8 +16,7 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 CONFLICTS=	gcalctool-2.31.*
 
 USE_BZIP2=	yes
-USES=		bison
-USE_GETTEXT=	yes
+USES=		bison gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils gtk20

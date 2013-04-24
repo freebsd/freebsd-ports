@@ -15,9 +15,8 @@ RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX-base
 
 USE_BZIP2=	yes
-USES=		bison
+USES=		bison gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 
 MAN1=		eukleides.1 euktoeps.1 euktopdf.1 euktopst.1 euktotex.1

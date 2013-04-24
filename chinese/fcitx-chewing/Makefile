@@ -18,8 +18,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		chewing:${PORTSDIR}/chinese/libchewing
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx

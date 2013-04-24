@@ -18,9 +18,8 @@ USE_BZIP2=	yes
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USES=		bison pathfix pkgconfig
+USES=		bison pathfix pkgconfig gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes

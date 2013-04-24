@@ -20,9 +20,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=	pathfix gettext
 USE_GSTREAMER=	yes
 USE_XORG=	ice x11
 USE_GL=		gl glu glew

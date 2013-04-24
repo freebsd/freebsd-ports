@@ -11,9 +11,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	esound gnomeprefix libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -14,8 +14,7 @@ BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	gnomeprefix libglade2
 
 CPPFLAGS+=	-I${LOCALBASE}/include

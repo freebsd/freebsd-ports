@@ -15,12 +15,11 @@ LIB_DEPENDS=	ofx:${PORTSDIR}/finance/libofx \
 		kactivities:${PORTSDIR}/x11/kactivities
 
 USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource gettext
 USE_SQLITE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
 		corelib dbus gui script sql webkit xml sql-sqlite3_run
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix pimlibs sharedmime
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

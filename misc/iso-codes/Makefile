@@ -12,8 +12,7 @@ COMMENT=	Lists of the country, language, and currency iso names
 LICENSE=	LGPL21
 
 USE_XZ=		yes
-USES=	pathfix
-USE_GETTEXT=	yes
+USES=	pathfix gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

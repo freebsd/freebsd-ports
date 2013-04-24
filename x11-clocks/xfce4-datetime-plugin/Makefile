@@ -14,10 +14,9 @@ COMMENT=	Datetime panel plugin for the Xfce desktop
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USES=		pkgconfig
+USES=		pkgconfig gettext
 
 .include <bsd.port.mk>

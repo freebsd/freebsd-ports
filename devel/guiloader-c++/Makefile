@@ -16,9 +16,8 @@ LIB_DEPENDS=	guiloader.1:${PORTSDIR}/devel/guiloader \
 
 PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility
 USE_LDCONFIG=	yes

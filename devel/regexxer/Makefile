@@ -14,10 +14,9 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 			glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 			pcre.3:${PORTSDIR}/devel/pcre
 
-USE_GETTEXT=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=		gnomeprefix intltool intlhack
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib

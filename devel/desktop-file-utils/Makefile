@@ -10,10 +10,9 @@ MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A couple of command line utilities for working with desktop entries
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GNOME=	glib20
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir

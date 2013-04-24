@@ -14,11 +14,10 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix intlhack pygnome2 pygtk2 pygnomeextras
 GNU_CONFIGURE=	yes
 USE_PYTHON=	2.2+
-USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
