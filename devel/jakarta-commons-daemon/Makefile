@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-daemon
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.15
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE:S,$,:src,} \
 		${MASTER_SITE_APACHE_COMMONS_BINARIES:S,$,:bin,}
@@ -30,10 +29,12 @@ PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBIN}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKBIN} && ${COPYTREE_SHARE} apidocs ${DOCSDIR}
 .endif
