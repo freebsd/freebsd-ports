@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-c++
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-C++
@@ -23,8 +23,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-DMYSQLCPPCONN_TEST_NOT_IMPLEMENTED:BOOL=1 \
 		-DMYSQLCPPCONN_BUILD_EXAMPLES:BOOL=1
-.endif
-
 regression-test: build
 #	These tests assume that a database is running on localhost,
 #	with user:root and pass:root
@@ -52,5 +50,6 @@ regression-test: build
 	test/unit/classes/resultsetmetadata --verbose ; \
 	test/unit/classes/savepoint --verbose ; \
 	test/unit/classes/statement )
+.endif
 
 .include <bsd.port.mk>
