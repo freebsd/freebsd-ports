@@ -1,7 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	bind99
+PORTNAME?=	bind99
 PORTVERSION=	9.9.2.2
+PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -26,20 +27,24 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
 OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
-OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
-			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME RPZRRL_PATCH \
-			SIGCHASE IPV6 THREADS
+OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE \
+			FIXED_RRSET SIGCHASE IPV6 THREADS
+.if !defined(BIND_TOOLS_SLAVE)
+OPTIONS_DEFINE+=	LINKS XML RPZ_NSIP RPZ_NSDNAME RPZRR_PATCH
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
+.endif	# BIND_TOOLS_SLAVE
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
-LINKS_DESC=		Create conf file symlinks in ${PREFIX}
-XML_DESC=		Support for xml statistics output
 REPLACE_BASE_DESC=	Replace base BIND with this version
 LARGE_FILE_DESC=	64-bit file support
-SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
+SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
+
+.if !defined(BIND_TOOLS_SLAVE)
+LINKS_DESC=		Create conf file symlinks in ${PREFIX}
+XML_DESC=		Support for xml statistics output
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 RPZRRL_PATCH_DESC=	RPZ improvements + RRL patch (experimental)
@@ -50,6 +55,9 @@ DLZ_BDB_DESC=		DLZ BDB driver
 DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
+
+CONFLICTS+=		bind-tools-9.*
+.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.options.mk>
 
@@ -65,7 +73,7 @@ CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.if ${PORT_OPTIONS:MXML}
+.if ${PORT_OPTIONS:MXML} && !defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}
 LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
 .else
@@ -160,7 +168,8 @@ BIND_DESTETC=	${PREFIX}/etc
 
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
-MAN1=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
+MAN1?=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
+.if !defined(BIND_TOOLS_SLAVE)
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_buffer_back.3 lwres_buffer_clear.3 lwres_buffer_first.3 \
 	lwres_buffer_forward.3 lwres_buffer_getmem.3 lwres_buffer_getuint16.3 \
@@ -202,7 +211,9 @@ MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
 	named-checkzone.8 named-journalprint.8 named.8 nsec3hash.8 \
 	rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
+.endif	# BIND_TOOLS_SLVE
 
+.if !defined(BIND_TOOLS_SLAVE)
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
@@ -239,5 +250,7 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
+
+.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.mk>

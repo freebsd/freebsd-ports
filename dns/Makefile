@@ -11,6 +11,7 @@
     SUBDIR += bind98
     SUBDIR += bind99
     SUBDIR += bindgraph
+    SUBDIR += bind-tools
     SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += credns
