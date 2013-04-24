@@ -17,11 +17,10 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
-USES=		cmake
+USES=		cmake gettext
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		cairo-dock.1

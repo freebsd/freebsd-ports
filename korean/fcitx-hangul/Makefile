@@ -17,8 +17,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		hangul:${PORTSDIR}/korean/libhangul
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

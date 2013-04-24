@@ -10,9 +10,8 @@ MASTER_SITES=	http://starplot.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

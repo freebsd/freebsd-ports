@@ -27,9 +27,8 @@ LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_GMAKE=	yes
-USES=		cmake
+USES=		cmake gettext
 USE_GL=		gl glu
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_LUA=	5.1

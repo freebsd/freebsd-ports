@@ -14,9 +14,8 @@ LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	intlhack libglade2
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

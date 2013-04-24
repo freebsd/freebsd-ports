@@ -15,11 +15,10 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
-USES=		bison
+USES=		bison gettext
 
 MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes

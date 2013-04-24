@@ -18,8 +18,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		opencc:${PORTSDIR}/chinese/opencc \
 		yaml-cpp:${PORTSDIR}/devel/yaml-cpp
 
-USES=		cmake pkgconfig
-USE_GETTEXT=	yes
+USES=		cmake pkgconfig gettext
 USE_LDCONFIG=	yes
 USE_XORG=	xproto
 USE_PERL5_BUILD=	yes

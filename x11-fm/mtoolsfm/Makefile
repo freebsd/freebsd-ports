@@ -13,9 +13,8 @@ COMMENT=	A graphical frontend to mtools
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk12
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

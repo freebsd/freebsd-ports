@@ -12,9 +12,8 @@ COMMENT=	Clipboard manager for the GNOME panel
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
 USE_PYTHON=	2.5+
 INSTALLS_ICONS=	yes

@@ -11,8 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator based on GTK and VTE
 
 USE_GNOME=	vte
-USE_GETTEXT=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig gettext
 USE_BZIP2=	yes
 
 MAN1=		sakura.1

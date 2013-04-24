@@ -22,9 +22,8 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack glib20 ltverhack libsigc++20
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

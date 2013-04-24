@@ -10,10 +10,9 @@ MASTER_SITES=	http://www.infinicode.org/code/pyrenamer/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mass file renamer written in PyGTK
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	gconf2 pygtk2
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

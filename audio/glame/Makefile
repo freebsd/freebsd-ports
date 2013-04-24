@@ -19,8 +19,7 @@ LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11
 

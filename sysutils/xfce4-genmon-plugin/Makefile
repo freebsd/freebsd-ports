@@ -14,9 +14,8 @@ COMMENT=	Generic Monitor Xfce4 panel plugin
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libmenu panel
 

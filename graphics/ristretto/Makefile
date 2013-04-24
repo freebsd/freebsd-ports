@@ -16,13 +16,12 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11
 

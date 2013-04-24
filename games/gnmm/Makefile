@@ -11,10 +11,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 
 GNU_CONFIGURE=	yes

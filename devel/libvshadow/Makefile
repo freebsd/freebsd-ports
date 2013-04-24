@@ -13,8 +13,7 @@ COMMENT=	A library to support the Volume Service Snapshot (VSS) format
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fuse pathfix
-USE_GETTEXT=	yes
+USES=		fuse pathfix gettext
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

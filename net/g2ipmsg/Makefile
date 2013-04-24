@@ -14,9 +14,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popup style message communication tool for GNOME2
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	gnomeprefix intlhack intltool \
 		libgnomeui libbonobo desktopfileutils gnomepanel
 USE_GSTREAMER=	vorbis

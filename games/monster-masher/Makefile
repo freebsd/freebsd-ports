@@ -17,10 +17,9 @@ LIB_DEPENDS=	gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack libgnome esound
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lesd

@@ -11,10 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manipulation tool
 
 USE_GNOME=	libwnck
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

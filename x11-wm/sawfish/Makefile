@@ -20,9 +20,8 @@ RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
 USE_XORG=	ice sm x11 xft xinerama xrandr
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomehier gtk20
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \

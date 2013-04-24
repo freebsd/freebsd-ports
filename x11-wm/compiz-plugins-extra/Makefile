@@ -21,10 +21,9 @@ GNU_CONFIGURE=	yes
 USE_GL=		yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	intltool
 USE_XORG=	glproto
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 

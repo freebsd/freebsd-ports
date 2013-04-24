@@ -14,8 +14,7 @@ LIB_DEPENDS=	YGP.0:${PORTSDIR}/devel/libYGP
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 
 .include <bsd.port.mk>

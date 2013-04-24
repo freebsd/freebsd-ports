@@ -20,11 +20,10 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack esound libbonobo \
 		gnomevfs2 ltverhack referencehack
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

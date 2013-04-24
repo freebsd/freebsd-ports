@@ -12,10 +12,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	evolutiondataserver gnomepanel gnomeprefix \
 		libgnomeui
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

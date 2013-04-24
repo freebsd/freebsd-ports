@@ -11,8 +11,7 @@ DISTNAME=	gnome-memblocks-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Blocks game for GNOME
 
-USE_GETTEXT=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

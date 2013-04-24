@@ -23,9 +23,8 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
-USES=		cmake
+USES=		cmake gettext
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xrender xt
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build

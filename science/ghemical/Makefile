@@ -20,12 +20,11 @@ LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
 		oglappth:${PORTSDIR}/science/liboglappth \
 		mopac7:${PORTSDIR}/biology/mopac
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
 USE_GL=		glut
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7
 PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"

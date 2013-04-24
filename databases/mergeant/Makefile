@@ -13,9 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provide uniform access to data sources for the GNOME 2 environment
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack libgnomedb
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

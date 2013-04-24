@@ -11,9 +11,8 @@ MASTER_SITES=	http://nice.freedesktop.org/releases/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
 USE_GSTREAMER=	yes

@@ -15,12 +15,11 @@ COMMENT=	PolicyKit manager for Qt
 LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake
+USES=		cmake gettext
 
 PORTSCOUT=	limit:^0
 

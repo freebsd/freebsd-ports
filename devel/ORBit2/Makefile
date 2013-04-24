@@ -16,9 +16,8 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack libidl ltverhack referencehack

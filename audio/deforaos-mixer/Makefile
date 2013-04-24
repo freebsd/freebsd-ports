@@ -16,9 +16,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GNOME=	gtk20 desktopfileutils
-USE_GETTEXT=	yes
 PLIST_FILES=	bin/mixer \
 		share/applications/mixer.desktop \
 		share/locale/fr/LC_MESSAGES/Mixer.mo

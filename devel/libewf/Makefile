@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USES=		fuse pathfix
-USE_GETTEXT=	yes
+USES=		fuse pathfix gettext
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

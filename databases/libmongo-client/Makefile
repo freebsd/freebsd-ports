@@ -17,10 +17,9 @@ GH_COMMIT=	13cc0ee
 
 USE_AUTOTOOLS=	automake autoconf libtool
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	PKG_CONFIG_DIR=${LOCALBASE}/libdata/pkgconfig

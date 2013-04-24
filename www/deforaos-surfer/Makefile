@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20 desktopfileutils
-USES=		pkgconfig
-USE_GETTEXT=	yes
+USES=		pkgconfig gettext
 INSTALLS_ICONS=	yes
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man

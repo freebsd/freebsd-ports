@@ -12,9 +12,8 @@ COMMENT=	A high-performance and compact GuiXml loader library
 
 PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility
