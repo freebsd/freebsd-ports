@@ -30,9 +30,9 @@ PERLTOOLS_DESC=	Install perl configuration tools
 
 CONFLICTS?=	slony1-1*
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}
 USE_PERL5=	yes
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
 		--with-pgsharedir=${LOCALBASE}/share/postgresql
 
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=	slon.1 slonik.1
+MAN1=		slon.1 slonik.1
 .endif
 
 # Setting/finding PostgreSQL version we want.
@@ -70,9 +70,7 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
 
 DOCS=		COPYRIGHT HISTORY-1.1 INSTALL README README.Unicode RELEASE \
 		RELEASE-2.0 SAMPLE TODO UPGRADING
@@ -95,4 +93,4 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
