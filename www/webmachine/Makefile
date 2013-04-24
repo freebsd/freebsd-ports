@@ -23,11 +23,9 @@ GH_PROJECT=     webmachine
 GH_COMMIT=      d600c0e
 GH_TAGNAME=     ${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -50,4 +48,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/webmachine-${PORTVERSION}/src
 	@cd ${WRKSRC}/priv && ${COPYTREE_SHARE} \* ${PREFIX}/lib/erlang/lib/webmachine-${PORTVERSION}/priv
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
