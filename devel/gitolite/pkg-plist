@@ -45,6 +45,7 @@ libexec/gitolite/commands/info
 libexec/gitolite/commands/list-dangling-repos
 libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
+libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
 libexec/gitolite/commands/push
@@ -74,6 +75,7 @@ libexec/gitolite/triggers/post-compile/update-git-daemon-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-daemon-from-options
 libexec/gitolite/triggers/renice
+libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
 %%GITUSER%%@dirrmtry git
 @dirrm libexec/gitolite/triggers/post-compile
