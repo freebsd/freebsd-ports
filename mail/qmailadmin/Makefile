@@ -3,10 +3,11 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	mail www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
@@ -29,6 +30,8 @@ PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
   		LOCAL/bdrewery/${PORTNAME}/:onchange
 PATCHFILES+=	qmailadmin-1.2.12-onchange.3.patch:onchange
 PATCH_DIST_STRIP+=	-p1
+
+PORTSCOUT=	ignore:1.2.16
 
 OPTIONS_DEFINE=	IPAUTH USER_INDEX MODIFY_QUOTA DOMAIN_AUTOFILL \
 		IDX IDX_SQL HELP SPAM_DETECTION SPAM_NEEDS_EMAIL \
