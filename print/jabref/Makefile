@@ -16,6 +16,8 @@ COMMENT=	BibTeX native bibliographic reference manager
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+PORTSCOUT=	limit:.*[0-9]$$
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
