@@ -264,7 +264,6 @@
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago
-    SUBDIR += tamago-emacs21
     SUBDIR += tea
     SUBDIR += teco
     SUBDIR += ted
