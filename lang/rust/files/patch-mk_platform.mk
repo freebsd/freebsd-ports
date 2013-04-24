@@ -1,27 +1,11 @@
---- mk/platform.mk.orig	2012-12-25 08:33:07.971922333 +0800
-+++ mk/platform.mk	2012-12-25 08:33:16.996994081 +0800
-@@ -222,7 +222,7 @@
-   ifeq ($(origin CPP),default)
-     CPP=clang -E
-   endif
--  CFG_GCCISH_CFLAGS += -Wall -Werror -g
-+  CFG_GCCISH_CFLAGS += -Wall -g
-   CFG_GCCISH_CXXFLAGS += -fno-rtti
-   CFG_GCCISH_LINK_FLAGS += -g
-   # These flags will cause the compiler to produce a .d file
-@@ -268,7 +268,7 @@
-   ifeq ($(origin CPP),default)
-     CPP=gcc -E
-   endif
--  CFG_GCCISH_CFLAGS += -Wall -Werror -g
-+  CFG_GCCISH_CFLAGS += -Wall -g
-   CFG_GCCISH_CXXFLAGS += -fno-rtti
-   CFG_GCCISH_LINK_FLAGS += -g
-   # These flags will cause the compiler to produce a .d file
-@@ -322,4 +322,4 @@
- endef
- 
- $(foreach target,$(CFG_TARGET_TRIPLES),\
--  $(eval $(call CFG_MAKE_ASSEMBLER,$(target))))
-\ No newline at end of file
-+  $(eval $(call CFG_MAKE_ASSEMBLER,$(target))))
+--- mk/platform.mk.orig	2013-04-06 12:47:35.924036199 +0800
++++ mk/platform.mk	2013-04-06 12:48:04.696038055 +0800
+@@ -299,7 +299,7 @@
+ CFG_LIB_NAME_x86_64-unknown-freebsd=lib$(1).so
+ CFG_LIB_GLOB_x86_64-unknown-freebsd=lib$(1)-*.so
+ CFG_LIB_DSYM_GLOB_x86_64-unknown-freebsd=$(1)-*.dylib.dSYM
+-CFG_GCCISH_CFLAGS_x86_64-unknown-freebsd := -Wall -Werror -g -fPIC -I/usr/local/include
++CFG_GCCISH_CFLAGS_x86_64-unknown-freebsd := -Wall -g -fPIC -I/usr/local/include
+ CFG_GCCISH_LINK_FLAGS_x86_64-unknown-freebsd := -shared -fPIC -g -lpthread -lrt
+ CFG_GCCISH_DEF_FLAG_x86_64-unknown-freebsd := -Wl,--export-dynamic,--dynamic-list=
+ CFG_GCCISH_PRE_LIB_FLAGS_x86_64-unknown-freebsd := -Wl,-whole-archive
