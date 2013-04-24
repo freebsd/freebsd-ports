@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
 USES=		pkgconfig
