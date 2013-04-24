@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-lzma
-# Date created:		28 May 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	lzma
 PORTVERSION=	0.4.4
@@ -16,7 +12,6 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python binding for the LZMA compression library
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	i386
 
@@ -31,8 +26,10 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	usage.txt
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif
