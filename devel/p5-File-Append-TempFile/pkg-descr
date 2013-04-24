@@ -5,4 +5,4 @@ try to modify the original file concurrently, since any changes made while
 appending the data may be lost.
 
 Author:		Peter Pentchev <roam@ringlet.net>
-WWW:		http://search.cpan.org/dist/File-Append-TempFile/
+WWW: 	http://search.cpan.org/dist/File-Append-TempFile/
