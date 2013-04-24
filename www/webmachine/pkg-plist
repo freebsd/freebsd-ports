@@ -80,6 +80,7 @@
 @dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/priv
 @dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/include
 @dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/webmachine-%%VERSION%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/priv
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
