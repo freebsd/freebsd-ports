@@ -3,6 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -14,8 +15,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
 DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
-		${ERLANG_MAN}:erlangorg			\
-		${DOC_DISTFILES}
+		${ERLANG_MAN}:erlangorg
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -51,8 +51,9 @@ ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DOC_DISTFILES=	${ERLANG_DOCS}:erlangorg		\
-		armstrong_thesis_2003.pdf:joe		\
+DISTFILES+=	${ERLANG_DOCS}:erlangorg		\
+		${DOC_DISTFILES}
+DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		bjarnelic.pdf:publications		\
 		erlang-book-part1.pdf:erlangorg		\
 		master_thesis_patterns.pdf:local	\
