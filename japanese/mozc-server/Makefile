@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.10.1390.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -263,10 +263,9 @@ do-install-fcitx_mozc:
 
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-USE_EMACS=	yes
-CATEGORIES+=	editors elisp
 LIB_DEPENDS+=	zinnia.0:${PORTSDIR}/japanese/zinnia
-BUILD_DEPENDS+=	glib:${PORTSDIR}/devel/glib20 \
+BUILD_DEPENDS+=	emacs:${PORTSDIR}/editors/emacs \
+		glib:${PORTSDIR}/devel/glib20 \
 		gtk:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
