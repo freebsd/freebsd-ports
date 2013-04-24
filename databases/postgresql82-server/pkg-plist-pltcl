@@ -1,0 +1,9 @@
+%%DOCSDIR%%/README-pltcl
+lib/postgresql/pltcl.so
+@dirrmtry lib/postgresql
+bin/pltcl_loadmod
+bin/pltcl_delmod
+bin/pltcl_listmod
+share/postgresql/unknown.pltcl
+@dirrmtry share/postgresql
+@dirrmtry %%DOCSDIR%%
