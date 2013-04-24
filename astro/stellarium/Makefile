@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,8 +13,7 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
-USES=		cmake
-USE_GETTEXT=	yes
+USES=		cmake gettext
 USE_GL=		glu
 USE_ICONV=	yes
 USE_QT4=	moc_build rcc_build uic_build qmake_build \
@@ -48,6 +47,12 @@ post-patch: .SILENT
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
 	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
+# Prevent spamming with empty `CMakeFiles' directories at destination
+	${REINPLACE_CMD} -e \
+		'/FILES_MATCHING/s/)/PATTERN "CMakeFiles" EXCLUDE)/' \
+			${WRKSRC}/landscapes/*/CMakeLists.txt \
+			${WRKSRC}/skycultures/*/CMakeLists.txt \
+			${WRKSRC}/nebulae/default/CMakeLists.txt
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
