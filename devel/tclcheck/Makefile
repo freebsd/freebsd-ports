@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TclCheck
-# Date created:			28 June 1997
-# Whom:				Sander Vesik <sander@haldjas.folklore.ee>
-#
+# Created by: Sander Vesik <sander@haldjas.folklore.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	tclcheck
 PORTVERSION=	1.1.13
@@ -12,19 +8,34 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 DISTNAME=	tclCheck-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to check the nesting of parenthesis in tcl scripts
+MAINTAINER=	tcltk@FreeBSD.org
+COMMENT=	Program to check the nesting of parenthesis in tcl scripts
+
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept	
 
 MAN1=		tclCheck.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/tclCheck
+PORTDOCS=	*
 
-pre-build:
-	@${CP} -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+.include <bsd.port.options.mk>
 
-post-install:
-.if !defined(NOPORTDOCS)
+post-patch:
+	${REINPLACE_CMD} \
+	    -e '/^BIN/s|=.*|=${PREFIX}/bin|' \
+	    -e '/^CC/s|=.*|=${CC}|' \
+	    -e '/^CFLAGS/s|=.*|=${CFLAGS}|' \
+	    ${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+	    -e '25s|^|#include <unistd.h>|' \
+	    ${WRKSRC}/tclCheck.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tclCheck ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${MANPREFIX}/man/man1/
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
