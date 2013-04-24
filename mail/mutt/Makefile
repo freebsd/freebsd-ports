@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
@@ -60,7 +60,7 @@ LITE=	YES
 .endif
 .if !defined (LITE)
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG FLOCK \
-		GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
+		GPGME GREETING_PATCH GSSAPI HTML ICONV IDN IFDEF_PATCH \
 		IMAP_HEADER_CACHE LOCALES_FIX MAILBOX_MANPAGES \
 		MAILDIR_HEADER_CACHE MAILDIR_MTIME_PATCH \
 		NNTP PARENT_CHILD_MATCH_PATCH \
@@ -79,6 +79,7 @@ DEBUG_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
+GSSAPI_DESC=	Use the gss API
 HTML_DESC=	HTML documentation
 IFDEF_PATCH_DESC=	ifdef feature
 IMAP_HEADER_CACHE_DESC=	IMAP header cache
@@ -176,7 +177,7 @@ XML_USED=	no
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 SCRIPTS_ENV+=	NLS="yes"
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -412,16 +413,28 @@ SCRIPTS_ENV+=	SIDEBAR_PATCH="yes"
 SCRIPTS_ENV+=	IFDEF_PATCH="yes"
 .endif
 
-.if ${PORT_OPTIONS:MHTML}
-SCRIPTS_ENV+=	HTML="yes"
-.endif
-
 .if ${PORT_OPTIONS:MREVERSE_REPLY_PATCH}
 SCRIPTS_ENV+=	REVERSE_REPLY_PATCH="yes"
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
+XML_USED=	yes
+.endif
+.if ${PORT_OPTIONS:MHTML}
+XML_USED=	yes
+.endif
+
+.if ${PORT_OPTIONS:MDOCS} || ${XML_USED} == yes
+INSTALL_DOCS=	yes
+.else
+INSTALL_DOCS=	no
+.endif
+
+.if ${INSTALL_DOCS} == yes
 SCRIPTS_ENV+=	PORTDOCS="yes"
+.if ${PORT_OPTIONS:MHTML}
+SCRIPTS_ENV+=	HTML="yes"
+.endif
 post-build:
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
@@ -432,17 +445,14 @@ post-build:
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
-
-.if ${PORT_OPTIONS:MHTML}
-XML_USED=	yes
-.endif
-.if defined(XML_NEEDED) && ${PORT_OPTIONS:MXML}
-XML_USED=	yes
-.endif
-.else 	# ! DOCS
+.else 	# ! INSTALL_DOCS
 post-patch::
+.if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-mailbox-contrib
+.else
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
-.endif # ! DOCS
+.endif
+.endif # ! INSTALL_DOCS
 
 .if ${XML_USED} == yes
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
@@ -457,7 +467,7 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Muttrc ${PREFIX}/etc/Muttrc.dist
-.if ${PORT_OPTIONS:MDOCS}
+.if ${INSTALL_DOCS} == yes
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
