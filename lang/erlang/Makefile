@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
-		${ERLANG_DOCS}:erlangorg		\
 		${DOC_DISTFILES}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -24,13 +23,6 @@ PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
-
-DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
-		bjarnelic.pdf:publications		\
-		erlang-book-part1.pdf:erlangorg		\
-		master_thesis_patterns.pdf:local	\
-		mnesia_overview.pdf:publications	\
-		programming_rules.pdf:erlangse
 
 WRKSRC=		${WRKDIR}/otp_src_R15B03
 
@@ -57,6 +49,16 @@ OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DOC_DISTFILES=	${ERLANG_DOCS}:erlangorg		\
+		armstrong_thesis_2003.pdf:joe		\
+		bjarnelic.pdf:publications		\
+		erlang-book-part1.pdf:erlangorg		\
+		master_thesis_patterns.pdf:local	\
+		mnesia_overview.pdf:publications	\
+		programming_rules.pdf:erlangse
+.endif
 
 # See http://wiki.freebsd.org/DTrace to learn how to enable DTrace
 # on your system. You will need to configure STRIP, WITH_CTF and
