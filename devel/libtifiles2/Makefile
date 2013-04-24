@@ -5,7 +5,7 @@ PORTVERSION=	1.1.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	TI calculator file types library
 
 LICENSE=	GPLv2

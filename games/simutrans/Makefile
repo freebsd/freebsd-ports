@@ -9,7 +9,7 @@ MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
 DISTFILES=	simutrans-src-${DISTVERSION}.zip \
 		simulinux-${DISTVERSION}.zip
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Transport Simulator
 
 LICENSE=	ART10

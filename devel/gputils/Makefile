@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	A set of utilities for Microchip PIC microcontrollers
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3
