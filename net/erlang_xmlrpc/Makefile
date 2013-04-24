@@ -22,11 +22,9 @@ WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
 MAN3=		erlang_xmlrpc.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|XMERL_PATH=.*|XMERL_PATH=${LOCALBASE}/lib/erlang/lib/xmerl|g' ${WRKSRC}/src/Makefile
@@ -53,4 +51,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/xmlrpc-${PORTVERSION}/src
 	@${INSTALL_MAN} ${WRKSRC}/doc/xmlrpc.3 ${MANPREFIX}/man/man3/erlang_xmlrpc.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
