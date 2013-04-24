@@ -55,10 +55,6 @@ OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: uses i386-specific option
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
