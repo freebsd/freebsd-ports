@@ -142,7 +142,7 @@ MAIN: {
 				if(defined($creator)) {
 					my $is_nice=0;
 					for my $c (@$nice_people) {
-						if($creator=~m"${c}") {
+						if($creator=~m"${c}"i) {
 							$is_nice=1;
 							last;
 						}
