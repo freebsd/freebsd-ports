@@ -23,7 +23,7 @@ RUN_DEPENDS=	gtk-engines2>=2.15.0:${PORTSDIR}/x11-themes/gtk-engines2
 CONFLICTS=	clearlooks-metacity-0.*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

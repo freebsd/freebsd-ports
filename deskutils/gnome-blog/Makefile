@@ -18,7 +18,7 @@ COMMENT=	GNOME app to post to blogs
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 intlhack

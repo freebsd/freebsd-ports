@@ -23,7 +23,7 @@ MAN1=		shmcat.1 \
 
 .if ${PORT_OPTIONS:MNLS}
 MANLANG=	"" de
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

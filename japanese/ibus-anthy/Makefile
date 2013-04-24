@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/deve
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 

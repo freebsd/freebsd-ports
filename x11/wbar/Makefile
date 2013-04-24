@@ -50,7 +50,7 @@ PLIST_SUB+=	WBARCONFIG="@comment "
 .endif
 
 USE_EFL=	imlib2
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GMAKE=	yes
 USE_GNOME+=	desktopfileutils intltool
 

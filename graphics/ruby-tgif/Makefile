@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
 # NB not USE_IMAKE; this is required for the tgif build but this
 # port doesn't use it directly.
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

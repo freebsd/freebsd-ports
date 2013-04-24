@@ -43,7 +43,7 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log
 
 CONFLICTS=	dtc-toaster-[0-9]* dtc-postfix-courier-[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext
 
 USE_GMAKE=	yes
 

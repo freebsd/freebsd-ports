@@ -18,7 +18,7 @@ COMMENT=	A graphic view base imlib & gtk
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

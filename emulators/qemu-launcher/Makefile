@@ -19,7 +19,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=	qemu-launcher.1
 

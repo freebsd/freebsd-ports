@@ -177,7 +177,7 @@ XML_USED=	no
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
+USES+=		gettext
 SCRIPTS_ENV+=	NLS="yes"
 .else
 CONFIGURE_ARGS+=	--disable-nls

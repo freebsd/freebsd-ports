@@ -23,6 +23,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bzrlib/plugins/qbzr/__init__.py:${PORTSDIR}/de
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	explorer
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.mk>

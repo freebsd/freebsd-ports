@@ -20,7 +20,7 @@ LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool

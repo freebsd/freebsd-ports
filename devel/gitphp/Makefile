@@ -11,7 +11,7 @@ COMMENT=	A web based git repository browser written in PHP
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PHP=	bz2 fileinfo mbstring memcache posix simplexml spl zlib
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes

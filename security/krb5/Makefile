@@ -27,7 +27,7 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 USE_AUTOTOOLS=		libtool
-USE_GETTEXT=		yes
+USES=		gettext
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"

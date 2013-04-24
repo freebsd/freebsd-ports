@@ -23,7 +23,7 @@ MK_PATCH+=	s/@MYSUBDIRS@/Common/g;
 LIB_DEPENDS+=	YGP.0:${PORTSDIR}/devel/libYGP
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 PLIST_FILES+=	bin/DirComp \
 		share/locale/de/LC_MESSAGES/DirComp.mo \

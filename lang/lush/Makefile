@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high level object-oriented programming language
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	xt xft
 USE_GL=		yes
 USE_SDL=	sdl image

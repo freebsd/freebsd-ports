@@ -33,7 +33,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 WRKSRC=		${WRKDIR}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	World

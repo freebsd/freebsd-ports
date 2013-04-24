@@ -80,7 +80,7 @@ PLIST_SUB+=		WITHSYBASE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

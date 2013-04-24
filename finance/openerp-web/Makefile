@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GETTEXT=	yes
+USES=		gettext
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install

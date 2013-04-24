@@ -29,7 +29,7 @@ USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	xext
 
 INSTALLS_ICONS=	yes

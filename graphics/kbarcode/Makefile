@@ -20,7 +20,7 @@ DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
 USE_KDELIBS_VER=	3
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
 GNU_CONFIGURE=	yes

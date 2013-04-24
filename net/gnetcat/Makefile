@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

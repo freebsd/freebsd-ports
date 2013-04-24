@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""

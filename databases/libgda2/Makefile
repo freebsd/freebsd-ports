@@ -30,7 +30,7 @@ CONFLICTS=	libgda-0*
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

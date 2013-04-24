@@ -25,7 +25,7 @@ PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

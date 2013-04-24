@@ -25,7 +25,7 @@ BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	XGngeo
 NO_BUILD=	yes

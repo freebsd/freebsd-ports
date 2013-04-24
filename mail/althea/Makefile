@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK-based mail reader for X. Supports IMAP
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_OPENSSL=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd

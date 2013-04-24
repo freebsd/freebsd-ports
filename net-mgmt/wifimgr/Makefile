@@ -21,7 +21,7 @@ USE_GNOME=	gtk20 pkgconfig
 INSTALLS_ICONS=	yes
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CFLAGS+=	-DWITHOUT_NLS

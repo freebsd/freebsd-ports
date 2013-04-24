@@ -19,7 +19,7 @@ EXPIRATION_DATE=2013-07-01
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

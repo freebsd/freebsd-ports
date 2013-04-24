@@ -52,7 +52,7 @@ L_DOC=		${PREFIX}/share/doc/lynx
 L_HELP=		${PREFIX}/share/lynx_help
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-nls
 .else

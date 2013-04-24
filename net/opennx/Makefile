@@ -42,7 +42,7 @@ SSH_KEYGEN?=	ssh-keygen
 CONFIGURE_ARGS+=--disable-nls --localedir=/dev/null
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

@@ -29,7 +29,7 @@ LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile \
 GNU_CONFIGURE=	yes
 USE_XORG=	xmu
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kctape.1 kc2raw.1 kc2img.1 kc2tap.1 tdtodump.1 \

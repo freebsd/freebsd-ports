@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR= jedgar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphing calculator using GTK+
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 USE_PERL5_BUILD=yes

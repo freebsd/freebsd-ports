@@ -31,7 +31,7 @@ BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
 

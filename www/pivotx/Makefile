@@ -30,7 +30,7 @@ PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
 WANT_PHP_WEB=	yes
 USE_PHP=	session gettext xml tokenizer gd pcre
-USE_GETTEXT=	yes
+USES+=		gettext
 
 .if ${PORT_OPTIONS:MPHPDOM}
 USE_PHP+=	dom

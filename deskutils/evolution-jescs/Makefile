@@ -23,7 +23,7 @@ IGNORE=		Doesn't build or work with Evolution 2.30
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

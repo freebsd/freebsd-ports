@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME and Application database for GNOME
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack
 GNU_CONFIGURE=	yes

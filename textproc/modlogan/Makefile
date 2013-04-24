@@ -20,7 +20,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 
 # Please don't remove the comments, as soon as autoconf/libtool get's
 # updated in the ports collection the comments may be removed.

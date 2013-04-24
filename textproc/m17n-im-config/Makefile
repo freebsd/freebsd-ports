@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -33,7 +33,7 @@ DESKTOP_ENTRIES="M17N-IM Configuration" \
 		true
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

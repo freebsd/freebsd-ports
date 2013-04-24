@@ -23,7 +23,7 @@ OPTIONS=	SFTP "Enable Paramiko for SFTP support" on \
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=		bzr.1
 

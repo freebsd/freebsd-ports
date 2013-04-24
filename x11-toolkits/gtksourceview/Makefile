@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

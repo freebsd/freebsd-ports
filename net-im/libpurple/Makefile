@@ -33,7 +33,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes

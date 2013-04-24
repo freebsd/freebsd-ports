@@ -27,7 +27,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
 USE_GCC=	any
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes

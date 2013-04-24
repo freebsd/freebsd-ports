@@ -17,7 +17,7 @@ LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20
 MAKE_JOBS_SAFE=	yes
 

@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	xrender

@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext binding for Lua 5
 
 USE_LUA?=	5.1
-USE_GETTEXT=	yes
+USES=		gettext
 
 CVER=		1.15
 LVER=		${PORTVERSION}

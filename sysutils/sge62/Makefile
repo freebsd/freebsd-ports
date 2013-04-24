@@ -30,7 +30,7 @@ CONFLICTS=	sge-6.[013-9]* sge-5* sgeee-[0-9]* sge-0.*
 
 NOT_FOR_ARCHS=	powerpc
 
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${SGE_ROOT}/lib/${SGE_ARCH}

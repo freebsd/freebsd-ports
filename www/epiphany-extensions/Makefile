@@ -19,7 +19,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 CONFLICTS=	epiphany-extensions-3.[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack
 INSTALLS_OMF=	yes

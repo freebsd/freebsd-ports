@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_APACHE=	22
 USE_XORG=	sm
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomedocutils nautilus2

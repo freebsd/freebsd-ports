@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	GMSGFMT="${LOCALBASE}/bin/msgfmt" DATADIRNAME="share"
 USE_GNOME=	gnomesharp20
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	blam.schemas
 

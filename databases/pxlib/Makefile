@@ -15,7 +15,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

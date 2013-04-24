@@ -79,7 +79,7 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP   \
 		${PEARDIR}/MDB2/Schema/Validate.php:${PORTSDIR}/databases/pear-MDB2_Schema
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PHP=	ctype gettext session
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)

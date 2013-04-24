@@ -20,7 +20,7 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

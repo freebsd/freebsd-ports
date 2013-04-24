@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-password
 .ifndef(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
-USE_GETTEXT=		yes
+USES+=		gettext
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "

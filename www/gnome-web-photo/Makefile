@@ -23,7 +23,7 @@ LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_XZ=		yes
 USE_GNOME=	gconf2 gnomehack gnomeprefix
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \

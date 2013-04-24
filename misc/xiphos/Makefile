@@ -19,7 +19,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_PYTHON_BUILD=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf

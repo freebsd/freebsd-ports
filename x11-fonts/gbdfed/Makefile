@@ -16,7 +16,7 @@ COMMENT=	A GTK2 bitmap font editor
 LICENSE=	MIT
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

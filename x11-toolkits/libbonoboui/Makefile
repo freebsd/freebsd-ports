@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack \

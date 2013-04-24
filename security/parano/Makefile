@@ -16,7 +16,7 @@ COMMENT=	A Gnome program to deal with hashfiles
 
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

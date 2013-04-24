@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gtk12
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_XORG=	xpm xi xext xft xinerama
 

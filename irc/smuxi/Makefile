@@ -30,7 +30,7 @@ post-patch:
 		s|@libdir@/locale|@prefix@/share/locale|g'
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

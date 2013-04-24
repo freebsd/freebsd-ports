@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=	yes
 USE_GNOME=	intltool
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

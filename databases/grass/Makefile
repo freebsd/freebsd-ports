@@ -33,7 +33,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_READLINE=	yes
 USE_PERL5=	yes
 USE_XORG=	sm ice xi x11 xt xmu xext

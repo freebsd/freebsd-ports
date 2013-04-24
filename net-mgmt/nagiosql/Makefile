@@ -19,7 +19,7 @@ RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios \
 
 USE_BZIP2=	yes
 USE_MYSQL=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PHP=	mysql filter gettext session simplexml
 WANT_PHP_WEB=	yes
 

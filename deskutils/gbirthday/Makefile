@@ -23,7 +23,7 @@ USE_GNOME=	pygtk2 desktopfileutils
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GNOME+=	intltool
 LANGUAGES=	de en es fr gl it pl pt ru sk
 PLIST_SUB+=	NLS=""

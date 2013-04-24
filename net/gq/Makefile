@@ -21,7 +21,7 @@ CACHE_DESC=	Support the OpenLDAP experimental client cache
 USE_GNOME=	libglade2 gnomedocutils
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}

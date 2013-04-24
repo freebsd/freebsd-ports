@@ -17,7 +17,7 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 INSTALLS_ICONS=	yes
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator

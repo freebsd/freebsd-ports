@@ -27,7 +27,7 @@ LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		drm:${PORTSDIR}/graphics/libdrm
 
 USE_ZIP=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	glib20
 USE_QT4=	gui moc_build qmake_build rcc_build xml_build opengl_build
 USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \

@@ -23,7 +23,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/ljit share/locale/ru/LC_MESSAGES/ljit.mo

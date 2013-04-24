@@ -23,7 +23,7 @@ CONFLICTS=	ekiga-3.*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_SDL=	sdl
 INSTALLS_OMF=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack gnomedocutils \

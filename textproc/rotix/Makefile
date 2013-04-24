@@ -15,7 +15,7 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME
 MAINTAINER=	lintux@debian.org
 COMMENT=	A program to generate rotational obfuscations
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --i18n=1

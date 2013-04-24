@@ -24,7 +24,7 @@ FONTLABEL?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 OPTIONS_DEFINE=	GEOIP
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-font-default=${FONTDEFAULT} \

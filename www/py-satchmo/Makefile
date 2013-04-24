@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2.3:${PORTSDIR}/www/py-django \
 				${PYTHON_PKGNAMEPREFIX}django-signals-ahoy>=0:${PORTSDIR}/www/py-django-signals-ahoy \
 				${PYTHON_PKGNAMEPREFIX}django-threaded-multihost>=0:${PORTSDIR}/www/py-django-threaded-multihost
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_EGG=	Satchmo-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg

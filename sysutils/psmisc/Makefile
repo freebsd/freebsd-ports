@@ -32,7 +32,7 @@ MAN1=		killall.1 pstree.1
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS=	--enable-nls
 PLIST_SUB+=	NLS=""
 .endif

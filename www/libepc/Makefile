@@ -20,7 +20,7 @@ LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

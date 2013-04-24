@@ -30,7 +30,7 @@ USE_GNOME=	pkgconfig gtk20
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

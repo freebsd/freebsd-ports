@@ -21,7 +21,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 
 CXXFLAGS+=	-fPIC
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_GNOME=	glib20
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build

@@ -23,7 +23,7 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
 
 USE_GNOME=	gnomehack glib20
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

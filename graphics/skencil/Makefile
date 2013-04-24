@@ -26,7 +26,7 @@ USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK_BUILD=	yes
 USE_TK=		yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

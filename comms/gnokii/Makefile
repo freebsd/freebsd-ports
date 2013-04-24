@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 GROUPS=		${PORTNAME}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 MAKE_JOBS_SAFE=	yes

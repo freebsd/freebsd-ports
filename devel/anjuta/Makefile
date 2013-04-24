@@ -32,7 +32,7 @@ CONFLICTS=	anjuta-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes

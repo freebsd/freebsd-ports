@@ -15,7 +15,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Fork of gmake with debugger
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MAN1=		remake.1
 INFO=		remake
 

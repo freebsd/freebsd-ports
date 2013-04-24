@@ -24,7 +24,7 @@ LIB_DEPENDS=	glademm-2:${PORTSDIR}/devel/libglademm24 \
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_SDL=	sdl image mixer

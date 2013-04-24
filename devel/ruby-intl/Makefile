@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple wrapper of GNU gettext for Ruby
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

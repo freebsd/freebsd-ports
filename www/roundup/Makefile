@@ -11,7 +11,7 @@ COMMENT=	Issue-Tracking System for Knowledge Workers
 
 LICENSE=	PSFL
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

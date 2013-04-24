@@ -24,7 +24,7 @@ USE_WX=	2.6
 WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	autoconf libtool automake
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \

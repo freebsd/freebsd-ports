@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 CONFLICTS=	gimp-print-[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes

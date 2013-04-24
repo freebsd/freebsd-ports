@@ -19,7 +19,7 @@ LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
 
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

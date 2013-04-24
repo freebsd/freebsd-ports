@@ -17,7 +17,7 @@ COMMENT=	HTML form validation, generation, and conversion package
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
-USE_GETTEXT=		yes
+USES=		gettext
 
 PYDISTUTILS_PKGNAME=	FormEncode
 

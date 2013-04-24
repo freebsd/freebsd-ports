@@ -22,7 +22,7 @@ RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/honoka/plugin-romkan.so:${PORTSDIR}/japanese/scim-honoka-plugin-romkan
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	lthack gnomehack
 USE_ICONV=	yes
 USE_GMAKE=	yes

@@ -24,7 +24,7 @@ MAN1=		ssed.1
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
 .endif

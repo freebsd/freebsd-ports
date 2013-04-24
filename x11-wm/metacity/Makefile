@@ -23,7 +23,7 @@ RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xcomposite xdamage
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2 ltverhack gtk20

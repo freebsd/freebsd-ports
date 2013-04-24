@@ -17,7 +17,7 @@ COMMENT=	A server browser for many popular 3D action games
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 USE_GNOME=	intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

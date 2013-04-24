@@ -16,7 +16,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Notes and memos application
 
 USE_HORDE=	base
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO UPGRADING
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

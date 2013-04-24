@@ -15,7 +15,7 @@ MASTER_SITES=	http://programmer-art.org/media/releases/arista-transcoder/ \
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	An easy to use multimedia transcoder for the GNOME Desktop
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GSTREAMER=	faac x264 lame mpeg2enc
 USE_GNOME=	pygnomedesktop
 USE_PYTHON=	yes

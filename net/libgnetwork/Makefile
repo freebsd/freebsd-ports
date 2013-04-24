@@ -17,7 +17,7 @@ COMMENT=	A GLib-based networking wrapper
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

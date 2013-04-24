@@ -64,7 +64,7 @@ SUB_FILES=	pkg-message
 
 post-patch:
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py

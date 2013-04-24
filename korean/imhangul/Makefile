@@ -25,7 +25,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""

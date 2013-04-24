@@ -25,7 +25,7 @@ PORTDOCS=	FAQ LICENSE
 PORTSCOUT=	ignore:1
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	pygnome2 pygnomeextras pygtk2
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese kana (Hiragana and Katakana) simple flashcard tool
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

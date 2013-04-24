@@ -24,7 +24,7 @@ USE_PYTHON=	2.5+
 
 MANCOMPRESSED=	yes
 MAN1=		tucan.1
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|#! /usr/bin/env python|#! ${PYTHON_CMD}|' ${WRKSRC}/tucan.py

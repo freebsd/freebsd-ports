@@ -109,7 +109,7 @@ WITHOUT_GNOME=	true
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--with-intl-library=${LOCALBASE}/lib \
 			--with-intl-includes=${LOCALBASE}/include
 PLIST_SUB+=	NLS=""

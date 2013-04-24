@@ -18,7 +18,7 @@ PORTSCOUT=	skipv:3.12
 
 USE_ZIP=	yes
 USE_PHP=	mysql gettext
-USE_GETTEXT=	yes
+USES=		gettext
 WRKSRC=		${WRKDIR}/webERP${PORTVERSION}
 
 NO_BUILD=	yes

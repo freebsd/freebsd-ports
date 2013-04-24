@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network phonon-gst sql
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_SDL=	sdl
 QMAKEFLAGS+=	"CONFIG+=player_phonon"
 MAKE_ENV+=	INSTALL_ROOT=${PREFIX}

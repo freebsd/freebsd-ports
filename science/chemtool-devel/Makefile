@@ -24,7 +24,7 @@ USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1

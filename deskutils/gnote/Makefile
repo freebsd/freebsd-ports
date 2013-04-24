@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_XZ=		yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
 		ltverhack gnomepanel
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gnote.schemas
 USE_AUTOTOOLS=	libtool

@@ -33,7 +33,7 @@ MAN1=		halberd.1
 MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 

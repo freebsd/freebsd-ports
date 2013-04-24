@@ -14,7 +14,7 @@ COMMENT=	D-Bus bindings for GObject
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 USE_GNOME=	glib20 gnomehack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_DOS2UNIX=	src/templates/DTD.dtd \
 		src/templates/OpenLearn_document.xml \
 		src/rng/docbookxi.rnc \

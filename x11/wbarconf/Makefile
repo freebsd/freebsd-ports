@@ -18,11 +18,11 @@ RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
 
 USE_GNOME=	pygobject pygtk2 gtk20
 USE_PYTHON=	2.5+
-USE_GETTEXT=	yes
+USES=		gettext
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README COPYING
-USE_GETTEXT=	yes
+USES=		gettext
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

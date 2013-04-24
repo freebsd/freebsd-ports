@@ -26,7 +26,7 @@ ADDONS_DESC=	install additional workgroup features (addons)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

@@ -22,7 +22,7 @@ CONFLICTS=	nautilus-3.[0-9]*
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		librsvg2 desktopfileutils ltverhack gvfs ltasneededhack
 USE_LDCONFIG=	yes

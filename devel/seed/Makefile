@@ -25,7 +25,7 @@ CONFLICTS=	seed-3.[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehack gtk20 intltool libxml2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

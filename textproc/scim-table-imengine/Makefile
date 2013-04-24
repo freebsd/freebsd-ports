@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=		scim-make-table.1
 

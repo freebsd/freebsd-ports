@@ -37,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gschem.1
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

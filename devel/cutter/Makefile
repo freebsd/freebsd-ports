@@ -16,7 +16,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	intltool gnomehack glib20 gtk20
 USE_LDCONFIG=	yes
@@ -71,7 +71,7 @@ PLIST_SUB+=	SOUP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

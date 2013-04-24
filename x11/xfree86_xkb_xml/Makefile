@@ -15,7 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

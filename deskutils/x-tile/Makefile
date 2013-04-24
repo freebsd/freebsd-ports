@@ -27,7 +27,7 @@ post-patch:
 		${WRKSRC}/modules/cons.py
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PYDISTUTILS_BUILD_TARGET=	--without-gettext build

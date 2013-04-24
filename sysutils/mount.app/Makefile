@@ -16,7 +16,7 @@ COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk12 glib12
 
 GNU_CONFIGURE=	yes

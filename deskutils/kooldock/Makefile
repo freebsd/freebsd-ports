@@ -19,7 +19,7 @@ WRKSRC=			${WRKDIR}/kooldock
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool
-USE_GETTEXT=		yes
+USES=		gettext
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 

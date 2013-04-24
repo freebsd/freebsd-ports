@@ -38,7 +38,7 @@ MAKE_ENV=	man_MANS=""
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS=	--localedir=${PREFIX}/share/locale
 PLIST_SUB=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "

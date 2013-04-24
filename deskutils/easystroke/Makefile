@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
-USE_GETTEXT=	yes
+USES+=		gettext
 
 .if ${PORT_OPTIONS:MNLS}
 BUILD_DEPENDS+=	intltool-merge:${PORTSDIR}/textproc/intltool

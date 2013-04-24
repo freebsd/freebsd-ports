@@ -12,7 +12,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 desktopfileutils intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser

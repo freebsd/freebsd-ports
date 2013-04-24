@@ -16,7 +16,7 @@ USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message

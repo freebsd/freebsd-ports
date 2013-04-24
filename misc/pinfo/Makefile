@@ -17,7 +17,7 @@ READLINE_DESC=	Enable readline support
 
 USE_BZIP2=	yes
 USE_NCURSES=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
@@ -35,7 +35,7 @@ INFO=		pinfo
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

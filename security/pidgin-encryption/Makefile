@@ -22,7 +22,7 @@ LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple \
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nss-libs=${LOCALBASE}/lib/nss
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
 .else

@@ -27,7 +27,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xt
 CONFIGURE_ARGS+=--with-pty=BSD --with-libintl-prefix=${LOCALBASE}

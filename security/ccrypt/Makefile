@@ -14,7 +14,7 @@ COMMENT=	Command-line utility for encrypting and decrypting files and streams
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 USE_PERL5_BUILD=	yes

@@ -19,7 +19,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libutil panel

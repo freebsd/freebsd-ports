@@ -14,7 +14,7 @@ COMMENT=	A personal accounting software package
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes

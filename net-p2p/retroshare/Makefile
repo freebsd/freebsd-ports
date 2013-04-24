@@ -31,7 +31,7 @@ RUN_DEPENDS+=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
 WRKSRC=		${WRKDIR}/trunk
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	glib20
 USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_QT4=	corelib gui network xml script designer_build uic_build \

@@ -24,7 +24,7 @@ MAN1=		gcpio.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 .else

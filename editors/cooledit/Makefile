@@ -17,7 +17,7 @@ COMMENT=	Suite of utilities, including a GUI editor
 
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt

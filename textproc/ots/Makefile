@@ -18,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

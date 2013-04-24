@@ -18,7 +18,7 @@ LIB_DEPENDS=	openvas.2:${PORTSDIR}/security/openvas-libraries \
 		openvasnasl.2:${PORTSDIR}/security/openvas-libnasl
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RC_SUBR=	openvasd
 
 MAN1=		openvas-mkrand.1 openvas-mkcert-client.1 openvasd-config.1

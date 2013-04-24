@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 
 USE_PERL5=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \

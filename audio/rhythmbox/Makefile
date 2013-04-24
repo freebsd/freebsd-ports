@@ -24,7 +24,7 @@ LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 CONFLICTS=	rhythmbox-2.[0-9]* rhythmbox-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 nautilus2

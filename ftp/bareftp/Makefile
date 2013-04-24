@@ -14,7 +14,7 @@ CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" --libdir="${PREFIX}/lib" \
 		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include"
 
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 

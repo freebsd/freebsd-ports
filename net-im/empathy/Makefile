@@ -32,7 +32,7 @@ CONFLICTS=	empathy-3.[0-9]*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack
 USE_GSTREAMER=	yes

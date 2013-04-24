@@ -25,7 +25,7 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_PYTHON=	-2.7

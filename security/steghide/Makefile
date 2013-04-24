@@ -21,7 +21,7 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

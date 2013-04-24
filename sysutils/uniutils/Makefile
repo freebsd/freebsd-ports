@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES=		gettext
 
 TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
 		Test4.ann Test4.u Test5.ann Test5.u

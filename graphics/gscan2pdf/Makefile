@@ -73,7 +73,7 @@ MAN1=		${PORTNAME}.1 scanadf-perl.1 scanimage-perl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

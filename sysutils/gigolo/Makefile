@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 gvfs
 USE_XORG=	x11
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=		gigolo.1
 

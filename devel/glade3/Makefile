@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxml2 gnomeprefix gnomehack \
 		gnomedocutils desktopfileutils ltverhack:10
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

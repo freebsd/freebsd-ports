@@ -18,7 +18,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm \
 		gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

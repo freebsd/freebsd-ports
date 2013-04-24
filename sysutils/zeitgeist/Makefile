@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

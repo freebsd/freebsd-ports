@@ -16,7 +16,7 @@ COMMENT=	A C++ interface around the LibRaw library
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_KDELIBS_VER=3
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes

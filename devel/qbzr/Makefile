@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_QT4=	# empty
 USE_PYDISTUTILS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PROJECTHOST=	bsdistfiles
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GSTREAMER=	python
 INSTALLS_ICONS=	yes

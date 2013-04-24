@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gtklp.1 gtklpq.1
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

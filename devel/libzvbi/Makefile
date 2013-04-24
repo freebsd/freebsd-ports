@@ -18,7 +18,7 @@ COMMENT=	Routines to access raw VBI capture devices
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		unicode.0:${PORTSDIR}/devel/libunicode
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes

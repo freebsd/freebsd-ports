@@ -23,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
 		gconf2 gnomedesktop
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2

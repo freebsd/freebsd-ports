@@ -35,7 +35,7 @@ USE_RUBY_SETUP=	yes
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES=		gettext
 RUN_DEPENDS+=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
 PLIST_SUB+=	NLS=""
 .endif

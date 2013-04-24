@@ -20,7 +20,7 @@ COMMENT=	A web application templating system, based on the Twisted Woven
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_TWISTED=	web
-USE_GETTEXT=	yes
+USES=		gettext
 PYDISTUTILS_PKGNAME=	Nevow
 
 SUB_FILES=	pkg-message

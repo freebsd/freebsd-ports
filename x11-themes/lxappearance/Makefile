@@ -17,7 +17,7 @@ COMMENT=	A desktop-independent theme switcher for GTK+
 LICENSE=	GPLv2
 
 USE_GNOME=	gnomehack gtk20 intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

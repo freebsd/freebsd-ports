@@ -20,7 +20,7 @@ LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre \
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-USE_GETTEXT=	YES
+USES=		gettext
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls \
 		-L${LOCALBASE}/lib ${PTHREAD_LIBS}

@@ -47,7 +47,7 @@ PLIST_SUB+=	M17N="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJAPANESE}
-USE_GETTEXT=		yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo

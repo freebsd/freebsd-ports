@@ -15,7 +15,7 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django

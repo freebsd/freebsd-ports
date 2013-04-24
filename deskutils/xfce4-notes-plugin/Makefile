@@ -20,7 +20,7 @@ LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils pkgconfig

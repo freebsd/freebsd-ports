@@ -75,7 +75,7 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 .if ${PORT_OPTIONS:MNLS}
 MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 MAKE_ARGS+=	CONF_OPT_NLS="--disable-nls"

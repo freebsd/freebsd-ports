@@ -14,7 +14,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde wrapper around various Java SSH applets
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

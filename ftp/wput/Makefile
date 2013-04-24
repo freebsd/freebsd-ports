@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-ssl
 
 .if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls \
 			--with-libintl-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE}

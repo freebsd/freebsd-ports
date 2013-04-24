@@ -15,7 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free (GPL) encoder and decoder for the yEnc Usenet file format
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 MAN1=	ydecode.1 yencode.1 ypost.1

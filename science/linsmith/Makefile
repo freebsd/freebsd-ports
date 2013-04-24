@@ -14,7 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 USE_GNOME=	libgnomeui libxml2
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

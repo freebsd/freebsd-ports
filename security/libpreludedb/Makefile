@@ -21,7 +21,7 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 
 CONFIGURE_ARGS=	--enable-gtk-doc=no

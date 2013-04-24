@@ -42,7 +42,7 @@ CVSROOT=	/home/cvs
 .endif
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README BUGS CHANGES CREDITS INSTALL RELEASE_NOTES TODO
 
 pre-configure:

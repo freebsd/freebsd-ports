@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/vexim-release
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 USE_PHP=	gettext session posix
-USE_GETTEXT=	yes
+USES=		gettext
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL

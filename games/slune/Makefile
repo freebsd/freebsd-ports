@@ -23,7 +23,7 @@ LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d
 
 USE_BZIP2=	yes
 USE_DOS2UNIX=	*.po *.mo
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		glew

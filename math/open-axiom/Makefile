@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--with-lisp=sbcl
 USE_GMAKE=	yes
 USE_XORG=	x11 ice sm xpm
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

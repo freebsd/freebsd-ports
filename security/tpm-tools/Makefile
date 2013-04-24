@@ -21,7 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/pkcs11/libopencryptoki.so:${PORTSDIR}/security/op
 
 USE_GMAKE=	YES
 USE_ICONV=	YES
-USE_GETTEXT=	YES
+USES=		gettext
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	YES

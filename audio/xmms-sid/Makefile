@@ -14,7 +14,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

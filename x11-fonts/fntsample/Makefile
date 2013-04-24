@@ -34,7 +34,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 
 USE_GNOME=	pango
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-unicode-blocks=${WRKSRC}/Blocks.txt

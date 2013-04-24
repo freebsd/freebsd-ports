@@ -19,7 +19,7 @@ LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_GNOME=	gnomehack gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

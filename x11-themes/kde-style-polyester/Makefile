@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}

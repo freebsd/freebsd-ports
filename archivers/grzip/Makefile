@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient file compressor
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

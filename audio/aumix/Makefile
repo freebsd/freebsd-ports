@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	NLS GTK2
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 
 .for ii in ca de el es fr gl it ja nl pl pt_BR ru sv uk zh_CN
 PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo

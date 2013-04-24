@@ -26,7 +26,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		raw:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehier gconf2 gtk20 desktopfileutils librsvg2
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

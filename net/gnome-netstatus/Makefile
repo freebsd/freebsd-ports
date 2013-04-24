@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel \
 		gnomedocutils
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

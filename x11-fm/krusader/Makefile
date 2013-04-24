@@ -17,7 +17,7 @@ COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 PORTSCOUT=	ignore:1
 

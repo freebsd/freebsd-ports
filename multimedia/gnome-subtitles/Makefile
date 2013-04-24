@@ -36,7 +36,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gnome-subtitles
 MAN1=		gnome-subtitles.1
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

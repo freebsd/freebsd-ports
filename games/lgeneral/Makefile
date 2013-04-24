@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--disable-sound
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ENV+=	am_cv_func_iconv=no

@@ -17,7 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	stardict2
 

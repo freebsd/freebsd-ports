@@ -18,7 +18,7 @@ LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
 
 USE_AUTOTOOLS=	libltdl libtool
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"

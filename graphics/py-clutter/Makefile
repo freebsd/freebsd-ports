@@ -25,7 +25,7 @@ BROKEN=		bad plist
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pygnome2 pygtk2
 USE_PYTHON=	2.5+

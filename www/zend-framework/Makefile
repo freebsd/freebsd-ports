@@ -17,7 +17,7 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 LICENSE=	BSD
 

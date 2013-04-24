@@ -26,7 +26,7 @@ MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes
 USE_TCL_WRAPPER=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 PLIST_FILES=	bin/msg bin/msort
 

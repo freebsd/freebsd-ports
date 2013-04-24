@@ -15,7 +15,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes

@@ -59,7 +59,7 @@ I18N_DESC=Enable I18N support
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

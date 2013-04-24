@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xcursor xft xi
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/giac

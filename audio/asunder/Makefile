@@ -23,7 +23,7 @@ WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 

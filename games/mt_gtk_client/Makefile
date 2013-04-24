@@ -20,7 +20,7 @@ RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:${PORTSDIR}/games/cardpi
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-USE_GETTEXT=		yes
+USES=		gettext
 USE_GNOME=		glib20 gtk20 libxml2
 
 .if !defined(WITHOUT_SERVER)

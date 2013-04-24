@@ -30,7 +30,7 @@ OPTIONS=	IPV6	"Enable IPV6 support"				on \
 USE_AUTOTOOLS=	autoconf autoheader libtool
 USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \

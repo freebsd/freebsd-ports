@@ -25,7 +25,7 @@ LICENSE_COMB=	dual
 USE_XORG=	xpm
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gtk12
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

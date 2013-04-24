@@ -32,7 +32,7 @@ INFO=		libfc
 
 # should be same as binutils
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LDFLAGS+=	-lintl
 .endif
 

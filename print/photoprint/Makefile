@@ -24,7 +24,7 @@ LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client \
 		xcb:${PORTSDIR}/x11/libxcb
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	desktopfileutils pango
 USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender

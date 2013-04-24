@@ -17,7 +17,7 @@ COMMENT=	A curses-based game of weather destruction
 MAN6=		tornado.6
 MANLANG=	"" de fr it nl no ru
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

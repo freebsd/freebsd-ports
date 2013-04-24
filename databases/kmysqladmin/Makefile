@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS+=--with-mysql-include=${LOCALBASE}/include/mysql \

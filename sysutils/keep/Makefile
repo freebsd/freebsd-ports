@@ -21,6 +21,6 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ CONFIGURE_ENV=	DATADIRNAME=share
 # Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',
 # see this bug for details: http://llvm.org/bugs/show_bug.cgi?id=3814
 #CONFIGURE_ARGS=	--with-werror
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_SQLITE=	yes

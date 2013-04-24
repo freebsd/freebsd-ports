@@ -17,7 +17,7 @@ COMMENT=	Abstraction library that sits between apps and visual plugin
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

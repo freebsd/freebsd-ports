@@ -19,7 +19,7 @@ COMMENT=	Sound theme based on the FreeDesktop specification
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -22,7 +22,7 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 
 AUTOTOOLSFILES=	admin/cvs.sh

@@ -16,7 +16,7 @@ COMMENT=	Replacement for crypt(1)
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

@@ -15,7 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
 USE_SDL=	mixer sdl
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share

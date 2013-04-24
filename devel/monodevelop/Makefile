@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 MAN1=		mdtool.1 monodevelop.1
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 OPTIONS=	MONOEXT "Enable extensions for Mono development" on \

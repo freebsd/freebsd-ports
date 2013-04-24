@@ -11,7 +11,7 @@ MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Print program listings on postscript printer
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 

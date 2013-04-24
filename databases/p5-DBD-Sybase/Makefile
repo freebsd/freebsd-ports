@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 CONFIGURE_ENV=	SYBASE=${LOCALBASE}
 PERL_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 .if defined(BATCH)
 CONFIGURE_ARGS=	< /dev/null

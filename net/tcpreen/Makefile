@@ -17,7 +17,7 @@ MAN1=		tcpreen.1
 DOC_FILES=	AUTHORS NEWS README THANKS TODO
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

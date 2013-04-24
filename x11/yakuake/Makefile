@@ -14,6 +14,6 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.mk>

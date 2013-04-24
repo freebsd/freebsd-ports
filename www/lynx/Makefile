@@ -34,7 +34,7 @@ DEFAULT_COLORS_DESC=	Colors support
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS='@comment '
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
 PLIST_SUB+=	NLS=''

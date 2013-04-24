@@ -38,7 +38,7 @@ PLIST_SUB+=		XFCE4_PANEL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

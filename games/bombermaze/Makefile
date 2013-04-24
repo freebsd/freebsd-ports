@@ -16,7 +16,7 @@ COMMENT=	A multiplayer game, strategy place bombs to kill enemies and obstacles
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

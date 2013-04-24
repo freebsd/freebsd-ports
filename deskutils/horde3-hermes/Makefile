@@ -14,7 +14,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Time tracking application
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO
 
 BUILD_DEPENDS+=	${HORBAS}/turba/minisearch.php:${PORTSDIR}/mail/horde3-turba \

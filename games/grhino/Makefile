@@ -14,7 +14,7 @@ MASTER_SITES=	SF/rhino/GRhino/${PORTVERSION}
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	GRhino Othello/Reversi Program
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix libgnomeui
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

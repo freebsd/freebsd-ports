@@ -22,7 +22,7 @@ MAN1=		wdiff.1
 INFO=		wdiff
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
 .else

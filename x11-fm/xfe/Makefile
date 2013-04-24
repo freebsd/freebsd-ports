@@ -14,7 +14,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_XORG=	xft
 USE_GNOME=	gnomehack intltool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

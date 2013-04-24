@@ -30,7 +30,7 @@ PLIST_FILES=	bin/ncmpc \
 PLIST_DIRS=%%EXAMPLESDIR%%
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LANGUAGES=cs da de eo es fi fr gl he hu it ko nb nl pl pt_BR ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo

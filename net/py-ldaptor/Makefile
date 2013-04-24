@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 
 GITVERSION=	aad8ded658b36337a08aeb7402b6b67eb8771bea
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_TWISTED=	yes
 USE_PYDISTUTILS=	yes

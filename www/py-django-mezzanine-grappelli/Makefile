@@ -13,7 +13,7 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of django-grappelli for Mezzanine CMS
 
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	grappelli_safe
 

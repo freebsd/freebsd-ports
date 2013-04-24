@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 .endif
 
 USE_HORDE=	base
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES
 
 pre-configure:

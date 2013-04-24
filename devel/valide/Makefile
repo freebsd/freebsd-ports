@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BROKEN=		Doesn't build with vala 0.12+
 
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20 gtksourceview2
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes

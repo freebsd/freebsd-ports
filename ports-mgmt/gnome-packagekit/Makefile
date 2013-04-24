@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomemenus gnomedocutils \
 		desktopfileutils
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_PYTHON_BUILD=2.5+
 GCONF_SCHEMAS=	gnome-packagekit.schemas

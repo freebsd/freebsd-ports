@@ -25,7 +25,7 @@ CONFLICTS=	${PYTHON_PKGNAMEPREFIX}django-profiles-[0-9]* \
 		${PYTHON_PKGNAMEPREFIX}django-registration-[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Pootle

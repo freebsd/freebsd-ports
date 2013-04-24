@@ -16,7 +16,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Network service monitor
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	CHANGES CREDITS INSTALL TODO README
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

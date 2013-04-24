@@ -25,7 +25,7 @@ USE_XORG=	x11 xft
 USE_QT_VER=	3
 USE_MYSQL=	yes
 USE_PERL5_BUILD=yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-other-includes=${LOCALBASE}/include \

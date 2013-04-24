@@ -32,14 +32,14 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnomeextras
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GHOSTSCRIPT=yes
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

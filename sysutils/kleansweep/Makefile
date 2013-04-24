@@ -17,7 +17,7 @@ COMMENT=	KleanSweep allows you to reclaim disk space by finding unneeded files
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_KDELIBS_VER=3
 
 post-extract:

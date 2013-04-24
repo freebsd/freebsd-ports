@@ -39,7 +39,7 @@ FEATURES+=	T1LIB
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 FEATURES+=	INT
 .endif
 

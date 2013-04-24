@@ -18,7 +18,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

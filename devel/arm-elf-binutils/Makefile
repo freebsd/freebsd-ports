@@ -13,7 +13,7 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} CFLAGS="-I/usr/local/include"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info

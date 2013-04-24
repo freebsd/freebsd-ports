@@ -44,7 +44,7 @@ PLIST_SUB+=	MENU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 TRANSLATIONS=	de es it ja ko ru zh_CN
 MANLANG=	"" it ru
 PLIST_SUB+=	NLS=""

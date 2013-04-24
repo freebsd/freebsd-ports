@@ -26,6 +26,6 @@ USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libxml2
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.mk>

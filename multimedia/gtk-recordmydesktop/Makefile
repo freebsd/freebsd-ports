@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydes
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	-2.7

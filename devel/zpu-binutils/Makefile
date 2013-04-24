@@ -14,7 +14,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 
-USE_GETTEXT=	yes
+USES=		gettext
 MANPREFIX=	${PREFIX}/zpu
 MANCOMPRESSED=	no
 MAN1=		zpu-elf-addr2line.1 zpu-elf-ar.1 zpu-elf-dlltool.1 \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

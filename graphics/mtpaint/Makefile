@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=jasper
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=intl
 PLIST_SUB+=	NLS=""
 .else

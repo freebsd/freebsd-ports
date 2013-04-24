@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20
 USE_GL=		yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

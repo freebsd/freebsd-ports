@@ -18,7 +18,7 @@ LIB_DEPENDS=	paper.2:${PORTSDIR}/print/libpaper \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		MAN_PREFIX="${MANPREFIX}/man" \

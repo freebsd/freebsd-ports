@@ -23,7 +23,7 @@ SAMBA_PORT?=	net/samba36
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \

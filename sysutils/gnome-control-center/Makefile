@@ -25,7 +25,7 @@ RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good

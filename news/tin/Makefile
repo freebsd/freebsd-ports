@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--enable-cancel-locks
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtksharp20 desktopfileutils
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=		pinta.1
 MANCOMPRESSED=	yes

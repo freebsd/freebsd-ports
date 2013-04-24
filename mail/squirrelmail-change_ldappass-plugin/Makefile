@@ -16,7 +16,7 @@ COMMENT=	Allows users to change their passwords stored in LDAP Tree
 LICENSE=	GPLv2
 
 USE_PHP+=	ldap
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"

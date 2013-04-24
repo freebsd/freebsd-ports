@@ -20,7 +20,7 @@ GH_COMMIT=	28cade5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal automake
 USE_GMAKE=	yes

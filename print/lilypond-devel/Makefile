@@ -46,7 +46,7 @@ INFO=		lilypond-notation \
 		internals
 
 USE_BISON=	build
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
 USE_PYTHON=	yes

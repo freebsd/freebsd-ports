@@ -21,7 +21,7 @@ BUILD_DEPENDS=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb

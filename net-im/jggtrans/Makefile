@@ -20,7 +20,7 @@ LIB_DEPENDS=		idn.17:${PORTSDIR}/dns/libidn \
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-USE_GETTEXT=		yes
+USES=		gettext
 USE_GNOME=		glib20 pkgconfig
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib

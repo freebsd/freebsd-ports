@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20 intltool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt

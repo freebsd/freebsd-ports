@@ -17,7 +17,7 @@ COMMENT=	Displays a mini-command line on the xfce4-panel
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	libgui configenv panel

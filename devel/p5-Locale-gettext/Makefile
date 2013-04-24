@@ -18,7 +18,7 @@ COMMENT=	Message handling functions
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN3=		Locale::gettext.3
 

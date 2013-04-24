@@ -15,7 +15,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Password changing module
 
 USE_HORDE=	base
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

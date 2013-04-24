@@ -32,7 +32,7 @@ CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after ffmpeg-deve
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
 USE_GNOME=		glib20 libglade2
-USE_GETTEXT=		yes
+USES=		gettext
 USE_XORG=		x11 xmu
 INSTALLS_OMF=		yes
 

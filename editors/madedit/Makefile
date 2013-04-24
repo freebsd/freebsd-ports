@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/MadEdit/MadEdit-${PORTVERSION}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An open-source and cross-platform text/hex editor
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_WX=		2.6+
 WANT_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes

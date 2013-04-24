@@ -30,7 +30,7 @@ MAN1=		tgif.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 IMAKEDEFINES+=	WITH_NLS
 PLIST_SUB=	NLS=""
 .else

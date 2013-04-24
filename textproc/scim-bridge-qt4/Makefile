@@ -20,7 +20,7 @@ RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 LICENSE=	GPLv2 LGPL21

@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-cygnal
 
 # NLS option processing (not sure if --disable-nls actually has any effect)
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

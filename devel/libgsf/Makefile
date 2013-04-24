@@ -18,7 +18,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool

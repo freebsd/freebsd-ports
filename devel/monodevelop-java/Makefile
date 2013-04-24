@@ -23,7 +23,7 @@ BROKEN=		does not build
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GNOME=	gtksharp20
 

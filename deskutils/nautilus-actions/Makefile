@@ -21,7 +21,7 @@ LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	nautilus2 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

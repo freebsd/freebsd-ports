@@ -25,7 +25,7 @@ LICENSE_COMB=	dual
 
 USE_BZIP2=	yes
 USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes

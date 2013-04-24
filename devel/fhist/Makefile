@@ -34,7 +34,7 @@ PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 .for file in fcomp fhist fmerge
 PLIST_FILES+=	share/locale/en/LC_MESSAGES/${file}.mo
 .endfor

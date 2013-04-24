@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 CONFLICTS_INSTALL=	pootle-*
 

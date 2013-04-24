@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:${PORTSDIR}/devel/py-configobj 
 
 FETCH_ARGS=	-pRr
 USE_GNOME=	desktopfileutils pygobject pygtk2
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes

@@ -16,7 +16,7 @@ COMMENT=	Remote Subversion repository dumpfile generator
 GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_FILES+=		share/locale/de/LC_MESSAGES/rsvndump.mo
 .else
 CONFIGURE_ARGS+=	--disable-nls

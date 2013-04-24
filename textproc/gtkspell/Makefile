@@ -22,7 +22,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

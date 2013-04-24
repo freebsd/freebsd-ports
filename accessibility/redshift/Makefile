@@ -34,7 +34,7 @@ VIDMODE_DESC=	Support VIDMODE for changing colors (NVIDIA)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
                 --with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""

@@ -19,7 +19,7 @@ XDOTOOL_DESC=	Automatic paste functionality
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--localedir=${LOCALBASE}/share/locale
 .else

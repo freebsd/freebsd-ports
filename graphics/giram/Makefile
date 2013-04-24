@@ -18,7 +18,7 @@ LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes

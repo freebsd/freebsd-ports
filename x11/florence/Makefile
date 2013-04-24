@@ -21,7 +21,7 @@ USE_XORG=	xtst
 USE_GNOME=	gtk20 intlhack gnomedocutils gconf2 librsvg2 gnomepanel
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

@@ -24,7 +24,7 @@ USE_PYTHON=	yes
 USE_WX=		2.8+
 WX_COMPS=	python:lib
 WX_UNICODE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 ALL_TARGET=	compile
 
 PFSDIR=		${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
