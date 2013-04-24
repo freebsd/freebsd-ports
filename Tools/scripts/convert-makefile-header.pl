@@ -24,6 +24,7 @@ Usage: $bn [OPTION] PORT
                         (make sure the original creator is ok with this)
   -h, --help            this help
   -n, --nowrite         don't change file, just print what would be done
+  -N, --nopreserve      don't preserve original file
 
 _ENOUSAGE
 }
@@ -40,7 +41,6 @@ sub get_nice_people() {
 		'beat',
 		'brooks',
 		'crees',
-		'ehaupt',
 		'eadler',
 		'flo',
 		'flz',
@@ -91,7 +91,7 @@ MAIN: {
 	# get options
 	my $opt={};
 	my $nice_people=get_nice_people();
-	GetOptions($opt, 'help|h', 'rcsonly|r', 'createdby|c', 'nowrite|n');
+	GetOptions($opt, 'help|h', 'rcsonly|r', 'createdby|c', 'nowrite|n', 'nopreserve|N');
 
 	if(defined($opt->{help})) {
 		usage();
@@ -165,7 +165,7 @@ MAIN: {
 
 			if(not defined($opt->{nowrite})) {
 				# move new Makefile
-				`mv $mf $mf.orig`;
+				`mv $mf $mf.orig` if(not defined($opt->{nopreserve}));
 				`mv $mf.tmp_header_rename $mf`;
 				print STDERR "$mf converted.\n";
 			}
