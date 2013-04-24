@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 
 #code currently doesn't properly handle --disable-nls (in next upstream milestone)
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
