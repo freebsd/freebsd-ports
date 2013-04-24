@@ -2,18 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Utility to split MP3 and Ogg files (via CUE sheets)
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt
 
+USES=	pkgconfig:build
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-oggsplt_symlink --disable-mp3splttest
+CONFIGURE_ARGS=	--enable-oggsplt_symlink
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -36,14 +40,6 @@ PLIST_DIRSTRY+=	share/locale/de_DE/LC_MESSAGES
 PLIST_DIRSTRY+=	share/locale/de_DE
 .else
 CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-post-patch:
-.if ${OSVERSION} < 800067
-# getline() is GNU extension which FreeBSD only recently adopted
-	@${REINPLACE_CMD} -E \
-		's:getline\(&(.+, )&(.+, .+\) == )-1:fgets(\1\2NULL:' \
-			${WRKSRC}/src/freedb.c
 .endif
 
 .include <bsd.port.mk>
