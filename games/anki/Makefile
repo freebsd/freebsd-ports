@@ -25,7 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USE_PYTHON=	-2.7
 USE_QT4=	network_run webkit_run
-USE_GETTEXT=	run
+USES=		gettext:run
 
 MAN1=		${PORTNAME}.1
 

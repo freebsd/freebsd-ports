@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 
-USE_GETTEXT=	run
+USES=		gettext:run
 USE_PYTHON_RUN=	yes
 
 MAN1=		POFileChecker.1 POFileClean.1 POFileConsistency.1 \
