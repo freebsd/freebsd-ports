@@ -11,11 +11,14 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=		SF/tilp/OldFiles
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TI calculator library
 
 LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \
 		tifiles.6:${PORTSDIR}/devel/libtifiles
+
+DEPRECATED=	Superseded by comms/libticalcs2
+EXPIRATION_DATE=2013-07-01
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
