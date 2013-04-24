@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  ski
-# Date created:			  Mon Oct 15, 2001
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by:  David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	ski
 PORTVERSION=	0.943l.2
@@ -17,16 +12,14 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	freebsd-ia64@FreeBSD.org
 COMMENT=	HP's Ski IA-64 simulator
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
 ONLY_FOR_ARCHS=	i386
 
 NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first
 RESTRICTED=	License restrictions disallow automatic downloads and redistribution of the software.
 
-EXTRACT_CMD=		rpm2cpio.pl
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|${CPIO} -idum
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	#
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_MTREE=		yes
