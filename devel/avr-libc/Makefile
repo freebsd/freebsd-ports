@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	build
+USES=		gettext:build
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

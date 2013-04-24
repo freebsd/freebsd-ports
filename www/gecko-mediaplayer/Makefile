@@ -47,10 +47,10 @@ CONFIGURE_ARGS+=	--disable-caching
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB=	NLS=""
 .else
-USE_GETTEXT=	build
+USES+=		gettext:build
 PLIST_SUB=	NLS="@comment "
 .endif
 

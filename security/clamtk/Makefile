@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_GETTEXT=	run
+USES=		gettext:run
 
 MAN1=		${PORTNAME}.1
 

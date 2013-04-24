@@ -121,7 +121,7 @@ SCRIPTS_DATA=
 
 .if ${PORT_OPTIONS:MSTATIC}
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		build
+USES+=		gettext:build
 .endif
 .if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes

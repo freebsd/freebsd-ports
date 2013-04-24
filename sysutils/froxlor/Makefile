@@ -19,7 +19,7 @@ SUB_FILES+=	pkg-message pkg-deinstall
 
 USE_PHP=	xml bcmath posix filter session ftp mysql mysqli gettext
 
-USE_GETTEXT=	RUN
+USES=		gettext:run
 
 OPTIONS_DEFINE=	POWERDNS LIBNSS LOGROTATE MYSQLS DKIM
 
