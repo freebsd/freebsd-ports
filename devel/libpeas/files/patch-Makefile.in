@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2012-05-25 22:12:44.000000000 +0200
++++ Makefile.in	2012-05-25 22:12:52.000000000 +0200
+@@ -328,7 +328,7 @@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-glade-catalog
+-SUBDIRS = libpeas loaders $(am__append_1) tests data po docs
++SUBDIRS = libpeas loaders $(am__append_1) data po docs
+ GCOVDIRS = libpeas loaders $(am__append_2)
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
