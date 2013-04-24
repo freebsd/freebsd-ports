@@ -16,8 +16,6 @@ NO_PACKAGE=	Depends on kernel
 IGNORE=		Depends on kernel
 .endif
 
-OPTIONS=	MEM_ZONE "Use UMA zone allocator (>= 5.x only)" on
-
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR:S!^/!!}
 
@@ -29,12 +27,7 @@ MANCOMPRESSED=	yes
 
 USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-.ifdef WITH_MEM_ZONE
 CFLAGS+=	-DMEM_USE_ZONE
-.endif
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
@@ -46,4 +39,4 @@ post-install:
 		${PREFIX}/etc/ng_ipacct.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

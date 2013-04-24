@@ -21,21 +21,18 @@ PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 MAN1=		svn-mailer.1
 
-.include <bsd.port.pre.mk>
-
-pre-patch:
-.if ${PYTHON_REL} >= 250
-EXTRA_PATCHES=	${FILESDIR}/py25-src-lib-svnmailer-notifier-_base.py
-.endif
-
-.if defined(NOPORTDOCS)
-PYDISTUTILS_INSTALLARGS+=	--no-install-docs
-.else
 PORTDOCS=	*
+
+EXTRA_PATCHES=	${FILESDIR}/py25-src-lib-svnmailer-notifier-_base.py
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
+PYDISTUTILS_INSTALLARGS+=	--no-install-docs
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/src/svn-mailer
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
