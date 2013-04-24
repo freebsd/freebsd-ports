@@ -1,14 +1,9 @@
-# New ports collection makefile for:	gitolite
-# Date created:				07-28-2011
-# Whom:					milki <milki@rescomp.berkeley.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gitolite
 PORTVERSION=	2.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
+MASTER_SITES=	http://milki.github.io/${PORTNAME}/ \
 		LOCAL/tdb
 
 MAINTAINER=	milki@rescomp.berkeley.edu
@@ -25,11 +20,13 @@ USE_PERL5=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	GITUSER	"Create git user as gitolite provider" On
+OPTIONS_DEFINE=	GITUSER
+
+GITUSER_DESC=	Create git user as gitolite provider
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GITUSER)
+.if ${PORT_OPTIONS:MGITUSER}
 USERS=		git
 GROUPS=		${USERS}
 PLIST_SUB+=	GITUSER=""
