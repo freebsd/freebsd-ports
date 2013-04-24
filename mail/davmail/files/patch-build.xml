@@ -1,6 +1,6 @@
---- ./build.xml.orig	2012-01-13 19:17:31.000000000 -0800
-+++ ./build.xml	2012-01-13 19:46:34.000000000 -0800
-@@ -47,7 +47,7 @@
+--- build.xml.orig	2013-04-23 16:50:41.883412959 +0200
++++ build.xml	2013-04-23 16:51:32.230415374 +0200
+@@ -58,7 +58,7 @@
      </target>
  
      <target name="defaultrelease" unless="is.svn">
@@ -8,4 +8,4 @@
 +	<property name="release" value="${version}-${revision}"/>
      </target>
  
-     <target name="init" depends="check-java6, svnrelease, defaultrelease">
+     <target name="init" depends="check-encoding, check-java6, svnrelease, defaultrelease">
