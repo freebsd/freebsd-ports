@@ -37,7 +37,7 @@ MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi

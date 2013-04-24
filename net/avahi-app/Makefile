@@ -27,7 +27,7 @@ USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
 USE_GNOME?=	gnomehack ltverhack glib20 intltool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

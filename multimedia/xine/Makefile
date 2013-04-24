@@ -34,7 +34,7 @@ WIN32_CODECS_DESC=	Enable win32 codecs
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
@@ -66,7 +66,7 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

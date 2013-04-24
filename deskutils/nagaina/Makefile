@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_GNOME=	glib20
 USE_QT4=	corelib gui xml moc_build qmake_build rcc_build uic_build

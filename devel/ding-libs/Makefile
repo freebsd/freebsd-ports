@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 

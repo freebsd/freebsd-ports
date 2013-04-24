@@ -18,7 +18,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \

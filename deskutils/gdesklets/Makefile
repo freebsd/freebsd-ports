@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/gDesklets-${PORTVERSION}
 
 USE_GNOME=	gnomehack gnomeprefix intlhack librsvg2 pygnomeextras
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

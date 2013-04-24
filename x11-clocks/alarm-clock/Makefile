@@ -19,13 +19,13 @@ LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	gnomehack gtk20
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

@@ -21,7 +21,7 @@ WANT_PHP_WEB=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_PHP+=	gettext
-USE_GETTEXT=	yes	# Pet portlint
+USES+=		gettext
 
 LANGPACKS=	af_ZA-1.5.2${EXTRACT_SUFX} \
 		ar_EG-1.5.1-cvs${EXTRACT_SUFX} \

@@ -22,7 +22,7 @@ PROJECTHOST=	msn-pecan
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-install:
 	${GMAKE} -C ${WRKSRC} install_locales

@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GL=		gl
 USE_LUA=	5.0+	# should be optional, but the build fails without it
 WANT_GNOME=	yes

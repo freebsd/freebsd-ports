@@ -41,7 +41,7 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFIGURE_ARGS+=--enable-gui
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_ICONV=	yes
 USE_XORG+=	pixman xcomposite xcursor xdamage xfixes xinerama xrandr xrender
 USE_GNOME+=	gdkpixbuf2 gtk20 libgnomeui

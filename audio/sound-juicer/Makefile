@@ -25,7 +25,7 @@ LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		brasero-media.3:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 libglade2 gnomedocutils

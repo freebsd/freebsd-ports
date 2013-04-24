@@ -24,7 +24,7 @@ RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 
 MAN1=		${PORTNAME}.1 \

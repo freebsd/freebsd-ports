@@ -18,7 +18,7 @@ COMMENT=	Webcal(endar) handler for gnome
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver libgnomeui
 GNU_CONFIGURE=	yes

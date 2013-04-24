@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uptimes project client
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RC_SUBR=	upclient
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src

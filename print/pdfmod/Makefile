@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomesharp20
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

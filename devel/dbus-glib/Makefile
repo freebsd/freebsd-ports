@@ -14,7 +14,7 @@ COMMENT=	GLib bindings for the D-BUS messaging system
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	gnomehack glib20 ltverhack
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

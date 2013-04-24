@@ -27,7 +27,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no

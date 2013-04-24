@@ -12,7 +12,7 @@ COMMENT=	Change directory in full-screen visual mode
 
 LICENSE=	GPLv2
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc

@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12 gnomehier
 USE_CDRTOOLS=	yes

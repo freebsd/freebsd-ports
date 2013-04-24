@@ -25,7 +25,7 @@ MLINKS=		perdition.8 perdition.imap4.8 \
 MANCOMPRESSED=	no
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

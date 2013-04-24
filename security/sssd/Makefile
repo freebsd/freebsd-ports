@@ -53,7 +53,7 @@ USE_PYTHON=	yes
 USE_OPENLDAP=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_PYTHON=	yes
 

@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 .else
 CONFIGURE_ARGS+=	--disable-nls

@@ -34,7 +34,7 @@ RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay \
 IGNORE=		does not work with Gimp 2.6, and no update available
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool

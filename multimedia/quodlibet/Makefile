@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutag
 
 USE_PYTHON=	2.5+
 USE_GNOME=	pygtk2
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYDISTUTILS=	yes
 USE_DISPLAY=	yes
 USE_GSTREAMER=	gconf good python

@@ -25,7 +25,7 @@ CONFLICTS=	baobob-3.[0-9]* gnome-dictionary-3.[0-9]* \
 		gnome-search-tool-3.[0-9]* gnome-system-log-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

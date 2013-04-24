@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GETTEXT=		yes
+USES=		gettext
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 

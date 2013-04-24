@@ -28,7 +28,7 @@ PLIST_SUB+=	NLS="@comment"
 CONFIGURE_ARGS+=	--disable-nls
 .else
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .endif
 
 post-patch:

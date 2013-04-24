@@ -15,7 +15,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU Gregorian calendar program
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
@@ -25,7 +25,7 @@ INFO=		gcal
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

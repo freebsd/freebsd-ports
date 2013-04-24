@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20 libgnomecanvas libgnomeui libxml2
 INSTALLS_OMF=	yes
 

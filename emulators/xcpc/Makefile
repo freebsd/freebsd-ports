@@ -18,7 +18,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_XORG=	ice
 USE_GNOME=	pkgconfig glib20
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu \
 		pcre.3:${PORTSDIR}/devel/pcre \

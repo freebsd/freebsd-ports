@@ -17,7 +17,7 @@ COMMENT=	A Multi-Player FreeForm adventure Program
 
 WRKSRC=		${WRKDIR}/mux2.6/src
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

@@ -18,7 +18,7 @@ COMMENT=	Terminal component for the GNOME 2 Desktop
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes

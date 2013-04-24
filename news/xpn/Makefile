@@ -27,7 +27,7 @@ FIND_DATA=	-type f -mindepth 2 -not -name "*~"
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} XPN=${XPN}
 
-USE_GETTEXT=	yes
+USES=		gettext
 
 XPN=	${PORTNAME}.py
 

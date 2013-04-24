@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	recode
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 USE_LDCONFIG=	yes

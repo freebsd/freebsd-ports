@@ -51,7 +51,7 @@ PLIST_SUB+=	RPMBUILD="@comment "
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls

@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
 		intlhack referencehack
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes

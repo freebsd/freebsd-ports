@@ -27,7 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		cd-discid:${PORTSDIR}/audio/cd-discid
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 INSTALLS_ICONS=	yes
 

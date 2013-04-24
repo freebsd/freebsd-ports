@@ -19,7 +19,7 @@ COMMENT=	A framework and a set of enhanced widgets based on PyGTK
 BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	libglade2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

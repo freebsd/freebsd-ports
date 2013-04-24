@@ -21,7 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-nls

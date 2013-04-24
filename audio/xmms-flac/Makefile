@@ -17,7 +17,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk12
 USE_ICONV=	yes
 USE_XORG=	x11 xau xdmcp xext xi

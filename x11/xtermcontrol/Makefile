@@ -16,7 +16,7 @@ COMMENT=	Tool for dynamic control of xterm properties
 
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

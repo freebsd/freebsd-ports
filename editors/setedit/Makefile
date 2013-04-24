@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--without-calendar
 .if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--no-intl
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_FILES=	share/locale/es/LC_MESSAGES/setedit.mo \
 		share/locale/de/LC_MESSAGES/setedit.mo
 .endif

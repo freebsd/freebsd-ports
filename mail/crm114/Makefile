@@ -24,7 +24,7 @@ LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
 CRM114RELEASENAME=BlameMichelson
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 
 MAKE_ARGS=	CC="${CC}" prefix="${PREFIX}" \

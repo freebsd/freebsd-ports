@@ -14,7 +14,7 @@ MAN1=		libpinyin.1 gen_binary_files.1 gen_unigram.1 \
 
 USE_BDB=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

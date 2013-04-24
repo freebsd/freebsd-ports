@@ -67,7 +67,7 @@ RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 .if ${PORT_OPTIONS:MNLS}
 USE_PHP+=	gettext
-USE_GETTEXT=	yes	# Pet portlint
+USES+=		gettext
 .endif
 
 .if ${PORT_OPTIONS:MUNZIP}

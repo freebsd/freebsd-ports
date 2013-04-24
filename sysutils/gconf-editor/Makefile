@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A gconf database editor for the GNOME 2 environment
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

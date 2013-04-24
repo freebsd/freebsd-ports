@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""

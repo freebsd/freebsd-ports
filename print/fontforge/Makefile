@@ -34,7 +34,7 @@ DISTFILES+=	${DOCFILES:C/$/:docs/}
 .endif
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	x11 xi ice xkbui
 USE_GMAKE=	yes
 USE_ICONV=	yes

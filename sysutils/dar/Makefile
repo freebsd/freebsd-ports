@@ -24,7 +24,7 @@ CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
 MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

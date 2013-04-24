@@ -17,7 +17,7 @@ PLIST=		${.CURDIR}/pkg-plist
 SLAVEPORT=	gtk2
 
 USE_GNOME=	gnomehack gtk30 desktopfileutils intlhack
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 EXTRA_CONF_ARGS=--disable-cli \

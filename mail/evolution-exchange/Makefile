@@ -23,7 +23,7 @@ RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 CONFLICTS=	evolution-exchange-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_BDB=	41

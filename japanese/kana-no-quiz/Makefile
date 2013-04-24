@@ -24,7 +24,7 @@ NO_BUILD=	yes
 RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 

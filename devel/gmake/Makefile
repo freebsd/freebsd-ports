@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""

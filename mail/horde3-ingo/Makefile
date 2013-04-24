@@ -28,7 +28,7 @@ RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
 
 USE_PHP=	imap
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

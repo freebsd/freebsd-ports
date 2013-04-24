@@ -42,7 +42,7 @@ CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 .if ${PORT_OPTIONS:MNLS}
 MANLANG=	"" de fr hu ja pl sv
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

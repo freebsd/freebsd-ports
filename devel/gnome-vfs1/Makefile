@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix glib12 libxml gtk12 orbit gconf \
 		gnomemimedata gnomelibs
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

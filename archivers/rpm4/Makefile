@@ -61,7 +61,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 .else

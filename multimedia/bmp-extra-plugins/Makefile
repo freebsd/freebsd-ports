@@ -19,7 +19,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		artsc.0:${PORTSDIR}/audio/arts
 
 USE_GNOME=	libglade2 esound
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

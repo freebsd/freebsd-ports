@@ -27,7 +27,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>

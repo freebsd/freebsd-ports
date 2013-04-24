@@ -28,7 +28,7 @@ PLIST_FILES=	bin/cflow
 
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 PLIST_FILES+= 	share/locale/da/LC_MESSAGES/cflow.mo \
 		share/locale/fi/LC_MESSAGES/cflow.mo \

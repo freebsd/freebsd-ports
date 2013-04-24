@@ -18,7 +18,7 @@ COMMENT=	A yet another little mind game
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

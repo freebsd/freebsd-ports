@@ -20,7 +20,7 @@ LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LUA=	5.1
 LUA_COMPS=	lua toluaxx
 USE_SDL=	image mixer sdl ttf
@@ -41,7 +41,7 @@ PORTDOCS=	*
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "

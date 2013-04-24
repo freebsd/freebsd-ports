@@ -14,7 +14,7 @@ COMMENT=	A graphical configurable talking cow
 OPTIONS_DEFINE=	DBUS
 
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

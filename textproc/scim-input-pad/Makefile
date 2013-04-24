@@ -33,7 +33,7 @@ DESKTOP_ENTRIES="SCIM Input Pad" \
 DOCS=		ChangeLog README
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GNOME=	intlhack
 PLIST_SUB+=	NLS=""
 .else

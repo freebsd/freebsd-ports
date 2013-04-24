@@ -21,7 +21,7 @@ SLAVE_PORT_MODULES=	REWRITE
 CONFLICTS=	cakephp-1.* cakephp-2.1.*
 
 NO_BUILD=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PHP=	ctype session
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5

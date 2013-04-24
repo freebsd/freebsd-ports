@@ -19,7 +19,7 @@ LIB_DEPENDS=	skk:${PORTSDIR}/japanese/libskk \
 		ibus-1.0:${PORTSDIR}/textproc/ibus
 
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 USE_GMAKE=	yes
 USE_GNOME=	intltool
@@ -40,7 +40,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

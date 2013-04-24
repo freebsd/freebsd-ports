@@ -15,7 +15,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt
 USE_GNOME=	pygnome2 gnomedesktop gnomehack
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

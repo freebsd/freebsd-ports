@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \

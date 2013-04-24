@@ -32,7 +32,7 @@ GIMP_DESC=	GIMP plugin support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
 PLIST_SUB+=	NLS=""
 .else

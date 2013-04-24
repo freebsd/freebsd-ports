@@ -22,7 +22,7 @@ USE_SDL=	sdl mixer ttf
 USE_LUA=	5.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*

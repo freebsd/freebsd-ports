@@ -35,7 +35,7 @@ ALL_TARGET=	all check
 USE_GNOME=	lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \

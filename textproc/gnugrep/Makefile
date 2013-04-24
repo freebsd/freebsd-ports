@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	PCRE
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=
 .else

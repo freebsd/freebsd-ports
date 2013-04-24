@@ -21,7 +21,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_XORG=	xtst
 USE_GMAKE=	yes

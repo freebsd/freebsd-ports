@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 USE_GL=		glut
 USE_PYTHON=	yes
 NO_BUILD=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFODIR=	lib/driconf
 

@@ -26,7 +26,7 @@ MAN1=		clawsker.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls

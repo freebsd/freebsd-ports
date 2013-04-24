@@ -14,7 +14,7 @@ LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack

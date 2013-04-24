@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_XORG=	x11 ice sm xpm
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=sbcl

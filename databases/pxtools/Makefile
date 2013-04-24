@@ -13,7 +13,7 @@ COMMENT=	Collection of tools to work with Paradox databases
 
 LICENSE=	GPLv2
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

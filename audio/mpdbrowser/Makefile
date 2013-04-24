@@ -16,7 +16,7 @@ COMMENT=	GTK+ client for the Music Player Daemon (MPD)
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
 
 PYDISTUTILS_PKGNAME=	mpdBrowser
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

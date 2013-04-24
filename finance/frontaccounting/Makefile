@@ -13,7 +13,7 @@ COMMENT=	Simple, powerful system for the entire ERP chain
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_MYSQL=	yes
 USE_PHP+=	mysql mysqli openssl session
 

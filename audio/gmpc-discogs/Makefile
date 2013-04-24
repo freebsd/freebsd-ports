@@ -22,6 +22,6 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 intltool libxml2
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include <bsd.port.mk>

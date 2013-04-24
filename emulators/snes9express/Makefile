@@ -17,7 +17,7 @@ COMMENT=	GTK interface for snes9x
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

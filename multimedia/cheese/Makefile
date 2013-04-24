@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

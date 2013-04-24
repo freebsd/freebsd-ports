@@ -28,7 +28,7 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/wxGuitar
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

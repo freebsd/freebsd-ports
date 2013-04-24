@@ -23,7 +23,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath

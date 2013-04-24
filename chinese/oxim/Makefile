@@ -70,7 +70,7 @@ PLIST_SUB+=	UNICODE="@comment "
 
 # TODO WITHOUT_NLS knob
 #.if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LDFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 #.else

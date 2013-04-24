@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 CONFIGURE_ARGS+=--with-included-gettext
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

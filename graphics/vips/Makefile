@@ -27,7 +27,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 
 PYPRESENT!=	which python > /dev/null && echo on || echo off
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PERL5_BUILD=yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango libxml2
 USE_AUTOTOOLS=	libtool

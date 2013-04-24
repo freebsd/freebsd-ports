@@ -18,7 +18,7 @@ LIB_DEPENDS=		curl.6:${PORTSDIR}/ftp/curl	\
 
 USE_AUTOTOOLS=		libltdl libtool
 USE_KDELIBS_VER=	3
-USE_GETTEXT=		yes
+USES=		gettext
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\

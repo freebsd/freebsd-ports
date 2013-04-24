@@ -20,7 +20,7 @@ RUN_DEPENDS+=		gammu:${PORTSDIR}/comms/gammu
 
 LICENSE=		GPLv2
 
-USE_GETTEXT=		yes
+USES=		gettext
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_WX=			2.6+

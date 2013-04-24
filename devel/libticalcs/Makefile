@@ -20,7 +20,7 @@ LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \
 DEPRECATED=	Superseded by comms/libticalcs2
 EXPIRATION_DATE=2013-07-01
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

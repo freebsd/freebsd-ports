@@ -31,7 +31,7 @@ GKRELLM_CLIENT_DESC=	GKrellM Client
 CONFLICTS=	gkrellm-1.*
 USE_GNOME=	gtk20
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 MAKE_ENV+=	enable_nls=0
 .endif

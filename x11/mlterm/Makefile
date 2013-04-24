@@ -16,7 +16,7 @@ USE_GNOME=	gtk20 lthack vte
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
@@ -111,7 +111,7 @@ LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN1=	mlterm.1 mlclient.1
 

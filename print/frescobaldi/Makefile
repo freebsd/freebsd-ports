@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond \
 		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:${PORTSDIR}/graphics/py-poppler-qt4
 
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_KDE4=	kdeprefix kdelibs pykde4_build pykde4_run
 USE_PYTHON=	2.6+

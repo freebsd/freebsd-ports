@@ -33,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if ${PORT_OPTIONS:MGTK}
 PKGNAMESUFFIX=	-gtk2
 USE_GNOME+=	gtk20 libgnomeui
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=	NLS=""
 .else

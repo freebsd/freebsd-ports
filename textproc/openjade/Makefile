@@ -22,7 +22,7 @@ USE_GCC=	any
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}

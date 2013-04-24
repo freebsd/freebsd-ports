@@ -13,7 +13,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Internationalization library for Perl
 
 PERL_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN3=		Locale::Messages.3 \
 		Locale::Recode.3 \

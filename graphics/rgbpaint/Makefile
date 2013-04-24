@@ -14,7 +14,7 @@ MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes

@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes

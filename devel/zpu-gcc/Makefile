@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MANPREFIX=	${PREFIX}/zpu
 MAN1=		zpu-elf-cpp.1 zpu-elf-gcc.1 zpu-elf-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7

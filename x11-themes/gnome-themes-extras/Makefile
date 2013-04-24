@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2 \
 RUN_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui intlhack

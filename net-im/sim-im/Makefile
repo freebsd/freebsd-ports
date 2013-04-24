@@ -31,7 +31,7 @@ USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xext ice xscrnsaver
 

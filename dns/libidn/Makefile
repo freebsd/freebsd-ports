@@ -21,7 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 INFO=	libidn
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

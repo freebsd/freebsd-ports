@@ -17,7 +17,7 @@ COMMENT=	Education software to help people to study English
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20 esound
 USE_GMAKE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"

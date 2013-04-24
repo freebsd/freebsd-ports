@@ -26,7 +26,7 @@ PORTDOCS=	CHANGES COPYING README
 MAN6=		neverball.6 neverputt.6
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 MAKE_ENV+=	ENABLE_NLS=1
 LOCALE_DIRS=	ca de es fi fr lv nn
 PLIST_SUB+=	NLS=""

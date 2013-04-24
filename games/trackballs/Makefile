@@ -24,7 +24,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	desktopfileutils
@@ -44,7 +44,7 @@ OPTIONS_DEFAULT=	NLS MUSIC
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else

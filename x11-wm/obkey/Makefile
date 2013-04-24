@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	py2[67]-gtk>=2.14:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PORTDOCS=	NEWS

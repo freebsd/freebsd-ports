@@ -20,7 +20,7 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 
 USE_GNOME=	lthack gtk20
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/uim-tomoe-gtk \

@@ -18,7 +18,7 @@ USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \

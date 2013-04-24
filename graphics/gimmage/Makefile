@@ -17,7 +17,7 @@ COMMENT=	Simple image viewer
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		curl.6:${PORTSDIR}/ftp/curl
 
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

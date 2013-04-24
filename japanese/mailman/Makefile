@@ -27,7 +27,7 @@ CONFLICTS=	mailman-2.1.*
 PORTSCOUT=	limit:.*\.j\d+$$
 
 USE_AUTOTOOLS=	autoconf
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 USE_RC_SUBR=	mailman
 

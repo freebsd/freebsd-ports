@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wiki module for Horde
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO
 
 BUILD_DEPENDS+=	${PEARDIR}/Text/Wiki.php:${PORTSDIR}/www/pear-Text_Wiki

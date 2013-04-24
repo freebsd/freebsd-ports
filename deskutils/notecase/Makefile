@@ -19,7 +19,7 @@ LICENSE=	BSD
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

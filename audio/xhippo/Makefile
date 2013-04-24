@@ -15,7 +15,7 @@ LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
 MAKE_JOBS_SAFE=	yes

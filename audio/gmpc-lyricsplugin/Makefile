@@ -22,7 +22,7 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig intltool glib20 gtk20 libxml2
-USE_GETTEXT=	yes
+USES=		gettext
 
 PLIST_FILES=	lib/gmpc/plugins/lyricspluginplugin.la \
 		lib/gmpc/plugins/lyricspluginplugin.so

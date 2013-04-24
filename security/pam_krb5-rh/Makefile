@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=--disable-nls
 .else
 PLIST_SUB+=	NLS=""
 LDFLAGS+=	-lintl
-USE_GETTEXT=	yes
+USES+=		gettext
 .endif
 
 .include <bsd.port.pre.mk>

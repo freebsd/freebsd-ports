@@ -16,7 +16,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	autoconf libtool
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes

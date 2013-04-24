@@ -14,7 +14,7 @@ COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 OPTIONS_DEFINE=	FAM DOCS
 
 USE_GNOME=	gnomehack gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 

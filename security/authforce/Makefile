@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_FILES+=	share/locale/nl/LC_MESSAGES/authforce.mo
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
 .else

@@ -33,7 +33,7 @@ PORTDOCS=	*
 
 # Unconditially disable NLS for now: the game segfaults with 8bit locales
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

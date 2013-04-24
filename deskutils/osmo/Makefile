@@ -22,7 +22,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gtkhtml:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes

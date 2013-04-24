@@ -16,7 +16,7 @@ COMMENT=	Transaction-based software configuration management system
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_TK=		yes

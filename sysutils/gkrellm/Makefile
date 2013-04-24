@@ -22,7 +22,7 @@ NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_GNOME=	imlib
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h

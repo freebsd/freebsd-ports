@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils
 
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtk20
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nautilus-extension
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui \
 		desktopfileutils intlhack ltverhack
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

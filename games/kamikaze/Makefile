@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-server
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAN6=		kamikaze.6 kamikaze-editor.6
 

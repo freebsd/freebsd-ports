@@ -59,7 +59,7 @@ CACHEOWNER?=	bin
 
 USE_PERL5=	YES
 USE_BZIP2=	YES
-USE_GETTEXT=	YES
+USES=		gettext
 USE_GMAKE=	YES
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes

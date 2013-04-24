@@ -15,7 +15,7 @@ SOUND_DESC=	Sound support via pulseaudio/libsndfile
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 USE_AUTOTOOLS=	libtool
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--disable-sound \
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

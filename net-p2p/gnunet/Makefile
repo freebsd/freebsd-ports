@@ -92,7 +92,7 @@ PLIST_SUB+=		MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=		NLS=""
 .else

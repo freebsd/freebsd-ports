@@ -21,7 +21,7 @@ NO_BUILD=	yes
 USE_PYTHON=	2.5+
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
-USE_GETTEXT=	yes
+USES=		gettext
 
 LOCALES=	bg ca da de en_GB es fr it pl
 INSTDIR=	${PYTHON_SITELIBDIR}/${PORTNAME}

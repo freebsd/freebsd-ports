@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack

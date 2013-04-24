@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

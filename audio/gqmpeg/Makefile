@@ -26,7 +26,7 @@ RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
 USE_GNOME=	gdkpixbuf
-USE_GETTEXT=	yes
+USES=		gettext
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	autoconf213 libtool
 

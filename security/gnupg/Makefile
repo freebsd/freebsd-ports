@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=--enable-standard-socket
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	YES
+USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 .else

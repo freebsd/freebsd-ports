@@ -17,7 +17,7 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 ### We can not go WITHOUT_NLS. Internationalization is needed
 ### even to use English language.
 USE_GMAKE=	yes

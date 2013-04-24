@@ -28,7 +28,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	Scim-bridge agent (server)
 LIB_DEPENDS=	scim-1.0.10:${PORTSDIR}/textproc/scim
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 LICENSE=	GPLv2 LGPL21

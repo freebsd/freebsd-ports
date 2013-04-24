@@ -14,7 +14,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO lighttpd-whups.conf
 NO_BUILD=	yes
 

@@ -34,7 +34,7 @@ RESTRICTED_FILES=	\
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

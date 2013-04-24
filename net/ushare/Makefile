@@ -16,7 +16,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}

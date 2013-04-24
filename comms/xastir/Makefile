@@ -19,7 +19,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		xastir.1 \

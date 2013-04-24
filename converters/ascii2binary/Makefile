@@ -14,7 +14,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 LICENSE=	GPLv3
 

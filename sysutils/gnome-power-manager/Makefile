@@ -25,7 +25,7 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 CONFLICTS=	gnome-power-manager-3.[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes

@@ -18,7 +18,7 @@ COMMENT=	Calendar application
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 
 USE_HORDE=	base
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO UPGRADING
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	UNIX rewrite of a game originally based on "Drug Wars"
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

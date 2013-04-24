@@ -17,7 +17,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 USE_GNOME=	gtk20 gconf2 libxml2 intltool pkgconfig libglade2
 USE_SQLITE=	3

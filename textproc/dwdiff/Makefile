@@ -30,7 +30,7 @@ PORTDOCS=	COPYING Changelog README
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 MANLANG=	"" nl nl.UTF-8
 .else

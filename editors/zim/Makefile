@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	desktopfileutils gtk20 pygtk2 pygobject
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes

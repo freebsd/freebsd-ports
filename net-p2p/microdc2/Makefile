@@ -22,7 +22,7 @@ USE_ICONV=	yes
 USE_GNOME=	libxml2
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

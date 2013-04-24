@@ -16,7 +16,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_GNOME=	desktopfileutils intlhack gnomehier gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 MAKE_ENV=	DEFAULT_VIEWER="xdg-open" USE_SYSTEM_INIPARSER=1
 MAKE_JOBS_SAFE=	yes

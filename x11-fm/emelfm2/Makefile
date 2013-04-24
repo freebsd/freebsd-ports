@@ -58,7 +58,7 @@ PLIST_SUB+=	TRACKER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 INSTALL_TARGET+=install_i18n
 PLIST_SUB+=	NLS=""
 .else

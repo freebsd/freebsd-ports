@@ -20,7 +20,7 @@ LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	x11
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 desktopfileutils

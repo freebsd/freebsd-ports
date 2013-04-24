@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

@@ -15,7 +15,7 @@ MASTER_SITES=	SF/cannonsmash/CannonSmash/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D tabletennis game
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_GNOME=	gtk20

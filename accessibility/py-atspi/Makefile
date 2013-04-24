@@ -23,7 +23,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomehier intlhack gtk20 libxml2
 GNU_CONFIGURE=	yes

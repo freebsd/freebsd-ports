@@ -21,7 +21,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_ICONV=	yes
 PLIST_SUB=	NLS=""
 .endif

@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		GETTEXT="@comment "
 .else
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_SUB+=		GETTEXT=""
 .endif
 

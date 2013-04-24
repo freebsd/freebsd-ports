@@ -20,7 +20,7 @@ USE_BZIP2=		yes
 USE_GNOME=		pygtk2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-USE_GETTEXT=		yes
+USES=		gettext
 PYDISTUTILS_PKGNAME=	nicotine
 
 DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}

@@ -21,7 +21,7 @@ MAN6=		xbubble.6
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

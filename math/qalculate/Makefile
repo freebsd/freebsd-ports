@@ -20,7 +20,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
 USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnome
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

@@ -22,7 +22,7 @@ USE_GL=		gl
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt DATADIRNAME=share
 

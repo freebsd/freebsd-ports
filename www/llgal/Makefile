@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 
 MAN1=		llgal.1

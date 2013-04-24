@@ -65,7 +65,7 @@ LICENSE_FILE_SSMTPLIB=	${WRKSRC}/licenses/License-ssmtplib.txt
 LICENSE_PERMS_SSMTPLIB=	auto-accept
 
 USE_PYTHON=	2.5+
-USE_GETTEXT=	yes
+USES=		gettext
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}

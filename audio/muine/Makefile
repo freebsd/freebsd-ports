@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui gnomesharp20
 USE_GSTREAMER=	gconf
 USE_LDCONFIG=	yes

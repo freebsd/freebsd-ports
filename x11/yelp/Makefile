@@ -20,7 +20,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS=	yelp-3.[0-9]*
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 USE_XORG=	ice
 USE_GMAKE=	yes

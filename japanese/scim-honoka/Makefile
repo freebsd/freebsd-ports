@@ -19,7 +19,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	lthack gnomehack
 USE_ICONV=	yes
 USE_GMAKE=	yes

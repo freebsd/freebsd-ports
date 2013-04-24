@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm:${PORTSDIR}/archivers/rpm4 \
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 MAKE_ARGS=	MAKE=${GMAKE} PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc

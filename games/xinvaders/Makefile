@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	don't sell for profit
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	x11 xmu xaw xt
 USE_AUTOTOOLS=	automake14 autoconf213
 AUTOMAKE_ARGS=	--include-deps

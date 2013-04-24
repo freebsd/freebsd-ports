@@ -18,7 +18,7 @@ COMMENT=	Tegaki Online MOji-ninshiki Engine
 
 USE_GNOME=	lthack gnomehack
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RUBY=	yes

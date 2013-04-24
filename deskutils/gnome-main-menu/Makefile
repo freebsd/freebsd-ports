@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop \
 		libgnomeui
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`

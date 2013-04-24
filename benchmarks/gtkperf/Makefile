@@ -21,7 +21,7 @@ GNU_CONFIGURE=		yes
 USE_GNOME=		gtk20 gnomeprefix
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
+USES+=		gettext
 USE_ICONV=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -24,7 +24,7 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 USE_LDCONFIG=	yes

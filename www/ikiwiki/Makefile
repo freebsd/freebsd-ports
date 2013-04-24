@@ -38,7 +38,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 LICENSE=	GPLv2
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 OPTIONS=	PO4A "Install translated underlays" On \
 		SEARCH "Install search backend" On \

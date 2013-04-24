@@ -23,7 +23,7 @@ LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 BROKEN=		Does not build without gettext

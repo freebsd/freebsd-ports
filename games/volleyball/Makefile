@@ -20,7 +20,7 @@ COMMENT=	A game similar to GNU Arcade Volleyball
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
 MAKE_JOBS_SAFE=	yes

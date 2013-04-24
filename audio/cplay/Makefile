@@ -12,7 +12,7 @@ COMMENT=	Curses-based front-end for various audio players
 
 LICENSE=	GPLv2
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 

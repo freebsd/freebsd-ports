@@ -49,7 +49,7 @@ MASTER_DESC=	Build master server
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client

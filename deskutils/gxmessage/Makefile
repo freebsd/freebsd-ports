@@ -23,7 +23,7 @@ INSTALLS_ICONS=	yes
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else

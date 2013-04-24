@@ -16,7 +16,7 @@ COMMENT=	WMdock plugin for Xfce
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pkgconfig libwnck

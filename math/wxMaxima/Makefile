@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	desktopfileutils libxml2
 USE_WX=		2.8
 WX_COMPS=	wx

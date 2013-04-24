@@ -21,7 +21,7 @@ PREFIX=		${KDE_PREFIX}
 USE_GMAKE=	yes
 USE_SQLITE=	3
 USE_GNOME=	pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 USE_AUTOTOOLS=	libtool aclocal

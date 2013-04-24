@@ -24,7 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tv_check:${PORTSDIR}/textproc/p5-xmltv
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras pygtk2
 USE_GMAKE=	yes
 USE_PYTHON=	2.5-2.7

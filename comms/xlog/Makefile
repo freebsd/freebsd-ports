@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	xlog
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio logging application
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mime-update \

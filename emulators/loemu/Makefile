@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 
-USE_GETTEXT=		yes
+USES=		gettext
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=		yes

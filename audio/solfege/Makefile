@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
 USE_GNOME=	gnomehack pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""

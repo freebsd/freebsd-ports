@@ -30,7 +30,7 @@ NOMAN=		defined
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	GETTEXT=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

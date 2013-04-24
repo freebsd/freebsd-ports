@@ -20,7 +20,7 @@ PLIST_FILES=	lib/libtfmessbsp.so
 
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_ICONV=	yes
 # Maintainer note
 # Both the gui and the non-gui object are linked to libX11

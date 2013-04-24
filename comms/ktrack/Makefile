@@ -25,7 +25,7 @@ USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure

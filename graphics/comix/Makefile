@@ -18,7 +18,7 @@ NO_BUILD=	yes
 USE_GNOME=	desktopfileutils pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 
 DOCS=		COPYING ChangeLog README

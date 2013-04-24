@@ -18,7 +18,7 @@ COMMENT=	A Web based admin tool that manages network services
 #MAN5=		netustad.conf.5
 
 USE_RC_SUBR=	${PORTNAME}
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	SSL NLS

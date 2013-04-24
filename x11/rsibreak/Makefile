@@ -16,7 +16,7 @@ PORTSCOUT=	limit:^0\.8\.
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_ICONS=	yes
 USE_XORG=	xscrnsaver
 

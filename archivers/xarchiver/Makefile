@@ -25,7 +25,7 @@ INSTALLS_ICONS=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MNLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""

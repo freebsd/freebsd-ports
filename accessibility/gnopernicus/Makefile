@@ -19,7 +19,7 @@ COMMENT=	Collection of accessibility apps for GNOME 2
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

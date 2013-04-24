@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		gnomedocutils
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

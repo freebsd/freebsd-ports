@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet
 
-USE_GETTEXT=	yes
+USES=		gettext
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	pygtk2

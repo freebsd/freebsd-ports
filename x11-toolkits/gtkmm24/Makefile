@@ -28,7 +28,7 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

@@ -17,7 +17,7 @@ COMMENT=	Exif and Iptc metadata manipulation library and tools
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAN1=		exiv2.1

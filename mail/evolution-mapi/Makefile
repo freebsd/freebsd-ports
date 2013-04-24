@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PKGFILES}:${PORTSDIR}/mail/evolution
 PKGFILES=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	evolutiondataserver
 USE_LDCONFIG=	yes

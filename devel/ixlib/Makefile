@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small C++ tools library based on STL
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

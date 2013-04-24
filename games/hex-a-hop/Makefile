@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=yes
 LDFLAGS+=	-lintl
 .else

@@ -30,7 +30,7 @@ USE_GL=		gl
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

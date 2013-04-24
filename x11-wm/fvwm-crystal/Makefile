@@ -14,7 +14,7 @@ RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2 \
 		bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_PYTHON=	yes
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*

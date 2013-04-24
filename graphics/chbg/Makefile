@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

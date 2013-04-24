@@ -11,7 +11,7 @@ COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

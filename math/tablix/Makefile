@@ -23,7 +23,7 @@ PVM_ROOT=	${PREFIX}/lib/pvm
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 
 CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
 		PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib

@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.kybs.de/boris/sw/
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Packet filter and firewall log analyzer
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_BZIP2=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 INSTALL_TARGET=	install install-config install-i18n

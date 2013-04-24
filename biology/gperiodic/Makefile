@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
 
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
+USES=		gettext
 
 LANGS=		da fr gl it pl ru sv tr
 

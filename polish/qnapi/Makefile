@@ -22,7 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_QT4=	corelib gui network xml qmake_build moc_build uic_build rcc_build
 USE_KDE4=	kdehier

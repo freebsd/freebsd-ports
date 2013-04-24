@@ -11,6 +11,6 @@ COMMENT=	Localized messages for Remmina plugins
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-USE_GETTEXT=	yes
+USES=		gettext
 
 .include "${MASTERDIR}/Makefile"

@@ -15,7 +15,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Image gallery
 
 USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
+USES=		gettext
 PORTDOCS=	CHANGES CREDITS TODO README
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

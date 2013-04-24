@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 CONFLICTS=	dillo-[0-9].[0-9].[0-9]*
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB=	NLS=""
 CONFIGURE_ARGS+=	--enable-nls
 .else

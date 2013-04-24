@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

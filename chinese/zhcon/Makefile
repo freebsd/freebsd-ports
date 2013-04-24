@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 USE_ICONV=	yes
 # Don't bother to add ".if !defined(WITHOUT_NLS)", zhcon requires libintl
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

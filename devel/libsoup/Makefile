@@ -20,7 +20,7 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	gnomehier gnomehack glib20 libxml2 ltverhack referencehack \
 		intltool
 USE_LDCONFIG=	yes

@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/ ${PREFIX}/lib/kde3/
-USE_GETTEXT=	yes
+USES=		gettext
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

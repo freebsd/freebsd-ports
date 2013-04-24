@@ -94,7 +94,7 @@ PLIST_SUB+=		GTK2_PLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 .else

@@ -20,7 +20,7 @@ LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomepanel gnomeprefix libgnomeui librsvg2 
-USE_GETTEXT=	yes
+USES=		gettext
 INSTALLS_OMF=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

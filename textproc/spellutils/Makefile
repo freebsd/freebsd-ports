@@ -17,7 +17,7 @@ COMMENT=	Programs used to isolate some parts or texts before spell-checking
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 CONFIGURE_ENV=		LIBS='-L${LOCALBASE}/lib'
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lintl

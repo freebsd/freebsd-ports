@@ -19,7 +19,7 @@ COMMENT=	Displays various information about a WaveLAN device
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libutil libgui panel

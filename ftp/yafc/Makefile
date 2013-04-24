@@ -35,7 +35,7 @@ PLIST_FILES=	bin/yafc
 
 .if ${PORT_OPTIONS:MNLS}
 USE_GNOME+=	intltool
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/yafc.mo \
 		share/locale/sv/LC_MESSAGES/yafc.mo
 .else

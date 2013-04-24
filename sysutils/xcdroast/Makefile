@@ -21,7 +21,7 @@ OPTIONS=	GTK2	"Enable GTK2 support"		on  \
 		NONROOT	"Use xcdroast w/o being root"	off \
 		NLS	"Native language support"	on
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes

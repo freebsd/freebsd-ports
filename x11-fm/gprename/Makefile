@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/trunk
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 NO_BUILD=	yes
 
 MAN1=		gprename.1

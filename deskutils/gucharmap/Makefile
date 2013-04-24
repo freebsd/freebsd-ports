@@ -19,7 +19,7 @@ COMMENT=	A Unicode/ISO10646 character map and font viewer
 LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 gnomedocutils gconf2
 GNU_CONFIGURE=	yes

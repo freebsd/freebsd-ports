@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 
 USE_PYTHON=	yes
 USE_TWISTED=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 NO_BUILD=	yes
 
 OPTIONS=	PSYCO	"Use just-in-time Python compiler" off

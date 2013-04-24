@@ -18,7 +18,7 @@ MAINTAINER=	rodrigc@FreeBSD.org
 COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
+USES=		gettext
 USE_AUTOTOOLS=	autoconf libtool:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \

@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	_glib20 pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 

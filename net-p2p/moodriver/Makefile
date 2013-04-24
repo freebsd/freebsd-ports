@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GNOME=	glib20 pkgconfig
 USE_LDCONFIG=	yes
 

@@ -19,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=      knutclient-1.*
 USE_KDELIBS_VER=	3
-USE_GETTEXT=	yes
+USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool automake:env aclocal:env
 CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''

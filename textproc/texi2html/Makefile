@@ -38,7 +38,7 @@ INFO=		texi2html
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls --enable-translations
 PLIST_SUB+=	NLS=""
 .else
