@@ -1,0 +1,5 @@
+POE::Filter::DNS::TCP is a POE::Filter for parsing and generating DNS
+messages received from or transmitted (respectively) over TCP as per RFC
+1035.
+
+WWW: http://search.cpan.org/dist/POE-Filter-DNS-TCP/

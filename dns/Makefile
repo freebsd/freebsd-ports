@@ -115,6 +115,7 @@
     SUBDIR += p5-POE-Component-Client-DNSBL
     SUBDIR += p5-POE-Component-Resolver
     SUBDIR += p5-POE-Component-Server-DNS
+    SUBDIR += p5-POE-Filter-DNS-TCP
     SUBDIR += p5-Stanford-DNSserver
     SUBDIR += p5-Tie-DNS
     SUBDIR += p5-pgeodns
