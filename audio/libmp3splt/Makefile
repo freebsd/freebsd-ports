@@ -2,14 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.8.1a
+PORTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Library for splitting of various audio files
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
+USES=	pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 MAKE_JOBS_SAFE=	yes
@@ -25,9 +29,10 @@ OPTIONS_DEFAULT=	MAD VORBIS ID3 PCRE NLS
 PLUGIN_DIR=	libmp3splt0
 
 PLIST_DIRS=	include/libmp3splt lib/${PLUGIN_DIR}
-PLIST_FILES=	include/libmp3splt/mp3splt.h lib/libmp3splt.a \
+PLIST_DIRSTRY=	libdata/pkgconfig
+PLIST_FILES=	include/libmp3splt/mp3splt.h include/libmp3splt/version.h lib/libmp3splt.a \
 		lib/libmp3splt.la lib/libmp3splt.so lib/libmp3splt.so.0 \
-		share/aclocal/mp3splt.m4
+		libdata/pkgconfig/libmp3splt.pc
 
 .include <bsd.port.options.mk>
 
