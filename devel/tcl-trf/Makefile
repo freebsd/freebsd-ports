@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=tcltrf/tcltrf/${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/tcl${TCL_VER}/Memchan2.3/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan
+BUILD_DEPENDS=	${LOCALBASE}/lib/Memchan2.3/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan
 
 USE_BZIP2=	yes
 
