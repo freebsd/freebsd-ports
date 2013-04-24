@@ -51,6 +51,59 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c8fa44d-ad15-11e2-8cea-6805ca0b3d42">
+    <topic>phpMyAdmin -- Multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>3.5</ge><lt>3.5.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-2.php">
+	  <p>In some PHP versions, the preg_replace() function can be
+	  tricked into executing arbitrary PHP code on the
+	  server. This is done by passing a crafted argument as the
+	  regular expression, containing a null byte. phpMyAdmin does
+	  not correctly sanitize an argument passed to preg_replace()
+	  when using the "Replace table prefix" feature, opening the
+	  way to this vulnerability..</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users to access the required
+	  form.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-3.php">
+	  <p>phpMyAdmin can be configured to save an export file on
+	  the web server, via its SaveDir directive. With this in
+	  place, it's possible, either via a crafted filename template
+	  or a crafted table name, to save a double extension file
+	  like foobar.php.sql. In turn, an Apache webserver on which
+	  there is no definition for the MIME type "sql" (the default)
+	  will treat this saved file as a ".php" script, leading to
+	  remote code execution.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users to access the required
+	  form. Moreover, the SaveDir directive is empty by default,
+	  so a default configuration is not vulnerable. The
+	  $cfg['SaveDir'] directive must be configured, and the server
+	  must be running Apache with mod_mime to be exploitable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-3238</cvename>
+      <cvename>CVE-2013-3239</cvename>
+    </references>
+    <dates>
+      <discovery>2013-04-24</discovery>
+      <entry>2013-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aeb962f6-ab8d-11e2-b3f5-003067c2616f">
     <topic>tinc -- Buffer overflow</topic>
     <affects>
