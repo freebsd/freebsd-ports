@@ -11,8 +11,11 @@ PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=		SF/tilp/OldFiles
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TI calculator link cables library
+
+DEPRECATED=     Superseded by comms/libticables2
+EXPIRATION_DATE=2013-07-01
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

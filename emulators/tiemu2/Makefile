@@ -22,6 +22,9 @@ LIB_DEPENDS=	ticalcs.10:${PORTSDIR}/devel/libticalcs \
 		ticables.12:${PORTSDIR}/comms/libticables \
 		tifiles.6:${PORTSDIR}/devel/libtifiles
 
+DEPRECATED=	Superseded by emulators/tiemu3
+EXPIRATION_DATE=2013-07-01
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2

@@ -11,8 +11,11 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=		SF/tilp/OldFiles
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TI calculator file types library
+
+DEPRECATED=	Superseded by devel/libtifiles2
+EXPIRATION_DATE=2013-07-01
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
