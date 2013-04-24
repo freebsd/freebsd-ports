@@ -4,7 +4,7 @@ PORTNAME=	gitolite
 PORTVERSION=	3.5.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
+MASTER_SITES=	http://milki.github.io/${PORTNAME}/ \
 		LOCAL/tdb
 
 MAINTAINER=	milki@rescomp.berkeley.edu
