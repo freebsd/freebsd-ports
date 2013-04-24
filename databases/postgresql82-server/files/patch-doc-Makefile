@@ -1,0 +1,11 @@
+--- doc/Makefile~	2005-12-09 22:19:34.000000000 +0100
++++ doc/Makefile	2008-01-07 12:00:13.000000000 +0100
+@@ -27,7 +27,7 @@
+ 
+ ifneq ($(wildcard $(srcdir)/postgres.tar.gz),)
+ ifneq (,$(docdir))
+-found_html := yes
++#found_html := yes
+ endif
+ endif
+ 

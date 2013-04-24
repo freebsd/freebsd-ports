@@ -1,0 +1,4 @@
+%%DOCSDIR%%/README-plpython
+lib/postgresql/plpython.so
+@dirrmtry lib/postgresql
+@dirrmtry %%DOCSDIR%%
