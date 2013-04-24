@@ -13,7 +13,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -270,7 +270,7 @@ BUILD_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 .endif
 .ifdef(WITH_PDF)
-RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils-a4 \
+RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils \
 		gs:${PORTSDIR}/print/ghostview \
 		jade:${PORTSDIR}/textproc/jade \
 		jadetex:${PORTSDIR}/print/jadetex \

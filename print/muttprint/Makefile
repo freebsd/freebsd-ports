@@ -1,13 +1,9 @@
-# New ports collection makefile for:   muttprint
-# Date created:        11 november 2001
-# Whom:                Oliver Braun <obraun@informatik.unibw-muenchen.de>
-#
+# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
 # $FreeBSD$
-#
 
 PORTNAME?=	muttprint
 PORTVERSION=	0.72d
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -21,7 +17,7 @@ PAPERSIZE=	letter
 .endif
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
+		psnup:${PORTSDIR}/print/psutils \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \

@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
@@ -16,7 +16,7 @@ MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Software typesetting package
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript8 \
-		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils-letter
+		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv3

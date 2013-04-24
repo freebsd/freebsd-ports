@@ -1,13 +1,9 @@
-# New ports collection makefile for:	apsfilter
-# Date created: 	Tue Nov 14 18:29:48 MET 1995
-# Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -81,7 +77,7 @@ RUN_DEPENDS+=	zoo:${PORTSDIR}/archivers/zoo
 # all needed "xxx to ps" filter utilities
 RUN_DEPENDS+=	fitstopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils
 .if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
@@ -109,7 +105,7 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 #
 # most important "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils
 .endif
 
 # needed for aps2file

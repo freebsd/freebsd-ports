@@ -243,8 +243,7 @@
     SUBDIR += psdim
     SUBDIR += pslib
     SUBDIR += pstotext
-    SUBDIR += psutils-a4
-    SUBDIR += psutils-letter
+    SUBDIR += psutils
     SUBDIR += pup
     SUBDIR += py-cups
     SUBDIR += py-fonttools

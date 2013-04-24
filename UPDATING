@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130424:
+  AFFECTS: users of print/psutils-a4 or print/psutils-letter
+  AUTHOR: hrs@FreeBSD.org
+
+  print/psutils-a4 and print/psutils-letter have been merged into a single port
+  print/psutils.  The default paper size in psnup(1), psresize(1), and
+  pstops(1) is now selected via an environment variable and/or a configuration
+  file of libpaper(3).  For more detail, see papersize(5) and paperconfig(8)
+  manual page.    If you prefer A4 or letter size by default as the old
+  version did, please install print/papersize-default-a4 or
+  print/papersize-default-letter, which installs a papersize configuration
+  file without manual configuration.
+
 20130423:
   AFFECTS: users of mail/postfix
   AUTHOR: sahil@FreeBSD.org
