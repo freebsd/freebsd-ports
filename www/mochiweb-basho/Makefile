@@ -24,11 +24,9 @@ GH_PROJECT=	mochiweb
 GH_COMMIT=	b7c3f8f
 GH_TAGNAME=	${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -49,4 +47,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
