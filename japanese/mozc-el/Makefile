@@ -13,7 +13,8 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 BUILD_MOZC_LIST=mozc_el
 
-BROKEN=		fails to build
+USE_EMACS=	yes
+CATEGORIES=	editors elisp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
