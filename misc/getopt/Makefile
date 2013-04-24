@@ -9,8 +9,8 @@ MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Replacement for getopt(1) that supports GNU-style long options
 
-USE_GETTEXT=		yes
-USE_GMAKE=		yes
+USES=		gettext
+USE_GMAKE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
