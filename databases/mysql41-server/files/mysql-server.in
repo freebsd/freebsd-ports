@@ -33,7 +33,8 @@ load_rc_config $name
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"
-pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
+: ${hostname:=`/bin/hostname`}
+pidfile="${mysql_dbdir}/${hostname}.pid"
 command="%%PREFIX%%/bin/mysqld_safe"
 command_args="--defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args} > /dev/null 2>&1 &"
 procname="%%PREFIX%%/libexec/mysqld"
