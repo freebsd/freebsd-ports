@@ -39,6 +39,9 @@ lib/tcllib/blowfish/blowfish.tcl
 lib/tcllib/blowfish/pkgIndex.tcl
 lib/tcllib/cache/async.tcl
 lib/tcllib/cache/pkgIndex.tcl
+lib/tcllib/clock/iso8601.tcl
+lib/tcllib/clock/pkgIndex.tcl
+lib/tcllib/clock/rfc2822.tcl
 lib/tcllib/cmdline/cmdline.tcl
 lib/tcllib/cmdline/pkgIndex.tcl
 lib/tcllib/comm/comm.tcl
@@ -168,6 +171,7 @@ lib/tcllib/doctools2toc/msgcat_fr.tcl
 lib/tcllib/doctools2toc/parse.tcl
 lib/tcllib/doctools2toc/pkgIndex.tcl
 lib/tcllib/doctools2toc/structure.tcl
+lib/tcllib/fileutil/decode.tcl
 lib/tcllib/fileutil/fileutil.tcl
 lib/tcllib/fileutil/multi.tcl
 lib/tcllib/fileutil/multiop.tcl
@@ -184,6 +188,8 @@ lib/tcllib/fumagic/filetypes.tcl
 lib/tcllib/fumagic/mimetypes.tcl
 lib/tcllib/fumagic/pkgIndex.tcl
 lib/tcllib/fumagic/rtcore.tcl
+lib/tcllib/generator/generator.tcl
+lib/tcllib/generator/pkgIndex.tcl
 lib/tcllib/gpx/gpx.tcl
 lib/tcllib/gpx/pkgIndex.tcl
 lib/tcllib/grammar_aycock/aycock-build.tcl
@@ -243,6 +249,7 @@ lib/tcllib/log/loggerAppender.tcl
 lib/tcllib/log/loggerUtils.tcl
 lib/tcllib/log/msgs/en.msg
 lib/tcllib/log/pkgIndex.tcl
+lib/tcllib/map/map_geocode_nominatim.tcl
 lib/tcllib/map/map_slippy.tcl
 lib/tcllib/map/map_slippy_cache.tcl
 lib/tcllib/map/map_slippy_fetcher.tcl
@@ -284,6 +291,7 @@ lib/tcllib/math/special.tcl
 lib/tcllib/math/statistics.tcl
 lib/tcllib/math/symdiff.tcl
 lib/tcllib/math/tclIndex
+lib/tcllib/math/wilcoxon.tcl
 lib/tcllib/md4/md4.tcl
 lib/tcllib/md4/md4c.tcl
 lib/tcllib/md4/pkgIndex.tcl
@@ -612,6 +620,9 @@ lib/tcllib/wip/wip2.tcl
 lib/tcllib/yaml/huddle.tcl
 lib/tcllib/yaml/pkgIndex.tcl
 lib/tcllib/yaml/yaml.tcl
+lib/tcllib/zip/decode.tcl
+lib/tcllib/zip/encode.tcl
+lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/yaml
 @dirrm lib/tcllib/wip
 @dirrm lib/tcllib/virtchannel_transform
