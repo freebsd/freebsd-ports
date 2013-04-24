@@ -201,6 +201,7 @@ share/aclocal/yaz.m4
 %%PORTDOCS%%%%DOCSDIR%%/zoom.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.options.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.query.html
+%%PORTDOCS%%%%DOCSDIR%%/zoom.queryconversions.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.records.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.resultsets.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.scan.html
