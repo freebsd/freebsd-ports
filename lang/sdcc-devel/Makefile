@@ -7,7 +7,7 @@ MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
 DISTNAME=	${PORTNAME}-src-20130322-8457
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3

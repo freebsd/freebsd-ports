@@ -5,7 +5,7 @@ PORTVERSION=	1.17
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/${DISTNAME}
 
-MAINTAINER=	tijl@coosemans.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	TI Linking Program
 
 LICENSE=	GPLv2
