@@ -11,4 +11,4 @@ databases from unsupported platforms, migrating between databases,
 distributing access to replicated databases and throttling database
 access.
 
-WWW:	http://sqlrelay.sourceforge.net/
+WWW: http://sqlrelay.sourceforge.net/

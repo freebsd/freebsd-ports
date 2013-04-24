@@ -18,12 +18,13 @@ MAN8=		ipacctd.8
 MANLANG=	"" ru.KOI8-R
 MANCOMPRESSED=	yes
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/ru
 	@${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${DOCSDIR}/ru
 .endif
