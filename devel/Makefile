@@ -264,6 +264,7 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
+    SUBDIR += creduce
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb
