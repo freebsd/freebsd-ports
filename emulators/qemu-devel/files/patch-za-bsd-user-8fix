@@ -1,28 +1,12 @@
 --- a/bsd-user/syscall.c
 +++ b/bsd-user/syscall.c
-@@ -123,6 +123,7 @@ get_filename_from_fd(pid_t pid, int fd, 
- 	struct filestat *fst;
- 	char *ret = NULL;
- 
+@@ -106,7 +106,9 @@ static char *get_filename_from_fd(pid_t 
+ #ifdef __FreeBSD__
+ #include <sys/queue.h>
+ #include <sys/user.h>
 +#if defined(__FreeBSD_version) && __FreeBSD_version > 900000
- 	procstat = procstat_open_sysctl();
- 	if (NULL == procstat)
- 		goto out;
-@@ -152,6 +153,7 @@ out:
- 		procstat_freeprocs(procstat, kipp);
- 	if (procstat != NULL)
- 		procstat_close(procstat);
+ #include <libprocstat.h>
 +#endif
- 	return (ret);
- }
  
-@@ -1739,7 +1741,9 @@ int_case:
- 		case IP_RECVDSTADDR:
  
- 		case IP_RETOPTS:
-+#if defined(__FreeBSD_version) && __FreeBSD_version > 900000
- 		case IP_RECVTOS:
-+#endif
- 		case IP_MULTICAST_TTL:
- 		case IP_MULTICAST_LOOP:
- 		case IP_PORTRANGE:
+ /*

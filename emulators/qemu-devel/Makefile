@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -31,7 +32,7 @@ CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
-		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER \
+		USBREDIR GNS3 ADD_AUDIO X86_TARGETS BSD_USER \
 		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
@@ -44,7 +45,6 @@ SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
 ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
-CLANG_HACK_DESC=		clang workaround (result slow and less stable!)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
@@ -54,16 +54,6 @@ OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
-
-# XXX this fixes build with clang but --enable-tcg-interpreter that's
-# needed to avoid global register usage that clang doesn't support
-# causes the result to be slow and less stable.
-.if ${PORT_OPTIONS:MCLANG_HACK}
-CONFIGURE_ARGS+=	--enable-tcg-interpreter
-CLANG_CFLAGS_AS+=	-no-integrated-as
-.else
-USE_GCC=	any
-.endif
 
 .if ${PORT_OPTIONS:MX86_TARGETS}
 .if ${PORT_OPTIONS:MBSD_USER}
@@ -229,9 +219,6 @@ post-patch:
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
 		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E \
-		-e "s|^(CFLAGS[ 	]*:=.*)|\1 ${CLANG_CFLAGS_AS}|" \
-		${WRKSRC}/pc-bios/optionrom/Makefile
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/scripts/texi2pod.pl
