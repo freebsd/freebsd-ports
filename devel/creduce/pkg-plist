@@ -1,0 +1,4 @@
+bin/creduce
+libexec/clang_delta
+@dirrm %%DATADIR%%/perl
+@dirrm %%DATADIR%%
