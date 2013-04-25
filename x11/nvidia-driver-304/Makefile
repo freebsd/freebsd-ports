@@ -3,7 +3,7 @@
 
 DISTVERSION=	304.88
 # Explicitly set PORTREVISION as it can be overridden by the master port
-PORTREVISION=	0
+PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 NO_LATEST_LINK=	yes
