@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	minetest:${PORTSDIR}/games/minetest
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	celeron55
+GH_ACCOUNT=	minetest
 GH_TAGNAME=	0.4.4
 GH_COMMIT=	3928ecc
 
