@@ -18,9 +18,8 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 USE_BDB=	yes
 USE_BZIP2=	yes
 
-CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
