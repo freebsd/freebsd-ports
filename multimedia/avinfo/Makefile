@@ -25,6 +25,8 @@ MAN1=		avinfo.1
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/ d; /^CFLAGS=/ d; /^PREFIX=/ d' \
 		${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e '/BISON.*-d/ s|$$| \&\& ${REINPLACE_CMD} -e "/int yyparse (void)/ d" ass.tab.h|' \
+		${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/avinfo ${PREFIX}/bin/
