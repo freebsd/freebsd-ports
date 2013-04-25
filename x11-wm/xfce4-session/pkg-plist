@@ -144,5 +144,3 @@ share/themes/Default/balou/themerc
 @dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
