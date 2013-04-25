@@ -23,10 +23,8 @@ CLANG_DESC=	Clang code-completion
 USE_WX=		2.9
 WX_UNICODE=	yes
 USE_DOS2UNIX=	*.cpp
-USES=		gettext
+USES=		gettext cmake:outsource
 USE_LDCONFIG=	lib/codelite
-USE_CMAKE=	yes
-CMAKE_OUTSOURCE=yes
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
 		-DPREFIX=${PREFIX}
 
