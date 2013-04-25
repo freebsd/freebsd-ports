@@ -1298,6 +1298,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/version.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/version.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/version.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/warn.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/warn.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/warn.pyo
@@ -1413,6 +1416,7 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/cython_extension.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/display_protocol.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/formatting.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/logo/logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/octavemagic_extension.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/python-logo.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/rmagic_extension.ipynb
@@ -1584,6 +1588,7 @@ bin/pycolor
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/demo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/davinci
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/logo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/core
