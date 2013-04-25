@@ -5,9 +5,11 @@ bin/puppet
 %%RUBY_SITELIBDIR%%/hiera_puppet.rb
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
+@dirrmtry etc/puppet/modules
 @dirrmtry etc/puppet
 @unexec rmdir /var/puppet 2>/dev/null || true
 @exec /bin/mkdir -p /var/puppet
+@exec /bin/mkdir -p etc/puppet/modules
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
