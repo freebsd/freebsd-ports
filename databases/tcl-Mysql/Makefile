@@ -16,8 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client
-
+USE_MYSQL=	41+
 USE_TCL=	84+
 TCL_NODOT=	tcl${TCL_VER:S/.//}
 WRKSRC=		${WRKDIR}/tcl-sql/
