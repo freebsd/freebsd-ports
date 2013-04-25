@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
-PORTVERSION=	1.7.7
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
@@ -14,13 +13,22 @@ COMMENT=	Fork of the Python Imaging Library (PIL)
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 
-CONFLICTS_INSTALL=	py*-imaging-*
-
-USE_ZIP=	yes
-USE_PYTHON=	yes
+USE_GITHUB=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+
+GH_ACCOUNT=	python-imaging
+GH_PROJECT=	${PYDISTUTILS_PKGNAME}
+GH_COMMIT=	baea361
+
+CONFLICTS_INSTALL=	py*-imaging-*
 
 PYDISTUTILS_PKGNAME=	Pillow
 PYEASYINSTALL_ARCHDEP=	yes
+
+regression-test: extract
+	@cd ${WRKSRC} && \
+	${PYTHON_CMD} ${PYSETUP} build_ext -i && \
+	${PYTHON_CMD} selftest.py
 
 .include <bsd.port.mk>
