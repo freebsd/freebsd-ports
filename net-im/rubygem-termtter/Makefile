@@ -9,9 +9,6 @@ MASTER_SITES=	RG
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Terminal based Twitter client
 
-DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
-
 RUN_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
 		rubygem-termcolor>=1.0.0:${PORTSDIR}/textproc/rubygem-termcolor \
 		rubygem-rubytter>=1.4.0:${PORTSDIR}/net/rubygem-rubytter \
@@ -24,8 +21,4 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/termtter
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not work with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
