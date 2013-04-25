@@ -141,11 +141,13 @@ CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif
 
-.if ${PORT_OPTIONS:MXPM} || exists(${LOCALBASE}/lib/libXpm.so)
+.if ${PORT_OPTIONS:MXPM}
+CONFIGURE_ARGS+=	--with-x
 USE_XORG+=		xaw xpm xmu xt sm ice xext x11 xau xdmcp xp
 MAN1+=			dotty.1 lefty.1 lneato.1
 PLIST_SUB+=		WITH_XPM=""
 .else
+CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		WITH_XPM="@comment "
 .endif
 
