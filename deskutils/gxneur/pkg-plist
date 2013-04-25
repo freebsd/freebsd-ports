@@ -48,8 +48,6 @@ share/applications/gxneur.desktop
 %%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
