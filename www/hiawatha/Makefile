@@ -1,6 +1,5 @@
 # Created by: Hugo Leisink
 # $FreeBSD$
-#
 
 PORTNAME=	hiawatha
 PORTVERSION=	9.1
@@ -21,7 +20,7 @@ MAN1=		cgi-wrapper.1 hiawatha.1 ssi-cgi.1 wigwam.1
 
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	hiawatha
 WANT_GNOME=	yes
