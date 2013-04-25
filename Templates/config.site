@@ -161,7 +161,8 @@ ac_cv_func_vfork=${ac_cv_func_vfork=yes}
 ac_cv_func_gethostname=${ac_cv_func_gethostname=yes}
 ac_cv_func_gethostbyname=${ac_cv_func_gethostbyname=yes}
 ac_cv_func_waitpid=${ac_cv_func_waitpid=yes}
-ac_cv_func_waitid=${ac_cv_func_waitid=yes}
+# Has appearred in FreeBSD 10
+#ac_cv_func_waitid=${ac_cv_func_waitid=yes}
 ac_cv_func_vasprintf=${ac_cv_func_vasprintf=yes}
 ac_cv_func_unsetenv=${ac_cv_func_unsetenv=yes}
 ac_cv_func_strtol=${ac_cv_func_strtol=yes}
