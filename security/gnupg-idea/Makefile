@@ -2,7 +2,7 @@
 
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
@@ -20,26 +20,26 @@ COMMENT=	IDEA extension module for gnupg (and RSA for demonstration)
 RUN_DEPENDS=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
 
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
-RESTRICTED=	IDEA is Patented in the USA and many European countries
 
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-shared -fPIC -DIS_MODULE
 CFLAGS+=	-Wall -Wcast-align -Wshadow -Wstrict-prototypes
 PLIST=		${WRKDIR}/.PLIST.more
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	IDEA
+OPTIONS_DEFINE=	IDEA
+OPTIONS_DEFAULT=IDEA
+IDEA_DESC=	IDEA encyrption
 
-.if defined(MAKE_IDEA) && !defined(WITHOUT_IDEA)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIDEA}
 CONTRIB=	idea rsa
 DISTFILES=	idea.c.gz:idea rsa.c
 EXTRACT_ONLY=	idea.c.gz
 .else
 CONTRIB=	rsa
 DISTFILES=	rsa.c
-
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must set variable MAKE_IDEA to YES, only rsa is build now.
 .endif
 
 pre-extract:
@@ -69,4 +69,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/lib/gnupg/${i}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
