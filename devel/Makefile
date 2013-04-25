@@ -2739,6 +2739,7 @@
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Exception-LessClever
     SUBDIR += p5-Test-Expect
+    SUBDIR += p5-Test-FailWarnings
     SUBDIR += p5-Test-Fatal
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
