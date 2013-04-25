@@ -7,6 +7,7 @@
 
 PORTNAME=	buildbot-slave
 PORTVERSION=	0.8.6p1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,6 +18,12 @@ PROJECTHOST=	buildbot
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	runner
+USE_RC_SUBR=	buildbot_slave
+
+BB_USER?=	www
+
+SUB_LIST=	BB_USER=${BB_USER} \
+		PYTHON_CMD=${PYTHON_CMD}
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \

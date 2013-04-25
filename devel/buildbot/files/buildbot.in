@@ -1,0 +1,45 @@
+#!/bin/sh
+
+#
+# PROVIDE: buildbot
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable buildbot:
+#
+#  buildbot_enable="YES"
+#  # optional
+#  buildbot_config="%%PREFIX%%/buildbot/config/master"
+#
+# This scripts takes one of the following commands:
+#
+#   start stop restart status
+#
+
+command=%%PREFIX%%/bin/buildbot
+command_interpreter=%%PYTHON_CMD%%
+
+. /etc/rc.subr
+
+load_rc_config buildbot
+
+# set defaults
+buildbot_enable=${buildbot_enable:-"NO"}
+buildbot_user=${buildbot_user:-"%%BB_USER%%"}
+eval buildbot_config=${buildbot_config:-"~${buildbot_user}/buildbot/config/master"}
+
+name=buildbot
+rcvar=`set_rcvar`
+
+extra_commands="reload"
+
+start_cmd="buildbot_command start"
+stop_cmd="buildbot_command stop"
+restart_cmd="buildbot_command restart"
+
+buildbot_command()
+{
+    su -l ${buildbot_user} -c "exec ${command} ${rc_arg} ${buildbot_config}"
+}
+    
+run_rc_command "$1"

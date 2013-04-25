@@ -1,0 +1,43 @@
+#!/bin/sh
+
+#
+# PROVIDE: buildbot_slave
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable buildbot-slave:
+#
+#  buildbot_slave_enable="YES"
+#  # optional
+#  buildbot_slave_config="%%PREFIX%%/buildbot/config/slave"
+#
+# This scripts takes one of the following commands:
+#
+#   start stop restart status
+#
+
+command=%%PREFIX%%/bin/buildslave
+command_interpreter=%%PYTHON_CMD%%
+
+. /etc/rc.subr
+
+load_rc_config buildbot_slave
+
+# set defaults
+buildbot_slave_enable=${buildbot_slave_enable:-"NO"}
+buildbot_slave_user=${buildbot_slave_user:-"%%BB_USER%%"}
+eval buildbot_slave_config=${buildbot_slave_config:-"~${buildbot_slave_user}/buildbot/config/slave"}
+
+name=buildbot_slave
+rcvar=`set_rcvar`
+
+start_cmd="buildbot_slave_command start"
+stop_cmd="buildbot_slave_command stop"
+restart_cmd="buildbot_slave_command restart"
+
+buildbot_slave_command()
+{
+    su -l ${buildbot_slave_user} -c "exec ${command} ${rc_arg} ${buildbot_slave_config}"
+}
+    
+run_rc_command "$1"
