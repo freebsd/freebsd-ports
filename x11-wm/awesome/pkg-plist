@@ -12,7 +12,6 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/completion.lua
 %%DATADIR%%/lib/awful/dbus.lua
 %%DATADIR%%/lib/awful/ewmh.lua
-%%DATADIR%%/lib/awful/icccm.lua
 %%DATADIR%%/lib/awful/init.lua
 %%DATADIR%%/lib/awful/key.lua
 %%DATADIR%%/lib/awful/keygrabber.lua
