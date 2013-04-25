@@ -1,9 +1,5 @@
-# New ports collection makefile for:	d-feet
-# Date created:		2010-09-11
-# Whom:			Thinker K.F. Li <thinker@eeebox.branda.to>
-#
+# Created by: Thinker K.F. Li <thinker@eeebox.branda.to>
 # $FreeBSD$
-#
 
 PORTNAME=	d-feet
 PORTVERSION=	0.1.12
@@ -27,10 +23,8 @@ RUN_DEPENDS=	\
 	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
 	${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus
 
-USE_GTK=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
