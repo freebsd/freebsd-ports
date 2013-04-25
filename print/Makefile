@@ -72,6 +72,7 @@
     SUBDIR += foomatic-db-engine
     SUBDIR += foomatic-db-hpijs
     SUBDIR += foomatic-filters
+    SUBDIR += foxitreader
     SUBDIR += fpdf
     SUBDIR += freetype
     SUBDIR += freetype-tools
