@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b27
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -39,7 +39,9 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 OPENJDK_BUILDDATE=	26_oct_2012
 
-EXTRA_PATCHES=	${FILESDIR}/icedtea/security/20120830/7182135-impossible_to_use_some_editors_directly.patch \
+EXTRA_PATCHES=	${FILESDIR}/icedtea/jaxp.patch \
+		${FILESDIR}/icedtea/jaxws.patch \
+		${FILESDIR}/icedtea/security/20120830/7182135-impossible_to_use_some_editors_directly.patch \
 		${FILESDIR}/icedtea/security/20130201/7201068.patch \
 		${FILESDIR}/icedtea/security/20130201/6563318.patch \
 		${FILESDIR}/icedtea/security/20130201/6664509.patch \
@@ -68,12 +70,52 @@ EXTRA_PATCHES=	${FILESDIR}/icedtea/security/20120830/7182135-impossible_to_use_s
 		${FILESDIR}/icedtea/security/20130201/8001307.patch \
 		${FILESDIR}/icedtea/security/20130201/8001972.patch \
 		${FILESDIR}/icedtea/security/20130201/8002325.patch \
-		${FILESDIR}/icedtea/security/20130201/8001235.patch \
 		${FILESDIR}/icedtea/security/20130219/8006446.patch \
 		${FILESDIR}/icedtea/security/20130219/8006777.patch \
 		${FILESDIR}/icedtea/security/20130219/8007688.patch \
 		${FILESDIR}/icedtea/security/20130304/8007014.patch \
-		${FILESDIR}/icedtea/security/20130304/8007675.patch
+		${FILESDIR}/icedtea/security/20130304/8007675.patch \
+		${FILESDIR}/icedtea/openjdk/7036559-concurrenthashmap_improvements.patch \
+		${FILESDIR}/icedtea/security/20130416/8009063.patch \
+		${FILESDIR}/icedtea/openjdk/8004302-soap_test_failure.patch \
+		${FILESDIR}/icedtea/security/20130416/6657673.patch \
+		${FILESDIR}/icedtea/security/20130416/6657673-fixup.patch \
+		${FILESDIR}/icedtea/openjdk/7133220-factory_finder_parser_transform_useBSClassLoader.patch \
+		${FILESDIR}/icedtea/security/20130416/6657673-factory_finder.patch \
+		${FILESDIR}/icedtea/openjdk/6669869-queries_per_appcontext.patch \
+		${FILESDIR}/icedtea/openjdk/5102804-memory_leak.patch \
+		${FILESDIR}/icedtea/openjdk/6963811-deadlock_fix.patch \
+		${FILESDIR}/icedtea/openjdk/7064279-resource_release.patch \
+		${FILESDIR}/icedtea/openjdk/7064279-fixup.patch \
+		${FILESDIR}/icedtea/security/20130416/7200507.patch \
+		${FILESDIR}/icedtea/security/20130416/8000724.patch \
+		${FILESDIR}/icedtea/security/20130416/8004986.patch \
+		${FILESDIR}/icedtea/openjdk/6501644-icu_sync.patch \
+		${FILESDIR}/icedtea/openjdk/6886358-layout_update.patch \
+		${FILESDIR}/icedtea/security/20130416/8001031.patch \
+		${FILESDIR}/icedtea/openjdk/7017324-kerning_crash.patch \
+		${FILESDIR}/icedtea/security/20130416/8001040.patch \
+		${FILESDIR}/icedtea/security/20130416/8001322.patch \
+		${FILESDIR}/icedtea/security/20130416/8001329.patch \
+		${FILESDIR}/icedtea/security/20130416/8003335.patch \
+		${FILESDIR}/icedtea/security/20130416/8003445.patch \
+		${FILESDIR}/icedtea/security/20130416/8003543.patch \
+		${FILESDIR}/icedtea/security/20130416/8004261.patch \
+		${FILESDIR}/icedtea/security/20130416/8004336.patch \
+		${FILESDIR}/icedtea/security/20130416/8005432.patch \
+		${FILESDIR}/icedtea/security/20130416/8005943.patch \
+		${FILESDIR}/icedtea/security/20130416/8006309.patch \
+		${FILESDIR}/icedtea/security/20130416/8006435.patch \
+		${FILESDIR}/icedtea/security/20130416/8006790.patch \
+		${FILESDIR}/icedtea/security/20130416/8006795.patch \
+		${FILESDIR}/icedtea/security/20130416/8007406.patch \
+		${FILESDIR}/icedtea/security/20130416/8007617.patch \
+		${FILESDIR}/icedtea/security/20130416/8007667.patch \
+		${FILESDIR}/icedtea/security/20130416/8007918.patch \
+		${FILESDIR}/icedtea/security/20130416/8009305.patch \
+		${FILESDIR}/icedtea/security/20130416/8009699.patch \
+		${FILESDIR}/icedtea/security/20130416/8009814.patch \
+		${FILESDIR}/icedtea/security/20130416/8009857.patch
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -98,7 +140,7 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	x11 xext xi xt xtst
 
-JAXP_BUILD=	144_04
+JAXP_BUILD=	144_05
 JAXPFILE=	jaxp${JAXP_BUILD}.zip
 JAXWS_BUILD=	2_1_6-2011_06_13
 JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
@@ -148,6 +190,7 @@ BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 .endif
 
+FETCH_ARGS=	-Fpr
 MAKE_ENV=	LANG=C LC_ALL=C OS= \
 		ALT_JDK_IMPORT_PATH=${BOOTSTRAPJDKDIR} \
 		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
@@ -198,7 +241,7 @@ MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 .endif
 
 .if ${PORT_OPTIONS:MICEDTEA}
-EXTRA_PATCHES+=	${FILESDIR}/icedtea/7032388-work_without_cmov_instruction.patch \
+EXTRA_PATCHES+=	${FILESDIR}/icedtea/openjdk/7032388-work_without_cmov_instruction.patch \
 		${FILESDIR}/icedtea/applet_hole.patch \
 		${FILESDIR}/icedtea/jpegclasses.patch
 .endif
