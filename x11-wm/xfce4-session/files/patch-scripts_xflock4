@@ -1,5 +1,5 @@
---- scripts/xflock4.orig	2012-04-28 22:43:27.000000000 +0200
-+++ scripts/xflock4	2012-05-16 22:18:05.000000000 +0200
+--- scripts/xflock4.orig	2012-04-28 20:43:27.000000000 +0000
++++ scripts/xflock4	2013-04-24 19:55:56.000000000 +0000
 @@ -21,7 +21,7 @@
  #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  #
@@ -9,3 +9,11 @@
  export PATH
  
  # Lock by xscreensaver or gnome-screensaver, if a respective daemon is running
+@@ -41,6 +41,7 @@
+     if command -v -- $1 >/dev/null 2>&1; then
+         $lock_cmd >/dev/null 2>&1 &
+ 	# turn off display backlight:
++	sleep 1
+ 	xset dpms force off
+         exit
+     fi
