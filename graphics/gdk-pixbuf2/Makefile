@@ -11,13 +11,12 @@ PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A graphic library for GTK+
+COMMENT=	Graphic library for GTK+
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 LATEST_LINK=	gdk-pixbuf2
 USE_XZ=		yes
-USES=		gettext
 USE_GMAKE=	yes
 USE_XORG=	xt xi x11
 USE_AUTOTOOLS=	libtool
@@ -30,8 +29,8 @@ CONFIGURE_ARGS=	--enable-introspection=yes --with-x11
 
 MAN1=		gdk-pixbuf-csource.1 gdk-pixbuf-query-loaders.1
 
-OPTIONS_DEFINE=	JASPER JPEG PNG TIFF NLS
-OPTIONS_DEFAULT=JASPER JPEG PNG TIFF NLS
+OPTIONS_DEFINE=	JASPER JPEG PNG TIFF
+OPTIONS_DEFAULT=JASPER JPEG PNG TIFF
 
 .include <bsd.port.options.mk>
 
