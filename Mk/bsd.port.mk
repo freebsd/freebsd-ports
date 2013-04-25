@@ -1504,14 +1504,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
-.if defined(USE_CMAKE)
-. if defined(CMAKE_OUTSOURCE)
-USES+=	cmake:outsource
-. else
-USES+=	cmake
-. endif
-.endif
-
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
