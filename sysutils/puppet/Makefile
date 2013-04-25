@@ -95,6 +95,7 @@ post-install:
 		--vardir=/var/lib/puppet \
 		--logdir=/var/log/puppet \
 		> ${ETCDIR}/puppet.conf-dist
+	${MKDIR} -p ${ETCDIR}/modules
 	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${ECHO} ${RUBY_SITELIBDIR}/semver.rb | \
