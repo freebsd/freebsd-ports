@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gxneur
-# Date created:				07 December 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gxneur
 PORTVERSION=	0.15.0
@@ -21,15 +17,16 @@ MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	desktopfileutils gconf2 gtk20 libglade2
+USES=		desktop-file-utils
+USE_GNOME=	gconf2 gtk20 libglade2
 INSTALLS_ICONS=	yes
 
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -40,7 +37,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/all_modifiers/d' ${WRKSRC}/src/misc.c
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
-post-install:
-	@-update-desktop-database
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
