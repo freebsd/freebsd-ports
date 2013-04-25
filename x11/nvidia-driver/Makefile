@@ -13,7 +13,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	310.44
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR it set later because it depends on NVVERSION
@@ -144,6 +144,11 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
+# Fix stack buffer overflow in nvidia_sysctl_bus_type()
+	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
+		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
+		/return SYSCTL_OUT\(req, bus_type/d' \
+			${WRKSRC}/src/nvidia_sysctl.c
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
@@ -200,6 +205,7 @@ pre-su-install:
 	@cd ${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
 
 post-install: .SILENT
+	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh ${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
 	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
@@ -223,11 +229,7 @@ post-install: .SILENT
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .endif
 .if ${NVVERSION} >= 1952200
-. if ${OSVERSION} > 800090
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
-. else	# when sed(1) does not support "addr1,+N" ranges, use line numbers
-	${REINPLACE_CMD} -e '26,27d' ${PKGMESSAGE}
-. endif
 .endif
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${ECHO_MSG}
