@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME:L}/KeePassX/${PORTVERSION}/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Cross Platform Password Manager
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
