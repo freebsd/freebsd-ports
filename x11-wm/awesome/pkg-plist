@@ -65,6 +65,7 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/wibox/init.lua
 %%DATADIR%%/lib/wibox/layout/align.lua
 %%DATADIR%%/lib/wibox/layout/base.lua
+%%DATADIR%%/lib/wibox/layout/constraint.lua
 %%DATADIR%%/lib/wibox/layout/fixed.lua
 %%DATADIR%%/lib/wibox/layout/flex.lua
 %%DATADIR%%/lib/wibox/layout/init.lua
