@@ -32,7 +32,7 @@ WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf:doc
+DISTFILES+=FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf:manual
 .endif
 .if ${PORT_OPTIONS:MNLS}
 NLS=	""
@@ -54,8 +54,5 @@ do-install:
 	${MKDIR} ${DOCSDIR} && \
 	${INSTALL_DATA} ${DISTDIR}/FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf ${DOCSDIR}
 .endif
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
