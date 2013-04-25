@@ -48,6 +48,7 @@ sub get_nice_people() {
 		'kuriyama',
 		'linimon',
 		'makc',
+		'pgollucci',
 		'rm',
 		'tabthorpe',
 		'wxs'
