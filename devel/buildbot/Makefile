@@ -7,6 +7,7 @@
 
 PORTNAME=	buildbot
 PORTVERSION=	0.8.6p1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
@@ -21,6 +22,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	conch mail web words
+USE_RC_SUBR=	buildbot
+
+BB_USER?=	www
+
+SUB_LIST=	BB_USER=${BB_USER} \
+		PYTHON_CMD=${PYTHON_CMD}
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \
