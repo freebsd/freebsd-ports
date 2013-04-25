@@ -11,8 +11,8 @@ include/SDL2/SDL_config_android.h
 include/SDL2/SDL_config_iphoneos.h
 include/SDL2/SDL_config_macosx.h
 include/SDL2/SDL_config_minimal.h
-include/SDL2/SDL_config_nintendods.h
 include/SDL2/SDL_config_pandora.h
+include/SDL2/SDL_config_psp.h
 include/SDL2/SDL_config_windows.h
 include/SDL2/SDL_config_wiz.h
 include/SDL2/SDL_copying.h
