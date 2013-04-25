@@ -1,9 +1,4 @@
-# New ports collection makefile for:    xine
-# Date created:         14 Oct 2000
-# Whom:                 alex
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xine
 PORTVERSION=	0.99.7
@@ -13,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 multimedia player
+COMMENT=	X11 multimedia player
 
 LICENSE=	GPLv2
 
@@ -34,7 +29,6 @@ WIN32_CODECS_DESC=	Enable win32 codecs
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
-USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
