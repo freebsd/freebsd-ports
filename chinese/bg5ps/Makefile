@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bg5ps
-# Date created:		17 June 1998
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
-#
+# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bg5ps
 PORTVERSION=	1.3.0p3
@@ -15,17 +11,20 @@ DISTNAME=	bg5ps-1.3.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
-USE_FREETYPE=	yes
+LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
+
 USE_PYTHON=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ttf2psm ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${PREFIX}/etc/bg5ps.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${PREFIX}/etc/gb2312-bg5ps.conf.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif

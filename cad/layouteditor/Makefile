@@ -1,9 +1,5 @@
-# New ports collection makefile for:	layouteditor
-# Date created:				Sun, Apr 29 2007
-# Whom:					Hiroki Sato <hrs@FreeBSD.org>
-#
+# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	layouteditor
 PORTVERSION=	0.0.20110614
@@ -16,10 +12,11 @@ DISTNAME=	LayoutEditor-${PORTVERSION:S,^0.0.,,}-gpl-src
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IC/MEMS layout editor
 
+LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
+
 USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qmake qt3support xml
 USE_ZIP=	yes
-USE_FREETYPE=	yes
 WRKSRC=		${WRKDIR}/layout
 PLIST_FILES=	bin/layout
 

@@ -14,7 +14,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
-USE_IMAKE=	yes
+USE_IMAKE=	yese
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -46,7 +46,7 @@ NO_OPTIONS_SORT=yes
 
 .if ${PORT_OPTIONS:MFREETYPE}
 # Only freetype 1.x is supported
-USE_FREETYPE=		yes
+LIB_DEPENDS+=		ttf:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--enable-freetype \
 			--enable-freetype-charset16
 .else

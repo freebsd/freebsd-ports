@@ -19,9 +19,9 @@ RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${LOCALBASE}/share/ttf2pt1/maps/cugb.map:${PORTSDIR}/chinese/ttf2pt1 \
 		ttf2pt1:${PORTSDIR}/print/ttf2pt1
+LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
-USE_FREETYPE=	yes
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1
