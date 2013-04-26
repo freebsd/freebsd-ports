@@ -6,7 +6,7 @@ PORTNAME=	codespell
 PORTVERSION=	1.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
-		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	gjb@FreeBSD.org
