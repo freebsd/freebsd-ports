@@ -360,7 +360,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if PACKAGE_BUILDING is not set, then CONFIGURE_ENV and
 #				  MAKE_ENV are extended with a DISPLAY variable.
 #
-# USE_FREETYPE	- If set, this port uses the freetype print libraries.
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
 #				  Supported components are: glut, glu, glw, gl and linux.
 #				  If set to "yes", this is equivalent to "glu". Note that
@@ -1920,10 +1919,6 @@ NO_OPENMOTIF=		yes
 .if !defined(NO_OPENMOTIF)
 LIB_DEPENDS+=		Xm.4:${PORTSDIR}/x11-toolkits/open-motif
 .endif
-.endif
-
-.if defined(USE_FREETYPE)
-LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake
