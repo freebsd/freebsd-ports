@@ -13,6 +13,8 @@ DISTNAME=	gdal-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl binding for GDAL
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 
 USE_PERL5=	yes
