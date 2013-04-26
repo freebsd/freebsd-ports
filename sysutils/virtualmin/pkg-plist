@@ -1141,6 +1141,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_aliaslimit.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_append.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_append.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_autoconfig.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_avail.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_avail.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_bccto.html
@@ -1547,6 +1548,7 @@
 %%LIB32DIR%%/webmin/virtual-server/lang/it
 %%LIB32DIR%%/webmin/virtual-server/lang/nl
 %%LIB32DIR%%/webmin/virtual-server/lang/no
+%%LIB32DIR%%/webmin/virtual-server/lang/pt_BR
 %%LIB32DIR%%/webmin/virtual-server/lang/ru_RU
 %%LIB32DIR%%/webmin/virtual-server/lang/tr
 %%LIB32DIR%%/webmin/virtual-server/lang/zh_CN
@@ -1753,6 +1755,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.92/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99/0-scripts
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.00/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/newip_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/newkey.cgi
@@ -1896,6 +1899,7 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
 @dirrm %%LIB32DIR%%/webmin/virtual-server/scripts
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.00
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.92
