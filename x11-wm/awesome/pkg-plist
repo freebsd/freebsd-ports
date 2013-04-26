@@ -198,7 +198,6 @@ share/xsessions/awesome.desktop
 @dirrm %%DATADIR%%/lib/awful/layout/suit
 @dirrm %%DATADIR%%/lib/awful/layout
 @dirrm %%DATADIR%%/lib/awful
-@dirrm %%DATADIR%%/lib/awful
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
