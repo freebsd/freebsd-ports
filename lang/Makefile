@@ -282,6 +282,7 @@
     SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rbenv-ruby
+    SUBDIR += rbenv-ruby-1.8.7p357
     SUBDIR += rbenv-ruby-1.9.3p194
     SUBDIR += rbenv-ruby-1.9.3p385
     SUBDIR += rbenv-ruby-1.9.3p392
