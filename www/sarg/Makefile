@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sarg
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,7 +33,7 @@ MAN1=		sarg.1
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
