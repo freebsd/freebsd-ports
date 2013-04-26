@@ -617,6 +617,7 @@
     SUBDIR += puddletag
     SUBDIR += pulseaudio
     SUBDIR += pure-audio
+    SUBDIR += py-al
     SUBDIR += py-ao
     SUBDIR += py-apetag
     SUBDIR += py-pyacoustid
