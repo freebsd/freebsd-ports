@@ -130,7 +130,7 @@ LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 
 # KWallet requires NLS to be enabled.
 .if ${PORT_OPTIONS:MNLS} || ${PORT_OPTIONS:MKDE_KWALLET}
-USE_GETTEXT=	yes
+USES+=	gettext
 PLIST_SUB+=	WITHOUT_GETTEXT=""
 .else
 CONFIGURE_ARGS+=--disable-nls

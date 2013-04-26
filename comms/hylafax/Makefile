@@ -53,12 +53,12 @@ MAN8=	choptest.8c cqtest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
-OPTIONS_DEFINE=	PAM NLS GAWK
+OPTIONS_DEFINE=	PAM NLS GAWK DOCS
 OPTIONS_DEFAULT=PAM NLS
 NO_OPTIONS_SORT=yes
 GAWK_DESC=	Use gawk for scripts
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
 .if defined(PAGESIZE)
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--disable-pam
 .endif
 
 # Want HTML documentation?
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-HTML=yes
 PLIST_SUB+=	PORTDOCS=""
 .else
@@ -95,7 +95,7 @@ RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 CONFIGURE_ARGS+=--with-AWK="${LOCALBASE}/bin/gawk"
 .endif
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 PLIST_SUB+=	WITH_NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -128,7 +128,7 @@ post-install:
 .for f in hfaxd.conf pagesizes typerules
 	if [ ! -f ${PREFIX}/lib/fax/${f} ]; then ${CP} -p ${PREFIX}/lib/fax/${f}-dist ${PREFIX}/lib/fax/${f}; fi
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
@@ -138,4 +138,4 @@ post-install:
 CONFIGURE_ARGS+=	--with-GETTY=SysV
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

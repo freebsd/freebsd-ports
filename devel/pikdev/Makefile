@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pikdev
-# Date created:		2006-03-14
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	pikdev
 PORTVERSION=	0.9.2
@@ -29,25 +25,23 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-pic=yes
 SUB_FILES=	pkg-message
 
-OPTIONS=	DEBUG	"Enable debug information"	off \
-		NLS	"Native Language Support"	on
+OPTIONS_DEFINE=	DEBUG NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=full
 .endif
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB+=	NLS=""
-FLAG_NLS=	true
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -57,11 +51,11 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's|^install-data-am: install-docs install-nls|install-data-am:|g' \
 		${WRKSRC}/doc/en/${MAKEFILE}
-.if !defined(FLAG_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|^install-data-am: install-nls|install-data-am:|g' ${WRKSRC}/po/Makefile
 .endif
 
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

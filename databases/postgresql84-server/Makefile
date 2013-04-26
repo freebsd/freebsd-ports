@@ -133,8 +133,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 .endif # !SLAVE_ONLY
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 PATCH_DIST_STRIP=-p1
 
@@ -173,10 +171,10 @@ CONFIGURE_ARGS+=--enable-integer-datetimes
 CONFIGURE_ARGS+=--disable-integer-datetimes
 .  endif
 
-.  if ( defined(WITH_GETTEXT) || ${PORT_OPTIONS:MNLS} )
+.  if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
-USE_GETTEXT=	yes
+USES+=	gettext
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
@@ -371,4 +369,4 @@ check:
 	 fi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -139,8 +139,6 @@ PLIST_SUB+=	OSSP=""
 PLIST_SUB+=	OSSP="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 
 PATCH_DIST_STRIP=-p1
@@ -180,10 +178,10 @@ PLIST_SUB+=	TZDATA="@comment "
 CONFIGURE_ARGS+=--disable-integer-datetimes
 .  endif
 
-.  if ( defined(WITH_GETTEXT) || ${PORT_OPTIONS:MNLS} )
+.  if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
-USE_GETTEXT=	yes
+USES=	gettext
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
@@ -392,4 +390,4 @@ check:
 	 fi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

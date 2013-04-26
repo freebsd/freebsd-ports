@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xneur
-# Date created:		19 January 2007
-# Whom:			Alex "lissyara" Keda <admin@lissyara.su>
-#
+# Created by: Alex "lissyara" Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	xneur
 PORTVERSION=	0.15.0
@@ -19,8 +15,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		pcre.3:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
+USES=		pkgconfig pathfix
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig gnomehack
 USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -32,15 +28,16 @@ INSTALLS_ICONS=	yes
 MAN1=		xneur.1
 MAN5=		xneurrc.5
 
-OPTIONS=	GSTREAMER	"Build with GStreamer sound support"	on \
-		OPENAL		"Build with OpenAL sound support"	off \
-		ASPELL		"Build with aspell support"		on \
-		XOSD		"Build with xosd support"		off
+OPTIONS_DEFINE=	ASPELL XOSD NLS X11
+OPTIONS_DEFAULT=	GSTREAMER ASPELL
+OPTIONS_RADIO=	SOUND
+OPTIONS_RADIO_SOUND=	GSTREAMER OPENAL
+XOSD_DESC=	Xosd support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
@@ -48,41 +45,35 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG+=	x11
 CONFIGURE_ARGS+=	--with-x
+.else
+CONFIGURE_ARGS+=	--without-x
 .endif
 
-.if !defined(WITHOUT_GSTREAMER) && defined(WITH_OPENAL)
-IGNORE=	please select only one sound library
-.else
-.if !defined(WITHOUT_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=	--with-sound=gstreamer
-.endif
-.if defined(WITH_OPENAL)
+.elif ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=		al alut
 CONFIGURE_ARGS+=	--with-sound=openal
-.endif
-.if defined(WITHOUT_GSTREAMER) && !defined(WITH_OPENAL)
+.else
 CONFIGURE_ARGS+=	--with-sound=no
 .endif
-.endif
 
-.if defined(WITHOUT_ASPELL)
-CONFIGURE_ARGS+=	--with-spell=no --without-aspell
-.else
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-spell=aspell
+.else
+CONFIGURE_ARGS+=	--with-spell=no --without-aspell
 .endif
 
-.if !defined(WITH_XOSD)
-CONFIGURE_ARGS+=	--without-xosd
-.else
+.if ${PORT_OPTIONS:MXOSD}
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
+.else
+CONFIGURE_ARGS+=	--without-xosd
 .endif
 
 post-patch:
@@ -93,4 +84,4 @@ post-install:
 	${CP} -p ${PREFIX}/etc/xneur/xneurrc.sample ${PREFIX}/etc/xneur/xneurrc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
