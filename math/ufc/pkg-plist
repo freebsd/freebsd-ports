@@ -1,5 +1,6 @@
 include/swig/ufc.i
 include/ufc.h
+include/ufc_geometry.h
 %%PYTHON_SITELIBDIR%%/ufc/__init__.py
 %%PYTHON_SITELIBDIR%%/ufc/_ufc.so
 %%PYTHON_SITELIBDIR%%/ufc/ufc.py
@@ -13,6 +14,7 @@ include/ufc.h
 libdata/pkgconfig/ufc-1.pc
 %%DATADIR%%/UFCConfig.cmake
 %%DATADIR%%/UFCConfigVersion.cmake
+%%DATADIR%%/UseUFC.cmake
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/ufc_utils
 @dirrm %%PYTHON_SITELIBDIR%%/ufc
