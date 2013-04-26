@@ -754,6 +754,7 @@
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
     SUBDIR += radeontool
+    SUBDIR += racktables
     SUBDIR += radmind
     SUBDIR += raincoat
     SUBDIR += rclean
