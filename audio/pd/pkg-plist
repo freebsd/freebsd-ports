@@ -392,8 +392,8 @@ libdata/pkgconfig/pd.pc
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/graph-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hdial-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/help-intro.pd
-%%PORTDOCS%%%%DOCSDIR%%/5.reference/hradio-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hip~-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/hradio-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/hslider-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/int-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/key-help.pd
