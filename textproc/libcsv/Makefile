@@ -2,30 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	libcsv
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, simple and fast CSV library
 
-USE_LDCONFIG=	YES
-SHLIB_MAJOR=	3
+LICENSE=	LGPL21
+
+OPTIONS_DEFINE=	PROFILE
+
+MAKEFILE=	Makefile.lib
+USE_LDCONFIG=	yes
+
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-MAN3=		csv.3
-MANCOMPRESSED=	maybe
+SHLIB_MAJOR=	3
 
-.if defined(NOPROFILE) || defined(NO_PROFILE)
-PLIST_SUB+=	PROFILE="@comment "
-.else
+MANCOMPRESSED=	maybe
+MAN3=		csv.3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPROFILE}
 PLIST_SUB+=	PROFILE=""
+.else
+MAKE_ENV+=	NO_PROFILE=true
+PLIST_SUB+=	PROFILE="@comment "
 .endif
 
-post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
-		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
-	${GUNZIP_CMD} ${WRKSRC}/${MAN3}.gz
+do-configure:
+	@${SED} -e 's|%%SHLIB_MAJOR%%|${SHLIB_MAJOR}|' \
+		< ${FILESDIR}/Makefile > ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
