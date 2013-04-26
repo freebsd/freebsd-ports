@@ -33,11 +33,4 @@ MAN3=		Astro::Coords.3 \
 		Astro::Coords::Offset.3 \
 		Astro::Coords::Planet.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Time-Piece>=1.02:${PORTSDIR}/devel/p5-Time-Piece
-RUN_DEPENDS+=	p5-Time-Piece>=1.02:${PORTSDIR}/devel/p5-Time-Piece
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
