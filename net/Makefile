@@ -912,6 +912,7 @@
     SUBDIR += py-medusa
     SUBDIR += py-miniupnpc
     SUBDIR += py-msrplib
+    SUBDIR += py-ndg_httpsclient
     SUBDIR += py-netaddr
     SUBDIR += py-netifaces
     SUBDIR += py-netstring
