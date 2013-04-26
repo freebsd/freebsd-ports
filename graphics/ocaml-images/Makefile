@@ -36,67 +36,62 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-lablgtk
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	PNG "Enable PNG support" on \
-		JPEG "Enable JPEG support" on \
-		TIFF "Enable TIFF support" on \
-		XPM "Enable XPM support" on \
-		GIF "Enable GIF support" on \
-		FREETYPE "Enable text rendering via freetype" on \
-		GS "Enable PostScript support via Ghostscript" on \
-		GTK2 "Enable LablGTK2 support" off
+OPTIONS_DEFINE=	PNG JPEG TIFF XPM GIF FREETYPE GS GTK2 DOCS
+OPTIONS_DEFAULT=	PNG JPEG TIFF XPM GIT FREETYPE GS
+GS_DESC=	PostScript support via Ghostscript
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png
 .else
 CONFIGURE_ARGS+=	--without-png
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
 
-.if !defined(WITHOUT_XPM)
+.if ${PORT_OPTIONS:MXPM}
 USE_XORG=	xpm
 CONFIGURE_ARGS+=	--with-xpm
 .else
 CONFIGURE_ARGS+=	--without-xpm
 .endif
 
-.if !defined(WITHOUT_GIF)
+.if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--with-gif
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
 
-.if !defined(WITHOUT_FREETYPE)
-USE_FREETYPE=	yes
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=		ttf:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.if defined(WITH_GS)
+.if ${PORT_OPTIONS:MGS}
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-gs
 .else
 CONFIGURE_ARGS+=	--without-gs
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--with-lablgtk2
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
@@ -112,12 +107,12 @@ GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DOCSFILES=	CHANGES README LICENSE
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	${DOCSFILES} doc
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/doc
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc '-name "*.jpg" -o -name "*.html"')
 	@${INSTALL_DATA} ${DOCSFILES:S,^,${WRKSRC}/,g} ${DOCSDIR}/
