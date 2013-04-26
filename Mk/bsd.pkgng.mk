@@ -259,7 +259,7 @@ do-package: ${TMPPLIST}
 		fi; \
 	fi;
 	@for cat in ${CATEGORIES}; do \
-		${RM} -fv ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
+		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
 	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
 		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" ]; then \
