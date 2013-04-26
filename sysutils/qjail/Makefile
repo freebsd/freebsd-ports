@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	qjail@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails
-
-RESTRICTED=	license/copyright in dispute
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
