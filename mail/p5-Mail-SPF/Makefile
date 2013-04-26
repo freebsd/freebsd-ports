@@ -1,12 +1,9 @@
-# New ports collection makefile for:    p5-Mail-SPF
-# Date created:                         Thu Feb 8 18:46:25 CET 2007
-# Whom:                                 gmc@sonologic.nl
-#
+# Created by: gmc@sonologic.nl
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.007
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +20,7 @@ RUN_DEPENDS=	p5-Net-DNS-Resolver-Programmable>=0.002.1:${PORTSDIR}/dns/p5-Net-DN
 		p5-URI>=1.13:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-CONFLICTS=	p5-Mail-SPF-Query-[0-9]*
+CONFLICTS=	libspf2-[0-9]* p5-Mail-SPF-Query-[0-9]*
 
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
