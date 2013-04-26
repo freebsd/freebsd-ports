@@ -1,3 +1,4 @@
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xjobs
@@ -6,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Utility reads job descriptions line by line and executes in parallel
 
 LICENSE=	GPLv2
@@ -21,7 +22,7 @@ PORTDOCS=	ChangeLog README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
