@@ -1,6 +1,7 @@
 Requests is an ISC Licensed HTTP library, written in Python, for human beings.
 
 Features
+
 - International Domains and URLs
 - Keep-Alive & Connection Pooling
 - Sessions with Cookie Persistence
@@ -12,6 +13,7 @@ Features
 - Multipart File Uploads
 - Connection Timeouts
 - .netrc support
+- Python 2.6-3.3
 - Thread-safe
 
-WWW:	http://python-requests.org/
+WWW: http://python-requests.org/
