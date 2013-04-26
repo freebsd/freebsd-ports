@@ -1,0 +1,61 @@
+bin/ndg_httpclient
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/https.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/https.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/https.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_context_util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_context_util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_context_util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_peer_verification.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_peer_verification.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_peer_verification.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_socket.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_socket.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/ssl_socket.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/subj_alt_name.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/subj_alt_name.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/subj_alt_name.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/README
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/pki/ca/d573507a.0
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/pki/localhost.crt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/pki/localhost.key
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/scripts/openssl_https_server.sh
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_https.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_https.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_https.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_urllib2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_urllib2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_urllib2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/urllib2_build_opener.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/urllib2_build_opener.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/urllib2_build_opener.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/pki/ca
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test/pki
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg/httpsclient
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ndg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
