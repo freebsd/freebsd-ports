@@ -14,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		cmake
+USES=		cmake gettext
 USE_KDE4=	automoc4 kdehier kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 
 OPTIONS_DEFINE=	DOT VALGRIND
 OPTIONS_DEFAULT=	DOT

@@ -27,8 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	libxml2 gtk20 desktopfileutils librsvg2 libxslt
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes

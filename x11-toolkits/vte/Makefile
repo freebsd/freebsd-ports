@@ -17,10 +17,9 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
 USE_GNOME?=	gnomeprefix gtk20 ltverhack referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -25,8 +25,7 @@ DVDREAD_DESC=	libdvdread support
 GMERLIN_DESC=	gmerlin support
 SAMBA_DESC=	Samba support using libsmbclient
 
-USES=	pathfix pkgconfig
-USE_GETTEXT=	yes
+USES=	pathfix pkgconfig gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 USE_LDCONFIG=	yes

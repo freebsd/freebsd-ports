@@ -16,8 +16,7 @@ GH_PROJECT=	Hotot
 GH_TAGNAME=	master
 GH_COMMIT=	e0c78bf
 
-USES=		cmake
-USE_GETTEXT=	yes
+USES=		cmake gettext
 USE_PYTHON=	yes
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes

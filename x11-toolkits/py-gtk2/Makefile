@@ -21,10 +21,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cair
 LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	libglade2 pygobject
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lintl" \
 		PYTHON="${PYTHON_VERSION}"

@@ -37,7 +37,7 @@ DESKTOP_ENTRIES="cbrPager" "Comic book viewer" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 PLIST_FILES+=	share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo

@@ -26,7 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	WITH_NLS=""
 .endif
 

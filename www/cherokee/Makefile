@@ -11,10 +11,9 @@ MASTER_SITE_SUBDIR=cherokee/1.2/${PORTVERSION}
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Extremely fast and flexible web server
 
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gettext
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 USE_RC_SUBR=	cherokee
 SUB_FILES=	pkg-install pkg-message
 USE_GMAKE=	yes

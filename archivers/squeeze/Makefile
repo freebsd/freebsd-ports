@@ -19,14 +19,13 @@ LIB_DEPENDS=	thunar-vfs-1:${PORTSDIR}/x11-fm/thunar-vfs
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 MAKE_JOB_SAFE=	yes
 
 OPTIONS_DEFINE=		DOCS

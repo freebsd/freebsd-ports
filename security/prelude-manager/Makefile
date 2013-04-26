@@ -19,11 +19,10 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		nettle:${PORTSDIR}/security/nettle \
 		p11-kit:${PORTSDIR}/security/p11-kit
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

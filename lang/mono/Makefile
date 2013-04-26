@@ -14,13 +14,12 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
     		bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 MAKE_JOBS_UNSAFE=yes
 
 # Moonlight is installed as part of www/moonlight

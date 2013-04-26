@@ -21,8 +21,7 @@ LIB_DEPENDS=	gtk-vnc-1.0:${PORTSDIR}/net/gtk-vnc \
 CONFLICTS=	vinagre-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack vte gconf2 gnomedocutils gnomepanel
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
 LICENSE=	GPLv2
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
 .else

@@ -41,8 +41,7 @@ INFO=		lilypond-notation \
 		music-glossary \
 		internals
 
-USES=		bison:build
-USE_GETTEXT=	yes
+USES=		bison:build gettext
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
 USE_PYTHON=	yes

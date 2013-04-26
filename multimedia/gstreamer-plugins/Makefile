@@ -41,13 +41,12 @@ UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		good
 
 SHLIB_VERSION=	1
-USE_GETTEXT=	yes
 VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	gnomehack ltverhack ltasneededhack
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 

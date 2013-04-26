@@ -21,8 +21,7 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 
 SAMBA_PORT?=	net/samba36
 
-USES=		cmake
-USE_GETTEXT=	yes
+USES=		cmake gettext
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4 runtime

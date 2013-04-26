@@ -22,11 +22,10 @@ OPTIONS_DEFAULT=	CDDB CDIO JACK JPEG LIBVISUAL \
 		OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME \
 		TIFF
 
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl

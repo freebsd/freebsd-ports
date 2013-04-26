@@ -24,8 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes

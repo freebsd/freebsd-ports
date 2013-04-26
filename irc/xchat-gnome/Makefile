@@ -17,10 +17,9 @@ LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra \
 		notify:${PORTSDIR}/devel/libnotify
 
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		pathfix desktop-file-utils
+USES=		pathfix desktop-file-utils gettext
 USE_GNOME=	gnomeprefix libgnomeui gnomedocutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

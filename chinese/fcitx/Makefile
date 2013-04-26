@@ -31,10 +31,9 @@ CONFLICTS=	zh-scim-fcitx-3.*
 
 USE_XZ=		yes
 USE_GNOME=	pango intltool libxml2 gnomehack
-USE_GETTEXT=	yes
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake gettext
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC

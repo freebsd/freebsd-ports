@@ -22,10 +22,9 @@ SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
 USE_GNOME=	glib20 intltool
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no

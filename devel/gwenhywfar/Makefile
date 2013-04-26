@@ -20,9 +20,8 @@ OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
 MEMDEBUG_DESC=	Enable memory debugger statistic
 .endif
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 

@@ -45,7 +45,7 @@ USES+=		pkgconfig
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_GMAKE=	yes
 .else
 PLIST_SUB+=	NLS="@comment "

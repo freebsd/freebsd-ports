@@ -46,7 +46,7 @@ PLIST_SUB+=	NOX11:="@comment "
 MAN1=		gftp.1
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

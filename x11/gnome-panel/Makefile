@@ -26,13 +26,12 @@ LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
 
 CONFLICTS=	gnome-panel-3.[0-9]*
 
-USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xrandr
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
 		gnomedocutils ltverhack referencehack librsvg2
 USE_GMAKE=	yes

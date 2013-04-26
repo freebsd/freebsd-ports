@@ -31,7 +31,7 @@ PLIST_SUB+=	NLS="@comment "
 .else
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .endif
 
 .include <bsd.port.mk>

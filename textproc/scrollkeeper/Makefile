@@ -27,10 +27,9 @@ DOCBOOK_VERSION=4.2
 CONFLICTS=	rarian-[0-9]*
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	gnomehier libxslt intlhack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \

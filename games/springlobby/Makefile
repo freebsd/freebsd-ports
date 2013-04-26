@@ -34,7 +34,7 @@ OPTIONS=	TORRENT	"Support automatic content downloads via torrent" on \
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DOPTION_TRANSLATION_SUPPORT:BOOL=OFF

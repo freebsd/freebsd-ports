@@ -54,7 +54,7 @@ RUN_DEPENDS+=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE

@@ -22,9 +22,8 @@ KTOBLZCHECK_DESC=	Enable KtoBlzCheck support
 PAYPAL_DESC=		Build PayPal backend (separate license)
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"

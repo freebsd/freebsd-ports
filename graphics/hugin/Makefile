@@ -31,14 +31,13 @@ USE_BZIP2=	yes
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
 		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
 
-USES=		cmake
+USES=		cmake gettext
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 
 USE_WX=		2.8+
 WX_UNICODE=	yes
 
-USE_GETTEXT=	yes
 
 USE_GL=		glew glut
 

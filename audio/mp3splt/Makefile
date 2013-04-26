@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LANGUAGES=	cs de_DE es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/mp3splt.mo

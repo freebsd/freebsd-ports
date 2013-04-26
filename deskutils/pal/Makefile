@@ -11,9 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A calendar application
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GNOME=	glib20
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

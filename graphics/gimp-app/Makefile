@@ -33,13 +33,12 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_XORG=	xpm xmu xext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier \
 		desktopfileutils
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

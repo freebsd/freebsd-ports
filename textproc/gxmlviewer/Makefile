@@ -10,9 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	bonobo gnomelibs gnomeprefix libxml2
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 

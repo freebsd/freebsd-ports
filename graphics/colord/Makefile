@@ -19,9 +19,8 @@ LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
 
 USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 intlhack
-USES=		pathfix
+USES=		pathfix gettext
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

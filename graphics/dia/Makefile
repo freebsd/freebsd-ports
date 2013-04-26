@@ -16,12 +16,11 @@ COMMENT=	Diagram creation program, similar to Visio
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		png15:${PORTSDIR}/graphics/png
 
-USES=		pathfix desktop-file-utils
+USES=		pathfix desktop-file-utils gettext
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomeprefix libxslt libartlgpl2 intlhack
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"

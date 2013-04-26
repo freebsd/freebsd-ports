@@ -21,7 +21,7 @@ USES=		cmake
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 CMAKE_ARGS+=	-DENABLE_GETTEXT=On
 PLIST_SUB+=	NLS=""
 .else

@@ -25,8 +25,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-html-dir=${PREFIX}/share/doc
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gettext
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

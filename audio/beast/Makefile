@@ -21,10 +21,9 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 OPTIONS_DEFINE_i386=	SSE
 
 USE_BZIP2=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GCC=	4.6+
 USE_GNOME=	gnomehier libgnomecanvas
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \

@@ -35,8 +35,7 @@ CONFIGURE_SCRIPT=	../gcc-${PORTVERSION}/configure
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		bison
-USE_GETTEXT=	yes
+USES=		bison gettext
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

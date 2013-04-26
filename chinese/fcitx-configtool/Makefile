@@ -17,8 +17,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx
 
 USE_XZ=		yes
 USE_GNOME=	intltool gnomehack
-USE_GETTEXT=	yes
-USES=		cmake
+USES=		cmake gettext
 
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=GTK2

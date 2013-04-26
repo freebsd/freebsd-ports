@@ -13,11 +13,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USES=	pkgconfig
+USES=	pkgconfig gettext
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool

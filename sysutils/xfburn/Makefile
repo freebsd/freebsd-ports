@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	DBUS HAL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif

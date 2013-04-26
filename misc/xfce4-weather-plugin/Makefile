@@ -16,9 +16,8 @@ LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack libxml2
 USE_XFCE=	configenv libmenu libutil panel

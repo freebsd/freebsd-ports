@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-id3tag
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LANGUAGES=	de_DE cs es fr_FR hr
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt0.mo

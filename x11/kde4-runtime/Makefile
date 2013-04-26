@@ -25,10 +25,9 @@ RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
 CONFLICTS=	kdebase-runtime-4.[0-6].* kdebase-workspace-4.5.[0-5] nepomukcontroller-0.2
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_KDE4=	kactivities kdehier kdelibs kdeprefix oxygen \
 		attica automoc4 pimlibs sharedmime strigi nepomuk-core
-USES=		cmake:outsource
+USES=		cmake:outsource gettext
 USE_QT4=	corelib dbus declarative designer_build gui phonon \
 		network qtestlib script svg webkit xml \
 		moc_build qmake_build rcc_build uic_build

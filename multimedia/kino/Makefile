@@ -22,9 +22,8 @@ FFMPEG_KINO_DESC=	With ffmpeg-kino
 
 USE_XORG=	x11 xv ice
 USE_AUTOTOOLS=	autoconf
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix libglade2 libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

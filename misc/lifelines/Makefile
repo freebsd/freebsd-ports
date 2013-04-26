@@ -18,7 +18,7 @@ USES=		bison
 MAN1=		btedit.1 dbverify.1 llines.1
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

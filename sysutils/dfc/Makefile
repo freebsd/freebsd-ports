@@ -26,7 +26,7 @@ MAN1=		dfc.1
 
 .if ${PORT_OPTIONS:MNLS}
 CMAKE_ARGS+=	-DNLS_ENABLED=true
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DNLS_ENABLED=false

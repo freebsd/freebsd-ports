@@ -15,8 +15,7 @@ LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XZ=	yes
-USE_GETTEXT=	yes
-USES=		bison pathfix pkgconfig
+USES=		bison pathfix pkgconfig gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2
 WANT_GSTREAMER=	yes
