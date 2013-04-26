@@ -214,15 +214,27 @@ check-makevars::
 
 # Error checking: JAVA_VERSION
 .if !defined(_JAVA_VERSION_LIST_REGEXP)
-_JAVA_VERSION_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VERSION_LIST}" | ${SED} "s/ /\\\|/g"
+.	for v in ${_JAVA_VERSION_LIST}
+.		if defined(_JAVA_VERSION_LIST_REGEXP)
+_JAVA_VERSION_LIST_REGEXP:=		${_JAVA_VERSION_LIST_REGEXP}\|
+.		endif
+_JAVA_VERSION_LIST_REGEXP:=		${_JAVA_VERSION_LIST_REGEXP}$v
+.	endfor
 .endif
+
+
 check-makevars::
 	@test ! -z "${JAVA_VERSION}" && ( ${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VERSION_LIST_REGEXP}" || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)"; ${FALSE})) || true
 
 # Error checking: JAVA_VENDOR
 .if !defined(_JAVA_VENDOR_LIST_REGEXP)
-_JAVA_VENDOR_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VENDOR_LIST}" | ${SED} "s/ /\\\|/g"
+.	for v in ${_JAVA_VENDOR_LIST}
+.		if defined(_JAVA_VENDOR_LIST_REGEXP)
+_JAVA_VENDOR_LIST_REGEXP:=		${_JAVA_VENDOR_LIST_REGEXP}\|
+.		endif
+_JAVA_VENDOR_LIST_REGEXP:=		${_JAVA_VENDOR_LIST_REGEXP}$v
+.	endfor
 .endif
 check-makevars::
 	@test ! -z "${JAVA_VENDOR}" && ( ${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VENDOR_LIST_REGEXP}" || \
@@ -231,7 +243,12 @@ check-makevars::
 
 # Error checking: JAVA_OS
 .if !defined(_JAVA_OS_LIST_REGEXP)
-_JAVA_OS_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_OS_LIST}" | ${SED} "s/ /\\\|/g"
+.	for v in ${_JAVA_OS_LIST}
+.		if defined(_JAVA_OS_LIST_REGEXP)
+_JAVA_OS_LIST_REGEXP:=		${_JAVA_OS_LIST_REGEXP}\|
+.		endif
+_JAVA_OS_LIST_REGEXP:=		${_JAVA_OS_LIST_REGEXP}$v
+.	endfor
 .endif
 check-makevars::
 	@test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_OS_LIST_REGEXP}" || \
@@ -273,26 +290,23 @@ A_JAVA_PORT_HOME=			${A_JAVA_PORT_INFO:MHOME=*:S,HOME=,,}
 A_JAVA_PORT_VERSION=		${A_JAVA_PORT_INFO:MVERSION=*:C/VERSION=([0-9])\.([0-9])(.*)/\1.\2/}
 A_JAVA_PORT_OS=				${A_JAVA_PORT_INFO:MOS=*:S,OS=,,}
 A_JAVA_PORT_VENDOR=			${A_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
-.if !defined(_JAVA_PORTS_INSTALLED)
-A_JAVA_PORT_INSTALLED!=		${TEST} -x "${A_JAVA_PORT_HOME}/${_JDK_FILE}" \
-							&& ${ECHO_CMD} "${A_JAVA_PORT}" \
-							|| ${TRUE}
-__JAVA_PORTS_INSTALLED!=	${ECHO_CMD} "${__JAVA_PORTS_INSTALLED} ${A_JAVA_PORT_INSTALLED}"
+.if !defined(_JAVA_PORTS_INSTALLED) && exists(${A_JAVA_PORT_HOME}/${_JDK_FILE})
+__JAVA_PORTS_INSTALLED+=	${A_JAVA_PORT}
 .endif
 
-# The magic here is that we want to test for a substring using only shell builtins (to avoid forking)
-# Our shell does not have an explicit substring operator, but we can build one by using the '#'
-# deletion operator ('%' would also work).  We try to delete the pattern "*${substr}*" and compare it
-# to the original string.  If they differ, the substring matched.
-# 
-# We can't do this in make because it doesn't allow nested modifiers ${foo:${bar}}
+# Because variables inside for loops are special (directly replaced as strings), we are allowed
+# to use them inside modifiers, where normally ${FOO:M${BAR}} is not allowed.
 #
-A_JAVA_PORT_POSSIBLE!=		ver="${_JAVA_VERSION}"; os="${_JAVA_OS}"; vendor="${_JAVA_VENDOR}"; \
-				${TEST} "$${ver\#*${A_JAVA_PORT_VERSION}*}" != "${_JAVA_VERSION}" -a \
-				"$${os\#*${A_JAVA_PORT_OS}*}" != "${_JAVA_OS}" -a \
-				"$${vendor\#*${A_JAVA_PORT_VENDOR}*}" != "${_JAVA_VENDOR}" && \
-				${ECHO_CMD} "${A_JAVA_PORT}" || ${TRUE}
-__JAVA_PORTS_POSSIBLE:=		${__JAVA_PORTS_POSSIBLE} ${A_JAVA_PORT_POSSIBLE}
+.for ver in ${A_JAVA_PORT_VERSION}
+.for os in ${A_JAVA_PORT_OS}
+.for vendor in ${A_JAVA_PORT_VENDOR}
+.if ${_JAVA_VERSION:M${ver}} && ${_JAVA_OS:M${os}} && ${_JAVA_VENDOR:M${vendor}}
+__JAVA_PORTS_POSSIBLE+=		${A_JAVA_PORT}
+.endif
+.endfor
+.endfor
+.endfor
+
 .		endfor
 .if !defined(_JAVA_PORTS_INSTALLED)
 _JAVA_PORTS_INSTALLED=		${__JAVA_PORTS_INSTALLED:C/ [ ]+/ /g}
@@ -309,10 +323,7 @@ _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 .		undef _JAVA_PORTS_INSTALLED_POSSIBLE
 
 .		for A_JAVA_PORT in ${_JAVA_PORTS_POSSIBLE}
-A_JAVA_PORT_INSTALLED_POSSIBLE!=	inst="${_JAVA_PORTS_INSTALLED}"; \
-					${TEST} "$${inst\#*${A_JAVA_PORT}*}" != "${_JAVA_PORTS_INSTALLED}" && \
-					${ECHO_CMD} "${A_JAVA_PORT}" || ${TRUE}
-__JAVA_PORTS_INSTALLED_POSSIBLE:=	${__JAVA_PORTS_INSTALLED_POSSIBLE} ${A_JAVA_PORT_INSTALLED_POSSIBLE}
+__JAVA_PORTS_INSTALLED_POSSIBLE+=	${_JAVA_PORTS_INSTALLED:M${A_JAVA_PORT}}
 .		endfor
 _JAVA_PORTS_INSTALLED_POSSIBLE=		${__JAVA_PORTS_INSTALLED_POSSIBLE:C/[ ]+//g}
 
