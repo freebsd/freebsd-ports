@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-gorky17-demo
-# Date created:		2009-02-01
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gorky17-demo
 PORTVERSION=	1.0.1
@@ -27,11 +22,12 @@ SUB_FILES=	gorky17
 PORTDOCS=	README README.licenses EULA
 DATFILES=	adjust.dat demo1.jpg demo2.jpg demo3.jpg
 
-OPTIONS=	NVIDIA	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA DOCS
+NVIDIA_DESC=	Enable nvidia graphics driver support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NVIDIA)
+.if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
@@ -58,9 +54,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}/${file}
 .endfor
 	@${INSTALL_PROGRAM} ${WRKDIR}/gorky17 ${PREFIX}/bin/${PKGNAMEPREFIX}gorky17
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
