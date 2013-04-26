@@ -43,7 +43,6 @@ post-patch:
 #
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
