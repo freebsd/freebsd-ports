@@ -21,13 +21,17 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
 # Fix the Makefile to unbreak parallel builds
 	@${REINPLACE_CMD} -e 's,(YACC),& -o parser.c, ; \
 		s,(LEX),& -olexer.c, ; /mv/d' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
