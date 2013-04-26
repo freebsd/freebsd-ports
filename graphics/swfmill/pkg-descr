@@ -6,12 +6,11 @@ MTASC-compiled ActionScript, although swfmill can be used to produce
 both simple and complex SWF structures.
 
 * built around an XSLT/EXSLT processor (libxslt)
-
-* input and output of the XSLT transformation can be either XML or binary SWF
-
+* input and output of the XSLT transformation can be either XML or
+  binary SWF
 * XSLT commands for importing PNG, JPEG, TTF and SWF, and for mapping
   SWF ID numbers
-
-* built-in "simple dialect" to support library creation and building simple SWFs
+* built-in "simple dialect" to support library creation and building
+  simple SWFs
 
 WWW: http://swfmill.org/
