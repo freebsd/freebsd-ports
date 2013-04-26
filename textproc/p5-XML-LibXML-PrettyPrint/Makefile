@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-LibXML-PrettyPrint
-# Date created:		2011-10-21
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-LibXML-PrettyPrint
 PORTVERSION=	0.003
@@ -14,24 +10,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add pleasant whitespace to a DOM tree
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Pragmatic>=0:${PORTSDIR}/devel/p5-Pragmatic \
 		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
-RUN_DEPENDS=	p5-Pragmatic>=0:${PORTSDIR}/devel/p5-Pragmatic \
-		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>=0.20:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::LibXML::PrettyPrint.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
