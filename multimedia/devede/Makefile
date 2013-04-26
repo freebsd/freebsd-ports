@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devede
-# Date created:		2007-06-20
-# Whom:			Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	devede
 DISTVERSION=	3.23.0
@@ -17,43 +13,40 @@ COMMENT=	Create video DVDs, VCDs, sVCDs, or CVDs from any number of video files
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		spumux:${PORTSDIR}/multimedia/dvdauthor \
-		vcdimager:${PORTSDIR}/multimedia/vcdimager
+		vcdimager:${PORTSDIR}/multimedia/vcdimager \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_ICONV=	yes
 USE_PYTHON=	yes
-USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
-OPTIONS=	IBUS "Enable iBus support" on \
-		PSYCO "Enable devel/py-psyco optimization support" off
+OPTIONS_DEFINE=	IBUS NLS
+OPTIONS_DEFINE_i386=	PSYCO
+OPTIONS_DEFAULT=	IBUS
+IBUS_DESC=	iBus support
+PSYCO_DESC=	devel/py-psyco optimization support
 
 DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} != "i386"
-.undef WITH_PSYCO
-
-WITHOUT_PSYCO=	yes
-.endif
-
-.if !defined(WITHOUT_IBUS)
+.if ${PORT_OPTIONS:MIBUS}
 RUN_DEPENDS+=	ibus-daemon:${PORTSDIR}/textproc/ibus
 .endif
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 PORTDOCS=	*
 
-.if defined(WITH_PSYCO)
+.if ${PORT_OPTIONS:MPSYCO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-devede.py
 .endif
@@ -100,7 +93,7 @@ do-install:
 
 	@${INSTALL_DATA} ${WRKSRC}/devede.svg ${PREFIX}/share/pixmaps
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${INSTALL_DATA} ${WRKSRC}/po/ca.mo ${PREFIX}/share/locale/ca/LC_MESSAGES/devede.mo
 	@${INSTALL_DATA} ${WRKSRC}/po/cs_CZ.mo ${PREFIX}/share/locale/cs/LC_MESSAGES/devede.mo
 	@${INSTALL_DATA} ${WRKSRC}/po/da.mo ${PREFIX}/share/locale/da/LC_MESSAGES/devede.mo
@@ -124,9 +117,9 @@ do-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,12 +1,9 @@
-# New ports collection Makefile for:	gpxe
-# Date created:				27-02-2010
-# Whom:					Guerkan Karaman <gk.freebsd@googlemail.com>
-#
+# Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gpxe
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=software/utils/boot/gpxe
@@ -16,11 +13,11 @@ COMMENT=	Create an open-source PXE implementation and bootloader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
+BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux \
+		mkisofs:${PORTSDIR}/sysutils/cdrtools
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_CDRTOOLS=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_JOBS_SAFE=	yes
@@ -34,7 +31,7 @@ PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
@@ -55,4 +52,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,7 +14,8 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 LICENSE=	GPLv2
 
-USE_CDRTOOLS=	yes
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

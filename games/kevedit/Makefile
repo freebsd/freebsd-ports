@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kevedit
-# Date created:				16 September 2007
-# Whom:					Raymond Pasco <ray@cultofray.net>
-#
+# Created by: Raymond Pasco <ray@cultofray.net>
 # $FreeBSD$
-#
 
 PORTNAME=		kevedit
 PORTVERSION=		0.5.1
@@ -14,8 +10,10 @@ MASTER_SITES=		SF
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Modern ZZT editor with necessary features
 
+BUILD_DEPENDS=		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=		cdrecord:${PORTSDIR}/sysutils/cdrtools
+
 USE_SDL=		yes
-USE_CDRTOOLS=		yes
 HAS_CONFIGURE=		yes
 
 .include <bsd.port.mk>

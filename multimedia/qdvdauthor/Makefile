@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qdvdauthor
-# Date created:        05/07/04
-# Whom:                oz@nixil.net
-#
+# Created by: oz@nixil.net
 # $FreeBSD$
-#
 
 PORTNAME=	qdvdauthor
 PORTVERSION=	1.1.0
@@ -57,69 +53,46 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qt-dir=${LOCALBASE} --with-qt-lib=qt-mt \
 		--build-qslideshow --build-qplayer
 NO_BUILD=	yes
 
-OPTIONS=	NETPBM "Create mpeg2 streams for movie menus" on \
-		MJPEGTOOLS "Convert background images into mpeg2 movie" on \
-		CDRTOOLS "Create iso images of DVD on the Hard Drive" on \
-		TRANSCODE "Support for movie format conversion" on \
-		DVDRWTOOLS "Optional DVD recording/burning prog" off \
-		MPLAYER "Optional support for mplayer playback" off \
-		TOOLAME "Optional support for audio conversion" off \
-		MCTOOLAME "Optional support for audio conversion" off
+OPTIONS_DEFINE=	NETPBM MJPEGTOOLS CDRTOOLS TRANSCODE DVDRWTOOLS MPLAYER TOOLAME MCTOOLAME
+OPTIONS_DEFAULT=	NETPBM MJPEGTOOLS CDRTOOLS TRANSCODE
+NETPBM_DESC=		Create mpeg2 streams for movie menus
+MJPEGTOOLS_DESC=	Convert background images into mpeg2 movie
+CDRTOOLS_DESC=		Create iso images of DVD on the Hard Drive
+TRANSCODE_DESC=		Support for movie format conversion
+DVDRWTOOLS_DESC=	Optional DVD recording/burning prog
+MPLAYER_DESC=		Optional support for mplayer playback
+TOOLAME_DESC=		Optional support for audio conversion
+MCTOOLAME_DESC=		Optional support for audio conversion
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if exists(${LOCALBASE}/bin/pngtopnm)
-WITH_NETPBM=yes
-.endif
-.if exists(${LOCALBASE}/bin/mpeg2enc)
-WITH_MJPEGTOOLS=yes
-.endif
-.if exists(${LOCALBASE}/bin/mkisofs)
-WITH_CDRTOOLS=yes
-.endif
-.if exists(${LOCALBASE}/bin/growisofs)
-WITH_DVDRWTOOLS=yes
-.endif
-.if exists(${LOCALBASE}/bin/mplayer)
-WITH_MPLAYER=yes
-.endif
-.if exists(${LOCALBASE}/bin/transcode)
-WITH_TRANSCODE=yes
-.endif
-.if exists(${LOCALBASE}/bin/toolame)
-WITH_TOOLAME=yes
-.endif
-.if exists(${LOCALBASE}/bin/mctoolame)
-WITH_MCTOOLAME=yes
-.endif
-
-.if !defined(WITHOUT_NETPBM)
+.if ${PORT_OPTIONS:MNETPBM}
 RUN_DEPENDS+=	pngtopnm:${PORTSDIR}/graphics/netpbm
 .endif
-.if !defined(WITHOUT_MJPEGTOOLS)
+.if ${PROT_OPTIONS:MMJPEGTOOLS}
 RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
-.if !defined(WITHOUT_CDRTOOLS)
-USE_CDRTOOLS=	yes
+.if ${PORT_OPTIONS:MCDRTOOLS}
+RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 .endif
-.if defined(WITH_DVDRWTOOLS)
+.if ${PORT_OPTIONS:MDVDRWTOOLS}
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
-.if !defined(WITHOUT_LIBXINE)
+.if ${PORT_OPTIONS:MLIBXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-support
 .endif
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 CONFIGURE_ARGS+=--with-mplayer-support
 .endif
-.if !defined(WITHOUT_TRANSCODE)
+.if ${PORT_OPTIONS:MTRANSCODE}
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
-.if defined(WITH_TOOLAME)
+.if ${PORT_OPTIONS:MTOOLAME}
 RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
 .endif
-.if defined(WITH_MCTOOLAME)
+.if ${PORT_OPTIONS:MMCTOOLAME}
 RUN_DEPENDS+=	mctoolame:${PORTSDIR}/audio/mctoolame-encoder
 .endif
 
@@ -150,4 +123,4 @@ do-install:
 .for locale in ca de es
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qrender_${locale}.qm  ${DATADIR}
 .endfor
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

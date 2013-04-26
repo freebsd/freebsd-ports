@@ -38,7 +38,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		x264:${PORTSDIR}/multimedia/x264 \
-		xmms:${PORTSDIR}/multimedia/xmms
+		xmms:${PORTSDIR}/multimedia/xmms \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -48,7 +49,6 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_PYTHON=	yes
 USE_PERL5=	yes
-USE_CDRTOOLS=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes

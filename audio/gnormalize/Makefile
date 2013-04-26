@@ -1,5 +1,4 @@
 # Created by: Denise H. G. <darcsis@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	gnormalize
@@ -44,7 +43,7 @@ RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac \
 .endif
 
 .if ${PORT_OPTIONS:MCDPARANOIA} || ${PORT_OPTIONS:MCDDA2WAV}
-USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 .else
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 .endif

@@ -21,6 +21,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/dat
 DEPRECATED=	Depends on Qt3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
+OPTIONS_DEFINE=	BURN
+BURN_DESC=	CD/DVD burning support
+
 USE_XORG=	x11 xft
 USE_QT_VER=	3
 USE_MYSQL=	yes
@@ -34,14 +37,14 @@ CONFIGURE_ARGS=	--with-other-includes=${LOCALBASE}/include \
 		--without-musicbrainz
 MAKE_ARGS=	LIBS="-lqt-mt ${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BURN)
-USE_CDRTOOLS=	yes
+.if ${PORT_OPTIONS:MBURN}
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		normalize:${PORTSDIR}/audio/normalize \
-		bash:${PORTSDIR}/shells/bash
+		bash:${PORTSDIR}/shells/bash \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 PLIST_SUB+=	BURN=""
 .else
 PLIST_SUB+=	BURN="@comment "
@@ -60,11 +63,11 @@ post-patch:
 		's|getopt.$$(OBJEXT)||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if defined(WITH_BURN)
+.if ${PORT_OPTIONS:MBURN}
 	${INSTALL_SCRIPT} ${WRKSRC}/prokburn ${PREFIX}/bin
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

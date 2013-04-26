@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcombust
-# Date created:		Tue Jun 22 21:17:03 MET DST 1999
-# Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
@@ -17,16 +13,18 @@ COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen
+RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USES=		gettext
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12 gnomehier
-USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+
+.include <bsd.port.options.mk>
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
@@ -37,7 +35,7 @@ post-configure:
 	cd ${WRKSRC}/po && ${MAKE} update-po
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/gcombust
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}

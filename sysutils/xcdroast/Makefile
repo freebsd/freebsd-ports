@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcdroast
-# Date Created:		28 Sep 2000
-# Whom:			Oliver Lehmann <Kai_Allard_Liao@gmx.de>
-#
+# Created by: Oliver Lehmann <Kai_Allard_Liao@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.16
@@ -17,12 +13,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
-OPTIONS=	GTK2	"Enable GTK2 support"		on  \
-		NONROOT	"Use xcdroast w/o being root"	off \
-		NLS	"Native language support"	on
+OPTIONS_DEFINE=	GTK2 NONROOT NLS
+OPTIONS_DEFAULT=	GTK2
+NONROOT_DESC=	Use xcdroast w/o being root
+
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USES=		gettext
-USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
@@ -36,16 +34,16 @@ CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
 
 MAN1=		xcdroast.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
 PLIST_SUB=	NLS=""
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=--enable-gtk2
 USE_GNOME=	gtk20
 .else
@@ -53,7 +51,7 @@ CONFIGURE_ARGS+=--disable-gtk2
 USE_GNOME=	gdkpixbuf
 .endif
 
-.if defined(WITH_NONROOT)
+.if ${PORT_OPTIONS:MNONROOT}
 CONFIGURE_ARGS+=--enable-nonrootmode
 .else
 CONFIGURE_ARGS+=--disable-nonrootmode
@@ -64,7 +62,7 @@ post-patch:
 		${WRKSRC}/src/xtools.c
 
 pre-everything::
-.if defined(WITH_NONROOT)
+.if ${PORT_OPTIONS:MNONROOT}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Are you sure you want this? If not, hit Ctrl+C right now "
@@ -76,4 +74,4 @@ pre-everything::
 	sleep 5
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

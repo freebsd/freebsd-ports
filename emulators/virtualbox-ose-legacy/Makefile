@@ -23,16 +23,17 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild \
-		gtar:${PORTSDIR}/archivers/gtar
+		gtar:${PORTSDIR}/archivers/gtar \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy
+RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
 FETCH_ARGS=	-pRr
-USE_CDRTOOLS=	yes
 USE_GCC=	any
 USE_GNOME=	libidl
 USE_BZIP2=	yes

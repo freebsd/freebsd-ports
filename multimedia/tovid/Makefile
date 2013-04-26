@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tovid
-# Date created:		Mon Dec 26 20:00:42 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tovid
 PORTVERSION=	0.30
@@ -29,6 +25,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		vcdxbuild:${PORTSDIR}/multimedia/vcdimager \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		tcprobe:${PORTSDIR}/multimedia/transcode \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		sox:${PORTSDIR}/audio/sox \
 		normalize:${PORTSDIR}/audio/normalize \
 		bash:${PORTSDIR}/shells/bash \
@@ -40,7 +37,6 @@ WX_COMPS=	python
 NO_BUILD=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 

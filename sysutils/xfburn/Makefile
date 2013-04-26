@@ -14,7 +14,8 @@ COMMENT=	CD/DVD burning tool for Xfce
 
 LIB_DEPENDS=	burn:${PORTSDIR}/devel/libburn \
 		isofs:${PORTSDIR}/devel/libisofs
-RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=${PREFIX}/bin/msgfmt DATADIRNAME=share
@@ -24,7 +25,6 @@ USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_XFCE=	configenv libexo libgui
 USES=		pkgconfig
-USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 
 MAN1=		xfburn.1
