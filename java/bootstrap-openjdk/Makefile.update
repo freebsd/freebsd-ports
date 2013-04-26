@@ -3,7 +3,7 @@
 JDK_NAME?=	openjdk
 JDK_PORT?=	openjdk6
 JDK_ROOT?=	bootstrap-${JDK_NAME}
-TARGET_OS?=	7
+TARGET_OS?=	8
 
 .if !defined(PORTSDIR)
 .if exists(${.CURDIR}/../${JDK_PORT}/Makefile)
