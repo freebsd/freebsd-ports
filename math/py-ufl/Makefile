@@ -1,15 +1,12 @@
-# New ports collection makefile for:	py-ufl
-# Date created:				13 April 2012
-# Whom:					Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ufl
-PORTVERSION=	1.0.0
+PORTVERSION=	${MMVERSION}0
 CATEGORIES=	math python
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0.x/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${MMVERSION}.0/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${MMVERSION}.0
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unified Form Language for finite element discretizations
@@ -28,6 +25,8 @@ MAN1=		form2ufl.1 \
 		ufl-version.1 \
 		ufl2py.1
 MANCOMPRESSED=	yes
+
+MMVERSION=	1.2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\[(pjoin("share", "man", "man1"),|\[(pjoin("man", "man1"),|' \
