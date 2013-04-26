@@ -294,8 +294,9 @@ A_JAVA_PORT_VENDOR=			${A_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
 __JAVA_PORTS_INSTALLED+=	${A_JAVA_PORT}
 .endif
 
-# Because variables inside for loops are special (directly replaced as strings), we are allowed
-# to use them inside modifiers, where normally ${FOO:M${BAR}} is not allowed.
+# Because variables inside for loops are special (directly replaced as strings),
+# we are allowed to use them inside modifiers, where normally ${FOO:M${BAR}} is
+# not allowed.
 #
 .for ver in ${A_JAVA_PORT_VERSION}
 .for os in ${A_JAVA_PORT_OS}
