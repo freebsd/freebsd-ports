@@ -1,5 +1,6 @@
 bin/checkmk
 include/check.h
+include/check_stdint.h
 lib/libcheck.a
 lib/libcheck.la
 lib/libcheck.so
