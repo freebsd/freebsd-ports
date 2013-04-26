@@ -622,6 +622,7 @@ lib/tcllib/yaml/yaml.tcl
 lib/tcllib/zip/decode.tcl
 lib/tcllib/zip/encode.tcl
 lib/tcllib/zip/pkgIndex.tcl
+@dirrm lib/tcllib/zip
 @dirrm lib/tcllib/yaml
 @dirrm lib/tcllib/wip
 @dirrm lib/tcllib/virtchannel_transform
@@ -703,6 +704,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/grammar_fa
 @dirrm lib/tcllib/grammar_aycock
 @dirrm lib/tcllib/gpx
+@dirrm lib/tcllib/generator
 @dirrm lib/tcllib/fumagic
 @dirrm lib/tcllib/ftpd
 @dirrm lib/tcllib/ftp
@@ -723,6 +725,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/control
 @dirrm lib/tcllib/comm
 @dirrm lib/tcllib/cmdline
+@dirrm lib/tcllib/clock
 @dirrm lib/tcllib/cache
 @dirrm lib/tcllib/blowfish
 @dirrm lib/tcllib/bibtex
