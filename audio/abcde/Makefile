@@ -33,7 +33,7 @@ REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDDA2WAV}
-USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 .endif
 
 .if ${PORT_OPTIONS:MDAGRAB}

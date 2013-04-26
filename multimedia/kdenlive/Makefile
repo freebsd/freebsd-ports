@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kdenlive
-# Date created:				15 October 2008
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
+# Created by: Alberto Villa <villa.alberto@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	kdenlive
@@ -41,8 +38,8 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVDWIZARD}
-RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
-USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 .endif
 
 .if ${PORT_OPTIONS:MFREI0R}

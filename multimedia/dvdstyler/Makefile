@@ -25,7 +25,8 @@ RUN_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		zip:${PORTSDIR}/archivers/zip
+		zip:${PORTSDIR}/archivers/zip \
+		mkisofs:${PORTSDIR}/sysutils/cdrtools
 
 OPTIONS_DEFINE=	GNOME DOCS
 
@@ -35,7 +36,6 @@ USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
 USE_GNOME=	desktopfileutils
-USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}" \

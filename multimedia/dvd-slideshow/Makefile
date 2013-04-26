@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dvd-slideshow
-# Date created:				2005-02-16
-# Whom:					Phil Oleson <oz@nixil.net>
-#
+# Created by: Phil Oleson <oz@nixil.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.2
@@ -25,18 +21,17 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		jhead:${PORTSDIR}/graphics/jhead \
 		flvtool2:${PORTSDIR}/multimedia/ruby-flvtool2 \
-		${LOCALBASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
+		${LOCALBASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-2
 
 NO_BUILD=	yes
-USE_CDRTOOLS=	yes
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 
-OPTIONS=	LAME "Optional mp3 audio support" off \
-		THEMES "Optional themes" off \
-		TOOLAME "Faster Optional mp3 audio support" off \
-		VORBISTOOLS "Optional ogg vorbis audio support" off
+OPTIONS_DEFINE=	LAME THEMES TOOLAME VORBIS
+THEMES_DESC=	Optional themes
+TOOLAME_DESC=	Faster Optional mp3 audio support
 
 MAN1=		dvd-slideshow.1 \
 		dvd-menu.1 \
@@ -44,35 +39,25 @@ MAN1=		dvd-slideshow.1 \
 		gallery1-to-slideshow.1 \
 		jigl2slideshow.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if exists(${LOCALBASE}/bin/lame)
-WITH_LAME=yes
-.endif
-.if exists(${LOCALBASE}/bin/oggdec)
-WITH_VORBISTOOLS=yes
-.endif
-.if exists(${LOCALBASE}/bin/toolame)
-WITH_TOOLAME=yes
-.endif
-
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
-.if defined(WITH_VORBISTOOLS)
+.if ${PORT_OPTIONS:MVORBISTOOLS}
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
-.if defined(WITH_TOOLAME)
+.if ${PORT_OPTIONS:MTOOLAME}
 RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
 .endif
-.if defined(WITH_THEMES)
+.if ${PORT_OPTIONS:MTHEMES}
 DISTFILES+=	${PORTNAME}-themes-${THEMEVERSION}-1${EXTRACT_SUFX}:themes
 WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}-1
 PLIST_SUB+=	NOTHEMES=""
 .else
 PLIST_SUB+=	NOTHEMES="@comment "
 .endif
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=	NOPORTDOCS="@comment "
 .else
 PLIST_SUB+=	NOPORTDOCS=""
@@ -84,7 +69,7 @@ post-patch:
 			      s|/usr/share/fonts/|${LOCALBASE}/lib/X11/fonts/|g ; \
 			      s|seq |seq2 |g' \
 				 ${WRKSRC}/${FILE}
-.ifdef(WITH_THEMES)
+.if ${PORT_OPTIONS:MTHEMES}
 	@${REINPLACE_CMD} -e 's|/opt/dvd-slideshow/themes|${DATADIR}/themes|g' \
 				${WRKSRC}/${FILE}
 .endif
@@ -99,7 +84,7 @@ do-install:
 .for FILE in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/${FILE} ${PREFIX}/man/man1
 .endfor
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "Installing doc files."
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${DOCSDIR}
@@ -107,10 +92,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
-.ifdef(WITH_THEMES)
+.if ${PORT_OPTIONS:MTHEMES}
 	@${ECHO_MSG} "Installing theme files."
 	${MKDIR} ${DATADIR}/themes
 	cd ${WRKSRC2} && ${FIND} * | ${CPIO} -dpmu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

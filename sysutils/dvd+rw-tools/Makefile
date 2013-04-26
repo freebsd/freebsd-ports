@@ -1,7 +1,4 @@
-# New ports collection makefile for: dvd+rw-tools
-# Date created:        2003-6-15
-# Whom:                chuck@pkix.net
-#
+# Created by: chuck@pkix.net
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
@@ -13,7 +10,8 @@ MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD burning software
 
-USE_CDRTOOLS=	yes
+BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 # On some systems, among them one 900044 i386, the do-build-invoked
 # "make" will just do nothing for reasons not yet found, as of
 # dvd+rw-tools 7.1. It is supposed to call
@@ -28,6 +26,8 @@ BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-cont
 PLIST_FILES=	${BIN_FILES:S|^|bin/|}
 PORTDOCS=	index.html
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//' ${WRKSRC}/Makefile.m4
 
@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/index.html ${DOCSDIR}
 .endif

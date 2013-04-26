@@ -26,7 +26,8 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		rar:${PORTSDIR}/archivers/rar \
-		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
+		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 OPTIONS_DEFINE=	VORBIS SUBTITLE
 OPTIONS_DEFAULT=	VORBIS SUBTITLE
@@ -34,7 +35,6 @@ SUBTITLE_DESC=	Enable support for getting subtitles
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
-USE_CDRTOOLS=	yes
 USES=		gettext
 MAKE_JOBS_UNSAFE=	yes
 

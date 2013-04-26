@@ -1,9 +1,5 @@
-# New ports collection makefile for:    k3b
-# Date created:                         2003/02/13
-# Whom:                                 Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
@@ -14,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A CD/DVD recording GUI for KDE
 
-RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
@@ -28,21 +25,18 @@ CONFIGURE_ARGS=	--with-k3bsetup=no \
 			--without-musepack \
 			--without-musicbrainz
 USE_GMAKE=	yes
-USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
 USE_KDELIBS_VER=	3
 
-OPTIONS=	ALSA "Add audio/alsa-lib support" Off \
-		DVDPLUSRW "Add DVD+RW Tools (for DVD+/-R(W) burning)" On \
-		EMOVIX "Add eMovix (to burn bootable video CD)" Off \
-		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
-		FLAC "Add audio/flac decoder" On \
-		LAME "Add audio/lame encoder (for mp3 files)" On \
-		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
-		NORMALIZE "Add Normalize (adjust audio to a std. level)" Off \
-		SOX "Add SoX (more audio encoding formats)" Off \
-		TRANSCODE "Add Transcode (for DVD ripping)" Off \
-		VCDIMAGER "Add VCDImager (for Video CD burning)" Off
+OPTIONS_DEFINE=	ALSA DVDPLUSRW EMOVIX FFMPEG FLAC LAME LIBDVDREAD NORMALIZE SOX TRANSCODE VCDIMAGER
+OPTIONS_DEFAULT=	DVDPLUSRW FLAC LAME LIBDVDREAD
+DVDPLUSRW_DESC=	Add DVD+RW Tools (for DVD+/-R(W) burning)
+EMOVIX_DESC=	Add eMovix (to burn bootable video CD)
+LIBDVDREAD_DESC=	Use libdvdread (for video dvd ripping)
+NORMALIZE_DESC=	Add Normalize (adjust audio to a std. level)
+SOX_DESC=	Add SoX (more audio encoding formats)
+TRANSCODE_DESC=	Add Transcode (for DVD ripping)
+VCDIMAGER_DESC=	Add VCDImager (for Video CD burning)
 
 pre-configure:
 	${RM} ${WRKSRC}/admin/cvs.sh
@@ -55,7 +49,7 @@ post-install:
 showinfo:
 	more ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900044
 EXTRA_PATCHES=		${FILESDIR}/extra-patch-libk3bdevice-k3bscsicommandbsd.cpp
@@ -63,7 +57,7 @@ EXTRA_PATCHES=		${FILESDIR}/extra-patch-libk3bdevice-k3bscsicommandbsd.cpp
 
 PKGMESSAGE=	${PKGDIR}/pkg-message-7
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 PLIST_SUB+=	FLAC=""
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .else
@@ -71,7 +65,7 @@ PLIST_SUB+=	FLAC="@comment "
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 PLIST_SUB+=	LAME=""
 LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
 .else
@@ -79,7 +73,7 @@ PLIST_SUB+=	LAME="@comment "
 CONFIGURE_ARGS+=	--without-lame
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 PLIST_SUB+=	FFMPEG=""
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 .else
@@ -87,7 +81,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
-.if defined(WITH_LIBDVDREAD)
+.if ${PORT_OPTIONS:MLIBDVDREAD}
 PLIST_SUB+=	LIBDVDREAD=""
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 .else
@@ -95,31 +89,31 @@ PLIST_SUB+=	LIBDVDREAD="@comment "
 CONFIGURE_ARGS+=	--without-libdvdread
 .endif
 
-.if !defined (WITHOUT_DVDPLUSRW)
+.if ${PORT_OPTIONS:MDVDPLUSRW}
 RUN_DEPENDS+=	dvd+rw-format:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 
-.if defined (WITH_TRANSCODE)
+.if ${PORT_OPTIONS:MTRANSCODE}
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
-.if defined (WITH_EMOVIX)
+.if ${PORT_OPTIONS:MEMOVIX}
 RUN_DEPENDS+=	mkmovixiso:${PORTSDIR}/multimedia/emovix
 .endif
 
-.if defined (WITH_NORMALIZE)
+.if ${PORT_OPTIONS:MNORMALIZE}
 RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
 .endif
 
-.if defined (WITH_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-.if defined (WITH_VCDIMAGER)
+.if ${PORT_OPTIONS:MVCDIMAGER}
 RUN_DEPENDS+=	vcdxrip:${PORTSDIR}/multimedia/vcdimager
 .endif
 
-.if defined (WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 PLIST_SUB+=	ALSA=""
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--with-alsa
@@ -128,4 +122,4 @@ PLIST_SUB+=	ALSA="@comment "
 CONFIGURE_ARGS+=	--without-alsa
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

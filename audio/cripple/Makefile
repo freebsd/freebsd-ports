@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cripple
-# Date created:		2007-10-15
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cripple
 PORTVERSION=	0.06b
@@ -16,12 +12,12 @@ COMMENT=	Command line CD ripper/encoder wrapper with cddb support
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_CDRTOOLS=	yes
 MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame\
-		cdparanoia:${PORTSDIR}/audio/cdparanoia
+		cdparanoia:${PORTSDIR}/audio/cdparanoia \
+		cdda2wav:${PORTSDIR}/sysutils/cdrtools
 
 MAN1=		cripple.1
 

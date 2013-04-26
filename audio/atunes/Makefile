@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atunes
-# Date Created:		29 Dec 2007
-# Whom:			Lars Engels <lme@FreeBSD.org>
-#
+# Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	atunes
 PORTVERSION=	3.0.3
@@ -49,7 +45,7 @@ LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 .endif
 
 .if ${PORT_OPTIONS:MCDDA2WAV}
-USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 .endif
 
 .if ${PORT_OPTIONS:MLAME}

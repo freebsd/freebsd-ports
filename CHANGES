@@ -13,6 +13,7 @@ All ports committers are allowed to commit to this file.
 20130425:
 AUTHOR: bapt@FreeBSD.org
 
+  * USE_CDRTOOLS is no longer recognized
   * USE_FREETYPE is no longer recognized
 
 20130423:

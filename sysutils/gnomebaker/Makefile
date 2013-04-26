@@ -1,9 +1,5 @@
-# New ports collection makefile for: gnomebaker
-# Date created:        2005-02-20
-# Whom:                Dominique Goncalves <dominique.goncalves@gmail.com>
-#
+# Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		gnomebaker
 PORTVERSION=		0.6.4
@@ -15,10 +11,13 @@ DIST_SUBDIR=		gnome2
 MAINTAINER=		dominique.goncalves@gmail.com
 COMMENT=		A CD/DVD recording GUI for Gnome
 
-OPTIONS=		DVD "Enable DVD support" off
+OPTIONS_DEFINE=		DVD
+DVD_DESC=		DVD support
+
+RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao \
+			cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
-USE_CDRTOOLS=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
@@ -29,17 +28,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 
 ONLY_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	Coredump on amd64, see PR: ports/130972 
+NOT_FOR_ARCHS_REASON=	Coredump on amd64, see PR: ports/130972
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao
-
-.if defined(WITH_DVD)
+.if ${PORT_OPTIONS:MDVD}
 RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

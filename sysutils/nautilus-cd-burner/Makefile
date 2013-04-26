@@ -14,7 +14,8 @@ COMMENT=	CD burner view for Nautilus
 
 BUILD_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
 RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao
+		cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 CONFIGURE_ARGS=	--enable-gnome-mount
 USE_BZIP2=	yes
@@ -23,7 +24,6 @@ USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
 		desktopfileutils ltasneededhack eel2 libgnomeui
-USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

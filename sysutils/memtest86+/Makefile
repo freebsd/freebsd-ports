@@ -1,9 +1,5 @@
-# New ports collection makefile for:	memtest86+
-# Date created:				2009-03-10
-# Whom:					Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	memtest86+
 PORTVERSION=	4.20
@@ -24,38 +20,34 @@ PORTDOCS=	*
 # Please provide absolute path below (cannot be root)
 BOOT_DIR?=	/boot/opt
 
-OPTIONS=	ISO	"Build bootable ISO image"			off \
-		BOOT	"Build ELF image loadable by boot2 and loader"	on \
-		SERIAL	"Enable serial console at COM1/9600"		off \
-		HISPEED	"Set COM1 serial console speed to 115200"	off
+OPTIONS_DEFINE=	SERIAL HISPEED DOCS
+OPTIONS_DEFAULT=	BOOT
+OPTIONS_MULTI=	BOOT_TYPE
+OPTIONS_MULTI_BOOT_TYPE=	ISO BOOT
+ISO_DESC=	Build bootable ISO image
+BOOT_DESC=	Build ELF image loadable by boot2 and loader
+SERIAL_DESC=	Enable serial console at COM1/9600
+HISPEED_DESC=	Set COM1 serial console speed to 115200
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_ISO) && defined(WITHOUT_BOOT)
-IGNORE=		cannot be built: neither ISO nor BOOT selected
-.endif
-
-.if defined(WITH_BOOT)
+.if ${PORT_OPTIONS:MBOOT}
 SUB_FILES=	pkg-message
 SUB_LIST+=	BOOT_DIR=${BOOT_DIR}
 .endif
 
-.if defined(WITH_ISO)
-USE_CDRTOOLS=	yes
+.if ${PORT_OPTIONS:MISO}
+BUILD_DEPENDS+=	mkisofs:${PORTSDIR}/sysutils/cdrtools
 ALL_TARGET+=	iso
 .endif
 
-.if defined(WITH_SERIAL)
+.if ${PORT_OPTIONS:MSERIAL}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h
 
-.if defined(WITH_HISPEED)
+.if ${PORT_OPTIONS:MHISPEED}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h-115200
 .endif
 .endif	# WITH_SERIAL
-
-.if ${OSVERSION} < 700042
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
-.endif
 
 pre-fetch:
 .if !defined(PACKAGE_BUILDING)
@@ -71,36 +63,36 @@ PLIST=		${WRKDIR}/pkg-plist
 pre-install:
 # Generate PLIST dynamically because install things outside normal ${PREFIX}
 	@${TEST} -f ${PLIST} && ${RM} ${PLIST} || ${TRUE}
-.if defined(WITH_ISO)
+.if ${PORT_OPTIONS:MISO}
 	@${ECHO} "%%DATADIR%%/mt${PORTVERSION:C/\.//}.iso" >> ${PLIST}
 	@${ECHO} "@dirrm %%DATADIR%%" >> ${PLIST}
 .endif
-.if defined(WITH_BOOT)
+.if ${PORT_OPTIONS:MBOOT}
 	@${ECHO} "@cwd ${BOOT_DIR:H}" >> ${PLIST}
 	@${ECHO} "${BOOT_DIR:T}/memtest86+" >> ${PLIST}
 	@${ECHO} "@dirrm ${BOOT_DIR:T}" >> ${PLIST}
 .endif
 
 do-install:
-.if defined(WITH_ISO)
+.if ${PORT_OPTIONS:MISO}
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mt${PORTVERSION:C/\.//}.iso ${DATADIR}
 .endif
-.if defined(WITH_BOOT)
+.if ${PORT_OPTIONS:MBOOT}
 	@${MKDIR} ${BOOT_DIR}
 # XXX is INSTALL_KLD really appropriate here? XXX
 	${INSTALL_KLD} ${WRKSRC}/memtest ${BOOT_DIR}/memtest86+
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 post-install:
-.if defined(WITH_BOOT)
+.if ${PORT_OPTIONS:MBOOT}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
