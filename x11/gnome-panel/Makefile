@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.32.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra
 
-CONFLICTS=	gnome-panel-3.[0-9]* mate-panel-*
+CONFLICTS=	gnome-panel-3.[0-9]*
 
 USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xrandr
