@@ -4220,3 +4220,4 @@ x11-toolkits/tk83||2013-04-23|Has expired: No longer supported
 print/psutils-a4|print/psutils|2013-04-24|Merged into print/psutils
 print/psutils-letter|print/psutils|2013-04-24|Merged into print/psutils
 editors/tamago-emacs21||2013-04-24|Removed: obsolete
+devel/py-extended_threading||2013-04-26|Has expired: checksum mismatch; domain disappeared
