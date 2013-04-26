@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -21,9 +21,9 @@ USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
-USES=		pkgconfig
 USE_PERL5_BUILD=yes
 USE_XORG=	x11
+USES=		pkgconfig
 WANT_GNOME=	yes
 
 EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
