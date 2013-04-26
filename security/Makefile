@@ -160,7 +160,6 @@
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomint
     SUBDIR += gnupg
-    SUBDIR += gnupg-idea
     SUBDIR += gnupg1
     SUBDIR += gnutls
     SUBDIR += gnutls-devel
