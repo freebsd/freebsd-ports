@@ -20,11 +20,10 @@ RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 OPTIONS_DEFINE=	DOCS
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	desktopfileutils gtk20
 USE_PERL5_RUN=	yes
 USE_PYTHON=	run
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}

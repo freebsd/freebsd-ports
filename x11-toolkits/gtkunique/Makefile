@@ -13,10 +13,9 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Single instance application library
 
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
 USE_GNOME=	gtk20 ltverhack
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig gettext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -36,8 +36,7 @@ FLTK_DESC=	Build FLTK plugin and GUI
 CONFLICTS_INSTALL=	outguess-*
 
 USE_PYTHON=	2.6+
-USES=		bison
-USE_GETTEXT=	yes
+USES=		bison gettext
 USE_SCONS=	yes
 SCONS_BUILDENV=	PATH=${LOCALBASE}/bin:$$PATH
 SCONS_ARGS=	prefix="${PREFIX}" CC="${CC}" CXX="${CXX}" \

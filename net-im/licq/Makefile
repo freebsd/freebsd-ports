@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 

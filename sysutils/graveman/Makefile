@@ -15,10 +15,9 @@ LIB_DEPENDS=	mng:${PORTSDIR}/graphics/libmng
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gettext
 USE_GNOME=	libglade2 intlhack gnomeprefix
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -21,11 +21,10 @@ USE_BZIP2=	yes
 LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		popt:${PORTSDIR}/devel/popt
 
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

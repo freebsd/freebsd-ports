@@ -36,7 +36,7 @@ SSE_DESC=	use SSE instructions
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 LDFLAGS+=	-lintl
 .else

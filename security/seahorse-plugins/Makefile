@@ -16,9 +16,8 @@ LIB_DEPENDS=	cryptui:${PORTSDIR}/security/seahorse \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	intlhack gnomeprefix gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

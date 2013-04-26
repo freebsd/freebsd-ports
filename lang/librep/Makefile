@@ -23,8 +23,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 USE_CSTD=	gnu89
 
 USE_XZ=		yes
-USES=	pathfix
-USE_GETTEXT=	yes
+USES=	pathfix gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \

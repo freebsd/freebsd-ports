@@ -22,9 +22,8 @@ LIB_DEPENDS=	goffice-0.8:${PORTSDIR}/devel/goffice \
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gnomehier pygtk2 \
 		desktopfileutils libgsf
 USE_PYTHON=	yes

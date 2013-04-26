@@ -28,9 +28,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \

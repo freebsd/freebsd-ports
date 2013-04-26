@@ -22,12 +22,11 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 
 CONFLICTS=	brasero-3.[0-9]*
 
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	intlhack gnomeprefix gnomedocutils
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	gconf core

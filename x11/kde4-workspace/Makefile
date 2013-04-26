@@ -42,13 +42,12 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 
 CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.[0-6].*
 
-USE_GETTEXT=	yes
 USE_GL=		glu
 USE_GNOME=	glib20
 USE_ICONV=	yes
 USE_KDE4=	kactivities kdehier kdelibs kdeprefix oxygen pimlibs \
 		akonadi automoc4 ontologies qimageblitz soprano strigi
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig gettext
 USE_QT4=	corelib dbus declarative designer_build gui network \
 		opengl phonon qtestlib script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build

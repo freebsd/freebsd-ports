@@ -22,7 +22,6 @@ DOCVERSION=	1.1
 LIBVERSION=	1.0
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 #USE_GMAKE=	yes
 USE_GL=		yes
 USE_WX=		2.8
@@ -38,7 +37,7 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USES=		cmake
+USES=		cmake gettext
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_TESTING_VERSION=ON \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \

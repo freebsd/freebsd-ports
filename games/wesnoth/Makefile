@@ -90,7 +90,7 @@ CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
 
 .if ${PORT_OPTIONS:MNLS}
 CMAKE_ARGS+=	-DENABLE_NLS=on -DLOCALEDIR=${PREFIX}/share/locale
-USE_GETTEXT=	yes
+USES+=		gettext
 MANLANG=	"" cs de en_GB es et fi fr gl hu id it lt pl ru sk \
 		sr sr@ijekavian sr@ijekavianlatin sr@latin vi zh_CN zh_TW
 .if ${PORT_OPTIONS:MSERVER}

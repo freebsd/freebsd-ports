@@ -17,9 +17,8 @@ LIB_DEPENDS=	polkit:${PORTSDIR}/sysutils/policykit \
 		ck-connector:${PORTSDIR}/sysutils/consolekit
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	intlhack ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

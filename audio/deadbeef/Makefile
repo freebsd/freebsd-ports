@@ -18,8 +18,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GETTEXT=	yes
+USES=		pkgconfig gettext
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

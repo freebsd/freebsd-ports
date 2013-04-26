@@ -39,8 +39,7 @@ USE_GNOME=	gtksourceview2
 USE_DOS2UNIX=	*.hpp
 USE_GCC=	4.6+
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource gettext
 CMAKE_ARGS=	-DK3D_INTL_INCLUDE_DIRS:STRING="-I${LOCALBASE}/include" \
 		-DK3D_INTL_LIBS:STRING="-L${LOCALBASE}/lib -lintl" \
 		-DK3D_BUILD_CARVE_MODULE:BOOL=OFF \

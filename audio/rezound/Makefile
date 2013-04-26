@@ -86,7 +86,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 # NLS support is broken as of recent versions of libstdc++; rezound dies at
 # startup with "locale::facet::_S_create_c_locale name not valid" exception
 .if ${PORT_OPTIONS:MBROKEN_NLS}	# Enable only if you know what you're doing
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

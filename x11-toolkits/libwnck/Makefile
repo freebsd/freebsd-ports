@@ -19,10 +19,9 @@ USE_BZIP2=	yes
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
-USE_GETTEXT=	yes
 USE_XORG=	xres
 USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gettext
 USE_GNOME=	gtk20 ltverhack referencehack intlhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

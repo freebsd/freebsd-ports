@@ -31,7 +31,7 @@ MAN7=		xkeyboard-config.7
 
 .if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

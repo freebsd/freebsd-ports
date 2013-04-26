@@ -16,9 +16,8 @@ GLIB_SCHEMAS=	org.gnome.Nautilus.Sendto.gschema.xml
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	intlhack gnomeprefix nautilus2 gnomehack evolutiondataserver
-USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-plugins="${SENDTO_PLUGINS}"

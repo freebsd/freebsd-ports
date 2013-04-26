@@ -20,14 +20,13 @@ DATADIR=	${PREFIX}/share/cairo-dock
 
 ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xrender
 USE_DOS2UNIX=	YES
-USES=		cmake
+USES=		cmake gettext
 USE_GCC=	4.6+
 MAKE_JOBS_SAFE=	YES
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"

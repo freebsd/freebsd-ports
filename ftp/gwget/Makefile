@@ -20,8 +20,7 @@ EPIPHANY_DESC=	Epiphany extension
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	desktopfileutils gnomeprefix gtk20 gconf2 libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

@@ -11,10 +11,9 @@ MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_GNOME?=	gnomehack _glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \

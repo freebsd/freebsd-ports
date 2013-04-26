@@ -20,9 +20,8 @@ CONFLICTS=	devhelp-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_XORG=	x11
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	intlhack gnomeprefix libgnomeui libwnck
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

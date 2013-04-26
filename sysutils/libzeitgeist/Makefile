@@ -10,11 +10,10 @@ MASTER_SITES=	https://launchpadlibrarian.net/100152436/ \
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Zeitgeist client library
 
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gettext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 intltool intlhack
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

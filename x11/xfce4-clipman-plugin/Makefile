@@ -20,12 +20,11 @@ UNIQUE_DESC=	Enable Unique (single instance) support
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack glib20 desktopfileutils
 USE_XFCE=	configenv libexo libmenu libutil panel xfconf
 USE_XORG=	xtst
-USES=		pkgconfig
+USES=		pkgconfig gettext
 
 INSTALLS_ICONS=	yes
 

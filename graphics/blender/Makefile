@@ -166,7 +166,7 @@ USE_GNOME=	desktopfileutils
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 USE_ICONV=	yes
 CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=ON
 .else

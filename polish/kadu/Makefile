@@ -44,9 +44,8 @@ GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig gettext
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xdmcp xext xfixes xrender xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation

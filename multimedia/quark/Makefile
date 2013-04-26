@@ -15,9 +15,8 @@ LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gnomevfs2
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

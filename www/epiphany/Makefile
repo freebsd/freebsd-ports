@@ -27,10 +27,9 @@ CONFLICTS=	epiphany-3.[0-9]*
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack gnomedesktop desktopfileutils
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

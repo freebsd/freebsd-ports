@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 .if !defined(WITHOUT_NLS)
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

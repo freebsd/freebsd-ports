@@ -29,7 +29,7 @@ PLIST_SUB+=	SHLIB_VER=6.0.0 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DBUILD_po:BOOL=Off

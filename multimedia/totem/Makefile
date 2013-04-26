@@ -26,8 +26,7 @@ CONFLICTS=	totem-3.[0-9]*
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack desktopfileutils \
 		nautilus2 ltverhack pygtk2 gnomehier
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio

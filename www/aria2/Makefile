@@ -58,7 +58,7 @@ PLIST_DIRS=	%%DOCSDIR%%/xmlrpc \
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
-USE_GETTEXT=	yes
+USES+=		gettext
 LANGS=		en@boldquot en@quot fil kk oc zh_HK
 LANGS_MTREE=	ar bg bn ca da de el es fa fi fr he hr hu id it ja ko ms nb nl \
 		nn pl pt pt_BR ro ru sk sr sv th tr uk vi zh_CN zh_TW

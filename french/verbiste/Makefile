@@ -45,7 +45,7 @@ PLIST_SUB+=	HASGNOME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	HASGUI=""
 .else
 PLIST_SUB+=	HASGUI="@comment "

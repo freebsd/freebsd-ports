@@ -20,10 +20,9 @@ OPTIONS_DEFAULT=PERL PYTHON UNIQUE
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	desktopfileutils gconf2 gtk20 libxml2
 USE_GL=		glu
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc \

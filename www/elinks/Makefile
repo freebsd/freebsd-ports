@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--without-zlib
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls

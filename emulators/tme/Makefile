@@ -22,12 +22,11 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		xcb:${PORTSDIR}/x11/libxcb
 
-USES=		pkgconfig
+USES=		pkgconfig gettext
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ENV=	ac_cv_have_isinff=no
 CONFIGURE_ARGS=	--datadir=${WRKDIR}/tmproot --disable-warnings

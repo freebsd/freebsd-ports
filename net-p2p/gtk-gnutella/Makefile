@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=	-U d_gnutls
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=		gettext
 CONFIGURE_ARGS+=	-D d_nls
 PLIST_SUB+=		NLS=""
 .else

@@ -21,13 +21,12 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-USES=		cmake
+USES=		cmake gettext
 USE_SDL=	sdl image ttf
 USE_GL=		gl
 USE_OPENAL=	yes
 USE_LUA=	5.1
 MAKE_JOBS_SAFE=	yes
-USE_GETTEXT=	yes
 
 PORTDOCS=	*
 

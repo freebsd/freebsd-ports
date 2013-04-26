@@ -14,11 +14,10 @@ COMMENT=	Project management application for GNOME 2
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
 		libgsf desktopfileutils
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

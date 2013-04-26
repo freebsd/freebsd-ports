@@ -25,8 +25,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USES=		pathfix
+USES=		pathfix gettext
 USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
 		referencehack intlhack dconf
 USE_LDCONFIG=	yes

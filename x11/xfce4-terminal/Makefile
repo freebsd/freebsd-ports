@@ -32,7 +32,7 @@ MANLANG=	"" ar ca da de el es fr gl id it ja ko lt \
 .include  <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 .else

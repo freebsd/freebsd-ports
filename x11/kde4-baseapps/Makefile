@@ -15,12 +15,11 @@ LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 CONFLICTS=	kdebase-4.[0-6].* konq-plugins-4.[0-6].*
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
 		automoc4 soprano strigi nepomuk-core \
 		nepomuk-widgets kactivities
-USES=		cmake:outsource
+USES=		cmake:outsource gettext
 USE_QT4=	corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt

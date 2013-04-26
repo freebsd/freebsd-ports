@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 #PLIST_SUB+=	NLS="@comment "
 #.else
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl -liconv"
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 #.endif
 

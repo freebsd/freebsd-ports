@@ -16,14 +16,13 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
 USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
 USE_PERL5=	yes
 
-USES=		cmake
+USES=		cmake gettext
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DLUA_INCDIR:STRING="${LUA_INCDIR}" \
 		-DLUA_LIBDIR:STRING="${LUA_LIBDIR}" \

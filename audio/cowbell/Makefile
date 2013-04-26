@@ -12,12 +12,11 @@ COMMENT=	Elegant music organizer
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
-USES=        pathfix
+USES=        pathfix gettext
 USE_GNOME=	gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
