@@ -9,7 +9,21 @@
  or you will have serious security risk.
  
  .SH "Environment"
-@@ -246,13 +246,13 @@
+@@ -117,7 +117,7 @@
+ by clicking one of the words in the list.
+ .PP
+ The dictionary (list of words) file is \fB/usr/share/dict/words\fP by default,
+-but it can be changed by \fB-dict\fP option or \fBxvkbd.dictFile\fP resouce,
++but it can be changed by \fB\-dict\fP option or \fBxvkbd.dictFile\fP resouce,
+ or on the Property panel.
+ 
+ .SH "    Main Menu"
+@@ -242,17 +242,17 @@
+ \fICompletion Dictionary\fP
+ Set the filename to be used for word completion.
+ This setting take precedence over the `\fBxvkbd.dictFile\fP' resource
+-and the \fB-dict\fP option.
++and the \fB\-dict\fP option.
  
  .SH "    Options"
  \fIxvkbd\fP accept following command line options, in addition to
@@ -61,7 +75,7 @@
  Make labels on keys in the \fIxvkbd\fP window
  to be set independently for each of four shift states,
  not shifted, \fIShift\fP, \fIAltGr\fP and \fIShift\fP-\fIAltGr\fP.
-@@ -296,22 +296,22 @@
+@@ -296,27 +296,27 @@
  .sp 0.5
  Resource `\fBxvkbd.modalKeytop: true\fP' has the same function.
  .TP 4
@@ -86,12 +100,18 @@
  This can be set by \fBxvkbd.windowGeometry\fP resource
  (note that it is not \fBxvkbd.geometry\fP), too.
  .TP 4
+-.B "-no-resize"
++.B "\-no\-resize"
+   Disable resize of the \fIxvkbd\fP window.
+ .sp 0.5
+ Resource `\fBxvkbd.resizable: false\fP' has the same function.
+ .TP 4
 -.B "-no-repeat"
 +.B "\-no\-repeat"
  Do not auto-repeat even if key is depressed long time.
  .sp 0.5
  If auto-repeat is enabled (this is the default),
-@@ -323,31 +323,31 @@
+@@ -328,31 +328,31 @@
  .sp 0.5
  Resource `\fBxvkbd.autoRepeat: false\fP' has the same function.
  .TP 4
@@ -130,7 +150,7 @@
  .sp 0.5
  If this option is specified,
  \fIxvkbd\fP will not open its window
-@@ -394,22 +394,22 @@
+@@ -399,24 +399,24 @@
  .IP "    - " 6
  \fB\\m\fP\fIdigit\fP - simulate click of the specified mouse button
  .TP 4
@@ -151,16 +171,18 @@
 -Put \fIvalue\fP ms of delay for evey characters
 -when sending characters with \fB-text\fP or \fB-file\fP.
 +.BI "\-delay " value
-+Put \fIvalue\fP ms of delay for every character
++Put \fIvalue\fP ms of delay for evey character
 +when sending characters with \fB\-text\fP or \fB\-file\fP.
  Maybe this is useful when problem arises when characters are entered too fast.
+ .sp 0.5
+ Resource `\fBxvkbd.textDelay: \fP\fIvalue\fP' has the same function.
  .TP 4
 -.BI "-window " window
 +.BI "\-window " window
  Specify the ID 
  (hexadecimal value leaded with `\fB0x\fP', or decimal value),
  the name (instance name or class name) of the window,
-@@ -427,10 +427,10 @@
+@@ -434,10 +434,10 @@
  If there are two or more windows which have the name specified with this option,
  the window which was found first will be selected.
  .TP 4
@@ -173,7 +195,7 @@
  .sp 0.5
  If you want to set input focus to the widget \fBfoo.bar.zot\fP,
  you can write \fBzot\fP, \fBbar.zot\fP or \fBfoo.bar.zot\fP
-@@ -441,24 +441,24 @@
+@@ -448,24 +448,24 @@
  For example,
  .sp
  .in +4
@@ -185,12 +207,12 @@
  of a \fBxarchie\fP window.
  .TP 4
 -.BI "-remote-display " display
-+.BI "\-remote-display " display
++.BI "\-remote\-display " display
  Specify the display (in the meaning of the X Window System) to connect;
    see also \fIConnect to Remote Display...\fP.
    .TP 4
 -.B "-true-keypad"
-+.B "\-true-keypad"
++.B "\-true\-keypad"
  If this option is specified,
  \fIxvkbd\fP will attempt to use \fIkeysym\fPs such as 
  \fIXK_KP_1\fP instead of \fIXK_1\fP.
@@ -202,7 +224,7 @@
  Specify the default dictionary (list of words) file to be used for
  word completion.
  The `\fICompletion Dictionary\fP' filename
-@@ -468,7 +468,7 @@
+@@ -475,7 +475,7 @@
  .sp 0.5
  See also ``Making your own completion dictionary''.
  .TP 4
@@ -211,7 +233,7 @@
  Make \fIxvkbd\fP window can be minimized (iconified)
  even if no window manager is in use.
  When this feature is enabled,
-@@ -477,7 +477,7 @@
+@@ -484,7 +484,7 @@
  .sp 0.5
  Resource `\fBxvkbd.minimizable: true\fP' has the same function.
  .TP 4
@@ -220,7 +242,7 @@
  Disable invocation of external commands,
  including user assigned command and the online manual reader.
  Connection to another displays would also be disabled.
-@@ -485,25 +485,25 @@
+@@ -492,25 +492,25 @@
  .sp 0.5
  Resource `\fBxvkbd.secure: true\fP' has the same function.
  .TP 4
@@ -251,7 +273,21 @@
  to apply this for those four modifiers.
  Maybe this can be useful when attempting to decorate
  the mouse operations with the modifiers.
-@@ -527,89 +527,89 @@
+@@ -520,101 +520,101 @@
+ .sp 0.5
+ Resource `\fBxvkbd.positiveModifiers: \fP\fImodifiers...\fP' has the same function.
+ .TP 4
+-.B "-debug"
++.B "\-debug"
+ Make \fIxvkbd\fP to output debug information.
+ It also disables keyboard width adjustment,
+ to help adjusting key size when making keyboard layout file.
+ It also make \fIxvkbd\fP to accept signals SIGINT and SIGQUIT, which otherwise be ignored.
+ .TP 4
+-.B "-version"
++.B "\-version"
+ Output version information and exit.
+ 
  .SH "Screen Shot"
  .TP 4
  Default (US)
@@ -352,23 +388,23 @@
  .SH "Download"
  .TP 4
  \fILatest Official Release\fP
+-\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.4.tar.gz\fP
++\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.4.tar.gz\fP
+ .br
+ - source of version 3.4 (2013-03-31)
+ .TP 4
+ previous release
 -\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.3.tar.gz\fP
 +\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.3.tar.gz\fP
  .br
  - source of version 3.3 (2012-03-03)
- .TP 4
- previous release
+ .sp 0.5
 -http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.2.tar.gz
 +http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.2.tar.gz
  .br
  - source of version 3.2 (2010-03-14)
- .sp 0.5
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.1.tar.gz
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.1.tar.gz
- .br
- - source of version 3.1 (2010-01-17)
  .PP
-@@ -646,8 +646,8 @@
+@@ -651,8 +651,8 @@
  .IP "  o " 4
  set the filename to the \fB$XENVIRONMENT\fP environment variable, or
  .IP "  o " 4
@@ -379,7 +415,7 @@
  .IP "  o " 4
  put them in application default directory as \fBXVkbd\fP.
  .PP
-@@ -659,11 +659,11 @@
+@@ -664,11 +664,11 @@
  system's application default directory specified with
  \fB$XFILESEACHPATH\fP environment variable,
  or else the directory specified when compiling the X
@@ -393,7 +429,7 @@
  near top of the file.
  .PP
  \fIxvkbd\fP is distributed with some application default files,
-@@ -694,7 +694,7 @@
+@@ -699,7 +699,7 @@
  to display only the labels for the current shift state,
  instead of trying to always display all of them in the small keytop.
  .PP
@@ -401,8 +437,8 @@
 +See also \fBXVkbd\-small.ad\fP in the \fIxvkbd\fP distribution.
  
  .SH "    Removing Unwanted Keys"
- Keys on \fIxvkbd\fP window can be removed by setting its width to 1.
-@@ -765,12 +765,12 @@
+ Keys on \fIxvkbd\fP window can be removed by setting their width to 1.
+@@ -773,12 +773,12 @@
  In all of those resources, each keys are separated by spaces,
  and rows of keys are terminated with `\fB \\n\\\fP'
  (note that `\fB\\n\fP' must have space before it).
@@ -418,7 +454,7 @@
  will make \fIxvkbd\fP to use the German layout.
  For another method to activate those settings, please refer
  "How to Customize \fIxvkbd\fP" above.
-@@ -832,7 +832,7 @@
+@@ -840,7 +840,7 @@
  .IP "  o " 4
  If \fIAlt\fP or \fIMeta\fP is not defined as modifier,
  the key can't be used as modifier.
@@ -427,7 +463,7 @@
  .IP "  o " 4
  \fINum Lock\fP (and maybe other modifiers) on the physical keyboard
  may not work correctly when \fIxvkbd\fP is in use.
-@@ -843,10 +843,10 @@
+@@ -851,10 +851,10 @@
  http://homepage3.nifty.com/tsato/xvkbd/faq.html
  .TP 4
  Making your own completion dictionary
@@ -441,7 +477,7 @@
  .TP 4
  Note about how to send key events
  http://homepage3.nifty.com/tsato/xvkbd/events.html
-@@ -867,26 +867,26 @@
+@@ -875,26 +875,26 @@
  can be entered using dedicated key combinations.
  .IP "    - " 6
  Make keyboard layout not to be disturbed when
@@ -473,7 +509,7 @@
  .IP "    - " 6
  \fIxvkbd\fP can now send keys
  with \fIMode_switch\fP (\fIAltGr\fP) modifier,
-@@ -894,9 +894,9 @@
+@@ -902,9 +902,9 @@
  .IP "    - " 6
  \fIxvkbd\fP now support \fIAltGr\fP key
  so that German (and some other) keyboard layout can be used.
@@ -485,7 +521,7 @@
  in the distribution, which modifies keyboard layout
  and put some non-ASCII keys on the \fIxvkbd\fP window.
  .IP "    - " 6
-@@ -912,7 +912,7 @@
+@@ -920,7 +920,7 @@
  not shifted, \fIShift\fP, \fIAltGr\fP and \fIShift\fP-\fIAltGr\fP.
  (thanks, Jim)
  .IP "    - " 6
@@ -494,7 +530,7 @@
  .TP 4
  Version 1.2 (2001-02-18)
  .IP "    - " 6
-@@ -940,7 +940,7 @@
+@@ -948,7 +948,7 @@
  .TP 4
  Version 1.3 (2001-03-19)
  .IP "    - " 6
@@ -503,7 +539,7 @@
  (contributed from Marcel Portner)
  .IP "    - " 6
  \fIxvkbd\fP now catches MappingNotify event and reload the new mapping.
-@@ -990,7 +990,7 @@
+@@ -998,7 +998,7 @@
  .TP 4
  Version 1.6 (2001-11-10)
  .IP "    - " 6
@@ -512,7 +548,7 @@
  (thanks, Gregory)
  .IP "    - " 6
  New entry `\fIUse XTEST Extension?\fP' is added
-@@ -1009,7 +1009,7 @@
+@@ -1017,7 +1017,7 @@
  Show/hide of the keypad and funcion keys on the main window
  can now be toggled from the main menu.
  .IP "    - " 6
@@ -521,7 +557,7 @@
  (contributed from Jean-Pierre Demailly)
  .TP 4
  Version 2.1 (2002-01-27)
-@@ -1017,9 +1017,9 @@
+@@ -1025,9 +1025,9 @@
  When height of the \fIxvkbd\fP window is smaller than
  \fBXVkbd.modalThreshold\fP,
  \fIxvkbd\fP will now automatically switch the keytop
@@ -533,7 +569,7 @@
  would send wrong keys - this problem is now fixed.
  .IP "    - " 6
  Target \fBdistclean\fP in the \fBImakefile\fP is renamed
-@@ -1032,8 +1032,8 @@
+@@ -1040,8 +1040,8 @@
  String assigned to function keys can now be edited on a panel popped up via
  "\fIEdit Function Keys...\fP" in the main menu.
  .IP "    - " 6
@@ -544,7 +580,7 @@
  its standard input (stdin) to get the string to be sent.
  .IP "    - " 6
  In the previous release,
-@@ -1062,7 +1062,7 @@
+@@ -1070,7 +1070,7 @@
  United Kingdom
  and Latin-1.
  .IP "    - " 6
@@ -553,7 +589,7 @@
  - this problem is now fixed.
  .TP 4
  Version 2.4 (2002-10-02)
-@@ -1123,24 +1123,24 @@
+@@ -1131,24 +1131,24 @@
  .IP "    - " 6
  It is now possible to minimize (iconify) the main window
  even if no window manager is in use.
@@ -585,7 +621,7 @@
  and maybe useful when run \fIxvkbd\fP from a display manager.
  .TP 4
  Version 2.7a (2005-05-07)
-@@ -1156,17 +1156,17 @@
+@@ -1164,17 +1164,17 @@
  Reference to the target bitmap is changed from
  \fB/usr/X11R6/include/X11/bitmaps/target\fP to \fB/usr/include/X11/bitmaps/target\fP.
  .IP "    - " 6
@@ -607,7 +643,7 @@
  via \fB\\x\fP, \fB\\y\fP and \fB\\m\fP special sequences.
  .TP 4
  Version 3.0 (2008-05-05)
-@@ -1181,7 +1181,7 @@
+@@ -1189,7 +1189,7 @@
  .IP "    - " 6
  Changed the default setting for automatic click to OFF, which was set ON in the previous release in error and caused confusion.
  .IP "    - " 6
@@ -616,7 +652,7 @@
  .IP "    - " 6
  Up to 25x25 keys can now be supported both for the main keyboard and the keypad.
  .IP "    - " 6
-@@ -1189,7 +1189,7 @@
+@@ -1197,7 +1197,7 @@
  .IP "    - " 6
  Fixed errors in some keyboard layout files (Korean, Slovene, UK).
  .IP "    - " 6
@@ -625,3 +661,47 @@
  .TP 4
  Version 3.2 (2010-03-14)
  .IP "    - " 6
+@@ -1208,10 +1208,10 @@
+ `\fIAlways on Top\fP' will work rather better with window managers
+   which support extended window manager hint \fB_NET_WM_STATE_ABOVE\fP.
+ .IP "    - " 6
+-\fB-window\fP option can now find window which have title match with
++\fB\-window\fP option can now find window which have title match with
+   the specified string.
+ .IP "    - " 6
+-\fB-window\fP option now accept wildcard characters
++\fB\-window\fP option now accept wildcard characters
+   `\fB*\fP' and `\fB?\fP'.
+ .IP "    - " 6
+ Word completion dictionary file to be used with `\fIWord Completion...\fP'
+@@ -1220,18 +1220,18 @@
+ Only the words which have two or more characters will be appeared
+   in the word completion list.
+ .IP "    - " 6
+-New \fB-version\fP option to display version information.
++New \fB\-version\fP option to display version information.
+ .TP 4
+ Version 3.3 (2012-03-03)
+ .IP "    - " 6
+-\fB-text\fP can now accept \fB\\{\fP\fIkeysym\fP\fB}\fP
++\fB\-text\fP can now accept \fB\\{\fP\fIkeysym\fP\fB}\fP
+   so that the specified key can be processed in more primitive manner,
+   and so that modofier keys such as \fIControl_L\fP, \fIMeta_L\fP, etc.
+   can also be simulated.
+   Also, \fB\\{+\fP\fIkeysym\fP\fB}\fP and \fB\\{+\fP\fIkeysym\fP\fB}\fP
+   will now simulate press and release of the key, respectively.
+ .IP "    - " 6
+-New option \fB-remote-display\fP to make \fIxvkbd\fP connect to
++New option \fB\-remote-display\fP to make \fIxvkbd\fP connect to
+   the specified display when startup.
+ .IP "    - " 6
+ Bug fixed: \fBKP_0\fP now works.
+@@ -1247,7 +1247,7 @@
+ ISO_Left_Tab is assigned to the shifted position of the Tab key on the \fIxvkbd\fP window,
+ so that Shift-Tab can be simulated.
+ .IP "    - " 6
+-New option \fB-no-resize\fP to disable resize of \fIxvkbd\fP window.
++New option \fB\-no\-resize\fP to disable resize of \fIxvkbd\fP window.
+ 
+ .SH "Author"
+ \fIxvkbd\fP was written by Tom Sato,
