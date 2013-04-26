@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130426:
+AUTHOR: mva@FreeBSD.org
+
+  * USE_ICONV has been deprecated and converted into the iconv USE
+    feature
+
+    USES= iconv
+
 20130425:
 AUTHOR: bapt@FreeBSD.org
 
@@ -27,7 +35,6 @@ AUTHOR: jgh@FreeBSD.org
 
     It deprecates USE_GETTEXT which will be removed as soon as it is not
     used anymore
-
 
 20130422:
 AUTHOR: bdrewery@FreeBSD.org
