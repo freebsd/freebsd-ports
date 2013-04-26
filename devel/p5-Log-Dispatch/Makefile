@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.35
+PORTVERSION=	2.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	APACHELOG MIMELITE MAILSEND MAILSENDER MAILSENDMAIL DOCS
-OPTIONS_DEFAULT=	MAILSENDMAIL
+OPTIONS_DEFAULT=MAILSENDMAIL
 APACHELOG_DESC=		Apache::Log support
 MIMELITE_DESC=		MIME::Lite support
 MAILSEND_DESC=		Mail::Send support
@@ -29,6 +29,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Log::Dispatch.3 \
 		Log::Dispatch::ApacheLog.3 \
 		Log::Dispatch::Base.3 \
+		Log::Dispatch::Code.3 \
 		Log::Dispatch::Email.3 \
 		Log::Dispatch::Email::MIMELite.3 \
 		Log::Dispatch::Email::MailSend.3 \
@@ -68,8 +69,8 @@ RUN_DEPENDS+=	p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
