@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Plugin-Filter-Minify-CSS
-# Date created:		2011-09-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Filter-Minify-CSS
 PORTVERSION=	0.94
@@ -13,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CSS::Minifier filter for Template Toolkit
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CSS-Minifier>=0:${PORTSDIR}/textproc/p5-CSS-Minifier \
 		p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature \
@@ -24,10 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Template::Plugin::Filter::Minify::CSS.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500808
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.30:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
