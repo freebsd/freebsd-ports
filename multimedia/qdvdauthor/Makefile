@@ -69,7 +69,7 @@ MCTOOLAME_DESC=		Optional support for audio conversion
 .if ${PORT_OPTIONS:MNETPBM}
 RUN_DEPENDS+=	pngtopnm:${PORTSDIR}/graphics/netpbm
 .endif
-.if ${PROT_OPTIONS:MMJPEGTOOLS}
+.if ${PORT_OPTIONS:MMJPEGTOOLS}
 RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
 .if ${PORT_OPTIONS:MCDRTOOLS}
