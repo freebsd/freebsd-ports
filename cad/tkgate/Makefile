@@ -1,24 +1,19 @@
-# New ports collection makefile for:	tkgate
-# Date created:				28 May 1999
-# Whom:					Jeffery Hansen <hansen@cmu.edu>
-#
+# Created by: Jeffery Hansen <hansen@cmu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	tkgate
 PORTVERSION=	1.8.7
 PORTREVISION=	4
 CATEGORIES=	cad
-MASTER_SITES=	ftp://gadoid.ices.cmu.edu/pub/tkgate/ \
-		http://www.cs.earlham.edu/~charliep/courses/cs320/TkGate/ \
-		http://ark2.media.eng.hokudai.ac.jp/microprocessor/
+MASTER_SITES=	http://ark2.media.eng.hokudai.ac.jp/microprocessor/ \
+		http://www.info.kindai.ac.jp/LC/TkGate/ \
+		http://www.tkgate.org/downloads/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Tcl/Tk based digital circuit editor and simulator
+COMMENT=	Tcl/Tk based digital circuit editor and simulator
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11
 USE_TCL_BUILD=	yes
