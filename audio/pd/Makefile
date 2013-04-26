@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.44-2
+DISTVERSION=	0.44-3
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
-MASTER_SITES=	SF/pure-data/pure-data/${PORTVERSION} \
-		http://www-crca.ucsd.edu/~msp/Software/
+#MASTER_SITES=	SF/pure-data/pure-data/${PORTVERSION}
+MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 LICENSE=	BSD
 
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
+
 OPTIONS_DEFINE=	ALSA FFTW JACK DOCS
+OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		pkgconfig
+USES=		gettext pkgconfig
 USE_TK_WRAPPER=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
@@ -74,11 +77,7 @@ post-patch:
 		 /^libpddir/s|=.*|= $$(pkglibdir)| ; \
 		 s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e \
-		'/^pd_LDADD/s| =.*| = $$(LIBM)| ; \
-		 s| x_midi.c|| ; \
-		 s| s_midi.c|| ; \
-		 s| s_midi_alsa.c|| ; \
-		 s| s_midi_oss.c||g' ${WRKSRC}/src/Makefile.am
+		'/^pd_LDADD/s| =.*| = $$(LIBM)|' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|PD_BASEDIR/LICENSE|${DOCSDIR}/LICENSE|g ; \
 		 s|PD_BASEDIR/doc/1|${DOCSDIR}/1|g' \
