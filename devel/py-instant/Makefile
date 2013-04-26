@@ -1,14 +1,10 @@
-# New ports collection makefile for:	py-instant
-# Date created:		Jan. 04, 2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	instant
-PORTVERSION=	1.0.0
+PORTVERSION=	${MMVERSION}.0
 CATEGORIES=	devel python
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0.x/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwbacon@tds.net
@@ -27,6 +23,8 @@ FETCH_ARGS=	-F
 MAN1=		instant-clean.1 \
 		instant-showcache.1
 MANCOMPRESSED=	yes
+
+MMVERSION=	1.2
 
 post-patch:
 	@${REINPLACE_CMD} -e \
