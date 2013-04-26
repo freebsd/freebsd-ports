@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rhtvision
-# Date created:		18 June 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	rhtvision
 PORTVERSION=	2.1.0
@@ -22,13 +18,13 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xrender xmu sm xt ice
 PLIST_SUB+=	X11_ONLY=""
 CFLAGS+=	-I${LOCALBASE}/include
@@ -50,4 +46,4 @@ post-patch:
 		${WRKSRC}/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

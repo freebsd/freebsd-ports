@@ -43,7 +43,7 @@ DOCSDIR=	share/doc/geany-plugins
 
 .if ${PORTNAME} != "geany-plugins-l10n"
 . if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 . else
 CONFIGURE_ARGS+=	--disable-nls
 . endif

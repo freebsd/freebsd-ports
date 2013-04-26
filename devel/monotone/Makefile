@@ -1,9 +1,5 @@
-# New ports collection makefile for:   monotone
-# Date created:                05 Feb 2004
-# Whom:                        Mark A. Wicks <mwicks@kettering.edu>
-#
+# Created by: Mark A. Wicks <mwicks@kettering.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	monotone
 PORTVERSION=	1.0
@@ -61,28 +57,28 @@ MAN1=		mtn.1 \
 .endif
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64
 USE_GCC=	4.2+
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-.else
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES=	gettext
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
 		share/locale/fr/LC_MESSAGES/monotone.mo \
 		share/locale/it/LC_MESSAGES/monotone.mo \
 		share/locale/pt/LC_MESSAGES/monotone.mo \
 		share/locale/sv/LC_MESSAGES/monotone.mo
+.else
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/monotone.info*
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -Ee '/^install-(contrib|examples)-data:/{' -e 'n' -e 'd' -e '}' ${WRKSRC}/Makefile.in
 .endif
 .if defined(NO_INSTALL_MANPAGES)
@@ -99,10 +95,10 @@ post-patch:
 post-install:
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/contrib/monotone.zsh_completion ${PREFIX}/share/zsh/site-functions/_mtn
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} NEWS UPGRADE ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

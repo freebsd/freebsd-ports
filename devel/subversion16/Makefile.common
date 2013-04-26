@@ -1,7 +1,4 @@
-# New ports collection makefile for:	subversion
-# Date created:				10 September 2001
-# Whom:					rooneg@electricjellyfish.net
-#
+# Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
 PORTNAME=	subversion
@@ -43,7 +40,7 @@ OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be inclu
 .include "Makefile.inc"
 
 # Default is "on"
-.if !defined(WITHOUT_NEON)
+.if ${PORT_OPTIONS:MNEON}
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 PLIST_SUB+=	NEON=""
 .else
@@ -51,7 +48,7 @@ CONFIGURE_ARGS+=--without-neon
 PLIST_SUB+=	NEON="@comment "
 .endif
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
 PLIST_SUB+=	SASL=""
@@ -61,7 +58,7 @@ PLIST_SUB+=	SASL="@comment "
 .endif
 
 # Default is "on"
-.if !defined(WITHOUT_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	42+
 PLIST_SUB+=	BDB=""
 .else
@@ -69,14 +66,14 @@ CONFIGURE_ARGS+=--without-berkeley-db
 PLIST_SUB+=	BDB="@comment "
 .endif
 
-.if defined(WITH_MOD_DAV_SVN)
+.if ${PORT_OPTIONS:MMOD_DAV_SVN}
 WITH_APACHE=	yes
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
 SVNGROUP?=	www
 SVNUSER?=	www
-.if defined(WITH_MOD_DONTDOTHAT)
+.if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
 PLIST_SUB+=	MOD_DONTDOTHAT=""
 .else
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
@@ -108,14 +105,14 @@ APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
 
 CONFIGURE_ARGS+=  --with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 
-.if defined(WITH_SVNAUTHZ_VALIDATE)
+.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
 APR_INCLUDE_DIR!=	${APR_CONFIG} --includedir
 PLIST_SUB+=     SVNAUTHZ_VALIDATE=""
 .else
 PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
 .endif
 
-.if defined(WITH_SERF)
+.if ${PORT_OPTIONS:MSERF}
 LIB_DEPENDS+=	serf-1:${PORTSDIR}/www/serf
 CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
 PLIST_SUB+=	SERF=""
@@ -124,8 +121,8 @@ CONFIGURE_ARGS+=--without-serf
 PLIST_SUB+=	SERF="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB+=	WITHOUT_GETTEXT=""
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -136,19 +133,19 @@ PLIST_SUB+=	WITHOUT_GETTEXT="@comment "
 CFLAGS+=	-fpic -DPIC
 .endif
 
-.if defined(WITH_MAINTAINER_DEBUG)
+.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
 CONFIGURE_ARGS+=--enable-maintainer-mode --enable-debug
 CFLAGS+=	-g
 .endif
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-all-static
 PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
 .else
 PLIST_SUB+=	DYNAMIC_ENABLED=""
 .endif
 
-.if defined(WITH_GNOME_KEYRING)
+.if ${PORT_OPTIONS:MGNOME_KEYRING}
 LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 CONFIGURE_ARGS+=--with-gnome-keyring
 PLIST_SUB+=	GNOME_KEYRING=""
@@ -157,7 +154,7 @@ CONFIGURE_ARGS+=--without-gnome-keyring
 PLIST_SUB+=	GNOME_KEYRING="@comment "
 .endif
 
-.if defined(WITH_KDE_KWALLET)
+.if ${PORT_OPTIONS:MKDE_KWALLET}
 USE_KDE4=	kdelibs runtime
 CONFIGURE_ARGS+=--with-kwallet=${KDE4_PREFIX}
 PLIST_SUB+=	KDE_KWALLET=""

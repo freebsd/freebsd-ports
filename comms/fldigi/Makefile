@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 MAN1=		fldigi.1
 
-OPTIONS_DEFINE=	NATIVE_OPT FLARQ XMLRPC OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB
+OPTIONS_DEFINE=	NATIVE_OPT FLARQ XMLRPC OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS
 
 NATIVE_OPT_DESC=	Enable Native Optimizations
 FLARQ_DESC=		Compile flarq
@@ -94,13 +94,13 @@ LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 .else
 CONFIGURE_ARGS+=--without-hamlib
 .endif
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 # Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc

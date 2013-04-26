@@ -31,7 +31,7 @@ USB_DESC=	Build support for USB JTAG adapters
 FTDI_DESC=	Build support for FTDI-based USB JTAG adapters
 JEDEC_DESC=	Enable experimental JEDEC flash detection
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJEDEC}
 CONFIGURE_ARGS+=	--enable-jedec
@@ -52,7 +52,7 @@ LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -63,4 +63,4 @@ post-patch:
 # Suppress svn(1) binary detection
 	@${REINPLACE_CMD} -e 's|^SVN=.*|SVN=''|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

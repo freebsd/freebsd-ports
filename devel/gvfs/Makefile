@@ -16,10 +16,10 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
+USES=		gettext
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomehack gnomeprefix intlhack intltool
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
