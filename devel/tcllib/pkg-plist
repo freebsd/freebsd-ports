@@ -94,7 +94,6 @@ lib/tcllib/doctools/doctoc.tcl
 lib/tcllib/doctools/doctools.tcl
 lib/tcllib/doctools/mpformats/_common.tcl
 lib/tcllib/doctools/mpformats/_html.tcl
-lib/tcllib/doctools/mpformats/_html.tcl.orig
 lib/tcllib/doctools/mpformats/_idx_common.tcl
 lib/tcllib/doctools/mpformats/_nroff.tcl
 lib/tcllib/doctools/mpformats/_text.tcl
