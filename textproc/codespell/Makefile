@@ -1,12 +1,9 @@
-# New ports collection makefile for:	codespell
-# Date created:				6 August 2011
-# Whom:					Glen Barber <gjb@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	codespell
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
 		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
