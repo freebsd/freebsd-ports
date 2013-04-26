@@ -1,9 +1,5 @@
-# New ports collection makefile for:	guichan
-# Date created:				2005-10-03
-# Whom:					Tobias Gion <freebsd@gionet.de>
-#
+# Created by: Tobias Gion <freebsd@gionet.de>
 # $FreeBSD$
-#
 
 PORTNAME=	guichan
 PORTVERSION=	0.8.2
@@ -12,7 +8,7 @@ CATEGORIES=	devel games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A small, efficient C++ GUI library designed for games
+COMMENT=	Small, efficient C++ GUI library designed for games
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -23,13 +19,12 @@ USES=	pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	SDL	"Enable SDL support" On \
-		ALLEGRO	"Enable Allegro support" Off \
-		GL	"Enable OpenGL support" On
+OPTIONS_DEFINE=	SDL ALLEGRO OPENGL
+ALLEGRO_DESC=	Allegro support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl image
 CONFIGURE_ARGS+=--enable-sdl --enable-sdlimage
 PLIST_SUB+=	SDL=""
@@ -38,7 +33,7 @@ CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_ALLEGRO)
+.if ${PORT_OPTIONS:MALLEGRO}
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
 CONFIGURE_ARGS+=--enable-allegro
 PLIST_SUB+=	ALLEGRO=""
@@ -47,7 +42,7 @@ CONFIGURE_ARGS+=--disable-allegro
 PLIST_SUB+=	ALLEGRO="@comment "
 .endif
 
-.if !defined(WITHOUT_GL)
+.if ${PORT_OPTIONS:MGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-opengl
 PLIST_SUB+=	GL=""
@@ -56,4 +51,4 @@ CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	GL="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
