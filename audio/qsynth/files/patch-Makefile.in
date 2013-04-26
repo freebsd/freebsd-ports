@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2013-02-20 01:37:32.082725000 +0900
++++ Makefile.in	2013-04-19 19:57:44.000000000 +0900
+@@ -60,6 +60,7 @@
+ 	src/qsynthSetupForm.ui
+ 
+ translations_sources = \
++	src/translations/qsynth_cs.ts \
+ 	src/translations/qsynth_de.ts \
+ 	src/translations/qsynth_es.ts \
+ 	src/translations/qsynth_fr.ts \
+@@ -68,6 +69,7 @@
+ translations_targets = \
+ 	src/translations/qsynth_cs.qm \
+ 	src/translations/qsynth_de.qm \
++	src/translations/qsynth_es.qm \
+ 	src/translations/qsynth_fr.qm \
+ 	src/translations/qsynth_ru.qm
+ 
