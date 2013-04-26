@@ -42,7 +42,7 @@ GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
 
 OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC46
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPHOTO}
 LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
@@ -102,7 +102,7 @@ CMAKE_ARGS+=	-DBUILD_SLIDESHOW:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 .else
 CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
@@ -138,4 +138,4 @@ post-install:
 	@${REINPLACE_CMD} -e '/LC_MESSAGES/d' ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -44,7 +44,7 @@ QT4_DESC=		Use qt4 interface
 OPTIONS_DEFAULT=	GTK2
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 LAZARUS_ARCH=	i386
@@ -64,7 +64,7 @@ RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES+=	gettext
 
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
@@ -196,4 +196,4 @@ post-install:
 .include "${MASTERDIR}/Makefile.common"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

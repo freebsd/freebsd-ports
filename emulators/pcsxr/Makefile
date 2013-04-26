@@ -44,14 +44,14 @@ PORTDOCS=	ChangeLog README
 # accessed through libcdio (using cam(4) and pass(4))
 DEFAULT_DVD_DEVICE?=	/dev/cd0
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-dynarec=x86_64
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
@@ -78,4 +78,4 @@ post-install:
 .endif
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,6 @@
-# New ports collection makefile for:	ja-mutt
-# Date created:		4 Sep 2000
-# Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
-#
+# Created by: IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 # $FreeBSD$
-#
+
 # WITH_MUTT_CYRUS_SASL2:	if defined, 'Cyrus sasl' support.
 #
 
@@ -79,52 +76,49 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-OPTIONS=	MUTT_CYRUS_SASL2		"Enable SASL2 authentication"	off \
-		MUTT_IMAP_HEADER_CACHE		"Enable imap header cache"	off \
-		MUTT_IDN			"Enable idn support"		off \
-		MUTT_MAILDIR_HEADER_CACHE	"Enable maildir header cache"	off
+OPTIONS_DEFINE=	CYRUS_SASL2 IMAP_HEADER_CACHE IDN MAILDIR_HEADER_CACHE NLS
+CYRUS_SASL2_DESC=	SASL2 authentication
+IMAP_HEADER_CACHE_DESC=	imap header cache
+MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ! ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 .endif
-.if defined(WITH_MUTT_CYRUS_SASL2)
+.if ${PORT_OPTIONS:MCYRUS_SASL2}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
-.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-WITH_MUTT_IMAP_HEADER_CACHE=	yes
+.if ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
+PORT_OPTIONS+=	MAILDIR_HEADER_CACHE
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+.if ${PORT_OPTIONS:MIMAP_HEADER_CACHE}
 USE_BDB=	42+
 .endif
-.if exists(${LOCALBASE}/lib/libidn.so) && !defined(WITHOUT_MUTT_IDN)
-WITH_MUTT_IDN=	yes
-.endif
-.if defined(WITH_MUTT_IDN)
+.if ${PORT_OPTIONS:MIDN}
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 .endif
 
-.if defined(WITH_MUTT_CYRUS_SASL2)
+.if ${PORT_OPTIONS:MCYRUS_SASL2}
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
 .endif
-.if defined(WITH_MUTT_IDN)
+.if ${PORT_OPTIONS:MIDN}
 CONFIGURE_ARGS+=	--with-idn
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+.if ${PORT_OPTIONS:MIMAP_HEADER_CACHE}
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 .else
 CONFIGURE_ARGS+=	--disable-hcache
 .endif
-.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+.if ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
@@ -133,7 +127,7 @@ MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1 smime_keys.1
 MAN5=		muttrc.5 mbox.5 mmdf.5
 
 pre-configure:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
 	(cd ${WRKSRC}; ${ACLOCAL} -I m4; ${AUTOHEADER})
@@ -146,7 +140,7 @@ post-configure:
 		s|^(s%\@AUTOHEADER\@%).+(%g)|\1${AUTOHEADER}\2|" \
 		${BUILD_WRKSRC}/config.status
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
 	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja ${DOCSDIR}
@@ -165,4 +159,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/manual.ja.sgml ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

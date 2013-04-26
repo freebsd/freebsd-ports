@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pavuk
-# Date created:				19 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	pavuk
 PORTVERSION=	0.9.35
@@ -27,15 +23,17 @@ MAN1=		pavuk.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20}!=""
 PKGNAMESUFFIX=	-gtk
@@ -63,7 +61,7 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in AUTHORS BUGS CREDITS ChangeLog COPYING MAILINGLIST NEWS \
 	README TODO wget-pavuk.HOWTO

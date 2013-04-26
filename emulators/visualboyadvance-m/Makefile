@@ -1,9 +1,5 @@
-# New ports collection makefile for:    visualboyadvance-m
-# Date created:         2010-01-02
-# Whom:                 Nicole Reid <root@cooltrainer.org>
-#
+# Created by: Nicole Reid <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
@@ -18,8 +14,10 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		sfml-system.1:${PORTSDIR}/devel/sfml
 
-OPTIONS=	GVBAM "Build gvbam (GTK2 frontend)" on \
-		ASM "Enable ASM core and filters (i386 only)" off
+OPTIONS_DEFINE=	GVBAM NLS
+OPTIONS_DEFAULT=	GVBAM
+OPTIONS_DEFINE_i386=	ASM
+GVBAM_DESC=	Build gvbam (GTK2 frontend)
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
@@ -32,14 +30,14 @@ USES=		cmake
 CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" -DSYSCONFDIR:STRING="${PREFIX}/etc"
 SVN_REV=	1001
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ASM) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
 CMAKE_ARGS+=	-DENABLE_ASM_CORE:BOOL=yes -DENABLE_ASM_SCALERS:BOOL=yes
 .endif
 
-.if defined(WITH_GVBAM)
+.if ${PORT_OPTIONS:MGVBAM}
 PLIST_SUB+=	GVBAM=""
 USE_GNOME=	gtk20
 LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
@@ -52,8 +50,8 @@ PLIST_SUB+=	GVBAM="@comment "
 CMAKE_ARGS+=	-DENABLE_GTK:BOOL=no
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=yes
 PLIST_SUB+=	NLS=""
 .else
@@ -80,4 +78,4 @@ maint-gen-distfile:
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 	${RM} -rf ${DISTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

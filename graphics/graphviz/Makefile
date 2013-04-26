@@ -94,8 +94,6 @@ NVTHREADS_DESC=	Link with threads (needed for nvidia)
 USE_QT4=		qmake_build moc_build rcc_build uic_build linguist_build corelib gui
 .endif
 
-.include <bsd.port.pre.mk>
-
 # allow the use localized gd ports in Makefile.local or slave ports.
 GD_PORT?=	graphics/gd
 
@@ -152,7 +150,7 @@ PLIST_SUB+=		WITH_XPM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=	gettext
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
@@ -481,4 +479,4 @@ post-install: install-ldconfig-file
 		${EXAMPLESDIR}/pathplan_data/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

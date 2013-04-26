@@ -1,9 +1,5 @@
-# New ports collection makefile for:	proftpd
-# Date created:		26 January 1998
-# Whom:			Stephane Legrand
-#
+# Created by: Stephane Legrand
 # $FreeBSD$
-#
 
 PORTNAME?=	proftpd
 PORTVERSION?=	1.3.4c
@@ -100,7 +96,7 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(USE_OPENSSL)
 CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
@@ -163,7 +159,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
-USE_GETTEXT=yes
+USES+=	gettext
 PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
 .else
@@ -270,4 +266,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

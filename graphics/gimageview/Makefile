@@ -31,14 +31,14 @@ USE_XORG=	xinerama ice
 CONFIGURE_ARGS=	--with-gtk2
 CFLAGS+=	-DUSE_GTK2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MSPLASH)
+.if ! ${PORT_OPTIONS:MSPLASH}
 CONFIGURE_ARGS+=	--disable-splash
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -113,4 +113,4 @@ post-configure:
 		's/^(GDK_IMLIB_(CFLAGS|LIBS) =).*$$/$${1}/'
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

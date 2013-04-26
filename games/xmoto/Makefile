@@ -47,11 +47,7 @@ DESKTOP_ENTRIES="XMoto" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800067
-BROKEN=		does not compile due to missing getline()
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASIAN_TTF}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
@@ -61,7 +57,7 @@ CONFIGURE_ARGS+=--without-asian-ttf-file
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 CONFIGURE_ENV+=	LIBS="-lintl"
 .else
@@ -77,4 +73,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

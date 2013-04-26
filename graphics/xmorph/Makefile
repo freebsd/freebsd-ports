@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xmorph
-# Date created:         Thu Aug  1 09:10:22 CDT 1996
-# Whom:                 erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xmorph
 PORTVERSION=	2006.08.17
@@ -32,6 +28,16 @@ USE_LDCONFIG=	yes
 MAN1=		gtkmorph.1 xmorph.1
 INFO=		xmorph
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20}!=""
@@ -41,14 +47,6 @@ CONFIGURE_ARGS+=	--with-gtk=2
 CONFIGURE_ARGS+=	--without-gtkmorph
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -56,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^LDFLAGS=|#LDFLAGS=|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}

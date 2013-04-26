@@ -7,9 +7,8 @@ DIST_SUBDIR=	KDE/calligra-l10n
 
 CONFLICTS=	${PKGNAMEPREFIX}koffice-l10n-2.*
 
-USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	xml moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake gettext
 .endif
