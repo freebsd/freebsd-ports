@@ -1,9 +1,5 @@
-# New ports collection makefile for:	winefish
-# Date created:		2005-09-09
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	winefish
 DISTVERSION=	1.3.3
@@ -32,27 +28,28 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui desktopfileutils gnomehier
 
-OPTIONS=	CONTEXT	"Enable ConTexT support (Experimental)"	off \
-		VNTEX	"Vietnamese TeX user"	off \
-		UNIKEY_GTK	"Vietname Tex user with UnikeyGTK input method"	off
+OPTIONS_DEFINE=	CONTEXT VNTEX UNIKEY_GTK NLS DOCS
+CONTEXT_DESC=		ConTexT support (Experimental)
+VNTEX_DESC=		Vietnamese TeX user
+UNIKEY_GTK_DESC=	Vietname Tex user with UnikeyGTK input method
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined (WITH_CONTEXT)
+.if ${PORT_OPTIONS:MCONTEXT}
 CONFIGURE_ARGS+=	--with-context
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB=	IFNLS=
 # vietnamese support
-.if defined (WITH_UNIKEY_GTK) && !defined (WITH_VNTEX)
-WITH_VNTEX=true
+.if ${PORT_OPTIONS:MUNIKEY_GTK} && !${PORT_OPTIONS:MVNTEX}
+PORT_OPTIONS+=	VNTEX
 .endif
 
-.if defined (WITH_VNTEX)
+.if ${PORT_OPTIONS:MVNTEX}
 CONFIGURE_ARGS+=	--with-vntex
-.if defined (WITH_UNIKEY_GTK)
+.if ${PORT_OPTIONS:MUNIKEY_GTK}
 CONFIGURE_ARGS+=	--with-unikey-gtk
 .endif
 .endif
@@ -63,9 +60,9 @@ PLIST_SUB=	IFNLS="@comment "
 
 post-install:
 	-@update-desktop-database
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${RM} ${DOCSDIR}/${PORTNAME}.html
 	${RMDIR} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

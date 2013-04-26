@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ninix-aya
-# Date created:				6 Dec 2003
-# Whom:					UMENO Takashi
-#
+# Created by: UMENO Takashi
 # $FreeBSD$
-#
 
 PORTNAME=	ninix-aya
 PORTVERSION=	4.3.9
@@ -29,14 +25,14 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/ninix
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -48,13 +44,13 @@ post-patch:
 		-e 's,lib/ninix,libexec/ninix,'	\
 		-e 's,/doc,/share/doc/ninix,' \
 		${WRKSRC}/Makefile
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/docdir)$$/d' \
 		${WRKSRC}/Makefile
 .endif
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/localedir/d' \
 		${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

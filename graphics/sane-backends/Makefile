@@ -50,14 +50,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include "Makefile.man"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MUSB)
+.if ! ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=	gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-translations
@@ -125,4 +125,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

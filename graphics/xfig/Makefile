@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfig
-# Date created:		4 January 1995
-# Whom:			roberto
-#
+# Created by: roberto
 # $FreeBSD$
-#
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5b
@@ -36,23 +32,24 @@ MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
 		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
 		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	GHOSTSCRIPT I18N DOCS
+OPTIONS_DEFAULT=	GHOSTSCRIPT I18N
+I18N_DESC=	I18N support and Japanese docs
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install.libs install.html
 .endif
 
-OPTIONS=	GHOSTSCRIPT "Ghostscript support" on \
-		I18N "I18N support and Japanese docs" on
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_I18N) || defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MI18N} || ! ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=	JPORTDOCS="@comment "
 .else
 PLIST_SUB=	JPORTDOCS=""
 .endif
 
-.if !defined(WITHOUT_I18N)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MI18N}
+USES+=	gettext
 .endif
 
 post-extract:
@@ -64,15 +61,15 @@ post-extract:
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
 
 post-patch:
-.if defined(WITHOUT_GHOSTSCRIPT)
-.if defined(WITHOUT_I18N)
+.if ! ${PORT_OPTIONS:MGHOSTSCRIPT}
+.if ! ${PORT_OPTIONS:MI18N}
 	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .else
 	@${REINPLACE_CMD} -e '/^XCOMM #define I18N/s|XCOMM ||' \
 		-e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
-.elif !defined(WITHOUT_I18N)
+.elif ${PORT_OPTIONS:MI18N}
 	@${REINPLACE_CMD} -e '/^XCOMM #define I18N/s|XCOMM ||' ${WRKSRC}/Imakefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

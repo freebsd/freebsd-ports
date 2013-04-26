@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mednafen
-# Date created:		2006-02-28
-# Whom:			Charlie & <root@bsd.org.pe>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mednafen
 PORTVERSION=	0.8.B
@@ -30,17 +25,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 WRKSRC=	${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS=	NLS	"Native Language Support"	on
+OPTIONS_DEFINE=	NLS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${ARCH}==sparc64
@@ -53,10 +48,10 @@ pre-configure:
 			${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Documentation/mednafen.html ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

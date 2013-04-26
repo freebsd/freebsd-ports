@@ -33,19 +33,18 @@ DATE_VERSION=	2010-06-30
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	DEBUG	"Additional debug information"	off \
-		NLS	"Internationalization support "	on
+OPTIONS_DEFINE=	DEBUG NLS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 SCONS_ARGS+=	release=0
 .else
 SCONS_ARGS+=	release=1
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
 PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .else
@@ -74,7 +73,7 @@ do-install:
 		${FIND} * -type f -name "*.po" -exec ${INSTALL_DATA} "{}" "${DATADIR}/po/{}" \;
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for FILE in docs/AUTHORS docs/README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -84,4 +83,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
