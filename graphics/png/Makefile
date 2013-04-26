@@ -12,6 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKE_JOBS_SAFE=	yes
+PORTSCOUT=	limit:^1\.5\.
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

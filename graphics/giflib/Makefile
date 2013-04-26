@@ -12,6 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
 CONFLICTS=	libungif-[0-9]*
+PORTSCOUT=	limit:^4\.
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
