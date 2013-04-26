@@ -10,7 +10,7 @@ PORTVERSION=	0.2010.05.30
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
-		http://www.glenbarber.us/ports/net/${PORTNAME}/
+		https://www.glenbarber.us/ports/net/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A free lightweight bittorrent tracker using libowfat
