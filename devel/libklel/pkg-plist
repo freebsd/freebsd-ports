@@ -1,0 +1,7 @@
+bin/klel-expr
+include/klel-pstdint.h
+include/klel.h
+lib/libklel.a
+lib/libklel.la
+lib/libklel.so
+lib/libklel.so.2

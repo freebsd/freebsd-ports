@@ -1013,6 +1013,7 @@
     SUBDIR += libjson++
     SUBDIR += libk8055
     SUBDIR += libkgapi
+    SUBDIR += libklel
     SUBDIR += libkolab
     SUBDIR += liblangtag
     SUBDIR += liblas
