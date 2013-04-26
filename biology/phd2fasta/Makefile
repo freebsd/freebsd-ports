@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phd2fasta
-# Date created:		6 December 2007
-# Whom:			Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	phd2fasta
 PORTVERSION=	0.990622.f
@@ -33,7 +29,7 @@ PORTDOCS=	PHD2FASTA.DOC
 
 .for f in ${DISTFILES}
 .if !exists(${DISTDIR}/${f})
-IGNORE=	you must request the source code \(${f}\) via e-mail, place it manually in ${DISTDIR}, and then try it again
+IGNORE=	you must request the source code (${f}) via e-mail, place it manually in ${DISTDIR}, and then try it again
 .endif
 .endfor
 
