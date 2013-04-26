@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		pathfix
 GNU_CONFIGURE=	yes
-USE_SLD=	yes
 USE_LDCONFIG=	yes
 #MAKE_JOBS_SAFE=	yes
 
