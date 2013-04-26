@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-darwinia
-# Date created:				24 May 2007
-# Whom:					Marcus von Appen <mva@sysfault.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	darwinia-demo
 PORTVERSION=	1.3.0
@@ -26,11 +21,12 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	darwinia
 
-OPTIONS=	NVIDIA	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA DOCS
+NVIDIA_DESC=	Enable nvidia graphics driver support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NVIDIA)
+.if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
@@ -51,7 +47,7 @@ do-install:
 		${INSTALL_PROGRAM} darwinia.bin.x86 ${DATADIR} && \
 		${INSTALL_DATA} *.dat open-www.sh ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/darwinia ${PREFIX}/bin/${PKGNAMEPREFIX}darwinia
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/LICENSE
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
@@ -60,4 +56,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

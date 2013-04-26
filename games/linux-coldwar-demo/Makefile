@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-coldwar-demo
-# Date created:		2009-01-31
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	coldwar-demo
 PORTVERSION=	1.1
@@ -26,11 +21,12 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	coldwar
 PORTDOCS=	README README.licenses EULA
 
-OPTIONS=	NVIDIA	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA DOCS
+NVIDIA_DESC=	Enable nvidia graphics driver support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NVIDIA)
+.if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
@@ -61,9 +57,9 @@ do-install:
 	@${CP} -R ${WRKSRC}/data/config ${DATADIR}/
 	@${CP} -R ${WRKSRC}/data/data ${DATADIR}/
 	@${INSTALL_PROGRAM} ${WRKDIR}/coldwar ${PREFIX}/bin/${PKGNAMEPREFIX}coldwar
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
