@@ -17,7 +17,7 @@ COMMENT=	Ruby bindings for wxWindows (aka wxWidgets)
 DEPRECATED=	Does not work with Ruby 1.9
 EXPIRATION_DATE=	2013-05-02
 
-USE_ICONV=	yes
+USES=		iconv
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_WX=		2.4

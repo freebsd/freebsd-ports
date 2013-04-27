@@ -14,7 +14,7 @@ LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ICONV=	yes
+USES=		iconv
 PLIST_FILES=	bin/obexapp
 MAKE_JOBS_SAFE=	yes
 

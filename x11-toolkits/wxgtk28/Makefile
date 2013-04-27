@@ -17,12 +17,12 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		tiff.4:${PORTSDIR}/graphics/tiff\
 		expat.6:${PORTSDIR}/textproc/expat2
 
+USES=		iconv
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama 
 USE_GL=		glu
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_ICONV=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\

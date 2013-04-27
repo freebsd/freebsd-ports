@@ -22,9 +22,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
+USES=		iconv
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

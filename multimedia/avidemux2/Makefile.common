@@ -23,9 +23,8 @@ USE_GNOME=	libxml2
 USE_QT4=	# empty
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
 WANT_SDL=	yes
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig iconv
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
 MAKE_JOBS_UNSAFE=	yes

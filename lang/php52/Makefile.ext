@@ -136,7 +136,7 @@ CONFIGURE_ARGS+=--enable-hash
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
 
-USE_ICONV=	yes
+USES+=		iconv
 .endif
 
 .if ${PHP_MODNAME} == "imap"
@@ -481,7 +481,7 @@ CONFIGURE_ARGS+=--with-xmlrpc \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
 
-USE_ICONV=	yes
+USES+=		iconv
 USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc

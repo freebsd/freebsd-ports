@@ -12,8 +12,7 @@ COMMENT=	Data exchange utility for Siemens mobile phones
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
