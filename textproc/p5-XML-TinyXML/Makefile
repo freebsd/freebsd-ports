@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	info@rickvanderzwet.nl
 COMMENT=	Little and efficient Perl module to manage xml data
 
-USE_ICONV=	yes
+USEs=		iconv
 
 MAKE_ARGS+=	LIBS='-L${LOCALBASE}/lib' INC='-I. -I${LOCALBASE}/include'
 PERL_CONFIGURE=	yes

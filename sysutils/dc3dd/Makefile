@@ -14,8 +14,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dd program useful for computer forensics
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"

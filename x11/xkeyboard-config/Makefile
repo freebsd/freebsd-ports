@@ -30,8 +30,7 @@ MAN7=		xkeyboard-config.7
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_ICONV=	yes
-USES+=		gettext
+USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

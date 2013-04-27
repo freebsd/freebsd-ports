@@ -39,7 +39,7 @@ PORTEXAMPLES=	omega.conf
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=--with-iconv
 .else
 CONFIGURE_ARGS+=--without-iconv

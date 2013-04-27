@@ -11,11 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly command line shell
 
 USE_AUTOTOOLS=	autoconf
-USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-USES=		gettext
+USES=		gettext iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LIBS="${LDFLAGS}"

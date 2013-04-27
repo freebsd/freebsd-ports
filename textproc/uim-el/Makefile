@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	intltool
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
 

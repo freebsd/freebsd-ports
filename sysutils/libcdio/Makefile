@@ -22,9 +22,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		pathfix pkgconfig iconv
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \

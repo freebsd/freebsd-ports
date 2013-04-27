@@ -13,9 +13,8 @@ COMMENT=	Suite of tools used to connect and sync your Palm handled
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig iconv
 USE_BZIP2=	yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits --enable-xsltproc

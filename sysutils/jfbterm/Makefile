@@ -62,7 +62,7 @@ MAKE_ENV+=	WITHOUT_ICONV=
 .if !exists(/usr/include/iconv.h)
 . if ${PORT_OPTIONS:MICONV}
 .  if !defined(NO_SHARED)
-USE_ICONV=	yes
+USES+=		iconv
 .  else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libiconv.a:${PORTSDIR}/converters/libiconv
 .  endif

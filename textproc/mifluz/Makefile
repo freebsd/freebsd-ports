@@ -12,8 +12,7 @@ COMMENT=	C++ library to build and query a full text inverted index
 LICENSE=	GPLv3
 
 USE_GCC=	any
-USES=		bison pathfix
-USE_ICONV=	yes
+USES=		bison pathfix iconv
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-unac
 USE_LDCONFIG=	yes

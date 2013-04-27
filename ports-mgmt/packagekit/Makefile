@@ -22,10 +22,9 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_GNOME=	glib20 intltool gnomehier
 USE_SQLITE=	3
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	2.5+
 GNU_CONFIGURE=	yes

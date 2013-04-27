@@ -29,8 +29,7 @@ RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_QT_VER=	4

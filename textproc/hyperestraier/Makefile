@@ -18,7 +18,7 @@ BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm
 # check configure for min version of qdbm.
 LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
 
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib

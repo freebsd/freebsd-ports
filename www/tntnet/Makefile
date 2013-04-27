@@ -17,7 +17,7 @@ COMMENT=	Webapplicationserver for C++
 LIB_DEPENDS=	cxxtools:${PORTSDIR}/devel/cxxtools
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 
-USE_ICONV=	yes
+USES=		iconv
 USE_CSTD=	gnu89
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes

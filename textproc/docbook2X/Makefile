@@ -29,7 +29,7 @@ CONFLICTS=	docbook-utils-*
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in

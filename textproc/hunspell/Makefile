@@ -17,8 +17,7 @@ LICENSE_COMB=	dual
 CONFIGURE_ARGS=	--disable-nls --with-libiconv-prefix=${LOCALBASE} --with-readline --with-ui
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USES=	pathfix
-USE_ICONV=	yes
+USES=		pathfix iconv
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
 

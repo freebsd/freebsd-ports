@@ -29,9 +29,8 @@ OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA DOCS
 CONFLICTS=	xqilla-[0-9]*
 
 USE_GNOME=	libxml2 libxslt
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource iconv
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib"

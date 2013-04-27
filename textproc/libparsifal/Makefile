@@ -15,7 +15,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

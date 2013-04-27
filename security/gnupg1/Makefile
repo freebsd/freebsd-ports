@@ -45,7 +45,7 @@ CFLAGS:=	${CFLAGS:S/$/ -fheinous-gnu-extensions/}
 .endif
 
 .if defined(WITH_LIBICONV)
-USE_ICONV=	yes
+USES+=		iconv
 .else
 CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif

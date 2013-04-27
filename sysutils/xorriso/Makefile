@@ -19,8 +19,7 @@ RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_ICONV=	yes
+USES=		pathfix pkgconfig iconv
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 

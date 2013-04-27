@@ -29,7 +29,7 @@ RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 pango
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

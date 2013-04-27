@@ -16,7 +16,7 @@ COMMENT=	A keyboard and mouse config tool from the LXDE project
 
 USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

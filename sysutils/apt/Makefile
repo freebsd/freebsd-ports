@@ -23,8 +23,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_BDB=	44+
 USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=		SSL

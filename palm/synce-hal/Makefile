@@ -21,7 +21,7 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce  \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_ICONV=	yes
+USES=		iconv
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-hal-addon-dir=${PREFIX}/libexec \

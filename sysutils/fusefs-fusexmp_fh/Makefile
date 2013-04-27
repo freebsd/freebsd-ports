@@ -14,9 +14,8 @@ COMMENT=	Dummy driver from fusefs-libs example
 
 
 USE_AUTOTOOLS=	libtool
-USES=		fuse pathfix
+USES=		fuse pathfix iconv
 USE_LDCONFIG=	yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 		--enable-example

@@ -33,8 +33,7 @@ RUN_DEPENDS=	gnome-icon-theme>0:${PORTSDIR}/misc/gnome-icon-theme \
 OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=XINERAMA
 
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_GNOME=	gtk20
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xrandr xrender

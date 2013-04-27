@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2013-05-02
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_RUBY=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	${RUBY_SITEARCHLIBDIR}/xml
 
 EXT_ARGS=	--with-iconv-dir=${LOCALBASE} \

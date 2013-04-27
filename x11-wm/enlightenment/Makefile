@@ -19,14 +19,13 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix iconv
 USE_GMAKE=	yes
 USE_EFL=	eina eet evas ecore eio edbus efreet edje \
 		libtool_hack librt_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_EVAS_ENGINES=	buffer
 USE_EFL_ECORE=	ipc
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 

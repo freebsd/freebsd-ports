@@ -99,8 +99,7 @@ CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 .if exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || !defined(WITHOUT_NLS)
 MAKE_ENV+=	OSDEFS=-I${LOCALBASE}/include
-USE_GETTEXT=	yes
-USE_ICONV=	yes
+USES+=		gettext iconv
 .endif
 
 pre-everything::

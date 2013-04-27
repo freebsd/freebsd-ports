@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/libexec
 

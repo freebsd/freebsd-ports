@@ -17,7 +17,7 @@ COMMENT=	Remove accents from a string
 
 MAN3=	Text::Unaccent.3
 
-USE_ICONV=	yes
+USES=		iconv
 PERL_CONFIGURE=	yes
 CFLAGS+=	-DICONV_CONST=const
 

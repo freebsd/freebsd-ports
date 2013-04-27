@@ -13,8 +13,7 @@ COMMENT=	Smith charting program
 LICENSE=	GPLv2 # (or later)
 
 USE_GNOME=	libgnomeui libxml2
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

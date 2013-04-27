@@ -16,7 +16,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		dbi.1:${PORTSDIR}/databases/libdbi
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=

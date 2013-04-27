@@ -23,7 +23,7 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv

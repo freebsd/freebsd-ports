@@ -17,8 +17,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
-USES=		fuse pathfix
+USES=		fuse pathfix iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf

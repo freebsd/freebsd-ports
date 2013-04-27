@@ -16,7 +16,7 @@ COMMENT=	LXDE Icon Theme
 
 USE_BZIP2=	YES
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 

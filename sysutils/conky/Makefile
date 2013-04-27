@@ -13,11 +13,9 @@ COMMENT=	An advanced, highly configurable system monitor for X
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \

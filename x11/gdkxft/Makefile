@@ -14,7 +14,7 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex -liconv
 CFLAGS+=	`pkg-config xft --cflags`

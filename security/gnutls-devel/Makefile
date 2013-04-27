@@ -23,7 +23,7 @@ LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 CONFLICTS=	gnutls-[0-9]*
 
 USE_XZ=		yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	pkgconfig ltverhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

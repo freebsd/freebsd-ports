@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-lua-module \
 CPPFLAGS+=	-I${LUA_INCDIR}
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LUA=	yes
 USE_OPENSSL=	yes
 

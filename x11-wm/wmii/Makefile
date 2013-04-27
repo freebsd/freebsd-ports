@@ -31,7 +31,7 @@ SLIM_LAYOUT_BOX_DESC=	Build with slim layout boxes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}
-USE_ICONV=	yes
+USES+=		iconv
 MAKE_ARGS+=	LIBICONV="-liconv"
 .else
 MAKE_ARGS+=	-DNO_UTF8

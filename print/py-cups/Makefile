@@ -16,7 +16,7 @@ LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	-2.7
 

@@ -17,8 +17,7 @@ COMMENT=	A small and fast window manager for X11R6
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig iconv
 USE_XORG=	x11 xft
 
 MAN1=		bsetbg.1 bsetroot.1

@@ -18,7 +18,7 @@ COMMENT=	A simple converter from OpenDocument Text to plain text
 LICENSE=	GPLv2
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

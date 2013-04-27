@@ -18,11 +18,10 @@ USE_GNOME=	gnomehack gnomehier gtk20 intlhack
 
 USE_AUTOTOOLS=	libtool
 USE_GCC=	any
-USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 xpm
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"

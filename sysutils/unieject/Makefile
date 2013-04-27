@@ -17,9 +17,8 @@ LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
 		cdio:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext iconv
 USE_GNOME=	glib20
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-doc

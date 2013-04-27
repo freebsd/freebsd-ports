@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=	--disable-sm-scripting --without-spidermonkey
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 .endif
 

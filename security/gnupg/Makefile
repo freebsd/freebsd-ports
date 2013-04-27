@@ -26,7 +26,7 @@ LIB_DEPENDS=	assuan:${PORTSDIR}/security/libassuan \
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-USE_ICONV=	YES
+USES=		iconv
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
 .if defined(NOPORTDOCS)

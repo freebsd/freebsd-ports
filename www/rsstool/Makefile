@@ -14,7 +14,7 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src

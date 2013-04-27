@@ -15,7 +15,7 @@ LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
 CONFLICTS_INSTALL=	ja-slrn-[0-9]*
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \

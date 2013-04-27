@@ -22,7 +22,7 @@ BROKEN=	does not build
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 librsvg2
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 
 MAN1=	geomgui.1

@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2013-05-02
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

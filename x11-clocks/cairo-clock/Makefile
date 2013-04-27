@@ -14,9 +14,9 @@ MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
-USE_GNOME=	gtk20 intlhack gnomehack libglade2 librsvg2
+USE_GNOME=	gtk20 intlhack libglade2 librsvg2
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		pathfix iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1

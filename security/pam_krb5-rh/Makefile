@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	pam_krb5-4.*
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} --without-afs \
 		--with-libintl-prefix=${LOCALBASE} --with-krb4=no \

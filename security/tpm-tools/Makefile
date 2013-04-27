@@ -20,8 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers
 RUN_DEPENDS+=	${LOCALBASE}/lib/pkcs11/libopencryptoki.so:${PORTSDIR}/security/opencryptoki
 
 USE_GMAKE=	YES
-USE_ICONV=	YES
-USES=		gettext
+USES=		gettext iconv
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	YES

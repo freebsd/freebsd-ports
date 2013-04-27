@@ -25,8 +25,7 @@ USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-lml
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
-USES=		pkgconfig gettext
-USE_ICONV=	yes
+USES=		pkgconfig gettext iconv
 
 OPTIONS_DEFINE=	FAM
 
