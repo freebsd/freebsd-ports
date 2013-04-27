@@ -12,6 +12,7 @@ COMMENT=	KDE4 chess interface
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 
+FETCH_ARGS?=	-Fpr
 LATEST_LINK=	${PORTNAME}-kde4
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
