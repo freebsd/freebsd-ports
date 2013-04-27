@@ -20,8 +20,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_AUTOTOOLS=	libltdl
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	OV_MODULEDIR=${PREFIX}/lib/openvanilla/
 CPPFLAGS+=	-I${LOCALBASE}/include

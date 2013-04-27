@@ -27,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	MMX
 
 USE_XORG=	x11 xt
-USE_ICONV=	yes
+USES=		iconv
 USE_EFL=	imlib2
 
 MAN1=		Eterm.1

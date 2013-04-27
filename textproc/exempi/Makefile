@@ -17,12 +17,12 @@ COMMENT=	A port of Adobe XMP SDK to work on UNIX
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack gnomehack
+USE_GNOME=	ltverhack
 CONFIGURE_ARGS=	--enable-unittest=no
 CONFIGURE_ENV=	LIBS="-liconv"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_ICONV=	yes
+USES=		pathfix iconv
 USE_LDCONFIG=	yes
 
 post-patch:

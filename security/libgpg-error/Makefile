@@ -20,8 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_ICONV=	yes
-USES+=		gettext
+USES+=		gettext iconv
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""

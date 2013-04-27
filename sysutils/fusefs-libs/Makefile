@@ -14,8 +14,7 @@ COMMENT=	FUSE allows filesystem implementation in userspace
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 USE_LDCONFIG=	yes
-USES=		pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 TXT_DOCS=	how-fuse-works \

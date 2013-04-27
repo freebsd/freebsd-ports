@@ -40,9 +40,8 @@ BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_MOTIF=	yes
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes

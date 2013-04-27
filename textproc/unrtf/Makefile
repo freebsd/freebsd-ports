@@ -11,7 +11,7 @@ COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
 LICENSE=	GPLv3
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share

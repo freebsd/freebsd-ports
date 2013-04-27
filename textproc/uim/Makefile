@@ -22,8 +22,7 @@ WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 

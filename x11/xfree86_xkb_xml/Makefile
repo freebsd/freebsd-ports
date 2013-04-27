@@ -14,8 +14,7 @@ MASTER_SITES=	SF/gswitchit/OldFiles
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

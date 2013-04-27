@@ -58,7 +58,7 @@ CFLAGS+=	-O2 -fomit-frame-pointer
 .endif
 
 .if defined(WITH_GATLING_SMB)
-USE_ICONV=	yes
+USES+=		iconv
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	ICONV=1
 .else

@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes

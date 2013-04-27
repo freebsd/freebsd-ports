@@ -12,10 +12,9 @@ COMMENT=	The open-source TCG Software Stack
 
 USE_GCC=	any
 USE_GMAKE=	YES
-USE_ICONV=	YES
 USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_AUTOTOOLS=	autoconf automake libtool
 GNU_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES

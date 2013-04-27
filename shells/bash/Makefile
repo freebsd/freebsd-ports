@@ -85,8 +85,7 @@ PLIST_SUB+=		HELP=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
-USE_ICONV=		yes
-USE_GETTEXT=		yes
+USES+=			gettext iconv
 PLIST_SUB+=		NLS=""
 .endif
 

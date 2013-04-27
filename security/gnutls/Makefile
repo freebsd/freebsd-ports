@@ -17,10 +17,9 @@ LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle \
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
-USES=		pkgconfig
+USES=		pathfix pkgconfig iconv
 USE_BZIP2=	yes
-USE_ICONV=	yes
-USE_GNOME=	ltverhack gnomehack
+USE_GNOME=	ltverhack
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

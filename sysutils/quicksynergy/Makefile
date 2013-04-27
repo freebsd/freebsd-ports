@@ -13,8 +13,7 @@ COMMENT=	A graphical interface for easily configuring Synergy2
 BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext iconv
 USE_GNOME=	gnomeprefix libglade2
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -24,10 +24,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomemenus gnomedocutils \
+USE_GNOME=	gnomeprefix intlhack gconf2 gnomemenus gnomedocutils \
 		desktopfileutils
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext pathfix iconv
 USE_PYTHON_BUILD=2.5+
 GCONF_SCHEMAS=	gnome-packagekit.schemas
 INSTALLS_ICONS=	yes

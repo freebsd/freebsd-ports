@@ -21,8 +21,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 USE_OPENLDAP=	yes
-USE_GNOME=	pkgconfig glib20
-USE_ICONV=	yes
+USE_GNOME=	glib20
+USES=		pkgconfig iconv
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

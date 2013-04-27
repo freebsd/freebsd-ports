@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=	--without-libpam
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
-USE_ICONV=	yes
+USES+=		iconv
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-gssapi

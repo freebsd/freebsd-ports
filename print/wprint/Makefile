@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

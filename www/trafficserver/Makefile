@@ -23,7 +23,7 @@ MAN1=		traffic_shell.1
 
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
 USE_TCL=	yes

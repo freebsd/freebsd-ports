@@ -20,9 +20,8 @@ VCHMOD_DESC=	Fake hook for chmod that just returns 0
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig iconv
 USE_GMAKE=	yes
-USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include -DFUSE_USE_VERSION=26
 

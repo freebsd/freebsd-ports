@@ -44,8 +44,7 @@ CONFIGURE_ARGS+=--without-adf --without-ccm
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USES+=		gettext
-USE_ICONV=	yes
+USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 .endif
 

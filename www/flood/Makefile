@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-shared \
 	--with-apr-util=${LOCALBASE}/bin/apu-1-config
 LDFLAGS+=	-L${PREFIX}/lib
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 EX_SCRIPTS=	analyze-relative analyze-relative-ramp
 EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \

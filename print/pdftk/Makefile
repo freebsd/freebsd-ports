@@ -18,7 +18,7 @@ CSUFF=		${_USE_GCC:S/.//}
 
 USE_GCC=	4.6+
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	${PREFIX}/lib/gcc${CSUFF}
 
 # gcj/libgcj don't exist on some platforms

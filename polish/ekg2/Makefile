@@ -21,8 +21,7 @@ LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_ICONV=	yes
+USES=		pathfix pkgconfig iconv
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-shared \

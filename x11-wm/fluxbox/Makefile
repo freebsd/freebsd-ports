@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_ICONV=		yes
+USES+=			iconv
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib -liconv"
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-nls

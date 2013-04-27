@@ -75,8 +75,7 @@ CONFIGURE_ARGS+=	--disable-help-builtin
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
-USE_ICONV=		yes
-USES+=			gettext
+USES+=			gettext iconv
 PLIST_SUB+=		NLS=""
 .endif
 

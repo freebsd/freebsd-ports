@@ -31,10 +31,9 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 
 USE_PERL5_RUN=	yes
 USE_XORG=	x11 xcursor
-USES=		bison pkgconfig
+USES=		bison pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/i3 \

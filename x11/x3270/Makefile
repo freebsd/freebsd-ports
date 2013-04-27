@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/lib/X11/fonts/local --disable-dbcs

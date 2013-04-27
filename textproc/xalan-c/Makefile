@@ -88,7 +88,7 @@ MAKE_ENV+=		XALAN_USE_ICU=1
 MAKE_ENV+=		ICUROOT=${ICUROOT}
 PLIST_SUB+=		ICUDEP=""
 .else
-USE_ICONV=		yes
+USES+=			iconv
 LDFLAGS+=		-L${LOCALBASE}/lib -liconv
 PLIST_SUB+=		ICUDEP="@comment "
 .endif

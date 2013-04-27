@@ -21,7 +21,7 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_EFL=	imlib2
 USE_GNOME=	pango

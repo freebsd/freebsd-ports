@@ -16,10 +16,9 @@ LICENSE=	GPLv2
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig iconv
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include

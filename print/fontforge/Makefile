@@ -34,10 +34,9 @@ DISTFILES+=	${DOCFILES:C/$/:docs/}
 .endif
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_XORG=	x11 xi ice xkbui
 USE_GMAKE=	yes
-USE_ICONV=	yes
 PATCH_STRIP=	-l
 
 .if !defined(FONTFORGE_NO_MULTILAYER)

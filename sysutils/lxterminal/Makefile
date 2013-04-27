@@ -18,7 +18,7 @@ LIB_DEPENDS=	vte.9:${PORTSDIR}/x11-toolkits/vte
 
 USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

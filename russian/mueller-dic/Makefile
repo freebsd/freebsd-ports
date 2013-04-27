@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 SUB_FILES=	mueller
 
 WRKSRC=	${WRKDIR}/mf

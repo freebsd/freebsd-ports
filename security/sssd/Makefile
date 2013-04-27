@@ -53,8 +53,7 @@ USE_PYTHON=	yes
 USE_OPENLDAP=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_PYTHON=	yes
 
 USE_RC_SUBR=	${PORTNAME}

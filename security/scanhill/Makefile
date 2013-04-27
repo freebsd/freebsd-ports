@@ -13,7 +13,7 @@ COMMENT=	Microsoft Messenger Protocol Sniffer
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README.txt INSTALL.txt mysql.sql

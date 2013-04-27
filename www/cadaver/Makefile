@@ -51,8 +51,7 @@ post-install:
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 LANGS=en@quot es it

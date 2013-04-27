@@ -124,7 +124,7 @@ EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
 .endif
 
 .if ${PORT_OPTIONS:MWEBALIZER_CONV}
-USE_ICONV=yes
+USES+=			iconv
 # 	The patch file is written by URASHIMA Akira
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
 EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch

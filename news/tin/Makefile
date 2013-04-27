@@ -31,7 +31,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee
 TIN_SCREEN?=	ncursesw

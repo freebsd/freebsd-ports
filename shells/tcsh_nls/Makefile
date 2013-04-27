@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Misc NLS catalogs for tcsh which requires libiconv
 
-USE_ICONV=	yes
+USES=		iconv
 NO_BUILD=	yes
 
 PLIST_FILES=	share/nls/de_AT.UTF-8/tcsh.cat \

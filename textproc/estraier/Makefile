@@ -22,7 +22,7 @@ CHASEN_DESC=	Japanese Morphological Analysis Support
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 KAKASI_DESC=	Language processing filter/converter
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \

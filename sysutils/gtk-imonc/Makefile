@@ -22,8 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender

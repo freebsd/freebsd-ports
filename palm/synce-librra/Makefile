@@ -23,9 +23,8 @@ OPTIONS?=	TOOLS	"Build with minor rra command line tools" on \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=		pathfix iconv
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
 

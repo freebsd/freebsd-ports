@@ -35,6 +35,6 @@ MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xt xproto xext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 .include <bsd.port.mk>

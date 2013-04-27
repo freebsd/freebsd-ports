@@ -15,8 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
-USES=		fuse
-USE_ICONV=	yes
+USES=		fuse iconv
 USE_SCONS=	yes
 
 MAN8=		mount.exfat-fuse.8

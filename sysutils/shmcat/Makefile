@@ -11,7 +11,7 @@ MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Simple tool that dumps System V shared memory segments
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USEs=		iconv
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS

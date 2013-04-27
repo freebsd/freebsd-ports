@@ -21,7 +21,7 @@ LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		pth:${PORTSDIR}/devel/pth
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

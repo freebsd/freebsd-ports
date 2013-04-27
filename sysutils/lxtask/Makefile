@@ -12,7 +12,7 @@ COMMENT=	Lightweight desktop-independent task manager
 
 USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

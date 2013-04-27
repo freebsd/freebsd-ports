@@ -14,8 +14,7 @@ SOUND_DESC=	Sound support via pulseaudio/libsndfile
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 USE_AUTOTOOLS=	libtool

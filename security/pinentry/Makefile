@@ -16,7 +16,7 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 
 CONFLICTS_INSTALL?=	pinentry-[a-z]*-[0.9]*
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INFO=		pinentry

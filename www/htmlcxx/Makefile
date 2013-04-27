@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

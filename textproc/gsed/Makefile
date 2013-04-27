@@ -29,8 +29,7 @@ MAN1=		gsed.1
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_ICONV=	yes
-USE_GETTEXT=	yes
+USES+=		gettext iconv
 PLIST_SUB=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

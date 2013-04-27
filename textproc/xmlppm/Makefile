@@ -18,7 +18,7 @@ COMMENT=	XML-Conscious PPM Compression
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \

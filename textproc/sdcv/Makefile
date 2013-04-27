@@ -11,11 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		pkgconfig iconv
 SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_NLS)
