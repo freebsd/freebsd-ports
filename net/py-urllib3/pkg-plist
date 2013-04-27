@@ -1,0 +1,72 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/testcase.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/testcase.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/testcase.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/_collections.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/_collections.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/_collections.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/connectionpool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/connectionpool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/connectionpool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/ntlmpool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/ntlmpool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/ntlmpool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/pyopenssl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/pyopenssl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib/pyopenssl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/filepost.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/filepost.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/filepost.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ordered_dict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ordered_dict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ordered_dict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/poolmanager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/poolmanager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/poolmanager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/request.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/request.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/request.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/response.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/response.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/response.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
