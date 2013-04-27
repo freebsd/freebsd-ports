@@ -1,5 +1,3 @@
-TGTARCH=	i386
-TGTABI=		elf
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
 
@@ -57,9 +55,7 @@ MAN1=		${OURTARGET}-addr2line.1 \
 INFO=		${OURTARGET}-as \
 		${OURTARGET}-bfd \
 		${OURTARGET}-binutils \
-		${OURTARGET}-ld \
-		configure \
-		standards
+		${OURTARGET}-ld
 
 PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-ar \
@@ -134,6 +130,8 @@ post-patch:
 		${WRKSRC}/ld/${OURTARGET}-ld.texinfo
 	@${MV} ${WRKSRC}/gprof/gprof.texi \
 		${WRKSRC}/gprof/${OURTARGET}-gprof.texi
+
+	@${RM} ${WRKSRC}/etc/*.info ${WRKSRC}/etc/*.texi
 
 #
 # Disable install target in some directories
