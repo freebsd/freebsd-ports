@@ -48,7 +48,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:${PORTSDIR}/print/cups-image
 .endif
 
 .if ${PORT_OPTIONS:MA2PS}
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT_A4}
