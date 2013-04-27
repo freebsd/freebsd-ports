@@ -12,5 +12,5 @@ MANUAL INSTALLATION
 
  *) Attach to the project:
     cd %%BOINC_CLIENT_HOME%%
-    boinc_cmd --project_attach %%SETI_SITE%% <account key>
+    boinccmd --project_attach %%SETI_SITE%% <account key>
 *****************************************************************************
