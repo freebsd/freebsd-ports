@@ -86,30 +86,10 @@ while [ "$1" ]; do
 		echo PDFENCRYPT=YES
 		;;
 	\"PSUTILS\")
-		case $PAPERSIZE in
-		    letter)
-			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-letter
-			;;
-		    letterdj)
-			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-letter
-			;;
-		    a4)
-			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-a4
-			;;
-		esac
+		echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils
 		;;
 	\"A2PS\")
-		case $PAPERSIZE in
-		    letter)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letter
-			;;
-		    letterdj)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letterdj
-			;;
-		    a4)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-a4
-			;;
-		esac
+		echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps
 		;;
 	\"CONVERT\")
 		echo RUN_DEPENDS+=convert:${PORTSDIR}/graphics/ImageMagick
