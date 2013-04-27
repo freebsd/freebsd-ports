@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensmtpd
-PORTVERSION=	5.3
+PORTVERSION=	5.3.1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE}
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
-CONFLICTS=	postfix-[0-9]* sendmail-[0-9]*
+CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]*
 
 MAN8=		makemap.8 newaliases.8 smtpctl.8 smtpd.8
 MAN5=		smtpd.conf.5 aliases.5 forward.5
