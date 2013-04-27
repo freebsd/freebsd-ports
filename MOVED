@@ -4226,3 +4226,11 @@ databases/mysql41-client||2013-04-26|Unsupported upstream since 2009-12-31
 databases/mysql41-scripts||2013-04-26|Unsupported upstream since 2009-12-31
 databases/p5-DBD-mysql41||2013-04-26|Depends on databases/mysql41-server, which was removed
 security/gnupg-idea||2013-04-26|Removed
+print/c2ps-letter|print/c2ps|2013-04-27|Merged into print/c2ps
+print/c2ps-a4|print/c2ps|2013-04-27|Merged into print/c2ps
+print/lprps-letter|print/lprps|2013-04-27|Merged into print/lprps
+print/lprps-a4|print/lprps|2013-04-27|Merged into print/lprps
+graphics/jpeg2ps-letter|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
+graphics/jpeg2ps-a4|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
+print/a2ps-letter|print/a2ps|2013-04-27|Merged into print/a2ps
+print/a2ps-a4|print/a2ps|2013-04-27|Merged into print/a2ps

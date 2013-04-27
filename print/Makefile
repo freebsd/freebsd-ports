@@ -4,9 +4,7 @@
     COMMENT = Desktop publishing
 
     SUBDIR += a2pdf
-    SUBDIR += a2ps-a4
-    SUBDIR += a2ps-letter
-    SUBDIR += a2ps-letterdj
+    SUBDIR += a2ps
     SUBDIR += abc2mtex
     SUBDIR += abcm2ps
     SUBDIR += abntex
@@ -26,8 +24,7 @@
     SUBDIR += biblio-py
     SUBDIR += bibview
     SUBDIR += bophook
-    SUBDIR += c2ps-a4
-    SUBDIR += c2ps-letter
+    SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
@@ -174,8 +171,7 @@
     SUBDIR += linux-f10-cups-libs
     SUBDIR += lout
     SUBDIR += lpr-wrapper
-    SUBDIR += lprps-a4
-    SUBDIR += lprps-letter
+    SUBDIR += lprps
     SUBDIR += lyx
     SUBDIR += lyx16
     SUBDIR += magicfilter

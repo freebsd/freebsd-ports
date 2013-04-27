@@ -3,7 +3,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -28,15 +28,12 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	CUPS_IMAGE MPAGE
-OPTIONS_SINGLE=	A2PS ENSCRIPT
-OPTIONS_SINGLE_A2PS=	A2PS_A4 A2PS_LETTER A2PS_LETTERDJ
+OPTIONS_DEFINE=	A2PS CUPS_IMAGE MPAGE
+OPTIONS_SINGLE=	ENSCRIPT
 OPTIONS_SINGLE_ENSCRIPT=	ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
-OPTIONS_DEFAULT=	CUPS_IMAGE A2PS_A4 ENSCRIPT_A4 MPAGE
+OPTIONS_DEFAULT=	CUPS_IMAGE A2PS ENSCRIPT_A4 MPAGE
 CUPS_IMAGE_DESC=	Install cups image utilities
-A2PS_A4_DESC=		Install a2ps convertor (A4)
-A2PS_LETTER_DESC=	Install a2ps convertor (letter)
-A2PS_LETTERDJ_DESC=	Install a2ps convertor (letterdj)
+A2PS_DESC=		Install a2ps convertor
 ENSCRIPT_A4_DESC=	Install enscript convertor (A4)
 ENSCRIPT_LETTER_DESC=	Install enscript convertor (letter)
 ENSCRIPT_LETTERDJ_DESC=	Install enscript convertor (letterdj)
@@ -50,16 +47,8 @@ MAN1=		foomatic-rip.1
 RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:${PORTSDIR}/print/cups-image
 .endif
 
-.if ${PORT_OPTIONS:MA2PS_A4}
+.if ${PORT_OPTIONS:MA2PS}
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
-.endif
-
-.if ${PORT_OPTIONS:MA2PS_LETTER}
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
-.endif
-
-.if ${PORT_OPTIONS:MA2PS-LETTERDJ}
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letterdj
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT_A4}

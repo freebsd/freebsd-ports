@@ -1,53 +1,42 @@
-# Created by:	Chuck Robey (chuckr@freebsd.org)
+# Created by: Chuck Robey <chuckr@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_LOCAL:S/$/:i18n/}
 MASTER_SITE_SUBDIR=	${PORTNAME} hrs/a2ps/:i18n
-PKGNAMESUFFIX=	-${PAPERSIZE:L}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
+
 USE_PERL5=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 texi2dvi4a2ps.1
+MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 \
+		texi2dvi4a2ps.1
 INFO=		a2ps ogonkify regex
 WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
 I18N_PACKAGE=	i18n-fonts-0.1
 PORTSCOUT=	skipv:4.14
 
-PAPERSIZE?=	letter
-PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=${PREFIX}/share --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share --localstatedir=${PREFIX}/share
+CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
+	--sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share \
+	--localstatedir=${PREFIX}/share
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
-.if ${PAPERSIZE:L} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
-.BEGIN:
-	@${ECHO_CMD}
-	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
-	@${ECHO_CMD} "letterdj allows a slightly larger margins for DeskJets."
-	@${FALSE}
-.endif
-
+PAPERSIZE?=
 .if ${PAPERSIZE:L} == a4
-CONFLICTS?=	a2ps-letter-4.* a2ps-letterdj-4.*
-.else
-.if ${PAPERSIZE:L} == letter
-CONFLICTS?=	a2ps-a4-4.* a2ps-letterdj-4.*
-.else
-CONFLICTS?=	a2ps-a4-4.* a2ps-letter-4.*
-.endif
+RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
 .endif
 
 OPTIONS_DEFINE=NLS I18N EMACS
@@ -58,7 +47,7 @@ I18N_DESC=Enable I18N support
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -80,13 +69,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
 PLIST_SUB+=	WITHI18N=""
 
 pre-configure:
-	@cd ${WRKDIR}/${I18N_PACKAGE}/afm && ${ECHO} *.afm > afms.lst && \
-	${MV} *.afm ${WRKSRC}/afm && cd ../fonts && \
-	${MV} *.pfb ${WRKSRC}/fonts
+	cd ${WRKDIR}/${I18N_PACKAGE}/afm && \
+		${ECHO_CMD} *.afm > afms.lst && \
+		${MV} *.afm ${WRKSRC}/afm
+	cd ${WRKDIR}/${I18N_PACKAGE}/fonts && \
+		${MV} *.pfb ${WRKSRC}/fonts
 
 post-configure:
-	@cd ${WRKSRC}/fonts && { ${ECHO} ''; \
-	${ECHO} "pfb_fonts =" *.pfb; } >> Makefile && \
+	@cd ${WRKSRC}/fonts && { ${ECHO_CMD} ''; \
+	${ECHO_CMD} "pfb_fonts =" *.pfb; } >> Makefile && \
 	${REINPLACE_CMD} 's,^\(fonts_DATA = .*\),\1 $$(pfb_fonts),' Makefile
 	@cd ${WRKSRC}/afm && { ${ECHO} ''; \
 	${ECHO} "i18n_afms =" `cat ${WRKDIR}/${I18N_PACKAGE}/afm/afms.lst`; } >> Makefile && \
@@ -104,7 +95,8 @@ post-install:
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
 		  ${PREFIX}/lib/xemacs/site-lisp/a2ps.el
 .endif
-	(cd ${WRKSRC}/doc; ${MAKE} install)
+	cd ${WRKSRC}/doc && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${INSTALL_TARGET}
 	${RM} -f ${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>

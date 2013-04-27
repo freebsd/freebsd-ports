@@ -399,8 +399,7 @@
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
-    SUBDIR += jpeg2ps-a4
-    SUBDIR += jpeg2ps-letter
+    SUBDIR += jpeg2ps
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
     SUBDIR += jpg2pdf

@@ -1,7 +1,20 @@
---- lprps.c.orig	Mon Feb 22 06:46:10 1993
-+++ lprps.c	Sat Jun 19 17:55:56 1999
-@@ -17,6 +17,10 @@
+--- lprps.c.orig	1993-02-22 21:46:10.000000000 +0900
++++ lprps.c	2013-04-27 23:00:32.000000000 +0900
+@@ -5,7 +5,9 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
++#include <string.h>
+ #include <strings.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+@@ -15,8 +17,13 @@
+ #include <sys/time.h>
+ #include <signal.h>
  #include <syslog.h>
++#include <unistd.h>
  #include <errno.h>
  
 +#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
@@ -11,7 +24,7 @@
  #ifndef errno
  extern int errno;
  #endif
-@@ -27,7 +31,13 @@
+@@ -27,7 +34,13 @@
  #define VOLATILE /* as nothing */
  #endif
  
@@ -26,7 +39,16 @@
  
  #define EXIT_SUCCESS 0
  #define EXIT_REPRINT 1
-@@ -346,7 +356,9 @@
+@@ -43,8 +56,6 @@
+ char ctrl_d = '\004';
+ char ctrl_t = '\024';
+ 
+-char *malloc();
+-
+ /* user's login name */
+ char *login = 0;
+ /* user's host */
+@@ -346,7 +357,9 @@
  char *strsignal(n)
  int n;
  {
