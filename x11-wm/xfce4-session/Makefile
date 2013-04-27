@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -25,7 +25,7 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
-USES=		desktop-file-utils pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_XORG=	x11 sm ice
