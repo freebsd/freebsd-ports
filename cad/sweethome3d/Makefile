@@ -1,8 +1,7 @@
-# Created by: Matthias Petermann <matthias@petermann.it>
 # $FreeBSD$
 
 PORTNAME=	sweethome3d
-PORTVERSION=	3.6
+PORTVERSION=	4.0
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
