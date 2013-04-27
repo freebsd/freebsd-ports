@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include --with-libiconv=${LOCALBASE}
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 
 post-install:

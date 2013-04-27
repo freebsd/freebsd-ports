@@ -23,7 +23,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	xpm
 
 CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \

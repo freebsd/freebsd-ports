@@ -19,8 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sigwinch --libdir=${PREFIX}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		pkgconfig gettext
-USE_ICONV=	yes
+USES=		pkgconfig gettext iconv
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
 USE_GNOME=	glib20

@@ -28,14 +28,13 @@ EFENCE_DESC=	Electric Fence (require profiling)
 ASS_DESC=	libASS subtitle provider
 HUNSPELL_DESC=	Spell checking via Hunspell
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_GNOME=	intltool
 USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GL=		glu
-USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50

@@ -32,7 +32,7 @@ PORTDOCS=	README_j.txt
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

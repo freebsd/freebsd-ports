@@ -16,7 +16,7 @@ COMMENT=	SAP and SLP announcement for the VLC Media Player
 LICENSE=	GPLv2
 
 USE_XZ=	yes
-USE_ICONV=	yes
+USES=	iconv
 GNU_CONFIGURE=	yes
 MAN1=		sapserver.1
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist

@@ -33,7 +33,7 @@ TMAC_DISTNAME=	tmac-${TMAC_DATE}_2
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 CONFLICTS=	groff-[0-9]*
 

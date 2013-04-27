@@ -19,7 +19,7 @@ LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-docdir=${DOCSDIR}

@@ -16,8 +16,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		bison pkgconfig
-USE_ICONV=	yes
+USES=		bison pkgconfig iconv
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes

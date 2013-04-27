@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice x11 xext xv
 USE_GNOME=	esound
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_header_mpeg_h=no \

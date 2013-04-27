@@ -16,7 +16,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_RC_SUBR=	zhm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 MAN1=	zephyr.1 zaway.1 zctl.1 zleave.1 zlocate.1 znol.1 zwrite.1 zwgc.1
 MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8

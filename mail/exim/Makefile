@@ -238,7 +238,7 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if !defined(WITHOUT_ICONV)
-USE_ICONV=	yes
+USES=		iconv
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -liconv,' \
 		-e 's,^\# (HAVE_ICONV=),\1,'
 .else

@@ -17,9 +17,8 @@ COMMENT=	A GNU project to create a free Java class library
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
 USE_XORG=	x11 ice xtst xaw xproto xext

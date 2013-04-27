@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--disable-otr
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=		yes
+USES+=			iconv
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 .endif

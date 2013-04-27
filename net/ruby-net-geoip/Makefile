@@ -18,7 +18,7 @@ COMMENT=	A Ruby extension that wraps around libGeoIP
 BUILD_DEPENDS=	GeoIP>=1.4.6:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
-USE_ICONV=	yes
+USES=		iconv
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install

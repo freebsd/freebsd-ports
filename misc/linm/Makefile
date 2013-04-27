@@ -12,9 +12,8 @@ DISTNAME=	linm_${LINM_VER}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

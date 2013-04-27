@@ -23,8 +23,7 @@ LIB_DEPENDS=	gladeui-1:${PORTSDIR}/devel/glade3 \
 INSTALLS_ICONS =	yes
 USE_AUTOTOOLS=		libltdl libtool
 USE_GMAKE=		yes
-USE_GNOME=		gnomehack
-USE_ICONV=		yes
+USES=			pathfix iconv
 USE_LDCONFIG=		yes
 
 CONFIGURE_ARGS =	--with-extractor=${LOCALBASE} \

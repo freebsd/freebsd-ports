@@ -23,8 +23,7 @@ BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_FAM=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_GNOME=	libxml2
 
 USE_BZIP2=	yes

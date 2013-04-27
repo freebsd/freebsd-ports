@@ -19,9 +19,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext
-USE_GNOME=	lthack gnomehack
-USE_ICONV=	yes
+USES=		gettext iconv pathfix
+USE_GNOME=	lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 

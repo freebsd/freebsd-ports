@@ -15,10 +15,9 @@ COMMENT?=	Mozc server for IBus and others
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 

@@ -22,7 +22,7 @@ USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordp
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 

@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--enable-vfs-smb --with-configdir=${LOCALBASE}/etc\
 .endif
 
 .if defined(WITH_ICONV) || !(defined(WITHOUT_ICONV) || defined(MINIMAL))
-USE_ICONV=	yes
+USES+=		iconv
 PLIST_SUB=	CHARSETS=""
 .else
 CONFIGURE_ARGS+=--disable-charset

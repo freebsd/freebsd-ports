@@ -31,8 +31,7 @@ MAN8+=		zabbix_${ZABBIX_BUILD}d.8
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
 .endif
 
-USE_ICONV=	yes
-USES=		pkgconfig
+USES=		pkgconfig iconv
 
 USERS=		zabbix
 GROUPS=		zabbix

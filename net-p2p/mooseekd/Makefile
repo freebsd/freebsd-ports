@@ -23,6 +23,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 USE_FAM=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 .include <bsd.port.mk>

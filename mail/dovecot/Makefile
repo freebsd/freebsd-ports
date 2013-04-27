@@ -30,7 +30,7 @@ DOVECOTVERSION=	1.2
 # consult the maintainer of those ports before updating this one.    #
 ######################################################################
 
-USE_ICONV=	yes
+USES=		iconv
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes

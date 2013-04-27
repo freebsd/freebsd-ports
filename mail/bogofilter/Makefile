@@ -40,7 +40,7 @@ BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 .if ${PORT_OPTIONS:MUNICODE}
 CONFIGURE_ARGS+=	--enable-unicode
-USE_ICONV=		yes
+USES+=			iconv
 BF_LIBS+=		-liconv
 .endif
 .if ${PORT_OPTIONS:MGSL}

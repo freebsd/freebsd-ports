@@ -16,7 +16,7 @@ COMMENT=	A set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lintl -L${LOCALBASE}/lib

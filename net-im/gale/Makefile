@@ -19,7 +19,7 @@ LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		adns.1:${PORTSDIR}/dns/adns
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	glib12
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure liboop/configure

@@ -236,7 +236,7 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-iconv

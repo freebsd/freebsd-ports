@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 PLIST_FILES=	bin/wire
 

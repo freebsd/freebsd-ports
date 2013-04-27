@@ -19,11 +19,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 BROKEN=		fails to build
 
-USES=		bison
+USES=		bison iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_ICONV=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${GCC_VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build

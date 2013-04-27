@@ -31,9 +31,8 @@ LIB_DEPENDS=	mspack:${PORTSDIR}/archivers/libmspack \
 		xcb:${PORTSDIR}/x11/libxcb
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xxf86vm
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango

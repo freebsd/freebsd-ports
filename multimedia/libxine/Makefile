@@ -37,12 +37,10 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		pkgconfig
+USES=		pathfix pkgconfig iconv
 USE_XZ=		yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_XORG=	sm x11 xv xinerama
 USE_GL=		gl glu

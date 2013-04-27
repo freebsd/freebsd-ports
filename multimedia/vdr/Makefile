@@ -22,11 +22,10 @@ DVBPATCH_DESC=		DVB audio patch for some countries
 STB0899_SIGNAL_DESC=	STB0899 signal strength patch
 OPTIONS_DEFAULT=	IPTVPATCH TTXPATCH
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
 MAKE_JOBS_SAFE=	yes
 MAN1=		vdr.1

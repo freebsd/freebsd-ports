@@ -17,8 +17,7 @@ COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
 
 USE_AUTOTOOLS=	libltdl libtool
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"

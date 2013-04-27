@@ -18,7 +18,7 @@ LIB_DEPENDS=	gdata:${PORTSDIR}/devel/libgdata
 RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

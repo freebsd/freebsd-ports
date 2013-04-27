@@ -24,10 +24,9 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		ebml:${PORTSDIR}/textproc/libebml \
 		matroska:${PORTSDIR}/multimedia/libmatroska
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_BZIP2=	yes
 USE_GCC=	4.6+
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
 USE_RUBY=	yes

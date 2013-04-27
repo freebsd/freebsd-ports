@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-ipv6
 .endif
 
 .if defined(WITH_ICONV)
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 .endif
 

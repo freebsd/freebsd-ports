@@ -18,7 +18,7 @@ RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

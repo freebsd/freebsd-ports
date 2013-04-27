@@ -13,7 +13,7 @@ COMMENT=	Receive, filter, read, compose, and send mail at the text console
 CONFLICTS=	elmo-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
 

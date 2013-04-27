@@ -57,7 +57,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_AUTOTOOLS=	automake autoconf
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}

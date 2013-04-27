@@ -19,7 +19,7 @@ RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_GNOME=	gtk20
-USE_ICONV=	yes
+USES=		iconv
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

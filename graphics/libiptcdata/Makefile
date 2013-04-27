@@ -14,8 +14,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls

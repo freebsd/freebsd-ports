@@ -23,7 +23,7 @@ SANE_DESC=	Enable SANE support
 
 USE_MOTIF=	yes
 USE_PERL5_BUILD=yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes

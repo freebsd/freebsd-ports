@@ -16,7 +16,7 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 MAINTAINER=	mdv@unsavoury.net
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp --enable-iconv

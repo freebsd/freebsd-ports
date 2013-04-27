@@ -89,7 +89,7 @@ ELM_PATCHDONE=	true
 .endfor
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=	iconv
 .endif
 
 .for shlib in iconv smtp tls

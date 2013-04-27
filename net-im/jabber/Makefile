@@ -31,9 +31,8 @@ LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth-hard \
 OPTIONS_DEFINE= IPV6 MYSQL PGSQL
 
 USE_RC_SUBR=	jabber
-USE_ICONV=	yes
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/jabber
 MAKE_JOBS_UNSAFE=	yes

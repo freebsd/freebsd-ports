@@ -16,7 +16,7 @@ LIB_DEPENDS=	gsf-1:${PORTSDIR}/devel/libgsf
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 CONFIGURE_ARGS+=	--disable-python

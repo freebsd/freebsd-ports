@@ -30,8 +30,7 @@ USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=		pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS+=--with-gtk=2.0

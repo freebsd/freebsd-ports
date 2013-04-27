@@ -14,7 +14,7 @@ LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_ICONV=	yes
+USES=		iconv
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

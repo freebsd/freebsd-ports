@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--without-xft --without-pangographite
 
 .if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=	--with-freetype
 PLIST_SUB+=	WITH_FREETYPE=""
 .else

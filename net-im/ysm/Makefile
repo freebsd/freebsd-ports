@@ -19,7 +19,7 @@ COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 USE_CSTD=	c89
 .endif
 
-USE_ICONV=	yes
+USES=		iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-gtk
 
 .if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
-USE_ICONV=	yes
+USES+=		iconv
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}

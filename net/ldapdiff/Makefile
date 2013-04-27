@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \

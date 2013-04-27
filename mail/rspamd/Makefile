@@ -25,13 +25,12 @@ PLIST_SUB+=	ETCDIR=etc/rspamd \
 CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
 		-DBUILD_PORT=yes
 
-USES=		cmake gettext
+USES=		cmake gettext iconv
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
 USE_LUA=	5.1-
 USE_SQLITE=	yes
-USE_ICONV=	yes
 USE_OPENSSL=	yes
 
 MAN8=	rspamd.8

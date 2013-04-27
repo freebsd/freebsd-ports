@@ -18,7 +18,7 @@ COMMENT=	A command-line based Direct Connect client
 CONFLICTS=	tthsum-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	libxml2
 
 .if !defined(WITHOUT_NLS)

@@ -61,14 +61,13 @@ WITH_SGML_DOCS:=no
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-USE_ICONV=	yes
+USES+=		gettext iconv
 .if defined(WITHOUT_MUTT_ICONV)
 IGNORE=	the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
 	WITHOUT_NLS is also given
 .endif
 .elif !defined(WITHOUT_MUTT_ICONV)
-USE_ICONV=	yes
+USES+=	iconv
 .endif
 
 .if defined(WITH_SLANG)

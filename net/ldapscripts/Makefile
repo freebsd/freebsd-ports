@@ -21,7 +21,7 @@ RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldappasswd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client
 
 USE_OPENLDAP=	yes
-USE_ICONV=	yes
+USES=		iconv
 LIBDIR=	${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
 		ETCDIR=${ETCDIR}

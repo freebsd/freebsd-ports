@@ -11,9 +11,8 @@ MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_BZIP2=	yes
-USES=		bison
+USES=		bison iconv
 
 MAN1=		btedit.1 dbverify.1 llines.1
 

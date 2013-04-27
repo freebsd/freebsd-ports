@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--enable-tcl=no
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=		yes
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 .else

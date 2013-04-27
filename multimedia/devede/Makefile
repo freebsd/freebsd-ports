@@ -18,7 +18,7 @@ RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
-USE_ICONV=	yes
+USES=		iconv
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

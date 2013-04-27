@@ -23,7 +23,7 @@ CONFLICTS=	dovecot-1.[0-9]*
 # port before updating this one.                                     #
 ######################################################################
 
-USE_ICONV=	yes
+USES=		iconv
 USE_RC_SUBR=	dovecot
 MAKE_JOBS_SAFE=	yes
 

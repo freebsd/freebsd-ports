@@ -14,7 +14,7 @@ MAINTAINER=		dhn@FreeBSD.org
 COMMENT=		A fully featured easy to use IRC-bouncer
 
 USE_BZIP2=		yes
-USE_ICONV=		yes
+USES=			iconv
 GNU_CONFIGURE=		yes
 
 INFO=			miau

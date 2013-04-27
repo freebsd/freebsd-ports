@@ -17,7 +17,7 @@ COMMENT=		A full featured replicating WINS server for UNIX
 
 CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 
-USE_ICONV=		yes
+USES=			iconv
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf autoheader

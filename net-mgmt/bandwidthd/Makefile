@@ -23,7 +23,7 @@ USE_CSTD=	c89
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-USE_ICONV=	YES
+USES=		iconv
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \

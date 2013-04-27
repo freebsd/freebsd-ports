@@ -25,12 +25,11 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext iconv
 USE_GNOME=	gnomeprefix intlhack libgnomeui gtkhtml3 \
 		libgnomeprintui
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--disable-more-warnings \
 		--with-ssl \
