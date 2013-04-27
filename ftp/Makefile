@@ -33,6 +33,7 @@
     SUBDIR += gftp
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
+    SUBDIR += gstreamer1-plugins-curl
     SUBDIR += gwget
     SUBDIR += horde-gollem
     SUBDIR += horde3-gollem

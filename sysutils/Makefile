@@ -351,6 +351,7 @@
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
     SUBDIR += gstreamer-plugins-hal
+    SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
     SUBDIR += gupsc

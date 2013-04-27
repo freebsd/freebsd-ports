@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-03-10 14:50:08.000000000 +0000
++++ Makefile.in	2013-03-10 14:50:24.000000000 +0000
+@@ -499,7 +499,7 @@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-docbook
+ aclocaldir = $(datadir)/aclocal
+ aclocal_DATA = gst-element-check-@GST_API_VERSION@.m4
+-SUBDIRS = pkgconfig gst libs plugins tests docs po m4 common \
++SUBDIRS = pkgconfig gst libs plugins tests po m4 common \
+ 	$(am__append_1)
+ 
+ # These are all the possible subdirs

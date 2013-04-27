@@ -4,10 +4,9 @@
 # bsd.gstreamer.mk - Support for gstreamer-plugins-based ports.
 #
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# Date:		4 Oct 2004
 #
 # $FreeBSD$
-#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.43 2008/03/21 04:14:18 ahze Exp $
+#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.56 2013/01/15 21:43:45 kwm Exp $
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gstreamer_Pre_Include)
 
@@ -18,30 +17,33 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 
 # Ports can use the following:
 #
-#  For Gstreamer 0.10:
-# USE_GSTREAMER=	lame faac ffmpeg
+# For Gstreamer 0.10:
+#   USE_GSTREAMER=	lame faac ffmpeg
+#
+# For Gstreamer 1.x the same rules apply but instead of 
+#   USE_GSTREAMER=, USE_GSTREAMER1= is used.
 #
 # If you want to use USE_GSTREAMER after <bsd.port.pre.mk>
 # you must follow one of the examples listed below
 #
-#	WANT_GSTREAMER=	yes
-#	.include <bsd.port.pre.mk>
+#	.include <bsd.port.options.mk>
 #	.if defined(WITH_VORBIS)
-#	USE_GSTREAMER+=	vorbis
+#	USE_GSTREAMER=	vorbis
 #	.endif
 #
 # or
 #       USE_GSTREAMER=	yes
-#       .include <bsd.port.pre.mk>
+#       .include <bsd.port.options.mk>
 #       .if defined(WITH_FAAD)
 #       USE_GSTREAMER+=	faad
 #       .endif
-#
+#	.include <bsd.port.pre.mk>
 #
 #	USE_GSTREAMER=yes will always add a dependency to
 #		gstreamer-plugins
 #
-
+#	The use of WANT_GSTREAMER=yes should be discouraged.
+#
 # "Normal" dependencies and variables
 #
 
@@ -50,33 +52,60 @@ _GST_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST_VERSION}
 GST_VERSION=		0.10
 GST_MINOR_VERSION=	.0
 GST_SHLIB_VERSION=	1
+
+GSTREAMER1_PORT=	${PORTSDIR}/multimedia/gstreamer1-plugins
+_GST1_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST1_VERSION}
+GST1_VERSION=		1.0
+GST1_MINOR_VERSION=	.0
+GST1_SHLIB_VERSION=	0
+GST1_MINIMAL_VERSION=	.5
+
 #
-# These are the current supported gstreamer-plugins modules
-#
-_USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo \
-			cdaudio cdparanoia dts dv dvd esound faac faad \
-			ffmpeg flac flite gconf gio gl gme gnomevfs gnonlin \
-			gsm hal jack jpeg ladspa lame libcaca libmms \
-			libpng libvisual mm mp3 mpeg2enc mpeg2dec musepack \
-			nas neon ogg opencv opus pango pulse python resindvd schroedinger \
-			sdl shout2 sidplay sndfile spc soundtouch soup \
-			speex taglib theora twolame v4l2 vorbis vdpau \
-			vp8 wavpack x264 xvid
+# missing base: alsa ivorbisdec
+# missing good: pulseaudio(need newer pulse version)
+# missing ugly: - (done)
+# missing bad: - (done)
+
+# These are the current supported gstreamer-plugins modules:
+# Supported plugins by both 0.10 and 1.0.
+_GSTREAMER_PLUGINS= \
+		a52dec aalib amrnb amrwbdec cairo cdio \
+		cdparanoia dts dv faac faad flac flite \
+		gdkpixbuf gme gsm jack jpeg lame libcaca \
+		libmms libvisual mad mpeg2dec mpeg2enc ogg \
+		opencv opus pango resindvd schroedinger \
+		shout2 sidplay soundtouch soup speex taglib \
+		theora twolame v4l2 vorbis wavpack x264
+
+# plugins only in 0.10
+.if defined(USE_GSTREAMER)
+_GSTREAMER_PLUGINS+= \
+		annodex bz2 cdaudio dvd esound ffmpeg fluendo-mp3 \
+		fluendo-mpegdemux gconf gio gl gnomevfs gnonlin hal \
+		ladspa libpng mm mp3 musepack nas neon pulse python qt4 \
+		sdl sndfile spc vdpau vp8 xvid
+.endif
+
+# plugins only in 1.0
+.if defined(USE_GSTREAMER1)
+_GSTREAMER_PLUGINS+= \
+		assrender celt curl dvdread libav modplug png spandsp vpx \
+		x ximagesrc zbar
+.endif
 
 # other plugins
-OTHER_GSTREAMER_PLUGINS+=bad good ugly core yes ${_USE_GSTREAMER10_ALL} fluendo-mp3 mad qt4
+_USE_GSTREAMER_ALL=	bad core good ugly yes ${_GSTREAMER_PLUGINS}
 
-_USE_GSTREAMER_ALL+=	${OTHER_GSTREAMER_PLUGINS}
+#--------------------------------------------------------------------------#
 
 core_DEPENDS=	multimedia/gstreamer-plugins-core
 
 yes_DEPENDS=	multimedia/gstreamer-plugins
 yes_NAME=	gstreamer-plugins
+yes_NAME10=	gstreamer1-plugins
 yes_GST_PREFIX=	# empty
 
-cdio_DEPENDS=	sysutils/gstreamer-plugins-cdio
-
-gconf_DEPENDS=	devel/gstreamer-plugins-gconf
+#-- audio plugins section -------------------------------------------------#
 
 # Audio Plugins Section
 a52dec_DEPENDS=	audio/gstreamer-plugins-a52dec
@@ -88,6 +117,8 @@ amrwbdec_DEPENDS=	audio/gstreamer-plugins-amrwbdec
 artsd_DEPENDS=	audio/gstreamer-plugins-artsd
 
 audiofile_DEPENDS=	audio/gstreamer-plugins-audiofile
+
+celt_DEPENDS=		audio/gstreamer-plugins-celt
 
 cdaudio_DEPENDS=	audio/gstreamer-plugins-cdaudio
 
@@ -121,10 +152,7 @@ mad_DEPENDS=	audio/gstreamer-plugins-mad
 
 mikmod_DEPENDS=	audio/gstreamer-plugins-mikmod
 
-mm_DEPENDS=	multimedia/gstreamermm
-mm_GST_PREFIX=	gstreamer
-mm_GST_SUFX=	# empty
-mm_GST_VERSION=	0.9.4
+modplug_DEPENDS=	audio/gstreamer-plugins-modplug
 
 mp3_DEPENDS=	audio/gstreamer-plugins-mp3
 
@@ -166,7 +194,14 @@ vorbis_DEPENDS=	audio/gstreamer-plugins-vorbis
 
 wavpack_DEPENDS=	audio/gstreamer-plugins-wavpack
 
-# Devel Plugins Section
+#-- comms plugin section --------------------------------------------------#
+
+spandsp_DEPENDS=	comms/gstreamer-plugins-spandsp
+
+#-- devel plugin section --------------------------------------------------#
+
+gconf_DEPENDS=	devel/gstreamer-plugins-gconf
+
 gio_DEPENDS=	devel/gstreamer-plugins-gio
 
 gnomevfs_DEPENDS=	devel/gstreamer-plugins-gnomevfs
@@ -175,10 +210,17 @@ sdl_DEPENDS=	devel/gstreamer-plugins-sdl
 
 soup_DEPENDS=	devel/gstreamer-plugins-soup
 
-# Graphics Plugins Section
+#-- ftp plugin section ----------------------------------------------------#
+
+curl_DEPENDS=	ftp/gstreamer-plugins-curl
+
+#-- graphics plugin section -----------------------------------------------#
+
 aalib_DEPENDS=	graphics/gstreamer-plugins-aalib
 
 annodex_DEPENDS=	multimedia/gstreamer-plugins-annodex
+
+assrender_DEPENDS=	multimedia/gstreamer-plugins-assrender
 
 cairo_DEPENDS=	graphics/gstreamer-plugins-cairo
 
@@ -200,15 +242,24 @@ libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
 
 opencv_DEPENDS=	graphics/gstreamer-plugins-opencv
 
-# Multimedia Plugins Section
+png_DEPENDS=	graphics/gstreamer-plugins-png
+
+zbar_DEPENDS=	graphics/gstreamer-plugins-zbar
+
+#-- multimedia plugins section --------------------------------------------#
+
 bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 
 bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
+
+dvdread_DEPENDS=	multimedia/gstreamer-plugins-dvdread
 
 ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
 ffmpeg_GST_PREFIX=	gstreamer-
 ffmpeg_GST_SUFX=	# empty
 ffmpeg_GST_VERSION=	0.10.0
+
+fluendo-mpegdemux_DEPENDS=	multimedia/gstreamer-plugins-fluendo-mpegdemux
 
 dts_DEPENDS=	multimedia/gstreamer-plugins-dts
 
@@ -220,7 +271,17 @@ good_DEPENDS=	multimedia/gstreamer-plugins-good
 
 gnonlin_DEPENDS=	multimedia/gstreamer-plugins-gnonlin
 
+libav_DEPENDS=		multimedia/gstreamer-libav
+libav_GST_PREFIX=	gstreamer1-
+libav_GST_SUFX=		# empty
+libav_GST_VERSION=	1.0.0
+
 libfame_DEPENDS=	multimedia/gstreamer-plugins-libfame
+
+mm_DEPENDS=	multimedia/gstreamermm
+mm_GST_PREFIX=	gstreamer
+mm_GST_SUFX=	# empty
+mm_GST_VERSION=	0.9.4
 
 mpeg2dec_DEPENDS=	multimedia/gstreamer-plugins-mpeg2dec
 
@@ -234,6 +295,8 @@ qt4_GST_PREFIX=	gstreamer-
 v4l2_DEPENDS=	multimedia/gstreamer-plugins-v4l2
 
 vp8_DEPENDS=	multimedia/gstreamer-plugins-vp8
+
+vpx_DEPENDS=	multimedia/gstreamer-plugins-vpx
 
 # XXX: This is a quick solution for ports with USE_GSTREAMER=python
 #      but without USE_PYTHON.
@@ -259,16 +322,35 @@ x264_DEPENDS=	multimedia/gstreamer-plugins-x264
 
 xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
 
-# Net Plugins Section
+
+#-- Net Plugins Section ---------------------------------------------------#
 
 libmms_DEPENDS=	net/gstreamer-plugins-libmms
 
-# X11-Toolkits Plugins Section
+#-- sysutils plugins section ----------------------------------------------#
+
+cdio_DEPENDS=	sysutils/gstreamer-plugins-cdio
+
+#-- x11 plugins section ---------------------------------------------------#
+
+x_DEPENDS=	x11/gstreamer-plugins-x
+
+ximagesrc_DEPENDS=	x11/gstreamer-plugins-ximagesrc
+
+#-- x11-toolkits plugins section ------------------------------------------#
+
 pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango
+
+#--------------------------------------------------------------------------#
 
 .if defined(_POSTMKINCLUDED) && !defined(Gstreamer_Post_Include)
 Gstreamer_Post_Include=	bsd.gstreamer.mk
 
+.if (defined (USE_GSTREAMER) && defined(USE_GSTREAMER1))
+IGNORE=	USE_GSTREAMER and USE_GSTREAMER1 can't be used together
+.endif
+
+.if defined(USE_GSTREAMER)
 .for ext in ${USE_GSTREAMER}
 ${ext}_GST_PREFIX?=	gstreamer-plugins-
 ${ext}_GST_VERSION?=	${GST_VERSION}${GST_MINOR_VERSION}
@@ -277,9 +359,25 @@ ${ext}_NAME?=		${ext}
 BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
 RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
 . else
-IGNORE=	cannot install: unknown gstreamer-plugin -- ${ext}
+IGNORE=	cannot install: unknown gstreamer ${GST_VERSION} plugin -- ${ext}
 . endif
 .endfor
+.endif
+
+.if defined(USE_GSTREAMER1)
+.for ext in ${USE_GSTREAMER1}
+${ext}_GST_PREFIX?=	gstreamer1-plugins-
+${ext}_GST_VERSION?=	${GST1_VERSION}${GST1_MINIMAL_VERSION}
+${ext}_NAME10?=		${ext}
+${ext}_GST_DEPENDS?=	${${ext}_DEPENDS:S,gstreamer-,gstreamer1-,}
+. if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_GST_DEPENDS})
+BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME10}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_GST_DEPENDS}
+RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME10}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_GST_DEPENDS}
+. else
+IGNORE=	cannot install: unknown gstreamer ${GST1_VERSION} plugin -- ${ext}
+. endif
+.endfor
+.endif
 
 # The End
 .endif

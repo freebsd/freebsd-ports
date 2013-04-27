@@ -97,6 +97,8 @@
     SUBDIR += grabc
     SUBDIR += gromit
     SUBDIR += gskrab
+    SUBDIR += gstreamer1-plugins-x
+    SUBDIR += gstreamer1-plugins-ximagesrc
     SUBDIR += gsynaptics
     SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch

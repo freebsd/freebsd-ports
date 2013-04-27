@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-03-10 14:54:07.000000000 +0000
++++ Makefile.in	2013-03-10 14:55:01.000000000 +0000
+@@ -483,8 +483,6 @@
+ 	gst-libs 		\
+ 	gst sys $(SUBDIRS_EXT) 	\
+ 	tools 			\
+-	tests 			\
+-	docs			\
+ 	po 			\
+ 	common 			\
+ 	m4
