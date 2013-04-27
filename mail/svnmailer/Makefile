@@ -9,21 +9,19 @@ MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to post subversion repository commit information
+COMMENT=	Tool to post subversion repository commit information
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:${PORTSDIR}/devel/py-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	YES
-USE_PYTHON=		2.5+
+USE_BZIP2=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 MAN1=		svn-mailer.1
 
 PORTDOCS=	*
-
-EXTRA_PATCHES=	${FILESDIR}/py25-src-lib-svnmailer-notifier-_base.py
 
 .include <bsd.port.options.mk>
 
