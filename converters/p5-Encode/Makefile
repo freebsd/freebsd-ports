@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Encode
-# Date created:				Jul 24, 2005
-# Whom:					Rong-En Fan <rafan@infor.org>
+# Created by:	Rong-En Fan <rafan@infor.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	Encode
-PORTVERSION=	2.47
+PORTVERSION=	2.49
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANKOGAI
@@ -14,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Provides interfaces between strings and the rest of the system
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
