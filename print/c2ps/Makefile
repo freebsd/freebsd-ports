@@ -3,7 +3,7 @@
 
 PORTNAME=	c2ps
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 DISTNAME=	c2ps-${PORTVERSION}
@@ -11,7 +11,9 @@ DISTNAME=	c2ps-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A PostScript pretty-printer for C source
 
-CFLAGS+=	-g -I${LOCALBASE}/include
+LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
+
+CFLAGS+=	-I${LOCALBASE}/include
 MAN1=		c2ps.1
 PLIST_FILES=	bin/c2ps
 
