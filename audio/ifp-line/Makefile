@@ -11,7 +11,7 @@ COMMENT=	Command line interface to iRiver music players
 
 LICENSE=	GPLv2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I m4
 MAKE_JOBS_UNSAFE=	yes

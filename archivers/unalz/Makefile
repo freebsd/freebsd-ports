@@ -14,7 +14,7 @@ COMMENT=	Extracts AlZip archives
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
 BROKEN=		fails to build
-USE_ICONV=	yes
+USES=		iconv
 PLIST_FILES=	bin/unalz
 MAKEFILE=	Makefile.freebsd
 CPPFLAGS+=	-I${LOCALBASE}/include

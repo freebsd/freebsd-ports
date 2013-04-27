@@ -259,7 +259,7 @@ PLIST_SUB+=	PERLSUB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 MAKE_ENV+=	NEEDS_LIBICONV=yes \
 		ICONVDIR=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}

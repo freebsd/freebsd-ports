@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 PLIST_FILES=	bin/tig
 

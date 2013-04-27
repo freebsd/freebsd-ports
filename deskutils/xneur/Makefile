@@ -15,9 +15,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		pcre.3:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
-USES=		pkgconfig pathfix
+USES=		pkgconfig pathfix iconv
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur

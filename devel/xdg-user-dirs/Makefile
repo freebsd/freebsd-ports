@@ -14,8 +14,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tool to help manage personal user directories
 
 GNU_CONFIGURE=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_GMAKE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

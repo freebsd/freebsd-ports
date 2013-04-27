@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-prefer-ape
 .endif
 
 .if defined(WITH_ENCODINGS_PATCH)
-USE_ICONV=	yes
+USES+=	iconv
 .endif
 
 post-patch::

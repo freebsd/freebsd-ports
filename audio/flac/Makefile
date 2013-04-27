@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=ICONV
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=--with-libiconv-prefix="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=--without-libiconv-prefix

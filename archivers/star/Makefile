@@ -12,8 +12,7 @@ COMMENT=	Unique standard tape archiver with many enhancements
 BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		scpio.1 spax.1 srmt.1 star.1 suntar.1 tartest.1

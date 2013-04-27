@@ -22,7 +22,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 USE_LUA=	5.1+
 
@@ -64,7 +64,7 @@ USE_GCC=	4.2+
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES=	gettext
+USES+=	gettext
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
 		share/locale/fr/LC_MESSAGES/monotone.mo \
 		share/locale/it/LC_MESSAGES/monotone.mo \

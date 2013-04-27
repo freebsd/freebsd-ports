@@ -13,8 +13,7 @@ LICENSE=	LGPL21
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=	pathfix
-USE_ICONV=	yes
+USES=		iconv pathfix
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -19,8 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
-USE_ICONV=	yes
+USES=		pathfix iconv
 USE_LDCONFIG=	yes
 
 MAN3=		popt.3

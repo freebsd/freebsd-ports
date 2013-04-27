@@ -32,7 +32,7 @@ DEVELOPER_ONLY_DESC=	I want to test apr2 not the maintainer
 
 .include <bsd.port.options.mk>
 
-USE_ICONV=		yes
+USES=		iconv
 USE_AUTOTOOLS=	automake autoconf libtool:env
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	-2.7

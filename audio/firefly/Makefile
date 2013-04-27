@@ -52,7 +52,7 @@ JAPANESE_DESC=	Japanese support in ID3 tags
 
 .if ${PORT_OPTIONS:MJAPANESE}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_scan-mp3.c
-USE_ICONV=	yes
+USES=		iconv
 CONFIGURE_ARGS+=	--enable-iconv
 .endif
 

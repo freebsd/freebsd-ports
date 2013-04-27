@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to iconv() codeset conversion function
 
-USE_ICONV=	yes
+USES=	iconv
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" \

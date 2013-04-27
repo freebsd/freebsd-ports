@@ -16,8 +16,7 @@ GH_COMMIT=	a334539
 USE_AUTOTOOLS=	libtool autoheader aclocal
 ACLOCAL_ARGS=	-Im4
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig gnomehack
-USE_ICONV=	yes
+USES=		pkgconfig pathfix iconv
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \

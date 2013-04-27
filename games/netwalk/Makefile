@@ -24,7 +24,7 @@ GH_COMMIT=	634e7c9
 
 USE_SDL=	sdl ttf
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	x11 xau xdmcp
 ALL_TARGET=
 MAKE_JOBS_SAFE=	yes

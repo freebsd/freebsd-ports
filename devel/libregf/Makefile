@@ -13,8 +13,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
-USES=		fuse pathfix gettext
-USE_ICONV=	yes
+USES=		fuse pathfix gettext iconv
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 

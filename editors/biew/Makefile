@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
 		--prefix="${PREFIX}" --datadir="${DATADIR}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_DOS2UNIX=	${PORTDOCS}
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}

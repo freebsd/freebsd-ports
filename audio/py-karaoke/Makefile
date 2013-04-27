@@ -24,8 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
 OPTIONS_DEFINE=	MUTAGEN
 MUTAGEN_DESC=	Enable Mutagen support
 
+USES=		iconv
 USE_ZIP=	yes
-USE_ICONV=	yes
 USE_SDL=	sdl
 USE_XORG=	x11 xau xdmcp
 USE_WX=		2.6+

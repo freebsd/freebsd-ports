@@ -20,8 +20,7 @@ RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

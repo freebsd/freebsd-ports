@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to handle internationalized domain names
 
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--enable-runidn \

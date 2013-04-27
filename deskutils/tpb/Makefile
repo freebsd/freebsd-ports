@@ -17,8 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
-USES=		bison
+USES=		bison iconv
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 

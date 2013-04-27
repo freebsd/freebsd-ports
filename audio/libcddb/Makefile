@@ -12,8 +12,7 @@ COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
-USE_ICONV=	yes
+USES=	pathfix pkgconfig iconv
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio
 CPPFLAGS+=	-DICONV_CONST="const" -I${LOCALBASE}/include

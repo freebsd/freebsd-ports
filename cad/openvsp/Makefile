@@ -26,9 +26,8 @@ GH_TAGNAME=	${GH_PROJECT}_${PORTVERSION}
 GH_COMMIT=	fb52aa2
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
-USES=		cmake:outsource
+USES=		cmake:outsource iconv
 USE_DOS2UNIX=	yes
-USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 USE_GL=		glu

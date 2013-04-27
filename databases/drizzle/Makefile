@@ -20,7 +20,7 @@ USE_LDCONFIG=	${PREFIX}/lib/drizzle
 
 BROKEN=		fails to build
 
-USE_ICONV=	yes
+USES=	iconv
 
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs

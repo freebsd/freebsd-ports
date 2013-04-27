@@ -15,7 +15,7 @@ MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
 USE_AUTOTOOLS=	libtool
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

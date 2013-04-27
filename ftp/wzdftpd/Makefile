@@ -40,7 +40,7 @@ MAN8=	wzdftpd.8
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}
-USE_ICONV=	yes
+USES+=		iconv
 .else
 CONFIGURE_ARGS+=	--disable-utf8
 .endif

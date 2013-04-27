@@ -20,7 +20,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-USE_ICONV=	yes
+USES=		iconv
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	mixer image
 USE_XORG=	xdmcp xau x11
-USE_ICONV=	yes
+USES=		iconv
 INSTALLS_ICONS=	yes
 
 MAN6=		cuyo.6 cual.6

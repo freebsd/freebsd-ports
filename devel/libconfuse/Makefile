@@ -19,10 +19,9 @@ COMMENT=	Configuration file parsing library
 LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 .endif
 
-USE_ICONV=	yes
+USES=	iconv pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS+=	--disable-nls
 CFLAGS+=	-I${WRKSRC}/src
 .if defined(WITH_CHECK)

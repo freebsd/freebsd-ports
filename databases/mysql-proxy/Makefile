@@ -22,8 +22,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LUA_PREFIX}/share/doc/${LUA_SUBDIR}/etc"
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 USE_LDCONFIG=	yes
 USE_LUA=	5.1+
 USE_MYSQL=	yes

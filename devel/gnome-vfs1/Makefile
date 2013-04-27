@@ -16,12 +16,11 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
-USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix glib12 libxml gtk12 orbit gconf \
-		gnomemimedata gnomelibs
-USES=		gettext
+USE_GNOME=	gnomeprefix glib12 libxml gtk12 orbit gconf gnomemimedata \
+		gnomelibs
+USES=		gettext iconv pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

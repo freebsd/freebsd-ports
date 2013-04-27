@@ -31,7 +31,7 @@ MAKE_JOBS_SAFE=	yes
 USES+=		gettext
 PLIST_SUB+=     NLS=""
 .else
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=     NLS="@comment "
 .endif

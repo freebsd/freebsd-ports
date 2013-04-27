@@ -19,7 +19,7 @@ GTK2_DESC=	 GTK2 input method module
 CHEWING_DESC=	 Chewing input module
 UNICODE_DESC=	 Unicode input module
 
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	x11 xft xpm xtst
 WANT_GNOME=	yes
 

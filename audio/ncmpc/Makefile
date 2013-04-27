@@ -22,7 +22,7 @@ LYRICS_DESC=	Compile with lyrics screen
 
 .include <bsd.port.options.mk>
 
-USE_ICONV=	yes
+USES=		iconv
 PLIST_FILES=	bin/ncmpc \
 		%%EXAMPLESDIR%%/config \
 		%%EXAMPLESDIR%%/keys \

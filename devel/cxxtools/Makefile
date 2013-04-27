@@ -14,7 +14,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Collection of general-purpose C++ classes
 
 PATCH_STRIP=	-p1
-USE_ICONV=	yes
+USES=		iconv
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

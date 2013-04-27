@@ -21,11 +21,10 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 
 OPTIONS_DEFINE=	ALSA
 
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 MAKE_JOBS_SAFE=	yes

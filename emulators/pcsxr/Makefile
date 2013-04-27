@@ -32,7 +32,7 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 USE_GNOME=	gtk30 desktopfileutils glib20
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl

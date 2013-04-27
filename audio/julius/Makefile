@@ -19,7 +19,7 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv

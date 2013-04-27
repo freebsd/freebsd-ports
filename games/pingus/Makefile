@@ -15,7 +15,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_SCONS=	yes
 SCONS_ARGS=	with_linuxusbmouse=0 \
 		with_linuxevdev=0

@@ -15,7 +15,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-iconv
 
 CPPFLAGS+=	-DWITH_ICONV -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-USE_ICONV=	yes
+USES+=		iconv
 
 CONFLICTS=	unrar-[0-9]* zh-unrar-[0-9]*
 

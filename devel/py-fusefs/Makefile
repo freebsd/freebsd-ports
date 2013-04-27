@@ -11,10 +11,9 @@ DISTNAME=	fuse-python-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
 
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig iconv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
-USE_ICONV=	yes
 PORTDOCS=	AUTHORS Changelog FAQ INSTALL README.1st README.historic \
 		README.new_fusepy_api
 PORTEXAMPLES=	_find_fuse_parts.py hello.py xmp.py

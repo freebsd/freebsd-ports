@@ -16,7 +16,7 @@ COMMENT=	A powerful text mode based programming IDE
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 .if !defined(WITHOUT_NLS)

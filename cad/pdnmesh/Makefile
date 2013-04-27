@@ -26,10 +26,9 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 OPTIONS_DEFINE=	ATLAS DOCS EXAMPLES
 ATLAS_DESC=	Enable ATLAS support
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_FORTRAN=	yes
 USE_GL=		glu
-USE_ICONV=	yes
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xmu xi xinerama xrandr xrender xt xxf86vm

@@ -19,10 +19,10 @@ BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch
 
+USES=	iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}

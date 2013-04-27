@@ -24,7 +24,7 @@ BJAM_ARGS+=	--without-python
 LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
 BJAM_ARGS+=	-sICU_PATH=${LOCALBASE}
 .else
-USE_ICONV=	yes
+USES+=		iconv
 BJAM_ARGS+=	-sICONV_PATH=${LOCALBASE}
 .endif
 

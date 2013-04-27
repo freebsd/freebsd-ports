@@ -13,10 +13,9 @@ OPTIONS_DEFINE=	GTK2 GNOME
 
 LICENSE=	GPLv2
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig iconv
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack libxml2
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

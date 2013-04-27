@@ -13,7 +13,7 @@ LICENSE=	BSD
 CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	transformers>=0.2
-USE_ICONV=	yes
+USES+=		iconv
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

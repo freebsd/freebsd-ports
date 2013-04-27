@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(SLAVEPORT)
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-iconv \
 		--enable-pthread

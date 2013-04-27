@@ -11,7 +11,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
 
 USE_GNOME=	gnomehack pkgconfig
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes

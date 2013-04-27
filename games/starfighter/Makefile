@@ -17,7 +17,7 @@ COMMENT=	Liberate the universe from the evil company WEAPCO
 
 LICENSE=	GPLv2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	image mixer
 WITH_ZLIB=	yes

@@ -10,7 +10,7 @@ COMMENT=	VM Back Command Line Tools for VMware
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
-USE_ICONV=	yes
+USES=		iconv
 
 SBINS=		vmw vmshrink vmftp
 

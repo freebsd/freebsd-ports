@@ -17,11 +17,10 @@ LIB_DEPENDS=	pciaccess:${PORTSDIR}/devel/libpciaccess
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-libxml2
-USES=		pkgconfig
+USES=		pkgconfig pathfix iconv
 USE_BZIP2=	yes
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2 gnomehack
+USE_GNOME=	libxml2
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*

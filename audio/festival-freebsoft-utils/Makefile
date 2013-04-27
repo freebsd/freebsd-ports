@@ -17,7 +17,7 @@ RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
 		sox:${PORTSDIR}/audio/sox
 
 NO_BUILD=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 PORTDOCS=	ANNOUNCE NEWS README
 

@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU gettext package
 
-USES=		charsetfix
-USE_ICONV=	yes
+USES=		charsetfix iconv
 LIBTOOLFILES=	gettext-runtime/configure \
 		gettext-runtime/libasprintf/configure gettext-tools/configure
 USE_AUTOTOOLS=	libtool

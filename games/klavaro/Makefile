@@ -22,10 +22,9 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		gtkdatabox:${PORTSDIR}/x11-toolkits/gtkdatabox \
 		xcb:${PORTSDIR}/x11/libxcb
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gtk20

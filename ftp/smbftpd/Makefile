@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	"--with-pgsql"
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=	"--with-iconv"
 .endif
 

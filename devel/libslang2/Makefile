@@ -55,7 +55,7 @@ PLIST_SUB+=	PNG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 PLIST_SUB+=	ICONV=""
 .else
 CONFIGURE_ARGS+=	--without-iconv

@@ -14,7 +14,7 @@ COMMENT=	Sybase/Microsoft TDS protocol library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDS_VER?=	5.0
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 GNU_GONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env libtool
