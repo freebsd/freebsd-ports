@@ -38,6 +38,4 @@
 @@ -117,4 +105,4 @@
      // Call application class main method with reflection
      applicationClassMain.invoke(null, new Object [] {args});
-   }-}
-\ No newline at end of file
-+}
+   }
