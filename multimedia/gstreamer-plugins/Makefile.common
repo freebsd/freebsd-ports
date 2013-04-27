@@ -378,7 +378,7 @@ gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
 		${GST_LIB_DIR}/libgstpng.la
 
 # libvisual
-gst_libvisual_LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
+gst_libvisual_LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
 gst_libvisual_PLIST_FILES=	${GST_LIB_DIR}/libgstlibvisual.la \
 		${GST_LIB_DIR}/libgstlibvisual.so
 gst_libvisual_DIST=	base

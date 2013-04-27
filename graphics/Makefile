@@ -336,6 +336,15 @@
     SUBDIR += gstreamer-plugins-libpng
     SUBDIR += gstreamer-plugins-libvisual
     SUBDIR += gstreamer-plugins-opencv
+    SUBDIR += gstreamer1-plugins-aalib
+    SUBDIR += gstreamer1-plugins-cairo
+    SUBDIR += gstreamer1-plugins-gdkpixbuf
+    SUBDIR += gstreamer1-plugins-jpeg
+    SUBDIR += gstreamer1-plugins-libcaca
+    SUBDIR += gstreamer1-plugins-libvisual
+    SUBDIR += gstreamer1-plugins-opencv
+    SUBDIR += gstreamer1-plugins-png
+    SUBDIR += gstreamer1-plugins-zbar
     SUBDIR += gthumb
     SUBDIR += gtimelapse
     SUBDIR += gtk-update-icon-cache

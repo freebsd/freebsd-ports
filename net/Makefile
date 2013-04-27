@@ -196,6 +196,7 @@
     SUBDIR += gspoof
     SUBDIR += gssdp
     SUBDIR += gstreamer-plugins-libmms
+    SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-vnc
     SUBDIR += gupnp

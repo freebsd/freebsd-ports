@@ -606,6 +606,7 @@
     SUBDIR += gstreamer-plugins-gnomevfs
     SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gstreamer-plugins-soup
+    SUBDIR += gstreamer1-plugins-soup
     SUBDIR += gtgt
     SUBDIR += gtkparasite
     SUBDIR += gtranslator

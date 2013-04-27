@@ -1,13 +1,10 @@
-# New ports collection makefile for:	gstreamer-plugins-gdkpixbuf
-# Date created:			3 Oct 2004
-# Whom:				Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/gstreamer-plugins-gdkpixbuf/Makefile,v 1.5 2008/03/19 14:05:34 ahze Exp $
-#
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
+PKGNAMESUFFIX=	-plugins-gdkpixbuf
 
 COMMENT=	Gstreamer image decoder plugin
 

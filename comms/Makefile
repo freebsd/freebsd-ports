@@ -53,6 +53,7 @@
     SUBDIR += grig
     SUBDIR += gscmxx
     SUBDIR += gsmlib
+    SUBDIR += gstreamer1-plugins-spandsp
     SUBDIR += gtkmmorse
     SUBDIR += hamfax
     SUBDIR += hamlib
