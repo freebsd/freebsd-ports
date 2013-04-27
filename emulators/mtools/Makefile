@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=ICONV X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 .else

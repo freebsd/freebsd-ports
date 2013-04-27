@@ -34,8 +34,7 @@ USE_GNOME=	gdkpixbuf2 glib20 gtk20 libxml2
 USE_WX=		2.6+
 USE_PYTHON_BUILD=yes
 USE_GMAKE=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp \
 		xext xfixes xi xinerama xrandr xrender xxf86vm
 MAKEFILE=	GNUmakefile

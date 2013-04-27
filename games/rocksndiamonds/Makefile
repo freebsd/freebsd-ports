@@ -34,7 +34,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
-USE_ICONV=	yes
+USES=		iconv
 USE_SDL=	image mixer net sdl
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \

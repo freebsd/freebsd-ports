@@ -22,10 +22,9 @@ GCCVERSION=	4.7.2
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_LDCONFIG=	yes
-USES=		bison
+USES=		bison iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 

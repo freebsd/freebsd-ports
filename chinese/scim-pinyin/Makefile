@@ -12,8 +12,8 @@ COMMENT=	SCIM Chinese Smart Pinyin input method
 BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GNOME=	gnomehack lthack
-USE_ICONV=	yes
+USE_GNOME=	lthack
+USES=		pathfix iconv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 

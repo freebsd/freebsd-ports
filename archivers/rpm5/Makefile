@@ -76,8 +76,7 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--enable-nls
-USES+=		gettext
-USE_ICONV=	yes
+USES+=		gettext iconv
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif

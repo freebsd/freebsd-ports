@@ -16,7 +16,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An iconv wrapper with Unicode codec for Python
 
-USE_ICONV=	yes
+USES=		iconv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}

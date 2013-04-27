@@ -23,8 +23,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_ICONV=	yes
+USES=		pathfix pkgconfig iconv
 CONFIGURE_ENV=	ac_cv_header_libusbhid_h=no
 
 CFLAGS+=	-I${LOCALBASE}/include

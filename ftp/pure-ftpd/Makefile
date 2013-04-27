@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--with-uploadscript
 
 # RFC 2640 charset conversion requested?
 .if ${PORT_OPTIONS:MUTF8}
-USE_ICONV=	YES
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-rfc2640
 .endif
 

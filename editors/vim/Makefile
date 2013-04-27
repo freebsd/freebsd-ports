@@ -166,7 +166,7 @@ MAKE_ARGS+=	CONF_OPT_GUI=${CONF_OPT_GUI} ${I18N}
 
 
 .if exists(${LOCALBASE}/lib/libiconv.so)
-USE_ICONV=	yes
+USES+=	iconv
 .endif
 
 

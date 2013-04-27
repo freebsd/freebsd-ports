@@ -32,8 +32,7 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_READLINE=	yes
 USE_PERL5=	yes
 USE_XORG=	sm ice xi x11 xt xmu xext

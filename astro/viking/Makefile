@@ -23,7 +23,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-USES=		pkgconfig
+USES=		iconv pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes

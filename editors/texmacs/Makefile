@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-gs
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-iconv="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--without-iconv

@@ -35,12 +35,11 @@ EXPIRATION_DATE=	2013-07-01
 
 PREFIX=		${KDE_PREFIX}
 WANT_GNOME=	yes
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext iconv
 USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xft xi \
 		xinerama xrandr xrender xt
 USE_LDCONFIG=	yes

@@ -13,10 +13,10 @@ COMMENT=	Simple Text Adventure, The Interpreter
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gtk20
+USE_GNOME=	gtk20
 USE_LUA=	5.1
 USE_SDL=	sdl image ttf mixer
-USE_ICONV=	yes
+USES=		pkgconfig iconv
 
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ENV=	PREFIX="${PREFIX}"

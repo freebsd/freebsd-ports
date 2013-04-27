@@ -22,8 +22,7 @@ USE_WX=		2.8
 WANT_UNICODE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig iconv
 CPPFLAGS+=	-I${LOCALBASE}/include `${WX_CONFIG} --cppflags`
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv `${WX_CONFIG} --libs`
 CONFIGURE_ARGS+=CFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

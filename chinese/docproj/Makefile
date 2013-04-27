@@ -22,7 +22,7 @@ COMMENT=	Supportive tools for Chinese docproj build
 
 RUN_DEPENDS=	gbklatex:${PORTSDIR}/print/latex-cjk
 
-USE_ICONV=	yes
+USES=	iconv
 
 WRKSRC=		${WRKDIR}/src
 

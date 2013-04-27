@@ -47,8 +47,7 @@ PATCH_WRKSRC=	${SRCDIR}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		bison
-USE_ICONV=	yes
+USES=		bison iconv
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 

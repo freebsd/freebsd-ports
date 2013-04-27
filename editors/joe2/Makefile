@@ -20,7 +20,7 @@ CONFLICTS=	joe-3*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv"
 CPPFLAGS+=	-I${LOCALBASE}/include
 

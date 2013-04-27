@@ -16,9 +16,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 
 USE_XORG=	ice
-USE_GNOME=	pkgconfig glib20
-USE_ICONV=	yes
-USES=		gettext
+USE_GNOME=	glib20
+USES=		gettext iconv pkgconfig
 
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu \
 		pcre.3:${PORTSDIR}/devel/pcre \

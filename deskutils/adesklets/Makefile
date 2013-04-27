@@ -21,7 +21,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_EFL=	imlib2
-USE_ICONV=	yes
+USES=		iconv
 WANT_PERL=	yes
 
 MAN1=		adesklets.1 \

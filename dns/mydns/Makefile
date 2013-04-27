@@ -16,7 +16,7 @@ COMMENT=	DNS server designed to utilize the MySQL database
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
-USE_ICONV=	yes
+USES=		iconv
 USE_BZIP2=	yes
 
 USE_RC_SUBR=	mydns

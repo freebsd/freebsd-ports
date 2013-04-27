@@ -34,7 +34,7 @@ NSS_DESC=	NSS crypto driver
 APR_VERSION=	1.4.6
 APU_VERSION=	1.4.1
 
-USE_ICONV=		yes
+USES=		iconv
 USE_AUTOTOOLS=	automake autoconf libtool:env
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes

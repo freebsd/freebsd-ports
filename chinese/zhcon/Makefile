@@ -23,9 +23,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
-USE_ICONV=	yes
 # Don't bother to add ".if !defined(WITHOUT_NLS)", zhcon requires libintl
-USES=		gettext
+USES=		gettext iconv
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -13,9 +13,9 @@ COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
 LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
 		fftw3:${PORTSDIR}/math/fftw3
 
+USES=		iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_NCURSES=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool

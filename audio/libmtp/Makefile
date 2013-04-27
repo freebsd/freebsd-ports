@@ -15,8 +15,7 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USES=		pathfix pkgconfig
-USE_ICONV=	yes
+USES=		pathfix pkgconfig iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

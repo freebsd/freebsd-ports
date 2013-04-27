@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 .if defined(WITH_ICONV)
 CFLAGS+=	-DUSE_ICONV
-USE_ICONV=	yes
+USES=		iconv
 .endif
 
 .include <bsd.port.pre.mk>

@@ -21,8 +21,7 @@ OPTIONS_DEFINE=	NLS DEBUG
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-USE_ICONV=	yes
+USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--i18n=1
 .else

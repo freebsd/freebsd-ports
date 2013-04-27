@@ -22,7 +22,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		protobuf:${PORTSDIR}/devel/protobuf
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
-USE_ICONV=	yes
+USES=		iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

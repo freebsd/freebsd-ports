@@ -20,7 +20,7 @@ LIB_DEPENDS=	tds.5:${PORTSDIR}/databases/freetds
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

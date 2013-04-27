@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include

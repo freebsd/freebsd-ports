@@ -15,7 +15,7 @@ COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	libiodbc-[0-9]* virtuoso-*
 
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}

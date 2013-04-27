@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

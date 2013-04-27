@@ -13,7 +13,7 @@ COMMENT=	A Next Generation DNS Server for sql based DNS services
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
-USE_ICONV=	yes
+USES=		iconv
 
 USE_RC_SUBR=	mydns
 

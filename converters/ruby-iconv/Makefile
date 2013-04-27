@@ -20,7 +20,7 @@ COMMENT=	An iconv wrapper class for Ruby
 
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
-USE_ICONV=	yes
+USES=		iconv
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

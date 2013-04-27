@@ -17,7 +17,7 @@ BINUTILVERSION=	2.23.1
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \

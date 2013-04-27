@@ -22,8 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 USE_GNOME=	desktopfileutils gnomehier gtk20

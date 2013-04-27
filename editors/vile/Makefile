@@ -37,7 +37,7 @@ PLIST_SUB+=	SO_EXT=""
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=	--with-iconv
 PLIST_SUB+=	ICONV=""
 .else

@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

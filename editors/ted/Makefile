@@ -25,7 +25,7 @@ GTK2_DESC=	Use GTK2 instead of MOTIF
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
 USE_XORG=	xext xft
-USE_ICONV=	yes
+USES=		iconv
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15

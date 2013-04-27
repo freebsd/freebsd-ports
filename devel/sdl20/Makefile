@@ -9,8 +9,7 @@ DISTNAME=	SDL-2.0.0-7046
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
 
-USES=		pathfix cmake:outsource
-USE_ICONV=	yes
+USES=		pathfix cmake:outsource iconv
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

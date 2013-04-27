@@ -11,11 +11,10 @@ MASTER_SITE_SUBDIR=	recode
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
-USES=		gettext
+USES=		gettext iconv
 USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-USE_ICONV=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

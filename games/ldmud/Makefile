@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
+USES=		iconv
 CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--bindir=${PREFIX}/sbin \
 		--enable-use-pcre \

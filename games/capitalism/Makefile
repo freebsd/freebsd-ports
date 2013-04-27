@@ -22,8 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		xcb:${PORTSDIR}/x11/libxcb
 
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_XORG=	ice sm x11 xau xdmcp xext xrender
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib gui network script xml

@@ -17,9 +17,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_AUTOTOOLS=	libtool
-USES=		gettext
+USES=		gettext iconv
 USE_GNOME=	gtk12
-USE_ICONV=	yes
 USE_XORG=	x11 xau xdmcp xext xi
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \

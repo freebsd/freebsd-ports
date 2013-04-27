@@ -19,9 +19,7 @@ RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext pkgconfig iconv
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include

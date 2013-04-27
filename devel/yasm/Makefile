@@ -27,8 +27,7 @@ CFLAGS:=	${CFLAGS:C/-O[0-9]//g}
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-USE_ICONV=	yes
+USES+=	gettext iconv
 .else
 CONFIGURE_ARGS+=--disable-nls --without-libiconv-prefix --without-libintl-prefix
 .endif

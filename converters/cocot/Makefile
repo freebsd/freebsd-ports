@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Code Converter on TTY
 
 USE_ZIP=	yes
-USE_ICONV=	yes
+USES=		iconv
 WRKSRC=		${WRKDIR}/vmi-${PORTNAME}-8bc9f64
 GNU_CONFIGURE=	yes
 

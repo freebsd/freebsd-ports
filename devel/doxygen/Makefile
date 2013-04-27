@@ -18,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		bison
-USE_ICONV=	yes
+USES=		bison iconv
 ALL_TARGET=	all
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes

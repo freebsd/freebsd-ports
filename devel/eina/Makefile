@@ -15,9 +15,8 @@ LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix iconv
 USE_EFL=	librt_hack libtool_hack
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-amalgamation

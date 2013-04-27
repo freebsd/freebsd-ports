@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GL=		gl
 USE_SDL=	mixer sdl ttf
 USE_GMAKE=	yes

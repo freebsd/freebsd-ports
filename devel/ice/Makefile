@@ -25,7 +25,7 @@ USE_PYTHON_BUILD=	yes
 .endif
 
 USE_GMAKE=		yes
-USE_ICONV=		yes
+USES=			iconv
 USE_BDB=		42+
 INVALID_BDB_VER=	2 3 40 41
 USE_LDCONFIG=		yes

@@ -19,7 +19,7 @@ LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra \
 
 USE_SDL=	sdl image mixer
 USE_XORG=	x11 xau xdmcp
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`

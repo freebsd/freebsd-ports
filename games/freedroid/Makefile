@@ -13,7 +13,7 @@ COMMENT=	Clone of the Commodore game Paradroid
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
-USE_ICONV=	yes
+USES=		iconv
 USE_SDL=	mixer image sdl
 
 GNU_CONFIGURE=	yes
