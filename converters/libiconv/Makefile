@@ -30,11 +30,6 @@ OPTIONS_DEFAULT=ENCODINGS
 ENCODINGS_DESC=	Include extra character sets
 PATCHES_DESC=	Apply patches to fix CP932, add EUCJP-MS
 
-.ifdef USE_ICONV
-.error USE_ICONV is defined as an environment variable, or in the arguments \
-	to "make".  Please unset it and restart the build.
-.endif
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCODINGS}

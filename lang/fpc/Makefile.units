@@ -139,7 +139,7 @@ USE_FIREBIRD=	yes
 .endif
 
 .if ${PKGNAMESUFFIX} == "-iconvenc"
-USE_ICONV=	yes
+USES+=	iconv
 .endif
 
 .if ${PKGNAMESUFFIX} == "-ide"

@@ -13,8 +13,8 @@ COMMENT=	Full-featured free source code editing component for GTK+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
+USES=		iconv
 USE_GMAKE=	yes
-USE_ICONV=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20

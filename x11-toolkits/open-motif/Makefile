@@ -23,8 +23,8 @@ CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
+USES=		iconv
 USE_AUTOTOOLS=	libtool autoconf:env automake:env
-USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_XORG=	xaw xbitmaps xft
 GNU_CONFIGURE=	yes

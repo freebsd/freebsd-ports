@@ -136,7 +136,7 @@ MAN3=		Prima.3 \
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=	yes
+USES+=		iconv
 .else
 CONFIGURE_ARGS+=WITH_ICONV=0
 .endif

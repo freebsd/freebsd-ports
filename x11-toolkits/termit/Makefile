@@ -22,8 +22,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		xcb:${PORTSDIR}/x11/libxcb
 
 USE_BZIP2=	yes
-USES=		cmake pkgconfig
-USE_ICONV=	yes
+USES=		cmake pkgconfig iconv
 USE_LUA=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
