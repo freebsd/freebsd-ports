@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metar
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	astro python geography
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
 		LOCAL/sunpoet
@@ -14,14 +14,16 @@ COMMENT=	Python module that provides access to NOAA METAR weather reports
 
 LICENSE=	GPLv2
 
-OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 
 PYDISTUTILS_PKGNAME=	${REALPORTNAME}
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_PYTHON=	-2.7
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${REALPORTNAME}-${PORTVERSION}
+MAN1=		${REALPORTNAME}.1
+MANCOMPRESSED=	no
 PLIST_FILES=	bin/${REALPORTNAME} \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.py \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.pyc \
@@ -34,15 +36,16 @@ REALPORTNAME=	pymetar
 
 post-patch:
 	@${REINPLACE_CMD} -E '1 s|/usr/bin/(env *)?python|${PYTHON_CMD}|' \
-		${WRKSRC}/setup.py ${WRKSRC}/bin/${REALPORTNAME}
+		${WRKSRC}/${PYSETUP} ${WRKSRC}/bin/${REALPORTNAME}
+	@${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/${PYSETUP}
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} \
 		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|"${DOCSDIR}"|' \
-		${WRKSRC}/setup.py
+		${WRKSRC}/${PYSETUP}
 .else
 	@${REINPLACE_CMD} \
 		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|""|' \
-		-e "s|\['README.*'\]|[]|" ${WRKSRC}/setup.py
+		-e "s|\['README.*'\]|[]|" ${WRKSRC}/${PYSETUP}
 .endif
 
 .include <bsd.port.mk>
