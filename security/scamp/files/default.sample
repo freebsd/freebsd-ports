@@ -1,34 +1,28 @@
 # This is the /usr/local/etc/scamp/default file.
-# Created February 21, 2012
+# Created March 25, 2013
 
-SCAMP_VERSION=5.3b
-CLAMAV_DB=/var/db/clamav
-T_DIR=/var/db/clamav/tmp
 C_GROUP=clamav
 C_PID=/var/run/clamav/clamd.pid
 C_USER=clamav
+CLAMAV_DB=/var/db/clamav
 GET_LDB=1
 GET_MALWARE=1
-GET_MSRBL=0
 GET_SANE=1
 GET_SECURITE=4
 GET_WINNOW=1
 gpg_key_url=http://www.sanesecurity.net/publickey.gpg
 L_TYPE=1
 MK_LOG=0
-MSRBL=rsync://rsync.mirror.msrbl.com/msrbl/
-msrbl_Images=MSRBL-Images.hdb
-msrbl_SPAM=MSRBL-SPAM.ndb
-msrbl_SPAM_CR=MSRBL-SPAM-CR.ndb
-MSR_DIR=/var/db/clamav/tmp/msr
 MW_DIR=/var/db/clamav/tmp/malware
 MW_FILE=mbl.ndb
 MW_URL=http://www.malwarepatrol.com.br/cgi/submit?action=list_clamav_ext
 RELOAD=1
-REST=1
-SANE=rsync://rsync.sanesecurity.net/sanesecurity
+REST=0
 SANE_DB=/var/db/clamav/tmp/sane
+SANE=rsync://rsync.sanesecurity.net/sanesecurity
+SCAMP_VERSION=5.4
 SI_DIR=/var/db/clamav/tmp/securite
 SYS_LOG=1
-WPC=1
+T_DIR=/var/db/clamav/tmp
 W_SUM=1
+WPC=1
