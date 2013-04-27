@@ -1,4 +1,4 @@
-%%WWWDIR%%/LICENSE.txt
+@comment $FreeBSD$
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/administrator/cache/index.html
 %%WWWDIR%%/administrator/components/com_admin/admin.php
@@ -48,19 +48,29 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.0-2012-01-10.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.0-2012-01-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.1-2012-01-26.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.10.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.11.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.4-2012-03-18.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.4-2012-03-19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.5.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.6.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.7.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.8.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.9.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/index.html
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.10.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.11.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-18.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.5.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.6.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.7.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.8.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.9.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
@@ -436,6 +446,7 @@
 %%WWWDIR%%/administrator/components/com_installer/controllers/discover.php
 %%WWWDIR%%/administrator/components/com_installer/controllers/index.html
 %%WWWDIR%%/administrator/components/com_installer/controllers/install.php
+%%WWWDIR%%/administrator/components/com_installer/controllers/languages.php
 %%WWWDIR%%/administrator/components/com_installer/controllers/manage.php
 %%WWWDIR%%/administrator/components/com_installer/controllers/update.php
 %%WWWDIR%%/administrator/components/com_installer/helpers/html/index.html
@@ -457,6 +468,7 @@
 %%WWWDIR%%/administrator/components/com_installer/models/forms/manage.xml
 %%WWWDIR%%/administrator/components/com_installer/models/index.html
 %%WWWDIR%%/administrator/components/com_installer/models/install.php
+%%WWWDIR%%/administrator/components/com_installer/models/languages.php
 %%WWWDIR%%/administrator/components/com_installer/models/manage.php
 %%WWWDIR%%/administrator/components/com_installer/models/update.php
 %%WWWDIR%%/administrator/components/com_installer/models/warnings.php
@@ -480,6 +492,11 @@
 %%WWWDIR%%/administrator/components/com_installer/views/install/tmpl/default_form.php
 %%WWWDIR%%/administrator/components/com_installer/views/install/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_installer/views/install/view.html.php
+%%WWWDIR%%/administrator/components/com_installer/views/languages/index.html
+%%WWWDIR%%/administrator/components/com_installer/views/languages/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_installer/views/languages/tmpl/default_filter.php
+%%WWWDIR%%/administrator/components/com_installer/views/languages/tmpl/index.html
+%%WWWDIR%%/administrator/components/com_installer/views/languages/view.html.php
 %%WWWDIR%%/administrator/components/com_installer/views/manage/index.html
 %%WWWDIR%%/administrator/components/com_installer/views/manage/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_installer/views/manage/tmpl/default_filter.php
@@ -509,6 +526,7 @@
 %%WWWDIR%%/administrator/components/com_joomlaupdate/models/index.html
 %%WWWDIR%%/administrator/components/com_joomlaupdate/restore.php
 %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl/complete.php
 %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/view.html.php
@@ -549,7 +567,6 @@
 %%WWWDIR%%/administrator/components/com_languages/views/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/installed/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default.php
-%%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default_ftp.php
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default_navigation.php
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/installed/view.html.php
@@ -1741,6 +1758,7 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-edit.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-error.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-export.png
+%%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-extension.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-featured.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-forward.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-help.png
@@ -1791,7 +1809,6 @@
 %%WWWDIR%%/administrator/templates/bluestork/templateDetails.xml
 %%WWWDIR%%/administrator/templates/bluestork/template_preview.png
 %%WWWDIR%%/administrator/templates/bluestork/template_thumbnail.png
-%%WWWDIR%%/administrator/templates/hathor/LICENSE.txt
 %%WWWDIR%%/administrator/templates/hathor/component.php
 %%WWWDIR%%/administrator/templates/hathor/cpanel.php
 %%WWWDIR%%/administrator/templates/hathor/css/boldtext.css
@@ -1876,7 +1893,6 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_installer/update/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/default_ftp.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/languages/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/languages/index.html
@@ -2199,6 +2215,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-edit.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-error.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-export.png
+%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-extension.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-featured.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-forward.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-help.png
@@ -2263,6 +2280,19 @@
 %%WWWDIR%%/administrator/templates/system/index.html
 %%WWWDIR%%/administrator/templates/system/index.php
 %%WWWDIR%%/build.xml
+%%WWWDIR%%/build/build.php
+%%WWWDIR%%/build/index.html
+%%WWWDIR%%/build/phpcs/Joomla/Sniffs/Classes/InstantiateNewClassesSniff.php
+%%WWWDIR%%/build/phpcs/Joomla/Sniffs/ControlStructures/ElseIfDeclarationSniff.php
+%%WWWDIR%%/build/phpcs/Joomla/Sniffs/PHP/LowerCaseConstantSniff.php
+%%WWWDIR%%/build/phpcs/Joomla/Sniffs/WhiteSpace/SuperfluousWhitespaceSniff.php
+%%WWWDIR%%/build/phpcs/Joomla/index.html
+%%WWWDIR%%/build/phpcs/Joomla/ruleset.xml
+%%WWWDIR%%/build/phpcs/index.html
+%%WWWDIR%%/build/update/extension.xml
+%%WWWDIR%%/build/update/list.xml
+%%WWWDIR%%/build/update/test/extension_test.xml
+%%WWWDIR%%/build/update/test/list_test.xml
 %%WWWDIR%%/cache/index.html
 %%WWWDIR%%/cli/finder_indexer.php
 %%WWWDIR%%/cli/garbagecron.php
@@ -2636,6 +2666,11 @@
 %%WWWDIR%%/components/com_wrapper/wrapper.php
 %%WWWDIR%%/components/com_wrapper/wrapper.xml
 %%WWWDIR%%/components/index.html
+%%WWWDIR%%/docs/README.markdown
+%%WWWDIR%%/docs/build.xml
+%%WWWDIR%%/docs/index.html
+%%WWWDIR%%/docs/installation/build.xml
+%%WWWDIR%%/docs/installation/index.html
 %%WWWDIR%%/htaccess.txt
 %%WWWDIR%%/images/banners/index.html
 %%WWWDIR%%/images/banners/osmbanner1.png
@@ -2733,6 +2768,9 @@
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
 %%WWWDIR%%/installation/language/cs-CZ/index.html
+%%WWWDIR%%/installation/language/cy-GB/cy-GB.ini
+%%WWWDIR%%/installation/language/cy-GB/cy-GB.xml
+%%WWWDIR%%/installation/language/cy-GB/index.html
 %%WWWDIR%%/installation/language/da-DK/da-DK.ini
 %%WWWDIR%%/installation/language/da-DK/da-DK.xml
 %%WWWDIR%%/installation/language/da-DK/index.html
@@ -2793,6 +2831,12 @@
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.ini
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.xml
 %%WWWDIR%%/installation/language/hu-HU/index.html
+%%WWWDIR%%/installation/language/hy-AM/hy-AM.ini
+%%WWWDIR%%/installation/language/hy-AM/hy-AM.xml
+%%WWWDIR%%/installation/language/hy-AM/index.html
+%%WWWDIR%%/installation/language/id-ID/id-ID.ini
+%%WWWDIR%%/installation/language/id-ID/id-ID.xml
+%%WWWDIR%%/installation/language/id-ID/index.html
 %%WWWDIR%%/installation/language/index.html
 %%WWWDIR%%/installation/language/it-IT/index.html
 %%WWWDIR%%/installation/language/it-IT/it-IT.ini
@@ -2863,6 +2907,9 @@
 %%WWWDIR%%/installation/language/sv-SE/index.html
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.ini
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.xml
+%%WWWDIR%%/installation/language/sw-KE/index.html
+%%WWWDIR%%/installation/language/sw-KE/sw-KE.ini
+%%WWWDIR%%/installation/language/sw-KE/sw-KE.xml
 %%WWWDIR%%/installation/language/sy-IQ/index.html
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.ini
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.xml
@@ -2884,6 +2931,9 @@
 %%WWWDIR%%/installation/language/ur-PK/index.html
 %%WWWDIR%%/installation/language/ur-PK/ur-PK.ini
 %%WWWDIR%%/installation/language/ur-PK/ur-PK.xml
+%%WWWDIR%%/installation/language/vi-VN/index.html
+%%WWWDIR%%/installation/language/vi-VN/vi-VN.ini
+%%WWWDIR%%/installation/language/vi-VN/vi-VN.xml
 %%WWWDIR%%/installation/language/zh-CN/index.html
 %%WWWDIR%%/installation/language/zh-CN/zh-CN.ini
 %%WWWDIR%%/installation/language/zh-CN/zh-CN.xml
@@ -2984,7 +3034,6 @@
 %%WWWDIR%%/installation/views/site/tmpl/default.php
 %%WWWDIR%%/installation/views/site/tmpl/index.html
 %%WWWDIR%%/installation/views/site/view.html.php
-%%WWWDIR%%/joomla.xml
 %%WWWDIR%%/language/en-GB/en-GB.com_contact.ini
 %%WWWDIR%%/language/en-GB/en-GB.com_content.ini
 %%WWWDIR%%/language/en-GB/en-GB.com_finder.ini
@@ -3159,6 +3208,7 @@
 %%WWWDIR%%/libraries/joomla/cache/storage/helpers/index.html
 %%WWWDIR%%/libraries/joomla/cache/storage/index.html
 %%WWWDIR%%/libraries/joomla/cache/storage/memcache.php
+%%WWWDIR%%/libraries/joomla/cache/storage/memcached.php
 %%WWWDIR%%/libraries/joomla/cache/storage/wincache.php
 %%WWWDIR%%/libraries/joomla/cache/storage/xcache.php
 %%WWWDIR%%/libraries/joomla/client/ftp.php
@@ -3475,6 +3525,7 @@
 %%WWWDIR%%/libraries/joomla/session/storage/eaccelerator.php
 %%WWWDIR%%/libraries/joomla/session/storage/index.html
 %%WWWDIR%%/libraries/joomla/session/storage/memcache.php
+%%WWWDIR%%/libraries/joomla/session/storage/memcached.php
 %%WWWDIR%%/libraries/joomla/session/storage/none.php
 %%WWWDIR%%/libraries/joomla/session/storage/wincache.php
 %%WWWDIR%%/libraries/joomla/session/storage/xcache.php
@@ -3540,7 +3591,6 @@
 %%WWWDIR%%/libraries/phputf8/utils/unicode.php
 %%WWWDIR%%/libraries/phputf8/utils/validation.php
 %%WWWDIR%%/libraries/platform.php
-%%WWWDIR%%/libraries/simplepie/LICENSE.txt
 %%WWWDIR%%/libraries/simplepie/README.txt
 %%WWWDIR%%/libraries/simplepie/idn/LICENCE
 %%WWWDIR%%/libraries/simplepie/idn/ReadMe.txt
@@ -3568,6 +3618,7 @@
 %%WWWDIR%%/media/com_finder/js/sliderfilter.js
 %%WWWDIR%%/media/com_joomlaupdate/default.js
 %%WWWDIR%%/media/com_joomlaupdate/encryption.js
+%%WWWDIR%%/media/com_joomlaupdate/index.html
 %%WWWDIR%%/media/com_joomlaupdate/json2.js
 %%WWWDIR%%/media/com_joomlaupdate/update.js
 %%WWWDIR%%/media/contacts/images/con_address.png
@@ -4063,6 +4114,7 @@
 %%WWWDIR%%/media/mod_languages/images/sl.gif
 %%WWWDIR%%/media/mod_languages/images/sr.gif
 %%WWWDIR%%/media/mod_languages/images/sv.gif
+%%WWWDIR%%/media/mod_languages/images/sw.gif
 %%WWWDIR%%/media/mod_languages/images/sy.gif
 %%WWWDIR%%/media/mod_languages/images/ta.gif
 %%WWWDIR%%/media/mod_languages/images/th.gif
@@ -4178,16 +4230,11 @@
 %%WWWDIR%%/media/system/js/passwordstrength.js
 %%WWWDIR%%/media/system/js/progressbar-uncompressed.js
 %%WWWDIR%%/media/system/js/progressbar.js
-%%WWWDIR%%/media/system/js/swf-uncompressed.js
-%%WWWDIR%%/media/system/js/swf.js
 %%WWWDIR%%/media/system/js/switcher-uncompressed.js
 %%WWWDIR%%/media/system/js/switcher.js
 %%WWWDIR%%/media/system/js/tabs.js
-%%WWWDIR%%/media/system/js/uploader-uncompressed.js
-%%WWWDIR%%/media/system/js/uploader.js
 %%WWWDIR%%/media/system/js/validate-uncompressed.js
 %%WWWDIR%%/media/system/js/validate.js
-%%WWWDIR%%/media/system/swf/index.html
 %%WWWDIR%%/media/system/swf/uploader.swf
 %%WWWDIR%%/modules/index.html
 %%WWWDIR%%/modules/mod_articles_archive/helper.php
@@ -4510,7 +4557,7 @@
 %%WWWDIR%%/plugins/user/profile/profile.xml
 %%WWWDIR%%/plugins/user/profile/profiles/index.html
 %%WWWDIR%%/plugins/user/profile/profiles/profile.xml
-%%WWWDIR%%/robots.txt
+%%WWWDIR%%/robots.txt.dist
 %%WWWDIR%%/templates/atomic/component.php
 %%WWWDIR%%/templates/atomic/css/blueprint/ie.css
 %%WWWDIR%%/templates/atomic/css/blueprint/index.html
@@ -4559,7 +4606,6 @@
 %%WWWDIR%%/templates/atomic/css/blueprint/screen.css
 %%WWWDIR%%/templates/atomic/css/blueprint/src/AUTHORS.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/CHANGELOG.txt
-%%WWWDIR%%/templates/atomic/css/blueprint/src/LICENSE.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/README.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/RESOURCES.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/TUTORIAL.txt
@@ -4848,9 +4894,797 @@
 %%WWWDIR%%/templates/system/index.html
 %%WWWDIR%%/templates/system/index.php
 %%WWWDIR%%/templates/system/offline.php
+%%WWWDIR%%/tests/CHANGELOG
+%%WWWDIR%%/tests/_data/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/admin.alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/applications-internet-16.png
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/applications-internet.png
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/image.png
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language/en-GB/en-GB.com_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language/en-GB/en-GB.com_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/install.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/uninstall.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/mysql/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/mysql/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/mysql/20100504.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/mysql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/sqlsrv/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/sqlsrv/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/sqlsrv/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/alpha.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/com_alpha.jpg
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/file.install.php
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/file.script.php
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/file.uninstall.php
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/language/en-GB/en-GB.com_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/language/en-GB/en-GB.com_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language/en-GB/en-GB.com_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language/en-GB/en-GB.com_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/admin.alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/applications-internet-16.png
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/applications-internet.png
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/image.png
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language/en-GB/en-GB.com_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language/en-GB/en-GB.com_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/install.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/uninstall.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/mysql/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/mysql/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/mysql/20100504.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/mysql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/sqlsrv/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/sqlsrv/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/sqlsrv/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/beta.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/com_beta.jpg
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/file.install.php
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/file.script.php
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/file.uninstall.php
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/language/en-GB/en-GB.com_beta.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/language/en-GB/en-GB.com_beta.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language/en-GB/en-GB.com_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language/en-GB/en-GB.com_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/delta.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/file.install.php
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/file.script.php
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/file.uninstall.php
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/language/en-GB/en-GB.com_delta.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/language/en-GB/en-GB.com_delta.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/delta.php
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language/en-GB/en-GB.com_delta.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language/en-GB/en-GB.com_delta.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/metadata.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/metadata.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/template/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/tmpl/default.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/tmpl/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/view.html.php
+%%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/admin.gamma.php
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/applications-internet-16.png
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/applications-internet.png
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/image.png
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language/en-GB/en-GB.com_gamma.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language/en-GB/en-GB.com_gamma.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/install.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/uninstall.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/mysql/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/mysql/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/mysql/20100504.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/mysql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/sqlsrv/20100101.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/sqlsrv/20100503.sql
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/sqlsrv/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/com_gamma.jpg
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/file.install.php
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/file.script.php
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/file.uninstall.php
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/gamma.xml
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/language/en-GB/en-GB.com_gamma.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/language/en-GB/en-GB.com_gamma.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/MD5SUMS
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/gamma.php
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language/en-GB/en-GB.com_gamma.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language/en-GB/en-GB.com_gamma.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/files_test1.xml
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/includes/alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/includes/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/includes/sample.php
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/language/en-GB/test.ini
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/modules/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/modules/mod_new_module/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/modules/mod_new_module/sample-newmod.php
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/otherfiles/index.html
+%%WWWDIR%%/tests/_data/installer_packages/files_test1/otherfiles/other_files.php
+%%WWWDIR%%/tests/_data/installer_packages/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/files/alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/files/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language/en-GB/en-GB.lib_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language/en-GB/en-GB.lib_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lib_alpha/lib_alpha.xml
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX.admin/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX.admin/install.xml
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX.admin/xx-XX.ini
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX.admin/xx-XX.xml
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX/index.html
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX/install.xml
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX/xx-XX.ini
+%%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX/xx-XX.xml
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/en-GB.mod_adminalpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/en-GB.mod_adminalpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language/en-GB/en-GB.mod_adminalpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language/en-GB/en-GB.mod_adminalpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/mod_adminalpha.php
+%%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/mod_adminalpha.xml
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha.admin/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/alpha.scriptfile.php
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/en-GB.mod_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/en-GB.mod_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language/en-GB/en-GB.mod_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language/en-GB/en-GB.mod_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/mod_alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/mod_alpha.xml
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/install.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/uninstall.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates/index.html
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates/mysql/20100401.sql
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates/mysql/20100504.sql
+%%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates/mysql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/pkg_everything/build.xml
+%%WWWDIR%%/tests/_data/installer_packages/pkg_everything/index.html
+%%WWWDIR%%/tests/_data/installer_packages/pkg_everything/pkg_everything.xml
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/alpha.php
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/alpha.scriptfile.php
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/alpha.xml
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/index.html
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language/en-GB/en-GB.plg_system_alpha.ini
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language/en-GB/en-GB.plg_system_alpha.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/install.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/uninstall.mysql.utf8.sql
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates/index.html
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates/mysql/20100401.sql
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates/mysql/20100504.sql
+%%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates/mysql/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/css/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/css/screen.css
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language/en-GB/en-GB.tpl_test.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language/en-GB/en-GB.tpl_test.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/templateDetails.xml
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/template_thumbnail.png
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/css/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/css/screen.css
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language/en-GB/en-GB.tpl_test.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language/en-GB/en-GB.tpl_test.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/templateDetails.xml
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/template_thumbnail.png
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/css/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/css/screen.css
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language/en-GB/en-GB.tpl_test.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language/en-GB/en-GB.tpl_test.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/templateDetails.xml
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/template_thumbnail.png
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/css/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language/en-GB/en-GB.tpl_test.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language/en-GB/en-GB.tpl_test.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/templateDetails.xml
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/template_thumbnail.png
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/css/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/css/screen.css
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language/en-GB/en-GB.tpl_test.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language/en-GB/en-GB.tpl_test.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/media/chinese_bbq_chicken_w_rice.jpg
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/media/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/templateDetails.xml
+%%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/template_thumbnail.png
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/index.php
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language/en-GB/en-GB.tpl_tpl_simple.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language/en-GB/en-GB.tpl_tpl_simple.sys.ini
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language/en-GB/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language/index.html
+%%WWWDIR%%/tests/_data/installer_packages/tpl_simple/templateDetails.xml
+%%WWWDIR%%/tests/index.html
+%%WWWDIR%%/tests/language/administrator/index.html
+%%WWWDIR%%/tests/language/administrator/xx-XX/index.html
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_admin.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_admin.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_banners.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_banners.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_cache.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_cache.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_categories.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_categories.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_checkin.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_checkin.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_config.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_config.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_contact.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_contact.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_content.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_content.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_cpanel.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_cpanel.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_installer.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_installer.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_languages.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_languages.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_login.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_login.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_mailto.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_media.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_media.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_menus.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_menus.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_messages.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_messages.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_modules.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_modules.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_newsfeeds.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_newsfeeds.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_plugins.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_plugins.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_redirect.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_redirect.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_search.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_search.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_templates.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_templates.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_users.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_users.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_weblinks.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_weblinks.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_wrapper.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.com_wrapper.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.lib_joomla.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_custom.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_custom.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_feed.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_feed.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_latest.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_latest.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_logged.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_logged.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_login.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_login.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_menu.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_menu.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_popular.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_popular.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_quickicon.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_quickicon.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_status.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_status.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_submenu.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_submenu.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_title.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_title.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_toolbar.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.mod_toolbar.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_example.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_example.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_gmail.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_gmail.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_joomla.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_joomla.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_ldap.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_authentication_ldap.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_emailcloak.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_emailcloak.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_geshi.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_geshi.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_joomla.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_joomla.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_loadmodule.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_loadmodule.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_pagebreak.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_pagebreak.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_pagenavigation.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_pagenavigation.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_vote.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_content_vote.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_article.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_article.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_image.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_image.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_pagebreak.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_pagebreak.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_readmore.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors-xtd_readmore.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_codemirror.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_codemirror.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_none.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_none.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_tinymce.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_editors_tinymce.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_extension_joomla.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_extension_joomla.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_categories.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_categories.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_contacts.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_contacts.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_content.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_content.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_newsfeeds.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_newsfeeds.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_weblinks.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_search_weblinks.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_cache.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_cache.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_debug.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_debug.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_languagefilter.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_languagefilter.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_log.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_log.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_logout.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_logout.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_p3p.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_p3p.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_redirect.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_redirect.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_remember.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_remember.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_sef.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_system_sef.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_contactcreator.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_contactcreator.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_joomla.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_joomla.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_profile.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.plg_user_profile.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.tpl_bluestork.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.tpl_bluestork.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.tpl_hathor.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.tpl_hathor.sys.ini
+%%WWWDIR%%/tests/language/administrator/xx-XX/xx-XX.xml
+%%WWWDIR%%/tests/language/index.html
+%%WWWDIR%%/tests/language/site/index.html
+%%WWWDIR%%/tests/language/site/xx-XX/index.html
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_contact.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_content.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_mailto.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_media.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_messages.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_newsfeeds.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_search.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_users.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_weblinks.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.com_wrapper.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.files_joomla.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.localise.php
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_archive.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_archive.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_categories.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_categories.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_category.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_category.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_latest.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_latest.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_news.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_news.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_popular.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_articles_popular.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_banners.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_banners.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_breadcrumbs.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_breadcrumbs.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_custom.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_custom.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_feed.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_feed.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_footer.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_footer.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_languages.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_languages.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_login.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_login.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_menu.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_menu.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_random_image.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_random_image.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_related_items.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_related_items.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_search.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_search.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_stats.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_stats.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_syndicate.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_syndicate.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_users_latest.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_users_latest.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_weblinks.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_weblinks.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_whosonline.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_whosonline.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_wrapper.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.mod_wrapper.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_atomic.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_atomic.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_beez5.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_beez5.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_beez_20.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_beez_20.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_rhuk_milkyway.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.tpl_rhuk_milkyway.sys.ini
+%%WWWDIR%%/tests/language/site/xx-XX/xx-XX.xml
+%%WWWDIR%%/tests/plugins/authentication/example/example.php
+%%WWWDIR%%/tests/plugins/authentication/example/example.xml
+%%WWWDIR%%/tests/plugins/authentication/example/index.html
+%%WWWDIR%%/tests/plugins/content/example/example.php
+%%WWWDIR%%/tests/plugins/content/example/example.xml
+%%WWWDIR%%/tests/plugins/content/example/index.html
+%%WWWDIR%%/tests/plugins/content/example/language/en-GB/en-GB.plg_content_example.ini
+%%WWWDIR%%/tests/plugins/content/example/language/en-GB/en-GB.plg_content_example.sys.ini
+%%WWWDIR%%/tests/plugins/content/example/language/en-GB/index.html
+%%WWWDIR%%/tests/plugins/content/example/language/index.html
+%%WWWDIR%%/tests/plugins/editors/example/example.php
+%%WWWDIR%%/tests/plugins/editors/example/example.xml
+%%WWWDIR%%/tests/plugins/editors/example/index.html
+%%WWWDIR%%/tests/plugins/editors/example/language/en-GB/en-GB.plg_editors_example.ini
+%%WWWDIR%%/tests/plugins/editors/example/language/en-GB/en-GB.plg_editors_example.sys.ini
+%%WWWDIR%%/tests/plugins/editors/example/language/en-GB/index.html
+%%WWWDIR%%/tests/plugins/editors/example/language/index.html
+%%WWWDIR%%/tests/plugins/extension/example/example.php
+%%WWWDIR%%/tests/plugins/extension/example/example.xml
+%%WWWDIR%%/tests/plugins/extension/example/index.html
+%%WWWDIR%%/tests/plugins/search/example/example.php
+%%WWWDIR%%/tests/plugins/search/example/example.xml
+%%WWWDIR%%/tests/plugins/search/example/index.html
+%%WWWDIR%%/tests/plugins/search/example/language/en-GB/en-GB.plg_search_example.ini
+%%WWWDIR%%/tests/plugins/search/example/language/en-GB/en-GB.plg_search_example.sys.ini
+%%WWWDIR%%/tests/plugins/search/example/language/en-GB/index.html
+%%WWWDIR%%/tests/plugins/search/example/language/index.html
+%%WWWDIR%%/tests/plugins/system/example/example.php
+%%WWWDIR%%/tests/plugins/system/example/example.xml
+%%WWWDIR%%/tests/plugins/system/example/index.html
+%%WWWDIR%%/tests/plugins/system/example/language/en-GB/en-GB.plg_system_example.ini
+%%WWWDIR%%/tests/plugins/system/example/language/en-GB/en-GB.plg_system_example.sys.ini
+%%WWWDIR%%/tests/plugins/system/example/language/en-GB/index.html
+%%WWWDIR%%/tests/plugins/system/example/language/index.html
+%%WWWDIR%%/tests/plugins/user/example/example.php
+%%WWWDIR%%/tests/plugins/user/example/example.xml
+%%WWWDIR%%/tests/plugins/user/example/index.html
+%%WWWDIR%%/tests/system/PEAR/Testing/Selenium.php
+%%WWWDIR%%/tests/system/PEAR/Testing/Selenium/Exception.php
+%%WWWDIR%%/tests/system/SeleniumJoomlaTestCase.php
+%%WWWDIR%%/tests/system/incoming/selenium_test_21462._example.html
+%%WWWDIR%%/tests/system/phpunit.php
+%%WWWDIR%%/tests/system/phpunit.xml.dist
+%%WWWDIR%%/tests/system/resetdb.sql
+%%WWWDIR%%/tests/system/runtests.sh
+%%WWWDIR%%/tests/system/servers/config-def.php-dist
+%%WWWDIR%%/tests/system/suite/TestSuite.php
+%%WWWDIR%%/tests/system/suite/acl/acl0001Test.php
+%%WWWDIR%%/tests/system/suite/acl/acl0002Test.php
+%%WWWDIR%%/tests/system/suite/acl/acl0003Test.php
+%%WWWDIR%%/tests/system/suite/acl/acl0004Test.php
+%%WWWDIR%%/tests/system/suite/acl/acl0005Test.php
+%%WWWDIR%%/tests/system/suite/acl/acl0006Test.php
+%%WWWDIR%%/tests/system/suite/articles/article0001Test.php
+%%WWWDIR%%/tests/system/suite/articles/article0002Test.php
+%%WWWDIR%%/tests/system/suite/articles/article0003Test.php
+%%WWWDIR%%/tests/system/suite/articles/article0004Test.php
+%%WWWDIR%%/tests/system/suite/articles/featured0001Test.php
+%%WWWDIR%%/tests/system/suite/articles/featured0002Test.php
+%%WWWDIR%%/tests/system/suite/cache/cache0001Test.php
+%%WWWDIR%%/tests/system/suite/com_users/group0001Test.php
+%%WWWDIR%%/tests/system/suite/com_users/group0002Test.php
+%%WWWDIR%%/tests/system/suite/com_users/group0003Test.php
+%%WWWDIR%%/tests/system/suite/com_users/user0001Test.php
+%%WWWDIR%%/tests/system/suite/com_users/user0002Test.php
+%%WWWDIR%%/tests/system/suite/control_panel/control_panel0001Test.php
+%%WWWDIR%%/tests/system/suite/control_panel/control_panel0002Test.php
+%%WWWDIR%%/tests/system/suite/control_panel/control_panel0003Test.php
+%%WWWDIR%%/tests/system/suite/control_panel/control_panel0004Test.php
+%%WWWDIR%%/tests/system/suite/control_panel/control_panel0005Test.php
+%%WWWDIR%%/tests/system/suite/doInstall.php
+%%WWWDIR%%/tests/system/suite/language/language0001Test.php
+%%WWWDIR%%/tests/system/suite/language/language0002Test.php
+%%WWWDIR%%/tests/system/suite/menus/menu0001Test.php
+%%WWWDIR%%/tests/system/suite/menus/menu0002Test.php
+%%WWWDIR%%/tests/system/suite/modules/module0001Test.php
+%%WWWDIR%%/tests/system/suite/modules/module0002Test.php
+%%WWWDIR%%/tests/system/suite/redirect/redirect0001Test.php
+%%WWWDIR%%/tests/system/suite/sample_data/sample_data0001Test.php
+%%WWWDIR%%/tests/system/suite/security/security0001Test.php
+%%WWWDIR%%/tests/unit/JoomlaDatabaseTestCase.php
+%%WWWDIR%%/tests/unit/JoomlaTestCase.php
+%%WWWDIR%%/tests/unit/bootstrap.php
+%%WWWDIR%%/tests/unit/config.php-dist
+%%WWWDIR%%/tests/unit/objects/bogusload.php
+%%WWWDIR%%/tests/unit/phpunit.php
+%%WWWDIR%%/tests/unit/phpunit.xml
+%%WWWDIR%%/tests/unit/stubs/empty.xml
+%%WWWDIR%%/tests/unit/stubs/jos_assets.csv
+%%WWWDIR%%/tests/unit/stubs/jos_categories.csv
+%%WWWDIR%%/tests/unit/stubs/jos_menu.csv
+%%WWWDIR%%/tests/unit/stubs/jos_user_usergroup_map.csv
+%%WWWDIR%%/tests/unit/stubs/jos_usergroups.csv
+%%WWWDIR%%/tests/unit/stubs/jos_users.csv
+%%WWWDIR%%/tests/unit/stubs/libraries/joomla/error/error.php
+%%WWWDIR%%/tests/unit/stubs/test.xml
+%%WWWDIR%%/tests/unit/stubs/xmlFile.xml
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/JVersionTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/access/JAccessTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/event/JDispatcherStub.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/event/JDispatcherTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/event/JEventStub.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/event/JEventTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/event/dispatcherSamples.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/filter/JFilterInputTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/html/JHtmlTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/installer/JInstallerTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/installer/stubs/testadapter.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/language/JLanguageHelperTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/language/JLanguageTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/language/_ini/bad.ini
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/language/inspectors.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/session/JSessionTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/user/JAuthenticationTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/user/JUserHelperTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/user/JUserTest.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/user/JUserTestGetAuthorisedCategories.php
+%%WWWDIR%%/tests/unit/suite/libraries/joomla/utilities/JDateTest.php
 %%WWWDIR%%/tmp/index.html
 %%WWWDIR%%/web.config.txt
 @dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/utilities
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/user
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/session
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/language/_ini
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/language
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/installer/stubs
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/installer
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/html
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/filter
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/event
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla/access
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries/joomla
+@dirrm %%WWWDIR%%/tests/unit/suite/libraries
+@dirrm %%WWWDIR%%/tests/unit/suite
+@dirrm %%WWWDIR%%/tests/unit/stubs/libraries/joomla/error
+@dirrm %%WWWDIR%%/tests/unit/stubs/libraries/joomla
+@dirrm %%WWWDIR%%/tests/unit/stubs/libraries
+@dirrm %%WWWDIR%%/tests/unit/stubs
+@dirrm %%WWWDIR%%/tests/unit/objects
+@dirrm %%WWWDIR%%/tests/unit
+@dirrm %%WWWDIR%%/tests/system/suite/security
+@dirrm %%WWWDIR%%/tests/system/suite/sample_data
+@dirrm %%WWWDIR%%/tests/system/suite/redirect
+@dirrm %%WWWDIR%%/tests/system/suite/modules
+@dirrm %%WWWDIR%%/tests/system/suite/menus
+@dirrm %%WWWDIR%%/tests/system/suite/language
+@dirrm %%WWWDIR%%/tests/system/suite/control_panel
+@dirrm %%WWWDIR%%/tests/system/suite/com_users
+@dirrm %%WWWDIR%%/tests/system/suite/cache
+@dirrm %%WWWDIR%%/tests/system/suite/articles
+@dirrm %%WWWDIR%%/tests/system/suite/acl
+@dirrm %%WWWDIR%%/tests/system/suite
+@dirrm %%WWWDIR%%/tests/system/servers
+@dirrm %%WWWDIR%%/tests/system/incoming
+@dirrm %%WWWDIR%%/tests/system/PEAR/Testing/Selenium
+@dirrm %%WWWDIR%%/tests/system/PEAR/Testing
+@dirrm %%WWWDIR%%/tests/system/PEAR
+@dirrm %%WWWDIR%%/tests/system
+@dirrm %%WWWDIR%%/tests/plugins/user/example
+@dirrm %%WWWDIR%%/tests/plugins/user
+@dirrm %%WWWDIR%%/tests/plugins/system/example/language/en-GB
+@dirrm %%WWWDIR%%/tests/plugins/system/example/language
+@dirrm %%WWWDIR%%/tests/plugins/system/example
+@dirrm %%WWWDIR%%/tests/plugins/system
+@dirrm %%WWWDIR%%/tests/plugins/search/example/language/en-GB
+@dirrm %%WWWDIR%%/tests/plugins/search/example/language
+@dirrm %%WWWDIR%%/tests/plugins/search/example
+@dirrm %%WWWDIR%%/tests/plugins/search
+@dirrm %%WWWDIR%%/tests/plugins/extension/example
+@dirrm %%WWWDIR%%/tests/plugins/extension
+@dirrm %%WWWDIR%%/tests/plugins/editors/example/language/en-GB
+@dirrm %%WWWDIR%%/tests/plugins/editors/example/language
+@dirrm %%WWWDIR%%/tests/plugins/editors/example
+@dirrm %%WWWDIR%%/tests/plugins/editors
+@dirrm %%WWWDIR%%/tests/plugins/content/example/language/en-GB
+@dirrm %%WWWDIR%%/tests/plugins/content/example/language
+@dirrm %%WWWDIR%%/tests/plugins/content/example
+@dirrm %%WWWDIR%%/tests/plugins/content
+@dirrm %%WWWDIR%%/tests/plugins/authentication/example
+@dirrm %%WWWDIR%%/tests/plugins/authentication
+@dirrm %%WWWDIR%%/tests/plugins
+@dirrm %%WWWDIR%%/tests/language/site/xx-XX
+@dirrm %%WWWDIR%%/tests/language/site
+@dirrm %%WWWDIR%%/tests/language/administrator/xx-XX
+@dirrm %%WWWDIR%%/tests/language/administrator
+@dirrm %%WWWDIR%%/tests/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl_simple/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl_simple
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/media
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media/css
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-5-media
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted/css
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-4-folder-file-omitted
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder/css
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-3-folder
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted/css
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-2-filename-file-omitted
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename/css
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/tpl-test-1-filename
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates/mysql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql/updates
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/sql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/plg_system_alpha
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/pkg_everything
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates/mysql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql/updates
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha/sql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha.admin
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_alpha
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/mod_adminalpha
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX.admin
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lng_xx-XX
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lib_alpha/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lib_alpha/files
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/lib_alpha
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/otherfiles
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/modules/mod_new_module
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/modules
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1/includes
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/files_test1
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/site/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/site
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/sqlsrv
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates/mysql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql/updates
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/sql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma/admin
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_gamma
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/tmpl
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta/template
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views/delta
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/views
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/site
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_delta
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/site/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/site
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/sqlsrv
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates/mysql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql/updates
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/sql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta/admin
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_beta
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/site/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/site
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/sqlsrv
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates/mysql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql/updates
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/sql
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language/en-GB
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin/language
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha/admin
+@dirrm %%WWWDIR%%/tests/_data/installer_packages/com_alpha
+@dirrm %%WWWDIR%%/tests/_data/installer_packages
+@dirrm %%WWWDIR%%/tests/_data
+@dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/templates/system/images
 @dirrm %%WWWDIR%%/templates/system/html
 @dirrm %%WWWDIR%%/templates/system/css
@@ -5287,6 +6121,7 @@
 @dirrm %%WWWDIR%%/installation/models
 @dirrm %%WWWDIR%%/installation/language/zh-TW
 @dirrm %%WWWDIR%%/installation/language/zh-CN
+@dirrm %%WWWDIR%%/installation/language/vi-VN
 @dirrm %%WWWDIR%%/installation/language/ur-PK
 @dirrm %%WWWDIR%%/installation/language/uk-UA
 @dirrm %%WWWDIR%%/installation/language/ug-CN
@@ -5294,6 +6129,7 @@
 @dirrm %%WWWDIR%%/installation/language/th-TH
 @dirrm %%WWWDIR%%/installation/language/ta-IN
 @dirrm %%WWWDIR%%/installation/language/sy-IQ
+@dirrm %%WWWDIR%%/installation/language/sw-KE
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sr-YU
 @dirrm %%WWWDIR%%/installation/language/sr-RS
@@ -5317,6 +6153,8 @@
 @dirrm %%WWWDIR%%/installation/language/km-KH
 @dirrm %%WWWDIR%%/installation/language/ja-JP
 @dirrm %%WWWDIR%%/installation/language/it-IT
+@dirrm %%WWWDIR%%/installation/language/id-ID
+@dirrm %%WWWDIR%%/installation/language/hy-AM
 @dirrm %%WWWDIR%%/installation/language/hu-HU
 @dirrm %%WWWDIR%%/installation/language/hr-HR
 @dirrm %%WWWDIR%%/installation/language/hi-IN
@@ -5337,6 +6175,7 @@
 @dirrm %%WWWDIR%%/installation/language/el-GR
 @dirrm %%WWWDIR%%/installation/language/de-DE
 @dirrm %%WWWDIR%%/installation/language/da-DK
+@dirrm %%WWWDIR%%/installation/language/cy-GB
 @dirrm %%WWWDIR%%/installation/language/cs-CZ
 @dirrm %%WWWDIR%%/installation/language/ckb-IQ
 @dirrm %%WWWDIR%%/installation/language/ca-ES
@@ -5361,6 +6200,8 @@
 @dirrm %%WWWDIR%%/images/sampledata
 @dirrm %%WWWDIR%%/images/banners
 @dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/docs/installation
+@dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/components/com_wrapper/views/wrapper/tmpl
 @dirrm %%WWWDIR%%/components/com_wrapper/views/wrapper
 @dirrm %%WWWDIR%%/components/com_wrapper/views
@@ -5467,6 +6308,16 @@
 @dirrm %%WWWDIR%%/components
 @dirrm %%WWWDIR%%/cli
 @dirrm %%WWWDIR%%/cache
+@dirrm %%WWWDIR%%/build/update/test
+@dirrm %%WWWDIR%%/build/update
+@dirrm %%WWWDIR%%/build/phpcs/Joomla/Sniffs/WhiteSpace
+@dirrm %%WWWDIR%%/build/phpcs/Joomla/Sniffs/PHP
+@dirrm %%WWWDIR%%/build/phpcs/Joomla/Sniffs/ControlStructures
+@dirrm %%WWWDIR%%/build/phpcs/Joomla/Sniffs/Classes
+@dirrm %%WWWDIR%%/build/phpcs/Joomla/Sniffs
+@dirrm %%WWWDIR%%/build/phpcs/Joomla
+@dirrm %%WWWDIR%%/build/phpcs
+@dirrm %%WWWDIR%%/build
 @dirrm %%WWWDIR%%/administrator/templates/system/images
 @dirrm %%WWWDIR%%/administrator/templates/system/html
 @dirrm %%WWWDIR%%/administrator/templates/system/css
@@ -5825,6 +6676,8 @@
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/update
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/manage/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/manage
+@dirrm %%WWWDIR%%/administrator/components/com_installer/views/languages/tmpl
+@dirrm %%WWWDIR%%/administrator/components/com_installer/views/languages
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/install/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/install
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/discover/tmpl
