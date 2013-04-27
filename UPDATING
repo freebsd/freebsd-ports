@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130427:
+  AFFECTS: users of print/a2ps-{a4,letter}, print/c2ps-{a4,letter}, print/lprps-{a4,letter}, or graphics/jpeg2ps-{a4,letter}
+  AUTHOR: hrs@FreeBSD.org
+
+  The affected ports have been converted to use libpaper for the default paper
+  size as print/psutils did.  For more detail, see 20130424 below.
+
 20130424:
   AFFECTS: users of print/psutils-a4 or print/psutils-letter
   AUTHOR: hrs@FreeBSD.org

@@ -1,14 +1,10 @@
-# New ports collection makefile for:	LPRngTool
-# Date created:		10 Oct 2001
-# Whom:			papowell@lprng.com
-#
+# Created by: papowell@lprng.com
 # $FreeBSD$
-#
 
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
-PORTREVISION=	6
-CATEGORIES=	 sysutils print
+PORTREVISION=	7
+CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
@@ -20,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
 
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter \
+BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
 		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp

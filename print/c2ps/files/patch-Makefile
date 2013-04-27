@@ -1,0 +1,47 @@
+--- Makefile.orig	1997-05-16 00:50:56.000000000 +0900
++++ Makefile	2013-04-27 18:57:47.000000000 +0900
+@@ -2,12 +2,12 @@
+ # Last modified: Sat Apr 19 1997
+ 
+ RM	= 	rm -f
+-CC	=	gcc
+-CCFLAGS =       -O
++CC?	=	gcc
++CCFLAGS?=       -O
+ 
+-PREFIX	=	/usr/local
++PREFIX?=	/usr/local
+ BIN	=	$(PREFIX)/bin
+-MAN	=	$(PREFIX)/man/man1
++MAN	=	${MAN1PREFIX}/man/man1
+ 
+ # you may predefine some of the default settings
+ DEFAULT_FONT	= \"Courier\"
+@@ -31,23 +31,20 @@
+  -DSTRINGS=$(STRINGS_FONT) -DPREPROC=$(PREPROC_FONT)\
+  -DKEYWORD=$(KEYWORD_FONT) -DTYPE=$(TYPE_FONT)\
+  -DLNUMBER=$(LNUMBER_FONT) -DFUNCTION=$(FUNCTION_FONT)\
+- -DDIM=$(COMMENT_DIMMING_DEGREE)\
+- -D$(DEFAULT_PAPER_TYPE)
++ -DDIM=$(COMMENT_DIMMING_DEGREE)
+ 
+ all:		compile
+ 
+ install:	bininstall maninstall
+ 
+ bininstall:	c2ps
+-	install -m 755 c2ps $(BIN)
++	${BSD_INSTALL_PROGRAM} c2ps $(BIN)
+ 
+ maninstall:	c2ps.1
+-	install -m 644 c2ps.1 $(MAN)
++	${BSD_INSTALL_DATA} c2ps.1 $(MAN)
+ 
+ compile:	c2ps.c
+-	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c
++	$(CC) $(PREP_OPTIONS) $(CFLAGS) -o c2ps c2ps.c -L${LOCALBASE}/lib -lm -lpaper
+ 
+ clean:
+ 	$(RM) c2ps *.o core *~
+-
+-

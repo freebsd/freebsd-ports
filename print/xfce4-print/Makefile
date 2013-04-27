@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-print
 PORTVERSION=	4.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/xfprint/${PORTVERSION:R}
@@ -12,6 +12,9 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 graphical frontend for printing
+
+BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -50,12 +53,8 @@ PLIST_SUB+=	LPR="@comment "
 
 .if ${PORT_OPTIONS:MLETTER}
 CONFIGURE_ARGS+=--enable-letter
-BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 .else
 CONFIGURE_ARGS+=--disable-letter
-BUILD_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .endif
 
 post-patch:

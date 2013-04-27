@@ -1,5 +1,3 @@
-Purpose of jpeg2ps
-==================
 jpeg2ps converts JPEG files to PostScript Level 2 or 3 EPS. In fact, jpeg2ps
 is not really a converter but a "wrapper": it reads the image parameters
 (width, height, number of color components) in a JPEG file, writes the
