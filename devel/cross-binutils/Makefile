@@ -1,12 +1,10 @@
-# New ports collection makefile for:	cross-binutils
-# Date created:		8 August 2006
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+TGTARCH=	i386
+TGTABI=		elf
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
-PORTVERSION=	2.21
+PORTVERSION=	2.23.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -15,7 +13,7 @@ PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	GNU binutils port for cross-target development
 
 USE_BZIP2=	yes
@@ -23,6 +21,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=		RTEMS_PATCHES
+
+RTEMS_PATCHES_DESC=	Apply RTEMS patches
+
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-nls \
 			--with-system-zlib \
@@ -36,7 +40,6 @@ MAN1=		${OURTARGET}-addr2line.1 \
 		${OURTARGET}-as.1 \
 		${OURTARGET}-c++filt.1 \
 		${OURTARGET}-elfedit.1 \
-		${OURTARGET}-gprof.1 \
 		${OURTARGET}-dlltool.1 \
 		${OURTARGET}-ld.1 \
 		${OURTARGET}-nlmconv.1 \
@@ -54,15 +57,15 @@ MAN1=		${OURTARGET}-addr2line.1 \
 INFO=		${OURTARGET}-as \
 		${OURTARGET}-bfd \
 		${OURTARGET}-binutils \
-		${OURTARGET}-gprof \
-		${OURTARGET}-ld
+		${OURTARGET}-ld \
+		configure \
+		standards
 
 PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-ar \
 		bin/${OURTARGET}-as \
 		bin/${OURTARGET}-c++filt \
 		bin/${OURTARGET}-elfedit \
-		bin/${OURTARGET}-gprof \
 		bin/${OURTARGET}-ld \
 		bin/${OURTARGET}-ld.bfd \
 		bin/${OURTARGET}-nm \
@@ -74,23 +77,26 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-strings \
 		bin/${OURTARGET}-strip
 
-.if defined(TGTABI) && (${TGTABI} == "pc-mingw32" || ${TGTABI} == "mingw32")
+.if defined(TGTARCH) && ${TGTARCH} != mips
+MAN1+=		${OURTARGET}-gprof.1
+INFO+=		${OURTARGET}-gprof
+PLIST_FILES+=	bin/${OURTARGET}-gprof
+.endif
+
+.if defined(TGTABI) && (${TGTABI} == pc-mingw32 || ${TGTABI} == mingw32)
 PLIST_FILES+=	bin/${OURTARGET}-dlltool \
 		bin/${OURTARGET}-dllwrap \
 		bin/${OURTARGET}-windmc \
 		bin/${OURTARGET}-windres
 .endif
 
-.if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.11-20110107.diff
+.if ${PORT_OPTIONS:MRTEMS_PATCHES}
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.11-20130326.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
 IGNORE=		you should define TGTARCH and TGTABI to build port
-.endif
-.if defined(TGTARCH) && (${TGTABI} == "elf" && ${TGTARCH} == "powerpc")
-IGNORE=		will not build with TGTARCH=powerpc and TGTABI=elf
 .endif
 
 #
@@ -139,8 +145,8 @@ post-patch:
 
 post-install:
 #
-# Add some plist items (we don't list them directly, since the set vary
-# accross different targets
+# Add some plist items (we don't list them directly, since the set varies
+# across different targets)
 #
 	@${FIND} -ds ${PREFIX}/${OURTARGET} ! -type d | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
