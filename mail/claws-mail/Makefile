@@ -37,12 +37,11 @@ CONFLICTS=	sylpheed-claws
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	atk glib20 gnomehack gtk20 libartlgpl2 libxml2 pango
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig iconv
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 

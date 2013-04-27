@@ -58,7 +58,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/build
-USE_ICONV=	yes
+USES+=		iconv
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:env
 

@@ -15,11 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popup style message communication tool for GNOME2
 
 USE_GMAKE=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext iconv
 USE_GNOME=	gnomeprefix intlhack intltool \
 		libgnomeui libbonobo desktopfileutils gnomepanel
 USE_GSTREAMER=	vorbis
-USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

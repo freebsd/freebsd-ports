@@ -29,7 +29,7 @@ GITVER=		2988
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OCAML=	yes
 
 HAS_CONFIGURE=	yes

@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USE_ICONV=	yes
+USES=		iconv
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	icinga

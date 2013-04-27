@@ -25,8 +25,8 @@ OPTIONS_DEFINE=	TCL PGSQL SDL
 OPTIONS_DEFAULT=TCL PGSQL SDL
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig pango
-USE_ICONV=	yes
+USE_GNOME=	pango
+USES=		pathfix pkgconfig iconv
 USE_SQLITE=	yes
 USE_GMAKE=	yes
 USE_XORG=	ice xi xmu

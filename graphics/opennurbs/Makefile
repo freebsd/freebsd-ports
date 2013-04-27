@@ -14,7 +14,7 @@ COMMENT=	Tools to accurately transfer 3-D geometry between applications
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_ICONV=	build
+USES=		iconv
 
 MAKEFILE=	makefile
 EXAMPLESDIR=	${PREFIX}/libexec/openNURBS

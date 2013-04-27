@@ -46,8 +46,7 @@ MAKE_JOBS_UNSAFE=	yes
 _REQUIRE=	mail
 
 .if ${PORT_OPTIONS:MNLS}
-USE_ICONV=	yes
-USES+=		gettext
+USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

@@ -17,7 +17,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
-USE_ICONV=	yes
+USES=		iconv
 USE_PERL5=	yes
 USE_PHP=	session pcre sockets
 NO_BUILD=	yes

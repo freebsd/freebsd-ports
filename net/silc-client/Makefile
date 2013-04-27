@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USE_ICONV=		yes
+USES+=			iconv
 CONFIGURE_ARGS+=	--with-iconv
 .else
 CONFIGURE_ARGS+=	--without-iconv

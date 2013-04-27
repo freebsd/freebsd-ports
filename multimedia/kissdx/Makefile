@@ -19,7 +19,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
 
-USE_ICONV=	yes
+USES=		iconv
 
 # Man pages
 MAN1=		kissdx.1

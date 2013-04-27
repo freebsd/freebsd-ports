@@ -31,8 +31,7 @@ USE_RC_SUBR=		miredo_server miredo
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
-USES+=		gettext
-USE_ICONV=		yes
+USES+=		gettext iconv
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
 .else

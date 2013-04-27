@@ -30,7 +30,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \

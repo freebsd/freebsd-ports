@@ -14,10 +14,9 @@ LICENSE=	GPLv3
 
 CONFLICTS=	weechat-devel-0.*
 
-USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-USES=		cmake
+USES=		cmake iconv
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 

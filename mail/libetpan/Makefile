@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 USE_AUTOTOOLS=	libtool autoconf
 AUTOTOOLSFILES=	aclocal.m4
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--with-bzlib
 
 .if !defined(WITHOUT_JAPANESE_UTF8)
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
 		--enable-japanese-utf8
 .else

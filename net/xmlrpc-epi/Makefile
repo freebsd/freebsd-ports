@@ -16,7 +16,7 @@ COMMENT=	A general purpose implementation of the xmlrpc specification in C
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

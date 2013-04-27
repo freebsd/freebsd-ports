@@ -12,7 +12,7 @@ COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
-USE_ICONV=	yes
+USES=		iconv
 ICONV?=		iconv
 CONVERT_CMD=	${ICONV} -c -f EUC-JP -t UTF-8
 

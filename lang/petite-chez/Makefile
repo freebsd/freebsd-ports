@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	THREADS
 
 WRKSRC=		${WRKDIR}/csv${PORTVERSION}/custom
 HAS_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--installman=${MANPREFIX}/man \
 		--force-relink \

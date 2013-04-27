@@ -19,7 +19,7 @@ LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		theora:${PORTSDIR}/multimedia/libtheora
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_SCONS=	yes
 SCONS_BUILDENV=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"

@@ -18,7 +18,7 @@ COMMENT=	Mime normalizer to be used as a preprocessor for email classification
 
 LICENSE=	GPLv2
 
-USE_ICONV=	yes
+USES=		iconv
 NO_WRKSUBDIR=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include

@@ -21,7 +21,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv

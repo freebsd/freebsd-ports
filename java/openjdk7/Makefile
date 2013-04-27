@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_JOBS_UNSAFE=	yes
 

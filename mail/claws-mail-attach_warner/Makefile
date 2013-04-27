@@ -17,7 +17,7 @@ BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_SAFE=	yes
 

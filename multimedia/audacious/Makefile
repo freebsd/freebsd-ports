@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--enable-gconf
 .endif
 
 .if  ${PORT_OPTIONS:MICONV} || exists(${LOCALBASE}/lib/libiconv.so)
-USE_ICONV=	yes
+USES+=		iconv
 .endif
 
 .if  ${PORT_OPTIONS:MNLS}

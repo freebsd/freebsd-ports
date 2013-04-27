@@ -21,8 +21,8 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig gtk20
-USE_ICONV=	yes
+USE_GNOME=	gtk20
+USES=		pkgconfig iconv
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/pidgin/pidgimpd.so \

@@ -19,7 +19,7 @@ LICENSE=	BSD
 
 CONFIGURE_ARGS=	--disable-server --with-iconv=${LOCALBASE}
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 MAN1=		pppclient.1
 MAN5=		ssltunnelrc.5

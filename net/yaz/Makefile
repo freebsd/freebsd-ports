@@ -11,11 +11,10 @@ COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
-USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	libxml2 libxslt gnomehack
+USES=		pathfix pkgconfig iconv
+USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

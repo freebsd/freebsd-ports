@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		pathfix
-USE_ICONV=	yes
+USES=		pathfix iconv
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

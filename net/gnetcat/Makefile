@@ -15,8 +15,7 @@ DISTNAME=	netcat-0.7.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
 
-USE_ICONV=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

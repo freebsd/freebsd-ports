@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-li
 
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
-USE_ICONV=	yes
+USES=		iconv
 USE_SCONS=	yes
 USE_OPENSSL=	yes
 PORTDOCS=	*

@@ -30,10 +30,9 @@ GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
 USE_BINUTILS=	yes
-USES=		bison
+USES=		bison iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 

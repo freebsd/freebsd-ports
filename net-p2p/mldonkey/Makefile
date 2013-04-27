@@ -18,7 +18,7 @@ NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_AUTOTOOLS=	autoconf:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

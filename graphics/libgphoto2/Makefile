@@ -28,7 +28,7 @@ MAN3=		libgphoto2.3 libgphoto2_port.3
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-USE_ICONV=	yes
+USES+=		iconv
 .else
 USES+=		gettext
 PLIST_SUB+=	NLS=""

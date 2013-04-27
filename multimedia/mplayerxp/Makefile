@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_XORG=	xinerama xv xxf86dga xxf86vm
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes

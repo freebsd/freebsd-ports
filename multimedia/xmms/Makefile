@@ -15,10 +15,9 @@ COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes
 USE_GL=		gl
-USE_GNOME=	desktopfileutils gtk12 gnomehack
+USE_GNOME=	desktopfileutils gtk12
 USE_GMAKE=	yes
-USES=		gettext
-USE_ICONV=	yes
+USES=		pathfix gettext iconv
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake autoconf libtool
 AUTOTOOLSFILES=	aclocal.m4

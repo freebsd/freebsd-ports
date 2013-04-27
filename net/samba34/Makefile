@@ -29,7 +29,6 @@ AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
 USE_GMAKE=		yes
-USE_ICONV=		yes
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf autoheader
 # directories
@@ -71,7 +70,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 
-USES=			pkgconfig
+USES=			pkgconfig iconv
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # Always use external libtalloc

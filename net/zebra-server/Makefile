@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-iconv=${LOCALBASE} --with-expat=${LOCALBASE}
 
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 USE_TCL=	84+
 

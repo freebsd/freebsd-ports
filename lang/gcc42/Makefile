@@ -23,11 +23,10 @@ VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	arm powerpc
-USES=		bison
+USES=		bison iconv
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 

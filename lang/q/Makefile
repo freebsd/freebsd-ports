@@ -20,9 +20,8 @@ LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		ggi.2:${PORTSDIR}/graphics/libggi
 
-USES=		bison
+USES=		bison iconv
 USE_GCC=	any
-USE_ICONV=	yes
 USE_TK=		84+
 USE_LDCONFIG=	yes
 

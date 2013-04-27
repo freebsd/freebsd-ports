@@ -23,9 +23,8 @@ FFMPEG_KINO_DESC=	With ffmpeg-kino
 USE_XORG=	x11 xv ice
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
-USES=        pathfix gettext
+USES=		pathfix gettext iconv
 USE_GNOME=	gnomeprefix libglade2 libxml2
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include/lqt		\

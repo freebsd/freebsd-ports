@@ -15,7 +15,7 @@ COMMENT=	Library for Hangul processing
 
 LICENSE=	LGPL21
 
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

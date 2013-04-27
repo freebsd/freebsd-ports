@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--with-hdf5=no
 
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
-USE_ICONV=	yes
+USES+=		iconv
 .else
 CONFIGURE_ARGS+=--with-libiconv-prefix=no
 .endif

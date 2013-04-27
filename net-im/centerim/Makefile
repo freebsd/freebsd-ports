@@ -17,7 +17,7 @@ COMMENT=	A text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

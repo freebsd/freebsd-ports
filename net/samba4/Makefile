@@ -72,8 +72,7 @@ USE_PERL5_BUILD=	yes
 
 USE_GCC=		4.2+
 USE_PYTHON=		yes
-USE_ICONV=		yes
-USES=			pkgconfig gettext
+USES=			pkgconfig gettext iconv
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig

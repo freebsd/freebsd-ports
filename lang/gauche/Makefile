@@ -39,7 +39,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 
 #		INFOSECTION="${INFOSECTION}"
 
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 
 MAN1=		gosh.1 gauche-cesconv.1 gauche-config.1 gauche-install.1 \

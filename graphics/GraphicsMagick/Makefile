@@ -34,7 +34,7 @@ TESTS_DESC=	Run bundled self-tests after build
 
 OPTIONS_DEFAULT=X11 TESTS DOCS
 
-USE_ICONV=	yes
+USES=		iconv
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes

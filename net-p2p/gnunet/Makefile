@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=	SQLITE
 
 USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS =	--with-daemon-home-dir=${GNUNET_DAEMON_DIR} \

@@ -21,7 +21,7 @@ USE_BZIP2=		yes
 USE_AUTOTOOLS=		autoconf:env
 USE_PYTHON_BUILD=	yes
 USE_GMAKE=		yes
-USE_ICONV=		yes
+USES=			iconv
 USE_LDCONFIG=		yes
 
 #BUILD_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls

@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig
+USES=		pkgconfig iconv
 USE_GNOME=	libxml2 libxslt
-USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes

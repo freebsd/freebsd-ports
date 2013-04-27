@@ -18,10 +18,9 @@ COMMENT=	GNU Compiler Collection 3.4
 
 SUFFIX=		34
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-USES=		bison
+USES=		bison iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 

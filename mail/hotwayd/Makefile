@@ -21,7 +21,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 MAN1=		hotwayd.1 \
 		hotsmtpd.1

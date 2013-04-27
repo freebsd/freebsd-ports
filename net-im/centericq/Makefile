@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

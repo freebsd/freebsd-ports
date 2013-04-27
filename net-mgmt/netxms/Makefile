@@ -32,7 +32,7 @@ NO_PACKAGE=	yes
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules

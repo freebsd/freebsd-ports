@@ -17,7 +17,7 @@ CONFLICTS=	mailx-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
-USE_ICONV=	yes
+USES=		iconv
 USE_OPENSSL=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \

@@ -19,7 +19,7 @@ PROJECTHOST=	transmisson-remote-gui
 
 USE_ZIP=	yes
 USE_FPC=	fcl-net
-USE_ICONV=	yes
+USES=		iconv
 USE_GNOME=	#
 
 WRKSRC=		${WRKDIR}/TransGUI

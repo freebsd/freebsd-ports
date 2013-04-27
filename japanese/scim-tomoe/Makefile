@@ -19,8 +19,7 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 		tomoe-gtk.1:${PORTSDIR}/japanese/libtomoe-gtk
 
 USE_GNOME=	lthack intlhack
-USES=		gettext
-USE_ICONV=	yes
+USES=		gettext iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

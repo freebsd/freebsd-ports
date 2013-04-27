@@ -28,7 +28,7 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \

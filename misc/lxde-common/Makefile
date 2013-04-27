@@ -16,7 +16,7 @@ COMMENT=	LXDE Common files
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		CPPFLAGS="-I${LOCALBASE}/include" \

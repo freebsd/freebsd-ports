@@ -20,7 +20,7 @@ COMMENT=	Well-known Korean X11 Input Method
 
 LICENSE=	GPLv2
 
-USE_ICONV=	yes
+USES=		iconv
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes

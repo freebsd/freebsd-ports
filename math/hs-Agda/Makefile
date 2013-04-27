@@ -17,7 +17,7 @@ USE_CABAL=	geniplate>=0.6.0.3 hashable>=1.2 hashtables \
 		xhtml zlib>=0.4.0.1
 USE_ALEX=	yes
 USE_HAPPY=	yes
-USE_ICONV=	yes
+USES=		iconv
 
 EXECUTABLE=	agda-mode agda
 

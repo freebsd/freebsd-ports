@@ -23,8 +23,7 @@ CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/li
 CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_ICONV=	yes
-USES+=		gettext
+USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 .endif
 

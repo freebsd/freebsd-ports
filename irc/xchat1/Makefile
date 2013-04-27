@@ -21,7 +21,7 @@ COMMENT=	X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-USE_ICONV=		yes
+USES=			iconv
 USE_PERL5=		yes
 USE_GNOME=		gtk12
 WANT_GNOME=		yes

@@ -19,7 +19,7 @@ LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

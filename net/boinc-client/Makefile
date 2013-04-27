@@ -87,7 +87,7 @@ PLIST_SUB+=	X11="@comment "
 .if ${PORT_OPTIONS:MMANAGER}
 USE_XORG+=	x11
 USE_WX=		2.8+
-USE_ICONV=	yes
+USES+=		iconv
 WX_CONF_ARGS=	absolute
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify \
 		sqlite3:${PORTSDIR}/databases/sqlite3
