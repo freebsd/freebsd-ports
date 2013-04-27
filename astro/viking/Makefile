@@ -26,7 +26,6 @@ RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 USES=		iconv pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	desktopfileutils gnomedocutils gtk20
