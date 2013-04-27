@@ -1,15 +1,16 @@
---- ./build.xml.orig	2012-09-18 23:53:21.000000000 +0200
-+++ ./build.xml	2012-09-18 23:53:37.000000000 +0200
-@@ -388,12 +388,6 @@
-       <zipfileset src="build/Textures.jar"/>
-       <zipfileset src="build/Help.jar"/>
-       <fileset dir="lib">
+--- ./build.xml.orig	2013-04-26 00:00:04.000000000 +0200
++++ ./build.xml	2013-04-26 00:00:15.000000000 +0200
+@@ -261,13 +261,6 @@
+         <include name="j3dutils.jar"/>
+         <include name="vecmath.jar"/>
+       </fileset>
+-      <fileset dir="lib">
 -        <include name="windows/**/*.dll"/>
 -        <include name="linux/**/*.so"/>
--        <include name="macosx/*.jnilib"/>
--        <include name="macosx/*.jar"/>
+-        <include name="macosx/**/*.jnilib"/>
+-        <include name="macosx/**/*.jar"/>
+-        <exclude name="macosx/*/jogl-all.jar"/>
 -      </fileset>
--      <fileset dir="lib">
-         <include name="*.jar"/>
+       <fileset dir="build">
+         <include name="macosx/java3d-1.6/jogl-java3d.jar"/>
        </fileset>
-       <fileset dir="libtest">
