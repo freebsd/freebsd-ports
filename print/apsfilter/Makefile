@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -61,7 +61,7 @@ PAPERSIZE?=	letter
 RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
 RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
 # all needed "ASCII to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
 RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 RUN_DEPENDS+=	recode:${PORTSDIR}/converters/recode
@@ -104,7 +104,7 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 # since apsfilter should fit easily on installation CD 1...
 #
 # most important "xxx to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils
 .endif
 
