@@ -51,6 +51,68 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57df803e-af34-11e2-8d62-6cf0490a8c18">
+    <topic>Joomla! -- XXS and DDoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla</name>
+	<range><ge>2.0.*</ge><lt>2.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security/80-20130405-core-xss-vulnerability.html">
+	  <h2>[20130405] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate filtering leads to XSS vulnerability in Voting plugin.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/81-20130403-core-xss-vulnerability.html">
+	  <h2>[20130403] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate filtering allows possibility of XSS exploit in some
+	  circumstances.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/82-20130402-core-information-disclosure.html">
+	  <h2>[20130402] - Core - Information Disclosure</h2>
+	  <p>Inadequate permission checking allows unauthorised user to see
+	  permission settings in some circumstances.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/83-20130404-core-xss-vulnerability.html">
+	  <h2>[20130404] - Core - XSS Vulnerability</h2>
+	  <p>Use of old version of Flash-based file uploader leads to XSS
+	   vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/84-20130401-core-privilege-escalation.html">
+	  <h2>[20130401] - Core - Privilege Escalation</h2>
+	  <p>Inadequate permission checking allows unauthorised user to delete
+	  private messages.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/85-20130406-core-dos-vulnerability.html">
+	  <h2>[20130406] - Core - DOS Vulnerability</h2>
+	  <p>Object unserialize method leads to possible denial of service
+	  vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/86-20130407-core-xss-vulnerability.html">
+	  <h2>[20130407] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate filtering leads to XSS vulnerability in highlighter
+	  plugin</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-3059</cvename>
+      <cvename>CVE-2013-3058</cvename>
+      <cvename>CVE-2013-3057</cvename>
+      <url>http://developer.joomla.org/security/83-20130404-core-xss-vulnerability.html</url>
+      <cvename>CVE-2013-3056</cvename>
+      <cvename>CVE-2013-3242</cvename>
+      <cvename>CVE-2013-3267</cvename>
+    </references>
+    <dates>
+      <discovery>2013-04-24</discovery>
+      <entry>2013-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c8fa44d-ad15-11e2-8cea-6805ca0b3d42">
     <topic>phpMyAdmin -- Multiple security vulnerabilities</topic>
     <affects>
