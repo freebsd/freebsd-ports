@@ -9,7 +9,7 @@
 %%SDLGL%%%%LIBDIR%%/ref_sdlgl.so
 %%SVGA%%%%LIBDIR%%/ref_soft.so
 %%AA%%%%LIBDIR%%/ref_softaa.so
-%%SDL%%%%LIBDIR%%/ref_softsdl.so
+%%SOFTSDL%%%%LIBDIR%%/ref_softsdl.so
 %%X11%%%%LIBDIR%%/ref_softx.so
 @comment === DOCS ===
 %%PORTDOCS%%%%DOCSDIR%%/README
