@@ -1,12 +1,8 @@
-# New ports collection makefile for:	babeld
-# Date created:		2010-04-20
-# Whom:			Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	babeld
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
