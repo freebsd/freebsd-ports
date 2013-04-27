@@ -349,6 +349,7 @@ gst_jpeg_PLIST_FILES=	${GST_LIB_DIR}/libgstjpeg.la \
 
 # ladspa
 gst_ladspa_BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+gst_ladspa_LIB_DEPENDS+=	lrdf:${PORTSDIR}/textproc/liblrdf
 gst_ladspa_PLIST_FILES=		${GST_LIB_DIR}/libgstladspa.la \
 				${GST_LIB_DIR}/libgstladspa.so
 gst_ladspa_DIST=	bad
