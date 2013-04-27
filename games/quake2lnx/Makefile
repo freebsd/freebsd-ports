@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Quake2-LNX
-# Date created:				11 Jun 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
@@ -18,28 +14,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Icculus.org version of the original Quake II
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 WANT_SDL=	yes
-
-OPTIONS=	X11		"Build X11 software driver" on \
-		GLX		"Build GLX driver" on \
-		EYECANDY	"Build executable with fancier GL graphics" off \
-		SDL		"Build SDL software driver" off \
-		SDLGL		"Build SDL OpenGL driver" off \
-		SDLCLIENT	"Build executable that uses SDL" off \
-		SVGA		"Build SVGA driver (i386 only)" off \
-		AA		"Build ASCII software renderer" off \
-		CLIENT		"Build client executable" on \
-		SERVER		"Build dedicated server executable" on \
-		GAME		"Build a main game .so file" off \
-		CTF		"Build Capture The Flag mod" off \
-		RETEXTURE	"Enable support of retextured graphics" off \
-		JOYSTICK	"Enable joystick support" off \
-		REDBLUE		"Enable 3D glasses rendering" off \
-		IPV6		"Enable experimental IPv6 support" off \
-		ARTS		"Enable support for aRts sound daemon" off \
-		OPTIMIZED_CFLAGS "Enable extra optimization options" off \
-		X86_ASM		"Enable use of x86 assembly code" on
 
 ALL_TARGET=	build_release
 
@@ -48,13 +26,36 @@ PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 TGTDIR=		${WRKSRC}/release
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		X11 GLX EYECANDY SOFTSDL SDLGL SDLCLIENT AA CLIENT \
+			SERVER GAME CTF RETEXTURE JOYSTICK REDBLUE IPV6 \
+			ARTS OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=	X11 GLX CLIENT SERVER
+OPTIONS_DEFINE_i386=	SVGA ASM
+OPTIONS_DEFAULT_i386=	ASM
+
+X11_DESC=		Build X11 (software) renderer
+GLX_DESC=		Build OpenGL (GLX) renderer
+EYECANDY_DESC=		Build client with fancier GL graphics
+SOFTSDL_DESC=		Build software SDL renderer
+SDLGL_DESC=		Build SDL OpenGL renderer
+SDLCLIENT_DESC=		Build SDL client
+SVGA_DESC=		Build SVGA renderer
+AA_DESC=		Build ASCII graphics renderer
+CLIENT_DESC=		Build default client
+SERVER_DESC=		Build dedicated server
+GAME_DESC=		Build main game (default mod)
+CTF_DESC=		Build Capture The Flag modification
+RETEXTURE_DESC=		Retextured graphics support
+JOYSTICK_DESC=		Joystick support
+REDBLUE_DESC=		Enable 3D glasses rendering
+
+.include <bsd.port.options.mk>
 
 ###                       #
 ## CLIENTS AND RENDERERS ##
 #                       ###
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xxf86dga
 MAKE_ARGS+=	BUILD_X11=YES
 REF_TARGETS+=	softx
@@ -63,8 +64,8 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITH_GLX) || defined(WITH_EYECANDY)
-USE_GL=		yes
+.if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MEYECANDY}
+USE_GL=		gl
 MAKE_ARGS+=	BUILD_GLX=YES
 REF_TARGETS+=	glx
 PLIST_SUB+=	GLX=""
@@ -72,25 +73,26 @@ PLIST_SUB+=	GLX=""
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_EYECANDY)
+.if ${PORT_OPTIONS:MEYECANDY}
 DISTFILES+=	maxpak.pak
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""
 .else
 PLIST_SUB+=	QMAX="@comment "
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSOFTSDL}
 USE_SDL=	sdl
 MAKE_ARGS+=	BUILD_SDL=YES
 REF_TARGETS+=	softsdl
-PLIST_SUB+=	SDL=""
+PLIST_SUB+=	SOFTSDL=""
 .else
-PLIST_SUB+=	SDL="@comment "
+PLIST_SUB+=	SOFTSDL="@comment "
 .endif
 
-.if defined(WITH_SDLGL) && defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDLGL}
+USE_SDL=	sdl
 MAKE_ARGS+=	BUILD_SDLGL=YES
 REF_TARGETS+=	sdlgl
 PLIST_SUB+=	SDLGL=""
@@ -98,7 +100,8 @@ PLIST_SUB+=	SDLGL=""
 PLIST_SUB+=	SDLGL="@comment "
 .endif
 
-.if defined(WITH_SDLCLIENT) && defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDLCLIENT}
+USE_SDL=	sdl
 MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
 EXE_TARGETS+=	quake2-sdl
 PLIST_SUB+=	SDLCLIENT=""
@@ -106,8 +109,8 @@ PLIST_SUB+=	SDLCLIENT=""
 PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
-.if ${ARCH} == "i386" && defined(WITH_SVGA)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.if ${PORT_OPTIONS:MSVGA}
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	BUILD_SVGA=YES
 REF_TARGETS+=	soft
 PLIST_SUB+=	SVGA=""
@@ -115,8 +118,8 @@ PLIST_SUB+=	SVGA=""
 PLIST_SUB+=	SVGA="@comment "
 .endif
 
-.if defined(WITH_AA)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.if ${PORT_OPTIONS:MAA}
+LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
 MAKE_ARGS+=	BUILD_AA=YES
 REF_TARGETS+=	softaa
 PLIST_SUB+=	AA=""
@@ -124,7 +127,7 @@ PLIST_SUB+=	AA=""
 PLIST_SUB+=	AA="@comment "
 .endif
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ARGS+=	BUILD_CLIENT=YES
 EXE_TARGETS+=	quake2
 PLIST_SUB+=	CLIENT=""
@@ -132,7 +135,7 @@ PLIST_SUB+=	CLIENT=""
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 MAKE_ARGS+=	BUILD_DEDICATED=YES
 PLIST_SUB+=	SERVER=""
 EXE_TARGETS+=	q2ded
@@ -144,14 +147,14 @@ PLIST_SUB+=	SERVER="@comment "
 ## GAME, MISSION ADDONS, AND MODS ##
 #                                ###
 
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 MAKE_ARGS+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if defined(WITH_CTF)
+.if ${PORT_OPTIONS:MCTF}
 MAKE_ARGS+=	BUILD_CTFDLL=YES
 PLIST_SUB+=	CTF=""
 .else
@@ -162,33 +165,33 @@ PLIST_SUB+=	CTF="@comment "
 ## MISCELLANEOUS TUNABLES ##
 #                        ###
 
-.if defined(WITH_RETEXTURE)
+.if ${PORT_OPTIONS:MRETEXTURE}
 MAKE_ARGS+=	BUILD_RETEXTURE=YES
 RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:${PORTSDIR}/games/quake2-extras
 .endif
 
-.if defined(WITH_JOYSTICK)
+.if ${PORT_OPTIONS:MJOYSTICK}
 MAKE_ARGS+=	BUILD_JOYSTICK=YES
 .endif
 
-.if defined(WITH_REDBLUE)
+.if ${PORT_OPTIONS:MREDBLUE}
 MAKE_ARGS+=	BUILD_REDBLUE=YES
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	HAVE_IPV6=YES
 .endif
 
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.if ${PORT_OPTIONS:MARTS}
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 MAKE_ARGS+=	BUILD_ARTS=YES
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O3 -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations"
 .endif
 
-.if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
+.if ! ${PORT_OPTIONS:MASM}
 MAKE_ARGS+=	NO_X86_ASM=YES
 .endif
 
@@ -202,7 +205,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/linux/vid_so.c
 	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
 		${WRKSRC}/src/linux/qgl_linux.c
-	${REINPLACE_CMD} -e 's|/dev/js|/dev/joy|' ${WRKSRC}/src/linux/joystick.c
+	${REINPLACE_CMD} -e 's|/js|/joy|' ${WRKSRC}/src/linux/joystick.c
 
 do-install:
 .for tgt in ${EXE_TARGETS}
@@ -212,17 +215,17 @@ do-install:
 .for tgt in ${REF_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/ref_${tgt}.so ${LIBDIR}
 .endfor
-.if defined(WITH_CTF)
+.if ${PORT_OPTIONS:MCTF}
 	@${MKDIR} ${LIBDIR}/ctf
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game.so ${LIBDIR}/ctf
 .endif
-.if defined(WITH_EYECANDY)
+.if ${PORT_OPTIONS:MEYECANDY}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${LIBDIR}/baseq2
 .endif
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${TGTDIR}/game.so ${LIBDIR}/baseq2
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/docs/README ${DOCSDIR}/README.320
@@ -231,5 +234,4 @@ do-install:
 .endif
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
