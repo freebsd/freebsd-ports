@@ -96,7 +96,6 @@ GUI			Enable Graphical User Interface
 H323			Adds support for the H323 protocol
 HAL			Adds support for HAL
 HEIMDAL_KRB5		Adds Heimdal kerberos support
-ICONV			Adds iconv support
 ICU			Use ICU for unicode collation
 IDN			Adds support for International Domain Names
 IMAGEMAGICK		ImageMagick graphics support

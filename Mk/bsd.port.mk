@@ -324,7 +324,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # GMAKE			- Set to path of GNU make if not in $PATH.
 #				  Default: gmake
 ##
-# USE_ICONV		- If set, this port uses libiconv.
 # USE_GETTEXT	- The port uses GNU gettext (libintl).
 #					'build'		as a build-time dependency
 #					'yes'		as a library dependency
@@ -1844,10 +1843,6 @@ USE_LDCONFIG=	${PREFIX}/lib
 .endif
 .if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
 IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
-.endif
-
-.if defined(USE_ICONV)
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 .if defined(USE_GETTEXT)
