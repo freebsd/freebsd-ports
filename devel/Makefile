@@ -19,6 +19,7 @@
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-glmnet
     SUBDIR += R-cran-gsubfn
+    SUBDIR += R-cran-gtools
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-memoise
