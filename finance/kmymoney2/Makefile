@@ -7,7 +7,7 @@
 
 PORTNAME=	kmymoney2
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
 # Add more build-time dependencies to generate the PDF docs
 BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
 		pdfjadetex:${PORTSDIR}/print/jadetex \
-		html2ps:${PORTSDIR}/print/html2ps-letter \
+		html2ps:${PORTSDIR}/print/html2ps \
 		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		cppunit-config:${PORTSDIR}/devel/cppunit \
 		recode:${PORTSDIR}/converters/recode

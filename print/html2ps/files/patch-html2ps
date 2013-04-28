@@ -1,0 +1,63 @@
+--- html2ps.orig	2010-05-07 20:22:12.000000000 +0900
++++ html2ps	2013-04-29 00:07:16.000000000 +0900
+@@ -26,8 +26,9 @@
+ # Set the name of the global configuration file. See the installation notes
+ # and manual page for more details on configuration files.
+ 
+-$globrc='/it/sw/share/www/lib/html2ps/html2psrc';
+-$ug='/it/sw/share/www/lib/html2ps/html2ps.html';
++$LIBPAPER=1;
++$globrc='%%PREFIX%%/etc/html2psrc';
++$ug='%%DATADIR%%/html2ps.html';
+ 
+ $conf=<<'EOR';
+ @html2ps {
+@@ -46,7 +47,7 @@
+     path: "";
+   }
+   paper {
+-    type: A4;
++    type: libpaper;
+     height: "";
+     width: "";
+   }
+@@ -613,6 +614,23 @@
+   $height{"b$_"}=int($temp*2**(1/2)*1000+.5)/10;
+ }
+ if(!$pagew || !$pageh) {
++  if ($LIBPAPER) {
++    my $env_com;
++    if ("\L$paper{'type'}" ne 'libpaper') {
++      $env_com = "/usr/bin/env PAPERSIZE=\"$paper{'type'}\"";
++    }
++    my $_w = `$env_com /usr/local/bin/paperconf -wc`;
++    my $_h = `$env_com /usr/local/bin/paperconf -hc`;
++    my $_n = `$env_com /usr/local/bin/paperconf -n`;
++    if ($_w ne '' and $_h ne '') {
++      $paper{'width'} = $_w;
++      $paper{'height'} = $_h;
++      $paper{'type'} = $_n;
++      ($pagew,$pageh)=($paper{'width'},$paper{'height'});
++    } else {
++      &dbg("Unknown paper type: $paper{'type'}\n");
++    }
++  } else { # !LIBPAPER
+   if($width{"\L$paper{'type'}"}) {
+     $paper{'width'}=$width{"\L$paper{'type'}"} if(!defined $paper{'width'});
+     $paper{'height'}=$height{"\L$paper{'type'}"} if(!defined $paper{'height'});
+@@ -620,6 +638,7 @@
+   } elsif($paper{'type'}) {
+     &dbg("Unknown paper type: $paper{'type'}\n");
+   }
++  } # LIBPAPER
+ }
+ if($opt_L) {
+   $wl=$pageh-$mll-$mrl;
+@@ -3405,7 +3424,6 @@
+   local($optlist)=@_;
+   local(@args,$_,$opt,$opts,$rest,$olist,$plist,$found,@popts);
+   local($errs)=0;
+-  local($[)=0;
+   @args=split( /\|/, $optlist );
+   for $opt (@args) {
+     if(substr($opt,-1,1) ne ':') {$olist.=$opt}

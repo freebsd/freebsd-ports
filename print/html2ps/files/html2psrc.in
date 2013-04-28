@@ -8,12 +8,12 @@
     TeX: 1;
     dvips: 1;
     Ghostscript: 1;
-    check: weblint;
+    check: weblint++;
     libwww-perl: 1;
     path: "%%LOCALBASE%%/bin";
   }
   paper {
-    type: %%PAPERSIZE%%;
+    type: libpaper;
   }
   hyphenation {
     en {

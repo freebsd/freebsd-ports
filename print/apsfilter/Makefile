@@ -108,7 +108,7 @@ _DEPENDS_DVIPS=	dvips:${PORTSDIR}/print/dvipsk-tetex
 _DEPENDS_FIG2DEV= \
 		fig2dev:${PORTSDIR}/print/transfig
 _DEPENDS_HTML2PS= \
-		html2ps:${PORTSDIR}/print/html2ps${PSUFX}
+		html2ps:${PORTSDIR}/print/html2ps
 _DEPENDS_ATALK=	pap:${PORTSDIR}/net/netatalk
 _DEPENDS_SAMBA= smbclient:${PORTSDIR}/net/samba36
 _DEPENDS_MP3=	mpg321:${PORTSDIR}/audio/mpg321
