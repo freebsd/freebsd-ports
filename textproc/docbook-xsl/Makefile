@@ -14,10 +14,6 @@ BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook \
 		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
-.endif
-
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
@@ -34,102 +30,113 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
 MODULES=	common fo html images lib manpages params xhtml
 
-OPTIONS=	ECLIPSE		"Eclipse modules"		on \
-		EPUB		"Epub modules"			on \
-		EXTENSIONS	"Extensions"			on \
-		HIGHLIGHTING	"highlighting modules"		on \
-		HTMLHELP	"HTML Help modules"		on \
-		JAVAHELP	"Java Help modules"		on \
-		PROFILING	"Profiling modules"		on \
-		ROUNDTRIP	"Roundtrip modules"		on \
-		SLIDES		"Slides modules"		on \
-		TEMPLATE	"Templates"			on \
-		TESTS		"Test tools"			on \
-		TOOLS		"Tools"				on \
-		WEBSITE		"Website modules"		on \
-		XHTML11		"XHTML 1.1 modules"		on
+OPTIONS_DEFINE=	ECLIPSE EPUB EXTENSIONS HIGHLIGHTING HTMLHELP JAVAHELP \
+		PROFILING ROUNDTRIP SLIDES TEMPLATE TESTS TOOLS WEBSITE \
+		XHTML11 DOCS
+OPTIONS_DEFAULT=	ECLIPSE EPUB EXTENSIONS HIGHLIGHTING HTMLHELP JAVAHELP \
+			PROFILING ROUNDTRIP SLIDES TEMPLATE TESTS TOOLS WEBSITE \
+			XHTML11
 
-.include <bsd.port.pre.mk>
+ECLIPSE_DESC=		Eclipse modules
+EPUB_DESC=		Epub modules
+EXTENSIONS_DESC=	Extensions
+HIGHLIGHTING_DESC=	highlighting modules
+HTMLHELP_DESC=		HTML Help modules
+JAVAHELP_DESC=		Java Help modules
+PROFILING_DESC=		Profiling modules
+ROUNDTRIP_DESC=		Roundtrip modules
+SLIDES_DESC=		Slides modules
+TEMPLATE_DESC=		Templates
+TESTS_DESC=		Test tools
+TOOLS_DESC=		Tools
+WEBSITE_DESC=		Website modules
+XHTML11_DESC=		XHTML 1.1 modules
 
-.if defined(WITH_ECLIPSE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
+.endif
+
+.if ${PORT_OPTIONS:MECLIPSE}
 PLIST_SUB+=	ECLIPSE=""
 MODULES+=	eclipse
 .else
 PLIST_SUB+=	ECLIPSE="@comment "
 .endif
-.if defined(WITH_EPUB)
+.if ${PORT_OPTIONS:MEPUB}
 PLIST_SUB+=	EPUB=""
 MODULES+=	epub
 .else
 PLIST_SUB+=	EPUB="@comment "
 .endif
-.if defined(WITH_EXTENSIONS)
+.if ${PORT_OPTIONS:MEXTENSIONS}
 PLIST_SUB+=	EXTENSIONS=""
 MODULES+=	extensions
 .else
 PLIST_SUB+=	EXTENSIONS="@comment "
 .endif
-.if defined(WITH_HIGHLIGHTING)
+.if ${PORT_OPTIONS:MHIGHLIGHTING}
 PLIST_SUB+=	HIGHLIGHTING=""
 MODULES+=	highlighting
 .else
 PLIST_SUB+=	HIGHLIGHTING="@comment "
 .endif
-.if defined(WITH_HTMLHELP)
+.if ${PORT_OPTIONS:MHTMLHELP}
 PLIST_SUB+=	HTMLHELP=""
 MODULES+=	htmlhelp
 .else
 PLIST_SUB+=	HTMLHELP="@comment "
 .endif
-.if defined(WITH_JAVAHELP)
+.if ${PORT_OPTIONS:MJAVAHELP}
 PLIST_SUB+=	JAVAHELP=""
 MODULES+=	javahelp
 .else
 PLIST_SUB+=	JAVAHELP="@comment "
 .endif
-.if defined(WITH_PROFILING)
+.if ${PORT_OPTIONS:MPROFILING}
 PLIST_SUB+=	PROFILING=""
 MODULES+=	profiling
 .else
 PLIST_SUB+=	PROFILING="@comment "
 .endif
-.if defined(WITH_ROUNDTRIP)
+.if ${PORT_OPTIONS:MROUNDTRIP}
 PLIST_SUB+=	ROUNDTRIP=""
 MODULES+=	roundtrip
 .else
 PLIST_SUB+=	ROUNDTRIP="@comment "
 .endif
-.if defined(WITH_SLIDES)
+.if ${PORT_OPTIONS:MSLIDES}
 PLIST_SUB+=	SLIDES=""
 MODULES+=	slides
 .else
 PLIST_SUB+=	SLIDES="@comment "
 .endif
-.if defined(WITH_TEMPLATE)
+.if ${PORT_OPTIONS:MTEMPLATE}
 PLIST_SUB+=	TEMPLATE=""
 MODULES+=	template
 .else
 PLIST_SUB+=	TEMPLATE="@comment "
 .endif
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 PLIST_SUB+=	TESTS=""
 MODULES+=	tests
 .else
 PLIST_SUB+=	TESTS="@comment "
 .endif
-.if defined(WITH_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 PLIST_SUB+=	TOOLS=""
 MODULES+=	tools
 .else
 PLIST_SUB+=	TOOLS="@comment "
 .endif
-.if defined(WITH_WEBSITE)
+.if ${PORT_OPTIONS:MWEBSITE}
 PLIST_SUB+=	WEBSITE=""
 MODULES+=	website
 .else
 PLIST_SUB+=	WEBSITE="@comment "
 .endif
-.if defined(WITH_XHTML11)
+.if ${PORT_OPTIONS:MXHTML11}
 PLIST_SUB+=	XHTML11=""
 MODULES+=	xhtml-1_1
 .else
@@ -142,7 +149,7 @@ post-extract:
 		${XARGS} -0 ${RM} -rf
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${TAR} -cf - . |\
 		${TAR} -xf - -C${DOCSDIR})
@@ -171,4 +178,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
