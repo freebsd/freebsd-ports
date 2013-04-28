@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--with-libsmi=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsmi=no
 .endif
 
-.if ${PORT_OPTIONS:MADNS}) && !defined(LITE)
+.if ${PORT_OPTIONS:MADNS} && !defined(LITE)
 LIB_DEPENDS+=	adns:${PORTSDIR}/dns/adns
 CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 .else
