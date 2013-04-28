@@ -23,8 +23,7 @@ LICENSE_COMB=		multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
 BUILD_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-			cmake:${PORTSDIR}/devel/cmake \
-			${LOCALBASE}/include/libv4l2.h:${PORTSDIR}/multimedia/v4l_compat
+			cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 			ffi:${PORTSDIR}/devel/libffi \
 			asound:${PORTSDIR}/audio/alsa-lib \
