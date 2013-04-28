@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--disable-allegro
 PLIST_SUB+=	ALLEGRO="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGL}
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-opengl
 PLIST_SUB+=	GL=""
