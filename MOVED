@@ -4225,7 +4225,7 @@ databases/mysql41-server||2013-04-26|Unsupported upstream since 2009-12-31
 databases/mysql41-client||2013-04-26|Unsupported upstream since 2009-12-31
 databases/mysql41-scripts||2013-04-26|Unsupported upstream since 2009-12-31
 databases/p5-DBD-mysql41||2013-04-26|Depends on databases/mysql41-server, which was removed
-security/gnupg-idea||2013-04-26|Removed
+security/gnupg-idea|security/gnupg1|2013-04-26|Modules now included in gnupg 1.4.13
 print/c2ps-letter|print/c2ps|2013-04-27|Merged into print/c2ps
 print/c2ps-a4|print/c2ps|2013-04-27|Merged into print/c2ps
 print/lprps-letter|print/lprps|2013-04-27|Merged into print/lprps
