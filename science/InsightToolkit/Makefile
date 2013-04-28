@@ -11,8 +11,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Insight Toolkit
 
 OPTIONS_DEFINE=	EXAMPLES TESTING
-#OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
-#		TESTING  "Build testing programs (very time consuming)" off
+TESTING_DESC=	Build testing programs (very time consuming)
 
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 NO_PACKAGE=	License does not allow redistribution of binaries
