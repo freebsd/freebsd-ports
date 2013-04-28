@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tmw
-# Date created:				12 Oktober 2005
-# Whom:					Tobias Gion
-#
+# Created by: Tobias Gion
 # $FreeBSD$
-#
 
 PORTNAME=	tmw
 PORTVERSION=	0.5.2
@@ -14,37 +10,35 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A free open source 2D MMORPG in development
+COMMENT=	Free open source 2D MMORPG in development
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		png15:${PORTSDIR}/graphics/png \
-		curl.6:${PORTSDIR}/ftp/curl \
-		physfs.1:${PORTSDIR}/devel/physfs
+		curl:${PORTSDIR}/ftp/curl \
+		physfs:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 RUN_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 
-USES=		cmake
+USES=		cmake gettext
 USE_SDL=	sdl gfx image mixer net ttf
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/mana
 
-OPTIONS=	MANASERV	"Enable server component" off \
-		MUSIC		"Install additional music" on \
-		NLS		"Enable gettext support" on \
-		OPENGL		"Enable OpenGL support" on \
+OPTIONS_DEFINE=	MANASERV MUSIC NLS OPENGL
+OPTIONS_DEFAULT=	MUSIC OPENGL
+MANASERV_DESC=	Server component
+MUSIC_DESC=	Install additional music
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MANASERV)
+.if ${PORT_OPTIONS:MMANASERV}
 CMAKE_ARGS+=	-DENABLE_MANASERV:BOOL=ON
 .else
 CMAKE_ARGS+=	-DENABLE_MANASERV:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=ON
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 PLIST_SUB+=	NLS=""
@@ -53,7 +47,7 @@ PLIST_SUB+=	NLS="@comment "
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 MUSICVERSION=	0.3
 MASTER_SITES+=	SF/themanaworld/TMW%20Music/${MUSICVERSION}/:data
 MUSICNAME=	tmwmusic-${MUSICVERSION}
@@ -65,7 +59,7 @@ PLIST_SUB+=	MUSICADDON=""
 PLIST_SUB+=	MUSICADDON="@comment "
 .endif
 
-.if defined(WITHOUT_OPENGL)
+.if empty(PORT_OPTIONS:MOPENGL)
 CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=ON
@@ -73,15 +67,15 @@ USE_GL=		yes
 .endif
 
 post-extract:
-.if !defined(WITHOUT_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 	cd ${WRKDIR} && ${GZIP_CMD} -dc ${DISTDIR}/${MUSICNAME}.tar.gz  | ${TAR} -xf -
 .endif
 
 post-install:
-.if !defined(WITHOUT_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 	${MKDIR} ${DATADIR}/data/music
 	${FIND} -E ${MUSICDIR} -type f -iregex ".*\.ogg" \
 		-exec ${INSTALL_DATA} "{}" "${DATADIR}/${MUSICSUBDIR}" \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
