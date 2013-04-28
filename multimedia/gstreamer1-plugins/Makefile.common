@@ -29,6 +29,7 @@ BAD_GST_ALL_PLUGINS+= \
 		mplex \
 		opencv \
 		resindvd \
+		rtmp \
 		schro \
 		soundtouch \
 		spandsp \
@@ -62,7 +63,6 @@ BAD_GST_ALL_PLUGINS+= \
 		opus \
 		pvr \
 		rsvg \
-		rtmp \
 		sdl \
 		sndfile \
 		sndio \
@@ -326,6 +326,9 @@ gst_pulse_LIB_DEPENDS=	pulse:${PORTSDIR}/audio/pulseaudio
 # resindvd
 gst_resindvd_BUILD_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
+
+# rtmp
+gst_rtmp_LIB_DEPENDS=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
 
 # shout2
 # keep the version to tell de difference between libshout and libshout2

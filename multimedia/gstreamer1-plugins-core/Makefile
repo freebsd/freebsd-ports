@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.17 2006/07/17 01:39:57 ahze Exp $
 
 PORTNAME=	gstreamer1-plugins-core
-PORTVERSION=	${GST1_VERSION}
+PORTVERSION=	${GST1_VERSION}${GST1_MINIMAL_VERSION}
 PORTREVISION=	0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
