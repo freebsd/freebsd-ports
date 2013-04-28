@@ -2,13 +2,13 @@
 
 PORTNAME=	3dpong
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/3dpong/src/ \
 		ftp://ftp.billsgames.com/unix/x/3dpong/src/ \
-		http://www.newbreedsoftware.com/images/prodicons/:icons
+		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.gif:icons
+		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -16,8 +16,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	X Window 3D Pong game for 1 or 2 players
 
 LICENSE=	GPLv2
-
-BUILD_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_XORG=	x11
 USE_GMAKE=	yes
@@ -28,25 +26,21 @@ MAN6=		${PORTNAME}.6
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
-		share/examples/${PORTNAME}/${PORTNAME}-handball.sh \
-		share/examples/${PORTNAME}/${PORTNAME}-vs-computer.sh
-PLIST_DIRS=	share/examples/${PORTNAME}
+		%%DATADIR%%/hit.au \
+		%%DATADIR%%/score.au \
+		%%DATADIR%%/wall.au
+PLIST_DIRS=	%%DATADIR%%
 
-PORTDATA=	*
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
+PORTEXAMPLES=	*
 
 DESKTOP_ENTRIES="3D Pong" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cat sounds/|cat ${DATADIR}/|g' ${WRKSRC}/src/3dpong.c
-
-post-build:
-	@(cd ${WRKSRC} && \
-		${LOCALBASE}/bin/giftopnm ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.gif | \
-		${LOCALBASE}/bin/pnmtopng > ${PORTNAME}.png)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -54,13 +48,15 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/src/${MAN6} ${MAN6PREFIX}/man/man6
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}
 .endif
 
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.mk>
