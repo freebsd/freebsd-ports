@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gngeo
-# Date created:				17 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	gngeo
 PORTVERSION=	0.7
@@ -28,39 +24,41 @@ LDFLAGS+=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	GUI "Enable GUI support (experimental)" off \
-		I386ASM "Use i386 optimization" on \
-		RAZE "Use Raze as z80 emulator (only for i386)" on \
-		STAR "Use Starscream as 68k emulator (only for i386)" on
+OPTIONS_DEFINE=	GUI
+OPTIONS_DEFINE_i386=	ASM RAZE STAR
+OPTIONS_DEFAULT_i386=	ASM RAZE STAR
+GUI_DESC=	Enable GUI support (experimental)
+RAZE_DESC=	Use Raze as z80 emulator
+STAR_DESC=	Use Starscream as 68k emulator
 
 MAN1=		gngeo.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_I386ASM) || !defined(WITHOUT_RAZE) || \
-    !defined(WITHOUT_STAR)
+.if ${PORT_OPTIONS:MI386ASM} || ${PORT_OPTIONS:MRAZE} || \
+    ${PORT_OPTIONS:MSTAR}
 BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--enable-gui
 .else
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-.if !defined(WITHOUT_I386ASM) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MI386ASM}
 CONFIGURE_ARGS+=	--enable-i386asm
 .else
 CONFIGURE_ARGS+=	--disable-i386asm
 .endif
 
-.if !defined(WITHOUT_RAZE) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MRAZE}
 CONFIGURE_ARGS+=	--enable-raze
 .else
 CONFIGURE_ARGS+=	--enable-mamez80
 .endif
 
-.if !defined(WITHOUT_STAR) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MSTAR}
 CONFIGURE_ARGS+=	--enable-starscream
 .else
 CONFIGURE_ARGS+=	--enable-gen68k

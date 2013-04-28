@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fMSX
-# Date created:         15 Oct 1996
-# Whom:                 dk
-#
+# Created by: dk
 # $FreeBSD$
-#
 
 PORTNAME=	fmsx
 PORTVERSION=	3.5.1
@@ -31,10 +27,12 @@ WRKSRC=		${WRKDIR}
 
 BROKEN=		does not build
 
-OPTIONS=	BPP8 "With BPP8" Off \
-		BPP16 "With BPP16" Off \
-		BPP24 "With BPP24" Off \
-		BPP32 "With BPP32 (see pkg-message)" On
+OPTIONS_DEFINE=	BPP8 BPP16 BPP24 BPP32 DOCS
+OPTIONS_DEFAULT=	BPP32
+BPP8_DESC=	With BPP8
+BPP16_DESC=	With BPP16
+BPP24_DESC=	With BPP24
+BPP32_DESC=	With BPP32 (see pkg-message)
 
 .include <bsd.port.pre.mk>
 
@@ -42,16 +40,16 @@ post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/fMSX/Unix/Makefile \
 		${WRKSRC}/EMULib/Rules.Unix
-.ifdef(WITH_BPP32) || defined(PACKAGE_BUILDING) || defined(BATCH)
+.if ${PORT_OPTIONS:MBPP32) || defined(PACKAGE_BUILDING) || defined(BATCH}
 	${REINPLACE_CMD} -e 's/BPP16/BPP32/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
-.ifdef(WITH_BPP24)
+.if ${PORT_OPTIONS:MBPP24}
 	${REINPLACE_CMD} -e 's/BPP16/BPP24/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
-.ifdef(WITH_BPP16)
+.if ${PORT_OPTIONS:MBPP16}
 	${REINPLACE_CMD} -e 's/BPP16/BPP16/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
-.ifdef(WITH_BPP8)
+.if ${PORT_OPTIONS:MBPP8}
 	${REINPLACE_CMD} -e 's/BPP16/BPP8/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
 
@@ -65,7 +63,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/fmsx
 	${INSTALL_DATA} ${WRKSRC}/fMSX/ROMs/*.FNT ${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.ROM ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fMSX/*.html ${DOCSDIR}
 .endif
