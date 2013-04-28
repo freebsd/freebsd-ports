@@ -36,9 +36,15 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/command.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/command.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/command.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/retrieve.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/retrieve.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/retrieve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/embed.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/embed.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/embed.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/fetch.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/fetch.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/fetch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/summon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/summon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd/summon.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/connect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/connect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/connect.pyo
@@ -60,6 +66,9 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/accept.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/accept.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/accept.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/emit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/emit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/emit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/format.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/format.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/format.pyo
@@ -82,15 +91,33 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/introspect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/introspect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/introspect.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/mark.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/mark.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/mark.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/model.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/model.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/model.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/split_sql.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/split_sql.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/split_sql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/decode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/decode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/decode.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/grammar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/grammar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/grammar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/parse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/parse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/parse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/scan.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/scan.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/scan.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/syntax.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/syntax.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/syntax.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/token.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/token.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn/token.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/__init__.pyo
@@ -115,15 +142,9 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/dump.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/dump.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/dump.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/embed.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/embed.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/embed.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/encode.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/encode.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/encode.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/error.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/error.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/error.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/flow.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/flow.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/flow.pyo
@@ -157,9 +178,6 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/lookup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/lookup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/lookup.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/parse.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/parse.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/parse.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/plan.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/plan.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/plan.pyo
@@ -169,24 +187,15 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/rewrite.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/rewrite.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/rewrite.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/scan.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/scan.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/scan.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/signature.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/signature.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/signature.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/stitch.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/stitch.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/stitch.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/syntax.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/syntax.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/syntax.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/term.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/term.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/term.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/token.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/token.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/token.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/util.pyo
@@ -265,6 +274,57 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/introspect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/introspect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/command.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/delete.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/delete.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/delete.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/do.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/do.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/do.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/insert.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/insert.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/insert.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/merge.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/merge.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/merge.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/summon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/summon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/summon.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/truncate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/truncate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/truncate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/update.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/update.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd/update.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/dump.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/dump.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr/dump.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/connect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/connect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/connect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway/command.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/hello/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/hello/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/hello/__init__.pyo
@@ -347,6 +407,89 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/shell.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static/shell.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/LICENSE
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/README.md
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/compress.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/css/baboon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/css/baboon_vector.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/css/docs.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/activeline.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/changemode.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/complete.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/complete.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/fullscreen.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/marker.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/mustache.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/preview.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/resize.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/runmode.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/search.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/internals.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/lib/codemirror.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/lib/codemirror.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/lib/overlay.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/lib/runmode.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/manual.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/clike/clike.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/clike/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/coffeescript/LICENSE
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/coffeescript/coffeescript.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/coffeescript/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/css/css.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/css/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/diff/diff.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/diff/diff.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/diff/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/haskell/haskell.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/haskell/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/htmlmixed/htmlmixed.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/htmlmixed/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/javascript/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/javascript/javascript.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/lua/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/lua/lua.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/php/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/php/php.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/plsql/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/plsql/plsql.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/python/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/python/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/python/python.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/r/LICENSE
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/r/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/r/r.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/rst/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/rst/rst.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/rst/rst.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/ruby/LICENSE
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/ruby/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/ruby/ruby.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/scheme/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/scheme/scheme.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/smalltalk/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/smalltalk/smalltalk.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/sparql/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/sparql/sparql.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/stex/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/stex/stex.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/velocity/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/velocity/velocity.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xml/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xml/xml.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xmlpure/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xmlpure/xmlpure.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/yaml/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/yaml/yaml.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/oldrelease.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/test/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/test/test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/theme/default.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/theme/elegant.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/theme/neat.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/theme/night.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/jquery-1.6.4/jquery-1.6.4.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/sqlalchemy/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/sqlalchemy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/sqlalchemy/__init__.pyo
@@ -362,9 +505,6 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/timeout/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/timeout/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/timeout/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/view/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/view/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/view/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/__init__.pyo
@@ -383,12 +523,6 @@ bin/htsql-ctl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/bind.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/bind.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/bind.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/coerce.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/coerce.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/coerce.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/compile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/compile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr/compile.pyo
@@ -415,10 +549,40 @@ bin/htsql-ctl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core/tr
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite/core
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_sqlite
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/view
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/timeout
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/system
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/sqlalchemy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/jquery-1.6.4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/yaml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xmlpure
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/velocity
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/stex
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/sparql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/smalltalk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/scheme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/ruby
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/rst
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/r
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/python
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/plsql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/php
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/lua
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/javascript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/htmlmixed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/haskell
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/diff
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/coffeescript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode/clike
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/mode
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/demo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor/codemirror-2.13
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/vendor
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell/default
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/shell
@@ -429,6 +593,11 @@ bin/htsql-ctl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/meta
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/inet
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/hello
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/gateway
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/filedb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl/cmd
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/etl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/django
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/csrf
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/tweak/cors
@@ -437,6 +606,7 @@ bin/htsql-ctl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/ctl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr/fn
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/syn
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/fmt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql/core/cmd

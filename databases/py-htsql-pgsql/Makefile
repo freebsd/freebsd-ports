@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	htsql-pgsql
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	PostgreSQL backend for HTSQL
+COMMENT=	Database Query Language (PostgreSQL Backend for HTSQL)
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}htsql>2.3:${PORTSDIR}/databases/py-htsql \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
