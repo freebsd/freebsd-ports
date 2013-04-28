@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mbdyn
-# Date created:		2005-01-30
-# Whom:			Kay Lehmann <kay_lehmann@web.de>
-#
+# Created by: Kay Lehmann <kay_lehmann@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.4.0
@@ -26,11 +22,12 @@ CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=''
 
-OPTIONS=	MPI "Enable mpich-support" off \
-		METIS "Enable metis-support" off \
-		CHACO "Enable chaco-support" off \
-		GINAC "Enable GiNaC-support (not implemented yet)" off \
-		TCL "Enable tcl-support (not implemented yet)" off
+OPTIONS_DEFINE=	MPI METIS CHACO GINAC TCL
+MPI_DESC=	Enable mpich-support
+METIS_DESC=	Enable metis-support
+CHACO_DESC=	Enable chaco-support
+GINAC_DESC=	Enable GiNaC-support (not implemented yet)
+TCL_DESC=	Enable tcl-support (not implemented yet)
 
 .include <bsd.port.pre.mk>
 
@@ -55,18 +52,18 @@ CONFIGURE_ARGS+=	--with-blas=atlas
 LAPACK_LIBS=	-lalapack
 .endif
 
-.if defined(WITH_MPI)
+.if ${PORT_OPTIONS:MMPI}
 LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=yes --enable-schur
 CPPFLAGS+=	-I${LOCALBASE}/include
-. if !defined(WITH_METIS)
+. if ! ${PORT_OPTIONS:MMETIS}
 WITH_CHACO=	yes
 . endif
 .else
 CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
-.if defined(WITH_METIS)
+.if ${PORT_OPTIONS:MMETIS}
 LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis4
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
@@ -74,14 +71,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include/metis
 CONFIGURE_ARGS+=	--with-metis=no
 .endif
 
-.if defined(WITH_CHACO)
+.if ${PORT_OPTIONS:MCHACO}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libchaco.a:${PORTSDIR}/math/chaco
 CONFIGURE_ARGS+=	--with-chaco=yes
 .else
 CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
-.if defined(WITH_GINAC)
+.if ${PORT_OPTIONS:MGINAC}
 LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis4 \
 		ginac:${PORTSDIR}/math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
@@ -90,7 +87,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/metis
 CONFIGURE_ARGS+=	--with-ginac=no
 .endif
 
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 IGNORE=		you enabled Tcl-support, which is not implemented yet
 LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl=yes

@@ -1,9 +1,5 @@
-# New ports collection Makefile for: libsvm
-# Date created:         Oct 28 2001
-# Whom:                 Chia-Hsing Yu <me@davidyu.org>
-#
+# Created by: Chia-Hsing Yu <me@davidyu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libsvm
 PORTVERSION=	3.10
@@ -19,7 +15,8 @@ COMMENT=	A library for Support Vector Machines
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 USE_ZIP=	yes
 
@@ -47,13 +44,13 @@ SUB_LIST=	DATADIR=${DATADIR}
 
 .endif
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	${TXT_DOCS}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_OCFLAGS)
+.if ${PORT_OPTIONS:MOCFLAGS}
 # same as LIBSVM itself
 CFLAGS=		-Wall -Wconversion -O3
 .endif
@@ -86,7 +83,7 @@ do-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \

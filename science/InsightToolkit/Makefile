@@ -1,9 +1,5 @@
-# New ports collection Makefile for:   Insight Toolkit
-# Date created:        10 Aug 2006
-# Whom:                bacon@smithers.neuro.mcw.edu
-#
+# Created by: bacon@smithers.neuro.mcw.edu
 # $FreeBSD$
-#
 
 PORTNAME=	InsightToolkit
 PORTVERSION=	2.8.1
@@ -14,8 +10,9 @@ MASTER_SITES=	SF/itk/itk/2.8
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Insight Toolkit
 
-OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
-		TESTING  "Build testing programs (very time consuming)" off
+OPTIONS_DEFINE=	EXAMPLES TESTING
+#OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
+#		TESTING  "Build testing programs (very time consuming)" off
 
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 NO_PACKAGE=	License does not allow redistribution of binaries
@@ -27,11 +24,11 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_EXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 CMAKE_ARGS+=	"-DBUILD_EXAMPLES:BOOL=OFF"
 .endif
 
-.if !defined(WITH_TESTING)
+.if ! ${PORT_OPTIONS:MTESTING}
 CMAKE_ARGS+=	"-DBUILD_TESTING:BOOL=OFF"
 .endif
 

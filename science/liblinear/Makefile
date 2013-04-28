@@ -1,9 +1,5 @@
-# New ports collection Makefile for: liblr
-# Date created:                      May 14 2007
-# Whom:                              Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liblinear
 PORTVERSION=	1.80
@@ -18,21 +14,22 @@ COMMENT=	A library for Large Linear Classification
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 USE_ZIP=	yes
 
 TXT_DOCS=	COPYRIGHT README
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	${TXT_DOCS}
-.endif
-
 PLIST_FILES=	bin/train bin/predict
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OCFLAGS)
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	${TXT_DOCS}
+.endif
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 # same as LIBLINEAR itself
 CFLAGS=		-Wall -O3
 .endif
@@ -42,7 +39,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/predict ${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \

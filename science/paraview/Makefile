@@ -51,8 +51,9 @@ CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 #		-DPARAVIEW_ENABLE_PYTHON:BOOL=ON
 #		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"' \
 
-OPTIONS=	OSMESA	"Use Mesa for off-screen rendering" Off \
-		GL2PS		"Install support conversion OpenGL to PostScript" On
+OPTIONS_DEFINE=	OSMESA GL2PS DOCS
+OSMESA_DESC=	Use Mesa for off-screen rendering
+GL2PS_DESC=	Install support conversion OpenGL to PostScript
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 
 VERMAJORMINOR=	${PORTVERSION:R}
@@ -60,20 +61,20 @@ VERMAJORMINOR=	${PORTVERSION:R}
 .include <bsd.port.options.mk>
 
 # Simple solution to avoid lots of patching to support NOPORTDOCS
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CMAKE_ARGS+=	-DPV_INSTALL_DOC_DIR=${DOCSDIR}
 .else
 CMAKE_ARGS+=	-DPV_INSTALL_DOC_DIR=${WRKDIR}
 .endif
 
-.if defined(WITH_OSMESA)
+.if ${PORT_OPTIONS:MOSMESA}
 LIB_DEPENDS+=	OSMesa32.7:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so
 .endif
 
-.if defined(WITH_GL2PS)
+.if ${PORT_OPTIONS:MGL2PS}
 LIB_DEPENDS+=	gl2ps.1:${PORTSDIR}/print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
