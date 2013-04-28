@@ -1,8 +1,8 @@
---- choose_authen.c.orig	Sun Jun 18 13:26:53 2000
-+++ choose_authen.c	Sun Dec  8 15:26:08 2002
-@@ -118,10 +118,27 @@
+--- choose_authen.c.orig	2012-04-17 01:42:55.000000000 +0400
++++ choose_authen.c	2013-04-13 13:55:20.000000000 +0400
+@@ -130,12 +130,29 @@
  #else /* SKEY */
- 	    report(LOG_ERR, 
+ 	    report(LOG_ERR,
  		   "%s %s: user %s s/key support has not been compiled in",
 -		   name ? name : "<unknown>",
 -		   session.peer, session.port);
@@ -10,8 +10,8 @@
 +		   name ? name : "<unknown>");
  	    return(CHOOSE_FAILED);
  #endif	/* SKEY */
-+	}
-+
+ 	}
+ 
 +	if (cfg_passwd && STREQ(cfg_passwd, "opie")) {
 +	    if (debug & DEBUG_PASSWD_FLAG)
 +		report(LOG_DEBUG, "%s %s: user %s requires opie",
@@ -27,6 +27,8 @@
 +			name ? name : "<unknown>");
 +		return(CHOOSE_FAILED);
 +#endif /* OPIE */
- 	}
- 
- 	/* Not an skey user. Must be none, des, cleartext or file password */
++	}
++
+ 	/* Does this user require aceclnt */
+ 	cfg_passwd = cfg_get_login_secret(name, TAC_PLUS_RECURSE);
+ 	if (cfg_passwd && STREQ(cfg_passwd, "aceclnt")) {
