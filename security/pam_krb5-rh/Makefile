@@ -1,12 +1,8 @@
-# New ports collection makefile for:	pam_krb5
-# Date created:				18 October 2011
-# Whom:					Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.4.4
+DISTVERSION=	2.4.5
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
