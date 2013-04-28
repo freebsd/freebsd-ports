@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source next generation IDS/IPS engine by OISF
 
 LICENSE=	GPLv2
