@@ -1,9 +1,5 @@
-# Ports collection makefile for:	stardict-dictd_www.mova.org
-# Date created:				16 Dec 2004
-# Whom:					Timur I. Bakeyev <timur@gnome.org>
-#
+# Created by: Timur I. Bakeyev <timur@gnome.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.2
@@ -40,16 +36,19 @@ DICTIONARIES=	1000pbio aviation beslov biology brok_and_efr compbe \
 		zhelezyaki_abbr zhelezyaki_analogs
 
 .if !defined(DICT_PACK)
-OPTIONS=	ALL "All dictionaries" on
+OPTIONS_DEFINE=	ALL
+OPTIONS_DEFAULT=	ALL
+ALL_DESC=	All dictionaries
 .for dict in ${DICTIONARIES}
-OPTIONS+=	${dict:U:S|-|_|g} "${dict} dictionary" off
+OPTIONS_DEFINE+=	${dict:U:S|-|_|g}
+${dict:U:S|-|_|g}_DESC=	${dict} dictionary
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for dict in ${DICTIONARIES}
-.if defined(WITH_ALL) || defined(WITH_${dict:U:S|-|_|g})
+.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${dict:U:S|-|_|g}}
 INSTALL_DICTIONARIES+=	${dict}
 .endif
 .endfor
@@ -74,4 +73,4 @@ do-install:
 	    @${ECHO_CMD} "@unexec ${RMDIR} %D/${DICTDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	    @${ECHO_CMD} "@unexec ${RMDIR} %D/${STARDICT_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

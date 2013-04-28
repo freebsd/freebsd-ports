@@ -1,7 +1,4 @@
-# New ports collection makefile for:	docbook-450
-# Date created:		14 Jul 2008
-# Whom:			Gabor Kovesdan <gabor@kovesdan.org>
-#
+# Created by: Gabor Kovesdan <gabor@kovesdan.org>
 # $FreeBSD$
 
 PORTNAME=	docbook
@@ -33,52 +30,54 @@ XMLCAT_ADD=	${XMLCATMGR} -c ${XMLCAT} add nextCatalog \
 XMLCAT_RM=	${XMLCATMGR} -c ${XMLCAT} remove \
 		    ${PREFIX}/${DOCBOOKDIR}/catalog.xml
 
-OPTIONS=	DTD     	"XML DTD"   				on \
-		SCHEMA		"W3C XML Schema"			on \
-		RELAX_NG	"RELAX NG Schema"			on \
-		SCHEMATRON	"Schematron constraints"		on \
-		NVDL		"NVDL description"			on \
-		TOOLS		"Tools for working with DocBook"	on \
-		XMLCHARENT	"Install ISO 8879 XML entites"		on
+OPTIONS_DEFINE=	DTD SCHEMA RELAX_NG SCHEMATRON NVDL TOOLS XMLCHARENT DOCS
+OPTIONS_DEFAULT=	DTD SCHEMA RELAX_NG SCHEMATRON NVDL TOOLS XMLCHARENT
+DTD_DESC=		XML DTD
+SCHEMA_DESC=		W3C XML Schema
+RELAX_NG_DESC=		RELAX NG Schema
+SCHEMATRON_DESC=	Schematron constraints
+NVDL_DESC=		NVDL description
+TOOLS_DESC=		Tools for working with DocBook
+XMLCHARENT_DESC=	Install ISO 8879 XML entites
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DTD)
+.if ${PORT_OPTIONS:MDTD}
 PLIST_SUB+=	DTD=""
 MODULES+=	dtd
 .else
 PLIST_SUB+=	DTD="@comment "
 .endif
-.if defined(WITH_SCHEMA)
+.if ${PORT_OPTIONS:MSCHEMA}
 PLIST_SUB+=	SCHEMA=""
 MODULES+=	xsd
 .else
 PLIST_SUB+=	SCHEMA="@comment "
 .endif
-.if defined(WITH_RELAX_NG)
+.if ${PORT_OPTIONS:MRELAX_NG}
 PLIST_SUB+=	RELAXNG=""
 MODULES+=	rng
 .else
 PLIST_SUB+=	RELAXNG="@comment "
 .endif
-.if defined(WITH_SCHEMATRON)
+.if ${PORT_OPTIONS:MSCHEMATRON}
 PLIST_SUB+=	SCHEMATRON=""
 MODULES+=	sch
 .else
 PLIST_SUB+=	SCHEMATRON="@comment "
 .endif
-.if defined(WITH_NVDL)
+.if ${PORT_OPTIONS:MNVDL}
 PLIST_SUB+=	NVDL=""
 .else
 PLIST_SUB+=	NVDL="@comment "
 .endif
-.if defined(WITH_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 PLIST_SUB+=	TOOLS=""
 MODULES+=	tools
 .else
 PLIST_SUB+=	TOOLS="@comment "
 .endif
-.if defined(WITH_XMLCHARENT)
+.if ${PORT_OPTIONS:MXMLCHARENT}
 RUN_DEPENDS+=	${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent
 .endif
 
@@ -92,11 +91,11 @@ do-install:
 			${INSTALL_DATA} $${i} ${PREFIX}/${DOCBOOKDIR}/${m}; \
 		done
 .endfor
-.if defined(WITH_NVDL)
+.if ${PORT_OPTIONS:MNVDL}
 	${MKDIR} ${PREFIX}/${DOCBOOKDIR}/nvdl
 	${INSTALL_DATA} ${WRKSRC}/docbook.nvdl ${PREFIX}/${DOCBOOKDIR}/nvdl
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	files1=$$(${FIND} ${WRKSRC} -type f -depth 1| ${GREP} -v -e '.xml$$' -e '.nvdl$$'); \
 	files2=$$(${FIND} ${WRKSRC}/docs -type f -depth 1); \
@@ -113,4 +112,4 @@ do-install:
 post-install:
 	-${XMLCAT_ADD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
