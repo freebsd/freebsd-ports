@@ -1,33 +1,24 @@
---- Makefile.in.orig	2009-07-28 15:18:02.000000000 -0400
-+++ Makefile.in	2009-10-10 16:24:28.000000000 -0400
-@@ -97,7 +97,7 @@ am__tac_plus_SOURCES_DIST = acct.c authe
+--- Makefile.in.orig	2012-04-17 02:56:54.000000000 +0400
++++ Makefile.in	2013-04-13 13:43:18.000000000 +0400
+@@ -98,7 +98,7 @@
  	config.c default_fn.c default_v0_fn.c do_acct.c do_author.c \
- 	dump.c enable.c encrypt.c expire.c hash.c maxsess.c parse.c \
- 	programs.c pw.c pwlib.c regexp.c report.c sendauth.c \
--	sendpass.c tac_plus.c utils.c skey_fn.c
-+	sendpass.c tac_plus.c utils.c skey_fn.c opie_fn.c
+ 	dump.c enable.c encrypt.c expire.c hash.c maxsessint.c parse.c \
+ 	programs.c pw.c pwlib.c report.c sendauth.c sendpass.c \
+-	tac_plus.c utils.c skey_fn.c aceclnt_fn.c
++	tac_plus.c utils.c skey_fn.c aceclnt_fn.c opie_fn.c
  @TACSKEY_TRUE@am__objects_1 = skey_fn.$(OBJEXT)
+ @TACACECLNT_TRUE@am__objects_2 = aceclnt_fn.$(OBJEXT)
  am_tac_plus_OBJECTS = acct.$(OBJEXT) authen.$(OBJEXT) author.$(OBJEXT) \
- 	choose_authen.$(OBJEXT) config.$(OBJEXT) default_fn.$(OBJEXT) \
-@@ -107,7 +107,7 @@ am_tac_plus_OBJECTS = acct.$(OBJEXT) aut
+@@ -109,7 +109,7 @@
  	parse.$(OBJEXT) programs.$(OBJEXT) pw.$(OBJEXT) \
- 	pwlib.$(OBJEXT) regexp.$(OBJEXT) report.$(OBJEXT) \
- 	sendauth.$(OBJEXT) sendpass.$(OBJEXT) tac_plus.$(OBJEXT) \
--	utils.$(OBJEXT) $(am__objects_1)
-+	utils.$(OBJEXT) opie_fn.$(OBJEXT) $(am__objects_1)
+ 	pwlib.$(OBJEXT) report.$(OBJEXT) sendauth.$(OBJEXT) \
+ 	sendpass.$(OBJEXT) tac_plus.$(OBJEXT) utils.$(OBJEXT) \
+-	$(am__objects_1) $(am__objects_2)
++	opie_fn.$(OBJEXT) $(am__objects_1) $(am__objects_2)
  tac_plus_OBJECTS = $(am_tac_plus_OBJECTS)
  am__DEPENDENCIES_1 =
  tac_plus_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@@ -326,7 +326,7 @@ noinst_HEADERS = md4.h mschap.h regexp.h
- 		expire.h md5.h parse.h pathsl.h regmagic.h
- 
- man_gen_MANS = tac_plus.8 tac_plus.conf.5
--man_nogen_MANS = regexp.3 tac_pwd.8
-+man_nogen_MANS = tac_pwd.8
- man_MANS = $(man_gen_MANS) $(man_nogen_MANS)
- 
- # scripts that are built
-@@ -581,6 +581,7 @@ distclean-compile:
+@@ -592,6 +592,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@
@@ -35,7 +26,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
-@@ -1061,8 +1062,7 @@ info: info-am
+@@ -1049,8 +1050,7 @@
  
  info-am:
  
