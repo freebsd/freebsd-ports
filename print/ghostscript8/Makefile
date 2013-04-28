@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ghostscript
-# Date created:		Tue Jun 10 21:58:54 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
