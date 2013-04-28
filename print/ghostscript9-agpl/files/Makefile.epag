@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+# EPAG - additional driver for Epson ESC/Page printers
+# http://www.humblesoft.com/gdevepag.html
+
+PORTDOCS+=	epag
+PORTDOC_FILES+= epag/ert.txt epag/gdevepag.txt epag/ChangeLog	\
+	epag/psprint epag/gsepagif.sh
+
+pre-build-epag:
+	${LN} -s -f ${WRKSRC}/${EPAG_NAME}/gdevepag.c ${WRKSRC}/base
+	${MKDIR} ${WRKSRC}/contrib/epag
+	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/* ${WRKSRC}/contrib/epag
+
+post-build-epag:
+	cd ${WRKSRC}/${EPAG_NAME} && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile
+
+pre-build: pre-build-epag
+post-build: post-build-epag
