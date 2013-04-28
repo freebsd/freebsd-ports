@@ -76,6 +76,8 @@ OPTIONS+=	GTKSPELL "Spell checking support" on \
 		CAP "Enable Contact Availability Prediction plugin" on
 .endif
 
+OPTIONSFILE=	${PORT_DBDIR}/${UNIQUENAME}/options
+
 CONFIGURE_ARGS+=--disable-doxygen
 
 .include <bsd.port.options.mk>
