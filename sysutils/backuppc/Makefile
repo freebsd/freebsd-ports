@@ -1,12 +1,8 @@
-# New ports collection makefile for:	BackupPC
-# Date created:				19 Aug 2010
-# Whom:					Alexander Moisseev <moiseev@mezonplus.ru>
-#
+# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	backuppc
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -15,7 +11,7 @@ DISTNAME=	BackupPC-${PORTVERSION}
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	System for backing PCs and laptops to a server
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-File-Listing>=0:${PORTSDIR}/sysutils/p5-File-Listing
 
 NO_BUILD=	yes
 
@@ -34,31 +30,41 @@ PORTDOCS=	ChangeLog LICENSE README BackupPC.html BackupPC.pod
 
 MAN1=		${PORTNAME}.1
 
-OPTIONS=	COMPRESS_ZLIB "Perl5 interface to zlib compression library"	on \
-		ARCHIVE_ZIP "Perl module for Zip archive files"			on \
-		FILE_RSYNCP "Perl Rsync client"					off \
-		SMBCLIENT "Samba client"					off \
-		NMBLOOKUP "NetBIOS Name lookup tool"				off \
-		XML_RSS "Perl extension to manage RSS files"			off
+OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP NMBLOOKUP \
+			RRDTOOL SMBCLIENT XML_RSS
+OPTIONS_DEFAULT=	ARCHIVE_ZIP COMPRESS_ZLIB
+
+ARCHIVE_ZIP_DESC=	Perl module for Zip archive files
+COMPRESS_ZLIB_DESC=	Perl5 interface to zlib compression library
+FILE_RSYNCP_DESC=	Perl Rsync client
+NMBLOOKUP_DESC=		NetBIOS Name lookup tool
+RRDTOOL_DESC=		Use RRDTool to generate pool statistic graphs
+SMBCLIENT_DESC=		Samba client
+XML_RSS_DESC=		Perl extension to manage RSS files
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_COMPRESS_ZLIB)
-RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-.if defined(WITH_ARCHIVE_ZIP)
+.if ${PORT_OPTIONS:MARCHIVE_ZIP}
 RUN_DEPENDS+=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip
 .endif
-.if defined(WITH_FILE_RSYNCP)
+.if ${PORT_OPTIONS:MCOMPRESS_ZLIB}
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+.if ${PORT_OPTIONS:MFILE_RSYNCP}
 RUN_DEPENDS+=	p5-File-RsyncP>=0:${PORTSDIR}/net/p5-File-RsyncP
 .endif
-.if defined(WITH_SMBCLIENT)
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
-.endif
-.if defined(WITH_NMBLOOKUP)
+.if ${PORT_OPTIONS:MNMBLOOKUP}
 RUN_DEPENDS+=	nmblookup:${PORTSDIR}/net/samba-nmblookup
 .endif
-.if defined(WITH_XML_RSS)
+.if ${PORT_OPTIONS:MRRDTOOL}
+RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bin-BackupPC \
+		${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm
+.endif
+.if ${PORT_OPTIONS:MSMBCLIENT}
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
+.endif
+.if ${PORT_OPTIONS:MXML_RSS}
 RUN_DEPENDS+=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS
 .endif
 
@@ -108,7 +114,7 @@ post-install:
 	@${EXEC} pod2man --section=1 --release=${PORTVERSION} --name=BackupPC --center=BackupPC" user guide" ${WRKSRC}/BackupPC.pod ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR}
 .endif
