@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.17 2006/07/17 01:39:57 ahze Exp $
 
-PORTNAME=	gstreamer-plugins-core
+PORTNAME=	gstreamer1-plugins-core
 PORTVERSION=	${GST1_VERSION}
 PORTREVISION=	0
 CATEGORIES=	multimedia audio
