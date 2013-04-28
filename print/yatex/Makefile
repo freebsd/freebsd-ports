@@ -1,12 +1,8 @@
-# New ports collection makefile for: YaTeX
-# Date created:		98/11/17
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yatex
-PORTVERSION=	1.76
+PORTVERSION=	1.77
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -46,6 +42,8 @@ EMACS_PACKAGESDIR=${EMACS_LIBDIR}/site-packages
 
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -115,7 +113,7 @@ do-install:
 	cd ${WRKSRC}/docs && \
 		${INSTALL_DATA} ${INFOFILES:S,:, ,g} ${PREFIX}/${INFO_PATH}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${WRKSRC}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
