@@ -112,8 +112,7 @@ SSL_DESC=	Build with OpenSSL support
 OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
-# For testing files in FILESDIR
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
@@ -326,6 +325,9 @@ PLIST_SUB+=	PG_USER=${PG_USER} \
 SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 		PG_USER=${PG_USER} \
 		PG_UID=${PG_UID}
+
+# For testing files in FILESDIR
+.include <bsd.port.pre.mk>
 
 .if defined(SERVER_ONLY)
 pre-build:
