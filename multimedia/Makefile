@@ -130,6 +130,7 @@
     SUBDIR += gstreamer1-plugins-mpeg2dec
     SUBDIR += gstreamer1-plugins-mpeg2enc
     SUBDIR += gstreamer1-plugins-resindvd
+    SUBDIR += gstreamer1-plugins-rtmp
     SUBDIR += gstreamer1-plugins-schroedinger
     SUBDIR += gstreamer1-plugins-theora
     SUBDIR += gstreamer1-plugins-ugly
