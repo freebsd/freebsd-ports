@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2max
-# Date created:				24 Jul 2006
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
@@ -18,9 +14,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An OpenGL only Quake II engine modification
+COMMENT=	OpenGL-only Quake II engine modification
 
-EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
+LICENSE=	GPLv2
+
+EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -28,35 +26,35 @@ USE_XORG=	xxf86dga
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		GAME "Build a main game .so file" off \
-		GLX "Build OpenGL renderer" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on \
-		SDLGL "Build SDL OpenGL renderer" on
-
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
-LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 Q2MAX_DATA=	${PORTNAME}.044.rar
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+OPTIONS_DEFINE=	CLIENT DEDICATED GAME GLX OPTIMIZED_CFLAGS SDLCLIENT SDLGL
+OPTIONS_DEFAULT=	CLIENT DEDICATED GLX OPTIMIZED_CFLAGS SDLCLIENT SDLGL
 
-.include <bsd.port.pre.mk>
+CLIENT_DESC=	Build original client
+DEDICATED_DESC=	Build dedicated server
+GAME_DESC=	Build main game (default mod)
+GLX_DESC=	Build OpenGL renderer
+SDLCLIENT_DESC=	Build SDL client
+SDLGL_DESC=	Build SDL OpenGL renderer
 
-.if defined(WITH_GLX) || defined(WITH_SDLGL)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
-USE_GL=		yes
+USE_GL=		glu
 .endif
 
-.if defined(WITH_SDL) || defined(WITH_SDLGL)
+.if ${PORT_OPTIONS:MSDLCLIENT} || ${PORT_OPTIONS:MSDLGL}
 USE_SDL=	yes
 .endif
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	BUILD_QUAKE2MAX=YES
 PLIST_SUB+=	CLIENT=""
 Q2MAX_BIN+=	quake2max
@@ -64,7 +62,7 @@ Q2MAX_BIN+=	quake2max
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	BUILD_DEDICATED=YES
 PLIST_SUB+=	DEDICATED=""
 Q2MAX_BIN+=	quake2max-ded
@@ -72,14 +70,14 @@ Q2MAX_BIN+=	quake2max-ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 MAKE_ENV+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if defined(WITH_GLX)
+.if ${PORT_OPTIONS:MGLX}
 MAKE_ENV+=	BUILD_GLX=YES
 PLIST_SUB+=	GLX=""
 Q2MAX_REF+=	glx
@@ -87,19 +85,19 @@ Q2MAX_REF+=	glx
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDLCLIENT}
 MAKE_ENV+=	BUILD_QUAKE2MAX-SDL=YES
-PLIST_SUB+=	SDL=""
+PLIST_SUB+=	SDLCLIENT=""
 Q2MAX_BIN+=	quake2max-sdl
 .else
-PLIST_SUB+=	SDL="@comment "
+PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
-.if defined(WITH_SDLGL)
+.if ${PORT_OPTIONS:MSDLGL}
 MAKE_ENV+=	BUILD_SDLGL=YES
 PLIST_SUB+=	SDLGL=""
 Q2MAX_REF+=	sdlgl
@@ -116,16 +114,17 @@ post-patch:
 		${WRKSRC}/ref_gl/gl_image.c
 
 do-install:
-	${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${LIBDIR}/baseq2
 .for f in ${Q2MAX_BIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${f} ${PREFIX}/bin
 .endfor
 .for f in ${Q2MAX_REF}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/rfx_${f}.so ${LIBDIR}
 .endfor
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
 .endif
 	${INSTALL_DATA} ${WRKSRC}/_maxpak.pak ${LIBDIR}/baseq2/maxpak.pak
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.mk>
