@@ -108,14 +108,15 @@ OPTIONS_DEFAULT+=	SSL
 ICU_DESC=	Use ICU for unicode collation (server)
 PAM_DESC=	Build with PAM support (server only)
 LDAP_DESC=	Build with LDAP authentication support
-MIT_KRB5_DESC=	Build with MIT's kerberos support
+MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 DEBUG_DESC=	Builds with debugging symbols
 INTDATE_DESC=	Builds with 64-bit date/time type (server)
 SSL_DESC=	Build with OpenSSL support
 
-.include <bsd.port.options.mk>
+# For testing files in FILESDIR
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
@@ -369,4 +370,4 @@ check:
 	 fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

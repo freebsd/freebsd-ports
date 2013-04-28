@@ -112,7 +112,8 @@ SSL_DESC=	Build with OpenSSL support
 OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
-.include <bsd.port.options.mk>
+# For testing files in FILESDIR
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
@@ -388,4 +389,4 @@ check:
 	 fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
