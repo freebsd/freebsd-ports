@@ -72,9 +72,9 @@ GSUFX=	-nox11
 
 .if !empty(PORT_OPTIONS:MA4)
 PSUFX=	-a4
-.elif !empty(PORT_OTPIONS:MLETTER)
+.elif !empty(PORT_OPTIONS:MLETTER)
 PSUFX=	-letter
-.elif !empty(PORT_OTPIONS:MLETTERDJ)
+.elif !empty(PORT_OPTIONS:MLETTERDJ)
 PSUFX=	-letterdj
 .endif
 
