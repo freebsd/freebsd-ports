@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/groff
-# Date created:				14.09.2010
-# Whom:					Ulrich Spoerlein <uqs@FreeBSD.org>
-#
+# Created by: Ulrich Spoerlein <uqs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	groff
 PORTVERSION=	1.21
@@ -15,11 +11,11 @@ MASTER_SITE_SUBDIR=	groff
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Software typesetting package
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript8 \
 		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-LICENSE=	GPLv3
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -34,7 +30,9 @@ PAPERSIZE=A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-OPTIONS=	X11	"Enable X11 devices (-TX*) and gxditview" On
+OPTIONS_DEFINE=	X11
+X11_DESC=	X11 devices (-TX*) and gxditview
+OPTIONS_DEFAULT=	X11
 
 CONFLICTS=	ja-groff-[0-9]*
 
@@ -55,8 +53,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
 .if exists(${LOCALBASE}/bin/pnmcut) && exists(${LOCALBASE}/bin/pnmcrop) && \
