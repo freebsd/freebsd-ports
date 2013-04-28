@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tox
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,18 +13,15 @@ COMMENT=	Python virtualenv-based automation of test activities
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.7:${PORTSDIR}/devel/py-virtualenv \
-		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.9:${PORTSDIR}/devel/py-pylib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.8.4:${PORTSDIR}/devel/py-virtualenv \
+		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.12:${PORTSDIR}/devel/py-pylib
 
-USE_ZIP=	YES
-USE_PYTHON=	YES
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 OPTIONS_DEFINE=	PYTEST
 PYTEST_DESC=	Include the Pytest test runner
-
-# Workaround ports infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
@@ -37,5 +34,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 .if ${PYTHON_VER} <= 3.2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.post.mk>
