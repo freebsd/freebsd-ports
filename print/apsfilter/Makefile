@@ -3,137 +3,132 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Magic print filter with print preview, duplex printing, and more
-
 DIST_SUBDIR=	apsfilter
 
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Magic print filter with print preview, duplex printing, and more
+
+LICENSE=	PCL
+LICENSE_NAME=	Postcard License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		hpijs:${PORTSDIR}/print/hpijs
+
+USE_BZIP2=	yes
 USE_SUBMAKE=	yes
+WRKSRC=		${WRKDIR}/apsfilter
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+SUB_FILES=	pkg-message
 
-SUB_FILES+=	pkg-message
+OPTIONS_DEFINE=DOCS X11 GS PSUTILS ASCII CONVERT DVIPS FIG2DEV HTML2PS \
+	ATALK SAMBA COMPRESS MP3 OGG WAV
+OPTIONS_DEFAULT=X11 GS PSUTILS ASCII CONVERT A4
+OPTIONS_SINGLE=PAPERSIZE
+OPTIONS_SINGLE_PAPERSIZE=A4 LETTER LETTERDJ
+NO_OPTIONS_SORT=yes
+PAPERSIZE_DESC=	papersize
+A4_DESC=	A4 papersize
+LETTER_DESC=	letter papersize
+LETTERDJ_DESC=	letter + special Deskjet adjectments
+GS_DESC=	Postscript for non-PS printer
+PSUTILS_DESC=	for pseudo duplex printing + paper handling
+ASCII_DESC=	ASCII files in different styles/orientation
+CONVERT_DESC=	support for lots of graphic file formats
+DVIPS_DESC=	TeX DVI files
+FIG2DEV_DESC=	XFIG drawings
+HTML2PS_DESC=	HTML documents
+ATALK_DESC=	remote printing on AppleTalk remote printer
+SAMBA_DESC=	remote printing on Windows remote printer
+COMPRESS_DESC=	print compressed documents
 
-SAMBA_PORT?=	net/samba36
+.include <bsd.port.options.mk>
 
-# special arrangement for package building, build stuff without X11
-# to make memory footprint of apsfilter package smaller
-.if defined(BATCH) && defined(PACKAGE_BUILDING)
-NO_X=		yes
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ARGS=	-DDOCS
+PORTDOCS=	ANNOUNCE FAQ HOWTO-BUGREPORTS apsfilter4.png \
+		README.BSD handbook.html README.TeX paper
 .endif
 
-.if defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 # XXX Hack.  If you've done something like "-DWITHOUT_X11" on the command line
 # (instead of WITHOUT_X11=true, or similar) gmake won't pick it up.  So make
 # sure that NO_X is defined *and* has a value.
 MAKE_ENV+=	NO_X=true
+.if empty(GHOSTSCRIPT_PORT:M*-nox11)
+GSUFX=	-nox11
+.endif
 .endif
 
-USE_GHOSTSCRIPT_RUN=	yes
-
-#
 # hint: for batch mode you can now draw the following decisions
 # - <default>		build and install most important filter utilities
 #			that don't require X
 # - APSFILTER_ALL	build and install all supported filter utilities
-# - WITHOUT_X11		toggles not to build tools that need X11, even if
-#			APSFILTER_ALL is set
-# - PAPERSIZE		Use PAPERSIZE as in a2ps port, default to letter.
-PAPERSIZE?=	letter
 
-.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
-.BEGIN:
-	@${ECHO_CMD}
-	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
-	@${ECHO_CMD} "letterdj allows a slightly larger margins for DeskJets."
-	@${FALSE}
+.if !empty(PORT_OPTIONS:MA4)
+PSUFX=	-a4
+.elif !empty(PORT_OTPIONS:MLETTER)
+PSUFX=	-letter
+.elif !empty(PORT_OTPIONS:MLETTERDJ)
+PSUFX=	-letterdj
 .endif
 
-.if defined(BATCH) && defined(APSFILTER_ALL)
-#
-# Build and install all filter apsfilter knows about (rather expensive)
-#
-# all needed decompression utilities
-RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
-RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
-# all needed "ASCII to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
-RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
-RUN_DEPENDS+=	recode:${PORTSDIR}/converters/recode
-# all needed "ARCHIVE" extraction utilities
-RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
-RUN_DEPENDS+=	cabextract:${PORTSDIR}/archivers/cabextract
-RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
-RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
-RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS+=	unarj:${PORTSDIR}/archivers/unarj
-RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS+=	zoo:${PORTSDIR}/archivers/zoo
-# all needed "xxx to ps" filter utilities
-RUN_DEPENDS+=	fitstopnm:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils
-.if !defined(WITHOUT_X11)
-# "xxx to ps" filter utilities that require X
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex
-RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf
-RUN_DEPENDS+=	sk2ps:${PORTSDIR}/graphics/skencil
-RUN_DEPENDS+=	tgif:${PORTSDIR}/graphics/tgif
-RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
-# filter utilities for playing audio files via line printer scheduler
-RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
-RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
-RUN_DEPENDS+=	wavplay:${PORTSDIR}/audio/wavplay
-.else
-# "xxx to ps" filter utilities that don't require X
-# XXX needs more work
-.endif
-# all possible remote printing support
-RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
-.elif defined(BATCH)
-#
-# in normal batch/portbuilding mode (without building all)
-# don't build too many dependencies
-# since apsfilter should fit easily on installation CD 1...
-#
-# most important "xxx to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils
-.endif
+_DEPENDS_GS=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}${GSUFX}
+_DEPENDS_ASCII=	a2ps:${PORTSDIR}/print/a2ps \
+		enscript:${PORTSDIR}/print/enscript${PSUFX} \
+		mpage:${PORTSDIR}/print/mpage \
+		recode:${PORTSDIR}/converters/recode
+_DEPENDS_COMPRESS= \
+		melt:${PORTSDIR}/archivers/freeze \
+		lzop:${PORTSDIR}/archivers/lzop \
+		arc:${PORTSDIR}/archivers/arc \
+		cabextract:${PORTSDIR}/archivers/cabextract \
+		lha:${PORTSDIR}/archivers/lha \
+		rar:${PORTSDIR}/archivers/rar \
+		rpm:${PORTSDIR}/archivers/rpm \
+		unarj:${PORTSDIR}/archivers/unarj \
+		unzip:${PORTSDIR}/archivers/unzip \
+		zoo:${PORTSDIR}/archivers/zoo
+_DEPENDS_PSUTILS= \
+		psnup:${PORTSDIR}/print/psutils \
+		fitstopnm:${PORTSDIR}/graphics/netpbm \
+		htmldoc:${PORTSDIR}/textproc/htmldoc
+_DEPENDS_CONVERT= \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		wmf2eps:${PORTSDIR}/graphics/libwmf \
+		sk2ps:${PORTSDIR}/graphics/skencil \
+		tgif:${PORTSDIR}/graphics/tgif \
+		transfig:${PORTSDIR}/print/transfig
+_DEPENDS_DVIPS=	dvips:${PORTSDIR}/print/dvipsk-tetex
+_DEPENDS_FIG2DEV= \
+		fig2dev:${PORTSDIR}/print/transfig
+_DEPENDS_HTML2PS= \
+		html2ps:${PORTSDIR}/print/html2ps${PSUFX}
+_DEPENDS_ATALK=	pap:${PORTSDIR}/net/netatalk
+_DEPENDS_SAMBA= smbclient:${PORTSDIR}/net/samba36
+_DEPENDS_MP3=	mpg321:${PORTSDIR}/audio/mpg321
+_DEPENDS_OGG=	ogg123:${PORTSDIR}/audio/vorbis-tools
+_DEPENDS_WAV=	wavplay:${PORTSDIR}/audio/wavplay
 
-# needed for aps2file
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-
-# HP IJS driver is not automatically part of ghostscript port anymore
-RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hpijs
+.for D in ${OPTIONS_DEFINE:NCONVERT}
+.if (!empty(PORT_OPTIONS:M$D) || \
+     (defined(BATCH) && defined(APSFILTER_ALL))) && \
+    defined(_DEPENDS_$D)
+RUN_DEPENDS+=	${_DEPENDS_$D}
+.endif
+.endfor
+.if !empty(PORT_OPTIONS:MCONVERT) && !empty(PORT_OPTIONS:MX11) || \
+    (defined(BATCH) && defined(APSFILTER_ALL))
+RUN_DEPENDS+=	${_DEPENDS_CONVERT}
+.endif
 
 MAN1=		apsfilter.1 aps2file.1 apsfilter-bug.1 apspreview.1
 MAN5=		apsfilterrc.5
-
-HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/apsfilter
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GHOSTSCRIPT_PORT="${GHOSTSCRIPT_PORT}"
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-.if !defined(BATCH)
-pre-configure:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

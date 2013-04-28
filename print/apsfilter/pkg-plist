@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/aps2file
 bin/apsfilter-bug
 bin/apspreview
@@ -310,15 +311,6 @@ etc/apsfilter/basedir
 %%DATADIR%%/setup/test.ps
 %%DATADIR%%/template/README
 %%DATADIR%%/template/apsfilterrc
-%%DOCSDIR%%/ANNOUNCE
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/HOWTO-BUGREPORTS
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README.BSD
-%%DOCSDIR%%/README.TeX
-%%DOCSDIR%%/apsfilter4.png
-%%DOCSDIR%%/handbook.html
-%%DOCSDIR%%/paper
 @dirrm etc/apsfilter
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/driver/gimp
@@ -334,4 +326,3 @@ etc/apsfilter/basedir
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
