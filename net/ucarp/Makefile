@@ -1,13 +1,9 @@
-# New ports collection makefile for:   ucarp
-# Date created:                2005-05-06
-# Whom:                        Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ucarp
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/ \
 		http://download.pureftpd.org/pub/ucarp/
@@ -17,9 +13,12 @@ COMMENT=	Userlevel Common Address Redundancy Protocol
 
 USE_BZIP2=	yes
 
-OPTIONS=	UCARP_SCRIPTS "Install scripts to manage virtual IP" on
+OPTIONS_DEFINE=	SCRIPTS
+OPTIONS_DEFAULT=SCRIPTS
 
-.include <bsd.port.pre.mk>
+SCRIPTS_DESC=	Install scripts to manage virtual IP
+
+.include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
@@ -28,7 +27,7 @@ USE_RC_SUBR=	ucarp
 
 PLIST_FILES=	sbin/ucarp
 
-.if defined(WITH_UCARP_SCRIPTS)
+.if ${PORT_OPTIONS:MSCRIPTS}
 PLIST_FILES+=	sbin/ucarp-up \
 		sbin/ucarp-down
 post-install:
@@ -36,4 +35,4 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-down.sh ${PREFIX}/sbin/ucarp-down
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
