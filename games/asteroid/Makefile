@@ -1,4 +1,4 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	asteroid
@@ -18,7 +18,7 @@ GH_COMMIT=	6d23595
 
 USE_GL=		glut
 USE_SDL=	mixer sdl
-USE_GNOME=	gtk20
+USE_GNOME=	desktopfileutils gtk20
 USE_XORG=	xmu
 INSTALLS_ICONS=	yes
 USES=		cmake
