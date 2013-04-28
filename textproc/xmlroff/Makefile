@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmlroff
-# Date created:		1 January 2005
-# Whom:			James Earl
-#
+# Created by: James Earl
 # $FreeBSD$
-#
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.2
@@ -14,7 +10,10 @@ MASTER_SITES=	http://xmlroff.org/download/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL formatter that produces PDF and PostScript
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -26,6 +25,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
