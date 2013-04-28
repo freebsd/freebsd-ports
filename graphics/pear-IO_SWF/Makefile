@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO_SWF
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	graphics www pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
@@ -67,7 +67,7 @@ EXAMPLES=	get_bitmapsize.php jpeg_dump.php \
 		swfreplacemovieclip.php swfselectbycids.php \
 		swfsetactionvariables.php swfsetbgcolor.php \
 		swfsliceshaperecords.php swfwireframe.php
-_EXAMPLESDIR=   sample
+_EXAMPLESDIR=	sample
 
 x-generate-files: extract
 	@${FIND} ${WRKSRC}/IO -type f | ${SORT} | ${SED} 's@${WRKSRC}/@@' |\
