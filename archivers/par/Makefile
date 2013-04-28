@@ -24,7 +24,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Wall.*-pipe,${CFLAGS}, ; \
-		s,\"Linux,\"${OPSYS},' ${WRKSRC}/${MAKEFILE}
+		s,"Linux,"${OPSYS},' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,off_t,uint32_t,g' ${WRKSRC}/par.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
