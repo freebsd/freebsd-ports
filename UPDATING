@@ -198,6 +198,9 @@ you update your ports collection, before attempting any port upgrades.
   If you are using pkgng 'and' upgrading from source with portupgrade or
   portmaster, first delete gettext, upgrade libiconv, then reinstall gettext.
 
+  This will break sudo, so you *must* do this in a root shell (sudo -i)
+  if you use sudo.
+
   # pkg delete -f devel/gettext
   # portmaster converters/libiconv devel/gettext
     or
