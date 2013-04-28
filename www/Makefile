@@ -375,6 +375,7 @@
     SUBDIR += jmeter
     SUBDIR += joomla15
     SUBDIR += joomla25
+    SUBDIR += joomla31
     SUBDIR += jspacker
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
