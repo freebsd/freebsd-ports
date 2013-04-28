@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.4
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,19 +14,22 @@ LICENSE=	MIT
 USE_GITHUB=		yes
 GH_ACCOUNT=		andymccurdy
 GH_PROJECT=		${PORTNAME}-py
-GH_COMMIT=		c02231c
+GH_COMMIT=		b5ccc73
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 OPTIONS_DEFINE=		HIREDIS
 HIREDIS_DESC=		Add py-hiredis C extension support
-# bypass infrastructure bug
-OPTIONSFILE=		${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHIREDIS}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}hiredis>0:${PORTSDIR}/databases/py-hiredis
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
