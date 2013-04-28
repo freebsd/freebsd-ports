@@ -48,9 +48,12 @@ lib/BackupPC/Lang/en.pm
 lib/BackupPC/Lang/es.pm
 lib/BackupPC/Lang/fr.pm
 lib/BackupPC/Lang/it.pm
+lib/BackupPC/Lang/ja.pm
 lib/BackupPC/Lang/nl.pm
 lib/BackupPC/Lang/pl.pm
 lib/BackupPC/Lang/pt_br.pm
+lib/BackupPC/Lang/ru.pm
+lib/BackupPC/Lang/uk.pm
 lib/BackupPC/Lang/zh_CN.pm
 lib/BackupPC/Lib.pm
 lib/BackupPC/PoolWrite.pm
@@ -133,11 +136,11 @@ lib/Net/FTP/RetrHandle.pm
 @unexec echo "If you are permanently removing BackupPC, you should manually delete:"
 @unexec echo
 @unexec echo "	- the backuppc user/group:	pw userdel backuppc"
-@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || echo "	- BackupPC configuration:	rm -rf %D/%%ETCDIR%%"
-@unexec rmdir %%BPC_DATADIR%%/cpool 2>/dev/null || true
-@unexec rmdir %%BPC_DATADIR%%/pc 2>/dev/null || true
-@unexec rmdir %%BPC_DATADIR%%/pool 2>/dev/null || true
-@unexec rmdir %%BPC_DATADIR%%/trash 2>/dev/null || true
-@unexec rmdir %%BPC_DATADIR%% 2>/dev/null || echo "	- BackupPC data directory:	rm -rf %%BPC_DATADIR%%"
-@unexec rmdir /var/log/BackupPC 2>/dev/null || echo "	- BackupPC logs directory:	rm -rf /var/log/BackupPC"
+@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || echo "	- BackupPC configuration:	rm -r %D/%%ETCDIR%%"
+@dirrmtry %%BPC_DATADIR%%/cpool
+@dirrmtry %%BPC_DATADIR%%/pc
+@dirrmtry %%BPC_DATADIR%%/pool
+@dirrmtry %%BPC_DATADIR%%/trash
+@unexec rmdir %%BPC_DATADIR%% 2>/dev/null || echo "	- BackupPC data directory:	rm -r %%BPC_DATADIR%%"
+@unexec rmdir /var/log/BackupPC 2>/dev/null || echo "	- BackupPC logs directory:	rm -r /var/log/BackupPC"
 @unexec echo
