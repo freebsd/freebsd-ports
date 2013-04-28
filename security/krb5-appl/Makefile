@@ -1,6 +1,5 @@
 # Created by: cy@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.3
@@ -33,15 +32,16 @@ CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
 PATCH_DIST_STRIP=	-p1
 
-OPTIONS=		KRB5_RENAME_FTP "Rename ftp to kftp" off \
-			KRB5_RENAME_TELNET "Rename telnet to ktelnet" off \
-			KRB5_RENAME_RLOGIN "Rename rlogin to krlogin" off \
-			KRB5_RENAME_RSH "Rename rsh to krsh" off \
-			KRB5_RENAME_RCP "Rename rcp to krcp" off
+OPTIONS_DEFINE=	KRB5_RENAME_FTP KRB5_RENAME_TELNET KRB5_RENAME_RLOGIN KRB5_RENAME_RSH KRB5_RENAME_RCP
+KRB5_RENAME_FTP_DESC=		Rename ftp to kftp
+KRB5_RENAME_TELNET_DESC=	Rename telnet to ktelnet
+KRB5_RENAME_RLOGIN_DESC=	Rename rlogin to krlogin
+KRB5_RENAME_RSH_DESC=		Rename rsh to krsh
+KRB5_RENAME_RCP_DESC=		Rename rcp to krcp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_KRB5_DOC)
+.if ${PORT_OPTIONS:MKRB5_DOC}
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb5-admin krb5-install krb5-user
@@ -57,7 +57,7 @@ LDFLAGS+=		-L${PREFIX}/lib
 MAN1=			rsh.1 rcp.1 rlogin.1 ftp.1 telnet.1
 MAN8=			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8
 
-.if defined(WITH_KRB5_RENAME_FTP)
+.if ${PORT_OPTIONS:MKRB5_RENAME_FTP}
 MAN1:=			${MAN1:C/ftp/kftp/}
 MAN8:=			${MAN8:C/ftp/kftp/}
 PROGRAM_TRANSFORM_NAME+=	s/^ftp/kftp/;
@@ -66,7 +66,7 @@ PLIST_SUB+=		FTP_PROG="kftp"
 PLIST_SUB+=		FTP_PROG="ftp"
 .endif
 
-.if defined(WITH_KRB5_RENAME_TELNET)
+.if ${PORT_OPTIONS:MKRB5_RENAME_TELNET}
 MAN1:=			${MAN1:C/telnet/ktelnet/}
 MAN8:=			${MAN8:C/telnet/ktelnet/}
 PROGRAM_TRANSFORM_NAME+=	s/^telnet/ktelnet/;
@@ -75,7 +75,7 @@ PLIST_SUB+=		TELNET_PROG="ktelnet"
 PLIST_SUB+=		TELNET_PROG="telnet"
 .endif
 
-.if defined(WITH_KRB5_RENAME_RLOGIN)
+.if ${PORT_OPTIONS:MKRB5_RENAME_RLOGIN}
 MAN1:=			${MAN1:C/rlogin/krlogin/}
 PROGRAM_TRANSFORM_NAME+=	s/^rlogin/krlogin/;
 PLIST_SUB+=		RLOGIN_PROG="krlogin"
@@ -83,7 +83,7 @@ PLIST_SUB+=		RLOGIN_PROG="krlogin"
 PLIST_SUB+=		RLOGIN_PROG="rlogin"
 .endif
 
-.if defined(WITH_KRB5_RENAME_RSH)
+.if ${PORT_OPTIONS:MKRB5_RENAME_RSH}
 MAN1:=			${MAN1:C/rsh/krsh/}
 PROGRAM_TRANSFORM_NAME+=	s/^rsh/krsh/;
 PLIST_SUB+=		RSH_PROG="krsh"
@@ -91,7 +91,7 @@ PLIST_SUB+=		RSH_PROG="krsh"
 PLIST_SUB+=		RSH_PROG="rsh"
 .endif
 
-.if defined(WITH_KRB5_RENAME_RCP)
+.if ${PORT_OPTIONS:MKRB5_RENAME_RCP}
 MAN1:=			${MAN1:C/rcp/krcp/}
 PROGRAM_TRANSFORM_NAME+=	s/^rcp/krcp/;
 PLIST_SUB+=		RCP_PROG="krcp"

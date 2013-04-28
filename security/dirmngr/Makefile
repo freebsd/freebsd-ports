@@ -1,6 +1,5 @@
 # Created by: michaelnottebrock@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	dirmngr
 PORTVERSION=	1.1.0
@@ -31,19 +30,19 @@ MAN1=		dirmngr-client.1 dirmngr.1
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	NLS "National Language Support" off
+OPTIONS_DEFINE=	NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USE+=	gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

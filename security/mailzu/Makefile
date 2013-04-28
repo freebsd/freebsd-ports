@@ -1,6 +1,5 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
@@ -27,34 +26,35 @@ NO_BUILD=	yes
 USE_PHP=	sockets
 WANT_PHP_WEB=	yes
 
-OPTIONS=	MYSQL	"Use MySQL database storage/auth backend (default)"	On \
-		PGSQL	"Use PostgreSQL database/auth storage backend"		Off \
-		IMAP	"Use IMAP auth backend"					Off \
-		LDAP	"Use LDAP auth backend"					Off
+OPTIONS_DEFINE=	IMAP LDAP DOCS
+OPTIONS_MULTI=	SQL
+OPTIONS_MULTI_SQL=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
+SQL_DESC=	SQL sotage backend
+MYSQL_DESC=	Use MySQL database storage/auth backend (default)
+PGSQL_DESC=	Use PostgreSQL database/auth storage backend
+IMAP_DESC=	Use IMAP auth backend
+LDAP_DESC=	Use LDAP auth backend
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_IMAP)
+.if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=	you must choose a SQL storage backend with 'make config'
-.endif
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -66,7 +66,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${WWWDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/CHANGELOG ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/docs/* ${DOCSDIR}

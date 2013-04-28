@@ -288,8 +288,9 @@ GROUPS=	openxpki
 
 LICENSE=	ART20
 
-OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
-		GRAPHVIZ	"With graphical visualization of workflows?" off
+OPTIONS_DEFINE=	DEVELOPER GRAPHVIZ
+DEVELOPER_DESC=	Install development tools for OpenXPKI?
+GRAPHVIZ_DESC=	With graphical visualization of workflows?
 # If DEVELOPER is checked, then docbook, Java and Xorg libraries are installed.
 # They are needed only if you plan to fetch development svn snapshot,
 # then edit XML prototypes for collection of OpenXPKI guides, and then
@@ -313,13 +314,13 @@ WITH_OPENSSL_BASE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEVELOPER)
+.if ${PORT_OPTIONS:MDEVELOPER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/java/jai/lib/libmlib_jai.so:${PORTSDIR}/java/jai
 .endif
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/bin/imgsize:${PORTSDIR}/graphics/p5-Image-Size
 .endif

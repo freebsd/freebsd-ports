@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SnortSam
-# Date created:        27 August 2008
-# Whom:                Danton Dorati <urisso@bsd.com.br>
-#
+# Created by: Danton Dorati <urisso@bsd.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	snortsam
 PORTVERSION=	2.70
@@ -15,9 +11,10 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	urisso@bsd.com.br
 COMMENT=	SnortSam is a output plugin for Snort
 
-OPTIONS=	IPFW	"checks if configured tables are available" on \
-		SAMTOOL "install samtool" on \
-		DEBUG	"build with verbose messages" off
+OPTIONS_DEFINE=	IPFW SAMTOOL DEBUG DOCS
+OPTIONS_DEFAULT=	IPFW SAMTOOL
+IPFW_DESC=	checks if configured tables are available
+SAMTOOL_DESC=	install samtool
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +34,7 @@ PLIST_FILES=	sbin/snortsam \
 		etc/snortsam/country-rootservers.conf.sample \
 		etc/snortsam/rootservers.cfg.sample
 
-.if defined(WITH_SAMTOOL)
+.if ${PORT_OPTIONS:MSAMTOOL}
 PLIST_FILES+=	sbin/samtool
 .endif
 
@@ -46,11 +43,11 @@ PORTDOCS=	AUTHORS BUGS CREDITS FAQ INSTALL LICENSE README README.ciscoacl \
 		README.rules README.slackware README.snmp_interface_down README.wgrd \
 		README_8signs.rtf TODO
 
-.if defined(WITHOUT_IPFW)
+.if ! ${PORT_OPTIONS:MIPFW}
 EXTRA_PATCHES+=	${FILESDIR}/ssp_ipfw2_no_table_check.patch
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 DEBUG=-DDEBUG
 .endif
 
@@ -71,7 +68,7 @@ do-configure:
 # no access to snortsam.conf and samtool for non root users!
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/snortsam ${PREFIX}/sbin
-.if defined(WITH_SAMTOOL)
+.if ${PORT_OPTIONS:MSAMTOOL}
 	@${INSTALL} -o root -g wheel -m 500 ${WRKSRC}/samtool ${PREFIX}/sbin
 .endif
 	@${MKDIR} -m 700 ${CONFIG_DIR}
@@ -79,7 +76,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/conf/rootservers.cfg ${CONFIG_DIR}/rootservers.cfg.sample
 	@${INSTALL_DATA} ${WRKSRC}/conf/country-rootservers.conf ${CONFIG_DIR}/country-rootservers.conf.sample
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}

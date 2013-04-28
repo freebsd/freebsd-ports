@@ -1,6 +1,5 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	medusa
 PORTVERSION=	2.1
@@ -12,8 +11,7 @@ MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
-OPTIONS=	SVN "Enable Subversion module" off \
-		POSTGRESQL "Enable PostgreSQL module" off
+OPTIONS_DEFINE=	SVN PGSQL DOCS
 
 LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2 \
 		pcre:${PORTSDIR}/devel/pcre
@@ -29,7 +27,7 @@ MAN1=		medusa.1
 BROKEN=		Does not build on ia64
 .endif
 
-.if defined(WITH_SVN)
+.if ${PORT_OPTIONS:MSVN}
 PLIST_SUB+=	SVN=""
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 CFLAGS+=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
@@ -38,7 +36,7 @@ CONFIGURE_ARGS+=	--enable-module-svn=no
 PLIST_SUB+=	SVN="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 PLIST_SUB+=	POSTGRESQL=""
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-module-postgres
@@ -51,7 +49,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/_medusa ${PREFIX}/share/zsh/site-functions/_medusa
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif

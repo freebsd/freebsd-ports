@@ -1,9 +1,5 @@
-# New ports collection makefile for:	racoon2
-# Date created:		4 Feb 2005
-# Whom:			sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	racoon2
 PORTVERSION=	20100526a
@@ -23,12 +19,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 CONFIGURE_ENV=	YACC=/usr/bin/yacc
 
-OPTIONS=	KINK "enable KINK support" off
+OPTIONS_DEFINE=	KINK DOCS
+KINK_DESC=	Enable KINK support
 
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.if defined (WITH_KINK)
+.if ${PORT_OPTIONS:MKINK}
 .if !exists(/usr/lib/libkrb5.a)
 	@${ECHO_MSG} 'Required Kerberos5 is not in this system.  Disable KINK support.'
 CONFIGURE_ARGS+=	--disable-kinkd
@@ -44,11 +41,11 @@ CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS+=	INSTALL USAGE config-usage.ja.txt config-usage.txt
 PORTDOCS+=	iked-memo.ja.txt libracoon.ja.txt specification.ja.txt
 PORTDOCS+=	spmif.txt style.txt system-message.ja.txt
-.if defined (WITH_KINK)
+.if ${PORT_OPTIONS:MKINK}
 PORTDOCS+=	kinkd-data-struct.obj kinkd-impl.ja.txt
 PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 .endif
@@ -57,14 +54,14 @@ PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 MAN8+=		spmd.8 spmdctl.8 pskgen.8 iked.8
 
 post-patch:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for FILE in ${PORTDOCS}
 	@${REINPLACE_CMD} -e 's|/usr/local/racoon2|${LOCALBASE}|' ${WRKSRC}/doc/${FILE}
 .endfor
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.jp ${DOCSDIR}

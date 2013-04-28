@@ -12,15 +12,13 @@ COMMENT=	Common interface for 3rd party file access control
 HAS_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
-OPTIONS=	EXAMPLEC	"Install C example programs"	on
+OPTIONS_DEFINE=	EXAMPLEC
+OPTIONS_DEFAULT=	EXAMPLEC
+EXAMPLEC_DESC+		Install C example programs
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 800014
-BROKEN=	does not build
-.endif
-
-.if defined(WITH_EXAMPLEC)
+.if ${PORT_OPTIONS:MEXAMPLEC}
 PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
@@ -29,7 +27,7 @@ post-configure:
 	${REINPLACE_CMD} -e 's|^NOMAN|NO_MAN|g' ${WRKSRC}/library/Makefile
 
 do-install:
-.if defined(WITH_EXAMPLEC)
+.if ${PORT_OPTIONS:MEXAMPLEC}
 	@cd ${WRKSRC}/example_c && \
 		${MAKE}
 	@${MKDIR} ${EXAMPLESDIR}
@@ -42,4 +40,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,18 +19,19 @@ PLIST_FILES=	sbin/oidentd etc/oidentd.conf.sample \
 		etc/oidentd_masq.conf.sample
 USE_CSTD=	gnu89
 
-OPTIONS=	IPV6 "Enable IPv6 support"		on \
-		MASQ "Enable NAT/IP masq support"	on
+OPTIONS_DEFINE=	IPV6 MASQ
+OPTIONS_DEFAULT=	MASQ
+MASQ_DESC=	Enable NAT/IP masq support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--disable-ipv6
 .else
 CATEGORIES+=	ipv6
 .endif
 
-.if defined(WITHOUT_MASQ) || ${OSVERSION} >= 800000
+.if ! ${PORT_OPTIONS:MMASQ} || ${OSVERSION} >= 800000
 CONFIGURE_ARGS+=--disable-masq
 .endif
 

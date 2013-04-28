@@ -1,6 +1,5 @@
 # Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	clamsmtp
 PORTVERSION=	1.10
@@ -24,29 +23,27 @@ MAN8=		clamsmtpd.8
 
 PORTDOCS=	README
 
-OPTIONS=	LOCAL_CLAMAV "RUN_DEPEND on security/clamav" on
-OPTIONS+=	LOCAL_CLAMAV_DEVEL "RUN_DEPEND on security/clamav-devel" off
+OPTIONS_RADIO=	CLAMAV
+OPTIONS_RADIO_CLAMAV=	LOCAL_CLAMAV LOCAL_CLAMAV_DEVEL
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	LOCAL_CLAMAV
+LOCAL_CLAMAV_DESC=		RUN_DEPEND on security/clamav
+LOCAL_CLAMAV_DEVEL_DESC=	RUN_DEPEND on security/clamav-devel
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LOCAL_CLAMAV)
+.if ${PORT_OPTIONS:MLOCAL_CLAMAV}
 RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
 .endif
 
-.if defined(WITH_LOCAL_CLAMAV_DEVEL)
+.if ${PORT_OPTIONS:MLOCAL_CLAMAV_DEVEL}
 RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
 .endif
 
-.if defined(WITH_LOCAL_CLAMAV) || defined(WITH_LOCAL_CLAMAV_DEVEL)
+.if ${PORT_OPTIONS:MLOCAL_CLAMAV} || ${PORT_OPTIONS:MLOCAL_CLAMAV_DEVEL}
 SUB_LIST+=	CLAMD=clamd
 .else
 SUB_LIST+=	CLAMD=
-.endif
-
-pre-extract:
-.if defined(WITH_LOCAL_CLAMAV) && defined(WITH_LOCAL_CLAMAV_DEVEL)
-	@${ECHO_CMD} "Please select only one clamav port"
-	exit 1
 .endif
 
 post-patch:
@@ -58,7 +55,7 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${PREFIX}/etc/clamsmtpd.conf-sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
@@ -66,4 +63,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/virus_action.sh ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

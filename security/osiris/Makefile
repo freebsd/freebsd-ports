@@ -10,10 +10,12 @@ MASTER_SITES=	http://osiris.shmoo.com/data/ \
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Shmoo client/server host integrity checker
 
-OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
-		OSIRISD "Enable to build the osirisd scan agent" on \
-		PRINTDB "Build database print tool" off \
-		CLI "Enable to build the management CLI" off
+OPTIONS_DEFINE=	OSIRISMD OSIRISD PRINTDB CLI
+OPTIONS_DEFAULT=	OSIRISD
+OSIRISMD_DESC=	Enable to build the management daemon
+OSIRISD_DESC=	Enable to build the osirisd scan agent
+PRINTDB_DESC=	Build database print tool
+CLI_DESC=	Enable to build the management CLI
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
@@ -24,42 +26,42 @@ USE_RC_SUBR=	yes
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
-.if defined(WITH_OSIRISMD)
+.if ${PORT_OPTIONS:MOSIRISMD}
 PLIST_SUB+=	OSIRISMD=""
 .else
 PLIST_SUB+=	OSIRISMD="@comment "
 .endif
-.if defined(WITHOUT_OSIRISD)
+.if ! ${PORT_OPTIONS:MOSIRISD}
 PLIST_SUB+=	OSIRISD="@comment "
 .else
 PLIST_SUB+=	OSIRISD=""
 .endif
-.if defined(WITH_CLI)
+.if ${PORT_OPTIONS:MCLI}
 PLIST_SUB+=	CLI=""
 .else
 PLIST_SUB+=	CLI="@comment "
 .endif
-.if defined(WITH_PRINTDB)
+.if ${PORT_OPTIONS:MPRINTDB}
 PLIST_SUB+=	PRINTDB=""
 .else
 PLIST_SUB+=	PRINTDB="@comment "
 .endif
 
 post-build:
-.if defined(WITH_PRINTDB)
+.if ${PORT_OPTIONS:MPRINTDB}
 	cd ${WRKSRC}/src/tools && ${MAKE}
 .endif
 
 do-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/osiris
-.if defined(WITH_CLI)
+.if ${PORT_OPTIONS:MCLI}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cli/osiris ${PREFIX}/sbin
 .endif
-.if defined(WITH_PRINTDB)
+.if ${PORT_OPTIONS:MPRINTDB}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tools/printdb ${PREFIX}/bin
 .endif
-.if !defined(WITHOUT_OSIRISD)
+.if ${PORT_OPTIONS:MOSIRISD}
 	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
 		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirisd.in > \
@@ -68,7 +70,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirisd.sh \
 		${PREFIX}/etc/rc.d
 .endif
-.if defined(WITH_OSIRISMD)
+.if ${PORT_OPTIONS:MOSIRISMD}
 	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
 		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirismd.in > \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yapet
-# Date created:		01 March 2008
-# Whom:			Rafael Ostertag <rafi@guengel.ch>
-#
+# Created by: Rafael Ostertag <rafi@guengel.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	yapet
 PORTVERSION=	0.7
@@ -19,9 +15,11 @@ MANCOMPRESSED=	no
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	TTITLE "Enable Terminal Title" ON \
-		PWGEN "Enable Password Generator" ON \
-		CSV2YAPET "Build csv2yapet" ON
+OPTIONS_DEFINE=	TTITLE PWGEN CSV2YAPET DOCS
+OPTIONS_DEFAULT=	TTITLE PWGEN CSV2YAPET
+TTITLE_DESC=	Enable Terminal Title
+PWGEN_DESC=	Enable Password Generator
+CSV2YAPET_DESC=	Build csv2yapet
 
 .include <bsd.port.pre.mk>
 
@@ -29,19 +27,19 @@ OPTIONS=	TTITLE "Enable Terminal Title" ON \
 # --disable-install-doc:  I take care of installing docs
 CONFIGURE_ARGS+=	--enable-silent-rules --disable-install-doc
 
-.if defined(WITH_TTITLE)
+.if ${PORT_OPTIONS:MTTITLE}
 CONFIGURE_ARGS+=	--enable-terminal-title
 .else
 CONFIGURE_ARGS+=	--disable-terminal-title
 .endif
 
-.if defined(WITH_PWGEN)
+.if ${PORT_OPTIONS:MPWGEN}
 CONFIGURE_ARGS+=	--enable-pwgen
 .else
 CONFIGURE_ARGS+=	--disable-pwgen
 .endif
 
-.if defined(WITH_CSV2YAPET)
+.if ${PORT_OPTIONS:MCSV2YAPET}
 CONFIGURE_ARGS+=	--enable-csv2yapet
 MAN1+=			csv2yapet.1
 PLIST_SUB+=		CSV2YAPET=""
@@ -50,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-csv2yapet
 PLIST_SUB+=		CSV2YAPET="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
@@ -61,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=		NOPORTDOCS=""
 .else
 PLIST_SUB+=		NOPORTDOCS="@comment "
@@ -70,7 +68,7 @@ PLIST_SUB+=		NOPORTDOCS="@comment "
 # Taking care of installing docs due to --disable-install-doc
 # configure switch.
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/DESIGN ${DOCSDIR}
