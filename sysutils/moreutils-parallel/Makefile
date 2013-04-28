@@ -11,6 +11,8 @@ DISTNAME=	moreutils_${PORTVERSION}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Run programs in parallel
 
+LICENSE=	GPLv2
+
 CONFLICTS=	parallel-[0-9]*
 
 WRKSRC=		${WRKDIR}/moreutils
