@@ -53,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/auditor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/auditor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/auditor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/django.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/django.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/ext/django.pyo
