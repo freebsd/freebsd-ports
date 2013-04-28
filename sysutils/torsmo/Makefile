@@ -1,9 +1,5 @@
-# New ports collection makefile for:	torsmo
-# Date created:		2004-07-29
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	torsmo
 PORTVERSION=	0.18
@@ -24,26 +20,27 @@ PLIST_FILES=	bin/torsmo \
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS=	XFT "XFT support" on \
-		DOUBLE_BUFFER "Flicker-free operation support" on
+OPTIONS_DEFINE=	XFT DOUBLE_BUFFER DOCS
+OPTIONS_DEFAULT=	XFT DOUBLE_BUFFER
+DOUBLE_BUFFER_DESC=	Flicker-free operation support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
-.if defined(WITHOUT_DOUBLE_BUFFER)
+.if ! ${PORT_OPTIONS:MDOUBLE_BUFFER}
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/torsmorc.sample ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

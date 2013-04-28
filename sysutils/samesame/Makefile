@@ -1,7 +1,4 @@
-# New ports collection makefile for:	samesame
-# Date created:		14 April 2009
-# Whom:			Alex de Kruijff
-#
+# Created by: Alex de Kruijff
 # $FreeBSD$
 
 PORTNAME=	samesame
@@ -32,35 +29,35 @@ CONFIGURE_ARGS=	--enable-samechflags --enable-samechmod \
 		--includedir="${LOCALBASE}/include" --libdir="${LOCALBASE}/lib"
 USE_BZIP2=	yes
 
-OPTIONS=	DEBUG "Enables debugging support" Off \
-		DISK_STORAGE "Allows temporarily storage on disk" Off \
-		LOW_MEMORY_PROFILE "Low memory profile reduces functionality" Off \
-		EXPERIMENTAL "Enables experimental functionality" Off \
-		PROFILER "Enables gprof support" Off \
-		TEST "Run quality assurance test" Off
+OPTIONS_DEFINE=	DEBUG DISK_STORAGE LOW_MEMORY_PROFILE EXPERIMENTAL PROFILER TEST
+DISK_STORAGE_DESC=		Allows temporarily storage on disk
+LOW_MEMORY_PROFILE_DESC=	Low memory profile reduces functionality
+EXPERIMENTAL_DESC=		Enables experimental functionality
+PROFILER_DESC=			Enables gprof support
+TEST_DESC=			Run quality assurance test
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_DISK_STORAGE)
+.if ${PORT_OPTIONS:MDISK_STORAGE}
 CONFIGURE_ARGS+=	--enable-disk-storage
 PLIST_FILES+=		etc/rc.d/samesame.sh
 .endif
 
-.if defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MEXPERIMENTAL}
 CONFIGURE_ARGS+=	--enable-experimental --enable-fsort
 #CONFIGURE_ARGS+=	--enable-checksums --enable-preread
 PLIST_FILES+=		bin/fsort
 .endif
 
-.if defined(WITH_LOW_MEMORY_PROFILE)
+.if ${PORT_OPTIONS:MLOW_MEMORY_PROFILE}
 CONFIGURE_ARGS+=	--enable-low-memory-profile --disable-read-onces
 .endif
 
-.if defined(WITH_PROFILER)
+.if ${PORT_OPTIONS:MPROFILER}
 CONFIGURE_ARGS+=	--enable-profiler
 .endif
 
@@ -68,12 +65,12 @@ regression-test: build
 	@cd ${WRKSRC}; ${MAKE} check
 
 post-build:
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 	@cd ${WRKSRC}; ${MAKE} check
 .endif
 
 post-install:
-.if defined(WITHOUT_DEBUG) && defined(WITHOUT_PROFILER)
+.if ! ${PORT_OPTIONS:MDEBUG} && ! ${PORT_OPTIONS:MPROFILER}
 	${STRIP_CMD} ${PREFIX}/bin/samefile
 	${STRIP_CMD} ${PREFIX}/bin/samearchive
 	${STRIP_CMD} ${PREFIX}/bin/samearchive-lite
@@ -84,15 +81,15 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/sameln
 	${STRIP_CMD} ${PREFIX}/bin/samemv
 	${STRIP_CMD} ${PREFIX}/bin/samerm
-.if defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MEXPERIMENTAL}
 	${STRIP_CMD} ${PREFIX}/bin/fsort
 .endif
 .endif
-.if defined(WITH_DISK_STORAGE)
+.if ${PORT_OPTIONS:MDISK_STORAGE}
 	${INSTALL_SCRIPT} ${FILESDIR}/samesame.sh ${PREFIX}/etc/rc.d/
 .endif
 	@${ECHO}
 	@${CAT} pkg-message
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

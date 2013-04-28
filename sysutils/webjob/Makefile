@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webjob
-# Date created:		20 August 2002
-# Whom:			Klayton Monroe <klm@uidzero.org>
-#
+# Created by: Klayton Monroe <klm@uidzero.org>
 # $FreeBSD$
-#
 
 PORTNAME=		webjob
 PORTVERSION=		1.8.0
@@ -18,24 +14,26 @@ GNU_CONFIGURE=		yes
 USE_PERL5_BUILD=	yes
 MAN1=			webjob.1 xshar.1
 
-OPTIONS=		PAD_TOOLS "install PaD tools" on \
-			DSV_TOOLS "install DSV tools" on
+OPTIONS_DEFINE=	PAD_TOOLS DSV_TOOLS SSL
+OPTIONS_DEFAULT=	PAD_TOOLS DSV_TOOLS
+PAD_TOOLS_DESC=	install PaD tools
+DSV_TOOLS_DESC=	install DSV tools
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PAD_TOOLS)
+.if ${PORT_OPTIONS:MPAD_TOOLS}
 PLIST_SUB+=		PAD_TOOLS=""
 CONFIGURE_ARGS+=	--with-pad-tools
 .else
 PLIST_SUB+=		PAD_TOOLS="@comment "
 .endif
 
-.if defined(WITHOUT_SSL)
+.if ! ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--without-ssl
 .else
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.if defined(WITHOUT_DSV_TOOLS) # Note: DSV requires SSL
+.if ! ${PORT_OPTIONS:MDSV_TOOLS} # Note: DSV requires SSL
 PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
 PLIST_SUB+=		DSV_TOOLS=""
@@ -51,4 +49,4 @@ CFLAGS+=		-static
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/webjob
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

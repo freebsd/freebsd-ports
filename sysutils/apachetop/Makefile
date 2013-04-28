@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apachetop
-# Date created:				30 Sep 2003
-# Whom:					Sebastian Yepes F. <esn@x123.info>
-#
+# Created by: Sebastian Yepes F. <esn@x123.info>
 # $FreeBSD$
-#
 
 PORTNAME=	apachetop
 PORTVERSION=	0.12.6
@@ -21,23 +17,22 @@ GNU_CONFIGURE=	yes
 MAN1=		apachetop.1
 PLIST_FILES=	bin/apachetop
 
-OPTIONS=	ADNS "Asynchronous-capable DNS support" off \
-		FAM "File Alteration Monitor support" off \
-		PCRE "Perl Compatible Regular Expressions support" off
+OPTIONS_DEFINE=	ADNS FAM PCRE
+ADNS_DESC=	Asynchronous-capable DNS support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ADNS)
+.if ${PORT_OPTIONS:MADNS}
 LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
 CONFIGURE_ARGS+=--with-adns=${LOCALBASE}
 .endif
 
-.if defined(WITH_FAM)
+.if ${PORT_OPTIONS:MFAM}
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 CONFIGURE_ARGS+=--with-fam=${LOCALBASE}
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
 .endif
@@ -49,4 +44,4 @@ post-patch:
 		${WRKSRC}/src/log.*
 	@cd ${WRKSRC} && ${TOUCH} -r configure.ac aclocal.m4 stamp-h.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	open
-# Date created:				10 Feb 2004
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	open
 PORTVERSION=	1.4
@@ -18,15 +14,16 @@ COMMENT=	Open opens a new vt and runs a command on it
 ALL_TARGET=	open
 MAN1=		open.1
 PLIST_FILES=	bin/open
-OPTIONS=	SETUID "Install setuid open binary" off
+OPTIONS_DEFINE=	SETUID
+SETUID_DESC=	Install setuid open binary
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/open ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/open.1 ${PREFIX}/man/man1
-.if defined(WITH_SETUID)
+.if ${PORT_OPTIONS:MSETUID}
 	${CHMOD} u+s ${PREFIX}/bin/open
 .else
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -34,4 +31,4 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

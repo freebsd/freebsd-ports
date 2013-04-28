@@ -23,19 +23,20 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DEBUG "Enable debug" off \
-		LIBRARY "Enable library" off \
-		FUSE "Enable fuse" on
+OPTIONS_DEFINE=	DEBUG LIBRARY FUSE
+OPTIONS_DEFAULT=	FUSE
+LIBRARY_DESC=	Enable library
+FUSE_DESC=	Enable fuse
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .else
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
-.if defined(WITH_LIBRARY)
+.if ${PORT_OPTIONS:MLIBRARY}
 CONFIGURE_ARGS+=	--enable-library
 PLIST_SUB+=	LIBRARY=""
 .else
@@ -43,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-library
 PLIST_SUB+=	LIBRARY="@comment "
 .endif
 
-.if defined(WITH_FUSE)
+.if ${PORT_OPTIONS:MFUSE}
 CONFIGURE_ARGS+=	--enable-fuse
 PLIST_SUB+=	FUSE=""
 .else
@@ -51,4 +52,4 @@ CONFIGURE_ARGS+=	--disable-fuse
 PLIST_SUB+=	FUSE="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

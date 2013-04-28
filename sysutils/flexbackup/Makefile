@@ -1,9 +1,5 @@
-# New ports collection makefile for:    flexbackup
-# Date created:         Wed Nov  3 17:58:26 MST 1999
-# Whom:                 John Reynolds <johnjen@reynoldsnet.org>
-#
+# Created by: John Reynolds <johnjen@reynoldsnet.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1
@@ -26,31 +22,32 @@ USE_PERL5=	yes
 
 SUB_FILES+=	pkg-message
 
-OPTIONS=	AFIO	"Enable afio support" Off \
-		BUFFER	"Enable buffer support" Off \
-		MBUFFER	"Enable mbuffer support" Off \
-		STAR	"Enable star support" Off \
-		ZIP	"Enable zip support" Off
+OPTIONS_DEFINE=	AFIO BUFFER MBUFFER STAR ZIP DOCS
+AFIO_DESC=	Enable afio support
+BUFFER_DESC=	Enable buffer support
+MBUFFER_DESC=	Enable mbuffer support
+STAR_DESC=	Enable star support
+ZIP_DESC=	Enable zip support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_AFIO)
+.if ${PORT_OPTIONS:MAFIO}
 RUN_DEPENDS+=	afio:${PORTSDIR}/sysutils/afio
 .endif
 
-.if defined(WITH_BUFFER)
+.if ${PORT_OPTIONS:MBUFFER}
 RUN_DEPENDS+=	buffer:${PORTSDIR}/misc/buffer
 .endif
 
-.if defined(WITH_MBUFFER)
+.if ${PORT_OPTIONS:MMBUFFER}
 RUN_DEPENDS+=	mbuffer:${PORTSDIR}/misc/mbuffer
 .endif
 
-.if defined(WITH_STAR)
+.if ${PORT_OPTIONS:MSTAR}
 RUN_DEPENDS+=	star:${PORTSDIR}/archivers/star
 .endif
 
-.if defined(WITH_ZIP)
+.if ${PORT_OPTIONS:MZIP}
 RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 .endif
 
@@ -70,9 +67,9 @@ do-install:
 DOCLIST=	CHANGES CREDITS README TODO faq.html
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCLIST}" ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
