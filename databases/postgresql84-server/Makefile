@@ -115,8 +115,7 @@ DEBUG_DESC=	Builds with debugging symbols
 INTDATE_DESC=	Builds with 64-bit date/time type (server)
 SSL_DESC=	Build with OpenSSL support
 
-# For testing files in FILESDIR
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
@@ -304,6 +303,9 @@ PLIST_SUB+=	PG_USER=${PG_USER} \
 SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 		PG_USER=${PG_USER} \
 		PG_UID=${PG_UID}
+
+# For testing files in FILESDIR
+.include <bsd.port.pre.mk>
 
 .if !defined(NO_BUILD)
 .if !target(pre-build)
