@@ -4234,3 +4234,5 @@ graphics/jpeg2ps-letter|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
 graphics/jpeg2ps-a4|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
 print/a2ps-letter|print/a2ps|2013-04-27|Merged into print/a2ps
 print/a2ps-a4|print/a2ps|2013-04-27|Merged into print/a2ps
+print/html2ps-letter|print/html2ps|2013-04-28|Merged into print/html2ps
+print/html2ps-a4|print/html2ps|2013-04-28|Merged into print/html2ps
