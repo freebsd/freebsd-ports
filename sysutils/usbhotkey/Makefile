@@ -12,24 +12,28 @@ COMMENT=		A utility to remap USB keyboards under X11
 LIB_DEPENDS=		hid.0:${PORTSDIR}/devel/libhid \
 			Xtst.6:${PORTSDIR}/x11/libXtst
 
-OPTIONS=		GUI "Enable GUI bits (Imlib dependency)" on
+OPTIONS_DEFINE=	GUI
+OPTIONS_DEFAULT=	GUI
+GUI_DESC=	Enable GUI bits (Imlib dependency)
 
 USE_RUBY=		yes
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=		Imlib.5:${PORTSDIR}/graphics/imlib
 .else
 CONFIGURE_ARGS+=	--without-Imlib
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-main.c

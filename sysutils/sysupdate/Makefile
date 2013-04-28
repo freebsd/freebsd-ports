@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysupdate
-# Date created:                    	17 Jan 2006
-# Whom:                        		Tig <tigger@lvlworld.com>
-#
+# Created by: Tig <tigger@lvlworld.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sysupdate
 PORTVERSION=	0.5.8
@@ -22,11 +18,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 PLIST_FILES=	bin/sysupdate.sh
 
-OPTIONS=	FASTEST_CVSUP "Support fastest_cvsup" off
+OPTIONS_DEFINE=	FASTEST_CVSUP
+FASTEST_CVSUP_DESC=	Support fastest_cvsup
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FASTEST_CVSUP)
+.if ${PORT_OPTIONS:MFASTEST_CVSUP}
 RUN_DEPENDS+=	fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup
 .endif
 
@@ -34,4 +31,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

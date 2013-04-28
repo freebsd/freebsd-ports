@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lire
-# Date Created:				26 june 2002
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 #
 # Remark regarding the errors during pkg_delete: These directories not
@@ -31,10 +27,12 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
 		p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
 
-OPTIONS=	CHARTS "Have Charts output format" On \
-		HTML "Have HTML or DocBook output format" On \
-		PDF "Have PDF output format" Off \
-		EXCEL95 "Have Excel95 Spreadsheet output format" Off
+OPTIONS_DEFINE=	CHARTS HTML PDF EXCEL95
+OPTIONS_DEFAULT=	CHARTS HTML
+CHARTS_DESC=	Have Charts output format
+HTML_DESC=	Have HTML or DocBook output format
+PDF_DESC=	Have PDF output format
+EXCEL95_DESC=	Have Excel95 Spreadsheet output format
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -260,16 +258,16 @@ MAN3=		\
 
 MAN7=		lire.7
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_CHARTS)
+.if ${PORT_OPTIONS:MCHARTS}
 RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11
 BUILD_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 .endif
-.ifdef(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 .endif
-.ifdef(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils \
 		gs:${PORTSDIR}/print/ghostview \
 		jade:${PORTSDIR}/textproc/jade \
@@ -277,7 +275,7 @@ RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 .endif
-.ifdef(WITH_EXCEL95)
+.if ${PORT_OPTIONS:MEXCEL95}
 BUILD_DEPENDS+=	p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
 .endif
 
@@ -286,4 +284,4 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

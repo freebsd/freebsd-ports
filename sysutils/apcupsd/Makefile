@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apcupsd
-# Date created:		1.12.2001
-# Whom:			Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
-#
+# Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
 # $FreeBSD$
-#
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.10
@@ -41,41 +37,44 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAN5=		apcupsd.conf.5
 MAN8=		apcaccess.8 apccontrol.8 apctest.8 apcupsd.8
 
-OPTIONS=	APCSMART_DRV "Compile APC SmartUPS serial driver" on \
-		APCDUMB_DRV "Compile dumb UPS driver" on \
-		CLIENT_ONLY "Only NIS client (no network server or drivers)" off \
-		CGI "Compile with CGI programms to show status" off \
-		PCNET_DRV "Compile PowerChute Network Shutdown driver" on \
-		USB "Compile with USB Support driver" on \
-		SNMP_DRV "Compile with SNMP driver" on \
-		SNMP_DRV_OLD "Compile with old SNMP driver" off \
-		TCP_WRAPPERS "Compile with TCP_WRAPPERS support" on\
-		TEST_DRV "Compile TEST driver" off \
-		GAPCMON "Build GTK GUI front-end" off
+OPTIONS_DEFINE=	APCSMART_DRV APCDUMB_DRV CLIENT_ONLY CGI PCNET_DRV USB SNMP_DRV \
+		SNMP_DRV_OLD TCP_WRAPPERS TEST_DRV GAPCMON DOCS
+OPTIONS_DEFAULT=	APCSMART_DRV APCDUMB_DRV PCNET_DRV USB TCP_WRAPPERS
+APCSMART_DRV_DESC=	Compile APC SmartUPS serial driver
+APCDUMB_DRV_DESC=	Compile dumb UPS driver
+CLIENT_ONLY_DESC=	Only NIS client (no network server or drivers)
+CGI_DESC=		Compile with CGI programms to show status
+PCNET_DRV_DESC=		Compile PowerChute Network Shutdown driver
+USB_DESC=		Compile with USB Support driver
+SNMP_DRV_DESC=		Compile with SNMP driver
+SNMP_DRV_OLD_DESC=	Compile with old SNMP driver
+TCP_WRAPPERS_DESC=	Compile with TCP_WRAPPERS support
+TEST_DRV_DESC=		Compile TEST driver
+GAPCMON_DESC=		Build GTK GUI front-end
 
 PORTDOCS=	${PORTNAME}.pdf
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_APCSMART_DRV)
+.if ${PORT_OPTIONS:MAPCSMART_DRV}
 CONFIGURE_ARGS+=	--enable-apcsmart
 .else
 CONFIGURE_ARGS+=	--disable-apcsmart
 .endif
 
-.ifdef(WITH_APCDUMB_DRV)
+.if ${PORT_OPTIONS:MAPCDUMB_DRV}
 CONFIGURE_ARGS+=	--enable-dumb
 .else
 CONFIGURE_ARGS+=	--disable-dumb
 .endif
 
-.ifdef(WITH_CLIENT_ONLY)
+.if ${PORT_OPTIONS:MCLIENT_ONLY}
 CONFIGURE_ARGS+=	--enable-net \
 			--disable-apcsmart --disable-dumb --disable-usb \
 			--disable-snmp --disable-test --disable-pcnet
 .endif
 
-.ifdef(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 CONFIGURE_ARGS+=	--enable-cgi --with-cgi-bin=${ETCDIR}/cgi
 LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 PLIST_SUB+=		CGI=""
@@ -83,7 +82,7 @@ PLIST_SUB+=		CGI=""
 PLIST_SUB+=		CGI="@comment "
 .endif
 
-.ifdef(WITH_GAPCMON)
+.if ${PORT_OPTIONS:MGAPCMON}
 CONFIGURE_ARGS+=	--enable-gapcmon
 USE_GNOME+=		gconf2
 PLIST_SUB+=		GAPCMON=""
@@ -92,34 +91,34 @@ CONFLICTS+=		gapcmon-[0-9]*
 PLIST_SUB+=		GAPCMON="@comment "
 .endif
 
-.ifdef(WITH_PCNET_DRV)
+.if ${PORT_OPTIONS:MPCNET_DRV}
 CONFIGURE_ARGS+=	--enable-pcnet
 .else
 CONFIGURE_ARGS+=	--disable-pcnet
 .endif
 
-.ifdef(WITH_USB)
+.if ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--enable-usb
 .endif
 
-.ifdef(WITH_SNMP_DRV)
+.if ${PORT_OPTIONS:MSNMP_DRV}
 CONFIGURE_ARGS+=	--enable-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
 
-.ifdef(WITH_SNMP_DRV_OLD)
+.if ${PORT_OPTIONS:MSNMP_DRV_OLD}
 LIB_DEPENDS+=		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-net-snmp
 .else
 CONFIGURE_ARGS+=	--disable-net-snmp
 .endif
 
-.ifdef(WITH_TCP_WRAPPERS)
+.if ${PORT_OPTIONS:MTCP_WRAPPERS}
 CONFIGURE_ARGS+=	--with-libwrap=yes
 .endif
 
-.ifdef(WITH_TEST_DRV)
+.if ${PORT_OPTIONS:MTEST_DRV}
 CONFIGURE_ARGS+=	--enable-test
 .endif
 
@@ -127,17 +126,11 @@ CONFIGURE_ARGS+=	--enable-test
 #CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
 #PLIST_SUB+=		POWERFL=""
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_USB) && ${OSVERSION} >= 800069
-CONFIGURE_ARGS+=	--with-generic-usb
-.endif
-
 pre-configure:
-.if defined(WITH_CLIENT_ONLY) && ( defined(WITH_APCSMART_DRV) || \
-	defined(WITH_APCDUMB_DRV) || defined(WITH_PCNET_DRV) || \
-	defined(WITH_POWERFLUTE) || defined(WITH_USB) || \
-	defined(WITH_SNMP_DRV) || defined(WITH_TEST_DRV) )
+.if ${PORT_OPTIONS:MCLIENT_ONLY} && ( ${PORT_OPTIONS:MAPCSMART_DRV} || \
+	${PORT_OPTIONS:MAPCDUMB_DRV} || ${PORT_OPTIONS:MPCNET_DRV} || \
+	${PORT_OPTIONS:MPOWERFLUTE} || ${PORT_OPTIONS:MUSB} || \
+	${PORT_OPTIONS:MSNMP_DRV} || ${PORT_OPTIONS:MTEST_DRV} )
 	@${ECHO_CMD} "It doesn't make sense to build drivers if all you want is"
 	@${ECHO_CMD} "the client; please do make config and select either"
 	@${ECHO_CMD} "CLIENT_ONLY or the *_DRV you need"
@@ -167,10 +160,10 @@ post-install:
 			fi; \
 		fi; \
 	done
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

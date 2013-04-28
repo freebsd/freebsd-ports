@@ -1,9 +1,5 @@
-# New ports collection makefile for:	syslog-ng
-# Date created:		10 November 2006
-# Whom:			Ivan Lago <ivan.lago@ifom-ieo-campus.it>
-#
+# Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
-#
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.1
@@ -20,16 +16,20 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
-OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
-		PORTS_SSL "Build with OpenSSL support (from ports)" on \
-		TCP_WRAPPERS "Build with TCP Wrappers" off \
-		SQL "Build with database (libdbi) support" off \
-		SPOOF "Build with spoof source support" off \
-		IPV6 "Build with IPV6 support" on \
-		PCRE "Build with PCRE support" on \
-		SMTP "Build with SMTP support" off \
-		JSON "Build with JSON-C support" off \
-		GEOIP "Build with GeoIP support" off \
+OPTIONS_RADIO=	SSL
+OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS
+OPTIONS_DEFAULT=	PORTS_SSL PCRE
+SYS_SSL_DESC=		Build with OpenSSL support (from system)
+PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
+TCP_WRAPPERS_DESC=	Build with TCP Wrappers
+SQL_DESC=		Build with database (libdbi) support
+SPOOF_DESC=		Build with spoof source support
+IPV6_DESC=		Build with IPV6 support
+PCRE_DESC=		Build with PCRE support
+SMTP_DESC=		Build with SMTP support
+JSON_DESC=		Build with JSON-C support
+GEOIP_DESC=		Build with GeoIP support
 
 .include <bsd.port.options.mk>
 
@@ -50,11 +50,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking \
 		--enable-debug
 
-.if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
-BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
-.endif
-
-.if defined(WITH_SYS_SSL) || defined(WITH_PORTS_SSL)
+.if ${PORT_OPTIONS:MSYS_SSL} || ${PORT_OPTIONS:MPORTS_SSL}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
@@ -64,7 +60,7 @@ PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.la lib/syslog-ng/libafsocket-tls.so
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.if defined(WITH_PORTS_SSL)
+.if ${PORT_OPTIONS:MPORTS_SSL}
 WITH_OPENSSL_PORT=	yes
 .endif
 
@@ -74,13 +70,13 @@ WITH_OPENSSL_PORT=	yes
 BROKEN=		Does not compile on sparc64: gcc core dump
 .endif
 
-.if defined(WITH_TCP_WRAPPERS)
+.if ${PORT_OPTIONS:MTCP_WRAPPERS}
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
 .else
 CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
-.if defined(WITH_SPOOF)
+.if ${PORT_OPTIONS:MSPOOF}
 BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
@@ -90,20 +86,20 @@ LDFLAGS+=		`${LIBNET_CONFIG} --libs`
 CONFIGURE_ARGS+=	--disable-spoof-source
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=	--enable-pcre
 LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
-.if defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-lGeoIP"
@@ -112,7 +108,7 @@ PLIST_FILES+=		lib/syslog-ng/libtfgeoip.la lib/syslog-ng/libtfgeoip.so
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
 
-.if defined(WITH_SMTP)
+.if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
 LIB_DEPENDS+=		esmtp.7:${PORTSDIR}/mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
@@ -120,7 +116,7 @@ PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
-.if defined(WITH_SQL)
+.if ${PORT_OPTIONS:MSQL}
 LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
@@ -129,7 +125,7 @@ PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 CONFIGURE_ARGS+=	--disable-sql
 .endif
 
-.if defined(WITH_JSON)
+.if ${PORT_OPTIONS:MJSON}
 LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.la lib/syslog-ng/libjson-plugin.so
@@ -146,7 +142,7 @@ post-patch:
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
 			${PREFIX}/share/doc/syslog-ng \
 			${PREFIX}/share/doc/syslog-ng

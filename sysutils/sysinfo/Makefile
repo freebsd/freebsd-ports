@@ -1,9 +1,5 @@
-# New ports collection makefile for:		sysinfo
-# Date created:					22 April 2009
-# Whom:						Daniel Gerzo <danger@FreeBSD.org>
-#
+# Created by: Daniel Gerzo <danger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sysinfo
 PORTVERSION=	1.0.1
@@ -21,16 +17,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN5=		sysinfo.conf.5
 MAN8=		sysinfo.8
 
-OPTIONS=	DMIDECODE "Include information from the dmidecode tool" Off \
-		PORTAUDIT "Include information from the portaudit tool" Off
+OPTIONS_DEFINE=	DMIDECODE PORTAUDIT
+DMIDECODE_DESC=	Include information from the dmidecode tool
+PORTAUDIT_DESC=	Include information from the portaudit tool
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DMIDECODE)
+.if ${PORT_OPTIONS:MDMIDECODE}
 RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
-.if defined(WITH_PORTAUDIT)
+.if ${PORT_OPTIONS:MPORTAUDIT}
 RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 
@@ -58,4 +55,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/sysinfo.conf.sample ${PREFIX}/etc/sysinfo.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kkbswitch
-# Date created:				01 Oct 2003
-# Whom:					Rashid N. Achilov <shelton@granch.ru>
-#
+# Created by: Rashid N. Achilov <shelton@granch.ru>
 # $FreeBSD$
-#
 
 PORTNAME=		kkbswitch
 PORTVERSION=		1.4.3
@@ -28,19 +24,20 @@ DOCSDIR=		share/doc/HTML/en/${PORTNAME}
 
 MAN1=			kkbswitch.1
 
-OPTIONS=		RU_UA_LAYOUT	"With additional RU_UA keyboard layout" off
+OPTIONS_DEFINE=	RU_UA_LAYOUT
+RU_UA_LAYOUT_DESC=	With additional RU_UA keyboard layout
 
 PLIST_SUB=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} \
 			DOCSDIR=${DOCSDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.optons.mk>
 
-.if defined(WITH_RU_UA_LAYOUT)
+.if ${PORT_OPTIONS:MRU_UA_LAYOUT}
 CONFIGURE_ARGS+=	--enable-ru-ua-layout
 PLIST_SUB+=		LAYOUT=""
 .else
 PLIST_SUB+=		LAYOUT="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

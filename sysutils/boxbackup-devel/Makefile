@@ -1,9 +1,5 @@
-# New ports collection makefile for: boxbackup
-# Date created:		19 December 2004
-# Whom:			James O'Gorman <james@netinertia.co.uk>
-#
+# Created by: James O'Gorman <james@netinertia.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.r${SVNVERSION:C/^[0-9\.]+_[a-z]+_([0-9]+)/\1/}
@@ -37,23 +33,22 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	CLIENT "Install the bbackupd client" On \
-		SERVER "Install the bbstored server" On \
-		GNUREADLINE "Enable the use of GNU readline" Off
+OPTIONS_SINGLE=	TYPE
+OPTIONS_SINGLE_TYPE=	CLIENT SERVER
+OPTIONS_DEFINE=	GNUREADLINE
+OPTIONS_DEFAULT=	CLIENT SERVER
+CLIENT_DESC=		Install the bbackupd client
+SERVER_DESC=		Install the bbstored server
+GNUREADLINE_DESC=	Enable the use of GNU readline
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GNUREADLINE)
+.if ${PORT_OPTIONS:MGNUREADLINE}
 CONFIGURE_ARGS+=--enable-gnu-readline
 .endif
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
-IGNORE=		requires at least CLIENT or SERVER to be defined.\
-		Please 'make config' again
-.endif
-
 MANCOMPRESSED=	yes
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_RC_SUBR+=	bbackupd
 PLIST_SUB+=	CLIENT=""
 ALL_TARGET+=	build-backup-client
@@ -65,7 +60,7 @@ SUB_FILES+=	999.boxbackup
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 USE_RC_SUBR+=	bbstored
 USERS+=		_bbstored
 GROUPS+=	_bbstored
@@ -78,11 +73,11 @@ MAN8+=		bbstored.8 bbstoreaccounts.8 bbstored-certs.8 bbstored-config.8 raidfile
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-.if defined(WITHOUT_CLIENT)
+.if ! ${PORT_OPTIONS:MCLIENT}
 # if this is a server-only install, CONFLICT with an install of the CLIENT or both
 CONFLICTS=	boxbackup-client-[0-9]* boxbackup-[0-9]*
 CLIENT_OR_SERVER=-server
-.elif defined(WITHOUT_SERVER)
+.elif ! ${PORT_OPTIONS:MSERVER}
 # if this is a client-only install, CONFLICT with an install of the SERVER or both
 CONFLICTS=	boxbackup-server-[0-9]* boxbackup-[0-9]*
 CLIENT_OR_SERVER=-client
@@ -94,10 +89,10 @@ CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/html/d' ${WRKSRC}/parcels.txt
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
 .endif
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${CAT} ${FILESDIR}/pkg-message.server >> ${PKGMESSAGE}
 .endif
 
@@ -105,12 +100,12 @@ post-configure:
 	@${REINPLACE_CMD} -e '/share.doc.boxbackup/d' ${WRKSRC}/parcels/scripts/install-backup-*
 
 post-install:
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbackupd
 	@${MKDIR} ${PREFIX}/etc/periodic/monthly
 	${INSTALL_SCRIPT} ${WRKDIR}/999.boxbackup ${PREFIX}/etc/periodic/monthly
 .endif
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbstored
 .endif
 	@${CAT} ${PKGMESSAGE}
@@ -119,4 +114,4 @@ test:
 	 @${ECHO_CMD} "===> Running tests"
 	 @${MAKE} -C ${WRKSRC} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

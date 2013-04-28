@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msyslog
-# Date created:				14 May 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08g
@@ -16,8 +12,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Flexible and easy to integrate syslog daemon
 
-OPTIONS=	MYSQL	"With MySQL Support"	off \
-		PGSQL	"With Postgres Support"	off \
+OPTIONS_DEFINE=	MYSQL PGSQL
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
@@ -30,20 +25,20 @@ MANCOMPRESSED=	yes
 
 PORTSCOUT=	skipv:1.09d
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-modules-om_classic.c
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 MAN8+=	om_mysql.8
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 MAN8+=	om_pgsql.8
 .else
@@ -67,4 +62,4 @@ post-install:
 	    > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	kgtk
-# Date created:			Sep 13, 2007
-# Whom:				Rashid N. "Citycat" Achilov <citycat4@ngs.ru>
-#
+# Created by: Rashid N. "Citycat" Achilov <citycat4@ngs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	kgtk
 PORTVERSION=	0.9.4
@@ -18,7 +14,7 @@ COMMENT=	Daemon to use KDE dialogs in GTK applications
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	UNICODE "System locale is utf-8" off
+OPTIONS_DEFINE=	UNICODE
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
@@ -30,16 +26,16 @@ CMAKE_SOURCE_PATH=	..
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_UNICODE)
+.if ! ${PORT_OPTIONS:MUNICODE}
 EXTRA_PATCHES+=	${PATCHDIR}/opt-patch-kgtk-wrapper \
 		${PATCHDIR}/opt-patch-gtk2__kgtk2-wrapper.cmake
 .endif
@@ -62,4 +58,4 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

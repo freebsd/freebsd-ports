@@ -1,9 +1,5 @@
-# New ports collection makefile for:	heartbeat
-# Date created:				18 March 2005
-# Whom:					Scott Kleihege <scott-ports@tummy.com>
-#
+# Created by: Scott Kleihege <scott-ports@tummy.com>
 # $FreeBSD$
-#
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
@@ -62,18 +58,19 @@ MAN1=		cl_status.1 ha_logger.1 hb_addnode.1 hb_delnode.1 hb_standby.1 hb_takeove
 MAN8=		apphbd.8 cibadmin.8 crm_resource.8 ha_logd.8 heartbeat.8 \
 		meatclient.8 stonith.8
 
-OPTIONS=	MGMT "Enable X11 Management Utilities" Off \
-		LDIRECTORD "Enable Linux Director Daemon" Off \
-		APCSNMP "Enable APC SNMP Stonith Device" Off \
-		DRAC3 "Enable Dell DRACIII Stonith Device" Off
+OPTIONS_DEFINE=MGMT LDIRECTORD APCSNMP DRAC3
+MGMT_DESC=		Enable X11 Management Utilities
+LDIRECTORD_DESC=	Enable Linux Director Daemon
+APCSNMP_DESC=		Enable APC SNMP Stonith Device
+DRAC3_DESC=		Enable Dell DRACIII Stonith Device
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(BATCH)
 BATCH=NO
 .endif
 
-.if defined(WITH_MGMT)
+.if ${PORT_OPTIONS:MMGMT}
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=		MGMT=""
@@ -82,7 +79,7 @@ CONFIGURE_ARGS+=	--disable-mgmt
 PLIST_SUB+=		MGMT="@comment "
 .endif
 
-.if defined(WITH_LDIRECTORD)
+.if ${PORT_OPTIONS:MLDIRECTORD}
 RUN_DEPENDS+=		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 			p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 USE_PERL5_RUN=		yes
@@ -93,14 +90,14 @@ CONFIGURE_ARGS+=	--disable-ldirectord
 PLIST_SUB+=		LDIRECTORD="@comment "
 .endif
 
-.if defined(WITH_APCSNMP) || exists (${PREFIX}/lib/libnetsnmp.so)
+.if ${PORT_OPTIONS:MAPCSNMP} || exists (${PREFIX}/lib/libnetsnmp.so)
 LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 PLIST_SUB+=	APCSNMP=""
 .else
 PLIST_SUB+=	APCSNMP="@comment "
 .endif
 
-.if defined(WITH_DRAC3) || exists (${PREFIX}/lib/libcurl.so)
+.if ${PORT_OPTIONS:MDRAC3} || exists (${PREFIX}/lib/libcurl.so)
 USE_CURL=	yes
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	DRAC3=""
@@ -108,10 +105,10 @@ PLIST_SUB+=	DRAC3=""
 PLIST_SUB+=	DRAC3="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		NOPORTDOCS="@comment "
-.else
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=		NOPORTDOCS=""
+.else
+PLIST_SUB+=		NOPORTDOCS="@comment "
 .endif
 
 # BladeHPI Stonith Automagic Building
@@ -152,20 +149,20 @@ post-patch:
 	${TAR} -cf libltdl.tar libltdl && \
 	${RM} -rf libltdl
 
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's| doc | |' \
-		${WRKSRC}/Makefile.am
-.else
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|^\(docdir.*doc/\).*|\1${PORTNAME}|' \
 		${WRKSRC}/configure.in \
 		${WRKSRC}/doc/Makefile.am
+.else
+	@${REINPLACE_CMD} -e 's| doc | |' \
+		${WRKSRC}/Makefile.am
 .endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Install sample configuration
 	@if [ ! -f ${PREFIX}/etc/ha.d/authkeys ]; then \
 		${CP} -p ${DOCSDIR}/authkeys ${PREFIX}/etc/ha.d/authkeys ; \
@@ -184,7 +181,7 @@ post-install:
 	${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf.sample
 .endif
 
-.if defined(WITH_LDIRECTORD)
+.if ${PORT_OPTIONS:MLDIRECTORD}
 	@if [ ! -f ${PREFIX}/etc/ha.d/ldirectord.cf ]; then \
 		${CP} -p ${WRKSRC}/ldirectord/ldirectord.cf ${PREFIX}/etc/ha.d/ldirectord.cf ; \
 		${CP} -p ${WRKSRC}/ldirectord/ldirectord.cf ${PREFIX}/etc/ha.d/ldirectord.cf.sample ; \
@@ -194,7 +191,7 @@ post-install:
 	# Some subdirs treat man as documentation, therefor we have to install
 	# those man pages manually if NOPORTDOCS is defined.
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Some subdirs treat man as documentation, therefor we have to install
 	# those man pages manually if NOPORTDOCS is defined.
 
@@ -208,4 +205,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

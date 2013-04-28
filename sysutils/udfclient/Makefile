@@ -19,8 +19,8 @@ WRKSRC=		${WRKDIR}/UDFclient.${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
-OPTIONS=	FUSE	"udfclientfs via FUSE"	off \
-		DEBUG	"build with debug support" off
+OPTIONS_DEFINE=	FUSE DEBUG
+FUSE_DESC=	udfclientfs via FUSE
 
 PLIST_FILES=	bin/udfdump \
 		bin/udfclient \
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/udfdump \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FUSE)
+.if ${PORT_OPTIONS:MFUSE}
 UDFCLIENTFS_NAME=	udfclientfs
 UDFCLIENTFS_VERSION=	0.4
 UDFCLIENTFS_DIR=	${WRKDIR}/udfclientfs
@@ -45,12 +45,12 @@ USES+=		fuse
 PLIST_FILES+=	bin/${UDFCLIENTFS_NAME}
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-O0 -ggdb3
 .endif
 
 post-patch:
-.if defined(WITH_FUSE)
+.if ${PORT_OPTIONS:MFUSE}
 	${CP} ${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.c ${WRKSRC}
 .endif
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radmind
-# Date created:		2003-11-17
-# Whom:			Paul Dlug <paul@aps.org>
-#
+# Created by: Paul Dlug <paul@aps.org>
 # $FreeBSD$
-#
 
 PORTNAME=	radmind
 PORTVERSION=	1.14.1
@@ -37,11 +33,12 @@ MAN5=		applefile.5
 MAN8=		radmind.8
 DOCS=		COPYRIGHT README SPEC
 
-OPTIONS=	IGNORE_TIMESTAMPS	"Add '-t' option to fsdiff"	Off
+OPTIONS_DEFINE=	IGNORE_TIMESTAMPS DOCS
+IGNORE_TIMESTAMPS_DESC=	Add '-t' option to fsdiff
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_IGNORE_TIMESTAMPS)
+.if ${PORT_OPTIONS:MIGNORE_TIMESTAMPS}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-ignore_timestamps
 .endif
 
@@ -49,7 +46,7 @@ post-install:
 # Ugly hack to remove generated man pages
 	${RM} -rf ${WRKSRC}/tmp
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif

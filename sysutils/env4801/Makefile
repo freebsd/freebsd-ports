@@ -1,9 +1,5 @@
-# Ports collection makefile for:  env4801
-# Date created:			  Tue, Nov 24th, 2004
-# Whom:				  Patrick M. Hausen (pmh@hausen.com)
-#
+# Created by: Patrick M. Hausen (pmh@hausen.com)
 # $FreeBSD$
-#
 
 PORTNAME=		env4801
 PORTVERSION=		0.3
@@ -26,12 +22,14 @@ MAKE_ARGS=		-DNOMAN
 
 PLIST_FILES=		sbin/env4801 etc/rc.d/env4801.sh
 
-OPTIONS=		STATIC "Build a statically linked executable" On
+OPTIONS_DEFINE=	STATIC
+OPTIONS_DEFAULT=	STATIC
+STATIC_DESC=	Build a statically linked executable
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
-.ifdef(WITHOUT_STATIC)
+.if ! ${PORT_OPTIONS:MSTATIC}
 	@${REINPLACE_CMD} -e '/-static/d' ${WRKSRC}/Makefile
 .endif
 
@@ -46,4 +44,4 @@ do-install:
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

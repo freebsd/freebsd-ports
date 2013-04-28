@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	pflogx
-# Date created:			May 10 2006
-# Whom:				clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	pflogx
 PORTVERSION=	0.86
@@ -17,11 +12,12 @@ COMMENT=	Simple tool to export pf (packet filter) logs to XML files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	EXPAT	"Ability to merge new events (require expat) " Off
+OPTIONS_DEFINE=	EXPAT DOCS
+EXPAT_DESC=	Ability to merge new events (require expat)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXPAT)
+.if ${PORT_OPTIONS:MEXPAT}
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 MAKE_ARGS+=	-DWITH_EXPAT \
 		EXPAT_INCLUDEDIR=${LOCALBASE}/include \
@@ -30,7 +26,7 @@ MAKE_ARGS+=	-DWITH_EXPAT \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
@@ -39,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xsl/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

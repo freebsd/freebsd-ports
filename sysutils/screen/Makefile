@@ -1,4 +1,4 @@
-# Whom:                 ache
+# Created by: ache
 # $FreeBSD$
 
 PORTNAME=	screen
@@ -14,22 +14,24 @@ MASTER_SITE_SUBDIR=	screen
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A multi-screen window manager
 
-OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
-		INFO "Build and install info documentation" ON \
-		MAN "Build and install man pages" ON \
-		NETHACK "Enable nethack-style messages" ON \
-		XTERM_256 "Enable support for 256 colour xterm" ON \
-		HOSTINLOCKED "Print user@host in locked message" OFF \
-		SHOWENC "Show encoding on the status line" OFF
+OPTIONS_DEFINE=	CJK INFO MAN NETHACK XTERM_256 HOSTINLOCKED SHOWENC
+OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256
+CJK_DESC=		Treat CJK ambiguous characters as full width
+INFO_DESC=		Build and install info documentation
+MAN_DESC=		Build and install man pages
+NETHACK_DESC=		Enable nethack-style messages
+XTERM_256_DESC=		Enable support for 256 colour xterm
+HOSTINLOCKED_DESC=	Print user@host in locked message
+SHOWENC_DESC=		Show encoding on the status line
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
-.if defined(WITH_MAN)
+.if ${PORT_OPTIONS:MMAN}
 MAN1=		screen.1
 MAKE_ARGS+=	-DWITH_MAN
 .endif
-.if defined(WITH_INFO)
+.if ${PORT_OPTIONS:MINFO}
 .if !exists(/usr/bin/install-info)
 RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
 .endif
@@ -45,25 +47,25 @@ CFLAGS+=	-O0
 # set up a custom termcap entry or .screenrc which modifies termcap
 # to contain the following: Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm
 #
-.if defined(WITH_XTERM_256)
+.if ${PORT_OPTIONS:MXTERM_256}
 CFLAGS+=	-DCOLORS256
 .endif
 
-.if !defined(WITH_NETHACK)
+.if ! ${PORT_OPTIONS:MNETHACK}
 CFLAGS+=	-DNONETHACK
 .endif
 
 # treat CJK ambiguous characters as full width via option "cjkwidth"
-.if defined(WITH_CJK)
+.if ${PORT_OPTIONS:MCJK}
 EXTRA_PATCHES+=	${FILESDIR}/opt-cjkwidth
 .endif
 
-.if defined(WITH_HOSTINLOCKED)
+.if ${PORT_OPTIONS:MHOSTINLOCKED}
 EXTRA_PATCHES+= ${FILESDIR}/opt-hostinlocked
 .endif
 
 # show encoding on the status line via option "showenc"
-.if defined(WITH_SHOWENC)
+.if ${PORT_OPTIONS:MSHOWENC}
 EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
 .endif
 
@@ -78,4 +80,4 @@ post-install:
 		${CP} ${EXAMPLESDIR}/screenrc ${PREFIX}/etc/screenrc ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
