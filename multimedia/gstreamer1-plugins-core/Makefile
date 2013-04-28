@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer1-plugins-core
 PORTVERSION=	${GST1_VERSION}${GST1_MINIMAL_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,7 +14,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Core set of typical audio and video gstreamer-plugins
 
 NO_BUILD=	yes
-GST_DIR=	lib/gstreamer-${PORTVERSION}
+GST_DIR=	lib/gstreamer-1.0
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
 USE_GSTREAMER1=yes
