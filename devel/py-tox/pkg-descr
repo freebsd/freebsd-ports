@@ -11,4 +11,4 @@ use for:
   servers, greatly reducing boilerplate and merging
   CI and shell-based testing.
 
-WWW:	http://tox.testrun.org/
+WWW: http://tox.testrun.org/
