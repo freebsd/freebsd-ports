@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ghostscript-gpl-nox11
-# Date created:		23 February 2001
-# Whom:			nik
-#
+# Created by: Nik Clayton <nik@FreeBSD.org>
 # $FreeBSD$
-#
 
 OPTIONS_UNSET=  X11
 
