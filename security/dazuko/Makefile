@@ -14,7 +14,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	EXAMPLEC
 OPTIONS_DEFAULT=	EXAMPLEC
-EXAMPLEC_DESC+		Install C example programs
+EXAMPLEC_DESC=		Install C example programs
 
 .include <bsd.port.options.mk>
 
