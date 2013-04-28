@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gcc
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.4
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
@@ -122,11 +122,6 @@ CONFIGURE_ARGS+=--with-cpu=${WITH_CPU} \
 CONFIGURE_ARGS+=--with-float=${WITH_FLOAT_TYPE}
 .endif
 
-.if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	gcc-core-4.5.2-rtems4.11-20110220.diff \
-		newlib-${NEWLIB_VERSION}-rtems4.11-20110109.diff
-.endif
-
 .if defined(WITH_OPTARGS)
 CONFIGURE_ARGS+=	${WITH_OPTARGS}
 .endif
@@ -145,10 +140,12 @@ OURTARGET=	cross	# to generate a correct index line
 IGNORE=		you should select TGTARCH and TGTABI to build port
 .endif
 
-OPTIONS_DEFINE=	CXX OBJC FORTRAN
+OPTIONS_DEFINE=	CXX OBJC FORTRAN RTEMS_PATCHES
 OPTIONS_DEFAULT=	CXX OBJC
 
-.include <bsd.port.pre.mk>
+RTEMS_PATCHES_DESC=	Apply RTEMS patches
+
+.include <bsd.port.options.mk>
 
 .if defined(TGTARCH)
 .if ${TGTARCH} == "i386" && ${ARCH} == "amd64"
@@ -174,6 +171,11 @@ TGTLANGS:=	"${TGTLANGS},objc"
 TGTLANGS:=	"${TGTLANGS},fortran"
 PLIST_FILES+=	bin/${OURTARGET}-gfortran \
 		${OURTARGET}/bin/gfortran
+.endif
+
+.if ${PORT_OPTIONS:MRTEMS_PATCHES}
+PATCHFILES+=	gcc-core-${PORTVERSION}-rtems4.11-20120703.diff \
+		newlib-${NEWLIB_VERSION}-rtems4.11-20110109.diff
 .endif
 
 pre-everything::
@@ -267,4 +269,4 @@ post-install:
 	@${ECHO_CMD} "@unexec rmdir ${PREFIX}/lib/gcc 2>/dev/null || true" \
 		>> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
