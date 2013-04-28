@@ -3,4 +3,4 @@ written in C and POSIX pthread library, released under BSD license.
 It is very similar to CVSup but not compatible with it.
 
 Author:	MAEKAWA Masahide <maekawa at cvsync dot org>
-WWW:	http://www.cvsync.org/
+WWW: http://www.cvsync.org/
