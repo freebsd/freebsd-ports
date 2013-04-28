@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	1.7.6
+PORTVERSION=	1.8.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/129305476/
+MASTER_SITES=	http://launchpadlibrarian.net/136145662/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
@@ -47,8 +47,7 @@ MAN1=		swift-account-auditor.1 \
 		swift-orphans.1 \
 		swift-proxy-server.1 \
 		swift-recon.1 \
-		swift-ring-builder.1 \
-		swift.1
+		swift-ring-builder.1
 
 MAN5=		account-server.conf.5 \
 		container-server.conf.5 \
