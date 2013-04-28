@@ -1,30 +1,34 @@
-# New ports collection makefile for:	pcapy
-# Date created:				15th September 2005
-# Whom:					Marcin Jessa <yazzy@yazzy.org>
+# Created by: Marcin Jessa <yazzy@yazzy.org>
 # $FreeBSD$
 
 PORTNAME=	pcapy
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.8
 CATEGORIES=	net python
-MASTER_SITES=	http://oss.coresecurity.com/repo/ \
-		http://www.yazzy.org/ports/pcapy/
+MASTER_SITES=	http://corelabs.coresecurity.com/index.php?module=Wiki&action=attachment&type=tool&page=Pcapy&file=
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension module to capture packets on the network
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+LICENSE=	AL11
+LICENSE_NAME=	Apache License version 1.1
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		checksum mismatch
+FETCH_BEFORE_ARGS=-o ${DISTFILES}
+USE_DOS2UNIX=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
-PORTDOCS=	README LICENSE pcapy.html
+PORTDOCS=	README pcapy.html
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
