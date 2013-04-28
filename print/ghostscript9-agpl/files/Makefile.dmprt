@@ -1,0 +1,9 @@
+# $FreeBSD$
+
+post-install-dmprt:
+	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
+	cd ${FILESDIR} && \
+		${INSTALL_DATA} lqx70ch.upp lqx70cl.upp lqx70cm.upp \
+		${DATADIR}/${PORTVERSION}/lib
+
+post-install: post-install-dmprt
