@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Download & Install additional definition files for Clamav
 LICENSE=	BSD
 
 RUN_DEPENDS=	bash>=4.2.42:${PORTSDIR}/shells/bash \
-		clamav>=0.97.7:${PORTSDIR}/security/clamav \
+		clamav>=0.97.8:${PORTSDIR}/security/clamav \
 		gnupg>=2.0.19:${PORTSDIR}/security/gnupg \
 		rsync>=3.0.9:${PORTSDIR}/net/rsync
 
