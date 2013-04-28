@@ -1,11 +1,11 @@
---- etc/afpd/Makefile.in.orig	2012-07-09 07:43:26.000000000 -0400
-+++ etc/afpd/Makefile.in	2012-09-03 10:41:54.000000000 -0400
-@@ -370,7 +370,7 @@ afpd_SOURCES = afp_avahi.c afp_config.c 
- 	$(am__append_1)
- afpd_LDADD = \
- 	$(top_builddir)/libatalk/libatalk.la \
--	@LIBGCRYPT_LIBS@ @QUOTA_LIBS@ @WRAP_LIBS@ @LIBADD_DL@ @ACL_LIBS@ @ZEROCONF_LIBS@ @PTHREAD_LIBS@ @GSSAPI_LIBS@ @KRB5_LIBS@
-+	@LIBGCRYPT_LIBS@ @QUOTA_LIBS@ @WRAP_LIBS@ @LIBADD_DL@ @ACL_LIBS@ @ZEROCONF_LIBS@ @PTHREAD_LIBS@ @GSSAPI_LIBS@ @KRB5_LIBS@ @PAM_LIBS@
- 
- afpd_LDFLAGS = -export-dynamic
- afpd_CFLAGS = \
+--- etc/afpd/Makefile.in.orig	2013-03-26 05:37:00.000000000 -0400
++++ etc/afpd/Makefile.in	2013-04-28 16:36:58.000000000 -0400
+@@ -401,7 +401,7 @@ afpd_SOURCES = afp_avahi.c afp_config.c 
+ afpd_LDADD = $(top_builddir)/libatalk/libatalk.la @LIBGCRYPT_LIBS@ \
+ 	@QUOTA_LIBS@ @WRAP_LIBS@ @LIBADD_DL@ @ACL_LIBS@ \
+ 	@ZEROCONF_LIBS@ @PTHREAD_LIBS@ @GSSAPI_LIBS@ @KRB5_LIBS@ \
+-	$(am__append_7)
++	@PAM_LIBS@ $(am__append_7)
+ afpd_LDFLAGS = -export-dynamic $(am__append_6)
+ afpd_CFLAGS = @ZEROCONF_CFLAGS@ @GSSAPI_CFLAGS@ @KRB5_CFLAGS@ \
+ 	@PTHREAD_CFLAGS@ -DAPPLCNAME -DSERVERTEXT=\"$(SERVERTEXT)/\" \
