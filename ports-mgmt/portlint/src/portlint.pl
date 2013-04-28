@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.270 2013/03/10 06:08:07 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.274 2013/04/28 23:15:04 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -161,6 +161,7 @@ foreach my $i (@osdep) {
 
 # The PORTSDIR environment variable overrides our defaults.
 $portsdir = $ENV{PORTSDIR} if ( defined $ENV{'PORTSDIR'} );
+$ENV{'PL_SVN_IGNORE'} //= '';
 my $mfile_moved = "${portsdir}/MOVED";
 my $mfile_uids = "${portsdir}/UIDs";
 my $mfile_gids = "${portsdir}/GIDs";
@@ -367,6 +368,8 @@ if ($committer) {
 		} elsif ($_ eq '.svn' && -d) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
 				"Subversion files before committing the port.");
+
+			$File::Find::prune = 1;
 		} elsif ($_ eq 'CVS' && -d) {
 			if ($newport) {
 				&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
@@ -374,6 +377,16 @@ if ($committer) {
 			}
 
 			$File::Find::prune = 1;
+		} elsif (-f) {
+			my $fullpath = $makevar{'.CURDIR'}.'/'.$fullname;
+			my $result = `svn status $fullpath`;
+
+			chomp $result;
+			if (substr($result, 0, 1) eq '?') {
+				&perror("FATAL", "", -1, "$fullname not under SVN.")
+					unless (eval { /$ENV{'PL_SVN_IGNORE'}/, 1 } &&
+						/$ENV{'PL_SVN_IGNORE'}/);
+			}
 		}
 	}
 
@@ -1725,7 +1738,7 @@ sub checkmakefile {
 	if ($sharedocused && $whole !~ /defined\s*\(?NOPORTDOCS\)?/
 		&& $whole !~ /def\s*\(?NOPORTDOCS\)?/) {
 		if ($docsused == 0 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
-			&perror("WARN", $file, -1, "use \".if !defined(NOPORTDOCS)\" to wrap ".
+			&perror("WARN", $file, -1, "use \".if \${PORT_OPTIONS:MDOCS}\" to wrap ".
 				"installation of files into $localbase/share/doc.");
 		}
 	} else {
@@ -2484,6 +2497,7 @@ DIST_SUBDIR EXTRACT_ONLY
 		print "OK: seen MASTER_SITES, sanity checking URLs.\n"
 			if ($verbose);
 		my @sites = split(/\s+/, $1 // '');
+		my $ftphttp = 0;
 		my $skipnext = 0;
 		foreach my $i (@sites) {
 			if ($skipnext) {
@@ -2496,12 +2510,16 @@ DIST_SUBDIR EXTRACT_ONLY
 				unless (&is_predefined($i, $file)) {
 					print "OK: URL \"$i\" ok.\n"
 						if ($verbose);
+					$ftphttp++ if ($i =~ /^(ftp|http):/);
 				}
 			} else {
 				print "OK: non-URL \"$i\" ok.\n"
 					if ($verbose);
+				$ftphttp++;
 			}
 		}
+		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES.  ".
+			"This may break fetch through proxies.") unless ($ftphttp);
 	} else {
 		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
 	}
