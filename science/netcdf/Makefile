@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netcdf
-# Date created:		29 July 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
@@ -29,17 +25,18 @@ INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 MAN1=		ncdump.1 ncgen.1
 MAN3=		netcdf.3
 
-OPTIONS=	FORTRAN "Build library for Fortran" off
+OPTIONS_DEFINE=	FORTRAN DOCS
+FORTRAN_DESC=	Build library for Fortran
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--enable-docs-install
 .else
 CONFIGURE_ARGS+=--disable-docs-install
 .endif
 
-.include <bsd.port.options.mk>
-
-.if defined(WITH_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-3.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
@@ -59,7 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'271 s/\(info_docs\).*/html_docs\)/' \
 		${WRKSRC}/man4/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '790 s/install-docDATA //' \
 		${WRKSRC}/man/Makefile.in
 .endif

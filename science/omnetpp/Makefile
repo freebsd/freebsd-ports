@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omnetpp
-# Date created:				29 October 2004
-# Whom:					bkoenig
-#
+# Created by: bkoenig
 # $FreeBSD$
-#
 
 PORTNAME=	omnetpp
 PORTVERSION=	3.3
@@ -40,21 +36,23 @@ PLIST=		${WRKDIR}/pkg-plist
 INCLDIR=	${PREFIX}/include/${PORTNAME}
 INCLDIR_REL=	${INCLDIR:S,^${PREFIX}/,,}
 
-OPTIONS=	MAGICK "Install ImageMagick for EPS-JPG conversion" ON \
-		GRAPHVIZ "Install Graphviz for generating diagrams" ON \
-		DOXYGEN "Install Doxygen to create the API reference" ON
+OPTIONS_DEFINE=	MAGICK GRAPHVIZ DOXYGEN DOCS
+OPTIONS_DEFAULT=	MAGICK GRAPHVIZ DOXYGEN
+MAGICK_DESC=	Install ImageMagick for EPS-JPG conversion
+GRAPHVIZ_DESC=	Install Graphviz for generating diagrams
+DOXYGEN_DESC=	Install Doxygen to create the API reference
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MAGICK)
+.if ${PORT_OPTIONS:MMAGICK}
 depend+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 depend+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 depend+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
@@ -86,7 +84,7 @@ pre-install:
 		${FIND} -s bitmaps -type f | ${SED} "s,^,%%DATADIR%%/," >> ${PLIST}; \
 		${FIND} -s -d bitmaps -type d | ${SED} "s,^,@dirrm %%DATADIR%%/," >> ${PLIST} \
 	)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}; \
 		${FIND} -s doc/ -type f | ${SED} "s,^doc/,%%DOCSDIR%%/," >> ${PLIST}; \
 		${FIND} -s -d doc/ -type d | ${SED} "s,^doc/,@dirrm %%DOCSDIR%%/," >> ${PLIST} \
@@ -127,7 +125,7 @@ do-install:
 	${FIND} . -type d -exec ${MKDIR} ${DATADIR}/bitmaps/{} \; ;\
 	${FIND} . -type f | ${XARGS} -I% ${INSTALL_DATA} % ${DATADIR}/bitmaps/% \
 	)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc;\
 	${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; ;\
 	${FIND} . -type f | ${XARGS} -I% ${INSTALL_DATA} % ${DOCSDIR}/% \

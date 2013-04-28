@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hdf5-18
-# Date created:			Nov 20, 2008
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.9
@@ -29,17 +25,17 @@ CONFIGURE_ARGS=	--enable-cxx \
 		--with-pthread=/usr \
 		--with-zlib=/usr
 
-OPTIONS=	DEBUG	"Debug"			off \
-		FORTRAN	"Fortran support"	off \
-		SZIP	"SZIP support"		off
+OPTIONS_DEFINE=	DEBUG FORTRAN SZIP EXAMPLES
+FORTRAN_DESC=	Fortran support
+SZIP_DESC=	SZIP support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=all --disable-production
 .endif
 
-.if defined(WITH_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	F9X=${FC}
 CONFIGURE_ARGS+=--enable-fortran
@@ -48,7 +44,7 @@ PLIST_SUB+=	FORTRAN=""
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
-.if defined(WITH_SZIP)
+.if ${PORT_OPTIONS:MSZIP}
 LIB_DEPENDS+=	sz:${PORTSDIR}/science/szip
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 .endif
@@ -66,7 +62,7 @@ post-patch:
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
 	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
-.if defined(NOPORTEXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e '/^install:/ s|install-examples||' ${WRKSRC}/Makefile.in
 .endif
 

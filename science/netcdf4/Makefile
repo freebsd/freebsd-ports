@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netcdf4
-# Date created:		2008-11-11
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	netcdf
 PORTVERSION=	4.1.3
@@ -20,9 +16,10 @@ CONFLICTS=	hdf-4.* netcdf-3.*
 LATEST_LINK?=	netcdf4
 PORTSCOUT=	limit:^4\.
 
-OPTIONS=	DAP	"Build DAP client and remote testing" off \
-		FORTRAN	"Build library for Fortran" off \
-		SZIP	"SZIP support (required if HDF5 was built with SZIP)" off
+OPTIONS_DEFINE=	DAP FORTRAN SZIP
+DAP_DESC=	Build DAP client and remote testing
+FORTRAN_DESC=	Build library for Fortran
+SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 
 CONFIGURE_ARGS=	--enable-cxx --enable-cxx-4 --enable-netcdf-4 --enable-shared \
 		--with-hdf5=${LOCALBASE} --with-zlib=/usr
@@ -41,7 +38,7 @@ MAN3=		netcdf.3
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DAP)
+.if ${PORT_OPTIONS:MDAP}
 CONFIGURE_ARGS+=--enable-dap --with-curl=${LOCALBASE} \
 		--with-curl-config=${LOCALBASE}/bin/curl-config
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
@@ -49,7 +46,7 @@ LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--disable-dap
 .endif
 
-.if defined(WITH_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-4.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
@@ -62,7 +59,7 @@ CONFLICTS+=	netcdf-ftn-4.*
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
-.if defined(WITH_SZIP)
+.if ${PORT_OPTIONS:MSZIP}
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
 .endif
@@ -74,7 +71,7 @@ post-configure:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/man4 && ${INSTALL_DATA} *.html *.pdf *.txt ${DOCSDIR}/
 .endif

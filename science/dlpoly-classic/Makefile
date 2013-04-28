@@ -1,11 +1,5 @@
-############################################################################
-# New ports collection Makefile for:   dlpoly-classic
-# Date created:        21 Jan 2010
-# Whom:                Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
-############################################################################
 
 PORTNAME=	dlpoly
 PORTVERSION=	1.8
@@ -20,7 +14,9 @@ COMMENT=	Molecular dynamics simulation package
 BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:${PORTSDIR}/net/openmpi
 RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 
-OPTIONS=	GUI	"Install Java GUI"		on
+OPTIONS_DEFINE=	GUI DOCS EXAMPLES
+OPTIONS_DEFAULT=	GUI
+GUI_DESC=	Install Java GUI
 
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
@@ -33,7 +29,7 @@ MPIF90=		${LOCALBASE}/mpi/openmpi/bin/mpif90
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 USE_JAVA=	yes
 PLIST_FILES+=	bin/dlpoly-gui \
 		${DATADIR_REL}/GUI.jar
@@ -61,16 +57,16 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic-mpi ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manual/* ${DOCSDIR}
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/execute ${EXAMPLESDIR}
 	${RM} ${EXAMPLESDIR}/execute/dlpoly*
 .endif
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/java/GUI.jar ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/dlpoly-gui ${PREFIX}/bin
