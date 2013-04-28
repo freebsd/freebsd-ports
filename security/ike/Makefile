@@ -25,30 +25,30 @@ CMAKE_ARGS+=	-DETCDIR:PATH="${PREFIX}/etc" \
 		-DLIBDIR:PATH="${PREFIX}/lib" \
 		-DMANDIR:PATH="${PREFIX}/man"
 
-OPTIONS=	QTGUI		"Enable QT client front end applications" on \
-		NATT		"Enable NAT-Traversal (kernel-patch required)" off \
-		LDAP		"Enable LDAP XAuth daemon support" off \
-		DEBUG		"Enable Debug support" off
+OPTIONS_DEFINE=	QTGUI NATT LDAP DEBUG
+QTGUI_DESC=	Enable QT client front end applications
+NATT_DESC=	Enable NAT-Traversal (kernel-patch required)
+LDAP_DESC=	Enable LDAP XAuth daemon support
 
 .include <bsd.port.options.mk>
 
 MAN5=		iked.conf.5
 MAN8=		iked.8
 
-.ifdef(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DDEBUG=YES
 .endif
 
-.ifdef(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
 CMAKE_ARGS+=	-DLDAP=YES
 .endif
 
-.ifdef(WITH_NATT)
+.if ${PORT_OPTIONS:MNATT}
 CMAKE_ARGS+=	-DNATT=YES
 .endif
 
-.ifdef(WITH_QTGUI)
+.if ${PORT_OPTIONS:MQTGUI}
 CMAKE_ARGS+=	-DQTGUI=YES
 USE_QT_VER=	3
 MAN1=		ikea.1 ikec.1
@@ -60,7 +60,7 @@ PLIST_SUB+=	QTGUI="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if defined(WITH_NATT)
+.if ${PORT_OPTIONS:MNATT}
 . if ${OSVERSION} < 800000
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> WARNING: You will need to patch your kernel for NAT-T functionality!"
@@ -88,7 +88,7 @@ post-install:
 	${ECHO_MSG} "===>   http://www.freebsd.org/doc/en/books/handbook/ipsec.html"; \
 	${ECHO_MSG} "===> -------------------------------------------------------------------------"; \
 	fi ;
-.if defined(WITH_NATT)
+.if ${PORT_OPTIONS:MNATT}
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> WARNING: To use NAT Traversal ( NAT-T ) support, please be sure to"
 	@${ECHO_MSG} "===> include the following line in your kernel config file."

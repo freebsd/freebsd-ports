@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scrypt
-# Date created:				26 May, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scrypt
 PORTVERSION=	1.1.6
@@ -21,11 +17,12 @@ PLIST_FILES=	bin/scrypt
 
 MAN1=	scrypt.1
 
-OPTIONS=	SSE2 "Use SSE2-optimized code" Off
+OPTIONS_DEFINE=	SSE2
+SSE2_DESC=	Use SSE2-optimized code
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSE2)
+.if ${PORT_OPTIONS:MSSE2}
 CONFIGURE_ARGS+=	--enable-sse2
 .else
 CONFIGURE_ARGS+=	--disable-sse2

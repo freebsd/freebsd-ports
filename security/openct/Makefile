@@ -1,6 +1,5 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	openct
 PORTVERSION=	0.6.20
@@ -11,7 +10,8 @@ MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Middleware framework for smart card terminals
 
-OPTIONS=	PCSC "Enable PC/SC support" off
+OPTIONS_DEFINE=	PCSC DOCS
+PCSC_DESC=	Enable PC/SC support
 
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
@@ -39,7 +39,7 @@ CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
 CONFIGURE_ARGS+=--enable-usb
 .endif
 
-.if defined(WITH_PCSC)
+.if ${PORT_OPTIONS:MPCSC}
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 CONFIGURE_ARGS+=--enable-pcsc
 PLIST_SUB+=	PCSC=""
@@ -47,14 +47,14 @@ PLIST_SUB+=	PCSC=""
 PLIST_SUB+=	PCSC="@comment "
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--enable-doc
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's|install-data-am: install-dist_apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
 		${WRKSRC}/doc/Makefile.in
 .else

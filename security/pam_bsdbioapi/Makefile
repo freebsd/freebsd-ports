@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pam_bsdbioapi
-# Date created:				13 January 2006
-# Whom:					Fredrik Lindberg <fli@shapeshifter.se>
-#
+# Created by: Fredrik Lindberg <fli@shapeshifter.se>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_bsdbioapi
 PORTVERSION=	1.5.1
@@ -21,24 +17,25 @@ MAN8=		pam_bsdbioapi.8
 MAN3=		libbirdb.3
 MAN1=		bbdm.1
 
-OPTIONS=	FILEDB "Filebacked database backend" on \
-		MYSQL  "MySQL backend" off \
-		PLAIN  "Plain ASCII backend" on
+OPTIONS_DEFINE=	FILEDB MYSQL PLAIN
+OPTIONS_DEFAULT=	FILEDB PLAIN
+FILEDB_DESC=	Filebacked database backend
+PLAIN_DESC=	Plain ASCII backend
 
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	etc/birdb.conf.sample
 BACKENDS=
-.if defined(WITH_FILEDB)
+.if ${PORT_OPTIONS:MFILEDB}
 BACKENDS+=	filedb
 PLIST_FILES+=	share/birdb/birdb_filedb.so
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 BACKENDS+=	mysql
 PLIST_FILES+=	share/birdb/birdb_mysql.so
 .endif
-.if defined(WITH_PLAIN)
+.if ${PORT_OPTIONS:MPLAIN}
 BACKENDS+=	plain
 PLIST_FILES+=	share/birdb/birdb_plain.so
 .endif

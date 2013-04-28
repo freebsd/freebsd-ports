@@ -1,6 +1,5 @@
 # Created by: Janky Jay <ek@purplehat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
@@ -39,43 +38,49 @@ MAIADIR?=	/var/maiad
 MAIAQUARANTINE?=	/var/maiad/virusmails
 PEAR_DIR?=	${LOCALBASE}/share/pear
 
-OPTIONS=	APACHE	"Use Apache web server"	off\
-		LIGHTTPD	"Use LighTTPD web server"	off \
-		WEBHOST	"PHP, PEAR, etc... for Maia web interface"	off \
-		MYSQL	"Use MySQL datebase"		on \
-		MYSQLSERVER	"Install MySQL Server"	on \
-		PGSQL	"Use PgSQL database"		off \
-		PGSQLSERVER	"Install PGSQL Server"	off \
-		DOVECOT	"Use Dovecot IMAP/POP3"	on \
-		POSTFIX	"Use Postfix MTA"	on \
-		PFA	"Use Postfixadmin"	off \
-		FUZZYOCR	"Use FuzzyOcr"	off \
-		CLAMAV	"Use ClamAV anti-virus"	on \
-		SPAMASSASSIN	"Use SpamAssassin"	on \
-		GRAPHICS	"Enable pie chart stats"	off \
-		BDB	"Use BerkeleyDB"	on \
-		ALTERMIME	"Use AlterMime"	off \
-		CRYPT	"Encryption support"	off \
-		IPCOUNTRY	"SpamAssassin IP Country plugin"	on \
-		DOMAINKEYS	"SpamAssassin DomainKey plugin"	on \
-		SPF	"SpamAssassin SPF plugin"	on \
-		DKIM	"SpamAssassin DKIM plugin"	on \
-		FILE	"Use newer file(1) utility from ports"	on \
-		RAR	"RAR support with archivers/rar"	off \
-		UNRAR	"RAR support with archivers/unrar"	on \
-		ARJ	"ARJ support with archivers/arj"	on \
-		UNARJ	"ARJ support with archivers/unarj"	off \
-		LHA	"LHA support with archivers/lha"	on \
-		ARC	"ARC support with archivers/arc"	on \
-		NOMARCH	"ARC support with archivers/nomarch"	off \
-		CAB	"CAB support with archivers/cabextract"	on \
-		RPM	"RPM support with archivers/rpm2cpio"	on \
-		ZOO	"ZOO support with archivers/zoo"	on \
-		UNZOO	"ZOO support with archivers/unzoo"	off \
-		LZOP	"LZOP support with archivers/lzop"	off \
-		FREEZE	"FREEZE support with archivers/freeze"	on \
-		P7ZIP	"P7ZIP support with archivers/p7zip"	on \
-		TNEF	"Add external tnef decoder"	off
+OPTIONS_DEFINE=	APACHE LIGHTTPD WEBHOST MYSQL MYSQLSERVER PGSQL PGSQLSERVER DOVECOT \
+		POSTFIX PFA FUZZYOCR CLAMAV SPAMASSASSIN GRAPHICS BDB ALTERMIME CRYPT \
+		IPCOUNTRY DOMAINKEYS SPF DKIM FILE RAR ARJ UNARJ LHA ARC NOMARCH CAB \
+		RPM ZOO UNZOO LZOP FREEZE P7ZIP TNEF
+OPTIONS_DEFAULT=	MYSQL MYSQLSERVER DOVECOT POSTFIX CLAMAV SPAMASSASSIN BDB IPCOUNTRY \
+			DOMAINKEYS SPF DKIM FILE UNRAR ARJ LHA ARC CAB RPM ZOO FREEZE P7ZIP
+APACHE_DESC=		Use Apache web server
+LIGHTTPD_DESC=		Use LighTTPD web server
+WEBHOST_DESC=		PHP, PEAR, etc... for Maia web interface
+MYSQL_DESC=		Use MySQL datebase
+MYSQLSERVER_DESC=	Install MySQL Server
+PGSQL_DESC=		Use PgSQL database
+PGSQLSERVER_DESC=	Install PGSQL Server
+DOVECOT_DESC=		Use Dovecot IMAP/POP3
+POSTFIX_DESC=		Use Postfix MTA
+PFA_DESC=		Use Postfixadmin
+FUZZYOCR_DESC=		Use FuzzyOcr
+CLAMAV_DESC=		Use ClamAV anti-virus
+SPAMASSASSIN_DESC=	Use SpamAssassin
+GRAPHICS_DESC=		Enable pie chart stats
+BDB_DESC=		Use BerkeleyDB
+ALTERMIME_DESC=		Use AlterMime
+CRYPT_DESC=		Encryption support
+IPCOUNTRY_DESC=		SpamAssassin IP Country plugin
+DOMAINKEYS_DESC=	SpamAssassin DomainKey plugin
+SPF_DESC=		SpamAssassin SPF plugin
+DKIM_DESC=		SpamAssassin DKIM plugin
+FILE_DESC=		Use newer file(1) utility from ports
+RAR_DESC=		RAR support with archivers/rar
+UNRAR_DESC=		RAR support with archivers/unrar
+ARJ_DESC=		ARJ support with archivers/arj
+UNARJ_DESC=		ARJ support with archivers/unarj
+LHA_DESC=		LHA support with archivers/lha
+ARC_DESC=		ARC support with archivers/arc
+NOMARCH_DESC=		ARC support with archivers/nomarch
+CAB_DESC=		CAB support with archivers/cabextract
+RPM_DESC=		RPM support with archivers/rpm2cpio
+ZOO_DESC=		ZOO support with archivers/zoo
+UNZOO_DESC=		ZOO support with archivers/unzoo
+LZOP_DESC=		LZOP support with archivers/lzop
+FREEZE_DESC=		FREEZE support with archivers/freeze
+P7ZIP_DESC=		P7ZIP support with archivers/p7zip
+TNEF_DESC=		Add external tnef decoder
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 SUB_LIST+=	MAIAUSER=${USERS} \
@@ -90,33 +95,33 @@ USE_RC_SUBR+=	maiad
 # to duplicate some WITH_ parts like WEBHOST that use pre.mk vars as well as
 # setting USE_ variables. C'est la vie.
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if defined(WITH_WEBHOST)
+.if ${PORT_OPTIONS:MWEBHOST}
 USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_PHP+=	mysql mysqli
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_PHP+=	pgsql
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIGHTTPD)
+.if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
-.if defined(WITH_WEBHOST)
+.if ${PORT_OPTIONS:MWEBHOST}
 RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
 		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
@@ -127,47 +132,47 @@ RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_MYSQLSERVER)
+.if ${PORT_OPTIONS:MMYSQLSERVER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql55-server
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_PGSQLSERVER)
+.if ${PORT_OPTIONS:MPGSQLSERVER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/pg_ctl:${PORTSDIR}/databases/postgresql84-server
 .endif
 
-.if defined(WITH_DOVECOT)
+.if ${PORT_OPTIONS:MDOVECOT}
 RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot
 .endif
 
-.if defined(WITH_POSTFIX)
+.if ${PORT_OPTIONS:MPOSTFIX}
 RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
 .endif
 
-.if defined(WITH_PFA)
+.if ${PORT_OPTIONS:MPFA}
 RUN_DEPENDS+=	${LOCALBASE}/www/postfixadmin/config.inc.php:${PORTSDIR}/mail/postfixadmin
 .endif
 
-.if defined(WITH_FUZZYOCR)
+.if ${PORT_OPTIONS:MFUZZYOCR}
 RUN_DEPENDS+=	p5-FuzzyOcr-devel>=0:${PORTSDIR}/mail/p5-FuzzyOcr-devel
 .endif
 
-.if defined(WITH_CLAMAV)
+.if ${PORT_OPTIONS:MCLAMAV}
 RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
 .endif
 
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
-.if defined(WITH_GRAPHICS)
+.if ${PORT_OPTIONS:MGRAPHICS}
 RUN_DEPENDS+=	${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color \
 		${PEAR_DIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas \
 		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
@@ -175,37 +180,37 @@ RUN_DEPENDS+=	${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color 
 		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
-.if defined(WITH_ALTERMIME)
+.if ${PORT_OPTIONS:MALTERMIME}
 RUN_DEPENDS+=	altermime:${PORTSDIR}/mail/altermime
 .endif
 
-.if defined(WITH_CRYPT)
+.if ${PORT_OPTIONS:MCRYPT}
 RUN_DEPENDS+=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
 		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
 		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
 .endif
 
-.if defined(WITH_IPCOUNTRY)
+.if ${PORT_OPTIONS:MIPCOUNTRY}
 RUN_DEPENDS+=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
 .endif
 
-.if defined(WITH_DOMAINKEYS)
+.if ${PORT_OPTIONS:MDOMAINKEYS}
 RUN_DEPENDS+=	p5-Mail-DomainKeys>=0:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
-.if defined(WITH_SPF)
+.if ${PORT_OPTIONS:MSPF}
 RUN_DEPENDS+=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
-.if defined(WITH_DKIM)
+.if ${PORT_OPTIONS:MDKIM}
 RUN_DEPENDS+=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM
 .endif
 
-.if defined(WITH_FILE)
+.if ${PORT_OPTIONS:MFILE}
 # security fix, file > 4.21 needed
 RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .endif
@@ -213,65 +218,65 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 # archviers/rar is a 32-bit binary port, we don't want the install to fail
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
-.if defined(WITH_RAR)
+.if ${PORT_OPTIONS:MRAR}
 IA32_BINARY_PORT=	yes
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 .endif
 
-.if defined(WITH_UNRAR)
+.if ${PORT_OPTIONS:MUNRAR}
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
-.if defined(WITH_ARJ)
+.if ${PORT_OPTIONS:MARJ}
 RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 .endif
 
-.if defined(WITH_UNARJ)
+.if ${PORT_OPTIONS:MUNARJ}
 RUN_DEPENDS+=	unarj:${PORTSDIR}/archivers/unarj
 .endif
 
-.if defined(WITH_LHA)
+.if ${PORT_OPTIONS:MLHA}
 RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 .endif
 
-.if defined(WITH_ARC)
+.if ${PORT_OPTIONS:MARC}
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
 .endif
 
-.if defined(WITH_NOMARCH)
+.if ${PORT_OPTIONS:MNOMARCH}
 RUN_DEPENDS+=	nomarch:${PORTSDIR}/archivers/nomarch
 .endif
 
-.if defined(WITH_CAB)
+.if ${PORT_OPTIONS:MCAB}
 RUN_DEPENDS+=	cabextract:${PORTSDIR}/archivers/cabextract
 .endif
 
-.if defined(WITH_RPM)
+.if ${PORT_OPTIONS:MRPM}
 RUN_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .endif
 
-.if defined(WITH_ZOO)
+.if ${PORT_OPTIONS:MZOO}
 # DOS condition in 2.10.1_2
 RUN_DEPENDS+=	zoo>=2.10.1_2:${PORTSDIR}/archivers/zoo
 .endif
 
-.if defined(WITH_UNZOO)
+.if ${PORT_OPTIONS:MUNZOO}
 RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
 .endif
 
-.if defined(WITH_LZOP)
+.if ${PORT_OPTIONS:MLZOP}
 RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
 .endif
 
-.if defined(WITH_FREEZE)
+.if ${PORT_OPTIONS:MFREEZE}
 RUN_DEPENDS+=	unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
-.if defined(WITH_P7ZIP)
+.if ${PORT_OPTIONS:MP7ZIP}
 RUN_DEPENDS+=	7zr:${PORTSDIR}/archivers/p7zip
 .endif
 
-.if defined(WITH_TNEF)
+.if ${PORT_OPTIONS:MTNEF}
 RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 .endif
 
@@ -333,7 +338,7 @@ do-install:
 		${WRKSRC}/php/config.php.dist \
 		${PREFIX}/www/${PORTNAME}/config.php
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

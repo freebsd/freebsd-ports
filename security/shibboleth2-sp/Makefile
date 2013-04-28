@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/shibboleth2-sp
-# Date created:		17 Sept2008
-# Whom:			Janos Mohacsi <janos.mohacsi@bsd.hu>
-#
+# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.4.3
@@ -16,7 +12,8 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 LIB_DEPENDS=	saml.7:${PORTSDIR}/security/opensaml2
 
-OPTIONS=	APACHE22 "Use Apache version 2.2 instead of version 2.0" on
+OPTIONS_DEFINE=	APACHE22
+APACHE22_DESC=	Use Apache version 2.2 instead of version 2.0
 
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
@@ -30,7 +27,7 @@ LATEST_LINK=	shibboleth2-sp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APACHE22)
+.if ${PORT_OPTIONS:MAPACHE22}
 USE_APACHE=	22
 CONFIGURE_ARGS=	--enable-apache-22 --with-apxs22=${APXS}
 PLIST_SUB+=	WITH_APACHE_22=""

@@ -1,6 +1,5 @@
 # Created by: nectar@FreeBSD.ORG
 # $FreeBSD$
-#
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
@@ -16,16 +15,17 @@ COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
 
-OPTIONS=	IPV6	"Enable IPV6 support"				on \
-		KCM	"Enable Kerberos Credentials Manager"		on \
-		BDB	"Enable BerkeleyDB KDC backend support"		on \
-		SQLITE	"Enable SQLite KDC backend support"		off \
-		LDAP	"Enable OpenLDAP KDC backend support"		off \
-		PKINIT	"Enable PK-INIT support"			on \
-		DIGEST	"Enable DIGEST support"				on \
-		KX509	"Enable kx509 support"				on \
-		CRACKLIB "Use CrackLib for password quality checking"	off \
-		X11	 "Build X11 utilies"				off
+OPTIONS_DEFINE=	IPV6 KCM BDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB X11
+OPTIONS_DEFAULT=	KCM BDB PKINIT DIGEST KX509
+KCM_DESC=	Enable Kerberos Credentials Manager
+BDB_DESC=	Enable BerkeleyDB KDC backend support
+SQLITE_DESC=	Enable SQLite KDC backend support
+LDAP_DESC=	Enable OpenLDAP KDC backend support
+PKINIT_DESC=	Enable PK-INIT support
+DIGEST_DESC=	Enable DIGEST support
+KX509_DESC=	Enable kx509 support
+CRACKLIB_DESC=	Use CrackLib for password quality checking
+X11_DESC=	Build X11 utilies
 
 USE_AUTOTOOLS=	autoconf autoheader libtool
 USE_GNOME=	gnomehack pkgconfig
@@ -43,7 +43,7 @@ MAKE_ENV+=	INSTALL_CATPAGES=no
 INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
@@ -55,13 +55,13 @@ PLIST_SUB+=	HCRYPTO="@comment "
 PLIST_SUB+=	HCRYPTO=""
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--without-ipv6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--with-ipv6
+.else
+CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-.if !defined(WITHOUT_KCM)
+.if ${PORT_OPTIONS:MKCM}
 CONFIGURE_ARGS+=	--enable-kcm
 PLIST_SUB+=	KCM=""
 .else
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-kcm
 PLIST_SUB+=	KCM="@comment "
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--with-berkeley-db=${LOCALBASE} \
 CONFIGURE_ARGS+=	--with-berkeley-db=no
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 PLIST_SUB+=	SQLITE="@comment "
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE=""
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
 .  if defined(LDAP_SOCKET_PATH)
@@ -102,29 +102,29 @@ _SOCK=		${LDAP_RUN_DIR:C|/|%2f|g}%2fldapi
 CONFIGURE_ARGS+=	--without-openldap
 .endif
 
-.if defined(WITHOUT_PKINIT)
+.if ! ${PORT_OPTIONS:MPKINIT}
 CONFIGURE_ARGS+=	--disable-pk-init
 .else
 CONFIGURE_ARGS+=	--enable-pk-init
 .endif
 
-.if defined(WITHOUT_DIGEST)
+.if ! ${PORT_OPTIONS:MDIGEST}
 CONFIGURE_ARGS+=	--disable-digest
 .else
 CONFIGURE_ARGS+=	--enable-digest
 .endif
 
-.if defined(WITHOUT_KX509)
+.if ! ${PORT_OPTIONS:MKX509}
 CONFIGURE_ARGS+=	--disable-kx509
 .else
 CONFIGURE_ARGS+=	--enable-kx509
 .endif
 
-.if defined(WITH_CRACKLIB)
+.if ${PORT_OPTIONS:MCRACKLIB}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=		x11 xt
 CONFIGURE_ARGS+=	--with-x
 .else
@@ -138,7 +138,7 @@ CONFLICTS+=	wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 .endif
 
 post-patch:
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	@${REINPLACE_CMD} -e 's|%%LDAP_SOCKET%%|${_SOCK:Q}|g' \
 		${WRKSRC}/lib/hdb/hdb-ldap.c
 .endif
@@ -148,7 +148,7 @@ post-patch:
 		${WRKSRC}/lib/ipc/Makefile.in
 
 post-build:
-.if defined(WITH_CRACKLIB)
+.if ${PORT_OPTIONS:MCRACKLIB}
 	${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" \
 		${FILESDIR}/kpasswdd-cracklib.c.in > ${WRKSRC}/kpasswdd-cracklib.c
 	(cd ${WRKSRC} && \
@@ -161,13 +161,13 @@ pre-install:
 	@if [ -f ${WRKSRC}/lib/com_err/.libs/compile_et ]; then \
 		${CAT} ${PKGDIR}/pkg-plist.com_err >> ${PLIST}; \
 	fi
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 	@${CAT} ${PKGDIR}/pkg-plist.x11 >> ${PLIST}
 .endif
 .if !exists(/usr/include/ifaddrs.h)
 	@${ECHO_CMD} include/ifaddrs.h >> ${PLIST}
 .endif
-.if defined(WITH_CRACKLIB)
+.if ${PORT_OPTIONS:MCRACKLIB}
 	${INSTALL_PROGRAM} ${WRKSRC}/kpasswdd-cracklib.so ${PREFIX}/lib/
 	@${ECHO_CMD} lib/kpasswdd-cracklib.so >> ${PLIST}
 .endif
@@ -178,4 +178,4 @@ post-install:
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

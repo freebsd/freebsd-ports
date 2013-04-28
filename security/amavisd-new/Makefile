@@ -36,34 +36,38 @@ AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
 
-OPTIONS=	IPV6		"Support IPv6"					on \
-		BDB		"Use BerkeleyDB for nanny/cache/snmp"		on \
-		SNMP		"Install amavisd snmp subagent"			off \
-		SQLITE		"Use SQLite for lookups"			off \
-		MYSQL		"Use MySQL for lookups/logging/quarantine"	off \
-		PGSQL		"Use PgSQL for lookups/logging/quarantine"	off \
-		LDAP		"Use LDAP for lookups"				off \
-		SASL		"Use SASL authentication"			off \
-		SPAMASSASSIN	"Use mail/p5-Mail-SpamAssassin"			on \
-		P0F		"Passive operating system fingerprinting"	off \
-		ALTERMIME	"Use AlterMime for defanging/disclaimers"	off \
-		FILE		"Use newer file(1) utility from ports"		on \
-		RAR		"RAR support with archivers/rar"		off \
-		UNRAR		"RAR support with archivers/unrar"		on \
-		ARJ		"ARJ support with archivers/arj"		on \
-		UNARJ		"ARJ support with archivers/unarj"		off \
-		LHA		"LHA support with archivers/lha"		on \
-		ARC		"ARC support with archivers/arc"		on \
-		NOMARCH		"ARC support with archivers/nomarch"		off \
-		CAB		"CAB support with archivers/cabextract"		on \
-		RPM		"RPM support with archivers/rpm2cpio"		on \
-		ZOO		"ZOO support with archivers/zoo"		on \
-		UNZOO		"ZOO support with archivers/unzoo"		off \
-		LZOP		"LZOP support with archivers/lzop"		on \
-		FREEZE		"FREEZE support with archivers/freeze"		on \
-		P7ZIP		"P7ZIP support with archivers/p7zip"		on \
-		MSWORD		"Ms Word support with textproc/ripole"		on \
-		TNEF		"Add external tnef decoder converters/tnef"	off
+OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F ALTERMIME \
+		FILE RAR UNRAR ARJ UNARJ LHA ARC NOMARCH CAB RPM ZOO UNZOO LZOP FREEZE \
+		P7ZIP MSWORD TNEF DOCS
+OPTIONS_DEFAULT=	IPV6 BDB SPAMASSASSIN FILE UNRAR ARJ LHA ARC CAB RPM ZOO LZOP \
+			FREEZE P7ZIP MSWORD
+BDB_DESC=		Use BerkeleyDB for nanny/cache/snmp
+SNMP_DESC=		Install amavisd snmp subagent
+SQLITE_DESC=		Use SQLite for lookups
+MYSQL_DESC=		Use MySQL for lookups/logging/quarantine
+PGSQL_DESC=		Use PgSQL for lookups/logging/quarantine
+LDAP_DESC=		Use LDAP for lookups
+SASL_DESC=		Use SASL authentication
+SPAMASSASSIN_DESC=	Use mail/p5-Mail-SpamAssassin
+P0F_DESC=		Passive operating system fingerprinting
+ALTERMIME_DESC=		Use AlterMime for defanging/disclaimers
+FILE_DESC=		Use newer file(1) utility from ports
+RAR_DESC=		RAR support with archivers/rar
+UNRAR_DESC=		RAR support with archivers/unrar
+ARJ_DESC=		ARJ support with archivers/arj
+UNARJ_DESC=		ARJ support with archivers/unarj
+LHA_DESC=		LHA support with archivers/lha
+ARC_DESC=		ARC support with archivers/arc
+NOMARCH_DESC=		ARC support with archivers/nomarch
+CAB_DESC=		CAB support with archivers/cabextract
+RPM_DESC=		RPM support with archivers/rpm2cpio
+ZOO_DESC=		ZOO support with archivers/zoo
+UNZOO_DESC=		ZOO support with archivers/unzoo
+LZOP_DESC=		LZOP support with archivers/lzop
+FREEZE_DESC=		FREEZE support with archivers/freeze
+P7ZIP_DESC=		P7ZIP support with archivers/p7zip
+MSWORD_DESC=		Ms Word support with textproc/ripole
+TNEF_DESC=		Add external tnef decoder converters/tnef
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
@@ -80,55 +84,55 @@ PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
 USE_RC_SUBR+=	amavisd
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
-.if defined(WITH_SNMP) && defined(WITH_BDB)
+.if ${PORT_OPTIONS:MSNMP) && defined(WITH_BDB}
 USE_RC_SUBR+=	amavisd-snmp
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 RUN_DEPENDS+=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
-.if defined(WITH_P0F)
+.if ${PORT_OPTIONS:MP0F}
 RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:${PORTSDIR}/net-mgmt/p0f
 USE_RC_SUBR+=	amavis-p0fanalyzer
 .else
 AMAVIS_NOP0F=	"@comment "
 .endif
 
-.if defined(WITH_ALTERMIME)
+.if ${PORT_OPTIONS:MALTERMIME}
 RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
 .endif
 
-.if defined(WITH_FILE)
+.if ${PORT_OPTIONS:MFILE}
 # security fix, file > 4.21 needed
 RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .endif
@@ -137,7 +141,7 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
 
-.if defined(WITH_RAR)
+.if ${PORT_OPTIONS:MRAR}
 # support for archivers/rar is broken on ia64
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
@@ -146,64 +150,64 @@ IGNORE=	archviers/rar is a 32-bit binary port and is not compatible with ${ARCH}
 .endif
 .endif
 
-.if defined(WITH_UNRAR)
+.if ${PORT_OPTIONS:MUNRAR}
 RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
 .endif
 
-.if defined(WITH_ARJ)
+.if ${PORT_OPTIONS:MARJ}
 RUN_DEPENDS+=	${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj
 .endif
 
-.if defined(WITH_UNARJ)
+.if ${PORT_OPTIONS:MUNARJ}
 RUN_DEPENDS+=	${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj
 .endif
 
-.if defined(WITH_LHA)
+.if ${PORT_OPTIONS:MLHA}
 RUN_DEPENDS+=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
 .endif
 
-.if defined(WITH_ARC)
+.if ${PORT_OPTIONS:MARC}
 RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
 .endif
 
-.if defined(WITH_NOMARCH)
+.if ${PORT_OPTIONS:MNOMARCH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/nomarch:${PORTSDIR}/archivers/nomarch
 .endif
 
-.if defined(WITH_CAB)
+.if ${PORT_OPTIONS:MCAB}
 RUN_DEPENDS+=	${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract
 .endif
 
-.if defined(WITH_RPM)
+.if ${PORT_OPTIONS:MRPM}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .endif
 
-.if defined(WITH_ZOO)
+.if ${PORT_OPTIONS:MZOO}
 # DOS condition in 2.10.1_2
 RUN_DEPENDS+=	zoo>=2.10.1_2:${PORTSDIR}/archivers/zoo
 .endif
 
-.if defined(WITH_UNZOO)
+.if ${PORT_OPTIONS:MUNZOO}
 RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
 .endif
 
-.if defined(WITH_LZOP)
+.if ${PORT_OPTIONS:MLZOP}
 RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
 .endif
 
-.if defined(WITH_FREEZE)
+.if ${PORT_OPTIONS:MFREEZE}
 RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
-.if defined(WITH_P7ZIP)
+.if ${PORT_OPTIONS:MP7ZIP}
 RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
 .endif
 
-.if defined(WITH_MSWORD)
+.if ${PORT_OPTIONS:MMSWORD}
 RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/textproc/ripole
 .endif
 
-.if defined(WITH_TNEF)
+.if ${PORT_OPTIONS:MTNEF}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
@@ -238,7 +242,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
-.if defined(WITH_P0F)
+.if ${PORT_OPTIONS:MP0F}
 	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${PREFIX}/sbin
 .endif
 .for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
@@ -257,7 +261,7 @@ do-install:
 .if !exists(${PREFIX}/etc/amavisd-custom.conf)
 	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd-custom.conf ${PREFIX}/etc
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/images
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

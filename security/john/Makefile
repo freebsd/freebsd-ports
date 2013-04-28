@@ -1,9 +1,5 @@
-# New ports collection makefile for:	John the Ripper
-# Date created:				Sun Mar 09, 1997
-# Whom:					David O'Brien <obrien@FreeBSD.org>
-#
+# Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	john
 DISTVERSION=	1.7.9-jumbo-5
@@ -38,7 +34,8 @@ CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
 		RULES CONTACT CREDITS
 
-OPTIONS=	OPENMP	"Compile with OpenMP support"	off
+OPTIONS_DEFINE=	OPENMP DOCS
+OPENMP_DESC=	Compile with OpenMP support
 
 .include <bsd.port.pre.mk>
 
@@ -65,7 +62,7 @@ BROKEN=		Does not compile on sparc64
 post-patch:
 	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|' \
 		-e '/^CFLAGS =/s|-O2|${CFLAGS}|' ${WRKSRC}/src/Makefile
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 	@${REINPLACE_CMD} -E \
 		'/(fopenmp|-m${MACHINE_CPU:Msse2})$$/s,#(OMPFLAGS =),\1,' \
 			${WRKSRC}/src/Makefile
@@ -93,9 +90,9 @@ do-install:
 .if !exists(${PREFIX}/etc/john.conf)
 	${INSTALL_DATA} ${WRKSRC}/run/john.conf ${PREFIX}/etc
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
