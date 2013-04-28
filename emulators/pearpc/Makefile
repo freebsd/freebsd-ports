@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PearPC
-# Date created:				22 May 2004
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pearpc
 PORTVERSION=	0.4
@@ -24,9 +20,8 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/ppc etc/ppccfg.example %%DATADIR%%/video.x
 PLIST_DIRS=	%%DATADIR%%
 
-OPTIONS=	SDL		 "Use SDL for user interface"	  off \
-		OPTIMIZED_CFLAGS "Make an optimized build"	  off \
-		DEBUG		 "Make debug+profiled build"	  off
+OPTIONS_DEFINE=	SDL OPTIMIZED_CFLAGS DEBUG
+SDL_DESC=	Use SDL for user interface
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +31,7 @@ BROKEN=		Internal compiler error on ia64
 
 # GTK and QT interfaces are broken in this version
 #
-#.if defined(WITH_QT)
+#.if ${PORT_OPTIONS:MQT}
 #CONFIGURE_ARGS+=	--enable-ui=qt
 #USE_QT_VER=	3
 #QTDIR?=		${QT_PREFIX}
@@ -45,20 +40,20 @@ BROKEN=		Internal compiler error on ia64
 #CONFIGURE_ARGS+=	--enable-ui=nogui
 #.endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=	--enable-ui=sdl
 USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=	--enable-ui=x11
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math
 .else
 CONFIGURE_ARGS+=	--disable-fpo
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-profiling	# implies --enable-debug
 .endif
 

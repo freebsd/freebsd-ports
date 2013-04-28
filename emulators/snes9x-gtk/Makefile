@@ -1,9 +1,5 @@
-# New ports collection makefile for:    snes9x-gtk
-# Date created:         2009-12-12
-# Whom:                 okeeblow <root@cooltrainer.org>
-#
+# Created by: okeeblow <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snes9x
 PORTVERSION=	1.52r79
@@ -32,65 +28,63 @@ CONFIGURE_ARGS+=	--without-alsa
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
-OPTIONS=	DEBUG	"Enable debug information"	off \
-		OPENGL	"Enable OpenGL support"	off \
-		X86_ASM	"Use i386 optimization (only for i386)"	on \
-		MMX	"Enable MMX (only for i386)"	off \
-		JMA	"Enable JMA archive decompression support"	on \
-		NETPLAY	"Enable network support"	on \
-		XV "Enable XVideo output on GTK" on \
-		XRANDR "Enable XRandR support on GTK" on
+OPTIONS_DEFINE=	DEBUG OPENGL JMA NETPLAY XV XRANDR
+OPTIONS_DEFAULT=	JMA NETPLAY XV XRANDR
+OPTIONS_DEFINE_i386=	ASM MMX
+OPTIONS_DEFAULT_i386=	ASM
+JMA_DESC=	Enable JMA archive decompression support
+NETPLAY_DESC=	Enable network support
+XV_DESC=	Enable XVideo output on GTK
+XRANDR_DESC=	Enable XRandR support on GTK
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug
 .else
 CONFIGURE_ARGS+=	--without-debug
 .endif
 
-.if ${ARCH} == "i386"
-.if !defined(WITHOUT_X86_ASM)
+.if ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CONFIGURE_ARGS+=	--with-assembler
 .else
 CONFIGURE_ARGS+=	--without-assembler
 .endif
 
-.if defined(WITH_MMX) && !defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MMMX} && !defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--with-mmx
 .else
 CONFIGURE_ARGS+=	--without-mmx
 .endif
-.endif
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 CONFIGURE_ARGS+=	--with-opengl
 USE_GL=	glu
 .else
 CONFIGURE_ARGS+=	--without-opengl
 .endif
 
-.if !defined(WITHOUT_JMA)
+.if ${PORT_OPTIONS:MJMA}
 CONFIGURE_ARGS+=	--with-jma-decomp
 .else
 CONFIGURE_ARGS+=	--without-jma-decomp
 .endif
 
-.if !defined(WITHOUT_NETPLAY)
+.if ${PORT_OPTIONS:MNETPLAY}
 CONFIGURE_ARGS+=	--with-netplay
 .else
 CONFIGURE_ARGS+=	--without-netplay
 .endif
 
-.if !defined(WITHOUT_XV)
+.if ${PORT_OPTIONS:MXV}
 CONFIGURE_ARGS+=	--with-xv
 USE_XORG+=	xv
 .else
 CONFIGURE_ARGS+=	--without-xv
 .endif
 
-.if !defined(WITHOUT_XRANDR)
+.if ${PORT_OPTIONS:MXRANDR}
 CONFIGURE_ARGS+=	--with-xrandr
 USE_XORG+=	xrandr
 .else

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    snes9x
-# Date created:         20 July 1997
-# Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	snes9x
 PORTVERSION=	1.51
@@ -33,44 +29,46 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS=	DEBUG	"Enable debug information"	off \
-		OPENGL	"Enable OpenGL support"	off \
-		SCREENSHOT	"Enable screenshot support"	on \
-		X86_ASM	"Use i386 optimization (only for i386)"	on \
-		MMX	"Enable MMX (only for i386)"	off \
-		JMA	"Enable JMA archive decompression support"	on \
-		NETPLAY	"Enable network support"	on
+OPTIONS_DEFINE=	DEBUG OPENGL SCREENSHOT JMA NETPLAY DOCS
+OPTIONS_DEFINE_i386=	ASM MMX
+OPTIONS_DEFAULT_i386=	MMX
+OPTIONS_DEFAULT=	SCREENSHOT JMA NETPLAY
+
+SCREENSHOT_DESC=	Enable screenshot support
+MMX_DESC=	Enable MMX
+JMA_DESC=	Enable JMA archive decompression support
+NETPLAY_DESC=	Enable network support
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	controls.txt control-inputs.txt  changes.txt hardware.txt \
 		porting.html faqs.txt snapshots.txt snes9x.conf.default \
 		README
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug
 .else
 CONFIGURE_ARGS+=	--without-debug
 .endif
 
 .if ${ARCH} == "i386"
-.if !defined(WITHOUT_X86_ASM)
+.if ${PORT_OPTIONS:MX86_ASM}
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CONFIGURE_ARGS+=	--with-assembler
 .else
 CONFIGURE_ARGS+=	--without-assembler
 .endif
 
-.if defined(WITH_MMX) && !defined(PACKAGE_BUILDING)
+.if ${PORT_OPTIONS:MMMX) && !defined(PACKAGE_BUILDING}
 CONFIGURE_ARGS+=	--with-mmx
 .else
 CONFIGURE_ARGS+=	--without-mmx
 .endif
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
 SNES9X_BIN=	osnes9x
@@ -78,20 +76,20 @@ SNES9X_BIN=	osnes9x
 SNES9X_BIN=	snes9x
 .endif
 
-.if !defined(WITHOUT_SCREENSHOT)
+.if ${PORT_OPTIONS:MSCREENSHOT}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-screenshot
 .else
 CONFIGURE_ARGS+=	--without-screenshot
 .endif
 
-.if !defined(WITHOUT_JMA)
+.if ${PORT_OPTIONS:MJMA}
 CONFIGURE_ARGS+=	--with-jma-decomp
 .else
 CONFIGURE_ARGS+=	--without-jma-decomp
 .endif
 
-.if !defined(WITHOUT_NETPLAY)
+.if ${PORT_OPTIONS:MNETPLAY}
 CONFIGURE_ARGS+=	--with-netplay
 .else
 CONFIGURE_ARGS+=	--without-netplay
@@ -107,7 +105,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|Pitch2|Pitch|g' ${WRKSRC}/unix/opengl.cpp
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for FILE in control* changes.txt hardware.txt porting.html faqs.txt \
 		snapshots.txt snes9x.conf.default

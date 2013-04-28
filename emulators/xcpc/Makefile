@@ -23,33 +23,34 @@ LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		dsk.5:${PORTSDIR}/emulators/libdsk
 
-OPTIONS=	MOTIF "With Motif widget set" on \
-		ATHENA "With Athen widget set" off \
-		XSHM "With XShm support" on \
-		DEBUG "Turn debugging on" off
+OPTIONS_DEFINE=	MOTIF ATHENA XSHM DEBUG
+OPTIONS_DEFAULT=	MOTIF XSHM
+MOTIF_DESC=	With Motif widget set
+ATHENA_DESC=	With Athen widget set
+XSHM_DESC=	With XShm support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.if defined(WITH_XSHM)
+.if ${PORT_OPTIONS:MXSHM}
 CONFIGURE_ARGS+=--enable-xshm
 .else
 CONFIGURE_ARGS+=--disable-xshm
 .endif
 
-.if defined(WITH_MOTIF)
+.if ${PORT_OPTIONS:MMOTIF}
 USE_MOTIF=yes
 CONFIGURE_ARGS+=--with-motif1
 .else
 CONFIGURE_ARGS+=--without-motif1
 .endif
 
-.if defined(WITH_ATHENA)
+.if ${PORT_OPTIONS:MATHENA}
 LIB_DEPENDS+=	Xaw.8:${PORTSDIR}/x11-toolkits/libXaw
 CONFIGURE_ARGS+=--with-athena
 .else

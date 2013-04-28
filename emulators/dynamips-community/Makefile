@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dynamips
-# Date created:				17 Apr 2011
-# Whom:					Pavel I Volkov <pavelivolkov@googlemail.com>
-#
+# Created by: Pavel I Volkov <pavelivolkov@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dynamips
 PORTVERSION=	0.2.8
@@ -25,7 +21,8 @@ CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	UNSTABLE	"development code (x64 Mac)"	off
+OPTIONS_DEFINE=	UNSTABLE
+UNSTABLE_DESC=	development code (x64 Mac)
 
 LDFLAGS+=	-luuid
 MAKE_ENV=	\
@@ -43,7 +40,7 @@ MAN1=		${PORTNAME}.1 nvram_export.1
 MAN7=		hypervisor_mode.7
 .endif
 
-.if defined(WITH_UNSTABLE)
+.if ${PORT_OPTIONS:MUNSTABLE}
 DYNAMIPS_CODE=	"unstable"
 .else
 DYNAMIPS_CODE=	"stable"
@@ -65,7 +62,7 @@ DYNAMIPS_ARCH=	"nojit"
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.${DYNAMIPS_CODE} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/nvram_export ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.community ${DOCSDIR}

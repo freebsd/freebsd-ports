@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gxemul
-# Date created:		15 May 2005
-# Whom:			Janni
-#
+# Created by: Janni
 # $FreeBSD$
-#
 
 PORTNAME=	gxemul
 PORTVERSION=	0.6.0
@@ -14,7 +10,8 @@ MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
-OPTIONS=	X11	 "X11 support" on
+OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=	X11
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	build
@@ -24,12 +21,12 @@ MAN1=		gxemul.1
 PORTDOCS=	*
 PLIST_FILES=	bin/gxemul
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-x
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
+.else
+CONFIGURE_ARGS+=--disable-x
 .endif
 
 post-patch:
@@ -41,7 +38,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} -p ${DOCSDIR}/components
 	${MKDIR} -p ${DOCSDIR}/machines
@@ -50,4 +47,4 @@ do-install:
 	${INSTALL_DATA} `find ${WRKSRC}/doc/ -type f -depth 1` ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

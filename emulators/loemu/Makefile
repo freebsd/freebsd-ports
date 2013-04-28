@@ -1,9 +1,5 @@
-# New ports collection makefile for:	loemu
-# Date created:		2007-02-27
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	loemu
 PORTVERSION=	0.3.1
@@ -23,26 +19,28 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=		yes
 
-OPTIONS=	MAME	"Install mame emulator"	on \
-		XMAME	"Install xmame emulator"	off \
-		SNES9X	"Install snes9x emulator"	on \
-		ZSNES	"Install zsnes emulator"	off
+OPTIONS_DEFINE=	MAME XMAME SNES9X ZSNES
+OPTIONS_DEFAULT=	MAME SNES9X
+MAME_DESC=	Install mame emulator
+XMAME_DESC=	Install xmame emulator
+SNES9X_DESC=	Install snes9x emulator
+ZSNES_DESC=	Install zsnes emulator
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MAME)
+.if ${PORT_OPTIONS:MMAME}
 RUN_DEPENDS+=	mame:${PORTSDIR}/emulators/mame
 .endif
 
-.if defined(WITH_XMAME)
+.if ${PORT_OPTIONS:MXMAME}
 RUN_DEPENDS+=	xmame:${PORTSDIR}/emulators/xmame
 .endif
 
-.if !defined(WITHOUT_SNES9X)
+.if ${PORT_OPTIONS:MSNES9X}
 RUN_DEPENDS+=	snes9x:${PORTSDIR}/emulators/snes9x
 .endif
 
-.if defined(WITH_ZSNES)
+.if ${PORT_OPTIONS:MZSNES}
 RUN_DEPENDS+=	zsnes:${PORTSDIR}/emulators/zsnes
 .endif
 
@@ -56,4 +54,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
