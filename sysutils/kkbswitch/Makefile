@@ -31,7 +31,7 @@ PLIST_SUB=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} \
 			DOCSDIR=${DOCSDIR}
 
-.include <bsd.port.optons.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRU_UA_LAYOUT}
 CONFIGURE_ARGS+=	--enable-ru-ua-layout
