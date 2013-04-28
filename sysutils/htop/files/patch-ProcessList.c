@@ -1,5 +1,5 @@
---- ProcessList.c.orig	2012-02-03 01:45:11.000000000 +0200
-+++ ProcessList.c	2012-05-16 17:39:50.000000000 +0300
+--- ProcessList.c.orig	2013-04-21 03:39:12.000000000 +0800
++++ ProcessList.c	2013-04-21 03:41:41.000000000 +0800
 @@ -25,6 +25,19 @@
  #include <time.h>
  #include <assert.h>
@@ -20,7 +20,16 @@
  /*{
  #include "Vector.h"
  #include "Hashtable.h"
-@@ -749,11 +762,13 @@
+@@ -685,7 +698,7 @@
+       unsigned long long int lasttimes = (process->utime + process->stime);
+       if (! ProcessList_readStatFile(process, dirname, name, command))
+          goto errorReadingProcess;
+-      Process_updateIOPriority(process);
++//      Process_updateIOPriority(process);
+       float percent_cpu = (process->utime + process->stime - lasttimes) / period * 100.0;
+       process->percent_cpu = MAX(MIN(percent_cpu, cpus*100.0), 0.0);
+       if (isnan(process->percent_cpu)) process->percent_cpu = 0.0;
+@@ -764,13 +777,15 @@
  
  void ProcessList_scan(ProcessList* this) {
     unsigned long long int usertime, nicetime, systemtime, systemalltime, idlealltime, idletime, totaltime, virtalltime;
@@ -32,12 +41,14 @@
 +   #ifndef __FreeBSD__
 +   unsigned long long int swapFree = 0;
 +   file = fopen(PROCMEMINFOFILE, "r");
-    assert(file != NULL);
+    if (file == NULL) {
+       CRT_fatalError("Cannot open " PROCMEMINFOFILE);
+    }
 -   int cpus = this->cpuCount;
     {
        char buffer[128];
        while (fgets(buffer, 128, file)) {
-@@ -788,6 +803,33 @@
+@@ -805,6 +820,33 @@
     this->usedMem = this->totalMem - this->freeMem;
     this->usedSwap = this->totalSwap - swapFree;
     fclose(file);
@@ -70,4 +81,4 @@
 +   #endif
  
     file = fopen(PROCSTATFILE, "r");
-    assert(file != NULL);
+    if (file == NULL) {

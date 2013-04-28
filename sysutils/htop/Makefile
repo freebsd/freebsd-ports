@@ -1,22 +1,18 @@
-# New ports collection makefile for:	htop
-# Date created:		27 August 2007
-# Whom:			Tony Shadwick <tshadwick@oss-solutions.com>
-#
+# Created by: Tony Shadwick <tshadwick@oss-solutions.com>
 # $FreeBSD$
-#
 
 PORTNAME=	htop
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A better top(1) - interactive process viewer
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
-OPTIONS=	LSOF "Enable lsof support" On
+OPTIONS_DEFINE=	LSOF
+OPTIONS_DEFAULT=	LSOF
 
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
@@ -35,9 +31,9 @@ USE_PYTHON_BUILD=	yes
 
 MAN1=	htop.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LSOF)
+.if ${PORT_OPTIONS:MLSOF}
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
@@ -47,4 +43,4 @@ post-patch:
 pre-configure:
 	@[ -f /compat/linux/proc/stat ] || { ${CAT} ${PKGMESSAGE}; ${FALSE}; }
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
