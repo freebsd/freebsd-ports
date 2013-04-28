@@ -27,8 +27,6 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	README
 
 DESKTOP_ENTRIES="Bubble Chains" "${COMMENT}" \
@@ -36,12 +34,6 @@ DESKTOP_ENTRIES="Bubble Chains" "${COMMENT}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
 
 P7ZIP_CMD=	${LOCALBASE}/bin/7z
 P7ZIP_ARGS=	x -o${WRKDIR}
