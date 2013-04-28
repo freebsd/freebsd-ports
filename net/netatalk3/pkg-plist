@@ -1,6 +1,7 @@
 %%ATFUNCS%%bin/ad
 bin/afpldaptest
 bin/afppasswd
+%%DBUS%%bin/afpstats
 bin/apple_dump
 bin/asip-status.pl
 bin/cnid2_create
@@ -10,6 +11,7 @@ bin/netatalk-config
 bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
+%%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
 @exec [ -f %B/afp.conf ] || cp %B/%f %B/afp.conf
 @unexec if cmp -s %D/etc/extmap.conf %D/etc/extmap.conf.dist; then rm -f %D/etc/extmap.conf; fi
 etc/extmap.conf.dist
@@ -69,7 +71,7 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.3
+lib/libatalk.so.4
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
