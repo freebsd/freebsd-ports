@@ -89,7 +89,7 @@ _GSTREAMER_PLUGINS+= \
 # plugins only in 1.0
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
-		assrender celt curl dvdread libav modplug png spandsp vpx \
+		assrender celt curl dvdread libav modplug png rtmp spandsp vpx \
 		x ximagesrc zbar
 .endif
 
@@ -291,6 +291,8 @@ mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
 
 qt4_DEPENDS=	multimedia/gstreamer-qt4
 qt4_GST_PREFIX=	gstreamer-
+
+rtmp_DEPENDS=	multimedia/gstreamer1-plugins-rtmp
 
 v4l2_DEPENDS=	multimedia/gstreamer-plugins-v4l2
 
