@@ -9,6 +9,7 @@
 # OPTIONS_DEFAULT_${ARCH}	- List of options activated by default for a
 #				given arch
 #
+# OPTIONS_EXCLUDE		- List of options unsupported (useful for slave ports)
 # OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
 # ${OPTION}_DESC		- Description the the ${OPTION}
 #
@@ -36,6 +37,10 @@
 #
 # WITH				Set options from the command line
 # WITHOUT			Unset options from the command line
+#
+# OPTIONS_SLAVE			This is designed for slave ports, it removes an option
+# 				from the options list inherited from the master port
+# 				and it always adds it to PORT_OPTIONS meaning activated
 
 ##
 # Set all the options available for the ports, beginning with the
@@ -67,10 +72,7 @@ PORT_OPTIONS+=	EXAMPLES
 PORT_OPTIONS+=	IPV6
 
 # Exclude per arch options
-.for opt in ${OPTIONS_EXCLUDE_${ARCH}}
-OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
-OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
-.endfor
+_ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE}
 
 # Add per arch options
 .for opt in ${OPTIONS_DEFINE_${ARCH}}
@@ -92,11 +94,6 @@ ALL_OPTIONS+=	${opt}
 .endfor
 
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
-
-# Remove global options the port maintainer doesn't want
-.for opt in ${OPTIONS_EXCLUDE}
-ALL_OPTIONS:=	${ALL_OPTIONS:N${opt}}
-.endfor
 
 #XXX  to kill when old option framework won't be used anymore
 .if defined(OPTIONS)
@@ -136,6 +133,31 @@ PORT_OPTIONS:=	 ${PORT_OPTIONS:N${O}}
 #XXX end of compatibility
 
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
+OPTIONS_DEFINE:=	${OPTIONS_DEFINE:O:u}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
+
+# Remove global options the port maintainer doesn't want
+.for opt in ${_ALL_EXCLUDE}
+OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
+ALL_OPTIONS:=		${ALL_OPTIONS:N${opt}}
+.endfor
+
+# Remove illegal per-arch options
+.for opt in ${_ALL_EXCLUDE}
+.  for single in ${OPTIONS_SINGLE}
+OPTIONS_SINGLE_${single}:=	${OPTIONS_SINGLE_${single}:N${opt}}
+.  endfor
+.  for radio in ${OPTIONS_RADIO}
+OPTIONS_RADIO_${radio}:=	${OPTIONS_RADIO_${radio}:N${opt}}
+.  endfor
+.  for multi in ${OPTIONS_MULTI}
+OPTIONS_MULTI_${multi}:=	${OPTIONS_MULTI_${multi}:N${opt}}
+.  endfor
+.  for group in ${OPTIONS_GROUP}
+OPTIONS_GROUP_${group}:=	${OPTIONS_GROUP_${group}:N${opt}}
+.  endfor
+.endfor
 
 # complete list
 COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
@@ -225,6 +247,34 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 
 .endif
 
+## FORCE
+## Set system-wide defined options (set by user in make.conf)
+.  for opt in ${OPTIONS_SET_FORCE}
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
+PORT_OPTIONS+=	${opt}
+.    endif
+.  endfor
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+
+## Remove the options excluded system-wide (set by user in make.conf)
+.  for opt in ${OPTIONS_UNSET_FORCE}
+PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.  endfor
+
+## Set the options specified per-port (set by user in make.conf)
+.  for opt in ${${UNIQUENAME}_SET_FORCE}
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
+PORT_OPTIONS+=	${opt}
+.    endif
+.  endfor
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+
+## Unset the options excluded per-port (set by user in make.conf)
+.  for opt in ${${UNIQUENAME}_UNSET_FORCE}
+PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.  endfor
+
+
 ## Cmdline always win over the rest
 .for opt in ${WITH}
 .  if !empty(COMPLETE_OPTIONS_LIST:M${opt})
@@ -235,6 +285,10 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 .for opt in ${WITHOUT}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.endfor
+
+.for opt in ${OPTIONS_SLAVE}
+PORT_OPTIONS+=	${opt}
 .endfor
 .undef opt
 
