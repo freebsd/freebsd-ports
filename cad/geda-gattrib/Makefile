@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geda-gattrib
-# Date created:			26 June 2006
-# Whom:				Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gattrib
 PORTVERSION=	1.4.3
@@ -33,7 +29,9 @@ CONFIGURE_ARGS=	--with-docdir="${DOCSDIR}" --disable-update-mime-database \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	motor
-# Date created:				20 February 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	motor
 PORTVERSION=	3.4.0
@@ -19,7 +15,10 @@ USE_GMAKE=	yes
 USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
-.if !defined(WITHOUT_NLS)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""
@@ -35,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|strndup|my_strndup|' ${WRKSRC}/parser/src/parser.c \
 		${WRKSRC}/parser/src/strfn.c ${WRKSRC}/parser/include/strfn.h
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})

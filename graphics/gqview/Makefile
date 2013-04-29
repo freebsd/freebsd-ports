@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gqview
-# Date Created:				27 Oct 1998
-# Whom:					Vanilla Pooh Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla Pooh Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gqview
 PORTVERSION=	2.0.4
@@ -30,12 +26,14 @@ CONFLICTS=	gqview-devel-[0-9]*
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USES=		gettext
-PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
@@ -52,7 +50,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

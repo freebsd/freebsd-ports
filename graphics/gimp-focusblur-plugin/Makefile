@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-focusblur
-# Date created:		03 Jun 2009
-# Whom:			Denis Barov <dindin@dindin.ru>
-#
+# Created by: Denis Barov <dindin@dindin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	focusblur
 PORTVERSION=	3.2.6
@@ -34,7 +30,9 @@ PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

@@ -23,7 +23,9 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		tpb.1
 
-.ifndef(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -39,7 +41,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tpbrc ${PREFIX}/etc/tpbrc.default
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/callback_example.sh ${DOCSDIR}
 .endif

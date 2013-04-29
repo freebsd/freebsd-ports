@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gimmie
-# Date created:                         28 06 2006
-# Whom:                                 pneumann@gmail.com
-#
+# Created by: pneumann@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	gimmie
 PORTVERSION=	0.2.7
@@ -30,7 +26,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zaz
-# Date created:		25 Aug 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zaz
 PORTVERSION=	1.0.0
@@ -32,7 +28,9 @@ CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 PORTDOCS=	*
 
 # Unconditially disable NLS for now: the game segfaults with 8bit locales
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -43,7 +41,7 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif

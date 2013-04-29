@@ -1,9 +1,5 @@
-# New ports collection makefile for: quilt
-# Date created:        20 Oct 2006
-# Whom:                Dirk Jagdmann <doj@cubic.org>
-#
+# Created by: Dirk Jagdmann <doj@cubic.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quilt
 PORTVERSION=	0.60
@@ -28,7 +24,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-OPTIONS=	RPMBUILD "rpmbuild support" off
+OPTIONS_DEFINE=	RPMBUILD DOCS NLS
+RPMBUILD_DESC=	rpmbuild support
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
@@ -40,7 +37,7 @@ PORTDOCS=	README README.MAIL quilt.pdf
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RPMBUILD)
+.if ${PORT_OPTIONS:MRPMBUILD}
 BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
 PLIST_SUB+=	RPMBUILD=""
@@ -49,7 +46,7 @@ CONFIGURE_ARGS+=--without-rpmbuild
 PLIST_SUB+=	RPMBUILD="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
 .else
@@ -63,7 +60,7 @@ PLIST_SUB+=	SENDMAIL=""
 PLIST_SUB+=	SENDMAIL="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 

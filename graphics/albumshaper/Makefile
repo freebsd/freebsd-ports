@@ -35,7 +35,9 @@ DESKTOP_ENTRIES=	"AlbumShaper" \
 			"Qt;Graphics;" \
 			"false"
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -47,7 +49,7 @@ MYDISTDOCS=	AlbumShaper.doc install packageHowTo.txt readme.txt \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/AlbumShaper.pro
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/INSTALLS\ +=\ translations/d' \
 		${WRKSRC}/AlbumShaper.pro
 .endif
@@ -57,7 +59,7 @@ pre-build:
 		qmake AlbumShaper.pro )
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${MYDISTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

@@ -22,14 +22,18 @@ CONFIGURE_ARGS=	--with-gtk2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_LIBXINE)
+OPTIONS_DEFINE=	LIBXINE MPLAYER NLS
+OPTIONS_DEFAULT=	LIBXINE
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MLIBXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
-.elif defined(WITH_MPLAYER)
+.elif ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 CONFIGURE_ARGS+=	--enable-mplayer
 .endif
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .else

@@ -38,11 +38,13 @@ WRKSRC=		${WRKDIR}/${SFNAME}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 SFNAME=		${PORTNAME}-sources-${DISTVERSION}
@@ -59,7 +61,7 @@ RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-extract:
 	cd ${WRKSRC} && ${TAR} -xf ${DISTDIR}/${DFNAME}.tgz
 .endif
@@ -72,14 +74,14 @@ pre-configure:
 		${WRKSRC}/common/gestfich.cpp
 
 post-install:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}/internat
 	(cd ${WRKSRC}/internat &&	\
 		${COPYTREE_SHARE} \* ${DATADIR}/internat)
 	${RM} ${DATADIR}/internat/CMakeLists.txt
 	${FIND} ${DATADIR}/internat -name kicad.po -delete
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 	@${ECHO_MSG}

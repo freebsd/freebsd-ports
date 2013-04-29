@@ -45,7 +45,9 @@ USE_GMAKE=	yes
 USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -75,10 +77,4 @@ post-install:
 			${PREFIX}/etc/xdg/repsnapper/repsnapper.conf ; \
 	fi
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		needs acosl(3) function to compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

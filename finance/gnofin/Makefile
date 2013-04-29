@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnofin
-# Date created:				Sun Jul 18 1999
-# Whom:					domi@saargate.de
-#
+# Created by: domi@saargate.de
 # $FreeBSD$
-#
 
 PORTNAME=	gnofin
 PORTVERSION=	0.8.4
@@ -22,7 +18,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB=	NLS=""
 .else
