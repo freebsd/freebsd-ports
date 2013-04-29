@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DirectFB
-# Date created:				19 October 2002
-# Whom:					Devaux Fabien <fab@gcu.info>
-#
+# Created by: Devaux Fabien <fab@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.13
@@ -15,17 +11,16 @@ DISTNAME=	DirectFB-${PORTVERSION}
 MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Graphic development lightweight API
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
-
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	FREETYPE2	"Enable Freetype support" on \
-		X11		"Enable X11 backend" on \
-		SDL		"Enable SDL backend" on \
-		UNIQUE		"Enable Unique (WM Module)" off \
-		TESTS		"Install test apps" off
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
+
+OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST
+UNIQUE_DESC=	Unique (WM Module)
+
+OPTIONS_DEFAULT=	FREETYPE X11 SDL
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 USE_AUTOTOOLS=	libtool
@@ -56,12 +51,12 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	man2html:${PORTSDIR}/textproc/man2html
 PORTDOCS=	*
 .endif
 
-.if defined(WITH_FREETYPE2)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--enable-freetype
 PLIST_SUB+=	FREETYPE2=""
@@ -70,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-freetype
 PLIST_SUB+=	FREETYPE2="@comment "
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG+=	x11 xext xproto
 CONFIGURE_ARGS+=	--enable-x11
 PLIST_SUB+=	X11=""
@@ -79,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-x11
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 CONFIGURE_ARGS+=	--enable-sdl
 PLIST_SUB+=	SDL=""
@@ -88,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-sdl
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_UNIQUE)
+.if ${PORT_OPTIONS:MUNIQUE}
 CONFIGURE_ARGS+=	--enable-unique
 PLIST_SUB+=	UNIQUE=""
 .else
@@ -96,7 +91,7 @@ CONFIGURE_ARGS+=	--disable-unique
 PLIST_SUB+=	UNIQUE="@comment "
 .endif
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=	--with-tests
 PLIST_SUB+=	TESTS=""
 .else
@@ -133,7 +128,7 @@ post-patch:
 	@${GREP} -lr alloca\.h ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|<alloca\.h>|<stdlib.h>|g'
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}/html
 .for f in AUTHORS ChangeLog NEWS README TODO fb.modes docs/README.screenshots docs/*.html

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr
-# Date created:		10 October 2005
-# Whom:			Ulf Lilleengen
-#
+# Created by: Ulf Lilleengen
 # $FreeBSD$
-#
 
 PORTNAME=	bzr
 PORTVERSION=	2.5.1
@@ -17,8 +13,10 @@ COMMENT=	Distributed version control system by Canonical
 # Often not needed, but it's cheap insurance
 BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 
-OPTIONS=	SFTP "Enable Paramiko for SFTP support" on \
-		CA_BUNDLE "Include CA bundle for SSL cert validation" on
+OPTIONS_DEFINE=	SFTP CA_BUNDLE
+SFTP_DESC=	Paramiko for SFTP support
+CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
+OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
@@ -27,13 +25,13 @@ USES=		gettext
 
 MAN1=		bzr.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SFTP)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
+.if ${PORT_OPTIONS:MSFTP}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}>=0:${PORTSDIR}/security/py-paramiko
 .endif
 
-.if !defined(WITHOUT_CA_BUNDLE)
+.if ${PORT_OPTIONS:MCA_BUNDLE}
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
@@ -43,4 +41,4 @@ post-install:
 test:	build
 	cd ${WRKSRC} && ./bzr selftest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
