@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	4.8.3.10016
+PORTVERSION=	5.0
 #PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://spideroak.com/getbuild?platform=slackware&arch=${ARCH:S,amd,x86_,}&dummy=/
+MASTER_SITES=	https://spideroak.com/getbuild?platform=slackware&arch=${ARCH:S,amd,x86_,}&dummy=/
 PKGNAMESUFFIX=	-${ARCH}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${ARCH:C,amd,x86_,}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${LINARCH}-1
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	SpiderOak Client (Linux version)
@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS_REASON=	binary distribution
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
-PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
+PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
 		LINARCH=${LINARCH} \
 		ONLYI386=${ONLYI386}
 
@@ -41,10 +41,10 @@ MAN1=	SpiderOak.1
 MANCOMPRESSED=	yes
 .endif
 
-USE_GNOME=	desktopfileutils
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 USE_PYTHON=	2.7
+USES=	desktop-file-utils
 
 post-patch:
 	${REINPLACE_CMD} ${WRKDIR}/usr/share/applications/SpiderOak.desktop \
@@ -69,16 +69,15 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/usr/share/pixmaps/SpiderOak.png ${PREFIX}/share/pixmaps/
 
 post-install:
-	-${LOCALBASE}/bin/update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-LINARCH=	"i686"
+LINARCH=	i686
 ONLYI386=	""
 .else
-LINARCH=	"x86_64"
+LINARCH=	x86_64
 ONLYI386=	"@comment "
 .endif
 
