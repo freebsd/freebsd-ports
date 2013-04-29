@@ -154,7 +154,7 @@
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/platform/shell-1.1.4.tm;
 +	@echo "Customizing tcl module path"; \
-+	echo "if {![interp issafe]} { ::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)} }" >> \
++	echo "::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)}" >> \
 +	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
  
 -	@echo "Installing encoding files to $(SCRIPT_INSTALL_DIR)/encoding/";
