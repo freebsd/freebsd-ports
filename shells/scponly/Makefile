@@ -33,6 +33,9 @@ WINSCP_DESC=	WinSCP support
 
 .include <bsd.port.options.mk>
 
+RUN_DEPENDS+=	sftp:${PORTSDIR}/security/openssh-portable
+BUILD_DEPENDS+=	sftp:${PORTSDIR}/security/openssh-portable
+
 .if ${PORT_OPTIONS:MDEFAULT_CHDIR}
 CONFIGURE_ARGS+=--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
 .endif
