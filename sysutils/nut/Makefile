@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nut
-# Date created:         08 Jan 2000
-# Whom:                 Boris Popov <bp@freebsd.org>
-#
+# Created by: Boris Popov <bp@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nut
 PORTVERSION=	2.6.5
@@ -61,7 +57,7 @@ MAN8=		nut-recorder.8 nut-scanner.8 nutupsdrv.8 upsc.8 \
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--program-transform-name="" \
@@ -110,11 +106,7 @@ PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUSB}
-. if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-. else
 #EXTRA_PATCHES=	${FILESDIR}/extra-patch-m4_nut_check_libusb.m4
-. endif
 CONFIGURE_ARGS+=	--with-usb=auto
 MAN8+=		bcmxcp_usb.8 richcomm_usb.8 tripplite_usb.8 usbhid-ups.8
 PLIST_SUB+=	NUT_USB=""
@@ -185,7 +177,7 @@ pre-install:
 	@${CHOWN} ${NUT_USER}:${NUT_GROUP} ${STATEDIR}
 	@${CHMOD} 0750 ${STATEDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${PREFIX}/etc/bash_completion.d/
@@ -200,4 +192,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

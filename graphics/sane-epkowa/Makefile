@@ -1,9 +1,7 @@
-# New ports collection makefile for:	epkowa
-# Date created:		Dec.23, 2008
-# Whom:			luigi@FreeBSD.org
-#
-# Maintainers:		Luigi Rizzo <luigi@FreeBSD.org>
+# Created by: luigi@FreeBSD.org
 # $FreeBSD$
+
+# Maintainers:		Luigi Rizzo <luigi@FreeBSD.org>
 #
 # This port builds version 2.11.0 of the sane-epkowa driver for SANE.
 # (more recent versions do not work - read details below).
@@ -61,7 +59,6 @@ MAN5=		sane-epkowa.5
 
 # We use LIB_DEPENDS, but the dependency is also at build time
 LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 LIB_DEPENDS+=	getline:${PORTSDIR}/devel/libgetline
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 

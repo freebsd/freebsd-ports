@@ -20,13 +20,7 @@ PLIST_FILES=	bin/multican lib/libmultican.so.0 lib/libmultican.so \
 
 PORTDOCS=	ChangeLog README TODO
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
-CFLAGS+=	-I${LOCALBASE}/include		# does not uphold CPPFLAGS
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|endian.h|sys/&|' ${WRKSRC}/canonio.c \
@@ -43,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

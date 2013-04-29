@@ -39,13 +39,7 @@ PROJECTHOST=	yubikey-personalization
 
 MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800069
 LDFLAGS+=	-L/usr/lib
-.else
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgconfigdir = .*|pkgconfigdir = /usr/local/libdata/pkgconfig|g' \
@@ -54,4 +48,4 @@ post-patch:
 regression-test: build
 	@(cd ${WRKSRC}; ${MAKE} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

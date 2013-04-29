@@ -1,7 +1,4 @@
-# New ports collection makefile for:	usbutils
-# Date created:		14 Nov 2007
-# Whom:			Henrik Brix Andersen <brix@FreeBSD.org>
-#
+# Created by: Henrik Brix Andersen <brix@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	usbutils
@@ -14,6 +11,7 @@ MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Utility for listing USB devices
 
 LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -25,14 +23,10 @@ MAN1=		usb-devices.1
 MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.else
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
 		LIBUSB_LIBS="-L/usr/lib -lusb"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i '' \
@@ -40,9 +34,9 @@ post-patch:
 		${WRKSRC}/usb-devices
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

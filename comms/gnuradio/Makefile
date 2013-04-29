@@ -46,10 +46,7 @@ OPTIONS_DEFAULT=	USRP
 USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -130,4 +127,4 @@ post-install:
 	@${ECHO} conf files are in ${PREFIX}/etc/gnuradio/conf.d
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

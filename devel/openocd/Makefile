@@ -11,31 +11,39 @@ COMMENT=	Open On-Chip Debugger
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
-OPTIONS=	DOC	"Build HTML and PDF documentation with Doxygen" on \
-		JIMTCL	"Build with internal JimTCL interpreter" on \
-		VERBOSE	"Enable verbose JTAG I/O messages" off \
-		JTAG_IO	"Enable verbose JTAG I/O messages" off \
-		USB_IO	"Enable verbose USB I/O messages" off \
-		PARPORT	"Support Parallel Port based drivers" on \
-		DUMMY	"Support Dummy Driver" on \
-		FT2232	"Support FT2232 based USB devices (using libftdi)" on \
-		FTDI	"Support experimental FTDI+MPSSE+libusb-1.0 async." on \
-		USBBLASTER "Support USB-Blaster Programmer (using libftdi)" on \
-		EP93XX	"Support EP93xx based SBCs" on \
-		AT91RM9200 "Support AT91RM9200 based SBCs" on \
-		PRESTO	"Support ASIX Presto Programmer (using libftdi)" on \
-		USBPROG	"Support USB-Prog JTAG Programmer" on \
-		JLINK	"Support Segger J-Link JTAG Programmer" on \
-		VSLLINK	"Support Versaloon-Link JTAG Programmer" on \
-		RLINK	"Support Raisonance RLink JTAG Programmer" on \
-		ULINK	"Support Keil ULINK-JTAG Programmer" on \
-		ARMJTAGEW "Support Olimex ARM-JTAG-EW Programmer" on \
-		BUSPIRATE "Support BusPirate Programmer" on \
-		STLINK	"Support STLink Programmer" on \
-		OSBDM	"Support OSBDM Programmer (JTAG only)" on \
-		OPENDOUS "Support EStick/OpenDous Programmer" on \
-		RMTBITBANG "Support Remote-Bitbang Driver" on \
-		MINIDRIVER "Dummy minidriver only (will exclude others!)" off
+
+OPTIONS_DEFINE=	DOC JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
+	USBBLASTER EP93XX AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK \
+	ARMJTAGEW BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG MINIDRIVER
+OPTIONS_DEFAULT=DOC JIMTCL PARPORT DUMMY FT2232 FTDI USBBLASTER EP93XX \
+	AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK ARMJTAGEW \
+	BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG
+
+DOC_DESC=	Build HTML and PDF documentation with Doxygen
+JIMTCL_DESC=	Build with internal JimTCL interpreter
+VERBOSE_DESC=	Enable verbose JTAG I/O messages
+JTAG_IO_DESC=	Enable verbose JTAG I/O messages
+USB_IO_DESC=	Enable verbose USB I/O messages
+PARPORT_DESC=	Support Parallel Port based drivers
+DUMMY_DESC=	Support Dummy Driver
+FT2232_DESC=	Support FT2232 based USB devices (using libftdi)
+FTDI_DESC=	Support experimental FTDI+MPSSE+libusb-1.0 async.
+USBBLASTER_DESC=Support USB-Blaster Programmer (using libftdi)
+EP93XX_DESC=	Support EP93xx based SBCs
+AT91RM9200_DESC=Support AT91RM9200 based SBCs
+PRESTO_DESC=	Support ASIX Presto Programmer (using libftdi)
+USBPROG_DESC=	Support USB-Prog JTAG Programmer
+JLINK_DESC=	Support Segger J-Link JTAG Programmer
+VSLLINK_DESC=	Support Versaloon-Link JTAG Programmer
+RLINK_DESC=	Support Raisonance RLink JTAG Programmer
+ULINK_DESC=	Support Keil ULINK-JTAG Programmer
+ARMJTAGEW_DESC=	Support Olimex ARM-JTAG-EW Programmer
+BUSPIRATE=	Support BusPirate Programmer
+STLINK_DESC=	Support STLink Programmer
+OSBDM_DESC=	Support OSBDM Programmer (JTAG only)
+OPENDOUS=	Support EStick/OpenDous Programmer
+RMTBITBANG_DESC=Support Remote-Bitbang Driver
+MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 
 MAN1=		${PORTNAME}.1
 INFO=		${PORTNAME}
@@ -50,227 +58,221 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DOC)
+.if ${PORT_OPTIONS:MDOC}
 CONFIGURE_ARGS+=	--enable-doxygen-pdf
 WITH_DOXYGEN=		yes
 .else
 CONFIGURE_ARGS+=	--disable-doxygen-pdf --disable-doxygen-html
 .endif
 
-.if defined(WITH_JIMTCL)
+.if ${PORT_OPTIONS:MJIMTCL}
 CONFIGURE_ARGS+=	--enable-internal-jimtcl
 .else
 CONFIGURE_ARGS+=	--disable-internal-jimtcl
 .endif
 
-.if defined(WITH_VERBOSE)
+.if ${PORT_OPTIONS:MVERBOSE}
 CONFIGURE_ARGS+=	--enable-verbose
 .else
 CONFIGURE_ARGS+=	--disable-verbose
 .endif
 
-.if defined(WITH_JTAG_IO)
+.if ${PORT_OPTIONS:MJTAG_IO}
 CONFIGURE_ARGS+=	--enable-verbose-jtag-io
 .else
 CONFIGURE_ARGS+=	--disable-verbose-jtag-io
 .endif
 
-.if defined(WITH_USB_IO)
+.if ${PORT_OPTIONS:MUSB_IO}
 CONFIGURE_ARGS+=	--enable-verbose-usb-io
 .else
 CONFIGURE_ARGS+=	--disable-verbose-usb-io
 .endif
 
-.if defined(WITH_USB_COMMS)
+.if ${PORT_OPTIONS:MUSB_COMMS}
 CONFIGURE_ARGS+=	--enable-verbose-usb-comms
 .else
 CONFIGURE_ARGS+=	--disable-verbose-usb-comms
 .endif
 
-.if defined(WITH_MALLOC)
+.if ${PORT_OPTIONS:MMALLOC}
 CONFIGURE_ARGS+=	--enable-malloc-logging
 .else
 CONFIGURE_ARGS+=	--disable-malloc-logging
 .endif
 
-.if defined(WITH_PARPORT)
+.if ${PORT_OPTIONS:MPARPORT}
 CONFIGURE_ARGS+=	--enable-parport
 .else
 CONFIGURE_ARGS+=	--disable-parport
 .endif
 
-.if defined(WITH_DUMMY)
+.if ${PORT_OPTIONS:MDUMMY}
 CONFIGURE_ARGS+=	--enable-dummy
 .else
 CONFIGURE_ARGS+=	--disable-dummy
 .endif
 
-.if defined(WITH_FT2232)
+.if ${PORT_OPTIONS:MFT2232}
 CONFIGURE_ARGS+=	--enable-ft2232_libftdi
 WITH_LIBFTDI=		yes
 .else
 CONFIGURE_ARGS+=	--disable-ft2232_libftdi
 .endif
 
-.if defined(WITH_FTDI)
+.if ${PORT_OPTIONS:MFTDI}
 CONFIGURE_ARGS+=	--enable-ftdi
 .else
 CONFIGURE_ARGS+=	--disable-ftdi
 .endif
 
-.if defined(WITH_USBBLASTER)
+.if ${PORT_OPTIONS:MUSBBLASTER}
 CONFIGURE_ARGS+=	--enable-usb_blaster_libftdi
 .else
 CONFIGURE_ARGS+=	--disable-usb_blaster_libftdi
 .endif
 
-.if defined(WITH_AMTJTAGACCEL)
+.if ${PORT_OPTIONS:MAMTJTAGACCEL}
 CONFIGURE_ARGS+=	--enable-amtjtagaccel
 .else
 CONFIGURE_ARGS+=	--disable-amtjtagaccel
 .endif
 
-.if defined(WITH_ECOSBOARD)
+.if ${PORT_OPTIONS:MECOSBOARD}
 CONFIGURE_ARGS+=	--enable-ecosboard
 .else
 CONFIGURE_ARGS+=	--disable-ecosboard
 .endif
 
-.if defined(WITH_ZY1000)
+.if ${PORT_OPTIONS:MZY1000}
 CONFIGURE_ARGS+=	--enable-zy1000
 .else
 CONFIGURE_ARGS+=	--disable-zy1000
 .endif
 
-.if defined(WITH_IOUTIL)
+.if ${PORT_OPTIONS:MIOUTIL}
 CONFIGURE_ARGS+=	--enable-ioutil
 .else
 CONFIGURE_ARGS+=	--disable-ioutil
 .endif
 
-.if defined(WITH_EP93XX)
+.if ${PORT_OPTIONS:MEP93XX}
 CONFIGURE_ARGS+=	--enable-ep93xx
 .else
 CONFIGURE_ARGS+=	--disable-ep93xx
 .endif
 
-.if defined(WITH_AT91RM9200)
+.if ${PORT_OPTIONS:MAT91RM9200}
 CONFIGURE_ARGS+=	--enable-at91rm9200
 .else
 CONFIGURE_ARGS+=	--disable-at91rm9200
 .endif
 
-.if defined(WITH_GW16012)
+.if ${PORT_OPTIONS:MGW16012}
 CONFIGURE_ARGS+=	--enable-gw16012
 .else
 CONFIGURE_ARGS+=	--disable-gw16012
 .endif
 
-.if defined(WITH_PRESTO)
+.if ${PORT_OPTIONS:MPRESTO}
 CONFIGURE_ARGS+=	--enable-presto_libftdi
 WITH_LIBFTDI=		yes
 .else
 CONFIGURE_ARGS+=	--disable-presto_libftdi
 .endif
 
-.if defined(WITH_USBPROG)
+.if ${PORT_OPTIONS:MUSBPROG}
 CONFIGURE_ARGS+=	--enable-usbprog
 WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-usbprog
 .endif
 
-.if defined(WITH_OOCDTRACE)
+.if ${PORT_OPTIONS:MOOCDTRACE}
 CONFIGURE_ARGS+=	--enable-oocd_trace
 .else
 CONFIGURE_ARGS+=	--disable-oocd_trace
 .endif
 
-.if defined(WITH_JLINK)
+.if ${PORT_OPTIONS:MJLINK}
 CONFIGURE_ARGS+=	--enable-jlink
 WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-jlink
 .endif
 
-.if defined(WITH_VSLLINK)
+.if ${PORT_OPTIONS:MVSLLINK}
 CONFIGURE_ARGS+=	--enable-vsllink
 WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-vsllink
 .endif
 
-.if defined(WITH_RLINK)
+.if ${PORT_OPTIONS:MRLINK}
 CONFIGURE_ARGS+=	--enable-rlink
 WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-rlink
 .endif
 
-.if defined (WITH_ULINK)
+.if ${PORT_OPTIONS:MULINK}
 CONFIGURE_ARGS+=	--enable-ulink
 .else
 CONFIGURE_ARGS+=	--disable-ulink
 .endif
 
-.if defined(WITH_ARMJTAGEW)
+.if ${PORT_OPTIONS:MARMJTAGEW}
 CONFIGURE_ARGS+=	--enable-arm-jtag-ew
 WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-arm-jtag-ew
 .endif
 
-.if defined(WITH_BUSPIRATE)
+.if ${PORT_OPTIONS:MBUSPIRATE}
 CONFIGURE_ARGS+=	--enable-buspirate
 .else
 CONFIGURE_ARGS+=	--disable-buspirate
 .endif
 
-.if defined(WITH_STLINK)
+.if ${PORT_OPTIONS:MSTLINK}
 CONFIGURE_ARGS+=	--enable-stlink
 .else
 CONFIGURE_ARGS+=	--disable-stlink
 .endif
 
-.if defined(WITH_OSBDM)
+.if ${PORT_OPTIONS:MOSBDM}
 CONFIGURE_ARGS+=	--enable-osbdm
 .else
 CONFIGURE_ARGS+=	--disable-osbdm
 .endif
 
-.if defined(WITH_OPENDOUS)
+.if ${PORT_OPTIONS:MOPENDOUS}
 CONFIGURE_ARGS+=	--enable-opendous
 .else
 CONFIGURE_ARGS+=	--disable-opendous
 .endif
 
-.if defined(WITH_RMTBITBANG)
+.if ${PORT_OPTIONS:MRMTBITBANG}
 CONFIGURE_ARGS+=	--enable-remote-bitbang
 .else
 CONFIGURE_ARGS+=	--disable-remote-bitbang
 .endif
 
-.if defined(WITH_MINIDRIVER)
+.if ${PORT_OPTIONS:MMINIDRIVER}
 CONFIGURE_ARGS+=	--enable-minidriver-dummy
 .else
 CONFIGURE_ARGS+=	--disable-minidriver-dummy
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_LIBUSB) && ${OSVERSION} < 800069
-LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
-.endif
-
-.if defined(WITH_LIBFTDI)
+.if ${PORT_OPTIONS:MLIBFTDI}
 LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 .endif
 
-.if defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
