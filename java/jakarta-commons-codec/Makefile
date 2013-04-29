@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-codec
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	java converters
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -24,12 +24,14 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-SNAPSHOT.jar \
+	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
