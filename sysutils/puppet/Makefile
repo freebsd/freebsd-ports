@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -53,11 +53,6 @@ PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
 RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 .endif
 
-.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
-.endif
-
 .if ${PORT_OPTIONS:MPACKAGE_ROOT}
 .if ! ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
@@ -67,6 +62,13 @@ BROKEN=	PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch.
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
+EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
+.if ${RUBY_VER} == 1.8 || ${RUBY_VER} == 1.9
+RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
