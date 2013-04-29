@@ -36,7 +36,7 @@ ONIG_DESC=	Oniguruma support
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
@@ -79,4 +79,4 @@ post-patch:
 		${WRKSRC}/slsh/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
