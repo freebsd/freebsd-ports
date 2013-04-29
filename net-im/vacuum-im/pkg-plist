@@ -199,12 +199,9 @@ lib/vacuum/plugins/liburlprocessor.so
 lib/vacuum/plugins/librosteritemexchange.so
 lib/vacuum/plugins/libfilemessagearchive.so
 lib/vacuum/plugins/libservermessagearchive.so
-share/doc/vacuum/AUTHORS
-share/doc/vacuum/CHANGELOG
-share/doc/vacuum/COPYING
-share/doc/vacuum/README
 share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Info.plist
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Footer.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Header.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Incoming/Content.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Incoming/Context.html
@@ -216,8 +213,14 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Outgoing/NextContent.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Outgoing/NextContext.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Outgoing/buddy_icon.png
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Renkoo LICENSE.txt
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Status.html
-%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Template.html
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles/Header.css
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles/Topic.css
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles/alternating.css
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles/main.css
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles/noname.css
+%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Topic.html
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Blue on Green Alternating.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Blue on Green No Names Alt.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Blue on Green No Names.css
@@ -298,7 +301,6 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Yellow on Steel No Names Alt.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Yellow on Steel No Names.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants/Yellow on Steel.css
-%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/alternating.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images/DummyContact.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images/alert.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images/blueBackground.gif
@@ -350,8 +352,6 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images/yellowTL.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images/yellowTR.png
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/incoming_icon.png
-%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/main.css
-%%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/noname.css
 %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/outgoing_icon.png
 %%DATADIR%%/resources/adiummessagestyles/shared/Template.html
 %%DATADIR%%/resources/adiummessagestyles/yMous/Contents/Info.plist
@@ -1368,7 +1368,6 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/uk/birthdayreminder.qm
 %%DATADIR%%/translations/uk/servermessagearchive.qm
 %%DATADIR%%/translations/uk/urlprocessor.qm
-%%DOCSDIR%%/TRANSLATORS
 @dirrm %%DATADIR%%/translations/uk
 @dirrm %%DATADIR%%/translations/ru
 @dirrm %%DATADIR%%/translations/pl
@@ -1426,6 +1425,7 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/resources/adiummessagestyles/yMous/Contents
 @dirrm %%DATADIR%%/resources/adiummessagestyles/yMous
 @dirrm %%DATADIR%%/resources/adiummessagestyles/shared
+@dirrm %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Styles
 @dirrm %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/images
 @dirrm %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Variants
 @dirrm %%DATADIR%%/resources/adiummessagestyles/renkoo/Contents/Resources/Outgoing
@@ -1436,7 +1436,6 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/resources/adiummessagestyles
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
-@dirrm share/doc/vacuum
 @dirrmtry share/applications
 @dirrm lib/vacuum/plugins
 @dirrm lib/vacuum
