@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
 USES=		bison
-USE_BISON=	build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
