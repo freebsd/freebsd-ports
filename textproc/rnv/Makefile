@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	rnv
-PORTVERSION=	1.7.10
+PORTVERSION=	1.7.11
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relax NG Compact Syntax validator
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LICENSE=	BSD
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-expat="${LOCALBASE}"
-
-PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		rnv.1
+PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck
 
 .include <bsd.port.mk>
