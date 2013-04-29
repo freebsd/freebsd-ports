@@ -498,6 +498,7 @@ bin/xyzsybyl
 %%DATADIR%%/params/amoeba09.prm
 %%DATADIR%%/params/amoebabio09.prm
 %%DATADIR%%/params/amoebapro04.prm
+%%DATADIR%%/params/amoebapro13.prm
 %%DATADIR%%/params/charmm19.prm
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm22cmap.prm
