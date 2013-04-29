@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
@@ -28,9 +28,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-DOCS=		NEWS README TODO nettle.html nettle.pdf
-EXAMPLES=	examples/*.c examples/*.h
-
+PORTDOCS=	NEWS README TODO nettle.html nettle.pdf
+PORTEXAMPLES=	*.c *.h
 INFO=		nettle
 
 .include <bsd.port.pre.mk>
@@ -44,11 +43,11 @@ CONFIGURE_ENV+=	CCPIC=-fPIC
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} examples/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

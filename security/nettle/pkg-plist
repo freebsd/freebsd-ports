@@ -18,6 +18,9 @@ include/nettle/ctr.h
 include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
+include/nettle/ecc-curve.h
+include/nettle/ecc.h
+include/nettle/ecdsa.h
 include/nettle/gcm.h
 include/nettle/gosthash94.h
 include/nettle/hmac.h
@@ -46,40 +49,16 @@ include/nettle/sha1.h
 include/nettle/sha2.h
 include/nettle/sha3.h
 include/nettle/twofish.h
+include/nettle/umac.h
 include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.2
-lib/libhogweed.so.2.3
+lib/libhogweed.so.2.4
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.5
+lib/libnettle.so.4.6
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/nettle.html
-%%PORTDOCS%%%%DOCSDIR%%/nettle.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base16dec.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base16enc.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base64dec.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base64enc.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eratosthenes.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-benchmark.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-openssl.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/next-prime.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-prime.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_rsa_key.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-decrypt.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-encrypt.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-keygen.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-session.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-sign.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-verify.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/nettle
