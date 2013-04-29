@@ -2,20 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	grequests
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Pythons Requests + Gevent
+COMMENT=	Requests with Gevent to make asyncronous HTTP requests
 
 LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>0:${PORTSDIR}/devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:${PORTSDIR}/www/py-requests
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	kennethreitz
+GH_TAGNAME=	v${DISTVERSION}
+GH_COMMIT=	aee3be6
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>

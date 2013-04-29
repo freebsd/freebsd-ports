@@ -1,20 +1,10 @@
---- ./setup.py.orig	2012-05-11 08:20:48.000000000 +1000
-+++ ./setup.py	2012-06-02 19:09:45.000000000 +1000
-@@ -29,7 +29,7 @@
- 
- """
- 
--from setuptools import setup
-+from distutils.core import setup
- 
- setup(
-     name='grequests',
-@@ -41,8 +41,6 @@
-     description='Requests + Gevent',
-     long_description=__doc__,
-     py_modules=['grequests'],
--    zip_safe=False,
--    include_package_data=True,
-     platforms='any',
-     classifiers=[
-         'Environment :: Web Environment',
+--- ./setup.py.orig	2013-03-05 10:04:42.000000000 +1100
++++ ./setup.py	2013-04-29 20:25:38.800634016 +1000
+@@ -56,5 +56,6 @@
+         'Programming Language :: Python',
+         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+         'Topic :: Software Development :: Libraries :: Python Modules'
+-    ]
++    ],
++    test_suite='tests'
+ )
