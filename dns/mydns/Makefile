@@ -26,6 +26,8 @@ MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MALIAS}
 CONFIGURE_ARGS+=--enable-alias
 .endif
