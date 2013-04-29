@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.25
+PORTVERSION=	0.9.26
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,6 +13,7 @@ COMMENT=	C library for embedding HTTP server functionality
 LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	GNUTLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
