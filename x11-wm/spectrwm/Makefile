@@ -1,13 +1,8 @@
-# New ports collection makefile for:   scrotwm
-# Date created:                June 29, 2009
-# Whom:                        Aragon Gouveia <aragon@phat.za.net>
-#
+# Created by: Aragon Gouveia <aragon@phat.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	spectrwm
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
