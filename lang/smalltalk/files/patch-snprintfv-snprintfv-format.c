@@ -1,6 +1,6 @@
---- snprintfv/snprintfv/format.c.orig	Thu Jan 18 11:46:33 2007
-+++ snprintfv/snprintfv/format.c	Thu Jan 18 11:51:54 2007
-@@ -54,7 +54,7 @@
+--- snprintfv/snprintfv/format.c.orig	2013-03-23 20:56:26.000000000 +0100
++++ snprintfv/snprintfv/format.c	2013-04-29 23:02:07.000000000 +0200
+@@ -55,7 +55,7 @@
  #   define isinfl(x) isnanl ((x) - (x))
  #  endif
  #  ifndef HAVE_MODFL
@@ -9,7 +9,7 @@
  #  endif
  #  ifndef HAVE_COPYSIGNL
  static snv_long_double copysignl (long double x, long double y);
-@@ -1097,7 +1097,7 @@
+@@ -1098,7 +1098,7 @@ printf_string (STREAM *stream, struct pr
  
  #if !defined NO_FLOAT_PRINTING && defined HAVE_LONG_DOUBLE
  # ifndef HAVE_MODFL
