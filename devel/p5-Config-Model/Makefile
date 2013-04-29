@@ -3,6 +3,7 @@
 
 PORTNAME=	Config-Model
 PORTVERSION=	2.035
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -13,8 +14,7 @@ COMMENT=	Model to create configuration validation tool
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-HTTP>=0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
 		p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
