@@ -12,7 +12,7 @@ COMMENT=	Tools and library for filesystem forensic analysis
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		exif:${PORTSDIR}/graphics/exif
 
-CONFLICTS=	ja-ls-[0-9]*
+CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
