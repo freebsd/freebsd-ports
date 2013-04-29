@@ -23,7 +23,6 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/opengl src/openvg \
 		src/s60installs src/s60main src/scripttools src/sql src/svg \
 		src/testlib src/winmain src/xmlpatterns
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor

@@ -3,7 +3,7 @@
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${LCLDIR} ${PORTNAME}/packager/registration \
+EXTRACT_AFTER_ARGS=	${LCLDIR} ${PORTNAME}/packager/registration \
 				${PORTNAME}/components/lazutils
 PATCHDIR=	${.CURDIR}/files
 FILESDIR=	${.CURDIR}/files

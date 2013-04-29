@@ -1,9 +1,5 @@
-# New ports collection makefile for:	2bsd-diff
-# Date created:				Mon Mar 17 20:54:03 EST 2003
-# Whom:					risner@stdio.com
-#
+# Created by: risner@stdio.com
 # $FreeBSD$
-#
 
 PORTNAME=	diff
 PORTVERSION=	2.11
@@ -17,7 +13,7 @@ DISTNAME=	file8
 MAINTAINER=	risner@stdio.com
 COMMENT=	2.11BSD diff utility
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - bin/diff man/man1/diff.1
+EXTRACT_AFTER_ARGS=	bin/diff man/man1/diff.1
 WRKSRC=		${WRKDIR}/bin/diff
 
 MAN1=		2diff.1

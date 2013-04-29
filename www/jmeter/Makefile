@@ -48,7 +48,7 @@ SUB_FILES=	jmeter.sh
 DATAFILES=	bin extras lib
 # Do not even extract the MS-DOS files nor the JARs,
 # that are already provided by other ports:
-EXTRACT_AFTER_ARGS=	|${TAR} -xpf - --exclude '*.bat' --exclude '*.cmd'	\
+EXTRACT_AFTER_ARGS=	--exclude '*.bat' --exclude '*.cmd'	\
 	${RUN_DEPENDS:M*.jar*:C|.*/(.+).jar:.*|--exclude '\1-*.jar'|}	\
 	--exclude 'oro-*.jar'
 

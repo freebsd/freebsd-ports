@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pydbdesigner
-# Date created:		2003-01-02
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pydbdesigner
 PORTVERSION=	0.1.4.1
@@ -14,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Graphical designer for relational databases
 
-EXTRACT_AFTER_ARGS=	| ${TAR} --exclude CVS -xf -
+EXTRACT_AFTER_ARGS=	--exclude CVS
 
 USE_PYTHON=	2.2+
 USE_WX=		2.4

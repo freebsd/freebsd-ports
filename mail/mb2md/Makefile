@@ -14,7 +14,8 @@ COMMENT=	Converts mbox mailboxes to Maildir
 
 RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
-EXTRACT_CMD=	${GZIP_CMD} -cd
+EXTRACT_CMD=	${GZIP_CMD}
+EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes

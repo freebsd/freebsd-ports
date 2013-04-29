@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crossfire-server
-# Date created:				Jan 30, 2002
-# Whom:			Jasper Jongmans <j.jongmans@aprogas.net>
-#
+# Created by: Jasper Jongmans <j.jongmans@aprogas.net>
 # $FreeBSD$
-#
 
 PORTNAME=	crossfire
 PORTVERSION=	1.70.0
@@ -40,7 +36,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-extract:
-	@cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DISTNAME}.maps.tar.bz2 ${EXTRACT_AFTER_ARGS}
 	@${CHMOD} a+x ${WRKSRC}/utils/install-sh
 

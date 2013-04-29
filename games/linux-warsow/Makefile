@@ -1,6 +1,4 @@
-# New ports collection makefile for:	warsow
-# Date created:		2005-11-12
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 #
 # $FreeBSD$
 #
@@ -37,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	warsow-wrapper wsw_server-wrapper
 WARSOW_EXTRACT+=${PORTNAME}/basewsw/game${ARCHSUFFIX}.so
 WARSOW_DIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${WARSOW_EXTRACT}
+EXTRACT_AFTER_ARGS=	${WARSOW_EXTRACT}
 
 DESKTOP_ENTRIES="Warsow" \
 		"Shoot cartoon enemies" \

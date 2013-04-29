@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-localjpeg --enable-localzlib --enable-localpng
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXCLUDE=	png jpeg zlib htmldoc/md5* htmldoc/rc4* htmldoc/snprintf*
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S,^,--exclude ,}
+EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 
 MAN1=	htmldoc.1
 post-patch:

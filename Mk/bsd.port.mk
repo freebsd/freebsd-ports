@@ -2282,18 +2282,12 @@ EXTRACT_CMD?=		${UNMAKESELF_CMD}
 EXTRACT_BEFORE_ARGS?=
 EXTRACT_AFTER_ARGS?=
 .else
-EXTRACT_BEFORE_ARGS?=	-dc
+EXTRACT_CMD?=	${TAR}
+EXTRACT_BEFORE_ARGS?=	-xf
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+EXTRACT_AFTER_ARGS?=
 .else
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner --no-same-permissions
-.endif
-.if defined(USE_BZIP2)
-EXTRACT_CMD?=			${BZIP2_CMD}
-.elif defined(USE_XZ)
-EXTRACT_CMD?=			${XZ_CMD}
-.else
-EXTRACT_CMD?=			${GZIP_CMD}
+EXTRACT_AFTER_ARGS?=	--no-same-owner --no-same-permissions
 .endif
 .endif
 

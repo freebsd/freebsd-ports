@@ -12,7 +12,7 @@ USE_QT4=	linguist_build
 QT_DIST=	yes
 QT_NONSTANDARD=	yes
 
-EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --include '${DISTNAME}/translations'
+EXTRACT_AFTER_ARGS+=	--include '${DISTNAME}/translations'
 
 do-build:
 	${LOCALBASE}/bin/lrelease-qt4 ${WRKSRC}/translations/*.ts

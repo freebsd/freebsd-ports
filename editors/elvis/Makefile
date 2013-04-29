@@ -12,7 +12,7 @@ COMMENT=	A clone of the ex/vi text editor
 
 LICENSE=	ART10
 
-EXTRACT_AFTER_ARGS=	| ${TAR} --exclude guiwin32 -xf -
+EXTRACT_AFTER_ARGS=	--exclude guiwin32
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"

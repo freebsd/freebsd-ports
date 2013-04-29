@@ -45,7 +45,7 @@ EXTRA_PATCHES=	${PORTSDIR}/audio/timidity++/files/*
 PKGDIR=		${.CURDIR}
 WRKSRC=		${WRKDIR}/TiMidity++-${TIMIDITY_VERSION}
 BUILD_WRKSRC=	${WRKSRC}/ump
-EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude '*/libarc/*'	\
+EXTRACT_AFTER_ARGS=	--exclude '*/libarc/*'	\
 	--exclude '*/utils/mblock.h' --exclude '*/utils/memb.h'
 ALL_TARGET=	ump
 

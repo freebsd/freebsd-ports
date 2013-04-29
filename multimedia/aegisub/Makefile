@@ -142,7 +142,7 @@ _make_jobs=	-j${MAKE_JOBS_NUMBER}
 
 post-extract:
 .for i in ${FFMS_DISTFILE}
-	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${i} ${EXTRACT_AFTER_ARGS})
 .endfor
 

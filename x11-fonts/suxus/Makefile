@@ -23,7 +23,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-iso-8859-1.bdf.gz ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/fonts.alias ${WRKSRC}
-	@${EXTRACT_CMD} -d  ${WRKSRC}/${PORTNAME}-iso-8859-1.bdf.gz
+	@${GZIP_CMD} -d  ${WRKSRC}/${PORTNAME}-iso-8859-1.bdf.gz
 
 do-build:
 	${PREFIX}/bin/bdftopcf -t ${WRKSRC}/suxus-iso-8859-1.bdf | ${EXTRACT_CMD} > ${WRKSRC}/suxus-iso-8859-1.pcf.gz

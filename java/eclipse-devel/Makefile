@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-devel
-# Date created:				April 9, 2005
-# Whom:					various members of freebsd-java
-#
+# Created by: various members of freebsd-java
 # $FreeBSD$
-#
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	4.2.0
@@ -186,20 +182,20 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
 
-	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ANT_SRCFILE} ${EXTRACT_AFTER_ARGS})
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ANT_SRCFILE} ${EXTRACT_AFTER_ARGS})
 .for f in ${ANT_BUNDLES}
 	@${CP} ${WRKDIR}/apache-ant-${ANT_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
 
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${JUNIT4_SRCFILE} ${BUILD_WRKSRC}/bundles/junit4.jar
 
-	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${TOMCAT_SRCFILES:Mapache-tomcat*.tar.gz} ${EXTRACT_AFTER_ARGS})
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${TOMCAT_SRCFILES:Mapache-tomcat*.tar.gz} ${EXTRACT_AFTER_ARGS})
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${TOMCAT_SRCFILES:M*.jar} ${WRKDIR}/apache-tomcat-${TOMCAT_VERSION}/lib/
 .for f in ${TOMCAT_BUNDLES}
 	@${CP} ${WRKDIR}/apache-tomcat-${TOMCAT_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
 
-	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ECLIPSE_JETTY_SRCFILE} ${EXTRACT_AFTER_ARGS})
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ECLIPSE_JETTY_SRCFILE} ${EXTRACT_AFTER_ARGS})
 .for f in ${ECLIPSE_JETTY_BUNDLES}
 	@${CP} ${WRKDIR}/jetty-distribution-${ECLIPSE_JETTY_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
 .endfor

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x-face-e21
-# Date created:		10 September 2009
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	x-face-e21
 PORTVERSION=	20070306
@@ -23,6 +19,8 @@ USE_EMACS=	yes
 .include <bsd.port.pre.mk>
 
 NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME} \

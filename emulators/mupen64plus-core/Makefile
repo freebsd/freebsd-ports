@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mupen64plus-core
-# Date created:		2008-05-16
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mupen64plus
 PORTVERSION?=	1.99.4

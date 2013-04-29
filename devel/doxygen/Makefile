@@ -29,10 +29,9 @@ CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 MAKE_JOBS_UNSAFE=	yes
 REINPLACE_ARGS=	-i ''
 
-EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
-		--exclude '*/libmd5'	\
-		--exclude '*/libpng'	\
-		--exclude '*/tmake'
+EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'	\
+			--exclude '*/libpng'	\
+			--exclude '*/tmake'
 
 PLIST=		${WRKDIR}/plist
 TMPDOCDEST=	${WRKDIR}/tmpdocdest

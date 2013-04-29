@@ -1,7 +1,4 @@
-# New ports collection makefile for:	wmSpaceWeather
-# Date created:		16 April 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wmspaceweather
@@ -20,10 +17,6 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
-
-# distfile is actually just a tar with suffix .tar.gz:
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=
 
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all

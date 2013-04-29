@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmake
-# Date created:				2 September 2003
-# Whom:					mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	qmake
 PORTVERSION=	3.3.8
@@ -25,7 +21,7 @@ MAKE_ENV+=	FILESDIR="${FILESDIR}"
 
 USE_BZIP2=	yes
 
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
+EXTRACT_AFTER_ARGS= \
 	'${DISTNAME}/mkspecs' \
 	'${DISTNAME}/src/*/*.h' '${DISTNAME}/qmake' \
 	'${DISTNAME}/src/tools'

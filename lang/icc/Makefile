@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icc
-# Date created:         24.Jan.2002
-# Whom:                 netchild@FreeBSD.org
-#
+# Created by: netchild@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	icc
 PORTVERSION=	8.1.038
@@ -45,8 +41,7 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 
 .include <bsd.port.pre.mk>
 
-EXTRACT_AFTER_ARGS=	| tar -xf - \
-			--exclude cdt-\*.zip \
+EXTRACT_AFTER_ARGS=	--exclude cdt-\*.zip \
 			--exclude eclipse-platform\*.zip \
 			--exclude intel-icc_ide\*.rpm \
 			--exclude intel-iidb\*.rpm \

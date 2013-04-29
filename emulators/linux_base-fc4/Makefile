@@ -1,10 +1,5 @@
-# New ports collection makefile for:	linux_base-fc4
-# Date created:				2006-31-05
-# Whom:					bsam@ipt.ru
-# based on ports/emulators/linux_base-fc3 by netchild and myself
-#
+# Created by: bsam@ipt.ru
 # $FreeBSD$
-#
 
 PORTNAME=		fc
 PORTVERSION=		4
@@ -106,14 +101,10 @@ NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.3.6"
 
-RPM2CPIO?=		${LOCALBASE}/bin/rpm2cpio
-
-EXTRACT_DEPENDS+=	${RPM2CPIO}:${PORTSDIR}/archivers/rpm
-
 EXTRACT_ONLY=		${BIN_DISTFILES}
-EXTRACT_CMD?=		${RPM2CPIO}
-EXTRACT_BEFORE_ARGS?=
-EXTRACT_AFTER_ARGS?=	| ${CPIO} -id --quiet
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	#
 
 .include <bsd.port.pre.mk>
 

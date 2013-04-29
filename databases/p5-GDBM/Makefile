@@ -1,11 +1,5 @@
-# New ports collection makefile for:	p5-GDBM
-# Date created:				Nov 9 1999
-# Whom:	      				Nick Sayer <nsayer@FreeBSD.ORG>
-#
-# Heavy input from eivind@freebsd.org
-#
+# Created by: Nick Sayer <nsayer@FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	GDBM
 PORTVERSION=	1.14
@@ -21,7 +15,7 @@ COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
+EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_SAFE=	yes

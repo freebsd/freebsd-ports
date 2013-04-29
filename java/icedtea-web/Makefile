@@ -26,6 +26,8 @@ USE_XORG=	x11
 USES=		pkgconfig
 WANT_GNOME=	yes
 
+EXTRACT_CMD=	${GZIP_CMD}
+EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
 MAN1=		itweb-javaws.1

@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract: .SILENT
 # Extract official HP ROM images for GX/SX
-	${CP} ${_DISTDIR}/gxrom-r.bz2 ${WRKSRC} && ${EXTRACT_CMD} \
+	${CP} ${_DISTDIR}/gxrom-r.bz2 ${WRKSRC} && ${BZIP2_CMD} \
 		-d ${WRKSRC}/gxrom-r.bz2
 # The latest SX ROM revision is J, but it does not work with x48, so use E
 	${CP} ${_DISTDIR}/sxrom-e.bz2 ${WRKSRC} && ${EXTRACT_CMD} \

@@ -37,8 +37,7 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 
 .include <bsd.port.pre.mk>
 
-EXTRACT_AFTER_ARGS=	| tar -xf - \
-			--exclude intel-iidb\*.rpm \
+EXTRACT_AFTER_ARGS=	--exclude intel-iidb\*.rpm \
 			--exclude \*ia64.rpm \
 			--exclude chklic.64 \
 			--exclude flexlm64

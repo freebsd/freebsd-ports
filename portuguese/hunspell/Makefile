@@ -14,10 +14,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hunspell dictionaries
 
-# rely on bsdtar ability to extract .gz and .zip archives
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=	# empty
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hunspell-pt_PT-${PORTVERSION}
 

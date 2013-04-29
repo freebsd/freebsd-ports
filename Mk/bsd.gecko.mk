@@ -528,7 +528,7 @@ PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
 PKGINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-install.in
 PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
 
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
+EXTRACT_AFTER_ARGS?=	--exclude */CVS/*	\
 			--exclude */macbuild/*			\
 			--exclude */package/*			\
 			--exclude mozilla*/gc/boehm

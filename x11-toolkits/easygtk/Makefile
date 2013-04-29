@@ -1,9 +1,5 @@
-# New ports collection makefile for:	easygtk
-# Date created:				3 January 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	easygtk
 PORTVERSION=	1.2
@@ -15,9 +11,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A wrapper library for GTK+ which provides simplified GUI API
-
-EXTRACT_BEFORE_ARGS=	# it's intentionally left blank
-EXTRACT_CMD=	${CAT}	# not quite `extract', but who cares? ;)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
