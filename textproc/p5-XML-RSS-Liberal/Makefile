@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-XML-RSS-Liberal
-# Date created:		2006-07-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSS-Liberal
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +14,7 @@ RUN_DEPENDS=	p5-XML-Liberal>=0:${PORTSDIR}/textproc/p5-XML-Liberal	\
 		p5-XML-RSS-LibXML>=0:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		XML::RSS::Liberal.3
 
