@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	A Swiss railway clock emulation, and a fancy default appearance
 
+USE_GCC=	any
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xmu xt
 MAN1=		swisswatch.1
