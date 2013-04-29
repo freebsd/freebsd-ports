@@ -1,10 +1,6 @@
-# New ports collection makefile for:	distcc
-# Date created:				25 June 2002
-# Whom:					Frerich Raabe <frerich.raabe@gmx.de>
-#
+# Created by: Frerich Raabe <frerich.raabe@gmx.de>
 # $FreeBSD$
 #   $MCom: ports/devel/distcc/Makefile,v 1.3 2007/10/21 02:46:13 ahze Exp $
-#
 
 PORTNAME=	distcc
 PORTVERSION=	3.1
@@ -31,27 +27,30 @@ DISTCCD_PIDFILE=/var/run/distccd.pid
 USE_RC_SUBR=	distccd
 SUB_LIST=	DISTCCD_PIDFILE=${DISTCCD_PIDFILE}
 
-OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
-		GTK	"Build GUI monitor based on GTK"	Off \
-		RFC2553 "Enable IPv6 support"	Off \
-		AVAHI "Enable Avahi Zeroconf/mDNS/Bonjour support"	Off \
-		COMPILER_LINKS	"Create symlinks to distcc"	On
+OPTIONS_DEFINE=	GNOME GTK IPV6 AVAHI COMPILER_LINKS
+GNOME_DESC=	GUI monitor based on GNOME
+GTK_DESC=	Build GUI monitor based on GTK
+AVAHI_DESC=	Avahi Zeroconf/mDNS/Bonjour support
+COMPILER_LINKS=	Create symlinks to distcc
+
+OPTIONS_DEFAULT=	COMPILER_LINKS
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_AVAHI)
-CONFIGURE_ARGS+=	--without-avahi
-.else
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi-app
-.endif
-
-.if defined(WITHOUT_RFC2553)
-CONFIGURE_ARGS+=	--disable-rfc2553
 .else
-CONFIGURE_ARGS+=	--enable-rfc2553
+CONFIGURE_ARGS+=	--without-avahi
 .endif
 
-.if defined(WITH_COMPILER_LINKS)
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-rfc2553
+.else
+CONFIGURE_ARGS+=	--disable-rfc2553
+.endif
+
+.if ${PORT_OPTIONS:MCOMPILER_LINKS}
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
 GNU_COMPILERS=		34 42 43 44 45 46 -ooo
@@ -66,12 +65,12 @@ DISTCC_COMPILERS+=	${EXTRA_COMPILERS}
 PLIST_FILES+=		${DISTCC_COMPILERS:S|^|${CCLINKDIR}/|}
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME=		libgnomeui
 CONFIGURE_ARGS+=	--with-gnome
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		WITH_GNOME=""
-.elif defined(WITH_GTK)
+.elif ${PORT_OPTIONS:MGTK}
 USE_GNOME=		gtk20
 CONFIGURE_ARGS+=	--with-gtk
 PKGNAMESUFFIX=		-gtk
@@ -89,20 +88,20 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/lsdistcc ${PREFIX}/bin
-.if defined(WITH_GNOME) || defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGNOME) || ${PORT_OPTIONS:MGTK}
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
 
 post-install:
 	@${TOUCH} ${DISTCCD_PIDFILE}
-.if defined(WITH_COMPILER_LINKS)
+.if ${PORT_OPTIONS:MCOMPILER_LINKS}
 	@${MKDIR} ${PREFIX}/${CCLINKDIR}
 .for link in ${DISTCC_COMPILERS}
 	${LN} -sf ${PREFIX}/bin/distcc ${PREFIX}/${CCLINKDIR}/${link}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}

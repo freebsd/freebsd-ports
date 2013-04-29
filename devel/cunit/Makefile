@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cunit
-# Date created: 	26 Jul 2007
-# Whom: 		Stefan Pauly <stefan@fh-mainz.de>
-#
+# Created by: Stefan Pauly <stefan@fh-mainz.de>
 # $FreeBSD$
 
 PORTNAME=	cunit
@@ -12,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/CUnit/2.1-0
 DISTNAME=	${PORTNAME:S/^cu/CU/}-${DISTVERSION}-src
 
 MAINTAINER=	stefan@fh-mainz.de
-COMMENT=	An automated unit testing framework for C
+COMMENT=	Automated unit testing framework for C
 
 CONFLICTS=	c-unit-[0-9]*
 
@@ -25,15 +22,17 @@ USE_LDCONFIG=	yes
 
 MAN3=	CUnit.3
 
-OPTIONS=	DEB "Enable debug interface" Off \
-		AUT "Enable automated(XML) interface" On \
-		BAS "Enable basic interface" On \
-		CON "Enable console interface" On \
-		CUR "Enable curses interface" Off \
-		EXA "Compile example programs" Off \
-		ITE "Compile internal test program" Off \
-		MEM "Enable internal memory tracking" Off
-#		DEP "Enable use of deprecated v1.1 names" Off
+OPTIONS_DEFINE=	DEB AUT BAS CON CUR EXA ITE MEM
+DEB_DESC=	Debug interface
+AUT_DESC=	Automated(XML) interface
+BAS_DESC=	Basic interface
+CON_DESC=	Console interface
+CUR_DESC=	Curses interface
+EXA_DESC=	Compile example programs
+ITE_DESC=	Compile internal test program
+MEM_DESC=	Internal memory tracking
+
+OPTIONS_DEFAULT=	AUT BAS CON
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.in
@@ -46,58 +45,55 @@ post-patch:
 	${REINPLACE_CMD} -e 's|CUnit doc Man Share|CUnit Man Share|g' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEB)
+.if ${PORT_OPTIONS:MDEB}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.if defined(WITHOUT_AUT)
-CONFIGURE_ARGS+=	--disable-automated
-.else
+.if ${PORT_OPTIONS:MAUT}
 PLIST_FILES+=		include/CUnit/Automated.h
-.endif
-.if defined(WITHOUT_BAS)
-CONFIGURE_ARGS+=	--disable-basic
 .else
+CONFIGURE_ARGS+=	--disable-automated
+.endif
+.if ${PORT_OPTIONS:MBAS}
 PLIST_FILES+=		include/CUnit/Basic.h
-.endif
-.if defined(WITHOUT_CON)
-CONFIGURE_ARGS+=	--disable-console
 .else
-PLIST_FILES+=		include/CUnit/Console.h
+CONFIGURE_ARGS+=	--disable-basic
 .endif
-.if defined(WITH_CUR)
+.if ${PORT_OPTIONS:MCON}
+PLIST_FILES+=		include/CUnit/Console.h
+.else
+CONFIGURE_ARGS+=	--disable-console
+.endif
+.if ${PORT_OPTIONS:MCUR}
 CONFIGURE_ARGS+=	--enable-curses
 PLIST_FILES+=		include/CUnit/CUCurses.h
 .endif
-.if defined(WITH_EXA)
+.if ${PORT_OPTIONS:MEXA}
 CONFIGURE_ARGS+=	--enable-examples
-.if defined(WITH_AUT)
+.if ${PORT_OPTIONS:MAUT}
 PLIST_FILES+=		share/examples/CUnit/Automated/AutomatedTest \
 			share/examples/CUnit/Automated/README
 .endif
-.if defined(WITH_BAS)
+.if ${PORT_OPTIONS:MBAS}
 PLIST_FILES+=		share/examples/CUnit/Basic/BasicTest \
 			share/examples/CUnit/Basic/README
 .endif
-.if defined(WITH_CON)
+.if ${PORT_OPTIONS:MCON}
 PLIST_FILES+=		share/examples/CUnit/Console/ConsoleTest \
 			share/examples/CUnit/Console/README
 .endif
-.if defined(WITH_CUR)
+.if ${PORT_OPTIONS:MCUR}
 PLIST_FILES+=		share/examples/CUnit/Curses/CursesTest \
 			share/examples/CUnit/Curses/README
 .endif
 .endif
-.if defined(WITH_ITE)
+.if ${PORT_OPTIONS:MITE}
 CONFIGURE_ARGS+=	--enable-test
 PLIST_FILES+=		share/CUnit/Test/test_cunit
 .endif
-.if defined(WITH_MEM)
+.if ${PORT_OPTIONS:MMEM}
 CONFIGURE_ARGS+=	--enable-memtrace
 .endif
-#.if defined(WITH_DEP)
-#CONFIGURE_ARGS+=	--enable-deprecated
-#.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
