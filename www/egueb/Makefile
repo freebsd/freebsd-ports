@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES=		bison pathfix
-USE_BISON=	build
 USE_EFL=	eina enesim ender etch libtool_hack
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

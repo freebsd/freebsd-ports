@@ -36,10 +36,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.ifdef USE_BISON
-.error You have `USE_BISON' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in

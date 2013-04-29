@@ -23,7 +23,6 @@ USE_GNOME=	gnomeprefix libgnomeprint libgnomecanvas \
 		intlhack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_BISON=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
