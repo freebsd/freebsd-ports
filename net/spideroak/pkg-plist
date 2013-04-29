@@ -1,9 +1,576 @@
 @comment $FreeBSD$
-bin/spideroak
 bin/SpiderOak
+bin/spideroak
 etc/dbus-1/system.d/SpiderOak.dbus.conf
 etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DESKTOPDIR%%/SpiderOak.desktop
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeItemsTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeModuleTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BucketTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/Development.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/IFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/IIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/IOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/Interfaces.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/LFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/LLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/LOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/Length.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/MergeTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/OIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/OLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/OOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/SetOpTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/SetTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/TreeSetTemplate.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/__init__.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_base.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_compat.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_compat.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.so
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/check.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/coverage.xml
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/floatvaluemacros.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/fsBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/intkeymacros.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/intvaluemacros.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/objectkeymacros.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/objectvaluemacros.h
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/sorters.c
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/__init__.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/common.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTrees.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTreesUnicode.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testConflict.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_IFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_IIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_IOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_LFBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_LLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_LOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_Length.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_OIBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_OLBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_OOBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test__base.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_btreesubclass.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_check.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_fsBTree.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_utils.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/utils.pyc
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/__init__.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/core.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/dates.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/global.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/aa.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/aa_DJ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/aa_ER.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/aa_ER_SAAHO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/aa_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/af.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/af_NA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/af_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ak.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ak_GH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/am.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/am_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_AE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_BH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_DZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_EG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_IQ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_JO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_KW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_LB.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_LY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_MA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_OM.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_QA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_SA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_SD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_SY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_TN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ar_YE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/as.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/as_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az_AZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az_Cyrl_AZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/az_Latn_AZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/be.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/be_BY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bg.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bg_BG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bn_BD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bn_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bs.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/bs_BA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/byn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/byn_ER.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ca.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ca_ES.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cch.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cch_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cop.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cs.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cs_CZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cy.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/cy_GB.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/da.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/da_DK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_AT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_BE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_CH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_DE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_LI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/de_LU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/dv.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/dv_MV.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/dz.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/dz_BT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ee.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ee_GH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ee_TG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/el.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/el_CY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/el_GR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/el_POLYTON.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_AS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_AU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_BE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_BW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_BZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_CA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_Dsrt.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_Dsrt_US.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_GB.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_GU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_HK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_IE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_JM.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_MH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_MP.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_MT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_NA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_NZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_PH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_PK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_SG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_Shaw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_TT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_UM.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_US.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_US_POSIX.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_VI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/en_ZW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/eo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_AR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_BO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_CL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_CO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_CR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_DO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_EC.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_ES.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_GT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_HN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_MX.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_NI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_PA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_PE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_PR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_PY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_SV.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_US.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_UY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/es_VE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/et.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/et_EE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/eu.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/eu_ES.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fa.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fa_AF.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fa_IR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fi.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fi_FI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fil.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fil_PH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fo_FO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_BE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_CA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_CH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_FR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_LU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_MC.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fr_SN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fur.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/fur_IT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ga.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ga_IE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gaa.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gaa_GH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gez.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gez_ER.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gez_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gl_ES.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gu.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gu_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gv.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/gv_GB.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Arab.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Arab_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Arab_SD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_GH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Latn_GH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Latn_NE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_Latn_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_NE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ha_SD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/haw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/haw_US.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/he.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/he_IL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hi.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hi_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hr_HR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hu.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hu_HU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hy.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hy_AM.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/hy_AM_REVISED.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ia.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/id.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/id_ID.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ig.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ig_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ii.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ii_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/in.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/is.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/is_IS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/it.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/it_CH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/it_IT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/iu.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/iw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ja.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ja_JP.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ka.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ka_GE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kaj.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kaj_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kam.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kam_KE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kcg.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kcg_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kfo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kfo_CI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kk.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kk_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kk_Cyrl_KZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kk_KZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kl_GL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/km.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/km_KH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kn_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ko.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ko_KR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kok.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kok_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kpe.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kpe_GN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kpe_LR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ku.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ku_Arab.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ku_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ku_Latn_TR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ku_TR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/kw_GB.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ky.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ky_KG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ln.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ln_CD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ln_CG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lo_LA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lt.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lt_LT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lv.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/lv_LV.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mk.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mk_MK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ml.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ml_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_Cyrl_MN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_MN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_Mong.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mn_Mong_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mr_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ms.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ms_BN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ms_MY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mt.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/mt_MT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/my.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/my_MM.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nb.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nb_NO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ne.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ne_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ne_NP.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nl_BE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nl_NL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nn_NO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/no.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nr_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nso.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/nso_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ny.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ny_MW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/om.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/om_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/om_KE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/or.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/or_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_Arab.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_Arab_PK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_Guru.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_Guru_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pa_PK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pl_PL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ps.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ps_AF.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pt.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pt_BR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/pt_PT.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ro.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ro_MD.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ro_RO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/root.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ru.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ru_RU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ru_UA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/rw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/rw_RW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sa.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sa_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/se.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/se_FI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/se_NO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sh.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sh_BA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sh_CS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sh_YU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/si.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/si_LK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sid.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sid_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sk.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sk_SK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sl_SI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/so.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/so_DJ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/so_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/so_KE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/so_SO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sq.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sq_AL.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_BA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_CS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl_BA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl_CS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl_ME.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl_RS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Cyrl_YU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn_BA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn_CS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn_ME.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn_RS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_Latn_YU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_ME.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_RS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sr_YU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ss.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ss_SZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ss_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/st.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/st_LS.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/st_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sv.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sv_FI.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sv_SE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sw.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sw_KE.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/sw_TZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/syr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/syr_SY.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ta.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ta_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/te.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/te_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tg.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tg_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tg_Cyrl_TJ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tg_TJ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/th.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/th_TH.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ti.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ti_ER.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ti_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tig.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tig_ER.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tn_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/to.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/to_TO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tr.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tr_TR.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/trv.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ts.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ts_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tt.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/tt_RU.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ug.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ug_Arab.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ug_Arab_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ug_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uk.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uk_UA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ur.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ur_IN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ur_PK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_AF.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Arab.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Arab_AF.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Cyrl.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Cyrl_UZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_Latn_UZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/uz_UZ.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ve.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/ve_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/vi.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/vi_VN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wal.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wal_ET.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wo_Latn.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wo_Latn_SN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/wo_SN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/xh.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/xh_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/yo.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/yo_NG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_HK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hans.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hans_CN.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hans_HK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hans_MO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hans_SG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hant.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hant_HK.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hant_MO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_Hant_TW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_MO.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_SG.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zh_TW.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zu.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata/zu_ZA.dat
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/__init__.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/catalog.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/checkers.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/extract.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/frontend.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/jslexer.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/mofile.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/plurals.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages/pofile.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/numbers.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/support.pyc
+%%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/util.pyc
 %%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/PKG-INFO
 %%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/SOURCES.txt
 %%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO/dependency_links.txt
@@ -893,409 +1460,233 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xpathparser.g
 %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish/xpathparser.pyc
 %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xmpproutertap.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/cfgparser.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/cmdline.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/component.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/mapping.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/mapping.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests/test_mapping.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/abstract.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/base-logger.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/component.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/datatypes.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/eventlog.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/factory.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/handlers.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/handlers.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/logger.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/logger.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/loghandler.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests/test_logger.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/datatypes.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/info.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/loader.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/matcher.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schema.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schemaless.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/schemaless.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/substitution.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/foosample.zip
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-datatype1.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-datatype2.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-keytype1.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base-keytype2.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/base.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/include.conf
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/inner.conf
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/library.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/logger.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/outer.conf
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simple.conf
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simple.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simplesections.conf
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input/simplesections.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/README.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/component.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/extras/extras.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/component.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget/extra.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/support.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cfgimports.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cmdline.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_config.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_cookbook.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_datatypes.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_loader.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_readme.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_schema.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_schemaless.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/test_subst.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/README.txt
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/__init__.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/component.xml
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample/datatypes.pyc
-%%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/url.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeItemsTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeModuleTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/BucketTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Development.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IFBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IIBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/IOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Interfaces.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LFBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LLBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/LOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/Length.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/MergeTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OIBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OLBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/OOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/SetOpTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/SetTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/TreeSetTemplate.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IFBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IIBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_IOBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LFBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LLBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_LOBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OIBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OLBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_OOBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/_fsBTree.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/check.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/floatvaluemacros.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/fsBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/intkeymacros.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/intvaluemacros.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/objectkeymacros.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/objectvaluemacros.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/py24compat.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/sorters.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTrees.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testBTreesUnicode.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testConflict.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testLength.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/testSetOps.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_btreesubclass.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_check.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_compare.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests/test_fsBTree.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/entry_points.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/ClientStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/Exceptions.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/ServerStub.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/StorageServer.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/TransactionBuffer.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/auth_digest.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/base.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth/hmac.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/cache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/component.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/hash.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/interfaces.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/monitor.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/protocol.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/runzeo.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/schema.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/README.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/cache_simul.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/cache_stats.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/parsezeolog.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/tests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/timeout.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeopack.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeopack.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoqueue.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoreplay.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoserverlog.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts/zeoup.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/Cache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/CommitLockTests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/ConnectionTests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/InvalidationTests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/IterationTests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/TestThread.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/ThreadTests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/auth_plaintext.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/client-config.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/drop_cache_rather_than_verify.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/forker.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/invalidation-age.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/protocols.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/registerDB.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/servertesting.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/speed.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/stress.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testAuth.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testConnection.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testConversionSupport.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testMonitor.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testTransactionBuffer.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEO.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEO2.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/testZEOOptions.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/test_cache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zdoptions.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeo-fan-out.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeo_blob_cache.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests/zeoserver.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/util.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/version.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeoctl.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeoctl.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zeopasswd.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/_hmac.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/client.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/connection.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/error.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/log.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/marshal.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/server.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/smac.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc/trigger.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ActivityMonitor.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/BaseStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ConflictResolution.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ConflictResolution.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/Connection.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DB.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DemoStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/DemoStorage.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/ExportImport.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/FileStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/format.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fsdump.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fsoids.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/fspack.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/interfaces.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/iterator.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/tests.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage/zconfig.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/MappingStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/POSException.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/UndoLogCompatible.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/blob.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/broken.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/collaborations.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/component.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/config.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/config.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/conversionhack.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/cross-database-references.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fsIndex.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fsrecover.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/fstools.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/historical_connections.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/interfaces.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/loglevels.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/persistentclass.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/persistentclass.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/README.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/analyze.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/checkbtrees.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsoids.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsrefs.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fsstats.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fstail.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/fstest.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests/test-checker.fs
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests/testfstest.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/migrate.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/migrateblobs.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/netspace.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/referrers.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/repozo.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/space.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/fstail.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/referrers.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_doc.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_fstest.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests/test_repozo.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/zodbload.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/serialize.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/storage.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/subtransactions.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/BasicStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/ConflictResolution.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/Corruption.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/HistoryStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/IExternalGC.test
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/IteratorStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MTStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MVCCMappingStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/MinPO.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/PackableStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/PersistentStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/ReadOnlyStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/RecoveryStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/RevisionStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/StorageTestBase.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/Synchronization.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/TransactionalUndoStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_basic.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_connection.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_consume.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_importexport.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_layout.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_packing.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_tempdir.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blob_transaction.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/blobstorage_packing.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/component.xml
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/dangle.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/dbopen.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/hexstorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/loggingsupport.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/multidb.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/sampledm.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/speed.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/synchronizers.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testActivityMonitor.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testBroken.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testCache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConfig.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnection.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnectionSavepoint.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testConnectionSavepoint.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testDB.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testDemoStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testFileStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testMVCCMappingStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testMappingStorage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testPersistentList.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testPersistentMapping.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testRecover.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testSerialize.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testTimeStamp.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testUtils.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testZODB.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_cache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_datamanageradapter.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_doctest_files.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_fsdump.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/test_storage.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testblob.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testconflictresolution.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testcrossdatabasereferences.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testfsIndex.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testfsoids.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testhistoricalconnections.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testmvcc.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/testpersistentclass.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/util.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests/warnhook.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/transact.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/utils.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/utils.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/README.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/TimeStamp.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.so
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/dict.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/interfaces.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/list.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/mapping.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/py24compat.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/ring.c
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/ring.h
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/__init__.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/persistent.txt
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/testPersistent.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_PickleCache.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_list.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_mapping.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_overriding_attrs.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_persistent.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_pickle.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_wref.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests/utils.pyc
-%%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/wref.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/cfgparser.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/cmdline.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/component.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/mapping.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/mapping.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/tests/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/tests/test_mapping.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/abstract.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/base-logger.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/component.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/datatypes.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/eventlog.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/factory.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/handlers.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/handlers.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/logger.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/logger.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/loghandler.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/tests/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/tests/test_logger.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/datatypes.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/info.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/loader.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/matcher.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/schema.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/schemaless.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/schemaless.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/substitution.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/foosample.zip
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/base-datatype1.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/base-datatype2.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/base-keytype1.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/base-keytype2.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/base.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/include.conf
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/inner.conf
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/library.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/logger.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/outer.conf
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/simple.conf
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/simple.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/simplesections.conf
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input/simplesections.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/README.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/thing/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/thing/component.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/thing/extras/extras.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/widget/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/widget/component.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/widget/extra.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/support.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_cfgimports.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_cmdline.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_config.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_cookbook.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_datatypes.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_loader.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_readme.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_schema.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_schemaless.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/test_subst.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/README.txt
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo/sample/__init__.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo/sample/component.xml
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo/sample/datatypes.pyc
+%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/url.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/ActivityMonitor.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/BaseStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/ConflictResolution.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/ConflictResolution.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/Connection.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/DB.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/DemoStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/DemoStorage.test
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/ExportImport.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/FileStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/__init__.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/format.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/fsdump.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/fsoids.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/fspack.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/interfaces.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/iterator.test
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/tests.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage/zconfig.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/MappingStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/POSException.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/UndoLogCompatible.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/__init__.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/blob.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/broken.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/collaborations.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/component.xml
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/config.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/config.xml
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/conversionhack.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/cross-database-references.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/event.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/event.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/fsIndex.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/fsrecover.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/fstools.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/historical_connections.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/interfaces.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/loglevels.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/persistentclass.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/persistentclass.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/README.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/__init__.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/analyze.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/checkbtrees.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/fsoids.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/fsrefs.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/fsstats.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/fstail.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/fstest.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/manual_tests/test-checker.fs
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/manual_tests/testfstest.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/migrate.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/migrateblobs.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/netspace.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/referrers.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/repozo.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/space.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/__init__.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/fstail.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/referrers.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/test_doc.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/test_fstest.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests/test_repozo.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/zodbload.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/serialize.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/storage.xml
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/subtransactions.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/BasicStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/ConflictResolution.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/Corruption.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/HistoryStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/IExternalGC.test
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/IteratorStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/MTStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/MVCCMappingStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/MinPO.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/PackableStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/PersistentStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/ReadOnlyStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/RecoveryStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/RevisionStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/StorageTestBase.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/Synchronization.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/TransactionalUndoStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/__init__.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_basic.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_connection.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_consume.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_importexport.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_layout.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_packing.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_tempdir.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blob_transaction.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/blobstorage_packing.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/component.xml
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/dangle.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/dbopen.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/hexstorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/loggingsupport.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/multidb.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/sampledm.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/speed.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/synchronizers.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testActivityMonitor.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testBroken.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testCache.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testConfig.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testConnection.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testConnectionSavepoint.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testConnectionSavepoint.txt
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testDB.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testDemoStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testFileStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testMVCCMappingStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testMappingStorage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testPersistentList.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testPersistentMapping.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testPersistentWeakref.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testRecover.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testSerialize.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testUtils.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testZODB.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_cache.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_datamanageradapter.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_doctest_files.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_fsdump.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_persistentclass.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/test_storage.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testblob.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testconflictresolution.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testcrossdatabasereferences.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testfsIndex.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testfsoids.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testhistoricalconnections.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testmvcc.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/testpersistentclass.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/util.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests/warnhook.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/transact.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/utils.pyc
+%%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/utils.txt
 %%DATADIR%%/_bisect.so
 %%DATADIR%%/_codecs_cn.so
 %%DATADIR%%/_codecs_hk.so
@@ -1304,6 +1695,7 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/_codecs_kr.so
 %%DATADIR%%/_codecs_tw.so
 %%DATADIR%%/_collections.so
+%%DATADIR%%/_csv.so
 %%DATADIR%%/_ctypes.so
 %%DATADIR%%/_functools.so
 %%DATADIR%%/_hashlib.so
@@ -1331,11 +1723,14 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/inotify_dir_watcher
 %%DATADIR%%/itertools.so
 %%DATADIR%%/libQtCore.so.4
+%%DATADIR%%/libQtDBus.so.4
 %%DATADIR%%/libQtGui.so.4
 %%DATADIR%%/libQtNetwork.so.4
+%%DATADIR%%/libQtXml.so.4
 %%ONLYI386%%%%DATADIR%%/libbz2.so.1
 %%DATADIR%%/libcrypto.so.6
 %%DATADIR%%/libcurl.so.4
+%%DATADIR%%/libdbusmenu-qt.so.2
 %%DATADIR%%/libexpat.so.0
 %%DATADIR%%/libgcc_s.so.1
 %%ONLYI386%%%%DATADIR%%/libgmp.so.3
@@ -1351,98 +1746,146 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/math.so
 %%DATADIR%%/mmap.so
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/entry_points.txt
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/nose-1.1.1-py2.7.egg/man/man1/nosetests.1
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/__init__.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/case.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/commands.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/config.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/core.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/exc.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext/__init__.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext/dtcompat.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/failure.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/importer.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/inspector.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/loader.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/__init__.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/allmodules.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/attrib.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/base.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/builtin.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/capture.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/collect.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/cover.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/debug.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/deprecated.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/doctests.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/errorclass.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/failuredetail.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/isolate.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/logcapture.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/manager.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/multiprocess.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/plugintest.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/prof.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/skip.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/testid.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins/xunit.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/proxy.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/pyversion.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/result.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/selector.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx/__init__.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx/pluginopts.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/suite.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/tools.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/twistedtools.pyc
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/usage.txt
-%%DATADIR%%/nose-1.1.1-py2.7.egg/nose/util.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/nose-1.3.0-py2.7.egg/man/man1/nosetests.1
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/__init__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/__main__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/case.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/commands.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/config.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/core.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/exc.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/ext/__init__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/ext/dtcompat.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/failure.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/importer.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/inspector.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/loader.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/__init__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/allmodules.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/attrib.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/base.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/builtin.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/capture.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/collect.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/cover.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/debug.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/deprecated.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/doctests.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/errorclass.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/failuredetail.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/isolate.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/logcapture.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/manager.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/multiprocess.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/plugintest.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/prof.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/skip.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/testid.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins/xunit.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/proxy.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/pyversion.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/result.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/selector.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/sphinx/__init__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/sphinx/pluginopts.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/suite.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/tools/__init__.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/tools/nontrivial.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/tools/trivial.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/twistedtools.pyc
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/usage.txt
+%%DATADIR%%/nose-1.3.0-py2.7.egg/nose/util.pyc
 %%DATADIR%%/operator.so
 %%DATADIR%%/parser.so
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/__init__.pyc
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.pyc
-%%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.so
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO/zip-safe
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/decoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/encoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber/eoo.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/decoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer/encoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/decoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der/encoder.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/error.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/__init__.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/base.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/char.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/constraint.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/error.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/namedtype.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/namedval.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/tag.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/tagmap.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/univ.pyc
-%%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type/useful.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/__init__.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/_compat.h
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/_compat.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/_timestamp.c
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/_timestamp.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/_timestamp.so
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.c
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.h
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPersistence.so
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.c
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/cPickleCache.so
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/dict.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/interfaces.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/list.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/mapping.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/persistence.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/picklecache.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/ring.c
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/ring.h
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/__init__.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/attrhooks.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/cucumbers.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_list.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_mapping.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_persistence.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_picklecache.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_timestamp.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/test_wref.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests/utils.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/timestamp.pyc
+%%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/wref.pyc
+%%DATADIR%%/plugins/systemtrayicon/libsni-qt.so
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/bcrypt/__init__.pyc
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.pyc
+%%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/bcrypt/_bcrypt.so
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO/zip-safe
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/ber/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/ber/decoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/ber/encoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/ber/eoo.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/cer/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/cer/decoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/cer/encoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/der/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/der/decoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/der/encoder.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/compat/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/compat/octets.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/debug.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/error.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/__init__.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/base.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/char.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/constraint.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/error.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/namedtype.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/namedval.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/tag.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/tagmap.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/univ.pyc
+%%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type/useful.pyc
 %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/AES.pyc
 %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/AES.so
 %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher/ARC2.pyc
@@ -1613,200 +2056,187 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/test_packageindex.pyc
 %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests/test_resources.pyc
 %%DATADIR%%/setuptools-0.6c11-py2.7.egg/site.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/zip-safe
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/__init__.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.so
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/decoder.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/encoder.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/ordered_dict.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/scanner.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/__init__.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_check_circular.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decimal.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decode.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_default.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_dump.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_basestring_ascii.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_for_html.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_errors.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_fail.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_float.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_indent.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass1.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass2.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass3.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_recursion.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_scanstring.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_separators.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_speedups.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_unicode.pyc
-%%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tool.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/__init__.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/_speedups.so
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/compat.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/decoder.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/encoder.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/ordered_dict.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/scanner.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/__init__.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_bigint_as_string.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_check_circular.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decimal.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_decode.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_default.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_dump.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_basestring_ascii.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_encode_for_html.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_errors.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_fail.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_float.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_indent.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_item_sort_key.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_namedtuple.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass1.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass2.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_pass3.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_recursion.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_scanstring.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_separators.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_speedups.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_tool.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_tuple.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests/test_unicode.pyc
+%%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tool.pyc
 %%DATADIR%%/sip.so
 %%DATADIR%%/strop.so
 %%DATADIR%%/termios.so
 %%DATADIR%%/time.so
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/entry_points.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/requires.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/__init__.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/_manager.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/_transaction.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/interfaces.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/__init__.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/convenience.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/doom.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/sampledm.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/savepoint.txt
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/savepointsample.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_SampleDataManager.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_SampleResourceManager.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_register_compat.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_savepoint.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_transaction.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/test_weakset.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests/warnhook.pyc
-%%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/weakset.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/__init__.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/_compat.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/_manager.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/_transaction.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/interfaces.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/__init__.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/common.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/examples.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/savepointsample.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/test__manager.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/test__transaction.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/test_register_compat.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/test_savepoint.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/test_weakset.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests/warnhook.pyc
+%%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/weakset.pyc
 %%DATADIR%%/unicodedata.so
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/namespace_packages.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/requires.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/__init__.pyc
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/CHANGES.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/README.txt
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/__init__.pyc
-%%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile/tests.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/entry_points.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/requires.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/README.txt
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/__init__.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/component.xml
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/sample.conf
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/schema.xml
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/__init__.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/nokill.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/parent.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/tests.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/testzdoptions.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests/testzdrun.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdctl.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdoptions.pyc
-%%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/zdrun.pyc
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/namespace_packages.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc/__init__.pyc
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc/lockfile/README.txt
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc/lockfile/__init__.pyc
+%%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc/lockfile/tests.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/entry_points.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/README.txt
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/__init__.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/component.xml
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/sample.conf
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/schema.xml
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/__init__.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/nokill.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/parent.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/tests.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/testuser.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/testzdoptions.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests/testzdrun.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/zdctl.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/zdoptions.pyc
+%%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/zdrun.pyc
 %%DATADIR%%/zlib.so
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/namespace_packages.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/requires.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/__init__.pyc
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/README.txt
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/__init__.pyc
-%%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event/tests.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/namespace_packages.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/__init__.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/README.ru.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/README.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/__init__.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_flatten.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.c
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.so
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.ru.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/advice.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/__init__.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/idatetime.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/interfaces.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/mapping.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/sequence.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/__init__.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/basemapping.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_idatetime.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_import_interfaces.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/declarations.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/document.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/exceptions.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/human.ru.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/human.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/index.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/interface.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/interfaces.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/ro.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/__init__.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/dummy.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/foodforthought.txt
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/ifoo.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m1.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m2.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/odd.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_adapter.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_advice.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_declarations.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_document.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_element.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_interface.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_odd_declarations.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_sorting.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_verify.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/unitfixtures.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.pyc
-%%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/PKG-INFO
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/SOURCES.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/dependency_links.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/namespace_packages.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/native_libs.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/not-zip-safe
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/requires.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/top_level.txt
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/__init__.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/__init__.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/_compat.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/_flatten.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.c
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/_zope_interface_coptimizations.so
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/adapter.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/advice.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/__init__.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/idatetime.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/interfaces.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/mapping.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/sequence.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/__init__.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/basemapping.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_idatetime.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests/test_import_interfaces.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/declarations.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/document.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/exceptions.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/interface.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/interfaces.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/registry.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/ro.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/__init__.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/advisory_testing.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/dummy.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/idummy.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/ifoo.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/ifoo_other.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m1.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/m2.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/odd.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_adapter.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_advice.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_declarations.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_document.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_element.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_exceptions.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_interface.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_interfaces.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_odd_declarations.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_registry.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_sorting.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_verify.pyc
+%%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.pyc
 share/pixmaps/SpiderOak.png
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface/common
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope/interface
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/zope
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
-@dirrm %%DATADIR%%/zope.interface-3.6.4-py2.7-linux-%%LINARCH%%.egg
-@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope/event
-@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/zope
-@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/zope.event-3.5.0_1-py2.7.egg
-@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon/tests
-@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/zdaemon
-@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/zdaemon-2.0.4-py2.7.egg
-@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc/lockfile
-@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/zc
-@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/zc.lockfile-1.0.0-py2.7.egg
-@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction/tests
-@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/transaction
-@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/transaction-1.1.1-py2.7.egg
-@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson/tests
-@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/simplejson
-@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
-@dirrm %%DATADIR%%/simplejson-2.1.6-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon/tests
+@dirrm %%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/zdaemon
+@dirrm %%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/zdaemon-4.0.0a1-py2.7.egg
+@dirrm %%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc/lockfile
+@dirrm %%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/zc
+@dirrm %%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/zc.lockfile-1.1.0-py2.7.egg
+@dirrm %%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction/tests
+@dirrm %%DATADIR%%/transaction-1.4.1-py2.7.egg/transaction
+@dirrm %%DATADIR%%/transaction-1.4.1-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/transaction-1.4.1-py2.7.egg
+@dirrm %%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson/tests
+@dirrm %%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/simplejson
+@dirrm %%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/simplejson-3.1.3-py2.7-linux-%%LINARCH%%.egg
 @dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/tests
 @dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools/command
 @dirrm %%DATADIR%%/setuptools-0.6c11-py2.7.egg/setuptools
@@ -1832,60 +2262,59 @@ share/pixmaps/SpiderOak.png
 @dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto/Cipher
 @dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg/Crypto
 @dirrm %%DATADIR%%/pycrypto-2.3-py2.7-linux-%%LINARCH%%.egg
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/type
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/der
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/cer
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec/ber
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1/codec
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/pyasn1
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/pyasn1-0.0.13-py2.7.egg
-@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/bcrypt
-@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
-@dirrm %%DATADIR%%/py_bcrypt-0.2-py2.7-linux-%%LINARCH%%.egg
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/sphinx
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/plugins
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose/ext
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/nose
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/man/man1
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/man
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/nose-1.1.1-py2.7.egg
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent/tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/persistent
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts/manual_tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/scripts
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB/FileStorage
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZODB
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/zrpc
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/scripts
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO/auth
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/ZEO
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees/tests
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg/BTrees
-@dirrm %%DATADIR%%/ZODB3-3.10.3-py2.7-linux-%%LINARCH%%.egg
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo/sample
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource/foo
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/zipsource
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/widget
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing/extras
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library/thing
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/library
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests/input
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/tests
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger/tests
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/logger
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic/tests
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components/basic
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig/components
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/ZConfig
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO/scripts
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg/EGG-INFO
-@dirrm %%DATADIR%%/ZConfig-2.9.0-py2.7.egg
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/type
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/compat
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/der
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/cer
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec/ber
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1/codec
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/pyasn1
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/pyasn1-0.1.6-py2.7.egg
+@dirrm %%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/bcrypt
+@dirrm %%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/py_bcrypt-0.3-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/plugins/systemtrayicon
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent/tests
+@dirrm %%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/persistent
+@dirrm %%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/persistent-4.0.6-py2.7-linux-%%LINARCH%%.egg
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/nose/tools
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/nose/sphinx
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/nose/plugins
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/nose/ext
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/nose
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/man/man1
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/man
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/nose-1.3.0-py2.7.egg
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/tests
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/tests
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts/manual_tests
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/scripts
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB/FileStorage
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/ZODB
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/ZODB-4.0.0a4-py2.7.egg
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo/sample
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource/foo
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/zipsource
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/widget
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/thing/extras
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library/thing
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/library
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests/input
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/tests
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger/tests
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/logger
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic/tests
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components/basic
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig/components
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/ZConfig
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/scripts
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/ZConfig-3.0.3-py2.7.egg
 @dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/xish
 @dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/topfiles
 @dirrm %%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/twisted/words/test
@@ -1967,11 +2396,20 @@ share/pixmaps/SpiderOak.png
 @dirrm %%DATADIR%%/Louie-1.1-py2.7.egg/louie
 @dirrm %%DATADIR%%/Louie-1.1-py2.7.egg/EGG-INFO
 @dirrm %%DATADIR%%/Louie-1.1-py2.7.egg
+@dirrm %%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/messages
+@dirrm %%DATADIR%%/Babel-0.9.6-py2.7.egg/babel/localedata
+@dirrm %%DATADIR%%/Babel-0.9.6-py2.7.egg/babel
+@dirrm %%DATADIR%%/Babel-0.9.6-py2.7.egg/EGG-INFO
+@dirrm %%DATADIR%%/Babel-0.9.6-py2.7.egg
+@dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/EGG-INFO
+@dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/tests
+@dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees
+@dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg
 @dirrm %%DATADIR%%
-@dirrmtry etc/dbus-1/system.d
-@dirrmtry etc/dbus-1
-@dirrmtry etc/xdg/menus/applications-merged
+@dirrm etc/xdg/menus/applications-merged
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
+@dirrmtry etc/dbus-1/system.d
+@dirrmtry etc/dbus-1
+@exec mkdir -p %D/%%DATADIR%%/ZConfig-3.0.3-py2.7.egg/EGG-INFO/scripts
+@exec mkdir -p %D/%%DATADIR%%/Twisted-10.2.0-py2.7-linux-%%LINARCH%%.egg/EGG-INFO/scripts
