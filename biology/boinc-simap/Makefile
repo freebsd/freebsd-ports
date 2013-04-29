@@ -37,7 +37,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	SSE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSE}
 MACH=		i686
@@ -72,4 +72,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
