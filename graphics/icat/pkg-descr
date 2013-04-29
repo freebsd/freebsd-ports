@@ -1,0 +1,4 @@
+Displays an image in a 256-color enabled terminal with UTF-8 locale, such as
+gnome-terminal, konsole, uxterm or rxvt-unicode (urxvt).
+
+WWW: https://github.com/atextor/icat
