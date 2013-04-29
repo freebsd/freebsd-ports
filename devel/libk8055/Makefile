@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libk8055
-# Date created:				9 October 2011
-# Whom:					Jake Smith <jake@xz.cx>
-#
+# Created by: Jake Smith <jake@xz.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	libk8055
 PORTVERSION=	0.2
@@ -26,15 +22,7 @@ PLIST_FILES=	bin/k8055 \
 		lib/libk8055.so.0.2 \
 		include/k8055.h
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/libk8055.c.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,15 +29,6 @@ GNU_CONFIGURE=	YES
 USES=		iconv
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-doc
-.else
-MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
-		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
-		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
-MAN8=		addgnupghome.8 applygnupgdefaults.8
-INFO=		gnupg
-.endif
 
 OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS
 PINENTRY_DESC=		Use pinentry
@@ -51,6 +42,16 @@ OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
 
 .include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--disable-doc
+.else
+MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
+		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
+		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
+MAN8=		addgnupghome.8 applygnupgdefaults.8
+INFO=		gnupg
+.endif
 
 .if ${PORT_OPTIONS:MPINENTRY}
 RUN_DEPENDS+=	pinentry>0:${PORTSDIR}/security/pinentry
@@ -97,9 +98,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MSCDAEMON}
 CONFIGURE_ARGS+=--enable-scdaemon
-. if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-. endif
 PLIST_SUB+=	SCDAEMON=""
 .else
 CONFIGURE_ARGS+=--disable-scdaemon

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scanbuttond
-# Date created:		31 March 2006
-# Whom:			Daniel Thiele
-#
+# Created by: Daniel Thiele
 # $FreeBSD$
-#
 
 PORTNAME=	scanbuttond
 PORTVERSION=	0.2.3
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	dthiele@gmx.net
-COMMENT=	A daemon to monitor and configure modern scanner's buttons
+COMMENT=	Daemon to monitor and configure modern scanner's buttons
 
 LICENSE=	GPLv2
 
@@ -23,12 +19,6 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES+=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
@@ -52,4 +42,4 @@ post-install:
 	done
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

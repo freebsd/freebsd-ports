@@ -7,13 +7,15 @@ DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Common UNIX Printing System: ${COMMENT2}
 
 LICENSE=	GPLv2
+
 CONFLICTS=	LPRng-[0-9]*
+
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -122,7 +124,7 @@ CONFIGURE_ARGS+=	--with-printcap=/etc/printcap
 PLIST_SUB+=		OVERWRITE="@comment "
 CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .endif
- 
+
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
@@ -146,7 +148,7 @@ PLIST_SUB+=		PHP="@comment "
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MGHOSTSCRIPT}
 .if ${PORT_OPTIONS:MXPDF}
-IGNORE=			You must select one and only one option to build pdftops
+IGNORE=			you must select one and only one option to build pdftops
 .endif
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
@@ -173,7 +175,7 @@ LIB_DEPENDS+=		paper:${PORTSDIR}/print/libpaper
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MMDNSRESPONDER}
 .if ${PORT_OPTIONS:MAVAHI}
-IGNORE=			You must select one and only one option to build for Zeroconf
+IGNORE=			you must select one and only one option to build for Zeroconf
 .endif
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
@@ -217,17 +219,13 @@ PLIST_SUB+=		WITH_DBUS="@comment "
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB} && ${OSVERSION}>800062
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB}
 CPPFLAGS+=		-I/usr/include
 LDFLAGS+=		-L/usr/lib
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB} && ${OSVERSION}<800063
-LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
-.if ${OSVERSION} >= 800000
 CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
-.endif
 
 .if defined(CUPS_CLIENT)
 MAN1=	cups-config.1

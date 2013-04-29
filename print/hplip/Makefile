@@ -85,16 +85,7 @@ XSANE_DESC=	Install XSane for scanning (requires SCAN)
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800067
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-strnlen
-.endif
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-USB_INCLUDE=	${LOCALBASE}/include
-.else
 USB_INCLUDE=	/usr/include
-.endif
 
 .if ${PORT_OPTIONS:MQT}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \

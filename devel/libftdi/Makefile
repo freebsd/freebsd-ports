@@ -8,9 +8,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	o.davydenko@gmail.com
-COMMENT=	A library (using libusb) to talk to FTDI chips
+COMMENT=	Library (using libusb) to talk to FTDI chips
 
-OPTIONS=	BOOST	"Build with boost"	off
+OPTIONS_DEFINE=	BOOST
 
 USE_AUTOTOOLS=		autoconf libtool automake
 GNU_CONFIGURE=		yes
@@ -20,9 +20,9 @@ USE_GNOME=		pkgconfig gnomehack
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BOOST)
+.if ${PORT_OPTIONS:MBOOST}
 PLIST_SUB+=		BOOST=""
 CONFIGURE_ARGS+=	--with-boost
 CXXFLAGS+=		"-I${LOCALBASE}/include"
@@ -32,11 +32,7 @@ PLIST_SUB+=		BOOST="@comment "
 CONFIGURE_ARGS+=	--without-boost
 .endif
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
@@ -47,9 +43,9 @@ pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} --force --install
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

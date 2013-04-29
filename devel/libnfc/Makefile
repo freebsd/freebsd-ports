@@ -53,7 +53,7 @@ PN531USB_DRIVER=pn531_usb,
 PN531USB_DRIVER=
 .endif
 
-.if ${PORT_OPTIONS:MP532UART}
+.if ${PORT_OPTIONS:MPN532UART}
 PN532UART_DRIVER=pn532_uart,
 .else
 PN532UART_DRIVER=
@@ -76,14 +76,6 @@ CONFIGURE_ARGS+=--disable-serial-autoprobe
 .if ${PORT_OPTIONS:MACR122}
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
-.endif
-
-.if ${PORT_OPTIONS:MPN531USB} || ${PORT_OPTIONS:MPN533USB}
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 .endif
 
 post-install:

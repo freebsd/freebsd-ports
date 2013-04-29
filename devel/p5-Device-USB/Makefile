@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-usb
-# Date created:		2007-05-05
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Device-USB
 PORTVERSION=	0.35
@@ -30,11 +26,4 @@ MAN3=		Device::USB.3 \
 		Device::USB::FAQ.3 \
 		Device::dump_usb.3
 
-.include <bsd.port.pre.mk>
-
-# libusb is in base for newer releases
-.if ${OSVERSION} < 800069
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnxt
-# Date created:		2007-05-05
-# Whom:			Jason Bacon <bacon11@tds.net>
-#
+# Created by: Jason Bacon <bacon11@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libnxt
 PORTVERSION=	0.3
@@ -19,12 +15,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
 
 do-build:
 	(cd ${WRKSRC}; scons)
@@ -42,4 +32,4 @@ do-install:
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

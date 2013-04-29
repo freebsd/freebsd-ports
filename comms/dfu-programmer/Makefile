@@ -19,12 +19,7 @@ PLIST_FILES=	bin/dfu-programmer
 MAN1=		dfu-programmer.1
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=--disable-libusb_1_0
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
@@ -34,4 +29,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

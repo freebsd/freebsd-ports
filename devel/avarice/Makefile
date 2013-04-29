@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avarice
-# Date created:				13 April 2003
-# Whom:					Brian Dean <bsd@FreeBSD.org>
-#
+# Created by: Brian Dean <bsd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	avarice
 PORTVERSION=	2.12
@@ -20,14 +16,8 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
+#CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
 MAN1=		avarice.1 ice-gdb.1 ice-insight.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

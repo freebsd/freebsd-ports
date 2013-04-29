@@ -24,15 +24,7 @@ PLIST_FILES=	bin/felica_dump bin/pasori_test \
 		lib/libpafe.a lib/libpafe.so lib/libpafe.la lib/libpafe.so.0
 PLIST_DIRS=	include/libpafe
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0:${PORTSDIR}/devel/libusb
-CPPFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
-.else
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
 		LIBUSB_LIBS="-L/usr/lib -lusb"
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

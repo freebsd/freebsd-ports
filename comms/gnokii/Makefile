@@ -63,12 +63,8 @@ LIB_DEPENDS+=		ical:${PORTSDIR}/devel/libical
 CONFIGURE_ARGS+=	--disable-libical
 .endif
 
-.if ${OSVERSION} < 800069
-. if ${PORT_OPTIONS:MUSB}
-LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
-. else
+. if ! ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--disable-libusb
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MPCSC}

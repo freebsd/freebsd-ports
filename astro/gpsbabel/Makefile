@@ -8,7 +8,7 @@ MASTER_SITES=	https://secure.ohos.nl/downloads/ \
 		LOCAL/beech
 
 MAINTAINER=	dev2@heesakkers.info
-COMMENT=	A GPS file translating tool
+COMMENT=	GPS file translating tool
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
@@ -19,12 +19,6 @@ CONFIGURE_ARGS+=--with-expathdr=${LOCALBASE}/include \
 
 PLIST_FILES=	bin/gpsbabel
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-libusb
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

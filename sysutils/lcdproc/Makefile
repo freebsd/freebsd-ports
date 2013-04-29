@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	bsdfan@nurfuerspam.de
-COMMENT=	A client/server suite for LCD devices
+COMMENT=	Client/server suite for LCD devices
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -77,12 +77,7 @@ LCDPROC_DRIVERS=bayrad \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSB}
-. if ${OSVERSION} < 800069
-LIB_DEPENDS+=		usb-0.1:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=	--with-libusb
-. else
 CONFIGURE_ARGS+=	--with-libusb=/usr
-. endif
 PLIST_SUB+=		USB=""
 LCDPROC_DRIVERS+=IOWarrior \
 		picolcd \

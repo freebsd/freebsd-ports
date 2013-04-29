@@ -1,9 +1,5 @@
-# ports collection makefile for:   fowsr
-# Date created:        01 Sep 2010
-# Whom:                Alexander Leidinger
-#
+# Created by: Alexander Leidinger
 # $FreeBSD$
-#
 
 PORTNAME=	fowsr
 PORTVERSION=	${FILEVER}.${FILEDATE}
@@ -14,11 +10,12 @@ DISTNAME=	fowsr-${FILEVER}-${FILEDATE}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fine Offset Weather Station Reader
 
+LICENSE=	GPLv3
+
 FILEVER=	1.0
 FILEDATE=	20100718
 WRKSRC=		${WRKDIR}/${PORTNAME}-${FILEVER}
 
-LICENSE=	GPLv3
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -34,12 +31,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fowsr ${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

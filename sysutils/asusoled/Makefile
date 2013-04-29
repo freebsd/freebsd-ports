@@ -1,9 +1,5 @@
-# Ports collection makefile for:  asusoled
-# Date created:                   2008-09-11
-# Whom:                           Jung-uk Kim <jkim@FreeBSD.org>
-#
+# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asusoled
 PORTVERSION=	0.10
@@ -29,11 +25,7 @@ MAKE_ARGS+=	TTF_FONT=${FONTDIR}/TTF/luxisr.ttf
 
 FONTDIR?=	${LOCALBASE}/lib/X11/fonts
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if !defined(NOPORTDATA)
@@ -42,7 +34,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/${i} ${DATADIR}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${CAT} ${PKGMESSAGE} > ${WRKSRC}/README.FreeBSD
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
@@ -53,4 +45,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

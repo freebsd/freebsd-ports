@@ -32,11 +32,7 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS VST
 VST_DESC=	VST plugins support
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVST}
 SCONS_ENV+=	VST=yes
@@ -53,7 +49,7 @@ PLIST_SUB+=	VST="@comment "
 .endif
 
 # Upstream uses these flags by default
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
 .  if ${ARCH} == "amd64"
 SCONS_ENV+=	DIST_TARGET=x86_64
@@ -77,4 +73,4 @@ post-install:
 	@${MKDIR} ${TEMPLATESDIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.template ${TEMPLATESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
