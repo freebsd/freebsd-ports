@@ -135,7 +135,7 @@
 -	        "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
 -	fi
 +	@echo "Customizing tcl module path";
-+	@echo "if {![interp issafe]} { ::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)} }" >> \
++	@echo "::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)}" >> \
 +	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl;
 +
 +install-tm:
