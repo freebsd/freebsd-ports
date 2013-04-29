@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wxguitar
-# Date created:		19 Aug 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wxguitar
 PORTVERSION=	1.01
@@ -27,7 +23,9 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/wxGuitar
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

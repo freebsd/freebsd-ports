@@ -1,9 +1,5 @@
-# New ports collection makefile for:	springlobby
-# Date created:		02 Sep 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	springlobby
 PORTVERSION=	0.143
@@ -28,12 +24,14 @@ MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
-OPTIONS=	TORRENT	"Support automatic content downloads via torrent" on \
-		SOUND	"Enable sound" on
+OPTIONS_DEFINE=	TORRENT SOUND DOCS NLS
+OPTIONS_DEFAULT=	TORRENT SOUND
+TORRENT_DESC=	Support automatic content downloads via torrent
+SOUND_DESC=	Enable sound
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -41,13 +39,13 @@ CMAKE_ARGS+=	-DOPTION_TRANSLATION_SUPPORT:BOOL=OFF
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_TORRENT)
+.if ${PORT_OPTIONS:MTORRENT}
 LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 .else
 CMAKE_ARGS+=	-DOPTION_TORRENT_SYSTEM:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 USE_OPENAL=		al
 .else
 CMAKE_ARGS+=	-DOPTION_SOUND:BOOL=OFF
@@ -57,7 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
 		${WRKSRC}/src/utils/curlhelper.h \
 		${WRKSRC}/src/utils/downloader.cpp
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/install.*FILES.*share\/doc/ d' \
 		${WRKSRC}/CMakeLists.txt
 .endif

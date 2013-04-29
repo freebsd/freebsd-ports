@@ -1,9 +1,5 @@
-# New ports collection makefile for: typespeed
-# Date created:        06 September 2003
-# Whom:                refugee
-#
+# Created by: refugee
 # $FreeBSD$
-#
 
 PORTNAME=	typespeed
 PORTVERSION=	0.6.5
@@ -28,12 +24,14 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}" WRKSRC="${WRKSRC}"
 MAN1=		typespeed.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -52,7 +50,7 @@ do-install:
 	${MKDIR} ${DATADIR}/words
 	${FIND} ${WRKSRC}/words/ -name "words.*" -type f \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/words \;
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 .for i in de_DE fr_FR it
 	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \

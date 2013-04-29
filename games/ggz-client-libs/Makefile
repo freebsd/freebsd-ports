@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ggz-client-libs
-# Date created:			Oct 8, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	${GGZ_VERSION}
@@ -31,12 +26,14 @@ MAN7=	ggz.7
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:

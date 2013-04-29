@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mydns
-# Date created:				23 July 2002
-# Whom:					Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mydns
 PORTVERSION=	1.1.0
@@ -30,18 +26,18 @@ MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
-.if defined(WITH_ALIAS)
+.if ${PORT_OPTIONS:MALIAS}
 CONFIGURE_ARGS+=--enable-alias
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl \
 		--with-openssl-include=${OPENSSLINC} \
 		--with-openssl-lib=${OPENSSLLIB}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--without-mysql \
 		--with-pgsql-include=${LOCALBASE}/include \
@@ -55,7 +51,7 @@ PKGNAMESUFFIX=	-mysql
 USE_MYSQL=	yes
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -73,7 +69,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/contrib
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

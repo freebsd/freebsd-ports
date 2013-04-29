@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GNU make
-# Date created:		11 September 1994
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	gmake
 PORTVERSION=	3.82
@@ -22,7 +18,10 @@ COMMENT=	GNU version of 'make' utility
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
-.if !defined(WITHOUT_NLS)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}

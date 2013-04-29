@@ -1,9 +1,5 @@
-# New ports collection makefile for:   m17n-db
-# Date created:                29 May 2004
-# Whom:                        Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	m17n-db
 PORTVERSION=	1.6.3
@@ -24,7 +20,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

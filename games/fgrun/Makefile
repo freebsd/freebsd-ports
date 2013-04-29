@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fgrun
-# Date created:				18 Oct 2008
-# Whom:					buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	fgrun
 PORTVERSION=	1.6.0
@@ -26,16 +22,18 @@ CONFIGURE_ARGS=	--with-boost="${LOCALBASE}"
 USE_GMAKE=	yes
 USE_GL=		gl
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 post-patch:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|SUBDIRS = src po msvc|SUBDIRS = src|' \
 		${WRKSRC}/Makefile.in
 .endif

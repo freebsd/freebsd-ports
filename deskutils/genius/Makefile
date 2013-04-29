@@ -1,9 +1,5 @@
-# New ports collection makefile for:	genius
-# Date created:				1 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	genius
 PORTVERSION=	1.0.12
@@ -33,13 +29,15 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USES=		gettext
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>

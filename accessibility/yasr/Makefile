@@ -19,7 +19,9 @@ PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
 		README-br README-de README-es README-fr README-ru
 SUB_FILES=	pkg-message
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 USES+=		gettext
@@ -44,7 +46,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/csh|' ${WRKSRC}/yasr.conf
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

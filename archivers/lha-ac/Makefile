@@ -23,7 +23,9 @@ GNU_CONFIGURE=	yes
 
 RESTRICTED=	no permission to redistribute
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-multibyte-filename
 .else
 CONFIGURE_ARGS+=	--enable-multibyte-filename=auto

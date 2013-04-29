@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gxmessage
-# Date created:				9 March 2005
-# Whom:					Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	gxmessage
 PORTVERSION=	2.12.4
@@ -22,7 +18,9 @@ INSTALLS_ICONS=	yes
 
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""

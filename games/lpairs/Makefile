@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lpairs
-# Date created:		12 Sep 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lpairs
 PORTVERSION=	1.0.4
@@ -19,7 +15,9 @@ USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}

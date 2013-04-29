@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-docklet
-# Date created:				10 April, 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bmp-docklet
 PORTVERSION=	1.3
@@ -27,12 +23,14 @@ USE_GNOME=	gnomehack intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment"
-.else
-USES=		gettext
-PLIST_SUB+=	NLS=""
 .endif
 
 .include <bsd.port.mk>

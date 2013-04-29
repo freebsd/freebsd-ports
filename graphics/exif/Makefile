@@ -19,12 +19,14 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		exif.1

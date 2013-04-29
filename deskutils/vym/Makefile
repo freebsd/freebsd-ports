@@ -28,7 +28,9 @@ DESKTOP_ENTRIES=	"VYM" \
 			"" \
 			false
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
@@ -36,12 +38,12 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/INSTALLS += doc/d' ${WRKSRC}/vym.pro
 .endif
 
 do-configure:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC} && ${QT_LRELEASE} vym.pro
 .endif
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
@@ -49,7 +51,7 @@ do-configure:
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/
 .endif

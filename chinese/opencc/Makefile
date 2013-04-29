@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opencc
-# Date created:				28 Nov 2011
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	opencc
 PORTVERSION=	0.3.0
@@ -20,7 +16,9 @@ MAN1=	opencc.1 opencc_dict.1
 USES=		cmake
 USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CMAKE_ARGS+=	-DENABLE_GETTEXT=On
 PLIST_SUB+=	NLS=""

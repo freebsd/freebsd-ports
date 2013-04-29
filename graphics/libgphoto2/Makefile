@@ -25,13 +25,15 @@ MAKE_JOBS_SAFE=	yes
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 USES+=		iconv
-.else
-USES+=		gettext
-PLIST_SUB+=	NLS=""
 .endif
 
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
@@ -43,7 +45,7 @@ post-patch:
 		 s|-g -O2||g ; \
 		 /grep -i linux/s|; fi ; then|; else false; fi ; then|' ${WRKSRC}/${file}
 .endfor
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|(LDFLAGS) -o|(LDFLAGS) -lintl -o|' ${WRKSRC}/libgphoto2_port/libgphoto2_port/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e '/test.*udevscriptdir/d ; s| "$$(DESTDIR)$$(udevscriptdir)"||' ${WRKSRC}/libgphoto2_port/usb/Makefile.in ${WRKSRC}/packaging/generic/Makefile.in

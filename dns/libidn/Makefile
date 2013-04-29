@@ -20,7 +20,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 INFO=	libidn
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -34,13 +36,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|' \
 			-e 's|imagesdir = $$(infodir)|imagesdir = $$(docdir)|' \
 		${WRKSRC}/doc/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|install-data-am: install-imagesDATA install-info-am install-man|install-data-am: install-info-am install-man|' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
