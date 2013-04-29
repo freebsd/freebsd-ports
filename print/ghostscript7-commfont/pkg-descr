@@ -1,0 +1,2 @@
+This is a virtual CJK font set for Ghostscript 7.x.  These virtual fonts
+call several TrueType Japanese/Korean/Chinese fonts as the real instances.

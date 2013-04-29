@@ -1,0 +1,23 @@
+--- lib/gs_statd.ps.orig	Thu Jul 18 19:43:42 2002
++++ lib/gs_statd.ps	Fri Dec  6 05:32:56 2002
+@@ -105,6 +105,12 @@
+  /flsa {612 936 //.setpagesize exec} bind def  % U.S. foolscap
+  /flse {612 936 //.setpagesize exec} bind def  % European foolscap
+  /halfletter {396 612 //.setpagesize exec} bind def
++ /postcard {284 419 //.setpagesize exec} bind def
++ /dbl_postcard {419 568 //.setpagesize exec} bind def
++ /Executive {522 756 //.setpagesize exec} bind def
++ /jenv_you4 {298 666 //.setpagesize exec} bind def
++ /jenv_you2 {324 460 //.setpagesize exec} bind def
++ /jenv_kaku2 {682 942 //.setpagesize exec} bind def
+ % /tabloid {792 1224 //.setpagesize exec} bind def  % 11x17 portrait
+ % /csheet {1224 1584 //.setpagesize exec} bind def % ANSI C 17x22
+ % /dsheet {1584 2448 //.setpagesize exec} bind def % ANSI D 22x34
+@@ -121,6 +127,7 @@
+  { /letter /note	%do not change this line, needed by 'setpagetype'
+    /legal /lettersmall
+    /11x17 /ledger
++   /postcard /dbl_postcard /Executive /jenv_you4 /jenv_you2 /jenv_kaku2
+    /a4small /a3 /a4
+ STRICT { (%END SIZES) .skipeof } if
+    /a0 /a1 /a2 /a5 /a6 /a7 /a8 /a9 /a10

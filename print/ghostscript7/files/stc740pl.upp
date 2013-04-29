@@ -1,0 +1,32 @@
+# $ApsCVS: src/apsfilter/uniprint/stc740pl.upp,v 1.2 2000/04/21 18:48:01 andreas Exp $
+#
+-supModel="Epson Stylus Color 740, 360x360DpI, Plain Paper"
+-sDEVICE=uniprint
+-dNOPAUSE
+-dSAFER
+-dupColorModel=/DeviceCMYKgenerate
+-dupRendering=/FSCMYK32
+-dupOutputFormat=/EscP2
+-r360x360
+-dupMargins="{ 9.0 39.96 9.0 9.0}"
+-dupOutputComponentOrder="{ 1 2 3 0 }"
+-dupWeaveYPasses=3
+-dupOutputPins=48
+-dupWeaveYFeeds="{47 50 47}"
+-dupWeaveInitialYFeeds="{1 1 46}"
+-dupWeaveInitialPins="{ 16 48 32}"
+-dupBeginPageCommand="<
+   1b40   1b40
+   1b2847 0100 01
+   1b2855 0100 0A
+   1b5500
+   1b2865 0200 0002
+   1b2843 0200 0000
+   1b2863 0400 0000 0000
+>"
+-dupAdjustPageLengthCommand
+-dupAdjustTopMarginCommand
+-dupAdjustBottomMarginCommand
+-dupEndPageCommand="(\033@\014)"
+-dupAbortCommand="(\033@\15\12\12\12\12    Printout-Aborted\15\014)"
+
