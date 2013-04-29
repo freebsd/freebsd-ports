@@ -11,6 +11,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Insight Toolkit
 
 OPTIONS_DEFINE=	EXAMPLES TESTING
+EXAMPLES_DESC=	Build examples (very time consuming)
 TESTING_DESC=	Build testing programs (very time consuming)
 
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
