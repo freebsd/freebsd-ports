@@ -4181,11 +4181,6 @@ devel/geany-plugin-gdb||2013-03-21|Removed from geany plugins distribution
 www/kompozer||2013-03-22|Has expired: Dead upstream
 graphics/fpc-fpvectorial||2013-03-23|Removed from freepascal packages distribution
 databases/akonadi-google|deskutils/kdepim4-runtime|2013-03-24|Merged into deskutils/kdepim4-runtime
-print/ghostscript7|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
-print/ghostscript7-nox11|print/ghostscript9-nox11|2013-03-26|ghostscript 7 is outdated consider using a newer version
-print/ghostscript7-commfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
-print/ghostscript7-jpnfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
-print/ghostscript7-korfont|print/ghostscript9|2013-03-26|ghostscript 7 is outdated consider using a newer version
 www/pecl-zendoptimizerplus|www/pecl-zendopcache|2013-03-27|Renamed
 print/kdeutils4-printer-applet|print/kde4-print-manager|2013-03-27|Superseded by print/kde4-print-manager
 print/system-config-printer-kde|print/kde4-print-manager|2013-03-27|Superseded by print/kde4-print-manager

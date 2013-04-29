@@ -1,0 +1,198 @@
+--- lib/gs_ttf.ps.orig	Sat Apr 12 23:02:38 2003
++++ lib/gs_ttf.ps	Sat Jan 10 00:51:05 2004
+@@ -575,7 +575,7 @@
+   (maxp) 1 index
+   (name) 1 index
+   (OS/2) 1 index
+-  (post) 1 index
++  (post) { .readbigtable }
+   (vhea) 1 index
+ 	% Big tables
+   (glyf) { .readbigtable }
+@@ -918,10 +918,17 @@
+   DEBUG { (fontname ) print fontname = } if
+ 		% Stack: ... /FontInfo mark key1 value1 ...
+   post null ne {
+-    /ItalicAngle post 4 gets32 65536.0 div
+-    /isFixedPitch post 12 getu32 0 ne
+-    /UnderlinePosition post 8 gets16 upem div
+-    /UnderlineThickness post 10 gets16 upem div
++    post type /arraytype eq {
++      % this post table is a big table. /post should be [(...) ...]
++      % data we actually need here should be first one in array.
++      /posttable post 1 get def
++    } {
++      /posttable post def
++    } ifelse
++    /ItalicAngle posttable 4 gets32 65536.0 div
++    /isFixedPitch posttable 12 getu32 0 ne
++    /UnderlinePosition posttable 8 gets16 upem div
++    /UnderlineThickness posttable 10 gets16 upem div
+   } if
+   counttomark 0 ne { .dicttomark } { pop pop } ifelse
+   /XUID [orgXUID 42 curxuid]
+@@ -1097,9 +1104,26 @@
+ % 4	2	Offset	Coverage(--)
+ % 6	2	uint16	GlyphCount
+ % 8	2	GlyphID	Substitute(vertically oriented glyphs)
+-% --	2	uint16	SubstFormat
+-% +2	2	uint16	GlyphCount(same as above GlyphCount)
+-% +4	2	GlyphID	GlyphArray(horizontally oriented glyphs)
++%
++% [Coverage Format 1, Individual glyph indices]
++% Index Size    Type    Name of Entry
++% -----------------------------------
++% 0     2       uint16  CoverageFormat (Format identifier-format = 1)
++% 2     2       uint16  GlyphCount (same as above GlyphCount)
++% 4     2       GlyphID GlyphArray (horizontally oriented glyphs)
++%
++% [Coverage Format 2, Range of glyphs
++% Index Size    Type    Name of Entry
++% -----------------------------------
++% 0     2       uint16  CoverageFormat (Format identifier-format = 2)
++% 2     2       uint16  RangeCount
++% 4     2       struct  RangeRecord[RangeCount]
++% [RangeRecord]
++% Index Size    Type    Name of Entry
++% -----------------------------------
++% 0     2       GlyphID First GlyphID in the range
++% 2     2       GlyphID Last GlyphID in the range
++% 4     2       uint16  Coverage Index of first GlpyhID in range
+ % -----------------------------------
+ % References
+ % 1. http://www.microsoft.com/typography/OTSPEC/gsub.htm
+@@ -1110,50 +1134,101 @@
+   /gsubh2v null def
+   tabdict /GSUB .knownget { % if
+     dup /gsubver exch 0 getu32 def
+-    %dup /gsubosl exch 4 getu16 12 add def
+-    %dup /gsubofl exch 6 getu16 12 add def
+-    dup /gsuboll exch 8 getu16 12 add def
++    %dup /gsubosl exch 4 getu16 def
++    %dup /gsubofl exch 6 getu16 def
++    dup /gsuboll exch 8 getu16 def
+     DEBUG {
+       (gsubver: ) print gsubver =
+       %(gsubosl: ) print gsubosl =
+       %(gsubofl: ) print gsubofl =
+       (gsuboll: ) print gsuboll =
+     } if
+-    dup /gsubfmt exch gsuboll 0 add getu16 def
++    % /gsuboll should be pointed out the LookupList table, but not Lookup table.
++    % so this is wrong:
++    % dup /gsubfmt exch gsuboll 0 add getu16 def
++    dup /gsublc exch gsuboll 0 add getu16 def
+     DEBUG {
+-      (gsubfmt: ) print gsubfmt =
++      (gsublc: ) print gsublc =
+     } if
+-%    gsubver 16#00010000 eq { % ifelse
+-      gsubfmt 2 eq { % ifelse
+-	dup /gsubocv exch gsuboll 2 add getu16 def
+-	dup /gsubglc exch gsuboll 4 add getu16 def
+-	% hacked by suzuki toshiya at 2001/3/6
+-	%dup /gsubvog exch gsuboll 6 add gsubglc getinterval def
+-	%dup /gsubhog exch gsuboll gsubocv add 4 add gsubglc getinterval def
+-	dup /gsubvog exch gsuboll 6 add gsubglc 2 mul getinterval def
+-	dup /gsubhog exch gsuboll gsubocv add 4 add gsubglc 2 mul getinterval def
++    gsublc 0 ne {
++      0 1 gsublc 1 sub {
++	2 mul /gsubolt exch 2 index exch gsuboll 2 add add getu16 gsuboll add def
++	dup /gsubltype exch gsubolt 0 add getu16 def
++	dup /gsublflag exch gsubolt 2 add getu16 def
++	dup /gsubsubc exch gsubolt 4 add getu16 def
+ 	DEBUG {
+-	  (gsubocv: ) print gsubocv =
+-	  (gsubglc: ) print gsubglc =
+-
+-	  (gsubhog->gsubvog ) =
+-	  0 2 gsubhog length 2 sub { % for
+-	    dup
+-	    gsubhog exch getu16 =only
+-	    (->) =only
+-	    gsubvog exch getu16 =
++	  (gsubolt: ) print gsubolt =
++	  (gsubltype: ) print gsubltype =
++	  (gsublflag: ) print gsublflag =
++	  (gsubsubc: ) print gsubsubc =
++	} if
++	gsubsubc 0 ne {
++	  0 1 gsubsubc 1 sub {
++	    2 mul /gsubost exch 2 index exch gsubolt 6 add add getu16 gsubolt add def
++	    dup /substfmt exch gsubost 0 add getu16 def
++	    DEBUG {
++	      (gsubost: ) print gsubost =
++	      (substfmt: ) print substfmt =
++	    } if
++%	    gsubver 16#00010000 eq { % ifelse
++	    gsubltype 1 eq substfmt 2 eq and { % ifelse
++	      dup /gsubocv exch gsubost 2 add getu16 def
++	      dup /gsubglc exch gsubost 4 add getu16 def
++	      % hacked by suzuki toshiya at 2001/3/6
++	      %dup /gsubvog exch gsubost 6 add gsubglc getinterval def
++	      %dup /gsubhog exch gsubost gsubocv add 4 add gsubglc getinterval def
++	      dup /gsubvog exch gsubost 6 add gsubglc 2 mul getinterval def
++	      dup /cvfmt exch gsubost gsubocv add 0 add getu16 def
++	      dup /cvglc exch gsubost gsubocv add 2 add getu16 def
++	      dup /gsubhog exch gsubost gsubocv add 4 add cvglc 2 mul getinterval def
++	      DEBUG {
++		(gsubocv: ) print gsubocv =
++		(gsubglc: ) print gsubglc =
++		(cvfmt: ) print cvfmt =
++
++		(gsubhog->gsubvog ) =
++		0 2 gsubhog length 2 sub { % for
++		  dup
++		  gsubhog exch getu16 =only
++		  (->) =only
++		  gsubvog exch getu16 =
++		} for
++	      } if
++	      cvfmt 1 eq {
++		/gsubh2v << 0 2 gsubhog length 2 sub {
++		  dup gsubhog exch getu16
++		  exch gsubvog exch getu16
++		} for >> def
++	      } {
++		cvfmt 2 eq {
++		  /gsubh2v << 0 6 gsubhog length 6 sub {
++		    dup 0 add /fgid exch gsubhog exch getu16 def
++		    dup 2 add /lgid exch gsubhog exch getu16 def
++		    4 add /cvidx exch gsubhog exch getu16 def
++		    DEBUG {
++		      (fgid: ) print fgid =
++		      (lgid: ) print lgid =
++		      (cvidx: ) print cvidx =
++		    } if
++		    fgid 1 lgid {
++		      dup cvidx add fgid sub
++		      exch gsubvog exch getu16
++		    } for
++		  } for >> def
++		} {
++		  %(UNKNWON COVERAGE FORMAT.) = flush
++		} ifelse
++	      } ifelse
++	    } {
++	      %(UNKNOWN GSUB FORMAT.) = flush
++	    } ifelse
++%	    } {
++%	      (ILLEGAL GSUB VERSION.) = flush
++%	    } ifelse
+ 	  } for
+ 	} if
+-	/gsubh2v << 0 2 gsubhog length 2 sub {
+-	  dup gsubhog exch getu16
+-	  exch gsubvog exch getu16
+-	} for >> def
+-      } {
+-	%(UNKNOWN GSUB FORMAT.) = flush
+-      } ifelse
+-%    } {
+-%      (ILLEGAL GSUB VERSION.) = flush
+-%    } ifelse
++      } for
++    } if
+     pop
+   } if
+ } bind def
