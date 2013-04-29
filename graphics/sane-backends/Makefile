@@ -105,7 +105,7 @@ CONFIGURE_ENV+=		ac_cv_header_cups_cups_h=no
 
 post-extract:
 	@((cd ${DISTDIR} && ${CAT} ${DISTFILES:C/:[^:]+$//}) | (cd ${WRKDIR} \
-		&& ${EXTRACT_CMD} ${EXTRACT_BEFOR_ARGS} - ${EXTRACT_AFTER_ARGS}))
+		&& ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - ${EXTRACT_AFTER_ARGS}))
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h|cups/cups.h| ; \
