@@ -1,21 +1,15 @@
-# New ports collection makefile for:	gcal
-# Date created:				12 October 2000
-# Whom:					Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=		gcal
-PORTVERSION=		3.6.2
+PORTVERSION=		3.6.3
 CATEGORIES=		deskutils
-MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU Gregorian calendar program
 
 USE_XZ=		yes
-USES=		gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
