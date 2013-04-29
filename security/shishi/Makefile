@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shishi
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -42,11 +41,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-CONFIGURE_ARGS+=	gl_cv_func_stat_dir_slash="guessing yes" \
-			gl_cv_func_stat_file_slash="guessing yes"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
 	@cd ${WRKSRC}/db/gl && ${LN} -s ../../build-aux/link-warning.h
@@ -56,5 +50,7 @@ post-patch:
 		${WRKSRC}/db/gl/Makefile.in
 	@${REINPLACE_CMD} -e 's:\.\./gl/libgnu.la:../db/gl/libgnu.la &:' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/^AM_CPPFLAGS/s:-I[^ ]*/gl ::g' \
+		${WRKSRC}/examples/Makefile.in
 
 .include <bsd.port.post.mk>
