@@ -1,9 +1,4 @@
-# New ports collection makefile for:   lordsawar
-# Date created:                 12 February 2008
-# Whom:                         spam@rm-rf.kiev.ua
-#
 # $FreeBSD$
-#
 
 PORTNAME=	lordsawar
 PORTVERSION=	0.1.9
@@ -12,8 +7,8 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ak@FreeBSD.org
-COMMENT=	A Warlords II clone
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Warlords II clone
 
 LICENSE=	GPLv3
 

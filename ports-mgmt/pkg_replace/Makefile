@@ -7,7 +7,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=portutil/22116
 
-MAINTAINER=	securedog@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for upgrading installed packages
 
 DEPRECATED=	Abandoned upstream, does not support pkgng. Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng
