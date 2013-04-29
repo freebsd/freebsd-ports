@@ -7,7 +7,7 @@
 
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}7/${PORTNAME}7/${PORTNAME}7-1.00
@@ -34,10 +34,12 @@ post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s|$$(libdir)|$$(prefix)/libdata|g' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e '/usage/s|run_||g' \
+		-e 's|./src/mopac7|${PREFIX}/libexec/mopac7|g' \
 		${WRKSRC}/run_${PORTNAME}7
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run_${PORTNAME}7 ${PREFIX}/bin/${PORTNAME}7
+	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PORTNAME}7 ${PREFIX}/libexec/${PORTNAME}7
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/test
 	${INSTALL_DATA} ${WRKSRC}/tests/*.dat ${EXAMPLESDIR}/test
