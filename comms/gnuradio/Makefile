@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.6.2
-PORTREVISION=	2
+PORTVERSION=	3.6.3
 CATEGORIES=	comms astro hamradio
-MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
+MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
@@ -32,29 +33,25 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		cmake:outsource
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-#CMAKE_ARGS=	--debug-output --trace
-CMAKE_ARGS=+	--debug-output
 USE_PYTHON=	2.7+
 USE_WX=		2.6+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	MAJOR_VERSION="3"
 
 OPTIONS_DEFINE=		USRP TESTING
 OPTIONS_DEFAULT=	USRP
 USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
@@ -64,9 +61,11 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf \
 		latex:${PORTSDIR}/print/teTeX
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
+CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 HAVE_PORTDOCS=	YES
 .else
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="OFF"
+CMAKE_ARGS+=	-DENABLE_DOCS:STRING="OFF"
 .endif
 
 .if ${PORT_OPTIONS:MUSRP}
@@ -85,14 +84,44 @@ BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 CMAKE_ARGS+=	-DENABLE_TESTING:STRING="OFF"
 .endif
 
+.include <bsd.port.options.mk>
 post-patch:
+	${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
+	    ${XARGS} ${REINPLACE_CMD} -e \
+		 "s|{GR_LIBRARY_DIR}/pkgconfig|{GR_PKGCONFIG_DIR}/pkgconfig|g"
+
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/docs/doxygen/Doxyfile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/cmake/Modules/FindPortaudio.cmake
+
+PLISTMAIN=	pkg-plist.main
+PLISTDIRS=	pkg-plist.dirs
+PLIST=	${WRKDIR}/.pkg-plist
 
 pre-install:
-	${MKDIR}		${PREFIX}/include/gruel
-	${INSTALL_DATA}		${WRKSRC}/gruel/src/include/gruel/*.h \
-		${PREFIX}/include/gruel
+	@${RM} -f ${PLIST}
+	@${CAT} ${PLISTMAIN} > ${PLIST}
+	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} html -type f  | \
+	    ${SED} -e 's|html|%%PORTDOCS%%%%DOCSDIR%%/html|' \
+		| ${SORT} >> ${PLIST}
+	@cd ${WRKDIR}/.build/gr-trellis && ${FIND} doc -name \*.html -type f  | \
+	    ${SED} -e 's|doc|%%PORTDOCS%%%%DOCSDIR%%/html|' \
+		| ${SORT} >> ${PLIST}
+	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} xml -type f  | \
+	    ${SED} -e 's|xml|%%PORTDOCS%%%%DOCSDIR%%/xml|' \
+		| ${SORT} >> ${PLIST}
+	@cd ${WRKDIR}/.build/gr-trellis && ${FIND} doc -name \*.xml -type f  | \
+	    ${SED} -e 's|doc|%%PORTDOCS%%%%DOCSDIR%%/xml|' \
+		| ${SORT} >> ${PLIST}
+	@${CAT} ${PLISTDIRS} >> ${PLIST}
+	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} html -type d | ${SORT} -r | \
+	    ${SED} -e 's|html|%%PORTDOCS%%@dirrm %%DOCSDIR%%/html|' \
+		 >> ${PLIST}
+	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} xml -type d | ${SORT} -r | \
+	    ${SED} -e 's|xml|%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml|' \
+		 >> ${PLIST}
+	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 
 post-install:
 .if	defined(HAVE_PORTDOCS)

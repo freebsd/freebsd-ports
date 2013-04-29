@@ -4,14 +4,14 @@
          ${CMAKE_CURRENT_SOURCE_DIR}/gr-trellis.xml
  )
  add_custom_target(gr_trellis_html ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/gr-trellis.html)
-+if(ENABLE_DOXYGEN)
++if(ENABLE_DOCS)
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/gr-trellis.html
      DESTINATION ${GR_PKG_DOC_DIR}/html
      COMPONENT "trellis_docs"
  
  )
-+endif(ENABLE_DOXYGEN)
++endif(ENABLE_DOCS)
  endif(XMLTO_EXECUTABLE)
  
  ########################################################################
@@ -19,11 +19,11 @@
      ${CMAKE_CURRENT_BINARY_DIR}/test_tcm.py.xml
      ${CMAKE_CURRENT_BINARY_DIR}/test_viterbi_equalization1.py.xml
  )
-+if(ENABLE_DOXYGEN)
++if(ENABLE_DOCS)
  install(FILES
      ${CMAKE_CURRENT_BINARY_DIR}/test_tcm.py.xml
      ${CMAKE_CURRENT_BINARY_DIR}/test_viterbi_equalization1.py.xml
      DESTINATION ${GR_PKG_DOC_DIR}/xml
      COMPONENT "trellis_docs"
  )
-+endif(ENABLE_DOXYGEN)
++endif(ENABLE_DOCS)
