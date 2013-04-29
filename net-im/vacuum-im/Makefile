@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vacuum
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
@@ -22,6 +21,8 @@ USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network linguist_build webkit
 MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	AUTHORS CHANGELOG COPYING README TRANSLATORS
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 		"${PREFIX}/share/pixmaps/vacuum.png" "${PORTNAME}" \
