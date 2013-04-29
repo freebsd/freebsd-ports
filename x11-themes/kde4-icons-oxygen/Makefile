@@ -16,6 +16,6 @@ USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier
 USES=		cmake:outsource
 INSTALL_TARGET=	install
-EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --exclude '${DISTNAME}/scalable'
+EXTRACT_AFTER_ARGS=	--exclude '${DISTNAME}/scalable'
 
 .include <bsd.port.mk>

@@ -1,8 +1,4 @@
-# New ports collection makefile for:	www/sendsms
-# Date created:				2005-12-17
-# Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-#
-# $Tecnik: ports/www/sendsms/Makefile,v 1.3 2006/05/12 12:15:34 itetcu Exp $
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 # $FreeBSD$
 
 PORTNAME=	sendsms
@@ -16,6 +12,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Simple perl command-line utility to send SMS via from on provider site
 
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 
 PLIST_FILES=	bin/sendsms

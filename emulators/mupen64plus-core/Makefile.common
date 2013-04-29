@@ -5,7 +5,7 @@ PATCHDIR=		${.CURDIR}/files
 BUILD_WRKSRC?=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - "${DISTNAME}/source/${PORTNAME}-core/*" \
+EXTRACT_AFTER_ARGS?=	"${DISTNAME}/source/${PORTNAME}-core/*" \
 				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
 
 .if ${PKGNAMESUFFIX} == "-core"

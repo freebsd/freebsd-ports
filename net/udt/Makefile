@@ -14,7 +14,7 @@ PATCH_WRKSRC=	${WRKDIR}/udt${PORTVERSION:R}
 WRKSRC=	${PATCH_WRKSRC}/src
 MAKEFILE=	${FILESDIR}/BSDmakefile
 MAKE_JOBS_SAFE=	yes
-EXTRACT_AFTER_ARGS=	|${TAR} -xpf - --exclude '*md5*'	\
+EXTRACT_AFTER_ARGS=	--exclude '*md5*'	\
 		--exclude udt${PORTVERSION:R}/win
 USE_LDCONFIG=	yes
 UDT_APPS=	appclient appserver recvfile sendfile test

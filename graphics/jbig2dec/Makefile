@@ -24,7 +24,7 @@ TESTS_DESC=	Download and use test-images for post-build testing
 MAN1=		jbig2dec.1
 
 MAKE_JOBS_SAFE=	yes
-EXTRACT_AFTER_ARGS+=|${TAR} -xpf - --exclude sha1.h --exclude 'getopt*'
+EXTRACT_AFTER_ARGS+=	--exclude sha1.h --exclude 'getopt*'
 
 LICENSE=	GPLv3
 

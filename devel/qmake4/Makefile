@@ -19,7 +19,7 @@ MAKE_ENV+=	FILESDIR="${FILESDIR}"
 MAKE_JOBS_SAFE=	yes
 TODAY_CMD=	/bin/date +%Y-%m-%d
 
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
+EXTRACT_AFTER_ARGS= \
 	'${DISTNAME}/mkspecs' \
 	'${DISTNAME}/include/*/*' \
 	'${DISTNAME}/src/*/*.h' \

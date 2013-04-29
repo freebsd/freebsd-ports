@@ -18,9 +18,8 @@ MAKE_JOBS_SAFE=	yes
 USE_PGSQL=	yes
 DRIVER=		src/sql/drivers/${DB}
 PLUGIN=		src/plugins/sqldrivers/${DB}
-EXTRACT_AFTER_ARGS?=| ${TAR} -xf - \
-		${DISTNAME}/${DRIVER} \
-		${DISTNAME}/${PLUGIN}
+EXTRACT_AFTER_ARGS?=	${DISTNAME}/${DRIVER} \
+			${DISTNAME}/${PLUGIN}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" MOC="${MOC}" \
 		PLUGIN="${PLUGIN}" \

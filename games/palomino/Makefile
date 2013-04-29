@@ -62,18 +62,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR}; \
-	for distfile in ${DISTFILES}; do \
-		if ${ECHO_CMD} $$distfile | ${GREP} -q txz$$; then \
-			${XZ_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$distfile ${EXTRACT_AFTER_ARGS}; \
-		else \
-			${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$distfile ${EXTRACT_AFTER_ARGS}; \
-		fi; \
-	done
-
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'

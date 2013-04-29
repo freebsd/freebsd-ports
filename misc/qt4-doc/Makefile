@@ -13,7 +13,7 @@ USE_QT4=	# empty
 QT_DIST=	yes
 NO_BUILD=	yes
 
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - '${DISTNAME}/doc'
+EXTRACT_AFTER_ARGS=	'${DISTNAME}/doc'
 
 DOCSDIR=	${PREFIX}/share/doc/qt4
 

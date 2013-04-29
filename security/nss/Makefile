@@ -35,8 +35,7 @@ SUB_LIST=	MAJOR_VERSION=${PORTVERSION:R:R} \
 DIST=		${WRKSRC:H:H}/dist
 
 EXTERNALS=	CVS dbm security/nss/lib/zlib nsprpub security/dbm
-EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
-	${EXTERNALS:C,^,--exclude ${PORTNAME}-${PORTVERSION}/mozilla/,}
+EXTRACT_AFTER_ARGS= ${EXTERNALS:C,^,--exclude ${PORTNAME}-${PORTVERSION}/mozilla/,}
 
 INSTALL_BINS=	certcgi certutil checkcert cmsutil crlutil derdump makepqg \
 		mangle modutil ocspclnt oidcalc p7content p7env p7sign \

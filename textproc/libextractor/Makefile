@@ -22,7 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
+EXTRACT_AFTER_ARGS=	--exclude libltdl
 
 MAN1=	extract.1
 MAN3=	libextractor.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fretsonfire
-# Date created:		2006-09-01
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fretsonfire
 PORTVERSION=	1.3.110
@@ -27,7 +23,7 @@ USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
 
 DATADIR=	share/${PORTNAME}
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude 'data'
+EXTRACT_AFTER_ARGS=	--exclude 'data'
 SUB_FILES=	pkg-message FretsOnFire
 SUB_LIST=	PROGRAM_DIR="${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}"
 WRKSRC=		"${WRKDIR}/Frets on Fire-${PORTVERSION}"

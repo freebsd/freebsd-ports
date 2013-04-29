@@ -19,6 +19,8 @@ CONFLICTS=	mkbold-mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkbold
 USE_PERL5=	yes
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkbold
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

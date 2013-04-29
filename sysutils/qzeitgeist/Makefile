@@ -33,7 +33,7 @@ USE_LDCONFIG=	yes
 ZEITGEIST_VERSION=	0.8.2
 
 post-extract:
-	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/zeitgeist-${ZEITGEIST_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS})
 	cd ${WRKDIR}/zeitgeist-${ZEITGEIST_VERSION} && \
 		${CP} zeitgeist/datamodel.py \

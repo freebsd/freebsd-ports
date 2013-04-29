@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	re_graph
-# Date created:			Apr 22, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	re_graph
 PORTVERSION=	0.2
@@ -21,9 +16,6 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Arrow>=0:${PORTSDIR}/graphics/p5-GD-Arrow
 
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	-xf
-EXTRACT_AFTER_ARGS=	# empty
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 

@@ -15,9 +15,8 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		fatback.1
 INFO=		fatback-manual
-EXTRACT_AFTER_ARGS+=	|${TAR} -xpf -	\
-	--exclude 'getopt*'	\
-	--exclude 'set[yl].c'
+EXTRACT_AFTER_ARGS=	--exclude 'getopt*'	\
+			--exclude 'set[yl].c'
 
 OPTIONS_DEFINE=	DOCS
 

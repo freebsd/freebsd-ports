@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TiMidity++
-# Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@luna2.org>
-#
+# Created by: Yoichi Asai <yatt@luna2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	timidity++
 PORTVERSION=	2.13.2
@@ -36,7 +32,7 @@ TIMID_LIBDIR=	lib/timidity
 
 .if !defined(PKGNAMESUFFIX)
 WANT_GNOME=	yes
-EXTRACT_AFTER_ARGS=| ${TAR} -xpf - --exclude '*/libarc/*'	\
+EXTRACT_AFTER_ARGS=	--exclude '*/libarc/*'	\
 		--exclude '*/utils/mblock.h' --exclude '*/utils/memb.h'
 
 CONFIGURE_ARGS=	--enable-interface=ncurses,vt100,server \

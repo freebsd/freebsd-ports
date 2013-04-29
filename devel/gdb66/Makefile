@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	GDB 6
-# Date created:				30 March 2001
-# Whom:					David O'Brien <obrien@NUXI.com>
-#
+# Created by: David O'Brien <obrien@NUXI.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
@@ -38,7 +33,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /}
+EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 VER=	${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1

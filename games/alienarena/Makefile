@@ -28,7 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=--with-xf86vm \
 		--with-xf86dga
 
-EXTRACT_AFTER_ARGS=	| ${TAR} --exclude "data1" -xf -
+EXTRACT_AFTER_ARGS=	--exclude "data1"
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"

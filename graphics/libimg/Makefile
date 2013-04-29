@@ -1,9 +1,5 @@
-# New ports collection makefile for:	img
-# Date Created:		20 February 1999
-# Whom:			Glenn Johnson
-#
+# Created by: Glenn Johnson
 # $FreeBSD$
-#
 
 PORTNAME=	libimg
 PORTVERSION=	1.2.4
@@ -35,7 +31,7 @@ MAKE_ENV+=	TCL_VER=${TCL_VER}
 MAKE_JOBS_SAFE=	yes
 
 # We don't need the bundled libraries:
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libz/*' \
+EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' \
 		--exclude '*/compat/*' --exclude '*/libtiff/*' \
 		--exclude '*/libjpeg/*' --exclude '*/libpng/*'
 

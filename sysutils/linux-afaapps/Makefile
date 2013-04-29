@@ -21,11 +21,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 BRANDELF_FILES=	usr/sbin/afacli
 SRC_DISTFILES=	# empty, no sources available
 
-EXTRACT_CMD=		${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
-EXTRACT_SUFX=		.tar.gz
-
 RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
 
 .include <bsd.port.pre.mk>

@@ -37,7 +37,6 @@ QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 QT_DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DO_NOT_EXTRACT=	config.profiles config.tests demos doc examples lib \
 		mkspecs tools translations
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${QT_DISTNAME}/${dne}'
 .endfor

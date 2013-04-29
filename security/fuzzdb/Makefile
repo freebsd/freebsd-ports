@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive set of fuzzing patterns
 
 NO_BUILD=	yes
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude .svn
+EXTRACT_AFTER_ARGS=	--exclude .svn
 PORTDOCS=	_copyright.txt _readme.txt
 PORTDIRS=	attack-payloads wordlists-misc Discovery \
 		web-backdoors wordlists-user-passwd regex

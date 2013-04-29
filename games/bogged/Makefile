@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bogged
-# Date created:				18 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	bogged
 PORTVERSION=	1.0.0

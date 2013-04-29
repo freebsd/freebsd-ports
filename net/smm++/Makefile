@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcltutor
-# Date created:		16 November 2000
-# Whom:			Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	smm++
 PORTVERSION=	6.1.1
@@ -23,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
 WRKSRC=		${WRKDIR}/smm/Install.unix
 USE_GMAKE=	yes
 USE_TK=		84+
-EXTRACT_AFTER_ARGS+=|${TAR} -xpf - --exclude CVS
+EXTRACT_AFTER_ARGS=--exclude CVS
 
 post-patch:
 	${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh

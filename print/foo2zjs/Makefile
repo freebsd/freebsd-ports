@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foo2zjs
-# Date created:		2006-03-17
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20110609
@@ -112,7 +108,6 @@ XML_FILES=	driver/foo2hiperc.xml \
 		printer/Xerox-Phaser_6110.xml \
 		printer/Xerox-Phaser_6115MFP.xml
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for FILES in ${XML_FILES}
 EXTRACT_AFTER_ARGS+=	--exclude '${FILES}'
 .endfor

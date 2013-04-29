@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:		qt-odbc-plugin
-# Date created:                         	31 December 2003
-# Whom:					Michael Nottebrock <lofi@freebsd.org>
-#
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.8
@@ -29,8 +24,8 @@ EXPIRATION_DATE=	2013-07-01
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
 DRIVER=		src/sql/drivers/${DB}
-EXTRACT_AFTER_ARGS?=| ${TAR} -xf - ${DISTNAME}/${PLUGIN} \
-		${DISTNAME}/${DRIVER} ${DISTNAME}/src/sql/drivers/cache
+EXTRACT_AFTER_ARGS?=	${DISTNAME}/${PLUGIN} \
+			${DISTNAME}/${DRIVER} ${DISTNAME}/src/sql/drivers/cache
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" PLUGIN="${PLUGIN}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

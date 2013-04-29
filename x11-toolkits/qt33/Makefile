@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	qt-copy
-# Date created:				2 November 2001
-# Whom:					will@cvs.kde.org
-#
+# Created by: will@cvs.kde.org
 # $FreeBSD$
-#
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
@@ -56,7 +51,7 @@ MAKE_ENV?=	TMPDIR=${TMPDIR} \
 		LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
+EXTRACT_AFTER_ARGS= \
 	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
 	--exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
 	--exclude '${DISTNAME}/extensions/nsplugin/src/[^q]*' \

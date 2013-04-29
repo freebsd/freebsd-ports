@@ -24,6 +24,8 @@ LICENSE=	GPLv3
 #  installed by this port from the form *mailfilter* to the form
 #  *filtermail*, and similarly the names in the man pages.
 #
+EXTRACT_CMD=	${GZIP_CMD}
+EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filtermail/g' | ${TAR} -xf -
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

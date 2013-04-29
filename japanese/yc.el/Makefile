@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yc.el
-# Date created:		1999/12/05
-# Whom:			HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
-#
+# Created by: HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	yc.el
 PORTVERSION=	5.2.1
@@ -17,6 +13,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs/XEmacs
 
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> yc.el
 NO_WRKSUBDIR=	yes
 

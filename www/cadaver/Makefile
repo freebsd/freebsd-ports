@@ -29,7 +29,7 @@ PLIST_FILES=	bin/cadaver
 # script breaks if it can not find the Makefile* in them. Exclude
 # them to be sure, a stray .h is not included instead of what's
 # found under PREFIX (installed by the neon port):
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - \
+EXTRACT_AFTER_ARGS=	\
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/expat/*.[ch]' \
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/intl/*.[ch]' \
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/neon/*.[ch]' \

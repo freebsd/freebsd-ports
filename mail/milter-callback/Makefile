@@ -22,10 +22,6 @@ MAN8=		milter-callback.8
 
 MAKE_ENV+=	WITH_SPF=yes
 
-# make sure flat distfile gets extracted in ${WRKSRC}
-EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC}; ${TAR} -xf - --no-same-owner \
-				--no-same-permissions -C ${WRKSRC})
-
 .if ${CC} == "clang" || ${CXX} == "clang++"
 BROKEN=	does not build with clang, uses nested functions
 .endif

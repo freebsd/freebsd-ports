@@ -41,7 +41,7 @@ post-configure:
 
 # Don't extract doc/ subdirectory - the simplest way:
 .ifdef NOPORTDOCS
-EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc
+EXTRACT_AFTER_ARGS=	--exclude doc
 EXTRA_PATCHES=	${FILESDIR}/nodoc-patch
 .endif
 PLIST_SUB+=	VERSION=${PORTVERSION:R}

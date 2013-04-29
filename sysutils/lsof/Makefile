@@ -63,7 +63,7 @@ post-extract:
 		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
 		exit 1 ; \
 	fi ; \
-	${CAT} ${SRCBALL_NAME}.tar ${EXTRACT_AFTER_ARGS} \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${SRCBALL_NAME}.tar ${EXTRACT_AFTER_ARGS} \
 	)
 	@( cd ${WRKSRC} ; ${ECHO_CMD} "y" | ./Inventory || exit 1 )
 .endif

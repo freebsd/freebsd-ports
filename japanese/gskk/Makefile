@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gskk
-# Date created:		7 Mar 2005
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gskk
 PORTVERSION=	20041208
@@ -21,6 +16,8 @@ BUILD_DEPENDS=	mkbindic:${PORTSDIR}/japanese/canna-server
 
 NO_WRKSUBDIR=	yes
 
+EXTRACT_CMD=		${GZCAT}
+EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}.t
 
 PLIST_FILES=	share/canna/dic/canna/dics.dir.${PORTNAME} \

@@ -42,8 +42,7 @@ JSH=		jsapi.h jsarena.h jsarray.h jsatom.h jsautocfg.h jsbool.h \
 
 PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-		--exclude js/jsd
+EXTRACT_AFTER_ARGS= --exclude js/jsd
 
 OPTIONS=	UTF8 "Enable UTF8 support" Off
 

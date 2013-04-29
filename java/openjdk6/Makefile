@@ -155,10 +155,6 @@ UPDATE_VERSION=	32
 ANTVERSION=	1.8.4
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
-# rely on bsdtar ability to extract .gz, .bz2 and .zip archives
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

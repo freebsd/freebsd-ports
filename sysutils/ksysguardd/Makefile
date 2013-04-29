@@ -19,10 +19,9 @@ CMAKE_ARGS+=	-DBIN_INSTALL_DIR:STRING="${PREFIX}/bin" \
 		-DSYSCONF_INSTALL_DIR:STRING="${PREFIX}/etc"
 MAKE_JOBS_SAFE=	yes
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - \
-		'${DISTNAME}/ksysguard/${PORTNAME}' \
-		'${DISTNAME}/ksysguard/example/${PORTNAME}rc' \
-		'${DISTNAME}/ksysguard/gui/SignalIDs.h'
+EXTRACT_AFTER_ARGS=	'${DISTNAME}/ksysguard/${PORTNAME}' \
+			'${DISTNAME}/ksysguard/example/${PORTNAME}rc' \
+			'${DISTNAME}/ksysguard/gui/SignalIDs.h'
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/ksysguard/${PORTNAME}
 

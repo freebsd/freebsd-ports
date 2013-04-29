@@ -12,7 +12,6 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Burp Suite is an integrated platform for testing web applications
 
-EXTRACT_CMD=	""
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7

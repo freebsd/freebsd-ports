@@ -23,7 +23,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
 MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
 MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
-EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude getifaddr.c
+EXTRACT_AFTER_ARGS=--exclude getifaddr.c
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message

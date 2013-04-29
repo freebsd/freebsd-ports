@@ -1,9 +1,5 @@
-# New ports collection makefile for:		relview
-# Date created:					October 24 2002
-# Whom:						Michael Ebert <ebert@informatik.unibw-muenchen.de>
-#
+# Created by: Michael Ebert <ebert@informatik.unibw-muenchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	relview
 PORTVERSION=	7.0.2
@@ -21,6 +17,8 @@ USE_LINUX=	yes
 USE_LINUX_APPS=	gtk xorglibs
 
 NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${GZIP_CMD}
+EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}
 
 NO_BUILD=	yes
