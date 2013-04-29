@@ -1,6 +1,6 @@
---- docs/doxygen/Doxyfile.in.orig	2012-09-04 19:43:06.000000000 -0500
-+++ docs/doxygen/Doxyfile.in	2012-10-21 17:33:21.000000000 -0500
-@@ -1411,7 +1411,7 @@
+--- docs/doxygen/Doxyfile.in.orig	2013-01-08 15:56:55.000000000 -0500
++++ docs/doxygen/Doxyfile.in	2013-02-23 13:31:16.000000000 -0500
+@@ -1399,7 +1399,7 @@
  # different font using DOT_FONTNAME you can set the path where dot
  # can find it using this tag.
  

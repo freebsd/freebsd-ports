@@ -1,6 +1,18 @@
---- CMakeLists.txt.orig	2012-09-04 19:43:13.000000000 -0500
-+++ CMakeLists.txt	2012-10-26 16:35:52.000000000 -0500
-@@ -96,6 +96,14 @@
+--- CMakeLists.txt.orig	2013-01-08 15:56:55.000000000 -0500
++++ CMakeLists.txt	2013-03-12 11:12:02.000000000 -0500
+@@ -41,8 +41,9 @@
+ # Set the version information here
+ set(VERSION_INFO_MAJOR_VERSION 3)
+ set(VERSION_INFO_API_COMPAT    6)
+-set(VERSION_INFO_MINOR_VERSION 4)
+-set(VERSION_INFO_MAINT_VERSION git)
++set(VERSION_INFO_MINOR_VERSION 3)
++#set(VERSION_INFO_MINOR_VERSION 4)
++set(VERSION_INFO_MAINT_VERSION 0)
+ include(GrVersion) #setup version info
+ 
+ # Append -O2 optimization flag for Debug builds
+@@ -103,6 +104,14 @@
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
  set(GR_RUNTIME_DIR      bin)
@@ -15,7 +27,7 @@
  set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
  set(GR_INCLUDE_DIR      include)
  set(GR_DATA_DIR         share)
-@@ -133,6 +141,22 @@
+@@ -140,6 +149,22 @@
  )
  
  ########################################################################
@@ -38,18 +50,18 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs)
-@@ -214,12 +238,13 @@
+@@ -221,12 +246,13 @@
  ########################################################################
  # Distribute the README file
  ########################################################################
-+if(ENABLE_DOXYGEN)
++if(ENABLE_DOCS)
  install(
      FILES README README.hacking
      DESTINATION ${GR_PKG_DOC_DIR}
      COMPONENT "docs"
  )
 -
-+endif(ENABLE_DOXYGEN)
- 
++endif(ENABLE_DOCS)
  ########################################################################
- # Add subdirectories (in order of deps)
+ # The following dependency libraries are needed by all gr modules:
+ ########################################################################

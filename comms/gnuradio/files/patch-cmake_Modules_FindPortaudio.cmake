@@ -1,5 +1,5 @@
---- cmake/Modules/FindPortaudio.cmake.orig	2012-09-04 19:43:06.000000000 -0500
-+++ cmake/Modules/FindPortaudio.cmake	2012-09-28 20:05:36.000000000 -0500
+--- cmake/Modules/FindPortaudio.cmake.orig	2013-01-08 15:56:55.000000000 -0500
++++ cmake/Modules/FindPortaudio.cmake	2013-04-23 07:47:40.000000000 -0500
 @@ -6,7 +6,13 @@
  #  PORTAUDIO_LIBRARIES - Link these to use Portaudio
  
@@ -8,8 +8,8 @@
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  message( "--- Using Portaudio2 for FreeBSD")
 +  set(PORTAUDIO_FOUND TRUE)
-+  set(PORTAUDIO_INCLUDE_DIRS "/usr/local/include/portaudio2")
-+  set(PORTAUDIO_LIBRARIES "/usr/local/lib/portaudio2/libportaudio.so")
++  set(PORTAUDIO_INCLUDE_DIRS "%%LOCALBASE%%/include/portaudio2")
++  set(PORTAUDIO_LIBRARIES "%%LOCALBASE%%/lib/portaudio2/libportaudio.so")
 +else()
 +  pkg_check_modules(PC_PORTAUDIO portaudio)
  

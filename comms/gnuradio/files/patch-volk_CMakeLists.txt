@@ -1,22 +1,11 @@
---- volk/CMakeLists.txt.orig	2012-09-04 19:43:06.000000000 -0500
-+++ volk/CMakeLists.txt	2012-09-30 14:19:03.000000000 -0500
-@@ -93,11 +93,19 @@
-     ${CMAKE_CURRENT_BINARY_DIR}/volk.pc
- @ONLY)
+--- volk/CMakeLists.txt.orig	2013-01-08 15:56:55.000000000 -0500
++++ volk/CMakeLists.txt	2013-03-11 21:06:45.000000000 -0500
+@@ -95,7 +95,7 @@
  
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+install(
-+    FILES ${CMAKE_CURRENT_BINARY_DIR}/volk.pc
-+    DESTINATION libdata${LIB_SUFFIX}/pkgconfig
-+    COMPONENT "volk_devel"
-+)
-+else()
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/volk.pc
-     DESTINATION lib${LIB_SUFFIX}/pkgconfig
+-    DESTINATION lib${LIB_SUFFIX}/pkgconfig
++    DESTINATION ${GR_PKGCONFIG_DIR}/pkgconfig
      COMPONENT "volk_devel"
  )
-+endif()
  
- ########################################################################
- # Install all headers in the include directories
