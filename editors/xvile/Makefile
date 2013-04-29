@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xvile
-PORTVERSION=	9.8i
+PORTVERSION=	9.8j
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/
@@ -20,14 +20,18 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	FILTERS ICONV PERL DOCS
 OPTIONS_RADIO=	MENUS
 OPTIONS_RADIO_MENUS=	MOTIF XAW XAW3D
+OPTIONS_DEFAULT=	ICONV
 FILTERS_DESC=	Loadable filters
 MENUS_DESC=	Support for menus
 XAW_DESC=	X Athena Widgets
 XAW3D_DESC=	X Athena Widgets with 3D effect
 
+USES=		pkgconfig
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-xpm \
+CONFIGURE_ARGS=	--disable-imake \
+		--enable-fontset \
+		--with-xpm \
 		--with-pixmapdir=${PREFIX}/share/pixmaps
 MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
@@ -49,9 +53,10 @@ PLIST_SUB+=	SO_EXT=""
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGURE_ARGS+=	--with-iconv
+CONFIGURE_ARGS+=	--with-iconv --with-libiconv-prefix=${LOCALBASE}
 PLIST_SUB+=	ICONV=""
 .else
+BROKEN=		Does not build if ICONV support is disabled
 CONFIGURE_ARGS+=	--without-iconv --without-locale
 PLIST_SUB+=	ICONV="@comment "
 .endif

@@ -214,6 +214,7 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/rexx.keywords
 %%DATADIR%%/rpm.keywords
 %%DATADIR%%/rtf.keywords
+%%DATADIR%%/ruby.keywords
 %%DATADIR%%/sccs.keywords
 %%DATADIR%%/scheme.keywords
 %%DATADIR%%/search.rc
