@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8i
+PORTVERSION=	9.8j
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/
@@ -19,6 +19,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	FILTERS ICONV PERL DOCS
 FILTERS_DESC=	Loadable filters
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
@@ -38,7 +39,7 @@ PLIST_SUB+=	SO_EXT=""
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGURE_ARGS+=	--with-iconv
+CONFIGURE_ARGS+=	--with-iconv --with-libiconv-prefix=${LOCALBASE}
 PLIST_SUB+=	ICONV=""
 .else
 CONFIGURE_ARGS+=	--without-iconv --without-locale

@@ -204,6 +204,7 @@ lib/vile/vile-yacc-filt%%SO_EXT%%
 %%DATADIR%%/rexx.keywords
 %%DATADIR%%/rpm.keywords
 %%DATADIR%%/rtf.keywords
+%%DATADIR%%/ruby.keywords
 %%DATADIR%%/sccs.keywords
 %%DATADIR%%/scheme.keywords
 %%DATADIR%%/search.rc
@@ -242,7 +243,6 @@ lib/vile/vile-yacc-filt%%SO_EXT%%
 %%PERL%%@dirrm %%DATADIR%%/perl/Vile
 %%PERL%%@dirrm %%DATADIR%%/perl
 @dirrm %%DATADIR%%/macros
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/vile
