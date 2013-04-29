@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bison
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
