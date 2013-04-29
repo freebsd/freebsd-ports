@@ -1,6 +1,3 @@
-%%EXE_FILES%%bin/cpan2dist
-%%EXE_FILES%%bin/cpanp
-%%EXE_FILES%%bin/cpanp-run-perl
 %%SITE_PERL%%/CPANPLUS.pm
 %%SITE_PERL%%/CPANPLUS/Backend.pm
 %%SITE_PERL%%/CPANPLUS/Backend/RV.pm
@@ -24,9 +21,9 @@
 %%SITE_PERL%%/CPANPLUS/Internals/Report.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Search.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Source.pm
-%%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite/Tie.pm
-%%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Source/Memory.pm
+%%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite.pm
+%%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite/Tie.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Utils.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Utils/Autoflush.pm
 %%SITE_PERL%%/CPANPLUS/Module.pm
@@ -50,13 +47,13 @@
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell
 @dirrm %%SITE_PERL%%/CPANPLUS/Module/Author
 @dirrm %%SITE_PERL%%/CPANPLUS/Module
+@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Utils
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals/Source
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Utils
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals/Constants
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals
 @dirrm %%SITE_PERL%%/CPANPLUS/Dist
-@dirrm %%SITE_PERL%%/CPANPLUS/Config
 @dirrm %%SITE_PERL%%/CPANPLUS/Configure
+@dirrm %%SITE_PERL%%/CPANPLUS/Config
 @dirrm %%SITE_PERL%%/CPANPLUS/Backend
 @dirrm %%SITE_PERL%%/CPANPLUS
