@@ -15,7 +15,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		pcre.3:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
-USES=		pkgconfig pathfix iconv
+USES=		pkgconfig iconv
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
