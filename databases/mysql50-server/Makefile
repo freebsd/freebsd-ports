@@ -15,6 +15,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=	2013-06-30
+
 SLAVEDIRS=	databases/mysql50-client databases/mysql50-scripts
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
