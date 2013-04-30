@@ -1,12 +1,8 @@
-# New ports collection makefile for: 	p5-Nmap-Parser
-# Date created:				June 3 2006
-# Whom:					Joshua D. Abraham <jabra@ccs.neu.edu>
-#
+# Created by: Joshua D. Abraham <jabra@ccs.neu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Nmap-Parser
-PORTVERSION=	1.21
+PORTVERSION=	1.31
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
