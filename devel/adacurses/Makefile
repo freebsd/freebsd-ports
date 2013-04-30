@@ -17,8 +17,6 @@ COMMENT=		Curses library for Ada
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat
-
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

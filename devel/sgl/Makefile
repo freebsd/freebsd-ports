@@ -15,12 +15,9 @@ DISTNAME=	SGL-${PORTVERSION}
 MAINTAINER=	david@realityrift.com
 COMMENT=	STL implementation for ADA95
 
-RUN_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
-
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 .include <bsd.port.pre.mk>
 
 do-install:
