@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Oxygen-Gtk engine and theme
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
