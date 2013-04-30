@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LPRng
-# Date created:		2 Apr 1997
-# Whom:			desmo@bandwidth.org
-#
+# Created by: desmo@bandwidth.org
 # $FreeBSD$
-#
 
 PORTNAME=	LPRng
 PORTVERSION=	3.8.35
@@ -64,10 +60,10 @@ MAN1=	lpf.1 psbanner.1 lp.1 cancel.1 lprng_certs.1 lprng_index_certs.1 \
 MAN5=	printcap.5 lpd.conf.5 lpd.perms.5
 MAN8=	lpc.8 checkpc.8 lpd.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -101,7 +97,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lpd.conf ${SYSCONFDIR}/lpd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/lpd.perms ${SYSCONFDIR}/lpd.perms.sample
 	@${INSTALL_DATA} ${WRKSRC}/printcap ${SYSCONFDIR}/printcap.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/Reference
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/PrintingCookbook
@@ -115,4 +111,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

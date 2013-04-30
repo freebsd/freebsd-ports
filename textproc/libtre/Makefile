@@ -29,16 +29,17 @@ PGO_DESC=	Enable Profile-Guided Optimization
 
 MAN1=	tre_agrep.1
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
