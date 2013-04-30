@@ -1,13 +1,10 @@
-# New ports collection makefile for:	font-ipa-uigothic
-# Date created:		2 June 2009
-# Whom:			hrs
 # $FreeBSD$
-#
 
-PORTNAME=	font-ipa-uigothic
+PORTNAME=	ipa-uigothic
 PORTVERSION=	00203
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/old/
+PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -27,11 +24,16 @@ SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	enduser_license.txt \
 		Readme${PORTVERSION}.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -44,14 +46,14 @@ do-install:
 	${LN} -s -f \
 		${DATADIR}/ipagui.ttf \
 		${PREFIX}/${X_FONTSDIR}/TTF/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipa-uigothic.conf \
-		${FILESDIR}/62-fonts-ipa-uigothic.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
+		${FILESDIR}/62-fonts-${PORTNAME}.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-ipa-uigothic.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-ipa-uigothic.conf
-	${LN} -s -f ../conf.avail/62-fonts-ipa-uigothic.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-ipa-uigothic.conf
-.if !defined(NOPORTDOCS)
+	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
