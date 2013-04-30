@@ -1,10 +1,8 @@
 include/libfirm/adt/array.h
 include/libfirm/adt/bipartite.h
-include/libfirm/adt/cpset.h
 include/libfirm/adt/gaussjordan.h
 include/libfirm/adt/gaussseidel.h
 include/libfirm/adt/hashptr.h
-include/libfirm/adt/hashset.h
 include/libfirm/adt/hungarian.h
 include/libfirm/adt/list.h
 include/libfirm/adt/obst.h
@@ -14,7 +12,6 @@ include/libfirm/adt/plist.h
 include/libfirm/adt/pmap.h
 include/libfirm/adt/pqueue.h
 include/libfirm/adt/pset.h
-include/libfirm/adt/pset_new.h
 include/libfirm/adt/set.h
 include/libfirm/adt/unionfind.h
 include/libfirm/adt/xmalloc.h
@@ -24,7 +21,6 @@ include/libfirm/begin.h
 include/libfirm/callgraph.h
 include/libfirm/cdep.h
 include/libfirm/cgana.h
-include/libfirm/compound_path.h
 include/libfirm/dbginfo.h
 include/libfirm/end.h
 include/libfirm/execfreq.h
@@ -42,7 +38,6 @@ include/libfirm/irdom.h
 include/libfirm/irdump.h
 include/libfirm/iredgekinds.h
 include/libfirm/iredges.h
-include/libfirm/irextbb.h
 include/libfirm/irflag.h
 include/libfirm/irgmod.h
 include/libfirm/irgopt.h
@@ -50,7 +45,6 @@ include/libfirm/irgraph.h
 include/libfirm/irgwalk.h
 include/libfirm/irhooks.h
 include/libfirm/irio.h
-include/libfirm/irpass.h
 include/libfirm/irloop.h
 include/libfirm/irmemory.h
 include/libfirm/irmode.h
@@ -59,6 +53,7 @@ include/libfirm/irop.h
 include/libfirm/iropt.h
 include/libfirm/iroptimize.h
 include/libfirm/irouts.h
+include/libfirm/irpass.h
 include/libfirm/irprintf.h
 include/libfirm/irprog.h
 include/libfirm/irtypeinfo.h
@@ -66,6 +61,7 @@ include/libfirm/irverify.h
 include/libfirm/lowering.h
 include/libfirm/nodeops.h
 include/libfirm/opcodes.h
+include/libfirm/statev.h
 include/libfirm/timing.h
 include/libfirm/trouts.h
 include/libfirm/tv.h

@@ -1,24 +1,24 @@
-libFIRM provides a graph-based intermediate representation (IR), which operates
-exclusively in SSA-form, starting at IR construction until assembler code
-emission.  It offers many analyses and optimizations, provides extensive
-debugging support and includes a backend framework.
+The Firm library implements the Firm intermediate representation (IR). libFirm
+contains algorithms for construction of the SSA form directly from the
+attributed syntax tree. A set of analyses and optimisation phases is provided.
+This version includes a complete backend for the IA32 architecture, as well as
+some unfinished backends for SPARC, ARM
 
+* support for object oriented type hierarchies
 * analyses: dominance, loop tree, execution frequency, control dependencies,
   call graph, rapid type, def-use, alias analysis, class hierarchy analysis
-* optimizations: dead code elimination (happens implicitly), constant folding,
-  local common subexpression elimination, arithmetic identities (happens on the
-  fly), unreachable code elimination, global common subexpression elimination,
-  code placement, strength reduction, scalar replacement, if-conversion,
-  load/store optimization, control flow optimizations, reassociation, partial
-  condition evaluation, tail recursion elimination, inlining, procedure cloning
+* Optimisations: constant folding, local common subexpression elimination,
+  global common subexpression elimination, code placement, operator strength
+  reduction, scalar replacement, load/store, control flow optimisations,
+  if-conversion, partial condition evaluation, reassociation, tail recursion
+  elimination, inlining, procedure cloning, dead code elimination, ...
 * enhanced debugging support: extensive checkers, breakpoints on node creation,
   entity creation, graph dumping
 * lowering of intrinsics, double word arithmetics, bitfields
-* generic backend features:
-  * novel SSA based register allocator
-  * several SSA copy coalescing and spilling algorithms
-  * algorithms for instruction and basic block scheduling
-* working ia32 backend, unfinished backends for ARM, MIPS, PPC32
+* backend with SSA based register allocation including several algorithms for
+  spilling and copy coalescing. Instruction and block scheduling, support for
+  ABI handling.
+* working ia32 backend with support for x87 and SSE2 floating point
 * handwritten recursive descent C90/C99 frontend available (lang/cparser)
 
-WWW: http://libfirm.org/
+WWW: http://sourceforge.net/projects/libfirm/
