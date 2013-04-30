@@ -4,7 +4,7 @@
 +release
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc
-@@ -573,6 +573,9 @@
+@@ -581,6 +581,9 @@
      "" | yes | posix)
        thread_file='posix'
        ;;
@@ -14,7 +14,7 @@
      *)
        echo 'Unknown thread configuration for FreeBSD'
        exit 1
-@@ -589,6 +592,26 @@
+@@ -597,6 +600,26 @@
    # need_64bit_hwint=yes # system compiler has this for all arch!
    use_gcc_stdint=wrap
    ;;
@@ -41,7 +41,7 @@
  *-*-linux* | frv-*-*linux* | *-*-kfreebsd*-gnu | *-*-knetbsd*-gnu | *-*-gnu* | *-*-kopensolaris*-gnu)
    extra_options="$extra_options gnu-user.opt"
    gas=yes
-@@ -644,6 +667,7 @@
+@@ -652,6 +675,7 @@
    esac
    ;;
  *-*-netbsd*)
@@ -49,11 +49,11 @@
    tmake_file="t-slibgcc"
    gas=yes
    gnu_ld=yes
-@@ -885,7 +909,32 @@
- 	tm_file="dbxelf.h elfos.h newlib-stdint.h arm/unknown-elf.h arm/elf.h arm/aout.h arm/arm.h arm/ecos-elf.h"
- 	tmake_file="arm/t-arm arm/t-arm-elf"
+@@ -903,7 +927,32 @@
+ 	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/aout.h arm/arm.h arm/rtems-elf.h rtems.h newlib-stdint.h"
+ 	tmake_file="arm/t-arm arm/t-arm-elf t-rtems arm/t-rtems"
  	;;
--arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtemseabi*)
+-arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
 +arm*-android-eabi*)
 +  gas=yes
 +  gnu_ld=yes
@@ -79,11 +79,11 @@
 +  # Correctly modeling that requires the use of TImode.
 +  need_64bit_hwint=yes
 +  ;;
-+arm*-*-symbianelf* | arm*-*-rtemseabi*)
++arm*-*-symbianelf* | arm*-*-rtems*)
  	# The BPABI long long divmod functions return a 128-bit value in
  	# registers r0-r3.  Correctly modeling that requires the use of
  	# TImode.
-@@ -894,11 +943,6 @@
+@@ -912,11 +961,6 @@
  	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/bpabi.h"
  	tmake_file="arm/t-arm arm/t-arm-elf"
  	case ${target} in
@@ -92,10 +92,10 @@
 -	  tmake_file="${tmake_file} arm/t-bpabi"
 -	  use_gcc_stdint=wrap
 -	  ;;
- 	arm*-*-rtemseabi*)
+ 	arm*-*-rtems*)
  	  tm_file="${tm_file} rtems.h arm/rtems-eabi.h newlib-stdint.h"
  	  tmake_file="${tmake_file} arm/t-bpabi t-rtems arm/t-rtems-eabi"
-@@ -1196,19 +1240,31 @@
+@@ -1216,19 +1260,31 @@
  x86_64-*-elf*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h"
  	;;
@@ -129,7 +129,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
-@@ -3530,6 +3586,8 @@
+@@ -3577,6 +3633,8 @@
  		;;
  	i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw*)
  		;;
@@ -768,21 +768,21 @@
    enable_execute_stack=enable-execute-stack-mprotect.c
    ;;
  i[34567]86-*-mingw* | x86_64-*-mingw*)
-@@ -354,11 +368,11 @@
+@@ -358,11 +372,11 @@
  	tmake_file="$tmake_file arm/t-arm arm/t-elf t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
  	extra_parts="$extra_parts crti.o crtn.o"
  	;;
--arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtemseabi*)
-+arm*-*-symbianelf* | arm*-*-rtemseabi*)
+-arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
++arm*-*-symbianelf* | arm*-*-rtems*)
  	tmake_file="${tmake_file} arm/t-arm arm/t-elf t-fixedpoint-gnu-prefix"
  	tm_file="$tm_file arm/bpabi-lib.h"
  	case ${host} in
--	arm*-*-eabi* | arm*-*-rtemseabi*)
-+	arm*-*-rtemseabi*)
+-	arm*-*-eabi* | arm*-*-rtems*)
++	arm*-*-rtems*)
  	  tmake_file="${tmake_file} arm/t-bpabi"
  	  extra_parts="crtbegin.o crtend.o crti.o crtn.o"
  	  ;;
-@@ -523,16 +537,29 @@
+@@ -526,16 +540,29 @@
  x86_64-*-elf*)
  	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
  	;;
@@ -812,7 +812,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
-@@ -1160,6 +1187,7 @@
+@@ -1167,6 +1194,7 @@
    i[34567]86-*-gnu* | \
    i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
    i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw* | \
@@ -925,8 +925,8 @@
 +#endif
 +
  #if !defined(inhibit_libc) && defined(HAVE_LD_EH_FRAME_HDR) \
-     && defined(TARGET_DL_ITERATE_PHDR) \
-     && defined(__sun__) && defined(__svr4__)
+     && defined(__OpenBSD__)
+ # define ElfW(type) Elf_##type
 --- /dev/null
 +++ libgcc/config/i386/dragonfly-unwind.h
 @@ -0,0 +1,158 @@
@@ -1473,7 +1473,7 @@
  }
 --- gcc/configure.orig
 +++ gcc/configure
-@@ -26810,6 +26810,20 @@
+@@ -26902,6 +26902,20 @@
        gcc_cv_target_dl_iterate_phdr=no
      fi
      ;;
@@ -1496,7 +1496,7 @@
  if test x$gcc_cv_target_dl_iterate_phdr = xyes; then
 --- gcc/Makefile.in.orig
 +++ gcc/Makefile.in
-@@ -1150,7 +1150,6 @@
+@@ -1165,7 +1165,6 @@
  	insn-automata.o \
  	insn-emit.o \
  	insn-extract.o \
@@ -1504,7 +1504,7 @@
  	insn-opinit.o \
  	insn-output.o \
  	insn-peep.o \
-@@ -1469,13 +1468,18 @@
+@@ -1484,13 +1483,18 @@
  ALL_HOST_BACKEND_OBJS = $(GCC_OBJS) $(OBJS) $(OBJS-libcommon) \
    $(OBJS-libcommon-target) @TREEBROWSER@ main.o gccspec.o cppspec.o \
    $(COLLECT2_OBJS) $(EXTRA_GCC_OBJS) mips-tfile.o mips-tdump.o \
@@ -1525,7 +1525,7 @@
  	$(CPPLIB) $(LIBDECNUMBER)
  
  MOSTLYCLEANFILES = insn-flags.h insn-config.h insn-codes.h \
-@@ -3506,6 +3510,8 @@
+@@ -3522,6 +3526,8 @@
    $(TM_H) $(RTL_H) $(DIAGNOSTIC_CORE_H) insn-config.h $(RECOG_H)
  insn-modes.o : insn-modes.c $(CONFIG_H) $(SYSTEM_H) coretypes.h	$(TM_H) \
    $(MACHMODE_H)
@@ -1534,7 +1534,7 @@
  insn-opinit.o : insn-opinit.c $(CONFIG_H) $(SYSTEM_H) coretypes.h	\
    $(TM_H) $(RTL_H) $(TM_P_H) insn-config.h $(FLAGS_H) $(RECOG_H)	\
    $(EXPR_H) $(OPTABS_H) reload.h
-@@ -3599,6 +3605,7 @@
+@@ -3615,6 +3621,7 @@
  
  insn-modes.c: s-modes; @true
  insn-modes.h: s-modes-h; @true
@@ -1542,7 +1542,7 @@
  min-insn-modes.c: s-modes-m; @true
  
  s-modes: build/genmodes$(build_exeext)
-@@ -3616,6 +3623,12 @@
+@@ -3632,6 +3639,12 @@
  	$(SHELL) $(srcdir)/../move-if-change tmp-min-modes.c min-insn-modes.c
  	$(STAMP) s-modes-m
  
@@ -1555,7 +1555,7 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -4378,7 +4391,7 @@
+@@ -4394,7 +4407,7 @@
  	DESTDIR=$(@D) \
  	$(SHELL) $(srcdir)/doc/install.texi2html
  
@@ -1564,7 +1564,7 @@
  
  generated-manpages: man
  
-@@ -4530,7 +4543,7 @@
+@@ -4546,7 +4559,7 @@
  # Install the driver last so that the window when things are
  # broken is small.
  install: install-common $(INSTALL_HEADERS) \
@@ -1573,7 +1573,7 @@
      install-driver install-lto-wrapper install-gcc-ar
  
  ifeq ($(enable_plugin),yes)
-@@ -4655,6 +4668,9 @@
+@@ -4671,6 +4684,9 @@
  	-rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-$(version)$(exeext)
  	-( cd $(DESTDIR)$(bindir) && \
  	   $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) )
@@ -1583,7 +1583,7 @@
  	-if [ -f gcc-cross$(exeext) ] ; then \
  	  if [ -d $(DESTDIR)$(gcc_tooldir)/bin/. ] ; then \
  	    rm -f $(DESTDIR)$(gcc_tooldir)/bin/gcc$(exeext); \
-@@ -4728,10 +4744,7 @@
+@@ -4744,10 +4760,7 @@
  install-man: lang.install-man \
  	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
  	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
@@ -1597,7 +1597,7 @@
  	-rm -f $@
 --- configure.orig
 +++ configure
-@@ -14412,7 +14412,7 @@
+@@ -14419,7 +14419,7 @@
  _ACEOF
  if ac_fn_c_try_compile "$LINENO"; then :
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
