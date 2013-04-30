@@ -1,0 +1,46 @@
+$NetBSD: patch-share_gprconfig_targetset.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- share/gprconfig/targetset.xml.orig	2011-10-20 17:41:48.000000000 +0000
++++ share/gprconfig/targetset.xml
+@@ -52,8 +52,8 @@
+ 
+   <!-- x86-solaris -->
+   <targetset>
+-    <target>x86-solaris</target>
+-    <target>i.86-(pc-)?solaris.*</target>
++    <target>i.86-.*-solaris.*</target>
++    <target>x86_64-.*-solaris.*</target>
+   </targetset>
+ 
+   <!-- x86-windows (mingw) -->
+@@ -144,10 +144,29 @@
+ 
+  <!-- Freebsd -->
+   <targetset>
+-    <target>x86-freebsd</target>
+     <target>i.86-.*freebsd.*</target>
++    <target>x86_64-.*-freebsd.*</target>
+   </targetset>
+ 
++ <!-- DragonFlyBSD -->
++  <targetset>
++    <target>i.86-.*-dragonfly.*</target>
++    <target>x86_64-.*-dragonfly.*</target>
++  </targetset>
++
++ <!-- NetBSD -->
++  <targetset>
++    <target>i.86-.*-netbsd.*</target>
++    <target>x86_64-.*-netbsd.*</target>
++  </targetset>
++
++ <!-- OpenBSD -->
++  <targetset>
++    <target>i.86-.*-openbsd.*</target>
++    <target>x86_64-.*-openbsd.*</target>
++  </targetset>
++
++
+ <!-- Cross Ports -->
+ <!-- *********** -->
+ 

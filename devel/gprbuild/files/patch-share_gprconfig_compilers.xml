@@ -1,0 +1,25 @@
+$NetBSD: patch-share_gprconfig_compilers.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- share/gprconfig/compilers.xml.orig	2012-03-28 13:32:23.000000000 +0000
++++ share/gprconfig/compilers.xml
+@@ -418,16 +418,15 @@
+     </version>
+     <languages>Ada</languages>
+     <variable name="gcc_version">
+-      <external>${PREFIX}gcc -v</external>
++      <external>${PREFIX}ada -v</external>
+       <grep regexp="^gcc \S+ (\S+)" group="1"></grep>
+     </variable>
+     <runtimes default="default,kernel,native">
+-       <directory group="default" >\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/adalib/</directory>
+-       <directory group="default" contents="^rts-">\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/ada_object_path</directory>
+-       <directory group="2" >\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/rts-(.*)/adalib/</directory>
++       <directory group="default">\.\./lib/gcc/$TARGET/$gcc_version/adalib</directory>
++       <directory group="0">@AUXPREFIX@/lib/gcc/$TARGET/$gcc_version/adalib</directory>
+     </runtimes>
+     <target>
+-      <external>${PREFIX}gcc -dumpmachine</external>
++      <external>${PREFIX}ada -dumpmachine</external>
+       <grep regexp="[^\r\n]+"></grep>
+     </target>
+   </compiler_description>

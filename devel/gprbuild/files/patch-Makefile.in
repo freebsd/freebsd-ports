@@ -1,0 +1,69 @@
+$NetBSD: patch-Makefile.in,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- Makefile.in.orig	2012-01-04 15:36:14.000000000 +0000
++++ Makefile.in
+@@ -19,7 +19,7 @@ EXEXT=
+ endif
+ CP=cp -p
+ MKDIR=mkdir -p
+-BUILD=debug
++BUILD=production
+ 
+ prefix=@prefix@
+ srcdir=@srcdir@
+@@ -124,37 +124,35 @@ bootstrap-clean:
+ 	  -XBUILD_TOOL=gprbuild
+ 
+ install: install.data install.bin
+-	-${MKDIR} ${datadir}/gpr
+-	$(RM) -r ${datadir}/examples/gprbuild
+-	-${MKDIR} ${datadir}/examples/gprbuild
+-	${CP} -r examples/* ${datadir}/examples/gprbuild
+-	${RM} -r ${datadir}/doc/gprbuild
+-	-${MKDIR} ${datadir}/doc/gprbuild
++	-${MKDIR} ${DESTDIR}${datadir}/gpr
++	-${MKDIR} ${DESTDIR}${datadir}/examples/gprbuild
++	${CP} -r examples/* ${DESTDIR}${datadir}/examples/gprbuild
++	-${MKDIR} ${DESTDIR}${datadir}/doc/gprbuild
+ 	for format in html txt pdf info; do \
+ 	  if [ -d doc/$$format ] ; then \
+-	     ${MKDIR} ${datadir}/doc/gprbuild/$$format; \
+-	     ${CP} doc/$$format/* ${datadir}/doc/gprbuild/$$format; \
++	     ${MKDIR} ${DESTDIR}${datadir}/doc/gprbuild/$$format; \
++	     ${CP} doc/$$format/* ${DESTDIR}${datadir}/doc/gprbuild/$$format; \
+ 	     if [ $$format = html ] ; then \
+-	        ${CP} doc/*.png ${datadir}/doc/gprbuild/html; \
++	        ${CP} doc/*.png ${DESTDIR}${datadir}/doc/gprbuild/html; \
+ 	        sed -e "s/<doc_path>.*//" doc/gprbuild_gps.xml \
+-	           > ${datadir}/doc/gprbuild/html/gps_index.xml; \
++	           > ${DESTDIR}${datadir}/doc/gprbuild/html/gps_index.xml; \
+ 	     fi; \
+ 	  fi; \
+ 	done
+ 
+ install.data: force
+-	-${MKDIR} ${datadir}/gprconfig
+-	${CP} share/gprconfig/*.xml ${datadir}/gprconfig
+-	${CP} share/gprconfig/gprconfig.xsd ${datadir}/gprconfig
++	-${MKDIR} ${DESTDIR}${datadir}/gprconfig
++	${INSTALL_DATA} share/gprconfig/*.xml ${DESTDIR}${datadir}/gprconfig
++	${INSTALL_DATA} share/gprconfig/gprconfig.xsd ${DESTDIR}${datadir}/gprconfig
+ 
+ install.bin: force
+-	-${MKDIR} ${bindir}
+-	${INSTALL_PROGRAM} gprconfig${EXEXT} ${bindir}
+-	${INSTALL_PROGRAM} gprbuild${EXEXT} ${bindir}
+-	${INSTALL_PROGRAM} gprclean${EXEXT} ${bindir}
+-	-${MKDIR} ${libexecdir}/gprbuild
+-	${INSTALL_PROGRAM} gprbind${EXEXT} ${libexecdir}/gprbuild/
+-	${INSTALL_PROGRAM} gprlib${EXEXT} ${libexecdir}/gprbuild/
++	-${MKDIR} ${DESTDIR}${bindir}
++	${INSTALL_PROGRAM} gprconfig${EXEXT} ${DESTDIR}${bindir}
++	${INSTALL_PROGRAM} gprbuild${EXEXT} ${DESTDIR}${bindir}
++	${INSTALL_PROGRAM} gprclean${EXEXT} ${DESTDIR}${bindir}
++	-${MKDIR} ${DESTDIR}${libexecdir}/gprbuild
++	${INSTALL_PROGRAM} gprbind${EXEXT} ${DESTDIR}${libexecdir}/gprbuild/
++	${INSTALL_PROGRAM} gprlib${EXEXT} ${DESTDIR}${libexecdir}/gprbuild/
+ 
+ $(objdir)/gprbuild_dummies.o: src/gprbuild_dummies.c
+ 	gcc -c -o $@ $<

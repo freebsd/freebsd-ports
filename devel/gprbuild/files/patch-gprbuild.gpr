@@ -1,0 +1,13 @@
+$NetBSD: patch-gprbuild.gpr,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- gprbuild.gpr.orig	2012-05-10 13:59:06.000000000 +0000
++++ gprbuild.gpr
+@@ -80,7 +80,7 @@ project Gprbuild is
+               ("-pg", "-g");
+          when "production" =>
+             for Default_Switches ("Ada") use common_switches &
+-              ("-O2", "-gnatpn", "-gnatws");
++              ("-g", "-O2", "-gnatpn", "-gnatws");
+       end case;
+    end Compiler;
+ 

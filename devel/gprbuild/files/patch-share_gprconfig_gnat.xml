@@ -1,0 +1,22 @@
+$NetBSD: patch-share_gprconfig_gnat.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- share/gprconfig/gnat.xml.orig	2012-03-30 17:17:06.000000000 +0000
++++ share/gprconfig/gnat.xml
+@@ -63,7 +63,7 @@
+    </config>
+   </configuration>
+ 
+-  <!-- GNAT -->
++  <!-- GNAT (tailored to lang/gcc-aux) -->
+   <configuration>
+    &filter_gnat;
+    <config>
+@@ -75,7 +75,7 @@
+    end Naming;
+ 
+    package Compiler is
+-      for Driver                   ("Ada") use "${PATH(ada)}${PREFIX(ada)}gcc";
++      for Driver                   ("Ada") use "${PATH(ada)}${PREFIX(ada)}ada";
+       for Language_Kind            ("Ada") use "unit_based";
+       for Dependency_Kind          ("Ada") use "ALI_File";
+       for Leading_Required_Switches        ("Ada") use
