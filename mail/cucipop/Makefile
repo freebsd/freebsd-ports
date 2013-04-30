@@ -10,7 +10,7 @@ PORTVERSION=	1.31
 PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/ \
-		http://ftp.riken.go.jp/archives/net/mail/pop/ \
+		http://ftp.riken.go.jp/archives/net/mail/pop/cucipop/ \
 		http://horms.net/projects/cucipop/download/
 
 PATCH_SITES=	${MASTER_SITE_RINGSERVER}
