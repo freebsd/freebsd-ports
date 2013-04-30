@@ -1,9 +1,8 @@
-cparser is a C compiler, which can parse C90 and C99 as well as many GCC and
-some MSVC extensions.  It also provides many useful analyses for warnings.  It
-uses libFIRM, which provides an SSA-based intermediate representation in form of
-explicit dependency graphs, for optimization and code generation.  Parsing is
-done with a handwritten recursive descent parser.  The AST representation is
-straightforward, so it can be used for other purposes than code generation.
+cparser is a recursive descent C99 parser written in C99. It contains lexer,
+parser, constructs an AST and does semantic analysis. It is currently used as
+a frontend to the libFirm intermediate representation, but can be used
+independently. cparser is able to bootstrap itself. It currently uses an
+external preprocessor.
 
 * fast recursive descent parser, parses C90 and C99
 * handles most GCC extensions, e.g. __attribute__, inline assembler,
@@ -21,4 +20,4 @@ straightforward, so it can be used for other purposes than code generation.
 * compiler driver compatible with GCC (-fxxx, -Wxxx, -M, ...)
 * uses libFIRM for optimization and code generation (devel/libfirm)
 
-WWW: http://www.libfirm.org
+WWW: http://sourceforge.net/projects/cparser/
