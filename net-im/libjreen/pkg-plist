@@ -1,5 +1,6 @@
 include/jreen/abstractroster.h
 include/jreen/activity.h
+include/jreen/attention.h
 include/jreen/bitsofbinary.h
 include/jreen/bookmark.h
 include/jreen/bookmarkstorage.h
@@ -17,6 +18,13 @@ include/jreen/directconnection.h
 include/jreen/disco.h
 include/jreen/entitytime.h
 include/jreen/error.h
+include/jreen/experimental/iristransport.h
+include/jreen/experimental/jingleaudiocontent.h
+include/jreen/experimental/jingleaudiopayload.h
+include/jreen/experimental/jinglecontent.h
+include/jreen/experimental/jinglemanager.h
+include/jreen/experimental/jinglesession.h
+include/jreen/experimental/jingletransport.h
 include/jreen/forwarded.h
 include/jreen/iq.h
 include/jreen/iqreply.h
@@ -56,6 +64,7 @@ include/jreen/vcardmanager.h
 include/jreen/vcardupdate.h
 lib/libjreen.so
 lib/libjreen.so.1
-lib/libjreen.so.1.1.0
+lib/libjreen.so.1.1.1
 libdata/pkgconfig/libjreen.pc
+@dirrm include/jreen/experimental
 @dirrm include/jreen
