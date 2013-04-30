@@ -88,6 +88,8 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
+%%SITE_PERL%%/DBIx/Class/ResultSource/RowParser.pm
+%%SITE_PERL%%/DBIx/Class/ResultSource/RowParser/Util.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pod
 %%SITE_PERL%%/DBIx/Class/ResultSource/View.pm
@@ -170,11 +172,10 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
+%%SITE_PERL%%/DBIx/Class/_Util.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer
@@ -201,6 +202,7 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/SQLMaker
 @dirrmtry %%SITE_PERL%%/DBIx/Class/SQLAHacks
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSourceProxy
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSource/RowParser
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSource
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultClass
@@ -215,3 +217,5 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Admin
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
