@@ -50,10 +50,10 @@ MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	V=1
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB=	NLS=""
 libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 .else
@@ -61,6 +61,8 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 libintl=
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch::
 	@${REINPLACE_CMD} -E -e \
