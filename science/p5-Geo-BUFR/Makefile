@@ -1,19 +1,17 @@
-# New ports collection makefile for:	p5-Geo-BUFR
-# Date created:      			March 10, 2011
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by:	Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-BUFR
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	science perl5 geography
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PSANNES
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for handling of WMO BUFR files
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp
 
