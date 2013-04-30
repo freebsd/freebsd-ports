@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	YES
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
