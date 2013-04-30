@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	czmq
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 
@@ -13,29 +13,29 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	zmq:${PORTSDIR}/devel/zmq
 
-USE_PERL5_BUILD=	yes
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_prog_czmq_have_asciidoc=no
 CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE}
 USE_LDCONFIG=	yes
 
-MAN7=		czmq.7 \
-		zclock.7 \
-		zctx.7 \
-		zfile.7 \
-		zframe.7 \
-		zhash.7 \
-		zlist.7 \
-		zloop.7 \
-		zmsg.7 \
-		zmutex.7 \
-		zsocket.7 \
-		zsockopt.7 \
-		zstr.7 \
-		zthread.7
+MAN3= 		zbeacon.3 \
+		zclock.3 \
+		zctx.3 \
+		zfile.3 \
+		zframe.3 \
+		zhash.3 \
+		zlist.3 \
+		zloop.3 \
+		zmsg.3 \
+		zmutex.3 \
+		zsocket.3 \
+		zsockopt.3 \
+		zstr.3 \
+		zsys.3 \
+		zthread.3
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/doc/mkman
+MAN7=		czmq.7
 
 .include <bsd.port.mk>
