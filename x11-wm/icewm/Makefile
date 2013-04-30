@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
+LICENSE=	GPLv2
+
 WANT_GNOME=	yes
 USE_XORG=	x11 ice xinerama xext xrandr sm
 USE_GNOME=	gtk20 # gdkpixbuf really :-)
