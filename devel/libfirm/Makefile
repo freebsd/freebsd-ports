@@ -1,16 +1,12 @@
-# New ports collection makefile for: libFIRM
-# Date created:         22 Nov 2008
-# Whom:                 Christoph Mallon <christoph.mallon@gmx.de>
-#
+# Created by: Christoph Mallon <christoph.mallon@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	libfirm
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.0
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
-MAINTAINER=	armin@frozen-zone.org
+MAINTAINER=	sperber@FreeBSD.org
 COMMENT=	A graph-based SSA intermediate representation library for compilers
 
 LICENSE=	GPLv2 LGPL21
@@ -19,17 +15,18 @@ LICENSE_COMB=	multi
 USE_AUTOTOOLS=	autoconf
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USES=		pkgconfig
 
-OPTIONS=	DEBUG "Build a debug version of libFIRM" OFF
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef WITH_DEBUG
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .else
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
