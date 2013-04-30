@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-ymessenger
-# Date created:		23 December 2003
-# Whom:			Seth Kingsley <sethk@meowfishies.com>
-#
+# Created by: Seth Kingsley <sethk@meowfishies.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.6.1
@@ -18,14 +14,14 @@ MAINTAINER=	sethk@meowfishies.com
 COMMENT=	An RPM of Yahoo! Messenger instant messaging client
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2:${PORTSDIR}/graphics/linux-gdk-pixbuf \
-		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+
+USE_LINUX=	yes
+USE_LINUX_APPS=	gdkpixbuf gtk
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-STRIP=
 
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\
 		ymessenger.kdelnk
