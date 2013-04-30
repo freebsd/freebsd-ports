@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-SSL-ExpireDate
-# Date created:		2011-10-03
-# Whom:			Stephon Chen <stephon@gmail.com>
-#
+# Created by: Stephon Chen <stephon@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SSL-ExpireDate
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
