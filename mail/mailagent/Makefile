@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mailagent
-# Date created:			23 Sep 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		mailagent
-PORTVERSION=		3.1.71
+PORTVERSION=		3.1.77
 CATEGORIES=		mail
 MASTER_SITES=		http://eron.info/
 
@@ -34,6 +30,12 @@ MAN1=		edusers.1 mailagent.1 package.1 mailhelp.1
 MLINKS=		mailhelp.1 maildist.1  mailhelp.1 mailpatch.1 \
 		mailhelp.1 maillist.1
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 900006
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-utmpx-agent_pl_utmp_utmp.pl \
+		${PATCHDIR}/extra-patch-utmpx-agent_pl_utmp_Makefile.SH
+.endif
+
 pre-extract:
 	@if [ `${SH} -c umask` != 0022 ]; then \
 	  ${ECHO} "Please set umask to 022 before running make,"; \
@@ -58,4 +60,4 @@ post-install:
 	${CP} -pR ${WRKSRC}/misc/* ${EXAMPLESDIR}/misc
 	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${EXAMPLESDIR}/agent
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
