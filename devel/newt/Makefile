@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	newt
-PORTVERSION=	0.52.14
+PORTVERSION=	0.52.15
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 
