@@ -1,0 +1,14 @@
+$NetBSD: patch-gps_gps.gpr,v 1.2 2012/05/16 17:56:49 marino Exp $
+
+--- gps/gps.gpr.orig	2012-01-28 15:08:25.689555000 +0000
++++ gps/gps.gpr
+@@ -73,7 +73,8 @@ project GPS is
+          when "Windows_NT" =>
+             for Default_Switches ("Ada") use ("obj/gps.res");
+          when "unix" =>
+-            null;
++            for Default_Switches ("Ada") use ("-lXrender", "-lX11",
++               "-lgmodule-2.0");
+       end case;
+       --  for Default_Switches ("Ada") use ("-lgmem");
+       --  for Default_Switches ("Ada") use ("-pg");
