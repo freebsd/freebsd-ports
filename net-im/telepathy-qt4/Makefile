@@ -14,13 +14,12 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	telepathy-farsight:${PORTSDIR}/net-im/telepathy-farsight \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
 
-USES=		pkgconfig
 USE_GNOME=	libxslt:build
 USE_GSTREAMER=	yes
 USE_PYTHON_BUILD=	2.5+
 USE_QT4=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=True \
 		-DENABLE_TESTS:BOOL=False
 MAKE_JOBS_SAFE=	yes
