@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--enable-nssa
 
 .if ${PORT_OPTIONS:MSNMP}
 CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4:install
+LIB_DEPENDS+=	snmp:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if ${PORT_OPTIONS:MTCPZEBRA}
