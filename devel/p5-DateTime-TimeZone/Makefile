@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	1.58
+PORTVERSION=	1.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,8 +23,11 @@ MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 	  	DateTime::TimeZone::OffsetOnly.3 DateTime::TimeZone::OlsonDB.3 \
 		DateTime::TimeZone::UTC.3 DateTime::TimeZone::Catalog.3
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
