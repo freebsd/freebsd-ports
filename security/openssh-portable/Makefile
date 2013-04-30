@@ -39,10 +39,12 @@ ETCOLD=			${PREFIX}/etc
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
-OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM KERBEROS \
+OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			KERB_GSSAPI OPENSSH_CHROOT HPN LPK X509 \
 			OVERWRITE_BASE SCTP
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS
+OPTIONS_RADIO=		KERBEROS
+OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	Enable tcp_wrappers support
 BSM_DESC=		Enable OpenBSM Auditing
 KERB_GSSAPI_DESC=	Enable Kerberos/GSSAPI patch (req: GSSAPI)
@@ -52,6 +54,9 @@ LPK_DESC=		Enable LDAP Public Key (LPK) patch
 X509_DESC=		Enable x509 certificate patch
 SCTP_DESC=		Enable SCTP support
 OVERWRITE_BASE_DESC=	OpenSSH overwrite base
+HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
+HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
+MIT_DESC=		MIT Kerberos (security/krb5)
 
 .include <bsd.port.pre.mk>
 
@@ -101,9 +106,19 @@ CONFIGURE_ARGS+=	--with-libedit
 CONFIGURE_ARGS+=	--with-audit=bsm
 .endif
 
-.if ${PORT_OPTIONS:MKERBEROS}
+.if ${PORT_OPTIONS:MMIT} || ${PORT_OPTIONS:MHEIMDAL} || ${PORT_OPTIONS:MHEIMDAL_BASE}
 CONFIGURE_ARGS+=	--with-kerberos5
+.  if ${PORT_OPTIONS:MMIT}
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
+.  elif ${PORT_OPTIONS:MHEIMDAL}
+LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
+.  elif ${PORT_OPTIONS:MHEIMDAL_BASE}
+.	if !exists(/usr/lib/libkrb5.so)
+IGNORE=		You have selected HEIMDAL_BASE but do not have heimdal installed in base
+.	else
+CONFIGURE_LIBS+=	-lgssapi_krb5
+.	endif
+.  endif
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/:gsskex
 PATCHFILES+=		openssh-5.7p1-gsskex-all-20110125.patch:gsskex
