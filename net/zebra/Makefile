@@ -1,22 +1,19 @@
-# New ports collection makefile for:	zebra
-# Date created:		So  31 Mai 1998 11:00:30 CEST
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zebra
 PORTVERSION=	0.95a
 PORTREVISION=	2
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
+MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.sunet.se/pub/network/zebra/ \
-		ftp://6bone.informatik.uni-leipzig.de/pub/ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
+		http://ftp.sunet.se/pub/network/zebra/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]* quagga-re-[0-9]* openospfd-[0-9]*
 
@@ -30,6 +27,8 @@ SUB_LIST=	BGPDARGS=${BGPDARGS} \
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
+MAKE_JOBS_SAFE=	yes
+
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 OPTIONS_DEFINE=	IPV6 PAM OSPFNSSA SNMP TCPZEBRA BGPD OSPF6D OSPFD RIPD RIPNGD VTYSH
@@ -128,9 +127,9 @@ PLIST_SUB+=	VTYSH="@comment "
 
 post-install:
 	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; ${MAKE} zebra.info install )
-	@${ECHO} "===>     installing zebra startup file..."
+	@${ECHO_MSG} "===>     installing zebra startup file..."
 	${INSTALL_SCRIPT} ${WRKDIR}/zebractl ${PREFIX}/sbin/zebractl
-	@${ECHO} "done."
+	@${ECHO_MSG} "done."
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
