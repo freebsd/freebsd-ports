@@ -5,7 +5,8 @@ PORTNAME=	secure_delete
 PORTVERSION=	3.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	PACKETSTORM/group/thc
+MASTER_SITES=	PACKETSTORM/groups/thc \
+		http://freeworld.thc.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure data deletion toolkit
@@ -14,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	srm-[0-9]*
 
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -26,15 +27,13 @@ PLIST_FILES=	${BIN_PROGRAMS:S,^,bin/,} ${BIN_SCRIPTS:S,^,bin/,} bin/sdel
 BIN_PROGRAMS=	srm sfill sswap smem
 BIN_SCRIPTS=	the_cleaner.sh
 
-BROKEN=	does not fetch - master sites missing
-
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|^CC=|CC?=| ; \
-	s|-O2 |$$(CFLAGS) | ;\
-	/strip/s|^|#|' ${WRKSRC}/Makefile
+		's|^CC=|CC?=| ; \
+		 s|-O2 |$$(CFLAGS) | ;\
+		 /strip/s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
 .for i in ${BIN_PROGRAMS}
@@ -44,16 +43,13 @@ do-install:
 .for i in ${BIN_SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
+	${LN} -sf srm ${PREFIX}/bin/sdel
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-	${LN} -sf srm ${PREFIX}/bin/sdel
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
