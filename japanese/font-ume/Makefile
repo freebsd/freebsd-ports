@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ume
-PORTVERSION=	0.0.449
+PORTVERSION=	0.0.450
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ume-font/22212
+MASTER_SITE_SUBDIR=	${PORTNAME}-font/22212
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	umefont_${PORTVERSION:E}
 
@@ -26,6 +26,10 @@ PORTDOCS=	license.html
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
@@ -35,14 +39,14 @@ do-install:
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
 	${LN} -s -f \
 		${DATADIR}/*.ttf ${PREFIX}/${X_FONTSDIR}/TTF/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-ume.conf \
-		${FILESDIR}/62-fonts-ume.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
+		${FILESDIR}/62-fonts-${PORTNAME}.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-ume.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-ume.conf
-	${LN} -s -f ../conf.avail/62-fonts-ume.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-ume.conf
-.if !defined(NOPORTDOCS)
+	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
