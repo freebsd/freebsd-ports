@@ -1,16 +1,12 @@
-# New ports collection makefile for:	Kochi TrueType fonts
-# Date created:		6 January 2001
-# Whom:			KANOU Hiroki <kanou@mil.allnet.ne.jp>
-#
+# Created by: KANOU Hiroki <kanou@mil.allnet.ne.jp>
 # $FreeBSD$
-#
 
-PORTNAME=	font-kochi
+PORTNAME=	kochi
 PORTVERSION=	20030809
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
-		${MASTER_SITE_PORTS_JP}
-DISTNAME=	kochi-substitute-${PORTVERSION}
+MASTER_SITES=	SFJP/efont/5411/
+PKGNAMEPREFIX=	ja-font-
+DISTNAME=	${PORTNAME}-substitute-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kochi Japanese TrueType font
@@ -26,12 +22,16 @@ SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR} \
 		DATADIR=share/${PORTNAME}
-WRKSRC=		${WRKDIR}/kochi-substitute-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
 PORTDOCS=	README.ja COPYING docs
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -49,7 +49,7 @@ do-install:
 		${PREFIX}/etc/fonts/conf.d/20-unhint-kochi.conf
 	${LN} -s -f ../conf.avail/62-fonts-kochi.conf \
 		${PREFIX}/etc/fonts/conf.d/62-fonts-kochi.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${CP} -R ${PORTDOCS} ${DOCSDIR}
 .endif
