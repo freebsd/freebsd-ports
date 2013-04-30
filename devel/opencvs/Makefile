@@ -1,11 +1,8 @@
-# New ports collection makefile for:	opencvs
-# Date created:				1 November 2008
-# Whom:					Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	opencvs
-PORTVERSION=	20120705
+PORTVERSION=	20130419
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	johans
