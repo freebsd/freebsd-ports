@@ -3951,7 +3951,6 @@
     SUBDIR += ruby-statgrab
     SUBDIR += ruby-subversion
     SUBDIR += ruby-sysvipc
-    SUBDIR += ruby-term-ansicolor
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += rubygem-abstract
@@ -4160,6 +4159,7 @@
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
+    SUBDIR += rubygem-term-ansicolor
     SUBDIR += rubygem-test
     SUBDIR += rubygem-test-unit
     SUBDIR += rubygem-thor
