@@ -5,11 +5,14 @@ PORTNAME=	par
 PORTVERSION=	0.03.01
 CATEGORIES=	archivers games
 MASTER_SITES=	http://ibiblio.org/pub/linux/games/quake/
+PKGNAMEPREFIX=	quake-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Archiver for Quake I and II packed data files
 
 LICENSE=	GPLv2
+
+CONFLICTS=	par-[0-9]*
 
 MAKEFILE=	Makefile.Linux
 MAKE_ARGS=	CC="${CC}"
