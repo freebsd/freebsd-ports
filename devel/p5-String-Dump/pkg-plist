@@ -1,0 +1,5 @@
+bin/dumpstr
+%%SITE_PERL%%/String/Dump.pm
+%%SITE_PERL%%/String/Dump/Debugging.pod
+@dirrm %%SITE_PERL%%/String/Dump
+@dirrmtry %%SITE_PERL%%/String
