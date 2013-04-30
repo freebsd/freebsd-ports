@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Curl
-# Date created:				24 July 2003
-# Whom:					Chris Larsen <darth@vader.dk>
-#
+# Created by: Chris Larsen <darth@vader.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.15
@@ -17,7 +13,7 @@ COMMENT=	Perl binding interface for curl
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 PERL_CONFIGURE=	yes
 

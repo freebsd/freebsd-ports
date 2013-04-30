@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgutenfetch
-# Date created:		17 July 2004
-# Whom:		Russell Francis <johntabularasa@users.sf.net>
-#
+# Created by: Russell Francis <johntabularasa@users.sf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libgutenfetch
 PORTVERSION=	1.2
@@ -14,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	A library that allows application developers to connect to PG
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection Makefile for: moon-buggy
-# Date created:		10 January 2002
-# Whom:			Ralf Becker <ralf@akk.org>
-#
+# Created by: Ralf Becker <ralf@akk.org>
 # $FreeBSD$
-#
 
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51
@@ -24,7 +20,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if defined (WITH_ESOUND)
-LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
+LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound
 .endif
 
 USE_AUTOTOOLS=	autoconf
