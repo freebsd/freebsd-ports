@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rlpr
-# Date created:		11 April 1999
-# Whom:			Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	rlpr
 PORTVERSION=	2.06
@@ -22,7 +18,7 @@ GNU_CONFIGURE=	yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
 # translation .po files. When this changes, it would make sense to
 # enable the use of gettext in this port:
-#USE_GETTEXT=	yes
+#USES=	gettext
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
 PLIST_FILES=	bin/rlpr bin/rlpq bin/rlprm bin/rlprd
