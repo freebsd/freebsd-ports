@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mahogany
-# Date created:		11 November 2000
-# Whom:			Stephen Kiernan <sk-ports@vegamuse.org>
-#
+# Created by: Stephen Kiernan <sk-ports@vegamuse.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mahogany
 PORTVERSION=	0.67
@@ -12,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/Mahogany/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 mail and news client
+COMMENT=	X11 mail and news client
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -27,14 +23,14 @@ OPTIONS_DEFINE=	NLS
 
 MAN1=		M.1 mahogany.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -50,4 +46,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(DATADIR)/locale|$$(DESTDIR)/share/locale|' \
 		${WRKSRC}/locale/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
