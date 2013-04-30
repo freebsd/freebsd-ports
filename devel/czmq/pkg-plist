@@ -2,6 +2,7 @@
 bin/czmq_selftest
 include/czmq.h
 include/czmq_prelude.h
+include/zbeacon.h
 include/zclock.h
 include/zctx.h
 include/zfile.h
@@ -14,6 +15,7 @@ include/zmutex.h
 include/zsocket.h
 include/zsockopt.h
 include/zstr.h
+include/zsys.h
 include/zthread.h
 lib/libczmq.a
 lib/libczmq.la
