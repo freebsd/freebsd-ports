@@ -3,74 +3,83 @@
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	http://solidcoin.info/downloads/ \
+MASTER_SITES=	http://downloads.solidcoin.info/ \
 		http://dl.dropbox.com/u/47582909/
-DISTNAME=	${PORTNAME}-source-2041
+DISTNAME=	${PORTNAME}-source-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
 
-BROKEN=		Does not build
+LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
-OPTIONS_DEFINE=	WXGTK X11
-OPTIONS_DEFAULT=	WXGTK X11
-
-USE_ZIP=	yes
-USE_GMAKE=	yes
-USE_OPENSSL=	yes
-USE_BDB=	yes
-WANT_BDB_VER=	47
-MAKE_JOBS_SAFE=	yes
-
-CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
-CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
-CXXFLAGS+=	-Wno-invalid-offsetof
+OPTIONS_DEFINE=	WXGTK
+OPTIONS_DEFAULT=	WXGTK
 
 WRKSRC=		${WRKDIR}/src
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWXGTK} && ${PORT_OPTIONS:MX11}
-USE_WX=		2.9
-DESKTOP_ENTRIES="Solidcoin" "${COMMENT}" "" "${PORTNAME}" "" "true"
-
-WX_CONFIG=	${LOCALBASE}/bin/wxgtk2u-2.9-config
-BINARY=		solidcoin
-.else
+USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 USE_GNOME=	glib20
-
-BINARY=		solidcoind
+USE_OPENSSL=	yes
+USE_BDB=	yes
+WANT_BDB_VER=	47
+USE_GCC=	any
+USE_GMAKE=	yes
 ALL_TARGET=	${BINARY}
-.endif
+MAKE_JOBS_SAFE=	yes
+
+CXXFLAGS+=	-Wno-invalid-offsetof
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${BINARY}
 
-post-extract:
-	@${CP} ${WRKSRC}/../build/makefile.unix ${WRKSRC}/Makefile
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWXGTK}
+USE_WX=		2.9
+WX_UNICODE=	yes
+PLIST_FILES+=	share/pixmaps/solidcoin48.xpm
+DESKTOP_ENTRIES="SolidCoin" "" "${PREFIX}/share/pixmaps/solidcoin48.xpm" \
+		"${PORTNAME}" "" true
+BINARY=		solidcoin
+.else
+BINARY=		solidcoind
+.endif
 
 post-patch:
 .for i in crypto gui nogui
-	@${MKDIR}  ${WRKSRC}/../obj/$i
+	@${MKDIR} ${WRKSRC}/../obj/${i}
 .endfor
-	@echo '18i\' > ${WRKSRC}/sed.in
-	@echo '#ifndef __STDC_LIMIT_MACROS' >> ${WRKSRC}/sed.in
-	@echo '19i\' >> ${WRKSRC}/sed.in
-	@echo '#endif' >> ${WRKSRC}/sed.in
+	@${ECHO_CMD} '18i\' > ${WRKDIR}/sed.in
+	@${ECHO_CMD} '#ifndef __STDC_LIMIT_MACROS' >> ${WRKDIR}/sed.in
+	@${ECHO_CMD} '19i\' >> ${WRKDIR}/sed.in
+	@${ECHO_CMD} '#endif' >> ${WRKDIR}/sed.in
 	@${REINPLACE_CMD} \
-		-f ${WRKSRC}/sed.in \
+		-f ${WRKDIR}/sed.in \
 		${WRKSRC}/headers.h
-	@${REINPLACE_CMD} \
-		-e 's|^CXXFLAGS=.*$$|CXXFLAGS += $$(DEFS)|' \
-		-e '/-l dl/d' \
-		-e 's|../../wxWidgets-2.9.2/wx-config|${WX_CONFIG}|' \
-		${WRKSRC}/Makefile
+
+do-configure:
+	@cd ${WRKSRC} && ${SED} -e \
+		's|^CXX=|CXX?=| ; \
+		 s|shell .* |shell $$(WX_CONFIG) | ; \
+		 s|-Wl,-Bstatic|| ; ; \
+		 s|-Wl,-Bdynamic|| ; \
+		 /-l dl/d ; \
+		 s|-l pthread|$$(LDFLAGS)|; \
+		 s|^CXXFLAGS=-O2|CXXFLAGS+=$$(CPPFLAGS)|' \
+		< ../build/makefile.unix > Makefile
+
 do-install:
-	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${BINARY} ${PREFIX}/bin)
+.if ${PORT_OPTIONS:MWXGTK}
+	(cd ${WRKSRC}/../share/xpm && ${INSTALL_DATA} solidcoin48.xpm \
+		${PREFIX}/share/pixmaps)
+.endif
 
 .include <bsd.port.mk>
