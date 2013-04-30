@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	sawfish
-PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTVERSION=	1.9.1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.tuxfamily.org/sawfish/
+MASTER_SITES=	http://download.tuxfamily.org/sawfish/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. Archive
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
-LICENSE=	GPLv2
+LICENSE=	ART20 GPLv2
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
@@ -19,8 +20,8 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
-USE_XORG=	ice sm x11 xft xinerama xrandr
-USES=		pathfix gettext
+USES=		gettext pathfix pkgconfig
+USE_XORG=	ice sm x11 xft xinerama xrandr xtst
 USE_GNOME=	gnomehier gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -35,6 +36,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MANCOMPRESSED=	yes
 MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
 INFO=		sawfish
+
+PORTSCOUT=	limit:^1\.9\.[0-9]
 
 post-patch:
 	@${REINPLACE_CMD} -e \

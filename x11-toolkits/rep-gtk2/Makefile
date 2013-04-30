@@ -1,12 +1,12 @@
 # Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/rep-gtk2/Makefile,v 1.8 2006/07/18 16:50:28 ahze Exp $
+
 PORTNAME=	rep-gtk2
-PORTVERSION=	0.90.7
-PORTREVISION=	1
+PORTVERSION=	0.90.8.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/
+MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. Archive
 DISTNAME=	rep-gtk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,7 +14,7 @@ COMMENT=	GTK+-2 binding for rep Lisp interpreter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	rep.16:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep:${PORTSDIR}/lang/librep
 
 USE_XZ=		yes
 USES=		pathfix pkgconfig
