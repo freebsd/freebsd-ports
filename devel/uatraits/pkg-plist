@@ -34,6 +34,7 @@ include/uatraits/shared.hpp
 include/uatraits/shared_ptr.hpp
 lib/libuatraits.a
 lib/libuatraits.la
+lib/libuatraits.so
 lib/libuatraits.so.0
 %%PYTHON_SITELIBDIR%%/uatraits.a
 %%PYTHON_SITELIBDIR%%/uatraits.la
