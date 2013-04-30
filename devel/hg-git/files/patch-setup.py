@@ -1,17 +1,24 @@
---- ./setup.py.orig	2012-11-01 15:10:46.000000000 +0100
-+++ ./setup.py	2012-11-03 10:28:03.799021557 +0100
-@@ -1,7 +1,4 @@
+--- ./setup.py.orig	2013-03-24 22:35:51.000000000 +0100
++++ ./setup.py	2013-03-30 13:51:43.535271164 +0100
+@@ -1,13 +1,5 @@
 -try:
 -    from setuptools import setup
 -except:
 -    from distutils.core import setup
+-
+-try:
+-    from collections import OrderedDict
+-    extra_req = []
+-except ImportError:
+-    extra_req = ['ordereddict>=1.1']
 +from distutils.core import setup
++from collections import OrderedDict
  
  setup(
      name='hg-git',
-@@ -20,5 +17,4 @@
+@@ -26,5 +18,4 @@
      license='GPLv2',
      packages=['hggit'],
      package_data={ 'hggit': ['help/git.rst'] },
--    install_requires=['dulwich>=0.8.0'],
+-    install_requires=['dulwich>=0.8.6'] + extra_req,
  )

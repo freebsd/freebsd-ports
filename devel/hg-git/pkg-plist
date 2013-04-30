@@ -19,4 +19,6 @@
 %%PYTHON_SITELIBDIR%%/hggit/util.py
 %%PYTHON_SITELIBDIR%%/hggit/util.pyc
 %%PYTHON_SITELIBDIR%%/hggit/util.pyo
+%%PYTHON_SITELIBDIR%%/hggit/help/git.rst
+@dirrm %%PYTHON_SITELIBDIR%%/hggit/help
 @dirrm %%PYTHON_SITELIBDIR%%/hggit
