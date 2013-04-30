@@ -1110,7 +1110,6 @@
     SUBDIR += libuninum
     SUBDIR += libunistring
     SUBDIR += libunwind
-    SUBDIR += libusb
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
@@ -2411,7 +2410,6 @@
     SUBDIR += p5-Object-Tiny
     SUBDIR += p5-Object-Tiny-Lvalue
     SUBDIR += p5-Olson-Abbreviations
-    SUBDIR += p5-Oogly
     SUBDIR += p5-Ouch
     SUBDIR += p5-PAR
     SUBDIR += p5-PAR-Dist

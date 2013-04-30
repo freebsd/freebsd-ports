@@ -4231,3 +4231,10 @@ print/a2ps-letter|print/a2ps|2013-04-27|Merged into print/a2ps
 print/a2ps-a4|print/a2ps|2013-04-27|Merged into print/a2ps
 print/html2ps-letter|print/html2ps|2013-04-28|Merged into print/html2ps
 print/html2ps-a4|print/html2ps|2013-04-28|Merged into print/html2ps
+devel/libusb||2013-04-30|Has expired: has been already included into base system
+www/typo346||2013-04-30|Has expired: Obsolete stable release
+www/ilias3||2013-04-30|Has expired: Obsolete stable release
+net-p2p/moodriver||2013-04-30|Has expired: Not supported by upstream, master site is down
+www/p5-Dancer-Plugin-DataFu||2013-04-30|Has expired: No more public distfiles
+devel/p5-Oogly||2013-04-30|Has expired: No more public distfiles
+mail/listmanager||2013-04-30|Has expired: No more upstream, no more public distfiles
