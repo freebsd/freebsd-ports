@@ -1,9 +1,5 @@
-# New ports collection makefile for:	runit
-# Date created:		2003-06-20
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	runit
 PORTVERSION=	2.1.1
@@ -14,6 +10,9 @@ MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Service supervision tools compatible with DJB daemontools
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/package/COPYING
+
 USE_RC_SUBR=	runsvdir
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
@@ -23,7 +22,7 @@ PORTDOCS=	*
 
 MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
 		runsvdir.8 sv.8 svlogd.8 utmpset.8
-DOCS=		package/CHANGES package/COPYING package/README \
+DOCS=		package/CHANGES package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish

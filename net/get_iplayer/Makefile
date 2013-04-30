@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
 
 USE_PERL5_RUN=	yes

@@ -1,9 +1,4 @@
-# New ports collection Makefile for:	aird
-# Date created:				23 April 2011
-# Whom:					crees
-#
 # $FreeBSD$
-#
 
 PORTNAME=	aird
 PORTVERSION=	1.0
@@ -12,6 +7,8 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Handles Apple IR receiver button events
+
+LICENSE=	BSD
 
 USE_RC_SUBR=	${PORTNAME}
 MAN1=		${PORTNAME}.1

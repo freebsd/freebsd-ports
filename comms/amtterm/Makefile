@@ -1,9 +1,4 @@
-# Ports collection Makefile for:	amtterm
-# Date created:				29 December 2011
-# Whom:					crees
-#
 # $FreeBSD$
-#
 
 PORTNAME=	amtterm
 PORTVERSION=	1.3
@@ -13,6 +8,9 @@ MASTER_SITES=	https://www.kraxel.org/releases/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Serial-over-lan client for Intel AMT
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	p5-SOAP-Lite>=0.5:${PORTSDIR}/net/p5-SOAP-Lite

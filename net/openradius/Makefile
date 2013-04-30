@@ -1,9 +1,5 @@
-# New ports collection makefile for:   openradius
-# Date created:        23 May 2003
-# Whom:                Adam Jette <jettea46@yahoo.com>
-#
+# Created by: Adam Jette <jettea46@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c
@@ -14,6 +10,9 @@ MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A RADIUS server with some actual documentation
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LOGFILE?=	/var/log/openradius.log
 
