@@ -8,7 +8,7 @@ CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 LICENSE=	GPLv2
