@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-guile --disable-silent-rules \
 			--disable-hardware-acceleration
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.5)) && !defined(WITHOUT_LIBTASN1)
 LIB_DEPENDS+=	tasn1.5:${PORTSDIR}/security/libtasn1
@@ -54,7 +54,7 @@ PLIST_SUB+=		CXX=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
-USE_GETTEXT=		yes
+USES+=		gettext
 PLIST_SUB+=		NLS=""
 .endif
 
@@ -80,4 +80,4 @@ post-install:
 .endif
 
 .include "Makefile.man"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

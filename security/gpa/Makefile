@@ -32,18 +32,18 @@ MAN1=		gpa.1
 
 OPTIONS_DEFINE=	NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/bin/gpgsm)
 IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON, then rebuild security/gpgme if installed
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

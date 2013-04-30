@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.guengel.ch/myapps/yapet/downloads/ http://homepage.hispeed.ch/rostertag/yapet/
 
 MAINTAINER=	rafi@guengel.ch
-COMMENT=	A curses based password manager
+COMMENT=	Curses based password manager
 
 MAN1=		yapet.1
 MANCOMPRESSED=	no
@@ -21,7 +21,7 @@ TTITLE_DESC=	Enable Terminal Title
 PWGEN_DESC=	Enable Password Generator
 CSV2YAPET_DESC=	Build csv2yapet
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # --enable-silent-rules:  will make the build quiet
 # --disable-install-doc:  I take care of installing docs
@@ -49,7 +49,7 @@ PLIST_SUB+=		CSV2YAPET="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=		yes
+USES+=			gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -77,4 +77,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/THANKS ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
