@@ -45,9 +45,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/checkers/similar.py
 %%PYTHON_SITELIBDIR%%/pylint/checkers/similar.pyc
 %%PYTHON_SITELIBDIR%%/pylint/checkers/similar.pyo
-%%PYTHON_SITELIBDIR%%/pylint/checkers/string_format.py
-%%PYTHON_SITELIBDIR%%/pylint/checkers/string_format.pyc
-%%PYTHON_SITELIBDIR%%/pylint/checkers/string_format.pyo
+%%PYTHON_SITELIBDIR%%/pylint/checkers/strings.py
+%%PYTHON_SITELIBDIR%%/pylint/checkers/strings.pyc
+%%PYTHON_SITELIBDIR%%/pylint/checkers/strings.pyo
 %%PYTHON_SITELIBDIR%%/pylint/checkers/typecheck.py
 %%PYTHON_SITELIBDIR%%/pylint/checkers/typecheck.pyc
 %%PYTHON_SITELIBDIR%%/pylint/checkers/typecheck.pyo
