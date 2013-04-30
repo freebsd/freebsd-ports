@@ -43,6 +43,9 @@ lib/aws/native/static/sha-strings.ali
 lib/aws/native/static/sha-process_data.ali
 lib/aws/native/static/sha.ali
 lib/aws/native/static/memory_streams.ali
+%%LDAP%%lib/aws/native/static/aws-ldap-client.ali
+%%LDAP%%lib/aws/native/static/aws-ldap-thin.ali
+%%LDAP%%lib/aws/native/static/aws-ldap.ali
 lib/aws/native/static/libaws_ssl.a
 lib/aws/native/static/libaws_include.a
 lib/aws/native/static/libaws.a
@@ -117,7 +120,8 @@ lib/aws/native/static/aws-parameters.ali
 lib/aws/native/static/aws-os_lib.ali
 lib/aws/native/static/aws-net-thin.ali
 lib/aws/native/static/aws-net-stream_io.ali
-lib/aws/native/static/aws-net-std__gnat.ali
+%%NIP6%%lib/aws/native/static/aws-net-std__gnat.ali
+%%YIP6%%lib/aws/native/static/aws-net-std__ipv6.ali
 %%YSSL%%lib/aws/native/static/aws-net-ssl__openssl.ali
 %%NSSL%%lib/aws/native/static/aws-net-ssl__dummy.ali
 %%YSSL%%lib/aws/native/static/aws-net-ssl-certificate__openssl.ali
@@ -206,6 +210,9 @@ lib/aws/native/relocatable/sha-strings.ali
 lib/aws/native/relocatable/sha-process_data.ali
 lib/aws/native/relocatable/sha.ali
 lib/aws/native/relocatable/memory_streams.ali
+%%LDAP%%lib/aws/native/relocatable/aws-ldap-client.ali
+%%LDAP%%lib/aws/native/relocatable/aws-ldap-thin.ali
+%%LDAP%%lib/aws/native/relocatable/aws-ldap.ali
 lib/aws/native/relocatable/libaws_ssl.so
 lib/aws/native/relocatable/libaws.so
 lib/aws/native/relocatable/libaws_include.so
@@ -280,7 +287,8 @@ lib/aws/native/relocatable/aws-parameters.ali
 lib/aws/native/relocatable/aws-os_lib.ali
 lib/aws/native/relocatable/aws-net-thin.ali
 lib/aws/native/relocatable/aws-net-stream_io.ali
-lib/aws/native/relocatable/aws-net-std__gnat.ali
+%%NIP6%%lib/aws/native/relocatable/aws-net-std__gnat.ali
+%%YIP6%%lib/aws/native/relocatable/aws-net-std__ipv6.ali
 %%YSSL%%lib/aws/native/relocatable/aws-net-ssl__openssl.ali
 %%NSSL%%lib/aws/native/relocatable/aws-net-ssl__dummy.ali
 %%YSSL%%lib/aws/native/relocatable/aws-net-ssl-certificate__openssl.ali
@@ -416,6 +424,11 @@ include/aws/soap-client.ads
 include/aws/soap-client.adb
 include/aws/soap.ads
 include/aws/native/aws-os_lib.ads
+%%LDAP%%include/aws/aws-ldap-client.ads
+%%LDAP%%include/aws/aws-ldap-client.adb
+%%LDAP%%include/aws/aws-ldap-thin.ads
+%%LDAP%%include/aws/aws-ldap-thin.adb
+%%LDAP%%include/aws/aws-ldap.ads
 include/aws/components/zlib-thin.ads
 include/aws/components/zlib-thin.adb
 include/aws/components/zlib-streams.ads
@@ -736,39 +749,6 @@ include/aws/aws.ads
 %%EXAMPLESDIR%%/images/aws_up.png
 %%EXAMPLESDIR%%/images/aws_logo.png
 %%EXAMPLESDIR%%/images/aws_down.png
-%%DEMO%%%%EXAMPLESDIR%%/demos/agent
-%%DEMO%%%%EXAMPLESDIR%%/demos/auth
-%%DEMO%%%%EXAMPLESDIR%%/demos/com_1
-%%DEMO%%%%EXAMPLESDIR%%/demos/com_2
-%%DEMO%%%%EXAMPLESDIR%%/demos/dispatch
-%%DEMO%%%%EXAMPLESDIR%%/demos/hello_world
-%%DEMO%%%%EXAMPLESDIR%%/demos/hotplug
-%%DEMO%%%%EXAMPLESDIR%%/demos/interoplab_main
-%%DEMO%%%%EXAMPLESDIR%%/demos/jabber_demo
-%%DEMO%%%%EXAMPLESDIR%%/demos/main
-%%DEMO%%%%EXAMPLESDIR%%/demos/multiple_sessions
-%%DEMO%%%%EXAMPLESDIR%%/demos/res_demo
-%%DEMO%%%%EXAMPLESDIR%%/demos/runme
-%%DEMO%%%%EXAMPLESDIR%%/demos/soap_client
-%%DEMO%%%%EXAMPLESDIR%%/demos/soap_cvs
-%%DEMO%%%%EXAMPLESDIR%%/demos/soap_server
-%%DEMO%%%%EXAMPLESDIR%%/demos/soap_server_disp
-%%DEMO%%%%EXAMPLESDIR%%/demos/soap_svs
-%%DEMO%%%%EXAMPLESDIR%%/demos/split
-%%LDAP%%%%EXAMPLESDIR%%/demos/test_ldap
-%%DEMO%%%%EXAMPLESDIR%%/demos/test_mail
-%%DEMO%%%%EXAMPLESDIR%%/demos/text_input
-%%DEMO%%%%EXAMPLESDIR%%/demos/vh_demo
-%%DEMO%%%%EXAMPLESDIR%%/demos/web_block
-%%DEMO%%%%EXAMPLESDIR%%/demos/web_block_ajax
-%%DEMO%%%%EXAMPLESDIR%%/demos/web_block_ajax_templates
-%%DEMO%%%%EXAMPLESDIR%%/demos/web_elements
-%%DEMO%%%%EXAMPLESDIR%%/demos/web_mail
-%%DEMO%%%%EXAMPLESDIR%%/demos/wps
-%%DEMO%%%%EXAMPLESDIR%%/demos/ws
-%%DEMO%%%%EXAMPLESDIR%%/demos/wsdl_demo_client
-%%DEMO%%%%EXAMPLESDIR%%/demos/wsdl_demo_server
-%%DEMO%%%%EXAMPLESDIR%%/demos/zdemo
 share/gps/plug-ins/ada2wsdl.xml
 share/gps/plug-ins/aws.py
 share/gps/plug-ins/aws.xml
@@ -798,4 +778,3 @@ share/gps/plug-ins/wsdl2aws.xml
 @dirrm include/aws
 @dirrmtry lib/gnat
 @dirrmtry share/gps/plug-ins
-@dirrmtry %%EXAMPLESDIR%%/demos
