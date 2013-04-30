@@ -6,4 +6,4 @@ checking if variable names are well-formed according to your coding
 standard, or checking if declared interfaces are truly implemented,
 and much more.
 
-WWW:	http://www.logilab.org/projects/pylint/
+WWW: http://www.pylint.org
