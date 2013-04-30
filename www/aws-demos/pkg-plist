@@ -1,0 +1,34 @@
+%%OSSL%%%%EXAMPLESDIR%%/agent
+%%EXAMPLESDIR%%/auth
+%%EXAMPLESDIR%%/com_1
+%%EXAMPLESDIR%%/com_2
+%%EXAMPLESDIR%%/dispatch
+%%EXAMPLESDIR%%/hello_world
+%%EXAMPLESDIR%%/hotplug
+@comment broken %%EXAMPLESDIR%%/interoplab_main
+%%EXAMPLESDIR%%/jabber_demo
+%%EXAMPLESDIR%%/main
+%%EXAMPLESDIR%%/multiple_sessions
+%%EXAMPLESDIR%%/res_demo
+%%OSSL%%%%EXAMPLESDIR%%/runme
+%%EXAMPLESDIR%%/soap_client
+%%EXAMPLESDIR%%/soap_cvs
+%%EXAMPLESDIR%%/soap_server
+%%EXAMPLESDIR%%/soap_server_disp
+%%EXAMPLESDIR%%/soap_svs
+%%EXAMPLESDIR%%/split
+%%LDAP%%%%EXAMPLESDIR%%/test_ldap
+%%EXAMPLESDIR%%/test_mail
+%%EXAMPLESDIR%%/text_input
+%%EXAMPLESDIR%%/vh_demo
+%%EXAMPLESDIR%%/web_block
+%%EXAMPLESDIR%%/web_block_ajax
+%%EXAMPLESDIR%%/web_block_ajax_templates
+%%EXAMPLESDIR%%/web_elements
+%%EXAMPLESDIR%%/web_mail
+%%EXAMPLESDIR%%/wps
+%%EXAMPLESDIR%%/ws
+@comment broken %%EXAMPLESDIR%%/wsdl_demo_client
+@comment broken %%EXAMPLESDIR%%/wsdl_demo_server
+%%EXAMPLESDIR%%/zdemo
+@dirrmtry %%EXAMPLESDIR%%

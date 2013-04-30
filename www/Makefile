@@ -42,6 +42,7 @@
     SUBDIR += autoindex2
     SUBDIR += awffull
     SUBDIR += aws
+    SUBDIR += aws-demos
     SUBDIR += awstats
     SUBDIR += axis
     SUBDIR += axis2
