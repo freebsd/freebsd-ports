@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-DNS-ToolKit
-# Date created:		2006-09-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-ToolKit
-PORTVERSION=	0.45
+PORTVERSION=	0.47
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tools for working with DNS packets
 
-BUILD_DEPENDS=	p5-Net-DNS-Codes>=0:${PORTSDIR}/dns/p5-Net-DNS-Codes \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:${PORTSDIR}/dns/p5-Net-DNS-Codes \
+		p5-NetAddr-IP>=1.30:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
@@ -45,6 +41,7 @@ MAN3=		Net::DNS::ToolKit.3 \
 		Net::DNS::ToolKit::RR::RP.3 \
 		Net::DNS::ToolKit::RR::RT.3 \
 		Net::DNS::ToolKit::RR::SOA.3 \
+		Net::DNS::ToolKit::RR::SRV.3 \
 		Net::DNS::ToolKit::RR::TXT.3 \
 		Net::DNS::ToolKit::RR::TYPE.3 \
 		Net::DNS::ToolKit::RR::Template.3 \
