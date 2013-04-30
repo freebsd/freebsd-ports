@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coq
-PORTVERSION=	8.4.1
-PORTREVISION=	1
+PORTVERSION=	8.4.2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
