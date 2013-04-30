@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.creytiv.com/pub/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Library for real-time audio and video processing
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/share/re/re.mk:${PORTSDIR}/audio/re
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

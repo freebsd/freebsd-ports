@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.creytiv.com/pub/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Small SIP client
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
+
 BUILD_DEPENDS=	re>=${PORTVERSION}:${PORTSDIR}/audio/re \
 		rem>=${PORTVERSION}:${PORTSDIR}/audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}

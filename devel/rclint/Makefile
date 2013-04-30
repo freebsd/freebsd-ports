@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.bayofrum.net/dist/rclint/	\
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Checks rc scripts for style and common errors
 
+LICENSE=	BSD
+
 NO_BUILD=	yes
 USE_PYTHON=	yes
 SUB_FILES=	${PORTNAME}

@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.creytiv.com/pub/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Library for real-time comms with async IO support
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 

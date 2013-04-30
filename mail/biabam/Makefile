@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biabam
-# Date created:		03 January 2001
-# Whom:			George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	biabam
 PORTVERSION=	0.9.7
@@ -13,6 +9,9 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A command-line attachment mailer
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
