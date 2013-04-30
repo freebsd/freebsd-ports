@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Interface to X selections ("the clipboard") from the command line
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
