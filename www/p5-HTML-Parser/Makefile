@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-HTML-Parser
-# Date Created:				28 April 1998
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Parser
-PORTVERSION=	3.69
+PORTVERSION=	3.70
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
