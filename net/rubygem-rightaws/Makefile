@@ -7,6 +7,7 @@
 
 PORTNAME=	rightaws
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	right_aws-${PORTVERSION}
@@ -27,7 +28,7 @@ OPTIONS=	LIBXML "Use libxml instead of REXML" Off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBXML)
-RUN_DEPENDS+=	${RUBY_PKGNAMEPREFIX}libxml>=0:${PORTSDIR}/textproc/ruby-libxml
+RUN_DEPENDS+=	rubygem-libxml-ruby>=2.3.3:${PORTSDIR}/textproc/rubygem-libxml-ruby
 .else
 USE_RUBY_FEATURES=	rexml
 .endif
