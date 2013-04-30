@@ -2637,6 +2637,7 @@
     SUBDIR += p5-String-CRC32
     SUBDIR += p5-String-Checker
     SUBDIR += p5-String-Diff
+    SUBDIR += p5-String-Dump
     SUBDIR += p5-String-Ediff
     SUBDIR += p5-String-Errf
     SUBDIR += p5-String-Formatter
