@@ -3,6 +3,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		expat:${PORTSDIR}/textproc/expat2 \
-		lzo2:${PORTSDIR}/archivers/lzo2 \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg \
 		boost_regex:${PORTSDIR}/devel/boost-libs \
