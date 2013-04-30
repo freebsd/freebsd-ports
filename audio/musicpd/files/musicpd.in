@@ -20,15 +20,15 @@ load_rc_config $name
 : ${musicpd_enable:=NO}
 
 command=%%PREFIX%%/bin/musicpd
-command_args=%%PREFIX%%/etc/%%MPDCONF%%
-required_files=%%PREFIX%%/etc/%%MPDCONF%%
+command_args=%%PREFIX%%/etc/musicpd.conf
+required_files=%%PREFIX%%/etc/musicpd.conf
 start_precmd=${name}_getpidfile
 stop_precmd=${name}_getpidfile
 
 musicpd_getpidfile()
 {
 	if type get_pidfile_from_conf >/dev/null 2>&1 &&
-	    get_pidfile_from_conf pid_file %%PREFIX%%/etc/%%MPDCONF%% ; then
+	    get_pidfile_from_conf pid_file %%PREFIX%%/etc/musicpd.conf ; then
 		pidfile="$_pidfile_from_conf"
 	else
 		pidfile="%%MPDDIR%%/.mpd/pid"
