@@ -12,7 +12,7 @@ and add the following line to /etc/rc.conf:
 
 Then start the server with
 
-	%%PREFIX%%/etc/rc.d/musicpd start
+	service musicpd start
 
 or reboot.
 
