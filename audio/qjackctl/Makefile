@@ -1,12 +1,8 @@
-# New ports collection makefile for:	qjackctl
-# Date created:		2006-12-06
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.9
+DISTVERSION=	0.3.10
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -15,8 +11,8 @@ COMMENT=	Qt Interface for the JACK Audio Connection Kit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
-		jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
+		jack:${PORTSDIR}/audio/jack
 
 USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
