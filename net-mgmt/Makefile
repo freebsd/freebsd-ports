@@ -169,7 +169,6 @@
     SUBDIR += netmask
     SUBDIR += netmond
     SUBDIR += netspoc
-    SUBDIR += nettop
     SUBDIR += netustad
     SUBDIR += netwag
     SUBDIR += netwox
