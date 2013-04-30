@@ -1,41 +1,51 @@
-# New ports collection makefile for:   bpft
-# Date created:			26 August 2002
-# Whom:				El Vampiro <vampiro@rootshell.ru>
-#
+# Created by: El Vampiro <vampiro@rootshell.ru>
 # $FreeBSD$
 
 PORTNAME=	bpft
-PORTVERSION=	4.20040414
+PORTVERSION=	4.20040506
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}4/${PORTNAME}4/${PORTNAME}4-snapshot \
-		ftp://rusunix.org/pub/FreeBSD/distfiles/
-
-DISTNAME=	bpft4-2004-04-14
+MASTER_SITES=	SF/${PORTNAME}4/${PORTNAME}4/${PORTNAME}4-snapshot
+DISTNAME=	${PORTNAME}4-2004-05-06
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The BPF Traffic collector
+COMMENT=	BPF Traffic collector
+
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	trafd-3.0.*
 
-WRKSRC=		${WRKDIR}/bpft
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAKE_JOBS_UNSAFE=	yes
+
+MANCOMPRESSED=	yes
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
-PORTDOCS=	README WhatsNew
-MANCOMPRESSED=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h
-	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|<net/slip.h>|"../linux-include/net/slip.h"|' \
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h
+	@${REINPLACE_CMD} -e \
+		'/^PATH_TOSAVE/s|=.*|= ${PREFIX}/var/bpft| ; \
+		 /^INSTALL_DIRECTORY/s|=.*|= ${MKDIR}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|<net/slip.h>|"../linux-include/net/slip.h"|' \
 		${WRKSRC}/lib/interfaces.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-. for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-. endfor
+.for i in bin/traflog bin/trafstat sbin/trafd sbin/trafstatd
+	@${STRIP_CMD} ${PREFIX}/${i}
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in README WhatsNew
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 .endif
 
 .include <bsd.port.mk>
