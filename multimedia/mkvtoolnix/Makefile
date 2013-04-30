@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	5.9.0
-PORTREVISION=	1
+PORTVERSION=	6.2.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -25,7 +24,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		matroska:${PORTSDIR}/multimedia/libmatroska
 
 USES=		pkgconfig gettext iconv
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
@@ -34,7 +33,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no ZLIB_CFLAGS=-I/usr/include ZLIB_LIBS=-lz
-CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
+CONFIGURE_ARGS=	--disable-qt \
 		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \

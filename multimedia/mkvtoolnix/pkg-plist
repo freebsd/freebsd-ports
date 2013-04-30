@@ -134,6 +134,10 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhk
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhp
 %%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.html
+%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhc
+%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhk
+%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhp
+%%DOCSDIR%%/guide/nl/mkvmerge-gui.html
 @dirrmtry man/zh_CN/man1
 @dirrmtry man/zh_CN
 @dirrmtry man/uk/man1
@@ -148,6 +152,8 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 @dirrm %%DOCSDIR%%/guide/es
 @dirrm %%DOCSDIR%%/guide/en/images
 @dirrm %%DOCSDIR%%/guide/en
+@dirrm %%DOCSDIR%%/guide/nl/images
+@dirrm %%DOCSDIR%%/guide/nl
 @dirrm %%DOCSDIR%%/guide
 @dirrm %%DOCSDIR%%
 %%GUI%%@dirrmtry share/applications
