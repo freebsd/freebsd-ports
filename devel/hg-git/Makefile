@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hg-git
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,13 @@ COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.5:${PORTSDIR}/devel/dulwich \
-		mercurial>=2.3.2:${PORTSDIR}/devel/mercurial
+RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=0.8.7:${PORTSDIR}/devel/dulwich \
+		mercurial>=2.5.2:${PORTSDIR}/devel/mercurial \
+		${PKGNAMEPREFIX}ordereddict>=1.1:${PORTSDIR}/devel/py-ordereddict
 
 MAKE_JOBS_SAFE=	yes
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/_/}
 
