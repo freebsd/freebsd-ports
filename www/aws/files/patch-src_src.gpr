@@ -1,0 +1,20 @@
+--- src/src.gpr.orig	2011-01-09 15:47:58.000000000 +0100
++++ src/src.gpr	2013-04-25 20:08:01.000000000 +0200
+@@ -77,7 +77,7 @@
+             when "Windows_NT" =>
+                for Library_Options use ("-lwsock32", "-lws2_32");
+             when others =>
+-               null;
++               for Library_Options use ("-R", "-Wl,-R,@ADDITIONAL_RPATH@");
+          end case;
+ 
+          case Shared.LDAP is
+@@ -88,7 +88,7 @@
+                        Project'Library_Options & ("-lwldap32");
+                   when others =>
+                      for Library_Options use
+-                       Project'Library_Options & ("-lldap");
++                       Project'Library_Options & ("-L@PREFIX@/lib", "-lldap");
+                end case;
+             when "Disabled" =>
+                null;
