@@ -1,9 +1,5 @@
-# New ports collection makefile for:   aria
-# Date created:        30 March 2001
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aria
 PORTVERSION=	1.0.0
@@ -14,25 +10,37 @@ MASTER_SITES=	SF/${PORTNAME}-rpm/Aria%20Sources/${PORTVERSION}-official
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another download tool
 
-MAKE_JOBS_SAFE=  yes
-BROKEN=		fails to build
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	NLS DOCS
 
 USE_BZIP2=	yes
-.if !defined(WITHOUT_NLS)
+USE_GNOME=	gtk12
+USE_OPENSSL=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTDOCS=	README README.euc
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-USE_GNOME=	gtk12
-USE_OPENSSL=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-PORTDOCS=	README README.euc
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS+=	-L${LOCALBASE}/lib
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: just hangs
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt*
@@ -49,17 +57,13 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|"getopt.h"|<getopt.h>|g' \
 		${WRKSRC}/src/main.cc
+	@${REINPLACE_CMD} -e 's|\*infile|infile|g ; \
+		s|(gzFile \*)||' ${WRKSRC}/src/RetrieveHTTP.cc
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64: just hangs
 .endif
 
 .include <bsd.port.post.mk>
