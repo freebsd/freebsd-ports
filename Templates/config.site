@@ -55,6 +55,8 @@ ac_cv_header_wctype_h=${ac_cv_header_wctype_h=yes}
 ac_cv_header_limits_h=${ac_cv_header_limits_h=yes}
 ac_cv_header_stdbool_h=${ac_cv_header_stdbool_h=yes}
 ac_cv_header_spawn_h=${ac_cv_header_spawn_h=yes}
+ac_cv_header_net_if_h=${ac_cv_header_net_if_h=yes}
+ac_cv_header_net_if_media_h=${ac_cv_header_net_if_media_h=yes}
 
 ac_cv_header_dl_h=${ac_cv_header_dl_h=no}
 ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
