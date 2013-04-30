@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linphone
-# Date created:				30 December 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linphone
 PORTVERSION=	3.2.1
@@ -21,7 +17,8 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 
 CONFLICTS=	ortp-[0-9]*
 
-USE_GNOME=	glib20 gnomehack intlhack pkgconfig
+USE_GNOME=	glib20 intlhack
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure
@@ -34,18 +31,14 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(LINPHONE_GUI)
@@ -61,6 +54,12 @@ PKGNAMESUFFIX=	-base
 CONFIGURE_ARGS+=	--enable-gtk_ui=no
 MAN1=		linphonec.1 linphonecsh.1 sipomatic.1
 SUBDIRS=	po oRTP mediastreamer2 coreapi console
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
 .endif
 
 post-patch:

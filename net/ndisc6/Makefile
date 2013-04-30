@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ndisc6
-# Date created:		12 July 2006
-# Whom:			rdenis@simphalempin.com
-#
+# Created by: rdenis@simphalempin.com
 # $FreeBSD$
-#
 
 PORTNAME=	ndisc6
 PORTVERSION=	1.0.2
@@ -21,14 +17,14 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 803000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
@@ -45,11 +41,11 @@ USE_RC_SUBR=	rdnssd
 PORTDOCS=	AUTHORS NEWS README
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if	${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

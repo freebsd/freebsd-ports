@@ -15,14 +15,13 @@ MASTER_SITES=	http://www.wireshark.org/download/src/ \
 
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT?=	A powerful network analyzer/capture tool
+COMMENT?=	Powerful network analyzer/capture tool
 
 DATADIR_NAME=	wireshark
 
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
-USE_GETTEXT=	yes
-USES=		iconv
+USES=		iconv gettext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
