@@ -1,29 +1,31 @@
-# New ports collection makefile for:  gtkada
-# Date created:                       12 December 2010
-# Whom:                               John Marino <draco@marino.st>
-#
+# Created by: John Marino <draco@marino.st>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkada
-PORTVERSION=	2.22
-PORTREVISION=	1
+PORTVERSION=	${GTKADA_VERSION}
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://downloads.dragonlace.net/src/ \
-		http://dragonlace.mirrors.ada.cx/src/
+MASTER_SITES=	http://downloads.dragonlace.net/src/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		gtkada-rm-${GTKADA_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	draco@marino.st
 COMMENT=	Ada graphical toolkit based on Gtk2+
 
-BUILD_DEPENDS=	gnat-aux>20101204:${PORTSDIR}/lang/gnat-aux
-BUILD_DEPENDS+=	gtk>=2.22:${PORTSDIR}/x11-toolkits/gtk20
-RUN_DEPENDS+=	gtk>=2.22:${PORTSDIR}/x11-toolkits/gtk20
+LICENSE=	GPLv2
+
+BUILD_DEPENDS+= makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+= gtk>=${GTKADA_VERSION}:${PORTSDIR}/x11-toolkits/gtk20
+RUN_DEPENDS+=	gtk>=${GTKADA_VERSION}:${PORTSDIR}/x11-toolkits/gtk20
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-CC=		gnatgcc
+USE_PERL5_BUILD=yes
+USES+=		ada
+
+GTKADA_VERSION=		2.22
+PLIST_SUB+=		PKGNAME="${PORTNAME}-${GTKADA_VERSION}"
 
 CONFIGURE_ARGS+=	--disable-nls
 

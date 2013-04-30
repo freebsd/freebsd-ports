@@ -1,0 +1,22 @@
+$NetBSD: patch-ag,v 1.1 2011/10/14 14:02:17 marino Exp $
+
+--- docs/Makefile.orig	2010-12-01 21:51:08.000000000 +0000
++++ docs/Makefile
+@@ -1,15 +1,13 @@
+ all:: 
+-	${MAKE} -C gtkada_rm
+ 	${MAKE} -C gtkada_ug
+ 
+ install::
+-	${MAKE} -C gtkada_rm install
+ 	${MAKE} -C gtkada_ug install
++	${MAKE} -C gtkada_rm_pregen install
+ 
+ clean::
+-	${MAKE} -C gtkada_rm clean
+ 	${MAKE} -C gtkada_ug clean
+ 
+ distclean::
+-	${MAKE} -C gtkada_rm distclean
+ 	${MAKE} -C gtkada_ug distclean
++	${MAKE} -c gtkada_rm_pregen install
