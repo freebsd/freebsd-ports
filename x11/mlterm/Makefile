@@ -111,7 +111,6 @@ LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 USE_LDCONFIG=	yes
-USES=		gettext
 
 MAN1=	mlterm.1 mlclient.1
 
