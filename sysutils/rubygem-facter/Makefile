@@ -3,6 +3,7 @@
 
 PORTNAME=	facter
 PORTVERSION=	1.6.18
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG \
 		http://downloads.puppetlabs.com/facter/
