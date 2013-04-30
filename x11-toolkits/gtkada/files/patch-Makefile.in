@@ -1,0 +1,12 @@
+$NetBSD: patch-af,v 1.1 2011/10/14 14:02:17 marino Exp $
+
+--- Makefile.in.orig	2011-10-13 16:16:09.000000000 +0000
++++ Makefile.in
+@@ -16,6 +16,7 @@ all: src tests
+ 
+ src:
+ 	$(MAKE) -C $(src_dir)
++	$(MAKE) -C $(doc_dir)
+ 
+ tests: src
+ 	$(MAKE) -C $(testgtk_dir)
