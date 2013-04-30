@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-Test-File-Contents
-# Date created:				28 January 2006
-# Whom:					Rod Taylor <ports@rbt.ca>
-#
+# Created by: Rod Taylor <ports@rbt.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-File-Contents
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
