@@ -109,7 +109,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 #.if ${PORT_OPTIONS:MASVN}
-#RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
+#RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils
 #PLIST_SUB+=	ASVN=""
 #.else
 PLIST_SUB+=	ASVN="@comment "
