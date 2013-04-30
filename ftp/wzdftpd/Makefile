@@ -2,55 +2,54 @@
 # $FreeBSD$
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.8.1
-PORTREVISION=	9
+PORTVERSION=	0.8.3
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
-USES=		pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_RC_SUBR=	wzdftpd
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_GNOME=	ltverhack
-CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	UTF8 TCL OPENSSL GNUTLS IPV6 PERL MYSQL
-OPTIONS_RADIO=	ZEROCONF
+OPTIONS_DEFINE=	ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL
+OPTIONS_RADIO=	TLS ZEROCONF
+OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
 OPTIONS_RADIO_ZEROCONF=	AVAHI HOWL
-OPTIONS_DEFAULT=	GNUTLS IPV6 AVAHI
+OPTIONS_DEFAULT=	AVAHI GNUTLS
+HOWL_DESC=	Zeroconf support via Howl
 
-UTF8_DESC=	Enable UTF8 support
-HOWL_DESC=	Enable Zeroconf support using Howl
-AVAHI_DESC=	Enable Zeroconf support using Avahi
+USES=		pkgconfig
+USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+LIBTOOLIZE_ARGS=--copy --force
+ACLOCAL_ARGS=	-I m4 -I ac-helpers
+AUTOMAKE_ARGS=	--add-missing --copy
+CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	siteconfig.1 \
-	siteuptime.1 \
-	sitewho.1 \
-	wzd-config.1
-MAN8=	wzdftpd.8
+USE_RC_SUBR=	wzdftpd
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		siteconfig.1 siteuptime.1 sitewho.1 wzd-config.1
+MAN8=		wzdftpd.8
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MUTF8}
+.if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-utf8
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=	--with-tcl='${PREFIX}/lib/tcl8.4'
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 PLIST_SUB+=	TCL=""
 .else
-CONFIGURE_ARGS+=	--without-tcl
 PLIST_SUB+=	TCL="@comment "
 .endif
 
@@ -61,21 +60,23 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
-.if !${PORT_OPTIONS:MIPV6}
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if !${PORT_OPTIONS:MPERL}
+.if ${PORT_OPTIONS:MPERL}
+USE_PERL5=	yes
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3+=		wzdftpd.3
+PLIST_SUB+=	PERL=""
+.else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	PERL="@comment "
-.else
-USE_PERL5=	yes
-PLIST_SUB+=	PERL=""
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -86,35 +87,73 @@ CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MZEROCONF}
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+PLIST_SUB+=	PGSQL=""
+.else
+CONFIGURE_ARGS+=	--disable-pgsql
+PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	3
+PLIST_SUB+=	SQLITE=""
+.else
+CONFIGURE_ARGS+=	--disable-sqlite3
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MAVAHI} || ${PORT_OPTIONS:MHOWL}
 PLIST_SUB+=	ZEROCONF=""
 .else
 PLIST_SUB+=	ZEROCONF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		avahi-core.7:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus \
+		avahi-core:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
 .endif
 
 .if ${PORT_OPTIONS:MHOWL}
-CFLAGS+=	-I${LOCALBASE}/include/howl
-LIB_DEPENDS+=	howl.0:${PORTSDIR}/net/howl
+LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+CPPFLAGS+=	-I${LOCALBASE}/include/howl
 CONFIGURE_ARGS+=	--with-zeroconf --enable-howl
 .endif
 
-PORTDOCS=	AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst ChangeLog
+post-extract:
+	@${RM} -f ${WRKSRC}/m4/libtool.m4
+	@${RM} -f ${WRKSRC}/m4/lib-*.m4
+	@${ECHO_CMD} -n > ${WRKSRC}/config.rpath
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|@HAVE_PERL_TRUE@|#|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/Libs:/s|@PTHREAD_CFLAGS@|@LTLIBICONV@|' \
+		${WRKSRC}/wzdftpd.pc.in
+	@${REINPLACE_CMD} -e \
+		'/LDFLAGS/s|@PTHREAD_CFLAGS@|@LTLIBICONV@|' \
+		${WRKSRC}/libwzd-core/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|INSTALLDIRS=vendor|INSTALLPRIVLIB=$${prefix}/lib| ; \
+		 /MAKE/s| install| pure_install|' \
+		${WRKSRC}/libwzd-perl/Makefile.am
+.for i in backends modules
+	@${FIND} ${WRKSRC}/${i} -name "Makefile.am" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		'/^libdir/s|$${pkgdatadir}|$${prefix}/lib/wzdftpd|'
+.endfor
+	@${FIND} ${WRKSRC} -name "*_tls.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/<gcrypt.h>/d ; \
+		 /gcry_control/d' \
 
 post-install:
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.pc ${PREFIX}/libdata/pkgconfig )
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS Permissions.ReadMeFirst README \
+	TLS.ReadMeFirst UPGRADING wzd_tls.cnf
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
 .endfor
 .endif
 

@@ -3,17 +3,19 @@ bin/siteconfig
 bin/siteuptime
 bin/sitewho
 bin/wzd-config
-etc/wzd.pem
-etc/file_ginfo.txt
-etc/file_help.txt
-etc/file_swho.txt
-etc/file_user.txt
-etc/file_group.txt
-etc/file_rules.txt
-etc/file_users.txt
-etc/file_vfs.txt
-etc/file_who.txt
-etc/file_groups.txt
+%%ETCDIR%%/file_ginfo.txt
+%%ETCDIR%%/file_group.txt
+%%ETCDIR%%/file_groups.txt
+%%ETCDIR%%/file_help.txt
+%%ETCDIR%%/file_rules.txt
+%%ETCDIR%%/file_swho.txt
+%%ETCDIR%%/file_user.txt
+%%ETCDIR%%/file_users.txt
+%%ETCDIR%%/file_vfs.txt
+%%ETCDIR%%/file_who.txt
+%%ETCDIR%%/users.sample
+%%ETCDIR%%/wzd.cfg.sample
+%%ETCDIR%%/wzd.pem
 include/wzdftpd/libwzd-auth/wzd_auth.h
 include/wzdftpd/libwzd-auth/wzd_base64.h
 include/wzdftpd/libwzd-auth/wzd_crypt.h
@@ -32,7 +34,6 @@ include/wzdftpd/libwzd-base/wzd_strlcat.h
 include/wzdftpd/libwzd-base/wzd_strtok_r.h
 include/wzdftpd/libwzd-core/arch/bsd.h
 include/wzdftpd/libwzd-core/arch/win32.h
-include/wzdftpd/libwzd-core/ls.h
 include/wzdftpd/libwzd-core/wzd_ClientThread.h
 include/wzdftpd/libwzd-core/wzd_action.h
 include/wzdftpd/libwzd-core/wzd_all.h
@@ -53,8 +54,9 @@ include/wzdftpd/libwzd-core/wzd_group.h
 include/wzdftpd/libwzd-core/wzd_hardlimits.h
 include/wzdftpd/libwzd-core/wzd_ip.h
 include/wzdftpd/libwzd-core/wzd_libmain.h
-include/wzdftpd/libwzd-core/wzd_login.h
+include/wzdftpd/libwzd-core/wzd_list.h
 include/wzdftpd/libwzd-core/wzd_log.h
+include/wzdftpd/libwzd-core/wzd_login.h
 include/wzdftpd/libwzd-core/wzd_messages.h
 include/wzdftpd/libwzd-core/wzd_misc.h
 include/wzdftpd/libwzd-core/wzd_mod.h
@@ -83,45 +85,64 @@ include/wzdftpd/libwzd_err.h
 include/wzdftpd/libwzd_pv.h
 include/wzdftpd/libwzd_socket.h
 include/wzdftpd/libwzd_tls.h
-lib/libwzd_core.a
-lib/libwzd_core.la
-lib/libwzd_core.so
-lib/libwzd_core.so.0
 lib/libwzd.a
 lib/libwzd.la
 lib/libwzd.so
-lib/libwzd.so.0
-share/aclocal/wzd.m4
+lib/libwzd.so.801
+lib/libwzd_core.a
+lib/libwzd_core.la
+lib/libwzd_core.so
+lib/libwzd_core.so.801
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/wzdftpd.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/wzdftpd.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/wzdftpd.pm
+%%MYSQL%%lib/wzdftpd/backends/libwzdmysql.a
+%%MYSQL%%lib/wzdftpd/backends/libwzdmysql.la
+%%MYSQL%%lib/wzdftpd/backends/libwzdmysql.so
+%%PGSQL%%lib/wzdftpd/backends/libwzdpgsql.a
+%%PGSQL%%lib/wzdftpd/backends/libwzdpgsql.la
+%%PGSQL%%lib/wzdftpd/backends/libwzdpgsql.so
+lib/wzdftpd/backends/libwzdplaintext.a
+lib/wzdftpd/backends/libwzdplaintext.la
+lib/wzdftpd/backends/libwzdplaintext.so
+%%SQLITE%%lib/wzdftpd/backends/libwzdsqlite.a
+%%SQLITE%%lib/wzdftpd/backends/libwzdsqlite.la
+%%SQLITE%%lib/wzdftpd/backends/libwzdsqlite.so
+lib/wzdftpd/modules/libwzd_debug.a
+lib/wzdftpd/modules/libwzd_debug.la
+lib/wzdftpd/modules/libwzd_debug.so
+%%PERL%%lib/wzdftpd/modules/libwzd_perl.a
+%%PERL%%lib/wzdftpd/modules/libwzd_perl.la
+%%PERL%%lib/wzdftpd/modules/libwzd_perl.so
+lib/wzdftpd/modules/libwzd_sfv.a
+lib/wzdftpd/modules/libwzd_sfv.la
+lib/wzdftpd/modules/libwzd_sfv.so
+%%TCL%%lib/wzdftpd/modules/libwzd_tcl.a
+%%TCL%%lib/wzdftpd/modules/libwzd_tcl.la
+%%TCL%%lib/wzdftpd/modules/libwzd_tcl.so
+%%ZEROCONF%%lib/wzdftpd/modules/libwzd_zeroconf.a
+%%ZEROCONF%%lib/wzdftpd/modules/libwzd_zeroconf.la
+%%ZEROCONF%%lib/wzdftpd/modules/libwzd_zeroconf.so
+libdata/pkgconfig/wzdftpd.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/Permissions.ReadMeFirst
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TLS.ReadMeFirst
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/wzd_tls.cnf
 sbin/wzdftpd
-%%DATADIR%%/backends/libwzdplaintext.a
-%%DATADIR%%/backends/libwzdplaintext.la
-%%DATADIR%%/backends/libwzdplaintext.so
-%%MYSQL%%%%DATADIR%%/backends/libwzdmysql.a
-%%MYSQL%%%%DATADIR%%/backends/libwzdmysql.la
-%%MYSQL%%%%DATADIR%%/backends/libwzdmysql.so
-%%DATADIR%%/modules/libwzd_debug.so
-%%DATADIR%%/modules/libwzd_debug.la
-%%DATADIR%%/modules/libwzd_debug.a
-%%DATADIR%%/modules/libwzd_sfv.a
-%%DATADIR%%/modules/libwzd_sfv.la
-%%DATADIR%%/modules/libwzd_sfv.so
-%%PERL%%%%DATADIR%%/modules/libwzd_perl.a
-%%PERL%%%%DATADIR%%/modules/libwzd_perl.la
-%%PERL%%%%DATADIR%%/modules/libwzd_perl.so
-%%TCL%%%%DATADIR%%/modules/libwzd_tcl.a
-%%TCL%%%%DATADIR%%/modules/libwzd_tcl.la
-%%TCL%%%%DATADIR%%/modules/libwzd_tcl.so
-%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.a
-%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.la
-%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.so
-@dirrm %%DATADIR%%/modules/
-@dirrm %%DATADIR%%/backends/
-@dirrm %%DATADIR%%/
-@dirrm include/wzdftpd/libwzd-auth
-@dirrm include/wzdftpd/libwzd-base
+share/aclocal/wzd.m4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/wzdftpd/modules
+@dirrm lib/wzdftpd/backends
+@dirrm lib/wzdftpd
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd
 @dirrm include/wzdftpd/libwzd-core/arch
 @dirrm include/wzdftpd/libwzd-core
+@dirrm include/wzdftpd/libwzd-base
+@dirrm include/wzdftpd/libwzd-auth
 @dirrm include/wzdftpd
-etc/wzd.cfg.sample
-etc/users.sample
-@dirrmtry etc/wzdftpd
+@dirrmtry %%ETCDIR%%
