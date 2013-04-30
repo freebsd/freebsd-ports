@@ -5,7 +5,7 @@ PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	GHC
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, pure C implementation of the Git core
 
 LICENSE=	GPLv2
