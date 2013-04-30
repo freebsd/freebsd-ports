@@ -6,6 +6,7 @@ lib/libonig.a
 lib/libonig.la
 lib/libonig.so
 lib/libonig.so.2
+libdata/pkgconfig/oniguruma.pc
 %%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/API.ja
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -14,10 +15,6 @@ lib/libonig.so.2
 %%PORTDOCS%%%%DOCSDIR%%/RE
 %%PORTDOCS%%%%DOCSDIR%%/RE.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crnl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/encode.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listcap.c
@@ -27,3 +24,4 @@ lib/libonig.so.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syntax.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
