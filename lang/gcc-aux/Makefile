@@ -1,16 +1,10 @@
-# New ports collection makefile for:  gcc-aux
-# Date created:                       2012-07-15
-# Whom:                               John Marino <draco@marino.st>
-#
+# Created by: John Marino <draco@marino.st> 
 # $FreeBSD$
-#
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		http://dragonlace.mirrors.ada.cx/src/:boot \
 		${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
 DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
@@ -26,29 +20,46 @@ INTENDED_COMPILER=	NATIVE
 BOOTSTRAP_COMPILER=	NOT_REQUIRED
 BOOTSTRAP_TRIPLET=	NOT_SET
 FULL_GNATGCC=		NOT_SET
+OS_LABEL4VERS=		[${OPSYS}]
+GARCH=			${ARCH:S/amd64/x86_64/}
 
-OPTIONS=	ADA        "Build Ada language" on
-OPTIONS+=	CXX        "Build C++ language" on
-OPTIONS+=	FORT       "Build Fortran language" on
-OPTIONS+=	OBJC       "Build Objective-C language" on
-OPTIONS+=	STATIC     "Build with no shared libraries other than libc" off
-OPTIONS+=	TESTSUITE  "Activate test support" off
-OPTIONS+=	NLS        "Native Language Support" off
+OPTIONS_DEFINE= 	ADA CXX FORT OBJC STATIC TESTSUITE NLS
+OPTIONS_DEFAULT=	ADA CXX FORT OBJC
+NO_OPTIONS_SORT=	yes
 
-.include <bsd.port.pre.mk>
+ADA_DESC=		Build Ada language
+CXX_DESC=		Build C++ language
+FORT_DESC=		Build Fortran language
+OBJC_DESC=      	Build Objective-C language
+STATIC_DESC=    	Build with no shared libraries other than libc
+TESTSUITE_DESC=		Activate test support
+
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-BLD_TARGET=		x86_64-aux-freebsd${OSREL}
+.if ${OPSYS} == FreeBSD
+.  if ${OSVERSION} < 900000
+USE_BINUTILS=		yes
+EXTRA_CONFIG+=		--with-as=${LOCALBASE}/bin/as
+EXTRA_CONFIG+=		--with-ld=${LOCALBASE}/bin/ld
+RUN_DEPENDS+=		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+.  endif
+.  if ${GARCH} == x86_64
 OS_LABEL4VERS=		[FreeBSD64]
 BOOTSTRAP_TRIPLET=	x86_64-bootstrap-freebsd8.1/4.6.0
-BOOTSTRAP_COMPILER=	gnat-bootstrap.x86_64.freebsd.tar.bz2
-.else
-BLD_TARGET=		i386-aux-freebsd${OSREL}
-OS_LABEL4VERS=		[FreeBSD]
+.  else
 BOOTSTRAP_TRIPLET=	i386-bootstrap-freebsd8.0/4.6.0
-BOOTSTRAP_COMPILER=	gnat-bootstrap.i386.freebsd.tar.bz2
+.  endif
 .endif
+.if ${OPSYS} == DragonFly
+.  if ${GARCH} == x86_64
+OS_LABEL4VERS=		[DragonFly64]
+BOOTSTRAP_TRIPLET=	x86_64-bootstrap-dragonfly2.8/4.6.0
+.  else
+BOOTSTRAP_TRIPLET=	i386-bootstrap-dragonfly2.8/4.6.0
+.  endif
+.endif
+BLD_TARGET=		${GARCH}-aux-${OPSYS:L}${OSREL}
+BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:L}.tar.bz2
 
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
 BUILDDIR=		${WRKDIR}/build
@@ -79,7 +90,7 @@ FULL_PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/${PORTNAME}/bin:${PREFIX}/bin
 .endif
 
 # If FULL_GNATGCC is not set, we'll request the bootstrap compiler
-.if ${FULL_GNATGCC} == "NOT_SET"
+.if ${FULL_GNATGCC} == NOT_SET
 INTENDED_COMPILER=BOOTSTRAP
 FULL_GNATGCC=${BOOTSTRAP_PREFIX}/bin/gnatgcc
 FULL_PATH=${BOOTSTRAP_PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/bin
@@ -89,6 +100,8 @@ DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
 .if defined(PLUS_BOOTSTRAPS)
 DISTFILES=gcc-${GCC_VERSION}.tar.bz2 \
+   gnat-bootstrap.i386.dragonfly.tar.bz2:boot \
+   gnat-bootstrap.x86_64.dragonfly.tar.bz2:boot \
    gnat-bootstrap.i386.freebsd.tar.bz2:boot \
    gnat-bootstrap.x86_64.freebsd.tar.bz2:boot
 .endif
@@ -97,7 +110,7 @@ DISTFILES=gcc-${GCC_VERSION}.tar.bz2 \
 ##  Ada  ##
 ###########
 
-.if defined(WITH_ADA)
+.if ${PORT_OPTIONS:MADA}
 LANGS+=		ada
 APPLY_DIFFS+=	ada
 .endif
@@ -106,7 +119,7 @@ APPLY_DIFFS+=	ada
 ##  C++  ##
 ###########
 
-.if defined(WITH_CXX)
+.if ${PORT_OPTIONS:MCXX}
 LANGS+=		c++
 APPLY_DIFFS+=	cxx
 MAN1+=		g++.1
@@ -116,7 +129,7 @@ MAN1+=		g++.1
 ##  Fortran  ##
 ###############
 
-.if defined(WITH_FORT)
+.if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
 MAN1+=		gfortran.1
@@ -129,7 +142,7 @@ EXTRA_CONFIG+=	--disable-libquadmath
 ##  Objective-C  ##
 ###################
 
-.if defined(WITH_OBJC)
+.if ${PORT_OPTIONS:MOBJC}
 LANGS+=		objc
 .endif
 
@@ -137,7 +150,7 @@ LANGS+=		objc
 ##  Testsuite Support  ##
 #########################
 
-.if defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MTESTSUITE}
 BUILD_DEPENDS=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
 APPLY_DIFFS+=	ada-testsuite
 APPLY_DIFFS+=	fortran-testsuite
@@ -149,8 +162,8 @@ APPLY_DIFFS+=	gcc-testsuite
 ##  NATIONAL LANGUAGE SUPPORT  ##
 #################################
 
-.if defined(WITH_NLS)
-BUILD_DEPENDS=	gettext>=0.18:${PORTSDIR}/devel/gettext
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext:build
 EXTRA_CONFIG+=	--enable-nls
 .else
 EXTRA_CONFIG+=	--disable-nls
@@ -191,7 +204,7 @@ post-extract:
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
 
 	# Create new directories in preparation of applying diff files
-.if defined(WITH_CXX)
+.if ${PORT_OPTIONS:MCXX}
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/locale/dragonfly
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/os/bsd/dragonfly
 .endif
@@ -204,14 +217,15 @@ post-extract:
 
 	# Update LINK_SPEC to add gcc-aux lib runpath in every binary
 	@${ECHO} "Configuring LINK_SPEC runpath"
-	@perl -pi -e 's;\@PREFIX\@;${PREFIX};' \
+	@${PERL} -pi -e 's;\@PREFIX\@;${PREFIX};' \
+	  ${WRKSRC}/gcc/config/dragonfly.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd64.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd.h
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 	@${ECHO} "Reconfiguring GCC Makefile to build compiler statically"
 	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-static-version
-.if defined(WITH_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${PERL} -pi -e 's;\@LIBINTL\@;${STINTL} ${STICONV};' ${WRKSRC}/intl/config.intl.in
 	@${PERL} -pi -e 's;\@LIBICONV\@;;' \
 	  ${WRKSRC}/gcc/Makefile.in \
@@ -225,7 +239,7 @@ post-extract:
 .endif
 .endif
 
-.if ${INTENDED_COMPILER} == "BOOTSTRAP"
+.if ${INTENDED_COMPILER} == BOOTSTRAP
 	${MKDIR} ${BOOTSTRAP_PREFIX}
 	${MV} ${BOOTSTRAP_PREFIX}/../bin ${BOOTSTRAP_PREFIX}
 	${MV} ${BOOTSTRAP_PREFIX}/../lib ${BOOTSTRAP_PREFIX}
@@ -234,11 +248,7 @@ post-extract:
 	# Bootstrap compiler has statically linked z, gmp, mpc, mpfr and iconv
 	# The only shared lib is libc.so.7, so it should work for a long time.
 
-.if ${OSVERSION} > 900000
-	# Since June 7, bootstrap compiler's include-fixed headers have been
-	# incompatible with FreeBSD 9.0-CURRENT
 	${RM} -rf ${BOOTSTRAP_PREFIX}/lib/gcc/${BOOTSTRAP_TRIPLET}/include-fixed
-.endif
 .endif
 
 do-configure:
@@ -252,34 +262,34 @@ do-build:
 test: build test-ada test-fortran test-objc test-cxx test-c
 
 test-ada:
-.if defined(WITH_ADA) && defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MADA} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-ada
 .endif
 
 test-fortran:
-.if defined(WITH_FORT) && defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MFORT} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-fortran
 .endif
 
 test-objc:
-.if defined(WITH_OBJC) && defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MOBJC} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-objc
 .endif
 
 test-cxx:
-.if defined(WITH_CXX) && defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MCXX} && ${PORT_OPTIONS:MTESTSUITE}
 	# libstdc++ testsuite will break every time, TRUE used to force continuation
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c++ || true
 .endif
 
 test-c:
-.if defined(WITH_TESTSUITE)
+.if ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c
 .endif
 
 do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTINY}
-	${CP} -pr ${DESTINY}${PREFIX}/ ${PREFIX}/
+	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 
 post-install:
 	${RM} -f ${WRKDIR}/PLIST.all
@@ -293,7 +303,8 @@ post-install:
 	   ${SED} -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
 
 	cd ${WRKDIR}; ${SED} -i -e "/PLIST.all/ r PLIST.all" ${TMPPLIST}
-.if ${OSVERSION} > 900000 && ${OSVERSION} < 900507
+.if ${OPSYS} == FreeBSD
+.  if ${OSVERSION} > 900000 && ${OSVERSION} < 900507
 	@${ECHO_MSG} "===================================================================="
 	@${ECHO_MSG} " NOTICE REGARDING ADA TASKING ON FREEBSD 9.0:"
 	@${ECHO_MSG} " Due to a bug in the FreeBSD 9.0 threading library, an exiting task"
@@ -303,6 +314,7 @@ post-install:
 	@${ECHO_MSG} " 2) Patch and rebuild thread library as described in"
 	@${ECHO_MSG} "    http://www.dragonlace.net/posts/F9_Fix/"
 	@${ECHO_MSG} "===================================================================="
+.  endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
