@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wbarconf
-# Date created:		21 may 2009
-# Whom:			Olivier Cochard-Labbe <olivier@cochard.me>
-#
+# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
 # $FreeBSD$
-#
 
 PORTNAME=	wbarconf
 PORTVERSION=	0.7.2.2
@@ -22,7 +18,6 @@ USES=		gettext
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README COPYING
-USES=		gettext
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

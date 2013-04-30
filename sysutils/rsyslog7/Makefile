@@ -75,7 +75,7 @@ PLIST_FILES+=	lib/rsyslog/ompgsql.so \
 
 .if ${PORT_OPTIONS:MRELP}
 LIB_DEPENDS+=	relp.0:${PORTSDIR}/devel/librelp
-USES=		pkgconfig
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-relp
 PLIST_FILES+=	lib/rsyslog/imrelp.la \
 		lib/rsyslog/imrelp.so \
@@ -85,7 +85,7 @@ PLIST_FILES+=	lib/rsyslog/imrelp.la \
 
 .if ${PORT_OPTIONS:MRFC3195}
 LIB_DEPENDS+=	logging.0:${PORTSDIR}/devel/liblogging
-USES=		pkgconfig
+USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.la \
 		lib/rsyslog/im3195.so

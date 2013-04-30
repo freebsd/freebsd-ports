@@ -16,12 +16,11 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USES=		charsetfix gettext
+USES=		charsetfix gettext pathfix
 USE_BZIP2=	yes
 USE_XORG=	xpm ice x11
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USES=		pathfix gettext
 USE_GNOME=	gnomehier gnomeprefix esound gtk12 imlib libxml orbit
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

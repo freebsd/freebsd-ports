@@ -13,12 +13,11 @@ COMMENT=	Spamassassin plugin for spmfilter
 BUILD_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 RUN_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
-USES=		pkgconfig
 
 OPTIONS=	DEBUG	"Enable Debugging"	off
 
