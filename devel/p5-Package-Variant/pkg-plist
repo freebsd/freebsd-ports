@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Package/Variant.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package-Variant/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package-Variant
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Variant/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Variant
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
 @dirrmtry %%SITE_PERL%%/Package
