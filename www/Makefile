@@ -360,7 +360,6 @@
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
-    SUBDIR += ilias3
     SUBDIR += imgsizer
     SUBDIR += impresscms
     SUBDIR += interchange
@@ -846,7 +845,6 @@
     SUBDIR += p5-Continuity
     SUBDIR += p5-Corona
     SUBDIR += p5-Dancer
-    SUBDIR += p5-Dancer-Plugin-DataFu
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
@@ -1989,7 +1987,6 @@
     SUBDIR += typo
     SUBDIR += typo3
     SUBDIR += typo345
-    SUBDIR += typo346
     SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch

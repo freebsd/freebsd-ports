@@ -60,7 +60,6 @@
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-urlslave
-    SUBDIR += moodriver
     SUBDIR += mooseekd
     SUBDIR += museekplus
     SUBDIR += napshare

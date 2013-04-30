@@ -1,9 +1,0 @@
-executable	%%PREFIX%%/sbin/listmanager
-gzip		/usr/bin/gzip
-helpdir		%%DOCSDIR%%/help
-homedir		%%LISTMANAGER_HOME%%	
-newaliases	/usr/sbin/newaliases
-queueflush	/usr/sbin/sendmail -qS%s -v
-sendmail	/usr/sbin/sendmail -oiTrue
-syslog		mail
-tempdir		%%LISTMANAGER_HOME%%/tmp
