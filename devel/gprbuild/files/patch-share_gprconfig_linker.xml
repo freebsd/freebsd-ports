@@ -1,0 +1,65 @@
+$NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
+
+--- share/gprconfig/linker.xml.orig	2012-04-11 21:09:08.000000000 +0000
++++ share/gprconfig/linker.xml
+@@ -437,11 +437,14 @@
+     </config>
+   </configuration>
+ 
+-  <!-- linux, freebsd and Irix-->
++  <!-- linux, bsd and Irix-->
+   <configuration>
+     <targets>
+        <target name="^.*linux.*$" />
+        <target name="^.*freebsd.*$" />
++       <target name="^.*dragonfly.*$" />
++       <target name="^.*openbsd.*$" />
++       <target name="^.*netbsd.*$" />
+        <target name="^.*irix.*$" />
+     </targets>
+     <config>
+@@ -487,10 +490,13 @@
+     </config>
+   </configuration>
+ 
+-  <!-- freebsd -->
++  <!-- bsd -->
+   <configuration>
+     <targets>
+        <target name="^.*freebsd.*$" />
++       <target name="^.*dragonfly.*$" />
++       <target name="^.*openbsd.*$" />
++       <target name="^.*netbsd.*$" />
+     </targets>
+     <config>
+    for Run_Path_Option  use ("-Wl,-rpath,");
+@@ -781,6 +787,9 @@
+        <target name="^.*mingw.*$" />
+        <target name="^.*linux.*$" />
+        <target name="^.*freebsd.*$" />
++       <target name="^.*dragonfly.*$" />
++       <target name="^.*openbsd.*$" />
++       <target name="^.*netbsd.*$" />
+      </targets>
+     <compilers negate="true">
+        <compiler language="C++" />
+@@ -820,6 +829,9 @@
+        <target name="^.*mingw.*$" />
+        <target name="^.*linux.*$" />
+        <target name="^.*freebsd.*$" />
++       <target name="^.*dragonfly.*$" />
++       <target name="^.*openbsd.*$" />
++       <target name="^.*netbsd.*$" />
+      </targets>
+     <compilers negate="true">
+        <compiler language="C++" />
+@@ -859,6 +871,9 @@
+        <target name="^.*mingw.*$" />
+        <target name="^.*linux.*$" />
+        <target name="^.*freebsd.*$" />
++       <target name="^.*dragonfly.*$" />
++       <target name="^.*openbsd.*$" />
++       <target name="^.*netbsd.*$" />
+      </targets>
+     <compilers>
+        <compiler language="C++" />
