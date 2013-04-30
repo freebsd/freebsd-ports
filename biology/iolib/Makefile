@@ -1,30 +1,25 @@
-# New ports collection makefile for:	io_lib
-# Date created:				27 Aug, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	io_lib
-PORTVERSION=	1.12.5
+PORTVERSION=	1.13.0
 CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	staden/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A general purpose trace file(and Experiment File) reading interface
-
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+COMMENT=	General purpose trace file (and Experiment File) reading interface
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	srf_index_hash.1 srf_info.1 srf_list.1 \
+MAN1=	scramble.1 srf_index_hash.1 srf_info.1 srf_list.1 \
 	srf2fasta.1 srf2fastq.1
 MAN3=	read_scf_header.3 read_allocate.3 ExperimentFile.3 \
 	write_reading.3 write_scf.3 read_deallocate.3 \
