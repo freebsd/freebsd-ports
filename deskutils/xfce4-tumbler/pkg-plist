@@ -30,8 +30,8 @@ lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
 %%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.la
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
-@comment %%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.la
-@comment %%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.so
+%%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.la
+%%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.so
 %%ODF%%lib/tumbler-1/plugins/tumbler-odf-thumbnailer.la
 %%ODF%%lib/tumbler-1/plugins/tumbler-odf-thumbnailer.so
 %%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.la

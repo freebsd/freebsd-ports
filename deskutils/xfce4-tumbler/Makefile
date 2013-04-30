@@ -3,7 +3,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -16,11 +16,11 @@ COMMENT=	Thumbnail service for Xfce desktop
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USES=		pkgconfig
+USES=		pathfix pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack intltool intlhack
+USE_GNOME=	glib20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
 
@@ -29,11 +29,10 @@ CONFIGURE_ARGS=	--enable-xdg-cache \
 
 OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER \
 	GSTREAMER ODF RAW COVER
-OPTIONS_DEFAULT=	PIXBUF FONTS JPEG POPPLER GSTREAMER ODF
-# GStreamer thumbnailer needs new 1.0 API
-OPTIONS_EXCLUDE=	GSTREAMER
+OPTIONS_DEFAULT=	PIXBUF FONTS JPEG POPPLER ODF
 FONTS_DESC=	Fonts thumbnailer plugin
 COVER_DESC=	Open Movie Database thumbnailer plugin
+GSTREAMER_DESC=	GStreamer (1.0) thumbnailer plugin
 
 SUB_FILES=	pkg-message
 
@@ -129,7 +128,7 @@ USE_GNOME+=	gdkpixbuf2
 CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
 PLIST_SUB+=	PIXBUF=""
 .endif
-USE_GSTREAMER=	yes
+USE_GSTREAMER1=	yes
 CONFIGURE_ARGS+=--enable-gstreamer-thumbnailer
 PLIST_SUB+=	GSTREAMER=""
 .else
@@ -177,11 +176,6 @@ PLIST_SUB+=	COVER=""
 .else
 CONFIGURE_ARGS+=--disable-cover-thumbnailer
 PLIST_SUB+=	COVER="@comment "
-.endif
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
