@@ -3,7 +3,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -14,12 +14,9 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		expat:${PORTSDIR}/textproc/expat2 \
-		vorbis:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg \
 		boost_regex:${PORTSDIR}/devel/boost-libs \
-		curl:${PORTSDIR}/ftp/curl \
 		ebml:${PORTSDIR}/textproc/libebml \
 		matroska:${PORTSDIR}/multimedia/libmatroska
 
@@ -43,8 +40,8 @@ MAKE_JOBS_SAFE=	yes
 MANLANG=	"" ja zh_CN nl uk
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
 
-OPTIONS_DEFINE=	WXGTK
-OPTIONS_DEFAULT=	WXGTK
+OPTIONS_DEFINE=	WXGTK FLAC CURL
+OPTIONS_DEFAULT=WXGTK FLAC CURL
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +62,19 @@ PLIST_SUB+=	GUI=""
 .else
 CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	GUI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=	--with-flac
+.else
+CONFIGURE_ARGS+=	--without-flac
+.endif
+
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=	--without-curl
 .endif
 
 do-build:
