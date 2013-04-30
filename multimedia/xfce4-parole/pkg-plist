@@ -76,5 +76,3 @@ share/pixmaps/parole.png
 %%NLS%%@dirrmtry share/locale/ast
 @dirrm lib/parole-0
 @dirrm include/parole
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
