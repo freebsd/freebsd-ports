@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twitteR
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,7 +13,7 @@ LICENSE=	ART20
 
 RUN_DEPENDS=	R-cran-RCurl>0:${PORTSDIR}/ftp/R-cran-RCurl \
 		R-cran-rjson>=0.2.12:${PORTSDIR}/converters/R-cran-rjson \
-		R-cran-ROAuth>=0.9.0:${PORTSDIR}/security/R-cran-ROAuth
+		R-cran-ROAuth>=0.9.3:${PORTSDIR}/security/R-cran-ROAuth
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
