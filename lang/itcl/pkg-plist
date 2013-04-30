@@ -1,12 +1,14 @@
-include/itcl%%MAJOR%%.%%MINOR%%/itcl.h
-include/itcl%%MAJOR%%.%%MINOR%%/itclInt.h
-include/itcl%%MAJOR%%.%%MINOR%%/itclDecls.h
-include/itcl%%MAJOR%%.%%MINOR%%/itclIntDecls.h
+include/itcl%%VERSION%%/itcl.h
+include/itcl%%VERSION%%/itclInt.h
+include/itcl%%VERSION%%/itclDecls.h
+include/itcl%%VERSION%%/itclIntDecls.h
 lib/libitcl.so.%%MAJOR%%
 lib/libitcl.so
-lib/libitcl.a
-lib/itcl%%MAJOR%%.%%MINOR%%/itcl.tcl
-lib/itcl%%MAJOR%%.%%MINOR%%/itclConfig.sh
-lib/itcl%%MAJOR%%.%%MINOR%%/pkgIndex.tcl
-@dirrm include/itcl%%MAJOR%%.%%MINOR%%
-@dirrm lib/itcl%%MAJOR%%.%%MINOR%%
+lib/itcl%%VERSION%%/libitcl.so.1
+lib/itcl%%VERSION%%/libitcl%%SHORT%%.so
+lib/itcl%%VERSION%%/itcl.tcl
+lib/itcl%%VERSION%%/itclConfig.sh
+lib/itcl%%VERSION%%/libitclstub.a
+lib/itcl%%VERSION%%/pkgIndex.tcl
+@dirrm include/itcl%%VERSION%%
+@dirrm lib/itcl%%VERSION%%
