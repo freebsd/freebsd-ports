@@ -61,99 +61,99 @@ share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%GUI%%share/mime/packages/mkvtoolnix.xml
-%%DOCSDIR%%/guide/en/images/addingremovingattachments.gif
-%%DOCSDIR%%/guide/en/images/addremovefiles.gif
-%%DOCSDIR%%/guide/en/images/attachmentoptions.gif
-%%DOCSDIR%%/guide/en/images/audiotrackoptions.gif
-%%DOCSDIR%%/guide/en/images/chaptereditor.gif
-%%DOCSDIR%%/guide/en/images/generaltrackoptions.gif
-%%DOCSDIR%%/guide/en/images/jobmanager.gif
-%%DOCSDIR%%/guide/en/images/movietitle.gif
-%%DOCSDIR%%/guide/en/images/muxingwindow.gif
-%%DOCSDIR%%/guide/en/images/selectmkvmergeexecutable.gif
-%%DOCSDIR%%/guide/en/images/splitting.gif
-%%DOCSDIR%%/guide/en/images/textsubtitlestrackoptions.gif
-%%DOCSDIR%%/guide/en/images/trackselection.gif
-%%DOCSDIR%%/guide/en/images/videotrackoptions.gif
-%%DOCSDIR%%/guide/en/mkvmerge-gui.hhc
-%%DOCSDIR%%/guide/en/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/en/mkvmerge-gui.hhp
-%%DOCSDIR%%/guide/en/mkvmerge-gui.html
-%%DOCSDIR%%/guide/es/images/addingremovingattachments.gif
-%%DOCSDIR%%/guide/es/images/addremovefiles.gif
-%%DOCSDIR%%/guide/es/images/attachmentoptions.gif
-%%DOCSDIR%%/guide/es/images/audiotrackoptions.gif
-%%DOCSDIR%%/guide/es/images/chaptereditor.gif
-%%DOCSDIR%%/guide/es/images/generaltrackoptions.gif
-%%DOCSDIR%%/guide/es/images/jobmanager.gif
-%%DOCSDIR%%/guide/es/images/movietitle.gif
-%%DOCSDIR%%/guide/es/images/muxingwindow.gif
-%%DOCSDIR%%/guide/es/images/selectmkvmergeexecutable.gif
-%%DOCSDIR%%/guide/es/images/splitting.gif
-%%DOCSDIR%%/guide/es/images/textsubtitlestrackoptions.gif
-%%DOCSDIR%%/guide/es/images/trackselection.gif
-%%DOCSDIR%%/guide/es/images/videotrackoptions.gif
-%%DOCSDIR%%/guide/es/mkvmerge-gui.hhc
-%%DOCSDIR%%/guide/es/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/es/mkvmerge-gui.hhp
-%%DOCSDIR%%/guide/es/mkvmerge-gui.html
-%%DOCSDIR%%/guide/eu/images/addingremovingattachments.gif
-%%DOCSDIR%%/guide/eu/images/addremovefiles.gif
-%%DOCSDIR%%/guide/eu/images/attachmentoptions.gif
-%%DOCSDIR%%/guide/eu/images/audiotrackoptions.gif
-%%DOCSDIR%%/guide/eu/images/chaptereditor.gif
-%%DOCSDIR%%/guide/eu/images/generaltrackoptions.gif
-%%DOCSDIR%%/guide/eu/images/headereditor.gif
-%%DOCSDIR%%/guide/eu/images/jobmanager.gif
-%%DOCSDIR%%/guide/eu/images/movietitle.gif
-%%DOCSDIR%%/guide/eu/images/muxingwindow.gif
-%%DOCSDIR%%/guide/eu/images/selectmkvmergeexecutable.gif
-%%DOCSDIR%%/guide/eu/images/splitting.gif
-%%DOCSDIR%%/guide/eu/images/textsubtitlestrackoptions.gif
-%%DOCSDIR%%/guide/eu/images/trackselection.gif
-%%DOCSDIR%%/guide/eu/images/videotrackoptions.gif
-%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhc
-%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhp
-%%DOCSDIR%%/guide/eu/mkvmerge-gui.html
-%%DOCSDIR%%/guide/zh_CN/images/addingremovingattachments.gif
-%%DOCSDIR%%/guide/zh_CN/images/addremovefiles.gif
-%%DOCSDIR%%/guide/zh_CN/images/attachmentoptions.gif
-%%DOCSDIR%%/guide/zh_CN/images/audiotrackoptions.gif
-%%DOCSDIR%%/guide/zh_CN/images/chaptereditor.gif
-%%DOCSDIR%%/guide/zh_CN/images/generaltrackoptions.gif
-%%DOCSDIR%%/guide/zh_CN/images/jobmanager.gif
-%%DOCSDIR%%/guide/zh_CN/images/movietitle.gif
-%%DOCSDIR%%/guide/zh_CN/images/muxingwindow.gif
-%%DOCSDIR%%/guide/zh_CN/images/selectmkvmergeexecutable.gif
-%%DOCSDIR%%/guide/zh_CN/images/splitting.gif
-%%DOCSDIR%%/guide/zh_CN/images/textsubtitlestrackoptions.gif
-%%DOCSDIR%%/guide/zh_CN/images/trackselection.gif
-%%DOCSDIR%%/guide/zh_CN/images/videotrackoptions.gif
-%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhc
-%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhp
-%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.html
-%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhc
-%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhp
-%%DOCSDIR%%/guide/nl/mkvmerge-gui.html
+%%GUI%%%%DOCSDIR%%/guide/en/images/addingremovingattachments.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/addremovefiles.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/attachmentoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/audiotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/chaptereditor.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/generaltrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/jobmanager.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/movietitle.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/muxingwindow.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/selectmkvmergeexecutable.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/splitting.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/textsubtitlestrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/trackselection.gif
+%%GUI%%%%DOCSDIR%%/guide/en/images/videotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/en/mkvmerge-gui.hhc
+%%GUI%%%%DOCSDIR%%/guide/en/mkvmerge-gui.hhk
+%%GUI%%%%DOCSDIR%%/guide/en/mkvmerge-gui.hhp
+%%GUI%%%%DOCSDIR%%/guide/en/mkvmerge-gui.html
+%%GUI%%%%DOCSDIR%%/guide/es/images/addingremovingattachments.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/addremovefiles.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/attachmentoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/audiotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/chaptereditor.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/generaltrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/jobmanager.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/movietitle.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/muxingwindow.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/selectmkvmergeexecutable.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/splitting.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/textsubtitlestrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/trackselection.gif
+%%GUI%%%%DOCSDIR%%/guide/es/images/videotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/es/mkvmerge-gui.hhc
+%%GUI%%%%DOCSDIR%%/guide/es/mkvmerge-gui.hhk
+%%GUI%%%%DOCSDIR%%/guide/es/mkvmerge-gui.hhp
+%%GUI%%%%DOCSDIR%%/guide/es/mkvmerge-gui.html
+%%GUI%%%%DOCSDIR%%/guide/eu/images/addingremovingattachments.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/addremovefiles.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/attachmentoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/audiotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/chaptereditor.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/generaltrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/headereditor.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/jobmanager.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/movietitle.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/muxingwindow.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/selectmkvmergeexecutable.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/splitting.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/textsubtitlestrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/trackselection.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/images/videotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhc
+%%GUI%%%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhk
+%%GUI%%%%DOCSDIR%%/guide/eu/mkvmerge-gui.hhp
+%%GUI%%%%DOCSDIR%%/guide/eu/mkvmerge-gui.html
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/addingremovingattachments.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/addremovefiles.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/attachmentoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/audiotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/chaptereditor.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/generaltrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/jobmanager.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/movietitle.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/muxingwindow.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/selectmkvmergeexecutable.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/splitting.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/textsubtitlestrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/trackselection.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/images/videotrackoptions.gif
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhc
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhk
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.hhp
+%%GUI%%%%DOCSDIR%%/guide/zh_CN/mkvmerge-gui.html
+%%GUI%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhc
+%%GUI%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhk
+%%GUI%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhp
+%%GUI%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.html
 @dirrmtry man/zh_CN/man1
 @dirrmtry man/zh_CN
 @dirrmtry man/uk/man1
 @dirrmtry man/uk
 @dirrmtry man/nl/man1
 @dirrmtry man/nl
-@dirrm %%DOCSDIR%%/guide/zh_CN/images
-@dirrm %%DOCSDIR%%/guide/zh_CN
-@dirrm %%DOCSDIR%%/guide/eu/images
-@dirrm %%DOCSDIR%%/guide/eu
-@dirrm %%DOCSDIR%%/guide/es/images
-@dirrm %%DOCSDIR%%/guide/es
-@dirrm %%DOCSDIR%%/guide/en/images
-@dirrm %%DOCSDIR%%/guide/en
-@dirrm %%DOCSDIR%%/guide/nl/images
-@dirrm %%DOCSDIR%%/guide/nl
-@dirrm %%DOCSDIR%%/guide
-@dirrm %%DOCSDIR%%
+%%GUI%%@dirrm %%DOCSDIR%%/guide/zh_CN/images
+%%GUI%%@dirrm %%DOCSDIR%%/guide/zh_CN
+%%GUI%%@dirrm %%DOCSDIR%%/guide/eu/images
+%%GUI%%@dirrm %%DOCSDIR%%/guide/eu
+%%GUI%%@dirrm %%DOCSDIR%%/guide/es/images
+%%GUI%%@dirrm %%DOCSDIR%%/guide/es
+%%GUI%%@dirrm %%DOCSDIR%%/guide/en/images
+%%GUI%%@dirrm %%DOCSDIR%%/guide/en
+%%GUI%%@dirrm %%DOCSDIR%%/guide/nl/images
+%%GUI%%@dirrm %%DOCSDIR%%/guide/nl
+%%GUI%%@dirrm %%DOCSDIR%%/guide
+%%GUI%%@dirrm %%DOCSDIR%%
 %%GUI%%@dirrmtry share/applications
