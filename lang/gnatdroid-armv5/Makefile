@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnatdroid-armv5
-# Date created:				2011-07-20
-# Whom:					John Marino <draco@marino>
-#
+# Created by: John Marino <draco@marino>
 # $FreeBSD$
-#
 
 PORTNAME=	armv5
 PORTVERSION=	${SNAPSHOT}
@@ -32,10 +28,12 @@ APPLY_DIFFS=	core ada ada-testsuite gcc-testsuite
 NO_MTREE=	YES
 
 # Disable C++ until arm.cc/no-rtti issue resolved for libsupc++
-#OPTIONS+=	CXX    "Also build C++ language" off
 
-OPTIONS+=	FORT   "Also build Fortran language" off
-OPTIONS+=	OBJC   "Also build Objective-C language" off
+OPTIONS_DEFINE=		FORT OBJC #CXX
+OPTIONS_DEFAULT=
+CXX_DESC=		Also build c++ language
+FORT_DESC=		Also build Fortran language
+OBJC_DESC=		Also build Objective-C language
 
 DROID_TARGET=		arm-android-eabi
 DROID_ARCH=		armv5te
@@ -60,17 +58,17 @@ ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-OS_LABEL4VERS=	"[FreeBSD64 x Android ${ARMVERSION}]"
+.if ${ARCH:S/amd64/x86_64/} == x86_64
+OS_LABEL4VERS=	"[${OPSYS}64 x Android ${ARMVERSION}]"
 .else
-OS_LABEL4VERS=	"[FreeBSD32 x Android ${ARMVERSION}]"
+OS_LABEL4VERS=	"[${OPSYS}32 x Android ${ARMVERSION}]"
 .endif
 
 ###########
 ##  C++  ##
 ###########
 
-.if defined(WITH_CXX)
+.if ${PORT_OPTIONS:MCXX}
 LANGS+=		c++
 APPLY_DIFFS+=	cxx cxx-testsuite
 DISTFILES+=	gcc-g++-${GCC_VERSION}.tar.bz2
@@ -84,7 +82,7 @@ PLIST_SUB+=	CXX="@comment "
 ##  Fortran  ##
 ###############
 
-.if defined(WITH_FORT)
+.if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
 DISTFILES+=	gcc-fortran-${GCC_VERSION}.tar.bz2
@@ -97,7 +95,7 @@ PLIST_SUB+=	FRT="@comment "
 ##  Objective-C  ##
 ###################
 
-.if defined(WITH_OBJC)
+.if ${PORT_OPTIONS:MOBJC}
 LANGS+=		objc
 DISTFILES+=	gcc-objc-${GCC_VERSION}.tar.bz2
 .endif
