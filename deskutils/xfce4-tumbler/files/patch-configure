@@ -1,5 +1,5 @@
 --- ./configure.orig	2013-01-12 11:14:34.000000000 +0000
-+++ ./configure	2013-01-12 18:25:40.000000000 +0000
++++ ./configure	2013-04-28 11:32:14.000000000 +0000
 @@ -915,9 +915,10 @@
  enable_gtk_doc
  enable_gtk_doc_html
@@ -12,6 +12,15 @@
  enable_ffmpeg_thumbnailer
  enable_gstreamer_thumbnailer
  enable_odf_thumbnailer
+@@ -13879,7 +13880,7 @@
+ 
+     fi
+   fi
+-     USE_NLS=yes
++#     USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no
 @@ -15618,9 +15619,9 @@
  fi
  
