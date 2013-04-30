@@ -130,11 +130,11 @@ share/gprconfig/gprconfig.xsd
 share/gprconfig/linker.xml
 share/gprconfig/nocompiler.xml
 share/gprconfig/targetset.xml
-@dirrm %%DOCSDIR%%
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%/info
 @dirrm %%DOCSDIR%%/pdf
 @dirrm %%DOCSDIR%%/txt
+@dirrm %%DOCSDIR%%
 @dirrmtry %%EXAMPLESDIR%%/ada_cpp/src1
 @dirrmtry %%EXAMPLESDIR%%/ada_cpp/src2
 @dirrmtry %%EXAMPLESDIR%%/ada_cpp
