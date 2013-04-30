@@ -1,29 +1,27 @@
-# New ports collection makefile for:   librep
-# Date created:        13 September 1999
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/lang/librep/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
 
 PORTNAME=	librep
-PORTVERSION=	0.92.1b
+PORTVERSION=	0.92.3
 CATEGORIES=	lang elisp gnome
-MASTER_SITES=	http://download.tuxfamily.org/librep/
+MASTER_SITES=	http://download.tuxfamily.org/librep/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. Archive
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Emacs Lisp like runtime library
+COMMENT=	Emacs Lisp like runtime library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm \
 		ffi:${PORTSDIR}/devel/libffi \
-    		gmp.10:${PORTSDIR}/math/gmp
+    		gmp:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
 USE_CSTD=	gnu89
 
 USE_XZ=		yes
-USES=	pathfix gettext
+USES=		gettext pathfix pkgconfig
+USE_READLINE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \
@@ -31,8 +29,8 @@ CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -pthread
 
 MANCOMPRESSED=	yes
 MAN1=		rep.1 rep-remote.1 rep-xgettext.1 repdoc.1
