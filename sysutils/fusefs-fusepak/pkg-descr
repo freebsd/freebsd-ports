@@ -1,0 +1,17 @@
+Fusepak is a small program that makes it possible to mount PACK or WAD files
+(used in many games, most notably by id Software) under a directory.  This
+is achieved by using FUSE (Filesystem in Userspace).  The following formats
+are supported:
+
+  - WAD, can be found in Wolfenstein 3D and Spear of Destiny games
+  - PACK, can be found in Quake, Quake2, and other games based on
+    id Software's Quake engine
+  - WAD2, can be found inside of PACK files
+  - LGP, can be found in PC version of Final Fantasy VII
+  - PAK, can be found in Dune 2
+  - KSGRP, can be found in Duke Nukem 3D
+
+Secondary goal of fusepak is to provide simple framework which allows one to
+quickly add support for another file format.
+
+WWW: http://fusepak.sourceforge.net/
