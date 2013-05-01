@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A full-text search engine for Java
+MAINTAINER=	danilogondolfo@gmail.com
+COMMENT=	Full-text search engine for Java
 
 LICENSE=	AL2
 
