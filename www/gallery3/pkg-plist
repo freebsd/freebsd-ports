@@ -253,7 +253,6 @@
 %%WWWDIR%%/modules/gallery/libraries/MY_Database.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Forge.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Input.php
-%%WWWDIR%%/modules/gallery/libraries/MY_Kohana.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Kohana_Exception.php
 %%WWWDIR%%/modules/gallery/libraries/MY_ORM.php
 %%WWWDIR%%/modules/gallery/libraries/MY_View.php
