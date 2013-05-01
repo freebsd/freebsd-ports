@@ -155,6 +155,7 @@ share/postgresql/timezone/Africa/Freetown
 share/postgresql/timezone/Africa/Gaborone
 share/postgresql/timezone/Africa/Harare
 share/postgresql/timezone/Africa/Johannesburg
+share/postgresql/timezone/Africa/Juba
 share/postgresql/timezone/Africa/Kampala
 share/postgresql/timezone/Africa/Khartoum
 share/postgresql/timezone/Africa/Kigali
@@ -269,10 +270,12 @@ share/postgresql/timezone/America/Juneau
 share/postgresql/timezone/America/Kentucky/Louisville
 share/postgresql/timezone/America/Kentucky/Monticello
 share/postgresql/timezone/America/Knox_IN
+share/postgresql/timezone/America/Kralendijk
 share/postgresql/timezone/America/La_Paz
 share/postgresql/timezone/America/Lima
 share/postgresql/timezone/America/Los_Angeles
 share/postgresql/timezone/America/Louisville
+share/postgresql/timezone/America/Lower_Princes
 share/postgresql/timezone/America/Maceio
 share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
@@ -383,6 +386,7 @@ share/postgresql/timezone/Asia/Dubai
 share/postgresql/timezone/Asia/Dushanbe
 share/postgresql/timezone/Asia/Gaza
 share/postgresql/timezone/Asia/Harbin
+share/postgresql/timezone/Asia/Hebron
 share/postgresql/timezone/Asia/Ho_Chi_Minh
 share/postgresql/timezone/Asia/Hong_Kong
 share/postgresql/timezone/Asia/Hovd
