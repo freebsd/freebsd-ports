@@ -13,7 +13,7 @@ COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
 LICENSE=	MIT
 
-#USE_DOS2UNIX=	yes
+USE_DOS2UNIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pyro4
