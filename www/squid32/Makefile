@@ -76,7 +76,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid32
 
-SQUID_STABLE_VER=	9
+SQUID_STABLE_VER=	11
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -119,7 +119,6 @@ HTCP_DESC=	Enable HTCP support
 ICAP_DESC=	Enable the ICAP client
 ICMP_DESC=	Enable ICMP pinging and network measurement
 IDENT_DESC=	Enable Ident lookups (RFC 931)
-IPV6_DESC=	Enable IPv6 support
 KQUEUE_DESC=	Enable kqueue(2) support
 LARGEFILE_DESC=	Support large (>2GB) cache and log files
 SNMP_DESC=	Enable SNMP support
@@ -134,7 +133,7 @@ VIA_DB_DESC=	Enable Forward/Via database
 WCCPV2_DESC=	Enable Web Cache Coordination Protocol v2
 WCCP_DESC=	Enable Web Cache Coordination Protocol
 
-OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT IPV6 KQUEUE \
+OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
 			SNMP WCCP WCCPV2
 
 etc_files=	squid/cachemgr.conf.default \
@@ -364,6 +363,7 @@ libexec+=	url_fake_rewrite url_fake_rewrite.sh
 
 .if empty(PORT_OPTIONS:MIPV6) || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-cf.data.pre.noipv6
 .endif
 .if ${PORT_OPTIONS:MDELAY_POOLS}
 CONFIGURE_ARGS+=	--enable-delay-pools
