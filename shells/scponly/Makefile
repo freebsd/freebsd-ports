@@ -3,6 +3,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
+PORTREVISION=	1
 CATEGORIES=	shells security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-snapshots
@@ -33,8 +34,10 @@ WINSCP_DESC=	WinSCP support
 
 .include <bsd.port.options.mk>
 
+.if(!exists(/usr/bin/sftp))
 RUN_DEPENDS+=	sftp:${PORTSDIR}/security/openssh-portable
 BUILD_DEPENDS+=	sftp:${PORTSDIR}/security/openssh-portable
+.endif
 
 .if ${PORT_OPTIONS:MDEFAULT_CHDIR}
 CONFIGURE_ARGS+=--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
