@@ -1,13 +1,8 @@
-# Ports collection makefile for:	pycha
-# Date created:			08 July, 2009
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pycha
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,12 +13,13 @@ COMMENT=	A library for making charts with Python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS=	CAIRO   "Add support for py-cairo" On
+OPTIONS_DEFINE=		CAIRO
+OPTIONS_DEFAULT=	CAIRO
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CAIRO)
+.if ${PORT_OPTIONS:MCAIRO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cairo:${PORTSDIR}/graphics/py-cairo
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
