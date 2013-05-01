@@ -31,6 +31,8 @@ PLIST_SUB=	VDR_USER=${VDR_USER}
 PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 PLIST_SUB+=	APIVERSION=${APIVERSION}
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
