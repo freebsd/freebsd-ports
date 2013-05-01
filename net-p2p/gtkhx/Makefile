@@ -8,9 +8,9 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+ version of Hx, a UNIX Hotline Client
+COMMENT=	GTK+ version of Hx, a UNIX Hotline Client
 
-USES=        pathfix
+USES=	pathfix
 USE_GNOME=	gdkpixbuf gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -19,11 +19,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtkhx.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
@@ -39,4 +39,4 @@ post-patch:
 		 s|$$CFLAGS -O2|$$CFLAGS|g ; \
 		 s|-g -Wall|$$CFLAGS -Wall|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
