@@ -143,9 +143,9 @@
     SUBDIR += py-zfec
     SUBDIR += rcctools
     SUBDIR += recode
-    SUBDIR += ruby-bsdconv
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
+    SUBDIR += rubygem-bsdconv
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as
