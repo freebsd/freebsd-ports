@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amsn
-# Date created:		01 Feb 2003
-# Whom:			Andreas Klemm <andreas@FreeBSD.org>
-#
+# Created by: Andreas Klemm <andreas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amsn
 PORTVERSION=	0.98.9
@@ -30,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
-USE_GETTEXT=	yes
+USES=		gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

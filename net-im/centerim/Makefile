@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:           centerim
-# Date created:                                2006-03-14
-# Whom:                                 Frank Altpeter <frank@altpeter.de>
-#
+# Created by: Frank Altpeter <frank@altpeter.de>
 # $FreeBSD$
-#
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10
@@ -13,7 +8,7 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
 
 MAINTAINER=	frank@altpeter.de
-COMMENT=	A text mode menu- and window-driven IM interface
+COMMENT=	Text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
@@ -27,80 +22,78 @@ CONFIGURE_ARGS=	--with-ssl --with-openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
-OPTIONS=	NLS             "Native Language Support" on \
-		MULTIBYTE       "Multibyte Support" off \
-		FRIBIDI         "Fribidi Support" off \
-		MSN             "Support for MSN Protocol" off \
-		YAHOO           "Support for Yahoo! Messenger Protocol" off \
-		AIM             "Support for AOL's Instant Messenger Protocol" off \
-		IRC             "Support for IRC Protocol" off \
-		JABBER          "Support for Jabber Protocol" off \
-		GPGME           "Support for PGP encrypted Jabber messages" off \
-		RSS             "Support for RSS" off \
-		LJ              "Support for LiveJournal" off \
-		GG              "Support for Gadu-Gadu Protocol" off
+OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
+FRIBIDI_DESC=	Fribidi Support
+MSN_DESC=	MSN Protocol
+YAHOO_DESC=	Yahoo! Messenger Protocol
+AIM_DESC=	AOL's Instant Messenger Protocol
+IRC_DESC=	IRC Protocol
+GPGME_DESC=	PGP encrypted Jabber messages
+RSS_DESC=	RSS Support
+LJ_DESC=	LiveJournal Support
+GG_DESC=	Gadu-Gadu Protocol Support
 
 MAN1=	cimconv.1 centerim.1
 
 PORTDOCS=	FAQ README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
+PLIST_SUB+=		NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=		NLS="@comment "
-.else
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
 .endif
 
-.if defined(WITH_MULTIBYTE)
+.if ${PORT_OPTIONS:MMULTIBYTE}
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 
-.if defined(WITH_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
-.if !defined(WITH_MSN)
+.if ! ${PORT_OPTIONS:MMSN}
 CONFIGURE_ARGS+=	--disable-msn
 .endif
 
-.if !defined(WITH_YAHOO)
+.if ! ${PORT_OPTIONS:MYAHOO}
 CONFIGURE_ARGS+=	--disable-yahoo
 .endif
 
-.if !defined(WITH_AIM)
+.if ! ${PORT_OPTIONS:MAIM}
 CONFIGURE_ARGS+=	--disable-aim
 .endif
 
-.if !defined(WITH_IRC)
+.if ! ${PORT_OPTIONS:MIRC}
 CONFIGURE_ARGS+=	--disable-irc
 .endif
 
-.if !defined(WITH_JABBER)
+.if ! ${PORT_OPTIONS:MJABBER}
 CONFIGURE_ARGS+=	--disable-jabber
 .else
 .endif
 
-.if !defined(WITH_GPGME)
-CONFIGURE_ARGS+=	--without-gpgme
-.else
+.if ${PORT_OPTIONS:MGPGME}
 LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
 #CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-ssl
+.else
+CONFIGURE_ARGS+=	--without-gpgme
 .endif
 
-.if !defined(WITH_RSS)
+.if ! ${PORT_OPTIONS:MRSS}
 CONFIGURE_ARGS+=	--disable-rss
 .endif
 
-.if !defined(WITH_LJ)
+.if ! ${PORT_OPTIONS:MLJ}
 CONFIGURE_ARGS+=	--disable-lj
 .endif
 
-.if !defined(WITH_GG)
+.if ! ${PORT_OPTIONS:MGG}
 CONFIGURE_ARGS+=	--disable-gg
 .else
 LIB_DEPENDS+=		gadu.3:${PORTSDIR}/polish/ekg
@@ -111,10 +104,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|/usr/bin/env python|' \
 		${WRKSRC}/misc/CenterIMLog2HTML.py
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

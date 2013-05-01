@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   	centericq
-# Date created:                        	25 December 1999
-# Whom:                                 Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
@@ -25,93 +20,95 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
 
-OPTIONS=	NLS		"Native Language Support" on \
-		MULTIBYTE	"Multibyte Support" off \
-		FRIBIDI		"Fribidi Support" off \
-		MSN		"Support for MSN Protocol" off \
-		YAHOO		"Support for Yahoo! Messenger Protocol" off \
-		AIM		"Support for AOL's Instant Messenger Protocol" off \
-		IRC		"Support for IRC Protocol" off \
-		JABBER		"Support for Jabber Protocol" off \
-		GPGME		"Support for PGP encrypted Jabber messages" on \
-		RSS		"Support for RSS" off \
-		LJ		"Support for LiveJournal" off \
-		GG		"Support for Gadu-Gadu Protocol" off
+OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
+FRIBIDI_DESC=	Fribidi Support
+MSN_DESC=	MSN Protocol
+YAHOO_DESC=	Yahoo! Messenger Protocol
+AIM_DESC=	AOL's Instant Messenger Protocol
+IRC_DESC=	IRC Protocol
+GPGME_DESC=	PGP encrypted Jabber messages
+RSS_DESC=	RSS Support
+LJ_DESC=	LiveJournal Support
+GG_DESC=	Gadu-Gadu Protocol Support
+
+OPTIONS_DEFAULT=	GPGME
 
 MAN1=	cicqconv.1 cicqsync.1
 
 PORTDOCS=	FAQ README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 # Don't use optimization since it sefgaults in some cases otherwise.
 CFLAGS:=	${CFLAGS:C/-O[0123456789]*/-O0/}
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITH_MULTIBYTE)
+.if ${PORT_OPTIONS:MMULTIBYTE}
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 
-.if defined(WITH_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
-.if !defined(WITH_MSN)
-CONFIGURE_ARGS+=	--disable-msn
-.else
+.if ${PORT_OPTIONS:MMSN}
 LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=	--disable-msn
 .endif
 
-.if !defined(WITH_YAHOO)
+.if ! ${PORT_OPTIONS:MYAHOO}
 CONFIGURE_ARGS+=	--disable-yahoo
 .endif
 
-.if !defined(WITH_AIM)
+.if ! ${PORT_OPTIONS:MAIM}
 CONFIGURE_ARGS+=	--disable-aim
 .endif
 
-.if !defined(WITH_IRC)
+.if ! ${PORT_OPTIONS:MIRC}
 CONFIGURE_ARGS+=	--disable-irc
 .endif
 
-.if !defined(WITH_JABBER)
+.if ! ${PORT_OPTIONS:MJABBER}
 CONFIGURE_ARGS+=	--disable-jabber
-.else
-.if !defined(WITH_GPGME)
-CONFIGURE_ARGS+=	--without-gpgme
-.else
-LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
-CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
-.endif
 .endif
 
-.if !defined(WITH_RSS)
+.if ${PORT_OPTIONS:MGPGME}
+LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-gpgme
+.endif
+
+.if ! ${PORT_OPTIONS:MRSS}
 CONFIGURE_ARGS+=	--disable-rss
 .endif
 
-.if !defined(WITH_LJ)
+.if ! ${PORT_OPTIONS:MLJ}
 CONFIGURE_ARGS+=	--disable-lj
 .endif
 
-.if !defined(WITH_GG)
-CONFIGURE_ARGS+=	--disable-gg
-.else
+.if ${PORT_OPTIONS:MGG}
 LIB_DEPENDS+=	gadu.3:${PORTSDIR}/polish/ekg
 LIBGADU=	-lgadu
+.else
+CONFIGURE_ARGS+=	--disable-gg
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 post-patch:
@@ -129,7 +126,7 @@ post-patch:
 		-e 's|libgadu-0.1||' \
 		-e 's|-llibgadu|${LIBGADU}|'
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
