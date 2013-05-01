@@ -1,16 +1,12 @@
-# New ports collection makefile for:	font-mplus-ipa fonts
-# Date created:		26 April 2009
-# Whom:			hrs
-#
 # $FreeBSD$
-#
 
-PORTNAME=	font-mplus-ipa
+PORTNAME=	mplus-ipa
 PORTVERSION=	1.0.20060520.p1
 PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
+PKGNAMEPREFIX=	ja-font-
 DISTNAME=	mixfont-mplus-ipa-TrueType-20060520p1
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -28,11 +24,16 @@ SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	Bitstream-COPYRIGHT.txt Mplus-LICENSE_E.txt \
 		Mplus-LICENSE_J.txt README.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -45,14 +46,14 @@ do-install:
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/fonts/M+*.ttf \
 			${PREFIX}/${X_FONTSDIR}/TTF/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-mplus-ipa.conf \
-		${FILESDIR}/62-fonts-mplus-ipa.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
+		${FILESDIR}/62-fonts-${PORTNAME}.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-mplus-ipa.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
-	${LN} -s -f ../conf.avail/62-fonts-mplus-ipa.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
-.if !defined(NOPORTDOCS)
+	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
