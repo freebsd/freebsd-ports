@@ -29,16 +29,19 @@ INSTALLS_ICONS=	yes
 
 WANT_GNOME=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+PYSETUP+=	--without-gettext
+.endif
+
 .include <bsd.port.pre.mk>
 
 PYSETUP+=	--without-icon-cache
-.if empty(PORT_OPTIONS:MNLS)
-PLIST_SUB+=	NLS="@comment "
-PYSETUP+=	--without-gettext
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
 
 .if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	pygnome2
