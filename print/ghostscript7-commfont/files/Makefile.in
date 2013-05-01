@@ -45,13 +45,13 @@ CT.SANSSERIF=	MHei-Medium
 JA.CMAPS=	aj16 aj20
 
 JA.SERIF.GENERIC=	Ryumin-Light
-JA.SERIF.GENERIC_SUBST=	Ryumin-Light
+JA.SERIF.GENERIC_SUBST=	Ryumin-Light.gs7
 JA.SERIF=	Ryumin-Light \
 		FutoMinA101-Bold \
 		HeiseiMin-W3
 
 JA.SANSSERIF.GENERIC=	GothicBBB-Medium
-JA.SANSSERIF.GENERIC_SUBST=	GothicBBB-Medium
+JA.SANSSERIF.GENERIC_SUBST=	GothicBBB-Medium.gs7
 JA.SANSSERIF=	GothicBBB-Medium \
 		FutoGoB101-Bold \
 		HeiseiKakuGo-W5 \
