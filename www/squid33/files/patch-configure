@@ -1,0 +1,47 @@
+--- configure.orig	2013-03-12 11:18:22.000000000 +0100
++++ configure	2013-04-09 11:43:01.000000000 +0200
+@@ -22437,7 +22437,7 @@
+ 
+ done
+ 
+-  if test "x$ac_heimdal" == "x" ; then
++  if test "x$ac_heimdal" = "x" ; then
+     for ac_header in gssapi/gssapi_generic.h
+ do :
+   ac_fn_cxx_check_header_mongrel "$LINENO" "gssapi/gssapi_generic.h" "ac_cv_header_gssapi_gssapi_generic_h" "$ac_includes_default"
+@@ -22634,7 +22634,7 @@
+ 
+ 
+   ac_com_error_message=no
+-  if test "x$ac_cv_header_com_err_h" == "xyes" ; then
++  if test "x$ac_cv_header_com_err_h" = "xyes" ; then
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <com_err.h>
+@@ -22646,7 +22646,7 @@
+ fi
+ rm -f conftest*
+ 
+-  elif test "x$ac_cv_header_et_com_err_h" == "xyes" ; then
++  elif test "x$ac_cv_header_et_com_err_h" = "xyes" ; then
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <et/com_err.h>
+@@ -22707,7 +22707,7 @@
+ 
+   fi
+ 
+-  if test `echo $KRB5LIBS | grep -c com_err` -ne 0 -a "x$ac_com_error_message" == "xyes" ; then
++  if test `echo $KRB5LIBS | grep -c com_err` -ne 0 -a "x$ac_com_error_message" = "xyes" ; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for error_message in -lcom_err" >&5
+ $as_echo_n "checking for error_message in -lcom_err... " >&6; }
+ if ${ac_cv_lib_com_err_error_message+:} false; then :
+@@ -22750,7 +22750,7 @@
+ 
+ fi
+ 
+-  elif test  "x$ac_com_error_message" == "xyes" ; then
++  elif test  "x$ac_com_error_message" = "xyes" ; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for error_message in -lkrb5" >&5
+ $as_echo_n "checking for error_message in -lkrb5... " >&6; }
+ if ${ac_cv_lib_krb5_error_message+:} false; then :
