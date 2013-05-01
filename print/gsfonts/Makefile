@@ -3,7 +3,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	SF/gs-fonts/gs-fonts/${PORTVERSION}%20%28base%2035%2C%20GPL%29/:std \
 		SF/gs-fonts/gs-fonts/6.0%20%28misc%2C%20GPL%29/:other
@@ -22,6 +22,8 @@ OPTIONS_DEFINE=	DOCS
 FONTSDIR=	${PREFIX}/share/ghostscript/fonts
 CJKFONTS?=	std.ja_JP/Ryumin-Light \
 		std.ja_JP/GothicBBB-Medium \
+		std.ja_JP/Ryumin-Light.gs7 \
+		std.ja_JP/GothicBBB-Medium.gs7 \
 		std.zh_CN/STHeiti-Regular \
 		std.zh_CN/STSong-Light \
 		std.zh_CN/MSung-Light
