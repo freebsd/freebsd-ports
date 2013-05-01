@@ -3,9 +3,10 @@
 
 PORTNAME=	x48
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	emulators math
 MASTER_SITES=	SF/${PORTNAME}.berlios
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gxrom-r.bz2 sxrom-e.bz2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gxrom-r.bz2 sxrom-j.bz2
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -37,14 +38,15 @@ post-extract: .SILENT
 # Extract official HP ROM images for GX/SX
 	${CP} ${_DISTDIR}/gxrom-r.bz2 ${WRKSRC} && ${BZIP2_CMD} \
 		-d ${WRKSRC}/gxrom-r.bz2
-# The latest SX ROM revision is J, but it does not work with x48, so use E
-	${CP} ${_DISTDIR}/sxrom-e.bz2 ${WRKSRC} && ${EXTRACT_CMD} \
-		-d ${WRKSRC}/sxrom-e.bz2
+	${CP} ${_DISTDIR}/sxrom-j.bz2 ${WRKSRC} && ${BZIP2_CMD} \
+		-d ${WRKSRC}/sxrom-j.bz2
 
 post-patch:
 # Enable serial communication and prefer GX Revision R ROM by default
 	@${REINPLACE_CMD} -e '/useSerial/s+False+True+ ; s+ttyS+cuau+ ; \
 		s+rom\.dump+${DATADIR}/gxrom-r+' ${WRKSRC}/src/X48.ad.h
+# Force correct type per what comment says
+	@${REINPLACE_CMD} -e '/timer1/s+char+signed &+' ${WRKSRC}/src/hp48.h
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard
