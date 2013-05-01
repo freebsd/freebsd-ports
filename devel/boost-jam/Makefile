@@ -8,6 +8,8 @@ PORTREVISION=	1
 
 PLIST_FILES=	bin/bjam
 
+EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine
+
 .include "${.CURDIR}/../boost-all/common.mk"
 
 do-build:
