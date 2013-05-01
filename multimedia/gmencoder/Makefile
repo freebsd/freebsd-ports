@@ -1,9 +1,5 @@
-# Ports collection makefile for:  gmencoder
-# Date created:			  Wed Feb 25 03:20:50 EST 2004
-# Whom:				  Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gmencoder
 PORTVERSION=	0.1.0
@@ -22,12 +18,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_GNOME=	gnomeprefix libgnomeui
+USES=		pathfix
 
 MAN1=		gmencoder.1
 
 DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
 		"" "gmencoder" "GNOME;AudioVideo;" false
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -44,13 +50,6 @@ pre-everything::
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O4||; s|type -path|which|' \
 		${WRKSRC}/configure
@@ -61,7 +60,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
