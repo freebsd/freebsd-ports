@@ -14,7 +14,10 @@ bin/darktable-cltest
 %%DATADIR%%/kernels/basic.cl
 %%DATADIR%%/kernels/bilateral.cl
 %%DATADIR%%/kernels/blendop.cl
+%%DATADIR%%/kernels/colorspace.cl
+%%DATADIR%%/kernels/common.h
 %%DATADIR%%/kernels/demosaic_ppg.cl
+%%DATADIR%%/kernels/denoiseprofile.cl
 %%DATADIR%%/kernels/extended.cl
 %%DATADIR%%/kernels/gaussian.cl
 %%DATADIR%%/kernels/highpass.cl
@@ -42,6 +45,7 @@ bin/darktable-cltest
 %%DATADIR%%/pixmaps/plugins/darkroom/colortransfer.png
 %%DATADIR%%/pixmaps/plugins/darkroom/colorzones.png
 %%DATADIR%%/pixmaps/plugins/darkroom/demosaic.png
+%%DATADIR%%/pixmaps/plugins/darkroom/dither.png
 %%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
 %%DATADIR%%/pixmaps/plugins/darkroom/flip.png
 %%DATADIR%%/pixmaps/plugins/darkroom/graduatednd.png
@@ -104,7 +108,6 @@ lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
 lib/darktable/plugins/imageio/storage/libgallery.so
 lib/darktable/plugins/imageio/storage/liblatex.so
-lib/darktable/plugins/imageio/storage/libpicasa.so
 lib/darktable/plugins/libatrous.so
 lib/darktable/plugins/libbasecurve.so
 lib/darktable/plugins/libbilat.so
@@ -123,6 +126,8 @@ lib/darktable/plugins/libcolorout.so
 lib/darktable/plugins/libcolortransfer.so
 lib/darktable/plugins/libcolorzones.so
 lib/darktable/plugins/libdemosaic.so
+lib/darktable/plugins/libdenoiseprofile.so
+lib/darktable/plugins/libdither.so
 lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
 lib/darktable/plugins/libflip.so
@@ -184,7 +189,6 @@ lib/darktable/plugins/lighttable/libnavigation.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
-lib/darktable/plugins/lighttable/libsimilarity.so
 lib/darktable/plugins/lighttable/libsnapshots.so
 lib/darktable/plugins/lighttable/libstyles.so
 lib/darktable/plugins/lighttable/libtagging.so
@@ -219,6 +223,7 @@ share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/th/LC_MESSAGES/darktable.mo
+share/locale/uk/LC_MESSAGES/darktable.mo
 share/locale/zh_CN/LC_MESSAGES/darktable.mo
 @dirrmtry share/applications
 @dirrm lib/darktable/views
