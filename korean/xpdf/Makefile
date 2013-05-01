@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ko-xpdf
-# Date created:		Fri Sep 30 21:26:35 EDT 2005
-# Whom:			Jung-uk Kim <jkim@FreeBSD.org>
-#
+# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpdf
-PORTVERSION=	3.02
-PORTREVISION=	4
+PORTVERSION=	3.03
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont
@@ -25,7 +20,6 @@ SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 		FONTSDIR=${FONTSDIR}
 PLIST_SUB=	EXTRARC=${EXTRARC}
-DATADIR=	${PREFIX}/share/xpdf
 
 FONTSDIR=	${LOCALBASE}/lib/X11/fonts/unfonts-core
 EXTRARC=	${DATADIR}/korean/dot.xpdfrc
@@ -37,6 +31,10 @@ do-install:
 	${MKDIR} ${DATADIR}/korean
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${INSTALL_FILES} ${DATADIR}/korean
+	${MKDIR} ${DATADIR}/korean/CMap
+	cd ${DATADIR}/korean/CMap && \
+		${FIND} ${ADOBECMAPDIR}/ak12/CMap \
+			-type f -exec ${LN} -s -f {} . \;
 
 post-install:
 	exec < ${LOCALBASE}/etc/xpdfrc; \

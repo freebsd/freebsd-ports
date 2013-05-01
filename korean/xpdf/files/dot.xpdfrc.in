@@ -2,24 +2,24 @@
 # $FreeBSD$
 cidToUnicode	Adobe-Korea1	%%DATADIR%%/korean/Adobe-Korea1.cidToUnicode
 unicodeMap	ISO-2022-KR	%%DATADIR%%/korean/ISO-2022-KR.unicodeMap
-cMapDir		Adobe-Korea1	%%ADOBECMAPDIR%%
-toUnicodeDir			%%ADOBECMAPDIR%%
-displayNamedCIDFontTT	Batang		"%%FONTSDIR%%/UnBatang.ttf"
-displayNamedCIDFontTT	Batang,Bold	"%%FONTSDIR%%/UnBatangBold.ttf"
-displayNamedCIDFontTT	Dotum		"%%FONTSDIR%%/UnDotum.ttf"
-displayNamedCIDFontTT	Dotum,Bold	"%%FONTSDIR%%/UnDotumBold.ttf"
-displayNamedCIDFontTT	Gulim		"%%FONTSDIR%%/UnGraphic.ttf"
-displayNamedCIDFontTT	Gulim,Bold	"%%FONTSDIR%%/UnGraphicBold.ttf"
-displayNamedCIDFontTT	Gungsuh		"%%FONTSDIR%%/UnGungseo.ttf"
+cMapDir		Adobe-Korea1	%%DATADIR%%/korean/CMap
+toUnicodeDir			%%DATADIR%%/korean/CMap
+fontFile	Batang		"%%FONTSDIR%%/UnBatang.ttf"
+fontFile	Batang,Bold	"%%FONTSDIR%%/UnBatangBold.ttf"
+fontFile	Dotum		"%%FONTSDIR%%/UnDotum.ttf"
+fontFile	Dotum,Bold	"%%FONTSDIR%%/UnDotumBold.ttf"
+fontFile	Gulim		"%%FONTSDIR%%/UnGraphic.ttf"
+fontFile	Gulim,Bold	"%%FONTSDIR%%/UnGraphicBold.ttf"
+fontFile	Gungsuh		"%%FONTSDIR%%/UnGungseo.ttf"
 
-psFont16	Adobe-Korea1	H	Batang-UniKS-UCS2-H		UCS-2
-psFont16	Adobe-Korea1	V	Batang-UniKS-UCS2-V		UCS-2
-psNamedFont16	Batang		H	Batang-UniKS-UCS2-H		UCS-2
-psNamedFont16	Batang		V	Batang-UniKS-UCS2-V		UCS-2
-psNamedFont16	Dotum		H	Dotum-UniKS-UCS2-H		UCS-2
-psNamedFont16	Dotum		V	Dotum-UniKS-UCS2-V		UCS-2
-psNamedFont16	Gulim		H	Gulim-UniKS-UCS2-H		UCS-2
-psNamedFont16	Gulim		V	Gulim-UniKS-UCS2-V		UCS-2
-psNamedFont16	Gungsuh		H	Gungsuh-UniKS-UCS2-H		UCS-2
-psNamedFont16	Gungsuh		V	Gungsuh-UniKS-UCS2-V		UCS-2
+psResidentFontCC	Adobe-Korea1	H	Batang-UniKS-UCS2-H	UCS-2
+psResidentFontCC	Adobe-Korea1	V	Batang-UniKS-UCS2-V	UCS-2
+psResidentFont16	Batang		H	Batang-UniKS-UCS2-H	UCS-2
+psResidentFont16	Batang		V	Batang-UniKS-UCS2-V	UCS-2
+psResidentFont16	Dotum		H	Dotum-UniKS-UCS2-H	UCS-2
+psResidentFont16	Dotum		V	Dotum-UniKS-UCS2-V	UCS-2
+psResidentFont16	Gulim		H	Gulim-UniKS-UCS2-H	UCS-2
+psResidentFont16	Gulim		V	Gulim-UniKS-UCS2-V	UCS-2
+psResidentFont16	Gungsuh		H	Gungsuh-UniKS-UCS2-H	UCS-2
+psResidentFont16	Gungsuh		V	Gungsuh-UniKS-UCS2-V	UCS-2
 #Korean PDF resources
