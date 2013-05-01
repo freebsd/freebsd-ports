@@ -648,6 +648,7 @@
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql82-client
     SUBDIR += postgresql82-contrib
+    SUBDIR += postgresql82-plperl
     SUBDIR += postgresql82-server
     SUBDIR += postgresql83-client
     SUBDIR += postgresql83-contrib
