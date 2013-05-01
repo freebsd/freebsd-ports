@@ -19,6 +19,9 @@ bin/mako-render
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/codegen.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/codegen.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/codegen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/exceptions.pyo
