@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chiconv
-PORTVERSION=	1.0
+PORTVERSION=	10.0
 CATEGORIES=	chinese converters
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	046010f
+GH_COMMIT=	6f4a7bf
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 
