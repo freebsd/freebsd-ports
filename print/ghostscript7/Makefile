@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR= \
 		./:ports_jp
 PKGNAMESUFFIX=	7
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 7.x PostScript interpreter
@@ -96,7 +96,6 @@ XCFLAGS+=	-DA4
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
-
 
 .if ${PORT_OPTIONS:MX11}
 MAKE_ENV+=	GS_SHLIB_VER="${SHLIB_VER}"
