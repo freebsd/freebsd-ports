@@ -108,10 +108,10 @@ IGNORE=		not supported on 7.x or early 8.0
 
 PERIODIC_DAILY=		400.status-pkg 411.pkg-backup 490.status-pkg-changes
 PERIODIC_SECURITY=	410.pkg-audit 460.pkg-checksum
-PERIDIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
+PERIODIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
 
 post-install:
-.for periodic in ${PERIDIC_ALL}
+.for periodic in ${PERIODIC_ALL}
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/${periodic}
 .endfor
 	@${MKDIR} ${PREFIX}/etc/periodic/security
