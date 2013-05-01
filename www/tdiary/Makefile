@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES?=	www ruby
-MASTER_SITES=	http://www.tdiary.org/download/ \
-		SF/${PORTNAME}/${PORTNAME}/
+MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A Web-based diary system (like weblog) written in Ruby
+COMMENT=	Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
-		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize
+		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize \
+		rubygem-json_pure>=1.7.7:${PORTSDIR}/devel/rubygem-json_pure
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -30,19 +30,15 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/plugin/squeeze.rb \
 			misc/plugin/xmlrpc/xmlrpc.rb
 
-HTML=	HOWTO-authenticate-in-rack.html HOWTO-make-io.html \
-	HOWTO-make-plugin.html HOWTO-make-theme.html \
-	HOWTO-testing-tDiary.html HOWTO-use-plugin.html \
-	HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html \
-	INSTALL-paas.html INSTALL.html README.en.html \
-	README.html UPGRADE.html
-MD=	HOWTO-authenticate-in-rack.md HOWTO-make-io.md \
-	HOWTO-make-plugin.md HOWTO-make-theme.md \
-	HOWTO-testing-tDiary.md HOWTO-use-plugin.md \
-	HOWTO-write-tDiary.en.md HOWTO-write-tDiary.md \
-	INSTALL-paas.md INSTALL.md README.en.md \
-	README.md UPGRADE.md
-PORTDOCS=	ChangeLog LICENSE doc.css ${HTML} ${MD}
+DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io \
+		HOWTO-make-plugin HOWTO-make-theme \
+		HOWTO-testing-tDiary HOWTO-use-plugin \
+		HOWTO-write-tDiary.en HOWTO-write-tDiary \
+		INSTALL-paas INSTALL README.en \
+		README UPGRADE
+HTML=	${DOCFILES:S/$/.html/}
+MD=	${DOCFILES:S/$/.md/}
+PORTDOCS=	ChangeLog doc.css ${HTML} ${MD}
 
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
@@ -68,11 +64,13 @@ NORA_DESC=	Use Nora
 .include <bsd.port.options.mk>
 
 pre-patch:
+	@${RM} ${WRKSRC}/.coveralls.yml
 	@${RM} ${WRKSRC}/.gitignore
 	@${RM} ${WRKSRC}/.travis.yml
 	@${RM} ${WRKSRC}/Capfile
 	@${RM} ${WRKSRC}/Gemfile
 	@${RM} ${WRKSRC}/Gemfile.lock
+	@${RM} ${WRKSRC}/LICENSE
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
@@ -81,9 +79,8 @@ pre-patch:
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.38
+	@${RM} -r ${WRKSRC}/vendor/json_pure-1.7.7
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
-	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
 
 post-patch:
