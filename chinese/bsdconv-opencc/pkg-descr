@@ -2,8 +2,8 @@ Open Chinese Convert (OpenCC) is an open source Simplified-Traditional
 Chinese conversion project, providing high quality thesaurus and libopencc,
 as well as a conversion utility and a dictionary generator.
 
-bsdconv is a BSD licensed charset/encoding converter library with more function
-than libiconv. (Currently, only a few codecs are supported)
+bsdconv is a BSD licensed charset/encoding converter library with more
+ function than libiconv. (Currently, only a few codecs are supported)
 
 This port is a opencc conversion module for bsdconv.
 
