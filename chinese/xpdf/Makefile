@@ -1,13 +1,8 @@
-# New ports collection makefile for:	zh-xpdf
-# Date created:		21 Avr 2002
-# Whom:			chshen <statue@freebsd.sinica.edu.tw>
-#
+# Created by: chshen <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	xpdf
-PORTVERSION=	3.02
-PORTREVISION=	1
+PORTVERSION=	3.03
 PORTEPOCH=	2
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
@@ -15,8 +10,8 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	support/xpdf
 PKGNAMESUFFIX=	-zhfont
-DISTFILES=	xpdf-chinese-simplified-2004-jul-27.tar.gz \
-		xpdf-chinese-traditional-2004-jul-27.tar.gz
+DISTFILES=	xpdf-chinese-simplified-2011-sep-02${EXTRACT_SUFX} \
+		xpdf-chinese-traditional-2011-sep-02${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Chinese font support for xpdf
@@ -33,7 +28,6 @@ SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 		FONTSDIR=${FONTSDIR}
 PLIST_SUB=	EXTRARC=${EXTRARC}
-DATADIR=	${PREFIX}/share/xpdf
 
 FONTSDIR=	${LOCALBASE}/share/fonts/std.zh_CN
 EXTRARC=	${DATADIR}/chinese-traditional/dot.xpdfrc
@@ -51,6 +45,14 @@ do-install:
 	cd ${WRKSRC}/xpdf-chinese-traditional \
 		&& ${INSTALL_DATA} ${TRAD_FILES} ${DATADIR}/chinese-traditional
 	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc ${DATADIR}/chinese-traditional
+	${MKDIR} ${DATADIR}/chinese-traditional/CMap
+	cd ${DATADIR}/chinese-traditional/CMap && \
+		${FIND} ${ADOBECMAPDIR}/ac15/CMap \
+			-type f -exec ${LN} -s -f {} . \;
+	${MKDIR} ${DATADIR}/chinese-simplified/CMap
+	cd ${DATADIR}/chinese-simplified/CMap && \
+		${FIND} ${ADOBECMAPDIR}/ag15/CMap \
+			-type f -exec ${LN} -s -f {} . \;
 
 post-install:
 	exec < ${LOCALBASE}/etc/xpdfrc; \

@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ja-xpdf
-# Date created:		21 Avr 2002
-# Whom:			MITA Yoshio <mita@FreeBSD.org>
-#
+# Created by: MITA Yoshio <mita@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpdf
-PORTVERSION=	3.02
-PORTREVISION=	3
+PORTVERSION=	3.03
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-jafont
@@ -26,7 +21,6 @@ SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 		FONTSDIR=${FONTSDIR}
 PLIST_SUB=	EXTRARC=${EXTRARC}
-DATADIR=	${PREFIX}/share/xpdf
 
 FONTSDIR=	${LOCALBASE}/share/fonts/std.ja_JP
 EXTRARC=	${DATADIR}/japanese/dot.xpdfrc
@@ -39,6 +33,10 @@ do-install:
 	${MKDIR} ${DATADIR}/japanese
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${INSTALL_FILES} ${DATADIR}/japanese
+	${MKDIR} ${DATADIR}/japanese/CMap
+	cd ${DATADIR}/japanese/CMap && \
+		${FIND} ${ADOBECMAPDIR}/aj16/CMap ${ADOBECMAPDIR}/aj20/CMap \
+			-type f -exec ${LN} -s -f {} . \;
 
 post-install:
 	exec < ${LOCALBASE}/etc/xpdfrc; \
