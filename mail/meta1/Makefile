@@ -45,11 +45,13 @@ EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 META1CONFDIR?=	${PREFIX}/etc/meta1
 NOLOGIN_CMD?=	/usr/sbin/nologin
 
-OPTIONS_DEFINE=	BDB PMILTER SASL2 SASL2AUTHD TLS
-OPTIONS_DEFAULT=	BDB PMILTER SASL2 TLS
+OPTIONS_DEFINE=	BDB PMILTER DKIM MSP SASL2 SASL2AUTHD TLS
+OPTIONS_DEFAULT=	BDB PMILTER DKIM SASL2 TLS
 
 BDB_DESC=	External Berkeley DB support
 PMILTER_DESC=	Adds policy milter support
+DKIM_DESC=	Enable DKIM signing support
+MSP_DESC=	Enable mail submision program
 SASL2_DESC=	Adds SASL2 support
 SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 
@@ -74,6 +76,22 @@ CONFIGURE_ARGS+=	--enable-pmilter
 .else
 PMILTER_SUFFIX?=	-nopmilter
 CONFIGURE_ARGS+=	--disable-pmilter
+.endif
+
+.if ${PORT_OPTIONS:MDKIM}
+CONFIGURE_ARGS+=       --enable-DKIM
+.else
+CONFIGURE_ARGS+=       --disable-DKIM
+.endif
+
+.if ${PORT_OPTIONS:MMSP}
+CONFIGURE_ARGS+=       --enable-msp
+MAN8+=	sendmail.8
+PLIST_SUB+=	WITH_MSP=""
+CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
+.else
+CONFIGURE_ARGS+=       --disable-msp
+PLIST_SUB+=	WITH_MSP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSASL2}
