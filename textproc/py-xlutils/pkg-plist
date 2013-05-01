@@ -1,0 +1,23 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/copy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/display.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/filter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/license.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/margins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/save.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/styles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/date.xls
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/fixtures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/ragged.xls
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test.xls
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test_copy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test_docs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test_filter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test_save.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/test_styles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/testall.xls
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests/testnoformatting.xls
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/version.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/xlutils
