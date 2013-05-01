@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.18.5
+PORTVERSION=	1.18.6
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
+
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2013-08-01
 
 CONFLICTS=	mediawiki-1.19.* mediawiki-1.2[0-9].*
 
