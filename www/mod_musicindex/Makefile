@@ -37,7 +37,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 PORTDOCS=	README
 
 .if ${PORT_OPTIONS:MNLS}
-USES==		gettext
+USES+=		gettext
 CFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--enable-nls
