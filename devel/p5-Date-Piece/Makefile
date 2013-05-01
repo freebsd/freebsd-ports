@@ -1,0 +1,24 @@
+# Created by:	      				Erwin Lansing <erwin@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	Date-Piece
+PORTVERSION=	0.0.3
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:EWILHELM
+PKGNAMEPREFIX=	p5-
+DISTNAME=	Date-Piece-v0.0.3
+
+MAINTAINER=	erwin@FreeBSD.org
+COMMENT=	Perl5 module containing date manipulation routines
+
+BUILD_DEPENDS=	p5-Date-Simple>=3.03:${PORTSDIR}/devel/p5-Date-Simple
+RUN_DEPENDS=	p5-Date-Simple>=3.03:${PORTSDIR}/devel/p5-Date-Simple
+#TEST_DEPENDS=	p5-Test-Inter>=0:${PORTSDIR}/devel/p5-Test-Inter
+
+PERL_MODBUILD=	YES
+
+MAN1=	day.1
+MAN3=	Date::Piece.3
+
+.include <bsd.port.mk>

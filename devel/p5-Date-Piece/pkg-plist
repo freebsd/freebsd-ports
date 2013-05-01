@@ -1,0 +1,3 @@
+bin/day
+%%SITE_PERL%%/Date/Piece.pm
+@dirrmtry %%SITE_PERL%%/Date

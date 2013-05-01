@@ -1,0 +1,8 @@
+This module allows you to do nominal math on dates. That is, rather
+than worrying about time zones and DST while adding increments of
+24*60**2 seconds to a date&time object, you simply discard the time
+component and do math directly on the date. If you need a time-of-day
+on the calculated date, the at() method returns a Time::Piece object,
+thus allowing you to be specific about the endpoints of a nominal interval.
+
+WWW: http://search.cpan.org/dist/Date-Piece/
