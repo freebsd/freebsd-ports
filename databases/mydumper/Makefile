@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mydumper
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	databases
 MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
