@@ -1,0 +1,5 @@
+Collection of utilities for working with Excel files. Since these utilities may
+require either or both of the xlrd and xlwt packages, they are collected
+together here, separate from either package.
+
+WWW: http://www.python-excel.org/

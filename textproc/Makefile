@@ -1191,6 +1191,7 @@
     SUBDIR += py-wordnet
     SUBDIR += py-wtforms
     SUBDIR += py-xlrd
+    SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
     SUBDIR += py-xml
