@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Par
-# Date created:         6 Aug 1997
-# Whom:                 mark@grondar.za
-#
+# Created by: Mark R V Murray <mark@grondar.za>
 # $FreeBSD$
-#
 
 PORTNAME=	par
 PORTVERSION=	1.52
@@ -15,7 +11,9 @@ DISTNAME=	Par${PORTVERSION:S|.||}
 MAINTAINER=	mark@grondar.za
 COMMENT=	Paragraph reformatter for email
 
-ALL_TARGET=
+CONFLICTS=	quake-par-[0-9]*
+
+ALL_TARGET=	#
 MAN1=		par.1
 PLIST_FILES=	bin/par
 
@@ -24,6 +22,6 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/par ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/par.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/par.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
