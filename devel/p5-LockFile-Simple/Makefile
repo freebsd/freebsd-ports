@@ -1,12 +1,8 @@
-# New ports collection makefile for:	LockFile-Simple
-# Date created:				Wed Jan  3 14:54:51 2001
-# Whom:					will
-#
+# Created by: Will Andrews <will@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LockFile-Simple
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
