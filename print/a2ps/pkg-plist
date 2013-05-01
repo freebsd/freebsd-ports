@@ -280,6 +280,8 @@ lib/liba2ps.a
 %%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.elc
 %%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.el
 %%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.elc
+%%WITHEMACS%%lib/xemacs/site-lisp/a2ps-print.el
+%%WITHEMACS%%lib/xemacs/site-lisp/a2ps.el
 @dirrm %%DATADIR%%/ogonkify/fonts
 @dirrm %%DATADIR%%/ogonkify/afm
 @dirrm %%DATADIR%%/ogonkify
