@@ -21,7 +21,7 @@ LATEST_LINK=	mysql55-client
 CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[0-46-9].* mariadb-client-5.* percona-client-5.*
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
-USE_GCC=	any
+
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 MAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_find_rows.1 \
