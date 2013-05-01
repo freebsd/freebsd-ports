@@ -28,7 +28,7 @@ MAN1=		bzr.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSFTP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}>=0:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko
 .endif
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}
