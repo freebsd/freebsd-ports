@@ -22,9 +22,10 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	TEAMARENA
 OPTIONS_DEFAULT=	TEAMARENA
+
 TEAMARENA_DESC=		Install Quake III Team Arena data files
 
-.include "Makefile.include"
+.include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEAMARENA}
@@ -41,11 +42,11 @@ do-extract:
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/baseq3 ${DATADIR}
+	${CP} -a ${WRKSRC}/baseq3 ${DATADIR}
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MTEAMARENA}
-	${CP} -R ${WRKSRC}/missionpack ${DATADIR}
+	${CP} -a ${WRKSRC}/missionpack ${DATADIR}
 .endif
 
 post-install:
