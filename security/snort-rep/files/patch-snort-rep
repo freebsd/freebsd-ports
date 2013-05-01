@@ -1,0 +1,11 @@
+--- snort-rep.orig	2013-05-01 10:38:51.000000000 +0200
++++ snort-rep	2013-05-01 10:39:27.000000000 +0200
+@@ -1081,7 +1081,7 @@
+     my $year = defined $3 ? $3 : (localtime(time))[5]+1900;
+ 
+     # convert to unix time
+-    $a{timestamp} = timelocal($6, $5, $4, $2, $1 - 1, $year);
++    $a{timestamp} = timelocal(int($6), $5, $4, $2, $1 - 1, $year);
+     $start_time = $a{timestamp}
+       if not defined $start_time or $a{timestamp} < $start_time;
+     $end_time = $a{timestamp} if not defined $end_time or $a{timestamp} > $end_time;
