@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.11
+DISTVERSION=	1.0.12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/ \
@@ -106,17 +106,30 @@ PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
 IGNORE=		not supported on 7.x or early 8.0
 .endif
 
+PERIODIC_DAILY=		400.status-pkg 411.pkg-backup 490.status-pkg-changes
+PERIODIC_SECURITY=	410.pkg-audit 460.pkg-checksum
+PERIDIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
+
 post-install:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/410.pkg-audit
+.for periodic in ${PERIDIC_ALL}
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/${periodic}
+.endfor
 	@${MKDIR} ${PREFIX}/etc/periodic/security
 	@${MKDIR} ${PREFIX}/etc/periodic/daily
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/410.pkg-audit ${PREFIX}/etc/periodic/security
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/411.pkg-backup ${PREFIX}/etc/periodic/daily
+.for periodic in ${PERIODIC_DAILY}
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/${periodic} ${PREFIX}/etc/periodic/daily
+.endfor
+.for periodic in ${PERIODIC_SECURITY}
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/${periodic} ${PREFIX}/etc/periodic/security
+.endfor
+	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/libpkg/pkg.pc ${PREFIX}/libdata/pkgconfig/
 	@${MKDIR} ${PREFIX}/share/zsh/site-functions
 	@${INSTALL_DATA} ${WRKSRC}/scripts/zsh/_pkg ${PREFIX}/share/zsh/site-functions/
+	@${MKDIR} ${PREFIX}/etc/bash_completion.d
+	@${INSTALL_DATA} ${WRKSRC}/scripts/bash/_pkg.bash ${PREFIX}/etc/bash_completion.d/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
