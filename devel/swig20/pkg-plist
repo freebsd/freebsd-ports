@@ -88,6 +88,21 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/res/layout/main.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/res/values/strings.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/src/org/swig/classexample/SwigClass.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/AndroidManifest.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/ant.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni/Android.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni/Application.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni/example.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni/example.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni/example.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/local.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/proguard.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/project.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/res/layout/main.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/res/values/strings.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src/org/swig/extendexample/SwigExtend.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/AndroidManifest.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/ant.properties
@@ -1497,6 +1512,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_lib_arrays.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_prepost.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_typemaps.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/curiously_recurring_template_pattern.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/d/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/d/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/d/README
@@ -1620,6 +1636,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_nested.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_nspace.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_overload.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_overload2.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_primitives.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_profile.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_protected.i
@@ -1671,6 +1688,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_inherit.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_inline_namespace.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_macro_locator.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_missing_rparenthesis.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_missing_rtemplate.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_namespace_alias.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/cpp_namespace_aliasnot.i
@@ -1740,6 +1758,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_constructor_destructor.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_default.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_placement.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_special_variables.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_template.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_template_ns.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_typedef_class.i
@@ -1985,6 +2004,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/char_binary_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/char_strings_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/cpp_typedef_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/curiously_recurring_template_pattern_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/default_args_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/default_constructor_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_abstract_runme.java
@@ -2012,6 +2032,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_thorough_typeunsafe_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extend_constructor_destructor_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extend_default_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extend_special_variables_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extend_typedef_class_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extern_declaration_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/friends_runme.java
@@ -2696,6 +2717,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/grouping_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/hugemod.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/iadd_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/implicittest_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/import_nomodule_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/import_stl_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/imports_runme.py
@@ -3239,6 +3261,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typedef_struct.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_arrays.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_delete.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_directorout.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_global_scope.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_manyargs.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_namespace.i
@@ -3926,7 +3949,7 @@ bin/swig2.0
 @dirrm %%DATADIR%%/%%PORTVERSION%%/cffi
 @dirrm %%DATADIR%%/%%PORTVERSION%%/allegrocl
 @dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/uffi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2
@@ -4224,6 +4247,15 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/libs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/jni
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src/org/swig/extendexample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src/org/swig
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src/org
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/res/values
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/res/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/res
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/jni
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/src/org/swig/classexample
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/src/org/swig
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/class/src/org
@@ -4235,9 +4267,9 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/class
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/libs
