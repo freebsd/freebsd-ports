@@ -3,5 +3,5 @@ bin/dump2rom
 bin/mkcard
 bin/x48
 %%DATADIR%%/gxrom-r
-%%DATADIR%%/sxrom-e
+%%DATADIR%%/sxrom-j
 @dirrm %%DATADIR%%
