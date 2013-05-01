@@ -1,12 +1,8 @@
-# New ports collection makefile for:	cython
-# Date created:		2008-11-09
-# Whom:			Wen Heping <wenhping@gmail.com>
-#
+# Created by: Wen Heping <wenhping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cython
-PORTVERSION=	0.17.1
+PORTVERSION=	0.19
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
