@@ -399,7 +399,7 @@ CONFIGURE_ARGS+=--disable-ncurses
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
