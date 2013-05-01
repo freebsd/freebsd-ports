@@ -5,6 +5,9 @@ bin/runxlrd.py
 %%PYTHON_SITELIBDIR%%/xlrd/biffh.py
 %%PYTHON_SITELIBDIR%%/xlrd/biffh.pyc
 %%PYTHON_SITELIBDIR%%/xlrd/biffh.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/book.py
+%%PYTHON_SITELIBDIR%%/xlrd/book.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/book.pyo
 %%PYTHON_SITELIBDIR%%/xlrd/compdoc.py
 %%PYTHON_SITELIBDIR%%/xlrd/compdoc.pyc
 %%PYTHON_SITELIBDIR%%/xlrd/compdoc.pyo
@@ -20,6 +23,9 @@ bin/runxlrd.py
 %%PYTHON_SITELIBDIR%%/xlrd/formula.py
 %%PYTHON_SITELIBDIR%%/xlrd/formula.pyc
 %%PYTHON_SITELIBDIR%%/xlrd/formula.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/info.py
+%%PYTHON_SITELIBDIR%%/xlrd/info.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/info.pyo
 %%PYTHON_SITELIBDIR%%/xlrd/licences.py
 %%PYTHON_SITELIBDIR%%/xlrd/licences.pyc
 %%PYTHON_SITELIBDIR%%/xlrd/licences.pyo
@@ -32,6 +38,9 @@ bin/runxlrd.py
 %%PYTHON_SITELIBDIR%%/xlrd/xldate.py
 %%PYTHON_SITELIBDIR%%/xlrd/xldate.pyc
 %%PYTHON_SITELIBDIR%%/xlrd/xldate.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/xlsx.py
+%%PYTHON_SITELIBDIR%%/xlrd/xlsx.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/xlsx.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/xlrd/examples
 @dirrm %%PYTHON_SITELIBDIR%%/xlrd/doc
 @dirrm %%PYTHON_SITELIBDIR%%/xlrd
