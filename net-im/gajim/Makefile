@@ -2,6 +2,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	0.15.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.15/
 
@@ -13,8 +14,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
-
-CONFLICTS=	gajim-devel-[0-9]*
 
 FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
