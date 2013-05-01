@@ -4240,3 +4240,4 @@ devel/p5-Oogly||2013-04-30|Has expired: No more public distfiles
 mail/listmanager||2013-04-30|Has expired: No more upstream, no more public distfiles
 net-mgmt/nettop||2013-04-30|Has expired: Dead upstream
 devel/ruby-term-ansicolor|devel/rubygem-term-ansicolor|2013-04-30|Moved to Rubygems
+www/mediawiki|www/mediawiki119|2013-05-01|Rename mediawiki to mediawiki119
