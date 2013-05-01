@@ -2,6 +2,7 @@ bug5 is a Big5/GBK <-> UTF-8 translating layer in terminal.
 It's modified from script(1).
 
 Features that screen doesn't have:
+- Autoset locale
 - UAO
 - Unpad padded ambiguous-width characters
 - ANSI-Broken Big5 (eg. Double Color) fixing
