@@ -433,8 +433,8 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mawstats
-    SUBDIR += mediawiki
     SUBDIR += mediawiki118
+    SUBDIR += mediawiki119
     SUBDIR += mediawiki120
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
