@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/xlwt-0.7.2-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/xlwt/BIFFRecords.py
 %%PYTHON_SITELIBDIR%%/xlwt/BIFFRecords.pyc
 %%PYTHON_SITELIBDIR%%/xlwt/BIFFRecords.pyo
@@ -102,9 +101,6 @@
 %%PYTHON_SITELIBDIR%%/xlwt/examples/num_formats.py
 %%PYTHON_SITELIBDIR%%/xlwt/examples/num_formats.pyc
 %%PYTHON_SITELIBDIR%%/xlwt/examples/num_formats.pyo
-%%PYTHON_SITELIBDIR%%/xlwt/examples/numbers.py
-%%PYTHON_SITELIBDIR%%/xlwt/examples/numbers.pyc
-%%PYTHON_SITELIBDIR%%/xlwt/examples/numbers.pyo
 %%PYTHON_SITELIBDIR%%/xlwt/examples/outline.py
 %%PYTHON_SITELIBDIR%%/xlwt/examples/outline.pyc
 %%PYTHON_SITELIBDIR%%/xlwt/examples/outline.pyo

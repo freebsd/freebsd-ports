@@ -1,11 +1,8 @@
-# New ports collection makefile for: xlwt
-# Date created:		2009-08-19
-# Whom:			Dikshie
-#
+# Created by: Dikshie
 # $FreeBSD$
 
 PORTNAME=	xlwt
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
