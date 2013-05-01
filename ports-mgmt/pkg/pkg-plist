@@ -6,10 +6,15 @@ include/pkg.h
 lib/libpkg.so.0
 lib/libpkg.so
 lib/libpkg.a
+etc/periodic/daily/400.status-pkg
 etc/periodic/daily/411.pkg-backup
+etc/periodic/daily/490.status-pkg-changes
 etc/periodic/security/410.pkg-audit
+etc/periodic/security/460.pkg-checksum
 libdata/pkgconfig/pkg.pc
 share/zsh/site-functions/_pkg
+etc/bash_completion.d/_pkg.bash
+@dirrmtry etc/bash_completion.d
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic/security
 @dirrmtry etc/periodic
