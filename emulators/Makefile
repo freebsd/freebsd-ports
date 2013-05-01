@@ -62,6 +62,7 @@
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += its
+    SUBDIR += javatari
     SUBDIR += joytran
     SUBDIR += jzintv
     SUBDIR += kcemu
