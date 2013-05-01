@@ -151,6 +151,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestVisitor.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestVisitor.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestVisitor.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.pyo
@@ -268,6 +271,7 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/bytes.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/cobject.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/complex.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/datetime.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/dict.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/exc.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/float.pxd
@@ -425,6 +429,8 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Utility/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Utility/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Utility/arrayarray.h
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Overflow.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Profile.c
 %%PYTHON_SITELIBDIR%%/Cython/Utils.py
 %%PYTHON_SITELIBDIR%%/Cython/Utils.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Utils.pyo
