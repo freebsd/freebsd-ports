@@ -14,8 +14,6 @@ LICENSE=	LGPL21
 
 USE_APACHE=	22
 
-.include <bsd.port.pre.mk>
-
 OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE
 OPTIONS_DEFAULT=NLS MP3 LIBARCHIVE FILECACHE
 
@@ -39,7 +37,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 PORTDOCS=	README
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES==		gettext
 CFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--enable-nls
@@ -117,4 +115,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

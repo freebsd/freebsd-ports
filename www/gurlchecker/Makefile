@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gURLChecker
-# Date created:			06 Jun 2003
-# Whom:				Koop Mast <einekoai@chello.nl>
-#
+# Created by: Koop Mast <einekoai@chello.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
@@ -13,52 +9,56 @@ MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A Gnome program to check a page/website for broken links
+COMMENT=	Gnome program to check a page/website for broken links
 
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 
-OPTIONS=	CROCO "Use CROCO library for CSS2 validation" off \
-		TIDY "Use TIDY library for HTML w3c validation" off \
-		CLAMAV "Use CLAMAV library for virii scan" on \
-		GNUTLS "Use GNU TLS library for HTTPS check" on
+OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS
+CROCO_DESC=Library for CSS2 validation
+TIDY_DESC=Library for HTML w3c validation
+CLAMAV_DESC=Library for virii scan
+GNUTLS_DESC=Library for HTTPS check
 
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
+OPTIONS_DEFAULT=	CLAMAV GNUTLS
+
+USE_GNOME=	gnomeprefix intlhack libgnomeui
+USES=	pathfix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_CROCO)
+.if ${PORT_OPTIONS:MCROCO}
 LIB_DEPENDS+=	croco-0.6.3:${PORTSDIR}/textproc/libcroco
 .else
 CONFIGURE_ARGS+=	--disable-croco
 .endif
 
-.if defined(WITH_TIDY)
+.if ${PORT_OPTIONS:MTIDY}
 LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 .else
 CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
-.if defined(WITH_CLAMAV)
+.if ${PORT_OPTIONS:MCLAMAV}
 LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif
 
-.if defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=	--disable-gnutls
-.else
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
 post-patch:
@@ -68,9 +68,9 @@ post-patch:
 		'/^SUBDIRS/s|doc ui man|ui|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-lresolv||g' ${WRKSRC}/src/Makefile.in
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|po ui|ui|g' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
