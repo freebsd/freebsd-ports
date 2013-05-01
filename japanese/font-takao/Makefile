@@ -1,14 +1,11 @@
-# New ports collection makefile for:	font-takao
-# Date created:		19 February 2010
-# Whom:			hrs
 # $FreeBSD$
-#
 
-PORTNAME=	font-takao
+PORTNAME=	takao
 PORTVERSION=	003.02.01
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://launchpadlibrarian.net/40218948/
-DISTNAME=	takao-fonts-ttf-${PORTVERSION}
+PKGNAMEPREFIX=	ja-font-
+DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	An improved IPA Japanese fonts
@@ -22,6 +19,7 @@ SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
 		README \
 		README.ja \
@@ -29,6 +27,10 @@ PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	cd ${WRKSRC} && for F in *.ttf; do ${MV} $${F} $${F%.ttf}.otf; done
@@ -44,14 +46,14 @@ do-install:
 	${LN} -s -f \
 		${DATADIR}/Takao*.otf \
 		${PREFIX}/${X_FONTSDIR}/OTF/
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-takao.conf \
-		${FILESDIR}/62-fonts-takao.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
+		${FILESDIR}/62-fonts-${PORTNAME}.conf \
 		${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-takao.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-takao.conf
-	${LN} -s -f ../conf.avail/62-fonts-takao.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-takao.conf
-.if !defined(NOPORTDOCS)
+	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
