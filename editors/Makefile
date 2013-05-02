@@ -232,7 +232,6 @@
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += nxml
-    SUBDIR += nxml-emacs21
     SUBDIR += omegaT
     SUBDIR += openoffice-3
     SUBDIR += openoffice-devel

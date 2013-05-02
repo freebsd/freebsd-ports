@@ -4243,3 +4243,4 @@ devel/ruby-term-ansicolor|devel/rubygem-term-ansicolor|2013-04-30|Moved to Rubyg
 www/mediawiki|www/mediawiki119|2013-05-01|Rename mediawiki to mediawiki119
 www/squid31||2013-05-01|Has expired: No longer actively maintained upstream
 converters/ruby-bsdconv|converters/rubygem-bsdconv|2013-05-01|Moved to Rubygems
+editors/nxml-emacs21||2013-05-02|Removed: obsolete
