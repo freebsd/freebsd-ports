@@ -1,10 +1,19 @@
 @unexec if cmp -s %D/etc/iked.conf %D/etc/iked.conf.sample; then rm -f %D/etc/iked.conf; fi
 etc/iked.conf.sample
 @exec [ -f %D/etc/iked.conf ] || cp %D/etc/iked.conf.sample %D/etc/iked.conf
+bin/ikec
 sbin/iked
-%%QTGUI%%bin/ikea
-%%QTGUI%%bin/ikec
-lib/libike.so
-lib/libike.so.2.1.7
-lib/libpfk.so
-lib/libpfk.so.2.1.7
+%%QTGUI%%bin/qikea
+%%QTGUI%%bin/qikec
+lib/libss_idb.so
+lib/libss_idb.so.2.2.0
+lib/libss_ike.so
+lib/libss_ike.so.2.2.0
+lib/libss_ip.so
+lib/libss_ip.so.2.2.0
+lib/libss_ith.so
+lib/libss_ith.so.2.2.0
+lib/libss_log.so
+lib/libss_log.so.2.2.0
+lib/libss_pfk.so
+lib/libss_pfk.so.2.2.0
