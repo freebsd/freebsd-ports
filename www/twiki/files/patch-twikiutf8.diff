@@ -1,14 +1,13 @@
-# From: http://dot-and-thing.blogspot.com/2008/03/twiki-utf8.html
-diff -urE --exclude=data --exclude=pub twiki-4.2/lib/TWiki.pm twiki/lib/TWiki.pm
---- lib/TWiki.pm	2008-01-22 06:18:55.000000000 +0300
-+++ lib/TWiki.pm	2008-03-11 18:28:34.000000000 +0300
-@@ -2405,7 +2405,8 @@
+--- lib/TWiki.pm.bak	2013-03-25 12:03:24.000000000 +0000
++++ lib/TWiki.pm	2013-03-25 12:04:08.000000000 +0000
+@@ -2722,8 +2722,8 @@
  sub urlDecode {
      my $text = shift;
  
 -    $text =~ s/%([\da-f]{2})/chr(hex($1))/gei;
+-
 +    $text =~ s/%u([\da-f]+)/chr(hex($1))/eig;
-+	$text =~ s/%([\da-f]{2})/chr(hex($1))/gei;
- 
++       $text =~ s/%([\da-f]{2})/chr(hex($1))/gei;
      return $text;
  }
+ 
