@@ -1,12 +1,5 @@
-# New ports collection makefile for:	vodmr
-# Date created:				12 January 2003.
-# Whom:					James Raftery <james@now.ie>
-#
+# Created by: James Raftery <james@now.ie>
 # $FreeBSD$
-#
-# Use  make -DWITHOUT_TCPSERVER ...  to install without a dependenacy
-# on djb's tcpserver.
-#
 
 PORTNAME=	vodmr
 PORTVERSION=	0.13
@@ -16,14 +9,23 @@ MASTER_SITES=	http://romana.now.ie/software/ \
 		http://www.lecter.phlegethon.org/vodmr/
 
 MAINTAINER=	james@now.ie
-COMMENT=	An ODMR/ATRN server for vpopmail+qmail
+COMMENT=	ODMR/ATRN server for vpopmail+qmail
+
+DEPRECATED=	depends on expired mail/p5-vpopmail
+EXPIRATION_DATE=	2013-06-01
+
+OPTIONS_DEFINE=	TCPSERVER
+OPTIONS_DEFAULT=	TCPSERVER
+TCPSERVER_DESC= Enable TCP server via sysutils/ucspi-tcp
+
+.include <bsd.port.options.mk>
 
 RUN_DEPENDS=	p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File \
 		p5-vpopmail>=0:${PORTSDIR}/mail/p5-vpopmail \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
-.if !defined(WITHOUT_TCPSERVER)
+.if ${PORT_OPTIONS:MTCPSERVER}
 RUN_DEPENDS+=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 .endif
 
@@ -43,7 +45,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/odmrd.sh-sample ${PREFIX}/etc/rc.d
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
