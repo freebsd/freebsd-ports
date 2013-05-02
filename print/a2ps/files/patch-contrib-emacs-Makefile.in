@@ -1,6 +1,6 @@
 Index: contrib/emacs/Makefile.in
---- Makefile.in.orig	2011-09-27 15:17:26.000000000 +0900
-+++ Makefile.in	2011-09-27 15:18:10.000000000 +0900
+--- contrib/emacs/Makefile.in.orig	2011-09-27 15:17:26.000000000 +0900
++++ contrib/emacs/Makefile.in	2011-09-27 15:18:10.000000000 +0900
 @@ -159,8 +159,9 @@
  
  install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
