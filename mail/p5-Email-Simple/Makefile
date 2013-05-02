@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Email-Simple
-# Date created:				August 31 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Simple
-PORTVERSION=	2.102
+PORTVERSION=	2.201
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
