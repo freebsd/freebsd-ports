@@ -1,47 +1,42 @@
-# New ports collection makefile for:	navi2ch for Emacsen
-# Date created:		13 May 2001
-# Whom:			FUJISHIMA Satsuki <sf@FreeBSD.org>
-#
+# Created by: FUJISHIMA Satsuki <sf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	navi2ch
 PORTVERSION=	1.8.4
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
+LICENSE=	GPLv2
+
 USE_EMACS=	yes
-INFO=		navi2ch
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS="${EMACS_CMD}"
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/${PORTNAME}
-PORTDOCS=	${PORTDOC_FILES} contrib
 PLIST_SUB=	LISPDIR=${LISPDIR}
+PORTDOCS=	${PORTDOC_FILES} contrib
+
+INFO=		navi2ch
 
 PORTDOC_FILES=	ChangeLog README TODO
 PORTDOC_LISPS=	gikope.el navi2ch-logo.el navi2ch-migemo.el
-
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_PORT_NAME} == xemacs21-mule
-LISPDIR=	${EMACS_SITE_LISPDIR}
-PLIST_SUB+=	FSF="@comment "
-.else
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
-PLIST_SUB+=	FSF=""
-.if !defined(WITHOUT_X11)
+
+OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFAULT=DOCS X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 .endif
-.endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && \
@@ -51,4 +46,4 @@ post-install:
 		${INSTALL_DATA} ${PORTDOC_LISPS} ${DOCSDIR}/contrib
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -71,4 +71,3 @@
 %%LISPDIR%%/navi2ch/navi2ch.el
 %%LISPDIR%%/navi2ch/navi2ch.elc
 @dirrm %%LISPDIR%%/navi2ch
-%%FSF%%@dirrmtry %%LISPDIR%%
