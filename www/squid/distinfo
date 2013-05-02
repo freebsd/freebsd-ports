@@ -1,2 +1,4 @@
 SHA256 (squid2.7/squid-2.7.STABLE9.tar.bz2) = c0bdfcb5bb68debc1c9441308178bf148c67979b824c892a4710dc80a5b05d5e
 SIZE (squid2.7/squid-2.7.STABLE9.tar.bz2) = 1351366
+SHA256 (squid2.7/SQUID-2012_1.patch) = a456ed7a45fbecd94a4c68c0e72905135c4424c41c01ab858dc8c5760ee03a6f
+SIZE (squid2.7/SQUID-2012_1.patch) = 4804

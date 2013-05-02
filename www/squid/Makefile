@@ -77,7 +77,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -108,8 +108,8 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=	# empty
+#PATCH_DIST_STRIP=	-p1
+PATCHFILES=	SQUID-2012_1.patch
 
 MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
