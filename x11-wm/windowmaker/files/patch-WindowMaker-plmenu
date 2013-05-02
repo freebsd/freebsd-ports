@@ -1,0 +1,11 @@
+--- WindowMaker/plmenu.orig	2013-05-03 03:12:25.000000000 +0900
++++ WindowMaker/plmenu	2013-05-03 03:12:17.000000000 +0900
+@@ -93,7 +93,7 @@
+    ),
+    ("Save Theme", SHEXEC, "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""),
+    ("Save IconSet", SHEXEC, "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""),
+-   ("Preferences Utility", EXEC, "/usr/local/GNUstep/Applications/WPrefs.app/WPrefs")
++   ("Preferences Utility", EXEC, PREFIX "/GNUstep/Applications/WPrefs.app/WPrefs")
+    ),
+    ("Session",
+     ("Save Session", SAVE_SESSION),

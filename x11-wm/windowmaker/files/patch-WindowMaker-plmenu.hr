@@ -1,0 +1,41 @@
+--- WindowMaker/plmenu.hr.orig	2013-05-03 03:12:25.000000000 +0900
++++ WindowMaker/plmenu.hr	2013-05-03 03:12:17.000000000 +0900
+@@ -31,7 +31,7 @@
+     (
+       Acrobat,
+       EXEC,
+-      "/usr/local/Acrobat3/bin/acroread %a(Enter PDF to view)"
++      PREFIX "/Acrobat3/bin/acroread %a(Enter PDF to view)"
+     ),
+     (TkDesk, EXEC, tkdesk)
+   ),
+@@ -88,17 +88,17 @@
+     (
+       Teme,
+       OPEN_MENU,
+-      "-noext /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"
++      "-noext "PREFIX "/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"
+     ),
+     (
+       Stilovi,
+       OPEN_MENU,
+-      "-noext /usr/local/share/WindowMaker/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"
++      "-noext "PREFIX "/share/WindowMaker/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"
+     ),
+     (
+       "Setovi ikona",
+       OPEN_MENU,
+-      "-noext /usr/local/share/WindowMaker/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"
++      "-noext "PREFIX "/share/WindowMaker/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"
+     ),
+     (
+       Pozadina,
+@@ -191,7 +191,7 @@
+       (
+         Slike,
+         OPEN_MENU,
+-        "-noext /usr/local/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t"
++        "-noext "PREFIX "/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t"
+       )
+     ),
+     (

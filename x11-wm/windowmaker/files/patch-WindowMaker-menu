@@ -1,0 +1,11 @@
+--- WindowMaker/menu.orig	2013-05-03 03:12:25.000000000 +0900
++++ WindowMaker/menu	2013-05-03 03:12:17.000000000 +0900
+@@ -208,7 +208,7 @@
+ 		"Background" END
+ 		"Save Theme" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name,Enter file name:)"
+ 		"Save IconSet" SHEXEC geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/"%a(IconSet name,Enter file name:)"
+-		"Preferences Utility" EXEC /usr/local/GNUstep/Applications/WPrefs.app/WPrefs
++		"Preferences Utility" EXEC PREFIX/GNUstep/Applications/WPrefs.app/WPrefs
+ 	"Appearance" END
+ 
+ 	"Session" MENU

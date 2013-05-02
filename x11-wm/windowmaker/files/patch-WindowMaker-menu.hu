@@ -1,0 +1,11 @@
+--- WindowMaker/menu.hu.orig	2013-05-03 03:12:26.000000000 +0900
++++ WindowMaker/menu.hu	2013-05-03 03:12:17.000000000 +0900
+@@ -133,7 +133,7 @@
+ 		"LyX" EXEC lyx
+ 		"Netscape" EXEC netscape 
+   		"Ghostview" EXEC ghostview %a(GhostView,Kérem a fájl nevét)
+-		"Acrobat" EXEC /usr/local/Acrobat3/bin/acroread %a(Acrobat,Kérem a PDF fájl nevét)
++		"Acrobat" EXEC PREFIX/Acrobat3/bin/acroread %a(Acrobat,Kérem a PDF fájl nevét)
+   		"TkDesk" EXEC tkdesk
+ 	"Alkalmazások" END
+ 	"Szerkesztők" MENU

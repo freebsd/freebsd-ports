@@ -1,0 +1,11 @@
+--- WindowMaker/menu.de.orig	2013-05-03 03:12:26.000000000 +0900
++++ WindowMaker/menu.de	2013-05-03 03:12:17.000000000 +0900
+@@ -64,7 +64,7 @@
+ 		"Netscape" EXEC netscape
+                	"Ghostview" EXEC ghostview %a(Ghostview)
+                 "XDvi" EXEC xdvi %a(XDvi)
+-               	"Acrobat" EXEC /usr/local/Acrobat3/bin/acroread %a(Acrobat)
++               	"Acrobat" EXEC PREFIX/Acrobat3/bin/acroread %a(Acrobat)
+   		"TkDesk" EXEC tkdesk
+ 	"Anwendungen" END
+ 	"Editoren" MENU

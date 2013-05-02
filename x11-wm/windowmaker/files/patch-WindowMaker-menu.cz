@@ -1,0 +1,11 @@
+--- WindowMaker/menu.cz.orig	2013-05-03 03:12:26.000000000 +0900
++++ WindowMaker/menu.cz	2013-05-03 03:12:17.000000000 +0900
+@@ -84,7 +84,7 @@
+ //		"LyX" EXEC lyx
+ 		"Netscape" EXEC netscape
+   		"Ghostview" EXEC ghostview
+-		"Acrobat" EXEC /usr/local/Acrobat3/bin/acroread
++		"Acrobat" EXEC PREFIX/Acrobat3/bin/acroread
+ 		"OpenDOS" EXEC runxdos
+ //  		"TkDesk" EXEC tkdesk
+ 	"Aplikace" END

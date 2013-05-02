@@ -1,0 +1,20 @@
+--- WindowMaker/plmenu.ja.orig	2013-05-03 03:12:25.000000000 +0900
++++ WindowMaker/plmenu.ja	2013-05-03 03:12:17.000000000 +0900
+@@ -23,7 +23,7 @@
+   ("LyX", EXEC, "lyx"),
+   ("Netscape", EXEC, "netscape"),
+   ("Ghostview", EXEC, "ghostview %a(Enter file to view)"),
+-  ("Acrobat", EXEC, "/usr/local/Acrobat3/bin/acroread %a(Enter PDF to view)"),
++  ("Acrobat", EXEC, PREFIX "/Acrobat3/bin/acroread %a(Enter PDF to view)"),
+   ("TkDesk", EXEC, "tkdesk")
+   ),
+  ("エディタ",
+@@ -94,7 +94,7 @@
+    ),   
+   ("設定をテーマとしてセーブ", SHEXEC, "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""),
+   ("現在のアイコンセットをセーブ", SHEXEC, "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""),
+-  ("設定ユーティリティ", EXEC, "/usr/local/GNUstep/Applications/WPrefs.app/WPrefs")
++  ("設定ユーティリティ", EXEC, PREFIX "/GNUstep/Applications/WPrefs.app/WPrefs")
+   ), 
+  ("終了",
+   ("再起動", RESTART),
