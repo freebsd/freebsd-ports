@@ -15,7 +15,6 @@ bin/wdiff
 %%NLS%%share/locale/en@quot/LC_MESSAGES/wdiff.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wdiff.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wdiff-gnulib.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/wdiff.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wdiff-gnulib.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wdiff.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wdiff-gnulib.mo
