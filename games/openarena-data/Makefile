@@ -1,17 +1,13 @@
-# New ports collection makefile for:	openarena-data
-# Date created:				15 June 2010
-# Whom:					Dominic Fandrey
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	0.8.8
 CATEGORIES=	games
 MASTER_SITES=	SF/oarena:data \
-		http://openarena.ws/request.php?4\\\#/:data \
+		http://openarena.ws/request.php?4%23/:data \
 		SF/oarena:patch \
-		http://openarena.ws/request.php?5\\\#/:patch
+		http://openarena.ws/request.php?5%23/:patch
 DISTFILES=	${OA_DATA}:data
 EXTRACT_ONLY=
 
