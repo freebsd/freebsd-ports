@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.2.8
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	\
 	HTTP_FLV \
 	HTTP_GEOIP \
 	HTTP_GZIP_STATIC \
+	HTTP_GUNZIP_FILTER \
 	HTTP_IMAGE_FILTER \
 	HTTP_PERL \
 	HTTP_RANDOM_INDEX \
@@ -44,6 +45,7 @@ OPTIONS_DEFINE=	\
 	MAIL_POP3 \
 	MAIL_SMTP \
 	MAIL_SSL \
+	SPDY \
 	WWW \
 	CACHE_PURGE \
 	CTPP2 \
@@ -58,7 +60,6 @@ OPTIONS_DEFINE=	\
 	HTTP_DAV_EXT \
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
-	HTTP_GUNZIP_FILTER \
 	HTTP_MOGILEFS \
 	HTTP_NOTICE \
 	HTTP_PUSH \
@@ -73,7 +74,6 @@ OPTIONS_DEFINE=	\
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
-	CHUNKIN \
 	DRIZZLE \
 	ENCRYPTSESSION \
 	FORMINPUT \
@@ -115,6 +115,7 @@ HTTP_DAV_DESC=			Enable http_webdav module
 HTTP_FLV_DESC=			Enable http_flv module
 HTTP_GEOIP_DESC=		Enable http_geoip module
 HTTP_GZIP_STATIC_DESC=		Enable http_gzip_static module
+HTTP_GUNZIP_FILTER_DESC=	Enable http_gunzip_filter module
 HTTP_IMAGE_FILTER_DESC=		Enable http_image_filter module
 HTTP_MP4_DESC=			Enable http_mp4 module
 HTTP_PERL_DESC=			Enable http_perl module
@@ -131,6 +132,7 @@ MAIL_IMAP_DESC=			Enable IMAP4 proxy module
 MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
+SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CTPP2_DESC=			3rd party CT++ module
@@ -145,7 +147,6 @@ HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
-HTTP_GUNZIP_FILTER_DESC=	3rd party http_gunzip_filter module
 HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
@@ -161,7 +162,6 @@ HTTP_UPSTREAM_HASH_DESC=	3rd party upstream hash module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
-CHUNKIN_DESC=			3rd party chunkin module
 DRIZZLE_DESC=			3rd party drizzlie module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
@@ -385,13 +385,6 @@ DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_GUNZIP_FILTER}
-NGINX_GUNZIP_FILTER_VERSION=	0.4
-MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
-DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}.tar.gz:gunzipfilter
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}
-.endif
-
 .if ${PORT_OPTIONS:MHTTP_FLV}
 CONFIGURE_ARGS+=--with-http_flv_module
 .endif
@@ -403,6 +396,10 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 
 .if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
 CONFIGURE_ARGS+=--with-http_gzip_static_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_GUNZIP_FILTER}
+CONFIGURE_ARGS+=--with-http_gunzip_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
@@ -484,7 +481,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSIO
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
-USE_HTTP_REWRITE=	yes
 NGINX_HTTP_SUBS_FILTER_VERSION=	0.6.2
 GIT_HTTP_SUBS_FILTER_VERSION=	0-g27a01b3
 FETCH_ARGS=	-pRr
@@ -510,6 +506,7 @@ NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
@@ -557,17 +554,8 @@ DISTFILES+=	mod_zip-${NGINX_ZIP_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
-.if ${PORT_OPTIONS:MCHUNKIN}
-NGINX_CHUNKIN_VERSION=	0.23
-GIT_CHUNKIN_VERSION=	0-g81c04f6
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_VERSION}/:chunkin
-DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_VERSION}-${GIT_CHUNKIN_VERSION}.tar.gz:chunkin
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_VERSION:S/^0-g//}
-.endif
-
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
+LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.4
 GIT_DRIZZLE_VERSION=	0-g59e12ad
 FETCH_ARGS=	-pRr
@@ -793,6 +781,12 @@ DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.ta
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
 .endif
 
+.if ${PORT_OPTIONS:MSPDY}
+USE_OPENSSL_PORT=	yes
+USE_HTTP_SSL=	yes
+CONFIGURE_ARGS+=--with-http_spdy_module
+.endif
+
 .if ${PORT_OPTIONS:MWWW}
 PLIST_SUB+=	WWWDATA=""
 .else
@@ -929,6 +923,16 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
+.endif
+.if ${PORT_OPTIONS:MSPDY}
+.if ${PORT_OPTIONS:MDRIZZLE}
+	@${REINPLACE_CMD} '584d' \
+		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+.endif
+.if ${PORT_OPTIONS:MLUA}
+	@${REINPLACE_CMD} '437d' \
+		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
+.endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
