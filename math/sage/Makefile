@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	5.8
+PORTVERSION=	5.9
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -30,9 +30,10 @@ OPTIONS_DEFINE_amd64=	387
 
 PLIST_FILES=	bin/sage
 USE_FORTRAN=	yes
+USE_GCC=	4.7+
 USE_TK=		yes
 USE_GMAKE=	yes
-USES=		iconv
+USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
