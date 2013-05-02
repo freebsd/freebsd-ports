@@ -40,7 +40,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/fMSX/Unix/Makefile \
 		${WRKSRC}/EMULib/Rules.Unix
-.if ${PORT_OPTIONS:MBPP32) || defined(PACKAGE_BUILDING) || defined(BATCH}
+.if ${PORT_OPTIONS:MBPP32} || defined(PACKAGE_BUILDING) || defined(BATCH)
 	${REINPLACE_CMD} -e 's/BPP16/BPP32/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
 .if ${PORT_OPTIONS:MBPP24}
