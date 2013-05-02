@@ -18,7 +18,7 @@ lib/libtomahawk_infoplugin_spotify.so
 lib/libtomahawk_portfwd.so
 lib/libtomahawklib.so
 libexec/tomahawk_crash_reporter
-share/applications/tomahawk.desktop
+%%DESKTOPDIR%%/tomahawk.desktop
 share/icons/hicolor/128x128-grayscale/apps/tomahawk.png
 share/icons/hicolor/128x128/apps/tomahawk.png
 share/icons/hicolor/16x16/apps/tomahawk.png

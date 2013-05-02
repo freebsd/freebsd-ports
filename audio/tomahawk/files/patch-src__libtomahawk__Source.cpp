@@ -1,5 +1,5 @@
---- ./src/libtomahawk/Source.cpp.orig	2013-02-13 21:31:17.000000000 +0100
-+++ ./src/libtomahawk/Source.cpp	2013-02-13 21:32:00.000000000 +0100
+--- ./src/libtomahawk/Source.cpp.orig	2013-03-24 10:41:13.000000000 +0100
++++ ./src/libtomahawk/Source.cpp	2013-04-29 22:46:47.000000000 +0200
 @@ -148,7 +148,7 @@
      m_avatar = new QPixmap( avatar );
      m_fancyAvatar = 0;
