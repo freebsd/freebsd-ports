@@ -12,7 +12,8 @@ bin/joytran
 %%DATADIR%%/profiles/default
 %%DATADIR%%/profiles/default-one_player
 %%PORTDOCS%%%%DOCSDIR%%/0203121918-diagram.jpg
-%%PORTDOCS%%%%DOCSDIR%%/manual.htm
+%%PORTDOCS%%%%DOCSDIR%%/manual.tex
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
 @dirrmtry %%DATADIR%%/profiles
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
