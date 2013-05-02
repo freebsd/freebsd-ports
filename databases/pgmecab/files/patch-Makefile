@@ -1,0 +1,19 @@
+--- ./Makefile.orig	2006-02-15 00:37:12.000000000 +0900
++++ ./Makefile	2010-06-21 03:04:57.000000000 +0900
+@@ -4,14 +4,14 @@
+ #
+ #-------------------------------------------------------------------------
+ # MECAB_CONFIG_PATH	= /usr/local/mecab/bin/mecab-config
+-MECAB_CONFIG_PATH	= 
++MECAB_CONFIG_PATH	= /usr/local/bin/mecab-config
+ 
+ SRCS		= pgmecab.c
+ 
+ MODULE_big	= pgmecab
+ OBJS		= $(SRCS:.c=.o)
+ DOCS		= README.pgmecab
+-SHLIB_LINK	= `$(MECAB_CONFIG_PATH) --libs`
++SHLIB_LINK	= `$(MECAB_CONFIG_PATH) --libs` -pthread
+ DATA_built	= pgmecab.sql
+ 
+ # add mecab include path
