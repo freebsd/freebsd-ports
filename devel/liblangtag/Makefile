@@ -17,7 +17,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
+CONFIGURE_ARGS=	--disable-introspection
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
