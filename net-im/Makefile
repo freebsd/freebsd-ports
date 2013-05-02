@@ -49,6 +49,7 @@
     SUBDIR += jarl
     SUBDIR += jggtrans
     SUBDIR += jitsi
+    SUBDIR += kde-telepathy
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmess-kde4
