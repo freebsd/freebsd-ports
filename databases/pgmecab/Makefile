@@ -1,19 +1,15 @@
-# New ports collection makefile for:	pgmecab
-# Date created:		2010-04-19
-# Whom:			Tomoyuki Sakurai <tomoyukis@smer.jp.reallyenglish.com>
-#
+# Created by: Tomoyuki Sakurai <tomoyukis@smer.jp.reallyenglish.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pgmecab
 PORTVERSION=	1.1
 CATEGORIES=	databases
-MASTER_SITES=	http://ftp.jaist.ac.jp/pub/Linux/Gentoo/distfiles/
+MASTER_SITES=	http://dist.reallyenglish.com/pgmecab/
 
 MAINTAINER=	tomoyukis@smer.jp.reallyenglish.com
 COMMENT=	Mecab for Postgresql
 
-LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japanese/mecab-ipadic
 
 USE_BZIP2=	Yes
@@ -39,5 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.pgmecab \
 		${PREFIX}/share/doc/postgresql/contrib
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
