@@ -88,7 +88,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/lsdistcc ${PREFIX}/bin
-.if ${PORT_OPTIONS:MGNOME) || ${PORT_OPTIONS:MGTK}
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK}
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
