@@ -542,7 +542,7 @@ do-install:
 .endif
 
 .if !defined(GNUSTEP_WITH_BASE_GCC)
-TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V TARGLIB)
+TARGLIB!=	${MAKE} -C ${PORTSDIR}/${GNUSTEP_GCC_PORT} -V TARGLIB
 .endif
 
 .endif
