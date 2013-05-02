@@ -52,10 +52,10 @@ PORTAUDIO_DESC=	Enable PortAudio (mic) support
 FRAMEDUMPS_DESC=	Encode framedumps in AVI format
 OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DDISABLE_NLS:BOOL=ON
@@ -95,4 +95,4 @@ CMAKE_ARGS+=	-DENCODE_FRAMEDUMPS:BOOL=OFF
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
