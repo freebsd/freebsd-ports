@@ -1,0 +1,13 @@
+--- WindowMaker/Defaults/Makefile.in.orig	2013-01-10 06:43:07.000000000 +0900
++++ WindowMaker/Defaults/Makefile.in	2013-05-03 03:47:45.000000000 +0900
+@@ -458,7 +458,9 @@
+ 
+ WindowMaker: $(srcdir)/WindowMaker.in
+ 	-rm -f WindowMaker
+-	sed -e "s:#pkgdatadir#:$(pkgdatadir):" $(srcdir)/WindowMaker.in \
++	sed -e "s:#pkgdatadir#:$(pkgdatadir):" \
++	    -e "s:#prefix#:$(prefix):" \
++		$(srcdir)/WindowMaker.in \
+ 		> WindowMaker
+ 	chmod 644 WindowMaker
+ 

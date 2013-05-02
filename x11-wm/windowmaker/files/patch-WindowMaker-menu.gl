@@ -1,0 +1,11 @@
+--- WindowMaker/menu.gl.orig	2013-05-03 03:12:26.000000000 +0900
++++ WindowMaker/menu.gl	2013-05-03 03:12:17.000000000 +0900
+@@ -64,7 +64,7 @@
+ 		"LyX" EXEC lyx
+ 		"Netscape" EXEC netscape 
+   		"Ghostview" EXEC ghostview
+-		"Acrobat" EXEC /usr/local/Acrobat3/bin/acroread
++		"Acrobat" EXEC PREFIX/Acrobat3/bin/acroread
+   		"TkDesk" EXEC tkdesk
+ 	"Aplicacións" END
+ 	"Editores" MENU

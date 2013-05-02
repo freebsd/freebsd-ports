@@ -1,0 +1,20 @@
+--- WindowMaker/menu.bg.orig	2013-05-03 03:12:26.000000000 +0900
++++ WindowMaker/menu.bg	2013-05-03 03:12:17.000000000 +0900
+@@ -136,7 +136,7 @@
+ 		"LyX" EXEC lyx
+ 		"Netscape" EXEC netscape
+ 		"Ghostview" EXEC ghostview %a(GhostView,Enter file to view)
+-		"Acrobat" EXEC /usr/local/Acrobat3/bin/acroread %a(Acrobar,Enter PDF to view)
++		"Acrobat" EXEC PREFIX/Acrobat3/bin/acroread %a(Acrobar,Enter PDF to view)
+ 		"TkDesk" EXEC tkdesk
+ 	"Приложения" END
+ 	"Редактори" MENU
+@@ -209,7 +209,7 @@
+ 		"Фон" END
+ 		"Запази темата" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name,Enter file name:)"
+ 		"Запази колекцията иконки" SHEXEC geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/"%a(IconSet name,Enter file name:)"
+-		"Пособие за настройки" EXEC /usr/local/GNUstep/Applications/WPrefs.app/WPrefs
++		"Пособие за настройки" EXEC PREFIX/GNUstep/Applications/WPrefs.app/WPrefs
+ 	"Изглед" END
+ 
+ 	"Изход"	MENU

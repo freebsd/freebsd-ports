@@ -1,0 +1,28 @@
+--- WindowMaker/Defaults/WindowMaker.in.orig	2013-01-10 06:42:39.000000000 +0900
++++ WindowMaker/Defaults/WindowMaker.in	2013-05-03 03:50:44.000000000 +0900
+@@ -12,12 +12,10 @@
+     "~/GNUstep/Library/Icons",
+     "#pkgdatadir#/Icons",
+     "#pkgdatadir#/Pixmaps",
+-    "/usr/include/X11/pixmaps",
+     "~/GNUstep/Library/WindowMaker/Pixmaps",
+     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
+-    "/usr/share/icons",
+-    "/usr/local/share/pixmaps",
+-    "/usr/share/pixmaps"
++    "#prefix#/share/icons",
++    "#prefix#/share/pixmaps"
+   );
+   PixmapPath = (
+     "~/GNUstep/Library/WindowMaker/Pixmaps",
+@@ -25,9 +23,7 @@
+     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
+     "#pkgdatadir#/Pixmaps",
+     "#pkgdatadir#/Backgrounds",
+-    "/usr/include/X11/pixmaps",
+-    "/usr/local/share/pixmaps",
+-    "/usr/share/pixmaps"
++    "#prefix#/share/pixmaps"
+   );
+   WindowTitleBalloons = YES;
+   IconSize = 64;
