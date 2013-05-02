@@ -58,3 +58,6 @@ BJAM_ARGS+=	inlining=full
 post-patch:
 	@${REINPLACE_CMD} -e 's|${PORTVERSION}|${BOOST_SHARED_LIB_VER}|g' \
 		${WRKSRC}/Jamroot
+.if ${BOOST_TOOLSET} == gcc
+	@${ECHO} "using gcc : : ${CXX} ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
+.endif
