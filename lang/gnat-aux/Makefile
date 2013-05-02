@@ -185,7 +185,7 @@ post-extract:
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
 
 	# Create new directories in preparation of applying diff files
-.if ${PORT_OPTIONS:MCXX)
+.if ${PORT_OPTIONS:MCXX}
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/locale/dragonfly
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/os/bsd/dragonfly
 .endif
