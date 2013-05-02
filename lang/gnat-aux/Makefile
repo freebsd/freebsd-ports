@@ -219,22 +219,22 @@ do-build:
 test: build test-ada test-fortran test-objc test-cxx test-c
 
 test-ada:
-.if ${PORT_OPTIONS:MADA) && ${PORT_OPTIONS:MTESTSUITE}
+.if ${PORT_OPTIONS:MADA} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-ada
 .endif
 
 test-fortran:
-.if ${PORT_OPTIONS:MFORT) && ${PORT_OPTIONS:MTESTSUITE}
+.if ${PORT_OPTIONS:MFORT} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-fortran
 .endif
 
 test-objc:
-.if ${PORT_OPTIONS:MOBJC) && ${PORT_OPTIONS:MTESTSUITE}
+.if ${PORT_OPTIONS:MOBJC} && ${PORT_OPTIONS:MTESTSUITE}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-objc
 .endif
 
 test-cxx:
-.if ${PORT_OPTIONS:MCXX) && ${PORT_OPTIONS:MTESTSUITE}
+.if ${PORT_OPTIONS:MCXX} && ${PORT_OPTIONS:MTESTSUITE}
 	# libstdc++ testsuite will break every time, TRUE used to force continuation
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c++ || true
 .endif
