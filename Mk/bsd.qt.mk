@@ -310,7 +310,7 @@ Qt_Post_Include= bsd.qt.mk
 #
 # Translate `c++` to its real name and select the appropriate mkspec.
 #
-QMAKE_BASE_COMPILER!=	cc --version 2> /dev/null | ${AWK} 'NR == 1 { gsub(/[()]/, "", $$2); print $$2 }'
+QMAKE_BASE_COMPILER!=	(cc --version 2> /dev/null | ${AWK} 'NR == 1 { gsub(/[()]/, "", $$2); print $$2 }') || ${ECHO_CMD} "gcc"
 .if ${QMAKE_BASE_COMPILER:L} == "gcc"
 QMAKE_BASE_COMPILER=	g++
 .endif
