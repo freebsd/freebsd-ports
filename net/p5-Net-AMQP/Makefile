@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-AMQP
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,6 +35,7 @@ MAN3=		Net::AMQP.3 \
 		Net::AMQP::Frame::Trace.3 \
 		Net::AMQP::Protocol.3 \
 		Net::AMQP::Protocol::Base.3 \
-		Net::AMQP::Protocol::v0_8.3
+		Net::AMQP::Protocol::v0_8.3 \
+		Net::AMQP::Value.3
 
 .include <bsd.port.mk>
