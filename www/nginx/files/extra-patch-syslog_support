@@ -578,20 +578,20 @@ index aa6a3fc..deceb38 100644
      if (cf->args->nelts >= 3) {
          name = value[2];
 diff --git src/http/ngx_http_core_module.c src/http/ngx_http_core_module.c
-index 61439a1..8e1a296 100644
+index c491499..4f039eb 100644
 --- src/http/ngx_http_core_module.c
 +++ src/http/ngx_http_core_module.c
-@@ -1451,6 +1451,9 @@ ngx_http_update_location_config(ngx_http_request_t *r)
+@@ -1462,6 +1462,9 @@ ngx_http_update_location_config(ngx_http_request_t *r)
  
      if (r == r->main) {
-         r->connection->log->file = clcf->error_log->file;
+         ngx_http_set_connection_log(r->connection, clcf->error_log);
 +#if (NGX_ENABLE_SYSLOG)
 +        r->connection->log->priority = clcf->error_log->priority;
 +#endif
+     }
  
-         if (!(r->connection->log->log_level & NGX_LOG_DEBUG_CONNECTION)) {
-             r->connection->log->log_level = clcf->error_log->log_level;
-@@ -4764,6 +4767,15 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+     if ((ngx_io.flags & NGX_IO_SENDFILE) && clcf->sendfile) {
+@@ -4867,6 +4870,15 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
  
      ngx_str_t  *value, name;
  
@@ -607,7 +607,7 @@ index 61439a1..8e1a296 100644
      if (clcf->error_log) {
          return "is duplicate";
      }
-@@ -4773,6 +4785,36 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+@@ -4876,6 +4888,36 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
      if (ngx_strcmp(value[1].data, "stderr") == 0) {
          ngx_str_null(&name);
  
@@ -644,7 +644,7 @@ index 61439a1..8e1a296 100644
      } else {
          name = value[1];
      }
-@@ -4782,6 +4824,17 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+@@ -4885,6 +4927,17 @@ ngx_http_core_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
          return NGX_CONF_ERROR;
      }
  
@@ -663,30 +663,39 @@ index 61439a1..8e1a296 100644
          clcf->error_log->log_level = NGX_LOG_ERR;
          return NGX_CONF_OK;
 diff --git src/http/ngx_http_request.c src/http/ngx_http_request.c
-index ee00fd3..e15e157 100644
+index 54e1c26..2b05157 100644
 --- src/http/ngx_http_request.c
 +++ src/http/ngx_http_request.c
-@@ -433,6 +433,9 @@ ngx_http_init_request(ngx_event_t *rev)
- 
+@@ -424,6 +424,9 @@ ngx_http_init_request(ngx_event_t *rev)
      clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
-     c->log->file = clcf->error_log->file;
+ 
+     ngx_http_set_connection_log(r->connection, clcf->error_log);
 +#if (NGX_ENABLE_SYSLOG)
 +    c->log->priority = clcf->error_log->priority;
 +#endif
-     if (!(c->log->log_level & NGX_LOG_DEBUG_CONNECTION)) {
-         c->log->log_level = clcf->error_log->log_level;
-     }
-@@ -1834,6 +1837,9 @@ found:
  
+     if (c->buffer == NULL) {
+         c->buffer = ngx_create_temp_buf(c->pool,
+@@ -694,6 +697,9 @@ ngx_http_ssl_servername(ngx_ssl_conn_t *ssl_conn, int *ad, void *arg)
+     clcf = ngx_http_get_module_loc_conf(hc->conf_ctx, ngx_http_core_module);
+ 
+     ngx_http_set_connection_log(c, clcf->error_log);
++#if (NGX_ENABLE_SYSLOG)
++    c->log->priority = clcf->error_log->priority;
++#endif
+ 
+     sscf = ngx_http_get_module_srv_conf(hc->conf_ctx, ngx_http_ssl_module);
+ 
+@@ -1891,6 +1897,9 @@ ngx_http_set_virtual_server(ngx_http_request_t *r, ngx_str_t *host)
      clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
-     r->connection->log->file = clcf->error_log->file;
+ 
+     ngx_http_set_connection_log(r->connection, clcf->error_log);
 +#if (NGX_ENABLE_SYSLOG)
 +    r->connection->log->priority = clcf->error_log->priority;
 +#endif
  
-     if (!(r->connection->log->log_level & NGX_LOG_DEBUG_CONNECTION)) {
-         r->connection->log->log_level = clcf->error_log->log_level;
-
+     return NGX_OK;
+ }
 --- auto/summary.orig	2010-07-08 19:57:36.000000000 +0400
 +++ auto/summary	2010-12-08 12:25:16.000000000 +0300
 @@ -73,6 +73,11 @@
@@ -717,9 +726,9 @@ index ee00fd3..e15e157 100644
  
  cat << END                                                     > $NGX_MAKEFILE
  
---- auto/options.orig	2011-12-15 21:25:00.000000000 +0400
-+++ auto/options	2011-12-15 21:28:01.000000000 +0400
-@@ -119,6 +119,8 @@
+--- auto/options.orig	2011-11-01 09:01:14.000000000 +0400
++++ auto/options	2011-11-01 09:02:42.000000000 +0400
+@@ -120,6 +120,8 @@
  MD5_OPT=
  MD5_ASM=NO
  
@@ -728,23 +737,24 @@ index ee00fd3..e15e157 100644
  USE_SHA1=NO
  SHA1=NONE
  SHA1_OPT=
-@@ -272,6 +274,9 @@
+@@ -274,6 +276,9 @@
          --with-md5-opt=*)                MD5_OPT="$value"           ;;
          --with-md5-asm)                  MD5_ASM=YES                ;;
  
-+        --with-syslog)                   USE_SYSLOG="YES"           ;;
++        --with-syslog)                   USE_SYSLOG=YES             ;;
 +        --with-syslog-facility=*)        SYSLOG_FACILITY="$value"   ;;
 +
          --with-sha1=*)                   SHA1="$value"              ;;
          --with-sha1-opt=*)               SHA1_OPT="$value"          ;;
          --with-sha1-asm)                 SHA1_ASM=YES               ;;
-@@ -416,6 +421,9 @@
-   --with-md5-opt=OPTIONS             set additional build options for md5
+@@ -418,6 +423,9 @@
+   --with-md5-opt=OPTIONS             set additional options for md5 building
    --with-md5-asm                     use md5 assembler sources
  
 +  --with-syslog                      use syslog instead of files to log messages
 +  --with-syslog-facility=FACILITY    set syslog facility
 +
    --with-sha1=DIR                    set path to sha1 library sources
-   --with-sha1-opt=OPTIONS            set additional build options for sha1
+   --with-sha1-opt=OPTIONS            set additional options for sha1 building
    --with-sha1-asm                    use sha1 assembler sources
+ 
