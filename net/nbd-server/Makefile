@@ -1,13 +1,12 @@
 # Created by: Christian Laursen <xi@borderworlds.dk>
 # $FreeBSD$
 
-PORTNAME=	nbd-server
-PORTVERSION=	2.8.5
-PORTREVISION=	1
+PORTNAME=	nbd
+PORTVERSION=	3.3
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	SF/nbd/nbd/${PORTVERSION}
-DISTNAME=	nbd-${PORTVERSION}
+MASTER_SITES=	SF
+PKGNAMESUFFIX=	-server
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for the Linux network block device (nbd)
@@ -16,12 +15,14 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
+CONFIGURE_ARGS=	--enable-lfs --enable-syslog
 
-PLIST_FILES=	bin/nbd-server
-MAN1=		nbd-server.1
+PLIST_FILES=	bin/nbd-server bin/nbd-trdump
+MAN1=		nbd-server.1 nbd-trdump.1
+MAN5=		nbd-server.5
+MAN8=		nbd-client.8
 
-post-extract:
-	@${CP} ${FILESDIR}/nbd.h ${WRKSRC}
+regression-test: build
+		cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
