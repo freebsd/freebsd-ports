@@ -26,50 +26,42 @@ MAN1=		tork.1 torkarkollon.1 torkify.1 torksocks.1
 MAN5=		torksocks.conf.5
 MAN8=		torksocks.8
 
-.include "${PORTSDIR}/Mk/bsd.commands.mk"
+HAVE_TOR!=	if pkg_info -I tor-\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
 
-HAVE_TOR!=	${PKG_INFO} -I tor-\* >/dev/null 2>&1 && ${ECHO_CMD} YES || ${ECHO_CMD} NO
+.if (${HAVE_TOR} == "YES")
+HAVE_TOR_DEVEL!=	if pkg_info -I tor-devel\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
 
-.if ${HAVE_TOR} == "YES"
-HAVE_TOR_DEVEL!=	${PKG_INFO} -I tor-devel\* >/dev/null 2>&1 && ${ECHO_CMD} YES || ${ECHO_CMD} NO
-
-.if ${HAVE_TOR_DEVEL} == "YES"
-OPTIONS_DEFINE=	TOR_DEVEL
-OPTIONS_DEFAULT=	TOR_DEVEL
-TOR_DEVEL_DESC=		Depend on tor-devel (already installed)
+.if (${HAVE_TOR_DEVEL} == "YES")
+OPTIONS=	TOR_DEVEL	"Depend on tor-devel (already installed)"   On
 .else
-OPTIONS_DEFINE=	TOR
-OPTIONS_DEFAULT=	TOR
-TOR_DESC=		Depend on tor (already installed)
+OPTIONS=	TOR	"Depend on tor (already installed)" On
 .endif
 
 .else
-OPTIONS_SINGLE=	TOR_PORT
-OPTIONS_SINGLE_TOR_PORT=	TOR_DEVEL TOR
-OPTIONS_DEFAULT=	TOR_DEVEL
-TOR_DEVEL_DESC=	Depend on tor-devel
-TOR_DESC=	Depend on tor
+OPTIONS=	TOR_DEVEL	"Depend on tor-devel"   On \
+		TOR	"Depend on tor"     Off
 .endif
 
-OPTIONS_DEFINE+=	PRIVOXY MIXMINION
-OPTIONS_DEFAULT+=	PRIVOXY
-PRIVOXY_DESC=	Install privoxy
-MIXMINION_DESC=	Install mixminion
+OPTIONS+=	PRIVOXY	"Install privoxy"	On \
+		MIXMINION "Install mixminion"	Off
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MTOR_DEVEL}
+.if defined(WITH_TOR_DEVEL)
+.if defined(WITH_TOR)
+IGNORE=			cannot depend on tor and tor-devel at the same time
+.endif
 RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor-devel
-.if ${PORT_OPTIONS:MTOR}
+.elif defined(WITH_TOR)
 RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
 .endif
 
-.if ${PORT_OPTIONS:MPRIVOXY}
+.if defined(WITH_PRIVOXY)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/privoxy:${PORTSDIR}/www/privoxy
 .endif
 
-.if ${PORT_OPTIONS:MMIXMINION}
+.if defined(WITH_MIXMINION)
 RUN_DEPENDS+=	${LOCALBASE}/bin/mixminion:${PORTSDIR}/mail/mixminion
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
