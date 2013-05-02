@@ -202,7 +202,7 @@ pre-configure:
 .endif
 
 post-build:
-.if ${PORT_OPTIONS:MMOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT}
+.if ${PORT_OPTIONS:MMOD_DAV_SVN} && ${PORT_OPTIONS:MMOD_DONTDOTHAT}
 	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
 		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
 .endif
