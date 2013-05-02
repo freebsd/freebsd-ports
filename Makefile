@@ -70,7 +70,7 @@ PORTSTOP=	yes
 
 index:
 	@rm -f ${INDEXDIR}/${INDEXFILE}
-	@cd ${.CURDIR} && make ${INDEXDIR}/${INDEXFILE}
+	@cd ${.CURDIR} && ${MAKE} ${INDEXDIR}/${INDEXFILE}
 
 fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
 	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
@@ -112,7 +112,7 @@ ${INDEXDIR}/${INDEXFILE}:
 	fi; \
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
-	( cd ${.CURDIR}; for i in ${INDEX_PORTS}; do (cd $${i} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
+	( cd ${.CURDIR}; for i in ${INDEX_PORTS}; do (cd $${i} && ${MAKE} -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
 		__MAKE_SHELL=${INDEX_SHELL} \
 		ECHO_MSG="${INDEX_ECHO_MSG}" describe); done ) || \
 		(rm -rf $${tmpdir} ; \
