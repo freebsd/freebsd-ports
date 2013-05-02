@@ -1,5 +1,5 @@
 --- Makefile.orig	1997-05-16 00:50:56.000000000 +0900
-+++ Makefile	2013-04-27 18:57:47.000000000 +0900
++++ Makefile	2013-05-02 15:48:59.000000000 +0900
 @@ -2,12 +2,12 @@
  # Last modified: Sat Apr 19 1997
  
@@ -39,7 +39,7 @@
  
  compile:	c2ps.c
 -	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c
-+	$(CC) $(PREP_OPTIONS) $(CFLAGS) -o c2ps c2ps.c -L${LOCALBASE}/lib -lm -lpaper
++	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c -L${LOCALBASE}/lib -lm -lpaper
  
  clean:
  	$(RM) c2ps *.o core *~

@@ -13,7 +13,7 @@ COMMENT=	A PostScript pretty-printer for C source
 
 LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
 
-CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV=	CCFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 MAN1=		c2ps.1
 PLIST_FILES=	bin/c2ps
 
