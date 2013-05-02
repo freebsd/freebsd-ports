@@ -57,6 +57,16 @@
     SUBDIR += kopete
     SUBDIR += kopete-kde4
     SUBDIR += kpopup
+    SUBDIR += ktp-accounts-kcm
+    SUBDIR += ktp-approver
+    SUBDIR += ktp-auth-handler
+    SUBDIR += ktp-common-internals
+    SUBDIR += ktp-contact-list
+    SUBDIR += ktp-contact-runner
+    SUBDIR += ktp-filetransfer-handler
+    SUBDIR += ktp-kded-integration-module
+    SUBDIR += ktp-send-file
+    SUBDIR += ktp-text-ui
     SUBDIR += libjingle
     SUBDIR += libjreen
     SUBDIR += libmsn
@@ -124,6 +134,7 @@
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-twitter
+    SUBDIR += plasma-applet-ktp
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
