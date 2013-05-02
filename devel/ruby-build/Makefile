@@ -11,7 +11,7 @@ COMMENT=	Compile and install different ruby versions
 LICENSE=	RUBY-BUILD
 LICENSE_NAME=	Sam Stephenson
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		curl:${PORTSDIR}/ftp/curl \
