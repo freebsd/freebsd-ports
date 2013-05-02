@@ -2,6 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.07
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -25,12 +26,14 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
-		lcms2:${PORTSDIR}/graphics/lcms2
+		lcms2:${PORTSDIR}/graphics/lcms2 \
+		paper:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[789]-[0-9]* \
-			ghostscript[78]-*-[0-9]* \
-			ghostscript9-nox11-[0-9]*
+CONFLICTS_INSTALL= \
+		gambc-[0-9]* \
+		ghostscript[789]-[0-9]* \
+		ghostscript[789]-nox11-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -45,7 +48,6 @@ MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
 CONFIGURE_ENV=	${MAKE_ENV}
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
@@ -53,6 +55,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--with-ijs \
 		--with-libidn \
 		--without-jasper \
+		--with-libpaper \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/lcms2/include \
@@ -60,7 +63,9 @@ CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/openjpeg/libopenjpeg \
 		-I${WRKSRC}/openjpeg \
 		-I${LOCALBASE}/include
-XCFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+XCFLAGS=	${PTHREAD_CFLAGS} \
+		-DA4
 XLDFLAGS=	${PTHREAD_LIBS}
 
 PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
@@ -69,9 +74,8 @@ SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	DOCS A4SIZE CUPS FONTCONFIG ICONV LIBPAPER GTK2 X11
-OPTIONS_DEFAULT=            CUPS FONTCONFIG ICONV LIBPAPER      X11
-A4SIZE_DESC=	Set A4 (not Letter) as the default paper size
+OPTIONS_DEFINE=	X11 DOCS CUPS FONTCONFIG ICONV GTK2
+OPTIONS_DEFAULT=X11 DOCS CUPS FONTCONFIG ICONV
 FONTCONFIG_DESC=Enable fontconfig support
 NO_OPTIONS_SORT=yes
 
@@ -101,23 +105,6 @@ PLIST_SUB+=	GS_${D}=""
 PLIST_SUB+=	GS_${D}="@comment "
 .endif
 .endfor
-
-.if ${PORT_OPTIONS:MA4SIZE}
-DEFAULTPAPERSIZE?=	a4
-XCFLAGS+=	-DA4
-MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
-.endif
-DEFAULTPAPERSIZE?=	letter
-
-.if ${PORT_OPTIONS:MLIBPAPER}
-LIB_DEPENDS+=	paper:${PORTSDIR}/print/libpaper
-CONFIGURE_ARGS+=	--with-libpaper
-.if ${DEFAULTPAPERSIZE:L} == a4
-RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
-.endif
-.else
-CONFIGURE_ARGS+=	--without-libpaper
-.endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
@@ -149,9 +136,6 @@ PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
 	lxm3200-tweaked/LICENSE lxm3200-tweaked/README			\
 	lxm3200-tweaked/RELEASE_NOTES					\
 	lxm3200-tweaked/Z12-Z31-QuickSetup md2k_md5k/README.jis
-
-pre-everything::
-	@${ECHO_MSG} ${MSG_PAPERSIZE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
@@ -205,7 +189,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.if !empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install: post-install-docs
 .endif
 
