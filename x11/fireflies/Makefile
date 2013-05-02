@@ -14,6 +14,8 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Extension of xscreensaver
 
+BROKEN=		does not compile when graphics/png is installed (see ports/176666)
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
