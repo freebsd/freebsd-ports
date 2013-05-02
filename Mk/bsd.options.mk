@@ -133,12 +133,10 @@ PORT_OPTIONS:=	 ${PORT_OPTIONS:N${O}}
 #XXX end of compatibility
 
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
-OPTIONS_DEFINE:=	${OPTIONS_DEFINE:O:u}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 
 # Remove global options the port maintainer doesn't want
 .for opt in ${_ALL_EXCLUDE}
-OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
 ALL_OPTIONS:=		${ALL_OPTIONS:N${opt}}
 .endfor
