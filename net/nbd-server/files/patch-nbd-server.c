@@ -1,18 +1,10 @@
-diff -urN nbd-2.8.3.orig/nbd-server.c nbd-2.8.3/nbd-server.c
---- nbd-2.8.3.orig/nbd-server.c	Thu Dec 22 21:37:20 2005
-+++ nbd-server.c	Sun Jan  8 16:45:30 2006
-@@ -363,12 +363,12 @@
-  * is severely wrong)
-  **/
- void sigchld_handler(int s) {
--        int* status=NULL;
-+        int status;
- 	int* i;
- 	pid_t pid;
- 	int done=0;
- 
--	while(!done && (pid=wait(status)) > 0) {
-+	while(!done && (pid=wait(&status)) > 0) {
- 		if(WIFEXITED(status)) {
- 			msg3(LOG_INFO, "Child exited with %d", WEXITSTATUS(status));
- 			msg3(LOG_INFO, "pid is %d", pid);
+--- ./nbd-server.c.orig	2012-07-04 05:54:53.000000000 +0900
++++ ./nbd-server.c	2013-04-04 19:36:34.000000000 +0900
+@@ -72,6 +72,7 @@
+ #ifdef HAVE_SYS_MOUNT_H
+ #include <sys/mount.h>
+ #endif
++#include <sys/uio.h>
+ #include <signal.h>
+ #include <errno.h>
+ #include <netinet/tcp.h>
