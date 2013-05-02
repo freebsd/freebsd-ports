@@ -13,5 +13,4 @@ lib/libfvde.so
 lib/libfvde.la
 lib/libfvde.a
 libdata/pkgconfig/libfvde.pc
-@dirrmtry lib/pkgconfig
 @dirrm include/libfvde
