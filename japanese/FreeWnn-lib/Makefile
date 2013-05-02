@@ -1,9 +1,5 @@
-# New ports collection makefile for:    FreeWnn for Japanese
-# Date created:     20 July 1997
-# Whom:         Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
