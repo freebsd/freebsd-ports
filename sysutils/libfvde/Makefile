@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfvde
-PORTVERSION=	20120519
+PORTVERSION=	20130305
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	${PORTNAME}-experimental-${PORTVERSION}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 gnomehack
 USE_LDCONFIG=	yes
 
-MAN1=	bdeinfo.1 bdemount.1
-MAN3=	libbde.3
+MAN1=	fvdeinfo.1 fvdemount.1
+MAN3=	libfvde.3
 
 .include <bsd.port.mk>
