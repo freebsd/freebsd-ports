@@ -5,16 +5,17 @@ PORTNAME=	ofc
 PORTVERSION=	0.8.1
 PORTREVISION=	6
 CATEGORIES=	lang
-MASTER_SITES=	http://ofc.dvoudheusden.net/download/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The Objective-C Foundation Classes library
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		freetype.9:${PORTSDIR}/print/freetype2
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		freetype:${PORTSDIR}/print/freetype2
 
+PROJECTHOST=	${PORTNAME}
 USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool
 USES=	pathfix
@@ -28,11 +29,11 @@ OPTIONS_DEFINE=	GDBM GMP
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
 .endif
 
 .if ${OSVERSION} >= 900000
