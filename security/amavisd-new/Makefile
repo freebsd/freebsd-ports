@@ -88,7 +88,7 @@ USE_RC_SUBR+=	amavisd
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
-.if ${PORT_OPTIONS:MSNMP) && defined(WITH_BDB}
+.if ${PORT_OPTIONS:MSNMP} && ${PORT_OPTIONS:MBDB}
 USE_RC_SUBR+=	amavisd-snmp
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
