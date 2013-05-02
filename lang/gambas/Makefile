@@ -87,7 +87,7 @@ BROKEN=			Segfault during build on ${ARCH}
 
 .for lib in ${LIBS2FIX}
 NEW${lib:U}!=	${LDCONFIG} -r | ${GREP} ${lib} | ${GREP} -v 'compat/pkg'	\
-		| ${AWK} -F 'lib\/' '{print $$2}'
+		| ${AWK} -F 'lib\/' '{print $$2}'; ${ECHO_CMD}
 .endfor
 
 .if exists(${LOCALBASE}/bin/pg_config)
