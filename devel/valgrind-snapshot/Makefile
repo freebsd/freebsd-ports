@@ -65,7 +65,6 @@ CONFIGURE_ARGS+=	--enable-only64bit
 PLIST_SUB+=	X86="@comment "
 . else
 PLIST_SUB+=	X86=""
-. else
 . endif
 .else
 PLIST_SUB+=	X86="" ARCH=x86
