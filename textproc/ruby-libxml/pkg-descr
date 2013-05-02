@@ -1,8 +1,0 @@
-ruby-libxml provies a clean and fast Ruby interface into the libxml2
-library.  All of the power and granularity of libxml's data
-structures should be available.  Those wanting a user friendly API
-that follows the Ruby-way of doing things should be pleasantly
-surprised.
-
-Author:	Sean Chittenden <sean@ruby-lang.org>
-WWW: http://rubyforge.org/projects/libxml/

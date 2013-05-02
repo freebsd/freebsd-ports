@@ -1264,7 +1264,6 @@
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
-    SUBDIR += ruby-libxml
     SUBDIR += ruby-liquid
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-rd-mode.el
