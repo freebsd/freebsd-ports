@@ -67,7 +67,13 @@ VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
 WEBSERVICE_DESC=	Build Webservice
 
+# bmake doesn't know about unsetenv=true
+.if defined(.PARSEDIR)
+ENV=
+.export ENV
+.else
 .SHELL:		path="/bin/sh" unsetenv=true
+.endif
 
 .include <bsd.port.options.mk>
 
