@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Build-Tiny
-PORTVERSION=	0.018
+PORTVERSION=	0.019
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-Config>=0.003:${PORTSDIR}/devel/p5-ExtUtils-Config \
-		p5-ExtUtils-Helpers>=0.019:${PORTSDIR}/devel/p5-ExtUtils-Helpers \
+		p5-ExtUtils-Helpers>=0.020:${PORTSDIR}/devel/p5-ExtUtils-Helpers \
 		p5-ExtUtils-InstallPaths>=0.002:${PORTSDIR}/devel/p5-ExtUtils-InstallPaths
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
