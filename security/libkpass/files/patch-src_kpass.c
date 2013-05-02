@@ -1,11 +1,14 @@
---- src/kpass.c.orig	2011-09-12 11:39:12.476116248 +0400
-+++ src/kpass.c	2011-09-12 11:39:37.962483090 +0400
-@@ -19,7 +19,7 @@
- 
- #include <string.h>
- #include <openssl/evp.h>
--#include <byteswap.h>
+--- src/kpass.c.orig	2013-04-01 18:36:50.878364960 +0000
++++ src/kpass.c	2013-04-01 18:37:43.162887560 +0000
+@@ -23,7 +23,11 @@
+ #include <nettle/aes.h>
+ #include <nettle/sha.h>
+ #include <nettle/cbc.h>
++#ifdef __FreeBSD__
 +#include <sys/endian.h>
++#else
+ #include <byteswap.h>
++#endif
  #include <time.h>
  
- #include "kpass.h"
+ #include <libintl.h>
