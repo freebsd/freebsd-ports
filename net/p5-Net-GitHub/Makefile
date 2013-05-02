@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-GitHub
-DISTVERSION=	0.51
+DISTVERSION=	0.52
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FAYLAND
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
