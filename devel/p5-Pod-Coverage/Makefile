@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Pod-Coverage
-# Date created:	   10 octobre 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Coverage
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
