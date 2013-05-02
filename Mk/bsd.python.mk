@@ -359,8 +359,10 @@ DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 # should point to some other version we have installed, according to the port USE_PYTHON
 # specification
 .if !defined(PYTHON_DEFAULT_PORTVERSION) || (${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION})
+.if exists(${PYTHON_CMD})
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import sys; \
 							print(sys.version.split()[0].replace("b",".b"))' 2> /dev/null) | ${TAIL} -1
+.endif
 .if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 .endif
