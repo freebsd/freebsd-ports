@@ -28,7 +28,7 @@ PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 .include <bsd.port.pre.mk>
 
-JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Djavadoc.links=${JDK_API}
 .endif

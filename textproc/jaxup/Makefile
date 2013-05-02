@@ -47,11 +47,11 @@ UTIL_CLASSPATH_JARS=	jaxen-full saxpath xercesImpl
 UTIL_CLASSPATH!=	${ECHO_CMD} ${UTIL_CLASSPATH_JARS:S,^,${JAVALIBDIR}/,:S,$,.jar,} | ${TR} " " ":"
 
 .if !defined(NOPORTDOCS)
-JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.[4-5] -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.[4-5] -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Dj2se.apidocs="${JDK_API}"
 .endif
-JAXEN_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jaxen -maxdepth 1 -name javadoc -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+JAXEN_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jaxen -maxdepth 1 -name javadoc -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
 .if ${JAXEN_API} != ""
 MAKE_ARGS+=	-Djaxen.apidocs="${JAXEN_API}"
 .endif
