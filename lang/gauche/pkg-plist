@@ -14,13 +14,13 @@
 %%DATADIR%%/%%VERSION%%/lib/dbm.scm
 %%DATADIR%%/%%VERSION%%/lib/dbm/dump
 %%DATADIR%%/%%VERSION%%/lib/dbm/fsdbm.scm
+%%GDBM%%%%DATADIR%%/%%VERSION%%/lib/dbm/gdbm.scm
 %%DATADIR%%/%%VERSION%%/lib/dbm/ndbm.scm
 %%DATADIR%%/%%VERSION%%/lib/dbm/restore
 %%DATADIR%%/%%VERSION%%/lib/file/filter.scm
 %%DATADIR%%/%%VERSION%%/lib/file/util.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche-init.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/array.scm
-%%DATADIR%%/%%VERSION%%/lib/gauche/auxsys.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/cise.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal.scm
@@ -47,6 +47,7 @@
 %%DATADIR%%/%%VERSION%%/lib/gauche/interactive.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/interactive/info.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/interpolate.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/lazy.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/let-opt.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/libutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/listener.scm
@@ -85,6 +86,7 @@
 %%DATADIR%%/%%VERSION%%/lib/gauche/sortutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/stringutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/syslog.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/sysutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/termios.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/test.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/threads.scm
@@ -119,8 +121,10 @@
 %%DATADIR%%/%%VERSION%%/lib/rfc/quoted-printable.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/sha.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/sha1.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/tls.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/uri.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/zlib.scm
+%%SLIB%%%%DATADIR%%/%%VERSION%%/lib/slibcat
 %%DATADIR%%/%%VERSION%%/lib/slib.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-0.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-1.scm
@@ -197,9 +201,9 @@ bin/gauche-package
 bin/gosh
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/binary--io.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/crypt--bcrypt.so
+%%GDBM%%lib/gauche-0.9/%%VERSION%%/%%TARGET%%/dbm--gdbm.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/dbm--ndbm.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/file--util.so
-lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--auxsys.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--charconv.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--collection.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--fcntl.so
@@ -223,6 +227,7 @@ lib/gauche-0.9/%%VERSION%%/%%TARGET%%/os--windows.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/parser--peg.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--md5.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--sha.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--tls.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--zlib.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-1.so
 lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-13.so
@@ -254,6 +259,7 @@ lib/gauche-0.9/%%VERSION%%/include/gauche/class.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/code.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/collection.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/config.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/config_threads.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/exception.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/extend.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/extern.h
@@ -284,6 +290,7 @@ lib/gauche-0.9/%%VERSION%%/include/gauche/vector.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/vm.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/weak.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/wthread.h
 lib/gauche-0.9/%%VERSION%%/include/gauche/win-compat.h
 lib/gauche-0.9/%%VERSION%%/include/gc.h
 lib/gauche-0.9/%%VERSION%%/include/gc_allocator.h
@@ -298,10 +305,10 @@ lib/gauche-0.9/%%VERSION%%/include/gc_version.h
 lib/gauche-0.9/site/%%TARGET%%/.keepme
 lib/libgauche-0.9.so
 lib/libgauche-0.9.so.0
-lib/libgauche-0.9.so.0.2
+lib/libgauche-0.9.so.0.3
 share/aclocal/gauche.m4
-share/doc/gauche/.keepme
-share/examples/gauche/.keepme
+%%DOCSDIR%%/.keepme
+%%EXAMPLESDIR%%/.keepme
 share/gauche/%%VERSION%%/lib/.packages/.keepme
 share/gauche/site/lib/.packages/.keepme
 @dirrm share/gauche/site/lib/.packages
