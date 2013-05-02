@@ -25,9 +25,13 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[89]-[0-9]* \
-			ghostscript[89]-nox11-[0-9]* \
-			ghostscript9-agpl-*-[0-9]*
+CONFLICTS_INSTALL= \
+		gambc-[0-9]* \
+		ghostscript[89]-[0-9]* \
+		ghostscript[89]-nox11-[0-9]* \
+		ghostscript9-agpl-[0-9]* \
+		ghostscript9-agpl-nox11-[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -50,8 +54,8 @@ XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	-L${LOCALBASE}/lib -L${WRKSRC}/gimp-print ${PTHREAD_LIBS}
 PLIST_SUB=	GS_VERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=	DOCS A4SIZE X11
-OPTIONS_DEFAULT=     A4SIZE X11
+OPTIONS_DEFINE=	X11 DOCS A4SIZE
+OPTIONS_DEFAULT=X11 DOCS A4SIZE
 NO_OPTIONS_SORT=yes
 A4SIZE_DESC=	Set A4 (not Letter) as the default paper size
 

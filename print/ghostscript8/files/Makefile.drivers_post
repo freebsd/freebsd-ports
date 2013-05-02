@@ -125,7 +125,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endfor
 
 .if defined(_CAIRO_DEVS)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-cairo
 .else
 CONFIGURE_ARGS+=	--disable-cairo
