@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msp430-binutils
-# Date created:		15 Oct 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}.${LTSVERSION}
@@ -33,7 +29,9 @@ BINUTILVERSION=	2.21.1a
 LTSVERSION=	20120406
 PATCHVERSION=	20120406
 BUGS_FIXED=	# For future use
-LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}-sf$${bugid}.patch ; done
+.for bugid in ${BUGS_FIXED}
+LTS_PATCHES+=	${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}-sf${BUGID}.patch
+.endfor
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
