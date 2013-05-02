@@ -110,7 +110,7 @@ PHP_HEADER_DIRS=libgd
 .if ${PHP_MODNAME} == "gettext"
 CONFIGURE_ARGS+=--with-gettext=${LOCALBASE}
 
-USE_GETTEXT=	yes
+USES+=		gettext
 .endif
 
 .if ${PHP_MODNAME} == "gmp"
