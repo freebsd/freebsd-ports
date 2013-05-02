@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kinput2
-# Date created:		19 Dec 1997
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
@@ -22,12 +18,14 @@ PLIST_FILES=	${PLIST_ALL}
 
 MAN1=		kinput2.1
 
-OPTIONS=	CANNA	"Canna support" on \
-		FREEWNN	"FreeWnn support " on \
-		WNN6	"Wnn6 support" off \
-		WNN7	"Wnn7 support" off \
-		SJ3	"SJ3 support" on \
-		TCP	"TCP transport support (not needed for most cases)" off
+OPTIONS_DEFINE=	CANNA FREEWNN WNN6 WNN7 SJ3 TCP
+OPTIONS_DEFAULT=CANNA FREEWNN           SJ3
+CANNA_DESC=	Canna support
+FREEWNN_DESC=	FreeWnn support
+WNN6_DESC=	Wnn6 support
+WNN7_DESC=	Wnn7 support
+SJ3_DESC=	SJ3 support
+TCP_DESC=	TCP transport support (not needed for most cases)
 
 LIB_DEPENDS.CANNA=	canna16.1:${PORTSDIR}/japanese/canna-lib
 CONF.CANNA=		'\#define UseCanna' \
@@ -76,22 +74,24 @@ PLIST.WNN=		lib/X11/ccdef/ccdef.kinput2 \
 			lib/X11/ccdef/rule.katakana.egg \
 			lib/X11/ccdef/rule.kigou.egg
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FREEWNN) || defined(WITH_WNN6) || defined(WITH_WNN7)
+.if ${PORT_OPTIONS:MFREEWNN) || \
+    ${PORT_OPTIONS:MWNN6) || \
+    ${PORT_OPTIONS:MWNN7)
 PLIST_ALL+=	${PLIST.WNN}
 .endif
 
-.for I in WITH_CANNA WITH_FREEWNN WITH_WNN6 WITH_WNN7 WITH_SJ3
-.if defined(${I})
-LIB_DEPENDS+=	${LIB_DEPENDS.${I:S/^WITH_//}}
-BUILD_DEPENDS+=	${BUILD_DEPENDS.${I:S/^WITH_//}}
-CONF+=		${CONF.${I:S/^WITH_//}}
-PLIST_ALL+=	${PLIST.${I:S/^WITH_//}}
+.for I in ${OPTIONS_DEFINE:NTCP}
+.if ${PORT_OPTIONS:M${I}}
+LIB_DEPENDS+=	${LIB_DEPENDS.${I}}
+BUILD_DEPENDS+=	${BUILD_DEPENDS.${I}}
+CONF+=		${CONF.${I}}
+PLIST_ALL+=	${PLIST.${I}}
 .endif
 .endfor
 
-.if !defined(WITH_TCP)
+.if !${PORT_OPTIONS:MTCP}
 CONF+=		TRANSPORTDEFS="-DNO_TCP_TRANSPORT"
 .endif
 
@@ -102,4 +102,4 @@ pre-configure: apply-slist
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
