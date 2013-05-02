@@ -33,7 +33,7 @@ USE_FORTRAN=	yes
 USE_GCC=	4.7+
 USE_TK=		yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
+USES=		iconv
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
