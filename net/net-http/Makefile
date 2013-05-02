@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	net-http
-# Date created:			May 15, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	net-http
 PORTVERSION=	0.3.1
@@ -22,12 +17,12 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
+GUILE_VER!=	${MAKE} -C ${PORTSDIR}/lang/guile -V GUILE_VER
 PLIST_SUB=	GUILE_VER="${GUILE_VER}"
 
 do-install:
 	${CP} -R ${WRKSRC}/net/ ${LOCALBASE}/share/guile/${GUILE_VER}/net/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsupchk
-# Date created:				07 Nov 2005
-# Whom:					matthias.andree@gmx.de
-#
+# Created by: matthias.andree@gmx.de
 # $FreeBSD$
-#
 
 PORTNAME=	cvsupchk
 PORTVERSION=	19990209
@@ -25,7 +21,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-src!=		cd ${PORTSDIR}/net/cvsup-without-gui && make -V WRKSRC
+src!=		${MAKE} -C ${PORTSDIR}/net/cvsup-without-gui -V WRKSRC
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -34,7 +30,7 @@ do-extract:
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsupchk ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${src}/contrib/cvsupchk/README ${DOCSDIR}/
 .endif

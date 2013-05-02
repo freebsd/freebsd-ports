@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JUMP Ultimate Math Package
-# Date created:				June 13, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlenc
 PORTVERSION=	0.52
@@ -29,7 +25,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 .include <bsd.port.pre.mk>
 
-JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Djavadoc.srcdir.j2se=${JDK_API}
 

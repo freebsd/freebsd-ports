@@ -46,7 +46,7 @@ CONFLICTS?=		gnustep-guile-nox11-1.*
 
 .include <bsd.port.pre.mk>
 
-GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
+GUILE_VER!=	${MAKE} -C ${PORTSDIR}/lang/guile -V GUILE_VER
 
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
