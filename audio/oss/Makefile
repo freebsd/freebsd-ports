@@ -66,6 +66,8 @@ CONFIGURE_ENV+=	OGG_SUPPORT=YES
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
+.elif !defined(SYSDIR)
+MAKE_ENV+=	SYSDIR="${SRC_BASE}/sys"
 .endif
 
 pre-patch:
