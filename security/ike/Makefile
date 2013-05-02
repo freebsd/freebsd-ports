@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ike
-PORTVERSION=	2.1.7
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	security net
-MASTER_SITES=	http://www.shrew.net/download/ike/
+MASTER_SITES=	https://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 EXTRACT_SUFX=	.tbz2
 
@@ -22,6 +21,8 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CMAKE_ARGS+=	-DETCDIR:PATH="${PREFIX}/etc" \
+		-DBINDIR:PATH="${PREFIX}/bin" \
+		-DSBINDIR:PATH="${PREFIX}/sbin" \
 		-DLIBDIR:PATH="${PREFIX}/lib" \
 		-DMANDIR:PATH="${PREFIX}/man"
 
@@ -32,6 +33,7 @@ LDAP_DESC=	Enable LDAP XAuth daemon support
 
 .include <bsd.port.options.mk>
 
+MAN1=		ikec.1
 MAN5=		iked.conf.5
 MAN8=		iked.8
 
@@ -50,8 +52,9 @@ CMAKE_ARGS+=	-DNATT=YES
 
 .if ${PORT_OPTIONS:MQTGUI}
 CMAKE_ARGS+=	-DQTGUI=YES
-USE_QT_VER=	3
-MAN1=		ikea.1 ikec.1
+USE_QT_VER=	4
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build
+MAN1+=		qikea.1 qikec.1
 PLIST_SUB+=	QTGUI=""
 .else
 PLIST_SUB+=	QTGUI="@comment "
@@ -70,16 +73,6 @@ post-patch:
 	@sleep 3
 . endif
 .endif
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/CMakeLists.txt
-
-post-build:
-# QT 3.3 UIC (User Interface Compiler) creates these, so remove them.
-# Otherwise x11-toolkits/qt33 would have to be patched, as Gentoo did.
-.for f in .qt_plugins_* qt_plugins_*
-	@${RM} -f ${LOCALBASE}/etc/settings/${f}
-.endfor
-	@${RMDIR} ${LOCALBASE}/etc/settings || ${TRUE}
 
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \
