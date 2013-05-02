@@ -11,6 +11,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org apps meta-port
 
+.MAKE.FreeBSD_UL=	yes
+
 COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
 		x11-fonts/mkfontdir:mkfontdir \
 		x11-fonts/mkfontscale:mkfontscale sessreg \
