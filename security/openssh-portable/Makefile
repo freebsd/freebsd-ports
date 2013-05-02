@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.8p2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -204,6 +204,9 @@ RC_SCRIPT_NAME=		openssh
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|install: \(.*\) host-key check-config|install: \1|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
+			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \
+			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
 	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
