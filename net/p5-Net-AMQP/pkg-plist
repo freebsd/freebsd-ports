@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Net/AMQP/Protocol.pm
 %%SITE_PERL%%/Net/AMQP/Protocol/Base.pm
 %%SITE_PERL%%/Net/AMQP/Protocol/v0_8.pm
+%%SITE_PERL%%/Net/AMQP/Value.pm
 @dirrmtry %%SITE_PERL%%/Net/AMQP/Protocol
 @dirrmtry %%SITE_PERL%%/Net/AMQP/Frame
 @dirrmtry %%SITE_PERL%%/Net/AMQP
