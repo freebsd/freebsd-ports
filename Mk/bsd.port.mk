@@ -1143,6 +1143,11 @@ INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
 
+# make sure bmake treats -V as expected 
+.MAKE.EXPAND_VARIABLES= yes
+# tell bmake we use the old :L :U modifiers
+.MAKE.FreeBSD_UL= yes
+
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 #
@@ -2794,18 +2799,12 @@ patch-sites: patch-sites-DEFAULT
 
 .if defined(IGNOREFILES)
 .if !defined(CKSUMFILES)
-CKSUMFILES!=	\
-	for file in ${ALLFILES}; do \
-		ignore=0; \
-		for tmp in ${IGNOREFILES}; do \
-			if [ "$$file" = "$$tmp" ]; then \
-				ignore=1; \
-			fi; \
-		done; \
-		if [ "$$ignore" = 0 ]; then \
-			${ECHO_CMD} "$$file"; \
-		fi; \
-	done
+.  for _f in ${ALLFILES}
+.    if ! ${IGNOREFILES:M${_f}}
+CKSUMFILES+=	${_f}
+.   endif
+.  endfor
+.  undef _f
 .endif
 .else
 CKSUMFILES=		${ALLFILES}
@@ -2953,6 +2952,11 @@ MANEXT=	.gz
 .endif
 
 .if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
+
+.if defined(.PARSEDIR)
+_MLINKS=	 ${_MLINKS_PREPEND} \
+		 ${MANLANG:S,^,man/,:S,/"",,:@m@${MLINKS:@p@${MAN${p:E}PREFIX}/$m/man${p:E}/$p${MANEXT}@}@}
+.else
 __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
  '{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
@@ -2978,6 +2982,7 @@ _MLINKS+=	${___pmlinks:S// /g}
 .endfor
 .endfor
 .endfor
+.endif
 .endif
 _COUNT=0
 .for ___tpmlinks in ${_MLINKS}
