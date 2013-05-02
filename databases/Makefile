@@ -557,6 +557,7 @@
     SUBDIR += pgfouine
     SUBDIR += pglesslog
     SUBDIR += pgloader
+    SUBDIR += pgmecab
     SUBDIR += pgpool
     SUBDIR += pgpool-II
     SUBDIR += pgpool-II-22
