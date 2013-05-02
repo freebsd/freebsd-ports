@@ -76,6 +76,8 @@ Kde_Pre_Include=	bsd.kde4.mk
 
 KDE4_VERSION?=		4.10.1
 KDE4_BRANCH?=		stable
+KTP_VERSION?=		0.6.1
+KTP_BRANCH?=		stable
 CALLIGRA_VERSION?=	2.6.2
 CALLIGRA_BRANCH?=	stable
 KDEVELOP_VERSION?=	4.4.1
