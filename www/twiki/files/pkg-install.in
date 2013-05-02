@@ -26,8 +26,8 @@ case $2 in
 		chown -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 		chmod -R u+w ${WWWDIR}/
 		cd ${WWWDIR}/
-		chmod o-rwx data lib locale templates test tools working
-		chmod a+x bin/* tools/*
+		chmod o-rwx data lib test tools
+		chmod a+x tools/*
 
 		# let the user know what's going on
 		cat << __EOF__

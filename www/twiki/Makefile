@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twiki
-PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTVERSION=	5.1.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
@@ -28,9 +27,9 @@ RUN_DEPENDS=	\
 		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
 
 USE_PERL5=	yes
+WRKSRC=	${WRKDIR}/twiki
 
 post-extract:
-	@cd ${WRKDIR}/ && ${INSTALL} -d .t/ && ${MV} * .t/ && ${MV} .t ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/lib/CPAN
 	@${CAT} ${.CURDIR}/../twiki-*/pkg-plist |\
 		${SED} -e 's|%%TWDIR%%|${WRKSRC}|;/^@/d' |\

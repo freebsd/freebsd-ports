@@ -1,14 +1,11 @@
 %%TWDIR%%/AUTHORS
 %%TWDIR%%/COPYING
 %%TWDIR%%/COPYRIGHT
-%%TWDIR%%/INSTALL.html
 %%TWDIR%%/LICENSE
-%%TWDIR%%/TWikiHistory.html
-%%TWDIR%%/TWikiReleaseNotes04x02.html
-%%TWDIR%%/TWikiUpgradeGuide.html
 %%TWDIR%%/bin/.htaccess.txt
 %%TWDIR%%/bin/LocalLib.cfg.txt
 %%TWDIR%%/bin/attach
+%%TWDIR%%/bin/backuprestore
 %%TWDIR%%/bin/changes
 %%TWDIR%%/bin/configure
 %%TWDIR%%/bin/edit
@@ -32,10 +29,13 @@
 %%TWDIR%%/bin/search
 %%TWDIR%%/bin/setlib.cfg
 %%TWDIR%%/bin/statistics
+%%TWDIR%%/bin/twiki_cgi
 %%TWDIR%%/bin/upload
 %%TWDIR%%/bin/view
 %%TWDIR%%/bin/viewauth
 %%TWDIR%%/bin/viewfile
+%%TWDIR%%/data/Main/ChangeProfilePicture.txt
+%%TWDIR%%/data/Main/ChangeProfilePicture.txt,v
 %%TWDIR%%/data/Main/TWikiAdminUser.txt
 %%TWDIR%%/data/Main/TWikiAdminUser.txt,v
 %%TWDIR%%/data/Main/TWikiContributor.txt
@@ -48,6 +48,10 @@
 %%TWDIR%%/data/Main/TWikiPreferences.txt,v
 %%TWDIR%%/data/Main/UnknownUser.txt
 %%TWDIR%%/data/Main/UnknownUser.txt,v
+%%TWDIR%%/data/Main/UserProfileHeader.txt
+%%TWDIR%%/data/Main/UserProfileHeader.txt,v
+%%TWDIR%%/data/Main/UserViewTemplate.txt
+%%TWDIR%%/data/Main/UserViewTemplate.txt,v
 %%TWDIR%%/data/Main/WebAtom.txt
 %%TWDIR%%/data/Main/WebAtom.txt,v
 %%TWDIR%%/data/Main/WebChanges.txt
@@ -70,8 +74,14 @@
 %%TWDIR%%/data/Main/WebSearchAdvanced.txt,v
 %%TWDIR%%/data/Main/WebStatistics.txt
 %%TWDIR%%/data/Main/WebStatistics.txt,v
+%%TWDIR%%/data/Main/WebTopMenu.txt
+%%TWDIR%%/data/Main/WebTopMenu.txt,v
 %%TWDIR%%/data/Main/WebTopicList.txt
 %%TWDIR%%/data/Main/WebTopicList.txt,v
+%%TWDIR%%/data/Sandbox/JQueryPluginExamples.txt
+%%TWDIR%%/data/Sandbox/JQueryPluginExamples.txt,v
+%%TWDIR%%/data/Sandbox/PluginTestJQueryPlugin.txt
+%%TWDIR%%/data/Sandbox/PluginTestJQueryPlugin.txt,v
 %%TWDIR%%/data/Sandbox/WebAtom.txt
 %%TWDIR%%/data/Sandbox/WebAtom.txt,v
 %%TWDIR%%/data/Sandbox/WebChanges.txt
@@ -94,6 +104,8 @@
 %%TWDIR%%/data/Sandbox/WebSearchAdvanced.txt,v
 %%TWDIR%%/data/Sandbox/WebStatistics.txt
 %%TWDIR%%/data/Sandbox/WebStatistics.txt,v
+%%TWDIR%%/data/Sandbox/WebTopMenu.txt
+%%TWDIR%%/data/Sandbox/WebTopMenu.txt,v
 %%TWDIR%%/data/Sandbox/WebTopicList.txt
 %%TWDIR%%/data/Sandbox/WebTopicList.txt,v
 %%TWDIR%%/data/TWiki/ATasteOfTWiki.txt
@@ -110,6 +122,10 @@
 %%TWDIR%%/data/TWiki/AnApplicationWithWikiForm.txt,v
 %%TWDIR%%/data/TWiki/AppendixEncodeURLsWithUTF8.txt
 %%TWDIR%%/data/TWiki/AppendixEncodeURLsWithUTF8.txt,v
+%%TWDIR%%/data/TWiki/BackupRestoreConsole.txt
+%%TWDIR%%/data/TWiki/BackupRestoreConsole.txt,v
+%%TWDIR%%/data/TWiki/BackupRestorePlugin.txt
+%%TWDIR%%/data/TWiki/BackupRestorePlugin.txt,v
 %%TWDIR%%/data/TWiki/BookView.txt
 %%TWDIR%%/data/TWiki/BookView.txt,v
 %%TWDIR%%/data/TWiki/BumpyWord.txt
@@ -152,6 +168,8 @@
 %%TWDIR%%/data/TWiki/CategoryCategory.txt,v
 %%TWDIR%%/data/TWiki/ClassMethod.txt
 %%TWDIR%%/data/TWiki/ClassMethod.txt,v
+%%TWDIR%%/data/TWiki/ColorPickerPlugin.txt
+%%TWDIR%%/data/TWiki/ColorPickerPlugin.txt,v
 %%TWDIR%%/data/TWiki/DeleteOrRenameATopic.txt
 %%TWDIR%%/data/TWiki/DeleteOrRenameATopic.txt,v
 %%TWDIR%%/data/TWiki/DeleteOrRenameAnAttachment.txt
@@ -162,6 +180,8 @@
 %%TWDIR%%/data/TWiki/DontNotify.txt,v
 %%TWDIR%%/data/TWiki/EditDoesNotIncreaseTheRevision.txt
 %%TWDIR%%/data/TWiki/EditDoesNotIncreaseTheRevision.txt,v
+%%TWDIR%%/data/TWiki/EditUserAccount.txt
+%%TWDIR%%/data/TWiki/EditUserAccount.txt,v
 %%TWDIR%%/data/TWiki/ExampleTopicTemplate.txt
 %%TWDIR%%/data/TWiki/ExampleTopicTemplate.txt,v
 %%TWDIR%%/data/TWiki/FileAttachment.txt
@@ -176,10 +196,10 @@
 %%TWDIR%%/data/TWiki/FormattedSearch.txt,v
 %%TWDIR%%/data/TWiki/GnuGeneralPublicLicense.txt
 %%TWDIR%%/data/TWiki/GnuGeneralPublicLicense.txt,v
-%%TWDIR%%/data/TWiki/GoBox.txt
-%%TWDIR%%/data/TWiki/GoBox.txt,v
 %%TWDIR%%/data/TWiki/GoodStyle.txt
 %%TWDIR%%/data/TWiki/GoodStyle.txt,v
+%%TWDIR%%/data/TWiki/HeadlinesPlugin.txt
+%%TWDIR%%/data/TWiki/HeadlinesPlugin.txt,v
 %%TWDIR%%/data/TWiki/HiddenAttachment.txt
 %%TWDIR%%/data/TWiki/HiddenAttachment.txt,v
 %%TWDIR%%/data/TWiki/HierarchicalNavigation.txt
@@ -194,6 +214,10 @@
 %%TWDIR%%/data/TWiki/InstalledPlugins.txt,v
 %%TWDIR%%/data/TWiki/InstantEnhancements.txt
 %%TWDIR%%/data/TWiki/InstantEnhancements.txt,v
+%%TWDIR%%/data/TWiki/JQueryPlugin.txt
+%%TWDIR%%/data/TWiki/JQueryPlugin.txt,v
+%%TWDIR%%/data/TWiki/JumpBox.txt
+%%TWDIR%%/data/TWiki/JumpBox.txt,v
 %%TWDIR%%/data/TWiki/LanguageSelector.txt
 %%TWDIR%%/data/TWiki/LanguageSelector.txt,v
 %%TWDIR%%/data/TWiki/MainFeatures.txt
@@ -204,10 +228,12 @@
 %%TWDIR%%/data/TWiki/ManagingWebs.txt,v
 %%TWDIR%%/data/TWiki/MonitorDotPm.txt
 %%TWDIR%%/data/TWiki/MonitorDotPm.txt,v
-%%TWDIR%%/data/TWiki/MoveTopic.txt
-%%TWDIR%%/data/TWiki/MoveTopic.txt,v
 %%TWDIR%%/data/TWiki/ObjectMethod.txt
 %%TWDIR%%/data/TWiki/ObjectMethod.txt,v
+%%TWDIR%%/data/TWiki/ParameterizedVariables.txt
+%%TWDIR%%/data/TWiki/ParameterizedVariables.txt,v
+%%TWDIR%%/data/TWiki/PersonalPreferencesHelp.txt
+%%TWDIR%%/data/TWiki/PersonalPreferencesHelp.txt,v
 %%TWDIR%%/data/TWiki/PeterThoeny.txt
 %%TWDIR%%/data/TWiki/PeterThoeny.txt,v
 %%TWDIR%%/data/TWiki/PlainSkin.txt
@@ -218,6 +244,8 @@
 %%TWDIR%%/data/TWiki/PrintSkin.txt,v
 %%TWDIR%%/data/TWiki/QuerySearch.txt
 %%TWDIR%%/data/TWiki/QuerySearch.txt,v
+%%TWDIR%%/data/TWiki/QueryUsers.txt
+%%TWDIR%%/data/TWiki/QueryUsers.txt,v
 %%TWDIR%%/data/TWiki/QuietSave.txt
 %%TWDIR%%/data/TWiki/QuietSave.txt,v
 %%TWDIR%%/data/TWiki/RegistrationApprovals.txt
@@ -232,6 +260,8 @@
 %%TWDIR%%/data/TWiki/SearchHelp.txt,v
 %%TWDIR%%/data/TWiki/SearchPatternCookbook.txt
 %%TWDIR%%/data/TWiki/SearchPatternCookbook.txt,v
+%%TWDIR%%/data/TWiki/SetGetPlugin.txt
+%%TWDIR%%/data/TWiki/SetGetPlugin.txt,v
 %%TWDIR%%/data/TWiki/SimultaneousEdits.txt
 %%TWDIR%%/data/TWiki/SimultaneousEdits.txt,v
 %%TWDIR%%/data/TWiki/SiteChanges.txt
@@ -240,8 +270,12 @@
 %%TWDIR%%/data/TWiki/SiteMap.txt,v
 %%TWDIR%%/data/TWiki/SitePermissions.txt
 %%TWDIR%%/data/TWiki/SitePermissions.txt,v
+%%TWDIR%%/data/TWiki/SiteStatisticsTemplate.txt
+%%TWDIR%%/data/TWiki/SiteStatisticsTemplate.txt,v
 %%TWDIR%%/data/TWiki/SourceCode.txt
 %%TWDIR%%/data/TWiki/SourceCode.txt,v
+%%TWDIR%%/data/TWiki/SpreadSheetPluginTestCases.txt
+%%TWDIR%%/data/TWiki/SpreadSheetPluginTestCases.txt,v
 %%TWDIR%%/data/TWiki/StandardColors.txt
 %%TWDIR%%/data/TWiki/StandardColors.txt,v
 %%TWDIR%%/data/TWiki/StartingPoints.txt
@@ -276,6 +310,8 @@
 %%TWDIR%%/data/TWiki/TWikiCss.txt,v
 %%TWDIR%%/data/TWiki/TWikiDocGraphics.txt
 %%TWDIR%%/data/TWiki/TWikiDocGraphics.txt,v
+%%TWDIR%%/data/TWiki/TWikiDocGraphicsTemplate.txt
+%%TWDIR%%/data/TWiki/TWikiDocGraphicsTemplate.txt,v
 %%TWDIR%%/data/TWiki/TWikiDocumentation.txt
 %%TWDIR%%/data/TWiki/TWikiDocumentation.txt,v
 %%TWDIR%%/data/TWiki/TWikiDotPm.txt
@@ -284,6 +320,10 @@
 %%TWDIR%%/data/TWiki/TWikiDownload.txt,v
 %%TWDIR%%/data/TWiki/TWikiEditingShorthand.txt
 %%TWDIR%%/data/TWiki/TWikiEditingShorthand.txt,v
+%%TWDIR%%/data/TWiki/TWikiEngineDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiEngineDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiEngineExceptionDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiEngineExceptionDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiEnhancementRequests.txt
 %%TWDIR%%/data/TWiki/TWikiEnhancementRequests.txt,v
 %%TWDIR%%/data/TWiki/TWikiFAQ.txt
@@ -334,6 +374,8 @@
 %%TWDIR%%/data/TWiki/TWikiLoginManagerApacheLoginDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiLoginManagerDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiLoginManagerDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiLoginManagerSessionDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiLoginManagerSessionDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiLoginManagerTemplateLoginDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiLoginManagerTemplateLoginDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiLogos.txt
@@ -348,10 +390,16 @@
 %%TWDIR%%/data/TWiki/TWikiNetDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiNetHTTPResponseDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiNetHTTPResponseDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiNetSkin.txt
+%%TWDIR%%/data/TWiki/TWikiNetSkin.txt,v
+%%TWDIR%%/data/TWiki/TWikiNetSkinColorSettings.txt
+%%TWDIR%%/data/TWiki/TWikiNetSkinColorSettings.txt,v
+%%TWDIR%%/data/TWiki/TWikiNetSkinPlugin.txt
+%%TWDIR%%/data/TWiki/TWikiNetSkinPlugin.txt,v
+%%TWDIR%%/data/TWiki/TWikiNetSkinWebCreateNewTopicTemplate.txt
+%%TWDIR%%/data/TWiki/TWikiNetSkinWebCreateNewTopicTemplate.txt,v
 %%TWDIR%%/data/TWiki/TWikiOopsExceptionDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiOopsExceptionDotPm.txt,v
-%%TWDIR%%/data/TWiki/TWikiPlannedFeatures.txt
-%%TWDIR%%/data/TWiki/TWikiPlannedFeatures.txt,v
 %%TWDIR%%/data/TWiki/TWikiPluginDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiPluginDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiPlugins.txt
@@ -382,10 +430,20 @@
 %%TWDIR%%/data/TWiki/TWikiReleaseNotes04x01.txt,v
 %%TWDIR%%/data/TWiki/TWikiReleaseNotes04x02.txt
 %%TWDIR%%/data/TWiki/TWikiReleaseNotes04x02.txt,v
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes04x03.txt
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes04x03.txt,v
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes05x00.txt
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes05x00.txt,v
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes05x01.txt
+%%TWDIR%%/data/TWiki/TWikiReleaseNotes05x01.txt,v
 %%TWDIR%%/data/TWiki/TWikiRenderDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiRenderDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiRenderingShortcut.txt
 %%TWDIR%%/data/TWiki/TWikiRenderingShortcut.txt,v
+%%TWDIR%%/data/TWiki/TWikiRequestDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiRequestDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiResponseDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiResponseDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiSandboxDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiSandboxDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiScripts.txt
@@ -442,6 +500,8 @@
 %%TWDIR%%/data/TWiki/TWikiUIRDiffDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUIRegisterDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUIRegisterDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiUIRestDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiUIRestDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUISaveDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUISaveDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUISearchDotPm.txt
@@ -470,12 +530,14 @@
 %%TWDIR%%/data/TWiki/TWikiUsersHtPasswdUserDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersPasswordDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersPasswordDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiUsersTWikiUserMappingDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiUsersTWikiUserMappingDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiVariables.txt
 %%TWDIR%%/data/TWiki/TWikiVariables.txt,v
 %%TWDIR%%/data/TWiki/TWikiVariablesQuickStart.txt
 %%TWDIR%%/data/TWiki/TWikiVariablesQuickStart.txt,v
-%%TWDIR%%/data/TWiki/TWikiWebsTable.txt
-%%TWDIR%%/data/TWiki/TWikiWebsTable.txt,v
+%%TWDIR%%/data/TWiki/TWikiVariablesSearch.txt
+%%TWDIR%%/data/TWiki/TWikiVariablesSearch.txt,v
 %%TWDIR%%/data/TWiki/TemplateWeb.txt
 %%TWDIR%%/data/TWiki/TemplateWeb.txt,v
 %%TWDIR%%/data/TWiki/TextEditor.txt
@@ -488,12 +550,28 @@
 %%TWDIR%%/data/TWiki/TimBernersLee.txt,v
 %%TWDIR%%/data/TWiki/TimeSpecifications.txt
 %%TWDIR%%/data/TWiki/TimeSpecifications.txt,v
+%%TWDIR%%/data/TWiki/TopMenuSkin.txt
+%%TWDIR%%/data/TWiki/TopMenuSkin.txt,v
+%%TWDIR%%/data/TWiki/TopMenuSkinDefaultWebTopMenu.txt
+%%TWDIR%%/data/TWiki/TopMenuSkinDefaultWebTopMenu.txt,v
+%%TWDIR%%/data/TWiki/TopMenuSkinHomeMenu.txt
+%%TWDIR%%/data/TWiki/TopMenuSkinHomeMenu.txt,v
+%%TWDIR%%/data/TWiki/TopMenuSkinTopBar.txt
+%%TWDIR%%/data/TWiki/TopMenuSkinTopBar.txt,v
+%%TWDIR%%/data/TWiki/TopMenuSkinTopicMenu.txt
+%%TWDIR%%/data/TWiki/TopMenuSkinTopicMenu.txt,v
+%%TWDIR%%/data/TWiki/UserBookmarks.txt
+%%TWDIR%%/data/TWiki/UserBookmarks.txt,v
+%%TWDIR%%/data/TWiki/UserBookmarksTemplate.txt
+%%TWDIR%%/data/TWiki/UserBookmarksTemplate.txt,v
 %%TWDIR%%/data/TWiki/UserDocumentationCategory.txt
 %%TWDIR%%/data/TWiki/UserDocumentationCategory.txt,v
 %%TWDIR%%/data/TWiki/UsingHTML.txt
 %%TWDIR%%/data/TWiki/UsingHTML.txt,v
 %%TWDIR%%/data/TWiki/VarACTIVATEDPLUGINS.txt
 %%TWDIR%%/data/TWiki/VarACTIVATEDPLUGINS.txt,v
+%%TWDIR%%/data/TWiki/VarADDTOHEAD.txt
+%%TWDIR%%/data/TWiki/VarADDTOHEAD.txt,v
 %%TWDIR%%/data/TWiki/VarALLVARIABLES.txt
 %%TWDIR%%/data/TWiki/VarALLVARIABLES.txt,v
 %%TWDIR%%/data/TWiki/VarAQUA.txt
@@ -526,8 +604,12 @@
 %%TWDIR%%/data/TWiki/VarBROWN.txt,v
 %%TWDIR%%/data/TWiki/VarBULLET.txt
 %%TWDIR%%/data/TWiki/VarBULLET.txt,v
+%%TWDIR%%/data/TWiki/VarCALCULATE.txt
+%%TWDIR%%/data/TWiki/VarCALCULATE.txt,v
 %%TWDIR%%/data/TWiki/VarCARET.txt
 %%TWDIR%%/data/TWiki/VarCARET.txt,v
+%%TWDIR%%/data/TWiki/VarCOLORPICKER.txt
+%%TWDIR%%/data/TWiki/VarCOLORPICKER.txt,v
 %%TWDIR%%/data/TWiki/VarDATE.txt
 %%TWDIR%%/data/TWiki/VarDATE.txt,v
 %%TWDIR%%/data/TWiki/VarDISPLAYTIME.txt
@@ -538,16 +620,22 @@
 %%TWDIR%%/data/TWiki/VarEDITACTION.txt,v
 %%TWDIR%%/data/TWiki/VarENCODE.txt
 %%TWDIR%%/data/TWiki/VarENCODE.txt,v
+%%TWDIR%%/data/TWiki/VarENDBG.txt
+%%TWDIR%%/data/TWiki/VarENDBG.txt,v
 %%TWDIR%%/data/TWiki/VarENDCOLOR.txt
 %%TWDIR%%/data/TWiki/VarENDCOLOR.txt,v
 %%TWDIR%%/data/TWiki/VarENDSECTION.txt
 %%TWDIR%%/data/TWiki/VarENDSECTION.txt,v
 %%TWDIR%%/data/TWiki/VarENV.txt
 %%TWDIR%%/data/TWiki/VarENV.txt,v
+%%TWDIR%%/data/TWiki/VarEXAMPLEVAR.txt
+%%TWDIR%%/data/TWiki/VarEXAMPLEVAR.txt,v
 %%TWDIR%%/data/TWiki/VarFAILEDPLUGINS.txt
 %%TWDIR%%/data/TWiki/VarFAILEDPLUGINS.txt,v
 %%TWDIR%%/data/TWiki/VarFORMFIELD.txt
 %%TWDIR%%/data/TWiki/VarFORMFIELD.txt,v
+%%TWDIR%%/data/TWiki/VarGET.txt
+%%TWDIR%%/data/TWiki/VarGET.txt,v
 %%TWDIR%%/data/TWiki/VarGMTIME.txt
 %%TWDIR%%/data/TWiki/VarGMTIME.txt,v
 %%TWDIR%%/data/TWiki/VarGMTIME2.txt
@@ -560,6 +648,10 @@
 %%TWDIR%%/data/TWiki/VarGROUPS.txt,v
 %%TWDIR%%/data/TWiki/VarH.txt
 %%TWDIR%%/data/TWiki/VarH.txt,v
+%%TWDIR%%/data/TWiki/VarHEADLINES.txt
+%%TWDIR%%/data/TWiki/VarHEADLINES.txt,v
+%%TWDIR%%/data/TWiki/VarHIDE.txt
+%%TWDIR%%/data/TWiki/VarHIDE.txt,v
 %%TWDIR%%/data/TWiki/VarHOMETOPIC.txt
 %%TWDIR%%/data/TWiki/VarHOMETOPIC.txt,v
 %%TWDIR%%/data/TWiki/VarHTTP.txt
@@ -584,6 +676,14 @@
 %%TWDIR%%/data/TWiki/VarINCLUDINGTOPIC.txt,v
 %%TWDIR%%/data/TWiki/VarINCLUDINGWEB.txt
 %%TWDIR%%/data/TWiki/VarINCLUDINGWEB.txt,v
+%%TWDIR%%/data/TWiki/VarJQENDTAB.txt
+%%TWDIR%%/data/TWiki/VarJQENDTAB.txt,v
+%%TWDIR%%/data/TWiki/VarJQENDTABPANE.txt
+%%TWDIR%%/data/TWiki/VarJQENDTABPANE.txt,v
+%%TWDIR%%/data/TWiki/VarJQTAB.txt
+%%TWDIR%%/data/TWiki/VarJQTAB.txt,v
+%%TWDIR%%/data/TWiki/VarJQTABPANE.txt
+%%TWDIR%%/data/TWiki/VarJQTABPANE.txt,v
 %%TWDIR%%/data/TWiki/VarLANGUAGE.txt
 %%TWDIR%%/data/TWiki/VarLANGUAGE.txt,v
 %%TWDIR%%/data/TWiki/VarLANGUAGES.txt
@@ -594,8 +694,12 @@
 %%TWDIR%%/data/TWiki/VarLOCALSITEPREFS.txt,v
 %%TWDIR%%/data/TWiki/VarLOGIN.txt
 %%TWDIR%%/data/TWiki/VarLOGIN.txt,v
+%%TWDIR%%/data/TWiki/VarLOGINURL.txt
+%%TWDIR%%/data/TWiki/VarLOGINURL.txt,v
 %%TWDIR%%/data/TWiki/VarLOGOUT.txt
 %%TWDIR%%/data/TWiki/VarLOGOUT.txt,v
+%%TWDIR%%/data/TWiki/VarLOGOUTURL.txt
+%%TWDIR%%/data/TWiki/VarLOGOUTURL.txt,v
 %%TWDIR%%/data/TWiki/VarM.txt
 %%TWDIR%%/data/TWiki/VarM.txt,v
 %%TWDIR%%/data/TWiki/VarMAINWEB.txt
@@ -622,6 +726,8 @@
 %%TWDIR%%/data/TWiki/VarORANGE.txt,v
 %%TWDIR%%/data/TWiki/VarP.txt
 %%TWDIR%%/data/TWiki/VarP.txt,v
+%%TWDIR%%/data/TWiki/VarPARENTTOPIC.txt
+%%TWDIR%%/data/TWiki/VarPARENTTOPIC.txt,v
 %%TWDIR%%/data/TWiki/VarPINK.txt
 %%TWDIR%%/data/TWiki/VarPINK.txt,v
 %%TWDIR%%/data/TWiki/VarPLUGINDESCRIPTIONS.txt
@@ -642,6 +748,8 @@
 %%TWDIR%%/data/TWiki/VarQUERYSTRING.txt,v
 %%TWDIR%%/data/TWiki/VarRED.txt
 %%TWDIR%%/data/TWiki/VarRED.txt,v
+%%TWDIR%%/data/TWiki/VarREDBG.txt
+%%TWDIR%%/data/TWiki/VarREDBG.txt,v
 %%TWDIR%%/data/TWiki/VarREMOTEADDR.txt
 %%TWDIR%%/data/TWiki/VarREMOTEADDR.txt,v
 %%TWDIR%%/data/TWiki/VarREMOTEPORT.txt
@@ -678,6 +786,10 @@
 %%TWDIR%%/data/TWiki/VarSESSIONVAR.txt,v
 %%TWDIR%%/data/TWiki/VarSESSIONVARIABLE.txt
 %%TWDIR%%/data/TWiki/VarSESSIONVARIABLE.txt,v
+%%TWDIR%%/data/TWiki/VarSET.txt
+%%TWDIR%%/data/TWiki/VarSET.txt,v
+%%TWDIR%%/data/TWiki/VarSETGETDUMP.txt
+%%TWDIR%%/data/TWiki/VarSETGETDUMP.txt,v
 %%TWDIR%%/data/TWiki/VarSILVER.txt
 %%TWDIR%%/data/TWiki/VarSILVER.txt,v
 %%TWDIR%%/data/TWiki/VarSPACEDTOPIC.txt
@@ -710,6 +822,8 @@
 %%TWDIR%%/data/TWiki/VarTOPICURL.txt,v
 %%TWDIR%%/data/TWiki/VarTWIKIWEB.txt
 %%TWDIR%%/data/TWiki/VarTWIKIWEB.txt,v
+%%TWDIR%%/data/TWiki/VarTWISTY.txt
+%%TWDIR%%/data/TWiki/VarTWISTY.txt,v
 %%TWDIR%%/data/TWiki/VarU.txt
 %%TWDIR%%/data/TWiki/VarU.txt,v
 %%TWDIR%%/data/TWiki/VarURLPARAM.txt
@@ -734,6 +848,12 @@
 %%TWDIR%%/data/TWiki/VarWHITE.txt,v
 %%TWDIR%%/data/TWiki/VarWIKIHOMEURL.txt
 %%TWDIR%%/data/TWiki/VarWIKIHOMEURL.txt,v
+%%TWDIR%%/data/TWiki/VarWIKILOGOALT.txt
+%%TWDIR%%/data/TWiki/VarWIKILOGOALT.txt,v
+%%TWDIR%%/data/TWiki/VarWIKILOGOIMG.txt
+%%TWDIR%%/data/TWiki/VarWIKILOGOIMG.txt,v
+%%TWDIR%%/data/TWiki/VarWIKILOGOURL.txt
+%%TWDIR%%/data/TWiki/VarWIKILOGOURL.txt,v
 %%TWDIR%%/data/TWiki/VarWIKINAME.txt
 %%TWDIR%%/data/TWiki/VarWIKINAME.txt,v
 %%TWDIR%%/data/TWiki/VarWIKIPREFSTOPIC.txt
@@ -762,6 +882,8 @@
 %%TWDIR%%/data/TWiki/WebChanges.txt,v
 %%TWDIR%%/data/TWiki/WebChangesAlert.txt
 %%TWDIR%%/data/TWiki/WebChangesAlert.txt,v
+%%TWDIR%%/data/TWiki/WebChangesRightBox.txt
+%%TWDIR%%/data/TWiki/WebChangesRightBox.txt,v
 %%TWDIR%%/data/TWiki/WebCreateNewTopic.txt
 %%TWDIR%%/data/TWiki/WebCreateNewTopic.txt,v
 %%TWDIR%%/data/TWiki/WebCreateNewTopicTemplate.txt
@@ -790,6 +912,8 @@
 %%TWDIR%%/data/TWiki/WebStatistics.txt,v
 %%TWDIR%%/data/TWiki/WebTemplateTopics.txt
 %%TWDIR%%/data/TWiki/WebTemplateTopics.txt,v
+%%TWDIR%%/data/TWiki/WebTopMenu.txt
+%%TWDIR%%/data/TWiki/WebTopMenu.txt,v
 %%TWDIR%%/data/TWiki/WebTopicCreator.txt
 %%TWDIR%%/data/TWiki/WebTopicCreator.txt,v
 %%TWDIR%%/data/TWiki/WebTopicEditTemplate.txt
@@ -818,8 +942,6 @@
 %%TWDIR%%/data/TWiki/WikiSyntax.txt,v
 %%TWDIR%%/data/TWiki/WikiSyntaxSummary.txt
 %%TWDIR%%/data/TWiki/WikiSyntaxSummary.txt,v
-%%TWDIR%%/data/TWiki/WikiWikiClones.txt
-%%TWDIR%%/data/TWiki/WikiWikiClones.txt,v
 %%TWDIR%%/data/TWiki/WikiWord.txt
 %%TWDIR%%/data/TWiki/WikiWord.txt,v
 %%TWDIR%%/data/TWiki/YouAreHere.txt
@@ -846,6 +968,8 @@
 %%TWDIR%%/data/Trash/WebSearchAdvanced.txt,v
 %%TWDIR%%/data/Trash/WebStatistics.txt
 %%TWDIR%%/data/Trash/WebStatistics.txt,v
+%%TWDIR%%/data/Trash/WebTopMenu.txt
+%%TWDIR%%/data/Trash/WebTopMenu.txt,v
 %%TWDIR%%/data/Trash/WebTopicList.txt
 %%TWDIR%%/data/Trash/WebTopicList.txt,v
 %%TWDIR%%/data/_default/WebAtom.txt
@@ -870,6 +994,8 @@
 %%TWDIR%%/data/_default/WebSearchAdvanced.txt,v
 %%TWDIR%%/data/_default/WebStatistics.txt
 %%TWDIR%%/data/_default/WebStatistics.txt,v
+%%TWDIR%%/data/_default/WebTopMenu.txt
+%%TWDIR%%/data/_default/WebTopMenu.txt,v
 %%TWDIR%%/data/_default/WebTopicList.txt
 %%TWDIR%%/data/_default/WebTopicList.txt,v
 %%TWDIR%%/data/_empty/WebPreferences.txt
@@ -880,8 +1006,6 @@
 %%TWDIR%%/lib/DEPENDENCIES
 %%TWDIR%%/lib/MANIFEST
 %%TWDIR%%/lib/Monitor.pm
-%%TWDIR%%/lib/TWiki.pm
-%%TWDIR%%/lib/TWiki.spec
 %%TWDIR%%/lib/TWiki/Access.pm
 %%TWDIR%%/lib/TWiki/AccessControlException.pm
 %%TWDIR%%/lib/TWiki/AggregateIterator.pm
@@ -941,6 +1065,8 @@
 %%TWDIR%%/lib/TWiki/Configure/Checkers/Sessions/ExpireAfter.pm
 %%TWDIR%%/lib/TWiki/Configure/Checkers/Site/CharSet.pm
 %%TWDIR%%/lib/TWiki/Configure/Checkers/Site/Locale.pm
+%%TWDIR%%/lib/TWiki/Configure/Checkers/SmimeCertificateFile.pm
+%%TWDIR%%/lib/TWiki/Configure/Checkers/SmimeKeyFile.pm
 %%TWDIR%%/lib/TWiki/Configure/Checkers/StoreImpl.pm
 %%TWDIR%%/lib/TWiki/Configure/Checkers/TemplateDir.pm
 %%TWDIR%%/lib/TWiki/Configure/Checkers/UploadFilter.pm
@@ -985,15 +1111,25 @@
 %%TWDIR%%/lib/TWiki/Configure/UIs/LANGUAGES.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/PLUGINS.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/PasswordProtected.pm
+%%TWDIR%%/lib/TWiki/Configure/UIs/PromptPASS.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/Root.pm
+%%TWDIR%%/lib/TWiki/Configure/UIs/SETPASS.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/Section.pm
+%%TWDIR%%/lib/TWiki/Configure/UIs/SetNewPass.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/TAGS.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/UPDATE.pm
 %%TWDIR%%/lib/TWiki/Configure/UIs/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Valuer.pm
-%%TWDIR%%/lib/TWiki/Form.pm
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/Config.spec
+%%TWDIR%%/lib/TWiki/Contrib/TWikiNetSkin.pm
+%%TWDIR%%/lib/TWiki/Contrib/TopMenuSkin.pm
+%%TWDIR%%/lib/TWiki/Engine/CGI.pm
+%%TWDIR%%/lib/TWiki/Engine/CLI.pm
+%%TWDIR%%/lib/TWiki/Engine.pm
+%%TWDIR%%/lib/TWiki/EngineException.pm
 %%TWDIR%%/lib/TWiki/Form/Checkbox.pm
+%%TWDIR%%/lib/TWiki/Form/Color.pm
 %%TWDIR%%/lib/TWiki/Form/FieldDefinition.pm
 %%TWDIR%%/lib/TWiki/Form/Label.pm
 %%TWDIR%%/lib/TWiki/Form/ListFieldDefinition.pm
@@ -1001,16 +1137,18 @@
 %%TWDIR%%/lib/TWiki/Form/Select.pm
 %%TWDIR%%/lib/TWiki/Form/Text.pm
 %%TWDIR%%/lib/TWiki/Form/Textarea.pm
+%%TWDIR%%/lib/TWiki/Form.pm
 %%TWDIR%%/lib/TWiki/Func.pm
-%%TWDIR%%/lib/TWiki/I18N.pm
 %%TWDIR%%/lib/TWiki/I18N/Extract.pm
 %%TWDIR%%/lib/TWiki/I18N/Fallback.pm
+%%TWDIR%%/lib/TWiki/I18N.pm
 %%TWDIR%%/lib/TWiki/If/Node.pm
 %%TWDIR%%/lib/TWiki/If/OP_allows.pm
 %%TWDIR%%/lib/TWiki/If/OP_context.pm
 %%TWDIR%%/lib/TWiki/If/OP_defined.pm
 %%TWDIR%%/lib/TWiki/If/OP_dollar.pm
 %%TWDIR%%/lib/TWiki/If/OP_ingroup.pm
+%%TWDIR%%/lib/TWiki/If/OP_isempty.pm
 %%TWDIR%%/lib/TWiki/If/OP_istopic.pm
 %%TWDIR%%/lib/TWiki/If/OP_isweb.pm
 %%TWDIR%%/lib/TWiki/If/Parser.pm
@@ -1019,21 +1157,35 @@
 %%TWDIR%%/lib/TWiki/Infix/Parser.pm
 %%TWDIR%%/lib/TWiki/LineIterator.pm
 %%TWDIR%%/lib/TWiki/ListIterator.pm
-%%TWDIR%%/lib/TWiki/LoginManager.pm
 %%TWDIR%%/lib/TWiki/LoginManager/ApacheLogin.pm
+%%TWDIR%%/lib/TWiki/LoginManager/Session.pm
 %%TWDIR%%/lib/TWiki/LoginManager/TemplateLogin.pm
+%%TWDIR%%/lib/TWiki/LoginManager.pm
 %%TWDIR%%/lib/TWiki/Merge.pm
 %%TWDIR%%/lib/TWiki/Meta.pm
-%%TWDIR%%/lib/TWiki/Net.pm
 %%TWDIR%%/lib/TWiki/Net/HTTPResponse.pm
 %%TWDIR%%/lib/TWiki/Net/UserCredAgent.pm
+%%TWDIR%%/lib/TWiki/Net.pm
 %%TWDIR%%/lib/TWiki/OopsException.pm
 %%TWDIR%%/lib/TWiki/Plugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin/CaptureOutput.pm
+%%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin/Config.spec
+%%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin/ProcDaemon.pm
+%%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/ColorPickerPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/HeadlinesPlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/HeadlinesPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/JQueryPlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/JQueryPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/TWikiNetSkinPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins.pm
 %%TWDIR%%/lib/TWiki/Plurals.pm
-%%TWDIR%%/lib/TWiki/Prefs.pm
 %%TWDIR%%/lib/TWiki/Prefs/Parser.pm
 %%TWDIR%%/lib/TWiki/Prefs/PrefsCache.pm
+%%TWDIR%%/lib/TWiki/Prefs.pm
 %%TWDIR%%/lib/TWiki/Query/BinaryOP.pm
 %%TWDIR%%/lib/TWiki/Query/HoistREs.pm
 %%TWDIR%%/lib/TWiki/Query/Node.pm
@@ -1058,18 +1210,20 @@
 %%TWDIR%%/lib/TWiki/Query/Parser.pm
 %%TWDIR%%/lib/TWiki/Query/UnaryOP.pm
 %%TWDIR%%/lib/TWiki/Render.pm
+%%TWDIR%%/lib/TWiki/Request/Upload.pm
+%%TWDIR%%/lib/TWiki/Request.pm
+%%TWDIR%%/lib/TWiki/Response.pm
 %%TWDIR%%/lib/TWiki/Sandbox.pm
 %%TWDIR%%/lib/TWiki/Search.pm
-%%TWDIR%%/lib/TWiki/Store.pm
 %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms/BruteForce.pm
 %%TWDIR%%/lib/TWiki/Store/RcsFile.pm
 %%TWDIR%%/lib/TWiki/Store/RcsLite.pm
 %%TWDIR%%/lib/TWiki/Store/RcsWrap.pm
 %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms/Forking.pm
 %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms/PurePerl.pm
+%%TWDIR%%/lib/TWiki/Store.pm
 %%TWDIR%%/lib/TWiki/Templates.pm
 %%TWDIR%%/lib/TWiki/Time.pm
-%%TWDIR%%/lib/TWiki/UI.pm
 %%TWDIR%%/lib/TWiki/UI/ChangeForm.pm
 %%TWDIR%%/lib/TWiki/UI/Changes.pm
 %%TWDIR%%/lib/TWiki/UI/Edit.pm
@@ -1078,17 +1232,21 @@
 %%TWDIR%%/lib/TWiki/UI/Preview.pm
 %%TWDIR%%/lib/TWiki/UI/RDiff.pm
 %%TWDIR%%/lib/TWiki/UI/Register.pm
+%%TWDIR%%/lib/TWiki/UI/Rest.pm
 %%TWDIR%%/lib/TWiki/UI/Save.pm
 %%TWDIR%%/lib/TWiki/UI/Search.pm
 %%TWDIR%%/lib/TWiki/UI/Statistics.pm
 %%TWDIR%%/lib/TWiki/UI/Upload.pm
 %%TWDIR%%/lib/TWiki/UI/View.pm
+%%TWDIR%%/lib/TWiki/UI.pm
 %%TWDIR%%/lib/TWiki/UserMapping.pm
-%%TWDIR%%/lib/TWiki/Users.pm
 %%TWDIR%%/lib/TWiki/Users/ApacheHtpasswdUser.pm
 %%TWDIR%%/lib/TWiki/Users/BaseUserMapping.pm
 %%TWDIR%%/lib/TWiki/Users/HtPasswdUser.pm
 %%TWDIR%%/lib/TWiki/Users/Password.pm
+%%TWDIR%%/lib/TWiki/Users.pm
+%%TWDIR%%/lib/TWiki.pm
+%%TWDIR%%/lib/TWiki.spec
 %%TWDIR%%/locale/TWiki.pot
 %%TWDIR%%/locale/bg.po
 %%TWDIR%%/locale/cs.po
@@ -1099,6 +1257,7 @@
 %%TWDIR%%/locale/fr.po
 %%TWDIR%%/locale/it.po
 %%TWDIR%%/locale/ja.po
+%%TWDIR%%/locale/ko.po
 %%TWDIR%%/locale/nl.po
 %%TWDIR%%/locale/pl.po
 %%TWDIR%%/locale/pt.po
@@ -1107,7 +1266,10 @@
 %%TWDIR%%/locale/uk.po
 %%TWDIR%%/locale/zh-cn.po
 %%TWDIR%%/locale/zh-tw.po
-%%TWDIR%%/pub-htaccess.txt
+%%TWDIR%%/pub/Main/TWikiGuest/twiki-guest.gif
+%%TWDIR%%/pub/Main/UserProfileHeader/default-user-profile.jpg
+%%TWDIR%%/pub/Main/UserProfileHeader/gradient-title.png
+%%TWDIR%%/pub/Main/UserProfileHeader/spacer.gif
 %%TWDIR%%/pub/Main/WebPreferences/favicon.ico
 %%TWDIR%%/pub/Main/WebPreferences/logo.gif
 %%TWDIR%%/pub/Sandbox/WebPreferences/favicon.ico
@@ -1121,8 +1283,264 @@
 %%TWDIR%%/pub/TWiki/ATasteOfTWiki/lego.gif
 %%TWDIR%%/pub/TWiki/ATasteOfTWiki/myco.gif
 %%TWDIR%%/pub/TWiki/ATasteOfTWiki/whiteboard.gif
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/backup-console-detail.png
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/backup-console-overview.png
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/newtopic.gif
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/processing-bar.gif
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/processing.gif
+%%TWDIR%%/pub/TWiki/BackupRestorePlugin/zip.gif
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/CHANGELOG.html
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/LICENSE.txt
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/README.html
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/color.gif
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/color_bg.gif
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/demo1.html
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/demo2.html
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/farbtastic.css
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/farbtastic.js
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/marker.png
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/mask.png
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/screenshot-edit.png
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/screenshot-small.png
+%%TWDIR%%/pub/TWiki/ColorPickerPlugin/wheel.png
 %%TWDIR%%/pub/TWiki/FileAttachment/Sample.txt
 %%TWDIR%%/pub/TWiki/FileAttachment/Smile.gif
+%%TWDIR%%/pub/TWiki/HeadlinesPlugin/style.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/Makefile
+%%TWDIR%%/pub/TWiki/JQueryPlugin/MenuArrow.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/button1.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery-ui-i18n.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-af.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ar-DZ.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ar.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-az.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-bg.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-bs.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ca.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-cs.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-da.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-de.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-el.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-en-AU.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-en-GB.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-en-NZ.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-eo.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-es.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-et.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-eu.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-fa.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-fi.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-fo.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-fr-CH.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-fr.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-gl.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-he.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-hr.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-hu.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-hy.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-id.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-is.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-it.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ja.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ko.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-kz.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-lt.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-lv.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ml.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ms.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-nl.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-no.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-pl.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-pt-BR.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-pt.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-rm.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ro.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ru.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sk.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sl.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sq.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sr-SR.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sr.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-sv.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-ta.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-th.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-tr.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-uk.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-vi.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-zh-CN.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-zh-HK.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/i18n/jquery.ui.datepicker-zh-TW.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/file.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/folder-closed.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/folder.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/minus.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/plus.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/spinner.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/spinner.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/spinner_arrows.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/spinner_big.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-black-line.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-black.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-default-line.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-default.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-famfamfam-line.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-famfamfam.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-gray-line.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-gray.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-red-line.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/images/treeview-red.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.4.2.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.4.2.js.gz
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.4.2.min.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.5.1.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.5.1.js.gz
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-1.5.1.min.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-all.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-all.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-all.js.gz
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-ui-1.8.10.custom.min.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery-ui.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.bgiframe.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.bgiframe.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.blockUI.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.blockUI.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.cookie.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.cookie.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.debug.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.debug.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.dom.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.dom.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.easing.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.easing.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.empty.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.hoverIntent.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.hoverIntent.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.innerfade.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.innerfade.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.metadata.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.metadata.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.nifty.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.nifty.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.nifty.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.shrinkurls.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.shrinkurls.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.spinner.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.spinner.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.superfish.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.superfish.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.superfish.uncompressed.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.superfish.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.tabpane.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.tabpane.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.tabpane.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.tooltip.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.tooltip.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.async.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.async.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.edit.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.edit.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.sortable.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.sortable.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.treeview.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.twiki.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.twiki.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.twiki.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/jquery.uncompressed.js
+%%TWDIR%%/pub/TWiki/JQueryPlugin/readme.txt
+%%TWDIR%%/pub/TWiki/JQueryPlugin/shade1.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/tab_horiz.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/tab_left.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/tab_left_on.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/tab_right.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/tab_right_on.gif
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_diagonals-thick_8_333333_40x40.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_flat_65_ffffff_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_glass_40_111111_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_glass_55_1c1c1c_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_highlight-hard_40_aaaaaa_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_highlight-soft_50_aaaaaa_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_inset-hard_45_cd0a0a_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-bg_inset-hard_55_ffeb80_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_222222_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_4ca300_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_bbbbbb_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_ededed_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_ffcf29_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images/ui-icons_ffffff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/jquery-ui-1.8.10.custom.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/jquery-ui.black-tie.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_glass_50_3baae3_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-icons_2694e8_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-icons_2e83ff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-icons_3d80b3_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-icons_72a7cf_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images/ui-icons_ffffff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/jquery-ui-1.8.10.custom.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/jquery-ui.cupertino.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_flat_55_fbec88_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_217bc0_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_2e83ff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_469bdd_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_6da8d5_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_cd0a0a_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_d8e7f3_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images/ui-icons_f9bd01_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/jquery-ui-1.8.10.custom.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/jquery-ui.redmond.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_flat_0_666666_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-bg_highlight-soft_75_c7c9d1_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-icons_222222_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-icons_454545_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-icons_888888_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/jquery-ui-1.8.10.custom.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/jquery-ui.smoothness.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-icons_222222_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-icons_228ef1_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-icons_ef8c08_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-icons_ffd27a_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/jquery-ui-1.8.10.custom.css
+%%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/jquery-ui.ui-lightness.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/screenshot-small.png
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/screenshot.png
+%%TWDIR%%/pub/TWiki/PatternSkin/patternskin_screenshot.png
 %%TWDIR%%/pub/TWiki/PlainSkin/fullscreen.gif
 %%TWDIR%%/pub/TWiki/PlainSkin/screenshot.gif
 %%TWDIR%%/pub/TWiki/PreviewBackground/blankltgraybg.gif
@@ -1131,7 +1549,10 @@
 %%TWDIR%%/pub/TWiki/PreviewBackground/previewbg.gif
 %%TWDIR%%/pub/TWiki/PrintSkin/fullscreen.gif
 %%TWDIR%%/pub/TWiki/PrintSkin/screenshot.gif
-%%TWDIR%%/pub/TWiki/TWiki/thoth_baboon.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/blue.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/green.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/red.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/yellow.gif
 %%TWDIR%%/pub/TWiki/TWikiContributor/AUTHORS
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_13x11_photo.psd
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_13x11_video.psd
@@ -1150,9 +1571,10 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_Text_new.psd
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_Text_todo.psd
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_Text_updated.psd
-%%TWDIR%%/pub/TWiki/TWikiDocGraphics/_filetypes.txt
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/action-item.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/addon.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/air.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/airplane.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/application.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/arrowbdown.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/arrowbleft.gif
@@ -1166,27 +1588,50 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/arrowup.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/as.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/attachfile.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/award.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/barcode.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/bat.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/bed.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/bitly.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/blank-bg.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/blank.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/blogger.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/bmp.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/bomb.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/book.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/bridge.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/bubble.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/bug.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/building.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/buildings.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/c.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/cachetopic.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/calculator.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/changes-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/changes.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/chart-bar.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/chart-pie.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/checked-round.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/checked-square.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/checked.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/choice-cancel.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/choice-no.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/choice-yes.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/clock.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/close.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/closed.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/code.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/color-wheel-bg.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/color-wheel.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/comments.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/connections.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/css.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/dashboard.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/database.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/days.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/delicious.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/detail.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/digg.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/dll.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/doc.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/done.gif
@@ -1209,7 +1654,9 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/eml.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/empty.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/exe.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/external-link.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/external.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/facebook.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/fax.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/feed.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/filter.gif
@@ -1219,6 +1666,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/flag.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/folder.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/fon.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/food.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/gear.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/gif.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/globe.gif
@@ -1228,9 +1676,15 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/go_ff.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/go_forward.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/go_start.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/goal.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/google-plus.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/google.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/graduation.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/group.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/h.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/hand.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/heart.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/help-video.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/help.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/hlp.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/home.gif
@@ -1253,6 +1707,17 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-box-purple.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-box-red.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-box-yellow.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-aqua.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-blue.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-gray.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-green-plus.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-green.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-orange.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-purple.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-red-close.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-red.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-yellow-minus.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-cup-yellow.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-gray.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-green.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-orange.gif
@@ -1260,6 +1725,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-red.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/led-yellow.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/left.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/legal.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ld.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_lr.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_lrd.gif
@@ -1272,17 +1738,27 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ulr.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ur.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ur_gray.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/linkedin.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/lock-open.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lock.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lockfolder.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lockfoldergray.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/locktopic.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/locktopicgray.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/login.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/logout.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/luggage.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/mail.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/map.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/mdb.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/mechanics.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/meeting.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/megaphone.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/menu-down.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/menu-right.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/milestone.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/minus.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/mission.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/mobile.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/monospace.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/more-small.gif
@@ -1301,48 +1777,80 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/pdf.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/pencil.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/person.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/persona.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/persons.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/phone.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/photo.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/pl.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/plug.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/plugin.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/plus.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/png.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/ppt.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/presentation.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/printtopic.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/process.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing-32-bg.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing-32.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing-bar-wide.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing-bar.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing-bg.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/processing.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/profile.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/project-plan.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/project.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/proportional.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/ps.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/psd.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/puzzle.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/py.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/qrcode.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/question.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/quiet.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/radioactive.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/ram.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/recentchanges.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/reddit.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/refreshtopic.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/reg.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/reload-green.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/reload.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/remove.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/requirements.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/rfc.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/right.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/roadmap.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/rss-feed.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/rss-small.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/rss.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/save.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/search-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchpackage.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchtag.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchtopic.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sh.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/shipping.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sitemap.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sitetree.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/skin.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/skype.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/smartphone.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sniff.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/socket.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sort.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/star-full.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/star-half.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/star-none.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/stargold.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/starred.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/statistics.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/stop.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/strategy.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/stumbleupon.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/support.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/svg.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/swf.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/switch.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/table.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tablesortdiamond.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tablesortdown.gif
@@ -1363,6 +1871,10 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-orange.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-red.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/target.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/tasks.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/technorati.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/thumbs-down.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/thumbs-up.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tip.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/todo.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/toggleclose-mini.gif
@@ -1374,16 +1886,28 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/toggleopen.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/toggleopenleft-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/toggleopenleft.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/toolbox.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/tooth.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/topicbacklinks.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/topicdiffs.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/topmenu.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/traffic-light.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/trash.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/ttf.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/twiki-alert.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/twiki-gray.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/twiki-help.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/twiki-irc.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/twiki.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/twitter.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/txt.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/unchecked-round.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/unchecked-square.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/unchecked.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/up.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/updated.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/useractive.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/useradd.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/userinactive.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-bo.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-bo12.gif
@@ -1392,16 +1916,21 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-m12.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-o.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-o12.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-o14.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-oo.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-os.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/vcard.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/vector.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/video.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/viewtopic.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/vision.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/vsd.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/warning.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/watch.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/wav.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/web-bg-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/web-bg.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/windows.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/wip.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/wrench.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/wri.gif
@@ -1410,6 +1939,8 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/xml-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/xml.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/xsl.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/ying-yang.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/youtube.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/zip.gif
 %%TWDIR%%/pub/TWiki/TWikiJavascripts/twiki.compressed.js
 %%TWDIR%%/pub/TWiki/TWikiJavascripts/twiki.js
@@ -1465,13 +1996,252 @@
 %%TWDIR%%/pub/TWiki/TWikiLogos/T-logo-88x31.png
 %%TWDIR%%/pub/TWiki/TWikiLogos/T-logo.svg
 %%TWDIR%%/pub/TWiki/TWikiLogos/favicon.ico
+%%TWDIR%%/pub/TWiki/TWikiLogos/perl-logo-88x31.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_attachments_header_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_attachments_header_sorted_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_bottom_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_broadcastmessage.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_button.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_button_cancel.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_button_submit.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_form_bottom_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_header.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_header_right.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_help.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_inputfield.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_inputfield_active.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_leftbar_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_search_jump.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_search_jump.png
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_table_footer_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_table_header_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_table_header_sorted_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_topbar_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_topicactions.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bg_toptoolbar_gradient.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bullet-lock.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bullet-personal_sidebar.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/bullet-toc.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_action.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_action_disabled.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_action_hover.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_arrow.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_edit_icon.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_font_selector.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_jump.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_jump_hover.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_search.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/button_search_hover.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/colors.css
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/fullscreen.png
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/icon_alert.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/layout.css
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/logo_twiki_net_faded.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/print.css
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/rounded_BL.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/rounded_BR.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/rounded_TL.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/rounded_TR.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/rounded_corners.css
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/screenshot.png
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/style.css
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/table_corner_BL.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/table_corner_BR.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/table_corner_TL.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/table_corner_TR.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twiki-badge-88x31.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twiki.js
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twikiNetSkinPlugin_example.png
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twiki_src.js
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twikinet.js
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twisty_in.gif
+%%TWDIR%%/pub/TWiki/TWikiNetSkin/twisty_out.gif
 %%TWDIR%%/pub/TWiki/TWikiTemplates/base.css
 %%TWDIR%%/pub/TWiki/TWikiTemplates/default.css
 %%TWDIR%%/pub/TWiki/TWikiTemplates/oopsmore_diff_debug.gif
 %%TWDIR%%/pub/TWiki/TWikiTemplates/oopsmore_diff_sequential.gif
 %%TWDIR%%/pub/TWiki/TWikiTemplates/oopsmore_diff_sidebyside.gif
 %%TWDIR%%/pub/TWiki/TWikiTemplates/testscreen.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/gray-gradient-1.png
+%%TWDIR%%/pub/TWiki/TagMePlugin/gray-gradient-2.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/changelog.txt
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/css/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/css/word.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/full.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/index.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/lists/image_list.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/lists/link_list.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/lists/media_list.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/lists/template_list.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/logo.jpg
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/logo_over.jpg
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.avi
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.dcr
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.mov
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.ram
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.rm
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media/sample.swf
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/menu.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/simple.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/skins.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/translate.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/word.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/js/rule.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/img/sample.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/js/image.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/js/advlink.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/compat2x/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/compat2x/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cry.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-frown.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-smile.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/js/emotions.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/dialog.htm
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/img/example.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/js/dialog.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/template.htm
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/flash.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/flv_player.swf
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/quicktime.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/realmedia.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/shockwave.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/trans.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js/media.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/js/pastetext.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/js/pasteword.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview/preview.html
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/safari/blank.htm
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/safari/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/safari/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/css/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/js/props.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/js/cell.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/js/merge_cells.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/js/row.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/js/table.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/js/template.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/img/attach.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/img/colour.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/img/hide.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/img/tt.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/img/sample.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/js/image.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/cite.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/del.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/colorpicker.jpg
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images/icons.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/about.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/anchor.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/charmap.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/color_picker.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/image.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/link.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js/source_editor.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/img/icons.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/langs/en.js
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/default/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/default/ui.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/content.css
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
+%%TWDIR%%/pub/TWiki/TopMenuSkin/action-button-area.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/banner-bg.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/banner-net-bg.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/button-round-disabled.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/button-round-hover.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/button-round-normal.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/fullscreen.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-down.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-gray-bg.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-pulldown-bg.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-reverse-bg.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-right.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-start.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/menu-vbar.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/screenshot.png
+%%TWDIR%%/pub/TWiki/TopMenuSkin/spacer.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/twiki-gray.gif
+%%TWDIR%%/pub/TWiki/TopMenuSkin/twiki-help.gif
 %%TWDIR%%/pub/TWiki/WabiSabi/wabisabi.gif
+%%TWDIR%%/pub/TWiki/WebChangesRightBox/gradient-title.png
 %%TWDIR%%/pub/TWiki/WebPreferences/Dakar.gif
 %%TWDIR%%/pub/TWiki/WebPreferences/favicon.ico
 %%TWDIR%%/pub/TWiki/WebPreferences/logo.gif
@@ -1480,6 +2250,7 @@
 %%TWDIR%%/pub/Trash/WebPreferences/logo.gif
 %%TWDIR%%/pub/_default/WebPreferences/favicon.ico
 %%TWDIR%%/pub/_default/WebPreferences/logo.gif
+%%TWDIR%%/pub-htaccess.txt
 %%TWDIR%%/readme.txt
 %%TWDIR%%/robots.txt
 %%TWDIR%%/root-htaccess.txt
@@ -1487,20 +2258,25 @@
 %%TWDIR%%/templates/addform.tmpl
 %%TWDIR%%/templates/attach.tmpl
 %%TWDIR%%/templates/attachagain.tmpl
+%%TWDIR%%/templates/attachagain.twikinet.tmpl
 %%TWDIR%%/templates/attachnew.tmpl
 %%TWDIR%%/templates/attachtables.tmpl
+%%TWDIR%%/templates/attachtables.twikinet.tmpl
 %%TWDIR%%/templates/backlinks.tmpl
 %%TWDIR%%/templates/backlinksallwebs.tmpl
 %%TWDIR%%/templates/backlinksweb.tmpl
 %%TWDIR%%/templates/changeform.tmpl
 %%TWDIR%%/templates/changes.tmpl
 %%TWDIR%%/templates/css.tmpl
+%%TWDIR%%/templates/css.twikinet.tmpl
 %%TWDIR%%/templates/cssmediatypes.tmpl
 %%TWDIR%%/templates/edit.tmpl
+%%TWDIR%%/templates/edit.twikinet.tmpl
 %%TWDIR%%/templates/editform.tmpl
 %%TWDIR%%/templates/edittext.tmpl
 %%TWDIR%%/templates/form.tmpl
 %%TWDIR%%/templates/formtables.tmpl
+%%TWDIR%%/templates/formtables.twikinet.tmpl
 %%TWDIR%%/templates/login.sudo.tmpl
 %%TWDIR%%/templates/login.tmpl
 %%TWDIR%%/templates/mailresetpassword.tmpl
@@ -1513,6 +2289,7 @@
 %%TWDIR%%/templates/oopsattention.tmpl
 %%TWDIR%%/templates/oopschangelanguage.tmpl
 %%TWDIR%%/templates/oopsgeneric.tmpl
+%%TWDIR%%/templates/oopsinvalidtoken.tmpl
 %%TWDIR%%/templates/oopslanguagechanged.tmpl
 %%TWDIR%%/templates/oopsleaseconflict.tmpl
 %%TWDIR%%/templates/oopsmore.tmpl
@@ -1539,18 +2316,27 @@
 %%TWDIR%%/templates/searchmeta.tmpl
 %%TWDIR%%/templates/settings.tmpl
 %%TWDIR%%/templates/twiki.tmpl
+%%TWDIR%%/templates/twiki.twikinet.tmpl
 %%TWDIR%%/templates/view.plain.tmpl
 %%TWDIR%%/templates/view.print.tmpl
 %%TWDIR%%/templates/view.rss.tmpl
 %%TWDIR%%/templates/view.rssatom.tmpl
 %%TWDIR%%/templates/view.text.tmpl
 %%TWDIR%%/templates/view.tmpl
+%%TWDIR%%/templates/view.topmenu.tmpl
+%%TWDIR%%/templates/view.twikinet.tmpl
 %%TWDIR%%/templates/view.xml.tmpl
+%%TWDIR%%/templates/viewbottombar.twikinet.tmpl
+%%TWDIR%%/templates/viewleftbar.twikinet.tmpl
 %%TWDIR%%/templates/viewplain.tmpl
 %%TWDIR%%/templates/viewprint.tmpl
+%%TWDIR%%/templates/viewtopbar.twikinet.tmpl
 %%TWDIR%%/templates/viewtopicactionbuttons.tmpl
+%%TWDIR%%/templates/viewtopicactionbuttons.twikinet.tmpl
 %%TWDIR%%/tools/extender.pl
 %%TWDIR%%/tools/geturl.pl
+%%TWDIR%%/tools/minifycss
+%%TWDIR%%/tools/minifyjs
 %%TWDIR%%/tools/rewriteshbang.pl
 %%TWDIR%%/tools/tick_twiki.pl
 %%TWDIR%%/twiki_httpd_conf.txt
@@ -1559,69 +2345,194 @@
 %%TWDIR%%/working/registration_approvals/README
 %%TWDIR%%/working/tmp/README
 %%TWDIR%%/working/work_areas/README
-@dirrm %%TWDIR%%/working/work_areas
-@dirrm %%TWDIR%%/working/tmp
-@dirrm %%TWDIR%%/working/registration_approvals
-@dirrm %%TWDIR%%/working
-@dirrm %%TWDIR%%/tools
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%/pub/_default/WebPreferences
-@dirrm %%TWDIR%%/pub/_default
-@dirrm %%TWDIR%%/pub/Trash/WebPreferences
-@dirrm %%TWDIR%%/pub/Trash
-@dirrm %%TWDIR%%/pub/TWiki/WindowsInstallCookbook
-@dirrm %%TWDIR%%/pub/TWiki/WebPreferences
-@dirrm %%TWDIR%%/pub/TWiki/WabiSabi
-@dirrm %%TWDIR%%/pub/TWiki/TWikiTemplates
-@dirrm %%TWDIR%%/pub/TWiki/TWikiLogos
-@dirrm %%TWDIR%%/pub/TWiki/TWikiJavascripts
-@dirrm %%TWDIR%%/pub/TWiki/TWikiDocGraphics
-@dirrm %%TWDIR%%/pub/TWiki/TWikiContributor
-@dirrm %%TWDIR%%/pub/TWiki/TWiki
-@dirrm %%TWDIR%%/pub/TWiki/PrintSkin
-@dirrm %%TWDIR%%/pub/TWiki/PreviewBackground
-@dirrm %%TWDIR%%/pub/TWiki/PlainSkin
-@dirrm %%TWDIR%%/pub/TWiki/FileAttachment
-@dirrm %%TWDIR%%/pub/TWiki/ATasteOfTWiki
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub/Sandbox/WebPreferences
-@dirrm %%TWDIR%%/pub/Sandbox
-@dirrm %%TWDIR%%/pub/Main/WebPreferences
-@dirrm %%TWDIR%%/pub/Main
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/locale
-@dirrm %%TWDIR%%/lib/TWiki/Users
-@dirrm %%TWDIR%%/lib/TWiki/UI
-@dirrm %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms
-@dirrm %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms
-@dirrm %%TWDIR%%/lib/TWiki/Store
-@dirrm %%TWDIR%%/lib/TWiki/Query
-@dirrm %%TWDIR%%/lib/TWiki/Prefs
-@dirrm %%TWDIR%%/lib/TWiki/Net
-@dirrm %%TWDIR%%/lib/TWiki/LoginManager
-@dirrm %%TWDIR%%/lib/TWiki/Infix
-@dirrm %%TWDIR%%/lib/TWiki/If
-@dirrm %%TWDIR%%/lib/TWiki/I18N
-@dirrm %%TWDIR%%/lib/TWiki/Form
-@dirrm %%TWDIR%%/lib/TWiki/Configure/UIs
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Types
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Site
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Sessions
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Register
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/RCS
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Htpasswd
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers
-@dirrm %%TWDIR%%/lib/TWiki/Configure
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/data/_empty
-@dirrm %%TWDIR%%/data/_default
-@dirrm %%TWDIR%%/data/Trash
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data/Sandbox
-@dirrm %%TWDIR%%/data/Main
-@dirrm %%TWDIR%%/data
 @dirrm %%TWDIR%%/bin/logos
 @dirrm %%TWDIR%%/bin
+@dirrm %%TWDIR%%/data/Main
+@dirrm %%TWDIR%%/data/Sandbox
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data/Trash
+@dirrm %%TWDIR%%/data/_default
+@dirrm %%TWDIR%%/data/_empty
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Htpasswd
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/RCS
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Register
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Sessions
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Site
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Types
+@dirrm %%TWDIR%%/lib/TWiki/Configure/UIs
+@dirrm %%TWDIR%%/lib/TWiki/Configure
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki/Engine
+@dirrm %%TWDIR%%/lib/TWiki/Form
+@dirrm %%TWDIR%%/lib/TWiki/I18N
+@dirrm %%TWDIR%%/lib/TWiki/If
+@dirrm %%TWDIR%%/lib/TWiki/Infix
+@dirrm %%TWDIR%%/lib/TWiki/LoginManager
+@dirrm %%TWDIR%%/lib/TWiki/Net
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/BackupRestorePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/HeadlinesPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/JQueryPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki/Prefs
+@dirrm %%TWDIR%%/lib/TWiki/Query
+@dirrm %%TWDIR%%/lib/TWiki/Request
+@dirrm %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms
+@dirrm %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms
+@dirrm %%TWDIR%%/lib/TWiki/Store
+@dirrm %%TWDIR%%/lib/TWiki/UI
+@dirrm %%TWDIR%%/lib/TWiki/Users
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/locale
+@dirrm %%TWDIR%%/pub/Main/TWikiGuest
+@dirrm %%TWDIR%%/pub/Main/UserProfileHeader
+@dirrm %%TWDIR%%/pub/Main/WebPreferences
+@dirrm %%TWDIR%%/pub/Main
+@dirrm %%TWDIR%%/pub/Sandbox/WebPreferences
+@dirrm %%TWDIR%%/pub/Sandbox
+@dirrm %%TWDIR%%/pub/TWiki/ATasteOfTWiki
+@dirrm %%TWDIR%%/pub/TWiki/BackupRestorePlugin
+@dirrm %%TWDIR%%/pub/TWiki/ColorPickerPlugin
+@dirrm %%TWDIR%%/pub/TWiki/FileAttachment
+@dirrm %%TWDIR%%/pub/TWiki/HeadlinesPlugin
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/i18n
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/black-tie
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/cupertino
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/redmond
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/smoothness
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness/images
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes/ui-lightness
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin/themes
+@dirrm %%TWDIR%%/pub/TWiki/JQueryPlugin
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkin
+@dirrm %%TWDIR%%/pub/TWiki/PlainSkin
+@dirrm %%TWDIR%%/pub/TWiki/PreviewBackground
+@dirrm %%TWDIR%%/pub/TWiki/PrintSkin
+@dirrm %%TWDIR%%/pub/TWiki/SmiliesPlugin
+@dirrm %%TWDIR%%/pub/TWiki/TWikiContributor
+@dirrm %%TWDIR%%/pub/TWiki/TWikiDocGraphics
+@dirrm %%TWDIR%%/pub/TWiki/TWikiJavascripts
+@dirrm %%TWDIR%%/pub/TWiki/TWikiLogos
+@dirrm %%TWDIR%%/pub/TWiki/TWikiNetSkin
+@dirrm %%TWDIR%%/pub/TWiki/TWikiTemplates
+@dirrm %%TWDIR%%/pub/TWiki/TagMePlugin
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/css
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/lists
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/media
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advimage
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/compat2x
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/emotions
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/inlinepopups
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/css
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/preview
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/safari
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/searchreplace
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/spellchecker
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/style
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/tabfocus
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/table
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikibuttons
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/twikiimage
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/images
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/langs
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/default
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple/skins
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/simple
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce
+@dirrm %%TWDIR%%/pub/TWiki/TinyMCEPlugin
+@dirrm %%TWDIR%%/pub/TWiki/TopMenuSkin
+@dirrm %%TWDIR%%/pub/TWiki/WabiSabi
+@dirrm %%TWDIR%%/pub/TWiki/WebChangesRightBox
+@dirrm %%TWDIR%%/pub/TWiki/WebPreferences
+@dirrm %%TWDIR%%/pub/TWiki/WindowsInstallCookbook
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub/Trash/WebPreferences
+@dirrm %%TWDIR%%/pub/Trash
+@dirrm %%TWDIR%%/pub/_default/WebPreferences
+@dirrm %%TWDIR%%/pub/_default
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/templates
+@dirrm %%TWDIR%%/tools
+@dirrm %%TWDIR%%/working/registration_approvals
+@dirrm %%TWDIR%%/working/tmp
+@dirrm %%TWDIR%%/working/work_areas
+@dirrm %%TWDIR%%/working
 @dirrm %%TWDIR%%
 @dirrmtry share/twiki
