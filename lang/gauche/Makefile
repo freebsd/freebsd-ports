@@ -1,65 +1,91 @@
-# New ports collection makefile for:	gauche
-# Date created:		9 September 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gauche
-PORTVERSION=	0.9.2	# Keep databases/gauche-gdbm in sync with this
+PORTVERSION=	0.9.3.3	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	erik@elfga.com
 COMMENT=	Scheme script interpreter with multibyte character handling
 
-# Choices are: "pthreads" and "no"
-GAUCHE_THREADS?=	pthreads
-# Choices are: "utf-8", "euc-jp", "shift-jis" and "no"
-GAUCHE_ENCODING?=	utf-8
+OPTIONS_DEFINE=	GDBM SLIB DOCS MANPAGES
+OPTIONS_SINGLE=	THREADS MULTIBYTE
+OPTIONS_SINGLE_THREADS=	PTHREADS NO_THREADS
+OPTIONS_SINGLE_MULTIBYTE=UTF8 EUCJP SJIS NO_MULTIBYTE
+OPTIONS_DEFAULT=PTHREADS UTF8 MANPAGES
+SLIB_DESC=	Create catalogue for SLIB port
+PTHREADS_DESC=	Enable POSIX thread support
+NO_THREADS_DESC=No threading support
+EUCJP_DESC=	EUC-JP encoding support
+SJIS_DESC=	Shift_JIS encoding support
+NO_MULTIBYTE_DESC=No multibyte character encoding support
+NO_OPTIONS_SORT=yes
 
 # breaks in ext/uvecor.c on some locales
 MAKE_ENV=	LANG=C
 # avoids a problem with with ccache's pre-processor optimization
 MAKE_ENV+=	CCACHE_CPP2=1
 
-#INFOSECTION=	The Algorithmic Language Scheme
-
 DATADIR?=	${PREFIX}/share/${PORTNAME}-0.9
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
-		--enable-multibyte=${GAUCHE_ENCODING} \
-		--with-slib=${LOCALBASE}/share/slib \
-		--with-iconv=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-tls=none \
+ 		--with-iconv=${LOCALBASE}
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
-
-#		INFOSECTION="${INFOSECTION}"
-
 USES=		iconv
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+INFO=		gauche-refe gauche-refj
+.endif
+
+.if ${PORT_OPTIONS:MMANPAGES}
 
 MAN1=		gosh.1 gauche-cesconv.1 gauche-config.1 gauche-install.1 \
 		gauche-package.1
 
-MAKE_JOBS_UNSAFE=yes
+.else
+MANPREFIX=	${WRKDIR}
+.endif
 
-.if !defined(NOPORTDOCS)
-INFO=		gauche-refe gauche-refj
+.if ${PORT_OPTIONS:MGDBM}
+CONFIGURE_ARGS+=--with-local=${LOCALBASE}
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+PLIST_SUB+=	GDBM=""
+.else
+PLIST_SUB+=	GDBM="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSLIB}
+BUILD_DEPENDS+=	slib>=0:${PORTSDIR}/lang/slib
+CONFIGURE_ARGS+=--with-slib=${LOCALBASE}/share/slib
+PLIST_SUB+=	SLIB=""
+.else
+CONFIGURE_ARGS+=--with-slib=${WRKDIR}
+PLIST_SUB+=	SLIB="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MUTF8}
+CONFIGURE_ARGS+=	--enable-multibyte=utf-8
+.elif ${PORT_OPTIONS:MEUCJP}
+CONFIGURE_ARGS+=	--enable-multibyte=euc-jp
+.elif ${PORT_OPTIONS:MSJIS}
+CONFIGURE_ARGS+=	--enable-multibyte=sjis
+.else
+CONFIGURE_ARGS+=	--enable-multibyte=none
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
-MANUAL_PACKAGE_BUILD=	segfaults on pointyhat
-.endif
+NOT_FOR_ARCHS=		ia64 powerpc sparc64
+NOT_FOR_ARCHS_REASON=	Does not compile on ia64, powerpc, or sparc64
 
 post-patch:
 .if defined(NOPORTDOCS)
@@ -68,7 +94,6 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
-	${RM} -f ${PREFIX}/share/gauche/${PORTVERSION}/lib/slibcat
 	${MKDIR} ${PREFIX}/share/gauche/site/lib/.packages
 	${TOUCH} ${PREFIX}/share/gauche/site/lib/.packages/.keepme
 	${TOUCH} ${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET}/.keepme
@@ -78,9 +103,11 @@ post-install:
 	${TOUCH} ${DOCSDIR}/.keepme
 	${MKDIR} ${EXAMPLESDIR}
 	${TOUCH} ${EXAMPLESDIR}/.keepme
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info.gz ${WRKSRC}/doc/*.info-[1-7].gz ${PREFIX}/info/
 .endif
+
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.post.mk>
