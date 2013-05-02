@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130502:
+  AFFECTS: users of ports-mgmt/pkg, ports-mgmt/poudriere, ports-mgmt/tinderbox
+  AUTHOR: bdrewery@FreeBSD.org
+
+  This only affects people who are _building_ binary packages for pkgng. If you
+  are building from ports please ignore this. This step is optional.
+
+  It is recommended to rebuild all packages and then have your users run 'pkg
+  check -Ba' and 'pkg upgrade' on their servers once. This will allow the new
+  shlib tracking to reinstall packages that have changed shlib requirements.
+
 20130427:
   AFFECTS: users of print/a2ps-{a4,letter}, print/c2ps-{a4,letter}, print/lprps-{a4,letter}, or graphics/jpeg2ps-{a4,letter}
   AUTHOR: hrs@FreeBSD.org
