@@ -35,7 +35,7 @@ FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
 			fi; \
 		else \
 			${ECHO_CMD} /nicht/ ; \
-		fi
+		fi; ${ECHO_CMD}
 .endif
 
 NO_PACKAGE=	Nothing to build, configurations only
