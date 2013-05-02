@@ -66,7 +66,7 @@ IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-cli
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
-_OPENLDAP_CLIENT_PKG!=	${PKG_INFO} -Ex openldap.\*-client 2>/dev/null || ${ECHO_CMD}
+_OPENLDAP_CLIENT_PKG!=	${PKG_INFO} -Ex openldap.\*-client 2>/dev/null; ${ECHO_CMD}
 _OPENLDAP_FLAVOUR=	${_OPENLDAP_CLIENT_PKG:C/openldap//:C/-client-.*//}
 
 .if defined(WANT_OPENLDAP_SASL)
