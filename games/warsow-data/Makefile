@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Warsow game data
-# Date created:				2006-08-03
-# Whom:				Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	0.6.2
@@ -23,6 +19,8 @@ COMMENT=	Warsow data files
 # Package size below is for default set of OPTIONS
 NO_PACKAGE=	Package will be 574MB, set FORCE_PACKAGE if you really want it
 
+BROKEN=		warsow_0.61_unified.zip is unfetchable
+
 # Game port is restricted to these architectures, so it makes no sense to
 # package game data port as well (even it is not being technically built)
 ONLY_FOR_ARCHS=	i386 amd64
@@ -38,11 +36,13 @@ TXTDOCS=	bots_navigation.txt changelog.txt contact.txt \
 		query_protocols.txt
 PORTDOCS=	0.4_renderer_changes.png ${TXTDOCS}
 
-OPTIONS=	MAPPACK		"Install community map pack"	on
+OPTIONS_DEFINE=	MAPPACK DOCS
+OPTIONS_DEFAULT=	MAPPACK
+MAPPACK_DESC=		Install community map pack
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MAPPACK)
+.if ${PORT_OPTIONS:MMAPPACK}
 DISTFILES+=	warsow_comunity_map_pack_01${EXTRACT_SUFX}:mappack
 PLIST_SUB+=	MAPPACK=""
 .else
@@ -53,10 +53,10 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} basewsw ${DATADIR}
 	cd ${WRKDIR} && ${COPYTREE_SHARE} basewsw ${DATADIR}
-.if defined(WITH_MAPPACK)
+.if ${PORT_OPTIONS:MMAPPACK}
 	cd ${WRKDIR} && ${COPYTREE_SHARE} previews ${DATADIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
