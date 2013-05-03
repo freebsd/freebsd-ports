@@ -1,5 +1,5 @@
---- dualserverd.cpp	2012-11-09 17:02:36.000000000 +0100
-+++ dualserverd.cpp	2012-11-12 13:17:25.000000000 +0100
+--- dualserverd.cpp	2013-04-21 04:24:14.000000000 +0200
++++ dualserverd.cpp	2013-04-27 18:44:05.000000000 +0200
 @@ -22,10 +22,16 @@
  #include <math.h>
  #include <sys/types.h>
@@ -27,28 +27,31 @@
  using namespace std;
  #include "dualserverd.h"
  
-@@ -84,7 +93,11 @@
- const char send200[] = "HTTP/1.1 200 OK\r\nDate: %s\r\nLast-Modified: %s\r\nContent-Type: text/html\r\nConnection: Close\r\nContent-Length:         \r\n\r\n";
+@@ -88,7 +97,11 @@
  //const char send200[] = "HTTP/1.1 200 OK\r\nDate: %s\r\nLast-Modified: %s\r\nContent-Type: text/html\r\nConnection: Close\r\nTransfer-Encoding: chunked\r\n";
  const char line200[] = "<td>%s</td>";
+ const char send403[] = "HTTP/1.1 403 Forbidden\r\n\r\n<h1>Forbidden</h1>";
 +#ifdef __FreeBSD__
 +const char sVersion[] = "Dual DHCP DNS Server Version 6.94 for FreeBSD";
 +#else
- const char sVersion[] = "Dual DHCP DNS Server Version 6.94 Linux Build 7011";
+ const char sVersion[] = "Dual DHCP DNS Server Version 7.01 Linux Build 7018";
 +#endif
+ const char toprow[] = "<body bgcolor=\"#cccccc\"><table width=640><tr><td align=\"center\"><font size=\"5\"><b>%s</b></font></td></tr><tr><td align=\"right\"><a target=\"_new\" href=\"http://dhcp-dns-server.sourceforge.net\">http://dhcp-dns-server.sourceforge.net</td></tr></table>";
  const data4 opData[] =
      {
- 		{ "SubnetMask", DHCP_OPTION_NETMASK, 3 },
-@@ -261,7 +274,7 @@
+@@ -266,7 +279,11 @@
          strcpy(leaFile, "/tmp/dualserver.state");
  
      if (!iniFile[0])
--        strcpy(iniFile, "/etc/dualserver.ini");
++#ifdef __FreeBSD__
 +        strcpy(iniFile, "/usr/local/etc/dualserver.conf");
++#else
+         strcpy(iniFile, "/etc/dualserver.ini");
++#endif
  
-     if (verbatim)
-     {
-@@ -4002,7 +4015,13 @@
+     strcpy(filePATH, iniFile);
+ 
+@@ -4121,7 +4138,13 @@
  	else if (req->dhcpp.header.bp_broadcast || !req->remote.sin_addr.s_addr || req->reqIP)
  	{
  		req->remote.sin_port = htons(IPPORT_DHCPC);
@@ -59,13 +62,14 @@
 +#else
  		req->remote.sin_addr.s_addr = INADDR_BROADCAST;
 +#endif
- 		req->dhcpp.header.bp_broadcast = 1;
  	}
  	else
-@@ -8983,6 +9002,10 @@
+ 	{
+@@ -9371,6 +9394,11 @@
  					newNetwork.dhcpConn[i].broadCastSize = sizeof(newNetwork.dhcpConn[i].broadCastVal);
  
  					setsockopt(newNetwork.dhcpConn[i].sock, SOL_SOCKET, SO_BROADCAST, (char*)&newNetwork.dhcpConn[i].broadCastVal, newNetwork.dhcpConn[i].broadCastSize);
++
 +#ifdef __FreeBSD__
 +          // See man ip
 +          setsockopt(newNetwork.dhcpConn[i].sock,IPPROTO_IP, IP_ONESBCAST,(char*)&newNetwork.dhcpConn[i].broadCastVal, newNetwork.dhcpConn[i].broadCastSize);
@@ -73,7 +77,7 @@
  					int nRet = bind(newNetwork.dhcpConn[i].sock, (sockaddr*)&newNetwork.dhcpConn[i].addr, sizeof(struct sockaddr_in));
  
  					if (nRet == SOCKET_ERROR)
-@@ -9034,7 +9057,11 @@
+@@ -9422,7 +9450,11 @@
  					setsockopt(newNetwork.dhcpListener.sock, SOL_SOCKET, SO_REUSEADDR, (char*)&newNetwork.dhcpListener.reUseVal, newNetwork.dhcpListener.reUseSize);
  					newNetwork.dhcpListener.pktinfoVal = true;
  					newNetwork.dhcpListener.pktinfoSize = sizeof(newNetwork.dhcpListener.pktinfoVal);
@@ -85,33 +89,20 @@
  
  					newNetwork.dhcpListener.addr.sin_family = AF_INET;
  					newNetwork.dhcpListener.addr.sin_addr.s_addr = INADDR_ANY;
-@@ -9496,8 +9523,11 @@
- 
- 			if (addr && !(flags & IFF_LOOPBACK))
- 				addServer(network->allServers, addr);
--
-+#ifdef __FreeBSD__
-+			if (addr && mask && !(flags & IFF_POINTOPOINT) && !(flags & IFF_LOOPBACK))
-+#else
- 			if (addr && mask && !(flags & IFF_POINTOPOINT) && !(flags & IFF_LOOPBACK) && !(flags & IFF_DYNAMIC))
-+#endif
- 			{
- 				if ((flags & IFF_RUNNING) && (flags & IFF_UP))
- 				{
-@@ -9656,6 +9686,12 @@
+@@ -10064,6 +10096,12 @@
  
  MYWORD gdmess(data9 *req, MYBYTE sockInd)
  {
 +#ifdef __FreeBSD__
-+    struct cmsghdr *cmsg;
-+    struct sockaddr_dl * isdl;
-+    struct sockaddr_in *isin;
-+    struct ifaddrs *ifap, *ifa;
++  struct cmsghdr *cmsg;
++  struct sockaddr_dl * isdl;
++  struct sockaddr_in *isin;
++  struct ifaddrs *ifap, *ifa;
 +#endif
      //sprintf(logBuff, "Socket=%u", sockInd);
  	//logDHCPMess(logBuff, 1);
      memset(req, 0, sizeof(data9));
-@@ -9671,7 +9707,11 @@
+@@ -10079,7 +10117,11 @@
          req->msg.msg_name = &req->remote;
          req->msg.msg_namelen = sizeof(sockaddr_in);
          req->msg.msg_control = &req->msgcontrol;
@@ -123,7 +114,7 @@
          req->msg.msg_flags = msgflags;
  
          int flags = 0;
-@@ -9680,6 +9720,45 @@
+@@ -10088,6 +10130,45 @@
          if (errno || req->bytes <= 0)
              return 0;
  
@@ -169,7 +160,15 @@
          //printf("%u\n", req->msg.msg_controllen);
          //msgcontrol = (msg_control*)msg.msg_control;
  
-@@ -9711,6 +9790,7 @@
+@@ -10101,7 +10182,6 @@
+         //printf("LADDR = %s\n", inet_ntoa(req->msgcontrol.pktinfo.ipi_addr));
+         //printf("RADDR = %s\n", inet_ntoa(req->msgcontrol.   pktinfo.ipi_spec_dst));
+ 
+-
+         MYDWORD addr = req->msgcontrol.pktinfo.ipi_spec_dst.s_addr;
+ 
+         //printf("%s\n",IP2String(tempbuff, addr));
+@@ -10119,6 +10199,7 @@
                  break;
              }
          }
