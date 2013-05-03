@@ -1,13 +1,12 @@
-# This is the /usr/local/etc/scamp/default file.
-# Created April 27, 2013 @ 19:37:13
+# This is the /etc/scamp/default file.
+# Created Thu, Tue, 02 May 2013
 
-SCAMP_VERSION=5.5
+SCAMP_VERSION=5.6
 CLAMAV_DB=/var/db/clamav
 T_DIR=/var/db/clamav/tmp
 C_GROUP=clamav
 C_PID=/var/run/clamav/clamd.pid
 C_USER=clamav
-CONFIG_DIR=/usr/local/etc/scamp
 GET_LDB=1
 GET_MALWARE=1
 GET_SANE=1
@@ -21,11 +20,10 @@ MW_DIR=/var/db/clamav/tmp/malware
 MW_FILE=mbl.ndb
 MW_URL=http://www.malwarepatrol.com.br/cgi/submit?action=list_clamav_ext
 RELOAD=1
-REST=0
+REST=1
 SANE=rsync://rsync.sanesecurity.net/sanesecurity
 SANE_DB=/var/db/clamav/tmp/sane
 SI_DIR=/var/db/clamav/tmp/securite
 SYS_LOG=1
 WPC=1
 W_SUM=1
-

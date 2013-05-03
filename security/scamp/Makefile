@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.5
+PORTVERSION=	5.6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,6 +26,8 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 MAN1=		scamp.1
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
