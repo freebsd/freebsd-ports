@@ -28,7 +28,9 @@ MAN1=	xmlsec1.1 xmlsec1-config.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
+.if !defined(.PARSEDIR)
 MAKE_ARGS+=	-EABS_BUILDDIR
+.endif
 USE_AUTOTOOLS=	libltdl
 
 .include <bsd.port.options.mk>
