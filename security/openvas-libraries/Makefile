@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for OpenVAS
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

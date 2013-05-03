@@ -3,7 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	0.12.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -49,7 +49,7 @@ LIB_DEPENDS+=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-md5=gcrypt
 .else
 CONFIGURE_ARGS+=	--with-md5=internal

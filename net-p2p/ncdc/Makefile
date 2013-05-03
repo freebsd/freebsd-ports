@@ -3,6 +3,7 @@
 
 PORTNAME=	ncdc
 PORTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://dev.yorhel.nl/download/

@@ -3,7 +3,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		CRITICAL

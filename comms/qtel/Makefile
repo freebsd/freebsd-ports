@@ -1,12 +1,8 @@
-# New ports collection makefile for:	qtel
-# Date Created:		2012-05-22
-# Whome:		Stephen Hurd <shurd@sasktel.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qtel
 PORTVERSION=	11.05
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	svxlink/svxlink/${PORTVERSION}

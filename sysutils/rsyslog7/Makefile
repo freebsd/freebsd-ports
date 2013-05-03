@@ -2,7 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	7.2.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -42,7 +42,7 @@ PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 
 .if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \

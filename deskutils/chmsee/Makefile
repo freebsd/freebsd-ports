@@ -1,13 +1,9 @@
-# New ports collection makefile for:	chmsee
-# Date created:                		10 June 2006
-# Whom:                    		Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chmsee
 PORTVERSION=	1.3.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -15,7 +11,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 LICENSE=	GPLv2
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		wfmath-1.0.1:${PORTSDIR}/math/wfmath \
 		mercator-0.3.3:${PORTSDIR}/devel/mercator \
 		skstream-0.3.7:${PORTSDIR}/net/skstream \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		boost_regex:${PORTSDIR}/devel/boost-libs
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}

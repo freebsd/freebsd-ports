@@ -3,7 +3,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		CRITICAL
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
 USE_GMAKE=	yes

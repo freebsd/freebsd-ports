@@ -2,7 +2,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	4.3.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 

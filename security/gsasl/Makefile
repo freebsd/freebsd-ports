@@ -3,7 +3,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,7 +12,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnutls.26:${PORTSDIR}/security/gnutls \
 		ntlm.0:${PORTSDIR}/security/libntlm
 

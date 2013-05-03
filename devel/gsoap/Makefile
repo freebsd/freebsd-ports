@@ -1,12 +1,9 @@
-# New ports collection makefile for:	gsoap
-# Date created:				8 March 2004
-# Whom:					Sergey Matveychuk <sem@ciam.ru>
-#
+# Created by: Sergey Matveychuk <sem@ciam.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gsoap
 PORTVERSION=	2.8.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP 
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -40,7 +37,7 @@ CONFIGURE_ARGS+=--disable-ssl
 
 .if defined(WITH_GNUTLS) 
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
-   		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+   		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 CONFIGURE_ARGS+=--enable-gnutls
 LDFLAGS+=	-L${LOCALBASE}/lib

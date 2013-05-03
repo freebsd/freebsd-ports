@@ -3,7 +3,7 @@
 
 PORTNAME=	fuse
 PORTVERSION=	1.0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	spectrum.8:${PORTSDIR}/emulators/libspectrum \
 		png15:${PORTSDIR}/graphics/png \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 glib20 gtk20

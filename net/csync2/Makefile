@@ -1,13 +1,9 @@
-# New ports collection makefile for:	net/csync2
-# Date created:				16 May 2007
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	csync2
 PORTVERSION=	1.34
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
@@ -19,7 +15,7 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		tasn1.5:${PORTSDIR}/security/libtasn1 \
 		gnutls.26:${PORTSDIR}/security/gnutls \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 OPTIONS=	CSYNC2_COMPARE "Install csync2-compare script" off

@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/0.5/ \
 		LOCAL/avl
@@ -29,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CMAKE_ARGS+=	-DWITH_GCRYPT:BOOL=ON
 .else
 USE_OPENSSL=	yes
