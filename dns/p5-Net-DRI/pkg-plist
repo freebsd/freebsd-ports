@@ -1,0 +1,404 @@
+%%SITE_PERL%%/Net/DRI/BaseClass.pm
+%%SITE_PERL%%/Net/DRI/Cache.pm
+%%SITE_PERL%%/Net/DRI/DRD.pm
+%%SITE_PERL%%/Net/DRI/DRD/AERO.pm
+%%SITE_PERL%%/Net/DRI/DRD/AFNIC.pm
+%%SITE_PERL%%/Net/DRI/DRD/AG.pm
+%%SITE_PERL%%/Net/DRI/DRD/ARNES.pm
+%%SITE_PERL%%/Net/DRI/DRD/ASIA.pm
+%%SITE_PERL%%/Net/DRI/DRD/AT.pm
+%%SITE_PERL%%/Net/DRI/DRD/AU.pm
+%%SITE_PERL%%/Net/DRI/DRD/AdamsNames.pm
+%%SITE_PERL%%/Net/DRI/DRD/BE.pm
+%%SITE_PERL%%/Net/DRI/DRD/BIZ.pm
+%%SITE_PERL%%/Net/DRI/DRD/BR.pm
+%%SITE_PERL%%/Net/DRI/DRD/BZ.pm
+%%SITE_PERL%%/Net/DRI/DRD/BookMyName.pm
+%%SITE_PERL%%/Net/DRI/DRD/CAT.pm
+%%SITE_PERL%%/Net/DRI/DRD/CIRA.pm
+%%SITE_PERL%%/Net/DRI/DRD/COOP.pm
+%%SITE_PERL%%/Net/DRI/DRD/CZ.pm
+%%SITE_PERL%%/Net/DRI/DRD/CentralNic.pm
+%%SITE_PERL%%/Net/DRI/DRD/CoCCA.pm
+%%SITE_PERL%%/Net/DRI/DRD/DENIC.pm
+%%SITE_PERL%%/Net/DRI/DRD/EURid.pm
+%%SITE_PERL%%/Net/DRI/DRD/GL.pm
+%%SITE_PERL%%/Net/DRI/DRD/Gandi.pm
+%%SITE_PERL%%/Net/DRI/DRD/HN.pm
+%%SITE_PERL%%/Net/DRI/DRD/ICANN.pm
+%%SITE_PERL%%/Net/DRI/DRD/IENUMAT.pm
+%%SITE_PERL%%/Net/DRI/DRD/IM.pm
+%%SITE_PERL%%/Net/DRI/DRD/INFO.pm
+%%SITE_PERL%%/Net/DRI/DRD/IRegistry.pm
+%%SITE_PERL%%/Net/DRI/DRD/IT.pm
+%%SITE_PERL%%/Net/DRI/DRD/LC.pm
+%%SITE_PERL%%/Net/DRI/DRD/LU.pm
+%%SITE_PERL%%/Net/DRI/DRD/ME.pm
+%%SITE_PERL%%/Net/DRI/DRD/MN.pm
+%%SITE_PERL%%/Net/DRI/DRD/MOBI.pm
+%%SITE_PERL%%/Net/DRI/DRD/NAME.pm
+%%SITE_PERL%%/Net/DRI/DRD/NO.pm
+%%SITE_PERL%%/Net/DRI/DRD/NU.pm
+%%SITE_PERL%%/Net/DRI/DRD/Nominet.pm
+%%SITE_PERL%%/Net/DRI/DRD/ORG.pm
+%%SITE_PERL%%/Net/DRI/DRD/OVH.pm
+%%SITE_PERL%%/Net/DRI/DRD/OpenSRS.pm
+%%SITE_PERL%%/Net/DRI/DRD/PL.pm
+%%SITE_PERL%%/Net/DRI/DRD/PRO.pm
+%%SITE_PERL%%/Net/DRI/DRD/PT.pm
+%%SITE_PERL%%/Net/DRI/DRD/SC.pm
+%%SITE_PERL%%/Net/DRI/DRD/SE.pm
+%%SITE_PERL%%/Net/DRI/DRD/SIDN.pm
+%%SITE_PERL%%/Net/DRI/DRD/SWITCH.pm
+%%SITE_PERL%%/Net/DRI/DRD/TRAVEL.pm
+%%SITE_PERL%%/Net/DRI/DRD/US.pm
+%%SITE_PERL%%/Net/DRI/DRD/VC.pm
+%%SITE_PERL%%/Net/DRI/DRD/VNDS.pm
+%%SITE_PERL%%/Net/DRI/DRD/WS.pm
+%%SITE_PERL%%/Net/DRI/Data/Changes.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/AERO.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/AFNIC.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/ARNES.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/ASIA.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/AT.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/BE.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/BR.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/CAT.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/CIRA.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/COOP.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/DENIC.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/EURid.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/FCCN.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/IT.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/JOBS.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/LU.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/NO.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/Nominet.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/OpenSRS.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/PL.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/SE.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/SIDN.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/SWITCH.pm
+%%SITE_PERL%%/Net/DRI/Data/Contact/US.pm
+%%SITE_PERL%%/Net/DRI/Data/ContactSet.pm
+%%SITE_PERL%%/Net/DRI/Data/Hosts.pm
+%%SITE_PERL%%/Net/DRI/Data/Raw.pm
+%%SITE_PERL%%/Net/DRI/Data/RegistryObject.pm
+%%SITE_PERL%%/Net/DRI/Data/StatusList.pm
+%%SITE_PERL%%/Net/DRI/Exception.pm
+%%SITE_PERL%%/Net/DRI/Logging.pm
+%%SITE_PERL%%/Net/DRI/Logging/Files.pm
+%%SITE_PERL%%/Net/DRI/Logging/Null.pm
+%%SITE_PERL%%/Net/DRI/Logging/Stderr.pm
+%%SITE_PERL%%/Net/DRI/Logging/Syslog.pm
+%%SITE_PERL%%/Net/DRI/Protocol.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/Email.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/Email/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/Email/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/WS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AFNIC/WS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AdamsNames/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AdamsNames/WS/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AdamsNames/WS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/AdamsNames/WS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/BookMyName/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/BookMyName/WS/Account.pm
+%%SITE_PERL%%/Net/DRI/Protocol/BookMyName/WS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/BookMyName/WS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AU.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AU/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AU/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AU/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AdamsNames.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AdamsNames/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AdamsNames/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/AdamsNames/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/SIDN.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/SIDN/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/SIDN/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/DAS/SIDN/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/Host.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/RegistryMessage.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/Session.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Core/Status.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AERO.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AERO/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AERO/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC/Status.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ARNES.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ARNES/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ARNES/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ASIA.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ASIA/CED.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ASIA/IPR.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/ATResult.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/IOptions.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT/Result.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AU.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AU/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Afilias.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Afilias/IDNLanguage.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Afilias/Restore.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/BR.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/BR/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/BR/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CAT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CAT/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CAT/DefensiveRegistration.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CAT/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA/Agreement.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/COOP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/COOP/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CZ.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CZ/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CZ/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CZ/NSSET.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CentralNic.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CentralNic/Release.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CentralNic/TTL.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CentralNic/WebForwarding.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/DNSBE.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/DNSBE/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/DNSBE/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/DNSBE/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/E164.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/E164Validation.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/E164Validation/RFC5076.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Registrar.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid/Sunrise.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/FCCN.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/FCCN/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/FCCN/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/GracePeriod.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/HTTP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IENUMAT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IRegistry.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IT/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IT/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IT/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU/Poll.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU/Status.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/MOBI.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/MOBI/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NAME.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NAME/EmailFwd.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO/Host.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO/Result.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NSgroup.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NeuLevel/IDNLanguage.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NeuLevel/UIN.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet/Account.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet/Host.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PL.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PL/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PL/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PL/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PRO.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PRO/AV.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PRO/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SE.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SE/Extensions.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SE/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN/Host.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN/Notifications.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SWITCH.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SecDNS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/US.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/US/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/IDNLanguage.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/JobsContact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/NameStore.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/PollLowBalance.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/PollRGP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/Sync.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign/WhoisInfo.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/EPP/Util.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS/Account.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/Core.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/DCHK/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/DCHK/Status.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/LWZ.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/IRIS/XCP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OVH/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OVH/WS/Account.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OVH/WS/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OVH/WS/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OVH/WS/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP/Account.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP/Session.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/Contact.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/RegistryMessage.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRI/Session.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Core/Domain.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Core/Host.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Core/Session.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Core/Status.pm
+%%SITE_PERL%%/Net/DRI/Protocol/RRP/Message.pm
+%%SITE_PERL%%/Net/DRI/Protocol/ResultStatus.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Connection.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/AERO.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/AT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/BIZ.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/CAT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/COM.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/EU.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/INFO.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/LU.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/MOBI.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/NAME.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/ORG.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/PT.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/SE.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/TRAVEL.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/US.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/WS.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain/common.pm
+%%SITE_PERL%%/Net/DRI/Protocol/Whois/Message.pm
+%%SITE_PERL%%/Net/DRI/Registry.pm
+%%SITE_PERL%%/Net/DRI/Shell.pm
+%%SITE_PERL%%/Net/DRI/Transport.pm
+%%SITE_PERL%%/Net/DRI/Transport/Defer.pm
+%%SITE_PERL%%/Net/DRI/Transport/Dummy.pm
+%%SITE_PERL%%/Net/DRI/Transport/HTTP.pm
+%%SITE_PERL%%/Net/DRI/Transport/HTTP/SOAPLite.pm
+%%SITE_PERL%%/Net/DRI/Transport/HTTP/SOAPWSDL.pm
+%%SITE_PERL%%/Net/DRI/Transport/HTTP/XMLRPCLite.pm
+%%SITE_PERL%%/Net/DRI/Transport/SMTP.pm
+%%SITE_PERL%%/Net/DRI/Transport/SOAP.pm
+%%SITE_PERL%%/Net/DRI/Transport/Socket.pm
+%%SITE_PERL%%/Net/DRI/Util.pm
+%%SITE_PERL%%/Net/DRI.pm
+%%SITE_PERL%%/mach/auto/Net/DRI/.packlist
+@dirrm %%SITE_PERL%%/Net/DRI/Transport/HTTP
+@dirrm %%SITE_PERL%%/Net/DRI/Transport
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/Whois/Domain
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/Whois
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/RRP/Core
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/RRP
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/RRI
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/OpenSRS/XCP
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/OpenSRS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/OVH/WS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/OVH
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/IRIS/DCHK
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/IRIS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/Gandi/WS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/Gandi
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/VeriSign
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/US
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SIDN
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/SE
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PRO
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/PL
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Nominet
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NeuLevel
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NO
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/NAME
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/MOBI
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/LU
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/IT
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/FCCN
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/EURid
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/E164Validation
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/DNSBE
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CentralNic
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CZ
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/COOP
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CIRA
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/CAT
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/BR
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/Afilias
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AU
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AT
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ASIA
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/ARNES
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AFNIC
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions/AERO
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Extensions
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP/Core
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/EPP
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/DAS/SIDN
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/DAS/AdamsNames
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/DAS/AU
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/DAS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/BookMyName/WS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/BookMyName
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/AdamsNames/WS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/AdamsNames
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/AFNIC/WS
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/AFNIC/Email
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol/AFNIC
+@dirrm %%SITE_PERL%%/Net/DRI/Protocol
+@dirrm %%SITE_PERL%%/Net/DRI/Logging
+@dirrm %%SITE_PERL%%/Net/DRI/Data/Contact
+@dirrm %%SITE_PERL%%/Net/DRI/Data
+@dirrm %%SITE_PERL%%/Net/DRI/DRD
+@dirrm %%SITE_PERL%%/Net/DRI
+@dirrm %%SITE_PERL%%/mach/auto/Net/DRI
+@dirrmtry %%SITE_PERL%%/mach/auto/Net
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%
