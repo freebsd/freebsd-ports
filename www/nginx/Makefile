@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -556,8 +557,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/libdrizzle
-NGINX_DRIZZLE_VERSION=	0.1.4
-GIT_DRIZZLE_VERSION=	0-g59e12ad
+NGINX_DRIZZLE_VERSION=	0.1.5
+GIT_DRIZZLE_VERSION=	0-g943c915
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
