@@ -5,6 +5,7 @@ v6eval/bin/checker
 v6eval/bin/dhcomp
 v6eval/bin/dhgen
 v6eval/bin/file2hex
+v6eval/bin/indexgen
 v6eval/bin/ivcomp
 v6eval/bin/manual/cleardefr.rmt
 v6eval/bin/manual/clearmtu.rmt
@@ -12,6 +13,7 @@ v6eval/bin/manual/clearnc.rmt
 v6eval/bin/manual/clearprefix.rmt
 v6eval/bin/manual/clearroute.rmt
 v6eval/bin/manual/dhcp6c.rmt
+v6eval/bin/manual/dhcp6r.rmt
 v6eval/bin/manual/dhcp6s.rmt
 v6eval/bin/manual/igmpv3.rmt
 v6eval/bin/manual/igmpv3config.rmt
@@ -36,6 +38,13 @@ v6eval/bin/manual/mip6EnableCN.rmt
 v6eval/bin/manual/mip6EnableHA.rmt
 v6eval/bin/manual/mip6EnableMN.rmt
 v6eval/bin/manual/mldv2.rmt
+v6eval/bin/manual/mldv2DisableHUT.rmt
+v6eval/bin/manual/mldv2DisableRUT.rmt
+v6eval/bin/manual/mldv2EnableHUT.rmt
+v6eval/bin/manual/mldv2EnableRUT.rmt
+v6eval/bin/manual/mldv2ListenerAPI.rmt
+v6eval/bin/manual/mldv2SetHUT.rmt
+v6eval/bin/manual/mldv2SetRUT.rmt
 v6eval/bin/manual/mldv2config.rmt
 v6eval/bin/manual/mtuconfig.rmt
 v6eval/bin/manual/multicastConfig.rmt
@@ -62,12 +71,14 @@ v6eval/bin/pktrecv
 v6eval/bin/pktsend
 v6eval/bin/prfcomp
 v6eval/bin/sigcomp
+v6eval/bin/x509dec
 v6eval/bin/unknown/cleardefr.rmt
 v6eval/bin/unknown/clearmtu.rmt
 v6eval/bin/unknown/clearnc.rmt
 v6eval/bin/unknown/clearprefix.rmt
 v6eval/bin/unknown/clearroute.rmt
 v6eval/bin/unknown/dhcp6c.rmt
+v6eval/bin/unknown/dhcp6r.rmt
 v6eval/bin/unknown/dhcp6s.rmt
 v6eval/bin/unknown/igmpv3.rmt
 v6eval/bin/unknown/igmpv3config.rmt
@@ -111,7 +122,6 @@ v6eval/bin/unknown/sysctl.rmt
 v6eval/bin/unknown/tcp6.rmt
 v6eval/bin/unknown/tunnel.rmt
 v6eval/bin/unknown/useTempAddr.rmt
-v6eval/bin/x509dec
 v6eval/doc/00README
 v6eval/doc/00README.v6eval
 v6eval/doc/CHANGELOG
@@ -128,12 +138,12 @@ v6eval/include/stdpacket.def
 @dirrm v6eval/bin/manual
 @dirrm v6eval/bin/unknown
 @dirrm v6eval/bin
-@dirrm v6eval/doc
+@dirrmtry v6eval/doc
 @dirrm v6eval/include
 @dirrm v6eval/man/man1
 @dirrm v6eval/man
 @dirrmtry v6eval/etc
-@dirrm v6eval
+@dirrmtry v6eval
 %%SITE_PERL%%/V6evalCommon.pm
 %%SITE_PERL%%/V6evalRemote.pm
 %%SITE_PERL%%/V6evalTool.pm
