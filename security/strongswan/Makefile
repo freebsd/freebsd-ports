@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -15,7 +15,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
-USE_RC_SUBR=	strongswan.sh
+USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
