@@ -20,6 +20,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 USE_CSTD=	gnu89
+# upstream makefile is not bmake compatible
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 CONFIGURE_ARGS=	--with-link-layer=${LIBNET_LINK}
 
 SHORT_VER=	11
