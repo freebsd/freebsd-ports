@@ -1,13 +1,9 @@
-# New ports collection makefile for:	libzrtpcpp
-# Date created:		2006-10-04
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libzrtpcpp
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=ccrtp
@@ -16,7 +12,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	ZRTP extension for GNU ccRTP
 
 LIB_DEPENDS=	ccrtp:${PORTSDIR}/devel/ccrtp \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USES=		cmake
 USE_OPENSSL=	yes

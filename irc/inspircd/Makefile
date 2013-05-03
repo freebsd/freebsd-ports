@@ -3,6 +3,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	feld@feld.me

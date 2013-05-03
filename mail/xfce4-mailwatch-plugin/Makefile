@@ -1,13 +1,9 @@
-# New ports collection makefile for:	mailwatch plugin for xfce4
-# Date created:				23 Januar 2007
-# Whom:					Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.1.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	mail xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -17,7 +13,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A mailwatch plugin for Xfce
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

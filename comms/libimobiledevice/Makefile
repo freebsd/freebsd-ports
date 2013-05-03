@@ -1,12 +1,8 @@
-# New ports collection makefile for:	libimobiledevice
-# Date created:				10 June 2010
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	libimobiledevice
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -18,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		tasn1.5:${PORTSDIR}/security/libtasn1 \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		plist.1:${PORTSDIR}/devel/libplist \
 		usbmuxd.1:${PORTSDIR}/comms/usbmuxd
 

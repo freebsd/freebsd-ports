@@ -1,13 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	srecord
-# Date Created:			Aug 13, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	srecord
 PORTVERSION=	1.59
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,7 +11,7 @@ MAINTAINER=	abwang@gmail.com
 COMMENT=	A collection of powerful tools for manipulating EPROM load files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

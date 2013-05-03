@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-Crypt-GCrypt
-# Date created:		2006-09-28
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-GCrypt
 PORTVERSION=	1.25
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +14,7 @@ COMMENT=	Perl interface to the GNU Cryptographic library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \

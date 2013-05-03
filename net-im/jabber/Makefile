@@ -1,13 +1,9 @@
-# New ports collection makefile for:	jabber
-# Date created:			5 February 2001
-# Whom:				joe
-#
+# Created by: joe
 # $FreeBSD$
-#
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/ \

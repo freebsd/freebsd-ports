@@ -1,12 +1,9 @@
-# Ports collection makefile for:    netatalk
-# Date created:         23 Jul 1997
-# Whom:                 stb
-#
+# Created by: stb
 # $FreeBSD$
-#
 
 PORTNAME=	netatalk
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF

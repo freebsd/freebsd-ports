@@ -4,7 +4,7 @@
 
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/dist/fiked/
 

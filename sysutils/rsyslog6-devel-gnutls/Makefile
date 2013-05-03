@@ -1,14 +1,14 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	GNUTLS module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 
 MNAME=	gnutls
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USES=		pkgconfig
 

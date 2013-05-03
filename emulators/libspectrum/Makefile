@@ -3,7 +3,7 @@
 
 PORTNAME=	libspectrum
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

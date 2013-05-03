@@ -1,13 +1,9 @@
-# New ports collection makefile for:	grdc
-# Date created:				12 April 2009
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	remmina
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/0.9
 
@@ -52,7 +48,7 @@ CONFIGURE_ARGS+=--disable-ssh
 .endif
 
 .if !defined(WITHOUT_GCRYPT)
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=--disable-gcrypt
 .endif
