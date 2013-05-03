@@ -6,6 +6,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/acl.py
 %%PYTHON_SITELIBDIR%%/hgext/acl.pyc
 %%PYTHON_SITELIBDIR%%/hgext/acl.pyo
+%%PYTHON_SITELIBDIR%%/hgext/blackbox.py
+%%PYTHON_SITELIBDIR%%/hgext/blackbox.pyc
+%%PYTHON_SITELIBDIR%%/hgext/blackbox.pyo
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.py
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyc
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyo
@@ -242,6 +245,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.py
+%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelpers.so
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
@@ -450,9 +456,15 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/revset.py
 %%PYTHON_SITELIBDIR%%/mercurial/revset.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/revset.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/scmposix.py
+%%PYTHON_SITELIBDIR%%/mercurial/scmposix.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/scmposix.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/scmutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/scmutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/scmutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/scmwindows.py
+%%PYTHON_SITELIBDIR%%/mercurial/scmwindows.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/scmwindows.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.py
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.pyo
@@ -653,6 +665,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/ui.py
 %%PYTHON_SITELIBDIR%%/mercurial/ui.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/ui.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/unionrepo.py
+%%PYTHON_SITELIBDIR%%/mercurial/unionrepo.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/unionrepo.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/url.py
 %%PYTHON_SITELIBDIR%%/mercurial/url.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/url.pyo
@@ -671,6 +686,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/wireproto.py
 %%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/worker.py
+%%PYTHON_SITELIBDIR%%/mercurial/worker.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/worker.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDATA%%%%DATADIR%%/contrib/bash_completion
