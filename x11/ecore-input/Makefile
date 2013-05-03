@@ -23,6 +23,9 @@ USES=		pkgconfig
 USE_GMAKE=	yes
 .endif
 USE_LDCONFIG=	yes
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_input
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 

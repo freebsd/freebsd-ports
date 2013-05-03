@@ -20,6 +20,11 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
+MYMAKE=		${MAKE}
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+MYMAKE=		${GMAKE}
+.endif
 USE_EFL=	evas eet librt_hack libtool_hack
 USE_LDCONFIG=	yes
 
@@ -36,11 +41,11 @@ post-patch:
 		${MAKEDIRS:S,$,/Makefile.in,}
 
 do-build:
-	@(for DIR in ${MAKEDIRS}; do cd $${DIR}; ${SETENV} ${MAKE_ENV} ${MAKE} \
+	@(for DIR in ${MAKEDIRS}; do cd $${DIR}; ${SETENV} ${MAKE_ENV} ${MYMAKE} \
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}; done)
 
 do-install:
-	@(for DIR in ${MAKEDIRS}; do cd $${DIR}; ${SETENV} ${MAKE_ENV} ${MAKE} \
+	@(for DIR in ${MAKEDIRS}; do cd $${DIR}; ${SETENV} ${MAKE_ENV} ${MYMAKE} \
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}; done)
 
 .include <bsd.port.mk>
