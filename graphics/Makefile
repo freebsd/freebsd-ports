@@ -669,6 +669,7 @@
     SUBDIR += orca
     SUBDIR += osg
     SUBDIR += osg-devel
+    SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
