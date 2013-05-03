@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pstree
-PORTVERSION=	2.35
+PORTVERSION=	2.36
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.thp.uni-due.de/pstree/ \
-		LOCAL/avl
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/ \
+		LOCAL/jgh/sysutils/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes
