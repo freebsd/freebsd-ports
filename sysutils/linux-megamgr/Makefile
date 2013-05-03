@@ -1,6 +1,4 @@
-# Ports collection makefile for:  linux-megamgr
-# Date created:			  Tue, Sep 5th, 2006
-# Whom:				  Patrick M. Hausen (pmh@hausen.com)
+# Created by: Patrick M. Hausen (pmh@hausen.com)
 #
 # $FreeBSD$
 #
@@ -13,6 +11,8 @@ DISTNAME=		ut_linux_mgr_5.20
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LSI MegaRAID controller management utility
+
+BROKEN=			Does not fetch
 
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
