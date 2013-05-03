@@ -1,9 +1,5 @@
-# New ports collection makefile for:    upsd
-# Date created:         11 Jul 1996
-# Whom:                 alexis
-#
+# Created by: alexis
 # $FreeBSD$
-#
 
 PORTNAME=	upsd
 PORTVERSION=	2.0.1.6
@@ -21,6 +17,7 @@ PLIST_FILES=	sbin/upsd etc/upsd.conf etc/rc.d/upsd.sh
 pre-build:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
 	@${SED} -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
+	@${REINPLACE_CMD} -e 's/NOMAN/NO_MAN/g' ${WRKSRC}/Makefile
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/upsd.sh ]; then \
