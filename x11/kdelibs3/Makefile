@@ -1,10 +1,5 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	KDE libraries 3
-# Date created:				2 November 2001
-# Whom:					will@cvs.kde.org
-#
+# Created by: will@cvs.kde.org
 # $FreeBSD$
-#
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
@@ -48,6 +43,7 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
+BROKEN=		kdelibs-3.5-openssl-1.0.0.patch is unfetchable
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
