@@ -12,8 +12,8 @@ USE_GL=		gl
 USE_MOTIF=	yes
 USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes dri2proto
 
-do-install:
-	cd ${WRKSRC}/src/glw; ${GMAKE} install
+INSTALL_WRKSRC=	${WRKSRC}/src/glw
+BUILD_WRKSRC=	${WRKSRC}/src/glw
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
