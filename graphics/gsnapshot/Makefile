@@ -14,6 +14,7 @@ USES=		pkgconfig
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 USE_GNOME=	gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
+USE_GMAKE=	yes
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libxml2
 
