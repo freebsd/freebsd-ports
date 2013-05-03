@@ -14,6 +14,10 @@ COMMENT=	Log4cxx is a port to C++ of the Log4j project
 
 LICENSE=	AL2
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 OPTIONS_DEFINE=	BOOST DOCS DOXYGEN
