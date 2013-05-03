@@ -48,7 +48,7 @@ diff -ur orig/skinenigmang-0.1.1/enigma.c skinenigmang-0.1.1/enigma.c
  #define ScrollbarHeight 20
  #define ScrollbarWidth 16
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && __FreeBSD_version < 1000029
 +/* XXX Implement strchrnul for FreeBSD. */
 +static char *
 +strchrnul (const char *s, int c_in)
