@@ -13,7 +13,7 @@ SRCS=	closure.c \
 	symtab.c \
 	verbose.c \
 	warshall.c
-NOMAN=	YES
+NO_MAN=	YES
 BINDIR=	${LOCALBASE}/bin
 
 .include <bsd.prog.mk>
