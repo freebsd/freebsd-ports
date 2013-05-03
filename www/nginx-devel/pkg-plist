@@ -18,12 +18,12 @@
 %%ETCDIR%%/nginx.conf-dist
 @exec if [ ! -f %D/%%ETCDIR%%/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf; fi
 @dirrmtry %%ETCDIR%%
-%%WWWDATA%%@exec mkdir -p -m 755 www/nginx-dist
+%%WWWDATA%%@exec mkdir -p -m 755 %D/www/nginx-dist
 %%WWWDATA%%@exec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 %%WWWDATA%%www/nginx-dist/index.html
 %%WWWDATA%%www/nginx-dist/50x.html
-%%WWWDATA%%@exec chmod a-w www/nginx-dist
+%%WWWDATA%%@exec chmod a-w %D/www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 %%WWWDATA%%@dirrmtry www/nginx-dist
 sbin/nginx
