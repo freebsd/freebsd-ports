@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130503:
+  AFFECTS: users of security/libgcrypt and any port that depends on it
+  AUTHOR: ehaupt@FreeBSD.org
+
+  The libgcrypt port has been updated to 1.5.2 and all shared libraries
+  versions have been bumped. So you need to rebuild all applications that
+  depend on libgcrypt. Do something like:
+
+  # portmaster -r libgcrypt
+
+  or
+  
+  # portupgrade -rf libgcrypt
+
+  Alternatively, you may install sysutils/bsdadminscripts, run pkg_libchk and
+  rebuild all detected ports:
+
+  # pkg_libchk | tee /tmp/rebuild
+  # awk -F':' '/libgcrypt.so/ {print $1}' /tmp/rebuild | sort | uniq \
+	| xargs portmaster -D
+
 20130502:
   AFFECTS: users of ports-mgmt/pkg, ports-mgmt/poudriere, ports-mgmt/tinderbox
   AUTHOR: bdrewery@FreeBSD.org
