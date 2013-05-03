@@ -22,4 +22,7 @@
 * You will need to manually create any additional configuration files. *
 * Read the README or type "man scamp" for further assistance.          *
 *                                                                      *
+* To completely remove "scamp" from your system, delete the config     *
+* directory -- usually "/usr/local/etc/scamp"                          *
+*                                                                      *
 ************************************************************************
