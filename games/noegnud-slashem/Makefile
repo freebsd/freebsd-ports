@@ -29,6 +29,10 @@ ALL_TARGET=	se006e4f8
 INSTALL_TARGET=	install_se006e4f8
 MAKE_JOBS_UNSAFE=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 pre-everything::
