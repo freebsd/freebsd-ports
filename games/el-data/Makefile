@@ -1,9 +1,5 @@
-# New ports collection makefile for:	el-data
-# Date created:		2006-08-18
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	192
@@ -30,17 +26,20 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}linux
 EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_${PORTVERSION}.zip
 
-OPTIONS=	ELSOUND	"Install additional sound files"	on \
-		ELMUSIC	"Install additional music files"	on
+OPTIONS_DEFINE=	ELSOUND ELMUSIC
+OPTIONS_DEFAULT=	ELSOUND ELMUSIC
+ELSOUND_DESC=	Install additional sound files
+ELMUSIC_DESC=	Install additional music files
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ELSOUND)
+.if ${PORT_OPTIONS:MELSOUND}
+BROKEN=		EL_sound_191.zip is unfetchable
 DISTFILES+=	EL_sound_191${EXTRACT_SUFX}:sound
 HAVE_ESOUND=	yes
 .endif
 
-.if defined(WITH_ELMUSIC)
+.if ${PORT_OPTIONS:MELMUSIC}
 DISTFILES+=	music_full${EXTRACT_SUFX}:music
 HAVE_EMUSIC=	yes
 .endif
@@ -48,10 +47,10 @@ HAVE_EMUSIC=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
-.if defined(HAVE_ESOUND)
+.if ${PORT_OPTIONS:MELSOUND}
 	@${UNZIP_CMD} -q ${_DISTDIR}/EL_sound_191${EXTRACT_SUFX} -d ${WRKSRC}
 .endif
-.if defined(HAVE_EMUSIC)
+.if ${PORT_OPTIONS:MELMUSIC}
 	@${MKDIR} ${WRKSRC}/music
 	@${UNZIP_CMD} -q ${_DISTDIR}/music_full${EXTRACT_SUFX} -d ${WRKSRC}/music
 .endif
@@ -79,4 +78,4 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
