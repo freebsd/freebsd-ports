@@ -1,4 +1,4 @@
 PROG=unshlight
-NOMAN=sorry
+NO_MAN=sorry
 
 .include <bsd.prog.mk>
