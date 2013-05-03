@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ptx-kmod
-# Date created:		July 2 2011
-# Whom:			hrs
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ptx
 PORTVERSION=	0.0.20111212
@@ -27,6 +22,8 @@ SUB_LIST=	KMODDIR=${KMODDIR}
 USE_RC_SUBR=	ptx
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 KMODDIR=	libexec/${PORTNAME}
@@ -47,7 +44,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${KMODDIR}
 	${INSTALL_KLD} ${BUILD_WRKSRC}/ptx.ko ${PREFIX}/${KMODDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/recptx.pl ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
