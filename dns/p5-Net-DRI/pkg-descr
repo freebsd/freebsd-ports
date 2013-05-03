@@ -1,0 +1,10 @@
+DRI stands for Domain Registration Interface and aims to be,
+for domain name registries/registrars/resellers
+what Perl DBI is for databases.
+
+Net::DRI offers a uniform API to access services.
+It can be used by registrars to access registries.
+It can be used by clients to access registrars and/or resellers.
+It can be used by anonyone to do whois, DAS or IRIS DCHK queries.
+
+WWW: http://search.cpan.org/dist/Net-DRI/
