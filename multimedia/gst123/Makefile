@@ -1,13 +1,8 @@
-# New ports collection makefile for:	gst123
-# Date created:				Wed December 8, 2010
-# Whom:					Herbert J. Skuhra <h.skuhra@gmail.com>
-#
+# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gst123
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://space.twc.de/~stefan/gst123/
 
@@ -20,12 +15,23 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GSTREAMER=	good
 CONFIGURE_ENV=	NCURSES5_CONFIG=/usr/bin/true
 LDFLAGS+=	-lncurses
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
+
+OPTIONS_DEFINE=	GSTREAMER1
+
+GSTREAMER1_DESC=	Multimedia support via GStreamer 1.0 (instead of 0.10)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGSTREAMER1} || exists(${LOCALBASE}/libdata/pkgconfig/gstreamer-1.0.pc)
+USE_GSTREAMER1=	good
+.else
+USE_GSTREAMER=	good
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
