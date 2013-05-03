@@ -87,6 +87,7 @@ etc/rt40/schema.mysql
 %%SITE_PERL%%/RT/I18N.pm
 %%SITE_PERL%%/RT/I18N/cs.pm
 %%SITE_PERL%%/RT/I18N/de.pm
+%%SITE_PERL%%/RT/I18N/fr.pm
 %%SITE_PERL%%/RT/I18N/i_default.pm
 %%SITE_PERL%%/RT/I18N/ru.pm
 %%SITE_PERL%%/RT/Installer.pm
@@ -345,6 +346,9 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.9/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -668,9 +672,11 @@ share/rt40/html/Helpers/Autocomplete/CustomFieldValues
 share/rt40/html/Helpers/Autocomplete/Groups
 share/rt40/html/Helpers/Autocomplete/Owners
 share/rt40/html/Helpers/Autocomplete/Users
+share/rt40/html/Helpers/Autocomplete/autohandler
 share/rt40/html/Helpers/TicketHistory
 share/rt40/html/Helpers/Toggle/ShowRequestor
 share/rt40/html/Helpers/Toggle/TicketBookmark
+share/rt40/html/Helpers/autohandler
 share/rt40/html/Install/Basics.html
 share/rt40/html/Install/DatabaseDetails.html
 share/rt40/html/Install/DatabaseType.html
@@ -1649,6 +1655,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrmtry share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.12
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.9
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.6
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.4
