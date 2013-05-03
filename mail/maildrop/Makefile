@@ -26,6 +26,9 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 LICENSE=	GPLv3
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USES=		iconv
