@@ -826,6 +826,7 @@
     SUBDIR += razorback-syslogNugget
     SUBDIR += razorback-virusTotal
     SUBDIR += razorback-yaraNugget
+    SUBDIR += rcracki_mt
     SUBDIR += rdigest
     SUBDIR += regripper
     SUBDIR += regripperplugins
