@@ -384,7 +384,7 @@ diff -u -r1.1.1.2 -r1.3
  #include "interface.h"
  #include "status.h"
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && __FreeBSD_version < 1000029
 +/* XXX Implement strchrnul for FreeBSD. */
 +static char *
 +strchrnul (const char *s, int c_in)
