@@ -22,7 +22,7 @@ DATADIR_NAME=	wireshark
 
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
-USES=		iconv gettext
+USES=		iconv gettext pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -76,7 +76,6 @@ WIRESHARK_LIBS+=${PTHREAD_LIBS}
 .else
 PLIST_SUB+=	WIRESHARK="@comment wireshark not built"
 USE_GNOME+=	glib20
-USES+=		pkgconfig
 CONFIGURE_ARGS+=	--enable-wireshark=no \
 			--disable-gtktest
 .endif
