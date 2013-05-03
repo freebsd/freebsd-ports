@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Verilog-Perl
-PORTVERSION=	3.316
+PORTVERSION=	3.400
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,7 @@ MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/ s/ vsplitmodule//' \
 		${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile.PL
 
 post-configure:
 .if ${OSVERSION} < 700042
