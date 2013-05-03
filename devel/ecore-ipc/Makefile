@@ -20,6 +20,9 @@ GNU_CONFIGURE=	yes
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	con
 USES=		pkgconfig
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_ipc
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

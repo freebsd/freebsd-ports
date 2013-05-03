@@ -20,6 +20,9 @@ GNU_CONFIGURE=	yes
 USE_EFL=	ecore evas libtool_hack
 USE_EFL_ECORE=	input
 USES=		pkgconfig
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_input_evas
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
