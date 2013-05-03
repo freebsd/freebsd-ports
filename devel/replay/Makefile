@@ -1,9 +1,5 @@
-# New ports collection makefile for:	replay
-# Date created:				22 Apr 2003
-# Whom:					alfred@freebsd.org
-#
+# Created by: alfred@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	devel-replay
 PORTVERSION=	1.0.4
@@ -16,5 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that helps you fix a build interactively
 
 PLIST_FILES=	bin/replay
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
