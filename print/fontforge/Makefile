@@ -3,11 +3,16 @@
 
 PORTNAME=	fontforge
 DISTVERSION=	20120731-b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
-DISTFILES=	${EXTRACT_ONLY}
-EXTRACT_ONLY=	${PORTNAME}_full-${DISTVERSION}.tar.bz2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source \
+		SF/freetype/${PORTNAME}/${PORTVERSION}:freetype \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/:freetype \
+		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/:freetype \
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,}:freetype \
+		ftp://ftp.freetype.org/freetype/freetype2/:freetype
+DISTFILES=	${PORTNAME}_full-${DISTVERSION}.tar.bz2
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -17,21 +22,8 @@ LIB_DEPENDS=	uninameslist:${PORTSDIR}/textproc/libuninameslist \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		gif:${PORTSDIR}/graphics/giflib \
-		freetype:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		spiro:${PORTSDIR}/graphics/libspiro
-
-.if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.4.9
-EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
-.endif
-
-.if !defined(NOPORTDOCS)
-DOC_VERSION=	${DISTVERSION}
-MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs:docs
-DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
-DISTFILES+=	${DOCFILES:C/$/:docs/}
-.endif
 
 USE_BZIP2=	yes
 USES=		gettext iconv
@@ -39,21 +31,38 @@ USE_XORG=	x11 xi ice xkbui
 USE_GMAKE=	yes
 PATCH_STRIP=	-l
 
-.if !defined(FONTFORGE_NO_MULTILAYER)
-WITH_MULTILAYER=	--enable-type3
-.else
-WITH_MULTILAYER=	--disable-type3
+OPTIONS_DEFINE=	DOCS MULTILAYER FREETYPE PLUGINS PYTHON CAIRO PYTHON
+OPTIONS_DEFAULT=	DOCS MULTILAYER PLUGINS
+MULTILAYER_DESC=	type3/SVG multilayer font support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DOC_VERSION=	${DISTVERSION}
+MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs:docs
+DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
+DISTFILES+=	${DOCFILES:C/$/:docs/}
 .endif
 
-.if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
+.if ${PORT_OPTIONS:MMULTILAYER}
+WITH_TYPE3_MULTILAYER=	--enable-type3
+.else
+WITH_TYPE3_MULTILAYER=	--disable-type3
+.endif
+
+.if ${PORT_OPTIONS:MFREETYPE}
+FREETYPE_VERSION=	2.4.11
+FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
+DISTFILES+=	${FREETYPE_SRC:C/$/:freetype/}
 WITH_FREETYPE_SRC=	--enable-freetype --with-freetype-bytecode \
 			--with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 .else
 WITH_FREETYPE_SRC=	--disable-freetype --without-freetype-bytecode \
 			--without-freetype-src
 .endif
 
-CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
+CONFIGURE_ARGS=	${WITH_TYPE3_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
 		--enable-pasteafter --enable-tilepath
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -64,13 +73,13 @@ USE_AUTOTOOLS=	libtool
 
 MAN1=		fontforge.1 fontimage.1 fontlint.1 sfddiff.1
 
-.if defined(FONTFORGE_NO_PLUGINS)
-PLIST_SUB+=	NO_PLUGINS="@comment "
-.else
+.if ${PORT_OPTIONS:MPLUGINS}
 PLIST_SUB+=	NO_PLUGINS=""
+.else
+PLIST_SUB+=	NO_PLUGINS="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Python on non-i386 systems doesn't link with Fontforge (issues with use of Python's .a file)
@@ -80,14 +89,14 @@ LDFLAGS+=	-lutil
 CONFIGURE_ARGS+=	--without-python
 .endif
 
-.if defined(WITH_CAIRO)
+.if ${PORT_OPTIONS:MCAIRO}
 LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--with-cairo
 .else
 CONFIGURE_ARGS+=	--without-cairo
 .endif
 
-.if defined(WITH_PANGO)
+.if ${PORT_OPTIONS:MPANGO}
 USE_GNOME+=	pango
 CONFIGURE_ARGS+=	--with-pango
 .else
@@ -95,23 +104,14 @@ CONFIGURE_ARGS+=	--without-pango
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && !defined(FONTFORGE_WITH_TTF_DEBUGGER)
-	@${ECHO_MSG} "If you have built freetype2 port with bytecode interpreter enabled,"
-	@${ECHO_MSG} "You can use TTF instruction debugger by compiling fontforge port"
-	@${ECHO_MSG} "with FONTFORGE_WITH_TTF_DEBUGGER defined."
-	@${ECHO_MSG} "Note that you must put the source archive of FreeType in ${DISTDIR}."
-	@${ECHO_MSG} "If you have installed freetype2 from a package, chdir to ${PORTSDIR}/print/freetype2"
-	@${ECHO_MSG} "and execute 'make fetch' before building this port".
-	@${ECHO_MSG} ""
-.endif
-.if !defined(FONTFORGE_NO_MULTILAYER)
+.if !${PORT_OPTIONS:MMULTILAYER}
 	@${ECHO_MSG} "If your machine has small memory and you have to edit fonts with a lot"
-	@${ECHO_MSG} "of glyphs, you can save memory by defining FONTFORGE_NO_MULTILAYER."
+	@${ECHO_MSG} "of glyphs, you can save memory by enabling the MULTILAYER option."
 	@${ECHO_MSG} "Enabling multilayer editing increases memory consumption per glyph."
 	@${ECHO_MSG} ""
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
 	for doc in ${DOCFILES} ; \
@@ -126,7 +126,7 @@ post-extract:
 post-patch:
 	@${CHMOD} +x ${WRKSRC}/configure
 
-.if !defined(FONTFORGE_NO_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 post-build:
 	cd ${WRKSRC}/plugins; ${GMAKE}
 .endif
@@ -134,11 +134,11 @@ post-build:
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-.if !defined(FONTFORGE_NO_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 	${MKDIR} ${PREFIX}/share/fontforge/plugins
-	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* ${PREFIX}/share/fontforge/plugins )
+	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* ${PREFIX}/share/fontforge/plugins)
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 # Ditto the above note in post-extract for these comments
 #	${MKDIR} ${DOCSDIR}/flags
 	${INSTALL_DATA} ${WRKDIR}/html/*.* ${DOCSDIR}
