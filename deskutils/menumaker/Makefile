@@ -1,9 +1,5 @@
-# New ports collection makefile for:	menumaker
-# Date created:				2007-03-21
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	menumaker
 PORTVERSION=	0.99.7
@@ -14,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
 
 USE_PYTHON=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 INFO=		mmaker
