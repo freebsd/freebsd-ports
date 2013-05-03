@@ -91,6 +91,9 @@ lib/ipsec/plugins/libstrongswan-pgp.so
 lib/ipsec/plugins/libstrongswan-pkcs1.a
 lib/ipsec/plugins/libstrongswan-pkcs1.la
 lib/ipsec/plugins/libstrongswan-pkcs1.so
+lib/ipsec/plugins/libstrongswan-pkcs7.a
+lib/ipsec/plugins/libstrongswan-pkcs7.la
+lib/ipsec/plugins/libstrongswan-pkcs7.so
 lib/ipsec/plugins/libstrongswan-pkcs8.a
 lib/ipsec/plugins/libstrongswan-pkcs8.la
 lib/ipsec/plugins/libstrongswan-pkcs8.so
