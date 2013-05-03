@@ -20,6 +20,9 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_EFL=	evas librt_hack libtool_hack
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/buffer
