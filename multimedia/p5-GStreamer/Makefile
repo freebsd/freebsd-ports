@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-GStreamer
-# Date created:		2005-10-17
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GStreamer
 PORTVERSION=	0.17
@@ -59,7 +55,7 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 
 .include <bsd.port.pre.mk>
 
-PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
+PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}
 .if ${PERL_THREADED} == ""
 IGNORE=		must be built with a threaded Perl, reinstall Perl with WITH_THREADS=yes
 .endif
