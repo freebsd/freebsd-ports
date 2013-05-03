@@ -18,4 +18,8 @@ GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 .include <bsd.port.mk>
