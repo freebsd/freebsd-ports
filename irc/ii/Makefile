@@ -16,7 +16,9 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGES FAQ README
 PORTEXAMPLES=	query.sh
+.if !defined(.PARSEDIR)
 MAKE_ARGS=	-E CC
+.endif
 
 .include <bsd.port.options.mk>
 
