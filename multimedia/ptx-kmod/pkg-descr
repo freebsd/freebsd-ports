@@ -1,5 +1,5 @@
 A device driver for PT1 and PT2, ISDB-S/ISDB-T tuner cards from Earth Soft.
 This version is written by bsdaemon based on recpt1 utility for Linux.
 
-WWW:	http://earthsoft.jp/PT1_PT2/index.html
-WWW:	http://d.hatena.ne.jp/bsdaemon/20100429/1272556078
+WWW: http://earthsoft.jp/PT1_PT2/index.html
+WWW: http://d.hatena.ne.jp/bsdaemon/20100429/1272556078
