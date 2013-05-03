@@ -3,23 +3,45 @@
 
 PORTNAME=	tcllib
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	A collection of utility modules for Tcl
 
+OPTIONS_DEFINE=	DOCS MANPAGES
+
 USE_TCL=	84+
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
 ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-.include "Makefile.man"
+INSTALL_ARGS=	-pkgs -pkg-path ${PREFIX}/lib/tcllib \
+		-apps -app-path ${PREFIX}/bin \
+		-no-wait -no-gui -no-examples
 
-CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
+.include <bsd.port.options.mk>
+
+#
+# Man pages
+#
+.if ${PORT_OPTIONS:MMANPAGES}
+ALL_TARGET+=	nroff-doc
+INSTALL_ARGS+=	-nroff-path ${MANPREFIX}/man/mann
+.include "Makefile.man"
+.endif
+
+#
+# HTML documentation
+#
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	html-doc
+INSTALL_ARGS+=	-html-path ${DOCSDIR}
+.endif
 
 post-patch:
 #
@@ -42,13 +64,16 @@ post-patch:
 #	 installed
 #
 	${FIND} ${WRKSRC} -name "*.orig" -delete
+#
+#	man pages have the .tcllib suffix, so there's no need to have a
+#	tcllib_ prefix too
+#
+	for man in `${FIND} ${WRKSRC} -name "tcllib_*.man"`; do \
+	    ${MV} $$man `echo $$man | ${SED} -e 's|tcllib_||'`; \
+	done
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${MAKE} html-doc
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}
-.endif
+do-install:
+	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
 
 regression-test: build
 	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test
