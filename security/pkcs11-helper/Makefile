@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkcs11-helper
-# Date created:			8 Jan 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.09
@@ -24,6 +20,10 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
