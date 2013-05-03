@@ -33,6 +33,8 @@ INSTALL_ARGS=	-pkgs -pkg-path ${PREFIX}/lib/tcllib \
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${MANPREFIX}/man/mann
 .include "Makefile.man"
+.else
+INSTALL_ARGS+=	-no-nroff
 .endif
 
 #
@@ -41,6 +43,8 @@ INSTALL_ARGS+=	-nroff-path ${MANPREFIX}/man/mann
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${DOCSDIR}
+.else
+INSTALL_ARGS+=	-no-html
 .endif
 
 post-patch:
