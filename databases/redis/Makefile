@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.6.11
+DISTVERSION=	2.6.13
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -82,9 +82,7 @@ post-install:
 	[ -d ${d} ] || ${MKDIR} ${d} && ${CHOWN} ${USERS}:${GROUPS} ${d}
 .endfor
 
-test: build
+regression-test: build
 	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
-
-regression-test: test
 
 .include <bsd.port.mk>
