@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsd
-PORTVERSION=	3.6
-PORTREVISION=	1
+PORTVERSION=	3.9
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -21,7 +20,7 @@ INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFO=	gps-${PORTVERSION}.egg-info
 MAKE_JOBS_SAFE=	yes
 
-SCONS_BUILDENV=	${SCONS_ENV}
+SCONS_BUILDENV=	CC=${CC}
 SCONS_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
 		chrpath=no
 
@@ -30,12 +29,12 @@ MAN1=	cgps.1 gegps.1 gps.1 gpscat.1 gpsctl.1 gpsdecode.1 \
 	gpsmon.1 lcdgps.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3 libQgpsmm.3
 MAN5=	srec.5 gpsd_json.5
-MAN8=	gpsd.8 gpsdctl.8
+MAN8=	gpsd.8 gpsdctl.8 gpsinit.8
 MANCOMPRESSED=	no
 
 OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FV18 GARMIN GARMINTXT \
-		GEOSTAR GPSCLOCK GTK2 IPV6 ITRAX MTK NAVCOM NETFEED NCURSES NMEA NTPSHM NTRIP \
-		OCEANSERVER OLDPROTO ONCORE PASSTHROUGH PPS PPSONCTS PROFILING RECONFIGURE \
+		GEOSTAR GPSCLOCK GTK2 IPV6 ITRAX MTK NAVCOM NETFEED NMEA NTPSHM NTRIP \
+		OCEANSERVER OLDPROTO ONCORE PASSTHROUGH PPS PROFILING RECONFIGURE \
 		RTCM104V2 RTCM104V3 SHMEXPORT SIRF SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE \
 		TSIP QTBIND UBX USB
 OPTIONS_DEFAULT=	AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FV18 GARMIN GARMINTXT GEOSTAR \
@@ -57,7 +56,6 @@ GTK2_DESC=		Install py-gtk2 (required for xgps & xgpsspeed)
 ITRAX_DESC=		iTrax support
 MTK_DESC=		MTK-3301 support
 NAVCOM_DESC=		Navcom support
-NCURSES_DESC=		Build with ncurses(3)
 NETFEED_DESC=		Build support for handling TCP/IP data sources
 NMEA_DESC=		NMEA support
 NTPSHM_DESC=		NTP time hinting support
@@ -67,7 +65,6 @@ OLDPROTO_DESC=		Old (pre-JSON) protocol support in client lib
 ONCORE_DESC=		Motorola OnCore chipset support
 PASSTHROUGH_DESC=	Build support for passing through JSON
 PPS_DESC=		PPS time syncing support
-PPSONCTS_DESC=		PPS pulse on CTS rather than DCD
 PROFILING_DESC=		Profiling support
 RECONFIGURE_DESC=	Allow gpsd to change device settings
 RTCM104V2_DESC=		rtcm104v2 support
@@ -197,10 +194,6 @@ IGNORE=		PPS requires NTPSHM
 .	endif
 .endif
 
-.if ${PORT_OPTIONS:MPPSONCTS}
-SCONS_ARGS+=	pps_on_cts=yes
-.endif
-
 # Export methods
 .if ! ${PORT_OPTIONS:MSOCKEXPORT}
 SCONS_ARGS+=	socket_export=no
@@ -258,14 +251,6 @@ SCONS_ARGS+=	reconfigure=no
 
 .if ! ${PORT_OPTIONS:MCPPBIND}
 SCONS_ARGS+=	libgpsmm=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNCURSES}
-SCONS_ARGS+=	ncurses=no
-PLIST_SUB+=	CURSES="@comment "
-.else
-PLIST_SUB+=	CURSES=""
-USE_NCURSES=	yes
 .endif
 
 # Build control
