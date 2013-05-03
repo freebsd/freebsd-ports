@@ -29,7 +29,7 @@ COMMENT=	Puzzle games like sokoban or boulderdash
 
 LICENSE=	ZLIB
 
-EXTRACT_DEPENDS=${LOCALBASE}/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
