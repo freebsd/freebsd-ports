@@ -1,6 +1,5 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	engine_pkcs11
 PORTVERSION=	0.1.8
@@ -16,7 +15,10 @@ LIB_DEPENDS=	p11.2:${PORTSDIR}/security/libp11
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
