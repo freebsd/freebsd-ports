@@ -1,12 +1,8 @@
-# New ports collection Makefile for:	libgcrypt
-# Date created:				July 17 2002
-# Whom:					Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,9 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
 
-DOCS=	AUTHORS ChangeLog INSTALL NEWS README README.SVN \
-	THANKS TODO doc/HACKING doc/README.apichanges
-INFO=	gcrypt
+DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
+		README.GIT THANKS TODO doc/HACKING doc/README.apichanges
+INFO=		gcrypt
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -55,10 +52,13 @@ post-patch:
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.post.mk>
