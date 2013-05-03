@@ -169,7 +169,7 @@ FPM_FLAG=
 .endif
 
 .if !defined(DISABLE_MAKE_JOBS)
-MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
+MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
 .endif
 
 .include <bsd.port.post.mk>
