@@ -19,6 +19,11 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MYMAKE=		${MAKE}
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+MYMAKE=		${GMAKE}
+.endif
 USE_EFL=	evas librt_hack libtool_hack
 USE_XORG=	x11 xext xrender
 USE_GL=		gl glu
@@ -38,7 +43,7 @@ post-patch:
 
 pre-build:
 	@(cd ${WRKSRC}/src/modules/engines/gl_common; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+		${MYMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/evas-opengl-x11.pc \

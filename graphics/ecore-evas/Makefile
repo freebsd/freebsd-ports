@@ -17,6 +17,9 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_EFL=	evas ecore libtool_hack
 USE_EFL_ECORE=	input input_evas
 USE_LDCONFIG=	yes
