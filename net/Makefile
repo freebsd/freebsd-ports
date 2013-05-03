@@ -679,6 +679,7 @@
     SUBDIR += p5-Net-Server-Coro
     SUBDIR += p5-Net-Server-SS-PreFork
     SUBDIR += p5-Net-Subnet
+    SUBDIR += p5-Net-Syslog
     SUBDIR += p5-Net-TCLink
     SUBDIR += p5-Net-TcpDumpLog
     SUBDIR += p5-Net-Telnet
