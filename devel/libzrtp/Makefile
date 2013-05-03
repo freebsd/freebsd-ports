@@ -10,6 +10,9 @@ MASTER_SITES=	# http://philzimmermann.com/zfone/EN/registration/index.html
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZRTP library from the Zfone SDK
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2013-05-03
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=   yes
