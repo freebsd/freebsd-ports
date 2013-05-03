@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZRTP library from the Zfone SDK
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2013-05-03
+EXPIRATION_DATE=	2013-06-03
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
