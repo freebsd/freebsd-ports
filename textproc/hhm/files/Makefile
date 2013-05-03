@@ -6,6 +6,6 @@ LDADD=	-L${PREFIX}/lib -llzxcomp -lm
 CFLAGS=	-I${PREFIX}/include
 BINDIR=	${PREFIX}/bin
 
-NOMAN=	#
+NO_MAN=	#
 
 .include <bsd.prog.mk>
