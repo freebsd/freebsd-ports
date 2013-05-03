@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ventrilo-server
-# Date created:				29 March 2006
-# Whom:					Anish Mistry
-#
+# Created by: Anish Mistry
 # $FreeBSD$
-#
 
 PORTNAME=	ventrilo
 PORTVERSION=	3.0.3
@@ -14,6 +10,9 @@ DISTNAME=	ventrilo_srv-${PORTVERSION}-FreeBSD-i386
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the Ventrilo group voice chat system
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2013-06-03
 
 LIB_DEPENDS=	stdc\\+\\+.3:${PORTSDIR}/misc/compat4x \
 		m.2:${PORTSDIR}/misc/compat4x \
