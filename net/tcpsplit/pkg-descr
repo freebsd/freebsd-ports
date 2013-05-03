@@ -1,0 +1,7 @@
+The tcpsplit utility breaks a single libpcap packet trace into some number
+of sub-traces, breaking the trace along TCP connection boundaries so that
+a TCP connection doesn't end up split across two sub-traces. This is useful
+for making large trace files tractable for in-depth analysis and for
+subsetting a trace for developing analysis on only part of a trace.
+
+WWW: http://www.icir.org/mallman/software/tcpsplit/

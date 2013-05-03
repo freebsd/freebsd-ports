@@ -1149,6 +1149,7 @@
     SUBDIR += tcpsg
     SUBDIR += tcpshow
     SUBDIR += tcpslice
+    SUBDIR += tcpsplit
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
