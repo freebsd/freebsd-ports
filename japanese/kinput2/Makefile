@@ -76,9 +76,9 @@ PLIST.WNN=		lib/X11/ccdef/ccdef.kinput2 \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFREEWNN) || \
-    ${PORT_OPTIONS:MWNN6) || \
-    ${PORT_OPTIONS:MWNN7)
+.if ${PORT_OPTIONS:MFREEWNN} || \
+    ${PORT_OPTIONS:MWNN6} || \
+    ${PORT_OPTIONS:MWNN7}
 PLIST_ALL+=	${PLIST.WNN}
 .endif
 
