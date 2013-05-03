@@ -42,7 +42,7 @@ PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 
 OPTIONS_DEFINE=	DOCS NLS XRANDR
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64 && ${OSVERSION} < 800000
 CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
@@ -53,7 +53,7 @@ CPPFLAGS+=	-DHAVE_SYS_SELECT_H
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it \
 		ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
 CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
@@ -90,4 +90,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
