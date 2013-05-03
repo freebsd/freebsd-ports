@@ -1,23 +1,24 @@
 --- Makefile.orig	1997-05-16 00:50:56.000000000 +0900
-+++ Makefile	2013-05-02 15:48:59.000000000 +0900
-@@ -2,12 +2,12 @@
++++ Makefile	2013-05-04 04:02:28.000000000 +0900
+@@ -2,12 +2,13 @@
  # Last modified: Sat Apr 19 1997
  
  RM	= 	rm -f
 -CC	=	gcc
 -CCFLAGS =       -O
 +CC?	=	gcc
-+CCFLAGS?=       -O
++CCFLAGS?=       ${CFLAGS}
  
 -PREFIX	=	/usr/local
 +PREFIX?=	/usr/local
  BIN	=	$(PREFIX)/bin
 -MAN	=	$(PREFIX)/man/man1
++MAN1PREFIX?=	${PREFIX}
 +MAN	=	${MAN1PREFIX}/man/man1
  
  # you may predefine some of the default settings
  DEFAULT_FONT	= \"Courier\"
-@@ -31,23 +31,20 @@
+@@ -31,21 +32,20 @@
   -DSTRINGS=$(STRINGS_FONT) -DPREPROC=$(PREPROC_FONT)\
   -DKEYWORD=$(KEYWORD_FONT) -DTYPE=$(TYPE_FONT)\
   -DLNUMBER=$(LNUMBER_FONT) -DFUNCTION=$(FUNCTION_FONT)\
@@ -39,9 +40,7 @@
  
  compile:	c2ps.c
 -	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c
-+	$(CC) $(PREP_OPTIONS) $(CCFLAGS) -o c2ps c2ps.c -L${LOCALBASE}/lib -lm -lpaper
++	$(CC) $(PREP_OPTIONS) $(CCFLAGS) $(CPPFLAGS) -o c2ps c2ps.c -L${LOCALBASE}/lib -lm -lpaper
  
  clean:
  	$(RM) c2ps *.o core *~
--
--
