@@ -1,9 +1,5 @@
-# New ports collection makefile for:	calibrator
-# Date created:				13 October 2003
-# Whom:					bms@FreeBSD.org
-#
+# Created by: bms@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		calibrator
 PORTVERSION=		0.9

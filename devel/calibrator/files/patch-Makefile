@@ -5,7 +5,7 @@
 +
 +PROG=	calibrator
 +SRCS=	calibrator.c
-+NOMAN=	defined
++NO_MAN=	defined
 +
 +CFLAGS+=	-D_ANSI_SOURCE
 +LDADD+=	-lm
