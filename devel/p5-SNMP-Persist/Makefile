@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SNMP-Persist
-# Date created:				2007-10-18
-# Whom:					Philippe Audeoud <jadawin@tuxaco.net>
-#
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
-#
 
 PORTNAME=	SNMP-Persist
 PORTVERSION=	0.05
@@ -20,7 +16,7 @@ MAN3=		SNMP::Persist.3
 
 .include <bsd.port.pre.mk>
 
-PERL_THREADED!= ${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
+PERL_THREADED!= ${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}
 .  if ${PERL_THREADED} == ""
 IGNORE=		must be built with a threaded Perl
 .  endif
