@@ -19,12 +19,6 @@ bin/ezjail-remote
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/etc/make.conf
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/etc/periodic.conf
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/etc/rc.conf
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/etc/resolv.conf
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/ezjail.flavour
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/usr/local/etc/sudoers
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/tests/__init__.pyo
@@ -35,10 +29,6 @@ bin/ezjail-remote
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/usr/local/etc
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/usr/local
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/usr
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic/etc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours/basic
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote/flavours
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ezjailremote
