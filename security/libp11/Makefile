@@ -19,6 +19,10 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig ltverhack
 USE_LDCONFIG=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
