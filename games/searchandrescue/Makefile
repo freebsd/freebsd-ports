@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SearchAndRescue
-# Date created:			10 June 2010
-# Whom:				Jesse Smith <jessefrgsmith@yahoo.ca>
-#
+# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	SearchAndRescue
 PORTVERSION=	1.4.0
@@ -37,6 +33,7 @@ post-patch:
 		-e '/^CFLAGS = /s,=,= ${CFLAGS},g' \
 		-e '/^CC = /s, = .*, = ${CC},' \
 		-e '/^CPP = /s, = .*, = ${CXX},' \
+		-e 's,-O6,,' \
 		${WRKSRC}/sar/Makefile
 
 do-install:
