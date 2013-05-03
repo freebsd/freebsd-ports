@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asn1c
-# Date created:				10 Sep 2004
-# Whom:					Lev Walkin <vlm@lionet.info>
-#
+# Created by: Lev Walkin <vlm@lionet.info>
 # $FreeBSD$
-#
 
 PORTNAME=	asn1c
 PORTVERSION=	0.9.21
@@ -18,6 +14,9 @@ COMMENT=	Modern ASN.1 to C compiler
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 SUB_FILES=	pkg-message
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 MAN1=	asn1c.1 enber.1 unber.1
 
