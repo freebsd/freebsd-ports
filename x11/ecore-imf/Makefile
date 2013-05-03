@@ -19,6 +19,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore libtool_hack
 USES=		pkgconfig
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_imf
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
