@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PERL_ARCHNAME!=	perl -V:archname 2>/dev/null || :
+PERL_ARCHNAME!=	perl -V:archname 2>/dev/null || echo
 
 PLIST_SUB+=	PERL_PORT=perl5 PERL_ARCHNAME=${PERL_ARCHNAME:S/archname='//:S/';//}
 
