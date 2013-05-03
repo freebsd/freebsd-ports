@@ -16,5 +16,9 @@ post-build-epag:
 	cd ${WRKSRC}/${EPAG_NAME} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile
 
+post-install-epag:
+	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
+
 pre-build: pre-build-epag
 post-build: post-build-epag
+post-install: post-install-epag

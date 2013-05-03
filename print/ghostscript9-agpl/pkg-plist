@@ -1,7 +1,7 @@
 @comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.5 2012-02-12 18:10:49 hrs Exp $
 bin/dvipdf
 bin/eps2eps
-%%GS_dmprt%%bin/ert
+%%GS_epag%%bin/ert
 bin/font2c
 bin/gs
 bin/gsbj

@@ -2,7 +2,7 @@
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
-%%GS_dmprt%%bin/ert
+%%GS_epag%%bin/ert
 bin/fixmswrd.pl
 bin/font2c
 bin/gs
