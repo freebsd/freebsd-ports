@@ -264,7 +264,7 @@ CONFIGURE_ARGS+=	--enable-minidriver-dummy
 CONFIGURE_ARGS+=	--disable-minidriver-dummy
 .endif
 
-.if ${PORT_OPTIONS:MLIBFTDI}
+.if defined(WITH_LIBFTDI)
 LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 .endif
 
