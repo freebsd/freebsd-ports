@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vo-aacenc
-# Date created:		23 Jun 2011
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vo-aacenc
 PORTVERSION=	0.1.2
@@ -15,6 +11,9 @@ COMMENT=	VisualOn AAC encoder library
 
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/COPYING
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 GNU_CONFIGURE=	yes
 
