@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tripwire
-# Date created:		31 Mar 1997
-# Whom:			Joe Greco <jgreco@ns.sol.net>
-#
+# Created by: Joe Greco <jgreco@ns.sol.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tripwire
 PORTVERSION=	1.2
@@ -34,7 +30,7 @@ post-patch:
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
-	@ ${cp} ${TWCONFIG} ${WRKSRC}/configs/tw.conf.freebsd8
+	@ ${CP} ${TWCONFIG} ${WRKSRC}/configs/tw.conf.freebsd8
 
 post-install:
 	@ ${MKDIR} /var/adm/tcheck
