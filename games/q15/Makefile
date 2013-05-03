@@ -1,9 +1,5 @@
-# New ports collection makefile for:	q15
-# Date created:				2005-08-30
-# Whom:					Andrej Zverev <az@inec.ru>
-#
+# Created by: Andrej Zverev <az@inec.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	q15
 PORTVERSION=	1.0
@@ -23,6 +19,9 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QT_PREFIX="${QT_PREFIX}"
 
 PLIST_FILES=	bin/q15
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,NOMAN,NO_MAN,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/q15 ${PREFIX}/bin
