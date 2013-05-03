@@ -20,7 +20,9 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pedantic||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-pedantic||' \
+		-e 's|CFLAGS =|CFLAGS ?=|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libswe.a ${LOCALBASE}/lib
