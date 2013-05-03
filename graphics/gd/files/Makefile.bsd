@@ -31,12 +31,12 @@ all: lib${LIB}.a ${SHLIB_NAME} ${PROGS} # ${TESTS}
 lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
 	${MAKE} LIB=${LIB} SRCS="${SRCS}" \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-		CFLAGS="${CFLAGS}" -ECFLAGS LDADD="${LDADD}" \
+		CFLAGS="${CFLAGS}" LDADD="${LDADD}" \
 		-f ${MAKEDIR}/bsd.lib.mk ${.TARGET}
 
 ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 	${MAKE} PROG=${.TARGET} NO_MAN=1 NOMAN=1 LDADD="-L${.CURDIR} -lgd" \
-		CFLAGS="${CFLAGS}" -ECFLAGS -f ${MAKEDIR}/bsd.prog.mk
+		CFLAGS="${CFLAGS}" -f ${MAKEDIR}/bsd.prog.mk
 
 install:
 	mkdir -p ${PREFIX}/include
