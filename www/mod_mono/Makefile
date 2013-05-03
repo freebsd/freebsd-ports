@@ -16,6 +16,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		xsp:${PORTSDIR}/www/xsp
 
+USES=		pkgconfig
 USE_APACHE=	22
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
