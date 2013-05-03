@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/CVS
-# Date created:		20 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cvs
 PORTVERSION=	0.2
@@ -15,6 +11,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A Ruby library to provide a high level interface to a CVS repository
+
+BROKEN=		Does not fetch
 
 # optional, but strongly suggested
 #RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/flex.so:${PORTSDIR}/devel/ruby-flex_rb
