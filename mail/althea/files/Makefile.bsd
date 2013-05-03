@@ -1,5 +1,5 @@
 PROG=	althea
-NOMAN=	forget it :(
+NO_MAN=	forget it :(
 
 objs!=	${MAKE} -V OBJS -f ${.CURDIR}/Makefile
 SRCS:=	${objs:.o=.cpp} main.cpp
