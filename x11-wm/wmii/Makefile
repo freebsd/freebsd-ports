@@ -16,6 +16,7 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 CONFLICTS=	wmii-3.9*
 
 USE_XORG=	x11 xextproto xt xext
+USE_GMAKE=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 		INCX11="-I${LOCALBASE}/include" LIBX11="-L${LOCALBASE}/lib" \
