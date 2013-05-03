@@ -369,6 +369,7 @@
     SUBDIR += icat
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
+    SUBDIR += iccexamin
     SUBDIR += iccxml
     SUBDIR += icoconvert
     SUBDIR += icon-slicer
