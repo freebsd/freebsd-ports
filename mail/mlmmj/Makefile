@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mlmmj
-# Date created:        12 june 2004
-# Whom:                Christian Laursen <xi@borderworlds.dk>
-#
+# Created by: Christian Laursen <xi@borderworlds.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	mlmmj
 PORTVERSION=	1.2.17.1
@@ -16,6 +12,10 @@ MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful
 
 LICENSE=	MIT
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 .if defined(WITH_PHP_WEBINTERFACE)
 USE_PHP=	yes
