@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
 LICENSE=	GPLv2
@@ -29,8 +29,6 @@ OPTIONS_DEFINE=	AO SAMPLERATE
 OPTIONS_DEFAULT=	SAMPLERATE
 AO_DESC=	Use libao for audio output
 SAMPLERATE_DESC=	Better beeper sound quality
-
-BROKEN=		does not build (presumably after recent glib update)
 
 .include <bsd.port.options.mk>
 
