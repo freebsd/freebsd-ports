@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srg
-# Date created:		28 June 2004
-# Whom:			Dmitry Semkin <lslarry@gmail.com>
-#
+# Created by: Dmitry Semkin <lslarry@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	srg
 PORTVERSION=	1.3.6
@@ -17,11 +13,17 @@ COMMENT=	A Squid Report Generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		srg.1
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -29,7 +31,7 @@ post-patch:
 		 /LDFLAGS/s|-L/usr/local/lib||' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for ex in srg.daily srg.monthly srg.weekly
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
