@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hydrogen
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.5.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Hydrogen/${MAJORVERSION}%20Sources
 
-MAINTAINER=	devel@stasyan.com
+MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	An advanced drum machine
 
 LICENSE=	GPLv2
@@ -15,10 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile \
 		tar:${PORTSDIR}/devel/libtar \
 		lrdf:${PORTSDIR}/textproc/liblrdf
-
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-03-05
-BROKEN=		does not install
 
 MAJORVERSION=	0.9.5
 USE_QT4=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
@@ -30,7 +26,7 @@ OPTIONS_DEFAULT=	JACK
 LIBARCHIVE_DESC=	LibArchive support
 
 post-patch:
-		${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork', '${PTHREAD_LIBS}']|g" ${WRKSRC}/Sconstruct
+	${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include', '-I${LOCALBASE}/include/raptor2'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork', '${PTHREAD_LIBS}']|g" ${WRKSRC}/Sconstruct
 
 .include <bsd.port.options.mk>
 
