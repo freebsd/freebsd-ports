@@ -1,8 +1,0 @@
---- TestSuite/Misc/export/project_b1.tjp.orig	Tue Sep  5 18:27:47 2006
-+++ TestSuite/Misc/export/project_b1.tjp	Mon Sep 18 23:41:15 2006
-@@ -1,4 +1,4 @@
--project test "Test" "$Id" 2000-01-01-00:00:00-MST 2000-02-31-00:00:00-MST {
-+project test "Test" "$Id" 2000-01-01-00:00:00-UTC 2000-02-31-00:00:00-UTC {
-   timezone "US/Mountain"
- }
- 
