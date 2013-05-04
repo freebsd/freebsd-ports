@@ -12,6 +12,7 @@ MAINTAINER=	dave@gufi.org
 COMMENT=	A GNOME2 frontend to mkisofs/cdrecord
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/_gnome.so:${PORTSDIR}/x11-toolkits/py-gnome2
+BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 .if defined(WITH_ADDITIONAL_PROGRAMS)
