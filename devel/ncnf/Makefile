@@ -16,8 +16,14 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
+.include <bsd.port.options.mk>
+
 post-patch:
-.ifdef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
 .endif
 
