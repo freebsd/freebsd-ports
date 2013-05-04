@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xdialog
-# Date created:			Jan 8, 2001
-# Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
@@ -24,6 +19,10 @@ MAN1=		Xdialog.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 .include <bsd.port.options.mk>
 
