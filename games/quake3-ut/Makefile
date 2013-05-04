@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q3 Mod: Urban Terror
-# Date created:				Sun Jun  3 11:49:27 EDT 2001
-# Whom:					pat
-#
+# Created by: pat
 # $FreeBSD$
-#
 
 PORTNAME=	ut
 PORTVERSION=	3.7
@@ -20,15 +16,20 @@ USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	"Distfile is \>256MB\; define FORCE_PACKAGE if you really want this."
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 DATADIR=	${Q3DIR}/${PORTNAME}
+
+.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in *.pk3 description.txt
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in beta3.html radio_commands.txt readme*.txt
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
