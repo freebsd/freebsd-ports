@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q3 Mod: Rocket Arena 3
-# Date created:				Sun Jun  3 00:53:00 EDT 2001
-# Whom:					pat@databits.net
-#
+# Created by: pat@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	ra3
 PORTVERSION=	1.76
@@ -21,18 +17,21 @@ NO_PACKAGE=	"Package will be 102MB, set FORCE_PACKAGE if you really want to buil
 
 WRKSRC=		${WRKDIR}/arena
 
+BROKEN=		Does not fetch
 USE_ZIP=	yes
 USE_CRLF=	yes
 NO_BUILD=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in *.cfg *.pk3
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
