@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crafty-tablebases-no-pawn
-# Date created:			10 Sep 2007
-# Whom:				Jonathan Shoemaker <shoemaker@bluebottle.com>
-#
+# Created by: Jonathan Shoemaker <shoemaker@bluebottle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crafty-tablebases-no-pawn
 PORTVERSION=	20070910
@@ -49,12 +45,14 @@ EXTRACT_ONLY=
 MAINTAINER=	conrads@cox.net
 COMMENT=	These are the tablebases for crafty, minus the pawn tbs
 
+BROKEN=		Does not fetch
+
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 NO_BUILD=	yes
 NO_PACKAGE=	Way too big
 
-.if !defined(WITH_TBDIR)
+.if ! ${PORT_OPTIONS:MTBDIR}
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
 .endif
 
