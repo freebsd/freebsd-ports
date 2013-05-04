@@ -16,6 +16,10 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xpm x11 xext sm ice
 MAKE_ENV=	DATADIR="${DATADIR}"
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 MAN1=	wmappl.1
 MAN5=	wmapplrc.5
 
