@@ -1,18 +1,12 @@
-# ex:ts=8
-# New ports collection makefile for:	aleph
-# Date created:			Mar 7, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	afnix
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${AFNIX_VERSION}
-DISTNAME=	${PORTNAME}-src-${AFNIX_VERSION}
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
@@ -28,16 +22,13 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PORTDOCS=	*
-AFNIX_VERSION=	${PORTVERSION:S,.,-,g}
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
-MAN1=	adp::afnix.1 axc::afnix.1 axd::afnix.1 \
-	axi::afnix.1 axl::afnix.1
-MAN3=	csm::afnix.3 gfx::afnix.3 mth::afnix.3 net::afnix.3 \
-	nwg::afnix.3 sec::afnix.3 sio::afnix.3 sps::afnix.3 \
-	sys::afnix.3 txt::afnix.3 xml::afnix.3 itu::afnix.3
-MAN4=	wax::afnix.4 xpe::afnix.4
-MAN7=	eul::afnix.7 vol-0::afnix.7 vol-1::afnix.7 vol-2::afnix.7
+MAN1=	afnix::adp.1 afnix::axp.1 axc.1 axd.1 axi.1 axl.1
+MAN3=	afnix::csm.3 afnix::gfx.3 afnix::itu.3 afnix::mth.3 afnix::net.3 \
+	afnix::nwg.3 afnix::sec.3 afnix::sio.3 afnix::sps.3 afnix::sys.3 \
+	afnix::txt.3 afnix::wax.3 afnix::xml.3 afnix::xpe.3
+MAN7=	afnix::guide.7 afnix::license.7 afnix::notes.7 afnix::reference.7
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +37,7 @@ BROKEN=		Does not configure on powerpc
 .endif
 
 post-extract:
-	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-3.mak afnix-freebsd.mak
+	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-4.mak afnix-freebsd.mak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(CP)|$$(BSD_INSTALL_PROGRAM)|' \
@@ -62,9 +53,9 @@ post-build:
 	@cd ${WRKSRC}/prj && ${SETENV} ${MAKE_ENV} ${GMAKE} doc
 
 post-install:
-.ifdef	NOPORTDOCS
-. for i in ${MAN1} ${MAN3} ${MAN4} ${MAN7}
-	${INSTALL_MAN} ${WRKSRC}/bld/${PORTNAME}-doc-${AFNIX_VERSION}/man/$i \
+.if ! ${PORT_OPTIONS:MDOCS}
+. for i in ${MAN1} ${MAN3} ${MAN7}
+	${INSTALL_MAN} ${WRKSRC}/bld/${PORTNAME}-doc-${PORTVERSION}/man/$i \
 		${MANPREFIX}/man/man${i:E}/
 . endfor
 .else

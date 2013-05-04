@@ -2,15 +2,19 @@ bin/axc
 bin/axd
 bin/axi
 bin/axl
-etc/afnix/afnix-gud.el
-etc/afnix/afnix-mode.el
 include/afnix/csm/Appointer.hpp
 include/afnix/csm/Assistant.hpp
+include/afnix/csm/Cart.hpp
+include/afnix/csm/CartSet.hpp
+include/afnix/csm/Ico.hpp
 include/afnix/csm/Libcsm.hpp
-include/afnix/csm/Locos.hpp
+include/afnix/csm/LocalSpace.hpp
 include/afnix/csm/Predcsm.hpp
 include/afnix/csm/Rco.hpp
+include/afnix/csm/Session.hpp
+include/afnix/csm/SessionSet.hpp
 include/afnix/csm/Slot.hpp
+include/afnix/csm/WorkSpace.hpp
 include/afnix/eng/ArgsList.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
@@ -73,8 +77,10 @@ include/afnix/itu/AsnUtils.hpp
 include/afnix/itu/Libitu.hpp
 include/afnix/itu/Oid.hpp
 include/afnix/itu/Preditu.hpp
+include/afnix/itu/X509.hpp
+include/afnix/itu/Xalgo.hpp
 include/afnix/mth/Algebra.hpp
-include/afnix/mth/IpPoint.hpp
+include/afnix/mth/Ippd.hpp
 include/afnix/mth/Krylov.hpp
 include/afnix/mth/Libmth.hpp
 include/afnix/mth/Linear.hpp
@@ -87,6 +93,7 @@ include/afnix/mth/Random.hpp
 include/afnix/mth/Rfi.hpp
 include/afnix/mth/Rfunction.hpp
 include/afnix/mth/Rmatrix.hpp
+include/afnix/mth/Rmd.hpp
 include/afnix/mth/Rmi.hpp
 include/afnix/mth/Rni.hpp
 include/afnix/mth/Rpolynom.hpp
@@ -107,16 +114,20 @@ include/afnix/net/UdpClient.hpp
 include/afnix/net/UdpServer.hpp
 include/afnix/net/UdpSocket.hpp
 include/afnix/nwg/Cookie.hpp
+include/afnix/nwg/CookieJar.hpp
+include/afnix/nwg/HeaderPart.hpp
 include/afnix/nwg/HttpProto.hpp
 include/afnix/nwg/HttpRequest.hpp
 include/afnix/nwg/HttpResponse.hpp
 include/afnix/nwg/HttpStream.hpp
 include/afnix/nwg/Libnwg.hpp
 include/afnix/nwg/Mime.hpp
+include/afnix/nwg/MultiPart.hpp
 include/afnix/nwg/NwgCalls.hpp
 include/afnix/nwg/Prednwg.hpp
-include/afnix/nwg/Session.hpp
+include/afnix/nwg/SinglePart.hpp
 include/afnix/nwg/Uri.hpp
+include/afnix/nwg/UriPath.hpp
 include/afnix/nwg/UriQuery.hpp
 include/afnix/phy/Libphy.hpp
 include/afnix/phy/Periodic.hpp
@@ -234,6 +245,7 @@ include/afnix/std/Loader.hpp
 include/afnix/std/Lockrw.hpp
 include/afnix/std/Logger.hpp
 include/afnix/std/Math.hpp
+include/afnix/std/Message.hpp
 include/afnix/std/Monitor.hpp
 include/afnix/std/Mutex.hpp
 include/afnix/std/NameTable.hpp
@@ -314,6 +326,7 @@ include/afnix/txt/TxtUtils.hpp
 include/afnix/txt/Worder.hpp
 include/afnix/wax/Libwax.hpp
 include/afnix/wax/Predwax.hpp
+include/afnix/wax/XhtmlBase.hpp
 include/afnix/wax/XhtmlBody.hpp
 include/afnix/wax/XhtmlBr.hpp
 include/afnix/wax/XhtmlCaption.hpp
@@ -322,7 +335,9 @@ include/afnix/wax/XhtmlCol.hpp
 include/afnix/wax/XhtmlDiv.hpp
 include/afnix/wax/XhtmlEmph.hpp
 include/afnix/wax/XhtmlEquiv.hpp
+include/afnix/wax/XhtmlForm.hpp
 include/afnix/wax/XhtmlHead.hpp
+include/afnix/wax/XhtmlHidden.hpp
 include/afnix/wax/XhtmlHr.hpp
 include/afnix/wax/XhtmlHtml.hpp
 include/afnix/wax/XhtmlImg.hpp
@@ -330,16 +345,20 @@ include/afnix/wax/XhtmlLi.hpp
 include/afnix/wax/XhtmlLink.hpp
 include/afnix/wax/XhtmlMeta.hpp
 include/afnix/wax/XhtmlMime.hpp
+include/afnix/wax/XhtmlOption.hpp
 include/afnix/wax/XhtmlPara.hpp
 include/afnix/wax/XhtmlPre.hpp
 include/afnix/wax/XhtmlRef.hpp
 include/afnix/wax/XhtmlRoot.hpp
 include/afnix/wax/XhtmlScript.hpp
+include/afnix/wax/XhtmlSelect.hpp
 include/afnix/wax/XhtmlStyle.hpp
+include/afnix/wax/XhtmlSubmit.hpp
 include/afnix/wax/XhtmlTable.hpp
 include/afnix/wax/XhtmlTbody.hpp
 include/afnix/wax/XhtmlTd.hpp
 include/afnix/wax/XhtmlTelem.hpp
+include/afnix/wax/XhtmlText.hpp
 include/afnix/wax/XhtmlTfoot.hpp
 include/afnix/wax/XhtmlTh.hpp
 include/afnix/wax/XhtmlThead.hpp
@@ -398,6 +417,7 @@ include/afnix/xpe/XmlPlist.hpp
 include/afnix/xpe/XmlPrintTable.hpp
 include/afnix/xpe/XmlProcessor.hpp
 lib/afnix/afnix-std-adp.axl
+lib/afnix/afnix-std-axp.axl
 lib/libafnix-csm.a
 lib/libafnix-csm.so
 lib/libafnix-csm.so.2
@@ -455,7 +475,6 @@ lib/libafnix-xml.so.2
 lib/libafnix-xpe.a
 lib/libafnix-xpe.so
 lib/libafnix-xpe.so.2
-@dirrm etc/afnix
 @dirrm include/afnix/csm
 @dirrm include/afnix/eng
 @dirrm include/afnix/gfx

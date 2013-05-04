@@ -1,5 +1,5 @@
---- cnf/mak/afnix-rule.mak.orig	2011-01-13 11:16:23.000000000 +0100
-+++ cnf/mak/afnix-rule.mak	2011-01-13 18:26:39.000000000 +0100
+--- cnf/mak/afnix-rule.mak.orig	2013-01-19 04:28:54.000000000 +0100
++++ cnf/mak/afnix-rule.mak	2013-05-04 18:31:02.000000000 +0200
 @@ -24,7 +24,7 @@ endif
  ifeq ($(CCMODE),optimized)
    ENVFLAGS      = $(STDEVFLAGS) $(PLTEVFLAGS)
@@ -50,10 +50,10 @@
  install-dylib : $(DYLIB)
  	@$(MKDIR)        $(LIBDIR)
 -	@$(CP) $(SOVRS)  $(LIBDIR)
--	@$(RM) $(LIBDIR)/$(SOMIN)
 -	@$(RM) $(LIBDIR)/$(DYLIB)
--	@$(LN) $(SOVRS)  $(LIBDIR)/$(SOMIN)
--	@$(LN) $(SOMIN)  $(LIBDIR)/$(DYLIB)
+-	@$(RM) $(LIBDIR)/$(SOMAJ)
+-	@$(LN) $(SOVRS)  $(LIBDIR)/$(DYLIB)
+-	@$(LN) $(SOVRS)  $(LIBDIR)/$(SOMAJ)
 +	@$(BSD_INSTALL_PROGRAM) $(SOVRS)  $(LIBDIR)/$(SOMAJ)
 +	@$(LN) $(SOMAJ)  $(LIBDIR)/$(DYLIB)
  .PHONY: install-dylib
