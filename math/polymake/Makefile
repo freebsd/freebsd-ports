@@ -53,18 +53,15 @@ USE_LDCONFIG=	yes
 IGNORE=		does not build with Perl 5.14+
 .endif
 
-.if !defined(DISABLE_MAKE_JOBS)
 pre-fetch:
-	@MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER}; \
-	if [ $${MAKE_JOBS_NUMBER} -gt 1 ]; then \
+	@if [ ${MAKE_JOBS_NUMBER} -gt 1 ]; then \
 		${ECHO_CMD} "Building this port uses a lot of CPU power, and a lot of memory to the point"; \
 		${ECHO_CMD} "that swap space might be used extensively.  Consider using less threads, as"; \
 		${ECHO_CMD} "this might cause the build to be considerably faster.  Currently the build is"; \
-		${ECHO_CMD} "set to use $${MAKE_JOBS_NUMBER} threads.  To change to <n> threads, use"; \
+		${ECHO_CMD} "set to use ${MAKE_JOBS_NUMBER} threads.  To change to <n> threads, use"; \
 		${ECHO_CMD}; \
 		${ECHO_CMD} "make MAKE_JOBS_NUMBER=<n>"; \
 	fi
-.endif
 
 post-install:
 	${INSTALL_DATA} ${PREFIX}/libexec/polymake/conf.make ${PREFIX}/libexec/polymake/conf.make.in

@@ -43,9 +43,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-src__node_buffer.cc
 PLIST_SUB+=	SHAREDV8=""
 .endif
 
-.if !defined(DISABLE_MAKE_JOBS)
 WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
-.endif
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} build)

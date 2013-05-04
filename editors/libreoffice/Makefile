@@ -84,12 +84,6 @@ DIST_SUBDIR=	libreoffice
 LODESTDIR=	${WRKDIR}/loinstall
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
-.if defined(DISABLE_MAKE_JOBS)
-MAKE_JOBS_NUMBER=	1
-.else
-MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
-.endif
-
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GPERF=${LOCALBASE}/bin/gperf \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \

@@ -2189,6 +2189,7 @@ CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
 
 # Multiple make jobs support
 .if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
+MAKE_JOBS_NUMBER=	1
 _MAKE_JOBS=		#
 .else
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)

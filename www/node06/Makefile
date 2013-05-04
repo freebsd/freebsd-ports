@@ -37,9 +37,7 @@ USE_OPENSSL=	yes
 
 MAN1=		node.1
 
-.if !defined(DISABLE_MAKE_JOBS)
 WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
-.endif
 
 .include <bsd.port.options.mk>
 
