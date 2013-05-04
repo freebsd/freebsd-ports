@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libghthash
-# Date created:			Jul 2, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libghthash
 PORTVERSION=	0.6.2
@@ -23,6 +18,10 @@ PLIST_FILES=	include/ght_hash_table.h \
 		lib/libghthash.a  lib/libghthash.la \
 		lib/libghthash.so lib/libghthash.so.2
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 MAN3=		ght_create.3 \
 		ght_finalize.3 \
 		ght_first.3 \
@@ -36,12 +35,14 @@ MAN3=		ght_create.3 \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \*.c ${EXAMPLESDIR})
 .endif
