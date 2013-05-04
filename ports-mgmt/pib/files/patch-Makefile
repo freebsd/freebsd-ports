@@ -1,6 +1,6 @@
---- Makefile.orig	2000-10-28 10:55:08.000000000 +0200
-+++ Makefile	2008-04-12 14:19:18.000000000 +0200
-@@ -8,13 +8,12 @@
+--- ./Makefile.orig	2000-10-28 04:55:08.000000000 -0400
++++ ./Makefile	2013-05-04 09:54:12.423259025 -0400
+@@ -8,14 +8,11 @@
  X11BASE?=	/usr/X11R6
  
  LIB=		TkSteal
@@ -9,13 +9,14 @@
  SHLIB_MINOR=	0
  NOPROFILE=	yes
  
- .if defined(OBJFORMAT) && ${OBJFORMAT} == elf
+-.if defined(OBJFORMAT) && ${OBJFORMAT} == elf
 -LDADD=		-L${PREFIX}/lib -ltk82
+-.endif
 +LDADD=		-L${PREFIX}/lib -ltk84
- .endif
  
  SRCS=		tkXAccess.c
-@@ -25,8 +24,8 @@
+ TCL_SRCS=	pib.tcl tkSteal.tcl
+@@ -25,8 +22,8 @@
  PAXFILES=	${SRCS} ${TCL_SRCS} ${HDRS} ${OTHER}
  PAXNAME=	pib-1.1
  
