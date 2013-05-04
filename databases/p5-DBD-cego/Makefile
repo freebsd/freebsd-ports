@@ -16,6 +16,10 @@ BUILD_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 PERL_CONFIGURE=	yes
 CC:=		${CXX}
 
