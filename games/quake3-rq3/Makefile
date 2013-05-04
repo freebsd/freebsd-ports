@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake3-rq3
-# Date created:				2006-02-19
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	rq3
 PORTVERSION=	3.2
@@ -15,6 +11,8 @@ DISTNAME=	ReactionQuake3-v${PORTVERSION}-Full
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Reaction Quake 3
+
+BROKEN=		Does not fetch
 
 USE_ZIP=	yes
 USE_CRLF=	yes
@@ -32,7 +30,7 @@ do-install:
 .for FILE in *.cfg *.pk3 *.ini *.qst *.apk *.ico description.txt
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .	for DIRE in docs mapdocs
 		@${MKDIR} ${DOCSDIR}/${DIRE}
 		@cd ${WRKSRC}/${DIRE} && \
