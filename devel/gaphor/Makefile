@@ -21,7 +21,7 @@ COMMENT=	UML modeling environment written in Python
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:${PORTSDIR}/devel/py-nose
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator \
 		${PYTHON_PKGNAMEPREFIX}zope.component>3.4.0:${PORTSDIR}/devel/py-zope.component
