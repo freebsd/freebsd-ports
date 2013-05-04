@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sj3-server
-# Date created:		18 Aug 1998
-# Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
-#
+# Created by: Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
@@ -19,12 +15,15 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Japanese input method, binary part
 
-LIB_DEPENDS=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
+LIB_DEPENDS=	sj3lib:${PORTSDIR}/japanese/sj3-lib
 
 USE_RC_SUBR=	sj3
 USE_IMAKE=	yes
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}
+
+USERS=		_sj3
+GROUPS=		_sj3
 
 MAN1=		sj3.1 sj3dic.1 sj3mkdic.1 sj3serv.1
 MANLANG=	ja
@@ -33,6 +32,7 @@ PORTDOCS=	Nihongo.ps.Z hinsi.ms makedict.ms sj3lib.ms sj3serv.ms
 
 POSTPATCHES=	${FILESDIR}/post-patch-Imakefile \
 		${FILESDIR}/post-patch-sj3lib-Imakefile \
+		${FILESDIR}/post-patch-sj3-sj3.c \
 		${FILESDIR}/post-patch-include-Const.h \
 		${FILESDIR}/post-patch-server-setup.c \
 		${FILESDIR}/post-patch-server-serverrc \
@@ -41,22 +41,17 @@ POSTPATCHES=	${FILESDIR}/post-patch-Imakefile \
 POSTPATCHES.nodocports= \
 		${FILESDIR}/post-patch-doc-doc-Imakefile.nodocports
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES.nodocports} | ${PATCH}
 .endif
 
 pre-configure: apply-slist
 	${INSTALL_DATA} ${WRKDIR}/sj3_freebsd.tmpl ${WRKSRC}/sj3_freebsd.tmpl
 
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
