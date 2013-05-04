@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	v8
-PORTVERSION=	3.17.9
-PORTREVISION=	0
+PORTVERSION=	3.18.5
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 
@@ -23,7 +22,7 @@ MAKE_ARGS=	library=shared
 
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
 MAKE_ENV+=	LINK=clang++
-CFLAGS+=	-Wno-unused-private-field
+CFLAGS+=	-Wno-unused-private-field -Wno-nested-anon-types
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	any
