@@ -26,7 +26,7 @@ do-extract:
 	@${GZIP_CMD} -d  ${WRKSRC}/${PORTNAME}-iso-8859-1.bdf.gz
 
 do-build:
-	${PREFIX}/bin/bdftopcf -t ${WRKSRC}/suxus-iso-8859-1.bdf | ${EXTRACT_CMD} > ${WRKSRC}/suxus-iso-8859-1.pcf.gz
+	${PREFIX}/bin/bdftopcf -t ${WRKSRC}/suxus-iso-8859-1.bdf | ${GZIP_CMD} > ${WRKSRC}/suxus-iso-8859-1.pcf.gz
 	${PREFIX}/bin/mkfontdir ${WRKSRC}
 
 do-install:
