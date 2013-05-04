@@ -21,6 +21,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		pkgconfig
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 DATADIR=	${PREFIX}/share/q
 
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
