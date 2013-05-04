@@ -36,7 +36,7 @@ SKYBOXES_DESC=		Skyboxes (sky replacement images)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREMODEL} || ${PORT_OPTIONS:MSKYBOXES}
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 .endif
 
 .if ${PORT_OPTIONS:MLITS}
