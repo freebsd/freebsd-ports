@@ -13,6 +13,8 @@ EXTRACT_SUFX=		.zip
 MAINTAINER=		sebster-kaid@sebster.com
 COMMENT=		XLink Kai tunneling server
 
+BROKEN=			Does not fetch
+
 NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
 USES=			bison
