@@ -18,7 +18,7 @@ COMMENT=	Streaming capable P2P network client based on BitTorrent
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2 \
 		vlc:${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
