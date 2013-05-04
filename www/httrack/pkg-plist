@@ -151,6 +151,7 @@ lib/libhttrack.so.2
 %%PORTDOCS%%%%DOCSDIR%%/html/server/option9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/server/refresh.html
 %%PORTDOCS%%%%DOCSDIR%%/html/server/sfx/finished.wav
+%%PORTDOCS%%%%DOCSDIR%%/html/server/sfx/silent.wav
 %%PORTDOCS%%%%DOCSDIR%%/html/server/step2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/server/step3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/server/step4.html
@@ -175,7 +176,6 @@ lib/libhttrack.so.2
 %%PORTDOCS%%%%DOCSDIR%%/html/step9_opt8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/step9_opt9.html
 %%PORTDOCS%%%%DOCSDIR%%/httrack-doc.html
-%%PORTDOCS%%share/httrack/icons/webhttrack.xpm
 %%PORTDATA%%%%DATADIR%%/lang.def
 %%PORTDATA%%%%DATADIR%%/lang.indexes
 %%PORTDATA%%%%DATADIR%%/lang/Bulgarian.txt
@@ -226,12 +226,13 @@ lib/libhttrack.so.2
 %%PORTDATA%%%%DATADIR%%/templates/topindex-bodycat.html
 %%PORTDATA%%%%DATADIR%%/templates/topindex-footer.html
 %%PORTDATA%%%%DATADIR%%/templates/topindex-header.html
-%%PORTDOCS%%share/pixmaps/httrack.xpm
+%%PORTDOCS%%share/pixmaps/webhttrack16x16.xpm
+%%PORTDOCS%%share/pixmaps/webhttrack32x32.xpm
+%%PORTDOCS%%share/pixmaps/webhttrack48x48.xpm
 %%PORTDATA%%@dirrm %%DATADIR%%/templates
 %%PORTDATA%%@dirrm %%DATADIR%%/libtest
 %%PORTDATA%%@dirrm %%DATADIR%%/lang
-%%PORTDOCS%%@dirrm share/httrack/icons
-@dirrmtry share/httrack
+%%PORTDATA%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/server/sfx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/server/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/server
