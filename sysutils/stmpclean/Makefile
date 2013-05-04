@@ -1,9 +1,5 @@
-# New ports collection makefile for:   stmpclean
-# Date created:        4 August 1999
-# Whom:                shalunov
-#
+# Created by: shalunov
 # $FreeBSD$
-#
 
 PORTNAME=	stmpclean
 PORTVERSION=	0.3
@@ -16,5 +12,8 @@ COMMENT=	Remove old files from temporary directories
 MAN8=		stmpclean.8
 MANCOMPRESSED=	no
 PLIST_FILES=	sbin/stmpclean
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-O6//g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
