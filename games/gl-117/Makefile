@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gl-117
-# Date created:			Aug 8, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gl-117
 PORTVERSION=	1.3.2
@@ -23,6 +18,10 @@ CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.if defined(.PARSEDIR)
+USE_GAME=	yes
+.endif
+
 DESKTOP_ENTRIES=	"GL-117" \
 			"Action flight simulator" \
 			"" \
@@ -32,9 +31,11 @@ DESKTOP_ENTRIES=	"GL-117" \
 
 MAN6=		gl-117.6
 
+.include <bsd.port.options.mk>
+
 post-install:
 	${INSTALL_MAN}	${WRKSRC}/doc/gl-117.6 ${MANPREFIX}/man/man6
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gl-117.pdf ${DOCSDIR}
 .endif
