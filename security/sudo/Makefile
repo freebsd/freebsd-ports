@@ -49,6 +49,10 @@ CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "arm"
+CONFIGURE_ARGS+=	--disable-pie
+.endif
+
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
