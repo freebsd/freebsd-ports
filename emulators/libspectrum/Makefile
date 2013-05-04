@@ -3,11 +3,11 @@
 
 PORTNAME=	libspectrum
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LICENSE=	GPLv2
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+USES=		pkgconfig
 
 MAN3=		libspectrum.3
 
