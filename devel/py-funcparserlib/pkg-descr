@@ -18,4 +18,4 @@ The library itself is very small. Its source code is only 0.5 KLOC, with lots
 of comments included. It features the longest parsed prefix error reporting,
 as well as a tiny lexer generator for token position tracking.
 
-WWW:	http://code.google.com/p/funcparserlib/
+WWW: http://code.google.com/p/funcparserlib/
