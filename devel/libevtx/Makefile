@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20130418
+DISTVERSION=	alpha-20130421
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,8 +13,8 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
-USES=		pathfix gettext iconv
-USE_PYTHON=	yes
+USES=		gettext iconv pathfix
+USE_PYTHON=	-2.7
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -22,8 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
 MAN1=		evtxinfo.1
 MAN3=		libevtx.3
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	AUTHORS ChangeLog
 PORTEXAMPLES=	*
