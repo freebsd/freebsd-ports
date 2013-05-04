@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenSSH-askpass
-# Date created:		27 February 2000
-# Whom:			Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.4.1
@@ -15,10 +11,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Graphical password applet for entering SSH passphrase
 
 USE_IMAKE=	yes
+USE_GCC=	any
 USE_XORG=	x11 xt
-
-MAN1=		x11-ssh-askpass.1
-MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
 
 DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
 PLIST_FILES=	bin/x11-ssh-askpass \
@@ -26,12 +20,19 @@ PLIST_FILES=	bin/x11-ssh-askpass \
 		lib/X11/app-defaults/SshAskpass
 PORTDOCS=	README TODO ChangeLog
 
+MAN1=		x11-ssh-askpass.1
+MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 pre-configure:
 	cd ${WRKSRC} && ./configure --libexecdir=${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
