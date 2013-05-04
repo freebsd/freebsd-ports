@@ -1,6 +1,5 @@
 # Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	thebridge
 PORTVERSION=	1.09
@@ -13,6 +12,10 @@ COMMENT=	Amateur Radio Echolink conference bridge
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 GNU_CONFIGURE=	yes
 PORTDOCS=	README
