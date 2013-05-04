@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	euler
-# Date created:			May 14, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	euler
 PORTVERSION=	1.61.0
@@ -19,6 +14,10 @@ COMMENT=	A program computes with real and complex numbers and matrices
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -29,7 +28,7 @@ post-patch:
 		 /-O3/d' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${FIND} . ! -name "*Makefile*" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
