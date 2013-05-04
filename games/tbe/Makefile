@@ -1,27 +1,25 @@
-# New ports collection makefile for:	tbe
-# Date created:		7 November 2010
-# Whom:			johans
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tbe
-PORTVERSION=	8.2
-PORTREVISION=	2
+PORTVERSION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Milestone%20${PORTVERSION}
-DISTNAME=	TheButterflyEffect-m${PORTVERSION}.src
+DISTNAME=	TheButterflyEffect-M${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_GMAKE=	yes
 USE_QT4=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/TheButterflyEffect-m${PORTVERSION}
+WRKSRC=		${WRKDIR}/TheButterflyEffect-M${PORTVERSION}rc3
+
+PLIST_FILES=	bin/tbe
+PORTDATA=	*
 
 DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${DATADIR}/images/tbe-icon.png" \
@@ -33,6 +31,8 @@ post-patch:
 		@${REINPLACE_CMD} 's/debug/release link_prl/' ${WRKSRC}/tbe.pro
 		@${SED} 's:%%DATADIR:QString("${DATADIR}"):'  \
 			${WRKSRC}/src/tbe_global.h.in > ${WRKSRC}/src/tbe_global.h
+		@${REINPLACE_CMD} -e '/ensure that no-one tries to build/,$$d' \
+			${WRKSRC}/tbe.pro
 
 pre-build:
 		# This is supposedly done by the ./configure script
@@ -44,5 +44,8 @@ do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 		@${MKDIR} ${DATADIR}
 		@cd ${WRKSRC} && ${PAX} -rw images levels ${DATADIR}
+
+post-install:
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
