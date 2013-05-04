@@ -27,6 +27,10 @@ MAN1=		xsw.1 \
 MANCOMPRESSED=	no
 .endif
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 DOCS=		AUTHORS \
 		COPYING \
 		NEWS \
