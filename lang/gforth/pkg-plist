@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gforth-%%PORTVERSION%%
 @exec ln -fs %f %B/gforth
 @unexec rm -f %B/gforth
@@ -241,6 +240,7 @@ lib/gforth/%%PORTVERSION%%/libcc-named/fflib.a
 %%DATADIR%%/%%PORTVERSION%%/xwords.fs
 @exec mkdir -p %D/%%DATADIR%%/site-forth
 @dirrm %%DATADIR%%/site-forth
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/vmgen-ex
 @dirrm %%DATADIR%%/%%PORTVERSION%%/unix
 @dirrm %%DATADIR%%/%%PORTVERSION%%/test
 @dirrm %%DATADIR%%/%%PORTVERSION%%/kernel
