@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-savage-samuraiwars
-# Date created:		2007-09-08
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	savage-samuraiwars
 PORTVERSION=	2.00c
@@ -31,13 +27,16 @@ SUB_LIST+=	SAMURAIWARSDIR="${PREFIX}/${SAMURAIWARSDIR}"
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 WRKSRC=		${WRKDIR}/SamuraiWars
 
+BROKEN=		Does not fetch
+
 SAMURAIWARSDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS=	NVIDIA_GL	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA_GL
+NVIDIA_GL_DESC=	Install support for nvidia
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NVIDIA_GL)
+.if ${PORT_OPTIONS:MNVIDIA_GL}
 .	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
@@ -73,7 +72,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${SAMURAIWARSDIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/${DOCSDIR}
 .	for FILE in commander_controls.txt licenses.txt
 		${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${DOCSDIR}
