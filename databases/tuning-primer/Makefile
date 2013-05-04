@@ -1,9 +1,5 @@
-# New ports collection makefile for: tuning-primer
-# Date created:		2009-11-18
-# Whom:			Joe Horn <joehorn@gmail.com>
-#
+# Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tuning-primer
 PORTVERSION=	1.6.r1
@@ -18,6 +14,7 @@ COMMENT=	MySQL performance tuning primer script
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 FETCH_ARGS=	-pRr
 NO_BUILD=	yes
 USE_MYSQL=	yes
