@@ -8,7 +8,8 @@ share/applications/feh.desktop
 %%DATADIR%%/fonts/black.style
 %%DATADIR%%/fonts/menu.style
 %%DATADIR%%/fonts/yudit.ttf
-%%DATADIR%%/images/logo.svg
+%%DATADIR%%/images/feh.png
+%%DATADIR%%/images/feh.svg
 %%DATADIR%%/images/menubg_aluminium.png
 %%DATADIR%%/images/menubg_aqua.png
 %%DATADIR%%/images/menubg_black.png
