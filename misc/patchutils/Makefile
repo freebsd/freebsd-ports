@@ -1,20 +1,15 @@
-# ex:ts=8
-# New ports collection makefile for:	patchutils
-# Date created:			Jul 23, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	patchutils
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A small collection of programs that operate on patch files
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
