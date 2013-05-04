@@ -17,10 +17,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		htmldoc:${PORTSDIR}/textproc/htmldoc\
 		flex>2.5.4:${PORTSDIR}/textproc/flex\
- 		gperf>=3.0.3:${PORTSDIR}/devel/gperf\
+		gperf>=3.0.3:${PORTSDIR}/devel/gperf\
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc\
 		xml2.5:${PORTSDIR}/textproc/libxml2
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-readline\
