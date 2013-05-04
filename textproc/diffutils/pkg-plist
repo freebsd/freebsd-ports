@@ -14,6 +14,7 @@ bin/gsdiff
 %%NLS%%share/locale/ga/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/he/LC_MESSAGES/diffutils.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/id/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/it/LC_MESSAGES/diffutils.mo
