@@ -1,15 +1,11 @@
-# New ports collection makefile for:	gforth
-# Date created:				12 October 2000
-# Whom:					Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gforth
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gforth
+MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
+		GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
@@ -22,6 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
 USE_GMAKE=	yes
+USE_GCC=	any
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
 ALL_TARGET=	kernel/version.fs more info
@@ -29,26 +26,25 @@ MAKE_JOBS_UNSAFE=yes
 
 STRIP=		#none
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		WORDSIZE=${WORDSIZE} BYTEORDER=${BYTEORDER}
 
-DOC_FILES=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
+PORTDOCS=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 		INSTALL INSTALL.BINDIST NEWS README \
 		NEWS.vmgen README.vmgen ToDo
 
 MAN1=		gforth.1
 INFO=		gforth vmgen
-PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == "powerpc"
+.if ${ARCH} == i386 || ${ARCH} == powerpc
 WORDSIZE=32
 .else
 WORDSIZE=64
 .endif
 
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+.if ${ARCH} == powerpc || ${ARCH} == sparc64
 BYTEORDER=b
 .else
 BYTEORDER=l
@@ -62,11 +58,11 @@ post-patch:
 post-install: install-doc remove-empty-files remove-empty-dirs
 
 install-doc:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for filename in ${DOC_FILES}
+. for filename in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
-.endfor
+. endfor
 .endif
 
 # Remove unused file
