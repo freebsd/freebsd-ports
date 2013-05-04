@@ -28,12 +28,7 @@ CONFIGURE_ARGS+=--enable-libnotify \
 		--enable-docs \
 		--disable-gtk3
 
-# if user has set DISABLE_MAKE_JOBS, then MAKE_JOBS_NUMBER is undefined
-.if defined(DISABLE_MAKE_JOBS)
-CONFIGURE_ARGS+=--jobs=1
-.else
 CONFIGURE_ARGS+=--jobs=${MAKE_JOBS_NUMBER}
-.endif
 
 MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes

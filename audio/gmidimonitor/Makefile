@@ -27,9 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PLIST_FILES=	bin/gmidimonitor %%DATADIR%%/gmidimonitor.ui
 PLIST_DIRS=	%%DATADIR%%
 
-.if defined(MAKE_JOBS_NUMBER)
 MAKE_JOBS_ARGS=	-j${MAKE_JOBS_NUMBER}
-.endif
 
 do-configure:
 	@(cd ${WRKSRC} && ./waf configure --prefix=${PREFIX} --alsa=no)

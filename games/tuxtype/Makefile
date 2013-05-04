@@ -63,9 +63,7 @@ CONFIGURE_ARGS+=--without-rsvg
 .endif
 
 # use multiple make jobs for T4K_WRKSRC
-.if !defined(DISABLE_MAKE_JOBS)
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
-.endif
 
 post-extract:
 	@${LN} -sf ${T4K_WRKSRC} ${WRKDIR}/${T4K_NAME}

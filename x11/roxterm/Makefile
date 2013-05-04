@@ -33,9 +33,7 @@ MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${_make_jobs}
 
 .include <bsd.port.options.mk>
 
-.if !defined(DISABLE_MAKE_JOBS)
 _make_jobs=	${MAKE_JOBS_NUMBER}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

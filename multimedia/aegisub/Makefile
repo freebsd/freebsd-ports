@@ -136,9 +136,7 @@ CONFIGURE_ARGS+=	--without-lua
 .endif
 
 # use multiple make jobs for FFMS_WRKSRC
-.if !defined(DISABLE_MAKE_JOBS)
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
-.endif
 
 post-extract:
 .for i in ${FFMS_DISTFILE}

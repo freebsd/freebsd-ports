@@ -58,9 +58,7 @@ CONFIGURE_ARGS+=--disable-hal
 .endif
 
 # use multiple make jobs
-.if !defined(DISABLE_MAKE_JOBS)
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

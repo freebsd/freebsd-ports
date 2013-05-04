@@ -36,9 +36,7 @@ CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(DISABLE_MAKE_JOBS)
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
-.endif
 
 post-extract:
 	@${FIND} ${WRKDIR} -name "configure" -or -name "install-sh" | \

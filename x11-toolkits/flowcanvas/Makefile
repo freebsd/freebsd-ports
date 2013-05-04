@@ -31,9 +31,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 WAF_VERBOSE=	--verbose
 .endif
 
-.if defined(MAKE_JOBS_NUMBER)
 WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
