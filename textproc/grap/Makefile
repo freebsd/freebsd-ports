@@ -1,9 +1,5 @@
-# New ports collection makefile for:   grap
-# Date created:        4 February 2000
-# Whom:                faber@lunabase.org
-#
+# Created by: faber@lunabase.org
 # $FreeBSD$
-#
 
 PORTNAME=	grap
 PORTVERSION=	1.44
@@ -15,6 +11,10 @@ COMMENT=	An implementation of Kernigan & Bentley's grap language
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-freebsd-ports
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
 
