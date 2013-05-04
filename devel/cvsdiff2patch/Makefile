@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsdiff2patch
-# Date created:				06 Jun 2003
-# Whom:					alfred@freebsd.org
-#
+# Created by: alfred@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	cvsdiff2patch
 PORTVERSION=	1.0.1
@@ -16,5 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn cvs diff output into patch input
 
 PLIST_FILES=	bin/cvsdiff2patch
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
