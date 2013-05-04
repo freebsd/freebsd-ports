@@ -3,6 +3,7 @@
 
 PORTNAME=	bmake
 PORTVERSION=	20130330
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
