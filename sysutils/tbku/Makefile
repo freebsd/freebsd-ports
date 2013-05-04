@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tbku
-PORTVERSION=	1.115
+PORTVERSION=	1.117
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tbku/
 
