@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crafty-open-enormous
-# Date created:			9 Sep 2007
-# Whom:				Jonathan Shoemaker <shoemaker@bluebottle.com>
-#
+# Created by: Jonathan Shoemaker <shoemaker@bluebottle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crafty-open-enormous
 PORTVERSION=	20070924
@@ -19,6 +15,8 @@ COMMENT=	The enormous opening book (about 85-90 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+
+BROKEN=		Does not fetch
 
 DIST_SUBDIR=		crafty
 USE_ZIP=		yes
