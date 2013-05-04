@@ -14,6 +14,8 @@ COMMENT=	Serious Sam: The First Encounter
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
+BROKEN=		Does not fetch
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
