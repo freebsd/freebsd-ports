@@ -14,7 +14,6 @@ COMMENT=	MySQL performance tuning primer script
 
 LICENSE=	GPLv2
 
-BROKEN=		Does not fetch
 FETCH_ARGS=	-pRr
 NO_BUILD=	yes
 USE_MYSQL=	yes
