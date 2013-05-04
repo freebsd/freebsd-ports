@@ -44,12 +44,12 @@ localeplist:
 
 post-patch-plugin:
 	@${MKDIR} ${WRKDIR}/lib ${WRKDIR}/locale
-	@${REINPLACE_CMD} 's/^\(LIBDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2..\/lib/;'\\
-		's/^\(LOCALEDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2..\/locale/;'\\
-		's/^\(VDRDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRDIR:S-/-\\\\/-g}/;"\\
-		's/^\(VDRINCDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRINCDIR:S-/-\\\\/-g}/;"\\
-		's/^\(BINDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${PREFIX:S-/-\\\\/-g}\/bin/;"\\
-		'/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
+	@${REINPLACE_CMD} -e 's/^\(LIBDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2..\/lib/;' \
+		-e 's/^\(LOCALEDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2..\/locale/;' \
+		-e 's/^\(VDRDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRDIR:S-/-\\\\/-g}/;" \
+		-e 's/^\(VDRINCDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRINCDIR:S-/-\\\\/-g}/;" \
+		-e 's/^\(BINDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${PREFIX:S-/-\\\\/-g}\/bin/;" \
+		-e '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
 		${WRKSRC}/Makefile ${VDR_PLUGIN_MAKEFILES}
 
 post-install-pluginlocales:
