@@ -1,26 +1,49 @@
---- Sconstruct.orig	2011-03-15 18:22:35.000000000 +0600
-+++ Sconstruct	2011-03-22 16:06:25.000000000 +0600
+--- Sconstruct.orig	2012-02-20 08:24:05.000000000 +1030
++++ Sconstruct	2013-04-12 16:49:47.220965697 +0930
 @@ -47,7 +47,7 @@
  
  	env = Environment( options = opts )
  
--	if sys.platform == "linux2" or sys.platform == "darwin":
-+	if sys.platform == "linux2" or sys.platform == "darwin" or sys.platform > "freebsd":
+-	if sys.platform == "linux2" or sys.platform == "linux3" or sys.platform == "darwin":
++	if sys.platform == "linux2" or sys.platform == "linux3" or sys.platform == "darwin" or sys.platform > "freebsd":
  		if str(env['debug']) == "1":
  			cppflags += ['-Wall',  '-g2', '-ggdb', '-O0'] 
  			for flag in env["optflags"].split(" "):
-@@ -91,11 +91,12 @@
+@@ -91,11 +91,13 @@
  		includes.append( '/opt/local/include' )
  		includes.append( '/usr/local/include/jack' )
  
--	elif sys.platform == 'linux2':
+-	elif sys.platform == 'linux2' or sys.platform == 'linux3':
 +	elif str(env['alsa']) == "1" and sys.platform > 'freebsd' :
  		ldflags.append('-lpthread')
  		ldflags.append('-lasound')
  	#	ldflags.append('-lrubberband')
--
+
 +	elif sys.platform > 'freebsd' :
 +		print "Alsa disabled; nothing to do"
  	elif sys.platform == "win32":
  		includes.append( '3rdparty\libsndfile-1_0_17' )
  		includes.append( 'build\pthreads\include' )
+@@ -299,7 +301,7 @@
+ 
+         for N in glob.glob('./data/i18n/hydrogen.*'):
+             env.Alias(target="install", source=env.Install(dir= env['DESTDIR'] + env['prefix'] + '/share/hydrogen/data/i18n', source=N))
+-	env.Alias(target="install", source=env.Install(dir= env['DESTDIR'] + env['prefix'] + '/share/hydrogen/data', source="./data/img"))
++	env.Alias(target="install", source=env.Install(dir= env['DESTDIR'] + env['prefix'] + '/share/hydrogen', source="./data"))
+ 
+ 	#add every img in ./data/img to the install list. 
+ 	os.path.walk("./data/img/",install_images,env) 
+@@ -450,9 +452,9 @@
+    Exit(1)
+ 
+ #lrdf: categorizing of ladspa effects
+-if str(env['lrdf']) == "1" and not conf.CheckCHeader('lrdf.h'):
+-    print 'lrdf must be installed!'
+-    Exit(1)
++#if str(env['lrdf']) == "1" and not conf.CheckCHeader('lrdf.h'):
++#    print 'lrdf must be installed!'
++#    Exit(1)
+ 
+ 
+ print ""
+

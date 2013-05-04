@@ -211,6 +211,9 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/doc/tutorial.docbook
 %%DATADIR%%/data/doc/tutorial.pot
 %%DATADIR%%/data/doc/tutorial_en.html
+%%DATADIR%%/data/doc/tutorial_es.docbook
+%%DATADIR%%/data/doc/tutorial_es.html
+%%DATADIR%%/data/doc/tutorial_es.po
 %%DATADIR%%/data/doc/tutorial_fr.html
 %%DATADIR%%/data/doc/tutorial_fr.po
 %%DATADIR%%/data/doc/tutorial_it.html
@@ -258,6 +261,8 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/i18n/hydrogen.cs.ts
 %%DATADIR%%/data/i18n/hydrogen.de.qm
 %%DATADIR%%/data/i18n/hydrogen.de.ts
+%%DATADIR%%/data/i18n/hydrogen.el.qm
+%%DATADIR%%/data/i18n/hydrogen.el.ts
 %%DATADIR%%/data/i18n/hydrogen.es.qm
 %%DATADIR%%/data/i18n/hydrogen.es.ts
 %%DATADIR%%/data/i18n/hydrogen.fr.qm
