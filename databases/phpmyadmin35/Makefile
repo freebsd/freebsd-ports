@@ -1,11 +1,11 @@
 # Created by: nbm
 # $FreeBSD$
 
-PORTNAME=	phpMyAdmin
-DISTVERSION=	4.0.0
+PORTNAME=	phpMyAdmin35
+DISTVERSION=	3.5.8.1
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
-DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
+MASTER_SITES=	SF/${PORTNAME:L:S/35//}/${PORTNAME:S/35//}/${DISTVERSION}
+DISTNAME=	${PORTNAME:S/35//}-${DISTVERSION}-all-languages
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
@@ -23,9 +23,9 @@ USE_PHP=	ctype session filter mbstring json spl
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-PHP_MODULE_OPTIONS=	APC BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
+PHP_MODULE_OPTIONS=	APC BZ2 GD MCRYPT OPENSSL PDF ZIP ZLIB
 OPTIONS_DEFINE=		SUPHP ${PHP_MODULE_OPTIONS}
-OPTIONS_DEFAULT=	APC BZ2 GD MCRYPT MYSQLI OPENSSL PDF XML ZIP ZLIB
+OPTIONS_DEFAULT=	APC BZ2 GD MCRYPT MYSQLI OPENSSL PDF ZIP ZLIB
 
 OPTIONS_MULTI=		DB_connect
 OPTIONS_MULTI_DB_connect=	MYSQL MYSQLI
@@ -39,7 +39,6 @@ MYSQL_DESC=	PHP MySQL support via mysql client
 OPENSSL_DESC=	PHP OpenSSL support
 PDF_DESC=	PHP PDFlib support
 SUPHP_DESC=	suPHP support
-XML_DESC=	PHP XML support (Export to OpenDoc)
 ZIP_DESC=	PHP Zip compression support
 ZLIB_DESC=	PHP ZLIB support
 

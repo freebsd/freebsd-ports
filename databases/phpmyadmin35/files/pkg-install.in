@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+WWWDIR=%%WWWDIR%%
+pma_usr=%%PMA_USR%%
+pma_grp=%%PMA_GRP%%
+
+case $2 in
+
+    POST-INSTALL)
+
+    	# Change ownership of the phpMyAdm directory
+
+        echo "===> Adjusting file ownership in $WWWDIR"
+        chown -R $pma_usr:$pma_grp $WWWDIR || exit 1
+	;;
+esac
+
+#
+# That's All Folks!
+#
