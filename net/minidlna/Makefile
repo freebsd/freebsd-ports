@@ -3,6 +3,7 @@
 
 PORTNAME=	minidlna
 PORTVERSION=	1.0.25
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
@@ -32,6 +33,16 @@ SUB_LIST+=	USER=${USERS}
 
 USERS=	dlna
 GROUPS=	dlna
+
+.include <bsd.port.options.mk>
+
+do-configure:
+.if ${PORT_OPTIONS:MNLS}
+	${CP} ${FILESDIR}/config.h.in ${WRKSRC}/config.h
+.else
+	${SED} 's,^#define HAVE_ICONV_H,/* & */,' ${FILESDIR}/config.h.in > \
+		${WRKSRC}/config.h
+.endif
 
 post-install:
 	${FMT} ${PKGMESSAGE}
