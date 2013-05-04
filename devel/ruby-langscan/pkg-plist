@@ -9,7 +9,7 @@
 %%RUBY_SITEARCHLIBDIR%%/langscan/pairmatcher/pairmatcher.so
 %%RUBY_SITEARCHLIBDIR%%/langscan/php/php.so
 %%RUBY_SITEARCHLIBDIR%%/langscan/python/python.so
-%%RUBY_SITEARCHLIBDIR%%/langscan/ruby/compat/ripper.so
+%%RIPPER%%%%RUBY_SITEARCHLIBDIR%%/langscan/ruby/compat/ripper.so
 %%RUBY_SITEARCHLIBDIR%%/langscan/scheme/scheme.so
 %%RUBY_SITEARCHLIBDIR%%/langscan/sh/sh.so
 %%RUBY_SITELIBDIR%%/langscan/_common.rb
@@ -36,23 +36,23 @@
 %%RUBY_SITELIBDIR%%/langscan/python.rb
 %%RUBY_SITELIBDIR%%/langscan/rpmspec.rb
 %%RUBY_SITELIBDIR%%/langscan/ruby.rb
-%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper.rb
-%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/core.rb
-%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/filter.rb
-%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/lexer.rb
-%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/sexp.rb
+%%RIPPER%%%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper.rb
+%%RIPPER%%%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/core.rb
+%%RIPPER%%%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/filter.rb
+%%RIPPER%%%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/lexer.rb
+%%RIPPER%%%%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper/sexp.rb
 %%RUBY_SITELIBDIR%%/langscan/scheme.rb
 %%RUBY_SITELIBDIR%%/langscan/sh.rb
 %%RUBY_SITELIBDIR%%/langscan/text.rb
-@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper
-@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat
-@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby
+%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper
+%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat
+%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby
 @dirrm %%RUBY_SITELIBDIR%%/langscan/perl
 @dirrm %%RUBY_SITELIBDIR%%/langscan
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/sh
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/scheme
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby/compat
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby
+%%RIPPER%%@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby/compat
+%%RIPPER%%@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/python
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/php
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/pairmatcher

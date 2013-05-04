@@ -2,37 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	langscan
-PORTVERSION=	1.2
+PORTVERSION=	1.2.20070115
 CATEGORIES=	devel ruby
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gonzui/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	LOCAL
+MASTER_SITE_SUBDIR=	tota/${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A program analyzer for source code search engine
-
-DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+COMMENT=	Program analyzer for source code search engine
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex \
-		p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
+RUN_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
+BUILD_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
 USE_RUBY=	yes
 USE_PERL5_RUN=	yes
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
+HAS_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	ChangeLog NEWS README
 DOCSDIR=	${RUBY_MODDOCDIR}
 
+OPTIONS_DEFINE=	DOCS
+OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
+
+.include <bsd.port.pre.mk>
+
+CFLAGS+=	-fPIC
+
+.if ${RUBY_VER} > 1.8
+CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} \
+		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
+PLIST_SUB+=	RIPPER="@comment "
+.else
+PLIST_SUB+=	RIPPER=""
+.endif
+
+post-patch:
+	${REINPLACE_CMD} "s|\(flex --version\)|${LOCALBASE}/bin/\1|" ${WRKSRC}/autogen.sh
+	${FIND} ${WRKSRC} -name Makefile.am | ${XARGS} ${REINPLACE_CMD} "s|flex|${LOCALBASE}/bin/flex|"
+
+pre-configure:
+	cd ${CONFIGURE_WRKSRC}; ${SH} autogen.sh
+
 post-install:
 	${CHMOD} ${BINMODE} ${RUBY_SITEARCHLIBDIR}/${PORTNAME}/ocaml/camlexer
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${DOCSDIR}/
@@ -45,11 +66,5 @@ x-generate-plist:
 	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | ${SORT} | ${SED} -e 's,${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},@dirrm %%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
 
 .include <bsd.port.post.mk>
