@@ -1,6 +1,6 @@
 PROG=	libstocks_client
 SRCS=	client.c
-NOMAN=	1
+NO_MAN=	1
 PREFIX?=/usr/local
 BINDIR=	${PREFIX}/bin
 
