@@ -43,6 +43,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
