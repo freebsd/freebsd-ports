@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PyLucene
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	textproc devel python java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/pylucene
@@ -21,7 +21,7 @@ USE_GCC=	4.2+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_GMAKE=	yes
-PATCHSET=	-2
+PATCHSET=	-1
 LUCENE_VER=	${PORTVERSION}
 EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
 #EGG_INFO=	lucene-${LUCENE_VER}-${PYTHON_VERSION:S/thon//}.egg-info
