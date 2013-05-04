@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cfengine v3
-# Date created:		February 2, 2009
-# Whom:			jrhett@netconsonance.com
-#
+# Created by: jrhett@netconsonance.com
 # $FreeBSD$
-#
 
 PORTNAME=	cfengine
 PORTVERSION=	3.2.3
@@ -25,6 +21,10 @@ CONFLICTS=	cfengine-[2]* cfengine-3.[34]* cfengine-devel-*
 USE_RC_SUBR=	cf-execd cf-serverd
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 WITH_BDB_VER?=	47
 USE_BDB=	yes
