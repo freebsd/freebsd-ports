@@ -14,6 +14,8 @@ COMMENT=	Qt client for the Monopd server
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
+
 LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		pcre:${PORTSDIR}/devel/pcre \
 		png15:${PORTSDIR}/graphics/png \
