@@ -63,7 +63,7 @@ Makefile.options.unsorted: ${VOICESCONF}
 		${ECHO_CMD} "$${opt}_DESC=	$$define" >> ${.TARGET}; \
 		${ECHO_CMD} "FILE_$${opt}=	$$file" >> ${.TARGET}; \
 		case $$default in \
-		on) optdefault="$$optdefault $$opt" ;; \
+		[Oo][Nn]) optdefault="$$optdefault $$opt" ;; \
 		*) ;; \
 		esac; \
 	done < ${.ALLSRC}; \
@@ -71,6 +71,6 @@ Makefile.options.unsorted: ${VOICESCONF}
 		${SED} 's,^[[:space:]]*,OPTIONS_DEFINE+=	,;s,[[:space:]]*$$,,' >> ${.TARGET}; \
 	[ -z "$$optdefault" ] || \
 		${ECHO_CMD} $$optdefault | /usr/bin/fold -sw 50 | \
-		${SED} 's,^,OPTIONS_DEFAULT+=	,' >> ${.TARGET}
+		${SED} 's,^[[:space:]]*,OPTIONS_DEFAULT+=	,' >> ${.TARGET}
 
 .include <bsd.port.mk>
