@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.46.1
+PORTVERSION=	3.47.7
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/ \
@@ -21,8 +21,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USES=		iconv
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
+USES=		iconv
 
 MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 
