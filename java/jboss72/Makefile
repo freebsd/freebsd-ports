@@ -3,7 +3,7 @@
 
 PORTNAME=	jboss72
 PORTVERSION=	7.2.0
-#PORTREVISION=	0
+PORTREVISION=	1
 #PORTEPOCH=	0
 CATEGORIES=	java www
 MASTER_SITES=	https://javaz.org/distfiles/
@@ -12,6 +12,8 @@ DISTFILES=	m2-${DISTNAME}.tar.xz ${DISTNAME}.tar.gz
 
 MAINTAINER=	yerenkow@gmail.com
 COMMENT=	JBoss 7.2.0.Final
+
+LICENSE=	GPLv2
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	jbossas

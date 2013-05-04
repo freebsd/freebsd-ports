@@ -7,6 +7,7 @@
 
 # PROVIDE: %%APP_SHORTNAME%%
 # REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable %%APP_SHORTNAME%%:
 # %%APP_SHORTNAME%%_enable (bool):      Set to "YES" to enable %%APP_SHORTNAME%%
@@ -17,9 +18,6 @@
 
 . /etc/rc.subr
 
-%%APP_SHORTNAME%%_user="%%USER%%"
-%%APP_SHORTNAME%%_logdir="%%LOG_DIR%%"
-
 name="%%APP_SHORTNAME%%"
 rcvar=%%APP_SHORTNAME%%_enable
 
@@ -27,6 +25,11 @@ load_rc_config $name
 
 %%APP_SHORTNAME%%_enable="${%%APP_SHORTNAME%%_enable:-"NO"}"
 %%APP_SHORTNAME%%_logging="${%%APP_SHORTNAME%%_logging:-">> ${%%APP_SHORTNAME%%_logdir}/stdout.log 2>> ${%%APP_SHORTNAME%%_logdir}/stderr.log"}"
+%%APP_SHORTNAME%%_sleep="${%%APP_SHORTNAME%%_sleep:-"5"}"
+%%APP_SHORTNAME%%_kill9="${%%APP_SHORTNAME%%_kill9:-""}"
+%%APP_SHORTNAME%%_additional_killall="${%%APP_SHORTNAME%%_additional_killall:-""}"
+%%APP_SHORTNAME%%_user="%%USER%%"
+%%APP_SHORTNAME%%_logdir="%%LOG_DIR%%"
 
 start_cmd="%%APP_SHORTNAME%%_start"
 stop_cmd="%%APP_SHORTNAME%%_stop"
@@ -38,14 +41,13 @@ JBOSS_HOME="%%APP_HOME%%"
 {
 	if [ ! -d "${%%APP_SHORTNAME%%_logdir}" ]
 	then
-		mkdir -p ${%%APP_SHORTNAME%%_logdir}
-		chown ${%%APP_SHORTNAME%%_user} ${%%APP_SHORTNAME%%_logdir}
+		install -d -o ${%%APP_SHORTNAME%%_user} ${%%APP_SHORTNAME%%_logdir}
 	fi
 
 	echo "Starting %%APP_SHORTNAME%%."
 	daemon -u ${%%APP_SHORTNAME%%_user} ${JBOSS_HOME}/bin/standalone.sh ${%%APP_SHORTNAME%%_logging} >> ${%%APP_SHORTNAME%%_logdir}/boot.log 2>> ${%%APP_SHORTNAME%%_logdir}/boot.log
 
-	sleep 1		# let daemon(8) and sh(1) finish before executing pgrep(1)
+	sleep ${%%APP_SHORTNAME%%_sleep}	# let daemon(8) and sh(1) finish before executing pgrep(1)
 	pgrep -U ${%%APP_SHORTNAME%%_user} -f ${JBOSS_HOME}/modules > ${pidfile}
 	chown ${%%APP_SHORTNAME%%_user} $pidfile
 }
@@ -56,6 +58,19 @@ JBOSS_HOME="%%APP_HOME%%"
 	if [ -f ${pidfile} ]
 	then
 		kill `cat ${pidfile}`
+		# Only if we aware that our setup can hangs, and only after trying simple kill, we can kill it hard way.
+		if [ ! -z "${%%APP_SHORTNAME%%_kill9}" ]
+		then
+			sleep ${%%APP_SHORTNAME%%_sleep}
+			kill  -9 `cat ${pidfile}`
+		fi
+		# In some setups, JBoss can spawn some child processess, which could prevent it from stopping, and freeing net ports.
+		# Let's blindly kill them all, since we are really know what we are doing.
+		if [ ! -z "${%%APP_SHORTNAME%%_additional_killall}" ]
+		then
+			sleep ${%%APP_SHORTNAME%%_sleep}
+			killall ${%%APP_SHORTNAME%%_additional_killall}
+		fi
 	fi
 }
 
