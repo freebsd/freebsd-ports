@@ -81,4 +81,4 @@ PLIST_SUB+=		XMAGIC="@comment "
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ftimes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
