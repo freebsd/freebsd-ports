@@ -18,6 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 MAKE_JOBS_SAFE=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 MAN6=		kobodl.6
 
 SCOREDIR=	/var/games/${PORTNAME}
