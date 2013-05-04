@@ -13,6 +13,7 @@ MAINTAINER=	mwm@mired.org
 COMMENT=	A statistics package designed for use with the Unix shell
 
 RESTRICTED=	License does not allow mass redistribution.
+BROKEN=		Does not fetch
 
 .include <bsd.port.pre.mk>
 
