@@ -31,7 +31,7 @@ post-extract:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/sancp ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/etc/sancp/sancp.conf ${PREFIX}/etc/sancp.conf-dist
-	@${CP} -n ${PREFIX}/etc/sancp.conf-dist ${PREFIX}/etc/sancp.conf
+	@${CP} -n ${PREFIX}/etc/sancp.conf-dist ${PREFIX}/etc/sancp.conf || ${TRUE}
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/

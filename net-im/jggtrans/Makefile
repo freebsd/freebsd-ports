@@ -1,7 +1,4 @@
-# Ports collection makefile for:	jggtrans
-# Date created:				13 September 2006
-# Whom:					Bartek Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartek Rutkowski <r@robakdesign.com>
 # $FreeBSD$
 
 PORTNAME=		jggtrans
@@ -49,7 +46,7 @@ SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml.sample
-	@${CP} -n ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml
+	@${CP} -n ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml || ${TRUE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

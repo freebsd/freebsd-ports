@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plans
-# Date created:				2004-12-17
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plans
 PORTVERSION=	8.2.1
@@ -62,7 +58,7 @@ do-install:
 	@${FIND} ${WWWDIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
 	@${FIND} ${WWWDIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
 	@for i in ${WWWDIR}/data/*default ${WWWDIR}/*default; do\
-		${CP} -np $$i $${i%.default}; done
+		${CP} -np $$i $${i%.default} || ${TRUE} ; done
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

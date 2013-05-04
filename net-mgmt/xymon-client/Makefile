@@ -35,7 +35,7 @@ do-configure:
 post-install:
 .for i in ${CONFIG_FILES}
 	${CP} -np ${WWWDIR}/client/etc/${i}.DIST \
-		${WWWDIR}/client/etc/${i}
+		${WWWDIR}/client/etc/${i} || ${TRUE}
 .endfor
 
 .include <bsd.port.mk>

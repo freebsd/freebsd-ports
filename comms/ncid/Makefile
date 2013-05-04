@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ncid
-# Date created:        06 June 2005
-# Whom:                David
-#
+# Created by: David
 # $FreeBSD$
-#
 
 PORTNAME=	ncid
 PORTVERSION=	0.84
@@ -53,7 +49,7 @@ post-install:
 	@cd ${WRKSRC};for i in server/*.alias scripts/*.conf;do\
 		ib=`basename $$i`;\
 		${INSTALL_DATA} $$i ${ETCDIR}/$$ib.dist;\
-		${CP} -n ${ETCDIR}/$$ib.dist ${ETCDIR}/$$ib;\
+		${CP} -n ${ETCDIR}/$$ib.dist ${ETCDIR}/$$ib || ${TRUE} ;\
 		${ECHO_CMD} "@unexec cd %D/${ETCDIR_REL}/;! cmp -s $$ib $$ib.dist||\
 			${RM} -f $$ib">>${TMPPLIST};\
 		${ECHO_CMD} "${ETCDIR_REL}/$$ib.dist">>${TMPPLIST};\

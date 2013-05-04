@@ -38,6 +38,6 @@ do-install:
 		${PEARDIR}/peclcmd.php
 
 post-install:
-	@${CP} -n ${PREFIX}/etc/pear.conf.sample ${PREFIX}/etc/pear.conf
+	@${CP} -n ${PREFIX}/etc/pear.conf.sample ${PREFIX}/etc/pear.conf || ${TRUE}
 
 .include <bsd.port.mk>

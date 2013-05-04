@@ -195,7 +195,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
 .if ${PORT_OPTIONS:MFPM}
-	@${CP} -n ${PREFIX}/etc/php-fpm.conf.default ${PREFIX}/etc/php-fpm.conf
+	@${CP} -n ${PREFIX}/etc/php-fpm.conf.default ${PREFIX}/etc/php-fpm.conf || ${TRUE}
 .endif
 .if ${PORT_OPTIONS:MAPACHE}
 	@${CAT} ${PKGMESSAGE}

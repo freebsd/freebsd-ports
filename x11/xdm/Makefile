@@ -49,7 +49,7 @@ post-configure:
 
 post-install:
 .for f in ${CFFILES}
-	${CP} -n ${EXAMPLESDIR}/$f ${PREFIX}/lib/X11/xdm/$f
+	${CP} -n ${EXAMPLESDIR}/$f ${PREFIX}/lib/X11/xdm/$f || ${TRUE}
 .endfor
 	${MKDIR} /var/lib/xdm/authdir
 	${LN} -sf /var/lib/xdm/authdir ${PREFIX}/lib/X11/xdm/authdir

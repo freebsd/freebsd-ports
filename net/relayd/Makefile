@@ -58,6 +58,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
 		${PREFIX}/etc/relayd.conf.sample
 	@${CP} -n ${PREFIX}/etc/relayd.conf.sample \
-		${PREFIX}/etc/relayd.conf
+		${PREFIX}/etc/relayd.conf || ${TRUE}
 
 .include <bsd.port.post.mk>

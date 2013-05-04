@@ -101,7 +101,7 @@ post-install:
 .endfor
 .for i in ${CONFIG_FILES}
 	${CP} -np ${WWWDIR}/server/etc/${i}.DIST \
-		${WWWDIR}/server/etc/${i}
+		${WWWDIR}/server/etc/${i} || ${TRUE}
 .endfor
 
 .include <bsd.port.mk>

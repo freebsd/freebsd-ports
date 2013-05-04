@@ -39,7 +39,7 @@ pre-install:
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -n ${WRKSRC}/dact.conf ${EXAMPLESDIR}
+	${CP} -n ${WRKSRC}/dact.conf ${EXAMPLESDIR} || ${TRUE}
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
