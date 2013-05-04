@@ -94,7 +94,7 @@ post-patch:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CP} -n ${PREFIX}/etc/pootle/localsettings.py.sample \
-		${PREFIX}/etc/pootle/localsettings.py
+		${PREFIX}/etc/pootle/localsettings.py || ${TRUE}
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}

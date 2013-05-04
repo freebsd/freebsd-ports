@@ -40,9 +40,9 @@ do-install:
 	${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PGADMDIR}/
 .if exists(${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php)
 	${CP} -np ${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php \
-		${PREFIX}/${PGADMDIR}/conf/config.inc.php
+		${PREFIX}/${PGADMDIR}/conf/config.inc.php || ${TRUE}
 .endif
 	${CP} -np ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
-		${PREFIX}/${PGADMDIR}/conf/config.inc.php
+		${PREFIX}/${PGADMDIR}/conf/config.inc.php || ${TRUE}
 
 .include <bsd.port.post.mk>

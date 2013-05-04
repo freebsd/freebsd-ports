@@ -216,7 +216,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/php-fpm.conf.sample ${PREFIX}/etc
 	@${MKDIR} `dirname ${PHP_FPM_PID}`
 	@${MKDIR} `dirname ${PHP_FPM_LOG}`
-	@cd ${PREFIX}/etc && ${CP} -n php-fpm.conf.sample php-fpm.conf
+	@cd ${PREFIX}/etc && ${CP} -n php-fpm.conf.sample php-fpm.conf || ${TRUE}
 .endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}

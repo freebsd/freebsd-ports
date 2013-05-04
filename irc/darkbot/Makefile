@@ -35,12 +35,12 @@ post-install:
 	cd ${WRKSRC}/dat; \
 	for file in *; do \
 	    ${INSTALL_DATA} $$file ${ETCDIR}/dat/$${file}.dist; \
-	    ${CP} -np ${ETCDIR}/dat/$${file}.dist ${ETCDIR}/dat/$$file; \
+	    ${CP} -np ${ETCDIR}/dat/$${file}.dist ${ETCDIR}/dat/$$file || ${TRUE} ; \
 	    ${ECHO_CMD} "@unexec cmp -s ${ETCDIR}/dat/$$file \
 		${ETCDIR}/dat/$${file}.dist && \
 		rm -f ${ETCDIR}/dat/$$file || true" >> ${TMPPLIST}; \
 	    ${ECHO_CMD} "${ETCDIR_REL}/dat/$${file}.dist" >> ${TMPPLIST}; \
-	    ${ECHO_CMD} "@exec cp -np %D/%F %B/$$file" >> ${TMPPLIST}; \
+	    ${ECHO_CMD} "@exec cp -np %D/%F %B/$$file || true" >> ${TMPPLIST}; \
 	done
 	${ECHO_CMD} "@unexec rmdir ${ETCDIR}/logs 2>/dev/null || true" >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec rmdir ${ETCDIR}/dat 2>/dev/null || true" >> ${TMPPLIST}

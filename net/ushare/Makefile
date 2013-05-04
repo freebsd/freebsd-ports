@@ -42,6 +42,6 @@ do-install:
 
 post-install:
 	${CP} -np ${PREFIX}/etc/${PORTNAME}.conf.sample \
-		${PREFIX}/etc/${PORTNAME}.conf
+		${PREFIX}/etc/${PORTNAME}.conf || ${TRUE}
 
 .include <bsd.port.mk>

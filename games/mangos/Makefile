@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mangos
-# Date created:		15 March 2007
-# Whom:			Artemiy Kropachev <neon_cyrex@mail.ru>
-#
+# Created by: Artemiy Kropachev <neon_cyrex@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mangos
 PORTVERSION=	5101
@@ -89,7 +85,7 @@ post-build:
 post-install:
 	@for i in mangosd realmd;do cd ${PREFIX}/etc/&&\
 		${INSTALL_DATA} ${WRKSRC}/src/$$i/$$i.conf $$i.conf.sample&&\
-		${CP} -np $$i.conf.sample $$i.conf;done
+		${CP} -np $$i.conf.sample $$i.conf || ${TRUE} ;done
 .ifdef WITH_SCRIPTDEV2
 	@(cd ${INSTALL_WRKSRC}/src/bindings/ScriptDev2 && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif

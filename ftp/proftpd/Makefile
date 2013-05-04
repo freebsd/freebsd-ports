@@ -247,10 +247,10 @@ pre-build:
 	@cd ${WRKSRC} && ${MAKE} include/buildstamp.h
 .else
 post-install:
-	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
+	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf || ${TRUE}
 	@${MKDIR} ${LOCALSTATEDIR}/proftpd
-	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem
-	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat
+	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
+	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
 .if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${DOCSDIR}
