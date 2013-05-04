@@ -33,6 +33,10 @@ MYFILES+=	${FILE_${ii}}
 .   endif
 .endfor
 
+.if empty(DISTFILES)
+IGNORE=	requires that at least one OPTION is selected
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for ii in ${MYFILES}
