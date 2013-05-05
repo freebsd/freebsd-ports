@@ -26,19 +26,21 @@ COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
 
+OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG
+OPTIONS_DEFAULT=	IMPLICITCD COLONBREAKSWORDS HELP
+IMPLICITCD_DESC=	Use directory name alone to cd into it
+COLONBREAKSWORDS_DESC=	Colons break words
+HELP_DESC=		Install the help files
+
 USES+=			bison
 
-.if defined(WITH_OPTIONS) || defined(WITH_BASH_OPTIONS)
-.include "${.CURDIR}/../bash/options"
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_IMPLICITCD)
+.if ${PORT_OPTIONS:MIMPLICITCD}
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
 .endif
 
-.if !defined(WITHOUT_COLONBREAKSWORDS)
+.if ${PORT_OPTIONS:MCOLONBREAKSWORDS}
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-colonbreakswords
 .endif
 
@@ -48,7 +50,7 @@ INFO=			bash
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .if !defined(WITH_INCLUDED_FAQ)
 DISTFILES+=		FAQ:faq
 .endif
@@ -59,10 +61,7 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
-.if defined(WITH_STATIC_BASH) || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
-.if !defined(WITHOUT_NLS)
-WITHOUT_NLS=yes
-.endif
+.if ${PORT_OPTIONS:MSTATIC_BASH} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=	-static
 CONFLICTS+=	bash-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
@@ -71,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-static-link=no
 CONFLICTS+=	bash-static-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
 .endif
 
-.if defined(WITHOUT_HELP)
+.if ! ${PORT_OPTIONS:MHELP}
 CONFIGURE_ARGS+=	--disable-help-builtin
 PLIST_SUB+=		HELP="@comment "
 .elif defined(WITH_INTEGRATED_HELPFILES)
@@ -81,12 +80,12 @@ CONFIGURE_ARGS+=	--enable-separate-helpfiles
 PLIST_SUB+=		HELP=""
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USES+=			gettext iconv
 PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 CPPFLAGS+=		${PTHREAD_CFLAGS} \
@@ -97,19 +96,19 @@ CONFIGURE_ENV=		YACC="bison -y"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
-.if defined(WITH_SYSLOG)
+.if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
 .endif
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e "s|@LIBICONV@||g" ${WRKSRC}/Makefile.in
 .endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" ${WRKSRC}/config.h
 .endif
 
@@ -122,7 +121,7 @@ pre-install:
 
 post-install:
 	@cd ${PREFIX}/bin ; ${LN} -sf bash rbash
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .if !defined(WITH_INCLUDED_FAQ)
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ \
@@ -151,4 +150,4 @@ cklatest:
 	    ftp://ftp.cwru.edu/pub/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
 		| fgrep -v .sig | ${TAIL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
