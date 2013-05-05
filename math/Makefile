@@ -20,6 +20,7 @@
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-gpclib
+    SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
