@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--with-xerces-c=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE}
 MAKE_JOBS_SAFE=	yes
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 DATADIR=	${PREFIX}/share/${PORTNAME:S/-/_/}
 
 PLIST_SUB=	VER="${PORTVERSION}"
