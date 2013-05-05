@@ -585,6 +585,7 @@
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += goffice
+    SUBDIR += goffice010
     SUBDIR += gonzui
     SUBDIR += google-gdata
     SUBDIR += google-perftools
