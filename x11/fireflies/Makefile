@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fireflies
-# Date created:				11 Feb 2006
-# Whom:					UMENO Takashi <umeno@rr.iij4u.or.jp>
-#
+# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	fireflies
 PORTVERSION=	2.07
@@ -14,7 +10,7 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Extension of xscreensaver
 
-BROKEN=		does not compile when graphics/png is installed (see ports/176666)
+CONFLICTS=	png-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
