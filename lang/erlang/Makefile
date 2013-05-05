@@ -26,8 +26,11 @@ COMMENT=	A functional programming language from Ericsson
 
 WRKSRC=		${WRKDIR}/otp_src_R15B03
 
+ERLANG_LIB=	${PORTNAME}
+
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
+PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -175,76 +178,76 @@ MAKE_ARGS+=	ARCH=x86
 
 NO_MANCOMPRESS=	yes
 
-MAN1PREFIX=	${PREFIX}/lib/erlang
-MAN3PREFIX=	${PREFIX}/lib/erlang
-MAN4PREFIX=	${PREFIX}/lib/erlang
-MAN6PREFIX=	${PREFIX}/lib/erlang
+MAN1PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
+MAN3PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
+MAN4PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
+MAN6PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
 
 # Install documentation. (HTML docs need to be in same dir as the
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-	@${LN} -sf ${PREFIX}/lib/erlang/lib/erl_interface-*/bin/erl_call ${PREFIX}/bin/erl_call
+	@${LN} -sf ${PREFIX}/lib/${ERLANG_LIB}/lib/erl_interface-*/bin/erl_call ${PREFIX}/bin/erl_call
 	@for SECTION in 1 3 4 6; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
-			-C ${PREFIX}/lib/erlang \
+			-C ${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
+	@${RM} -rf ${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 .if ${PORT_OPTIONS:MDOCS}
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
-		-C ${PREFIX}/lib/erlang
+		-C ${PREFIX}/lib/${ERLANG_LIB}
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
-		${PREFIX}/lib/erlang/lib/dialyzer-*/doc/
+		${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
 .endfor
 .endif
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
-	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/${ERLANG_LIB}
+	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/${ERLANG_LIB}
 
 # All non-library files.
 
-	@cd ${PREFIX}; ${FIND} lib/erlang/* -type d -empty \
-		| ${GREP} -v "^lib/erlang/lib" \
+	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
+		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
 		> ${ERLANG_PLIST}
 
-	@cd ${PREFIX}; ${FIND} lib/erlang/* -type f -o -type l \
-		| ${GREP} -v "^lib/erlang/man" \
-		| ${GREP} -v "^lib/erlang/lib" \
+	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
+		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
+		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
 		| ${SORT} \
 		>> ${ERLANG_PLIST}
 
 # Stock OTP libraries.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
-			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
+		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
+			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type f -o -type l; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
-			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
+		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
+			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d -empty \
 			| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
-			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
+		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
+			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d \
 			| ${SED} -e 's/^/@dirrm /g'; \
 	done | ${SORT} -r >> ${ERLANG_PLIST}
 
 # Other directories.
 
-	@cd ${PREFIX}; ${FIND} lib/erlang/* -type d | ${SORT} -r \
-		| ${GREP} -v "^lib/erlang/man" \
-		| ${GREP} -v "^lib/erlang/lib" \
+	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d | ${SORT} -r \
+		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
+		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${ERLANG_PLIST}
 
@@ -263,7 +266,7 @@ buildplt:
 	@${ECHO_CMD} You may wish to settle for the standard PLT built by
 	@${ECHO_CMD} dialyzer on the first run.
 	@${ECHO_CMD} =====================================================
-	@cd ${PREFIX}/lib/erlang/lib; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
+	@cd ${PREFIX}/lib/${ERLANG_LIB}/lib; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
 
 .include "Makefile.lib"
 .include "Makefile.man"
