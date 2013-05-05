@@ -1,3 +1,4 @@
+bin/desktop-file-edit
 bin/desktop-file-install
 bin/desktop-file-validate
 bin/update-desktop-database
