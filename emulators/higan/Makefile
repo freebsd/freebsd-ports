@@ -3,6 +3,7 @@
 
 PORTNAME=	higan
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}-source
@@ -19,6 +20,7 @@ USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_ENV+=	c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x"
 
+OPTIONS=		DEBUG
 OPTIONS_SINGLE=		PROFILE GUI
 OPTIONS_SINGLE_PROFILE=	ACCURACY BALANCED PERFORMANCE
 OPTIONS_SINGLE_GUI=	GTK2 QT4
@@ -114,6 +116,14 @@ post-patch:
 		-e 's|%%AUDIO%%|${AUDIO_DRIVER}|' \
 		-e 's|%%INPUT%%|${INPUT_DRIVER}|' \
 		${WRKSRC}/higan/target-ethos/Makefile
+.if ${PORT_OPTIONS:MDEBUG}
+	${REINPLACE_CMD} -e 's|-O3|-g|g' \
+		${WRKSRC}/ananke/Makefile \
+		${WRKSRC}/higan/Makefile
+	${REINPLACE_CMD} -e 's|:= -s|:= #|g' \
+		${WRKSRC}/higan/Makefile
+.endif
+	${RM} ${WRKSRC}/shaders/Sepia.Direct3D.shader
 
 do-build:
 .for d in higan ananke
@@ -130,5 +140,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.desktop ${PREFIX}/share/applications/
+	${MKDIR} ${DATADIR}/Video\ Shaders
+	(cd ${WRKSRC}/higan/profile && ${COPYTREE_SHARE} \* ${DATADIR}/)
+	${INSTALL_DATA} ${WRKSRC}/shaders/* ${DATADIR}/Video\ Shaders/
 
 .include <bsd.port.mk>
