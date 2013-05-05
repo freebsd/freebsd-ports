@@ -21,8 +21,12 @@ MAKE_ARGS=	library=shared
 .include <bsd.port.pre.mk>
 
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
+_CLANG!=	clang --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
 MAKE_ENV+=	LINK=clang++
-CFLAGS+=	-Wno-unused-private-field -Wno-nested-anon-types
+CFLAGS+=	-Wno-unused-private-field
+.if ${_CLANG} >= 33
+CFLAGS+=	-Wno-nested-anon-types
+.endif
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	any
