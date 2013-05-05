@@ -2,5 +2,25 @@ bin/higan
 lib/libananke.so.1
 lib/libananke.so
 share/applications/higan.desktop
+%%DATADIR%%/Famicom.sys/manifest.bml
+%%DATADIR%%/Game Boy Advance.sys/manifest.bml
+%%DATADIR%%/Game Boy Color.sys/boot.rom
+%%DATADIR%%/Game Boy Color.sys/manifest.bml
+%%DATADIR%%/Game Boy.sys/boot.rom
+%%DATADIR%%/Game Boy.sys/manifest.bml
+%%DATADIR%%/Super Famicom.sys/ipl.rom
+%%DATADIR%%/Super Famicom.sys/manifest.bml
+%%DATADIR%%/Video Shaders/Curvature.OpenGL.shader
+%%DATADIR%%/Video Shaders/HQ2x.OpenGL.shader
+%%DATADIR%%/Video Shaders/Pixellate.OpenGL.shader
+%%DATADIR%%/Video Shaders/Scale2x.OpenGL.shader
 share/pixmaps/higan.png
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%/Video Shaders
+@dirrm %%DATADIR%%/Super Famicom.sys
+@dirrm %%DATADIR%%/Game Boy.sys
+@dirrm %%DATADIR%%/Game Boy Color.sys
+@dirrm %%DATADIR%%/Game Boy Advance.sys
+@dirrm %%DATADIR%%/Famicom.sys
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
