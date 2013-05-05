@@ -1,12 +1,9 @@
-# New ports collection makefile for:	goffice
-# Date created:				07 June 2005
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-stable/devel/goffice/Makefile,v 1.3 2010/06/29 10:56:38 kwm Exp $
+#   $MCom: ports/trunk/devel/goffice/Makefile 17268 2013-04-01 05:13:11Z marcus $
 #
 # !!! When updating goffice, don't forget to update pkg-plist in:
-#     math/gnumeric science/gchemutils
+#     science/gchemutils
 
 PORTNAME=	goffice
 PORTVERSION=	0.8.17
@@ -20,12 +17,12 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgsf ltverhack
-USES=		gettext
+USE_GNOME=	gnomeprefix intlhack gtk20 libgsf ltverhack
+USES=		gettext pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -35,7 +32,12 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 
 MAKE_JOBS_SAFE=	yes
 
-.if !defined(WITHOUT_GCONF)
+OPTIONS_DEFINE=	GCONF
+OPTIONS_DEAFULT=GCONF
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 .else
 CONFIGURE_ARGS+=--with-config-backend=keyfile
