@@ -610,8 +610,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.7.21
-GIT_LUA_VERSION=	0-gf081f21
+NGINX_LUA_VERSION=	0.8.1
+GIT_LUA_VERSION=	0-gc558c43
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
