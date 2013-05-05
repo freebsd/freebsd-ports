@@ -61,7 +61,7 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
-.if ${PORT_OPTIONS:MSTATIC_BASH} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
+.if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=	-static
 CONFLICTS+=	bash-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
