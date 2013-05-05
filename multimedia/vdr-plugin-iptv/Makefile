@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-remote
-# Date created:		Sun Aug 29 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-iptv
 PORTVERSION=	1.0.1
@@ -27,8 +23,8 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
-	@${REINPLACE_CMD} 's|^\(CHANNELS_CONF[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${PREFIX}/etc/vdr/channels.conf|;'\\
-		's|^\(CHANNEL_SETTINGS_DIR[[:space:]]*\)[?]*\(=[[:space:]]*\)/etc|\1\2${PREFIX}/etc|;'\
+	@${REINPLACE_CMD}  -e 's|^\(CHANNELS_CONF[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${PREFIX}/etc/vdr/channels.conf|;' \
+		-e 's|^\(CHANNEL_SETTINGS_DIR[[:space:]]*\)[?]*\(=[[:space:]]*\)/etc|\1\2${PREFIX}/etc|;' \
 		${WRKSRC}/iptv/vlc2iptv
 
 post-install: post-install-pluginlocales
