@@ -128,6 +128,7 @@ share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
 share/thumbnailers/gsf-office.thumbnailer
+@dirrmtry share/thumbnailers
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
