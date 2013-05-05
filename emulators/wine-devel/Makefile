@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT=	Microsoft Windows compatibility environment
+COMMENT?=	Microsoft Windows compatibility environment
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

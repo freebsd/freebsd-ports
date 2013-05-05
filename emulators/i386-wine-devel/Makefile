@@ -4,6 +4,7 @@
 PKGNAMEPREFIX=	i386-
 
 MAINTAINER=	dbn@FreeBSD.org
+COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 LATEST_LINK=	${PKGNAMEPREFIX}wine-devel
 
 # Use the wine port to do most of the heavy lifting
