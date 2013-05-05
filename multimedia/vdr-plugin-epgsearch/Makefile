@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-epgsearch
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-epgsearch
 PORTVERSION=	1.0.1s20120322
@@ -29,8 +25,8 @@ MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I$(LOCALBASE)/include/vdr -I${WRKS
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
-	@${REINPLACE_CMD} 's/^#\(HAVE_PCREPOSIX=\)/\1/;'\\
-		's/^#\(HAVE_LIBTRE=\)/\1/;' \
+	@${REINPLACE_CMD} -e 's/^#\(HAVE_PCREPOSIX=\)/\1/;' \
+		-e 's/^#\(HAVE_LIBTRE=\)/\1/;' \
 		${WRKSRC}/Makefile
 
 post-install: post-install-pluginlocales
