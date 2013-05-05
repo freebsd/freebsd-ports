@@ -32,6 +32,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/templatetags/fb_csrf.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/templatetags/fb_pagination.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/templatetags/fb_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ar/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ar/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ca/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ca/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/de/LC_MESSAGES/django.mo
@@ -55,6 +57,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/zh_TW/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/zh_TW/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/css/filebrowser.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/css/rtl.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/img/filebrowser_icon_delete.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/img/filebrowser_icon_delete_hover.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/img/filebrowser_icon_rename.gif
@@ -78,6 +81,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/js/FB_FileBrowseField.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/js/FB_TinyMCE.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/js/TinyMCEAdmin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/js/filebrowser-popup.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/uploadify/cancel.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/uploadify/expressInstall.swf
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/static/filebrowser/uploadify/jquery-1.4.2.min.js
@@ -149,6 +153,8 @@
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/de
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ca/LC_MESSAGES
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ca
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ar/LC_MESSAGES
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale/ar
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe/locale
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/filebrowser_safe
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
