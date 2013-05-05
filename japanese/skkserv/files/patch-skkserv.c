@@ -1,5 +1,5 @@
 --- skkserv/skkserv.c.orig	1997-01-21 04:16:36.000000000 +0900
-+++ skkserv/skkserv.c	2011-07-02 23:48:44.000000000 +0900
++++ skkserv/skkserv.c	2013-05-06 00:49:10.000000000 +0900
 @@ -102,6 +102,8 @@
  
  #define err(m)	\
@@ -87,7 +87,42 @@
    set_hname();
  
    /* make socket */
-@@ -232,9 +270,11 @@
+@@ -192,8 +230,18 @@
+   mkjtab();
+ 
+   if (!debug) {
++    pid_t pid;
+     /* parent process exits now */
+-    if (fork() != 0) exit(0);
++    pid = fork();
++    if (pid != 0) {
++	if (pid == -1)
++		err("fork");
++	exit(0);
++    }
++    /* child process */
++#ifdef __FreeBSD__
++    daemon(0, 0);
++#else
+ 
+     fclose(stdin);
+     fclose(stdout);
+@@ -215,6 +263,7 @@
+     signal(SIGHUP, SIG_IGN);
+     if (fork() != 0) exit(0);
+ #endif
++#endif
+   } else { /* debug mode */
+     fprintf(errout, "SKK-JISYO is %s\n", jname);
+     fflush(errout);
+@@ -226,15 +275,18 @@
+   /* 1993/6/5 by kam, re-read dictionary by "INT" signal */
+ 
+   nclients = 0;
++  fprintf(errout, "leave main\n");
+   main_loop();
+ }
+ 
  showusage()
  {
    fprintf(stderr, 
@@ -101,7 +136,7 @@
    exit(1);
  }
   
-@@ -249,27 +289,41 @@
+@@ -249,27 +301,41 @@
    
    bzero((char*)&sin, sizeof(sin));
    sin.sin_family = AF_INET;
@@ -149,7 +184,7 @@
    if (debug) {
      fprintf(errout, "file descriptor for initsock is %d\n", initsock);
      fflush(errout);
-@@ -382,6 +436,10 @@
+@@ -382,6 +448,10 @@
    code = KANA_END;
  
    while ((c = fgetc(jisho)) != EOF) {
@@ -160,7 +195,39 @@
      target = ((c & 0xff)<< 8) | (fgetc(jisho) & 0xff);
      if (target == STRMARK) {
        fgets(buf, BUFSIZE, jisho);
-@@ -476,7 +534,7 @@
+@@ -452,10 +522,17 @@
+  *	server main loop
+  */
+ 
++struct rfds {
++	fd_set	fds;
++	int	maxfd;
++};
++
++struct rfds getrfds(void);
++
+ main_loop()
+ {
++  struct rfds r;
+   fd_set 		readfds, writefds, exceptfds;
+-  fd_set 		getrfds();
+   struct sockaddr_in	from;
+   int			len;
+   register int		i;
+@@ -463,8 +540,10 @@
+   FD_ZERO(&writefds);
+   FD_ZERO(&exceptfds);
+   for(;;) {	/* infinite loop; waiting for client's request */
+-    readfds = getrfds();
+-    if (select(MAXDTAB, &readfds, &writefds, &exceptfds, NULL) < 0) {
++    r = getrfds();
++    fprintf(errout, "before select: r.maxfd = %d\n", r.maxfd);
++    readfds = r.fds;
++    if (select(r.maxfd + 1, &readfds, &writefds, &exceptfds, NULL) < 0) {
+       if (errno == EINTR) /* if signal happens */
+ 	continue;
+       err("select error; something wrong happened with the socket");
+@@ -476,7 +555,7 @@
  
      if (FD_ISSET(initsock, &readfds)) {
        len = sizeof(from);
@@ -169,3 +236,50 @@
  	err("accept error; something wrong happened with the socket");
        }
        if (nclients >= MAXDTAB - 3 - debug * 2) {
+@@ -498,10 +577,12 @@
+ 
+     if (debug) {
+       fprintf(errout, "number of clients %d\n", nclients);
+-      fprintf(errout, "file descriptors of clients are :");
++      if (nclients) {
++      fprintf(errout, "file descriptors of clients are:");
+       for (i = 0; i < nclients; i ++) 
+-	fprintf(errout, "%d:", clientsock[i]);
++	fprintf(errout, " %d%s", clientsock[i], (i < nclients - 1) ? "," : "");
+       fputs("\n", errout);
++      }
+       fflush(errout);
+     }
+   }
+@@ -511,16 +592,24 @@
+  *	get bit pattern of read file descriptor
+  */
+ 
+-fd_set getrfds()
++struct rfds
++getrfds(void)
+ {
+-  fd_set		rfds;
++  struct rfds	r;
+   register int		i;
+ 
+-  FD_ZERO(&rfds);
+-  FD_SET(initsock, &rfds);
+-  for (i = 0; i < nclients; i ++)
+-    FD_SET(clientsock[i], &rfds);
+-  return (rfds);
++  FD_ZERO(&r.fds);
++  FD_SET(initsock, &r.fds);
++  r.maxfd = initsock;
++  for (i = 0; i < nclients; i ++) {
++	if (clientsock[i] > 0) {
++		FD_SET(clientsock[i], &r.fds);
++		if (clientsock[i] > r.maxfd)
++			r.maxfd = clientsock[i];
++	}
++  }
++
++  return (r);
+ }
+ 
+ /*
