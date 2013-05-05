@@ -5,14 +5,14 @@ PORTNAME=	gsoap
 PORTVERSION=	2.8.10
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}2/gSOAP 
+MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
-OPTIONS=	OPENSSL  "Enable SSL/TLS (OpenSSL from base)" on \
-		GNUTLS "Enable SSL/TLS (GnuTLS)" off
+OPTIONS_DEFINE=	OPENSSL GNUTLS
+OPTIONS_DEFAULT=	OPENSSL
 
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
@@ -20,6 +20,10 @@ USES=	pathfix
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DWSDL_TYPEMAP_FILE=\\\"${DATADIR}/WS/typemap.dat\\\" \
 		-DSOAPCPP2_IMPORT_PATH=\\\"${DATADIR}/import\\\"
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
@@ -31,11 +35,11 @@ ONLY_FOR_ARCHS=	i386 amd64
 CFLAGS+=	-fPIC
 .endif
 
-.if defined(WITHOUT_OPENSSL) && defined(WITHOUT_GNUTLS)
+.if ! ${PORT_OPTIONS:MOPENSSL} && ! ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=--disable-ssl
 .endif
 
-.if defined(WITH_GNUTLS) 
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
    		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
