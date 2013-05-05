@@ -1,6 +1,6 @@
 # $FreeBSD$
 
 PROG=	mdbconv
-NOMAN=	yes
+NO_MAN=	yes
 
 .include <bsd.prog.mk>
