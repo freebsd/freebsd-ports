@@ -42,6 +42,7 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/parcels32.png
 %%DATADIR%%/Bitmap/positions32.png
 %%DATADIR%%/Bitmap/readme.txt
+%%DATADIR%%/Bitmap/redo32.png
 %%DATADIR%%/Bitmap/save32.png
 %%DATADIR%%/Bitmap/transparent_walls32.png
 %%DATADIR%%/Bitmap/tree_collapsed.bmp
@@ -52,6 +53,7 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/tree_expanded.bmp
 %%DATADIR%%/Bitmap/tree_leaf.bmp
 %%DATADIR%%/Bitmap/tree_level.bmp
+%%DATADIR%%/Bitmap/undo32.png
 %%DATADIR%%/Levels/Example.map
 %%DATADIR%%/Levels/avatar.level
 %%DATADIR%%/Levels/avatar.map
@@ -71,6 +73,11 @@ bin/CorsixTH
 %%DATADIR%%/Lua/base_config.lua
 %%DATADIR%%/Lua/calls_dispatcher.lua
 %%DATADIR%%/Lua/class.lua
+%%DATADIR%%/Lua/command.lua
+%%DATADIR%%/Lua/command_stack.lua
+%%DATADIR%%/Lua/commands/compound.lua
+%%DATADIR%%/Lua/commands/set_map_cell.lua
+%%DATADIR%%/Lua/commands/set_map_cell_flags.lua
 %%DATADIR%%/Lua/config_finder.lua
 %%DATADIR%%/Lua/diagnosis/diag_blood_machine.lua
 %%DATADIR%%/Lua/diagnosis/diag_cardiogram.lua
@@ -343,6 +350,7 @@ bin/CorsixTH
 @dirrm %%DATADIR%%/Lua/dialogs/fullscreen
 @dirrm %%DATADIR%%/Lua/dialogs
 @dirrm %%DATADIR%%/Lua/diagnosis
+@dirrm %%DATADIR%%/Lua/commands
 @dirrm %%DATADIR%%/Lua
 @dirrm %%DATADIR%%/Levels
 @dirrm %%DATADIR%%/Bitmap
