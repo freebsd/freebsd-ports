@@ -1,0 +1,77 @@
+>From 61b79e34bc57df0aa0c8086bd86f4c8818618d0e Mon Sep 17 00:00:00 2001
+From: Richard Sandiford <rdsandiford@googlemail.com>
+Date: Sat, 4 May 2013 15:01:31 +0100
+Subject: [PATCH] target-mips: Fix accumulator arguments to gen_helper_dmult(u)
+
+gen_muldiv was passing int accumulator arguments directly
+to gen_helper_dmult(u).  This patch fixes it to use TCGs,
+via the gen_helper_0e2i wrapper.
+
+Fixes an --enable-debug-tcg build failure reported by Juergen Lock.
+
+Signed-off-by: Richard Sandiford <rdsandiford@googlemail.com>
+---
+ target-mips/helper.h    | 4 ++--
+ target-mips/op_helper.c | 8 ++++----
+ target-mips/translate.c | 4 ++--
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/target-mips/helper.h b/target-mips/helper.h
+index cfe98f1..7aa5f79 100644
+--- a/target-mips/helper.h
++++ b/target-mips/helper.h
+@@ -24,8 +24,8 @@ DEF_HELPER_FLAGS_1(clz, TCG_CALL_NO_RWG_SE, tl, tl)
+ #ifdef TARGET_MIPS64
+ DEF_HELPER_FLAGS_1(dclo, TCG_CALL_NO_RWG_SE, tl, tl)
+ DEF_HELPER_FLAGS_1(dclz, TCG_CALL_NO_RWG_SE, tl, tl)
+-DEF_HELPER_4(dmult, void, env, int, tl, tl)
+-DEF_HELPER_4(dmultu, void, env, int, tl, tl)
++DEF_HELPER_4(dmult, void, env, tl, tl, int)
++DEF_HELPER_4(dmultu, void, env, tl, tl, int)
+ #endif
+ 
+ DEF_HELPER_3(muls, tl, env, tl, tl)
+diff --git a/target-mips/op_helper.c b/target-mips/op_helper.c
+index c054300..01df687 100644
+--- a/target-mips/op_helper.c
++++ b/target-mips/op_helper.c
+@@ -268,14 +268,14 @@ target_ulong helper_mulshiu(CPUMIPSState *env, target_ulong arg1,
+ }
+ 
+ #ifdef TARGET_MIPS64
+-void helper_dmult(CPUMIPSState *env, int acc, target_ulong arg1,
+-                  target_ulong arg2)
++void helper_dmult(CPUMIPSState *env, target_ulong arg1,
++                  target_ulong arg2, int acc)
+ {
+     muls64(&(env->active_tc.LO[acc]), &(env->active_tc.HI[acc]), arg1, arg2);
+ }
+ 
+-void helper_dmultu(CPUMIPSState *env, int acc, target_ulong arg1,
+-                   target_ulong arg2)
++void helper_dmultu(CPUMIPSState *env, target_ulong arg1,
++                   target_ulong arg2, int acc)
+ {
+     mulu64(&(env->active_tc.LO[acc]), &(env->active_tc.HI[acc]), arg1, arg2);
+ }
+diff --git a/target-mips/translate.c b/target-mips/translate.c
+index 9ed6477..8205456 100644
+--- a/target-mips/translate.c
++++ b/target-mips/translate.c
+@@ -2777,11 +2777,11 @@ static void gen_muldiv(DisasContext *ctx, uint32_t opc,
+         opn = "ddivu";
+         break;
+     case OPC_DMULT:
+-        gen_helper_dmult(cpu_env, acc, t0, t1);
++        gen_helper_0e2i(dmult, t0, t1, acc);
+         opn = "dmult";
+         break;
+     case OPC_DMULTU:
+-        gen_helper_dmultu(cpu_env, acc, t0, t1);
++        gen_helper_0e2i(dmultu, t0, t1, acc);
+         opn = "dmultu";
+         break;
+ #endif
+-- 
+1.8.1.4
+
