@@ -1,0 +1,11 @@
+--- /dev/null	2013-05-05 14:11:00.000000000 +0900
++++ helper/Makefile	2013-05-05 14:14:52.000000000 +0900
+@@ -0,0 +1,8 @@
++# $FreeBSD$
++
++PROG=	egg-helper
++SRCS=	egg-helper.c
++
++MAN=
++
++.include <bsd.prog.mk>

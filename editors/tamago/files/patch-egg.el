@@ -1,11 +1,14 @@
---- egg.el.orig	2013-04-23 16:13:43.000000000 +0900
-+++ egg.el	2013-04-23 16:15:26.000000000 +0900
-@@ -167,16 +167,17 @@
+--- egg.el.orig	2013-05-05 14:02:05.000000000 +0900
++++ egg.el	2013-05-05 14:02:05.000000000 +0900
+@@ -167,16 +167,22 @@
  	  (setq egg-modefull-mode t)
  	  (its-define-select-keys egg-modefull-map))
        (setq egg-modeless-mode t))
 -    (setq inactivate-current-input-method-function 'egg-mode)
-+    (setq deactivate-current-input-method-function 'egg-mode)
++    (set (if (boundp 'deactivate-current-input-method-function)
++	     'deactivate-current-input-method-function
++	   'inactivate-current-input-method-function)
++	 'egg-mode)
      (setq describe-current-input-method-function 'egg-help)
 -    (make-local-hook 'input-method-activate-hook)
 +    (if (fboundp 'make-local-hook)
@@ -17,16 +20,21 @@
  
  (defun egg-exit-from-minibuffer ()
 -  (inactivate-input-method)
-+  (deactivate-input-method)
++  (if (boundp 'deactivate-input-method)
++      deactivate-input-method
++    inactivate-input-method)
    (if (<= (minibuffer-depth) 1)
        (remove-hook 'minibuffer-exit-hook 'egg-exit-from-minibuffer)))
  
-@@ -184,7 +185,7 @@
+@@ -184,7 +190,10 @@
  
  (defun egg-self-insert-char ()
    (interactive)
 -  (its-start last-command-char (and (eq last-command 'egg-use-context)
-+  (its-start last-command-event (and (eq last-command 'egg-use-context)
++  (its-start (if (boundp 'last-command-event)
++		 last-command-event
++	       last-command-char)
++	     (and (eq last-command 'egg-use-context)
  				    egg-context)))
  
  (defun egg-remove-all-text-properties (from to &optional object)

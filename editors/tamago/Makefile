@@ -3,7 +3,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs
+MAKE_JOBS_SAFE=	yes
 PLIST_SUB=	ELISPDIR="${EMACS_VERSION_SITE_LISPDIR}"
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		ChangeLog.2000-2001 PROBLEMS README.ja.txt TODO \
@@ -46,7 +47,9 @@ pre-configure:
 	    ${WRKSRC}/configure
 
 post-build:
-	cd ${WRKSRC}/helper && ${MAKE} egg-helper
+	cd ${WRKSRC}/helper && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} egg-helper
 	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${WRKSRC}/changelog.Debian
 	${INSTALL_DATA} ${WRKSRC}/debian/README.Debian ${WRKSRC}
 
