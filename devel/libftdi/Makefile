@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libftdi
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	o.davydenko@gmail.com
-COMMENT=	Library (using libusb) to talk to FTDI chips
+COMMENT=	A library (using libusb) to talk to FTDI chips
 
-OPTIONS_DEFINE=	BOOST
+OPTIONS_DEFINE+=	BOOST PYTHON
+BOOST_DESC=		Build with boost
+PYTHON_DESC=		Python bindings
 
 USE_AUTOTOOLS=		autoconf libtool automake
 GNU_CONFIGURE=		yes
@@ -26,10 +27,17 @@ PORTDOCS=		COPYING.LIB ChangeLog README
 PLIST_SUB+=		BOOST=""
 CONFIGURE_ARGS+=	--with-boost
 CXXFLAGS+=		"-I${LOCALBASE}/include"
-LIB_DEPENDS+=		boost_system:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		boost_system.4:${PORTSDIR}/devel/boost-libs
 .else
 PLIST_SUB+=		BOOST="@comment "
 CONFIGURE_ARGS+=	--without-boost
+.endif
+.if ${PORT_OPTIONS:MPYTHON}
+PLIST_SUB+=		PYTHON=""
+CONFIGURE_ARGS+=	--enable-python-binding
+USE_PYTHON=		yes
+.else
+PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
