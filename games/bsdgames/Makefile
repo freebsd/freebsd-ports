@@ -1,9 +1,5 @@
-# Ports collection makefile for:  games
-# Date created:			  20 Nov 2002
-# Whom:				  Mark Murray <markm@FreeBSD.org>
-#
+# Created by: Mark Murray <markm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdgames
 PORTVERSION=	2.4
@@ -82,6 +78,12 @@ SGID_BINARIES=	atc battlestar canfield/canfield cribbage hack phantasia \
 		robots sail snake/snake
 
 post-patch:
+	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" \
+		${WRKSRC}/backgammon/teachgammon/Makefile \
+		${WRKSRC}/canfield/cfscores/Makefile \
+		${WRKSRC}/snake/snscore/Makefile \
+		${WRKSRC}/fortune/unstr/Makefile \
+		${WRKSRC}/primes/Makefile
 	@for f in ${SHAREPATH_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share/games|g' \
 			${WRKSRC}/$${f}; \
