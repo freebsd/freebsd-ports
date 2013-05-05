@@ -25,6 +25,8 @@ PYDISTUTILS_EGGINFODIR=	${PREFIX}/lib/scons-${PORTVERSION}
 
 PLIST_SUB+=	SCONS_VER=${PORTVERSION}
 
+USE_PYTHON=	-2.7
+
 .include <bsd.port.pre.mk>
 
 .if defined (NO_INSTALL_MANPAGES)
