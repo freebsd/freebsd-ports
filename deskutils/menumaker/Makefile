@@ -6,7 +6,7 @@ PORTVERSION=	0.99.7
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/MenuMaker/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
 
 USE_PYTHON=	yes
