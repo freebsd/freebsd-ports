@@ -1,0 +1,15 @@
+===========================================================================
+Installation tips:
+
+You can find an emacs mode for Erlang here:
+
+    %%LOCALBASE%%/lib/erlang/lib/tools-%%TOOLS_VSN%%/emacs
+
+You may wish to add the following line to /etc/manpath.config:
+
+OPTIONAL_MANPATH	%%LOCALBASE%%/lib/erlang/man
+
+To use this runtime port for development or testing, just prepend
+its binary path ("/usr/local/lib/erlang15/bin") to your PATH variable.
+
+===========================================================================
