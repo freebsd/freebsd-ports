@@ -1,10 +1,9 @@
 # Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#   $MCom: ports/misc/shared-mime-info/Makefile,v 1.16 2009/11/28 05:59:02 mezz Exp $
+#   $MCom: ports/trunk/misc/shared-mime-info/Makefile 18394 2013-04-26 21:29:28Z kwm $
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -19,7 +18,6 @@ USES=		pathfix pkgconfig gettext
 USE_GNOME=	glib20 libxml2 intltool intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		update-mime-database.1
 
