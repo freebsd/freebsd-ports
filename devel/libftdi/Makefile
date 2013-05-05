@@ -6,7 +6,7 @@ PORTVERSION=	0.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
-MAINTAINER=	o.davydenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library (using libusb) to talk to FTDI chips
 
 OPTIONS_DEFINE+=	BOOST PYTHON
