@@ -21,6 +21,10 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 OPTIONS_DEFINE=	XULRUNNER
 XULRUNNER_DESC=	Xulrunner as JavaScript engine
 
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
