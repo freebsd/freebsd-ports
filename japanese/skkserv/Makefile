@@ -1,13 +1,9 @@
-# New ports collection makefile for:	skkserv
-# Date created:		31 Oct 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	skkserv
 PORTVERSION=	9.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
@@ -20,8 +16,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo
 USE_RC_SUBR=	skkserv
 WRKSRC=		${WRKDIR}/skk-${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-jisyo=${SKKJISYO} \
+		--libexecdir=${PREFIX}/sbin
 MAKE_ARGS=	SUBDIRS='skkserv'
-CONFIGURE_ARGS+=	--with-jisyo=${SKKJISYO} --libexecdir=${PREFIX}/sbin
 PLIST_FILES=	sbin/skkserv
 USERS=		skkserv
 GROUPS=		skkserv
@@ -30,6 +27,6 @@ SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/skkserv/skkserv ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/skkserv/skkserv ${PREFIX}/sbin
 
 .include <bsd.port.mk>
