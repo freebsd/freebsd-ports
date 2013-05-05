@@ -1,3 +1,0 @@
-The library is a bonobo and gnomevfs wrapper for libgsf, providing a high level
-API for GNOME applications to access and exchange various structured file
-formats.

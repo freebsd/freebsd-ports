@@ -1001,7 +1001,6 @@
     SUBDIR += libglademm24
     SUBDIR += libgpc
     SUBDIR += libgsf
-    SUBDIR += libgsf-gnome
     SUBDIR += libgta
     SUBDIR += libgtop
     SUBDIR += libgutenfetch
@@ -3536,7 +3535,6 @@
     SUBDIR += py-krosspython
     SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
-    SUBDIR += py-libgsf
     SUBDIR += py-liblarch
     SUBDIR += py-ll-core
     SUBDIR += py-lock_file
