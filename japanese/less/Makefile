@@ -1,12 +1,12 @@
 # Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 # $FreeBSD$
 
-PORTNAME=	less+iso
+PORTNAME=	less
 PORTVERSION=	382.262
 PORTREVISION=	3
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+MASTER_SITES=	LOCAL/nork
+PKGNAMESUFFIX=	+iso
 DISTNAME=	less-${PORTVERSION:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		regex_cs-lwp9k.shar.gz
@@ -27,13 +27,18 @@ COMMENT=	Less + zcat + ISO-2022 + UTF-8 - a pager similar to more and pg
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
-MAN1=		jless.1 jlesskey.1
-DOCSDIR=	${PREFIX}/share/doc/less
+MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \
 		README.regex README.regex.jp README.ext.jp
+PLIST_FILES=	bin/jless bin/jlesskey bin/jlessecho
+
+MAN1=		jless.1 jlesskey.1
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	cd ${WRKDIR} && \
@@ -42,8 +47,8 @@ post-extract:
 			README.lesw.euc ${WRKSRC}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 

@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/jless
-bin/jlesskey
-bin/jlessecho
