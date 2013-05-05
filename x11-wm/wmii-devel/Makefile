@@ -18,7 +18,6 @@ LATEST_LINK=	${PORTNAME}-devel
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xrandr xrender xinerama xft
-USE_GMAKE=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
