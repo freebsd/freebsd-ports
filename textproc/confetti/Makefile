@@ -9,7 +9,7 @@ MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Configuration file parser generator
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
