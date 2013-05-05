@@ -19,7 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if defined(.PARSEDIR)
-USE_GAME=	yes
+USE_GMAKE=	yes
 .endif
 
 DESKTOP_ENTRIES=	"GL-117" \
