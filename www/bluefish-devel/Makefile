@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bluefish-devel
-# Date created:		2009-10-03
-# Whom:			Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bluefish
 PORTVERSION=	1.3.7
@@ -25,13 +21,6 @@ INSTALLS_ICONS=	yes
 
 DATADIR=	share/${PORTNAME}-unstable
 
-.if !defined(WITHOUT_WEBLINT)
-RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
-.endif
-.if defined(WITH_TIDY)
-RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
-.endif
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
@@ -45,6 +34,15 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--without-gnome2_4-appreg \
 		--with-icon-path=${PREFIX}/share/pixmaps
 
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_WEBLINT)
+RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
+.endif
+.if defined(WITH_TIDY)
+RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
+.endif
+
 # Turns debugging output on
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debugging-output
@@ -54,7 +52,21 @@ CONFIGURE_ARGS+=	--with-debugging-output
 CONFIGURE_ARGS+=	--disable-splash-screen
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
 MAN1=		bluefish-unstable.1
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -70,19 +82,5 @@ pre-everything::
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/mime
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.endif
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.else
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
-.endif
 
 .include <bsd.port.post.mk>

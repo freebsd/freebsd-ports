@@ -40,23 +40,18 @@ WEBLINT_DESC=	Include Weblint syntax and style checker
 
 OPTIONS_DEFAULT=	WEBLINT
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debugging-output
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
+PLIST_SUB+=		NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
-.else
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
@@ -65,6 +60,12 @@ RUN_DEPENDS+=	tidy4:${PORTSDIR}/www/tidy
 
 .if ${PORT_OPTIONS:MWEBLINT}
 RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
 .endif
 
 pre-install:
