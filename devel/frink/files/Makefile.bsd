@@ -4,6 +4,6 @@ CFLAGS+=-I${.CURDIR}
 
 BINDIR=	${PREFIX}/bin
 MANDIR=	${PREFIX}/man/man
-NOMAN=	regretfully
+NO_MAN=	regretfully
 
 .include <bsd.prog.mk>
