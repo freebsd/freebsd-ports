@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130507:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle setting correct shebang to scripts
+
+  By default it will fix bash, perl, php, ruby and python on all files specified
+  in the SHEBANG_FILES macro (glob pattern relative to ${WRKSRC})
+
+  Paths can be customized, and number of languages supported can be extended.
+
 20130506:
 AUTHOR: bapt@FreeBSD.org
 
