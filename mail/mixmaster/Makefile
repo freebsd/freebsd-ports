@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	mixmaster
-# Date created:		27 November 2003
-# Whom:                 Meyer Wolfsheim
-#
+# Created by: Meyer Wolfsheim
 # $FreeBSD$
-#
 
 PORTNAME=	mixmaster
 PORTVERSION=	2.9.1
@@ -20,8 +16,8 @@ COMMENT=	A cryptographically secure anonymous remailer
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
+USES=		ncurses
 USE_PERL5=	yes
-USE_NCURSES=	yes
 USE_OPENSSL=	yes
 .if !exists(/usr/include/openssl/idea.h)
 WITH_OPENSSL_PORT=	yes

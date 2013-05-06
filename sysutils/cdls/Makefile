@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdls
-# Date created:	13 april 2012
-# Whom:		Hans de Hartog <hans@dehartog.nl>
-#
+# Created by: Hans de Hartog <hans@dehartog.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	cdls
 PORTVERSION=	4.2
@@ -15,9 +11,11 @@ COMMENT=	A curses based file manager for system managers
 
 PLIST_FILES=	bin/cdls
 
-USE_NCURSES=	yes
+USES=		ncurses
 
-.if defined(WITH_NCURSES_BASE)
+.include <bsd.port.pre.mk>
+
+.if ${NCURSESBASE} == /usr
 # no need to use ncurses-config if we use ncurses from the base system
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
@@ -25,4 +23,4 @@ CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

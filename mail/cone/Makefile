@@ -1,9 +1,5 @@
-# ports collection Makefile for: cone
-# Whom:		Matthias Andree <matthias.andree@gmx.de>
-# Date created:	2003-06-19
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	cone
 PORTVERSION=	0.90
@@ -23,13 +19,12 @@ BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_FAM=	yes
-USES=		gettext iconv
+USES=		gettext iconv ncurses
 USE_GNOME=	libxml2
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_NCURSES=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-C --without-db --with-certdb=${PREFIX}/share/cone/rootcerts --prefix=${PREFIX} --exec-prefix=${PREFIX}

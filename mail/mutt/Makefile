@@ -168,7 +168,7 @@ LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 
 .if ${PORT_OPTIONS:NCURSES}
-USE_NCURSES=	yes
+USES=		ncurses
 .endif
 
 .if ! ${PORT_OPTIONS:MSGMLFORMAT} || ! ${PORT_OPTIONS:MXML} || !defined(XML_USED) \

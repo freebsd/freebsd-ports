@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	READLINE
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 CONFIGURE_ARGS+=	--with-readline
 .else
 MAKE_ARGS+=	CFLAGS="$(CFLAGS) -static"

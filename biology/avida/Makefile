@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS
 
-USE_NCURSES=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource ncurses
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*

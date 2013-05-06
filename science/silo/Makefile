@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=	QT4
 
 NO_LATEST_LINK=	yes
 
-USE_READLINE=	yes
+USES=		readline
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static

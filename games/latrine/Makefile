@@ -1,9 +1,5 @@
-# New ports collection makefile for:	latrine
-# Date created:		Sun Feb 18 01:13:42 CET 2007
-# Whom:			Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	latrine
 PORTVERSION=	1.0.0
@@ -22,8 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_CSTD=	gnu89
 USE_SQLITE=	3
 USE_PERL5_BUILD=yes
-USE_NCURSES=	yes
-USES=		gettext
+USES=		gettext ncurses
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

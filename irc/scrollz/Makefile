@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ScrollZ
-# Date created:		10 Aug 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scrollz
 PORTVERSION=	2.2.2
@@ -16,11 +12,10 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 MAINTAINER=	mdv@unsavoury.net
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
-USES=		iconv
+USES=		iconv ncurses
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp --enable-iconv
-USE_NCURSES=	yes
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
 

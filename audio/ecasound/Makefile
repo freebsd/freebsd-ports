@@ -22,7 +22,7 @@ AUDIOFILE_DESC=	Enable libaudiofile support
 LO_DESC=	Enable liblo support
 OIL_DESC=	Enable liboil support
 
-USE_READLINE=	yes
+USES=		readline
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-liblilv \

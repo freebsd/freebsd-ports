@@ -15,10 +15,9 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	autoconf libltdl
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext ncurses
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_NCURSES=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 

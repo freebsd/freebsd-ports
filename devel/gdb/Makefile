@@ -65,11 +65,11 @@ CONFIGURE_ARGS+=	--with-system-readline
 
 .if ${PORT_OPTIONS:MBASE_READLINE}
 CFLAGS+=	-D_rl_echoing_p=readline_echoing_p
-USE_READLINE=	base
+USES+=		readline
 .endif
 
 .if ${PORT_OPTIONS:MPORT_READLINE}
-USE_READLINE=	port
+USES+=		readline:port
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

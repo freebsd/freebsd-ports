@@ -16,8 +16,8 @@ LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
+USES=		ncurses
 USE_PYTHON=	2.5+
-USE_NCURSES=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyTone
 

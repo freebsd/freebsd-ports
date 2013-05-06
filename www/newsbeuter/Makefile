@@ -18,11 +18,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext ncurses
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
 USE_GNOME=	libxml2
-USE_NCURSES=	yes
 
 MAN1=	newsbeuter.1 podbeuter.1
 

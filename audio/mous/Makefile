@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mous
-# Date created:			15 Jan 2012
-# Whom:					Yanhui Shen <shen.elf@gmail.com>
-#
+# Created by: Yanhui Shen <shen.elf@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mous
 PORTVERSION=	1.1a
@@ -42,10 +38,6 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800067
-BROKEN=		Does not compile on 7.x: Requires wcscasecmp(3)
-.endif
-
 .if ${PORT_OPTIONS:MSDK}
 CMAKE_ARGS+=	-DWithHeadFiles=1
 PLIST_SUB+=	SDK=""
@@ -62,7 +54,7 @@ CMAKE_ARGS+=	-DWithAssembly=0
 .endif
 
 .if ${PORT_OPTIONS:MNCURSES}
-USE_NCURSES=	yes
+USES+=		ncurses
 CMAKE_ARGS+=	-DWithFrontendNcurses=1
 PLIST_SUB+=	NCURSES=""
 .else

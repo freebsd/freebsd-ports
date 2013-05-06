@@ -20,8 +20,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		nettle:${PORTSDIR}/security/nettle \
 		p11-kit:${PORTSDIR}/security/p11-kit
 
-USES=		pkgconfig
-USE_NCURSES=	yes
+USES=		pkgconfig ncurses
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -36,7 +36,7 @@ PLIST_SUB=	VER="${PORTVERSION}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 PLIST_SUB+=	READLINE=""
 .else
 CONFIGURE_ENV+=	ac_cv_lib_readline_readline=no

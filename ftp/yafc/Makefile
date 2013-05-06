@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--without-gettext
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 .else
 CONFIGURE_ARGS+=	--without-readline
 .endif

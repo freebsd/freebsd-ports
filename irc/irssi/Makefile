@@ -13,11 +13,10 @@ LIB_DEPENDS=	glib-2:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		pkgconfig
+USES=		pkgconfig ncurses
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_NCURSES=	yes
 WANT_PERL=	yes
 
 MAN1=		irssi.1

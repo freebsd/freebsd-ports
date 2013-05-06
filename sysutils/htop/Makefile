@@ -23,8 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="-lexecinfo"
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
+USES=		ncurses
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
-USE_NCURSES=	yes
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
 USE_PYTHON_BUILD=	yes

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	sudoku
-# Date created:			Feb 27, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sudoku
 PORTVERSION=	1.0.2
@@ -16,14 +11,16 @@ MAINTAINER=	sterling@camdensoftware.com
 COMMENT=	Console based Sudoku games
 
 USE_BZIP2=	yes
-USE_NCURSES=	yes
+USES=		ncurses
 PLIST_FILES=	bin/sudoku \
 		share/sudoku/template
 PLIST_DIRS=	share/sudoku
 
 MAN6=	sudoku.6
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -39,7 +36,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/template ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/sudoku.html ${DOCSDIR}
 .endif

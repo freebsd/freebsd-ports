@@ -30,10 +30,9 @@ LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
-USES=			iconv
+USES=			iconv ncurses
 USE_BINUTILS=		yes
 USE_GCC=		4.6+
-USE_NCURSES=		yes
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

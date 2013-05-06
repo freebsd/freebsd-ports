@@ -7,13 +7,12 @@ CATEGORIES=	devel
 MASTER_SITES=	http://main.metaprl.org/download/omake/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A flexible build system
+COMMENT=	Flexible build system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C|-.*||}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
-USE_NCURSES=	yes
-USE_READLINE=	yes
+USES=		ncurses readline
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc

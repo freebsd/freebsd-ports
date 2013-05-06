@@ -21,8 +21,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
 USE_RC_SUBR=	cego
 
-USE_NCURSES=	yes
-USE_READLINE=	yes
+USES=		ncurses readline
 
 USERS=	cego
 GROUPS=	cego
