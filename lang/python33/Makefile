@@ -57,7 +57,7 @@ NLS_DESC=	Enable Gettext support for the locale module
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 # XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
 #LDFLAGS+=	"-L${LOCALBASE}/lib"
 #CFLAGS+=	"-I${LOCALBASE}/include"
