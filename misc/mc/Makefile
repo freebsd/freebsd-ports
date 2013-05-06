@@ -18,6 +18,8 @@ LICENSE=	GPLv3
 
 CONFLICTS=	mc-light-4*
 
+BROKEN=	does not fetch
+
 USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	glib20
@@ -39,7 +41,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/SUBDIRS = intl/SUBDIRS =/' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/saved_CPPFLAGS="-ltermcap/saved_CPPFLAGS="/' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
 CONFIGURE_ARGS+=--enable-vfs-smb --with-configdir=${LOCALBASE}/etc\
@@ -60,7 +62,7 @@ PLIST_SUB+=	NLS="@comment "
 .else
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 _MANLANG=	es hu it pl ru sr
 .endif
@@ -95,4 +97,4 @@ _MAN1=		mc.1
 _MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
