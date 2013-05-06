@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	rodent
-# Date created:				16 March 2012
-# Whom:					Jens K. Loewe <bsd@tuxproject.de>
-#
+# Created by: Jens K. Loewe <bsd@tuxproject.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rodent
 PORTVERSION=	4.8.0
@@ -35,7 +31,9 @@ PORTDOCS=	*
 
 MAN1=		fgr.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -47,10 +45,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,^\(docdir = \).*,\1${DOCSDIR},' \
 		${WRKSRC}/Build/share/Makefile.in
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

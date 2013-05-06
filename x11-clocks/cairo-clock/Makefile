@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cairo-clock
-# Date created:                2007/01/16
-# Whom:                        chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	cairo-clock
 PORTVERSION=	0.3.4
@@ -21,7 +17,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -37,7 +35,7 @@ post-patch:
 		${WRKSRC}/man/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in README NEWS AUTHORS TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
