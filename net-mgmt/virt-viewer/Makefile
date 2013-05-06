@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -14,13 +14,25 @@ BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2 \
 LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt \
 		gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc
 
+OPTIONS_DEFINE=	NLS
+
 FETCH_ARGS=	-Fpr
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 USE_GMAKE=	yes
-PLIST_SUB=	NLS=""
 
 MAN1=		remote-viewer.1 virt-viewer.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+CONFIGURE_ARGS+=	--enable-nls
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
