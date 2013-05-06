@@ -10,8 +10,6 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Formatter.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Plugin/NumberFormat.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/XMLEscape.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Reference.pod
 %%SITE_PERL%%/HTML/Template/Compiled/Token.pm
