@@ -87,8 +87,8 @@ KRB5_DESC=       Build with kerberos provider support
 NLS_DESC=	Use internationalized messages
 DTRACE_DESC=	Build with DTrace probes (server only)
 PAM_DESC=	Build with PAM Support
-LDAP_DESC=	Build with LDAP authentication support
-MIT_KRB5_DESC=	Build with MIT's kerberos support
+LDAP_DESC=	Build with LDAP authentication support (server only)
+MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
@@ -156,8 +156,8 @@ CONFIGURE_ARGS+=--with-pam
 .  endif
 
 .  if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-ldap
 .    if defined (SERVER_ONLY)
+CONFIGURE_ARGS+=--with-ldap
 USE_OPENLDAP=	yes
 .    endif
 .  endif
