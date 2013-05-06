@@ -1,0 +1,5 @@
+Xdvik is a program for displaying DVI files (generated e.g. by Troff or TeX)
+on the X window system. It is based on the regular (non-k) xdvi of the same
+version number.
+
+WWW: http://xdvi.sourceforge.net/

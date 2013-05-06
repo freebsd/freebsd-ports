@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2013-04-03 11:30:04.000000000 +0900
++++ Makefile.in	2013-05-06 04:17:09.000000000 +0900
+@@ -472,7 +472,7 @@
+ x_extra_libs = $(X_EXTRA_LIBS) $(iconv_libs)
+ xdvi_x_libs = $(x_ldflags) $(x_tool_libs) $(x_xmu_lib) -lXt \
+ 	$(X_PRE_LIBS) $(x_ext_lib) $(x_xpm_libs) -lX11 $(x_extra_libs)
+-common_ldadd = $(KPATHSEA_LIBS) $(FREETYPE2_LIBS) $(xdvi_x_libs)
++common_ldadd = $(KPATHSEA_LIBS) $(FREETYPE2_LIBS) $(xdvi_x_libs) -lpaper
+ common_dependencies = $(KPATHSEA_DEPEND) $(FREETYPE2_DEPEND)
+ libxdvi_dependencies = ${top_srcdir}/*.[ch] ${top_srcdir}/gui/*.[ch] ${top_builddir}/psheader.c
+ AM_CPPFLAGS = -I$(srcdir)/gui $(common_includes)
+@@ -532,10 +532,10 @@
+ 	xdvi.icon xdvizilla xdvizilla.1
+ CLEANFILES = psheader.c sedscript xdvi.1
+ nodist_man1_MANS = xdvi.1
+-xdvidir = $(datarootdir)/texmf-dist/xdvi
+-dvipsconfdir = $(datarootdir)/texmf-dist/dvips/config
++xdvidir = $(datarootdir)/texmf/xdvi
++dvipsconfdir = $(datarootdir)/texmf/xdvi
+ dist_xdvi_DATA = texmf/XDvi
+-pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmap
++pixmapdir = $(datarootdir)/texmf/xdvi/pixmaps
+ dist_pixmap_DATA = pixmaps/toolbar.xpm pixmaps/toolbar2.xpm
+ dist_noinst_DATA = texmf/config.xdvi
+ all: c-auto.h

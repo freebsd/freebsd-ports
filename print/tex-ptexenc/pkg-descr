@@ -1,0 +1,8 @@
+ptexenc is a useful library for Japanese pTeX (which stands for
+publishing TeX, and is an extension of TeX by ASCII Co.) and its
+surrounding tools.  ptexenc provides a better way of handling
+character encodings.
+
+ptexenc is not an official product of ASCII Co., so pTeX and other
+tools need some patches to make use of it.  Some patches are included
+within this archive.

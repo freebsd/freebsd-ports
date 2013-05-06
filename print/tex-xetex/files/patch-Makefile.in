@@ -1,0 +1,54 @@
+--- Makefile.in.orig	2013-02-27 04:00:57.000000000 +0900
++++ Makefile.in	2013-02-27 04:34:06.000000000 +0900
+@@ -56,6 +56,7 @@
+ 	euptex$(EXEEXT) pdftex$(EXEEXT) ttf2afm$(EXEEXT) \
+ 	pdftosrc$(EXEEXT) luatex$(EXEEXT) txt2zlib$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_6) aleph$(EXEEXT)
++inst_bin_PROGRAMS = xetex$(EXEEXT)
+ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_7) \
+ 	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_8) \
+ 	$(am__EXEEXT_9) $(am__EXEEXT_10) $(am__EXEEXT_11) \
+@@ -1705,7 +1706,7 @@
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = .
+ proglib = lib/lib.a
+ dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
+ nodist_man_MANS = 
+@@ -3908,7 +3909,7 @@
+ 	$(AM_V_at)$(RANLIB) libxetex.a
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
++	@list='$(inst_bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+ 	if test -n "$$list"; then \
+ 	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
+ 	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
+@@ -3938,7 +3939,7 @@
+ 
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
++	@list='$(inst_bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+ 	files=`for p in $$list; do echo "$$p"; done | \
+ 	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
+ 	      -e 's/$$/$(EXEEXT)/' \
+@@ -10379,7 +10380,7 @@
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:
+@@ -10498,7 +10499,6 @@
+ 
+ install-exec-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ install-html: install-html-recursive
+ 
+ install-html-am:

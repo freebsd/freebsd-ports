@@ -1,0 +1,77 @@
+--- Makefile.in.orig	2012-05-21 16:59:29.000000000 +0900
++++ Makefile.in	2013-05-06 07:14:34.000000000 +0900
+@@ -57,6 +57,8 @@
+ 	euptex$(EXEEXT) pdftex$(EXEEXT) ttf2afm$(EXEEXT) \
+ 	pdftosrc$(EXEEXT) luatex$(EXEEXT) txt2zlib$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_6) aleph$(EXEEXT)
++inst_bin_PROGRAMS = ptex$(EXEEXT) eptex$(EXEEXT) uptex$(EXEEXT) \
++	euptex$(EXEEXT) $(am__EXEEXT_2) $(am__EXEEXT_3)
+ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_7) \
+ 	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_8) \
+ 	$(am__EXEEXT_9) $(am__EXEEXT_10) $(am__EXEEXT_11) \
+@@ -1380,7 +1382,7 @@
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = .
+ proglib = lib/lib.a
+ dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
+ nodist_man_MANS = 
+@@ -1690,8 +1692,7 @@
+ TRIPTRAP = $(am__append_8) $(am__append_16) $(am__append_25) \
+ 	$(am__append_30) $(am__append_36) $(am__append_42) \
+ 	$(am__append_48) $(am__append_54)
+-bin_links = $(am__append_5) $(am__append_13) $(am__append_22) \
+-	$(am__append_63)
++bin_links =
+ install_exe_links = $(am__append_20) $(am__append_61)
+ uninstall_exe_links = $(am__append_21) $(am__append_62)
+ web2c = $(SHELL) ./web2c-sh $@
+@@ -2946,7 +2947,7 @@
+ 	$(RANLIB) libxetexmm.a
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
++	@list='$(inst_bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+ 	if test -n "$$list"; then \
+ 	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
+ 	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
+@@ -2974,7 +2975,7 @@
+ 
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
++	@list='$(inst_bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+ 	files=`for p in $$list; do echo "$$p"; done | \
+ 	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
+ 	      -e 's/$$/$(EXEEXT)/' `; \
+@@ -3596,8 +3597,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xetex-xetexini.Po@am__quote@
+ 
+ .c.o:
+-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $< && $(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c $<
+@@ -3610,8 +3610,7 @@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+ 
+ .c.lo:
+-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
++@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $< && $(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+@@ -9311,7 +9310,7 @@
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:

@@ -1,0 +1,5 @@
+Kpathsea is a library to do path searching.  It is used in the Web2C
+implementation of TeX and friends.  The library's fundamental purpose
+is to return a filename from a list of directories specified by the
+user, similar to what shells do when looking up program names to
+execute.

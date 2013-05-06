@@ -4308,6 +4308,8 @@
     SUBDIR += tdl
     SUBDIR += terminality
     SUBDIR += tevent
+    SUBDIR += tex-kpathsea
+    SUBDIR += tex-web2c
     SUBDIR += thrift
     SUBDIR += thunar-vcs-plugin
     SUBDIR += tide

@@ -1,0 +1,53 @@
+@comment $FreeBSD$
+%%TEXMFDISTDIR%%/source/xmltex/xmlplay/play.dtd
+%%TEXMFDISTDIR%%/tex/xmltex/base/iso-8859-1.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/utf-16.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/iso-8859-2.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/xmltex.cfg
+%%TEXMFDISTDIR%%/tex/xmltex/base/xmltex.tex
+%%TEXMFDISTDIR%%/tex/xmltex/base/langtest.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/koi8-r.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/mathml2.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/sec.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/base/windows-1250.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/config/pdfxmltex.ini
+%%TEXMFDISTDIR%%/tex/xmltex/config/xmltex.ini
+%%TEXMFDISTDIR%%/tex/xmltex/xmlplay/play.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/mlnames.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/teislides.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/fotex.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/ucharacters.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/unicode.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/teiprintslides.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/tei.xmt
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/teixml.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/dummyels.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/teixmlslides.sty
+%%TEXMFDISTDIR%%/tex/xmltex/passivetex/fotex.sty
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/readme.txt
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/manual.xsl
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/manual.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/manual.html
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testsec.tex
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/englishutf8.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/russianutf8.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testascii.cfg
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testascii.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testascii.tex
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/russiankoi8.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/manual.tex
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/englishutf16.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/portugeselatin1.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/langtest.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testsec.xml
+%%TEXMFDISTDIR%%/doc/otherformats/xmltex/xmlplay/readme
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/xmlplay
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex
+@dirrm %%TEXMFDISTDIR%%/tex/xmltex/xmlplay
+@dirrm %%TEXMFDISTDIR%%/tex/xmltex/passivetex
+@dirrm %%TEXMFDISTDIR%%/tex/xmltex/config
+@dirrm %%TEXMFDISTDIR%%/tex/xmltex/base
+@dirrm %%TEXMFDISTDIR%%/tex/xmltex
+@dirrm %%TEXMFDISTDIR%%/source/xmltex/xmlplay
+@dirrm %%TEXMFDISTDIR%%/source/xmltex
