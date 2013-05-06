@@ -2,7 +2,9 @@ TYPO3 is a free Open Source content management system for enterprise purposes
 on the web and in intranets. It offers full flexibility and extendability while
 featuring an accomplished set of ready-made interfaces, functions and modules.
 
-This version is the LTS release. It is recommended for existing
-projects and will get full support until April 2014.
+The stable LTS release (for old projects)
+This version is the Long Term Support release. It can be used for existing
+projects, and will get full support (bug fixes and security fixes) until April
+2014. Important and security related fixes will be provided until October 2014.
 
 WWW: http://typo3.org/
