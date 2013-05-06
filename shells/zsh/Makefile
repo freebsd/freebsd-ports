@@ -21,9 +21,8 @@ MAKE_JOBS_UNSAFE=	yes
 ZSH_VER=	${PORTVERSION}
 
 USE_BZIP2=	yes
-USES=		iconv
+USES=		iconv ncurses
 GNU_CONFIGURE=	yes
-USE_NCURSES=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
