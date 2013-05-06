@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ami
-# Date created:		05 Jun 1999
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: CHOI Junho <cjh@kr.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ami
 PORTVERSION=	1.2.3
@@ -26,7 +22,9 @@ USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -46,7 +44,7 @@ post-build:
 	${CAT} ${DISTDIR}/ami.dic >> ${WRKDIR}/hanja.dic
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/ami
 	( cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} )
 .endif
