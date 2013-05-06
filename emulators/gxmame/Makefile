@@ -15,7 +15,7 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USES=        pathfix
+USES=		pathfix
 USE_GNOME=	gtk20 intlhack gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -23,11 +23,13 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-xmame-dir=${LOCALBASE}/share/xmame
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
 MAN6=		gxmame.6

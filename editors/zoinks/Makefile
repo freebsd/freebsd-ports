@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zoinks
-# Date created:				26 July 2003
-# Whom:					Mike Lockwood <mike@mikelockwood.com>
-#
+# Created by: Mike Lockwood <mike@mikelockwood.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zoinks
 PORTVERSION=	0.3.7
@@ -12,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 
 MAINTAINER=	mike@mikelockwood.com
-COMMENT=	An X11 programmer's editor and development environment
+COMMENT=	X11 programmer's editor and development environment
 
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib
@@ -21,16 +17,18 @@ CONFIGURE_ARGS+=	--enable-imlib
 CONFIGURE_ARGS+=	--disable-imlib
 .endif
 
-.if !defined(WITHOUT_NLS)
+USE_XORG=	xpm
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-USE_XORG=	xpm
-GNU_CONFIGURE=	yes
 
 pre-everything::
 	@${ECHO_MSG} ""
