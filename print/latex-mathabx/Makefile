@@ -14,12 +14,8 @@ DISTFILES=	mathabx${EXTRACT_SUFX} abxtype1${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Math series, aka mathabx MetaFont fontset for TeX/LaTeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-
 USE_ZIP=	YES
+USE_TEX=	tetex
 NO_BUILD=	YES
 PLIST_SUB=	TEXMFLOCALDIR=${TEXMFLOCALDIR} \
 		MKTEXLSR=${MKTEXLSR} \

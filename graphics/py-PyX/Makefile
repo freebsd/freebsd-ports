@@ -12,10 +12,9 @@ COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
-
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
+USE_TEX=	tetex
 
 OPTIONS_DEFINE=		T1CODE KPATHSEA
 OPTIONS_DEFAULT=	T1CODE KPATHSEA
@@ -35,7 +34,6 @@ PLIST_SUB+=	T1CODE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MKPATHSEA}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	KPATHSEA=""
 .else

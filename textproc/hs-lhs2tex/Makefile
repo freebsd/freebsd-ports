@@ -13,9 +13,7 @@ LICENSE=	GPLv2
 
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	mtl regex-compat
-
-BUILD_DEPENDS+=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS+=	mktexlsr:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
 
 STANDALONE=	yes
 EXECUTABLE=	lhs2TeX

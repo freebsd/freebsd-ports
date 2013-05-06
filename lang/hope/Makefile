@@ -15,8 +15,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpreter for HOPE applicative language
 
 .if defined(WITH_DOCS)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
-		latex2html:${PORTSDIR}/textproc/latex2html
+USE_TEX=	tetex
+BUILD_DEPENDS+= latex2html:${PORTSDIR}/textproc/latex2html
 MAKE_ARGS+=	WITH_DOCS=yes
 .else
 NOPORTDOCS=	yes

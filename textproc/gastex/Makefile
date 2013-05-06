@@ -17,9 +17,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 NO_BUILD=	yes
 
 TEXMFDIR?=	share/texmf

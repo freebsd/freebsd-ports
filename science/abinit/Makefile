@@ -32,8 +32,8 @@ CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
 ALL_TARGET=	all libabinit
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base	\
-		dvips:${PORTSDIR}/print/dvipsk-tetex	\
+USE_TEX=	tetex
+BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex	\
 		gm4:${PORTSDIR}/devel/m4		\
 		markdown:${PORTSDIR}/textproc/markdown
 USE_GHOSTSCRIPT_BUILD=	yes

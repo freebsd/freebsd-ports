@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	support/${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX documents to HTML
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex \
+BUILD_DEPENDS=	${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -24,6 +23,7 @@ CONFLICTS=	ja-latex2html-[0-9]*
 
 USE_PERL5=		yes
 USE_GHOSTSCRIPT=	yes
+USE_TEX=		tetex
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \

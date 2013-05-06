@@ -51,9 +51,9 @@ PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
 		GDCM_SO="${GDCM_SO}"
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-    		pdfopt:${PORTSDIR}/print/ghostscript9 \
-   		pdflatex:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
+USE_GHOSTSCRIPT=	yes
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 		-DGDCM_INSTALL_MAN_DIR:STRING=${MAN1PREFIX}/man \
 		-DGDCM_INSTALL_DOC_DIR:STRING=${DOCSDIR}

@@ -14,8 +14,7 @@ COMMENT=	Computer algebra system by Bernard Parisse
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
+BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
@@ -30,6 +29,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xcursor xft xi
+USE_TEX=	tetex
 USE_LDCONFIG=	yes
 USES=		gettext
 MAKE_JOBS_SAFE=	yes

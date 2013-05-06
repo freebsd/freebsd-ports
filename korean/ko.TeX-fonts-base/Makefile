@@ -15,9 +15,7 @@ DISTNAME=	ko.tex-unfonts-base-20070927
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX base fonts
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-
+USE_TEX=	tetex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes

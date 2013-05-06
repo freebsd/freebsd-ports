@@ -14,17 +14,12 @@ DISTNAME=	vftool-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Virtual fonts for NTT JTeX
 
-BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
+BUILD_DEPENDS= ${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
 		jtex:${PORTSDIR}/japanese/texfamily
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
+RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
 		jtex:${PORTSDIR}/japanese/texfamily
 
+USE_TEX=	tetex
 MAKE_ENV=	JTEXTFMDIR=${LOCALBASE}/${TEXMFLOCALDIR}/fonts/tfm/muling/nttsub \
 		PTEXTFMDIR=${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex
 

@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no
 
 .if !defined(WITHOUT_LATEX_GS)
 USE_GHOSTSCRIPT_RUN=	yes
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+USE_TEX=	tetex
 .endif
 
 .if !defined(WITHOUT_X_WINDOWS)

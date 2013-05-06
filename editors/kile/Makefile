@@ -14,8 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		identify:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick
 
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
@@ -27,6 +26,7 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
+USE_TEX=	tetex
 
 OPTIONS_DEFINE=	KPDF
 OPTIONS_DEFAULT=	KPDF

@@ -17,9 +17,7 @@ DISTNAME=	${PORTNAME}-0-2
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Creating dynamic online presentations with LaTeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
 		MKTEXLSR=${MKTEXLSR}
 

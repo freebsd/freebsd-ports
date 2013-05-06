@@ -15,7 +15,6 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A document preparation system that allows concurrent publication
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		latex:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -23,6 +22,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
+USE_TEX=	tetex
 
 FIND_DIRS=	-type d
 FIND_DATA=	-type f -not \( -name "*.orig" -or -name "*.bak" \)

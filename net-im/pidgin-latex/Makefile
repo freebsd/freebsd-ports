@@ -18,12 +18,12 @@ COMMENT=	Display LaTeX output in your IMs
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
-		latex:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
 CFLAGS+=	"-fPIC"
+USE_TEX=	tetex
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_BZIP2=	yes

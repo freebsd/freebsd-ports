@@ -30,8 +30,8 @@ RASTER_DESC=	rasterization support
 
 .if ${PORT_OPTIONS:MRASTER}
 USE_GHOSTSCRIPT_RUN=	yes
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
+USE_TEX=	tetex
+RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 

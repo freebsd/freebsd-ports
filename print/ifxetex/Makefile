@@ -15,10 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	The file ifxetex.sty tests whether XeTeX is being used
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
+USE_TEX=	tetex
 
 PLIST=		${WRKDIR}/pkg-plist
 

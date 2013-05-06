@@ -17,10 +17,10 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		ptex:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 USE_ZIP=	YES
+USE_TEX=	tetex
 NO_BUILD=	YES
 PLIST_SUB=	CLASSDIR=${CLASSDIR} TFMDIR=${TFMDIR} \
 		PLDIR=${PLDIR} MKTEXLSR=${MKTEXLSR} \

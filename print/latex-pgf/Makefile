@@ -14,11 +14,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.tds
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for TeX Portable Graphic Format
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 NO_BUILD=	YES
 USE_ZIP=	YES
+USE_TEX=	tetex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		TEXMFDIR=${TEXMFDIR}

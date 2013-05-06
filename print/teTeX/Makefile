@@ -12,12 +12,10 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A meta port for teTeX suite
 
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		latex:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super \
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 
+USE_TEX=	tetex
 OPTIONS_DEFINE=	LETTERSIZE X11
 LETTERSIZE_DESC=	Use letter size by default
 

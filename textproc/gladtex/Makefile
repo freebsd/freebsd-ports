@@ -15,9 +15,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
 
+USE_TEX=	tetex
 BINPATH=	${PREFIX}/bin
 INCPATH=	"-I${LOCALBASE}/include"
 LIBPATH=	"-L${LOCALBASE}/lib"

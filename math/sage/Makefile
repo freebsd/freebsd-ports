@@ -13,8 +13,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS= bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -33,6 +32,7 @@ USE_FORTRAN=	yes
 USE_GCC=	4.7+
 USE_TK=		yes
 USE_GMAKE=	yes
+USE_TEX=	tetex
 USES=		iconv
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}

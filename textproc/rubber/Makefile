@@ -15,13 +15,12 @@ MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper for LaTeX and friends
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	2.5+
 USE_GMAKE=	yes
+USE_TEX=	tetex
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
 		--datadir=${PYTHON_SITELIBDIR}

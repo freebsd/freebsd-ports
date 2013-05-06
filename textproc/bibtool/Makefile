@@ -16,8 +16,7 @@ DISTNAME=	BibTool-${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Command line manipulation of BibTeX files
 
-BUILD_DEPENDS=	${LOCALBASE}/include/kpathsea/tex-file.h:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}

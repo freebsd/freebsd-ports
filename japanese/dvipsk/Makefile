@@ -19,14 +19,8 @@ EXTRACT_ONLY=	${TETEX_SRC}${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
 
-BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
+BUILD_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -44,6 +38,7 @@ PLIST_SUB=	DVIPSDIR=${DVIPSDIR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		FONTSMAPDIR=${FONTSMAPDIR} \
 		UPDMAP_SYS="${UPDMAP_SYS}"
+USE_TEX=	tetex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-multiplatform \

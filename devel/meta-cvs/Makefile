@@ -37,7 +37,7 @@ PORTDOCS=	Meta-CVS-PAPER \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDFDOC} && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
 PORTDOCS+=	meta-cvs.pdf
 .endif
 

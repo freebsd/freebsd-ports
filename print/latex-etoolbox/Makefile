@@ -13,12 +13,8 @@ DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A toolbox providing programming facilities for LaTeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-
 USE_ZIP=	YES
+USE_TEX=	tetex
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
 

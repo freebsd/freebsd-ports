@@ -14,7 +14,6 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
 RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
-		teTeX>=0:${PORTSDIR}/print/teTeX \
 		ttf2pk:${PORTSDIR}/print/freetype-tools
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${LOCALBASE}/share/ttf2pt1/maps/cugb.map:${PORTSDIR}/chinese/ttf2pt1 \
@@ -22,6 +21,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
+USE_TEX=	tetex
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1

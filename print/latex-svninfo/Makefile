@@ -16,11 +16,7 @@ PKGNAMEPREFIX=	latex-
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A LaTeX package for Subversion support
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-
+USE_TEX=	tetex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
 
 TEXMFLOCAL=	share/texmf-local

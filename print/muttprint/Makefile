@@ -16,8 +16,7 @@ USE_PERL5=	yes
 PAPERSIZE=	letter
 .endif
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		psnup:${PORTSDIR}/print/psutils \
+RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
@@ -31,6 +30,7 @@ NO_BUILD=	yes
 PLIST_SUB+=	LANGINFO="@comment "
 
 REINPLACE_ARGS=	-i ""
+USE_TEX=	tetex
 USE_GMAKE=	yes
 
 MAN1=		muttprint.1

@@ -28,8 +28,8 @@ USE_PGSQL+=	server pltcl
 
 .if ${PKGNAMESUFFIX} == -www
 USE_APACHE=	22+
-RUN_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base \
-		dot:${PORTSDIR}/graphics/graphviz \
+USE_TEX=	tetex
+RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		pwgen:${PORTSDIR}/sysutils/pwgen \
 		${LOCALBASE}/libexec/apache22/mod_auth_pgsql.so:${PORTSDIR}/www/mod_auth_pgsql2
 # FIXME compile apache22 with option mod_auth_ldap

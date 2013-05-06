@@ -37,9 +37,8 @@ WITHOUT_AVRLIBCDOCS=	true
 .endif
 
 .if defined(WITH_AVRLIBCDOCS)
+USE_TEX=	tetex
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		latex:${PORTSDIR}/print/teTeX \
-		pdflatex:${PORTSDIR}/print/teTeX \
 		fig2dev:${PORTSDIR}/print/transfig \
 		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif

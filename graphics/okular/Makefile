@@ -38,7 +38,7 @@ DVI_DESC=	Support DVI files (requires teTeX)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI}
-RUN_DEPENDS+=	kpsewhich:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
 .endif
 
 .include <bsd.port.mk>

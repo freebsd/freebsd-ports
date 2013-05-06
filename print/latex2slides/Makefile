@@ -12,10 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a set of HTML/JPEG slides from a TeX or LaTeX source
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/teTeX \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
+USE_TEX=	tetex
 NO_BUILD=	yes
 PLIST_SUB=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 

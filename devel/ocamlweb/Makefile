@@ -17,8 +17,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A literate programming tool for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
+USE_TEX=	tetex
 GNU_CONFIGURE= yes
 PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		MKTEXLSR=${MKTEXLSR}

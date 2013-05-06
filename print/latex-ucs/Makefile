@@ -16,13 +16,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for using UTF-8 as input encoding
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
-
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_TEX=	tetex
 PLIST_SUB=	MKTEXLSR="${MKTEXLSR}" CLASSDIR=${CLASSDIR}
 
 TEXMFDIR=	share/texmf

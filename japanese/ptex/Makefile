@@ -22,12 +22,6 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX which supports teTeX distribution
 
-BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -37,6 +31,7 @@ CONFLICTS_INSTALL= \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
+USE_TEX=	tetex
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \

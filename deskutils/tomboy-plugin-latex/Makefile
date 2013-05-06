@@ -16,10 +16,10 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	LaTeX math plugin for Tomboy
 
 BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
-RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy \
-		latex:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_TEX=	tetex
 
 .include <bsd.port.mk>

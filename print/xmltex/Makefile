@@ -18,13 +18,9 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A non-validating XML parser, written in TeX
 
-BUILD_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-			latex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-			latex:${PORTSDIR}/print/teTeX-base
+
+USE_TEX=	tetex
 
 .include <bsd.port.pre.mk>
 

@@ -14,9 +14,8 @@ MASTER_SITES=	http://www.math.missouri.edu/~stephen/naturalmath/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Script to turn intuitively written math into latex
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-
 USE_PERL5=	yes
+USE_TEX=	tetex
 
 post-patch:
 	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/naturalmath

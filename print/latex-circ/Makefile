@@ -17,12 +17,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A LaTeX package for typesetting circuit diagrams
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-
 USE_ZIP=	yes
+USE_TEX=	tetex
 
 # We need to install in the global texmf-local directory
 PREFIX=		${LOCALBASE}

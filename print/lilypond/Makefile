@@ -9,8 +9,7 @@ MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		pdftexi2dvi:${PORTSDIR}/print/texinfo \
+BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		t1ascii:${PORTSDIR}/print/t1utils \
 		bash:${PORTSDIR}/shells/bash \
 		fontforge:${PORTSDIR}/print/fontforge \
@@ -20,8 +19,7 @@ LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		gmp:${PORTSDIR}/math/gmp \
 		freetype:${PORTSDIR}/print/freetype2
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		mftrace:${PORTSDIR}/print/mftrace \
+RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
@@ -44,6 +42,7 @@ INFO=		lilypond-notation \
 USES=		bison:build gettext
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
+USE_TEX=	tetex
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	pango

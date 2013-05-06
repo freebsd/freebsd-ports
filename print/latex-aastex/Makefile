@@ -16,10 +16,10 @@ DIST_SUBDIR=	latex
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	LaTeX class for American Astronomical Society (AAS) journals
 
-BUILD_DEPENDS=	${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX-texmf \
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
 
 USE_GHOSTSCRIPT=yes
+USE_TEX=	tetex
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

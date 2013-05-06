@@ -16,13 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X. + freetype support
 
-BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
+RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
 		${LOCALBASE}/${MINCHO}:${PORTSDIR}/japanese/font-std \
 		${LOCALBASE}/${GOTHIC}:${PORTSDIR}/japanese/font-std
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
@@ -30,6 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 DIST_SUBDIR=	xdvik
+USE_TEX=	tetex
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMFDIR:S,texmf$,,} \

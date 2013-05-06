@@ -26,7 +26,7 @@ RUN_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 BUILD_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 .endif
 
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
+USE_TEX=	tetex
 
 .if defined(WITH_MLTON)
 MAKEFILE=	mlton/Makefile

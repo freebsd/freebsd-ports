@@ -12,8 +12,7 @@ COMMENT=	Tools for manipulating fonts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_kpathsea_kpathsea_h=yes
 CONFIGURE_ARGS=	--with-kpathsea=${LOCALBASE}

@@ -17,10 +17,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A TeX to HTML translator
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_GHOSTSCRIPT_RUN=	yes
+USE_TEX=	tetex
 
 MAN1=		tth.1
 

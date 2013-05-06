@@ -14,12 +14,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
-BUILD_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
-		${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 RUN_DEPENDS+=	docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 USE_PYTHON_BUILD=	yes
+USE_TEX=	tetex
 MAN1=		sgmltools-lite.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml --datadir=${PREFIX}/share

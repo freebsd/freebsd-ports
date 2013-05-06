@@ -16,8 +16,7 @@ MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
-RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
-		t1asm:${PORTSDIR}/print/t1utils \
+RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils \
 		fontforge:${PORTSDIR}/print/fontforge
 
 .if defined(WITH_AUTOTRACE)
@@ -30,6 +29,7 @@ RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 
 # Python3 ready
 USE_PYTHON=	yes
+USE_TEX=	tetex
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

@@ -16,12 +16,11 @@ COMMENT=	LaTeX equation editor
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		Magick++-config:${PORTSDIR}/graphics/ImageMagick \
-		tex:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
+		Magick++-config:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_TEX=	tetex
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 

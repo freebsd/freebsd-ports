@@ -16,11 +16,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Perl script to convert LaTeX formulas into GIFs
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
+RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 NO_BUILD=	yes
+USE_TEX=	tetex
 USE_PERL5_RUN=	yes
 
 do-install:
