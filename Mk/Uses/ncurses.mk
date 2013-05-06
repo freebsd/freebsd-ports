@@ -46,7 +46,7 @@ check-depends::
 	@${FALSE}
 .  endif
 
-NCURSESPATH=	/usr/lib:${LOCALBASE}/lib
+NCURSESRPATH=	/usr/lib:${LOCALBASE}/lib
 
 .elif ${ncurses_ARGS} == port
 NCURSESBASE=	${LOCALBASE}
@@ -69,9 +69,6 @@ NCURSES_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 					echo "$${contents}"; break; fi; done; ${ECHO_CMD}
 .    endif
 .  endif
-.else
-.error		USES=ncurses only accept 'port' and 'base' as arguments, got ${ncurses_ARGS}
-.endif
 NCURSES_INSTALLED?=
 
 .if ${NCURSES_INSTALLED} != ""
@@ -90,13 +87,17 @@ NCURSES_SHLIBVER?=	5
 
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libncurses.so.${NCURSES_SHLIBVER}:${PORTSDIR}/${NCURSES_PORT}
 RUN_DEPENDS+=		${LOCALBASE}/lib/libncurses.so.${NCURSES_SHLIBVER}:${PORTSDIR}/${NCURSES_PORT}
-NCURSESRPATH=		${LOCALBASE}/lib
+NCURSESRPATH=		${NCURSESBASE}/lib
+
+.else
+.error		USES=ncurses only accept 'port' and 'base' as arguments, got ${ncurses_ARGS}
+.endif
 
 NCURSESLIB=	${NCURSESBASE}/lib
 
 .if defined(NCURSES_RPATH)
 CFLAGS+=	-Wl,-rpath,${NCURSESRPATH}
 .endif
-LDFLAGS+=	-Wl,-rpath=${NCURSESPATH}
+LDFLAGS+=	-Wl,-rpath=${NCURSESRPATH}
 
 .endif
