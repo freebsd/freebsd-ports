@@ -38,6 +38,7 @@ post-patch:
 	    	${WRKSRC}/intltool-merge.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g ; \
 		s|-DGTK_DISABLE_DEPRECATED||g ; \
+		s|-DG_DISABLE_DEPRECATED||g ; \
 	    	s|-DGDK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \

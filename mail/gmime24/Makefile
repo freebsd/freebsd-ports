@@ -37,6 +37,10 @@ LATEST_LINK?=	${PORTNAME}24
 
 PORTDOCS=	*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/*/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
