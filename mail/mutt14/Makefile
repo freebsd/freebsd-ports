@@ -40,9 +40,8 @@ OPTIONS=	NLS "Native Language Support via gettext utilities" on \
  GSSAPI "GSSAPI (Kerberos) support" on
 
 USE_OPENSSL=	yes
-USE_NCURSES=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 .if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
@@ -221,4 +220,4 @@ post-install:
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
