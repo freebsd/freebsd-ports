@@ -1,0 +1,49 @@
+# $FreeBSD$
+
+PREFIX?=	/usr/local
+LOCALBASE?=	/usr/local
+BINDIR?=	${PREFIX}/bin
+MANDIR?=	${PREFIX}/man/man
+NO_MANCOMPRESS=
+
+CLASS=		SshAskpass
+FILES=		${CLASS}
+FILESDIR?=	${PREFIX}/lib/X11/app-defaults
+
+PROG=	x11-ssh-askpass
+
+SRCS=	drawing.c dynlist.c resources.c x11-ssh-askpass.c
+LDADD=	-lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
+CFLAGS+=-I${LOCALBASE}/include -DCSRG_BASED -DFUNCPROTO=15 -DNARROWPROTO
+MAN=	${PROG}.1
+
+${PROG}.1: x11-ssh-askpass.man.in
+	sed -e 's|@NAME@|${PROG}|' \
+		-e 's|@DATE@|September 17, 2001|'\
+		-e 's|@VERSION@|1.2.4.1|'\
+		< $? > $@
+
+${CLASS}: ${CLASS}.ad
+	cp $? $@
+
+${CLASS}.ad: ${CLASS}-default.ad
+	cp $? $@
+
+${CLASS}_ad.h:	${CLASS}.ad
+	sed -n '/^[^!]/s/.*/"&",/p' < $? >$@.tmp
+	mv $@.tmp $@
+
+${PROG}: ${CLASS}_ad.h
+CLEANFILES+=	${CLASS}_ad.h
+
+ssh-askpass: ${PROG}
+	ln -s -f $? $@
+
+beforeinstall:
+	mkdir -p ${FILESDIR}
+
+afterinstall:
+	ln -s -f ${PROG} ${BINDIR}/ssh-askpass
+	ln -s -f ${PROG}.1 ${MANDIR}1/ssh-askpass.1
+
+.include <bsd.prog.mk>
