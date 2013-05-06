@@ -16,7 +16,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
-CONFIGURE_ENV=	EMACS="no"
+CONFIGURE_ENV=	EMACS="no" LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
