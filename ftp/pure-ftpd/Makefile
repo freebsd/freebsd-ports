@@ -93,9 +93,8 @@ CONFIGURE_ARGS+=	--with-throttling
 .if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--with-tls
 # different certificate file location?
-. if ${PORT_OPTIONS:MCERTFILE}
-CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
-. endif
+CERTFILE?=      /etc/ssl/private/pure-ftpd.pem
+CONFIGURE_ARGS+=	--with-certfile=${CERTFILE}
 .endif
 
 # if mysql or ldap are disabled, enable pam
@@ -158,7 +157,7 @@ CONTRIB=	xml_python_processors.txt pure-stat.pl pure-vpopauth.pl
 
 pre-fetch:
 	@${ECHO_MSG} "You can use the following additional options:"
-	@${ECHO_MSG} "WITH_CERTFILE=/path   - Set different location of certificate file for TLS"
+	@${ECHO_MSG} "CERTFILE=/path        - Custom location of certificate file for TLS"
 	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO_MSG} "  danish, dutch, italian, brazilian-portuguese, slovak, korean, swedish,"
