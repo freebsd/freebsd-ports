@@ -3,7 +3,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	6.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
