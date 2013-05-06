@@ -6,7 +6,7 @@ $FreeBSD$
  
  export CFLAGS="-O3 -fPIC -I${INSTALL_DIR}/include"
  
-+USE_GETTEXT=yes
++USES+= gettext
 +CPPFLAGS+=" -I${INSTALL_DIR}/include"
 +LDFLAGS+=" -L${INSTALL_DIR}/lib"
 +
