@@ -13,6 +13,7 @@
     SUBDIR += R-cran-MCMCpack
     SUBDIR += R-cran-RHmm
     SUBDIR += R-cran-RSvgDevice
+    SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-bdsmatrix

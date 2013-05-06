@@ -1,0 +1,4 @@
+RcppArmadillo provides an interface from R to and from Armadillo
+by utilising the Rcpp R/C++ interface library.
+
+WWW: http://cran.r-project.org/web/packages/RcppArmadillo/
