@@ -16,7 +16,7 @@ GH_PROJECT=	atop-freebsd
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
 GH_COMMIT=	f9357ca
 
-USE_NCURSES=	yes
+USES=		ncurses
 MAKEFILE=	BSDmakefile
 MAN1=		atop.1 atopsar.1
 MAN5=		atoprc.5

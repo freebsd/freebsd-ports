@@ -73,7 +73,9 @@ USES+=	iconv
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .elif defined(WITH_NCURSES)
-WITH_NCURSES_PORT=	yes
+USES+=	ncurses:port
+.else
+USES+=	ncurses
 .endif
 .if !defined (MUTT_LITE)
 .if defined(WITH_MUTT_CYRUS_SASL)

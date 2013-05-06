@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 CONFLICTS=	weechat-devel-0.*
 
 USE_LDCONFIG=	yes
-USE_NCURSES=	yes
 USES=		cmake iconv
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
@@ -139,10 +138,12 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 .endif
 
-.if ${PORT_OPTIONS:MCOLOR256}                                      
-WITH_NCURSES_PORT=	yes                                        
+.if ${PORT_OPTIONS:MCOLOR256}
+USES+=	ncurses:port
 CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
-.endif                                                             
+.else
+USES+=	ncurses
+.endif
 
 MAN1=	weechat-curses.1
 

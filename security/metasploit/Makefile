@@ -20,11 +20,10 @@ SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 OPTIONS_DEFINE=	SVN
 
 NO_BUILD=	yes
+USES=		ncurses:port
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_BZIP2=	yes
-USE_NCURSES=	yes
-WITH_NCURSES_PORT=	yes
 
 .include <bsd.port.pre.mk>
 

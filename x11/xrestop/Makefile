@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xrestop
-# Date created:         25 Dec 2003
-# Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xrestop
 PORTVERSION=	0.4
@@ -14,10 +10,9 @@ MASTER_SITES=	http://projects.o-hand.com/sources/${PORTNAME}/
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
 
+USES=		pkgconfig ncurses
 USE_XORG=	x11 xext xrender xt xres xproto
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
-USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	XLIBS="-L${LOCALBASE}/lib -lX11"

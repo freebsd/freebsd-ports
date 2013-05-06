@@ -72,7 +72,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image
 .else
-USE_NCURSES=	yes
+USES+=		ncurses
 CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
 PLIST_SUB+=	SDL="@comment "
 .endif

@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	READLINE
 OPTIONS_DEFAULT=READLINE
 READLINE_DESC=	Enable readline support
 
-USE_NCURSES=	yes
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes
 MAKE_JOBS_SAFE=	yes
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/${LATEST_LINK}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 .else
 CONFIGURE_ARGS+=--disable-readline
 .endif

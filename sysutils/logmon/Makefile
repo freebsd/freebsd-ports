@@ -12,8 +12,8 @@ COMMENT=	Ncurses-based split window log monitoring program
 
 LICENSE=	ART10
 
+USES=		ncurses
 USE_BZIP2=	yes
-USE_NCURSES=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

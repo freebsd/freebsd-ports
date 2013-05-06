@@ -29,7 +29,7 @@ PLIST_FILES=	bin/gnucap bin/gnucap-modelgen
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 .else
 CONFIGURE_ARGS+=--with-readline=no
 .endif

@@ -15,9 +15,7 @@ OPTIONS_DEFINE=	GLADE GUILE
 OPTIONS_DEFAULT=GLADE GUILE
 
 USE_GNOME=	glib20 intltool
-USE_NCURSES=	yes
-USE_READLINE=	yes
-USES=		gettext
+USES=		gettext ncurses readline
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

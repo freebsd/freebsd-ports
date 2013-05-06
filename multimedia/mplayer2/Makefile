@@ -20,8 +20,7 @@ RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_PYTHON=	3.1+
-USES=		iconv
-USE_NCURSES=	yes
+USES=		iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 OPTIONS_DEFINE=	READLINE DOCS
 OPTIONS_DEFAULT=READLINE
 
-USES=        pathfix
+USES=		pathfix
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -34,7 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 PLIST_SUB+=	READLINE=""
 .else
 CONFIGURE_ENV+=	vl_cv_lib_readline=no

@@ -78,7 +78,7 @@ PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNCURSES}
-USE_NCURSES=	yes
+USES+=		ncurses
 PLIST_SUB+=	WITH_NCURSES=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-curses

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libcdio
-# Date created:				2004-04-04
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	libcdio
@@ -22,10 +19,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv
+USES=		pathfix pkgconfig iconv ncurses
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_NCURSES=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 USE_PERL5_BUILD=yes

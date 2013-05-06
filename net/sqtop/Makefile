@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sqtop
-# Date created:		2010-09-05
-# Whom:			Marco Steinbach <coco@webdev.c0c0.intra>
-#
+# Created by: Marco Steinbach <coco@webdev.c0c0.intra>
 # $FreeBSD$
-#
 
 PORTNAME=	sqtop
 DISTVERSION=	2011-11-01
@@ -22,7 +18,6 @@ PLIST_FILES=	bin/sqtop
 MAN1=		sqtop.1
 
 GNU_CONFIGURE=	yes
-USE_NCURSES=	yes
 
 OPTIONS_DEFINE=		NCURSES
 OPTIONS_DEFAULT=	NCURSES
@@ -31,6 +26,8 @@ OPTIONS_DEFAULT=	NCURSES
 
 .if ! ${PORT_OPTIONS:MNCURSES}
 CONFIGURE_ARGS=	--disable-ui
+.else
+USES+=		ncurses
 .endif
 
 .include <bsd.port.mk>

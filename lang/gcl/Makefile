@@ -14,12 +14,12 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 ONLY_FOR_ARCHS=	i386
 
+USES=		readline
 USE_XORG=	x11
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK_BUILD=	yes
 USE_TK=		yes
-USE_READLINE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \

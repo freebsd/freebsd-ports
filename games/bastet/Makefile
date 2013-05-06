@@ -15,7 +15,7 @@ LICENSE=	GPLv3 # (or later)
 
 LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
 
-USE_NCURSES=	yes
+USES=		ncurses
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

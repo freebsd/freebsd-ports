@@ -13,10 +13,9 @@ COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
 LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
 		fftw3:${PORTSDIR}/math/fftw3
 
-USES=		iconv
+USES=		iconv ncurses
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_NCURSES=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
@@ -35,11 +34,6 @@ OUTPUTS_DESC=	Enable outputs screen
 VISUALIZER_DESC=	Enable music visualizer screen
 
 .include <bsd.port.options.mk>
-
-.if defined(WITH_NCURSES_BASE)
-# no need to use ncurses-config if we use ncurses from the base system
-CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
-.endif
 
 PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/config \
@@ -86,6 +80,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--enable-visualizer
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${NCURSESBASE} == /usr
+# no need to use ncurses-config if we use ncurses from the base system
+CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
+.endif
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
@@ -102,4 +103,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

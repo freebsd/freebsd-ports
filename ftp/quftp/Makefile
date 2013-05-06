@@ -12,8 +12,7 @@ COMMENT=	A scriptable FTP client
 
 LICENSE=	GPLv2
 
-USE_NCURSES=	yes
-USE_READLINE=	yes
+USES=		ncurses readline
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

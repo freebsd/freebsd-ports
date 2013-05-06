@@ -16,8 +16,7 @@ OPTIONS_RADIO=	GUI
 OPTIONS_RADIO_GUI=	GTK3 GTK2 QT4
 OPTIONS_DEFAULT=	PCRE
 
-USE_NCURSES=	yes
-USES=		iconv
+USES=		iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-win32 --without-kde4

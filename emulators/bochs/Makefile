@@ -273,7 +273,7 @@ CONFIGURE_ARGS+=--disable-raw-serial
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=		readline
 CONFIGURE_ARGS+=--enable-readline
 .else
 CONFIGURE_ARGS+=--disable-readline

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tmsnc
-# Date created:				4 Apr 2007
-# Whom:					Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	tmsnc
 PORTVERSION=	0.3.2
@@ -14,7 +10,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A textbased (console) MSN client
 
 GNU_CONFIGURE=	yes
-USE_NCURSES=	yes
+USES=		ncurses
 
 PLIST_FILES=	bin/tmsnc
 

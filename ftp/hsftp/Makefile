@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--with-openssh
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-USE_READLINE=	yes
+USES+=			readline
 CONFIGURE_ARGS+=	--with-readline
 .endif
 

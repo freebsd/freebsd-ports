@@ -17,8 +17,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	UTF8
 
 GNU_CONFIGURE=	yes
+USES=		ncurses
 USE_GMAKE=	yes
-USE_NCURSES=	yes
 
 MAN1=	wyrd.1
 MAN5=	wyrdrc.5

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mangband
-# Date created:         Thu Jun 11 11:40:54 UTC 2009
-# Whom:                 driedfruit
-#
+# Created by: driedfruit
 # $FreeBSD$
-#
 
 PORTNAME=	mangband
 PORTVERSION=	1.1.2
@@ -16,31 +12,34 @@ COMMENT=	Free online multiplayer real-time roguelike game
 ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
+USES=		ncurses
 USE_GMAKE=	yes
 USE_NCURSES=	yes
 
 MAKE_ARGS=	"DATADIR=${DATADIR}"
 
-OPTIONS=	GCU "Display module GCU" On \
-		X11 "Display module X11" Off \
-		SDL "Display module SDL" Off \
+OPTIONS_DEFINE=	GCU X11 SDL
+OPTIONS_DEFAULT=	GCU X11 SDL
+GCU_DESC=	Display module GCU
+X11_DESC=	Display module X11
+SDL_DESC=	Display module SDL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GCU)
+.if ${PORT_OPTIONS:MGCU}
 CONFIGURE_ARGS+=	--with-gcu
 .else
 CONFIGURE_ARGS+=	--without-gcu
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/libX11
 CONFIGURE_ARGS+=	--with-x11
 .else
 CONFIGURE_ARGS+=	--without-x11
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 LIB_DEPENDS+=	SDL-1.2:${PORTSDIR}/devel/sdl12
 CONFIGURE_ARGS+=	--with-sdl
 .else
@@ -70,4 +69,4 @@ do-install:
 	@${CHOWN} -R root:games ${DATADIR}/*
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
