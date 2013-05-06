@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-LWPx-ParanoidAgent
-# Date created:				Tue Dec 19 17:00:41 CST 2006
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	LWPx-ParanoidAgent
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	www security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
