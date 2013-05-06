@@ -66,7 +66,7 @@ NCURSES_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 			while read contents; do \
 				ncursesprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
 				if test "$${ncursesprefix}" = "@cwd ${LOCALBASE}" ; then \
-					echo "$${contents}"; break; fi; done; ${ECHO_CMD}
+					echo "$${contents}"; break; fi; done
 .    endif
 .  endif
 NCURSES_INSTALLED?=
