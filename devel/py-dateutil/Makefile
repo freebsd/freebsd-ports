@@ -3,7 +3,7 @@
 
 PORTNAME=	dateutil
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,8 @@ PYDISTUTILS_PKGNAME=	python-dateutil
 
 # Fix incorrect permissions
 post-patch:
-	@${FIND} ${WRKSRC}/python_dateutil.egg-info -type f -exec ${CHMOD} ${SHAREMODE} {} ";"
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} ${SHAREMODE} {} ";"
+	@${REINPLACE_CMD} -e 's|import winreg|from six.moves import winreg|' ${WRKSRC}/dateutil/tzwin.py
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py
