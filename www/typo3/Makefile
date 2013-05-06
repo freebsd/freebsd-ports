@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.0.4
+PORTVERSION=	6.1.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Open Source content management system
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-USE_PHP=	ctype filter json mysql pcre session xml
+USE_PHP=	ctype filter json mysqli pcre session xml
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=52
 
@@ -72,7 +72,10 @@ USE_PHP+=	zlib
 .endif
 
 pre-install:
-	${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php.dist
+	@if [ -f ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php ]; then \
+		${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php \
+			${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php.dist; \
+	fi
 
 do-install:
 	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${PREFIX}/${TYPO3SITE}
