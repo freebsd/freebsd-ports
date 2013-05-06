@@ -23,15 +23,18 @@ LICENSE_COMB=	dual
 CONFLICTS=	perl-5.12.* perl-threaded-5.12.* \
 		perl-5.14.* perl-threaded-5.14.*
 
-OPTIONS=	DEBUGGING	"Build with debugging support"		off \
-		GDBM		"Build GDBM_File extension"		off \
-		PERL_MALLOC	"Use Perl malloc"			off \
-		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
-		THREADS		"Build threaded perl"			off \
-		PTHREAD		"Build with -pthread"			on  \
-		MULTIPLICITY	"Use multiplicity"			off \
-		SITECUSTOMIZE	"Run-time customization of @INC"	off \
-		USE_PERL	"Rewrite links in /usr/bin"		on
+OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
+		MULTIPLICITY SITECUSTOMIZE USE_PERL VENDOR_PREFIX
+OPTIONS_DEFAULT=	PERL_64BITINT PTHREAD USE_PERL
+GDBM_DESC=	GDBM_File extension
+PERL_MALLOC_DESC=	Use Perl malloc
+PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
+THREADS_DESC=		Build threaded perl
+PTHREAD_DESC=		Build with -pthread
+MULTIPLICITY_DESC=	Use multiplicity
+SITECUSTOMIZE_DESC=	Run-time customization of @INC
+USE_PERL_DESC=		Rewrite links in /usr/bin
+VENDOR_PREFIX=		Use vendor prefix
 
 PORTSCOUT=	limitw:1,even
 
@@ -65,7 +68,7 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if defined(PERL_VENDOR_PREFIX)
+.if ${PORT_OPTIONS:MVENDOR_PREFIX}
 CONFIGURE_ARGS+=	\
 	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
 	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
@@ -80,7 +83,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_ARCH=${PERL_ARCH} \
 		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
-.if defined(WITH_DEBUGGING)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-Doptimize="-g" -DDEBUGGING
 STRIP=
 STRIP_CMD=	${TRUE}
@@ -88,9 +91,9 @@ STRIP_CMD=	${TRUE}
 CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
 .endif
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	-Di_gdbm
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	-Ui_gdbm
@@ -103,13 +106,7 @@ PLIST_SUB+=	MANCONF=""
 PLIST_SUB+=	MANCONF="@comment "
 .endif
 
-.if defined(WITHOUT_PERL_MALLOC)
-.undef WITH_PERL_MALLOC
-.else
-WITH_PERL_MALLOC=	yes
-.endif
-
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 #XXX .if ${ARCH} == "amd64"
 #XXX IGNORE=	Threaded perl does not pass tests on ${ARCH}
 #XXX .endif
@@ -117,30 +114,31 @@ CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
 WITH_PTHREAD=		yes
 # it seems perl malloc has problems with threaded perl on FreeBSD
-.undef WITH_PERL_MALLOC
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+PORT_OPTIONS:=	${PORT_OPTIONS:NPERL_MALLOC}
 .else
 CONFIGURE_ARGS+=	-Dusethreads=n
 .endif
 
-.if defined(WITH_PERL_MALLOC)
+.if ${PORT_OPTIONS:MPERL_MALLOC}
 CONFIGURE_ARGS+=	-Dusemymalloc=y
 .else
 CONFIGURE_ARGS+=	-Dusemymalloc=n
 .endif
 
-.if defined(WITH_PERL_64BITINT)
+.if ${PORT_OPTIONS:MPERL_64BITINT}
 CONFIGURE_ARGS+=	-Duse64bitint
 .endif
 
-.if defined(WITH_MULTIPLICITY)
+.if ${PORT_OPTIONS:MMULTIPLICITY}
 CONFIGURE_ARGS+=	-Dusemultiplicity=y
 .endif
 
-.if defined(WITH_SITECUSTOMIZE)
+.if ${PORT_OPTIONS:MSITECUSTOMIZE}
 CONFIGURE_ARGS+=	-Dusesitecustomize
 .endif
 
-.if defined(WITH_USE_PERL)
+.if ${PORT_OPTIONS:MUSE_PERL}
 LINK_USRBIN=	yes
 .else
 LINK_USRBIN=	no
@@ -148,7 +146,7 @@ LINK_USRBIN=	no
 
 NO_LATEST_LINK=	yes
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 MAN3+=	GDBM_File.3
 .endif
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}/perl
@@ -186,7 +184,7 @@ post-patch:
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-.if defined(WITH_PTHREAD)
+.if ${PORT_OPTIONS:MPTHREAD}
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
 		${WRKSRC}/hints/freebsd.sh
