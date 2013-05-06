@@ -41,6 +41,21 @@ OPTIONS_DEFAULT=	GTK2 FREETYPE FONTCONFIG OSS XVIDEO VPX XVID SDL FAAD VORBIS
 OPTIONS_DEFAULT+=	LAME FAAC AMR
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+. 	if !defined(WITH_QT4)
+PLIST_SUB+=	QT_NLS="@comment "
+.	else
+PLIST_SUB+=	QT_NLS=""
+.	endif
+.else
+CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
+PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
@@ -196,19 +211,6 @@ CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=OFF
 PLIST_SUB+=	AMRNB="@comment "
 CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
 PLIST_SUB+=	AMRWB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-. 	if !defined(WITH_QT4)
-PLIST_SUB+=	QT_NLS="@comment "
-.	else
-PLIST_SUB+=	QT_NLS=""
-.	endif
-.else
-CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
-PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
 .endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
