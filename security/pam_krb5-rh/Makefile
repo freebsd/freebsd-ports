@@ -26,19 +26,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN5=		pam_krb5.5
 MAN8=		pam_krb5.8 pam_krb5_cchelper.8
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 LDFLAGS+=	-lintl
 USES+=		gettext
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not build on FreeBSD 7.x
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
 post-patch:
@@ -50,4 +46,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PAM_AUTHTOK_RECOVER_ERR|PAM_AUTHTOK_RECOVERY_ERR|g' \
 		${WRKSRC}/src/password.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

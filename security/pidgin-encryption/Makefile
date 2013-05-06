@@ -1,9 +1,5 @@
-# New ports collection Makefile for: pidgin-encryption
-# Date created:		2004-05-01
-# Whom:			ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin
 PORTVERSION=	3.1
@@ -32,7 +28,9 @@ CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib/nss
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
