@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filters
-PORTVERSION=	2.48
+PORTVERSION=	2.49
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		CRITICAL
@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
 
-CONFLICTS=	talkfilters-* jive-* chef-* kenny-*
+CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]* \
+		lolcat-[0-9]*
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -20,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERLFILTERS=	b1ff censor chef eleet fudd jibberish kenny pirate rasterman \
-		spammer studly uniencode upside-down fanboy scottish
+		spammer studly uniencode upside-down fanboy scottish lolcat
 CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak nethackify \
 		scramble
 
