@@ -1,17 +1,12 @@
-# New ports collection makefile for:	tnftp
-# Date created:				28 Jan 2004
-# Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tnftp
-PORTVERSION=	20100108
+PORTVERSION=	20130505
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/ \
-		ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/old/
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Enhanced ftp client from NetBSD
 
 GNU_CONFIGURE=	yes
