@@ -3,7 +3,6 @@
 
 MASTERDIR=	${.CURDIR}/../../shells/bash-devel
 
-OPTIONS_OVERRIDE=	STATIC
-NO_DIALOG=	yes
+OPTIONS_SLAVE=	STATIC
 
 .include "${MASTERDIR}/Makefile"
