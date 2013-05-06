@@ -16,7 +16,7 @@ RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.options.mK>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
