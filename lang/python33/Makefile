@@ -54,6 +54,17 @@ OPTIONS_DEFAULT=	THREADS PYMALLOC IPV6
 
 NLS_DESC=	Enable Gettext support for the locale module
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
+#LDFLAGS+=	"-L${LOCALBASE}/lib"
+#CFLAGS+=	"-I${LOCALBASE}/include"
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
@@ -67,15 +78,6 @@ PLIST_SUB+=	IF_DEFAULT="@comment "
 PLIST_SUB+=	IF_DEFAULT_MAJOR=""
 .else
 PLIST_SUB+=	IF_DEFAULT_MAJOR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
-# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
-#LDFLAGS+=	"-L${LOCALBASE}/lib"
-#CFLAGS+=	"-I${LOCALBASE}/include"
-.else
-CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}

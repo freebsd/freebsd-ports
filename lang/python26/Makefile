@@ -58,6 +58,17 @@ OPTIONS_SINGLE_UCS=	UCS2 UCS4
 
 NLS_DESC=	Enable Gettext support for the locale module
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
+#LDFLAGS+=	"-L${LOCALBASE}/lib"
+#CFLAGS+=	"-I${LOCALBASE}/include"
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSEM}
@@ -78,15 +89,6 @@ MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
-# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
-#LDFLAGS+=	"-L${LOCALBASE}/lib"
-#CFLAGS+=	"-I${LOCALBASE}/include"
-.else
-CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
