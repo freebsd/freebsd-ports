@@ -47,7 +47,7 @@ LDFLAGS+=	-fstack-protector
 PLIST_SUB+=	SSH=""
 .endif
 
-.if ${PORT_OPTONS:MNLS}
+.if ${PORT_OPTIONS:MNLS}
 RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
 .endif
 
