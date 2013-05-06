@@ -1,0 +1,13 @@
+This module is a thin wrapper for John Gruber's SmartyPants plugin for
+various CMSs.
+
+SmartyPants is a web publishing utility that translates plain ASCII
+punctuation characters into "smart" typographic punctuation HTML
+entities. SmartyPants can perform the following transformations:
+
+* Straight quotes ( " and ' ) into "curly" quote HTML entities
+* Backticks-style quotes (``like this'') into "curly" quote HTML entities
+* Dashes (-- and ---) into en- and em-dash entities
+* Three consecutive dots (...) into an ellipsis entity
+
+WWW: http://search.cpan.org/dist/Text-Typography/
