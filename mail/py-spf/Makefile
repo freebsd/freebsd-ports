@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-spf
-# Date created:				26 Dec 2004
-# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
-#
+# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spf
 PORTVERSION=	2.0.7
@@ -15,9 +11,12 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of the RFC 4408 SPF protocol
 
+LICENSE=	PSFL
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:${PORTSDIR}/dns/py-dns
 
 OPTIONS_DEFINE=	DOCS
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
