@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bugle
-# Date created:			Jun 8, 2004
-# Whom:				Erik Greenwald <erik@smluc.org>
-#
+# Created by: Erik Greenwald <erik@smluc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bugle
 PORTVERSION=	0.0.20091026
@@ -14,9 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A debugging library for OpenGL
 
-OPTIONS=	AVCODEC "With avcodec support (ffmpeg)" off
-OPTIONS+=	GUI "With GTK support (GtkGlExt)" off
-OPTIONS+=	THREADS "With threading support" off
+OPTIONS_DEFINE=	AVCODEC GUI THREADS
+AVCODEC_DESC=	LAVC codec support
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl
@@ -40,27 +35,23 @@ MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
 	bugle-stats_nv.7 bugle-stats_primitives.7 bugle-trace.7 \
 	bugle-unwindstack.7 bugle-wireframe.7
 
-OPTIONS=	AVCODEC	"Use lavc from multimedia/ffmpeg"	off
-OPTIONS+=	GUI	"Use gktglext"				off
-OPTIONS+=	THREADS	"Use pthreads"				off
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_AVCODEC)
+.if ${PORT_OPTIONS:MAVCODEC}
 CONFIGURE_ARGS+=--with-lavc
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=--without-lavc
 .endif
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 CONFIGURE_ARGS+=--with-gtk --with-gtkglext
 .else
 CONFIGURE_ARGS+=--without-gtk --without-gtkglext
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--with-threads=pthreads
 .else
 CONFIGURE_ARGS+=--with-threads=single
@@ -80,4 +71,4 @@ post-install:
 	@-${RMDIR} ${PREFIX}/lib/pkgconfig
 	@${RM} -rf ${PREFIX}/share/doc/bugle
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

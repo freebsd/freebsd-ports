@@ -1,9 +1,4 @@
-# New ports collection makefile for:	frei0r-plugins
-# Date created:				29 June 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-plugins
@@ -24,18 +19,20 @@ PLIST=		${WRKDIR}/PLIST
 
 BUILDING_FREI0R_METAPORT=	yes
 
-OPTIONS=	GAVL "Install gavl plugins" on \
-		OPENCV "Install OpenCV plugins" on
+OPTIONS_DEFINE=	GAVL OPENCV
+OPTIONS_DEFAULT=	GAVL OPENCV
+GAVL_DESC=	Install gavl plugins
+OPENCV_DESC=	Install OpenCV plugins
 
 .include "${MASTERDIR}/Makefile"
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GAVL)
+.if ${PORT_OPTIONS:MGAVL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/rgbparade.so:${PORTSDIR}/graphics/frei0r-plugins-gavl
 .endif
 
-.if !defined(WITHOUT_OPENCV)
+.if ${PORT_OPTIONS:MOPENCV}
 RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/facedetect.so:${PORTSDIR}/graphics/frei0r-plugins-opencv
 .endif
 

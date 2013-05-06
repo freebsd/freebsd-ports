@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-help
-# Date created:				28 May, 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-help
 PORTVERSION=	2.6.1
@@ -17,6 +13,8 @@ MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	The meta port for GIMP User Manual
 
 LICENSE=	GFDL
+
+.MAKE.FreeBSD_UL=	yes
 
 NO_BUILD=	yes
 
@@ -49,17 +47,20 @@ zh_CN_NAME=	Chinese Simplified
 ${lang}_DETECT?=	${LOCALBASE}/share/gimp/help/${lang}/index.html
 ${lang}_PORT?=		misc/gimp-help-${lang}
 ${lang}_NAME?=		${lang}
+${lang:U}_DESC=		${${lang}_NAME}
 .endfor
 
-OPTIONS=	ALL "All translations" on
+OPTIONS_DEFINE=	ALL
+OPTIONS_DEFAULT=	ALL
+ALL_DESC=	All translations
 .for lang in ${LANG_ALL}
-OPTIONS+=	${lang:U} "${${lang}_NAME}" off
+OPTIONS_DEFINE+=	${lang:U}
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for lang in ${LANG_ALL}
-.if defined(WITH_ALL) || defined(WITH_${lang:U})
+.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${lang:U}}
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
 .endfor

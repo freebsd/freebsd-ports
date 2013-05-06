@@ -1,9 +1,5 @@
-# New ports collection makefile for:	imlib2_loaders
-# Date created:		7 Oct 2001
-# Whom:			Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.4.5
@@ -21,13 +17,15 @@ USE_BZIP2=	yes
 USES=	pathfix
 USE_EFL=	imlib2 libtool_hack
 
-OPTIONS=	EDB	"Enable edb loader" on \
-		EET	"Enable eet loader" on \
-		XCF	"Enable XCF loader" on
+OPTIONS_DEFINE=	EDB EET XCF
+OPTIONS_DEFAULT=	EDB EET XCF
+EDB_DESC=	Enable edb loader
+EET_DESC=	Enable eet loader
+XCF_DESC=	Enable XCF loader
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EDB)
+.if ${PORT_OPTIONS:MEDB}
 USE_EFL+=	edb
 PLIST_SUB+=	EDB=""
 .else
@@ -35,7 +33,7 @@ CONFIGURE_ARGS+=	--disable-edb
 PLIST_SUB+=	EDB="@comment "
 .endif
 
-.if !defined(WITHOUT_EET)
+.if ${PORT_OPTIONS:MEET}
 USE_EFL+=	eet
 PLIST_SUB+=	EET=""
 .else
@@ -43,11 +41,11 @@ CONFIGURE_ARGS+=	--disable-eet
 PLIST_SUB+=	EET="@comment "
 .endif
 
-.if !defined(WITHOUT_XCF)
+.if ${PORT_OPTIONS:MXCF}
 PLIST_SUB+=	XCF=""
 .else
 CONFIGURE_ARGS+=	--disable-xcf
 PLIST_SUB+=	XCF="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

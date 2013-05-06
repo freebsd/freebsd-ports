@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glx
-# Date created:		2006-11-10
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	gle-graphics
 PORTVERSION=	4.0.12
@@ -17,9 +13,10 @@ COMMENT=	A graphics language that produces images from script files
 
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
 
-OPTIONS=	BITMAP_IMAGES "Support for including bitmap images" On \
-		LATEX_GS "Use LaTeX & GhostScript" On \
-		X_WINDOWS "Use X Windows System" On
+OPTIONS_DEFINE=	BITMAP_IMAGES LATEX_GS X11
+OPTIONS_DEFAULT=	BITMAP_IMAGES LATEX_GS X11
+BITMAP_IMAGES_DESC=	Support for including bitmap images
+LATEX_GS_DESC=		Use LaTeX & GhostScript
 
 WRKSRC=	${WRKDIR}/gle4
 
@@ -36,9 +33,9 @@ USE_ZIP=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${REINPLACE_FILES}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_BITMAP_IMAGES)
+.if ${PORT_OPTIONS:MBITMAP_IMAGES}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiffxx.4:${PORTSDIR}/graphics/tiff
@@ -47,14 +44,14 @@ CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=$
 CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no
 .endif
 
-.if !defined(WITHOUT_LATEX_GS)
+.if ${PORT_OPTIONS:MLATEX_GS}
 USE_GHOSTSCRIPT_RUN=	yes
 USE_TEX=	tetex
 .endif
 
-.if !defined(WITHOUT_X_WINDOWS)
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=	x11
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
