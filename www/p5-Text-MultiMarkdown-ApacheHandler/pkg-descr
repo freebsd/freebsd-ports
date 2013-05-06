@@ -1,0 +1,6 @@
+Processes files containing MultiMarkdown syntax into HTML files and serves
+them, optionally applying CSS styles according to rules in your httpd.conf
+or (more likely) .htaccess files. Optionally applies SmartyPants
+post-processing using Text::Typography.
+
+WWW: http://search.cpan.org/dist/Text-MultiMarkdown-ApacheHandler/

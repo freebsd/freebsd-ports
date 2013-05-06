@@ -1,0 +1,9 @@
+Please create %%PREFIX%%/etc/apache22/Includes/mmd.conf
+with the following contents:
+
+AddType text/multimarkdown .markdown .mmd
+<Files ~ "\.(mmd|markdown)$">
+	SetHandler perl-script
+	PerlHandler Text::MultiMarkdown::ApacheHandler
+	PerlSetVar mm_useSmartyPants 1
+</Files>
