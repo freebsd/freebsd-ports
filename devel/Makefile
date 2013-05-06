@@ -12,6 +12,7 @@
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
     SUBDIR += R-cran-RUnit
+    SUBDIR += R-cran-Rcpp
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-chron
