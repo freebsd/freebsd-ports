@@ -39,16 +39,12 @@ include/libvirt/libvirt.h
 include/libvirt/virterror.h
 lib/libvirt/lock-driver/lockd.so
 lib/libvirt/lock-driver/lockd.la
-lib/libvirt/lock-driver/lockd.a
-lib/libvirt-lxc.a
 lib/libvirt-lxc.la
 lib/libvirt-lxc.so
 lib/libvirt-lxc.so.%%SHLIB_VER%%
-lib/libvirt-qemu.a
 lib/libvirt-qemu.la
 lib/libvirt-qemu.so
 lib/libvirt-qemu.so.%%SHLIB_VER%%
-lib/libvirt.a
 lib/libvirt.la
 lib/libvirt.so
 lib/libvirt.so.%%SHLIB_VER%%
@@ -193,6 +189,7 @@ share/gtk-doc/html/libvirt/right.png
 share/gtk-doc/html/libvirt/style.css
 share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map.xml
+%%DATADIR%%/libvirtLogo.png
 %%DATADIR%%/api/libvirt-api.xml
 %%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
@@ -218,6 +215,7 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/bg/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/bo/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/libvirt.mo
@@ -291,11 +289,8 @@ share/gtk-doc/html/libvirt/up.png
 @exec /bin/mkdir -p %%PREFIX%%/lib/libvirt/connection-driver
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.la
-%%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.a
-lib/libvirt/connection-driver/libvirt_driver_secret.a
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_secret.la
-lib/libvirt/connection-driver/libvirt_driver_storage.a
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_storage.la
 @dirrm lib/libvirt/connection-driver
@@ -344,6 +339,8 @@ lib/libvirt/connection-driver/libvirt_driver_storage.la
 %%NLS%%@dirrmtry share/locale/eu_ES
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/bo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bo
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
 @dirrm %%ETCDIR%%/nwfilter
