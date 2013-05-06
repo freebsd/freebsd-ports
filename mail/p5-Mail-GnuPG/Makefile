@@ -1,12 +1,8 @@
-# ports collection makefile for:	p5-Mail-GnuPG
-# Date created:				Oct 16th 2003
-# Whom:					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-GnuPG
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	mail security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
