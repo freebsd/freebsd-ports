@@ -1,9 +1,5 @@
-# New ports collection makefile for: cadaver
-# Date created:		13 January 2000
-# Whom:			Alex Povolotsky <tarkhil@over.ru>
-#
+# Created by: Alex Povolotsky <tarkhil@over.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cadaver
 PORTVERSION=	0.23.3
@@ -50,7 +46,9 @@ post-install:
 	#
 .endif
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES=		gettext iconv
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}

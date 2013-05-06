@@ -1,7 +1,4 @@
-# New ports collection makefile for: arora
-# Date created:         08 Aug 2008
-# Whom:                 Andy Fawcett <andy@athame.co.uk>
-#
+# Created by: Andy Fawcett <andy@athame.co.uk>
 # $FreeBSD$
 
 PORTNAME=	arora
@@ -23,13 +20,13 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		arora.1 arora-cacheinfo.1 arora-placesimport.1 htmlToXBel.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == ia64
 BROKEN=		core dump on application startup
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_QT4+=	linguist_build
@@ -37,7 +34,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 do-configure:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e "/INSTALLS/s|translations||" \
 		${WRKSRC}/src/src.pro
 	@${REINPLACE_CMD} -e "s|target_predeps||" \
@@ -67,4 +64,4 @@ post-install:
 		${WRKSRC}/tools/placesimport/data/arora-placesimport.1 \
 		${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

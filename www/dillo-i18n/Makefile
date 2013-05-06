@@ -42,7 +42,9 @@ CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 
 CONFLICTS=	dillo-[0-9].[0-9].[0-9]*
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB=	NLS=""
 CONFIGURE_ARGS+=	--enable-nls
