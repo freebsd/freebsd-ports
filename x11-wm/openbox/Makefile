@@ -27,7 +27,7 @@ PLIST_SUB=	VERSION=${PORTVERSION:C/.[0-9]+\$//}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OTPIONS:MNLS}
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
