@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alarm-clock
-# Date created:		2008-06-16
-# Whom:			Romain Tartière <romain@blogreen.org>
-#
+# Created by: Romain Tartière <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	alarm-clock
 PORTVERSION=	1.4
@@ -19,12 +15,14 @@ LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext pathfix
 USE_GMAKE=	yes
 USE_GSTREAMER=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gtk20
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

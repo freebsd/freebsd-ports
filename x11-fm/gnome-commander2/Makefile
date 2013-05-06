@@ -37,12 +37,14 @@ MAN1=		gnome-commander.1
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lxsession
-# Date created:                2008/06/20
-# Whom:                        chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	lxsession
 PORTVERSION=	0.4.6.1
@@ -31,7 +27,9 @@ MAN1=		lxsession.1 lxsession-logout.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
