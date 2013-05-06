@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scim-input-pad
-# Date created:		2005/05/06
-# Whom:			chinsan	<chinsan@mail2000.com.tw>
-#
+# Created by: chinsan	<chinsan@mail2000.com.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.3.1
@@ -32,7 +28,9 @@ DESKTOP_ENTRIES="SCIM Input Pad" \
 
 DOCS=		ChangeLog README
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 USE_GNOME=	intlhack
 PLIST_SUB+=	NLS=""
@@ -47,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's|^_NAME|NAME|g' ${WRKSRC}/data/*.pad.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ibus-kmfl
-# Date created:		4 June 2010
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ibus-kmfl
 PORTVERSION=	1.0.3
@@ -21,14 +17,17 @@ LIB_DEPENDS=	ibus-1.0:${PORTSDIR}/textproc/ibus \
 		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-USE_GNOME=	glib20 pkgconfig
+USES=		pkgconfig
+USE_GNOME=	glib20
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

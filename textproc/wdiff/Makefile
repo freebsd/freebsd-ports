@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wdiff
-# Date created:		Sep 15, 1997
-# Whom:			Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-#
+# Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	wdiff
 PORTVERSION=	1.2.1
@@ -20,7 +16,9 @@ GNU_CONFIGURE=	yes
 MAN1=		wdiff.1
 INFO=		wdiff
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
