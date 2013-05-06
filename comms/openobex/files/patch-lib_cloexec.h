@@ -13,7 +13,7 @@
  				      socklen_t *addrlen)
  {
 -#ifdef SOCK_CLOEXEC
-+#if defined(SOCK_CLOEXEC) && __FreeBSD_version < 1000032
++#if defined(SOCK_CLOEXEC) && __FreeBSD_version > 1000032
  	return accept4(sockfd, addr, addrlen, SOCK_CLOEXEC);
  #else
  	socket_t fd = accept(sockfd, addr, addrlen);
