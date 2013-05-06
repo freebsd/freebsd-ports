@@ -32,7 +32,7 @@ MAN5=		mng.5 jng.5
 MAKE_ARGS+=	WITH_MNG_OPTIMIZE=true
 .else
 MAKE_ARGS+=	WITH_MNG_OPTIMIZE=off
-.endof
+.endif
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
