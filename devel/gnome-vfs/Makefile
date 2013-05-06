@@ -86,6 +86,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lacl||g ; \
 		s|inotify_support=yes|inotify_support=no|g' \
 			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/*/Makefile.in
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
