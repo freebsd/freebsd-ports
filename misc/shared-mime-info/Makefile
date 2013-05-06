@@ -18,6 +18,7 @@ USES=		pathfix pkgconfig gettext
 USE_GNOME=	glib20 libxml2 intltool intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		update-mime-database.1
 
