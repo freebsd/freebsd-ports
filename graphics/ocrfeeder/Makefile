@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ocrfeeder
-# Date created:         5 August 2011
-# Whom:                 buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	ocrfeeder
 PORTVERSION=	0.7.7
@@ -35,12 +31,14 @@ USE_GNOME=	pygtk2 pygnomeextras
 USES=		gettext
 USE_GHOSTSCRIPT=yes
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 post-install:

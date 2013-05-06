@@ -1,9 +1,5 @@
-# ports collection makefile for:	geomorph
-# Date created:		24 Feb 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	geomorph
 PORTVERSION=	0.50
@@ -25,7 +21,9 @@ CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

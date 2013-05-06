@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xblast
-# Date created:         Sat Nov 08 09:47:12 CET 1997
-# Whom:                 se
-#
+# Created by: se
 # $FreeBSD$
-#
 
 PORTNAME=	xblast
 PORTVERSION=	2.10.4
@@ -63,12 +59,13 @@ MODELS_DATE=	2005-01-06
 MUSICS_DATE=	2005-01-06
 SOUNDS_DATE=	2004-04-29
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITHOUT_SDL)
@@ -111,7 +108,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} xbsndsrv ${PREFIX}/bin/xbsndsrv
 .endif
 	cd ${WRKSRC} && ${INSTALL_MAN} xblast.man ${MAN6PREFIX}/man/man6/xblast.6
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 .for lang in de fr
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	cd ${WRKSRC}/po && ${INSTALL_DATA} ${lang}.gmo \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libhangul
-# Date created:				31 January 2007
-# Whom:					Hyogeol, Lee <hyogeollee@gmail.com>
-#
+# Created by: Hyogeol, Lee <hyogeollee@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libhangul
 PORTVERSION=	0.1.0
@@ -19,7 +15,9 @@ USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

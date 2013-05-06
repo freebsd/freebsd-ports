@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enigma
-# Date created:				25 July 2002
-# Whom:					Edwin Groothuis
-#
+# Created by: Edwin Groothuis
 # $FreeBSD$
-#
 
 PORTNAME=	enigma
 PORTVERSION=	1.01
@@ -39,7 +35,9 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
 .else
@@ -54,7 +52,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/Exec=/s,enigma,${PREFIX}/bin/enigma,g' \
 		${WRKSRC}/etc/enigma.desktop
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e '/install-data-am/ s,install-(doc|index)DATA,,g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|=.*|=|' ${WRKSRC}/doc/Makefile.in

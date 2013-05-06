@@ -1,9 +1,5 @@
-# New ports collection makefile for:	imhangul
-# Date created:		May 26 2003
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: CHOI Junho <cjh@kr.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imhangul
 PORTVERSION=	2.1.0
@@ -24,7 +20,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

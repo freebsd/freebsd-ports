@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smuxi
-# Date created:		2009-04-27
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smuxi
 PORTVERSION=	0.8
@@ -29,7 +25,9 @@ post-patch:
 		's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g ; \
 		s|@libdir@/locale|@prefix@/share/locale|g'
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
