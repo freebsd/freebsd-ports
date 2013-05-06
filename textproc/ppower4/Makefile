@@ -14,10 +14,10 @@ EXTRACT_ONLY=	pp4sty.zip leveldemo.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post processor for PDF presentations made with (La)TeX
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		java:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
+USE_TEX=	tetex
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

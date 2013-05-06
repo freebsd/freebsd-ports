@@ -14,10 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 
+USE_TEX=	tetex
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${TEXMFDIR}/web2c
 

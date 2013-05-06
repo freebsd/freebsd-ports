@@ -17,7 +17,6 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
-		latex:${PORTSDIR}/print/teTeX-base \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
@@ -26,6 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--disable-gc
 
 USE_GHOSTSCRIPT=yes
+USE_TEX=	tetex
 USE_GL=	glut
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes

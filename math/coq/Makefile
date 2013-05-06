@@ -36,8 +36,8 @@ MAN1=	coq-tex.1 coq_makefile.1 coqc.1 coqchk.1 coqdep.1 coqdoc.1 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+USE_TEX=	tetex
 BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea \
-		latex:${PORTSDIR}/print/teTeX \
 		${LOCALBASE}/share/texmf/tex/latex/ucs/utf8x.def:${PORTSDIR}/print/latex-ucs
 PORTDOCS=	*
 .else

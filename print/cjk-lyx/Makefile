@@ -84,8 +84,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 BUILD_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
 RUN_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
 .else
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+USE_TEX=	tetex
 .endif
 
 .include <bsd.port.mk>

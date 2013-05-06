@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Style file providing a beginning-of-page hook for LaTeX
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
+USE_TEX=	tetex
 
 PLIST=		${WRKDIR}/pkg-plist
 

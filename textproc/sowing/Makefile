@@ -14,14 +14,14 @@ MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
 
-BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\
-		latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 
 USE_PERL5=	yes
 USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
+USE_TEX=	tetex
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}

@@ -11,10 +11,10 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A Euclidean geometry drawing language
 
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
-		epstopdf:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 
 USE_BZIP2=	yes
+USE_TEX=	tetex
 USES=		bison gettext iconv
 USE_GMAKE=	yes
 

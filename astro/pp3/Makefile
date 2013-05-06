@@ -10,9 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/PP3/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates celestial charts
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 USE_BZIP2=	yes
+USE_TEX=	tetex
 
 .include <bsd.port.options.mk>
 

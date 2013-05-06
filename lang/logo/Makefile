@@ -21,7 +21,7 @@ USE_EMACS=	yes
 
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
+USE_TEX=	tetex
 USE_GHOSTSCRIPT=yes
 .endif
 

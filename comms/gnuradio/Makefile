@@ -51,12 +51,12 @@ TESTING_DESC=	Include testing support
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MDOCS}
+USE_TEX=	tetex
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf \
-		latex:${PORTSDIR}/print/teTeX
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 HAVE_PORTDOCS=	YES

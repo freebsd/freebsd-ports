@@ -23,9 +23,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+USE_TEX=	tetex
 CONFIGURE_ARGS+=	--enable-manual
 BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX
 PLIST_SUB+=	DOCS=""
 .else
 PLIST_SUB+=	DOCS="@comment "

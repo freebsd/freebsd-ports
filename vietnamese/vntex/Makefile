@@ -16,10 +16,8 @@ DISTNAME=	vntex
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
-#	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
-RUN_DEPENDS=	${LOCALBASE}/share/texmf/tex/plain:${PORTSDIR}/print/teTeX
-
 USE_ZIP=	yes
+USE_TEX=	tetex
 NO_BUILD=	yes
 
 do-install:

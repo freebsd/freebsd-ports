@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 NO_BUILD=	yes
 
+USE_TEX=	tetex
 USE_TK_WRAPPER=	yes
 INSTALLS_ICONS=	yes
 MAN1=		xtexsh.1

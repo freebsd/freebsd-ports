@@ -15,8 +15,7 @@ MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shell scripts to manipulate PDF files
 
-RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PROGS=		pdf90 pdf180 pdf270 pdfbook pdfflip pdfjam \

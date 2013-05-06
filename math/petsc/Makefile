@@ -56,8 +56,8 @@ CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+#USE_TEX=	tetex
 #BUILD_DEPENDS+=	c2html:${PORTSDIR}/textproc/c2html	\
-#		pdflatex:${PORTSDIR}/print/teTeX-base	\
 #		doc2lt:${PORTSDIR}/textproc/sowing
 .endif
 

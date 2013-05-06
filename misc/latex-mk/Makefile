@@ -15,11 +15,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A collection of makefile and scripts for LaTeX documents
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		texi2dvi:${PORTSDIR}/print/texinfo
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		texi2dvi:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+RUN_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 
+USE_TEX=	tetex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

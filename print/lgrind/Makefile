@@ -52,8 +52,7 @@ EXTRACT_ONLY=	${PORTNAME}.tar.gz
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+USE_TEX=	tetex
 
 MAN1=		lgrind.1
 MAN5=		lgrindef.5

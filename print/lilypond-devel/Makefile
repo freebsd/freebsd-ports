@@ -10,8 +10,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		pdftexi2dvi:${PORTSDIR}/print/texinfo \
+BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		t1ascii:${PORTSDIR}/print/t1utils \
 		bash:${PORTSDIR}/shells/bash \
 		fontforge:${PORTSDIR}/print/fontforge \
@@ -21,8 +20,7 @@ LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		gmp:${PORTSDIR}/math/gmp \
 		freetype:${PORTSDIR}/print/freetype2
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		dblatex:${PORTSDIR}/textproc/dblatex \
+RUN_DEPENDS=	dblatex:${PORTSDIR}/textproc/dblatex \
 		mftrace:${PORTSDIR}/print/mftrace \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		convert:${PORTSDIR}/graphics/ImageMagick \
@@ -50,6 +48,7 @@ USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
+USE_TEX=	tetex
 USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile

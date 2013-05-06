@@ -21,9 +21,9 @@ COMMENT=	Computer Modern Font Families in Type 1 Fonts
 .if !defined(WITHOUT_X11)
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 .endif
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 USE_ZIP=	yes
+USE_TEX=	tetex
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITHOUT_X11)

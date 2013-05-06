@@ -16,11 +16,11 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create PNG images from LaTeX math expressions
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex:${PORTSDIR}/print/teTeX
+		dvips:${PORTSDIR}/print/dvipsk-tetex
 
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes
+USE_TEX=	tetex
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

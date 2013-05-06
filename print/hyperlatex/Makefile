@@ -14,9 +14,9 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/2.9a
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
+USE_TEX=	tetex
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 

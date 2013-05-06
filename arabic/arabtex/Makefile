@@ -12,10 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TeX/LaTeX package to generate Arabic writing
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
+USE_TEX=	tetex
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}

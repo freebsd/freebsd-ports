@@ -15,9 +15,7 @@ DISTFILES=	ko.tex-extra-hlfont.tar.gz ko.tex-unfonts-extra.tar.gz
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX extra fonts
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-
+USE_TEX=	tetex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes

@@ -16,7 +16,6 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.3:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		gv:${PORTSDIR}/print/gv \
-		latex:${PORTSDIR}/print/teTeX \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
@@ -27,6 +26,7 @@ CONFIGURE_ARGS+=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui desktopfileutils gnomehier
+USE_TEX=	tetex
 
 OPTIONS_DEFINE=	CONTEXT VNTEX UNIKEY_GTK NLS DOCS
 CONTEXT_DESC=		ConTexT support (Experimental)

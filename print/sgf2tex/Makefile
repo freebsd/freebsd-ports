@@ -14,9 +14,7 @@ MASTER_SITES=	http://sporadic.stanford.edu/bump/
 MAINTAINER=	spcoltri@omcl.org
 COMMENT=	Convert a Go game record in SGF format into TeX and provide fonts to make a dvi
 
-BUILD_DEPENDS=	${TEX_BIN}:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${TEX_BIN}:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 MAKE_ENV=	TEX_BIN=${TEX_BIN}
 

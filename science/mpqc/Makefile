@@ -42,9 +42,9 @@ LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 .endif
 LIB_DEPENDS+=	int.1:${PORTSDIR}/science/libint
 .if !defined(NOPORTDOCS)
+USE_TEX=	tetex
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 .endif

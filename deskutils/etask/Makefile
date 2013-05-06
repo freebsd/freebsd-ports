@@ -15,13 +15,13 @@ MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Manage your projects or tasks within GNU Emacs
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
+RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 USE_GHOSTSCRIPT_RUN=	yes
+USE_TEX=	tetex
 
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}

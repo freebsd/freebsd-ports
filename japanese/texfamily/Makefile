@@ -26,16 +26,11 @@ EXTRACT_ONLY=	teTeX-src-1.0.7${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Japanese TeX, NTT JTeX (TeXfamily)
 
-BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
+USE_TEX=	tetex
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}

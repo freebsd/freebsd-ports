@@ -53,8 +53,8 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base	\
-		fig2dev:${PORTSDIR}/print/transfig
+USE_TEX=	tetex
+BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
 PORTDOCS=	mi_ecs.pdf mt_ecs.pdf
 .endif
 

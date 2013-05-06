@@ -15,10 +15,9 @@ DISTNAME=	ko.tex-macro-20080329
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX macro and utilities
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
-BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
 
+USE_TEX=	tetex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes

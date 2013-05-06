@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	LaTeX style files for typesetting verbatim source code listings
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
+USE_TEX=	tetex
 
 PLIST=		${WRKDIR}/pkg-plist
 

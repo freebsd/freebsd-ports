@@ -13,7 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible drawing editor
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 
@@ -22,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_LUA=	5.1
 USE_GMAKE=	yes
 USE_QT4=	gui qt3support qmake_build moc_build uic_build rcc_build
+USE_TEX=	tetex
 MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 ipescript.1
 
 .include <bsd.port.options.mk>

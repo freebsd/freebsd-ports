@@ -16,9 +16,9 @@ MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		latex:${PORTSDIR}/print/teTeX-base \
 		bash:${PORTSDIR}/shells/bash
 
+USE_TEX=	tetex
 NO_BUILD=	yes
 PLIST_FILES=	bin/tex2im
 PORTEXAMPLES=	example1.png example1.tex example2.png example2.tex \

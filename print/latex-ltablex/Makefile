@@ -17,10 +17,8 @@ DIST_SUBDIR=	latex
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 USE_ZIP=	YES
+USE_TEX=	tetex
 NO_BUILD=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \

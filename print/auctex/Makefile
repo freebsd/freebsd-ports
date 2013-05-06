@@ -14,9 +14,7 @@ COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
-
+USE_TEX=	tetex
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR} \

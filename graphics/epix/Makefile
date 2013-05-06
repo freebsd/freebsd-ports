@@ -20,12 +20,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
-		latex:${PORTSDIR}/print/teTeX-base \
 		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
+USE_TEX=	tetex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \

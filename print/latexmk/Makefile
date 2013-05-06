@@ -11,8 +11,6 @@ COMMENT=	Tool to completely automate generating output from LaTeX documents
 
 LICENSE=	GPLv2 # (or later)
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_WRKSUBDIR=	yes
@@ -20,6 +18,7 @@ NO_BUILD=	yes
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
+USE_TEX=	tetex
 
 MAN1=		latexmk.1
 PORTDOCS=	*

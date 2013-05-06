@@ -11,10 +11,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A meta port for teTeX suite for Japanese (including pTeX and JTeX)
 
-RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		tex:${PORTSDIR}/print/teTeX-base \
-		ptex:${PORTSDIR}/japanese/ptex \
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
 		jtex:${PORTSDIR}/japanese/texfamily \
 		${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
@@ -26,6 +23,7 @@ CONFLICTS=	texlive-[0-9]* tex-web2c-[0-9]* \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]* 
 
+USE_TEX=	tetex
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R
 TEXMFDISTDIR=	share/texmf-dist

@@ -12,14 +12,12 @@ DISTNAME=	TeXmacs-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
 
-BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 
 MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	yes
-
+USE_TEX=	tetex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

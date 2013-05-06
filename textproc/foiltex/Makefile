@@ -16,11 +16,9 @@ DISTFILES=	foiltex.dtx foiltex.ins
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 NO_CDROM=	redistribution on a not-for-profit basis only
 
+USE_TEX=	tetex
 NO_WRKSUBDIR=	yes
 
 LATEX_CMD=	${LOCALBASE}/bin/latex

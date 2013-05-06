@@ -244,8 +244,8 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
 BROKEN =		The PDF_MANUALS option cannot be used, because\
 			print/texinfo is incompatible with print/teTeX-base
-BUILD_DEPENDS +=	pdftex:${PORTSDIR}/print/teTeX-base \
-			texi2dvi:${PORTSDIR}/print/texinfo
+USE_TEX=		tetex
+BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
 CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
 			MAKEINFO="${LOCALBASE}/bin/makeinfo"

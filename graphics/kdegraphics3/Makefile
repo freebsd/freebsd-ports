@@ -17,7 +17,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
-BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -35,6 +34,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_GL=		glut
 USE_BZIP2=	yes
+USE_TEX=	tetex
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-poppler
 USE_GMAKE=	yes

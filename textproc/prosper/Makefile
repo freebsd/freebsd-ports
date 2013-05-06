@@ -17,11 +17,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX class for writing transparencies
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
 NO_BUILD=	yes
 USE_GHOSTSCRIPT_RUN=	yes
+USE_TEX=	tetex
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
