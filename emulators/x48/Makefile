@@ -47,6 +47,9 @@ post-patch:
 		s+rom\.dump+${DATADIR}/gxrom-r+' ${WRKSRC}/src/X48.ad.h
 # Force correct type per what comment says
 	@${REINPLACE_CMD} -e '/timer1/s+char+signed &+' ${WRKSRC}/src/hp48.h
+# Fix the build against Clang (lots of warnings remain)
+	@${REINPLACE_CMD} -e '1531s+char \*+void+' ${WRKSRC}/src/debugger.c
+	@${REINPLACE_CMD} -e '698s+^+static +' ${WRKSRC}/src/emulate.c
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard
