@@ -457,6 +457,7 @@
     SUBDIR += multimarkdown
     SUBDIR += muse
     SUBDIR += mxml
+    SUBDIR += mysqlviz
     SUBDIR += mythes
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
