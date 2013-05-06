@@ -1,9 +1,5 @@
-# New ports collection makefile for:    m17n-im-config
-# Date created:		1 October 2008
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
-#
 
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
@@ -32,7 +28,9 @@ DESKTOP_ENTRIES="M17N-IM Configuration" \
 		"Settings;" \
 		true
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

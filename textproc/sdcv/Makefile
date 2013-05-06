@@ -17,7 +17,9 @@ USE_GNOME=	glib20
 USES=		pkgconfig iconv
 SUB_FILES=	pkg-message
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -47,7 +49,7 @@ post-patch:
 		${WRKSRC}/src/sdcv.cpp
 	@${REINPLACE_CMD} -e 's,@mandir@/uk,@mandir@,' \
 		${WRKSRC}/doc/uk/Makefile.in
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's,@USE_NLS@,yes,g' ${WRKSRC}/po/Makefile.in.in
 	@${REINPLACE_CMD} -e 's, getopt.h,,g; s,@USE_NLS@,yes,g' \
 		${WRKSRC}/src/Makefile.in

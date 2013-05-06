@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenSP
-# Date created:		Jan 6, 2003
-# Whom:			kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	OpenSP
 PORTVERSION=	1.5.2
@@ -25,12 +21,14 @@ CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 #MAN1=		onsgmls.1 osgmlnorm.1 ospam.1 ospent.1 osx.1
@@ -44,7 +42,7 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${CAT} ${PLIST} | \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | \
