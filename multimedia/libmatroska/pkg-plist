@@ -28,6 +28,6 @@ include/matroska/KaxVersion.h
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
 lib/libmatroska.so
-lib/libmatroska.so.5
+lib/libmatroska.so.6
 @dirrm include/matroska/c
 @dirrm include/matroska
