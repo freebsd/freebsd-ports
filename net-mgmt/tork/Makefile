@@ -3,7 +3,7 @@
 
 PORTNAME=	tork
 PORTVERSION=	0.30
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	SF/${PORTNAME}/TorK%20Source%20Tarball/TorK-${PORTVERSION}
 
@@ -26,42 +26,28 @@ MAN1=		tork.1 torkarkollon.1 torkify.1 torksocks.1
 MAN5=		torksocks.conf.5
 MAN8=		torksocks.8
 
-HAVE_TOR!=	if pkg_info -I tor-\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
+OPTIONS_DEFINE=		PRIVOXY
 
-.if (${HAVE_TOR} == "YES")
-HAVE_TOR_DEVEL!=	if pkg_info -I tor-devel\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
+PRIVOXY_DESC=		Install privoxy
 
-.if (${HAVE_TOR_DEVEL} == "YES")
-OPTIONS=	TOR_DEVEL	"Depend on tor-devel (already installed)"   On
-.else
-OPTIONS=	TOR	"Depend on tor (already installed)" On
-.endif
+OPTIONS_SINGLE=		TOR
+OPTIONS_SINGLE_TOR=	TOR_STD TOR_DEVEL
 
-.else
-OPTIONS=	TOR_DEVEL	"Depend on tor-devel"   On \
-		TOR	"Depend on tor"     Off
-.endif
+TOR_STD_DESC=		Use stable security/tor port
+TOR_DEVEL_DESC=		Use development security/tor-devel port
 
-OPTIONS+=	PRIVOXY	"Install privoxy"	On \
-		MIXMINION "Install mixminion"	Off
+OPTIONS_DEFAULT=	TOR_STD PRIVOXY
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TOR_DEVEL)
-.if defined(WITH_TOR)
-IGNORE=			cannot depend on tor and tor-devel at the same time
-.endif
-RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor-devel
-.elif defined(WITH_TOR)
+.if ${PORT_OPTIONS:MTOR_STD}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
+.else
+RUN_DEPENDS+=	${LOCALBASE}/share/tor/geoip6:${PORTSDIR}/security/tor-devel
 .endif
 
-.if defined(WITH_PRIVOXY)
+.if ${PORT_OPTIONS:MPRIVOXY}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/privoxy:${PORTSDIR}/www/privoxy
 .endif
 
-.if defined(WITH_MIXMINION)
-RUN_DEPENDS+=	${LOCALBASE}/bin/mixminion:${PORTSDIR}/mail/mixminion
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
