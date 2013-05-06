@@ -34,7 +34,7 @@ PTHREAD_DESC=		Build with -pthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 USE_PERL_DESC=		Rewrite links in /usr/bin
-VENDOR_PREFIX=		Use vendor prefix
+VENDOR_PREFIX_DESC=	Use vendor prefix
 
 PORTSCOUT=	limitw:1,even
 
