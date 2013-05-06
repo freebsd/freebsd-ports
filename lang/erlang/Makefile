@@ -200,8 +200,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 
-	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
 .endfor
 .endif
