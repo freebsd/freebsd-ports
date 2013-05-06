@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-schedule
-# Date created:		2004-11-06
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/sysutils/gnome-schedule/Makefile,v 1.5 2007/09/10 06:20:14 mezz Exp $
-#
 
 PORTNAME=	gnome-schedule
 PORTVERSION=	2.1.5
@@ -26,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack pygnome2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_APPLET)
+.if  !defined(WITHOUT_APPLET)
 CONFIGURE_ARGS+=	--enable-applet
 PLIST_SUB+=	APPLET=""
 .else
@@ -34,7 +30,9 @@ CONFIGURE_ARGS+=	--disable-applet
 PLIST_SUB+=	APPLET="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

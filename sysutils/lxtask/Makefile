@@ -16,7 +16,9 @@ USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
