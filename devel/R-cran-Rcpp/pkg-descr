@@ -1,0 +1,15 @@
+The Rcpp package provides C++ classes that greatly facilitate
+interfacing C or C++ code in R packages using the .Call() interface
+provided by R.
+
+Rcpp provides matching C++ classes for a large number of basic R
+data types. Hence, a package author can keep his data in normal R
+data structures without having to worry about translation or
+transfering to C++. At the same time, the data structures can be
+accessed as easily at the C++ level, and used in the normal manner.
+
+The mapping of data types works in both directions. It is as
+straightforward to pass data from R to C++, as it is it return data
+from C++ to R.
+
+WWW: http://cran.r-project.org/web/packages/Rcpp/
