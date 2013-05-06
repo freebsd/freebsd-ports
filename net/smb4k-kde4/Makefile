@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smb4k-kde4
-# Date created:				02 Jan 2011
-# Whom:					Josh Paetzel <jpaetzel@FreeBSD.org>
-#
+# Created by: Josh Paetzel <jpaetzel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		smb4k-kde4
 PORTVERSION=		0.10.9
@@ -30,19 +26,21 @@ USE_QT4=	corelib gui network opengl script svg webkit \
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
 
-.if defined(WITHOUT_NLS)
-NLS=	"@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 NLS=	""
+.else
+NLS=	"@comment "
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
 pre-configure:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|add_subdirectory( po )|#add_subdirectory( po )|'     \
 		${WRKSRC}/CMakeLists.txt
 .endif
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|add_subdirectory( doc )|#add_subdirectory( doc )|'   \
 		${WRKSRC}/CMakeLists.txt
 .endif

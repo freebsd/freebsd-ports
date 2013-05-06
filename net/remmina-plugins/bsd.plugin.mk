@@ -31,12 +31,12 @@ CONFIGURE_ARGS+=--enable${PKGNAMESUFFIX}
 PLIST_SUB+=	PLUGIN="${PKGNAMESUFFIX:S,-,,}"
 PLIST=		${PKGDIR}/pkg-plist.plugin
 
-.if defined(WITH_TELEP)
+.if ${PORT_OPTIONS:MTELEP}
 PLIST_SUB+=	TELEP="" ICONS="@comment "
 .else
 PLIST_SUB+=	TELEP="@comment " ICONS=""
 .endif
-.if defined(WITH_SSH)
+.if ${PORT_OPTIONS:MTELEP}
 LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
 CONFIGURE_ARGS+=--enable-ssh
 PLIST_SUB+=	SSH="@comment "
@@ -47,7 +47,7 @@ LDFLAGS+=	-fstack-protector
 PLIST_SUB+=	SSH=""
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTONS:MNLS}
 RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
 .endif
 

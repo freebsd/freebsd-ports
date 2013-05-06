@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freevo
-# Date created:		April 10 2004
-# Whom:			Lewis Thompson (purple@lewiz.net)
-#
+# Created by: Lewis Thompson (purple@lewiz.net)
 # $FreeBSD$
-#
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
@@ -54,15 +50,17 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's| freevo_locale| # freevo_locale|' ${WRKSRC}/${PORTNAME}
 	@${MV} ${WRKSRC}/i18n ${WRKSRC}/i18n-nls-disabled
 .endif

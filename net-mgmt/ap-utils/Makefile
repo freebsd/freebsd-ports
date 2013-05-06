@@ -1,15 +1,11 @@
-# New ports collection makefile for:    ap-utils
-# Date created:		2002/07/10
-# Whom:			Jerry A! <jerry@thehutt.org>
-#
+# Created by: Jerry A! <jerry@thehutt.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ap-utils
 PORTVERSION=	1.4.1
 PORTREVISION=	4
 CATEGORIES=	net-mgmt
-MASTER_SITES=` SF
+MASTER_SITES=	 SF
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
@@ -22,7 +18,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -34,7 +32,7 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/Documentation && \

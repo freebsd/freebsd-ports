@@ -55,7 +55,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/main.c ${WRKSRC}/src/interface.c
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^ALL_LINGUAS/d' ${WRKSRC}/configure
 .endif
 

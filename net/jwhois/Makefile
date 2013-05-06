@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jwhois
-# Date created:		15 Jul 2000
-# Whom:			matusita@jp.FreeBSD.org
-#
+# Created by: matusita@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	jwhois
 PORTVERSION=	4.0
@@ -22,11 +18,14 @@ USE_GMAKE=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
-.if defined(WITHOUT_NLS)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
-.else
-PLIST_SUB=	NLS=""
 .endif
 
 INSTALL_TARGET=	install-strip

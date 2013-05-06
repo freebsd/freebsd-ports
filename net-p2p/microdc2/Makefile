@@ -1,9 +1,5 @@
-# New ports collection makefile for:   microdc
-# Date created:                2006-12-02
-# Whom:                        Pankov Pavel <pankov_p@mail.ru>
-#
+# Created by: Pankov Pavel <pankov_p@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	microdc2
 PORTVERSION=	0.15.6
@@ -21,7 +17,9 @@ GNU_CONFIGURE=	yes
 USES=		iconv
 USE_GNOME=	libxml2
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

@@ -26,7 +26,13 @@ CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
 
 LICENSE=	GPLv2
 
-.if !defined(WITHOUT_NLS)
+USE_GNOME+=	gtk20
+
+MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
@@ -35,11 +41,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-USE_GNOME+=	gtk20
-
-MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -62,7 +64,7 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for ext in html png jpg
 	${INSTALL_DATA} ${WRKSRC}/docs/*.${ext} ${DOCSDIR}

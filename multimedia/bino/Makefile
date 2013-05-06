@@ -31,7 +31,9 @@ LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass \
 MAN1=	bino.1
 INFO=	bino
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

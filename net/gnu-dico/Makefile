@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnu dico
-# Date created:		27-12-2009
-# Whom:			Goran Tal
-#
+# Created by: Goran Tal
 # $FreeBSD$
-#
 
 PORTNAME=	dico
 PORTVERSION=	2.2
@@ -26,16 +22,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
 
-OPTIONS=	PYTHON	"With PYTHON support" on \
-		GUILE	"With GUILE support" on \
-		PCRE	"With PCRE support" on \
-		GSASL	"With GSASL support" off \
-		PAM	"With PAM support" off \
-		LDAP	"With LDAP support" off
+OPTIONS_DEFINE=	PYTHON GUILE PCRE GSASL PAM LDAP
+OPTIONS_DEFAULT=	PYTHON GUILE PCRE
+GSASL_DESC=	GSASL support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
@@ -43,7 +36,7 @@ CONFIGURE_ARGS+=--without-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_GUILE)
+.if ${PORT_OPTIONS:MGUILE}
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
@@ -51,7 +44,7 @@ CONFIGURE_ARGS+=--without-guile
 PLIST_SUB+=	GUILE="@comment "
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
@@ -59,14 +52,14 @@ CONFIGURE_ARGS+=--without-pcre
 PLIST_SUB+=	PCRE="@comment "
 .endif
 
-.if defined(WITH_GSASL)
+.if ${PORT_OPTIONS:MGSASL}
 LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=--with-gsasl
 .else
 CONFIGURE_ARGS+=--without-gsasl
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 PLIST_SUB+=	PAM=""
 CONFIGURE_ARGS+=--enable-pam
 .else
@@ -74,7 +67,7 @@ PLIST_SUB+=	PAM="@comment "
 CONFIGURE_ARGS+=--disable-pam
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 PLIST_SUB+=	LDAP=""
 .else
@@ -82,7 +75,7 @@ CONFIGURE_ARGS+=--without-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

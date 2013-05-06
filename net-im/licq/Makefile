@@ -30,7 +30,9 @@ CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
 CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
 PLIST_SUB+=	NLS="@comment "
 .else

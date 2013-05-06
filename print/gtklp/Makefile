@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	gtklp
-# Date created:		22 Oct 2002
-# Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-#
+# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	gtklp
 PORTVERSION=	1.2.9
@@ -13,7 +9,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A gtk interface to cups
+COMMENT=	GTK interface to cups
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
@@ -28,7 +24,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtklp.1 gtklpq.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif

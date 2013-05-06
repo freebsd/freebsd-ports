@@ -16,7 +16,9 @@ MAN1=		tcpreen.1
 
 DOC_FILES=	AUTHORS NEWS README THANKS TODO
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -25,7 +27,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

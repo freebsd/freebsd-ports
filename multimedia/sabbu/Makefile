@@ -21,16 +21,18 @@ USE_GNOME=	gtk20
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	WITH_NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	WITH_NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	WITH_NLS="@comment "
 .endif
 
 ASPELL_PORT?=	textproc/aspell
-.if !defined(WITHOUT_GTKSPELL)
+.if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
 PLIST_SUB+=	WITH_ASPELL=""
 .else

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	miredo
-# Date created:				2006-08-12
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=		miredo
 PORTVERSION=	 	1.2.5
@@ -21,7 +17,8 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var --enable-examplesdir=$(EXAMPLESDIR)
 USE_LDCONFIG=		yes
 
-OPTIONS=		POLICYTABLE	"Install policy table to support teredo"	off
+OPTIONS_DEFINE=	POLICYTABLE NLS
+POLICYTABLE_DESC=	Install policy table to support teredo
 
 MAN1=			teredo-mire.1
 MAN5=			miredo-server.conf.5 miredo.conf.5
@@ -30,7 +27,9 @@ USE_RC_SUBR=		miredo_server miredo
 
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
@@ -39,10 +38,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.include <bsd.port.options.mk>
 
 post-install:
-.if defined(WITH_POLICYTABLE)
+.if ${PORT_OPTIONS:MPOLICYTABLE}
 			$(INSTALL_DATA) $(FILESDIR)/ip6addrctl.conf /etc
 PLIST_SUB+=		POLICYTABLE=""
 .else
