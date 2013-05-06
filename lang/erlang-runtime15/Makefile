@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -56,14 +56,7 @@ ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${ERLANG_DOCS}:erlangorg		\
-		${DOC_DISTFILES}
-DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
-		bjarnelic.pdf:publications		\
-		erlang-book-part1.pdf:erlangorg		\
-		master_thesis_patterns.pdf:local	\
-		mnesia_overview.pdf:publications	\
-		programming_rules.pdf:erlangse
+DISTFILES+=	${ERLANG_DOCS}:erlangorg
 .endif
 
 # See http://wiki.freebsd.org/DTrace to learn how to enable DTrace
@@ -129,7 +122,6 @@ CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 USE_GMAKE=	yes
 USE_CSTD=	gnu89
 USE_PERL5=	yes
-USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 
 .if ${PORT_OPTIONS:MODBC}
@@ -200,11 +192,6 @@ post-install:
 		-C ${PREFIX}/lib/${ERLANG_LIB}
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
-
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOC_DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
-.endfor
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/${ERLANG_LIB}
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/${ERLANG_LIB}
