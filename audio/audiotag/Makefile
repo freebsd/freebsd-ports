@@ -16,11 +16,14 @@ OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 NO_BUILD=	yes
 
+USES=		shebangfix
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Daenyth
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+SHEBANG_FILES=	audiotag
 
 .include <bsd.port.options.mk>
 
