@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2010, 2011, 2012 David Naylor <naylor.b.david@gmail.com>.
+# Copyright 2010, 2011, 2012, 2013 David Naylor <naylor.b.david@gmail.com>.
 # Copyright 2012 Jan Beich <jbeich@tormail.org>
 #       All rights reserved.
 #
@@ -55,6 +55,9 @@
 #  - fix mixed pkg/pkgng operation
 # Version 1.9 - 2012/10/31
 #  - fix permission of extracts files
+# Version 1.10 - 2013/05/06
+#  - s/wine-fbsd64/i386-wine/
+#  - fix unwanted failures due to `set -e`
 
 set -e
 
@@ -103,12 +106,12 @@ version() {
   local ret pkg="$1"
   if [ -f "/usr/local/sbin/pkg" ]
   then
-    ret=`pkg query -g '%v' $pkg`
+    ret=`pkg query -g '%v' $pkg || true`
   fi
 
   if [ -z "$ret" ]
   then
-    ret=`pkg_info -E $pkg'*' | cut -f 3 -d -`
+    ret=`pkg_info -E $pkg'*' | cut -f 3 -d - || true`
   fi
   # installed manually or failed to register
   if [ -z "$ret" ] && [ "$pkg" = "nvidia-driver" ]
@@ -122,15 +125,15 @@ version() {
 [ `whoami` = root ] \
   || terminate 254 "This script should be run as root"
 
-echo "===> Patching wine-fbsd64 to work with x11/nvidia-driver:"
+echo "===> Patching i386-wine to work with x11/nvidia-driver:"
 
 if [ -z "${WINE}" ]
 then
-  WINE=`version wine-fbsd64`
+  WINE=`version i386-wine`
 fi
 [ -n "$WINE" ] \
-  || terminate 255 "Unable to detect wine-fbsd64, please install first"
-echo "=> Detected wine-fbsd64: ${WINE}"
+  || terminate 255 "Unable to detect i386-wine, please install first"
+echo "=> Detected i386-wine: ${WINE}"
 
 NV=`version nvidia-driver`
 [ -n "$NV" ] \
@@ -175,4 +178,4 @@ echo "=> Cleaning up..."
 [ -n "$NO_REMOVE_NVIDIA" ] || rm -vf NVIDIA-FreeBSD-x86-${NV}.tar.gz \
   || terminate 6 "Failed to remove files"
 
-echo "===> wine-fbsd64-${WINE} successfully patched for nvidia-driver-${NVIDIA}"
+echo "===> i386-wine-${WINE} successfully patched for nvidia-driver-${NVIDIA}"
