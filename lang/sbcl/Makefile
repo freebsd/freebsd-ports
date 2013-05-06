@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -164,7 +164,7 @@ post-patch:
 		-e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/doc/sbcl.1
 	@${REINPLACE_CMD} -E -e 's!-sbcl-shared!& ${CFLAGS}!' \
-		-e 's!\$$(TEST_FILESTEM|1)_core!$${\1}_core!g' \
+		-e 's!\$$(TEST_FILESTEM|x|1)_core!$${\1}_core!g' \
 		${WRKSRC}/tests/core.test.sh \
 		${WRKSRC}/tests/foreign.test.sh
 	@${REINPLACE_CMD} -E -e 's!"-O3"!!' \
@@ -181,6 +181,10 @@ post-patch:
 				${WRKSRC}/src/runtime/x86-assem.S \
 				${WRKSRC}/src/runtime/x86-64-assem.S ;; \
 	esac
+	${REINPLACE_CMD} -e 's!/bin/bash!${LOCALBASE}&!' \
+		${WRKSRC}/release.sh \
+		${WRKSRC}/src/code/run-program.lisp \
+		${WRKSRC}/tests/run-compiler.sh
 
 do-build:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
