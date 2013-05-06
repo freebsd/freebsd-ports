@@ -72,8 +72,8 @@ libdata/pkgconfig/openobex.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/tabs.css
 %%DOXYGEN%%%%DOCSDIR%%/html/unionobex__headerdata__t.html
 %%DOXYGEN%%%%DOCSDIR%%/html/unionobex__interface__t.html
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
+%%DOXYGEN%%@dirrm %%DOCSDIR%%/html
+%%DOXYGEN%%@dirrm %%DOCSDIR%%
 @dirrm include/openobex
 @dirrm lib/cmake/OpenObex-1.7
 @dirrmtry lib/cmake
