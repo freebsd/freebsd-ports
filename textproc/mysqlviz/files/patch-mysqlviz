@@ -1,0 +1,25 @@
+--- mysqlviz.orig	2010-11-13 08:54:02.000000000 +0900
++++ mysqlviz	2013-05-06 17:56:14.000000000 +0900
+@@ -184,17 +184,16 @@
+ 
+ # usage information
+ function usage() {
+- global $argv;
+- print '[' . basename($argv[0]) . " - mysql + sqlite database visualisation tool]\n\n";
++ print "[mysqlviz - mysql + sqlite database visualisation tool]\n\n";
+  print "usage:\n";
+- print "  " . $argv[0] . " -f <sqldumpfile> [-r]\n";
+- print "                                 ^--- 'redump' mode: generates a\n";
+- print "                                      mysqldump command line to redump.\n";
++ print "  mysqlviz -f <sqldumpfile> [-r]\n";
++ print "                               ^--- 'redump' mode: generates a\n";
++ print "                                    mysqldump command line to redump.\n";
+  print "toolchain:\n";
+  print " $ mysqldump -d db >db.sql          # MySQL: -d = 'no data', only structure\n";
+  print "    - OR -\n";
+  print " $ sqlite database.db .dump >db.sql # SQLite (also: 'sqlite3 ...')\n";
+- print " $ $argv[0] -f ./db.sql >./db.dot # 'dot' is a graphviz format.\n";
++ print " $ mysqlviz -f ./db.sql >./db.dot # 'dot' is a graphviz format.\n";
+  print " $ dot -Tpng db.dot >db.png         # generate image with graphviz\n\n";
+  print "notes:\n";
+  print " if you do not have any foreign keys defined, relationships will be\n";

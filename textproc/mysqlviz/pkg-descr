@@ -1,0 +1,9 @@
+Render a graphical representation of a MySQL or SQLite database
+from a mysqldump or sqlite3 .dump file.
+
+Features:
+- Can infer foreign key relationships if you do not have them defined
+- Handles partial dumps (FK to tables that are not defined within the dump)
+- Fast! Uses sed and grep for data extraction (MySQL only)
+
+WWW: http://code.google.com/p/mysqlviz/
