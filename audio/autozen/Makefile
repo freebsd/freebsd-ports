@@ -13,8 +13,10 @@ COMMENT=	Adjust brain waves with sound
 MAKE_ENV+=	PTHREAD_FLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}" \
 		DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}"
 
+USES=		shebangfix
 USE_GNOME=	gtk12
 USE_PERL5_RUN=	yes
+SHEBANG_FILES=	zentime
 
 PORTDOCS=	*
 MAN1=		autozen.1
