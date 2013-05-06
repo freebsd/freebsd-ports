@@ -25,6 +25,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  infra:	tlmgr dependency (Perl modules)
 #
 #  dvipsk:	dvipsk (not implemented yet)
+#  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #
 #  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
@@ -40,8 +41,12 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  updmap:	font map regeneration
 #  fmtutil:	format regeneration
 #
+.if empty(USE_TEX:Mtetex-texmf) && \
+    empty(USE_TEX:Mtetex-base) && \
+    empty(USE_TEX:Mtetex)
 .if defined(MASTER_SITES) && !empty(MASTER_SITES)
 DIST_SUBDIR?=	TeX
+.endif
 .endif
 
 TEXMFDIR?=	share/texmf
@@ -119,6 +124,11 @@ CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 _USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
 CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .endif
+.if !empty(USE_TEX:Mxdvipdfmx) || !empty(USE_TEX:Mtexlive)
+# XXX
+#_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
+#CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
+.endif
 .if !empty(USE_TEX:Mbase) || !empty(USE_TEX:Mtexlive)
 _USE_TEXLIVE_BASE=	tlmgr:${PORTSDIR}/print/texlive-base
 CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
@@ -139,7 +149,7 @@ CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .for D in TETEX_TEXMF TETEX_BASE TEXLIVE_BASE TEX_WEB2C TEXLIVE_TEXMF \
 	TEXLIVE_INFRA \
 	TEX_FORMATS TEX_ALEPH TEX_JADETEX TEX_XMLTEX TEX_LUATEX \
-	TEX_XETEX TEX_PTEX TEX_XDVIK TEX_DVIPSK
+	TEX_XETEX TEX_PTEX TEX_XDVIK TEX_DVIPSK TEX_DVIPDFMX
 RUN_DEPENDS+=	${_USE_${D}}
 .endfor
 .for D in TETEX_TEXMF TETEX_BASE TEXLIVE_BASE TEX_WEB2C TEXLIVE_TEXMF \
