@@ -35,6 +35,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
+CONFIGURE_ENV=	mysql_cv_btype_last_arg_accept=socklen_t
+
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
