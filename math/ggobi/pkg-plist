@@ -129,9 +129,9 @@ share/pixmaps/ggobi.png
 @unexec if cmp -s %D/etc/xdg/ggobi/ggobirc.sample %D/etc/xdg/ggobi/ggobirc; then rm -f %D/etc/xdg/ggobi/ggobirc; fi
 etc/xdg/ggobi/ggobirc.sample
 @exec if [ ! -f %B/ggobirc ]; then cp -p %D/%F %B/ggobirc; fi
-share/doc/ggobi/XML.pdf
-share/doc/ggobi/manual.pdf
-@dirrm share/doc/ggobi
+%%DOCSDIR%%/XML.pdf
+%%DOCSDIR%%/manual.pdf
+@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry etc/xdg/ggobi
 @dirrmtry etc/xdg
