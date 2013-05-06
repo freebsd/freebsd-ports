@@ -47,7 +47,6 @@ CONFIGURE_ENV+=	ac_cv_prog_DOC_TO_MAN=""
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
