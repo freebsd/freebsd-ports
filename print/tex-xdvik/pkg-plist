@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/xdvi
+bin/xdvi-motif
+%%TEXMFDIR%%/xdvi/XDvi
+%%TEXMFDIR%%/xdvi/config.xdvi
+%%TEXMFDIR%%/xdvi/pixmaps/toolbar.xpm
+%%TEXMFDIR%%/xdvi/pixmaps/toolbar2.xpm
+@dirrm %%TEXMFDIR%%/xdvi/pixmaps
+@dirrm %%TEXMFDIR%%/xdvi

@@ -1,0 +1,30 @@
+@comment $FreeBSD$
+%%TEXMFDISTDIR%%/source/jadetex/base/jadetex.dtx
+%%TEXMFDISTDIR%%/source/jadetex/base/jadetex.ins
+%%TEXMFDISTDIR%%/source/jadetex/base/Makefile
+%%TEXMFDISTDIR%%/tex/jadetex/base/uentities.sty
+%%TEXMFDISTDIR%%/tex/jadetex/base/ut1omlgc.fd
+%%TEXMFDISTDIR%%/tex/jadetex/base/jadetex.ltx
+%%TEXMFDISTDIR%%/tex/jadetex/base/pdfjadetex.ini
+%%TEXMFDISTDIR%%/tex/jadetex/base/dsssl.def
+%%TEXMFDISTDIR%%/tex/jadetex/base/jadetex.ini
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/jadetex.cfg
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.xsl
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/Makefile
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/jadetex.1
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.html
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/ChangeLog-old
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/pdfjadetex.1
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/ChangeLog
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/releasenotes.dsl
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/releasenotes.xml
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/demo.sgm
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/docbook.dsl
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.xml
+%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/logo.png
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats/jadetex
+@dirrm %%TEXMFDISTDIR%%/tex/jadetex/base
+@dirrm %%TEXMFDISTDIR%%/tex/jadetex
+@dirrm %%TEXMFDISTDIR%%/source/jadetex/base
+@dirrm %%TEXMFDISTDIR%%/source/jadetex

@@ -509,6 +509,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_XORG			- Set to a list of X.org module dependencies.
 #				  Implies inclusion of bsd.xorg.mk.
 ##
+# USE_TEX			- A list of the TeX dependencies the port has.
+#
+##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 #				  routines found in /etc/rc.subr.
 #				  If this is set to a list of files, these files will be
@@ -1461,6 +1464,10 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_QT4)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
+.endif
+
+.if defined(USE_TEX)
+.include "${PORTSDIR}/Mk/bsd.tex.mk"
 .endif
 
 .if defined(USE_DRUPAL)

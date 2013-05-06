@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/TeXLive/Splashscreen.pm
+%%SITE_PERL%%/TeXLive/TLConfFile.pm
+%%SITE_PERL%%/TeXLive/TLConfig.pm
+%%SITE_PERL%%/TeXLive/TLDownload.pm
+%%SITE_PERL%%/TeXLive/TLPDB.pm
+%%SITE_PERL%%/TeXLive/TLPOBJ.pm
+%%SITE_PERL%%/TeXLive/TLPSRC.pm
+%%SITE_PERL%%/TeXLive/TLPaper.pm
+%%SITE_PERL%%/TeXLive/TLTREE.pm
+%%SITE_PERL%%/TeXLive/TLUtils.pm
+%%SITE_PERL%%/TeXLive/TLWinGoo.pm
+%%SITE_PERL%%/TeXLive/TeXCatalogue.pm
+%%SITE_PERL%%/TeXLive/waitVariableX.pm
+@dirrm %%SITE_PERL%%/TeXLive
+%%TEXMFDIR%%/web2c/fmtutil-hdr.cnf
+%%TEXMFDIR%%/web2c/updmap-hdr.cfg

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+include/ptexenc/ptexenc.h
+include/ptexenc/unicode.h
+@dirrm include/ptexenc
+lib/libptexenc.a
+lib/libptexenc.la
+lib/libptexenc.so
+lib/libptexenc.so.4

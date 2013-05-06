@@ -5,6 +5,51 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130506:
+  AFFECTS: users of TeX
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive ports have been imported.  Although most of ports still depend
+  on teTeX at this moment, they will be converted to use TeXLive.
+
+  The directory layout of them is as follows.  Please use print/texlive-full
+  if you are not familiar with how each component works.  Finer-grained
+  ports will be added (specifically, meta ports for smaller installation
+  and so on).  Note that the full installation needs around 3GB of disk space.
+
+  teTeX-based ports and TeXLive are mutually exclusive.  This means TeXLive
+  ports cannot be installed when teTeX is already installed.  You need
+  to remove all of the TeX-related packages based on teTeX to try TeXLive.
+  Migration procedure will be announced when conversion of the port
+  dependency is completed.
+
+  * Meta port
+   - print/texlive-full: meta port to install all of the TeXLive components
+
+  * Libraries
+   - devel/tex-kpathsea: kpathsea library
+   - devel/tex-web2c: WEB2C toolchain and TeX engines
+   - print/tex-ptexenc: character code conversion library for pTeX
+
+  * Base part of the TeXLive
+   - print/texlive-base: binary programs in TeXLive
+   - print/texlive-texmf: macro and font data in TeXLive
+   - print/texlive-infra: tlmgr dependency (Perl modules)
+   - print/tex-formats:
+
+  * TeX Formats
+   - print/tex-formats: TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX,
+       EplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
+   - print/tex-aleph: Aleph/Lambda
+   - print/tex-xetex: XeTeX
+   - print/tex-luatex: LuaTeX
+   - print/tex-jadetex: JadeTeX
+   - print/tex-xmltex: XMLTeX
+   - japanese/tex-ptex: pTeX
+
+  * DVI ware
+   - print/tex-xdvik: XDvi
+ 
 20130503:
   AFFECTS: users of security/libgcrypt and any port that depends on it
   AUTHOR: ehaupt@FreeBSD.org

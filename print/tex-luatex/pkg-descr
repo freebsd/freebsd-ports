@@ -1,0 +1,4 @@
+LuaTeX is an extended version of pdfTeX using Lua as an embedded
+scripting language.  The LuaTeX projects main objective is to provide
+an open and configurable variant of TeX while at the same time
+offering downward compatibility.

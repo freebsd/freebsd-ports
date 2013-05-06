@@ -1,0 +1,47 @@
+--- texmf.cnf.orig	2012-05-13 08:34:52.000000000 +0900
++++ texmf.cnf	2013-03-03 03:22:42.000000000 +0900
+@@ -51,7 +51,7 @@
+ % Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
+ % Kpathsea sets SELFAUTOLOC (the directory with the binary),
+ % SELFAUTODIR (its parent), and SELFAUTOPARENT (its grandparent).
+-TEXMFROOT = $SELFAUTOPARENT
++TEXMFROOT = $SELFAUTODIR/share
+ 
+ % The tree containing runtime files related to the specific
+ % distribution and version.
+@@ -61,7 +61,7 @@
+ TEXMFDIST = $TEXMFROOT/texmf-dist
+ 
+ % Local additions to the distribution trees.
+-TEXMFLOCAL = $TEXMFROOT/../texmf-local
++TEXMFLOCAL = $TEXMFROOT/texmf-local
+ 
+ % TEXMFSYSVAR, where *-sys store cached runtime data.
+ TEXMFSYSVAR = $TEXMFROOT/texmf-var
+@@ -698,7 +698,7 @@
+ pool_size = 3250000
+ % Minimum pool space after TeX's own strings; must be at least
+ % 25000 less than pool_size, but doesn't need to be nearly that large.
+-string_vacancies = 90000
++string_vacancies = 150000
+ % Maximum number of strings.
+ max_strings = 500000
+ % min pool space left after loading .fmt
+@@ -708,7 +708,7 @@
+ % expansion works by writing material into the buffer and reparsing the
+ % line.  As a consequence, certain constructs require the buffer to be
+ % very large, even though most documents can be handled with a small value.
+-buf_size = 200000
++buf_size = 300000
+ 
+ % Hyphenation trie.  The maximum possible is 4194303 (ssup_trie_size in
+ % the sources), but we don't need that much.  The value here suffices
+@@ -719,7 +719,7 @@
+ 
+ hyph_size = 8191        % prime number of hyphenation exceptions, >610, <32767.
+                         % http://primes.utm.edu/curios/page.php/8191.html
+-nest_size = 500         % simultaneous semantic levels (e.g., groups)
++nest_size = 2500        % simultaneous semantic levels (e.g., groups)
+ max_in_open = 15        % simultaneous input files and error insertions, 
+                         % also applies to MetaPost
+ param_size = 10000      % simultaneous macro parameters, also applies to MP

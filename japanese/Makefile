@@ -315,6 +315,7 @@
     SUBDIR += teTeX
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
+    SUBDIR += tex-ptex
     SUBDIR += texfamily
     SUBDIR += texfamily-vfn2a
     SUBDIR += texinfo
