@@ -10,6 +10,22 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130506:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle linking on ncurses and on readline
+
+  USES= ncurses will set env and make the port link to base version of ncurses
+  if no port version is installed otherwise it will link against port version
+  USES= ncurses:port will for the port to link against the ports version of
+  ncurses
+  USES= ncurses:base will force to link against base version of ncurses.
+
+  USES= readline will make the port link against base version of readline except
+  on 10+ where it will force dependency on the port version of readline
+  USES= readline:port will anyway force dependency on the port version of
+  readline.
+
 20130426:
 AUTHOR: mva@FreeBSD.org
 
