@@ -27,7 +27,7 @@ PORTDOCS=		COPYING.LIB ChangeLog README
 PLIST_SUB+=		BOOST=""
 CONFIGURE_ARGS+=	--with-boost
 CXXFLAGS+=		"-I${LOCALBASE}/include"
-LIB_DEPENDS+=		boost_system.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		boost_system:${PORTSDIR}/devel/boost-libs
 .else
 PLIST_SUB+=		BOOST="@comment "
 CONFIGURE_ARGS+=	--without-boost
