@@ -1,9 +1,5 @@
-# Ports collection makefile for:	git
-# Date created:				7 Feb 2006
-# Whom:					Eric Anholt
-#
+# Created by: Eric Anholt
 # $FreeBSD$
-#
 
 PORTNAME=	git
 PORTVERSION=	1.8.2.2
