@@ -1,4 +1,3 @@
-# Created by:	Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	banshee
@@ -52,7 +51,7 @@ CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-har
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else

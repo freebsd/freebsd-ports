@@ -1,9 +1,5 @@
-# New ports collection makefile for:	etherape
-# Date created:				4 April 2001
-# Whom: 				Holger Lamm <holger@eit.uni-kl.de>
-#
+# Created by: Holger Lamm <holger@eit.uni-kl.de>
 # $FreeBSD$
-#
 
 PORTNAME=	etherape
 PORTVERSION=	0.9.9
@@ -23,7 +19,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		etherape.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=		NLS=""
 .else

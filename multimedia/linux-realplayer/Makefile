@@ -28,10 +28,12 @@ RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
 RABINDIR=	${PREFIX}/bin
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS="" LINUXBASE="${LINUXBASE}"
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -84,7 +86,7 @@ do-install:
 	${LN} -sf $c.so.6.0 ${RADIR}/codecs/$c.so
 .endfor
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${RADIR}/share/locale
 	${CP} -Rp ${WRKSRC}/share/locale/* ${RADIR}/share/locale
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${RADIR}/share/locale

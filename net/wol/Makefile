@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	wol
 # Created by: ijliao
 # $FreeBSD$
 
@@ -17,19 +15,20 @@ USE_PERL5_BUILD=	yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.else
-USES+=		gettext iconv
-PLIST_SUB=	NLS=""
-.endif
-
 MAN1=		wol.1
 INFO=		wol
 DOCS=		AUTHORS NEWS README TODO
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext iconv
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

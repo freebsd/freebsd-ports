@@ -1,9 +1,5 @@
-# New ports collection makefile for:	remmina-plugins
-# Date created:				24 June 2010
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	remmina-plugins
 PORTVERSION=	0.9.2
@@ -19,29 +15,31 @@ COMMENT?=	Remmina plugin system
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 
-OPTIONS=	RDP	"Install RDP protocol plugin"	on \
-		VNC	"Install VNC protocol plugin"	on \
-		XDMCP	"Install XDMCP protocol plugin"	on \
-		TELEP	"Install Telepathy protocol plugin"	on
+OPTIONS_DEFINE=	RDP VNC XDMCP TELEP
+OPTIONS_DEFAULT=	RDP VNC XDMCP TELEP
+RDP_DESC=	RDP protocol plugin
+VNC_DESC=	VNC protocol plugin
+XDMCP_DESC=	XDMCP protocol plugin
+TELEP_DESC=	Telepathy protocol plugin
 
 NO_BUILD=	yes
 PATCHDIR=	# none
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_RDP)
+.if ${PORT_OPTIONS:MRDP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-rdp.so:${PORTSDIR}/net/remmina-plugin-rdp
 .endif
 
-.if !defined(WITHOUT_VNC)
+.if ${PORT_OPTIONS:MVNC}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:${PORTSDIR}/net/remmina-plugin-vnc
 .endif
 
-.if !defined(WITHOUT_XDMCP)
+.if ${PORT_OPTIONS:MXDMCP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:${PORTSDIR}/net/remmina-plugin-xdmcp
 .endif
 
-.if !defined(WITHOUT_TELEP)
+.if ${PORT_OPTIONS:MTELEP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${PORTSDIR}/net/remmina-plugin-telepathy
 .endif
 
