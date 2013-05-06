@@ -28,8 +28,10 @@ RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 
 USE_BZIP2=	yes
 
-OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
-		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
+OPTIONS_DEFINE=	PANOMATIC AUTOPANOSIFTC
+OPTIONS_DEFAULT=	PANOMATIC AUTOPANOSIFTC
+PANOMATIC_DESC=	Install graphics/panomatic
+AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 
 USES=		cmake gettext
 
@@ -91,14 +93,14 @@ post-configure:
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/flags.make \
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/link.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PANOMATIC)
+.if ${PORT_OPTIONS:MPANOMATIC}
 RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 .endif
 
-.if defined(WITH_AUTOPANOSIFTC)
+.if ${PORT_OPTIONS:MAUTOPANOSIFTC}
 RUN_DEPENDS+=	autopano:${PORTSDIR}/graphics/autopano-sift-c
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

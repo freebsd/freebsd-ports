@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iulib
-# Date created:		2009-05-20
-# Whom:			Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
@@ -19,8 +15,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-OPTIONS=	SDL "Enable SDL for graphical debugging" off \
-		VIDIO "Enable Video Input/Output (using ffmpeg)" off
+OPTIONS_DEFINE=	SDL VIDIO
+SDL_DESC=	Enable SDL for graphical debugging
+VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
 MAKE_JOBS_SAFE=	yes
 USE_GCC=	any
@@ -32,22 +29,22 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_SDL)
-CONFIGURE_ARGS+=--without-SDL
-PLIST_SUB+=	SDL="@comment "
-.else
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl gfx
 PLIST_SUB+=	SDL=""
+.else
+CONFIGURE_ARGS+=--without-SDL
+PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_VIDIO)
+.if ${PORT_OPTIONS:MVIDIO}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 post-patch:
-.if !defined(WITH_VIDIO)
+.if ! ${PORT_OPTIONS:MVIDIO}
 	@${REINPLACE_CMD} -e 's/novidio, 0/novidio, 1/' ${WRKSRC}/configure.ac
 .endif
 	@${REINPLACE_CMD} -e 's/nov4l2, 0/nov4l2, 1/' ${WRKSRC}/configure.ac
@@ -59,4 +56,4 @@ pre-configure:
 
 run-autotools: run-autotools-aclocal run-autotools-automake run-autotools-autoconf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

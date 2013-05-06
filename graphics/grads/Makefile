@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GrADS
-# Date created:		25 October 2002
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grads
 PORTVERSION=	1.9b4
@@ -32,30 +28,32 @@ CONFIGURE_ARGS+=	--enable-dyn-supplibs \
 			--with-gui \
 			--with-x
 
-OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \
-		NETCDF "Build netcdf-support" off
+OPTIONS_DEFINE=	HDF NETCDF DOCS EXAMPLES
+OPTIONS_DEFAULT=	HDF
+HDF_DESC=	Build hdf-support (only hdf OR netcdf is supported)
+NETCDF_DESC=	Build netcdf-support
 
 .if !defined(NOPORTDATA)
 PORTDATA=	*
 .endif
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_HDF)
+.if ${PORT_OPTIONS:MHDF}
 LIB_DEPENDS+=		mfhdf.3:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=	--with-hdf
 PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
 
-.if defined(WITH_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 LIB_DEPENDS+=		netcdf:${PORTSDIR}/science/netcdf4
 CONFIGURE_ARGS+=	--with-nc
 PLIST_SUB+=		NETCDF="" HDF="@comment "
@@ -74,13 +72,13 @@ post-install:
 	${MKDIR} "${DATADIR}"
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . "${DATADIR}"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} "${EXAMPLESDIR}"
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . "${EXAMPLESDIR}"
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} "${DOCSDIR}"
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . "${DOCSDIR}"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

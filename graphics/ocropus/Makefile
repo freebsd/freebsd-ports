@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OCRopus
-# Date created:		2009-05-20
-# Whom:			Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ocropus
 PORTVERSION=	0.4
@@ -22,8 +18,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/ocropus-0.4/ocropus
 
-OPTIONS=	SDL "Enable SDL for graphical debugging" off \
-		LEPTONICA "Enable Leptonica image analysis" off
+OPTIONS_DEFINE=	SDL LEPTONICA
+SDL_DESC=	Enable SDL for graphical debugging
+LEPTONICA_DESC=	Enable Leptonica image analysis
 
 MAKE_JOBS_UNSAFE=	yes
 USE_PYTHON_BUILD=	yes
@@ -33,18 +30,18 @@ CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_SDL)
-CONFIGURE_ARGS+=--without-SDL
-.else
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
+.else
+CONFIGURE_ARGS+=--without-SDL
 .endif
 
-.if !defined(WITH_LEPTONICA)
-CONFIGURE_ARGS+=--without-leptonica
-.else
+.if ${PORT_OPTIONS:MLEPTONICA}
 LIB_DEPENDS+=	lept:${PORTSDIR}/graphics/leptonica
+.else
+CONFIGURE_ARGS+=--without-leptonica
 .endif
 
 pre-configure:
@@ -59,4 +56,4 @@ run-autotools-autoconf:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

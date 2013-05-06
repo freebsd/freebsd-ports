@@ -1,9 +1,5 @@
-# New ports collection makefile for:	frei0r
-# Date created:		17 November 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	frei0r
 PORTVERSION=	1.3
@@ -47,12 +43,14 @@ FREI0R_PLUGINS=	rgbparade scale0tilt vectorscope
 
 PORTDOCS=	*
 
-OPTIONS=	APIDOC "Install full documentation (requires doxygen)" off \
-		MMX "Enable MMX CPU instructions" off
+OPTIONS_DEFINE=	APIDOC
+OPTIONS_DEFINE_amd64=	MMX
+APIDOC_DESC=	Install full documentation (requires doxygen)
+MMX_DESC=	MMX CPU instructions
 
 .include <bsd.port.options.mk>
 
-. if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+. if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MAPIDOC}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 . endif
 
@@ -70,12 +68,6 @@ PLIST_FILES+=	lib/frei0r-1/${FILE}.so
 PLIST_FILES+=	"@dirrmtry lib/frei0r-1"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_MMX) && ${ARCH} != "amd64"
-CONFIGURE_ARGS+=--disable-cpuflags
-.endif
-
 post-patch:
 .if !defined(BUILDING_FREI0R_GAVL)
 	@${REINPLACE_CMD} -e 's/HAVE_GAVL=true/HAVE_GAVL=false/g' \
@@ -86,10 +78,10 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 .if !defined(FREI0R_PLUGINS)
-. if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+. if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MAPIDOC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|include|include doc|' ${WRKSRC}/Makefile.in
 . endif
-. if defined(NOPORTDOCS)
+. if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am/s| install-docsDATA||' \
 		${WRKSRC}/Makefile.in
 . endif
@@ -110,6 +102,6 @@ pre-build:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif # !defined(BUILDING_FREI0R_METAPORT)
