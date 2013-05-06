@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dc3dd
-# Date created:        15 February 2011
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dc3dd
 PORTVERSION=	7.1.614
@@ -25,11 +21,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		dc3dd.1
 
-.if defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
 .include <bsd.port.mk>

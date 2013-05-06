@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RelaxBSD
-# Date created:		2005-10-12
-# Whom:		 	Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	relaxconf
 PORTVERSION=	1.1.1
@@ -20,12 +16,14 @@ RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
 
 GNU_CONFIGURE=	yes
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.else
+.include <bsd.port.options.mK>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .include <bsd.port.mk>
