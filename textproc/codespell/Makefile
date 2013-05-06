@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	codespell
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
 		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
