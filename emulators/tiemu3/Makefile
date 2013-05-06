@@ -27,7 +27,9 @@ CONFIGURE_ARGS=	--disable-gdb
 
 MAN1=		tiemu.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB=	NLS=""
 .else
