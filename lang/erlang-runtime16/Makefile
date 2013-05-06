@@ -3,6 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	16.b
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -22,6 +23,8 @@ PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
+
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION:C/\..*//}
 
 WRKSRC=		${WRKDIR}/otp_src_R16B
 
