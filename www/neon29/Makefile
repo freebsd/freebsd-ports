@@ -1,9 +1,5 @@
-# New ports collection makefile for: neon
-# Date created:		13 October 2000
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
@@ -17,56 +13,53 @@ COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[6|8]-[0-9]*
 
-OPTIONS=	EXPAT "Build with expat-based XML parser" on \
-		XML "Build with libxml-based XML parser" off \
-		OPENSSL "Build with SSL support" on \
-		NLS "Build with NLS support" on \
-		GSSAPI "Build with GSSAPI support" on \
-		PROXY "Build with libproxy support" off
+OPTIONS_DEFINE=	OPENSSL NLS GSSAPI PROXY DOCS
+OPTIONS_DEFAULT=	EXPAT OPENSSL NLS GSSAPI
+OPTIONS_SINGLE=	XML
+OPTIONS_SINGLE_XML=	EXPAT LIBXML
+XML_DESC=	XML parser library
+LIBXML_DESC=	libxml2 XML parser support
+PROXY_DESC=	libproxy support
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-USE_GNOME=	gnomehack ltverhack
+USES=		pathfix
+USE_GNOME=	ltverhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
 
-.include "bsd.port.options.mk"
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXPAT) && defined(WITH_XML)
-BROKEN=expat and libxml is not compatible
-.endif
-
-# expat is default unless WITH_XML is choosen
-.if !defined(WITHOUT_EXPAT) && !defined(WITH_XML)
+.if ${PORT_OPTIONS:MEXPAT}
 CONFIGURE_ARGS+=--with-expat
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
-.if defined(WITH_XML)
+.if ${PORT_OPTIONS:MLIBXML}
 CONFIGURE_ARGS+=--with-libxml2
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=--with-ssl
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_GSSAPI)
+.if ! ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--without-gssapi
 .endif
 
-.if defined(WITH_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=--with-libproxy
 LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
 .else
@@ -149,16 +142,10 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/neon
 
-pre-everything::
-.if defined(WITH_EXPAT) && defined(WITH_XML)
-	@${ECHO_CMD} "please choose between expat and libxml2 not both"
-	@${FALSE}
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${MANPREFIX}/man/man3
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC} ; ${MAKE} install-html)
 .endif
 

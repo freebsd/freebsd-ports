@@ -14,12 +14,14 @@ COMMENT=	Slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
-		unzip:${PORTSDIR}/archivers/unzip
+		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_PHP+=	gettext
 USES+=		gettext
 
@@ -98,7 +100,7 @@ do-install:
 	  -o -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${INSTALL} -d ${DOCSDIR}
 	@ cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
