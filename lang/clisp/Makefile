@@ -1,9 +1,5 @@
-# New ports collection makefile for:    clisp
-# Date created:         Feb  5 2000
-# Whom:                 Jeff Brown <jabrown@caida.org>
-#
+# Created by: Jeff Brown <jabrown@caida.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clisp
 PORTVERSION=	2.49
@@ -39,34 +35,30 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	BDB "Build Berkeley Database module" Off \
-		CLX_MIT "Build X11 module (original MIT version)" Off \
-		CLX_NEW "Build X11 module (new faster version)" Off \
-		DBUS "D-BUS control module" Off \
-		FASTCGI "Build FastCGI module" Off \
-		GDBM "Build GNU Database manager module" Off \
-		GTK2 "Build Gtk+2 module" Off \
-		PARI "Build PARI (math and calc lib) module" Off \
-		PCRE "Build PCRE (Perl Compatible Regexp) module" Off \
-		PGSQL "Build PostgreSQL database module" Off \
-		RAWSOCK "Build Raw Socket Access module" On \
-		SVM "Enable Support Vector Machines module" Off \
-		THREADS "Enable multithreaded (Experimental)" Off \
-		WILDCARD "Build wildcard matching module" On \
-		ZLIB "Build ZLib interface module " On
+OPTIONS_DEFINE=	BDB DBUS FASTCGI GDBM GTK2 PARI PCRE \
+		PGSQL RAWSOCK SVM THREADS WILDCARD ZLIB
+CLX_MIT_DESC=	X11 module (original MIT version)
+CLX_NEW_DESC=	X11 module (new faster version)
+PARI_DESC=	PARI (math and calc lib) module
+RAWSOCK_DESC=	Raw Socket Access module
+SVM_DESC=	Vector Machines module
+THREADS_DESC=	Multithreaded Support (Experimental)
+WILDCARD_DESC=	Wildcard matching module
+
+OPTIONS_RADIO=	CLX
+OPTIONS_RADIO_CLX=	CLX_MIT CLX_NEW
+CLX_DESC=	X11 Module Selection
+
+OPTIONS_DEFAULT=	RAWSOCK WILDCARD ZLIB
 
 MAN1=		clisp.1 clisp-link.1
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Semgentation fault in amd64 when using 'mmap(2)', errno = EINVAL.
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--disable-mmap
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		Does not build on FreeBSD 6.x
 .endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -77,107 +69,104 @@ MODULES=	BDB CLX_NEW CLX_MIT DBUS FASTCGI GDBM GTK2 PARI PCRE PGSQL \
 		RAWSOCK SVM WILDCARD ZLIB
 
 .for mod in ${MODULES}
-.   if defined(WITH_${mod})
+.   if ${PORT_OPTIONS:M${mod}}
 PLIST_SUB+=	${mod}=""
 .   else
 PLIST_SUB+=	${mod}="@comment "
 .   endif
 .endfor
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	43+
 CONFIGURE_ARGS+=--with-module=berkeley-db
 CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER}
 LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
 .endif
 
-.if defined(WITH_CLX_MIT) && defined(WITH_CLX_NEW)
-IGNORE=		selected different implementations of the same X11 module
-.endif
-.if defined(WITH_CLX_MIT) || defined(WITH_CLX_NEW)
+.if ${PORT_OPTIONS:MCLX_MIT} || ${PORT_OPTIONS:MCLX_NEW}
 USE_XORG=	x11
 .endif
-.if defined(WITH_CLX_MIT)
+.if ${PORT_OPTIONS:MCLX_MIT}
 CONFIGURE_ARGS+=--with-module=clx/mit-clx
 .endif
-.if defined(WITH_CLX_NEW)
+.if ${PORT_OPTIONS:MCLX_NEW}
 CONFIGURE_ARGS+=--with-module=clx/new-clx
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--with-module=dbus
 .endif
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
 CONFIGURE_ARGS+=--with-module=fastcgi
 .endif
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=--with-module=gdbm
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20 libglade2
 CONFIGURE_ARGS+=--with-module=gtk2
 .endif
 
-.if defined(WITH_PARI)
+.if ${PORT_OPTIONS:MPARI}
 LIB_DEPENDS+=	pari-gmp.2:${PORTSDIR}/math/pari
 CONFIGURE_ARGS+=--with-module=pari
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-module=pcre
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-module=postgresql
 .endif
 
-.if defined(WITH_RAWSOCK)
+.if ${PORT_OPTIONS:MRAWSOCK}
 CONFIGURE_ARGS+=--with-module=rawsock
 .endif
 
-.if defined(WITH_SVM)
+.if ${PORT_OPTIONS:MSVM}
 RUN_DEPENDS+=	svm-predict:${PORTSDIR}/science/libsvm
 CONFIGURE_ARGS+=--with-module=libsvm
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--with-threads=POSIX_THREADS \
 			LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 PKGNAMESUFFIX=		-threaded
 .endif
 
-.if defined(WITH_WILDCARD)
+.if ${PORT_OPTIONS:MWILDCARD}
 CONFIGURE_ARGS+=--with-module=wildcard
 .endif
 
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 CONFIGURE_ARGS+=--with-module=zlib
 .endif
 
 post-patch:
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|-lcompat ${PTHREAD_LIBS}|' \
 		${WRKSRC}/modules/oracle/link.sh
 .endif
 
 pre-install:
-.if defined(WITH_CLX_MIT)
+.if ${PORT_OPTIONS:MCLX_MIT}
 	${CP} ${WRKSRC}/modules/clx/mit-clx/README.CLISP \
 		${WRKSRC}/src/clx/mit-clx/README.CLISP
 .endif
@@ -185,4 +174,4 @@ pre-install:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
