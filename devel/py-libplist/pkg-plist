@@ -1,0 +1,9 @@
+include/plist/cython/plist.pxd
+include/plist/swig/plist.i
+%%PYTHON_SITELIBDIR%%/plist.so
+%%PYTHON_SITELIBDIR%%/plist/__init__.py
+%%PYTHON_SITELIBDIR%%/plist/_plist.so
+%%PYTHON_SITELIBDIR%%/plist/plist.py
+@dirrm %%PYTHON_SITELIBDIR%%/plist
+@dirrm include/plist/swig
+@dirrm include/plist/cython
