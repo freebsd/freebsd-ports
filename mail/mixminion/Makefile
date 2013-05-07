@@ -13,6 +13,10 @@ MASTER_SITES=	http://www.mixminion.net/dist/${DISTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type III Anonymous Remailer
 
+BROKEN=		Build is broken with supported python versions
+DEPRECATED=	This port requires python version, we haven't in the ports tree already
+EXPIRATION_DATE=2013-06-07
+
 USE_OPENSSL=	yes
 OPENSSL_LDFLAGS+=-lssl
 USE_PYTHON=	2.0-2.5
