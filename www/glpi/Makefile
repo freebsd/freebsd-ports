@@ -1,9 +1,8 @@
-# Created by:	Mathias Monnerville <mathias@monnerville.com>
-#
+# Created by: Mathias Monnerville <mathias@monnerville.com>
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.83.7
+PORTVERSION=	0.83.8
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \
