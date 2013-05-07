@@ -1,9 +1,5 @@
-# ports collection makefile for:   mikmod304
-# Date created:        16 November 1998
-# Whom:                yoshiaki Uchikawa
-#
+# Created by: Yoshiaki Uchikawa
 # $FreeBSD$
-#
 
 PORTNAME=	mikmod
 PORTVERSION=	3.2.1
@@ -17,19 +13,27 @@ COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI, and IT mods
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-.ifdef (WITH_COLOR)
-CONFIGURE_ARGS+=	--enable-color-interface
-.endif
-
 MAN1=		mikmod.1
 PLIST_FILES=	bin/mikmod
 
 PORTSCOUT=	skipv:3.3.0
+
+OPTIONS_DEFINE=	COLOR
+
+COLOR_DESC=	Build with color support
+
+OPTIONS_DEFAULT=COLOR
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCOLOR}
+CONFIGURE_ARGS+=	--enable-color-interface
+.endif
 
 .include <bsd.port.mk>
