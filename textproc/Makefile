@@ -1273,7 +1273,6 @@
     SUBDIR += ruby-rss
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-rttool
-    SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
     SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
