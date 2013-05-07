@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	6.0.36
+PORTVERSION=	6.0.37
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
@@ -95,10 +95,6 @@ do-install:
 		@${ECHO_MSG} ">> Preserving local configuration file: ${f} [ DONE ]"
 .	endif
 .endfor
-
-	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
-	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/lib/tools.jar
-	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing ownership settings..."
 	@${CHOWN} -R ${TOMCAT_USER}:${TOMCAT_GROUP} ${APP_HOME}/conf ${APP_HOME}/logs \

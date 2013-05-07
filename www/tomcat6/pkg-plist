@@ -8,6 +8,7 @@
 %%T%%/bin/catalina.sh
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-daemon-native.tar.gz
+%%T%%/bin/daemon.sh
 %%T%%/bin/digest.sh
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
@@ -42,7 +43,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.7.2.jar
+%%T%%/lib/ecj-4.2.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -53,7 +54,6 @@
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
-%%T%%/lib/tools.jar
 %%T%%/temp/safeToDelete.tmp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
