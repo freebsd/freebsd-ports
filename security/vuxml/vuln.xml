@@ -56,11 +56,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nginx</name>
-	<range><lt>1.4.1</lt></range>
+	<range><ge>1.3.9,1</ge><lt>1.4.1,1</lt></range>
       </package>
       <package>
 	<name>nginx-devel</name>
-	<range><lt>1.5.0</lt></range>
+	<range><ge>1.3.9</ge><lt>1.5.0</lt></range>
       </package>
     </affects>
     <description>
@@ -79,6 +79,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-05-07</discovery>
       <entry>2013-05-07</entry>
+      <modified>2013-05-07</modified>
     </dates>
   </vuln>
 
