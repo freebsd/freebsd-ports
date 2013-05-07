@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130507:
+  AFFECTS: users of devel/libplist
+  AUTHOR: avilla@FreeBSD.org
+
+  libplist Python bindings were split from the main port. To get them you
+  need to install devel/py-libplist.
+
 20130506:
   AFFECTS: users of TeX
   AUTHOR: hrs@FreeBSD.org
@@ -49,7 +56,7 @@ you update your ports collection, before attempting any port upgrades.
 
   * DVI ware
    - print/tex-xdvik: XDvi
- 
+
 20130503:
   AFFECTS: users of security/libgcrypt and any port that depends on it
   AUTHOR: ehaupt@FreeBSD.org
@@ -61,7 +68,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -r libgcrypt
 
   or
-  
+
   # portupgrade -rf libgcrypt
 
   Alternatively, you may install sysutils/bsdadminscripts, run pkg_libchk and
