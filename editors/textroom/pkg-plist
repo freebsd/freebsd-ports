@@ -12,5 +12,3 @@ share/sounds/keyenter.wav
 @dirrmtry share/hunspell
 @dirrmtry share/applications
 @dirrm share/textroom
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
