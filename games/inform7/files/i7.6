@@ -1,4 +1,4 @@
-.\" Copyright (c) 2010 Andy Kosela <akosela@andykosela.com>
+.\" Copyright (c) 2010-2013 Andy Kosela <akosela@andykosela.com>
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -25,7 +25,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd October 2, 2010
+.Dd May 3, 2013
 .Dt I7 6
 .Os
 .Sh NAME
@@ -38,11 +38,11 @@
 .Op Fl 8g
 .Ar story.ni
 .Nm
-.Op Fl k
-.Ar story.key story.z5
-.Nm
 .Op Fl r
 .Ar story.scr story.z5
+.Nm
+.Op Fl w
+.Ar story.key story.z5
 .Nm
 .Op Fl h
 .Pp
@@ -68,7 +68,7 @@ very different pursuits, in their rewards and pleasures:
 
 More resources:
  http://www.inform7.com
- http://www.brasslantern.com
+ http://www.brasslantern.org
  http://www.ifarchive.org
  http://en.wikipedia.org/wiki/Interactive_fiction
 
@@ -86,27 +86,30 @@ create Z-code v8 release.
 create Glulx release.
 .It Fl h
 show usage.
-.It Fl k
-replay game from a keys or solution file.
 .It Fl r
 replay game from a transcript file.
+.It Fl w
+replay game from a walkthrough file.
 .Sh EXAMPLES
 .nf
 The most basic use of Inform7 for FreeBSD is:
+
 $ i7 story.ni
+
 which compiles your source story file into a Z-code v5 release.
 
 If you have a transcript file from game, you can use the -r option to
 replay it in story.z5
+
 $ i7 -r story.scr story.z5
 
 You will receive three files.
 story.$$.scr - new transcript file
-story.$$.key - keys file
+story.$$.key - walkthrough file
 story.$$.sav - save game from a transcript file
 
-You can also construct a simple keys file and then automatically replay
-its sequence of commands in your stories.
+You can also construct a simple walkthrough file and then automatically
+replay its sequence of commands in your stories.
 
 Example of a story.key
 VERBOSE
@@ -116,15 +119,15 @@ W
 GET LAMP
 SCORE
 
-A keys file can be very short, meant just to test some sequence of
-commands within your story, or it can be a full solution walkthrough.
+A walkthrough file can be very short, meant just to test some sequence
+of commands within your story, or it can be a full solution walkthrough.
 
-$ i7 -k story.key story.z5
+$ i7 -w story.key story.z5
 
 Once again you will receive three files.
 story.$$.scr - new transcript file
-story.$$.key - keys file
-story.$$.sav - save game from a keys file
+story.$$.key - walkthrough file
+story.$$.sav - save game from a walkthrough file
 .fi
 .Sh FILES
 .Bl -tag -width ".Pa /usr/local"
