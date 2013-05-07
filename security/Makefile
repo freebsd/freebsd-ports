@@ -755,6 +755,7 @@
     SUBDIR += py-otr
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
+    SUBDIR += py-plaso
     SUBDIR += py-plone.app.openid
     SUBDIR += py-plone.keyring
     SUBDIR += py-plone.openid
