@@ -121,6 +121,7 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-bulksms
+    SUBDIR += py-libimobiledevice
     SUBDIR += py-lirc
     SUBDIR += py-serial
     SUBDIR += pyla

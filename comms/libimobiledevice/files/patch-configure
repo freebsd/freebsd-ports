@@ -1,0 +1,10 @@
+--- ./configure.orig	2013-03-18 10:28:26.000000000 +0100
++++ ./configure	2013-04-30 14:56:00.356777062 +0200
+@@ -17262,6 +17262,7 @@
+ $as_echo "yes" >&6; }
+ 	have_openssl=yes
+ fi
++have_openssl=yes
+ if test "x$have_openssl" = "xyes"; then
+   if test "x$use_openssl" != "xyes"; then
+     enable_openssl=no
