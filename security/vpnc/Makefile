@@ -14,12 +14,14 @@ COMMENT=	Client for Cisco 3000 VPN Concentrator
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
+USES=		shebangfix
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	vpnc
 MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	all
+SHEBANG_FILES=	makeman.pl
 
 PORTDOCS=	README TODO
 MAN8=		vpnc.8
@@ -57,7 +59,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's|\(/etc/vpnc\)|${PREFIX}\1|' \
 		${WRKSRC}/${MAN8}.template
-	@${REINPLACE_CMD} -e '1s|.*perl|#!${PERL}|' ${WRKSRC}/makeman.pl
 
 do-install:
 	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
