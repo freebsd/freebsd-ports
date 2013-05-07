@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -25,10 +26,12 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 
 DISTINFO_FILE=	${MUNIN_DISTINFO}
 EXTRA_PATCHES+=	${MUNIN_PATCHES}
+USES=		shebangfix
 USE_PERL5=	yes
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
+SHEBANG_FILES=	node/sbin/munin-node
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 

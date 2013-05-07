@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 USES=		shebangfix
 USE_PERL5=	yes
-SHEBANG_FILES=	node/sbin/munin-node
+SHEBANG_FILES=	contrib/*.pl \
+		*.pl
 
 MAN1=		fsbackup.1
 MANCOMPRESSED=	no
