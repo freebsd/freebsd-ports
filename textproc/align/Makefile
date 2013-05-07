@@ -14,14 +14,12 @@ LICENSE=	GPLv2 # (or later)
 
 NO_BUILD=	yes
 
+USES=		shebangfix
 USE_PERL5_RUN=	yes
 
-PLIST_FILES=	bin/align bin/width
+SHEBANG_FILES=	align width
 
-post-patch:
-.for i in align width
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${i}
-.endfor
+PLIST_FILES=	bin/align bin/width
 
 do-install:
 .for i in align width

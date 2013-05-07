@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmlprpr
-# Date created:		Sun Oct  9 10:33:37 EDT 2005
-# Whom:			Paul Chvostek <paul+ports@it.ca>
-#
+# Created by: Paul Chvostek <paul+ports@it.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlprpr
 PORTVERSION=	1.32
@@ -16,17 +12,18 @@ DISTFILES=	xmlpp.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML pretty printer
 
+USES=		shebangfix
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	xmlpp.pl
+
 PLIST_FILES=	bin/xmlprpr
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s:/usr/bin/perl:${PERL}:' ${WRKSRC}/xmlpp.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmlpp.pl ${PREFIX}/bin/xmlprpr
