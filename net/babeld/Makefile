@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	babeld
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A distance-vector routing protocol
+COMMENT=	Distance-vector routing protocol
 
 PLIST_FILES=	bin/babeld
 
