@@ -6,6 +6,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20120701-source
+DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese pTeX and its tools

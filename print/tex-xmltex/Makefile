@@ -6,6 +6,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20120701-texmf
+DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
 MAINTAINER=	hrs@FreeBSD.org

@@ -41,13 +41,13 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  updmap:	font map regeneration
 #  fmtutil:	format regeneration
 #
-.if empty(USE_TEX:Mtetex-texmf) && \
-    empty(USE_TEX:Mtetex-base) && \
-    empty(USE_TEX:Mtetex)
-.if defined(MASTER_SITES) && !empty(MASTER_SITES)
-DIST_SUBDIR?=	TeX
-.endif
-.endif
+
+# default TeX distribution.  "tetex" or "texlive"
+TEX_DEFAULT?=	tetex
+#TEX_DEFAULT?=	texlive
+
+# normalize
+TEX_DEFAULT:=	${TEX_DEFAULT:L}
 
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
@@ -125,9 +125,8 @@ _USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
 CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .endif
 .if !empty(USE_TEX:Mxdvipdfmx) || !empty(USE_TEX:Mtexlive)
-# XXX
-#_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
-#CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
+_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
+CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .endif
 .if !empty(USE_TEX:Mbase) || !empty(USE_TEX:Mtexlive)
 _USE_TEXLIVE_BASE=	tlmgr:${PORTSDIR}/print/texlive-base

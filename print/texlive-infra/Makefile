@@ -6,6 +6,7 @@ CATEGORIES=	print perl5
 MASTER_SITES=	ftp://tug.org/tex-archive/systems/texlive/tlnet/archive/
 PKGNAMESUFFIX=	-infra
 DISTNAME=	${PORTNAME}.infra
+DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Basic TeXLive infrastructure
