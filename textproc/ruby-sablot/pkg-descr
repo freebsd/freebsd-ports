@@ -1,8 +1,0 @@
-This is the experimental version of a Ruby interface to Sablotron, the
-XSLT processor developed by Ginger Alliance.
-
-This module's license is the combination of MPL (Mozilla Public
-License) and GPL.
-
-Author:	TAKAHASHI Masayoshi <maki@inac.co.jp>
-WWW: http://raa.ruby-lang.org/project/sablot
