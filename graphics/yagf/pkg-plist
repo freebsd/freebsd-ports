@@ -18,5 +18,3 @@ share/yagf/translations/yagf_uk.qm
 @dirrmtry share/icons/hicolor/96x96
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@exec %%LOCALBASE%%/bin/update-desktop-database || :
-@unexec %%LOCALBASE%%/bin/update-desktop-database || :
