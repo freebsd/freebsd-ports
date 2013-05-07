@@ -148,6 +148,10 @@ MAIN: {
 							last;
 						}
 					}
+
+					# normalize FreeBSD.org
+					$creator=~s#\@freebsd\.org#\@FreeBSD.org#i;
+
 					print $outh "# Created by: $creator\n" if(!$is_nice);
 				} else {
 					print STDERR "$mf creator not found. Reverting to RCS string only.\n";
