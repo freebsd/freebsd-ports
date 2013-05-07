@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="efaa4071-b700-11e2-b1b9-f0def16c5c1b">
+    <topic>nginx -- Stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.4.1</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx project reports:</p>
+       <blockquote cite="http://nginx.org/en/security_advisories.html">
+       <p>A stack-base buffer overflow might occur in a worker process
+       process while handling a specially crafted request, potentially
+       resulting in arbitrary code execution.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2028</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-07</discovery>
+      <entry>2013-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ff570cb-b418-11e2-b279-20cf30e32f6d">
     <topic>strongSwan -- ECDSA signature verification issue</topic>
     <affects>
