@@ -1,12 +1,8 @@
-# New ports collection makefile for:	POE-Component-Client-HTTP
-# Date created:		10 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.9470
+PORTVERSION=	0.9480
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
