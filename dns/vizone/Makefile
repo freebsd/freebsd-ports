@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vizone
-# Date created:				13 Aug 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vizone
 PORTVERSION=	0.1
@@ -13,14 +9,14 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Updates the serial number in one or more zonefiles
 
+USES=		shebangfix
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
+SHEBANG_FILES=	updserial
+
 PORTEXAMPLES=	example.tld
 PLIST_FILES=	bin/vizone bin/updserial
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s|.*|#!${PERL}|' ${WRKSRC}/updserial
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
