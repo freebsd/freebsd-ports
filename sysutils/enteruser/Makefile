@@ -1,9 +1,5 @@
-# New ports collection makefile for:  enteruser
-# Date created:         19 Feb 2002
-# Whom:                 Danny Howard <dannyman@toldme.com>
-#
+# Created by: Danny Howard <dannyman@toldme.com>
 # $FreeBSD$
-#
 
 PORTNAME=	enteruser
 PORTVERSION=	1.0
@@ -16,16 +12,16 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible script for adding new users
 
+USES=		shebangfix
 USE_PERL5=	yes
-NO_WRKSUBDIR=	true
-NO_BUILD=	true
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+
+SHEBANG_FILES=	enteruser
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
-
-do-patch:
-	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/enteruser
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/enteruser ${PREFIX}/sbin

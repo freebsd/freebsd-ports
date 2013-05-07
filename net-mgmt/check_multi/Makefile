@@ -14,15 +14,14 @@ COMMENT=	A multi purpose wrapper plugin for Nagios
 
 LICENSE=	GPLv2
 
+USES=		shebangfix
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLUGIN_DIR=	libexec/nagios
 
-do-configure:
-	${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL5}|" \
-		${WRKSRC}/check_multi
+SHEBANG_FILES=	check_multi
 
 do-install:
 	-${MKDIR} ${PREFIX}/${PLUGIN_DIR}

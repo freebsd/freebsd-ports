@@ -1,19 +1,11 @@
-# New ports collection makefile for:	keitairc2
-# Date created:		18 Jan 2008
-# Whom:			Makoto Matsushita <matusita@FreeBSD.ORG>
-#
+# Created by: Makoto Matsushita <matusita@FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=		keitairc
 PORTVERSION=		2.0
-#PORTREVISION=		1
 CATEGORIES=		irc
 MASTER_SITES=		SFJP
 MASTER_SITE_SUBDIR=	${PORTNAME}/47485
-#DISTNAME=		keitairc-2.0
-
-#PATCH_SITES=		http://home.jp.FreeBSD.org/~matusita/keitairc2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface
@@ -27,17 +19,22 @@ RUN_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig
 
 CONFLICTS=	keitairc-1.*
-NO_BUILD=	yes
+
+USES=		shebangfix
 USE_PERL5=	yes
+NO_BUILD=	yes
+
+SHEBANG_FILES=	keitairc
 
 post-extract:
 	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -rf
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
-	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -i '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
+	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  \
+		${WRKSRC}/keitairc
+	${REINPLACE_CMD} -i '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  \
+		${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
