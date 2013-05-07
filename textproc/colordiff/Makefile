@@ -11,16 +11,16 @@ COMMENT=	Tool to colorize diff output
 
 LICENSE=	GPLv2
 
+USES=		shebangfix
 USE_PERL5=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	colordiff.pl
 
 MAN1=		colordiff.1
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local/bin/perl|${PERL}|; s|/etc|${PREFIX}/etc|' \
-			${WRKSRC}/${PORTNAME}.pl \
-			${WRKSRC}/${MAN1}
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${MAN1}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}

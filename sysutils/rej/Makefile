@@ -9,8 +9,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
+USES=		shebangfix
 USE_PERL5=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	qp mp
 
 PORTDOCS=	CHANGELOG README vimrc
 PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
@@ -20,10 +23,6 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-.for f in ${PORTNAME} qp mp
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/${f}
-.endfor
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		${WRKSRC}/runtests.sh
 

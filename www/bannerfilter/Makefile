@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
+USES=		shebangfix
 USE_PERL5=	yes
 NO_BUILD=	yes
 
@@ -23,10 +24,9 @@ CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 		exceptions.data exceptions.local.data frames.data \
 		frames.local.data popups.data popups.local.data
 
+SHEBANG_FILES=	redirector.pl
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local/etc|${PREFIX}/etc|; s|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/redirector.pl
 	@${REINPLACE_CMD} -e \
 		's|^;\ \(DATA\ =\ \).*|\1${PREFIX}/etc/${PORTNAME}/|' \
 		${WRKSRC}/${PORTNAME}.conf
