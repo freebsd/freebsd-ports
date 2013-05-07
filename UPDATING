@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130507:
+  AFFECTS: users of comms/usbmuxd or comms/libimobiledevice
+  AUTHOR: avilla@FreeBSD.org
+
+  libusbmuxd and libimobiledevice versions have changed. Please, rebuild
+  all the ports that depend on them:
+
+  # portmaster -r usbmuxd
+    or
+  # portupgrade -fr comms/usbmuxd
+    or
+  # pkg install -fR comms/usbmuxd
+
+20130507:
   AFFECTS: users of devel/libplist
   AUTHOR: avilla@FreeBSD.org
 
