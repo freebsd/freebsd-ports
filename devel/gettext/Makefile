@@ -41,12 +41,9 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		textdomain.3
 INFO=		autosprintf gettext
 
-.ifdef USE_GETTEXT
-.error	USE_GETTEXT is defined as an environment variable, or in the arguments \
-	to "make".  Please unset it and restart the build.
-.endif
+.include <bsd.port.options.mk>
 
-.if defined (NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nodocs
 .endif
 
@@ -62,7 +59,7 @@ pre-extract:
 post-patch:
 	@${FIND} ${WRKSRC} -name configure -print | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|mkdir gmkdir|mkdir|; s|gawk|awk|'
-.if defined (NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 .for dir in runtime tools
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = doc|SUBDIRS =|' \
 		${WRKSRC}/gettext-${dir}/Makefile.in
