@@ -60,9 +60,6 @@ bin/dvilj2p
 bin/dvilj4
 bin/dvilj4l
 bin/dvilj6
-bin/dvipdfm
-bin/dvipdfmx
-bin/dvipdft
 bin/dvipng
 bin/dvipos
 bin/dvips
@@ -71,14 +68,12 @@ bin/dviselect
 bin/dvisvgm
 bin/dvitodvi
 bin/e2pall
-bin/ebb
 bin/ebong
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
 bin/exceltex
 bin/extconv
-bin/extractbb
 bin/fig4latex
 bin/findhyph
 bin/fmtutil

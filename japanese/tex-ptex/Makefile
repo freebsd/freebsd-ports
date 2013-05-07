@@ -2,14 +2,14 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.3
-DISTVERSION=	20120701
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-${DISTVERSION}-source
+DISTNAME=	texlive-${DISTVERSION_TEXLIVE}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME_TEXMF}${EXTRACT_SUFX}
-EXTRACT_ONLY=	texlive-${DISTVERSION}-source${EXTRACT_SUFX}
+DIST_SUBDIR=	TeX
+EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE}-source${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
@@ -27,7 +27,8 @@ EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTNAME_TEXMF=	texlive-${DISTVERSION}-texmf
+DISTVERSION_TEXLIVE=	20120701
+DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXLIVE}-texmf
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/doc/ptex \
 	texmf-dist/doc/platex \
@@ -96,7 +97,7 @@ pre-configure:
 	done
 
 pre-su-install:
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION}-texmf${EXTRACT_SUFX} \
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXLIVE}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
 
 .include <bsd.port.mk>

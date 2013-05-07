@@ -289,6 +289,7 @@
     SUBDIR += teTeX-texmf
     SUBDIR += tex
     SUBDIR += tex-aleph
+    SUBDIR += tex-dvipdfmx
     SUBDIR += tex-formats
     SUBDIR += tex-jadetex
     SUBDIR += tex-luatex

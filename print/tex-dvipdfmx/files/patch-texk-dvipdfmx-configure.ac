@@ -1,0 +1,12 @@
+--- configure.ac.orig	2013-05-07 15:15:19.000000000 +0900
++++ configure.ac	2013-05-07 15:15:31.000000000 +0900
+@@ -67,6 +67,9 @@
+ KPSE_ADD_FLAGS([libpng])
+ CHO_CHECK_LIBPNG
+ 
++KPSE_ADD_FLAGS([libpaper])
++CHO_CHECK_LIBPAPER
++
+ KPSE_RESTORE_FLAGS
+ 
+ echo timestamp >config.force

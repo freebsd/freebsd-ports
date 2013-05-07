@@ -6,6 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${PORTVERSION}-source
+DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
