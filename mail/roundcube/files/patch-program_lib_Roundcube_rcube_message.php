@@ -1,5 +1,5 @@
---- program/include/rcube_message.php.orig	2010-11-26 13:41:16.000000000 +0100
-+++ program/include/rcube_message.php	2010-12-13 17:20:59.000000000 +0100
+--- program/lib/Roundcube/rcube_message.php.orig	2010-11-26 13:41:16.000000000 +0100
++++ program/lib/Roundcube/rcube_message.php	2010-12-13 17:20:59.000000000 +0100
 @@ -452,9 +452,7 @@
                  }
                  // part is a file/attachment

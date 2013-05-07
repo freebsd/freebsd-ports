@@ -1,10 +1,10 @@
---- program/include/iniset.php.orig	2012-08-06 18:18:13.000000000 +0200
-+++ program/include/iniset.php	2012-08-13 12:37:50.000000000 +0200
-@@ -29,7 +29,6 @@
+--- program/include/iniset.php.orig	2013-04-15 22:42:21.000000000 +0200
++++ program/include/iniset.php	2013-05-07 12:40:34.000000000 +0200
+@@ -28,7 +28,6 @@
+     // Some users are not using Installer, so we'll check some
      // critical PHP settings here. Only these, which doesn't provide
      // an error/warning in the logs later. See (#1486307).
-     'mbstring.func_overload'  => 0,
 -    'suhosin.session.encrypt' => 0,
      'session.auto_start'      => 0,
      'file_uploads'            => 1,
-     'magic_quotes_runtime'    => 0,
+ );
