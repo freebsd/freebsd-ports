@@ -3,3 +3,4 @@ etc/bird.conf.example
 @exec if [ ! -f %D/etc/bird.conf ] ; then cp -p %D/%F %B/bird.conf; fi
 sbin/bird
 sbin/birdc
+sbin/birdcl
