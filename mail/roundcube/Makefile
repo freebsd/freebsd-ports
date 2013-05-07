@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	0.8.6
+DISTVERSION=	0.9.0
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -23,8 +23,8 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom xml json intl
-IGNORE_WITH_PHP=4
+USE_PHP=	pcre mbstring session iconv dom xml json intl zip
+IGNORE_WITH_PHP=52
 
 OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC
 OPTIONS_SINGLE=	DB
@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=MYSQL
 
 MYSQL_DESC=	Use MySQL backend
 PGSQL_DESC=	Use PostgreSQL backend
-SQLITE_DESC=	Use SQLite backend (needs PHP 5.3 or below)
+SQLITE_DESC=	Use SQLite backend
 SSL_DESC=	Enable SSL support (imaps or google spellcheck)
 LDAP_DESC=	Enable LDAP support (address book)
 GD_DESC=	Enable GD support (image conversion)
@@ -43,15 +43,15 @@ NSC_DESC=	Install network spellchecker
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
+USE_PHP+=	pdo_mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
+USE_PHP+=	pdo_pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite
+USE_PHP+=	pdo_sqlite
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
