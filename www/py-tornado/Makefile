@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tornado
-PORTVERSION=	2.4.1
+PORTVERSION=	3.0.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,17 +11,21 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	AL2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	50af6cc
+GH_COMMIT=	31cef1a
 
-USE_PYTHON=		2.5-2.7
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 300
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
+.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m tornado.test.runtests
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
