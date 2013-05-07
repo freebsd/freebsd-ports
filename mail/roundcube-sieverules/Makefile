@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	sieverules
-PORTVERSION=	1.17.1
+PORTVERSION=	0.9.0
+PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.9.0:${PORTSDIR}/mail/roundcube
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	JohnDoh
+GH_PROJECT=	Roundcube-Plugin-SieveRules-Managesieve
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	430d810
 
 NO_BUILD=	yes
 
