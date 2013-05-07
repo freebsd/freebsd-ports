@@ -324,11 +324,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # GMAKE			- Set to path of GNU make if not in $PATH.
 #				  Default: gmake
 ##
-# USE_GETTEXT	- The port uses GNU gettext (libintl).
-#					'build'		as a build-time dependency
-#					'yes'		as a library dependency
-#					'run'		as a run-time dependency
-##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
 #				  build and run.  If a number is specified,
@@ -373,12 +368,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
-##
-# USE_READLINE	- If set, this port uses libreadline.
-# 				  Legal values are: yes, base, port
-#				  yes, base: use base system libreadline on FreeBSD 9 or earlier,
-#				  	use ports/devel/readline on FreeBSD 10.0+
-#				  port: always use ports/devel/readline
 ##
 # USE_OPENAL	- If set, this port relies on the OpenAL package.
 #				  Legal values are: al, soft, si, alut.
@@ -525,8 +514,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  this option is not needed unless the port installs in the base.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
-#
-# USE_NCURSES	- If set, this port relies on the ncurses package.
 #
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
@@ -1506,10 +1493,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
 
-.if defined(USE_NCURSES)
-.include "${PORTSDIR}/Mk/bsd.ncurses.mk"
-.endif
-
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
 # Loading features
@@ -1717,14 +1700,6 @@ MAKE_ENV+=	${b}="${${b}}"
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 
-.if defined(USE_READLINE)
-.if ${USE_READLINE} == "port" || ${OSVERSION} > 1000000
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -lreadline
-.endif
-.endif
-
 .if defined(USE_OPENAL)
 _OPENAL_ALL=	al si soft alut
 _OPENAL_LIBS=	si soft
@@ -1855,18 +1830,6 @@ USE_LDCONFIG=	${PREFIX}/lib
 .endif
 .if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
 IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
-.endif
-
-.if defined(USE_GETTEXT)
-.	if ${USE_GETTEXT:L} == "build"
-BUILD_DEPENDS+=	xgettext:${PORTSDIR}/devel/gettext
-.	elif ${USE_GETTEXT:L} == "run"
-RUN_DEPENDS+=	xgettext:${PORTSDIR}/devel/gettext
-.	elif ${USE_GETTEXT:L} == "yes"
-LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext
-.	else
-IGNORE=			USE_GETTEXT can be only one of build, run, or yes
-.	endif
 .endif
 
 .if defined(USE_LINUX_PREFIX) && defined(USE_LDCONFIG)

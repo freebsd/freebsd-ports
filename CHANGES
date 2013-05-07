@@ -20,6 +20,8 @@ AUTHOR: bapt@FreeBSD.org
 
   Paths can be customized, and number of languages supported can be extended.
 
+  * USE_GETTEXT, USE_NCURSES, USE_READLINE are no longer recognized
+
 20130506:
 AUTHOR: bapt@FreeBSD.org
 
