@@ -1,6 +1,6 @@
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/CHANGELOG
-%%WWWDIR%%/README
-%%WWWDIR%%/composer.json
+%%WWWDIR%%/README.md
 %%WWWDIR%%/config.inc.php.dist
 %%WWWDIR%%/importFilters/avelsieve.php
 %%WWWDIR%%/importFilters/ingo.php
@@ -34,6 +34,7 @@
 %%WWWDIR%%/package.xml
 %%WWWDIR%%/sieverules.js
 %%WWWDIR%%/sieverules.php
+%%WWWDIR%%/skins/classic/cross.gif
 %%WWWDIR%%/skins/classic/help.gif
 %%WWWDIR%%/skins/classic/icons.gif
 %%WWWDIR%%/skins/classic/icons.png
@@ -46,6 +47,8 @@
 %%WWWDIR%%/skins/classic/templates/editsieverule.html
 %%WWWDIR%%/skins/classic/templates/setupsieverules.html
 %%WWWDIR%%/skins/classic/templates/sieverules.html
+%%WWWDIR%%/skins/classic/tick.gif
+%%WWWDIR%%/skins/larry/cross.png
 %%WWWDIR%%/skins/larry/help.png
 %%WWWDIR%%/skins/larry/icons.png
 %%WWWDIR%%/skins/larry/iehacks.css
@@ -57,6 +60,7 @@
 %%WWWDIR%%/skins/larry/templates/editsieverule.html
 %%WWWDIR%%/skins/larry/templates/setupsieverules.html
 %%WWWDIR%%/skins/larry/templates/sieverules.html
+%%WWWDIR%%/skins/larry/tick.png
 @dirrm %%WWWDIR%%/skins/larry/templates
 @dirrm %%WWWDIR%%/skins/larry
 @dirrm %%WWWDIR%%/skins/classic/templates
