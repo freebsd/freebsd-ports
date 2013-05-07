@@ -1,9 +1,5 @@
-# New ports collection makefile for:	weedit
-# Date created:				9 Oct 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	weedit
 PORTVERSION=	2.0.3
@@ -14,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File duplicate scanner with database support
+
+LICENSE=	GPLv2
 
 USE_DOS2UNIX=	yes
 
