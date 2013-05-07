@@ -2,6 +2,7 @@
 
 PORTNAME=	web2c
 PORTVERSION=	20120701
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -18,6 +19,7 @@ LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_TEX=	kpathsea
+USES=		pkgconfig
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
 EXTRACT_FILES=	${DISTNAME}/build-aux \
 		${DISTNAME}/libs/obsdcompat \
