@@ -1,7 +1,4 @@
-# New ports collection makefile for:   cidr
-# Date created:		18 Jun 2000
-# Whom:			Domas Mituzas <midom@dammit.lt>
-#
+# Created by: Domas Mituzas <midom@dammit.lt>
 # $FreeBSD$
 
 PORTNAME=	cidr
@@ -12,6 +9,8 @@ MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	RFC 1878 subnet calculator / helper
+
+LICENSE=	GPLv2
 
 MAKE_JOBS_SAFE=	yes
 
