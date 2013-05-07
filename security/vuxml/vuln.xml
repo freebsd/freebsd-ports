@@ -67,7 +67,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
        <p>The nginx project reports:</p>
        <blockquote cite="http://nginx.org/en/security_advisories.html">
-       <p>A stack-base buffer overflow might occur in a worker process
+       <p>A stack-based buffer overflow might occur in a worker process
        process while handling a specially crafted request, potentially
        resulting in arbitrary code execution.</p>
        </blockquote>
