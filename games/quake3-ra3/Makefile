@@ -1,41 +1,38 @@
-# Created by: pat@databits.net
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
 
 PORTNAME=	ra3
-PORTVERSION=	1.76
+PORTVERSION=	1.76	# 1.80 exists, but is kinda goofy; 1.76 is classic
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.clanbase.com/pub/ \
-		ftp://ftp.mirrors.degnet.de/pub/misc/PlanetQuake3.net/modifications/rocketarena3/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://games.mirrors.tds.net/pub/planetquake3/modifications/rocketarena3/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quake III Arena Mod: Rocket Arena 3
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quake III Arena mod: Rocket Arena 3
 
-NO_PACKAGE=	"Package will be 102MB, set FORCE_PACKAGE if you really want to build it"
+NO_PACKAGE=	Package will be 102MB, set FORCE_PACKAGE if you really want it
 
-WRKSRC=		${WRKDIR}/arena
-
-BROKEN=		Does not fetch
 USE_ZIP=	yes
 USE_CRLF=	yes
 NO_BUILD=	yes
 
+WRKSRC=		${WRKDIR}/arena
 DATADIR=	${Q3DIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in *.cfg *.pk3
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
-
-.include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.mk>
