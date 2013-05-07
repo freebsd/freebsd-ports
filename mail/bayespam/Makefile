@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bayespam
-# Date created:				Sun Sep  8 16:15:26 UTC 2002
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bayespam
 PORTVERSION=	0.9.2
@@ -16,12 +12,17 @@ COMMENT=	qmail spam filter written in Perl using Bayesian classification
 
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
+USES=		shebangfix
 USE_PERL5=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	*.pl
 
 FILES_DOCS=	AUTHORS COPYING Changelog INSTALL README TODO \
 		qmail.sample
 FILES_SCRIPTS=	bayes_process_email.pl bayes_spam_check.pl bayestest.pl
+
+.include <bsd.port.options.mk>
 
 post-patch:
 # fix location of Bayesian filter
@@ -31,11 +32,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|/usr/bin/(bayes_spam_check.pl)|${PREFIX}/bin/\1|' \
 		${WRKSRC}/bayestest.pl
-# fix location of PERL
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
 
 do-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${FILES_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
