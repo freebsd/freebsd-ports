@@ -28,13 +28,15 @@ PROJECTHOST=	sm-ssc
 USE_BZIP2=	yes
 USE_XORG=	x11 xau xdmcp xext xrandr xrender xtst
 USE_GL=		gl glu
-USES=        pathfix iconv
+USES=        pathfix iconv shebangfix
 USE_GNOME=	gtk20
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ffmpeg
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
+SHEBANG_FILES=	Utils/*.pl \
+		extern/zlib/zlib2ansi
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

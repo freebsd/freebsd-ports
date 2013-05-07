@@ -1,12 +1,9 @@
-# New ports collection makefile for:	ajaxzip2-core
-# Date created:		4 Mar 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ajaxzip2
 PORTVERSION=	20081102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -16,10 +13,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) core scripts
 
+USES=		shebangfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	YES
 NO_BUILD=	YES
 USE_DOS2UNIX=	YES
+SHEBANG_FILES=	work/csv2jsonzip.pl
 
 do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}

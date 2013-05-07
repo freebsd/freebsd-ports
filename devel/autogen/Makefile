@@ -1,13 +1,9 @@
-# ex:ts=8
-# New ports collection makefile for:	autogen
-# Date created:		Mar 11, 2001
-# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	autogen
 PORTVERSION=	5.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}/rel${PORTVERSION}
@@ -19,12 +15,14 @@ COMMENT=	The Automated Program Generator
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
+USES=		shebangfix
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes --datadir=${PREFIX}/share
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	autoopts/tpl/*.pl
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	ao_string_tokenize.3 configFileLoad.3 optionFileLoad.3 \

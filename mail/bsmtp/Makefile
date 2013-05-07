@@ -12,11 +12,13 @@ COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
 
 CONFLICTS=	smail-3.*
 
+USES=		shebangfix
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--redo
 MAKE_JOBS_SAFE=	yes
+SHEBANG_FILES=	configure
 
 .include <bsd.port.pre.mk>
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -14,10 +14,14 @@ COMMENT=	True Type Font to Postscript Type 1 Converter
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
 USE_PERL5=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
 		INSTDIR="${PREFIX}" LIBXDIR="${PREFIX}/bin"
+SHEBANG_FILES=	app/TeX/sfd2map \
+		app/TeX/cjk-latex-config \
+		other/showdf \
+		other/lst.pl
 
 MAN1=		ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
 

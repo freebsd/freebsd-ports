@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eboard
-# Date created:				22 June 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	eboard
 PORTVERSION=	1.1.1
@@ -23,10 +19,12 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 EXTRAS=		1pl2 2
+USES=		shebangfix
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
+SHEBANG_FILES=	configure
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-inc=${LOCALBASE}/include \

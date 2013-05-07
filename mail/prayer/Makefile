@@ -14,8 +14,12 @@ LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USES=		iconv
+USES=		iconv shebangfix
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+SHEBANG_FILES=	utils/ucsnews.pl \
+		templates/old/make_olist.pl \
+		templates/src/*.pl
 
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		PORTLDFLAGS="${LDFLAGS}"

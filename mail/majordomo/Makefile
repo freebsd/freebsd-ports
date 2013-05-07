@@ -1,13 +1,9 @@
-# New ports collection makefile for:	majordomo
-# Date created:		23 October 1996
-# Whom:			jfitz@FreeBSD.org
-#
+# Created by: jfitz@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
@@ -21,7 +17,10 @@ COMMENT=	A mailing list manager
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 .endif
 
+USES=		shebangfix
 USE_PERL5=	yes
+
+SHEBANG_FILES=	contrib/sequencer
 
 ALL_TARGET=	wrapper
 INSTALL_TARGET=	install install-wrapper

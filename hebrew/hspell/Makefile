@@ -1,9 +1,5 @@
-# Ports collection makefile for:  hspell
-# Date created:			  03 Feb 2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hspell
 PORTVERSION=	1.1
@@ -15,10 +11,12 @@ MASTER_SITE_SUBDIR=	makc
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Hebrew spellchecker and morphology engine
 
+USES=		shebangfix
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
+SHEBANG_FILES=	pmerge
 
 MAN1=		hspell.1
 MAN3=		hspell.3
