@@ -1,6 +1,0 @@
-You should run usbmuxd, and after plugging in your iGadget, run
-
-	ifuse -o allow_other /mnt/ipod
-
-- after it, you can reach it's files, and
-use eg. gtkpod to add/delete musics/pictures to it.

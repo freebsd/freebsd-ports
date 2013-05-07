@@ -2,32 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	ifuse
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	Gabor@Zahemszky.HU
-COMMENT=	Mount iPod Touch / iPhone directories over USB
+COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
 
-# LICENSE=	LGPL21
-# LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL21
 
-LIB_DEPENDS=	imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
-
+LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist \
+		imobiledevice:${PORTSDIR}/comms/libimobiledevice
 RUN_DEPENDS=	usbmuxd:${PORTSDIR}/comms/usbmuxd
 
-SUB_FILES=	pkg-message
+USE_GNOME=	glib20
+USES=		fuse pkgconfig
 USE_BZIP2=	yes
-USES=		fuse
-USE_GNOME=	glib20 pkgconfig
-
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/${PORTNAME}
+
+MAN1=		ifuse.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
