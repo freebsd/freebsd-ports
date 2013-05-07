@@ -1,18 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
-PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTVERSION=	1.0.8
 CATEGORIES=	comms
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	Daemon for multiplexing connections over USB to an iPhone/iPod Touch
+COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
 LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
@@ -26,6 +25,7 @@ INOTIFY_DESC=	Use inotify instead of polling (saves energy)
 
 .if ${PORT_OPTIONS:MINOTIFY}
 LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
+CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=TRUE
 .else
 CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=FALSE
 .endif
@@ -34,25 +34,22 @@ CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=FALSE
 IGNORE=		requires libusb 1.0.3
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e 's,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig,' \
+post-patch:
+	@${REINPLACE_CMD} -e 's,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/Modules/FindInotify.cmake
 
 pre-install:
-	${REINPLACE_CMD} -e '1 s,python,env python,' \
+	@${REINPLACE_CMD} -e '1 s,python,env python,' \
 		${WRKSRC}/python-client/*.py
 
 post-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py \
-		${DATADIR}/
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py ${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
