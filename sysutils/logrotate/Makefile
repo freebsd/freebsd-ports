@@ -1,12 +1,8 @@
-# New ports collection makefile for:	logrotate
-# Date Created:				29 Dec 1999
-# Whom:					Yuan-Chen Cheng <ycheng@sinica.edu.tw>
-#
+# Created by: Yuan-Chen Cheng <ycheng@sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=		logrotate
-PORTVERSION=		3.8.3
+PORTVERSION=		3.8.4
 CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
 
