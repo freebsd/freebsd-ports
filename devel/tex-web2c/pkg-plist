@@ -28,3 +28,7 @@ bin/pdftex
 bin/ttf2afm
 bin/pdftosrc
 bin/synctex
+bin/dvitomp
+bin/inimf
+bin/initex
+bin/mfplain
