@@ -21,18 +21,14 @@ TESSERACT_DESC=		Tesseract OCR engine
 
 OPTIONS_DEFAULT=	CUNEIFORM
 
-USES=		cmake pkgconfig
+USES=		cmake desktop-file-utils pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	desktopfileutils
 USE_QT4=	corelib gui imageformats linguist_build \
 		moc_build qmake_build rcc_build uic_build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-
-post-install:
-	-update-desktop-database
 
 .include <bsd.port.options.mk>
 
