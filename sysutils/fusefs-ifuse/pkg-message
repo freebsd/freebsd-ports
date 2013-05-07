@@ -1,0 +1,14 @@
+======================================================================
+
+To mount your iGadget you first need to launch usbmuxd; see...
+
+$ usbmuxd --help
+
+...for help. Then, plug in your device and run iFuse:
+
+# ifuse -o allow_other /mnt/ipod
+
+After that, you'll be able to reach its files and use, e.g., gtkpod to
+add/delete music/pictures.
+
+======================================================================
