@@ -212,7 +212,7 @@ nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/usr/sbin/nologin
 couchdb:*:919:919::0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
 vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/usr/sbin/nologin
 transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission/home:/usr/sbin/nologin
-mongodb:*:922:922::0:0:MongoDB pseudo-user:/var/db/mongodb:/bin/sh
+mongodb:*:922:922::0:0:MongoDB pseudo-user:/var/db/mongodb:/usr/sbin/nologin
 liquidsoap:*:923:923::0:0:Liquidsoap User:/nonexistent:/usr/sbin/nologin
 postpals:*:924:924::0:0:postpals user:/nonexistent:/usr/sbin/nologin
 mfs:*:925:925::0:0:MooseFS User:/nonexistent:/usr/sbin/nologin
