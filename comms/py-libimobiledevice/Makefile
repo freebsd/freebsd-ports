@@ -20,9 +20,9 @@ PLIST=		${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/cython
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/imobiledevice.a \
-		${PYTHON_SITELIBDIR}/imobiledevice.la \
-		${PYTHON_SITELIBDIR}/imobiledevice.so
+PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
+		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.la \
+		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,../src/libimobiledevice.la,${LOCALBASE}/lib/libimobiledevice.la,' \
