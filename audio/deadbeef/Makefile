@@ -18,7 +18,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext iconv
+USES=		pkgconfig gettext iconv shebangfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -29,6 +29,7 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL="${LOCALBASE}/bin/bash"
+SHEBANG_FILES=	yasmwrapper.sh
 
 OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART EQ SID FFAP VTX HOTKEYS VORBIS FFMPEG \
 		FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA AAC \
@@ -357,8 +358,6 @@ post-patch:
 		${WRKSRC}/plugins/gme/Makefile.in \
 		${WRKSRC}/plugins/sid/Makefile.in \
 		${WRKSRC}/plugins/supereq/Makefile.in
-	@${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' \
-		${WRKSRC}/yasmwrapper.sh
 	@${REINPLACE_CMD} -e 's,/etc/timidity++/timidity-freepats.cfg:/etc/timidity/freepats.cfg:/etc/timidity/,${LOCALBASE}/share/,' \
 		${WRKSRC}/plugins/wildmidi/wildmidiplug.c
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   last.fm
-# Date created:        February 5th, 2007
-# Whom:                Michael Nottebrock <lofi@freebsd.org>
-#
+# Created by: Michael Nottebrock <lofi@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	last.fm
 PORTVERSION=	1.5.4.26862
@@ -27,12 +23,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
+USES=		shebangfix
 USE_BZIP2=	yes
 USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	*.h
+SHEBANG_FILES=	dist/tarball_files/configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -44,8 +42,7 @@ USE_GCC=4.2+
 
 post-patch:
 	${CP} ${WRKSRC}/dist/tarball_files/configure ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/bin/bash|/${LOCALBASE}/bin/bash|g' \
-			-E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
+	${REINPLACE_CMD} -E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
 			-e 's|function header|header()|g' \
 			-e 's|function middle|middle()|g' \
 			-e 's|-pthread|-pthread -R/usr/local/share/last.fm|g' \

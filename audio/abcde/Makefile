@@ -30,6 +30,9 @@ EJECT_DESC?=	Enable auto-eject support
 NORMALIZE_DESC?=	Enable normalize support
 REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 
+USES=		shebangfix
+SHEBANG_FILES=	${PORTNAME} cddb-tool
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDDA2WAV}
@@ -73,10 +76,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
 		${WRKSRC}/abcde.1
 	${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
-		-e 's#/bin/bash#${LOCALBASE}/bin/bash#g' \
 		${WRKSRC}/abcde
-	${REINPLACE_CMD} -e 's#/bin/bash#${LOCALBASE}/bin/bash#g' \
-		${WRKSRC}/cddb-tool
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
