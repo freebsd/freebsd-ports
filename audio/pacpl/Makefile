@@ -3,13 +3,14 @@
 
 PORTNAME=	pacpl
 PORTVERSION=	4.0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
+USES=		shebangfix
 USE_PERL5_BUILD=yes
 USE_PERL5_RUN=	yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -50,6 +51,8 @@ MORELANGS_DESC=	Enable Additional language support
 
 MAN1=		pacpl.1
 PACPL_PO=	en_US.po
+
+SHEBANG_FILES=	pacpl plugins/amarok/pacx
 
 .include <bsd.port.options.mk>
 
