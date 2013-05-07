@@ -1,3 +1,4 @@
+bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Extract.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Base.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Plugin/FormFu.pm
