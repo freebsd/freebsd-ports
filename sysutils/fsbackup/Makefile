@@ -1,13 +1,9 @@
-# New ports collection makefile for:   fsbackup
-# Date created:        1 April 2005
-# Whom:                samm
-#
+# Created by: samm
 # $FreeBSD$
-#
 
 PORTNAME=	fsbackup
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.opennet.ru/dev/fsbackup/src/
 DISTNAME=	fsbackup-1.2pl1
@@ -17,7 +13,9 @@ COMMENT=	File system backup and synchronization utility
 
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
+USES=		shebangfix
 USE_PERL5=	yes
+SHEBANG_FILES=	node/sbin/munin-node
 
 MAN1=		fsbackup.1
 MANCOMPRESSED=	no

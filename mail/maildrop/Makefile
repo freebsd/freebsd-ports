@@ -17,7 +17,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 .endif
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USES=		iconv
+USES=		iconv shebangfix
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
@@ -40,6 +40,8 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-maildirquota
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+SHEBANG_FILES=	unicode/*.pl
 
 CONFLICTS=	courier-0.65*
 

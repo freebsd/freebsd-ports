@@ -1,9 +1,5 @@
-# New ports collection makefile for:    WebMagick
-# Date created:                         20 May 1998
-# Whom:                                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p18
@@ -20,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
+USES=		shebangfix
 USE_PERL5=	yes
 USE_AUTOTOOLS=  autoconf aclocal automake
 AUTOMAKE_ARGS+=	--add-missing
@@ -30,6 +27,10 @@ CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_htimage="" \
 		webmagick_cv_maptype=ncsa \
 		PERL=${PERL}
+SHEBANG_FILES=	utils/aub \
+		utils/aub_hook \
+		utils/help2man \
+		utils/make_dir_index.pl
 
 .include <bsd.port.pre.mk>
 

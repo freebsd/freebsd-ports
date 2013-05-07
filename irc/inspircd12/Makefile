@@ -3,7 +3,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	1.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-v${PORTVERSION}
@@ -15,10 +15,12 @@ CONFLICTS=	inspircd-2.*
 
 LATEST_LINK=	inspircd12
 
+USES=		shebangfix
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/inspircd
 USE_RC_SUBR=	inspircd
 MAKE_JOBS_SAFE=	yes
+SHEBANG_FILES=	configure inspircd modulemanager make/run-cc.pl
 
 USERS=	${INCPIRCD_USR}
 GROUPS=	${INSPIRCD_GRP}

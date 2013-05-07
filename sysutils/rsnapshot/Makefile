@@ -1,12 +1,9 @@
-# New ports collection makefile for:	rsnapshot
-# Date created:		2004-01-03
-# Whom:			Ralf van Dooren <r.vdooren@snow.nl>
-#
+# Created by: Ralf van Dooren <r.vdooren@snow.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	rsnapshot
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -17,8 +14,10 @@ BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		p5-Lchown>=0:${PORTSDIR}/sysutils/p5-Lchown
 
+USES=		shebangfix
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	rsnapshot-program.pl
 
 MAN1=		rsnapshot.1 rsnapshot-diff.1
 PORTDOCS=	AUTHORS ChangeLog README TODO

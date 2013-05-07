@@ -1,13 +1,9 @@
-# New ports collection makefile for:	iconv
-# Date created:				21 September 1999
-# Whom:			Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
-#
+# Created by: Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	iconv
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bland
@@ -15,8 +11,10 @@ MASTER_SITE_SUBDIR=	bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
 
+USES=		shebangfix
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	iconv_builtin ccs/iconv_mktbl
 
 MANCOMPRESSED=	yes
 MAN1=		biconv.1

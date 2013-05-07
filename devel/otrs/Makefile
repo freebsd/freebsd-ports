@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	3.1.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -48,6 +49,8 @@ SMTP_DESC=		Send email via SMTP
 REPORTS_MODULES_DESC=	Reports support
 
 USE_BZIP2=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/*.pl
 
 OTRSDIR=	${PREFIX}/otrs
 USERS=		${PORTNAME}
