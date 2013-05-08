@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--with-assembler
 CONFIGURE_ARGS+=	--without-assembler
 .endif
 
-.if ${PORT_OPTIONS:MMMX} && !defined(PACKAGE_BUILDING}
+.if ${PORT_OPTIONS:MMMX} && !defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--with-mmx
 .else
 CONFIGURE_ARGS+=	--without-mmx
