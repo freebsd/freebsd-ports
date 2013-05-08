@@ -17,6 +17,7 @@ LIB_DEPENDS=	xmp:${PORTSDIR}/audio/libxmp
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 

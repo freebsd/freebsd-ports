@@ -13,5 +13,6 @@ COMMENT=	Module to perform IP subnet calculations
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

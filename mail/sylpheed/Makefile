@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 # Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
