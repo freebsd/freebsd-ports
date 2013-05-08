@@ -24,7 +24,7 @@ CONFLICTS=	perl-5.14.* perl-threaded-5.14.* \
 		perl-5.16.* perl-threaded-5.16.*
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
-		MULTIPLICITY SITECUSTOMIZE USE_PERL VENDOR_PREFIX
+		MULTIPLICITY SITECUSTOMIZE USE_PERL
 OPTIONS_DEFAULT=	PERL_64BITINT PTHREAD USE_PERL
 GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
@@ -34,7 +34,6 @@ PTHREAD_DESC=		Build with -pthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 USE_PERL_DESC=		Rewrite links in /usr/bin
-VENDOR_PREFIX_DESC=	Use vendor prefix
 
 PORTSCOUT=	limitw:1,even
 
@@ -68,7 +67,7 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MVENDOR_PREFIX}
+.if defined(PERL_VENDOR_PREFIX)
 CONFIGURE_ARGS+=	\
 	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
 	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
