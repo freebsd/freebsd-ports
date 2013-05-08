@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.0801
+PORTVERSION=	2.0802
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -74,6 +74,7 @@ MAN3=	Class::MOP.3 \
 	Class::MOP::Object.3 \
 	Class::MOP::Package.3 \
 	Moose.3 \
+	Moose::Conflicts.3 \
 	Moose::Cookbook.3 \
 	Moose::Cookbook::Basics::BankAccount_MethodModifiersAndSubclassing.3 \
 	Moose::Cookbook::Basics::BinaryTree_AttributeFeatures.3 \
