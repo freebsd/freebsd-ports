@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Data/Section/TestBase.pm
+%%SITE_PERL%%/Test/Base/Less.pm
+%%SITE_PERL%%/Text/TestBase.pm
+%%SITE_PERL%%/Text/TestBase/Block.pm
+@dirrmtry %%SITE_PERL%%/Data/Section
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/Test/Base
+@dirrmtry %%SITE_PERL%%/Test
+@dirrm %%SITE_PERL%%/Text/TestBase
+@dirrmtry %%SITE_PERL%%/Text
