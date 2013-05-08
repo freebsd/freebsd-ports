@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20121103
+PORTVERSION=	20130505
 CATEGORIES=	polish textproc
-MASTER_SITES=	http://sjp.pl/slownik/ort/ \
-		LOCAL/sunpoet/${PORTNAME}
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
