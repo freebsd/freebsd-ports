@@ -1,8 +1,8 @@
 @unexec if cmp -s %D/etc/%%CONFIG%%.sample %D/etc/%%CONFIG%%; then rm -f %D/etc/%%CONFIG%%; fi
 etc/%%CONFIG%%.sample
 %%NSS%%lib/nss_ldap.so
-%%NSS%%lib/nss_ldap.so.1
+%%NSS%%lib/nss_ldap.so.%%NSS_LDAP_SHMAJOR%%
 %%NSLCD%%sbin/nslcd
 %%PAM%%lib/pam_ldap.so
-%%PAM%%lib/pam_ldap.so.1
+%%PAM%%lib/pam_ldap.so.%%PAM_LDAP_SHMAJOR%%
 @exec if [ ! -f %D/etc/%%CONFIG%% ]; then cp -p %D/etc/%%CONFIG%%.sample %D/etc/%%CONFIG%%; fi
