@@ -12,12 +12,10 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 
 LICENSE=	LGPL21
 
-#LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
-
 OPTIONS_DEFINE=	NLS
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -33,6 +31,5 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
 .include "Makefile.man"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
