@@ -26,8 +26,9 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	glib20
 USE_OPENSSL=	yes
+USES=		pkgconfig
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
