@@ -1,13 +1,10 @@
-# New ports collection makefile for:	gtk-murrina-fancy-clearlooks
-# Date created:		2006-12-07
-# Whom:			pneumann@gmail.com
-#
+# Created by: pneumann@gmail.com
 # $FreeBSD$
 #
 
 PORTNAME=	gtk-murrina-fancy-clearlooks
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.planet.nl/~bassa052/themes/
 DISTNAME=	MurrinaFancyClearlooks_v${PORTVERSION}

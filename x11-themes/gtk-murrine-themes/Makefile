@@ -1,13 +1,10 @@
-# New ports collection makefile for:	gtk-murrine-themes
-# Date created:		2006-08-20
-# Whom:			Phillip Neumann <pneumann@gmail.com>
-#
+# Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	gtk-murrine-themes
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/
 DISTNAME=	MurrineThemePack

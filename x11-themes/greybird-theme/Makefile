@@ -4,6 +4,7 @@
 
 PORTNAME=	greybird
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
