@@ -226,9 +226,20 @@ lib/libhttrack.so.2
 %%PORTDATA%%%%DATADIR%%/templates/topindex-bodycat.html
 %%PORTDATA%%%%DATADIR%%/templates/topindex-footer.html
 %%PORTDATA%%%%DATADIR%%/templates/topindex-header.html
-%%PORTDOCS%%share/pixmaps/webhttrack16x16.xpm
-%%PORTDOCS%%share/pixmaps/webhttrack32x32.xpm
-%%PORTDOCS%%share/pixmaps/webhttrack48x48.xpm
+%%PORTDOCS%%share/icons/hicolor/16x16/apps/httrack.png
+%%PORTDOCS%%share/icons/hicolor/32x32/apps/httrack.png
+%%PORTDOCS%%share/icons/hicolor/48x48/apps/httrack.png
+%%PORTDOCS%%share/pixmaps/httrack16x16.xpm
+%%PORTDOCS%%share/pixmaps/httrack32x32.xpm
+%%PORTDOCS%%share/pixmaps/httrack48x48.xpm
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/48x48/apps
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/48x48
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/32x32
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%PORTDOCS%%@dirrmtry share/icons/hicolor/16x16
+%%PORTDOCS%%@dirrmtry share/icons/hicolor
+%%PORTDOCS%%@dirrmtry share/icons
 %%PORTDATA%%@dirrm %%DATADIR%%/templates
 %%PORTDATA%%@dirrm %%DATADIR%%/libtest
 %%PORTDATA%%@dirrm %%DATADIR%%/lang
