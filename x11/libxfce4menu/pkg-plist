@@ -125,5 +125,3 @@ share/icons/hicolor/48x48/apps/xfce4-logo.png
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
