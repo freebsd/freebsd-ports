@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Thunar
-PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTVERSION=	1.6.3
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
@@ -19,11 +18,11 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack gdkpixbuf2
+USE_GNOME=	gtk20 intltool intlhack gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
-USES=		pkgconfig
+USES=		desktop-file-utils pathfix pkgconfig
 
 OPTIONS_DEFINE=	DBUS DOCS GVFS NLS NOTIFY STARTUP
 OPTIONS_GROUP=	PLUGINS
@@ -39,8 +38,7 @@ PLUG_TPA_DESC=	Trash Panel Applet plugin
 PLUG_UCA_DESC=	User Customizable Actions plugin
 PLUG_WALL_DESC=	Wallpaper plugin
 
-CONFIGURE_ARGS+=	--disable-gtk-doc-html \
-		--enable-gio-unix \
+CONFIGURE_ARGS+=--enable-gio-unix \
 		--disable-gudev
 
 MAN1=		Thunar.1
@@ -133,8 +131,5 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=gvfs
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
