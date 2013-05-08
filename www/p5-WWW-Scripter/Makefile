@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Scripter
-# Date created:				26 Jan 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Scripter
 PORTVERSION=	0.029
@@ -21,6 +17,7 @@ RUN_DEPENDS=	p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		WWW::Scripter::Location.3 WWW::Scripter.3 \
 		WWW::Scripter::History.3 WWW::Scripter::WindowGroup.3

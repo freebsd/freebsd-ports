@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amigadepacker
-# Date created:				18 Oct 2009
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amigadepacker
 PORTVERSION=	0.04
@@ -25,6 +21,8 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		amigadepacker.1
 PLIST_FILES=	bin/amigadepacker
+
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' ${WRKSRC}/Makefile.in
