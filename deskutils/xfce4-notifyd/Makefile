@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -22,7 +21,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack desktopfileutils
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil xfconf
 INSTALLS_ICONS=	yes
 USE_XORG=	x11
@@ -45,8 +44,5 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
