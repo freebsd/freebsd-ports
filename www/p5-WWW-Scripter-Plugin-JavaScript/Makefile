@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Scripter-Plugin-JavaScript
-# Date created:				27 Jan 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Scripter-Plugin-JavaScript
 PORTVERSION=	0.008
@@ -19,6 +15,7 @@ RUN_DEPENDS=	p5-WWW-Scripter>0:${PORTSDIR}/www/p5-WWW-Scripter \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		WWW::Scripter::Plugin::JavaScript.3 \
 		WWW::Scripter::Plugin::JavaScript::JE.3

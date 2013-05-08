@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Reddit
-# Date created:				18 Apr 2012
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Reddit
 PORTVERSION=	0.3.02.20120418
@@ -25,6 +21,7 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		Reddit.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ctetris
-# Date created:			14 Aug 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ctris
 PORTVERSION=	0.42
@@ -18,6 +14,7 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 MANCOMPRESSED=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		ctris.6
 PLIST_FILES=	bin/ctris

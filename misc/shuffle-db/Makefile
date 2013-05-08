@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shuffle-db
-# Date created:				16 Jan 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shuffle-db
 DISTVERSION=	1.0-rc1
@@ -16,6 +12,7 @@ COMMENT=	An iPod shuffle database builder
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/rebuild_db
 PLIST_FILES=	bin/rebuild_db.py
