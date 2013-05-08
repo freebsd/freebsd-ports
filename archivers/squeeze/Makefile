@@ -3,7 +3,7 @@
 
 PORTNAME=	squeeze
 PORTVERSION=	0.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -19,10 +19,10 @@ LIB_DEPENDS=	thunar-vfs-1:${PORTSDIR}/x11-fm/thunar-vfs
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext pathfix desktop-file-utils
 USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11
-USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils
+USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -43,8 +43,5 @@ post-patch:
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e "s|docs||g" ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

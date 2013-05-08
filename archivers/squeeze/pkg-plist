@@ -55,5 +55,3 @@ share/applications/squeeze.desktop
 @dirrmtry libexec/thunar-archive-plugin
 @dirrmtry include/libsqueeze-0.2/libsqueeze
 @dirrmtry include/libsqueeze-0.2
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
