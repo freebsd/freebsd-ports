@@ -4,7 +4,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
@@ -24,14 +24,12 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils
+USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
-USES=		pkgconfig
-
-CONFIGURE_ARGS+=--disable-gtk-doc-html
+USES=		desktop-file-utils pathfix pkgconfig
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -55,13 +53,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
-.endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

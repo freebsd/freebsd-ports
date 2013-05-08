@@ -207,5 +207,3 @@ share/xfce4/helpers/xterm.desktop
 @dirrm include/exo-1
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
