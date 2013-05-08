@@ -145,6 +145,8 @@ lib/lives/plugins/effects/realtime/weed/posterise.la
 lib/lives/plugins/effects/realtime/weed/posterise.so
 lib/lives/plugins/effects/realtime/weed/puretext.la
 lib/lives/plugins/effects/realtime/weed/puretext.so
+lib/lives/plugins/effects/realtime/weed/revTV.la
+lib/lives/plugins/effects/realtime/weed/revTV.so
 lib/lives/plugins/effects/realtime/weed/rippleTV.la
 lib/lives/plugins/effects/realtime/weed/rippleTV.so
 lib/lives/plugins/effects/realtime/weed/rotozoom.la
