@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stymulator
-# Date created:				27 Mar 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stymulator
 DISTVERSION=	0.21a
@@ -19,6 +15,7 @@ COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
 LICENSE=	GPLv2
 
 USE_DOS2UNIX=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
