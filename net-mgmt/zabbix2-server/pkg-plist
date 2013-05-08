@@ -67,9 +67,9 @@ sbin/zabbix_%%ZABBIX_BUILD%%
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%
 @dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%/zabbix/alertscripts
+%%SERVER%%@dirrmtry %%ETCDIR%%/zabbix/alertscripts
 @dirrmtry %%ETCDIR%%/zabbix/externalscripts
 @dirrmtry %%ETCDIR%%/zabbix
 %%PROXY%%@dirrmtry %%ETCDIR%%/zabbix_proxy.conf.d
-@dirrmtry %%ETCDIR%%/zabbix_server.conf.d
+%%SERVER%%@dirrmtry %%ETCDIR%%/zabbix_server.conf.d
 @dirrmtry %%ETCDIR%%

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -40,6 +41,12 @@ GROUPS=		zabbix
 PLIST_SUB=	PROXY="@comment "
 .else
 PLIST_SUB=	PROXY=""
+.endif
+
+.if ${ZABBIX_BUILD} == "server"
+PLIST_SUB+=	SERVER=""
+.else
+PLIST_SUB+=	SERVER="@comment "
 .endif
 
 PLIST_SUB+=	ZABBIX_BUILD=${ZABBIX_BUILD}
@@ -157,7 +164,6 @@ PLIST_SUB+=      JAVAGW=""
 .else
 PLIST_SUB+=      JAVAGW="@comment "
 .endif
-
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
