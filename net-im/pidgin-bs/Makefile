@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

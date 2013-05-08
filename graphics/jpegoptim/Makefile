@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
 MAN1=		jpegoptim.1
