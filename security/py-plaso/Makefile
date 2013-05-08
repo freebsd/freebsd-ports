@@ -14,15 +14,15 @@ COMMENT=	Automatic creation of a super timeline
 
 LICENSE=	AL2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:${PORTSDIR}/devel/hachoir-core \
-		${PYTHON_SITELIBDIR}/hachoir_metadata/__init__.py:${PORTSDIR}/sysutils/hachoir-metadata \
-		${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser \
-		${PYTHON_SITELIBDIR}/pyevt.so:${PORTSDIR}/devel/libevt \
-		${PYTHON_SITELIBDIR}/pyevtx.so:${PORTSDIR}/devel/libevtx \
-		${PYTHON_SITELIBDIR}/pylnk.so:${PORTSDIR}/devel/liblnk \
-		${PYTHON_SITELIBDIR}/pymsiecf.so:${PORTSDIR}/devel/libmsiecf \
-		${PYTHON_SITELIBDIR}/pyregf.so:${PORTSDIR}/devel/libregf \
-		${PYTHON_SITELIBDIR}/pyvshadow.so:${PORTSDIR}/devel/libvshadow \
+RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
+		hachoir-metadata>=0:${PORTSDIR}/sysutils/hachoir-metadata \
+		hachoir-parser>=0:${PORTSDIR}/devel/hachoir-parser \
+		libevt>=a:${PORTSDIR}/devel/libevt \
+		libevtx>=a:${PORTSDIR}/devel/libevtx \
+		liblnk>=0:${PORTSDIR}/devel/liblnk \
+		libmsiecf>=a:${PORTSDIR}/devel/libmsiecf \
+		libregf>=a:${PORTSDIR}/devel/libregf \
+		libvshadow>=0:${PORTSDIR}/devel/libvshadow \
 		ipython${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=0:${PORTSDIR}/devel/py-protobuf \
