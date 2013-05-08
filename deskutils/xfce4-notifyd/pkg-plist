@@ -65,5 +65,3 @@ share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
 %%NLS%%@dirrmtry share/locale/ast
 @dirrm lib/xfce4/notifyd
 @dirrmtry lib/xfce4
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
