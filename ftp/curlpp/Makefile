@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	curlpp
-# Date created:			Nov 27, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	curlpp
 PORTVERSION=	0.7.3
@@ -13,7 +8,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A C++ wrapper for libcurl
+COMMENT=	C++ wrapper for libcurl
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
@@ -23,8 +18,8 @@ CONFIGURE_ARGS=	--disable-ewarning
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=	pathfix
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 .include <bsd.port.options.mk>
 
