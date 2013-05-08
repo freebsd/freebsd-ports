@@ -1,8 +1,10 @@
 %%DATADIR%%/content/actionsets.json
 %%DATADIR%%/content/atlas.sql
+%%DATADIR%%/content/audio/music/Peer Gynt Suite No. 1, Op. 46 - I. Morning.ogg
 %%DATADIR%%/content/audio/music/battle.ogg
 %%DATADIR%%/content/audio/music/beware_the_ships_kobold.ogg
 %%DATADIR%%/content/audio/music/goldenvalley.ogg
+%%DATADIR%%/content/audio/music/irelands_coast.ogg
 %%DATADIR%%/content/audio/music/menu/main_theme.ogg
 %%DATADIR%%/content/audio/music/music.ogg
 %%DATADIR%%/content/audio/music/music2.ogg
@@ -53,7 +55,6 @@
 %%DATADIR%%/content/fonts/LinLibertineI.ttf
 %%DATADIR%%/content/fonts/OFL
 %%DATADIR%%/content/fonts/README_LIBERTINE
-%%DATADIR%%/content/fonts/README_UMING
 %%DATADIR%%/content/fonts/Unifont.ttf
 %%DATADIR%%/content/fonts/libertine.fontdef
 %%DATADIR%%/content/fonts/unifont.fontdef
@@ -741,6 +742,7 @@
 %%DATADIR%%/content/gui/icons/mainmenu/multiplayer_bw.png
 %%DATADIR%%/content/gui/icons/mainmenu/save.png
 %%DATADIR%%/content/gui/icons/mainmenu/save_bw.png
+%%DATADIR%%/content/gui/icons/minimap/groundunit.png
 %%DATADIR%%/content/gui/icons/minimap/pirate.png
 %%DATADIR%%/content/gui/icons/minimap/ship_neutral.png
 %%DATADIR%%/content/gui/icons/minimap/warehouse.png
@@ -780,6 +782,7 @@
 %%DATADIR%%/content/gui/icons/resources/32/037.png
 %%DATADIR%%/content/gui/icons/resources/32/038.png
 %%DATADIR%%/content/gui/icons/resources/32/040.png
+%%DATADIR%%/content/gui/icons/resources/32/042.png
 %%DATADIR%%/content/gui/icons/resources/32/043.png
 %%DATADIR%%/content/gui/icons/resources/32/044.png
 %%DATADIR%%/content/gui/icons/resources/32/046.png
@@ -827,6 +830,7 @@
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/037.png
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/038.png
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/040.png
+%%DATADIR%%/content/gui/icons/resources/32/greyscale/042.png
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/043.png
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/044.png
 %%DATADIR%%/content/gui/icons/resources/32/greyscale/055.png
@@ -843,8 +847,8 @@
 %%DATADIR%%/content/gui/icons/resources/running_costs.png
 %%DATADIR%%/content/gui/icons/resources/zzz32.png
 %%DATADIR%%/content/gui/icons/ship/anchor.png
-%%DATADIR%%/content/gui/icons/ship/anchor_a.png
 %%DATADIR%%/content/gui/icons/ship/anchor_bw.png
+%%DATADIR%%/content/gui/icons/ship/anchor_d.png
 %%DATADIR%%/content/gui/icons/ship/anchor_h.png
 %%DATADIR%%/content/gui/icons/ship/chargebar_stretch.png
 %%DATADIR%%/content/gui/icons/ship/civil_16.png
@@ -1010,18 +1014,26 @@
 %%DATADIR%%/content/gui/icons/templates/production/production_arrow_start.png
 %%DATADIR%%/content/gui/icons/templates/production/production_arrow_top.png
 %%DATADIR%%/content/gui/icons/templates/production/production_line.png
+%%DATADIR%%/content/gui/icons/templates/production/toggle_active.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_active_d.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_active_h.png
-%%DATADIR%%/content/gui/icons/templates/production/toggle_active_n.png
+%%DATADIR%%/content/gui/icons/templates/production/toggle_inactive.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_inactive_d.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_inactive_h.png
-%%DATADIR%%/content/gui/icons/templates/production/toggle_inactive_n.png
+%%DATADIR%%/content/gui/icons/templates/production/toggle_small_active.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_small_active_d.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_small_active_h.png
-%%DATADIR%%/content/gui/icons/templates/production/toggle_small_active_n.png
+%%DATADIR%%/content/gui/icons/templates/production/toggle_small_inactive.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_small_inactive_d.png
 %%DATADIR%%/content/gui/icons/templates/production/toggle_small_inactive_h.png
-%%DATADIR%%/content/gui/icons/templates/production/toggle_small_inactive_n.png
+%%DATADIR%%/content/gui/icons/thumbnails/1000001.png
+%%DATADIR%%/content/gui/icons/thumbnails/1000005.png
+%%DATADIR%%/content/gui/icons/thumbnails/1000016.png
+%%DATADIR%%/content/gui/icons/thumbnails/1000020.png
+%%DATADIR%%/content/gui/icons/thumbnails/1000021.png
+%%DATADIR%%/content/gui/icons/thumbnails/soldier1.png
+%%DATADIR%%/content/gui/icons/thumbnails/soldier2.png
+%%DATADIR%%/content/gui/icons/thumbnails/unknown_unit.png
 %%DATADIR%%/content/gui/icons/units/stances/aggressive.png
 %%DATADIR%%/content/gui/icons/units/stances/aggressive_gr.png
 %%DATADIR%%/content/gui/icons/units/stances/flee.png
@@ -1030,32 +1042,39 @@
 %%DATADIR%%/content/gui/icons/units/stances/hold_ground_gr.png
 %%DATADIR%%/content/gui/icons/units/stances/none.png
 %%DATADIR%%/content/gui/icons/units/stances/none_gr.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/1000001.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/1000005.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/1000016.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/1000020.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/1000021.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/soldier1.png
-%%DATADIR%%/content/gui/icons/units/thumbnails/soldier2.png
 %%DATADIR%%/content/gui/icons/widgets/cityinfo/house_small.png
 %%DATADIR%%/content/gui/icons/widgets/cityinfo/inhabitants.png
 %%DATADIR%%/content/gui/icons/widgets/cityinfo/inhabitants_small.png
 %%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_black.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_blue.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_bordeaux.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_cyan.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_gray.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_green.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_lemon.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_orange.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_pink.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_purple.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_red.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_teal.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_white.png
+%%DATADIR%%/content/gui/icons/widgets/cityinfo/settlement_yellow.png
+%%DATADIR%%/content/gui/icons/widgets/messages/msg_anchor.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_anchor_d.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_anchor_h.png
-%%DATADIR%%/content/gui/icons/widgets/messages/msg_anchor_n.png
+%%DATADIR%%/content/gui/icons/widgets/messages/msg_letter.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_letter_d.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_letter_h.png
-%%DATADIR%%/content/gui/icons/widgets/messages/msg_letter_n.png
+%%DATADIR%%/content/gui/icons/widgets/messages/msg_money.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_money_d.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_money_h.png
-%%DATADIR%%/content/gui/icons/widgets/messages/msg_money_n.png
+%%DATADIR%%/content/gui/icons/widgets/messages/msg_save.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_save_d.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_save_h.png
-%%DATADIR%%/content/gui/icons/widgets/messages/msg_save_n.png
+%%DATADIR%%/content/gui/icons/widgets/messages/msg_system.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_system_d.png
 %%DATADIR%%/content/gui/icons/widgets/messages/msg_system_h.png
-%%DATADIR%%/content/gui/icons/widgets/messages/msg_system_n.png
 %%DATADIR%%/content/gui/icons/widgets/minimap/build.png
 %%DATADIR%%/content/gui/icons/widgets/minimap/build_h.png
 %%DATADIR%%/content/gui/icons/widgets/minimap/captainslog.png
@@ -1117,10 +1136,6 @@
 %%DATADIR%%/content/gui/images/background/book.png
 %%DATADIR%%/content/gui/images/background/button_64.png
 %%DATADIR%%/content/gui/images/background/hr.png
-%%DATADIR%%/content/gui/images/background/hud/black.png
-%%DATADIR%%/content/gui/images/background/hud/build_bg.png
-%%DATADIR%%/content/gui/images/background/hud/green.png
-%%DATADIR%%/content/gui/images/background/hud/menu_bg.png
 %%DATADIR%%/content/gui/images/background/inv_bg.png
 %%DATADIR%%/content/gui/images/background/mainmenu/bg_1.png
 %%DATADIR%%/content/gui/images/background/mainmenu/bg_2.png
@@ -1155,7 +1170,7 @@
 %%DATADIR%%/content/gui/images/background/widgets/message_bg_bottom.png
 %%DATADIR%%/content/gui/images/background/widgets/message_bg_middle.png
 %%DATADIR%%/content/gui/images/background/widgets/message_bg_top.png
-%%DATADIR%%/content/gui/images/background/widgets/progressbar_bg.png
+%%DATADIR%%/content/gui/images/background/widgets/progressbar_fill.png
 %%DATADIR%%/content/gui/images/background/widgets/res_bg.png
 %%DATADIR%%/content/gui/images/background/widgets/res_extra_bg.png
 %%DATADIR%%/content/gui/images/background/widgets/res_mon_bg.png
@@ -1285,7 +1300,6 @@
 %%DATADIR%%/content/gui/xml/development/stringpreviewwidget.xml
 %%DATADIR%%/content/gui/xml/editor/editor_pause_menu.xml
 %%DATADIR%%/content/gui/xml/editor/editor_settings.xml
-%%DATADIR%%/content/gui/xml/editor/save_map.xml
 %%DATADIR%%/content/gui/xml/ingame/buildmenu/buildtab.xml
 %%DATADIR%%/content/gui/xml/ingame/buildmenu/buildtab_no_settlement.xml
 %%DATADIR%%/content/gui/xml/ingame/buildmenu/place_building.xml
@@ -1344,7 +1358,6 @@
 %%DATADIR%%/content/gui/xml/ingame/widgets/players_settlements.xml
 %%DATADIR%%/content/gui/xml/ingame/widgets/ships_list.xml
 %%DATADIR%%/content/gui/xml/ingame/widgets/stancewidget.xml
-%%DATADIR%%/content/gui/xml/ingame/widgets/tooltip.xml
 %%DATADIR%%/content/gui/xml/mainmenu/credits.xml
 %%DATADIR%%/content/gui/xml/mainmenu/editor/editor_create_map.xml
 %%DATADIR%%/content/gui/xml/mainmenu/editor/editor_select_map.xml
@@ -1372,7 +1385,6 @@
 %%DATADIR%%/content/gui/xml/mainmenu/templates/popup_290.xml
 %%DATADIR%%/content/gui/xml/mainmenu/templates/popup_350.xml
 %%DATADIR%%/content/gui/xml/startup_error_popup.xml
-%%DATADIR%%/content/island_template.sql
 %%DATADIR%%/content/lang/af/LC_MESSAGES/unknown-horizons-server.mo
 %%DATADIR%%/content/lang/af/LC_MESSAGES/unknown-horizons.mo
 %%DATADIR%%/content/lang/bg/LC_MESSAGES/unknown-horizons-server.mo
@@ -1560,7 +1572,7 @@
 %%DATADIR%%/content/objects/buildings/weaverstent.yaml
 %%DATADIR%%/content/objects/buildings/windmill.yaml
 %%DATADIR%%/content/objects/buildings/woodentower.yaml
-%%DATADIR%%/content/objects/gui_buildmenu/build_menu_per_increment.yaml
+%%DATADIR%%/content/objects/gui_buildmenu/build_menu_per_tier.yaml
 %%DATADIR%%/content/objects/gui_buildmenu/build_menu_per_type.yaml
 %%DATADIR%%/content/objects/units/README
 %%DATADIR%%/content/objects/units/animals/deer.yaml
@@ -1581,10 +1593,12 @@
 %%DATADIR%%/content/objects/units/ships/trader.yaml
 %%DATADIR%%/content/objects/units/ships/usablefisher.yaml
 %%DATADIR%%/content/savegame_template.sql
+%%DATADIR%%/content/scenarios/The_Unknown_cs.yaml
 %%DATADIR%%/content/scenarios/The_Unknown_de.yaml
 %%DATADIR%%/content/scenarios/The_Unknown_en.yaml
 %%DATADIR%%/content/scenarios/The_Unknown_es.yaml
 %%DATADIR%%/content/scenarios/The_Unknown_fr.yaml
+%%DATADIR%%/content/scenarios/The_Unknown_nl.yaml
 %%DATADIR%%/content/scenarios/The_Unknown_pt_BR.yaml
 %%DATADIR%%/content/scenarios/tutorial_bg.yaml
 %%DATADIR%%/content/scenarios/tutorial_cs.yaml
@@ -1957,6 +1971,9 @@
 %%PYTHON_SITELIBDIR%%/horizons/editor/intermediatemap.py
 %%PYTHON_SITELIBDIR%%/horizons/editor/intermediatemap.pyc
 %%PYTHON_SITELIBDIR%%/horizons/editor/intermediatemap.pyo
+%%PYTHON_SITELIBDIR%%/horizons/editor/session.py
+%%PYTHON_SITELIBDIR%%/horizons/editor/session.pyc
+%%PYTHON_SITELIBDIR%%/horizons/editor/session.pyo
 %%PYTHON_SITELIBDIR%%/horizons/editor/worldeditor.py
 %%PYTHON_SITELIBDIR%%/horizons/editor/worldeditor.pyc
 %%PYTHON_SITELIBDIR%%/horizons/editor/worldeditor.pyo
@@ -2032,15 +2049,24 @@
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/ingame.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/ingame.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/ingame.pyo
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/loadingscreen.py
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/loadingscreen.pyc
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/loadingscreen.pyo
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/multiplayermenu.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/multiplayermenu.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/multiplayermenu.pyo
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/pausemenu.py
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/pausemenu.pyc
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/pausemenu.pyo
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/playerdataselection.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/playerdataselection.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/playerdataselection.pyo
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/select_savegame.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/select_savegame.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/select_savegame.pyo
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/settings.py
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/settings.pyc
+%%PYTHON_SITELIBDIR%%/horizons/gui/modules/settings.pyo
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/singleplayermenu.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/singleplayermenu.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/modules/singleplayermenu.pyo
@@ -2194,9 +2220,6 @@
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/stepslider.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/stepslider.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/stepslider.pyo
-%%PYTHON_SITELIBDIR%%/horizons/gui/widgets/toggleimagebutton.py
-%%PYTHON_SITELIBDIR%%/horizons/gui/widgets/toggleimagebutton.pyc
-%%PYTHON_SITELIBDIR%%/horizons/gui/widgets/toggleimagebutton.pyo
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/tooltip.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/tooltip.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/tooltip.pyo
@@ -2206,6 +2229,9 @@
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/unitoverview.py
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/unitoverview.pyc
 %%PYTHON_SITELIBDIR%%/horizons/gui/widgets/unitoverview.pyo
+%%PYTHON_SITELIBDIR%%/horizons/gui/windows.py
+%%PYTHON_SITELIBDIR%%/horizons/gui/windows.pyc
+%%PYTHON_SITELIBDIR%%/horizons/gui/windows.pyo
 %%PYTHON_SITELIBDIR%%/horizons/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/horizons/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/horizons/i18n/__init__.pyo
@@ -2968,7 +2994,6 @@ share/pixmaps/unknown-horizons.xpm
 @dirrm %%DATADIR%%/content/gui/images/buttons
 @dirrm %%DATADIR%%/content/gui/images/background/widgets
 @dirrm %%DATADIR%%/content/gui/images/background/mainmenu
-@dirrm %%DATADIR%%/content/gui/images/background/hud
 @dirrm %%DATADIR%%/content/gui/images/background
 @dirrm %%DATADIR%%/content/gui/images/animations/cogs/small
 @dirrm %%DATADIR%%/content/gui/images/animations/cogs/large
@@ -2980,9 +3005,9 @@ share/pixmaps/unknown-horizons.xpm
 @dirrm %%DATADIR%%/content/gui/icons/widgets/messages
 @dirrm %%DATADIR%%/content/gui/icons/widgets/cityinfo
 @dirrm %%DATADIR%%/content/gui/icons/widgets
-@dirrm %%DATADIR%%/content/gui/icons/units/thumbnails
 @dirrm %%DATADIR%%/content/gui/icons/units/stances
 @dirrm %%DATADIR%%/content/gui/icons/units
+@dirrm %%DATADIR%%/content/gui/icons/thumbnails
 @dirrm %%DATADIR%%/content/gui/icons/templates/production
 @dirrm %%DATADIR%%/content/gui/icons/templates/happiness
 @dirrm %%DATADIR%%/content/gui/icons/templates
