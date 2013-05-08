@@ -11,7 +11,7 @@ etc/xdg/autostart/xfsettingsd.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 etc/xdg/menus/xfce-settings-manager.menu
 lib/xfce4/settings/appearance-install-theme
-%%XRANDR%%%%NLS%%share/applications/xfce-display-settings.desktop
+%%XRANDR%%share/applications/xfce-display-settings.desktop
 share/applications/xfce-keyboard-settings.desktop
 share/applications/xfce4-mime-settings.desktop
 share/applications/xfce-mouse-settings.desktop
@@ -21,6 +21,7 @@ share/applications/xfce4-accessibility-settings.desktop
 share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-settings.mo
@@ -55,6 +56,7 @@ share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/te/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-settings.mo
@@ -64,8 +66,6 @@ share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
