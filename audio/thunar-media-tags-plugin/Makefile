@@ -3,22 +3,22 @@
 
 PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A Media Tags Plugin
+COMMENT=	Media Tags Plugin
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext pathfix
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libexo thunar
 USE_AUTOTOOLS=	libtool
 

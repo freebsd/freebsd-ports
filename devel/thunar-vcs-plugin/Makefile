@@ -3,7 +3,7 @@
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -16,10 +16,10 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	desktopfileutils gnomehack gtk20 glib20 intltool intlhack
+USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -55,8 +55,5 @@ PLIST_SUB+=	SVN=""
 CONFIGURE_ARGS+=--disable-subversion
 PLIST_SUB+=	SVN="@comment "
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
