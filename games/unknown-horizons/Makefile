@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		unknown-horizons
-PORTVERSION=		2013.1
+PORTVERSION=		2013.2
 CATEGORIES=		games
 MASTER_SITES=		SF/unknownhorizons/Unknown%20Horizons/${PORTVERSION}/
 
