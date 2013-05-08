@@ -8,6 +8,7 @@ include/liblangtag/lt-extlang-db.h
 include/liblangtag/lt-extlang.h
 include/liblangtag/lt-grandfathered-db.h
 include/liblangtag/lt-grandfathered.h
+include/liblangtag/lt-iter.h
 include/liblangtag/lt-lang-db.h
 include/liblangtag/lt-lang.h
 include/liblangtag/lt-list.h
@@ -25,7 +26,7 @@ include/liblangtag/lt-variant.h
 lib/liblangtag.a
 lib/liblangtag.la
 lib/liblangtag.so
-lib/liblangtag.so.1
+lib/liblangtag.so.3
 libdata/pkgconfig/liblangtag.pc
 %%DATADIR%%/language-subtag-registry.xml
 %%DATADIR%%/common/bcp47/calendar.xml
@@ -70,6 +71,7 @@ share/gtk-doc/html/liblangtag/liblangtag-Database---Variant.html
 share/gtk-doc/html/liblangtag/liblangtag-Database.html
 share/gtk-doc/html/liblangtag/liblangtag-Doubly-Linked-Lists.html
 share/gtk-doc/html/liblangtag/liblangtag-Error.html
+share/gtk-doc/html/liblangtag/liblangtag-Iterator.html
 share/gtk-doc/html/liblangtag/liblangtag-Miscellaneous-Macros.html
 share/gtk-doc/html/liblangtag/liblangtag-Module---Accessor.html
 share/gtk-doc/html/liblangtag/liblangtag-Module---Data.html
