@@ -1,12 +1,10 @@
-# New ports collection makefile for:	xfce4-cpugraph-plugin
-# Date created:		2004-06-07
-# Whom:			Matt Lancereau <matt@rimasec.net>
-#
+# Created by: Matt Lancereau <matt@rimasec.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -18,9 +16,10 @@ COMMENT=	Graphical representation of the CPU load
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 INSTALLS_ICONS=	yes
+USES=	pathfix pkgconfig
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS

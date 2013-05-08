@@ -56,5 +56,3 @@ share/locale/zh_TW/LC_MESSAGES/ristretto.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

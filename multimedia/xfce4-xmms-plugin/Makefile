@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -14,9 +14,9 @@ COMMENT=	Xfce4 XMMS control plugin for xfce4-panel
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext pathfix
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack pango pkgconfig
+USE_GNOME=	gtk20 intltool intlhack pango
 USE_XFCE=	configenv libgui libutil panel
 
 OPTIONS_DEFINE=	XMMS BEEP AUDACIOUS

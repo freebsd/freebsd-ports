@@ -1,13 +1,10 @@
-# New ports collection makefile for:	libxfce4util
-# Date created:		7 June 2003
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
 #
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/libxfcegui4/${PORTVERSION:R}
@@ -22,10 +19,11 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack libglade2 pkgconfig
+USE_GNOME=	gtk20 intltool intlhack libglade2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	sm x11
+USES=	pathfix pkgconfig
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 

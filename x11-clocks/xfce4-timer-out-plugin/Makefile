@@ -1,13 +1,10 @@
-# New ports collection makefile for:	timer plugin for xfce4
-# Date created:				23 Januar 2007
-# Whom:					Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-time-out-plugin
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -19,9 +16,9 @@ COMMENT=	A timer out plugin for Xfce
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext
+USES=		gettext pkgconfig pathfix
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 
 .include <bsd.port.mk>

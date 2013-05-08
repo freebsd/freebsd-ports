@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -15,10 +16,10 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 
 OPTIONS_DEFINE= NLS
 

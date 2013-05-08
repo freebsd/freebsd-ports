@@ -1,13 +1,10 @@
-# New ports collection makefile for:	xfce-wavelan-plugin
-# Date created:				22 May 2004
-# Whom:					Manuel Rabade Garica <mig@mig-29.net>
-#
+# Created by: Manuel Rabade Garica <mig@mig-29.net>
 # $FreeBSD$
 #    $MCom: ports/sysutils/xfce4-wavelan-plugin/Makefile,v 1.1 2006/10/02 20:43:59 ahze Exp $
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.5.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -19,9 +16,9 @@ COMMENT=	Displays various information about a WaveLAN device
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libgui panel
 
 post-patch:

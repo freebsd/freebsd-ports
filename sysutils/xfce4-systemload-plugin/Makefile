@@ -1,12 +1,10 @@
-# New ports collection makefile for:	xfce-systemload-plugin
-# Date created:		31 June 2003
-# Whom:			Thorsten Greiner <thorsten.greiner@web.de>
-#
+# Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -20,8 +18,9 @@ LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
+USES=	pathfix pkgconfig
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS

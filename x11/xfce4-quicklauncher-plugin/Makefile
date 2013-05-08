@@ -1,16 +1,13 @@
-# New ports collection makefile for:	quicklauncher plugin for xfce4
-# Date created:				29 April 2006
-# Whom:					Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-quicklauncher-plugin
 PORTVERSION=	1.9.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -18,9 +15,9 @@ COMMENT=	Quicklauncher plugin for Xfce
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libgui panel
 
 .include <bsd.port.mk>
