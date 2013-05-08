@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptools
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://shewolf.com.pl/ptools/
 
