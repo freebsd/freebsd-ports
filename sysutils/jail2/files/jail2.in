@@ -12,7 +12,7 @@
 # To manage ZFS datasets within a jail the dataset must have
 # set the parameter "jailed" to 1. Additionally the jail must
 # have set the proberties "allow.mount", "allow.mount.zfs"
-# and "enforce_statfs" to value lesser than 2.
+# and "enforce_statfs" to 0.
 
 # PROVIDE: jail
 # REQUIRE: LOGIN cleanvar
@@ -31,6 +31,8 @@ jail2_start()
 {
 	echo -n "Starting jails: "
 
+	devfs_init_rulesets
+
 	for _j in ${jail2_list}; do
 		echo -n "${_j} "
 
@@ -48,7 +50,6 @@ jail2_start()
 			for _ds in ${_zfs}; do
 				_jailed=`zfs get -H jailed ${_ds} 2>/dev/null | awk '{ print $3 }'`
 				if [ "${_jailed}" = "on" ]; then
-					echo "zfs jail "${_jid}" ${_ds} 2>/dev/null"
 					zfs jail "${_jid}" ${_ds} 2>/dev/null
 				fi
 			done
@@ -80,7 +81,6 @@ jail2_stop()
 			for _ds in ${_zfs}; do
 				_jailed=`zfs get -H jailed ${_ds} 2>/dev/null | awk '{ print $3 }'`
 				if [ "${_jailed}" = "on" ]; then
-					echo "zfs unjail "${_jid}" ${_ds} 2>/dev/null"
 					zfs unjail "${_jid}" ${_ds} 2>/dev/null
 				fi
 			done
