@@ -3,6 +3,8 @@
 
 PORTNAME=	lucene
 PORTVERSION=	3.6.2
+# Be sure to chase devel/openoffice-devel and textproc/py-lucene
+# when updating this
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
