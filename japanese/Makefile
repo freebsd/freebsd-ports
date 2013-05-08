@@ -77,6 +77,7 @@
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex
+    SUBDIR += font-jisx0213
     SUBDIR += font-kochi
     SUBDIR += font-migmix
     SUBDIR += font-migu
@@ -123,7 +124,6 @@
     SUBDIR += jd
     SUBDIR += jed
     SUBDIR += jishyo
-    SUBDIR += jisx0213-fonts
     SUBDIR += jls
     SUBDIR += jmode
     SUBDIR += jmode-skk
