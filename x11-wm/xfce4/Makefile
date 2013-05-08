@@ -4,7 +4,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	4.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -13,13 +13,14 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The "meta-port" for the Xfce 4 desktop environment
 
-OPTIONS_DEFINE=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFY
+OPTIONS_DEFINE=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFY XPM
 OPTIONS_DEFAULT=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER SQUEEZE NOTIFY
 ORAGE_DESC=	Install the Xfce calendar application
 MOUSEPAD_DESC=	Install the Xfce text editor
 TERMINAL_DESC=	Install the Xfce terminal application
 APPFINDER_DESC=	Install the Xfce application finder
 SQUEEZE_DESC=	Install the Xfce archiver application
+XPM_DESC=	Install the Xfce power manager
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
@@ -78,6 +79,10 @@ RUN_DEPENDS+=   squeeze:${PORTSDIR}/archivers/squeeze
 
 .if ${PORT_OPTIONS:MNOTIFY}
 RUN_DEPENDS+=	xfce4-notifyd-config:${PORTSDIR}/deskutils/xfce4-notifyd
+.endif
+
+.if ${PORT_OPTIONS:MXPM}
+RUN_DEPENDS+=	xfce4-power-manager:${PORTSDIR}/sysutils/xfce4-power-manager
 .endif
 
 do-install:	# empty
