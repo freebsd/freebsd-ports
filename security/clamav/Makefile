@@ -25,7 +25,7 @@ MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS DOCS
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
