@@ -4,8 +4,7 @@
 PORTNAME=	milter-callback
 PORTVERSION=	1.6.0
 CATEGORIES=	mail
-MASTER_SITES=	http://unix.zhegan.in/distfiles/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Milter to perform a envelope-from sender verification on target MX
@@ -14,13 +13,14 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS+=	spf2:${PORTSDIR}/mail/libspf2
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_RC_SUBR=	milter-callback
 
 SUB_FILES=	pkg-message
 MAN8=		milter-callback.8
 
 MAKE_ENV+=	WITH_SPF=yes
+MAKE_JOBS_SAFE=	yes
 
 .if ${CC} == "clang" || ${CXX} == "clang++"
 BROKEN=	does not build with clang, uses nested functions
