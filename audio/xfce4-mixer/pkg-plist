@@ -69,5 +69,3 @@ share/xfce4/panel/plugins/mixer.desktop
 @dirrmtry share/locale/ast
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true

@@ -685,8 +685,6 @@ share/locale/zh_TW/LC_MESSAGES/orage.mo
 %%WITH_ICAL%%%%DATADIR%%/zoneinfo/tz_convert.par
 %%WITH_ICAL%%%%DATADIR%%/zoneinfo/zones.tab
 share/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
 %%WITH_ICAL%%@dirrm %%DATADIR%%/zoneinfo/US

@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-netload-plugin
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -14,9 +15,9 @@ COMMENT=	Network Load plugin for Xfce4
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intltool intlhack
+USE_GNOME=	intltool intlhack
 USE_XFCE=	configenv libmenu panel
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
