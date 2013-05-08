@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconfig
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/bsdconfig/
 DISTNAME=	${PORTNAME}.130506
@@ -213,7 +213,7 @@ IGNORE=		requires FreeBSD 9.0 or later
 
 post-patch:
 	@${GREP} -Ilrs '^BSDCFG_LIBE=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|^\(BSDCFG_LIBE=\).*|\1"${PREFIX}/libexec/${PORTNAME}"|'
+		-e 's|^\(BSDCFG_LIBE="\)[^"]*\(.*\)|\1${PREFIX}/libexec/${PORTNAME}\2|'
 	@${GREP} -Ilrs '^BSDCFG_SHARE=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^\(BSDCFG_SHARE=\).*|\1"${PREFIX}/share/${PORTNAME}"|'
 	@${REINPLACE_CMD} \
