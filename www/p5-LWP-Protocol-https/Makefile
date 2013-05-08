@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-LWP-Protocol-https
-# Date created:		2011-06-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LWP-Protocol-https
-PORTVERSION=	6.03
+PORTVERSION=	6.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +14,7 @@ COMMENT=	Provide https support for LWP::UserAgent
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.54:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Mozilla-CA>=20110101:${PORTSDIR}/www/p5-Mozilla-CA \
 		p5-Net-HTTP>=6:${PORTSDIR}/net/p5-Net-HTTP
-RUN_DEPENDS=	p5-IO-Socket-SSL>=1.54:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Mozilla-CA>=20110101:${PORTSDIR}/www/p5-Mozilla-CA \
-		p5-Net-HTTP>=6:${PORTSDIR}/net/p5-Net-HTTP
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
