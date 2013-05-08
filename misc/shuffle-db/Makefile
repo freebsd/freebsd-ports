@@ -12,7 +12,6 @@ COMMENT=	An iPod shuffle database builder
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/rebuild_db
 PLIST_FILES=	bin/rebuild_db.py

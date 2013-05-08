@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnatsweb4
-# Date created:				20 Sep 2003
-# Whom:					Oliver Eikemeier <eikemeier@fillmore-labs.com>
-#
+# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
@@ -15,8 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnatsweb, a GNATS web interface
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE_RUN=	22+
 
