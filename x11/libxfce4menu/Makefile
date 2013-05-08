@@ -3,7 +3,7 @@
 
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	libxfce4ui-${PORTVERSION}
@@ -15,14 +15,13 @@ COMMENT=	Widgets library for the Xfce desktop environment
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack desktopfileutils
+USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 INSTALLS_ICONS=	yes
-USES=		pkgconfig
+USES=		pathfix pkgconfig
 
-CONFIGURE_ARGS=	--disable-gtk-doc-html \
-		--with-vendor-info=FreeBSD
+CONFIGURE_ARGS=	--with-vendor-info=FreeBSD
 
 OPTIONS_DEFINE=		DOCS NLS NOTIFY GLADE
 OPTIONS_DEFAULT=	NOTIFY
@@ -47,23 +46,17 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 .if ${PORT_OPTIONS:MGLADE}
-LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=--enable-gladeui
 .else
 CONFIGURE_ARGS+=--disable-gladeui
-.endif
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's|docs \\|docs|' \
-		-e 's|po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
