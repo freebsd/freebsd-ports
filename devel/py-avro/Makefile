@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.7.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 		APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -17,12 +16,13 @@ COMMENT=	Data serialization system for python
 USE_PYDISTUTILS=	easy_install
 USE_PYTHON=		yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/lang/py
+PLIST_FILES=	bin/avro \
+		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${DISTNAME}/lang/py
 
 pre-configure:
 	${REINPLACE_CMD} 's|@AVRO_VERSION@|${PORTVERSION}|g' \
 		${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
