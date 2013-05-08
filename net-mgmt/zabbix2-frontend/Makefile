@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTREVISION=	2
 PKGNAMESUFFIX=	-frontend
 
 MASTERDIR=	${.CURDIR}/../zabbix2-server
