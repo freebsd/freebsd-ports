@@ -29,9 +29,10 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-EXTRACT_CMD=		zcat
+EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
+EXTRACT_AFTER_ARGS=	| ${AWK} '/bin\/sh/{P=1} {if (P==1) print;}' | \
+			${LOCALBASE}/bin/gunshar -d $(WRKDIR)
 PKGINSTALL=	${WRKSRC}/INSTALL
 PKGDEINSTALL=	${WRKSRC}/DEINSTALL
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
