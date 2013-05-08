@@ -59,8 +59,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fo
 
 CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
 
+_MAKE_JOBS=	#
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GL=		gl glu
 USE_GMAKE=	yes
