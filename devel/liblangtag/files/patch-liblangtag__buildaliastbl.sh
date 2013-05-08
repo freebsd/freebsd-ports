@@ -5,7 +5,7 @@
  EOF
  
 -iconv -f iso8859-1 -t utf-8 $1 | sed -e '/^#.*/{d};/^$/{d};' -e 's/^\([^ \t]*\)[ \t]*\([^ \t]*\)$/\t{"\1", "\2"},/'
-+iconv -f iso8859-1 -t utf-8 $1 | awk '{ if ($0 !~ /^(#.*)?$/) { printf("\t{\"%s\", \"%s\"},\n", $1, $2); } }'
++iconv -f iso8859-1 -t utf-8 $1 | awk '{ if ($0 !~ /^(#.*)?$/) printf("\t{\"%s\", \"%s\"},\n", $1, $2); }'
  
  cat<<EOF
  	{NULL, NULL}
