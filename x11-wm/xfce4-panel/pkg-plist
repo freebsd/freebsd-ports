@@ -138,6 +138,7 @@ share/icons/hicolor/scalable/apps/xfce4-panel.svg
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/te/LC_MESSAGES/xfce4-panel.mo
@@ -199,5 +200,3 @@ share/xfce4/panel/plugins/windowmenu.desktop
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
