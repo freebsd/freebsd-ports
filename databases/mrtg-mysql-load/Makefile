@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mrtg-mysql-load
-# Date created:		2004-04-08
-# Whom:			Piet Delport <pjd@303.za.net>
-#
+# Created by: Piet Delport <pjd@303.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mrtg-mysql-load
 PORTVERSION=	1.02
@@ -22,9 +18,9 @@ NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/mrtg-mysql-load etc/mrtg/mrtg.cfg-mysql-load.example \
+		etc/mrtg/mysql-load-cfg.example
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' ${WRKSRC}/${PORTNAME}

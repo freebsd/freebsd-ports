@@ -1,3 +1,0 @@
-bin/mrtg-mysql-load
-etc/mrtg/mrtg.cfg-mysql-load.example
-etc/mrtg/mysql-load-cfg.example
