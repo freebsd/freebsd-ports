@@ -14,7 +14,6 @@ include/garcon-1/garcon/garcon-menu-separator.h
 include/garcon-1/garcon/garcon-menu-tree-provider.h
 include/garcon-1/garcon/garcon-menu.h
 include/garcon-1/garcon/garcon.h
-lib/libgarcon-1.a
 lib/libgarcon-1.la
 lib/libgarcon-1.so
 lib/libgarcon-1.so.0
@@ -85,10 +84,8 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/ja/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/garcon.mo
-%%NLS%%share/locale/ku/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/garcon.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/garcon.mo
@@ -101,7 +98,9 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/ro/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/te/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/garcon.mo
@@ -118,8 +117,6 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/nb_NO
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%APIDOCS%%@dirrm share/gtk-doc/html/garcon

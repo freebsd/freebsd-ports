@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	garcon
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -14,11 +14,9 @@ COMMENT=	Xfce 4 essential utilities and scripts
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 intltool intlhack
+USE_GNOME=	glib20 intltool intlhack
 USE_XFCE=	configenv libutil
-USES=		pkgconfig
-
-CONFIGURE_ARGS+=--disable-gtk-doc-html
+USES=		pathfix pkgconfig
 
 OPTIONS_DEFINE=		DOCS NLS
 
@@ -39,11 +37,6 @@ PLIST_SUB+=	APIDOCS=""
 .else
 CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
-.endif
-
-.if empty(PORT_OPTIONS:MNLS)
-post-patch:
-	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
