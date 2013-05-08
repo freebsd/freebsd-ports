@@ -1,13 +1,10 @@
-# New ports collection makefile for:	murrine-configurator
-# Date created:				2006-11-02
-# Whom:					Ted Stodgell <tstodgell@gmail.com>
-#
+# Created by: Ted Stodgell <tstodgell@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	murrine-configurator
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrine/
 DISTNAME=	murrine-configurator-${PORTVERSION}
