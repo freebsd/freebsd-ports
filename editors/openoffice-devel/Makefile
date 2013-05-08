@@ -69,7 +69,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice4
-SVNREVISION=		1466687
+SVNREVISION=		1479753
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -137,7 +137,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
-		${JAVALIBDIR}/lucene-core-3.6.1.jar:${PORTSDIR}/textproc/lucene \
+		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		epm:${PORTSDIR}/devel/epm \
@@ -187,8 +187,8 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
 			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
 			--with-system-lucene \
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.1.jar	\
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.1.jar	\
+			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar	\
+			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar	\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-package-format="archive" \
 			--enable-gstreamer \
