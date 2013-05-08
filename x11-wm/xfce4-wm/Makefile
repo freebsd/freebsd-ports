@@ -1,23 +1,20 @@
-# New ports collection makefile for:	xfwm4
-# Date created:		August 14, 2002
-# Whom:			James Earl <jdearl@telus.net>
-#
+# Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTVERSION=	4.10.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's window manager
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		wnck-1:${PORTSDIR}/x11-toolkits/libwnck
 
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
@@ -26,15 +23,15 @@ CONFIGURE_ARGS=	--enable-xsync \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
+USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11 sm xext xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
 
-OPTIONS_DEFINE=		COMPOSITE NOTIFY REVMOUSE
+OPTIONS_DEFINE=		COMPOSITE NLS NOTIFY REVMOUSE
 OPTIONS_DEFAULT=	COMPOSITE NOTIFY
 REVMOUSE_DESC=		Reverse mouse workspace changing direction
 
@@ -46,8 +43,17 @@ CONFIGURE_ARGS+=--enable-compositor
 CONFIGURE_ARGS+=--disable-compositor
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
@@ -56,8 +62,5 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if ${PORT_OPTIONS:MREVMOUSE}
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-src__events.c
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
