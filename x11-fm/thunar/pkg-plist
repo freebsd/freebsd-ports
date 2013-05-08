@@ -84,6 +84,7 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/be/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/Thunar.mo
@@ -120,6 +121,7 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/si/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/Thunar.mo
@@ -137,8 +139,6 @@ share/pixmaps/Thunar/Thunar-about-logo.png
 %%PLUGIN_TPA%%@dirrmtry share/xfce4/panel-plugins
 %%PLUGIN_TPA%%@dirrmtry share/xfce4
 @dirrm share/pixmaps/Thunar
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
