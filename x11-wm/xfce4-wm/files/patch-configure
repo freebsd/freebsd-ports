@@ -1,0 +1,11 @@
+--- ./configure.orig	2013-05-05 15:58:46.000000000 +0000
++++ ./configure	2013-05-06 18:59:33.000000000 +0000
+@@ -13408,7 +13408,7 @@
+ 
+     fi
+   fi
+-     USE_NLS=yes
++#     USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no
