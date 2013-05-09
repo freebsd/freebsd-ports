@@ -10,6 +10,32 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130509:
+AUTHOR: kwm@FreeBSD.org
+
+  * Two new USES macros to handle mime data of ports.
+
+  USES= desktop-file-utils
+	Handles MimeType in .desktop files that are installed in 
+	share/applications.
+  USES= shared-mime-info
+	For supporting mime xml files installed in 
+	share/mime/packages.
+
+  The desktop-file-utils USES is only needed if the .desktop files
+  installed by the port has a MimeType field. 
+  USE_GNOME=desktopfileutils is deprecated.
+
+  The shared-mime-info USES handles mime types xml files.
+  Please note that only the packages/${NAME}.xml file should be listed in
+  the plist. The shared-mime-info port will clean up the share/mime/*
+  directories and generated files.
+
+  Both USES have there own post-install and code that adds @exec/@unexec
+  lines to the pkg-plist. This means that when a port switches to the 
+  USES macro, the related post-install command  and @exec/@unexec
+  lines can be removed from the prot.
+
 20130507:
 AUTHOR: bapt@FreeBSD.org
 
