@@ -3,7 +3,7 @@
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20101222
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 DISTFILES=	dovecot-antispam-plugin-${DISTVERSION}${EXTRACT_SUFX}
