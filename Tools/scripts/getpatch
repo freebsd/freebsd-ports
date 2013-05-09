@@ -30,7 +30,6 @@
 
 import argparse
 import codecs
-import locale
 import re
 import sys
 if sys.version_info.major == 3:
@@ -47,11 +46,11 @@ class GetPatch(object):
     def __init__(self, pr, category='ports'):
         self.pr = pr
         self.category = category
-        self.patchs = list()
-        self.url = str()
-        self.patch = str()
+        self.patchs = []
+        self.url = ""
+        self.patch = ""
         self.output_stdout = False
-        self.default_locale = locale.getdefaultlocale()[1].lower()
+        self.default_locale = sys.getdefaultencoding()
 
     def fetch(self, *largs, **kwargs):
         raise NotImplementedError()
@@ -86,6 +85,9 @@ class GetPatch(object):
             else:
                 self.write(p, data)
 
+    def add_patch(self, url, name):
+        self.patchs.append({'url': url, 'name': name})
+
     def out(self, s):
         if not self.output_stdout:
             print(s)
@@ -111,7 +113,7 @@ class GnatsGetPatch(GetPatch):
             sys.exit(1)
 
         for patchs in re.findall(pattern, str(data)):
-            self.patchs.append({'url': patchs[0], 'name': patchs[1]})
+            self.add_patch(patchs[0], patchs[1])
 
 class BzGetPatch(GetPatch):
 
@@ -159,7 +161,7 @@ class BzGetPatch(GetPatch):
             sys.exit(1)
 
         for i in range(nb_urls):
-            self.patchs.append({'url': urls[i], 'name': names[i]})
+            self.add_patch(urls[i], names[i])
 
 def main():
 
@@ -181,7 +183,7 @@ def main():
 
     args = parser.parse_args()
 
-    category = str()
+    category = ""
     pr = str(args.pr[0])
 
     if '/' in pr and pr is not None:
