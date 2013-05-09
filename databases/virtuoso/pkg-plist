@@ -1,11 +1,11 @@
 bin/inifile
-bin/isql-iodbc
+%%WITH_IODBC%%bin/isql-iodbc
 bin/isql-vt
-bin/isqlw-iodbc
+%%WITH_IODBC%%bin/isqlw-iodbc
 bin/isqlw-vt
-bin/odbc_mail
+%%WITH_IODBC%%bin/odbc_mail
 bin/virt_mail
-bin/virtuoso-iodbc-t
+%%WITH_IODBC%%bin/virtuoso-iodbc-t
 bin/virtuoso-t
 lib/hibernate/virt_dialect.jar
 lib/jdbc-2.0/virtjdbc2.jar
@@ -14,8 +14,8 @@ lib/jdbc-3.0/virtjdbc3ssl.jar
 lib/jdbc-4.0/virtjdbc4.jar
 lib/jdbc-4.0/virtjdbc4ssl.jar
 lib/jena/virt_jena.jar
-lib/libvirtuoso-iodbc-t.a
-lib/libvirtuoso-iodbc-t.la
+%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.a
+%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.la
 lib/libvirtuoso-t.a
 lib/libvirtuoso-t.la
 lib/sesame/create-virtuoso.xsl
