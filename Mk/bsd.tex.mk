@@ -29,7 +29,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  texmf:	TeXLive texmf tree
 #  infra:	tlmgr dependency (Perl modules)
 #
-#  dvipsk:	dvipsk (not implemented yet)
+#  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #
@@ -125,9 +125,8 @@ _USE_TEX_PTEXENC=	ptexenc:${PORTSDIR}/print/tex-ptexenc
 CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .endif
 .if !empty(USE_TEX:Mdvipsk) || !empty(USE_TEX:Mtexlive)
-# XXX
-#_USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
-#CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
+_USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
+CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .endif
 .if !empty(USE_TEX:Mxdvik) || !empty(USE_TEX:Mtexlive)
 _USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik

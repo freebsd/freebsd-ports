@@ -1,0 +1,12 @@
+--- configure.ac.orig	2013-05-08 04:51:32.000000000 +0900
++++ configure.ac	2013-05-08 04:51:58.000000000 +0900
+@@ -24,6 +24,9 @@
+ 
+ KPSE_KPATHSEA_FLAGS
+ 
++KPSE_ADD_FLAGS([libpaper])
++CHO_CHECK_LIBPAPER
++
+ AC_CONFIG_SUBDIRS([squeeze])
+ 
+ AC_CONFIG_FILES([Makefile])

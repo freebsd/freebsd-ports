@@ -1,13 +1,1570 @@
 @comment $FreeBSD$
 bin/afm2tfm
 bin/dvips
-bin/odvips
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsneohellenic/gfsneohellenic.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/adfsymbols/ArrowsADF.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/adfsymbols/BulletsADF.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/manfnt/manfnt.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/adforn/OrnementsADF.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/jmn/hans.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/venturissans/yv1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/epigrafica/epigrafica.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/libris/yly.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/dictsym/dictsym.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/vnrother.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/vntopia.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/concretevn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/cmbrightvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/arevvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/urwvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/chartervn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/vnrtext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/txttvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/vntex/grotesqvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tabvar/tabvar.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Acorn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Starburst.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Eileen.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Sanremo.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Romantik.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Kramer.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Eichenla.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/GotIn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Elzevier.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/GoudyIn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/RoyalIn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/ArtNouvc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Carrickc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Rothdn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/ArtNouv.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Zallman.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/MorrisIn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Nouveaud.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Typocaps.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/EileenBl.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Konanur.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/AnnSton.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/initials/Kinigcap.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kpfonts/kpfonts.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/belleek/belleek.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/phv8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/pzc8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/ptm8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/ppl8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/pnc8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/pbk8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/pag8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ly1/pcr8y.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/esstix/ESSTIX.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/opensans/opensans.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/uhc/umj.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ocherokee/cherokee.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fonetika/fonetika.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/bera/bera.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tfrupee/tfrupee.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/droid/droid.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/doublestroke/dstroke.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-unicode/cmu.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gillcm/cmg.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/esvect/esvect.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-ly1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cyklop/cyklop-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fonts-tlwg/tlwg.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fonts-tlwg/nf.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fonts-tlwg/nectec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cmcyr/cmcyr.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/chemarrow/chemarrow.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/bookhands/sqrcaps.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/symbols.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/cm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/euler.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/latxfont.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/cyrillic.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts/cmextra.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm/cmtext-bsr-interpolated.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cbfonts/cbgreek-full.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/frcursive/frcursive.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/countriesofeurope/CountriesOfEurope.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arabi/arabi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cantarell/cantarell.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cc-pl/ccpl.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-ex.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-greek.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-mi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-wncy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-sy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-t2b.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-t2a.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-t2c.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/iwona/iwona-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/grotesq/ugq.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/comfortaa/comfortaa.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kerkis/kerkis.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lxfonts/lxfonts.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/bookman/ubk.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mathdesign/mdugm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mathdesign/mdbch.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mathdesign/mdput.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arphic/gkaiu.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arphic/gbsnu.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arphic/bsmiu.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arphic/bkaiu.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/xypic/xypic.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/foekfont/foekfont.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/eurosym/eurosym.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts/pxr1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts/pxr.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts/pxr3.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts/pxfonts.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts/pxr2.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-wncy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-greek.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-sy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-el.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-exp.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-t2b.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-t2c.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-mi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-t2a.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/antt-ex.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfscomplutum/gfscomplutum.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/burmese/burmese.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mnsymbol/MnSymbol.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/augie/augie.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsdidot/gfsdidot.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsporson/gfsporson.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cfr-lm/clm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fge/fge.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/romande/yrd.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/context/contnav.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-t2a.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-t1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-x2.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-t2c.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-t2b.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-super/cm-super-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/electrum/yes.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arev/arev.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/stmaryrd/stmaryrd.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/calligra-type1/calligra.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/dejavu/dejavu-type1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/dejavu/dejavu-truetype.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/phaistos/phaistos.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pigpen/pigpen.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/psnfss/fpls.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/psnfss/pazo.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/psnfss/charter.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/psnfss/utopia.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/psnfss/psnfss.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/paratype/paratype-mixed.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/paratype/paratype-truetype.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/paratype/paratype-type1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/semaphor/semaf.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsbaskerville/gfsbaskerville.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/jamtimes/jtm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/grverb/grverb.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfonts/txfonts.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfonts/txr.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfonts/txr2.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfonts/txr1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfonts/txr3.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/figbas/figbas.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/aurical/aurical.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/brushscr/pbsi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/venturis2/yv2.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/helvetic/uhv.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/skaknew/SkakNew.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsbodoni/gfsbodoni.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qbk-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qag-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qpl-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qtm-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qhv-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcr-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qcs-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre/qzc-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/montex/mongolian.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/metapost/troff-updmap.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/metapost/troff.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/starfont/starfont.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/arabtex/arabtex.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/avantgar/uag.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/recycle/recycle.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tipa/tipa.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pxtxalfa/pxtx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/symbol/usy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/sanskrit/skt.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/txfontsb/gptimes.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-wncy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-ex.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-t2c.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-t2b.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-sy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-mi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-t2a.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/kurier/kurier-greek.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pl/plother.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pl/pltext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/ugarite.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/oldprsn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/hieroglf.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/linearb.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/greek6cbc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/nabatean.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/phoenician.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/fut10.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/protosem.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/aramaic.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/oands.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/greek4cbc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/cypriot.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/etruscan.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/archaicprw.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/archaic/sarabian.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/allrunes/allrunes.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/omega/omega.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cs/cstext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cs/csfont-e.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cs/csother.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gothic/yfrak.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/staves/icelandic.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ncntrsbk/unc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/boondox/boondox.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-cstext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-vntext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-cmtext-interpolated.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-cmother.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-pltext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rep-cmtext.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lm/lm-math.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mathabx-type1/mathabx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/musixtex-fonts/musix.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/dutchcal/dutchcal.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/linearA/linearA.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cm-lgc/cm-lgc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/berenisadf/ybd.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/esint-type1/esint.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/libertine-legacy/libertine.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ibygrk/iby.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/knitting/knitfont.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/trajan/trajan.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antiqua/uaq.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/zapfding/uzd.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ethiop-t1/ethiop.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/palatino/upl.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wasy/wasy.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/norasi-c90/norasi-c90.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/prodint/prodint.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mflogo/mflogo.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/hfbright/hfbright.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/bbold-type1/bbold.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/tengwarscript/tengwarscript.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/courier/ucr.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/rsfso/rsfso.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cjhebrew/cjhebrew.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/velthuis/dvng.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/baskervald/ybv.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ocr-b-outline/ocrb.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/cmll/cmll.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/venturissans2/yv3.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/times/utm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/rsfs/rsfs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/pslatex/pcrr8rn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/dozenal/fdz.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ccicons/ccicons.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fdsymbol/fdsymbol.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/carolmin-ps/cmin.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/venturisold/yvo.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/marvosym/marvosym.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/aspectratio/aspectratio.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/auncial-new/auncial.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/yhmath/yhmath.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lithuanian/l7x-urwvn.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/mdsymbol/mdsymbol.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/public/newtx/ntx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/garuda-c90/garuda-c90.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/lato/lato.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/ascii/ascii.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/inconsolata/fi4.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/venturis/yvt.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/mr2j.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/dgj.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/mrj.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/mcj.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/mc2j.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/wadalab/dmj.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fourier/fourier.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/fourier/fourier-utopia-expert.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/oinuit/oinuit.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfsartemisia/gfsartemisia.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/zapfchan/uzc.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/epiolmec/epiolmec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/gfssolomos/gfssolomos.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-ts1.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-l7x.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-ec.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-t5.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-qx.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/poltawski/ap-cs.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/sansmathaccent/sansmathaccent.map
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicmath.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicel.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicelsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicdenomnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenic.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenicnumnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic/neohellenictabnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/adfsymbols/SymbolsADF.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/adforn/OrnementsADF.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/jmn/hans.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/epigrafica/epigraficahellenic.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libris/t1-cfr-yly.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libris/libris-supp.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libris/ts1-euro-yly.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/vntex/t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-t5-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/8a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/tex256.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/funky.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/dc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-qx-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/asex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/texmext.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-cs-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-rm-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/asexp.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-t2c-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/xt2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/ansinew.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-ts1-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/8r.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/stormex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-t2a-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/7t.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/6w.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/texnansx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/dvips.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-ec-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/xl2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/extex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/ad.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-t2b-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/texmsym.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/texmital.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-texnansi-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/odvips.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/base/q-l7x-uni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kpfonts/kpfonts-expert.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kpfonts/kpfonts-expert-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kpfonts/kpfonts-large-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kpfonts/kpfonts-expert-tt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/ly1/texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/opensans/opensans-04.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/opensans/opensans-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/opensans/opensans-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/opensans/opensans-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/droid/droid-04.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/droid/droid-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/droid/droid-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/droid/droid-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-tipa.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-lc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-ux.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-tipx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-la.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-ecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-vn.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-tc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-lasc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-uxsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-rx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-lb.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-gsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-g.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode/cmu-ld.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/cs-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/l7x-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/t5-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/ly1-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/t5-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/qx-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/qx-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/ly1-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/cs-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/l7x-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/ec-cyklop.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop/ec-cyklop-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fonts-tlwg/lthtlwg.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cbfonts/gmtr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cbfonts/CB.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/countriesofeurope/CountriesOfEurope.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/ararabeyes.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/farsitex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/frsimple.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/frmonotype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/farsiwebencoding.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/ardtpnaskh.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/armonotype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/frunicode.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/arunicode.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/aromega.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/frsimplified.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/ardtpthuluth.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arabi/arsimplified.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cantarell/cantarell-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cantarell/cantarell-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/ec-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/greek-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/t5-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/l7x-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/ts1-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/t5-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/texnansi-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/cs-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/l7x-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/cs-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/wncy-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/qx-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/mi-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/rm-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/ex-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/ec-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/rm-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/qx-iwona-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/texnansi-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/t2a-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/t2b-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/t2c-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/iwona/sy-iwona.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/comfortaa/comfortaa-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/comfortaa/comfortaa-dotlessj.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/comfortaa/comfortaa-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/comfortaa/comfortaa-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kerkisecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kerkisc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kmex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kmath.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kmsym.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/gpkerkisc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/gpkerkis.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kerkis.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/kerkisec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/gkerkisc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis/gkerkis.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/xypic/xyd.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/xypic/xycirc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/xypic/xyd2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fontools/fontools_t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fontools/fontools_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fontools/fontools_ly1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fontools/fontools_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-ex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-exp.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-mi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-el.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-cs.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/anttcap-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-wncy.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/anttcap-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-greek.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/anttcap-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/anttcap-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/anttcap-cs.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-sy.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/antt-rm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfscomplutum/gpcomplutum.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolB.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolC.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolD.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolF.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolA.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolS.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol/MnSymbolE.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/gpdidoti.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/gfsudidotmath.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/gpdidot.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didotusc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/gpolga.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didottabnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didotec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didot.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didotnumnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/gpdidotusc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didotdenomnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot/didotuecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsporson/porsonel.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cfr-lm/t1-clm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cfr-lm/dotdigits-clm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/romande/t1-romandeadf.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/romande/ts1-euro-yrd.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/romande/romande-supp.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/romande/t1-romandeadf-alt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/q-8r.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/teff-trinite.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/ec-2004.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmitt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmrm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmtt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmit.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/context/cmsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super/cm-super-t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/electrum/supp-yes.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arev/arevoml.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arev/arevoms.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/arev/arevot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_t1-type1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_t1-type1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_t1-truetype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_lgr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_lgr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_t1-type1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_lgr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_t1-type1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_t1-truetype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_t1-truetype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavumono_lgr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavuserif_qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_t1-truetype.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusanslight_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu/dejavusans_qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/c90/c90.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_t2b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_t2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptserif_ot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptsans_x2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/paratype/ptmono_il2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smftt10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfsl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfptt10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfebsl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfesl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfer10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfpb10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfpr10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfett10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfeb10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfpbsl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfr10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfbsl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfpsl10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor/smfb10.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbaskerville/gpgfsbaskerville.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/txfonts/tx8r.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodonidenomnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodoniecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodoni.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodonitabnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodoninumnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodonisc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodonielsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodoniel.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni/bodoniec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-qxm-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-cszc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-qxzc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-l7xzc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-texnansi-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-l7x-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-csm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-l7x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-ec-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-rmm-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-rmzc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-qxm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-rmm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-csm-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-cs-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-cs.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-rm-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-qx-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-texnansizc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-rm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre/q-t5-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/metapost/groff.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/txfontsb/gptimes.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/txfontsb/gptimesy.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/t2b-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/t5-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/t2c-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/greek-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/ec-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/l7x-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/mi-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/cs-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/l7x-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/cs-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/wncy-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/sy-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/t5-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/ec-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/texnansi-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/rm-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/ts1-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/ex-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/qx-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/t2a-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/rm-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/qx-kurier-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/kurier/texnansi-kurier.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plms.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plrm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plme.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plitt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plmi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plte.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/pltt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/pl/plit.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cs/csin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cs/cstt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cs/csr1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cs/csr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-mathex.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-mathsy.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-l7x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-t5psn.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-plrm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-csin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rmsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-pltt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-plitt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmitt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cssc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-qxtt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rmtt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-csrm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmit.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cstt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-cs.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmtt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-plsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-cstt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-mathit.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-plit.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-qxsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-cmrm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-rep-plin.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lm/lm-cssc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cm-lgc/8r-mod.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansx-ybdjw.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybd1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybd2.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansx-ybd2w.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansx-ybdw.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybd0.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybd2j.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansx-ybd2jw.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybdj.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf/texnansi-ybd.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-1e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-22.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-ff.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-e0.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-a6.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-26.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-1d.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-04.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-a7.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-2e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-e1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-24.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-24.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-e0.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-20.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-1f.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-26.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-circle.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-2c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-e3.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-a7.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-22.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-00.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/t1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-f6.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-ff.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-ff.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-03.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-1e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-e1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-lgr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-infsup.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-24.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-e0.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-e3.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-05.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-1e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-ff.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-05.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-04.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-24.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-8x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-27.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-f6.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-21.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-26.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-e4.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-27.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-25.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-27.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-21.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-23.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-21.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-e3.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-e4.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-23.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-e0.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-fb.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-00.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-e1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-fb.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-e3.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-1d.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-20.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-05.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-00.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-25.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-e1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-e4.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xi-00.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-1f.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-2e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-21.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-05.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-8x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-25.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xb-04.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xk-23.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy/xl-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/ibygrk/IbycusHTG.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright/hfmital.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright/hfmsb.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright/hfmsa.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright/hfot1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright/hfmsym.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tengwarscript/tengwarscript.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tengwarscript/tengwaralt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/tengwarscript/tengwarcap.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/cjhebrew/cjhebltx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/baskervald/supp-ybv.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/b1encoding/TeXB1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/ccicons/ccicons-u.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-f.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol/fdsymbol-d.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lithuanian/latin7x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-c.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-b.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-d.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-f.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol/mdsymbol-e.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/chessfss/chess-fig-example-enc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/chessfss/chess-board-example-enc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf/t1-venturis.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf/t1-dotalt-f_f-venturisadf.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf/t1-f_f-venturisadf.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf/t1-venturisold-longs.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf/ts1-euro-venturisadf.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lato/lato-dotlessj.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lato/lato-02.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/lato/lato-01.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-qxtt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-ot1tt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata/fi4-ei1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-l7x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-agr.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gentium/gentium-t2a.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiamath.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiael.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiaelsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiaecsc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiadenomnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiaec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiasc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisiatabnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisianumnums.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia/artemisia.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/gfssolomos/gpsolomos.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-l7x.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-qx-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-texnansi.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-qx.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-cs-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-t5.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-ec.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-t5-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-l7x-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-ts1.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-rm.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-ec-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-texnansi-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-rm-sc.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski/ap-cs.enc
+%%TEXMFDISTDIR%%/dvips/pst-electricfield/pst-electricfield.pro
+%%TEXMFDISTDIR%%/dvips/pst-solides3d/pst-solides3d.pro
+%%TEXMFDISTDIR%%/dvips/base/resolution400.ps
+%%TEXMFDISTDIR%%/dvips/base/ehandler.ps
+%%TEXMFDISTDIR%%/dvips/initials/config.Sanremo
+%%TEXMFDISTDIR%%/dvips/initials/config.ArtNouvc
+%%TEXMFDISTDIR%%/dvips/initials/config.MorrisIn
+%%TEXMFDISTDIR%%/dvips/initials/config.EileenBl
+%%TEXMFDISTDIR%%/dvips/initials/config.GoudyIn
+%%TEXMFDISTDIR%%/dvips/initials/config.GotIn
+%%TEXMFDISTDIR%%/dvips/initials/config.Eileen
+%%TEXMFDISTDIR%%/dvips/initials/config.Nouveaud
+%%TEXMFDISTDIR%%/dvips/initials/config.AnnSton
+%%TEXMFDISTDIR%%/dvips/initials/config.Carrickc
+%%TEXMFDISTDIR%%/dvips/initials/config.Typocaps
+%%TEXMFDISTDIR%%/dvips/initials/config.RoyalIn
+%%TEXMFDISTDIR%%/dvips/initials/config.Rothdn
+%%TEXMFDISTDIR%%/dvips/initials/config.Acorn
+%%TEXMFDISTDIR%%/dvips/initials/config.ArtNouv
+%%TEXMFDISTDIR%%/dvips/initials/config.Kinigcap
+%%TEXMFDISTDIR%%/dvips/initials/config.Kramer
+%%TEXMFDISTDIR%%/dvips/initials/config.Zallman
+%%TEXMFDISTDIR%%/dvips/initials/config.Romantik
+%%TEXMFDISTDIR%%/dvips/initials/config.Starburst
+%%TEXMFDISTDIR%%/dvips/initials/config.Elzevier
+%%TEXMFDISTDIR%%/dvips/initials/config.Eichenla
+%%TEXMFDISTDIR%%/dvips/initials/config.Konanur
+%%TEXMFDISTDIR%%/dvips/pst-bar/pst-bar.pro
+%%TEXMFDISTDIR%%/dvips/pst-geo/pst-map3dII.pro
+%%TEXMFDISTDIR%%/dvips/pst-geo/pst-map3d.pro
+%%TEXMFDISTDIR%%/dvips/tree-dvips/tree-dvips91.pro
+%%TEXMFDISTDIR%%/dvips/uhc/config.uhc
+%%TEXMFDISTDIR%%/dvips/musixtex/psslurs.pro
+%%TEXMFDISTDIR%%/dvips/pst-barcode/pst-barcode.pro
+%%TEXMFDISTDIR%%/dvips/pst-func/pst-func.pro
+%%TEXMFDISTDIR%%/dvips/pst-fractal/pst-fractal.pro
+%%TEXMFDISTDIR%%/dvips/pst-ghsb/pst-ghsb.pro
+%%TEXMFDISTDIR%%/dvips/countriesofeurope/config.CountriesOfEurope
+%%TEXMFDISTDIR%%/dvips/pst-blur/pst-blur.pro
+%%TEXMFDISTDIR%%/dvips/pst-vue3d/pst-vue3d.pro
+%%TEXMFDISTDIR%%/dvips/grotesq/config.ugq
+%%TEXMFDISTDIR%%/dvips/pst-bezier/pst-bezier.pro
+%%TEXMFDISTDIR%%/dvips/pst-text/pst-text.pro
+%%TEXMFDISTDIR%%/dvips/bookman/config.ubk
+%%TEXMFDISTDIR%%/dvips/mathdesign/config.mdugm
+%%TEXMFDISTDIR%%/dvips/mathdesign/config.mdbch
+%%TEXMFDISTDIR%%/dvips/mathdesign/config.mdput
+%%TEXMFDISTDIR%%/dvips/arphic/config.bsmiu
+%%TEXMFDISTDIR%%/dvips/arphic/config.gkaiu
+%%TEXMFDISTDIR%%/dvips/arphic/config.bkaiu
+%%TEXMFDISTDIR%%/dvips/arphic/config.gbsnu
+%%TEXMFDISTDIR%%/dvips/xypic/xy388dict.pro
+%%TEXMFDISTDIR%%/dvips/pst-solarsystem/pst-solarsystem.pro
+%%TEXMFDISTDIR%%/dvips/psfrag/psfrag.pro
+%%TEXMFDISTDIR%%/dvips/xcolor/xcolor.pro
+%%TEXMFDISTDIR%%/dvips/cm-super/config.cm-super
+%%TEXMFDISTDIR%%/dvips/cm-super/cm-super.GS
+%%TEXMFDISTDIR%%/dvips/pst-grad/pst-grad.pro
+%%TEXMFDISTDIR%%/dvips/pst-slpe/pst-slpe.pro
+%%TEXMFDISTDIR%%/dvips/brushscr/config.pbsi
+%%TEXMFDISTDIR%%/dvips/helvetic/config.uhv
+%%TEXMFDISTDIR%%/dvips/pst-3dplot/pst-3dplot.pro
+%%TEXMFDISTDIR%%/dvips/pst-mirror/pst-mirror.pro
+%%TEXMFDISTDIR%%/dvips/avantgar/config.uag
+%%TEXMFDISTDIR%%/dvips/multi/2up.pro
+%%TEXMFDISTDIR%%/dvips/multi/multi.pro
+%%TEXMFDISTDIR%%/dvips/multi/4up.pro
+%%TEXMFDISTDIR%%/dvips/pst-coil/pst-coil.pro
+%%TEXMFDISTDIR%%/dvips/symbol/config.usy
+%%TEXMFDISTDIR%%/dvips/pst-eucl/pst-eucl.pro
+%%TEXMFDISTDIR%%/dvips/pst-fun/pst-fun.pro
+%%TEXMFDISTDIR%%/dvips/pst-node/pst-node.pro
+%%TEXMFDISTDIR%%/dvips/pst-node/pst-node97.pro
+%%TEXMFDISTDIR%%/dvips/pl/config.pl
+%%TEXMFDISTDIR%%/dvips/omega/omega.cfg
+%%TEXMFDISTDIR%%/dvips/omega/config.omega
+%%TEXMFDISTDIR%%/dvips/cs/config.cs
+%%TEXMFDISTDIR%%/dvips/gothic/config.yfrak
+%%TEXMFDISTDIR%%/dvips/ncntrsbk/config.unc
+%%TEXMFDISTDIR%%/dvips/esint-type1/config.esint
+%%TEXMFDISTDIR%%/dvips/pst-circ/pst-circ.pro
+%%TEXMFDISTDIR%%/dvips/libertine-legacy/config.libertine
+%%TEXMFDISTDIR%%/dvips/pst-math/pst-math.pro
+%%TEXMFDISTDIR%%/dvips/zapfding/config.uzd
+%%TEXMFDISTDIR%%/dvips/palatino/config.upl
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.tray1
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen150
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen70
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.duplong
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.envelope
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/addpsctrl
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.usledger
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/README
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.dupshort
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.psgrid
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen80
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.mmgrid
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.a4
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen85
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.usletter
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen100
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.tray2
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.a3
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen90
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.manualfeed
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.a4grid
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen100_0
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen120
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.tek550paper
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.tray3
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.simplex
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.inv
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen140
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen35
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen130
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen110
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.tek550transparency
+%%TEXMFDISTDIR%%/dvips/dvipsconfig/config.screen50
+%%TEXMFDISTDIR%%/dvips/pstricks-add/pstricks-add.pro
+%%TEXMFDISTDIR%%/dvips/norasi-c90/config.norasi-c90
+%%TEXMFDISTDIR%%/dvips/pst-bspline/pst-bspline.pro
+%%TEXMFDISTDIR%%/dvips/courier/config.ucr
+%%TEXMFDISTDIR%%/dvips/pst-light3d/pst-light3d.pro
+%%TEXMFDISTDIR%%/dvips/pspicture/pspicture.ps
+%%TEXMFDISTDIR%%/dvips/times/config.utm
+%%TEXMFDISTDIR%%/dvips/pstricks/pstricks97.pro
+%%TEXMFDISTDIR%%/dvips/pstricks/pst-dots97.pro
+%%TEXMFDISTDIR%%/dvips/pstricks/pstricks.pro
+%%TEXMFDISTDIR%%/dvips/pstricks/pst-dots.pro
+%%TEXMFDISTDIR%%/dvips/pstricks/pst-algparser.pro
+%%TEXMFDISTDIR%%/dvips/pstricks/pst-tools.pro
+%%TEXMFDISTDIR%%/dvips/pst-knot/pst-psm.pro
+%%TEXMFDISTDIR%%/dvips/pst-spectra/pst-spectra.pro
+%%TEXMFDISTDIR%%/dvips/colorsep/colorsep.pro
+%%TEXMFDISTDIR%%/dvips/tex-ps/mirr.hd
+%%TEXMFDISTDIR%%/dvips/tex-ps/crops.pro
+%%TEXMFDISTDIR%%/dvips/tex-ps/separate.pro
+%%TEXMFDISTDIR%%/dvips/pst-optexp/pst-optexp.pro
+%%TEXMFDISTDIR%%/dvips/gastex/gastex.pro
+%%TEXMFDISTDIR%%/dvips/garuda-c90/config.garuda-c90
+%%TEXMFDISTDIR%%/dvips/pst-cox/pst-coxeter.pro
+%%TEXMFDISTDIR%%/dvips/zapfchan/config.uzc
+%%TEXMFDISTDIR%%/dvips/pst-3d/pst-3d.pro
+%%TEXMFDISTDIR%%/dvips/pst-magneticfield/pst-magneticfield.pro
+%%TEXMFDISTDIR%%/tex/generic/dvips/rotate.sty
+%%TEXMFDISTDIR%%/tex/generic/dvips/blackdvi.sty
+%%TEXMFDISTDIR%%/tex/generic/dvips/colordvi.sty
+%%TEXMFDISTDIR%%/tex/generic/dvips/blackdvi.tex
+%%TEXMFDISTDIR%%/tex/generic/dvips/colordvi.tex
+%%TEXMFDISTDIR%%/tex/generic/dvips/rotate.tex
+%%TEXMFDIR%%/fonts/map/dvips/updmap/psfonts_pk.map
+%%TEXMFDIR%%/fonts/map/dvips/updmap/psfonts.map
+%%TEXMFDIR%%/fonts/map/dvips/updmap/builtin35.map
+%%TEXMFDIR%%/fonts/map/dvips/updmap/download35.map
+%%TEXMFDIR%%/fonts/map/dvips/updmap/ps2pk.map
+%%TEXMFDIR%%/fonts/map/dvips/updmap/psfonts_t1.map
+%%TEXMFDIR%%/fonts/map/dvips/tetex/README
+%%TEXMFDIR%%/fonts/map/dvips/tetex/mathpple.map
+%%TEXMFDIR%%/fonts/map/dvips/tetex/dvipdfm35.map
+%%TEXMFDIR%%/fonts/map/dvips/tetex/ps2pk35.map
+%%TEXMFDIR%%/fonts/map/dvips/tetex/dvips35.map
+%%TEXMFDIR%%/fonts/map/dvips/tetex/pdftex35.map
+%%TEXMFDIR%%/fonts/enc/dvips/afm2pl/afm2pl-ot1ital.enc
+%%TEXMFDIR%%/fonts/enc/dvips/afm2pl/afm2pl-ot1tt.enc
+%%TEXMFDIR%%/fonts/enc/dvips/afm2pl/afm2pl-texnanlc.enc
+%%TEXMFDIR%%/fonts/enc/dvips/afm2pl/afm2pl-texnanuc.enc
+%%TEXMFDIR%%/fonts/enc/dvips/afm2pl/afm2pl-ot1.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/71414f53.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/f7b6d320.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/09fbbfac.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/d9b29452.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/aae443f0.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/b6a4d7c7.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/74afc74c.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/10037936.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/0ef0afca.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/1b6d048e.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/mtex.enc
+%%TEXMFDIR%%/fonts/enc/dvips/tetex/bbad153f.enc
+%%TEXMFDIR%%/dvips/base/special.pro
+%%TEXMFDIR%%/dvips/base/finclude.pro
 %%TEXMFDIR%%/dvips/base/color.pro
 %%TEXMFDIR%%/dvips/base/crop.pro
-%%TEXMFDIR%%/dvips/base/finclude.pro
-%%TEXMFDIR%%/dvips/base/hps.pro
-%%TEXMFDIR%%/dvips/base/special.pro
-%%TEXMFDIR%%/dvips/base/tex.pro
-%%TEXMFDIR%%/dvips/base/texc.pro
 %%TEXMFDIR%%/dvips/base/texps.pro
-%%TEXMFCONFIGDIR%%/dvips/config/config.ps
+%%TEXMFDIR%%/dvips/base/texc.pro
+%%TEXMFDIR%%/dvips/base/tex.pro
+%%TEXMFDIR%%/dvips/base/hps.pro
+%%TEXMFDIR%%/dvips/config/toshiba.cfg
+%%TEXMFDIR%%/dvips/config/config.bakoma
+%%TEXMFDIR%%/dvips/config/config.ljfour
+%%TEXMFDIR%%/dvips/config/config.toshiba
+%%TEXMFDIR%%/dvips/config/config.ps
+%%TEXMFDIR%%/dvips/config/qms.cfg
+%%TEXMFDIR%%/dvips/config/config.ot2
+%%TEXMFDIR%%/dvips/config/config.canonex
+%%TEXMFDIR%%/dvips/config/ljfour.cfg
+%%TEXMFDIR%%/dvips/config/config.ibmvga
+%%TEXMFDIR%%/dvips/config/config.deskjet
+%%TEXMFDIR%%/dvips/config/config.luc
+%%TEXMFDIR%%/dvips/config/config.epson
+%%TEXMFDIR%%/dvips/config/deskjet.cfg
+%%TEXMFDIR%%/dvips/config/epson.cfg
+%%TEXMFDIR%%/dvips/config/config.xyp
+%%TEXMFDIR%%/dvips/config/cx.cfg
+%%TEXMFDIR%%/dvips/config/config.cx
+%%TEXMFDIR%%/dvips/config/dfaxhigh.cfg
+%%TEXMFDIR%%/dvips/config/dvired.cfg
+%%TEXMFDIR%%/dvips/config/config.mbn
+%%TEXMFDIR%%/dvips/config/ibmvga.cfg
+%%TEXMFDIR%%/dvips/config/config.dvired
+%%TEXMFDIR%%/dvips/config/config.qms
+%%TEXMFDIR%%/dvips/config/config.mirrorprint
+%%TEXMFDIR%%/dvips/config/config.unms
+%%TEXMFDIR%%/dvips/config/alt-rule.pro
+%%TEXMFDIR%%/dvips/config/canonex.cfg
+%%TEXMFDIR%%/dvips/config/config.mga
+%%TEXMFDIR%%/dvips/getafm/getafm.ps
+%%TEXMFDIR%%/dvips/tetex/config.pk
+%%TEXMFDIR%%/dvips/tetex/config.outline
+%%TEXMFDIR%%/dvips/tetex/config.builtin35
+%%TEXMFDIR%%/dvips/tetex/config.dfaxhigh
+%%TEXMFDIR%%/dvips/tetex/config.gsftopk
+%%TEXMFDIR%%/dvips/tetex/config.www
+%%TEXMFDIR%%/dvips/tetex/config.download35
+%%TEXMFDIR%%/dvips/tetex/config.pdf
+%%TEXMFDIR%%/dvips/tetex/config.dfaxlo
+%%TEXMFDIR%%/dvips/gsftopk/render.ps
+%%TEXMFDIR%%/doc/dvips/dvips.pdf
+%%TEXMFDIR%%/doc/dvips/dvips.html
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/zapfding
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/zapfchan
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/yhmath
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/xypic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/wasy
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/wadalab
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/vntex
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/venturissans2
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/venturissans
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/venturisold
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/venturis2
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/venturis
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/velthuis
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/uhc
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/txfontsb
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/txfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/trajan
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tipa
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/times
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tfrupee
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tex-gyre
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tengwarscript
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tabvar
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/symbol
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/stmaryrd
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/staves
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/starfont
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/skaknew
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/semaphor
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/sansmathaccent
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/sanskrit
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/rsfso
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/rsfs
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/romande
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/recycle
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/pxtxalfa
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/pxfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/public/newtx
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/public
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/psnfss
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/pslatex
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/prodint
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/poltawski
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/pl
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/pigpen
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/phaistos
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/paratype
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/palatino
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/opensans
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/omega
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/oinuit
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ocr-b-outline
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ocherokee
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/norasi-c90
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ncntrsbk
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/musixtex-fonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/montex
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/mnsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/mflogo
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/metapost
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/mdsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/mathdesign
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/mathabx-type1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/marvosym
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/manfnt
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ly1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/lxfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/lm
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/lithuanian
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/linearA
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/libris
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/libertine-legacy
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/lato
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/kurier
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/kpfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/knitting
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/kerkis
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/jmn
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/jamtimes
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/iwona
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/initials
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/inconsolata
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ibygrk
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/hfbright
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/helvetic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/grverb
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/grotesq
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gothic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gillcm
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfssolomos
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsporson
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsneohellenic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsdidot
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfscomplutum
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsbodoni
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsbaskerville
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/gfsartemisia
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/garuda-c90
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/frcursive
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/fourier
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/fonts-tlwg
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/fonetika
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/foekfont
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/figbas
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/fge
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/fdsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/eurosym
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ethiop-t1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/esvect
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/esstix
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/esint-type1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/epiolmec
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/epigrafica
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/electrum
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/dutchcal
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/droid
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/dozenal
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/doublestroke
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/dictsym
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/dejavu
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cyklop
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cs
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/courier
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/countriesofeurope
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/context
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/comfortaa
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cmll
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cmcyr
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cm-unicode
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cm-super
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cm-lgc
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cm
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cjhebrew
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/chemarrow
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cfr-lm
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ccicons
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cc-pl
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cbfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/carolmin-ps
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cantarell
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/calligra-type1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/burmese
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/brushscr
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/boondox
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/bookman
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/bookhands
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/berenisadf
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/bera
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/belleek
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/bbold-type1
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/baskervald
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/avantgar
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/aurical
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/auncial-new
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/augie
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/aspectratio
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ascii
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/arphic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/arev
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/archaic
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/arabtex
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/arabi
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/antt
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/antiqua
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/allrunes
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/adfsymbols
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/adforn
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/xypic
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/vntex
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/venturisadf
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/txfontsb
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/txfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/tex-gyre
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/tengwarscript
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/semaphor
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/romande
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/poltawski
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/pl
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/paratype
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/opensans
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/mnsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/metapost
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/mdsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/ly1
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/lm
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/lithuanian
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/libris
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/libertine-legacy
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/lato
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/kurier
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/kpfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/kerkis
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/jmn
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/iwona
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/inconsolata
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/ibygrk
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/hfbright
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfssolomos
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsporson
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsneohellenic
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsdidot
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfscomplutum
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbodoni
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsbaskerville
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gfsartemisia
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/gentium
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/fonts-tlwg
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/fontools
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/fdsymbol
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/epigrafica
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/electrum
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/droid
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/dejavu
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cyklop
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cs
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/countriesofeurope
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/context
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/comfortaa
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cm-unicode
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cm-super
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cm-lgc
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cjhebrew
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/chessfss
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cfr-lm
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/ccicons
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cbfonts
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/cantarell
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/c90
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/berenisadf
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/baskervald
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/base
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/b1encoding
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/arev
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/arabi
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/antt
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/adfsymbols
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/adforn
+@dirrm %%TEXMFDISTDIR%%/dvips/zapfding
+@dirrm %%TEXMFDISTDIR%%/dvips/zapfchan
+@dirrm %%TEXMFDISTDIR%%/dvips/xypic
+@dirrm %%TEXMFDISTDIR%%/dvips/xcolor
+@dirrm %%TEXMFDISTDIR%%/dvips/uhc
+@dirrm %%TEXMFDISTDIR%%/dvips/tree-dvips
+@dirrm %%TEXMFDISTDIR%%/dvips/times
+@dirrm %%TEXMFDISTDIR%%/dvips/tex-ps
+@dirrm %%TEXMFDISTDIR%%/dvips/symbol
+@dirrm %%TEXMFDISTDIR%%/dvips/pstricks-add
+@dirrm %%TEXMFDISTDIR%%/dvips/pstricks
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-vue3d
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-text
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-spectra
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-solides3d
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-solarsystem
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-slpe
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-optexp
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-node
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-mirror
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-math
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-magneticfield
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-light3d
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-knot
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-grad
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-ghsb
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-geo
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-func
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-fun
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-fractal
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-eucl
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-electricfield
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-cox
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-coil
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-circ
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-bspline
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-blur
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-bezier
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-barcode
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-bar
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-3dplot
+@dirrm %%TEXMFDISTDIR%%/dvips/pst-3d
+@dirrm %%TEXMFDISTDIR%%/dvips/pspicture
+@dirrm %%TEXMFDISTDIR%%/dvips/psfrag
+@dirrm %%TEXMFDISTDIR%%/dvips/pl
+@dirrm %%TEXMFDISTDIR%%/dvips/palatino
+@dirrm %%TEXMFDISTDIR%%/dvips/omega
+@dirrm %%TEXMFDISTDIR%%/dvips/norasi-c90
+@dirrm %%TEXMFDISTDIR%%/dvips/ncntrsbk
+@dirrm %%TEXMFDISTDIR%%/dvips/musixtex
+@dirrm %%TEXMFDISTDIR%%/dvips/multi
+@dirrm %%TEXMFDISTDIR%%/dvips/mathdesign
+@dirrm %%TEXMFDISTDIR%%/dvips/libertine-legacy
+@dirrm %%TEXMFDISTDIR%%/dvips/initials
+@dirrm %%TEXMFDISTDIR%%/dvips/helvetic
+@dirrm %%TEXMFDISTDIR%%/dvips/grotesq
+@dirrm %%TEXMFDISTDIR%%/dvips/gothic
+@dirrm %%TEXMFDISTDIR%%/dvips/gastex
+@dirrm %%TEXMFDISTDIR%%/dvips/garuda-c90
+@dirrm %%TEXMFDISTDIR%%/dvips/esint-type1
+@dirrm %%TEXMFDISTDIR%%/dvips/dvipsconfig
+@dirrm %%TEXMFDISTDIR%%/dvips/cs
+@dirrm %%TEXMFDISTDIR%%/dvips/courier
+@dirrm %%TEXMFDISTDIR%%/dvips/countriesofeurope
+@dirrm %%TEXMFDISTDIR%%/dvips/colorsep
+@dirrm %%TEXMFDISTDIR%%/dvips/cm-super
+@dirrm %%TEXMFDISTDIR%%/dvips/brushscr
+@dirrm %%TEXMFDISTDIR%%/dvips/bookman
+@dirrm %%TEXMFDISTDIR%%/dvips/base
+@dirrm %%TEXMFDISTDIR%%/dvips/avantgar
+@dirrm %%TEXMFDISTDIR%%/dvips/arphic
+@dirrm %%TEXMFDISTDIR%%/tex/generic/dvips
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips
+@dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips
+@dirrm %%TEXMFDISTDIR%%/dvips
+@dirrm %%TEXMFDIR%%/doc/dvips
+@dirrm %%TEXMFDIR%%/fonts/map/dvips/updmap
+@dirrm %%TEXMFDIR%%/fonts/map/dvips/tetex
+@dirrm %%TEXMFDIR%%/fonts/map/dvips
+@dirrm %%TEXMFDIR%%/fonts/enc/dvips/tetex
+@dirrm %%TEXMFDIR%%/fonts/enc/dvips/afm2pl
+@dirrm %%TEXMFDIR%%/fonts/enc/dvips
+@dirrm %%TEXMFDIR%%/dvips/tetex
+@dirrm %%TEXMFDIR%%/dvips/gsftopk
+@dirrm %%TEXMFDIR%%/dvips/getafm
+@dirrm %%TEXMFDIR%%/dvips/config
+@dirrm %%TEXMFDIR%%/dvips/base
+@dirrm %%TEXMFDIR%%/dvips
