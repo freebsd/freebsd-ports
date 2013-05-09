@@ -9,8 +9,7 @@ PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
 PORTREVISION=	6
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}\
-		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	${PORTNAME}-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
 
