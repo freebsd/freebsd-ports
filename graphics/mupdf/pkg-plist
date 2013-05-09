@@ -1,6 +1,6 @@
-bin/mubusy
 bin/mupdf
 bin/mudraw
+bin/mutool
 include/fitz.h
 include/memento.h
 include/mucbz.h

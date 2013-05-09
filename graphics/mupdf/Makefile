@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.mupdf.com/download/
-EXTRACT_SUFX=	-source.tar.gz
+EXTRACT_SUFX=	-source.zip
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
 
-LICENSE=	GPLv3
+LICENSE=	AGPLv3
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -20,18 +20,20 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		openjpeg:${PORTSDIR}/graphics/openjpeg
 
 USE_GMAKE=	yes
-MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
+MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man \
+		XCFLAGS=-I${LOCALBASE}/include
 USES=		pkgconfig
 USE_XORG=	x11 xext
-MAN1=		mupdf.1 mubusy.1 mudraw.1
+MAN1=		mupdf.1 mutool.1 mudraw.1
 
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
-OPTIONS_DEFINE=	SCROLL
+OPTIONS_DEFINE=	SCROLL JS
 OPTIONS_DEFAULT=SCROLL
 
 SCROLL_DESC=	Build with scroll hacks
+JS_DESC=	JavaScript support (V8 engine)
 
 .include <bsd.port.options.mk>
 
@@ -45,6 +47,11 @@ CFLAGS+=	-mfpmath=sse
 EXTRA_PATCHES+=	${FILESDIR}/scroll_hack-apps_pdfapp.c
 .endif
 
+.if ${PORT_OPTIONS:MJS}
+LIB_DEPENDS+=	v8:${PORTSDIR}/lang/v8
+MAKE_ARGS+=	V8_PRESENT=1 V8LIBS=-lv8
+.endif
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} \
 		-e '/install:/,/^$$/ { /-d/d; }' \
@@ -56,5 +63,6 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-pipe -O2 //' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makerules
+	${RM} -r ${WRKSRC}/thirdparty/*
 
 .include <bsd.port.mk>

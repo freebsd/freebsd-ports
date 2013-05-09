@@ -1,0 +1,67 @@
+--- Makefile.orig	2013-02-13 09:25:07.000000000 -0500
++++ Makefile	2013-05-06 13:00:30.619173583 -0400
+@@ -12,19 +12,13 @@ default: all
+ # Do not specify CFLAGS or LIBS on the make invocation line - specify
+ # XCFLAGS or XLIBS instead. Make ignores any lines in the makefile that
+ # set a variable that was set on the command line.
+-CFLAGS += $(XCFLAGS) -Ifitz -Ipdf -Ixps -Icbz -Iscripts
+-LIBS += $(XLIBS) -lfreetype -ljbig2dec -ljpeg -lopenjpeg -lz -lm
++CFLAGS += -Ifitz -Ipdf -Ixps -Icbz -Iscripts $(XCFLAGS)
++LIBS += -lfreetype -ljbig2dec -ljpeg -lopenjpeg -lz -lm $(XLIBS)
+ LIBS_V8 = $(LIBS) $(V8LIBS)
+ 
+ include Makerules
+ include Makethird
+ 
+-THIRD_LIBS := $(FREETYPE_LIB)
+-THIRD_LIBS += $(JBIG2DEC_LIB)
+-THIRD_LIBS += $(JPEG_LIB)
+-THIRD_LIBS += $(OPENJPEG_LIB)
+-THIRD_LIBS += $(ZLIB_LIB)
+-
+ ifeq "$(verbose)" ""
+ QUIET_AR = @ echo ' ' ' ' AR $@ ;
+ QUIET_CC = @ echo ' ' ' ' CC $@ ;
+@@ -169,14 +163,15 @@ $(MUTOOL) : $(addprefix $(OUT)/, pdfclea
+ 
+ ifeq "$(NOX11)" ""
+ MUVIEW := $(OUT)/mupdf
++ifeq "$(V8_PRESENT)" "1"
++$(MUVIEW) : $(FITZ_V8_LIB) $(THIRD_LIBS)
++$(MUVIEW) : $(addprefix $(OUT)/, x11_main.o x11_image.o pdfapp.o)
++	$(LINK_V8_CMD) $(X11_LIBS)
++else
+ $(MUVIEW) : $(FITZ_LIB) $(THIRD_LIBS)
+ $(MUVIEW) : $(addprefix $(OUT)/, x11_main.o x11_image.o pdfapp.o)
+ 	$(LINK_CMD) $(X11_LIBS)
+-
+-MUVIEW_V8 := $(OUT)/mupdf-v8
+-$(MUVIEW_V8) : $(FITZ_V8_LIB) $(THIRD_LIBS)
+-$(MUVIEW_V8) : $(addprefix $(OUT)/, x11_main.o x11_image.o pdfapp.o)
+-	$(LINK_V8_CMD) $(X11_LIBS)
++endif
+ endif
+ 
+ MUJSTEST_V8 := $(OUT)/mujstest-v8
+@@ -184,12 +179,6 @@ $(MUJSTEST_V8) : $(FITZ_V8_LIB) $(THIRD_
+ $(MUJSTEST_V8) : $(addprefix $(OUT)/, jstest_main.o pdfapp.o)
+ 	$(LINK_V8_CMD)
+ 
+-ifeq "$(V8_PRESENT)" "1"
+-JSTARGETS := $(MUJSTEST_V8) $(FITZ_V8_LIB) $(MUVIEW_V8)
+-else
+-JSTARGETS :=
+-endif
+-
+ # --- Format man pages ---
+ 
+ %.txt: %.1
+@@ -212,7 +201,7 @@ install: $(FITZ_LIB) $(MUVIEW) $(MUDRAW)
+ 	install -d $(DESTDIR)$(bindir) $(DESTDIR)$(libdir) $(DESTDIR)$(incdir) $(DESTDIR)$(mandir)/man1
+ 	install $(FITZ_LIB) $(DESTDIR)$(libdir)
+ 	install fitz/memento.h fitz/fitz.h pdf/mupdf.h xps/muxps.h cbz/mucbz.h $(DESTDIR)$(incdir)
+-	install $(MUVIEW) $(MUDRAW) $(MUBUSY) $(DESTDIR)$(bindir)
++	install $(MUVIEW) $(MUDRAW) $(MUTOOL) $(DESTDIR)$(bindir)
+ 	install $(wildcard apps/man/*.1) $(DESTDIR)$(mandir)/man1
+ 
+ # --- Clean and Default ---
