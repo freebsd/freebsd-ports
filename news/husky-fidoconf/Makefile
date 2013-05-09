@@ -7,7 +7,7 @@
 
 PORTNAME=	fidoconf
 PORTVERSION=	0.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/fidoconfig/0.14-release
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
 CONFLICTS=	husky-fidoconf-devel-[0-9]*
 
 USE_LDCONFIG=	yes
+MAKE_ARGS=	ADDCDEFS=-fPIC
 INSTALL_TARGET=	install install-man
 
 MAN1=		dumpfcfg.1 fconf2.1 linkedto.1 tparser.1
