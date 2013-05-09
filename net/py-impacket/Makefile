@@ -1,12 +1,11 @@
 # Created by: Marcin Jessa <yazzy@yazzy.org>
 # $FreeBSD$
 
-PORTNAME=	Impacket
-PORTVERSION=	0.9.9.9
+PORTNAME=	impacket
+PORTVERSION=	0.9.10
 CATEGORIES=	net python
-MASTER_SITES=	http://corelabs.coresecurity.com/index.php?module=Wiki&action=attachment&type=tool&page=Impacket&file=
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	impacket-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python classes providing access to network packets
@@ -16,14 +15,12 @@ LICENSE_NAME=	Apache License version 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcapy.so:${PORTSDIR}/net/py-pcapy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pcapy>=0:${PORTSDIR}/net/py-pcapy \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
 
-FETCH_BEFORE_ARGS=-o ${DISTFILES}
-WRKSRC=		${WRKDIR}/impacket
 USE_DOS2UNIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=0.9.9.0-dev
 PORTDOCS=	README
 
 .include <bsd.port.options.mk>
