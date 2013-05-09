@@ -19,8 +19,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		flex>2.5.4:${PORTSDIR}/textproc/flex\
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf\
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc\
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes
@@ -31,7 +30,8 @@ CONFIGURE_ARGS=	--with-readline\
 		--without-jdk2\
 		--without-jdk3\
 		--without-jdk4\
-		--with-iodbc=${LOCALBASE}\
+		--disable-hslookup\
+		--disable-wbxml2\
 		--enable-bpel-vad\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
@@ -47,13 +47,8 @@ GROUPS=		virtuoso
 
 CHECK_PORT=	/usr/bin/nc -z localhost $$\1 2>\&1
 
-OPTIONS_DEFINE=	IMAGEMAGICK KERBEROS LDAP
-#		PERL "Perl hosting" off
-#		PYTHON "Python hosting" off
-#		MONO "Mono extension" off\
-#		PHP4 "PHP4 extension" off\
-#		PHP5 "PHP5 extension" off\
-#		RUBY "Ruby hosting" off\
+OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
+#OPTIONS_DEFINE+=		MONO PERL PHP4 PHP5 PYTHON RUBY
 
 post-patch:
 	${REINPLACE_CMD}\
@@ -82,20 +77,33 @@ CONFIGURE_ARGS+=--disable-imagemagick
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MIODBC}
+CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+PLIST_SUB+=	WITH_IODBC=""
+.else
+#CPPFLAGS+=	-I../../libsrc/odbcsdk/include
+PLIST_SUB+=	WITH_IODBC="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+.else
+CONFIGURE_ARGS+=--disable-krb
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
+USE_OPENLDAP=	yes
+.else
+CONFIGURE_ARGS+=--disable-openldap
 .endif
 
 # XXX broken (does not build, requires gc.h)
 #.if ${PORT_OPTIONS:MMONO}
 #CONFIGURE_ARGS+=--enable-mono
 #.endif
-
-.if ${PORT_OPTIONS:MOPENLDAP}
-CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
-USE_OPENLDAP=	yes
-.endif
 
 # XXX broken (requires perl to be built with -Dusemultiplicity)
 #.if ${PORT_OPTIONS:MPERL}
