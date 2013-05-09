@@ -1,0 +1,36 @@
+#!/bin/sh
+# $FreeBSD$
+
+PAPERSIZE=%%PAPERSIZE%%
+DVIPSDIR=%%DVIPSDIR%%
+DVIPSCONFDIR=%%DVIPSCONFDIR%%
+MKTEXLSR=%%MKTEXLSR%%
+TEXCONFIGBIN=%%TEXCONFIGBIN%%
+PATH=${PATH}:%%LOCALBASE%%/bin
+
+case $2 in
+POST-INSTALL)
+	${MKTEXLSR}
+
+	# output to a file by default
+	${TEXCONFIGBIN} dvips printcmd -
+	case ${PAPERSIZE} in
+	letter)
+		${TEXCONFIGBIN} dvips paper letter
+	;;
+	*)
+		${TEXCONFIGBIN} dvips paper a4
+	;;
+	esac
+	${MKTEXLSR}
+	echo "======"
+	echo "NOTICE: Before upgrading, you may want to make " \
+		"a backup of the following file(s):"
+	echo "    ${DVIPSCONFDIR}/config.ps"
+	echo "======"
+;;
+DEINSTALL)
+	# do nothing
+	${MKTEXLSR}
+;;
+esac
