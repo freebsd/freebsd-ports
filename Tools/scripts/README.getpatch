@@ -1,7 +1,7 @@
 GETPATCH(1)		FreeBSD General Commands Manual 	 GETPATCH(1)
 
 NAME
-     getpatch - A utility to download patch attachments on Bug Tracking Systems
+     getpatch - Utility to download patch attachments on Bug Tracking Systems
 
 SYNOPSIS
      getpatch [-h] [--mode gnats|bz] [--last] [--stdout] <pr-id>
@@ -11,7 +11,7 @@ DESCRIPTION
      Systems such Gnats and Bugzilla. It supports retrieving multiple
      attachments from the command line.
 
-     It's written in python witout any extra dependencies. In addition to the
+     It's written in python without any extra dependencies. In addition to the
      functionalities offered by other similar tools suchs as getpr, it does web
      scrapping on the BTS web interface in order to retrieve the patches attached
      to PR.
@@ -20,7 +20,7 @@ DESCRIPTION
 
 	   -h	      Prints a multi-line help message and exits.
 
-	   --mode     Specifies the BTS. Currently "gnats" and "bz" are.
+	   --mode     Specifies the BTS. Currently "gnats" and "bz" are
                       supported.
 
            --last     Only retrieves the latest iteration of a patch.
@@ -33,7 +33,7 @@ FILES
      ${PORTSDIR}/Tools/scripts/getpatch
 
 EXAMPLES
-     Retrieve all patches attached to PR ports/166692 from a Gnats BTS:
+     Retrieve all patches attached to PR ports/166692 from Gnats BTS:
 
 	   getpatch --mode gnats ports/166692
 
@@ -43,7 +43,7 @@ EXAMPLES
 
      Gnats is the default BTS and category isn't mandatory.
 
-     Retrieve all patches attached to PR ports/166692 from a Bugzilla BTS:
+     Retrieve all patches attached to PR ports/166692 from Bugzilla BTS:
 
 	   getpatch --mode bz ports/166692
 
@@ -51,7 +51,7 @@ EXAMPLES
 
 	   getpatch --last ports/166692
 
-     Retrieve a patch on dump it to standard output
+     Retrieve a patch and dump it to standard output
 
 	   getpatch --stdout ports/166692
 
