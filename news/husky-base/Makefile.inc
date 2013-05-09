@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	husky-
 DIST_SUBDIR=	husky
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}
-ONLY_FOR_ARCHS=	i386
 
 .if ${PORTNAME} != "base"
 BUILD_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
