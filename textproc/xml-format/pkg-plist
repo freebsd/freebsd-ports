@@ -1,0 +1,7 @@
+bin/xml-format
+%%DATADIR%%/Config/dbk/block-tags.txt
+%%DATADIR%%/Config/dbk/line-tags.txt
+%%DATADIR%%/Config/dbk/sectioning-tags.txt
+@dirrm %%DATADIR%%/Config/dbk
+@dirrm %%DATADIR%%/Config
+@dirrm %%DATADIR%%
