@@ -1488,6 +1488,7 @@
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
+    SUBDIR += py-django-mezzanine
     SUBDIR += py-django-mezzanine-filebrowser
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
