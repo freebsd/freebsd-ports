@@ -1411,6 +1411,7 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/layouts/amsbook.layout
 %%DATADIR%%/layouts/amsdefs.inc
 %%DATADIR%%/layouts/apa.layout
+%%DATADIR%%/layouts/apa6.layout
 %%DATADIR%%/layouts/arab-article.layout
 %%DATADIR%%/layouts/armenian-article.layout
 %%DATADIR%%/layouts/article-beamer.layout
@@ -1501,6 +1502,7 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/layouts/mwart.layout
 %%DATADIR%%/layouts/mwbk.layout
 %%DATADIR%%/layouts/mwrep.layout
+%%DATADIR%%/layouts/natbibapa.module
 %%DATADIR%%/layouts/noweb.module
 %%DATADIR%%/layouts/numarticle.inc
 %%DATADIR%%/layouts/numreport.inc
@@ -1686,6 +1688,7 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/templates/ACM-siggraph.lyx
 %%DATADIR%%/templates/ACM-sigplan.lyx
 %%DATADIR%%/templates/AEA.lyx
+%%DATADIR%%/templates/APA6.lyx
 %%DATADIR%%/templates/IEEEtran.lyx
 %%DATADIR%%/templates/JASA.lyx
 %%DATADIR%%/templates/JSS-article.lyx
