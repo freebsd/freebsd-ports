@@ -1,7 +1,7 @@
 For LyX to work you need to install some kind of TeX distribution.
 
   - The print/teTeX port in the ports tree.
-  - The TexLive ports in https://code.google.com/p/freebsd-texlive.
+  - The print/texlive-* ports in the ports tree.
 
 Either one should work fine.
 
