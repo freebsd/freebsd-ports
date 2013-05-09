@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dabstick-radio
-PORTVERSION=	0.1
+PORTVERSION=	0.91
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
@@ -25,6 +24,7 @@ USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 
 FFMPEG_SUFFIX=	1
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 QMAKE_DABSTICK=	${QMAKE} -unix PREFIX=${PREFIX} -o
 MAKE_ENV+=	FFMPEG_SUFFIX=${FFMPEG_SUFFIX}
 MAKE_JOBS_SAFE=	yes
