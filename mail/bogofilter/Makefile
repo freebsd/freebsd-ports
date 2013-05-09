@@ -29,6 +29,12 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader
 ACLOCAL_ARGS=	-Im4
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MUNICODE}
+USES+=		iconv
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -40,7 +46,6 @@ BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 .if ${PORT_OPTIONS:MUNICODE}
 CONFIGURE_ARGS+=	--enable-unicode
-USES+=			iconv
 BF_LIBS+=		-liconv
 .endif
 .if ${PORT_OPTIONS:MGSL}
