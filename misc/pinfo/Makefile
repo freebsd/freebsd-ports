@@ -13,10 +13,9 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	READLINE
 OPTIONS_DEFAULT=READLINE
-READLINE_DESC=	Enable readline support
 
 USE_BZIP2=	yes
-USES=		gettext ncurses
+USES=		ncurses gettext
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
@@ -40,16 +39,14 @@ PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/pinfo.mo
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-
 .if ${PORT_OPTIONS:MREADLINE}
-USES=		readline
+USES+=		readline
 .else
 CONFIGURE_ARGS+=--without-readline
 .endif
