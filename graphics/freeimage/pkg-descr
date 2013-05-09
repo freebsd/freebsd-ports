@@ -1,6 +1,7 @@
 FreeImage is an open source library project for developers who would like to
 support popular graphics image formats like PNG, BMP, JPEG, TIFF, and others
 as needed by today's multimedia applications.  FreeImage is easy to use,
-fast, multithreading safe, and cross-platform.
+fast, multithreading safe, and cross-platform. This port includes both the
+original C interface and the C++ wrapper FreeImagePlus.
 
 WWW: http://freeimage.sourceforge.net/
